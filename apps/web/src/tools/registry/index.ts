@@ -9,7 +9,6 @@ const registry: ToolRegistryMap = {};
 
 export function registerToolComponent(key: string, component: ToolComponent): void {
   if (registry[key]) {
-    // eslint-disable-next-line no-console
     console.warn(`[ToolRegistry] Overwriting already registered tool component: "${key}"`);
   }
   registry[key] = component;
@@ -26,4 +25,3 @@ export function hasToolComponent(key: string): boolean {
 export function getRegisteredComponentKeys(): string[] {
   return Object.keys(registry);
 }
-

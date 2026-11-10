@@ -1,15 +1,7 @@
 export type ToolExecutionType = 'client' | 'server' | 'third-party';
 
 export type ToolCategory =
-  | 'calculators'
-  | 'converters'
-  | 'pdf'
-  | 'image'
-  | 'video'
-  | 'audio'
-  | 'ai'
-  | 'seo'
-  | 'developer';
+  'calculators' | 'converters' | 'pdf' | 'image' | 'video' | 'audio' | 'ai' | 'seo' | 'developer';
 
 export interface ToolMetadata {
   id: string;
@@ -29,4 +21,3 @@ export interface ToolMetadata {
   createdAt?: string;
   updatedAt?: string;
 }
-

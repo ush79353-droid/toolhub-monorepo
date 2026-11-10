@@ -2,9 +2,7 @@ import { z } from 'zod';
 import { TOOL_CATEGORIES, TOOL_EXECUTION_TYPES } from '@mega-tools/shared';
 import { slugSchema } from './common.schema';
 
-export const toolCategorySchema = z.enum(
-  TOOL_CATEGORIES as unknown as [string, ...string[]]
-);
+export const toolCategorySchema = z.enum(TOOL_CATEGORIES as unknown as [string, ...string[]]);
 
 export const toolExecutionTypeSchema = z.enum(
   TOOL_EXECUTION_TYPES as unknown as [string, ...string[]]
@@ -28,4 +26,3 @@ export const toolMetadataSchema = z.object({
 });
 
 export type ToolMetadataInput = z.infer<typeof toolMetadataSchema>;
-

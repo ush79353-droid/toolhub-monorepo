@@ -6,7 +6,8 @@ interface LogContext {
 
 function formatLog(level: LogLevel, message: string, context?: LogContext): string {
   const timestamp = new Date().toISOString();
-  const contextStr = context && Object.keys(context).length > 0 ? ` ${JSON.stringify(context)}` : '';
+  const contextStr =
+    context && Object.keys(context).length > 0 ? ` ${JSON.stringify(context)}` : '';
   return `[${timestamp}] [${level.toUpperCase()}] ${message}${contextStr}`;
 }
 
@@ -34,4 +35,3 @@ export const logger = {
     }
   },
 };
-

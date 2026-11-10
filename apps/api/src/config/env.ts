@@ -16,10 +16,12 @@ const parsed = envSchema.safeParse(process.env);
 
 if (!parsed.success) {
   // eslint-disable-next-line no-console
-  console.error('❌ Invalid environment variables:', JSON.stringify(parsed.error.format(), null, 2));
+  console.error(
+    '❌ Invalid environment variables:',
+    JSON.stringify(parsed.error.format(), null, 2)
+  );
   process.exit(1);
 }
 
 export const env = parsed.data;
 export type Env = z.infer<typeof envSchema>;
-

@@ -38,6 +38,7 @@ mega-tools/
 ## 2. Critical Architecture Rules
 
 ### API Communication Rule
+
 ```
 Browser ──> Next.js Server (BFF) ──> Express Backend ──> MongoDB
 ```
@@ -55,18 +56,18 @@ Browser ──> Next.js Server (BFF) ──> Express Backend ──> MongoDB
 
 The platform design system is strictly enforced across Tailwind CSS and shadcn/ui:
 
-| Role | Color Name | Hex Code | HSL Value |
-| :--- | :--- | :--- | :--- |
-| **Primary** | Deep Teal | `#087E8B` | `186 89% 29%` |
-| **Primary Hover**| Hover Teal | `#066773` | `187 90% 24%` |
-| **Secondary** | Pale Mint | `#D9F0EF` | `177 47% 90%` |
-| **Dark Accent** | Dark Pine | `#163C43` | `189 51% 17%` |
-| **Soft Teal** | Light Wash | `#EAF7F6` | `175 46% 94%` |
-| **Background** | Clean Off-White| `#F7F8F6` | `90 10% 97%` |
-| **Primary Text**| Charcoal Cyan | `#202B2D` | `189 17% 15%` |
-| **Secondary Text**| Slate Teal | `#667477` | `191 8% 43%` |
-| **Border** | Soft Grey-Teal| `#DCE6E5` | `174 15% 88%` |
-| **White** | Pure White | `#FFFFFF` | `0 0% 100%` |
+| Role               | Color Name      | Hex Code  | HSL Value     |
+| :----------------- | :-------------- | :-------- | :------------ |
+| **Primary**        | Deep Teal       | `#087E8B` | `186 89% 29%` |
+| **Primary Hover**  | Hover Teal      | `#066773` | `187 90% 24%` |
+| **Secondary**      | Pale Mint       | `#D9F0EF` | `177 47% 90%` |
+| **Dark Accent**    | Dark Pine       | `#163C43` | `189 51% 17%` |
+| **Soft Teal**      | Light Wash      | `#EAF7F6` | `175 46% 94%` |
+| **Background**     | Clean Off-White | `#F7F8F6` | `90 10% 97%`  |
+| **Primary Text**   | Charcoal Cyan   | `#202B2D` | `189 17% 15%` |
+| **Secondary Text** | Slate Teal      | `#667477` | `191 8% 43%`  |
+| **Border**         | Soft Grey-Teal  | `#DCE6E5` | `174 15% 88%` |
+| **White**          | Pure White      | `#FFFFFF` | `0 0% 100%`   |
 
 ---
 
@@ -82,17 +83,21 @@ The platform design system is strictly enforced across Tailwind CSS and shadcn/u
 ## 5. Getting Started
 
 ### Prerequisites
+
 - Node.js >= 20 (Node 24 tested)
 - npm >= 10
 - MongoDB (optional for initial health check, required for database features)
 
 ### 1. Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### 2. Environment Setup
+
 Copy the example environment files:
+
 ```bash
 # Web application
 cp apps/web/.env.example apps/web/.env.local
@@ -102,6 +107,7 @@ cp apps/api/.env.example apps/api/.env
 ```
 
 ### 3. Run Development Servers
+
 ```bash
 # Run both Frontend and Backend concurrently
 npm run dev
@@ -114,6 +120,7 @@ npm run dev:api
 ```
 
 ### 4. Build, Typecheck & Quality Checks
+
 ```bash
 # Type check all workspaces
 npm run type-check
@@ -127,4 +134,3 @@ npm run format
 # Production build of all workspaces
 npm run build
 ```
-

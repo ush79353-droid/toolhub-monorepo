@@ -40,7 +40,10 @@ export function errorHandler(
   // Handle custom AppError
   if (err instanceof AppError) {
     if (err.statusCode >= 500) {
-      logger.error(`Application error: ${err.message}`, err, { code: err.code, details: err.details });
+      logger.error(`Application error: ${err.message}`, err, {
+        code: err.code,
+        details: err.details,
+      });
     } else {
       logger.warn(`Client error [${err.statusCode}]: ${err.message}`);
     }
@@ -70,4 +73,3 @@ export function errorHandler(
 
   sendError(res, message, 500, 'INTERNAL_SERVER_ERROR', err);
 }
-

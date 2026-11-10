@@ -63,4 +63,3 @@ export async function disconnectDB(): Promise<void> {
     logger.error('Error during MongoDB disconnection', error);
   }
 }
-

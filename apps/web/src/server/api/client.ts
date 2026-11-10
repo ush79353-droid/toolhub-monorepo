@@ -34,7 +34,10 @@ export class ServerApiClient {
     this.defaultTimeout = Number(process.env.API_TIMEOUT_MS) || 10000;
   }
 
-  private buildUrl(endpoint: string, params?: Record<string, string | number | boolean | undefined>): string {
+  private buildUrl(
+    endpoint: string,
+    params?: Record<string, string | number | boolean | undefined>
+  ): string {
     const normalizedEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
     const url = new URL(`${this.baseUrl}${normalizedEndpoint}`);
 
@@ -152,4 +155,3 @@ export class ServerApiClient {
 
 // Singleton server-side client instance
 export const serverApi = new ServerApiClient();
-
