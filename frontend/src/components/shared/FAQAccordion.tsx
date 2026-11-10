@@ -57,4 +57,3 @@ export function FAQAccordion({ items, className = '' }: FAQAccordionProps) {
     </div>
   );
 }
-

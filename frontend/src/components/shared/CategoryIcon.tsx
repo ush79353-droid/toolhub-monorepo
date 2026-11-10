@@ -65,4 +65,3 @@ export function CategoryIcon({ name, ...props }: CategoryIconProps) {
   const IconComponent = (name && iconMap[name]) || Wrench;
   return <IconComponent {...props} />;
 }
-
