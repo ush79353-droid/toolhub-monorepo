@@ -21,3 +21,4 @@ export function getHealth(req: Request, res: Response): void {
 
   sendSuccess(res, data, 200);
 }
+

@@ -28,3 +28,4 @@ export const toolMetadataSchema = z.object({
 });
 
 export type ToolMetadataInput = z.infer<typeof toolMetadataSchema>;
+

@@ -70,3 +70,4 @@ export function errorHandler(
 
   sendError(res, message, 500, 'INTERNAL_SERVER_ERROR', err);
 }
+

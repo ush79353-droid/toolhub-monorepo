@@ -30,3 +30,4 @@ export const slugSchema = z
   .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Slug must be lowercase alphanumeric with hyphens');
 
 export type PaginationQuery = z.infer<typeof paginationQuerySchema>;
+

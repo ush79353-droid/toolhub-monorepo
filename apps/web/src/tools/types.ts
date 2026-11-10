@@ -17,3 +17,4 @@ export interface RegisteredToolDefinition {
 }
 
 export type ToolRegistryMap = Record<string, ToolComponent>;
+

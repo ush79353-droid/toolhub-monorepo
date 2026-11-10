@@ -26,3 +26,4 @@ export function hasToolComponent(key: string): boolean {
 export function getRegisteredComponentKeys(): string[] {
   return Object.keys(registry);
 }
+
