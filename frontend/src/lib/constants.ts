@@ -5,11 +5,14 @@ export const TOOL_CATEGORIES: readonly ToolCategory[] = [
   'converters',
   'pdf',
   'image',
-  'video',
-  'audio',
-  'ai',
+  'text',
   'seo',
   'developer',
+  'ai',
+  'video',
+  'audio',
+  'security',
+  'productivity',
 ] as const;
 
 export const TOOL_EXECUTION_TYPES: readonly ToolExecutionType[] = [
