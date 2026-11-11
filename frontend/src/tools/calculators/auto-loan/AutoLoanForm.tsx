@@ -639,6 +639,7 @@ export function AutoLoanForm({
               <Input
                 id="auto-loan-start-date"
                 type="date"
+                autoComplete="off"
                 value={draft.startDate}
                 onChange={(e) => update('startDate', e.target.value)}
                 aria-invalid={Boolean(errors.startDate)}

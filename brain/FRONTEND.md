@@ -71,7 +71,7 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 
 ## 4. Reusable Components Inventory
 
-- **UI Primitives (`src/components/ui/`):** `badge.tsx`, `button.tsx`, `card.tsx`, `input.tsx`, `select.tsx`, `switch.tsx`, `tabs.tsx`, `textarea.tsx` (using `cn()` from `src/lib/utils.ts` and `class-variance-authority`).
+- **UI Primitives (`src/components/ui/`):** `badge.tsx`, `button.tsx`, `card.tsx`, `input.tsx` (uses `block` instead of `flex` for `date`/`time`/`datetime-local` inputs so native picker icons stay right-aligned), `select.tsx`, `switch.tsx`, `tabs.tsx`, `textarea.tsx` (using `cn()` from `src/lib/utils.ts` and `class-variance-authority`).
 - **Website Layout (`src/components/layout/`):** `Container.tsx` (`max-w-7xl px-4 sm:px-6 lg:px-8`), `Header.tsx` (responsive single-row nav preventing `768px` tablet overflow, `Explore Tools` CTA shown from `lg:`), `Footer.tsx` (`<h2>` uppercase column headings for clean landmark hierarchy), `MobileNavigation.tsx`.
 - **Public Shared (`src/components/shared/`):** `Breadcrumbs.tsx`, `CategoryCard.tsx`, `CategoryIcon.tsx` (Lucide icon map), `EmptyState.tsx`, `FAQAccordion.tsx` (medium/semibold question hierarchy and relaxed `1.7` answer line-height), `RelatedCatalogTools.tsx` (uniform card padding without top pill badges, distinguishing interactive `Open` / `Preview only` links vs non-link `Catalog only` cards in the footer row), `SearchBar.tsx`, `SectionHeading.tsx`, `ToolCard.tsx`, `ToolWorkspace.tsx` (resolves allowlisted `componentKey` from `@/tools/registry`; falls back to UI preview shell for unregistered tools).
 - **Admin Components (`src/components/admin/`):**
