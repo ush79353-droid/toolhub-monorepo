@@ -3,6 +3,7 @@ import { AppError } from '../../middleware/error.middleware';
 import { Category, type CategoryKind } from '../categories/category.model';
 import { MediaAsset } from '../media/media.model';
 import type { ListToolsQuery, ToolFieldsInput } from '../../validation/admin-tool.schema';
+import type { ToolExecutionType } from '../../types/tool';
 import { isToolSlug, toolNameKey } from './tool.key';
 import { Tool, type ITool } from './tool.model';
 
@@ -21,6 +22,8 @@ export interface ToolRecord {
   subPillar: ToolRef | null;
   iconMediaId: string | null;
   iconUrl: string;
+  executionType: ToolExecutionType;
+  componentKey: string;
   shortDescription: string;
   metaTitle: string;
   metaDescription: string;
@@ -62,6 +65,8 @@ function toRecord(doc: ITool): ToolRecord {
     subPillar: asRef(doc.subPillar),
     iconMediaId: doc.iconMedia ? String(doc.iconMedia) : null,
     iconUrl: doc.iconUrl,
+    executionType: doc.executionType ?? 'client',
+    componentKey: doc.componentKey ?? '',
     shortDescription: doc.shortDescription,
     metaTitle: doc.metaTitle,
     metaDescription: doc.metaDescription,
@@ -126,6 +131,8 @@ function assign(doc: ITool, input: ToolFieldsInput, icon: { iconMedia: mongoose.
   doc.subPillar = input.subPillarId ? new mongoose.Types.ObjectId(input.subPillarId) : null;
   doc.iconMedia = icon.iconMedia;
   doc.iconUrl = icon.iconUrl;
+  if (input.executionType !== undefined) doc.executionType = input.executionType;
+  if (input.componentKey !== undefined) doc.componentKey = input.componentKey;
   doc.shortDescription = input.shortDescription ?? '';
   doc.metaTitle = input.metaTitle ?? '';
   doc.metaDescription = input.metaDescription ?? '';

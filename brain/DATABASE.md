@@ -128,6 +128,8 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 | `subPillar` | `ObjectId \| null` | `ref: 'Category'` (`kind === 'sub_pillar'`, child of `pillar`) | `null` |
 | `iconMedia` | `ObjectId \| null` | `ref: 'MediaAsset'` (image MIME required) | `null` |
 | `iconUrl` | `String` | Resolved URL from `MediaAsset.url` | `''` |
+| `executionType` | `String` | Enum `['client', 'server', 'third-party']` | `'client'` |
+| `componentKey` | `String` | Trimmed, `maxlength: 100` (allowlisted frontend registry key, e.g. `'AutoLoanCalculator'`) | `''` |
 | `shortDescription` | `String` | `maxlength: 500` | `''` |
 | `metaTitle` | `String` | `maxlength: 70` | `''` |
 | `metaDescription` | `String` | `maxlength: 160` | `''` |

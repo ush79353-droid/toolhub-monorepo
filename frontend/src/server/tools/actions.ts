@@ -3,6 +3,7 @@
 import { serverApi, ApiClientError } from '@/server/api/client';
 import { getAdminSessionToken } from '@/server/auth/session';
 import type { ActionResult } from '@/server/auth/actions';
+import type { ToolExecutionType } from '@/types/tool';
 
 export interface ToolRef {
   id: string;
@@ -19,6 +20,8 @@ export interface ToolRecord {
   subPillar: ToolRef | null;
   iconMediaId: string | null;
   iconUrl: string;
+  executionType: ToolExecutionType;
+  componentKey: string;
   shortDescription: string;
   metaTitle: string;
   metaDescription: string;
@@ -55,6 +58,8 @@ export interface ToolPayload {
   pillarId: string;
   subPillarId?: string | null;
   iconMediaId?: string | null;
+  executionType?: ToolExecutionType;
+  componentKey?: string;
   shortDescription?: string;
   metaTitle?: string;
   metaDescription?: string;

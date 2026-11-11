@@ -1,18 +1,23 @@
+'use client';
+
+import { AutoLoanCalculator } from '@/tools/calculators/auto-loan/AutoLoanCalculator';
 import type { ToolComponent, ToolRegistryMap } from '../types';
 
 /**
  * Component Registry for Omega Calculators
- * Maps database-driven component keys to validated React components.
- * Tools are dynamically resolved at runtime while ensuring strict type safety.
+ * Maps database-driven allowlisted component keys to validated React components.
+ * Arbitrary code execution from database values is strictly prohibited.
  */
 const registry: ToolRegistryMap = {};
 
 export function registerToolComponent(key: string, component: ToolComponent): void {
-  if (registry[key]) {
+  if (registry[key] && registry[key] !== component) {
     console.warn(`[ToolRegistry] Overwriting already registered tool component: "${key}"`);
   }
   registry[key] = component;
 }
+
+registerToolComponent('AutoLoanCalculator', AutoLoanCalculator);
 
 export function getToolComponent(key: string): ToolComponent | null {
   return registry[key] ?? null;

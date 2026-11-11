@@ -60,3 +60,10 @@
 - **Consequences:** Both agents must read `brain/` before tasks and update `brain/` in the same commit as code changes; synchronization occurs strictly via Git commits/pulls.
 - **Status:** Accepted
 
+## ADR-009: Allowlisted Tool Component Key Mapping & Pure Client-Side Financial Engine
+- **Date:** 2026-11-11
+- **Decision:** Add validated `executionType` and allowlisted `componentKey` fields to `Tool` (plus `GET /api/v1/catalog/tools/:slug`), resolve components exclusively via the static allowlisted frontend registry (`src/tools/registry/`), and implement the Auto Loan Calculator with integer-cent amortization, configurable display currency (formatting only), explicit sales-tax basis selection (`after-trade-in` vs `full-price`), and full-width layout on `/tools/[slug]` when a registered tool is rendered.
+- **Reason:** Keep database records authoritative for tool metadata/SEO while prohibiting arbitrary code execution from database strings, avoiding cumulative floating-point drift in amortization tables, and avoiding hidden state-specific tax assumptions.
+- **Consequences:** Each newly built tool requires registering its `componentKey` in both `backend/src/modules/tools/tool.key.ts` (`APPROVED_COMPONENT_KEYS`) and `frontend/src/tools/registry/keys.ts` + `index.ts`, then assigning it to the MongoDB tool record via `/admin/tools/[id]/edit` or `npm run tool:assign`.
+- **Status:** Accepted
+

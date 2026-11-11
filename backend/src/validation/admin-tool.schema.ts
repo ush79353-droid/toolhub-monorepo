@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { isApprovedComponentKey } from '../modules/tools/tool.key';
 
 const optionalText = (max: number) => z.string().trim().max(max).optional();
 
@@ -35,6 +36,18 @@ export const toolFieldsSchema = z.object({
     .nullable()
     .optional()
     .transform((value) => value || null),
+  executionType: z.enum(['client', 'server', 'third-party']).optional(),
+  componentKey: z
+    .string()
+    .trim()
+    .max(100)
+    .nullable()
+    .optional()
+    .transform((value) => value ?? '')
+    .refine(
+      (value) => value === '' || isApprovedComponentKey(value),
+      'Choose an approved component key'
+    ),
   shortDescription: optionalText(500),
   metaTitle: optionalText(70),
   metaDescription: optionalText(160),

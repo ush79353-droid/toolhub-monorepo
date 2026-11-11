@@ -74,6 +74,12 @@ Mounted at `/api/v1/catalog` (`backend/src/modules/catalog/catalog.router.ts`).
 - **Response (`200`):** `PublicFeaturedTool[]` — Up to 12 tools with `isFeatured: true`, sorted by `name` asc (note: currently filters only on `isFeatured: true`, not `isActive`):
   `{ id, name, slug, shortDescription, iconUrl, categoryName, categorySlug }[]`
 
+### `GET /api/v1/catalog/tools/:slug`
+- **Auth:** Public
+- **Response (`200`):** `PublicToolDetail` — Active tool (`isActive: true`) matching `slug`, populated with `category`, `pillar`, and `subPillar`:
+  `{ id, name, slug, shortDescription, iconUrl, executionType, componentKey, category, pillar, subPillar, metaTitle, metaDescription, canonicalUrl, ogTitle, ogDescription, keywords, indexable, isFeatured, updatedAt }`
+- **Errors:** `404 NOT_FOUND` if slug format is invalid, missing, or `isActive` is `false`.
+
 ---
 
 ## 3. Admin Authentication Endpoints (Implemented)
@@ -129,7 +135,7 @@ Mounted at `/api/v1/admin/tools` (`backend/src/modules/tools/tool.router.ts`). A
 | `GET` | `/admin/tools` | Query: `page` (1), `limit` (1..50, 10), `search`, `categoryId`, `status` (`active`\|`inactive`), `sort` (`name`\|`updatedAt`), `order` (`asc`\|`desc`) | `{ items: ToolRecord[], page, limit, total, totalPages }` | `400 VALIDATION_ERROR` |
 | `GET` | `/admin/tools/placement` | — | `{ id, name, kind, parentId }[]` | — |
 | `GET` | `/admin/tools/:id` | Param: `id` | `ToolRecord` | `404 NOT_FOUND` |
-| `POST` | `/admin/tools` | Body (`toolFieldsSchema`): `{ name, slug, categoryId, pillarId?, subPillarId?, iconMediaId?, shortDescription?, metaTitle?, metaDescription?, canonicalUrl?, ogTitle?, ogDescription?, keywords?, indexable?, isActive?, isFeatured? }` | `ToolRecord` (`201`) | `400 VALIDATION_ERROR`, `400 INVALID_PLACEMENT`, `400 INVALID_ICON`, `409 NAME_TAKEN`, `409 SLUG_TAKEN` |
+| `POST` | `/admin/tools` | Body (`toolFieldsSchema`): `{ name, slug, categoryId, pillarId?, subPillarId?, iconMediaId?, executionType?, componentKey?, shortDescription?, metaTitle?, metaDescription?, canonicalUrl?, ogTitle?, ogDescription?, keywords?, indexable?, isActive?, isFeatured? }` | `ToolRecord` (`201`) | `400 VALIDATION_ERROR`, `400 INVALID_PLACEMENT`, `400 INVALID_ICON`, `409 NAME_TAKEN`, `409 SLUG_TAKEN` |
 | `PATCH` | `/admin/tools/:id` | Body (`toolFieldsSchema` — full fields required by schema on PATCH) | `ToolRecord` | Same as `POST` + `404 NOT_FOUND` |
 | `DELETE` | `/admin/tools/:id` | Param: `id` | `{ id }` | `404 NOT_FOUND` |
 
@@ -139,7 +145,7 @@ Mounted at `/api/v1/admin/tools` (`backend/src/modules/tools/tool.router.ts`). A
 
 The following capabilities exist only as empty backend module directories (`.gitkeep`) or frontend UI previews and are **not implemented**:
 
-- Public tools directory listing, search, category detail (`GET /api/v1/catalog/categories/:slug`), and tool detail (`GET /api/v1/catalog/tools/:slug`)
+- Public tools directory listing, search, and category detail (`GET /api/v1/catalog/categories/:slug`)
 - Contact / tool suggestion submission (`POST /api/v1/contact` or similar)
 - Server-side or third-party tool execution endpoints
 - Admin staff management (`/api/v1/admin/users`)

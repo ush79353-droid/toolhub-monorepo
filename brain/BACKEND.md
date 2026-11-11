@@ -29,8 +29,8 @@
 | `auth` | `modules/auth/` | Admin login, logout, session validation, profile update, password change, forgot/reset password, `AdminSession` model | `/api/v1/admin/auth` |
 | `categories` | `modules/categories/` | 3-level taxonomy (`category`, `pillar`, `sub_pillar`) CRUD, tree assembly, search, cascade delete | `/api/v1/admin/categories` |
 | `media` | `modules/media/` | S3 presigned URL signing, S3 head verification + `MediaAsset` persistence, list/filter, S3 + DB delete | `/api/v1/admin/media` |
-| `tools` | `modules/tools/` | Admin tool catalog CRUD, placement options, media icon validation, unique name/slug enforcement, SEO fields | `/api/v1/admin/tools` |
-| `catalog` | `modules/catalog/` | Public read endpoints for active root categories (with tool counts via aggregation) and featured tools | `/api/v1/catalog` |
+| `tools` | `modules/tools/` | Admin tool catalog CRUD, placement options, media icon validation, allowlisted `componentKey` & `executionType`, unique name/slug enforcement, SEO fields | `/api/v1/admin/tools` |
+| `catalog` | `modules/catalog/` | Public read endpoints for active root categories (with tool counts via aggregation), featured tools, and active single tool detail by slug | `/api/v1/catalog` |
 
 ### Planned / Placeholder Modules (`.gitkeep` only)
 
@@ -75,7 +75,7 @@
   - `headMediaObject`: Verifies uploaded object exists in S3 (`HeadObjectCommand`).
   - `deleteMediaObject`: Deletes object from S3 (`DeleteObjectCommand`), ignoring `NotFound`/`NoSuchKey`.
 - **`modules/media/media.key.ts`:** Validates allowed MIME types (`png`, `jpeg`, `webp`, `svg`, `gif`, `pdf`), max size (`10 MB`), and owned key pattern `media/<uuid>.<ext>`. Includes direct-run self-check.
-- **`modules/tools/tool.key.ts` & `tool.copy.ts`:** `toolNameKey`, `isToolSlug`, and `buildToolCopy` (SEO copy generator for seeded tools). Both include direct-run self-checks.
+- **`modules/tools/tool.key.ts` & `tool.copy.ts`:** `toolNameKey`, `isToolSlug`, `APPROVED_COMPONENT_KEYS` / `isApprovedComponentKey` (`['AutoLoanCalculator']`), and `buildToolCopy` (SEO copy generator for seeded tools). Both include direct-run self-checks.
 - **`utils/password.ts`:** `hashPassword` & `verifyPassword` using `argon2.argon2id` (`memoryCost: 65536`, `timeCost: 3`, `parallelism: 1`, 8–128 chars).
 - **`utils/response.ts`:** Standard response envelope `{ success, data?, error?, meta: { timestamp } }`.
 
@@ -106,6 +106,7 @@ Validated at import via Zod (`dotenv.config()`):
 - `npm run admin:create` (`create-admin.ts`): Interactive CLI (or `BOOTSTRAP_ADMIN_NAME`, `BOOTSTRAP_ADMIN_EMAIL`, `BOOTSTRAP_ADMIN_PASSWORD`) to create the initial `super_admin` user.
 - `npm run categories:seed` (`seed-categories.ts`): Upserts 3-level taxonomy from `data/tools-directory-hierarchy.json` using deterministic `seedKey`.
 - `npm run tools:seed` (`seed-tools.ts`): Bulk upserts 4,351 tools from `data/tools-catalog.json` (creates missing sub-pillars if needed; sets `isActive: false`, `indexable: false`, `isFeatured: false`, and generates SEO copy via `buildToolCopy`).
+- `npm run tool:assign` (`assign-tool-component.ts`): Safely assigns an allowlisted `--component` key and `--execution` type (plus optional `--activate`) to an existing tool by `--slug` while preserving all existing SEO and placement fields.
 
 ---
 

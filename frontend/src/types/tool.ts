@@ -19,7 +19,7 @@ export interface ToolMetadata {
   slug: string;
   title: string;
   description: string;
-  category: ToolCategory;
+  category: ToolCategory | (string & {});
   executionType: ToolExecutionType;
   componentKey: string;
   version: string;

@@ -15,14 +15,25 @@ import {
   Play,
   Info,
 } from 'lucide-react';
-import type { ToolDetailData } from '@/lib/sample-data';
+import { getToolComponent } from '@/tools/registry';
+import type { ToolMetadata } from '@/types/tool';
 
 export interface ToolWorkspaceProps {
-  tool: ToolDetailData;
+  tool: ToolMetadata;
   className?: string;
 }
 
 export function ToolWorkspace({ tool, className = '' }: ToolWorkspaceProps) {
+  const RegisteredTool = tool.componentKey ? getToolComponent(tool.componentKey) : null;
+
+  if (RegisteredTool) {
+    return <RegisteredTool metadata={tool} className={className} />;
+  }
+
+  return <ToolWorkspacePreview tool={tool} className={className} />;
+}
+
+function ToolWorkspacePreview({ tool, className = '' }: ToolWorkspaceProps) {
   const [viewState, setViewState] = React.useState<'result' | 'loading' | 'error'>('result');
   const [copied, setCopied] = React.useState(false);
   const [inputValue1, setInputValue1] = React.useState('25');
