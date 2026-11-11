@@ -174,7 +174,7 @@ export class AdminAuthService {
       message:
         'If an active administrator account exists for this email, password reset instructions have been dispatched.',
     };
-
+    console.log(`[AdminAuthService] Forgot password request for email: ${email}, user: ${user}, status: ${user?.status}`);
     if (!user || user.status !== 'active') {
       return genericResponse;
     }
@@ -190,8 +190,14 @@ export class AdminAuthService {
     user.passwordResetExpiresAt = new Date(Date.now() + 15 * 60 * 1000);
     await user.save();
 
-    // Dispatch via email service
-    await emailService.sendPasswordResetEmail(user.email, rawResetToken);
+    const sent = await emailService.sendPasswordResetEmail(user.email, rawResetToken);
+    if (!sent) {
+      throw new AppError(
+        'Password reset email could not be sent. Try again shortly.',
+        503,
+        'EMAIL_DELIVERY_FAILED'
+      );
+    }
 
     return genericResponse;
   }

@@ -2,9 +2,10 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { Mail, CheckCircle2, AlertCircle, ArrowLeft, Loader2 } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { AuthSplit, authSubmitClass } from '@/components/admin/auth/AuthSplit';
 import { forgotPasswordAction } from '@/server/auth/actions';
 
 export default function AdminForgotPasswordPage() {
@@ -52,98 +53,54 @@ export default function AdminForgotPasswordPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-6 bg-gradient-to-b from-background via-white to-background">
-      <div className="w-full max-w-md">
-        {/* Brand Header */}
-        <div className="text-center mb-8">
-          <Link href="/" className="inline-flex flex-col items-center">
-            <img
-              src="/images/logo/horizontal-logo.png"
-              alt="Omega Calculators"
-              className="h-16 w-auto"
-            />
-            <span className="mt-3 text-xs font-semibold tracking-wider text-primary uppercase">
-              Admin Console
-            </span>
-          </Link>
-          <h1 className="mt-6 text-2xl font-extrabold tracking-tight text-accent">
-            Reset Password
-          </h1>
-          <p className="mt-1 text-xs text-muted-foreground">
-            Enter your administrator email to receive single-use recovery instructions.
-          </p>
-        </div>
-
-        {/* Form Card */}
-        <div className="rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-lg">
-          {successMessage && (
-            <div className="mb-6 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-xs text-emerald-800 flex items-start gap-2.5 animate-in fade-in">
-              <CheckCircle2 className="h-5 w-5 shrink-0 mt-0.5 text-emerald-600" />
-              <div className="leading-relaxed">
-                <strong className="font-semibold block mb-0.5">Instructions Dispatched:</strong>
-                {successMessage}
-              </div>
-            </div>
-          )}
-
-          {error && (
-            <div className="mb-6 rounded-lg border border-rose-200 bg-rose-50 p-3.5 text-xs text-rose-800 flex items-start gap-2.5 animate-in fade-in">
-              <AlertCircle className="h-4 w-4 shrink-0 mt-0.5 text-rose-600" />
-              <div className="leading-relaxed">{error}</div>
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-xs font-semibold text-accent mb-1.5">
-                Admin Account Email
-              </label>
-              <div className="relative">
-                <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@megatools.io"
-                  className="pl-9 text-xs"
-                  autoComplete="email"
-                  disabled={isLoading}
-                />
-              </div>
-            </div>
-
-            <Button
-              type="submit"
-              size="default"
-              disabled={isLoading}
-              className="w-full bg-primary text-white hover:bg-[hsl(var(--primary-hover))] text-xs font-semibold h-10 mt-2 inline-flex items-center justify-center gap-2"
-            >
-              {isLoading && <Loader2 className="h-4 w-4 animate-spin" />}
-              <span>{isLoading ? 'Processing Request...' : 'Send Recovery Instructions'}</span>
-            </Button>
-          </form>
-
-          <div className="mt-6 pt-5 border-t border-border text-center">
-            <Link
-              href="/admin/login"
-              className="text-xs text-primary hover:underline font-medium inline-flex items-center gap-1.5"
-            >
-              <ArrowLeft className="h-3.5 w-3.5" />
-              <span>Back to Console Sign In</span>
-            </Link>
+    <AuthSplit
+      panelTitle="Recover access in a single step."
+      panelText="Enter the email on your administrator account and we'll send a one-time reset link."
+      title="Reset your password"
+      description="We'll email recovery instructions if this address belongs to an administrator."
+    >
+      {successMessage && (
+        <div className="mb-5 flex items-start gap-2.5 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-xs text-emerald-800">
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+          <div className="leading-relaxed">
+            <strong className="mb-0.5 block font-semibold">Instructions sent</strong>
+            {successMessage}
           </div>
         </div>
+      )}
 
-        {/* Public Site Link */}
-        <div className="mt-6 text-center">
-          <Link
-            href="/"
-            className="text-xs text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1.5"
-          >
-            <span>← Return to Public Website</span>
-          </Link>
+      {error && (
+        <div className="mb-5 flex items-start gap-2.5 rounded-lg border border-rose-200 bg-rose-50 p-3.5 text-xs text-rose-800">
+          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-rose-600" />
+          <div className="leading-relaxed">{error}</div>
         </div>
-      </div>
-    </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div>
+          <label className="mb-1.5 block text-sm font-medium text-accent">Email</label>
+          <Input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="admin@omegacalculators.com"
+            className="h-11 bg-white text-sm"
+            autoComplete="email"
+            disabled={isLoading}
+          />
+        </div>
+
+        <Button type="submit" disabled={isLoading} className={authSubmitClass}>
+          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {isLoading ? 'Sending...' : 'Send reset link'}
+        </Button>
+
+        <p className="text-center text-sm text-muted-foreground">
+          <Link href="/admin/login" className="font-medium text-primary">
+            Back to sign in
+          </Link>
+        </p>
+      </form>
+    </AuthSplit>
   );
 }
