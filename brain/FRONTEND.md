@@ -22,7 +22,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 | `/tools/[slug]` | `(website)/tools/[slug]/page.tsx` | Server Component using `generateStaticParams()` and `getToolBySlug()` from `sample-data.ts`; renders `ToolWorkspace` UI preview | **Partially Implemented** (mock data + UI preview workspace) |
 | `/categories` | `(website)/categories/page.tsx` | Renders `CategoriesClient` (`'use client'`) using `sample-data.ts` | **Partially Implemented** (mock/sample data only) |
 | `/categories/[slug]` | `(website)/categories/[slug]/page.tsx` | Server Component using `generateStaticParams()` and `sample-data.ts` | **Partially Implemented** (mock/sample data only) |
-| `/about` | `(website)/about/page.tsx` | Static informational page | **Implemented** (static copy) |
+| `/about` | `(website)/about/page.tsx` | Server Component. Static editorial copy with a custom product board, mixed platform layout, and numbered principles. Category and tool totals come from `GET /catalog/categories` when reachable | **Implemented** |
 | `/contact` | `(website)/contact/page.tsx` | Renders `ContactFormClient` (`'use client'`) with client-side validation & preview notice | **Partially Implemented** (no backend submission endpoint) |
 | `/privacy-policy` | `(website)/privacy-policy/page.tsx` | Static legal draft template (marked draft pending legal review) | **Partially Implemented** (draft copy) |
 | `/terms-of-service` | `(website)/terms-of-service/page.tsx` | Static legal draft template (marked draft pending legal review) | **Partially Implemented** (draft copy) |

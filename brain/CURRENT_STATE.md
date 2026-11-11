@@ -21,6 +21,7 @@
 - Admin Media Library (`/admin/media`) — AWS S3 presigned `PUT` upload, `HeadObject` validation, MongoDB `MediaAsset` storage, list/filter/preview/delete.
 - Admin Tool Catalog CRUD (`/admin/tools`, `new`, `[id]/edit`) — full catalog metadata, placement validation, icon selection from media library, SEO fields, and `tools:seed` script (`4,351` tools seeded inactive/non-indexable).
 - Public Catalog API (`/api/v1/catalog/categories`, `/api/v1/catalog/featured`) and homepage `/` Server Component integration.
+- Public About page (`/about`): redesigned editorial layout. Copy is static. Category and tool totals are read from `/catalog/categories` and hidden if that request fails.
 
 ### Partially Implemented / UI Preview Only
 - **Public Directory & Tool Pages (`/tools`, `/tools/[slug]`, `/categories`, `/categories/[slug]`, `Header`, `Footer`, `MobileNavigation`):** Currently backed by static `frontend/src/lib/sample-data.ts` (12 categories, 18 tools), **not** live MongoDB records.
