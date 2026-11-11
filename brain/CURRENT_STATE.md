@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-11** (after implementing Auto Loan Calculator & public tool-by-slug wiring on branch `development`).
+> **Primary Agent Starting Point.** Last verified: **2026-11-11** (after Auto Loan Calculator UI/UX polish and height-aware sticky layout refinement on branch `development`).
 
 ---
 
@@ -23,20 +23,18 @@
 - Public Catalog API: `/api/v1/catalog/categories`, `/api/v1/catalog/featured`, and `/api/v1/catalog/tools/:slug` (includes `relatedTools` from existing MongoDB category/pillar siblings).
 - Homepage `/` Server Component integration linking featured tools and categories.
 - Public About page (`/about`): redesigned editorial layout. Copy is static. Category and tool totals are read from `/catalog/categories` and hidden if that request fails.
-- **Auto Loan Calculator (`/tools/auto-loan-calculator`):** Live client-side calculator (`componentKey: 'AutoLoanCalculator'`, `executionType: 'client'`) wired end-to-end from MongoDB → Express → Next.js Server Component (`generateMetadata` + `/tools/[slug]/page.tsx`) → allowlisted `ToolRegistry` → `AutoLoanCalculator`. Features a two-column desktop layout (`~62%` left article/TOC/related calculators, `~38%` right compact calculator panel; single-column with calculator near top on tablet/mobile), inline unit inputs with keyboard/hover/tap `InfoTooltip` help, fixed-rate & 0% APR math, positive/negative trade-in equity, configurable sales tax basis (`after-trade-in` vs `full-price`) & finance/upfront toggles, configurable display currency, Principal vs. Interest SVG breakdown, Monthly & Yearly amortization schedule (inline toggle + accessible full-width modal + CSV download) with final-payment cent reconciliation, Copy Results, Reset, MongoDB-backed `RelatedCatalogTools` distinguishing `Preview Only` vs non-link `Catalog Only` entries, accessible `TableOfContents` (`scroll-mt-24`), 11 educational content sections (including term comparison & worked example), FAQs, and 15 unit test suites (`calculation.test.ts`).
+- **Auto Loan Calculator (`/tools/auto-loan-calculator`):** Live client-side calculator (`componentKey: 'AutoLoanCalculator'`, `executionType: 'client'`) wired end-to-end from MongoDB → Express → Next.js Server Component (`generateMetadata` + `/tools/[slug]/page.tsx`) → allowlisted `ToolRegistry` → `AutoLoanCalculator`. Features a two-column desktop layout (`~62%` editorial article/TOC/related calculators left, `~38%` height-aware `StickyCalculatorAside` right with bottom-pinned fallback & keyboard focus header clearance; static single-column with calculator near top on `<1024px`), compact `h-11` (`44px` wrapper / `42px` inner input) aligned paired inputs (`Auto Price | Down Payment`, `Loan Term | Interest Rate`, `Trade-in Value | Amount Owed`), collapsible `Sales Tax, Fees & Start Date`, `autoComplete="off"` on numeric inputs, inline currency/unit badges with keyboard/hover/tap `InfoTooltip` help, fixed-rate & 0% APR math, positive/negative trade-in equity, configurable sales tax basis (`after-trade-in` vs `full-price`) & finance/upfront toggles, configurable display currency (`USD ($)`, etc.), mint Monthly Payment hero with symmetrical `2x3` metric cards & collapsible Principal/Interest SVG Chart and Breakdown drawers, Monthly & Yearly amortization schedule (inline toggle + accessible full-width modal + CSV download) with final-payment cent reconciliation, Copy Results, Reset, MongoDB-backed `RelatedCatalogTools` distinguishing `Preview Only` vs non-link `Catalog Only` entries, accessible `TableOfContents` (`scroll-mt-24`), unified single-card editorial article (`11` sections, `1.75` body line-height), FAQs, and 15 unit test suites (`calculation.test.ts`). **Financial calculation accuracy testing is still pending (next phase).**
 
 ### Partially Implemented / UI Preview Only
-- **Public Directory & Tool Pages (`/tools`, `/tools/[slug]`, `/categories`, `/categories/[slug]`, `Header`, `Footer`, `MobileNavigation`):** Currently backed by static `frontend/src/lib/sample-data.ts` (12 categories, 18 tools), **not** live MongoDB records.
-- **Tool Execution Workspace (`ToolWorkspace.tsx` + `src/tools/registry/index.ts`):** Registry infrastructure and `ToolWorkspace` UI preview shell exist, but `frontend/src/tools/` category directories contain only `.gitkeep` (0 live calculator implementations).
-- **Public Contact (`/contact`):** Redesigned page. The form validates name, email, subject, and message in the browser, then states that nothing was delivered. No backend email/ticket endpoint.
 - **Public Directory & Legacy Tool Pages (`/tools`, `/categories`, `/categories/[slug]`, `Header`, `Footer`, `MobileNavigation`, and unregistered `/tools/[slug]` pages):** Currently backed by static `frontend/src/lib/sample-data.ts` (12 categories, 18 sample tools); `/tools/[slug]` resolves active MongoDB tools via `getPublicToolBySlug` first and falls back to `sample-data.ts` for legacy sample slugs.
 - **Other Tool Implementations (`frontend/src/tools/`):** Only `AutoLoanCalculator` is implemented and registered; the remaining category folders (`ai`, `audio`, `converters`, `developer`, `image`, `pdf`, `seo`, `video`) and `Loan Calculator` remain unimplemented.
-- **Public Contact (`/contact`):** Client-side form validation preview only; no backend email/ticket endpoint.
+- **Public Contact (`/contact`):** Redesigned page (`ece3bce`). The form validates name, email, subject (`general inquiry`, `feature request`, `bug report`, `partnership`, `other`), and message in the browser, then explicitly states that the message was not delivered; no backend email/ticket endpoint exists.
 - **Legal Pages (`/privacy-policy`, `/terms-of-service`):** Draft templates pending legal review.
 - **Admin Preview Pages (`/admin`, `/admin/analytics`, `/admin/activity-logs`, `/admin/integrations`, `/admin/pages`, `/admin/seo`, `/admin/settings`, `/admin/users`):** Complete UI rendered from `frontend/src/lib/admin-mock-data.ts` with `PendingNotice` banners; backend endpoints/models do not exist yet.
 - **Admin Profile 2FA Switch (`AdminProfileClient.tsx`):** UI toggle state only; no TOTP backend exists.
 
 ### Pending / Planned
+- **Auto Loan Calculator financial calculation accuracy testing** (dedicated QA phase before marking math formulas sign-off complete).
 - Wiring public `/tools`, `/categories`, `/categories/[slug]`, and header/footer navigation to MongoDB via Express `/api/v1/catalog/*`.
 - Building remaining client-side/server-side tool components under `frontend/src/tools/` (starting with `Loan Calculator`, etc.) and registering them.
 - Backend modules currently containing `.gitkeep` only: `analytics`, `integrations`, `jobs`, `seo`, `uploads`, `users`.
@@ -55,7 +53,7 @@
 
 ## 4. Current Development Focus
 
-- Auto Loan Calculator implemented and live at `/tools/auto-loan-calculator`; next priority is wiring public `/tools` & `/categories` catalog endpoints (`BE-02` / `FE-01`) and implementing subsequent calculators (`TOOL-01`).
+- Auto Loan Calculator UI/UX refinement and height-aware sticky layout are complete; **next step is financial calculation accuracy testing on Auto Loan Calculator**, followed by wiring public `/tools` & `/categories` catalog endpoints (`BE-02` / `FE-01`) and implementing subsequent calculators (`TOOL-01`).
 
 ---
 
@@ -63,10 +61,9 @@
 
 | App / Check | Command | Result |
 | :--- | :--- | :--- |
-| Backend Type-Check & Build | `cd backend && npm run type-check && npm run build` | **Passed** (`tsc --noEmit` & `tsc`, 0 errors) |
-| Backend Helper Self-Checks | `npx tsx src/modules/tools/tool.key.ts`, `media.key.ts`, `tool.copy.ts` | **Passed** |
+| Backend Type-Check & Build | `cd backend && npm run type-check && npm run build` | **Passed** (`tsc --noEmit` & `tsc`, 0 errors; prior task, no backend code modified in UI polish) |
 | Frontend Type-Check | `cd frontend && npm run type-check` | **Passed** (`tsc --noEmit`, 0 errors) |
 | Frontend Lint | `cd frontend && npm run lint` | **Passed** (`next lint`, 0 errors, 11 pre-existing `@next/next/no-img-element` warnings) |
 | Frontend Production Build | Isolated `npx next build` (against running Express `5001`) | **Passed** (46/46 static pages compiled cleanly) |
-| Auto Loan Calculation Tests | `.\backend\node_modules\.bin\tsx.cmd .\frontend\src\tools\calculators\auto-loan\calculation.test.ts` | **Passed** (15 test suites including worked example & term table) |
-| Headless Browser & Responsive Verification | Headless Chrome CDP on `next start` (`1440px` desktop, `768px` tablet, `375px` mobile) | **Passed** (2-column ratios, mobile top placement, live worked example math, validation, tooltips, schedule modal/Escape, TOC anchors, zero 404 main links, zero console exceptions) |
+| Auto Loan Calculation Tests | `.\backend\node_modules\.bin\tsx.cmd .\frontend\src\tools\calculators\auto-loan\calculation.test.ts` | **Passed** (15 test suites; formal financial accuracy QA phase still pending) |
+| Headless Browser & Responsive Verification | Headless Chrome CDP on `next start` (`1440x900`, `1280x800`, `1024x768`, `768x1024`, `375x812`, `320x640`) | **Passed** (6/6 viewports 0 horizontal/header overflow, sticky enabled on `>=1024px` / static on `<1024px`, 0px paired input drift, `h-11` (`42px` inner) inputs, `1.75` article body line-height, above-fold Monthly Payment, bottom footer clearance, keyboard focus header clearance, interactive drawers/modal, zero console/runtime errors) |

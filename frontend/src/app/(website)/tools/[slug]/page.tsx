@@ -27,6 +27,7 @@ import {
 } from '@/lib/sample-data';
 import { getPublicToolBySlug } from '@/server/catalog/tools';
 import { AutoLoanGuideArticle } from '@/tools/calculators/auto-loan/AutoLoanGuideArticle';
+import { StickyCalculatorAside } from '@/tools/calculators/auto-loan/StickyCalculatorAside';
 import { TableOfContents } from '@/tools/calculators/auto-loan/TableOfContents';
 import { AUTO_LOAN_TOC_ITEMS } from '@/tools/calculators/auto-loan/content';
 import type { ToolMetadata } from '@/types/tool';
@@ -126,12 +127,12 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
 
   if (isAutoLoan) {
     return (
-      <div className="py-6 sm:py-10">
+      <div className="py-6 sm:py-9">
         <Container>
-          {/* Responsive 2-Column Workspace: Left (~62%) Title/TOC/Related/Article, Right (~38%) Calculator */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.62fr)_minmax(360px,1fr)] lg:items-start">
-            {/* Slot 1: Header (Breadcrumbs, Category, H1 Title, Short Intro) */}
-            <header className="order-1 space-y-4 lg:col-start-1 lg:row-start-1">
+          {/* Responsive 2-Column Workspace: Left (~62%) Editorial/TOC/Related, Right (~38%) Height-Aware Sticky Calculator */}
+          <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,1.62fr)_minmax(360px,1fr)] lg:items-start lg:gap-8">
+            {/* Slot 1: Breadcrumbs + Title + Intro Header */}
+            <header className="order-1 min-w-0 space-y-4 lg:col-start-1 lg:row-start-1">
               <Breadcrumbs
                 items={[
                   { label: 'All Tools', href: '/tools' },
@@ -142,21 +143,21 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
 
               <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
                 <div className="flex flex-wrap items-center gap-2">
-                  <Badge variant="secondary" className="text-xs font-semibold">
+                  <Badge variant="secondary" className="text-xs font-medium">
                     {categoryName}
                   </Badge>
                   {pillarName && (
-                    <Badge variant="muted" className="text-xs font-medium">
+                    <Badge variant="muted" className="text-xs font-normal">
                       {pillarName}
                     </Badge>
                   )}
-                  <span className="inline-flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground">
+                  <span className="inline-flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-0.5 text-xs font-normal text-muted-foreground">
                     <ShieldCheck className="h-3 w-3 text-emerald-600" aria-hidden="true" />
                     {executionLabel(toolMetadata.executionType)}
                   </span>
                 </div>
 
-                <div className="mt-3 flex items-start gap-3.5">
+                <div className="mt-3.5 flex items-start gap-3.5">
                   {iconUrl ? (
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -169,10 +170,10 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
                   )}
 
                   <div className="min-w-0">
-                    <h1 className="text-2xl font-black tracking-tight text-accent sm:text-3xl lg:text-[2rem]">
+                    <h1 className="text-[26px] font-semibold leading-[1.2] tracking-tight text-accent sm:text-[30px] lg:text-[32px]">
                       {toolMetadata.title}
                     </h1>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    <p className="mt-2 text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.72]">
                       {toolMetadata.description} Estimate monthly car payments, net trade-in equity,
                       sales tax, fees, total interest, and payoff date directly in your browser.
                     </p>
@@ -181,16 +182,16 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
               </div>
             </header>
 
-            {/* Slot 2: Calculator Panel (Top after Header on Mobile/Tablet; Right ~38% Column on Desktop, Not Sticky) */}
-            <aside
-              aria-label="Interactive auto loan calculator"
-              className="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2"
+            {/* Slot 2: Height-Aware Sticky Calculator Panel (Near top on Mobile/Tablet; Right ~38% on Desktop) */}
+            <StickyCalculatorAside
+              ariaLabel="Interactive auto loan calculator"
+              className="order-2 min-w-0 lg:col-start-2 lg:row-start-1 lg:row-span-2"
             >
               <ToolWorkspace tool={toolMetadata} />
-            </aside>
+            </StickyCalculatorAside>
 
-            {/* Slot 3: Table of Contents, Related Calculators & 11 Educational Content Sections */}
-            <div className="order-3 space-y-6 lg:col-start-1 lg:row-start-2">
+            {/* Slot 3: Table of Contents, Related Calculators & 11-Section Editorial Guide */}
+            <div className="order-3 min-w-0 space-y-6 lg:col-start-1 lg:row-start-2">
               <TableOfContents items={AUTO_LOAN_TOC_ITEMS} />
 
               {dbTool && dbTool.relatedTools.length > 0 && (

@@ -32,6 +32,11 @@ Verified in `StatusBadge.tsx`, `PendingNotice.tsx`, forms, and alerts:
 
 - **Fonts:** Uses Tailwind defaults (`font-sans`, `font-mono`) with `antialiased` and `font-feature-settings: 'rlig' 1, 'calt' 1` on `body`. No custom `next/font` loader is currently configured.
 - **Public Hero / Section Headings:** `text-4xl font-semibold tracking-tight text-accent sm:text-5xl` (home), `text-3xl font-extrabold tracking-tight text-accent sm:text-4xl` (directories), `text-xl font-semibold` / `text-2xl font-bold`.
+- **Interactive Calculator & Editorial Pages (Refined on Auto Loan Calculator):**
+  - Headings: `font-semibold` (`600`) for `h1` (`26–32px`), article `h2` (`21–24px`), `h3` (`17px`), and FAQ questions (`15–16px`), avoiding excessive bold/extrabold clutter.
+  - Form labels: `text-[13px] font-medium` (`500`), helper text `text-xs font-normal` (`400`), calculator inputs/selects standardized at `h-11` (`44px` outer control / `42px` inner input) with centered prefix/suffix units and `autoComplete="off"`.
+  - Article body copy: `text-[15px] font-normal leading-[1.72] sm:text-base sm:leading-[1.75]` (`16px` / `1.75` line-height on unified white surface with subtle hairline `divide-y` dividers).
+  - Primary result figure: crisp teal/dark-accent highlight (`font-bold` hero payment + `font-semibold` secondary `tabular-nums` tiles).
 - **Admin Headings & Labels:**
   - Page titles via `AdminPageHeader`
   - Table head cells (`DataTable.tsx`): `text-[11px] font-bold uppercase tracking-wider text-muted-foreground`
@@ -46,6 +51,7 @@ Verified in `StatusBadge.tsx`, `PendingNotice.tsx`, forms, and alerts:
 - **Base Radius:** `--radius: 0.5rem` (`rounded-lg`, `rounded-md`, `rounded-sm`). Cards typically use `rounded-xl` or `rounded-2xl`; pills use `rounded-full`; auth split container uses `rounded-[28px]`.
 - **Public Container (`Container.tsx`):** `mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8` (note `tailwind.config.ts` also sets `container.screens['2xl'] = '1400px'`).
 - **Public Header:** Sticky `h-16` (`top-0 z-40`), white translucent backdrop (`bg-white/95 backdrop-blur-md`).
+- **Height-Aware Sticky Calculator Sidebar (`StickyCalculatorAside`):** Enabled on desktop (`>= 1024px` and viewport height `>= 560px`) with top clearance (`84px`) when the calculator fits, or bottom-pinned negative sticky offset (`vh - height - 20px`) when taller so results remain visible without inner scrollbars and stop cleanly above `<footer>`; includes focus-capture offset/scroll adjustment so keyboard focus never hides under `<header>`, and falls back to static document flow on `< 1024px`.
 - **Admin Shell (`AdminDashboardShell.tsx`):**
   - Desktop sidebar (`AdminSidebar`): Sticky full-height `bg-brand-darkAccent text-white`, collapsible between `w-64` (256px) and `w-[72px]`. Uses `.admin-scroll` custom thin scrollbar (`globals.css`).
   - Admin top header (`AdminHeader`): Sticky `h-16` `bg-brand-darkAccent text-white`, border `border-white/10`.

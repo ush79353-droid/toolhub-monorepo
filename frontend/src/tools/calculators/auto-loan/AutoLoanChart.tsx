@@ -18,7 +18,7 @@ export function AutoLoanChart({
   currency,
 }: AutoLoanChartProps) {
   const total = principal + totalInterest;
-  const radius = 44;
+  const radius = 40;
   const circumference = 2 * Math.PI * radius;
   const principalLength = total > 0 ? (principal / total) * circumference : circumference;
   const interestLength = Math.max(0, circumference - principalLength);
@@ -26,59 +26,55 @@ export function AutoLoanChart({
   return (
     <div className="rounded-xl border border-border bg-white p-4">
       <div className="flex items-center justify-between gap-2">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-accent">
-          Principal vs. Total Interest
-        </h4>
-        <span className="text-[11px] font-medium text-muted-foreground tabular-nums">
+        <h3 className="text-sm font-medium text-accent">Principal vs. Total Interest</h3>
+        <span className="text-xs font-normal text-muted-foreground tabular-nums">
           Total {formatCurrencyValue(total, currency)}
         </span>
       </div>
 
       <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-center">
-        <div className="relative mx-auto flex h-28 w-28 shrink-0 items-center justify-center sm:mx-0">
+        <div className="relative mx-auto flex h-24 w-24 shrink-0 items-center justify-center sm:mx-0">
           <svg
-            viewBox="0 0 120 120"
-            className="h-28 w-28 -rotate-90"
+            viewBox="0 0 110 110"
+            className="h-24 w-24 -rotate-90"
             role="img"
             aria-label={`Loan composition: ${principalRatioPercent}% principal and ${interestRatioPercent}% interest`}
           >
             <title>Principal vs. Interest Breakdown</title>
             <circle
-              cx="60"
-              cy="60"
+              cx="55"
+              cy="55"
               r={radius}
               fill="none"
               stroke="#D9F0EF"
-              strokeWidth="15"
+              strokeWidth="13"
             />
             {interestLength > 0 && (
               <circle
-                cx="60"
-                cy="60"
+                cx="55"
+                cy="55"
                 r={radius}
                 fill="none"
                 stroke="#163C43"
-                strokeWidth="15"
+                strokeWidth="13"
                 strokeDasharray={`${circumference} ${circumference}`}
                 strokeDashoffset={0}
               />
             )}
             <circle
-              cx="60"
-              cy="60"
+              cx="55"
+              cy="55"
               r={radius}
               fill="none"
               stroke="#087E8B"
-              strokeWidth="15"
+              strokeWidth="13"
               strokeDasharray={`${principalLength} ${circumference}`}
               strokeDashoffset={0}
             />
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-            <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-              Principal
-            </span>
-            <span className="text-sm font-extrabold text-accent tabular-nums">
+            <span className="text-[10px] font-medium text-muted-foreground">Principal</span>
+            <span className="text-xs font-semibold text-accent tabular-nums">
               {principalRatioPercent.toFixed(1)}%
             </span>
           </div>
@@ -86,7 +82,7 @@ export function AutoLoanChart({
 
         <div className="flex-1 space-y-2.5">
           <div
-            className="flex h-2.5 w-full overflow-hidden rounded-full bg-secondary"
+            className="flex h-2 w-full overflow-hidden rounded-full bg-secondary"
             aria-hidden="true"
           >
             <div
@@ -100,21 +96,21 @@ export function AutoLoanChart({
           </div>
 
           <dl className="space-y-1.5 text-xs">
-            <div className="flex items-center justify-between rounded-lg border border-border bg-muted/35 px-2.5 py-1.5">
-              <dt className="flex items-center gap-1.5 text-muted-foreground">
+            <div className="flex items-center justify-between rounded-lg border border-border bg-muted/35 px-3 py-1.5">
+              <dt className="flex items-center gap-2 font-normal text-muted-foreground">
                 <span className="h-2.5 w-2.5 rounded-xs bg-primary" aria-hidden="true" />
                 <span>Principal ({principalRatioPercent.toFixed(1)}%)</span>
               </dt>
-              <dd className="font-bold text-accent tabular-nums">
+              <dd className="font-semibold text-accent tabular-nums">
                 {formatCurrencyValue(principal, currency)}
               </dd>
             </div>
-            <div className="flex items-center justify-between rounded-lg border border-border bg-muted/35 px-2.5 py-1.5">
-              <dt className="flex items-center gap-1.5 text-muted-foreground">
+            <div className="flex items-center justify-between rounded-lg border border-border bg-muted/35 px-3 py-1.5">
+              <dt className="flex items-center gap-2 font-normal text-muted-foreground">
                 <span className="h-2.5 w-2.5 rounded-xs bg-accent" aria-hidden="true" />
                 <span>Interest ({interestRatioPercent.toFixed(1)}%)</span>
               </dt>
-              <dd className="font-bold text-accent tabular-nums">
+              <dd className="font-semibold text-accent tabular-nums">
                 {formatCurrencyValue(totalInterest, currency)}
               </dd>
             </div>

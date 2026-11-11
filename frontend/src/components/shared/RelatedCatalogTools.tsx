@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { ChevronRight, Layers } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { getToolBySlug } from '@/lib/sample-data';
 import type { PublicRelatedTool } from '@/server/catalog/tools';
@@ -25,26 +25,17 @@ export function RelatedCatalogTools({
       aria-labelledby="related-calculators-heading"
       className="scroll-mt-24 rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6"
     >
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-secondary text-primary">
-            <Layers className="h-4 w-4" aria-hidden="true" />
-          </div>
-          <div>
-            <h2
-              id="related-calculators-heading"
-              className="text-sm font-bold uppercase tracking-wider text-accent"
-            >
-              Related Calculators
-            </h2>
-            <p className="text-[11px] text-muted-foreground">
-              From {groupLabel} • Live &amp; preview links open directly; catalog-only entries are
-              planned
-            </p>
-          </div>
+      <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+        <div>
+          <h2 id="related-calculators-heading" className="text-lg font-semibold text-accent">
+            Related Calculators
+          </h2>
+          <p className="mt-0.5 text-xs font-normal text-muted-foreground">
+            From {groupLabel} • Interactive links open directly; catalog-only tools are planned
+          </p>
         </div>
 
-        <Link href={browseHref} className="text-xs font-semibold text-primary hover:underline">
+        <Link href={browseHref} className="text-xs font-medium text-primary hover:underline">
           Browse directory →
         </Link>
       </div>
@@ -55,46 +46,46 @@ export function RelatedCatalogTools({
           const isPreviewRoute = !isImplemented && (tool.isActive || Boolean(getToolBySlug(tool.slug)));
 
           const statusBadge = isImplemented ? (
-            <Badge variant="secondary" className="text-[10px] font-semibold">
+            <Badge variant="secondary" className="shrink-0 text-[11px] font-medium">
               Live Calculator
             </Badge>
           ) : isPreviewRoute ? (
-            <Badge className="border-amber-200 bg-amber-50 text-[10px] font-semibold text-amber-800 hover:bg-amber-50">
+            <Badge className="shrink-0 border-amber-200 bg-amber-50 text-[11px] font-medium text-amber-800 hover:bg-amber-50">
               Preview Only
             </Badge>
           ) : (
-            <Badge variant="muted" className="text-[10px] font-semibold">
+            <Badge variant="muted" className="shrink-0 text-[11px] font-medium">
               Catalog Only
             </Badge>
           );
 
           const body = (
-            <div className="flex h-full flex-col justify-between gap-2">
+            <div className="flex h-full flex-col justify-between gap-3">
               <div>
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-xs font-bold leading-snug text-accent group-hover:text-primary sm:text-sm">
+                <div className="flex items-start justify-between gap-2.5">
+                  <h3 className="text-sm font-medium leading-snug text-accent group-hover:text-primary">
                     {tool.name}
                   </h3>
                   {statusBadge}
                 </div>
                 {tool.shortDescription && (
-                  <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-muted-foreground">
+                  <p className="mt-1.5 line-clamp-2 text-xs font-normal leading-relaxed text-muted-foreground">
                     {tool.shortDescription}
                   </p>
                 )}
               </div>
 
-              <div className="flex items-center justify-between pt-1 text-[11px]">
-                <span className="text-muted-foreground">
+              <div className="flex items-center justify-between border-t border-border/60 pt-2.5 text-xs">
+                <span className="font-normal text-muted-foreground">
                   {tool.pillarName || tool.categoryName}
                 </span>
                 {isImplemented || isPreviewRoute ? (
-                  <span className="inline-flex items-center font-semibold text-primary">
+                  <span className="inline-flex items-center font-medium text-primary">
                     Open
                     <ChevronRight className="ml-0.5 h-3.5 w-3.5" aria-hidden="true" />
                   </span>
                 ) : (
-                  <span className="font-medium text-muted-foreground">In development</span>
+                  <span className="font-normal text-muted-foreground">In development</span>
                 )}
               </div>
             </div>
@@ -105,7 +96,7 @@ export function RelatedCatalogTools({
               <Link
                 key={tool.id}
                 href={`/tools/${tool.slug}`}
-                className="group block rounded-xl border border-border bg-white p-3.5 transition-colors hover:border-primary/50 hover:bg-muted/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="group block h-full rounded-xl border border-border bg-white p-4 transition-colors hover:border-primary/45 hover:bg-brand-softTeal/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 {body}
               </Link>
@@ -115,7 +106,7 @@ export function RelatedCatalogTools({
           return (
             <div
               key={tool.id}
-              className="rounded-xl border border-dashed border-border bg-background/60 p-3.5"
+              className="h-full rounded-xl border border-dashed border-border bg-background/60 p-4"
             >
               {body}
             </div>
@@ -125,4 +116,3 @@ export function RelatedCatalogTools({
     </section>
   );
 }
-

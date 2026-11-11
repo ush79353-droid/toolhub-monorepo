@@ -17,14 +17,14 @@ export function Footer() {
               <img
                 src="/images/logo/horizontal-logo.png"
                 alt="Omega Calculators"
-                className="h-14 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
               Your comprehensive platform for fast, free, in-browser online tools. From financial
               calculators and unit converters to developer formatters and PDF utilities.
             </p>
-            <div className="mt-5 inline-flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-xs font-semibold text-accent">
+            <div className="mt-5 inline-flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-accent">
               <Shield className="h-3.5 w-3.5 text-primary" />
               <span>Client-Side In-Browser Execution</span>
             </div>
@@ -32,7 +32,9 @@ export function Footer() {
 
           {/* Popular Categories */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-accent">Categories</h4>
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-accent">
+              Categories
+            </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
               {CATEGORIES.slice(0, 6).map((cat) => (
                 <li key={cat.id}>
@@ -47,7 +49,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/categories"
-                  className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
+                  className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
                 >
                   <span>All Categories</span>
                   <ArrowRight className="h-3 w-3" />
@@ -58,7 +60,9 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-accent">Quick Tools</h4>
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-accent">
+              Quick Tools
+            </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link
@@ -113,7 +117,7 @@ export function Footer() {
 
           {/* Company & Legal */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-accent">Platform</h4>
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-accent">Platform</h2>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link

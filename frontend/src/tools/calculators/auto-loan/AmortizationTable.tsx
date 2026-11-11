@@ -28,14 +28,14 @@ function ScheduleViewControls({
       <div
         role="tablist"
         aria-label="Amortization schedule view"
-        className="inline-flex rounded-lg border border-border bg-background p-0.5"
+        className="inline-flex h-8 items-center rounded-lg border border-border bg-background p-0.5"
       >
         <button
           type="button"
           role="tab"
           aria-selected={view === 'monthly'}
           onClick={() => onViewChange('monthly')}
-          className={`rounded-md px-2.5 py-1 text-xs font-semibold transition-colors ${
+          className={`h-full rounded-md px-2.5 text-xs font-medium transition-colors ${
             view === 'monthly'
               ? 'bg-primary text-white shadow-xs'
               : 'text-muted-foreground hover:text-foreground'
@@ -48,7 +48,7 @@ function ScheduleViewControls({
           role="tab"
           aria-selected={view === 'yearly'}
           onClick={() => onViewChange('yearly')}
-          className={`rounded-md px-2.5 py-1 text-xs font-semibold transition-colors ${
+          className={`h-full rounded-md px-2.5 text-xs font-medium transition-colors ${
             view === 'yearly'
               ? 'bg-primary text-white shadow-xs'
               : 'text-muted-foreground hover:text-foreground'
@@ -58,7 +58,13 @@ function ScheduleViewControls({
         </button>
       </div>
 
-      <Button type="button" variant="outline" size="sm" onClick={onDownloadCsv} className="h-8 text-xs">
+      <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        onClick={onDownloadCsv}
+        className="h-8 text-xs font-medium"
+      >
         <Download className="mr-1.5 h-3.5 w-3.5" aria-hidden="true" />
         Download CSV
       </Button>
@@ -77,8 +83,8 @@ function ScheduleTableContent({
 
   if (view === 'monthly') {
     return (
-      <table className="w-full min-w-[640px] text-left text-xs">
-        <thead className="sticky top-0 z-10 border-b border-border bg-muted text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+      <table className="w-full min-w-[620px] text-left text-xs">
+        <thead className="sticky top-0 z-10 border-b border-border bg-muted text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
           <tr>
             <th scope="col" className="px-3 py-2.5">
               #
@@ -109,7 +115,7 @@ function ScheduleTableContent({
               <td className="px-3 py-2 font-mono text-muted-foreground">{row.paymentNumber}</td>
               <td className="px-3 py-2 whitespace-nowrap">{formatDisplayDate(row.paymentDate)}</td>
               <td className="px-3 py-2 text-right tabular-nums">{fmt(row.beginningBalance)}</td>
-              <td className="px-3 py-2 text-right font-semibold text-accent tabular-nums">
+              <td className="px-3 py-2 text-right font-medium text-accent tabular-nums">
                 {fmt(row.monthlyPayment)}
               </td>
               <td className="px-3 py-2 text-right text-primary tabular-nums">
@@ -120,7 +126,7 @@ function ScheduleTableContent({
             </tr>
           ))}
         </tbody>
-        <tfoot className="sticky bottom-0 border-t-2 border-border bg-brand-softTeal text-xs font-bold text-accent">
+        <tfoot className="sticky bottom-0 border-t-2 border-border bg-brand-softTeal text-xs font-semibold text-accent">
           <tr>
             <td className="px-3 py-2.5">Total</td>
             <td className="px-3 py-2.5">{result.monthlySchedule.length} mo</td>
@@ -142,8 +148,8 @@ function ScheduleTableContent({
   }
 
   return (
-    <table className="w-full min-w-[600px] text-left text-xs">
-      <thead className="sticky top-0 z-10 border-b border-border bg-muted text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+    <table className="w-full min-w-[580px] text-left text-xs">
+      <thead className="sticky top-0 z-10 border-b border-border bg-muted text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
         <tr>
           <th scope="col" className="px-3 py-2.5">
             Year
@@ -171,10 +177,10 @@ function ScheduleTableContent({
       <tbody className="divide-y divide-border text-foreground">
         {result.yearlySchedule.map((row) => (
           <tr key={row.year} className="hover:bg-muted/35">
-            <td className="px-3 py-2 font-bold text-accent">{row.year}</td>
+            <td className="px-3 py-2 font-medium text-accent">{row.year}</td>
             <td className="px-3 py-2 text-right tabular-nums">{row.paymentsCount}</td>
             <td className="px-3 py-2 text-right tabular-nums">{fmt(row.beginningBalance)}</td>
-            <td className="px-3 py-2 text-right font-semibold text-accent tabular-nums">
+            <td className="px-3 py-2 text-right font-medium text-accent tabular-nums">
               {fmt(row.totalPayment)}
             </td>
             <td className="px-3 py-2 text-right text-primary tabular-nums">
@@ -185,7 +191,7 @@ function ScheduleTableContent({
           </tr>
         ))}
       </tbody>
-      <tfoot className="sticky bottom-0 border-t-2 border-border bg-brand-softTeal text-xs font-bold text-accent">
+      <tfoot className="sticky bottom-0 border-t-2 border-border bg-brand-softTeal text-xs font-semibold text-accent">
         <tr>
           <td className="px-3 py-2.5">Total</td>
           <td className="px-3 py-2.5 text-right tabular-nums">{result.monthlySchedule.length}</td>
@@ -239,10 +245,8 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
   if (result.monthlySchedule.length === 0) {
     return (
       <div className="rounded-xl border border-border bg-white p-4 text-center">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-accent">
-          Amortization Schedule
-        </h4>
-        <p className="mt-1 text-xs text-muted-foreground">
+        <h3 className="text-sm font-medium text-accent">Amortization Schedule</h3>
+        <p className="mt-1 text-xs font-normal text-muted-foreground">
           No schedule is generated when Amount Financed is{' '}
           {formatCurrencyValue(result.amountFinanced, result.currency)}.
         </p>
@@ -252,18 +256,15 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
 
   return (
     <div id="amortization-schedule" className="scroll-mt-24 rounded-xl border border-border bg-white">
-      {/* Compact Access Bar inside Right Column */}
       <div className="p-4">
         <div className="flex items-start justify-between gap-2">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
               <CalendarRange className="h-4 w-4" aria-hidden="true" />
             </div>
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-accent">
-                Amortization Schedule
-              </h4>
-              <p className="text-[11px] text-muted-foreground">
+              <h3 className="text-sm font-medium text-accent">Amortization Schedule</h3>
+              <p className="text-xs font-normal text-muted-foreground">
                 {result.monthlySchedule.length} monthly installments ({result.yearlySchedule.length}{' '}
                 calendar year{result.yearlySchedule.length === 1 ? '' : 's'})
               </p>
@@ -278,7 +279,7 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
             size="sm"
             aria-expanded={inlineExpanded}
             onClick={() => setInlineExpanded((prev) => !prev)}
-            className="h-8 flex-1 text-xs"
+            className="h-9 flex-1 text-xs font-medium"
           >
             {inlineExpanded ? (
               <>
@@ -298,7 +299,7 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
             variant="outline"
             size="sm"
             onClick={() => setModalOpen(true)}
-            className="h-8 text-xs"
+            className="h-9 text-xs font-medium"
           >
             <Maximize2 className="mr-1.5 h-3.5 w-3.5" aria-hidden="true" />
             Full View
@@ -309,7 +310,7 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
             variant="outline"
             size="sm"
             onClick={handleDownloadCsv}
-            className="h-8 text-xs"
+            className="h-9 text-xs font-medium"
           >
             <Download className="mr-1.5 h-3.5 w-3.5" aria-hidden="true" />
             CSV
@@ -317,7 +318,6 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
         </div>
       </div>
 
-      {/* Expandable Inline Preview */}
       {inlineExpanded && (
         <div className="border-t border-border">
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border bg-background/60 px-4 py-2.5">
@@ -327,13 +327,12 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
               onDownloadCsv={handleDownloadCsv}
             />
           </div>
-          <div className="max-h-[340px] w-full overflow-auto">
+          <div className="max-h-[320px] w-full overflow-auto">
             <ScheduleTableContent result={result} view={view} />
           </div>
         </div>
       )}
 
-      {/* Accessible Full-Width Schedule Dialog */}
       {modalOpen && (
         <div
           role="dialog"
@@ -347,10 +346,10 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
           <div className="flex max-h-[88vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-xl">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background/70 px-5 py-4">
               <div>
-                <h3 id={dialogTitleId} className="text-base font-bold text-accent">
+                <h3 id={dialogTitleId} className="text-base font-semibold text-accent">
                   Auto Loan Amortization Schedule
                 </h3>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs font-normal text-muted-foreground">
                   {result.monthlySchedule.length} monthly installments across{' '}
                   {result.yearlySchedule.length} calendar years
                 </p>
