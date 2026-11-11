@@ -12,6 +12,7 @@
     "admin:create": "tsx src/scripts/create-admin.ts",
     "categories:seed": "tsx src/scripts/seed-categories.ts",
     "tools:seed": "tsx src/scripts/seed-tools.ts",
+    "tool:assign": "tsx src/scripts/assign-tool-component.ts",
     "format": "prettier --write \"src/**/*.{ts,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,json,md}\""
   },

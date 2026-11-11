@@ -1,4 +1,5 @@
 import mongoose, { Schema, type Document, type Model, type Types } from 'mongoose';
+import type { ToolExecutionType } from '../../types/tool';
 
 export interface ITool extends Document {
   name: string;
@@ -9,6 +10,8 @@ export interface ITool extends Document {
   subPillar: Types.ObjectId | null;
   iconMedia: Types.ObjectId | null;
   iconUrl: string;
+  executionType: ToolExecutionType;
+  componentKey: string;
   shortDescription: string;
   metaTitle: string;
   metaDescription: string;
@@ -33,6 +36,12 @@ const toolSchema = new Schema<ITool>(
     subPillar: { type: Schema.Types.ObjectId, ref: 'Category', default: null },
     iconMedia: { type: Schema.Types.ObjectId, ref: 'MediaAsset', default: null },
     iconUrl: { type: String, default: '' },
+    executionType: {
+      type: String,
+      enum: ['client', 'server', 'third-party'],
+      default: 'client',
+    },
+    componentKey: { type: String, trim: true, maxlength: 100, default: '' },
     shortDescription: { type: String, default: '', maxlength: 500 },
     metaTitle: { type: String, default: '', maxlength: 70 },
     metaDescription: { type: String, default: '', maxlength: 160 },

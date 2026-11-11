@@ -11,6 +11,8 @@ import { FormSection } from './FormSection';
 import { ArrowLeft, ImageIcon, Loader2, Save, X } from 'lucide-react';
 import { listMediaAction, type MediaAsset } from '@/server/media/actions';
 import { saveToolAction, type PlacementNode, type ToolRecord } from '@/server/tools/actions';
+import { APPROVED_COMPONENT_KEYS } from '@/tools/registry/keys';
+import type { ToolExecutionType } from '@/types/tool';
 
 function slugify(value: string): string {
   return value
@@ -36,6 +38,10 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
   const [subPillarId, setSubPillarId] = React.useState(tool?.subPillar?.id ?? '');
   const [iconMediaId, setIconMediaId] = React.useState(tool?.iconMediaId ?? '');
   const [iconUrl, setIconUrl] = React.useState(tool?.iconUrl ?? '');
+  const [executionType, setExecutionType] = React.useState<ToolExecutionType>(
+    tool?.executionType ?? 'client'
+  );
+  const [componentKey, setComponentKey] = React.useState(tool?.componentKey ?? '');
   const [shortDescription, setShortDescription] = React.useState(tool?.shortDescription ?? '');
   const [metaTitle, setMetaTitle] = React.useState(tool?.metaTitle ?? '');
   const [metaDescription, setMetaDescription] = React.useState(tool?.metaDescription ?? '');
@@ -97,6 +103,8 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
       pillarId,
       subPillarId: subPillarId || null,
       iconMediaId: iconMediaId || null,
+      executionType,
+      componentKey,
       shortDescription: shortDescription.trim(),
       metaTitle: metaTitle.trim(),
       metaDescription: metaDescription.trim(),
@@ -214,6 +222,36 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
               <option value="">None</option>
               {subPillars.map((item) => (
                 <option key={item.id} value={item.id}>{item.name}</option>
+              ))}
+            </Select>
+          </div>
+        </div>
+      </FormSection>
+
+      <FormSection className="w-full" title="Implementation" description="Map this catalog entry to an allowlisted frontend tool component.">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">Execution type</label>
+            <Select
+              value={executionType}
+              onChange={(event) => setExecutionType(event.target.value as ToolExecutionType)}
+            >
+              <option value="client">Client-side (In-browser)</option>
+              <option value="server">Server pipeline</option>
+              <option value="third-party">Third-party API</option>
+            </Select>
+          </div>
+          <div>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">Approved component key</label>
+            <Select
+              value={componentKey}
+              onChange={(event) => setComponentKey(event.target.value)}
+            >
+              <option value="">Not assigned yet</option>
+              {APPROVED_COMPONENT_KEYS.map((key) => (
+                <option key={key} value={key}>
+                  {key}
+                </option>
               ))}
             </Select>
           </div>
