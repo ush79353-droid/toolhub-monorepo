@@ -21,11 +21,15 @@ import {
   ChevronLeft,
   ChevronRight,
   Shield,
+  Loader2,
 } from 'lucide-react';
+import { logoutAdminAction } from '@/server/auth/actions';
+import type { AdminUser } from '@/types';
 
 interface AdminSidebarProps {
   isCollapsed: boolean;
   onToggleCollapse: () => void;
+  adminUser?: AdminUser | null;
 }
 
 interface NavItem {
@@ -49,8 +53,9 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Settings', href: '/admin/settings', icon: Settings },
 ];
 
-export function AdminSidebar({ isCollapsed, onToggleCollapse }: AdminSidebarProps) {
+export function AdminSidebar({ isCollapsed, onToggleCollapse, adminUser }: AdminSidebarProps) {
   const pathname = usePathname();
+  const [isLoggingOut, setIsLoggingOut] = React.useState(false);
 
   const isRouteActive = (href: string) => {
     if (href === '/admin') {
@@ -58,6 +63,23 @@ export function AdminSidebar({ isCollapsed, onToggleCollapse }: AdminSidebarProp
     }
     return pathname.startsWith(href);
   };
+
+  const handleSignOut = async () => {
+    setIsLoggingOut(true);
+    await logoutAdminAction();
+  };
+
+  const initials = adminUser?.name
+    ? adminUser.name
+        .split(' ')
+        .map((n) => n[0])
+        .join('')
+        .toUpperCase()
+        .slice(0, 2)
+    : 'BA';
+
+  const displayName = adminUser?.name || 'Administrator';
+  const roleName = adminUser?.role === 'super_admin' ? 'Super Admin' : 'Admin';
 
   return (
     <aside
@@ -86,7 +108,7 @@ export function AdminSidebar({ isCollapsed, onToggleCollapse }: AdminSidebarProp
         <button
           type="button"
           onClick={onToggleCollapse}
-          className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+          className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors cursor-pointer"
           title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         >
@@ -164,17 +186,25 @@ export function AdminSidebar({ isCollapsed, onToggleCollapse }: AdminSidebarProp
           {!isCollapsed && <span className="truncate">View Website</span>}
         </Link>
 
-        <Link
-          href="/admin/login"
+        <button
+          type="button"
+          onClick={handleSignOut}
+          disabled={isLoggingOut}
           title={isCollapsed ? 'Sign Out' : undefined}
           className={cn(
-            'flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-rose-600 hover:bg-rose-50 hover:text-rose-700 transition-colors',
+            'w-full flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-rose-600 hover:bg-rose-50 hover:text-rose-700 transition-colors cursor-pointer',
             isCollapsed && 'justify-center px-2'
           )}
         >
-          <LogOut className="h-4 w-4 shrink-0" />
-          {!isCollapsed && <span className="truncate">Sign Out</span>}
-        </Link>
+          {isLoggingOut ? (
+            <Loader2 className="h-4 w-4 shrink-0 animate-spin" />
+          ) : (
+            <LogOut className="h-4 w-4 shrink-0" />
+          )}
+          {!isCollapsed && (
+            <span className="truncate">{isLoggingOut ? 'Signing out...' : 'Sign Out'}</span>
+          )}
+        </button>
 
         {/* Profile Card */}
         <Link
@@ -183,17 +213,17 @@ export function AdminSidebar({ isCollapsed, onToggleCollapse }: AdminSidebarProp
             'mt-2 flex items-center gap-3 rounded-lg border border-border bg-background p-2 hover:border-primary/40 transition-colors',
             isCollapsed && 'justify-center p-1.5'
           )}
-          title={isCollapsed ? 'Bilal Ahmad (Super Admin)' : undefined}
+          title={isCollapsed ? `${displayName} (${roleName})` : undefined}
         >
           <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-            BA
+            {initials}
           </div>
           {!isCollapsed && (
             <div className="flex-1 truncate">
               <div className="truncate text-xs font-semibold text-accent leading-none">
-                Bilal Ahmad
+                {displayName}
               </div>
-              <div className="text-[10px] text-muted-foreground truncate mt-0.5">Super Admin</div>
+              <div className="text-[10px] text-muted-foreground truncate mt-0.5">{roleName}</div>
             </div>
           )}
         </Link>

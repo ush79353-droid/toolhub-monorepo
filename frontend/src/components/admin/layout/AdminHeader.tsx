@@ -2,19 +2,49 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { Menu, Search, Bell, Globe, User, LogOut, Settings as SettingsIcon } from 'lucide-react';
+import {
+  Menu,
+  Search,
+  Bell,
+  Globe,
+  User,
+  LogOut,
+  Settings as SettingsIcon,
+  Loader2,
+} from 'lucide-react';
 import { AdminBreadcrumbs } from './AdminBreadcrumbs';
 import { AdminSearchDialog } from '../shared/AdminSearchDialog';
 import { Button } from '@/components/ui/button';
+import { logoutAdminAction } from '@/server/auth/actions';
+import type { AdminUser } from '@/types';
 
 interface AdminHeaderProps {
   onToggleMobileSidebar: () => void;
+  adminUser?: AdminUser | null;
 }
 
-export function AdminHeader({ onToggleMobileSidebar }: AdminHeaderProps) {
+export function AdminHeader({ onToggleMobileSidebar, adminUser }: AdminHeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = React.useState(false);
   const [isNotifOpen, setIsNotifOpen] = React.useState(false);
+  const [isLoggingOut, setIsLoggingOut] = React.useState(false);
+
+  const handleSignOut = async () => {
+    setIsLoggingOut(true);
+    await logoutAdminAction();
+  };
+
+  const initials = adminUser?.name
+    ? adminUser.name
+        .split(' ')
+        .map((n) => n[0])
+        .join('')
+        .toUpperCase()
+        .slice(0, 2)
+    : 'BA';
+
+  const displayName = adminUser?.name || 'Administrator';
+  const displayEmail = adminUser?.email || 'admin@megatools.io';
 
   return (
     <>
@@ -24,7 +54,7 @@ export function AdminHeader({ onToggleMobileSidebar }: AdminHeaderProps) {
           <button
             type="button"
             onClick={onToggleMobileSidebar}
-            className="rounded-lg p-2 text-muted-foreground hover:bg-muted md:hidden"
+            className="rounded-lg p-2 text-muted-foreground hover:bg-muted md:hidden cursor-pointer"
             aria-label="Open mobile navigation drawer"
           >
             <Menu className="h-5 w-5" />
@@ -38,7 +68,7 @@ export function AdminHeader({ onToggleMobileSidebar }: AdminHeaderProps) {
           <button
             type="button"
             onClick={() => setIsSearchOpen(true)}
-            className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground hover:border-primary/50 hover:text-foreground transition-colors"
+            className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground hover:border-primary/50 hover:text-foreground transition-colors cursor-pointer"
           >
             <Search className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Search admin...</span>
@@ -68,7 +98,7 @@ export function AdminHeader({ onToggleMobileSidebar }: AdminHeaderProps) {
                 setIsNotifOpen(!isNotifOpen);
                 setIsUserMenuOpen(false);
               }}
-              className="relative rounded-lg p-2 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+              className="relative rounded-lg p-2 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors cursor-pointer"
               aria-label="Notifications"
             >
               <Bell className="h-4 w-4" />
@@ -92,11 +122,11 @@ export function AdminHeader({ onToggleMobileSidebar }: AdminHeaderProps) {
                 </div>
                 <div className="mt-2 space-y-2">
                   <div className="rounded-lg bg-background p-2.5 text-xs">
-                    <div className="font-semibold text-accent">Component Registered</div>
+                    <div className="font-semibold text-accent">Security Session Active</div>
                     <div className="text-[11px] text-muted-foreground mt-0.5">
-                      New calculator engine &lsquo;LoanCalculator&rsquo; verified in frontend code.
+                      Authenticated as {displayName} with server-side session tracking.
                     </div>
-                    <div className="text-[10px] text-muted-foreground/70 mt-1">10m ago</div>
+                    <div className="text-[10px] text-muted-foreground/70 mt-1">Just now</div>
                   </div>
                   <div className="rounded-lg bg-background p-2.5 text-xs">
                     <div className="font-semibold text-accent">S3 Storage Health</div>
@@ -118,11 +148,11 @@ export function AdminHeader({ onToggleMobileSidebar }: AdminHeaderProps) {
                 setIsUserMenuOpen(!isUserMenuOpen);
                 setIsNotifOpen(false);
               }}
-              className="flex items-center gap-2 rounded-full p-0.5 hover:ring-2 hover:ring-primary transition-all"
+              className="flex items-center gap-2 rounded-full p-0.5 hover:ring-2 hover:ring-primary transition-all cursor-pointer"
               aria-label="User profile menu"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-bold text-white shadow-xs">
-                BA
+                {initials}
               </div>
             </button>
 
@@ -132,10 +162,10 @@ export function AdminHeader({ onToggleMobileSidebar }: AdminHeaderProps) {
                 onClick={() => setIsUserMenuOpen(false)}
               >
                 <div className="border-b border-border px-3 py-2">
-                  <p className="text-xs font-semibold text-accent leading-none">Bilal Ahmad</p>
-                  <p className="mt-1 text-[11px] text-muted-foreground truncate">
-                    bilal@megatools.io
+                  <p className="text-xs font-semibold text-accent leading-none truncate">
+                    {displayName}
                   </p>
+                  <p className="mt-1 text-[11px] text-muted-foreground truncate">{displayEmail}</p>
                 </div>
 
                 <div className="py-1">
@@ -156,13 +186,19 @@ export function AdminHeader({ onToggleMobileSidebar }: AdminHeaderProps) {
                 </div>
 
                 <div className="border-t border-border pt-1">
-                  <Link
-                    href="/admin/login"
-                    className="flex items-center gap-2.5 px-3 py-1.5 text-xs text-rose-600 hover:bg-rose-50 transition-colors"
+                  <button
+                    type="button"
+                    onClick={handleSignOut}
+                    disabled={isLoggingOut}
+                    className="w-full text-left flex items-center gap-2.5 px-3 py-1.5 text-xs text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
                   >
-                    <LogOut className="h-3.5 w-3.5" />
-                    <span>Sign Out</span>
-                  </Link>
+                    {isLoggingOut ? (
+                      <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    ) : (
+                      <LogOut className="h-3.5 w-3.5" />
+                    )}
+                    <span>{isLoggingOut ? 'Signing Out...' : 'Sign Out'}</span>
+                  </button>
                 </div>
               </div>
             )}

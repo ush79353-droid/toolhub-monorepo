@@ -23,4 +23,3 @@ export function LoadingState({ rows = 5, className = '' }: LoadingStateProps) {
     </div>
   );
 }
-

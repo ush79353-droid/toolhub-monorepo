@@ -20,11 +20,15 @@ import {
   LogOut,
   X,
   Shield,
+  Loader2,
 } from 'lucide-react';
+import { logoutAdminAction } from '@/server/auth/actions';
+import type { AdminUser } from '@/types';
 
 interface AdminMobileSidebarProps {
   isOpen: boolean;
   onClose: () => void;
+  adminUser?: AdminUser | null;
 }
 
 const NAV_ITEMS = [
@@ -41,14 +45,30 @@ const NAV_ITEMS = [
   { label: 'Settings', href: '/admin/settings', icon: Settings },
 ];
 
-export function AdminMobileSidebar({ isOpen, onClose }: AdminMobileSidebarProps) {
+export function AdminMobileSidebar({ isOpen, onClose, adminUser }: AdminMobileSidebarProps) {
   const pathname = usePathname();
+  const [isLoggingOut, setIsLoggingOut] = React.useState(false);
+
+  const displayName = adminUser?.name || 'Administrator';
+  const roleName = adminUser?.role === 'super_admin' ? 'Super Admin' : 'Admin';
+  const initials =
+    displayName
+      .split(' ')
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((p) => p[0]?.toUpperCase())
+      .join('') || 'A';
 
   React.useEffect(() => {
     onClose();
   }, [pathname, onClose]);
 
   if (!isOpen) return null;
+
+  const handleSignOut = async () => {
+    setIsLoggingOut(true);
+    await logoutAdminAction();
+  };
 
   return (
     <div
@@ -79,7 +99,7 @@ export function AdminMobileSidebar({ isOpen, onClose }: AdminMobileSidebarProps)
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground"
+            className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground cursor-pointer"
           >
             <X className="h-5 w-5" />
           </button>
@@ -128,7 +148,22 @@ export function AdminMobileSidebar({ isOpen, onClose }: AdminMobileSidebarProps)
         </div>
 
         {/* Footer */}
-        <div className="border-t border-border p-4 space-y-1">
+        <div className="border-t border-border p-4 space-y-2">
+          <Link
+            href="/admin/profile"
+            className="flex items-center gap-3 rounded-lg border border-border bg-background p-2 hover:border-primary/40 transition-colors"
+          >
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
+              {initials}
+            </div>
+            <div className="flex-1 truncate">
+              <div className="truncate text-xs font-semibold text-accent leading-none">
+                {displayName}
+              </div>
+              <div className="text-[10px] text-muted-foreground truncate mt-0.5">{roleName}</div>
+            </div>
+          </Link>
+
           <Link
             href="/"
             target="_blank"
@@ -137,13 +172,19 @@ export function AdminMobileSidebar({ isOpen, onClose }: AdminMobileSidebarProps)
             <Globe className="h-4 w-4 text-muted-foreground" />
             <span>View Public Website</span>
           </Link>
-          <Link
-            href="/admin/login"
-            className="flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-rose-600 hover:bg-rose-50"
+          <button
+            type="button"
+            onClick={handleSignOut}
+            disabled={isLoggingOut}
+            className="w-full text-left flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-rose-600 hover:bg-rose-50 cursor-pointer"
           >
-            <LogOut className="h-4 w-4" />
-            <span>Sign Out</span>
-          </Link>
+            {isLoggingOut ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <LogOut className="h-4 w-4" />
+            )}
+            <span>{isLoggingOut ? 'Signing Out...' : 'Sign Out'}</span>
+          </button>
         </div>
       </div>
     </div>
