@@ -117,3 +117,4 @@ adminUserSchema.methods.toSafeObject = function (): SafeAdminUser {
 
 export const AdminUser: Model<IAdminUser> =
   mongoose.models.AdminUser || mongoose.model<IAdminUser>('AdminUser', adminUserSchema);
+

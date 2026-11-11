@@ -18,3 +18,4 @@ export interface AuthLoginResponse {
   sessionId: string;
   expiresAt: string;
 }
+
