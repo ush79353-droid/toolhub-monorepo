@@ -3,166 +3,227 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Send, CheckCircle2, Info } from 'lucide-react';
+import { Select } from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
+
+const subjects = [
+  'General inquiry',
+  'Feature request',
+  'Bug report',
+  'Partnership',
+  'Other',
+] as const;
+
+type Field = 'name' | 'email' | 'subject' | 'message';
+type Status = 'idle' | 'checking' | 'preview';
+
+const empty = { name: '', email: '', subject: '', message: '' };
+
+function validate(values: typeof empty) {
+  const next: Partial<Record<Field, string>> = {};
+  if (!values.name.trim()) next.name = 'Add your name.';
+  if (!values.email.trim()) {
+    next.email = 'Add your email address.';
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
+    next.email = 'That email address does not look complete.';
+  }
+  if (!values.subject) next.subject = 'Choose a subject.';
+  if (values.message.trim().length < 10) {
+    next.message = 'Write at least a short sentence, 10 characters or more.';
+  }
+  return next;
+}
 
 export function ContactFormClient() {
-  const [formData, setFormData] = React.useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
+  const [values, setValues] = React.useState(empty);
+  const [errors, setErrors] = React.useState<Partial<Record<Field, string>>>({});
+  const [status, setStatus] = React.useState<Status>('idle');
+  const resultRef = React.useRef<HTMLHeadingElement>(null);
+  const timer = React.useRef<number | null>(null);
 
-  const [errors, setErrors] = React.useState<Record<string, string>>({});
-  const [submitted, setSubmitted] = React.useState(false);
+  React.useEffect(() => {
+    if (status === 'preview') resultRef.current?.focus();
+  }, [status]);
 
-  const validate = () => {
-    const newErrors: Record<string, string> = {};
-    if (!formData.name.trim()) newErrors.name = 'Please provide your name.';
-    if (!formData.email.trim()) {
-      newErrors.email = 'Please provide your email address.';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
-      newErrors.email = 'Please enter a valid email address.';
+  React.useEffect(() => {
+    return () => {
+      if (timer.current) window.clearTimeout(timer.current);
+    };
+  }, []);
+
+  function update(field: Field, value: string) {
+    setValues((current) => ({ ...current, [field]: value }));
+    setErrors((current) => {
+      if (!current[field]) return current;
+      const next = { ...current };
+      delete next[field];
+      return next;
+    });
+  }
+
+  function onSubmit(event: React.FormEvent) {
+    event.preventDefault();
+    if (status === 'checking') return;
+    const next = validate(values);
+    setErrors(next);
+    if (Object.keys(next).length > 0) {
+      const first = (Object.keys(next) as Field[])[0];
+      document.getElementById(first)?.focus();
+      return;
     }
-    if (!formData.subject.trim()) newErrors.subject = 'Please enter a subject.';
-    if (!formData.message.trim() || formData.message.trim().length < 10) {
-      newErrors.message = 'Please provide a message with at least 10 characters.';
-    }
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+    setStatus('checking');
+    timer.current = window.setTimeout(() => setStatus('preview'), 400);
+  }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-
-    // UI Preview simulation - honest feedback without claiming remote delivery
-    setSubmitted(true);
-  };
-
-  const handleReset = () => {
-    setFormData({ name: '', email: '', subject: '', message: '' });
+  function reset() {
+    if (timer.current) window.clearTimeout(timer.current);
+    setValues(empty);
     setErrors({});
-    setSubmitted(false);
-  };
+    setStatus('idle');
+  }
+
+  if (status === 'preview') {
+    return (
+      <div className="border border-border border-l-4 border-l-primary bg-white px-5 py-8 sm:px-8">
+        <h2
+          ref={resultRef}
+          tabIndex={-1}
+          className="text-2xl font-semibold tracking-tight text-accent outline-none"
+        >
+          The form checks out. It was not sent.
+        </h2>
+        <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
+          {values.name.trim()}, this note stayed in your browser. There is no inbox on the other side yet, so nothing was delivered.
+        </p>
+        <Button type="button" variant="outline" className="mt-6" onClick={reset}>
+          Write another message
+        </Button>
+      </div>
+    );
+  }
 
   return (
-    <div className="rounded-2xl border border-border bg-white p-6 sm:p-10 shadow-xs">
-      {/* Honest Notice */}
-      <div className="mb-6 flex items-start gap-3 rounded-xl border border-border bg-muted/60 p-4 text-xs text-muted-foreground">
-        <Info className="h-4 w-4 flex-shrink-0 text-primary mt-0.5" />
-        <div>
-          <strong className="text-accent">Contact Form UI Preview:</strong> This interactive form
-          validates inputs on the client side. Live email delivery will be wired to the Express
-          backend in an upcoming phase.
-        </div>
+    <form onSubmit={onSubmit} noValidate className="border border-border border-l-4 border-l-primary bg-white px-5 py-6 sm:px-8 sm:py-8">
+      <h2 className="text-2xl font-semibold tracking-tight text-accent">Write a message</h2>
+      <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted-foreground">
+        The page checks these fields here. It does not send the message. Delivery is not connected yet.
+      </p>
+
+      <div className="mt-8 grid gap-5 sm:grid-cols-2">
+        <Field
+          id="name"
+          label="Full name"
+          error={errors.name}
+        >
+          <Input
+            id="name"
+            name="name"
+            autoComplete="name"
+            value={values.name}
+            disabled={status === 'checking'}
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby={errors.name ? 'name-error' : undefined}
+            placeholder="Your name"
+            className={errors.name ? 'h-11 border-red-400' : 'h-11'}
+            onChange={(event) => update('name', event.target.value)}
+          />
+        </Field>
+        <Field id="email" label="Email address" error={errors.email}>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            inputMode="email"
+            value={values.email}
+            disabled={status === 'checking'}
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={errors.email ? 'email-error' : undefined}
+            placeholder="you@email.com"
+            className={errors.email ? 'h-11 border-red-400' : 'h-11'}
+            onChange={(event) => update('email', event.target.value)}
+          />
+        </Field>
       </div>
 
-      {submitted ? (
-        <div className="flex flex-col items-center justify-center rounded-xl bg-muted/40 p-10 text-center animate-in fade-in duration-200">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-            <CheckCircle2 className="h-7 w-7" />
-          </div>
-          <h3 className="mt-4 text-lg font-bold text-accent">Form Validation Successful</h3>
-          <p className="mt-2 max-w-md text-xs leading-relaxed text-muted-foreground">
-            Thank you, <strong>{formData.name}</strong>. Your message preview passed client
-            validation. In production, inquiries will route to our support gateway.
-          </p>
-          <Button onClick={handleReset} variant="outline" size="sm" className="mt-6">
-            Send Another Note
-          </Button>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-5">
-          {/* Name & Email Row */}
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            <div className="space-y-1.5">
-              <label
-                htmlFor="name"
-                className="text-xs font-bold uppercase tracking-wider text-accent"
-              >
-                Your Name <span className="text-red-500">*</span>
-              </label>
-              <Input
-                id="name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder="Jane Doe"
-                className={errors.name ? 'border-red-400 focus-visible:ring-red-400' : ''}
-              />
-              {errors.name && <p className="text-xs text-red-600">{errors.name}</p>}
-            </div>
+      <div className="mt-5">
+        <Field id="subject" label="Subject" error={errors.subject}>
+          <Select
+            id="subject"
+            name="subject"
+            value={values.subject}
+            disabled={status === 'checking'}
+            aria-invalid={Boolean(errors.subject)}
+            aria-describedby={errors.subject ? 'subject-error' : undefined}
+            className={errors.subject ? 'h-11 border-red-400' : 'h-11'}
+            onChange={(event) => update('subject', event.target.value)}
+          >
+            <option value="">Choose a subject</option>
+            {subjects.map((subject) => (
+              <option key={subject} value={subject}>
+                {subject}
+              </option>
+            ))}
+          </Select>
+        </Field>
+      </div>
 
-            <div className="space-y-1.5">
-              <label
-                htmlFor="email"
-                className="text-xs font-bold uppercase tracking-wider text-accent"
-              >
-                Email Address <span className="text-red-500">*</span>
-              </label>
-              <Input
-                id="email"
-                type="email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                placeholder="jane@example.com"
-                className={errors.email ? 'border-red-400 focus-visible:ring-red-400' : ''}
-              />
-              {errors.email && <p className="text-xs text-red-600">{errors.email}</p>}
-            </div>
-          </div>
+      <div className="mt-5">
+        <Field id="message" label="Message" error={errors.message}>
+          <Textarea
+            id="message"
+            name="message"
+            rows={6}
+            value={values.message}
+            disabled={status === 'checking'}
+            aria-invalid={Boolean(errors.message)}
+            aria-describedby={errors.message ? 'message-error' : undefined}
+            placeholder="What should we look at?"
+            className={errors.message ? 'min-h-36 border-red-400' : 'min-h-36'}
+            onChange={(event) => update('message', event.target.value)}
+          />
+        </Field>
+      </div>
 
-          {/* Subject Field */}
-          <div className="space-y-1.5">
-            <label
-              htmlFor="subject"
-              className="text-xs font-bold uppercase tracking-wider text-accent"
-            >
-              Subject <span className="text-red-500">*</span>
-            </label>
-            <Input
-              id="subject"
-              value={formData.subject}
-              onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              placeholder="e.g. Tool suggestion, bug report, or feedback"
-              className={errors.subject ? 'border-red-400 focus-visible:ring-red-400' : ''}
-            />
-            {errors.subject && <p className="text-xs text-red-600">{errors.subject}</p>}
-          </div>
+      <div className="mt-6">
+        <Button
+          type="submit"
+          size="lg"
+          disabled={status === 'checking'}
+          className="w-full bg-primary text-white hover:bg-primary-hover sm:w-auto"
+        >
+          {status === 'checking' ? 'Checking' : 'Check message'}
+        </Button>
+      </div>
+    </form>
+  );
+}
 
-          {/* Message Field */}
-          <div className="space-y-1.5">
-            <label
-              htmlFor="message"
-              className="text-xs font-bold uppercase tracking-wider text-accent"
-            >
-              Message <span className="text-red-500">*</span>
-            </label>
-            <textarea
-              id="message"
-              rows={5}
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              placeholder="Tell us what tool you would like to see, or report an issue..."
-              className={`w-full rounded-lg border border-border bg-white p-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors ${
-                errors.message ? 'border-red-400 focus:ring-red-300' : ''
-              }`}
-            />
-            {errors.message && <p className="text-xs text-red-600">{errors.message}</p>}
-          </div>
-
-          {/* Submit Button */}
-          <div className="pt-2">
-            <Button
-              type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 bg-primary text-white hover:bg-[hsl(var(--primary-hover))] sm:w-auto"
-            >
-              <Send className="h-4 w-4" />
-              <span>Submit Feedback</span>
-            </Button>
-          </div>
-        </form>
-      )}
+function Field({
+  id,
+  label,
+  error,
+  children,
+}: {
+  id: string;
+  label: string;
+  error?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="text-sm font-medium text-accent">
+        {label}{' '}
+        <abbr title="required" className="text-primary no-underline">
+          *
+        </abbr>
+      </label>
+      <div className="mt-2">{children}</div>
+      {error ? (
+        <p id={`${id}-error`} role="alert" className="mt-1.5 text-sm text-red-700">
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 }

@@ -26,7 +26,7 @@
 ### Partially Implemented / UI Preview Only
 - **Public Directory & Tool Pages (`/tools`, `/tools/[slug]`, `/categories`, `/categories/[slug]`, `Header`, `Footer`, `MobileNavigation`):** Currently backed by static `frontend/src/lib/sample-data.ts` (12 categories, 18 tools), **not** live MongoDB records.
 - **Tool Execution Workspace (`ToolWorkspace.tsx` + `src/tools/registry/index.ts`):** Registry infrastructure and `ToolWorkspace` UI preview shell exist, but `frontend/src/tools/` category directories contain only `.gitkeep` (0 live calculator implementations).
-- **Public Contact (`/contact`):** Client-side form validation preview only; no backend email/ticket endpoint.
+- **Public Contact (`/contact`):** Redesigned page. The form validates name, email, subject, and message in the browser, then states that nothing was delivered. No backend email/ticket endpoint.
 - **Legal Pages (`/privacy-policy`, `/terms-of-service`):** Draft templates pending legal review.
 - **Admin Preview Pages (`/admin`, `/admin/analytics`, `/admin/activity-logs`, `/admin/integrations`, `/admin/pages`, `/admin/seo`, `/admin/settings`, `/admin/users`):** Complete UI rendered from `frontend/src/lib/admin-mock-data.ts` with `PendingNotice` banners; backend endpoints/models do not exist yet.
 - **Admin Profile 2FA Switch (`AdminProfileClient.tsx`):** UI toggle state only; no TOTP backend exists.
