@@ -1,0 +1,23 @@
+---
+description: "Shared Project Brain workflow and architecture guardrails for Mega Tools (Omega Calculators)"
+alwaysApply: true
+---
+
+# Mega Tools / Omega Calculators — Shared Project Brain
+
+This rule works alongside `.cursor/rules/ponytail.mdc` (which remains authoritative for coding minimalism and verification discipline). Follow root `AGENTS.md` on every task.
+
+## Required Workflow
+
+1. **Before coding:**
+   - Read `brain/README.md`, `brain/CURRENT_STATE.md`, `brain/ARCHITECTURE.md`, and the `brain/` docs relevant to your task.
+   - Inspect actual source code and check `git status` before making assumptions — distinguish implemented behavior from UI previews or planned modules.
+2. **During coding:**
+   - Keep `frontend/` and `backend/` as independent applications (no npm workspaces).
+   - Enforce `Browser → Next.js Server → Express API → MongoDB`; never call Express directly from browser components.
+   - Follow the locked palette in `brain/DESIGN_SYSTEM.md` and TypeScript strict mode.
+   - Respect `.cursor/rules/ponytail.mdc` while keeping architectural boundaries and Brain maintenance intact.
+3. **After completing a task:**
+   - Run relevant checks (`type-check`, `lint`, and targeted checks).
+   - Update affected `brain/` docs, `brain/CURRENT_STATE.md`, `brain/TASKS.md`, append to `brain/CHANGELOG.md`, and record architectural changes in `brain/DECISIONS.md`.
+   - Include Brain updates in the same commit as related code changes. Sync via `git fetch` / `git pull` before pushing; never force push.
