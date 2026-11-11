@@ -17,9 +17,24 @@ export const toolFieldsSchema = z.object({
     .max(180)
     .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Use lowercase letters, numbers, and hyphens'),
   categoryId: z.string().trim().min(1, 'Category is required'),
-  pillarId: z.string().trim().min(1, 'Pillar is required'),
-  subPillarId: z.string().trim().nullable().optional(),
-  iconMediaId: z.string().trim().nullable().optional(),
+  pillarId: z
+    .string()
+    .trim()
+    .nullable()
+    .optional()
+    .transform((value) => value || null),
+  subPillarId: z
+    .string()
+    .trim()
+    .nullable()
+    .optional()
+    .transform((value) => value || null),
+  iconMediaId: z
+    .string()
+    .trim()
+    .nullable()
+    .optional()
+    .transform((value) => value || null),
   shortDescription: optionalText(500),
   metaTitle: optionalText(70),
   metaDescription: optionalText(160),

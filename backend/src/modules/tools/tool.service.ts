@@ -118,8 +118,11 @@ function assign(doc: ITool, input: ToolFieldsInput, icon: { iconMedia: mongoose.
   doc.name = input.name.trim();
   doc.nameKey = toolNameKey(input.name);
   doc.slug = input.slug;
+  if (input.subPillarId && !input.pillarId) {
+    throw new AppError('A sub-pillar needs a pillar.', 400, 'INVALID_PLACEMENT');
+  }
   doc.category = new mongoose.Types.ObjectId(input.categoryId);
-  doc.pillar = new mongoose.Types.ObjectId(input.pillarId);
+  doc.pillar = input.pillarId ? new mongoose.Types.ObjectId(input.pillarId) : null;
   doc.subPillar = input.subPillarId ? new mongoose.Types.ObjectId(input.subPillarId) : null;
   doc.iconMedia = icon.iconMedia;
   doc.iconUrl = icon.iconUrl;
@@ -183,8 +186,8 @@ export async function getTool(id: string): Promise<ToolRecord> {
 
 export async function createTool(input: ToolFieldsInput): Promise<ToolRecord> {
   await requirePlacement(input.categoryId, 'category');
-  await requirePlacement(input.pillarId, 'pillar', input.categoryId);
-  if (input.subPillarId) await requirePlacement(input.subPillarId, 'sub_pillar', input.pillarId);
+  if (input.pillarId) await requirePlacement(input.pillarId, 'pillar', input.categoryId);
+  if (input.subPillarId) await requirePlacement(input.subPillarId, 'sub_pillar', input.pillarId ?? undefined);
   await assertUnique(input.name, input.slug);
   const icon = await resolveIcon(input.iconMediaId);
   const doc = new Tool();
@@ -200,8 +203,8 @@ export async function updateTool(id: string, input: ToolFieldsInput): Promise<To
   const doc = await Tool.findById(id);
   if (!doc) throw new AppError('Tool not found.', 404, 'NOT_FOUND');
   await requirePlacement(input.categoryId, 'category');
-  await requirePlacement(input.pillarId, 'pillar', input.categoryId);
-  if (input.subPillarId) await requirePlacement(input.subPillarId, 'sub_pillar', input.pillarId);
+  if (input.pillarId) await requirePlacement(input.pillarId, 'pillar', input.categoryId);
+  if (input.subPillarId) await requirePlacement(input.subPillarId, 'sub_pillar', input.pillarId ?? undefined);
   await assertUnique(input.name, input.slug, doc.id);
   assign(doc, input, await resolveIcon(input.iconMediaId));
   await doc.save();

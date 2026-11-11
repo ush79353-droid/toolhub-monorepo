@@ -82,7 +82,7 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
     if (!name.trim()) nextErrors.name = 'Tool name is required.';
     if (!slugify(slug)) nextErrors.slug = 'Use lowercase letters, numbers, and hyphens.';
     if (!categoryId) nextErrors.categoryId = 'Choose a category.';
-    if (!pillarId) nextErrors.pillarId = 'Choose a pillar.';
+    if (subPillarId && !pillarId) nextErrors.pillarId = 'Choose a pillar before a sub-pillar.';
     if (Object.keys(nextErrors).length) {
       setErrors(nextErrors);
       return;
@@ -168,7 +168,7 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
         </div>
       </FormSection>
 
-      <FormSection className="w-full" title="Placement" description="A tool sits under a category and a pillar. A sub-pillar is optional.">
+      <FormSection className="w-full" title="Placement" description="Every tool belongs to a category. Add a pillar when it sits in a family, and a sub-pillar only inside that pillar.">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           <div>
             <label className="mb-1.5 block text-xs font-semibold text-accent">
@@ -191,9 +191,7 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
             {errors.categoryId && <p className="mt-1 text-[11px] text-rose-600">{errors.categoryId}</p>}
           </div>
           <div>
-            <label className="mb-1.5 block text-xs font-semibold text-accent">
-              Pillar <span className="text-rose-500">*</span>
-            </label>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">Pillar</label>
             <Select
               value={pillarId}
               disabled={!categoryId}
@@ -203,7 +201,7 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
               }}
               className={errors.pillarId ? 'border-rose-400' : ''}
             >
-              <option value="">Select pillar</option>
+              <option value="">Category only</option>
               {pillars.map((item) => (
                 <option key={item.id} value={item.id}>{item.name}</option>
               ))}

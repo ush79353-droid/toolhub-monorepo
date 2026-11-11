@@ -5,7 +5,7 @@ export interface ITool extends Document {
   nameKey: string;
   slug: string;
   category: Types.ObjectId;
-  pillar: Types.ObjectId;
+  pillar: Types.ObjectId | null;
   subPillar: Types.ObjectId | null;
   iconMedia: Types.ObjectId | null;
   iconUrl: string;
@@ -29,7 +29,7 @@ const toolSchema = new Schema<ITool>(
     nameKey: { type: String, required: true },
     slug: { type: String, required: true, trim: true, lowercase: true },
     category: { type: Schema.Types.ObjectId, ref: 'Category', required: true },
-    pillar: { type: Schema.Types.ObjectId, ref: 'Category', required: true },
+    pillar: { type: Schema.Types.ObjectId, ref: 'Category', default: null },
     subPillar: { type: Schema.Types.ObjectId, ref: 'Category', default: null },
     iconMedia: { type: Schema.Types.ObjectId, ref: 'MediaAsset', default: null },
     iconUrl: { type: String, default: '' },
