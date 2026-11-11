@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { createPortal } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { CalendarRange, ChevronDown, ChevronUp, Download, Maximize2, X } from 'lucide-react';
 import {
@@ -220,13 +221,19 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
 
   React.useEffect(() => {
     if (!modalOpen) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setModalOpen(false);
       }
     };
     document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.removeEventListener('keydown', onKeyDown);
+    };
   }, [modalOpen]);
 
   const handleDownloadCsv = () => {
@@ -333,51 +340,54 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
         </div>
       )}
 
-      {modalOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby={dialogTitleId}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-accent/50 p-4 backdrop-blur-[2px]"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setModalOpen(false);
-          }}
-        >
-          <div className="flex max-h-[88vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-xl">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background/70 px-5 py-4">
-              <div>
-                <h3 id={dialogTitleId} className="text-base font-semibold text-accent">
-                  Auto Loan Amortization Schedule
-                </h3>
-                <p className="text-xs font-normal text-muted-foreground">
-                  {result.monthlySchedule.length} monthly installments across{' '}
-                  {result.yearlySchedule.length} calendar years
-                </p>
+      {modalOpen &&
+        typeof document !== 'undefined' &&
+        createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={dialogTitleId}
+            className="fixed inset-0 z-[80] flex items-center justify-center bg-accent/50 p-4 backdrop-blur-[2px]"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setModalOpen(false);
+            }}
+          >
+            <div className="flex max-h-[88vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-xl">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background/70 px-5 py-4">
+                <div>
+                  <h3 id={dialogTitleId} className="text-base font-semibold text-accent">
+                    Auto Loan Amortization Schedule
+                  </h3>
+                  <p className="text-xs font-normal text-muted-foreground">
+                    {result.monthlySchedule.length} monthly installments across{' '}
+                    {result.yearlySchedule.length} calendar years
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  <ScheduleViewControls
+                    view={view}
+                    onViewChange={setView}
+                    onDownloadCsv={handleDownloadCsv}
+                  />
+                  <button
+                    type="button"
+                    aria-label="Close amortization dialog"
+                    onClick={() => setModalOpen(false)}
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-white text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    <X className="h-4 w-4" aria-hidden="true" />
+                  </button>
+                </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-2">
-                <ScheduleViewControls
-                  view={view}
-                  onViewChange={setView}
-                  onDownloadCsv={handleDownloadCsv}
-                />
-                <button
-                  type="button"
-                  aria-label="Close amortization dialog"
-                  onClick={() => setModalOpen(false)}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-white text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  <X className="h-4 w-4" aria-hidden="true" />
-                </button>
+              <div className="flex-1 overflow-auto">
+                <ScheduleTableContent result={result} view={view} />
               </div>
             </div>
-
-            <div className="flex-1 overflow-auto">
-              <ScheduleTableContent result={result} view={view} />
-            </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </div>
   );
 }

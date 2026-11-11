@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 import { getToolBySlug } from '@/lib/sample-data';
 import type { PublicRelatedTool } from '@/server/catalog/tools';
 import { isApprovedComponentKey } from '@/tools/registry/keys';
@@ -45,29 +44,12 @@ export function RelatedCatalogTools({
           const isImplemented = tool.isActive && isApprovedComponentKey(tool.componentKey);
           const isPreviewRoute = !isImplemented && (tool.isActive || Boolean(getToolBySlug(tool.slug)));
 
-          const statusBadge = isImplemented ? (
-            <Badge variant="secondary" className="shrink-0 text-[11px] font-medium">
-              Live Calculator
-            </Badge>
-          ) : isPreviewRoute ? (
-            <Badge className="shrink-0 border-amber-200 bg-amber-50 text-[11px] font-medium text-amber-800 hover:bg-amber-50">
-              Preview Only
-            </Badge>
-          ) : (
-            <Badge variant="muted" className="shrink-0 text-[11px] font-medium">
-              Catalog Only
-            </Badge>
-          );
-
           const body = (
             <div className="flex h-full flex-col justify-between gap-3">
               <div>
-                <div className="flex items-start justify-between gap-2.5">
-                  <h3 className="text-sm font-medium leading-snug text-accent group-hover:text-primary">
-                    {tool.name}
-                  </h3>
-                  {statusBadge}
-                </div>
+                <h3 className="text-sm font-medium leading-snug text-accent group-hover:text-primary">
+                  {tool.name}
+                </h3>
                 {tool.shortDescription && (
                   <p className="mt-1.5 line-clamp-2 text-xs font-normal leading-relaxed text-muted-foreground">
                     {tool.shortDescription}
@@ -79,13 +61,18 @@ export function RelatedCatalogTools({
                 <span className="font-normal text-muted-foreground">
                   {tool.pillarName || tool.categoryName}
                 </span>
-                {isImplemented || isPreviewRoute ? (
+                {isImplemented ? (
                   <span className="inline-flex items-center font-medium text-primary">
                     Open
                     <ChevronRight className="ml-0.5 h-3.5 w-3.5" aria-hidden="true" />
                   </span>
+                ) : isPreviewRoute ? (
+                  <span className="inline-flex items-center font-medium text-amber-700">
+                    Preview only
+                    <ChevronRight className="ml-0.5 h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
                 ) : (
-                  <span className="font-normal text-muted-foreground">In development</span>
+                  <span className="font-normal text-muted-foreground">Catalog only</span>
                 )}
               </div>
             </div>

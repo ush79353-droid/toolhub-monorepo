@@ -142,22 +142,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
               />
 
               <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
-                <div className="flex flex-wrap items-center gap-2">
-                  <Badge variant="secondary" className="text-xs font-medium">
-                    {categoryName}
-                  </Badge>
-                  {pillarName && (
-                    <Badge variant="muted" className="text-xs font-normal">
-                      {pillarName}
-                    </Badge>
-                  )}
-                  <span className="inline-flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-0.5 text-xs font-normal text-muted-foreground">
-                    <ShieldCheck className="h-3 w-3 text-emerald-600" aria-hidden="true" />
-                    {executionLabel(toolMetadata.executionType)}
-                  </span>
-                </div>
-
-                <div className="mt-3.5 flex items-start gap-3.5">
+                <div className="flex items-start gap-3.5">
                   {iconUrl ? (
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary">
                       {/* eslint-disable-next-line @next/next/no-img-element */}

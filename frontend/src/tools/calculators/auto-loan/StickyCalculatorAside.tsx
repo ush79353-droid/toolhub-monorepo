@@ -20,6 +20,7 @@ interface StickyCalculatorAsideProps {
  * - Uses bottom-pinned sticky offset when taller than the viewport so no nested scroll trap is created.
  * - Keeps keyboard-focused controls visible below the sticky site header.
  */
+
 export function StickyCalculatorAside({
   ariaLabel,
   className = '',
@@ -27,6 +28,7 @@ export function StickyCalculatorAside({
 }: StickyCalculatorAsideProps) {
   const asideRef = React.useRef<HTMLElement>(null);
   const baseStickyTopRef = React.useRef<number | null>(null);
+  const focusTimerRef = React.useRef<number | null>(null);
   const [stickyTop, setStickyTop] = React.useState<number | null>(null);
 
   React.useEffect(() => {
@@ -70,15 +72,23 @@ export function StickyCalculatorAside({
     return () => {
       observer?.disconnect();
       window.removeEventListener('resize', updateStickyPosition);
+      if (focusTimerRef.current !== null) {
+        window.clearTimeout(focusTimerRef.current);
+      }
     };
   }, []);
 
   const handleFocusCapture = (event: React.FocusEvent<HTMLElement>) => {
     const element = asideRef.current;
     const target = event.target as HTMLElement | null;
-    if (!element || !target) return;
+    if (!element || !target || !element.contains(target)) return;
 
-    window.requestAnimationFrame(() => {
+    if (focusTimerRef.current !== null) {
+      window.clearTimeout(focusTimerRef.current);
+    }
+
+    focusTimerRef.current = window.setTimeout(() => {
+      focusTimerRef.current = null;
       const rect = target.getBoundingClientRect();
       const asideRect = element.getBoundingClientRect();
       const vh = window.innerHeight;
@@ -113,7 +123,7 @@ export function StickyCalculatorAside({
           behavior: 'smooth',
         });
       }
-    });
+    }, 16);
   };
 
   const handleBlurCapture = (event: React.FocusEvent<HTMLElement>) => {
