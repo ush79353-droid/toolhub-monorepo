@@ -129,18 +129,19 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
     return (
       <div className="py-6 sm:py-9">
         <Container>
+          <Breadcrumbs
+            items={[
+              { label: 'All Tools', href: '/tools' },
+              { label: categoryName, href: safeCategoryHref },
+              { label: toolMetadata.title },
+            ]}
+            className="mb-4"
+          />
+
           {/* Responsive 2-Column Workspace: Left (~62%) Editorial/TOC/Related, Right (~38%) Height-Aware Sticky Calculator */}
           <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,1.62fr)_minmax(360px,1fr)] lg:items-start lg:gap-8">
-            {/* Slot 1: Breadcrumbs + Title + Intro Header */}
-            <header className="order-1 min-w-0 space-y-4 lg:col-start-1 lg:row-start-1">
-              <Breadcrumbs
-                items={[
-                  { label: 'All Tools', href: '/tools' },
-                  { label: categoryName, href: safeCategoryHref },
-                  { label: toolMetadata.title },
-                ]}
-              />
-
+            {/* Slot 1: Tool Hero Header Card */}
+            <header className="order-1 min-w-0 lg:col-start-1 lg:row-start-1">
               <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
                 <div className="flex items-start gap-3.5">
                   {iconUrl ? (
