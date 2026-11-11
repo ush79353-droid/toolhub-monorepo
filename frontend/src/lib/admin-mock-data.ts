@@ -1,5 +1,5 @@
 /**
- * MEGA TOOLS — Admin Mock Data & Safe Registries
+ * Omega Calculators — Admin Mock Data & Safe Registries
  *
  * NOTE: This module contains strictly labeled demonstration records for UI prototyping.
  * Real administrative operations must communicate with the Express backend via Next.js Server Actions.
@@ -140,7 +140,7 @@ export const INITIAL_ADMIN_CATEGORIES: AdminCategory[] = [
     status: 'active',
     sortOrder: 1,
     createdDate: '2026-01-10',
-    seoTitle: 'Free Online Calculators — Finance, Health, Math | Mega Tools',
+    seoTitle: 'Free Online Calculators — Finance, Health, Math | Omega Calculators',
     seoDescription:
       'Accurate and instant calculation tools for finance, health, math, and daily metrics with zero signup.',
   },
@@ -154,7 +154,7 @@ export const INITIAL_ADMIN_CATEGORIES: AdminCategory[] = [
     status: 'active',
     sortOrder: 2,
     createdDate: '2026-01-11',
-    seoTitle: 'Online Unit & Currency Converters | Mega Tools',
+    seoTitle: 'Online Unit & Currency Converters | Omega Calculators',
     seoDescription:
       'Convert units, currencies, lengths, weights, and file data with real-time conversion rates.',
   },
@@ -168,7 +168,7 @@ export const INITIAL_ADMIN_CATEGORIES: AdminCategory[] = [
     status: 'active',
     sortOrder: 3,
     createdDate: '2026-01-12',
-    seoTitle: 'Fast Online PDF Utilities — Merge, Split, Compress | Mega Tools',
+    seoTitle: 'Fast Online PDF Utilities — Merge, Split, Compress | Omega Calculators',
     seoDescription:
       'Private and secure document processing tools directly in your browser or fast cloud engines.',
   },
@@ -182,7 +182,7 @@ export const INITIAL_ADMIN_CATEGORIES: AdminCategory[] = [
     status: 'active',
     sortOrder: 4,
     createdDate: '2026-01-15',
-    seoTitle: 'Image Optimization & Conversion Tools | Mega Tools',
+    seoTitle: 'Image Optimization & Conversion Tools | Omega Calculators',
     seoDescription:
       'Compress PNGs, convert JPEGs to WebP, and resize images without losing visual quality.',
   },
@@ -196,7 +196,7 @@ export const INITIAL_ADMIN_CATEGORIES: AdminCategory[] = [
     status: 'active',
     sortOrder: 5,
     createdDate: '2026-01-18',
-    seoTitle: 'Online Developer Utilities & Encoders | Mega Tools',
+    seoTitle: 'Online Developer Utilities & Encoders | Omega Calculators',
     seoDescription:
       'JSON formatters, Base64 converters, regex analyzers, and code minifiers for engineers.',
   },
@@ -210,7 +210,7 @@ export const INITIAL_ADMIN_CATEGORIES: AdminCategory[] = [
     status: 'active',
     sortOrder: 6,
     createdDate: '2026-01-20',
-    seoTitle: 'Free Search Engine Optimization Tools | Mega Tools',
+    seoTitle: 'Free Search Engine Optimization Tools | Omega Calculators',
     seoDescription:
       'Audit meta tags, preview Google search snippets, and test your open graph cards.',
   },
@@ -224,7 +224,7 @@ export const INITIAL_ADMIN_CATEGORIES: AdminCategory[] = [
     status: 'active',
     sortOrder: 7,
     createdDate: '2026-01-25',
-    seoTitle: 'AI-Powered Text & Productivity Tools | Mega Tools',
+    seoTitle: 'AI-Powered Text & Productivity Tools | Omega Calculators',
     seoDescription:
       'Smart AI assistants for summarization, paraphrasing, and workflow acceleration.',
   },
@@ -238,7 +238,7 @@ export const INITIAL_ADMIN_CATEGORIES: AdminCategory[] = [
     status: 'active',
     sortOrder: 8,
     createdDate: '2026-01-28',
-    seoTitle: 'Text Analysis & Typography Tools | Mega Tools',
+    seoTitle: 'Text Analysis & Typography Tools | Omega Calculators',
     seoDescription:
       'Analyze reading time, word count, character density, and text casing instantly.',
   },
@@ -252,7 +252,7 @@ export const INITIAL_ADMIN_CATEGORIES: AdminCategory[] = [
     status: 'inactive',
     sortOrder: 9,
     createdDate: '2026-02-01',
-    seoTitle: 'Security & Cryptographic Utilities | Mega Tools',
+    seoTitle: 'Security & Cryptographic Utilities | Omega Calculators',
     seoDescription:
       'Generate secure SHA/MD5 hashes and analyze password entropy with local processing.',
   },
@@ -275,7 +275,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'Comprehensive age calculation tool that delivers exact breakdowns of elapsed time, days until next birthday, and planetary ages.',
     toolIcon: 'Calendar',
     tags: ['age', 'birthday', 'chronology', 'date'],
-    seoTitle: 'Age Calculator — Exact Age in Years, Months, and Days | Mega Tools',
+    seoTitle: 'Age Calculator — Exact Age in Years, Months, and Days | Omega Calculators',
     seoDescription:
       'Find your precise age down to the day and minute. 100% private in-browser calculation.',
     isIndexable: true,
@@ -309,7 +309,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'Multipurpose math calculator solving what is X% of Y, percentage differences, and sales markdowns.',
     toolIcon: 'Percent',
     tags: ['percentage', 'math', 'discount', 'ratio'],
-    seoTitle: 'Percentage Calculator — Quick Percent Math & Discount Tool | Mega Tools',
+    seoTitle: 'Percentage Calculator — Quick Percent Math & Discount Tool | Omega Calculators',
     seoDescription:
       'Calculate percentage discounts, increases, differences, and fractions instantly.',
     isIndexable: true,
@@ -343,7 +343,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'Supports metric and imperial units with interactive weight category visualizer and healthy weight range indicators.',
     toolIcon: 'Activity',
     tags: ['bmi', 'health', 'fitness', 'weight'],
-    seoTitle: 'BMI Calculator — Body Mass Index for Adults | Mega Tools',
+    seoTitle: 'BMI Calculator — Body Mass Index for Adults | Omega Calculators',
     seoDescription:
       'Check your Body Mass Index with metric and imperial units according to WHO standards.',
     isIndexable: true,
@@ -377,7 +377,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'Plan mortgages, auto loans, or personal debts with customizable interest rates and loan terms.',
     toolIcon: 'DollarSign',
     tags: ['loan', 'mortgage', 'finance', 'interest'],
-    seoTitle: 'Loan Calculator — Monthly Payment & Amortization | Mega Tools',
+    seoTitle: 'Loan Calculator — Monthly Payment & Amortization | Omega Calculators',
     seoDescription:
       'Accurate monthly mortgage and personal loan payment estimates with amortization schedules.',
     isIndexable: true,
@@ -414,7 +414,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'In-depth text analysis utility providing keyword frequency, character density, and readability score.',
     toolIcon: 'Type',
     tags: ['words', 'characters', 'text', 'writing'],
-    seoTitle: 'Word Counter — Free Online Word & Character Count Tool | Mega Tools',
+    seoTitle: 'Word Counter — Free Online Word & Character Count Tool | Omega Calculators',
     seoDescription: 'Instant word, sentence, and character counter with reading time estimation.',
     isIndexable: true,
     howToUse: ['Paste or type text in editor', 'Inspect live counters in real time'],
@@ -448,7 +448,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'Essential developer tool providing clear error diagnostics with line and column highlighting.',
     toolIcon: 'Code2',
     tags: ['json', 'formatter', 'validator', 'developer'],
-    seoTitle: 'JSON Formatter & Validator — Clean & Prettify JSON | Mega Tools',
+    seoTitle: 'JSON Formatter & Validator — Clean & Prettify JSON | Omega Calculators',
     seoDescription:
       'Validate and beautify JSON strings with 2-space or 4-space indentation and instant error pinpointing.',
     isIndexable: true,
@@ -478,7 +478,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'Drag and drop PDF pages to reorder them and generate a consolidated PDF document with pristine vector clarity.',
     toolIcon: 'FileText',
     tags: ['pdf', 'merge', 'documents', 'combine'],
-    seoTitle: 'Merge PDF Online — Combine Multiple PDFs for Free | Mega Tools',
+    seoTitle: 'Merge PDF Online — Combine Multiple PDFs for Free | Omega Calculators',
     seoDescription: 'Combine multiple PDF files into one clean document quickly and securely.',
     isIndexable: true,
     howToUse: ['Select or drag PDF files', 'Arrange page order', 'Download merged PDF'],
@@ -511,7 +511,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'Smart lossy and lossless image compression utilizing libvips pipelines for rapid web asset optimization.',
     toolIcon: 'Image',
     tags: ['image', 'compress', 'optimize', 'png', 'jpg'],
-    seoTitle: 'Image Compressor — Reduce Image File Size Online | Mega Tools',
+    seoTitle: 'Image Compressor — Reduce Image File Size Online | Omega Calculators',
     seoDescription: 'Shrink JPEG, PNG, and WebP images while preserving sharp visual fidelity.',
     isIndexable: true,
     howToUse: ['Drop your images', 'Adjust compression slider', 'Download optimized files'],
@@ -538,7 +538,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'Leverages advanced language models to extract key findings, action items, and executive summaries from long-form content.',
     toolIcon: 'Sparkles',
     tags: ['ai', 'summary', 'text', 'gpt'],
-    seoTitle: 'AI Text Summarizer — Instant Article & Document Summary | Mega Tools',
+    seoTitle: 'AI Text Summarizer — Instant Article & Document Summary | Omega Calculators',
     seoDescription: 'Summarize long texts, research papers, and documents in seconds with AI.',
     isIndexable: false,
     howToUse: ['Paste long text', 'Choose summary length', 'Generate executive summary'],
@@ -570,7 +570,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'Client-side QR matrix generator with color customization, error correction tiers, and PNG/SVG export.',
     toolIcon: 'QrCode',
     tags: ['qr', 'code', 'generator', 'wifi'],
-    seoTitle: 'Free QR Code Generator with Custom Colors | Mega Tools',
+    seoTitle: 'Free QR Code Generator with Custom Colors | Omega Calculators',
     seoDescription:
       'Generate high-resolution QR codes with color customization and vector SVG download.',
     isIndexable: true,
@@ -600,7 +600,7 @@ export const INITIAL_ADMIN_TOOLS: AdminTool[] = [
       'Audit search appearance and copy ready-to-paste meta tags for modern web projects.',
     toolIcon: 'Search',
     tags: ['seo', 'meta', 'opengraph', 'twitter'],
-    seoTitle: 'Meta Tag Generator — Complete SEO & Open Graph Tags | Mega Tools',
+    seoTitle: 'Meta Tag Generator — Complete SEO & Open Graph Tags | Omega Calculators',
     seoDescription: 'Create search and social meta tags with live Google snippet preview.',
     isIndexable: false,
     howToUse: [
@@ -674,13 +674,13 @@ export const INITIAL_ADMIN_USERS: AdminUser[] = [
 export const INITIAL_ADMIN_MEDIA: AdminMediaItem[] = [
   {
     id: 'med-1',
-    fileName: 'mega-tools-logo-dark.svg',
-    fileType: 'image/svg+xml',
-    fileSize: '14.2 KB',
-    dimensions: 'Vector',
+    fileName: 'horizontal-logo.png',
+    fileType: 'image/png',
+    fileSize: '202 KB',
+    dimensions: '1087x229',
     uploadDate: '2026-01-05',
-    url: '/images/mega-tools-logo-dark.svg',
-    altText: 'Mega Tools primary brand vector mark',
+    url: '/images/logo/horizontal-logo.png',
+    altText: 'Omega Calculators',
   },
   {
     id: 'med-2',

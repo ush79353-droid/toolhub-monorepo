@@ -8,601 +8,348 @@ import { Select } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { FormSection } from './FormSection';
-import { PendingNotice } from '../shared/PendingNotice';
-import { ArrowLeft, Save, Plus, Trash2, ShieldCheck, Info } from 'lucide-react';
-import {
-  SAFE_COMPONENT_KEYS,
-  INITIAL_ADMIN_CATEGORIES,
-  type AdminTool,
-} from '@/lib/admin-mock-data';
+import { ArrowLeft, ImageIcon, Loader2, Save, X } from 'lucide-react';
+import { listMediaAction, type MediaAsset } from '@/server/media/actions';
+import { saveToolAction, type PlacementNode, type ToolRecord } from '@/server/tools/actions';
 
-interface ToolFormProps {
-  initialData?: Partial<AdminTool>;
-  isEdit?: boolean;
+function slugify(value: string): string {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
-export function ToolForm({ initialData, isEdit = false }: ToolFormProps) {
+interface ToolFormProps {
+  mode: 'create' | 'edit';
+  tool?: ToolRecord;
+  placement: PlacementNode[];
+}
+
+export function ToolForm({ mode, tool, placement }: ToolFormProps) {
   const router = useRouter();
-
-  // Basic Details
-  const [name, setName] = React.useState(initialData?.name ?? '');
-  const [slug, setSlug] = React.useState(initialData?.slug ?? '');
-  const [categorySlug, setCategorySlug] = React.useState(
-    initialData?.categorySlug ?? INITIAL_ADMIN_CATEGORIES[0]?.slug ?? 'calculators'
-  );
-  const [shortDesc, setShortDesc] = React.useState(initialData?.shortDescription ?? '');
-  const [fullDesc, setFullDesc] = React.useState(initialData?.fullDescription ?? '');
-  const [toolIcon, setToolIcon] = React.useState(initialData?.toolIcon ?? 'Calculator');
-  const [tagsInput, setTagsInput] = React.useState(initialData?.tags?.join(', ') ?? '');
-
-  // Execution Configuration
-  const [executionType, setExecutionType] = React.useState<'client' | 'server' | 'third-party'>(
-    initialData?.executionType ?? 'client'
-  );
-  const [componentKey, setComponentKey] = React.useState(
-    initialData?.componentKey ?? SAFE_COMPONENT_KEYS[0]?.key ?? 'AgeCalculator'
-  );
-
-  // SEO Settings
-  const [seoTitle, setSeoTitle] = React.useState(initialData?.seoTitle ?? '');
-  const [seoDescription, setSeoDescription] = React.useState(initialData?.seoDescription ?? '');
-  const [canonicalUrl, setCanonicalUrl] = React.useState(initialData?.canonicalUrl ?? '');
-  const [isIndexable, setIsIndexable] = React.useState(initialData?.isIndexable ?? true);
-  const [ogTitle, setOgTitle] = React.useState(initialData?.ogTitle ?? '');
-  const [ogDescription, setOgDescription] = React.useState(initialData?.ogDescription ?? '');
-
-  // Content Blocks
-  const [howToUse, setHowToUse] = React.useState<string[]>(
-    initialData?.howToUse && initialData.howToUse.length > 0
-      ? initialData.howToUse
-      : ['Enter input values', 'Click the action button', 'Review and copy output']
-  );
-  const [features, setFeatures] = React.useState<string[]>(
-    initialData?.features && initialData.features.length > 0
-      ? initialData.features
-      : ['100% Client-Side Privacy', 'Instant Calculation', 'Mobile Friendly']
-  );
-  const [faqs, setFaqs] = React.useState<{ question: string; answer: string }[]>(
-    initialData?.faqs && initialData.faqs.length > 0
-      ? initialData.faqs
-      : [
-          {
-            question: 'Is this tool free to use?',
-            answer: 'Yes, completely free with zero limits.',
-          },
-        ]
-  );
-
-  // Publishing
-  const [status, setStatus] = React.useState<'published' | 'draft' | 'disabled'>(
-    initialData?.status ?? 'published'
-  );
-  const [isFeatured, setIsFeatured] = React.useState(initialData?.isFeatured ?? false);
-
+  const isEdit = mode === 'edit';
+  const [name, setName] = React.useState(tool?.name ?? '');
+  const [slug, setSlug] = React.useState(tool?.slug ?? '');
+  const [categoryId, setCategoryId] = React.useState(tool?.category?.id ?? '');
+  const [pillarId, setPillarId] = React.useState(tool?.pillar?.id ?? '');
+  const [subPillarId, setSubPillarId] = React.useState(tool?.subPillar?.id ?? '');
+  const [iconMediaId, setIconMediaId] = React.useState(tool?.iconMediaId ?? '');
+  const [iconUrl, setIconUrl] = React.useState(tool?.iconUrl ?? '');
+  const [shortDescription, setShortDescription] = React.useState(tool?.shortDescription ?? '');
+  const [metaTitle, setMetaTitle] = React.useState(tool?.metaTitle ?? '');
+  const [metaDescription, setMetaDescription] = React.useState(tool?.metaDescription ?? '');
+  const [canonicalUrl, setCanonicalUrl] = React.useState(tool?.canonicalUrl ?? '');
+  const [ogTitle, setOgTitle] = React.useState(tool?.ogTitle ?? '');
+  const [ogDescription, setOgDescription] = React.useState(tool?.ogDescription ?? '');
+  const [keywords, setKeywords] = React.useState(tool?.keywords ?? '');
+  const [indexable, setIndexable] = React.useState(tool?.indexable ?? true);
+  const [isActive, setIsActive] = React.useState(tool?.isActive ?? true);
+  const [isFeatured, setIsFeatured] = React.useState(tool?.isFeatured ?? false);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
-  const [showPending, setShowPending] = React.useState(false);
-  const [submittedAction, setSubmittedAction] = React.useState<'publish' | 'draft' | 'save'>(
-    'save'
-  );
+  const [formError, setFormError] = React.useState<string | null>(null);
+  const [saving, setSaving] = React.useState(false);
+  const [pickerOpen, setPickerOpen] = React.useState(false);
+  const [images, setImages] = React.useState<MediaAsset[]>([]);
+  const [imageSearch, setImageSearch] = React.useState('');
+  const [imagesLoading, setImagesLoading] = React.useState(false);
 
-  const handleNameChange = (val: string) => {
-    setName(val);
-    if (
-      !isEdit &&
-      (!slug ||
-        slug ===
-          name
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/(^-|-$)+/g, ''))
-    ) {
-      setSlug(
-        val
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, '-')
-          .replace(/(^-|-$)+/g, '')
-      );
-    }
+  const categories = placement.filter((item) => item.kind === 'category');
+  const pillars = placement.filter((item) => item.kind === 'pillar' && item.parentId === categoryId);
+  const subPillars = placement.filter((item) => item.kind === 'sub_pillar' && item.parentId === pillarId);
+
+  const handleNameChange = (value: string) => {
+    setName(value);
+    if (!isEdit && slug === slugify(name)) setSlug(slugify(value));
   };
 
-  const handleAddStep = () => setHowToUse([...howToUse, '']);
-  const handleRemoveStep = (idx: number) => setHowToUse(howToUse.filter((_, i) => i !== idx));
-  const handleStepChange = (idx: number, val: string) => {
-    const updated = [...howToUse];
-    updated[idx] = val;
-    setHowToUse(updated);
-  };
+  const loadImages = React.useCallback(async (search: string) => {
+    setImagesLoading(true);
+    const result = await listMediaAction({ page: 1, limit: 48, search, type: 'image' });
+    setImages(result.success && result.data ? result.data.items : []);
+    setImagesLoading(false);
+  }, []);
 
-  const handleAddFeature = () => setFeatures([...features, '']);
-  const handleRemoveFeature = (idx: number) => setFeatures(features.filter((_, i) => i !== idx));
-  const handleFeatureChange = (idx: number, val: string) => {
-    const updated = [...features];
-    updated[idx] = val;
-    setFeatures(updated);
-  };
+  React.useEffect(() => {
+    if (!pickerOpen) return;
+    const timer = window.setTimeout(() => void loadImages(imageSearch.trim()), 300);
+    return () => window.clearTimeout(timer);
+  }, [pickerOpen, imageSearch, loadImages]);
 
-  const handleAddFaq = () => setFaqs([...faqs, { question: '', answer: '' }]);
-  const handleRemoveFaq = (idx: number) => setFaqs(faqs.filter((_, i) => i !== idx));
-  const handleFaqChange = (idx: number, field: 'question' | 'answer', val: string) => {
-    const updated = [...faqs];
-    updated[idx] = { ...updated[idx], [field]: val };
-    setFaqs(updated);
-  };
-
-  const handleSave = (action: 'publish' | 'draft' | 'save') => {
-    const newErrors: Record<string, string> = {};
-    if (!name.trim()) newErrors.name = 'Tool name is required.';
-    if (!slug.trim()) newErrors.slug = 'URL slug is required.';
-    if (!shortDesc.trim()) newErrors.shortDesc = 'Short description is required.';
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const nextErrors: Record<string, string> = {};
+    if (!name.trim()) nextErrors.name = 'Tool name is required.';
+    if (!slugify(slug)) nextErrors.slug = 'Use lowercase letters, numbers, and hyphens.';
+    if (!categoryId) nextErrors.categoryId = 'Choose a category.';
+    if (subPillarId && !pillarId) nextErrors.pillarId = 'Choose a pillar before a sub-pillar.';
+    if (Object.keys(nextErrors).length) {
+      setErrors(nextErrors);
       return;
     }
-
     setErrors({});
-    setSubmittedAction(action);
-    setShowPending(true);
+    setFormError(null);
+    setSaving(true);
+    const result = await saveToolAction(tool?.id ?? null, {
+      name: name.trim(),
+      slug: slugify(slug),
+      categoryId,
+      pillarId,
+      subPillarId: subPillarId || null,
+      iconMediaId: iconMediaId || null,
+      shortDescription: shortDescription.trim(),
+      metaTitle: metaTitle.trim(),
+      metaDescription: metaDescription.trim(),
+      canonicalUrl: canonicalUrl.trim(),
+      ogTitle: ogTitle.trim(),
+      ogDescription: ogDescription.trim(),
+      keywords: keywords.trim(),
+      indexable,
+      isActive,
+      isFeatured,
+    });
+    setSaving(false);
+    if (!result.success) {
+      setFormError(result.error || 'Failed to save the tool.');
+      return;
+    }
+    router.push('/admin/tools');
+    router.refresh();
   };
 
   return (
-    <div className="space-y-6 max-w-4xl pb-16">
-      {/* Top action header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <form onSubmit={handleSubmit} className="w-full space-y-6 pb-16">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <Button
           type="button"
           variant="outline"
           size="sm"
           onClick={() => router.push('/admin/tools')}
-          className="inline-flex items-center gap-1.5 text-xs w-fit"
+          className="inline-flex w-fit items-center gap-1.5 text-xs"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
-          <span>Back to Tools Directory</span>
+          Back to tools
         </Button>
-
-        <div className="flex items-center gap-2">
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={() => handleSave('draft')}
-            className="text-xs"
-          >
-            Save Draft
-          </Button>
-          <Button
-            type="button"
-            size="sm"
-            onClick={() => handleSave('publish')}
-            className="bg-primary text-white hover:bg-[hsl(var(--primary-hover))] inline-flex items-center gap-1.5 text-xs"
-          >
-            <Save className="h-3.5 w-3.5" />
-            <span>{isEdit ? 'Save Changes' : 'Publish Tool'}</span>
-          </Button>
-        </div>
+        <Button
+          type="submit"
+          size="sm"
+          disabled={saving}
+          className="inline-flex items-center gap-1.5 bg-primary text-xs text-white hover:bg-[hsl(var(--primary-hover))]"
+        >
+          {saving ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Save className="h-3.5 w-3.5" />}
+          {isEdit ? 'Save changes' : 'Create tool'}
+        </Button>
       </div>
 
-      {showPending && (
-        <PendingNotice
-          message={`Tool '${name || 'New Tool'}' validated (${submittedAction}). Backend persistence via Express API & MongoDB will be enabled in the upcoming API phase.`}
-          onDismiss={() => setShowPending(false)}
-        />
+      {formError && (
+        <p className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">{formError}</p>
       )}
 
-      {/* Section A — Basic Information */}
-      <FormSection
-        title="Section A — Basic Information"
-        description="Public names, category assignment, icons, and searchable tags."
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <FormSection className="w-full" title="Tool details" description="The public name and the address used in the URL. Both must be unique.">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">
-              Tool Name <span className="text-rose-500">*</span>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">
+              Tool name <span className="text-rose-500">*</span>
             </label>
-            <Input
-              value={name}
-              onChange={(e) => handleNameChange(e.target.value)}
-              placeholder="e.g. Percentage Calculator"
-              className={errors.name ? 'border-rose-400' : ''}
-            />
-            {errors.name && <p className="text-[11px] text-rose-600 mt-1">{errors.name}</p>}
+            <Input value={name} onChange={(event) => handleNameChange(event.target.value)} placeholder="Percentage Calculator" className={errors.name ? 'border-rose-400' : ''} />
+            {errors.name && <p className="mt-1 text-[11px] text-rose-600">{errors.name}</p>}
           </div>
-
           <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">
-              URL Slug <span className="text-rose-500">*</span>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">
+              URL slug <span className="text-rose-500">*</span>
             </label>
-            <Input
-              value={slug}
-              onChange={(e) => setSlug(e.target.value)}
-              placeholder="e.g. percentage-calculator"
-              className={errors.slug ? 'border-rose-400 font-mono text-xs' : 'font-mono text-xs'}
-            />
-            {errors.slug && <p className="text-[11px] text-rose-600 mt-1">{errors.slug}</p>}
+            <Input value={slug} onChange={(event) => setSlug(event.target.value)} placeholder="percentage-calculator" className={`font-mono text-xs ${errors.slug ? 'border-rose-400' : ''}`} />
+            {errors.slug && <p className="mt-1 text-[11px] text-rose-600">{errors.slug}</p>}
           </div>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">Category</label>
-            <Select value={categorySlug} onChange={(e) => setCategorySlug(e.target.value)}>
-              {INITIAL_ADMIN_CATEGORIES.map((cat) => (
-                <option key={cat.slug} value={cat.slug}>
-                  {cat.name}
-                </option>
-              ))}
-            </Select>
-          </div>
-
-          <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">Tool Icon</label>
-            <Select value={toolIcon} onChange={(e) => setToolIcon(e.target.value)}>
-              <option value="Calculator">Calculator</option>
-              <option value="Percent">Percent</option>
-              <option value="Activity">Activity (Health / BMI)</option>
-              <option value="DollarSign">DollarSign (Finance / Loan)</option>
-              <option value="Type">Type (Word / Text)</option>
-              <option value="Code2">Code2 (JSON / Dev)</option>
-              <option value="FileText">FileText (PDF)</option>
-              <option value="Image">Image</option>
-              <option value="Sparkles">Sparkles (AI)</option>
-              <option value="QrCode">QrCode</option>
-              <option value="Search">Search (SEO)</option>
-            </Select>
-          </div>
-        </div>
-
         <div>
-          <label className="block text-xs font-semibold text-accent mb-1.5">
-            Short Description <span className="text-rose-500">*</span>
-          </label>
-          <Textarea
-            value={shortDesc}
-            onChange={(e) => setShortDesc(e.target.value)}
-            placeholder="One-sentence overview shown on tool cards and search snippets..."
-            rows={2}
-            className={errors.shortDesc ? 'border-rose-400' : ''}
-          />
-          {errors.shortDesc && <p className="text-[11px] text-rose-600 mt-1">{errors.shortDesc}</p>}
-        </div>
-
-        <div>
-          <label className="block text-xs font-semibold text-accent mb-1.5">Full Description</label>
-          <Textarea
-            value={fullDesc}
-            onChange={(e) => setFullDesc(e.target.value)}
-            placeholder="Comprehensive description displayed in the hero section of the tool..."
-            rows={3}
-          />
-        </div>
-
-        <div>
-          <label className="block text-xs font-semibold text-accent mb-1.5">
-            Search Tags (Comma separated)
-          </label>
-          <Input
-            value={tagsInput}
-            onChange={(e) => setTagsInput(e.target.value)}
-            placeholder="e.g. math, percentage, discount, finance"
-          />
+          <label className="mb-1.5 block text-xs font-semibold text-accent">Short description</label>
+          <Textarea value={shortDescription} onChange={(event) => setShortDescription(event.target.value)} rows={2} maxLength={500} placeholder="One sentence for cards and listings" />
         </div>
       </FormSection>
 
-      {/* Section B — Execution Configuration */}
-      <FormSection
-        title="Section B — Execution Configuration"
-        description="Select runtime engine and developer-registered component key."
-        badge={
-          <span className="inline-flex items-center gap-1 rounded bg-secondary px-2 py-0.5 text-[10px] font-bold text-primary">
-            <ShieldCheck className="h-3 w-3" />
-            Zero Code Injection
-          </span>
-        }
-      >
-        <div className="rounded-lg border border-teal-200 bg-secondary/30 p-3 text-xs text-primary flex items-start gap-2">
-          <Info className="h-4 w-4 shrink-0 mt-0.5" />
-          <p className="leading-relaxed">
-            <strong>Security Boundary:</strong> Only developer-approved component keys registered in
-            frontend source code may be bound. The admin system never accepts raw JavaScript,
-            formulas, or arbitrary code upload.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <FormSection className="w-full" title="Placement" description="Every tool belongs to a category. Add a pillar when it sits in a family, and a sub-pillar only inside that pillar.">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">
-              Execution Architecture
+            <label className="mb-1.5 block text-xs font-semibold text-accent">
+              Category <span className="text-rose-500">*</span>
             </label>
             <Select
-              value={executionType}
-              onChange={(e) =>
-                setExecutionType(e.target.value as 'client' | 'server' | 'third-party')
-              }
+              value={categoryId}
+              onChange={(event) => {
+                setCategoryId(event.target.value);
+                setPillarId('');
+                setSubPillarId('');
+              }}
+              className={errors.categoryId ? 'border-rose-400' : ''}
             >
-              <option value="client">Client-Side (100% In-Browser)</option>
-              <option value="server">Server Pipeline (Next.js Server API)</option>
-              <option value="third-party">Third-Party Gateway (Proxied via Backend)</option>
-            </Select>
-          </div>
-
-          <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">
-              Bound Component Key
-            </label>
-            <Select value={componentKey} onChange={(e) => setComponentKey(e.target.value)}>
-              {SAFE_COMPONENT_KEYS.map((item) => (
-                <option key={item.key} value={item.key}>
-                  {item.key} ({item.name})
-                </option>
+              <option value="">Select category</option>
+              {categories.map((item) => (
+                <option key={item.id} value={item.id}>{item.name}</option>
               ))}
             </Select>
-            <p className="text-[10px] text-muted-foreground mt-1 font-mono">
-              Registered frontend component:{' '}
-              <span className="text-primary font-semibold">{componentKey}</span>
+            {errors.categoryId && <p className="mt-1 text-[11px] text-rose-600">{errors.categoryId}</p>}
+          </div>
+          <div>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">Pillar</label>
+            <Select
+              value={pillarId}
+              disabled={!categoryId}
+              onChange={(event) => {
+                setPillarId(event.target.value);
+                setSubPillarId('');
+              }}
+              className={errors.pillarId ? 'border-rose-400' : ''}
+            >
+              <option value="">Category only</option>
+              {pillars.map((item) => (
+                <option key={item.id} value={item.id}>{item.name}</option>
+              ))}
+            </Select>
+            {errors.pillarId && <p className="mt-1 text-[11px] text-rose-600">{errors.pillarId}</p>}
+          </div>
+          <div>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">Sub-pillar</label>
+            <Select value={subPillarId} disabled={!pillarId} onChange={(event) => setSubPillarId(event.target.value)}>
+              <option value="">None</option>
+              {subPillars.map((item) => (
+                <option key={item.id} value={item.id}>{item.name}</option>
+              ))}
+            </Select>
+          </div>
+        </div>
+      </FormSection>
+
+      <FormSection className="w-full" title="Icon" description="Optional image from the media library. This is not a built-in icon.">
+        <div className="flex items-center gap-4">
+          <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl border border-border bg-muted/40">
+            {iconUrl ? <img src={iconUrl} alt="" className="h-full w-full object-contain" /> : <ImageIcon className="h-6 w-6 text-muted-foreground" />}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Button type="button" variant="outline" size="sm" onClick={() => setPickerOpen(true)}>
+              Choose image
+            </Button>
+            {iconMediaId && (
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setIconMediaId('');
+                  setIconUrl('');
+                }}
+              >
+                Remove
+              </Button>
+            )}
+          </div>
+        </div>
+      </FormSection>
+
+      <FormSection className="w-full" title="SEO" description="Search and social tags. Leave a field blank to fall back to the tool name later.">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">Meta title</label>
+            <Input value={metaTitle} maxLength={70} onChange={(event) => setMetaTitle(event.target.value)} placeholder="Free Percentage Calculator" />
+            <p className="mt-1 text-[10px] text-muted-foreground">{metaTitle.length}/70</p>
+          </div>
+          <div>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">Canonical URL</label>
+            <Input value={canonicalUrl} onChange={(event) => setCanonicalUrl(event.target.value)} placeholder="https://example.com/tools/percentage-calculator" />
+          </div>
+        </div>
+        <div>
+          <label className="mb-1.5 block text-xs font-semibold text-accent">Meta description</label>
+          <Textarea value={metaDescription} maxLength={160} rows={2} onChange={(event) => setMetaDescription(event.target.value)} placeholder="Search result snippet" />
+          <p className="mt-1 text-[10px] text-muted-foreground">{metaDescription.length}/160</p>
+        </div>
+        <div>
+          <label className="mb-1.5 block text-xs font-semibold text-accent">Keywords</label>
+          <Input value={keywords} maxLength={200} onChange={(event) => setKeywords(event.target.value)} placeholder="percentage, discount, calculator" />
+        </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">Social title</label>
+            <Input value={ogTitle} maxLength={70} onChange={(event) => setOgTitle(event.target.value)} />
+          </div>
+          <div>
+            <label className="mb-1.5 block text-xs font-semibold text-accent">Social description</label>
+            <Input value={ogDescription} maxLength={200} onChange={(event) => setOgDescription(event.target.value)} />
+          </div>
+        </div>
+        <div className="flex items-center justify-between gap-4 rounded-xl border border-border bg-muted/50 px-4 py-3.5">
+          <div>
+            <p className="text-sm font-semibold text-accent">Search indexing</p>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              {indexable ? 'Search engines may index this tool.' : 'Search engines are asked not to index this tool.'}
             </p>
           </div>
+          <Switch checked={indexable} onCheckedChange={setIndexable} />
         </div>
       </FormSection>
 
-      {/* Section C — SEO Settings */}
-      <FormSection
-        title="Section C — SEO Settings"
-        description="Search title, meta tags, indexing controls, and Open Graph card data."
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">SEO Title</label>
-            <Input
-              value={seoTitle}
-              onChange={(e) => setSeoTitle(e.target.value)}
-              placeholder="e.g. Free Percentage Calculator | Mega Tools"
-            />
-          </div>
-
-          <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">
-              Canonical URL (Optional)
-            </label>
-            <Input
-              value={canonicalUrl}
-              onChange={(e) => setCanonicalUrl(e.target.value)}
-              placeholder="https://megatools.io/tools/percentage-calculator"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className="block text-xs font-semibold text-accent mb-1.5">Meta Description</label>
-          <Textarea
-            value={seoDescription}
-            onChange={(e) => setSeoDescription(e.target.value)}
-            placeholder="Google SERP snippet description (140-160 characters recommended)..."
-            rows={2}
-          />
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">
-              Social OG Title
-            </label>
-            <Input
-              value={ogTitle}
-              onChange={(e) => setOgTitle(e.target.value)}
-              placeholder="Title for Facebook/LinkedIn/Twitter shares"
-            />
-          </div>
-          <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">
-              Social OG Description
-            </label>
-            <Input
-              value={ogDescription}
-              onChange={(e) => setOgDescription(e.target.value)}
-              placeholder="Snippet for social media card previews"
-            />
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between pt-2">
-          <div>
-            <div className="text-xs font-semibold text-accent">Allow Search Engine Indexing</div>
-            <div className="text-[11px] text-muted-foreground">
-              Sets robots meta header to index, follow.
-            </div>
-          </div>
-          <Switch checked={isIndexable} onCheckedChange={setIsIndexable} />
-        </div>
-      </FormSection>
-
-      {/* Section D — Content */}
-      <FormSection
-        title="Section D — Content & User Guide"
-        description="Instructional steps, feature highlights, and common FAQ questions."
-      >
-        {/* How to Use Steps */}
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <label className="text-xs font-semibold text-accent">How to Use (Step-by-step)</label>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={handleAddStep}
-              className="h-7 px-2 text-[11px] inline-flex items-center gap-1"
-            >
-              <Plus className="h-3 w-3" />
-              <span>Add Step</span>
-            </Button>
-          </div>
-          <div className="space-y-2">
-            {howToUse.map((step, idx) => (
-              <div key={idx} className="flex items-center gap-2">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-muted text-xs font-bold text-muted-foreground">
-                  {idx + 1}
-                </span>
-                <Input
-                  value={step}
-                  onChange={(e) => handleStepChange(idx, e.target.value)}
-                  placeholder={`Step ${idx + 1} instructions...`}
-                  className="h-8 text-xs"
-                />
-                {howToUse.length > 1 && (
-                  <button
-                    type="button"
-                    onClick={() => handleRemoveStep(idx)}
-                    className="p-1.5 text-muted-foreground hover:text-rose-600"
-                  >
-                    <Trash2 className="h-3.5 w-3.5" />
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Key Features */}
-        <div className="space-y-2 pt-2 border-t border-border">
-          <div className="flex items-center justify-between">
-            <label className="text-xs font-semibold text-accent">Key Features</label>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={handleAddFeature}
-              className="h-7 px-2 text-[11px] inline-flex items-center gap-1"
-            >
-              <Plus className="h-3 w-3" />
-              <span>Add Feature</span>
-            </Button>
-          </div>
-          <div className="space-y-2">
-            {features.map((feat, idx) => (
-              <div key={idx} className="flex items-center gap-2">
-                <Input
-                  value={feat}
-                  onChange={(e) => handleFeatureChange(idx, e.target.value)}
-                  placeholder="e.g. 100% In-Browser Privacy"
-                  className="h-8 text-xs"
-                />
-                {features.length > 1 && (
-                  <button
-                    type="button"
-                    onClick={() => handleRemoveFeature(idx)}
-                    className="p-1.5 text-muted-foreground hover:text-rose-600"
-                  >
-                    <Trash2 className="h-3.5 w-3.5" />
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* FAQs */}
-        <div className="space-y-2 pt-2 border-t border-border">
-          <div className="flex items-center justify-between">
-            <label className="text-xs font-semibold text-accent">Frequently Asked Questions</label>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={handleAddFaq}
-              className="h-7 px-2 text-[11px] inline-flex items-center gap-1"
-            >
-              <Plus className="h-3 w-3" />
-              <span>Add FAQ</span>
-            </Button>
-          </div>
-          <div className="space-y-3">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="rounded-lg border border-border p-3 space-y-2 bg-muted/20">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold text-accent">FAQ #{idx + 1}</span>
-                  {faqs.length > 1 && (
-                    <button
-                      type="button"
-                      onClick={() => handleRemoveFaq(idx)}
-                      className="text-xs text-rose-600 hover:underline"
-                    >
-                      Remove
-                    </button>
-                  )}
-                </div>
-                <Input
-                  value={faq.question}
-                  onChange={(e) => handleFaqChange(idx, 'question', e.target.value)}
-                  placeholder="Question text..."
-                  className="h-8 text-xs bg-white"
-                />
-                <Textarea
-                  value={faq.answer}
-                  onChange={(e) => handleFaqChange(idx, 'answer', e.target.value)}
-                  placeholder="Answer text..."
-                  rows={2}
-                  className="text-xs bg-white"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </FormSection>
-
-      {/* Section E — Publishing */}
-      <FormSection
-        title="Section E — Publishing & Visibility"
-        description="Release status, homepage promotion, and sorting."
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs font-semibold text-accent mb-1.5">
-              Publication Status
-            </label>
-            <Select
-              value={status}
-              onChange={(e) => setStatus(e.target.value as 'published' | 'draft' | 'disabled')}
-            >
-              <option value="published">Published (Live to Public)</option>
-              <option value="draft">Draft (Admin Preview Only)</option>
-              <option value="disabled">Disabled (Hidden with 404)</option>
-            </Select>
-          </div>
-
-          <div className="flex items-center justify-between pt-5">
+      <FormSection className="w-full" title="Visibility" description="Active tools can be listed. Featured tools can be promoted on the homepage.">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="flex items-center justify-between gap-4 rounded-xl border border-border bg-muted/50 px-4 py-3.5">
             <div>
-              <div className="text-xs font-semibold text-accent">Feature on Homepage</div>
-              <div className="text-[11px] text-muted-foreground">
-                Promote in popular tools grid.
-              </div>
+              <p className="text-sm font-semibold text-accent">Status</p>
+              <p className="mt-0.5 text-xs text-muted-foreground">{isActive ? 'Active' : 'Inactive'}</p>
+            </div>
+            <Switch checked={isActive} onCheckedChange={setIsActive} />
+          </div>
+          <div className="flex items-center justify-between gap-4 rounded-xl border border-border bg-muted/50 px-4 py-3.5">
+            <div>
+              <p className="text-sm font-semibold text-accent">Featured</p>
+              <p className="mt-0.5 text-xs text-muted-foreground">{isFeatured ? 'Shown in featured spots' : 'Not featured'}</p>
             </div>
             <Switch checked={isFeatured} onCheckedChange={setIsFeatured} />
           </div>
         </div>
       </FormSection>
 
-      {/* Bottom Action Footer */}
-      <div className="flex items-center justify-end gap-3 pt-4 border-t border-border">
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          onClick={() => router.push('/admin/tools')}
-        >
-          Cancel
-        </Button>
-        <Button type="button" variant="outline" size="sm" onClick={() => handleSave('draft')}>
-          Save Draft
-        </Button>
-        <Button
-          type="button"
-          size="sm"
-          onClick={() => handleSave('publish')}
-          className="bg-primary text-white hover:bg-[hsl(var(--primary-hover))] inline-flex items-center gap-1.5"
-        >
-          <Save className="h-4 w-4" />
-          <span>{isEdit ? 'Save Changes' : 'Publish Tool'}</span>
-        </Button>
-      </div>
-    </div>
+      {pickerOpen && (
+        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/50 p-4" onClick={() => setPickerOpen(false)}>
+          <div className="flex max-h-[80vh] w-full max-w-3xl flex-col rounded-xl border border-border bg-white shadow-xl" onClick={(event) => event.stopPropagation()}>
+            <div className="flex items-center justify-between border-b border-border px-4 py-3">
+              <h3 className="text-sm font-semibold text-accent">Choose an icon image</h3>
+              <button type="button" onClick={() => setPickerOpen(false)} className="text-muted-foreground hover:text-foreground">
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+            <div className="border-b border-border p-4">
+              <Input value={imageSearch} onChange={(event) => setImageSearch(event.target.value)} placeholder="Search images" />
+            </div>
+            <div className="overflow-y-auto p-4">
+              {imagesLoading ? (
+                <div className="flex items-center justify-center gap-2 py-10 text-sm text-muted-foreground">
+                  <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                  Loading images
+                </div>
+              ) : images.length === 0 ? (
+                <p className="py-10 text-center text-sm text-muted-foreground">No images in the media library yet.</p>
+              ) : (
+                <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
+                  {images.map((image) => (
+                    <button
+                      key={image.id}
+                      type="button"
+                      onClick={() => {
+                        setIconMediaId(image.id);
+                        setIconUrl(image.url);
+                        setPickerOpen(false);
+                      }}
+                      className={`overflow-hidden rounded-lg border bg-muted/30 ${iconMediaId === image.id ? 'border-primary' : 'border-border'}`}
+                      title={image.fileName}
+                    >
+                      <img src={image.url} alt={image.altText || image.fileName} className="h-20 w-full object-contain" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </form>
   );
 }

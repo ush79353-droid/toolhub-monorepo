@@ -3,24 +3,41 @@
 import * as React from 'react';
 import { AdminPageHeader } from '@/components/admin/layout/AdminPageHeader';
 import { ToolForm } from '@/components/admin/forms/ToolForm';
-import { INITIAL_ADMIN_TOOLS } from '@/lib/admin-mock-data';
+import { getToolAction, listToolPlacementAction, type PlacementNode, type ToolRecord } from '@/server/tools/actions';
+import { Loader2 } from 'lucide-react';
 
-interface EditToolPageProps {
-  params: Promise<{ id: string }>;
-}
+export default function EditToolPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = React.use(params);
+  const [tool, setTool] = React.useState<ToolRecord | null>(null);
+  const [placement, setPlacement] = React.useState<PlacementNode[]>([]);
+  const [error, setError] = React.useState<string | null>(null);
+  const [loading, setLoading] = React.useState(true);
 
-export default function EditToolPage({ params }: EditToolPageProps) {
-  const unwrappedParams = React.use(params);
-  const tool =
-    INITIAL_ADMIN_TOOLS.find((t) => t.id === unwrappedParams.id) ?? INITIAL_ADMIN_TOOLS[0];
+  React.useEffect(() => {
+    Promise.all([getToolAction(id), listToolPlacementAction()]).then(([item, nodes]) => {
+      if (!item.success || !item.data) setError(item.error || 'Tool not found.');
+      else setTool(item.data);
+      if (nodes.success && nodes.data) setPlacement(nodes.data);
+      setLoading(false);
+    });
+  }, [id]);
 
   return (
     <div className="space-y-6">
       <AdminPageHeader
-        title={`Edit Tool: ${tool.name}`}
-        description={`Update execution parameters, bound component key (${tool.componentKey}), and publication status.`}
+        title={tool ? `Edit ${tool.name}` : 'Edit tool'}
+        description="Update the catalog record. The calculator implementation stays in the codebase."
       />
-      <ToolForm initialData={tool} isEdit={true} />
+      {loading ? (
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Loader2 className="h-4 w-4 animate-spin text-primary" />
+          Loading tool
+        </div>
+      ) : error || !tool ? (
+        <p className="text-sm text-rose-600">{error || 'Tool not found.'}</p>
+      ) : (
+        <ToolForm mode="edit" tool={tool} placement={placement} />
+      )}
     </div>
   );
 }

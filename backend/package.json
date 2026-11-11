@@ -1,5 +1,5 @@
 {
-  "name": "mega-tools-backend",
+  "name": "omega-calculators-backend",
   "version": "1.0.0",
   "private": true,
   "main": "./dist/server.js",
@@ -10,10 +10,14 @@
     "type-check": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "admin:create": "tsx src/scripts/create-admin.ts",
+    "categories:seed": "tsx src/scripts/seed-categories.ts",
+    "tools:seed": "tsx src/scripts/seed-tools.ts",
     "format": "prettier --write \"src/**/*.{ts,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,json,md}\""
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1166.0",
+    "@aws-sdk/s3-request-presigner": "^3.1166.0",
     "argon2": "^0.45.2",
     "compression": "^1.8.0",
     "cors": "^2.8.5",
@@ -21,6 +25,7 @@
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "mongoose": "^8.10.1",
+    "nodemailer": "^10.5.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -28,6 +33,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/node": "^22.13.4",
+    "@types/nodemailer": "^8.0.2",
     "prettier": "^3.5.2",
     "tsx": "^4.19.3",
     "typescript": "^5.7.3"

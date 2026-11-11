@@ -1,7 +1,7 @@
 import type { ToolComponent, ToolRegistryMap } from '../types';
 
 /**
- * Component Registry for Mega Tools
+ * Component Registry for Omega Calculators
  * Maps database-driven component keys to validated React components.
  * Tools are dynamically resolved at runtime while ensuring strict type safety.
  */

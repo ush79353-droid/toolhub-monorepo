@@ -2,7 +2,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import { Container } from './Container';
 import { MobileNavigation } from './MobileNavigation';
-import { Wrench, Search, ChevronDown, Sparkles } from 'lucide-react';
+import { Search, ChevronDown, Sparkles } from 'lucide-react';
 import { CATEGORIES } from '@/lib/sample-data';
 
 export function Header() {
@@ -10,18 +10,12 @@ export function Header() {
     <header className="sticky top-0 z-40 w-full border-b border-border bg-white/95 backdrop-blur-md transition-shadow">
       <Container className="flex h-16 items-center justify-between gap-4">
         {/* Brand Logo */}
-        <Link href="/" className="group flex items-center gap-2.5">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white shadow-sm transition-transform group-hover:scale-105">
-            <Wrench className="h-5 w-5" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-lg font-black tracking-tight text-accent">
-              MEGA<span className="text-primary">TOOLS</span>
-            </span>
-            <span className="text-[10px] font-semibold tracking-wider text-muted-foreground uppercase -mt-1">
-              Online Utilities
-            </span>
-          </div>
+        <Link href="/" className="group flex items-center">
+          <img
+            src="/images/logo/horizontal-logo.png"
+            alt="Omega Calculators"
+            className="h-11 w-auto transition-transform group-hover:scale-[1.02]"
+          />
         </Link>
 
         {/* Desktop Navigation Links */}

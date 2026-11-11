@@ -1,0 +1,22 @@
+---
+trigger: always_on
+description: "Shared Project Brain workflow, architecture boundaries, and multi-developer Git rules for Mega Tools (Omega Calculators)."
+---
+
+# Mega Tools / Omega Calculators — Shared Project Brain Rule
+
+Follow the shared repository instructions in root `AGENTS.md` on every task.
+
+## Mandatory Workflow
+
+- **Before coding:** Read `brain/README.md`, `brain/CURRENT_STATE.md`, `brain/ARCHITECTURE.md`, and the `brain/` document(s) relevant to your task. Inspect the actual source files and check `git status` before making assumptions.
+- **After completing a task:** Run relevant verification (`npm run type-check`, `npm run lint`, and targeted checks), update affected `brain/` documents (`CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`, `DECISIONS.md` if applicable, plus any affected domain docs), and keep Brain updates in the same commit as related code changes.
+
+## Non-Negotiable Architecture & Safety Guards
+
+- Keep `frontend/` (Next.js App Router) and `backend/` (Express + MongoDB) as **two independent applications** with no npm workspaces.
+- Enforce `Browser → Next.js Server → Express API → MongoDB`. Browser components must never call Express directly or read `API_INTERNAL_URL`.
+- Preserve the locked palette and UI patterns documented in `brain/DESIGN_SYSTEM.md`.
+- Maintain strict TypeScript (`strict: true`) and never invent APIs, models, or completed features that are not verified in code.
+- Never commit `.env`, `.env.local`, credentials, or secrets, and never force push or overwrite another developer's work. Sync Brain updates via `git fetch` / `git pull` and resolve conflicts explicitly.
+

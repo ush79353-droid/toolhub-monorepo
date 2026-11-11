@@ -12,6 +12,23 @@ interface TablePaginationProps {
   onPageChange: (page: number) => void;
 }
 
+function pageItems(current: number, total: number): Array<number | 'gap'> {
+  const pages = new Set([1, total]);
+  for (let page = current - 1; page <= current + 1; page += 1) {
+    if (page >= 1 && page <= total) pages.add(page);
+  }
+  const sorted = [...pages].sort((left, right) => left - right);
+  const items: Array<number | 'gap'> = [];
+  sorted.forEach((page, index) => {
+    const previous = sorted[index - 1];
+    if (previous !== undefined && page - previous > 1) {
+      items.push(page - previous === 2 ? previous + 1 : 'gap');
+    }
+    items.push(page);
+  });
+  return items;
+}
+
 export function TablePagination({
   currentPage,
   totalPages,
@@ -40,7 +57,7 @@ export function TablePagination({
         <span className="font-semibold text-accent">{totalRecords}</span> entries
       </div>
 
-      <div className="flex items-center gap-1.5">
+      <div className="flex flex-wrap items-center justify-end gap-1.5">
         <Button
           type="button"
           variant="outline"
@@ -54,24 +71,27 @@ export function TablePagination({
         </Button>
 
         <div className="flex items-center gap-1">
-          {Array.from({ length: totalPages }).map((_, idx) => {
-            const page = idx + 1;
-            const isCurrent = page === currentPage;
-            return (
+          {pageItems(currentPage, totalPages).map((item, index) =>
+            item === 'gap' ? (
+              <span key={`gap-${index}`} className="px-1 text-sm text-muted-foreground" aria-hidden>
+                …
+              </span>
+            ) : (
               <button
-                key={page}
+                key={item}
                 type="button"
-                onClick={() => onPageChange(page)}
-                className={`h-8 w-8 rounded-lg text-xs font-semibold transition-colors ${
-                  isCurrent
+                onClick={() => onPageChange(item)}
+                className={`h-8 min-w-8 rounded-lg px-2 text-xs font-semibold transition-colors ${
+                  item === currentPage
                     ? 'bg-primary text-white'
                     : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                 }`}
+                aria-current={item === currentPage ? 'page' : undefined}
               >
-                {page}
+                {item}
               </button>
-            );
-          })}
+            )
+          )}
         </div>
 
         <Button

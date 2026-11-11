@@ -1,0 +1,1842 @@
+{
+  "source_document": "tools-directory-pillar-tools.pdf",
+  "source_date": "2026-11-11",
+  "total_tools_stated_in_source": 4351,
+  "category_count": 19,
+  "site_tags": {
+    "C": "calculator.net",
+    "O": "Omni Calculator",
+    "S": "SmallSEOTools",
+    "T": "TinyWow"
+  },
+  "hierarchy_definition": "Pillar is one main tool with its related cluster. Sub-pillar is a pillar inside a bigger pillar. Tools outside a pillar family are grouped under Other topics. Each tool appears once.",
+  "source_declared_pillar_count": 156,
+  "extracted_pillar_heading_count": 155,
+  "extraction_note": "The PDF contents page states 156 pillar tools, but 155 distinct PILLAR headings were extractable from the category pages. This discrepancy is flagged rather than inventing a missing pillar.",
+  "categories": {
+    "Finance & Business": {
+      "declared_tool_count": 644,
+      "declared_pillar_count_in_contents_page": 33,
+      "pillars": [
+        {
+          "pillar": "Loan Calculator",
+          "declared_cluster_tool_count": 31,
+          "sub_pillars": [
+            {
+              "name": "Home Loan Calculator",
+              "declared_tool_count": 4
+            }
+          ]
+        },
+        {
+          "pillar": "Mortgage Calculator",
+          "declared_cluster_tool_count": 19,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Interest Calculator",
+          "declared_cluster_tool_count": 19,
+          "sub_pillars": [
+            {
+              "name": "Interest Rate Calculator",
+              "declared_tool_count": 6
+            }
+          ]
+        },
+        {
+          "pillar": "Debt Calculator",
+          "declared_cluster_tool_count": 12,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Margin Calculator",
+          "declared_cluster_tool_count": 11,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Annuity Calculator",
+          "declared_cluster_tool_count": 9,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Overtime Calculator",
+          "declared_cluster_tool_count": 9,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Rent Calculator",
+          "declared_cluster_tool_count": 9,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Payment Calculator",
+          "declared_cluster_tool_count": 8,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Stimulus Check Calculator (40k Cap)",
+          "declared_cluster_tool_count": 8,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Bond Calculator",
+          "declared_cluster_tool_count": 7,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Savings Calculator",
+          "declared_cluster_tool_count": 7,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Commission Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Credit Card Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Discount Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Free Cash Flow Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Salary Calculator",
+          "declared_cluster_tool_count": 11,
+          "sub_pillars": [
+            {
+              "name": "Annual Salary Calculator",
+              "declared_tool_count": 3
+            }
+          ]
+        },
+        {
+          "pillar": "Dividend Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Investment Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Lease Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Rate of Return Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Refinance Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Revenue Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Sales Calculator",
+          "declared_cluster_tool_count": 11,
+          "sub_pillars": [
+            {
+              "name": "Sales Tax Calculator",
+              "declared_tool_count": 7
+            }
+          ]
+        },
+        {
+          "pillar": "Stock Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Unemployment Calculator (Unemployment Rate)",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Cash Ratio Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Depreciation Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Income Tax Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Profit Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Wage Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Budget Calculator",
+          "declared_cluster_tool_count": 3,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Stimulus Check Calculator",
+          "declared_cluster_tool_count": 1,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "UNATTACHED SUB-PILLAR: Student Loan Calculator",
+          "declared_tool_count": 4
+        },
+        {
+          "topic": "UNATTACHED SUB-PILLAR: Salary to Hourly Calculator",
+          "declared_tool_count": 4
+        },
+        {
+          "topic": "Tax and salary",
+          "declared_tool_count": 44
+        },
+        {
+          "topic": "Business planning",
+          "declared_tool_count": 68
+        },
+        {
+          "topic": "General investment",
+          "declared_tool_count": 50
+        },
+        {
+          "topic": "Personal finance",
+          "declared_tool_count": 31
+        },
+        {
+          "topic": "Mortgage and real estate",
+          "declared_tool_count": 18
+        },
+        {
+          "topic": "Microeconomics",
+          "declared_tool_count": 37
+        },
+        {
+          "topic": "Debt management",
+          "declared_tool_count": 11
+        },
+        {
+          "topic": "Equity investment",
+          "declared_tool_count": 31
+        },
+        {
+          "topic": "Macroeconomics",
+          "declared_tool_count": 34
+        },
+        {
+          "topic": "Debt investment",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Sales",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Indian finance",
+          "declared_tool_count": 14
+        },
+        {
+          "topic": "Retirement",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Derivatives investment",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Currency and exchange",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "UK finance",
+          "declared_tool_count": 5
+        }
+      ]
+    },
+    "Health & Fitness": {
+      "declared_tool_count": 453,
+      "declared_pillar_count_in_contents_page": 8,
+      "pillars": [
+        {
+          "pillar": "Dosage Calculator",
+          "declared_cluster_tool_count": 14,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "BMI Calculator",
+          "declared_cluster_tool_count": 10,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Calorie Calculator",
+          "declared_cluster_tool_count": 7,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Weight Gain Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Pregnancy Calculator",
+          "declared_cluster_tool_count": 10,
+          "sub_pillars": [
+            {
+              "name": "Pregnancy Test Calculator",
+              "declared_tool_count": 6
+            }
+          ]
+        },
+        {
+          "pillar": "Body Fat Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Due Date Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Weight Percentile Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Gynecology & pregnancy",
+          "declared_tool_count": 29
+        },
+        {
+          "topic": "Cardiovascular system",
+          "declared_tool_count": 40
+        },
+        {
+          "topic": "Dietary",
+          "declared_tool_count": 30
+        },
+        {
+          "topic": "Dosage",
+          "declared_tool_count": 20
+        },
+        {
+          "topic": "Hematology",
+          "declared_tool_count": 26
+        },
+        {
+          "topic": "Body measurements",
+          "declared_tool_count": 24
+        },
+        {
+          "topic": "Electrolytes & fluids",
+          "declared_tool_count": 22
+        },
+        {
+          "topic": "Urology & nephrology",
+          "declared_tool_count": 22
+        },
+        {
+          "topic": "Pulmonary",
+          "declared_tool_count": 19
+        },
+        {
+          "topic": "Addiction medicine",
+          "declared_tool_count": 18
+        },
+        {
+          "topic": "Covid-19 vaccine",
+          "declared_tool_count": 16
+        },
+        {
+          "topic": "Intensive & emergency care",
+          "declared_tool_count": 16
+        },
+        {
+          "topic": "Pediatric",
+          "declared_tool_count": 14
+        },
+        {
+          "topic": "Epidemiology",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Clinical scores and tests",
+          "declared_tool_count": 11
+        },
+        {
+          "topic": "Diabetes",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Sleep",
+          "declared_tool_count": 11
+        },
+        {
+          "topic": "Digestive system",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Geriatric medicine",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Percentile",
+          "declared_tool_count": 4
+        },
+        {
+          "topic": "Army",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Metabolic disorders",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Pediatric dosage",
+          "declared_tool_count": 2
+        },
+        {
+          "topic": "Fitness and exercise",
+          "declared_tool_count": 4
+        },
+        {
+          "topic": "Psychiatry & psychology",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Other health tools",
+          "declared_tool_count": 4
+        },
+        {
+          "topic": "Radiology",
+          "declared_tool_count": 4
+        }
+      ]
+    },
+    "Math & Statistics": {
+      "declared_tool_count": 893,
+      "declared_pillar_count_in_contents_page": 56,
+      "pillars": [
+        {
+          "pillar": "Triangle Calculator",
+          "declared_cluster_tool_count": 67,
+          "sub_pillars": [
+            {
+              "name": "Isosceles Triangle Calculator",
+              "declared_tool_count": 7
+            }
+          ]
+        },
+        {
+          "pillar": "Circle Calculator",
+          "declared_cluster_tool_count": 21,
+          "sub_pillars": [
+            {
+              "name": "Equation of a Circle Calculator",
+              "declared_tool_count": 4
+            }
+          ]
+        },
+        {
+          "pillar": "Fraction Calculator",
+          "declared_cluster_tool_count": 14,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Matrix Calculator",
+          "declared_cluster_tool_count": 13,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Probability Calculator",
+          "declared_cluster_tool_count": 12,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Surface Area Calculator",
+          "declared_cluster_tool_count": 12,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Percentage Calculator",
+          "declared_cluster_tool_count": 10,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Perimeter Calculator",
+          "declared_cluster_tool_count": 13,
+          "sub_pillars": [
+            {
+              "name": "Perimeter of a Triangle Calculator",
+              "declared_tool_count": 4
+            }
+          ]
+        },
+        {
+          "pillar": "Decimal Calculator",
+          "declared_cluster_tool_count": 9,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Trapezoid Calculator",
+          "declared_cluster_tool_count": 12,
+          "sub_pillars": [
+            {
+              "name": "Area of a Trapezoid Calculator",
+              "declared_tool_count": 4
+            }
+          ]
+        },
+        {
+          "pillar": "Root Calculator",
+          "declared_cluster_tool_count": 7,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Circumference Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Combination Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Complex Number Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Cosine Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Cube Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Cylinder Volume Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Exponent Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Modulo Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Polygon Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Standard Deviation Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Tangent Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Trig Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Vector Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Area of a Rectangle Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Binary Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Common Denominator Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Completing the Square Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Division Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Ellipse Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Mean Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Multiplication Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "OR Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Pyramid Volume Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Scientific Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Sequence Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Sine Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Slope Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Standard Form Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Addition Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Common Factor Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Confidence Interval Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Least to Greatest Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Log Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Median Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Odds Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Permutation Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Polar Coordinates Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Radical Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Square Pyramid Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Statistics Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Subtraction Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Theta Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "AND Probability Calculator",
+          "declared_cluster_tool_count": 1,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Greatest To Least Calculator",
+          "declared_cluster_tool_count": 1,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Percentage of a Percentage Calculator",
+          "declared_cluster_tool_count": 1,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "UNATTACHED SUB-PILLAR: Right Triangle Calculator",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "UNATTACHED SUB-PILLAR: Triangle Angle Calculator",
+          "declared_tool_count": 4
+        },
+        {
+          "topic": "UNATTACHED SUB-PILLAR: Triangle Area Calculator",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "UNATTACHED SUB-PILLAR: Triangle Side Calculator",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Arithmetic",
+          "declared_tool_count": 60
+        },
+        {
+          "topic": "3D geometry",
+          "declared_tool_count": 40
+        },
+        {
+          "topic": "Triangle",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "2D geometry",
+          "declared_tool_count": 38
+        },
+        {
+          "topic": "Probability theory and odds",
+          "declared_tool_count": 42
+        },
+        {
+          "topic": "Coordinate Geometry",
+          "declared_tool_count": 43
+        },
+        {
+          "topic": "Algebra",
+          "declared_tool_count": 40
+        },
+        {
+          "topic": "Descriptive statistics",
+          "declared_tool_count": 40
+        },
+        {
+          "topic": "Trigonometry",
+          "declared_tool_count": 25
+        },
+        {
+          "topic": "Linear algebra",
+          "declared_tool_count": 21
+        },
+        {
+          "topic": "Inference, regression, and statistical tests",
+          "declared_tool_count": 30
+        },
+        {
+          "topic": "Circle",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Distributions and plots",
+          "declared_tool_count": 31
+        },
+        {
+          "topic": "Exponents and logarithms",
+          "declared_tool_count": 18
+        },
+        {
+          "topic": "Fractions",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Percentages",
+          "declared_tool_count": 4
+        },
+        {
+          "topic": "Angle",
+          "declared_tool_count": 11
+        },
+        {
+          "topic": "Binary",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Number theory",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Sequences",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Other math tools",
+          "declared_tool_count": 6
+        }
+      ]
+    },
+    "Physics": {
+      "declared_tool_count": 540,
+      "declared_pillar_count_in_contents_page": 18,
+      "pillars": [
+        {
+          "pillar": "Velocity Calculator",
+          "declared_cluster_tool_count": 15,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Frequency Calculator",
+          "declared_cluster_tool_count": 11,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Capacitor Calculator",
+          "declared_cluster_tool_count": 8,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Pressure Calculator",
+          "declared_cluster_tool_count": 8,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Wavelength Calculator",
+          "declared_cluster_tool_count": 8,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Stress Calculator",
+          "declared_cluster_tool_count": 7,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Wire Size Calculator",
+          "declared_cluster_tool_count": 7,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Acceleration Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Free Fall Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Friction Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Projectile Motion Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Watt Converter",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Efficiency Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Kinetic Energy Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Momentum Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Spring Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Frequency Converter",
+          "declared_cluster_tool_count": 1,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Watt Calculator",
+          "declared_cluster_tool_count": 1,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Electronics and circuits",
+          "declared_tool_count": 57
+        },
+        {
+          "topic": "Fluid mechanics",
+          "declared_tool_count": 45
+        },
+        {
+          "topic": "Thermodynamics and heat",
+          "declared_tool_count": 45
+        },
+        {
+          "topic": "Materials and continuum mechanics",
+          "declared_tool_count": 40
+        },
+        {
+          "topic": "Electromagnetism",
+          "declared_tool_count": 37
+        },
+        {
+          "topic": "Optics and light",
+          "declared_tool_count": 35
+        },
+        {
+          "topic": "Kinematics",
+          "declared_tool_count": 16
+        },
+        {
+          "topic": "Machines and mechanisms",
+          "declared_tool_count": 24
+        },
+        {
+          "topic": "Rotational and periodic motion",
+          "declared_tool_count": 18
+        },
+        {
+          "topic": "Astronomy",
+          "declared_tool_count": 18
+        },
+        {
+          "topic": "Acoustic waves",
+          "declared_tool_count": 12
+        },
+        {
+          "topic": "Dynamics",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Quantum mechanics",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Atmospheric physics",
+          "declared_tool_count": 14
+        },
+        {
+          "topic": "Energy, work, and power",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Astrophysics",
+          "declared_tool_count": 11
+        },
+        {
+          "topic": "Relativity",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Everyday physics and experiments",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Statics",
+          "declared_tool_count": 4
+        }
+      ]
+    },
+    "Chemistry": {
+      "declared_tool_count": 106,
+      "declared_pillar_count_in_contents_page": 2,
+      "pillars": [
+        {
+          "pillar": "Concentration Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Mole Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Mixtures and solutions",
+          "declared_tool_count": 20
+        },
+        {
+          "topic": "General chemistry",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Stoichiometry",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Physical chemistry",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Chemical reactions",
+          "declared_tool_count": 12
+        },
+        {
+          "topic": "Chemical thermodynamics",
+          "declared_tool_count": 12
+        },
+        {
+          "topic": "Organic chemistry",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Biochemistry",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Electrochemistry",
+          "declared_tool_count": 5
+        }
+      ]
+    },
+    "Biology & Ecology": {
+      "declared_tool_count": 145,
+      "declared_pillar_count_in_contents_page": 1,
+      "pillars": [
+        {
+          "pillar": "Dog Size Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Gardening and crops",
+          "declared_tool_count": 23
+        },
+        {
+          "topic": "Dog",
+          "declared_tool_count": 18
+        },
+        {
+          "topic": "Eco footprint",
+          "declared_tool_count": 15
+        },
+        {
+          "topic": "Cat",
+          "declared_tool_count": 12
+        },
+        {
+          "topic": "Animal pregnancy",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Genetics",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Other animals",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Sustainable living",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Bio laboratory",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Trees & Forestry",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Ecology and environmental engineering",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Livestock",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Renewable energy",
+          "declared_tool_count": 5
+        }
+      ]
+    },
+    "Construction & Home": {
+      "declared_tool_count": 155,
+      "declared_pillar_count_in_contents_page": 1,
+      "pillars": [
+        {
+          "pillar": "Fence Calculator",
+          "declared_cluster_tool_count": 13,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Construction materials",
+          "declared_tool_count": 41
+        },
+        {
+          "topic": "Home and garden",
+          "declared_tool_count": 27
+        },
+        {
+          "topic": "Materials specifications",
+          "declared_tool_count": 24
+        },
+        {
+          "topic": "Cement and concrete",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Carpentry and layout",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Roofing",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Water tank and vessels",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Construction",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Driveway",
+          "declared_tool_count": 5
+        }
+      ]
+    },
+    "Conversion & Units": {
+      "declared_tool_count": 329,
+      "declared_pillar_count_in_contents_page": 16,
+      "pillars": [
+        {
+          "pillar": "Gallon Calculator",
+          "declared_cluster_tool_count": 14,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Yard Conversion",
+          "declared_cluster_tool_count": 9,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Meter Converter",
+          "declared_cluster_tool_count": 8,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "PSI Converter",
+          "declared_cluster_tool_count": 8,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "ATM Conversion",
+          "declared_cluster_tool_count": 7,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Feet converter",
+          "declared_cluster_tool_count": 15,
+          "sub_pillars": [
+            {
+              "name": "Cubic Feet Calculator",
+              "declared_tool_count": 5
+            }
+          ]
+        },
+        {
+          "pillar": "Metric Converter",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Mile Conversion Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "nm converter",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Inch Converter",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Fahrenheit Converter",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Kilometer Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "MPa Conversion",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "kPa Converter",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "mil Conversion",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Celsius Converter",
+          "declared_cluster_tool_count": 3,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "UNATTACHED SUB-PILLAR: Square Feet Converter",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Volume and weight",
+          "declared_tool_count": 70
+        },
+        {
+          "topic": "Length and area",
+          "declared_tool_count": 39
+        },
+        {
+          "topic": "Force, pressure, and torque",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Time",
+          "declared_tool_count": 31
+        },
+        {
+          "topic": "Tech and electronics",
+          "declared_tool_count": 15
+        },
+        {
+          "topic": "General unit conversion",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Number",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Numeral systems",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Other conversions",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Temperature",
+          "declared_tool_count": 2
+        },
+        {
+          "topic": "Energy and power",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Angle",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Money and coins",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Earth measurements",
+          "declared_tool_count": 4
+        },
+        {
+          "topic": "Speed",
+          "declared_tool_count": 4
+        }
+      ]
+    },
+    "Food & Cooking": {
+      "declared_tool_count": 71,
+      "declared_pillar_count_in_contents_page": 1,
+      "pillars": [
+        {
+          "pillar": "Coffee Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Cooking",
+          "declared_tool_count": 16
+        },
+        {
+          "topic": "Desserts and baking",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Cooking times, curing and brining",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Party",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Tea and coffee",
+          "declared_tool_count": 2
+        },
+        {
+          "topic": "Thanksgiving",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Drinks",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Other food tools",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Pizza",
+          "declared_tool_count": 5
+        }
+      ]
+    },
+    "Sports & Training": {
+      "declared_tool_count": 107,
+      "declared_pillar_count_in_contents_page": 1,
+      "pillars": [
+        {
+          "pillar": "Heart Rate Calculator",
+          "declared_cluster_tool_count": 7,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Calories burned",
+          "declared_tool_count": 16
+        },
+        {
+          "topic": "Cycling",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Performance",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Running",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Baseball",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Team and league stats",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Watersports",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Cricket",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Triathlon",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Basketball",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Gear and venues",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Weightlifting",
+          "declared_tool_count": 4
+        }
+      ]
+    },
+    "Everyday Life & Other Calculators": {
+      "declared_tool_count": 552,
+      "declared_pillar_count_in_contents_page": 14,
+      "pillars": [
+        {
+          "pillar": "Age Calculator",
+          "declared_cluster_tool_count": 17,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Countdown Calculator",
+          "declared_cluster_tool_count": 11,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Aspect Ratio Calculator",
+          "declared_cluster_tool_count": 7,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Grade Calculator",
+          "declared_cluster_tool_count": 6,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Birthday Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Chord Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Days Until Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "GPA Calculator",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Ring Size Converter",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Shoe Size Conversion",
+          "declared_cluster_tool_count": 5,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Gas Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Horsepower Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Parity Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "Time in Between Calculator",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Time and date",
+          "declared_tool_count": 66
+        },
+        {
+          "topic": "Tech and electronics",
+          "declared_tool_count": 56
+        },
+        {
+          "topic": "Leisure and fun",
+          "declared_tool_count": 45
+        },
+        {
+          "topic": "Transportation",
+          "declared_tool_count": 37
+        },
+        {
+          "topic": "Home economics",
+          "declared_tool_count": 36
+        },
+        {
+          "topic": "Photo and video",
+          "declared_tool_count": 29
+        },
+        {
+          "topic": "Clothing and sewing",
+          "declared_tool_count": 27
+        },
+        {
+          "topic": "Education",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Office, school, and productivity",
+          "declared_tool_count": 25
+        },
+        {
+          "topic": "Music",
+          "declared_tool_count": 17
+        },
+        {
+          "topic": "Prices and unit cost",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "Video games",
+          "declared_tool_count": 11
+        },
+        {
+          "topic": "Work and economy",
+          "declared_tool_count": 11
+        },
+        {
+          "topic": "Building materials (bridge to Construction)",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Earth and weather",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "Seasons and holidays",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Internet and network",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Personal hygiene",
+          "declared_tool_count": 9
+        },
+        {
+          "topic": "Electrical (bridge to Physics)",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Jewelry and gems",
+          "declared_tool_count": 4
+        },
+        {
+          "topic": "Logistics",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Books and reading",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Science basics (bridge to Physics/Chemistry)",
+          "declared_tool_count": 6
+        }
+      ]
+    },
+    "Writing, Text & AI": {
+      "declared_tool_count": 69,
+      "declared_pillar_count_in_contents_page": 0,
+      "pillars": [],
+      "other_topics": [
+        {
+          "topic": "Social media and marketing copy",
+          "declared_tool_count": 25
+        },
+        {
+          "topic": "Rewriting and summarizing",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "AI writing and generators",
+          "declared_tool_count": 12
+        },
+        {
+          "topic": "Checking, proofreading and citations",
+          "declared_tool_count": 8
+        },
+        {
+          "topic": "Text recognition, speech and translation",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Legal and business documents",
+          "declared_tool_count": 5
+        }
+      ]
+    },
+    "Design & Graphics": {
+      "declared_tool_count": 8,
+      "declared_pillar_count_in_contents_page": 0,
+      "pillars": [],
+      "other_topics": [
+        {
+          "topic": "Design makers",
+          "declared_tool_count": 8
+        }
+      ]
+    },
+    "Image Tools": {
+      "declared_tool_count": 92,
+      "declared_pillar_count_in_contents_page": 2,
+      "pillars": [
+        {
+          "pillar": "Image Converter",
+          "declared_cluster_tool_count": 20,
+          "sub_pillars": []
+        },
+        {
+          "pillar": "SVG Converter",
+          "declared_cluster_tool_count": 7,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Image format converters",
+          "declared_tool_count": 25
+        },
+        {
+          "topic": "Vector and design file converters",
+          "declared_tool_count": 16
+        },
+        {
+          "topic": "Image editing and effects",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Background and object editing",
+          "declared_tool_count": 10
+        },
+        {
+          "topic": "AI image tools (generate, search, detect)",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Image compression and resizing",
+          "declared_tool_count": 3
+        }
+      ]
+    },
+    "PDF Tools": {
+      "declared_tool_count": 58,
+      "declared_pillar_count_in_contents_page": 1,
+      "pillars": [
+        {
+          "pillar": "Compress PDF",
+          "declared_cluster_tool_count": 9,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Convert to PDF",
+          "declared_tool_count": 17
+        },
+        {
+          "topic": "Convert from PDF",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "PDF organize and edit",
+          "declared_tool_count": 13
+        },
+        {
+          "topic": "PDF compression",
+          "declared_tool_count": 1
+        },
+        {
+          "topic": "PDF security, signing and AI",
+          "declared_tool_count": 5
+        }
+      ]
+    },
+    "Video & Audio": {
+      "declared_tool_count": 58,
+      "declared_pillar_count_in_contents_page": 1,
+      "pillars": [
+        {
+          "pillar": "Video Downloader",
+          "declared_cluster_tool_count": 4,
+          "sub_pillars": []
+        }
+      ],
+      "other_topics": [
+        {
+          "topic": "Video format converters",
+          "declared_tool_count": 21
+        },
+        {
+          "topic": "Audio format converters",
+          "declared_tool_count": 19
+        },
+        {
+          "topic": "Video compression and editing",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Transcripts and subtitles",
+          "declared_tool_count": 6
+        },
+        {
+          "topic": "Social video downloaders",
+          "declared_tool_count": 1
+        }
+      ]
+    },
+    "File & Data Converters": {
+      "declared_tool_count": 17,
+      "declared_pillar_count_in_contents_page": 0,
+      "pillars": [],
+      "other_topics": [
+        {
+          "topic": "Spreadsheet and data formats",
+          "declared_tool_count": 11
+        },
+        {
+          "topic": "E-book format converters",
+          "declared_tool_count": 6
+        }
+      ]
+    },
+    "SEO, Website & Domain": {
+      "declared_tool_count": 42,
+      "declared_pillar_count_in_contents_page": 0,
+      "pillars": [],
+      "other_topics": [
+        {
+          "topic": "Technical SEO and site checks",
+          "declared_tool_count": 16
+        },
+        {
+          "topic": "Backlinks and authority",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Domain and IP lookup",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Keyword research",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "Meta tags and social cards",
+          "declared_tool_count": 5
+        },
+        {
+          "topic": "URL tools",
+          "declared_tool_count": 4
+        }
+      ]
+    },
+    "Developer & Misc Utilities": {
+      "declared_tool_count": 12,
+      "declared_pillar_count_in_contents_page": 0,
+      "pillars": [],
+      "other_topics": [
+        {
+          "topic": "Encoding, networking and files",
+          "declared_tool_count": 7
+        },
+        {
+          "topic": "Generators",
+          "declared_tool_count": 5
+        }
+      ]
+    }
+  }
+}

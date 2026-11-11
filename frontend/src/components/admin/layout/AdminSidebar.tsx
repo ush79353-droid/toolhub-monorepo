@@ -2,28 +2,11 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import {
-  LayoutDashboard,
-  Layers,
-  Wrench,
-  Users,
-  Image as ImageIcon,
-  Search,
-  FileText,
-  BarChart3,
-  Plug,
-  Activity,
-  Settings,
-  Globe,
-  LogOut,
-  ChevronLeft,
-  ChevronRight,
-  Shield,
-  Loader2,
-} from 'lucide-react';
+import { Globe, LogOut, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
 import { logoutAdminAction } from '@/server/auth/actions';
+import { ConfirmDialog } from '@/components/admin/shared/ConfirmDialog';
+import { AdminNavMenu } from './admin-nav';
 import type { AdminUser } from '@/types';
 
 interface AdminSidebarProps {
@@ -32,37 +15,9 @@ interface AdminSidebarProps {
   adminUser?: AdminUser | null;
 }
 
-interface NavItem {
-  label: string;
-  href: string;
-  icon: React.ElementType;
-  badge?: string;
-}
-
-const NAV_ITEMS: NavItem[] = [
-  { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
-  { label: 'Categories', href: '/admin/categories', icon: Layers },
-  { label: 'Tools', href: '/admin/tools', icon: Wrench, badge: '94' },
-  { label: 'Users', href: '/admin/users', icon: Users },
-  { label: 'Media Library', href: '/admin/media', icon: ImageIcon },
-  { label: 'SEO Management', href: '/admin/seo', icon: Search },
-  { label: 'CMS Pages', href: '/admin/pages', icon: FileText },
-  { label: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
-  { label: 'Integrations', href: '/admin/integrations', icon: Plug },
-  { label: 'Activity Logs', href: '/admin/activity-logs', icon: Activity },
-  { label: 'Settings', href: '/admin/settings', icon: Settings },
-];
-
 export function AdminSidebar({ isCollapsed, onToggleCollapse, adminUser }: AdminSidebarProps) {
-  const pathname = usePathname();
   const [isLoggingOut, setIsLoggingOut] = React.useState(false);
-
-  const isRouteActive = (href: string) => {
-    if (href === '/admin') {
-      return pathname === '/admin';
-    }
-    return pathname.startsWith(href);
-  };
+  const [confirmOpen, setConfirmOpen] = React.useState(false);
 
   const handleSignOut = async () => {
     setIsLoggingOut(true);
@@ -84,31 +39,27 @@ export function AdminSidebar({ isCollapsed, onToggleCollapse, adminUser }: Admin
   return (
     <aside
       className={cn(
-        'hidden md:flex flex-col border-r border-border bg-white transition-all duration-300 ease-in-out z-30 sticky top-0 h-screen select-none',
+        'sticky top-0 z-30 hidden h-screen select-none flex-col bg-brand-darkAccent text-white transition-all duration-300 ease-in-out md:flex',
         isCollapsed ? 'w-[72px]' : 'w-64'
       )}
     >
-      {/* Brand Header */}
-      <div className="flex h-16 items-center justify-between border-b border-border px-4">
-        <Link href="/admin" className="flex items-center gap-3 overflow-hidden">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-white shadow-xs">
-            <Shield className="h-5 w-5" />
-          </div>
+      <div className="flex h-16 items-center justify-between border-b border-white/10 px-3">
+        <Link href="/admin" className="flex min-w-0 items-center gap-2 overflow-hidden">
+          <img
+            src="/images/logo/icon-without-bg.png"
+            alt="Omega Calculators"
+            className="h-9 w-9 shrink-0 object-contain"
+          />
           {!isCollapsed && (
-            <div className="truncate">
-              <span className="font-extrabold text-sm tracking-tight text-accent block">
-                MEGA TOOLS
-              </span>
-              <span className="text-[10px] font-semibold tracking-wider text-primary uppercase">
-                Admin Console
-              </span>
-            </div>
+            <span className="truncate text-sm font-semibold leading-tight text-white">
+              Omega Calculators
+            </span>
           )}
         </Link>
         <button
           type="button"
           onClick={onToggleCollapse}
-          className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors cursor-pointer"
+          className="cursor-pointer rounded-lg p-1.5 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
           title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         >
@@ -116,83 +67,31 @@ export function AdminSidebar({ isCollapsed, onToggleCollapse, adminUser }: Admin
         </button>
       </div>
 
-      {/* Navigation List */}
-      <div className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
-        <div
-          className={cn(
-            'px-2 pb-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground',
-            isCollapsed && 'sr-only'
-          )}
-        >
-          Management
-        </div>
-
-        {NAV_ITEMS.map((item) => {
-          const active = isRouteActive(item.href);
-          const Icon = item.icon;
-
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              title={isCollapsed ? item.label : undefined}
-              className={cn(
-                'group relative flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium transition-all duration-150',
-                active
-                  ? 'bg-secondary font-semibold text-primary shadow-xs'
-                  : 'text-muted-foreground hover:bg-muted/70 hover:text-foreground',
-                isCollapsed && 'justify-center px-2'
-              )}
-            >
-              <Icon
-                className={cn(
-                  'h-4 w-4 shrink-0 transition-colors',
-                  active ? 'text-primary' : 'text-muted-foreground group-hover:text-foreground'
-                )}
-              />
-
-              {!isCollapsed && (
-                <>
-                  <span className="flex-1 truncate">{item.label}</span>
-                  {item.badge && (
-                    <span
-                      className={cn(
-                        'rounded-full px-1.5 py-0.5 text-[10px] font-semibold',
-                        active ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'
-                      )}
-                    >
-                      {item.badge}
-                    </span>
-                  )}
-                </>
-              )}
-            </Link>
-          );
-        })}
+      <div className="admin-scroll flex-1 overflow-y-auto px-3 py-4">
+        <AdminNavMenu collapsed={isCollapsed} />
       </div>
 
-      {/* Footer Navigation */}
-      <div className="border-t border-border p-3 space-y-1">
+      <div className="space-y-1 border-t border-white/10 p-3">
         <Link
           href="/"
           target="_blank"
-          title={isCollapsed ? 'View Public Website' : undefined}
+          title={isCollapsed ? 'View Website' : undefined}
           className={cn(
-            'flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors',
+            'flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white',
             isCollapsed && 'justify-center px-2'
           )}
         >
-          <Globe className="h-4 w-4 shrink-0 text-muted-foreground" />
+          <Globe className="h-4 w-4 shrink-0" />
           {!isCollapsed && <span className="truncate">View Website</span>}
         </Link>
 
         <button
           type="button"
-          onClick={handleSignOut}
+          onClick={() => setConfirmOpen(true)}
           disabled={isLoggingOut}
           title={isCollapsed ? 'Sign Out' : undefined}
           className={cn(
-            'w-full flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-rose-600 hover:bg-rose-50 hover:text-rose-700 transition-colors cursor-pointer',
+            'flex w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-rose-200 transition-colors hover:bg-rose-500/20 hover:text-white',
             isCollapsed && 'justify-center px-2'
           )}
         >
@@ -206,28 +105,35 @@ export function AdminSidebar({ isCollapsed, onToggleCollapse, adminUser }: Admin
           )}
         </button>
 
-        {/* Profile Card */}
         <Link
           href="/admin/profile"
           className={cn(
-            'mt-2 flex items-center gap-3 rounded-lg border border-border bg-background p-2 hover:border-primary/40 transition-colors',
+            'mt-2 flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-2 transition-colors hover:bg-white/10',
             isCollapsed && 'justify-center p-1.5'
           )}
           title={isCollapsed ? `${displayName} (${roleName})` : undefined}
         >
-          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
+          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-xs font-bold text-brand-darkAccent">
             {initials}
           </div>
           {!isCollapsed && (
             <div className="flex-1 truncate">
-              <div className="truncate text-xs font-semibold text-accent leading-none">
-                {displayName}
-              </div>
-              <div className="text-[10px] text-muted-foreground truncate mt-0.5">{roleName}</div>
+              <div className="truncate text-xs font-semibold leading-none text-white">{displayName}</div>
+              <div className="mt-0.5 truncate text-[10px] text-white/60">{roleName}</div>
             </div>
           )}
         </Link>
       </div>
+
+      <ConfirmDialog
+        isOpen={confirmOpen}
+        onClose={() => setConfirmOpen(false)}
+        onConfirm={handleSignOut}
+        title="Sign out?"
+        description="You will need to sign in again to open the admin console."
+        confirmLabel="Sign out"
+        cancelLabel="Stay signed in"
+      />
     </aside>
   );
 }

@@ -21,7 +21,7 @@ async function bootstrap(): Promise<void> {
 
   // Start HTTP server
   server = app.listen(env.PORT, () => {
-    logger.info(`🚀 Mega Tools API server running on port ${env.PORT} in [${env.NODE_ENV}] mode`);
+    logger.info(`🚀 Omega Calculators API server running on port ${env.PORT} in [${env.NODE_ENV}] mode`);
     logger.info(`👉 Health Check: http://localhost:${env.PORT}${env.API_PREFIX}/health`);
   });
 

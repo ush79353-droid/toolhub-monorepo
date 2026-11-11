@@ -8,6 +8,10 @@ import { notFoundHandler } from './middleware/notFound.middleware';
 import { errorHandler } from './middleware/error.middleware';
 import { healthRouter } from './modules/health/health.router';
 import { adminAuthRouter } from './modules/auth/admin-auth.router';
+import { categoryRouter } from './modules/categories/category.router';
+import { mediaRouter } from './modules/media/media.router';
+import { toolRouter } from './modules/tools/tool.router';
+import { catalogRouter } from './modules/catalog/catalog.router';
 
 export function createApp(): Application {
   const app = express();
@@ -35,6 +39,10 @@ export function createApp(): Application {
   const v1Router = express.Router();
   v1Router.use('/health', healthRouter);
   v1Router.use('/admin/auth', adminAuthRouter);
+  v1Router.use('/admin/categories', categoryRouter);
+  v1Router.use('/admin/media', mediaRouter);
+  v1Router.use('/admin/tools', toolRouter);
+  v1Router.use('/catalog', catalogRouter);
 
   // Mount versioned API
   app.use(env.API_PREFIX, v1Router);

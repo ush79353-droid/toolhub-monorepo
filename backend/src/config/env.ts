@@ -10,6 +10,17 @@ const envSchema = z.object({
   CORS_ORIGIN: z.string().default('http://localhost:3000'),
   MONGODB_URI: z.string().default('mongodb://localhost:27017/mega_tools'),
   BODY_LIMIT: z.string().default('10mb'),
+  EMAIL_PROVIDER: z.enum(['console', 'smtp']).default('console'),
+  SMTP_HOST: z.string().default(''),
+  SMTP_PORT: z.coerce.number().default(587),
+  SMTP_USER: z.string().default(''),
+  SMTP_PASS: z.string().default(''),
+  EMAIL_FROM: z.string().default(''),
+  AWS_ACCESS_KEY: z.string().default(''),
+  AWS_SECRET_KEY: z.string().default(''),
+  BUCKET_REGION: z.string().default(''),
+  AWS_BUCKET_NAME: z.string().default(''),
+  AWS_BASE_URL: z.string().default(''),
 });
 
 const parsed = envSchema.safeParse(process.env);
