@@ -1,6 +1,6 @@
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
-export const APPROVED_COMPONENT_KEYS = ['AutoLoanCalculator'] as const;
+export const APPROVED_COMPONENT_KEYS = ['AutoLoanCalculator', 'LoanCalculator'] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
 
@@ -22,7 +22,11 @@ if (isDirect) {
   if (!isToolSlug('loan-calculator') || isToolSlug('Loan') || isToolSlug('-loan')) {
     throw new Error('slug rule');
   }
-  if (!isApprovedComponentKey('AutoLoanCalculator') || isApprovedComponentKey('EvilEval')) {
+  if (
+    !isApprovedComponentKey('AutoLoanCalculator') ||
+    !isApprovedComponentKey('LoanCalculator') ||
+    isApprovedComponentKey('EvilEval')
+  ) {
     throw new Error('component key allowlist');
   }
   console.log('tool.key ok');

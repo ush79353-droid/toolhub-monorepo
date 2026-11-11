@@ -28,9 +28,39 @@ import {
 import { getPublicToolBySlug } from '@/server/catalog/tools';
 import { AutoLoanGuideArticle } from '@/tools/calculators/auto-loan/AutoLoanGuideArticle';
 import { StickyCalculatorAside } from '@/tools/calculators/auto-loan/StickyCalculatorAside';
-import { TableOfContents } from '@/tools/calculators/auto-loan/TableOfContents';
+import {
+  TableOfContents,
+  type TableOfContentsItem,
+} from '@/tools/calculators/auto-loan/TableOfContents';
 import { AUTO_LOAN_TOC_ITEMS } from '@/tools/calculators/auto-loan/content';
+import { LoanGuideArticle } from '@/tools/calculators/loan/LoanGuideArticle';
+import { LOAN_TOC_ITEMS } from '@/tools/calculators/loan/content';
 import type { ToolMetadata } from '@/types/tool';
+
+const TWO_COLUMN_TOOL_CONFIGS: Record<
+  string,
+  {
+    subtitleLead: string;
+    asideAriaLabel: string;
+    tocItems: readonly TableOfContentsItem[];
+    GuideArticle: React.ComponentType;
+  }
+> = {
+  AutoLoanCalculator: {
+    subtitleLead:
+      'Estimate monthly car payments, net trade-in equity, sales tax, fees, total interest, and payoff date directly in your browser.',
+    asideAriaLabel: 'Interactive auto loan calculator',
+    tocItems: AUTO_LOAN_TOC_ITEMS,
+    GuideArticle: AutoLoanGuideArticle,
+  },
+  LoanCalculator: {
+    subtitleLead:
+      'Estimate regular payments, total interest, extra-payment savings, origination fees, and amortization schedules for amortized or interest-only loans directly in your browser.',
+    asideAriaLabel: 'Interactive loan calculator',
+    tocItems: LOAN_TOC_ITEMS,
+    GuideArticle: LoanGuideArticle,
+  },
+};
 
 interface ToolDetailPageProps {
   params: Promise<{
@@ -123,9 +153,13 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
   const safeCategoryHref = hasCategoryRoute ? `/categories/${categorySlug}` : '/categories';
   const pillarName = dbTool?.pillar?.name ?? null;
   const iconUrl = dbTool?.iconUrl ?? '';
-  const isAutoLoan = toolMetadata.componentKey === 'AutoLoanCalculator';
+  const twoColConfig = toolMetadata.componentKey
+    ? TWO_COLUMN_TOOL_CONFIGS[toolMetadata.componentKey]
+    : undefined;
 
-  if (isAutoLoan) {
+  if (twoColConfig) {
+    const GuideArticleComponent = twoColConfig.GuideArticle;
+
     return (
       <div className="py-6 sm:py-9">
         <Container>
@@ -160,8 +194,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
                       {toolMetadata.title}
                     </h1>
                     <p className="mt-2 text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.72]">
-                      {toolMetadata.description} Estimate monthly car payments, net trade-in equity,
-                      sales tax, fees, total interest, and payoff date directly in your browser.
+                      {toolMetadata.description} {twoColConfig.subtitleLead}
                     </p>
                   </div>
                 </div>
@@ -170,15 +203,15 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
 
             {/* Slot 2: Height-Aware Sticky Calculator Panel (Near top on Mobile/Tablet; Right ~38% on Desktop) */}
             <StickyCalculatorAside
-              ariaLabel="Interactive auto loan calculator"
+              ariaLabel={twoColConfig.asideAriaLabel}
               className="order-2 min-w-0 lg:col-start-2 lg:row-start-1 lg:row-span-2"
             >
               <ToolWorkspace tool={toolMetadata} />
             </StickyCalculatorAside>
 
-            {/* Slot 3: Table of Contents, Related Calculators & 11-Section Editorial Guide */}
+            {/* Slot 3: Table of Contents, Related Calculators & Editorial Guide */}
             <div className="order-3 min-w-0 space-y-6 lg:col-start-1 lg:row-start-2">
-              <TableOfContents items={AUTO_LOAN_TOC_ITEMS} />
+              <TableOfContents items={twoColConfig.tocItems} />
 
               {dbTool && dbTool.relatedTools.length > 0 && (
                 <RelatedCatalogTools
@@ -188,7 +221,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
                 />
               )}
 
-              <AutoLoanGuideArticle />
+              <GuideArticleComponent />
             </div>
           </div>
         </Container>
