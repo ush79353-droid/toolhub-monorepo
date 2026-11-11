@@ -9,6 +9,20 @@ export interface PublicToolRef {
   slug: string;
 }
 
+export interface PublicRelatedTool {
+  id: string;
+  name: string;
+  slug: string;
+  shortDescription: string;
+  iconUrl: string;
+  componentKey: string;
+  isActive: boolean;
+  isFeatured: boolean;
+  categoryName: string;
+  categorySlug: string;
+  pillarName: string;
+}
+
 export interface PublicToolDetail {
   id: string;
   name: string;
@@ -20,6 +34,7 @@ export interface PublicToolDetail {
   category: PublicToolRef | null;
   pillar: PublicToolRef | null;
   subPillar: PublicToolRef | null;
+  relatedTools: PublicRelatedTool[];
   metaTitle: string;
   metaDescription: string;
   canonicalUrl: string;

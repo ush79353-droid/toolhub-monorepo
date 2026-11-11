@@ -87,50 +87,46 @@ export function AutoLoanCalculator({ metadata, className = '' }: ToolComponentPr
   const hasErrors = Object.keys(errors).length > 0;
 
   return (
-    <div
+    <section
+      aria-label={`${metadata.title} calculator panel`}
       className={`overflow-hidden rounded-2xl border border-border bg-white shadow-sm ${className}`}
     >
-      {/* Workspace Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background/60 px-5 py-4 sm:px-6">
-        <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary text-primary">
-            <Calculator className="h-4 w-4" />
+      {/* Compact Workspace Header */}
+      <div className="flex items-center justify-between gap-3 border-b border-border bg-background/60 px-4 py-3.5 sm:px-5">
+        <div className="flex items-center gap-2.5">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
+            <Calculator className="h-4 w-4" aria-hidden="true" />
           </div>
           <div>
-            <h2 className="text-sm font-bold text-accent sm:text-base">{metadata.title}</h2>
-            <p className="text-xs text-muted-foreground">
-              Fixed-rate in-browser calculator • All computations stay on your device
+            <h2 className="text-sm font-bold text-accent">Calculator</h2>
+            <p className="text-[11px] text-muted-foreground">
+              Runs privately in your browser
             </p>
           </div>
         </div>
       </div>
 
-      {/* Main Split: Inputs Left, Results Right on Desktop; Inputs First, Results Next on Mobile */}
-      <div className="p-5 sm:p-6 lg:p-8 space-y-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
-          <div className="lg:col-span-5">
-            <AutoLoanForm
-              draft={draft}
-              errors={errors}
-              onDraftChange={handleDraftChange}
-              onSubmit={handleSubmit}
-              onReset={handleReset}
-            />
-          </div>
+      {/* Stacked Right-Column Layout: Inputs -> Results -> Breakdown Chart -> Amortization Access */}
+      <div className="space-y-5 p-4 sm:p-5">
+        <AutoLoanForm
+          draft={draft}
+          errors={errors}
+          onDraftChange={handleDraftChange}
+          onSubmit={handleSubmit}
+          onReset={handleReset}
+        />
 
-          <div className="lg:col-span-7">
-            <AutoLoanResults
-              result={result}
-              hasErrors={hasErrors}
-              onCopy={handleCopy}
-              copied={copied}
-            />
-          </div>
+        <div className="border-t border-border pt-5">
+          <AutoLoanResults
+            result={result}
+            hasErrors={hasErrors}
+            onCopy={handleCopy}
+            copied={copied}
+          />
         </div>
 
-        {/* Amortization Schedule Full-Width Below */}
         {result && !hasErrors && <AmortizationTable result={result} />}
       </div>
-    </div>
+    </section>
   );
 }

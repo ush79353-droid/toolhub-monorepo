@@ -28,6 +28,20 @@ export interface PublicToolRef {
   slug: string;
 }
 
+export interface PublicRelatedTool {
+  id: string;
+  name: string;
+  slug: string;
+  shortDescription: string;
+  iconUrl: string;
+  componentKey: string;
+  isActive: boolean;
+  isFeatured: boolean;
+  categoryName: string;
+  categorySlug: string;
+  pillarName: string;
+}
+
 export interface PublicToolDetail {
   id: string;
   name: string;
@@ -39,6 +53,7 @@ export interface PublicToolDetail {
   category: PublicToolRef | null;
   pillar: PublicToolRef | null;
   subPillar: PublicToolRef | null;
+  relatedTools: PublicRelatedTool[];
   metaTitle: string;
   metaDescription: string;
   canonicalUrl: string;
@@ -54,6 +69,36 @@ function asPublicRef(value: unknown): PublicToolRef | null {
   if (!value || typeof value !== 'object' || !('name' in value)) return null;
   const doc = value as { id?: string; _id?: { toString(): string }; name: string; slug: string };
   return { id: doc.id || String(doc._id), name: doc.name, slug: doc.slug };
+}
+
+interface PopulatedRelatedDoc {
+  _id: { toString(): string };
+  id?: string;
+  name: string;
+  slug: string;
+  shortDescription?: string;
+  iconUrl?: string;
+  componentKey?: string;
+  isActive?: boolean;
+  isFeatured?: boolean;
+  category?: { name?: string; slug?: string } | null;
+  pillar?: { name?: string } | null;
+}
+
+function toRelatedTool(doc: PopulatedRelatedDoc): PublicRelatedTool {
+  return {
+    id: doc.id || doc._id.toString(),
+    name: doc.name,
+    slug: doc.slug,
+    shortDescription: doc.shortDescription ?? '',
+    iconUrl: doc.iconUrl ?? '',
+    componentKey: doc.componentKey ?? '',
+    isActive: Boolean(doc.isActive),
+    isFeatured: Boolean(doc.isFeatured),
+    categoryName: doc.category?.name ?? '',
+    categorySlug: doc.category?.slug ?? '',
+    pillarName: doc.pillar?.name ?? '',
+  };
 }
 
 export async function listPublicCategories(): Promise<PublicCategory[]> {
@@ -101,6 +146,46 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
     throw new AppError('Tool not found.', 404, 'NOT_FOUND');
   }
 
+  const categoryRef = asPublicRef(doc.category);
+  const pillarRef = asPublicRef(doc.pillar);
+  const subPillarRef = asPublicRef(doc.subPillar);
+
+  const [featuredOrActiveSiblings, pillarSiblings] = await Promise.all([
+    categoryRef
+      ? Tool.find({
+          category: categoryRef.id,
+          _id: { $ne: doc._id },
+          $or: [{ isActive: true }, { isFeatured: true }],
+        })
+          .select('name slug shortDescription iconUrl componentKey isActive isFeatured category pillar')
+          .sort({ isActive: -1, isFeatured: -1, name: 1 })
+          .limit(6)
+          .populate('category pillar', 'name slug')
+          .lean<PopulatedRelatedDoc[]>()
+      : Promise.resolve([] as PopulatedRelatedDoc[]),
+    pillarRef
+      ? Tool.find({
+          pillar: pillarRef.id,
+          _id: { $ne: doc._id },
+        })
+          .select('name slug shortDescription iconUrl componentKey isActive isFeatured category pillar')
+          .sort({ isActive: -1, isFeatured: -1, name: 1 })
+          .limit(6)
+          .populate('category pillar', 'name slug')
+          .lean<PopulatedRelatedDoc[]>()
+      : Promise.resolve([] as PopulatedRelatedDoc[]),
+  ]);
+
+  const seenIds = new Set<string>();
+  const relatedTools: PublicRelatedTool[] = [];
+  for (const candidate of [...featuredOrActiveSiblings, ...pillarSiblings]) {
+    const mapped = toRelatedTool(candidate);
+    if (seenIds.has(mapped.id)) continue;
+    seenIds.add(mapped.id);
+    relatedTools.push(mapped);
+    if (relatedTools.length >= 6) break;
+  }
+
   return {
     id: doc.id,
     name: doc.name,
@@ -109,9 +194,10 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
     iconUrl: doc.iconUrl,
     executionType: doc.executionType ?? 'client',
     componentKey: doc.componentKey ?? '',
-    category: asPublicRef(doc.category),
-    pillar: asPublicRef(doc.pillar),
-    subPillar: asPublicRef(doc.subPillar),
+    category: categoryRef,
+    pillar: pillarRef,
+    subPillar: subPillarRef,
+    relatedTools,
     metaTitle: doc.metaTitle,
     metaDescription: doc.metaDescription,
     canonicalUrl: doc.canonicalUrl,

@@ -76,8 +76,9 @@ Mounted at `/api/v1/catalog` (`backend/src/modules/catalog/catalog.router.ts`).
 
 ### `GET /api/v1/catalog/tools/:slug`
 - **Auth:** Public
-- **Response (`200`):** `PublicToolDetail` — Active tool (`isActive: true`) matching `slug`, populated with `category`, `pillar`, and `subPillar`:
-  `{ id, name, slug, shortDescription, iconUrl, executionType, componentKey, category, pillar, subPillar, metaTitle, metaDescription, canonicalUrl, ogTitle, ogDescription, keywords, indexable, isFeatured, updatedAt }`
+- **Response (`200`):** `PublicToolDetail` — Active tool (`isActive: true`) matching `slug`, populated with `category`, `pillar`, `subPillar`, and up to 6 existing MongoDB `relatedTools`:
+  `{ id, name, slug, shortDescription, iconUrl, executionType, componentKey, category, pillar, subPillar, relatedTools, metaTitle, metaDescription, canonicalUrl, ogTitle, ogDescription, keywords, indexable, isFeatured, updatedAt }`
+  where each entry in `relatedTools` has `{ id, name, slug, shortDescription, iconUrl, componentKey, isActive, isFeatured, categoryName, categorySlug, pillarName }`.
 - **Errors:** `404 NOT_FOUND` if slug format is invalid, missing, or `isActive` is `false`.
 
 ---

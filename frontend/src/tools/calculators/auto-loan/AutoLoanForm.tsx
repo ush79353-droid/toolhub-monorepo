@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
 import { Calculator, RotateCcw } from 'lucide-react';
 import { formatCurrencyValue } from './calculation';
+import { InfoTooltip } from './InfoTooltip';
 import {
   CURRENCY_OPTIONS,
   type AutoLoanFieldErrors,
@@ -34,6 +35,17 @@ export interface AutoLoanDraft {
   startDate: string;
   currency: SupportedCurrency;
 }
+
+const CURRENCY_UNITS: Record<SupportedCurrency, string> = {
+  USD: '$',
+  EUR: '€',
+  GBP: '£',
+  CAD: 'C$',
+  AUD: 'A$',
+  INR: '₹',
+  PKR: 'Rs',
+  AED: 'AED',
+};
 
 export function inputToDraft(input: AutoLoanInput): AutoLoanDraft {
   return {
@@ -104,7 +116,7 @@ function SegmentedToggle<T extends string>({
     <div
       role="group"
       aria-label={label}
-      className="inline-flex shrink-0 rounded-lg border border-border bg-background p-0.5"
+      className="inline-flex shrink-0 rounded-md border border-border bg-background p-0.5"
     >
       {options.map((opt) => {
         const active = value === opt.value;
@@ -114,7 +126,7 @@ function SegmentedToggle<T extends string>({
             type="button"
             aria-pressed={active}
             onClick={() => onChange(opt.value)}
-            className={`rounded-md px-2.5 py-1 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+            className={`rounded px-2 py-0.5 text-[11px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
               active
                 ? 'bg-primary text-white shadow-xs'
                 : 'text-muted-foreground hover:text-foreground'
@@ -128,6 +140,53 @@ function SegmentedToggle<T extends string>({
   );
 }
 
+interface UnitNumberInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  prefixUnit?: string;
+  suffixUnit?: string;
+  hasError?: boolean;
+}
+
+function UnitNumberInput({
+  prefixUnit,
+  suffixUnit,
+  hasError = false,
+  className = '',
+  ...props
+}: UnitNumberInputProps) {
+  return (
+    <div
+      className={`flex h-9 w-full items-center overflow-hidden rounded-lg border bg-white text-sm transition-colors focus-within:ring-2 focus-within:ring-offset-1 ${
+        hasError
+          ? 'border-rose-500 focus-within:ring-rose-500'
+          : 'border-border focus-within:ring-ring'
+      } ${className}`}
+    >
+      {prefixUnit && (
+        <span
+          aria-hidden="true"
+          className="flex h-full shrink-0 items-center border-r border-border bg-muted/60 px-2.5 text-xs font-semibold text-muted-foreground"
+        >
+          {prefixUnit}
+        </span>
+      )}
+      <input
+        {...props}
+        type="number"
+        inputMode="decimal"
+        className="h-full w-full min-w-0 bg-transparent px-2.5 text-sm font-medium text-foreground tabular-nums placeholder:text-muted-foreground focus:outline-none"
+      />
+      {suffixUnit && (
+        <span
+          aria-hidden="true"
+          className="flex h-full shrink-0 items-center border-l border-border bg-muted/60 px-2.5 text-xs font-semibold text-muted-foreground"
+        >
+          {suffixUnit}
+        </span>
+      )}
+    </div>
+  );
+}
+
 export function AutoLoanForm({
   draft,
   errors,
@@ -135,6 +194,8 @@ export function AutoLoanForm({
   onSubmit,
   onReset,
 }: AutoLoanFormProps) {
+  const unitSymbol = CURRENCY_UNITS[draft.currency];
+
   const update = <K extends keyof AutoLoanDraft>(key: K, value: AutoLoanDraft[K]) => {
     onDraftChange({ ...draft, [key]: value });
   };
@@ -196,17 +257,24 @@ export function AutoLoanForm({
       : null;
 
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-5">
-      {/* Display Currency */}
-      <div className="rounded-xl border border-border bg-background/70 p-3.5">
-        <label htmlFor="auto-loan-currency" className="block text-xs font-bold text-accent">
-          Display Currency
-        </label>
+    <form onSubmit={onSubmit} noValidate className="space-y-4">
+      {/* Compact Currency Row */}
+      <div className="flex items-center justify-between gap-3 rounded-xl border border-border bg-background/70 px-3 py-2">
+        <div className="flex items-center gap-1.5">
+          <label htmlFor="auto-loan-currency" className="text-xs font-semibold text-accent">
+            Currency
+          </label>
+          <InfoTooltip
+            label="Display currency"
+            text="Changes symbol and number formatting only. No live exchange-rate conversion is applied."
+            align="left"
+          />
+        </div>
         <Select
           id="auto-loan-currency"
           value={draft.currency}
           onChange={(e) => update('currency', e.target.value as SupportedCurrency)}
-          className="mt-1.5 h-9 text-xs"
+          className="h-8 w-auto min-w-[165px] max-w-[205px] text-xs"
         >
           {CURRENCY_OPTIONS.map((option) => (
             <option key={option.code} value={option.code}>
@@ -214,42 +282,49 @@ export function AutoLoanForm({
             </option>
           ))}
         </Select>
-        <p className="mt-1.5 text-[11px] leading-snug text-muted-foreground">
-          Selected currency changes formatting only; no exchange-rate conversion is applied.
-        </p>
       </div>
 
-      {/* Vehicle Price */}
+      {/* Auto Price */}
       <div>
-        <label htmlFor="auto-loan-price" className="block text-xs font-bold text-accent">
-          Auto Price ({draft.currency})
-        </label>
-        <Input
+        <div className="mb-1 flex items-center gap-1.5">
+          <label htmlFor="auto-loan-price" className="text-xs font-bold text-accent">
+            Auto Price
+          </label>
+          <InfoTooltip
+            label="Auto Price"
+            text="Agreed purchase price of the vehicle before taxes, fees, down payment, and trade-in adjustments."
+          />
+        </div>
+        <UnitNumberInput
           id="auto-loan-price"
-          type="number"
-          inputMode="decimal"
+          prefixUnit={unitSymbol}
           min="1"
           step="any"
           value={draft.autoPrice}
           onChange={(e) => update('autoPrice', e.target.value)}
+          hasError={Boolean(errors.autoPrice)}
           aria-invalid={Boolean(errors.autoPrice)}
-          className={`mt-1.5 ${errors.autoPrice ? 'border-rose-500 focus-visible:ring-rose-500' : ''}`}
+          aria-describedby={errors.autoPrice ? 'auto-loan-price-error' : undefined}
         />
-        {errors.autoPrice ? (
-          <p className="mt-1 text-xs text-rose-600">{errors.autoPrice}</p>
-        ) : (
-          <p className="mt-1 text-[11px] text-muted-foreground">
-            Agreed purchase price before tax, fees, down payment, and trade-in.
+        {errors.autoPrice && (
+          <p id="auto-loan-price-error" className="mt-1 text-[11px] text-rose-600">
+            {errors.autoPrice}
           </p>
         )}
       </div>
 
       {/* Down Payment */}
       <div>
-        <div className="flex items-center justify-between gap-2">
-          <label htmlFor="auto-loan-down-payment" className="text-xs font-bold text-accent">
-            Down Payment
-          </label>
+        <div className="mb-1 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5">
+            <label htmlFor="auto-loan-down-payment" className="text-xs font-bold text-accent">
+              Down Payment
+            </label>
+            <InfoTooltip
+              label="Down Payment"
+              text="Cash paid upfront toward the vehicle price. Higher down payments lower your financed principal and monthly interest."
+            />
+          </div>
           <SegmentedToggle
             label="Down payment mode"
             value={draft.downPaymentMode}
@@ -260,28 +335,35 @@ export function AutoLoanForm({
             onChange={handleDownPaymentModeChange}
           />
         </div>
-        <Input
+        <UnitNumberInput
           id="auto-loan-down-payment"
-          type="number"
-          inputMode="decimal"
+          prefixUnit={draft.downPaymentMode === 'amount' ? unitSymbol : undefined}
+          suffixUnit={draft.downPaymentMode === 'percent' ? '%' : undefined}
           min="0"
           step="any"
           value={draft.downPaymentValue}
           onChange={(e) => update('downPaymentValue', e.target.value)}
+          hasError={Boolean(errors.downPaymentValue)}
           aria-invalid={Boolean(errors.downPaymentValue)}
-          className={`mt-1.5 ${errors.downPaymentValue ? 'border-rose-500 focus-visible:ring-rose-500' : ''}`}
+          aria-describedby={
+            errors.downPaymentValue ? 'auto-loan-down-error' : 'auto-loan-down-hint'
+          }
         />
         {errors.downPaymentValue ? (
-          <p className="mt-1 text-xs text-rose-600">{errors.downPaymentValue}</p>
+          <p id="auto-loan-down-error" className="mt-1 text-[11px] text-rose-600">
+            {errors.downPaymentValue}
+          </p>
         ) : (
-          <p className="mt-1 text-[11px] text-muted-foreground">{downHint}</p>
+          <p id="auto-loan-down-hint" className="mt-1 text-[11px] text-muted-foreground">
+            {downHint}
+          </p>
         )}
       </div>
 
-      {/* Loan Term & Annual Interest Rate */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {/* Loan Term & APR */}
+      <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
         <div>
-          <div className="flex items-center justify-between gap-2">
+          <div className="mb-1 flex items-center justify-between gap-1.5">
             <label htmlFor="auto-loan-term" className="text-xs font-bold text-accent">
               Loan Term
             </label>
@@ -295,54 +377,66 @@ export function AutoLoanForm({
               onChange={handleTermUnitChange}
             />
           </div>
-          <Input
+          <UnitNumberInput
             id="auto-loan-term"
-            type="number"
-            inputMode="decimal"
+            suffixUnit={draft.loanTermUnit === 'months' ? 'mo' : 'yr'}
             min="1"
             step={draft.loanTermUnit === 'months' ? '1' : 'any'}
             value={draft.loanTermValue}
             onChange={(e) => update('loanTermValue', e.target.value)}
+            hasError={Boolean(errors.loanTermValue)}
             aria-invalid={Boolean(errors.loanTermValue)}
-            className={`mt-1.5 ${errors.loanTermValue ? 'border-rose-500 focus-visible:ring-rose-500' : ''}`}
+            aria-describedby={errors.loanTermValue ? 'auto-loan-term-error' : undefined}
           />
-          {errors.loanTermValue ? (
-            <p className="mt-1 text-xs text-rose-600">{errors.loanTermValue}</p>
-          ) : (
-            <p className="mt-1 text-[11px] text-muted-foreground">
-              Up to 360 months (30 years).
+          {errors.loanTermValue && (
+            <p id="auto-loan-term-error" className="mt-1 text-[11px] text-rose-600">
+              {errors.loanTermValue}
             </p>
           )}
         </div>
 
         <div>
-          <label htmlFor="auto-loan-apr" className="block text-xs font-bold text-accent leading-7">
-            Interest Rate (APR %)
-          </label>
-          <Input
+          <div className="mb-1 flex items-center gap-1.5 leading-5">
+            <label htmlFor="auto-loan-apr" className="text-xs font-bold text-accent">
+              Interest Rate (APR)
+            </label>
+            <InfoTooltip
+              label="Annual Percentage Rate"
+              text="Annual borrowing rate used to compute monthly compounding interest. Supports 0% promotional APR financing."
+              align="right"
+            />
+          </div>
+          <UnitNumberInput
             id="auto-loan-apr"
-            type="number"
-            inputMode="decimal"
+            suffixUnit="%"
             min="0"
             max="100"
             step="0.01"
             value={draft.annualInterestRate}
             onChange={(e) => update('annualInterestRate', e.target.value)}
+            hasError={Boolean(errors.annualInterestRate)}
             aria-invalid={Boolean(errors.annualInterestRate)}
-            className={`mt-1.5 ${errors.annualInterestRate ? 'border-rose-500 focus-visible:ring-rose-500' : ''}`}
+            aria-describedby={errors.annualInterestRate ? 'auto-loan-apr-error' : undefined}
           />
-          {errors.annualInterestRate ? (
-            <p className="mt-1 text-xs text-rose-600">{errors.annualInterestRate}</p>
-          ) : (
-            <p className="mt-1 text-[11px] text-muted-foreground">Supports 0% promotional APR.</p>
+          {errors.annualInterestRate && (
+            <p id="auto-loan-apr-error" className="mt-1 text-[11px] text-rose-600">
+              {errors.annualInterestRate}
+            </p>
           )}
         </div>
       </div>
 
-      {/* Trade-in Section */}
-      <div className="space-y-3 rounded-xl border border-border bg-muted/35 p-3.5">
-        <div className="flex items-center justify-between gap-2">
-          <span className="text-xs font-bold text-accent">Trade-In Details</span>
+      {/* Trade-In Section */}
+      <div className="space-y-2.5 rounded-xl border border-border bg-muted/35 p-3">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs font-bold text-accent">Trade-In</span>
+            <InfoTooltip
+              label="Trade-in equity"
+              text="Net trade-in equity equals trade-in value minus amount owed. Positive equity lowers your loan; negative equity adds to principal."
+              align="left"
+            />
+          </div>
           {tradeEquity !== null && (
             <span
               className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
@@ -362,21 +456,20 @@ export function AutoLoanForm({
           )}
         </div>
 
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2">
           <div>
-            <label htmlFor="auto-loan-trade-value" className="block text-xs font-semibold text-accent">
-              Trade-in Value ({draft.currency})
+            <label htmlFor="auto-loan-trade-value" className="mb-1 block text-[11px] font-semibold text-accent">
+              Trade-in Value
             </label>
-            <Input
+            <UnitNumberInput
               id="auto-loan-trade-value"
-              type="number"
-              inputMode="decimal"
+              prefixUnit={unitSymbol}
               min="0"
               step="any"
               value={draft.tradeInValue}
               onChange={(e) => update('tradeInValue', e.target.value)}
+              hasError={Boolean(errors.tradeInValue)}
               aria-invalid={Boolean(errors.tradeInValue)}
-              className={`mt-1 h-9 text-xs ${errors.tradeInValue ? 'border-rose-500' : ''}`}
             />
             {errors.tradeInValue && (
               <p className="mt-1 text-[11px] text-rose-600">{errors.tradeInValue}</p>
@@ -384,36 +477,39 @@ export function AutoLoanForm({
           </div>
 
           <div>
-            <label htmlFor="auto-loan-trade-owed" className="block text-xs font-semibold text-accent">
-              Amount Owed on Trade-in
+            <label htmlFor="auto-loan-trade-owed" className="mb-1 block text-[11px] font-semibold text-accent">
+              Amount Owed
             </label>
-            <Input
+            <UnitNumberInput
               id="auto-loan-trade-owed"
-              type="number"
-              inputMode="decimal"
+              prefixUnit={unitSymbol}
               min="0"
               step="any"
               value={draft.tradeInOwed}
               onChange={(e) => update('tradeInOwed', e.target.value)}
+              hasError={Boolean(errors.tradeInOwed)}
               aria-invalid={Boolean(errors.tradeInOwed)}
-              className={`mt-1 h-9 text-xs ${errors.tradeInOwed ? 'border-rose-500' : ''}`}
             />
             {errors.tradeInOwed && (
               <p className="mt-1 text-[11px] text-rose-600">{errors.tradeInOwed}</p>
             )}
           </div>
         </div>
-        <p className="text-[11px] leading-snug text-muted-foreground">
-          Positive equity lowers financed principal; negative equity rolls into the new loan.
-        </p>
       </div>
 
-      {/* Sales Tax & Policy */}
-      <div className="space-y-3 rounded-xl border border-border bg-white p-3.5">
+      {/* Sales Tax & Financing Options */}
+      <div className="space-y-2.5 rounded-xl border border-border bg-white p-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <label htmlFor="auto-loan-tax-rate" className="text-xs font-bold text-accent">
-            Sales Tax Rate (%)
-          </label>
+          <div className="flex items-center gap-1.5">
+            <label htmlFor="auto-loan-tax-rate" className="text-xs font-bold text-accent">
+              Sales Tax
+            </label>
+            <InfoTooltip
+              label="Sales tax options"
+              text="Choose whether local sales tax is financed into your loan or paid upfront, and whether trade-in allowance reduces taxable vehicle price."
+              align="left"
+            />
+          </div>
           <SegmentedToggle
             label="Sales tax inclusion"
             value={draft.salesTaxInclusion}
@@ -425,97 +521,97 @@ export function AutoLoanForm({
           />
         </div>
 
-        <Input
-          id="auto-loan-tax-rate"
-          type="number"
-          inputMode="decimal"
-          min="0"
-          max="50"
-          step="0.01"
-          value={draft.salesTaxRate}
-          onChange={(e) => update('salesTaxRate', e.target.value)}
-          aria-invalid={Boolean(errors.salesTaxRate)}
-          className={`h-9 text-xs ${errors.salesTaxRate ? 'border-rose-500' : ''}`}
-        />
-        {errors.salesTaxRate && (
-          <p className="text-[11px] text-rose-600">{errors.salesTaxRate}</p>
-        )}
+        <div className="grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2">
+          <div>
+            <UnitNumberInput
+              id="auto-loan-tax-rate"
+              suffixUnit="%"
+              min="0"
+              max="50"
+              step="0.01"
+              value={draft.salesTaxRate}
+              onChange={(e) => update('salesTaxRate', e.target.value)}
+              hasError={Boolean(errors.salesTaxRate)}
+              aria-invalid={Boolean(errors.salesTaxRate)}
+              aria-label="Sales tax rate percentage"
+            />
+            {errors.salesTaxRate && (
+              <p className="mt-1 text-[11px] text-rose-600">{errors.salesTaxRate}</p>
+            )}
+          </div>
+
+          <div>
+            <label htmlFor="auto-loan-tax-policy" className="sr-only">
+              Sales Tax Basis
+            </label>
+            <Select
+              id="auto-loan-tax-policy"
+              value={draft.taxPolicy}
+              onChange={(e) => update('taxPolicy', e.target.value as TaxPolicy)}
+              className="h-9 text-xs"
+            >
+              <option value="after-trade-in">Tax after trade-in</option>
+              <option value="full-price">Tax full price</option>
+            </Select>
+          </div>
+        </div>
+      </div>
+
+      {/* Additional Fees & Start Date */}
+      <div className="space-y-3 rounded-xl border border-border bg-white p-3">
+        <div>
+          <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center gap-1.5">
+              <label htmlFor="auto-loan-fees" className="text-xs font-bold text-accent">
+                Additional Fees
+              </label>
+              <InfoTooltip
+                label="Additional fees"
+                text="Title, registration, documentation, and dealer charges. Roll into loan or pay upfront at signing."
+                align="left"
+              />
+            </div>
+            <SegmentedToggle
+              label="Additional fees inclusion"
+              value={draft.feesInclusion}
+              options={[
+                { value: 'finance', label: 'Finance fees' },
+                { value: 'upfront', label: 'Pay upfront' },
+              ]}
+              onChange={(value) => update('feesInclusion', value)}
+            />
+          </div>
+          <UnitNumberInput
+            id="auto-loan-fees"
+            prefixUnit={unitSymbol}
+            min="0"
+            step="any"
+            value={draft.additionalFees}
+            onChange={(e) => update('additionalFees', e.target.value)}
+            hasError={Boolean(errors.additionalFees)}
+            aria-invalid={Boolean(errors.additionalFees)}
+          />
+          {errors.additionalFees && (
+            <p className="mt-1 text-[11px] text-rose-600">{errors.additionalFees}</p>
+          )}
+        </div>
 
         <div>
-          <label htmlFor="auto-loan-tax-policy" className="block text-xs font-semibold text-accent">
-            Sales Tax Basis
+          <label htmlFor="auto-loan-start-date" className="mb-1 block text-xs font-bold text-accent">
+            Loan Start Date
           </label>
-          <Select
-            id="auto-loan-tax-policy"
-            value={draft.taxPolicy}
-            onChange={(e) => update('taxPolicy', e.target.value as TaxPolicy)}
-            className="mt-1 h-9 text-xs"
-          >
-            <option value="after-trade-in">Price minus trade-in value (trade-in credit)</option>
-            <option value="full-price">Full vehicle price (no trade-in credit)</option>
-          </Select>
-          <p className="mt-1 text-[11px] leading-snug text-muted-foreground">
-            Tax rules vary by jurisdiction; confirm whether your area taxes net price or full price.
-          </p>
-        </div>
-      </div>
-
-      {/* Additional Fees */}
-      <div className="space-y-2 rounded-xl border border-border bg-white p-3.5">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <label htmlFor="auto-loan-fees" className="text-xs font-bold text-accent">
-            Additional Fees ({draft.currency})
-          </label>
-          <SegmentedToggle
-            label="Additional fees inclusion"
-            value={draft.feesInclusion}
-            options={[
-              { value: 'finance', label: 'Finance fees' },
-              { value: 'upfront', label: 'Pay upfront' },
-            ]}
-            onChange={(value) => update('feesInclusion', value)}
+          <Input
+            id="auto-loan-start-date"
+            type="date"
+            value={draft.startDate}
+            onChange={(e) => update('startDate', e.target.value)}
+            aria-invalid={Boolean(errors.startDate)}
+            className={`h-9 text-xs ${errors.startDate ? 'border-rose-500' : ''}`}
           />
+          {errors.startDate && (
+            <p className="mt-1 text-[11px] text-rose-600">{errors.startDate}</p>
+          )}
         </div>
-        <Input
-          id="auto-loan-fees"
-          type="number"
-          inputMode="decimal"
-          min="0"
-          step="any"
-          value={draft.additionalFees}
-          onChange={(e) => update('additionalFees', e.target.value)}
-          aria-invalid={Boolean(errors.additionalFees)}
-          className={`h-9 text-xs ${errors.additionalFees ? 'border-rose-500' : ''}`}
-        />
-        {errors.additionalFees ? (
-          <p className="text-[11px] text-rose-600">{errors.additionalFees}</p>
-        ) : (
-          <p className="text-[11px] text-muted-foreground">
-            Title, registration, documentation, and dealer charges.
-          </p>
-        )}
-      </div>
-
-      {/* Loan Start Date */}
-      <div>
-        <label htmlFor="auto-loan-start-date" className="block text-xs font-bold text-accent">
-          Loan Start Date
-        </label>
-        <Input
-          id="auto-loan-start-date"
-          type="date"
-          value={draft.startDate}
-          onChange={(e) => update('startDate', e.target.value)}
-          aria-invalid={Boolean(errors.startDate)}
-          className={`mt-1.5 ${errors.startDate ? 'border-rose-500' : ''}`}
-        />
-        {errors.startDate ? (
-          <p className="mt-1 text-xs text-rose-600">{errors.startDate}</p>
-        ) : (
-          <p className="mt-1 text-[11px] text-muted-foreground">
-            Used to project monthly payment dates and estimated payoff date.
-          </p>
-        )}
       </div>
 
       {errors.form && (
@@ -528,20 +624,19 @@ export function AutoLoanForm({
       )}
 
       {/* Actions */}
-      <div className="flex flex-wrap items-center gap-3 pt-1">
+      <div className="flex items-center gap-2.5 pt-1">
         <Button
           type="submit"
           className="flex-1 bg-primary text-white hover:bg-[hsl(var(--primary-hover))]"
         >
-          <Calculator className="mr-2 h-4 w-4" />
+          <Calculator className="mr-1.5 h-4 w-4" aria-hidden="true" />
           Calculate
         </Button>
         <Button type="button" variant="outline" onClick={onReset}>
-          <RotateCcw className="mr-2 h-4 w-4" />
+          <RotateCcw className="mr-1.5 h-4 w-4" aria-hidden="true" />
           Reset
         </Button>
       </div>
     </form>
   );
 }
-

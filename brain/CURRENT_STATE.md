@@ -20,10 +20,10 @@
 - Admin Category tree management (`/admin/categories`, `new`, `[id]/edit`) — 3-level `category → pillar → sub_pillar` CRUD, search, pagination, cascade delete, and `categories:seed` script (`19` categories, `155` pillars).
 - Admin Media Library (`/admin/media`) — AWS S3 presigned `PUT` upload, `HeadObject` validation, MongoDB `MediaAsset` storage, list/filter/preview/delete.
 - Admin Tool Catalog CRUD (`/admin/tools`, `new`, `[id]/edit`) — full catalog metadata, placement validation, icon selection from media library, `executionType` + allowlisted `componentKey`, SEO fields, `tools:seed` (`4,351` tools seeded inactive/non-indexable), and `tool:assign` CLI helper.
-- Public Catalog API: `/api/v1/catalog/categories`, `/api/v1/catalog/featured`, and `/api/v1/catalog/tools/:slug`.
+- Public Catalog API: `/api/v1/catalog/categories`, `/api/v1/catalog/featured`, and `/api/v1/catalog/tools/:slug` (includes `relatedTools` from existing MongoDB category/pillar siblings).
 - Homepage `/` Server Component integration linking featured tools and categories.
 - Public About page (`/about`): redesigned editorial layout. Copy is static. Category and tool totals are read from `/catalog/categories` and hidden if that request fails.
-- **Auto Loan Calculator (`/tools/auto-loan-calculator`):** First live client-side calculator (`componentKey: 'AutoLoanCalculator'`, `executionType: 'client'`) wired end-to-end from MongoDB → Express → Next.js Server Component (`generateMetadata` + `/tools/[slug]/page.tsx`) → allowlisted `ToolRegistry` → `AutoLoanCalculator`. Includes fixed-rate & 0% APR math, positive/negative trade-in equity, configurable sales tax basis (`after-trade-in` vs `full-price`) & finance/upfront toggles, configurable display currency, Principal vs. Interest SVG breakdown, Monthly & Yearly amortization schedule with final-payment cent reconciliation, CSV export, Copy Results, and 14 unit test suites (`calculation.test.ts`).
+- **Auto Loan Calculator (`/tools/auto-loan-calculator`):** Live client-side calculator (`componentKey: 'AutoLoanCalculator'`, `executionType: 'client'`) wired end-to-end from MongoDB → Express → Next.js Server Component (`generateMetadata` + `/tools/[slug]/page.tsx`) → allowlisted `ToolRegistry` → `AutoLoanCalculator`. Features a two-column desktop layout (`~62%` left article/TOC/related calculators, `~38%` right compact calculator panel; single-column with calculator near top on tablet/mobile), inline unit inputs with keyboard/hover/tap `InfoTooltip` help, fixed-rate & 0% APR math, positive/negative trade-in equity, configurable sales tax basis (`after-trade-in` vs `full-price`) & finance/upfront toggles, configurable display currency, Principal vs. Interest SVG breakdown, Monthly & Yearly amortization schedule (inline toggle + accessible full-width modal + CSV download) with final-payment cent reconciliation, Copy Results, Reset, MongoDB-backed `RelatedCatalogTools` distinguishing `Preview Only` vs non-link `Catalog Only` entries, accessible `TableOfContents` (`scroll-mt-24`), 11 educational content sections (including term comparison & worked example), FAQs, and 15 unit test suites (`calculation.test.ts`).
 
 ### Partially Implemented / UI Preview Only
 - **Public Directory & Tool Pages (`/tools`, `/tools/[slug]`, `/categories`, `/categories/[slug]`, `Header`, `Footer`, `MobileNavigation`):** Currently backed by static `frontend/src/lib/sample-data.ts` (12 categories, 18 tools), **not** live MongoDB records.
@@ -63,9 +63,10 @@
 
 | App / Check | Command | Result |
 | :--- | :--- | :--- |
-| Backend Type-Check | `cd backend && npm run type-check` | **Passed** (`tsc --noEmit`, 0 errors) |
+| Backend Type-Check & Build | `cd backend && npm run type-check && npm run build` | **Passed** (`tsc --noEmit` & `tsc`, 0 errors) |
 | Backend Helper Self-Checks | `npx tsx src/modules/tools/tool.key.ts`, `media.key.ts`, `tool.copy.ts` | **Passed** |
 | Frontend Type-Check | `cd frontend && npm run type-check` | **Passed** (`tsc --noEmit`, 0 errors) |
-| Frontend Lint | `cd frontend && npm run lint` | **Passed** (`next lint`, 0 errors, 11 `@next/next/no-img-element` warnings) |
-| Auto Loan Calculation Tests | `.\backend\node_modules\.bin\tsx.cmd .\frontend\src\tools\calculators\auto-loan\calculation.test.ts` | **Passed** (14 test suites) |
-| Live DB & Route Verification | `GET /api/v1/catalog/tools/auto-loan-calculator`, `GET /`, `GET /tools/auto-loan-calculator` | **Passed** (HTTP 200; live DB `componentKey: "AutoLoanCalculator"` rendered) |
+| Frontend Lint | `cd frontend && npm run lint` | **Passed** (`next lint`, 0 errors, 11 pre-existing `@next/next/no-img-element` warnings) |
+| Frontend Production Build | Isolated `npx next build` (against running Express `5001`) | **Passed** (46/46 static pages compiled cleanly) |
+| Auto Loan Calculation Tests | `.\backend\node_modules\.bin\tsx.cmd .\frontend\src\tools\calculators\auto-loan\calculation.test.ts` | **Passed** (15 test suites including worked example & term table) |
+| Headless Browser & Responsive Verification | Headless Chrome CDP on `next start` (`1440px` desktop, `768px` tablet, `375px` mobile) | **Passed** (2-column ratios, mobile top placement, live worked example math, validation, tooltips, schedule modal/Escape, TOC anchors, zero 404 main links, zero console exceptions) |

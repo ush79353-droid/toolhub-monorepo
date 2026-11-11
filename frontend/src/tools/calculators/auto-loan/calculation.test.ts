@@ -342,5 +342,63 @@ function makeInput(overrides: Partial<AutoLoanInput> = {}): AutoLoanInput {
   assert.equal(csvLines.length, result.monthlySchedule.length + 2);
 }
 
-console.log('auto-loan calculation.test ok (14 test suites passed)');
+// 15. Educational guide worked example & term comparison table accuracy
+{
+  const worked = calculateAutoLoan({
+    autoPrice: 32000,
+    downPaymentValue: 4000,
+    downPaymentMode: 'amount',
+    loanTermValue: 60,
+    loanTermUnit: 'months',
+    annualInterestRate: 6,
+    tradeInValue: 8000,
+    tradeInOwed: 3000,
+    salesTaxRate: 6.5,
+    taxPolicy: 'after-trade-in',
+    salesTaxInclusion: 'finance',
+    additionalFees: 440,
+    feesInclusion: 'upfront',
+    startDate: '2026-11-11',
+    currency: 'USD',
+  });
+  assert.equal(worked.netTradeInEquity, 5000);
+  assert.equal(worked.taxableVehicleAmount, 24000);
+  assert.equal(worked.salesTax, 1560);
+  assert.equal(worked.amountFinanced, 24560);
+  assert.equal(worked.estimatedMonthlyPayment, 474.81);
+  assert.equal(worked.finalMonthlyPayment, 475.06);
+  assert.equal(worked.totalInterest, 3928.85);
+  assert.equal(worked.totalLoanPayments, 28488.85);
+  assert.equal(worked.upfrontCosts, 4440);
+  assert.equal(worked.totalEstimatedCost, 37928.85);
+  assert.equal(worked.payoffDate, '2031-11-11');
+
+  const baseCompare: Partial<AutoLoanInput> = {
+    autoPrice: 25000,
+    downPaymentValue: 0,
+    downPaymentMode: 'amount',
+    loanTermUnit: 'months',
+    annualInterestRate: 6,
+    tradeInValue: 0,
+    tradeInOwed: 0,
+    salesTaxRate: 0,
+    salesTaxInclusion: 'upfront',
+    additionalFees: 0,
+    feesInclusion: 'upfront',
+  };
+  const compare36 = calculateAutoLoan(makeInput({ ...baseCompare, loanTermValue: 36 }));
+  const compare48 = calculateAutoLoan(makeInput({ ...baseCompare, loanTermValue: 48 }));
+  const compare60 = calculateAutoLoan(makeInput({ ...baseCompare, loanTermValue: 60 }));
+  const compare72 = calculateAutoLoan(makeInput({ ...baseCompare, loanTermValue: 72 }));
+  assert.equal(compare36.estimatedMonthlyPayment, 760.55);
+  assert.equal(compare36.totalInterest, 2379.7);
+  assert.equal(compare48.estimatedMonthlyPayment, 587.13);
+  assert.equal(compare48.totalInterest, 3182);
+  assert.equal(compare60.estimatedMonthlyPayment, 483.32);
+  assert.equal(compare60.totalInterest, 3999.23);
+  assert.equal(compare72.estimatedMonthlyPayment, 414.32);
+  assert.equal(compare72.totalInterest, 4831.23);
+}
+
+console.log('auto-loan calculation.test ok (15 test suites passed)');
 
