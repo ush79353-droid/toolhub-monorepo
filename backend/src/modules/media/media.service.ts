@@ -47,8 +47,9 @@ export async function listMedia(query: ListMediaQuery) {
     filter.$or = [{ fileName: pattern }, { altText: pattern }];
   }
   if (query.type) {
-    const contentType = MEDIA_TYPE_FILTER[query.type.toLowerCase()];
-    if (contentType) filter.contentType = contentType;
+    const type = query.type.toLowerCase();
+    if (type === 'image') filter.contentType = /^image\//;
+    else if (MEDIA_TYPE_FILTER[type]) filter.contentType = MEDIA_TYPE_FILTER[type];
   }
 
   const skip = (query.page - 1) * query.limit;

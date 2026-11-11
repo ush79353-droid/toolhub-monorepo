@@ -43,7 +43,7 @@ export const ADMIN_NAV_GROUPS: AdminNavGroup[] = [
     label: 'Catalog',
     items: [
       { label: 'Categories', href: '/admin/categories', icon: Layers },
-      { label: 'Tools', href: '/admin/tools', icon: Wrench, badge: '94' },
+      { label: 'Tools', href: '/admin/tools', icon: Wrench },
       { label: 'Media Library', href: '/admin/media', icon: ImageIcon },
       { label: 'CMS Pages', href: '/admin/pages', icon: FileText },
     ],
