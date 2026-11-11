@@ -69,9 +69,9 @@ function askHiddenQuestion(query: string): Promise<string> {
 }
 
 async function run() {
-  console.log('\n=============================================');
-  console.log('   MEGA TOOLS — Super Admin Bootstrap CLI    ');
-  console.log('=============================================\n');
+  console.log('\n======================================================');
+  console.log('   Omega Calculators — Super Admin Bootstrap CLI    ');
+  console.log('======================================================\n');
 
   const connected = await connectDB();
   if (!connected) {

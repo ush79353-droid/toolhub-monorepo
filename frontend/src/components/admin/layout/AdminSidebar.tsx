@@ -20,7 +20,6 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
-  Shield,
   Loader2,
 } from 'lucide-react';
 import { logoutAdminAction } from '@/server/auth/actions';
@@ -90,19 +89,19 @@ export function AdminSidebar({ isCollapsed, onToggleCollapse, adminUser }: Admin
     >
       {/* Brand Header */}
       <div className="flex h-16 items-center justify-between border-b border-border px-4">
-        <Link href="/admin" className="flex items-center gap-3 overflow-hidden">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-white shadow-xs">
-            <Shield className="h-5 w-5" />
-          </div>
-          {!isCollapsed && (
-            <div className="truncate">
-              <span className="font-extrabold text-sm tracking-tight text-accent block">
-                MEGA TOOLS
-              </span>
-              <span className="text-[10px] font-semibold tracking-wider text-primary uppercase">
-                Admin Console
-              </span>
-            </div>
+        <Link href="/admin" className="flex min-w-0 items-center overflow-hidden">
+          {isCollapsed ? (
+            <img
+              src="/images/logo/icon-without-bg.png"
+              alt="Omega Calculators"
+              className="h-9 w-9 object-contain"
+            />
+          ) : (
+            <img
+              src="/images/logo/horizontal-logo.png"
+              alt="Omega Calculators"
+              className="h-10 w-auto max-w-[148px] object-contain object-left"
+            />
           )}
         </Link>
         <button

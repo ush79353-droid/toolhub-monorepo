@@ -19,7 +19,6 @@ import {
   Globe,
   LogOut,
   X,
-  Shield,
   Loader2,
 } from 'lucide-react';
 import { logoutAdminAction } from '@/server/auth/actions';
@@ -83,18 +82,12 @@ export function AdminMobileSidebar({ isOpen, onClose, adminUser }: AdminMobileSi
       >
         {/* Header */}
         <div className="flex h-16 items-center justify-between border-b border-border px-4">
-          <Link href="/admin" className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white shadow-xs">
-              <Shield className="h-5 w-5" />
-            </div>
-            <div>
-              <span className="font-extrabold text-sm tracking-tight text-accent block">
-                MEGA TOOLS
-              </span>
-              <span className="text-[10px] font-semibold tracking-wider text-primary uppercase">
-                Admin Console
-              </span>
-            </div>
+          <Link href="/admin" className="flex min-w-0 items-center">
+            <img
+              src="/images/logo/horizontal-logo.png"
+              alt="Omega Calculators"
+              className="h-10 w-auto max-w-[160px] object-contain object-left"
+            />
           </Link>
           <button
             type="button"

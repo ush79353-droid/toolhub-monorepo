@@ -214,7 +214,7 @@ export function CategoryForm({ initialData, isEdit = false }: CategoryFormProps)
           <Input
             value={seoTitle}
             onChange={(e) => setSeoTitle(e.target.value)}
-            placeholder="e.g. Free Financial Calculators | Mega Tools"
+            placeholder="e.g. Free Financial Calculators | Omega Calculators"
           />
           <p className="text-[11px] text-muted-foreground mt-1">
             Recommended length: 50-60 characters. Current: {seoTitle.length} chars.

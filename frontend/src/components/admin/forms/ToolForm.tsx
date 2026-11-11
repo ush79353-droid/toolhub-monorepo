@@ -355,7 +355,7 @@ export function ToolForm({ initialData, isEdit = false }: ToolFormProps) {
             <Input
               value={seoTitle}
               onChange={(e) => setSeoTitle(e.target.value)}
-              placeholder="e.g. Free Percentage Calculator | Mega Tools"
+              placeholder="e.g. Free Percentage Calculator | Omega Calculators"
             />
           </div>
 

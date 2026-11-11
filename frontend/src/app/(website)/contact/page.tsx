@@ -8,7 +8,7 @@ import { MessageSquare, HelpCircle } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Contact Us — Inquiries & Tool Suggestions',
   description:
-    'Get in touch with the Mega Tools team. Share feedback, suggest new calculators, or report utility issues.',
+    'Get in touch with the Omega Calculators team. Share feedback, suggest new calculators, or report utility issues.',
 };
 
 export default function ContactPage() {
@@ -25,7 +25,7 @@ export default function ContactPage() {
             Feedback & Inquiries
           </span>
           <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
-            Contact Mega Tools
+            Contact Omega Calculators
           </h1>
           <p className="mt-2 text-sm text-muted-foreground sm:text-base leading-relaxed">
             Have an idea for a new calculator or converter? Found an edge case formula error? We

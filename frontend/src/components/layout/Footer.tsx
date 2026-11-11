@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Container } from './Container';
-import { Wrench, Shield, FileText, ArrowRight } from 'lucide-react';
+import { Shield, FileText, ArrowRight } from 'lucide-react';
 import { CATEGORIES } from '@/lib/sample-data';
 
 export function Footer() {
@@ -13,13 +13,12 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white shadow-sm">
-                <Wrench className="h-4 w-4" />
-              </div>
-              <span className="text-lg font-black tracking-tight text-accent">
-                MEGA<span className="text-primary">TOOLS</span>
-              </span>
+            <Link href="/" className="inline-flex">
+              <img
+                src="/images/logo/horizontal-logo.png"
+                alt="Omega Calculators"
+                className="h-14 w-auto"
+              />
             </Link>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
               Your comprehensive platform for fast, free, in-browser online tools. From financial
@@ -156,7 +155,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
-          <p>© {currentYear} Mega Tools. All rights reserved.</p>
+          <p>© {currentYear} Omega Calculators. All rights reserved.</p>
           <p className="text-center sm:text-right">
             Designed for productivity, accuracy, and accessibility.
           </p>

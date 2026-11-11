@@ -26,9 +26,9 @@ export default function HomePage() {
 
   const homeFaqs = [
     {
-      question: 'Are all tools on Mega Tools completely free to use?',
+      question: 'Are all tools on Omega Calculators completely free to use?',
       answer:
-        'Yes. All utilities on Mega Tools are free to access without subscriptions, hidden paywalls, or feature gates.',
+        'Yes. All utilities on Omega Calculators are free to access without subscriptions, hidden paywalls, or feature gates.',
     },
     {
       question: 'Is my data secure when using your calculators and file tools?',
@@ -41,7 +41,7 @@ export default function HomePage() {
         'No installation or account registration is required. Every tool is immediately ready to run upon visiting the page.',
     },
     {
-      question: 'Can I use Mega Tools on mobile devices?',
+      question: 'Can I use Omega Calculators on mobile devices?',
       answer:
         'Yes. Every tool interface is fully responsive, touch-friendly, and optimized across smartphones, tablets, and desktop workstations.',
     },
@@ -253,12 +253,12 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Why Choose Mega Tools Section */}
+      {/* Why Choose Omega Calculators Section */}
       <section className="border-t border-border bg-white py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Platform Highlights"
-            title="Why Choose Mega Tools?"
+            title="Why Choose Omega Calculators?"
             description="Engineered for professionals, students, and everyday users who value clarity, speed, and simplicity."
           />
 
@@ -320,7 +320,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Frequently Asked Questions"
             title="Common Questions"
-            description="Everything you need to know about using the Mega Tools online platform."
+            description="Everything you need to know about using the Omega Calculators online platform."
           />
 
           <FAQAccordion items={homeFaqs} />

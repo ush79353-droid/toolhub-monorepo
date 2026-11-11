@@ -7,9 +7,9 @@ import { Button } from '@/components/ui/button';
 import { ShieldCheck, Zap, Target, ArrowRight, HeartHandshake, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us — Mega Tools Online Utilities Platform',
+  title: 'About Us — Omega Calculators Online Utilities Platform',
   description:
-    'Learn about Mega Tools: our mission, our privacy-first browser execution architecture, and our commitment to fast, free utilities.',
+    'Learn about Omega Calculators: our mission, our privacy-first browser execution architecture, and our commitment to fast, free utilities.',
 };
 
 export default function AboutPage() {
@@ -29,7 +29,7 @@ export default function AboutPage() {
             Empowering Daily Productivity with Fast, Clean Tools
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg leading-relaxed">
-            Mega Tools is an open web platform created to eliminate clunky, ad-saturated calculation
+            Omega Calculators is an open web platform created to eliminate clunky, ad-saturated calculation
             websites in favor of fast, responsive, and privacy-conscious utilities.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function AboutPage() {
             </div>
             <div>
               <h2 className="text-xl font-bold text-accent">Our Mission</h2>
-              <p className="text-xs text-muted-foreground">Why we build Mega Tools</p>
+              <p className="text-xs text-muted-foreground">Why we build Omega Calculators</p>
             </div>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">

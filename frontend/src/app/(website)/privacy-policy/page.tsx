@@ -6,9 +6,9 @@ import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { Shield, AlertCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Mega Tools',
+  title: 'Privacy Policy — Omega Calculators',
   description:
-    'Learn how Mega Tools handles privacy, in-browser data processing, cookies, and local execution in this draft privacy policy.',
+    'Learn how Omega Calculators handles privacy, in-browser data processing, cookies, and local execution in this draft privacy policy.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
           <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
           <p className="leading-relaxed">
             <strong>Draft Notice:</strong> This privacy document is a development template outlining
-            the intended architectural privacy model of Mega Tools. It must undergo formal legal
+            the intended architectural privacy model of Omega Calculators. It must undergo formal legal
             audit before production deployment.
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function PrivacyPolicyPage() {
             >
               <h2 className="text-lg font-bold text-accent">1. Overview & Architecture</h2>
               <p className="mt-3">
-                Mega Tools (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is engineered around
+                Omega Calculators (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is engineered around
                 a client-first paradigm. Unlike traditional online utility portals that transmit
                 your sensitive financial, health, or document inputs to remote web servers, our
                 tools are structured to execute computations directly inside the client&apos;s local

@@ -13,9 +13,9 @@ import { Save, Search, Globe, ShieldCheck } from 'lucide-react';
 
 export default function AdminSeoPage() {
   const [siteTitle, setSiteTitle] = React.useState(
-    'Mega Tools — Every Tool You Need, All in One Place'
+    'Omega Calculators — Every Tool You Need, All in One Place'
   );
-  const [titleTemplate, setTitleTemplate] = React.useState('%s | Mega Tools');
+  const [titleTemplate, setTitleTemplate] = React.useState('%s | Omega Calculators');
   const [metaDescription, setMetaDescription] = React.useState(
     'Discover powerful, fast, private online tools for everyday productivity, calculations, conversions, PDF editing, and developer workflows.'
   );

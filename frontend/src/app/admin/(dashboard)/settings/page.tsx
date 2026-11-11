@@ -27,7 +27,7 @@ export default function AdminSettingsPage() {
   const [activeTab, setActiveTab] = React.useState('general');
 
   // General Settings State
-  const [siteName, setSiteName] = React.useState('Mega Tools');
+  const [siteName, setSiteName] = React.useState('Omega Calculators');
   const [siteDesc, setSiteDesc] = React.useState('Scalable Online Multi-Tool Platform');
   const [siteUrl, setSiteUrl] = React.useState('https://megatools.io');
   const [timezone, setTimezone] = React.useState('UTC');
@@ -74,7 +74,7 @@ export default function AdminSettingsPage() {
         </Button>
       </AdminPageHeader>
 
-      <PendingNotice message="System settings preview mode: Theme tokens are locked to the Mega Tools brand architecture and configuration mutations are not yet committed to MongoDB." />
+      <PendingNotice message="System settings preview mode: Theme tokens are locked to the Omega Calculators brand architecture and configuration mutations are not yet committed to MongoDB." />
 
       {noticeMessage && (
         <PendingNotice message={noticeMessage} onDismiss={() => setNoticeMessage(null)} />
@@ -165,7 +165,7 @@ export default function AdminSettingsPage() {
               <label className="block text-xs font-semibold text-accent mb-1.5">
                 Footer Copyright Line
               </label>
-              <Input defaultValue="© 2026 Mega Tools Inc. All rights reserved." />
+              <Input defaultValue="© 2026 Omega Calculators Inc. All rights reserved." />
             </div>
           </FormSection>
         </div>
@@ -176,7 +176,7 @@ export default function AdminSettingsPage() {
         <div className="space-y-6">
           <FormSection
             title="Locked Brand Identity & Palette Safeguard"
-            description="The Mega Tools color system is strictly locked to maintain SaaS aesthetic consistency."
+            description="The Omega Calculators color system is strictly locked to maintain SaaS aesthetic consistency."
             badge={
               <span className="inline-flex items-center gap-1 rounded bg-secondary px-2 py-0.5 text-[10px] font-bold text-primary">
                 <Check className="h-3 w-3" />
@@ -186,7 +186,7 @@ export default function AdminSettingsPage() {
           >
             <div className="rounded-lg border border-teal-200 bg-secondary/30 p-3 text-xs text-primary leading-relaxed">
               <strong>Architectural Rule:</strong> Theme mutations that conflict with the approved
-              Mega Tools brand system are prohibited. The palette below is enforced consistently
+              Omega Calculators brand system are prohibited. The palette below is enforced consistently
               across all public and admin views.
             </div>
 

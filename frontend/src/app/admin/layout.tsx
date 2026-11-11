@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Mega Tools Admin Console',
-    template: '%s | Mega Tools Admin',
+    default: 'Omega Calculators Admin Console',
+    template: '%s | Omega Calculators Admin',
   },
-  description: 'Administration and tool registry management console for Mega Tools.',
+  description: 'Administration and tool registry management console for Omega Calculators.',
   robots: {
     index: false,
     follow: false,

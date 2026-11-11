@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Mega Tools',
+  name: 'Omega Calculators',
   description:
     'Comprehensive online tools platform featuring calculators, converters, PDF utilities, image tools, and developer utilities.',
   url: 'http://localhost:3000',

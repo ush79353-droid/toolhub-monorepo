@@ -6,9 +6,9 @@ import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { AlertCircle, Scale } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — Mega Tools',
+  title: 'Terms of Service — Omega Calculators',
   description:
-    'Review the terms, conditions, and disclaimers governing the use of Mega Tools calculators and utilities.',
+    'Review the terms, conditions, and disclaimers governing the use of Omega Calculators calculators and utilities.',
 };
 
 export default function TermsOfServicePage() {
@@ -38,7 +38,7 @@ export default function TermsOfServicePage() {
           <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
           <p className="leading-relaxed">
             <strong>Draft Notice:</strong> This document is a development template outlining usage
-            conditions for the Mega Tools website. It must undergo formal legal audit before
+            conditions for the Omega Calculators website. It must undergo formal legal audit before
             production deployment.
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function TermsOfServicePage() {
             >
               <h2 className="text-lg font-bold text-accent">1. Acceptance of Terms</h2>
               <p className="mt-3">
-                By accessing or using the Mega Tools website, you acknowledge that you have read,
+                By accessing or using the Omega Calculators website, you acknowledge that you have read,
                 understood, and agree to be bound by these Terms of Service. If you disagree with
                 any portion of these terms, you should discontinue use of the platform immediately.
               </p>
@@ -102,7 +102,7 @@ export default function TermsOfServicePage() {
               </h2>
               <p className="mt-3">
                 All calculations, unit conversions, financial estimations, and health figures (such
-                as BMI, loan amortizations, or percentage calculations) provided on Mega Tools are
+                as BMI, loan amortizations, or percentage calculations) provided on Omega Calculators are
                 offered solely for general informational and educational purposes.
               </p>
               <p className="mt-2 text-xs sm:text-sm text-accent font-semibold">
@@ -118,7 +118,7 @@ export default function TermsOfServicePage() {
             >
               <h2 className="text-lg font-bold text-accent">3. Permitted Use</h2>
               <p className="mt-3">
-                You agree to use Mega Tools only for lawful purposes. You must not attempt to
+                You agree to use Omega Calculators only for lawful purposes. You must not attempt to
                 disrupt the operation of the website, reverse engineer uncompiled code, probe system
                 vulnerabilities, or execute automated scraping that degrades server performance for
                 other visitors.
@@ -132,7 +132,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-lg font-bold text-accent">4. Intellectual Property</h2>
               <p className="mt-3">
                 All branding, interface designs, icons, typography systems, and original software
-                algorithms comprising Mega Tools are the property of Mega Tools or its licensors and
+                algorithms comprising Omega Calculators are the property of Omega Calculators or its licensors and
                 are protected under applicable copyright and intellectual property legislation.
               </p>
             </section>
@@ -156,7 +156,7 @@ export default function TermsOfServicePage() {
             >
               <h2 className="text-lg font-bold text-accent">6. Limitation of Liability</h2>
               <p className="mt-3">
-                Under no circumstances shall Mega Tools, its contributors, or its operators be held
+                Under no circumstances shall Omega Calculators, its contributors, or its operators be held
                 liable for any direct, indirect, incidental, special, or consequential damages
                 resulting from the use of, or the inability to use, any tool or computation provided
                 on this platform.

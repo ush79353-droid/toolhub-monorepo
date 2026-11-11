@@ -4,7 +4,6 @@ import * as React from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import {
-  Shield,
   Eye,
   EyeOff,
   Lock,
@@ -91,18 +90,15 @@ function ResetPasswordForm() {
     <div className="w-full max-w-md">
       {/* Brand Header */}
       <div className="text-center mb-8">
-        <Link href="/" className="inline-flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-md">
-            <Shield className="h-6 w-6" />
-          </div>
-          <div className="text-left">
-            <span className="text-xl font-extrabold tracking-tight text-accent block">
-              MEGA TOOLS
-            </span>
-            <span className="text-xs font-semibold tracking-wider text-primary uppercase">
-              Admin Console
-            </span>
-          </div>
+        <Link href="/" className="inline-flex flex-col items-center">
+          <img
+            src="/images/logo/horizontal-logo.png"
+            alt="Omega Calculators"
+            className="h-16 w-auto"
+          />
+          <span className="mt-3 text-xs font-semibold tracking-wider text-primary uppercase">
+            Admin Console
+          </span>
         </Link>
         <h1 className="mt-6 text-2xl font-extrabold tracking-tight text-accent">
           Choose New Password
