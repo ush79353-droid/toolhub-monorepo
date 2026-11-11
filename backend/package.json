@@ -10,6 +10,7 @@
     "type-check": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "admin:create": "tsx src/scripts/create-admin.ts",
+    "categories:seed": "tsx src/scripts/seed-categories.ts",
     "format": "prettier --write \"src/**/*.{ts,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,json,md}\""
   },
