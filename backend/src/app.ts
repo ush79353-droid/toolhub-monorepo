@@ -9,6 +9,7 @@ import { errorHandler } from './middleware/error.middleware';
 import { healthRouter } from './modules/health/health.router';
 import { adminAuthRouter } from './modules/auth/admin-auth.router';
 import { categoryRouter } from './modules/categories/category.router';
+import { mediaRouter } from './modules/media/media.router';
 
 export function createApp(): Application {
   const app = express();
@@ -37,6 +38,7 @@ export function createApp(): Application {
   v1Router.use('/health', healthRouter);
   v1Router.use('/admin/auth', adminAuthRouter);
   v1Router.use('/admin/categories', categoryRouter);
+  v1Router.use('/admin/media', mediaRouter);
 
   // Mount versioned API
   app.use(env.API_PREFIX, v1Router);

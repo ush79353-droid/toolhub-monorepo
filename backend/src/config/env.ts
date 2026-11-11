@@ -16,6 +16,11 @@ const envSchema = z.object({
   SMTP_USER: z.string().default(''),
   SMTP_PASS: z.string().default(''),
   EMAIL_FROM: z.string().default(''),
+  AWS_ACCESS_KEY: z.string().default(''),
+  AWS_SECRET_KEY: z.string().default(''),
+  BUCKET_REGION: z.string().default(''),
+  AWS_BUCKET_NAME: z.string().default(''),
+  AWS_BASE_URL: z.string().default(''),
 });
 
 const parsed = envSchema.safeParse(process.env);
