@@ -50,3 +50,4 @@ export function ExecutionTypeBadge({ type, className }: ExecutionTypeBadgeProps)
     </span>
   );
 }
+
