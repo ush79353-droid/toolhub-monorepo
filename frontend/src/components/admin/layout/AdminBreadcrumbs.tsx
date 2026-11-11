@@ -33,7 +33,7 @@ export function AdminBreadcrumbs() {
   return (
     <nav
       aria-label="Admin Breadcrumbs"
-      className="hidden lg:flex items-center text-xs text-muted-foreground"
+      className="hidden lg:flex items-center text-xs text-white/60"
     >
       {segments.map((segment, index) => {
         currentPath += `/${segment}`;
@@ -42,11 +42,11 @@ export function AdminBreadcrumbs() {
 
         return (
           <React.Fragment key={currentPath}>
-            {index > 0 && <ChevronRight className="h-3.5 w-3.5 mx-1.5 text-muted-foreground/60" />}
+            {index > 0 && <ChevronRight className="h-3.5 w-3.5 mx-1.5 text-white/40" />}
             {isLast ? (
-              <span className="font-semibold text-accent capitalize">{displayName}</span>
+              <span className="font-semibold text-white capitalize">{displayName}</span>
             ) : (
-              <Link href={currentPath} className="hover:text-primary transition-colors capitalize">
+              <Link href={currentPath} className="hover:text-white transition-colors capitalize">
                 {displayName}
               </Link>
             )}

@@ -41,10 +41,10 @@ export function ConfirmDialog({
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150"
+      className="fixed inset-0 z-[80] flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150"
     >
       <div
-        className="w-full max-w-md rounded-xl border border-border bg-white p-6 shadow-xl animate-in zoom-in-95 duration-150"
+        className="w-full max-w-md rounded-xl border border-border bg-white p-6 text-foreground shadow-xl animate-in zoom-in-95 duration-150"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between">

@@ -3,25 +3,10 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import {
-  LayoutDashboard,
-  Layers,
-  Wrench,
-  Users,
-  Image as ImageIcon,
-  Search,
-  FileText,
-  BarChart3,
-  Plug,
-  Activity,
-  Settings,
-  Globe,
-  LogOut,
-  X,
-  Loader2,
-} from 'lucide-react';
+import { Globe, LogOut, X, Loader2 } from 'lucide-react';
 import { logoutAdminAction } from '@/server/auth/actions';
+import { ConfirmDialog } from '@/components/admin/shared/ConfirmDialog';
+import { AdminNavMenu } from './admin-nav';
 import type { AdminUser } from '@/types';
 
 interface AdminMobileSidebarProps {
@@ -30,23 +15,10 @@ interface AdminMobileSidebarProps {
   adminUser?: AdminUser | null;
 }
 
-const NAV_ITEMS = [
-  { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
-  { label: 'Categories', href: '/admin/categories', icon: Layers },
-  { label: 'Tools', href: '/admin/tools', icon: Wrench, badge: '94' },
-  { label: 'Users', href: '/admin/users', icon: Users },
-  { label: 'Media Library', href: '/admin/media', icon: ImageIcon },
-  { label: 'SEO Management', href: '/admin/seo', icon: Search },
-  { label: 'CMS Pages', href: '/admin/pages', icon: FileText },
-  { label: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
-  { label: 'Integrations', href: '/admin/integrations', icon: Plug },
-  { label: 'Activity Logs', href: '/admin/activity-logs', icon: Activity },
-  { label: 'Settings', href: '/admin/settings', icon: Settings },
-];
-
 export function AdminMobileSidebar({ isOpen, onClose, adminUser }: AdminMobileSidebarProps) {
   const pathname = usePathname();
   const [isLoggingOut, setIsLoggingOut] = React.useState(false);
+  const [confirmOpen, setConfirmOpen] = React.useState(false);
 
   const displayName = adminUser?.name || 'Administrator';
   const roleName = adminUser?.role === 'super_admin' ? 'Super Admin' : 'Admin';
@@ -60,7 +32,9 @@ export function AdminMobileSidebar({ isOpen, onClose, adminUser }: AdminMobileSi
 
   React.useEffect(() => {
     onClose();
-  }, [pathname, onClose]);
+    // Close the drawer after a route change. onClose is recreated by the parent.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   if (!isOpen) return null;
 
@@ -70,116 +44,84 @@ export function AdminMobileSidebar({ isOpen, onClose, adminUser }: AdminMobileSi
   };
 
   return (
+    <>
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex md:hidden bg-black/50 backdrop-blur-xs animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex animate-in bg-black/50 backdrop-blur-xs fade-in duration-200 md:hidden"
       onClick={onClose}
     >
       <div
-        className="relative flex w-72 max-w-[80vw] flex-1 flex-col bg-white shadow-2xl animate-in slide-in-from-left duration-200"
+        className="relative flex w-72 max-w-[80vw] flex-1 flex-col bg-brand-darkAccent text-white shadow-2xl animate-in slide-in-from-left duration-200"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="flex h-16 items-center justify-between border-b border-border px-4">
-          <Link href="/admin" className="flex min-w-0 items-center">
+        <div className="flex h-16 items-center justify-between border-b border-white/10 px-4">
+          <Link href="/admin" className="flex min-w-0 items-center gap-2">
             <img
-              src="/images/logo/horizontal-logo.png"
+              src="/images/logo/icon-without-bg.png"
               alt="Omega Calculators"
-              className="h-10 w-auto max-w-[160px] object-contain object-left"
+              className="h-9 w-9 object-contain"
             />
+            <span className="truncate text-sm font-semibold text-white">Omega Calculators</span>
           </Link>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground cursor-pointer"
+            className="cursor-pointer rounded-lg p-1.5 text-white/70 hover:bg-white/10 hover:text-white"
+            aria-label="Close navigation"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Links */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-1">
-          <div className="px-2 pb-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-            Management
-          </div>
-          {NAV_ITEMS.map((item) => {
-            const active =
-              item.href === '/admin' ? pathname === '/admin' : pathname.startsWith(item.href);
-            const Icon = item.icon;
-
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'flex items-center justify-between rounded-lg px-3 py-2.5 text-xs font-medium transition-colors',
-                  active
-                    ? 'bg-secondary font-semibold text-primary'
-                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                )}
-              >
-                <div className="flex items-center gap-3">
-                  <Icon
-                    className={cn('h-4 w-4', active ? 'text-primary' : 'text-muted-foreground')}
-                  />
-                  <span>{item.label}</span>
-                </div>
-                {item.badge && (
-                  <span
-                    className={cn(
-                      'rounded-full px-2 py-0.5 text-[10px] font-semibold',
-                      active ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'
-                    )}
-                  >
-                    {item.badge}
-                  </span>
-                )}
-              </Link>
-            );
-          })}
+        <div className="admin-scroll flex-1 overflow-y-auto p-4">
+          <AdminNavMenu />
         </div>
 
-        {/* Footer */}
-        <div className="border-t border-border p-4 space-y-2">
+        <div className="space-y-2 border-t border-white/10 p-4">
           <Link
             href="/admin/profile"
-            className="flex items-center gap-3 rounded-lg border border-border bg-background p-2 hover:border-primary/40 transition-colors"
+            className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-2 transition-colors hover:bg-white/10"
           >
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-xs font-bold text-brand-darkAccent">
               {initials}
             </div>
             <div className="flex-1 truncate">
-              <div className="truncate text-xs font-semibold text-accent leading-none">
-                {displayName}
-              </div>
-              <div className="text-[10px] text-muted-foreground truncate mt-0.5">{roleName}</div>
+              <div className="truncate text-xs font-semibold leading-none text-white">{displayName}</div>
+              <div className="mt-0.5 truncate text-[10px] text-white/60">{roleName}</div>
             </div>
           </Link>
 
           <Link
             href="/"
             target="_blank"
-            className="flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+            className="flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-white/70 hover:bg-white/10 hover:text-white"
           >
-            <Globe className="h-4 w-4 text-muted-foreground" />
+            <Globe className="h-4 w-4" />
             <span>View Public Website</span>
           </Link>
           <button
             type="button"
-            onClick={handleSignOut}
+            onClick={() => setConfirmOpen(true)}
             disabled={isLoggingOut}
-            className="w-full text-left flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium text-rose-600 hover:bg-rose-50 cursor-pointer"
+            className="flex w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-2 text-left text-xs font-medium text-rose-200 hover:bg-rose-500/20 hover:text-white"
           >
-            {isLoggingOut ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <LogOut className="h-4 w-4" />
-            )}
+            {isLoggingOut ? <Loader2 className="h-4 w-4 animate-spin" /> : <LogOut className="h-4 w-4" />}
             <span>{isLoggingOut ? 'Signing Out...' : 'Sign Out'}</span>
           </button>
         </div>
       </div>
     </div>
+
+    <ConfirmDialog
+      isOpen={confirmOpen}
+      onClose={() => setConfirmOpen(false)}
+      onConfirm={handleSignOut}
+      title="Sign out?"
+      description="You will need to sign in again to open the admin console."
+      confirmLabel="Sign out"
+      cancelLabel="Stay signed in"
+    />
+    </>
   );
 }

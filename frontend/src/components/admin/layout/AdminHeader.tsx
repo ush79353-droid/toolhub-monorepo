@@ -4,18 +4,14 @@ import * as React from 'react';
 import Link from 'next/link';
 import {
   Menu,
-  Search,
-  Bell,
-  Globe,
   User,
   LogOut,
   Settings as SettingsIcon,
   Loader2,
 } from 'lucide-react';
 import { AdminBreadcrumbs } from './AdminBreadcrumbs';
-import { AdminSearchDialog } from '../shared/AdminSearchDialog';
-import { Button } from '@/components/ui/button';
 import { logoutAdminAction } from '@/server/auth/actions';
+import { ConfirmDialog } from '@/components/admin/shared/ConfirmDialog';
 import type { AdminUser } from '@/types';
 
 interface AdminHeaderProps {
@@ -24,10 +20,30 @@ interface AdminHeaderProps {
 }
 
 export function AdminHeader({ onToggleMobileSidebar, adminUser }: AdminHeaderProps) {
-  const [isSearchOpen, setIsSearchOpen] = React.useState(false);
+  const menuRef = React.useRef<HTMLDivElement>(null);
   const [isUserMenuOpen, setIsUserMenuOpen] = React.useState(false);
-  const [isNotifOpen, setIsNotifOpen] = React.useState(false);
   const [isLoggingOut, setIsLoggingOut] = React.useState(false);
+  const [confirmOpen, setConfirmOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!isUserMenuOpen) return;
+
+    const closeOnOutside = (event: MouseEvent) => {
+      if (!menuRef.current?.contains(event.target as Node)) {
+        setIsUserMenuOpen(false);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsUserMenuOpen(false);
+    };
+
+    document.addEventListener('mousedown', closeOnOutside);
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.removeEventListener('mousedown', closeOnOutside);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [isUserMenuOpen]);
 
   const handleSignOut = async () => {
     setIsLoggingOut(true);
@@ -36,11 +52,11 @@ export function AdminHeader({ onToggleMobileSidebar, adminUser }: AdminHeaderPro
 
   const initials = adminUser?.name
     ? adminUser.name
-        .split(' ')
-        .map((n) => n[0])
-        .join('')
-        .toUpperCase()
-        .slice(0, 2)
+      .split(' ')
+      .map((n) => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2)
     : 'BA';
 
   const displayName = adminUser?.name || 'Administrator';
@@ -48,13 +64,13 @@ export function AdminHeader({ onToggleMobileSidebar, adminUser }: AdminHeaderPro
 
   return (
     <>
-      <header className="sticky top-0 z-20 flex h-16 w-full items-center justify-between border-b border-border bg-white/95 px-4 sm:px-6 backdrop-blur-xs">
+      <header className="sticky top-0 z-20 flex h-16 w-full items-center justify-between border-b border-white/10 bg-brand-darkAccent px-4 text-white sm:px-6">
         {/* Left Side: Hamburger & Breadcrumbs */}
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={onToggleMobileSidebar}
-            className="rounded-lg p-2 text-muted-foreground hover:bg-muted md:hidden cursor-pointer"
+            className="cursor-pointer rounded-lg p-2 text-white/80 hover:bg-white/10 hover:text-white md:hidden"
             aria-label="Open mobile navigation drawer"
           >
             <Menu className="h-5 w-5" />
@@ -64,96 +80,27 @@ export function AdminHeader({ onToggleMobileSidebar, adminUser }: AdminHeaderPro
 
         {/* Right Side: Search, Notifications, Site Link, Avatar */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Quick Search Trigger */}
-          <button
-            type="button"
-            onClick={() => setIsSearchOpen(true)}
-            className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground hover:border-primary/50 hover:text-foreground transition-colors cursor-pointer"
-          >
-            <Search className="h-3.5 w-3.5" />
-            <span className="hidden sm:inline">Search admin...</span>
-            <kbd className="hidden md:inline-block rounded border border-border bg-white px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">
-              ⌘K
-            </kbd>
-          </button>
-
-          {/* View Website External Link */}
-          <Button
-            asChild
-            variant="outline"
-            size="sm"
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs h-8 text-primary border-teal-200 hover:bg-secondary"
-          >
-            <Link href="/" target="_blank" rel="noopener noreferrer">
-              <Globe className="h-3.5 w-3.5" />
-              <span>Live Site</span>
-            </Link>
-          </Button>
-
-          {/* Notifications Trigger */}
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => {
-                setIsNotifOpen(!isNotifOpen);
-                setIsUserMenuOpen(false);
-              }}
-              className="relative rounded-lg p-2 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors cursor-pointer"
-              aria-label="Notifications"
-            >
-              <Bell className="h-4 w-4" />
-              <span className="absolute right-1.5 top-1.5 flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-              </span>
-            </button>
-
-            {/* Notifications Popover */}
-            {isNotifOpen && (
-              <div
-                className="absolute right-0 mt-2 w-80 rounded-xl border border-border bg-white p-3 shadow-xl z-50 animate-in fade-in zoom-in-95 duration-100"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="flex items-center justify-between border-b border-border pb-2 px-1">
-                  <span className="text-xs font-bold text-accent">System Alerts (Demo)</span>
-                  <span className="rounded bg-secondary px-1.5 py-0.5 text-[10px] font-semibold text-primary">
-                    2 New
-                  </span>
-                </div>
-                <div className="mt-2 space-y-2">
-                  <div className="rounded-lg bg-background p-2.5 text-xs">
-                    <div className="font-semibold text-accent">Security Session Active</div>
-                    <div className="text-[11px] text-muted-foreground mt-0.5">
-                      Authenticated as {displayName} with server-side session tracking.
-                    </div>
-                    <div className="text-[10px] text-muted-foreground/70 mt-1">Just now</div>
-                  </div>
-                  <div className="rounded-lg bg-background p-2.5 text-xs">
-                    <div className="font-semibold text-accent">S3 Storage Health</div>
-                    <div className="text-[11px] text-muted-foreground mt-0.5">
-                      Temporary file buffer purged 142 expired assets successfully.
-                    </div>
-                    <div className="text-[10px] text-muted-foreground/70 mt-1">1h ago</div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
 
           {/* User Avatar & Menu */}
-          <div className="relative">
+          <div className="relative" ref={menuRef}>
             <button
               type="button"
-              onClick={() => {
-                setIsUserMenuOpen(!isUserMenuOpen);
-                setIsNotifOpen(false);
-              }}
-              className="flex items-center gap-2 rounded-full p-0.5 hover:ring-2 hover:ring-primary transition-all cursor-pointer"
+              onClick={() => setIsUserMenuOpen((open) => !open)}
+              className="flex cursor-pointer items-center gap-2.5 rounded-full py-1 pl-1 pr-2 transition-colors hover:bg-white/10"
               aria-label="User profile menu"
+              aria-expanded={isUserMenuOpen}
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-bold text-white shadow-xs">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xs font-bold text-brand-darkAccent">
                 {initials}
               </div>
+              <span className="hidden min-w-0 text-left sm:block">
+                <span className="block max-w-[160px] truncate text-xs font-semibold leading-none">
+                  {displayName}
+                </span>
+                <span className="mt-0.5 block max-w-[160px] truncate text-[11px] font-normal text-white/65">
+                  {displayEmail}
+                </span>
+              </span>
             </button>
 
             {isUserMenuOpen && (
@@ -188,9 +135,12 @@ export function AdminHeader({ onToggleMobileSidebar, adminUser }: AdminHeaderPro
                 <div className="border-t border-border pt-1">
                   <button
                     type="button"
-                    onClick={handleSignOut}
+                    onClick={() => {
+                      setIsUserMenuOpen(false);
+                      setConfirmOpen(true);
+                    }}
                     disabled={isLoggingOut}
-                    className="w-full text-left flex items-center gap-2.5 px-3 py-1.5 text-xs text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
+                    className="flex w-full cursor-pointer items-center gap-2.5 px-3 py-1.5 text-left text-xs text-rose-600 transition-colors hover:bg-rose-50"
                   >
                     {isLoggingOut ? (
                       <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -206,8 +156,16 @@ export function AdminHeader({ onToggleMobileSidebar, adminUser }: AdminHeaderPro
         </div>
       </header>
 
-      {/* Global Search Dialog Modal */}
-      <AdminSearchDialog isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      <ConfirmDialog
+        isOpen={confirmOpen}
+        onClose={() => setConfirmOpen(false)}
+        onConfirm={handleSignOut}
+        title="Sign out?"
+        description="You will need to sign in again to open the admin console."
+        confirmLabel="Sign out"
+        cancelLabel="Stay signed in"
+      />
+
     </>
   );
 }
