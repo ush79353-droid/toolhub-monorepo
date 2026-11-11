@@ -44,3 +44,4 @@
 | `MEDIA-01` | Implement AWS S3 pre-signed media upload/list/delete and `/admin/media` library UI | sameer52718 | Completed | `backend/src/modules/media/`, `backend/src/services/s3.service.ts`, `frontend/src/app/admin/(dashboard)/media/` | `AUTH-01` |
 | `TOOL-00` | Implement Tool catalog CRUD, placement validation, icon picker, `tools:seed` (4,351 tools), and initial `/catalog/*` homepage routes | sameer52718 | Completed | `backend/src/modules/tools/`, `backend/src/modules/catalog/`, `backend/src/scripts/seed-tools.ts`, `frontend/src/app/admin/(dashboard)/tools/`, `frontend/src/app/(website)/page.tsx` | `CAT-01`, `MEDIA-01` |
 | `INFRA-01` | Establish shared Project Brain (`brain/`), `AGENTS.md`, `.cursor/rules/mega-tools-brain.mdc`, and Antigravity rules (`.agents/rules/ponytail.md`, `mega-tools-brain.md`) | — | Completed | `AGENTS.md`, `.agents/rules/`, `.cursor/rules/mega-tools-brain.mdc`, `brain/` | — |
+

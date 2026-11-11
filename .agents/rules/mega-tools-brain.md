@@ -19,3 +19,4 @@ Follow the shared repository instructions in root `AGENTS.md` on every task.
 - Preserve the locked palette and UI patterns documented in `brain/DESIGN_SYSTEM.md`.
 - Maintain strict TypeScript (`strict: true`) and never invent APIs, models, or completed features that are not verified in code.
 - Never commit `.env`, `.env.local`, credentials, or secrets, and never force push or overwrite another developer's work. Sync Brain updates via `git fetch` / `git pull` and resolve conflicts explicitly.
+

@@ -149,3 +149,4 @@ The following capabilities exist only as empty backend module directories (`.git
 - Global SEO & system settings persistence (`/api/v1/admin/seo`, `/api/v1/admin/settings`)
 - Third-party integration credential management (`/api/v1/admin/integrations`)
 - Background jobs (`/api/v1/admin/jobs`) & public user uploads (`/api/v1/uploads`)
+

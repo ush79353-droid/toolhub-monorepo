@@ -69,3 +69,4 @@ Defined in `frontend/src/types/tool.ts`, `backend/src/types/tool.ts`, and `front
 3. **Wire public catalog routes** (`/tools`, `/tools/[slug]`, `/categories`, `/categories/[slug]`, and header/footer navigation) to live Express/MongoDB endpoints instead of `sample-data.ts`.
 4. **Implement and register real tool components** under `frontend/src/tools/` via `tools/registry/index.ts` and connect `ToolWorkspace`.
 5. **Implement remaining backend admin modules** (`users`, `analytics`, `activity-logs`, `seo`, `pages`, `integrations`, `settings`) to replace `admin-mock-data.ts` previews.
+

@@ -110,3 +110,4 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 - **Client Components (`'use client'`):** Interactive directory search/filters, admin login/reset forms, all interactive admin CRUD views/forms/tables, sidebar/header state, `FAQAccordion`, `SearchBar`, `ToolWorkspace`, `ContactFormClient`.
 - **Styling:** Tailwind utility classes backed by semantic HSL CSS variables in `src/app/globals.css` plus explicit `brand.*` tokens in `tailwind.config.ts`. Prettier enforces `singleQuote: true`, `semi: true`, `printWidth: 100`, `tabWidth: 2`.
 - **Note on `<img>` tags:** Several components use native `<img>` rather than `next/image` (including dynamic S3 URLs and logos), producing `@next/next/no-img-element` warnings during `npm run lint`.
+

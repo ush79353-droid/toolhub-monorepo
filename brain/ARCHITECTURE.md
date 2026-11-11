@@ -93,3 +93,4 @@ Browser  ──►  Next.js Server (RSC / Server Actions)  ──►  Express AP
 - **HTTPS in Production:** `setAdminSessionCookie` sets `secure: process.env.NODE_ENV === 'production'`.
 - **In-Memory Rate Limiter Caveat:** `rate-limit.middleware.ts` uses a per-process JavaScript `Map`; multi-instance horizontal scaling would require a shared store (e.g., Redis) if deployed across multiple backend replicas.
 - **External Services:** Password reset emails require `EMAIL_PROVIDER=smtp` and valid `SMTP_*`/`EMAIL_FROM` vars; media uploads require `AWS_*` S3 variables and bucket CORS allowing browser `PUT` from `CORS_ORIGIN`.
+

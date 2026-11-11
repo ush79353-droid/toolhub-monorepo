@@ -21,3 +21,4 @@ This rule works alongside `.cursor/rules/ponytail.mdc` (which remains authoritat
    - Run relevant checks (`type-check`, `lint`, and targeted checks).
    - Update affected `brain/` docs, `brain/CURRENT_STATE.md`, `brain/TASKS.md`, append to `brain/CHANGELOG.md`, and record architectural changes in `brain/DECISIONS.md`.
    - Include Brain updates in the same commit as related code changes. Sync via `git fetch` / `git pull` before pushing; never force push.
+

@@ -114,3 +114,4 @@ Validated at import via Zod (`dotenv.config()`):
 - All endpoints are mounted under `env.API_PREFIX` (`/api/v1`).
 - Success format (`sendSuccess`): `{ success: true, data: <T>, meta: { timestamp: ISOString, ... } }`.
 - Error format (`sendError`): `{ success: false, error: { code, message, details?, stack? }, meta: { timestamp: ISOString } }` (`stack` only included outside `production` when `details instanceof Error`).
+

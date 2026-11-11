@@ -59,3 +59,4 @@
 - **Reason:** Synchronize context, architecture boundaries, and task tracking across Developer A (Google Antigravity) and Developer B (Cursor) via Git without installing external Ponytail hooks/executables.
 - **Consequences:** Both agents must read `brain/` before tasks and update `brain/` in the same commit as code changes; synchronization occurs strictly via Git commits/pulls.
 - **Status:** Accepted
+

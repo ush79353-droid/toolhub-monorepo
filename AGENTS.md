@@ -53,3 +53,4 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 - Never automatically resolve conflicting architectural changes — stop and coordinate or ask for clarification.
 - Follow the user's Git instructions for committing and pushing (`git fetch` and inspect divergence/conflicts before pushing).
 - Include `brain/` documentation updates in the same commit as related code changes so repository state and Project Brain stay in sync.
+

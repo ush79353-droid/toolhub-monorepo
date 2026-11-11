@@ -55,3 +55,4 @@ Every statement in `brain/` must distinguish between:
 - **Unknown / Not Verified** — Not yet tested or runtime-verified in this environment.
 
 Never mark a planned or UI-preview feature as implemented, and never store `.env`, `.env.local`, passwords, API keys, session tokens, or personal data in `brain/`.
+

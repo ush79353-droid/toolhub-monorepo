@@ -144,3 +144,4 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 - `{ nameKey: 1 }` (`unique: true`)
 - `{ slug: 1 }` (`unique: true`)
 - `{ category: 1, updatedAt: -1 }`
+

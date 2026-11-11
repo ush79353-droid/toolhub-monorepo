@@ -62,3 +62,4 @@
 | Frontend Lint | `cd frontend && npm run lint` | **Passed** (`next lint`, 0 errors, 11 `@next/next/no-img-element` warnings) |
 | Backend Type-Check | `cd backend && npm run type-check` | **Failed** (4 TS errors: missing local `nodemailer` & `@aws-sdk/*` packages in `backend/node_modules` + `TS7006` at `s3.service.ts:72`) |
 | Backend Helper Self-Checks | `npx tsx src/modules/media/media.key.ts`, `tool.key.ts`, `tool.copy.ts` | **Passed** (`media.key ok`, `tool.key ok`, `tool.copy ok`) |
+

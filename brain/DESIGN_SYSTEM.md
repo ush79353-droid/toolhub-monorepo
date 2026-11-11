@@ -65,3 +65,4 @@ Verified in `StatusBadge.tsx`, `PendingNotice.tsx`, forms, and alerts:
   - `ConfirmDialog` (`role="dialog"`, `aria-modal="true"`, `Escape` closes) for destructive/logout confirmations
   - `PendingNotice` banner to honestly indicate UI-preview / non-persisted admin modules
 - **Responsive Breakpoints:** Mobile-first Tailwind (`sm:`, `md:`, `lg:`, `xl:`), with `AdminMobileSidebar` drawer on `< md` (`md:hidden`) and `MobileNavigation` on public `< md`.
+

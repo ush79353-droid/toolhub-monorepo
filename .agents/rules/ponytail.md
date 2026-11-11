@@ -56,3 +56,4 @@ If any Ponytail minimalism rule appears to conflict with project architecture or
 - **"Fewest files possible"** must never merge `frontend/` and `backend/`, bypass `Browser → Next.js Server → Express API → MongoDB`, or introduce npm workspaces.
 - **"No boilerplate / minimal files"** must never skip mandatory `brain/` documentation updates after completed tasks.
 - **"Self-check files"** must never introduce unapproved test frameworks, external hooks, or executables without explicit approval.
+

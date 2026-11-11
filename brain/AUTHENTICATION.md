@@ -103,3 +103,4 @@ This document describes only the **verified authentication and session implement
 - **`requireRole` Unused:** `auth.middleware.ts` exports `requireRole(['super_admin'])`, but no router applies it yet; any authenticated active admin can currently call all `/admin/*` endpoints.
 - **Single-Process Rate Limiting:** Rate limiters use an in-memory `Map`, not Redis.
 - **Public User Auth:** There is no public user authentication (tools are public and account-free).
+
