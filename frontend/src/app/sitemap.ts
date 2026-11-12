@@ -10,7 +10,11 @@ import { getPublicSiteOrigin } from '@/server/seo/public-site';
 import { isApprovedComponentKey } from '@/tools/registry/keys';
 
 /** Known implemented public tool slugs (registry-backed). Extend when new calculators ship. */
-const IMPLEMENTED_TOOL_SLUGS = ['loan-calculator', 'auto-loan-calculator'] as const;
+const IMPLEMENTED_TOOL_SLUGS = [
+  'loan-calculator',
+  'auto-loan-calculator',
+  'reduced-row-echelon-form-calculator',
+] as const;
 
 const STATIC_PATHS = [
   '/',

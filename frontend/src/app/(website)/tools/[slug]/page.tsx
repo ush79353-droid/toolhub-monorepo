@@ -51,6 +51,8 @@ import {
 import { AUTO_LOAN_FAQS, AUTO_LOAN_TOC_ITEMS } from '@/tools/calculators/auto-loan/content';
 import { LoanGuideArticle } from '@/tools/calculators/loan/LoanGuideArticle';
 import { LOAN_FAQS, LOAN_TOC_ITEMS } from '@/tools/calculators/loan/content';
+import { RrefGuideArticle } from '@/tools/calculators/rref/RrefGuideArticle';
+import { RREF_FAQS, RREF_TOC_ITEMS } from '@/tools/calculators/rref/content';
 import { isApprovedComponentKey } from '@/tools/registry/keys';
 import type { ToolMetadata } from '@/types/tool';
 
@@ -71,7 +73,7 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     tocItems: readonly TableOfContentsItem[];
     GuideArticle: React.ComponentType;
     faqs: readonly FAQItem[];
-    countryRules: ToolDetailSidebarCountryRules;
+    countryRules?: ToolDetailSidebarCountryRules | null;
   }
 > = {
   AutoLoanCalculator: {
@@ -97,6 +99,15 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
       title: 'Loan rules by country',
       countries: SIDEBAR_COUNTRIES,
     },
+  },
+  RrefCalculator: {
+    subtitleLead:
+      'Reduce any matrix to reduced row echelon form with exact fractions, step-by-step Gauss–Jordan operations, rank, pivot columns, and optional augmented-system analysis.',
+    asideAriaLabel: 'Interactive RREF calculator',
+    tocItems: RREF_TOC_ITEMS,
+    GuideArticle: RrefGuideArticle,
+    faqs: RREF_FAQS,
+    countryRules: null,
   },
 };
 

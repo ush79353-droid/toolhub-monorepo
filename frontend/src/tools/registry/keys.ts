@@ -1,4 +1,8 @@
-export const APPROVED_COMPONENT_KEYS = ['AutoLoanCalculator', 'LoanCalculator'] as const;
+export const APPROVED_COMPONENT_KEYS = [
+  'AutoLoanCalculator',
+  'LoanCalculator',
+  'RrefCalculator',
+] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
 
