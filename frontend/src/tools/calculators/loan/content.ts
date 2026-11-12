@@ -276,7 +276,7 @@ export const LOAN_FAQS: readonly FAQItem[] = [
   {
     question: 'Does changing the display currency convert monetary amounts using live FX rates?',
     answer:
-      'No. Selecting USD, EUR, GBP, CAD, AUD, INR, PKR, or AED changes display currency symbols and formatting only without applying exchange-rate conversions.',
+      'No. Currency selection changes the denomination and formatting only (for example USD, PKR, EUR, AED, JPY, or KWD). It does not apply live exchange-rate conversions, and entered amounts are not converted when you switch currencies.',
   },
   {
     question: 'Are any of my loan details or calculation inputs sent to a server?',

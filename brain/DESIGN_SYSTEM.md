@@ -13,7 +13,7 @@
 | **Dark Accent** | `#163C43` | `--accent` / `--secondary-foreground: 189 51% 17%` | `brand-darkAccent` / `accent` | Headings (`h1`-`h3`), admin sidebar & header background, strong brand text |
 | **Primary Hover** | `#066773` | `--primary-hover: 187 90% 24%` | `brand-primaryHover` / `primary-hover` | Button & primary action hover states |
 | **Soft Teal** | `#EAF7F6` | `--muted: 175 46% 94%` | `brand-softTeal` / `muted` | Subtle card surfaces, table headers, banner tints |
-| **Background** | `#F7F8F6` | `--background: 90 10% 97%` | `brand-background` / `background` | Global page canvas background |
+| **Background** | `#F7F8F6` | `--background: 90 10% 97%` | `brand-background` / `background` | Admin / muted canvas token; public `(website)` layout uses `bg-white` so white calculator cards can lift with soft elevation shadows |
 | **Primary Text** | `#202B2D` | `--foreground: 189 17% 15%` | `brand-text` / `foreground` | Primary body text & card foreground |
 | **Secondary Text** | `#667477` | `--muted-foreground: 191 8% 43%` | `brand-textSecondary` / `muted-foreground` | Descriptions, labels, helper copy, metadata |
 | **Border** | `#DCE6E5` | `--border` / `--input: 174 15% 88%` | `brand-border` / `border` / `input` | Hairline dividers, card borders, input borders |

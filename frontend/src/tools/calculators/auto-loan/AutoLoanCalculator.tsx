@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 import { Calculator } from 'lucide-react';
-import { Select } from '@/components/ui/select';
 import type { ToolComponentProps } from '@/tools/types';
+import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { AmortizationTable } from './AmortizationTable';
 import {
   AutoLoanForm,
@@ -14,27 +14,14 @@ import {
 import { AutoLoanResults } from './AutoLoanResults';
 import { buildResultsSummaryText, calculateAutoLoan } from './calculation';
 import {
-  CURRENCY_OPTIONS,
   createDefaultAutoLoanInput,
   getTodayIsoDate,
   type AutoLoanFieldErrors,
   type AutoLoanResult,
-  type SupportedCurrency,
 } from './types';
 import { validateAutoLoanInput } from './validation';
 
 const INITIAL_START_DATE = '2026-11-11';
-
-const CURRENCY_SHORT_LABELS: Record<SupportedCurrency, string> = {
-  USD: 'USD ($)',
-  EUR: 'EUR (€)',
-  GBP: 'GBP (£)',
-  CAD: 'CAD (C$)',
-  AUD: 'AUD (A$)',
-  INR: 'INR (₹)',
-  PKR: 'PKR (Rs)',
-  AED: 'AED (د.إ)',
-};
 
 export function AutoLoanCalculator({ metadata, className = '' }: ToolComponentProps) {
   const [draft, setDraft] = React.useState<AutoLoanDraft>(() =>
@@ -103,10 +90,10 @@ export function AutoLoanCalculator({ metadata, className = '' }: ToolComponentPr
   return (
     <section
       aria-label={`${metadata.title} calculator panel`}
-      className={`overflow-hidden rounded-2xl border border-border bg-white shadow-xs ${className}`}
+      className={`overflow-hidden rounded-2xl border border-border bg-white shadow-[0_12px_40px_-16px_rgba(22,60,67,0.28)] ${className}`}
     >
       {/* Compact Calculator Header + Currency Selector */}
-      <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-background/50 px-4 py-3 sm:px-5">
+      <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div className="flex items-center gap-2.5">
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
             <Calculator className="h-4 w-4" aria-hidden="true" />
@@ -117,26 +104,16 @@ export function AutoLoanCalculator({ metadata, className = '' }: ToolComponentPr
           </div>
         </div>
 
-        <div className="w-[140px] shrink-0">
+        <div className="w-[148px] shrink-0 sm:w-[160px]">
           <label htmlFor="auto-loan-currency" className="sr-only">
             Display Currency
           </label>
-          <Select
+          <CurrencySelect
             id="auto-loan-currency"
             aria-label="Display currency"
-            title="Changes symbol formatting only (no exchange-rate conversion)"
             value={draft.currency}
-            onChange={(e) =>
-              handleDraftChange({ ...draft, currency: e.target.value as SupportedCurrency })
-            }
-            className="h-9 text-xs font-medium"
-          >
-            {CURRENCY_OPTIONS.map((option) => (
-              <option key={option.code} value={option.code}>
-                {CURRENCY_SHORT_LABELS[option.code]}
-              </option>
-            ))}
-          </Select>
+            onChange={(currency) => handleDraftChange({ ...draft, currency })}
+          />
         </div>
       </div>
 

@@ -178,16 +178,18 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             <header className="order-1 min-w-0 lg:col-start-1 lg:row-start-1">
               <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
                 <div className="flex items-start gap-3.5">
-                  {iconUrl ? (
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={iconUrl} alt="" className="h-full w-full object-contain" />
-                    </div>
-                  ) : (
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
-                      <CategoryIcon name={toolMetadata.icon} className="h-6 w-6" />
-                    </div>
-                  )}
+                  {toolMetadata.componentKey !== 'LoanCalculator' ? (
+                    iconUrl ? (
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={iconUrl} alt="" className="h-full w-full object-contain" />
+                      </div>
+                    ) : (
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+                        <CategoryIcon name={toolMetadata.icon} className="h-6 w-6" />
+                      </div>
+                    )
+                  ) : null}
 
                   <div className="min-w-0">
                     <h1 className="text-[26px] font-semibold leading-[1.2] tracking-tight text-accent sm:text-[30px] lg:text-[32px]">

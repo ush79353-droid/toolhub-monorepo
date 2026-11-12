@@ -7,14 +7,15 @@ import { Select } from '@/components/ui/select';
 import { Calculator, ChevronDown, ChevronUp, RotateCcw } from 'lucide-react';
 import { formatCurrencyValue } from './calculation';
 import { InfoTooltip } from './InfoTooltip';
-import type {
-  AutoLoanFieldErrors,
-  AutoLoanInput,
-  CostInclusion,
-  DownPaymentMode,
-  SupportedCurrency,
-  TaxPolicy,
-  TermUnit,
+import {
+  getCurrencySymbol,
+  type AutoLoanFieldErrors,
+  type AutoLoanInput,
+  type CostInclusion,
+  type DownPaymentMode,
+  type SupportedCurrency,
+  type TaxPolicy,
+  type TermUnit,
 } from './types';
 
 export interface AutoLoanDraft {
@@ -34,17 +35,6 @@ export interface AutoLoanDraft {
   startDate: string;
   currency: SupportedCurrency;
 }
-
-const CURRENCY_UNITS: Record<SupportedCurrency, string> = {
-  USD: '$',
-  EUR: '€',
-  GBP: '£',
-  CAD: 'C$',
-  AUD: 'A$',
-  INR: '₹',
-  PKR: 'Rs',
-  AED: 'AED',
-};
 
 export function inputToDraft(input: AutoLoanInput): AutoLoanDraft {
   return {
@@ -195,7 +185,7 @@ export function AutoLoanForm({
   onReset,
 }: AutoLoanFormProps) {
   const [showTaxAndFees, setShowTaxAndFees] = React.useState(false);
-  const unitSymbol = CURRENCY_UNITS[draft.currency];
+  const unitSymbol = getCurrencySymbol(draft.currency);
   const hasTaxOrFeesError = Boolean(errors.salesTaxRate || errors.additionalFees || errors.startDate);
 
   React.useEffect(() => {

@@ -1,7 +1,16 @@
-import type { CurrencyOption, SupportedCurrency } from '../auto-loan/types';
-
-export { CURRENCY_OPTIONS } from '../auto-loan/types';
-export type { CurrencyOption, SupportedCurrency };
+export type {
+  CurrencyOption,
+  SupportedCurrency,
+} from '@/tools/shared/currency';
+export {
+  CURRENCY_DENOMINATION_NOTE,
+  CURRENCY_OPTIONS,
+  DEFAULT_CURRENCY,
+  formatCurrencyValue,
+  getCurrencyShortLabel,
+  getCurrencySymbol,
+} from '@/tools/shared/currency';
+import { DEFAULT_CURRENCY, type SupportedCurrency } from '@/tools/shared/currency';
 
 export type LoanMode = 'amortized' | 'interest-only';
 
@@ -153,7 +162,7 @@ export function createDefaultLoanInput(startDate = getTodayIsoDate()): LoanInput
     oneTimeExtraAmount: 0,
     oneTimeExtraPeriod: 1,
     startDate,
-    currency: 'USD',
+    currency: DEFAULT_CURRENCY,
   };
 }
 

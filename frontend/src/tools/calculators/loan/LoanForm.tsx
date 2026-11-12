@@ -7,16 +7,17 @@ import { Select } from '@/components/ui/select';
 import { Calculator, ChevronDown, ChevronUp, RotateCcw } from 'lucide-react';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import { formatCurrencyValue, formatDisplayDate, getScheduledPaymentDate } from './calculation';
-import type {
-  ExtraPaymentFrequency,
-  FeeInclusion,
-  FeeMode,
-  LoanFieldErrors,
-  LoanInput,
-  LoanMode,
-  PaymentFrequency,
-  SupportedCurrency,
-  TermUnit,
+import {
+  getCurrencySymbol,
+  type ExtraPaymentFrequency,
+  type FeeInclusion,
+  type FeeMode,
+  type LoanFieldErrors,
+  type LoanInput,
+  type LoanMode,
+  type PaymentFrequency,
+  type SupportedCurrency,
+  type TermUnit,
 } from './types';
 import { resolveScheduledPeriods, resolveTotalMonths, validateLoanInput } from './validation';
 
@@ -39,17 +40,6 @@ export interface LoanDraft {
   startDate: string;
   currency: SupportedCurrency;
 }
-
-const CURRENCY_UNITS: Record<SupportedCurrency, string> = {
-  USD: '$',
-  EUR: '€',
-  GBP: '£',
-  CAD: 'C$',
-  AUD: 'A$',
-  INR: '₹',
-  PKR: 'Rs',
-  AED: 'AED',
-};
 
 export function inputToDraft(input: LoanInput): LoanDraft {
   return {
@@ -204,7 +194,7 @@ export function LoanForm({
   onReset,
 }: LoanFormProps) {
   const [showAdvanced, setShowAdvanced] = React.useState(false);
-  const unitSymbol = CURRENCY_UNITS[draft.currency];
+  const unitSymbol = getCurrencySymbol(draft.currency);
   const hasAdvancedError = Boolean(
     errors.originationFeeValue ||
       errors.extraPaymentAmount ||

@@ -46,17 +46,14 @@ export function formatDisplayDate(isoDate: string): string {
   }).format(date);
 }
 
+import { formatCurrencyValue as formatCurrencyValueShared } from '@/tools/shared/currency';
+
 export function formatCurrencyValue(
   amount: number,
   currency: SupportedCurrency,
   locale = 'en-US'
 ): string {
-  return new Intl.NumberFormat(locale, {
-    style: 'currency',
-    currency,
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(amount);
+  return formatCurrencyValueShared(amount, currency, locale);
 }
 
 interface MonthlyScheduleCents {
