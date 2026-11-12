@@ -13,6 +13,7 @@
     "categories:seed": "tsx src/scripts/seed-categories.ts",
     "tools:seed": "tsx src/scripts/seed-tools.ts",
     "tool:assign": "tsx src/scripts/assign-tool-component.ts",
+    "tools:publish": "tsx src/scripts/publish-browser-tools.ts",
     "format": "prettier --write \"src/**/*.{ts,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,json,md}\""
   },
