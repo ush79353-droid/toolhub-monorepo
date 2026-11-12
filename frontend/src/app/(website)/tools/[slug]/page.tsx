@@ -57,6 +57,8 @@ import { ArmMortgageGuideArticle } from '@/tools/calculators/arm-mortgage/ArmMor
 import { ARM_FAQS, ARM_TOC_ITEMS } from '@/tools/calculators/arm-mortgage/content';
 import { HundredDayGuideArticle } from '@/tools/calculators/hundred-day/HundredDayGuideArticle';
 import { HUNDRED_DAY_FAQS, HUNDRED_DAY_TOC_ITEMS } from '@/tools/calculators/hundred-day/content';
+import { TwelveVoltWireGuideArticle } from '@/tools/calculators/twelve-volt-wire/TwelveVoltWireGuideArticle';
+import { TWELVE_VOLT_FAQS, TWELVE_VOLT_TOC_ITEMS } from '@/tools/calculators/twelve-volt-wire/content';
 import { isApprovedComponentKey } from '@/tools/registry/keys';
 import type { ToolMetadata } from '@/types/tool';
 
@@ -132,6 +134,15 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     tocItems: HUNDRED_DAY_TOC_ITEMS,
     GuideArticle: HundredDayGuideArticle,
     faqs: HUNDRED_DAY_FAQS,
+    countryRules: null,
+  },
+  TwelveVoltWireCalculator: {
+    subtitleLead:
+      'Estimate the 12 V DC conductor area for a two-wire voltage-drop limit from current, one-way length, material, and temperature.',
+    asideAriaLabel: 'Interactive 12 volt wire size calculator',
+    tocItems: TWELVE_VOLT_TOC_ITEMS,
+    GuideArticle: TwelveVoltWireGuideArticle,
+    faqs: TWELVE_VOLT_FAQS,
     countryRules: null,
   },
 };

@@ -16,6 +16,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'reduced-row-echelon-form-calculator',
   'arm-mortgage-calculator',
   '100-day-calculator',
+  '12-volt-wire-size-calculator',
 ] as const;
 
 const STATIC_PATHS = [
