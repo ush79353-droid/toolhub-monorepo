@@ -55,7 +55,8 @@ Read with: `AGENTS.md`, `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS
 
 - Use shared `/embed/[slug]` pipeline only (`EMBED_STANDARDS.md`)
 - Same registered calculator component; `presentation="embed"` for compact chrome
-- Admin `embedEnabled` defaults false; public Embed control only when eligible
+- Embedding is **enabled by default**; only explicit admin OFF disables it
+- Public Embed button + working `/embed/[slug]` also require active + allowlisted `componentKey`
 - Do not build calculator-specific iframe routes
 
 ## 6c. Advertisements

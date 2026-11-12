@@ -83,8 +83,8 @@
 
 ## ADR-012: Shared Calculator Embed System
 - **Date:** 2026-11-12
-- **Decision:** Provide one dynamic `/embed/[slug]` route reusing allowlisted calculator components; gate with Tool fields `embedEnabled` (default `false`), height/layout prefs, and advisory `embedAllowedDomains`; split CSP so only `/embed/*` allows third-party framing; optional `/embed.js` auto-resize with namespaced postMessage validation; lock rules in `brain/EMBED_STANDARDS.md`.
-- **Reason:** Partners need copy-paste iframes without forking calculators or exposing admin chrome; embedding must be independently disableable without taking down normal tool pages.
-- **Consequences:** Catalog-only tools never get blank embeds; embed pages are noindex; public iframe URLs remain reusable without signed tokens unless a future auth layer is added; agents must follow embed standards for new calculators.
-- **Status:** Accepted
+- **Decision:** Provide one dynamic `/embed/[slug]` route reusing allowlisted calculator components; gate with Tool fields `embedEnabled` (**default `true`**; missing → enabled; only explicit `false` disables), height/layout prefs, and advisory `embedAllowedDomains`; split CSP so only `/embed/*` allows third-party framing; optional `/embed.js` auto-resize with namespaced postMessage validation; lock rules in `brain/EMBED_STANDARDS.md`.
+- **Reason:** Partners need copy-paste iframes without forking calculators or exposing admin chrome; embedding must be independently disableable without taking down normal tool pages. Product policy is opt-out, not opt-in.
+- **Consequences:** Catalog-only / inactive tools still do not render working embeds; public Embed button appears for implemented active tools by default; embed pages are noindex; public iframe URLs remain reusable without signed tokens unless a future auth layer is added; agents must follow embed standards for new calculators.
+- **Status:** Accepted (policy corrected 2026-11-12 from default-OFF to default-ON)
 

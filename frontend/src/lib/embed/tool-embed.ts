@@ -58,9 +58,18 @@ export function escapeHtmlAttr(value: string): string {
     .replace(/>/g, '&gt;');
 }
 
+/**
+ * Permanent policy: embedding is ON unless an admin explicitly sets false.
+ * Missing / null / undefined → enabled.
+ */
+export function resolveEmbedEnabled(value: boolean | null | undefined): boolean {
+  return value !== false;
+}
+
+/** Public embed button + `/embed/[slug]` require active + implemented + not explicitly disabled. */
 export function isToolEmbedEligible(input: EmbedEligibilityInput): boolean {
   return (
-    input.embedEnabled === true &&
+    resolveEmbedEnabled(input.embedEnabled) &&
     input.isActive === true &&
     isApprovedComponentKey(input.componentKey)
   );

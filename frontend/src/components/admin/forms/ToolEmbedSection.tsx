@@ -86,20 +86,20 @@ export function ToolEmbedSection({
     <FormSection
       className="w-full"
       title="Embedding & Sharing"
-      description="Allow this calculator on external sites via iframe. Disabled by default."
+      description="Allow this calculator on external sites via iframe. Enabled by default; turn off to block embeds."
     >
       <div className="space-y-4">
         <div className="flex items-center justify-between gap-4 rounded-xl border border-border bg-muted/50 px-4 py-3.5">
           <div>
-            <p className="text-sm font-medium text-accent">Allow embedding</p>
+            <p className="text-sm font-medium text-accent">Allow Embedding</p>
             <p className="mt-0.5 text-xs text-muted-foreground">
               {!implemented
-                ? 'Requires an approved calculator component.'
+                ? 'Requires an approved calculator component before embeds work.'
                 : !isActive
                   ? 'Tool must be active before embeds will render.'
                   : value.embedEnabled
                     ? 'External iframes can load this calculator.'
-                    : 'Embeds show an unavailable message until enabled.'}
+                    : 'Embedding is off. Public Embed button and /embed route are blocked.'}
             </p>
           </div>
           <Switch

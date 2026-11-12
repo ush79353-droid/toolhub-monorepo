@@ -49,8 +49,9 @@ export function CalculatorEmbedDialog({
         type="button"
         variant="outline"
         size="sm"
-        className="inline-flex items-center gap-1.5 text-xs font-medium"
+        className="inline-flex h-9 items-center gap-1.5 border-border bg-white px-3 text-xs font-medium text-accent hover:border-primary hover:bg-secondary/60 hover:text-primary"
         onClick={() => setOpen(true)}
+        aria-haspopup="dialog"
       >
         <Code2 className="h-3.5 w-3.5" aria-hidden="true" />
         Embed

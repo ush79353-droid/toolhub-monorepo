@@ -20,7 +20,7 @@ import type { ToolExecutionType } from '@/types/tool';
 
 function embedFromTool(tool?: ToolRecord): ToolEmbedFormState {
   return {
-    embedEnabled: tool?.embedEnabled ?? false,
+    embedEnabled: tool?.embedEnabled !== false,
     embedDefaultHeight: tool?.embedDefaultHeight ?? EMBED_DEFAULT_HEIGHT,
     embedPreferredLayout: (tool?.embedPreferredLayout as EmbedPreferredLayout) || 'responsive',
     embedAllowedDomains: tool?.embedAllowedDomains ?? '',

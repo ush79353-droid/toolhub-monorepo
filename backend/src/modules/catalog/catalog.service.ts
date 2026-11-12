@@ -395,7 +395,7 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
     sitemapInclude: doc.sitemapInclude ?? true,
     sitemapPriority: doc.sitemapPriority ?? null,
     sitemapChangeFrequency: doc.sitemapChangeFrequency ?? '',
-    embedEnabled: doc.embedEnabled ?? false,
+    embedEnabled: doc.embedEnabled !== false,
     embedDefaultHeight: doc.embedDefaultHeight ?? 650,
     embedPreferredLayout: doc.embedPreferredLayout ?? 'responsive',
     embedAllowedDomains: doc.embedAllowedDomains ?? '',

@@ -11,6 +11,7 @@ Rules:
 - Use shared `/embed/[slug]` + allowlisted registry only.
 - Do not duplicate calculator engines for embeds.
 - Do not hardcode per-tool embed routes.
-- Gate on `embedEnabled` + active + implemented `componentKey`.
+- Embedding is enabled by default; only explicit `embedEnabled === false` disables.
+- Public render still requires active + implemented `componentKey`.
 - Keep embed pages noindex; revalidate on admin save.
 - Preserve Ponytail minimalism.

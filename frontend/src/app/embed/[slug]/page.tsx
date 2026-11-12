@@ -61,7 +61,7 @@ export default async function EmbedToolPage({ params, searchParams }: EmbedPageP
   }
 
   const eligible = isToolEmbedEligible({
-    embedEnabled: tool.embedEnabled ?? false,
+    embedEnabled: tool.embedEnabled,
     isActive: tool.isActive,
     componentKey: tool.componentKey,
     embedDefaultHeight: tool.embedDefaultHeight ?? 650,

@@ -259,14 +259,14 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             >
               {dbTool &&
               isToolEmbedEligible({
-                embedEnabled: dbTool.embedEnabled ?? false,
+                embedEnabled: dbTool.embedEnabled,
                 isActive: dbTool.isActive,
                 componentKey: dbTool.componentKey,
                 embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
                 embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
                 embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
               }) ? (
-                <div className="mb-2 flex justify-end">
+                <div className="mb-2 flex items-center justify-end">
                   <CalculatorEmbedDialog
                     toolName={dbTool.name}
                     toolSlug={dbTool.slug}

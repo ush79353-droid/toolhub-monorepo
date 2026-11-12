@@ -9,6 +9,7 @@ import {
   isToolEmbedEligible,
   normalizeEmbedHeight,
   parseAllowedDomains,
+  resolveEmbedEnabled,
 } from './tool-embed';
 
 assert.equal(buildEmbedPath('loan-calculator'), '/embed/loan-calculator');
@@ -22,9 +23,26 @@ assert.equal(normalizeEmbedHeight(99999), 4000);
 
 assert.equal(escapeHtmlAttr('A "B" <C>'), 'A &quot;B&quot; &lt;C&gt;');
 
+assert.equal(resolveEmbedEnabled(true), true);
+assert.equal(resolveEmbedEnabled(false), false);
+assert.equal(resolveEmbedEnabled(undefined), true);
+assert.equal(resolveEmbedEnabled(null), true);
+
 assert.equal(
   isToolEmbedEligible({
     embedEnabled: true,
+    isActive: true,
+    componentKey: 'LoanCalculator',
+    embedDefaultHeight: 650,
+    embedPreferredLayout: 'responsive',
+    embedAllowedDomains: '',
+  }),
+  true
+);
+assert.equal(
+  isToolEmbedEligible({
+    // Missing config inherits enabled
+    embedEnabled: undefined as unknown as boolean,
     isActive: true,
     componentKey: 'LoanCalculator',
     embedDefaultHeight: 650,
