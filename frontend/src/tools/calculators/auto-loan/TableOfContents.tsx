@@ -13,11 +13,10 @@ export function TableOfContents({ items }: TableOfContentsProps) {
   if (!items || items.length === 0) return null;
 
   return (
-    <nav
-      aria-label="Table of contents"
-      className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6"
-    >
-      <h2 className="mb-3 text-base font-semibold text-accent">Table of Contents</h2>
+    <nav aria-label="Table of contents">
+      <h2 className="mb-3.5 text-lg font-semibold tracking-tight text-accent sm:text-xl">
+        Table of Contents
+      </h2>
 
       <ul className="grid list-disc grid-cols-1 gap-x-4 gap-y-1 pl-5 sm:grid-cols-2">
         {items.map((item) => (

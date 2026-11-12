@@ -74,3 +74,10 @@
 - **Consequences:** Local bytes go Browser → `PUT /api/media-upload` → Express `PUT /admin/media/object`. The browser still does not call Express. Existing S3 objects stay on S3. Files already saved on disk stay on disk until they are deleted or uploaded again.
 - **Status:** Accepted
 
+## ADR-011: Shared Dynamic Tool SEO + Locked Calculator Standards
+- **Date:** 2026-11-12
+- **Decision:** Persist optional SEO fields on the existing `Tool` model; build public metadata exclusively through shared `frontend/src/lib/seo/tool-seo.ts` + `/tools/[slug]` `generateMetadata()`; require `NEXT_PUBLIC_SITE_URL`/`SITE_URL` for production canonicals; treat Loan Calculator conventions in `brain/CALCULATOR_STANDARDS.md` and SEO rules in `brain/SEO_STANDARDS.md` as locked defaults for future calculators.
+- **Reason:** Admin SEO edits must reach HTML `<head>` without per-calculator hardcoding, and future calculators must inherit one shell/SEO pipeline.
+- **Consequences:** New SEO fields remain optional with documented fallbacks; unimplemented tools cannot become indexable from the Index toggle alone; agents must read the standards docs before building calculators.
+- **Status:** Accepted
+

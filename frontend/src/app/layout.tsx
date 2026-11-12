@@ -3,6 +3,7 @@ import './globals.css';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} — Every Tool You Need, All in One Place`,
     template: `%s | ${siteConfig.name}`,

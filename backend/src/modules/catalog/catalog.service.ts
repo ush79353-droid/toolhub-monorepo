@@ -60,8 +60,31 @@ export interface PublicToolDetail {
   canonicalUrl: string;
   ogTitle: string;
   ogDescription: string;
+  ogImageUrl: string;
+  ogImageAlt: string;
+  ogType: string;
+  ogSiteName: string;
   keywords: string;
   indexable: boolean;
+  robotsFollow: boolean;
+  robotsNoArchive: boolean;
+  robotsNoSnippet: boolean;
+  robotsNoImageIndex: boolean;
+  robotsMaxSnippet: number | null;
+  robotsMaxImagePreview: string;
+  robotsMaxVideoPreview: number | null;
+  twitterCard: string;
+  twitterTitle: string;
+  twitterDescription: string;
+  twitterImageUrl: string;
+  twitterImageAlt: string;
+  twitterSite: string;
+  schemaType: string;
+  includeFaqSchema: boolean;
+  sitemapInclude: boolean;
+  sitemapPriority: number | null;
+  sitemapChangeFrequency: string;
+  isActive: boolean;
   isFeatured: boolean;
   updatedAt: string;
 }
@@ -339,13 +362,36 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
     pillar: pillarRef,
     subPillar: subPillarRef,
     relatedTools,
-    metaTitle: doc.metaTitle,
-    metaDescription: doc.metaDescription,
-    canonicalUrl: doc.canonicalUrl,
-    ogTitle: doc.ogTitle,
-    ogDescription: doc.ogDescription,
-    keywords: doc.keywords,
-    indexable: doc.indexable,
+    metaTitle: doc.metaTitle ?? '',
+    metaDescription: doc.metaDescription ?? '',
+    canonicalUrl: doc.canonicalUrl ?? '',
+    ogTitle: doc.ogTitle ?? '',
+    ogDescription: doc.ogDescription ?? '',
+    ogImageUrl: doc.ogImageUrl ?? '',
+    ogImageAlt: doc.ogImageAlt ?? '',
+    ogType: doc.ogType ?? '',
+    ogSiteName: doc.ogSiteName ?? '',
+    keywords: doc.keywords ?? '',
+    indexable: doc.indexable ?? true,
+    robotsFollow: doc.robotsFollow ?? true,
+    robotsNoArchive: doc.robotsNoArchive ?? false,
+    robotsNoSnippet: doc.robotsNoSnippet ?? false,
+    robotsNoImageIndex: doc.robotsNoImageIndex ?? false,
+    robotsMaxSnippet: doc.robotsMaxSnippet ?? null,
+    robotsMaxImagePreview: doc.robotsMaxImagePreview ?? '',
+    robotsMaxVideoPreview: doc.robotsMaxVideoPreview ?? null,
+    twitterCard: doc.twitterCard ?? '',
+    twitterTitle: doc.twitterTitle ?? '',
+    twitterDescription: doc.twitterDescription ?? '',
+    twitterImageUrl: doc.twitterImageUrl ?? '',
+    twitterImageAlt: doc.twitterImageAlt ?? '',
+    twitterSite: doc.twitterSite ?? '',
+    schemaType: doc.schemaType ?? '',
+    includeFaqSchema: doc.includeFaqSchema ?? false,
+    sitemapInclude: doc.sitemapInclude ?? true,
+    sitemapPriority: doc.sitemapPriority ?? null,
+    sitemapChangeFrequency: doc.sitemapChangeFrequency ?? '',
+    isActive: doc.isActive ?? true,
     isFeatured: doc.isFeatured,
     updatedAt: doc.updatedAt.toISOString(),
   };

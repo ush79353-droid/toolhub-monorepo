@@ -8,11 +8,48 @@ import { Select } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { FormSection } from './FormSection';
+import { ToolSeoSection, type ToolSeoFormState } from './ToolSeoSection';
 import { ArrowLeft, ImageIcon, Loader2, Save, X } from 'lucide-react';
+import { emptyToolSeoFields } from '@/lib/seo/tool-seo';
 import { listMediaAction, type MediaAsset } from '@/server/media/actions';
 import { saveToolAction, type PlacementNode, type ToolRecord } from '@/server/tools/actions';
 import { APPROVED_COMPONENT_KEYS } from '@/tools/registry/keys';
 import type { ToolExecutionType } from '@/types/tool';
+
+function seoFromTool(tool?: ToolRecord): ToolSeoFormState {
+  return emptyToolSeoFields({
+    metaTitle: tool?.metaTitle ?? '',
+    metaDescription: tool?.metaDescription ?? '',
+    keywords: tool?.keywords ?? '',
+    canonicalUrl: tool?.canonicalUrl ?? '',
+    indexable: tool?.indexable ?? true,
+    robotsFollow: tool?.robotsFollow ?? true,
+    robotsNoArchive: tool?.robotsNoArchive ?? false,
+    robotsNoSnippet: tool?.robotsNoSnippet ?? false,
+    robotsNoImageIndex: tool?.robotsNoImageIndex ?? false,
+    robotsMaxSnippet: tool?.robotsMaxSnippet ?? null,
+    robotsMaxImagePreview: (tool?.robotsMaxImagePreview as ToolSeoFormState['robotsMaxImagePreview']) ?? '',
+    robotsMaxVideoPreview: tool?.robotsMaxVideoPreview ?? null,
+    ogTitle: tool?.ogTitle ?? '',
+    ogDescription: tool?.ogDescription ?? '',
+    ogImageUrl: tool?.ogImageUrl ?? '',
+    ogImageAlt: tool?.ogImageAlt ?? '',
+    ogType: tool?.ogType ?? '',
+    ogSiteName: tool?.ogSiteName ?? '',
+    twitterCard: (tool?.twitterCard as ToolSeoFormState['twitterCard']) ?? '',
+    twitterTitle: tool?.twitterTitle ?? '',
+    twitterDescription: tool?.twitterDescription ?? '',
+    twitterImageUrl: tool?.twitterImageUrl ?? '',
+    twitterImageAlt: tool?.twitterImageAlt ?? '',
+    twitterSite: tool?.twitterSite ?? '',
+    schemaType: (tool?.schemaType as ToolSeoFormState['schemaType']) ?? '',
+    includeFaqSchema: tool?.includeFaqSchema ?? false,
+    sitemapInclude: tool?.sitemapInclude ?? true,
+    sitemapPriority: tool?.sitemapPriority ?? null,
+    sitemapChangeFrequency:
+      (tool?.sitemapChangeFrequency as ToolSeoFormState['sitemapChangeFrequency']) ?? '',
+  });
+}
 
 function slugify(value: string): string {
   return value
@@ -43,19 +80,14 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
   );
   const [componentKey, setComponentKey] = React.useState(tool?.componentKey ?? '');
   const [shortDescription, setShortDescription] = React.useState(tool?.shortDescription ?? '');
-  const [metaTitle, setMetaTitle] = React.useState(tool?.metaTitle ?? '');
-  const [metaDescription, setMetaDescription] = React.useState(tool?.metaDescription ?? '');
-  const [canonicalUrl, setCanonicalUrl] = React.useState(tool?.canonicalUrl ?? '');
-  const [ogTitle, setOgTitle] = React.useState(tool?.ogTitle ?? '');
-  const [ogDescription, setOgDescription] = React.useState(tool?.ogDescription ?? '');
-  const [keywords, setKeywords] = React.useState(tool?.keywords ?? '');
-  const [indexable, setIndexable] = React.useState(tool?.indexable ?? true);
+  const [seo, setSeo] = React.useState<ToolSeoFormState>(() => seoFromTool(tool));
   const [isActive, setIsActive] = React.useState(tool?.isActive ?? true);
   const [isFeatured, setIsFeatured] = React.useState(tool?.isFeatured ?? false);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
   const [formError, setFormError] = React.useState<string | null>(null);
   const [saving, setSaving] = React.useState(false);
   const [pickerOpen, setPickerOpen] = React.useState(false);
+  const [pickerTarget, setPickerTarget] = React.useState<'icon' | 'og' | 'twitter'>('icon');
   const [images, setImages] = React.useState<MediaAsset[]>([]);
   const [imageSearch, setImageSearch] = React.useState('');
   const [imagesLoading, setImagesLoading] = React.useState(false);
@@ -106,13 +138,22 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
       executionType,
       componentKey,
       shortDescription: shortDescription.trim(),
-      metaTitle: metaTitle.trim(),
-      metaDescription: metaDescription.trim(),
-      canonicalUrl: canonicalUrl.trim(),
-      ogTitle: ogTitle.trim(),
-      ogDescription: ogDescription.trim(),
-      keywords: keywords.trim(),
-      indexable,
+      ...seo,
+      metaTitle: seo.metaTitle.trim(),
+      metaDescription: seo.metaDescription.trim(),
+      canonicalUrl: seo.canonicalUrl.trim(),
+      ogTitle: seo.ogTitle.trim(),
+      ogDescription: seo.ogDescription.trim(),
+      ogImageUrl: seo.ogImageUrl.trim(),
+      ogImageAlt: seo.ogImageAlt.trim(),
+      ogType: seo.ogType.trim(),
+      ogSiteName: seo.ogSiteName.trim(),
+      keywords: seo.keywords.trim(),
+      twitterTitle: seo.twitterTitle.trim(),
+      twitterDescription: seo.twitterDescription.trim(),
+      twitterImageUrl: seo.twitterImageUrl.trim(),
+      twitterImageAlt: seo.twitterImageAlt.trim(),
+      twitterSite: seo.twitterSite.trim(),
       isActive,
       isFeatured,
     });
@@ -264,7 +305,15 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
             {iconUrl ? <img src={iconUrl} alt="" className="h-full w-full object-contain" /> : <ImageIcon className="h-6 w-6 text-muted-foreground" />}
           </div>
           <div className="flex flex-wrap gap-2">
-            <Button type="button" variant="outline" size="sm" onClick={() => setPickerOpen(true)}>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                setPickerTarget('icon');
+                setPickerOpen(true);
+              }}
+            >
               Choose image
             </Button>
             {iconMediaId && (
@@ -284,47 +333,17 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
         </div>
       </FormSection>
 
-      <FormSection className="w-full" title="SEO" description="Search and social tags. Leave a field blank to fall back to the tool name later.">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <div>
-            <label className="mb-1.5 block text-xs font-semibold text-accent">Meta title</label>
-            <Input value={metaTitle} maxLength={70} onChange={(event) => setMetaTitle(event.target.value)} placeholder="Free Percentage Calculator" />
-            <p className="mt-1 text-[10px] text-muted-foreground">{metaTitle.length}/70</p>
-          </div>
-          <div>
-            <label className="mb-1.5 block text-xs font-semibold text-accent">Canonical URL</label>
-            <Input value={canonicalUrl} onChange={(event) => setCanonicalUrl(event.target.value)} placeholder="https://example.com/tools/percentage-calculator" />
-          </div>
-        </div>
-        <div>
-          <label className="mb-1.5 block text-xs font-semibold text-accent">Meta description</label>
-          <Textarea value={metaDescription} maxLength={160} rows={2} onChange={(event) => setMetaDescription(event.target.value)} placeholder="Search result snippet" />
-          <p className="mt-1 text-[10px] text-muted-foreground">{metaDescription.length}/160</p>
-        </div>
-        <div>
-          <label className="mb-1.5 block text-xs font-semibold text-accent">Keywords</label>
-          <Input value={keywords} maxLength={200} onChange={(event) => setKeywords(event.target.value)} placeholder="percentage, discount, calculator" />
-        </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <div>
-            <label className="mb-1.5 block text-xs font-semibold text-accent">Social title</label>
-            <Input value={ogTitle} maxLength={70} onChange={(event) => setOgTitle(event.target.value)} />
-          </div>
-          <div>
-            <label className="mb-1.5 block text-xs font-semibold text-accent">Social description</label>
-            <Input value={ogDescription} maxLength={200} onChange={(event) => setOgDescription(event.target.value)} />
-          </div>
-        </div>
-        <div className="flex items-center justify-between gap-4 rounded-xl border border-border bg-muted/50 px-4 py-3.5">
-          <div>
-            <p className="text-sm font-semibold text-accent">Search indexing</p>
-            <p className="mt-0.5 text-xs text-muted-foreground">
-              {indexable ? 'Search engines may index this tool.' : 'Search engines are asked not to index this tool.'}
-            </p>
-          </div>
-          <Switch checked={indexable} onCheckedChange={setIndexable} />
-        </div>
-      </FormSection>
+      <ToolSeoSection
+        value={seo}
+        onChange={setSeo}
+        toolName={name}
+        toolSlug={slug}
+        shortDescription={shortDescription}
+        onPickImage={(target) => {
+          setPickerTarget(target);
+          setPickerOpen(true);
+        }}
+      />
 
       <FormSection className="w-full" title="Visibility" description="Active tools can be listed. Featured tools can be promoted on the homepage.">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -349,7 +368,13 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
         <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/50 p-4" onClick={() => setPickerOpen(false)}>
           <div className="flex max-h-[80vh] w-full max-w-3xl flex-col rounded-xl border border-border bg-white shadow-xl" onClick={(event) => event.stopPropagation()}>
             <div className="flex items-center justify-between border-b border-border px-4 py-3">
-              <h3 className="text-sm font-semibold text-accent">Choose an icon image</h3>
+              <h3 className="text-sm font-semibold text-accent">
+                {pickerTarget === 'icon'
+                  ? 'Choose an icon image'
+                  : pickerTarget === 'og'
+                    ? 'Choose an Open Graph image'
+                    : 'Choose a Twitter image'}
+              </h3>
               <button type="button" onClick={() => setPickerOpen(false)} className="text-muted-foreground hover:text-foreground">
                 <X className="h-4 w-4" />
               </button>
@@ -372,11 +397,23 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
                       key={image.id}
                       type="button"
                       onClick={() => {
-                        setIconMediaId(image.id);
-                        setIconUrl(image.url);
+                        if (pickerTarget === 'icon') {
+                          setIconMediaId(image.id);
+                          setIconUrl(image.url);
+                        } else if (pickerTarget === 'og') {
+                          setSeo((current) => ({ ...current, ogImageUrl: image.url }));
+                        } else {
+                          setSeo((current) => ({ ...current, twitterImageUrl: image.url }));
+                        }
                         setPickerOpen(false);
                       }}
-                      className={`overflow-hidden rounded-lg border bg-muted/30 ${iconMediaId === image.id ? 'border-primary' : 'border-border'}`}
+                      className={`overflow-hidden rounded-lg border bg-muted/30 ${
+                        (pickerTarget === 'icon' && iconMediaId === image.id) ||
+                        (pickerTarget === 'og' && seo.ogImageUrl === image.url) ||
+                        (pickerTarget === 'twitter' && seo.twitterImageUrl === image.url)
+                          ? 'border-primary'
+                          : 'border-border'
+                      }`}
                       title={image.fileName}
                     >
                       <img src={image.url} alt={image.altText || image.fileName} className="h-20 w-full object-contain" />

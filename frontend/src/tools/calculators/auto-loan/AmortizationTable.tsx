@@ -3,7 +3,8 @@
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { Button } from '@/components/ui/button';
-import { CalendarRange, ChevronDown, ChevronUp, Download, Maximize2, X } from 'lucide-react';
+import { ChevronDown, ChevronUp, Download, Maximize2, X } from 'lucide-react';
+import { downloadTextFile } from '@/tools/shared/download';
 import {
   buildAmortizationCsv,
   formatCurrencyValue,
@@ -18,57 +19,42 @@ interface AmortizationTableProps {
 function ScheduleViewControls({
   view,
   onViewChange,
-  onDownloadCsv,
 }: {
   view: 'monthly' | 'yearly';
   onViewChange: (view: 'monthly' | 'yearly') => void;
-  onDownloadCsv: () => void;
 }) {
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      <div
-        role="tablist"
-        aria-label="Amortization schedule view"
-        className="inline-flex h-8 items-center rounded-lg border border-border bg-background p-0.5"
-      >
-        <button
-          type="button"
-          role="tab"
-          aria-selected={view === 'monthly'}
-          onClick={() => onViewChange('monthly')}
-          className={`h-full rounded-md px-2.5 text-xs font-medium transition-colors ${
-            view === 'monthly'
-              ? 'bg-primary text-white shadow-xs'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
-        >
-          Monthly
-        </button>
-        <button
-          type="button"
-          role="tab"
-          aria-selected={view === 'yearly'}
-          onClick={() => onViewChange('yearly')}
-          className={`h-full rounded-md px-2.5 text-xs font-medium transition-colors ${
-            view === 'yearly'
-              ? 'bg-primary text-white shadow-xs'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
-        >
-          Yearly
-        </button>
-      </div>
-
-      <Button
+    <div
+      role="tablist"
+      aria-label="Amortization schedule view"
+      className="inline-flex h-8 items-center rounded-lg border border-border bg-background p-0.5"
+    >
+      <button
         type="button"
-        variant="outline"
-        size="sm"
-        onClick={onDownloadCsv}
-        className="h-8 text-xs font-medium"
+        role="tab"
+        aria-selected={view === 'monthly'}
+        onClick={() => onViewChange('monthly')}
+        className={`h-full rounded-md px-2.5 text-xs font-medium transition-colors ${
+          view === 'monthly'
+            ? 'bg-primary text-white shadow-xs'
+            : 'text-muted-foreground hover:text-foreground'
+        }`}
       >
-        <Download className="mr-1.5 h-3.5 w-3.5" aria-hidden="true" />
-        Download CSV
-      </Button>
+        Monthly
+      </button>
+      <button
+        type="button"
+        role="tab"
+        aria-selected={view === 'yearly'}
+        onClick={() => onViewChange('yearly')}
+        className={`h-full rounded-md px-2.5 text-xs font-medium transition-colors ${
+          view === 'yearly'
+            ? 'bg-primary text-white shadow-xs'
+            : 'text-muted-foreground hover:text-foreground'
+        }`}
+      >
+        Yearly
+      </button>
     </div>
   );
 }
@@ -236,17 +222,17 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
     };
   }, [modalOpen]);
 
+  React.useEffect(() => {
+    if (!inlineExpanded) return;
+    const node = document.getElementById('amortization-schedule');
+    window.requestAnimationFrame(() => {
+      node?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
+  }, [inlineExpanded]);
+
   const handleDownloadCsv = () => {
-    const csv = buildAmortizationCsv(result, view, result.currency);
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `auto-loan-amortization-${view}.csv`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
+    const csv = `\uFEFF${buildAmortizationCsv(result, view, result.currency)}`;
+    downloadTextFile(csv, `auto-loan-amortization-${view}.csv`);
   };
 
   if (result.monthlySchedule.length === 0) {
@@ -265,17 +251,12 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
     <div id="amortization-schedule" className="scroll-mt-24 rounded-xl border border-border bg-white">
       <div className="p-4">
         <div className="flex items-start justify-between gap-2">
-          <div className="flex items-center gap-2.5">
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
-              <CalendarRange className="h-4 w-4" aria-hidden="true" />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-accent">Amortization Schedule</h3>
-              <p className="text-xs font-normal text-muted-foreground">
-                {result.monthlySchedule.length} monthly installments ({result.yearlySchedule.length}{' '}
-                calendar year{result.yearlySchedule.length === 1 ? '' : 's'})
-              </p>
-            </div>
+          <div>
+            <h3 className="text-sm font-medium text-accent">Amortization Schedule</h3>
+            <p className="text-xs font-normal text-muted-foreground">
+              {result.monthlySchedule.length} monthly installments ({result.yearlySchedule.length}{' '}
+              calendar year{result.yearlySchedule.length === 1 ? '' : 's'})
+            </p>
           </div>
         </div>
 
@@ -328,13 +309,9 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
       {inlineExpanded && (
         <div className="border-t border-border">
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border bg-background/60 px-4 py-2.5">
-            <ScheduleViewControls
-              view={view}
-              onViewChange={setView}
-              onDownloadCsv={handleDownloadCsv}
-            />
+            <ScheduleViewControls view={view} onViewChange={setView} />
           </div>
-          <div className="max-h-[320px] w-full overflow-auto">
+          <div className="brand-scroll max-h-[320px] w-full overflow-auto">
             <ScheduleTableContent result={result} view={view} />
           </div>
         </div>
@@ -365,11 +342,7 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <ScheduleViewControls
-                    view={view}
-                    onViewChange={setView}
-                    onDownloadCsv={handleDownloadCsv}
-                  />
+                  <ScheduleViewControls view={view} onViewChange={setView} />
                   <button
                     type="button"
                     aria-label="Close amortization dialog"
@@ -381,7 +354,7 @@ export function AmortizationTable({ result }: AmortizationTableProps) {
                 </div>
               </div>
 
-              <div className="flex-1 overflow-auto">
+              <div className="brand-scroll flex-1 overflow-auto">
                 <ScheduleTableContent result={result} view={view} />
               </div>
             </div>

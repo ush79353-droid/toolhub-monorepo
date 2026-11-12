@@ -11,10 +11,11 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 1. Read `brain/README.md`.
 2. Read `brain/CURRENT_STATE.md`.
 3. Read `brain/ARCHITECTURE.md`.
-4. Read relevant `brain/` documents for the task (e.g., `FRONTEND.md`, `BACKEND.md`, `DATABASE.md`, `API_CONTRACTS.md`, `AUTHENTICATION.md`, `DESIGN_SYSTEM.md`, `TASKS.md`, `DECISIONS.md`).
-5. Inspect actual source code before making changes — never assume a planned feature is implemented.
-6. Check Git status (`git status`) and sync state (`git fetch` / branch status).
-7. Identify potential conflicts with existing work or another developer's active tasks.
+4. Read relevant `brain/` documents for the task (e.g., `FRONTEND.md`, `BACKEND.md`, `DATABASE.md`, `API_CONTRACTS.md`, `AUTHENTICATION.md`, `DESIGN_SYSTEM.md`, `CALCULATOR_STANDARDS.md`, `SEO_STANDARDS.md`, `TASKS.md`, `DECISIONS.md`).
+5. For calculator or tool SEO work, treat `brain/CALCULATOR_STANDARDS.md` and `brain/SEO_STANDARDS.md` as locked conventions.
+6. Inspect actual source code before making changes — never assume a planned feature is implemented.
+7. Check Git status (`git status`) and sync state (`git fetch` / branch status).
+8. Identify potential conflicts with existing work or another developer's active tasks.
 
 ---
 

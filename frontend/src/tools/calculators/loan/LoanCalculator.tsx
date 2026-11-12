@@ -1,9 +1,9 @@
 'use client';
 
 import * as React from 'react';
-import { Calculator } from 'lucide-react';
 import type { ToolComponentProps } from '@/tools/types';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
+import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { LoanAmortizationTable } from './LoanAmortizationTable';
 import { LoanForm, draftToInput, inputToDraft, type LoanDraft } from './LoanForm';
 import { LoanResults } from './LoanResults';
@@ -73,11 +73,10 @@ export function LoanCalculator({ metadata, className = '' }: ToolComponentProps)
   const handleCopy = async () => {
     if (!result) return;
     const summary = buildLoanSummaryText(draftToInput(draft), result);
-    if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      await navigator.clipboard.writeText(summary);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    }
+    const ok = await copyTextToClipboard(summary);
+    if (!ok) return;
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2000);
   };
 
   const hasErrors = Object.keys(errors).length > 0;
@@ -89,14 +88,9 @@ export function LoanCalculator({ metadata, className = '' }: ToolComponentProps)
     >
       {/* Compact Calculator Header + Currency Selector */}
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
-        <div className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
-            <Calculator className="h-4 w-4" aria-hidden="true" />
-          </div>
-          <div>
-            <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-            <p className="text-xs font-normal text-muted-foreground">Formatting currency only</p>
-          </div>
+        <div>
+          <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
+          <p className="text-xs font-normal text-muted-foreground">Formatting currency only</p>
         </div>
 
         <div className="w-[148px] shrink-0 sm:w-[160px]">

@@ -25,16 +25,26 @@ import {
   getRelatedTools,
   getCategoryBySlug,
 } from '@/lib/sample-data';
-import { getPublicToolBySlug } from '@/server/catalog/tools';
+import { siteConfig } from '@/config/site';
+import {
+  buildToolJsonLd,
+  buildToolPageMetadata,
+  emptyToolSeoFields,
+  serializeJsonLd,
+  type ToolSeoSource,
+} from '@/lib/seo/tool-seo';
+import { getPublicToolBySlug, type PublicToolDetail } from '@/server/catalog/tools';
+import { getPublicSiteOrigin } from '@/server/seo/public-site';
 import { AutoLoanGuideArticle } from '@/tools/calculators/auto-loan/AutoLoanGuideArticle';
 import { StickyCalculatorAside } from '@/tools/calculators/auto-loan/StickyCalculatorAside';
 import {
   TableOfContents,
   type TableOfContentsItem,
 } from '@/tools/calculators/auto-loan/TableOfContents';
-import { AUTO_LOAN_TOC_ITEMS } from '@/tools/calculators/auto-loan/content';
+import { AUTO_LOAN_FAQS, AUTO_LOAN_TOC_ITEMS } from '@/tools/calculators/auto-loan/content';
 import { LoanGuideArticle } from '@/tools/calculators/loan/LoanGuideArticle';
-import { LOAN_TOC_ITEMS } from '@/tools/calculators/loan/content';
+import { LOAN_FAQS, LOAN_TOC_ITEMS } from '@/tools/calculators/loan/content';
+import { isApprovedComponentKey } from '@/tools/registry/keys';
 import type { ToolMetadata } from '@/types/tool';
 
 const TWO_COLUMN_TOOL_CONFIGS: Record<
@@ -44,6 +54,7 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     asideAriaLabel: string;
     tocItems: readonly TableOfContentsItem[];
     GuideArticle: React.ComponentType;
+    faqs: readonly FAQItem[];
   }
 > = {
   AutoLoanCalculator: {
@@ -52,6 +63,7 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     asideAriaLabel: 'Interactive auto loan calculator',
     tocItems: AUTO_LOAN_TOC_ITEMS,
     GuideArticle: AutoLoanGuideArticle,
+    faqs: AUTO_LOAN_FAQS,
   },
   LoanCalculator: {
     subtitleLead:
@@ -59,8 +71,52 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     asideAriaLabel: 'Interactive loan calculator',
     tocItems: LOAN_TOC_ITEMS,
     GuideArticle: LoanGuideArticle,
+    faqs: LOAN_FAQS,
   },
 };
+
+function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {
+  return {
+    name: dbTool.name,
+    slug: dbTool.slug,
+    shortDescription: dbTool.shortDescription,
+    componentKey: dbTool.componentKey,
+    isActive: dbTool.isActive,
+    ...emptyToolSeoFields({
+      metaTitle: dbTool.metaTitle,
+      metaDescription: dbTool.metaDescription,
+      keywords: dbTool.keywords,
+      canonicalUrl: dbTool.canonicalUrl,
+      indexable: dbTool.indexable,
+      robotsFollow: dbTool.robotsFollow,
+      robotsNoArchive: dbTool.robotsNoArchive,
+      robotsNoSnippet: dbTool.robotsNoSnippet,
+      robotsNoImageIndex: dbTool.robotsNoImageIndex,
+      robotsMaxSnippet: dbTool.robotsMaxSnippet,
+      robotsMaxImagePreview:
+        (dbTool.robotsMaxImagePreview as ToolSeoSource['robotsMaxImagePreview']) || '',
+      robotsMaxVideoPreview: dbTool.robotsMaxVideoPreview,
+      ogTitle: dbTool.ogTitle,
+      ogDescription: dbTool.ogDescription,
+      ogImageUrl: dbTool.ogImageUrl,
+      ogImageAlt: dbTool.ogImageAlt,
+      ogType: dbTool.ogType,
+      ogSiteName: dbTool.ogSiteName,
+      twitterCard: (dbTool.twitterCard as ToolSeoSource['twitterCard']) || '',
+      twitterTitle: dbTool.twitterTitle,
+      twitterDescription: dbTool.twitterDescription,
+      twitterImageUrl: dbTool.twitterImageUrl,
+      twitterImageAlt: dbTool.twitterImageAlt,
+      twitterSite: dbTool.twitterSite,
+      schemaType: (dbTool.schemaType as ToolSeoSource['schemaType']) || '',
+      includeFaqSchema: dbTool.includeFaqSchema,
+      sitemapInclude: dbTool.sitemapInclude,
+      sitemapPriority: dbTool.sitemapPriority,
+      sitemapChangeFrequency:
+        (dbTool.sitemapChangeFrequency as ToolSeoSource['sitemapChangeFrequency']) || '',
+    }),
+  };
+}
 
 interface ToolDetailPageProps {
   params: Promise<{
@@ -80,34 +136,26 @@ export async function generateMetadata({ params }: ToolDetailPageProps): Promise
   const dbTool = await getPublicToolBySlug(slug);
 
   if (dbTool) {
-    const title = dbTool.metaTitle
-      ? { absolute: dbTool.metaTitle }
-      : `${dbTool.name} — Free Online Tool`;
-    const description = dbTool.metaDescription || dbTool.shortDescription;
-
-    return {
-      title,
-      description,
-      keywords: dbTool.keywords || undefined,
-      alternates: dbTool.canonicalUrl ? { canonical: dbTool.canonicalUrl } : undefined,
-      openGraph: {
-        title: dbTool.ogTitle || dbTool.metaTitle || dbTool.name,
-        description: dbTool.ogDescription || description,
-      },
-      robots: dbTool.indexable ? undefined : { index: false, follow: false },
-    };
+    return buildToolPageMetadata(toSeoSource(dbTool), {
+      siteName: siteConfig.name,
+      siteUrl: getPublicSiteOrigin(),
+      defaultOgImageUrl: siteConfig.defaultOgImage,
+      isImplemented: isApprovedComponentKey(dbTool.componentKey),
+    });
   }
 
   const tool = getToolBySlug(slug);
   if (!tool) {
     return {
       title: 'Tool Not Found',
+      robots: { index: false, follow: false },
     };
   }
 
   return {
-    title: tool.metaTitle || `${tool.title} — Free Online Tool`,
+    title: { absolute: tool.metaTitle || `${tool.title} | ${siteConfig.name}` },
     description: tool.metaDescription || tool.description,
+    robots: { index: false, follow: false },
   };
 }
 
@@ -159,9 +207,34 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
 
   if (twoColConfig) {
     const GuideArticleComponent = twoColConfig.GuideArticle;
+    const jsonLd =
+      dbTool &&
+      serializeJsonLd(
+        buildToolJsonLd({
+          tool: toSeoSource(dbTool),
+          siteName: siteConfig.name,
+          siteUrl: getPublicSiteOrigin(),
+          isImplemented: isApprovedComponentKey(dbTool.componentKey),
+          breadcrumbs: [
+            { name: 'Home', path: '/' },
+            { name: 'All Tools', path: '/tools' },
+            { name: categoryName, path: safeCategoryHref },
+            { name: toolMetadata.title, path: `/tools/${toolMetadata.slug}` },
+          ],
+          faqs: dbTool.includeFaqSchema
+            ? twoColConfig.faqs.map((faq) => ({ question: faq.question, answer: faq.answer }))
+            : undefined,
+        })
+      );
 
     return (
       <div className="py-6 sm:py-9">
+        {jsonLd ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: jsonLd }}
+          />
+        ) : null}
         <Container>
           <Breadcrumbs
             items={[
@@ -172,56 +245,65 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             className="mb-4"
           />
 
-          {/* Responsive 2-Column Workspace: Left (~62%) Editorial/TOC/Related, Right (~38%) Height-Aware Sticky Calculator */}
+          {/* Responsive 2-Column Workspace: Left (~62%) unified intro + guide, Right (~38%) sticky calculator */}
           <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,1.62fr)_minmax(360px,1fr)] lg:items-start lg:gap-8">
-            {/* Slot 1: Tool Hero Header Card */}
-            <header className="order-1 min-w-0 lg:col-start-1 lg:row-start-1">
-              <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
-                <div className="flex items-start gap-3.5">
-                  {toolMetadata.componentKey !== 'LoanCalculator' ? (
-                    iconUrl ? (
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={iconUrl} alt="" className="h-full w-full object-contain" />
-                      </div>
-                    ) : (
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
-                        <CategoryIcon name={toolMetadata.icon} className="h-6 w-6" />
-                      </div>
-                    )
-                  ) : null}
-
-                  <div className="min-w-0">
-                    <h1 className="text-[26px] font-semibold leading-[1.2] tracking-tight text-accent sm:text-[30px] lg:text-[32px]">
-                      {toolMetadata.title}
-                    </h1>
-                    <p className="mt-2 text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.72]">
-                      {toolMetadata.description} {twoColConfig.subtitleLead}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </header>
-
-            {/* Slot 2: Height-Aware Sticky Calculator Panel (Near top on Mobile/Tablet; Right ~38% on Desktop) */}
+            {/* Calculator near top on mobile/tablet; sticky right column on desktop */}
             <StickyCalculatorAside
               ariaLabel={twoColConfig.asideAriaLabel}
-              className="order-2 min-w-0 lg:col-start-2 lg:row-start-1 lg:row-span-2"
+              className="order-1 min-w-0 lg:order-2 lg:col-start-2 lg:row-start-1"
             >
               <ToolWorkspace tool={toolMetadata} />
             </StickyCalculatorAside>
 
-            {/* Slot 3: Table of Contents, Related Calculators & Editorial Guide */}
-            <div className="order-3 min-w-0 space-y-6 lg:col-start-1 lg:row-start-2">
-              <TableOfContents items={twoColConfig.tocItems} />
+            <div className="order-2 min-w-0 space-y-6 lg:order-1 lg:col-start-1 lg:row-start-1">
+              {/* One card: Hero + Table of Contents + Related Calculators */}
+              <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
+                <header>
+                  <div className="flex items-start gap-3.5">
+                    {toolMetadata.componentKey !== 'LoanCalculator' ? (
+                      iconUrl ? (
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={iconUrl} alt="" className="h-full w-full object-contain" />
+                        </div>
+                      ) : (
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+                          <CategoryIcon name={toolMetadata.icon} className="h-6 w-6" />
+                        </div>
+                      )
+                    ) : null}
 
-              {dbTool && dbTool.relatedTools.length > 0 && (
-                <RelatedCatalogTools
-                  tools={dbTool.relatedTools}
-                  groupLabel={pillarName || categoryName}
-                  browseHref="/tools"
-                />
-              )}
+                    <div className="min-w-0">
+                      {categoryName ? (
+                        <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
+                          {categoryName}
+                        </p>
+                      ) : null}
+                      <h1 className="text-[30px] font-bold leading-[1.12] tracking-[-0.02em] text-accent sm:text-[34px] lg:text-[36px]">
+                        {toolMetadata.title}
+                      </h1>
+                      <p className="mt-2.5 max-w-3xl text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.75]">
+                        {toolMetadata.description} {twoColConfig.subtitleLead}
+                      </p>
+                    </div>
+                  </div>
+                </header>
+
+                <div className="mt-6 border-t border-border pt-6">
+                  <TableOfContents items={twoColConfig.tocItems} />
+                </div>
+
+                {dbTool && dbTool.relatedTools.length > 0 ? (
+                  <div className="mt-6 border-t border-border pt-6">
+                    <RelatedCatalogTools
+                      tools={dbTool.relatedTools}
+                      groupLabel={pillarName || categoryName}
+                      browseHref="/tools"
+                      framed={false}
+                    />
+                  </div>
+                ) : null}
+              </div>
 
               <GuideArticleComponent />
             </div>

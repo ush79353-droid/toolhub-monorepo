@@ -8,12 +8,15 @@ interface RelatedCatalogToolsProps {
   tools: readonly PublicRelatedTool[];
   groupLabel: string;
   browseHref: string;
+  /** When false, render bare section content for embedding inside a parent card. */
+  framed?: boolean;
 }
 
 export function RelatedCatalogTools({
   tools,
   groupLabel,
   browseHref,
+  framed = true,
 }: RelatedCatalogToolsProps) {
   if (tools.length === 0) return null;
 
@@ -21,11 +24,18 @@ export function RelatedCatalogTools({
     <section
       id="related-calculators"
       aria-labelledby="related-calculators-heading"
-      className="scroll-mt-24 rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6"
+      className={
+        framed
+          ? 'scroll-mt-24 rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6'
+          : 'scroll-mt-24'
+      }
     >
       <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
         <div>
-          <h2 id="related-calculators-heading" className="text-base font-semibold text-accent">
+          <h2
+            id="related-calculators-heading"
+            className="text-lg font-semibold tracking-tight text-accent sm:text-xl"
+          >
             Related Calculators
           </h2>
           <p className="mt-0.5 text-xs font-normal text-muted-foreground">

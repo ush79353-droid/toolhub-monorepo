@@ -3,7 +3,8 @@
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { Button } from '@/components/ui/button';
-import { CalendarRange, ChevronDown, ChevronUp, Download, Maximize2, X } from 'lucide-react';
+import { ChevronDown, ChevronUp, Download, Maximize2, X } from 'lucide-react';
+import { downloadTextFile } from '@/tools/shared/download';
 import {
   buildLoanAmortizationCsv,
   formatCurrencyValue,
@@ -20,58 +21,43 @@ function ScheduleViewControls({
   view,
   periodLabel,
   onViewChange,
-  onDownloadCsv,
 }: {
   view: 'period' | 'yearly';
   periodLabel: string;
   onViewChange: (view: 'period' | 'yearly') => void;
-  onDownloadCsv: () => void;
 }) {
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      <div
-        role="tablist"
-        aria-label="Amortization schedule view"
-        className="inline-flex h-8 items-center rounded-lg border border-border bg-background p-0.5"
-      >
-        <button
-          type="button"
-          role="tab"
-          aria-selected={view === 'period'}
-          onClick={() => onViewChange('period')}
-          className={`h-full rounded-md px-2.5 text-xs font-medium transition-colors ${
-            view === 'period'
-              ? 'bg-primary text-white shadow-xs'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
-        >
-          {periodLabel}
-        </button>
-        <button
-          type="button"
-          role="tab"
-          aria-selected={view === 'yearly'}
-          onClick={() => onViewChange('yearly')}
-          className={`h-full rounded-md px-2.5 text-xs font-medium transition-colors ${
-            view === 'yearly'
-              ? 'bg-primary text-white shadow-xs'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
-        >
-          Yearly
-        </button>
-      </div>
-
-      <Button
+    <div
+      role="tablist"
+      aria-label="Amortization schedule view"
+      className="inline-flex h-8 items-center rounded-lg border border-border bg-background p-0.5"
+    >
+      <button
         type="button"
-        variant="outline"
-        size="sm"
-        onClick={onDownloadCsv}
-        className="h-8 text-xs font-medium"
+        role="tab"
+        aria-selected={view === 'period'}
+        onClick={() => onViewChange('period')}
+        className={`h-full rounded-md px-2.5 text-xs font-medium transition-colors ${
+          view === 'period'
+            ? 'bg-primary text-white shadow-xs'
+            : 'text-muted-foreground hover:text-foreground'
+        }`}
       >
-        <Download className="mr-1.5 h-3.5 w-3.5" aria-hidden="true" />
-        Download CSV
-      </Button>
+        {periodLabel}
+      </button>
+      <button
+        type="button"
+        role="tab"
+        aria-selected={view === 'yearly'}
+        onClick={() => onViewChange('yearly')}
+        className={`h-full rounded-md px-2.5 text-xs font-medium transition-colors ${
+          view === 'yearly'
+            ? 'bg-primary text-white shadow-xs'
+            : 'text-muted-foreground hover:text-foreground'
+        }`}
+      >
+        Yearly
+      </button>
     </div>
   );
 }
@@ -286,19 +272,20 @@ export function LoanAmortizationTable({ result }: LoanAmortizationTableProps) {
     };
   }, [modalOpen]);
 
+  React.useEffect(() => {
+    if (!inlineExpanded) return;
+    const node = document.getElementById('loan-amortization-schedule');
+    window.requestAnimationFrame(() => {
+      node?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
+  }, [inlineExpanded]);
+
   const periodLabel = getFrequencyPeriodLabel(result.paymentFrequency);
 
   const handleDownloadCsv = () => {
-    const csv = buildLoanAmortizationCsv(result, view, result.currency);
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `loan-amortization-${view === 'period' ? periodLabel.toLowerCase() : 'yearly'}.csv`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
+    const csv = `\uFEFF${buildLoanAmortizationCsv(result, view, result.currency)}`;
+    const suffix = view === 'period' ? periodLabel.toLowerCase().replace(/\s+/g, '-') : 'yearly';
+    downloadTextFile(csv, `loan-amortization-${suffix}.csv`);
   };
 
   if (result.schedule.length === 0) {
@@ -309,18 +296,13 @@ export function LoanAmortizationTable({ result }: LoanAmortizationTableProps) {
     <div id="loan-amortization-schedule" className="scroll-mt-24 rounded-xl border border-border bg-white">
       <div className="p-4">
         <div className="flex items-start justify-between gap-2">
-          <div className="flex items-center gap-2.5">
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
-              <CalendarRange className="h-4 w-4" aria-hidden="true" />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-accent">Amortization Schedule</h3>
-              <p className="text-xs font-normal text-muted-foreground">
-                {result.actualPaymentsCount} {periodLabel.toLowerCase()} payment
-                {result.actualPaymentsCount === 1 ? '' : 's'} ({result.yearlySchedule.length}{' '}
-                calendar year{result.yearlySchedule.length === 1 ? '' : 's'})
-              </p>
-            </div>
+          <div>
+            <h3 className="text-sm font-medium text-accent">Amortization Schedule</h3>
+            <p className="text-xs font-normal text-muted-foreground">
+              {result.actualPaymentsCount} {periodLabel.toLowerCase()} payment
+              {result.actualPaymentsCount === 1 ? '' : 's'} ({result.yearlySchedule.length}{' '}
+              calendar year{result.yearlySchedule.length === 1 ? '' : 's'})
+            </p>
           </div>
         </div>
 
@@ -377,10 +359,9 @@ export function LoanAmortizationTable({ result }: LoanAmortizationTableProps) {
               view={view}
               periodLabel={periodLabel}
               onViewChange={setView}
-              onDownloadCsv={handleDownloadCsv}
             />
           </div>
-          <div className="max-h-[320px] w-full overflow-auto">
+          <div className="brand-scroll max-h-[320px] w-full overflow-auto">
             <ScheduleTableContent result={result} view={view} />
           </div>
         </div>
@@ -416,7 +397,6 @@ export function LoanAmortizationTable({ result }: LoanAmortizationTableProps) {
                     view={view}
                     periodLabel={periodLabel}
                     onViewChange={setView}
-                    onDownloadCsv={handleDownloadCsv}
                   />
                   <button
                     type="button"
@@ -429,7 +409,7 @@ export function LoanAmortizationTable({ result }: LoanAmortizationTableProps) {
                 </div>
               </div>
 
-              <div className="flex-1 overflow-auto">
+              <div className="brand-scroll flex-1 overflow-auto">
                 <ScheduleTableContent result={result} view={view} />
               </div>
             </div>
