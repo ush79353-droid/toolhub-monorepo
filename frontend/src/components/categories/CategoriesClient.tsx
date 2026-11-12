@@ -6,11 +6,11 @@ import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { CategoryCard } from '@/components/shared/CategoryCard';
 import { EmptyState } from '@/components/shared/EmptyState';
 import { Search, X } from 'lucide-react';
-import { getAllCategories } from '@/lib/sample-data';
+import type { PublicCategory } from '@/server/catalog/categories';
 
-export function CategoriesClient() {
+export function CategoriesClient({ categories }: { categories: PublicCategory[] }) {
   const [query, setQuery] = React.useState('');
-  const allCategories = getAllCategories();
+  const allCategories = categories;
 
   const filteredCategories = React.useMemo(() => {
     const q = query.toLowerCase().trim();
@@ -69,7 +69,9 @@ export function CategoriesClient() {
 
         {/* Categories Grid */}
         <div className="mt-8">
-          {filteredCategories.length > 0 ? (
+          {allCategories.length === 0 ? (
+            <p className="text-sm text-muted-foreground">Categories are not available right now.</p>
+          ) : filteredCategories.length > 0 ? (
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {filteredCategories.map((cat) => (
                 <CategoryCard key={cat.id} category={cat} />

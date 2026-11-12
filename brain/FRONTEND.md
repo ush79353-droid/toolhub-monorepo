@@ -20,7 +20,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 | `/` | `(website)/page.tsx` | Server Component (`cache: 'no-store'`) fetching `/catalog/categories` and `/catalog/featured` via `serverApi` | **Implemented** (falls back to empty arrays if backend unreachable) |
 | `/tools` | `(website)/tools/page.tsx` | Renders `<Suspense>` + `ToolsDirectoryClient` (`'use client'`) using `sample-data.ts` (18 tools, 12 categories) | **Partially Implemented** (mock/sample data only) |
 | `/tools/[slug]` | `(website)/tools/[slug]/page.tsx` | Server Component fetching `getPublicToolBySlug(slug)` via Express first (preserving DB SEO metadata & `indexable`), resolving allowlisted `componentKey` via `ToolWorkspace` + `tools/registry`; falls back to `sample-data.ts` | **Implemented for Auto Loan Calculator** (`AutoLoanCalculator`); legacy fallback for sample slugs |
-| `/categories` | `(website)/categories/page.tsx` | Renders `CategoriesClient` (`'use client'`) using `sample-data.ts` | **Partially Implemented** (mock/sample data only) |
+| `/categories` | `(website)/categories/page.tsx` | Server Component loads `getPublicCategories()`, then `CategoriesClient` filters that list in the browser | **Implemented** (category detail pages still use sample data) |
 | `/categories/[slug]` | `(website)/categories/[slug]/page.tsx` | Server Component using `generateStaticParams()` and `sample-data.ts` | **Partially Implemented** (mock/sample data only) |
 | `/about` | `(website)/about/page.tsx` | Server Component. Static editorial copy with a custom product board, mixed platform layout, and numbered principles. Category and tool totals come from `GET /catalog/categories` when reachable | **Implemented** |
 | `/contact` | `(website)/contact/page.tsx` | Server page with a client form. Fields are name, email, subject, and message. Validation is client-side only, and a successful check says the message was not delivered | **Partially Implemented** (no backend submission endpoint) |
@@ -32,7 +32,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 
 - Homepage (`/`) renders live categories and featured tools from MongoDB (`/catalog/*`) and links to `/categories/${category.slug}` and `/tools/${tool.slug}`.
 - `/tools/[slug]` now resolves active MongoDB tools via `getPublicToolBySlug(slug)` (including `/tools/auto-loan-calculator`) and falls back to `sample-data.ts` for legacy sample slugs.
-- Header, footer, the mobile menu, the homepage, and the About totals all read `getPublicCategories()`. The header menu and the homepage show each category's `iconUrl` when it is set. The footer and mobile menu show the first seven. `/categories`, `/categories/[slug]`, and `/tools` still read `sample-data.ts`, so live category slugs still 404 on `/categories/[slug]`.
+- Header, footer, the mobile menu, the homepage, the category index, and the About totals all read `getPublicCategories()`. The header menu, category index, and the homepage show each category's `iconUrl` when it is set. The footer and mobile menu show the first seven. `/categories/[slug]` and `/tools` still read `sample-data.ts`, so live category slugs still 404 on `/categories/[slug]`.
 
 ---
 

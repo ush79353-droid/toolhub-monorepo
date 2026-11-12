@@ -2,10 +2,18 @@ import * as React from 'react';
 import Link from 'next/link';
 import { CategoryIcon } from './CategoryIcon';
 import { ChevronRight } from 'lucide-react';
-import type { CategoryDetailData } from '@/lib/sample-data';
+export interface CategoryCardData {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  toolCount?: number;
+  icon?: string;
+  iconUrl?: string;
+}
 
 export interface CategoryCardProps {
-  category: CategoryDetailData;
+  category: CategoryCardData;
   className?: string;
 }
 
@@ -17,8 +25,14 @@ export function CategoryCard({ category, className = '' }: CategoryCardProps) {
     >
       <div>
         <div className="flex items-center justify-between">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-muted text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-            <CategoryIcon name={category.icon} className="h-5 w-5" />
+          <div
+            className={`flex h-11 w-11 items-center justify-center rounded-xl bg-muted text-primary transition-colors ${category.iconUrl ? '' : 'group-hover:bg-primary group-hover:text-white'}`}
+          >
+            {category.iconUrl ? (
+              <img src={category.iconUrl} alt="" className="h-5 w-5" />
+            ) : (
+              <CategoryIcon name={category.icon} className="h-5 w-5" />
+            )}
           </div>
           <span className="rounded-full bg-background border border-border px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
             {category.toolCount ?? 0} {category.toolCount === 1 ? 'tool' : 'tools'}
