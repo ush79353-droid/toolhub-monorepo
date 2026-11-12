@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Container } from './Container';
-import { Shield, FileText, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { getPublicCategories } from '@/server/catalog/categories';
 
 export async function Footer() {
@@ -25,10 +25,6 @@ export async function Footer() {
               Your comprehensive platform for fast, free, in-browser online tools. From financial
               calculators and unit converters to developer formatters and PDF utilities.
             </p>
-            <div className="mt-5 inline-flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-accent">
-              <Shield className="h-3.5 w-3.5 text-primary" />
-              <span>Client-Side In-Browser Execution</span>
-            </div>
           </div>
 
           {/* Popular Categories */}
@@ -43,7 +39,6 @@ export async function Footer() {
                     href={`/categories/${cat.slug}`}
                     className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
                   >
-                    {cat.iconUrl ? <img src={cat.iconUrl} alt="" className="h-4 w-4 shrink-0" /> : null}
                     {cat.name}
                   </Link>
                 </li>
@@ -142,7 +137,6 @@ export async function Footer() {
                   href="/privacy-policy"
                   className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
                 >
-                  <FileText className="h-3.5 w-3.5" />
                   <span>Privacy Policy</span>
                 </Link>
               </li>
@@ -151,7 +145,6 @@ export async function Footer() {
                   href="/terms-of-service"
                   className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
                 >
-                  <FileText className="h-3.5 w-3.5" />
                   <span>Terms of Service</span>
                 </Link>
               </li>
