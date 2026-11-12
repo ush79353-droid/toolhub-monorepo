@@ -134,14 +134,12 @@ export function AutoLoanCalculator({
           onReset={handleReset}
         />
 
-        <div className="border-t border-border pt-4">
-          <AutoLoanResults
-            result={result}
-            hasErrors={hasErrors}
-            onCopy={handleCopy}
-            copied={copied}
-          />
-        </div>
+        <AutoLoanResults
+          result={result}
+          hasErrors={hasErrors}
+          onCopy={handleCopy}
+          copied={copied}
+        />
 
         {result && !hasErrors && <AmortizationTable result={result} />}
       </div>

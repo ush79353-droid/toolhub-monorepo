@@ -282,33 +282,19 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
               {/* One card: Hero + Table of Contents + Related Calculators */}
               <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
                 <header>
-                  <div className="flex items-start gap-3.5">
-                    {toolMetadata.componentKey !== 'LoanCalculator' ? (
-                      iconUrl ? (
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={iconUrl} alt="" className="h-full w-full object-contain" />
-                        </div>
-                      ) : (
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
-                          <CategoryIcon name={toolMetadata.icon} className="h-6 w-6" />
-                        </div>
-                      )
-                    ) : null}
-
-                    <div className="min-w-0">
-                      {categoryName ? (
-                        <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
-                          {categoryName}
-                        </p>
-                      ) : null}
-                      <h1 className="text-[30px] font-bold leading-[1.12] tracking-[-0.02em] text-accent sm:text-[34px] lg:text-[36px]">
-                        {toolMetadata.title}
-                      </h1>
-                      <p className="mt-2.5 max-w-3xl text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.75]">
-                        {toolMetadata.description} {twoColConfig.subtitleLead}
+                  {/* Master shell (Loan Calculator): no decorative tool icon in the intro card */}
+                  <div className="min-w-0">
+                    {categoryName ? (
+                      <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
+                        {categoryName}
                       </p>
-                    </div>
+                    ) : null}
+                    <h1 className="text-[30px] font-bold leading-[1.12] tracking-[-0.02em] text-accent sm:text-[34px] lg:text-[36px]">
+                      {toolMetadata.title}
+                    </h1>
+                    <p className="mt-2.5 max-w-3xl text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.75]">
+                      {toolMetadata.description} {twoColConfig.subtitleLead}
+                    </p>
                   </div>
                 </header>
 
