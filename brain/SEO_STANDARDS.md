@@ -43,19 +43,25 @@ Admin SEO UI does **not** expose robots directives or sitemap fields. Public rob
 - Reject unsafe schemes (`javascript:`, etc.).
 - Normalize trailing slashes consistently via the shared helper.
 
-## 6. Cache Policy
+## 6. Crawl surfaces
+
+- `frontend/src/app/robots.ts` — allow public site; disallow `/admin/`, `/api/`, `/embed/`.
+- `frontend/src/app/sitemap.ts` — static + categories + allowlisted implemented tools that pass `resolveSitemapEligible` (skips localhost origins).
+- Extend `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts` when new registry calculators launch.
+
+## 7. Cache Policy
 
 - Public tool fetches use `cache: 'no-store'`.
-- Admin `saveToolAction` / `deleteToolAction` call `revalidatePath` for `/`, `/tools`, and `/tools/{slug}`.
+- Admin `saveToolAction` / `deleteToolAction` call `revalidatePath` for `/`, `/tools`, `/tools/{slug}`, and `/embed/{slug}`.
 - After an admin SEO save, the next request to the public page must reflect the new metadata.
 
-## 7. Structured Data
+## 8. Structured Data
 
 - Generated from typed fields + real page content only.
-- Allowed types: `WebPage`, `WebApplication`, `BreadcrumbList`, optional `FAQPage` when `includeFaqSchema` is on and FAQs are visible.
+- Allowed types: `WebPage`, `WebApplication`, `BreadcrumbList`, optional `FAQPage` when matching FAQs are visible on the page.
 - JSON-LD is escaped (`<` → `\u003c`). No raw script editor.
 
-## 8. Testing
+## 9. Testing
 
 - Unit tests: `frontend/src/lib/seo/tool-seo.test.ts`
 - Verify admin save → MongoDB → catalog API → HTML `<head>` for Loan Calculator and Auto Loan Calculator.

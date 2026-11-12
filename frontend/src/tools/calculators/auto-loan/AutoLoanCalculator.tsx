@@ -27,6 +27,7 @@ export function AutoLoanCalculator({
   metadata,
   className = '',
   presentation = 'default',
+  headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
   const [draft, setDraft] = React.useState<AutoLoanDraft>(() =>
@@ -107,16 +108,19 @@ export function AutoLoanCalculator({
           <p className="text-xs font-normal text-muted-foreground">Formatting currency only</p>
         </div>
 
-        <div className="w-[148px] shrink-0 sm:w-[160px]">
-          <label htmlFor="auto-loan-currency" className="sr-only">
-            Display Currency
-          </label>
-          <CurrencySelect
-            id="auto-loan-currency"
-            aria-label="Display currency"
-            value={draft.currency}
-            onChange={(currency) => handleDraftChange({ ...draft, currency })}
-          />
+        <div className="flex flex-wrap items-center justify-end gap-2">
+          {headerActions}
+          <div className="w-[148px] shrink-0 sm:w-[160px]">
+            <label htmlFor="auto-loan-currency" className="sr-only">
+              Display Currency
+            </label>
+            <CurrencySelect
+              id="auto-loan-currency"
+              aria-label="Display currency"
+              value={draft.currency}
+              onChange={(currency) => handleDraftChange({ ...draft, currency })}
+            />
+          </div>
         </div>
       </div>
 

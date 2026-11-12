@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { getToolBySlug } from '@/lib/sample-data';
 import type { PublicRelatedTool } from '@/server/catalog/tools';
 import { isApprovedComponentKey } from '@/tools/registry/keys';
 
@@ -51,11 +50,10 @@ export function RelatedCatalogTools({
       <ul className="list-disc space-y-1.5 pl-5">
         {tools.map((tool) => {
           const isImplemented = tool.isActive && isApprovedComponentKey(tool.componentKey);
-          const isPreviewRoute =
-            !isImplemented && (tool.isActive || Boolean(getToolBySlug(tool.slug)));
           const group = tool.pillarName || tool.categoryName;
 
-          if (isImplemented || isPreviewRoute) {
+          // Only link implemented calculators — avoid crawl/UX paths into empty catalog shells.
+          if (isImplemented) {
             return (
               <li key={tool.id} className="marker:text-muted-foreground">
                 <Link
@@ -64,7 +62,7 @@ export function RelatedCatalogTools({
                 >
                   {tool.name}
                   <span className="ml-1.5 text-xs text-muted-foreground">
-                    · {isImplemented ? 'Open' : 'Preview'}
+                    · Open
                     {group ? ` · ${group}` : ''}
                   </span>
                 </Link>
@@ -77,7 +75,7 @@ export function RelatedCatalogTools({
               <span className="text-sm font-normal text-muted-foreground">
                 {tool.name}
                 <span className="ml-1.5 text-xs">
-                  · Catalog only
+                  · Coming soon
                   {group ? ` · ${group}` : ''}
                 </span>
               </span>

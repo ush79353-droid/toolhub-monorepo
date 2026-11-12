@@ -335,9 +335,10 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
       ? Tool.find({
           pillar: pillarRef.id,
           _id: { $ne: doc._id },
+          isActive: true,
         })
           .select('name slug shortDescription iconUrl componentKey isActive isFeatured category pillar')
-          .sort({ isActive: -1, isFeatured: -1, name: 1 })
+          .sort({ isFeatured: -1, name: 1 })
           .limit(6)
           .populate('category pillar', 'name slug')
           .lean<PopulatedRelatedDoc[]>()
@@ -391,7 +392,7 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
     twitterImageAlt: doc.twitterImageAlt ?? '',
     twitterSite: doc.twitterSite ?? '',
     schemaType: doc.schemaType ?? '',
-    includeFaqSchema: doc.includeFaqSchema ?? false,
+    includeFaqSchema: doc.includeFaqSchema !== false,
     sitemapInclude: doc.sitemapInclude ?? true,
     sitemapPriority: doc.sitemapPriority ?? null,
     sitemapChangeFrequency: doc.sitemapChangeFrequency ?? '',

@@ -2,13 +2,14 @@
 
 > Master conventions for every future calculator. The Loan Calculator page is the production reference implementation.
 
-Read with: `AGENTS.md`, `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `ARCHITECTURE.md`.
+Read with: `AGENTS.md`, `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `TOOL_DETAIL_PAGE_STANDARDS.md`, `ARCHITECTURE.md`.
 
 ## 1. Architecture
 
 - Client-side math in `frontend/src/tools/calculators/<tool>/`
 - Register allowlisted `componentKey` in `tools/registry/keys.ts` + `tools/registry/index.ts`
 - Public route: dynamic `/tools/[slug]` resolves MongoDB tool → `ToolWorkspace` → registered component
+- Full page shell/SEO/ads/embed/DoD: `TOOL_DETAIL_PAGE_STANDARDS.md`
 - API boundary: Browser → Next.js Server → Express → MongoDB
 - Never call Express from browser calculator components
 

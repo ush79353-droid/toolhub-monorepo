@@ -81,6 +81,13 @@
 - **Consequences:** New SEO fields remain optional with documented fallbacks; unimplemented tools cannot become indexable from the Index toggle alone; agents must read the standards docs before building calculators.
 - **Status:** Accepted
 
+## ADR-013: Tool Detail Page Master Standard + Crawl Surfaces
+- **Date:** 2026-11-12
+- **Decision:** Lock `/tools/[slug]` architecture in `brain/TOOL_DETAIL_PAGE_STANDARDS.md`; ship Next.js `robots.ts` + `sitemap.ts` that include only implemented, indexable tools; related calculators link only allowlisted implemented tools; FAQ JSON-LD emits when FAQs are visible on two-column guides; Embed dialog uses portal + focus trap.
+- **Reason:** Production crawl/index hygiene and a single Definition of Done for every future calculator page.
+- **Consequences:** Agents must follow Tool Detail Page standards before shipping new calculators; sitemap list of implemented slugs must be extended when new registry tools launch until a bulk catalog endpoint exists.
+- **Status:** Accepted
+
 ## ADR-012: Shared Calculator Embed System
 - **Date:** 2026-11-12
 - **Decision:** Provide one dynamic `/embed/[slug]` route reusing allowlisted calculator components; gate with Tool fields `embedEnabled` (**default `true`**; missing → enabled; only explicit `false` disables), height/layout prefs, and advisory `embedAllowedDomains`; split CSP so only `/embed/*` allows third-party framing; optional `/embed.js` auto-resize with namespaced postMessage validation; lock rules in `brain/EMBED_STANDARDS.md`.

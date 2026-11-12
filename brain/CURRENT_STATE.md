@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-12** (reusable calculator embed system + dynamic Tool SEO + Loan Calculator standards).
+> **Primary Agent Starting Point.** Last verified: **2026-11-12** (tool detail page production audit: robots/sitemap, FAQ JSON-LD, related-link hygiene, embed dialog a11y; standards locked in `TOOL_DETAIL_PAGE_STANDARDS.md`).
 
 ---
 

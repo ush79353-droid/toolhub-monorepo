@@ -224,9 +224,8 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             { name: categoryName, path: safeCategoryHref },
             { name: toolMetadata.title, path: `/tools/${toolMetadata.slug}` },
           ],
-          faqs: dbTool.includeFaqSchema
-            ? twoColConfig.faqs.map((faq) => ({ question: faq.question, answer: faq.answer }))
-            : undefined,
+          // FAQ sections are visible on these guides — keep FAQPage schema in sync with on-page content.
+          faqs: twoColConfig.faqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
         })
       );
 
@@ -257,24 +256,26 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
               ariaLabel={twoColConfig.asideAriaLabel}
               className="order-1 min-w-0 lg:order-2 lg:col-start-2 lg:row-start-1"
             >
-              {dbTool &&
-              isToolEmbedEligible({
-                embedEnabled: dbTool.embedEnabled,
-                isActive: dbTool.isActive,
-                componentKey: dbTool.componentKey,
-                embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
-                embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
-                embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
-              }) ? (
-                <div className="mb-2 flex items-center justify-end">
-                  <CalculatorEmbedDialog
-                    toolName={dbTool.name}
-                    toolSlug={dbTool.slug}
-                    defaultHeight={dbTool.embedDefaultHeight}
-                  />
-                </div>
-              ) : null}
-              <ToolWorkspace tool={toolMetadata} />
+              <ToolWorkspace
+                tool={toolMetadata}
+                headerActions={
+                  dbTool &&
+                  isToolEmbedEligible({
+                    embedEnabled: dbTool.embedEnabled,
+                    isActive: dbTool.isActive,
+                    componentKey: dbTool.componentKey,
+                    embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
+                    embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
+                    embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
+                  }) ? (
+                    <CalculatorEmbedDialog
+                      toolName={dbTool.name}
+                      toolSlug={dbTool.slug}
+                      defaultHeight={dbTool.embedDefaultHeight}
+                    />
+                  ) : undefined
+                }
+              />
             </StickyCalculatorAside>
 
             <div className="order-2 min-w-0 space-y-6 lg:order-1 lg:col-start-1 lg:row-start-1">

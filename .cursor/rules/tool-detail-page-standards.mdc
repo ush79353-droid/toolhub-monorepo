@@ -1,0 +1,14 @@
+# Tool Detail Page Standards (Cursor)
+
+Before building or changing calculator detail pages:
+
+1. Read `AGENTS.md`
+2. Read `brain/TOOL_DETAIL_PAGE_STANDARDS.md`
+3. Read `brain/CALCULATOR_STANDARDS.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`
+
+Rules:
+
+- Use shared `/tools/[slug]` + registry only — no per-calculator page forks.
+- Use shared SEO / embed / AdSlot pipelines only.
+- Keep Loan Calculator as the layout reference.
+- Preserve Ponytail minimalism.

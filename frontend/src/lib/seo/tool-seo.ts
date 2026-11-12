@@ -297,7 +297,8 @@ export function buildToolJsonLd(input: {
     });
   }
 
-  if (input.tool.includeFaqSchema && input.faqs && input.faqs.length > 0) {
+  // Caller supplies faqs only when matching Q&A are visible on the page.
+  if (input.faqs && input.faqs.length > 0) {
     graph.push({
       '@type': 'FAQPage',
       mainEntity: input.faqs.map((faq) => ({
