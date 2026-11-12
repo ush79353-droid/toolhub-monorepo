@@ -120,6 +120,7 @@ export const SAFE_COMPONENT_KEYS = [
   { key: 'LoanCalculator', name: 'Amortization & Loan Engine', type: 'client' },
   { key: 'AutoLoanCalculator', name: 'Auto Loan Payment Engine', type: 'client' },
   { key: 'RrefCalculator', name: 'RREF Matrix Engine', type: 'client' },
+  { key: 'ArmMortgageCalculator', name: 'ARM Mortgage Engine', type: 'client' },
   { key: 'WordCounter', name: 'Text & Typography Metrics Engine', type: 'client' },
   { key: 'JsonFormatter', name: 'JSON Validator & Formatter Engine', type: 'client' },
   { key: 'PdfMerger', name: 'PDF Processing Core', type: 'server' },

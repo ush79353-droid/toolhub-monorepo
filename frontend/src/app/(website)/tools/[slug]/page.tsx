@@ -53,6 +53,8 @@ import { LoanGuideArticle } from '@/tools/calculators/loan/LoanGuideArticle';
 import { LOAN_FAQS, LOAN_TOC_ITEMS } from '@/tools/calculators/loan/content';
 import { RrefGuideArticle } from '@/tools/calculators/rref/RrefGuideArticle';
 import { RREF_FAQS, RREF_TOC_ITEMS } from '@/tools/calculators/rref/content';
+import { ArmMortgageGuideArticle } from '@/tools/calculators/arm-mortgage/ArmMortgageGuideArticle';
+import { ARM_FAQS, ARM_TOC_ITEMS } from '@/tools/calculators/arm-mortgage/content';
 import { isApprovedComponentKey } from '@/tools/registry/keys';
 import type { ToolMetadata } from '@/types/tool';
 
@@ -108,6 +110,18 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     GuideArticle: RrefGuideArticle,
     faqs: RREF_FAQS,
     countryRules: null,
+  },
+  ArmMortgageCalculator: {
+    subtitleLead:
+      'Estimate an adjustable-rate mortgage payment through the fixed period and modeled resets, including caps, remaining-term re-amortization, and optional housing costs.',
+    asideAriaLabel: 'Interactive ARM mortgage calculator',
+    tocItems: ARM_TOC_ITEMS,
+    GuideArticle: ArmMortgageGuideArticle,
+    faqs: ARM_FAQS,
+    countryRules: {
+      title: 'Mortgage rules by country',
+      countries: SIDEBAR_COUNTRIES,
+    },
   },
 };
 

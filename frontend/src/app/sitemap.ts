@@ -14,6 +14,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'loan-calculator',
   'auto-loan-calculator',
   'reduced-row-echelon-form-calculator',
+  'arm-mortgage-calculator',
 ] as const;
 
 const STATIC_PATHS = [

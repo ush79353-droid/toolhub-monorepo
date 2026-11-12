@@ -3,6 +3,7 @@
 import { AutoLoanCalculator } from '@/tools/calculators/auto-loan/AutoLoanCalculator';
 import { LoanCalculator } from '@/tools/calculators/loan/LoanCalculator';
 import { RrefCalculator } from '@/tools/calculators/rref/RrefCalculator';
+import { ArmMortgageCalculator } from '@/tools/calculators/arm-mortgage/ArmMortgageCalculator';
 import type { ToolComponent, ToolRegistryMap } from '../types';
 
 /**
@@ -22,6 +23,7 @@ export function registerToolComponent(key: string, component: ToolComponent): vo
 registerToolComponent('AutoLoanCalculator', AutoLoanCalculator);
 registerToolComponent('LoanCalculator', LoanCalculator);
 registerToolComponent('RrefCalculator', RrefCalculator);
+registerToolComponent('ArmMortgageCalculator', ArmMortgageCalculator);
 
 export function getToolComponent(key: string): ToolComponent | null {
   return registry[key] ?? null;
