@@ -34,9 +34,6 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Local media library (STORAGE_DRIVER=local)
-backend/uploads/**
-!backend/uploads/.gitkeep
 
 # Temporary files
 *.tmp
