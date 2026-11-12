@@ -7,10 +7,11 @@ trigger: always_on
 Before building or changing any calculator:
 
 1. Read `AGENTS.md`
-2. Read `brain/CALCULATOR_STANDARDS.md`
-3. Read `brain/SEO_STANDARDS.md`
-4. Read `brain/DESIGN_SYSTEM.md`
-5. Read relevant architecture docs (`FRONTEND.md`, `ARCHITECTURE.md`)
+2. Read `brain/TOOL_DETAIL_PAGE_STANDARDS.md` and `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`
+3. Read `brain/CALCULATOR_STANDARDS.md`
+4. Read `brain/SEO_STANDARDS.md`
+5. Read `brain/DESIGN_SYSTEM.md`
+6. Read relevant architecture docs (`FRONTEND.md`, `ARCHITECTURE.md`)
 
 Rules:
 

@@ -86,6 +86,13 @@
 - **Decision:** Lock `/tools/[slug]` architecture in `brain/TOOL_DETAIL_PAGE_STANDARDS.md`; ship Next.js `robots.ts` + `sitemap.ts` that include only implemented, indexable tools; related calculators link only allowlisted implemented tools; FAQ JSON-LD emits when FAQs are visible on two-column guides; Embed dialog uses portal + focus trap.
 - **Reason:** Production crawl/index hygiene and a single Definition of Done for every future calculator page.
 - **Consequences:** Agents must follow Tool Detail Page standards before shipping new calculators; sitemap list of implemented slugs must be extended when new registry tools launch until a bulk catalog endpoint exists.
+- **Status:** Accepted (expanded 2026-11-12 by ADR-014)
+
+## ADR-014: Loan Calculator as Official Master Tool Detail Page + New-Tool Playbook
+- **Date:** 2026-11-12
+- **Decision:** Declare Loan Calculator (`/tools/loan-calculator`, `LoanCalculator`) the **official master** visual and architectural reference for every future tool detail page. Authoritative docs: `brain/TOOL_DETAIL_PAGE_STANDARDS.md` + `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`. Both Cursor (`.cursor/rules/tool-detail-page-standards.mdc`) and Antigravity (`.agents/rules/tool-detail-page-standards.md`) must auto-load these; `AGENTS.md` lists them as mandatory before new calculator work. Tool-specific math/inputs/results/copy may differ; shared shell (grid, sticky, SEO, ads, embed, a11y) must not be redesigned without a new ADR.
+- **Reason:** Avoid re-explaining design/layout/SEO/ads/embed patterns for each new tool; keep one source of truth for both IDEs.
+- **Consequences:** New tools follow the playbook; agents must not invent parallel page layouts or duplicate sticky/SEO/ad/embed systems; standards were extracted from live Loan page + source (visual + code verified 2026-11-12).
 - **Status:** Accepted
 
 ## ADR-012: Shared Calculator Embed System

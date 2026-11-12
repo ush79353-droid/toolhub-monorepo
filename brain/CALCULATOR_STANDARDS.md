@@ -2,7 +2,7 @@
 
 > Master conventions for every future calculator. The Loan Calculator page is the production reference implementation.
 
-Read with: `AGENTS.md`, `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `TOOL_DETAIL_PAGE_STANDARDS.md`, `ARCHITECTURE.md`.
+Read with: `AGENTS.md`, `TOOL_DETAIL_PAGE_STANDARDS.md` (authoritative page shell), `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` (workflow), `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `ARCHITECTURE.md`.
 
 ## 1. Architecture
 

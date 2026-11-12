@@ -1,14 +1,20 @@
+---
+trigger: always_on
+---
+
 # Tool Detail Page Standards (Antigravity)
 
-Before building or changing calculator detail pages:
+Before building or changing any calculator or `/tools/[slug]` detail page:
 
 1. Read `AGENTS.md`
-2. Read `brain/TOOL_DETAIL_PAGE_STANDARDS.md`
-3. Read `brain/CALCULATOR_STANDARDS.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`
+2. Read `brain/TOOL_DETAIL_PAGE_STANDARDS.md` (authoritative master)
+3. Read `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` (step workflow)
+4. Read `brain/CALCULATOR_STANDARDS.md`, `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md` as relevant
 
 Rules:
 
+- Loan Calculator (`/tools/loan-calculator`) is the official master layout reference.
 - Use shared `/tools/[slug]` + registry only — no per-calculator page forks.
-- Use shared SEO / embed / AdSlot pipelines only.
-- Keep Loan Calculator as the layout reference.
+- Reuse sticky aside, SEO, ads, and embed pipelines — never invent duplicates.
+- Tool-specific inputs/math/results/content may differ; shared shell must not.
 - Preserve Ponytail minimalism.

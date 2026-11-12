@@ -39,11 +39,12 @@ To avoid merge conflicts and stale context:
 | — | [`API_CONTRACTS.md`](./API_CONTRACTS.md) | Implemented `/api/v1` endpoints, request/response/error shapes, planned APIs | Endpoints or Zod validation contracts change |
 | — | [`AUTHENTICATION.md`](./AUTHENTICATION.md) | Admin auth, Argon2id, MongoDB sessions, `HttpOnly` cookies, password reset | Auth, session, cookie, or RBAC code changes |
 | — | [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md) | Locked brand palette, typography, spacing, UI patterns, responsiveness | UI tokens or shared visual patterns change |
-| — | [`CALCULATOR_STANDARDS.md`](./CALCULATOR_STANDARDS.md) | Locked master calculator page/layout/currency/testing conventions (Loan Calculator reference) | Calculator shell or shared tool UX conventions change |
+| — | [`CALCULATOR_STANDARDS.md`](./CALCULATOR_STANDARDS.md) | Locked calculator UX/currency/testing conventions (complements master tool page standards) | Calculator shell or shared tool UX conventions change |
 | — | [`SEO_STANDARDS.md`](./SEO_STANDARDS.md) | Optional admin SEO fields, fallbacks, canonical/robots/social/JSON-LD rules | Tool SEO schema, metadata pipeline, or cache policy changes |
 | — | [`EMBED_STANDARDS.md`](./EMBED_STANDARDS.md) | Shared `/embed/[slug]` eligibility, admin gates, CSP, auto-resize, noindex | Calculator iframe embedding or framing headers |
 | — | [`AD_STANDARDS.md`](./AD_STANDARDS.md) | Dummy tool-page ad slots, density rules, embed exclusion, future AdSense hooks | Tool detail ad placeholders or live ads work |
-| — | [`TOOL_DETAIL_PAGE_STANDARDS.md`](./TOOL_DETAIL_PAGE_STANDARDS.md) | Master `/tools/[slug]` architecture: layout, SEO, sitemap, JSON-LD, ads, embed, a11y, DoD | Any calculator detail page or shared tool shell change |
+| — | [`TOOL_DETAIL_PAGE_STANDARDS.md`](./TOOL_DETAIL_PAGE_STANDARDS.md) | **Authoritative master** `/tools/[slug]` shell (Loan Calculator reference): layout, typography, sticky, SEO, ads, embed, a11y, DoD | Any calculator detail page or shared tool shell change |
+| — | [`NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`](./NEW_TOOL_DEVELOPMENT_PLAYBOOK.md) | Step-by-step workflow for shipping a new calculator without redesigning the shell | New tool implementation process or DoD checklist changes |
 | — | [`DECISIONS.md`](./DECISIONS.md) | Architecture Decision Records (ADRs) | Architectural or technical policy decisions occur |
 | — | [`TASKS.md`](./TASKS.md) | Shared task board (`Planned`, `In Progress`, `Blocked`, `Completed`) | Starting, blocking, or completing tasks |
 | — | [`CHANGELOG.md`](./CHANGELOG.md) | Chronological development history with verification & commit hashes | **After every completed task** |
