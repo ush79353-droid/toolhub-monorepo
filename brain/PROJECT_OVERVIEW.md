@@ -66,7 +66,7 @@ Defined in `frontend/src/types/tool.ts`, `backend/src/types/tool.ts`, and `front
 
 1. **Maintain strict dual-app discipline and shared Brain synchronization** across Antigravity and Cursor workflows.
 2. **Resolve backend local dependency/type-check parity** (install newly added `nodemailer` & `@aws-sdk/*` packages locally and verify clean `tsc --noEmit`).
-3. **Wire public catalog routes** (`/tools`, `/tools/[slug]`, `/categories`, `/categories/[slug]`, and header/footer navigation) to live Express/MongoDB endpoints instead of `sample-data.ts`.
+3. **Wire public catalog routes** (`/tools`, `/categories`, `/categories/[slug]`) to live Express/MongoDB endpoints instead of `sample-data.ts`. Header and footer already use `GET /catalog/categories`.
 4. **Implement and register real tool components** under `frontend/src/tools/` via `tools/registry/index.ts` and connect `ToolWorkspace`.
 5. **Implement remaining backend admin modules** (`users`, `analytics`, `activity-logs`, `seo`, `pages`, `integrations`, `settings`) to replace `admin-mock-data.ts` previews.
 

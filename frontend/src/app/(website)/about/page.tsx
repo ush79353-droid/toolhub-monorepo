@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { buttonVariants } from '@/components/ui/button';
-import { serverApi } from '@/server/api/client';
+import { getPublicCategories } from '@/server/catalog/categories';
 import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -39,17 +39,12 @@ const principles = [
 ] as const;
 
 async function loadDirectorySize() {
-  try {
-    const response = await serverApi.get<Array<{ toolCount: number }>>('/catalog/categories', { cache: 'no-store' });
-    const categories = response.data ?? [];
-    if (categories.length === 0) return null;
-    return {
-      categoryCount: categories.length,
-      toolTotal: categories.reduce((sum, category) => sum + category.toolCount, 0),
-    };
-  } catch {
-    return null;
-  }
+  const categories = await getPublicCategories();
+  if (categories.length === 0) return null;
+  return {
+    categoryCount: categories.length,
+    toolTotal: categories.reduce((sum, category) => sum + category.toolCount, 0),
+  };
 }
 
 function ProductBoard() {

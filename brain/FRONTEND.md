@@ -32,7 +32,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 
 - Homepage (`/`) renders live categories and featured tools from MongoDB (`/catalog/*`) and links to `/categories/${category.slug}` and `/tools/${tool.slug}`.
 - `/tools/[slug]` now resolves active MongoDB tools via `getPublicToolBySlug(slug)` (including `/tools/auto-loan-calculator`) and falls back to `sample-data.ts` for legacy sample slugs.
-- `/categories`, `/categories/[slug]`, `/tools`, `Header.tsx`, `MobileNavigation.tsx`, and `Footer.tsx` still read from `frontend/src/lib/sample-data.ts` (12 hardcoded categories and 18 sample tools). Live DB category slugs not in `sample-data.ts` will return 404 until category routes are wired to MongoDB.
+- `/categories`, `/categories/[slug]`, and `/tools` still read from `frontend/src/lib/sample-data.ts`. `Header`, `Footer`, and `MobileNavigation` read `getPublicCategories()` (`GET /catalog/categories`) once per request via `React.cache()`. Live category slugs still 404 on `/categories/[slug]`.
 
 ---
 
@@ -72,7 +72,7 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 ## 4. Reusable Components Inventory
 
 - **UI Primitives (`src/components/ui/`):** `badge.tsx`, `button.tsx`, `card.tsx`, `input.tsx` (uses `block` instead of `flex` for `date`/`time`/`datetime-local` inputs so native picker icons stay right-aligned), `select.tsx`, `switch.tsx`, `tabs.tsx`, `textarea.tsx` (using `cn()` from `src/lib/utils.ts` and `class-variance-authority`).
-- **Website Layout (`src/components/layout/`):** `Container.tsx` (`max-w-7xl px-4 sm:px-6 lg:px-8`), `Header.tsx` (responsive single-row nav preventing `768px` tablet overflow, `Explore Tools` CTA shown from `lg:`), `Footer.tsx` (`<h2>` uppercase column headings for clean landmark hierarchy), `MobileNavigation.tsx`.
+- **Website Layout (`src/components/layout/`):** `Container.tsx`, async server `Header.tsx` and `Footer.tsx` (live categories from `getPublicCategories()`), `MobileNavigation.tsx` (client menu; category list is passed in from the server header).
 - **Public Shared (`src/components/shared/`):** `Breadcrumbs.tsx`, `CategoryCard.tsx`, `CategoryIcon.tsx` (Lucide icon map), `EmptyState.tsx`, `FAQAccordion.tsx` (medium/semibold question hierarchy and relaxed `1.7` answer line-height), `RelatedCatalogTools.tsx` (uniform card padding without top pill badges, distinguishing interactive `Open` / `Preview only` links vs non-link `Catalog only` cards in the footer row), `SearchBar.tsx`, `SectionHeading.tsx`, `ToolCard.tsx`, `ToolWorkspace.tsx` (resolves allowlisted `componentKey` from `@/tools/registry`; falls back to UI preview shell for unregistered tools).
 - **Admin Components (`src/components/admin/`):**
   - `auth/AuthSplit.tsx`

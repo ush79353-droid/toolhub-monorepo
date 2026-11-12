@@ -2,9 +2,10 @@ import * as React from 'react';
 import Link from 'next/link';
 import { Container } from './Container';
 import { Shield, FileText, ArrowRight } from 'lucide-react';
-import { CATEGORIES } from '@/lib/sample-data';
+import { getPublicCategories } from '@/server/catalog/categories';
 
-export function Footer() {
+export async function Footer() {
+  const categories = await getPublicCategories();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -36,7 +37,7 @@ export function Footer() {
               Categories
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {CATEGORIES.slice(0, 6).map((cat) => (
+              {categories.slice(0, 7).map((cat) => (
                 <li key={cat.id}>
                   <Link
                     href={`/categories/${cat.slug}`}

@@ -3,14 +3,7 @@ import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
 import { SearchBar } from '@/components/shared/SearchBar';
 import { serverApi } from '@/server/api/client';
-
-interface HomeCategory {
-  id: string;
-  name: string;
-  slug: string;
-  description: string;
-  toolCount: number;
-}
+import { getPublicCategories } from '@/server/catalog/categories';
 
 interface FeaturedTool {
   id: string;
@@ -25,15 +18,15 @@ interface FeaturedTool {
 async function loadHome() {
   try {
     const [categories, featured] = await Promise.all([
-      serverApi.get<HomeCategory[]>('/catalog/categories', { cache: 'no-store' }),
+      getPublicCategories(),
       serverApi.get<FeaturedTool[]>('/catalog/featured', { cache: 'no-store' }),
     ]);
     return {
-      categories: categories.data ?? [],
+      categories,
       featured: featured.data ?? [],
     };
   } catch {
-    return { categories: [] as HomeCategory[], featured: [] as FeaturedTool[] };
+    return { categories: [], featured: [] as FeaturedTool[] };
   }
 }
 
