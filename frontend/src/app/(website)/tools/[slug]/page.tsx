@@ -55,6 +55,8 @@ import { RrefGuideArticle } from '@/tools/calculators/rref/RrefGuideArticle';
 import { RREF_FAQS, RREF_TOC_ITEMS } from '@/tools/calculators/rref/content';
 import { ArmMortgageGuideArticle } from '@/tools/calculators/arm-mortgage/ArmMortgageGuideArticle';
 import { ARM_FAQS, ARM_TOC_ITEMS } from '@/tools/calculators/arm-mortgage/content';
+import { HundredDayGuideArticle } from '@/tools/calculators/hundred-day/HundredDayGuideArticle';
+import { HUNDRED_DAY_FAQS, HUNDRED_DAY_TOC_ITEMS } from '@/tools/calculators/hundred-day/content';
 import { isApprovedComponentKey } from '@/tools/registry/keys';
 import type { ToolMetadata } from '@/types/tool';
 
@@ -122,6 +124,15 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
       title: 'Mortgage rules by country',
       countries: SIDEBAR_COUNTRIES,
     },
+  },
+  HundredDayCalculator: {
+    subtitleLead:
+      'Find the date 100 days after or before any day, or count calendar days between two dates, including leap years and inclusive counting.',
+    asideAriaLabel: 'Interactive 100 day calculator',
+    tocItems: HUNDRED_DAY_TOC_ITEMS,
+    GuideArticle: HundredDayGuideArticle,
+    faqs: HUNDRED_DAY_FAQS,
+    countryRules: null,
   },
 };
 

@@ -3,6 +3,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'LoanCalculator',
   'RrefCalculator',
   'ArmMortgageCalculator',
+  'HundredDayCalculator',
+  'ZeroToSixtyCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
