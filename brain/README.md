@@ -41,6 +41,8 @@ To avoid merge conflicts and stale context:
 | — | [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md) | Locked brand palette, typography, spacing, UI patterns, responsiveness | UI tokens or shared visual patterns change |
 | — | [`CALCULATOR_STANDARDS.md`](./CALCULATOR_STANDARDS.md) | Locked master calculator page/layout/currency/testing conventions (Loan Calculator reference) | Calculator shell or shared tool UX conventions change |
 | — | [`SEO_STANDARDS.md`](./SEO_STANDARDS.md) | Optional admin SEO fields, fallbacks, canonical/robots/social/JSON-LD rules | Tool SEO schema, metadata pipeline, or cache policy changes |
+| — | [`EMBED_STANDARDS.md`](./EMBED_STANDARDS.md) | Shared `/embed/[slug]` eligibility, admin gates, CSP, auto-resize, noindex | Calculator iframe embedding or framing headers |
+| — | [`AD_STANDARDS.md`](./AD_STANDARDS.md) | Dummy tool-page ad slots, density rules, embed exclusion, future AdSense hooks | Tool detail ad placeholders or live ads work |
 | — | [`DECISIONS.md`](./DECISIONS.md) | Architecture Decision Records (ADRs) | Architectural or technical policy decisions occur |
 | — | [`TASKS.md`](./TASKS.md) | Shared task board (`Planned`, `In Progress`, `Blocked`, `Completed`) | Starting, blocking, or completing tasks |
 | — | [`CHANGELOG.md`](./CHANGELOG.md) | Chronological development history with verification & commit hashes | **After every completed task** |

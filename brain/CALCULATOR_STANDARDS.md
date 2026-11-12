@@ -2,7 +2,7 @@
 
 > Master conventions for every future calculator. The Loan Calculator page is the production reference implementation.
 
-Read with: `AGENTS.md`, `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `ARCHITECTURE.md`.
+Read with: `AGENTS.md`, `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `ARCHITECTURE.md`.
 
 ## 1. Architecture
 
@@ -50,6 +50,19 @@ Read with: `AGENTS.md`, `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `ARCHITECTURE.md
 - Use shared dynamic SEO pipeline only (`SEO_STANDARDS.md`)
 - Do not hardcode metadata inside calculator files
 - Visible H1 ≠ SEO title unless content model requires it
+
+## 6b. Embedding
+
+- Use shared `/embed/[slug]` pipeline only (`EMBED_STANDARDS.md`)
+- Same registered calculator component; `presentation="embed"` for compact chrome
+- Admin `embedEnabled` defaults false; public Embed control only when eligible
+- Do not build calculator-specific iframe routes
+
+## 6c. Advertisements
+
+- Dummy placeholders via shared `AdSlot` on `/tools/[slug]` only (`AD_STANDARDS.md`)
+- Never render ads inside calculators or on `/embed/[slug]`
+- No live AdSense/scripts until a dedicated consented integration
 
 ## 7. Testing
 

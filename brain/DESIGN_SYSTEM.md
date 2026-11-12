@@ -50,6 +50,7 @@ Verified in `StatusBadge.tsx`, `PendingNotice.tsx`, forms, and alerts:
 
 - **Base Radius:** `--radius: 0.5rem` (`rounded-lg`, `rounded-md`, `rounded-sm`). Cards typically use `rounded-xl` or `rounded-2xl`; pills use `rounded-full`; auth split container uses `rounded-[28px]`.
 - **Public Container (`Container.tsx`):** `mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8` (note `tailwind.config.ts` also sets `container.screens['2xl'] = '1400px'`).
+- **Ad placeholders (`AdSlot`):** Dashed `border-border`, `rounded-xl`, canvas `#F7F8F6`, centered muted “Advertisement” label; reserved min-heights for leaderboard (~90–100px) and rectangle (~250px). Never sticky; never inside calculator panels. See `AD_STANDARDS.md`.
 - **Public Header:** Sticky `h-16` (`top-0 z-40`), white translucent backdrop (`bg-white/95 backdrop-blur-md`).
 - **Height-Aware Sticky Calculator Sidebar (`StickyCalculatorAside`):** Enabled on desktop (`>= 1024px` and viewport height `>= 560px`) with top clearance (`84px`) when the calculator fits, or bottom-pinned negative sticky offset (`vh - height - 20px`) when taller so results remain visible without inner scrollbars and stop cleanly above `<footer>`; includes focus-capture offset/scroll adjustment so keyboard focus never hides under `<header>`, and falls back to static document flow on `< 1024px`.
 - **Admin Shell (`AdminDashboardShell.tsx`):**

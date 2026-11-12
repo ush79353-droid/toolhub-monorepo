@@ -53,6 +53,10 @@ export interface ToolRecord {
   sitemapInclude: boolean;
   sitemapPriority: number | null;
   sitemapChangeFrequency: string;
+  embedEnabled: boolean;
+  embedDefaultHeight: number;
+  embedPreferredLayout: string;
+  embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
   createdAt: string;
@@ -113,6 +117,10 @@ export interface ToolPayload {
   sitemapInclude?: boolean;
   sitemapPriority?: number | null;
   sitemapChangeFrequency?: string;
+  embedEnabled?: boolean;
+  embedDefaultHeight?: number;
+  embedPreferredLayout?: string;
+  embedAllowedDomains?: string;
   isActive?: boolean;
   isFeatured?: boolean;
 }
@@ -133,6 +141,7 @@ function revalidateToolSurfaces(slug?: string) {
   revalidatePath('/');
   if (slug) {
     revalidatePath(`/tools/${slug}`);
+    revalidatePath(`/embed/${slug}`);
   }
 }
 

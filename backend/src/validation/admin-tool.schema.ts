@@ -85,6 +85,10 @@ export const toolFieldsSchema = z.object({
   sitemapChangeFrequency: z
     .enum(['', 'always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never'])
     .optional(),
+  embedEnabled: z.boolean().optional(),
+  embedDefaultHeight: z.coerce.number().int().min(320).max(4000).optional(),
+  embedPreferredLayout: z.enum(['', 'responsive', 'compact']).optional(),
+  embedAllowedDomains: optionalText(1000),
   isActive: z.boolean().optional(),
   isFeatured: z.boolean().optional(),
 });

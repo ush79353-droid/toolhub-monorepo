@@ -84,6 +84,10 @@ export interface PublicToolDetail {
   sitemapInclude: boolean;
   sitemapPriority: number | null;
   sitemapChangeFrequency: string;
+  embedEnabled: boolean;
+  embedDefaultHeight: number;
+  embedPreferredLayout: string;
+  embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
   updatedAt: string;
@@ -391,6 +395,10 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
     sitemapInclude: doc.sitemapInclude ?? true,
     sitemapPriority: doc.sitemapPriority ?? null,
     sitemapChangeFrequency: doc.sitemapChangeFrequency ?? '',
+    embedEnabled: doc.embedEnabled ?? false,
+    embedDefaultHeight: doc.embedDefaultHeight ?? 650,
+    embedPreferredLayout: doc.embedPreferredLayout ?? 'responsive',
+    embedAllowedDomains: doc.embedAllowedDomains ?? '',
     isActive: doc.isActive ?? true,
     isFeatured: doc.isFeatured,
     updatedAt: doc.updatedAt.toISOString(),

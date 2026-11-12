@@ -64,6 +64,10 @@ export interface PublicToolDetail {
   sitemapInclude: boolean;
   sitemapPriority: number | null;
   sitemapChangeFrequency: string;
+  embedEnabled: boolean;
+  embedDefaultHeight: number;
+  embedPreferredLayout: string;
+  embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
   updatedAt: string;

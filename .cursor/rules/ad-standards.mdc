@@ -1,0 +1,13 @@
+# Ad Placement Standards (Cursor)
+
+Before changing tool-page ads:
+
+1. Read `AGENTS.md`
+2. Read `brain/AD_STANDARDS.md`
+
+Rules:
+
+- Use shared `AdSlot` + `lib/ads/placements.ts` only on `/tools/[slug]`.
+- Never put ads on `/embed/[slug]` or inside calculator UI.
+- Keep `ADS_DISPLAY_MODE` as `placeholder` until a real AdSense+consent task.
+- Do not invent publisher/slot IDs or load third-party ad scripts.

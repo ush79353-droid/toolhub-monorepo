@@ -20,3 +20,4 @@ Rules:
 - Do not invent a second sticky, currency, clipboard, or metadata system.
 - Keep calculator-specific math/validation local; keep presentation conventions shared.
 - Preserve Ponytail minimalism: extend existing helpers before adding abstractions.
+- For iframe embedding, follow `brain/EMBED_STANDARDS.md` and `.cursor/rules/embed-standards.mdc`.

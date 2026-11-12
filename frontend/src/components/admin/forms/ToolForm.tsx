@@ -9,12 +9,23 @@ import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { FormSection } from './FormSection';
 import { ToolSeoSection, type ToolSeoFormState } from './ToolSeoSection';
+import { ToolEmbedSection, type ToolEmbedFormState } from './ToolEmbedSection';
 import { ArrowLeft, ImageIcon, Loader2, Save, X } from 'lucide-react';
 import { emptyToolSeoFields } from '@/lib/seo/tool-seo';
+import { EMBED_DEFAULT_HEIGHT, type EmbedPreferredLayout } from '@/lib/embed/tool-embed';
 import { listMediaAction, type MediaAsset } from '@/server/media/actions';
 import { saveToolAction, type PlacementNode, type ToolRecord } from '@/server/tools/actions';
 import { APPROVED_COMPONENT_KEYS } from '@/tools/registry/keys';
 import type { ToolExecutionType } from '@/types/tool';
+
+function embedFromTool(tool?: ToolRecord): ToolEmbedFormState {
+  return {
+    embedEnabled: tool?.embedEnabled ?? false,
+    embedDefaultHeight: tool?.embedDefaultHeight ?? EMBED_DEFAULT_HEIGHT,
+    embedPreferredLayout: (tool?.embedPreferredLayout as EmbedPreferredLayout) || 'responsive',
+    embedAllowedDomains: tool?.embedAllowedDomains ?? '',
+  };
+}
 
 function seoFromTool(tool?: ToolRecord): ToolSeoFormState {
   return emptyToolSeoFields({
@@ -81,6 +92,7 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
   const [componentKey, setComponentKey] = React.useState(tool?.componentKey ?? '');
   const [shortDescription, setShortDescription] = React.useState(tool?.shortDescription ?? '');
   const [seo, setSeo] = React.useState<ToolSeoFormState>(() => seoFromTool(tool));
+  const [embed, setEmbed] = React.useState<ToolEmbedFormState>(() => embedFromTool(tool));
   const [isActive, setIsActive] = React.useState(tool?.isActive ?? true);
   const [isFeatured, setIsFeatured] = React.useState(tool?.isFeatured ?? false);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
@@ -154,6 +166,10 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
       twitterImageUrl: seo.twitterImageUrl.trim(),
       twitterImageAlt: seo.twitterImageAlt.trim(),
       twitterSite: seo.twitterSite.trim(),
+      embedEnabled: embed.embedEnabled,
+      embedDefaultHeight: embed.embedDefaultHeight,
+      embedPreferredLayout: embed.embedPreferredLayout,
+      embedAllowedDomains: embed.embedAllowedDomains.trim(),
       isActive,
       isFeatured,
     });
@@ -343,6 +359,15 @@ export function ToolForm({ mode, tool, placement }: ToolFormProps) {
           setPickerTarget(target);
           setPickerOpen(true);
         }}
+      />
+
+      <ToolEmbedSection
+        value={embed}
+        onChange={setEmbed}
+        toolName={name}
+        toolSlug={slug}
+        isActive={isActive}
+        componentKey={componentKey}
       />
 
       <FormSection className="w-full" title="Visibility" description="Active tools can be listed. Featured tools can be promoted on the homepage.">

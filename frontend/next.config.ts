@@ -15,6 +15,26 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: '/embed/:path*',
+        headers: [
+          // Public calculators may be framed by third-party sites when embedEnabled.
+          { key: 'Content-Security-Policy', value: 'frame-ancestors *' },
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+          { key: 'Cache-Control', value: 'private, no-cache, no-store, must-revalidate' },
+        ],
+      },
+      {
+        source: '/((?!embed/).*)',
+        headers: [
+          { key: 'Content-Security-Policy', value: "frame-ancestors 'self'" },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -81,3 +81,10 @@
 - **Consequences:** New SEO fields remain optional with documented fallbacks; unimplemented tools cannot become indexable from the Index toggle alone; agents must read the standards docs before building calculators.
 - **Status:** Accepted
 
+## ADR-012: Shared Calculator Embed System
+- **Date:** 2026-11-12
+- **Decision:** Provide one dynamic `/embed/[slug]` route reusing allowlisted calculator components; gate with Tool fields `embedEnabled` (default `false`), height/layout prefs, and advisory `embedAllowedDomains`; split CSP so only `/embed/*` allows third-party framing; optional `/embed.js` auto-resize with namespaced postMessage validation; lock rules in `brain/EMBED_STANDARDS.md`.
+- **Reason:** Partners need copy-paste iframes without forking calculators or exposing admin chrome; embedding must be independently disableable without taking down normal tool pages.
+- **Consequences:** Catalog-only tools never get blank embeds; embed pages are noindex; public iframe URLs remain reusable without signed tokens unless a future auth layer is added; agents must follow embed standards for new calculators.
+- **Status:** Accepted
+

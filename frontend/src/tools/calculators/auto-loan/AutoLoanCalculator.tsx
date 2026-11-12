@@ -23,7 +23,12 @@ import { validateAutoLoanInput } from './validation';
 
 const INITIAL_START_DATE = '2026-11-11';
 
-export function AutoLoanCalculator({ metadata, className = '' }: ToolComponentProps) {
+export function AutoLoanCalculator({
+  metadata,
+  className = '',
+  presentation = 'default',
+}: ToolComponentProps) {
+  const isEmbed = presentation === 'embed';
   const [draft, setDraft] = React.useState<AutoLoanDraft>(() =>
     inputToDraft(createDefaultAutoLoanInput(INITIAL_START_DATE))
   );
@@ -89,7 +94,11 @@ export function AutoLoanCalculator({ metadata, className = '' }: ToolComponentPr
   return (
     <section
       aria-label={`${metadata.title} calculator panel`}
-      className={`overflow-hidden rounded-2xl border border-border bg-white shadow-[0_12px_40px_-16px_rgba(22,60,67,0.28)] ${className}`}
+      className={`overflow-hidden rounded-2xl border border-border bg-white ${
+        isEmbed
+          ? 'shadow-sm'
+          : 'shadow-[0_12px_40px_-16px_rgba(22,60,67,0.28)]'
+      } ${className}`}
     >
       {/* Compact Calculator Header + Currency Selector */}
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">

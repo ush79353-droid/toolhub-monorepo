@@ -155,6 +155,10 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 | `sitemapInclude` | `Boolean` | Admin sitemap preference (eligibility still gated) | `true` |
 | `sitemapPriority` | `Number \| null` | Optional `0`–`1` | `null` |
 | `sitemapChangeFrequency` | `String` | Optional changefreq enum or `''` | `''` |
+| `embedEnabled` | `Boolean` | Allow `/embed/[slug]` rendering | `false` |
+| `embedDefaultHeight` | `Number` | Suggested iframe height px (`320`–`4000`) | `650` |
+| `embedPreferredLayout` | `String` | `responsive` \| `compact` | `responsive` |
+| `embedAllowedDomains` | `String` | Advisory comma-separated host list (`maxlength: 1000`) | `''` |
 | `isActive` | `Boolean` | Active status flag | `true` |
 | `isFeatured` | `Boolean` | Homepage featured promotion flag | `false` |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |

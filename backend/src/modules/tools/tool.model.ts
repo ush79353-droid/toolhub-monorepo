@@ -42,6 +42,12 @@ export interface ITool extends Document {
   sitemapInclude: boolean;
   sitemapPriority: number | null;
   sitemapChangeFrequency: string;
+  /** When false, `/embed/[slug]` refuses to render the calculator. Default false for existing records. */
+  embedEnabled: boolean;
+  embedDefaultHeight: number;
+  embedPreferredLayout: string;
+  /** Comma-separated hostnames for advisory allowlisting (not a signed auth system). */
+  embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
   createdAt: Date;
@@ -94,6 +100,10 @@ const toolSchema = new Schema<ITool>(
     sitemapInclude: { type: Boolean, default: true },
     sitemapPriority: { type: Number, default: null },
     sitemapChangeFrequency: { type: String, default: '', maxlength: 20 },
+    embedEnabled: { type: Boolean, default: false },
+    embedDefaultHeight: { type: Number, default: 650, min: 320, max: 4000 },
+    embedPreferredLayout: { type: String, default: 'responsive', maxlength: 20 },
+    embedAllowedDomains: { type: String, default: '', maxlength: 1000 },
     isActive: { type: Boolean, default: true },
     isFeatured: { type: Boolean, default: false },
   },

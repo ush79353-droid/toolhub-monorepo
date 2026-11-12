@@ -54,6 +54,10 @@ export interface ToolRecord {
   sitemapInclude: boolean;
   sitemapPriority: number | null;
   sitemapChangeFrequency: string;
+  embedEnabled: boolean;
+  embedDefaultHeight: number;
+  embedPreferredLayout: string;
+  embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
   createdAt: string;
@@ -119,6 +123,10 @@ function toRecord(doc: ITool): ToolRecord {
     sitemapInclude: doc.sitemapInclude ?? true,
     sitemapPriority: doc.sitemapPriority ?? null,
     sitemapChangeFrequency: doc.sitemapChangeFrequency ?? '',
+    embedEnabled: doc.embedEnabled ?? false,
+    embedDefaultHeight: doc.embedDefaultHeight ?? 650,
+    embedPreferredLayout: doc.embedPreferredLayout ?? 'responsive',
+    embedAllowedDomains: doc.embedAllowedDomains ?? '',
     isActive: doc.isActive,
     isFeatured: doc.isFeatured,
     createdAt: doc.createdAt.toISOString(),
@@ -212,6 +220,14 @@ function assign(doc: ITool, input: ToolFieldsInput, icon: { iconMedia: mongoose.
   if (input.sitemapPriority !== undefined) doc.sitemapPriority = input.sitemapPriority;
   if (input.sitemapChangeFrequency !== undefined) {
     doc.sitemapChangeFrequency = input.sitemapChangeFrequency;
+  }
+  if (input.embedEnabled !== undefined) doc.embedEnabled = input.embedEnabled;
+  if (input.embedDefaultHeight !== undefined) doc.embedDefaultHeight = input.embedDefaultHeight;
+  if (input.embedPreferredLayout !== undefined) {
+    doc.embedPreferredLayout = input.embedPreferredLayout || 'responsive';
+  }
+  if (input.embedAllowedDomains !== undefined) {
+    doc.embedAllowedDomains = input.embedAllowedDomains ?? '';
   }
   if (input.isActive !== undefined) doc.isActive = input.isActive;
   if (input.isFeatured !== undefined) doc.isFeatured = input.isFeatured;

@@ -8,8 +8,11 @@ import { ToolWorkspace } from '@/components/shared/ToolWorkspace';
 import { CategoryIcon } from '@/components/shared/CategoryIcon';
 import { FAQAccordion, type FAQItem } from '@/components/shared/FAQAccordion';
 import { RelatedCatalogTools } from '@/components/shared/RelatedCatalogTools';
+import { AdSlot } from '@/components/ads/AdSlot';
+import { CalculatorEmbedDialog } from '@/components/tools/CalculatorEmbedDialog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { isToolEmbedEligible } from '@/lib/embed/tool-embed';
 import {
   ShieldCheck,
   Zap,
@@ -245,6 +248,8 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             className="mb-4"
           />
 
+          <AdSlot placement="tool_top_banner" className="mb-5" />
+
           {/* Responsive 2-Column Workspace: Left (~62%) unified intro + guide, Right (~38%) sticky calculator */}
           <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,1.62fr)_minmax(360px,1fr)] lg:items-start lg:gap-8">
             {/* Calculator near top on mobile/tablet; sticky right column on desktop */}
@@ -252,6 +257,23 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
               ariaLabel={twoColConfig.asideAriaLabel}
               className="order-1 min-w-0 lg:order-2 lg:col-start-2 lg:row-start-1"
             >
+              {dbTool &&
+              isToolEmbedEligible({
+                embedEnabled: dbTool.embedEnabled ?? false,
+                isActive: dbTool.isActive,
+                componentKey: dbTool.componentKey,
+                embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
+                embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
+                embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
+              }) ? (
+                <div className="mb-2 flex justify-end">
+                  <CalculatorEmbedDialog
+                    toolName={dbTool.name}
+                    toolSlug={dbTool.slug}
+                    defaultHeight={dbTool.embedDefaultHeight}
+                  />
+                </div>
+              ) : null}
               <ToolWorkspace tool={toolMetadata} />
             </StickyCalculatorAside>
 
@@ -305,9 +327,15 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
                 ) : null}
               </div>
 
+              <AdSlot placement="tool_article_middle" />
+
               <GuideArticleComponent />
+
+              <AdSlot placement="tool_article_bottom" />
             </div>
           </div>
+
+          <AdSlot placement="tool_bottom_banner" className="mt-8" />
         </Container>
       </div>
     );
@@ -363,6 +391,8 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
           ]}
           className="mb-6"
         />
+
+        <AdSlot placement="tool_top_banner" className="mb-6" />
 
         {/* Tool Header Section */}
         <div className="rounded-2xl border border-border bg-white p-6 shadow-xs sm:p-8">
@@ -426,6 +456,8 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
                 ))}
               </ol>
             </div>
+
+            <AdSlot placement="tool_article_middle" />
 
             <div className="rounded-2xl border border-border bg-white p-6 shadow-xs sm:p-8">
               <div className="mb-4 flex items-center gap-2.5">
@@ -570,6 +602,8 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             </div>
           </div>
         </div>
+
+        <AdSlot placement="tool_bottom_banner" className="mt-8" />
       </Container>
     </div>
   );
