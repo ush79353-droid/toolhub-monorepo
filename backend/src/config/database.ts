@@ -41,7 +41,7 @@ export async function connectDB(): Promise<boolean> {
     });
 
     await mongoose.connect(env.MONGODB_URI, {
-      serverSelectionTimeoutMS: 5000,
+      serverSelectionTimeoutMS: 20000,
     });
 
     return true;

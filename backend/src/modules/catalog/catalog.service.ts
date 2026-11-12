@@ -118,6 +118,145 @@ export async function listPublicCategories(): Promise<PublicCategory[]> {
   }));
 }
 
+export interface PublicCategoryTool {
+  id: string;
+  name: string;
+  slug: string;
+  shortDescription: string;
+  isActive: boolean;
+}
+
+export interface PublicSubPillarGroup {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  tools: PublicCategoryTool[];
+}
+
+export interface PublicPillarGroup {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  tools: PublicCategoryTool[];
+  subPillars: PublicSubPillarGroup[];
+}
+
+export interface PublicCategoryDetail {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  iconUrl: string;
+  toolCount: number;
+  pillars: PublicPillarGroup[];
+  ungrouped: PublicCategoryTool[];
+}
+
+interface CategoryToolRow {
+  _id: { toString(): string };
+  name: string;
+  slug: string;
+  shortDescription?: string;
+  isActive?: boolean;
+  pillar?: { toString(): string } | null;
+  subPillar?: { toString(): string } | null;
+}
+
+function toCategoryTool(row: CategoryToolRow): PublicCategoryTool {
+  return {
+    id: row._id.toString(),
+    name: row.name,
+    slug: row.slug,
+    shortDescription: row.shortDescription ?? '',
+    isActive: Boolean(row.isActive),
+  };
+}
+
+export async function getPublicCategoryBySlug(rawSlug: string): Promise<PublicCategoryDetail> {
+  const slug = rawSlug.trim().toLowerCase();
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+    throw new AppError('Category not found.', 404, 'NOT_FOUND');
+  }
+
+  const category = await Category.findOne({ slug, kind: 'category', isActive: true });
+  if (!category) throw new AppError('Category not found.', 404, 'NOT_FOUND');
+
+  const pillars = await Category.find({ parent: category._id, kind: 'pillar', isActive: true }).sort({
+    sortOrder: 1,
+    name: 1,
+  });
+  const subPillars = await Category.find({
+    parent: { $in: pillars.map((pillar) => pillar._id) },
+    kind: 'sub_pillar',
+    isActive: true,
+  }).sort({ sortOrder: 1, name: 1 });
+  const tools = await Tool.find({ category: category._id, isActive: true })
+    .select('name slug shortDescription isActive pillar subPillar')
+    .sort({ name: 1 })
+    .lean<CategoryToolRow[]>();
+
+  const toolsBySubPillar = new Map<string, PublicCategoryTool[]>();
+  const toolsByPillar = new Map<string, PublicCategoryTool[]>();
+  const ungrouped: PublicCategoryTool[] = [];
+  const pillarIds = new Set(pillars.map((pillar) => pillar.id));
+  const subPillarIds = new Set(subPillars.map((subPillar) => subPillar.id));
+
+  for (const row of tools) {
+    const tool = toCategoryTool(row);
+    const subPillarId = row.subPillar ? String(row.subPillar) : '';
+    const pillarId = row.pillar ? String(row.pillar) : '';
+    if (subPillarId && subPillarIds.has(subPillarId)) {
+      const list = toolsBySubPillar.get(subPillarId) ?? [];
+      list.push(tool);
+      toolsBySubPillar.set(subPillarId, list);
+    } else if (pillarId && pillarIds.has(pillarId)) {
+      const list = toolsByPillar.get(pillarId) ?? [];
+      list.push(tool);
+      toolsByPillar.set(pillarId, list);
+    } else {
+      ungrouped.push(tool);
+    }
+  }
+
+  const subPillarsByPillar = new Map<string, PublicSubPillarGroup[]>();
+  for (const subPillar of subPillars) {
+    const parentId = subPillar.parent ? String(subPillar.parent) : '';
+    const group: PublicSubPillarGroup = {
+      id: subPillar.id,
+      name: subPillar.name,
+      slug: subPillar.slug,
+      description: subPillar.description,
+      tools: toolsBySubPillar.get(subPillar.id) ?? [],
+    };
+    if (group.tools.length === 0) continue;
+    const list = subPillarsByPillar.get(parentId) ?? [];
+    list.push(group);
+    subPillarsByPillar.set(parentId, list);
+  }
+
+  return {
+    id: category.id,
+    name: category.name,
+    slug: category.slug,
+    description: category.description,
+    iconUrl: category.iconUrl ?? '',
+    toolCount: tools.length,
+    pillars: pillars
+      .map((pillar) => ({
+        id: pillar.id,
+        name: pillar.name,
+        slug: pillar.slug,
+        description: pillar.description,
+        tools: toolsByPillar.get(pillar.id) ?? [],
+        subPillars: subPillarsByPillar.get(pillar.id) ?? [],
+      }))
+      .filter((pillar) => pillar.tools.length > 0 || pillar.subPillars.length > 0),
+    ungrouped,
+  };
+}
+
 export async function listFeaturedTools(): Promise<PublicFeaturedTool[]> {
   const docs = await Tool.find({ isFeatured: true }).sort({ name: 1 }).limit(12).populate('category', 'name slug');
   return docs.map((doc) => {

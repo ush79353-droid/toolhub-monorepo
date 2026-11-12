@@ -1,12 +1,26 @@
 import { Router } from 'express';
 import { sendSuccess } from '../../utils/response';
-import { getPublicToolBySlug, listFeaturedTools, listPublicCategories } from './catalog.service';
+import {
+  getPublicCategoryBySlug,
+  getPublicToolBySlug,
+  listFeaturedTools,
+  listPublicCategories,
+} from './catalog.service';
 
 export const catalogRouter = Router();
+
 
 catalogRouter.get('/categories', async (_req, res, next) => {
   try {
     sendSuccess(res, await listPublicCategories());
+  } catch (error) {
+    next(error);
+  }
+});
+
+catalogRouter.get('/categories/:slug', async (req, res, next) => {
+  try {
+    sendSuccess(res, await getPublicCategoryBySlug(req.params.slug));
   } catch (error) {
     next(error);
   }

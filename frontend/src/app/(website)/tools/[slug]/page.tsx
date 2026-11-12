@@ -149,8 +149,8 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
   const categorySlug = dbTool
     ? dbTool.category?.slug ?? ''
     : getCategoryBySlug(sampleTool!.category)?.slug ?? '';
-  const hasCategoryRoute = Boolean(categorySlug && getCategoryBySlug(categorySlug));
-  const safeCategoryHref = hasCategoryRoute ? `/categories/${categorySlug}` : '/categories';
+  const safeCategoryHref =
+    categorySlug && (dbTool || getCategoryBySlug(categorySlug)) ? `/categories/${categorySlug}` : '/categories';
   const pillarName = dbTool?.pillar?.name ?? null;
   const iconUrl = dbTool?.iconUrl ?? '';
   const twoColConfig = toolMetadata.componentKey

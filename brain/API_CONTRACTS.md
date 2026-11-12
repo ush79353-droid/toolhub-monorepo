@@ -69,6 +69,13 @@ Mounted at `/api/v1/catalog` (`backend/src/modules/catalog/catalog.router.ts`).
 - **Response (`200`):** `PublicCategory[]` — Active root categories (`kind: 'category', isActive: true`), sorted by `sortOrder` asc, `name` asc:
   `{ id, name, slug, description, iconUrl, toolCount }[]`
 
+### `GET /api/v1/catalog/categories/:slug`
+- **Auth:** Public
+- **Response (`200`):** `PublicCategoryDetail` for an active root category. Tools are grouped under their pillar, then sub-pillar. A tool whose pillar or sub-pillar is missing or inactive is returned in `ungrouped`. Empty pillars and empty sub-pillars are omitted.
+  `{ id, name, slug, description, iconUrl, toolCount, pillars, ungrouped }`
+  Each pillar is `{ id, name, slug, description, tools, subPillars }`. Each sub-pillar is `{ id, name, slug, description, tools }`. Each tool is `{ id, name, slug, shortDescription, isActive }`. Only `isActive: true` tools are included, and `toolCount` is that active total.
+- **Errors:** `404 NOT_FOUND` when the slug is missing or is not an active root category.
+
 ### `GET /api/v1/catalog/featured`
 - **Auth:** Public
 - **Response (`200`):** `PublicFeaturedTool[]` — Up to 12 tools with `isFeatured: true`, sorted by `name` asc (note: currently filters only on `isFeatured: true`, not `isActive`):
@@ -147,7 +154,7 @@ Mounted at `/api/v1/admin/tools` (`backend/src/modules/tools/tool.router.ts`). A
 
 The following capabilities exist only as empty backend module directories (`.gitkeep`) or frontend UI previews and are **not implemented**:
 
-- Public tools directory listing, search, and category detail (`GET /api/v1/catalog/categories/:slug`)
+- Public tools directory listing and search
 - Contact / tool suggestion submission (`POST /api/v1/contact` or similar)
 - Server-side or third-party tool execution endpoints
 - Admin staff management (`/api/v1/admin/users`)
