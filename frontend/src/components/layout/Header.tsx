@@ -60,8 +60,9 @@ export async function Header() {
                   <Link
                     key={cat.id}
                     href={`/categories/${cat.slug}`}
-                    className="rounded-lg px-3 py-2 text-sm leading-snug text-accent transition-colors hover:bg-secondary hover:text-primary"
+                    className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm leading-snug text-accent transition-colors hover:bg-secondary hover:text-primary"
                   >
+                    {cat.iconUrl ? <img src={cat.iconUrl} alt="" className="h-4 w-4 shrink-0" /> : null}
                     {cat.name}
                   </Link>
                 ))}
@@ -102,7 +103,9 @@ export async function Header() {
           </Link>
 
           {/* Mobile Navigation Trigger */}
-          <MobileNavigation categories={categories.map(({ id, name, slug }) => ({ id, name, slug }))} />
+          <MobileNavigation
+            categories={categories.map(({ id, name, slug, iconUrl }) => ({ id, name, slug, iconUrl }))}
+          />
         </div>
       </Container>
     </header>

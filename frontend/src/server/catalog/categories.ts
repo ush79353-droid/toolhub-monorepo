@@ -6,6 +6,7 @@ export interface PublicCategory {
   name: string;
   slug: string;
   description: string;
+  iconUrl: string;
   toolCount: number;
 }
 

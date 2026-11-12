@@ -6,7 +6,7 @@ import { Menu, X, ArrowRight, Grid, Wrench, Info, Mail } from 'lucide-react';
 export function MobileNavigation({
   categories,
 }: {
-  categories: Array<{ id: string; name: string; slug: string }>;
+  categories: Array<{ id: string; name: string; slug: string; iconUrl: string }>;
 }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -81,9 +81,10 @@ export function MobileNavigation({
                       key={cat.id}
                       href={`/categories/${cat.slug}`}
                       onClick={closeMenu}
-                      className="rounded-lg bg-card border border-border px-3 py-2 text-xs font-medium text-foreground hover:border-primary/50 hover:bg-muted"
+                      className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-xs font-medium text-foreground hover:border-primary/50 hover:bg-muted"
                     >
-                      {cat.name}
+                      {cat.iconUrl ? <img src={cat.iconUrl} alt="" className="h-3.5 w-3.5 shrink-0" /> : null}
+                      <span className="min-w-0">{cat.name}</span>
                     </Link>
                   ))}
                 </div>

@@ -76,6 +76,8 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 | `parent` | `ObjectId \| null` | `ref: 'Category'` (`null` for `category`, points to `category` for `pillar`, points to `pillar` for `sub_pillar`) | `null` |
 | `sortOrder` | `Number` | Required | `0` |
 | `description` | `String` | `maxlength: 2000` | `''` |
+| `iconUrl` | `String` | Public URL of the category icon. Empty unless set. Local files use `/uploads/<key>`. | `''` |
+| `iconMedia` | `ObjectId \| null` | `ref: 'MediaAsset'` | `null` |
 | `isActive` | `Boolean` | Visibility flag | `true` |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |
 

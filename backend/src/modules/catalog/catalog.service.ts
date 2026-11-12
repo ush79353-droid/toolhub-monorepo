@@ -9,6 +9,7 @@ export interface PublicCategory {
   name: string;
   slug: string;
   description: string;
+  iconUrl: string;
   toolCount: number;
 }
 
@@ -112,6 +113,7 @@ export async function listPublicCategories(): Promise<PublicCategory[]> {
     name: doc.name,
     slug: doc.slug,
     description: doc.description,
+    iconUrl: doc.iconUrl ?? '',
     toolCount: countByCategory.get(doc.id) ?? 0,
   }));
 }

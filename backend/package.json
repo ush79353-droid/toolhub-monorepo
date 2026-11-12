@@ -14,6 +14,7 @@
     "tools:seed": "tsx src/scripts/seed-tools.ts",
     "tool:assign": "tsx src/scripts/assign-tool-component.ts",
     "tools:publish": "tsx src/scripts/publish-browser-tools.ts",
+    "categories:icons": "tsx src/scripts/attach-category-icons.ts",
     "format": "prettier --write \"src/**/*.{ts,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,json,md}\""
   },

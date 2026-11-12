@@ -67,7 +67,7 @@ Mounted at `/api/v1/catalog` (`backend/src/modules/catalog/catalog.router.ts`).
 ### `GET /api/v1/catalog/categories`
 - **Auth:** Public
 - **Response (`200`):** `PublicCategory[]` — Active root categories (`kind: 'category', isActive: true`), sorted by `sortOrder` asc, `name` asc:
-  `{ id, name, slug, description, toolCount }[]`
+  `{ id, name, slug, description, iconUrl, toolCount }[]`
 
 ### `GET /api/v1/catalog/featured`
 - **Auth:** Public

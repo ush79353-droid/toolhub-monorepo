@@ -32,7 +32,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 
 - Homepage (`/`) renders live categories and featured tools from MongoDB (`/catalog/*`) and links to `/categories/${category.slug}` and `/tools/${tool.slug}`.
 - `/tools/[slug]` now resolves active MongoDB tools via `getPublicToolBySlug(slug)` (including `/tools/auto-loan-calculator`) and falls back to `sample-data.ts` for legacy sample slugs.
-- `/categories`, `/categories/[slug]`, and `/tools` still read from `frontend/src/lib/sample-data.ts`. `Header`, `Footer`, and `MobileNavigation` read `getPublicCategories()` (`GET /catalog/categories`) once per request via `React.cache()`. Live category slugs still 404 on `/categories/[slug]`.
+- Header, footer, the mobile menu, the homepage, and the About totals all read `getPublicCategories()`. The header menu and the homepage show each category's `iconUrl` when it is set. The footer and mobile menu show the first seven. `/categories`, `/categories/[slug]`, and `/tools` still read `sample-data.ts`, so live category slugs still 404 on `/categories/[slug]`.
 
 ---
 

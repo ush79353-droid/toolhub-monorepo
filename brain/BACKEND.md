@@ -110,7 +110,7 @@ Validated at import via Zod (`dotenv.config()`):
 - `npm run categories:seed` (`seed-categories.ts`): Upserts 3-level taxonomy from `data/tools-directory-hierarchy.json` using deterministic `seedKey`.
 - `npm run tools:seed` (`seed-tools.ts`): Bulk upserts 4,351 tools from `data/tools-catalog.json` (creates missing sub-pillars if needed; sets `isActive: false`, `indexable: false`, `isFeatured: false`, and generates SEO copy via `buildToolCopy`).
 - `npm run tool:assign` (`assign-tool-component.ts`): Safely assigns an allowlisted `--component` key and `--execution` type (plus optional `--activate`) to an existing tool by `--slug` while preserving all existing SEO and placement fields.
-- `npm run tools:publish` (`publish-browser-tools.ts`): Activates 15 browser (`client`) tools in each category, or every browser tool when a category has fewer than 15. Then marks 20 active browser tools featured. Tools that already have a component stay first. `tools:seed` sets every tool inactive again, so publish has to be run after a reseed.
+- `npm run categories:icons` (`attach-category-icons.ts`): Downloads one Lucide SVG per root category, stores it with the local storage driver, and saves `iconMedia` / `iconUrl` on that category. Skips a category that already has a `/uploads/` icon. Requires `STORAGE_DRIVER=local`.
 
 ---
 
