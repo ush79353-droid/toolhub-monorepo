@@ -36,7 +36,7 @@
 | Admin Authentication (`/admin/login`, `/admin/forgot-password`, `/admin/reset-password`) | **Implemented** | Argon2id login, MongoDB-backed sessions, `HttpOnly` cookie, rate limiting, account lockout, SMTP reset tokens |
 | Profile & Password Management (`/admin/profile`) | **Partially Implemented** | Name update and password change (with full session revocation) are live; the TOTP 2FA switch is UI state only |
 | Category Hierarchy Management (`/admin/categories`, `new`, `[id]/edit`) | **Implemented** | 3-level tree (`category → pillar → sub_pillar`) CRUD, search, pagination, cascade deletion |
-| Media Library (`/admin/media`) | **Implemented** | Direct browser PUT to pre-signed AWS S3 URLs, HEAD confirmation, MongoDB `MediaAsset` persistence, list/filter/delete |
+| Media Library (`/admin/media`) | **Implemented** | `STORAGE_DRIVER=local` stores files on the backend. `s3` uses a pre-signed browser PUT. MongoDB `MediaAsset` persistence, list/filter/delete |
 | Tool Catalog Management (`/admin/tools`, `new`, `[id]/edit`) | **Implemented** | Catalog CRUD, placement (`category`, optional `pillar`, optional `sub_pillar`), S3 media icon selection, SEO fields, active/featured toggles |
 | Dashboard Overview, Analytics, Activity Logs, CMS Pages, Integrations, SEO, Settings, Users | **Partially Implemented (UI Preview)** | Full UI layouts built using `frontend/src/lib/admin-mock-data.ts` and `PendingNotice` banners; backend endpoints/models are not yet implemented |
 

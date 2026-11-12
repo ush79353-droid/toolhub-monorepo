@@ -57,7 +57,7 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 | `/admin/tools` | `listToolsAction`, `listToolPlacementAction`, `deleteToolAction` | **Implemented** |
 | `/admin/tools/new` | `listToolPlacementAction`, `listMediaAction`, `saveToolAction` | **Implemented** |
 | `/admin/tools/[id]/edit` | `getToolAction`, `listToolPlacementAction`, `listMediaAction`, `saveToolAction` | **Implemented** |
-| `/admin/media` | `listMediaAction`, `requestMediaUploadAction`, browser S3 `PUT`, `confirmMediaUploadAction`, `deleteMediaAction` | **Implemented** |
+| `/admin/media` | `listMediaAction`, `requestMediaUploadAction`, `PUT /api/media-upload` when the driver is local (or a signed S3 URL when it is `s3`), `confirmMediaUploadAction`, `deleteMediaAction` | **Implemented** |
 | `/admin/profile` | `getCurrentAdmin()`, `updateAdminProfileAction`, `changeAdminPasswordAction` | **Partially Implemented** (profile + password live; TOTP 2FA switch is visual state only) |
 | `/admin/analytics` | `admin-mock-data.ts` + `PendingNotice` | **Partially Implemented** (UI preview) |
 | `/admin/activity-logs` | `INITIAL_ADMIN_LOGS` + `PendingNotice` | **Partially Implemented** (UI preview) |

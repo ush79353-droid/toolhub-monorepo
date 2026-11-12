@@ -121,9 +121,10 @@ Mounted at `/api/v1/admin/media` (`backend/src/modules/media/media.router.ts`). 
 | Method | Path | Query / Body (Zod) | Response `data` | Specific Errors |
 | :--- | :--- | :--- | :--- | :--- |
 | `GET` | `/admin/media` | Query: `page` (default 1), `limit` (1..48, default 24), `search`, `type` (`image`, `png`, `jpg`, `jpeg`, `webp`, `svg`, `gif`, `pdf`) | `{ items: MediaItem[], page, limit, total, totalPages }` | `400 VALIDATION_ERROR` |
-| `POST` | `/admin/media/upload-url` | Body: `{ fileName (1..180), contentType, size (int > 0, <= 10 MB) }` | `{ uploadUrl, key, contentType, publicUrl }` (`201`) | `400 UNSUPPORTED_TYPE`, `400 FILE_TOO_LARGE`, `503 S3_NOT_CONFIGURED` |
+| `POST` | `/admin/media/upload-url` | Body: `{ fileName (1..180), contentType, size (int > 0, <= 10 MB) }` | `{ driver: local\|s3, uploadUrl, key, contentType, publicUrl }` (`201`). `local` `uploadUrl` is `/api/media-upload?key=...`. `s3` `uploadUrl` is a 300s signed PUT. | `400 UNSUPPORTED_TYPE`, `400 FILE_TOO_LARGE`, `503 S3_NOT_CONFIGURED` |
+| `PUT` | `/admin/media/object` | Query `key`. Raw body, max 10 MB. Used by the Next.js local upload route, not the browser. | `{ key, size }` | `401 UNAUTHORIZED`, `400 INVALID_KEY`, `400 UNSUPPORTED_TYPE`, `400 FILE_TOO_LARGE`, `409 WRONG_DRIVER` |
 | `POST` | `/admin/media` | Body: `{ key, fileName, contentType, width?, height?, altText? }` | `MediaItem` (`201`) | `400 INVALID_KEY`, `400 UNSUPPORTED_TYPE`, `400 UPLOAD_MISSING`, `400 FILE_TOO_LARGE`, `400 TYPE_MISMATCH`, `409 ALREADY_SAVED`, `502 STORAGE_ERROR` |
-| `DELETE` | `/admin/media/:id` | Param: `id` (deletes S3 object then DB doc) | `{ id }` | `404 NOT_FOUND`, `502 STORAGE_ERROR` |
+| `DELETE` | `/admin/media/:id` | Param: `id`. Deletes the file from disk when `url` starts with `/uploads/`, otherwise from S3, then deletes the DB doc. | `{ id }` | `404 NOT_FOUND`, `502 STORAGE_ERROR` |
 
 ---
 

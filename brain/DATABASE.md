@@ -89,7 +89,7 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 ## 4. `MediaAsset` (collection: `mediaassets`)
 
 - **Source:** `backend/src/modules/media/media.model.ts`
-- **Responsibility:** Tracks files uploaded to AWS S3 (`media/<uuid>.<ext>`) for tool icons and library management.
+- **Responsibility:** Tracks media files (`media/<uuid>.<ext>`) for tool icons and the library. The file itself is on local disk or S3, chosen by `STORAGE_DRIVER` at upload time.
 
 ### Fields
 
@@ -97,12 +97,12 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 | :--- | :--- | :--- | :--- |
 | `fileName` | `String` | Required, trimmed, `maxlength: 180` | — |
 | `contentType` | `String` | Required (validated MIME: png, jpeg, webp, svg+xml, gif, pdf) | — |
-| `size` | `Number` | Required (verified via S3 `HeadObject`, max 10 MB) | — |
+| `size` | `Number` | Required (verified from the stored file, max 10 MB) | — |
 | `width` | `Number` | Optional | — |
 | `height` | `Number` | Optional | — |
 | `altText` | `String` | `maxlength: 300` | `''` |
-| `key` | `String` | Required (S3 object key `media/<uuid>.<ext>`) | — |
-| `url` | `String` | Required (computed public URL from `AWS_BASE_URL` + `key`) | — |
+| `key` | `String` | Required (`media/<uuid>.<ext>`, same key on disk and on S3) | — |
+| `url` | `String` | Required. Local files use `/uploads/<key>`. S3 files use `AWS_BASE_URL` + key. Delete uses this to pick the driver. | — |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |
 
 ### Indexes

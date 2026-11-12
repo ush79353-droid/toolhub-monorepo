@@ -28,7 +28,7 @@
 | `admins` | `modules/admins/` | `AdminUser` Mongoose model (`admin-user.model.ts`) | — |
 | `auth` | `modules/auth/` | Admin login, logout, session validation, profile update, password change, forgot/reset password, `AdminSession` model | `/api/v1/admin/auth` |
 | `categories` | `modules/categories/` | 3-level taxonomy (`category`, `pillar`, `sub_pillar`) CRUD, tree assembly, search, cascade delete | `/api/v1/admin/categories` |
-| `media` | `modules/media/` | S3 presigned URL signing, S3 head verification + `MediaAsset` persistence, list/filter, S3 + DB delete | `/api/v1/admin/media` |
+| `media` | `modules/media/` | Storage driver (`local` disk or S3), `MediaAsset` persistence, list/filter, file + DB delete | `/api/v1/admin/media` |
 | `tools` | `modules/tools/` | Admin tool catalog CRUD, placement options, media icon validation, allowlisted `componentKey` & `executionType`, unique name/slug enforcement, SEO fields | `/api/v1/admin/tools` |
 | `catalog` | `modules/catalog/` | Public read endpoints for active root categories (with tool counts via aggregation), featured tools, and active single tool detail by slug | `/api/v1/catalog` |
 
@@ -68,6 +68,7 @@
 - **`services/email.service.ts` (`SmtpEmailService`):**
   - Sends admin password reset links (`${origin}/admin/reset-password?token=...`, origin taken from first entry of `CORS_ORIGIN`) via `nodemailer`.
   - Only sends when `EMAIL_PROVIDER === 'smtp'` and `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `EMAIL_FROM` are present; otherwise logs and returns `false` (which causes `adminAuthService.forgotPassword` to throw `503 EMAIL_DELIVERY_FAILED`).
+- **`services/storage.ts`:** Picks `STORAGE_DRIVER`. `local` writes `UPLOAD_DIR` (default `uploads`) and returns `/api/media-upload`. `s3` delegates to `s3.service.ts`. `removeStored` uses the saved URL: `/uploads/...` is disk, anything else is S3.
 - **`services/s3.service.ts`:**
   - Lazy `S3Client` configured with `BUCKET_REGION`, `AWS_ACCESS_KEY`, `AWS_SECRET_KEY`, `requestChecksumCalculation: 'WHEN_REQUIRED'`, `responseChecksumValidation: 'WHEN_REQUIRED'` (needed for browser `PUT`).
   - `ensureUploadCors()`: Runs once per process before signing; checks `GetBucketCorsCommand` and attempts `PutBucketCorsCommand` for `CORS_ORIGIN` `PUT` if missing.
@@ -95,7 +96,9 @@ Validated at import via Zod (`dotenv.config()`):
 | `BODY_LIMIT` | `10mb` | Express JSON/urlencoded max payload size |
 | `EMAIL_PROVIDER` | `console` | `'console' \| 'smtp'` (in `.env.example`: `smtp`) |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `EMAIL_FROM` | `''` / `587` | SMTP delivery settings |
-| `AWS_ACCESS_KEY`, `AWS_SECRET_KEY`, `BUCKET_REGION`, `AWS_BUCKET_NAME`, `AWS_BASE_URL` | `''` | S3 media storage configuration |
+| `STORAGE_DRIVER` | `local` | `local` writes `backend/uploads`. `s3` uses the signed upload. |
+| `UPLOAD_DIR` | `uploads` | Directory for `STORAGE_DRIVER=local`, relative to the backend working directory |
+| `AWS_ACCESS_KEY`, `AWS_SECRET_KEY`, `BUCKET_REGION`, `AWS_BUCKET_NAME`, `AWS_BASE_URL` | `''` | Required only when `STORAGE_DRIVER=s3` |
 
 > **Config Drift Note:** `backend/.env.example` also lists `SESSION_TTL_HOURS=24` and `SESSION_REMEMBER_ME_DAYS=7`, but `env.ts` does not parse them and `admin-auth.service.ts` hardcodes `24h` and `7d`.
 

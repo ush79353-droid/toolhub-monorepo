@@ -51,7 +51,7 @@
 - **Decision:** Upload admin media directly from the browser to AWS S3 using short-lived (300s) pre-signed `PUT` URLs issued through Next.js Server Actions + Express, followed by Express `HeadObject` verification and `MediaAsset` persistence.
 - **Reason:** Avoid proxying binary file streams through Next.js Server Actions and Express memory/body limits while still validating uploaded MIME types and sizes before persisting DB records.
 - **Consequences:** Requires valid `AWS_*` environment config and S3 bucket CORS allowing `PUT` from `CORS_ORIGIN`.
-- **Status:** Accepted
+- **Status:** Accepted when `STORAGE_DRIVER=s3`. The default driver is local disk. See ADR-010.
 
 ## ADR-008: Shared Version-Controlled Project Brain & Cross-Agent Rules
 - **Date:** 2026-11-11
@@ -65,5 +65,12 @@
 - **Decision:** Add validated `executionType` and allowlisted `componentKey` fields to `Tool` (plus `GET /api/v1/catalog/tools/:slug`), resolve components exclusively via the static allowlisted frontend registry (`src/tools/registry/`), and implement the Auto Loan Calculator with integer-cent amortization, configurable display currency (formatting only), explicit sales-tax basis selection (`after-trade-in` vs `full-price`), and full-width layout on `/tools/[slug]` when a registered tool is rendered.
 - **Reason:** Keep database records authoritative for tool metadata/SEO while prohibiting arbitrary code execution from database strings, avoiding cumulative floating-point drift in amortization tables, and avoiding hidden state-specific tax assumptions.
 - **Consequences:** Each newly built tool requires registering its `componentKey` in both `backend/src/modules/tools/tool.key.ts` (`APPROVED_COMPONENT_KEYS`) and `frontend/src/tools/registry/keys.ts` + `index.ts`, then assigning it to the MongoDB tool record via `/admin/tools/[id]/edit` or `npm run tool:assign`.
+- **Status:** Accepted
+
+## ADR-010: Storage driver for media files
+- **Date:** 2026-11-12
+- **Decision:** `STORAGE_DRIVER` selects where new media files go. `local` (default) writes `backend/uploads` and stores the public URL as `/uploads/media/<uuid>.<ext>`. `s3` keeps the signed browser `PUT`. Delete follows the stored URL, so a later switch to S3 does not strand files already on disk.
+- **Reason:** S3 stays in the codebase, but the current host does not need a paid bucket. One env change moves new uploads to S3.
+- **Consequences:** Local bytes go Browser → `PUT /api/media-upload` → Express `PUT /admin/media/object`. The browser still does not call Express. Existing S3 objects stay on S3. Files already saved on disk stay on disk until they are deleted or uploaded again.
 - **Status:** Accepted
 

@@ -16,6 +16,8 @@ const envSchema = z.object({
   SMTP_USER: z.string().default(''),
   SMTP_PASS: z.string().default(''),
   EMAIL_FROM: z.string().default(''),
+  STORAGE_DRIVER: z.enum(['local', 's3']).default('local'),
+  UPLOAD_DIR: z.string().default('uploads'),
   AWS_ACCESS_KEY: z.string().default(''),
   AWS_SECRET_KEY: z.string().default(''),
   BUCKET_REGION: z.string().default(''),

@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 import { AppError } from '../../middleware/error.middleware';
-import { deleteMediaObject, headMediaObject, mediaPublicUrl, signMediaUpload } from '../../services/s3.service';
+import { headStored, publicUrlFor, removeStored, uploadTarget } from '../../services/storage';
 import type { ConfirmMediaInput, ListMediaQuery, SignMediaInput } from '../../validation/media.schema';
 import { extensionFor, isOwnedMediaKey, MEDIA_MAX_BYTES, MEDIA_TYPE_FILTER, normalizeContentType } from './media.key';
 import { MediaAsset, type IMediaAsset } from './media.model';
@@ -76,12 +76,13 @@ export async function createMediaUpload(input: SignMediaInput) {
   }
 
   const key = `media/${randomUUID()}.${extension}`;
-  const uploadUrl = await signMediaUpload({ key, contentType, size: input.size });
+  const target = await uploadTarget({ key, contentType, size: input.size });
   return {
-    uploadUrl,
+    driver: target.driver,
+    uploadUrl: target.uploadUrl,
     key,
     contentType,
-    publicUrl: mediaPublicUrl(key),
+    publicUrl: publicUrlFor(key),
   };
 }
 
@@ -90,7 +91,7 @@ export async function confirmMediaUpload(input: ConfirmMediaInput): Promise<Medi
   const contentType = normalizeContentType(input.contentType);
   if (!extensionFor(contentType)) throw new AppError('This file type is not allowed.', 400, 'UNSUPPORTED_TYPE');
 
-  const stored = await headMediaObject(input.key);
+  const stored = await headStored(input.key);
   if (!stored.size || stored.size > MEDIA_MAX_BYTES) {
     throw new AppError('Uploaded file is empty or larger than 10 MB.', 400, 'FILE_TOO_LARGE');
   }
@@ -108,7 +109,7 @@ export async function confirmMediaUpload(input: ConfirmMediaInput): Promise<Medi
       height: input.height,
       altText: input.altText?.trim() || fileName.replace(/\.[^.]+$/, ''),
       key: input.key,
-      url: mediaPublicUrl(input.key),
+      url: publicUrlFor(input.key),
     });
     return toItem(doc);
   } catch (error) {
@@ -122,7 +123,7 @@ export async function confirmMediaUpload(input: ConfirmMediaInput): Promise<Medi
 export async function deleteMedia(id: string): Promise<{ id: string }> {
   const doc = await MediaAsset.findById(id);
   if (!doc) throw new AppError('Media asset not found.', 404, 'NOT_FOUND');
-  await deleteMediaObject(doc.key);
+  await removeStored(doc.url, doc.key);
   await doc.deleteOne();
   return { id: doc.id };
 }

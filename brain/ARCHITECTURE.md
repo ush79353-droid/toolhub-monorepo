@@ -35,9 +35,9 @@ Browser  ──►  Next.js Server (RSC / Server Actions)  ──►  Express AP
 2. **Express is the authoritative backend for persistence, auth, and integrations.**
    - All MongoDB access lives in `backend/` via Mongoose (`backend/src/modules/*/*.model.ts`).
    - Session validation, password hashing, email delivery, and AWS S3 signing happen strictly in `backend/`.
-3. **Direct Browser Upload Exception (AWS S3 only, not Express):**
-   - In `/admin/media`, the browser requests a short-lived (300s) pre-signed S3 `PUT` URL via a Next.js Server Action (`requestMediaUploadAction` → Express `POST /api/v1/admin/media/upload-url`), uploads binary bytes via `XMLHttpRequest` `PUT` **directly to AWS S3**, and then commits metadata via a second Server Action (`confirmMediaUploadAction` → Express `POST /api/v1/admin/media`), where Express runs `HeadObjectCommand` against S3 before writing to MongoDB.
-   - The browser still **never** communicates directly with Express.
+3. **Media upload follows `STORAGE_DRIVER`.**
+   - `local` (default): the browser `PUT`s the file to the Next.js route `/api/media-upload`, which forwards the bytes to Express `PUT /api/v1/admin/media/object`. Express writes `backend/uploads`. Public URLs are `/uploads/...`, rewritten by Next.js to that folder. The browser still does not call Express.
+   - `s3`: the browser requests a short-lived pre-signed URL (`requestMediaUploadAction` → `POST /api/v1/admin/media/upload-url`) and `PUT`s the bytes directly to S3, then `confirmMediaUploadAction` asks Express to `HeadObject` before saving `MediaAsset`.
 
 ---
 
@@ -92,5 +92,5 @@ Browser  ──►  Next.js Server (RSC / Server Actions)  ──►  Express AP
 - **MongoDB Required for Full Functionality:** Backend startup does **not** crash if initial MongoDB connection fails (`server.ts` logs warning and `/health` reports `status: 'degraded'`), allowing health checks while degraded.
 - **HTTPS in Production:** `setAdminSessionCookie` sets `secure: process.env.NODE_ENV === 'production'`.
 - **In-Memory Rate Limiter Caveat:** `rate-limit.middleware.ts` uses a per-process JavaScript `Map`; multi-instance horizontal scaling would require a shared store (e.g., Redis) if deployed across multiple backend replicas.
-- **External Services:** Password reset emails require `EMAIL_PROVIDER=smtp` and valid `SMTP_*`/`EMAIL_FROM` vars; media uploads require `AWS_*` S3 variables and bucket CORS allowing browser `PUT` from `CORS_ORIGIN`.
+- **External Services:** Password reset emails require `EMAIL_PROVIDER=smtp` and valid `SMTP_*`/`EMAIL_FROM` vars. Media uploads use local disk unless `STORAGE_DRIVER=s3`, which then needs `AWS_*` and bucket CORS allowing browser `PUT` from `CORS_ORIGIN`.
 
