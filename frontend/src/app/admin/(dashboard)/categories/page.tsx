@@ -59,7 +59,10 @@ function TreeNode({
               {KIND_LABEL[node.kind]}
             </span>
           </div>
-          <p className="truncate text-[11px] text-muted-foreground">/{node.slug}</p>
+          <p className="truncate text-[11px] text-muted-foreground">
+            /{node.slug}
+            {node.description ? ` · ${node.description}` : ''}
+          </p>
         </div>
         <Link
           href={`/admin/categories/${node.id}/edit`}

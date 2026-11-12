@@ -43,9 +43,11 @@ export function CategoryCard({ category, className = '' }: CategoryCardProps) {
           <h3 className="text-base font-bold text-foreground transition-colors group-hover:text-primary">
             {category.name}
           </h3>
-          <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
-            {category.description}
-          </p>
+          {category.description ? (
+            <p className="mt-1.5 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+              {category.description}
+            </p>
+          ) : null}
         </div>
       </div>
 
