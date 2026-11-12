@@ -19,7 +19,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 | :--- | :--- | :--- | :--- |
 | `/` | `(website)/page.tsx` | Server Component (`cache: 'no-store'`) fetching `/catalog/categories` and `/catalog/featured` via `serverApi` | **Implemented** (falls back to empty arrays if backend unreachable) |
 | `/tools` | `(website)/tools/page.tsx` | Renders `<Suspense>` + `ToolsDirectoryClient` (`'use client'`) using `sample-data.ts` (18 tools, 12 categories) | **Partially Implemented** (mock/sample data only) |
-| `/tools/[slug]` | `(website)/tools/[slug]/page.tsx` | Server Component fetching `getPublicToolBySlug(slug)` via Express first (preserving DB SEO metadata & `indexable`), resolving allowlisted `componentKey` via `ToolWorkspace` + `tools/registry`; falls back to `sample-data.ts` | **Implemented for Auto Loan Calculator** (`AutoLoanCalculator`); legacy fallback for sample slugs |
+| `/tools/[slug]` | `(website)/tools/[slug]/page.tsx` | Server Component fetching `getPublicToolBySlug(slug)` via Express (`cache: 'no-store'`), `generateMetadata()` via shared `lib/seo/tool-seo.ts` (absolute title, canonical from `NEXT_PUBLIC_SITE_URL`/`SITE_URL`, robots gated by active+indexable+allowlisted `componentKey`), safe JSON-LD, allowlisted `ToolWorkspace`; falls back to `sample-data.ts` | **Implemented** for Loan + Auto Loan; future calculators inherit the same SEO pipeline |
 | `/categories` | `(website)/categories/page.tsx` | Server Component loads `getPublicCategories()`, then `CategoriesClient` filters that list in the browser | **Implemented** (category detail pages still use sample data) |
 | `/categories/[slug]` | `(website)/categories/[slug]/page.tsx` | Server Component fetching `GET /catalog/categories/:slug`. Active tools are listed under their pillar and sub-pillar and link to `/tools/[slug]`. | **Implemented** |
 | `/about` | `(website)/about/page.tsx` | Server Component. Static editorial copy with a custom product board, mixed platform layout, and numbered principles. Category and tool totals come from `GET /catalog/categories` when reachable | **Implemented** |
@@ -78,7 +78,7 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
   - `auth/AuthSplit.tsx`
   - `layout/`: `AdminDashboardShell.tsx`, `AdminSidebar.tsx`, `AdminMobileSidebar.tsx`, `AdminHeader.tsx`, `AdminBreadcrumbs.tsx`, `admin-nav.tsx` (grouped collapsible menu: `Catalog`, `Insights`, `System`)
   - `dashboard/`: `StatCard.tsx`, `DashboardCharts.tsx`, `PopularToolsList.tsx`, `QuickActions.tsx`, `RecentActivity.tsx`
-  - `forms/`: `FormSection.tsx`, `CategoryForm.tsx`, `ToolForm.tsx`
+  - `forms/`: `FormSection.tsx`, `CategoryForm.tsx`, `ToolForm.tsx`, `ToolSeoSection.tsx` (collapsible Basic / OG / Twitter / Structured Data + search/social previews; Media Library pickers for OG/Twitter images; no robots/sitemap controls)
   - `tables/`: `DataTable.tsx`, `TableFilters.tsx`, `TablePagination.tsx`, `RowActions.tsx`
   - `shared/`: `AdminSearchDialog.tsx` (implemented component, currently not mounted in `AdminHeader.tsx`), `ConfirmDialog.tsx`, `EmptyState.tsx`, `ExecutionTypeBadge.tsx`, `LoadingState.tsx`, `PendingNotice.tsx`, `StatusBadge.tsx`
   - `profile/`: `AdminProfileClient.tsx`
@@ -92,8 +92,10 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 - `src/server/auth/actions.ts` — `loginAdminAction`, `logoutAdminAction`, `updateAdminProfileAction`, `changeAdminPasswordAction`, `forgotPasswordAction`, `resetPasswordAction`.
 - `src/server/categories/actions.ts` — `listCategoriesAction`, `getCategoryAction`, `listCategoryOptionsAction`, `createCategoryAction`, `updateCategoryAction`, `deleteCategoryAction`.
 - `src/server/media/actions.ts` — `listMediaAction`, `requestMediaUploadAction`, `confirmMediaUploadAction`, `deleteMediaAction`.
-- `src/server/tools/actions.ts` — `listToolsAction`, `listToolPlacementAction`, `getToolAction`, `saveToolAction`, `deleteToolAction` (supports `executionType` and `componentKey`).
-- `src/server/catalog/tools.ts` — `getPublicToolBySlug` (`React.cache` + `server-only`, calls `GET /catalog/tools/:slug`).
+- `src/server/tools/actions.ts` — `listToolsAction`, `listToolPlacementAction`, `getToolAction`, `saveToolAction` (`revalidatePath('/tools/[slug]')` after save), `deleteToolAction` (supports `executionType` and `componentKey` + full optional SEO payload).
+- `src/server/catalog/tools.ts` — `getPublicToolBySlug` (`React.cache` + `server-only`, `cache: 'no-store'`, calls `GET /catalog/tools/:slug`).
+- `src/server/seo/public-site.ts` — production-safe public origin helper (`NEXT_PUBLIC_SITE_URL` / `SITE_URL`; never emits localhost as production canonical).
+- `src/lib/seo/tool-seo.ts` — shared optional-field fallbacks, robots/canonical/social builders, safe JSON-LD serializers (+ `tool-seo.test.ts`).
 
 ---
 

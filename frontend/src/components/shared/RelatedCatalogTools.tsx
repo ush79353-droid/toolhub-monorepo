@@ -48,7 +48,7 @@ export function RelatedCatalogTools({
         </Link>
       </div>
 
-      <ul className="grid list-disc grid-cols-1 gap-x-6 gap-y-1.5 pl-5 sm:grid-cols-2">
+      <ul className="list-disc space-y-1.5 pl-5">
         {tools.map((tool) => {
           const isImplemented = tool.isActive && isApprovedComponentKey(tool.componentKey);
           const isPreviewRoute =

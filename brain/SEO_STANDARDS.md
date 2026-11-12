@@ -16,12 +16,12 @@ Every editable SEO field is optional. Blank means “use fallback.” Saving a t
 
 ## 3. Supported Fields
 
-Basic: `metaTitle`, `metaDescription`, `keywords`, `canonicalUrl`, `indexable`, `robotsFollow`  
-Advanced robots: `robotsNoArchive`, `robotsNoSnippet`, `robotsNoImageIndex`, `robotsMaxSnippet`, `robotsMaxImagePreview`, `robotsMaxVideoPreview`  
+Basic (Admin UI): `metaTitle`, `metaDescription`, `keywords`, `canonicalUrl`  
 Open Graph: `ogTitle`, `ogDescription`, `ogImageUrl`, `ogImageAlt`, `ogType`, `ogSiteName`  
 Twitter/X: `twitterCard`, `twitterTitle`, `twitterDescription`, `twitterImageUrl`, `twitterImageAlt`, `twitterSite`  
 Structured data: `schemaType`, `includeFaqSchema`  
-Sitemap preference: `sitemapInclude`, `sitemapPriority`, `sitemapChangeFrequency` (compatibility only; full sitemap generator is pending)
+
+Admin SEO UI does **not** expose robots directives or sitemap fields. Public robots default to index/follow when the tool is active + allowlisted/`implemented`; otherwise `noindex`.
 
 ## 4. Fallbacks
 
@@ -35,7 +35,6 @@ Sitemap preference: `sitemapInclude`, `sitemapPriority`, `sitemapChangeFrequency
 | OG image | OG image → `siteConfig.defaultOgImage` |
 | Twitter title/description/image | Twitter → OG → meta fallbacks |
 | Robots index | Admin index **and** tool is active **and** `componentKey` is allowlisted |
-| Sitemap preference | Must also pass effective indexability |
 
 ## 5. Canonical Rules
 
