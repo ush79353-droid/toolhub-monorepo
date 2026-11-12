@@ -15,7 +15,7 @@ Before building or changing any calculator:
 
 Rules:
 
-- Reuse the Loan Calculator page shell / sticky aside / shared currency / SEO pipeline.
+- Reuse the Auto Loan Calculator page shell / sticky sidebar / shared currency / SEO pipeline.
 - Do not hardcode per-tool SEO metadata in calculator components.
 - Do not invent a second sticky, currency, clipboard, or metadata system.
 - Keep calculator-specific math/validation local; keep presentation conventions shared.

@@ -32,7 +32,7 @@ Verified in `StatusBadge.tsx`, `PendingNotice.tsx`, forms, and alerts:
 
 - **Fonts:** Uses Tailwind defaults (`font-sans`, `font-mono`) with `antialiased` and `font-feature-settings: 'rlig' 1, 'calt' 1` on `body`. No custom `next/font` loader is currently configured.
 - **Public Hero / Section Headings:** `text-4xl font-semibold tracking-tight text-accent sm:text-5xl` (home), `text-3xl font-extrabold tracking-tight text-accent sm:text-4xl` (directories), `text-xl font-semibold` / `text-2xl font-bold`.
-- **Interactive Calculator & Editorial Pages (master: Loan Calculator — see `TOOL_DETAIL_PAGE_STANDARDS.md`):**
+- **Interactive Calculator & Editorial Pages (master: Auto Loan Calculator — see `TOOL_DETAIL_PAGE_STANDARDS.md`):**
   - Page H1: `text-[30px] font-bold … sm:text-[34px] lg:text-[36px]` on accent; article H2 `text-[21px] font-semibold … sm:text-2xl`; in-card section H2 `text-lg … sm:text-xl`.
   - Form labels: `text-[13px] font-medium text-accent`; helper `text-xs font-normal text-muted-foreground`; controls `h-11` with centered prefix/suffix units and `autoComplete="off"`.
   - Article body: `text-[15px] font-normal leading-[1.72] sm:text-base sm:leading-[1.75]` on unified white cards with `divide-y` sections.
@@ -52,7 +52,7 @@ Verified in `StatusBadge.tsx`, `PendingNotice.tsx`, forms, and alerts:
 - **Public Container (`Container.tsx`):** `mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8` (note `tailwind.config.ts` also sets `container.screens['2xl'] = '1400px'`).
 - **Ad placeholders (`AdSlot`):** Dashed `border-border`, `rounded-xl`, canvas `#F7F8F6`, centered muted “Advertisement” label; reserved min-heights for leaderboard (~90–100px) and rectangle (~250px). Never sticky; never inside calculator panels. See `AD_STANDARDS.md`.
 - **Public Header:** Sticky `h-16` (`top-0 z-40`), white translucent backdrop (`bg-white/95 backdrop-blur-md`).
-- **Height-Aware Sticky Calculator Sidebar (`StickyCalculatorAside`):** Enabled on desktop (`>= 1024px` and viewport height `>= 560px`) with `top: 84px` and viewport-capped `max-height` (`vh − 84 − 20`); tall calculators scroll **inside** the aside (`overflow-y-auto`, scrollbar hidden); focus-capture uses `scrollIntoView({ block: 'nearest' })`; static flow below `1024px`. Never used on `/embed/*`.
+- **Calculator aside + sticky right rail:** `StickyCalculatorAside` is a plain flow `<aside>` landmark (no sticky/internal overflow). Desktop right `ToolDetailSidebar` uses `lg:sticky lg:top-[84px]` with viewport-capped max-height. Never used on `/embed/*`.
 - **Admin Shell (`AdminDashboardShell.tsx`):**
   - Desktop sidebar (`AdminSidebar`): Sticky full-height `bg-brand-darkAccent text-white`, collapsible between `w-64` (256px) and `w-[72px]`. Uses `.admin-scroll` custom thin scrollbar (`globals.css`).
   - Admin top header (`AdminHeader`): Sticky `h-16` `bg-brand-darkAccent text-white`, border `border-white/10`.

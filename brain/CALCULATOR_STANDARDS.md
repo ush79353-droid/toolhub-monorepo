@@ -1,6 +1,6 @@
 # Calculator Standards — Omega Calculators
 
-> Master conventions for every future calculator. The Loan Calculator page is the production reference implementation.
+> Master conventions for every future calculator. The Auto Loan Calculator page is the production reference implementation.
 
 Read with: `AGENTS.md`, `TOOL_DETAIL_PAGE_STANDARDS.md` (authoritative page shell), `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` (workflow), `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `ARCHITECTURE.md`.
 
@@ -13,13 +13,13 @@ Read with: `AGENTS.md`, `TOOL_DETAIL_PAGE_STANDARDS.md` (authoritative page shel
 - API boundary: Browser → Next.js Server → Express → MongoDB
 - Never call Express from browser calculator components
 
-## 2. Page Shell (Loan Calculator reference)
+## 2. Page Shell (Auto Loan Calculator reference)
 
 - Breadcrumbs above content
-- Two-column desktop (`~62%` editorial / `~38%` calculator), single column on `<1024px`
-- One unified left intro card: title + intro + TOC + related links
-- Guide article as its own card below
-- Sticky calculator uses `StickyCalculatorAside` (viewport-capped, internal scroll, hidden scrollbar)
+- Full-width intro (H1 + description), then two-column desktop (`~66%` calculator/guide left / `~34%` sidebar right), single column on `<1024px`
+- Right rail: `ToolDetailSidebar` (More tools list, other-topic links, dark country-rules pills); desktop sticky under header
+- Guide article under the calculator on the left
+- Calculator column uses `StickyCalculatorAside` as a plain flow `<aside>` landmark
 - Soft elevation shadow on calculator panel; public canvas `bg-white`
 
 ## 3. Typography

@@ -289,7 +289,15 @@ export function LoanAmortizationTable({ result }: LoanAmortizationTableProps) {
   };
 
   if (result.schedule.length === 0) {
-    return null;
+    return (
+      <div className="rounded-xl border border-border bg-white p-4 text-center">
+        <h3 className="text-sm font-medium text-accent">Amortization Schedule</h3>
+        <p className="mt-1 text-xs font-normal text-muted-foreground">
+          No schedule is generated when Amount Financed is{' '}
+          {formatCurrencyValue(result.amountFinanced, result.currency)}.
+        </p>
+      </div>
+    );
   }
 
   return (

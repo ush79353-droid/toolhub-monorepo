@@ -1,11 +1,13 @@
 # Tool Detail Page Standards — OmegaCalculators
 
-> **Official master reference:** Loan Calculator (`/tools/loan-calculator`, `componentKey: LoanCalculator`).  
+> **Official master reference:** Auto Loan Calculator (`/tools/auto-loan-calculator`, `componentKey: AutoLoanCalculator`).  
 > Every future public tool detail page must inherit this shared shell. Tool-specific inputs, math, results, and article copy may differ; layout/architecture must not.
+>
+> **History:** Loan Calculator (`/tools/loan-calculator`) was the previous master (locked 2026-11-12, ADR-014). Superseded 2026-11-13 by ADR-016 — Auto Loan is now the final approved visual master. Loan remains a peer implementation that must follow Auto Loan’s shared design.
 
 Read with: `AGENTS.md`, `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `CALCULATOR_STANDARDS.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `DESIGN_SYSTEM.md`.
 
-**Verification:** Code-inspected 2026-11-12. Visually inspected live at `http://192.168.100.152:3000/tools/loan-calculator` (page title reflected admin SEO “Dynamic Meta Title”; Embed in calculator header; ads present; H1 “Loan Calculator”; related “Open” / “Coming soon”).
+**Verification:** Code-inspected 2026-11-13. Visually inspected live at `http://192.168.100.152:3000/tools/auto-loan-calculator` (desktop 1440 + mobile). Loan Calculator cross-checked at `/tools/loan-calculator` for shell parity.
 
 ---
 
@@ -15,7 +17,7 @@ Read with: `AGENTS.md`, `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `CALCULATOR_STANDARD
 | :--- | :--- |
 | Shared `/tools/[slug]` page shell | Per-tool financial formulas |
 | Layout, typography, spacing, cards | Forcing loan-specific fields onto unrelated tools |
-| SEO, ads, embed, sticky aside | Redesigning the master page per calculator |
+| SEO, ads, embed, calculator aside | Redesigning the master page per calculator |
 | Registry + Mongo catalog wiring | Direct browser → Express calls |
 
 **Exception rule:** Any intentional deviation needs an ADR in `DECISIONS.md` and Git review. Do not invent a second page architecture.
@@ -42,17 +44,19 @@ Verified DOM/section order for two-column tools:
 1. Website `Header`
 2. `Breadcrumbs` (`mb-4`)
 3. `AdSlot` `tool_top_banner` (`mb-5`) — enabled
-4. Main grid:
-   - **Mobile/tablet (`order-1`):** calculator column first
-   - **Desktop (`lg`):** left editorial `order-1`, right calculator `order-2` / `col-start-2`
-5. Left column (`space-y-6`):
-   - Unified intro card: category eyebrow → **H1** → intro → TOC → Related
+4. Full-width intro card: category eyebrow → **H1** → intro
+5. Main grid:
+   - **Mobile/tablet (`order-1`):** calculator + TOC + guide first; sidebar second
+   - **Desktop (`lg`):** left calculator/guide `col-start-1`, right sidebar widgets `col-start-2`
+6. Left column (`space-y-6`):
+   - `StickyCalculatorAside` → calculator panel (`headerActions` Embed + currency + form + results + schedule)
+   - TOC card
    - `AdSlot` `tool_article_middle` — enabled
    - Guide article (sections + FAQ)
    - `AdSlot` `tool_article_bottom` — **disabled** by default
-6. Right column: `StickyCalculatorAside` → calculator panel (`headerActions` Embed + currency + form + results + schedule)
-7. `AdSlot` `tool_bottom_banner` (`mt-8`) — enabled
-8. Website `Footer`
+7. Right column: `ToolDetailSidebar` — More tools list, Related in other topics, country-rules dark card; desktop `sticky` under header (`top: 84px`, viewport-capped max-height)
+8. `AdSlot` `tool_bottom_banner` (`mt-8`) — enabled
+9. Website `Footer`
 
 Conceptual outline matches this implementation; do not rearrange without approval.
 
@@ -64,11 +68,12 @@ Conceptual outline matches this implementation; do not rearrange without approva
 | :--- | :--- | :--- | :---: | :---: |
 | Container | `mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8` | `Container.tsx` | ✓ | ✓ |
 | Page vertical pad | `py-6 sm:py-9` | tools `[slug]/page.tsx` | ✓ | ✓ |
-| Main grid | `grid-cols-1 gap-7 lg:grid-cols-[minmax(0,1.62fr)_minmax(360px,1fr)] lg:items-start lg:gap-8` | page.tsx | ✓ | ✓ |
+| Main grid | `grid-cols-1 gap-7 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)] lg:items-start lg:gap-8` | page.tsx | ✓ | ✓ |
 | Left stack gap | `space-y-6` | page.tsx | ✓ | ✓ |
-| Intro/guide cards | `rounded-2xl border border-border bg-white` + `p-5 sm:p-6` (intro) / `px-5 py-6 sm:px-8 sm:py-8` (guide) | page / `LoanGuideArticle` | ✓ | ✓ |
-| Calculator card | `rounded-2xl border border-border bg-white` + elevation shadow (non-embed) | `LoanCalculator.tsx` | ✓ | ✓ |
-| Calculator shadow | `shadow-[0_12px_40px_-16px_rgba(22,60,67,0.28)]` | LoanCalculator | ✓ | ✓ |
+| Sidebar widget gap | `space-y-4` (`ToolDetailSidebar`) | ToolDetailSidebar.tsx | ✓ | ✓ |
+| Intro/guide cards | `rounded-2xl border border-border bg-white` + `p-5 sm:p-6` (intro) / `px-5 py-6 sm:px-8 sm:py-8` (guide) | page / `AutoLoanGuideArticle` | ✓ | ✓ |
+| Calculator card | `rounded-2xl border border-border bg-white` + elevation shadow (non-embed) | `AutoLoanCalculator.tsx` | ✓ | ✓ |
+| Calculator shadow | `shadow-[0_12px_40px_-16px_rgba(22,60,67,0.28)]` | AutoLoanCalculator | ✓ | ✓ |
 | Public canvas | `bg-white` (website layout) | `(website)/layout.tsx` | ✓ | ✓ |
 
 ---
@@ -149,22 +154,17 @@ Do **not** force loan fields onto unrelated tools. Do **reuse** heights, labels,
 
 ---
 
-## 8. Sticky sidebar (verified constants)
+## 8. Calculator aside (document flow)
 
-Source: `StickyCalculatorAside.tsx`
+Source: `StickyCalculatorAside.tsx` (name kept for registry continuity)
 
 | Rule | Value |
 | :--- | :--- |
-| Desktop sticky min width | `1024px` |
-| Min viewport height for sticky | `560px` |
-| Sticky `top` / header clearance | `84px` |
-| Bottom margin in max-height calc | `20px` |
-| Max height | `max(320, vh - 84 - 20)` |
-| Overflow | Internal `overflow-y-auto`, scrollbar hidden, `overscroll-contain` |
-| Focus | `scrollIntoView({ block: 'nearest' })` on focus capture |
-| Below breakpoint | Static flow; calculator `order-1` near top on mobile |
-
-Never put this sticky behavior inside `/embed/[slug]`.
+| Positioning | Normal document flow — **not** `position: sticky` |
+| Overflow | None; page scrolls as one unit (left + right columns together) |
+| Role | Semantic `<aside>` landmark with `aria-label` |
+| Mobile | Calculator `order-1` near top; editorial `order-2` |
+| Embed | Never reuse this aside shell inside `/embed/[slug]` |
 
 ---
 
@@ -224,8 +224,8 @@ Breakpoints used by the master page:
 
 | Width | Behavior |
 | :--- | :--- |
-| `<1024px` | Single column; calculator first (`order-1`); sticky off |
-| `≥1024px` and `vh≥560` | Two-column grid; sticky calculator |
+| `<1024px` | Single column; calculator first (`order-1`) |
+| `≥1024px` | Two-column grid; calculator/guide left (~66%), sidebar widgets right (~34%); unified page scroll |
 | `sm` / `lg` | Padding and type scale steps as in Tailwind classes above |
 
 Test matrix: 320, 375, 480, 768, 1024, 1280, 1440 — no horizontal overflow, no clipped controls.
@@ -248,7 +248,7 @@ A tool detail page is done only when:
 
 1. Registered allowlisted `componentKey` + Mongo catalog assignment
 2. Calculation engine + unit tests green
-3. UI follows this shell (grid, cards, `h-11`, sticky, header Embed)
+3. UI follows this shell (grid, cards, `h-11`, aside landmark, header Embed)
 4. Dynamic SEO + JSON-LD correct; sitemap slug list updated if new tool
 5. Topic-specific educational content + TOC + FAQs as appropriate
 6. Ads/embed inherited (no forks)

@@ -1,7 +1,7 @@
 # New Tool Development Playbook — OmegaCalculators
 
 Practical workflow for every new calculator / tool detail page.  
-**Master visual & architectural reference:** Loan Calculator (`/tools/loan-calculator`) — see `TOOL_DETAIL_PAGE_STANDARDS.md`.
+**Master visual & architectural reference:** Auto Loan Calculator (`/tools/auto-loan-calculator`) — see `TOOL_DETAIL_PAGE_STANDARDS.md`.
 
 Do not redesign the page shell. Do not invent a second sticky/SEO/ads/embed system. Tool-specific math and copy are free to differ.
 
@@ -22,16 +22,16 @@ Also: `git status` / fetch; do not overwrite unrelated work.
 
 ---
 
-## Step 2 — Inspect the master Loan Calculator reference
+## Step 2 — Inspect the master Auto Loan Calculator reference
 
-Open `/tools/loan-calculator` (local or staging) and skim:
+Open `/tools/auto-loan-calculator` (local or staging) and skim:
 
 - Shared page: `frontend/src/app/(website)/tools/[slug]/page.tsx`
-- Sticky: `StickyCalculatorAside.tsx`
-- Loan as UI pattern: `frontend/src/tools/calculators/loan/`
+- Calculator aside: `StickyCalculatorAside.tsx` + sticky right `ToolDetailSidebar`
+- Auto Loan as UI pattern: `frontend/src/tools/calculators/auto-loan/`
 - Registry: `frontend/src/tools/registry/`
 
-Confirm you will reuse the shell, not fork it.
+Confirm you will reuse the shell, not fork it. Peer reference (same shell, different fields): `/tools/loan-calculator`.
 
 ---
 

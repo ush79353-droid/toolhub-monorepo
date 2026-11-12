@@ -520,7 +520,7 @@ export function LoanForm({
         >
           <div className="min-w-0">
             <span className="block text-[13px] font-medium text-accent">Advanced Options</span>
-            <span className="block truncate text-xs font-normal text-muted-foreground">
+            <span className="block truncate text-xs font-normal text-muted-foreground tabular-nums">
               {advancedSummary}
             </span>
           </div>
@@ -534,7 +534,7 @@ export function LoanForm({
         {showAdvanced && (
           <div className="space-y-3.5 border-t border-border bg-white/70 p-3.5">
             {/* Recurring Additional Payment */}
-            <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3.5 min-[420px]:grid-cols-2">
               <div>
                 <div className="mb-1 flex min-h-6 items-center gap-1">
                   <label htmlFor="loan-extra-amount" className="text-[13px] font-medium text-accent">
@@ -586,7 +586,7 @@ export function LoanForm({
 
             {/* One-Time Extra Payment */}
             <div>
-              <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
+              <div className="grid grid-cols-1 gap-3.5 min-[420px]:grid-cols-2">
                 <div>
                   <div className="mb-1 flex min-h-6 items-center gap-1">
                     <label
@@ -653,7 +653,7 @@ export function LoanForm({
             </div>
 
             {/* Origination Fee & Handling */}
-            <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3.5 min-[420px]:grid-cols-2">
               <div>
                 <div className="mb-1 flex min-h-6 items-center justify-between gap-1">
                   <label htmlFor="loan-fee" className="text-[13px] font-medium text-accent">

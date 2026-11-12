@@ -8,6 +8,10 @@ import { ToolWorkspace } from '@/components/shared/ToolWorkspace';
 import { CategoryIcon } from '@/components/shared/CategoryIcon';
 import { FAQAccordion, type FAQItem } from '@/components/shared/FAQAccordion';
 import { RelatedCatalogTools } from '@/components/shared/RelatedCatalogTools';
+import {
+  ToolDetailSidebar,
+  type ToolDetailSidebarCountryRules,
+} from '@/components/shared/ToolDetailSidebar';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { CalculatorEmbedDialog } from '@/components/tools/CalculatorEmbedDialog';
 import { Badge } from '@/components/ui/badge';
@@ -50,6 +54,15 @@ import { LOAN_FAQS, LOAN_TOC_ITEMS } from '@/tools/calculators/loan/content';
 import { isApprovedComponentKey } from '@/tools/registry/keys';
 import type { ToolMetadata } from '@/types/tool';
 
+const SIDEBAR_COUNTRIES = [
+  'India',
+  'UAE',
+  'United Kingdom',
+  'United States',
+  'Canada',
+  'Australia',
+] as const;
+
 const TWO_COLUMN_TOOL_CONFIGS: Record<
   string,
   {
@@ -58,6 +71,7 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     tocItems: readonly TableOfContentsItem[];
     GuideArticle: React.ComponentType;
     faqs: readonly FAQItem[];
+    countryRules: ToolDetailSidebarCountryRules;
   }
 > = {
   AutoLoanCalculator: {
@@ -67,6 +81,10 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     tocItems: AUTO_LOAN_TOC_ITEMS,
     GuideArticle: AutoLoanGuideArticle,
     faqs: AUTO_LOAN_FAQS,
+    countryRules: {
+      title: 'Auto loan rules by country',
+      countries: SIDEBAR_COUNTRIES,
+    },
   },
   LoanCalculator: {
     subtitleLead:
@@ -75,6 +93,10 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     tocItems: LOAN_TOC_ITEMS,
     GuideArticle: LoanGuideArticle,
     faqs: LOAN_FAQS,
+    countryRules: {
+      title: 'Loan rules by country',
+      countries: SIDEBAR_COUNTRIES,
+    },
   },
 };
 
@@ -210,6 +232,15 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
 
   if (twoColConfig) {
     const GuideArticleComponent = twoColConfig.GuideArticle;
+    const sidebarGroupLabel = pillarName || categoryName;
+    const relatedToolsList = dbTool?.relatedTools ?? [];
+    const samePillarTools = relatedToolsList.filter(
+      (tool) => !pillarName || tool.pillarName === pillarName
+    );
+    const moreTools = (samePillarTools.length > 0 ? samePillarTools : relatedToolsList).slice(0, 6);
+    const otherTopicTools = relatedToolsList
+      .filter((tool) => pillarName && tool.pillarName && tool.pillarName !== pillarName)
+      .slice(0, 4);
     const jsonLd =
       dbTool &&
       serializeJsonLd(
@@ -247,71 +278,55 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             className="mb-4"
           />
 
+          <div className="mb-5 rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
+            <header>
+              {/* Master shell (Loan Calculator): no decorative tool icon in the intro card */}
+              <div className="min-w-0">
+                {categoryName ? (
+                  <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
+                    {categoryName}
+                  </p>
+                ) : null}
+                <h1 className="text-[30px] font-bold leading-[1.12] tracking-[-0.02em] text-accent sm:text-[34px] lg:text-[36px]">
+                  {toolMetadata.title}
+                </h1>
+                <p className="mt-2.5 max-w-3xl text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.75]">
+                  {toolMetadata.description} {twoColConfig.subtitleLead}
+                </p>
+              </div>
+            </header>
+          </div>
+
           <AdSlot placement="tool_top_banner" className="mb-5" />
 
-          {/* Responsive 2-Column Workspace: Left (~62%) unified intro + guide, Right (~38%) sticky calculator */}
-          <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,1.62fr)_minmax(360px,1fr)] lg:items-start lg:gap-8">
-            {/* Calculator near top on mobile/tablet; sticky right column on desktop */}
-            <StickyCalculatorAside
-              ariaLabel={twoColConfig.asideAriaLabel}
-              className="order-1 min-w-0 lg:order-2 lg:col-start-2 lg:row-start-1"
-            >
-              <ToolWorkspace
-                tool={toolMetadata}
-                headerActions={
-                  dbTool &&
-                  isToolEmbedEligible({
-                    embedEnabled: dbTool.embedEnabled,
-                    isActive: dbTool.isActive,
-                    componentKey: dbTool.componentKey,
-                    embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
-                    embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
-                    embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
-                  }) ? (
-                    <CalculatorEmbedDialog
-                      toolName={dbTool.name}
-                      toolSlug={dbTool.slug}
-                      defaultHeight={dbTool.embedDefaultHeight}
-                    />
-                  ) : undefined
-                }
-              />
-            </StickyCalculatorAside>
+          {/* Left (~66%) calculator + guide; Right (~34%) sidebar widgets — page scrolls as one */}
+          <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)] lg:items-start lg:gap-8">
+            <div className="order-1 min-w-0 space-y-6 lg:col-start-1 lg:row-start-1">
+              <StickyCalculatorAside ariaLabel={twoColConfig.asideAriaLabel}>
+                <ToolWorkspace
+                  tool={toolMetadata}
+                  headerActions={
+                    dbTool &&
+                    isToolEmbedEligible({
+                      embedEnabled: dbTool.embedEnabled,
+                      isActive: dbTool.isActive,
+                      componentKey: dbTool.componentKey,
+                      embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
+                      embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
+                      embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
+                    }) ? (
+                      <CalculatorEmbedDialog
+                        toolName={dbTool.name}
+                        toolSlug={dbTool.slug}
+                        defaultHeight={dbTool.embedDefaultHeight}
+                      />
+                    ) : undefined
+                  }
+                />
+              </StickyCalculatorAside>
 
-            <div className="order-2 min-w-0 space-y-6 lg:order-1 lg:col-start-1 lg:row-start-1">
-              {/* One card: Hero + Table of Contents + Related Calculators */}
               <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
-                <header>
-                  {/* Master shell (Loan Calculator): no decorative tool icon in the intro card */}
-                  <div className="min-w-0">
-                    {categoryName ? (
-                      <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
-                        {categoryName}
-                      </p>
-                    ) : null}
-                    <h1 className="text-[30px] font-bold leading-[1.12] tracking-[-0.02em] text-accent sm:text-[34px] lg:text-[36px]">
-                      {toolMetadata.title}
-                    </h1>
-                    <p className="mt-2.5 max-w-3xl text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.75]">
-                      {toolMetadata.description} {twoColConfig.subtitleLead}
-                    </p>
-                  </div>
-                </header>
-
-                <div className="mt-6 border-t border-border pt-6">
-                  <TableOfContents items={twoColConfig.tocItems} />
-                </div>
-
-                {dbTool && dbTool.relatedTools.length > 0 ? (
-                  <div className="mt-6 border-t border-border pt-6">
-                    <RelatedCatalogTools
-                      tools={dbTool.relatedTools}
-                      groupLabel={pillarName || categoryName}
-                      browseHref="/tools"
-                      framed={false}
-                    />
-                  </div>
-                ) : null}
+                <TableOfContents items={twoColConfig.tocItems} />
               </div>
 
               <AdSlot placement="tool_article_middle" />
@@ -319,6 +334,17 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
               <GuideArticleComponent />
 
               <AdSlot placement="tool_article_bottom" />
+            </div>
+
+            <div className="order-2 min-w-0 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-[84px] lg:max-h-[calc(100vh-104px)] lg:overflow-y-auto lg:overscroll-contain">
+              <ToolDetailSidebar
+                groupLabel={sidebarGroupLabel}
+                browseHref={safeCategoryHref}
+                browseLabel={`See all ${categoryName.toLowerCase()} tools`}
+                moreTools={moreTools}
+                otherTopicTools={otherTopicTools}
+                countryRules={twoColConfig.countryRules}
+              />
             </div>
           </div>
 

@@ -43,7 +43,7 @@ To avoid merge conflicts and stale context:
 | — | [`SEO_STANDARDS.md`](./SEO_STANDARDS.md) | Optional admin SEO fields, fallbacks, canonical/robots/social/JSON-LD rules | Tool SEO schema, metadata pipeline, or cache policy changes |
 | — | [`EMBED_STANDARDS.md`](./EMBED_STANDARDS.md) | Shared `/embed/[slug]` eligibility, admin gates, CSP, auto-resize, noindex | Calculator iframe embedding or framing headers |
 | — | [`AD_STANDARDS.md`](./AD_STANDARDS.md) | Dummy tool-page ad slots, density rules, embed exclusion, future AdSense hooks | Tool detail ad placeholders or live ads work |
-| — | [`TOOL_DETAIL_PAGE_STANDARDS.md`](./TOOL_DETAIL_PAGE_STANDARDS.md) | **Authoritative master** `/tools/[slug]` shell (Loan Calculator reference): layout, typography, sticky, SEO, ads, embed, a11y, DoD | Any calculator detail page or shared tool shell change |
+| — | [`TOOL_DETAIL_PAGE_STANDARDS.md`](./TOOL_DETAIL_PAGE_STANDARDS.md) | **Authoritative master** `/tools/[slug]` shell (Auto Loan Calculator reference): layout, typography, sticky sidebar, SEO, ads, embed, a11y, DoD | Any calculator detail page or shared tool shell change |
 | — | [`NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`](./NEW_TOOL_DEVELOPMENT_PLAYBOOK.md) | Step-by-step workflow for shipping a new calculator without redesigning the shell | New tool implementation process or DoD checklist changes |
 | — | [`DECISIONS.md`](./DECISIONS.md) | Architecture Decision Records (ADRs) | Architectural or technical policy decisions occur |
 | — | [`TASKS.md`](./TASKS.md) | Shared task board (`Planned`, `In Progress`, `Blocked`, `Completed`) | Starting, blocking, or completing tasks |
