@@ -2,7 +2,7 @@
 
 Database: **MongoDB** accessed strictly from `backend/` via **Mongoose** (`^8.10.1`, `mongoose.set('strictQuery', true)`).
 
-Only **5 Mongoose models** exist in the codebase today. No other collections (`analytics`, `audit_logs`, `cms_pages`, `settings`, `integrations`) are implemented yet.
+Only the Mongoose models documented below exist. No other collections (`analytics`, `audit_logs`, `cms_pages`, `settings`, `integrations`) are implemented yet.
 
 ---
 
@@ -167,4 +167,37 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 - `{ nameKey: 1 }` (`unique: true`)
 - `{ slug: 1 }` (`unique: true`)
 - `{ category: 1, updatedAt: -1 }`
+
+---
+
+## Currency rates
+
+### `CurrencyRate` (collection: `currencyrates`)
+
+- **Source:** `backend/src/modules/currency/currency-rate.model.ts`
+- **Responsibility:** Latest conversion table for one base currency. One document per `baseCurrency`.
+
+| Field | Type | Constraints | Default |
+| :--- | :--- | :--- | :--- |
+| `baseCurrency` | `String` | Required, unique, trimmed, uppercase | — |
+| `fullName` | `String` | Required, trimmed | — |
+| `symbol` | `String` | Required, trimmed | — |
+| `conversionRates` | `Map<String, Number>` | Required. Units of each code per 1 base unit | — |
+| `fetchedAt` | `Date` | When the provider response was saved | `Date.now` |
+| `isActive` | `Boolean` | | `true` |
+| `createdAt`, `updatedAt` | `Date` | `{ timestamps: true }` | — |
+
+### `CurrencyRateHistory` (collection: `currencyratehistories`)
+
+- **Source:** `backend/src/modules/currency/currency-rate-history.model.ts`
+- **Responsibility:** One snapshot per base currency each time the daily job saves rates.
+
+| Field | Type | Constraints |
+| :--- | :--- | :--- |
+| `baseCurrency` | `String` | Required, trimmed, uppercase |
+| `conversionRates` | `Map<String, Number>` | Required |
+| `fetchedAt` | `Date` | Required |
+
+Index: `{ baseCurrency: 1, fetchedAt: -1 }`.
+
 

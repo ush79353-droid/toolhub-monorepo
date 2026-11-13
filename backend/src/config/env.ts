@@ -23,6 +23,7 @@ const envSchema = z.object({
   BUCKET_REGION: z.string().default(''),
   AWS_BUCKET_NAME: z.string().default(''),
   AWS_BASE_URL: z.string().default(''),
+  CURRENCY_EXCHANGE_API_KEY: z.string().default(''),
 });
 
 const parsed = envSchema.safeParse(process.env);

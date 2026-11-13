@@ -116,3 +116,11 @@
 - **Consequences:** Supersedes ADR-014’s master designation; agents must inspect Auto Loan (not Loan) before building new calculators; do not redesign Auto Loan’s approved appearance; do not create competing shells.
 - **Status:** Accepted
 
+## ADR-017: Daily currency rates from one USD quote
+- **Date:** 2026-11-13
+- **Decision:** Store `CurrencyRate` and `CurrencyRateHistory` in Mongo. The backend process schedules the fetch for local midnight (`0 0 * * *`) with `setTimeout`. One ExchangeRate-API `latest/USD` response is divided into a conversion map for each tracked base. No Country model and no extra scheduler package.
+- **Reason:** The provider already returns every pair against USD, so a per-currency request loop would spend the key without changing the stored tables.
+- **Consequences:** The job runs only while the API process is up at midnight. `npm run currency:fetch` runs the same save on demand. An empty `CURRENCY_EXCHANGE_API_KEY` skips the request.
+- **Update (2026-11-13):** The timer is `node-cron` schedule `0 0 * * *`, replacing the earlier `setTimeout` loop.
+- **Status:** Accepted
+

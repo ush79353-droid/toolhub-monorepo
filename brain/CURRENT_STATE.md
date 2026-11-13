@@ -15,7 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
-- Express server bootstrap, `/api/v1/health`, Zod env config, Mongoose connection & graceful shutdown (`backend/src/server.ts`, `app.ts`).
+- Express server bootstrap, `/api/v1/health`, Zod env config, Mongoose connection & graceful shutdown (`backend/src/server.ts`, `app.ts`). After Mongo connects, a currency job is armed for the next local midnight.
 - Admin authentication: Argon2id hashing, MongoDB TTL `AdminSession`, `HttpOnly` `admin_session` cookie, Edge + Server layout route protection, brute-force lockout, IP rate limiters, SMTP password reset, profile name update, password change with global session revocation (`backend/src/modules/auth/`, `frontend/src/server/auth/`).
 - Admin Category tree management (`/admin/categories`, `new`, `[id]/edit`) — 3-level `category → pillar → sub_pillar` CRUD, search, pagination, cascade delete, and `categories:seed` script (`19` categories, `155` pillars). Root categories also store `iconUrl` / `iconMedia` (`categories:icons`) and a public `description` (`categories:descriptions` fills empty root descriptions). The create and edit forms save that description.
 - Admin Media Library (`/admin/media`) — `STORAGE_DRIVER=local` stores files in `backend/uploads` (served at `/uploads`). `STORAGE_DRIVER=s3` keeps the signed browser `PUT`. MongoDB `MediaAsset` records the URL. List, filter, preview, and delete work for both.

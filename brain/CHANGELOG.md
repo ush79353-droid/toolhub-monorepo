@@ -252,3 +252,15 @@
 - **Important Files:** `frontend/src/tools/electrical/conductor.ts`, `frontend/src/tools/calculators/twelve-volt-wire/*`, registry, `page.tsx`, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-twelve-volt-wire-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** Conductor tests passed with the loan, auto-loan, RREF, ARM, and 100-day suites from the same pass. Mongo record `6af46f15a27d8d1d4e99074d` assigned. Typecheck, lint, and production build recorded with this change.
 
+### 2026-11-13 — Daily currency rate job
+- **Summary:** Added `CurrencyRate` and `CurrencyRateHistory`. The API process schedules a local-midnight fetch (`0 0 * * *`). One USD quote is expanded into a conversion map for each tracked base currency. `npm run currency:fetch` runs the same save immediately.
+- **Important Files:** `backend/src/modules/currency/*`, `backend/src/jobs/currency-rates.cron.ts`, `backend/src/scripts/fetch-currency-rates.ts`, `backend/src/server.ts`, `backend/src/config/env.ts`.
+- **Verification:** `npx tsx src/jobs/currency-rates.cron.ts` printed `currency-rates cron ok`. `npm run currency:fetch` saved the tracked bases. Backend `npx tsc --noEmit` passed.
+
+### 2026-11-13 — Currency job uses node-cron
+- **Summary:** The midnight currency fetch is scheduled with `node-cron` (`0 0 * * *`, `noOverlap`) instead of a `setTimeout` loop.
+- **Important Files:** `backend/src/jobs/currency-rates.cron.ts`, `backend/package.json`.
+- **Verification:** `npx tsx src/jobs/currency-rates.cron.ts` printed `currency-rates cron ok`. Backend `npx tsc --noEmit` passed.
+
+
+

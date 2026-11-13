@@ -2,6 +2,7 @@ import type { Server } from 'http';
 import { createApp } from './app';
 import { env } from './config/env';
 import { connectDB, disconnectDB } from './config/database';
+import { startCurrencyRateJob, stopCurrencyRateJob } from './jobs/currency-rates.cron';
 import { logger } from './utils/logger';
 
 let server: Server | null = null;
@@ -14,6 +15,8 @@ async function bootstrap(): Promise<void> {
     const isConnected = await connectDB();
     if (!isConnected) {
       logger.warn('Initial MongoDB connection failed. Server will continue with degraded state.');
+    } else {
+      startCurrencyRateJob();
     }
   } catch (err) {
     logger.error('Unexpected error while connecting to MongoDB', err);
@@ -32,6 +35,7 @@ async function bootstrap(): Promise<void> {
     if (server) {
       server.close(async () => {
         logger.info('HTTP server closed');
+        stopCurrencyRateJob();
         await disconnectDB();
         logger.info('Graceful shutdown completed. Exiting process.');
         process.exit(0);
@@ -43,6 +47,7 @@ async function bootstrap(): Promise<void> {
         process.exit(1);
       }, 10000);
     } else {
+      stopCurrencyRateJob();
       await disconnectDB();
       process.exit(0);
     }

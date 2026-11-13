@@ -17,6 +17,7 @@
     "tools:publish": "tsx src/scripts/publish-browser-tools.ts",
     "categories:icons": "tsx src/scripts/attach-category-icons.ts",
     "categories:descriptions": "tsx src/scripts/set-category-descriptions.ts",
+    "currency:fetch": "tsx src/scripts/fetch-currency-rates.ts",
     "format": "prettier --write \"src/**/*.{ts,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,json,md}\""
   },
@@ -30,6 +31,7 @@
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "mongoose": "^8.10.1",
+    "node-cron": "^4.6.0",
     "nodemailer": "^10.5.0",
     "zod": "^3.24.2"
   },

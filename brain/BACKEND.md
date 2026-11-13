@@ -99,6 +99,7 @@ Validated at import via Zod (`dotenv.config()`):
 | `STORAGE_DRIVER` | `local` | `local` writes `backend/uploads`. `s3` uses the signed upload. |
 | `UPLOAD_DIR` | `uploads` | Directory for `STORAGE_DRIVER=local`, relative to the backend working directory |
 | `AWS_ACCESS_KEY`, `AWS_SECRET_KEY`, `BUCKET_REGION`, `AWS_BUCKET_NAME`, `AWS_BASE_URL` | `''` | Required only when `STORAGE_DRIVER=s3` |
+| `CURRENCY_EXCHANGE_API_KEY` | `''` | ExchangeRate-API key. The daily currency job skips the fetch when this is empty. |
 
 > **Config Drift Note:** `backend/.env.example` also lists `SESSION_TTL_HOURS=24` and `SESSION_REMEMBER_ME_DAYS=7`, but `env.ts` does not parse them and `admin-auth.service.ts` hardcodes `24h` and `7d`.
 
@@ -112,6 +113,7 @@ Validated at import via Zod (`dotenv.config()`):
 - `npm run tool:assign` (`assign-tool-component.ts`): Safely assigns an allowlisted `--component` key and `--execution` type (plus optional `--activate`) to an existing tool by `--slug` while preserving all existing SEO and placement fields.
 - `npm run categories:icons` (`attach-category-icons.ts`): Downloads one Lucide SVG per root category, stores it with the local storage driver, and saves `iconMedia` / `iconUrl` on that category. Skips a category that already has a `/uploads/` icon. Requires `STORAGE_DRIVER=local`.
 - `npm run categories:descriptions` (`set-category-descriptions.ts`): Writes a short public description onto each root category that still has an empty `description`. Categories that already have text are left as saved.
+- `npm run currency:fetch` (`fetch-currency-rates.ts`): Fetches the latest USD table and upserts every tracked base currency, plus a history row. `node-cron` runs the same function at local midnight (`0 0 * * *`) from `src/jobs/currency-rates.cron.ts`.
 
 ---
 
