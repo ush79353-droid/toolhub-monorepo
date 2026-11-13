@@ -23,6 +23,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '3d-printer-buy-vs-outsource-calculator',
   'ar-days-calculator',
   '403b-calculator',
+  '529-calculator',
 ] as const;
 
 const STATIC_PATHS = [

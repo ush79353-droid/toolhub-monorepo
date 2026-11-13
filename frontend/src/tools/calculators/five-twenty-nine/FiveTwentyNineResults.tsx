@@ -124,7 +124,7 @@ function CostChart({
       <ul className="mt-3 space-y-3">
         {rows.map((row) => (
           <li key={`chart-${row.year}`}>
-            <p className="text-xs font-medium text-accent">College year {row.year}</p>
+            <p className="text-xs font-medium text-accent">Projection year {row.year}</p>
             <Bar label="Education cost" value={row.educationCost} max={max} tone="cost" display={money(row.educationCost)} />
             <Bar label="Paid by the 529" value={row.withdrawal} max={max} tone="plan" display={money(row.withdrawal)} />
           </li>

@@ -75,6 +75,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FourZeroThreeBCalculator,
     })),
   ),
+  FiveTwentyNineCalculator: lazyTool(() =>
+    import('@/tools/calculators/five-twenty-nine/FiveTwentyNineCalculator').then((mod) => ({
+      default: mod.FiveTwentyNineCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

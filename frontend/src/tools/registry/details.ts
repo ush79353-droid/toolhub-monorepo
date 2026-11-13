@@ -15,6 +15,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/three-d-printer-buy-vs-outsource/detail'),
   ARDaysCalculator: () => import('@/tools/calculators/ar-days/detail'),
   FourZeroThreeBCalculator: () => import('@/tools/calculators/four-zero-three-b/detail'),
+  FiveTwentyNineCalculator: () => import('@/tools/calculators/five-twenty-nine/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
