@@ -257,6 +257,113 @@ export async function getPublicCategoryBySlug(rawSlug: string): Promise<PublicCa
   };
 }
 
+function escapeRegex(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+export interface PublicToolListItem {
+  id: string;
+  name: string;
+  slug: string;
+  shortDescription: string;
+  categoryName: string;
+  categorySlug: string;
+}
+
+export interface PublicToolListCategory {
+  id: string;
+  name: string;
+  slug: string;
+  toolCount: number;
+}
+
+export interface PublicToolList {
+  items: PublicToolListItem[];
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+  categories: PublicToolListCategory[];
+}
+
+const PUBLIC_TOOL_PAGE_SIZE = 24;
+
+interface PublicToolListRow {
+  _id: { toString(): string };
+  name: string;
+  slug: string;
+  shortDescription?: string;
+  category?: { name?: string; slug?: string } | null;
+}
+
+export async function listPublicTools(query: {
+  page?: unknown;
+  q?: unknown;
+  category?: unknown;
+}): Promise<PublicToolList> {
+  const page = Math.min(10_000, Math.max(1, Math.trunc(Number(query.page)) || 1));
+  const q = typeof query.q === 'string' ? query.q.trim().slice(0, 120) : '';
+  const categorySlug = typeof query.category === 'string' ? query.category.trim().toLowerCase() : '';
+  const filter: Record<string, unknown> = { isActive: true };
+
+  if (q) {
+    const pattern = new RegExp(escapeRegex(q), 'i');
+    filter.$or = [{ name: pattern }, { shortDescription: pattern }, { slug: pattern }];
+  }
+
+  const [activeCategories, counts] = await Promise.all([
+    Category.find({ kind: 'category', isActive: true }).sort({ sortOrder: 1, name: 1 }).select('name slug'),
+    Tool.aggregate<{ _id: unknown; count: number }>([
+      { $match: { isActive: true } },
+      { $group: { _id: '$category', count: { $sum: 1 } } },
+    ]),
+  ]);
+  const countByCategory = new Map(counts.map((row) => [String(row._id), row.count]));
+  const categories = activeCategories
+    .map((category) => ({
+      id: category.id,
+      name: category.name,
+      slug: category.slug,
+      toolCount: countByCategory.get(category.id) ?? 0,
+    }))
+    .filter((category) => category.toolCount > 0);
+
+  if (categorySlug) {
+    const category = activeCategories.find((item) => item.slug === categorySlug);
+    if (!category) {
+      return { items: [], page: 1, limit: PUBLIC_TOOL_PAGE_SIZE, total: 0, totalPages: 1, categories };
+    }
+    filter.category = category._id;
+  }
+
+  const total = await Tool.countDocuments(filter);
+  const totalPages = Math.max(1, Math.ceil(total / PUBLIC_TOOL_PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const rows = await Tool.find(filter)
+    .select('name slug shortDescription category')
+    .sort({ name: 1 })
+    .skip((safePage - 1) * PUBLIC_TOOL_PAGE_SIZE)
+    .limit(PUBLIC_TOOL_PAGE_SIZE)
+    .populate('category', 'name slug')
+    .lean<PublicToolListRow[]>();
+
+  return {
+    items: rows.map((row) => ({
+      id: row._id.toString(),
+      name: row.name,
+      slug: row.slug,
+      shortDescription: row.shortDescription ?? '',
+      categoryName: row.category?.name ?? '',
+      categorySlug: row.category?.slug ?? '',
+    })),
+    page: safePage,
+    limit: PUBLIC_TOOL_PAGE_SIZE,
+    total,
+    totalPages,
+    categories,
+  };
+}
+
 export async function listFeaturedTools(): Promise<PublicFeaturedTool[]> {
   const docs = await Tool.find({ isFeatured: true }).sort({ name: 1 }).limit(12).populate('category', 'name slug');
   return docs.map((doc) => {

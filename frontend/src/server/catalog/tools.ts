@@ -61,3 +61,46 @@ export const getPublicToolBySlug = cache(async (slug: string): Promise<PublicToo
   }
 });
 
+export interface PublicToolListItem {
+  id: string;
+  name: string;
+  slug: string;
+  shortDescription: string;
+  categoryName: string;
+  categorySlug: string;
+}
+
+export interface PublicToolListCategory {
+  id: string;
+  name: string;
+  slug: string;
+  toolCount: number;
+}
+
+export interface PublicToolList {
+  items: PublicToolListItem[];
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+  categories: PublicToolListCategory[];
+}
+
+export const getPublicTools = cache(
+  async (query: { q?: string; category?: string; page?: number }): Promise<PublicToolList | null> => {
+    try {
+      const response = await serverApi.get<PublicToolList>('/catalog/tools', {
+        cache: 'no-store',
+        params: {
+          q: query.q || undefined,
+          category: query.category || undefined,
+          page: query.page && query.page > 1 ? query.page : undefined,
+        },
+      });
+      return response.data ?? null;
+    } catch {
+      return null;
+    }
+  }
+);
+

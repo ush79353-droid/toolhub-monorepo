@@ -24,9 +24,9 @@
 | Capability | Status | Notes |
 | :--- | :--- | :--- |
 | Homepage (`/`) | **Implemented** | Server-rendered page fetching active categories (`/catalog/categories`) and featured tools (`/catalog/featured`) from Express/MongoDB |
-| Tools Directory (`/tools`) | **Partially Implemented** | Interactive search & category filtering UI (`ToolsDirectoryClient`), currently reading static `sample-data.ts` (18 sample tools) rather than MongoDB |
-| Tool Detail & Workspace (`/tools/[slug]`) | **Partially Implemented** | Static `sample-data.ts` lookup; `ToolWorkspace` renders a UI architecture preview with state switcher (`Success` / `Loading` / `Error`) rather than real tool computation engines |
-| Categories Directory (`/categories`, `/categories/[slug]`) | **Partially Implemented** | UI implemented against `sample-data.ts` (12 sample categories), not yet backed by the 19 seeded MongoDB categories |
+| Tools Directory (`/tools`) | **Implemented** | Server-rendered active tools from `GET /catalog/tools`, 24 per page, with name search and category filter |
+| Tool Detail & Workspace (`/tools/[slug]`) | **Partially Implemented** | Active MongoDB tools resolve first. Auto Loan Calculator and Loan Calculator are interactive. Other slugs fall back to `sample-data.ts` or a preview shell |
+| Categories Directory (`/categories`, `/categories/[slug]`) | **Implemented** | Live root categories. A category page lists active tools grouped by pillar and sub-pillar |
 | Informational & Legal Pages (`/about`, `/contact`, `/privacy-policy`, `/terms-of-service`) | **Partially Implemented** | Static content pages; `/contact` validates client-side only without backend email delivery; legal pages are explicitly labeled draft templates |
 
 ### B. Admin Dashboard (`frontend/src/app/admin/`)

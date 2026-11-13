@@ -5,6 +5,7 @@ import {
   getPublicToolBySlug,
   listFeaturedTools,
   listPublicCategories,
+  listPublicTools,
 } from './catalog.service';
 
 export const catalogRouter = Router();
@@ -29,6 +30,14 @@ catalogRouter.get('/categories/:slug', async (req, res, next) => {
 catalogRouter.get('/featured', async (_req, res, next) => {
   try {
     sendSuccess(res, await listFeaturedTools());
+  } catch (error) {
+    next(error);
+  }
+});
+
+catalogRouter.get('/tools', async (req, res, next) => {
+  try {
+    sendSuccess(res, await listPublicTools(req.query));
   } catch (error) {
     next(error);
   }

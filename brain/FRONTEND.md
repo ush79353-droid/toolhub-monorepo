@@ -18,7 +18,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 | Route | File | Rendering / Data Source | Implementation Status |
 | :--- | :--- | :--- | :--- |
 | `/` | `(website)/page.tsx` | Server Component (`cache: 'no-store'`) fetching `/catalog/categories` and `/catalog/featured` via `serverApi` | **Implemented** (falls back to empty arrays if backend unreachable) |
-| `/tools` | `(website)/tools/page.tsx` | Renders `<Suspense>` + `ToolsDirectoryClient` (`'use client'`) using `sample-data.ts` (18 tools, 12 categories) | **Partially Implemented** (mock/sample data only) |
+| `/tools` | `(website)/tools/page.tsx` | Server Component. `GET /catalog/tools` with `q`, `category`, and `page`. 24 active tools per page. | **Implemented** |
 | `/tools/[slug]` | `(website)/tools/[slug]/page.tsx` | Server Component fetching `getPublicToolBySlug(slug)` via Express first (preserving DB SEO metadata & `indexable`), resolving allowlisted `componentKey` via `ToolWorkspace` + `tools/registry`; falls back to `sample-data.ts` | **Implemented for Auto Loan Calculator** (`AutoLoanCalculator`); legacy fallback for sample slugs |
 | `/categories` | `(website)/categories/page.tsx` | Server Component loads `getPublicCategories()`, then `CategoriesClient` filters that list in the browser | **Implemented** (category detail pages still use sample data) |
 | `/categories/[slug]` | `(website)/categories/[slug]/page.tsx` | Server Component fetching `GET /catalog/categories/:slug`. Active tools are listed under their pillar and sub-pillar and link to `/tools/[slug]`. | **Implemented** |
@@ -32,7 +32,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 
 - Homepage (`/`) renders live categories and featured tools from MongoDB (`/catalog/*`) and links to `/categories/${category.slug}` and `/tools/${tool.slug}`.
 - `/tools/[slug]` now resolves active MongoDB tools via `getPublicToolBySlug(slug)` (including `/tools/auto-loan-calculator`) and falls back to `sample-data.ts` for legacy sample slugs.
-- Header, footer, the mobile menu, the homepage, the category index, the category detail page, and the About totals all read the public catalog. The header menu, category index, and the homepage show each category's `iconUrl` when it is set. The footer and mobile menu show the first seven. `/tools` still reads `sample-data.ts`.
+- Header, footer, the mobile menu, the homepage, the category index, the category detail page, the tools directory, and the About totals all read the public catalog. The header menu, category index, and the homepage show each category's `iconUrl` when it is set. The footer and mobile menu show the first seven.
 
 ---
 

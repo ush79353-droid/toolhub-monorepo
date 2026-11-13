@@ -159,6 +159,11 @@
 - **Important Files:** `backend/src/modules/catalog/catalog.service.ts`, `frontend/src/app/(website)/categories/[slug]/page.tsx`.
 - **Verification:** `GET /catalog/categories/finance-business` returned 15 tools, and `/categories/finance-business` showed 15 Open links with no Catalog rows.
 
+### 2026-11-12 — Paginated public tools directory
+- **Summary:** `/tools` reads `GET /catalog/tools`. The list is active tools only, 24 per page, with a name search and category filter kept in the URL. Category pills count active tools.
+- **Important Files:** `backend/src/modules/catalog/catalog.service.ts`, `backend/src/modules/catalog/catalog.router.ts`, `frontend/src/server/catalog/tools.ts`, `frontend/src/app/(website)/tools/page.tsx`.
+- **Verification:** `/tools` compiled and listed 275 active tools, 24 per page. Page 2 showed tools 25-48. `?q=loan&category=finance-business` returned Auto Loan Calculator and Loan Calculator.
+
 
 
 ### 2026-11-12 — Category menu presentation

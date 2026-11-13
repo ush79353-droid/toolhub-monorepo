@@ -81,6 +81,13 @@ Mounted at `/api/v1/catalog` (`backend/src/modules/catalog/catalog.router.ts`).
 - **Response (`200`):** `PublicFeaturedTool[]` — Up to 12 tools with `isFeatured: true`, sorted by `name` asc (note: currently filters only on `isFeatured: true`, not `isActive`):
   `{ id, name, slug, shortDescription, iconUrl, categoryName, categorySlug }[]`
 
+### `GET /api/v1/catalog/tools`
+- **Auth:** Public
+- **Query:** `q` (optional, trimmed, max 120), `category` (optional root-category slug), `page` (default 1)
+- **Response (`200`):** Active tools only, 24 per page, sorted by name. Search matches name, short description, and slug.
+  `{ items: { id, name, slug, shortDescription, categoryName, categorySlug }[], page, limit, total, totalPages, categories }`
+  `categories` lists active root categories that have at least one active tool, with that active count. An unknown category slug returns an empty page rather than 404.
+
 ### `GET /api/v1/catalog/tools/:slug`
 - **Auth:** Public
 - **Response (`200`):** `PublicToolDetail` — Active tool (`isActive: true`) matching `slug`, populated with `category`, `pillar`, `subPillar`, and up to 6 existing MongoDB `relatedTools`:
@@ -154,7 +161,6 @@ Mounted at `/api/v1/admin/tools` (`backend/src/modules/tools/tool.router.ts`). A
 
 The following capabilities exist only as empty backend module directories (`.gitkeep`) or frontend UI previews and are **not implemented**:
 
-- Public tools directory listing and search
 - Contact / tool suggestion submission (`POST /api/v1/contact` or similar)
 - Server-side or third-party tool execution endpoints
 - Admin staff management (`/api/v1/admin/users`)
