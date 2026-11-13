@@ -15,8 +15,13 @@ Before building or changing any calculator:
 
 Rules:
 
-- Reuse the Auto Loan Calculator page shell / sticky sidebar / shared currency / SEO pipeline.
+- Reuse the Auto Loan Calculator page shell / sticky sidebar / shared currency / SEO pipeline. ADR-016 owns the visual shell. ADR-018 owns the module layout. The module lock does not restyle the page.
+- Follow `brain/ARCHITECTURE.md` §7: `calculation.ts`, `validation.ts`, `types.ts`, `detail.tsx`, `calculation.test.ts`, lazy `registry/index.ts`, and `registry/details.ts`. Mirror the key in `backend/src/modules/tools/tool.key.ts`.
+- Complete the playbook checklist before calling the calculator done: architecture, reusable components, pure engine, validation, tests, SEO, embed, responsive QA.
+- Do not add `app/(website)/tools/<slug>/page.tsx`. Unregistered keys call `notFound()`.
+- Import `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/`. Do not copy them.
 - Do not hardcode per-tool SEO metadata in calculator components.
-- Do not invent a second sticky, currency, clipboard, or metadata system.
-- Keep calculator-specific math/validation local; keep presentation conventions shared.
+- Do not invent a second sticky, currency, clipboard, metadata, ad, or embed system.
+- Keep calculator-specific math and validation in pure modules. Keep presentation conventions shared.
 - Preserve Ponytail minimalism: extend existing helpers before adding abstractions.
+- For iframe embedding, follow `brain/EMBED_STANDARDS.md` and `.agents/rules/embed-standards.md`.

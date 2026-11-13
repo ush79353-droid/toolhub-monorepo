@@ -4,14 +4,43 @@
 
 Read with: `AGENTS.md`, `TOOL_DETAIL_PAGE_STANDARDS.md` (authoritative page shell), `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` (workflow), `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `ARCHITECTURE.md`.
 
-## 1. Architecture
+## 1. Module architecture (locked)
 
-- Client-side math in `frontend/src/tools/calculators/<tool>/`
-- Register allowlisted `componentKey` in `tools/registry/keys.ts` + `tools/registry/index.ts`
-- Public route: dynamic `/tools/[slug]` resolves MongoDB tool → `ToolWorkspace` → registered component
-- Full page shell/SEO/ads/embed/DoD: `TOOL_DETAIL_PAGE_STANDARDS.md`
-- API boundary: Browser → Next.js Server → Express → MongoDB
-- Never call Express from browser calculator components
+Authoritative layout: `ARCHITECTURE.md` §7 (ADR-018). Visual shell stays `TOOL_DETAIL_PAGE_STANDARDS.md` (ADR-016). Workflow and the mandatory checklist: `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`.
+
+- One public route: `/tools/[slug]`. Unregistered `componentKey` or a missing `detail.tsx` calls `notFound()`.
+- Client calculator chunk: `tools/registry/index.ts` (`React.lazy` + static `import()`), mounted by `ToolWorkspace`.
+- Server page copy: `tools/registry/details.ts` loads `<tool>/detail.tsx` (`toolPageDetail`).
+- Allowlist: `tools/registry/keys.ts` and the same strings in `backend/src/modules/tools/tool.key.ts`.
+- Pure engine in `calculation.ts`. Pure checks in `validation.ts`. No React, DOM, or Next imports in either file.
+- Tests in `calculation.test.ts` next to the engine (run with `tsx`).
+- Sitemap slug list: `IMPLEMENTED_TOOL_SLUGS` in `frontend/src/app/sitemap.ts` only.
+- API boundary: Browser → Next.js Server → Express → MongoDB. Calculator components never call Express.
+- Do not add a per-calculator `page.tsx`, ad slot, iframe route, or metadata builder.
+
+### Required files
+
+```text
+frontend/src/tools/calculators/<kebab-id>/
+  <Name>Calculator.tsx
+  <Name>Form.tsx
+  <Name>Results.tsx
+  <Name>GuideArticle.tsx
+  detail.tsx
+  content.ts
+  types.ts
+  calculation.ts
+  validation.ts
+  calculation.test.ts
+```
+
+Reuse `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/`. Do not copy them. Domain helpers used by more than one tool go in `frontend/src/tools/<domain>/`.
+
+### Known exceptions (existing tools — do not copy)
+
+- `hundred-day` keeps types in `calculation.ts` (no `types.ts`).
+- `twelve-volt-wire` tests live in `electrical/conductor.test.ts` (no tool-local `calculation.test.ts`).
+- Shared aside, TOC, and `InfoTooltip` still sit in the `auto-loan` folder because the page shell imports them there.
 
 ## 2. Page Shell (Auto Loan Calculator reference)
 
@@ -68,9 +97,9 @@ Read with: `AGENTS.md`, `TOOL_DETAIL_PAGE_STANDARDS.md` (authoritative page shel
 
 ## 7. Testing
 
-- Independent calculation unit tests for each calculator
-- Shared currency / SEO helper tests when touched
-- Preserve existing Loan + Auto Loan suites when changing shared UI
+- `calculation.test.ts` beside the engine, covering the happy path and the edge cases that change the result
+- Shared currency / SEO helper tests when those helpers change
+- Preserve existing calculator suites when changing shared UI or shared math helpers
 
 ## 8. Exceptions
 

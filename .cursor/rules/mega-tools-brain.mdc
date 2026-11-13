@@ -16,6 +16,7 @@ This rule works alongside `.cursor/rules/ponytail.mdc` (which remains authoritat
    - Keep `frontend/` and `backend/` as independent applications (no npm workspaces).
    - Enforce `Browser → Next.js Server → Express API → MongoDB`; never call Express directly from browser components.
    - Follow the locked palette in `brain/DESIGN_SYSTEM.md` and TypeScript strict mode.
+   - New calculators follow `brain/ARCHITECTURE.md` §7 and the checklist in `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`. Page design stays `brain/TOOL_DETAIL_PAGE_STANDARDS.md`.
    - Respect `.cursor/rules/ponytail.mdc` while keeping architectural boundaries and Brain maintenance intact.
 3. **After completing a task:**
    - Run relevant checks (`type-check`, `lint`, and targeted checks).

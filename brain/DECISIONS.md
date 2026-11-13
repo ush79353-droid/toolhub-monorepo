@@ -64,8 +64,8 @@
 - **Date:** 2026-11-11
 - **Decision:** Add validated `executionType` and allowlisted `componentKey` fields to `Tool` (plus `GET /api/v1/catalog/tools/:slug`), resolve components exclusively via the static allowlisted frontend registry (`src/tools/registry/`), and implement the Auto Loan Calculator with integer-cent amortization, configurable display currency (formatting only), explicit sales-tax basis selection (`after-trade-in` vs `full-price`), and full-width layout on `/tools/[slug]` when a registered tool is rendered.
 - **Reason:** Keep database records authoritative for tool metadata/SEO while prohibiting arbitrary code execution from database strings, avoiding cumulative floating-point drift in amortization tables, and avoiding hidden state-specific tax assumptions.
-- **Consequences:** Each newly built tool requires registering its `componentKey` in both `backend/src/modules/tools/tool.key.ts` (`APPROVED_COMPONENT_KEYS`) and `frontend/src/tools/registry/keys.ts` + `index.ts`, then assigning it to the MongoDB tool record via `/admin/tools/[id]/edit` or `npm run tool:assign`.
-- **Status:** Accepted
+- **Consequences:** Each newly built tool requires registering its `componentKey` in both `backend/src/modules/tools/tool.key.ts` (`APPROVED_COMPONENT_KEYS`) and `frontend/src/tools/registry/keys.ts` + `index.ts`, then assigning it to the MongoDB tool record via `/admin/tools/[id]/edit` or `npm run tool:assign`. ADR-018 adds `registry/details.ts` and requires `notFound()` when the key is unregistered.
+- **Status:** Accepted. Registration mechanics extended by ADR-018 (2026-11-13).
 
 ## ADR-010: Storage driver for media files
 - **Date:** 2026-11-12
@@ -122,5 +122,12 @@
 - **Reason:** The provider already returns every pair against USD, so a per-currency request loop would spend the key without changing the stored tables.
 - **Consequences:** The job runs only while the API process is up at midnight. `npm run currency:fetch` runs the same save on demand. An empty `CURRENCY_EXCHANGE_API_KEY` skips the request.
 - **Update (2026-11-13):** The timer is `node-cron` schedule `0 0 * * *`, replacing the earlier `setTimeout` loop.
+- **Status:** Accepted
+
+## ADR-018: Locked calculator module (lazy registry + per-tool detail)
+- **Date:** 2026-11-13
+- **Decision:** Every new calculator uses the folder, pure `calculation.ts` / `validation.ts`, `detail.tsx`, and dual registration described in `ARCHITECTURE.md` §7 and `CALCULATOR_STANDARDS.md` §1. `registry/index.ts` loads one calculator chunk with `React.lazy`. `registry/details.ts` loads only that tool's page copy. `/tools/[slug]` calls `notFound()` when the key is not registered. The mandatory ship checklist is in `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`. Cursor (`.cursor/rules/calculator-standards.mdc`) and Antigravity (`.agents/rules/calculator-standards.md`) both require that checklist.
+- **Reason:** Commits `a75ccbe` and `ebf68df` removed sample tool pages and split guides out of the shared page. Later calculators already follow that shape. Agents were still reading an architecture doc that described empty category folders and a preview registry.
+- **Consequences:** Does not supersede ADR-016. Auto Loan remains the visual master. SEO, embed, and ad standards stay in their own docs. Existing gaps (`hundred-day` types, `twelve-volt-wire` test location, shared widgets still under `auto-loan/`, duplicated allowlists) stay until a task asks to refactor them. New calculators do not copy those gaps.
 - **Status:** Accepted
 

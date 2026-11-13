@@ -5,6 +5,25 @@ Practical workflow for every new calculator / tool detail page.
 
 Do not redesign the page shell. Do not invent a second sticky/SEO/ads/embed system. Tool-specific math and copy are free to differ.
 
+Module layout is locked in `ARCHITECTURE.md` §7 (ADR-018). Page design is locked in `TOOL_DETAIL_PAGE_STANDARDS.md` (ADR-016). The module lock does not restyle the page.
+
+---
+
+## Mandatory checklist
+
+A new calculator is not done until every gate below is true, in this order. Details are in the steps that follow.
+
+1. **Architecture** — Folder matches `ARCHITECTURE.md` §7.2. Registered in `keys.ts`, `registry/index.ts`, `registry/details.ts`, and `backend/.../tool.key.ts`. No new `page.tsx`. Unregistered keys 404.
+2. **Reusable components** — Page shell, `ToolWorkspace`, `StickyCalculatorAside`, `TableOfContents`, `ToolDetailSidebar`, currency, clipboard, and download are reused. Nothing copied into the new folder.
+3. **Pure calculation engine** — Formulas live in `calculation.ts` with no React, DOM, or Next imports.
+4. **Validation** — Input checks live in `validation.ts` and block invalid results.
+5. **Tests** — `calculation.test.ts` fails if the engine breaks. Run it.
+6. **SEO** — Metadata comes from `generateMetadata` + `lib/seo/tool-seo.ts`. Slug added to `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts`. No metadata hardcoded in the calculator.
+7. **Embed** — `/embed/{slug}` renders the same component with `presentation="embed"`. No ads. `noindex` comes from the shared embed route.
+8. **Responsive QA** — Check 375, 768, 1024, and 1280. Calculator first below `lg`. No horizontal overflow.
+
+Then finish accessibility, type-check, lint, and the Brain update (steps 16–18).
+
 ---
 
 ## Step 1 — Read shared Brain & rules
@@ -59,21 +78,25 @@ Confirm you will reuse the shell, not fork it. Peer reference (same shell, diffe
 
 ---
 
-## Step 6 — Implement calculation engine separately
+## Step 6 — Implement the calculation engine separately
 
-Suggested layout (mirror Loan):
+Use the locked folder in `ARCHITECTURE.md` §7.2 (same shape as Loan, ARM, RREF, and 0-60):
 
-```
+```text
 frontend/src/tools/calculators/{tool-id}/
-  {Tool}Calculator.tsx   # UI shell
-  {Tool}Form.tsx         # inputs
-  {Tool}Results.tsx      # optional
-  engine.ts / math.ts    # pure functions
+  {Tool}Calculator.tsx
+  {Tool}Form.tsx
+  {Tool}Results.tsx
+  {Tool}GuideArticle.tsx
+  detail.tsx
+  content.ts
   types.ts
-  GuideArticle.tsx       # educational content (optional but expected for SEO tools)
+  calculation.ts          # pure functions
+  validation.ts           # pure checks
+  calculation.test.ts
 ```
 
-Export pure `calculate*` functions with no DOM/Next imports.
+Name the engine `calculation.ts`. Do not add `engine.ts` or `math.ts` as a second home for the formula. Export pure `calculate*` functions with no DOM, React, or Next imports.
 
 ---
 
@@ -99,19 +122,20 @@ Do not copy loan-specific fields. Match visual density and alignment.
 
 ---
 
-## Step 9 — Register in the component registry
+## Step 9 — Register in both allowlists and both loaders
 
-1. Add `componentKey` to allowlist / `keys.ts`
-2. Lazy/static map entry in `registry/index.ts`
-3. Ensure catalog Mongo `componentKey` matches
+1. Add `componentKey` to `REGISTERED_COMPONENT_KEYS` and `APPROVED_COMPONENT_KEYS` in `frontend/src/tools/registry/keys.ts`.
+2. Add the same string to `backend/src/modules/tools/tool.key.ts` and its direct-run self-check.
+3. Add one static `lazy()` `import()` in `registry/index.ts` (calculator chunk only).
+4. Set the Mongo `componentKey` to that string.
 
-Unregistered = catalog card only, no interactive workspace.
+An active tool whose key is not registered calls `notFound()` on `/tools/[slug]`. It does not fall back to sample content.
 
 ---
 
 ## Step 10 — Use shared Tool Detail Page layout
 
-1. Add `detail.tsx` in the tool folder (aside label, TOC items, Guide, FAQs) and a static `import()` in `tools/registry/details.ts` and `tools/registry/index.ts`.
+1. Add `detail.tsx` exporting `toolPageDetail` and a static `import()` in `tools/registry/details.ts` only. The calculator chunk stays in `registry/index.ts` (step 9). Do not also lazy-load `detail.tsx` from `index.ts`.
 2. Do not create a parallel `app/tools/my-tool/page.tsx` unless ADR says otherwise.
 3. Intro H1 + description come from catalog / page shell — keep one H1.
 
@@ -122,7 +146,7 @@ Unregistered = catalog card only, no interactive workspace.
 - Rely on `generateMetadata` + `lib/seo/tool-seo.ts`
 - Never hardcode title/description/canonical inside the calculator component
 - Ensure production `NEXT_PUBLIC_SITE_URL` (no localhost canonicals)
-- Add slug to `IMPLEMENTED_TOOL_SLUGS` in `robots.ts` / `sitemap.ts` when the tool is live and indexable
+- Add slug to `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts` when the tool is live and indexable. `robots.ts` does not list slugs.
 
 ---
 
@@ -199,20 +223,23 @@ Same commit as code when possible:
 
 ## Definition of Done (checklist)
 
-A new calculator is **not** done when the form merely renders. Require:
+A new calculator is **not** done when the form merely renders. The first eight items are the mandatory gate from the top of this playbook:
 
-- [ ] Accurate calculation logic + validation
-- [ ] Professional UI matching Loan shell
-- [ ] Correct results (manual spot-check)
-- [ ] Responsive desktop/mobile
-- [ ] Dynamic SEO + crawl allowlist updated
-- [ ] Educational content (topic-specific)
-- [ ] Relevant internal / related links
-- [ ] Embed when eligible
-- [ ] Shared ad placements (inherited)
-- [ ] Accessibility basics
-- [ ] Tests green + type-check/lint
-- [ ] Brain docs updated
+- [ ] Architecture matches `ARCHITECTURE.md` §7 (folder, both allowlists, both loaders, no new page route)
+- [ ] Reusable shell, aside, TOC, sidebar, currency, clipboard, and download — nothing forked
+- [ ] Pure `calculation.ts` (no React / DOM / Next)
+- [ ] `validation.ts` blocks invalid input
+- [ ] `calculation.test.ts` run and passing
+- [ ] Dynamic SEO + `IMPLEMENTED_TOOL_SLUGS` updated
+- [ ] Embed renders calculator-only when eligible
+- [ ] Responsive check at 375, 768, 1024, 1280
+- [ ] UI matches the Auto Loan master shell
+- [ ] Results spot-checked against the engine
+- [ ] Topic-specific guide, FAQ, and related links
+- [ ] Shared ad placements inherited (none inside the calculator)
+- [ ] Accessibility basics (labels, focus, FAQ, table headers)
+- [ ] `type-check` and `lint` passing
+- [ ] Brain docs updated in the same commit
 
 ---
 
@@ -223,7 +250,7 @@ If asked to ship a Percentage Calculator, agents should automatically:
 1. Read this playbook + `TOOL_DETAIL_PAGE_STANDARDS.md`
 2. Inspect Loan page shell (not loan amortization math)
 3. Confirm/create catalog slug e.g. `percentage-calculator`, category Math
-4. Implement `engine.ts` (% of, change, reverse) + tests
+4. Implement `calculation.ts` and `validation.ts` (% of, change, reverse) + `calculation.test.ts`
 5. Build form/results with shared `h-11` / cards; no currency unless needed
 6. Register `PercentageCalculator` in `keys.ts`, `registry/index.ts`, `registry/details.ts`, and the sitemap slug list
 7. Write percentage-specific guide/TOC/FAQ (not loan copy)

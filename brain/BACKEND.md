@@ -76,7 +76,7 @@
   - `headMediaObject`: Verifies uploaded object exists in S3 (`HeadObjectCommand`).
   - `deleteMediaObject`: Deletes object from S3 (`DeleteObjectCommand`), ignoring `NotFound`/`NoSuchKey`.
 - **`modules/media/media.key.ts`:** Validates allowed MIME types (`png`, `jpeg`, `webp`, `svg`, `gif`, `pdf`), max size (`10 MB`), and owned key pattern `media/<uuid>.<ext>`. Includes direct-run self-check.
-- **`modules/tools/tool.key.ts` & `tool.copy.ts`:** `toolNameKey`, `isToolSlug`, `APPROVED_COMPONENT_KEYS` / `isApprovedComponentKey` (`['AutoLoanCalculator', 'LoanCalculator']`), and `buildToolCopy` (SEO copy generator for seeded tools). Both include direct-run self-checks.
+- **`modules/tools/tool.key.ts` & `tool.copy.ts`:** `toolNameKey`, `isToolSlug`, `APPROVED_COMPONENT_KEYS` / `isApprovedComponentKey` (the seven registered calculators, kept in sync with `frontend/src/tools/registry/keys.ts`), and `buildToolCopy` (SEO copy generator for seeded tools). Both include direct-run self-checks.
 - **`utils/password.ts`:** `hashPassword` & `verifyPassword` using `argon2.argon2id` (`memoryCost: 65536`, `timeCost: 3`, `parallelism: 1`, 8–128 chars).
 - **`utils/response.ts`:** Standard response envelope `{ success, data?, error?, meta: { timestamp } }`.
 

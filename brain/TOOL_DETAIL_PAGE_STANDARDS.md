@@ -5,7 +5,9 @@
 >
 > **History:** Loan Calculator (`/tools/loan-calculator`) was the previous master (locked 2026-11-12, ADR-014). Superseded 2026-11-13 by ADR-016 — Auto Loan is now the final approved visual master. Loan remains a peer implementation that must follow Auto Loan’s shared design.
 
-Read with: `AGENTS.md`, `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `CALCULATOR_STANDARDS.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `DESIGN_SYSTEM.md`.
+Read with: `AGENTS.md`, `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `CALCULATOR_STANDARDS.md`, `ARCHITECTURE.md` §7 (module layout, ADR-018), `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `DESIGN_SYSTEM.md`.
+
+The calculator folder and registry (ADR-018) do not change the layout, typography, sticky sidebar, SEO, ads, or embed rules in this document.
 
 **Verification:** Code-inspected 2026-11-13. Visually inspected live at `http://192.168.100.152:3000/tools/auto-loan-calculator` (desktop 1440 + mobile). Loan Calculator cross-checked at `/tools/loan-calculator` for shell parity.
 
@@ -186,7 +188,7 @@ See `SEO_STANDARDS.md`. Summary:
 - Admin → Mongo → Express catalog → `generateMetadata` / JSON-LD
 - Optional fields + fallbacks; no localhost production canonicals
 - Index only if active + indexable + allowlisted component
-- `robots.ts` / `sitemap.ts` — extend `IMPLEMENTED_TOOL_SLUGS` when shipping new tools
+- `sitemap.ts` — extend `IMPLEMENTED_TOOL_SLUGS` when shipping new tools. `robots.ts` allows the public site and disallows `/admin/`, `/api/`, and `/embed/`; it does not list tool slugs.
 - Embed: noindex; not in sitemap
 
 ---

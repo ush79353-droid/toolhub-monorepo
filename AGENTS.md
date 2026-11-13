@@ -12,7 +12,7 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 2. Read `brain/CURRENT_STATE.md`.
 3. Read `brain/ARCHITECTURE.md`.
 4. Read relevant `brain/` documents for the task (e.g., `FRONTEND.md`, `BACKEND.md`, `DATABASE.md`, `API_CONTRACTS.md`, `AUTHENTICATION.md`, `DESIGN_SYSTEM.md`, `CALCULATOR_STANDARDS.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `TOOL_DETAIL_PAGE_STANDARDS.md`, `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `TASKS.md`, `DECISIONS.md`).
-5. For any new calculator or tool detail page work, **mandatory** reading: `brain/TOOL_DETAIL_PAGE_STANDARDS.md` (master shell) and `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` (workflow), plus `CALCULATOR_STANDARDS.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, and `AD_STANDARDS.md`. Auto Loan Calculator (`/tools/auto-loan-calculator`) is the official visual/architectural reference — do not redesign the shared shell.
+5. For any new calculator or tool detail page work, **mandatory** reading: `brain/TOOL_DETAIL_PAGE_STANDARDS.md` (master shell, ADR-016), `brain/ARCHITECTURE.md` §7 (calculator module, ADR-018), and `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` (workflow and mandatory checklist), plus `CALCULATOR_STANDARDS.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, and `AD_STANDARDS.md`. Auto Loan Calculator (`/tools/auto-loan-calculator`) is the official visual reference — do not redesign the shared shell. New calculators use the locked folder: pure `calculation.ts` and `validation.ts`, `detail.tsx`, lazy `registry/index.ts`, and `registry/details.ts`. Ship only after the playbook checklist: architecture, reusable components, pure engine, validation, tests, SEO, embed, responsive QA.
 6. Inspect actual source code before making changes — never assume a planned feature is implemented.
 7. Check Git status (`git status`) and sync state (`git fetch` / branch status).
 8. Identify potential conflicts with existing work or another developer's active tasks.
@@ -21,7 +21,7 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 
 ## During Every Task
 
-1. Follow the documented architecture in `brain/ARCHITECTURE.md`.
+1. Follow the documented architecture in `brain/ARCHITECTURE.md`, including §7 for any new calculator. Do not add a per-tool page route or a second registry.
 2. Preserve independent `frontend/` (Next.js) and `backend/` (Express) applications — do **not** introduce npm workspaces or merge the apps.
 3. **Never call Express directly from browser components.** All API traffic must follow `Browser → Next.js Server → Express API → MongoDB` (except pre-signed direct browser `PUT` uploads to AWS S3 authorized through Next.js Server Actions).
 4. Preserve the locked design system documented in `brain/DESIGN_SYSTEM.md`.

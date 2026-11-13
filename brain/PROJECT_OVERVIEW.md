@@ -50,7 +50,7 @@ Defined in `frontend/src/types/tool.ts`, `backend/src/types/tool.ts`, and `front
 2. **`server`** — Server-side execution pipeline (for heavier processing or protected operations; backend tool execution endpoints are **Planned**).
 3. **`third-party`** — External API-backed execution proxied via the Express backend so secrets are never exposed to the browser (**Planned**).
 
-> **Note:** `frontend/src/tools/registry/index.ts` provides a typed `ToolRegistryMap` (`registerToolComponent`, `getToolComponent`), and `frontend/src/tools/` has 9 category folders (`ai`, `audio`, `calculators`, `converters`, `developer`, `image`, `pdf`, `seo`, `video`), all currently containing only `.gitkeep`. Actual executable calculator/tool components are **Planned**.
+> **Note:** Seven client calculators are registered. `getToolComponent` in `frontend/src/tools/registry/index.ts` returns a `React.lazy` chunk. Page copy loads from each tool's `detail.tsx` via `registry/details.ts`. Placeholder folders (`ai`, `audio`, `converters`, `developer`, `image`, `pdf`, `seo`, `video`) still contain only `.gitkeep`. New calculators follow `ARCHITECTURE.md` §7. `registerToolComponent` is not part of the current registry.
 
 ---
 
@@ -66,7 +66,7 @@ Defined in `frontend/src/types/tool.ts`, `backend/src/types/tool.ts`, and `front
 
 1. **Maintain strict dual-app discipline and shared Brain synchronization** across Antigravity and Cursor workflows.
 2. **Resolve backend local dependency/type-check parity** (install newly added `nodemailer` & `@aws-sdk/*` packages locally and verify clean `tsc --noEmit`).
-3. **Wire public catalog routes** (`/tools`, `/categories`, `/categories/[slug]`) to live Express/MongoDB endpoints instead of `sample-data.ts`. Header and footer already use `GET /catalog/categories`.
-4. **Implement and register real tool components** under `frontend/src/tools/` via `tools/registry/index.ts` and connect `ToolWorkspace`.
+3. **Public catalog routes are wired** (`/tools`, `/categories`, `/categories/[slug]`) to live Express/MongoDB. `sample-data.ts` is removed. `/tools/[slug]` returns 404 unless the `componentKey` is registered.
+4. **Ship remaining calculators** with the locked module in `ARCHITECTURE.md` §7 and the checklist in `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`. Seven calculators are already registered.
 5. **Implement remaining backend admin modules** (`users`, `analytics`, `activity-logs`, `seo`, `pages`, `integrations`, `settings`) to replace `admin-mock-data.ts` previews.
 

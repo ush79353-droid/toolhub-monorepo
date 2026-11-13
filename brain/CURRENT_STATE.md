@@ -33,6 +33,7 @@
 - **Calculator Embed System (`/embed/[slug]`):** Shared iframe surface for allowlisted calculators. **Embedding is enabled by default**; only an explicit admin OFF disables it (`resolveEmbedEnabled`). Public **Embed** button when eligible. CSP allows third-party framing only on `/embed/*`; embed pages are `noindex` with `no-store` cache and no ads. Standards: `brain/EMBED_STANDARDS.md`.
 - **Dummy Ad Placeholders (`/tools/[slug]` only):** Reusable `AdSlot` (`tool_top_banner`, `tool_article_middle`, `tool_bottom_banner` on by default; sidebar/article-bottom off). Placeholder mode only — no AdSense. Embeds excluded. Standards: `brain/AD_STANDARDS.md`.
 - **Tool Detail Page standards lock (docs):** Authoritative `TOOL_DETAIL_PAGE_STANDARDS.md`, step playbook `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, Cursor `.cursor/rules/tool-detail-page-standards.mdc`, Antigravity `.agents/rules/tool-detail-page-standards.md`, and `AGENTS.md` references — master is Auto Loan (verified 2026-11-13).
+- **Calculator module lock (docs, ADR-018):** New calculators use `ARCHITECTURE.md` §7: pure `calculation.ts` / `validation.ts`, `detail.tsx`, lazy `registry/index.ts`, and `registry/details.ts`. Mandatory checklist is in the playbook. Page design, SEO, embed, and ads are unchanged. Existing gaps are listed under Known Issues and were not refactored.
 
 ### Partially Implemented / UI Preview Only
 - **Public Directory (`/tools`, `/categories`, `/categories/[slug]`):** `/tools` lists active tools from `GET /catalog/tools`, 24 per page, with name search and a category filter. `/categories` and `/categories/[slug]` read the live catalog. A category page lists active tools only, grouped by pillar and sub-pillar. Header, footer, and the mobile menu use the same live category list. `/tools/[slug]` returns 404 unless the active tool's `componentKey` is registered. Each registered tool's guide lives in its own `detail.tsx`, and the calculator loads with `import()`. `frontend/src/lib/sample-data.ts` is removed.
@@ -56,12 +57,13 @@
 1. **Catalog Featured Filter:** `catalog.service.ts` `listFeaturedTools()` queries `{ isFeatured: true }` without checking `isActive: true`.
 2. **Env Var Drift:** `backend/.env.example` lists `SESSION_TTL_HOURS`/`SESSION_REMEMBER_ME_DAYS` and `frontend/.env.example` lists `ADMIN_SESSION_COOKIE_NAME`/`COOKIE_SECURE`, which are currently hardcoded in `admin-auth.service.ts` (`24h`/`7d`) and `session.ts` (`'admin_session'`, `NODE_ENV === 'production'`).
 3. **Residual Branding Strings:** `mega_tools` DB default, `megatools.io` placeholders, and `mega-tools/platform` link remain in non-critical defaults/UI previews.
+4. **Calculator module gaps (left in place):** `hundred-day` has no `types.ts` (types are in `calculation.ts`). `twelve-volt-wire` has no local `calculation.test.ts` (assertions are in `electrical/conductor.test.ts`). `StickyCalculatorAside`, `TableOfContents`, and `InfoTooltip` still live under `auto-loan/` and are imported by the shared page. `APPROVED_COMPONENT_KEYS` is duplicated in frontend `registry/keys.ts` and backend `tool.key.ts`.
 
 ---
 
 ## 4. Current Development Focus
 
-- Auto Loan Calculator is the locked master Tool Detail Page; Loan Calculator is aligned to that shell. Next priorities: formal financial QA on Auto Loan Calculator, public `/tools` directory (`BE-02` / `FE-01`), and subsequent tools via `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` (`TOOL-01`).
+- Auto Loan Calculator is the locked master Tool Detail Page. New calculators also follow the module in `ARCHITECTURE.md` §7 and the playbook checklist (ADR-018). Next priorities: formal financial QA on Auto Loan Calculator, `listFeaturedTools` active filter (`BE-02`), and subsequent tools via the playbook (`TOOL-01`).
 
 ---
 

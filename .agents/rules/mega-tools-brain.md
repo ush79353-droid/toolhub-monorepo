@@ -17,6 +17,7 @@ Follow the shared repository instructions in root `AGENTS.md` on every task.
 - Keep `frontend/` (Next.js App Router) and `backend/` (Express + MongoDB) as **two independent applications** with no npm workspaces.
 - Enforce `Browser → Next.js Server → Express API → MongoDB`. Browser components must never call Express directly or read `API_INTERNAL_URL`.
 - Preserve the locked palette and UI patterns documented in `brain/DESIGN_SYSTEM.md`.
+- New calculators follow `brain/ARCHITECTURE.md` §7 and the checklist in `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`. Page design stays `brain/TOOL_DETAIL_PAGE_STANDARDS.md`.
 - Maintain strict TypeScript (`strict: true`) and never invent APIs, models, or completed features that are not verified in code.
 - Never commit `.env`, `.env.local`, credentials, or secrets, and never force push or overwrite another developer's work. Sync Brain updates via `git fetch` / `git pull` and resolve conflicts explicitly.
 
