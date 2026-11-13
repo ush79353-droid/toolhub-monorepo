@@ -60,6 +60,8 @@ export interface ToolRecord {
   embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
+  /** Missing database values are reported as the initial true. They are not an audit result. */
+  isDeveloped: boolean;
   createdAt: string;
   updatedAt: string;
 }
@@ -129,6 +131,7 @@ function toRecord(doc: ITool): ToolRecord {
     embedAllowedDomains: doc.embedAllowedDomains ?? '',
     isActive: doc.isActive,
     isFeatured: doc.isFeatured,
+    isDeveloped: doc.isDeveloped !== false,
     createdAt: doc.createdAt.toISOString(),
     updatedAt: doc.updatedAt.toISOString(),
   };

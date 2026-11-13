@@ -257,6 +257,7 @@ A tool detail page is done only when:
 7. Responsive + keyboard checks
 8. `tsc`, lint, build, calc tests pass
 9. Brain updated (`CURRENT_STATE`, `CHANGELOG`, `TASKS`)
+10. Existing catalog row is active, `/tools/{slug}` renders the registered calculator, and embed stays on unless an admin set it off (ADR-022)
 
 ---
 

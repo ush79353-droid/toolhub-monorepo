@@ -370,3 +370,8 @@
 - **Example:** Net income 1,000,000, eligible depreciation 400,000, losses 20,000, gains 50,000, straight-line rent 25,000, maintenance capex 120,000, noncash compensation 15,000, and debt-issuance amortization 5,000 give FFO 1,370,000 and AFFO 1,245,000.
 - **Important Files:** `frontend/src/tools/calculators/affo/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-affo-tool.ts`.
 - **Verification:** calculation.test.ts passed (10 cases). Frontend and backend tsc passed. ESLint on the AFFO module passed. tool.key.ts self-check passed. Mongo record `6af46f10a27d8d1d4e990111` assigned with embed enabled. Browser defaults show FFO 1,370,000 and AFFO 1,245,000. A production build was not run while the dev server was serving the page.
+
+### 2026-11-14 — Lock calculator activation
+- **Summary:** ADR-022 requires every developed calculator to be activated on its existing catalog row before delivery. The catalog has 4,351 tools. All 17 registered calculators were already `isActive`. Six of them had `isDeveloped: false` and were set true: 403(b), 529, 70/20/10, ADR, AFFO, and 401(k). Catalog rows without a module stayed inactive. Loan and Auto Loan remain `indexable: false`.
+- **Important Files:** `frontend/src/tools/registry/activation.ts`, `AGENTS.md`, `brain/ARCHITECTURE.md`, `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `brain/DECISIONS.md`, `.cursor/rules/tool-activation.mdc`, `.agents/rules/tool-activation.md`.
+- **Verification:** `activation.test.ts` passed. Mongo update modified 6 documents. Public routes for the registered slugs were already active. `npm run build` was not run while the dev server was using `.next`.

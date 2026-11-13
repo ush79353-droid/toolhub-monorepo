@@ -159,14 +159,39 @@ Only the Mongoose models documented below exist. No other collections (`analytic
 | `embedDefaultHeight` | `Number` | Suggested iframe height px (`320`–`4000`) | `650` |
 | `embedPreferredLayout` | `String` | `responsive` \| `compact` | `responsive` |
 | `embedAllowedDomains` | `String` | Advisory comma-separated host list (`maxlength: 1000`) | `''` |
-| `isActive` | `Boolean` | Active status flag | `true` |
+| `isActive` | `Boolean` | Public catalog visibility. A registered calculator is set true only after its module and registry exist (ADR-022). An explicit false stays off. | `true` |
 | `isFeatured` | `Boolean` | Homepage featured promotion flag | `false` |
+| `isDeveloped` | `Boolean` | Initial default `true` for new tools and for reseed inserts (`$setOnInsert` only). A missing value is that initial default, not proof a component exists. The tools audit writes an explicit `true` or `false` without bumping `updatedAt`. | `true` |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |
 
 ### Indexes
 - `{ nameKey: 1 }` (`unique: true`)
 - `{ slug: 1 }` (`unique: true`)
 - `{ category: 1, updatedAt: -1 }`
+
+---
+
+## 6. `ToolAudit` (collection: `toolaudits`)
+
+- **Source:** `backend/src/modules/tools/tool-audit.model.ts`
+- **Responsibility:** Saved development-audit reports. `kind: 'latest'` holds the current report including per-tool rows. `kind: 'run'` holds the last 20 summaries without rows.
+
+| Field | Type | Notes |
+| :--- | :--- | :--- |
+| `kind` | `'latest' \| 'run'` | One latest document, plus history runs |
+| `ranAt` | `Date` | When the audit was saved |
+| `source` | `'filesystem' \| 'manifest'` | Live source tree, or the build-time component manifest |
+| `warning` | `String` | Non-fatal scan warning |
+| `total`, `developed`, `notDeveloped`, `needsReview` | `Number` | Status counts. Completion uses `developed / total` |
+| `completionPercent` | `Number` | One decimal |
+| `updatedCount` | `Number` | Conclusive `isDeveloped` writes requested |
+| `newlyDeveloped`, `regressed` | `String[]` | Slugs whose audit status changed since the previous saved report. Empty on the first audit |
+| `categoryStats` | `Object[]` | `{ category, total, developed, pending, needsReview }` |
+| `duplicates` | `Object` | Duplicate ids, slugs, routes, and shared developed component keys |
+| `rows` | `Mixed` | Present on `latest` only. Relative `src/` paths, no file contents |
+
+### Indexes
+- `{ kind: 1, ranAt: -1 }`
 
 ---
 

@@ -139,10 +139,24 @@
 - **Consequences:** Does not supersede ADR-016 or ADR-018. The visual shell and the calculator module stay locked. A milestone must not leave the tree unnecessarily broken: do not register a calculator key before its component and `detail.tsx` exist. Prefer a milestone that passes the checks that apply to it. Non-calculator work still keeps its Brain update in the same commit as the code. A calculator's Brain update is the last commit of the same delivery and is pushed with the code commits. Never force-push or rewrite shared history. Cursor (`.cursor/rules/git-commits.mdc`) and Antigravity (`.agents/rules/git-commits.md`) both apply this rule.
 - **Status:** Accepted
 
+## ADR-020: Server-side tool development audit
+- **Date:** 2026-11-13
+- **Decision:** `/tools-audit` is an admin-only page. The browser never reads the source tree. A Next.js server action scans `frontend/src/tools` plus the shared `/tools/[slug]` route, classifies every MongoDB tool, and Express persists `Tool.isDeveloped` and a `ToolAudit` report. If the source tree is absent, the action uses `frontend/src/generated/component-manifest.json`. Needs Review does not change a stored `isDeveloped` value. The schema default `true` is only the initial value.
+- **Reason:** The catalog has thousands of tools and only a handful of registered calculators. Development status has to come from the registry, exports, and route wiring, not from the default boolean.
+- **Consequences:** Re-running the audit is idempotent. The first saved audit has no regression baseline. Shared component keys are reported and are not automatic failures. The audit does not execute calculator math. Does not supersede ADR-016, ADR-018, or ADR-019.
+- **Status:** Accepted
+
 ## ADR-021: Calculators reuse the stored currency rates
 - **Date:** 2026-11-13
 - **Decision:** A calculator that converts money uses the ADR-017 `CurrencyRate` documents and no other rate source. The stored map is units of each currency per 1 unit of that document's base, and the base rate is 1. `converted = amount * rate[target] / rate[source]`. Round the money result once to the target's ISO minor units. A calculator that only labels one currency keeps using `CurrencySelect` and does not convert. The pure engine does not import Mongo, HTTP, or React.
 - **Reason:** The daily ExchangeRate-API job already stores the tables. Per-calculator fetches would duplicate the key, the cron, and the map.
 - **Consequences:** Does not supersede ADR-016, ADR-017, ADR-018, or ADR-019. No read route exists yet. The first converting calculator adds one shared Express read and one Next.js server loader; later calculators call those. Load the snapshot once per page. Show `fetchedAt`. A timestamp older than 48 hours is stale and is still used. A missing code is unavailable, not 1:1. Failed provider responses already skip the write; do not change that job in a calculator task. Cursor (`.cursor/rules/currency-conversion.mdc`) and Antigravity (`.agents/rules/currency-conversion.md`) both apply this rule.
+- **Status:** Accepted
+
+## ADR-022: Developed calculators are activated before delivery
+- **Date:** 2026-11-14
+- **Decision:** A calculator is delivered only when its existing catalog row is active and `/tools/{slug}` renders the registered component. Registration comes first: module, `keys.ts`, lazy `registry/index.ts`, `registry/details.ts`, and `backend/.../tool.key.ts`. Then set `isActive` on that one MongoDB tool. Set `isDeveloped` only when the field is already on the schema. `embedEnabled` stays on unless an admin sets it false. The slug goes in `IMPLEMENTED_TOOL_SLUGS`. Sitemap inclusion still requires `isActive`, `indexable`, and `sitemapInclude`.
+- **Reason:** A registered calculator that stays inactive, or a catalog row activated with no component, cannot be tested on the public site.
+- **Consequences:** Does not supersede ADR-016, ADR-017, ADR-018, ADR-019, or ADR-021. Do not insert a second catalog row. Do not activate a placeholder. Do not turn an admin-disabled tool back on unless the task says so. An empty or unregistered `componentKey` keeps the public route at `notFound()`. Cursor (`.cursor/rules/tool-activation.mdc`) and Antigravity (`.agents/rules/tool-activation.md`) both apply this rule.
 - **Status:** Accepted
 

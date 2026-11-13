@@ -156,6 +156,11 @@ Mounted at `/api/v1/admin/tools` (`backend/src/modules/tools/tool.router.ts`). A
 | `POST` | `/admin/tools` | Body (`toolFieldsSchema`): core tool fields plus optional SEO and embed prefs (`embedEnabled?`, `embedDefaultHeight?` 320–4000, `embedPreferredLayout?`, `embedAllowedDomains?`, `isActive?`, `isFeatured?`) | `ToolRecord` (`201`) | `400 VALIDATION_ERROR`, `400 INVALID_PLACEMENT`, `400 INVALID_ICON`, `409 NAME_TAKEN`, `409 SLUG_TAKEN` |
 | `PATCH` | `/admin/tools/:id` | Body (`toolFieldsSchema` — full fields required by schema on PATCH; all SEO fields still optional strings/booleans/nulls) | `ToolRecord` | Same as `POST` + `404 NOT_FOUND` |
 | `DELETE` | `/admin/tools/:id` | Param: `id` | `{ id }` | `404 NOT_FOUND` |
+| `GET` | `/admin/tools/development-audit` | — | `{ report: StoredAudit \| null }` | Auth errors |
+| `GET` | `/admin/tools/development-audit/catalog` | — | `{ id, name, slug, category, componentKey, isDeveloped, isDevelopedPersisted }[]` for every tool. `isDevelopedPersisted` is false when the field has never been written. | Auth errors |
+| `POST` | `/admin/tools/development-audit` | Body: audit totals, category stats, duplicate groups, rows (max 20,000), conclusive `updates`, and `initializeIds`. Component paths must be empty or start with `src/` and must not contain `..`. | `{ report: StoredAudit }` | `400 VALIDATION_ERROR`, auth errors |
+
+`ToolRecord` now includes `isDeveloped`. The public catalog does not. These three routes are registered before `GET /admin/tools/:id`. Audit writes use `timestamps: false`, so catalog `updatedAt` order does not change. `StoredAudit` is `{ ranAt, source, warning, totals, categories, duplicates, newlyDeveloped, regressed, updatedCount, rows, history }`.
 
 ---
 

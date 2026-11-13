@@ -175,6 +175,7 @@ Do not add `app/(website)/tools/<slug>/page.tsx`. Do not register a calculator b
 - SEO: `SEO_STANDARDS.md`. Embed: `EMBED_STANDARDS.md`. Ads: `AD_STANDARDS.md`.
 - Currency has two modes, locked in §7.7. A denomination label does not convert amounts. Real conversion uses the stored ADR-017 rates and does not call the provider from the browser.
 - Browser calculators still never call Express.
+- A calculator is public only after ADR-022: the module, registry, backend allowlist, and existing MongoDB record are connected, `isActive` is true, and `/tools/{slug}` renders. Catalog rows without a module stay inactive.
 
 ### 7.7 Currency conversion (ADR-017, ADR-021)
 

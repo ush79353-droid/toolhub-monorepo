@@ -17,6 +17,7 @@ Authoritative layout: `ARCHITECTURE.md` §7 (ADR-018). Visual shell stays `TOOL_
 - Sitemap slug list: `IMPLEMENTED_TOOL_SLUGS` in `frontend/src/app/sitemap.ts` only.
 - API boundary: Browser → Next.js Server → Express → MongoDB. Calculator components never call Express.
 - Do not add a per-calculator `page.tsx`, ad slot, iframe route, or metadata builder.
+- Activation is part of delivery (ADR-022). After registration, set the existing catalog row `isActive`. Confirm `/tools/{slug}` renders. Do not activate a row that has no module, and do not turn an admin-disabled tool back on.
 
 ### Required files
 

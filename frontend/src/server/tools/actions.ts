@@ -59,6 +59,7 @@ export interface ToolRecord {
   embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
+  isDeveloped: boolean;
   createdAt: string;
   updatedAt: string;
 }

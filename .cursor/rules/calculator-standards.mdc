@@ -18,7 +18,7 @@ Rules:
 
 - Reuse the Auto Loan Calculator page shell / sticky sidebar / shared currency / SEO pipeline. ADR-016 owns the visual shell. ADR-018 owns the module layout. The module lock does not restyle the page.
 - Follow `brain/ARCHITECTURE.md` §7: `calculation.ts`, `validation.ts`, `types.ts`, `detail.tsx`, `calculation.test.ts`, lazy `registry/index.ts`, and `registry/details.ts`. Mirror the key in `backend/src/modules/tools/tool.key.ts`.
-- Complete the playbook checklist before calling the calculator done: architecture, reusable components, pure engine, validation, tests, SEO, embed, responsive QA.
+- Complete the playbook checklist before calling the calculator done: architecture, reusable components, pure engine, validation, tests, SEO, embed, responsive QA, and activation (ADR-022, `.cursor/rules/tool-activation.mdc`).
 - Commit finished milestones under ADR-019 (`.cursor/rules/git-commits.mdc`). One commit is enough for a very small tool. Do not pad history. The delivery report lists each commit and its checks.
 - Do not add `app/(website)/tools/<slug>/page.tsx`. Unregistered keys call `notFound()`.
 - Import `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/`. Do not copy them.

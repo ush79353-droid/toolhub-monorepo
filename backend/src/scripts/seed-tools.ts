@@ -144,6 +144,7 @@ async function run() {
               isActive: false,
               isFeatured: false,
             },
+            $setOnInsert: { isDeveloped: true },
           },
           upsert: true,
         },

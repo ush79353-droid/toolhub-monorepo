@@ -50,6 +50,11 @@ export interface ITool extends Document {
   embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
+  /**
+   * Initial catalog value is true. A missing value is that initial default, not proof of a component.
+   * Only a source audit may set this from verification.
+   */
+  isDeveloped: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -106,6 +111,7 @@ const toolSchema = new Schema<ITool>(
     embedAllowedDomains: { type: String, default: '', maxlength: 1000 },
     isActive: { type: Boolean, default: true },
     isFeatured: { type: Boolean, default: false },
+    isDeveloped: { type: Boolean, default: true },
   },
   { timestamps: true }
 );

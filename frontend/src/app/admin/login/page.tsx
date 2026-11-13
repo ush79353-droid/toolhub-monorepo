@@ -58,8 +58,17 @@ export default function AdminLoginPage() {
         return;
       }
 
-      // Successful login -> Navigate to Admin Dashboard
-      router.push('/admin');
+      const requested = new URLSearchParams(window.location.search).get('redirect');
+      const next =
+        requested &&
+        requested.startsWith('/') &&
+        !requested.startsWith('//') &&
+        !requested.includes('\\') &&
+        !requested.startsWith('/admin/login') &&
+        (requested === '/tools-audit' || requested.startsWith('/tools-audit/') || requested.startsWith('/admin'))
+          ? requested
+          : '/admin';
+      router.push(next);
       router.refresh();
     } catch {
       setAuthError('Connection error. Ensure the Express backend server is running.');

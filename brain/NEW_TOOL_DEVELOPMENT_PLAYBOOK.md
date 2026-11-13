@@ -22,6 +22,7 @@ A new calculator is not done until every gate below is true, in this order. Deta
 7. **Embed** — `/embed/{slug}` renders the same component with `presentation="embed"`. No ads. `noindex` comes from the shared embed route.
 8. **Responsive QA** — Check 375, 768, 1024, and 1280. Calculator first below `lg`. No horizontal overflow.
 9. **Currency** — Follow the checklist in Step 19b. Denomination and conversion are different. Conversion reuses ADR-017. Do not add a provider call or a cron.
+10. **Activation** — Follow Step 19c (ADR-022). The existing catalog record is `isActive` only after the module, registry, tests, and `/tools/{slug}` check pass. Do not activate a placeholder.
 
 Then finish accessibility, type-check, lint, and the Brain update (steps 16–19). Commit each finished milestone under ADR-019. Do not wait until the end for every file.
 
@@ -255,6 +256,20 @@ Read ADR-017 and `ARCHITECTURE.md` §7.7 before choosing.
 - [ ] One rate snapshot per page load. Do not request rates again on each input change.
 - [ ] Show `fetchedAt`. If it is older than 48 hours, say the rate is stale and still use it. If a code is missing, stop the conversion and do not invent a rate.
 - [ ] `calculation.ts` stays free of Mongo, HTTP, and React. Pass the already loaded rates in.
+
+---
+
+## Step 19c — Activation checklist
+
+ADR-022. Do this after the module, tests, registry, and guide exist. Do it before calling the calculator delivered.
+
+- [ ] The catalog already has one row for the canonical slug. Update that row. Do not insert a second tool.
+- [ ] `componentKey` matches `keys.ts`, `registry/index.ts`, `registry/details.ts`, and `backend/.../tool.key.ts`.
+- [ ] `isActive` is true. `executionType` is `client`. `isDeveloped` is set true only when that field is already on the tool schema.
+- [ ] `embedEnabled` is omitted or true. Set false only when an admin disables embed.
+- [ ] The slug is in `IMPLEMENTED_TOOL_SLUGS`. Sitemap inclusion still requires `indexable` and `sitemapInclude`.
+- [ ] `/tools/{slug}` returns the calculator, not 404. `/embed/{slug}` renders when embed is eligible.
+- [ ] A missing module, a missing registry key, or an empty `componentKey` stays inactive. An admin-disabled tool stays inactive.
 
 ---
 
