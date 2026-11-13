@@ -70,6 +70,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ARDaysCalculator,
     })),
   ),
+  FourZeroThreeBCalculator: lazyTool(() =>
+    import('@/tools/calculators/four-zero-three-b/FourZeroThreeBCalculator').then((mod) => ({
+      default: mod.FourZeroThreeBCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
