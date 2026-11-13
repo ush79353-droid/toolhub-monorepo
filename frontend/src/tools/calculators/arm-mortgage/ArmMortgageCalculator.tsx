@@ -25,35 +25,35 @@ export function ArmMortgageCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
-  const [input, setInput] = React.useState<ArmMortgageInput>(() => createDefaultArmInput('2026-01-15'));
+  const [input, setInput] = React.useState<ArmMortgageInput>(() => createDefaultArmInput(todayIso()));
   const [errors, setErrors] = React.useState<ArmFieldErrors>({});
   const [result, setResult] = React.useState<ArmMortgageResult | null>(() =>
-    calculateArmMortgage(createDefaultArmInput('2026-01-15'))
+    calculateArmMortgage(input)
   );
   const [copied, setCopied] = React.useState(false);
-
-  React.useEffect(() => {
-    const today = todayIso();
-    setInput((current) => (current.startDate === '2026-01-15' ? { ...current, startDate: today } : current));
-  }, []);
 
   const run = (next: ArmMortgageInput) => {
     const validation = validateArmInput(next);
     setErrors(validation.errors);
-    if (validation.isValid) setResult(calculateArmMortgage(next));
+    setResult(validation.isValid ? calculateArmMortgage(next) : null);
   };
 
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
         `Initial P&I: ${formatCurrencyValue(result.initialPaymentCents / 100, result.currency)}`,
-        `First reset payment: ${
+        `First reset payment (assumption): ${
           result.firstAdjustedPaymentCents
             ? formatCurrencyValue(result.firstAdjustedPaymentCents / 100, result.currency)
             : 'n/a'
         }`,
-        `Total interest: ${formatCurrencyValue(result.totalInterestCents / 100, result.currency)}`,
-        'Projection only. Not a guaranteed future rate.',
+        `Projected rate at first reset: ${
+          result.projectedRateAfterFirstReset === null ? 'n/a' : `${result.projectedRateAfterFirstReset.toFixed(3)}%`
+        }`,
+        `Maximum permitted rate: ${result.maximumPermittedRate.toFixed(3)}%`,
+        `Highest payment if caps bind: ${formatCurrencyValue(result.contractualMaxPaymentCents / 100, result.currency)}`,
+        `Total interest on this assumption: ${formatCurrencyValue(result.totalInterestCents / 100, result.currency)}`,
+        'Later rates are user assumptions, not a forecast.',
       ].join('\n')
     : '';
 

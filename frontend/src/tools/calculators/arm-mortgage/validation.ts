@@ -1,17 +1,42 @@
 import { isSupportedCurrency } from '@/tools/shared/currency';
-import { ARM_STRUCTURES, RATE_SCENARIOS, structureTiming, type ArmFieldErrors, type ArmMortgageInput } from './types';
+import { financingCents } from './calculation';
+import {
+  ARM_STRUCTURES,
+  DOWN_PAYMENT_MODES,
+  RATE_SCENARIOS,
+  structureTiming,
+  type ArmFieldErrors,
+  type ArmMortgageInput,
+} from './types';
 
 function finite(n: number): boolean {
   return Number.isFinite(n);
 }
 
+function whole(n: number): boolean {
+  return finite(n) && Number.isInteger(n);
+}
+
 export function validateArmInput(input: ArmMortgageInput): { isValid: boolean; errors: ArmFieldErrors } {
   const errors: ArmFieldErrors = {};
+  const money = financingCents(input);
 
-  if (!finite(input.principal) || input.principal <= 0) {
-    errors.principal = 'Mortgage amount must be greater than zero';
+  if (!finite(input.homePrice) || money.priceCents <= 0) {
+    errors.homePrice = 'Home price must be greater than zero';
   }
-  if (!finite(input.termYears) || input.termYears < 1 || input.termYears > 40 || !Number.isInteger(input.termYears)) {
+  if (!DOWN_PAYMENT_MODES.includes(input.downPaymentMode)) {
+    errors.downPayment = 'Choose an amount or a percent';
+  } else if (!finite(input.downPayment) || input.downPayment < 0) {
+    errors.downPayment = 'Down payment cannot be negative';
+  } else if (input.downPaymentMode === 'percent' && input.downPayment > 100) {
+    errors.downPayment = 'Down payment percent cannot exceed 100';
+  } else if (money.downCents < 0) {
+    errors.downPayment = 'Down payment cannot be negative';
+  } else if (finite(input.homePrice) && money.priceCents > 0 && money.principalCents <= 0) {
+    errors.downPayment = 'Down payment must be less than the home price';
+  }
+
+  if (!whole(input.termYears) || input.termYears < 1 || input.termYears > 40) {
     errors.termYears = 'Loan term must be a whole number of years from 1 to 40';
   }
   if (!finite(input.initialAnnualRate) || input.initialAnnualRate < 0 || input.initialAnnualRate > 30) {
@@ -19,47 +44,47 @@ export function validateArmInput(input: ArmMortgageInput): { isValid: boolean; e
   }
   if (!ARM_STRUCTURES.includes(input.structure)) {
     errors.structure = 'Choose a supported ARM structure';
-  } else if (finite(input.termYears)) {
-    const { fixedMonths } = structureTiming(input.structure);
+  } else if (input.structure === 'custom') {
+    if (!whole(input.customFixedYears) || input.customFixedYears < 0 || input.customFixedYears > 40) {
+      errors.customFixedYears = 'Fixed period must be a whole number of years from 0 to 40';
+    }
+    if (!whole(input.customAdjustMonths) || input.customAdjustMonths < 1 || input.customAdjustMonths > 120) {
+      errors.customAdjustMonths = 'Adjustment frequency must be a whole number of months from 1 to 120';
+    }
+  }
+  if (!errors.structure && !errors.customFixedYears && whole(input.termYears)) {
+    const { fixedMonths, adjustEveryMonths } = structureTiming(input);
     if (fixedMonths > input.termYears * 12) {
       errors.structure = 'The fixed period cannot be longer than the loan term';
     }
+    if (adjustEveryMonths < 1) {
+      errors.customAdjustMonths = 'Adjustment frequency must be at least 1 month';
+    }
   }
   if (!RATE_SCENARIOS.includes(input.scenario)) {
-    errors.scenario = 'Choose a rate scenario';
+    errors.scenario = 'Choose a rate assumption';
   }
-  if (!finite(input.projectedAnnualRate) || input.projectedAnnualRate < 0 || input.projectedAnnualRate > 30) {
-    errors.projectedAnnualRate = 'Projected rate must be between 0% and 30%';
+  if (!finite(input.indexRate) || input.indexRate < 0 || input.indexRate > 30) {
+    errors.indexRate = 'Expected index must be between 0% and 30%';
   }
-  if (!finite(input.scenarioStepPercent) || input.scenarioStepPercent < 0 || input.scenarioStepPercent > 5) {
-    errors.scenarioStepPercent = 'Scenario step must be between 0 and 5 percentage points';
+  if (!finite(input.margin) || input.margin < 0 || input.margin > 15) {
+    errors.margin = 'Margin must be between 0 and 15 percentage points';
   }
-  if (input.useIndexMargin) {
-    if (!finite(input.indexRate) || input.indexRate < 0 || input.indexRate > 30) {
-      errors.indexRate = 'Index rate must be between 0% and 30%';
-    }
-    if (!finite(input.margin) || input.margin < 0 || input.margin > 10) {
-      errors.margin = 'Margin must be between 0 and 10 percentage points';
-    }
+  if (
+    input.scenario !== 'constant' &&
+    (!finite(input.scenarioStepPercent) || input.scenarioStepPercent < 0 || input.scenarioStepPercent > 10)
+  ) {
+    errors.scenarioStepPercent = 'Scenario step must be between 0 and 10 percentage points';
   }
   for (const [key, value, label] of [
-    ['initialCap', input.initialCap, 'Initial cap'],
-    ['subsequentCap', input.subsequentCap, 'Subsequent cap'],
-    ['lifetimeCap', input.lifetimeCap, 'Lifetime cap'],
+    ['initialCap', input.initialCap, 'Initial adjustment cap'],
+    ['subsequentCap', input.subsequentCap, 'Subsequent adjustment cap'],
+    ['lifetimeIncreaseCap', input.lifetimeIncreaseCap, 'Lifetime increase cap'],
+    ['lifetimeDecreaseCap', input.lifetimeDecreaseCap, 'Lifetime decrease cap'],
   ] as const) {
     if (!finite(value) || value < 0 || value > 20) {
       errors[key] = `${label} must be between 0 and 20 percentage points`;
     }
-  }
-  if (input.rateFloor !== null && (!finite(input.rateFloor) || input.rateFloor < 0 || input.rateFloor > 30)) {
-    errors.rateFloor = 'Rate floor must be between 0% and 30%, or left blank';
-  }
-  if (
-    input.rateFloor !== null &&
-    finite(input.initialAnnualRate) &&
-    input.rateFloor > input.initialAnnualRate + input.lifetimeCap
-  ) {
-    errors.rateFloor = 'Rate floor cannot sit above the lifetime maximum rate';
   }
   for (const [key, value, label] of [
     ['propertyTaxMonthly', input.propertyTaxMonthly, 'Property tax'],

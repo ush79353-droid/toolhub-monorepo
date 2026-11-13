@@ -1,6 +1,12 @@
 import assert from 'node:assert/strict';
-import { amortizingPaymentCents, applyRateCaps, calculateArmMortgage } from './calculation';
-import { createDefaultArmInput } from './types';
+import {
+  amortizingPaymentCents,
+  applyRateCaps,
+  assumedFullyIndexedRate,
+  calculateArmMortgage,
+  financingCents,
+} from './calculation';
+import { createDefaultArmInput, type ArmMortgageInput } from './types';
 import { validateArmInput } from './validation';
 
 function independentPayment(principal: number, annualPct: number, months: number): number {
@@ -13,160 +19,298 @@ function independentPayment(principal: number, annualPct: number, months: number
 
 const start = '2026-01-01';
 
-function base() {
-  return createDefaultArmInput(start);
+function base(patch: Partial<ArmMortgageInput> = {}): ArmMortgageInput {
+  return { ...createDefaultArmInput(start), ...patch };
 }
 
 assert.equal(independentPayment(250000, 5.5, 360), 141947);
 assert.equal(amortizingPaymentCents(25_000_000, 0.055 / 12, 360), 141947);
+assert.equal(amortizingPaymentCents(25_000_000, 0, 360), Math.round(25_000_000 / 360));
 
 {
-  const result = calculateArmMortgage(base());
+  const loan = base({ homePrice: 250000, downPaymentMode: 'amount', downPayment: 0 });
+  assert.equal(financingCents(loan).principalCents, 25_000_000);
+  const result = calculateArmMortgage(loan);
   assert.equal(result.initialPaymentCents, 141947);
+  assert.equal(result.schedule[0].paymentCents, 141947);
+  assert.equal(result.schedule[0].annualRate, 5.5);
   assert.equal(result.fixedMonths, 60);
   assert.equal(result.adjustEveryMonths, 12);
   assert.equal(result.firstAdjustmentPaymentNumber, 61);
   assert.equal(result.schedule[59].rateAdjusted, false);
   assert.equal(result.schedule[60].rateAdjusted, true);
-  assert.equal(result.schedule[result.schedule.length - 1].balanceCents, 0);
+  assert.equal(result.schedule[60].annualRate, 6.5);
+  assert.equal(result.projectedRateAfterFirstReset, 6.5);
+  assert.equal(result.fullyIndexedRate, 6.5);
+  assert.equal(result.maximumPermittedRate, 10.5);
+  assert.equal(result.minimumPermittedRate, 0.5);
+  assert.equal(result.paymentDifferenceCents, (result.firstAdjustedPaymentCents ?? 0) - result.initialPaymentCents);
+  assert.ok((result.paymentDifferenceCents ?? 0) > 0);
+  assert.equal(result.schedule.at(-1)?.balanceCents, 0);
+  assert.equal(result.paymentCount, 360);
   const interest = result.schedule.reduce((s, r) => s + r.interestCents, 0);
   const principal = result.schedule.reduce((s, r) => s + r.principalCents, 0);
   assert.equal(interest, result.totalInterestCents);
   assert.equal(principal, result.totalPrincipalCents);
   assert.equal(principal, 25_000_000);
+  assert.equal(result.totalPaymentsCents, interest + principal);
+  const yearInterest = result.yearlySchedule.reduce((s, r) => s + r.interestCents, 0);
+  const yearPrincipal = result.yearlySchedule.reduce((s, r) => s + r.principalCents, 0);
+  assert.equal(result.yearlySchedule.length, 30);
+  assert.equal(yearInterest, interest);
+  assert.equal(yearPrincipal, principal);
+  let previous = result.principalCents;
+  for (const row of result.schedule) {
+    assert.ok(row.principalCents >= 0);
+    assert.ok(row.interestCents >= 0);
+    assert.ok(row.balanceCents >= 0);
+    assert.ok(row.balanceCents <= previous);
+    previous = row.balanceCents;
+  }
+}
+
+{
+  const priced = calculateArmMortgage(base());
+  assert.equal(priced.principalCents, 32_000_000);
+  assert.equal(priced.downPaymentCents, 8_000_000);
+  assert.equal(priced.initialPaymentCents, independentPayment(320000, 5.5, 360));
 }
 
 for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as const) {
-  const result = calculateArmMortgage({ ...base(), structure });
+  const result = calculateArmMortgage(base({ structure }));
   const years = Number(structure.split('/')[0]);
   const every = structure.endsWith('/1') ? 12 : 6;
   assert.equal(result.fixedMonths, years * 12, structure);
   assert.equal(result.adjustEveryMonths, every, structure);
-  assert.equal(result.firstAdjustmentPaymentNumber, years * 12 + 1);
+  assert.equal(result.firstAdjustmentPaymentNumber, years * 12 + 1, structure);
+  assert.equal(result.schedule[years * 12].rateAdjusted, true, structure);
 }
 
 {
-  const zero = calculateArmMortgage({ ...base(), initialAnnualRate: 0, projectedAnnualRate: 0, scenario: 'constant' });
+  const fiveSix = calculateArmMortgage(base({ structure: '5/6' }));
+  assert.equal(fiveSix.schedule[60].rateAdjusted, true);
+  assert.equal(fiveSix.schedule[66].rateAdjusted, true);
+  assert.equal(fiveSix.schedule[65].rateAdjusted, false);
+  const fiveOne = calculateArmMortgage(base({ structure: '5/1' }));
+  assert.equal(fiveOne.schedule[72].rateAdjusted, true);
+  assert.equal(fiveOne.schedule[66].rateAdjusted, false);
+}
+
+{
+  const custom = calculateArmMortgage(
+    base({ structure: 'custom', customFixedYears: 4, customAdjustMonths: 6, termYears: 10 })
+  );
+  assert.equal(custom.fixedMonths, 48);
+  assert.equal(custom.adjustEveryMonths, 6);
+  assert.equal(custom.firstAdjustmentPaymentNumber, 49);
+  assert.equal(custom.schedule[48 + 6].rateAdjusted, true);
+}
+
+{
+  const zero = calculateArmMortgage(
+    base({
+      homePrice: 250000,
+      downPayment: 0,
+      downPaymentMode: 'amount',
+      initialAnnualRate: 0,
+      indexRate: 0,
+      margin: 0,
+      scenario: 'constant',
+    })
+  );
   assert.equal(zero.initialPaymentCents, Math.round(25_000_000 / 360));
   assert.equal(zero.totalInterestCents, 0);
+  assert.equal(zero.schedule[60].annualRate, 0);
 }
 
 {
-  const capped = applyRateCaps({
-    currentRate: 5.5,
-    initialRate: 5.5,
-    uncappedRate: 9,
-    isFirstAdjustment: true,
-    initialCap: 2,
-    subsequentCap: 1,
-    lifetimeCap: 5,
-    rateFloor: null,
-  });
-  assert.equal(capped, 7.5);
-  const later = applyRateCaps({
-    currentRate: 7.5,
-    initialRate: 5.5,
-    uncappedRate: 12,
-    isFirstAdjustment: false,
-    initialCap: 2,
-    subsequentCap: 1,
-    lifetimeCap: 5,
-    rateFloor: null,
-  });
-  assert.equal(later, 8.5);
-  const life = applyRateCaps({
-    currentRate: 10,
-    initialRate: 5.5,
-    uncappedRate: 12,
-    isFirstAdjustment: false,
-    initialCap: 2,
-    subsequentCap: 2,
-    lifetimeCap: 5,
-    rateFloor: null,
-  });
-  assert.equal(life, 10.5);
-  const floor = applyRateCaps({
-    currentRate: 5.5,
-    initialRate: 5.5,
-    uncappedRate: 1,
-    isFirstAdjustment: true,
-    initialCap: 2,
-    subsequentCap: 2,
-    lifetimeCap: 5,
-    rateFloor: 3,
-  });
-  assert.equal(floor, 3);
+  assert.equal(
+    applyRateCaps({
+      currentRate: 5.5,
+      initialRate: 5.5,
+      uncappedRate: 9,
+      isFirstAdjustment: true,
+      initialCap: 2,
+      subsequentCap: 1,
+      lifetimeIncreaseCap: 5,
+      lifetimeDecreaseCap: 5,
+    }),
+    7.5
+  );
+  assert.equal(
+    applyRateCaps({
+      currentRate: 7.5,
+      initialRate: 5.5,
+      uncappedRate: 12,
+      isFirstAdjustment: false,
+      initialCap: 2,
+      subsequentCap: 1,
+      lifetimeIncreaseCap: 5,
+      lifetimeDecreaseCap: 5,
+    }),
+    8.5
+  );
+  assert.equal(
+    applyRateCaps({
+      currentRate: 10,
+      initialRate: 5.5,
+      uncappedRate: 12,
+      isFirstAdjustment: false,
+      initialCap: 2,
+      subsequentCap: 2,
+      lifetimeIncreaseCap: 5,
+      lifetimeDecreaseCap: 5,
+    }),
+    10.5
+  );
+  assert.equal(
+    applyRateCaps({
+      currentRate: 5.5,
+      initialRate: 5.5,
+      uncappedRate: 1,
+      isFirstAdjustment: true,
+      initialCap: 2,
+      subsequentCap: 2,
+      lifetimeIncreaseCap: 5,
+      lifetimeDecreaseCap: 5,
+    }),
+    3.5
+  );
+  assert.equal(
+    applyRateCaps({
+      currentRate: 5.5,
+      initialRate: 5.5,
+      uncappedRate: 0,
+      isFirstAdjustment: true,
+      initialCap: 5,
+      subsequentCap: 5,
+      lifetimeIncreaseCap: 5,
+      lifetimeDecreaseCap: 1,
+    }),
+    4.5
+  );
 }
 
 {
-  const rising = calculateArmMortgage({
-    ...base(),
-    scenario: 'rising',
-    scenarioStepPercent: 1,
-    projectedAnnualRate: 5.5,
-    initialCap: 5,
-    subsequentCap: 5,
-    lifetimeCap: 10,
-  });
+  const rising = calculateArmMortgage(
+    base({
+      scenario: 'rising',
+      scenarioStepPercent: 1,
+      initialCap: 5,
+      subsequentCap: 5,
+      lifetimeIncreaseCap: 10,
+    })
+  );
+  assert.equal(assumedFullyIndexedRate(base({ scenario: 'rising', scenarioStepPercent: 1 }), 1), 7.5);
+  assert.equal(rising.schedule[60].annualRate, 6.5);
+  assert.equal(rising.schedule[72].annualRate, 7.5);
   assert.ok((rising.firstAdjustedPaymentCents ?? 0) > rising.initialPaymentCents);
-  const falling = calculateArmMortgage({
-    ...base(),
-    scenario: 'falling',
-    scenarioStepPercent: 1,
-    initialCap: 2,
-    subsequentCap: 2,
-    lifetimeCap: 5,
-  });
+  assert.ok(rising.maxProjectedRate <= rising.maximumPermittedRate);
+
+  const falling = calculateArmMortgage(
+    base({
+      scenario: 'falling',
+      indexRate: 3,
+      margin: 1.5,
+      scenarioStepPercent: 1,
+      initialCap: 2,
+      subsequentCap: 2,
+      lifetimeDecreaseCap: 5,
+    })
+  );
+  assert.equal(falling.schedule[60].annualRate, 4.5);
+  assert.equal(falling.schedule[72].annualRate, 3.5);
   assert.ok((falling.firstAdjustedPaymentCents ?? 0) < falling.initialPaymentCents);
+  assert.ok(falling.schedule[72].annualRate >= falling.minimumPermittedRate);
 }
 
 {
-  const indexed = calculateArmMortgage({
-    ...base(),
-    useIndexMargin: true,
+  const capped = calculateArmMortgage(
+    base({
+      homePrice: 250000,
+      downPayment: 0,
+      downPaymentMode: 'amount',
+      initialAnnualRate: 5,
+      indexRate: 20,
+      margin: 10,
+      scenario: 'constant',
+      initialCap: 2,
+      subsequentCap: 2,
+      lifetimeIncreaseCap: 5,
+      lifetimeDecreaseCap: 5,
+    })
+  );
+  assert.equal(capped.maximumPermittedRate, 10);
+  assert.equal(capped.schedule[60].annualRate, 7);
+  assert.ok(capped.maxProjectedRate <= 10);
+  assert.equal(capped.maxProjectedPaymentCents, capped.contractualMaxPaymentCents);
+  const mild = calculateArmMortgage(
+    base({
+      homePrice: 250000,
+      downPayment: 0,
+      downPaymentMode: 'amount',
+      initialAnnualRate: 5,
+      indexRate: 4,
+      margin: 1.5,
+      initialCap: 2,
+      subsequentCap: 2,
+      lifetimeIncreaseCap: 5,
+    })
+  );
+  assert.ok(mild.maxProjectedPaymentCents <= mild.contractualMaxPaymentCents);
+  assert.ok(mild.maximumPermittedRate > mild.maxProjectedRate);
+}
+
+{
+  const input = base({
+    homePrice: 250000,
+    downPayment: 0,
+    downPaymentMode: 'amount',
+    termYears: 6,
+    structure: '5/1',
     indexRate: 5,
-    margin: 2.5,
+    margin: 2,
     initialCap: 5,
     subsequentCap: 5,
-    lifetimeCap: 10,
-    scenario: 'constant',
+    lifetimeIncreaseCap: 10,
   });
-  assert.equal(indexed.schedule[60].annualRate, 7.5);
-}
-
-{
-  const input = { ...base(), termYears: 6, structure: '5/1' as const, projectedAnnualRate: 6.5 };
   const result = calculateArmMortgage(input);
   assert.equal(result.paymentCount, 72);
   assert.equal(result.schedule.at(-1)?.balanceCents, 0);
   const before = result.schedule[59].balanceCents;
-  const remaining = 12;
-  const r = result.schedule[60].annualRate / 100 / 12;
-  const expected = amortizingPaymentCents(before, r, remaining);
+  const expected = amortizingPaymentCents(before, result.schedule[60].annualRate / 100 / 12, 12);
   assert.equal(result.firstAdjustedPaymentCents, expected);
+  assert.equal(result.schedule[60].paymentCents, expected);
 }
 
 {
-  const bad = validateArmInput({ ...base(), principal: -1, initialAnnualRate: Number.NaN, structure: '5/1' });
-  assert.equal(bad.isValid, false);
-  assert.ok(bad.errors.principal);
-  const longFixed = validateArmInput({ ...base(), termYears: 4, structure: '5/1' });
+  const badPrice = validateArmInput(base({ homePrice: -1 }));
+  assert.equal(badPrice.isValid, false);
+  assert.ok(badPrice.errors.homePrice);
+  const wiped = validateArmInput(base({ downPaymentMode: 'percent', downPayment: 100 }));
+  assert.ok(wiped.errors.downPayment);
+  const nan = validateArmInput(base({ initialAnnualRate: Number.NaN }));
+  assert.ok(nan.errors.initialAnnualRate);
+  const longFixed = validateArmInput(base({ termYears: 4, structure: '5/1' }));
   assert.ok(longFixed.errors.structure);
-  const floor = validateArmInput({ ...base(), rateFloor: 20, lifetimeCap: 1 });
-  assert.ok(floor.errors.rateFloor);
+  const custom = validateArmInput(base({ structure: 'custom', customAdjustMonths: 0, customFixedYears: 2 }));
+  assert.ok(custom.errors.customAdjustMonths);
+  const overTerm = validateArmInput(base({ structure: 'custom', customFixedYears: 8, termYears: 5 }));
+  assert.ok(overTerm.errors.structure);
 }
 
 {
-  const withCosts = calculateArmMortgage({
-    ...base(),
-    propertyTaxMonthly: 200,
-    insuranceMonthly: 100,
-    hoaMonthly: 50,
-    mortgageInsuranceMonthly: 75,
-  });
+  const withCosts = calculateArmMortgage(
+    base({
+      propertyTaxMonthly: 200,
+      insuranceMonthly: 100,
+      hoaMonthly: 50,
+      mortgageInsuranceMonthly: 75,
+    })
+  );
   assert.equal(withCosts.housingExtrasCents, 42500);
   assert.equal(withCosts.initialHousingPaymentCents, withCosts.initialPaymentCents + 42500);
-  assert.equal(withCosts.schedule[0].paymentCents, withCosts.initialPaymentCents);
+  assert.equal(withCosts.schedule[0].interestCents + withCosts.schedule[0].principalCents, withCosts.schedule[0].paymentCents);
 }
 
 {
@@ -174,6 +318,7 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
   const b = calculateArmMortgage(base());
   assert.equal(a.totalPaymentsCents, b.totalPaymentsCents);
   assert.equal(a.schedule.length, b.schedule.length);
+  assert.equal(a.payoffDate, '2056-01-01');
 }
 
 console.log('arm mortgage calculation.test ok');

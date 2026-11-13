@@ -5,7 +5,7 @@ import { ARM_FAQS, ARM_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate an adjustable-rate mortgage payment through the fixed period and modeled resets, including caps, remaining-term re-amortization, and optional housing costs.',
+    'Estimate an adjustable-rate mortgage from the home price and down payment through the fixed period and later resets. Caps are contractual limits. Index paths are assumptions you enter, not a forecast.',
   asideAriaLabel: 'Interactive ARM mortgage calculator',
   tocItems: ARM_TOC_ITEMS,
   GuideArticle: ArmMortgageGuideArticle,
