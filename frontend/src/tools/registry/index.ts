@@ -55,6 +55,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TwelveHourShiftPayCalculator,
     })),
   ),
+  ThreeXRentCalculator: lazyTool(() =>
+    import('@/tools/calculators/three-x-rent/ThreeXRentCalculator').then((mod) => ({
+      default: mod.ThreeXRentCalculator,
+    })),
+  ),
   ThreeDPrinterBuyVsOutsourceCalculator: lazyTool(() =>
     import('@/tools/calculators/three-d-printer-buy-vs-outsource/ThreeDPrinterBuyVsOutsourceCalculator').then((mod) => ({
       default: mod.ThreeDPrinterBuyVsOutsourceCalculator,

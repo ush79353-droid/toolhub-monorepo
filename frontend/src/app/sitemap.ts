@@ -19,6 +19,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '12-volt-wire-size-calculator',
   '0-60-calculator',
   '12-hour-shift-pay-calculator',
+  '3x-rent-calculator',
   '3d-printer-buy-vs-outsource-calculator',
 ] as const;
 

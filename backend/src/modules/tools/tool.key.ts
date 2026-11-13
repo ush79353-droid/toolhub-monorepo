@@ -9,6 +9,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ZeroToSixtyCalculator',
   'TwelveVoltWireCalculator',
   'TwelveHourShiftPayCalculator',
+  'ThreeXRentCalculator',
   'ThreeDPrinterBuyVsOutsourceCalculator',
 ] as const;
 
@@ -41,6 +42,7 @@ if (isDirect) {
     !isApprovedComponentKey('ZeroToSixtyCalculator') ||
     !isApprovedComponentKey('TwelveVoltWireCalculator') ||
     !isApprovedComponentKey('TwelveHourShiftPayCalculator') ||
+    !isApprovedComponentKey('ThreeXRentCalculator') ||
     !isApprovedComponentKey('ThreeDPrinterBuyVsOutsourceCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {

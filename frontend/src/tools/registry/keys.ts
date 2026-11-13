@@ -7,6 +7,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ZeroToSixtyCalculator',
   'TwelveVoltWireCalculator',
   'TwelveHourShiftPayCalculator',
+  'ThreeXRentCalculator',
   'ThreeDPrinterBuyVsOutsourceCalculator',
 ] as const;
 
@@ -26,6 +27,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'TwelveVoltWireCalculator',
   'ZeroToSixtyCalculator',
   'TwelveHourShiftPayCalculator',
+  'ThreeXRentCalculator',
   'ThreeDPrinterBuyVsOutsourceCalculator',
 ] as const;
 
