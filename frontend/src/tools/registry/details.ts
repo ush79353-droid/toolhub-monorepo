@@ -16,6 +16,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ARDaysCalculator: () => import('@/tools/calculators/ar-days/detail'),
   FourZeroThreeBCalculator: () => import('@/tools/calculators/four-zero-three-b/detail'),
   FiveTwentyNineCalculator: () => import('@/tools/calculators/five-twenty-nine/detail'),
+  SeventyTwentyTenCalculator: () => import('@/tools/calculators/seventy-twenty-ten-rule/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

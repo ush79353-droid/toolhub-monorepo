@@ -80,6 +80,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FiveTwentyNineCalculator,
     })),
   ),
+  SeventyTwentyTenCalculator: lazyTool(() =>
+    import('@/tools/calculators/seventy-twenty-ten-rule/SeventyTwentyTenCalculator').then((mod) => ({
+      default: mod.SeventyTwentyTenCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

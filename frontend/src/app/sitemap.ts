@@ -24,6 +24,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ar-days-calculator',
   '403b-calculator',
   '529-calculator',
+  '702010-rule-money-calculator',
 ] as const;
 
 const STATIC_PATHS = [
