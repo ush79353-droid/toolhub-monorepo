@@ -110,7 +110,7 @@ export function AutoLoanResults({ result, hasErrors, onCopy, copied }: AutoLoanR
 
         <div className="flex min-h-[68px] flex-col justify-between rounded-xl border border-border bg-white p-3">
           <p className="text-xs font-normal text-muted-foreground">Total Estimated Cost</p>
-          <p className="mt-1 text-[15px] font-semibold text-primary tabular-nums sm:text-base">
+          <p className="mt-1 text-[15px] font-semibold text-accent tabular-nums sm:text-base">
             {fmt(result.totalEstimatedCost)}
           </p>
         </div>

@@ -13,6 +13,7 @@
     "categories:seed": "tsx src/scripts/seed-categories.ts",
     "tools:seed": "tsx src/scripts/seed-tools.ts",
     "tool:assign": "tsx src/scripts/assign-tool-component.ts",
+    "tools:embed-defaults": "tsx src/scripts/enable-default-embeds.ts",
     "tools:publish": "tsx src/scripts/publish-browser-tools.ts",
     "categories:icons": "tsx src/scripts/attach-category-icons.ts",
     "categories:descriptions": "tsx src/scripts/set-category-descriptions.ts",

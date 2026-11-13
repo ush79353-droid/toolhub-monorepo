@@ -166,6 +166,89 @@
 
 
 
+### 2026-11-12 — Dynamic tool SEO management + calculator standards lock
+- **Summary:** Expanded optional Tool SEO fields (robots/social/schema/sitemap prefs), redesigned Admin Tool SEO UI with previews + media pickers, fixed public `generateMetadata`/canonical/`metadataBase`/JSON-LD via shared `lib/seo/tool-seo.ts`, and revalidate public tool paths on admin save. Locked `CALCULATOR_STANDARDS.md` + `SEO_STANDARDS.md` with matching Cursor/Antigravity rules. Also includes Loan page UI polish (unified intro card, sticky internal scroll, copy/CSV reliability, heading/icon cleanup).
+- **Important Files:** `backend/src/modules/tools/{tool.model,tool.service}.ts`, `backend/src/validation/admin-tool.schema.ts`, `backend/src/modules/catalog/catalog.service.ts`, `frontend/src/lib/seo/*`, `frontend/src/components/admin/forms/{ToolForm,ToolSeoSection}.tsx`, `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/config/site.ts`, `brain/{SEO_STANDARDS,CALCULATOR_STANDARDS,README,CHANGELOG,CURRENT_STATE,TASKS,DECISIONS}.md`, `.cursor/rules/calculator-standards.mdc`, `.agents/rules/calculator-standards.md`.
+- **Verification:** Backend `tsc --noEmit` passed; frontend `tsc --noEmit` passed; `tool-seo.test.ts` ok; currency/loan/auto-loan unit tests passed.
+
+### 2026-11-12 — Sticky calculator internal scroll + themed table scrollbar
+- **Summary:** `StickyCalculatorAside` now caps to the viewport under the site header and scrolls internally (`overflow-y-auto` + `overscroll-contain`, scrollbar visually hidden) when amortization/results expand. Amortization schedule overflow uses a Deep Teal `brand-scroll` scrollbar. Two-column tool pages merge hero + TOC + Related into one left card.
+- **Important Files:** `frontend/src/tools/calculators/auto-loan/StickyCalculatorAside.tsx`, `frontend/src/tools/calculators/auto-loan/AmortizationTable.tsx`, `frontend/src/tools/calculators/loan/LoanAmortizationTable.tsx`, `frontend/src/app/globals.css`, `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/tools/calculators/auto-loan/TableOfContents.tsx`, `frontend/src/components/shared/RelatedCatalogTools.tsx`.
+
+### 2026-11-12 — Shared 49-currency support + public canvas polish
+- **Summary:** Added reusable `frontend/src/tools/shared/currency.ts` (`49` ISO display currencies, `Intl` fraction digits, denomination-only formatting) plus searchable accessible `CurrencySelect`. Wired into Auto Loan and Loan calculators without changing financial formulas or adding FX conversion. Public `(website)` canvas set to white; calculator panels use soft elevation shadow.
+- **Important Files:** `frontend/src/tools/shared/{currency.ts,currency.test.ts,CurrencySelect.tsx}`, `frontend/src/tools/calculators/auto-loan/{types,calculation,AutoLoanCalculator,AutoLoanForm,content}.*`, `frontend/src/tools/calculators/loan/{types,LoanCalculator,LoanForm,content}.*`, `frontend/src/app/(website)/layout.tsx`, `brain/{CURRENT_STATE,FRONTEND,TASKS,DESIGN_SYSTEM,CHANGELOG}.md`.
+- **Verification:** Frontend `tsc --noEmit` passed; `currency.test.ts` ok (`49` currencies); Loan `calculation.test.ts` 14/14; Auto Loan `calculation.test.ts` 15/15; `next lint` 0 errors (pre-existing `@next/next/no-img-element` warnings only).
+
+### 2026-11-12 — Loan Calculator page list/icon polish
+- **Summary:** On `/tools/loan-calculator`, removed the hero tool icon beside the title; simplified shared `TableOfContents` to a plain heading with `list-disc` bullets (no header icon / fancy `01` indexes); replaced Loan guide-article `CheckCircle` markers and circled ordered-step badges with plain bullets; flattened `RelatedCatalogTools` from nested cards into a plain two-column bullet link list.
+- **Important Files:** `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/tools/calculators/auto-loan/TableOfContents.tsx`, `frontend/src/tools/calculators/loan/LoanGuideArticle.tsx`, `frontend/src/components/shared/RelatedCatalogTools.tsx`.
+- **Verification:** Frontend `npm run type-check` and `npm run lint` passed (0 errors; pre-existing `@next/next/no-img-element` warnings only).
+
 ### 2026-11-12 — Category menu presentation
 - **Summary:** The header category menu is a two-column subject panel with no tool counts. The footer and mobile menu show the first seven categories, plus a link to the full index.
+
+### 2026-11-12 — Reusable calculator embed system
+- **Summary:** Added `/embed/[slug]` minimal layout reusing registry calculators; Tool `embedEnabled` (default false) + height/layout/domains fields through admin Embedding & Sharing; public Embed dialog when eligible; CSP `frame-ancestors` split; optional `/embed.js` auto-resize; locked `EMBED_STANDARDS.md`.
+- **Important Files:** `backend/src/modules/tools/{tool.model,tool.service}.ts`, `backend/src/validation/admin-tool.schema.ts`, `backend/src/modules/catalog/catalog.service.ts`, `frontend/src/app/embed/**`, `frontend/src/lib/embed/*`, `frontend/src/components/{admin/forms/ToolEmbedSection,tools/CalculatorEmbedDialog,embed/EmbedResizeReporter}.tsx`, `frontend/public/embed.js`, `frontend/next.config.ts`, `brain/EMBED_STANDARDS.md`.
+- **Verification:** Backend `tsc --noEmit` passed; frontend `tsc --noEmit` passed; `tool-embed.test.ts` ok; `tool-seo.test.ts` ok; Loan 14/14 + Auto Loan 15/15 calculation tests passed; `next lint` 0 errors (pre-existing img warnings); `next build` passed including `/embed/[slug]`.
+
+### 2026-11-12 — Tool detail page production audit & standards lock
+- **Summary:** Added `robots.ts`/`sitemap.ts` (implemented tools only); FAQ JSON-LD synced to visible guide FAQs; related tools link only implemented calculators; pillar related query requires `isActive`; Embed dialog portal/focus-trap/scroll-lock; Embed control moved into calculator header for card alignment; locked `TOOL_DETAIL_PAGE_STANDARDS.md`.
+- **Important Files:** `frontend/src/app/{robots,sitemap}.ts`, `frontend/src/app/(website)/tools/[slug]/page.tsx`, `RelatedCatalogTools.tsx`, `CalculatorEmbedDialog.tsx`, `backend/src/modules/catalog/catalog.service.ts`, `brain/TOOL_DETAIL_PAGE_STANDARDS.md`.
+- **Verification:** Frontend/backend `tsc` pass; `tool-seo`/`tool-embed`/Loan 14/Auto Loan 15 tests pass; `next lint` 0 errors (pre-existing img warnings); `next build` pass with `/robots.txt` + `/sitemap.xml` routes.
+
+### 2026-11-12 — Embed default-ON policy + restore Embed button
+- **Summary:** Root cause of missing Embed button was `embedEnabled` defaulting to false and eligibility requiring strict `=== true`. Policy locked to enabled-by-default (`resolveEmbedEnabled`: only explicit `false` disables). Schema/API/admin/UI updated; `npm run tools:embed-defaults` corrects implemented tools that inherited the old false write.
+- **Important Files:** `frontend/src/lib/embed/tool-embed.ts`, `frontend/src/app/(website)/tools/[slug]/page.tsx`, `backend/src/modules/tools/tool.model.ts`, `backend/src/modules/{tools,catalog}/*.ts`, `backend/src/scripts/enable-default-embeds.ts`, `brain/EMBED_STANDARDS.md`.
+- **Verification:** Frontend `tsc` + `tool-embed.test.ts` ok; `next lint` 0 errors; backend `tsc` ok. `tools:embed-defaults` could not reach Mongo in this environment (timed out); operators should run it once when DB is available if any implemented tools still have `embedEnabled: false` stored.
+
+### 2026-11-12 — Dummy ad placeholders on tool detail pages
+- **Summary:** Added reusable `AdSlot` + typed placements for `/tools/[slug]` (top banner, in-article, bottom banner; sidebar off). Placeholder-only design; no AdSense/scripts; embeds excluded; locked `AD_STANDARDS.md`.
+- **Important Files:** `frontend/src/components/ads/AdSlot.tsx`, `frontend/src/lib/ads/*`, `frontend/src/app/(website)/tools/[slug]/page.tsx`, `brain/AD_STANDARDS.md`, `.cursor/rules/ad-standards.mdc`, `.agents/rules/ad-standards.md`.
+- **Verification:** Frontend `tsc --noEmit` passed; Loan 14/14 + Auto Loan 15/15 passed; `next lint` 0 errors (pre-existing img warnings); `next build` passed; `/embed/[slug]` remains without AdSlot imports.
+
+### 2026-11-12 — Lock master Tool Detail Page standards & new-tool playbook
+- **Summary:** Extracted and locked Loan Calculator (`/tools/loan-calculator`) as the official master Tool Detail Page. Expanded `TOOL_DETAIL_PAGE_STANDARDS.md` with code- and visually-verified layout/typography/sticky/SEO/ads/embed rules; added `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`; wired Cursor + Antigravity always-on rules and `AGENTS.md`; updated Brain index/state/frontend/design/decisions/tasks. No calculator UI or formula source changes.
+- **Important Files:** `brain/TOOL_DETAIL_PAGE_STANDARDS.md`, `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `.cursor/rules/tool-detail-page-standards.mdc`, `.agents/rules/tool-detail-page-standards.md`, `AGENTS.md`, `brain/{README,CURRENT_STATE,FRONTEND,DESIGN_SYSTEM,CALCULATOR_STANDARDS,DECISIONS,TASKS,CHANGELOG}.md`, `.cursor/rules/calculator-standards.mdc`, `.agents/rules/calculator-standards.md`.
+- **Verification:** Live browser inspect of `http://192.168.100.152:3000/tools/loan-calculator` (header, breadcrumbs, ads, Embed in calculator header, H1, TOC, related Open/Coming soon, guide, FAQ, footer); cross-checked Tailwind/constants in `page.tsx`, `StickyCalculatorAside`, `LoanCalculator`/`LoanForm`, `AdSlot`, Container. Docs-only diff — no frontend calculator source modified. Dry-run: Percentage Calculator would follow playbook steps 1–19 without a new design brief.
+
+### 2026-11-12 — Align Auto Loan Calculator with master Tool Detail Page standards
+- **Summary:** Brought Auto Loan Calculator into compliance with the locked Loan Calculator master shell without changing financial formulas. Removed two-column intro tool icon; converted guide CheckCircle/numbered steps to plain `list-disc`; matched form spacing/`h-11`/Calculate–Reset classes; replaced trade-in equity pill badges with muted helper text; removed results top border wrapper; metric “Total Estimated Cost” uses `text-accent` like other cards.
+- **Important Files:** `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/tools/calculators/auto-loan/{AutoLoanCalculator,AutoLoanForm,AutoLoanGuideArticle,AutoLoanResults}.tsx`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** Live `/tools/auto-loan-calculator` + `/embed/auto-loan-calculator` (Embed visible; ads on public page only; embed `noindex`; calculator functional). Desktop 1440 no horizontal overflow; mobile 375 screenshot. `npx tsc --noEmit` passed; `next lint` 0 errors (pre-existing img warnings); Auto Loan 15/15 + Loan 14/14 calculation tests passed; `next build` passed.
+
+### 2026-11-13 — Swap two-column tool detail columns (calculator left)
+- **Summary:** Flipped the shared two-column `/tools/[slug]` shell to calculator/guide left (~66%) and Calculators.com-style `ToolDetailSidebar` right (~34%: More tools list, other-topic links, dark country-rules pills). Full-width intro above the grid. Right sidebar is desktop-sticky under the header; left column scrolls with the page.
+- **Important Files:** `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/components/shared/ToolDetailSidebar.tsx`, `frontend/src/tools/calculators/auto-loan/StickyCalculatorAside.tsx`, `brain/{TOOL_DETAIL_PAGE_STANDARDS,CALCULATOR_STANDARDS,CURRENT_STATE,DECISIONS,CHANGELOG}.md`.
+- **Verification:** Frontend `npx tsc --noEmit` passed; ReadLints clean on touched TSX.
+
+### 2026-11-13 — Promote Auto Loan as final master Tool Detail Page
+- **Summary:** Declared latest Auto Loan Calculator the official master visual/architectural reference (ADR-016 supersedes ADR-014). Aligned remaining Loan Calculator form/amortization micro-styles (`tabular-nums`, `gap-3.5`, empty schedule placeholder). Updated Brain standards, playbook, Cursor/Antigravity rules, and `AGENTS.md`. Shared shell (sidebar, ads, SEO, embed) unchanged; no formula changes; Auto Loan visual design left intact.
+- **Important Files:** `frontend/src/tools/calculators/loan/{LoanForm,LoanAmortizationTable}.tsx`, `frontend/src/components/shared/ToolDetailSidebar.tsx`, `frontend/src/app/(website)/tools/[slug]/page.tsx`, `brain/{TOOL_DETAIL_PAGE_STANDARDS,NEW_TOOL_DEVELOPMENT_PLAYBOOK,CALCULATOR_STANDARDS,DESIGN_SYSTEM,FRONTEND,CURRENT_STATE,DECISIONS,TASKS,CHANGELOG,README}.md`, `AGENTS.md`, `.cursor/rules/{tool-detail-page-standards.mdc,calculator-standards.mdc}`, `.agents/rules/{tool-detail-page-standards.md,calculator-standards.md}`.
+- **Verification:** Live browser inspect Auto Loan + Loan at 1440px; `/embed/loan-calculator` functional (no ads). Loan 14/14 + Auto Loan 15/15 calculation suites passed; `npx tsc --noEmit` passed; `npm run lint` 0 errors (pre-existing img warnings); `npx next build` passed.
+
+### 2026-11-13 — Add RREF Calculator with step-by-step elimination
+- **Summary:** Shipped first matrix calculator under the Auto Loan master shell. Canonical catalog slug `reduced-row-echelon-form-calculator` (`RrefCalculator`): exact rational Gauss–Jordan RREF, step-by-step ops, rank/pivots/free columns/nullity, optional augmented analysis, 1×1–6×8 editor, educational guide, shared SEO/ads/embed. Assigned existing Mongo tool `6af46f14a27d8d1d4e990674` (no duplicate record).
+- **Important Files:** `frontend/src/tools/calculators/rref/*`, `frontend/src/tools/registry/{keys,index}.ts`, `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-rref-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Precision policy:** Integers/fractions/decimals parsed to exact `Rational` (decimals via place-value, max 12 places); no `eval`; no float elimination.
+- **Verification:** Live `/tools/reduced-row-echelon-form-calculator` (Embed, ads, H1, rank 2 / pivots 1,2 / nullity 1 on default matrix). RREF 20/20 + Loan 14/14 + Auto Loan 15/15 passed; `tsc` + lint (0 errors) + `next build` passed.
+
+### 2026-11-13 — Add ARM Mortgage Calculator
+- **Summary:** Shipped an adjustable-rate mortgage calculator on the existing catalog slug `arm-mortgage-calculator`. Supports 3/1 through 10/6 structures, user rate assumptions (constant, rising step, falling step), increase caps, lifetime ceiling, optional floor, remaining-balance re-amortization, housing costs outside interest, schedule, and charts. Uses the Auto Loan master shell, shared SEO, ads, and embed.
+- **Assumptions:** Caps limit rate increases only. Index + margin is an entered assumption, not a live index. Currency is display-only. Introductory $250,000 / 30-year / 5.5% payment is $1,419.47.
+- **Important Files:** `frontend/src/tools/calculators/arm-mortgage/*`, registry, `page.tsx`, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-arm-mortgage-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** ARM unit tests passed; `tsc --noEmit` passed; `next build` passed. Mongo record `6af46f0fa27d8d1d4e98ff6c` assigned.
+
+### 2026-11-13 — Add 100 Day Calculator
+- **Summary:** Shipped a calendar-day calculator on the existing catalog slug `100-day-calculator`. Add or subtract 1–100,000 days, or count signed days between two dates. Inclusive offset counts the start as day 1. Inclusive spans count both endpoints. Arithmetic uses UTC civil dates so daylight saving time cannot move the selected day. Shared Auto Loan shell, SEO, ads, and embed.
+- **Counting:** Exclusive January 1, 2026 + 100 days = April 11, 2026. Inclusive = April 10, 2026. January 1 to January 10 is 9 exclusive and 10 inclusive. Identical dates are 0 exclusive and 1 inclusive.
+- **Important Files:** `frontend/src/tools/calculators/hundred-day/*`, registry, `page.tsx`, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-hundred-day-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** 100-day, loan, auto-loan, RREF, and ARM unit suites passed. Mongo record `6af46f18a27d8d1d4e990d16` assigned. Typecheck, lint, and production build recorded with the implementation.
+
+### 2026-11-13 — Add 12 Volt Wire Size Calculator
+- **Summary:** Shipped a 12 V DC two-wire voltage-drop calculator on the existing catalog slug `12-volt-wire-size-calculator`. Shared conductor helpers use IEC 60228 resistivity and ASTM B258 AWG areas. The page shows the minimum area, the next listed metric size, and the next listed AWG size. Ampacity is explicitly unverified, so the result is not a code-compliant recommendation.
+- **Example:** 12 V, 3%, copper, 10 A, 5 m, 50°C → 5.354 mm² minimum, 6 mm² and 9 AWG on the listed series. A 6 mm² loop drops about 0.321 V.
+- **Important Files:** `frontend/src/tools/electrical/conductor.ts`, `frontend/src/tools/calculators/twelve-volt-wire/*`, registry, `page.tsx`, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-twelve-volt-wire-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** Conductor tests passed with the loan, auto-loan, RREF, ARM, and 100-day suites from the same pass. Mongo record `6af46f15a27d8d1d4e99074d` assigned. Typecheck, lint, and production build recorded with this change.
 

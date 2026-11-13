@@ -11,10 +11,11 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 1. Read `brain/README.md`.
 2. Read `brain/CURRENT_STATE.md`.
 3. Read `brain/ARCHITECTURE.md`.
-4. Read relevant `brain/` documents for the task (e.g., `FRONTEND.md`, `BACKEND.md`, `DATABASE.md`, `API_CONTRACTS.md`, `AUTHENTICATION.md`, `DESIGN_SYSTEM.md`, `TASKS.md`, `DECISIONS.md`).
-5. Inspect actual source code before making changes — never assume a planned feature is implemented.
-6. Check Git status (`git status`) and sync state (`git fetch` / branch status).
-7. Identify potential conflicts with existing work or another developer's active tasks.
+4. Read relevant `brain/` documents for the task (e.g., `FRONTEND.md`, `BACKEND.md`, `DATABASE.md`, `API_CONTRACTS.md`, `AUTHENTICATION.md`, `DESIGN_SYSTEM.md`, `CALCULATOR_STANDARDS.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `TOOL_DETAIL_PAGE_STANDARDS.md`, `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `TASKS.md`, `DECISIONS.md`).
+5. For any new calculator or tool detail page work, **mandatory** reading: `brain/TOOL_DETAIL_PAGE_STANDARDS.md` (master shell) and `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` (workflow), plus `CALCULATOR_STANDARDS.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, and `AD_STANDARDS.md`. Auto Loan Calculator (`/tools/auto-loan-calculator`) is the official visual/architectural reference — do not redesign the shared shell.
+6. Inspect actual source code before making changes — never assume a planned feature is implemented.
+7. Check Git status (`git status`) and sync state (`git fetch` / branch status).
+8. Identify potential conflicts with existing work or another developer's active tasks.
 
 ---
 

@@ -60,8 +60,35 @@ export interface PublicToolDetail {
   canonicalUrl: string;
   ogTitle: string;
   ogDescription: string;
+  ogImageUrl: string;
+  ogImageAlt: string;
+  ogType: string;
+  ogSiteName: string;
   keywords: string;
   indexable: boolean;
+  robotsFollow: boolean;
+  robotsNoArchive: boolean;
+  robotsNoSnippet: boolean;
+  robotsNoImageIndex: boolean;
+  robotsMaxSnippet: number | null;
+  robotsMaxImagePreview: string;
+  robotsMaxVideoPreview: number | null;
+  twitterCard: string;
+  twitterTitle: string;
+  twitterDescription: string;
+  twitterImageUrl: string;
+  twitterImageAlt: string;
+  twitterSite: string;
+  schemaType: string;
+  includeFaqSchema: boolean;
+  sitemapInclude: boolean;
+  sitemapPriority: number | null;
+  sitemapChangeFrequency: string;
+  embedEnabled: boolean;
+  embedDefaultHeight: number;
+  embedPreferredLayout: string;
+  embedAllowedDomains: string;
+  isActive: boolean;
   isFeatured: boolean;
   updatedAt: string;
 }
@@ -415,9 +442,10 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
       ? Tool.find({
           pillar: pillarRef.id,
           _id: { $ne: doc._id },
+          isActive: true,
         })
           .select('name slug shortDescription iconUrl componentKey isActive isFeatured category pillar')
-          .sort({ isActive: -1, isFeatured: -1, name: 1 })
+          .sort({ isFeatured: -1, name: 1 })
           .limit(6)
           .populate('category pillar', 'name slug')
           .lean<PopulatedRelatedDoc[]>()
@@ -446,13 +474,40 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
     pillar: pillarRef,
     subPillar: subPillarRef,
     relatedTools,
-    metaTitle: doc.metaTitle,
-    metaDescription: doc.metaDescription,
-    canonicalUrl: doc.canonicalUrl,
-    ogTitle: doc.ogTitle,
-    ogDescription: doc.ogDescription,
-    keywords: doc.keywords,
-    indexable: doc.indexable,
+    metaTitle: doc.metaTitle ?? '',
+    metaDescription: doc.metaDescription ?? '',
+    canonicalUrl: doc.canonicalUrl ?? '',
+    ogTitle: doc.ogTitle ?? '',
+    ogDescription: doc.ogDescription ?? '',
+    ogImageUrl: doc.ogImageUrl ?? '',
+    ogImageAlt: doc.ogImageAlt ?? '',
+    ogType: doc.ogType ?? '',
+    ogSiteName: doc.ogSiteName ?? '',
+    keywords: doc.keywords ?? '',
+    indexable: doc.indexable ?? true,
+    robotsFollow: doc.robotsFollow ?? true,
+    robotsNoArchive: doc.robotsNoArchive ?? false,
+    robotsNoSnippet: doc.robotsNoSnippet ?? false,
+    robotsNoImageIndex: doc.robotsNoImageIndex ?? false,
+    robotsMaxSnippet: doc.robotsMaxSnippet ?? null,
+    robotsMaxImagePreview: doc.robotsMaxImagePreview ?? '',
+    robotsMaxVideoPreview: doc.robotsMaxVideoPreview ?? null,
+    twitterCard: doc.twitterCard ?? '',
+    twitterTitle: doc.twitterTitle ?? '',
+    twitterDescription: doc.twitterDescription ?? '',
+    twitterImageUrl: doc.twitterImageUrl ?? '',
+    twitterImageAlt: doc.twitterImageAlt ?? '',
+    twitterSite: doc.twitterSite ?? '',
+    schemaType: doc.schemaType ?? '',
+    includeFaqSchema: doc.includeFaqSchema !== false,
+    sitemapInclude: doc.sitemapInclude ?? true,
+    sitemapPriority: doc.sitemapPriority ?? null,
+    sitemapChangeFrequency: doc.sitemapChangeFrequency ?? '',
+    embedEnabled: doc.embedEnabled !== false,
+    embedDefaultHeight: doc.embedDefaultHeight ?? 650,
+    embedPreferredLayout: doc.embedPreferredLayout ?? 'responsive',
+    embedAllowedDomains: doc.embedAllowedDomains ?? '',
+    isActive: doc.isActive ?? true,
     isFeatured: doc.isFeatured,
     updatedAt: doc.updatedAt.toISOString(),
   };

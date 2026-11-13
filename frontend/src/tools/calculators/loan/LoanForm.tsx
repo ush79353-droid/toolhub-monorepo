@@ -7,16 +7,17 @@ import { Select } from '@/components/ui/select';
 import { Calculator, ChevronDown, ChevronUp, RotateCcw } from 'lucide-react';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import { formatCurrencyValue, formatDisplayDate, getScheduledPaymentDate } from './calculation';
-import type {
-  ExtraPaymentFrequency,
-  FeeInclusion,
-  FeeMode,
-  LoanFieldErrors,
-  LoanInput,
-  LoanMode,
-  PaymentFrequency,
-  SupportedCurrency,
-  TermUnit,
+import {
+  getCurrencySymbol,
+  type ExtraPaymentFrequency,
+  type FeeInclusion,
+  type FeeMode,
+  type LoanFieldErrors,
+  type LoanInput,
+  type LoanMode,
+  type PaymentFrequency,
+  type SupportedCurrency,
+  type TermUnit,
 } from './types';
 import { resolveScheduledPeriods, resolveTotalMonths, validateLoanInput } from './validation';
 
@@ -39,17 +40,6 @@ export interface LoanDraft {
   startDate: string;
   currency: SupportedCurrency;
 }
-
-const CURRENCY_UNITS: Record<SupportedCurrency, string> = {
-  USD: '$',
-  EUR: '€',
-  GBP: '£',
-  CAD: 'C$',
-  AUD: 'A$',
-  INR: '₹',
-  PKR: 'Rs',
-  AED: 'AED',
-};
 
 export function inputToDraft(input: LoanInput): LoanDraft {
   return {
@@ -204,7 +194,7 @@ export function LoanForm({
   onReset,
 }: LoanFormProps) {
   const [showAdvanced, setShowAdvanced] = React.useState(false);
-  const unitSymbol = CURRENCY_UNITS[draft.currency];
+  const unitSymbol = getCurrencySymbol(draft.currency);
   const hasAdvancedError = Boolean(
     errors.originationFeeValue ||
       errors.extraPaymentAmount ||
@@ -530,7 +520,7 @@ export function LoanForm({
         >
           <div className="min-w-0">
             <span className="block text-[13px] font-medium text-accent">Advanced Options</span>
-            <span className="block truncate text-xs font-normal text-muted-foreground">
+            <span className="block truncate text-xs font-normal text-muted-foreground tabular-nums">
               {advancedSummary}
             </span>
           </div>
@@ -544,7 +534,7 @@ export function LoanForm({
         {showAdvanced && (
           <div className="space-y-3.5 border-t border-border bg-white/70 p-3.5">
             {/* Recurring Additional Payment */}
-            <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3.5 min-[420px]:grid-cols-2">
               <div>
                 <div className="mb-1 flex min-h-6 items-center gap-1">
                   <label htmlFor="loan-extra-amount" className="text-[13px] font-medium text-accent">
@@ -596,7 +586,7 @@ export function LoanForm({
 
             {/* One-Time Extra Payment */}
             <div>
-              <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
+              <div className="grid grid-cols-1 gap-3.5 min-[420px]:grid-cols-2">
                 <div>
                   <div className="mb-1 flex min-h-6 items-center gap-1">
                     <label
@@ -663,7 +653,7 @@ export function LoanForm({
             </div>
 
             {/* Origination Fee & Handling */}
-            <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3.5 min-[420px]:grid-cols-2">
               <div>
                 <div className="mb-1 flex min-h-6 items-center justify-between gap-1">
                   <label htmlFor="loan-fee" className="text-[13px] font-medium text-accent">

@@ -7,14 +7,15 @@ import { Select } from '@/components/ui/select';
 import { Calculator, ChevronDown, ChevronUp, RotateCcw } from 'lucide-react';
 import { formatCurrencyValue } from './calculation';
 import { InfoTooltip } from './InfoTooltip';
-import type {
-  AutoLoanFieldErrors,
-  AutoLoanInput,
-  CostInclusion,
-  DownPaymentMode,
-  SupportedCurrency,
-  TaxPolicy,
-  TermUnit,
+import {
+  getCurrencySymbol,
+  type AutoLoanFieldErrors,
+  type AutoLoanInput,
+  type CostInclusion,
+  type DownPaymentMode,
+  type SupportedCurrency,
+  type TaxPolicy,
+  type TermUnit,
 } from './types';
 
 export interface AutoLoanDraft {
@@ -34,17 +35,6 @@ export interface AutoLoanDraft {
   startDate: string;
   currency: SupportedCurrency;
 }
-
-const CURRENCY_UNITS: Record<SupportedCurrency, string> = {
-  USD: '$',
-  EUR: '€',
-  GBP: '£',
-  CAD: 'C$',
-  AUD: 'A$',
-  INR: '₹',
-  PKR: 'Rs',
-  AED: 'AED',
-};
 
 export function inputToDraft(input: AutoLoanInput): AutoLoanDraft {
   return {
@@ -195,7 +185,7 @@ export function AutoLoanForm({
   onReset,
 }: AutoLoanFormProps) {
   const [showTaxAndFees, setShowTaxAndFees] = React.useState(false);
-  const unitSymbol = CURRENCY_UNITS[draft.currency];
+  const unitSymbol = getCurrencySymbol(draft.currency);
   const hasTaxOrFeesError = Boolean(errors.salesTaxRate || errors.additionalFees || errors.startDate);
 
   React.useEffect(() => {
@@ -271,12 +261,12 @@ export function AutoLoanForm({
   } fees`;
 
   return (
-    <form onSubmit={onSubmit} noValidate autoComplete="off" className="space-y-3.5">
+    <form onSubmit={onSubmit} noValidate autoComplete="off" className="space-y-4">
       {/* Row 1: Auto Price & Down Payment */}
       <div>
-        <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3.5 min-[420px]:grid-cols-2">
           <div>
-            <div className="mb-1.5 flex min-h-7 items-center gap-1.5">
+            <div className="mb-1 flex min-h-7 items-center gap-1.5">
               <label htmlFor="auto-loan-price" className="text-[13px] font-medium text-accent">
                 Auto Price
               </label>
@@ -304,7 +294,7 @@ export function AutoLoanForm({
           </div>
 
           <div>
-            <div className="mb-1.5 flex min-h-7 items-center justify-between gap-1.5">
+            <div className="mb-1 flex min-h-7 items-center justify-between gap-1.5">
               <div className="flex items-center gap-1">
                 <label
                   htmlFor="auto-loan-down-payment"
@@ -357,9 +347,9 @@ export function AutoLoanForm({
       </div>
 
       {/* Row 2: Loan Term & Interest Rate */}
-      <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
-        <div>
-          <div className="mb-1.5 flex min-h-7 items-center justify-between gap-1.5">
+      <div className="grid grid-cols-1 gap-3.5 min-[420px]:grid-cols-2">
+          <div>
+          <div className="mb-1 flex min-h-7 items-center justify-between gap-1.5">
             <label htmlFor="auto-loan-term" className="text-[13px] font-medium text-accent">
               Loan Term
             </label>
@@ -392,7 +382,7 @@ export function AutoLoanForm({
         </div>
 
         <div>
-          <div className="mb-1.5 flex min-h-7 items-center gap-1.5">
+          <div className="mb-1 flex min-h-7 items-center gap-1.5">
             <label htmlFor="auto-loan-apr" className="text-[13px] font-medium text-accent">
               Interest Rate (APR)
             </label>
@@ -426,33 +416,25 @@ export function AutoLoanForm({
       <div className="space-y-2.5 rounded-xl border border-border bg-brand-softTeal/50 p-3.5">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-1.5">
-            <span className="text-sm font-medium text-accent">Trade-In</span>
+            <span className="text-[13px] font-medium text-accent">Trade-In</span>
             <InfoTooltip
               label="Trade-in equity"
               text="Net trade-in equity equals trade-in value minus amount owed. Positive equity lowers your loan; negative equity adds to principal."
               align="left"
             />
           </div>
-          {tradeEquity !== null && (
-            <span
-              className={`rounded-full border px-2.5 py-0.5 text-xs font-medium tabular-nums ${
-                tradeEquity > 0
-                  ? 'border-emerald-200 bg-emerald-50 text-emerald-700'
-                  : tradeEquity < 0
-                    ? 'border-amber-200 bg-amber-50 text-amber-800'
-                    : 'border-border bg-white text-muted-foreground'
-              }`}
-            >
+          {tradeEquity !== null ? (
+            <p className="text-xs font-normal tabular-nums text-muted-foreground">
               {tradeEquity > 0
                 ? `+${formatCurrencyValue(tradeEquity, draft.currency)} equity`
                 : tradeEquity < 0
                   ? `${formatCurrencyValue(tradeEquity, draft.currency)} negative equity`
                   : 'Even equity'}
-            </span>
-          )}
+            </p>
+          ) : null}
         </div>
 
-        <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3.5 min-[420px]:grid-cols-2">
           <div>
             <div className="mb-1 flex min-h-6 items-center">
               <label
@@ -504,7 +486,7 @@ export function AutoLoanForm({
       </div>
 
       {/* Collapsible Sales Tax, Fees & Start Date */}
-      <div className="rounded-xl border border-border bg-background/40">
+      <div className="rounded-xl border border-border bg-background/50">
         <button
           type="button"
           aria-expanded={showTaxAndFees}
@@ -527,9 +509,9 @@ export function AutoLoanForm({
         </button>
 
         {showTaxAndFees && (
-          <div className="space-y-3.5 border-t border-border bg-white p-3.5">
+          <div className="space-y-3.5 border-t border-border bg-white/70 p-3.5">
             <div>
-              <div className="mb-1.5 flex min-h-7 flex-wrap items-center justify-between gap-2">
+              <div className="mb-1 flex min-h-7 flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-1.5">
                   <label
                     htmlFor="auto-loan-tax-rate"
@@ -591,7 +573,7 @@ export function AutoLoanForm({
             </div>
 
             <div>
-              <div className="mb-1.5 flex min-h-7 flex-wrap items-center justify-between gap-2">
+              <div className="mb-1 flex min-h-7 flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-1.5">
                   <label htmlFor="auto-loan-fees" className="text-[13px] font-medium text-accent">
                     Additional Fees
@@ -628,7 +610,7 @@ export function AutoLoanForm({
             </div>
 
             <div>
-              <div className="mb-1.5 flex min-h-7 items-center">
+              <div className="mb-1 flex min-h-7 items-center">
                 <label
                   htmlFor="auto-loan-start-date"
                   className="text-[13px] font-medium text-accent"
@@ -663,16 +645,16 @@ export function AutoLoanForm({
       )}
 
       {/* Actions */}
-      <div className="flex items-center gap-2.5">
+      <div className="flex flex-wrap items-center gap-2.5 pt-1">
         <Button
           type="submit"
           className="h-11 flex-1 bg-primary font-medium text-white hover:bg-[hsl(var(--primary-hover))]"
         >
-          <Calculator className="mr-1.5 h-4 w-4" aria-hidden="true" />
+          <Calculator className="mr-2 h-4 w-4" aria-hidden="true" />
           Calculate
         </Button>
         <Button type="button" variant="outline" onClick={onReset} className="h-11 font-medium">
-          <RotateCcw className="mr-1.5 h-4 w-4" aria-hidden="true" />
+          <RotateCcw className="mr-1.5 h-3.5 w-3.5" aria-hidden="true" />
           Reset
         </Button>
       </div>

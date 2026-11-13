@@ -91,8 +91,10 @@ Mounted at `/api/v1/catalog` (`backend/src/modules/catalog/catalog.router.ts`).
 ### `GET /api/v1/catalog/tools/:slug`
 - **Auth:** Public
 - **Response (`200`):** `PublicToolDetail` — Active tool (`isActive: true`) matching `slug`, populated with `category`, `pillar`, `subPillar`, and up to 6 existing MongoDB `relatedTools`:
-  `{ id, name, slug, shortDescription, iconUrl, executionType, componentKey, category, pillar, subPillar, relatedTools, metaTitle, metaDescription, canonicalUrl, ogTitle, ogDescription, keywords, indexable, isFeatured, updatedAt }`
+  `{ id, name, slug, shortDescription, iconUrl, executionType, componentKey, category, pillar, subPillar, relatedTools, metaTitle, metaDescription, canonicalUrl, ogTitle, ogDescription, keywords, indexable, robotsFollow, robotsNoarchive, robotsNosnippet, robotsNoimageindex, robotsMaxSnippet, robotsMaxImagePreview, robotsMaxVideoPreview, ogImageUrl, ogImageAlt, ogType, ogSiteName, twitterCard, twitterTitle, twitterDescription, twitterImageUrl, twitterImageAlt, twitterSite, schemaTypes, sitemapInclude, sitemapPriority, sitemapChangeFrequency, isFeatured, updatedAt }`
   where each entry in `relatedTools` has `{ id, name, slug, shortDescription, iconUrl, componentKey, isActive, isFeatured, categoryName, categorySlug, pillarName }`.
+  All SEO fields remain optional; blank values mean public `generateMetadata` uses documented fallbacks (`brain/SEO_STANDARDS.md`).
+  Also returns embed prefs: `embedEnabled`, `embedDefaultHeight`, `embedPreferredLayout`, `embedAllowedDomains` (see `brain/EMBED_STANDARDS.md`).
 - **Errors:** `404 NOT_FOUND` if slug format is invalid, missing, or `isActive` is `false`.
 
 ---
@@ -151,8 +153,8 @@ Mounted at `/api/v1/admin/tools` (`backend/src/modules/tools/tool.router.ts`). A
 | `GET` | `/admin/tools` | Query: `page` (1), `limit` (1..50, 10), `search`, `categoryId`, `status` (`active`\|`inactive`), `sort` (`name`\|`updatedAt`), `order` (`asc`\|`desc`) | `{ items: ToolRecord[], page, limit, total, totalPages }` | `400 VALIDATION_ERROR` |
 | `GET` | `/admin/tools/placement` | — | `{ id, name, kind, parentId }[]` | — |
 | `GET` | `/admin/tools/:id` | Param: `id` | `ToolRecord` | `404 NOT_FOUND` |
-| `POST` | `/admin/tools` | Body (`toolFieldsSchema`): `{ name, slug, categoryId, pillarId?, subPillarId?, iconMediaId?, executionType?, componentKey?, shortDescription?, metaTitle?, metaDescription?, canonicalUrl?, ogTitle?, ogDescription?, keywords?, indexable?, isActive?, isFeatured? }` | `ToolRecord` (`201`) | `400 VALIDATION_ERROR`, `400 INVALID_PLACEMENT`, `400 INVALID_ICON`, `409 NAME_TAKEN`, `409 SLUG_TAKEN` |
-| `PATCH` | `/admin/tools/:id` | Body (`toolFieldsSchema` — full fields required by schema on PATCH) | `ToolRecord` | Same as `POST` + `404 NOT_FOUND` |
+| `POST` | `/admin/tools` | Body (`toolFieldsSchema`): core tool fields plus optional SEO and embed prefs (`embedEnabled?`, `embedDefaultHeight?` 320–4000, `embedPreferredLayout?`, `embedAllowedDomains?`, `isActive?`, `isFeatured?`) | `ToolRecord` (`201`) | `400 VALIDATION_ERROR`, `400 INVALID_PLACEMENT`, `400 INVALID_ICON`, `409 NAME_TAKEN`, `409 SLUG_TAKEN` |
+| `PATCH` | `/admin/tools/:id` | Body (`toolFieldsSchema` — full fields required by schema on PATCH; all SEO fields still optional strings/booleans/nulls) | `ToolRecord` | Same as `POST` + `404 NOT_FOUND` |
 | `DELETE` | `/admin/tools/:id` | Param: `id` | `{ id }` | `404 NOT_FOUND` |
 
 ---

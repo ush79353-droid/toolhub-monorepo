@@ -8,8 +8,15 @@ import { ToolWorkspace } from '@/components/shared/ToolWorkspace';
 import { CategoryIcon } from '@/components/shared/CategoryIcon';
 import { FAQAccordion, type FAQItem } from '@/components/shared/FAQAccordion';
 import { RelatedCatalogTools } from '@/components/shared/RelatedCatalogTools';
+import {
+  ToolDetailSidebar,
+  type ToolDetailSidebarCountryRules,
+} from '@/components/shared/ToolDetailSidebar';
+import { AdSlot } from '@/components/ads/AdSlot';
+import { CalculatorEmbedDialog } from '@/components/tools/CalculatorEmbedDialog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { isToolEmbedEligible } from '@/lib/embed/tool-embed';
 import {
   ShieldCheck,
   Zap,
@@ -25,17 +32,44 @@ import {
   getRelatedTools,
   getCategoryBySlug,
 } from '@/lib/sample-data';
-import { getPublicToolBySlug } from '@/server/catalog/tools';
+import { siteConfig } from '@/config/site';
+import {
+  buildToolJsonLd,
+  buildToolPageMetadata,
+  emptyToolSeoFields,
+  serializeJsonLd,
+  type ToolSeoSource,
+} from '@/lib/seo/tool-seo';
+import { getPublicToolBySlug, type PublicToolDetail } from '@/server/catalog/tools';
+import { getPublicSiteOrigin } from '@/server/seo/public-site';
 import { AutoLoanGuideArticle } from '@/tools/calculators/auto-loan/AutoLoanGuideArticle';
 import { StickyCalculatorAside } from '@/tools/calculators/auto-loan/StickyCalculatorAside';
 import {
   TableOfContents,
   type TableOfContentsItem,
 } from '@/tools/calculators/auto-loan/TableOfContents';
-import { AUTO_LOAN_TOC_ITEMS } from '@/tools/calculators/auto-loan/content';
+import { AUTO_LOAN_FAQS, AUTO_LOAN_TOC_ITEMS } from '@/tools/calculators/auto-loan/content';
 import { LoanGuideArticle } from '@/tools/calculators/loan/LoanGuideArticle';
-import { LOAN_TOC_ITEMS } from '@/tools/calculators/loan/content';
+import { LOAN_FAQS, LOAN_TOC_ITEMS } from '@/tools/calculators/loan/content';
+import { RrefGuideArticle } from '@/tools/calculators/rref/RrefGuideArticle';
+import { RREF_FAQS, RREF_TOC_ITEMS } from '@/tools/calculators/rref/content';
+import { ArmMortgageGuideArticle } from '@/tools/calculators/arm-mortgage/ArmMortgageGuideArticle';
+import { ARM_FAQS, ARM_TOC_ITEMS } from '@/tools/calculators/arm-mortgage/content';
+import { HundredDayGuideArticle } from '@/tools/calculators/hundred-day/HundredDayGuideArticle';
+import { HUNDRED_DAY_FAQS, HUNDRED_DAY_TOC_ITEMS } from '@/tools/calculators/hundred-day/content';
+import { TwelveVoltWireGuideArticle } from '@/tools/calculators/twelve-volt-wire/TwelveVoltWireGuideArticle';
+import { TWELVE_VOLT_FAQS, TWELVE_VOLT_TOC_ITEMS } from '@/tools/calculators/twelve-volt-wire/content';
+import { isApprovedComponentKey } from '@/tools/registry/keys';
 import type { ToolMetadata } from '@/types/tool';
+
+const SIDEBAR_COUNTRIES = [
+  'India',
+  'UAE',
+  'United Kingdom',
+  'United States',
+  'Canada',
+  'Australia',
+] as const;
 
 const TWO_COLUMN_TOOL_CONFIGS: Record<
   string,
@@ -44,6 +78,8 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     asideAriaLabel: string;
     tocItems: readonly TableOfContentsItem[];
     GuideArticle: React.ComponentType;
+    faqs: readonly FAQItem[];
+    countryRules?: ToolDetailSidebarCountryRules | null;
   }
 > = {
   AutoLoanCalculator: {
@@ -52,6 +88,11 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     asideAriaLabel: 'Interactive auto loan calculator',
     tocItems: AUTO_LOAN_TOC_ITEMS,
     GuideArticle: AutoLoanGuideArticle,
+    faqs: AUTO_LOAN_FAQS,
+    countryRules: {
+      title: 'Auto loan rules by country',
+      countries: SIDEBAR_COUNTRIES,
+    },
   },
   LoanCalculator: {
     subtitleLead:
@@ -59,8 +100,95 @@ const TWO_COLUMN_TOOL_CONFIGS: Record<
     asideAriaLabel: 'Interactive loan calculator',
     tocItems: LOAN_TOC_ITEMS,
     GuideArticle: LoanGuideArticle,
+    faqs: LOAN_FAQS,
+    countryRules: {
+      title: 'Loan rules by country',
+      countries: SIDEBAR_COUNTRIES,
+    },
+  },
+  RrefCalculator: {
+    subtitleLead:
+      'Reduce any matrix to reduced row echelon form with exact fractions, step-by-step Gauss–Jordan operations, rank, pivot columns, and optional augmented-system analysis.',
+    asideAriaLabel: 'Interactive RREF calculator',
+    tocItems: RREF_TOC_ITEMS,
+    GuideArticle: RrefGuideArticle,
+    faqs: RREF_FAQS,
+    countryRules: null,
+  },
+  ArmMortgageCalculator: {
+    subtitleLead:
+      'Estimate an adjustable-rate mortgage payment through the fixed period and modeled resets, including caps, remaining-term re-amortization, and optional housing costs.',
+    asideAriaLabel: 'Interactive ARM mortgage calculator',
+    tocItems: ARM_TOC_ITEMS,
+    GuideArticle: ArmMortgageGuideArticle,
+    faqs: ARM_FAQS,
+    countryRules: {
+      title: 'Mortgage rules by country',
+      countries: SIDEBAR_COUNTRIES,
+    },
+  },
+  HundredDayCalculator: {
+    subtitleLead:
+      'Find the date 100 days after or before any day, or count calendar days between two dates, including leap years and inclusive counting.',
+    asideAriaLabel: 'Interactive 100 day calculator',
+    tocItems: HUNDRED_DAY_TOC_ITEMS,
+    GuideArticle: HundredDayGuideArticle,
+    faqs: HUNDRED_DAY_FAQS,
+    countryRules: null,
+  },
+  TwelveVoltWireCalculator: {
+    subtitleLead:
+      'Estimate the 12 V DC conductor area for a two-wire voltage-drop limit from current, one-way length, material, and temperature.',
+    asideAriaLabel: 'Interactive 12 volt wire size calculator',
+    tocItems: TWELVE_VOLT_TOC_ITEMS,
+    GuideArticle: TwelveVoltWireGuideArticle,
+    faqs: TWELVE_VOLT_FAQS,
+    countryRules: null,
   },
 };
+
+function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {
+  return {
+    name: dbTool.name,
+    slug: dbTool.slug,
+    shortDescription: dbTool.shortDescription,
+    componentKey: dbTool.componentKey,
+    isActive: dbTool.isActive,
+    ...emptyToolSeoFields({
+      metaTitle: dbTool.metaTitle,
+      metaDescription: dbTool.metaDescription,
+      keywords: dbTool.keywords,
+      canonicalUrl: dbTool.canonicalUrl,
+      indexable: dbTool.indexable,
+      robotsFollow: dbTool.robotsFollow,
+      robotsNoArchive: dbTool.robotsNoArchive,
+      robotsNoSnippet: dbTool.robotsNoSnippet,
+      robotsNoImageIndex: dbTool.robotsNoImageIndex,
+      robotsMaxSnippet: dbTool.robotsMaxSnippet,
+      robotsMaxImagePreview:
+        (dbTool.robotsMaxImagePreview as ToolSeoSource['robotsMaxImagePreview']) || '',
+      robotsMaxVideoPreview: dbTool.robotsMaxVideoPreview,
+      ogTitle: dbTool.ogTitle,
+      ogDescription: dbTool.ogDescription,
+      ogImageUrl: dbTool.ogImageUrl,
+      ogImageAlt: dbTool.ogImageAlt,
+      ogType: dbTool.ogType,
+      ogSiteName: dbTool.ogSiteName,
+      twitterCard: (dbTool.twitterCard as ToolSeoSource['twitterCard']) || '',
+      twitterTitle: dbTool.twitterTitle,
+      twitterDescription: dbTool.twitterDescription,
+      twitterImageUrl: dbTool.twitterImageUrl,
+      twitterImageAlt: dbTool.twitterImageAlt,
+      twitterSite: dbTool.twitterSite,
+      schemaType: (dbTool.schemaType as ToolSeoSource['schemaType']) || '',
+      includeFaqSchema: dbTool.includeFaqSchema,
+      sitemapInclude: dbTool.sitemapInclude,
+      sitemapPriority: dbTool.sitemapPriority,
+      sitemapChangeFrequency:
+        (dbTool.sitemapChangeFrequency as ToolSeoSource['sitemapChangeFrequency']) || '',
+    }),
+  };
+}
 
 interface ToolDetailPageProps {
   params: Promise<{
@@ -80,34 +208,26 @@ export async function generateMetadata({ params }: ToolDetailPageProps): Promise
   const dbTool = await getPublicToolBySlug(slug);
 
   if (dbTool) {
-    const title = dbTool.metaTitle
-      ? { absolute: dbTool.metaTitle }
-      : `${dbTool.name} — Free Online Tool`;
-    const description = dbTool.metaDescription || dbTool.shortDescription;
-
-    return {
-      title,
-      description,
-      keywords: dbTool.keywords || undefined,
-      alternates: dbTool.canonicalUrl ? { canonical: dbTool.canonicalUrl } : undefined,
-      openGraph: {
-        title: dbTool.ogTitle || dbTool.metaTitle || dbTool.name,
-        description: dbTool.ogDescription || description,
-      },
-      robots: dbTool.indexable ? undefined : { index: false, follow: false },
-    };
+    return buildToolPageMetadata(toSeoSource(dbTool), {
+      siteName: siteConfig.name,
+      siteUrl: getPublicSiteOrigin(),
+      defaultOgImageUrl: siteConfig.defaultOgImage,
+      isImplemented: isApprovedComponentKey(dbTool.componentKey),
+    });
   }
 
   const tool = getToolBySlug(slug);
   if (!tool) {
     return {
       title: 'Tool Not Found',
+      robots: { index: false, follow: false },
     };
   }
 
   return {
-    title: tool.metaTitle || `${tool.title} — Free Online Tool`,
+    title: { absolute: tool.metaTitle || `${tool.title} | ${siteConfig.name}` },
     description: tool.metaDescription || tool.description,
+    robots: { index: false, follow: false },
   };
 }
 
@@ -159,9 +279,42 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
 
   if (twoColConfig) {
     const GuideArticleComponent = twoColConfig.GuideArticle;
+    const sidebarGroupLabel = pillarName || categoryName;
+    const relatedToolsList = dbTool?.relatedTools ?? [];
+    const samePillarTools = relatedToolsList.filter(
+      (tool) => !pillarName || tool.pillarName === pillarName
+    );
+    const moreTools = (samePillarTools.length > 0 ? samePillarTools : relatedToolsList).slice(0, 6);
+    const otherTopicTools = relatedToolsList
+      .filter((tool) => pillarName && tool.pillarName && tool.pillarName !== pillarName)
+      .slice(0, 4);
+    const jsonLd =
+      dbTool &&
+      serializeJsonLd(
+        buildToolJsonLd({
+          tool: toSeoSource(dbTool),
+          siteName: siteConfig.name,
+          siteUrl: getPublicSiteOrigin(),
+          isImplemented: isApprovedComponentKey(dbTool.componentKey),
+          breadcrumbs: [
+            { name: 'Home', path: '/' },
+            { name: 'All Tools', path: '/tools' },
+            { name: categoryName, path: safeCategoryHref },
+            { name: toolMetadata.title, path: `/tools/${toolMetadata.slug}` },
+          ],
+          // FAQ sections are visible on these guides — keep FAQPage schema in sync with on-page content.
+          faqs: twoColConfig.faqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
+        })
+      );
 
     return (
       <div className="py-6 sm:py-9">
+        {jsonLd ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: jsonLd }}
+          />
+        ) : null}
         <Container>
           <Breadcrumbs
             items={[
@@ -172,58 +325,77 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             className="mb-4"
           />
 
-          {/* Responsive 2-Column Workspace: Left (~62%) Editorial/TOC/Related, Right (~38%) Height-Aware Sticky Calculator */}
-          <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,1.62fr)_minmax(360px,1fr)] lg:items-start lg:gap-8">
-            {/* Slot 1: Tool Hero Header Card */}
-            <header className="order-1 min-w-0 lg:col-start-1 lg:row-start-1">
-              <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
-                <div className="flex items-start gap-3.5">
-                  {iconUrl ? (
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={iconUrl} alt="" className="h-full w-full object-contain" />
-                    </div>
-                  ) : (
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
-                      <CategoryIcon name={toolMetadata.icon} className="h-6 w-6" />
-                    </div>
-                  )}
-
-                  <div className="min-w-0">
-                    <h1 className="text-[26px] font-semibold leading-[1.2] tracking-tight text-accent sm:text-[30px] lg:text-[32px]">
-                      {toolMetadata.title}
-                    </h1>
-                    <p className="mt-2 text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.72]">
-                      {toolMetadata.description} {twoColConfig.subtitleLead}
-                    </p>
-                  </div>
-                </div>
+          <div className="mb-5 rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
+            <header>
+              {/* Master shell (Loan Calculator): no decorative tool icon in the intro card */}
+              <div className="min-w-0">
+                {categoryName ? (
+                  <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
+                    {categoryName}
+                  </p>
+                ) : null}
+                <h1 className="text-[30px] font-bold leading-[1.12] tracking-[-0.02em] text-accent sm:text-[34px] lg:text-[36px]">
+                  {toolMetadata.title}
+                </h1>
+                <p className="mt-2.5 max-w-3xl text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.75]">
+                  {toolMetadata.description} {twoColConfig.subtitleLead}
+                </p>
               </div>
             </header>
+          </div>
 
-            {/* Slot 2: Height-Aware Sticky Calculator Panel (Near top on Mobile/Tablet; Right ~38% on Desktop) */}
-            <StickyCalculatorAside
-              ariaLabel={twoColConfig.asideAriaLabel}
-              className="order-2 min-w-0 lg:col-start-2 lg:row-start-1 lg:row-span-2"
-            >
-              <ToolWorkspace tool={toolMetadata} />
-            </StickyCalculatorAside>
+          <AdSlot placement="tool_top_banner" className="mb-5" />
 
-            {/* Slot 3: Table of Contents, Related Calculators & Editorial Guide */}
-            <div className="order-3 min-w-0 space-y-6 lg:col-start-1 lg:row-start-2">
-              <TableOfContents items={twoColConfig.tocItems} />
-
-              {dbTool && dbTool.relatedTools.length > 0 && (
-                <RelatedCatalogTools
-                  tools={dbTool.relatedTools}
-                  groupLabel={pillarName || categoryName}
-                  browseHref="/tools"
+          {/* Left (~66%) calculator + guide; Right (~34%) sidebar widgets — page scrolls as one */}
+          <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)] lg:items-start lg:gap-8">
+            <div className="order-1 min-w-0 space-y-6 lg:col-start-1 lg:row-start-1">
+              <StickyCalculatorAside ariaLabel={twoColConfig.asideAriaLabel}>
+                <ToolWorkspace
+                  tool={toolMetadata}
+                  headerActions={
+                    dbTool &&
+                    isToolEmbedEligible({
+                      embedEnabled: dbTool.embedEnabled,
+                      isActive: dbTool.isActive,
+                      componentKey: dbTool.componentKey,
+                      embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
+                      embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
+                      embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
+                    }) ? (
+                      <CalculatorEmbedDialog
+                        toolName={dbTool.name}
+                        toolSlug={dbTool.slug}
+                        defaultHeight={dbTool.embedDefaultHeight}
+                      />
+                    ) : undefined
+                  }
                 />
-              )}
+              </StickyCalculatorAside>
+
+              <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
+                <TableOfContents items={twoColConfig.tocItems} />
+              </div>
+
+              <AdSlot placement="tool_article_middle" />
 
               <GuideArticleComponent />
+
+              <AdSlot placement="tool_article_bottom" />
+            </div>
+
+            <div className="order-2 min-w-0 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-[84px] lg:max-h-[calc(100vh-104px)] lg:overflow-y-auto lg:overscroll-contain">
+              <ToolDetailSidebar
+                groupLabel={sidebarGroupLabel}
+                browseHref={safeCategoryHref}
+                browseLabel={`See all ${categoryName.toLowerCase()} tools`}
+                moreTools={moreTools}
+                otherTopicTools={otherTopicTools}
+                countryRules={twoColConfig.countryRules}
+              />
             </div>
           </div>
+
+          <AdSlot placement="tool_bottom_banner" className="mt-8" />
         </Container>
       </div>
     );
@@ -279,6 +451,8 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
           ]}
           className="mb-6"
         />
+
+        <AdSlot placement="tool_top_banner" className="mb-6" />
 
         {/* Tool Header Section */}
         <div className="rounded-2xl border border-border bg-white p-6 shadow-xs sm:p-8">
@@ -342,6 +516,8 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
                 ))}
               </ol>
             </div>
+
+            <AdSlot placement="tool_article_middle" />
 
             <div className="rounded-2xl border border-border bg-white p-6 shadow-xs sm:p-8">
               <div className="mb-4 flex items-center gap-2.5">
@@ -486,6 +662,8 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             </div>
           </div>
         </div>
+
+        <AdSlot placement="tool_bottom_banner" className="mt-8" />
       </Container>
     </div>
   );

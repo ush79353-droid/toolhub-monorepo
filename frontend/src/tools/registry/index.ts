@@ -2,6 +2,10 @@
 
 import { AutoLoanCalculator } from '@/tools/calculators/auto-loan/AutoLoanCalculator';
 import { LoanCalculator } from '@/tools/calculators/loan/LoanCalculator';
+import { RrefCalculator } from '@/tools/calculators/rref/RrefCalculator';
+import { ArmMortgageCalculator } from '@/tools/calculators/arm-mortgage/ArmMortgageCalculator';
+import { HundredDayCalculator } from '@/tools/calculators/hundred-day/HundredDayCalculator';
+import { TwelveVoltWireCalculator } from '@/tools/calculators/twelve-volt-wire/TwelveVoltWireCalculator';
 import type { ToolComponent, ToolRegistryMap } from '../types';
 
 /**
@@ -20,6 +24,10 @@ export function registerToolComponent(key: string, component: ToolComponent): vo
 
 registerToolComponent('AutoLoanCalculator', AutoLoanCalculator);
 registerToolComponent('LoanCalculator', LoanCalculator);
+registerToolComponent('RrefCalculator', RrefCalculator);
+registerToolComponent('ArmMortgageCalculator', ArmMortgageCalculator);
+registerToolComponent('HundredDayCalculator', HundredDayCalculator);
+registerToolComponent('TwelveVoltWireCalculator', TwelveVoltWireCalculator);
 
 export function getToolComponent(key: string): ToolComponent | null {
   return registry[key] ?? null;

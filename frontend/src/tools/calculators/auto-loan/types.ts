@@ -6,31 +6,19 @@ export type CostInclusion = 'finance' | 'upfront';
 
 export type TaxPolicy = 'after-trade-in' | 'full-price';
 
-export type SupportedCurrency =
-  | 'USD'
-  | 'EUR'
-  | 'GBP'
-  | 'CAD'
-  | 'AUD'
-  | 'INR'
-  | 'PKR'
-  | 'AED';
-
-export interface CurrencyOption {
-  code: SupportedCurrency;
-  label: string;
-}
-
-export const CURRENCY_OPTIONS: readonly CurrencyOption[] = [
-  { code: 'USD', label: 'USD ($) — US Dollar' },
-  { code: 'EUR', label: 'EUR (€) — Euro' },
-  { code: 'GBP', label: 'GBP (£) — British Pound' },
-  { code: 'CAD', label: 'CAD (C$) — Canadian Dollar' },
-  { code: 'AUD', label: 'AUD (A$) — Australian Dollar' },
-  { code: 'INR', label: 'INR (₹) — Indian Rupee' },
-  { code: 'PKR', label: 'PKR (Rs) — Pakistani Rupee' },
-  { code: 'AED', label: 'AED (د.إ) — UAE Dirham' },
-] as const;
+export type {
+  CurrencyOption,
+  SupportedCurrency,
+} from '@/tools/shared/currency';
+export {
+  CURRENCY_DENOMINATION_NOTE,
+  CURRENCY_OPTIONS,
+  DEFAULT_CURRENCY,
+  formatCurrencyValue,
+  getCurrencyShortLabel,
+  getCurrencySymbol,
+} from '@/tools/shared/currency';
+import { DEFAULT_CURRENCY, type SupportedCurrency } from '@/tools/shared/currency';
 
 export interface AutoLoanInput {
   autoPrice: number;
@@ -145,7 +133,7 @@ export function createDefaultAutoLoanInput(startDate = getTodayIsoDate()): AutoL
     additionalFees: 850,
     feesInclusion: 'finance',
     startDate,
-    currency: 'USD',
+    currency: DEFAULT_CURRENCY,
   };
 }
 

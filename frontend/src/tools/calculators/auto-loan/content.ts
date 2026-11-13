@@ -236,7 +236,7 @@ export const AUTO_LOAN_FAQS: readonly FAQItem[] = [
   {
     question: 'Does changing the display currency convert amounts using exchange rates?',
     answer:
-      'No. Choosing USD, EUR, GBP, CAD, AUD, INR, PKR, or AED changes currency symbols and locale formatting only. Always enter your vehicle price, down payment, trade-in figures, and fees in the same currency.',
+      'No. Currency selection changes the denomination and formatting only — not the exchange rate. Amounts are not converted when you switch currencies. Always enter vehicle price, down payment, trade-in figures, and fees in the same currency you select.',
   },
   {
     question: 'How does financing sales tax and dealer fees affect my monthly payment?',

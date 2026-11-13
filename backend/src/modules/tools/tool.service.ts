@@ -30,8 +30,34 @@ export interface ToolRecord {
   canonicalUrl: string;
   ogTitle: string;
   ogDescription: string;
+  ogImageUrl: string;
+  ogImageAlt: string;
+  ogType: string;
+  ogSiteName: string;
   keywords: string;
   indexable: boolean;
+  robotsFollow: boolean;
+  robotsNoArchive: boolean;
+  robotsNoSnippet: boolean;
+  robotsNoImageIndex: boolean;
+  robotsMaxSnippet: number | null;
+  robotsMaxImagePreview: string;
+  robotsMaxVideoPreview: number | null;
+  twitterCard: string;
+  twitterTitle: string;
+  twitterDescription: string;
+  twitterImageUrl: string;
+  twitterImageAlt: string;
+  twitterSite: string;
+  schemaType: string;
+  includeFaqSchema: boolean;
+  sitemapInclude: boolean;
+  sitemapPriority: number | null;
+  sitemapChangeFrequency: string;
+  embedEnabled: boolean;
+  embedDefaultHeight: number;
+  embedPreferredLayout: string;
+  embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
   createdAt: string;
@@ -68,13 +94,39 @@ function toRecord(doc: ITool): ToolRecord {
     executionType: doc.executionType ?? 'client',
     componentKey: doc.componentKey ?? '',
     shortDescription: doc.shortDescription,
-    metaTitle: doc.metaTitle,
-    metaDescription: doc.metaDescription,
-    canonicalUrl: doc.canonicalUrl,
-    ogTitle: doc.ogTitle,
-    ogDescription: doc.ogDescription,
-    keywords: doc.keywords,
-    indexable: doc.indexable,
+    metaTitle: doc.metaTitle ?? '',
+    metaDescription: doc.metaDescription ?? '',
+    canonicalUrl: doc.canonicalUrl ?? '',
+    ogTitle: doc.ogTitle ?? '',
+    ogDescription: doc.ogDescription ?? '',
+    ogImageUrl: doc.ogImageUrl ?? '',
+    ogImageAlt: doc.ogImageAlt ?? '',
+    ogType: doc.ogType ?? '',
+    ogSiteName: doc.ogSiteName ?? '',
+    keywords: doc.keywords ?? '',
+    indexable: doc.indexable ?? true,
+    robotsFollow: doc.robotsFollow ?? true,
+    robotsNoArchive: doc.robotsNoArchive ?? false,
+    robotsNoSnippet: doc.robotsNoSnippet ?? false,
+    robotsNoImageIndex: doc.robotsNoImageIndex ?? false,
+    robotsMaxSnippet: doc.robotsMaxSnippet ?? null,
+    robotsMaxImagePreview: doc.robotsMaxImagePreview ?? '',
+    robotsMaxVideoPreview: doc.robotsMaxVideoPreview ?? null,
+    twitterCard: doc.twitterCard ?? '',
+    twitterTitle: doc.twitterTitle ?? '',
+    twitterDescription: doc.twitterDescription ?? '',
+    twitterImageUrl: doc.twitterImageUrl ?? '',
+    twitterImageAlt: doc.twitterImageAlt ?? '',
+    twitterSite: doc.twitterSite ?? '',
+    schemaType: doc.schemaType ?? '',
+    includeFaqSchema: doc.includeFaqSchema ?? false,
+    sitemapInclude: doc.sitemapInclude ?? true,
+    sitemapPriority: doc.sitemapPriority ?? null,
+    sitemapChangeFrequency: doc.sitemapChangeFrequency ?? '',
+    embedEnabled: doc.embedEnabled !== false,
+    embedDefaultHeight: doc.embedDefaultHeight ?? 650,
+    embedPreferredLayout: doc.embedPreferredLayout ?? 'responsive',
+    embedAllowedDomains: doc.embedAllowedDomains ?? '',
     isActive: doc.isActive,
     isFeatured: doc.isFeatured,
     createdAt: doc.createdAt.toISOString(),
@@ -139,8 +191,44 @@ function assign(doc: ITool, input: ToolFieldsInput, icon: { iconMedia: mongoose.
   doc.canonicalUrl = input.canonicalUrl ?? '';
   doc.ogTitle = input.ogTitle ?? '';
   doc.ogDescription = input.ogDescription ?? '';
+  doc.ogImageUrl = input.ogImageUrl ?? '';
+  doc.ogImageAlt = input.ogImageAlt ?? '';
+  doc.ogType = input.ogType ?? '';
+  doc.ogSiteName = input.ogSiteName ?? '';
   doc.keywords = input.keywords ?? '';
   if (input.indexable !== undefined) doc.indexable = input.indexable;
+  if (input.robotsFollow !== undefined) doc.robotsFollow = input.robotsFollow;
+  if (input.robotsNoArchive !== undefined) doc.robotsNoArchive = input.robotsNoArchive;
+  if (input.robotsNoSnippet !== undefined) doc.robotsNoSnippet = input.robotsNoSnippet;
+  if (input.robotsNoImageIndex !== undefined) doc.robotsNoImageIndex = input.robotsNoImageIndex;
+  if (input.robotsMaxSnippet !== undefined) doc.robotsMaxSnippet = input.robotsMaxSnippet;
+  if (input.robotsMaxImagePreview !== undefined) {
+    doc.robotsMaxImagePreview = input.robotsMaxImagePreview;
+  }
+  if (input.robotsMaxVideoPreview !== undefined) {
+    doc.robotsMaxVideoPreview = input.robotsMaxVideoPreview;
+  }
+  if (input.twitterCard !== undefined) doc.twitterCard = input.twitterCard;
+  doc.twitterTitle = input.twitterTitle ?? '';
+  doc.twitterDescription = input.twitterDescription ?? '';
+  doc.twitterImageUrl = input.twitterImageUrl ?? '';
+  doc.twitterImageAlt = input.twitterImageAlt ?? '';
+  doc.twitterSite = input.twitterSite ?? '';
+  if (input.schemaType !== undefined) doc.schemaType = input.schemaType;
+  if (input.includeFaqSchema !== undefined) doc.includeFaqSchema = input.includeFaqSchema;
+  if (input.sitemapInclude !== undefined) doc.sitemapInclude = input.sitemapInclude;
+  if (input.sitemapPriority !== undefined) doc.sitemapPriority = input.sitemapPriority;
+  if (input.sitemapChangeFrequency !== undefined) {
+    doc.sitemapChangeFrequency = input.sitemapChangeFrequency;
+  }
+  if (input.embedEnabled !== undefined) doc.embedEnabled = input.embedEnabled;
+  if (input.embedDefaultHeight !== undefined) doc.embedDefaultHeight = input.embedDefaultHeight;
+  if (input.embedPreferredLayout !== undefined) {
+    doc.embedPreferredLayout = input.embedPreferredLayout || 'responsive';
+  }
+  if (input.embedAllowedDomains !== undefined) {
+    doc.embedAllowedDomains = input.embedAllowedDomains ?? '';
+  }
   if (input.isActive !== undefined) doc.isActive = input.isActive;
   if (input.isFeatured !== undefined) doc.isFeatured = input.isFeatured;
 }
@@ -200,6 +288,9 @@ export async function createTool(input: ToolFieldsInput): Promise<ToolRecord> {
   const doc = new Tool();
   assign(doc, input, icon);
   if (input.indexable === undefined) doc.indexable = true;
+  if (input.robotsFollow === undefined) doc.robotsFollow = true;
+  if (input.sitemapInclude === undefined) doc.sitemapInclude = true;
+  if (input.includeFaqSchema === undefined) doc.includeFaqSchema = false;
   if (input.isActive === undefined) doc.isActive = true;
   if (input.isFeatured === undefined) doc.isFeatured = false;
   await doc.save();

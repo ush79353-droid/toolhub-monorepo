@@ -74,3 +74,45 @@
 - **Consequences:** Local bytes go Browser → `PUT /api/media-upload` → Express `PUT /admin/media/object`. The browser still does not call Express. Existing S3 objects stay on S3. Files already saved on disk stay on disk until they are deleted or uploaded again.
 - **Status:** Accepted
 
+## ADR-011: Shared Dynamic Tool SEO + Locked Calculator Standards
+- **Date:** 2026-11-12
+- **Decision:** Persist optional SEO fields on the existing `Tool` model; build public metadata exclusively through shared `frontend/src/lib/seo/tool-seo.ts` + `/tools/[slug]` `generateMetadata()`; require `NEXT_PUBLIC_SITE_URL`/`SITE_URL` for production canonicals; treat Loan Calculator conventions in `brain/CALCULATOR_STANDARDS.md` and SEO rules in `brain/SEO_STANDARDS.md` as locked defaults for future calculators.
+- **Reason:** Admin SEO edits must reach HTML `<head>` without per-calculator hardcoding, and future calculators must inherit one shell/SEO pipeline.
+- **Consequences:** New SEO fields remain optional with documented fallbacks; unimplemented tools cannot become indexable from the Index toggle alone; agents must read the standards docs before building calculators.
+- **Status:** Accepted
+
+## ADR-013: Tool Detail Page Master Standard + Crawl Surfaces
+- **Date:** 2026-11-12
+- **Decision:** Lock `/tools/[slug]` architecture in `brain/TOOL_DETAIL_PAGE_STANDARDS.md`; ship Next.js `robots.ts` + `sitemap.ts` that include only implemented, indexable tools; related calculators link only allowlisted implemented tools; FAQ JSON-LD emits when FAQs are visible on two-column guides; Embed dialog uses portal + focus trap.
+- **Reason:** Production crawl/index hygiene and a single Definition of Done for every future calculator page.
+- **Consequences:** Agents must follow Tool Detail Page standards before shipping new calculators; sitemap list of implemented slugs must be extended when new registry tools launch until a bulk catalog endpoint exists.
+- **Status:** Accepted (expanded 2026-11-12 by ADR-014)
+
+## ADR-014: Loan Calculator as Official Master Tool Detail Page + New-Tool Playbook
+- **Date:** 2026-11-12
+- **Decision:** Declare Loan Calculator (`/tools/loan-calculator`, `LoanCalculator`) the **official master** visual and architectural reference for every future tool detail page. Authoritative docs: `brain/TOOL_DETAIL_PAGE_STANDARDS.md` + `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`. Both Cursor (`.cursor/rules/tool-detail-page-standards.mdc`) and Antigravity (`.agents/rules/tool-detail-page-standards.md`) must auto-load these; `AGENTS.md` lists them as mandatory before new calculator work. Tool-specific math/inputs/results/copy may differ; shared shell (grid, sticky, SEO, ads, embed, a11y) must not be redesigned without a new ADR.
+- **Reason:** Avoid re-explaining design/layout/SEO/ads/embed patterns for each new tool; keep one source of truth for both IDEs.
+- **Consequences:** New tools follow the playbook; agents must not invent parallel page layouts or duplicate sticky/SEO/ad/embed systems; standards were extracted from live Loan page + source (visual + code verified 2026-11-12).
+- **Status:** Superseded by ADR-016 (2026-11-13)
+
+## ADR-012: Shared Calculator Embed System
+- **Date:** 2026-11-12
+- **Decision:** Provide one dynamic `/embed/[slug]` route reusing allowlisted calculator components; gate with Tool fields `embedEnabled` (**default `true`**; missing → enabled; only explicit `false` disables), height/layout prefs, and advisory `embedAllowedDomains`; split CSP so only `/embed/*` allows third-party framing; optional `/embed.js` auto-resize with namespaced postMessage validation; lock rules in `brain/EMBED_STANDARDS.md`.
+- **Reason:** Partners need copy-paste iframes without forking calculators or exposing admin chrome; embedding must be independently disableable without taking down normal tool pages. Product policy is opt-out, not opt-in.
+- **Consequences:** Catalog-only / inactive tools still do not render working embeds; public Embed button appears for implemented active tools by default; embed pages are noindex; public iframe URLs remain reusable without signed tokens unless a future auth layer is added; agents must follow embed standards for new calculators.
+- **Status:** Accepted (policy corrected 2026-11-12 from default-OFF to default-ON)
+
+## ADR-015: Two-Column Tool Detail — Calculator Left, Sidebar Widgets Right, Unified Scroll
+- **Date:** 2026-11-13
+- **Decision:** On desktop (`lg+`), the shared `/tools/[slug]` shell uses a full-width intro card, then a two-column grid: left (`minmax(0,2fr)`, ~66%) holds calculator + TOC + guide; right (`minmax(280px,1fr)`, ~34%) holds `ToolDetailSidebar` widgets (More tools, Related in other topics, dark country-rules pills) with `position: sticky; top: 84px` and viewport-capped max-height. Left calculator column stays in normal flow (no sticky). Mobile/tablet still shows calculator column first (`order-1`).
+- **Reason:** Product preference for a wider calculator column, Calculators.com-style right-rail boxes that stay visible while reading the guide, and page-level scroll on the left.
+- **Consequences:** Master shell in `page.tsx` + `ToolDetailSidebar.tsx`; standards docs describe left calculator/guide + sticky right sidebar widgets; do not move related lists back into the intro card without a new ADR.
+- **Status:** Accepted
+
+## ADR-016: Auto Loan Calculator as Final Master Tool Detail Page
+- **Date:** 2026-11-13
+- **Decision:** Promote the latest Auto Loan Calculator (`/tools/auto-loan-calculator`, `AutoLoanCalculator`) to the **final approved official master** visual and architectural reference for every OmegaCalculators tool detail page. Authoritative docs: `brain/TOOL_DETAIL_PAGE_STANDARDS.md` + `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`. Cursor + Antigravity tool-detail rules and `AGENTS.md` must name Auto Loan as master. Loan Calculator remains a peer implementation that follows the same shared shell; its tool-specific fields/math stay independent.
+- **Reason:** Product approved additional Auto Loan UI/UX work (full-width intro, wider calculator column, sticky `ToolDetailSidebar`, form/results chrome) as the permanent design system for future tools.
+- **Consequences:** Supersedes ADR-014’s master designation; agents must inspect Auto Loan (not Loan) before building new calculators; do not redesign Auto Loan’s approved appearance; do not create competing shells.
+- **Status:** Accepted
+

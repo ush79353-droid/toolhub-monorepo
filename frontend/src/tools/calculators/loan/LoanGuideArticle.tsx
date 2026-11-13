@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { CheckCircle } from 'lucide-react';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import {
   LOAN_FAQS,
@@ -39,31 +38,17 @@ export function LoanGuideArticle() {
             )}
 
             {section.orderedSteps && (
-              <ol className="mt-5 space-y-3.5 pl-0.5">
+              <ul className="mt-5 list-disc space-y-2.5 pl-5 text-[15px] font-normal leading-[1.7] text-foreground/85 marker:text-muted-foreground sm:text-base sm:leading-[1.75]">
                 {section.orderedSteps.map((step, stepIndex) => (
-                  <li
-                    key={stepIndex}
-                    className="flex items-start gap-3 text-[15px] font-normal leading-[1.7] text-foreground/85 sm:text-base sm:leading-[1.75]"
-                  >
-                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-medium text-primary">
-                      {stepIndex + 1}
-                    </span>
-                    <span>{step}</span>
-                  </li>
+                  <li key={stepIndex}>{step}</li>
                 ))}
-              </ol>
+              </ul>
             )}
 
             {section.bullets && (
-              <ul className="mt-5 space-y-2.5 pl-0.5 text-[15px] font-normal leading-[1.7] text-foreground/85 sm:text-base sm:leading-[1.75]">
+              <ul className="mt-5 list-disc space-y-2.5 pl-5 text-[15px] font-normal leading-[1.7] text-foreground/85 marker:text-muted-foreground sm:text-base sm:leading-[1.75]">
                 {section.bullets.map((bullet, bIndex) => (
-                  <li key={bIndex} className="flex items-start gap-2.5">
-                    <CheckCircle
-                      className="mt-1.5 h-4 w-4 shrink-0 text-primary"
-                      aria-hidden="true"
-                    />
-                    <span>{bullet}</span>
-                  </li>
+                  <li key={bIndex}>{bullet}</li>
                 ))}
               </ul>
             )}

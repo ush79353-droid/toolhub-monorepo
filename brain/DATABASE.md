@@ -133,13 +133,32 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 | `executionType` | `String` | Enum `['client', 'server', 'third-party']` | `'client'` |
 | `componentKey` | `String` | Trimmed, `maxlength: 100` (allowlisted frontend registry key, e.g. `'AutoLoanCalculator'`) | `''` |
 | `shortDescription` | `String` | `maxlength: 500` | `''` |
-| `metaTitle` | `String` | `maxlength: 70` | `''` |
-| `metaDescription` | `String` | `maxlength: 160` | `''` |
-| `canonicalUrl` | `String` | `maxlength: 300` | `''` |
-| `ogTitle` | `String` | `maxlength: 70` | `''` |
-| `ogDescription` | `String` | `maxlength: 200` | `''` |
-| `keywords` | `String` | `maxlength: 200` | `''` |
-| `indexable` | `Boolean` | Search crawler indexing toggle | `true` |
+| `metaTitle` | `String` | Optional SEO title, `maxlength: 70` | `''` |
+| `metaDescription` | `String` | Optional SEO description, `maxlength: 160` | `''` |
+| `canonicalUrl` | `String` | Optional absolute https/http canonical, `maxlength: 300` | `''` |
+| `ogTitle` | `String` | Optional Open Graph title, `maxlength: 70` | `''` |
+| `ogDescription` | `String` | Optional Open Graph description, `maxlength: 200` | `''` |
+| `keywords` | `String` | Optional meta keywords (compatibility), `maxlength: 200` | `''` |
+| `indexable` | `Boolean` | Admin indexing preference (public robots still gated by active + implemented `componentKey`) | `true` |
+| `robotsFollow` | `Boolean` | Follow preference when set | `true` |
+| `robotsNoarchive` / `robotsNosnippet` / `robotsNoimageindex` | `Boolean` | Optional advanced robots directives | `false` |
+| `robotsMaxSnippet` | `Number \| null` | Optional `max-snippet` (`-1`…`100000`) | `null` |
+| `robotsMaxImagePreview` | `String` | `''` \| `none` \| `standard` \| `large` | `''` |
+| `robotsMaxVideoPreview` | `Number \| null` | Optional `max-video-preview` (`-1`…`100000`) | `null` |
+| `ogImageUrl` / `ogImageAlt` | `String` | Optional OG image URL (`maxlength: 500`) + alt (`120`) | `''` |
+| `ogType` / `ogSiteName` | `String` | Optional OG type (`website`/`article`) + site name | `''` |
+| `twitterCard` | `String` | `''` \| `summary` \| `summary_large_image` | `''` |
+| `twitterTitle` / `twitterDescription` | `String` | Optional Twitter title/description | `''` |
+| `twitterImageUrl` / `twitterImageAlt` | `String` | Optional Twitter image URL/alt | `''` |
+| `twitterSite` | `String` | Optional `@handle`, `maxlength: 32` | `''` |
+| `schemaTypes` | `String[]` | Optional subset of `WebPage` / `WebApplication` / `BreadcrumbList` / `FAQPage` | `[]` |
+| `sitemapInclude` | `Boolean` | Admin sitemap preference (eligibility still gated) | `true` |
+| `sitemapPriority` | `Number \| null` | Optional `0`–`1` | `null` |
+| `sitemapChangeFrequency` | `String` | Optional changefreq enum or `''` | `''` |
+| `embedEnabled` | `Boolean` | Allow embedding; missing treated as enabled; only explicit `false` disables | `true` |
+| `embedDefaultHeight` | `Number` | Suggested iframe height px (`320`–`4000`) | `650` |
+| `embedPreferredLayout` | `String` | `responsive` \| `compact` | `responsive` |
+| `embedAllowedDomains` | `String` | Advisory comma-separated host list (`maxlength: 1000`) | `''` |
 | `isActive` | `Boolean` | Active status flag | `true` |
 | `isFeatured` | `Boolean` | Homepage featured promotion flag | `false` |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |

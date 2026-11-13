@@ -1,0 +1,17 @@
+# Calculator Embed Standards (Antigravity)
+
+Before building or changing calculator embeds:
+
+1. Read `AGENTS.md`
+2. Read `brain/EMBED_STANDARDS.md`
+3. Read `brain/CALCULATOR_STANDARDS.md`
+
+Rules:
+
+- Use shared `/embed/[slug]` + allowlisted registry only.
+- Do not duplicate calculator engines for embeds.
+- Do not hardcode per-tool embed routes.
+- Embedding is enabled by default; only explicit `embedEnabled === false` disables.
+- Public render still requires active + implemented `componentKey`.
+- Keep embed pages noindex; revalidate on admin save.
+- Preserve Ponytail minimalism.
