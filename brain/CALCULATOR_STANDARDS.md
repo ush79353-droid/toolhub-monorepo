@@ -39,7 +39,7 @@ Reuse `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/
 ### Known exceptions (existing tools — do not copy)
 
 - `hundred-day` keeps types in `calculation.ts` (no `types.ts`).
-- `twelve-volt-wire` tests live in `electrical/conductor.test.ts` (no tool-local `calculation.test.ts`).
+- `twelve-volt-wire` keeps shared resistivity and AWG helpers in `electrical/conductor.ts`. Tool assertions are in `calculation.test.ts`.
 - Shared aside, TOC, and `InfoTooltip` still sit in the `auto-loan` folder because the page shell imports them there.
 
 ## 2. Page Shell (Auto Loan Calculator reference)

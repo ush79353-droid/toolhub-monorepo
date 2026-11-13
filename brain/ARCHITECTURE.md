@@ -183,7 +183,6 @@ Documented so new work does not copy the exception. Do not refactor them unless 
 | Tool | Gap |
 | :--- | :--- |
 | `hundred-day` | No `types.ts`. Input and result types live in `calculation.ts`. |
-| `twelve-volt-wire` | No `calculation.test.ts` in the tool folder. Assertions live in `electrical/conductor.test.ts`. |
 | `auto-loan` | Also holds the shared aside, TOC, and `InfoTooltip` used by the page shell. |
 | All seven | `APPROVED_COMPONENT_KEYS` is maintained twice: `registry/keys.ts` and `backend/.../tool.key.ts`. |
 

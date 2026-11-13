@@ -93,7 +93,7 @@ const sections: { id: string; title: string; body: string[] }[] = [
     id: 'how-to-use',
     title: 'How to Use This Calculator',
     body: [
-      'Leave the voltage at 12 V, or open Advanced settings to enter another value up to 60 V. Set the drop percentage, copper or aluminum, current, one-way distance in metres or feet, and conductor temperature in Celsius or Fahrenheit. Calculate refreshes the estimate. Reset restores 12 V, 3%, copper, 10 A, 5 m, and 50°C.',
+      'Leave the voltage at 12 V, or open Advanced settings to enter another value up to 60 V. Set the drop percentage, copper or aluminum, current, one-way distance, and conductor temperature. Switching metres and feet, or Celsius and Fahrenheit, converts the number so the physical length or temperature stays the same. Calculate refreshes the estimate. Reset restores 12 V, 3%, copper, 10 A, 5 m, and 50°C.',
       'The headline area is the voltage-drop minimum. The metric and AWG lines are the smallest listed standard sizes at or above that area, with the drop, load voltage, loop resistance, and heating loss of each. Equivalent solid diameter is √(4A/π) and is not the outside diameter of a jacketed cable.',
     ],
   },

@@ -63,6 +63,10 @@ export function feetToMeters(feet: number): number {
   return feet * 0.3048;
 }
 
+export function metersToFeet(meters: number): number {
+  return meters / 0.3048;
+}
+
 export function celsiusToFahrenheit(celsius: number): number {
   return (celsius * 9) / 5 + 32;
 }

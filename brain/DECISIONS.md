@@ -128,6 +128,7 @@
 - **Date:** 2026-11-13
 - **Decision:** Every new calculator uses the folder, pure `calculation.ts` / `validation.ts`, `detail.tsx`, and dual registration described in `ARCHITECTURE.md` §7 and `CALCULATOR_STANDARDS.md` §1. `registry/index.ts` loads one calculator chunk with `React.lazy`. `registry/details.ts` loads only that tool's page copy. `/tools/[slug]` calls `notFound()` when the key is not registered. The mandatory ship checklist is in `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`. Cursor (`.cursor/rules/calculator-standards.mdc`) and Antigravity (`.agents/rules/calculator-standards.md`) both require that checklist.
 - **Reason:** Commits `a75ccbe` and `ebf68df` removed sample tool pages and split guides out of the shared page. Later calculators already follow that shape. Agents were still reading an architecture doc that described empty category folders and a preview registry.
-- **Consequences:** Does not supersede ADR-016. Auto Loan remains the visual master. SEO, embed, and ad standards stay in their own docs. Existing gaps (`hundred-day` types, `twelve-volt-wire` test location, shared widgets still under `auto-loan/`, duplicated allowlists) stay until a task asks to refactor them. New calculators do not copy those gaps.
+- **Consequences:** Does not supersede ADR-016. Auto Loan remains the visual master. SEO, embed, and ad standards stay in their own docs. Existing gaps (`hundred-day` types, shared widgets still under `auto-loan/`, duplicated allowlists) stay until a task asks to refactor them. New calculators do not copy those gaps.
+- **Update (2026-11-13):** `twelve-volt-wire` now has `calculation.test.ts`. Shared resistivity helpers remain in `electrical/conductor.ts`.
 - **Status:** Accepted
 

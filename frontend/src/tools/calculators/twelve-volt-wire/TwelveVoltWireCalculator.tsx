@@ -35,6 +35,9 @@ export function TwelveVoltWireCalculator({
     ? [
         `${metadata.title} — Omega Calculators`,
         `Voltage-drop minimum ${result.minimumAreaMm2.toFixed(3)} mm²`,
+        `Permitted drop ${result.maxDropVolts.toFixed(3)} V`,
+        `Loop resistance ${result.minimumLoopResistanceOhm.toFixed(4)} Ω`,
+        `Wiring loss ${result.minimumPowerLossWatts.toFixed(2)} W`,
         result.metric ? `Metric ${result.metric.label}` : 'No listed metric size',
         result.awg ? `AWG ${result.awg.label}` : 'No listed AWG size',
         'Ampacity not verified. Not an installation recommendation.',

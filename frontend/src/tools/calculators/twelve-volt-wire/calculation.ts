@@ -35,6 +35,10 @@ export interface TwelveVoltResult {
   rhoOhmM: number;
   minimumAreaMm2: number;
   minimumDiameterMm: number;
+  /** Loop resistance of the voltage-drop area, supply plus return. */
+  minimumLoopResistanceOhm: number;
+  /** I²R at that area. Equals I × permitted drop when length is positive. */
+  minimumPowerLossWatts: number;
   metric: ConductorChoice | null;
   awg: (ConductorChoice & { awg: number }) | null;
   /** No published ampacity table is applied. */
@@ -76,6 +80,7 @@ export function calculateTwelveVolt(input: TwelveVoltInput): TwelveVoltResult {
   const maxDropVolts = input.voltage * (input.dropPercent / 100);
   const areaM2 = minimumAreaM2(rho, input.current, oneWayMeters, maxDropVolts);
   const minimumAreaMm2 = areaM2 * 1e6;
+  const minimumLoopResistanceOhm = loopResistanceOhm(rho, oneWayMeters, areaM2);
   const metricSize = smallestMetric(minimumAreaMm2);
   const awgSize = smallestAwg(minimumAreaMm2);
   return {
@@ -89,6 +94,8 @@ export function calculateTwelveVolt(input: TwelveVoltInput): TwelveVoltResult {
     rhoOhmM: rho,
     minimumAreaMm2,
     minimumDiameterMm: solidDiameterMm(minimumAreaMm2),
+    minimumLoopResistanceOhm,
+    minimumPowerLossWatts: input.current * input.current * minimumLoopResistanceOhm,
     metric: metricSize
       ? (choice(metricSize.label, metricSize.areaMm2, rho, oneWayMeters, input.current, input.voltage) as ConductorChoice)
       : null,
