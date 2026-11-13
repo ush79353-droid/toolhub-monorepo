@@ -161,16 +161,20 @@ export function validateFourZeroThreeB(input: FourZeroThreeBInput): {
     } else {
       checkMoney(errors, 'electiveDeferralLimit', input.electiveDeferralLimit, 'deferral limit', true);
     }
-    if (input.catchUpAmount !== null && input.catchUpAmount > 0) {
-      if (
-        input.catchUpAge === null ||
-        !Number.isInteger(input.catchUpAge) ||
-        input.catchUpAge < MIN_AGE ||
-        input.catchUpAge > MAX_AGE
-      ) {
-        errors.catchUpAge = 'Enter the age at which the extra catch-up amount starts.';
+    if (input.catchUpAmount !== null) {
+      if (!Number.isFinite(input.catchUpAmount)) {
+        errors.catchUpAmount = 'Enter a catch-up amount of 0 or more, or leave it blank.';
+      } else if (input.catchUpAmount > 0) {
+        if (
+          input.catchUpAge === null ||
+          !Number.isInteger(input.catchUpAge) ||
+          input.catchUpAge < MIN_AGE ||
+          input.catchUpAge > MAX_AGE
+        ) {
+          errors.catchUpAge = 'Enter the age at which the extra catch-up amount starts.';
+        }
+        checkMoney(errors, 'catchUpAmount', input.catchUpAmount, 'catch-up amount', true);
       }
-      checkMoney(errors, 'catchUpAmount', input.catchUpAmount, 'catch-up amount', true);
     }
     if (input.annualAdditionsLimit !== null) {
       checkMoney(errors, 'annualAdditionsLimit', input.annualAdditionsLimit, 'annual additions limit', true);
