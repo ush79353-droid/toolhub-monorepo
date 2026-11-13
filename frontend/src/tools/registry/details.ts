@@ -19,6 +19,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AFFOCalculator: () => import('@/tools/calculators/affo/detail'),
   FiveTwentyNineCalculator: () => import('@/tools/calculators/five-twenty-nine/detail'),
   SeventyTwentyTenCalculator: () => import('@/tools/calculators/seventy-twenty-ten-rule/detail'),
+  FourZeroOneKCalculator: () => import('@/tools/calculators/four-zero-one-k/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

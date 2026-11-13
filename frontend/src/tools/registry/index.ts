@@ -95,6 +95,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SeventyTwentyTenCalculator,
     })),
   ),
+  FourZeroOneKCalculator: lazyTool(() =>
+    import('@/tools/calculators/four-zero-one-k/FourZeroOneKCalculator').then((mod) => ({
+      default: mod.FourZeroOneKCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

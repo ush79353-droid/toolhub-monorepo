@@ -190,7 +190,7 @@ Round the money result once, half up, to the target currency's ISO minor units (
 
 There is no Express read route and no Next.js loader for these documents yet. The first calculator that converts money adds one shared read on that path: Next.js server → Express → `CurrencyRate`. Later calculators call that read. They do not add a cron, a collection, or a browser call to ExchangeRate-API. Load the snapshot once per page, not on each keystroke. Show `fetchedAt`. A rate older than 48 hours is stale: still use it, and say so. If the code is missing, show that conversion is unavailable.
 
-`frontend/src/tools/shared/currency.ts` and `CurrencySelect` format a denomination. Changing that selector does not convert numbers. Use it only when every money input is already in the selected currency. Auto Loan, Loan, ARM Mortgage, 12-hour shift pay, 3× rent, 3D-printer buy vs outsource, and A/R days are denomination-only. Do not retrofit them in an unrelated task.
+`frontend/src/tools/shared/currency.ts` and `CurrencySelect` format a denomination. Changing that selector does not convert numbers. Use it only when every money input is already in the selected currency. Auto Loan, Loan, ARM Mortgage, 12-hour shift pay, 3× rent, 3D-printer buy vs outsource, A/R days, and the 401(k) calculator are denomination-only. US 401(k) limit checks stay in USD. Do not retrofit them in an unrelated task.
 
 ### 7.6 Existing calculators that do not match §7.2
 
