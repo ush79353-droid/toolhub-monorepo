@@ -67,6 +67,10 @@ test('negative revenue, fractional room-nights, and empty inputs are rejected', 
   const emptyCheck = validateAdr(empty);
   assert.equal(emptyCheck.isValid, false);
   assert.equal(emptyCheck.incomplete, true);
+  assert.equal(emptyCheck.errors.roomRevenue, undefined);
+  const blankCheck = validateAdr(empty, { reportBlanks: true });
+  assert.equal(blankCheck.incomplete, false);
+  assert.match(blankCheck.errors.roomRevenue ?? '', /Enter total room revenue/);
   assert.equal(calculateAdr(empty), null);
   assert.equal(calculateAdr(base({ roomRevenue: Number.POSITIVE_INFINITY, roomsSold: 1 })), null);
 });

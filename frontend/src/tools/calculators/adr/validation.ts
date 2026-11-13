@@ -12,7 +12,10 @@ function wholeInRange(value: number, min: number, max: number): boolean {
   return Number.isInteger(value) && value >= min && value <= max;
 }
 
-export function validateAdr(input: AdrInput): {
+export function validateAdr(
+  input: AdrInput,
+  options?: { reportBlanks?: boolean },
+): {
   isValid: boolean;
   incomplete: boolean;
   errors: AdrFieldErrors;
@@ -26,7 +29,11 @@ export function validateAdr(input: AdrInput): {
 
   if (needRevenue) {
     if (input.roomRevenue === null || !Number.isFinite(input.roomRevenue)) {
-      incomplete = true;
+      if (options?.reportBlanks) {
+        errors.roomRevenue = 'Enter total room revenue.';
+      } else {
+        incomplete = true;
+      }
     } else if (input.roomRevenue < 0) {
       errors.roomRevenue = 'Room revenue cannot be negative.';
     } else if (input.roomRevenue > MAX_MONEY) {
@@ -36,7 +43,11 @@ export function validateAdr(input: AdrInput): {
 
   if (needRooms) {
     if (input.roomsSold === null || !Number.isFinite(input.roomsSold)) {
-      incomplete = true;
+      if (options?.reportBlanks) {
+        errors.roomsSold = 'Enter the number of room-nights sold.';
+      } else {
+        incomplete = true;
+      }
     } else if (input.roomsSold <= 0) {
       errors.roomsSold = 'Room-nights sold must be at least 1. Zero sold room-nights cannot produce an ADR.';
     } else if (!Number.isInteger(input.roomsSold)) {
@@ -48,7 +59,11 @@ export function validateAdr(input: AdrInput): {
 
   if (needAdr) {
     if (input.adr === null || !Number.isFinite(input.adr)) {
-      incomplete = true;
+      if (options?.reportBlanks) {
+        errors.adr = 'Enter the average daily rate.';
+      } else {
+        incomplete = true;
+      }
     } else if (input.adr < 0) {
       errors.adr = 'ADR cannot be negative.';
     } else if (input.solveFor === 'roomsSold' && input.adr === 0) {
