@@ -28,6 +28,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '529-calculator',
   '702010-rule-money-calculator',
   '401k-calculator',
+  'amortization-calculator',
 ] as const;
 
 const STATIC_PATHS = [

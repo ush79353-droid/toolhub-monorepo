@@ -10,7 +10,11 @@ import {
   formatCurrencyValue,
   formatDisplayDate,
 } from './calculation';
-import type { AmortizationResult } from './types';
+import type {
+  AmortizationResult,
+  AmortizationScheduleRow,
+  AmortizationYearlyRow,
+} from './types';
 
 interface AmortizationScheduleTableProps {
   result: AmortizationResult;
@@ -92,43 +96,73 @@ export function AmortizationScheduleTable({ result }: AmortizationScheduleTableP
           </tr>
         </thead>
         <tbody className="divide-y divide-border/60 bg-white">
-          {displayedRows.map((row: any) => {
-            const isPeriod = view === 'period';
-            const key = isPeriod ? `period-${row.periodNumber}` : `year-${row.year}`;
-            return (
-              <tr key={key} className="hover:bg-muted/40 transition-colors">
-                <td className="px-3 py-2 font-medium text-foreground tabular-nums">
-                  {isPeriod ? row.periodNumber : `Yr ${row.year}`}
-                </td>
-                <td className="px-3 py-2 text-muted-foreground tabular-nums">
-                  {isPeriod ? formatDisplayDate(row.paymentDate) : `${row.calendarYear} (${row.paymentsCount} pmts)`}
-                </td>
-                <td className="px-3 py-2 text-right text-muted-foreground tabular-nums">
-                  {fmt(row.openingBalance)}
-                </td>
-                <td className="px-3 py-2 text-right font-medium text-foreground tabular-nums">
-                  {fmt(row.scheduledPayment)}
-                </td>
-                <td className="px-3 py-2 text-right font-medium text-primary tabular-nums">
-                  {fmt(row.principalPaid)}
-                </td>
-                <td className="px-3 py-2 text-right text-muted-foreground tabular-nums">
-                  {fmt(row.interestPaid)}
-                </td>
-                {hasExtra && (
-                  <td className="px-3 py-2 text-right font-medium text-emerald-600 tabular-nums">
-                    {row.extraPayment > 0 ? fmt(row.extraPayment) : '—'}
+          {view === 'period'
+            ? (displayedRows as AmortizationScheduleRow[]).map((row) => (
+                <tr key={`period-${row.periodNumber}`} className="hover:bg-muted/40 transition-colors">
+                  <td className="px-3 py-2 font-medium text-foreground tabular-nums">
+                    {row.periodNumber}
                   </td>
-                )}
-                <td className="px-3 py-2 text-right font-semibold text-foreground tabular-nums">
-                  {fmt(row.totalPayment)}
-                </td>
-                <td className="px-3 py-2 text-right font-medium text-foreground tabular-nums">
-                  {fmt(row.closingBalance)}
-                </td>
-              </tr>
-            );
-          })}
+                  <td className="px-3 py-2 text-muted-foreground tabular-nums">
+                    {formatDisplayDate(row.paymentDate)}
+                  </td>
+                  <td className="px-3 py-2 text-right text-muted-foreground tabular-nums">
+                    {fmt(row.openingBalance)}
+                  </td>
+                  <td className="px-3 py-2 text-right font-medium text-foreground tabular-nums">
+                    {fmt(row.scheduledPayment)}
+                  </td>
+                  <td className="px-3 py-2 text-right font-medium text-primary tabular-nums">
+                    {fmt(row.principalPaid)}
+                  </td>
+                  <td className="px-3 py-2 text-right text-muted-foreground tabular-nums">
+                    {fmt(row.interestPaid)}
+                  </td>
+                  {hasExtra && (
+                    <td className="px-3 py-2 text-right font-medium text-emerald-600 tabular-nums">
+                      {row.extraPayment > 0 ? fmt(row.extraPayment) : '—'}
+                    </td>
+                  )}
+                  <td className="px-3 py-2 text-right font-semibold text-foreground tabular-nums">
+                    {fmt(row.totalPayment)}
+                  </td>
+                  <td className="px-3 py-2 text-right font-medium text-foreground tabular-nums">
+                    {fmt(row.closingBalance)}
+                  </td>
+                </tr>
+              ))
+            : (displayedRows as AmortizationYearlyRow[]).map((row) => (
+                <tr key={`year-${row.year}`} className="hover:bg-muted/40 transition-colors">
+                  <td className="px-3 py-2 font-medium text-foreground tabular-nums">
+                    Yr {row.year}
+                  </td>
+                  <td className="px-3 py-2 text-muted-foreground tabular-nums">
+                    {row.calendarYear} ({row.paymentsCount} pmts)
+                  </td>
+                  <td className="px-3 py-2 text-right text-muted-foreground tabular-nums">
+                    {fmt(row.openingBalance)}
+                  </td>
+                  <td className="px-3 py-2 text-right font-medium text-foreground tabular-nums">
+                    {fmt(row.scheduledPayment)}
+                  </td>
+                  <td className="px-3 py-2 text-right font-medium text-primary tabular-nums">
+                    {fmt(row.principalPaid)}
+                  </td>
+                  <td className="px-3 py-2 text-right text-muted-foreground tabular-nums">
+                    {fmt(row.interestPaid)}
+                  </td>
+                  {hasExtra && (
+                    <td className="px-3 py-2 text-right font-medium text-emerald-600 tabular-nums">
+                      {row.extraPayment > 0 ? fmt(row.extraPayment) : '—'}
+                    </td>
+                  )}
+                  <td className="px-3 py-2 text-right font-semibold text-foreground tabular-nums">
+                    {fmt(row.totalPayment)}
+                  </td>
+                  <td className="px-3 py-2 text-right font-medium text-foreground tabular-nums">
+                    {fmt(row.closingBalance)}
+                  </td>
+                </tr>
+              ))}
         </tbody>
       </table>
     </div>

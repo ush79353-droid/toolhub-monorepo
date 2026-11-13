@@ -100,6 +100,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FourZeroOneKCalculator,
     })),
   ),
+  AmortizationCalculator: lazyTool(() =>
+    import('@/tools/calculators/amortization/AmortizationCalculator').then((mod) => ({
+      default: mod.AmortizationCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
