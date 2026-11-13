@@ -25,7 +25,7 @@
 | :--- | :--- | :--- |
 | Homepage (`/`) | **Implemented** | Server-rendered page fetching active categories (`/catalog/categories`) and featured tools (`/catalog/featured`) from Express/MongoDB |
 | Tools Directory (`/tools`) | **Implemented** | Server-rendered active tools from `GET /catalog/tools`, 24 per page, with name search and category filter |
-| Tool Detail & Workspace (`/tools/[slug]`) | **Partially Implemented** | Active MongoDB tools resolve first. Auto Loan Calculator and Loan Calculator are interactive. Other slugs fall back to `sample-data.ts` or a preview shell |
+| Tool Detail & Workspace (`/tools/[slug]`) | **Implemented** for registered calculators | Active MongoDB tools with a registered component render the shared shell. Unregistered component keys return 404. |
 | Categories Directory (`/categories`, `/categories/[slug]`) | **Implemented** | Live root categories. A category page lists active tools grouped by pillar and sub-pillar |
 | Informational & Legal Pages (`/about`, `/contact`, `/privacy-policy`, `/terms-of-service`) | **Partially Implemented** | Static content pages; `/contact` validates client-side only without backend email delivery; legal pages are explicitly labeled draft templates |
 

@@ -262,5 +262,10 @@
 - **Important Files:** `backend/src/jobs/currency-rates.cron.ts`, `backend/package.json`.
 - **Verification:** `npx tsx src/jobs/currency-rates.cron.ts` printed `currency-rates cron ok`. Backend `npx tsc --noEmit` passed.
 
+### 2026-11-13 — Tool pages 404 when the calculator is not registered
+- **Summary:** `/tools/[slug]` calls `notFound()` when the active tool has no registered component or no page shell. Public `sample-data.ts` and the preview workspace are removed. Embeds for an unregistered key stay unavailable.
+- **Important Files:** `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/tools/registry/keys.ts`, `frontend/src/components/shared/ToolWorkspace.tsx`, `frontend/src/app/embed/[slug]/page.tsx`.
+- **Verification:** Frontend `npx tsc --noEmit` passed. `/tools/100-day-calculator` rendered the calculator (200). `/tools/0-60-calculator` (`ZeroToSixtyCalculator`, active, not registered) returned the not-found page (404).
+
 
 

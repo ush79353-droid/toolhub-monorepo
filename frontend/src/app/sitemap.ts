@@ -7,7 +7,7 @@ import {
 import { getPublicCategories } from '@/server/catalog/categories';
 import { getPublicToolBySlug, type PublicToolDetail } from '@/server/catalog/tools';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
-import { isApprovedComponentKey } from '@/tools/registry/keys';
+import { isRegisteredComponentKey } from '@/tools/registry/keys';
 
 /** Known implemented public tool slugs (registry-backed). Extend when new calculators ship. */
 const IMPLEMENTED_TOOL_SLUGS = [
@@ -78,7 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const slug of IMPLEMENTED_TOOL_SLUGS) {
     try {
       const tool = await getPublicToolBySlug(slug);
-      if (!tool || !isApprovedComponentKey(tool.componentKey)) continue;
+      if (!tool || !isRegisteredComponentKey(tool.componentKey)) continue;
       if (!resolveSitemapEligible(toSeoSource(tool), true)) continue;
       entries.push({
         url: `${origin}/tools/${tool.slug}`,

@@ -75,7 +75,7 @@ Browser  ──►  Next.js Server (RSC / Server Actions)  ──►  Express AP
 - `frontend/src/server/`: `server-only` API client (`api/client.ts`) and Server Actions (`auth/`, `categories/`, `media/`, `tools/`).
 - `frontend/src/components/`: `ui/` primitives, `layout/`, `shared/`, `tools/`, `categories/`, `contact/`, `admin/` (`auth`, `dashboard`, `forms`, `layout`, `profile`, `shared`, `tables`).
 - `frontend/src/tools/`: `types.ts`, `registry/index.ts`, and 9 empty category folders (`.gitkeep`).
-- `frontend/src/lib/`: `constants.ts`, `helpers.ts`, `utils.ts`, `validation/`, `sample-data.ts`, `admin-mock-data.ts`.
+- `frontend/src/lib/`: `constants.ts`, `helpers.ts`, `utils.ts`, `validation/`, `admin-mock-data.ts`.
 - `backend/src/config/`: `env.ts` (Zod env parsing), `database.ts` (Mongoose lifecycle).
 - `backend/src/middleware/`: `auth.middleware.ts`, `error.middleware.ts`, `logger.middleware.ts`, `notFound.middleware.ts`, `rate-limit.middleware.ts`.
 - `backend/src/modules/`: Implemented (`health`, `admins`, `auth`, `categories`, `media`, `tools`, `catalog`) and placeholders (`analytics`, `integrations`, `jobs`, `seo`, `uploads`, `users`).

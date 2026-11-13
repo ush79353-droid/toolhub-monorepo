@@ -11,7 +11,7 @@ import {
 } from '@/lib/embed/tool-embed';
 import { getPublicToolBySlug } from '@/server/catalog/tools';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
-import { isApprovedComponentKey } from '@/tools/registry/keys';
+import { isApprovedComponentKey, isRegisteredComponentKey } from '@/tools/registry/keys';
 import type { ToolMetadata } from '@/types/tool';
 
 export const dynamic = 'force-dynamic';
@@ -72,7 +72,7 @@ export default async function EmbedToolPage({ params, searchParams }: EmbedPageP
   const fullPageHref = `/tools/${tool.slug}`;
   const embedId = embedIdParam?.trim() || `embed-${tool.slug}`;
 
-  if (!eligible || !isApprovedComponentKey(tool.componentKey)) {
+  if (!eligible || !isApprovedComponentKey(tool.componentKey) || !isRegisteredComponentKey(tool.componentKey)) {
     return (
       <main className="mx-auto flex min-h-screen max-w-lg flex-col items-center justify-center gap-4 px-4 py-10 text-center">
         <h1 className="text-lg font-semibold text-accent">Embedding unavailable</h1>
