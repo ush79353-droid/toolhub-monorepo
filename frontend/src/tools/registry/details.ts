@@ -13,6 +13,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ThreeXRentCalculator: () => import('@/tools/calculators/three-x-rent/detail'),
   ThreeDPrinterBuyVsOutsourceCalculator: () =>
     import('@/tools/calculators/three-d-printer-buy-vs-outsource/detail'),
+  ARDaysCalculator: () => import('@/tools/calculators/ar-days/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

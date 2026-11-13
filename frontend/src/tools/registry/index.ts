@@ -65,6 +65,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ThreeDPrinterBuyVsOutsourceCalculator,
     })),
   ),
+  ARDaysCalculator: lazyTool(() =>
+    import('@/tools/calculators/ar-days/ARDaysCalculator').then((mod) => ({
+      default: mod.ARDaysCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

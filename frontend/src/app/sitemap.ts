@@ -21,6 +21,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '12-hour-shift-pay-calculator',
   '3x-rent-calculator',
   '3d-printer-buy-vs-outsource-calculator',
+  'ar-days-calculator',
 ] as const;
 
 const STATIC_PATHS = [

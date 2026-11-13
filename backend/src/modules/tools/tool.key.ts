@@ -11,6 +11,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TwelveHourShiftPayCalculator',
   'ThreeXRentCalculator',
   'ThreeDPrinterBuyVsOutsourceCalculator',
+  'ARDaysCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -44,6 +45,7 @@ if (isDirect) {
     !isApprovedComponentKey('TwelveHourShiftPayCalculator') ||
     !isApprovedComponentKey('ThreeXRentCalculator') ||
     !isApprovedComponentKey('ThreeDPrinterBuyVsOutsourceCalculator') ||
+    !isApprovedComponentKey('ARDaysCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
