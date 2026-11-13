@@ -75,6 +75,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FourZeroThreeBCalculator,
     })),
   ),
+  ADRCalculator: lazyTool(() =>
+    import('@/tools/calculators/adr/ADRCalculator').then((mod) => ({
+      default: mod.ADRCalculator,
+    })),
+  ),
   FiveTwentyNineCalculator: lazyTool(() =>
     import('@/tools/calculators/five-twenty-nine/FiveTwentyNineCalculator').then((mod) => ({
       default: mod.FiveTwentyNineCalculator,

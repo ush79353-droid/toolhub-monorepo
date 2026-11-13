@@ -15,6 +15,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/three-d-printer-buy-vs-outsource/detail'),
   ARDaysCalculator: () => import('@/tools/calculators/ar-days/detail'),
   FourZeroThreeBCalculator: () => import('@/tools/calculators/four-zero-three-b/detail'),
+  ADRCalculator: () => import('@/tools/calculators/adr/detail'),
   FiveTwentyNineCalculator: () => import('@/tools/calculators/five-twenty-nine/detail'),
   SeventyTwentyTenCalculator: () => import('@/tools/calculators/seventy-twenty-ten-rule/detail'),
 };

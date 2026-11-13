@@ -11,6 +11,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ThreeDPrinterBuyVsOutsourceCalculator',
   'ARDaysCalculator',
   'FourZeroThreeBCalculator',
+  'ADRCalculator',
   'FiveTwentyNineCalculator',
   'SeventyTwentyTenCalculator',
 ] as const;
@@ -35,6 +36,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'ThreeDPrinterBuyVsOutsourceCalculator',
   'ARDaysCalculator',
   'FourZeroThreeBCalculator',
+  'ADRCalculator',
   'FiveTwentyNineCalculator',
   'SeventyTwentyTenCalculator',
 ] as const;
