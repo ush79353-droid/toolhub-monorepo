@@ -1,7 +1,6 @@
 import {
   formatCurrencyValue,
   getCurrencySymbol,
-  type SupportedCurrency,
 } from '../../shared/currency';
 import type {
   AmortizationChartPoint,
@@ -251,9 +250,7 @@ function runAmortizationLedger(
     if (isFinalPeriod || openingBalanceCents + interestCents <= regularPaymentCents) {
       const scheduledPaymentCents = openingBalanceCents + interestCents;
       const principalPaidCents = openingBalanceCents;
-      const extraPaidCents = 0;
       const totalPaymentCents = scheduledPaymentCents;
-      const closingBalanceCents = 0;
 
       balanceCents = 0;
       totalScheduledCents += scheduledPaymentCents;
@@ -574,7 +571,7 @@ export function calculateAmortization(input: AmortizationInput): AmortizationRes
 }
 
 export function buildAmortizationSummaryText(
-  input: AmortizationInput,
+  _input: AmortizationInput,
   result: AmortizationResult
 ): string {
   const fmt = (val: number) => formatCurrencyValue(val, result.currency);

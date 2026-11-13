@@ -5,14 +5,9 @@ import {
   calculateAmortization,
   computeEffectiveAnnualRate,
   computePeriodicRate,
-  computeRegularPayment,
-  getScheduledPaymentDate,
 } from './calculation';
 import { createDefaultAmortizationInput } from './types';
-import {
-  resolveScheduledPeriods,
-  validateAmortizationInput,
-} from './validation';
+import { validateAmortizationInput } from './validation';
 
 function approxEqual(actual: number, expected: number, tolerance = 0.02, message = ''): void {
   const diff = Math.abs(actual - expected);
