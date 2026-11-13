@@ -22,7 +22,7 @@ Rules:
 - Do not add `app/(website)/tools/<slug>/page.tsx`. Unregistered keys call `notFound()`.
 - Import `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/`. Do not copy them.
 - Do not hardcode per-tool SEO metadata in calculator components.
-- Do not invent a second sticky, currency, clipboard, metadata, ad, or embed system.
+- Do not invent a second sticky, currency, clipboard, metadata, ad, or embed system. Real conversion uses ADR-017 rates through ADR-021 (`.agents/rules/currency-conversion.md`). A denomination selector does not convert numbers.
 - Keep calculator-specific math and validation in pure modules. Keep presentation conventions shared.
 - Preserve Ponytail minimalism: extend existing helpers before adding abstractions.
 - For iframe embedding, follow `brain/EMBED_STANDARDS.md` and `.agents/rules/embed-standards.md`.

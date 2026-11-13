@@ -62,9 +62,11 @@ Reuse `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/
 
 ## 4. Forms & Currency
 
-- Shared currency catalog: `tools/shared/currency.ts` + `CurrencySelect`
-- Denomination/formatting only — never live FX conversion
-- Input height `h-11`; consistent unit affixes via `getCurrencySymbol`
+- Shared currency catalog: `tools/shared/currency.ts` + `CurrencySelect`. Input height `h-11`. Unit affixes use `getCurrencySymbol`.
+- **Denomination:** every money input is already in the selected currency. The selector changes the symbol and grouping only. Say that on the page. Do not multiply by an exchange rate.
+- **Conversion:** the calculator turns an amount from one currency into another. Use the ADR-017 `CurrencyRate` map through the shared server read (ADR-021). `converted = amount * rate[target] / rate[source]`, with the base rate equal to 1. Round the money result once. Do not call ExchangeRate-API from the calculator, and do not add a cron.
+- A missing or non-finite rate is an unavailable conversion, not 1:1. Show `fetchedAt`. Older than 48 hours is stale and still usable.
+- The pure `calculation.ts` receives numbers. It does not import Mongo, HTTP, or React.
 - Copy/download helpers: `tools/shared/clipboard.ts`, `tools/shared/download.ts`
 
 ## 5. Results

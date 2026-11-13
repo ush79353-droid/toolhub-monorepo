@@ -139,3 +139,10 @@
 - **Consequences:** Does not supersede ADR-016 or ADR-018. The visual shell and the calculator module stay locked. A milestone must not leave the tree unnecessarily broken: do not register a calculator key before its component and `detail.tsx` exist. Prefer a milestone that passes the checks that apply to it. Non-calculator work still keeps its Brain update in the same commit as the code. A calculator's Brain update is the last commit of the same delivery and is pushed with the code commits. Never force-push or rewrite shared history. Cursor (`.cursor/rules/git-commits.mdc`) and Antigravity (`.agents/rules/git-commits.md`) both apply this rule.
 - **Status:** Accepted
 
+## ADR-021: Calculators reuse the stored currency rates
+- **Date:** 2026-11-13
+- **Decision:** A calculator that converts money uses the ADR-017 `CurrencyRate` documents and no other rate source. The stored map is units of each currency per 1 unit of that document's base, and the base rate is 1. `converted = amount * rate[target] / rate[source]`. Round the money result once to the target's ISO minor units. A calculator that only labels one currency keeps using `CurrencySelect` and does not convert. The pure engine does not import Mongo, HTTP, or React.
+- **Reason:** The daily ExchangeRate-API job already stores the tables. Per-calculator fetches would duplicate the key, the cron, and the map.
+- **Consequences:** Does not supersede ADR-016, ADR-017, ADR-018, or ADR-019. No read route exists yet. The first converting calculator adds one shared Express read and one Next.js server loader; later calculators call those. Load the snapshot once per page. Show `fetchedAt`. A timestamp older than 48 hours is stale and is still used. A missing code is unavailable, not 1:1. Failed provider responses already skip the write; do not change that job in a calculator task. Cursor (`.cursor/rules/currency-conversion.mdc`) and Antigravity (`.agents/rules/currency-conversion.md`) both apply this rule.
+- **Status:** Accepted
+

@@ -182,7 +182,7 @@ Only the Mongoose models documented below exist. No other collections (`analytic
 | `baseCurrency` | `String` | Required, unique, trimmed, uppercase | — |
 | `fullName` | `String` | Required, trimmed | — |
 | `symbol` | `String` | Required, trimmed | — |
-| `conversionRates` | `Map<String, Number>` | Required. Units of each code per 1 base unit | — |
+| `conversionRates` | `Map<String, Number>` | Required. Units of each code per 1 base unit. The base's own rate is 1. Convert with `amount * rate[target] / rate[source]` (ADR-021). | — |
 | `fetchedAt` | `Date` | When the provider response was saved | `Date.now` |
 | `isActive` | `Boolean` | | `true` |
 | `createdAt`, `updatedAt` | `Date` | `{ timestamps: true }` | — |

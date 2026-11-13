@@ -1,0 +1,15 @@
+---
+trigger: always_on
+description: "Shared currency conversion for Omega Calculators (ADR-017, ADR-021)."
+---
+
+# Currency conversion (Antigravity)
+
+ADR-017 stores the rates. ADR-021 says how calculators use them. This does not change ADR-016, ADR-018, or ADR-019.
+
+- Denomination: every money input is already in the selected currency. Reuse `CurrencySelect` and `currency.ts`. Changing the selector changes the symbol and grouping only. Say so on the page.
+- Conversion: an amount moves between currencies. Use the stored `CurrencyRate` map. `converted = amount * rate[target] / rate[source]`. The base currency's rate is 1. Round the money result once. Do not round the rate. Do not treat a missing rate as 1.
+- Never call ExchangeRate-API from a calculator. Never add a cron, a collection, or a second copy of the rate map.
+- The read path is Next.js server → Express → MongoDB. There is no read route yet. The first converting calculator adds that one shared read. Later calculators call it. Load rates once per page, not on each keystroke.
+- Show `fetchedAt`. Older than 48 hours is stale: keep using the stored rate and say so. If the code is absent, show that conversion is unavailable.
+- `calculation.ts` stays free of Mongo, HTTP, and React.

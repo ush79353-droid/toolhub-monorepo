@@ -113,7 +113,7 @@ Validated at import via Zod (`dotenv.config()`):
 - `npm run tool:assign` (`assign-tool-component.ts`): Safely assigns an allowlisted `--component` key and `--execution` type (plus optional `--activate`) to an existing tool by `--slug` while preserving all existing SEO and placement fields.
 - `npm run categories:icons` (`attach-category-icons.ts`): Downloads one Lucide SVG per root category, stores it with the local storage driver, and saves `iconMedia` / `iconUrl` on that category. Skips a category that already has a `/uploads/` icon. Requires `STORAGE_DRIVER=local`.
 - `npm run categories:descriptions` (`set-category-descriptions.ts`): Writes a short public description onto each root category that still has an empty `description`. Categories that already have text are left as saved.
-- `npm run currency:fetch` (`fetch-currency-rates.ts`): Fetches the latest USD table and upserts every tracked base currency, plus a history row. `node-cron` runs the same function at local midnight (`0 0 * * *`) from `src/jobs/currency-rates.cron.ts`.
+- `npm run currency:fetch` (`fetch-currency-rates.ts`): Fetches the latest USD table and upserts every tracked base currency, plus a history row. `node-cron` runs the same function at local midnight (`0 0 * * *`, server local time, `noOverlap`) from `src/jobs/currency-rates.cron.ts` after Mongo connects. A failed or rejected provider response does not write. There is no Express route that reads `CurrencyRate` yet (ADR-021).
 
 ---
 

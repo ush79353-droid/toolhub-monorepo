@@ -173,8 +173,24 @@ Do not add `app/(website)/tools/<slug>/page.tsx`. Do not register a calculator b
 
 - Visual master remains Auto Loan Calculator (ADR-016): `TOOL_DETAIL_PAGE_STANDARDS.md`.
 - SEO: `SEO_STANDARDS.md`. Embed: `EMBED_STANDARDS.md`. Ads: `AD_STANDARDS.md`.
-- Currency display does not perform live FX conversion.
+- Currency has two modes, locked in §7.7. A denomination label does not convert amounts. Real conversion uses the stored ADR-017 rates and does not call the provider from the browser.
 - Browser calculators still never call Express.
+
+### 7.7 Currency conversion (ADR-017, ADR-021)
+
+ExchangeRate-API v6 `latest/USD` is fetched by one backend job, `node-cron` `0 0 * * *` in the server's local timezone, with `noOverlap`. The job starts only after Mongo connects and runs only while that process is up. `npm run currency:fetch` calls the same function. An empty `CURRENCY_EXCHANGE_API_KEY`, a non-OK response, or `result !== "success"` returns without writing. A successful save upserts one `CurrencyRate` per tracked base and appends `CurrencyRateHistory`.
+
+The provider map is units of each currency per 1 USD. `ratesForBase` stores `provider[code] / provider[base]`, then sets the base's own rate to `1`. That stored map is units of the quoted currency per 1 unit of the document's base.
+
+```text
+converted = amount * rate[target] / rate[source]
+```
+
+Round the money result once, half up, to the target currency's ISO minor units (`getCurrencyFractionDigits`). Do not round the rate. Do not assume a missing rate is 1.
+
+There is no Express read route and no Next.js loader for these documents yet. The first calculator that converts money adds one shared read on that path: Next.js server → Express → `CurrencyRate`. Later calculators call that read. They do not add a cron, a collection, or a browser call to ExchangeRate-API. Load the snapshot once per page, not on each keystroke. Show `fetchedAt`. A rate older than 48 hours is stale: still use it, and say so. If the code is missing, show that conversion is unavailable.
+
+`frontend/src/tools/shared/currency.ts` and `CurrencySelect` format a denomination. Changing that selector does not convert numbers. Use it only when every money input is already in the selected currency. Auto Loan, Loan, ARM Mortgage, 12-hour shift pay, 3× rent, 3D-printer buy vs outsource, and A/R days are denomination-only. Do not retrofit them in an unrelated task.
 
 ### 7.6 Existing calculators that do not match §7.2
 

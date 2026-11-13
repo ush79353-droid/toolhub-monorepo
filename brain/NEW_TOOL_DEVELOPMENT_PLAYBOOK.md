@@ -21,6 +21,7 @@ A new calculator is not done until every gate below is true, in this order. Deta
 6. **SEO** — Metadata comes from `generateMetadata` + `lib/seo/tool-seo.ts`. Slug added to `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts`. No metadata hardcoded in the calculator.
 7. **Embed** — `/embed/{slug}` renders the same component with `presentation="embed"`. No ads. `noindex` comes from the shared embed route.
 8. **Responsive QA** — Check 375, 768, 1024, and 1280. Calculator first below `lg`. No horizontal overflow.
+9. **Currency** — Follow the checklist in Step 19b. Denomination and conversion are different. Conversion reuses ADR-017. Do not add a provider call or a cron.
 
 Then finish accessibility, type-check, lint, and the Brain update (steps 16–19). Commit each finished milestone under ADR-019. Do not wait until the end for every file.
 
@@ -240,6 +241,20 @@ Rules:
 - Run the checks that match the milestone: engine tests after the test commit, `type-check` and `lint` after UI and registry commits, responsive and embed checks before the closing docs commit.
 - Use Conventional Commit subjects. Stage only this task's files.
 - The delivery report lists every commit hash and the checks run at that milestone.
+
+---
+
+## Step 19b — Currency integration checklist
+
+Read ADR-017 and `ARCHITECTURE.md` §7.7 before choosing.
+
+- [ ] Decide which mode this calculator uses. Denomination: all money inputs are already in the selected currency, and the selector only changes `CurrencySelect` formatting. Conversion: at least one amount is translated between currencies.
+- [ ] Denomination calculators reuse `currency.ts` and `CurrencySelect`. They show that the selection does not change the exchange rate. They do not fetch rates.
+- [ ] Conversion calculators do not call ExchangeRate-API, do not add a cron, and do not add a collection. They read the latest `CurrencyRate` through the shared Next.js server → Express path.
+- [ ] Formula: `converted = amount * rate[target] / rate[source]`. The stored base rate is 1. Round the money result once to the target's minor units. Leave non-money numbers unchanged.
+- [ ] One rate snapshot per page load. Do not request rates again on each input change.
+- [ ] Show `fetchedAt`. If it is older than 48 hours, say the rate is stale and still use it. If a code is missing, stop the conversion and do not invent a rate.
+- [ ] `calculation.ts` stays free of Mongo, HTTP, and React. Pass the already loaded rates in.
 
 ---
 

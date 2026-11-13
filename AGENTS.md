@@ -30,6 +30,7 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 7. Do not overwrite another developer's uncommitted changes or unrelated files.
 8. Keep changes scoped to the requested task and follow engineering standards in `.agents/rules/ponytail.md` / `.cursor/rules/ponytail.mdc`.
 9. Validate security-sensitive changes carefully (auth, sessions, cookies, RBAC, input schemas, storage keys, secret handling).
+10. Currency conversion reuses the ADR-017 store (ADR-021). Do not call ExchangeRate-API from a calculator, and do not add a per-tool cron. A currency selector that only labels one currency must not pretend to convert amounts.
 
 ---
 
