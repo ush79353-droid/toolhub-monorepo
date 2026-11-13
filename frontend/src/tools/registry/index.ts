@@ -50,6 +50,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ZeroToSixtyCalculator,
     })),
   ),
+  TwelveHourShiftPayCalculator: lazyTool(() =>
+    import('@/tools/calculators/twelve-hour-shift-pay/TwelveHourShiftPayCalculator').then((mod) => ({
+      default: mod.TwelveHourShiftPayCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

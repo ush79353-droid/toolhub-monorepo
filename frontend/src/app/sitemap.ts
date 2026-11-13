@@ -18,6 +18,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '100-day-calculator',
   '12-volt-wire-size-calculator',
   '0-60-calculator',
+  '12-hour-shift-pay-calculator',
 ] as const;
 
 const STATIC_PATHS = [

@@ -9,6 +9,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   HundredDayCalculator: () => import('@/tools/calculators/hundred-day/detail'),
   TwelveVoltWireCalculator: () => import('@/tools/calculators/twelve-volt-wire/detail'),
   ZeroToSixtyCalculator: () => import('@/tools/calculators/zero-to-sixty/detail'),
+  TwelveHourShiftPayCalculator: () => import('@/tools/calculators/twelve-hour-shift-pay/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
