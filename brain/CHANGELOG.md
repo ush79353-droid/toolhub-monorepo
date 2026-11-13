@@ -295,3 +295,14 @@
 - **Important Files:** `frontend/src/tools/calculators/twelve-volt-wire/*`, `frontend/src/tools/electrical/conductor.ts`, `brain/{CURRENT_STATE,FRONTEND,ARCHITECTURE,CALCULATOR_STANDARDS,TASKS,CHANGELOG,DECISIONS}.md`.
 - **Verification:** `calculation.test.ts` and `conductor.test.ts` passed, along with loan (14), auto-loan (15), 0-60 (25), RREF (20), ARM, and 100-day suites. Browser: feet toggle 5 m → 16.4042 ft with the same 5 m result, negative current shows an inline error and clears the result, Reset restores the defaults and 5.354 mm². Aluminum at the defaults selects 10 mm² and 7 AWG. Embed returns `X-Robots-Tag: noindex, nofollow` and `Content-Security-Policy: frame-ancestors *`, with the safety notice and no article or ad slot. 375px embed width has no horizontal overflow. Catalog title and description match. Dev canonical is localhost, which the production resolver does not emit.
 
+### 2026-11-13 — Complete ARM Mortgage Calculator inputs and caps
+- **Summary:** Extended the existing `arm-mortgage-calculator` module. The loan amount is home price minus a down payment (amount or percent). Structures include 3/1 through 10/6 and a custom fixed period plus adjustment interval. Each reset targets index + margin, with an optional rising or falling step after the first reset. Periodic caps limit increases and decreases. Lifetime increase and decrease caps set the ceiling and floor. Results separate that assumption from the payment if the rate rises as fast as the caps allow. Year and month schedules, the shared principal/interest chart, and the guide match those rules. No second slug, registry key, or Mongo record.
+- **Example:** $250,000, no down payment, 30 years, 5.5%, 5/1, index 4.5, margin 2, caps 2/2/5 → introductory payment $1,419.47; first reset $1,560.75 at 6.5%; lifetime ceiling 10.5%.
+- **Important Files:** `frontend/src/tools/calculators/arm-mortgage/*`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** Recorded after the checks in this session.
+
+### 2026-11-13 — Lock incremental calculator commits
+- **Summary:** ADR-019 requires new calculators to land as meaningful milestone commits (small 1–2, medium 2–3, large 3–5, more only when each extra commit is real). The Brain record is the last commit of that sequence and is pushed with the code. Empty commits are rejected. ADR-016 and ADR-018 are unchanged. No calculator source was edited.
+- **Important Files:** `AGENTS.md`, `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `brain/CALCULATOR_STANDARDS.md`, `brain/DECISIONS.md`, `.cursor/rules/git-commits.mdc`, `.agents/rules/git-commits.md`.
+- **Verification:** File inspection only. The two agent rule files state the same sequence, the same size bands, and the same push rule.
+

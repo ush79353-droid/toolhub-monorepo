@@ -10,7 +10,7 @@ Follow the shared repository instructions in root `AGENTS.md` on every task.
 ## Mandatory Workflow
 
 - **Before coding:** Read `brain/README.md`, `brain/CURRENT_STATE.md`, `brain/ARCHITECTURE.md`, and the `brain/` document(s) relevant to your task. Inspect the actual source files and check `git status` before making assumptions.
-- **After completing a task:** Run relevant verification (`npm run type-check`, `npm run lint`, and targeted checks), update affected `brain/` documents (`CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`, `DECISIONS.md` if applicable, plus any affected domain docs), and keep Brain updates in the same commit as related code changes.
+- **After completing a task:** Run relevant verification (`npm run type-check`, `npm run lint`, and targeted checks), update affected `brain/` documents (`CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`, `DECISIONS.md` if applicable, plus any affected domain docs). Non-calculator work keeps that Brain update in the same commit. New calculators follow ADR-019 (`.agents/rules/git-commits.md`): milestone commits, then a closing Brain commit, pushed together.
 
 ## Non-Negotiable Architecture & Safety Guards
 

@@ -22,7 +22,7 @@ A new calculator is not done until every gate below is true, in this order. Deta
 7. **Embed** — `/embed/{slug}` renders the same component with `presentation="embed"`. No ads. `noindex` comes from the shared embed route.
 8. **Responsive QA** — Check 375, 768, 1024, and 1280. Calculator first below `lg`. No horizontal overflow.
 
-Then finish accessibility, type-check, lint, and the Brain update (steps 16–18).
+Then finish accessibility, type-check, lint, and the Brain update (steps 16–19). Commit each finished milestone under ADR-019. Do not wait until the end for every file.
 
 ---
 
@@ -205,19 +205,41 @@ From `frontend/` (and `backend/` if API touched):
 
 ## Step 18 — Update Project Brain
 
-Same commit as code when possible:
+Closing commit of the calculator sequence (or the only commit when the tool is small):
 
 - `CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`
 - `FRONTEND.md` / `CALCULATOR_STANDARDS.md` if registry or patterns changed
 - `DECISIONS.md` only for architectural exceptions
 
+ADR-016 (Auto Loan visual shell) and ADR-018 (calculator module) stay in force. This step does not restyle the page or change the folder layout.
+
 ---
 
-## Step 19 — Commit & push safely
+## Step 19 — Incremental commits and push
 
-- Commit only relevant files; never secrets
-- `git fetch`; no force push
-- Follow user/Git branch policy
+ADR-019. Commit a finished milestone when it is coherent and the checks that apply to it pass. Push the finished sequence once, after `git fetch`, only if `origin/development` can take a fast-forward. Never force-push.
+
+| Size | Commits |
+| :--- | :--- |
+| Small | 1–2. One commit is enough when the engine, UI, registration, and Brain note are one change. |
+| Medium | 2–3 |
+| Large | 3–5. More than five is allowed when each extra commit is a real milestone. |
+
+Example for a large calculator, using the tool name in place of `calculator`:
+
+1. `feat(calculator): add calculation engine, types and validation`
+2. `test(calculator): add calculation unit tests`
+3. `feat(calculator): implement form and results UI`
+4. `feat(calculator): integrate registry, guide, SEO and embed`
+5. `docs(calculator): update Brain and development records`
+
+Rules:
+
+- Each commit contains a real, reviewable change. No empty, duplicate, or padded commits.
+- Do not split a change so the tree cannot build. Register the calculator only when its component and `detail.tsx` exist. Keep the engine commit free of React.
+- Run the checks that match the milestone: engine tests after the test commit, `type-check` and `lint` after UI and registry commits, responsive and embed checks before the closing docs commit.
+- Use Conventional Commit subjects. Stage only this task's files.
+- The delivery report lists every commit hash and the checks run at that milestone.
 
 ---
 
@@ -239,7 +261,7 @@ A new calculator is **not** done when the form merely renders. The first eight i
 - [ ] Shared ad placements inherited (none inside the calculator)
 - [ ] Accessibility basics (labels, focus, FAQ, table headers)
 - [ ] `type-check` and `lint` passing
-- [ ] Brain docs updated in the same commit
+- [ ] Brain docs updated in the closing commit of the ADR-019 sequence (or in the only commit when the tool is small)
 
 ---
 
@@ -256,6 +278,6 @@ If asked to ship a Percentage Calculator, agents should automatically:
 7. Write percentage-specific guide/TOC/FAQ (not loan copy)
 8. Rely on shared SEO/ads/embed
 9. Verify responsive + a11y + gates
-10. Update Brain; commit
+10. Commit the milestones from Step 19 (one commit is enough for this small tool), with the Brain update in the last of those commits
 
 No new design brief required — the master standards already define the shell.

@@ -1,0 +1,20 @@
+---
+description: Meaningful incremental Git commits for Omega Calculators
+alwaysApply: true
+---
+
+# Incremental Git commits (Cursor)
+
+ADR-019. This rule does not change ADR-016 (Auto Loan visual shell) or ADR-018 (calculator module).
+
+For every new calculator:
+
+- Commit finished milestones during the work. Small: 1–2 commits. Medium: 2–3. Large: 3–5. More than five is allowed only when each extra commit is a real milestone. One commit is enough for a very small tool.
+- A large calculator typically lands as: engine and validation, unit tests, form and results, registry plus guide/SEO/embed, then the Brain record.
+- Each commit is a coherent change that passes the checks that apply to it. Do not leave the tree unnecessarily broken. Do not register a calculator key before its component and `detail.tsx` exist.
+- Never add empty, duplicate, or padded commits.
+- Use Conventional Commit subjects. Stage only this task's files. Leave unrelated uncommitted work untouched.
+- The Brain update is the last commit of that delivery. Push the finished sequence together to `origin/development` after `git fetch`, only as a fast-forward. Never force-push or rewrite shared history.
+- The delivery report lists each commit and the checks run at that milestone.
+
+Non-calculator work keeps its Brain update in the same commit as the code it describes.

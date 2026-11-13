@@ -20,7 +20,7 @@ To avoid merge conflicts and stale context:
 4. **Use stable Task IDs** in `TASKS.md` (e.g., `CORE-01`, `FE-01`, `BE-01`) — never renumber existing IDs.
 5. **Preserve prior decisions** in `DECISIONS.md` — add new ADRs or supersede status rather than deleting history.
 6. **Append chronologically** to `CHANGELOG.md` — place new entries consistently without rewriting older entries.
-7. **Bundle Brain updates with code commits** — never commit code changes that alter routes, schemas, auth, UI tokens, or task status without updating the corresponding Brain files in the same commit.
+7. **Bundle Brain updates with the work they describe.** Non-calculator changes that alter routes, schemas, auth, UI tokens, or task status update the matching Brain files in the same commit. A new calculator follows ADR-019: milestone commits, then one closing Brain commit, pushed together. Do not push the calculator commits without that Brain commit.
 8. **Never force push or silently overwrite another developer's work.** Stop and resolve conflicts explicitly.
 
 ---

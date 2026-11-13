@@ -104,3 +104,15 @@ Reuse `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/
 ## 8. Exceptions
 
 Intentional deviations require a Brain note / ADR and Git review.
+
+## 9. Incremental commits (ADR-019)
+
+Does not change ADR-016 or ADR-018.
+
+- Commit finished milestones while building the calculator. Small tools: 1–2 commits. Medium: 2–3. Large: 3–5, or more when each extra commit is a real milestone.
+- A one-commit tool is valid. Empty or padded commits are not.
+- Do not register a key before `detail.tsx` and the calculator component exist.
+- The last commit of the sequence updates `CURRENT_STATE.md`, `TASKS.md`, and `CHANGELOG.md`. Push that sequence together to `origin/development`.
+- The delivery report names each commit and the checks run for it.
+
+The sequence and the safety rules are in `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` Step 19 and `AGENTS.md`.

@@ -21,5 +21,5 @@ This rule works alongside `.cursor/rules/ponytail.mdc` (which remains authoritat
 3. **After completing a task:**
    - Run relevant checks (`type-check`, `lint`, and targeted checks).
    - Update affected `brain/` docs, `brain/CURRENT_STATE.md`, `brain/TASKS.md`, append to `brain/CHANGELOG.md`, and record architectural changes in `brain/DECISIONS.md`.
-   - Include Brain updates in the same commit as related code changes. Sync via `git fetch` / `git pull` before pushing; never force push.
+   - Non-calculator work keeps its Brain update in the same commit. New calculators follow ADR-019 (`.cursor/rules/git-commits.mdc`): milestone commits, then a closing Brain commit, pushed together. Sync via `git fetch` / `git pull` before pushing; never force push.
 

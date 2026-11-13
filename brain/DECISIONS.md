@@ -132,3 +132,10 @@
 - **Update (2026-11-13):** `twelve-volt-wire` now has `calculation.test.ts`. Shared resistivity helpers remain in `electrical/conductor.ts`.
 - **Status:** Accepted
 
+## ADR-019: Meaningful incremental commits for new calculators
+- **Date:** 2026-11-13
+- **Decision:** Build each new calculator as a short sequence of coherent commits, then push that sequence to `origin/development`. Small tools use 1–2 commits (one is enough). Medium tools use 2–3. Large tools use 3–5, and may use more when every extra commit is a real milestone. A large tool's typical sequence is engine and validation, unit tests, form and results, registry plus guide/SEO/embed, then the Brain record. Conventional Commit subjects. Stage only the current task. The delivery report lists each commit and the checks run at that milestone.
+- **Reason:** One commit at the end hides reviewable steps. Padding the history with empty commits does not make the work more reviewable.
+- **Consequences:** Does not supersede ADR-016 or ADR-018. The visual shell and the calculator module stay locked. A milestone must not leave the tree unnecessarily broken: do not register a calculator key before its component and `detail.tsx` exist. Prefer a milestone that passes the checks that apply to it. Non-calculator work still keeps its Brain update in the same commit as the code. A calculator's Brain update is the last commit of the same delivery and is pushed with the code commits. Never force-push or rewrite shared history. Cursor (`.cursor/rules/git-commits.mdc`) and Antigravity (`.agents/rules/git-commits.md`) both apply this rule.
+- **Status:** Accepted
+
