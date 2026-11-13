@@ -80,6 +80,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ADRCalculator,
     })),
   ),
+  AFFOCalculator: lazyTool(() =>
+    import('@/tools/calculators/affo/AFFOCalculator').then((mod) => ({
+      default: mod.AFFOCalculator,
+    })),
+  ),
   FiveTwentyNineCalculator: lazyTool(() =>
     import('@/tools/calculators/five-twenty-nine/FiveTwentyNineCalculator').then((mod) => ({
       default: mod.FiveTwentyNineCalculator,

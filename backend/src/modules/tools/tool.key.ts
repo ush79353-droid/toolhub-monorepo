@@ -14,6 +14,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ARDaysCalculator',
   'FourZeroThreeBCalculator',
   'ADRCalculator',
+  'AFFOCalculator',
   'FiveTwentyNineCalculator',
   'SeventyTwentyTenCalculator',
 ] as const;
@@ -52,6 +53,7 @@ if (isDirect) {
     !isApprovedComponentKey('ARDaysCalculator') ||
     !isApprovedComponentKey('FourZeroThreeBCalculator') ||
     !isApprovedComponentKey('ADRCalculator') ||
+    !isApprovedComponentKey('AFFOCalculator') ||
     !isApprovedComponentKey('FiveTwentyNineCalculator') ||
     !isApprovedComponentKey('SeventyTwentyTenCalculator') ||
     isApprovedComponentKey('EvilEval')

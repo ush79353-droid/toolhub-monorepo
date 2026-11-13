@@ -12,6 +12,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ARDaysCalculator',
   'FourZeroThreeBCalculator',
   'ADRCalculator',
+  'AFFOCalculator',
   'FiveTwentyNineCalculator',
   'SeventyTwentyTenCalculator',
 ] as const;
@@ -37,6 +38,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'ARDaysCalculator',
   'FourZeroThreeBCalculator',
   'ADRCalculator',
+  'AFFOCalculator',
   'FiveTwentyNineCalculator',
   'SeventyTwentyTenCalculator',
 ] as const;
