@@ -111,7 +111,7 @@ Unregistered = catalog card only, no interactive workspace.
 
 ## Step 10 — Use shared Tool Detail Page layout
 
-1. Add entry to `TWO_COLUMN_TOOL_CONFIGS` in `tools/[slug]/page.tsx` (aside label, TOC items, Guide, FAQs) **or** extend the shared pattern the page already uses.
+1. Add `detail.tsx` in the tool folder (aside label, TOC items, Guide, FAQs) and a static `import()` in `tools/registry/details.ts` and `tools/registry/index.ts`.
 2. Do not create a parallel `app/tools/my-tool/page.tsx` unless ADR says otherwise.
 3. Intro H1 + description come from catalog / page shell — keep one H1.
 
@@ -225,7 +225,7 @@ If asked to ship a Percentage Calculator, agents should automatically:
 3. Confirm/create catalog slug e.g. `percentage-calculator`, category Math
 4. Implement `engine.ts` (% of, change, reverse) + tests
 5. Build form/results with shared `h-11` / cards; no currency unless needed
-6. Register `PercentageCalculator` key + `TWO_COLUMN_TOOL_CONFIGS` + sitemap slug
+6. Register `PercentageCalculator` in `keys.ts`, `registry/index.ts`, `registry/details.ts`, and the sitemap slug list
 7. Write percentage-specific guide/TOC/FAQ (not loan copy)
 8. Rely on shared SEO/ads/embed
 9. Verify responsive + a11y + gates

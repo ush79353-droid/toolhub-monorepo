@@ -22,11 +22,19 @@ export function ToolWorkspace({
   if (!RegisteredTool) return null;
 
   return (
-    <RegisteredTool
-      metadata={tool}
-      className={className}
-      presentation={presentation}
-      headerActions={headerActions}
-    />
+    <React.Suspense
+      fallback={
+        <div className="flex min-h-40 items-center justify-center rounded-2xl border border-border bg-white text-sm text-muted-foreground">
+          Loading calculator…
+        </div>
+      }
+    >
+      <RegisteredTool
+        metadata={tool}
+        className={className}
+        presentation={presentation}
+        headerActions={headerActions}
+      />
+    </React.Suspense>
   );
 }

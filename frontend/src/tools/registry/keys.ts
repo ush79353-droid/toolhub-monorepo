@@ -24,7 +24,9 @@ export const REGISTERED_COMPONENT_KEYS = [
   'TwelveVoltWireCalculator',
 ] as const;
 
-export function isRegisteredComponentKey(key: string): boolean {
+export type RegisteredComponentKey = (typeof REGISTERED_COMPONENT_KEYS)[number];
+
+export function isRegisteredComponentKey(key: string): key is RegisteredComponentKey {
   return (REGISTERED_COMPONENT_KEYS as readonly string[]).includes(key);
 }
 

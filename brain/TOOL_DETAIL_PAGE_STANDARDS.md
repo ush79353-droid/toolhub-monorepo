@@ -31,9 +31,9 @@ Read with: `AGENTS.md`, `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `CALCULATOR_STANDARD
 | Route | `frontend/src/app/(website)/tools/[slug]/page.tsx` | One dynamic route for all tools |
 | Website chrome | `(website)/layout.tsx` — `Header` + `main` + `Footer`, canvas `bg-white` | Embed route uses separate `embed/layout.tsx` (no header/footer/ads) |
 | Data | Next server → Express `GET /catalog/tools/:slug` (`cache: 'no-store'`) | Never call Express from browser calculators |
-| Render | `ToolWorkspace` → allowlisted `componentKey` → registry | Unimplemented keys stay catalog-only |
+| Render | `ToolWorkspace` loads the calculator with `import()` from `tools/registry` | Unregistered keys call `notFound()` |
 | SEO | `lib/seo/tool-seo.ts` + `generateMetadata()` | No hardcoded per-calculator metadata in UI components |
-| Config map | `TWO_COLUMN_TOOL_CONFIGS` in page.tsx | Register new two-column tools here (TOC, guide, FAQs, aside label) |
+| Tool page module | `<tool>/detail.tsx` loaded by `tools/registry/details.ts` | TOC, guide, FAQs, and intro line live with the tool, not in `page.tsx` |
 
 ---
 

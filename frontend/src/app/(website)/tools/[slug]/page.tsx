@@ -1,14 +1,9 @@
-import * as React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Container } from '@/components/layout/Container';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { ToolWorkspace } from '@/components/shared/ToolWorkspace';
-import { type FAQItem } from '@/components/shared/FAQAccordion';
-import {
-  ToolDetailSidebar,
-  type ToolDetailSidebarCountryRules,
-} from '@/components/shared/ToolDetailSidebar';
+import { ToolDetailSidebar } from '@/components/shared/ToolDetailSidebar';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { CalculatorEmbedDialog } from '@/components/tools/CalculatorEmbedDialog';
 import { isToolEmbedEligible } from '@/lib/embed/tool-embed';
@@ -23,110 +18,11 @@ import {
 } from '@/lib/seo/tool-seo';
 import { getPublicToolBySlug, type PublicToolDetail } from '@/server/catalog/tools';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
-import { AutoLoanGuideArticle } from '@/tools/calculators/auto-loan/AutoLoanGuideArticle';
 import { StickyCalculatorAside } from '@/tools/calculators/auto-loan/StickyCalculatorAside';
-import {
-  TableOfContents,
-  type TableOfContentsItem,
-} from '@/tools/calculators/auto-loan/TableOfContents';
-import { AUTO_LOAN_FAQS, AUTO_LOAN_TOC_ITEMS } from '@/tools/calculators/auto-loan/content';
-import { LoanGuideArticle } from '@/tools/calculators/loan/LoanGuideArticle';
-import { LOAN_FAQS, LOAN_TOC_ITEMS } from '@/tools/calculators/loan/content';
-import { RrefGuideArticle } from '@/tools/calculators/rref/RrefGuideArticle';
-import { RREF_FAQS, RREF_TOC_ITEMS } from '@/tools/calculators/rref/content';
-import { ArmMortgageGuideArticle } from '@/tools/calculators/arm-mortgage/ArmMortgageGuideArticle';
-import { ARM_FAQS, ARM_TOC_ITEMS } from '@/tools/calculators/arm-mortgage/content';
-import { HundredDayGuideArticle } from '@/tools/calculators/hundred-day/HundredDayGuideArticle';
-import { HUNDRED_DAY_FAQS, HUNDRED_DAY_TOC_ITEMS } from '@/tools/calculators/hundred-day/content';
-import { TwelveVoltWireGuideArticle } from '@/tools/calculators/twelve-volt-wire/TwelveVoltWireGuideArticle';
-import { TWELVE_VOLT_FAQS, TWELVE_VOLT_TOC_ITEMS } from '@/tools/calculators/twelve-volt-wire/content';
+import { TableOfContents } from '@/tools/calculators/auto-loan/TableOfContents';
+import { loadToolPageDetail } from '@/tools/registry/details';
 import { isApprovedComponentKey, isRegisteredComponentKey } from '@/tools/registry/keys';
 import type { ToolMetadata } from '@/types/tool';
-
-const SIDEBAR_COUNTRIES = [
-  'India',
-  'UAE',
-  'United Kingdom',
-  'United States',
-  'Canada',
-  'Australia',
-] as const;
-
-const TWO_COLUMN_TOOL_CONFIGS: Record<
-  string,
-  {
-    subtitleLead: string;
-    asideAriaLabel: string;
-    tocItems: readonly TableOfContentsItem[];
-    GuideArticle: React.ComponentType;
-    faqs: readonly FAQItem[];
-    countryRules?: ToolDetailSidebarCountryRules | null;
-  }
-> = {
-  AutoLoanCalculator: {
-    subtitleLead:
-      'Estimate monthly car payments, net trade-in equity, sales tax, fees, total interest, and payoff date directly in your browser.',
-    asideAriaLabel: 'Interactive auto loan calculator',
-    tocItems: AUTO_LOAN_TOC_ITEMS,
-    GuideArticle: AutoLoanGuideArticle,
-    faqs: AUTO_LOAN_FAQS,
-    countryRules: {
-      title: 'Auto loan rules by country',
-      countries: SIDEBAR_COUNTRIES,
-    },
-  },
-  LoanCalculator: {
-    subtitleLead:
-      'Estimate regular payments, total interest, extra-payment savings, origination fees, and amortization schedules for amortized or interest-only loans directly in your browser.',
-    asideAriaLabel: 'Interactive loan calculator',
-    tocItems: LOAN_TOC_ITEMS,
-    GuideArticle: LoanGuideArticle,
-    faqs: LOAN_FAQS,
-    countryRules: {
-      title: 'Loan rules by country',
-      countries: SIDEBAR_COUNTRIES,
-    },
-  },
-  RrefCalculator: {
-    subtitleLead:
-      'Reduce any matrix to reduced row echelon form with exact fractions, step-by-step Gauss–Jordan operations, rank, pivot columns, and optional augmented-system analysis.',
-    asideAriaLabel: 'Interactive RREF calculator',
-    tocItems: RREF_TOC_ITEMS,
-    GuideArticle: RrefGuideArticle,
-    faqs: RREF_FAQS,
-    countryRules: null,
-  },
-  ArmMortgageCalculator: {
-    subtitleLead:
-      'Estimate an adjustable-rate mortgage payment through the fixed period and modeled resets, including caps, remaining-term re-amortization, and optional housing costs.',
-    asideAriaLabel: 'Interactive ARM mortgage calculator',
-    tocItems: ARM_TOC_ITEMS,
-    GuideArticle: ArmMortgageGuideArticle,
-    faqs: ARM_FAQS,
-    countryRules: {
-      title: 'Mortgage rules by country',
-      countries: SIDEBAR_COUNTRIES,
-    },
-  },
-  HundredDayCalculator: {
-    subtitleLead:
-      'Find the date 100 days after or before any day, or count calendar days between two dates, including leap years and inclusive counting.',
-    asideAriaLabel: 'Interactive 100 day calculator',
-    tocItems: HUNDRED_DAY_TOC_ITEMS,
-    GuideArticle: HundredDayGuideArticle,
-    faqs: HUNDRED_DAY_FAQS,
-    countryRules: null,
-  },
-  TwelveVoltWireCalculator: {
-    subtitleLead:
-      'Estimate the 12 V DC conductor area for a two-wire voltage-drop limit from current, one-way length, material, and temperature.',
-    asideAriaLabel: 'Interactive 12 volt wire size calculator',
-    tocItems: TWELVE_VOLT_TOC_ITEMS,
-    GuideArticle: TwelveVoltWireGuideArticle,
-    faqs: TWELVE_VOLT_FAQS,
-    countryRules: null,
-  },
-};
 
 function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {
   return {
@@ -224,13 +120,14 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
   const categoryName = dbTool.category?.name ?? 'Tools';
   const categorySlug = dbTool.category?.slug ?? '';
   const safeCategoryHref = categorySlug && dbTool ? `/categories/${categorySlug}` : '/categories';
-  const pillarName = dbTool?.pillar?.name ?? null;
-  const twoColConfig = TWO_COLUMN_TOOL_CONFIGS[toolMetadata.componentKey];
+  const pillarName = dbTool.pillar?.name ?? null;
+  const pageDetail = await loadToolPageDetail(dbTool.componentKey);
 
-  if (!twoColConfig) {
+  if (!pageDetail) {
     notFound();
   }
-    const GuideArticleComponent = twoColConfig.GuideArticle;
+
+  const GuideArticleComponent = pageDetail.GuideArticle;
     const sidebarGroupLabel = pillarName || categoryName;
     const relatedToolsList = dbTool?.relatedTools ?? [];
     const samePillarTools = relatedToolsList.filter(
@@ -255,7 +152,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             { name: toolMetadata.title, path: `/tools/${toolMetadata.slug}` },
           ],
           // FAQ sections are visible on these guides — keep FAQPage schema in sync with on-page content.
-          faqs: twoColConfig.faqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
+          faqs: pageDetail.faqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
         })
       );
 
@@ -290,7 +187,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
                   {toolMetadata.title}
                 </h1>
                 <p className="mt-2.5 max-w-3xl text-[15px] font-normal leading-[1.7] text-muted-foreground sm:text-base sm:leading-[1.75]">
-                  {toolMetadata.description} {twoColConfig.subtitleLead}
+                  {toolMetadata.description} {pageDetail.subtitleLead}
                 </p>
               </div>
             </header>
@@ -301,7 +198,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
           {/* Left (~66%) calculator + guide; Right (~34%) sidebar widgets — page scrolls as one */}
           <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)] lg:items-start lg:gap-8">
             <div className="order-1 min-w-0 space-y-6 lg:col-start-1 lg:row-start-1">
-              <StickyCalculatorAside ariaLabel={twoColConfig.asideAriaLabel}>
+              <StickyCalculatorAside ariaLabel={pageDetail.asideAriaLabel}>
                 <ToolWorkspace
                   tool={toolMetadata}
                   headerActions={
@@ -325,7 +222,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
               </StickyCalculatorAside>
 
               <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
-                <TableOfContents items={twoColConfig.tocItems} />
+                <TableOfContents items={pageDetail.tocItems} />
               </div>
 
               <AdSlot placement="tool_article_middle" />
@@ -342,7 +239,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
                 browseLabel={`See all ${categoryName.toLowerCase()} tools`}
                 moreTools={moreTools}
                 otherTopicTools={otherTopicTools}
-                countryRules={twoColConfig.countryRules}
+                countryRules={pageDetail.countryRules}
               />
             </div>
           </div>

@@ -1,42 +1,53 @@
 'use client';
 
-import { AutoLoanCalculator } from '@/tools/calculators/auto-loan/AutoLoanCalculator';
-import { LoanCalculator } from '@/tools/calculators/loan/LoanCalculator';
-import { RrefCalculator } from '@/tools/calculators/rref/RrefCalculator';
-import { ArmMortgageCalculator } from '@/tools/calculators/arm-mortgage/ArmMortgageCalculator';
-import { HundredDayCalculator } from '@/tools/calculators/hundred-day/HundredDayCalculator';
-import { TwelveVoltWireCalculator } from '@/tools/calculators/twelve-volt-wire/TwelveVoltWireCalculator';
-import type { ToolComponent, ToolRegistryMap } from '../types';
+import { lazy, type LazyExoticComponent } from 'react';
+import type { ToolComponent } from '../types';
+import { isRegisteredComponentKey, type RegisteredComponentKey } from './keys';
+
+function lazyTool(
+  load: () => Promise<{ default: ToolComponent }>,
+): LazyExoticComponent<ToolComponent> {
+  return lazy(load);
+}
 
 /**
- * Component Registry for Omega Calculators
- * Maps database-driven allowlisted component keys to validated React components.
- * Arbitrary code execution from database values is strictly prohibited.
+ * One static import path per calculator so the bundler emits a separate chunk.
+ * The chunk loads when that tool is rendered.
  */
-const registry: ToolRegistryMap = {};
+const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolComponent>> = {
+  AutoLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/auto-loan/AutoLoanCalculator').then((mod) => ({
+      default: mod.AutoLoanCalculator,
+    })),
+  ),
+  LoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/loan/LoanCalculator').then((mod) => ({
+      default: mod.LoanCalculator,
+    })),
+  ),
+  RrefCalculator: lazyTool(() =>
+    import('@/tools/calculators/rref/RrefCalculator').then((mod) => ({
+      default: mod.RrefCalculator,
+    })),
+  ),
+  ArmMortgageCalculator: lazyTool(() =>
+    import('@/tools/calculators/arm-mortgage/ArmMortgageCalculator').then((mod) => ({
+      default: mod.ArmMortgageCalculator,
+    })),
+  ),
+  HundredDayCalculator: lazyTool(() =>
+    import('@/tools/calculators/hundred-day/HundredDayCalculator').then((mod) => ({
+      default: mod.HundredDayCalculator,
+    })),
+  ),
+  TwelveVoltWireCalculator: lazyTool(() =>
+    import('@/tools/calculators/twelve-volt-wire/TwelveVoltWireCalculator').then((mod) => ({
+      default: mod.TwelveVoltWireCalculator,
+    })),
+  ),
+};
 
-export function registerToolComponent(key: string, component: ToolComponent): void {
-  if (registry[key] && registry[key] !== component) {
-    console.warn(`[ToolRegistry] Overwriting already registered tool component: "${key}"`);
-  }
-  registry[key] = component;
-}
-
-registerToolComponent('AutoLoanCalculator', AutoLoanCalculator);
-registerToolComponent('LoanCalculator', LoanCalculator);
-registerToolComponent('RrefCalculator', RrefCalculator);
-registerToolComponent('ArmMortgageCalculator', ArmMortgageCalculator);
-registerToolComponent('HundredDayCalculator', HundredDayCalculator);
-registerToolComponent('TwelveVoltWireCalculator', TwelveVoltWireCalculator);
-
-export function getToolComponent(key: string): ToolComponent | null {
-  return registry[key] ?? null;
-}
-
-export function hasToolComponent(key: string): boolean {
-  return key in registry;
-}
-
-export function getRegisteredComponentKeys(): string[] {
-  return Object.keys(registry);
+export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
+  if (!isRegisteredComponentKey(key)) return null;
+  return calculators[key];
 }
