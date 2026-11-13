@@ -10,6 +10,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TwelveVoltWireCalculator: () => import('@/tools/calculators/twelve-volt-wire/detail'),
   ZeroToSixtyCalculator: () => import('@/tools/calculators/zero-to-sixty/detail'),
   TwelveHourShiftPayCalculator: () => import('@/tools/calculators/twelve-hour-shift-pay/detail'),
+  ThreeDPrinterBuyVsOutsourceCalculator: () =>
+    import('@/tools/calculators/three-d-printer-buy-vs-outsource/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
