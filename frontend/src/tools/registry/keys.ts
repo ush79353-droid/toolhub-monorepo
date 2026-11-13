@@ -22,6 +22,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'ArmMortgageCalculator',
   'HundredDayCalculator',
   'TwelveVoltWireCalculator',
+  'ZeroToSixtyCalculator',
 ] as const;
 
 export type RegisteredComponentKey = (typeof REGISTERED_COMPONENT_KEYS)[number];

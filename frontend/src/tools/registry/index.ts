@@ -45,6 +45,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TwelveVoltWireCalculator,
     })),
   ),
+  ZeroToSixtyCalculator: lazyTool(() =>
+    import('@/tools/calculators/zero-to-sixty/ZeroToSixtyCalculator').then((mod) => ({
+      default: mod.ZeroToSixtyCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

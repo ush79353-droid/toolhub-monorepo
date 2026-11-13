@@ -123,6 +123,7 @@ export const SAFE_COMPONENT_KEYS = [
   { key: 'ArmMortgageCalculator', name: 'ARM Mortgage Engine', type: 'client' },
   { key: 'HundredDayCalculator', name: '100 Day Date Engine', type: 'client' },
   { key: 'TwelveVoltWireCalculator', name: '12 Volt Wire Size Engine', type: 'client' },
+  { key: 'ZeroToSixtyCalculator', name: '0-60 Acceleration Engine', type: 'client' },
   { key: 'WordCounter', name: 'Text & Typography Metrics Engine', type: 'client' },
   { key: 'JsonFormatter', name: 'JSON Validator & Formatter Engine', type: 'client' },
   { key: 'PdfMerger', name: 'PDF Processing Core', type: 'server' },

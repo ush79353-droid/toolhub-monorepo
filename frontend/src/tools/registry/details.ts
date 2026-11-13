@@ -8,6 +8,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ArmMortgageCalculator: () => import('@/tools/calculators/arm-mortgage/detail'),
   HundredDayCalculator: () => import('@/tools/calculators/hundred-day/detail'),
   TwelveVoltWireCalculator: () => import('@/tools/calculators/twelve-volt-wire/detail'),
+  ZeroToSixtyCalculator: () => import('@/tools/calculators/zero-to-sixty/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

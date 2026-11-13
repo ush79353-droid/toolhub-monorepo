@@ -17,6 +17,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'arm-mortgage-calculator',
   '100-day-calculator',
   '12-volt-wire-size-calculator',
+  '0-60-calculator',
 ] as const;
 
 const STATIC_PATHS = [

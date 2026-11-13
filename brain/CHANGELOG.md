@@ -272,5 +272,9 @@
 - **Important Files:** `frontend/src/tools/registry/index.ts`, `frontend/src/tools/registry/details.ts`, `frontend/src/tools/calculators/*/detail.tsx`, `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/components/shared/ToolWorkspace.tsx`.
 - **Verification:** Frontend `npx tsc --noEmit` passed. `/tools/loan-calculator` rendered the calculator ($483.32) and the loan guide. `/tools/12-volt-wire-size-calculator` rendered its own guide and the 5.354 mm² result.
 
-
+### 2026-11-13 — Add 0-60 Calculator
+- **Summary:** Shipped an illustrative 0-60 mph estimator on the existing catalog slug `0-60-calculator`. A 5 ms integration uses traction-limited launch, power-limited force `P/v` with a 0.92 average-power factor, one shift delay, drag, rolling resistance, and grade. 0-100 km/h is integrated to its own speed. The result is not a manufacturer time. The guide lives in `zero-to-sixty/detail.tsx` and the calculator loads through the shared lazy registry.
+- **Example:** 300 hp, 3,500 lb, RWD, 85% efficiency, automatic 0.15 s shift, standard dry tires, level road → 5.98 s to 60 mph, 6.25 s to 100 km/h, 255 wheel hp.
+- **Important Files:** `frontend/src/tools/calculators/zero-to-sixty/*`, registry, `sitemap.ts`, `backend/src/scripts/assign-zero-to-sixty-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** 0-60 tests (25) passed with loan, auto-loan, RREF, and 12 V wire suites. Mongo record `6af46f19a27d8d1d4e990dbd` assigned. Frontend typecheck and lint passed. Production build recorded with this change. Public page and embed rendered after the calculator was registered.
 
