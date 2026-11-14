@@ -388,6 +388,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ScaleCalculator,
     })),
   ),
+  BillionToTrillionConverter: lazyTool(() =>
+    import(
+      '@/tools/calculators/billion-to-trillion/BillionToTrillionCalculator'
+    ).then((mod) => ({
+      default: mod.BillionToTrillionConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

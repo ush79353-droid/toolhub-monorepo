@@ -79,6 +79,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DegreesMinutesSecondsCalculator: () =>
     import('@/tools/calculators/degrees-minutes-seconds/detail'),
   ScaleCalculator: () => import('@/tools/calculators/scale/detail'),
+  BillionToTrillionConverter: () =>
+    import('@/tools/calculators/billion-to-trillion/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
