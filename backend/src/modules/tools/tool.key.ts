@@ -229,6 +229,7 @@ if (isDirect) {
     !isApprovedComponentKey('RoasCalculator') ||
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
+    !isApprovedComponentKey('SalesCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {

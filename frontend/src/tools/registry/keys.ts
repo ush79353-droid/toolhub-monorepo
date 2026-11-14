@@ -214,6 +214,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'RoasCalculator',
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
+  'SalesCommissionCalculator',
   'SellThroughRateCalculator',
 ] as const;
 
