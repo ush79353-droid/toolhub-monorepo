@@ -13,16 +13,17 @@ Module layout is locked in `ARCHITECTURE.md` §7 (ADR-018). Page design is locke
 
 A new calculator is not done until every gate below is true, in this order. Details are in the steps that follow.
 
-1. **Architecture** — Folder matches `ARCHITECTURE.md` §7.2. Registered in `keys.ts`, `registry/index.ts`, `registry/details.ts`, and `backend/.../tool.key.ts`. No new `page.tsx`. Unregistered keys 404.
-2. **Reusable components** — Page shell, `ToolWorkspace`, `StickyCalculatorAside`, `TableOfContents`, `ToolDetailSidebar`, currency, clipboard, and download are reused. Nothing copied into the new folder.
-3. **Pure calculation engine** — Formulas live in `calculation.ts` with no React, DOM, or Next imports.
-4. **Validation** — Input checks live in `validation.ts` and block invalid results.
-5. **Tests** — `calculation.test.ts` fails if the engine breaks. Run it.
-6. **SEO** — Metadata comes from `generateMetadata` + `lib/seo/tool-seo.ts`. Slug added to `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts`. No metadata hardcoded in the calculator.
-7. **Embed** — `/embed/{slug}` renders the same component with `presentation="embed"`. No ads. `noindex` comes from the shared embed route.
-8. **Responsive QA** — Check 375, 768, 1024, and 1280. Calculator first below `lg`. No horizontal overflow.
-9. **Currency** — Follow the checklist in Step 19b. Denomination and conversion are different. Conversion reuses ADR-017. Do not add a provider call or a cron.
-10. **Activation** — Follow Step 19c (ADR-022). The existing catalog record is `isActive` only after the module, registry, tests, and `/tools/{slug}` check pass. Do not activate a placeholder.
+1. **Screenshot-First functional scope (ADR-023)** — Screenshot inputs and outputs identified. Only necessary fields included. No unnecessary advanced settings or unrequested modes. Currency selector included only when justified. Results appropriately compact. Auto Loan is the **visual master, NOT the functional master**.
+2. **Architecture** — Folder matches `ARCHITECTURE.md` §7.2. Registered in `keys.ts`, `registry/index.ts`, `registry/details.ts`, and `backend/.../tool.key.ts`. No new `page.tsx`. Unregistered keys 404.
+3. **Reusable components** — Page shell, `ToolWorkspace`, `StickyCalculatorAside`, `TableOfContents`, `ToolDetailSidebar`, clipboard, and download are reused. Nothing copied into the new folder.
+4. **Pure calculation engine** — Formulas live in `calculation.ts` with no React, DOM, or Next imports.
+5. **Validation** — Input checks live in `validation.ts` and block invalid results.
+6. **Tests** — `calculation.test.ts` fails if the engine breaks. Run it.
+7. **SEO** — Metadata comes from `generateMetadata` + `lib/seo/tool-seo.ts`. Slug added to `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts`. No metadata hardcoded in the calculator.
+8. **Embed** — `/embed/{slug}` renders the same component with `presentation="embed"`. No ads. `noindex` comes from the shared embed route.
+9. **Responsive QA** — Check 375, 768, 1024, and 1280. Calculator first below `lg`. No horizontal overflow.
+10. **Currency** — Follow the checklist in Step 19b and ADR-023. Denomination and conversion are different. Include currency selector ONLY when reference requires it.
+11. **Activation** — Follow Step 19c (ADR-022 + ADR-023 verified activation). After module, registry, tests, and `/tools/{slug}` succeed: set `isDeveloped`, `isActive`, and `indexable` when eligible. Report admin-disabled/noindex blockers instead of overriding them. Do not activate a placeholder. A calculator is not delivered until the public route works for testing.
 
 Then finish accessibility, type-check, lint, and the Brain update (steps 16–19). Commit each finished milestone under ADR-019. Do not wait until the end for every file.
 
@@ -43,16 +44,18 @@ Also: `git status` / fetch; do not overwrite unrelated work.
 
 ---
 
-## Step 2 — Inspect the master Auto Loan Calculator reference
+## Step 2 — Inspect the master Auto Loan Calculator reference (Visual Master only)
 
 Open `/tools/auto-loan-calculator` (local or staging) and skim:
 
 - Shared page: `frontend/src/app/(website)/tools/[slug]/page.tsx`
 - Calculator aside: `StickyCalculatorAside.tsx` + sticky right `ToolDetailSidebar`
-- Auto Loan as UI pattern: `frontend/src/tools/calculators/auto-loan/`
+- Auto Loan as visual UI pattern: `frontend/src/tools/calculators/auto-loan/`
 - Registry: `frontend/src/tools/registry/`
 
-Confirm you will reuse the shell, not fork it. Peer reference (same shell, different fields): `/tools/loan-calculator`.
+**Critical Rule (ADR-023):** Auto Loan is our **visual design master**, NOT our **functional master**.
+- Reuse its approved colors, typography, form input dimensions (`h-11`), spacing, card styling, and tool-detail page shell.
+- Do NOT automatically copy its currency dropdown, field count, advanced drawers, charts, or payment dashboards into other calculators. Every calculator's functional scope is determined strictly by its reference screenshot. Confirm you will reuse the visual shell, not fork it.
 
 ---
 
@@ -261,36 +264,40 @@ Read ADR-017 and `ARCHITECTURE.md` §7.7 before choosing.
 
 ## Step 19c — Activation checklist
 
-ADR-022. Do this after the module, tests, registry, and guide exist. Do it before calling the calculator delivered.
+ADR-022 + ADR-023 verified automatic activation. Do this after the module, tests, registry, and guide exist. Do it before calling the calculator delivered.
 
 - [ ] The catalog already has one row for the canonical slug. Update that row. Do not insert a second tool.
-- [ ] `componentKey` matches `keys.ts`, `registry/index.ts`, `registry/details.ts`, and `backend/.../tool.key.ts`.
-- [ ] `isActive` is true. `executionType` is `client`. `isDeveloped` is set true only when that field is already on the tool schema.
-- [ ] `embedEnabled` is omitted or true. Set false only when an admin disables embed.
-- [ ] The slug is in `IMPLEMENTED_TOOL_SLUGS`. Sitemap inclusion still requires `indexable` and `sitemapInclude`.
+- [ ] Component folder exists; `componentKey` matches `keys.ts` (both lists), `registry/index.ts`, `registry/details.ts`, and `backend/.../tool.key.ts`.
+- [ ] Calculation tests passed. MongoDB `componentKey` matches the registered key.
 - [ ] `/tools/{slug}` returns the calculator, not 404. `/embed/{slug}` renders when embed is eligible.
-- [ ] A missing module, a missing registry key, or an empty `componentKey` stays inactive. An admin-disabled tool stays inactive.
+- [ ] After those checks: `isDeveloped` true (when on schema), `isActive` true under publishing policy, `executionType` `client`.
+- [ ] `indexable` true when eligible and no explicit admin noindex restriction exists; otherwise report the blocker.
+- [ ] `embedEnabled` omitted or true. Set false only when an admin disables embed.
+- [ ] Slug is in `IMPLEMENTED_TOOL_SLUGS`. Sitemap still needs `indexable` + `sitemapInclude`. Confirm category/search visibility.
+- [ ] A missing module, missing registry key, empty `componentKey`, or broken calculator stays inactive. Admin-disabled / draft / private / noindex decisions stay preserved and are reported as blockers.
 
 ---
 
 ## Definition of Done (checklist)
 
-A new calculator is **not** done when the form merely renders. The first eight items are the mandatory gate from the top of this playbook:
+A new calculator is **not** done when the form merely renders. The first items are the mandatory gate from the top of this playbook:
 
+- [ ] Screenshot-first field parity (ADR-023) — inputs/outputs match the reference; no invented complexity; currency only when justified
 - [ ] Architecture matches `ARCHITECTURE.md` §7 (folder, both allowlists, both loaders, no new page route)
-- [ ] Reusable shell, aside, TOC, sidebar, currency, clipboard, and download — nothing forked
+- [ ] Reusable shell, aside, TOC, sidebar, clipboard, and download — nothing forked
 - [ ] Pure `calculation.ts` (no React / DOM / Next)
 - [ ] `validation.ts` blocks invalid input
 - [ ] `calculation.test.ts` run and passing
 - [ ] Dynamic SEO + `IMPLEMENTED_TOOL_SLUGS` updated
 - [ ] Embed renders calculator-only when eligible
 - [ ] Responsive check at 375, 768, 1024, 1280
-- [ ] UI matches the Auto Loan master shell
-- [ ] Results spot-checked against the engine
+- [ ] UI matches the Auto Loan visual shell (not Auto Loan functional scope)
+- [ ] Results spot-checked against the engine and kept compact
 - [ ] Topic-specific guide, FAQ, and related links
 - [ ] Shared ad placements inherited (none inside the calculator)
 - [ ] Accessibility basics (labels, focus, FAQ, table headers)
 - [ ] `type-check` and `lint` passing
+- [ ] Verified activation (ADR-022/023): `isDeveloped` / `isActive` / eligible `indexable`, public `/tools/{slug}` works, or blocker reported
 - [ ] Brain docs updated in the closing commit of the ADR-019 sequence (or in the only commit when the tool is small)
 
 ---

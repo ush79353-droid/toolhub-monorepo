@@ -14,7 +14,7 @@ Before building or changing any calculator or `/tools/[slug]` detail page:
 
 Rules:
 
-- Auto Loan Calculator (`/tools/auto-loan-calculator`) is the official master layout reference.
+- Auto Loan Calculator (`/tools/auto-loan-calculator`) is the official master layout and visual reference, NOT the functional master (ADR-023). Reference screenshot dictates functional inputs, modes, and results.
 - Use shared `/tools/[slug]` + registry only — no per-calculator page forks.
 - Reuse sticky sidebar, SEO, ads, and embed pipelines — never invent duplicates.
 - Tool-specific inputs/math/results/content may differ; shared shell must not.

@@ -778,6 +778,12 @@
 - **Important Files:** `frontend/src/tools/calculators/roman-numerals/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-roman-numerals-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed (incl. 1–3999 round-trip). Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990be9` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null; meta 44/148).
 
+### 2026-11-14 — Screenshot-First Simplicity (ADR-023) + Simplify 12-Hour Shift Pay Calculator
+- **Summary:** Locked ADR-023 so reference screenshots own functional scope while Auto Loan remains the visual master only. Simplified the live 12-Hour Shift Pay Calculator to three primary inputs (hourly wage, overtime hourly wage, regular hours) and five compact results (average hourly, day, week, month, year). Removed schedule fields, suggested 1.5× overtime tracking, and breakdown dashboards. Month uses weekly × 4.4; regular hours above 12 are rejected.
+- **Example:** Defaults 20 / 30 / 8 → overtime 4 h, daily 280, average 23.33, week 1,400, month 6,160, year 72,800.
+- **Important Files:** `frontend/src/tools/calculators/twelve-hour-shift-pay/*`, `backend/src/scripts/assign-twelve-hour-shift-pay-tool.ts`, `brain/{CALCULATOR_STANDARDS,NEW_TOOL_DEVELOPMENT_PLAYBOOK,DECISIONS,TOOL_DETAIL_PAGE_STANDARDS,CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`, `AGENTS.md`, `.cursor/rules/{calculator-standards,tool-detail-page-standards,screenshot-first-standards}.mdc`, `.agents/rules/{calculator-standards,tool-detail-page-standards,screenshot-first-standards}.md`.
+- **Verification:** `calculation.test.ts` passed (11 cases). Frontend `tsc --noEmit` and `next lint` passed (existing `<img>` warnings only). Registry/sitemap/activation unchanged (`TwelveHourShiftPayCalculator`, slug `12-hour-shift-pay-calculator`). `npm run build` compiled and type-checked; failed later on unrelated Next invariant `no direct app page entry found for /_not-found`.
+
 ### 2026-11-14 — Add Decimal to Octal Converter
 - **Summary:** Shipped bidirectional decimal↔octal converter on existing catalog slug `decimal-to-octal-converter`. BigInt exact precision for large integers; division-by-8 and positional steps; strict digit validation. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 125₁₀ = 175₈; 255₁₀ = 377₈; 2026₁₀ = 3752₈; round-trip 0…10000 plus values beyond `Number.MAX_SAFE_INTEGER`.

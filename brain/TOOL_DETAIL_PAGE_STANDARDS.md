@@ -21,6 +21,10 @@ The calculator folder and registry (ADR-018) do not change the layout, typograph
 | Layout, typography, spacing, cards | Forcing loan-specific fields onto unrelated tools |
 | SEO, ads, embed, calculator aside | Redesigning the master page per calculator |
 | Registry + Mongo catalog wiring | Direct browser → Express calls |
+| Visual master styling (ADR-016) | Functional master scope (ADR-023: screenshot governs function) |
+
+> [!IMPORTANT]
+> **Visual Master vs Functional Master (ADR-023):** Auto Loan is our visual master (colors, typography, input dimensions, spacing, responsive layout, sticky sidebar), **never our functional master**. Do not copy Auto Loan's inputs, advanced sections, charts, or payment dashboards into other calculators. The reference screenshot alone dictates what fields, options, and results a calculator has.
 
 **Exception rule:** Any intentional deviation needs an ADR in `DECISIONS.md` and Git review. Do not invent a second page architecture.
 

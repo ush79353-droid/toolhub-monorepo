@@ -1,12 +1,12 @@
 # Calculator Standards — Omega Calculators
 
-> Master conventions for every future calculator. The Auto Loan Calculator page is the production reference implementation.
+> Master conventions for every future calculator. The Auto Loan Calculator page is the production visual reference implementation (ADR-016), NOT the functional reference (ADR-023).
 
 Read with: `AGENTS.md`, `TOOL_DETAIL_PAGE_STANDARDS.md` (authoritative page shell), `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` (workflow), `DESIGN_SYSTEM.md`, `SEO_STANDARDS.md`, `EMBED_STANDARDS.md`, `AD_STANDARDS.md`, `ARCHITECTURE.md`.
 
 ## 1. Module architecture (locked)
 
-Authoritative layout: `ARCHITECTURE.md` §7 (ADR-018). Visual shell stays `TOOL_DETAIL_PAGE_STANDARDS.md` (ADR-016). Workflow and the mandatory checklist: `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`.
+Authoritative layout: `ARCHITECTURE.md` §7 (ADR-018). Visual shell stays `TOOL_DETAIL_PAGE_STANDARDS.md` (ADR-016). Functional scope and simplicity stay `CALCULATOR_STANDARDS.md` §1b (ADR-023). Workflow and the mandatory checklist: `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`.
 
 - One public route: `/tools/[slug]`. Unregistered `componentKey` or a missing `detail.tsx` calls `notFound()`.
 - Client calculator chunk: `tools/registry/index.ts` (`React.lazy` + static `import()`), mounted by `ToolWorkspace`.
@@ -17,7 +17,23 @@ Authoritative layout: `ARCHITECTURE.md` §7 (ADR-018). Visual shell stays `TOOL_
 - Sitemap slug list: `IMPLEMENTED_TOOL_SLUGS` in `frontend/src/app/sitemap.ts` only.
 - API boundary: Browser → Next.js Server → Express → MongoDB. Calculator components never call Express.
 - Do not add a per-calculator `page.tsx`, ad slot, iframe route, or metadata builder.
-- Activation is part of delivery (ADR-022). After registration, set the existing catalog row `isActive`. Confirm `/tools/{slug}` renders. Do not activate a row that has no module, and do not turn an admin-disabled tool back on.
+- Activation is part of delivery (ADR-022 + ADR-023 verified activation). After registration, tests, and a successful `/tools/{slug}` check: set `isDeveloped` (when on schema), `isActive`, and `indexable` when eligible. Confirm embed and sitemap eligibility. Do not activate a row that has no module, and do not turn an admin-disabled / noindex tool back on — report blockers instead.
+
+## 1b. Screenshot-First Functional Parity & Simplicity (ADR-023)
+
+- **Screenshot determines WHAT the calculator does:** When building or refactoring a calculator based on a reference screenshot, that screenshot is the single authoritative source for functional scope.
+- **Auto Loan determines HOW it looks:** Auto Loan is the **visual design master**, NOT the **functional master**. Reuse its colors, typography, input dimensions (`h-11`), form tokens, responsive layout, and page shell. Do NOT copy its field count, advanced sections, charts, payment breakdowns, or result cards into unrelated calculators.
+- **Do not invent unrequested functionality:** Avoid adding extra input fields, unrequested calculation modes, bloated advanced drawers, unnecessary charts, or large statistical dashboards.
+- **Pre-implementation parity checklist:** Before writing code, identify:
+  1. Primary input fields
+  2. Optional inputs
+  3. Dropdown options
+  4. Checkboxes
+  5. Calculation modes
+  6. Main outputs
+  7. Result structure
+  8. Conditional field visibility
+- **Conditional settings:** Complex or secondary assumptions (e.g., compounding, upfront fees, advanced scenarios) must remain hidden behind checkboxes or collapsible disclosures until explicitly enabled by the user.
 
 ### Required files
 
@@ -61,22 +77,30 @@ Reuse `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/
 - Labels: 13px medium; helper 12px normal
 - No badge clutter; no decorative section icons in calculator headers
 
-## 4. Forms & Currency
+## 4. Forms & Currency (ADR-017 / ADR-021 / ADR-023)
 
-- Shared currency catalog: `tools/shared/currency.ts` + `CurrencySelect`. Input height `h-11`. Unit affixes use `getCurrencySymbol`.
+- Input height `h-11`. Unit affixes use `getCurrencySymbol` where applicable.
+- **Currency selector rule:** Include a currency selector ONLY when:
+  1. The reference screenshot explicitly provides currency selection; OR
+  2. The user explicitly requests currency selection; OR
+  3. Currency conversion is genuinely essential to the calculator's requested functionality.
+- Do NOT automatically inject currency selectors into every financial calculator. If a calculator uses one fixed currency, format numbers consistently without requiring a dropdown.
 - **Denomination:** every money input is already in the selected currency. The selector changes the symbol and grouping only. Say that on the page. Do not multiply by an exchange rate.
 - **Conversion:** the calculator turns an amount from one currency into another. Use the ADR-017 `CurrencyRate` map through the shared server read (ADR-021). `converted = amount * rate[target] / rate[source]`, with the base rate equal to 1. Round the money result once. Do not call ExchangeRate-API from the calculator, and do not add a cron.
 - A missing or non-finite rate is an unavailable conversion, not 1:1. Show `fetchedAt`. Older than 48 hours is stale and still usable.
 - The pure `calculation.ts` receives numbers. It does not import Mongo, HTTP, or React.
 - Copy/download helpers: `tools/shared/clipboard.ts`, `tools/shared/download.ts`
 
-## 5. Results
+## 5. Results Simplicity (ADR-023)
 
-- Primary payment hero card
-- Balanced metric grid
-- Optional chart / breakdown drawers
-- One CSV control (no duplicate download buttons)
-- Themed table overflow via `.brand-scroll`
+- **Results match calculator purpose:** If the reference calculator displays five essential results, do not generate fifteen results without justification.
+- **Prioritize:**
+  1. Primary calculated answer (hero card)
+  2. Essential supporting values (compact metric grid)
+  3. Short calculation explanation, where useful
+- **Avoid default clutter:** Do not automatically add large financial dashboards, multiple charts, scenario tables, year-by-year projections, or redundant summaries to the main view.
+- **Optional disclosures:** Detailed schedules, breakdowns, or tables remain available behind optional disclosure controls (collapsed by default).
+- **Internal math vs external UI:** Internal calculation logic may be complex; the user-facing interface must remain clean and simple.
 
 ## 6. SEO
 
@@ -97,6 +121,7 @@ Reuse `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/
 - Dummy placeholders via shared `AdSlot` on `/tools/[slug]` only (`AD_STANDARDS.md`)
 - Never render ads inside calculators or on `/embed/[slug]`
 - No live AdSense/scripts until a dedicated consented integration
+
 
 ## 7. Testing
 
