@@ -238,6 +238,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  MlToCupsConverter: lazyTool(() =>
+    import('@/tools/calculators/ml-to-cups/MlToCupsConverter').then((mod) => ({
+      default: mod.MlToCupsConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

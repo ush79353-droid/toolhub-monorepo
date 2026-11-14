@@ -54,6 +54,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cubic-meter-calculator',
   'mg-to-ml-calculator',
   'cubic-yards-to-tons-calculator',
+  'ml-to-cups-converter',
 ] as const;
 
 const STATIC_PATHS = [
