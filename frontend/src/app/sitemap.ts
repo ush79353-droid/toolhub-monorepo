@@ -86,6 +86,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'million-to-lakh-converter',
   'cents-to-euros-calculator',
   'million-to-thousand-converter',
+  'crore-to-lakh-converter',
 ] as const;
 
 const STATIC_PATHS = [

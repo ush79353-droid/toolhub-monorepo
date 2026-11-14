@@ -85,6 +85,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CentsToEurosCalculator: () => import('@/tools/calculators/cents-to-euros/detail'),
   MillionToThousandConverter: () =>
     import('@/tools/calculators/million-to-thousand/detail'),
+  CroreToLakhConverter: () => import('@/tools/calculators/crore-to-lakh/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

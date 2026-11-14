@@ -412,6 +412,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MillionToThousandConverter,
     })),
   ),
+  CroreToLakhConverter: lazyTool(() =>
+    import('@/tools/calculators/crore-to-lakh/CroreToLakhCalculator').then((mod) => ({
+      default: mod.CroreToLakhConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
