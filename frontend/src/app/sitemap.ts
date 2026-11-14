@@ -72,6 +72,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'inch-lbs-to-nm-converter',
   'pressure-conversion',
   'inch-pounds-to-foot-pounds-converter',
+  'psi-to-gpm-calculator',
 ] as const;
 
 const STATIC_PATHS = [

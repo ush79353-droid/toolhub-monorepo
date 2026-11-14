@@ -336,6 +336,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InchPoundsToFootPoundsConverter,
     })),
   ),
+  PsiToGpmCalculator: lazyTool(() =>
+    import('@/tools/calculators/psi-to-gpm/PsiToGpmCalculator').then((mod) => ({
+      default: mod.PsiToGpmCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
