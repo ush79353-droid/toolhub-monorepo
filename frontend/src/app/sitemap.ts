@@ -179,6 +179,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cd-calculator',
   'compound-interest-calculator',
   'discounted-cash-flow-calculator-dcf',
+  'discount-rate-calculator',
   'compound-growth-calculator',
   'compound-interest-rate-calculator',
   'continuous-compound-interest-calculator',

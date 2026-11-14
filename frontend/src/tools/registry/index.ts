@@ -924,6 +924,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DiscountedCashFlowCalculator,
     })),
   ),
+  DiscountRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/discount-rate/DiscountRateCalculator').then((mod) => ({
+      default: mod.DiscountRateCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
