@@ -847,7 +847,7 @@
 - **Verification:** Unit tests in `calculation.test.ts` pass (verifying reference defaults, caps, Canadian compounding, fees, and calculations). Frontend `tsc --noEmit` and `npm run lint` pass with 0 errors.
 
 ### 2026-11-14 — Refactor A/R Days Calculator (Screenshot-First)
-- **Commits:** `24dde60`, `38f1a9e`, (activation Brain commit)
+- **Commits:** `24dde60`, `38f1a9e`, `52dbac3`
 - **Summary:** Refactored the existing A/R Days Calculator (`/tools/ar-days-calculator`, `ARDaysCalculator`) to screenshot-first simplicity (ADR-023). Removed reverse-solve modes, turnover cards, and the results dashboard. Main form is accounts receivable, net credit sales, number of days in the period (default 365), and inline A/R days. Optional Average balance calculation stays collapsed by default with beginning/ending inputs, calculated average, and explicit Use average A/R / Use ending A/R. Live calc; Reset only. Shared denomination currency; original guide/FAQs updated for forward DSO only.
 - **Example:** 50,000 / 500,000 × 365 = 36.5 days.
 - **Important Files:** `frontend/src/tools/calculators/ar-days/*`, `backend/src/scripts/assign-ar-days-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
@@ -860,8 +860,14 @@
 - **Important Files:** `frontend/src/tools/calculators/additional-funds-needed/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-additional-funds-needed-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` 12 suites passed. `tool.key.ts` self-check passed. Lint clean for the AFN module. Mongo record `6af46f0fa27d8d1d4e99007e` activated (`isDeveloped: true`, `isActive: true`, `indexable: true`, `embedEnabled: true`).
 
+### 2026-11-14 — Absence Percentage Calculator + ADR-023 verified activation lock
+- **Commits:** `e43582c`, `8c99eb6`, (Brain/standards commit in this delivery)
+- **Summary:** Shipped a compact Absence Percentage Calculator on existing catalog slug `absence-percentage-calculator` (`AbsencePercentageCalculator`, catalog `6af46f0fa27d8d1d4e99007d`). Four primary fields only: total employees, total workdays (per employee), total days absent, and absenteeism rate. Formula `(days absent ÷ (employees × workdays)) × 100`. No currency selector. Blank initial inputs; auto-calc on valid input. Strengthened ADR-023 with verified automatic activation checklist for Cursor and Antigravity.
+- **Example:** 10 employees × 20 workdays, 8 absent → 4%.
+- **Important Files:** `frontend/src/tools/calculators/absence-percentage/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-absence-percentage-tool.ts`, `AGENTS.md`, `brain/{CALCULATOR_STANDARDS,NEW_TOOL_DEVELOPMENT_PLAYBOOK,TOOL_DETAIL_PAGE_STANDARDS,DECISIONS,CURRENT_STATE,TASKS,CHANGELOG,FRONTEND}.md`, `.cursor/rules/{calculator-standards,tool-activation,screenshot-first-standards}.mdc`, `.agents/rules/{calculator-standards,tool-activation,screenshot-first-standards}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tool.key.ts` self-check passed. Mongo record activated (`isDeveloped: true`, `isActive: true`, `indexable: true`, `embedEnabled: true`).
 
-### 2026-11-14 � Add Accumulated Depreciation Calculator
+### 2026-11-14 — Add Accumulated Depreciation Calculator
 - **Summary:** Shipped a four-method accumulated depreciation calculator on existing catalog slug `accumulated-depreciation-calculator`. Methods: straight line (default), 200% declining balance with salvage floor true-up (no silent switch to straight-line), sum of the year's digits, and units of production (conditional production fields). Compact results show only accumulated depreciation and net book value. Shared `CurrencySelect` is denomination-only. Defaults: cost 25,000, life 15, years 2, salvage 3,000 ? 2,933.33 / 22,066.67.
 - **Important Files:** `frontend/src/tools/calculators/accumulated-depreciation/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-accumulated-depreciation-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f0fa27d8d1d4e99003c` assigned (`isDeveloped: true`, `isActive: true`, `indexable: true`, `embedEnabled: true`). Catalog API returns the active tool.

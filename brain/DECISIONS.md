@@ -172,4 +172,3 @@
 - **Consequences:** Does not supersede ADR-016 (visual shell), ADR-017/021 (currency), ADR-018 (module layout), ADR-019 (incremental commits), or ADR-022 (activation). Strengthens ADR-022 with an explicit verified activation gate tied to screenshot-first delivery. Every future calculator must pass the Screenshot-First Functional Parity & Simplicity checklist and the verified activation checklist before delivery. Cursor (`.cursor/rules/calculator-standards.mdc`, `.cursor/rules/tool-activation.mdc`) and Antigravity (`.agents/rules/calculator-standards.md`, `.agents/rules/tool-activation.md`) both apply this rule.
 - **Status:** Accepted
 
-

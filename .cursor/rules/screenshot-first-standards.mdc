@@ -32,3 +32,4 @@ Whenever a calculator is requested with a reference screenshot or specification:
    - Currency conversion is genuinely essential to the calculator's requested functionality.
    If a calculator uses one fixed currency, format numbers consistently without a dropdown.
 5. **Results Simplicity Rule:** Results match the calculator's actual purpose. Prioritize primary answer, essential supporting values, and short explanation. Avoid forced charts, comparison bars, or sprawling metric dashboards. Detailed schedules or breakdowns belong behind optional disclosure controls (collapsed by default).
+6. **Verified activation:** After parity, tests, and registry succeed, activate the existing catalog row (`isDeveloped` / `isActive` / eligible `indexable`) and confirm `/tools/{slug}` works — or report an admin blocker. See `.cursor/rules/tool-activation.mdc`.
