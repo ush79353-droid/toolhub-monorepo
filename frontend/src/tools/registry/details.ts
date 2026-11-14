@@ -22,6 +22,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FourZeroOneKCalculator: () => import('@/tools/calculators/four-zero-one-k/detail'),
   AmortizationCalculator: () => import('@/tools/calculators/amortization/detail'),
   AcreageCalculator: () => import('@/tools/calculators/acreage/detail'),
+  FeetToInchesCalculator: () => import('@/tools/calculators/feet-to-inches/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

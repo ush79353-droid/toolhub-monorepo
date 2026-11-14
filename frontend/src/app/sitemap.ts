@@ -30,6 +30,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '401k-calculator',
   'amortization-calculator',
   'acreage-calculator',
+  'feet-to-inches-calculator',
 ] as const;
 
 const STATIC_PATHS = [

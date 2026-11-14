@@ -110,6 +110,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AcreageCalculator,
     })),
   ),
+  FeetToInchesCalculator: lazyTool(() =>
+    import('@/tools/calculators/feet-to-inches/FeetToInchesCalculator').then((mod) => ({
+      default: mod.FeetToInchesCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
