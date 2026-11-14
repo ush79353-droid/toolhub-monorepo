@@ -92,6 +92,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DecimalToOctalConverter',
   'ByteConversionCalculator',
   'MbpsToGbpsConverter',
+  'CapacitanceConverter',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -206,6 +207,7 @@ if (isDirect) {
     !isApprovedComponentKey('DecimalToOctalConverter') ||
     !isApprovedComponentKey('ByteConversionCalculator') ||
     !isApprovedComponentKey('MbpsToGbpsConverter') ||
+    !isApprovedComponentKey('CapacitanceConverter') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

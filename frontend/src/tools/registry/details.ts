@@ -104,6 +104,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DecimalToOctalConverter: () => import('@/tools/calculators/decimal-to-octal/detail'),
   ByteConversionCalculator: () => import('@/tools/calculators/byte-conversion/detail'),
   MbpsToGbpsConverter: () => import('@/tools/calculators/mbps-to-gbps/detail'),
+  CapacitanceConverter: () => import('@/tools/calculators/capacitance/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

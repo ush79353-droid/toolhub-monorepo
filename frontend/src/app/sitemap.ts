@@ -102,6 +102,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'decimal-to-octal-converter',
   'byte-conversion-calculator',
   'mbps-to-gbps-converter',
+  'capacitance-converter',
 ] as const;
 
 const STATIC_PATHS = [
