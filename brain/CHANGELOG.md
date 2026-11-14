@@ -448,6 +448,12 @@
 - **Important Files:** `frontend/src/tools/calculators/decimeter-to-meter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-decimeter-to-meter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990adf` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar preserved). Browser: `/tools/decimeter-to-meter-converter` shows 34.6 dm = 3.46 m. Embed loads calculator panel.
 
+### 2026-11-14 — Add Square Kilometers to Acres Conversion
+- **Summary:** Shipped a bidirectional km² ↔ acres land-area converter on the existing catalog slug `square-kilometers-to-acres-conversion`. Exact SI km² and international acre via square meters; more-options for m²/ft²/yd²/ha/a/mi². Publishing flags preserved (`isActive` true); `isDeveloped` set true after verification. Existing Kilometer Calculator pillar association left unchanged.
+- **Example:** 5 km² ≈ 1,235.52690734 acres; 1 km² ≈ 247.105381467 acres; 100 acres = 0.40468564224 km².
+- **Important Files:** `frontend/src/tools/calculators/square-kilometers-to-acres/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-square-kilometers-to-acres-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b1f` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d2a27d8d1d4e98f9ed` preserved). Browser: `/tools/square-kilometers-to-acres-conversion` shows 5 km² ≈ 1,235.53 ac. Embed eligible.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

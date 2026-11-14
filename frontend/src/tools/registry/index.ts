@@ -182,6 +182,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DecimeterToMeterConverter,
     })),
   ),
+  SquareKilometersToAcresConverter: lazyTool(() =>
+    import(
+      '@/tools/calculators/square-kilometers-to-acres/SquareKilometersToAcresConverter'
+    ).then((mod) => ({
+      default: mod.SquareKilometersToAcresConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

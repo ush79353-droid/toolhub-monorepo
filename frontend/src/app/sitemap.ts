@@ -44,6 +44,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'astronomical-unit-calculator',
   'pixels-to-inches-converter',
   'decimeter-to-meter-converter',
+  'square-kilometers-to-acres-conversion',
 ] as const;
 
 const STATIC_PATHS = [

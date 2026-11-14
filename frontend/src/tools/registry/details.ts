@@ -36,6 +36,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AstronomicalUnitCalculator: () => import('@/tools/calculators/astronomical-unit/detail'),
   PixelsToInchesConverter: () => import('@/tools/calculators/pixels-to-inches/detail'),
   DecimeterToMeterConverter: () => import('@/tools/calculators/decimeter-to-meter/detail'),
+  SquareKilometersToAcresConverter: () =>
+    import('@/tools/calculators/square-kilometers-to-acres/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
