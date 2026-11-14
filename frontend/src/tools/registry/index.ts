@@ -177,6 +177,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PixelsToInchesConverter,
     })),
   ),
+  DecimeterToMeterConverter: lazyTool(() =>
+    import('@/tools/calculators/decimeter-to-meter/DecimeterToMeterConverter').then((mod) => ({
+      default: mod.DecimeterToMeterConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

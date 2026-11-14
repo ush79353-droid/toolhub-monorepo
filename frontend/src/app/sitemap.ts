@@ -43,6 +43,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mesh-to-micron-converter',
   'astronomical-unit-calculator',
   'pixels-to-inches-converter',
+  'decimeter-to-meter-converter',
 ] as const;
 
 const STATIC_PATHS = [

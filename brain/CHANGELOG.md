@@ -442,6 +442,12 @@
 - **Important Files:** `frontend/src/tools/calculators/pixels-to-inches/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pixels-to-inches-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b9a` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/pixels-to-inches-converter` shows 192 px = 2 in. Embed loads calculator panel.
 
+### 2026-11-14 — Add Decimeter to Meter Converter
+- **Summary:** Shipped a bidirectional decimeters ↔ meters converter on the existing catalog slug `decimeter-to-meter-converter`. Exact factor `1 m = 10 dm`; more-options for mm/cm/km/in/ft/yd from the meter length. Publishing flags preserved (`isActive` true); `isDeveloped` set true after verification. Existing Meter Converter pillar association left unchanged.
+- **Example:** 34.6 dm = 3.46 m; 10 dm = 1 m; 7.8 m = 78 dm.
+- **Important Files:** `frontend/src/tools/calculators/decimeter-to-meter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-decimeter-to-meter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990adf` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar preserved). Browser: `/tools/decimeter-to-meter-converter` shows 34.6 dm = 3.46 m. Embed loads calculator panel.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

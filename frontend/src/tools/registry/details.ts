@@ -35,6 +35,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MeshToMicronConverter: () => import('@/tools/calculators/mesh-to-micron/detail'),
   AstronomicalUnitCalculator: () => import('@/tools/calculators/astronomical-unit/detail'),
   PixelsToInchesConverter: () => import('@/tools/calculators/pixels-to-inches/detail'),
+  DecimeterToMeterConverter: () => import('@/tools/calculators/decimeter-to-meter/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
