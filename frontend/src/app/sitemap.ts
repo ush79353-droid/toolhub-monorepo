@@ -181,6 +181,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'discounted-cash-flow-calculator-dcf',
   'compound-growth-calculator',
   'compound-interest-rate-calculator',
+  'continuous-compound-interest-calculator',
 ] as const;
 
 const STATIC_PATHS = [

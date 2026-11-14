@@ -910,6 +910,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CompoundGrowthCalculator,
     })),
   ),
+  ContinuousCompoundInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/continuous-compound-interest/ContinuousCompoundInterestCalculator'
+    ).then((mod) => ({
+      default: mod.ContinuousCompoundInterestCalculator,
+    })),
+  ),
   DiscountedCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/discounted-cash-flow/DiscountedCashFlowCalculator'
