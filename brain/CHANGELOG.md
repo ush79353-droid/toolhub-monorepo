@@ -430,6 +430,12 @@
 - **Important Files:** `frontend/src/tools/calculators/mesh-to-micron/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mesh-to-micron-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b92` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/mesh-to-micron-converter` shows No. 100 → 150 µm. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.
 
+### 2026-11-14 — Add Astronomical Unit Calculator
+- **Summary:** Shipped a six-field astronomical distance converter on the existing catalog slug `astronomical-unit-calculator`. Canonical meters; exact IAU au, Julian light-year, geometric parsec, light-travel distance units, and metric/imperial selectors with six-way sync. Publishing flags preserved (`isActive` true); `isDeveloped` set true after verification.
+- **Example:** 1 au = 149,597,870,700 m = 149,597,870.7 km ≈ 1.581250741×10⁻⁵ ly ≈ 4.848136811×10⁻⁶ pc ≈ 92,955,807.273 mi; vacuum light-travel ≈ 8 min 19 s.
+- **Important Files:** `frontend/src/tools/calculators/astronomical-unit/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-astronomical-unit-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b7b` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/astronomical-unit-calculator` shows 1 au sync. Embed returns calculator panel with `frame-ancestors *` path.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

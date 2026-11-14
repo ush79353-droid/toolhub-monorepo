@@ -167,6 +167,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MeshToMicronConverter,
     })),
   ),
+  AstronomicalUnitCalculator: lazyTool(() =>
+    import('@/tools/calculators/astronomical-unit/AstronomicalUnitCalculator').then((mod) => ({
+      default: mod.AstronomicalUnitCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

@@ -33,6 +33,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LightYearConversion: () => import('@/tools/calculators/light-year-conversion/detail'),
   AresToHectaresConverter: () => import('@/tools/calculators/ares-to-hectares/detail'),
   MeshToMicronConverter: () => import('@/tools/calculators/mesh-to-micron/detail'),
+  AstronomicalUnitCalculator: () => import('@/tools/calculators/astronomical-unit/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

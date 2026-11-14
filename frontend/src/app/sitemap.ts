@@ -41,6 +41,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'light-year-conversion',
   'ares-to-hectares-converter',
   'mesh-to-micron-converter',
+  'astronomical-unit-calculator',
 ] as const;
 
 const STATIC_PATHS = [
