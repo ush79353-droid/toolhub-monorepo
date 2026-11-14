@@ -405,6 +405,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CentsToEurosCalculator,
     })),
   ),
+  MillionToThousandConverter: lazyTool(() =>
+    import(
+      '@/tools/calculators/million-to-thousand/MillionToThousandCalculator'
+    ).then((mod) => ({
+      default: mod.MillionToThousandConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
