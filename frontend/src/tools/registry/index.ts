@@ -615,6 +615,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnualizedRateOfReturnCalculator,
     })),
   ),
+  AppreciationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/appreciation/AppreciationCalculator'
+    ).then((mod) => ({
+      default: mod.AppreciationCalculator,
+    })),
+  ),
   AnnualizedReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/annualized-return/AnnualizedReturnCalculator'

@@ -110,6 +110,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SoftwareContractValueCalculator',
   'YoutubeMoneyCalculator',
   'AnnualizedRateOfReturnCalculator',
+  'AppreciationCalculator',
   'AnnualizedReturnCalculator',
 ] as const;
 
@@ -232,6 +233,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'SoftwareContractValueCalculator',
   'YoutubeMoneyCalculator',
   'AnnualizedRateOfReturnCalculator',
+  'AppreciationCalculator',
   'AnnualizedReturnCalculator',
 ] as const;
 

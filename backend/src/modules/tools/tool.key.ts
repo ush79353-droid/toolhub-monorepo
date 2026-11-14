@@ -112,6 +112,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SoftwareContractValueCalculator',
   'YoutubeMoneyCalculator',
   'AnnualizedRateOfReturnCalculator',
+  'AppreciationCalculator',
   'AnnualizedReturnCalculator',
 ] as const;
 
@@ -247,6 +248,7 @@ if (isDirect) {
     !isApprovedComponentKey('SoftwareContractValueCalculator') ||
     !isApprovedComponentKey('YoutubeMoneyCalculator') ||
     !isApprovedComponentKey('AnnualizedRateOfReturnCalculator') ||
+    !isApprovedComponentKey('AppreciationCalculator') ||
     !isApprovedComponentKey('AnnualizedReturnCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
