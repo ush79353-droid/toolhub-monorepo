@@ -11,10 +11,10 @@ const COMPONENT = 'ARDaysCalculator';
 const DISPLAY_NAME = 'A/R Days Calculator';
 
 const SHORT_DESCRIPTION =
-  'Calculate accounts receivable days from receivables and net credit sales, or solve for another input.';
+  'Calculate accounts receivable days (DSO) from receivables and net credit sales, with an optional average balance.';
 const META_TITLE = 'A/R Days Calculator | Omega Calculators';
 const META_DESCRIPTION =
-  'Calculate A/R days (DSO) from receivables and net credit sales, with an optional average balance and reverse solving.';
+  'Calculate A/R days (days sales outstanding) from receivables and net credit sales. Optional average beginning and ending balance.';
 
 async function run(): Promise<void> {
   if (!isApprovedComponentKey(COMPONENT)) {
@@ -33,6 +33,7 @@ async function run(): Promise<void> {
     tool.componentKey = COMPONENT;
     tool.executionType = 'client';
     tool.isActive = true;
+    tool.isDeveloped = true;
     tool.indexable = true;
     tool.name = DISPLAY_NAME;
     tool.nameKey = toolNameKey(DISPLAY_NAME);
@@ -54,6 +55,7 @@ async function run(): Promise<void> {
           componentKey: tool.componentKey,
           executionType: tool.executionType,
           isActive: tool.isActive,
+          isDeveloped: tool.isDeveloped,
           indexable: tool.indexable,
           embedEnabled: tool.embedEnabled,
         },
