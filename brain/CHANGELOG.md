@@ -670,6 +670,12 @@
 - **Important Files:** `frontend/src/tools/calculators/degrees-minutes-seconds/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-degrees-minutes-seconds-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f17a27d8d1d4e990c06` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
 
+### 2026-11-14 — Add Scale Calculator
+- **Summary:** Shipped length/area/volume scale converter on existing catalog slug `scale-calculator`. Modes: scale factor, scaled measurement, real measurement; linear k with k²/k³ multipliers; ratio parse (`1:100`, `2:1`); reuses Length/Area/Volume conversion engines; Map/Reality SVG; interactive examples. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 5 cm vs 10 m → k = 0.005 (1:200); 2.5 cm at 1:100 → 2.5 m; 100 m² at 1:10 → 1 m²; 8 m³ vs 1000 m³ → k = 0.2 (1:5).
+- **Important Files:** `frontend/src/tools/calculators/scale/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-scale-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f17a27d8d1d4e990c08` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

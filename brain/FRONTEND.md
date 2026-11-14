@@ -195,4 +195,5 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 - `src/tools/calculators/coordinates/`: Coordinates Converter (`CoordinatesConverter`, slug `coordinates-converter`). DD ↔ DMS ↔ DDM latitude/longitude; hemisphere letters; guide; unit tests.
 - `src/tools/calculators/lat-long-to-utm/`: Lat Long to UTM Converter (`LatLongToUtmConverter`, slug `lat-long-to-utm-converter`). WGS84→UTM via `proj4`; DD/DMS; Norway/Svalbard zones; guide; unit tests.
 - `src/tools/calculators/degrees-minutes-seconds/`: Degrees Minutes Seconds Calculator (`DegreesMinutesSecondsCalculator`, slug `degrees-minutes-seconds-calculator`). General DMS↔DD; signed angles; guide; unit tests.
+- `src/tools/calculators/scale/`: Scale Calculator (`ScaleCalculator`, slug `scale-calculator`). Length/area/volume scale factor and measurement modes; ratio notation; guide; unit tests.
 - `src/tools/calculators/affo/`: AFFO Calculator (`AFFOCalculator`, slug `affo-calculator`). Simplified FFO and a labeled AFFO estimate for one reporting period. Interest income is not adjusted twice. Display currency only. Guide in `detail.tsx`.
