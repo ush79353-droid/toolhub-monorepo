@@ -49,6 +49,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CubicYardsToTonsCalculator: () =>
     import('@/tools/calculators/cubic-yards-to-tons/detail'),
   MlToCupsConverter: () => import('@/tools/calculators/ml-to-cups/detail'),
+  DecagramToGramConverter: () => import('@/tools/calculators/decagram-to-gram/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

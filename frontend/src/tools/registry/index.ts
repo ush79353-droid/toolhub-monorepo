@@ -243,6 +243,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MlToCupsConverter,
     })),
   ),
+  DecagramToGramConverter: lazyTool(() =>
+    import('@/tools/calculators/decagram-to-gram/DecagramToGramConverter').then(
+      (mod) => ({
+        default: mod.DecagramToGramConverter,
+      })
+    ),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
