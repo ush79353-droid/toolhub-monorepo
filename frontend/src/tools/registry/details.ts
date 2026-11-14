@@ -117,10 +117,13 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/business-loan/detail'),
   RevenuePerEmployeeCalculator: () =>
     import('@/tools/calculators/revenue-per-employee/detail'),
+  RoasCalculator: () => import('@/tools/calculators/roas/detail'),
   SaasLifetimeValueCalculator: () =>
     import('@/tools/calculators/saas-lifetime-value/detail'),
   SafetyStockCalculator: () =>
     import('@/tools/calculators/safety-stock/detail'),
+  SalesCommissionCalculator: () =>
+    import('@/tools/calculators/sales-commission/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

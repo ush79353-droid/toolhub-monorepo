@@ -535,6 +535,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RevenuePerEmployeeCalculator,
     })),
   ),
+  RoasCalculator: lazyTool(() =>
+    import('@/tools/calculators/roas/RoasCalculator').then((mod) => ({
+      default: mod.RoasCalculator,
+    })),
+  ),
   SaasLifetimeValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/saas-lifetime-value/SaasLifetimeValueCalculator'
@@ -545,6 +550,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   SafetyStockCalculator: lazyTool(() =>
     import('@/tools/calculators/safety-stock/SafetyStockCalculator').then((mod) => ({
       default: mod.SafetyStockCalculator,
+    })),
+  ),
+  SalesCommissionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/sales-commission/SalesCommissionCalculator'
+    ).then((mod) => ({
+      default: mod.SalesCommissionCalculator,
     })),
   ),
 };

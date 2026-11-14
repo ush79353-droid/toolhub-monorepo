@@ -109,8 +109,10 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'attrition-rate-calculator',
   'business-loan-calculator',
   'revenue-per-employee-calculator',
+  'roas-calculator',
   'saas-lifetime-value-calculator',
   'safety-stock-calculator',
+  'sales-commission-calculator',
 ] as const;
 
 const STATIC_PATHS = [

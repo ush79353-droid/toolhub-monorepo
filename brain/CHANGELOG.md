@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-15 — Add ROAS Calculator (Screenshot-First)
+- **Summary:** Shipped ROAS Calculator on existing catalog slug `roas-calculator` (`RoasCalculator`, catalog `6af46f0fa27d8d1d4e9900b5`). Ad spend, know-revenue Yes/No (default Yes), ad revenue → ROAS %; collapsed ad-only ROI (not overall business profit). Denomination currency (PKR). Omega UI. Shared shell, SEO, embed.
+- **Example:** Spend PKR 10,000 / revenue PKR 40,000 → ROAS 400% (4×); ad-only ROI 300%.
+- **Important Files:** `frontend/src/tools/calculators/roas/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-roas-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activation attempted; lint/builds/browser/automated tests omitted per user.
+
+
 ### 2026-11-15 — Add Safety Stock Calculator (Screenshot-First)
 - **Summary:** Shipped Safety Stock Calculator on existing catalog slug `safety-stock-calculator` (`SafetyStockCalculator`, catalog `6af46f0fa27d8d1d4e99002f`). Basic section: max/avg daily usage + max/avg lead time (days) → safety stock and reorder point (ceil). Statistical section collapsed with note only (no invented inputs). Omega UI. Shared shell, SEO, embed.
 - **Example:** 100 / 10 / 70 / 7 → SS 510, ROP 1,000.
