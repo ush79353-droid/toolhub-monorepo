@@ -825,6 +825,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GoogleAdsenseCalculator,
     })),
   ),
+  HedgeRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/hedge-ratio/HedgeRatioCalculator').then((mod) => ({
+      default: mod.HedgeRatioCalculator,
+    })),
+  ),
   HhiCalculator: lazyTool(() =>
     import('@/tools/calculators/hhi/HhiCalculator').then((mod) => ({
       default: mod.HhiCalculator,

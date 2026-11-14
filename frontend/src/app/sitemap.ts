@@ -163,6 +163,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'full-time-equivalent-calculator',
   'gmroi-calculator-gross-margin-return-on-investment',
   'google-adsense-calculator',
+  'hedge-ratio-calculator',
   'hhi-calculator',
   'high-low-method-calculator',
   'labor-cost-calculator',

@@ -154,6 +154,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FullTimeEquivalentCalculator',
   'GmroiCalculator',
   'GoogleAdsenseCalculator',
+  'HedgeRatioCalculator',
   'HhiCalculator',
   'HighLowMethodCalculator',
   'LaborCostCalculator',
@@ -357,6 +358,7 @@ if (isDirect) {
     !isApprovedComponentKey('FullTimeEquivalentCalculator') ||
     !isApprovedComponentKey('GmroiCalculator') ||
     !isApprovedComponentKey('GoogleAdsenseCalculator') ||
+    !isApprovedComponentKey('HedgeRatioCalculator') ||
     !isApprovedComponentKey('HhiCalculator') ||
     !isApprovedComponentKey('HighLowMethodCalculator') ||
     !isApprovedComponentKey('LaborCostCalculator') ||

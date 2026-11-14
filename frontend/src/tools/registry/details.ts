@@ -220,6 +220,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gmroi/detail'),
   GoogleAdsenseCalculator: () =>
     import('@/tools/calculators/google-adsense/detail'),
+  HedgeRatioCalculator: () =>
+    import('@/tools/calculators/hedge-ratio/detail'),
   HhiCalculator: () =>
     import('@/tools/calculators/hhi/detail'),
   HighLowMethodCalculator: () =>
