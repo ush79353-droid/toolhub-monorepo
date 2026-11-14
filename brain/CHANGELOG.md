@@ -846,3 +846,17 @@
 - **Important Files:** `frontend/src/tools/calculators/arm-mortgage/*`, `brain/CALCULATOR_STANDARDS.md`, `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `brain/TOOL_DETAIL_PAGE_STANDARDS.md`, `brain/DECISIONS.md`, `brain/CURRENT_STATE.md`, `brain/TASKS.md`, `brain/CHANGELOG.md`, `AGENTS.md`, `.agents/rules/*`, `.cursor/rules/*`.
 - **Verification:** Unit tests in `calculation.test.ts` pass (verifying reference defaults, caps, Canadian compounding, fees, and calculations). Frontend `tsc --noEmit` and `npm run lint` pass with 0 errors.
 
+### 2026-11-14 — Refactor A/R Days Calculator (Screenshot-First)
+- **Commits:** `24dde60`, `38f1a9e`, (activation Brain commit)
+- **Summary:** Refactored the existing A/R Days Calculator (`/tools/ar-days-calculator`, `ARDaysCalculator`) to screenshot-first simplicity (ADR-023). Removed reverse-solve modes, turnover cards, and the results dashboard. Main form is accounts receivable, net credit sales, number of days in the period (default 365), and inline A/R days. Optional Average balance calculation stays collapsed by default with beginning/ending inputs, calculated average, and explicit Use average A/R / Use ending A/R. Live calc; Reset only. Shared denomination currency; original guide/FAQs updated for forward DSO only.
+- **Example:** 50,000 / 500,000 × 365 = 36.5 days.
+- **Important Files:** `frontend/src/tools/calculators/ar-days/*`, `backend/src/scripts/assign-ar-days-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo activation and `/tools/ar-days-calculator` route verified after assign script.
+
+### 2026-11-14 — Add Additional Funds Needed Calculator
+- **Commits:** `010ee85`, `724137e`, (this Brain commit)
+- **Summary:** Shipped a screenshot-first AFN calculator on the existing catalog slug `additional-funds-needed-calculator`. Exactly three money inputs (change in assets, liabilities, retained earnings) and one calculated AFN output using `AFN = ΔA − ΔL − ΔRE`. Blank defaults; signed changes allowed; negative AFN not clamped; denomination-only shared currency selectors; original guide/FAQs; shared SEO/ads/embed.
+- **Example:** 100,000 − 30,000 − 20,000 = 50,000 additional funds needed.
+- **Important Files:** `frontend/src/tools/calculators/additional-funds-needed/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-additional-funds-needed-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` 12 suites passed. `tool.key.ts` self-check passed. Lint clean for the AFN module. Mongo record `6af46f0fa27d8d1d4e99007e` activated (`isDeveloped: true`, `isActive: true`, `indexable: true`, `embedEnabled: true`).
+
