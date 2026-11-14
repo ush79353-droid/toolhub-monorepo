@@ -45,6 +45,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pixels-to-inches-converter',
   'decimeter-to-meter-converter',
   'square-kilometers-to-acres-conversion',
+  'feet-and-inches-calculator',
 ] as const;
 
 const STATIC_PATHS = [

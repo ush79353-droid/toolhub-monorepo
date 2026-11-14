@@ -454,6 +454,12 @@
 - **Important Files:** `frontend/src/tools/calculators/square-kilometers-to-acres/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-square-kilometers-to-acres-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b1f` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d2a27d8d1d4e98f9ed` preserved). Browser: `/tools/square-kilometers-to-acres-conversion` shows 5 km² ≈ 1,235.53 ac. Embed eligible.
 
+### 2026-11-14 — Add Feet and Inches Calculator
+- **Summary:** Shipped mixed feet-and-inches arithmetic on the existing catalog slug `feet-and-inches-calculator`. Supports +/− of two lengths and ×/÷ by a dimensionless scalar; fractional/mixed inch parsing reused from Inches to Fraction; precision 1/2–1/256 (default 1/16); metric/decimal more-options from exact total inches. Publishing flags preserved (`isActive` true); `isDeveloped` set true after verification. Feet Converter pillar association left unchanged.
+- **Example:** 5 ft 8 in + 2 ft 4 in = 8 ft 0 in; 2 ft 3 1/2 in + 1 ft 4 1/4 in = 3 ft 7 3/4 in; 2 ft − 3 ft 6 in = −1 ft 6 in.
+- **Important Files:** `frontend/src/tools/calculators/feet-and-inches/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-feet-and-inches-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990af3` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d1a27d8d1d4e98f9e6` / Feet converter preserved). Browser: `/tools/feet-and-inches-calculator` shows 5 ft 8 in + 2 ft 4 in = 8 ft 0 in.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
