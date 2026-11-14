@@ -78,6 +78,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LatLongToUtmConverter: () => import('@/tools/calculators/lat-long-to-utm/detail'),
   DegreesMinutesSecondsCalculator: () =>
     import('@/tools/calculators/degrees-minutes-seconds/detail'),
+  ScaleCalculator: () => import('@/tools/calculators/scale/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

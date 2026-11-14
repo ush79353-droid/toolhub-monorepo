@@ -81,6 +81,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'coordinates-converter',
   'lat-long-to-utm-converter',
   'degrees-minutes-seconds-calculator',
+  'scale-calculator',
 ] as const;
 
 const STATIC_PATHS = [

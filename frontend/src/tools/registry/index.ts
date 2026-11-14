@@ -383,6 +383,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DegreesMinutesSecondsCalculator,
     })),
   ),
+  ScaleCalculator: lazyTool(() =>
+    import('@/tools/calculators/scale/ScaleCalculator').then((mod) => ({
+      default: mod.ScaleCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
