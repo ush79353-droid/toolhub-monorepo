@@ -260,6 +260,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DropsToMlConverter,
     })),
   ),
+  PoundsAndOuncesCalculator: lazyTool(() =>
+    import('@/tools/calculators/pounds-and-ounces/PoundsAndOuncesCalculator').then(
+      (mod) => ({
+        default: mod.PoundsAndOuncesCalculator,
+      })
+    ),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

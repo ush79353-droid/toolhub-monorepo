@@ -48,6 +48,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DecagramToGramConverter',
   'PintToPoundCalculator',
   'DropsToMlConverter',
+  'PoundsAndOuncesCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -118,6 +119,7 @@ if (isDirect) {
     !isApprovedComponentKey('DecagramToGramConverter') ||
     !isApprovedComponentKey('PintToPoundCalculator') ||
     !isApprovedComponentKey('DropsToMlConverter') ||
+    !isApprovedComponentKey('PoundsAndOuncesCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

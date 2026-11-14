@@ -58,6 +58,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'decagram-to-gram-converter',
   'pint-to-pound-conversion',
   'drops-to-ml-conversion',
+  'pounds-and-ounces-calculator',
 ] as const;
 
 const STATIC_PATHS = [

@@ -52,6 +52,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DecagramToGramConverter: () => import('@/tools/calculators/decagram-to-gram/detail'),
   PintToPoundCalculator: () => import('@/tools/calculators/pint-to-pound/detail'),
   DropsToMlConverter: () => import('@/tools/calculators/drops-to-ml/detail'),
+  PoundsAndOuncesCalculator: () =>
+    import('@/tools/calculators/pounds-and-ounces/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
