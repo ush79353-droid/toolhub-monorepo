@@ -366,6 +366,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NmToFtLbsConverter,
     })),
   ),
+  CoordinatesConverter: lazyTool(() =>
+    import('@/tools/calculators/coordinates/CoordinatesCalculator').then((mod) => ({
+      default: mod.CoordinatesConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
