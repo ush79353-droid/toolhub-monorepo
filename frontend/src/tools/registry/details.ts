@@ -88,6 +88,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CroreToLakhConverter: () => import('@/tools/calculators/crore-to-lakh/detail'),
   NumberToBillionConverter: () =>
     import('@/tools/calculators/number-to-billion/detail'),
+  CroreToMillionConverter: () => import('@/tools/calculators/crore-to-million/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
