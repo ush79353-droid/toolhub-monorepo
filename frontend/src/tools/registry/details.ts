@@ -260,6 +260,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/discounted-cash-flow/detail'),
   DiscountRateCalculator: () =>
     import('@/tools/calculators/discount-rate/detail'),
+  EffectiveAnnualYieldCalculator: () =>
+    import('@/tools/calculators/effective-annual-yield/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
