@@ -95,6 +95,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BinaryConverter: () => import('@/tools/calculators/binary/detail'),
   GematriaCalculator: () => import('@/tools/calculators/gematria/detail'),
   BinaryToHexConverter: () => import('@/tools/calculators/binary-to-hex/detail'),
+  GreekGematriaCalculator: () => import('@/tools/calculators/greek-gematria/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
