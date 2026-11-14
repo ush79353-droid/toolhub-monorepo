@@ -51,6 +51,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MlToCupsConverter: () => import('@/tools/calculators/ml-to-cups/detail'),
   DecagramToGramConverter: () => import('@/tools/calculators/decagram-to-gram/detail'),
   PintToPoundCalculator: () => import('@/tools/calculators/pint-to-pound/detail'),
+  DropsToMlConverter: () => import('@/tools/calculators/drops-to-ml/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

@@ -57,6 +57,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ml-to-cups-converter',
   'decagram-to-gram-converter',
   'pint-to-pound-conversion',
+  'drops-to-ml-conversion',
 ] as const;
 
 const STATIC_PATHS = [

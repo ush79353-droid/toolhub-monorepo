@@ -255,6 +255,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PintToPoundCalculator,
     })),
   ),
+  DropsToMlConverter: lazyTool(() =>
+    import('@/tools/calculators/drops-to-ml/DropsToMlConverter').then((mod) => ({
+      default: mod.DropsToMlConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
