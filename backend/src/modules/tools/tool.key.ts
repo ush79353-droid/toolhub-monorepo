@@ -39,6 +39,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'YardsToAcresCalculator',
   'CcfToGallonsConversion',
   'LitersToCentilitersConverter',
+  'CubicFeetCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -100,6 +101,7 @@ if (isDirect) {
     !isApprovedComponentKey('YardsToAcresCalculator') ||
     !isApprovedComponentKey('CcfToGallonsConversion') ||
     !isApprovedComponentKey('LitersToCentilitersConverter') ||
+    !isApprovedComponentKey('CubicFeetCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

@@ -42,6 +42,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   YardsToAcresCalculator: () => import('@/tools/calculators/yards-to-acres/detail'),
   CcfToGallonsConversion: () => import('@/tools/calculators/ccf-to-gallons/detail'),
   LitersToCentilitersConverter: () => import('@/tools/calculators/liters-to-centiliters/detail'),
+  CubicFeetCalculator: () => import('@/tools/calculators/cubic-feet/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

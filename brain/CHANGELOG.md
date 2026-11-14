@@ -478,6 +478,12 @@
 - **Important Files:** `frontend/src/tools/calculators/liters-to-centiliters/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-liters-to-centiliters-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b4d` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/liters-to-centiliters-converter` shows 2.5 L = 250 cL.
 
+### 2026-11-14 — Add Cubic Feet Calculator
+- **Summary:** Shipped a rectangular L×W×H volume calculator on the existing catalog slug `cubic-feet-calculator`. Converts each edge to meters, multiplies to m³, then to ft³ via exact `0.028316846592`. Independent units (mm–mi including dm); more-options in³/yd³/m³/cm³/L/mL/US gal/imp gal; separate find-missing-dimension panel. Publishing flags preserved; Feet Converter pillar and Cubic Feet Calculator subPillar left unchanged. Separate soil mode skipped (same L×W×H math; covered in guide).
+- **Example:** 10 ft × 5 ft × 3 ft = 150 ft³; 12 in cube = 1 ft³; missing length for 120 ft³ with 5×4 ft = 6 ft.
+- **Important Files:** `frontend/src/tools/calculators/cubic-feet/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cubic-feet-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990af6` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d1a27d8d1d4e98f9e6` / Feet Converter, subPillar `6af451d1a27d8d1d4e98f9e7` preserved). Browser: `/tools/cubic-feet-calculator` shows 10×5×3 ft = 150 ft³.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

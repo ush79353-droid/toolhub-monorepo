@@ -211,6 +211,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  CubicFeetCalculator: lazyTool(() =>
+    import('@/tools/calculators/cubic-feet/CubicFeetCalculator').then((mod) => ({
+      default: mod.CubicFeetCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
