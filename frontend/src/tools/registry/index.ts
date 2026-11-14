@@ -572,6 +572,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SellThroughRateCalculator,
     })),
   ),
+  SmokersCtcCalculator: lazyTool(() =>
+    import('@/tools/calculators/smokers-ctc/SmokersCtcCalculator').then((mod) => ({
+      default: mod.SmokersCtcCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

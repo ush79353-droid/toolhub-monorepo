@@ -115,6 +115,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'safety-stock-calculator',
   'sales-commission-calculator',
   'sell-through-rate-calculator',
+  'smokers-ctc-calculator',
 ] as const;
 
 const STATIC_PATHS = [

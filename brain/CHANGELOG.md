@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-15 — Add Smoker's CTC Calculator (Screenshot-First)
+- **Summary:** Shipped Smoker's CTC Calculator on existing catalog id `6af46f0fa27d8d1d4e9900b9`, slug shortened to `smokers-ctc-calculator` (`SmokersCtcCalculator`). Smoke-break time, wage periods, collapsed work-day settings, labor cost while smoking, pack spend (1 cig/break), illustrative 11-min life line. Denomination currency (PKR). Omega UI. Activated.
+- **Important Files:** `frontend/src/tools/calculators/smokers-ctc/*`, registry, `sitemap.ts`, `tool.key.ts`, `assign-smokers-ctc-tool.ts`, brain docs.
+- **Verification:** MongoDB activated. Lint/builds/browser/tests omitted per user.
+
 ### 2026-11-15 — Add Sell-Through Rate Calculator (Screenshot-First)
 - **Summary:** Shipped Sell-Through Rate Calculator on existing catalog slug `sell-through-rate-calculator` (`SellThroughRateCalculator`, catalog `6af46f0fa27d8d1d4e9900b8`). (Units sold ÷ units received) × 100. Blank start; received > 0; zero sold OK; reject sold > received. No currency. Omega UI. Shared shell, SEO, embed.
 - **Example:** 150 sold / 200 received → 75%.
