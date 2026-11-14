@@ -60,3 +60,4 @@ export const AMORTIZATION_FAQS: readonly FAQItem[] = [
       'No. The currency selector changes the display denomination and formatting symbols only. All calculations remain numerically identical regardless of whether USD, EUR, GBP, CAD, or PKR is selected.',
   },
 ] as const;
+

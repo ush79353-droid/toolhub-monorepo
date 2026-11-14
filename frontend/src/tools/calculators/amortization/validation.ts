@@ -142,3 +142,4 @@ export function validateAmortizationInput(input: AmortizationInput): Amortizatio
     errors,
   };
 }
+
