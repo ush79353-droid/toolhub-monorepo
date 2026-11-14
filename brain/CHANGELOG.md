@@ -508,6 +508,12 @@
 - **Important Files:** `frontend/src/tools/calculators/cubic-yards-to-tons/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cubic-yards-to-tons-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990ad3` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; Yard Conversion pillar `6af451d0a27d8d1d4e98f9e2`, `subPillar` null preserved). Browser: `/tools/cubic-yards-to-tons-calculator` shows 1 yd³ ≈ 0.76455 t at 1000 kg/m³.
 
+### 2026-11-14 — Add mL to Cups Converter
+- **Summary:** Shipped a bidirectional milliliters ↔ cups converter on the existing catalog slug `ml-to-cups-converter`. Exact cup standards: US customary 236.5882365 mL, US legal 240, metric 250, imperial 284.130625; cooking fraction presets; more-options for L/cL/US fl oz/tbsp/tsp/pt/qt/gal. Never treats 237 mL as an exact factor. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 2 US customary cups = 473.176473 mL; 500 mL → 2 metric cups; 1/2 US cup = 118.29411825 mL.
+- **Important Files:** `frontend/src/tools/calculators/ml-to-cups/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-ml-to-cups-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b57` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/ml-to-cups-converter` shows 2 US cups = 473.176473 mL.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
