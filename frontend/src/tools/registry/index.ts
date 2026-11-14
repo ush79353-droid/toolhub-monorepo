@@ -489,6 +489,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ByteConversionCalculator,
     })),
   ),
+  MbpsToGbpsConverter: lazyTool(() =>
+    import('@/tools/calculators/mbps-to-gbps/MbpsToGbpsCalculator').then((mod) => ({
+      default: mod.MbpsToGbpsConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
