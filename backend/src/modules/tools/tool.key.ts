@@ -97,6 +97,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
   'AttritionRateCalculator',
+  'BusinessLoanCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -216,6 +217,7 @@ if (isDirect) {
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
     !isApprovedComponentKey('AttritionRateCalculator') ||
+    !isApprovedComponentKey('BusinessLoanCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

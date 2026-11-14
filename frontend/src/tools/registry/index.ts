@@ -523,6 +523,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AttritionRateCalculator,
     })),
   ),
+  BusinessLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/business-loan/BusinessLoanCalculator').then((mod) => ({
+      default: mod.BusinessLoanCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
