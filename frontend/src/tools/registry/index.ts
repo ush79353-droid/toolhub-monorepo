@@ -577,6 +577,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SmokersCtcCalculator,
     })),
   ),
+  TenureCalculator: lazyTool(() =>
+    import('@/tools/calculators/tenure/TenureCalculator').then((mod) => ({
+      default: mod.TenureCalculator,
+    })),
+  ),
   TurnoverRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/turnover-rate/TurnoverRateCalculator'

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Tenure Calculator (Screenshot-First)
+- **Summary:** Shipped Tenure Calculator on existing catalog slug `tenure-calculator` (`TenureCalculator`, catalog `6af46f0fa27d8d1d4e9900bb`). Average tenure = combined service ÷ employees (years); specific tenure = calendar end − start. Blank start; no currency. Omega UI. Activated.
+- **Example:** 100 employees / 650 combined years → 6.5 years; 2020-01-01 to 2025-01-01 → 5 years.
+- **Important Files:** `frontend/src/tools/calculators/tenure/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-tenure-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Smoker's CTC Calculator (Screenshot-First)
 - **Summary:** Shipped Smoker's CTC Calculator on existing catalog id `6af46f0fa27d8d1d4e9900b9`, slug shortened to `smokers-ctc-calculator` (`SmokersCtcCalculator`). Smoke-break time, wage periods, collapsed work-day settings, labor cost while smoking, pack spend (1 cig/break), illustrative 11-min life line. Denomination currency (PKR). Omega UI. Activated.
 - **Important Files:** `frontend/src/tools/calculators/smokers-ctc/*`, registry, `sitemap.ts`, `tool.key.ts`, `assign-smokers-ctc-tool.ts`, brain docs.
