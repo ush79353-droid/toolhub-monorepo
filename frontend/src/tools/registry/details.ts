@@ -34,6 +34,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AresToHectaresConverter: () => import('@/tools/calculators/ares-to-hectares/detail'),
   MeshToMicronConverter: () => import('@/tools/calculators/mesh-to-micron/detail'),
   AstronomicalUnitCalculator: () => import('@/tools/calculators/astronomical-unit/detail'),
+  PixelsToInchesConverter: () => import('@/tools/calculators/pixels-to-inches/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

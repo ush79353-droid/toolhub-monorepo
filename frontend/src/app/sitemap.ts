@@ -42,6 +42,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ares-to-hectares-converter',
   'mesh-to-micron-converter',
   'astronomical-unit-calculator',
+  'pixels-to-inches-converter',
 ] as const;
 
 const STATIC_PATHS = [

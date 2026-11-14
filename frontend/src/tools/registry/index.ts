@@ -172,6 +172,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AstronomicalUnitCalculator,
     })),
   ),
+  PixelsToInchesConverter: lazyTool(() =>
+    import('@/tools/calculators/pixels-to-inches/PixelsToInchesConverter').then((mod) => ({
+      default: mod.PixelsToInchesConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

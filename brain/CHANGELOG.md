@@ -436,6 +436,12 @@
 - **Important Files:** `frontend/src/tools/calculators/astronomical-unit/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-astronomical-unit-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b7b` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/astronomical-unit-calculator` shows 1 au sync. Embed returns calculator panel with `frame-ancestors *` path.
 
+### 2026-11-14 — Add Pixels to Inches Converter
+- **Summary:** Shipped a bidirectional pixels ↔ inches converter on the existing catalog slug `pixels-to-inches-converter`. Configurable PPI (default 96) with source-field tracking on PPI change, compact presets, and mm/cm/ft more-options from the inch length. Publishing flags preserved (`isActive` true); `isDeveloped` set true after verification.
+- **Example:** 192 px at 96 PPI = 2 in; 1080 px at 96 PPI = 11.25 in; 1080 px at 300 PPI = 3.6 in; PPI flip keeps the last-edited field.
+- **Important Files:** `frontend/src/tools/calculators/pixels-to-inches/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pixels-to-inches-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b9a` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/pixels-to-inches-converter` shows 192 px = 2 in. Embed loads calculator panel.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
