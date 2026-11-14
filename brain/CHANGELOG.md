@@ -562,6 +562,12 @@
 - **Important Files:** `frontend/src/tools/calculators/gallons-to-pounds/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-gallons-to-pounds-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990acb` assigned (`isDeveloped: true`, `isActive: false`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e1` preserved; `subPillar` null). Public `/tools/gallons-to-pounds-converter` correctly 404s while inactive.
 
+### 2026-11-14 — Add Volume Conversion
+- **Summary:** Shipped a nine-field multi-unit volume converter on the existing catalog slug `volume-conversion`. Metric, US liquid/dry, Imperial, cooking, and cubic units via canonical liters; More Conversion Options; unit switches preserve physical volume. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 1 L = 1000 mL ≈ 0.26417 US gal; 1 US gal = 3.785411784 L = 4 qt = 8 pt = 16 cups = 128 fl oz = 256 tbsp = 768 tsp.
+- **Important Files:** `frontend/src/tools/calculators/volume-conversion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-volume-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b73` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/volume-conversion` shows 1 L = 1000 mL with synced fields.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
