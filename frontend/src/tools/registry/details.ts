@@ -145,6 +145,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/appreciation/detail'),
   AnnualizedReturnCalculator: () =>
     import('@/tools/calculators/annualized-return/detail'),
+  ApyCalculator: () => import('@/tools/calculators/apy/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

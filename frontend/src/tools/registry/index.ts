@@ -629,6 +629,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnualizedReturnCalculator,
     })),
   ),
+  ApyCalculator: lazyTool(() =>
+    import('@/tools/calculators/apy/ApyCalculator').then((mod) => ({
+      default: mod.ApyCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

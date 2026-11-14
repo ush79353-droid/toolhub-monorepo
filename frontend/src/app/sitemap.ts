@@ -124,6 +124,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'annualized-rate-of-return-calculator',
   'appreciation-calculator',
   'annualized-return-calculator',
+  'apy-calculator',
 ] as const;
 
 const STATIC_PATHS = [
