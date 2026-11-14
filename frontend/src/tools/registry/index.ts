@@ -105,6 +105,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AmortizationCalculator,
     })),
   ),
+  AcreageCalculator: lazyTool(() =>
+    import('@/tools/calculators/acreage/AcreageCalculator').then((mod) => ({
+      default: mod.AcreageCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

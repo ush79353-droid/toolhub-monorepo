@@ -29,6 +29,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '702010-rule-money-calculator',
   '401k-calculator',
   'amortization-calculator',
+  'acreage-calculator',
 ] as const;
 
 const STATIC_PATHS = [
