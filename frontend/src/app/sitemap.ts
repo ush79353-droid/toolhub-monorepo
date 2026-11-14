@@ -118,6 +118,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'smokers-ctc-calculator',
   'website-ad-revenue-calculator',
   'software-contract-value-calculator',
+  'youtube-money-calculator',
 ] as const;
 
 const STATIC_PATHS = [

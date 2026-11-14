@@ -591,6 +591,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SoftwareContractValueCalculator,
     })),
   ),
+  YoutubeMoneyCalculator: lazyTool(() =>
+    import('@/tools/calculators/youtube-money/YoutubeMoneyCalculator').then((mod) => ({
+      default: mod.YoutubeMoneyCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
