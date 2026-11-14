@@ -860,3 +860,8 @@
 - **Important Files:** `frontend/src/tools/calculators/additional-funds-needed/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-additional-funds-needed-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` 12 suites passed. `tool.key.ts` self-check passed. Lint clean for the AFN module. Mongo record `6af46f0fa27d8d1d4e99007e` activated (`isDeveloped: true`, `isActive: true`, `indexable: true`, `embedEnabled: true`).
 
+
+### 2026-11-14 — Add Accumulated Depreciation Calculator
+- **Summary:** Shipped a four-method accumulated depreciation calculator on existing catalog slug `accumulated-depreciation-calculator`. Methods: straight line (default), 200% declining balance with salvage floor true-up (no silent switch to straight-line), sum of the year's digits, and units of production (conditional production fields). Compact results show only accumulated depreciation and net book value. Shared `CurrencySelect` is denomination-only. Defaults: cost 25,000, life 15, years 2, salvage 3,000 ? 2,933.33 / 22,066.67.
+- **Important Files:** `frontend/src/tools/calculators/accumulated-depreciation/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-accumulated-depreciation-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f0fa27d8d1d4e99003c` assigned (`isDeveloped: true`, `isActive: true`, `indexable: true`, `embedEnabled: true`). Catalog API returns the active tool.
