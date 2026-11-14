@@ -652,6 +652,12 @@
 - **Important Files:** `frontend/src/tools/calculators/nm-to-ft-lbs/*`, `frontend/src/tools/shared/torque.ts`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-nm-to-ft-lbs-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` and `shared/torque.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f17a27d8d1d4e990b0f` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d2a27d8d1d4e98f9ea` preserved; `subPillar` null).
 
+### 2026-11-14 — Add Coordinates Converter
+- **Summary:** Shipped DD ↔ DMS ↔ DDM geographic coordinates converter on existing catalog slug `coordinates-converter`. Canonical signed decimal degrees; hemisphere letters checkbox; latitude/longitude validation with minutes/seconds range and pole/antimeridian rules; display rounding carry. Publishing flags preserved; `isDeveloped` set true after verification. No UTM/MGRS/geocoding.
+- **Example:** 40.7128°, −74.006° ↔ 40° 42′ 46.08″ N, 74° 0′ 21.6″ W ↔ 40° 42.768′ N, 74° 0.36′ W.
+- **Important Files:** `frontend/src/tools/calculators/coordinates/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-coordinates-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f17a27d8d1d4e990c05` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
