@@ -1003,11 +1003,16 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     ).then((mod) => ({
       default: mod.InformationRatioCalculator,
     })),
+  ),
+  IrrCalculator: lazyTool(() =>
+    import('@/tools/calculators/irr/IrrCalculator').then((mod) => ({
+      default: mod.IrrCalculator,
+    })),
+  ),
   InvestmentCalculator: lazyTool(() =>
     import('@/tools/calculators/investment/InvestmentCalculator').then((mod) => ({
       default: mod.InvestmentCalculator,
     })),
-  ),
   ),
 };
 

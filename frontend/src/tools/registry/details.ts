@@ -281,6 +281,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/impermanent-loss/detail'),
   InformationRatioCalculator: () =>
     import('@/tools/calculators/information-ratio/detail'),
+  IrrCalculator: () => import('@/tools/calculators/irr/detail'),
   InvestmentCalculator: () => import('@/tools/calculators/investment/detail'),
 };
 
