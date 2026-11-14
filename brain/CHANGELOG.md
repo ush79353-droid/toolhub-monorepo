@@ -730,6 +730,12 @@
 - **Important Files:** `frontend/src/tools/calculators/million-to-billion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-million-to-billion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990bdc` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
 
+### 2026-11-14 — Add Binary Converter
+- **Summary:** Shipped signed two’s-complement binary converter on existing catalog slug `binary-converter`. Independent decimal→binary and binary→decimal sections; bit widths 8/16/32/64 via BigInt (`asUintN`/`asIntN`); exact-width binary required for decode; default signed 8-bit. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** −5 → 11111011 (8-bit); 00001010 → 10; 64-bit min/max round-trip beyond `Number.MAX_SAFE_INTEGER`.
+- **Important Files:** `frontend/src/tools/calculators/binary/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-binary-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990be1` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
