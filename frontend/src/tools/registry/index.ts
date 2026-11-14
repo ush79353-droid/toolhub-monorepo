@@ -449,6 +449,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GematriaCalculator,
     })),
   ),
+  BinaryToHexConverter: lazyTool(() =>
+    import('@/tools/calculators/binary-to-hex/BinaryToHexCalculator').then((mod) => ({
+      default: mod.BinaryToHexConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

@@ -94,6 +94,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/million-to-billion/detail'),
   BinaryConverter: () => import('@/tools/calculators/binary/detail'),
   GematriaCalculator: () => import('@/tools/calculators/gematria/detail'),
+  BinaryToHexConverter: () => import('@/tools/calculators/binary-to-hex/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
