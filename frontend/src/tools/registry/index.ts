@@ -511,6 +511,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AbsencePercentageCalculator,
     })),
   ),
+  AccumulatedDepreciationCalculator: lazyTool(() =>
+    import('@/tools/calculators/accumulated-depreciation/AccumulatedDepreciationCalculator').then(
+      (mod) => ({
+        default: mod.AccumulatedDepreciationCalculator,
+      })
+    )
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

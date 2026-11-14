@@ -105,6 +105,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'capacitance-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
+  'accumulated-depreciation-calculator',
 ] as const;
 
 const STATIC_PATHS = [
