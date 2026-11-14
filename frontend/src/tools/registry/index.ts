@@ -371,6 +371,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CoordinatesConverter,
     })),
   ),
+  LatLongToUtmConverter: lazyTool(() =>
+    import('@/tools/calculators/lat-long-to-utm/LatLongToUtmCalculator').then((mod) => ({
+      default: mod.LatLongToUtmConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

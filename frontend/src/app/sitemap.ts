@@ -79,6 +79,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'torr-to-atm-conversion',
   'nm-to-ft-lbs-converter',
   'coordinates-converter',
+  'lat-long-to-utm-converter',
 ] as const;
 
 const STATIC_PATHS = [

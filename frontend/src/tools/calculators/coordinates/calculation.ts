@@ -91,7 +91,7 @@ export function decimalDegreesToDMS(decimalDegrees: number): DmsParts {
 
   const absolute = Math.abs(decimalDegrees);
   let degrees = Math.floor(absolute);
-  let totalMinutes = (absolute - degrees) * 60;
+  const totalMinutes = (absolute - degrees) * 60;
   let minutes = Math.floor(totalMinutes);
   let seconds = (totalMinutes - minutes) * 60;
 

@@ -75,6 +75,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TorrToAtmConverter: () => import('@/tools/calculators/torr-to-atm/detail'),
   NmToFtLbsConverter: () => import('@/tools/calculators/nm-to-ft-lbs/detail'),
   CoordinatesConverter: () => import('@/tools/calculators/coordinates/detail'),
+  LatLongToUtmConverter: () => import('@/tools/calculators/lat-long-to-utm/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

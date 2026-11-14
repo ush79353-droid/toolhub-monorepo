@@ -69,6 +69,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TorrToAtmConverter',
   'NmToFtLbsConverter',
   'CoordinatesConverter',
+  'LatLongToUtmConverter',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -160,6 +161,7 @@ if (isDirect) {
     !isApprovedComponentKey('TorrToAtmConverter') ||
     !isApprovedComponentKey('NmToFtLbsConverter') ||
     !isApprovedComponentKey('CoordinatesConverter') ||
+    !isApprovedComponentKey('LatLongToUtmConverter') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
