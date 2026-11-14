@@ -114,6 +114,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'saas-lifetime-value-calculator',
   'safety-stock-calculator',
   'sales-commission-calculator',
+  'sell-through-rate-calculator',
 ] as const;
 
 const STATIC_PATHS = [

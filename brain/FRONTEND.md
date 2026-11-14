@@ -227,3 +227,4 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 - `src/tools/calculators/revenue-per-employee/`: Revenue Per Employee Calculator (`RevenuePerEmployeeCalculator`, slug `revenue-per-employee-calculator`). Revenue ÷ employees; denomination currency; Omega UI; guide.
 - `src/tools/calculators/roas/`: ROAS Calculator (`RoasCalculator`, slug `roas-calculator`). Ad spend/revenue → ROAS %; collapsed ad-only ROI; denomination currency; Omega UI; guide.
 - `src/tools/calculators/safety-stock/`: Safety Stock Calculator (`SafetyStockCalculator`, slug `safety-stock-calculator`). Max/avg usage and lead time → safety stock and reorder point; collapsed statistical note; Omega UI; guide.
+- `src/tools/calculators/sell-through-rate/`: Sell-Through Rate Calculator (`SellThroughRateCalculator`, slug `sell-through-rate-calculator`). Units sold ÷ units received × 100; Omega UI; guide.

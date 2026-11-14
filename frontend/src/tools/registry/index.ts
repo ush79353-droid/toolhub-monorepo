@@ -565,6 +565,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SalesCommissionCalculator,
     })),
   ),
+  SellThroughRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/sell-through-rate/SellThroughRateCalculator'
+    ).then((mod) => ({
+      default: mod.SellThroughRateCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

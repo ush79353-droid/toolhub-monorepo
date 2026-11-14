@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-15** (Auto Loan is master Tool Detail Page; ROAS Calculator live at `/tools/roas-calculator`).
+> **Primary Agent Starting Point.** Last verified: **2026-11-15** (Auto Loan is master Tool Detail Page; Sell-Through Rate Calculator live at `/tools/sell-through-rate-calculator`).
 - **SaaS Lifetime Value Calculator (`/tools/saas-lifetime-value-calculator`):** Live client-side LTV calculator (`componentKey: 'SaasLifetimeValueCalculator'`, catalog `6af46f0fa27d8d1d4e9900b6`). Fields: ARPA (or recurring revenue ÷ accounts via checkbox), gross margin (default 100%), churn, account expansion (default 0), LTV output. Formula `((ARPA + expansion) × GM%) / churn%`. Zero churn → no finite estimate. Denomination currency. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Lint/builds/browser/automated tests omitted per delivery instructions.
 
 ---
@@ -134,6 +134,7 @@
 - **ROAS Calculator (`/tools/roas-calculator`):** Live client-side return-on-ad-spend calculator (`componentKey: 'RoasCalculator'`, catalog `6af46f0fa27d8d1d4e9900b5`). Ad spend + know-revenue Yes/No (default Yes) + ad revenue → ROAS %; collapsed ad-only ROI (not overall profit). Denomination currency (PKR). Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on.
 
 - **Safety Stock Calculator (`/tools/safety-stock-calculator`):** Live client-side inventory buffer calculator (`componentKey: 'SafetyStockCalculator'`, catalog `6af46f0fa27d8d1d4e99002f`). Basic max–min: max/avg daily usage + max/avg lead time (days) → safety stock and reorder point (ceil whole units). Statistical section collapsed with no invented inputs. No currency. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Formula self-check only this delivery.
+- **Sell-Through Rate Calculator (`/tools/sell-through-rate-calculator`):** Live client-side inventory sell-through calculator (`componentKey: 'SellThroughRateCalculator'`, catalog `6af46f0fa27d8d1d4e9900b8`). (Units sold ÷ units received) × 100. Blank start; received > 0; zero sold OK; reject sold > received and negatives. No currency. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests in `sell-through-rate/calculation.test.ts` (not run this delivery).
 
 ### Partially Implemented / UI Preview Only
 - **Public Directory (`/tools`, `/categories`, `/categories/[slug]`):** `/tools` lists active tools from `GET /catalog/tools`, 24 per page, with name search and a category filter. `/categories` and `/categories/[slug]` read the live catalog. A category page lists active tools only, grouped by pillar and sub-pillar. Header, footer, and the mobile menu use the same live category list. `/tools/[slug]` returns 404 unless the active tool's `componentKey` is registered. Each registered tool's guide lives in its own `detail.tsx`, and the calculator loads with `import()`. `frontend/src/lib/sample-data.ts` is removed.

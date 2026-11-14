@@ -102,6 +102,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
   'SalesCommissionCalculator',
+  'SellThroughRateCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];

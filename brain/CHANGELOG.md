@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Sell-Through Rate Calculator (Screenshot-First)
+- **Summary:** Shipped Sell-Through Rate Calculator on existing catalog slug `sell-through-rate-calculator` (`SellThroughRateCalculator`, catalog `6af46f0fa27d8d1d4e9900b8`). (Units sold ÷ units received) × 100. Blank start; received > 0; zero sold OK; reject sold > received. No currency. Omega UI. Shared shell, SEO, embed.
+- **Example:** 150 sold / 200 received → 75%.
+- **Important Files:** `frontend/src/tools/calculators/sell-through-rate/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-sell-through-rate-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Profitability Index Calculator (Screenshot-First)
 - **Summary:** Shipped Profitability Index Calculator on existing catalog slug `profitability-index-calculator` (`ProfitabilityIndexCalculator`, catalog `6af46f0fa27d8d1d4e9900b2`). PI = PV ÷ investment; compact interpretation. Denomination currency (PKR). Omega UI. Activated.
 - **Important Files:** `frontend/src/tools/calculators/profitability-index/*`, registry, `sitemap.ts`, `tool.key.ts`, `assign-profitability-index-tool.ts`, brain docs.
