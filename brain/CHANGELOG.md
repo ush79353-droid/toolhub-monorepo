@@ -490,6 +490,12 @@
 - **Important Files:** `frontend/src/tools/calculators/mcg-to-mg/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mcg-to-mg-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b4f` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/mcg-to-mg-converter` shows 250 mcg = 0.25 mg.
 
+### 2026-11-14 — Add Cubic Meter Calculator
+- **Summary:** Shipped a rectangular volume calculator on the existing catalog slug `cubic-meter-calculator`. Height × length × width → m³ with independent length units (including dam); separate dimensions vs volume source modes so volume conversion does not invent edges; more-options ft³/yd³/in³/L/mL/US gal/imp gal; find-missing-dimension panel. Publishing flags preserved; Meter Converter pillar left unchanged; `subPillar` null.
+- **Example:** 5 m × 4 m × 3 m = 60 m³; 100 ft³ = 2.8316846592 m³; missing length for 60 m³ with 4×3 m = 5 m.
+- **Important Files:** `frontend/src/tools/calculators/cubic-meter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cubic-meter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990add` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; Meter Converter pillar `6af451d0a27d8d1d4e98f9e3`, `subPillar` null preserved). Browser: `/tools/cubic-meter-calculator` shows 5×4×3 m = 60 m³.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
