@@ -604,6 +604,12 @@
 - **Important Files:** `frontend/src/tools/calculators/inch-lbs-to-nm/*`, `frontend/src/tools/shared/torque.ts`, nm-to-in-lbs re-export refactor, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-inch-lbs-to-nm-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `shared/torque.test.ts`, `nm-to-in-lbs/calculation.test.ts`, and `inch-lbs-to-nm/calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990b15` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d2a27d8d1d4e98f9eb` preserved; `subPillar` null). Browser: `/tools/inch-lbs-to-nm-converter` shows 100 in·lbf ≈ 11.298482902762 N·m.
 
+### 2026-11-14 — Add Pressure Conversion
+- **Summary:** Shipped a multi-field pressure converter on existing slug `pressure-conversion`. Canonical pascals; primary fields bar → psi → atm → Pa; unit dropdowns; More Conversion Options; Torr vs conventional mmHg documented; signed gauge/differential values allowed. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 1 bar = 100000 Pa = 100 kPa ≈ 14.503773773 psi ≈ 0.9869232667 atm; 1 atm = 101325 Pa = 1.01325 bar; 760 Torr = 1 atm.
+- **Important Files:** `frontend/src/tools/calculators/pressure-conversion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pressure-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990ba1` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/pressure-conversion` shows 1 bar ≈ 14.503773773 psi ≈ 0.986923267 atm = 100000 Pa.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

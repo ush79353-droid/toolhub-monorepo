@@ -184,4 +184,5 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 - `src/tools/calculators/nm-to-in-lbs/`: Nm to in-lbs Converter (`NmToInLbsConverter`, slug `nm-to-in-lbs-converter`). Bidirectional N·m ↔ in·lbf via shared `tools/shared/torque.ts`, signed torque, more-options, guide, and unit tests.
 - `src/tools/calculators/inch-lbs-to-nm/`: Inch-lbs to Nm Converter (`InchLbsToNmConverter`, slug `inch-lbs-to-nm-converter`). Same shared torque engine with in·lbf-first field order, defaults 100 in·lbf, guide, and unit tests.
 - `src/tools/shared/torque.ts`: Shared N·m-canonical torque constants and conversion helpers for Nm↔in·lbf tools.
+- `src/tools/calculators/pressure-conversion/`: Pressure Conversion (`PressureConversion`, slug `pressure-conversion`). Multi-field pressure converter via canonical pascals; bar/psi/atm/Pa primary fields; more-options; guide; unit tests.
 - `src/tools/calculators/affo/`: AFFO Calculator (`AFFOCalculator`, slug `affo-calculator`). Simplified FFO and a labeled AFFO estimate for one reporting period. Interest income is not adjusted twice. Display currency only. Guide in `detail.tsx`.
