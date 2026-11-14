@@ -484,6 +484,12 @@
 - **Important Files:** `frontend/src/tools/calculators/cubic-feet/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cubic-feet-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990af6` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d1a27d8d1d4e98f9e6` / Feet Converter, subPillar `6af451d1a27d8d1d4e98f9e7` preserved). Browser: `/tools/cubic-feet-calculator` shows 10×5×3 ft = 150 ft³.
 
+### 2026-11-14 — Add mcg to mg Converter
+- **Summary:** Shipped a bidirectional micrograms ↔ milligrams mass converter on the existing catalog slug `mcg-to-mg-converter`. Exact factor `1 mg = 1000 mcg`; more-options for ng/mcg/mg/cg/dg/g/kg. Publishing flags preserved (`isActive` true); `isDeveloped` set true after verification. Existing `pillar: null` and `subPillar: null` left unchanged. Educational copy notes mcg = µg and that the tool does not recommend medication doses.
+- **Example:** 250 mcg = 0.25 mg; 1000 mcg = 1 mg; 0.125 mg = 125 mcg.
+- **Important Files:** `frontend/src/tools/calculators/mcg-to-mg/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mcg-to-mg-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b4f` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/mcg-to-mg-converter` shows 250 mcg = 0.25 mg.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

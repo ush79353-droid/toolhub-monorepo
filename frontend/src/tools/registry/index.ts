@@ -216,6 +216,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CubicFeetCalculator,
     })),
   ),
+  McgToMgConverter: lazyTool(() =>
+    import('@/tools/calculators/mcg-to-mg/McgToMgConverter').then((mod) => ({
+      default: mod.McgToMgConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
