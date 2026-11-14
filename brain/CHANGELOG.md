@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Bitcoin ETF Calculator (Screenshot-First)
+- **Summary:** Shipped Bitcoin ETF Calculator on existing catalog slug `bitcoin-etf-calculator` (`BitcoinEtfCalculator`, catalog `6af46f0fa27d8d1d4e9900c4`). Custom ETF + manual expense ratio (no invented ticker fees), compounding FV, estimated expense fees + other costs. Denomination currency. Omega UI.
+- **Assumptions:** Annual compounding; returns are estimates not guarantees; no live prices; no verified ETF expense catalog in-repo.
+- **Important Files:** `frontend/src/tools/calculators/bitcoin-etf/*`, registry, `sitemap.ts`, `tool.key.ts`, `assign-bitcoin-etf-tool.ts`, brain docs.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Basis Point Calculator (Screenshot-First)
 - **Summary:** Shipped Basis Point Calculator on existing catalog slug `basis-point-calculator` (`BasisPointCalculator`, catalog `6af46f0fa27d8d1d4e9900c3`). Linked decimal/percent/permille/bps conversion plus x bps of amount with denomination currency. Omega UI. Shared shell, SEO, embed.
 - **Example:** 0.01 decimal = 1% = 10‰ = 100 bps; 1.5 bps of PKR 65,000 = PKR 9.75.

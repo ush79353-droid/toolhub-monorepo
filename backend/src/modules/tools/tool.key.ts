@@ -163,6 +163,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PreAndPostMoneyValuationCalculator',
   'PriceQuantityCalculator',
   'PvgoCalculator',
+  'BitcoinEtfCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -348,6 +349,7 @@ if (isDirect) {
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
+    !isApprovedComponentKey('BitcoinEtfCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

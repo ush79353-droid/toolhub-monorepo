@@ -173,6 +173,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pre-and-post-money-valuation-calculator',
   'price-quantity-calculator',
   'pvgo-calculator',
+  'bitcoin-etf-calculator',
 ] as const;
 
 const STATIC_PATHS = [

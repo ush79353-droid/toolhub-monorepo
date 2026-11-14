@@ -874,6 +874,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PvgoCalculator,
     })),
   ),
+  BitcoinEtfCalculator: lazyTool(() =>
+    import('@/tools/calculators/bitcoin-etf/BitcoinEtfCalculator').then((mod) => ({
+      default: mod.BitcoinEtfCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
