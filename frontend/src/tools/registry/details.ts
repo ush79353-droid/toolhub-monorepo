@@ -44,6 +44,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LitersToCentilitersConverter: () => import('@/tools/calculators/liters-to-centiliters/detail'),
   CubicFeetCalculator: () => import('@/tools/calculators/cubic-feet/detail'),
   McgToMgConverter: () => import('@/tools/calculators/mcg-to-mg/detail'),
+  CubicMeterCalculator: () => import('@/tools/calculators/cubic-meter/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
