@@ -634,6 +634,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ApyCalculator,
     })),
   ),
+  BasisPointCalculator: lazyTool(() =>
+    import('@/tools/calculators/basis-point/BasisPointCalculator').then((mod) => ({
+      default: mod.BasisPointCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

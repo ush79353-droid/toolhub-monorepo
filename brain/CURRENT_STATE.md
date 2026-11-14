@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-15** (Auto Loan is master Tool Detail Page; Annualized Rate of Return Calculator live at `/tools/annualized-rate-of-return-calculator`).
+> **Primary Agent Starting Point.** Last verified: **2026-11-15** (Auto Loan is master Tool Detail Page; Basis Point Calculator live at `/tools/basis-point-calculator`).
 
 ---
 
@@ -136,6 +136,7 @@
 - **Safety Stock Calculator (`/tools/safety-stock-calculator`):** Live client-side inventory buffer calculator (`componentKey: 'SafetyStockCalculator'`, catalog `6af46f0fa27d8d1d4e99002f`). Basic max–min: max/avg daily usage + max/avg lead time (days) → safety stock and reorder point (ceil whole units). Statistical section collapsed with no invented inputs. No currency. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Formula self-check only this delivery.
 - **Sell-Through Rate Calculator (`/tools/sell-through-rate-calculator`):** Live client-side inventory sell-through calculator (`componentKey: 'SellThroughRateCalculator'`, catalog `6af46f0fa27d8d1d4e9900b8`). (Units sold ÷ units received) × 100. Blank start; received > 0; zero sold OK; reject sold > received and negatives. No currency. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests in `sell-through-rate/calculation.test.ts` (not run this delivery).
 - **Annualized Rate of Return Calculator (`/tools/annualized-rate-of-return-calculator`):** Live client-side compounding annualizer (`componentKey: 'AnnualizedRateOfReturnCalculator'`, catalog `6af46f0fa27d8d1d4e990014`). Period radios + period rate % → annualized %. Blank rate start; Annual default; allow 0 and negatives to −100%. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests not run this delivery.
+- **Basis Point Calculator (`/tools/basis-point-calculator`):** Live client-side rate converter (`componentKey: 'BasisPointCalculator'`, catalog `6af46f0fa27d8d1d4e9900c3`). Linked decimal/percent/permille/bps + x bps of amount (denomination currency). Blank start. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests not run this delivery.
 - **Tenure Calculator (`/tools/tenure-calculator`):** Live client-side tenure calculator (`componentKey: 'TenureCalculator'`, catalog `6af46f0fa27d8d1d4e9900bb`). Average tenure = combined service ÷ employees (years); specific tenure = calendar end − start in years/months/days. Blank start; no currency. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests in `tenure/calculation.test.ts` (not run this delivery).
 - **Annualized Return Calculator (`/tools/annualized-return-calculator`):** Live client-side annualizer (`componentKey: 'AnnualizedReturnCalculator'`, catalog `6af46f0fa27d8d1d4e9900bf`). Total return % (default) or beginning/ending values + holding years → annualized %. Blank start; denomination currency on values mode only; complete loss (−100%) handled. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests in `annualized-return/calculation.test.ts` (not run this delivery).
 

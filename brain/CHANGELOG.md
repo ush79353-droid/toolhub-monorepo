@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Basis Point Calculator (Screenshot-First)
+- **Summary:** Shipped Basis Point Calculator on existing catalog slug `basis-point-calculator` (`BasisPointCalculator`, catalog `6af46f0fa27d8d1d4e9900c3`). Linked decimal/percent/permille/bps conversion plus x bps of amount with denomination currency. Omega UI. Shared shell, SEO, embed.
+- **Example:** 0.01 decimal = 1% = 10‰ = 100 bps; 1.5 bps of PKR 65,000 = PKR 9.75.
+- **Important Files:** `frontend/src/tools/calculators/basis-point/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-basis-point-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Annualized Return Calculator (Screenshot-First)
 - **Summary:** Shipped Annualized Return Calculator on existing catalog slug `annualized-return-calculator` (`AnnualizedReturnCalculator`, catalog `6af46f0fa27d8d1d4e9900bf`). Modes: total return % (default) or beginning/ending values; holding period years → annualized %. Blank start; denomination currency on values mode only. Omega UI. Activated.
 - **Example:** Total return 50%, 3 years → ≈ 14.47%.
