@@ -2,14 +2,18 @@
 
 import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
-import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
 import { Button } from '@/components/ui/button';
 import { ARDaysForm } from './ARDaysForm';
 import { ARDaysResults } from './ARDaysResults';
 import { calculateARDays, describeResult } from './calculation';
-import { createDefaultARDaysInput, type ARDaysFieldErrors, type ARDaysInput, type ARDaysResult } from './types';
+import {
+  createDefaultARDaysInput,
+  type ARDaysFieldErrors,
+  type ARDaysInput,
+  type ARDaysResult,
+} from './types';
 import { validateARDays } from './validation';
 
 function daysText(value: number): string {
@@ -18,7 +22,13 @@ function daysText(value: number): string {
 }
 
 function summaryText(metadataTitle: string, result: ARDaysResult): string {
-  if (!result.defined || result.arDays === null || result.formula === null || result.accountsReceivableUsed === null || result.netCreditSales === null || result.periodDays === null) {
+  if (
+    !result.defined ||
+    result.arDays === null ||
+    result.accountsReceivableUsed === null ||
+    result.netCreditSales === null ||
+    result.periodDays === null
+  ) {
     return '';
   }
   const money = (value: number) => formatCurrencyValue(value, result.currency);
@@ -44,7 +54,8 @@ export function ARDaysCalculator({
   const isEmbed = presentation === 'embed';
   const [input, setInput] = React.useState<ARDaysInput>(() => createDefaultARDaysInput());
   const [errors, setErrors] = React.useState<ARDaysFieldErrors>({});
-  const [result, setResult] = React.useState<ARDaysResult | null>(() => calculateARDays(createDefaultARDaysInput()));
+  const [result, setResult] = React.useState<ARDaysResult | null>(null);
+  const [averageSectionOpen, setAverageSectionOpen] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -73,41 +84,25 @@ export function ARDaysCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">{CURRENCY_DENOMINATION_NOTE}</p>
         </div>
-        <div className="flex flex-wrap items-center justify-end gap-2">
-          {headerActions}
-          <div className="w-[148px] shrink-0 sm:w-[160px]">
-            <label htmlFor="ar-days-currency" className="sr-only">
-              Display currency
-            </label>
-            <CurrencySelect
-              id="ar-days-currency"
-              value={input.currency}
-              onChange={(currency) => {
-                const next = { ...input, currency };
-                setInput(next);
-                run(next);
-              }}
-            />
-          </div>
-        </div>
+        <div className="flex flex-wrap items-center justify-end gap-2">{headerActions}</div>
       </div>
       <div className="space-y-4 p-4 sm:p-5">
         <ARDaysForm
           input={input}
           errors={errors}
+          result={result}
+          averageSectionOpen={averageSectionOpen}
+          onAverageSectionOpenChange={setAverageSectionOpen}
           onChange={(next) => {
             setInput(next);
             run(next);
-          }}
-          onSubmit={(event) => {
-            event.preventDefault();
-            run(input);
           }}
           onReset={() => {
             const fresh = createDefaultARDaysInput();
             setInput(fresh);
             setErrors({});
-            setResult(calculateARDays(fresh));
+            setResult(null);
+            setAverageSectionOpen(false);
           }}
         />
         <div className="flex flex-wrap gap-2">
@@ -147,7 +142,7 @@ export function ARDaysCalculator({
             </Button>
           ) : null}
         </div>
-        <ARDaysResults result={result} />
+        <ARDaysResults />
       </div>
     </section>
   );

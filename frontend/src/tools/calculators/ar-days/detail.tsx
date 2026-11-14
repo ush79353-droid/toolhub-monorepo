@@ -4,7 +4,7 @@ import { AR_DAYS_FAQS, AR_DAYS_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate accounts receivable days from a receivables balance and net credit sales, or solve for one of the other inputs. Ending and average balances stay separate.',
+    'Estimate accounts receivable days (days sales outstanding) from receivables and net credit sales. Optionally use an average beginning and ending balance.',
   asideAriaLabel: 'Interactive A/R days calculator',
   tocItems: AR_DAYS_TOC_ITEMS,
   GuideArticle: ARDaysGuideArticle,

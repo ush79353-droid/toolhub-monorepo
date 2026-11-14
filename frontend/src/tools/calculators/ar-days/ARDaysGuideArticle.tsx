@@ -14,8 +14,8 @@ const sections: { id: string; title: string; body: string[] }[] = [
     id: 'ar-days-formula',
     title: 'A/R Days Formula',
     body: [
-      'The standard formula is A/R days = (accounts receivable / net credit sales) × days in the period. Net credit sales means credit sales after returns and allowances. Cash sales stay out, because that money never passed through receivables.',
-      'The same relationship can be rearranged. Receivables = (A/R days × net credit sales) / days. Net credit sales = (receivables × days) / A/R days. Days in the period = (A/R days × net credit sales) / receivables. Choose one unknown. Entering all four and letting the page guess which one to solve would mix inputs with outputs.',
+      'The standard formula is A/R days = (accounts receivable / net credit sales) × number of days in the period. Net credit sales means credit sales after returns and allowances. Cash sales stay out, because that money never passed through receivables.',
+      'When you use an average balance instead, substitute average accounts receivable — (beginning + ending) ÷ 2 — for the receivables figure. The rest of the formula stays the same.',
     ],
   },
   {
@@ -23,7 +23,7 @@ const sections: { id: string; title: string; body: string[] }[] = [
     title: 'How to Calculate DSO',
     body: [
       'Pick the period the sales cover, such as 365 days, 90 days, or the length of a fiscal year. Take the receivables balance you want to test, and the net credit sales for that same period, in the same currency.',
-      'Divide the receivables by those sales, then multiply by the number of days. With 50,000 of receivables, 100,000 of net credit sales, and 365 days, the ratio is 0.5 and the result is 182.5 days. Half a year of credit sales is still sitting in receivables.',
+      'Divide the receivables by those sales, then multiply by the number of days. With 50,000 of receivables, 500,000 of net credit sales, and 365 days, the ratio is 0.1 and the result is 36.5 days.',
     ],
   },
   {
@@ -31,16 +31,16 @@ const sections: { id: string; title: string; body: string[] }[] = [
     title: 'Ending A/R vs Average A/R',
     body: [
       'The ending-balance method uses one receivables figure, usually the balance on the last day of the period. It is direct, and it is sensitive to a large invoice or a large collection that landed on that day.',
-      'The average method uses (beginning receivables + ending receivables) / 2. That midpoint is less swayed by a single day. It still ignores the balance in the middle of the period. This page uses the average only when you select that method and both balances are filled in. It will not quietly replace an ending balance with an average.',
+      'The average method uses (beginning receivables + ending receivables) / 2. That midpoint is less swayed by a single day. It still ignores the balance in the middle of the period. This page uses the average only when you choose Use average A/R after entering both balances. It will not quietly replace an ending balance with an average.',
     ],
   },
   {
     id: 'ar-days-examples',
     title: 'Examples',
     body: [
-      'Ending balance: receivables 50,000, net credit sales 100,000, period 365 days. A/R days = (50,000 / 100,000) × 365 = 182.5 days. Receivables turnover for the period is 100,000 / 50,000 = 2.',
-      'Average balance: beginning 40,000 and ending 60,000. The average is 50,000. Using the same sales and the same 365 days, A/R days are again 182.5. The method changed the receivables input, not the formula.',
-      'Reverse: if you want receivables of 182.5 days on 100,000 of net credit sales over 365 days, the balance is (182.5 × 100,000) / 365 = 50,000.',
+      'Ending balance: receivables 50,000, net credit sales 500,000, period 365 days. A/R days = (50,000 / 500,000) × 365 = 36.5 days.',
+      'Average balance: beginning 15,000 and ending 24,000. The average is 19,500. With 150,000 of net credit sales and 365 days, A/R days = (19,500 / 150,000) × 365 = 47.45 days.',
+      'Zero receivables with positive sales yields 0 days. Zero sales with a positive balance is undefined, and the calculator leaves the result blank instead of inventing a number.',
     ],
   },
   {
@@ -52,27 +52,11 @@ const sections: { id: string; title: string; body: string[] }[] = [
     ],
   },
   {
-    id: 'how-to-interpret',
-    title: 'How to Interpret a Collection Period',
-    body: [
-      'Start with the terms on the invoices. If most customers are offered 30 days, a result near 30 days means the book of receivables is roughly in line with those terms. A result far above the terms is a prompt to look at overdue invoices, disputes, and customers who have slipped.',
-      'Industry and season matter. A wholesaler shipping on long terms will not look like a café that is paid at the counter. A quarter that includes a large seasonal shipment can lift the balance even when customers later pay on time. Use the same method, the same kind of sales, and similar periods when you compare two numbers.',
-    ],
-  },
-  {
     id: 'improve-collections',
     title: 'Ways to Improve Collection',
     body: [
       'Invoice when the work or the goods are delivered, and make the due date and the payment route obvious. Confirm the customer’s billing details before the invoice goes out so it is not rejected for a missing purchase order.',
       'Send a reminder before the due date and follow up soon after it. Offer a short, clearly priced discount for early payment only if the margin can carry it. For slow accounts, agree a schedule or stop extending more credit. None of these steps is guaranteed to shorten DSO, and a shorter DSO is not useful if it costs more in discounts and staff time than the cash is worth.',
-    ],
-  },
-  {
-    id: 'dso-vs-turnover',
-    title: 'DSO and Receivables Turnover',
-    body: [
-      'Receivables turnover is net credit sales divided by the receivables used in the formula. A/R days is the period length divided by that turnover, which is the same as (receivables / sales) × days. They describe one relationship in two units: turns, or days.',
-      'A turnover of 2 during a 365-day period is 182.5 A/R days. Quoting turnover without saying whether the sales cover a month or a year makes the number hard to compare. This calculator shows the period’s turnover beside the day count and does not relabel it as an annual rate unless your period is the year you care about.',
     ],
   },
 ];
