@@ -59,6 +59,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   QuartsToPoundsConverter: () => import('@/tools/calculators/quarts-to-pounds/detail'),
   GallonsToPoundsConverter: () => import('@/tools/calculators/gallons-to-pounds/detail'),
   VolumeConversion: () => import('@/tools/calculators/volume-conversion/detail'),
+  GramsToOuncesCalculator: () => import('@/tools/calculators/grams-to-ounces/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

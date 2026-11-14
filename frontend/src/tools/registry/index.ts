@@ -292,6 +292,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.VolumeConversion,
     })),
   ),
+  GramsToOuncesCalculator: lazyTool(() =>
+    import('@/tools/calculators/grams-to-ounces/GramsToOuncesCalculator').then((mod) => ({
+      default: mod.GramsToOuncesCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
