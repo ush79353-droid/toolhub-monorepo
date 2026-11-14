@@ -29,6 +29,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LengthConverter',
   'AresToCentConverter',
   'LightYearConversion',
+  'AresToHectaresConverter',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -80,6 +81,7 @@ if (isDirect) {
     !isApprovedComponentKey('LengthConverter') ||
     !isApprovedComponentKey('AresToCentConverter') ||
     !isApprovedComponentKey('LightYearConversion') ||
+    !isApprovedComponentKey('AresToHectaresConverter') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

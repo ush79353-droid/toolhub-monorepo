@@ -39,6 +39,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'length-converter',
   'ares-to-cent-converter',
   'light-year-conversion',
+  'ares-to-hectares-converter',
 ] as const;
 
 const STATIC_PATHS = [

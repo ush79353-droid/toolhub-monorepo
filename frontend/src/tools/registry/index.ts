@@ -157,6 +157,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  AresToHectaresConverter: lazyTool(() =>
+    import('@/tools/calculators/ares-to-hectares/AresToHectaresCalculator').then((mod) => ({
+      default: mod.AresToHectaresConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
