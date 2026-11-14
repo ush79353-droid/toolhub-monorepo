@@ -423,3 +423,9 @@
 - **Example:** 1.375 → 1 3/8; 0.625 → 5/8; 3/8 → 0.375; 2 1/4 → 2.25; 1 in = 25.4 mm.
 - **Important Files:** `frontend/src/tools/calculators/inches-to-fraction/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-inches-to-fraction-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` and module eslint passed. Backend `tool.key.ts` self-check passed. Mongo record `6af46f17a27d8d1d4e990b8b` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/inches-to-fraction-calculator` shows 1 3/8 inches. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.
+
+### 2026-11-14 — Add Area Converter
+- **Summary:** Shipped a five-field area converter on the existing catalog slug `area-converter`. Fifteen metric, imperial, and land units convert through canonical square meters. All fields are editable; unit changes preserve physical area. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 100 m² ≈ 1076.39104167 ft² = 1,000,000 cm² ≈ 119.59900463 yd² = 1 a; 1 acre = 4046.8564224 m²; 1 ha ≈ 2.47105381467 acres.
+- **Important Files:** `frontend/src/tools/calculators/area-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-area-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f17a27d8d1d4e990b78` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/area-converter` shows 100 m² synced across five fields. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.

@@ -27,6 +27,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   HeightInInchesCalculator: () => import('@/tools/calculators/height-in-inches/detail'),
   AcreToAreConversionCalculator: () => import('@/tools/calculators/acre-to-are/detail'),
   InchesToFractionCalculator: () => import('@/tools/calculators/inches-to-fraction/detail'),
+  AreaConverter: () => import('@/tools/calculators/area-converter/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
