@@ -954,6 +954,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EffectiveInterestRateCalculator,
     })),
   ),
+  ExpectedUtilityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/expected-utility/ExpectedUtilityCalculator'
+    ).then((mod) => ({
+      default: mod.ExpectedUtilityCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
