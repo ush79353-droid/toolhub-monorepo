@@ -23,12 +23,44 @@ function base(patch: Partial<ArmMortgageInput> = {}): ArmMortgageInput {
   return { ...createDefaultArmInput(start), ...patch };
 }
 
+function legacyBase(patch: Partial<ArmMortgageInput> = {}): ArmMortgageInput {
+  return {
+    ...createDefaultArmInput(start),
+    balanceMode: 'home-price',
+    mortgageBalance: 250000,
+    homePrice: 400000,
+    downPaymentMode: 'percent',
+    downPayment: 20,
+    termYears: 30,
+    initialAnnualRate: 5.5,
+    structure: '5/1',
+    customFixedYears: 5,
+    customAdjustMonths: 12,
+    adjustmentMethod: 'index-margin',
+    expectedAdjustment: 0.5,
+    rateCap: 10.5,
+    rateFloor: 0.5,
+    periodicCap: 2.0,
+    compounding: 'monthly',
+    upfrontFees: 0,
+    scenario: 'constant',
+    indexRate: 4.5,
+    margin: 2.0,
+    scenarioStepPercent: 0.25,
+    initialCap: 2.0,
+    subsequentCap: 2.0,
+    lifetimeIncreaseCap: 5.0,
+    lifetimeDecreaseCap: 5.0,
+    ...patch,
+  };
+}
+
 assert.equal(independentPayment(250000, 5.5, 360), 141947);
 assert.equal(amortizingPaymentCents(25_000_000, 0.055 / 12, 360), 141947);
 assert.equal(amortizingPaymentCents(25_000_000, 0, 360), Math.round(25_000_000 / 360));
 
 {
-  const loan = base({ homePrice: 250000, downPaymentMode: 'amount', downPayment: 0 });
+  const loan = legacyBase({ homePrice: 250000, downPaymentMode: 'amount', downPayment: 0 });
   assert.equal(financingCents(loan).principalCents, 25_000_000);
   const result = calculateArmMortgage(loan);
   assert.equal(result.initialPaymentCents, 141947);
@@ -70,14 +102,14 @@ assert.equal(amortizingPaymentCents(25_000_000, 0, 360), Math.round(25_000_000 /
 }
 
 {
-  const priced = calculateArmMortgage(base());
+  const priced = calculateArmMortgage(legacyBase());
   assert.equal(priced.principalCents, 32_000_000);
   assert.equal(priced.downPaymentCents, 8_000_000);
   assert.equal(priced.initialPaymentCents, independentPayment(320000, 5.5, 360));
 }
 
 for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as const) {
-  const result = calculateArmMortgage(base({ structure }));
+  const result = calculateArmMortgage(legacyBase({ structure }));
   const years = Number(structure.split('/')[0]);
   const every = structure.endsWith('/1') ? 12 : 6;
   assert.equal(result.fixedMonths, years * 12, structure);
@@ -87,18 +119,18 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
 }
 
 {
-  const fiveSix = calculateArmMortgage(base({ structure: '5/6' }));
+  const fiveSix = calculateArmMortgage(legacyBase({ structure: '5/6' }));
   assert.equal(fiveSix.schedule[60].rateAdjusted, true);
   assert.equal(fiveSix.schedule[66].rateAdjusted, true);
   assert.equal(fiveSix.schedule[65].rateAdjusted, false);
-  const fiveOne = calculateArmMortgage(base({ structure: '5/1' }));
+  const fiveOne = calculateArmMortgage(legacyBase({ structure: '5/1' }));
   assert.equal(fiveOne.schedule[72].rateAdjusted, true);
   assert.equal(fiveOne.schedule[66].rateAdjusted, false);
 }
 
 {
   const custom = calculateArmMortgage(
-    base({ structure: 'custom', customFixedYears: 4, customAdjustMonths: 6, termYears: 10 })
+    legacyBase({ structure: 'custom', customFixedYears: 4, customAdjustMonths: 6, termYears: 10 })
   );
   assert.equal(custom.fixedMonths, 48);
   assert.equal(custom.adjustEveryMonths, 6);
@@ -108,7 +140,7 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
 
 {
   const zero = calculateArmMortgage(
-    base({
+    legacyBase({
       homePrice: 250000,
       downPayment: 0,
       downPaymentMode: 'amount',
@@ -193,7 +225,7 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
 
 {
   const rising = calculateArmMortgage(
-    base({
+    legacyBase({
       scenario: 'rising',
       scenarioStepPercent: 1,
       initialCap: 5,
@@ -201,14 +233,14 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
       lifetimeIncreaseCap: 10,
     })
   );
-  assert.equal(assumedFullyIndexedRate(base({ scenario: 'rising', scenarioStepPercent: 1 }), 1), 7.5);
+  assert.equal(assumedFullyIndexedRate(legacyBase({ scenario: 'rising', scenarioStepPercent: 1 }), 1), 7.5);
   assert.equal(rising.schedule[60].annualRate, 6.5);
   assert.equal(rising.schedule[72].annualRate, 7.5);
   assert.ok((rising.firstAdjustedPaymentCents ?? 0) > rising.initialPaymentCents);
   assert.ok(rising.maxProjectedRate <= rising.maximumPermittedRate);
 
   const falling = calculateArmMortgage(
-    base({
+    legacyBase({
       scenario: 'falling',
       indexRate: 3,
       margin: 1.5,
@@ -226,7 +258,7 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
 
 {
   const capped = calculateArmMortgage(
-    base({
+    legacyBase({
       homePrice: 250000,
       downPayment: 0,
       downPaymentMode: 'amount',
@@ -245,7 +277,7 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
   assert.ok(capped.maxProjectedRate <= 10);
   assert.equal(capped.maxProjectedPaymentCents, capped.contractualMaxPaymentCents);
   const mild = calculateArmMortgage(
-    base({
+    legacyBase({
       homePrice: 250000,
       downPayment: 0,
       downPaymentMode: 'amount',
@@ -262,7 +294,7 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
 }
 
 {
-  const input = base({
+  const input = legacyBase({
     homePrice: 250000,
     downPayment: 0,
     downPaymentMode: 'amount',
@@ -284,10 +316,10 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
 }
 
 {
-  const badPrice = validateArmInput(base({ homePrice: -1 }));
+  const badPrice = validateArmInput(legacyBase({ homePrice: -1 }));
   assert.equal(badPrice.isValid, false);
   assert.ok(badPrice.errors.homePrice);
-  const wiped = validateArmInput(base({ downPaymentMode: 'percent', downPayment: 100 }));
+  const wiped = validateArmInput(legacyBase({ downPaymentMode: 'percent', downPayment: 100 }));
   assert.ok(wiped.errors.downPayment);
   const nan = validateArmInput(base({ initialAnnualRate: Number.NaN }));
   assert.ok(nan.errors.initialAnnualRate);
@@ -314,11 +346,23 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
 }
 
 {
-  const a = calculateArmMortgage(base());
-  const b = calculateArmMortgage(base());
+  const a = calculateArmMortgage(legacyBase());
+  const b = calculateArmMortgage(legacyBase());
   assert.equal(a.totalPaymentsCents, b.totalPaymentsCents);
   assert.equal(a.schedule.length, b.schedule.length);
   assert.equal(a.payoffDate, '2056-01-01');
+
+  // Verify new default reference case directly
+  const def = calculateArmMortgage(base());
+  assert.equal(def.termYears, 20);
+  assert.equal(def.initialPaymentCents, 164989);
+  assert.equal(def.minPaymentCents, 164989);
+  assert.equal(def.maxPaymentCents, 183107);
+  assert.equal(def.averageRate, 6.125);
+  assert.equal(def.actuarialApr, 5.3574);
+  assert.equal(def.payoffDate, '2046-01-01');
+  assert.equal(def.paymentCount, 240);
+  assert.equal(def.fixedMonths, 120);
 }
 
 {
@@ -485,6 +529,33 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
     })
   );
   assert.ok(invalidAdj.errors.expectedAdjustment);
+}
+
+{
+  // Screenshot-First Functional Parity & Simplicity Verification:
+  // Verifies that default ARM input strictly matches the 8 primary reference fields and values:
+  const defaults = createDefaultArmInput('2026-01-01');
+  assert.equal(defaults.mortgageBalance, 250000); // 1. Mortgage balance: 250,000
+  assert.equal(defaults.termYears, 20); // 2. Term: 20 years
+  assert.equal(defaults.initialAnnualRate, 5.0); // 3. Interest rate at beginning: 5%
+  assert.equal(defaults.compounding, 'monthly'); // 4. Compounding frequency
+  assert.equal(defaults.upfrontFees, 0); // 4. Upfront fees
+  assert.equal(defaults.structure, '10/1'); // 5. ARM type: 10/1 ARM
+  assert.equal(defaults.adjustmentMethod, 'expected-rate'); // 6. Adjustments by: Manual setup
+  assert.equal(defaults.expectedAdjustment, 0.5); // 7. Expected adjustment: 0.5%
+  assert.equal(defaults.rateCap, 8.0); // 8. Interest rate cap: 8%
+
+  // Verify compact reference results:
+  const outcome = calculateArmMortgage(defaults);
+  assert.equal(outcome.minPaymentCents, 164989); // $1,649.89
+  assert.equal(outcome.maxPaymentCents, 183107); // $1,831.07
+  assert.equal(outcome.averageRate, 6.125); // 6.125% APR
+  assert.equal(outcome.actuarialApr, 5.3574); // 5.357% Actuarial APR
+  assert.equal(outcome.termYears, 20); // 20 years
+  assert.equal(outcome.paymentCount, 240); // 240 payments
+  assert.ok(Math.abs(outcome.totalInterestCents - 16298332) <= 10); // $162,983.32
+  assert.equal(outcome.additionalCostsCents, 0); // $0.00
+  assert.ok(Math.abs(outcome.totalPaymentsCents - 41298332) <= 10); // $412,983.32
 }
 
 console.log('arm mortgage calculation.test ok');
