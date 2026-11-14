@@ -63,6 +63,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PressureConversion',
   'InchPoundsToFootPoundsConverter',
   'PsiToGpmCalculator',
+  'LbsToNewtonsConverter',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -148,6 +149,7 @@ if (isDirect) {
     !isApprovedComponentKey('PressureConversion') ||
     !isApprovedComponentKey('InchPoundsToFootPoundsConverter') ||
     !isApprovedComponentKey('PsiToGpmCalculator') ||
+    !isApprovedComponentKey('LbsToNewtonsConverter') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

@@ -341,6 +341,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PsiToGpmCalculator,
     })),
   ),
+  LbsToNewtonsConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-newtons/LbsToNewtonsCalculator').then((mod) => ({
+      default: mod.LbsToNewtonsConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
