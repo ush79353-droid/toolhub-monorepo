@@ -518,6 +518,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  AttritionRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/attrition-rate/AttritionRateCalculator').then((mod) => ({
+      default: mod.AttritionRateCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

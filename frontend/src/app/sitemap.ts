@@ -106,6 +106,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
+  'attrition-rate-calculator',
 ] as const;
 
 const STATIC_PATHS = [

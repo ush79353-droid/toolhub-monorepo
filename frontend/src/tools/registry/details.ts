@@ -111,6 +111,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/absence-percentage/detail'),
   AccumulatedDepreciationCalculator: () =>
     import('@/tools/calculators/accumulated-depreciation/detail'),
+  AttritionRateCalculator: () =>
+    import('@/tools/calculators/attrition-rate/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
