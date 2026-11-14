@@ -143,6 +143,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CustomerRetentionRateCalculator',
   'DaysOffCalculator',
   'DirectMaterialPriceVarianceCalculator',
+  'EarCalculator',
   'EffectiveCorporateTaxRateCalculator',
   'EmvCalculator',
   'EvmCalculator',
@@ -338,6 +339,7 @@ if (isDirect) {
     !isApprovedComponentKey('CustomerRetentionRateCalculator') ||
     !isApprovedComponentKey('DaysOffCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
+    !isApprovedComponentKey('EarCalculator') ||
     !isApprovedComponentKey('EffectiveCorporateTaxRateCalculator') ||
     !isApprovedComponentKey('EmvCalculator') ||
     !isApprovedComponentKey('EvmCalculator') ||

@@ -152,6 +152,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'customer-retention-rate-calculator',
   'days-off-calculator',
   'direct-material-price-variance-calculator',
+  'ear-calculator',
   'effective-corporate-tax-rate-calculator',
   'emv-calculator-expected-monetary-value',
   'evm-calculator',

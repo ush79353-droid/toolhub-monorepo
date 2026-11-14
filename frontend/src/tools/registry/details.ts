@@ -199,6 +199,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/days-off/detail'),
   DirectMaterialPriceVarianceCalculator: () =>
     import('@/tools/calculators/direct-material-price-variance/detail'),
+  EarCalculator: () => import('@/tools/calculators/ear/detail'),
   EffectiveCorporateTaxRateCalculator: () =>
     import('@/tools/calculators/effective-corporate-tax-rate/detail'),
   EmvCalculator: () =>

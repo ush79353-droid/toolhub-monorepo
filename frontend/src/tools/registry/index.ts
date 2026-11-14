@@ -770,6 +770,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DirectMaterialPriceVarianceCalculator,
     })),
   ),
+  EarCalculator: lazyTool(() =>
+    import('@/tools/calculators/ear/EarCalculator').then((mod) => ({
+      default: mod.EarCalculator,
+    })),
+  ),
   EffectiveCorporateTaxRateCalculator: lazyTool(() =>
     import('@/tools/calculators/effective-corporate-tax-rate/EffectiveCorporateTaxRateCalculator').then((mod) => ({
       default: mod.EffectiveCorporateTaxRateCalculator,
