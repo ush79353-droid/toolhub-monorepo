@@ -185,6 +185,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
+  'InterestRateCalculator',
   'IrrCalculator',
   'InvestmentCalculator',
 ] as const;
@@ -394,6 +395,7 @@ if (isDirect) {
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
+    !isApprovedComponentKey('InterestRateCalculator') ||
     !isApprovedComponentKey('IrrCalculator') ||
     !isApprovedComponentKey('InvestmentCalculator') ||
     isApprovedComponentKey('EvilEval')

@@ -183,6 +183,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
+  'InterestRateCalculator',
   'IrrCalculator',
   'InvestmentCalculator',
 ] as const;
@@ -379,6 +380,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
+  'InterestRateCalculator',
   'IrrCalculator',
   'InvestmentCalculator',
 ] as const;
