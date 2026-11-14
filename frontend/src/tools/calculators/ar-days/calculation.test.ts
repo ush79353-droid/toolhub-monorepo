@@ -1,63 +1,90 @@
 import assert from 'node:assert/strict';
-import { averageReceivable, calculateARDays } from './calculation';
+import { averageReceivable, calculateARDays, receivablesUsedForInputs } from './calculation';
 import { createDefaultARDaysInput, type ARDaysInput } from './types';
 import { validateARDays } from './validation';
 
 function base(patch: Partial<ARDaysInput> = {}): ARDaysInput {
-  return { ...createDefaultARDaysInput(), ...patch };
+  return {
+    ...createDefaultARDaysInput(),
+    accountsReceivable: 50000,
+    netCreditSales: 500000,
+    periodDays: 365,
+    ...patch,
+  };
 }
 
 {
+  // Screenshot reference: 50,000 / 500,000 × 365 = 36.5
   const result = calculateARDays(base());
   assert.equal(result.defined, true);
-  assert.equal(result.arDays, 182.5);
+  assert.equal(result.arDays, 36.5);
   assert.equal(result.accountsReceivableUsed, 50000);
-  assert.equal(result.netCreditSales, 100000);
+  assert.equal(result.netCreditSales, 500000);
   assert.equal(result.periodDays, 365);
   assert.equal(result.averageReceivable, null);
-  assert.equal(result.receivablesTurnover, 2);
-  assert.equal(result.formula?.arDays, 182.5);
+  assert.equal(result.balanceMethod, 'ending');
 }
 
 {
   assert.equal(averageReceivable(40000, 60000), 50000);
-  const result = calculateARDays(base({ balanceMethod: 'average' }));
+  const result = calculateARDays(
+    base({
+      balanceMethod: 'average',
+      beginningReceivable: 40000,
+      endingReceivable: 60000,
+    })
+  );
   assert.equal(result.accountsReceivableUsed, 50000);
   assert.equal(result.averageReceivable, 50000);
-  assert.equal(result.arDays, 182.5);
+  assert.equal(result.arDays, 36.5);
+
+  // Omni-style average example: (15k + 24k) / 2 with 150k sales → 47.45
+  const seasonal = calculateARDays(
+    base({
+      balanceMethod: 'average',
+      beginningReceivable: 15000,
+      endingReceivable: 24000,
+      netCreditSales: 150000,
+    })
+  );
+  assert.ok(Math.abs((seasonal.arDays ?? 0) - 47.45) < 1e-9);
+
   const ending = calculateARDays(
     base({ balanceMethod: 'ending', accountsReceivable: 80000, beginningReceivable: 0, endingReceivable: 0 })
   );
   assert.equal(ending.accountsReceivableUsed, 80000);
-  assert.notEqual(ending.arDays, calculateARDays(base({ balanceMethod: 'average', beginningReceivable: 0, endingReceivable: 0 })).arDays);
+  assert.notEqual(
+    ending.arDays,
+    calculateARDays(base({ balanceMethod: 'average', beginningReceivable: 0, endingReceivable: 0 })).arDays
+  );
 }
 
 {
-  const receivables = calculateARDays(
-    base({ solveFor: 'receivables', arDays: 182.5, netCreditSales: 100000, periodDays: 365 })
+  // Switching methods must not silently mix ending and average
+  const endingUsed = receivablesUsedForInputs(base({ accountsReceivable: 80000, balanceMethod: 'ending' }));
+  assert.equal(endingUsed, 80000);
+  const averageUsed = receivablesUsedForInputs(
+    base({
+      balanceMethod: 'average',
+      accountsReceivable: 80000,
+      beginningReceivable: 10000,
+      endingReceivable: 30000,
+    })
   );
-  assert.equal(receivables.accountsReceivableUsed, 50000);
-  const sales = calculateARDays(
-    base({ solveFor: 'creditSales', accountsReceivable: 50000, arDays: 182.5, periodDays: 365 })
-  );
-  assert.equal(sales.netCreditSales, 100000);
-  const days = calculateARDays(
-    base({ solveFor: 'periodDays', accountsReceivable: 50000, netCreditSales: 100000, arDays: 182.5 })
-  );
-  assert.equal(days.periodDays, 365);
+  assert.equal(averageUsed, 20000);
+  assert.notEqual(endingUsed, averageUsed);
 }
 
 {
   const zeroAr = calculateARDays(base({ accountsReceivable: 0 }));
   assert.equal(zeroAr.defined, true);
   assert.equal(zeroAr.arDays, 0);
-  assert.equal(zeroAr.receivablesTurnover, null);
 }
 
 {
   const zeroSales = validateARDays(base({ netCreditSales: 0 }));
   assert.equal(zeroSales.isValid, false);
-  assert.match(zeroSales.errors.form ?? '', /undefined|zero/i);
+  assert.match(zeroSales.errors.form ?? '', /zero/i);
   const both = validateARDays(base({ accountsReceivable: 0, netCreditSales: 0 }));
   assert.equal(both.isValid, false);
   assert.match(both.errors.form ?? '', /indeterminate/i);
@@ -76,14 +103,16 @@ function base(patch: Partial<ARDaysInput> = {}): ARDaysInput {
 }
 
 {
-  const inverse = validateARDays(base({ solveFor: 'creditSales', arDays: 0, accountsReceivable: 50000, periodDays: 365 }));
-  assert.equal(inverse.isValid, false);
-  assert.match(inverse.errors.form ?? '', /undefined/i);
-  const indeterminate = validateARDays(
-    base({ solveFor: 'periodDays', accountsReceivable: 0, arDays: 0, netCreditSales: 0 })
-  );
-  assert.equal(indeterminate.isValid, false);
-  assert.match(indeterminate.errors.form ?? '', /indeterminate/i);
+  const emptyDefaults = createDefaultARDaysInput();
+  assert.equal(Number.isFinite(emptyDefaults.accountsReceivable), false);
+  assert.equal(Number.isFinite(emptyDefaults.netCreditSales), false);
+  assert.equal(emptyDefaults.periodDays, 365);
+  assert.equal(emptyDefaults.balanceMethod, 'ending');
+  const emptyValidation = validateARDays(emptyDefaults);
+  assert.equal(emptyValidation.isValid, false);
+  const emptyCalc = calculateARDays(emptyDefaults);
+  assert.equal(emptyCalc.defined, false);
+  assert.equal(emptyCalc.arDays, null);
 }
 
 {
@@ -106,12 +135,39 @@ function base(patch: Partial<ARDaysInput> = {}): ARDaysInput {
 }
 
 {
-  const first = calculateARDays(base());
-  const second = calculateARDays(createDefaultARDaysInput());
+  // Collapsed section preserves method and average inputs in state (engine-level)
+  const withAverageInputs = base({
+    balanceMethod: 'average',
+    beginningReceivable: 40000,
+    endingReceivable: 60000,
+  });
+  const first = calculateARDays(withAverageInputs);
+  const second = calculateARDays({ ...withAverageInputs });
   assert.equal(first.arDays, second.arDays);
-  assert.equal(first.netCreditSales, second.netCreditSales);
-  const reset = validateARDays(createDefaultARDaysInput());
-  assert.equal(reset.isValid, true);
+  assert.equal(first.balanceMethod, 'average');
+  assert.equal(withAverageInputs.beginningReceivable, 40000);
+  assert.equal(withAverageInputs.endingReceivable, 60000);
+
+  const reset = createDefaultARDaysInput();
+  assert.equal(reset.balanceMethod, 'ending');
+  assert.equal(Number.isFinite(reset.beginningReceivable), false);
+  assert.equal(validateARDays(reset).isValid, false);
+}
+
+{
+  // Screenshot field parity: three primary inputs + one result; no reverse solve
+  const inputKeys = Object.keys(createDefaultARDaysInput()).sort();
+  assert.deepEqual(inputKeys, [
+    'accountsReceivable',
+    'balanceMethod',
+    'beginningReceivable',
+    'currency',
+    'endingReceivable',
+    'netCreditSales',
+    'periodDays',
+  ]);
+  assert.equal('solveFor' in createDefaultARDaysInput(), false);
+  assert.equal('arDays' in createDefaultARDaysInput(), false);
 }
 
 console.log('ar days calculation.test ok');
