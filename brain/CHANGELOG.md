@@ -658,6 +658,12 @@
 - **Important Files:** `frontend/src/tools/calculators/coordinates/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-coordinates-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f17a27d8d1d4e990c05` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
 
+### 2026-11-14 — Add Lat Long to UTM Converter
+- **Summary:** Shipped WGS84 latitude/longitude → UTM forward projection on existing catalog slug `lat-long-to-utm-converter`. DD and DMS inputs reuse Coordinates helpers; `proj4` ellipsoidal UTM; automatic zone with Norway/Svalbard exceptions; coverage −80°…84°; EPSG 326xx/327xx; easting/northing in meters. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** NYC 40.7128°, −74.006° → zone 18N, EPSG:32618, easting ≈ 583,959.372 m, northing ≈ 4,507,350.998 m; London zone 30N; Sydney zone 56S; Norway 60°, 6° → zone 32; Svalbard 78°, 20° → zone 33.
+- **Important Files:** `frontend/src/tools/calculators/lat-long-to-utm/*`, `frontend/package.json` (`proj4`), registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-lat-long-to-utm-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f17a27d8d1d4e990c07` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

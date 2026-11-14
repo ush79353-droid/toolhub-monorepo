@@ -193,4 +193,5 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 - `src/tools/calculators/torr-to-atm/`: Torr to atm Conversion (`TorrToAtmConverter`, slug `torr-to-atm-conversion`). Exact Torr↔atm (760); other units via Pressure Conversion; guide; unit tests.
 - `src/tools/calculators/nm-to-ft-lbs/`: Nm to ft-lbs Converter (`NmToFtLbsConverter`, slug `nm-to-ft-lbs-converter`). Bidirectional N·m ↔ ft·lbf via shared torque engine; guide; unit tests.
 - `src/tools/calculators/coordinates/`: Coordinates Converter (`CoordinatesConverter`, slug `coordinates-converter`). DD ↔ DMS ↔ DDM latitude/longitude; hemisphere letters; guide; unit tests.
+- `src/tools/calculators/lat-long-to-utm/`: Lat Long to UTM Converter (`LatLongToUtmConverter`, slug `lat-long-to-utm-converter`). WGS84→UTM via `proj4`; DD/DMS; Norway/Svalbard zones; guide; unit tests.
 - `src/tools/calculators/affo/`: AFFO Calculator (`AFFOCalculator`, slug `affo-calculator`). Simplified FFO and a labeled AFFO estimate for one reporting period. Interest income is not adjusted twice. Display currency only. Guide in `detail.tsx`.
