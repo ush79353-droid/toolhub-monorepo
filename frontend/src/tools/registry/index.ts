@@ -464,6 +464,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BinaryToOctalConverter,
     })),
   ),
+  HexadecimalConverter: lazyTool(() =>
+    import('@/tools/calculators/hexadecimal/HexadecimalCalculator').then((mod) => ({
+      default: mod.HexadecimalConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
