@@ -177,6 +177,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'bitcoin-etf-calculator',
   'capital-gains-yield-calculator',
   'cd-calculator',
+  'compound-interest-calculator',
 ] as const;
 
 const STATIC_PATHS = [

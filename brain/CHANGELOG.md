@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Compound Interest Calculator (Screenshot-First)
+- **Summary:** Shipped Compound Interest Calculator on existing catalog slug `compound-interest-calculator` (`CompoundInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff82`). Defaults 1000 / 8% / 20y / monthly; optional deposits; final balance + interest; balances views (bar/pie/table/cash details). Denomination currency. Omega UI. Activated.
+- **Example:** 1,000 at 8% for 20 years monthly → ≈ 4,926.80 final, ≈ 3,926.80 interest.
+- **Important Files:** `frontend/src/tools/calculators/compound-interest/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-compound-interest-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add CAGR Calculator (Screenshot-First)
 - **Summary:** Shipped CAGR Calculator on existing catalog row (slug shortened to `cagr-calculator`, `CagrCalculator`, catalog `6af46f0fa27d8d1d4e9900c5`). Four fields with reverse solve; optional collapsed change-in-value; denomination currency. Omega UI. Activated.
 - **Example:** Initial 10,000 / final 15,000 / 5 periods → CAGR ≈ 8.45%.

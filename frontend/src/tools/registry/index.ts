@@ -891,6 +891,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CapitalGainsYieldCalculator,
     })),
   ),
+  CompoundInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/compound-interest/CompoundInterestCalculator'
+    ).then((mod) => ({
+      default: mod.CompoundInterestCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
