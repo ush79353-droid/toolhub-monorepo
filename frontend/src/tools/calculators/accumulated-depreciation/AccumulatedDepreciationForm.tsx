@@ -138,16 +138,6 @@ export function AccumulatedDepreciationForm({
           placeholder="0.00"
           onChange={(assetCost) => patch({ assetCost })}
         />
-        <Field
-          id="ad-salvage"
-          label="Salvage value"
-          tip="Estimated residual value at the end of useful life. Book value is never taken below this amount."
-          prefix={symbol}
-          value={draft.salvageValue}
-          error={errors.salvageValue}
-          placeholder="0.00"
-          onChange={(salvageValue) => patch({ salvageValue })}
-        />
 
         {yearBased ? (
           <>
@@ -171,6 +161,17 @@ export function AccumulatedDepreciationForm({
             />
           </>
         ) : null}
+
+        <Field
+          id="ad-salvage"
+          label="Salvage value"
+          tip="Estimated residual value at the end of useful life. Book value is never taken below this amount."
+          prefix={symbol}
+          value={draft.salvageValue}
+          error={errors.salvageValue}
+          placeholder="0.00"
+          onChange={(salvageValue) => patch({ salvageValue })}
+        />
 
         {productionBased ? (
           <>
