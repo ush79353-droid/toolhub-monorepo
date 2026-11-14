@@ -130,6 +130,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/sell-through-rate/detail'),
   SmokersCtcCalculator: () =>
     import('@/tools/calculators/smokers-ctc/detail'),
+  WebsiteAdRevenueCalculator: () =>
+    import('@/tools/calculators/website-ad-revenue/detail'),
+  SoftwareContractValueCalculator: () =>
+    import('@/tools/calculators/software-contract-value/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

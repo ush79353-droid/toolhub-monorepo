@@ -116,6 +116,8 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sales-commission-calculator',
   'sell-through-rate-calculator',
   'smokers-ctc-calculator',
+  'website-ad-revenue-calculator',
+  'software-contract-value-calculator',
 ] as const;
 
 const STATIC_PATHS = [

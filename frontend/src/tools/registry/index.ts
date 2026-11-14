@@ -577,6 +577,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SmokersCtcCalculator,
     })),
   ),
+  WebsiteAdRevenueCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/website-ad-revenue/WebsiteAdRevenueCalculator'
+    ).then((mod) => ({
+      default: mod.WebsiteAdRevenueCalculator,
+    })),
+  ),
+  SoftwareContractValueCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/software-contract-value/SoftwareContractValueCalculator'
+    ).then((mod) => ({
+      default: mod.SoftwareContractValueCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
