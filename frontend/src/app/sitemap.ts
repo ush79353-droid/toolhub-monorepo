@@ -157,6 +157,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'emv-calculator-expected-monetary-value',
   'evm-calculator',
   'exit-rate-calculator',
+  'expected-return-calculator',
   'fifo-calculator-for-inventory',
   'full-time-equivalent-calculator',
   'gmroi-calculator-gross-margin-return-on-investment',

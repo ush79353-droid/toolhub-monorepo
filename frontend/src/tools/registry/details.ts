@@ -208,6 +208,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/evm/detail'),
   ExitRateCalculator: () =>
     import('@/tools/calculators/exit-rate/detail'),
+  ExpectedReturnCalculator: () =>
+    import('@/tools/calculators/expected-return/detail'),
   FifoInventoryCalculator: () =>
     import('@/tools/calculators/fifo-inventory/detail'),
   FullTimeEquivalentCalculator: () =>
