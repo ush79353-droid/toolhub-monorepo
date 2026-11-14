@@ -204,6 +204,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CcfToGallonsConversion,
     })),
   ),
+  LitersToCentilitersConverter: lazyTool(() =>
+    import('@/tools/calculators/liters-to-centiliters/LitersToCentilitersConverter').then(
+      (mod) => ({
+        default: mod.LitersToCentilitersConverter,
+      })
+    ),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

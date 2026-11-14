@@ -48,6 +48,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'feet-and-inches-calculator',
   'yards-to-acres-calculator',
   'ccf-to-gallons-conversion',
+  'liters-to-centiliters-converter',
 ] as const;
 
 const STATIC_PATHS = [
