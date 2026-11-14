@@ -267,6 +267,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  OzToCupsConverter: lazyTool(() =>
+    import('@/tools/calculators/oz-to-cups/OzToCupsConverter').then((mod) => ({
+      default: mod.OzToCupsConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

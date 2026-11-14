@@ -59,6 +59,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pint-to-pound-conversion',
   'drops-to-ml-conversion',
   'pounds-and-ounces-calculator',
+  'oz-to-cups-converter',
 ] as const;
 
 const STATIC_PATHS = [

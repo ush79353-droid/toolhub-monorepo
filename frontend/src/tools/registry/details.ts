@@ -54,6 +54,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DropsToMlConverter: () => import('@/tools/calculators/drops-to-ml/detail'),
   PoundsAndOuncesCalculator: () =>
     import('@/tools/calculators/pounds-and-ounces/detail'),
+  OzToCupsConverter: () => import('@/tools/calculators/oz-to-cups/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
