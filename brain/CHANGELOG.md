@@ -664,6 +664,12 @@
 - **Important Files:** `frontend/src/tools/calculators/lat-long-to-utm/*`, `frontend/package.json` (`proj4`), registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-lat-long-to-utm-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f17a27d8d1d4e990c07` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
 
+### 2026-11-14 — Add Degrees Minutes Seconds Calculator
+- **Summary:** Shipped general-purpose bidirectional DMS ↔ decimal-degree angle converter on existing catalog slug `degrees-minutes-seconds-calculator`. Reuses Coordinates DMS helpers; sign applies to full magnitude (including −0°); no geographic bounds; angles may exceed 360°; clickable examples. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 47° 23′ 12″ = 47.3866666667°; 10.5797222222° → 10° 34′ 47″; −12° 30′ 0″ = −12.5°; 720° 30′ 0″ = 720.5°.
+- **Important Files:** `frontend/src/tools/calculators/degrees-minutes-seconds/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-degrees-minutes-seconds-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f17a27d8d1d4e990c06` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
