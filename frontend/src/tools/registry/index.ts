@@ -608,6 +608,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.YoutubeMoneyCalculator,
     })),
   ),
+  AnnualizedRateOfReturnCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/annualized-rate-of-return/AnnualizedRateOfReturnCalculator'
+    ).then((mod) => ({
+      default: mod.AnnualizedRateOfReturnCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

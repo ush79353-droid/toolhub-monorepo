@@ -121,6 +121,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'website-ad-revenue-calculator',
   'software-contract-value-calculator',
   'youtube-money-calculator',
+  'annualized-rate-of-return-calculator',
 ] as const;
 
 const STATIC_PATHS = [

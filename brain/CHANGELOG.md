@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Annualized Rate of Return Calculator (Screenshot-First)
+- **Summary:** Shipped Annualized Rate of Return Calculator on existing catalog slug `annualized-rate-of-return-calculator` (`AnnualizedRateOfReturnCalculator`, catalog `6af46f0fa27d8d1d4e990014`). Compounding annualization with period radios (annual/quarterly/monthly/weekly/daily). Blank period rate; allow zero and negatives to −100%. Omega UI. Shared shell, SEO, embed.
+- **Example:** Monthly 2% → ≈ 26.82% annualized.
+- **Important Files:** `frontend/src/tools/calculators/annualized-rate-of-return/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-annualized-rate-of-return-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Tenure Calculator (Screenshot-First)
 - **Summary:** Shipped Tenure Calculator on existing catalog slug `tenure-calculator` (`TenureCalculator`, catalog `6af46f0fa27d8d1d4e9900bb`). Average tenure = combined service ÷ employees (years); specific tenure = calendar end − start. Blank start; no currency. Omega UI. Activated.
 - **Example:** 100 employees / 650 combined years → 6.5 years; 2020-01-01 to 2025-01-01 → 5 years.
