@@ -80,6 +80,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'nm-to-ft-lbs-converter',
   'coordinates-converter',
   'lat-long-to-utm-converter',
+  'degrees-minutes-seconds-calculator',
 ] as const;
 
 const STATIC_PATHS = [

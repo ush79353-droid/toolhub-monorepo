@@ -376,6 +376,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LatLongToUtmConverter,
     })),
   ),
+  DegreesMinutesSecondsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/degrees-minutes-seconds/DegreesMinutesSecondsCalculator'
+    ).then((mod) => ({
+      default: mod.DegreesMinutesSecondsCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

@@ -76,6 +76,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NmToFtLbsConverter: () => import('@/tools/calculators/nm-to-ft-lbs/detail'),
   CoordinatesConverter: () => import('@/tools/calculators/coordinates/detail'),
   LatLongToUtmConverter: () => import('@/tools/calculators/lat-long-to-utm/detail'),
+  DegreesMinutesSecondsCalculator: () =>
+    import('@/tools/calculators/degrees-minutes-seconds/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

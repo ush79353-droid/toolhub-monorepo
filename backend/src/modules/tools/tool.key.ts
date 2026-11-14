@@ -70,6 +70,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NmToFtLbsConverter',
   'CoordinatesConverter',
   'LatLongToUtmConverter',
+  'DegreesMinutesSecondsCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -162,6 +163,7 @@ if (isDirect) {
     !isApprovedComponentKey('NmToFtLbsConverter') ||
     !isApprovedComponentKey('CoordinatesConverter') ||
     !isApprovedComponentKey('LatLongToUtmConverter') ||
+    !isApprovedComponentKey('DegreesMinutesSecondsCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
