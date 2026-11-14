@@ -297,6 +297,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GramsToOuncesCalculator,
     })),
   ),
+  WeightConverter: lazyTool(() =>
+    import('@/tools/calculators/weight-converter/WeightConverterCalculator').then((mod) => ({
+      default: mod.WeightConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
