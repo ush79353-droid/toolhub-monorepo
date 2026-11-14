@@ -127,6 +127,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BusinessBudgetCalculator',
   'BusinessValuationCalculator',
   'CagrCalculator',
+  'CapitalGainsYieldCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
   'ContributionMarginCalculator',
@@ -165,6 +166,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PriceQuantityCalculator',
   'PvgoCalculator',
   'BitcoinEtfCalculator',
+  'CdCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -314,6 +316,7 @@ if (isDirect) {
     !isApprovedComponentKey('BusinessBudgetCalculator') ||
     !isApprovedComponentKey('BusinessValuationCalculator') ||
     !isApprovedComponentKey('CagrCalculator') ||
+    !isApprovedComponentKey('CapitalGainsYieldCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
     !isApprovedComponentKey('ConsultingFeesCalculator') ||
     !isApprovedComponentKey('ContributionMarginCalculator') ||
@@ -352,6 +355,7 @@ if (isDirect) {
     !isApprovedComponentKey('PriceQuantityCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
+    !isApprovedComponentKey('CdCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

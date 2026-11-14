@@ -884,6 +884,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BitcoinEtfCalculator,
     })),
   ),
+  CapitalGainsYieldCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/capital-gains-yield/CapitalGainsYieldCalculator'
+    ).then((mod) => ({
+      default: mod.CapitalGainsYieldCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

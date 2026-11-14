@@ -175,6 +175,8 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'price-quantity-calculator',
   'pvgo-calculator',
   'bitcoin-etf-calculator',
+  'capital-gains-yield-calculator',
+  'cd-calculator',
 ] as const;
 
 const STATIC_PATHS = [

@@ -125,6 +125,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BusinessBudgetCalculator',
   'BusinessValuationCalculator',
   'CagrCalculator',
+  'CapitalGainsYieldCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
   'ContributionMarginCalculator',
@@ -163,6 +164,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PriceQuantityCalculator',
   'PvgoCalculator',
   'BitcoinEtfCalculator',
+  'CdCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -299,6 +301,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'BusinessBudgetCalculator',
   'BusinessValuationCalculator',
   'CagrCalculator',
+  'CapitalGainsYieldCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
   'ContributionMarginCalculator',
@@ -337,6 +340,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'PriceQuantityCalculator',
   'PvgoCalculator',
   'BitcoinEtfCalculator',
+  'CdCalculator',
 ] as const;
 
 export type RegisteredComponentKey = (typeof REGISTERED_COMPONENT_KEYS)[number];
