@@ -281,6 +281,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/impermanent-loss/detail'),
   InformationRatioCalculator: () =>
     import('@/tools/calculators/information-ratio/detail'),
+  InvestmentCalculator: () => import('@/tools/calculators/investment/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
