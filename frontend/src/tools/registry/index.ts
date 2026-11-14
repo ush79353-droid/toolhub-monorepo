@@ -140,6 +140,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AreaConverter,
     })),
   ),
+  LengthConverter: lazyTool(() =>
+    import('@/tools/calculators/length-converter/LengthConverterCalculator').then((mod) => ({
+      default: mod.LengthConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

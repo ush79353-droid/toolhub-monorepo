@@ -28,6 +28,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AcreToAreConversionCalculator: () => import('@/tools/calculators/acre-to-are/detail'),
   InchesToFractionCalculator: () => import('@/tools/calculators/inches-to-fraction/detail'),
   AreaConverter: () => import('@/tools/calculators/area-converter/detail'),
+  LengthConverter: () => import('@/tools/calculators/length-converter/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
