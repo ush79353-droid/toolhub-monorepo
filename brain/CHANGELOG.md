@@ -646,6 +646,12 @@
 - **Important Files:** `frontend/src/tools/calculators/torr-to-atm/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-torr-to-atm-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module (existing `<img>` warnings elsewhere). Mongo record `6af46f17a27d8d1d4e990af1` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d1a27d8d1d4e98f9e5` preserved; `subPillar` null). Also fixed missing `IndependentKind` import in `torque-to-hp/calculation.ts` that blocked type-check.
 
+### 2026-11-14 — Add Nm to ft-lbs Converter
+- **Summary:** Shipped bidirectional N·m ↔ ft·lbf torque conversion on existing catalog slug `nm-to-ft-lbs-converter`. Reuses shared `tools/shared/torque.ts` (`nmToFtLbs` / `ftLbsToNm`); Other torque units accordion; signed torque; torque≠energy/force copy. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 10 N·m ≈ 7.3756214928 ft·lbf; 100 ft·lbf = 135.58179483314004 N·m; 1 ft·lbf = 12 in·lbf.
+- **Important Files:** `frontend/src/tools/calculators/nm-to-ft-lbs/*`, `frontend/src/tools/shared/torque.ts`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-nm-to-ft-lbs-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` and `shared/torque.test.ts` passed. Frontend `tsc --noEmit` passed. Mongo record `6af46f17a27d8d1d4e990b0f` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d2a27d8d1d4e98f9ea` preserved; `subPillar` null).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
