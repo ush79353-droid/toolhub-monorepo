@@ -748,6 +748,12 @@
 - **Important Files:** `frontend/src/tools/calculators/binary-to-hex/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-binary-to-hex-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990be2` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
 
+### 2026-11-14 — Add Greek Gematria Calculator
+- **Summary:** Shipped Greek isopsephy calculator on existing catalog slug `greek-gematria-calculator`. Traditional letter values (including stigma/digamma, koppa, sampi); NFD diacritic stripping with global regex; final sigma = 200; live total, breakdown, and reference table. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** ΑΛΦΑ → 532; ΛΟΓΟΣ / λόγος → 373; ΙΗΣΟΥΣ → 888; σος → 470.
+- **Important Files:** `frontend/src/tools/calculators/greek-gematria/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-greek-gematria-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990be7` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
