@@ -189,6 +189,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'effective-annual-yield-calculator',
   'effective-interest-rate-calculator',
   'expected-utility-calculator',
+  'fd-calculator-fixed-deposit-calculator',
 ] as const;
 
 const STATIC_PATHS = [

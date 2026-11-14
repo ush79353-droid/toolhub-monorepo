@@ -966,6 +966,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ExpectedUtilityCalculator,
     })),
   ),
+  FdCalculator: lazyTool(() =>
+    import('@/tools/calculators/fd/FdCalculator').then((mod) => ({
+      default: mod.FdCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
