@@ -23,6 +23,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AmortizationCalculator: () => import('@/tools/calculators/amortization/detail'),
   AcreageCalculator: () => import('@/tools/calculators/acreage/detail'),
   FeetToInchesCalculator: () => import('@/tools/calculators/feet-to-inches/detail'),
+  AcresToSquareMilesCalculator: () => import('@/tools/calculators/acres-to-square-miles/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

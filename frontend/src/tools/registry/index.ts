@@ -115,6 +115,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FeetToInchesCalculator,
     })),
   ),
+  AcresToSquareMilesCalculator: lazyTool(() =>
+    import('@/tools/calculators/acres-to-square-miles/AcresToSquareMilesCalculator').then((mod) => ({
+      default: mod.AcresToSquareMilesCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

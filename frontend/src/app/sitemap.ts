@@ -31,6 +31,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'amortization-calculator',
   'acreage-calculator',
   'feet-to-inches-calculator',
+  'acres-to-square-miles-calculator',
 ] as const;
 
 const STATIC_PATHS = [
