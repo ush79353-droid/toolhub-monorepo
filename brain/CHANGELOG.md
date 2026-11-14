@@ -496,6 +496,12 @@
 - **Important Files:** `frontend/src/tools/calculators/cubic-meter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cubic-meter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990add` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; Meter Converter pillar `6af451d0a27d8d1d4e98f9e3`, `subPillar` null preserved). Browser: `/tools/cubic-meter-calculator` shows 5×4×3 m = 60 m³.
 
+### 2026-11-14 — Add mg to mL Calculator
+- **Summary:** Shipped a mass↔volume converter on the existing catalog slug `mg-to-ml-calculator`. Separate density mode (water ≈ 1000 mg/mL or custom density) and medication concentration mode (mg/mL or mg per stated volume). Never assumes 1 mg = 1 mL; custom concentration only (no invented medication catalog); on-form safety notice. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 100 mg at 20 mg/mL → 5 mL; 500 mg at 1000 mg/mL water density → 0.5 mL; 100 mg per 5 mL label → 20 mg/mL factor.
+- **Important Files:** `frontend/src/tools/calculators/mg-to-ml/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mg-to-ml-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b53` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/mg-to-ml-calculator` shows 100 mg = 5 mL at 20 mg/mL.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
