@@ -4,7 +4,7 @@ import { TwelveHourShiftPayGuideArticle } from './TwelveHourShiftPayGuideArticle
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Split one shift into regular hours and overtime hours, then project week, month, and year pay from the schedule you set.',
+    'Price a 12-hour shift from an hourly wage, an overtime wage, and regular hours, then see day, week, month, and year pay.',
   asideAriaLabel: 'Interactive 12-hour shift pay calculator',
   tocItems: SHIFT_PAY_TOC_ITEMS,
   GuideArticle: TwelveHourShiftPayGuideArticle,

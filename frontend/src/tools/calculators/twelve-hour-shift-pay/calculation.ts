@@ -1,87 +1,57 @@
 import {
-  DEFAULT_OVERTIME_MULTIPLIER,
   MAX_REGULAR_HOURS,
-  MAX_SHIFT_HOURS,
-  MAX_SHIFTS_PER_WEEK,
   MAX_WAGE,
-  MAX_WEEKS_PER_YEAR,
+  SHIFT_HOURS,
+  WEEKS_PER_MONTH,
+  WEEKS_PER_YEAR,
+  WORKDAYS_PER_WEEK,
   type TwelveHourShiftPayInput,
   type TwelveHourShiftPayResult,
 } from './types';
 
-/** Money is rounded to cents. Display currency only changes the symbol. */
+/** Money is rounded to cents once per displayed amount. Display currency only changes the symbol. */
 export function roundMoney(value: number): number {
   if (!Number.isFinite(value)) return Number.NaN;
   return Math.round(value * 100) / 100;
 }
 
-export function suggestedOvertimeWage(hourlyWage: number): number {
-  return roundMoney(hourlyWage * DEFAULT_OVERTIME_MULTIPLIER);
+function wageOk(value: number): boolean {
+  return Number.isFinite(value) && value > 0 && value <= MAX_WAGE;
 }
 
-function hoursOk(value: number, max: number): boolean {
-  return Number.isFinite(value) && value >= 0 && value <= max;
-}
-
+/**
+ * Regular hours above 12 are rejected, not clamped.
+ * Overtime hours are `max(12 − regular hours, 0)`.
+ */
 export function calculateTwelveHourShiftPay(
   input: TwelveHourShiftPayInput
 ): TwelveHourShiftPayResult | null {
-  const {
-    hourlyWage,
-    overtimeHourlyWage,
-    regularHours,
-    shiftHours,
-    shiftsPerWeek,
-    weeksPerYear,
-  } = input;
+  const { hourlyWage, overtimeHourlyWage, regularHours } = input;
 
-  if (!Number.isFinite(hourlyWage) || hourlyWage < 0 || hourlyWage > MAX_WAGE) return null;
-  if (!Number.isFinite(overtimeHourlyWage) || overtimeHourlyWage < 0 || overtimeHourlyWage > MAX_WAGE) {
-    return null;
-  }
-  if (!hoursOk(regularHours, MAX_REGULAR_HOURS)) return null;
-  if (!Number.isFinite(shiftHours) || shiftHours <= 0 || shiftHours > MAX_SHIFT_HOURS) return null;
-  if (regularHours > shiftHours) return null;
-  if (!hoursOk(shiftsPerWeek, MAX_SHIFTS_PER_WEEK)) return null;
-  if (!Number.isFinite(weeksPerYear) || weeksPerYear < 1 || weeksPerYear > MAX_WEEKS_PER_YEAR) return null;
+  if (!wageOk(hourlyWage) || !wageOk(overtimeHourlyWage)) return null;
+  if (!Number.isFinite(regularHours) || regularHours < 0 || regularHours > MAX_REGULAR_HOURS) return null;
 
-  const overtimeHours = shiftHours - regularHours;
-  const regularPay = roundMoney(regularHours * hourlyWage);
-  const overtimePay = roundMoney(overtimeHours * overtimeHourlyWage);
-  const shiftPay = roundMoney(regularPay + overtimePay);
-  const averageHourlyPay = roundMoney(shiftPay / shiftHours);
-  const weeklyPay = roundMoney(shiftPay * shiftsPerWeek);
-  const yearlyPay = roundMoney(weeklyPay * weeksPerYear);
-  const monthlyPay = roundMoney((weeklyPay * weeksPerYear) / 12);
+  const overtimeHours = Math.max(SHIFT_HOURS - regularHours, 0);
+  const payPerDay = roundMoney(regularHours * hourlyWage + overtimeHours * overtimeHourlyWage);
+  const averageHourlyPay = roundMoney(payPerDay / SHIFT_HOURS);
+  const payPerWeek = roundMoney(payPerDay * WORKDAYS_PER_WEEK);
+  const payPerMonth = roundMoney(payPerWeek * WEEKS_PER_MONTH);
+  const payPerYear = roundMoney(payPerWeek * WEEKS_PER_YEAR);
 
   const result: TwelveHourShiftPayResult = {
     regularHours,
     overtimeHours,
-    shiftHours,
     hourlyWage,
     overtimeHourlyWage,
-    overtimeWageSource: input.overtimeWageSource,
-    regularPay,
-    overtimePay,
-    shiftPay,
     averageHourlyPay,
-    weeklyPay,
-    monthlyPay,
-    yearlyPay,
-    shiftsPerWeek,
-    weeksPerYear,
+    payPerDay,
+    payPerWeek,
+    payPerMonth,
+    payPerYear,
     currency: input.currency,
   };
 
-  const amounts = [
-    result.regularPay,
-    result.overtimePay,
-    result.shiftPay,
-    result.averageHourlyPay,
-    result.weeklyPay,
-    result.monthlyPay,
-    result.yearlyPay,
-  ];
+  const amounts = [averageHourlyPay, payPerDay, payPerWeek, payPerMonth, payPerYear];
   if (amounts.some((amount) => !Number.isFinite(amount))) return null;
   return result;
 }

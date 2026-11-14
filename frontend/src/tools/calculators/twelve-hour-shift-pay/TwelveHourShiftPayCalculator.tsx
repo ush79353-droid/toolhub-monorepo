@@ -24,17 +24,12 @@ function summaryText(result: TwelveHourShiftPayResult): string {
   const money = (value: number) => formatShiftPay(value, result.currency);
   return [
     '12-Hour Shift Pay Calculator — Omega Calculators',
-    `Pay per shift: ${money(result.shiftPay)}`,
-    `Average hourly: ${money(result.averageHourlyPay)}`,
-    `Regular pay: ${money(result.regularPay)} (${result.regularHours} h)`,
-    `Overtime pay: ${money(result.overtimePay)} (${result.overtimeHours} h)`,
-    `Weekly: ${money(result.weeklyPay)}`,
-    `Monthly: ${money(result.monthlyPay)}`,
-    `Yearly: ${money(result.yearlyPay)}`,
-    `Assumes ${result.shiftsPerWeek} shifts/week and ${result.weeksPerYear} weeks/year.`,
-    result.overtimeWageSource === 'suggested'
-      ? 'Overtime wage is the 1.5× suggestion.'
-      : 'Overtime wage was entered directly.',
+    `Average wage per hour: ${money(result.averageHourlyPay)}`,
+    `Pay per day: ${money(result.payPerDay)}`,
+    `Pay per week: ${money(result.payPerWeek)}`,
+    `Pay per month: ${money(result.payPerMonth)}`,
+    `Pay per year: ${money(result.payPerYear)}`,
+    'Assumes a 12-hour shift, 5 workdays per week, 4.4 weeks per month, and 52 weeks per year.',
     CURRENCY_DENOMINATION_NOTE,
   ].join('\n');
 }

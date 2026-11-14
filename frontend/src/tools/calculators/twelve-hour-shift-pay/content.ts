@@ -25,63 +25,62 @@ export const SHIFT_PAY_GUIDE_SECTIONS: readonly ShiftPayGuideSection[] = [
     id: 'how-shift-pay-works',
     title: 'How the 12-hour shift pay calculator works',
     paragraphs: [
-      'This calculator prices one shift, then scales that shift by a weekly schedule. You enter an hourly wage, how many hours of the shift are paid at that wage, and an overtime hourly wage for the remaining hours. The default shift is 12 hours, with the first 8 hours treated as regular time.',
-      'The overtime box starts at 1.5 times the hourly wage. That fill-in is only a suggestion. Once you type a different overtime wage, later edits to the regular wage leave your overtime wage alone. Use “Use 1.5× the hourly wage” to return to the suggestion.',
-      'Currency changes the symbol and the number format. It does not convert PKR into dollars or any other currency. A wage of 20 stays 20 in whichever currency you select.',
+      'Enter an hourly wage, an overtime hourly wage, and how many hours of a 12-hour shift are paid at the regular wage. The calculator prices that one shift, then scales it to a week, a month, and a year.',
+      'The shift length, the number of workdays, and the weeks in a month or year stay fixed. They are not extra fields. Currency changes the symbol and grouping only. A wage of 20 stays 20 in whichever currency you select.',
     ],
   },
   {
     id: 'regular-vs-overtime',
     title: 'Regular hours and overtime hours',
     paragraphs: [
-      'Regular hours are the part of a single shift paid at the base hourly wage. They are not a weekly total. On a 12-hour shift with 8 regular hours, the other 4 hours are overtime hours.',
-      'Overtime hours are shift length minus regular hours. Set regular hours to 12 on a 12-hour shift and overtime hours become 0. Set regular hours to 0 and the whole shift is priced at the overtime wage. Regular hours cannot exceed the shift length, and they stay between 0 and 12.',
+      'Regular hours are the part of the 12-hour shift paid at the base hourly wage. They are not a weekly total. With 8 regular hours, the other 4 hours are overtime.',
+      'Overtime hours are 12 minus regular hours, and they never go below 0. Regular hours of 12 mean the whole shift is straight time. Regular hours of 0 mean the whole shift uses the overtime wage. A value above 12 is rejected with a message instead of being shortened to 12.',
     ],
-    formula: 'Overtime hours = shift length − regular hours',
+    formula: 'Overtime hours = max(12 − regular hours, 0)',
   },
   {
     id: 'overtime-pay',
     title: 'How overtime pay is calculated',
     paragraphs: [
-      'Regular pay is regular hours multiplied by the hourly wage. Overtime pay is overtime hours multiplied by the overtime hourly wage. Shift pay is the sum of those two amounts. Average wage per hour is shift pay divided by the full shift length, so a mix of rates lands between the two wages.',
-      'Each money line is rounded to the nearest hundredth before the next line uses it, so the regular and overtime amounts add up to the shift total you see. A wage of 20 and an overtime wage of 30 on an 8 + 4 split is 160 + 120 = 280, and 280 ÷ 12 is 23.33.',
+      'Daily pay is regular hours times the hourly wage, plus overtime hours times the overtime hourly wage. Average wage per hour is that daily total divided by 12. Each displayed amount is rounded to the nearest hundredth.',
+      'A wage of 20 and an overtime wage of 30 with 8 regular hours is 160 + 120 = 280 for the day. 280 ÷ 12 is 23.33.',
     ],
-    formula: 'Shift pay = (regular hours × hourly wage) + (overtime hours × overtime hourly wage)',
-    formulaNote: 'Average hourly pay = shift pay ÷ shift length.',
+    formula: 'Daily pay = (regular hours × hourly wage) + (overtime hours × overtime hourly wage)',
+    formulaNote: 'Average wage per hour = daily pay ÷ 12.',
   },
   {
     id: 'weekly-monthly-yearly',
     title: 'Weekly, monthly, and yearly estimates',
     paragraphs: [
-      'Weekly pay is one shift’s pay multiplied by shifts per week. The default is 5 shifts, which is 60 hours if every shift is 12 hours long. Yearly pay multiplies that weekly amount by weeks per year. The default is 52. Monthly pay divides the yearly amount by 12. It is not a count of calendar workdays in a particular month.',
-      'Open Schedule assumptions to change shift length, shifts per week, or weeks per year. The result states those assumptions beside the week, month, and year figures. Unpaid leave, missed shifts, and extra call-outs are not included, so the larger totals are projections rather than a promised salary.',
+      'Weekly pay is one day’s pay times 5. Monthly pay is that weekly amount times 4.4. Yearly pay is the weekly amount times 52. Those multipliers are built in, so the form does not ask for shifts per week or weeks per year.',
+      'The defaults of 20, 30, and 8 regular hours pay 1,400 a week, 6,160 a month, and 72,800 a year. Unpaid leave, missed shifts, tax, and extra call-outs are not included.',
     ],
-    formula: 'Yearly pay = shift pay × shifts per week × weeks per year',
-    formulaNote: 'Monthly pay = yearly pay ÷ 12.',
+    formula: 'Weekly pay = daily pay × 5',
+    formulaNote: 'Monthly pay = weekly pay × 4.4. Yearly pay = weekly pay × 52.',
   },
   {
     id: 'shift-pay-examples',
     title: 'Worked examples',
     paragraphs: [
-      'Base example: hourly wage 20, overtime wage 30, 8 regular hours, 12-hour shift. Regular pay is 160, overtime pay is 120, shift pay is 280, and the average is 23.33 per hour. Five shifts a week for 52 weeks is 1,400 a week, 72,800 a year, and about 6,066.67 a month.',
-      'Same wages with all 12 hours marked regular: overtime pay is 0 and the shift pays 240. With regular hours set to 0, the shift pays 360 because every hour uses the overtime wage. Changing only the overtime wage to 25, while keeping 8 regular hours, pays 160 + 100 = 260 for the shift.',
+      'Base example: hourly wage 20, overtime wage 30, 8 regular hours. Regular pay is 160, overtime pay is 120, daily pay is 280, and the average is 23.33 per hour. The week is 1,400, the month is 6,160, and the year is 72,800.',
+      'All 12 hours regular: overtime hours are 0 and the day pays 240. Regular hours set to 0: the day pays 360 because every hour uses the overtime wage of 30. Changing only the overtime wage to 25, with 8 regular hours, pays 160 + 100 = 260 for the day.',
     ],
   },
   {
     id: 'shift-pay-mistakes',
     title: 'Common mistakes',
     paragraphs: [
-      'Treating regular hours as a weekly total undercounts or overcounts a long shift. Eight regular hours here means eight hours inside the shift you are pricing, not eight hours across the week.',
-      'Expecting the overtime box to keep tracking 1.5× after you edit it will not happen. A typed rate stays put. Another miss is reading the monthly figure as take-home pay. The calculator does not subtract tax, benefits, differentials, or unpaid breaks.',
-      'A zero shift length cannot produce an average hourly wage, and regular hours above 12 or above the shift length are rejected instead of showing a blank or an infinite number.',
+      'Treating regular hours as a weekly total misprices the shift. Eight regular hours means eight hours inside the 12-hour shift, not eight hours across the week.',
+      'A wage of 0 or a negative wage is rejected. Regular hours above 12 are rejected rather than clamped, so the form never shows a shortened shift you did not enter. Empty or non-numeric input does not produce a result.',
+      'The monthly figure is weekly pay times 4.4. It is not yearly pay divided by 12, and it is not take-home pay after tax.',
     ],
   },
   {
     id: 'overtime-rules',
     title: 'Overtime rules and legal limits',
     paragraphs: [
-      'A 1.5× overtime wage is a common contract assumption. It is not a universal legal rule. Some places require overtime after 8 hours in a day, some only after 40 hours in a week, and some occupations are exempt. Night differentials, weekend premiums, and double time after a longer threshold are separate rates this calculator does not apply on their own.',
-      'Health-care, transport, and public-safety schedules often use 12-hour shifts under their own agreements. Confirm the threshold and the multiplier in the employment contract and the rules that cover the workplace before treating this estimate as owed wages. This page is arithmetic, not legal advice.',
+      'This page uses the overtime wage you type. It does not apply a legal multiplier on its own. Some places require overtime after 8 hours in a day, some only after 40 hours in a week, and some occupations are exempt.',
+      'Health-care, transport, and public-safety schedules often use 12-hour shifts under their own agreements. Confirm the threshold and the rate in the employment contract before treating this estimate as owed wages. This page is arithmetic, not legal advice.',
     ],
   },
 ];
@@ -90,22 +89,22 @@ export const SHIFT_PAY_FAQS: readonly FAQItem[] = [
   {
     question: 'How is pay for a 12-hour shift calculated?',
     answer:
-      'Split the shift into regular hours and overtime hours. Multiply each block by its own hourly wage and add the two products. With a wage of 20, an overtime wage of 30, and 8 regular hours, the shift pays 280.',
+      'Split the shift into regular hours and overtime hours. Overtime hours are 12 minus regular hours. Multiply each block by its own hourly wage and add the two products. With a wage of 20, an overtime wage of 30, and 8 regular hours, the day pays 280.',
   },
   {
-    question: 'Why does the overtime wage start at 1.5 times my hourly wage?',
+    question: 'What if regular hours are more than 12?',
     answer:
-      'That fill-in is a suggestion so the form has a rate before you type one. It is not applied as a legal requirement. Type another overtime wage and the calculator keeps that number even if you later change the hourly wage.',
+      'The calculator asks you to enter a number from 0 to 12. It does not silently shorten a larger number to 12.',
   },
   {
-    question: 'What if my whole shift is straight time?',
+    question: 'What if the whole shift is straight time?',
     answer:
-      'Set regular hours equal to the shift length. Overtime hours become zero and overtime pay is zero, even if an overtime wage is still shown in the form.',
+      'Set regular hours to 12. Overtime hours become 0 and overtime pay is 0.',
   },
   {
-    question: 'How do you get monthly pay from a weekly shift schedule?',
+    question: 'How are week, month, and year figures calculated?',
     answer:
-      'Monthly pay is weekly pay times weeks per year, divided by 12. The default schedule is 5 shifts and 52 weeks. Change those assumptions in the schedule section. The result is an even monthly projection, not a guaranteed paycheck.',
+      'Weekly pay is daily pay times 5. Monthly pay is weekly pay times 4.4. Yearly pay is weekly pay times 52. The default example is 1,400 a week, 6,160 a month, and 72,800 a year.',
   },
   {
     question: 'Does changing the currency convert my wage?',

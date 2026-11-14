@@ -29,10 +29,10 @@ async function run(): Promise<void> {
     tool.name = DISPLAY_NAME;
     tool.nameKey = toolNameKey(DISPLAY_NAME);
     tool.shortDescription =
-      'Estimate regular and overtime pay for a 12-hour shift, then project week, month, and year totals.';
+      'Estimate average hourly pay and day, week, month, and year totals for a 12-hour shift.';
     tool.metaTitle = '12-Hour Shift Pay Calculator | Omega Calculators';
     tool.metaDescription =
-      'Calculate regular pay, overtime pay, and the average hourly rate for a 12-hour shift. Weekly, monthly, and yearly figures follow the schedule you set.';
+      'Calculate average hourly pay for a 12-hour shift from a regular wage, an overtime wage, and regular hours. Week, month, and year use a fixed 5-day schedule.';
     if (tool.embedEnabled !== false) {
       tool.embedEnabled = true;
     }

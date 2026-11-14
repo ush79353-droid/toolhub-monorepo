@@ -1,67 +1,47 @@
 import type { SupportedCurrency } from '@/tools/shared/currency';
 
-/** Suggested overtime wage is 1.5× regular pay until the user types their own rate. */
-export type OvertimeWageSource = 'suggested' | 'entered';
+/** One shift is always 12 hours. Overtime is whatever is left after regular hours. */
+export const SHIFT_HOURS = 12;
+/** Week, month, and year scale one shift by these fixed schedule constants. */
+export const WORKDAYS_PER_WEEK = 5;
+export const WEEKS_PER_MONTH = 4.4;
+export const WEEKS_PER_YEAR = 52;
+
+export const DEFAULT_HOURLY_WAGE = 20;
+export const DEFAULT_OVERTIME_HOURLY_WAGE = 30;
+export const DEFAULT_REGULAR_HOURS = 8;
+
+export const MAX_WAGE = 1_000_000;
+export const MAX_REGULAR_HOURS = SHIFT_HOURS;
 
 export interface TwelveHourShiftPayInput {
   hourlyWage: number;
   overtimeHourlyWage: number;
-  overtimeWageSource: OvertimeWageSource;
-  /** Non-overtime hours inside one shift. */
+  /** Hours inside the 12-hour shift paid at the regular wage. */
   regularHours: number;
-  shiftHours: number;
-  shiftsPerWeek: number;
-  weeksPerYear: number;
   currency: SupportedCurrency;
 }
 
 export interface TwelveHourShiftPayResult {
   regularHours: number;
   overtimeHours: number;
-  shiftHours: number;
   hourlyWage: number;
   overtimeHourlyWage: number;
-  overtimeWageSource: OvertimeWageSource;
-  regularPay: number;
-  overtimePay: number;
-  shiftPay: number;
   averageHourlyPay: number;
-  weeklyPay: number;
-  monthlyPay: number;
-  yearlyPay: number;
-  shiftsPerWeek: number;
-  weeksPerYear: number;
+  payPerDay: number;
+  payPerWeek: number;
+  payPerMonth: number;
+  payPerYear: number;
   currency: SupportedCurrency;
 }
 
-export type TwelveHourShiftPayField =
-  | 'hourlyWage'
-  | 'overtimeHourlyWage'
-  | 'regularHours'
-  | 'shiftHours'
-  | 'shiftsPerWeek'
-  | 'weeksPerYear';
+export type TwelveHourShiftPayField = 'hourlyWage' | 'overtimeHourlyWage' | 'regularHours';
 
 export type TwelveHourShiftPayFieldErrors = Partial<Record<TwelveHourShiftPayField, string>>;
 
-export const DEFAULT_OVERTIME_MULTIPLIER = 1.5;
-export const DEFAULT_REGULAR_HOURS = 8;
-export const DEFAULT_SHIFT_HOURS = 12;
-export const DEFAULT_SHIFTS_PER_WEEK = 5;
-export const DEFAULT_WEEKS_PER_YEAR = 52;
-export const MAX_WAGE = 1_000_000;
-export const MAX_SHIFT_HOURS = 24;
-export const MAX_REGULAR_HOURS = 12;
-export const MAX_SHIFTS_PER_WEEK = 14;
-export const MAX_WEEKS_PER_YEAR = 53;
-
 export const DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT: TwelveHourShiftPayInput = {
-  hourlyWage: 20,
-  overtimeHourlyWage: 30,
-  overtimeWageSource: 'suggested',
+  hourlyWage: DEFAULT_HOURLY_WAGE,
+  overtimeHourlyWage: DEFAULT_OVERTIME_HOURLY_WAGE,
   regularHours: DEFAULT_REGULAR_HOURS,
-  shiftHours: DEFAULT_SHIFT_HOURS,
-  shiftsPerWeek: DEFAULT_SHIFTS_PER_WEEK,
-  weeksPerYear: DEFAULT_WEEKS_PER_YEAR,
   currency: 'PKR',
 };
