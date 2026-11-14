@@ -60,6 +60,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'drops-to-ml-conversion',
   'pounds-and-ounces-calculator',
   'oz-to-cups-converter',
+  'gallon-calculator',
 ] as const;
 
 const STATIC_PATHS = [

@@ -55,6 +55,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PoundsAndOuncesCalculator: () =>
     import('@/tools/calculators/pounds-and-ounces/detail'),
   OzToCupsConverter: () => import('@/tools/calculators/oz-to-cups/detail'),
+  GallonCalculator: () => import('@/tools/calculators/gallon/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

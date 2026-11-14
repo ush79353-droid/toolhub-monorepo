@@ -272,6 +272,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OzToCupsConverter,
     })),
   ),
+  GallonCalculator: lazyTool(() =>
+    import('@/tools/calculators/gallon/GallonCalculator').then((mod) => ({
+      default: mod.GallonCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
