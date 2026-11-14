@@ -37,6 +37,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'inches-to-fraction-calculator',
   'area-converter',
   'length-converter',
+  'ares-to-cent-converter',
 ] as const;
 
 const STATIC_PATHS = [

@@ -424,6 +424,12 @@
 - **Important Files:** `frontend/src/tools/calculators/inches-to-fraction/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-inches-to-fraction-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` and module eslint passed. Backend `tool.key.ts` self-check passed. Mongo record `6af46f17a27d8d1d4e990b8b` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/inches-to-fraction-calculator` shows 1 3/8 inches. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.
 
+### 2026-11-14 — Add Ares to Cent Converter
+- **Summary:** Shipped a bidirectional ares ↔ cents land-area converter on the existing catalog slug `ares-to-cent-converter`. Exact factors from 1 are = 100 m² and 1 cent = 1/100 international acre (40.468564224 m²). Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
+- **Example:** 5 ares ≈ 12.3552690734 cents; 10 cents = 4.0468564224 ares; 1 are ≈ 2.47105381467 cents.
+- **Important Files:** `frontend/src/tools/calculators/ares-to-cent/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-ares-to-cent-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b79` assigned (`isDeveloped: true`, `isActive: false`, `indexable: false`, `isFeatured: false`). Public `/tools/ares-to-cent-converter` correctly 404s while inactive.
+
 ### 2026-11-14 — Add Length Converter
 - **Summary:** Shipped a six-field length converter on the existing catalog slug `length-converter`. Twenty-five metric, imperial, nautical, and scientific units convert through canonical meters. All fields are editable; unit changes preserve physical length. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 100 m = 0.1 km = 10,000 cm ≈ 328.083989501 ft ≈ 3937.00787402 in ≈ 0.0621371192 mi; 1 mi = 1609.344 m; 1 nmi = 1852 m; 1 AU = 149597870700 m.

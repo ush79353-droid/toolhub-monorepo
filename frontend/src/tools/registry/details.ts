@@ -29,6 +29,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InchesToFractionCalculator: () => import('@/tools/calculators/inches-to-fraction/detail'),
   AreaConverter: () => import('@/tools/calculators/area-converter/detail'),
   LengthConverter: () => import('@/tools/calculators/length-converter/detail'),
+  AresToCentConverter: () => import('@/tools/calculators/ares-to-cent/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

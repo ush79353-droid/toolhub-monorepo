@@ -145,6 +145,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LengthConverter,
     })),
   ),
+  AresToCentConverter: lazyTool(() =>
+    import('@/tools/calculators/ares-to-cent/AresToCentCalculator').then((mod) => ({
+      default: mod.AresToCentConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
