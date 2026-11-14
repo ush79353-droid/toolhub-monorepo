@@ -199,6 +199,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.YardsToAcresCalculator,
     })),
   ),
+  CcfToGallonsConversion: lazyTool(() =>
+    import('@/tools/calculators/ccf-to-gallons/CcfToGallonsConversion').then((mod) => ({
+      default: mod.CcfToGallonsConversion,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
