@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Profitability Index Calculator (Screenshot-First)
+- **Summary:** Shipped Profitability Index Calculator on existing catalog slug `profitability-index-calculator` (`ProfitabilityIndexCalculator`, catalog `6af46f0fa27d8d1d4e9900b2`). PI = PV ÷ investment; compact interpretation. Denomination currency (PKR). Omega UI. Activated.
+- **Important Files:** `frontend/src/tools/calculators/profitability-index/*`, registry, `sitemap.ts`, `tool.key.ts`, `assign-profitability-index-tool.ts`, brain docs.
+- **Verification:** MongoDB activated. Lint/builds/browser/tests omitted per user.
+
+
 ### 2026-11-15 — Add ROAS Calculator (Screenshot-First)
 - **Summary:** Shipped ROAS Calculator on existing catalog slug `roas-calculator` (`RoasCalculator`, catalog `6af46f0fa27d8d1d4e9900b5`). Ad spend, know-revenue Yes/No (default Yes), ad revenue → ROAS %; collapsed ad-only ROI (not overall business profit). Denomination currency (PKR). Omega UI. Shared shell, SEO, embed.
 - **Example:** Spend PKR 10,000 / revenue PKR 40,000 → ROAS 400% (4×); ad-only ROI 300%.

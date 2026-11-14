@@ -98,6 +98,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AccumulatedDepreciationCalculator',
   'AttritionRateCalculator',
   'BusinessLoanCalculator',
+  'ProfitabilityIndexCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
   'SaasLifetimeValueCalculator',
@@ -223,10 +224,12 @@ if (isDirect) {
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
     !isApprovedComponentKey('AttritionRateCalculator') ||
     !isApprovedComponentKey('BusinessLoanCalculator') ||
+    !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
     !isApprovedComponentKey('RevenuePerEmployeeCalculator') ||
     !isApprovedComponentKey('RoasCalculator') ||
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
+    !isApprovedComponentKey('SellThroughRateCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

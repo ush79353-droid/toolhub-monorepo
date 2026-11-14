@@ -115,6 +115,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/attrition-rate/detail'),
   BusinessLoanCalculator: () =>
     import('@/tools/calculators/business-loan/detail'),
+  ProfitabilityIndexCalculator: () =>
+    import('@/tools/calculators/profitability-index/detail'),
   RevenuePerEmployeeCalculator: () =>
     import('@/tools/calculators/revenue-per-employee/detail'),
   RoasCalculator: () => import('@/tools/calculators/roas/detail'),

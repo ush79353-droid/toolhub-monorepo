@@ -96,6 +96,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AccumulatedDepreciationCalculator',
   'AttritionRateCalculator',
   'BusinessLoanCalculator',
+  'ProfitabilityIndexCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
   'SaasLifetimeValueCalculator',
@@ -208,10 +209,12 @@ export const REGISTERED_COMPONENT_KEYS = [
   'AccumulatedDepreciationCalculator',
   'AttritionRateCalculator',
   'BusinessLoanCalculator',
+  'ProfitabilityIndexCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
+  'SellThroughRateCalculator',
 ] as const;
 
 export type RegisteredComponentKey = (typeof REGISTERED_COMPONENT_KEYS)[number];

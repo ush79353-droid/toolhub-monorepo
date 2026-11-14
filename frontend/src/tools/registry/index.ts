@@ -527,6 +527,12 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/business-loan/BusinessLoanCalculator').then((mod) => ({
       default: mod.BusinessLoanCalculator,
     })),
+  ProfitabilityIndexCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/profitability-index/ProfitabilityIndexCalculator'
+    ).then((mod) => ({
+      default: mod.ProfitabilityIndexCalculator,
+    })),
   ),
   RevenuePerEmployeeCalculator: lazyTool(() =>
     import(

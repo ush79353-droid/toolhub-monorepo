@@ -108,6 +108,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'accumulated-depreciation-calculator',
   'attrition-rate-calculator',
   'business-loan-calculator',
+  'profitability-index-calculator',
   'revenue-per-employee-calculator',
   'roas-calculator',
   'saas-lifetime-value-calculator',
