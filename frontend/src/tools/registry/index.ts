@@ -120,6 +120,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AcresToSquareMilesCalculator,
     })),
   ),
+  HeightInInchesCalculator: lazyTool(() =>
+    import('@/tools/calculators/height-in-inches/HeightInInchesCalculator').then((mod) => ({
+      default: mod.HeightInInchesCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
