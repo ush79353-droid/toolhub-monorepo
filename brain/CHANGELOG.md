@@ -514,6 +514,12 @@
 - **Important Files:** `frontend/src/tools/calculators/ml-to-cups/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-ml-to-cups-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b57` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/ml-to-cups-converter` shows 2 US cups = 473.176473 mL.
 
+### 2026-11-14 — Add Decagram to Gram Converter
+- **Summary:** Shipped a bidirectional decagram ↔ gram metric mass converter on the existing catalog slug `decagram-to-gram-converter`. Exact factor `1 dag = 10 g`; more-options for µg/mg/cg/dg/g/dag/hg/kg/t; educational distinction between dag and dg. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 3 dag = 30 g; 125 g = 12.5 dag; 5 dag = 50 g = 0.05 kg.
+- **Important Files:** `frontend/src/tools/calculators/decagram-to-gram/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-decagram-to-gram-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b36` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/decagram-to-gram-converter` shows 3 dag = 30 g.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
