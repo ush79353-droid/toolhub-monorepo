@@ -544,6 +544,12 @@
 - **Important Files:** `frontend/src/tools/calculators/oz-to-cups/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-oz-to-cups-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b63` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/oz-to-cups-converter` shows 8 US fl oz = 1 cup.
 
+### 2026-11-14 — Add Gallon Calculator
+- **Summary:** Shipped a multi-field gallon/volume converter plus water-weight mode on the existing catalog slug `gallon-calculator`. Exact US liquid (3.785411784 L), Imperial (4.54609 L), and US dry (4.40488377086 L) gallons; metric, cubic, qt/pt/fl oz/cups/spoons via canonical liters; water mass requires density (default ≈1 kg/L labeled approximate). Publishing flags preserved; Gallon Calculator pillar preserved; `subPillar` null.
+- **Example:** 1 US gal = 3.785411784 L = 4 qt = 8 pt = 128 fl oz = 16 cups ≈ 0.13368 ft³; at 1 kg/L → ≈ 3.7854 kg ≈ 8.3454 lb.
+- **Important Files:** `frontend/src/tools/calculators/gallon/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-gallon-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990ac4` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e1` preserved; `subPillar` null). Browser: `/tools/gallon-calculator` shows 1 US gal with synced liters/qt/pt/fl oz/cups.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
