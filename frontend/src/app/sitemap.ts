@@ -83,6 +83,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'degrees-minutes-seconds-calculator',
   'scale-calculator',
   'billion-to-trillion-converter',
+  'million-to-lakh-converter',
 ] as const;
 
 const STATIC_PATHS = [

@@ -395,6 +395,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BillionToTrillionConverter,
     })),
   ),
+  MillionToLakhConverter: lazyTool(() =>
+    import('@/tools/calculators/million-to-lakh/MillionToLakhCalculator').then((mod) => ({
+      default: mod.MillionToLakhConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

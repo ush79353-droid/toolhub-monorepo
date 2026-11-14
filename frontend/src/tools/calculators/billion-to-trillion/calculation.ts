@@ -63,7 +63,7 @@ export function divideByInt(value: DecimalValue, divisor: number): DecimalValue 
   // value = digits * 10^exp / absDiv
   // Expand digits with enough trailing zeros for exact division when possible,
   // otherwise keep remainder as fractional decimal digits (up to 24 places).
-  let digits = value.digits;
+  const digits = value.digits;
   let exp = value.exp;
   let big = BigInt(digits);
   const div = BigInt(absDiv);
