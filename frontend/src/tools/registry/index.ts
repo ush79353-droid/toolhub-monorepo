@@ -429,6 +429,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CroreToMillionConverter,
     })),
   ),
+  NumberToMillionConverter: lazyTool(() =>
+    import('@/tools/calculators/number-to-million/NumberToMillionCalculator').then((mod) => ({
+      default: mod.NumberToMillionConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
