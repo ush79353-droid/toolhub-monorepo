@@ -307,6 +307,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KgToGallonsConverter,
     })),
   ),
+  ForceConverter: lazyTool(() =>
+    import('@/tools/calculators/force-converter/ForceConverterCalculator').then((mod) => ({
+      default: mod.ForceConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

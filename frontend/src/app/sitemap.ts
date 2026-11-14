@@ -67,6 +67,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'grams-to-ounces-calculator',
   'weight-converter',
   'kg-to-gallons-converter',
+  'force-converter',
 ] as const;
 
 const STATIC_PATHS = [

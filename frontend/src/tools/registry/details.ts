@@ -62,6 +62,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GramsToOuncesCalculator: () => import('@/tools/calculators/grams-to-ounces/detail'),
   WeightConverter: () => import('@/tools/calculators/weight-converter/detail'),
   KgToGallonsConverter: () => import('@/tools/calculators/kg-to-gallons/detail'),
+  ForceConverter: () => import('@/tools/calculators/force-converter/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

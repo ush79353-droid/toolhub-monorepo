@@ -1,12 +1,7 @@
 import type { FAQItem } from '@/components/shared/FAQAccordion';
 import type { TableOfContentsItem } from '@/tools/calculators/auto-loan/TableOfContents';
 import { convertMass, formatMass, fromKilograms } from './calculation';
-import {
-  KG_PER_OUNCE,
-  KG_PER_POUND,
-  KG_PER_STONE,
-  KG_PER_TROY_OUNCE,
-} from './types';
+import { KG_PER_OUNCE, KG_PER_POUND, KG_PER_STONE } from './types';
 
 export const WEIGHT_CONVERTER_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'introduction', label: 'Introduction' },
