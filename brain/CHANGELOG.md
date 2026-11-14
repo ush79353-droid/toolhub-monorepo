@@ -760,6 +760,12 @@
 - **Important Files:** `frontend/src/tools/calculators/binary-to-octal/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-binary-to-octal-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990be3` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null; meta 70/148).
 
+### 2026-11-14 — Add Hexadecimal Converter
+- **Summary:** Shipped three-section hexadecimal converter on existing catalog slug `hexadecimal-converter`. Independent decimal→hex (BigInt), binary→hex (4-bit nibbles), and hex→decimal/binary; uppercase hex output; expandable steps; non-negative integers only. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 255₁₀ = FF₁₆; 11010110₂ = D6₁₆; 1A3F₁₆ = 6719₁₀ = 1101000111111₂; 2⁶⁴ round-trip beyond `Number.MAX_SAFE_INTEGER`.
+- **Important Files:** `frontend/src/tools/calculators/hexadecimal/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-hexadecimal-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990be8` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null; meta 65/145).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
