@@ -74,6 +74,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ScaleCalculator',
   'BillionToTrillionConverter',
   'MillionToLakhConverter',
+  'CentsToEurosCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -170,6 +171,7 @@ if (isDirect) {
     !isApprovedComponentKey('ScaleCalculator') ||
     !isApprovedComponentKey('BillionToTrillionConverter') ||
     !isApprovedComponentKey('MillionToLakhConverter') ||
+    !isApprovedComponentKey('CentsToEurosCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
