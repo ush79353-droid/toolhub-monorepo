@@ -277,6 +277,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GallonCalculator,
     })),
   ),
+  QuartsToPoundsConverter: lazyTool(() =>
+    import('@/tools/calculators/quarts-to-pounds/QuartsToPoundsCalculator').then((mod) => ({
+      default: mod.QuartsToPoundsConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
