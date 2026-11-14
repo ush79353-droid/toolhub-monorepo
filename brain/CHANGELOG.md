@@ -640,6 +640,12 @@
 - **Important Files:** `frontend/src/tools/calculators/newton-meter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-newton-meter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990ae1` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e3` preserved; `subPillar` null). Browser: `/tools/newton-meter-calculator` shows 10 N·m ≈ 7.3756214928 ft·lbf.
 
+### 2026-11-14 — Add Torr to atm Conversion
+- **Summary:** Shipped bidirectional Torr ↔ atm pressure conversion on existing catalog slug `torr-to-atm-conversion`. Primary fields use exact `1 atm = 760 Torr`; expandable other units reuse the Pressure Conversion pascal engine (Pa, kPa, MPa, bar, mbar, psi, mmHg, inHg). Torr is not treated as identical to conventional mmHg. Publishing flags preserved; `isDeveloped` set true after verification. Live Mongo ATM Conversion pillar is `6af451d1a27d8d1d4e98f9e5` (task brief typo had `…d0…`).
+- **Example:** 760 Torr = 1 atm; 380 Torr = 0.5 atm; 2 atm = 1520 Torr.
+- **Important Files:** `frontend/src/tools/calculators/torr-to-atm/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-torr-to-atm-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module (existing `<img>` warnings elsewhere). Mongo record `6af46f17a27d8d1d4e990af1` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d1a27d8d1d4e98f9e5` preserved; `subPillar` null). Also fixed missing `IndependentKind` import in `torque-to-hp/calculation.ts` that blocked type-check.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

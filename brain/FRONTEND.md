@@ -190,4 +190,5 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 - `src/tools/calculators/lbs-to-newtons/`: Lbs to Newtons Converter (`LbsToNewtonsConverter`, slug `lbs-to-newtons-converter`). Bidirectional lbf ↔ N via Force Converter engine; guide; unit tests.
 - `src/tools/calculators/torque-to-hp/`: Torque to HP Calculator (`TorqueToHpCalculator`, slug `torque-to-hp-calculator`). Shaft power P = τω with mechanical/metric hp; reverse modes; guide; unit tests.
 - `src/tools/calculators/newton-meter/`: Newton Meter Calculator (`NewtonMeterCalculator`, slug `newton-meter-calculator`). Bidirectional N·m ↔ ft·lbf via shared torque engine; unit selectors; guide; unit tests.
+- `src/tools/calculators/torr-to-atm/`: Torr to atm Conversion (`TorrToAtmConverter`, slug `torr-to-atm-conversion`). Exact Torr↔atm (760); other units via Pressure Conversion; guide; unit tests.
 - `src/tools/calculators/affo/`: AFFO Calculator (`AFFOCalculator`, slug `affo-calculator`). Simplified FFO and a labeled AFFO estimate for one reporting period. Interest income is not adjusted twice. Display currency only. Guide in `detail.tsx`.
