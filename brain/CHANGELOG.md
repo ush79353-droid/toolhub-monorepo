@@ -556,6 +556,12 @@
 - **Important Files:** `frontend/src/tools/calculators/quarts-to-pounds/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-quarts-to-pounds-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b6c` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/quarts-to-pounds-conversion` shows 1 US liquid qt ≈ 2.08635 lb.
 
+### 2026-11-14 — Add Gallons to Pounds Converter
+- **Summary:** Shipped a density-based gallons ↔ pounds converter on the existing catalog slug `gallons-to-pounds-converter`. Exact US liquid (3.785411784 L), Imperial (4.54609 L), and US dry gallons; water ≈1 kg/L preset only; Show Liquid Density checkbox; more-options. Publishing flags preserved with `isActive: false`; Gallon Calculator pillar preserved; `subPillar` null.
+- **Example:** 1 US liquid gal water @ 1 kg/L ≈ 8.3454 lb; 5 gal @ 0.8 kg/L → 15.141647136 kg; 10 lb → ≈ 1.19826 US liquid gal.
+- **Important Files:** `frontend/src/tools/calculators/gallons-to-pounds/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-gallons-to-pounds-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990acb` assigned (`isDeveloped: true`, `isActive: false`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e1` preserved; `subPillar` null). Public `/tools/gallons-to-pounds-converter` correctly 404s while inactive.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
