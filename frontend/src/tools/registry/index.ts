@@ -942,6 +942,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EffectiveAnnualYieldCalculator,
     })),
   ),
+  EffectiveInterestRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/effective-interest-rate/EffectiveInterestRateCalculator'
+    ).then((mod) => ({
+      default: mod.EffectiveInterestRateCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

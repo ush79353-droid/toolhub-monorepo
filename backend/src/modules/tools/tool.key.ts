@@ -175,6 +175,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CompoundInterestRateCalculator',
   'ContinuousCompoundInterestCalculator',
   'EffectiveAnnualYieldCalculator',
+  'EffectiveInterestRateCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -372,6 +373,7 @@ if (isDirect) {
     !isApprovedComponentKey('CompoundInterestRateCalculator') ||
     !isApprovedComponentKey('ContinuousCompoundInterestCalculator') ||
     !isApprovedComponentKey('EffectiveAnnualYieldCalculator') ||
+    !isApprovedComponentKey('EffectiveInterestRateCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

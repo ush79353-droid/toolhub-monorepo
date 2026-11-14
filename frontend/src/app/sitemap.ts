@@ -185,6 +185,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'compound-interest-rate-calculator',
   'continuous-compound-interest-calculator',
   'effective-annual-yield-calculator',
+  'effective-interest-rate-calculator',
 ] as const;
 
 const STATIC_PATHS = [

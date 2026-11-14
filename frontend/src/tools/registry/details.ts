@@ -262,6 +262,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/discount-rate/detail'),
   EffectiveAnnualYieldCalculator: () =>
     import('@/tools/calculators/effective-annual-yield/detail'),
+  EffectiveInterestRateCalculator: () =>
+    import('@/tools/calculators/effective-interest-rate/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
