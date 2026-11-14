@@ -107,6 +107,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CapacitanceConverter: () => import('@/tools/calculators/capacitance/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
+  AbsencePercentageCalculator: () =>
+    import('@/tools/calculators/absence-percentage/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

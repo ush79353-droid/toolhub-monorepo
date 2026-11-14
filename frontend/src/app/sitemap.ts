@@ -104,6 +104,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mbps-to-gbps-converter',
   'capacitance-converter',
   'additional-funds-needed-calculator',
+  'absence-percentage-calculator',
 ] as const;
 
 const STATIC_PATHS = [

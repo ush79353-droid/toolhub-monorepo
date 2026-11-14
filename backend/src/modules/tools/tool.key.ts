@@ -94,6 +94,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MbpsToGbpsConverter',
   'CapacitanceConverter',
   'AdditionalFundsNeededCalculator',
+  'AbsencePercentageCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -210,6 +211,7 @@ if (isDirect) {
     !isApprovedComponentKey('MbpsToGbpsConverter') ||
     !isApprovedComponentKey('CapacitanceConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
+    !isApprovedComponentKey('AbsencePercentageCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

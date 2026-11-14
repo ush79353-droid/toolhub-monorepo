@@ -506,6 +506,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  AbsencePercentageCalculator: lazyTool(() =>
+    import('@/tools/calculators/absence-percentage/AbsencePercentageCalculator').then((mod) => ({
+      default: mod.AbsencePercentageCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
