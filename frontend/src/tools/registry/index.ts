@@ -302,6 +302,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WeightConverter,
     })),
   ),
+  KgToGallonsConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-gallons/KgToGallonsCalculator').then((mod) => ({
+      default: mod.KgToGallonsConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
