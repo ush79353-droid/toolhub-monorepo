@@ -766,6 +766,12 @@
 - **Important Files:** `frontend/src/tools/calculators/hexadecimal/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-hexadecimal-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990be8` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null; meta 65/145).
 
+### 2026-11-14 — Add Decimal to Hexadecimal Converter
+- **Summary:** Shipped bidirectional decimal↔hex converter on existing catalog slug `decimal-to-hexadecimal-converter`. Signed 16-bit range (−32768…32767); negatives as four-digit two’s complement; optional fixed-width padding; reverse hex→decimal with unsigned vs signed-16 interpretation. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 255₁₀ = FF₁₆; −10₁₀ = FFF6₁₆; FFFF₁₆ = 65535 (unsigned) or −1 (signed 16-bit); 123₁₀ = 7B₁₆.
+- **Important Files:** `frontend/src/tools/calculators/decimal-to-hexadecimal/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-decimal-to-hexadecimal-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990be4` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null; meta 52/151).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
