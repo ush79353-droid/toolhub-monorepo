@@ -92,6 +92,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NumberToMillionConverter: () => import('@/tools/calculators/number-to-million/detail'),
   MillionToBillionConverter: () =>
     import('@/tools/calculators/million-to-billion/detail'),
+  BinaryConverter: () => import('@/tools/calculators/binary/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

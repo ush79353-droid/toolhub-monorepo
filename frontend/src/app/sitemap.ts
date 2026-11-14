@@ -91,6 +91,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'crore-to-million-converter',
   'number-to-million-converter',
   'million-to-billion-converter',
+  'binary-converter',
 ] as const;
 
 const STATIC_PATHS = [

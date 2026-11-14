@@ -439,6 +439,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MillionToBillionConverter,
     })),
   ),
+  BinaryConverter: lazyTool(() =>
+    import('@/tools/calculators/binary/BinaryCalculator').then((mod) => ({
+      default: mod.BinaryConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
