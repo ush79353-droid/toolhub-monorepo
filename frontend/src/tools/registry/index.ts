@@ -775,6 +775,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EarCalculator,
     })),
   ),
+  EquivalentRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/equivalent-rate/EquivalentRateCalculator'
+    ).then((mod) => ({
+      default: mod.EquivalentRateCalculator,
+    })),
+  ),
   EffectiveCorporateTaxRateCalculator: lazyTool(() =>
     import('@/tools/calculators/effective-corporate-tax-rate/EffectiveCorporateTaxRateCalculator').then((mod) => ({
       default: mod.EffectiveCorporateTaxRateCalculator,
@@ -1019,6 +1026,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   InvestmentCalculator: lazyTool(() =>
     import('@/tools/calculators/investment/InvestmentCalculator').then((mod) => ({
       default: mod.InvestmentCalculator,
+    })),
+  ),
+  InvestmentFeeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/investment-fee/InvestmentFeeCalculator'
+    ).then((mod) => ({
+      default: mod.InvestmentFeeCalculator,
     })),
   ),
 };

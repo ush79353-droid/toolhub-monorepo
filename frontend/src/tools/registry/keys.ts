@@ -142,6 +142,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DaysOffCalculator',
   'DirectMaterialPriceVarianceCalculator',
   'EarCalculator',
+  'EquivalentRateCalculator',
   'EffectiveCorporateTaxRateCalculator',
   'EmvCalculator',
   'EvmCalculator',
@@ -186,6 +187,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InterestRateCalculator',
   'IrrCalculator',
   'InvestmentCalculator',
+  'InvestmentFeeCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -339,6 +341,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'DaysOffCalculator',
   'DirectMaterialPriceVarianceCalculator',
   'EarCalculator',
+  'EquivalentRateCalculator',
   'EffectiveCorporateTaxRateCalculator',
   'EmvCalculator',
   'EvmCalculator',
@@ -383,6 +386,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'InterestRateCalculator',
   'IrrCalculator',
   'InvestmentCalculator',
+  'InvestmentFeeCalculator',
 ] as const;
 
 export type RegisteredComponentKey = (typeof REGISTERED_COMPONENT_KEYS)[number];

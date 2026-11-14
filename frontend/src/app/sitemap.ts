@@ -153,6 +153,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'days-off-calculator',
   'direct-material-price-variance-calculator',
   'ear-calculator',
+  'equivalent-rate-calculator-aer',
   'effective-corporate-tax-rate-calculator',
   'emv-calculator-expected-monetary-value',
   'evm-calculator',
@@ -198,6 +199,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'interest-rate-calculator',
   'irr-calculator',
   'investment-calculator',
+  'investment-fee-calculator',
 ] as const;
 
 const STATIC_PATHS = [

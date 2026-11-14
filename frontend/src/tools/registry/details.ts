@@ -200,6 +200,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DirectMaterialPriceVarianceCalculator: () =>
     import('@/tools/calculators/direct-material-price-variance/detail'),
   EarCalculator: () => import('@/tools/calculators/ear/detail'),
+  EquivalentRateCalculator: () =>
+    import('@/tools/calculators/equivalent-rate/detail'),
   EffectiveCorporateTaxRateCalculator: () =>
     import('@/tools/calculators/effective-corporate-tax-rate/detail'),
   EmvCalculator: () =>
@@ -285,6 +287,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/interest-rate/detail'),
   IrrCalculator: () => import('@/tools/calculators/irr/detail'),
   InvestmentCalculator: () => import('@/tools/calculators/investment/detail'),
+  InvestmentFeeCalculator: () =>
+    import('@/tools/calculators/investment-fee/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
