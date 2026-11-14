@@ -234,3 +234,4 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 - `src/tools/calculators/bitcoin-etf/`: Bitcoin ETF Calculator (`BitcoinEtfCalculator`, slug `bitcoin-etf-calculator`). Custom expense ratio, compounding FV, cost estimate; denomination currency; Omega UI; guide.
 - `src/tools/calculators/tenure/`: Tenure Calculator (`TenureCalculator`, slug `tenure-calculator`). Average tenure from combined service ÷ employees; calendar specific duration; Omega UI; guide.
 - `src/tools/calculators/annualized-return/`: Annualized Return Calculator (`AnnualizedReturnCalculator`, slug `annualized-return-calculator`). Total return % or beginning/ending values → annualized %; denomination currency on values mode; Omega UI; guide.
+- `src/tools/calculators/cagr/`: CAGR Calculator (`CagrCalculator`, slug `cagr-calculator`). Reverse-solve CAGR/periods/initial/final; optional change-in-value; denomination currency; Omega UI; guide.

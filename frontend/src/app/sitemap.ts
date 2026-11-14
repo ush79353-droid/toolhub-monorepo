@@ -136,6 +136,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'burndown-chart-calculator',
   'business-budget-calculator',
   'business-valuation-calculator',
+  'cagr-calculator',
   'churn-rate-calculator',
   'consulting-fees-calculator',
   'contribution-margin-calculator',

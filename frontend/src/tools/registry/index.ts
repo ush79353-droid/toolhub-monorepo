@@ -689,6 +689,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BusinessValuationCalculator,
     })),
   ),
+  CagrCalculator: lazyTool(() =>
+    import('@/tools/calculators/cagr/CagrCalculator').then((mod) => ({
+      default: mod.CagrCalculator,
+    })),
+  ),
   ChurnRateCalculator: lazyTool(() =>
     import('@/tools/calculators/churn-rate/ChurnRateCalculator').then((mod) => ({
       default: mod.ChurnRateCalculator,

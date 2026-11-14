@@ -168,6 +168,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/business-budget/detail'),
   BusinessValuationCalculator: () =>
     import('@/tools/calculators/business-valuation/detail'),
+  CagrCalculator: () => import('@/tools/calculators/cagr/detail'),
   ChurnRateCalculator: () =>
     import('@/tools/calculators/churn-rate/detail'),
   ConsultingFeesCalculator: () =>

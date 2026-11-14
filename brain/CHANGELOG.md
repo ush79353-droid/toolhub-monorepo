@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add CAGR Calculator (Screenshot-First)
+- **Summary:** Shipped CAGR Calculator on existing catalog row (slug shortened to `cagr-calculator`, `CagrCalculator`, catalog `6af46f0fa27d8d1d4e9900c5`). Four fields with reverse solve; optional collapsed change-in-value; denomination currency. Omega UI. Activated.
+- **Example:** Initial 10,000 / final 15,000 / 5 periods → CAGR ≈ 8.45%.
+- **Important Files:** `frontend/src/tools/calculators/cagr/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cagr-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Bitcoin ETF Calculator (Screenshot-First)
 - **Summary:** Shipped Bitcoin ETF Calculator on existing catalog slug `bitcoin-etf-calculator` (`BitcoinEtfCalculator`, catalog `6af46f0fa27d8d1d4e9900c4`). Custom ETF + manual expense ratio (no invented ticker fees), compounding FV, estimated expense fees + other costs. Denomination currency. Omega UI.
 - **Assumptions:** Annual compounding; returns are estimates not guarantees; no live prices; no verified ETF expense catalog in-repo.

@@ -126,6 +126,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BurndownChartCalculator',
   'BusinessBudgetCalculator',
   'BusinessValuationCalculator',
+  'CagrCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
   'ContributionMarginCalculator',
@@ -312,6 +313,7 @@ if (isDirect) {
     !isApprovedComponentKey('BurndownChartCalculator') ||
     !isApprovedComponentKey('BusinessBudgetCalculator') ||
     !isApprovedComponentKey('BusinessValuationCalculator') ||
+    !isApprovedComponentKey('CagrCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
     !isApprovedComponentKey('ConsultingFeesCalculator') ||
     !isApprovedComponentKey('ContributionMarginCalculator') ||
