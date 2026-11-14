@@ -130,6 +130,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AcreToAreConversionCalculator,
     })),
   ),
+  InchesToFractionCalculator: lazyTool(() =>
+    import('@/tools/calculators/inches-to-fraction/InchesToFractionCalculator').then((mod) => ({
+      default: mod.InchesToFractionCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

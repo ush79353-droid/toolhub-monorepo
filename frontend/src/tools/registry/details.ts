@@ -26,6 +26,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AcresToSquareMilesCalculator: () => import('@/tools/calculators/acres-to-square-miles/detail'),
   HeightInInchesCalculator: () => import('@/tools/calculators/height-in-inches/detail'),
   AcreToAreConversionCalculator: () => import('@/tools/calculators/acre-to-are/detail'),
+  InchesToFractionCalculator: () => import('@/tools/calculators/inches-to-fraction/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

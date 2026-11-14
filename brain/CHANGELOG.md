@@ -417,3 +417,9 @@
 - **Example:** 5 acres = 202.34282112 ares; 1 acre = 40.468564224 ares; 100 ares ≈ 2.47105381467 acres.
 - **Important Files:** `frontend/src/tools/calculators/acre-to-are/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-acre-to-are-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` and `npm run lint` passed (pre-existing `<img>` warnings only). Backend `tool.key.ts` self-check passed. Mongo record `6af46f17a27d8d1d4e990b75` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/acre-to-are-conversion` shows 5 ac = 202.34282112 a with guide and Embed. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.
+
+### 2026-11-14 — Add Inches to Fraction Calculator
+- **Summary:** Shipped a client-side inches ↔ fraction converter on the existing catalog slug `inches-to-fraction-calculator`. Parses decimals, fractions, and mixed numbers; rounds to 1/2–1/256 precision (default 1/16); other units use the original inch value. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1.375 → 1 3/8; 0.625 → 5/8; 3/8 → 0.375; 2 1/4 → 2.25; 1 in = 25.4 mm.
+- **Important Files:** `frontend/src/tools/calculators/inches-to-fraction/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-inches-to-fraction-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` and module eslint passed. Backend `tool.key.ts` self-check passed. Mongo record `6af46f17a27d8d1d4e990b8b` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/inches-to-fraction-calculator` shows 1 3/8 inches. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.
