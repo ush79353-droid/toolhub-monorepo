@@ -33,6 +33,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'feet-to-inches-calculator',
   'acres-to-square-miles-calculator',
   'height-in-inches-calculator',
+  'acre-to-are-conversion',
 ] as const;
 
 const STATIC_PATHS = [

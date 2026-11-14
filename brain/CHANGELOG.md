@@ -411,3 +411,9 @@
 - **Example:** 2 ft 4 in = 28 in = 71.12 cm; 5 ft 6 in = 66 in; 170 cm ≈ 66.9291 in; 1.75 m ≈ 68.8976 in.
 - **Important Files:** `frontend/src/tools/calculators/height-in-inches/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-height-in-inches-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` and `npm run lint` passed (pre-existing `<img>` warnings only). Backend `tool.key.ts` self-check passed. Mongo record `6af46f17a27d8d1d4e990b89` assigned (`isActive`, `isDeveloped`, `indexable`, embed on). Browser: `/tools/height-in-inches-calculator` shows 2 ft 4 in = 28 in with guide and Embed. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.
+
+### 2026-11-14 — Add Acre to Are Conversion
+- **Summary:** Shipped a client-side bidirectional acres ↔ ares converter on the existing catalog slug `acre-to-are-conversion`. Uses the exact factor 40.468564224 ares per acre. Publishing flags `isActive`, `indexable`, and `isFeatured` were preserved; `isDeveloped` was set true after verification.
+- **Example:** 5 acres = 202.34282112 ares; 1 acre = 40.468564224 ares; 100 ares ≈ 2.47105381467 acres.
+- **Important Files:** `frontend/src/tools/calculators/acre-to-are/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-acre-to-are-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` and `npm run lint` passed (pre-existing `<img>` warnings only). Backend `tool.key.ts` self-check passed. Mongo record `6af46f17a27d8d1d4e990b75` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/acre-to-are-conversion` shows 5 ac = 202.34282112 a with guide and Embed. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.

@@ -125,6 +125,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HeightInInchesCalculator,
     })),
   ),
+  AcreToAreConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/acre-to-are/AcreToAreCalculator').then((mod) => ({
+      default: mod.AcreToAreConversionCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

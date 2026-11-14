@@ -23,6 +23,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FeetToInchesCalculator',
   'AcresToSquareMilesCalculator',
   'HeightInInchesCalculator',
+  'AcreToAreConversionCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -68,6 +69,7 @@ if (isDirect) {
     !isApprovedComponentKey('FeetToInchesCalculator') ||
     !isApprovedComponentKey('AcresToSquareMilesCalculator') ||
     !isApprovedComponentKey('HeightInInchesCalculator') ||
+    !isApprovedComponentKey('AcreToAreConversionCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
