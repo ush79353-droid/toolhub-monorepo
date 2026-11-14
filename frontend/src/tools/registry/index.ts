@@ -542,6 +542,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SaasLifetimeValueCalculator,
     })),
   ),
+  SafetyStockCalculator: lazyTool(() =>
+    import('@/tools/calculators/safety-stock/SafetyStockCalculator').then((mod) => ({
+      default: mod.SafetyStockCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

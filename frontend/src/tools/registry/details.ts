@@ -119,6 +119,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/revenue-per-employee/detail'),
   SaasLifetimeValueCalculator: () =>
     import('@/tools/calculators/saas-lifetime-value/detail'),
+  SafetyStockCalculator: () =>
+    import('@/tools/calculators/safety-stock/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

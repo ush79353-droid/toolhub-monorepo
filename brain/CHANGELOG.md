@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Safety Stock Calculator (Screenshot-First)
+- **Summary:** Shipped Safety Stock Calculator on existing catalog slug `safety-stock-calculator` (`SafetyStockCalculator`, catalog `6af46f0fa27d8d1d4e99002f`). Basic section: max/avg daily usage + max/avg lead time (days) → safety stock and reorder point (ceil). Statistical section collapsed with note only (no invented inputs). Omega UI. Shared shell, SEO, embed.
+- **Example:** 100 / 10 / 70 / 7 → SS 510, ROP 1,000.
+- **Important Files:** `frontend/src/tools/calculators/safety-stock/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-safety-stock-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Formula self-check pass. Lint/builds/browser/unit-suite omitted per user.
+
 ### 2026-11-10 — Project Initialization & Independent App Restructure
 - **Commits:** `b36a6ee`, `fe6444e`, `684a7e3`, `37c0d96`, `5f378c9`, `488c43f`
 - **Summary:** Initialized ToolHub repository and migrated from an npm-workspace monorepo into completely independent `frontend/` (Next.js App Router) and `backend/` (Express + Mongoose) applications; configured root `.gitignore`.
