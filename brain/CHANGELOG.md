@@ -520,6 +520,12 @@
 - **Important Files:** `frontend/src/tools/calculators/decagram-to-gram/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-decagram-to-gram-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b36` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/decagram-to-gram-converter` shows 3 dag = 30 g.
 
+### 2026-11-14 — Add Pint to Pound Conversion
+- **Summary:** Shipped a density-based pint ↔ pound converter on the existing catalog slug `pint-to-pound-conversion`. Exact US liquid (473.176473 mL), imperial (568.26125 mL), and US dry (550.6104713575 mL) pint factors; exact avoirdupois pound (453.59237 g). Never assumes 1 pt = 1 lb. Water preset uses conventional ≈ 1 g/mL; milk/oil/honey/flour/sugar require custom density. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 1 US liquid pt @ 1 g/mL ≈ 1.04318 lb; 2 pt @ 0.8 g/mL ≈ 1.66908 lb; 1 lb @ 1 g/mL ≈ 0.95861 US liquid pt.
+- **Important Files:** `frontend/src/tools/calculators/pint-to-pound/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pint-to-pound-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b64` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/pint-to-pound-conversion` shows 1 US liquid pt ≈ 1.04318 lb.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
