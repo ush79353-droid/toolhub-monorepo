@@ -1,6 +1,7 @@
 # Current Project State (`CURRENT_STATE.md`)
 
 > **Primary Agent Starting Point.** Last verified: **2026-11-15** (Auto Loan is master Tool Detail Page; Revenue Per Employee Calculator live at `/tools/revenue-per-employee-calculator`).
+- **SaaS Lifetime Value Calculator (`/tools/saas-lifetime-value-calculator`):** Live client-side LTV calculator (`componentKey: 'SaasLifetimeValueCalculator'`, catalog `6af46f0fa27d8d1d4e9900b6`). Fields: ARPA (or recurring revenue ÷ accounts via checkbox), gross margin (default 100%), churn, account expansion (default 0), LTV output. Formula `((ARPA + expansion) × GM%) / churn%`. Zero churn → no finite estimate. Denomination currency. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Lint/builds/browser/automated tests omitted per delivery instructions.
 
 ---
 
