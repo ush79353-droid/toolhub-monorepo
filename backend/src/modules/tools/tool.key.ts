@@ -389,6 +389,7 @@ if (isDirect) {
     !isApprovedComponentKey('FutureValueCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
+    !isApprovedComponentKey('ImpermanentLossCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
