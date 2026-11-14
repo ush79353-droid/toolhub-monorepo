@@ -361,6 +361,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TorrToAtmConverter,
     })),
   ),
+  NmToFtLbsConverter: lazyTool(() =>
+    import('@/tools/calculators/nm-to-ft-lbs/NmToFtLbsCalculator').then((mod) => ({
+      default: mod.NmToFtLbsConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

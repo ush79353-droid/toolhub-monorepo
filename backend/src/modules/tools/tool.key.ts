@@ -67,6 +67,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TorqueToHpCalculator',
   'NewtonMeterCalculator',
   'TorrToAtmConverter',
+  'NmToFtLbsConverter',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -156,6 +157,7 @@ if (isDirect) {
     !isApprovedComponentKey('TorqueToHpCalculator') ||
     !isApprovedComponentKey('NewtonMeterCalculator') ||
     !isApprovedComponentKey('TorrToAtmConverter') ||
+    !isApprovedComponentKey('NmToFtLbsConverter') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

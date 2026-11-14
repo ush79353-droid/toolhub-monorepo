@@ -73,6 +73,18 @@ export function inLbsToNm(inchPounds: number): number {
   return inchPounds * NEWTON_METERS_PER_INCH_POUND;
 }
 
+export function nmToFtLbs(newtonMeters: number): number {
+  return newtonMeters / NEWTON_METERS_PER_FOOT_POUND;
+}
+
+export function ftLbsToNm(footPounds: number): number {
+  return footPounds * NEWTON_METERS_PER_FOOT_POUND;
+}
+
+/** Aliases matching task naming. */
+export const newtonMetersToFootPounds = nmToFtLbs;
+export const footPoundsToNewtonMeters = ftLbsToNm;
+
 /** Exact: ft·lbf = in·lbf / 12. */
 export function inchPoundsToFootPounds(inchPounds: number): number {
   return inchPounds / INCH_POUNDS_PER_FOOT_POUND;

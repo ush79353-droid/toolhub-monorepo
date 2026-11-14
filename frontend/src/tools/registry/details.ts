@@ -73,6 +73,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TorqueToHpCalculator: () => import('@/tools/calculators/torque-to-hp/detail'),
   NewtonMeterCalculator: () => import('@/tools/calculators/newton-meter/detail'),
   TorrToAtmConverter: () => import('@/tools/calculators/torr-to-atm/detail'),
+  NmToFtLbsConverter: () => import('@/tools/calculators/nm-to-ft-lbs/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
