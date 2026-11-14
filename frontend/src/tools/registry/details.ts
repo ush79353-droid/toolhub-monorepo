@@ -39,6 +39,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SquareKilometersToAcresConverter: () =>
     import('@/tools/calculators/square-kilometers-to-acres/detail'),
   FeetAndInchesCalculator: () => import('@/tools/calculators/feet-and-inches/detail'),
+  YardsToAcresCalculator: () => import('@/tools/calculators/yards-to-acres/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

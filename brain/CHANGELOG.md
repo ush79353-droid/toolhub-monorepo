@@ -460,6 +460,12 @@
 - **Important Files:** `frontend/src/tools/calculators/feet-and-inches/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-feet-and-inches-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990af3` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d1a27d8d1d4e98f9e6` / Feet converter preserved). Browser: `/tools/feet-and-inches-calculator` shows 5 ft 8 in + 2 ft 4 in = 8 ft 0 in.
 
+### 2026-11-14 — Add Yards to Acres Calculator
+- **Summary:** Shipped a bidirectional square-yards ↔ acres land-area converter on the existing catalog slug `yards-to-acres-calculator`. Exact factor `1 acre = 4840 yd²`; more-options for ft²/m²/km²/ha/a. Publishing flags preserved (`isActive` true); `isDeveloped` set true after verification. Yard Conversion pillar association left unchanged. Educational copy distinguishes linear yards from square yards.
+- **Example:** 9680 yd² = 2 acres; 4840 yd² = 1 acre; 2.5 acres = 12,100 yd².
+- **Important Files:** `frontend/src/tools/calculators/yards-to-acres/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-yards-to-acres-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990ad9` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e2` / Yard Conversion preserved). Browser: `/tools/yards-to-acres-calculator` shows 9680 yd² = 2 acres.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

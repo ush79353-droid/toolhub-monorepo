@@ -194,6 +194,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FeetAndInchesCalculator,
     })),
   ),
+  YardsToAcresCalculator: lazyTool(() =>
+    import('@/tools/calculators/yards-to-acres/YardsToAcresCalculator').then((mod) => ({
+      default: mod.YardsToAcresCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

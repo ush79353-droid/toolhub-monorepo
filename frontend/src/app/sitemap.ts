@@ -46,6 +46,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'decimeter-to-meter-converter',
   'square-kilometers-to-acres-conversion',
   'feet-and-inches-calculator',
+  'yards-to-acres-calculator',
 ] as const;
 
 const STATIC_PATHS = [
