@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-15** (Auto Loan is master Tool Detail Page; Bitcoin ETF Calculator live at `/tools/bitcoin-etf-calculator`).
+> **Primary Agent Starting Point.** Last verified: **2026-11-15** (Auto Loan is master Tool Detail Page; Compound Growth Calculator live at `/tools/compound-growth-calculator`).
 
 ---
 
@@ -138,6 +138,7 @@
 - **Annualized Rate of Return Calculator (`/tools/annualized-rate-of-return-calculator`):** Live client-side compounding annualizer (`componentKey: 'AnnualizedRateOfReturnCalculator'`, catalog `6af46f0fa27d8d1d4e990014`). Period radios + period rate % → annualized %. Blank rate start; Annual default; allow 0 and negatives to −100%. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests not run this delivery.
 - **Basis Point Calculator (`/tools/basis-point-calculator`):** Live client-side rate converter (`componentKey: 'BasisPointCalculator'`, catalog `6af46f0fa27d8d1d4e9900c3`). Linked decimal/percent/permille/bps + x bps of amount (denomination currency). Blank start. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests not run this delivery.
 - **Bitcoin ETF Calculator (`/tools/bitcoin-etf-calculator`):** Live client-side estimate (`componentKey: 'BitcoinEtfCalculator'`, catalog `6af46f0fa27d8d1d4e9900c4`). Custom ETF + manual expense ratio; effective return + FV + total costs (fees ≠ lost gains). Denomination currency. Estimates only. Omega UI. Activated.
+- **Compound Growth Calculator (`/tools/compound-growth-calculator`):** Live client-side compound growth (`componentKey: 'CompoundGrowthCalculator'`, catalog `6af46f0fa27d8d1d4e9900c9`). Contributions, chart, yearly breakdown. Denomination currency. Activated.
 - **Tenure Calculator (`/tools/tenure-calculator`):** Live client-side tenure calculator (`componentKey: 'TenureCalculator'`, catalog `6af46f0fa27d8d1d4e9900bb`). Average tenure = combined service ÷ employees (years); specific tenure = calendar end − start in years/months/days. Blank start; no currency. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests in `tenure/calculation.test.ts` (not run this delivery).
 - **Annualized Return Calculator (`/tools/annualized-return-calculator`):** Live client-side annualizer (`componentKey: 'AnnualizedReturnCalculator'`, catalog `6af46f0fa27d8d1d4e9900bf`). Total return % (default) or beginning/ending values + holding years → annualized %. Blank start; denomination currency on values mode only; complete loss (−100%) handled. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests in `annualized-return/calculation.test.ts` (not run this delivery).
 - **CAGR Calculator (`/tools/cagr-calculator`):** Live client-side CAGR solver (`componentKey: 'CagrCalculator'`, catalog `6af46f0fa27d8d1d4e9900c5`, slug shortened from `cagr-calculator-compound-annual-growth-rate`). Four fields with reverse solve; optional collapsed change-in-value; denomination currency. Blank start. Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Tests in `cagr/calculation.test.ts` (not run this delivery).

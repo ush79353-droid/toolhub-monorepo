@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Compound Growth Calculator (Screenshot-First)
+- **Summary:** Shipped Compound Growth Calculator on existing catalog slug `compound-growth-calculator` (`CompoundGrowthCalculator`, catalog `6af46f0fa27d8d1d4e9900c9`). Defaults match screenshot; period-by-period contributions; summary table; SVG balance chart; yearly breakdown disclosure. Denomination currency.
+- **Example (standard r/n):** 1,000 @ 8% monthly + 50/mo beginning × 20y → final ≈ 34,574.16 (growth ≈ 21,574.16). Screenshot ~38,916 may use a different undocumented convention.
+- **Important Files:** `frontend/src/tools/calculators/compound-growth/*`, registry, sitemap, tool.key, assign script, brain docs.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Compound Interest Calculator (Screenshot-First)
 - **Summary:** Shipped Compound Interest Calculator on existing catalog slug `compound-interest-calculator` (`CompoundInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff82`). Defaults 1000 / 8% / 20y / monthly; optional deposits; final balance + interest; balances views (bar/pie/table/cash details). Denomination currency. Omega UI. Activated.
 - **Example:** 1,000 at 8% for 20 years monthly → ≈ 4,926.80 final, ≈ 3,926.80 interest.
