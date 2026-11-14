@@ -484,6 +484,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DecimalToOctalConverter,
     })),
   ),
+  ByteConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/byte-conversion/ByteConversionCalculator').then((mod) => ({
+      default: mod.ByteConversionCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

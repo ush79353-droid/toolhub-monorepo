@@ -90,6 +90,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DecimalToHexConverter',
   'RomanNumeralsConverter',
   'DecimalToOctalConverter',
+  'ByteConversionCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -202,6 +203,7 @@ if (isDirect) {
     !isApprovedComponentKey('DecimalToHexConverter') ||
     !isApprovedComponentKey('RomanNumeralsConverter') ||
     !isApprovedComponentKey('DecimalToOctalConverter') ||
+    !isApprovedComponentKey('ByteConversionCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
