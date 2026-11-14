@@ -2,6 +2,7 @@ import {
   HP_UNIT_TO_W,
   TORQUE_UNIT_TO_NM,
   type HpUnit,
+  type IndependentKind,
   type PowerUnit,
   type SpeedUnit,
   type TorqueToHpInput,

@@ -356,6 +356,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NewtonMeterCalculator,
     })),
   ),
+  TorrToAtmConverter: lazyTool(() =>
+    import('@/tools/calculators/torr-to-atm/TorrToAtmCalculator').then((mod) => ({
+      default: mod.TorrToAtmConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
