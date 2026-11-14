@@ -58,6 +58,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'WeightConverter',
   'KgToGallonsConverter',
   'ForceConverter',
+  'NmToInLbsConverter',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -138,6 +139,7 @@ if (isDirect) {
     !isApprovedComponentKey('WeightConverter') ||
     !isApprovedComponentKey('KgToGallonsConverter') ||
     !isApprovedComponentKey('ForceConverter') ||
+    !isApprovedComponentKey('NmToInLbsConverter') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
