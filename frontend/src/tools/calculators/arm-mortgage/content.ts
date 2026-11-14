@@ -61,6 +61,16 @@ export const ARM_FAQS: readonly FAQItem[] = [
       'No. The index after the fixed period is not known today. Every rate after the initial note rate on this page is a user-defined assumption, then limited by the caps you entered. Contract maximums are shown separately from that assumption.',
   },
   {
+    question: 'What is a 10/1 ARM?',
+    answer:
+      'A 10/1 ARM keeps the initial interest rate fixed for the first 10 years (120 months) of the mortgage. After the 10-year introductory period, the interest rate adjusts once every 12 months for the remainder of the loan term, subject to the agreed rate caps and adjustment formula.',
+  },
+  {
+    question: 'How is the APR calculated on an adjustable-rate mortgage?',
+    answer:
+      'Two common APR conventions exist for ARMs: (1) Average Note Rate APR (the arithmetic mean interest rate across the full loan term based on expected adjustments and rate caps, e.g., 6.125%), and (2) Truth in Lending Actuarial APR (the internal rate of return on cash flows accounting for upfront finance charges and the time-value of money, e.g., 5.357%). Both figures are surfaced to give transparent comparison against lender disclosure sheets.',
+  },
+  {
     question: 'Do property tax, insurance, HOA, and PMI earn interest?',
     answer:
       'No. Those amounts are added to the estimated housing payment and are not part of the loan balance or the interest total. This calculator holds them constant and does not decide when mortgage insurance ends.',

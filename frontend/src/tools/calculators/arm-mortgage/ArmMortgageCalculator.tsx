@@ -41,19 +41,15 @@ export function ArmMortgageCalculator({
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
-        `Initial P&I: ${formatCurrencyValue(result.initialPaymentCents / 100, result.currency)}`,
-        `First reset payment (assumption): ${
-          result.firstAdjustedPaymentCents
-            ? formatCurrencyValue(result.firstAdjustedPaymentCents / 100, result.currency)
-            : 'n/a'
-        }`,
-        `Projected rate at first reset: ${
-          result.projectedRateAfterFirstReset === null ? 'n/a' : `${result.projectedRateAfterFirstReset.toFixed(3)}%`
-        }`,
-        `Maximum permitted rate: ${result.maximumPermittedRate.toFixed(3)}%`,
-        `Highest payment if caps bind: ${formatCurrencyValue(result.contractualMaxPaymentCents / 100, result.currency)}`,
-        `Total interest on this assumption: ${formatCurrencyValue(result.totalInterestCents / 100, result.currency)}`,
-        'Later rates are user assumptions, not a forecast.',
+        `Monthly Payment Range: ${formatCurrencyValue(result.minPaymentCents / 100, result.currency)} – ${formatCurrencyValue(result.maxPaymentCents / 100, result.currency)} / mo`,
+        `Estimated APR: ${result.averageRate.toFixed(3)}% (Actuarial: ${result.actuarialApr.toFixed(3)}%)`,
+        `Mortgage Term: ${result.termYears} years (${result.paymentCount} payments)`,
+        `Paid Interest: ${formatCurrencyValue(result.totalInterestCents / 100, result.currency)}`,
+        `Additional Costs: ${formatCurrencyValue(result.additionalCostsCents / 100, result.currency)}`,
+        `Total Payments: ${formatCurrencyValue(result.totalPaymentsCents / 100, result.currency)}`,
+        `Initial Payment: ${formatCurrencyValue(result.initialPaymentCents / 100, result.currency)} at ${result.initialRate.toFixed(3)}%`,
+        `Maximum Permitted Rate: ${result.maximumPermittedRate.toFixed(3)}%`,
+        'Estimates and projections based on user assumptions, not guaranteed loan quotes.',
       ].join('\n')
     : '';
 
