@@ -38,6 +38,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'area-converter',
   'length-converter',
   'ares-to-cent-converter',
+  'light-year-conversion',
 ] as const;
 
 const STATIC_PATHS = [

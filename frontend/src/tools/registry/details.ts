@@ -30,6 +30,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AreaConverter: () => import('@/tools/calculators/area-converter/detail'),
   LengthConverter: () => import('@/tools/calculators/length-converter/detail'),
   AresToCentConverter: () => import('@/tools/calculators/ares-to-cent/detail'),
+  LightYearConversion: () => import('@/tools/calculators/light-year-conversion/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

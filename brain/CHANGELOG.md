@@ -424,6 +424,12 @@
 - **Important Files:** `frontend/src/tools/calculators/inches-to-fraction/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-inches-to-fraction-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` and module eslint passed. Backend `tool.key.ts` self-check passed. Mongo record `6af46f17a27d8d1d4e990b8b` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/inches-to-fraction-calculator` shows 1 3/8 inches. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.
 
+### 2026-11-14 — Add Light Year Conversion
+- **Summary:** Shipped a four-field astronomical distance converter on the existing catalog slug `light-year-conversion`. Julian-year light-year (`c × 31,557,600 s`), exact AU, and approximate parsec via `(648000/π) AU`. Metric/imperial/astro sections with independent unit selectors. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
+- **Example:** 1 ly = 9,460,730,472,580.8 km ≈ 5.87862537318×10¹² mi ≈ 63,241.077 AU; 1 pc ≈ 3.26156 ly.
+- **Important Files:** `frontend/src/tools/calculators/light-year-conversion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-light-year-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b8e` assigned (`isDeveloped: true`, `isActive: false`, `indexable: false`, `isFeatured: false`). Public `/tools/light-year-conversion` correctly 404s while inactive.
+
 ### 2026-11-14 — Add Ares to Cent Converter
 - **Summary:** Shipped a bidirectional ares ↔ cents land-area converter on the existing catalog slug `ares-to-cent-converter`. Exact factors from 1 are = 100 m² and 1 cent = 1/100 international acre (40.468564224 m²). Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 5 ares ≈ 12.3552690734 cents; 10 cents = 4.0468564224 ares; 1 are ≈ 2.47105381467 cents.

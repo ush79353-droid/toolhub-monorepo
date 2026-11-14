@@ -150,6 +150,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AresToCentConverter,
     })),
   ),
+  LightYearConversion: lazyTool(() =>
+    import('@/tools/calculators/light-year-conversion/LightYearConversionCalculator').then(
+      (mod) => ({
+        default: mod.LightYearConversion,
+      })
+    )
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
