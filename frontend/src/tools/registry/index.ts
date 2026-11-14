@@ -287,6 +287,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GallonsToPoundsConverter,
     })),
   ),
+  VolumeConversion: lazyTool(() =>
+    import('@/tools/calculators/volume-conversion/VolumeConversionCalculator').then((mod) => ({
+      default: mod.VolumeConversion,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
