@@ -580,6 +580,12 @@
 - **Important Files:** `frontend/src/tools/calculators/weight-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-weight-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b74` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/weight-converter` shows 1 kg synced across fields.
 
+### 2026-11-14 — Add kg to Gallons Converter
+- **Summary:** Shipped a density-based kilograms ↔ gallons converter on the existing catalog slug `kg-to-gallons-converter`. Category/item selectors; verified density presets plus custom density; US liquid / Imperial / US dry gallons; bidirectional sync. Publishing flags preserved; Gallon Calculator pillar preserved; `subPillar` null.
+- **Example:** 1 kg water @ ≈1 kg/L ≈ 0.264172 US gal; 5 kg ≈ 1.32086 US gal; 1 US gal water ≈ 3.785411784 kg; 10 kg @ 0.8 kg/L → 12.5 L ≈ 3.30215 US gal.
+- **Important Files:** `frontend/src/tools/calculators/kg-to-gallons/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-kg-to-gallons-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990ace` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e1` preserved; `subPillar` null). Browser: `/tools/kg-to-gallons-converter` shows 1 kg ≈ 0.264172 US gal.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
