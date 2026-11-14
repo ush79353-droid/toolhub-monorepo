@@ -80,6 +80,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NumberToBillionConverter',
   'CroreToMillionConverter',
   'NumberToMillionConverter',
+  'MillionToBillionConverter',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -182,6 +183,7 @@ if (isDirect) {
     !isApprovedComponentKey('NumberToBillionConverter') ||
     !isApprovedComponentKey('CroreToMillionConverter') ||
     !isApprovedComponentKey('NumberToMillionConverter') ||
+    !isApprovedComponentKey('MillionToBillionConverter') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
