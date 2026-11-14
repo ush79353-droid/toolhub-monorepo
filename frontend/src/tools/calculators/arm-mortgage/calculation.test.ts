@@ -321,4 +321,170 @@ for (const structure of ['3/1', '5/1', '7/1', '10/1', '5/6', '7/6', '10/6'] as c
   assert.equal(a.payoffDate, '2056-01-01');
 }
 
+{
+  // Reference Scenario Parity Audit Test:
+  // Mortgage balance: 250,000, 20 years, 5% initial, 10/1 ARM, 0.5% expected adjustment, 8% rate cap, currency PKR.
+  const ref = calculateArmMortgage(
+    base({
+      balanceMode: 'balance',
+      mortgageBalance: 250000,
+      termYears: 20,
+      initialAnnualRate: 5.0,
+      structure: '10/1',
+      adjustmentMethod: 'expected-rate',
+      expectedAdjustment: 0.5,
+      rateCap: 8.0,
+      rateFloor: 0.0,
+      periodicCap: 2.0,
+      compounding: 'monthly',
+      upfrontFees: 0,
+      currency: 'PKR',
+    })
+  );
+
+  assert.equal(ref.initialPaymentCents, 164989); // PKR 1,649.89
+  assert.equal(ref.minPaymentCents, 164989); // PKR 1,649.89
+  assert.equal(ref.maxPaymentCents, 183107); // PKR 1,831.07
+  assert.equal(ref.averageRate, 6.125); // 6.125% average annual note rate (matching reference APR screenshot)
+  assert.equal(ref.actuarialApr, 5.3574); // 5.357% true actuarial cash-flow APR
+  assert.ok(Math.abs(ref.totalInterestCents - 16298332) <= 10); // ~PKR 162,983.32
+  assert.equal(ref.additionalCostsCents, 0); // PKR 0.00
+  assert.ok(Math.abs(ref.totalPaymentsCents - 41298332) <= 10); // ~PKR 412,983.32
+  assert.equal(ref.paymentCount, 240);
+  assert.equal(ref.fixedMonths, 120);
+  assert.equal(ref.adjustEveryMonths, 12);
+  assert.equal(ref.adjustmentMilestones.length, 20);
+
+  // Verify milestone progression
+  assert.equal(ref.adjustmentMilestones[9].rate, 5.0); // Year 10
+  assert.equal(ref.adjustmentMilestones[10].rate, 5.5); // Year 11
+  assert.equal(ref.adjustmentMilestones[11].rate, 6.0); // Year 12
+  assert.equal(ref.adjustmentMilestones[12].rate, 6.5); // Year 13
+  assert.equal(ref.adjustmentMilestones[13].rate, 7.0); // Year 14
+  assert.equal(ref.adjustmentMilestones[14].rate, 7.5); // Year 15
+  assert.equal(ref.adjustmentMilestones[15].rate, 8.0); // Year 16 (capped)
+  assert.equal(ref.adjustmentMilestones[19].rate, 8.0); // Year 20 (capped)
+}
+
+{
+  // 5/1 ARM with expected adjustment
+  const fiveOne = calculateArmMortgage(
+    base({
+      balanceMode: 'balance',
+      mortgageBalance: 300000,
+      termYears: 30,
+      initialAnnualRate: 6.0,
+      structure: '5/1',
+      adjustmentMethod: 'expected-rate',
+      expectedAdjustment: 1.0,
+      rateCap: 9.0,
+      rateFloor: 2.0,
+      compounding: 'monthly',
+      upfrontFees: 0,
+    })
+  );
+  assert.equal(fiveOne.fixedMonths, 60);
+  assert.equal(fiveOne.adjustEveryMonths, 12);
+  assert.equal(fiveOne.schedule[60].annualRate, 7.0);
+  assert.equal(fiveOne.schedule[72].annualRate, 8.0);
+  assert.equal(fiveOne.schedule[84].annualRate, 9.0);
+  assert.equal(fiveOne.schedule[96].annualRate, 9.0); // capped at 9.0
+}
+
+{
+  // 5/6 ARM: semiannual adjustments every 6 months
+  const semi = calculateArmMortgage(
+    base({
+      balanceMode: 'balance',
+      mortgageBalance: 200000,
+      termYears: 15,
+      initialAnnualRate: 4.5,
+      structure: '5/6',
+      adjustmentMethod: 'expected-rate',
+      expectedAdjustment: 0.25,
+      rateCap: 7.0,
+      compounding: 'monthly',
+    })
+  );
+  assert.equal(semi.fixedMonths, 60);
+  assert.equal(semi.adjustEveryMonths, 6);
+  assert.equal(semi.schedule[60].annualRate, 4.75);
+  assert.equal(semi.schedule[66].annualRate, 5.0);
+}
+
+{
+  // Canadian semi-annual compounding setting
+  const canadian = calculateArmMortgage(
+    base({
+      balanceMode: 'balance',
+      mortgageBalance: 250000,
+      termYears: 20,
+      initialAnnualRate: 5.0,
+      structure: '10/1',
+      compounding: 'semi-annual',
+    })
+  );
+  const us = calculateArmMortgage(
+    base({
+      balanceMode: 'balance',
+      mortgageBalance: 250000,
+      termYears: 20,
+      initialAnnualRate: 5.0,
+      structure: '10/1',
+      compounding: 'monthly',
+    })
+  );
+  // Semi-annual compounding has slightly lower effective monthly rate than nominal monthly
+  assert.ok(canadian.initialPaymentCents < us.initialPaymentCents);
+}
+
+{
+  // Nonzero upfront fees and finance charges
+  const withFees = calculateArmMortgage(
+    base({
+      balanceMode: 'balance',
+      mortgageBalance: 250000,
+      termYears: 20,
+      initialAnnualRate: 5.0,
+      structure: '10/1',
+      adjustmentMethod: 'expected-rate',
+      expectedAdjustment: 0.5,
+      rateCap: 8.0,
+      upfrontFees: 3000,
+    })
+  );
+  assert.equal(withFees.upfrontFeesCents, 300000);
+  assert.equal(withFees.additionalCostsCents, 300000);
+  assert.equal(withFees.totalPaymentsCents, withFees.totalInterestCents + withFees.totalPrincipalCents + 300000);
+  assert.ok(withFees.actuarialApr > 5.357); // APR increases due to upfront finance charges
+}
+
+{
+  // Validation checks for new inputs
+  const invalidBal = validateArmInput(
+    base({
+      balanceMode: 'balance',
+      mortgageBalance: -500,
+    })
+  );
+  assert.ok(invalidBal.errors.mortgageBalance);
+
+  const invalidCap = validateArmInput(
+    base({
+      adjustmentMethod: 'expected-rate',
+      rateCap: 3.0,
+      rateFloor: 5.0,
+    })
+  );
+  assert.ok(invalidCap.errors.rateCap);
+
+  const invalidAdj = validateArmInput(
+    base({
+      adjustmentMethod: 'expected-rate',
+      expectedAdjustment: -1,
+    })
+  );
+  assert.ok(invalidAdj.errors.expectedAdjustment);
+}
+
 console.log('arm mortgage calculation.test ok');
