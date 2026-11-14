@@ -75,6 +75,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CentsToEurosCalculator',
   'MillionToThousandConverter',
   'CroreToLakhConverter',
+  'NumberToBillionConverter',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -161,6 +162,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'CentsToEurosCalculator',
   'MillionToThousandConverter',
   'CroreToLakhConverter',
+  'NumberToBillionConverter',
 ] as const;
 
 export type RegisteredComponentKey = (typeof REGISTERED_COMPONENT_KEYS)[number];
