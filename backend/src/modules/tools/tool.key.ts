@@ -106,6 +106,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SalesCommissionCalculator',
   'SellThroughRateCalculator',
   'SmokersCtcCalculator',
+  'TurnoverRateCalculator',
   'WebsiteAdRevenueCalculator',
   'SoftwareContractValueCalculator',
   'YoutubeMoneyCalculator',
@@ -238,6 +239,7 @@ if (isDirect) {
     !isApprovedComponentKey('SalesCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     !isApprovedComponentKey('SmokersCtcCalculator') ||
+    !isApprovedComponentKey('TurnoverRateCalculator') ||
     !isApprovedComponentKey('WebsiteAdRevenueCalculator') ||
     !isApprovedComponentKey('SoftwareContractValueCalculator') ||
     !isApprovedComponentKey('YoutubeMoneyCalculator') ||

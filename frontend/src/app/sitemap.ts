@@ -116,6 +116,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sales-commission-calculator',
   'sell-through-rate-calculator',
   'smokers-ctc-calculator',
+  'turnover-rate-calculator',
   'website-ad-revenue-calculator',
   'software-contract-value-calculator',
   'youtube-money-calculator',

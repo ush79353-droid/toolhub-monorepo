@@ -577,6 +577,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SmokersCtcCalculator,
     })),
   ),
+  TurnoverRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/turnover-rate/TurnoverRateCalculator'
+    ).then((mod) => ({
+      default: mod.TurnoverRateCalculator,
+    })),
+  ),
   WebsiteAdRevenueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/website-ad-revenue/WebsiteAdRevenueCalculator'
