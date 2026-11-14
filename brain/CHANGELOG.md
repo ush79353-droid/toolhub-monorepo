@@ -784,6 +784,12 @@
 - **Important Files:** `frontend/src/tools/calculators/decimal-to-octal/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-decimal-to-octal-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990be5` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null; meta 46/147).
 
+### 2026-11-14 — Add Byte Conversion Calculator
+- **Summary:** Shipped interconnected byte/storage-unit converter on existing catalog slug `byte-conversion-calculator`. SI decimal prefixes (KB/MB/GB/TB/PB/EB = powers of 1000) stay distinct from IEC binary (KiB…EiB = powers of 1024); bits and nibbles included. Exact BigInt rational factors via shared decimal arithmetic; primary B/KB/MB/GB fields plus grouped extra-unit dropdown. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1000 B = 1 KB = 0.9765625 KiB = 8000 bit; 5 KiB = 5120 B = 5.12 KB; 1 bit = 0.125 B.
+- **Important Files:** `frontend/src/tools/calculators/byte-conversion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-byte-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990bc4` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null; meta 46/144).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
