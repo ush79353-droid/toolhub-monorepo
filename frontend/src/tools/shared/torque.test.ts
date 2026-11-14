@@ -1,12 +1,15 @@
 import assert from 'node:assert/strict';
 import {
+  INCH_POUNDS_PER_FOOT_POUND,
   METERS_PER_INCH,
   NEWTON_METERS_PER_FOOT_POUND,
   NEWTON_METERS_PER_INCH_POUND,
   NEWTON_METERS_PER_KGF_M,
   NEWTONS_PER_LBF,
+  footPoundsToInchPounds,
   formatTorque,
   inLbsToNm,
+  inchPoundsToFootPounds,
   nmToInLbs,
   otherTorqueUnitsFromNm,
 } from './torque';
@@ -45,7 +48,10 @@ assertClose(nmToInLbs(100), 100 / NEWTON_METERS_PER_INCH_POUND);
   assertClose(inLbsToNm(back), 10, 1e-12);
 }
 
+assert.equal(INCH_POUNDS_PER_FOOT_POUND, 12);
 assertClose(NEWTON_METERS_PER_FOOT_POUND / NEWTON_METERS_PER_INCH_POUND, 12);
+assert.equal(inchPoundsToFootPounds(120), 10);
+assert.equal(footPoundsToInchPounds(10), 120);
 {
   const rows = otherTorqueUnitsFromNm(100 * NEWTON_METERS_PER_INCH_POUND);
   assertClose(rows.find((r) => r.unit === 'ft·lbf')!.value, 100 / 12);

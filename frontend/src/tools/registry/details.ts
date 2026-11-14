@@ -66,6 +66,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NmToInLbsConverter: () => import('@/tools/calculators/nm-to-in-lbs/detail'),
   InchLbsToNmConverter: () => import('@/tools/calculators/inch-lbs-to-nm/detail'),
   PressureConversion: () => import('@/tools/calculators/pressure-conversion/detail'),
+  InchPoundsToFootPoundsConverter: () =>
+    import('@/tools/calculators/inch-pounds-to-foot-pounds/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

@@ -71,6 +71,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'nm-to-in-lbs-converter',
   'inch-lbs-to-nm-converter',
   'pressure-conversion',
+  'inch-pounds-to-foot-pounds-converter',
 ] as const;
 
 const STATIC_PATHS = [

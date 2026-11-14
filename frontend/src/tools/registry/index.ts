@@ -329,6 +329,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  InchPoundsToFootPoundsConverter: lazyTool(() =>
+    import(
+      '@/tools/calculators/inch-pounds-to-foot-pounds/InchPoundsToFootPoundsCalculator'
+    ).then((mod) => ({
+      default: mod.InchPoundsToFootPoundsConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

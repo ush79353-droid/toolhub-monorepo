@@ -20,7 +20,10 @@ export const NEWTONS_PER_LBF = KG_PER_POUND * STANDARD_GRAVITY;
  */
 export const NEWTON_METERS_PER_INCH_POUND = 0.1129848290276167;
 /** Exact: 1 ft·lbf = 12 in·lbf. */
-export const NEWTON_METERS_PER_FOOT_POUND = NEWTON_METERS_PER_INCH_POUND * 12;
+export const INCH_POUNDS_PER_FOOT_POUND = 12;
+/** Exact: 1 ft·lbf = 12 × in·lbf in N·m. */
+export const NEWTON_METERS_PER_FOOT_POUND =
+  NEWTON_METERS_PER_INCH_POUND * INCH_POUNDS_PER_FOOT_POUND;
 /** Exact: 1 in·ozf = in·lbf / 16. */
 export const NEWTON_METERS_PER_INCH_OUNCE = NEWTON_METERS_PER_INCH_POUND / 16;
 /** Exact: 1 kgf·m = g₀ N·m. */
@@ -68,6 +71,16 @@ export function nmToInLbs(newtonMeters: number): number {
 
 export function inLbsToNm(inchPounds: number): number {
   return inchPounds * NEWTON_METERS_PER_INCH_POUND;
+}
+
+/** Exact: ft·lbf = in·lbf / 12. */
+export function inchPoundsToFootPounds(inchPounds: number): number {
+  return inchPounds / INCH_POUNDS_PER_FOOT_POUND;
+}
+
+/** Exact: in·lbf = ft·lbf × 12. */
+export function footPoundsToInchPounds(footPounds: number): number {
+  return footPounds * INCH_POUNDS_PER_FOOT_POUND;
 }
 
 /** Aliases matching task naming. */
