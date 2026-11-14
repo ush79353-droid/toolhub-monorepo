@@ -149,6 +149,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EvmCalculator',
   'ExitRateCalculator',
   'ExpectedReturnCalculator',
+  'ExpenseRatioCalculator',
   'FifoInventoryCalculator',
   'FullTimeEquivalentCalculator',
   'GmroiCalculator',
@@ -349,6 +350,7 @@ if (isDirect) {
     !isApprovedComponentKey('EvmCalculator') ||
     !isApprovedComponentKey('ExitRateCalculator') ||
     !isApprovedComponentKey('ExpectedReturnCalculator') ||
+    !isApprovedComponentKey('ExpenseRatioCalculator') ||
     !isApprovedComponentKey('FifoInventoryCalculator') ||
     !isApprovedComponentKey('FullTimeEquivalentCalculator') ||
     !isApprovedComponentKey('GmroiCalculator') ||

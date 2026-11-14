@@ -800,6 +800,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ExpectedReturnCalculator,
     })),
   ),
+  ExpenseRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/expense-ratio/ExpenseRatioCalculator').then((mod) => ({
+      default: mod.ExpenseRatioCalculator,
+    })),
+  ),
   FifoInventoryCalculator: lazyTool(() =>
     import('@/tools/calculators/fifo-inventory/FifoInventoryCalculator').then((mod) => ({
       default: mod.FifoInventoryCalculator,
