@@ -474,6 +474,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DecimalToHexConverter,
     })),
   ),
+  RomanNumeralsConverter: lazyTool(() =>
+    import('@/tools/calculators/roman-numerals/RomanNumeralsCalculator').then((mod) => ({
+      default: mod.RomanNumeralsConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
