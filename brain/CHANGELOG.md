@@ -622,6 +622,12 @@
 - **Important Files:** `frontend/src/tools/calculators/psi-to-gpm/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-psi-to-gpm-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990ae9` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e4` preserved; `subPillar` null). Browser: `/tools/psi-to-gpm-calculator` shows ≈ 109.87 US gpm for the default demo.
 
+### 2026-11-14 — Add Lbs to Newtons Converter
+- **Summary:** Shipped a bidirectional pound-force ↔ newton converter on existing slug `lbs-to-newtons-converter`. Reuses Force Converter `convertForce` and exact `1 lbf = 0.45359237 × 9.80665 N`. Simple lbf-first two-field UI; signed force; “lbs” clarified as pound-force not pound-mass. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 10 lbf = 44.482216152605 N; 100 N ≈ 22.480894309 lbf.
+- **Important Files:** `frontend/src/tools/calculators/lbs-to-newtons/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-lbs-to-newtons-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990b9f` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/lbs-to-newtons-converter` shows 10 lbf = 44.482216152605 N.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
