@@ -610,6 +610,12 @@
 - **Important Files:** `frontend/src/tools/calculators/pressure-conversion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pressure-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990ba1` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/pressure-conversion` shows 1 bar ≈ 14.503773773 psi ≈ 0.986923267 atm = 100000 Pa.
 
+### 2026-11-14 — Add Inch-Pounds to Foot-Pounds Converter
+- **Summary:** Shipped a bidirectional inch-pound ↔ foot-pound torque converter on existing slug `inch-pounds-to-foot-pounds-converter`. Exact `1 ft·lbf = 12 in·lbf` helpers added to shared `tools/shared/torque.ts`. Simple two-field UI (in·lbf first); signed torque; no More Conversion Options accordion. Publishing flags preserved; Inch Converter pillar preserved.
+- **Example:** 120 in·lbf = 10 ft·lbf; 24 in·lbf = 2 ft·lbf; 5 ft·lbf = 60 in·lbf; 100 in·lbf ≈ 8.333333333 ft·lbf.
+- **Important Files:** `frontend/src/tools/calculators/inch-pounds-to-foot-pounds/*`, `frontend/src/tools/shared/torque.ts`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-inch-pounds-to-foot-pounds-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** Shared torque, nm-to-in-lbs, inch-lbs-to-nm, and inch-pounds-to-foot-pounds tests passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990b16` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d2a27d8d1d4e98f9eb` preserved; `subPillar` null). Browser: `/tools/inch-pounds-to-foot-pounds-converter` shows 120 in·lbf = 10 ft·lbf.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
