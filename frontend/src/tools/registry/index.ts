@@ -322,6 +322,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InchLbsToNmConverter,
     })),
   ),
+  PressureConversion: lazyTool(() =>
+    import('@/tools/calculators/pressure-conversion/PressureConverterCalculator').then(
+      (mod) => ({
+        default: mod.PressureConversion,
+      })
+    )
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
