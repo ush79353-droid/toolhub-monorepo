@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
-import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { formatCurrencyValue } from '@/tools/shared/currency';
 import { ArmMortgageForm } from './ArmMortgageForm';
@@ -63,22 +62,9 @@ export function ArmMortgageCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">Formatting currency only</p>
+          <p className="text-xs font-normal text-muted-foreground">Adjustable-rate mortgage estimates</p>
         </div>
-        <div className="flex items-center gap-2">
-          {headerActions}
-          <div className="w-[148px] shrink-0 sm:w-[160px]">
-            <CurrencySelect
-              id="arm-currency"
-              value={input.currency}
-              onChange={(currency) => {
-                const next = { ...input, currency };
-                setInput(next);
-                run(next);
-              }}
-            />
-          </div>
-        </div>
+        {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
       <div className="space-y-4 p-4 sm:p-5">
         <ArmMortgageForm
