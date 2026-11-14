@@ -317,6 +317,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NmToInLbsConverter,
     })),
   ),
+  InchLbsToNmConverter: lazyTool(() =>
+    import('@/tools/calculators/inch-lbs-to-nm/InchLbsToNmCalculator').then((mod) => ({
+      default: mod.InchLbsToNmConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

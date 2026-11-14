@@ -64,6 +64,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KgToGallonsConverter: () => import('@/tools/calculators/kg-to-gallons/detail'),
   ForceConverter: () => import('@/tools/calculators/force-converter/detail'),
   NmToInLbsConverter: () => import('@/tools/calculators/nm-to-in-lbs/detail'),
+  InchLbsToNmConverter: () => import('@/tools/calculators/inch-lbs-to-nm/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

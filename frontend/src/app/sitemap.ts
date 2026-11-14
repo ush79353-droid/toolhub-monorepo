@@ -69,6 +69,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'kg-to-gallons-converter',
   'force-converter',
   'nm-to-in-lbs-converter',
+  'inch-lbs-to-nm-converter',
 ] as const;
 
 const STATIC_PATHS = [
