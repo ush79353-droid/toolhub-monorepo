@@ -141,6 +141,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/youtube-money/detail'),
   AnnualizedRateOfReturnCalculator: () =>
     import('@/tools/calculators/annualized-rate-of-return/detail'),
+  AnnualizedReturnCalculator: () =>
+    import('@/tools/calculators/annualized-return/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

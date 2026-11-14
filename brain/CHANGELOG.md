@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Annualized Return Calculator (Screenshot-First)
+- **Summary:** Shipped Annualized Return Calculator on existing catalog slug `annualized-return-calculator` (`AnnualizedReturnCalculator`, catalog `6af46f0fa27d8d1d4e9900bf`). Modes: total return % (default) or beginning/ending values; holding period years → annualized %. Blank start; denomination currency on values mode only. Omega UI. Activated.
+- **Example:** Total return 50%, 3 years → ≈ 14.47%.
+- **Important Files:** `frontend/src/tools/calculators/annualized-return/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-annualized-return-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Annualized Rate of Return Calculator (Screenshot-First)
 - **Summary:** Shipped Annualized Rate of Return Calculator on existing catalog slug `annualized-rate-of-return-calculator` (`AnnualizedRateOfReturnCalculator`, catalog `6af46f0fa27d8d1d4e990014`). Compounding annualization with period radios (annual/quarterly/monthly/weekly/daily). Blank period rate; allow zero and negatives to −100%. Omega UI. Shared shell, SEO, embed.
 - **Example:** Monthly 2% → ≈ 26.82% annualized.
