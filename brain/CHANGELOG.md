@@ -538,6 +538,12 @@
 - **Important Files:** `frontend/src/tools/calculators/pounds-and-ounces/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pounds-and-ounces-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b66` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/pounds-and-ounces-calculator` shows 2.5 lb = 40 oz and addition total 6 lb 3 oz.
 
+### 2026-11-14 — Add oz to Cups Converter
+- **Summary:** Shipped a bidirectional fluid-ounce ↔ cup volume converter on the existing catalog slug `oz-to-cups-converter`. Exact US fl oz (29.5735295625 mL) and Imperial fl oz (28.4130625 mL); cup standards US customary/legal/metric/Imperial via canonical mL; cooking fraction presets; more-options. Distinguishes fluid ounces from mass ounces. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 8 US fl oz = 1 US customary cup; 10 Imperial fl oz = 1 Imperial cup; 8 US fl oz ≈ 0.94635 metric cups.
+- **Important Files:** `frontend/src/tools/calculators/oz-to-cups/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-oz-to-cups-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b63` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/oz-to-cups-converter` shows 8 US fl oz = 1 cup.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
