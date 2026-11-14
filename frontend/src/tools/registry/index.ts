@@ -469,6 +469,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HexadecimalConverter,
     })),
   ),
+  DecimalToHexConverter: lazyTool(() =>
+    import('@/tools/calculators/decimal-to-hexadecimal/DecimalToHexCalculator').then((mod) => ({
+      default: mod.DecimalToHexConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

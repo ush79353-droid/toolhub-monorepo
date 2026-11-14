@@ -87,6 +87,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GreekGematriaCalculator',
   'BinaryToOctalConverter',
   'HexadecimalConverter',
+  'DecimalToHexConverter',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -196,6 +197,7 @@ if (isDirect) {
     !isApprovedComponentKey('GreekGematriaCalculator') ||
     !isApprovedComponentKey('BinaryToOctalConverter') ||
     !isApprovedComponentKey('HexadecimalConverter') ||
+    !isApprovedComponentKey('DecimalToHexConverter') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

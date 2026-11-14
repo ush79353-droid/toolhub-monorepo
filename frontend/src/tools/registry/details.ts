@@ -98,6 +98,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GreekGematriaCalculator: () => import('@/tools/calculators/greek-gematria/detail'),
   BinaryToOctalConverter: () => import('@/tools/calculators/binary-to-octal/detail'),
   HexadecimalConverter: () => import('@/tools/calculators/hexadecimal/detail'),
+  DecimalToHexConverter: () =>
+    import('@/tools/calculators/decimal-to-hexadecimal/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
