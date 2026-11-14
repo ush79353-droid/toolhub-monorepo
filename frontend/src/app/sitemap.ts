@@ -103,6 +103,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'byte-conversion-calculator',
   'mbps-to-gbps-converter',
   'capacitance-converter',
+  'additional-funds-needed-calculator',
 ] as const;
 
 const STATIC_PATHS = [

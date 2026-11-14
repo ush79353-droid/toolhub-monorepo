@@ -499,6 +499,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CapacitanceConverter,
     })),
   ),
+  AdditionalFundsNeededCalculator: lazyTool(() =>
+    import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
+      (mod) => ({
+        default: mod.AdditionalFundsNeededCalculator,
+      }),
+    ),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

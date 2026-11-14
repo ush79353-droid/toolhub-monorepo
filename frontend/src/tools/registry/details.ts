@@ -105,6 +105,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ByteConversionCalculator: () => import('@/tools/calculators/byte-conversion/detail'),
   MbpsToGbpsConverter: () => import('@/tools/calculators/mbps-to-gbps/detail'),
   CapacitanceConverter: () => import('@/tools/calculators/capacitance/detail'),
+  AdditionalFundsNeededCalculator: () =>
+    import('@/tools/calculators/additional-funds-needed/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
