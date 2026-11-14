@@ -526,6 +526,12 @@
 - **Important Files:** `frontend/src/tools/calculators/pint-to-pound/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pint-to-pound-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b64` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/pint-to-pound-conversion` shows 1 US liquid pt ≈ 1.04318 lb.
 
+### 2026-11-14 — Add Drops to mL Conversion
+- **Summary:** Shipped a bidirectional drops ↔ milliliters converter on the existing catalog slug `drops-to-ml-conversion`. Default assumed factor 20 drops/mL (≈ 0.05 mL/drop); adjustable drops-per-mL and volume-per-drop; optional dropper calibration; more-options for µL/cL/L/cm³/US fl oz; medication safety note. Never claims drop size is a universal SI unit. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 100 drops @ 20 drops/mL ≈ 5 mL; 50 drops @ 25 drops/mL = 2 mL; 5 mL @ 25 drops/mL = 125 drops.
+- **Important Files:** `frontend/src/tools/calculators/drops-to-ml/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-drops-to-ml-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b38` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/drops-to-ml-conversion` shows 100 drops ≈ 5 mL.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
