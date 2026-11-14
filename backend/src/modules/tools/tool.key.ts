@@ -116,6 +116,53 @@ export const APPROVED_COMPONENT_KEYS = [
   'AnnualizedReturnCalculator',
   'ApyCalculator',
   'BasisPointCalculator',
+  'AverageCollectionPeriodCalculator',
+  'AverageFixedCostCalculator',
+  'BounceRateCalculator',
+  'BradfordFactorCalculator',
+  'BreakEvenCalculator',
+  'BuildVsBuyCalculator',
+  'BurnRateCalculator',
+  'BurndownChartCalculator',
+  'BusinessBudgetCalculator',
+  'BusinessValuationCalculator',
+  'ChurnRateCalculator',
+  'ConsultingFeesCalculator',
+  'ContributionMarginCalculator',
+  'ConversionRateCalculator',
+  'CostFunctionCalculator',
+  'CostOfDoingBusinessCalculator',
+  'CostOfGoodsSoldCalculator',
+  'CpaCalculator',
+  'CpcAndCpmCalculator',
+  'CpmCalculator',
+  'CtrCalculator',
+  'CustomerAcquisitionCostCalculator',
+  'CustomerRetentionRateCalculator',
+  'DaysOffCalculator',
+  'DirectMaterialPriceVarianceCalculator',
+  'EffectiveCorporateTaxRateCalculator',
+  'EmvCalculator',
+  'EvmCalculator',
+  'ExitRateCalculator',
+  'FifoInventoryCalculator',
+  'FullTimeEquivalentCalculator',
+  'GmroiCalculator',
+  'GoogleAdsenseCalculator',
+  'HhiCalculator',
+  'HighLowMethodCalculator',
+  'LaborCostCalculator',
+  'LemonadeStandCalculator',
+  'LernerIndexCalculator',
+  'LiquidNetWorthCalculator',
+  'ManHoursCalculator',
+  'OnlineMarketingConversionCalculator',
+  'OperatingAssetTurnoverCalculator',
+  'ParkingRatioCalculator',
+  'PaybackPeriodCalculator',
+  'PreAndPostMoneyValuationCalculator',
+  'PriceQuantityCalculator',
+  'PvgoCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -254,6 +301,53 @@ if (isDirect) {
     !isApprovedComponentKey('AnnualizedReturnCalculator') ||
     !isApprovedComponentKey('ApyCalculator') ||
     !isApprovedComponentKey('BasisPointCalculator') ||
+        !isApprovedComponentKey('AverageCollectionPeriodCalculator') ||
+    !isApprovedComponentKey('AverageFixedCostCalculator') ||
+    !isApprovedComponentKey('BounceRateCalculator') ||
+    !isApprovedComponentKey('BradfordFactorCalculator') ||
+    !isApprovedComponentKey('BreakEvenCalculator') ||
+    !isApprovedComponentKey('BuildVsBuyCalculator') ||
+    !isApprovedComponentKey('BurnRateCalculator') ||
+    !isApprovedComponentKey('BurndownChartCalculator') ||
+    !isApprovedComponentKey('BusinessBudgetCalculator') ||
+    !isApprovedComponentKey('BusinessValuationCalculator') ||
+    !isApprovedComponentKey('ChurnRateCalculator') ||
+    !isApprovedComponentKey('ConsultingFeesCalculator') ||
+    !isApprovedComponentKey('ContributionMarginCalculator') ||
+    !isApprovedComponentKey('ConversionRateCalculator') ||
+    !isApprovedComponentKey('CostFunctionCalculator') ||
+    !isApprovedComponentKey('CostOfDoingBusinessCalculator') ||
+    !isApprovedComponentKey('CostOfGoodsSoldCalculator') ||
+    !isApprovedComponentKey('CpaCalculator') ||
+    !isApprovedComponentKey('CpcAndCpmCalculator') ||
+    !isApprovedComponentKey('CpmCalculator') ||
+    !isApprovedComponentKey('CtrCalculator') ||
+    !isApprovedComponentKey('CustomerAcquisitionCostCalculator') ||
+    !isApprovedComponentKey('CustomerRetentionRateCalculator') ||
+    !isApprovedComponentKey('DaysOffCalculator') ||
+    !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
+    !isApprovedComponentKey('EffectiveCorporateTaxRateCalculator') ||
+    !isApprovedComponentKey('EmvCalculator') ||
+    !isApprovedComponentKey('EvmCalculator') ||
+    !isApprovedComponentKey('ExitRateCalculator') ||
+    !isApprovedComponentKey('FifoInventoryCalculator') ||
+    !isApprovedComponentKey('FullTimeEquivalentCalculator') ||
+    !isApprovedComponentKey('GmroiCalculator') ||
+    !isApprovedComponentKey('GoogleAdsenseCalculator') ||
+    !isApprovedComponentKey('HhiCalculator') ||
+    !isApprovedComponentKey('HighLowMethodCalculator') ||
+    !isApprovedComponentKey('LaborCostCalculator') ||
+    !isApprovedComponentKey('LemonadeStandCalculator') ||
+    !isApprovedComponentKey('LernerIndexCalculator') ||
+    !isApprovedComponentKey('LiquidNetWorthCalculator') ||
+    !isApprovedComponentKey('ManHoursCalculator') ||
+    !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
+    !isApprovedComponentKey('OperatingAssetTurnoverCalculator') ||
+    !isApprovedComponentKey('ParkingRatioCalculator') ||
+    !isApprovedComponentKey('PaybackPeriodCalculator') ||
+    !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
+    !isApprovedComponentKey('PriceQuantityCalculator') ||
+    !isApprovedComponentKey('PvgoCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

@@ -1,0 +1,46 @@
+'use client';
+
+import { Button } from '@/components/ui/button';
+import { Check, Copy, Share2 } from 'lucide-react';
+
+interface LernerIndexResultsProps {
+  hasResult: boolean;
+  copied: boolean;
+  shared: boolean;
+  canShare: boolean;
+  onCopy: () => void;
+  onShare: () => void;
+}
+
+/** Compact share actions — Lerner index stays inline (ADR-023). */
+export function LernerIndexResults({
+  hasResult,
+  copied,
+  shared,
+  canShare,
+  onCopy,
+  onShare,
+}: LernerIndexResultsProps) {
+  if (!hasResult) {
+    return (
+      <p className="text-sm text-muted-foreground">
+        Enter price and marginal cost to see the Lerner index.
+      </p>
+    );
+  }
+
+  return (
+    <div className="flex flex-wrap gap-2">
+      <Button type="button" variant="outline" className="h-10" onClick={onCopy}>
+        {copied ? <Check className="mr-1.5 h-4 w-4" /> : <Copy className="mr-1.5 h-4 w-4" />}
+        {copied ? 'Copied' : 'Copy result'}
+      </Button>
+      {canShare ? (
+        <Button type="button" variant="outline" className="h-10" onClick={onShare}>
+          {shared ? <Check className="mr-1.5 h-4 w-4" /> : <Share2 className="mr-1.5 h-4 w-4" />}
+          {shared ? 'Shared' : 'Share result'}
+        </Button>
+      ) : null}
+    </div>
+  );
+}

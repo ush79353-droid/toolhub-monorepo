@@ -148,6 +148,100 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ApyCalculator: () => import('@/tools/calculators/apy/detail'),
   BasisPointCalculator: () =>
     import('@/tools/calculators/basis-point/detail'),
+  AverageCollectionPeriodCalculator: () =>
+    import('@/tools/calculators/average-collection-period/detail'),
+  AverageFixedCostCalculator: () =>
+    import('@/tools/calculators/average-fixed-cost/detail'),
+  BounceRateCalculator: () =>
+    import('@/tools/calculators/bounce-rate/detail'),
+  BradfordFactorCalculator: () =>
+    import('@/tools/calculators/bradford-factor/detail'),
+  BreakEvenCalculator: () =>
+    import('@/tools/calculators/break-even/detail'),
+  BuildVsBuyCalculator: () =>
+    import('@/tools/calculators/build-vs-buy/detail'),
+  BurnRateCalculator: () =>
+    import('@/tools/calculators/burn-rate/detail'),
+  BurndownChartCalculator: () =>
+    import('@/tools/calculators/burndown-chart/detail'),
+  BusinessBudgetCalculator: () =>
+    import('@/tools/calculators/business-budget/detail'),
+  BusinessValuationCalculator: () =>
+    import('@/tools/calculators/business-valuation/detail'),
+  ChurnRateCalculator: () =>
+    import('@/tools/calculators/churn-rate/detail'),
+  ConsultingFeesCalculator: () =>
+    import('@/tools/calculators/consulting-fees/detail'),
+  ContributionMarginCalculator: () =>
+    import('@/tools/calculators/contribution-margin/detail'),
+  ConversionRateCalculator: () =>
+    import('@/tools/calculators/conversion-rate/detail'),
+  CostFunctionCalculator: () =>
+    import('@/tools/calculators/cost-function/detail'),
+  CostOfDoingBusinessCalculator: () =>
+    import('@/tools/calculators/cost-of-doing-business/detail'),
+  CostOfGoodsSoldCalculator: () =>
+    import('@/tools/calculators/cost-of-goods-sold/detail'),
+  CpaCalculator: () =>
+    import('@/tools/calculators/cpa/detail'),
+  CpcAndCpmCalculator: () =>
+    import('@/tools/calculators/cpc-and-cpm/detail'),
+  CpmCalculator: () =>
+    import('@/tools/calculators/cpm/detail'),
+  CtrCalculator: () =>
+    import('@/tools/calculators/ctr/detail'),
+  CustomerAcquisitionCostCalculator: () =>
+    import('@/tools/calculators/customer-acquisition-cost/detail'),
+  CustomerRetentionRateCalculator: () =>
+    import('@/tools/calculators/customer-retention-rate/detail'),
+  DaysOffCalculator: () =>
+    import('@/tools/calculators/days-off/detail'),
+  DirectMaterialPriceVarianceCalculator: () =>
+    import('@/tools/calculators/direct-material-price-variance/detail'),
+  EffectiveCorporateTaxRateCalculator: () =>
+    import('@/tools/calculators/effective-corporate-tax-rate/detail'),
+  EmvCalculator: () =>
+    import('@/tools/calculators/emv/detail'),
+  EvmCalculator: () =>
+    import('@/tools/calculators/evm/detail'),
+  ExitRateCalculator: () =>
+    import('@/tools/calculators/exit-rate/detail'),
+  FifoInventoryCalculator: () =>
+    import('@/tools/calculators/fifo-inventory/detail'),
+  FullTimeEquivalentCalculator: () =>
+    import('@/tools/calculators/full-time-equivalent/detail'),
+  GmroiCalculator: () =>
+    import('@/tools/calculators/gmroi/detail'),
+  GoogleAdsenseCalculator: () =>
+    import('@/tools/calculators/google-adsense/detail'),
+  HhiCalculator: () =>
+    import('@/tools/calculators/hhi/detail'),
+  HighLowMethodCalculator: () =>
+    import('@/tools/calculators/high-low-method/detail'),
+  LaborCostCalculator: () =>
+    import('@/tools/calculators/labor-cost/detail'),
+  LemonadeStandCalculator: () =>
+    import('@/tools/calculators/lemonade-stand/detail'),
+  LernerIndexCalculator: () =>
+    import('@/tools/calculators/lerner-index/detail'),
+  LiquidNetWorthCalculator: () =>
+    import('@/tools/calculators/liquid-net-worth/detail'),
+  ManHoursCalculator: () =>
+    import('@/tools/calculators/man-hours/detail'),
+  OnlineMarketingConversionCalculator: () =>
+    import('@/tools/calculators/online-marketing-conversion/detail'),
+  OperatingAssetTurnoverCalculator: () =>
+    import('@/tools/calculators/operating-asset-turnover/detail'),
+  ParkingRatioCalculator: () =>
+    import('@/tools/calculators/parking-ratio/detail'),
+  PaybackPeriodCalculator: () =>
+    import('@/tools/calculators/payback-period/detail'),
+  PreAndPostMoneyValuationCalculator: () =>
+    import('@/tools/calculators/pre-and-post-money-valuation/detail'),
+  PriceQuantityCalculator: () =>
+    import('@/tools/calculators/price-quantity/detail'),
+  PvgoCalculator: () =>
+    import('@/tools/calculators/pvgo/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

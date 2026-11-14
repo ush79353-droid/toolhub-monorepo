@@ -639,6 +639,241 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BasisPointCalculator,
     })),
   ),
+  AverageCollectionPeriodCalculator: lazyTool(() =>
+    import('@/tools/calculators/average-collection-period/AverageCollectionPeriodCalculator').then((mod) => ({
+      default: mod.AverageCollectionPeriodCalculator,
+    })),
+  ),
+  AverageFixedCostCalculator: lazyTool(() =>
+    import('@/tools/calculators/average-fixed-cost/AverageFixedCostCalculator').then((mod) => ({
+      default: mod.AverageFixedCostCalculator,
+    })),
+  ),
+  BounceRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/bounce-rate/BounceRateCalculator').then((mod) => ({
+      default: mod.BounceRateCalculator,
+    })),
+  ),
+  BradfordFactorCalculator: lazyTool(() =>
+    import('@/tools/calculators/bradford-factor/BradfordFactorCalculator').then((mod) => ({
+      default: mod.BradfordFactorCalculator,
+    })),
+  ),
+  BreakEvenCalculator: lazyTool(() =>
+    import('@/tools/calculators/break-even/BreakEvenCalculator').then((mod) => ({
+      default: mod.BreakEvenCalculator,
+    })),
+  ),
+  BuildVsBuyCalculator: lazyTool(() =>
+    import('@/tools/calculators/build-vs-buy/BuildVsBuyCalculator').then((mod) => ({
+      default: mod.BuildVsBuyCalculator,
+    })),
+  ),
+  BurnRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/burn-rate/BurnRateCalculator').then((mod) => ({
+      default: mod.BurnRateCalculator,
+    })),
+  ),
+  BurndownChartCalculator: lazyTool(() =>
+    import('@/tools/calculators/burndown-chart/BurndownChartCalculator').then((mod) => ({
+      default: mod.BurndownChartCalculator,
+    })),
+  ),
+  BusinessBudgetCalculator: lazyTool(() =>
+    import('@/tools/calculators/business-budget/BusinessBudgetCalculator').then((mod) => ({
+      default: mod.BusinessBudgetCalculator,
+    })),
+  ),
+  BusinessValuationCalculator: lazyTool(() =>
+    import('@/tools/calculators/business-valuation/BusinessValuationCalculator').then((mod) => ({
+      default: mod.BusinessValuationCalculator,
+    })),
+  ),
+  ChurnRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/churn-rate/ChurnRateCalculator').then((mod) => ({
+      default: mod.ChurnRateCalculator,
+    })),
+  ),
+  ConsultingFeesCalculator: lazyTool(() =>
+    import('@/tools/calculators/consulting-fees/ConsultingFeesCalculator').then((mod) => ({
+      default: mod.ConsultingFeesCalculator,
+    })),
+  ),
+  ContributionMarginCalculator: lazyTool(() =>
+    import('@/tools/calculators/contribution-margin/ContributionMarginCalculator').then((mod) => ({
+      default: mod.ContributionMarginCalculator,
+    })),
+  ),
+  ConversionRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/conversion-rate/ConversionRateCalculator').then((mod) => ({
+      default: mod.ConversionRateCalculator,
+    })),
+  ),
+  CostFunctionCalculator: lazyTool(() =>
+    import('@/tools/calculators/cost-function/CostFunctionCalculator').then((mod) => ({
+      default: mod.CostFunctionCalculator,
+    })),
+  ),
+  CostOfDoingBusinessCalculator: lazyTool(() =>
+    import('@/tools/calculators/cost-of-doing-business/CostOfDoingBusinessCalculator').then((mod) => ({
+      default: mod.CostOfDoingBusinessCalculator,
+    })),
+  ),
+  CostOfGoodsSoldCalculator: lazyTool(() =>
+    import('@/tools/calculators/cost-of-goods-sold/CostOfGoodsSoldCalculator').then((mod) => ({
+      default: mod.CostOfGoodsSoldCalculator,
+    })),
+  ),
+  CpaCalculator: lazyTool(() =>
+    import('@/tools/calculators/cpa/CpaCalculator').then((mod) => ({
+      default: mod.CpaCalculator,
+    })),
+  ),
+  CpcAndCpmCalculator: lazyTool(() =>
+    import('@/tools/calculators/cpc-and-cpm/CpcAndCpmCalculator').then((mod) => ({
+      default: mod.CpcAndCpmCalculator,
+    })),
+  ),
+  CpmCalculator: lazyTool(() =>
+    import('@/tools/calculators/cpm/CpmCalculator').then((mod) => ({
+      default: mod.CpmCalculator,
+    })),
+  ),
+  CtrCalculator: lazyTool(() =>
+    import('@/tools/calculators/ctr/CtrCalculator').then((mod) => ({
+      default: mod.CtrCalculator,
+    })),
+  ),
+  CustomerAcquisitionCostCalculator: lazyTool(() =>
+    import('@/tools/calculators/customer-acquisition-cost/CustomerAcquisitionCostCalculator').then((mod) => ({
+      default: mod.CustomerAcquisitionCostCalculator,
+    })),
+  ),
+  CustomerRetentionRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/customer-retention-rate/CustomerRetentionRateCalculator').then((mod) => ({
+      default: mod.CustomerRetentionRateCalculator,
+    })),
+  ),
+  DaysOffCalculator: lazyTool(() =>
+    import('@/tools/calculators/days-off/DaysOffCalculator').then((mod) => ({
+      default: mod.DaysOffCalculator,
+    })),
+  ),
+  DirectMaterialPriceVarianceCalculator: lazyTool(() =>
+    import('@/tools/calculators/direct-material-price-variance/DirectMaterialPriceVarianceCalculator').then((mod) => ({
+      default: mod.DirectMaterialPriceVarianceCalculator,
+    })),
+  ),
+  EffectiveCorporateTaxRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/effective-corporate-tax-rate/EffectiveCorporateTaxRateCalculator').then((mod) => ({
+      default: mod.EffectiveCorporateTaxRateCalculator,
+    })),
+  ),
+  EmvCalculator: lazyTool(() =>
+    import('@/tools/calculators/emv/EmvCalculator').then((mod) => ({
+      default: mod.EmvCalculator,
+    })),
+  ),
+  EvmCalculator: lazyTool(() =>
+    import('@/tools/calculators/evm/EvmCalculator').then((mod) => ({
+      default: mod.EvmCalculator,
+    })),
+  ),
+  ExitRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/exit-rate/ExitRateCalculator').then((mod) => ({
+      default: mod.ExitRateCalculator,
+    })),
+  ),
+  FifoInventoryCalculator: lazyTool(() =>
+    import('@/tools/calculators/fifo-inventory/FifoInventoryCalculator').then((mod) => ({
+      default: mod.FifoInventoryCalculator,
+    })),
+  ),
+  FullTimeEquivalentCalculator: lazyTool(() =>
+    import('@/tools/calculators/full-time-equivalent/FullTimeEquivalentCalculator').then((mod) => ({
+      default: mod.FullTimeEquivalentCalculator,
+    })),
+  ),
+  GmroiCalculator: lazyTool(() =>
+    import('@/tools/calculators/gmroi/GmroiCalculator').then((mod) => ({
+      default: mod.GmroiCalculator,
+    })),
+  ),
+  GoogleAdsenseCalculator: lazyTool(() =>
+    import('@/tools/calculators/google-adsense/GoogleAdsenseCalculator').then((mod) => ({
+      default: mod.GoogleAdsenseCalculator,
+    })),
+  ),
+  HhiCalculator: lazyTool(() =>
+    import('@/tools/calculators/hhi/HhiCalculator').then((mod) => ({
+      default: mod.HhiCalculator,
+    })),
+  ),
+  HighLowMethodCalculator: lazyTool(() =>
+    import('@/tools/calculators/high-low-method/HighLowMethodCalculator').then((mod) => ({
+      default: mod.HighLowMethodCalculator,
+    })),
+  ),
+  LaborCostCalculator: lazyTool(() =>
+    import('@/tools/calculators/labor-cost/LaborCostCalculator').then((mod) => ({
+      default: mod.LaborCostCalculator,
+    })),
+  ),
+  LemonadeStandCalculator: lazyTool(() =>
+    import('@/tools/calculators/lemonade-stand/LemonadeStandCalculator').then((mod) => ({
+      default: mod.LemonadeStandCalculator,
+    })),
+  ),
+  LernerIndexCalculator: lazyTool(() =>
+    import('@/tools/calculators/lerner-index/LernerIndexCalculator').then((mod) => ({
+      default: mod.LernerIndexCalculator,
+    })),
+  ),
+  LiquidNetWorthCalculator: lazyTool(() =>
+    import('@/tools/calculators/liquid-net-worth/LiquidNetWorthCalculator').then((mod) => ({
+      default: mod.LiquidNetWorthCalculator,
+    })),
+  ),
+  ManHoursCalculator: lazyTool(() =>
+    import('@/tools/calculators/man-hours/ManHoursCalculator').then((mod) => ({
+      default: mod.ManHoursCalculator,
+    })),
+  ),
+  OnlineMarketingConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/online-marketing-conversion/OnlineMarketingConversionCalculator').then((mod) => ({
+      default: mod.OnlineMarketingConversionCalculator,
+    })),
+  ),
+  OperatingAssetTurnoverCalculator: lazyTool(() =>
+    import('@/tools/calculators/operating-asset-turnover/OperatingAssetTurnoverCalculator').then((mod) => ({
+      default: mod.OperatingAssetTurnoverCalculator,
+    })),
+  ),
+  ParkingRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/parking-ratio/ParkingRatioCalculator').then((mod) => ({
+      default: mod.ParkingRatioCalculator,
+    })),
+  ),
+  PaybackPeriodCalculator: lazyTool(() =>
+    import('@/tools/calculators/payback-period/PaybackPeriodCalculator').then((mod) => ({
+      default: mod.PaybackPeriodCalculator,
+    })),
+  ),
+  PreAndPostMoneyValuationCalculator: lazyTool(() =>
+    import('@/tools/calculators/pre-and-post-money-valuation/PreAndPostMoneyValuationCalculator').then((mod) => ({
+      default: mod.PreAndPostMoneyValuationCalculator,
+    })),
+  ),
+  PriceQuantityCalculator: lazyTool(() =>
+    import('@/tools/calculators/price-quantity/PriceQuantityCalculator').then((mod) => ({
+      default: mod.PriceQuantityCalculator,
+    })),
+  ),
+  PvgoCalculator: lazyTool(() =>
+    import('@/tools/calculators/pvgo/PvgoCalculator').then((mod) => ({
+      default: mod.PvgoCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
