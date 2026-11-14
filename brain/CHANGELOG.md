@@ -586,6 +586,12 @@
 - **Important Files:** `frontend/src/tools/calculators/kg-to-gallons/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-kg-to-gallons-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990ace` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e1` preserved; `subPillar` null). Browser: `/tools/kg-to-gallons-converter` shows 1 kg ≈ 0.264172 US gal.
 
+### 2026-11-14 — Add Force Converter
+- **Summary:** Shipped a multi-field force converter on the existing catalog slug `force-converter`. Canonical newtons; SI, CGS, gravitational, and imperial units; seven editable fields with unit dropdowns; More Force Units; signed force components allowed. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 1 N = 0.001 kN = 100000 dyn ≈ 0.2248089431 lbf ≈ 101.9716213 gf ≈ 0.1019716213 kgf; 1 kgf = 9.80665 N; 1 lbf = 4.4482216152605 N; 1 tf = 9806.65 N.
+- **Important Files:** `frontend/src/tools/calculators/force-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-force-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b9e` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/force-converter` shows 1 N synced across fields.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
