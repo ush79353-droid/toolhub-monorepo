@@ -166,6 +166,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BitcoinEtfCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
+  'DiscountedCashFlowCalculator',
   'CompoundGrowthCalculator',
   'CompoundInterestRateCalculator',
 ] as const;
@@ -345,6 +346,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'BitcoinEtfCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
+  'DiscountedCashFlowCalculator',
   'CompoundGrowthCalculator',
   'CompoundInterestRateCalculator',
 ] as const;

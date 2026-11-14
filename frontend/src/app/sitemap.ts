@@ -178,6 +178,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'capital-gains-yield-calculator',
   'cd-calculator',
   'compound-interest-calculator',
+  'discounted-cash-flow-calculator-dcf',
   'compound-growth-calculator',
   'compound-interest-rate-calculator',
 ] as const;
