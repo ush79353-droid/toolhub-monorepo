@@ -574,6 +574,12 @@
 - **Important Files:** `frontend/src/tools/calculators/grams-to-ounces/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-grams-to-ounces-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b41` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/grams-to-ounces-calculator` shows 100 g ≈ 3.527396194958 oz.
 
+### 2026-11-14 — Add Weight Converter
+- **Summary:** Shipped a multi-field mass converter on the existing catalog slug `weight-converter`. Canonical kilograms; metric, avoirdupois, troy, and scientific units; eight editable fields with independent unit dropdowns; More Conversion Options; mass≠force notice. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 1 kg = 1000 g = 1_000_000 mg ≈ 2.20462262185 lb ≈ 35.27396195 oz ≈ 0.1574730444 st; 1 troy oz = 31.1034768 g; 1 US short ton = 2000 lb.
+- **Important Files:** `frontend/src/tools/calculators/weight-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-weight-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b74` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/weight-converter` shows 1 kg synced across fields.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
