@@ -231,6 +231,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MgToMlCalculator,
     })),
   ),
+  CubicYardsToTonsCalculator: lazyTool(() =>
+    import('@/tools/calculators/cubic-yards-to-tons/CubicYardsToTonsCalculator').then(
+      (mod) => ({
+        default: mod.CubicYardsToTonsCalculator,
+      })
+    ),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
