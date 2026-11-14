@@ -346,6 +346,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LbsToNewtonsConverter,
     })),
   ),
+  TorqueToHpCalculator: lazyTool(() =>
+    import('@/tools/calculators/torque-to-hp/TorqueToHpCalculator').then((mod) => ({
+      default: mod.TorqueToHpCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

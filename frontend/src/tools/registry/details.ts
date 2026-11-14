@@ -70,6 +70,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/inch-pounds-to-foot-pounds/detail'),
   PsiToGpmCalculator: () => import('@/tools/calculators/psi-to-gpm/detail'),
   LbsToNewtonsConverter: () => import('@/tools/calculators/lbs-to-newtons/detail'),
+  TorqueToHpCalculator: () => import('@/tools/calculators/torque-to-hp/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
