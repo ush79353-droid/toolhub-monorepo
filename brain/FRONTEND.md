@@ -186,4 +186,5 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 - `src/tools/shared/torque.ts`: Shared N·m-canonical torque constants and conversion helpers for Nm↔in·lbf tools.
 - `src/tools/calculators/pressure-conversion/`: Pressure Conversion (`PressureConversion`, slug `pressure-conversion`). Multi-field pressure converter via canonical pascals; bar/psi/atm/Pa primary fields; more-options; guide; unit tests.
 - `src/tools/calculators/inch-pounds-to-foot-pounds/`: Inch-Pounds to Foot-Pounds Converter (`InchPoundsToFootPoundsConverter`, slug `inch-pounds-to-foot-pounds-converter`). Bidirectional in·lbf ↔ ft·lbf with exact 12:1 ratio via shared torque helpers; guide; unit tests.
+- `src/tools/calculators/psi-to-gpm/`: PSI to GPM Calculator (`PsiToGpmCalculator`, slug `psi-to-gpm-calculator`). Ideal Bernoulli liquid discharge `Q = Cd × A × √(2ΔP/ρ)`; diameter↔area sync; US gpm; guide; unit tests.
 - `src/tools/calculators/affo/`: AFFO Calculator (`AFFOCalculator`, slug `affo-calculator`). Simplified FFO and a labeled AFFO estimate for one reporting period. Interest income is not adjusted twice. Display currency only. Guide in `detail.tsx`.

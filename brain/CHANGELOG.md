@@ -616,6 +616,12 @@
 - **Important Files:** `frontend/src/tools/calculators/inch-pounds-to-foot-pounds/*`, `frontend/src/tools/shared/torque.ts`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-inch-pounds-to-foot-pounds-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** Shared torque, nm-to-in-lbs, inch-lbs-to-nm, and inch-pounds-to-foot-pounds tests passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990b16` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d2a27d8d1d4e98f9eb` preserved; `subPillar` null). Browser: `/tools/inch-pounds-to-foot-pounds-converter` shows 120 in·lbf = 10 ft·lbf.
 
+### 2026-11-14 — Add PSI to GPM Calculator
+- **Summary:** Shipped an ideal Bernoulli liquid-flow estimator on existing slug `psi-to-gpm-calculator`. Model `Q = Cd × A × √(2ΔP/ρ)` with SI canonical units; diameter↔area sync; absolute/gauge reference; default water ρ = 1000 kg/m³, Cd = 1, exit ≈ 1 atm; US gpm default. Clearly not a direct PSI↔GPM constant and not a full pipe-friction network model. Publishing flags preserved; PSI Converter pillar preserved; `subPillar` null.
+- **Example:** 50 psia → ~14.696 psia, 2 cm ID, water, Cd = 1 → ≈ 109.87 US gpm (ideal discharge).
+- **Important Files:** `frontend/src/tools/calculators/psi-to-gpm/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-psi-to-gpm-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990ae9` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e4` preserved; `subPillar` null). Browser: `/tools/psi-to-gpm-calculator` shows ≈ 109.87 US gpm for the default demo.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
