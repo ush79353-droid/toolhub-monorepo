@@ -898,6 +898,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CompoundInterestCalculator,
     })),
   ),
+  CompoundInterestRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/compound-interest-rate/CompoundInterestRateCalculator'
+    ).then((mod) => ({
+      default: mod.CompoundInterestRateCalculator,
+    })),
+  ),
   CompoundGrowthCalculator: lazyTool(() =>
     import('@/tools/calculators/compound-growth/CompoundGrowthCalculator').then((mod) => ({
       default: mod.CompoundGrowthCalculator,

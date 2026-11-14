@@ -179,6 +179,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cd-calculator',
   'compound-interest-calculator',
   'compound-growth-calculator',
+  'compound-interest-rate-calculator',
 ] as const;
 
 const STATIC_PATHS = [
