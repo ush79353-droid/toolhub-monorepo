@@ -194,6 +194,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fd-calculator-fixed-deposit-calculator',
   'holding-period-return-calculator',
   'impermanent-loss-calculator',
+  'information-ratio-calculator',
 ] as const;
 
 const STATIC_PATHS = [

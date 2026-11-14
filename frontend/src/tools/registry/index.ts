@@ -997,6 +997,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ImpermanentLossCalculator,
     })),
   ),
+  InformationRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/information-ratio/InformationRatioCalculator'
+    ).then((mod) => ({
+      default: mod.InformationRatioCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
