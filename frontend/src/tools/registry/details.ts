@@ -101,6 +101,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DecimalToHexConverter: () =>
     import('@/tools/calculators/decimal-to-hexadecimal/detail'),
   RomanNumeralsConverter: () => import('@/tools/calculators/roman-numerals/detail'),
+  DecimalToOctalConverter: () => import('@/tools/calculators/decimal-to-octal/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

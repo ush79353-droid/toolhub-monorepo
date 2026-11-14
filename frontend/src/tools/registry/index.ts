@@ -479,6 +479,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RomanNumeralsConverter,
     })),
   ),
+  DecimalToOctalConverter: lazyTool(() =>
+    import('@/tools/calculators/decimal-to-octal/DecimalToOctalCalculator').then((mod) => ({
+      default: mod.DecimalToOctalConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

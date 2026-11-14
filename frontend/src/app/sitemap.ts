@@ -99,6 +99,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'hexadecimal-converter',
   'decimal-to-hexadecimal-converter',
   'roman-numerals-converter',
+  'decimal-to-octal-converter',
 ] as const;
 
 const STATIC_PATHS = [
