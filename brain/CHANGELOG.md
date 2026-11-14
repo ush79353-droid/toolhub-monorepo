@@ -568,6 +568,12 @@
 - **Important Files:** `frontend/src/tools/calculators/volume-conversion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-volume-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b73` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/volume-conversion` shows 1 L = 1000 mL with synced fields.
 
+### 2026-11-14 — Add Grams To Ounces Calculator
+- **Summary:** Shipped a bidirectional grams ↔ avoirdupois ounces mass converter on the existing catalog slug `grams-to-ounces-calculator`. Exact factor `1 oz = 28.349523125 g`; source-field tracking; mass≠fluid ounces notice; More Conversion Options; g↔oz charts and FAQs. Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 100 g ≈ 3.527396195 oz; 5 oz = 141.747615625 g; 16 oz = 453.59237 g; 1 kg ≈ 35.27396195 oz.
+- **Important Files:** `frontend/src/tools/calculators/grams-to-ounces/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-grams-to-ounces-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b41` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/grams-to-ounces-calculator` shows 100 g ≈ 3.527396194958 oz.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
