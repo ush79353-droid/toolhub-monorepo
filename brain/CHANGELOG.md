@@ -796,6 +796,18 @@
 - **Important Files:** `frontend/src/tools/calculators/byte-conversion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-byte-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990bc4` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null; meta 46/144).
 
+### 2026-11-14 — Add Mbps to Gbps Converter
+- **Summary:** Shipped interconnected Mbps ↔ Gbps ↔ GB/s data-rate converter on existing catalog slug `mbps-to-gbps-converter`. Exact SI bits/s factors (1 Gbps = 1000 Mbps; 1 GB/s = 8 Gbps = 8000 Mbps); bits (b) vs bytes (B) clarified. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1000 Mbps = 1 Gbps = 0.125 GB/s; 1 GB/s = 8000 Mbps = 8 Gbps; 2500 Mbps = 2.5 Gbps.
+- **Important Files:** `frontend/src/tools/calculators/mbps-to-gbps/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mbps-to-gbps-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990bcd` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null; meta 42/142).
+
+### 2026-11-14 — Add Capacitance Converter
+- **Summary:** Shipped interconnected SI capacitance converter on existing catalog slug `capacitance-converter`. Five editable fields F/mF/µF/nF/pF via exact farad BigInt rational factors. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1 F = 1000 mF = 10⁶ µF = 10⁹ nF = 10¹² pF; 2.5 µF = 2500 nF = 2,500,000 pF; 470 pF = 0.47 nF.
+- **Important Files:** `frontend/src/tools/calculators/capacitance/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-capacitance-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo record `6af46f17a27d8d1d4e990bc5` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null; meta 41/151).
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
