@@ -971,6 +971,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FdCalculator,
     })),
   ),
+  FutureValueCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/future-value/FutureValueCalculator'
+    ).then((mod) => ({
+      default: mod.FutureValueCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

@@ -179,6 +179,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EffectiveAnnualYieldCalculator',
   'EffectiveInterestRateCalculator',
   'ExpectedUtilityCalculator',
+  'FutureValueCalculator',
   'FdCalculator',
 ] as const;
 
@@ -381,6 +382,7 @@ if (isDirect) {
     !isApprovedComponentKey('EffectiveAnnualYieldCalculator') ||
     !isApprovedComponentKey('EffectiveInterestRateCalculator') ||
     !isApprovedComponentKey('ExpectedUtilityCalculator') ||
+    !isApprovedComponentKey('FutureValueCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {

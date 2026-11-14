@@ -271,6 +271,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ExpectedUtilityCalculator: () =>
     import('@/tools/calculators/expected-utility/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
+  FutureValueCalculator: () =>
+    import('@/tools/calculators/future-value/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

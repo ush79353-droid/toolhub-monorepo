@@ -177,6 +177,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EffectiveAnnualYieldCalculator',
   'EffectiveInterestRateCalculator',
   'ExpectedUtilityCalculator',
+  'FutureValueCalculator',
   'FdCalculator',
 ] as const;
 
@@ -366,6 +367,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'EffectiveAnnualYieldCalculator',
   'EffectiveInterestRateCalculator',
   'ExpectedUtilityCalculator',
+  'FutureValueCalculator',
   'FdCalculator',
 ] as const;
 
