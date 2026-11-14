@@ -424,6 +424,12 @@
 - **Important Files:** `frontend/src/tools/calculators/inches-to-fraction/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-inches-to-fraction-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` and module eslint passed. Backend `tool.key.ts` self-check passed. Mongo record `6af46f17a27d8d1d4e990b8b` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/inches-to-fraction-calculator` shows 1 3/8 inches. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.
 
+### 2026-11-14 — Add Mesh to Micron Converter
+- **Summary:** Shipped a mesh/sieve opening converter on the existing catalog slug `mesh-to-micron-converter`. ASTM E11 nominal sieve lookup (29 designations), optional square woven-mesh calculation from mesh count + wire diameter, micron→nearest-sieve reverse lookup, and µm/mm/cm/in/mil equivalents. Publishing flags preserved (`isActive` true); `isDeveloped` set true after verification.
+- **Example:** No. 100 → 150 µm; No. 200 → 75 µm; custom mesh 100 / wire 0.1 mm → 154 µm; 160 µm → nearest No. 100 (Δ 10 µm).
+- **Important Files:** `frontend/src/tools/calculators/mesh-to-micron/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mesh-to-micron-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean for the module. Mongo record `6af46f17a27d8d1d4e990b92` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Browser: `/tools/mesh-to-micron-converter` shows No. 100 → 150 µm. Embed returns `X-Robots-Tag: noindex, nofollow` and `frame-ancestors *`.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.

@@ -162,6 +162,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AresToHectaresConverter,
     })),
   ),
+  MeshToMicronConverter: lazyTool(() =>
+    import('@/tools/calculators/mesh-to-micron/MeshToMicronCalculator').then((mod) => ({
+      default: mod.MeshToMicronConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
