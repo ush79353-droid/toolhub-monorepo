@@ -92,6 +92,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'number-to-million-converter',
   'million-to-billion-converter',
   'binary-converter',
+  'gematria-calculator',
 ] as const;
 
 const STATIC_PATHS = [

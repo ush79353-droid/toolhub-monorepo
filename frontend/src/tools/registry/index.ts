@@ -444,6 +444,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BinaryConverter,
     })),
   ),
+  GematriaCalculator: lazyTool(() =>
+    import('@/tools/calculators/gematria/GematriaCalculator').then((mod) => ({
+      default: mod.GematriaCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
