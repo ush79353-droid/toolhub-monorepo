@@ -459,6 +459,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GreekGematriaCalculator,
     })),
   ),
+  BinaryToOctalConverter: lazyTool(() =>
+    import('@/tools/calculators/binary-to-octal/BinaryToOctalCalculator').then((mod) => ({
+      default: mod.BinaryToOctalConverter,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

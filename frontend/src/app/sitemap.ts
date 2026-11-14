@@ -95,6 +95,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gematria-calculator',
   'binary-to-hexadecimal-converter',
   'greek-gematria-calculator',
+  'binary-to-octal-converter',
 ] as const;
 
 const STATIC_PATHS = [
