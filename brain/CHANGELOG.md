@@ -628,6 +628,12 @@
 - **Important Files:** `frontend/src/tools/calculators/lbs-to-newtons/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-lbs-to-newtons-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990b9f` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/lbs-to-newtons-converter` shows 10 lbf = 44.482216152605 N.
 
+### 2026-11-14 — Add Torque to HP Calculator
+- **Summary:** Shipped a shaft-power calculator on existing slug `torque-to-hp-calculator`. Canonical `P = τ × ω` with N·m / rad/s / W; reuses shared torque constants; mechanical hp (550 ft·lbf/s) and metric PS; independent input-pair reverse modes (torque+speed, power+speed, torque+power). Publishing flags preserved; `pillar`/`subPillar` left null.
+- **Example:** 100 N·m @ 3000 rpm → ≈ 31415.93 W ≈ 31.416 kW ≈ 42.13 mechanical hp.
+- **Important Files:** `frontend/src/tools/calculators/torque-to-hp/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-torque-to-hp-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Lint clean. Mongo record `6af46f17a27d8d1d4e990ba4` assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; `pillar`/`subPillar` null preserved). Browser: `/tools/torque-to-hp-calculator` shows the default demo.
+
 ### 2026-11-14 — Add Ares to Hectares Converter
 - **Summary:** Shipped a bidirectional ares ↔ hectares land-area converter on the existing catalog slug `ares-to-hectares-converter`. Exact factor `1 ha = 100 a`. More conversion options cover m², km², ft², yd², acres, and land cents from canonical square meters. Publishing flags preserved (`isActive` left false); `isDeveloped` set true after verification.
 - **Example:** 250 ares = 2.5 hectares; 3.75 hectares = 375 ares; 100 ares = 1 hectare.
