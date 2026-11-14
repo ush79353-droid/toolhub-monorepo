@@ -108,6 +108,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'accumulated-depreciation-calculator',
   'attrition-rate-calculator',
   'business-loan-calculator',
+  'revenue-per-employee-calculator',
 ] as const;
 
 const STATIC_PATHS = [

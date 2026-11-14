@@ -528,6 +528,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BusinessLoanCalculator,
     })),
   ),
+  RevenuePerEmployeeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/revenue-per-employee/RevenuePerEmployeeCalculator'
+    ).then((mod) => ({
+      default: mod.RevenuePerEmployeeCalculator,
+    })),
+  ),
+  SaasLifetimeValueCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/saas-lifetime-value/SaasLifetimeValueCalculator'
+    ).then((mod) => ({
+      default: mod.SaasLifetimeValueCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
