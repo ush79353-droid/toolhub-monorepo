@@ -62,6 +62,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'oz-to-cups-converter',
   'gallon-calculator',
   'quarts-to-pounds-conversion',
+  'gallons-to-pounds-converter',
 ] as const;
 
 const STATIC_PATHS = [
