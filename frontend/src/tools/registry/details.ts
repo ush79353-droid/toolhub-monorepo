@@ -50,6 +50,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cubic-yards-to-tons/detail'),
   MlToCupsConverter: () => import('@/tools/calculators/ml-to-cups/detail'),
   DecagramToGramConverter: () => import('@/tools/calculators/decagram-to-gram/detail'),
+  PintToPoundCalculator: () => import('@/tools/calculators/pint-to-pound/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

@@ -250,6 +250,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  PintToPoundCalculator: lazyTool(() =>
+    import('@/tools/calculators/pint-to-pound/PintToPoundCalculator').then((mod) => ({
+      default: mod.PintToPoundCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
