@@ -275,6 +275,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
   FutureValueCalculator: () =>
     import('@/tools/calculators/future-value/detail'),
+  HoldingPeriodReturnCalculator: () =>
+    import('@/tools/calculators/holding-period-return/detail'),
+  ImpermanentLossCalculator: () =>
+    import('@/tools/calculators/impermanent-loss/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

@@ -983,6 +983,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FutureValueCalculator,
     })),
   ),
+  HoldingPeriodReturnCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/holding-period-return/HoldingPeriodReturnCalculator'
+    ).then((mod) => ({
+      default: mod.HoldingPeriodReturnCalculator,
+    })),
+  ),
+  ImpermanentLossCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/impermanent-loss/ImpermanentLossCalculator'
+    ).then((mod) => ({
+      default: mod.ImpermanentLossCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
