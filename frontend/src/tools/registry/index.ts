@@ -351,6 +351,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TorqueToHpCalculator,
     })),
   ),
+  NewtonMeterCalculator: lazyTool(() =>
+    import('@/tools/calculators/newton-meter/NewtonMeterCalculator').then((mod) => ({
+      default: mod.NewtonMeterCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

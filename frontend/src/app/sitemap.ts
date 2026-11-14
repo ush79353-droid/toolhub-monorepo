@@ -75,6 +75,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'psi-to-gpm-calculator',
   'lbs-to-newtons-converter',
   'torque-to-hp-calculator',
+  'newton-meter-calculator',
 ] as const;
 
 const STATIC_PATHS = [

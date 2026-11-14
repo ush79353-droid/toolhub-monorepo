@@ -71,6 +71,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PsiToGpmCalculator: () => import('@/tools/calculators/psi-to-gpm/detail'),
   LbsToNewtonsConverter: () => import('@/tools/calculators/lbs-to-newtons/detail'),
   TorqueToHpCalculator: () => import('@/tools/calculators/torque-to-hp/detail'),
+  NewtonMeterCalculator: () => import('@/tools/calculators/newton-meter/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
