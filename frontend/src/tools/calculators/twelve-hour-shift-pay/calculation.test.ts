@@ -1,7 +1,12 @@
 import assert from 'node:assert/strict';
-import { calculateTwelveHourShiftPay, roundMoney, suggestedOvertimeWage } from './calculation';
+import { calculateTwelveHourShiftPay, roundMoney } from './calculation';
+import { formatShiftPay } from './TwelveHourShiftPayResults';
 import {
   DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT,
+  SHIFT_HOURS,
+  WEEKS_PER_MONTH,
+  WEEKS_PER_YEAR,
+  WORKDAYS_PER_WEEK,
   type TwelveHourShiftPayInput,
 } from './types';
 import { validateTwelveHourShiftPay } from './validation';
@@ -22,148 +27,126 @@ function withInput(patch: Partial<TwelveHourShiftPayInput>): TwelveHourShiftPayI
 
 console.log('Running 12-Hour Shift Pay Calculator unit tests...');
 
-test('standard 8 regular hours and 4 overtime hours at 1.5×', () => {
-  const input = withInput({
-    hourlyWage: 20,
-    overtimeHourlyWage: 30,
-    overtimeWageSource: 'suggested',
-    regularHours: 8,
-    shiftHours: 12,
-  });
-  assert.equal(suggestedOvertimeWage(20), 30);
-  const result = calculateTwelveHourShiftPay(input);
+test('defaults are 20, 30, and 8 regular hours', () => {
+  assert.equal(DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT.hourlyWage, 20);
+  assert.equal(DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT.overtimeHourlyWage, 30);
+  assert.equal(DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT.regularHours, 8);
+  assert.equal(SHIFT_HOURS, 12);
+  assert.equal(WORKDAYS_PER_WEEK, 5);
+  assert.equal(WEEKS_PER_MONTH, 4.4);
+  assert.equal(WEEKS_PER_YEAR, 52);
+});
+
+test('8 regular hours produce 4 overtime hours and the reference totals', () => {
+  const validation = validateTwelveHourShiftPay(DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT);
+  assert.equal(validation.isValid, true);
+  const result = calculateTwelveHourShiftPay(DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT);
   assert.ok(result);
   assert.equal(result.regularHours, 8);
   assert.equal(result.overtimeHours, 4);
-  assert.equal(result.regularPay, 160);
-  assert.equal(result.overtimePay, 120);
-  assert.equal(result.shiftPay, 280);
+  assert.equal(result.payPerDay, 280);
   assert.equal(result.averageHourlyPay, 23.33);
-  assert.equal(result.overtimeWageSource, 'suggested');
-});
-
-test('a typed overtime rate is used instead of 1.5×', () => {
-  const suggested = withInput({ hourlyWage: 20, overtimeHourlyWage: 30, overtimeWageSource: 'suggested' });
-  const entered = withInput({ hourlyWage: 20, overtimeHourlyWage: 40, overtimeWageSource: 'entered' });
-  const suggestedResult = calculateTwelveHourShiftPay(suggested);
-  const enteredResult = calculateTwelveHourShiftPay(entered);
-  assert.ok(suggestedResult && enteredResult);
-  assert.equal(suggestedResult.overtimePay, 120);
-  assert.equal(enteredResult.overtimePay, 160);
-  assert.equal(enteredResult.shiftPay, 320);
-  assert.equal(enteredResult.overtimeWageSource, 'entered');
-  assert.notEqual(enteredResult.overtimeHourlyWage, suggestedOvertimeWage(entered.hourlyWage));
+  assert.equal(result.payPerWeek, 1400);
+  assert.equal(result.payPerMonth, 6160);
+  assert.equal(result.payPerYear, 72800);
+  assert.equal(roundMoney(280 / 12), 23.33);
+  assert.equal(roundMoney(1400 * 4.4), 6160);
 });
 
 test('all 12 hours are regular when overtime hours are zero', () => {
-  const result = calculateTwelveHourShiftPay(
-    withInput({ hourlyWage: 20, overtimeHourlyWage: 30, regularHours: 12, shiftHours: 12 })
-  );
+  const result = calculateTwelveHourShiftPay(withInput({ regularHours: 12 }));
   assert.ok(result);
   assert.equal(result.overtimeHours, 0);
-  assert.equal(result.regularPay, 240);
-  assert.equal(result.overtimePay, 0);
-  assert.equal(result.shiftPay, 240);
+  assert.equal(result.payPerDay, 240);
   assert.equal(result.averageHourlyPay, 20);
 });
 
 test('all 12 hours are overtime when regular hours are zero', () => {
-  const result = calculateTwelveHourShiftPay(
-    withInput({ hourlyWage: 20, overtimeHourlyWage: 30, regularHours: 0, shiftHours: 12 })
-  );
+  const result = calculateTwelveHourShiftPay(withInput({ regularHours: 0 }));
   assert.ok(result);
-  assert.equal(result.regularPay, 0);
   assert.equal(result.overtimeHours, 12);
-  assert.equal(result.overtimePay, 360);
-  assert.equal(result.shiftPay, 360);
+  assert.equal(result.payPerDay, 360);
   assert.equal(result.averageHourlyPay, 30);
 });
 
-test('zero wage produces zero pay and stays finite', () => {
-  const input = withInput({ hourlyWage: 0, overtimeHourlyWage: 0, overtimeWageSource: 'entered' });
-  const validation = validateTwelveHourShiftPay(input);
-  assert.equal(validation.isValid, true);
-  const result = calculateTwelveHourShiftPay(input);
+test('a typed overtime wage is used as entered', () => {
+  const result = calculateTwelveHourShiftPay(withInput({ overtimeHourlyWage: 25 }));
   assert.ok(result);
-  assert.equal(result.shiftPay, 0);
-  assert.equal(result.averageHourlyPay, 0);
-  assert.equal(result.weeklyPay, 0);
-  assert.equal(result.yearlyPay, 0);
+  assert.equal(result.overtimeHours, 4);
+  assert.equal(result.payPerDay, 260);
 });
 
-test('empty and invalid numbers do not produce a result', () => {
-  const empty = withInput({ hourlyWage: Number.NaN, overtimeHourlyWage: Number.NaN, regularHours: Number.NaN });
+test('zero wages are rejected and do not produce a result', () => {
+  const zero = withInput({ hourlyWage: 0, overtimeHourlyWage: 0 });
+  const validation = validateTwelveHourShiftPay(zero);
+  assert.equal(validation.isValid, false);
+  assert.match(validation.errors.hourlyWage ?? '', /greater than 0/);
+  assert.match(validation.errors.overtimeHourlyWage ?? '', /greater than 0/);
+  assert.equal(calculateTwelveHourShiftPay(zero), null);
+});
+
+test('empty and non-finite numbers do not produce a result', () => {
+  const empty = withInput({
+    hourlyWage: Number.NaN,
+    overtimeHourlyWage: Number.NaN,
+    regularHours: Number.NaN,
+  });
   const validation = validateTwelveHourShiftPay(empty);
   assert.equal(validation.isValid, false);
   assert.ok(validation.errors.hourlyWage);
   assert.ok(validation.errors.regularHours);
   assert.equal(calculateTwelveHourShiftPay(empty), null);
   assert.equal(calculateTwelveHourShiftPay(withInput({ hourlyWage: Number.POSITIVE_INFINITY })), null);
+  assert.equal(calculateTwelveHourShiftPay(withInput({ regularHours: Number.POSITIVE_INFINITY })), null);
   assert.equal(Number.isNaN(roundMoney(Number.NaN)), true);
+  assert.equal(formatShiftPay(Number.NaN, 'USD'), '—');
+  assert.equal(formatShiftPay(Number.POSITIVE_INFINITY, 'USD'), '—');
 });
 
-test('regular hours outside 0–12 or longer than the shift are rejected', () => {
+test('negative wages and negative regular hours are rejected', () => {
+  const negativeWage = validateTwelveHourShiftPay(withInput({ hourlyWage: -5 }));
+  assert.equal(negativeWage.isValid, false);
+  assert.match(negativeWage.errors.hourlyWage ?? '', /greater than 0/);
+  assert.equal(calculateTwelveHourShiftPay(withInput({ hourlyWage: -5 })), null);
+
+  const negativeOvertime = validateTwelveHourShiftPay(withInput({ overtimeHourlyWage: -1 }));
+  assert.equal(negativeOvertime.isValid, false);
+  assert.equal(calculateTwelveHourShiftPay(withInput({ overtimeHourlyWage: -1 })), null);
+
+  const negativeHours = validateTwelveHourShiftPay(withInput({ regularHours: -1 }));
+  assert.equal(negativeHours.isValid, false);
+  assert.match(negativeHours.errors.regularHours ?? '', /negative/);
+  assert.equal(calculateTwelveHourShiftPay(withInput({ regularHours: -1 })), null);
+});
+
+test('regular hours above 12 are rejected and are not clamped', () => {
   const tooHigh = validateTwelveHourShiftPay(withInput({ regularHours: 13 }));
   assert.equal(tooHigh.isValid, false);
   assert.match(tooHigh.errors.regularHours ?? '', /0 to 12/);
   assert.equal(calculateTwelveHourShiftPay(withInput({ regularHours: 13 })), null);
-
-  const negative = validateTwelveHourShiftPay(withInput({ regularHours: -1 }));
-  assert.equal(negative.isValid, false);
-
-  const longerThanShift = validateTwelveHourShiftPay(withInput({ regularHours: 10, shiftHours: 9 }));
-  assert.equal(longerThanShift.isValid, false);
-  assert.match(longerThanShift.errors.regularHours ?? '', /longer than the shift/);
-  assert.equal(calculateTwelveHourShiftPay(withInput({ regularHours: 10, shiftHours: 9 })), null);
+  assert.equal(calculateTwelveHourShiftPay(withInput({ regularHours: 12.01 })), null);
 });
 
-test('weekly, monthly, and yearly figures use the stated schedule', () => {
+test('decimal hours and wages round each displayed amount to cents', () => {
   const result = calculateTwelveHourShiftPay(
-    withInput({
-      hourlyWage: 20,
-      overtimeHourlyWage: 30,
-      regularHours: 8,
-      shiftHours: 12,
-      shiftsPerWeek: 5,
-      weeksPerYear: 52,
-    })
+    withInput({ hourlyWage: 10.125, overtimeHourlyWage: 15.1, regularHours: 8.5 })
   );
   assert.ok(result);
-  assert.equal(result.weeklyPay, 1400);
-  assert.equal(result.yearlyPay, 72800);
-  assert.equal(result.monthlyPay, 6066.67);
-  assert.equal(result.shiftsPerWeek, 5);
-  assert.equal(result.weeksPerYear, 52);
-  assert.equal(roundMoney((1400 * 52) / 12), 6066.67);
+  assert.equal(result.overtimeHours, 3.5);
+  assert.equal(result.payPerDay, 138.91);
+  assert.equal(result.averageHourlyPay, 11.58);
+  assert.equal(result.payPerWeek, 694.55);
+  assert.equal(result.payPerMonth, 3056.02);
+  assert.equal(result.payPerYear, 36116.6);
 });
 
-test('decimal wages round each pay line to cents before they are added', () => {
-  const result = calculateTwelveHourShiftPay(
-    withInput({
-      hourlyWage: 10.125,
-      overtimeHourlyWage: 15.1,
-      overtimeWageSource: 'entered',
-      regularHours: 8,
-      shiftHours: 12,
-      shiftsPerWeek: 3,
-      weeksPerYear: 50,
-    })
-  );
-  assert.ok(result);
-  assert.equal(result.regularPay, 81);
-  assert.equal(result.overtimePay, 60.4);
-  assert.equal(result.shiftPay, 141.4);
-  assert.equal(result.averageHourlyPay, 11.78);
-  assert.equal(result.weeklyPay, 424.2);
-  assert.equal(result.yearlyPay, 21210);
-  assert.equal(result.monthlyPay, roundMoney((424.2 * 50) / 12));
-});
-
-test('negative wages and a zero-length shift are rejected', () => {
-  const negative = validateTwelveHourShiftPay(withInput({ hourlyWage: -5 }));
-  assert.equal(negative.isValid, false);
-  assert.equal(calculateTwelveHourShiftPay(withInput({ hourlyWage: -5 })), null);
-  assert.equal(calculateTwelveHourShiftPay(withInput({ shiftHours: 0 })), null);
+test('formatted money keeps two fraction digits and never prints NaN', () => {
+  const formatted = formatShiftPay(23.33, 'USD');
+  assert.match(formatted, /23\.33/);
+  assert.equal(formatted.includes('NaN'), false);
+  assert.equal(formatted.includes('Infinity'), false);
+  const pkr = formatShiftPay(6160, 'PKR');
+  assert.match(pkr, /6,160\.00/);
 });
 
 console.log('12-Hour Shift Pay Calculator unit tests passed.');
