@@ -39,6 +39,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'annualized-return-calculator',
   'appreciation-calculator',
   'apy-calculator',
+  'basis-point-calculator',
+  'bitcoin-etf-calculator',
+  'cagr-calculator',
+  'capital-gains-yield-calculator',
+  'cd-calculator',
 ]);
 
 function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {

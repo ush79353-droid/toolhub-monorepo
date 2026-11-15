@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   CD_COMPOUNDING_OPTIONS,
@@ -16,6 +16,7 @@ interface CdFormProps {
   errors: CdFieldErrors;
   result: CdResult | null;
   onChange: (input: CdInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -43,7 +44,14 @@ function FieldLabel({
   );
 }
 
-export function CdForm({ input, errors, result, onChange, onReset }: CdFormProps) {
+export function CdForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: CdFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<CdInput>) => onChange({ ...input, ...patch });
 
@@ -63,7 +71,7 @@ export function CdForm({ input, errors, result, onChange, onReset }: CdFormProps
           <FieldLabel
             htmlFor="cd-deposit"
             label="Initial deposit"
-            tip="Starting principal. Currency labels the amount only; it does not convert."
+            tip="Starting principal. Changing currency converts the deposit using stored rates."
           />
           <div className="flex gap-2">
             <div className="relative min-w-0 flex-1">
@@ -83,7 +91,7 @@ export function CdForm({ input, errors, result, onChange, onReset }: CdFormProps
               <CurrencySelect
                 id="cd-deposit-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -210,7 +218,7 @@ export function CdForm({ input, errors, result, onChange, onReset }: CdFormProps
               <CurrencySelect
                 id="cd-final-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Final balance currency"
               />
             </div>
@@ -235,7 +243,7 @@ export function CdForm({ input, errors, result, onChange, onReset }: CdFormProps
               <CurrencySelect
                 id="cd-interest-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Interest earned currency"
               />
             </div>

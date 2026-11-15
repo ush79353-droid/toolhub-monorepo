@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   CapitalGainsYieldFieldErrors,
@@ -40,6 +40,7 @@ interface CapitalGainsYieldFormProps {
   errors: CapitalGainsYieldFieldErrors;
   result: CapitalGainsYieldResult | null;
   onChange: (input: CapitalGainsYieldInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -48,6 +49,7 @@ export function CapitalGainsYieldForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: CapitalGainsYieldFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -89,7 +91,7 @@ export function CapitalGainsYieldForm({
               <CurrencySelect
                 id="cgy-bought-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Bought price currency"
               />
             </div>
@@ -125,7 +127,7 @@ export function CapitalGainsYieldForm({
               <CurrencySelect
                 id="cgy-current-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Current price currency"
               />
             </div>
@@ -164,7 +166,7 @@ export function CapitalGainsYieldForm({
               <CurrencySelect
                 id="cgy-gains-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Capital gains currency"
               />
             </div>

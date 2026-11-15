@@ -39,11 +39,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 8 | Annualized Return | `annualized-return-calculator` | 2 | Complete | `3fa7edb` | Pending | Shared currency controls; converts beginning+ending together; return % economic |
 | 9 | Appreciation | `appreciation-calculator` | 2 | Complete | `3fa7edb` | Pending | Shared currency; converts starting value; rate/duration unchanged |
 | 10 | APY | `apy-calculator` | 2 | Complete | `3fa7edb` | Pending | Shared currency; converts deposit; APR/compounding/APY % unchanged |
-| 11 | Basis Point | `basis-point-calculator` | 3 | Complete | — | Pending | Shared selectors; converts ofAmount; bps/%/ratios unchanged |
-| 12 | Bitcoin ETF | `bitcoin-etf-calculator` | 3 | Complete | — | Pending | Shared selectors (×4); converts investment + other costs; ratios/years unchanged |
-| 13 | CAGR | `cagr-calculator` | 3 | Complete | — | Pending | Shared selectors; converts initial + final together; CAGR %/periods unchanged |
-| 14 | Capital Gains Yield | `capital-gains-yield-calculator` | 3 | Complete | — | Pending | Shared selectors (×3); converts bought + current; yield % unchanged |
-| 15 | CD | `cd-calculator` | 3 | Complete | — | Pending | Shared selectors (×3); converts initial deposit; rate/term/compounding unchanged |
+| 11 | Basis Point | `basis-point-calculator` | 3 | Complete | `8e4b541` | Pending | Shared selectors; converts ofAmount; bps/%/ratios unchanged |
+| 12 | Bitcoin ETF | `bitcoin-etf-calculator` | 3 | Complete | `8e4b541` | Pending | Shared selectors (×4); converts investment + other costs; ratios/years unchanged |
+| 13 | CAGR | `cagr-calculator` | 3 | Complete | `8e4b541` | Pending | Shared selectors; converts initial + final together; CAGR %/periods unchanged |
+| 14 | Capital Gains Yield | `capital-gains-yield-calculator` | 3 | Complete | `8e4b541` | Pending | Shared selectors (×3); converts bought + current; yield % unchanged |
+| 15 | CD | `cd-calculator` | 3 | Complete | `8e4b541` | Pending | Shared selectors (×3); converts initial deposit; rate/term/compounding unchanged |
 | 16 | Compound Growth | `compound-growth-calculator` | 4 | Pending | — | Pending | |
 | 17 | Compound Interest | `compound-interest-calculator` | 4 | Pending | — | Pending | |
 | 18 | Compound Interest Rate | `compound-interest-rate-calculator` | 4 | Pending | — | Pending | |
@@ -154,7 +154,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Batch 3 notes
 
-- Local commit: `fix(currency): integrate conversion batch 3 calculators` (hash stamped after commit).
+- Local commit: `fix(currency): integrate conversion batch 3 calculators` `8e4b5412f2ce85b9a1b9e4368573039103a9e39e`.
 - Provider slug allowlist extended for Batch 3 (preserves Batch 1, Batch 2, and Margin Interest).
 - All five tools keep existing shared-currency selector wiring (multiple dropdowns, one currency).
 - Monetary fields convert via `convertCurrency` / `convertDraftMoneyFields`; percents, bps, periods, rates unchanged.

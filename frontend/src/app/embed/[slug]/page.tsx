@@ -29,6 +29,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'annualized-return-calculator',
   'appreciation-calculator',
   'apy-calculator',
+  'basis-point-calculator',
+  'bitcoin-etf-calculator',
+  'cagr-calculator',
+  'capital-gains-yield-calculator',
+  'cd-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';

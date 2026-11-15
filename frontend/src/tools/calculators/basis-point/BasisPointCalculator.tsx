@@ -4,7 +4,19 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { BasisPointForm } from './BasisPointForm';
 import { BasisPointResults } from './BasisPointResults';
 import {
@@ -16,6 +28,9 @@ import {
 } from './types';
 import { validateAmountSection, validateConversionField } from './validation';
 
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts the monetary amount using stored exchange rates. Basis points, percents, and ratios stay the same.';
+
 export function BasisPointCalculator({
   metadata,
   className = '',
@@ -23,16 +38,23 @@ export function BasisPointCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<BasisPointInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<BasisPointFieldErrors>({});
   const [amount, setAmount] = React.useState<AmountSnapshot | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const recomputeAmount = (next: BasisPointInput, conversionErrors: BasisPointFieldErrors) => {
     const amountValidation = validateAmountSection(next);
@@ -41,6 +63,7 @@ export function BasisPointCalculator({
   };
 
   const handleConversionEdit = (field: ConversionField, value: string) => {
+    setConversionError(null);
     if (!value.trim()) {
       const cleared: BasisPointInput = {
         ...input,
@@ -74,10 +97,7 @@ export function BasisPointCalculator({
     recomputeAmount(next, {});
   };
 
-  const handleAmountEdit = (
-    patch: Partial<Pick<BasisPointInput, 'xBps' | 'ofAmount' | 'currency'>>
-  ) => {
-    const next = { ...input, ...patch };
+  const applyAmount = (next: BasisPointInput) => {
     setInput(next);
     const amountValidation = validateAmountSection(next);
     setErrors((prev) => ({
@@ -90,11 +110,58 @@ export function BasisPointCalculator({
     setAmount(amountValidation.amount);
   };
 
+  const handleAmountEdit = (
+    patch: Partial<Pick<BasisPointInput, 'xBps' | 'ofAmount' | 'currency'>>
+  ) => {
+    if (patch.currency !== undefined && patch.currency !== input.currency) {
+      handleCurrencyChange(patch.currency);
+      return;
+    }
+    setConversionError(null);
+    applyAmount({ ...input, ...patch });
+  };
+
+  const handleCurrencyChange = (nextCurrency: SupportedCurrency) => {
+    if (nextCurrency === input.currency) return;
+
+    const amount = parseMoneyInput(input.ofAmount);
+    if (!Number.isFinite(amount)) {
+      setConversionError(null);
+      applyAmount({ ...input, currency: nextCurrency });
+      return;
+    }
+
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    const converted = convertCurrency({
+      amount,
+      from: input.currency,
+      to: nextCurrency,
+      rates: rates.rates,
+    });
+
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    setConversionError(null);
+    applyAmount({
+      ...input,
+      currency: nextCurrency,
+      ofAmount: moneyAmountToInputString(converted.amount),
+    });
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
     setErrors({});
     setAmount(null);
+    setConversionError(null);
   };
 
   const symbol = getCurrencySymbol(input.currency);
@@ -119,7 +186,7 @@ export function BasisPointCalculator({
                 amount.explanation,
               ].join('\n')
             : null,
-          CURRENCY_DENOMINATION_NOTE,
+          currencyNote,
         ]
           .filter(Boolean)
           .join('\n')
@@ -136,13 +203,21 @@ export function BasisPointCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Convert rates and compute x bps of an amount. {CURRENCY_DENOMINATION_NOTE}
+            Convert rates and compute x bps of an amount. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <BasisPointForm
           input={input}
           errors={errors}

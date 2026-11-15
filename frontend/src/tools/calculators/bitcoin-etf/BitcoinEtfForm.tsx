@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   BITCOIN_ETF_OPTIONS,
@@ -16,6 +16,7 @@ interface BitcoinEtfFormProps {
   errors: BitcoinEtfFieldErrors;
   result: BitcoinEtfResult | null;
   onChange: (input: BitcoinEtfInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -49,6 +50,7 @@ export function BitcoinEtfForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: BitcoinEtfFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -98,7 +100,7 @@ export function BitcoinEtfForm({
         <FieldLabel
           htmlFor="btc-investment"
           label="Investment amount"
-          tip="Starting amount before upfront other costs. Currency labels denomination only."
+          tip="Starting amount before upfront other costs. Changing currency converts fiat amounts using stored rates."
         />
         <div className="flex gap-2">
           <div className="relative min-w-0 flex-1">
@@ -118,7 +120,7 @@ export function BitcoinEtfForm({
             <CurrencySelect
               id="btc-investment-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -200,7 +202,7 @@ export function BitcoinEtfForm({
               <CurrencySelect
                 id="btc-other-costs-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Other costs currency"
               />
             </div>
@@ -276,14 +278,14 @@ export function BitcoinEtfForm({
               aria-live="polite"
             />
           </div>
-          <div className="w-[110px] shrink-0 sm:w-[120px]">
-            <CurrencySelect
-              id="btc-fv-currency"
-              value={input.currency}
-              onChange={(currency) => set({ currency })}
-              aria-label="Future value currency"
-            />
-          </div>
+            <div className="w-[110px] shrink-0 sm:w-[120px]">
+              <CurrencySelect
+                id="btc-fv-currency"
+                value={input.currency}
+                onChange={onCurrencyChange}
+                aria-label="Future value currency"
+              />
+            </div>
         </div>
       </div>
 
@@ -306,14 +308,14 @@ export function BitcoinEtfForm({
               aria-live="polite"
             />
           </div>
-          <div className="w-[110px] shrink-0 sm:w-[120px]">
-            <CurrencySelect
-              id="btc-total-cost-currency"
-              value={input.currency}
-              onChange={(currency) => set({ currency })}
-              aria-label="Total cost currency"
-            />
-          </div>
+            <div className="w-[110px] shrink-0 sm:w-[120px]">
+              <CurrencySelect
+                id="btc-total-cost-currency"
+                value={input.currency}
+                onChange={onCurrencyChange}
+                aria-label="Total cost currency"
+              />
+            </div>
         </div>
       </div>
 
