@@ -929,6 +929,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OperatingAssetTurnoverCalculator,
     })),
   ),
+  OptimalHedgeRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/optimal-hedge-ratio/OptimalHedgeRatioCalculator').then((mod) => ({
+      default: mod.OptimalHedgeRatioCalculator,
+    })),
+  ),
   ParkingRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/parking-ratio/ParkingRatioCalculator').then((mod) => ({
       default: mod.ParkingRatioCalculator,

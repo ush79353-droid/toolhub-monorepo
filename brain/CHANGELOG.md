@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-15 — Add Optimal Hedge Ratio Calculator (Screenshot-First)
+- **Summary:** Shipped Optimal Hedge Ratio Calculator on existing catalog slug `optimal-hedge-ratio-calculator` (`OptimalHedgeRatioCalculator`, catalog `6af46f10a27d8d1d4e9900e1`). Four unitless fields: spot σ, futures σ, correlation, inline optimal hedge ratio. Formula h* = ρ × (σs / σf). Distinct from Hedge Ratio Calculator. Omega UI. Activated.
+- **Example:** σs 12 / σf 15 / ρ 0.8 → h* = 0.64.
+- **Important Files:** `frontend/src/tools/calculators/optimal-hedge-ratio/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-optimal-hedge-ratio-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
 ### 2026-11-15 — Add NPV Calculator (Screenshot-First)
 - **Summary:** Shipped NPV Calculator on existing catalog slug `npv-calculator-net-present-value` (`NpvCalculator`, catalog `6af46f10a27d8d1d4e9900df`). Discount rate, initial costs, Years 1–5 + show-more (max 9); NPV and expected cash flows (discounted PV of future CFs per OmniCalculator). Denomination currency. Omega UI. Activated.
 - **Example:** 10% / PKR 10,000 / 4,000×3 years → NPV ≈ −52.59.
