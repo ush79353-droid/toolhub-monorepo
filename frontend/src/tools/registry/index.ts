@@ -549,6 +549,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TimeZonesConverter,
     })),
   ),
+  MinutesToHoursConverter: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-hours/MinutesToHoursConverter').then((mod) => ({
+      default: mod.MinutesToHoursConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
