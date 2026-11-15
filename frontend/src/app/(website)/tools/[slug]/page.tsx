@@ -112,6 +112,10 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'saas-lifetime-value-calculator',
   'sales-commission-calculator',
   'smokers-ctc-calculator',
+  'software-contract-value-calculator',
+  'website-ad-revenue-calculator',
+  'youtube-money-calculator',
+  'jensens-alpha-calculator',
 ]);
 
 function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {

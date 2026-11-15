@@ -3,7 +3,13 @@
 import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import {
   draftToInput,
   emptyDraft,
@@ -18,7 +24,16 @@ import type {
 } from './types';
 import { validateSoftwareContractValue } from './validation';
 
-function summaryText(metadataTitle: string, result: SoftwareContractValueResult): string {
+const MONEY_FIELDS = ['retailPrice'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts retail price and all derived contract costs using stored exchange rates. Seats, discount %, and contract duration stay the same.';
+
+function summaryText(
+  metadataTitle: string,
+  result: SoftwareContractValueResult,
+  currencyNote: string,
+): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   return [
     `${metadataTitle} — Omega Calculators`,
@@ -32,7 +47,7 @@ function summaryText(metadataTitle: string, result: SoftwareContractValueResult)
     `Annual cost: ${money(result.annualCost)}`,
     `Duration: ${result.durationYears} yrs ${result.durationMonths} mos (${result.contractMonths} months)`,
     `Contract value: ${money(result.contractValue)}`,
-    CURRENCY_DENOMINATION_NOTE,
+    currencyNote,
   ].join('\n');
 }
 
@@ -43,6 +58,8 @@ export function SoftwareContractValueCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<SoftwareContractValueDraft>(() => emptyDraft());
   const [errors, setErrors] = React.useState<SoftwareContractValueFieldErrors>({});
   const [result, setResult] = React.useState<SoftwareContractValueResult | null>(null);
@@ -50,10 +67,15 @@ export function SoftwareContractValueCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const evaluate = React.useCallback(
     (next: SoftwareContractValueDraft, reportBlanks = false) => {
@@ -67,6 +89,32 @@ export function SoftwareContractValueCalculator({
     [],
   );
 
+  const handleDraftChange = (next: SoftwareContractValueDraft) => {
+    setConversionError(null);
+    evaluate(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates,
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleDraftChange({ ...draft, ...converted.values, currency });
+  };
+
   const resetAll = () => {
     setDraft(emptyDraft());
     setErrors({});
@@ -74,9 +122,10 @@ export function SoftwareContractValueCalculator({
     setIncomplete(true);
     setCopied(false);
     setShared(false);
+    setConversionError(null);
   };
 
-  const sharePayload = result ? summaryText(metadata.title, result) : '';
+  const sharePayload = result ? summaryText(metadata.title, result, currencyNote) : '';
   const hasFieldErrors = Object.keys(errors).length > 0;
 
   return (
@@ -90,17 +139,26 @@ export function SoftwareContractValueCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Contract value = discounted seat price × seats × months
+            Contract value = discounted seat price × seats × months. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex flex-wrap justify-end gap-2">{headerActions}</div> : null}
       </div>
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <SoftwareContractValueForm
           draft={draft}
           errors={errors}
           result={result}
-          onDraftChange={(next) => evaluate(next)}
+          onDraftChange={handleDraftChange}
+          onCurrencyChange={handleCurrencyChange}
           onSubmit={(event) => {
             event.preventDefault();
             evaluate(draft, true);
@@ -116,7 +174,7 @@ export function SoftwareContractValueCalculator({
           canShare={canShare}
           onCopy={() => {
             if (!result) return;
-            void copyTextToClipboard(summaryText(metadata.title, result)).then((ok) => {
+            void copyTextToClipboard(summaryText(metadata.title, result, currencyNote)).then((ok) => {
               if (!ok) return;
               setCopied(true);
               window.setTimeout(() => setCopied(false), 2000);

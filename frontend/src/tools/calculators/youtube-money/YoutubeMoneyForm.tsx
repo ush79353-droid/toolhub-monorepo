@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   PERIODS,
@@ -74,6 +74,7 @@ interface YoutubeMoneyFormProps {
   errors: YoutubeMoneyFieldErrors;
   result: YoutubeMoneyResult | null;
   onChange: (input: YoutubeMoneyInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -82,6 +83,7 @@ export function YoutubeMoneyForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: YoutubeMoneyFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -121,7 +123,7 @@ export function YoutubeMoneyForm({
             <CurrencySelect
               id="yt-rpm-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="RPM currency"
             />
           </div>
@@ -181,7 +183,7 @@ export function YoutubeMoneyForm({
             <CurrencySelect
               id="yt-gross-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Gross revenue currency"
             />
           </div>
@@ -220,7 +222,7 @@ export function YoutubeMoneyForm({
             <CurrencySelect
               id="yt-net-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Net revenue currency"
             />
           </div>

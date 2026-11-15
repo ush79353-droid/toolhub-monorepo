@@ -3,7 +3,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   WebsiteAdRevenueFieldErrors,
@@ -37,6 +37,7 @@ interface WebsiteAdRevenueFormProps {
   errors: WebsiteAdRevenueFieldErrors;
   result: WebsiteAdRevenueResult | null;
   onChange: (input: WebsiteAdRevenueInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -45,6 +46,7 @@ export function WebsiteAdRevenueForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: WebsiteAdRevenueFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -135,7 +137,7 @@ export function WebsiteAdRevenueForm({
             Page RPM
             <InfoTooltip
               label="Page RPM"
-              text="Revenue per 1,000 page views. Currency labels amounts only; it does not convert."
+              text="Revenue per 1,000 page views. Changing currency converts RPM and estimated revenue; traffic counts stay the same."
             />
           </label>
           <div className="flex gap-2">
@@ -156,7 +158,7 @@ export function WebsiteAdRevenueForm({
               <CurrencySelect
                 id="ad-revenue-page-rpm-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Page RPM currency"
               />
             </div>
@@ -191,7 +193,7 @@ export function WebsiteAdRevenueForm({
               <CurrencySelect
                 id="ad-revenue-revenue-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Revenue currency"
               />
             </div>
