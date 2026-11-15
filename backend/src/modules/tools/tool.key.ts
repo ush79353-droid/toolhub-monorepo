@@ -148,6 +148,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CostFunctionCalculator',
   'CostOfDoingBusinessCalculator',
   'CostOfGoodsSoldCalculator',
+  'CostOfEquityCalculator',
   'CpaCalculator',
   'CpcAndCpmCalculator',
   'CpmCalculator',
@@ -394,6 +395,7 @@ if (isDirect) {
     !isApprovedComponentKey('CostFunctionCalculator') ||
     !isApprovedComponentKey('CostOfDoingBusinessCalculator') ||
     !isApprovedComponentKey('CostOfGoodsSoldCalculator') ||
+    !isApprovedComponentKey('CostOfEquityCalculator') ||
     !isApprovedComponentKey('CpaCalculator') ||
     !isApprovedComponentKey('CpcAndCpmCalculator') ||
     !isApprovedComponentKey('CpmCalculator') ||

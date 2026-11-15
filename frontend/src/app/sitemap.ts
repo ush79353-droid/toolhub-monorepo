@@ -157,6 +157,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cost-function-calculator',
   'cost-of-doing-business-calculator',
   'cost-of-goods-sold-calculator',
+  'cost-of-equity-calculator',
   'cpa-calculator-cost-per-acquisition',
   'cpc-and-cpm-calculator',
   'cpm-calculator',

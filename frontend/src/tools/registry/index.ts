@@ -806,6 +806,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CostOfGoodsSoldCalculator,
     })),
   ),
+  CostOfEquityCalculator: lazyTool(() =>
+    import('@/tools/calculators/cost-of-equity/CostOfEquityCalculator').then((mod) => ({
+      default: mod.CostOfEquityCalculator,
+    })),
+  ),
   CpaCalculator: lazyTool(() =>
     import('@/tools/calculators/cpa/CpaCalculator').then((mod) => ({
       default: mod.CpaCalculator,

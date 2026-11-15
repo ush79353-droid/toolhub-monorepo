@@ -206,6 +206,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cost-of-doing-business/detail'),
   CostOfGoodsSoldCalculator: () =>
     import('@/tools/calculators/cost-of-goods-sold/detail'),
+  CostOfEquityCalculator: () =>
+    import('@/tools/calculators/cost-of-equity/detail'),
   CpaCalculator: () =>
     import('@/tools/calculators/cpa/detail'),
   CpcAndCpmCalculator: () =>
