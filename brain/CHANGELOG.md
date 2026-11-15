@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Week Over Week Calculator (Screenshot-First)
+- **Summary:** Shipped Week Over Week Calculator on existing catalog slug `week-over-week-calculator` (`WeekOverWeekCalculator`, catalog `6af46f10a27d8d1d4e9900ef`). Value in initial week + following week → WoW % change ((F−I)/I)×100. Nonzero initial required; zero following allowed; signed %. Collapsed Weekly CAGR section without invented inputs (expanded screenshot required). Copy/share/reset. No currency. Omega UI. Activated.
+- **Example:** 1,000 → 1,200 = +20%; 1,000 → 800 = −20%; 500 → 500 = 0%.
+- **Important Files:** `frontend/src/tools/calculators/week-over-week/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-week-over-week-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. Weekly CAGR fields unverified pending expanded screenshot.
+
 ### 2026-11-15 — Add Sinking Fund Calculator (Screenshot-First)
 - **Summary:** Shipped Sinking Fund Calculator on existing catalog slug `sinking-fund-calculator` (`SinkingFundCalculator`, catalog `6af46f10a27d8d1d4e9900e9`). Money to accumulate, annual interest rate %, compounding frequency (default Yearly), period years/months (default 5y 0m) → USSF factor and required contribution (FV × USSF). Zero-rate path 1/n. Months as months/12. Denomination currency. Omega UI. Activated.
 - **Example:** PKR 100,000 @ 5%/yr yearly × 5y → USSF ≈ 0.180975; contribution ≈ 18,097.48.
