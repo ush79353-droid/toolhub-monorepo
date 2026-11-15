@@ -44,6 +44,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'expected-utility-calculator',
   'expense-ratio-calculator',
   'fd-calculator',
+  'future-value-calculator',
+  'hedge-ratio-calculator',
+  'holding-period-return-calculator',
+  'impermanent-loss-calculator',
+  'information-ratio-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';

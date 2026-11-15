@@ -2,7 +2,11 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import {
+  CURRENCY_DENOMINATION_NOTE,
+  getCurrencySymbol,
+  type SupportedCurrency,
+} from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   WEIGHT_OPTIONS,
@@ -17,6 +21,7 @@ interface ImpermanentLossFormProps {
   errors: ImpermanentLossFieldErrors;
   result: ImpermanentLossResult | null;
   onChange: (input: ImpermanentLossInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -63,6 +68,7 @@ export function ImpermanentLossForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: ImpermanentLossFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -136,7 +142,7 @@ export function ImpermanentLossForm({
               <CurrencySelect
                 id="il-deposit-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -181,7 +187,7 @@ export function ImpermanentLossForm({
                   <CurrencySelect
                     id={`${id}-currency`}
                     value={input.currency}
-                    onChange={(currency) => set({ currency })}
+                    onChange={onCurrencyChange}
                   />
                 </div>
               </div>
@@ -232,7 +238,7 @@ export function ImpermanentLossForm({
                   <CurrencySelect
                     id={`${id}-currency`}
                     value={input.currency}
-                    onChange={(currency) => set({ currency })}
+                    onChange={onCurrencyChange}
                   />
                 </div>
               </div>
@@ -305,7 +311,7 @@ export function ImpermanentLossForm({
                 <CurrencySelect
                   id={`${id}-currency`}
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                   aria-label={`${label} currency`}
                 />
               </div>

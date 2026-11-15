@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import type {
   FutureValueFieldErrors,
   FutureValueInput,
@@ -103,6 +104,7 @@ interface FutureValueFormProps {
   errors: FutureValueFieldErrors;
   result: FutureValueResult | null;
   onChange: (input: FutureValueInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -111,11 +113,11 @@ export function FutureValueForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: FutureValueFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<FutureValueInput>) => onChange({ ...input, ...patch });
-  const setCurrency = (currency: FutureValueInput['currency']) => set({ currency });
 
   return (
     <form
@@ -136,7 +138,7 @@ export function FutureValueForm({
           symbol={symbol}
           currency={input.currency}
           onValueChange={(presentValue) => set({ presentValue })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
 
         <div>
@@ -207,7 +209,7 @@ export function FutureValueForm({
               symbol={symbol}
               currency={input.currency}
               onValueChange={(periodicAmount) => set({ periodicAmount })}
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
             />
             <div>
               <label className={labelClass} htmlFor="fv-timing">
@@ -245,7 +247,7 @@ export function FutureValueForm({
           value={result ? result.formattedFutureValue : ''}
           symbol={symbol}
           currency={input.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
         />
 
@@ -260,7 +262,7 @@ export function FutureValueForm({
           value={result ? result.formattedTotalInterest : ''}
           symbol={symbol}
           currency={input.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
         />
 
