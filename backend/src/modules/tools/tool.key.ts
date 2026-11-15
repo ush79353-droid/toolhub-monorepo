@@ -93,6 +93,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ByteConversionCalculator',
   'MbpsToGbpsConverter',
   'CapacitanceConverter',
+  'MbToGbConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -336,6 +337,7 @@ if (isDirect) {
     !isApprovedComponentKey('ByteConversionCalculator') ||
     !isApprovedComponentKey('MbpsToGbpsConverter') ||
     !isApprovedComponentKey('CapacitanceConverter') ||
+    !isApprovedComponentKey('MbToGbConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

@@ -190,7 +190,6 @@ export function calculateRoi(input: {
     periodUnit,
     initialInvestment,
     contributionFrequency,
-    contributionAmount,
     sourceField,
     startDate,
     endDate,

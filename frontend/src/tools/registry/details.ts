@@ -105,6 +105,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ByteConversionCalculator: () => import('@/tools/calculators/byte-conversion/detail'),
   MbpsToGbpsConverter: () => import('@/tools/calculators/mbps-to-gbps/detail'),
   CapacitanceConverter: () => import('@/tools/calculators/capacitance/detail'),
+  MbToGbConverter: () => import('@/tools/calculators/mb-to-gb/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

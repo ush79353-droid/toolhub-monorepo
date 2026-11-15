@@ -104,6 +104,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'byte-conversion-calculator',
   'mbps-to-gbps-converter',
   'capacitance-converter',
+  'mb-to-gb-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

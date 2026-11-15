@@ -499,6 +499,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CapacitanceConverter,
     })),
   ),
+  MbToGbConverter: lazyTool(() =>
+    import('@/tools/calculators/mb-to-gb/MbToGbCalculator').then((mod) => ({
+      default: mod.MbToGbConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
