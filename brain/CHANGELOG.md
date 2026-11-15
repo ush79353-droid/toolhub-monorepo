@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add m/s to km/h Converter
+- **Summary:** Shipped m/s to km/h Converter on existing catalog slug `ms-to-kmh-converter` (`MsToKmhConverter`, catalog `6af46f17a27d8d1d4e990c0b`). Main fields m/s, km/h, mph, ft/s, knots plus extras; canonical m/s; live bidirectional sync. Mach omitted. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 10 m/s = 36 km/h ≈ 22.3693629 mph ≈ 32.808399 ft/s ≈ 19.4384449 kn; 72 km/h = 20 m/s.
+- **Important Files:** `frontend/src/tools/calculators/ms-to-kmh/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-ms-to-kmh-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 41/143). Full production build not run this pass.
+
 ### 2026-11-15 — Add Angle Conversion Calculator
 - **Summary:** Shipped Angle Conversion Calculator on existing catalog slug `angle-conversion-calculator` (`AngleConversionCalculator`, catalog `6af46f17a27d8d1d4e990bfb`). Degrees, DMS, radians, gradians, turns, π radians, plus arcminutes/arcseconds/microradians and NATO/Soviet/Swedish mils; canonical radians; live field sync. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 90° = π/2 rad = 100 gon = 0.25 turn = 0.5 π rad = 1,600 NATO mils; 45° 30′ 15″ ≈ 45.5041666667°.
