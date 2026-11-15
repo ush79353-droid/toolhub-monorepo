@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 16 |
-| Pending | 89 |
+| Complete (implementation) | 21 |
+| Pending | 84 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 89 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 84 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -44,11 +44,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 13 | CAGR | `cagr-calculator` | 3 | Complete | `f4277e3` | Pending | Shared selectors; converts initial + final together; CAGR %/periods unchanged |
 | 14 | Capital Gains Yield | `capital-gains-yield-calculator` | 3 | Complete | `f4277e3` | Pending | Shared selectors (×3); converts bought + current; yield % unchanged |
 | 15 | CD | `cd-calculator` | 3 | Complete | `f4277e3` | Pending | Shared selectors (×3); converts initial deposit; rate/term/compounding unchanged |
-| 16 | Compound Growth | `compound-growth-calculator` | 4 | Pending | — | Pending | |
-| 17 | Compound Interest | `compound-interest-calculator` | 4 | Pending | — | Pending | |
-| 18 | Compound Interest Rate | `compound-interest-rate-calculator` | 4 | Pending | — | Pending | |
-| 19 | Continuous Compound Interest | `continuous-compound-interest-calculator` | 4 | Pending | — | Pending | |
-| 20 | DCF | `discounted-cash-flow-calculator-dcf` | 4 | Pending | — | Pending | |
+| 16 | Compound Growth | `compound-growth-calculator` | 4 | Complete | `81d17a1` | Pending | Shared selectors; converts deposit + contribution; rate/term/compounding unchanged |
+| 17 | Compound Interest | `compound-interest-calculator` | 4 | Complete | `81d17a1` | Pending | Shared selector; converts principal + deposits; rate/term/compounding unchanged |
+| 18 | Compound Interest Rate | `compound-interest-rate-calculator` | 4 | Complete | `81d17a1` | Pending | Shared selectors; converts initial+final together; implied rate/term unchanged |
+| 19 | Continuous Compound Interest | `continuous-compound-interest-calculator` | 4 | Complete | `81d17a1` | Pending | Shared selectors; converts balance + deposits; r and t unchanged |
+| 20 | DCF | `discounted-cash-flow-calculator-dcf` | 4 | Complete | `81d17a1` | Pending | Shared selectors; converts FCFF/EPS/cash/debt; rates/shares unchanged |
 | 21 | Discount Rate | `discount-rate-calculator` | 5 | Pending | — | Pending | |
 | 22 | Effective Annual Yield | `effective-annual-yield-calculator` | 5 | Pending | — | Pending | |
 | 23 | Expected Utility | `expected-utility-calculator` | 5 | Pending | — | Pending | |
@@ -161,8 +161,18 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Bitcoin ETF: fiat investment/other costs only — no BTC quantity FX.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 4 notes
+
+- Local commit: `fix(currency): integrate conversion batch 4 calculators` `81d17a11fbd361cac80a127c8246a7c455046e8a`.
+- Provider slug allowlist extended for Batch 4 (preserves prior batches + Margin Interest).
+- Shared currency state across existing selectors; monetary draft fields convert together.
+- Compound Interest Rate: initial+final convert together so FX alone cannot invent a rate change.
+- DCF: cash-flow signs preserved via conversion of typed amounts; WACC/g/shares unconverted.
+- Manual verification left Pending for user reference comparison.
+
 ## Changelog
 
+- 2026-11-16: Batch 4 (#16–#20) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 3 (#11–#15) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 2 (#6–#10) implementation Complete; manual verification Pending.
 - 2026-11-16: Created ledger from Phase 3 audit; recorded Margin Interest Pilot Complete; marked Batch 1 (#1–#5) Complete (implementation).
