@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Moving Average Calculator (Screenshot-First)
+- **Summary:** Shipped Moving Average Calculator on existing catalog slug `moving-average-calculator` (`MovingAverageCalculator`, catalog `6af46f0fa27d8d1d4e9900db`). Length N (≥2), three starter price fields with auto-trailing rows, incomplete guidance message, inline SMA of latest N prices. Denomination currency. Omega UI. Activated.
+- **Example:** Length 3 with 100/120/140 → PKR 120; with fourth price 160 → PKR 140.
+- **Important Files:** `frontend/src/tools/calculators/moving-average/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-moving-average-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add MIRR Calculator (Screenshot-First)
 - **Summary:** Shipped MIRR Calculator on existing catalog row (slug shortened to `mirr-calculator`, `MirrCalculator`, catalog `6af46f0fa27d8d1d4e990016`). Financing/reinvestment rates, initial investment, Years 1–5 (+ expandable years), inline MIRR. Denomination currency. Omega UI. Activated.
 - **Example:** PKR 1,000 / 10% finance / 8% reinvest / 500×3 years → MIRR ≈ 17.5%.

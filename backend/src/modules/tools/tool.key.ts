@@ -166,7 +166,9 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginInterestCalculator',
   'MoneyFactorCalculator',
   'MoneyMarketAccountCalculator',
+  'MovingAverageCalculator',
   'MvaCalculator',
+  'NopatCalculator',
   'OnlineMarketingConversionCalculator',
   'OperatingAssetTurnoverCalculator',
   'ParkingRatioCalculator',
@@ -383,7 +385,9 @@ if (isDirect) {
     !isApprovedComponentKey('MarginInterestCalculator') ||
     !isApprovedComponentKey('MoneyFactorCalculator') ||
     !isApprovedComponentKey('MoneyMarketAccountCalculator') ||
+    !isApprovedComponentKey('MovingAverageCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
+    !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
     !isApprovedComponentKey('OperatingAssetTurnoverCalculator') ||
     !isApprovedComponentKey('ParkingRatioCalculator') ||
