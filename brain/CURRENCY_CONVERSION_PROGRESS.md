@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 100 |
-| Pending | 5 |
+| Complete (implementation) | 105 |
+| Pending | 0 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 5 (Batch 15) + 5 (Batch 16) + 4 (Batch 17) + 5 (Batch 18) + 5 (Batch 19) + 5 (Batch 20) + 5 Pending tools |
+| Manual verification Pending | 104 (all batches except Margin Interest pilot Passed) |
 
 ## Pilot (outside batch numbering)
 
@@ -129,11 +129,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 98 | ROCE | `return-on-capital-employed-calculator-roce` | 20 | Complete | e18538a | Pending | Synced selectors; EBIT and balance-sheet money fields convert; ROCE % unchanged |
 | 99 | ROI | `roi-calculator` | 20 | Complete | e18538a | Pending | Synced selectors (×3); invested, contribution, and returned convert; ROI and annualized % FX-invariant |
 | 100 | Simple Interest | `simple-interest-calculator` | 20 | Complete | e18538a | Pending | Synced selectors (×3); principal converts; rate % and term unchanged |
-| 101 | Sinking Fund | `sinking-fund-calculator` | 21 | Pending | — | Pending | |
-| 102 | Time Value of Money | `time-value-of-money-calculator` | 21 | Pending | — | Pending | |
-| 103 | Treynor Ratio | `treynor-ratio-calculator` | 21 | Pending | — | Pending | |
-| 104 | TTM | `ttm-calculator-trailing-twelve-months` | 21 | Pending | — | Pending | |
-| 105 | Value at Risk (VaR) | `value-at-risk-calculator-var` | 21 | Pending | — | Pending | |
+| 101 | Sinking Fund | `sinking-fund-calculator` | 21 | Complete | ae81dbb | Pending | Synced selectors (×2); target savings converts; USSF, rate %, compounding, period unchanged |
+| 102 | Time Value of Money | `time-value-of-money-calculator` | 21 | Complete | ae81dbb | Pending | Synced selector; PV and FV convert together; rate, term, compounding unchanged |
+| 103 | Treynor Ratio | `treynor-ratio-calculator` | 21 | Complete | ae81dbb | Pending | Synced selectors (×2); beginning and ending convert; return %, beta, Treynor % FX-invariant |
+| 104 | TTM | `ttm-calculator-trailing-twelve-months` | 21 | Complete | ae81dbb | Pending | Synced selector; four quarterly flows convert; TTM sum scales; mode/order unchanged |
+| 105 | Value at Risk (VaR) | `value-at-risk-calculator-var` | 21 | Complete | ae81dbb | Pending | Synced selectors (×2); portfolio value converts; σ, μ, probabilities, horizon unchanged |
 
 ## Batch 1 notes
 
@@ -190,6 +190,21 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Holding Period Return: bought, current, and dividend convert; all yield percentages unchanged.
 - Impermanent Loss: fiat deposit and token prices in quote currency convert; token quantities and IL % unchanged.
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
+- Manual verification left Pending for user reference comparison.
+
+## Phase 3 state
+
+**ALL BATCHES COMPLETE** — 105/105 audit targets have FX conversion implementation. Manual QA remains Pending for every tool except the Margin Interest pilot (Passed).
+
+## Batch 21 notes
+
+- Local commit: `fix(currency): integrate conversion batch 21 calculators` `ae81dbbcb019308036e8a93915ffe3a3f17c586b`.
+- Provider slug allowlist extended for Batch 21 (preserves prior batches + Margin Interest pilot).
+- Sinking Fund: synced selectors (×2); money to accumulate converts; USSF factor, compounding frequency, rate %, and period unchanged.
+- Time Value of Money: synced selector; present and future values convert together without circular edits; interest rate, term, and compounding unchanged.
+- Treynor Ratio: synced selectors (×2); beginning and ending portfolio values convert; portfolio return %, risk-free rate, beta, and Treynor ratio invariant to FX-only changes.
+- TTM: synced selector across quarters and TTM result; Q0–Q3 monetary flows convert; sum order and mode unchanged.
+- Value at Risk (VaR): synced selectors (×2); portfolio value converts; VaR amount scales; standard deviation, expected return, tail probability, and horizon unchanged.
 - Manual verification left Pending for user reference comparison.
 
 ## Batch 20 notes
@@ -350,6 +365,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: **Phase 3 ALL BATCHES COMPLETE** — Batch 21 (#101–#105) implementation Complete; totals 105/0 Complete/Pending; manual verification Pending.
 - 2026-11-16: Batch 20 (#96–#100) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 19 (#91–#95) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 18 (#86–#90) implementation Complete; manual verification Pending.
