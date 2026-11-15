@@ -4,7 +4,12 @@
 
 ---
 
-<<<<<<< HEAD
+### 2026-11-16 — Add Beta Stock Calculator (Screenshot-First)
+- **Summary:** Shipped Beta Stock Calculator on existing catalog slug `beta-stock-calculator` (`BetaStockCalculator`, catalog `6af46f0fa27d8d1d4e99002e`). Four+ chronological asset/benchmark price pairs → daily returns → β = Cov/Var. Optional price line chart. Denomination currency (PKR). Omega UI. Activated.
+- **Example:** Asset 50/55/50/60, Benchmark 100/110/100/120 → β = 1.00.
+- **Important Files:** `frontend/src/tools/calculators/beta-stock/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-beta-stock-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Week Over Week Calculator (Screenshot-First)
 - **Summary:** Shipped Week Over Week Calculator on existing catalog slug `week-over-week-calculator` (`WeekOverWeekCalculator`, catalog `6af46f10a27d8d1d4e9900ef`). Value in initial week + following week → WoW % change ((F−I)/I)×100. Nonzero initial required; zero following allowed; signed %. Collapsed Weekly CAGR section without invented inputs (expanded screenshot required). Copy/share/reset. No currency. Omega UI. Activated.
 - **Example:** 1,000 → 1,200 = +20%; 1,000 → 800 = −20%; 500 → 500 = 0%.
@@ -93,12 +98,11 @@
 - **Example:** 10% / PKR 10,000 / 4,000×3 years → NPV ≈ −52.59.
 - **Important Files:** `frontend/src/tools/calculators/npv/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-npv-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
-=======
+
 ### 2026-11-15 — Fix backend production build for Node start
 - **Summary:** Switched `backend/tsconfig.json` emit from ESNext/`bundler` to CommonJS/`node` so `npm run build` + `npm start` (`node dist/server.js`) resolves relative imports on the server. Local `npm run dev` (`tsx`) unchanged.
 - **Important Files:** `backend/tsconfig.json`, `brain/BACKEND.md`.
 - **Verification:** `npm run build` emitted `require("./app")`; `node dist/server.js` connected Mongo and listened on port 5001.
->>>>>>> 11e6cb8230776a235f310d263091a11f450a3815
 
 ### 2026-11-15 — Add NOPAT Calculator (Screenshot-First)
 - **Summary:** Shipped NOPAT Calculator on existing catalog slug `nopat-calculator` (`NopatCalculator`, catalog `6af46f10a27d8d1d4e9900de`). Simple mode (operating profit × (1 − tax%/100)) and precise mode (income-statement reconstruction). Denomination currency. Omega UI. Activated.

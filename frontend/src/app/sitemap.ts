@@ -136,6 +136,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'annualized-return-calculator',
   'apy-calculator',
   'basis-point-calculator',
+  'beta-stock-calculator',
   'average-collection-period-calculator',
   'average-fixed-cost-calculator',
   'bounce-rate-calculator',

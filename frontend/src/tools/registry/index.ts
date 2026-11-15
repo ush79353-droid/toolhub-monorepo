@@ -699,6 +699,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BasisPointCalculator,
     })),
   ),
+  BetaStockCalculator: lazyTool(() =>
+    import('@/tools/calculators/beta-stock/BetaStockCalculator').then((mod) => ({
+      default: mod.BetaStockCalculator,
+    })),
+  ),
   AverageCollectionPeriodCalculator: lazyTool(() =>
     import('@/tools/calculators/average-collection-period/AverageCollectionPeriodCalculator').then((mod) => ({
       default: mod.AverageCollectionPeriodCalculator,
