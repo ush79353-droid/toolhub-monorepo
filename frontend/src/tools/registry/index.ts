@@ -509,6 +509,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ColorConverter,
     })),
   ),
+  RgbToHexConverter: lazyTool(() =>
+    import('@/tools/calculators/rgb-to-hex/RgbToHexConverter').then((mod) => ({
+      default: mod.RgbToHexConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

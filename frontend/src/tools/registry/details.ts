@@ -107,6 +107,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CapacitanceConverter: () => import('@/tools/calculators/capacitance/detail'),
   MbToGbConverter: () => import('@/tools/calculators/mb-to-gb/detail'),
   ColorConverter: () => import('@/tools/calculators/color/detail'),
+  RgbToHexConverter: () => import('@/tools/calculators/rgb-to-hex/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

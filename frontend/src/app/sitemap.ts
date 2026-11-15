@@ -106,6 +106,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'capacitance-converter',
   'mb-to-gb-converter',
   'color-converter',
+  'rgb-to-hex-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
