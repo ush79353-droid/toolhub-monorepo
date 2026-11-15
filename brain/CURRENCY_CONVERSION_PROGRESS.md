@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 46 |
-| Pending | 59 |
+| Complete (implementation) | 51 |
+| Pending | 54 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 59 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 54 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -74,11 +74,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 43 | Burn Rate | `burn-rate-calculator` | 9 | Complete | `fad37c0` | Pending | Balances and burn display convert; duration and runway units unchanged |
 | 44 | Business Budget | `business-budget-calculator` | 9 | Complete | `fad37c0` | Pending | All income/expense/one-time lines convert; recurring periods unchanged |
 | 45 | Business Loan | `business-loan-calculator` | 9 | Complete | `fad37c0` | Pending | Loan amount and fee cash convert; rate, term, and origination % unchanged |
-| 46 | Business Valuation | `business-valuation-calculator` | 10 | Pending | — | Pending | |
-| 47 | Consulting Fees | `consulting-fees-calculator` | 10 | Pending | — | Pending | |
-| 48 | Contribution Margin | `contribution-margin-calculator` | 10 | Pending | — | Pending | |
-| 49 | Cost Function | `cost-function-calculator` | 10 | Pending | — | Pending | |
-| 50 | Cost of Doing Business | `cost-of-doing-business-calculator` | 10 | Pending | — | Pending | |
+| 46 | Business Valuation | `business-valuation-calculator` | 10 | Complete | `d4afaed` | Pending | Synced selectors; monetary inputs convert; discount %, multiples, shares, scale unchanged |
+| 47 | Consulting Fees | `consulting-fees-calculator` | 10 | Complete | `d4afaed` | Pending | Header selector; operating costs and target income convert; billable days/hours unchanged |
+| 48 | Contribution Margin | `contribution-margin-calculator` | 10 | Complete | `d4afaed` | Pending | Shared selectors; price, variable cost, fixed costs convert; units and margin % unchanged |
+| 49 | Cost Function | `cost-function-calculator` | 10 | Complete | `d4afaed` | Pending | Shared selectors; fixed/variable/total costs convert; quantities and slopes unchanged |
+| 50 | Cost of Doing Business | `cost-of-doing-business-calculator` | 10 | Complete | `d4afaed` | Pending | Synced selectors; annual cost converts; billable days unchanged |
 | 51 | Cost of Goods Sold | `cost-of-goods-sold-calculator` | 11 | Pending | — | Pending | |
 | 52 | CPA | `cpa-calculator-cost-per-acquisition` | 11 | Pending | — | Pending | |
 | 53 | CPC and CPM | `cpc-and-cpm-calculator` | 11 | Pending | — | Pending | |
@@ -192,6 +192,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 10 notes
+
+- Local commit: `fix(currency): integrate conversion batch 10 calculators` `d4afaed149e66ef7c525cafdb09cff5423e22757`.
+- Provider slug allowlist extended for Batch 10 (preserves prior batches + Margin Interest).
+- Business Valuation: three synced selectors; cash flow, assets/liabilities, share price, and metric convert; discount %, multiples, shares, and cash-flow scale unchanged.
+- Consulting Fees: display currency selector; all operating cost lines and target income convert; billable days and hours per day unchanged.
+- Contribution Margin: shared selectors on money fields; price, variable cost, and fixed costs convert; unit count and margin % unchanged.
+- Cost Function: shared selectors; fixed cost, variable per unit, and two-point total costs convert; quantities and derived cost-function slopes unchanged.
+- Cost of Doing Business: synced input/result selectors; total annual cost converts; billable days unchanged.
+- Manual verification left Pending for user reference comparison.
+
 ## Batch 9 notes
 
 - Local commit: `fix(currency): integrate conversion batch 9 calculators` `fad37c014cbb5bdd8d28365d99c83cd5a816cec2`.
@@ -228,6 +239,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 10 (#46–#50) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 9 (#41–#45) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 8 (#36–#40) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 7 (#31–#35) implementation Complete; manual verification Pending.
