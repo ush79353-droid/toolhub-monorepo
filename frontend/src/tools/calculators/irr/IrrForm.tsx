@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type { IrrFieldErrors, IrrInput, IrrResult } from './types';
 
@@ -11,6 +11,7 @@ interface IrrFormProps {
   errors: IrrFieldErrors;
   result: IrrResult | null;
   onChange: (input: IrrInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -36,7 +37,14 @@ function FieldLabel({
   );
 }
 
-export function IrrForm({ input, errors, result, onChange, onReset }: IrrFormProps) {
+export function IrrForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: IrrFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const setCashFlow = (index: number, value: string) => {
     const cashFlows = input.cashFlows.map((cf, i) => (i === index ? value : cf));
@@ -59,7 +67,7 @@ export function IrrForm({ input, errors, result, onChange, onReset }: IrrFormPro
         <FieldLabel
           htmlFor="irr-initial"
           label="Initial investment"
-          tip="Upfront outflow. Must be greater than zero. Currency labels denomination only."
+          tip="Upfront outflow. Must be greater than zero."
         />
         <div className="flex gap-2">
           <div className="relative min-w-0 flex-1">
@@ -79,7 +87,7 @@ export function IrrForm({ input, errors, result, onChange, onReset }: IrrFormPro
             <CurrencySelect
               id="irr-initial-currency"
               value={input.currency}
-              onChange={(currency) => onChange({ ...input, currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -126,7 +134,7 @@ export function IrrForm({ input, errors, result, onChange, onReset }: IrrFormPro
                     <CurrencySelect
                       id={`irr-year-${year}-currency`}
                       value={input.currency}
-                      onChange={(currency) => onChange({ ...input, currency })}
+                      onChange={onCurrencyChange}
                     />
                   </div>
                 </div>
