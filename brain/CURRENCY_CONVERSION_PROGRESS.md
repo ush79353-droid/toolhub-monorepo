@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 85 |
-| Pending | 20 |
+| Complete (implementation) | 90 |
+| Pending | 15 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 5 (Batch 15) + 5 (Batch 16) + 4 (Batch 17) + 20 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 5 (Batch 15) + 5 (Batch 16) + 4 (Batch 17) + 5 (Batch 18) + 15 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -114,11 +114,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 83 | YouTube Money | `youtube-money-calculator` | 17 | Complete | `137c28d5bd1423e33e32ff06b3cb6bf37c2f36a3` | Pending | Synced selectors (×3); RPM converts; view counts and periods unchanged |
 | 84 | Jensen's Alpha | `jensens-alpha-calculator` | 17 | Complete | `137c28d5bd1423e33e32ff06b3cb6bf37c2f36a3` | Pending | Synced selectors (×2); beginning and ending values convert; return % and alpha unchanged by FX alone |
 | 85 | Margin Interest | `margin-interest-calculator` | 17 | Complete | `b968634` | Passed | Pilot Complete (see Pilot section); Batch 17 slot already done |
-| 86 | MVA | `mva-calculator` | 18 | Pending | — | Pending | |
-| 87 | MIRR | `mirr-calculator` | 18 | Pending | — | Pending | |
-| 88 | Money Market Account | `money-market-account-calculator` | 18 | Pending | — | Pending | |
-| 89 | Moving Average | `moving-average-calculator` | 18 | Pending | — | Pending | |
-| 90 | Mutual Fund | `mutual-fund-calculator` | 18 | Pending | — | Pending | |
+| 86 | MVA | `mva-calculator` | 18 | Complete | 6227e6f | Pending | Synced selectors (×2); share price + capital invested convert; shares outstanding and MVA sign unchanged |
+| 87 | MIRR | `mirr-calculator` | 18 | Complete | 6227e6f | Pending | Synced selectors (×3); initial + yearly cash flows convert; financing/reinvestment rates and MIRR % unchanged |
+| 88 | Money Market Account | `money-market-account-calculator` | 18 | Complete | 6227e6f | Pending | Synced selectors (×3); balance, recurring, and result amounts convert; SIP/one-time mode and return % unchanged |
+| 89 | Moving Average | `moving-average-calculator` | 18 | Complete | 6227e6f | Pending | Synced selectors (×2); price series + SMA convert; lookback length unchanged |
+| 90 | Mutual Fund | `mutual-fund-calculator` | 18 | Complete | 6227e6f | Pending | Synced selectors (×2); SIP/lump contributions and maturity convert; return % and periods unchanged |
 | 91 | NOPAT | `nopat-calculator` | 19 | Pending | — | Pending | |
 | 92 | NPV | `npv-calculator-net-present-value` | 19 | Pending | — | Pending | |
 | 93 | Opportunity Cost | `opportunity-cost-calculator` | 19 | Pending | — | Pending | |
@@ -190,6 +190,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Holding Period Return: bought, current, and dividend convert; all yield percentages unchanged.
 - Impermanent Loss: fiat deposit and token prices in quote currency convert; token quantities and IL % unchanged.
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
+- Manual verification left Pending for user reference comparison.
+
+## Batch 18 notes
+
+- Local commit: `fix(currency): integrate conversion batch 18 calculators` `6227e6f`.
+- Provider slug allowlist extended for Batch 18 (preserves prior batches + Margin Interest pilot).
+- MVA: synced selectors (×2); share price and capital invested convert; shares outstanding and MVA sign unchanged.
+- MIRR: synced selectors (×3); initial investment and yearly cash flows convert; financing/reinvestment rates and MIRR % unchanged.
+- Money Market Account: synced selectors (×3); starting balance, recurring deposits, and projected amounts convert; SIP/one-time mode and return % unchanged.
+- Moving Average: synced selectors (×2); price series and SMA convert; lookback length unchanged.
+- Mutual Fund: synced selectors (×2); SIP/lump contributions and maturity convert; return %, periods, and compounding unchanged.
 - Manual verification left Pending for user reference comparison.
 
 ## Batch 17 notes
@@ -317,6 +328,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 18 (#86–#90) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 17 (#81–#84) implementation Complete; #85 unchanged (pilot); manual verification Pending for #81–#84.
 - 2026-11-16: Batch 16 (#76–#80) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 15 (#71–#75) implementation Complete; manual verification Pending.
