@@ -3,7 +3,11 @@
 import type { FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { formatCurrencyValue, getCurrencySymbol } from '@/tools/shared/currency';
+import {
+  formatCurrencyValue,
+  getCurrencySymbol,
+  type SupportedCurrency,
+} from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   COMPOUNDING_OPTIONS,
@@ -61,6 +65,7 @@ interface CompoundInterestRateFormProps {
   errors: CompoundInterestRateFieldErrors;
   result: CompoundInterestRateResult | null;
   onDraftChange: (draft: CompoundInterestRateDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -162,6 +167,7 @@ export function CompoundInterestRateForm({
   errors,
   result,
   onDraftChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: CompoundInterestRateFormProps) {
@@ -187,7 +193,7 @@ export function CompoundInterestRateForm({
         error={errors.initialBalance}
         currency={draft.currency}
         onValueChange={(initialBalance) => patch({ initialBalance })}
-        onCurrencyChange={(currency) => patch({ currency })}
+        onCurrencyChange={onCurrencyChange}
       />
       <MoneyField
         id="cir-final"
@@ -197,7 +203,7 @@ export function CompoundInterestRateForm({
         error={errors.finalBalance}
         currency={draft.currency}
         onValueChange={(finalBalance) => patch({ finalBalance })}
-        onCurrencyChange={(currency) => patch({ currency })}
+        onCurrencyChange={onCurrencyChange}
       />
       <Readout
         id="cir-surplus"
@@ -209,7 +215,7 @@ export function CompoundInterestRateForm({
             <CurrencySelect
               id="cir-surplus-currency"
               value={draft.currency}
-              onChange={(currency) => patch({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Surplus currency"
             />
           </div>

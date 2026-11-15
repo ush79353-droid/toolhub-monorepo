@@ -4,7 +4,7 @@ import type { FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   COMPOUNDING_OPTIONS,
@@ -27,6 +27,7 @@ interface CompoundInterestFormProps {
   depositsOpen: boolean;
   onDepositsOpen: (open: boolean) => void;
   onChange: (draft: CompoundInterestDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -38,6 +39,7 @@ export function CompoundInterestForm({
   depositsOpen,
   onDepositsOpen,
   onChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: CompoundInterestFormProps) {
@@ -74,7 +76,7 @@ export function CompoundInterestForm({
               <CurrencySelect
                 id="ci-currency"
                 value={draft.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>

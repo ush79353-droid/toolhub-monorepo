@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type { DcfFieldErrors, DcfInput, DcfMethod, DcfResult } from './types';
 
@@ -135,13 +135,20 @@ interface DcfFormProps {
   errors: DcfFieldErrors;
   result: DcfResult | null;
   onChange: (input: DcfInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
-export function DcfForm({ input, errors, result, onChange, onReset }: DcfFormProps) {
+export function DcfForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: DcfFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<DcfInput>) => onChange({ ...input, ...patch });
-  const setCurrency = (currency: DcfInput['currency']) => set({ currency });
   const isFcff = input.method === 'fcff';
 
   return (
@@ -186,7 +193,7 @@ export function DcfForm({ input, errors, result, onChange, onReset }: DcfFormPro
             symbol={symbol}
             currency={input.currency}
             onValueChange={(firstFcff) => set({ firstFcff })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
           <MoneyField
             id="dcf-second-fcff"
@@ -197,7 +204,7 @@ export function DcfForm({ input, errors, result, onChange, onReset }: DcfFormPro
             symbol={symbol}
             currency={input.currency}
             onValueChange={(secondFcff) => set({ secondFcff })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
         </fieldset>
       ) : (
@@ -216,7 +223,7 @@ export function DcfForm({ input, errors, result, onChange, onReset }: DcfFormPro
             symbol={symbol}
             currency={input.currency}
             onValueChange={(firstEps) => set({ firstEps })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
           <MoneyField
             id="dcf-second-eps"
@@ -227,7 +234,7 @@ export function DcfForm({ input, errors, result, onChange, onReset }: DcfFormPro
             symbol={symbol}
             currency={input.currency}
             onValueChange={(secondEps) => set({ secondEps })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
         </fieldset>
       )}
@@ -244,7 +251,7 @@ export function DcfForm({ input, errors, result, onChange, onReset }: DcfFormPro
             symbol={symbol}
             currency={input.currency}
             onValueChange={(cash) => set({ cash })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
           <MoneyField
             id="dcf-debt"
@@ -255,7 +262,7 @@ export function DcfForm({ input, errors, result, onChange, onReset }: DcfFormPro
             symbol={symbol}
             currency={input.currency}
             onValueChange={(outstandingDebt) => set({ outstandingDebt })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
         </fieldset>
       ) : null}
@@ -326,7 +333,7 @@ export function DcfForm({ input, errors, result, onChange, onReset }: DcfFormPro
           value={result ? result.formattedShareValue : ''}
           symbol={symbol}
           currency={input.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
         />
       </fieldset>
