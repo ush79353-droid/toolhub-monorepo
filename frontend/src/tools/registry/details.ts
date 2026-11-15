@@ -140,6 +140,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),
   TimeValueOfMoneyCalculator: () =>
     import('@/tools/calculators/time-value-of-money/detail'),
+  TtmCalculator: () => import('@/tools/calculators/ttm/detail'),
   TreynorRatioCalculator: () =>
     import('@/tools/calculators/treynor-ratio/detail'),
   TurnoverRateCalculator: () =>
