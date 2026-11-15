@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import type {
   ProfitabilityIndexFieldErrors,
   ProfitabilityIndexInput,
@@ -33,6 +34,7 @@ interface ProfitabilityIndexFormProps {
   errors: ProfitabilityIndexFieldErrors;
   result: ProfitabilityIndexResult | null;
   onChange: (input: ProfitabilityIndexInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -41,6 +43,7 @@ export function ProfitabilityIndexForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: ProfitabilityIndexFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -75,7 +78,7 @@ export function ProfitabilityIndexForm({
             <CurrencySelect
               id="pi-investment-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Initial investment currency"
             />
           </div>
@@ -111,7 +114,7 @@ export function ProfitabilityIndexForm({
             <CurrencySelect
               id="pi-pv-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="PV of future cash flow currency"
             />
           </div>

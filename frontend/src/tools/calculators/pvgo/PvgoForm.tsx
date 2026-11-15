@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import type { PvgoFieldErrors, PvgoInput, PvgoResult } from './types';
 
 const labelClass = 'mb-1.5 flex items-center gap-1.5 text-[13px] font-medium text-accent';
@@ -42,10 +43,11 @@ interface PvgoFormProps {
   errors: PvgoFieldErrors;
   result: PvgoResult | null;
   onChange: (input: PvgoInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
-export function PvgoForm({ input, errors, result, onChange, onReset }: PvgoFormProps) {
+export function PvgoForm({ input, errors, result, onChange, onCurrencyChange, onReset }: PvgoFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<PvgoInput>) => onChange({ ...input, ...patch });
 
@@ -86,7 +88,7 @@ export function PvgoForm({ input, errors, result, onChange, onReset }: PvgoFormP
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -118,7 +120,7 @@ export function PvgoForm({ input, errors, result, onChange, onReset }: PvgoFormP
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

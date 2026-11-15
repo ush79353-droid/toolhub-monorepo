@@ -3,7 +3,13 @@
 import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import {
   draftToInput,
   emptyDraft,
@@ -15,7 +21,12 @@ import { calculatePriceQuantity } from './calculation';
 import type { PriceQuantityFieldErrors, PriceQuantityResult } from './types';
 import { validatePriceQuantity } from './validation';
 
-function summaryText(metadataTitle: string, result: PriceQuantityResult): string {
+const MONEY_FIELDS = ['smallerPrice', 'largerPrice'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts product prices and derived monetary results using stored exchange rates. Quantities and per-unit comparisons scale consistently.';
+
+function summaryText(metadataTitle: string, result: PriceQuantityResult, note: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   return [
     `${metadataTitle} — Omega Calculators`,
@@ -24,7 +35,7 @@ function summaryText(metadataTitle: string, result: PriceQuantityResult): string
     `Larger: ${result.largerQuantity} units for ${money(result.largerPrice)} (${money(result.largerPricePerUnit)} / unit)`,
     `Would have cost: ${money(result.wouldHaveCost)}`,
     `You save: ${money(result.youSave)}`,
-    CURRENCY_DENOMINATION_NOTE,
+    note,
   ].join('\n');
 }
 
@@ -35,6 +46,8 @@ export function PriceQuantityCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<PriceQuantityDraft>(() => emptyDraft());
   const [errors, setErrors] = React.useState<PriceQuantityFieldErrors>({});
   const [result, setResult] = React.useState<PriceQuantityResult | null>(null);
@@ -42,10 +55,15 @@ export function PriceQuantityCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const evaluate = React.useCallback((next: PriceQuantityDraft, reportBlanks = false) => {
     const parsed = draftToInput(next);
@@ -56,6 +74,32 @@ export function PriceQuantityCalculator({
     setResult(validation.isValid ? calculatePriceQuantity(parsed) : null);
   }, []);
 
+  const handleDraftChange = (next: PriceQuantityDraft) => {
+    setConversionError(null);
+    evaluate(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleDraftChange({ ...draft, ...converted.values, currency });
+  };
+
   const resetAll = () => {
     setDraft(emptyDraft());
     setErrors({});
@@ -63,9 +107,10 @@ export function PriceQuantityCalculator({
     setIncomplete(true);
     setCopied(false);
     setShared(false);
+    setConversionError(null);
   };
 
-  const sharePayload = result ? summaryText(metadata.title, result) : '';
+  const sharePayload = result ? summaryText(metadata.title, result, currencyNote) : '';
   const hasFieldErrors = Object.keys(errors).length > 0;
 
   return (
@@ -79,17 +124,26 @@ export function PriceQuantityCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Compare price per unit and pack savings
+            Compare price per unit and pack savings. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex flex-wrap justify-end gap-2">{headerActions}</div> : null}
       </div>
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <PriceQuantityForm
           draft={draft}
           errors={errors}
           result={result}
-          onDraftChange={(next) => evaluate(next)}
+          onDraftChange={handleDraftChange}
+          onCurrencyChange={handleCurrencyChange}
           onSubmit={(event) => {
             event.preventDefault();
             evaluate(draft, true);
@@ -105,7 +159,7 @@ export function PriceQuantityCalculator({
           canShare={canShare}
           onCopy={() => {
             if (!result) return;
-            void copyTextToClipboard(summaryText(metadata.title, result)).then((ok) => {
+            void copyTextToClipboard(summaryText(metadata.title, result, currencyNote)).then((ok) => {
               if (!ok) return;
               setCopied(true);
               window.setTimeout(() => setCopied(false), 2000);

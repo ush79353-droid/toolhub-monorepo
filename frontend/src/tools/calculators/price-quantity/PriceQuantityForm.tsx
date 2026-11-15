@@ -210,6 +210,7 @@ interface PriceQuantityFormProps {
   errors: PriceQuantityFieldErrors;
   result: PriceQuantityResult | null;
   onDraftChange: (draft: PriceQuantityDraft) => void;
+  onCurrencyChange: (currency: PriceQuantityDraft['currency']) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -219,12 +220,12 @@ export function PriceQuantityForm({
   errors,
   result,
   onDraftChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: PriceQuantityFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
   const set = (patch: Partial<PriceQuantityDraft>) => onDraftChange({ ...draft, ...patch });
-  const setCurrency = (currency: PriceQuantityDraft['currency']) => set({ currency });
 
   return (
     <form className="space-y-4" onSubmit={onSubmit} noValidate autoComplete="off">
@@ -252,7 +253,7 @@ export function PriceQuantityForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(smallerPrice) => set({ smallerPrice })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyRow
           id="pq-smaller-ppu"
@@ -261,7 +262,7 @@ export function PriceQuantityForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           suffix="/ unit"
           displayValue={result ? formatPlainMoney(result.smallerPricePerUnit, result.currency) : '—'}
@@ -292,7 +293,7 @@ export function PriceQuantityForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(largerPrice) => set({ largerPrice })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyRow
           id="pq-larger-ppu"
@@ -301,7 +302,7 @@ export function PriceQuantityForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           suffix="/ unit"
           displayValue={result ? formatPlainMoney(result.largerPricePerUnit, result.currency) : '—'}
@@ -322,7 +323,7 @@ export function PriceQuantityForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           displayValue={result ? formatMoneyFixed(result.wouldHaveCost, result.currency) : '—'}
         />
@@ -333,7 +334,7 @@ export function PriceQuantityForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           displayValue={result ? formatMoneyFixed(result.youSave, result.currency) : '—'}
         />
