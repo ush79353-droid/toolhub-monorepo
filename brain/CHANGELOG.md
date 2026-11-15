@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Military Time Converter
+- **Summary:** Shipped Military Time Converter on existing catalog slug `military-time-converter` (`MilitaryTimeConverter`, catalog `6af46f17a27d8d1d4e990baf`). Bidirectional military↔12-hour conversion; HHMM and HH:MM input; hour/minute/AM-PM selectors; midnight/noon handling; hour and minutes charts. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1830 → 6:30 PM · 18:30; 12:00 AM → 0000; 12:00 PM → 1200; 7:45 PM → 1945.
+- **Important Files:** `frontend/src/tools/calculators/military-time/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-military-time-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 43/158). Full production build not run this pass.
+
 ### 2026-11-15 — Add Mbps Calculator
 - **Summary:** Shipped Mbps Calculator on existing catalog slug `mbps-calculator` (`MbpsCalculator`, catalog `6af46f17a27d8d1d4e990bcc`). Bidirectional Mbps↔MB/s plus SI bit/byte rate fields (bit/s, kbit/s, Gbit/s, B/s, kB/s, GB/s) via shared bits/s; primary section open by default; bits/bytes accordions; clickable examples. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 100 Mbit/s → 12.5 MB/s · 100000 kbit/s · 0.1 Gbit/s; 1 Gbit/s → 1000 Mbit/s · 125 MB/s.
