@@ -759,6 +759,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CagrCalculator,
     })),
   ),
+  CapmCalculator: lazyTool(() =>
+    import('@/tools/calculators/capm/CapmCalculator').then((mod) => ({
+      default: mod.CapmCalculator,
+    })),
+  ),
   ChurnRateCalculator: lazyTool(() =>
     import('@/tools/calculators/churn-rate/ChurnRateCalculator').then((mod) => ({
       default: mod.ChurnRateCalculator,

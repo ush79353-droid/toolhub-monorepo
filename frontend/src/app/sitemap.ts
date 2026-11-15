@@ -148,6 +148,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'business-budget-calculator',
   'business-valuation-calculator',
   'cagr-calculator',
+  'capm-calculator-capital-asset-pricing-model',
   'churn-rate-calculator',
   'consulting-fees-calculator',
   'contribution-margin-calculator',

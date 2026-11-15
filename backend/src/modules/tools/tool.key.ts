@@ -138,6 +138,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BusinessBudgetCalculator',
   'BusinessValuationCalculator',
   'CagrCalculator',
+  'CapmCalculator',
   'CapitalGainsYieldCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
@@ -382,6 +383,7 @@ if (isDirect) {
     !isApprovedComponentKey('BusinessBudgetCalculator') ||
     !isApprovedComponentKey('BusinessValuationCalculator') ||
     !isApprovedComponentKey('CagrCalculator') ||
+    !isApprovedComponentKey('CapmCalculator') ||
     !isApprovedComponentKey('CapitalGainsYieldCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
     !isApprovedComponentKey('ConsultingFeesCalculator') ||

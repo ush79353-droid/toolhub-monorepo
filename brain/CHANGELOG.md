@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add CAPM Calculator (Screenshot-First)
+- **Summary:** Shipped CAPM Calculator on existing catalog slug `capm-calculator-capital-asset-pricing-model` (`CapmCalculator`, catalog `6af46f10a27d8d1d4e990152`). Five-field screenshot parity: Rf %, Rm %, unitless beta → asset risk premium % and expected return R %. Blank defaults; live recalc; signed beta and Rm &lt; Rf allowed. No currency. Distinct from Beta Stock / Jensen's Alpha / Expected Return. Omega UI. Activated.
+- **Example:** Rf 4% / Rm 12% / β 1.2 → asset risk premium 9.6%, expected return 13.6%.
+- **Important Files:** `frontend/src/tools/calculators/capm/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-capm-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Add Beta Stock Calculator (Screenshot-First)
 - **Summary:** Shipped Beta Stock Calculator on existing catalog slug `beta-stock-calculator` (`BetaStockCalculator`, catalog `6af46f0fa27d8d1d4e99002e`). Four+ chronological asset/benchmark price pairs → daily returns → β = Cov/Var. Optional price line chart. Denomination currency (PKR). Omega UI. Activated.
 - **Example:** Asset 50/55/50/60, Benchmark 100/110/100/120 → β = 1.00.
