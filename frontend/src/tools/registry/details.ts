@@ -133,6 +133,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/sell-through-rate/detail'),
   SimpleInterestCalculator: () =>
     import('@/tools/calculators/simple-interest/detail'),
+  SinkingFundCalculator: () =>
+    import('@/tools/calculators/sinking-fund/detail'),
   SmokersCtcCalculator: () =>
     import('@/tools/calculators/smokers-ctc/detail'),
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),

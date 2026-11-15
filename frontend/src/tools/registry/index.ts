@@ -591,6 +591,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SimpleInterestCalculator,
     })),
   ),
+  SinkingFundCalculator: lazyTool(() =>
+    import('@/tools/calculators/sinking-fund/SinkingFundCalculator').then((mod) => ({
+      default: mod.SinkingFundCalculator,
+    })),
+  ),
   SmokersCtcCalculator: lazyTool(() =>
     import('@/tools/calculators/smokers-ctc/SmokersCtcCalculator').then((mod) => ({
       default: mod.SmokersCtcCalculator,

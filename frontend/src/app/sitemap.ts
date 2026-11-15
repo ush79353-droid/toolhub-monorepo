@@ -118,6 +118,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sales-commission-calculator',
   'sell-through-rate-calculator',
   'simple-interest-calculator',
+  'sinking-fund-calculator',
   'smokers-ctc-calculator',
   'tenure-calculator',
   'turnover-rate-calculator',

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Real Rate of Return Calculator (Screenshot-First)
+- **Summary:** Shipped Real Rate of Return Calculator on existing catalog slug `real-rate-of-return-calculator` (`RealRateOfReturnCalculator`, catalog `6af46f0fa27d8d1d4e990017`). Three fields only: nominal rate %, inflation rate %, inline real rate %. Fisher equation (not nominal − inflation). No currency. Omega UI. Activated.
+- **Example:** 10% nominal / 4% inflation → real ≈ 5.7692%.
+- **Important Files:** `frontend/src/tools/calculators/real-rate-of-return/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-real-rate-of-return-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add ROI Calculator (Screenshot-First)
 - **Summary:** Shipped ROI Calculator on existing catalog slug `roi-calculator` (`RoiCalculator`, catalog `6af46f10a27d8d1d4e9900e7`). Basic ROI (period, initial, optional contributions, linked rate/returned, ROI %, optional gain/loss) and Annualized ROI from dates. Time needed / compare gated pending screenshots. Denomination currency. Omega UI. Activated.
 - **Example:** PKR 10,000 → 15,000 / 5y → ROI 50%; annualized ≈ 8.447%.
