@@ -98,6 +98,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RgbToHexConverter',
   'HexToRgbConverter',
   'UnicodeTextConverter',
+  'KbToMbConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -346,6 +347,7 @@ if (isDirect) {
     !isApprovedComponentKey('RgbToHexConverter') ||
     !isApprovedComponentKey('HexToRgbConverter') ||
     !isApprovedComponentKey('UnicodeTextConverter') ||
+    !isApprovedComponentKey('KbToMbConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

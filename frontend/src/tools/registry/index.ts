@@ -524,6 +524,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.UnicodeTextConverter,
     })),
   ),
+  KbToMbConverter: lazyTool(() =>
+    import('@/tools/calculators/kb-to-mb/KbToMbConverter').then((mod) => ({
+      default: mod.KbToMbConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

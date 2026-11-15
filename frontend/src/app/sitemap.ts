@@ -109,6 +109,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'rgb-to-hex-converter',
   'hex-to-rgb-converter',
   'unicode-text-converter',
+  'kb-to-mb-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

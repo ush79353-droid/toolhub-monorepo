@@ -110,6 +110,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   RgbToHexConverter: () => import('@/tools/calculators/rgb-to-hex/detail'),
   HexToRgbConverter: () => import('@/tools/calculators/hex-to-rgb/detail'),
   UnicodeTextConverter: () => import('@/tools/calculators/unicode-text/detail'),
+  KbToMbConverter: () => import('@/tools/calculators/kb-to-mb/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
