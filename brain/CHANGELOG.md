@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-16 — Currency conversion Phase 2 shared engine (ADR-021)
+- **Summary:** Added pure `convertCurrency` (`amount × rates[target] / rates[source]`), unrounded `MoneyValue`, `useConvertibleMoneyField`, `normalizeAmountsToCurrency`, and client `CurrencyRatesProvider` fed by Phase 1 `getCurrencyRates`. Display rounding only via `roundMoneyAmount`. No calculator modules changed.
+- **Important Files:** `frontend/src/tools/shared/{convert-currency,money-value,useConvertibleMoney,CurrencyRatesProvider,currency-rates}.ts(x)`, `frontend/src/server/currency/rates.ts`, agent currency rules, `brain/*`.
+- **Verification:** `convert-currency.selfcheck.ts` passed (10 PKR ↔ USD @ 277 round-trip). Lint/builds/browser/calculator integration omitted per user.
+
 ### 2026-11-16 — Currency rates Phase 1 read path (ADR-017 / ADR-021)
 - **Summary:** Exposed stored MongoDB `CurrencyRate` snapshots to the Next.js server. Added public `GET /api/v1/currency/rates` and server-only `getCurrencyRates` loader. 48-hour `isStale` flag; stale rates remain readable. Aligned tracked currency metadata to 54 codes. No calculator conversion wired yet.
 - **Important Files:** `backend/src/modules/currency/{currency.router,currency.service,currency-metadata}.ts`, `backend/src/app.ts`, `frontend/src/server/currency/rates.ts`, `frontend/src/tools/shared/currency.ts`, `brain/{API_CONTRACTS,BACKEND,DATABASE,CURRENT_STATE,FRONTEND,ARCHITECTURE,DECISIONS,CHANGELOG}.md`.

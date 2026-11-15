@@ -1,33 +1,19 @@
 import 'server-only';
 import { cache } from 'react';
 import { ApiClientError, serverApi } from '@/server/api/client';
+import {
+  CURRENCY_RATE_STALE_HOURS,
+  UNAVAILABLE_CURRENCY_RATES,
+  type CurrencyRatesSnapshot,
+} from '@/tools/shared/currency-rates';
 
-/** ADR-021: older than 48 hours is stale but may still be used. */
-export const CURRENCY_RATE_STALE_HOURS = 48;
-
-export interface CurrencyRatesSnapshot {
-  available: boolean;
-  baseCurrency: string | null;
-  rates: Record<string, number>;
-  fetchedAt: string | null;
-  isStale: boolean;
-  staleThresholdHours: number;
-  supportedCurrencies: string[];
-}
-
-const UNAVAILABLE: CurrencyRatesSnapshot = {
-  available: false,
-  baseCurrency: null,
-  rates: {},
-  fetchedAt: null,
-  isStale: true,
-  staleThresholdHours: CURRENCY_RATE_STALE_HOURS,
-  supportedCurrencies: [],
-};
+export type { CurrencyRatesSnapshot };
+export { CURRENCY_RATE_STALE_HOURS };
 
 /**
  * Load the latest stored FX snapshot via Next.js → Express → MongoDB.
- * Never call from browser components. Conversion helpers are Phase 2.
+ * Pass the result into `CurrencyRatesProvider` from a Server Component.
+ * Never call from browser components.
  */
 export const getCurrencyRates = cache(
   async (baseCurrency = 'USD'): Promise<CurrencyRatesSnapshot> => {
@@ -37,7 +23,7 @@ export const getCurrencyRates = cache(
         cache: 'no-store',
       });
       const data = response.data;
-      if (!data || typeof data !== 'object') return UNAVAILABLE;
+      if (!data || typeof data !== 'object') return UNAVAILABLE_CURRENCY_RATES;
       return {
         available: Boolean(data.available),
         baseCurrency: data.baseCurrency ?? null,
@@ -51,9 +37,9 @@ export const getCurrencyRates = cache(
       };
     } catch (error) {
       if (error instanceof ApiClientError && error.status === 404) {
-        return UNAVAILABLE;
+        return UNAVAILABLE_CURRENCY_RATES;
       }
-      return UNAVAILABLE;
+      return UNAVAILABLE_CURRENCY_RATES;
     }
   }
 );
