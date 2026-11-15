@@ -1,4 +1,4 @@
-import { FAQAccordion } from '@/components/shared/FAQAccordion';
+﻿import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { EMV_FAQS } from './content';
 
 const sections: { id: string; title: string; body: string[]; formula?: string }[] = [
@@ -61,7 +61,7 @@ export function EmvGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...EMV_FAQS]} />
+            <FAQAccordion items={[...EMV_FAQS]} />
           </div>
         </section>
       </div>

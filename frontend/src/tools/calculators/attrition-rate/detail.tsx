@@ -9,4 +9,5 @@ export const toolPageDetail: ToolPageDetail = {
   tocItems: ATTRITION_RATE_TOC_ITEMS,
   GuideArticle: AttritionRateGuideArticle,
   faqs: ATTRITION_RATE_FAQS,
+  countryRules: null,
 };

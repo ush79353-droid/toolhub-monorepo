@@ -1,4 +1,4 @@
-import { FAQAccordion } from '@/components/shared/FAQAccordion';
+﻿import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { CUSTOMER_RETENTION_FAQS } from './content';
 
 const sections: { id: string; title: string; body: string[]; formula?: string }[] = [
@@ -55,7 +55,7 @@ export function CustomerRetentionRateGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...CUSTOMER_RETENTION_FAQS]} />
+            <FAQAccordion items={[...CUSTOMER_RETENTION_FAQS]} />
           </div>
         </section>
       </div>

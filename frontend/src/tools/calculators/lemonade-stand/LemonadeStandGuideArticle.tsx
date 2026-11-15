@@ -1,4 +1,4 @@
-import { FAQAccordion } from '@/components/shared/FAQAccordion';
+﻿import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { LEMONADE_STAND_FAQS } from './content';
 
 const sections: { id: string; title: string; body: string[]; formula?: string }[] = [
@@ -55,7 +55,7 @@ export function LemonadeStandGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...LEMONADE_STAND_FAQS]} />
+            <FAQAccordion items={[...LEMONADE_STAND_FAQS]} />
           </div>
         </section>
       </div>

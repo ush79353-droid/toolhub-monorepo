@@ -1,4 +1,4 @@
-import { FAQAccordion } from '@/components/shared/FAQAccordion';
+﻿import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { GMROI_FAQS } from './content';
 
 const sections: { id: string; title: string; body: string[]; formula?: string }[] = [
@@ -55,7 +55,7 @@ export function GmroiGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...GMROI_FAQS]} />
+            <FAQAccordion items={[...GMROI_FAQS]} />
           </div>
         </section>
       </div>
