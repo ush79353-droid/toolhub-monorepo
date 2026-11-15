@@ -4,10 +4,21 @@
 
 ---
 
+### 2026-11-15 — Add ROI Calculator (Screenshot-First)
+- **Summary:** Shipped ROI Calculator on existing catalog slug `roi-calculator` (`RoiCalculator`, catalog `6af46f10a27d8d1d4e9900e7`). Basic ROI (period, initial, optional contributions, linked rate/returned, ROI %, optional gain/loss) and Annualized ROI from dates. Time needed / compare gated pending screenshots. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 10,000 → 15,000 / 5y → ROI 50%; annualized ≈ 8.447%.
+- **Important Files:** `frontend/src/tools/calculators/roi/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-roi-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
 ### 2026-11-15 — Add Rate of Return Calculator (Screenshot-First)
 - **Summary:** Shipped Rate of Return Calculator on existing catalog slug `rate-of-return-calculator` (`RateOfReturnCalculator`, catalog `6af46f0fa27d8d1d4e990013`). Main specifications (initial investment, final amount, investment length yrs/mos, compounding) plus interim periodic cash flows (deposit/withdrawal, frequency, end/beginning timing); statement result for annual nominal rate. Closed form without PMT; numerical solve with PMT. Distinct from Annualized Return / Annualized Rate of Return / Percentage Return. Denomination currency. Omega UI. Activated.
 - **Example:** PKR 1,000 → 5,000 / 10 years / monthly compounding / PMT 0 → ≈ 16.203%.
 - **Important Files:** `frontend/src/tools/calculators/rate-of-return/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-rate-of-return-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add Simple Interest Calculator (Screenshot-First)
+- **Summary:** Shipped Simple Interest Calculator on existing catalog slug `simple-interest-calculator` (`SimpleInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff88`). Principal, annual rate %/yr, term years/months → total interest and final balance. Collapsed "Total interest payment calculations" with copy/share/reset. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 100,000 @ 10%/yr for 2y 6m → interest 25,000; balance 125,000.
+- **Important Files:** `frontend/src/tools/calculators/simple-interest/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-simple-interest-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
 
 ### 2026-11-15 — Add Percentage Return Calculator (Screenshot-First)
