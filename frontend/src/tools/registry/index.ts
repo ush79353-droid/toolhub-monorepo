@@ -872,6 +872,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ManHoursCalculator,
     })),
   ),
+  MarginInterestCalculator: lazyTool(() =>
+    import('@/tools/calculators/margin-interest/MarginInterestCalculator').then((mod) => ({
+      default: mod.MarginInterestCalculator,
+    })),
+  ),
   OnlineMarketingConversionCalculator: lazyTool(() =>
     import('@/tools/calculators/online-marketing-conversion/OnlineMarketingConversionCalculator').then((mod) => ({
       default: mod.OnlineMarketingConversionCalculator,

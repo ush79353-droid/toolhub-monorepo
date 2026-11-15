@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Margin Interest Calculator (Screenshot-First)
+- **Summary:** Shipped Margin Interest Calculator on existing catalog slug `margin-interest-calculator` (`MarginInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ffa5`). Four fields only: amount borrowed, annual rate %, days, inline margin interest. 360-day simple interest. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 100,000 × 12% × (30/360) = PKR 1,000.00.
+- **Important Files:** `frontend/src/tools/calculators/margin-interest/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-margin-interest-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Jensen's Alpha Calculator (Screenshot-First)
 - **Summary:** Shipped Jensen's Alpha Calculator on existing catalog slug `jensens-alpha-calculator` (`JensensAlphaCalculator`, catalog `6af46f0fa27d8d1d4e9900d7`). Portfolio return from beginning/ending values; risk-free rate, beta, market return (default 11%); inline Jensen's alpha. Denomination currency. Omega UI. Activated.
 - **Example:** Beginning 10,000 / Ending 11,500 / Rf 4% / β 1.2 / Rm 11% → portfolio return 15%, expected 12.4%, alpha +2.6%.
