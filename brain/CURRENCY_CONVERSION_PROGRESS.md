@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 36 |
-| Pending | 69 |
+| Complete (implementation) | 41 |
+| Pending | 64 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 69 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 64 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -64,11 +64,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 33 | Investment Fee | `investment-fee-calculator` | 7 | Complete | `b430f16` | Pending | Shared selector; converts initial investment; fee % unchanged |
 | 34 | IRR | `irr-calculator` | 7 | Complete | `b430f16` | Pending | Shared selectors; converts initial + yearly CF list; signs preserved; IRR % unchanged |
 | 35 | 3D Printer Buy vs Outsource | `3d-printer-buy-vs-outsource-calculator` | 7 | Complete | `b430f16` | Pending | Header selector; converts buy/outsource costs; quantities/hours unchanged |
-| 36 | Accumulated Depreciation | `accumulated-depreciation-calculator` | 8 | Pending | — | Pending | |
-| 37 | Additional Funds Needed | `additional-funds-needed-calculator` | 8 | Pending | — | Pending | |
-| 38 | A/R Days | `ar-days-calculator` | 8 | Pending | — | Pending | |
-| 39 | Average Collection Period | `average-collection-period-calculator` | 8 | Pending | — | Pending | |
-| 40 | Average Fixed Cost | `average-fixed-cost-calculator` | 8 | Pending | — | Pending | |
+| 36 | Accumulated Depreciation | `accumulated-depreciation-calculator` | 8 | Complete | `6d0d7f1` | Pending | Header selector; converts asset cost + salvage; life/method/units unchanged |
+| 37 | Additional Funds Needed | `additional-funds-needed-calculator` | 8 | Complete | `6d0d7f1` | Pending | Shared currency across rows; ΔA/ΔL/ΔRE convert together; AFN invariant to FX |
+| 38 | A/R Days | `ar-days-calculator` | 8 | Complete | `6d0d7f1` | Pending | Receivables + credit sales convert; period days and A/R days unchanged |
+| 39 | Average Collection Period | `average-collection-period-calculator` | 8 | Complete | `6d0d7f1` | Pending | Shared selectors (×4); money fields convert; days/turnover ratio unchanged |
+| 40 | Average Fixed Cost | `average-fixed-cost-calculator` | 8 | Complete | `6d0d7f1` | Pending | Shared selectors (×2); fixed cost converts; unit count unchanged |
 | 41 | Break-even | `break-even-calculator` | 9 | Pending | — | Pending | |
 | 42 | Build vs. Buy | `build-vs-buy-calculator` | 9 | Pending | — | Pending | |
 | 43 | Burn Rate | `burn-rate-calculator` | 9 | Pending | — | Pending | |
@@ -192,6 +192,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 8 notes
+
+- Local commit: `fix(currency): integrate conversion batch 8 calculators` `6d0d7f1dea8c35c3c6d0656a79f5a4da3874144d`.
+- Provider slug allowlist extended for Batch 8 (preserves prior batches + Margin Interest).
+- Accumulated Depreciation: header currency; asset cost and salvage convert; useful life, years, units, and method unchanged.
+- Additional Funds Needed: shared currency on all row selectors; asset/liability/retained-earnings deltas convert together.
+- A/R Days: receivables and credit sales (incl. average section) convert; period days and A/R days invariant to equivalent FX.
+- Average Collection Period: four synced selectors; monetary AR/sales fields convert; duration, turnover ratio, and collection days unchanged.
+- Average Fixed Cost: total fixed cost converts; production quantity and per-unit average scale with FX.
+- Manual verification left Pending for user reference comparison.
+
 ## Batch 7 notes
 
 - Local commit: `fix(currency): integrate conversion batch 7 calculators` `b430f16ac01603deeeff838d9b3e2cf7f3331e5f`.
@@ -206,6 +217,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 8 (#36–#40) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 7 (#31–#35) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 6 (#26–#30) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 5 (#21–#25) implementation Complete; manual verification Pending.
