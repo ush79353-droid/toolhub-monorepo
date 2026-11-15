@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add RGB to HEX Converter
+- **Summary:** Shipped RGB to HEX Converter on existing catalog slug `rgb-to-hex-converter` (`RgbToHexConverter`, catalog `6af46f17a27d8d1d4e990bcf`). Bidirectional RGB↔HEX radios; 3/6-digit HEX; live preview; native picker; reuses Color Converter `rgbToHex`. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** RGB 255,100,50 → `#FF6432`; `#3498DB` → RGB 52,152,219; `#F00` → 255,0,0.
+- **Important Files:** `frontend/src/tools/calculators/rgb-to-hex/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-rgb-to-hex-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 40/148). Full production build not run this pass.
+
 ### 2026-11-15 — Add Color Converter
 - **Summary:** Shipped Color Converter on existing catalog slug `color-converter` (`ColorConverter`, catalog `6af46f17a27d8d1d4e990bc6`). Source-model dropdown (RGB default) with HEX/RGB/RGBA/HSL/HSLA/HSV/CMYK inputs, canonical sRGB+alpha engine, live checkerboard preview, native color picker, per-format copy, share/reload/clear. CMYK documented as mathematical approximation. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** RGB 255,100,50 → HEX `#FF6432`; RGB 224,224,224 → CMYK ≈ (0%, 0%, 0%, 12.16%).
