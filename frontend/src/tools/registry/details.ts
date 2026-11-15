@@ -190,6 +190,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/business-valuation/detail'),
   CagrCalculator: () => import('@/tools/calculators/cagr/detail'),
   CapmCalculator: () => import('@/tools/calculators/capm/detail'),
+  CarriedInterestCalculator: () =>
+    import('@/tools/calculators/carried-interest/detail'),
   ChurnRateCalculator: () =>
     import('@/tools/calculators/churn-rate/detail'),
   ConsultingFeesCalculator: () =>

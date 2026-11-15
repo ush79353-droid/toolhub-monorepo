@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Carried Interest Calculator (Screenshot-First)
+- **Summary:** Shipped Carried Interest Calculator on existing catalog slug `carried-interest-calculator` (`CarriedInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff80`). Fund return (initial/final → %) + carry interest (hold default 10y, hurdle 0%, carry 20%, GP catch-up No default). Without catch-up: carry × profit above annually compounded hurdle. Yes mode: standard full catch-up (no extra fields; expanded Omni Yes screenshot not verified). Compact GP carry result. Denomination currency (PKR). Omega UI. Activated.
+- **Example:** PKR 100,000 → 150,000 / 10y / 0% / 20% / No → return 50%, profit 50,000, GP carry 10,000.
+- **Important Files:** `frontend/src/tools/calculators/carried-interest/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-carried-interest-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. GP catch-up Yes uses industry-standard full catch-up; not cross-checked against an expanded reference screenshot.
+
 ### 2026-11-16 — Add CAPM Calculator (Screenshot-First)
 - **Summary:** Shipped CAPM Calculator on existing catalog slug `capm-calculator-capital-asset-pricing-model` (`CapmCalculator`, catalog `6af46f10a27d8d1d4e990152`). Five-field screenshot parity: Rf %, Rm %, unitless beta → asset risk premium % and expected return R %. Blank defaults; live recalc; signed beta and Rm &lt; Rf allowed. No currency. Distinct from Beta Stock / Jensen's Alpha / Expected Return. Omega UI. Activated.
 - **Example:** Rf 4% / Rm 12% / β 1.2 → asset risk premium 9.6%, expected return 13.6%.

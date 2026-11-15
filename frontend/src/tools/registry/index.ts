@@ -764,6 +764,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CapmCalculator,
     })),
   ),
+  CarriedInterestCalculator: lazyTool(() =>
+    import('@/tools/calculators/carried-interest/CarriedInterestCalculator').then(
+      (mod) => ({
+        default: mod.CarriedInterestCalculator,
+      })
+    ),
+  ),
   ChurnRateCalculator: lazyTool(() =>
     import('@/tools/calculators/churn-rate/ChurnRateCalculator').then((mod) => ({
       default: mod.ChurnRateCalculator,

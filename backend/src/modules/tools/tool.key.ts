@@ -140,6 +140,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CagrCalculator',
   'CapmCalculator',
   'CapitalGainsYieldCalculator',
+  'CarriedInterestCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
   'ContributionMarginCalculator',
@@ -385,6 +386,7 @@ if (isDirect) {
     !isApprovedComponentKey('CagrCalculator') ||
     !isApprovedComponentKey('CapmCalculator') ||
     !isApprovedComponentKey('CapitalGainsYieldCalculator') ||
+    !isApprovedComponentKey('CarriedInterestCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
     !isApprovedComponentKey('ConsultingFeesCalculator') ||
     !isApprovedComponentKey('ContributionMarginCalculator') ||
