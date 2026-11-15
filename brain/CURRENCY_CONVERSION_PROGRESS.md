@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 26 |
-| Pending | 79 |
+| Complete (implementation) | 31 |
+| Pending | 74 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 79 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 74 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -54,11 +54,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 23 | Expected Utility | `expected-utility-calculator` | 5 | Complete | `191200c` | Pending | Shared selectors; converts payoffs; probabilities unchanged |
 | 24 | Expense Ratio | `expense-ratio-calculator` | 5 | Complete | `191200c` | Pending | Shared selectors; converts initial + yearly investment; return/expense % unchanged |
 | 25 | FD | `fd-calculator` | 5 | Complete | `191200c` | Pending | Shared selectors; converts principal; rate/term/compounding unchanged |
-| 26 | Future Value | `future-value-calculator` | 6 | Pending | — | Pending | |
-| 27 | Hedge Ratio | `hedge-ratio-calculator` | 6 | Pending | — | Pending | |
-| 28 | Holding Period Return | `holding-period-return-calculator` | 6 | Pending | — | Pending | |
-| 29 | Impermanent Loss | `impermanent-loss-calculator` | 6 | Pending | — | Pending | |
-| 30 | Information Ratio | `information-ratio-calculator` | 6 | Pending | — | Pending | |
+| 26 | Future Value | `future-value-calculator` | 6 | Complete | `2808b1d` | Pending | Shared selectors; converts PV + periodic amounts; rate/periods unchanged |
+| 27 | Hedge Ratio | `hedge-ratio-calculator` | 6 | Complete | `2808b1d` | Pending | Shared selectors; converts exposure + hedge; ratio % unchanged |
+| 28 | Holding Period Return | `holding-period-return-calculator` | 6 | Complete | `2808b1d` | Pending | Shared selectors (×3); converts prices + dividend; yield/HPR % unchanged |
+| 29 | Impermanent Loss | `impermanent-loss-calculator` | 6 | Complete | `2808b1d` | Pending | Fiat deposit + token quote prices convert; quantities/IL % unchanged |
+| 30 | Information Ratio | `information-ratio-calculator` | 6 | Complete | `2808b1d` | Pending | Shared selectors; converts beginning + ending; return/TE/IR % unchanged |
 | 31 | Interest Rate | `interest-rate-calculator` | 7 | Pending | — | Pending | |
 | 32 | Investment | `investment-calculator` | 7 | Pending | — | Pending | |
 | 33 | Investment Fee | `investment-fee-calculator` | 7 | Pending | — | Pending | |
@@ -180,8 +180,21 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Expense Ratio / FD: investment or principal draft fields convert; return/expense/rate/term unchanged.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 6 notes
+
+- Local commit: `fix(currency): integrate conversion batch 6 calculators` `2808b1deee2ccda35b3582c234224cadc8c41e61`.
+- Provider slug allowlist extended for Batch 6 (preserves prior batches + Margin Interest).
+- Shared currency state across existing selectors; monetary draft fields convert together.
+- Future Value: present value and periodic amounts convert; interest rate and periods unchanged.
+- Hedge Ratio: exposure and hedge notionals convert; hedge ratio % unchanged.
+- Holding Period Return: bought, current, and dividend convert; all yield percentages unchanged.
+- Impermanent Loss: fiat deposit and token prices in quote currency convert; token quantities and IL % unchanged.
+- Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
+- Manual verification left Pending for user reference comparison.
+
 ## Changelog
 
+- 2026-11-16: Batch 6 (#26–#30) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 5 (#21–#25) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 4 (#16–#20) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 3 (#11–#15) implementation Complete; manual verification Pending.
