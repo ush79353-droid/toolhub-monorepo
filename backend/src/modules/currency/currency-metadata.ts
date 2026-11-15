@@ -34,10 +34,13 @@ export const CURRENCY_METADATA: Record<string, { fullName: string; symbol: strin
   PKR: { fullName: 'Pakistani Rupee', symbol: '₨' },
   EGP: { fullName: 'Egyptian Pound', symbol: '£' },
   BDT: { fullName: 'Bangladeshi Taka', symbol: '৳' },
+  NPR: { fullName: 'Nepalese Rupee', symbol: '₨' },
   KZT: { fullName: 'Kazakhstani Tenge', symbol: '₸' },
   QAR: { fullName: 'Qatari Riyal', symbol: '﷼' },
+  KWD: { fullName: 'Kuwaiti Dinar', symbol: 'د.ك' },
   CLP: { fullName: 'Chilean Peso', symbol: '$' },
   COP: { fullName: 'Colombian Peso', symbol: '$' },
+  ARS: { fullName: 'Argentine Peso', symbol: '$' },
   PEN: { fullName: 'Peruvian Sol', symbol: 'S/' },
   NGN: { fullName: 'Nigerian Naira', symbol: '₦' },
   LKR: { fullName: 'Sri Lankan Rupee', symbol: '₨' },
@@ -49,6 +52,7 @@ export const CURRENCY_METADATA: Record<string, { fullName: string; symbol: strin
   TZS: { fullName: 'Tanzanian Shilling', symbol: 'TSh' },
   UGX: { fullName: 'Ugandan Shilling', symbol: 'USh' },
   GHS: { fullName: 'Ghanaian Cedi', symbol: '₵' },
+  TWD: { fullName: 'New Taiwan Dollar', symbol: 'NT$' },
 };
 
 export const BASE_CURRENCIES = Object.keys(CURRENCY_METADATA);

@@ -97,6 +97,7 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 - `src/server/media/actions.ts` — `listMediaAction`, `requestMediaUploadAction`, `confirmMediaUploadAction`, `deleteMediaAction`.
 - `src/server/tools/actions.ts` — `listToolsAction`, `listToolPlacementAction`, `getToolAction`, `saveToolAction` (`revalidatePath('/tools/[slug]')` after save), `deleteToolAction` (supports `executionType` and `componentKey` + full optional SEO payload).
 - `src/server/catalog/tools.ts` — `getPublicToolBySlug` (`React.cache` + `server-only`, `cache: 'no-store'`, calls `GET /catalog/tools/:slug`).
+- `src/server/currency/rates.ts` — `getCurrencyRates` (`React.cache` + `server-only`, `cache: 'no-store'`, calls `GET /currency/rates`). Returns stored FX snapshot with `fetchedAt` / `isStale` (48h). Does not convert amounts; calculators still denomination-only until Phase 2.
 - `src/server/seo/public-site.ts` — production-safe public origin helper (`NEXT_PUBLIC_SITE_URL` / `SITE_URL`; never emits localhost as production canonical).
 - `src/lib/seo/tool-seo.ts` — shared optional-field fallbacks, robots/canonical/social builders, safe JSON-LD serializers (+ `tool-seo.test.ts`).
 - `src/lib/embed/tool-embed.ts` — embed eligibility, iframe/auto-resize snippet builders, postMessage validators (+ `tool-embed.test.ts`); host script `public/embed.js`.

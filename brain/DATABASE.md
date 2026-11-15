@@ -225,4 +225,6 @@ Only the Mongoose models documented below exist. No other collections (`analytic
 
 Index: `{ baseCurrency: 1, fetchedAt: -1 }`.
 
+Public read: `GET /api/v1/currency/rates` (see `API_CONTRACTS.md`). Tracked base list: `BASE_CURRENCIES` in `currency-metadata.ts` (54 codes after Phase 1 alignment).
+
 
