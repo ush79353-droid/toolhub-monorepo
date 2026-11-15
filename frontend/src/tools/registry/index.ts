@@ -504,6 +504,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MbToGbConverter,
     })),
   ),
+  ColorConverter: lazyTool(() =>
+    import('@/tools/calculators/color/ColorConverter').then((mod) => ({
+      default: mod.ColorConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
