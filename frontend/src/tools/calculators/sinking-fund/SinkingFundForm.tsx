@@ -3,7 +3,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   COMPOUNDING_OPTIONS,
@@ -44,6 +44,7 @@ interface SinkingFundFormProps {
   errors: SinkingFundFieldErrors;
   result: SinkingFundResult | null;
   onChange: (input: SinkingFundInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -52,6 +53,7 @@ export function SinkingFundForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: SinkingFundFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -95,7 +97,7 @@ export function SinkingFundForm({
             <CurrencySelect
               id="sf-fv-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Money to accumulate currency"
             />
           </div>
@@ -249,7 +251,7 @@ export function SinkingFundForm({
             <CurrencySelect
               id="sf-contribution-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Required contribution currency"
             />
           </div>

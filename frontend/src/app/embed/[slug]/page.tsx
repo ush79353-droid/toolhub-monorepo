@@ -121,6 +121,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'return-on-capital-employed-calculator-roce',
   'roi-calculator',
   'simple-interest-calculator',
+  'sinking-fund-calculator',
+  'time-value-of-money-calculator',
+  'treynor-ratio-calculator',
+  'ttm-calculator-trailing-twelve-months',
+  'value-at-risk-calculator-var',
 ]);
 
 export const dynamic = 'force-dynamic';

@@ -17,6 +17,7 @@ interface TtmFormProps {
   errors: TtmFieldErrors;
   result: TtmResult | null;
   onChange: (input: TtmInput) => void;
+  onCurrencyChange: (currency: TtmInput['currency']) => void;
   onReset: () => void;
 }
 
@@ -100,10 +101,16 @@ function MoneyField({
   );
 }
 
-export function TtmForm({ input, errors, result, onChange, onReset }: TtmFormProps) {
+export function TtmForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: TtmFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<TtmInput>) => onChange({ ...input, ...patch });
-  const setCurrency = (currency: TtmInput['currency']) => set({ currency });
 
   return (
     <form
@@ -148,7 +155,7 @@ export function TtmForm({ input, errors, result, onChange, onReset }: TtmFormPro
           symbol={symbol}
           currency={input.currency}
           onValueChange={(quarter0) => set({ quarter0 })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyField
           id="ttm-q1"
@@ -159,7 +166,7 @@ export function TtmForm({ input, errors, result, onChange, onReset }: TtmFormPro
           symbol={symbol}
           currency={input.currency}
           onValueChange={(quarter1) => set({ quarter1 })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyField
           id="ttm-q2"
@@ -170,7 +177,7 @@ export function TtmForm({ input, errors, result, onChange, onReset }: TtmFormPro
           symbol={symbol}
           currency={input.currency}
           onValueChange={(quarter2) => set({ quarter2 })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyField
           id="ttm-q3"
@@ -181,7 +188,7 @@ export function TtmForm({ input, errors, result, onChange, onReset }: TtmFormPro
           symbol={symbol}
           currency={input.currency}
           onValueChange={(quarter3) => set({ quarter3 })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyField
           id="ttm-result"
@@ -191,7 +198,7 @@ export function TtmForm({ input, errors, result, onChange, onReset }: TtmFormPro
           symbol={symbol}
           currency={input.currency}
           readOnly
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
       </fieldset>
 
