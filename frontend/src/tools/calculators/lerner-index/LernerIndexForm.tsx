@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import type {
   LernerIndexFieldErrors,
   LernerIndexInput,
@@ -16,6 +17,7 @@ interface LernerIndexFormProps {
   errors: LernerIndexFieldErrors;
   result: LernerIndexResult | null;
   onChange: (input: LernerIndexInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -46,6 +48,7 @@ export function LernerIndexForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: LernerIndexFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -82,7 +85,7 @@ export function LernerIndexForm({
             <CurrencySelect
               id="lerner-price-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -113,7 +116,7 @@ export function LernerIndexForm({
             <CurrencySelect
               id="lerner-mc-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>

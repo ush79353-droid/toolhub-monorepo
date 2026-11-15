@@ -87,6 +87,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'high-low-method-calculator',
   'labor-cost-calculator',
   'lemonade-stand-calculator',
+  'lerner-index-calculator',
+  'liquid-net-worth-calculator',
+  'man-hours-calculator',
+  'online-marketing-conversion-calculator',
+  'operating-asset-turnover-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';

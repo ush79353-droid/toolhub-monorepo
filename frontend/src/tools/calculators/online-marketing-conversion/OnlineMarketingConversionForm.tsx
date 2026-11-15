@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import {
   MONEY_FIELDS,
   PERCENT_FIELDS,
@@ -78,6 +79,7 @@ interface OnlineMarketingConversionFormProps {
   draft: OmcDraft;
   errors: OmcFieldErrors;
   onChange: (draft: OmcDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -85,6 +87,7 @@ export function OnlineMarketingConversionForm({
   draft,
   errors,
   onChange,
+  onCurrencyChange,
   onReset,
 }: OnlineMarketingConversionFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
@@ -135,7 +138,7 @@ export function OnlineMarketingConversionForm({
               <CurrencySelect
                 id={`${id}-currency`}
                 value={draft.currency}
-                onChange={(currency) => onChange({ ...draft, currency })}
+                onChange={onCurrencyChange}
                 aria-label={`${label} currency`}
               />
             </div>

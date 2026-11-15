@@ -145,6 +145,7 @@ interface LiquidNetWorthFormProps {
   errors: LiquidNetWorthFieldErrors;
   result: LiquidNetWorthResult | null;
   onDraftChange: (draft: LiquidNetWorthDraft) => void;
+  onCurrencyChange: (currency: LiquidNetWorthDraft['currency']) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -154,12 +155,12 @@ export function LiquidNetWorthForm({
   errors,
   result,
   onDraftChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: LiquidNetWorthFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
   const set = (patch: Partial<LiquidNetWorthDraft>) => onDraftChange({ ...draft, ...patch });
-  const setCurrency = (currency: LiquidNetWorthDraft['currency']) => set({ currency });
 
   return (
     <form className="space-y-3.5" onSubmit={onSubmit} noValidate autoComplete="off">
@@ -172,7 +173,7 @@ export function LiquidNetWorthForm({
         symbol={symbol}
         currency={draft.currency}
         onValueChange={(totalLiquidAssets) => set({ totalLiquidAssets })}
-        onCurrencyChange={setCurrency}
+        onCurrencyChange={onCurrencyChange}
       />
       <MoneyRow
         id="lnw-liabilities"
@@ -183,7 +184,7 @@ export function LiquidNetWorthForm({
         symbol={symbol}
         currency={draft.currency}
         onValueChange={(totalLiabilities) => set({ totalLiabilities })}
-        onCurrencyChange={setCurrency}
+        onCurrencyChange={onCurrencyChange}
       />
       <MoneyRow
         id="lnw-result"
@@ -192,7 +193,7 @@ export function LiquidNetWorthForm({
         value=""
         symbol={symbol}
         currency={draft.currency}
-        onCurrencyChange={setCurrency}
+        onCurrencyChange={onCurrencyChange}
         readOnly
         displayValue={
           result ? formatPlainMoney(result.liquidNetWorth, result.currency) : '—'

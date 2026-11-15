@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import type { ManHoursFieldErrors, ManHoursInput, ManHoursResult } from './types';
 
 interface ManHoursFormProps {
@@ -13,6 +14,7 @@ interface ManHoursFormProps {
   errors: ManHoursFieldErrors;
   result: ManHoursResult | null;
   onChange: (input: ManHoursInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -42,6 +44,7 @@ export function ManHoursForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: ManHoursFormProps) {
@@ -148,7 +151,7 @@ export function ManHoursForm({
               <CurrencySelect
                 id="mh-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -183,7 +186,7 @@ export function ManHoursForm({
               <CurrencySelect
                 id="mh-cost-per-person-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -211,7 +214,7 @@ export function ManHoursForm({
               <CurrencySelect
                 id="mh-total-cost-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>

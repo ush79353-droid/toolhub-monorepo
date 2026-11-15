@@ -164,6 +164,7 @@ interface OperatingAssetTurnoverFormProps {
   errors: OperatingAssetTurnoverFieldErrors;
   result: OperatingAssetTurnoverResult | null;
   onDraftChange: (draft: OperatingAssetTurnoverDraft) => void;
+  onCurrencyChange: (currency: OperatingAssetTurnoverDraft['currency']) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -173,13 +174,13 @@ export function OperatingAssetTurnoverForm({
   errors,
   result,
   onDraftChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: OperatingAssetTurnoverFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
   const set = (patch: Partial<OperatingAssetTurnoverDraft>) =>
     onDraftChange({ ...draft, ...patch });
-  const setCurrency = (currency: OperatingAssetTurnoverDraft['currency']) => set({ currency });
 
   const turnoverDisplay =
     result?.operatingAssetTurnover === null || result?.operatingAssetTurnover === undefined
@@ -204,7 +205,7 @@ export function OperatingAssetTurnoverForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(cash) => set({ cash })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyRow
           id="oat-ar"
@@ -215,7 +216,7 @@ export function OperatingAssetTurnoverForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(accountsReceivable) => set({ accountsReceivable })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyRow
           id="oat-inventory"
@@ -226,7 +227,7 @@ export function OperatingAssetTurnoverForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(inventory) => set({ inventory })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyRow
           id="oat-prepaid"
@@ -237,7 +238,7 @@ export function OperatingAssetTurnoverForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(prepaidExpenses) => set({ prepaidExpenses })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyRow
           id="oat-fixed"
@@ -248,7 +249,7 @@ export function OperatingAssetTurnoverForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(fixedAssets) => set({ fixedAssets })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyRow
           id="oat-operating-assets"
@@ -257,7 +258,7 @@ export function OperatingAssetTurnoverForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           displayValue={
             result ? formatPlainMoney(result.operatingAssets, result.currency) : '—'
@@ -281,7 +282,7 @@ export function OperatingAssetTurnoverForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(sales) => set({ sales })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <div>
           <label className={labelClass} htmlFor="oat-turnover">
