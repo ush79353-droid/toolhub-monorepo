@@ -250,7 +250,7 @@ export default function AdminMediaPage() {
     <div className="space-y-6">
       <AdminPageHeader
         title="Media Library"
-        description="Images and documents stored in S3. Files upload directly from the browser."
+        description="Images and documents for tools and the site."
       >
         <div className="flex items-center gap-2">
           <div className="flex items-center rounded-lg border border-border bg-white p-0.5">

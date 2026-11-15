@@ -3,9 +3,11 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Menu, X, ArrowRight, Grid, Wrench, Info, Mail } from 'lucide-react';
-import { CATEGORIES } from '@/lib/sample-data';
-
-export function MobileNavigation() {
+export function MobileNavigation({
+  categories,
+}: {
+  categories: Array<{ id: string; name: string; slug: string; iconUrl: string }>;
+}) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleOpen = () => setIsOpen((prev) => !prev);
@@ -74,14 +76,15 @@ export function MobileNavigation() {
                   Popular Categories
                 </p>
                 <div className="mt-2 grid grid-cols-2 gap-2">
-                  {CATEGORIES.slice(0, 6).map((cat) => (
+                  {categories.slice(0, 7).map((cat) => (
                     <Link
                       key={cat.id}
                       href={`/categories/${cat.slug}`}
                       onClick={closeMenu}
-                      className="rounded-lg bg-card border border-border px-3 py-2 text-xs font-medium text-foreground hover:border-primary/50 hover:bg-muted"
+                      className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-xs font-medium text-foreground hover:border-primary/50 hover:bg-muted"
                     >
-                      {cat.name}
+                      {cat.iconUrl ? <img src={cat.iconUrl} alt="" className="h-3.5 w-3.5 shrink-0" /> : null}
+                      <span className="min-w-0">{cat.name}</span>
                     </Link>
                   ))}
                 </div>

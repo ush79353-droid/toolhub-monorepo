@@ -11,7 +11,8 @@ export function middleware(request: NextRequest) {
     pathname === '/admin/forgot-password' ||
     pathname === '/admin/reset-password';
 
-  const isAdminDashboardRoute = pathname.startsWith('/admin') && !isAuthRoute;
+  const isAuditRoute = pathname === '/tools-audit' || pathname.startsWith('/tools-audit/');
+  const isAdminDashboardRoute = (pathname.startsWith('/admin') && !isAuthRoute) || isAuditRoute;
 
   // Case 1: Unauthenticated visitor accessing protected admin dashboard -> redirect to login
   if (isAdminDashboardRoute && !sessionToken) {
@@ -28,8 +29,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(dashboardUrl);
   }
 
-  // Set security and cache-control headers for all admin routes
-  if (pathname.startsWith('/admin')) {
+  // Set security and cache-control headers for admin routes and the source audit
+  if (pathname.startsWith('/admin') || isAuditRoute) {
     const response = NextResponse.next();
     response.headers.set('X-Robots-Tag', 'noindex, nofollow');
     response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
@@ -42,5 +43,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: ['/admin/:path*', '/tools-audit', '/tools-audit/:path*'],
 };

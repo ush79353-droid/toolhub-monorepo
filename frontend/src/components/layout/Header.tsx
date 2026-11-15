@@ -3,32 +3,36 @@ import Link from 'next/link';
 import { Container } from './Container';
 import { MobileNavigation } from './MobileNavigation';
 import { Search, ChevronDown, Sparkles } from 'lucide-react';
-import { CATEGORIES } from '@/lib/sample-data';
+import { getPublicCategories } from '@/server/catalog/categories';
 
-export function Header() {
+export async function Header() {
+  const categories = await getPublicCategories();
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-white/95 backdrop-blur-md transition-shadow">
       <Container className="flex h-16 items-center justify-between gap-4">
         {/* Brand Logo */}
-        <Link href="/" className="group flex items-center">
+        <Link href="/" className="group flex shrink-0 items-center">
           <img
             src="/images/logo/horizontal-logo.png"
             alt="Omega Calculators"
-            className="h-11 w-auto transition-transform group-hover:scale-[1.02]"
+            className="h-8 w-auto sm:h-9 lg:h-10 transition-transform group-hover:scale-[1.01]"
           />
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav
+          aria-label="Primary navigation"
+          className="hidden items-center gap-0.5 md:flex lg:gap-1"
+        >
           <Link
             href="/"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
+            className="whitespace-nowrap rounded-lg px-2.5 py-2 text-[13px] font-medium text-foreground transition-colors hover:bg-muted hover:text-primary lg:px-3 lg:text-sm"
           >
             Home
           </Link>
           <Link
             href="/tools"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
+            className="whitespace-nowrap rounded-lg px-2.5 py-2 text-[13px] font-medium text-foreground transition-colors hover:bg-muted hover:text-primary lg:px-3 lg:text-sm"
           >
             All Tools
           </Link>
@@ -37,58 +41,51 @@ export function Header() {
           <div className="group relative">
             <Link
               href="/categories"
-              className="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
+              className="inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-[13px] font-medium text-foreground transition-colors hover:bg-muted hover:text-primary lg:px-3 lg:text-sm"
             >
               <span>Categories</span>
               <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
             </Link>
 
             {/* Dropdown Menu */}
-            <div className="invisible absolute left-0 top-full z-50 w-80 translate-y-2 rounded-xl border border-border bg-white p-3 shadow-lg opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-              <div className="mb-2 px-2 pt-1">
-                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  Tool Categories
-                </p>
+            <div className="invisible absolute left-1/2 top-full z-50 w-[34rem] -translate-x-1/2 translate-y-2 rounded-2xl border border-border bg-white p-4 shadow-lg opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="flex items-baseline justify-between gap-4 px-1">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">Browse by subject</p>
+                <Link href="/categories" className="text-xs font-medium text-accent hover:text-primary">
+                  All categories
+                </Link>
               </div>
-              <div className="grid grid-cols-2 gap-1">
-                {CATEGORIES.slice(0, 8).map((cat) => (
+              <div className="mt-3 grid grid-cols-2 gap-1">
+                {categories.map((cat) => (
                   <Link
                     key={cat.id}
                     href={`/categories/${cat.slug}`}
-                    className="flex flex-col rounded-lg p-2 text-xs transition-colors hover:bg-muted"
+                    className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm leading-snug text-accent transition-colors hover:bg-secondary hover:text-primary"
                   >
-                    <span className="font-semibold text-foreground">{cat.name}</span>
-                    <span className="text-[11px] text-muted-foreground">{cat.toolCount} tools</span>
+                    {cat.iconUrl ? <img src={cat.iconUrl} alt="" className="h-4 w-4 shrink-0" /> : null}
+                    {cat.name}
                   </Link>
                 ))}
-              </div>
-              <div className="mt-2 border-t border-border pt-2 text-center">
-                <Link
-                  href="/categories"
-                  className="inline-flex items-center justify-center text-xs font-bold text-primary hover:underline"
-                >
-                  View All 12 Categories →
-                </Link>
               </div>
             </div>
           </div>
 
           <Link
             href="/about"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
+            className="whitespace-nowrap rounded-lg px-2.5 py-2 text-[13px] font-medium text-foreground transition-colors hover:bg-muted hover:text-primary lg:px-3 lg:text-sm"
           >
             About
           </Link>
           <Link
             href="/contact"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
+            className="whitespace-nowrap rounded-lg px-2.5 py-2 text-[13px] font-medium text-foreground transition-colors hover:bg-muted hover:text-primary lg:px-3 lg:text-sm"
           >
             Contact
           </Link>
         </nav>
 
         {/* Right CTA & Search */}
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2.5 lg:gap-3">
           <Link
             href="/tools"
             aria-label="Search tools"
@@ -99,14 +96,16 @@ export function Header() {
 
           <Link
             href="/tools"
-            className="hidden items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[hsl(var(--primary-hover))] sm:inline-flex"
+            className="hidden h-9 items-center gap-2 whitespace-nowrap rounded-lg bg-primary px-3.5 text-sm font-medium text-white shadow-xs transition-colors hover:bg-[hsl(var(--primary-hover))] lg:inline-flex"
           >
             <Sparkles className="h-4 w-4" />
             <span>Explore Tools</span>
           </Link>
 
           {/* Mobile Navigation Trigger */}
-          <MobileNavigation />
+          <MobileNavigation
+            categories={categories.map(({ id, name, slug, iconUrl }) => ({ id, name, slug, iconUrl }))}
+          />
         </div>
       </Container>
     </header>

@@ -1,0 +1,102 @@
+'use client';
+
+import * as React from 'react';
+import type { ToolComponentProps } from '@/tools/types';
+import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { formatCurrencyValue } from '@/tools/shared/currency';
+import { ArmMortgageForm } from './ArmMortgageForm';
+import { ArmMortgageResults } from './ArmMortgageResults';
+import { calculateArmMortgage } from './calculation';
+import { createDefaultArmInput, type ArmFieldErrors, type ArmMortgageInput, type ArmMortgageResult } from './types';
+import { validateArmInput } from './validation';
+
+function todayIso(): string {
+  const now = new Date();
+  const m = String(now.getMonth() + 1).padStart(2, '0');
+  const d = String(now.getDate()).padStart(2, '0');
+  return `${now.getFullYear()}-${m}-${d}`;
+}
+
+export function ArmMortgageCalculator({
+  metadata,
+  className = '',
+  presentation = 'default',
+  headerActions,
+}: ToolComponentProps) {
+  const isEmbed = presentation === 'embed';
+  const [input, setInput] = React.useState<ArmMortgageInput>(() => createDefaultArmInput(todayIso()));
+  const [errors, setErrors] = React.useState<ArmFieldErrors>({});
+  const [result, setResult] = React.useState<ArmMortgageResult | null>(() =>
+    calculateArmMortgage(input)
+  );
+  const [copied, setCopied] = React.useState(false);
+
+  const run = (next: ArmMortgageInput) => {
+    const validation = validateArmInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? calculateArmMortgage(next) : null);
+  };
+
+  const summary = result
+    ? [
+        `${metadata.title} — Omega Calculators`,
+        `Monthly Payment Range: ${formatCurrencyValue(result.minPaymentCents / 100, result.currency)} – ${formatCurrencyValue(result.maxPaymentCents / 100, result.currency)} / mo`,
+        `Estimated APR: ${result.averageRate.toFixed(3)}% (Actuarial: ${result.actuarialApr.toFixed(3)}%)`,
+        `Mortgage Term: ${result.termYears} years (${result.paymentCount} payments)`,
+        `Paid Interest: ${formatCurrencyValue(result.totalInterestCents / 100, result.currency)}`,
+        `Additional Costs: ${formatCurrencyValue(result.additionalCostsCents / 100, result.currency)}`,
+        `Total Payments: ${formatCurrencyValue(result.totalPaymentsCents / 100, result.currency)}`,
+        `Initial Payment: ${formatCurrencyValue(result.initialPaymentCents / 100, result.currency)} at ${result.initialRate.toFixed(3)}%`,
+        `Maximum Permitted Rate: ${result.maximumPermittedRate.toFixed(3)}%`,
+        'Estimates and projections based on user assumptions, not guaranteed loan quotes.',
+      ].join('\n')
+    : '';
+
+  return (
+    <section
+      aria-label={`${metadata.title} calculator panel`}
+      className={`overflow-hidden rounded-2xl border border-border bg-white ${
+        isEmbed ? 'shadow-sm' : 'shadow-[0_12px_40px_-16px_rgba(22,60,67,0.28)]'
+      } ${className}`}
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
+        <div>
+          <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
+          <p className="text-xs font-normal text-muted-foreground">Adjustable-rate mortgage estimates</p>
+        </div>
+        {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
+      </div>
+      <div className="space-y-4 p-4 sm:p-5">
+        <ArmMortgageForm
+          input={input}
+          errors={errors}
+          onChange={(next) => {
+            setInput(next);
+            run(next);
+          }}
+          onSubmit={(event) => {
+            event.preventDefault();
+            run(input);
+          }}
+          onReset={() => {
+            const fresh = createDefaultArmInput(todayIso());
+            setInput(fresh);
+            setErrors({});
+            setResult(calculateArmMortgage(fresh));
+          }}
+        />
+        <ArmMortgageResults
+          result={result}
+          copied={copied}
+          onCopy={async () => {
+            if (!summary) return;
+            if (await copyTextToClipboard(summary)) {
+              setCopied(true);
+              window.setTimeout(() => setCopied(false), 2000);
+            }
+          }}
+        />
+      </div>
+    </section>
+  );
+}

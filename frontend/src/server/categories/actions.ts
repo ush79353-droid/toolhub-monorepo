@@ -14,6 +14,7 @@ export interface CategoryNode {
   parentId: string | null;
   sortOrder: number;
   description: string;
+  iconUrl: string;
   isActive: boolean;
   children: CategoryNode[];
 }

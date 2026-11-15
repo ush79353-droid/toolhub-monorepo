@@ -25,6 +25,7 @@ export interface MediaList {
 }
 
 export interface MediaUploadTicket {
+  driver: 'local' | 's3';
   uploadUrl: string;
   key: string;
   contentType: string;

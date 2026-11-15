@@ -67,12 +67,35 @@ Mounted at `/api/v1/catalog` (`backend/src/modules/catalog/catalog.router.ts`).
 ### `GET /api/v1/catalog/categories`
 - **Auth:** Public
 - **Response (`200`):** `PublicCategory[]` — Active root categories (`kind: 'category', isActive: true`), sorted by `sortOrder` asc, `name` asc:
-  `{ id, name, slug, description, toolCount }[]`
+  `{ id, name, slug, description, iconUrl, toolCount }[]`
+
+### `GET /api/v1/catalog/categories/:slug`
+- **Auth:** Public
+- **Response (`200`):** `PublicCategoryDetail` for an active root category. Tools are grouped under their pillar, then sub-pillar. A tool whose pillar or sub-pillar is missing or inactive is returned in `ungrouped`. Empty pillars and empty sub-pillars are omitted.
+  `{ id, name, slug, description, iconUrl, toolCount, pillars, ungrouped }`
+  Each pillar is `{ id, name, slug, description, tools, subPillars }`. Each sub-pillar is `{ id, name, slug, description, tools }`. Each tool is `{ id, name, slug, shortDescription, isActive }`. Only `isActive: true` tools are included, and `toolCount` is that active total.
+- **Errors:** `404 NOT_FOUND` when the slug is missing or is not an active root category.
 
 ### `GET /api/v1/catalog/featured`
 - **Auth:** Public
 - **Response (`200`):** `PublicFeaturedTool[]` — Up to 12 tools with `isFeatured: true`, sorted by `name` asc (note: currently filters only on `isFeatured: true`, not `isActive`):
   `{ id, name, slug, shortDescription, iconUrl, categoryName, categorySlug }[]`
+
+### `GET /api/v1/catalog/tools`
+- **Auth:** Public
+- **Query:** `q` (optional, trimmed, max 120), `category` (optional root-category slug), `page` (default 1)
+- **Response (`200`):** Active tools only, 24 per page, sorted by name. Search matches name, short description, and slug.
+  `{ items: { id, name, slug, shortDescription, categoryName, categorySlug }[], page, limit, total, totalPages, categories }`
+  `categories` lists active root categories that have at least one active tool, with that active count. An unknown category slug returns an empty page rather than 404.
+
+### `GET /api/v1/catalog/tools/:slug`
+- **Auth:** Public
+- **Response (`200`):** `PublicToolDetail` — Active tool (`isActive: true`) matching `slug`, populated with `category`, `pillar`, `subPillar`, and up to 6 existing MongoDB `relatedTools`:
+  `{ id, name, slug, shortDescription, iconUrl, executionType, componentKey, category, pillar, subPillar, relatedTools, metaTitle, metaDescription, canonicalUrl, ogTitle, ogDescription, keywords, indexable, robotsFollow, robotsNoarchive, robotsNosnippet, robotsNoimageindex, robotsMaxSnippet, robotsMaxImagePreview, robotsMaxVideoPreview, ogImageUrl, ogImageAlt, ogType, ogSiteName, twitterCard, twitterTitle, twitterDescription, twitterImageUrl, twitterImageAlt, twitterSite, schemaTypes, sitemapInclude, sitemapPriority, sitemapChangeFrequency, isFeatured, updatedAt }`
+  where each entry in `relatedTools` has `{ id, name, slug, shortDescription, iconUrl, componentKey, isActive, isFeatured, categoryName, categorySlug, pillarName }`.
+  All SEO fields remain optional; blank values mean public `generateMetadata` uses documented fallbacks (`brain/SEO_STANDARDS.md`).
+  Also returns embed prefs: `embedEnabled`, `embedDefaultHeight`, `embedPreferredLayout`, `embedAllowedDomains` (see `brain/EMBED_STANDARDS.md`).
+- **Errors:** `404 NOT_FOUND` if slug format is invalid, missing, or `isActive` is `false`.
 
 ---
 
@@ -114,9 +137,10 @@ Mounted at `/api/v1/admin/media` (`backend/src/modules/media/media.router.ts`). 
 | Method | Path | Query / Body (Zod) | Response `data` | Specific Errors |
 | :--- | :--- | :--- | :--- | :--- |
 | `GET` | `/admin/media` | Query: `page` (default 1), `limit` (1..48, default 24), `search`, `type` (`image`, `png`, `jpg`, `jpeg`, `webp`, `svg`, `gif`, `pdf`) | `{ items: MediaItem[], page, limit, total, totalPages }` | `400 VALIDATION_ERROR` |
-| `POST` | `/admin/media/upload-url` | Body: `{ fileName (1..180), contentType, size (int > 0, <= 10 MB) }` | `{ uploadUrl, key, contentType, publicUrl }` (`201`) | `400 UNSUPPORTED_TYPE`, `400 FILE_TOO_LARGE`, `503 S3_NOT_CONFIGURED` |
+| `POST` | `/admin/media/upload-url` | Body: `{ fileName (1..180), contentType, size (int > 0, <= 10 MB) }` | `{ driver: local\|s3, uploadUrl, key, contentType, publicUrl }` (`201`). `local` `uploadUrl` is `/api/media-upload?key=...`. `s3` `uploadUrl` is a 300s signed PUT. | `400 UNSUPPORTED_TYPE`, `400 FILE_TOO_LARGE`, `503 S3_NOT_CONFIGURED` |
+| `PUT` | `/admin/media/object` | Query `key`. Raw body, max 10 MB. Used by the Next.js local upload route, not the browser. | `{ key, size }` | `401 UNAUTHORIZED`, `400 INVALID_KEY`, `400 UNSUPPORTED_TYPE`, `400 FILE_TOO_LARGE`, `409 WRONG_DRIVER` |
 | `POST` | `/admin/media` | Body: `{ key, fileName, contentType, width?, height?, altText? }` | `MediaItem` (`201`) | `400 INVALID_KEY`, `400 UNSUPPORTED_TYPE`, `400 UPLOAD_MISSING`, `400 FILE_TOO_LARGE`, `400 TYPE_MISMATCH`, `409 ALREADY_SAVED`, `502 STORAGE_ERROR` |
-| `DELETE` | `/admin/media/:id` | Param: `id` (deletes S3 object then DB doc) | `{ id }` | `404 NOT_FOUND`, `502 STORAGE_ERROR` |
+| `DELETE` | `/admin/media/:id` | Param: `id`. Deletes the file from disk when `url` starts with `/uploads/`, otherwise from S3, then deletes the DB doc. | `{ id }` | `404 NOT_FOUND`, `502 STORAGE_ERROR` |
 
 ---
 
@@ -129,9 +153,14 @@ Mounted at `/api/v1/admin/tools` (`backend/src/modules/tools/tool.router.ts`). A
 | `GET` | `/admin/tools` | Query: `page` (1), `limit` (1..50, 10), `search`, `categoryId`, `status` (`active`\|`inactive`), `sort` (`name`\|`updatedAt`), `order` (`asc`\|`desc`) | `{ items: ToolRecord[], page, limit, total, totalPages }` | `400 VALIDATION_ERROR` |
 | `GET` | `/admin/tools/placement` | — | `{ id, name, kind, parentId }[]` | — |
 | `GET` | `/admin/tools/:id` | Param: `id` | `ToolRecord` | `404 NOT_FOUND` |
-| `POST` | `/admin/tools` | Body (`toolFieldsSchema`): `{ name, slug, categoryId, pillarId?, subPillarId?, iconMediaId?, shortDescription?, metaTitle?, metaDescription?, canonicalUrl?, ogTitle?, ogDescription?, keywords?, indexable?, isActive?, isFeatured? }` | `ToolRecord` (`201`) | `400 VALIDATION_ERROR`, `400 INVALID_PLACEMENT`, `400 INVALID_ICON`, `409 NAME_TAKEN`, `409 SLUG_TAKEN` |
-| `PATCH` | `/admin/tools/:id` | Body (`toolFieldsSchema` — full fields required by schema on PATCH) | `ToolRecord` | Same as `POST` + `404 NOT_FOUND` |
+| `POST` | `/admin/tools` | Body (`toolFieldsSchema`): core tool fields plus optional SEO and embed prefs (`embedEnabled?`, `embedDefaultHeight?` 320–4000, `embedPreferredLayout?`, `embedAllowedDomains?`, `isActive?`, `isFeatured?`) | `ToolRecord` (`201`) | `400 VALIDATION_ERROR`, `400 INVALID_PLACEMENT`, `400 INVALID_ICON`, `409 NAME_TAKEN`, `409 SLUG_TAKEN` |
+| `PATCH` | `/admin/tools/:id` | Body (`toolFieldsSchema` — full fields required by schema on PATCH; all SEO fields still optional strings/booleans/nulls) | `ToolRecord` | Same as `POST` + `404 NOT_FOUND` |
 | `DELETE` | `/admin/tools/:id` | Param: `id` | `{ id }` | `404 NOT_FOUND` |
+| `GET` | `/admin/tools/development-audit` | — | `{ report: StoredAudit \| null }` | Auth errors |
+| `GET` | `/admin/tools/development-audit/catalog` | — | `{ id, name, slug, category, componentKey, isDeveloped, isDevelopedPersisted }[]` for every tool. `isDevelopedPersisted` is false when the field has never been written. | Auth errors |
+| `POST` | `/admin/tools/development-audit` | Body: audit totals, category stats, duplicate groups, rows (max 20,000), conclusive `updates`, and `initializeIds`. Component paths must be empty or start with `src/` and must not contain `..`. | `{ report: StoredAudit }` | `400 VALIDATION_ERROR`, auth errors |
+
+`ToolRecord` now includes `isDeveloped`. The public catalog does not. These three routes are registered before `GET /admin/tools/:id`. Audit writes use `timestamps: false`, so catalog `updatedAt` order does not change. `StoredAudit` is `{ ranAt, source, warning, totals, categories, duplicates, newlyDeveloped, regressed, updatedCount, rows, history }`.
 
 ---
 
@@ -139,7 +168,6 @@ Mounted at `/api/v1/admin/tools` (`backend/src/modules/tools/tool.router.ts`). A
 
 The following capabilities exist only as empty backend module directories (`.gitkeep`) or frontend UI previews and are **not implemented**:
 
-- Public tools directory listing, search, category detail (`GET /api/v1/catalog/categories/:slug`), and tool detail (`GET /api/v1/catalog/tools/:slug`)
 - Contact / tool suggestion submission (`POST /api/v1/contact` or similar)
 - Server-side or third-party tool execution endpoints
 - Admin staff management (`/api/v1/admin/users`)
@@ -149,4 +177,5 @@ The following capabilities exist only as empty backend module directories (`.git
 - Global SEO & system settings persistence (`/api/v1/admin/seo`, `/api/v1/admin/settings`)
 - Third-party integration credential management (`/api/v1/admin/integrations`)
 - Background jobs (`/api/v1/admin/jobs`) & public user uploads (`/api/v1/uploads`)
+- Currency rate reads. ADR-017 writes `CurrencyRate` from the daily job. No `GET` route serves those documents yet (ADR-021).
 

@@ -146,13 +146,20 @@ export function CategoryForm({ mode, category, parents }: CategoryFormProps) {
         </div>
 
         <div>
-          <label className="mb-1.5 block text-xs font-semibold text-accent">Description</label>
+          <label htmlFor="category-description" className="mb-1.5 block text-xs font-semibold text-accent">
+            Public description
+          </label>
           <Textarea
+            id="category-description"
             value={description}
             onChange={(event) => setDescription(event.target.value)}
-            placeholder="Short summary shown with this category"
+            placeholder="Short summary shown on the public category index"
             rows={3}
+            maxLength={2000}
           />
+          <p className="mt-1.5 text-[11px] text-muted-foreground">
+            Shown under the category name on the public category index and homepage.
+          </p>
         </div>
 
       </FormSection>

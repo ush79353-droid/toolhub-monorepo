@@ -1,0 +1,1526 @@
+{
+  "version": 1,
+  "available": true,
+  "source": "filesystem",
+  "scannedAt": "",
+  "warning": "",
+  "routeFileExists": true,
+  "routeUsesRegistry": true,
+  "detailRequired": true,
+  "embedUsesRegistry": true,
+  "registeredKeys": [
+    "ARDaysCalculator",
+    "ArmMortgageCalculator",
+    "AutoLoanCalculator",
+    "HundredDayCalculator",
+    "LoanCalculator",
+    "RrefCalculator",
+    "SeventyTwentyTenCalculator",
+    "ThreeDPrinterBuyVsOutsourceCalculator",
+    "ThreeXRentCalculator",
+    "TwelveHourShiftPayCalculator",
+    "TwelveVoltWireCalculator",
+    "ZeroToSixtyCalculator"
+  ],
+  "bindings": [
+    {
+      "key": "ARDaysCalculator",
+      "importPath": "@/tools/calculators/ar-days/ARDaysCalculator",
+      "expectedPath": "src/tools/calculators/ar-days/ARDaysCalculator.tsx",
+      "relativePath": "src/tools/calculators/ar-days/ARDaysCalculator.tsx",
+      "exportName": "ARDaysCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/ar-days/detail",
+      "detailExpectedPath": "src/tools/calculators/ar-days/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "ArmMortgageCalculator",
+      "importPath": "@/tools/calculators/arm-mortgage/ArmMortgageCalculator",
+      "expectedPath": "src/tools/calculators/arm-mortgage/ArmMortgageCalculator.tsx",
+      "relativePath": "src/tools/calculators/arm-mortgage/ArmMortgageCalculator.tsx",
+      "exportName": "ArmMortgageCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/arm-mortgage/detail",
+      "detailExpectedPath": "src/tools/calculators/arm-mortgage/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "AutoLoanCalculator",
+      "importPath": "@/tools/calculators/auto-loan/AutoLoanCalculator",
+      "expectedPath": "src/tools/calculators/auto-loan/AutoLoanCalculator.tsx",
+      "relativePath": "src/tools/calculators/auto-loan/AutoLoanCalculator.tsx",
+      "exportName": "AutoLoanCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/auto-loan/detail",
+      "detailExpectedPath": "src/tools/calculators/auto-loan/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "HundredDayCalculator",
+      "importPath": "@/tools/calculators/hundred-day/HundredDayCalculator",
+      "expectedPath": "src/tools/calculators/hundred-day/HundredDayCalculator.tsx",
+      "relativePath": "src/tools/calculators/hundred-day/HundredDayCalculator.tsx",
+      "exportName": "HundredDayCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/hundred-day/detail",
+      "detailExpectedPath": "src/tools/calculators/hundred-day/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "LoanCalculator",
+      "importPath": "@/tools/calculators/loan/LoanCalculator",
+      "expectedPath": "src/tools/calculators/loan/LoanCalculator.tsx",
+      "relativePath": "src/tools/calculators/loan/LoanCalculator.tsx",
+      "exportName": "LoanCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/loan/detail",
+      "detailExpectedPath": "src/tools/calculators/loan/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "RrefCalculator",
+      "importPath": "@/tools/calculators/rref/RrefCalculator",
+      "expectedPath": "src/tools/calculators/rref/RrefCalculator.tsx",
+      "relativePath": "src/tools/calculators/rref/RrefCalculator.tsx",
+      "exportName": "RrefCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/rref/detail",
+      "detailExpectedPath": "src/tools/calculators/rref/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "SeventyTwentyTenCalculator",
+      "importPath": "@/tools/calculators/seventy-twenty-ten-rule/SeventyTwentyTenCalculator",
+      "expectedPath": "src/tools/calculators/seventy-twenty-ten-rule/SeventyTwentyTenCalculator.tsx",
+      "relativePath": "src/tools/calculators/seventy-twenty-ten-rule/SeventyTwentyTenCalculator.tsx",
+      "exportName": "SeventyTwentyTenCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/seventy-twenty-ten-rule/detail",
+      "detailExpectedPath": "src/tools/calculators/seventy-twenty-ten-rule/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "ThreeDPrinterBuyVsOutsourceCalculator",
+      "importPath": "@/tools/calculators/three-d-printer-buy-vs-outsource/ThreeDPrinterBuyVsOutsourceCalculator",
+      "expectedPath": "src/tools/calculators/three-d-printer-buy-vs-outsource/ThreeDPrinterBuyVsOutsourceCalculator.tsx",
+      "relativePath": "src/tools/calculators/three-d-printer-buy-vs-outsource/ThreeDPrinterBuyVsOutsourceCalculator.tsx",
+      "exportName": "ThreeDPrinterBuyVsOutsourceCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/three-d-printer-buy-vs-outsource/detail",
+      "detailExpectedPath": "src/tools/calculators/three-d-printer-buy-vs-outsource/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "ThreeXRentCalculator",
+      "importPath": "@/tools/calculators/three-x-rent/ThreeXRentCalculator",
+      "expectedPath": "src/tools/calculators/three-x-rent/ThreeXRentCalculator.tsx",
+      "relativePath": "src/tools/calculators/three-x-rent/ThreeXRentCalculator.tsx",
+      "exportName": "ThreeXRentCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/three-x-rent/detail",
+      "detailExpectedPath": "src/tools/calculators/three-x-rent/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "TwelveHourShiftPayCalculator",
+      "importPath": "@/tools/calculators/twelve-hour-shift-pay/TwelveHourShiftPayCalculator",
+      "expectedPath": "src/tools/calculators/twelve-hour-shift-pay/TwelveHourShiftPayCalculator.tsx",
+      "relativePath": "src/tools/calculators/twelve-hour-shift-pay/TwelveHourShiftPayCalculator.tsx",
+      "exportName": "TwelveHourShiftPayCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/twelve-hour-shift-pay/detail",
+      "detailExpectedPath": "src/tools/calculators/twelve-hour-shift-pay/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "TwelveVoltWireCalculator",
+      "importPath": "@/tools/calculators/twelve-volt-wire/TwelveVoltWireCalculator",
+      "expectedPath": "src/tools/calculators/twelve-volt-wire/TwelveVoltWireCalculator.tsx",
+      "relativePath": "src/tools/calculators/twelve-volt-wire/TwelveVoltWireCalculator.tsx",
+      "exportName": "TwelveVoltWireCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/twelve-volt-wire/detail",
+      "detailExpectedPath": "src/tools/calculators/twelve-volt-wire/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    },
+    {
+      "key": "ZeroToSixtyCalculator",
+      "importPath": "@/tools/calculators/zero-to-sixty/ZeroToSixtyCalculator",
+      "expectedPath": "src/tools/calculators/zero-to-sixty/ZeroToSixtyCalculator.tsx",
+      "relativePath": "src/tools/calculators/zero-to-sixty/ZeroToSixtyCalculator.tsx",
+      "exportName": "ZeroToSixtyCalculator",
+      "exportFound": true,
+      "fileExists": true,
+      "placeholder": false,
+      "detailImportPath": "@/tools/calculators/zero-to-sixty/detail",
+      "detailExpectedPath": "src/tools/calculators/zero-to-sixty/detail.tsx",
+      "detailFileExists": true,
+      "detailExportsPageDetail": true
+    }
+  ],
+  "files": [
+    {
+      "relativePath": "src/tools/calculators/adr/ADRCalculator.tsx",
+      "exports": [
+        "ADRCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/adr/ADRForm.tsx",
+      "exports": [
+        "AdrForm",
+        "EMPTY_ADR_DRAFT",
+        "draftToInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/adr/ADRGuideArticle.tsx",
+      "exports": [
+        "ADRGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/adr/ADRResults.tsx",
+      "exports": [
+        "AdrResults",
+        "formatAdrMoney"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/adr/calculation.ts",
+      "exports": [
+        "calculateAdr",
+        "resolveAvailableRoomNights",
+        "roundMoney"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/adr/content.ts",
+      "exports": [
+        "ADR_FAQS",
+        "ADR_GUIDE_SECTIONS",
+        "ADR_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/adr/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/adr/types.ts",
+      "exports": [
+        "DEFAULT_ADR_CURRENCY",
+        "MAX_DAYS",
+        "MAX_MONEY",
+        "MAX_PHYSICAL_ROOMS",
+        "MAX_ROOM_NIGHTS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/adr/validation.ts",
+      "exports": [
+        "validateAdr"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/affo/calculation.ts",
+      "exports": [
+        "calculateAffo"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/affo/types.ts",
+      "exports": [
+        "DEFAULT_AFFO_INPUT",
+        "MAX_MONEY",
+        "MAX_SHARES",
+        "PERIOD_LABELS",
+        "REPORTING_PERIODS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/affo/validation.ts",
+      "exports": [
+        "parseOptionalNumber",
+        "validateAffo"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/ar-days/ARDaysCalculator.tsx",
+      "exports": [
+        "ARDaysCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/ar-days/ARDaysForm.tsx",
+      "exports": [
+        "ARDaysForm"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/ar-days/ARDaysGuideArticle.tsx",
+      "exports": [
+        "ARDaysGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/ar-days/ARDaysResults.tsx",
+      "exports": [
+        "ARDaysResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/ar-days/calculation.ts",
+      "exports": [
+        "averageReceivable",
+        "calculateARDays",
+        "describeResult",
+        "receivablesUsedForInputs"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/ar-days/content.ts",
+      "exports": [
+        "AR_DAYS_FAQS",
+        "AR_DAYS_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/ar-days/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/ar-days/types.ts",
+      "exports": [
+        "BALANCE_METHODS",
+        "SOLVE_TARGETS",
+        "averageBalanceIsInput",
+        "createDefaultARDaysInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/ar-days/validation.ts",
+      "exports": [
+        "validateARDays"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/arm-mortgage/ArmMortgageCalculator.tsx",
+      "exports": [
+        "ArmMortgageCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/arm-mortgage/ArmMortgageForm.tsx",
+      "exports": [
+        "ArmMortgageForm"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/arm-mortgage/ArmMortgageGuideArticle.tsx",
+      "exports": [
+        "ArmMortgageGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/arm-mortgage/ArmMortgageResults.tsx",
+      "exports": [
+        "ArmMortgageResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/arm-mortgage/calculation.ts",
+      "exports": [
+        "amortizingPaymentCents",
+        "applyRateCaps",
+        "assumedFullyIndexedRate",
+        "calculateArmMortgage",
+        "financingCents",
+        "lifetimeRateBounds"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/arm-mortgage/content.ts",
+      "exports": [
+        "ARM_FAQS",
+        "ARM_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/arm-mortgage/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/arm-mortgage/types.ts",
+      "exports": [
+        "ARM_STRUCTURES",
+        "DOWN_PAYMENT_MODES",
+        "RATE_SCENARIOS",
+        "createDefaultArmInput",
+        "structureTiming"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/arm-mortgage/validation.ts",
+      "exports": [
+        "validateArmInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/AmortizationTable.tsx",
+      "exports": [
+        "AmortizationTable"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/AutoLoanCalculator.tsx",
+      "exports": [
+        "AutoLoanCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/AutoLoanChart.tsx",
+      "exports": [
+        "AutoLoanChart"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/AutoLoanForm.tsx",
+      "exports": [
+        "AutoLoanForm",
+        "draftToInput",
+        "inputToDraft"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/AutoLoanGuideArticle.tsx",
+      "exports": [
+        "AutoLoanGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/AutoLoanResults.tsx",
+      "exports": [
+        "AutoLoanResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/calculation.ts",
+      "exports": [
+        "addMonthsToIsoDate",
+        "buildAmortizationCsv",
+        "buildResultsSummaryText",
+        "calculateAutoLoan",
+        "escapeCsvCell",
+        "formatCurrencyValue",
+        "formatDisplayDate",
+        "fromCents"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/content.ts",
+      "exports": [
+        "AUTO_LOAN_FAQS",
+        "AUTO_LOAN_GUIDE_SECTIONS",
+        "AUTO_LOAN_HOW_TO_USE",
+        "AUTO_LOAN_TERM_COMPARISON",
+        "AUTO_LOAN_TOC_ITEMS",
+        "AUTO_LOAN_WORKED_EXAMPLE"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/InfoTooltip.tsx",
+      "exports": [
+        "InfoTooltip"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/StickyCalculatorAside.tsx",
+      "exports": [
+        "StickyCalculatorAside"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/TableOfContents.tsx",
+      "exports": [
+        "TableOfContents"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/types.ts",
+      "exports": [
+        "createDefaultAutoLoanInput",
+        "getTodayIsoDate"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/auto-loan/validation.ts",
+      "exports": [
+        "MAX_ADDITIONAL_FEES",
+        "MAX_INTEREST_RATE",
+        "MAX_LOAN_MONTHS",
+        "MAX_SALES_TAX_RATE",
+        "MAX_VEHICLE_PRICE",
+        "isValidIsoCalendarDate",
+        "resolveDownPaymentCents",
+        "resolveTotalMonths",
+        "toCents",
+        "validateAutoLoanInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/five-twenty-nine/calculation.ts",
+      "exports": [
+        "calculateFiveTwentyNine"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/five-twenty-nine/content.ts",
+      "exports": [
+        "FIVE_TWENTY_NINE_FAQS",
+        "FIVE_TWENTY_NINE_GUIDE_SECTIONS",
+        "FIVE_TWENTY_NINE_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/five-twenty-nine/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/five-twenty-nine/FiveTwentyNineCalculator.tsx",
+      "exports": [
+        "FiveTwentyNineCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/five-twenty-nine/FiveTwentyNineForm.tsx",
+      "exports": [
+        "FiveTwentyNineForm",
+        "draftToInput",
+        "inputToDraft"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/five-twenty-nine/FiveTwentyNineGuideArticle.tsx",
+      "exports": [
+        "FiveTwentyNineGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/five-twenty-nine/FiveTwentyNineResults.tsx",
+      "exports": [
+        "FiveTwentyNineResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/five-twenty-nine/types.ts",
+      "exports": [
+        "DEFAULT_FIVE_TWENTY_NINE_INPUT",
+        "MONTHLY_RATE_NOTE"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/five-twenty-nine/validation.ts",
+      "exports": [
+        "validateFiveTwentyNineInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/four-zero-three-b/calculation.ts",
+      "exports": [
+        "calculateFourZeroThreeB",
+        "periodRate",
+        "periodsPerYear"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/four-zero-three-b/FourZeroThreeBCalculator.tsx",
+      "exports": [
+        "FourZeroThreeBCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/four-zero-three-b/FourZeroThreeBForm.tsx",
+      "exports": [
+        "DEFAULT_FOUR_ZERO_THREE_B_DRAFT",
+        "FourZeroThreeBForm",
+        "draftToInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/four-zero-three-b/FourZeroThreeBResults.tsx",
+      "exports": [
+        "FourZeroThreeBResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/four-zero-three-b/types.ts",
+      "exports": [
+        "MAX_AGE",
+        "MAX_FEE",
+        "MAX_INFLATION",
+        "MAX_MATCH_RATE",
+        "MAX_MONEY",
+        "MAX_RETURN",
+        "MAX_SALARY_GROWTH",
+        "MAX_YEARS",
+        "MIN_AGE",
+        "MIN_RETURN",
+        "MONEY_STEP",
+        "PERCENT_STEP"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/four-zero-three-b/validation.ts",
+      "exports": [
+        "parseOptionalNumber",
+        "validateFourZeroThreeB"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/hundred-day/calculation.ts",
+      "exports": [
+        "calculateBetween",
+        "calculateHundredDay",
+        "calculateOffset",
+        "offsetForCount"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/hundred-day/content.ts",
+      "exports": [
+        "HUNDRED_DAY_FAQS",
+        "HUNDRED_DAY_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/hundred-day/dates.ts",
+      "exports": [
+        "MAX_DAY_OFFSET",
+        "MAX_YEAR",
+        "MIN_YEAR",
+        "addCalendarDays",
+        "diffCalendarDays",
+        "formatIsoDate",
+        "formatLongDate",
+        "parseIsoDate",
+        "weekdayName",
+        "weeksAndDays"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/hundred-day/defaults.ts",
+      "exports": [
+        "PLACEHOLDER_START",
+        "createDefaultHundredDayInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/hundred-day/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/hundred-day/HundredDayCalculator.tsx",
+      "exports": [
+        "HundredDayCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/hundred-day/HundredDayForm.tsx",
+      "exports": [
+        "HundredDayForm"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/hundred-day/HundredDayGuideArticle.tsx",
+      "exports": [
+        "HundredDayGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/hundred-day/HundredDayResults.tsx",
+      "exports": [
+        "HundredDayResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/hundred-day/validation.ts",
+      "exports": [
+        "validateHundredDay"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/calculation.ts",
+      "exports": [
+        "addDaysToIsoDate",
+        "buildLoanAmortizationCsv",
+        "buildLoanSummaryText",
+        "calculateLoan",
+        "getFrequencyPeriodLabel",
+        "getFrequencyUnitSuffix",
+        "getScheduledPaymentDate"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/content.ts",
+      "exports": [
+        "LOAN_FAQS",
+        "LOAN_FREQUENCY_COMPARISON",
+        "LOAN_GUIDE_SECTIONS",
+        "LOAN_TERM_COMPARISON",
+        "LOAN_TOC_ITEMS",
+        "LOAN_WORKED_EXAMPLE"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/LoanAmortizationTable.tsx",
+      "exports": [
+        "LoanAmortizationTable"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/LoanCalculator.tsx",
+      "exports": [
+        "LoanCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/LoanChart.tsx",
+      "exports": [
+        "LoanChart"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/LoanForm.tsx",
+      "exports": [
+        "LoanForm",
+        "draftToInput",
+        "inputToDraft"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/LoanGuideArticle.tsx",
+      "exports": [
+        "LoanGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/LoanResults.tsx",
+      "exports": [
+        "LoanResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/types.ts",
+      "exports": [
+        "createDefaultLoanInput",
+        "getTodayIsoDate"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/loan/validation.ts",
+      "exports": [
+        "MAX_FEE_PERCENT",
+        "MAX_INTEREST_RATE",
+        "MAX_LOAN_AMOUNT",
+        "MAX_LOAN_MONTHS",
+        "getPaymentsPerYear",
+        "resolveInterestOnlyPeriods",
+        "resolveOriginationFeeCents",
+        "resolveScheduledPeriods",
+        "validateLoanInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/calculation.ts",
+      "exports": [
+        "assertIsRref",
+        "calculateRref",
+        "computeRref",
+        "parseInputMatrix",
+        "replayStepsToFinal"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/content.ts",
+      "exports": [
+        "RREF_FAQS",
+        "RREF_GUIDE_SECTIONS",
+        "RREF_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/MatrixDisplay.tsx",
+      "exports": [
+        "MatrixDisplay"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/parse.ts",
+      "exports": [
+        "MAX_DECIMAL_PLACES",
+        "parseRationalInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/rational.ts",
+      "exports": [
+        "cloneMatrix",
+        "formatMatrix",
+        "gcd",
+        "matricesEqual"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/RrefCalculator.tsx",
+      "exports": [
+        "RrefCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/RrefForm.tsx",
+      "exports": [
+        "RrefForm",
+        "draftToInput",
+        "inputToDraft"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/RrefGuideArticle.tsx",
+      "exports": [
+        "RrefGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/RrefResults.tsx",
+      "exports": [
+        "RrefResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/types.ts",
+      "exports": [
+        "MAX_COLS",
+        "MAX_ROWS",
+        "MIN_COLS",
+        "MIN_ROWS",
+        "createDefaultRrefInput",
+        "createEmptyDraft",
+        "draftToZeroMatrix",
+        "resizeDraft"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/rref/validation.ts",
+      "exports": [
+        "validateRrefInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/seventy-twenty-ten-rule/calculation.ts",
+      "exports": [
+        "activePercents",
+        "calculateSeventyTwentyTen",
+        "describeResult",
+        "percentsSumTo100",
+        "withFrequency"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/seventy-twenty-ten-rule/content.ts",
+      "exports": [
+        "SEVENTY_TWENTY_TEN_FAQS",
+        "SEVENTY_TWENTY_TEN_TOC"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/seventy-twenty-ten-rule/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/seventy-twenty-ten-rule/SeventyTwentyTenCalculator.tsx",
+      "exports": [
+        "SeventyTwentyTenCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/seventy-twenty-ten-rule/SeventyTwentyTenForm.tsx",
+      "exports": [
+        "SeventyTwentyTenForm"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/seventy-twenty-ten-rule/SeventyTwentyTenGuideArticle.tsx",
+      "exports": [
+        "SeventyTwentyTenGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/seventy-twenty-ten-rule/SeventyTwentyTenResults.tsx",
+      "exports": [
+        "SeventyTwentyTenResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/seventy-twenty-ten-rule/types.ts",
+      "exports": [
+        "INCOME_FREQUENCIES",
+        "STANDARD_PERCENTS",
+        "createDefaultSeventyTwentyTenInput",
+        "periodNoun"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/seventy-twenty-ten-rule/validation.ts",
+      "exports": [
+        "validateSeventyTwentyTen"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-d-printer-buy-vs-outsource/calculation.ts",
+      "exports": [
+        "calculateThreeDPrinter",
+        "roundMoney"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-d-printer-buy-vs-outsource/content.ts",
+      "exports": [
+        "PRINTER_FAQS",
+        "PRINTER_GUIDE_SECTIONS",
+        "PRINTER_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-d-printer-buy-vs-outsource/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-d-printer-buy-vs-outsource/ThreeDPrinterBuyVsOutsourceCalculator.tsx",
+      "exports": [
+        "ThreeDPrinterBuyVsOutsourceCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-d-printer-buy-vs-outsource/ThreeDPrinterBuyVsOutsourceForm.tsx",
+      "exports": [
+        "ThreeDPrinterBuyVsOutsourceForm",
+        "draftToInput",
+        "inputToDraft"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-d-printer-buy-vs-outsource/ThreeDPrinterBuyVsOutsourceGuideArticle.tsx",
+      "exports": [
+        "ThreeDPrinterBuyVsOutsourceGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-d-printer-buy-vs-outsource/ThreeDPrinterBuyVsOutsourceResults.tsx",
+      "exports": [
+        "ThreeDPrinterBuyVsOutsourceResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-d-printer-buy-vs-outsource/types.ts",
+      "exports": [
+        "DEFAULT_THREE_D_PRINTER_INPUT"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-d-printer-buy-vs-outsource/validation.ts",
+      "exports": [
+        "validateThreeDPrinterInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-x-rent/calculation.ts",
+      "exports": [
+        "calculateThreeXRent",
+        "equalSharePercents",
+        "roundMoney",
+        "splitMoney"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-x-rent/content.ts",
+      "exports": [
+        "THREE_X_RENT_FAQS",
+        "THREE_X_RENT_GUIDE_SECTIONS",
+        "THREE_X_RENT_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-x-rent/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-x-rent/ThreeXRentCalculator.tsx",
+      "exports": [
+        "ThreeXRentCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-x-rent/ThreeXRentForm.tsx",
+      "exports": [
+        "ThreeXRentForm",
+        "draftToInput",
+        "inputToDraft"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-x-rent/ThreeXRentGuideArticle.tsx",
+      "exports": [
+        "ThreeXRentGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-x-rent/ThreeXRentResults.tsx",
+      "exports": [
+        "ThreeXRentResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-x-rent/types.ts",
+      "exports": [
+        "DEFAULT_MULTIPLIER",
+        "DEFAULT_TENANT_COUNT",
+        "DEFAULT_THREE_X_RENT_INPUT",
+        "MAX_MONEY",
+        "MAX_MULTIPLIER",
+        "MAX_TENANT_COUNT",
+        "MIN_TENANT_COUNT",
+        "RESULT_CAP",
+        "SHARE_SUM_TOLERANCE"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/three-x-rent/validation.ts",
+      "exports": [
+        "parseOptionalNumber",
+        "validateThreeXRent"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-hour-shift-pay/calculation.ts",
+      "exports": [
+        "calculateTwelveHourShiftPay",
+        "roundMoney",
+        "suggestedOvertimeWage"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-hour-shift-pay/content.ts",
+      "exports": [
+        "SHIFT_PAY_FAQS",
+        "SHIFT_PAY_GUIDE_SECTIONS",
+        "SHIFT_PAY_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-hour-shift-pay/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-hour-shift-pay/TwelveHourShiftPayCalculator.tsx",
+      "exports": [
+        "TwelveHourShiftPayCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-hour-shift-pay/TwelveHourShiftPayForm.tsx",
+      "exports": [
+        "TwelveHourShiftPayForm",
+        "draftToInput",
+        "inputToDraft"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-hour-shift-pay/TwelveHourShiftPayGuideArticle.tsx",
+      "exports": [
+        "TwelveHourShiftPayGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-hour-shift-pay/TwelveHourShiftPayResults.tsx",
+      "exports": [
+        "TwelveHourShiftPayResults",
+        "formatShiftPay"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-hour-shift-pay/types.ts",
+      "exports": [
+        "DEFAULT_OVERTIME_MULTIPLIER",
+        "DEFAULT_REGULAR_HOURS",
+        "DEFAULT_SHIFTS_PER_WEEK",
+        "DEFAULT_SHIFT_HOURS",
+        "DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT",
+        "DEFAULT_WEEKS_PER_YEAR",
+        "MAX_REGULAR_HOURS",
+        "MAX_SHIFTS_PER_WEEK",
+        "MAX_SHIFT_HOURS",
+        "MAX_WAGE",
+        "MAX_WEEKS_PER_YEAR"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-hour-shift-pay/validation.ts",
+      "exports": [
+        "validateTwelveHourShiftPay"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-volt-wire/calculation.ts",
+      "exports": [
+        "calculateTwelveVolt"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-volt-wire/content.ts",
+      "exports": [
+        "TWELVE_VOLT_FAQS",
+        "TWELVE_VOLT_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-volt-wire/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-volt-wire/TwelveVoltWireCalculator.tsx",
+      "exports": [
+        "TwelveVoltWireCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-volt-wire/TwelveVoltWireForm.tsx",
+      "exports": [
+        "TwelveVoltWireForm"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-volt-wire/TwelveVoltWireGuideArticle.tsx",
+      "exports": [
+        "TwelveVoltWireGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-volt-wire/TwelveVoltWireResults.tsx",
+      "exports": [
+        "TwelveVoltWireResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-volt-wire/types.ts",
+      "exports": [
+        "createDefaultTwelveVoltInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/twelve-volt-wire/validation.ts",
+      "exports": [
+        "validateTwelveVolt"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/calculation.ts",
+      "exports": [
+        "AIR_DENSITY_SEA_LEVEL",
+        "POWER_CURVE_UTILIZATION",
+        "ROTATIONAL_INERTIA_FACTOR",
+        "SHIFT_SPEED_MPS",
+        "calculateZeroToSixty",
+        "getDrivenAxleWeightFraction",
+        "getLaunchFactor",
+        "getTireFrictionCoefficient"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/content.ts",
+      "exports": [
+        "DRIVETRAIN_COMPARISON_DATA",
+        "ZERO_TO_SIXTY_FAQS",
+        "ZERO_TO_SIXTY_TOC_ITEMS"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/detail.tsx",
+      "exports": [
+        "toolPageDetail"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/types.ts",
+      "exports": [
+        "DEFAULT_DRIVETRAIN_EFFICIENCIES",
+        "DEFAULT_SHIFT_DELAYS",
+        "DEFAULT_ZERO_TO_SIXTY_INPUT"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/units.ts",
+      "exports": [
+        "FEET_PER_METER",
+        "KG_PER_LB",
+        "MPS_PER_MPH",
+        "STANDARD_GRAVITY",
+        "TARGET_100_KMH_MPS",
+        "TARGET_60_MPH_MPS",
+        "WATTS_PER_HP",
+        "WATTS_PER_KW",
+        "convertPower",
+        "convertWeight",
+        "feetToMeters",
+        "kgToWeight",
+        "kmhToMps",
+        "metersToFeet",
+        "mphToMps",
+        "mpsToKmh",
+        "mpsToMph",
+        "powerToWatts",
+        "wattsToPower",
+        "weightToKg"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/validation.ts",
+      "exports": [
+        "validateZeroToSixtyInput"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/ZeroToSixtyCalculator.tsx",
+      "exports": [
+        "ZeroToSixtyCalculator"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/ZeroToSixtyChart.tsx",
+      "exports": [
+        "ZeroToSixtyChart"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/ZeroToSixtyForm.tsx",
+      "exports": [
+        "ZeroToSixtyForm",
+        "draftToInput",
+        "inputToDraft"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/ZeroToSixtyGuideArticle.tsx",
+      "exports": [
+        "ZeroToSixtyGuideArticle"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/calculators/zero-to-sixty/ZeroToSixtyResults.tsx",
+      "exports": [
+        "ZeroToSixtyResults"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/electrical/conductor.ts",
+      "exports": [
+        "ALUMINUM",
+        "COPPER",
+        "MATERIALS",
+        "METRIC_SIZES_MM2",
+        "awgAreaMm2",
+        "awgDiameterMm",
+        "awgLabel",
+        "celsiusToFahrenheit",
+        "fahrenheitToCelsius",
+        "feetToMeters",
+        "loopResistanceOhm",
+        "metersToFeet",
+        "minimumAreaM2",
+        "resistivityOhmM",
+        "smallestAwg",
+        "smallestMetric",
+        "solidDiameterMm",
+        "temperatureFactor"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/page-detail.ts",
+      "exports": [],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/shared/clipboard.ts",
+      "exports": [
+        "copyTextToClipboard"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/shared/currency.ts",
+      "exports": [
+        "CURRENCY_DEFINITIONS",
+        "CURRENCY_DENOMINATION_NOTE",
+        "CURRENCY_OPTIONS",
+        "DEFAULT_CURRENCY",
+        "SUPPORTED_CURRENCY_CODES",
+        "filterCurrencies",
+        "formatCurrencyValue",
+        "getCurrency",
+        "getCurrencyFractionDigits",
+        "getCurrencyOptionLabel",
+        "getCurrencyShortLabel",
+        "getCurrencySymbol",
+        "isSupportedCurrency"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/shared/CurrencySelect.tsx",
+      "exports": [
+        "CurrencySelect"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/shared/download.ts",
+      "exports": [
+        "downloadTextFile"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/shared/sidebar-countries.ts",
+      "exports": [
+        "SIDEBAR_COUNTRIES"
+      ],
+      "placeholder": false
+    },
+    {
+      "relativePath": "src/tools/types.ts",
+      "exports": [],
+      "placeholder": false
+    }
+  ]
+}

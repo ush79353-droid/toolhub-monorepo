@@ -20,7 +20,7 @@ To avoid merge conflicts and stale context:
 4. **Use stable Task IDs** in `TASKS.md` (e.g., `CORE-01`, `FE-01`, `BE-01`) — never renumber existing IDs.
 5. **Preserve prior decisions** in `DECISIONS.md` — add new ADRs or supersede status rather than deleting history.
 6. **Append chronologically** to `CHANGELOG.md` — place new entries consistently without rewriting older entries.
-7. **Bundle Brain updates with code commits** — never commit code changes that alter routes, schemas, auth, UI tokens, or task status without updating the corresponding Brain files in the same commit.
+7. **Bundle Brain updates with the work they describe.** Non-calculator changes that alter routes, schemas, auth, UI tokens, or task status update the matching Brain files in the same commit. A new calculator follows ADR-019: milestone commits, then one closing Brain commit, pushed together. Do not push the calculator commits without that Brain commit.
 8. **Never force push or silently overwrite another developer's work.** Stop and resolve conflicts explicitly.
 
 ---
@@ -39,6 +39,12 @@ To avoid merge conflicts and stale context:
 | — | [`API_CONTRACTS.md`](./API_CONTRACTS.md) | Implemented `/api/v1` endpoints, request/response/error shapes, planned APIs | Endpoints or Zod validation contracts change |
 | — | [`AUTHENTICATION.md`](./AUTHENTICATION.md) | Admin auth, Argon2id, MongoDB sessions, `HttpOnly` cookies, password reset | Auth, session, cookie, or RBAC code changes |
 | — | [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md) | Locked brand palette, typography, spacing, UI patterns, responsiveness | UI tokens or shared visual patterns change |
+| — | [`CALCULATOR_STANDARDS.md`](./CALCULATOR_STANDARDS.md) | Locked calculator module (`ARCHITECTURE.md` §7) plus UX/currency/testing conventions | Calculator folder, registry, or shared tool UX conventions change |
+| — | [`SEO_STANDARDS.md`](./SEO_STANDARDS.md) | Optional admin SEO fields, fallbacks, canonical/robots/social/JSON-LD rules | Tool SEO schema, metadata pipeline, or cache policy changes |
+| — | [`EMBED_STANDARDS.md`](./EMBED_STANDARDS.md) | Shared `/embed/[slug]` eligibility, admin gates, CSP, auto-resize, noindex | Calculator iframe embedding or framing headers |
+| — | [`AD_STANDARDS.md`](./AD_STANDARDS.md) | Dummy tool-page ad slots, density rules, embed exclusion, future AdSense hooks | Tool detail ad placeholders or live ads work |
+| — | [`TOOL_DETAIL_PAGE_STANDARDS.md`](./TOOL_DETAIL_PAGE_STANDARDS.md) | **Authoritative master** `/tools/[slug]` shell (Auto Loan Calculator reference): layout, typography, sticky sidebar, SEO, ads, embed, a11y, DoD | Any calculator detail page or shared tool shell change |
+| — | [`NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`](./NEW_TOOL_DEVELOPMENT_PLAYBOOK.md) | Step-by-step workflow for shipping a new calculator without redesigning the shell | New tool implementation process or DoD checklist changes |
 | — | [`DECISIONS.md`](./DECISIONS.md) | Architecture Decision Records (ADRs) | Architectural or technical policy decisions occur |
 | — | [`TASKS.md`](./TASKS.md) | Shared task board (`Planned`, `In Progress`, `Blocked`, `Completed`) | Starting, blocking, or completing tasks |
 | — | [`CHANGELOG.md`](./CHANGELOG.md) | Chronological development history with verification & commit hashes | **After every completed task** |

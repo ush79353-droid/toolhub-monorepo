@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import {
+  ClipboardCheck,
   LayoutDashboard,
   Layers,
   Wrench,
@@ -44,6 +45,7 @@ export const ADMIN_NAV_GROUPS: AdminNavGroup[] = [
     items: [
       { label: 'Categories', href: '/admin/categories', icon: Layers },
       { label: 'Tools', href: '/admin/tools', icon: Wrench },
+      { label: 'Development audit', href: '/tools-audit', icon: ClipboardCheck },
       { label: 'Media Library', href: '/admin/media', icon: ImageIcon },
       { label: 'CMS Pages', href: '/admin/pages', icon: FileText },
     ],

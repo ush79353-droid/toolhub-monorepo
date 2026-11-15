@@ -2,7 +2,7 @@
 
 Database: **MongoDB** accessed strictly from `backend/` via **Mongoose** (`^8.10.1`, `mongoose.set('strictQuery', true)`).
 
-Only **5 Mongoose models** exist in the codebase today. No other collections (`analytics`, `audit_logs`, `cms_pages`, `settings`, `integrations`) are implemented yet.
+Only the Mongoose models documented below exist. No other collections (`analytics`, `audit_logs`, `cms_pages`, `settings`, `integrations`) are implemented yet.
 
 ---
 
@@ -76,6 +76,8 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 | `parent` | `ObjectId \| null` | `ref: 'Category'` (`null` for `category`, points to `category` for `pillar`, points to `pillar` for `sub_pillar`) | `null` |
 | `sortOrder` | `Number` | Required | `0` |
 | `description` | `String` | `maxlength: 2000` | `''` |
+| `iconUrl` | `String` | Public URL of the category icon. Empty unless set. Local files use `/uploads/<key>`. | `''` |
+| `iconMedia` | `ObjectId \| null` | `ref: 'MediaAsset'` | `null` |
 | `isActive` | `Boolean` | Visibility flag | `true` |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |
 
@@ -89,7 +91,7 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 ## 4. `MediaAsset` (collection: `mediaassets`)
 
 - **Source:** `backend/src/modules/media/media.model.ts`
-- **Responsibility:** Tracks files uploaded to AWS S3 (`media/<uuid>.<ext>`) for tool icons and library management.
+- **Responsibility:** Tracks media files (`media/<uuid>.<ext>`) for tool icons and the library. The file itself is on local disk or S3, chosen by `STORAGE_DRIVER` at upload time.
 
 ### Fields
 
@@ -97,12 +99,12 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 | :--- | :--- | :--- | :--- |
 | `fileName` | `String` | Required, trimmed, `maxlength: 180` | — |
 | `contentType` | `String` | Required (validated MIME: png, jpeg, webp, svg+xml, gif, pdf) | — |
-| `size` | `Number` | Required (verified via S3 `HeadObject`, max 10 MB) | — |
+| `size` | `Number` | Required (verified from the stored file, max 10 MB) | — |
 | `width` | `Number` | Optional | — |
 | `height` | `Number` | Optional | — |
 | `altText` | `String` | `maxlength: 300` | `''` |
-| `key` | `String` | Required (S3 object key `media/<uuid>.<ext>`) | — |
-| `url` | `String` | Required (computed public URL from `AWS_BASE_URL` + `key`) | — |
+| `key` | `String` | Required (`media/<uuid>.<ext>`, same key on disk and on S3) | — |
+| `url` | `String` | Required. Local files use `/uploads/<key>`. S3 files use `AWS_BASE_URL` + key. Delete uses this to pick the driver. | — |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |
 
 ### Indexes
@@ -128,20 +130,99 @@ Only **5 Mongoose models** exist in the codebase today. No other collections (`a
 | `subPillar` | `ObjectId \| null` | `ref: 'Category'` (`kind === 'sub_pillar'`, child of `pillar`) | `null` |
 | `iconMedia` | `ObjectId \| null` | `ref: 'MediaAsset'` (image MIME required) | `null` |
 | `iconUrl` | `String` | Resolved URL from `MediaAsset.url` | `''` |
+| `executionType` | `String` | Enum `['client', 'server', 'third-party']` | `'client'` |
+| `componentKey` | `String` | Trimmed, `maxlength: 100` (allowlisted frontend registry key, e.g. `'AutoLoanCalculator'`) | `''` |
 | `shortDescription` | `String` | `maxlength: 500` | `''` |
-| `metaTitle` | `String` | `maxlength: 70` | `''` |
-| `metaDescription` | `String` | `maxlength: 160` | `''` |
-| `canonicalUrl` | `String` | `maxlength: 300` | `''` |
-| `ogTitle` | `String` | `maxlength: 70` | `''` |
-| `ogDescription` | `String` | `maxlength: 200` | `''` |
-| `keywords` | `String` | `maxlength: 200` | `''` |
-| `indexable` | `Boolean` | Search crawler indexing toggle | `true` |
-| `isActive` | `Boolean` | Active status flag | `true` |
+| `metaTitle` | `String` | Optional SEO title, `maxlength: 70` | `''` |
+| `metaDescription` | `String` | Optional SEO description, `maxlength: 160` | `''` |
+| `canonicalUrl` | `String` | Optional absolute https/http canonical, `maxlength: 300` | `''` |
+| `ogTitle` | `String` | Optional Open Graph title, `maxlength: 70` | `''` |
+| `ogDescription` | `String` | Optional Open Graph description, `maxlength: 200` | `''` |
+| `keywords` | `String` | Optional meta keywords (compatibility), `maxlength: 200` | `''` |
+| `indexable` | `Boolean` | Admin indexing preference (public robots still gated by active + implemented `componentKey`) | `true` |
+| `robotsFollow` | `Boolean` | Follow preference when set | `true` |
+| `robotsNoarchive` / `robotsNosnippet` / `robotsNoimageindex` | `Boolean` | Optional advanced robots directives | `false` |
+| `robotsMaxSnippet` | `Number \| null` | Optional `max-snippet` (`-1`…`100000`) | `null` |
+| `robotsMaxImagePreview` | `String` | `''` \| `none` \| `standard` \| `large` | `''` |
+| `robotsMaxVideoPreview` | `Number \| null` | Optional `max-video-preview` (`-1`…`100000`) | `null` |
+| `ogImageUrl` / `ogImageAlt` | `String` | Optional OG image URL (`maxlength: 500`) + alt (`120`) | `''` |
+| `ogType` / `ogSiteName` | `String` | Optional OG type (`website`/`article`) + site name | `''` |
+| `twitterCard` | `String` | `''` \| `summary` \| `summary_large_image` | `''` |
+| `twitterTitle` / `twitterDescription` | `String` | Optional Twitter title/description | `''` |
+| `twitterImageUrl` / `twitterImageAlt` | `String` | Optional Twitter image URL/alt | `''` |
+| `twitterSite` | `String` | Optional `@handle`, `maxlength: 32` | `''` |
+| `schemaTypes` | `String[]` | Optional subset of `WebPage` / `WebApplication` / `BreadcrumbList` / `FAQPage` | `[]` |
+| `sitemapInclude` | `Boolean` | Admin sitemap preference (eligibility still gated) | `true` |
+| `sitemapPriority` | `Number \| null` | Optional `0`–`1` | `null` |
+| `sitemapChangeFrequency` | `String` | Optional changefreq enum or `''` | `''` |
+| `embedEnabled` | `Boolean` | Allow embedding; missing treated as enabled; only explicit `false` disables | `true` |
+| `embedDefaultHeight` | `Number` | Suggested iframe height px (`320`–`4000`) | `650` |
+| `embedPreferredLayout` | `String` | `responsive` \| `compact` | `responsive` |
+| `embedAllowedDomains` | `String` | Advisory comma-separated host list (`maxlength: 1000`) | `''` |
+| `isActive` | `Boolean` | Public catalog visibility. A registered calculator is set true only after its module and registry exist (ADR-022). An explicit false stays off. | `true` |
 | `isFeatured` | `Boolean` | Homepage featured promotion flag | `false` |
+| `isDeveloped` | `Boolean` | Initial default `true` for new tools and for reseed inserts (`$setOnInsert` only). A missing value is that initial default, not proof a component exists. The tools audit writes an explicit `true` or `false` without bumping `updatedAt`. | `true` |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |
 
 ### Indexes
 - `{ nameKey: 1 }` (`unique: true`)
 - `{ slug: 1 }` (`unique: true`)
 - `{ category: 1, updatedAt: -1 }`
+
+---
+
+## 6. `ToolAudit` (collection: `toolaudits`)
+
+- **Source:** `backend/src/modules/tools/tool-audit.model.ts`
+- **Responsibility:** Saved development-audit reports. `kind: 'latest'` holds the current report including per-tool rows. `kind: 'run'` holds the last 20 summaries without rows.
+
+| Field | Type | Notes |
+| :--- | :--- | :--- |
+| `kind` | `'latest' \| 'run'` | One latest document, plus history runs |
+| `ranAt` | `Date` | When the audit was saved |
+| `source` | `'filesystem' \| 'manifest'` | Live source tree, or the build-time component manifest |
+| `warning` | `String` | Non-fatal scan warning |
+| `total`, `developed`, `notDeveloped`, `needsReview` | `Number` | Status counts. Completion uses `developed / total` |
+| `completionPercent` | `Number` | One decimal |
+| `updatedCount` | `Number` | Conclusive `isDeveloped` writes requested |
+| `newlyDeveloped`, `regressed` | `String[]` | Slugs whose audit status changed since the previous saved report. Empty on the first audit |
+| `categoryStats` | `Object[]` | `{ category, total, developed, pending, needsReview }` |
+| `duplicates` | `Object` | Duplicate ids, slugs, routes, and shared developed component keys |
+| `rows` | `Mixed` | Present on `latest` only. Relative `src/` paths, no file contents |
+
+### Indexes
+- `{ kind: 1, ranAt: -1 }`
+
+---
+
+## Currency rates
+
+### `CurrencyRate` (collection: `currencyrates`)
+
+- **Source:** `backend/src/modules/currency/currency-rate.model.ts`
+- **Responsibility:** Latest conversion table for one base currency. One document per `baseCurrency`.
+
+| Field | Type | Constraints | Default |
+| :--- | :--- | :--- | :--- |
+| `baseCurrency` | `String` | Required, unique, trimmed, uppercase | — |
+| `fullName` | `String` | Required, trimmed | — |
+| `symbol` | `String` | Required, trimmed | — |
+| `conversionRates` | `Map<String, Number>` | Required. Units of each code per 1 base unit. The base's own rate is 1. Convert with `amount * rate[target] / rate[source]` (ADR-021). | — |
+| `fetchedAt` | `Date` | When the provider response was saved | `Date.now` |
+| `isActive` | `Boolean` | | `true` |
+| `createdAt`, `updatedAt` | `Date` | `{ timestamps: true }` | — |
+
+### `CurrencyRateHistory` (collection: `currencyratehistories`)
+
+- **Source:** `backend/src/modules/currency/currency-rate-history.model.ts`
+- **Responsibility:** One snapshot per base currency each time the daily job saves rates.
+
+| Field | Type | Constraints |
+| :--- | :--- | :--- |
+| `baseCurrency` | `String` | Required, trimmed, uppercase |
+| `conversionRates` | `Map<String, Number>` | Required |
+| `fetchedAt` | `Date` | Required |
+
+Index: `{ baseCurrency: 1, fetchedAt: -1 }`.
+
 

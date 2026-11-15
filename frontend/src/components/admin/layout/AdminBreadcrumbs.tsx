@@ -9,6 +9,7 @@ const ROUTE_NAME_MAP: Record<string, string> = {
   admin: 'Admin',
   categories: 'Categories',
   tools: 'Tools',
+  'tools-audit': 'Tools audit',
   users: 'Users',
   media: 'Media Library',
   seo: 'SEO Management',

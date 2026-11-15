@@ -3,14 +3,7 @@ import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
 import { SearchBar } from '@/components/shared/SearchBar';
 import { serverApi } from '@/server/api/client';
-
-interface HomeCategory {
-  id: string;
-  name: string;
-  slug: string;
-  description: string;
-  toolCount: number;
-}
+import { getPublicCategories } from '@/server/catalog/categories';
 
 interface FeaturedTool {
   id: string;
@@ -25,15 +18,15 @@ interface FeaturedTool {
 async function loadHome() {
   try {
     const [categories, featured] = await Promise.all([
-      serverApi.get<HomeCategory[]>('/catalog/categories', { cache: 'no-store' }),
+      getPublicCategories(),
       serverApi.get<FeaturedTool[]>('/catalog/featured', { cache: 'no-store' }),
     ]);
     return {
-      categories: categories.data ?? [],
+      categories,
       featured: featured.data ?? [],
     };
   } catch {
-    return { categories: [] as HomeCategory[], featured: [] as FeaturedTool[] };
+    return { categories: [], featured: [] as FeaturedTool[] };
   }
 }
 
@@ -119,7 +112,10 @@ export default async function HomePage() {
                 <li key={category.id} className="border-b border-border sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0">
                   <Link href={`/categories/${category.slug}`} className="block h-full px-1 py-5 pr-4 hover:bg-muted/30 sm:px-4">
                     <span className="flex items-baseline justify-between gap-3">
-                      <span className="font-medium text-accent">{category.name}</span>
+                      <span className="flex items-center gap-2.5">
+                        {category.iconUrl ? <img src={category.iconUrl} alt="" className="h-4 w-4 shrink-0" /> : null}
+                        <span className="font-medium text-accent">{category.name}</span>
+                      </span>
                       <span className="shrink-0 text-sm tabular-nums text-muted-foreground">{category.toolCount}</span>
                     </span>
                     {category.description ? (

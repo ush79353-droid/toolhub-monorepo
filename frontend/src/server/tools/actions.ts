@@ -1,8 +1,10 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
 import { serverApi, ApiClientError } from '@/server/api/client';
 import { getAdminSessionToken } from '@/server/auth/session';
 import type { ActionResult } from '@/server/auth/actions';
+import type { ToolExecutionType } from '@/types/tool';
 
 export interface ToolRef {
   id: string;
@@ -19,16 +21,45 @@ export interface ToolRecord {
   subPillar: ToolRef | null;
   iconMediaId: string | null;
   iconUrl: string;
+  executionType: ToolExecutionType;
+  componentKey: string;
   shortDescription: string;
   metaTitle: string;
   metaDescription: string;
   canonicalUrl: string;
   ogTitle: string;
   ogDescription: string;
+  ogImageUrl: string;
+  ogImageAlt: string;
+  ogType: string;
+  ogSiteName: string;
   keywords: string;
   indexable: boolean;
+  robotsFollow: boolean;
+  robotsNoArchive: boolean;
+  robotsNoSnippet: boolean;
+  robotsNoImageIndex: boolean;
+  robotsMaxSnippet: number | null;
+  robotsMaxImagePreview: string;
+  robotsMaxVideoPreview: number | null;
+  twitterCard: string;
+  twitterTitle: string;
+  twitterDescription: string;
+  twitterImageUrl: string;
+  twitterImageAlt: string;
+  twitterSite: string;
+  schemaType: string;
+  includeFaqSchema: boolean;
+  sitemapInclude: boolean;
+  sitemapPriority: number | null;
+  sitemapChangeFrequency: string;
+  embedEnabled: boolean;
+  embedDefaultHeight: number;
+  embedPreferredLayout: string;
+  embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
+  isDeveloped: boolean;
   createdAt: string;
   updatedAt: string;
 }
@@ -55,14 +86,42 @@ export interface ToolPayload {
   pillarId: string;
   subPillarId?: string | null;
   iconMediaId?: string | null;
+  executionType?: ToolExecutionType;
+  componentKey?: string;
   shortDescription?: string;
   metaTitle?: string;
   metaDescription?: string;
   canonicalUrl?: string;
   ogTitle?: string;
   ogDescription?: string;
+  ogImageUrl?: string;
+  ogImageAlt?: string;
+  ogType?: string;
+  ogSiteName?: string;
   keywords?: string;
   indexable?: boolean;
+  robotsFollow?: boolean;
+  robotsNoArchive?: boolean;
+  robotsNoSnippet?: boolean;
+  robotsNoImageIndex?: boolean;
+  robotsMaxSnippet?: number | null;
+  robotsMaxImagePreview?: string;
+  robotsMaxVideoPreview?: number | null;
+  twitterCard?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImageUrl?: string;
+  twitterImageAlt?: string;
+  twitterSite?: string;
+  schemaType?: string;
+  includeFaqSchema?: boolean;
+  sitemapInclude?: boolean;
+  sitemapPriority?: number | null;
+  sitemapChangeFrequency?: string;
+  embedEnabled?: boolean;
+  embedDefaultHeight?: number;
+  embedPreferredLayout?: string;
+  embedAllowedDomains?: string;
   isActive?: boolean;
   isFeatured?: boolean;
 }
@@ -76,6 +135,15 @@ async function authHeaders(): Promise<Record<string, string> | null> {
 function fail(error: unknown, fallback: string): ActionResult<never> {
   if (error instanceof ApiClientError) return { success: false, error: error.message };
   return { success: false, error: fallback };
+}
+
+function revalidateToolSurfaces(slug?: string) {
+  revalidatePath('/tools');
+  revalidatePath('/');
+  if (slug) {
+    revalidatePath(`/tools/${slug}`);
+    revalidatePath(`/embed/${slug}`);
+  }
 }
 
 export async function listToolsAction(query: {
@@ -149,6 +217,7 @@ export async function saveToolAction(id: string | null, payload: ToolPayload): P
     if (!response.success || !response.data) {
       return { success: false, error: response.error?.message || 'Failed to save the tool.' };
     }
+    revalidateToolSurfaces(response.data.slug);
     return { success: true, data: response.data };
   } catch (error) {
     return fail(error, 'Failed to save the tool.');
@@ -161,6 +230,7 @@ export async function deleteToolAction(id: string): Promise<ActionResult<{ id: s
   try {
     const response = await serverApi.delete<{ id: string }>(`/admin/tools/${id}`, { headers });
     if (!response.success) return { success: false, error: response.error?.message || 'Failed to delete the tool.' };
+    revalidateToolSurfaces();
     return { success: true, data: response.data };
   } catch (error) {
     return fail(error, 'Failed to delete the tool.');

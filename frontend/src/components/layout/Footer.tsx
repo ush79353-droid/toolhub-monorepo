@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Container } from './Container';
-import { Shield, FileText, ArrowRight } from 'lucide-react';
-import { CATEGORIES } from '@/lib/sample-data';
+import { ArrowRight } from 'lucide-react';
+import { getPublicCategories } from '@/server/catalog/categories';
 
-export function Footer() {
+export async function Footer() {
+  const categories = await getPublicCategories();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -17,28 +18,26 @@ export function Footer() {
               <img
                 src="/images/logo/horizontal-logo.png"
                 alt="Omega Calculators"
-                className="h-14 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
               Your comprehensive platform for fast, free, in-browser online tools. From financial
               calculators and unit converters to developer formatters and PDF utilities.
             </p>
-            <div className="mt-5 inline-flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-xs font-semibold text-accent">
-              <Shield className="h-3.5 w-3.5 text-primary" />
-              <span>Client-Side In-Browser Execution</span>
-            </div>
           </div>
 
           {/* Popular Categories */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-accent">Categories</h4>
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-accent">
+              Categories
+            </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {CATEGORIES.slice(0, 6).map((cat) => (
+              {categories.slice(0, 7).map((cat) => (
                 <li key={cat.id}>
                   <Link
                     href={`/categories/${cat.slug}`}
-                    className="text-muted-foreground transition-colors hover:text-primary"
+                    className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
                   >
                     {cat.name}
                   </Link>
@@ -47,7 +46,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/categories"
-                  className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
+                  className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
                 >
                   <span>All Categories</span>
                   <ArrowRight className="h-3 w-3" />
@@ -58,7 +57,9 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-accent">Quick Tools</h4>
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-accent">
+              Quick Tools
+            </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link
@@ -113,7 +114,7 @@ export function Footer() {
 
           {/* Company & Legal */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-accent">Platform</h4>
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-accent">Platform</h2>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link
@@ -136,7 +137,6 @@ export function Footer() {
                   href="/privacy-policy"
                   className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
                 >
-                  <FileText className="h-3.5 w-3.5" />
                   <span>Privacy Policy</span>
                 </Link>
               </li>
@@ -145,7 +145,6 @@ export function Footer() {
                   href="/terms-of-service"
                   className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
                 >
-                  <FileText className="h-3.5 w-3.5" />
                   <span>Terms of Service</span>
                 </Link>
               </li>

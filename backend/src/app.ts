@@ -1,3 +1,4 @@
+import path from 'path';
 import express, { type Application } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -34,6 +35,15 @@ export function createApp(): Application {
 
   // Logging Middleware
   app.use(requestLogger);
+
+  app.use(
+    '/uploads',
+    express.static(path.resolve(process.cwd(), env.UPLOAD_DIR), {
+      fallthrough: false,
+      index: false,
+      dotfiles: 'deny',
+    })
+  );
 
   // API v1 Routes
   const v1Router = express.Router();

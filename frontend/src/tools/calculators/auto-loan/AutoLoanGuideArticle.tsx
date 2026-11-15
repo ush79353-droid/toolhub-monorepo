@@ -1,0 +1,170 @@
+import * as React from 'react';
+import { FAQAccordion } from '@/components/shared/FAQAccordion';
+import {
+  AUTO_LOAN_FAQS,
+  AUTO_LOAN_GUIDE_SECTIONS,
+  AUTO_LOAN_TERM_COMPARISON,
+  AUTO_LOAN_WORKED_EXAMPLE,
+} from './content';
+
+export function AutoLoanGuideArticle() {
+  return (
+    <div className="rounded-2xl border border-border bg-white px-5 py-6 shadow-xs sm:px-8 sm:py-8">
+      <div className="divide-y divide-border">
+        {AUTO_LOAN_GUIDE_SECTIONS.map((section) => (
+          <article
+            key={section.id}
+            id={section.id}
+            className="scroll-mt-24 py-7 first:pt-0"
+          >
+            <h2 className="text-[21px] font-semibold leading-snug tracking-tight text-accent sm:text-2xl">
+              {section.title}
+            </h2>
+
+            <div className="mt-3.5 space-y-4 text-[15px] font-normal leading-[1.72] text-foreground/85 sm:text-base sm:leading-[1.75]">
+              {section.paragraphs.map((paragraph, pIndex) => (
+                <p key={pIndex}>{paragraph}</p>
+              ))}
+            </div>
+
+            {section.formula && (
+              <div className="mt-5 overflow-x-auto rounded-xl border border-border bg-brand-softTeal/55 px-4 py-3.5 sm:px-5">
+                <p className="font-mono text-xs font-medium text-accent sm:text-sm">
+                  {section.formula}
+                </p>
+                {section.formulaNote && (
+                  <p className="mt-2 text-xs font-normal leading-relaxed text-muted-foreground sm:text-[13px]">
+                    {section.formulaNote}
+                  </p>
+                )}
+              </div>
+            )}
+
+            {section.orderedSteps && (
+              <ul className="mt-5 list-disc space-y-2.5 pl-5 text-[15px] font-normal leading-[1.7] text-foreground/85 marker:text-muted-foreground sm:text-base sm:leading-[1.75]">
+                {section.orderedSteps.map((step, stepIndex) => (
+                  <li key={stepIndex}>{step}</li>
+                ))}
+              </ul>
+            )}
+
+            {section.bullets && (
+              <ul className="mt-5 list-disc space-y-2.5 pl-5 text-[15px] font-normal leading-[1.7] text-foreground/85 marker:text-muted-foreground sm:text-base sm:leading-[1.75]">
+                {section.bullets.map((bullet, bIndex) => (
+                  <li key={bIndex}>{bullet}</li>
+                ))}
+              </ul>
+            )}
+
+            {section.hasTermComparisonTable && (
+              <div className="mt-5 overflow-x-auto rounded-xl border border-border">
+                <table className="w-full min-w-[460px] text-left text-xs sm:text-sm">
+                  <thead className="border-b border-border bg-muted text-xs font-medium text-muted-foreground">
+                    <tr>
+                      <th scope="col" className="px-4 py-3 font-medium">
+                        Loan Term
+                      </th>
+                      <th scope="col" className="px-4 py-3 text-right font-medium">
+                        Monthly Payment
+                      </th>
+                      <th scope="col" className="px-4 py-3 text-right font-medium">
+                        Total Interest
+                      </th>
+                      <th scope="col" className="px-4 py-3 text-right font-medium">
+                        Total Loan Payments
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border bg-white font-normal text-foreground">
+                    {AUTO_LOAN_TERM_COMPARISON.map((row) => (
+                      <tr key={row.months} className="hover:bg-muted/35">
+                        <td className="px-4 py-3 font-medium text-accent">
+                          {row.months} months ({row.yearsLabel})
+                        </td>
+                        <td className="px-4 py-3 text-right font-medium tabular-nums">
+                          {row.monthlyPayment}
+                        </td>
+                        <td className="px-4 py-3 text-right text-primary tabular-nums">
+                          {row.totalInterest}
+                        </td>
+                        <td className="px-4 py-3 text-right tabular-nums">{row.totalPayments}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            {section.hasWorkedExample && (
+              <div className="mt-5 space-y-5">
+                <p className="rounded-xl border border-border bg-background/70 p-4 text-[15px] font-normal leading-[1.7] text-foreground">
+                  {AUTO_LOAN_WORKED_EXAMPLE.scenarioSummary}
+                </p>
+
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <div className="rounded-xl border border-border bg-white p-4">
+                    <h3 className="text-[17px] font-semibold text-accent">Example Inputs</h3>
+                    <dl className="mt-3 divide-y divide-border text-xs sm:text-[13px]">
+                      {AUTO_LOAN_WORKED_EXAMPLE.inputs.map((item) => (
+                        <div
+                          key={item.label}
+                          className="flex items-center justify-between gap-2 py-2"
+                        >
+                          <dt className="font-normal text-muted-foreground">{item.label}</dt>
+                          <dd className="text-right font-medium text-foreground tabular-nums">
+                            {item.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+
+                  <div className="rounded-xl border border-border bg-brand-softTeal/50 p-4">
+                    <h3 className="text-[17px] font-semibold text-accent">Calculated Output</h3>
+                    <dl className="mt-3 divide-y divide-border text-xs sm:text-[13px]">
+                      {AUTO_LOAN_WORKED_EXAMPLE.outputs.map((item) => (
+                        <div
+                          key={item.label}
+                          className="flex items-center justify-between gap-2 py-2"
+                        >
+                          <dt className="font-normal text-muted-foreground">{item.label}</dt>
+                          <dd
+                            className={`text-right font-semibold tabular-nums ${
+                              item.highlight ? 'text-primary' : 'text-accent'
+                            }`}
+                          >
+                            {item.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+                </div>
+
+                <div className="rounded-xl border border-border bg-background/50 p-4">
+                  <h3 className="text-[17px] font-semibold text-accent">Step-by-Step Math</h3>
+                  <ul className="mt-3 space-y-2.5 text-sm font-normal leading-[1.7] text-foreground/85">
+                    {AUTO_LOAN_WORKED_EXAMPLE.steps.map((step) => (
+                      <li key={step.label}>
+                        <span className="font-medium text-accent">{step.label}:</span>{' '}
+                        {step.detail}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+          </article>
+        ))}
+
+        {/* 11. Frequently Asked Questions */}
+        <section id="frequently-asked-questions" className="scroll-mt-24 pt-7">
+          <h2 className="mb-5 text-[21px] font-semibold leading-snug tracking-tight text-accent sm:text-2xl">
+            Frequently Asked Questions
+          </h2>
+          <FAQAccordion items={[...AUTO_LOAN_FAQS]} />
+        </section>
+      </div>
+    </div>
+  );
+}

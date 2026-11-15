@@ -10,6 +10,7 @@ export interface CategoryNode {
   parentId: string | null;
   sortOrder: number;
   description: string;
+  iconUrl: string;
   isActive: boolean;
   children: CategoryNode[];
 }
@@ -22,6 +23,8 @@ export interface ICategory extends Document {
   parent: Types.ObjectId | null;
   sortOrder: number;
   description: string;
+  iconMedia: Types.ObjectId | null;
+  iconUrl: string;
   isActive: boolean;
   createdAt: Date;
   updatedAt: Date;
@@ -36,6 +39,8 @@ const categorySchema = new Schema<ICategory>(
     parent: { type: Schema.Types.ObjectId, ref: 'Category', default: null },
     sortOrder: { type: Number, required: true, default: 0 },
     description: { type: String, default: '', maxlength: 2000 },
+    iconMedia: { type: Schema.Types.ObjectId, ref: 'MediaAsset', default: null },
+    iconUrl: { type: String, default: '' },
     isActive: { type: Boolean, default: true },
   },
   { timestamps: true }

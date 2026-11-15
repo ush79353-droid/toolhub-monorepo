@@ -28,9 +28,9 @@
 | `admins` | `modules/admins/` | `AdminUser` Mongoose model (`admin-user.model.ts`) | — |
 | `auth` | `modules/auth/` | Admin login, logout, session validation, profile update, password change, forgot/reset password, `AdminSession` model | `/api/v1/admin/auth` |
 | `categories` | `modules/categories/` | 3-level taxonomy (`category`, `pillar`, `sub_pillar`) CRUD, tree assembly, search, cascade delete | `/api/v1/admin/categories` |
-| `media` | `modules/media/` | S3 presigned URL signing, S3 head verification + `MediaAsset` persistence, list/filter, S3 + DB delete | `/api/v1/admin/media` |
-| `tools` | `modules/tools/` | Admin tool catalog CRUD, placement options, media icon validation, unique name/slug enforcement, SEO fields | `/api/v1/admin/tools` |
-| `catalog` | `modules/catalog/` | Public read endpoints for active root categories (with tool counts via aggregation) and featured tools | `/api/v1/catalog` |
+| `media` | `modules/media/` | Storage driver (`local` disk or S3), `MediaAsset` persistence, list/filter, file + DB delete | `/api/v1/admin/media` |
+| `tools` | `modules/tools/` | Admin tool catalog CRUD, placement options, media icon validation, allowlisted `componentKey` & `executionType`, unique name/slug enforcement, optional SEO fields, embed gates, and the development audit (`isDeveloped`, `ToolAudit`) | `/api/v1/admin/tools` |
+| `catalog` | `modules/catalog/` | Public read endpoints for active root categories (with tool counts via aggregation), featured tools, and active single tool detail by slug | `/api/v1/catalog` |
 
 ### Planned / Placeholder Modules (`.gitkeep` only)
 
@@ -68,6 +68,7 @@
 - **`services/email.service.ts` (`SmtpEmailService`):**
   - Sends admin password reset links (`${origin}/admin/reset-password?token=...`, origin taken from first entry of `CORS_ORIGIN`) via `nodemailer`.
   - Only sends when `EMAIL_PROVIDER === 'smtp'` and `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `EMAIL_FROM` are present; otherwise logs and returns `false` (which causes `adminAuthService.forgotPassword` to throw `503 EMAIL_DELIVERY_FAILED`).
+- **`services/storage.ts`:** Picks `STORAGE_DRIVER`. `local` writes `UPLOAD_DIR` (default `uploads`) and returns `/api/media-upload`. `s3` delegates to `s3.service.ts`. `removeStored` uses the saved URL: `/uploads/...` is disk, anything else is S3.
 - **`services/s3.service.ts`:**
   - Lazy `S3Client` configured with `BUCKET_REGION`, `AWS_ACCESS_KEY`, `AWS_SECRET_KEY`, `requestChecksumCalculation: 'WHEN_REQUIRED'`, `responseChecksumValidation: 'WHEN_REQUIRED'` (needed for browser `PUT`).
   - `ensureUploadCors()`: Runs once per process before signing; checks `GetBucketCorsCommand` and attempts `PutBucketCorsCommand` for `CORS_ORIGIN` `PUT` if missing.
@@ -75,7 +76,7 @@
   - `headMediaObject`: Verifies uploaded object exists in S3 (`HeadObjectCommand`).
   - `deleteMediaObject`: Deletes object from S3 (`DeleteObjectCommand`), ignoring `NotFound`/`NoSuchKey`.
 - **`modules/media/media.key.ts`:** Validates allowed MIME types (`png`, `jpeg`, `webp`, `svg`, `gif`, `pdf`), max size (`10 MB`), and owned key pattern `media/<uuid>.<ext>`. Includes direct-run self-check.
-- **`modules/tools/tool.key.ts` & `tool.copy.ts`:** `toolNameKey`, `isToolSlug`, and `buildToolCopy` (SEO copy generator for seeded tools). Both include direct-run self-checks.
+- **`modules/tools/tool.key.ts` & `tool.copy.ts`:** `toolNameKey`, `isToolSlug`, `APPROVED_COMPONENT_KEYS` / `isApprovedComponentKey` (the registered calculators, including `FourZeroThreeBCalculator`, kept in sync with `frontend/src/tools/registry/keys.ts`), and `buildToolCopy` (SEO copy generator for seeded tools). Both include direct-run self-checks.
 - **`utils/password.ts`:** `hashPassword` & `verifyPassword` using `argon2.argon2id` (`memoryCost: 65536`, `timeCost: 3`, `parallelism: 1`, 8–128 chars).
 - **`utils/response.ts`:** Standard response envelope `{ success, data?, error?, meta: { timestamp } }`.
 
@@ -95,7 +96,10 @@ Validated at import via Zod (`dotenv.config()`):
 | `BODY_LIMIT` | `10mb` | Express JSON/urlencoded max payload size |
 | `EMAIL_PROVIDER` | `console` | `'console' \| 'smtp'` (in `.env.example`: `smtp`) |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `EMAIL_FROM` | `''` / `587` | SMTP delivery settings |
-| `AWS_ACCESS_KEY`, `AWS_SECRET_KEY`, `BUCKET_REGION`, `AWS_BUCKET_NAME`, `AWS_BASE_URL` | `''` | S3 media storage configuration |
+| `STORAGE_DRIVER` | `local` | `local` writes `backend/uploads`. `s3` uses the signed upload. |
+| `UPLOAD_DIR` | `uploads` | Directory for `STORAGE_DRIVER=local`, relative to the backend working directory |
+| `AWS_ACCESS_KEY`, `AWS_SECRET_KEY`, `BUCKET_REGION`, `AWS_BUCKET_NAME`, `AWS_BASE_URL` | `''` | Required only when `STORAGE_DRIVER=s3` |
+| `CURRENCY_EXCHANGE_API_KEY` | `''` | ExchangeRate-API key. The daily currency job skips the fetch when this is empty. |
 
 > **Config Drift Note:** `backend/.env.example` also lists `SESSION_TTL_HOURS=24` and `SESSION_REMEMBER_ME_DAYS=7`, but `env.ts` does not parse them and `admin-auth.service.ts` hardcodes `24h` and `7d`.
 
@@ -106,6 +110,10 @@ Validated at import via Zod (`dotenv.config()`):
 - `npm run admin:create` (`create-admin.ts`): Interactive CLI (or `BOOTSTRAP_ADMIN_NAME`, `BOOTSTRAP_ADMIN_EMAIL`, `BOOTSTRAP_ADMIN_PASSWORD`) to create the initial `super_admin` user.
 - `npm run categories:seed` (`seed-categories.ts`): Upserts 3-level taxonomy from `data/tools-directory-hierarchy.json` using deterministic `seedKey`.
 - `npm run tools:seed` (`seed-tools.ts`): Bulk upserts 4,351 tools from `data/tools-catalog.json` (creates missing sub-pillars if needed; sets `isActive: false`, `indexable: false`, `isFeatured: false`, and generates SEO copy via `buildToolCopy`).
+- `npm run tool:assign` (`assign-tool-component.ts`): Safely assigns an allowlisted `--component` key and `--execution` type (plus optional `--activate`) to an existing tool by `--slug` while preserving all existing SEO and placement fields.
+- `npm run categories:icons` (`attach-category-icons.ts`): Downloads one Lucide SVG per root category, stores it with the local storage driver, and saves `iconMedia` / `iconUrl` on that category. Skips a category that already has a `/uploads/` icon. Requires `STORAGE_DRIVER=local`.
+- `npm run categories:descriptions` (`set-category-descriptions.ts`): Writes a short public description onto each root category that still has an empty `description`. Categories that already have text are left as saved.
+- `npm run currency:fetch` (`fetch-currency-rates.ts`): Fetches the latest USD table and upserts every tracked base currency, plus a history row. `node-cron` runs the same function at local midnight (`0 0 * * *`, server local time, `noOverlap`) from `src/jobs/currency-rates.cron.ts` after Mongo connects. A failed or rejected provider response does not write. There is no Express route that reads `CurrencyRate` yet (ADR-021).
 
 ---
 

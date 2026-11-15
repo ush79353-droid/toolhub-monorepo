@@ -23,6 +23,7 @@ function toNode(doc: ICategory, children: CategoryNode[] = []): CategoryNode {
     parentId: doc.parent ? String(doc.parent) : null,
     sortOrder: doc.sortOrder,
     description: doc.description,
+    iconUrl: doc.iconUrl ?? '',
     isActive: doc.isActive,
     children,
   };

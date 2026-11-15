@@ -1,0 +1,33 @@
+---
+trigger: always_on
+description: "Automatic activation for developed Omega Calculators (ADR-022 + ADR-023)."
+---
+
+# Tool activation (Antigravity)
+
+ADR-022 + ADR-023 verified activation. This does not change ADR-016, ADR-017, ADR-018, ADR-019, or ADR-021.
+
+A calculator is not delivered until its existing catalog record is active and `/tools/{slug}` renders the registered component — or an explicit activation blocker is reported.
+
+After the calculator module is complete, verify in this order:
+
+1. Component exists under `tools/calculators/<id>/`.
+2. Frontend registry: `keys.ts` (both lists), `registry/index.ts`, `registry/details.ts`.
+3. Backend `tool.key.ts` allowlist.
+4. MongoDB `componentKey` matches the registered key on the canonical slug.
+5. Calculation tests pass.
+6. Canonical route `/tools/{slug}` renders (not 404).
+7. Set `isDeveloped: true` after successful verification (when the schema has the field).
+8. Set `isActive: true` using the existing publishing policy.
+9. Set `indexable: true` when eligible and no explicit admin noindex restriction exists.
+10. Verify sitemap eligibility (`IMPLEMENTED_TOOL_SLUGS` + `isActive` + `indexable` + `sitemapInclude`).
+11. Verify website search/category visibility.
+12. Verify embed unless explicitly disabled.
+
+Rules:
+
+- Register before activation. Leave `embedEnabled` unset or true; set false only when an admin disables embed.
+- Do not activate a catalog row that has no calculator module. Do not create a placeholder component to make a row active.
+- Do not turn an admin-disabled, draft, private, or noindex tool back on unless the task says to — report those as activation blockers.
+- Do not activate missing, incomplete, or broken calculators.
+- An unregistered or empty `componentKey` stays off the public route (`notFound()`).

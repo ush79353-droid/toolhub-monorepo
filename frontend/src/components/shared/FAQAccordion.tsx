@@ -33,9 +33,11 @@ export function FAQAccordion({ items, className = '' }: FAQAccordionProps) {
             <button
               onClick={() => toggle(index)}
               aria-expanded={isOpen}
-              className="flex w-full items-center justify-between p-5 text-left transition-colors hover:bg-muted/50"
+              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-muted/40"
             >
-              <span className="text-base font-bold text-accent pr-4">{item.question}</span>
+              <span className="text-[15px] font-semibold leading-snug text-accent sm:text-base">
+                {item.question}
+              </span>
               <div
                 className={cn(
                   'flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-muted text-primary transition-transform duration-200',
@@ -47,8 +49,10 @@ export function FAQAccordion({ items, className = '' }: FAQAccordionProps) {
             </button>
 
             {isOpen && (
-              <div className="border-t border-border/60 bg-white px-5 pb-5 pt-3 animate-in fade-in duration-200">
-                <p className="text-sm leading-relaxed text-muted-foreground">{item.answer}</p>
+              <div className="border-t border-border/60 bg-white px-5 pb-4 pt-3 animate-in fade-in duration-200">
+                <p className="text-[15px] font-normal leading-[1.7] text-muted-foreground">
+                  {item.answer}
+                </p>
               </div>
             )}
           </div>

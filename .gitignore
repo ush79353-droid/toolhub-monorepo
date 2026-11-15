@@ -34,6 +34,7 @@ Thumbs.db
 .vscode/
 .idea/
 
+
 # Temporary files
 *.tmp
 *.temp
@@ -43,4 +44,4 @@ Thumbs.db
 *.key
 *.p12
 *.pfx
-
+*.zip

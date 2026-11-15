@@ -1,0 +1,31 @@
+---
+description: Calculator development standards for Omega Calculators
+alwaysApply: true
+---
+
+# Calculator Standards (Cursor)
+
+Before building or changing any calculator:
+
+1. Read `AGENTS.md`
+2. Read `brain/TOOL_DETAIL_PAGE_STANDARDS.md` and `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`
+3. Read `brain/CALCULATOR_STANDARDS.md`
+4. Read `brain/SEO_STANDARDS.md`
+5. Read `brain/DESIGN_SYSTEM.md`
+6. Read relevant architecture docs (`FRONTEND.md`, `ARCHITECTURE.md`)
+
+Rules:
+
+- Reuse the Auto Loan Calculator page shell / sticky sidebar / SEO pipeline. ADR-016 owns the visual shell. ADR-018 owns the module layout. The module lock does not restyle the page.
+- Screenshot-First simplicity (ADR-023, `brain/CALCULATOR_STANDARDS.md` §1b): when a reference screenshot or spec exists, it owns functional scope. Auto Loan is the visual master, never the functional master. Ship only the reference inputs, outputs, and modes. Do not invent schedule fields, advanced drawers, charts, or oversized result dashboards the reference does not need.
+- Currency selectors follow ADR-023: include only when the reference shows one, the user asks, or real conversion is essential. Otherwise format a fixed currency. Real conversion still uses ADR-017 rates through ADR-021 (`.cursor/rules/currency-conversion.mdc`). A denomination selector does not convert numbers.
+- Follow `brain/ARCHITECTURE.md` §7: `calculation.ts`, `validation.ts`, `types.ts`, `detail.tsx`, `calculation.test.ts`, lazy `registry/index.ts`, and `registry/details.ts`. Mirror the key in `backend/src/modules/tools/tool.key.ts`.
+- Complete the playbook checklist before calling the calculator done: screenshot-first scope (ADR-023), architecture, reusable components, pure engine, validation, tests, SEO, embed, responsive QA, and activation (ADR-022, `.cursor/rules/tool-activation.mdc`).
+- Commit finished milestones under ADR-019 (`.cursor/rules/git-commits.mdc`). One commit is enough for a very small tool. Do not pad history. The delivery report lists each commit and its checks.
+- Do not add `app/(website)/tools/<slug>/page.tsx`. Unregistered keys call `notFound()`.
+- Import `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/`. Do not copy them.
+- Do not hardcode per-tool SEO metadata in calculator components.
+- Do not invent a second sticky, currency, clipboard, metadata, ad, or embed system.
+- Keep calculator-specific math and validation in pure modules. Keep presentation conventions shared.
+- Preserve Ponytail minimalism: extend existing helpers before adding abstractions.
+- For iframe embedding, follow `brain/EMBED_STANDARDS.md` and `.cursor/rules/embed-standards.mdc`.

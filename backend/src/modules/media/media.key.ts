@@ -35,6 +35,15 @@ export function isOwnedMediaKey(key: string): boolean {
   return KEY_PATTERN.test(key);
 }
 
+const TYPE_BY_EXTENSION: Record<string, string> = Object.fromEntries(
+  Object.entries(EXTENSION_BY_TYPE).map(([type, extension]) => [extension, type])
+);
+
+export function contentTypeForKey(key: string): string | null {
+  const extension = key.slice(key.lastIndexOf('.') + 1);
+  return TYPE_BY_EXTENSION[extension] ?? null;
+}
+
 const isDirect = process.argv[1]?.replace(/\\/g, '/').endsWith('media.key.ts');
 if (isDirect) {
   if (extensionFor('image/png') !== 'png' || extensionFor('image/jpg') !== 'jpg') {
@@ -46,6 +55,9 @@ if (isDirect) {
   }
   if (isOwnedMediaKey('../etc/passwd') || isOwnedMediaKey('media/../secret.png')) {
     throw new Error('foreign key accepted');
+  }
+  if (contentTypeForKey('media/aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee.jpg') !== 'image/jpeg') {
+    throw new Error('key type map broken');
   }
   console.log('media.key ok');
 }
