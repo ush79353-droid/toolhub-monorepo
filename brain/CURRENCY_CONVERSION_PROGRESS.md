@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 51 |
-| Pending | 54 |
+| Complete (implementation) | 56 |
+| Pending | 49 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 54 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 49 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -79,11 +79,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 48 | Contribution Margin | `contribution-margin-calculator` | 10 | Complete | `d4afaed149e66ef7c525cafdb09cff5423e22757` | Pending | Shared selectors; price, variable cost, fixed costs convert; units and margin % unchanged |
 | 49 | Cost Function | `cost-function-calculator` | 10 | Complete | `d4afaed149e66ef7c525cafdb09cff5423e22757` | Pending | Shared selectors; fixed/variable/total costs convert; quantities and slopes unchanged |
 | 50 | Cost of Doing Business | `cost-of-doing-business-calculator` | 10 | Complete | `d4afaed149e66ef7c525cafdb09cff5423e22757` | Pending | Synced selectors; annual cost converts; billable days unchanged |
-| 51 | Cost of Goods Sold | `cost-of-goods-sold-calculator` | 11 | Pending | — | Pending | |
-| 52 | CPA | `cpa-calculator-cost-per-acquisition` | 11 | Pending | — | Pending | |
-| 53 | CPC and CPM | `cpc-and-cpm-calculator` | 11 | Pending | — | Pending | |
-| 54 | CPM | `cpm-calculator` | 11 | Pending | — | Pending | |
-| 55 | CAC | `customer-acquisition-cost-calculator` | 11 | Pending | — | Pending | |
+| 51 | Cost of Goods Sold | `cost-of-goods-sold-calculator` | 11 | Complete | `fa3faaabdae4f1e80b14e9e2f368eb232086eb81` | Pending | Synced selectors; inventory and COGS amounts convert |
+| 52 | CPA | `cpa-calculator-cost-per-acquisition` | 11 | Complete | `fa3faaabdae4f1e80b14e9e2f368eb232086eb81` | Pending | Synced selectors; CPC/spend/CPA convert; clicks and conversions unchanged |
+| 53 | CPC and CPM | `cpc-and-cpm-calculator` | 11 | Complete | `fa3faaabdae4f1e80b14e9e2f368eb232086eb81` | Pending | Shared selector; CPC, total cost, CPM convert; impressions/clicks/CTR unchanged |
+| 54 | CPM | `cpm-calculator` | 11 | Complete | `fa3faaabdae4f1e80b14e9e2f368eb232086eb81` | Pending | Per-campaign selector; cost and CPM convert; impressions unchanged |
+| 55 | CAC | `customer-acquisition-cost-calculator` | 11 | Complete | `fa3faaabdae4f1e80b14e9e2f368eb232086eb81` | Pending | Synced selectors; marketing/sales/CAC convert; customer count unchanged |
 | 56 | Direct Material Price Variance | `direct-material-price-variance-calculator` | 12 | Pending | — | Pending | |
 | 57 | EVM | `evm-calculator` | 12 | Pending | — | Pending | |
 | 58 | Effective Corporate Tax Rate | `effective-corporate-tax-rate-calculator` | 12 | Pending | — | Pending | |
@@ -192,6 +192,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 11 notes
+
+- Local commit: `fix(currency): integrate conversion batch 11 calculators` `fa3faaabdae4f1e80b14e9e2f368eb232086eb81`.
+- Provider slug allowlist extended for Batch 11 (preserves prior batches + Margin Interest).
+- Cost of Goods Sold: synced selectors; beginning inventory, purchases, ending inventory, and COGS display convert together.
+- CPA: three synced selectors; average CPC converts; derived ad spend and CPA scale; clicks and conversions unchanged.
+- CPC and CPM: shared selector; monetary fields (CPC, total cost, CPM) convert; impressions, clicks, and CTR unchanged.
+- CPM: per-campaign currency selector; total cost and CPM convert; impressions unchanged; main and second campaigns independent.
+- CAC: three synced selectors; marketing and sales costs convert; new customer count and CAC formula unchanged.
+- Manual verification left Pending for user reference comparison.
+
 ## Batch 10 notes
 
 - Local commit: `fix(currency): integrate conversion batch 10 calculators` `d4afaed149e66ef7c525cafdb09cff5423e22757`.
@@ -239,6 +250,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 11 (#51–#55) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 10 (#46–#50) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 9 (#41–#45) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 8 (#36–#40) implementation Complete; manual verification Pending.
