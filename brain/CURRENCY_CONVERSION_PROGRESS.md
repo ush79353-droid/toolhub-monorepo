@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 31 |
-| Pending | 74 |
+| Complete (implementation) | 36 |
+| Pending | 69 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 74 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 69 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -59,11 +59,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 28 | Holding Period Return | `holding-period-return-calculator` | 6 | Complete | `2808b1d` | Pending | Shared selectors (×3); converts prices + dividend; yield/HPR % unchanged |
 | 29 | Impermanent Loss | `impermanent-loss-calculator` | 6 | Complete | `2808b1d` | Pending | Fiat deposit + token quote prices convert; quantities/IL % unchanged |
 | 30 | Information Ratio | `information-ratio-calculator` | 6 | Complete | `2808b1d` | Pending | Shared selectors; converts beginning + ending; return/TE/IR % unchanged |
-| 31 | Interest Rate | `interest-rate-calculator` | 7 | Pending | — | Pending | |
-| 32 | Investment | `investment-calculator` | 7 | Pending | — | Pending | |
-| 33 | Investment Fee | `investment-fee-calculator` | 7 | Pending | — | Pending | |
-| 34 | IRR | `irr-calculator` | 7 | Pending | — | Pending | |
-| 35 | 3D Printer Buy vs Outsource | `3d-printer-buy-vs-outsource-calculator` | 7 | Pending | — | Pending | |
+| 31 | Interest Rate | `interest-rate-calculator` | 7 | Complete | `b430f16` | Pending | Shared selector; converts loan/deposit cash flows together; solved rates unchanged |
+| 32 | Investment | `investment-calculator` | 7 | Complete | `b430f16` | Pending | Shared selectors; converts principal + contributions; return/term/schedule unchanged |
+| 33 | Investment Fee | `investment-fee-calculator` | 7 | Complete | `b430f16` | Pending | Shared selector; converts initial investment; fee % unchanged |
+| 34 | IRR | `irr-calculator` | 7 | Complete | `b430f16` | Pending | Shared selectors; converts initial + yearly CF list; signs preserved; IRR % unchanged |
+| 35 | 3D Printer Buy vs Outsource | `3d-printer-buy-vs-outsource-calculator` | 7 | Complete | `b430f16` | Pending | Header selector; converts buy/outsource costs; quantities/hours unchanged |
 | 36 | Accumulated Depreciation | `accumulated-depreciation-calculator` | 8 | Pending | — | Pending | |
 | 37 | Additional Funds Needed | `additional-funds-needed-calculator` | 8 | Pending | — | Pending | |
 | 38 | A/R Days | `ar-days-calculator` | 8 | Pending | — | Pending | |
@@ -192,8 +192,21 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 7 notes
+
+- Local commit: `fix(currency): integrate conversion batch 7 calculators` `b430f16ac01603deeeff838d9b3e2cf7f3331e5f`.
+- Provider slug allowlist extended for Batch 7 (preserves prior batches + Margin Interest).
+- Shared currency state across existing selectors; monetary draft fields convert together.
+- Interest Rate: all loan/deposit amounts convert together so FX alone cannot change solved nominal/APR/EAR.
+- Investment: principal and contribution amounts convert; rate, term, compounding, and contribution schedule unchanged.
+- Investment Fee: initial investment converts; load/operating/redemption fee percentages unchanged.
+- IRR: initial investment and each cash-flow year convert together with signs preserved; IRR % invariant to FX-only changes.
+- 3D Printer Buy vs Outsource: in-house and outsource monetary inputs convert; parts, hours, watts, and failure rate unchanged.
+- Manual verification left Pending for user reference comparison.
+
 ## Changelog
 
+- 2026-11-16: Batch 7 (#31–#35) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 6 (#26–#30) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 5 (#21–#25) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 4 (#16–#20) implementation Complete; manual verification Pending.
