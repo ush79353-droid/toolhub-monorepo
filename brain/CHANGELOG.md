@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Years to Decades Calculator
+- **Summary:** Shipped Years to Decades Calculator on existing catalog slug `years-to-decades-calculator` (`YearsToDecadesCalculator`, catalog `6af46f17a27d8d1d4e990bc2`). Bidirectional years↔decades (÷/× 10); DecimalValue path for large and negative values; live field sync. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 25 years = 2.5 decades; 4.5 decades = 45 years; 4,500,000,000 years = 450,000,000 decades.
+- **Important Files:** `frontend/src/tools/calculators/years-to-decades/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-years-to-decades-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 47/154). Full production build not run this pass.
+
 ### 2026-11-15 — Add Minutes to Hours Converter
 - **Summary:** Shipped Minutes to Hours Converter on existing catalog slug `minutes-to-hours-converter` (`MinutesToHoursConverter`, catalog `6af46f17a27d8d1d4e990bb4`). Bidirectional hours/minutes/seconds plus HH:MM:SS duration (hours do not wrap at 24); canonical seconds via DecimalValue; negatives supported. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 150 min = 2.5 h = 9000 s = 02:30:00; 04:20:30 = 260.5 min; 1440 min = 24:00:00.
