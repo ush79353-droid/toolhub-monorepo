@@ -4,7 +4,7 @@ import type { ChangeEvent, FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import type { CpaFieldErrors, CpaInput, CpaResult } from './types';
 
 const labelClass = 'mb-1.5 block text-[13px] font-medium text-accent';
@@ -34,11 +34,20 @@ interface CpaFormProps {
   errors: CpaFieldErrors;
   result: CpaResult | null;
   onChange: (input: CpaInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
 
-export function CpaForm({ input, errors, result, onChange, onSubmit, onReset }: CpaFormProps) {
+export function CpaForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onSubmit,
+  onReset,
+}: CpaFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<CpaInput>) => onChange({ ...input, ...patch });
 
@@ -95,7 +104,7 @@ export function CpaForm({ input, errors, result, onChange, onSubmit, onReset }: 
               <CurrencySelect
                 id="cpa-cpc-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -126,7 +135,7 @@ export function CpaForm({ input, errors, result, onChange, onSubmit, onReset }: 
               <CurrencySelect
                 id="cpa-ad-spend-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Total ad spend currency"
               />
             </div>
@@ -180,7 +189,7 @@ export function CpaForm({ input, errors, result, onChange, onSubmit, onReset }: 
               <CurrencySelect
                 id="cpa-cpa-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="CPA currency"
               />
             </div>

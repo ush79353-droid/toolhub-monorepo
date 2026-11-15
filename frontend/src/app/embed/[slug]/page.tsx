@@ -69,6 +69,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'contribution-margin-calculator',
   'cost-function-calculator',
   'cost-of-doing-business-calculator',
+  'cost-of-goods-sold-calculator',
+  'cpa-calculator-cost-per-acquisition',
+  'cpc-and-cpm-calculator',
+  'cpm-calculator',
+  'customer-acquisition-cost-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';

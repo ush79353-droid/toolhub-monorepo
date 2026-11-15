@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { type SupportedCurrency } from '@/tools/shared/currency';
 import { CostOfGoodsSoldForm } from './CostOfGoodsSoldForm';
 import { CostOfGoodsSoldResults } from './CostOfGoodsSoldResults';
 import { formatMoney } from './calculation';
@@ -16,6 +22,31 @@ import {
 } from './types';
 import { validateCostOfGoodsSold } from './validation';
 
+const MONEY_KEYS = ['beginningInventory', 'purchases', 'endingInventory'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts beginning inventory, purchases, ending inventory, and COGS using stored exchange rates.';
+
+function convertCogsMoney(
+  input: CostOfGoodsSoldInput,
+  from: string,
+  to: string,
+  rates: Record<string, number>
+): Partial<CostOfGoodsSoldInput> | null {
+  const patch: Partial<CostOfGoodsSoldInput> = {};
+  for (const key of MONEY_KEYS) {
+    const amount = input[key];
+    if (!Number.isFinite(amount)) {
+      patch[key] = amount;
+      continue;
+    }
+    const converted = convertCurrency({ amount, from, to, rates });
+    if (!converted.ok) return null;
+    patch[key] = converted.amount;
+  }
+  return patch;
+}
+
 export function CostOfGoodsSoldCalculator({
   metadata,
   className = '',
@@ -23,16 +54,23 @@ export function CostOfGoodsSoldCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<CostOfGoodsSoldInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<CostOfGoodsSoldFieldErrors>({});
   const [result, setResult] = React.useState<CostOfGoodsSoldResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: CostOfGoodsSoldInput) => {
     const validation = validateCostOfGoodsSold(next);
@@ -40,11 +78,33 @@ export function CostOfGoodsSoldCalculator({
     setResult(validation.isValid ? validation.result : null);
   };
 
+  const handleChange = (next: CostOfGoodsSoldInput) => {
+    setConversionError(null);
+    setInput(next);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const moneyPatch = convertCogsMoney(input, input.currency, currency, rates.rates);
+    if (!moneyPatch) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({ ...input, ...moneyPatch, currency });
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
     setErrors({});
     setResult(null);
+    setConversionError(null);
   };
 
   const summary = result
@@ -54,7 +114,7 @@ export function CostOfGoodsSoldCalculator({
         `Purchases: ${formatMoney(result.purchases, result.currency)}`,
         `Ending inventory: ${formatMoney(result.endingInventory, result.currency)}`,
         `COGS: ${formatMoney(result.cogs, result.currency)}`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -68,20 +128,26 @@ export function CostOfGoodsSoldCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{CURRENCY_DENOMINATION_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <CostOfGoodsSoldForm
           input={input}
           errors={errors}
           result={result}
-          onChange={(next) => {
-            setInput(next);
-            run(next);
-          }}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <CostOfGoodsSoldResults />

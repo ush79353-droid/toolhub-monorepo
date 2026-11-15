@@ -3,7 +3,7 @@
 import { RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   CustomerAcquisitionCostFieldErrors,
@@ -16,6 +16,7 @@ interface CustomerAcquisitionCostFormProps {
   errors: CustomerAcquisitionCostFieldErrors;
   result: CustomerAcquisitionCostResult | null;
   onChange: (input: CustomerAcquisitionCostInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -46,6 +47,7 @@ export function CustomerAcquisitionCostForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: CustomerAcquisitionCostFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -82,7 +84,7 @@ export function CustomerAcquisitionCostForm({
             <CurrencySelect
               id="cac-marketing-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -115,7 +117,7 @@ export function CustomerAcquisitionCostForm({
             <CurrencySelect
               id="cac-sales-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -167,7 +169,7 @@ export function CustomerAcquisitionCostForm({
             <CurrencySelect
               id="cac-result-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="CAC currency"
             />
           </div>
