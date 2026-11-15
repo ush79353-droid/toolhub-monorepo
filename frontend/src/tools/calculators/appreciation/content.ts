@@ -27,7 +27,7 @@ export const APPRECIATION_FAQS: readonly FAQItem[] = [
   {
     question: 'Does changing the currency convert the amount?',
     answer:
-      'No. Currency selection changes the denomination and formatting only. It does not apply a live exchange rate.',
+      'Yes. Changing currency converts the starting value with stored exchange rates and recalculates the final value. The appreciation rate and duration are not converted, so FX alone cannot invent appreciation.',
   },
   {
     question: 'Why must the rate be greater than −100%?',

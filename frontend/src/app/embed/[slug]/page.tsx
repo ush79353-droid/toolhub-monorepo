@@ -24,6 +24,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   '401k-calculator',
   '403b-calculator',
   '529-calculator',
+  '702010-rule-money-calculator',
+  'adr-calculator',
+  'annualized-return-calculator',
+  'appreciation-calculator',
+  'apy-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';

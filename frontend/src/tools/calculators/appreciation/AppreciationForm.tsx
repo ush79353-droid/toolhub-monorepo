@@ -1,9 +1,18 @@
 'use client';
 
+import * as React from 'react';
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   AppreciationFieldErrors,
@@ -11,6 +20,8 @@ import type {
   AppreciationRatePeriod,
   AppreciationResult,
 } from './types';
+
+const MONEY_FIELDS = ['startingValue'] as const;
 
 const labelClass = 'mb-1.5 flex items-center gap-1.5 text-[13px] font-medium text-accent';
 const inputClass =
@@ -57,8 +68,40 @@ export function AppreciationForm({
   onChange,
   onReset,
 }: AppreciationFormProps) {
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
   const symbol = getCurrencySymbol(input.currency);
-  const set = (patch: Partial<AppreciationInput>) => onChange({ ...input, ...patch });
+  const set = (patch: Partial<AppreciationInput>) => {
+    setConversionError(null);
+    onChange({ ...input, ...patch });
+  };
+
+  /** Shared currency — convert starting value; rate/duration unchanged; final recalculates. */
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    onChange({
+      ...input,
+      ...converted.values,
+      currency,
+    });
+  };
 
   return (
     <form
@@ -93,13 +136,21 @@ export function AppreciationForm({
             <CurrencySelect
               id="appreciation-start-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={handleCurrencyChange}
               aria-label="Starting value currency"
             />
           </div>
         </div>
         {errors.startingValue ? (
           <p className="mt-1 text-xs text-rose-600">{errors.startingValue}</p>
+        ) : null}
+        {conversionError ? (
+          <p className="mt-1 text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="mt-1 text-xs text-amber-700">{ratesStatus.warning}</p>
         ) : null}
       </div>
 
@@ -223,7 +274,7 @@ export function AppreciationForm({
             <CurrencySelect
               id="appreciation-final-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={handleCurrencyChange}
               aria-label="Final value currency"
             />
           </div>
@@ -237,7 +288,15 @@ export function AppreciationForm({
       {errors.form ? <p className="text-xs text-rose-600">{errors.form}</p> : null}
 
       <div className="flex flex-wrap gap-2.5 pt-1">
-        <Button type="button" variant="outline" className="h-11 font-medium" onClick={onReset}>
+        <Button
+          type="button"
+          variant="outline"
+          className="h-11 font-medium"
+          onClick={() => {
+            setConversionError(null);
+            onReset();
+          }}
+        >
           Reset
         </Button>
       </div>

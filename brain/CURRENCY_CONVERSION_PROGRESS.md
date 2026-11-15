@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 6 |
-| Pending | 99 |
+| Complete (implementation) | 16 |
+| Pending | 89 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 99 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 89 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -34,16 +34,16 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 3 | 401(k) | `401k-calculator` | 1 | Complete | acaa18a | Pending | Shared selector; USD statutory limit fields not converted |
 | 4 | 403(b) | `403b-calculator` | 1 | Complete | acaa18a | Pending | Shared selector; converts money fields incl. optional limits |
 | 5 | 529 | `529-calculator` | 1 | Complete | acaa18a | Pending | Shared selector; converts costs/balances/contributions |
-| 6 | 70/20/10 Rule Money | `702010-rule-money-calculator` | 2 | Pending | — | Pending | |
-| 7 | ADR | `adr-calculator` | 2 | Pending | — | Pending | |
-| 8 | Annualized Return | `annualized-return-calculator` | 2 | Pending | — | Pending | |
-| 9 | Appreciation | `appreciation-calculator` | 2 | Pending | — | Pending | |
-| 10 | APY | `apy-calculator` | 2 | Pending | — | Pending | |
-| 11 | Basis Point | `basis-point-calculator` | 3 | Pending | — | Pending | |
-| 12 | Bitcoin ETF | `bitcoin-etf-calculator` | 3 | Pending | — | Pending | |
-| 13 | CAGR | `cagr-calculator` | 3 | Pending | — | Pending | |
-| 14 | Capital Gains Yield | `capital-gains-yield-calculator` | 3 | Pending | — | Pending | |
-| 15 | CD | `cd-calculator` | 3 | Pending | — | Pending | |
+| 6 | 70/20/10 Rule Money | `702010-rule-money-calculator` | 2 | Complete | PENDING_COMMIT | Pending | Shared selector; converts income/spending; allocation % unchanged |
+| 7 | ADR | `adr-calculator` | 2 | Complete | PENDING_COMMIT | Pending | Shared selector; converts room revenue + ADR; rooms/occupancy unchanged |
+| 8 | Annualized Return | `annualized-return-calculator` | 2 | Complete | PENDING_COMMIT | Pending | Shared currency controls; converts beginning+ending together; return % economic |
+| 9 | Appreciation | `appreciation-calculator` | 2 | Complete | PENDING_COMMIT | Pending | Shared currency; converts starting value; rate/duration unchanged |
+| 10 | APY | `apy-calculator` | 2 | Complete | PENDING_COMMIT | Pending | Shared currency; converts deposit; APR/compounding/APY % unchanged |
+| 11 | Basis Point | `basis-point-calculator` | 3 | Complete | — | Pending | Shared selectors; converts ofAmount; bps/%/ratios unchanged |
+| 12 | Bitcoin ETF | `bitcoin-etf-calculator` | 3 | Complete | — | Pending | Shared selectors (×4); converts investment + other costs; ratios/years unchanged |
+| 13 | CAGR | `cagr-calculator` | 3 | Complete | — | Pending | Shared selectors; converts initial + final together; CAGR %/periods unchanged |
+| 14 | Capital Gains Yield | `capital-gains-yield-calculator` | 3 | Complete | — | Pending | Shared selectors (×3); converts bought + current; yield % unchanged |
+| 15 | CD | `cd-calculator` | 3 | Complete | — | Pending | Shared selectors (×3); converts initial deposit; rate/term/compounding unchanged |
 | 16 | Compound Growth | `compound-growth-calculator` | 4 | Pending | — | Pending | |
 | 17 | Compound Interest | `compound-interest-calculator` | 4 | Pending | — | Pending | |
 | 18 | Compound Interest Rate | `compound-interest-rate-calculator` | 4 | Pending | — | Pending | |
@@ -144,8 +144,28 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Formulas unchanged; rates via `getCurrencyRates` → `CurrencyRatesProvider` → `convertCurrency`.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 2 notes
+
+- Local commit: `fix(currency): integrate conversion batch 2 calculators` (hash stamped after commit).
+- Provider slug allowlist extended for Batch 2 (and preserves prior Batch 1 + pilot slugs).
+- 70/20/10 + ADR: shared header `CurrencySelect`; monetary amounts convert; percents / room counts / occupancy unchanged.
+- Annualized Return / Appreciation / APY: existing dual currency controls stay synced (shared state); convert monetary inputs together so FX alone cannot invent return/appreciation; rates, durations, APY % unchanged.
+- Manual verification left Pending for user reference comparison.
+- Note: ledger commit column still shows `PENDING_COMMIT` until Batch 2 stamps its hash (not modified by Batch 3).
+
+## Batch 3 notes
+
+- Local commit: `fix(currency): integrate conversion batch 3 calculators` (hash stamped after commit).
+- Provider slug allowlist extended for Batch 3 (preserves Batch 1, Batch 2, and Margin Interest).
+- All five tools keep existing shared-currency selector wiring (multiple dropdowns, one currency).
+- Monetary fields convert via `convertCurrency` / `convertDraftMoneyFields`; percents, bps, periods, rates unchanged.
+- Bitcoin ETF: fiat investment/other costs only — no BTC quantity FX.
+- Manual verification left Pending for user reference comparison.
+
 ## Changelog
 
+- 2026-11-16: Batch 3 (#11–#15) implementation Complete; manual verification Pending.
+- 2026-11-16: Batch 2 (#6–#10) implementation Complete; manual verification Pending.
 - 2026-11-16: Created ledger from Phase 3 audit; recorded Margin Interest Pilot Complete; marked Batch 1 (#1–#5) Complete (implementation).
 
 

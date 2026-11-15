@@ -4,10 +4,11 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { formatCurrencyValue } from '@/tools/shared/currency';
 import {
-  CURRENCY_DENOMINATION_NOTE,
-  formatCurrencyValue,
-} from '@/tools/shared/currency';
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
 import { AppreciationForm } from './AppreciationForm';
 import { AppreciationResults } from './AppreciationResults';
 import {
@@ -24,6 +25,9 @@ const PERIOD_LABEL = {
   yearly: 'Yearly',
 } as const;
 
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts the starting value using stored exchange rates. Rate and duration stay the same so appreciation is not invented by FX.';
+
 export function AppreciationCalculator({
   metadata,
   className = '',
@@ -31,6 +35,7 @@ export function AppreciationCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<AppreciationInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<AppreciationFieldErrors>({});
   const [result, setResult] = React.useState<AppreciationResult | null>(null);
@@ -41,6 +46,10 @@ export function AppreciationCalculator({
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const apply = (next: AppreciationInput) => {
     setInput(next);
@@ -65,7 +74,7 @@ export function AppreciationCalculator({
         `Appreciation rate: ${result.appreciationRatePercent}% (${PERIOD_LABEL[result.ratePeriod]})`,
         `Period: ${result.years} yrs ${result.months} mos`,
         `Final value: ${formatCurrencyValue(result.finalValue, result.currency)}`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -80,7 +89,7 @@ export function AppreciationCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Final = start × (1 + rate/100)^N · {CURRENCY_DENOMINATION_NOTE}
+            Final = start × (1 + rate/100)^N · {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}

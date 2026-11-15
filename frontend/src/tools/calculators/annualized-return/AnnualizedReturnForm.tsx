@@ -1,16 +1,27 @@
 'use client';
 
+import * as React from 'react';
 import type { FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   AnnualizedReturnDraft,
   AnnualizedReturnFieldErrors,
   AnnualizedReturnMode,
 } from './types';
+
+const MONEY_FIELDS = ['beginningValue', 'endingValue'] as const;
 
 const labelClass = 'mb-1.5 flex items-center gap-1.5 text-[13px] font-medium text-accent';
 const inputClass =
@@ -64,11 +75,42 @@ export function AnnualizedReturnForm({
   onSubmit,
   onReset,
 }: AnnualizedReturnFormProps) {
-  const set = (patch: Partial<AnnualizedReturnDraft>) =>
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
+  const set = (patch: Partial<AnnualizedReturnDraft>) => {
+    setConversionError(null);
     onDraftChange({ ...draft, ...patch });
+  };
   const symbol = getCurrencySymbol(draft.currency);
 
   const setMode = (mode: AnnualizedReturnMode) => set({ mode });
+
+  /** Shared currency UI — convert both monetary inputs together; rates/duration untouched. */
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    onDraftChange({
+      ...draft,
+      ...converted.values,
+      currency,
+    });
+  };
 
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
@@ -122,7 +164,7 @@ export function AnnualizedReturnForm({
             label="Beginning value"
             htmlFor="ar-beginning"
             error={errors.beginningValue}
-            tip="Starting portfolio or investment value. Must be greater than zero. Currency labels only."
+            tip="Starting portfolio or investment value. Must be greater than zero. Currency change converts both monetary inputs together."
           >
             <div className="flex gap-2">
               <div className={`relative min-w-0 flex-1 ${shellClass}`}>
@@ -142,7 +184,7 @@ export function AnnualizedReturnForm({
                 <CurrencySelect
                   id="ar-beginning-currency"
                   value={draft.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={handleCurrencyChange}
                   aria-label="Beginning value currency"
                 />
               </div>
@@ -153,7 +195,7 @@ export function AnnualizedReturnForm({
             label="Ending value"
             htmlFor="ar-ending"
             error={errors.endingValue}
-            tip="Value at the end of the holding period. Zero means a complete loss. Currency labels only."
+            tip="Value at the end of the holding period. Zero means a complete loss. Currency change converts both monetary inputs together."
           >
             <div className="flex gap-2">
               <div className={`relative min-w-0 flex-1 ${shellClass}`}>
@@ -173,12 +215,20 @@ export function AnnualizedReturnForm({
                 <CurrencySelect
                   id="ar-ending-currency"
                   value={draft.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={handleCurrencyChange}
                   aria-label="Ending value currency"
                 />
               </div>
             </div>
           </FieldShell>
+          {conversionError ? (
+            <p className="text-xs text-rose-600" role="alert">
+              {conversionError}
+            </p>
+          ) : null}
+          {ratesStatus.warning && !conversionError ? (
+            <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+          ) : null}
         </>
       )}
 
@@ -231,11 +281,27 @@ export function AnnualizedReturnForm({
       ) : null}
 
       <div className="flex flex-wrap gap-2 pt-1">
-        <Button type="button" variant="outline" className="h-11" onClick={onReset}>
+        <Button
+          type="button"
+          variant="outline"
+          className="h-11"
+          onClick={() => {
+            setConversionError(null);
+            onReset();
+          }}
+        >
           <RotateCcw className="mr-1.5 h-4 w-4" />
           Reload calculator
         </Button>
-        <Button type="button" variant="outline" className="h-11" onClick={onReset}>
+        <Button
+          type="button"
+          variant="outline"
+          className="h-11"
+          onClick={() => {
+            setConversionError(null);
+            onReset();
+          }}
+        >
           Clear all changes
         </Button>
       </div>
