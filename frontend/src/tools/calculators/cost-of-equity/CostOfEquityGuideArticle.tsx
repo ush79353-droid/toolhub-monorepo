@@ -40,6 +40,11 @@ export function CostOfEquityGuideArticle() {
         <p>Current share price (P₀) = PKR 100</p>
         <p>Dividend growth rate (g) = 4%</p>
         <p>Cost of equity = (5 / 100) + 0.04 = 0.09 = 9%</p>
+        <p className="mt-2">
+          When dividend and share price use different currencies, both are converted into one
+          currency with stored FX rates before the ratio — so 10 USD dividend against 2,770 PKR
+          price (at an illustrative 1 USD = 277 PKR) yields a ratio of 1, not 10 / 2,770.
+        </p>
       </div>
 
       <h2

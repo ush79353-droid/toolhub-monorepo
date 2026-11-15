@@ -7,7 +7,10 @@ export interface CostOfEquityInput {
   dividendPerShare: string;
   sharePrice: string;
   growthRatePercent: string;
-  currency: SupportedCurrency;
+  /** Independent currency for dividend per share. */
+  dividendCurrency: SupportedCurrency;
+  /** Independent currency for current share price. */
+  sharePriceCurrency: SupportedCurrency;
 }
 
 export interface CostOfEquityResult {
@@ -28,6 +31,7 @@ export function createDefaultInput(): CostOfEquityInput {
     dividendPerShare: '',
     sharePrice: '',
     growthRatePercent: '',
-    currency: 'PKR',
+    dividendCurrency: 'PKR',
+    sharePriceCurrency: 'PKR',
   };
 }

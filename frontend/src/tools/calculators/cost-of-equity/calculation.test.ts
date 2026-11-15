@@ -15,6 +15,16 @@ import { validateCostOfEquityInput } from './validation';
 }
 
 {
+  const d1Convention = calculateCostOfEquityDividend({
+    dividendPerShare: 10,
+    sharePrice: 100,
+    growthRatePercent: 3,
+  });
+  assert.ok(d1Convention);
+  assert.equal(d1Convention.costOfEquityPercent, 13);
+}
+
+{
   const zeroGrowth = calculateCostOfEquityDividend({
     dividendPerShare: 5,
     sharePrice: 100,
@@ -52,6 +62,45 @@ import { validateCostOfEquityInput } from './validation';
   });
   assert.equal(valid.isValid, true);
   assert.equal(valid.result?.costOfEquityPercent, 9);
+}
+
+{
+  // Mixed currencies without rates must fail closed (no symbol-only ratio).
+  const mixed = validateCostOfEquityInput({
+    ...createDefaultInput(),
+    dividendPerShare: '10',
+    sharePrice: '2770',
+    growthRatePercent: '3',
+    dividendCurrency: 'USD',
+    sharePriceCurrency: 'PKR',
+  });
+  assert.equal(mixed.isValid, false);
+  assert.equal(mixed.result, null);
+}
+
+{
+  // Illustrative 1 USD = 277 PKR: 10 USD / 2770 PKR → ratio 1 → 103% with g=3.
+  const fx = validateCostOfEquityInput(
+    {
+      ...createDefaultInput(),
+      dividendPerShare: '10',
+      sharePrice: '2770',
+      growthRatePercent: '3',
+      dividendCurrency: 'USD',
+      sharePriceCurrency: 'PKR',
+    },
+    {
+      available: true,
+      baseCurrency: 'USD',
+      fetchedAt: '2026-11-16T00:00:00.000Z',
+      isStale: false,
+      staleThresholdHours: 48,
+      supportedCurrencies: ['USD', 'PKR'],
+      rates: { USD: 1, PKR: 277 },
+    }
+  );
+  assert.equal(fx.isValid, true);
+  assert.equal(fx.result?.costOfEquityPercent, 103);
 }
 
 {

@@ -1,9 +1,23 @@
 'use client';
 
+import * as React from 'react';
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   CostOfEquityFieldErrors,
@@ -51,9 +65,128 @@ export function CostOfEquityForm({
   onChange,
   onReset,
 }: CostOfEquityFormProps) {
-  const symbol = getCurrencySymbol(input.currency);
-  const set = (patch: Partial<CostOfEquityInput>) => onChange({ ...input, ...patch });
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
+  const dividendSymbol = getCurrencySymbol(input.dividendCurrency);
+  const sharePriceSymbol = getCurrencySymbol(input.sharePriceCurrency);
+
+  const set = (patch: Partial<CostOfEquityInput>) => {
+    setConversionError(null);
+    onChange({ ...input, ...patch });
+  };
   const setMode = (mode: CostOfEquityMode) => set({ mode });
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  /** Convert dividend amount only; leave share price and growth alone. */
+  const handleDividendCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.dividendCurrency) return;
+
+    const amount = parseMoneyInput(input.dividendPerShare);
+    if (!Number.isFinite(amount)) {
+      if (
+        input.sharePriceCurrency !== next &&
+        !canConvertPair(next, input.sharePriceCurrency)
+      ) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      setConversionError(null);
+      onChange({ ...input, dividendCurrency: next });
+      return;
+    }
+
+    if (!canConvertPair(input.dividendCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    if (
+      input.sharePriceCurrency !== next &&
+      !canConvertPair(next, input.sharePriceCurrency)
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    const converted = convertCurrency({
+      amount,
+      from: input.dividendCurrency,
+      to: next,
+      rates: rates.rates,
+    });
+
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    setConversionError(null);
+    onChange({
+      ...input,
+      dividendCurrency: next,
+      dividendPerShare: moneyAmountToInputString(converted.amount),
+    });
+  };
+
+  /** Convert share price amount only; leave dividend and growth alone. */
+  const handleSharePriceCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.sharePriceCurrency) return;
+
+    const amount = parseMoneyInput(input.sharePrice);
+    if (!Number.isFinite(amount)) {
+      if (
+        input.dividendCurrency !== next &&
+        !canConvertPair(input.dividendCurrency, next)
+      ) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      setConversionError(null);
+      onChange({ ...input, sharePriceCurrency: next });
+      return;
+    }
+
+    if (!canConvertPair(input.sharePriceCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    if (
+      input.dividendCurrency !== next &&
+      !canConvertPair(input.dividendCurrency, next)
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    const converted = convertCurrency({
+      amount,
+      from: input.sharePriceCurrency,
+      to: next,
+      rates: rates.rates,
+    });
+
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    setConversionError(null);
+    onChange({
+      ...input,
+      sharePriceCurrency: next,
+      sharePrice: moneyAmountToInputString(converted.amount),
+    });
+  };
 
   return (
     <form
@@ -98,13 +231,13 @@ export function CostOfEquityForm({
                 <span>Dividend per share</span>
                 <InfoTooltip
                   label="Dividend per share"
-                  text="Expected dividend next year (D₁). Currency labels amounts only; it does not convert."
+                  text="Expected dividend next year (D₁). Changing this field's currency converts its amount using stored exchange rates."
                 />
               </label>
               <div className="flex gap-2">
                 <FieldShell error={errors.dividendPerShare}>
                   <span className="shrink-0 pl-3 text-sm text-muted-foreground" aria-hidden="true">
-                    {symbol}
+                    {dividendSymbol}
                   </span>
                   <input
                     id="coe-dividend"
@@ -118,8 +251,8 @@ export function CostOfEquityForm({
                 <div className="w-[110px] shrink-0 sm:w-[120px]">
                   <CurrencySelect
                     id="coe-dividend-currency"
-                    value={input.currency}
-                    onChange={(currency) => set({ currency })}
+                    value={input.dividendCurrency}
+                    onChange={handleDividendCurrencyChange}
                     aria-label="Dividend currency"
                   />
                 </div>
@@ -132,11 +265,15 @@ export function CostOfEquityForm({
             <div>
               <label className={labelClass} htmlFor="coe-price">
                 <span>Current share price</span>
+                <InfoTooltip
+                  label="Current share price"
+                  text="Current market price per share (P₀). Independent currency; changing it converts this amount only."
+                />
               </label>
               <div className="flex gap-2">
                 <FieldShell error={errors.sharePrice}>
                   <span className="shrink-0 pl-3 text-sm text-muted-foreground" aria-hidden="true">
-                    {symbol}
+                    {sharePriceSymbol}
                   </span>
                   <input
                     id="coe-price"
@@ -150,8 +287,8 @@ export function CostOfEquityForm({
                 <div className="w-[110px] shrink-0 sm:w-[120px]">
                   <CurrencySelect
                     id="coe-price-currency"
-                    value={input.currency}
-                    onChange={(currency) => set({ currency })}
+                    value={input.sharePriceCurrency}
+                    onChange={handleSharePriceCurrencyChange}
                     aria-label="Share price currency"
                   />
                 </div>
@@ -166,7 +303,7 @@ export function CostOfEquityForm({
                 <span>Growth rate of dividend</span>
                 <InfoTooltip
                   label="Growth rate of dividend"
-                  text="Constant expected growth of the dividend, in percent. Zero growth is allowed."
+                  text="Constant expected growth of the dividend, in percent. Zero growth is allowed. Not a monetary value."
                 />
               </label>
               <FieldShell error={errors.growthRatePercent}>
@@ -192,7 +329,7 @@ export function CostOfEquityForm({
                 <span>Cost of equity</span>
                 <InfoTooltip
                   label="Cost of equity"
-                  text="(D₁ ÷ P₀) × 100 + growth rate %. D₁ is the expected next-year dividend."
+                  text="(D₁ ÷ P₀) × 100 + growth rate %. D₁ and P₀ are normalized to the same currency before the ratio. Result is a percent, not a currency amount."
                 />
               </label>
               <FieldShell muted>
@@ -208,6 +345,15 @@ export function CostOfEquityForm({
                 </span>
               </FieldShell>
             </div>
+
+            {conversionError ? (
+              <p className="text-xs text-rose-600" role="alert">
+                {conversionError}
+              </p>
+            ) : null}
+            {ratesStatus.warning && !conversionError ? (
+              <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+            ) : null}
           </>
         ) : (
           <p className="text-sm text-muted-foreground">

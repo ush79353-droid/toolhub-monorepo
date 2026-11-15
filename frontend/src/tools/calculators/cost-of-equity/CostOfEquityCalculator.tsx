@@ -4,10 +4,12 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { getCurrencySymbol } from '@/tools/shared/currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
 import {
-  CURRENCY_DENOMINATION_NOTE,
-  getCurrencySymbol,
-} from '@/tools/shared/currency';
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { CostOfEquityForm } from './CostOfEquityForm';
 import {
   createDefaultInput,
@@ -17,6 +19,9 @@ import {
 } from './types';
 import { validateCostOfEquityInput } from './validation';
 
+const CURRENCY_CONVERSION_NOTE =
+  'Dividend and share price each have their own currency. Changing a field currency converts that amount; both are normalized before (D₁ / P₀) + g. Growth % and cost of equity % are not currencies.';
+
 export function CostOfEquityCalculator({
   metadata,
   className = '',
@@ -24,6 +29,8 @@ export function CostOfEquityCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<CostOfEquityInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<CostOfEquityFieldErrors>({});
   const [result, setResult] = React.useState<CostOfEquityResult | null>(null);
@@ -35,9 +42,13 @@ export function CostOfEquityCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
   const apply = (next: CostOfEquityInput) => {
     setInput(next);
-    const validation = validateCostOfEquityInput(next);
+    const validation = validateCostOfEquityInput(next, rates);
     setErrors(validation.errors);
     setResult(validation.isValid ? validation.result : null);
   };
@@ -50,16 +61,17 @@ export function CostOfEquityCalculator({
     setShared(false);
   };
 
-  const symbol = getCurrencySymbol(input.currency);
+  const dividendSymbol = getCurrencySymbol(input.dividendCurrency);
+  const sharePriceSymbol = getCurrencySymbol(input.sharePriceCurrency);
   const summary =
     result && input.mode === 'dividend'
       ? [
           `${metadata.title} — Omega Calculators`,
-          `Dividend per share (D₁): ${symbol}${input.dividendPerShare}`,
-          `Current share price: ${symbol}${input.sharePrice}`,
+          `Dividend per share (D₁): ${dividendSymbol}${input.dividendPerShare}`,
+          `Current share price: ${sharePriceSymbol}${input.sharePrice}`,
           `Growth rate of dividend: ${input.growthRatePercent}%`,
           `Cost of equity: ${result.formattedCostOfEquity}%`,
-          CURRENCY_DENOMINATION_NOTE,
+          currencyNote,
         ].join('\n')
       : '';
 
@@ -74,7 +86,7 @@ export function CostOfEquityCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Dividend growth model: (D₁ / P₀) + g. {CURRENCY_DENOMINATION_NOTE}
+            Dividend growth model: (D₁ / P₀) + g. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}

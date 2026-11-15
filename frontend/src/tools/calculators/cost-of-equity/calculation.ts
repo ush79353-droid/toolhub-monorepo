@@ -10,9 +10,10 @@ function formatPercent(value: number): string {
 }
 
 /**
- * Dividend Growth Model (Gordon Growth), treating Dividend as expected next-year D₁:
+ * Dividend Growth Model (Gordon Growth), treating Dividend as expected next-year D₁
+ * (not D₀). Callers must pass D₁ and P₀ already in the same currency.
  * Cost of Equity (%) = (D₁ / P₀) × 100 + g%
- * Example: D₁=5, P₀=100, g=4% → 9%
+ * Example: D₁=10, P₀=100, g=3% → 13%; D₁=5, P₀=100, g=4% → 9%
  */
 export function calculateCostOfEquityDividend(input: {
   dividendPerShare: number;

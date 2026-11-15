@@ -30,8 +30,8 @@ export const COST_OF_EQUITY_FAQS: readonly FAQItem[] = [
       'Yes. With zero growth, cost of equity equals the dividend yield (D₁ / P₀) as a percent.',
   },
   {
-    question: 'Does the currency selector convert amounts?',
+    question: 'Do the currency selectors convert amounts?',
     answer:
-      'No. It only changes the currency label and grouping. Enter money fields already in the selected currency.',
+      'Yes. Dividend per share and current share price each have an independent currency. Changing either selector converts that field using stored exchange rates. Before calculating, both amounts are normalized to the same currency so the (D₁ / P₀) ratio is economically correct. Growth rate and cost of equity remain percentages.',
   },
 ];

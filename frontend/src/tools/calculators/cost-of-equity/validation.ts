@@ -1,3 +1,8 @@
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  type CurrencyRatesSnapshot,
+} from '@/tools/shared/currency-rates';
 import { calculateCostOfEquityDividend } from './calculation';
 import type {
   CostOfEquityFieldErrors,
@@ -26,7 +31,15 @@ function parseNumber(raw: string): {
   return { value, blank: false, invalid: false };
 }
 
-export function validateCostOfEquityInput(input: CostOfEquityInput): CostOfEquityValidation {
+/**
+ * Validates inputs and computes cost of equity.
+ * When dividend and share-price currencies differ, both amounts are normalized
+ * into the share-price currency (full precision) before (D₁ / P₀) × 100 + g.
+ */
+export function validateCostOfEquityInput(
+  input: CostOfEquityInput,
+  rates?: CurrencyRatesSnapshot | null
+): CostOfEquityValidation {
   if (input.mode !== 'dividend') {
     return {
       isValid: false,
@@ -76,9 +89,30 @@ export function validateCostOfEquityInput(input: CostOfEquityInput): CostOfEquit
     return { isValid: false, errors, result: null };
   }
 
+  let dividendNormalized = dividend.value;
+  let sharePriceNormalized = price.value;
+
+  if (input.dividendCurrency !== input.sharePriceCurrency) {
+    if (!rates?.available) {
+      errors.form = CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+      return { isValid: false, errors, result: null };
+    }
+    const convertedDividend = convertCurrency({
+      amount: dividend.value,
+      from: input.dividendCurrency,
+      to: input.sharePriceCurrency,
+      rates: rates.rates,
+    });
+    if (!convertedDividend.ok) {
+      errors.form = CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+      return { isValid: false, errors, result: null };
+    }
+    dividendNormalized = convertedDividend.amount;
+  }
+
   const result = calculateCostOfEquityDividend({
-    dividendPerShare: dividend.value,
-    sharePrice: price.value,
+    dividendPerShare: dividendNormalized,
+    sharePrice: sharePriceNormalized,
     growthRatePercent: growth.value,
   });
 
