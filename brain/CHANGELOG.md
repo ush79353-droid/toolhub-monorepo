@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Percentage Return Calculator (Screenshot-First)
+- **Summary:** Shipped Percentage Return Calculator on existing catalog slug `percentage-return-calculator` (`PercentageReturnCalculator`, catalog `6af46f10a27d8d1d4e9900e2`). Basic gain/loss + % return; annualized CAGR with start/end/duration sync (365.25-day year); time-needed solve via ln formula. Compare checkbox present without invented comparison fields. Distinct from Annualized Return tools. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 10,000 → 12,100 over 2 years → gain 2,100; return 21%; annualized 10%.
+- **Important Files:** `frontend/src/tools/calculators/percentage-return/*`, registry `keys.ts` (details/index/sitemap/tool.key already allowlisted), `backend/src/scripts/assign-percentage-return-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. Compare-with-another-investment field list missing from reference.
+
 ### 2026-11-15 — Add Present Value Calculator (Screenshot-First)
 - **Summary:** Shipped Present Value Calculator on existing catalog slug `present-value-calculator` (`PresentValueCalculator`, catalog `6af46f10a27d8d1d4e9900e4`). Future value, periods, interest rate % → PV and total interest. Denomination currency. Omega UI. Activated.
 - **Example:** FV 12,100 / 2 periods / 10% → PV 10,000, interest 2,100.
