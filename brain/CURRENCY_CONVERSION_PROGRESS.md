@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 41 |
-| Pending | 64 |
+| Complete (implementation) | 46 |
+| Pending | 59 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 64 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 59 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -69,11 +69,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 38 | A/R Days | `ar-days-calculator` | 8 | Complete | `6d0d7f1` | Pending | Receivables + credit sales convert; period days and A/R days unchanged |
 | 39 | Average Collection Period | `average-collection-period-calculator` | 8 | Complete | `6d0d7f1` | Pending | Shared selectors (×4); money fields convert; days/turnover ratio unchanged |
 | 40 | Average Fixed Cost | `average-fixed-cost-calculator` | 8 | Complete | `6d0d7f1` | Pending | Shared selectors (×2); fixed cost converts; unit count unchanged |
-| 41 | Break-even | `break-even-calculator` | 9 | Pending | — | Pending | |
-| 42 | Build vs. Buy | `build-vs-buy-calculator` | 9 | Pending | — | Pending | |
-| 43 | Burn Rate | `burn-rate-calculator` | 9 | Pending | — | Pending | |
-| 44 | Business Budget | `business-budget-calculator` | 9 | Pending | — | Pending | |
-| 45 | Business Loan | `business-loan-calculator` | 9 | Pending | — | Pending | |
+| 41 | Break-even | `break-even-calculator` | 9 | Complete | `fad37c0` | Pending | Shared selectors; revenue, cost, and fixed costs convert; break-even units unchanged |
+| 42 | Build vs. Buy | `build-vs-buy-calculator` | 9 | Complete | `fad37c0` | Pending | Five synced selectors; buy cost and salary convert; build time and overhead % unchanged |
+| 43 | Burn Rate | `burn-rate-calculator` | 9 | Complete | `fad37c0` | Pending | Balances and burn display convert; duration and runway units unchanged |
+| 44 | Business Budget | `business-budget-calculator` | 9 | Complete | `fad37c0` | Pending | All income/expense/one-time lines convert; recurring periods unchanged |
+| 45 | Business Loan | `business-loan-calculator` | 9 | Complete | `fad37c0` | Pending | Loan amount and fee cash convert; rate, term, and origination % unchanged |
 | 46 | Business Valuation | `business-valuation-calculator` | 10 | Pending | — | Pending | |
 | 47 | Consulting Fees | `consulting-fees-calculator` | 10 | Pending | — | Pending | |
 | 48 | Contribution Margin | `contribution-margin-calculator` | 10 | Pending | — | Pending | |
@@ -192,6 +192,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 9 notes
+
+- Local commit: `fix(currency): integrate conversion batch 9 calculators` `fad37c014cbb5bdd8d28365d99c83cd5a816cec2`.
+- Provider slug allowlist extended for Batch 9 (preserves prior batches + Margin Interest).
+- Break-even: revenue, variable cost, and fixed costs convert together; units and margin/markup % invariant to FX-only changes.
+- Build vs. Buy: five synced selectors; annual buy cost and monthly salary convert; headcount, build duration, overhead %, and payback units unchanged.
+- Burn Rate: initial and final balances convert; burn rate and runway monetary display scale; duration and runway time units unchanged.
+- Business Budget: all income, salary, expense, and one-time lump amounts convert; period selectors and budget % mix unchanged.
+- Business Loan: loan amount, prepaid fee, and loaned fee convert; interest rate, term, origination %, and APR formulas unchanged.
+- Manual verification left Pending for user reference comparison.
+
 ## Batch 8 notes
 
 - Local commit: `fix(currency): integrate conversion batch 8 calculators` `6d0d7f1dea8c35c3c6d0656a79f5a4da3874144d`.
@@ -217,6 +228,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 9 (#41–#45) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 8 (#36–#40) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 7 (#31–#35) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 6 (#26–#30) implementation Complete; manual verification Pending.
