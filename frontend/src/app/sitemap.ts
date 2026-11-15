@@ -125,8 +125,10 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'treynor-ratio-calculator',
   'turnover-rate-calculator',
   'website-ad-revenue-calculator',
+  'week-over-week-calculator',
   'software-contract-value-calculator',
   'sortino-ratio-calculator',
+  'year-over-year-growth-calculator',
   'youtube-money-calculator',
   'annualized-rate-of-return-calculator',
   'appreciation-calculator',
@@ -226,6 +228,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'investment-fee-calculator',
   'jensens-alpha-calculator',
   'savings-interest-rate-calculator',
+  'value-at-risk-calculator-var',
 ] as const;
 
 const STATIC_PATHS = [

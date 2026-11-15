@@ -146,10 +146,14 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/turnover-rate/detail'),
   WebsiteAdRevenueCalculator: () =>
     import('@/tools/calculators/website-ad-revenue/detail'),
+  WeekOverWeekCalculator: () =>
+    import('@/tools/calculators/week-over-week/detail'),
   SoftwareContractValueCalculator: () =>
     import('@/tools/calculators/software-contract-value/detail'),
   SortinoRatioCalculator: () =>
     import('@/tools/calculators/sortino-ratio/detail'),
+  YearOverYearGrowthCalculator: () =>
+    import('@/tools/calculators/year-over-year-growth/detail'),
   YoutubeMoneyCalculator: () =>
     import('@/tools/calculators/youtube-money/detail'),
   AnnualizedRateOfReturnCalculator: () =>
@@ -341,6 +345,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/jensens-alpha/detail'),
   SavingsInterestRateCalculator: () =>
     import('@/tools/calculators/savings-interest-rate/detail'),
+  ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

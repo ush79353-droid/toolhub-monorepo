@@ -113,8 +113,10 @@ export const APPROVED_COMPONENT_KEYS = [
   'TreynorRatioCalculator',
   'TurnoverRateCalculator',
   'WebsiteAdRevenueCalculator',
+  'WeekOverWeekCalculator',
   'SoftwareContractValueCalculator',
   'SortinoRatioCalculator',
+  'YearOverYearGrowthCalculator',
   'YoutubeMoneyCalculator',
   'AnnualizedRateOfReturnCalculator',
   'AppreciationCalculator',
@@ -214,6 +216,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InvestmentFeeCalculator',
   'JensensAlphaCalculator',
   'SavingsInterestRateCalculator',
+  'ValueAtRiskCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -338,8 +341,10 @@ export const REGISTERED_COMPONENT_KEYS = [
   'TreynorRatioCalculator',
   'TurnoverRateCalculator',
   'WebsiteAdRevenueCalculator',
+  'WeekOverWeekCalculator',
   'SoftwareContractValueCalculator',
   'SortinoRatioCalculator',
+  'YearOverYearGrowthCalculator',
   'YoutubeMoneyCalculator',
   'AnnualizedRateOfReturnCalculator',
   'AppreciationCalculator',
@@ -439,6 +444,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'InvestmentFeeCalculator',
   'JensensAlphaCalculator',
   'SavingsInterestRateCalculator',
+  'ValueAtRiskCalculator',
 ] as const;
 
 export type RegisteredComponentKey = (typeof REGISTERED_COMPONENT_KEYS)[number];

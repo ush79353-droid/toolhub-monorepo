@@ -632,6 +632,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WebsiteAdRevenueCalculator,
     })),
   ),
+  WeekOverWeekCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/week-over-week/WeekOverWeekCalculator'
+    ).then((mod) => ({
+      default: mod.WeekOverWeekCalculator,
+    })),
+  ),
   SoftwareContractValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/software-contract-value/SoftwareContractValueCalculator'
@@ -642,6 +649,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   SortinoRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/sortino-ratio/SortinoRatioCalculator').then((mod) => ({
       default: mod.SortinoRatioCalculator,
+    })),
+  ),
+  YearOverYearGrowthCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/year-over-year-growth/YearOverYearGrowthCalculator'
+    ).then((mod) => ({
+      default: mod.YearOverYearGrowthCalculator,
     })),
   ),
   YoutubeMoneyCalculator: lazyTool(() =>
@@ -1169,6 +1183,7 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     ).then((mod) => ({
       default: mod.JensensAlphaCalculator,
     })),
+  ),
   SavingsInterestRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/savings-interest-rate/SavingsInterestRateCalculator'
@@ -1176,6 +1191,12 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SavingsInterestRateCalculator,
     })),
   ),
+  ValueAtRiskCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/value-at-risk/ValueAtRiskCalculator'
+    ).then((mod) => ({
+      default: mod.ValueAtRiskCalculator,
+    })),
   ),
 };
 
