@@ -4,11 +4,23 @@
 
 ---
 
+### 2026-11-15 — Add Sinking Fund Calculator (Screenshot-First)
+- **Summary:** Shipped Sinking Fund Calculator on existing catalog slug `sinking-fund-calculator` (`SinkingFundCalculator`, catalog `6af46f10a27d8d1d4e9900e9`). Money to accumulate, annual interest rate %, compounding frequency (default Yearly), period years/months (default 5y 0m) → USSF factor and required contribution (FV × USSF). Zero-rate path 1/n. Months as months/12. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 100,000 @ 5%/yr yearly × 5y → USSF ≈ 0.180975; contribution ≈ 18,097.48.
+- **Important Files:** `frontend/src/tools/calculators/sinking-fund/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-sinking-fund-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Time Value of Money Calculator (Screenshot-First)
 - **Summary:** Shipped Time Value of Money Calculator on existing catalog slug `time-value-of-money-calculator` (`TimeValueOfMoneyCalculator`, catalog `6af46f10a27d8d1d4e9900eb`). Interest rate %, term years/months, compound frequency (default Yearly), bidirectional present/future value via last-edited money field. Distinct from Present Value and Future Value calculators. Denomination currency. Omega UI. Activated.
 - **Example:** 10% / 2y / yearly / PV 10,000 → FV 12,100; reverse FV 12,100 → PV 10,000.
 - **Important Files:** `frontend/src/tools/calculators/time-value-of-money/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-time-value-of-money-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add Savings Interest Rate Calculator (Screenshot-First)
+- **Summary:** Shipped Savings Interest Rate Calculator on existing catalog slug `savings-interest-rate-calculator` (`SavingsInterestRateCalculator`, catalog `6af46f0fa27d8d1d4e98ff90`). Main specs (goal, initial balance, term years, compounding) plus additional deposit (amount, frequency, beginning/end timing) → required annual nominal rate %, total deposited, yearly principal/interest/balance chart. Closed-form annuity with bisection. Fixed PKR (no currency selector). Distinct from Savings / Interest Rate / Investment. Omega UI. Activated.
+- **Example:** Goal 100,000 / P 0 / 30y / monthly / PMT 100 end → ≈ 5.976%; deposited 36,000.
+- **Important Files:** `frontend/src/tools/calculators/savings-interest-rate/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-savings-interest-rate-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Example rate verified via one-off tsx. Lint/builds/browser/automated tests omitted per user.
 
 ### 2026-11-15 — Add Real Rate of Return Calculator (Screenshot-First)
 - **Summary:** Shipped Real Rate of Return Calculator on existing catalog slug `real-rate-of-return-calculator` (`RealRateOfReturnCalculator`, catalog `6af46f0fa27d8d1d4e990017`). Three fields only: nominal rate %, inflation rate %, inline real rate %. Fisher equation (not nominal − inflation). No currency. Omega UI. Activated.
