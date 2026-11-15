@@ -547,6 +547,17 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RoasCalculator,
     })),
   ),
+  RoceCalculator: lazyTool(() =>
+    import('@/tools/calculators/roce/RoceCalculator').then((mod) => ({
+      default: mod.RoceCalculator,
+    })),
+  ),
+  RoiCalculator: lazyTool(() =>
+    import('@/tools/calculators/roi/RoiCalculator').then((mod) => ({
+      default: mod.RoiCalculator,
+    })),
+  ),
+
   SaasLifetimeValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/saas-lifetime-value/SaasLifetimeValueCalculator'
@@ -573,6 +584,18 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SellThroughRateCalculator,
     })),
   ),
+  SimpleInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/simple-interest/SimpleInterestCalculator'
+    ).then((mod) => ({
+      default: mod.SimpleInterestCalculator,
+    })),
+  ),
+  SinkingFundCalculator: lazyTool(() =>
+    import('@/tools/calculators/sinking-fund/SinkingFundCalculator').then((mod) => ({
+      default: mod.SinkingFundCalculator,
+    })),
+  ),
   SmokersCtcCalculator: lazyTool(() =>
     import('@/tools/calculators/smokers-ctc/SmokersCtcCalculator').then((mod) => ({
       default: mod.SmokersCtcCalculator,
@@ -582,6 +605,23 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/tenure/TenureCalculator').then((mod) => ({
       default: mod.TenureCalculator,
     })),
+  ),
+  TimeValueOfMoneyCalculator: lazyTool(() =>
+    import('@/tools/calculators/time-value-of-money/TimeValueOfMoneyCalculator').then((mod) => ({
+      default: mod.TimeValueOfMoneyCalculator,
+    })),
+  ),
+  TtmCalculator: lazyTool(() =>
+    import('@/tools/calculators/ttm/TtmCalculator').then((mod) => ({
+      default: mod.TtmCalculator,
+    })),
+  ),
+  TreynorRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/treynor-ratio/TreynorRatioCalculator').then(
+      (mod) => ({
+        default: mod.TreynorRatioCalculator,
+      }),
+    ),
   ),
   TurnoverRateCalculator: lazyTool(() =>
     import(
@@ -597,11 +637,30 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WebsiteAdRevenueCalculator,
     })),
   ),
+  WeekOverWeekCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/week-over-week/WeekOverWeekCalculator'
+    ).then((mod) => ({
+      default: mod.WeekOverWeekCalculator,
+    })),
+  ),
   SoftwareContractValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/software-contract-value/SoftwareContractValueCalculator'
     ).then((mod) => ({
       default: mod.SoftwareContractValueCalculator,
+    })),
+  ),
+  SortinoRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/sortino-ratio/SortinoRatioCalculator').then((mod) => ({
+      default: mod.SortinoRatioCalculator,
+    })),
+  ),
+  YearOverYearGrowthCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/year-over-year-growth/YearOverYearGrowthCalculator'
+    ).then((mod) => ({
+      default: mod.YearOverYearGrowthCalculator,
     })),
   ),
   YoutubeMoneyCalculator: lazyTool(() =>
@@ -914,6 +973,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NopatCalculator,
     })),
   ),
+  NpvCalculator: lazyTool(() =>
+    import('@/tools/calculators/npv/NpvCalculator').then((mod) => ({
+      default: mod.NpvCalculator,
+    })),
+  ),
   OnlineMarketingConversionCalculator: lazyTool(() =>
     import('@/tools/calculators/online-marketing-conversion/OnlineMarketingConversionCalculator').then((mod) => ({
       default: mod.OnlineMarketingConversionCalculator,
@@ -922,6 +986,16 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   OperatingAssetTurnoverCalculator: lazyTool(() =>
     import('@/tools/calculators/operating-asset-turnover/OperatingAssetTurnoverCalculator').then((mod) => ({
       default: mod.OperatingAssetTurnoverCalculator,
+    })),
+  ),
+  OptimalHedgeRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/optimal-hedge-ratio/OptimalHedgeRatioCalculator').then((mod) => ({
+      default: mod.OptimalHedgeRatioCalculator,
+    })),
+  ),
+  OpportunityCostCalculator: lazyTool(() =>
+    import('@/tools/calculators/opportunity-cost/OpportunityCostCalculator').then((mod) => ({
+      default: mod.OpportunityCostCalculator,
     })),
   ),
   ParkingRatioCalculator: lazyTool(() =>
@@ -934,9 +1008,24 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PaybackPeriodCalculator,
     })),
   ),
+  PercentageReturnCalculator: lazyTool(() =>
+    import('@/tools/calculators/percentage-return/PercentageReturnCalculator').then((mod) => ({
+      default: mod.PercentageReturnCalculator,
+    })),
+  ),
+  PerpetuityCalculator: lazyTool(() =>
+    import('@/tools/calculators/perpetuity/PerpetuityCalculator').then((mod) => ({
+      default: mod.PerpetuityCalculator,
+    })),
+  ),
   PreAndPostMoneyValuationCalculator: lazyTool(() =>
     import('@/tools/calculators/pre-and-post-money-valuation/PreAndPostMoneyValuationCalculator').then((mod) => ({
       default: mod.PreAndPostMoneyValuationCalculator,
+    })),
+  ),
+  PresentValueCalculator: lazyTool(() =>
+    import('@/tools/calculators/present-value/PresentValueCalculator').then((mod) => ({
+      default: mod.PresentValueCalculator,
     })),
   ),
   PriceQuantityCalculator: lazyTool(() =>
@@ -947,6 +1036,22 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   PvgoCalculator: lazyTool(() =>
     import('@/tools/calculators/pvgo/PvgoCalculator').then((mod) => ({
       default: mod.PvgoCalculator,
+    })),
+  ),
+  PvifaCalculator: lazyTool(() =>
+    import('@/tools/calculators/pvifa/PvifaCalculator').then((mod) => ({
+      default: mod.PvifaCalculator,
+    })),
+  ),
+  RateOfReturnCalculator: lazyTool(() =>
+    import('@/tools/calculators/rate-of-return/RateOfReturnCalculator').then((mod) => ({
+      default: mod.RateOfReturnCalculator,
+    })),
+  ),
+  
+  RealRateOfReturnCalculator: lazyTool(() =>
+    import('@/tools/calculators/real-rate-of-return/RealRateOfReturnCalculator').then((mod) => ({
+      default: mod.RealRateOfReturnCalculator,
     })),
   ),
   BitcoinEtfCalculator: lazyTool(() =>
@@ -1087,6 +1192,25 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/jensens-alpha/JensensAlphaCalculator'
     ).then((mod) => ({
       default: mod.JensensAlphaCalculator,
+    })),
+  ),
+  SavingsInterestRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/savings-interest-rate/SavingsInterestRateCalculator'
+    ).then((mod) => ({
+      default: mod.SavingsInterestRateCalculator,
+    })),
+  ),
+  SharpeRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/sharpe-ratio/SharpeRatioCalculator').then((mod) => ({
+      default: mod.SharpeRatioCalculator,
+    })),
+  ),
+  ValueAtRiskCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/value-at-risk/ValueAtRiskCalculator'
+    ).then((mod) => ({
+      default: mod.ValueAtRiskCalculator,
     })),
   ),
 };

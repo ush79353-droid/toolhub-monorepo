@@ -4,10 +4,101 @@
 
 ---
 
+<<<<<<< HEAD
+### 2026-11-15 — Add Week Over Week Calculator (Screenshot-First)
+- **Summary:** Shipped Week Over Week Calculator on existing catalog slug `week-over-week-calculator` (`WeekOverWeekCalculator`, catalog `6af46f10a27d8d1d4e9900ef`). Value in initial week + following week → WoW % change ((F−I)/I)×100. Nonzero initial required; zero following allowed; signed %. Collapsed Weekly CAGR section without invented inputs (expanded screenshot required). Copy/share/reset. No currency. Omega UI. Activated.
+- **Example:** 1,000 → 1,200 = +20%; 1,000 → 800 = −20%; 500 → 500 = 0%.
+- **Important Files:** `frontend/src/tools/calculators/week-over-week/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-week-over-week-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. Weekly CAGR fields unverified pending expanded screenshot.
+
+### 2026-11-15 — Add Sinking Fund Calculator (Screenshot-First)
+- **Summary:** Shipped Sinking Fund Calculator on existing catalog slug `sinking-fund-calculator` (`SinkingFundCalculator`, catalog `6af46f10a27d8d1d4e9900e9`). Money to accumulate, annual interest rate %, compounding frequency (default Yearly), period years/months (default 5y 0m) → USSF factor and required contribution (FV × USSF). Zero-rate path 1/n. Months as months/12. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 100,000 @ 5%/yr yearly × 5y → USSF ≈ 0.180975; contribution ≈ 18,097.48.
+- **Important Files:** `frontend/src/tools/calculators/sinking-fund/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-sinking-fund-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add Time Value of Money Calculator (Screenshot-First)
+- **Summary:** Shipped Time Value of Money Calculator on existing catalog slug `time-value-of-money-calculator` (`TimeValueOfMoneyCalculator`, catalog `6af46f10a27d8d1d4e9900eb`). Interest rate %, term years/months, compound frequency (default Yearly), bidirectional present/future value via last-edited money field. Distinct from Present Value and Future Value calculators. Denomination currency. Omega UI. Activated.
+- **Example:** 10% / 2y / yearly / PV 10,000 → FV 12,100; reverse FV 12,100 → PV 10,000.
+- **Important Files:** `frontend/src/tools/calculators/time-value-of-money/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-time-value-of-money-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add Savings Interest Rate Calculator (Screenshot-First)
+- **Summary:** Shipped Savings Interest Rate Calculator on existing catalog slug `savings-interest-rate-calculator` (`SavingsInterestRateCalculator`, catalog `6af46f0fa27d8d1d4e98ff90`). Main specs (goal, initial balance, term years, compounding) plus additional deposit (amount, frequency, beginning/end timing) → required annual nominal rate %, total deposited, yearly principal/interest/balance chart. Closed-form annuity with bisection. Fixed PKR (no currency selector). Distinct from Savings / Interest Rate / Investment. Omega UI. Activated.
+- **Example:** Goal 100,000 / P 0 / 30y / monthly / PMT 100 end → ≈ 5.976%; deposited 36,000.
+- **Important Files:** `frontend/src/tools/calculators/savings-interest-rate/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-savings-interest-rate-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Example rate verified via one-off tsx. Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add Real Rate of Return Calculator (Screenshot-First)
+- **Summary:** Shipped Real Rate of Return Calculator on existing catalog slug `real-rate-of-return-calculator` (`RealRateOfReturnCalculator`, catalog `6af46f0fa27d8d1d4e990017`). Three fields only: nominal rate %, inflation rate %, inline real rate %. Fisher equation (not nominal − inflation). No currency. Omega UI. Activated.
+- **Example:** 10% nominal / 4% inflation → real ≈ 5.7692%.
+- **Important Files:** `frontend/src/tools/calculators/real-rate-of-return/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-real-rate-of-return-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add ROI Calculator (Screenshot-First)
+- **Summary:** Shipped ROI Calculator on existing catalog slug `roi-calculator` (`RoiCalculator`, catalog `6af46f10a27d8d1d4e9900e7`). Basic ROI (period, initial, optional contributions, linked rate/returned, ROI %, optional gain/loss) and Annualized ROI from dates. Time needed / compare gated pending screenshots. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 10,000 → 15,000 / 5y → ROI 50%; annualized ≈ 8.447%.
+- **Important Files:** `frontend/src/tools/calculators/roi/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-roi-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+### 2026-11-15 — Add Rate of Return Calculator (Screenshot-First)
+- **Summary:** Shipped Rate of Return Calculator on existing catalog slug `rate-of-return-calculator` (`RateOfReturnCalculator`, catalog `6af46f0fa27d8d1d4e990013`). Main specifications (initial investment, final amount, investment length yrs/mos, compounding) plus interim periodic cash flows (deposit/withdrawal, frequency, end/beginning timing); statement result for annual nominal rate. Closed form without PMT; numerical solve with PMT. Distinct from Annualized Return / Annualized Rate of Return / Percentage Return. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 1,000 → 5,000 / 10 years / monthly compounding / PMT 0 → ≈ 16.203%.
+- **Important Files:** `frontend/src/tools/calculators/rate-of-return/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-rate-of-return-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add Simple Interest Calculator (Screenshot-First)
+- **Summary:** Shipped Simple Interest Calculator on existing catalog slug `simple-interest-calculator` (`SimpleInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff88`). Principal, annual rate %/yr, term years/months → total interest and final balance. Collapsed "Total interest payment calculations" with copy/share/reset. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 100,000 @ 10%/yr for 2y 6m → interest 25,000; balance 125,000.
+- **Important Files:** `frontend/src/tools/calculators/simple-interest/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-simple-interest-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add Percentage Return Calculator (Screenshot-First)
+- **Summary:** Shipped Percentage Return Calculator on existing catalog slug `percentage-return-calculator` (`PercentageReturnCalculator`, catalog `6af46f10a27d8d1d4e9900e2`). Basic gain/loss + % return; annualized CAGR with start/end/duration sync (365.25-day year); time-needed solve via ln formula. Compare checkbox present without invented comparison fields. Distinct from Annualized Return tools. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 10,000 → 12,100 over 2 years → gain 2,100; return 21%; annualized 10%.
+- **Important Files:** `frontend/src/tools/calculators/percentage-return/*`, registry `keys.ts` (details/index/sitemap/tool.key already allowlisted), `backend/src/scripts/assign-percentage-return-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. Compare-with-another-investment field list missing from reference.
+
+### 2026-11-15 — Add Present Value Calculator (Screenshot-First)
+- **Summary:** Shipped Present Value Calculator on existing catalog slug `present-value-calculator` (`PresentValueCalculator`, catalog `6af46f10a27d8d1d4e9900e4`). Future value, periods, interest rate % → PV and total interest. Denomination currency. Omega UI. Activated.
+- **Example:** FV 12,100 / 2 periods / 10% → PV 10,000, interest 2,100.
+- **Important Files:** `frontend/src/tools/calculators/present-value/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-present-value-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add PVIFA Calculator (Screenshot-First)
+- **Summary:** Shipped PVIFA Calculator on existing catalog slug `pvifa-calculator` (`PvifaCalculator`, catalog `6af46f10a27d8d1d4e9900e5`). Interest rate per period (r), periods (n), inline PVIFA; collapsed Additional settings with copy/share/reset. No currency. Omega UI. Activated.
+- **Example:** 5% / 10 periods → PVIFA ≈ 7.7217.
+- **Important Files:** `frontend/src/tools/calculators/pvifa/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pvifa-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add Optimal Hedge Ratio Calculator (Screenshot-First)
+- **Summary:** Shipped Optimal Hedge Ratio Calculator on existing catalog slug `optimal-hedge-ratio-calculator` (`OptimalHedgeRatioCalculator`, catalog `6af46f10a27d8d1d4e9900e1`). Four unitless fields: spot σ, futures σ, correlation, inline optimal hedge ratio. Formula h* = ρ × (σs / σf). Distinct from Hedge Ratio Calculator. Omega UI. Activated.
+- **Example:** σs 12 / σf 15 / ρ 0.8 → h* = 0.64.
+- **Important Files:** `frontend/src/tools/calculators/optimal-hedge-ratio/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-optimal-hedge-ratio-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add Opportunity Cost Calculator (Screenshot-First)
+- **Summary:** Shipped Opportunity Cost Calculator on existing catalog slug `opportunity-cost-calculator` (`OpportunityCostCalculator`, catalog `6af46f10a27d8d1d4e9900e0`). Money to spend; invest section (return default 3%, years/months, tax default 12%, inflation default 2.5%); results total savings after tax + inflation-adjusted opportunity cost; optional supplementary Real FV and nominal gain. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 100,000 / 10% / 1y / tax 20% / inflation 5% → savings 108,000; opportunity cost ≈ 2,857.14.
+- **Important Files:** `frontend/src/tools/calculators/opportunity-cost/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-opportunity-cost-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add Perpetuity Calculator (Screenshot-First)
+- **Summary:** Shipped Perpetuity Calculator on existing catalog slug `perpetuity-calculator` (`PerpetuityCalculator`, catalog `6af46f10a27d8d1d4e9900e3`). Dividend (D₁), discount rate %, growth rate % (default 0); inline present value via Gordon Growth. Discount must exceed growth. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 1,000 / 10% / 0% → PKR 10,000; PKR 1,000 / 10% / 4% → ≈ PKR 16,666.67.
+- **Important Files:** `frontend/src/tools/calculators/perpetuity/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-perpetuity-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-15 — Add NPV Calculator (Screenshot-First)
+- **Summary:** Shipped NPV Calculator on existing catalog slug `npv-calculator-net-present-value` (`NpvCalculator`, catalog `6af46f10a27d8d1d4e9900df`). Discount rate, initial costs, Years 1–5 + show-more (max 9); NPV and expected cash flows (discounted PV of future CFs per OmniCalculator). Denomination currency. Omega UI. Activated.
+- **Example:** 10% / PKR 10,000 / 4,000×3 years → NPV ≈ −52.59.
+- **Important Files:** `frontend/src/tools/calculators/npv/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-npv-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+=======
 ### 2026-11-15 — Fix backend production build for Node start
 - **Summary:** Switched `backend/tsconfig.json` emit from ESNext/`bundler` to CommonJS/`node` so `npm run build` + `npm start` (`node dist/server.js`) resolves relative imports on the server. Local `npm run dev` (`tsx`) unchanged.
 - **Important Files:** `backend/tsconfig.json`, `brain/BACKEND.md`.
 - **Verification:** `npm run build` emitted `require("./app")`; `node dist/server.js` connected Mongo and listened on port 5001.
+>>>>>>> 11e6cb8230776a235f310d263091a11f450a3815
 
 ### 2026-11-15 — Add NOPAT Calculator (Screenshot-First)
 - **Summary:** Shipped NOPAT Calculator on existing catalog slug `nopat-calculator` (`NopatCalculator`, catalog `6af46f10a27d8d1d4e9900de`). Simple mode (operating profit × (1 − tax%/100)) and precise mode (income-statement reconstruction). Denomination currency. Omega UI. Activated.

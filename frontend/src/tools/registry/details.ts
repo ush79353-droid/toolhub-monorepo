@@ -120,6 +120,9 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   RevenuePerEmployeeCalculator: () =>
     import('@/tools/calculators/revenue-per-employee/detail'),
   RoasCalculator: () => import('@/tools/calculators/roas/detail'),
+  RoceCalculator: () => import('@/tools/calculators/roce/detail'),
+  RoiCalculator: () =>
+    import('@/tools/calculators/roi/detail'),
   SaasLifetimeValueCalculator: () =>
     import('@/tools/calculators/saas-lifetime-value/detail'),
   SafetyStockCalculator: () =>
@@ -128,15 +131,30 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/sales-commission/detail'),
   SellThroughRateCalculator: () =>
     import('@/tools/calculators/sell-through-rate/detail'),
+  SimpleInterestCalculator: () =>
+    import('@/tools/calculators/simple-interest/detail'),
+  SinkingFundCalculator: () =>
+    import('@/tools/calculators/sinking-fund/detail'),
   SmokersCtcCalculator: () =>
     import('@/tools/calculators/smokers-ctc/detail'),
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),
+  TimeValueOfMoneyCalculator: () =>
+    import('@/tools/calculators/time-value-of-money/detail'),
+  TtmCalculator: () => import('@/tools/calculators/ttm/detail'),
+  TreynorRatioCalculator: () =>
+    import('@/tools/calculators/treynor-ratio/detail'),
   TurnoverRateCalculator: () =>
     import('@/tools/calculators/turnover-rate/detail'),
   WebsiteAdRevenueCalculator: () =>
     import('@/tools/calculators/website-ad-revenue/detail'),
+  WeekOverWeekCalculator: () =>
+    import('@/tools/calculators/week-over-week/detail'),
   SoftwareContractValueCalculator: () =>
     import('@/tools/calculators/software-contract-value/detail'),
+  SortinoRatioCalculator: () =>
+    import('@/tools/calculators/sortino-ratio/detail'),
+  YearOverYearGrowthCalculator: () =>
+    import('@/tools/calculators/year-over-year-growth/detail'),
   YoutubeMoneyCalculator: () =>
     import('@/tools/calculators/youtube-money/detail'),
   AnnualizedRateOfReturnCalculator: () =>
@@ -254,20 +272,39 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mva/detail'),
   NopatCalculator: () =>
     import('@/tools/calculators/nopat/detail'),
+  NpvCalculator: () =>
+    import('@/tools/calculators/npv/detail'),
   OnlineMarketingConversionCalculator: () =>
     import('@/tools/calculators/online-marketing-conversion/detail'),
   OperatingAssetTurnoverCalculator: () =>
     import('@/tools/calculators/operating-asset-turnover/detail'),
+  OptimalHedgeRatioCalculator: () =>
+    import('@/tools/calculators/optimal-hedge-ratio/detail'),
+  OpportunityCostCalculator: () =>
+    import('@/tools/calculators/opportunity-cost/detail'),
   ParkingRatioCalculator: () =>
     import('@/tools/calculators/parking-ratio/detail'),
   PaybackPeriodCalculator: () =>
     import('@/tools/calculators/payback-period/detail'),
+  PercentageReturnCalculator: () =>
+    import('@/tools/calculators/percentage-return/detail'),
+  PerpetuityCalculator: () =>
+    import('@/tools/calculators/perpetuity/detail'),
   PreAndPostMoneyValuationCalculator: () =>
     import('@/tools/calculators/pre-and-post-money-valuation/detail'),
+  PresentValueCalculator: () =>
+    import('@/tools/calculators/present-value/detail'),
   PriceQuantityCalculator: () =>
     import('@/tools/calculators/price-quantity/detail'),
   PvgoCalculator: () =>
     import('@/tools/calculators/pvgo/detail'),
+  PvifaCalculator: () =>
+    import('@/tools/calculators/pvifa/detail'),
+  RateOfReturnCalculator: () =>
+    import('@/tools/calculators/rate-of-return/detail'),
+  
+  RealRateOfReturnCalculator: () =>
+    import('@/tools/calculators/real-rate-of-return/detail'),
   BitcoinEtfCalculator: () =>
     import('@/tools/calculators/bitcoin-etf/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
@@ -308,6 +345,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/investment-fee/detail'),
   JensensAlphaCalculator: () =>
     import('@/tools/calculators/jensens-alpha/detail'),
+  SavingsInterestRateCalculator: () =>
+    import('@/tools/calculators/savings-interest-rate/detail'),
+  SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),
+  ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

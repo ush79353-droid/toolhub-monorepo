@@ -101,15 +101,25 @@ export const APPROVED_COMPONENT_KEYS = [
   'ProfitabilityIndexCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
+  'RoceCalculator',
+  'RoiCalculator',
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
   'SalesCommissionCalculator',
   'SellThroughRateCalculator',
+  'SimpleInterestCalculator',
+  'SinkingFundCalculator',
   'SmokersCtcCalculator',
   'TenureCalculator',
+  'TimeValueOfMoneyCalculator',
+  'TtmCalculator',
+  'TreynorRatioCalculator',
   'TurnoverRateCalculator',
   'WebsiteAdRevenueCalculator',
+  'WeekOverWeekCalculator',
   'SoftwareContractValueCalculator',
+  'SortinoRatioCalculator',
+  'YearOverYearGrowthCalculator',
   'YoutubeMoneyCalculator',
   'AnnualizedRateOfReturnCalculator',
   'AppreciationCalculator',
@@ -171,13 +181,22 @@ export const APPROVED_COMPONENT_KEYS = [
   'MutualFundCalculator',
   'MvaCalculator',
   'NopatCalculator',
+  'NpvCalculator',
   'OnlineMarketingConversionCalculator',
   'OperatingAssetTurnoverCalculator',
+  'OptimalHedgeRatioCalculator',
+  'OpportunityCostCalculator',
   'ParkingRatioCalculator',
   'PaybackPeriodCalculator',
+  'PercentageReturnCalculator',
+  'PerpetuityCalculator',
   'PreAndPostMoneyValuationCalculator',
+  'PresentValueCalculator',
   'PriceQuantityCalculator',
   'PvgoCalculator',
+  'PvifaCalculator',
+  'RateOfReturnCalculator',
+  'RealRateOfReturnCalculator',
   'BitcoinEtfCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
@@ -199,6 +218,9 @@ export const APPROVED_COMPONENT_KEYS = [
   'InvestmentCalculator',
   'InvestmentFeeCalculator',
   'JensensAlphaCalculator',
+  'SavingsInterestRateCalculator',
+  'SharpeRatioCalculator',
+  'ValueAtRiskCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -322,15 +344,25 @@ if (isDirect) {
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
     !isApprovedComponentKey('RevenuePerEmployeeCalculator') ||
     !isApprovedComponentKey('RoasCalculator') ||
+    !isApprovedComponentKey('RoceCalculator') ||
+    !isApprovedComponentKey('RoiCalculator') ||
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
+    !isApprovedComponentKey('SimpleInterestCalculator') ||
+    !isApprovedComponentKey('SinkingFundCalculator') ||
     !isApprovedComponentKey('SmokersCtcCalculator') ||
     !isApprovedComponentKey('TenureCalculator') ||
+    !isApprovedComponentKey('TimeValueOfMoneyCalculator') ||
+    !isApprovedComponentKey('TtmCalculator') ||
+    !isApprovedComponentKey('TreynorRatioCalculator') ||
     !isApprovedComponentKey('TurnoverRateCalculator') ||
     !isApprovedComponentKey('WebsiteAdRevenueCalculator') ||
+    !isApprovedComponentKey('WeekOverWeekCalculator') ||
     !isApprovedComponentKey('SoftwareContractValueCalculator') ||
+    !isApprovedComponentKey('SortinoRatioCalculator') ||
+    !isApprovedComponentKey('YearOverYearGrowthCalculator') ||
     !isApprovedComponentKey('YoutubeMoneyCalculator') ||
     !isApprovedComponentKey('AnnualizedRateOfReturnCalculator') ||
     !isApprovedComponentKey('AppreciationCalculator') ||
@@ -392,13 +424,22 @@ if (isDirect) {
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
+    !isApprovedComponentKey('NpvCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
     !isApprovedComponentKey('OperatingAssetTurnoverCalculator') ||
+    !isApprovedComponentKey('OptimalHedgeRatioCalculator') ||
+    !isApprovedComponentKey('OpportunityCostCalculator') ||
     !isApprovedComponentKey('ParkingRatioCalculator') ||
     !isApprovedComponentKey('PaybackPeriodCalculator') ||
+    !isApprovedComponentKey('PercentageReturnCalculator') ||
+    !isApprovedComponentKey('PerpetuityCalculator') ||
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
+    !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
+    !isApprovedComponentKey('PvifaCalculator') ||
+    !isApprovedComponentKey('RateOfReturnCalculator') ||
+    !isApprovedComponentKey('RealRateOfReturnCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('CdCalculator') ||
     !isApprovedComponentKey('CompoundInterestCalculator') ||
@@ -420,6 +461,9 @@ if (isDirect) {
     !isApprovedComponentKey('InvestmentCalculator') ||
     !isApprovedComponentKey('InvestmentFeeCalculator') ||
     !isApprovedComponentKey('JensensAlphaCalculator') ||
+    !isApprovedComponentKey('SavingsInterestRateCalculator') ||
+    !isApprovedComponentKey('SharpeRatioCalculator') ||
+    !isApprovedComponentKey('ValueAtRiskCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
