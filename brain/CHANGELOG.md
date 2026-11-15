@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-15 — Fix backend production build for Node start
+- **Summary:** Switched `backend/tsconfig.json` emit from ESNext/`bundler` to CommonJS/`node` so `npm run build` + `npm start` (`node dist/server.js`) resolves relative imports on the server. Local `npm run dev` (`tsx`) unchanged.
+- **Important Files:** `backend/tsconfig.json`, `brain/BACKEND.md`.
+- **Verification:** `npm run build` emitted `require("./app")`; `node dist/server.js` connected Mongo and listened on port 5001.
+
 ### 2026-11-15 — Add NOPAT Calculator (Screenshot-First)
 - **Summary:** Shipped NOPAT Calculator on existing catalog slug `nopat-calculator` (`NopatCalculator`, catalog `6af46f10a27d8d1d4e9900de`). Simple mode (operating profit × (1 − tax%/100)) and precise mode (income-statement reconstruction). Denomination currency. Omega UI. Activated.
 - **Example:** PKR 500,000 @ 30% → NOPAT PKR 350,000.

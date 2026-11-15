@@ -2,6 +2,7 @@
 
 ## 1. Entry Points & Express Pipeline
 
+- **Build / run:** `npm run build` (`tsc`) emits CommonJS into `dist/`. Production start is `npm start` → `node dist/server.js`. Local development stays `npm run dev` (`tsx watch src/server.ts`). `tsconfig.json` uses `"module": "CommonJS"` + `"moduleResolution": "node"` so Node can resolve compiled relative imports without `.js` extensions (ESNext/`bundler` emit was not Node-runnable).
 - **Server Bootstrap (`backend/src/server.ts`):**
   - Calls `createApp()` and `connectDB()` (non-blocking: if MongoDB fails initially, server logs a warning and starts in `degraded` state).
   - Listens on `env.PORT` (default `5001`).
