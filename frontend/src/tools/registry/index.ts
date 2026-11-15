@@ -1035,6 +1035,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InvestmentFeeCalculator,
     })),
   ),
+  JensensAlphaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/jensens-alpha/JensensAlphaCalculator'
+    ).then((mod) => ({
+      default: mod.JensensAlphaCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

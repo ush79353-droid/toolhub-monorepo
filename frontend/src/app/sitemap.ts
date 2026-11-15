@@ -200,6 +200,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'irr-calculator',
   'investment-calculator',
   'investment-fee-calculator',
+  'jensens-alpha-calculator',
 ] as const;
 
 const STATIC_PATHS = [

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Jensen's Alpha Calculator (Screenshot-First)
+- **Summary:** Shipped Jensen's Alpha Calculator on existing catalog slug `jensens-alpha-calculator` (`JensensAlphaCalculator`, catalog `6af46f0fa27d8d1d4e9900d7`). Portfolio return from beginning/ending values; risk-free rate, beta, market return (default 11%); inline Jensen's alpha. Denomination currency. Omega UI. Activated.
+- **Example:** Beginning 10,000 / Ending 11,500 / Rf 4% / β 1.2 / Rm 11% → portfolio return 15%, expected 12.4%, alpha +2.6%.
+- **Important Files:** `frontend/src/tools/calculators/jensens-alpha/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-jensens-alpha-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Compound Growth Calculator (Screenshot-First)
 - **Summary:** Shipped Compound Growth Calculator on existing catalog slug `compound-growth-calculator` (`CompoundGrowthCalculator`, catalog `6af46f0fa27d8d1d4e9900c9`). Defaults match screenshot; period-by-period contributions; summary table; SVG balance chart; yearly breakdown disclosure. Denomination currency.
 - **Example (standard r/n):** 1,000 @ 8% monthly + 50/mo beginning × 20y → final ≈ 34,574.16 (growth ≈ 21,574.16). Screenshot ~38,916 may use a different undocumented convention.

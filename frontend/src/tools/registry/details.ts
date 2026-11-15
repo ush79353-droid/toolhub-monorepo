@@ -289,6 +289,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InvestmentCalculator: () => import('@/tools/calculators/investment/detail'),
   InvestmentFeeCalculator: () =>
     import('@/tools/calculators/investment-fee/detail'),
+  JensensAlphaCalculator: () =>
+    import('@/tools/calculators/jensens-alpha/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {
