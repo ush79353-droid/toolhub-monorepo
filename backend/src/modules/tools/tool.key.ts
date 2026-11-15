@@ -174,10 +174,13 @@ export const APPROVED_COMPONENT_KEYS = [
   'NpvCalculator',
   'OnlineMarketingConversionCalculator',
   'OperatingAssetTurnoverCalculator',
+  'OptimalHedgeRatioCalculator',
   'OpportunityCostCalculator',
   'ParkingRatioCalculator',
   'PaybackPeriodCalculator',
+  'PercentageReturnCalculator',
   'PreAndPostMoneyValuationCalculator',
+  'PresentValueCalculator',
   'PriceQuantityCalculator',
   'PvgoCalculator',
   'BitcoinEtfCalculator',
@@ -397,10 +400,13 @@ if (isDirect) {
     !isApprovedComponentKey('NpvCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
     !isApprovedComponentKey('OperatingAssetTurnoverCalculator') ||
+    !isApprovedComponentKey('OptimalHedgeRatioCalculator') ||
     !isApprovedComponentKey('OpportunityCostCalculator') ||
     !isApprovedComponentKey('ParkingRatioCalculator') ||
     !isApprovedComponentKey('PaybackPeriodCalculator') ||
+    !isApprovedComponentKey('PercentageReturnCalculator') ||
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
+    !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||

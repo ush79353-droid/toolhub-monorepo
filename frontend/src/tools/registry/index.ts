@@ -929,6 +929,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OperatingAssetTurnoverCalculator,
     })),
   ),
+  OptimalHedgeRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/optimal-hedge-ratio/OptimalHedgeRatioCalculator').then((mod) => ({
+      default: mod.OptimalHedgeRatioCalculator,
+    })),
+  ),
   OpportunityCostCalculator: lazyTool(() =>
     import('@/tools/calculators/opportunity-cost/OpportunityCostCalculator').then((mod) => ({
       default: mod.OpportunityCostCalculator,
@@ -944,9 +949,19 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PaybackPeriodCalculator,
     })),
   ),
+  PercentageReturnCalculator: lazyTool(() =>
+    import('@/tools/calculators/percentage-return/PercentageReturnCalculator').then((mod) => ({
+      default: mod.PercentageReturnCalculator,
+    })),
+  ),
   PreAndPostMoneyValuationCalculator: lazyTool(() =>
     import('@/tools/calculators/pre-and-post-money-valuation/PreAndPostMoneyValuationCalculator').then((mod) => ({
       default: mod.PreAndPostMoneyValuationCalculator,
+    })),
+  ),
+  PresentValueCalculator: lazyTool(() =>
+    import('@/tools/calculators/present-value/PresentValueCalculator').then((mod) => ({
+      default: mod.PresentValueCalculator,
     })),
   ),
   PriceQuantityCalculator: lazyTool(() =>
