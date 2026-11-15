@@ -105,6 +105,22 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ByteConversionCalculator: () => import('@/tools/calculators/byte-conversion/detail'),
   MbpsToGbpsConverter: () => import('@/tools/calculators/mbps-to-gbps/detail'),
   CapacitanceConverter: () => import('@/tools/calculators/capacitance/detail'),
+  MbToGbConverter: () => import('@/tools/calculators/mb-to-gb/detail'),
+  ColorConverter: () => import('@/tools/calculators/color/detail'),
+  RgbToHexConverter: () => import('@/tools/calculators/rgb-to-hex/detail'),
+  HexToRgbConverter: () => import('@/tools/calculators/hex-to-rgb/detail'),
+  UnicodeTextConverter: () => import('@/tools/calculators/unicode-text/detail'),
+  KbToMbConverter: () => import('@/tools/calculators/kb-to-mb/detail'),
+  UnixTimeConverter: () => import('@/tools/calculators/unix-time/detail'),
+  MbpsCalculator: () => import('@/tools/calculators/mbps/detail'),
+  MilitaryTimeConverter: () => import('@/tools/calculators/military-time/detail'),
+  TimeZonesConverter: () => import('@/tools/calculators/time-zones/detail'),
+  MinutesToHoursConverter: () => import('@/tools/calculators/minutes-to-hours/detail'),
+  YearsToDecadesCalculator: () => import('@/tools/calculators/years-to-decades/detail'),
+  TimeUnitConverter: () => import('@/tools/calculators/time-unit/detail'),
+  ZuluTimeConverter: () => import('@/tools/calculators/zulu-time/detail'),
+  AngleConversionCalculator: () => import('@/tools/calculators/angle-conversion/detail'),
+  MsToKmhConverter: () => import('@/tools/calculators/ms-to-kmh/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
@@ -314,6 +330,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/real-rate-of-return/detail'),
   BitcoinEtfCalculator: () =>
     import('@/tools/calculators/bitcoin-etf/detail'),
+  CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
     import('@/tools/calculators/capital-gains-yield/detail'),
   CompoundInterestCalculator: () =>

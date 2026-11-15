@@ -1,4 +1,4 @@
-import { FAQAccordion } from '@/components/shared/FAQAccordion';
+﻿import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { FIFO_INVENTORY_FAQS } from './content';
 
 const sections: { id: string; title: string; body: string[]; formula?: string }[] = [
@@ -55,7 +55,7 @@ export function FifoInventoryGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...FIFO_INVENTORY_FAQS]} />
+            <FAQAccordion items={[...FIFO_INVENTORY_FAQS]} />
           </div>
         </section>
       </div>

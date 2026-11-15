@@ -1,4 +1,4 @@
-import { FAQAccordion } from '@/components/shared/FAQAccordion';
+﻿import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { COST_OF_DOING_BUSINESS_FAQS } from './content';
 
 const sections: { id: string; title: string; body: string[]; formula?: string }[] = [
@@ -52,7 +52,7 @@ export function CostOfDoingBusinessGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...COST_OF_DOING_BUSINESS_FAQS]} />
+            <FAQAccordion items={[...COST_OF_DOING_BUSINESS_FAQS]} />
           </div>
         </section>
       </div>

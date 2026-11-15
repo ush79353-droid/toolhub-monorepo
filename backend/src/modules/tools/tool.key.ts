@@ -93,6 +93,22 @@ export const APPROVED_COMPONENT_KEYS = [
   'ByteConversionCalculator',
   'MbpsToGbpsConverter',
   'CapacitanceConverter',
+  'MbToGbConverter',
+  'ColorConverter',
+  'RgbToHexConverter',
+  'HexToRgbConverter',
+  'UnicodeTextConverter',
+  'KbToMbConverter',
+  'UnixTimeConverter',
+  'MbpsCalculator',
+  'MilitaryTimeConverter',
+  'TimeZonesConverter',
+  'MinutesToHoursConverter',
+  'YearsToDecadesCalculator',
+  'TimeUnitConverter',
+  'ZuluTimeConverter',
+  'AngleConversionCalculator',
+  'MsToKmhConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -340,6 +356,22 @@ if (isDirect) {
     !isApprovedComponentKey('ByteConversionCalculator') ||
     !isApprovedComponentKey('MbpsToGbpsConverter') ||
     !isApprovedComponentKey('CapacitanceConverter') ||
+    !isApprovedComponentKey('MbToGbConverter') ||
+    !isApprovedComponentKey('ColorConverter') ||
+    !isApprovedComponentKey('RgbToHexConverter') ||
+    !isApprovedComponentKey('HexToRgbConverter') ||
+    !isApprovedComponentKey('UnicodeTextConverter') ||
+    !isApprovedComponentKey('KbToMbConverter') ||
+    !isApprovedComponentKey('UnixTimeConverter') ||
+    !isApprovedComponentKey('MbpsCalculator') ||
+    !isApprovedComponentKey('MilitaryTimeConverter') ||
+    !isApprovedComponentKey('TimeZonesConverter') ||
+    !isApprovedComponentKey('MinutesToHoursConverter') ||
+    !isApprovedComponentKey('YearsToDecadesCalculator') ||
+    !isApprovedComponentKey('TimeUnitConverter') ||
+    !isApprovedComponentKey('ZuluTimeConverter') ||
+    !isApprovedComponentKey('AngleConversionCalculator') ||
+    !isApprovedComponentKey('MsToKmhConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

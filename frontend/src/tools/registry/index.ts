@@ -499,6 +499,86 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CapacitanceConverter,
     })),
   ),
+  MbToGbConverter: lazyTool(() =>
+    import('@/tools/calculators/mb-to-gb/MbToGbCalculator').then((mod) => ({
+      default: mod.MbToGbConverter,
+    })),
+  ),
+  ColorConverter: lazyTool(() =>
+    import('@/tools/calculators/color/ColorConverter').then((mod) => ({
+      default: mod.ColorConverter,
+    })),
+  ),
+  RgbToHexConverter: lazyTool(() =>
+    import('@/tools/calculators/rgb-to-hex/RgbToHexConverter').then((mod) => ({
+      default: mod.RgbToHexConverter,
+    })),
+  ),
+  HexToRgbConverter: lazyTool(() =>
+    import('@/tools/calculators/hex-to-rgb/HexToRgbConverter').then((mod) => ({
+      default: mod.HexToRgbConverter,
+    })),
+  ),
+  UnicodeTextConverter: lazyTool(() =>
+    import('@/tools/calculators/unicode-text/UnicodeTextConverter').then((mod) => ({
+      default: mod.UnicodeTextConverter,
+    })),
+  ),
+  KbToMbConverter: lazyTool(() =>
+    import('@/tools/calculators/kb-to-mb/KbToMbConverter').then((mod) => ({
+      default: mod.KbToMbConverter,
+    })),
+  ),
+  UnixTimeConverter: lazyTool(() =>
+    import('@/tools/calculators/unix-time/UnixTimeConverter').then((mod) => ({
+      default: mod.UnixTimeConverter,
+    })),
+  ),
+  MbpsCalculator: lazyTool(() =>
+    import('@/tools/calculators/mbps/MbpsCalculator').then((mod) => ({
+      default: mod.MbpsCalculator,
+    })),
+  ),
+  MilitaryTimeConverter: lazyTool(() =>
+    import('@/tools/calculators/military-time/MilitaryTimeConverter').then((mod) => ({
+      default: mod.MilitaryTimeConverter,
+    })),
+  ),
+  TimeZonesConverter: lazyTool(() =>
+    import('@/tools/calculators/time-zones/TimeZonesConverter').then((mod) => ({
+      default: mod.TimeZonesConverter,
+    })),
+  ),
+  MinutesToHoursConverter: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-hours/MinutesToHoursConverter').then((mod) => ({
+      default: mod.MinutesToHoursConverter,
+    })),
+  ),
+  YearsToDecadesCalculator: lazyTool(() =>
+    import('@/tools/calculators/years-to-decades/YearsToDecadesCalculator').then((mod) => ({
+      default: mod.YearsToDecadesCalculator,
+    })),
+  ),
+  TimeUnitConverter: lazyTool(() =>
+    import('@/tools/calculators/time-unit/TimeUnitConverter').then((mod) => ({
+      default: mod.TimeUnitConverter,
+    })),
+  ),
+  ZuluTimeConverter: lazyTool(() =>
+    import('@/tools/calculators/zulu-time/ZuluTimeConverter').then((mod) => ({
+      default: mod.ZuluTimeConverter,
+    })),
+  ),
+  AngleConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/angle-conversion/AngleConversionCalculator').then((mod) => ({
+      default: mod.AngleConversionCalculator,
+    })),
+  ),
+  MsToKmhConverter: lazyTool(() =>
+    import('@/tools/calculators/ms-to-kmh/MsToKmhConverter').then((mod) => ({
+      default: mod.MsToKmhConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
@@ -1079,6 +1159,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   BitcoinEtfCalculator: lazyTool(() =>
     import('@/tools/calculators/bitcoin-etf/BitcoinEtfCalculator').then((mod) => ({
       default: mod.BitcoinEtfCalculator,
+    })),
+  ),
+  CdCalculator: lazyTool(() =>
+    import('@/tools/calculators/cd/CdCalculator').then((mod) => ({
+      default: mod.CdCalculator,
     })),
   ),
   CapitalGainsYieldCalculator: lazyTool(() =>

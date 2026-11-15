@@ -9,4 +9,5 @@ export const toolPageDetail: ToolPageDetail = {
   tocItems: BUSINESS_LOAN_TOC_ITEMS,
   GuideArticle: BusinessLoanGuideArticle,
   faqs: BUSINESS_LOAN_FAQS,
+  countryRules: null,
 };

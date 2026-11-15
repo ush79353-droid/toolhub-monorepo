@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { siteConfig } from '@/config/site';
 
+const allowIndexing = process.env.SITE_ALLOW_INDEXING === 'true';
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -9,6 +11,9 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  robots: allowIndexing
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
   icons: {
     icon: '/images/logo/icon-with-bg.png',
     apple: '/images/logo/icon-with-bg.png',

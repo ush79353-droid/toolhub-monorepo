@@ -4,6 +4,7 @@
 
 ---
 
+<<<<<<< HEAD
 ### 2026-11-16 — Add Cost of Equity Calculator (Screenshot-First)
 - **Summary:** Shipped Cost of Equity Calculator on existing catalog slug `cost-of-equity-calculator` (`CostOfEquityCalculator`, catalog `6af46f10a27d8d1d4e990154`). Dividend Yes/No radio (Yes default). Yes mode: Dividend per share as D₁, current share price, growth rate % → cost of equity % via Gordon Growth `(D₁/P₀)+g`. Denomination currency (PKR). No mode switchable but CAPM inputs not invented (reference omitted them). Omega UI. Activated.
 - **Example:** D₁ 5 / P₀ 100 / g 4% → 9%.
@@ -27,6 +28,103 @@
 - **Example:** Asset 50/55/50/60, Benchmark 100/110/100/120 → β = 1.00.
 - **Important Files:** `frontend/src/tools/calculators/beta-stock/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-beta-stock-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+=======
+### 2026-11-15 — Add m/s to km/h Converter
+- **Summary:** Shipped m/s to km/h Converter on existing catalog slug `ms-to-kmh-converter` (`MsToKmhConverter`, catalog `6af46f17a27d8d1d4e990c0b`). Main fields m/s, km/h, mph, ft/s, knots plus extras; canonical m/s; live bidirectional sync. Mach omitted. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 10 m/s = 36 km/h ≈ 22.3693629 mph ≈ 32.808399 ft/s ≈ 19.4384449 kn; 72 km/h = 20 m/s.
+- **Important Files:** `frontend/src/tools/calculators/ms-to-kmh/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-ms-to-kmh-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 41/143). Full production build not run this pass.
+
+### 2026-11-15 — Add Angle Conversion Calculator
+- **Summary:** Shipped Angle Conversion Calculator on existing catalog slug `angle-conversion-calculator` (`AngleConversionCalculator`, catalog `6af46f17a27d8d1d4e990bfb`). Degrees, DMS, radians, gradians, turns, π radians, plus arcminutes/arcseconds/microradians and NATO/Soviet/Swedish mils; canonical radians; live field sync. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 90° = π/2 rad = 100 gon = 0.25 turn = 0.5 π rad = 1,600 NATO mils; 45° 30′ 15″ ≈ 45.5041666667°.
+- **Important Files:** `frontend/src/tools/calculators/angle-conversion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-angle-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null). Full production build not run this pass.
+
+### 2026-11-15 — Add Zulu Time Converter
+- **Summary:** Shipped Zulu Time Converter on existing catalog slug `zulu-time-converter` (`ZuluTimeConverter`, catalog `6af46f17a27d8d1d4e990bc3`). Country or IANA zone; conversion date; bidirectional Zulu↔local; DST from IANA rules; gap/fold handling reused from the Time Zones engine. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 2026-01-15 12:00Z → 07:00 EST (America/New_York, UTC−05); 2026-07-15 12:00Z → 08:00 EDT (UTC−04); 12:00Z → 17:30 IST / 17:45 NPT.
+- **Important Files:** `frontend/src/tools/calculators/zulu-time/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-zulu-time-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 39/153). Full production build not run this pass.
+
+### 2026-11-15 — Add Time Unit Converter
+- **Summary:** Shipped Time Unit Converter on existing catalog slug `time-unit-converter` (`TimeUnitConverter`, catalog `6af46f17a27d8d1d4e990bbe`). Seven synchronized fields (years–seconds) plus extra units (ms, µs, ns, fortnights, decades, centuries, millennia). Average year 365.25 days; average month 1/12 of that year. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 24 hours = 1 day = 1,440 minutes = 86,400 seconds; 1 average year = 12 months = 365.25 days = 31,557,600 seconds.
+- **Important Files:** `frontend/src/tools/calculators/time-unit/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-time-unit-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 39/153). Full production build not run this pass.
+
+### 2026-11-15 — Add Years to Decades Calculator
+- **Summary:** Shipped Years to Decades Calculator on existing catalog slug `years-to-decades-calculator` (`YearsToDecadesCalculator`, catalog `6af46f17a27d8d1d4e990bc2`). Bidirectional years↔decades (÷/× 10); DecimalValue path for large and negative values; live field sync. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 25 years = 2.5 decades; 4.5 decades = 45 years; 4,500,000,000 years = 450,000,000 decades.
+- **Important Files:** `frontend/src/tools/calculators/years-to-decades/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-years-to-decades-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 47/154). Full production build not run this pass.
+
+### 2026-11-15 — Add Minutes to Hours Converter
+- **Summary:** Shipped Minutes to Hours Converter on existing catalog slug `minutes-to-hours-converter` (`MinutesToHoursConverter`, catalog `6af46f17a27d8d1d4e990bb4`). Bidirectional hours/minutes/seconds plus HH:MM:SS duration (hours do not wrap at 24); canonical seconds via DecimalValue; negatives supported. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 150 min = 2.5 h = 9000 s = 02:30:00; 04:20:30 = 260.5 min; 1440 min = 24:00:00.
+- **Important Files:** `frontend/src/tools/calculators/minutes-to-hours/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-minutes-to-hours-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 46/156). Full production build not run this pass.
+
+### 2026-11-15 — Add Time Zones Converter
+- **Summary:** Shipped Time Zones Converter on existing catalog slug `time-zones-converter` (`TimeZonesConverter`, catalog `6af46f17a27d8d1d4e990bbf`). Canonical instant + IANA `Intl` conversion; eastern/western accordions; add-city search; DST gap/fold handling; 12/24-hour display. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 2026-11-15 12:00 UTC → London 12:00 · Dubai 16:00 · Karachi 17:00 · Mumbai 17:30 · Tokyo 21:00 · New York 07:00.
+- **Important Files:** `frontend/src/tools/calculators/time-zones/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-time-zones-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 40/155). Full production build not run this pass.
+
+### 2026-11-15 — Add Military Time Converter
+- **Summary:** Shipped Military Time Converter on existing catalog slug `military-time-converter` (`MilitaryTimeConverter`, catalog `6af46f17a27d8d1d4e990baf`). Bidirectional military↔12-hour conversion; HHMM and HH:MM input; hour/minute/AM-PM selectors; midnight/noon handling; hour and minutes charts. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1830 → 6:30 PM · 18:30; 12:00 AM → 0000; 12:00 PM → 1200; 7:45 PM → 1945.
+- **Important Files:** `frontend/src/tools/calculators/military-time/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-military-time-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 43/158). Full production build not run this pass.
+
+### 2026-11-15 — Add Mbps Calculator
+- **Summary:** Shipped Mbps Calculator on existing catalog slug `mbps-calculator` (`MbpsCalculator`, catalog `6af46f17a27d8d1d4e990bcc`). Bidirectional Mbps↔MB/s plus SI bit/byte rate fields (bit/s, kbit/s, Gbit/s, B/s, kB/s, GB/s) via shared bits/s; primary section open by default; bits/bytes accordions; clickable examples. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 100 Mbit/s → 12.5 MB/s · 100000 kbit/s · 0.1 Gbit/s; 1 Gbit/s → 1000 Mbit/s · 125 MB/s.
+- **Important Files:** `frontend/src/tools/calculators/mbps/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mbps-calculator-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 35/150). Full production build not run this pass.
+
+### 2026-11-15 — Add Unix Time Converter
+- **Summary:** Shipped Unix Time Converter on existing catalog slug `unix-time-converter` (`UnixTimeConverter`, catalog `6af46f17a27d8d1d4e990bd2`). Bidirectional Unix↔UTC; seconds/ms unit switch preserving instant; fixed-offset + IANA zone accordions; current/live clock. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** `0` → 1970-01-01T00:00:00Z; `2147483647` → 2038-01-19T03:14:07Z; default `1794744000` → 2026-11-15 12:00:00 UTC.
+- **Important Files:** `frontend/src/tools/calculators/unix-time/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-unix-time-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 39/149). Full production build not run this pass.
+
+### 2026-11-15 — Add kB to MB Converter
+- **Summary:** Shipped kB to MB Converter on existing catalog slug `kb-to-mb-converter` (`KbToMbConverter`, catalog `6af46f17a27d8d1d4e990bca`). Bidirectional kB/KiB ↔ MB ↔ MiB via shared bytes; SI vs IEC labels; optional KiB input mode. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1024 kB → 1.024 MB · 0.9765625 MiB; 1024 KiB → 1 MiB · 1.048576 MB.
+- **Important Files:** `frontend/src/tools/calculators/kb-to-mb/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-kb-to-mb-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 38/160). Full production build not run this pass.
+
+### 2026-11-15 — Add Unicode Text Converter
+- **Summary:** Shipped Unicode Text Converter on existing catalog slug `unicode-text-converter` (`UnicodeTextConverter`, catalog `6af46f17a27d8d1d4e990bd1`). Seven local styles (circled, negative circled, squared, negative squared, inverted, inverted reversed, mathematical monospace); grapheme-safe reverse; per-style copy; compatibility notice. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** `unicode` → circled `ⓤⓝⓘⓒⓞⓓⓔ`, negative circled `🅤🅝🅘🅒🅞🅓🅔`, monospace `𝚞𝚗𝚒𝚌𝚘𝚍𝚎`; `abc` inverted `ɐqɔ` / reversed `ɔqɐ`.
+- **Important Files:** `frontend/src/tools/calculators/unicode-text/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-unicode-text-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 42/156). Full production build not run this pass.
+
+### 2026-11-15 — Add HEX to RGB Converter
+- **Summary:** Shipped HEX to RGB Converter on existing catalog slug `hex-to-rgb-converter` (`HexToRgbConverter`, catalog `6af46f17a27d8d1d4e990bc9`). HEX-first direction radios; optional shorthand 3-digit HEX checkbox; reuses RGB↔HEX engine from `rgb-to-hex`. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** `#FF8300` → `(255, 131, 0)`; `#F80` with shorthand → `(255, 136, 0)`; shorthand off rejects 3-digit with guidance.
+- **Important Files:** `frontend/src/tools/calculators/hex-to-rgb/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-hex-to-rgb-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 40/129 — task meta trimmed to maxlength 160). Full production build not run this pass.
+
+### 2026-11-15 — Add RGB to HEX Converter
+- **Summary:** Shipped RGB to HEX Converter on existing catalog slug `rgb-to-hex-converter` (`RgbToHexConverter`, catalog `6af46f17a27d8d1d4e990bcf`). Bidirectional RGB↔HEX radios; 3/6-digit HEX; live preview; native picker; reuses Color Converter `rgbToHex`. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** RGB 255,100,50 → `#FF6432`; `#3498DB` → RGB 52,152,219; `#F00` → 255,0,0.
+- **Important Files:** `frontend/src/tools/calculators/rgb-to-hex/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-rgb-to-hex-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 40/148). Full production build not run this pass.
+
+### 2026-11-15 — Add Color Converter
+- **Summary:** Shipped Color Converter on existing catalog slug `color-converter` (`ColorConverter`, catalog `6af46f17a27d8d1d4e990bc6`). Source-model dropdown (RGB default) with HEX/RGB/RGBA/HSL/HSLA/HSV/CMYK inputs, canonical sRGB+alpha engine, live checkerboard preview, native color picker, per-format copy, share/reload/clear. CMYK documented as mathematical approximation. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** RGB 255,100,50 → HEX `#FF6432`; RGB 224,224,224 → CMYK ≈ (0%, 0%, 0%, 12.16%).
+- **Important Files:** `frontend/src/tools/calculators/color/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-color-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 35/151). Full production build not run this pass.
+
+### 2026-11-15 — Add MB to GB Converter
+- **Summary:** Shipped MB↔GB converter on existing catalog slug `mb-to-gb-converter` with Base-10 SI (÷/×1000) and Base-2 legacy binary (÷/×1024) modes. Bidirectional editable fields; mode switch keeps the edited number and recalculates the other. Publishing flags preserved; `isDeveloped` set true after verification. Live catalog `_id` is `6af46f17a27d8d1d4e990bcb` (task brief listed `…bcc`).
+- **Example:** Decimal 1000 MB = 1 GB; 1024 MB = 1.024 GB. Binary-mode 1024 → 1; 512 → 0.5.
+- **Important Files:** `frontend/src/tools/calculators/mb-to-gb/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mb-to-gb-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 38/152). Full production build not run this pass.
+>>>>>>> 308f13ae88b5fbe8e268876c19031ab152532a42
 
 ### 2026-11-15 — Add Week Over Week Calculator (Screenshot-First)
 - **Summary:** Shipped Week Over Week Calculator on existing catalog slug `week-over-week-calculator` (`WeekOverWeekCalculator`, catalog `6af46f10a27d8d1d4e9900ef`). Value in initial week + following week → WoW % change ((F−I)/I)×100. Nonzero initial required; zero following allowed; signed %. Collapsed Weekly CAGR section without invented inputs (expanded screenshot required). Copy/share/reset. No currency. Omega UI. Activated.

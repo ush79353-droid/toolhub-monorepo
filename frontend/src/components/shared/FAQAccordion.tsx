@@ -10,7 +10,7 @@ export interface FAQItem {
 }
 
 export interface FAQAccordionProps {
-  items: FAQItem[];
+  items: readonly FAQItem[];
   className?: string;
 }
 

@@ -7,6 +7,7 @@ import {
 import { getPublicCategories } from '@/server/catalog/categories';
 import { getPublicToolBySlug, type PublicToolDetail } from '@/server/catalog/tools';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
+import { isSiteIndexingEnabled } from '@/server/seo/site-indexing';
 import { isRegisteredComponentKey } from '@/tools/registry/keys';
 
 /** Known implemented public tool slugs (registry-backed). Extend when new calculators ship. */
@@ -103,6 +104,22 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'byte-conversion-calculator',
   'mbps-to-gbps-converter',
   'capacitance-converter',
+  'mb-to-gb-converter',
+  'color-converter',
+  'rgb-to-hex-converter',
+  'hex-to-rgb-converter',
+  'unicode-text-converter',
+  'kb-to-mb-converter',
+  'unix-time-converter',
+  'mbps-calculator',
+  'military-time-converter',
+  'time-zones-converter',
+  'minutes-to-hours-converter',
+  'years-to-decades-calculator',
+  'time-unit-converter',
+  'zulu-time-converter',
+  'angle-conversion-calculator',
+  'ms-to-kmh-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
@@ -268,6 +285,11 @@ function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Empty until SITE_ALLOW_INDEXING=true (development / pre-launch lock).
+  if (!isSiteIndexingEnabled()) {
+    return [];
+  }
+
   const origin = getPublicSiteOrigin().replace(/\/+$/, '');
   if (!origin || origin.includes('localhost')) {
     // Avoid publishing localhost URLs; configure NEXT_PUBLIC_SITE_URL / SITE_URL in production.
