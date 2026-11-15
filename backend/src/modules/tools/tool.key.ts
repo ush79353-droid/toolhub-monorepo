@@ -96,6 +96,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MbToGbConverter',
   'ColorConverter',
   'RgbToHexConverter',
+  'HexToRgbConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -342,6 +343,7 @@ if (isDirect) {
     !isApprovedComponentKey('MbToGbConverter') ||
     !isApprovedComponentKey('ColorConverter') ||
     !isApprovedComponentKey('RgbToHexConverter') ||
+    !isApprovedComponentKey('HexToRgbConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
