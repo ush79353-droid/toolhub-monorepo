@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { DiscountRateForm } from './DiscountRateForm';
 import {
   CASH_FLOW_FREQUENCY_OPTIONS,
@@ -16,6 +22,11 @@ import {
 } from './types';
 import { validateDiscountRateInput } from './validation';
 
+const MONEY_FIELDS = ['presentValue', 'futureValue', 'cashFlow'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts PV, FV, and cash flows using stored exchange rates. Term, compounding, and the solved discount rate % stay the same when only currency changes.';
+
 export function DiscountRateCalculator({
   metadata,
   className = '',
@@ -23,22 +34,65 @@ export function DiscountRateCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<DiscountRateInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<DiscountRateFieldErrors>({});
   const [result, setResult] = React.useState<DiscountRateResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const handleChange = (next: DiscountRateInput) => {
-    setInput(next);
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
+  const run = (next: DiscountRateInput) => {
     const validation = validateDiscountRateInput(next);
     setErrors(validation.errors);
     setResult(validation.result);
+  };
+
+  const handleChange = (next: DiscountRateInput) => {
+    setConversionError(null);
+    setInput(next);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      {
+        presentValue: input.presentValue,
+        futureValue: input.futureValue,
+        cashFlow: input.cashFlow,
+      },
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next: DiscountRateInput = {
+      ...input,
+      ...converted.values,
+      currency,
+    };
+    setInput(next);
+    run(next);
   };
 
   const handleReset = () => {
@@ -46,6 +100,7 @@ export function DiscountRateCalculator({
     setInput(fresh);
     setErrors({});
     setResult(null);
+    setConversionError(null);
   };
 
   const symbol = getCurrencySymbol(input.currency);
@@ -65,7 +120,7 @@ export function DiscountRateCalculator({
         `Compounding: ${compoundLabel}`,
         `CF: ${symbol}${input.cashFlow} ${cfFreqLabel} (${input.cashFlowTiming})`,
         `Annual discount rate: ${result.formattedRate}%`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -80,19 +135,27 @@ export function DiscountRateCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Solve the annual discount rate from PV, FV, and optional cash flows.{' '}
-            {CURRENCY_DENOMINATION_NOTE}
+            Solve the annual discount rate from PV, FV, and optional cash flows. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <DiscountRateForm
           input={input}
           errors={errors}
           result={result}
           onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <div className="flex flex-wrap gap-2">

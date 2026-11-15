@@ -2,7 +2,11 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import {
+  CURRENCY_DENOMINATION_NOTE,
+  getCurrencySymbol,
+  type SupportedCurrency,
+} from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   FD_COMPOUNDING_OPTIONS,
@@ -16,6 +20,7 @@ interface FdFormProps {
   errors: FdFieldErrors;
   result: FdResult | null;
   onChange: (input: FdInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -43,7 +48,14 @@ function FieldLabel({
   );
 }
 
-export function FdForm({ input, errors, result, onChange, onReset }: FdFormProps) {
+export function FdForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: FdFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<FdInput>) => onChange({ ...input, ...patch });
 
@@ -106,7 +118,7 @@ export function FdForm({ input, errors, result, onChange, onReset }: FdFormProps
               <CurrencySelect
                 id="fd-principal-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -235,7 +247,7 @@ export function FdForm({ input, errors, result, onChange, onReset }: FdFormProps
                 <CurrencySelect
                   id={`${id}-currency`}
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                   aria-label={`${label} currency`}
                 />
               </div>

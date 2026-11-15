@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import { ExpectedUtilityForm } from './ExpectedUtilityForm';
 import { ExpectedUtilityResults } from './ExpectedUtilityResults';
 import { describeResult } from './calculation';
@@ -16,6 +22,11 @@ import {
 } from './types';
 import { validateExpectedUtilityInput } from './validation';
 
+const MONEY_FIELDS = ['value1', 'value2'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts monetary payoffs using stored exchange rates. Probabilities stay the same.';
+
 export function ExpectedUtilityCalculator({
   metadata,
   className = '',
@@ -23,21 +34,64 @@ export function ExpectedUtilityCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<ExpectedUtilityInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<ExpectedUtilityFieldErrors>({});
   const [result, setResult] = React.useState<ExpectedUtilityResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
   const run = (next: ExpectedUtilityInput) => {
     const validation = validateExpectedUtilityInput(next);
     setErrors(validation.errors);
     setResult(validation.result);
+  };
+
+  const handleChange = (next: ExpectedUtilityInput) => {
+    setConversionError(null);
+    setInput(next);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      {
+        value1: input.value1,
+        value2: input.value2,
+      },
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next: ExpectedUtilityInput = {
+      ...input,
+      ...converted.values,
+      currency,
+    };
+    setInput(next);
+    run(next);
   };
 
   const handleReset = () => {
@@ -47,6 +101,7 @@ export function ExpectedUtilityCalculator({
     setResult(null);
     setCopied(false);
     setShared(false);
+    setConversionError(null);
   };
 
   const summary = result
@@ -56,7 +111,7 @@ export function ExpectedUtilityCalculator({
         `Event 2: ${input.probability2}% · ${input.value2} ${input.currency}`,
         describeResult(result),
         'Assumption: risk-neutral linear utility U(x) = x.',
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -71,21 +126,27 @@ export function ExpectedUtilityCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Two-event expected utility with U(x) = x. {CURRENCY_DENOMINATION_NOTE}
+            Two-event expected utility with U(x) = x. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <ExpectedUtilityForm
           input={input}
           errors={errors}
           result={result}
-          onChange={(next) => {
-            setInput(next);
-            run(next);
-          }}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <ExpectedUtilityResults />

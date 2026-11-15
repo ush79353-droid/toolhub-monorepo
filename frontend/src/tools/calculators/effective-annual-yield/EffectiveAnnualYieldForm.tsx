@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   CouponFrequency,
@@ -50,6 +50,7 @@ interface EffectiveAnnualYieldFormProps {
   errors: EffectiveAnnualYieldFieldErrors;
   result: EffectiveAnnualYieldResult | null;
   onChange: (input: EffectiveAnnualYieldInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -58,6 +59,7 @@ export function EffectiveAnnualYieldForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: EffectiveAnnualYieldFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -99,7 +101,7 @@ export function EffectiveAnnualYieldForm({
               <CurrencySelect
                 id="eay-face-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Face value currency"
               />
             </div>
@@ -135,7 +137,7 @@ export function EffectiveAnnualYieldForm({
               <CurrencySelect
                 id="eay-coupon-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Annual coupon payment currency"
               />
             </div>

@@ -39,6 +39,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'compound-interest-rate-calculator',
   'continuous-compound-interest-calculator',
   'discounted-cash-flow-calculator-dcf',
+  'discount-rate-calculator',
+  'effective-annual-yield-calculator',
+  'expected-utility-calculator',
+  'expense-ratio-calculator',
+  'fd-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';
