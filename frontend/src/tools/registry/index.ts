@@ -877,6 +877,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginInterestCalculator,
     })),
   ),
+  MvaCalculator: lazyTool(() =>
+    import('@/tools/calculators/mva/MvaCalculator').then((mod) => ({
+      default: mod.MvaCalculator,
+    })),
+  ),
   OnlineMarketingConversionCalculator: lazyTool(() =>
     import('@/tools/calculators/online-marketing-conversion/OnlineMarketingConversionCalculator').then((mod) => ({
       default: mod.OnlineMarketingConversionCalculator,

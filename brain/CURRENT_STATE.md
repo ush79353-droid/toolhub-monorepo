@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-15** (Auto Loan is master Tool Detail Page; Compound Growth Calculator live at `/tools/compound-growth-calculator`).
+> **Primary Agent Starting Point.** Last verified: **2026-11-15** (Auto Loan is master Tool Detail Page; MVA Calculator live at `/tools/mva-calculator`).
 
 ---
 
@@ -145,6 +145,7 @@
 - **Compound Interest Calculator (`/tools/compound-interest-calculator`):** Live client-side compound interest tool (`componentKey: 'CompoundInterestCalculator'`, catalog `6af46f0fa27d8d1d4e98ff82`). Defaults 1,000 / 8% / 20y / monthly; optional recurring deposits; final balance + interest; balances bar/pie/table/cash details. Denomination currency. Omega UI. Activated. Tests in `compound-interest/calculation.test.ts` (not run this delivery).
 - **Jensen's Alpha Calculator (`/tools/jensens-alpha-calculator`):** Live client-side CAPM alpha tool (`componentKey: 'JensensAlphaCalculator'`, catalog `6af46f0fa27d8d1d4e9900d7`). Beginning/ending portfolio values → portfolio return; risk-free rate, beta, market return (default 11%) → Jensen's alpha. Denomination currency (PKR). Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Example: 10,000→11,500, Rf 4%, β 1.2, Rm 11% → return 15%, expected 12.4%, alpha +2.6%. Tests in `jensens-alpha/calculation.test.ts` (not run this delivery).
 - **Margin Interest Calculator (`/tools/margin-interest-calculator`):** Live client-side simple margin-loan interest (`componentKey: 'MarginInterestCalculator'`, catalog `6af46f0fa27d8d1d4e98ffa5`). Four fields: amount borrowed, annual interest rate %, number of days, inline margin interest. Formula Amount × (Rate/100) × (Days/360). Defaults 100,000 / 12% / 30 → 1,000. Denomination currency (PKR). Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Lint/builds/browser/automated tests omitted per user.
+- **MVA Calculator (`/tools/mva-calculator`):** Live client-side market value added (`componentKey: 'MvaCalculator'`, catalog `6af46f10a27d8d1d4e9900dd`). Current share price × shares outstanding → current market value; minus capital invested → MVA. Whole-number shares; zeros and negative MVA allowed; no debt/EV inputs. Denomination currency (PKR). Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on. Example: 150 × 10,000 − 1,000,000 = 500,000. Lint/builds/browser/automated tests omitted per user.
 
 ### Partially Implemented / UI Preview Only
 - **Public Directory (`/tools`, `/categories`, `/categories/[slug]`):** `/tools` lists active tools from `GET /catalog/tools`, 24 per page, with name search and a category filter. `/categories` and `/categories/[slug]` read the live catalog. A category page lists active tools only, grouped by pillar and sub-pillar. Header, footer, and the mobile menu use the same live category list. `/tools/[slug]` returns 404 unless the active tool's `componentKey` is registered. Each registered tool's guide lives in its own `detail.tsx`, and the calculator loads with `import()`. `frontend/src/lib/sample-data.ts` is removed.

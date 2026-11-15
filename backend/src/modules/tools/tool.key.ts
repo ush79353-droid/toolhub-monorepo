@@ -164,6 +164,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LiquidNetWorthCalculator',
   'ManHoursCalculator',
   'MarginInterestCalculator',
+  'MvaCalculator',
   'OnlineMarketingConversionCalculator',
   'OperatingAssetTurnoverCalculator',
   'ParkingRatioCalculator',
@@ -378,6 +379,7 @@ if (isDirect) {
     !isApprovedComponentKey('LiquidNetWorthCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
+    !isApprovedComponentKey('MvaCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
     !isApprovedComponentKey('OperatingAssetTurnoverCalculator') ||
     !isApprovedComponentKey('ParkingRatioCalculator') ||

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add MVA Calculator (Screenshot-First)
+- **Summary:** Shipped MVA Calculator on existing catalog slug `mva-calculator` (`MvaCalculator`, catalog `6af46f10a27d8d1d4e9900dd`). Current share price, shares outstanding, inline current market value; capital invested, inline MVA. No debt/EV inputs. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 150 × 10,000 = PKR 1,500,000 market value; − PKR 1,000,000 capital = PKR 500,000 MVA.
+- **Important Files:** `frontend/src/tools/calculators/mva/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mva-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Margin Interest Calculator (Screenshot-First)
 - **Summary:** Shipped Margin Interest Calculator on existing catalog slug `margin-interest-calculator` (`MarginInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ffa5`). Four fields only: amount borrowed, annual rate %, days, inline margin interest. 360-day simple interest. Denomination currency. Omega UI. Activated.
 - **Example:** PKR 100,000 × 12% × (30/360) = PKR 1,000.00.
