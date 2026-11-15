@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 71 |
-| Pending | 34 |
+| Complete (implementation) | 76 |
+| Pending | 29 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 34 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 5 (Batch 15) + 29 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -99,11 +99,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 68 | Man-Hours | `man-hours-calculator` | 14 | Complete | 14b14abe0a1b0b1850d84dcd5582662f3a1cc1c7 | Pending | Synced selectors (×3); hourly pay converts; people/hours/man-hours unchanged |
 | 69 | Online Marketing Conversion | `online-marketing-conversion-calculator` | 14 | Complete | 14b14abe0a1b0b1850d84dcd5582662f3a1cc1c7 | Pending | Synced money selectors; spend and revenue convert; funnel counts and % unchanged |
 | 70 | Operating Asset Turnover | `operating-asset-turnover-calculator` | 14 | Complete | 14b14abe0a1b0b1850d84dcd5582662f3a1cc1c7 | Pending | Synced selectors; assets and sales convert; turnover ratio invariant |
-| 71 | Payback Period | `payback-period-calculator` | 15 | Pending | — | Pending | |
-| 72 | Pre and Post Money Valuation | `pre-and-post-money-valuation-calculator` | 15 | Pending | — | Pending | |
-| 73 | PVGO | `pvgo-calculator` | 15 | Pending | — | Pending | |
-| 74 | Price / Quantity | `price-quantity-calculator` | 15 | Pending | — | Pending | |
-| 75 | Profitability Index | `profitability-index-calculator` | 15 | Pending | — | Pending | |
+| 71 | Payback Period | `payback-period-calculator` | 15 | Complete | cf78d13c6333d9753395ff35f0d248c79eaea000 | Pending | Synced selectors; investment and cash flows convert; payback years unchanged |
+| 72 | Pre and Post Money Valuation | `pre-and-post-money-valuation-calculator` | 15 | Complete | cf78d13c6333d9753395ff35f0d248c79eaea000 | Pending | Synced selector; investment and valuations convert; equity % unchanged |
+| 73 | PVGO | `pvgo-calculator` | 15 | Complete | cf78d13c6333d9753395ff35f0d248c79eaea000 | Pending | Synced selectors; earnings and share price convert; EPS/PVGO method preserved |
+| 74 | Price / Quantity | `price-quantity-calculator` | 15 | Complete | cf78d13c6333d9753395ff35f0d248c79eaea000 | Pending | Synced selector; prices and savings convert; quantities unchanged |
+| 75 | Profitability Index | `profitability-index-calculator` | 15 | Complete | cf78d13c6333d9753395ff35f0d248c79eaea000 | Pending | Synced selectors; investment and PV convert; PI ratio invariant |
 | 76 | Revenue Per Employee | `revenue-per-employee-calculator` | 16 | Pending | — | Pending | |
 | 77 | ROAS | `roas-calculator` | 16 | Pending | — | Pending | |
 | 78 | SaaS Lifetime Value | `saas-lifetime-value-calculator` | 16 | Pending | — | Pending | |
@@ -190,6 +190,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Holding Period Return: bought, current, and dividend convert; all yield percentages unchanged.
 - Impermanent Loss: fiat deposit and token prices in quote currency convert; token quantities and IL % unchanged.
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
+- Manual verification left Pending for user reference comparison.
+
+## Batch 15 notes
+
+- Local commit: `fix(currency): integrate conversion batch 15 calculators` `cf78d13c6333d9753395ff35f0d248c79eaea000`.
+- Provider slug allowlist extended for Batch 15 (preserves prior batches + Margin Interest).
+- Payback Period: synced selectors (×3 pattern); investment, steady annual CF, and irregular years convert; discount % and payback durations unchanged.
+- Pre and Post Money Valuation: synced selector; investment, pre-money, and post-money convert; investor equity % unchanged.
+- PVGO: synced selectors; earnings and share price convert; shares, cost of equity %, and PVGO sign/method unchanged.
+- Price / Quantity: synced selector; pack prices and derived monetary outputs convert; unit quantities unchanged.
+- Profitability Index: synced selectors; initial investment and PV of future CF convert; PI ratio invariant to FX-only changes.
 - Manual verification left Pending for user reference comparison.
 
 ## Batch 14 notes
@@ -284,6 +295,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 15 (#71–#75) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 14 (#66–#70) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 13 (#61–#65) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 12 (#56–#60) implementation Complete; manual verification Pending.
