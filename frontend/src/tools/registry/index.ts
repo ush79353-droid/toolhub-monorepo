@@ -544,6 +544,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MilitaryTimeConverter,
     })),
   ),
+  TimeZonesConverter: lazyTool(() =>
+    import('@/tools/calculators/time-zones/TimeZonesConverter').then((mod) => ({
+      default: mod.TimeZonesConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

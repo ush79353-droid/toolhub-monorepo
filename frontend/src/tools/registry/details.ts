@@ -114,6 +114,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   UnixTimeConverter: () => import('@/tools/calculators/unix-time/detail'),
   MbpsCalculator: () => import('@/tools/calculators/mbps/detail'),
   MilitaryTimeConverter: () => import('@/tools/calculators/military-time/detail'),
+  TimeZonesConverter: () => import('@/tools/calculators/time-zones/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
