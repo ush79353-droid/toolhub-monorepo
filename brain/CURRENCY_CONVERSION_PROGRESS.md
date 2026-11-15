@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 56 |
-| Pending | 49 |
+| Complete (implementation) | 61 |
+| Pending | 44 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 49 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 44 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -84,11 +84,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 53 | CPC and CPM | `cpc-and-cpm-calculator` | 11 | Complete | `fa3faaabdae4f1e80b14e9e2f368eb232086eb81` | Pending | Shared selector; CPC, total cost, CPM convert; impressions/clicks/CTR unchanged |
 | 54 | CPM | `cpm-calculator` | 11 | Complete | `fa3faaabdae4f1e80b14e9e2f368eb232086eb81` | Pending | Per-campaign selector; cost and CPM convert; impressions unchanged |
 | 55 | CAC | `customer-acquisition-cost-calculator` | 11 | Complete | `fa3faaabdae4f1e80b14e9e2f368eb232086eb81` | Pending | Synced selectors; marketing/sales/CAC convert; customer count unchanged |
-| 56 | Direct Material Price Variance | `direct-material-price-variance-calculator` | 12 | Pending | — | Pending | |
-| 57 | EVM | `evm-calculator` | 12 | Pending | — | Pending | |
-| 58 | Effective Corporate Tax Rate | `effective-corporate-tax-rate-calculator` | 12 | Pending | — | Pending | |
-| 59 | EMV | `emv-calculator-expected-monetary-value` | 12 | Pending | — | Pending | |
-| 60 | FIFO Inventory | `fifo-calculator-for-inventory` | 12 | Pending | — | Pending | |
+| 56 | Direct Material Price Variance | `direct-material-price-variance-calculator` | 12 | Complete | `aec07c70cbb7f60c3c0b4633e0266c92070ab6b4` | Pending | Synced selectors; standard/actual rates convert; quantity and variance sign unchanged |
+| 57 | EVM | `evm-calculator` | 12 | Complete | `aec07c70cbb7f60c3c0b4633e0266c92070ab6b4` | Pending | Synced selectors; budget and costs convert; progress % and CPI/SPI unchanged |
+| 58 | Effective Corporate Tax Rate | `effective-corporate-tax-rate-calculator` | 12 | Complete | `aec07c70cbb7f60c3c0b4633e0266c92070ab6b4` | Pending | Shared selectors; EBT and tax paid convert; effective rate % invariant to FX |
+| 59 | EMV | `emv-calculator-expected-monetary-value` | 12 | Complete | `aec07c70cbb7f60c3c0b4633e0266c92070ab6b4` | Pending | Shared selectors; risk impacts convert; probabilities and EMV weighting unchanged |
+| 60 | FIFO Inventory | `fifo-calculator-for-inventory` | 12 | Complete | `aec07c70cbb7f60c3c0b4633e0266c92070ab6b4` | Pending | Synced selectors; lot prices and selling price convert; FIFO qty order and margin % unchanged |
 | 61 | GMROI | `gmroi-calculator-gross-margin-return-on-investment` | 13 | Pending | — | Pending | |
 | 62 | Google AdSense | `google-adsense-calculator` | 13 | Pending | — | Pending | |
 | 63 | High-Low Method | `high-low-method-calculator` | 13 | Pending | — | Pending | |
@@ -192,6 +192,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 12 notes
+
+- Local commit: `fix(currency): integrate conversion batch 12 calculators` `aec07c70cbb7f60c3c0b4633e0266c92070ab6b4`.
+- Provider slug allowlist extended for Batch 12 (preserves prior batches + Margin Interest).
+- Direct Material Price Variance: synced selectors; standard and actual unit rates convert; quantity and favorable/unfavorable status unchanged.
+- EVM: synced selectors; BAC budget and actual cost convert; scheduled/actual progress % and performance indices unchanged.
+- Effective Corporate Tax Rate: shared selectors; earnings before tax and income tax paid convert; effective tax rate % unchanged by FX alone.
+- EMV: shared selectors across risks and total; each risk impact converts; probabilities unchanged.
+- FIFO Inventory: synced selectors; batch purchase prices and selling price convert; unit quantities and gross margin % unchanged.
+- Manual verification left Pending for user reference comparison.
+
 ## Batch 11 notes
 
 - Local commit: `fix(currency): integrate conversion batch 11 calculators` `fa3faaabdae4f1e80b14e9e2f368eb232086eb81`.
@@ -250,6 +261,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 12 (#56–#60) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 11 (#51–#55) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 10 (#46–#50) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 9 (#41–#45) implementation Complete; manual verification Pending.
