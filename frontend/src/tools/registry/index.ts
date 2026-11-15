@@ -899,6 +899,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MovingAverageCalculator,
     })),
   ),
+  MutualFundCalculator: lazyTool(() =>
+    import('@/tools/calculators/mutual-fund/MutualFundCalculator').then((mod) => ({
+      default: mod.MutualFundCalculator,
+    })),
+  ),
   MvaCalculator: lazyTool(() =>
     import('@/tools/calculators/mva/MvaCalculator').then((mod) => ({
       default: mod.MvaCalculator,

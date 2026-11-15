@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-15 — Add Mutual Fund Calculator (Screenshot-First)
+- **Summary:** Shipped Mutual Fund Calculator on existing catalog slug `mutual-fund-calculator` (`MutualFundCalculator`, catalog `6af46f10a27d8d1d4e9900dc`). SIP (default) vs one-time lump sum; investment amount; expected annual return %; years/months; inline maturity value. Monthly compounding. Denomination currency. Omega UI. Activated.
+- **Example:** SIP PKR 1,000 / 12% / 1 year → maturity ≈ PKR 12,682.50.
+- **Important Files:** `frontend/src/tools/calculators/mutual-fund/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mutual-fund-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
 ### 2026-11-15 — Add Money Market Account Calculator (Screenshot-First)
 - **Summary:** Shipped Money Market Account Calculator on existing catalog slug `money-market-account-calculator` (`MoneyMarketAccountCalculator`, catalog `6af46f0fa27d8d1d4e9900da`). SIP (default) vs one-time; starting balance; recurring investment + frequency; expected annual return; years/months; results total deposit / total interest / future value. Monthly compounding default; other frequencies compound per contribution period; end-of-period deposits. Denomination currency. Omega UI. Activated. Registry keys were already present from a prior commit; this delivery adds the calculator module.
 - **Example:** PKR 10,000 + 1,000/mo @ 6% × 1y → deposit 22,000, FV ≈ 22,952.34, interest ≈ 952.34.

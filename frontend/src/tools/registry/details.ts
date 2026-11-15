@@ -248,6 +248,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/money-market-account/detail'),
   MovingAverageCalculator: () =>
     import('@/tools/calculators/moving-average/detail'),
+  MutualFundCalculator: () =>
+    import('@/tools/calculators/mutual-fund/detail'),
   MvaCalculator: () =>
     import('@/tools/calculators/mva/detail'),
   OnlineMarketingConversionCalculator: () =>

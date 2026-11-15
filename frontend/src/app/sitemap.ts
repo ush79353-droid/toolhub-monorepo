@@ -177,6 +177,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'money-factor-calculator',
   'money-market-account-calculator',
   'moving-average-calculator',
+  'mutual-fund-calculator',
   'mva-calculator',
   'nopat-calculator',
   'online-marketing-conversion-calculator',

@@ -168,6 +168,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MoneyFactorCalculator',
   'MoneyMarketAccountCalculator',
   'MovingAverageCalculator',
+  'MutualFundCalculator',
   'MvaCalculator',
   'NopatCalculator',
   'OnlineMarketingConversionCalculator',
@@ -388,6 +389,7 @@ if (isDirect) {
     !isApprovedComponentKey('MoneyFactorCalculator') ||
     !isApprovedComponentKey('MoneyMarketAccountCalculator') ||
     !isApprovedComponentKey('MovingAverageCalculator') ||
+    !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
