@@ -3,7 +3,13 @@
 import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import { BreakEvenForm } from './BreakEvenForm';
 import { BreakEvenResults } from './BreakEvenResults';
 import { calculateBreakEven } from './calculation';
@@ -15,6 +21,11 @@ import {
 } from './types';
 import { validateBreakEvenInput } from './validation';
 
+const MONEY_FIELDS = ['revenuePerUnit', 'costPerUnit', 'fixedCosts'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts fixed costs, price, and variable cost using stored exchange rates. Break-even units and margin/markup % stay the same.';
+
 export function BreakEvenCalculator({
   metadata,
   className = '',
@@ -22,10 +33,17 @@ export function BreakEvenCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<BreakEvenInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<BreakEvenFieldErrors>({});
   const [result, setResult] = React.useState<BreakEvenResult | null>(null);
   const [copied, setCopied] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: BreakEvenInput) => {
     const validation = validateBreakEvenInput(next);
@@ -44,11 +62,43 @@ export function BreakEvenCalculator({
     }
   };
 
+  const handleChange = (next: BreakEvenInput) => {
+    setConversionError(null);
+    setInput(next);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({
+      ...input,
+      ...converted.values,
+      currency,
+    });
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
     setErrors({});
     setResult(null);
+    setConversionError(null);
   };
 
   const handleShare = async () => {
@@ -64,7 +114,7 @@ export function BreakEvenCalculator({
             ? `Units to sell: ${result.formattedUnits}`
             : result.explanation,
           result.breakEvenDefined ? `Break-even revenue: ${result.shareRevenue}` : null,
-          CURRENCY_DENOMINATION_NOTE,
+          currencyNote,
         ]
           .filter(Boolean)
           .join('\n')
@@ -86,21 +136,27 @@ export function BreakEvenCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{CURRENCY_DENOMINATION_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
-      <div className="p-4 sm:p-5">
+      <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <BreakEvenForm
           input={input}
           errors={errors}
           result={result}
           copied={copied}
-          onChange={(next) => {
-            setInput(next);
-            run(next);
-          }}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
           onShare={handleShare}
         />

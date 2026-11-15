@@ -59,6 +59,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'ar-days-calculator',
   'average-collection-period-calculator',
   'average-fixed-cost-calculator',
+  'break-even-calculator',
+  'build-vs-buy-calculator',
+  'burn-rate-calculator',
+  'business-budget-calculator',
+  'business-loan-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import type { BreakEvenFieldErrors, BreakEvenInput, BreakEvenResult } from './types';
 import { EXAMPLE_REVENUE, EXAMPLE_UNITS } from './types';
 
@@ -15,6 +16,7 @@ interface BreakEvenFormProps {
   result: BreakEvenResult | null;
   copied: boolean;
   onChange: (input: BreakEvenInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
   onShare: () => void;
 }
@@ -104,6 +106,7 @@ export function BreakEvenForm({
   result,
   copied,
   onChange,
+  onCurrencyChange,
   onReset,
   onShare,
 }: BreakEvenFormProps) {
@@ -112,7 +115,6 @@ export function BreakEvenForm({
   const [breakEvenOpen, setBreakEvenOpen] = React.useState(true);
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<BreakEvenInput>) => onChange({ ...input, ...patch });
-  const setCurrency = (currency: BreakEvenInput['currency']) => set({ currency });
 
   return (
     <form
@@ -136,7 +138,7 @@ export function BreakEvenForm({
             currencyId="be-revenue-currency"
             error={errors.revenuePerUnit}
             onValueChange={(revenuePerUnit) => set({ revenuePerUnit })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
         </div>
         <div>
@@ -153,7 +155,7 @@ export function BreakEvenForm({
             currencyId="be-cost-currency"
             error={errors.costPerUnit}
             onValueChange={(costPerUnit) => set({ costPerUnit })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
         </div>
         <div>
@@ -170,7 +172,7 @@ export function BreakEvenForm({
             currencyId="be-fixed-currency"
             error={errors.fixedCosts}
             onValueChange={(fixedCosts) => set({ fixedCosts })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
         </div>
       </div>
@@ -277,7 +279,7 @@ export function BreakEvenForm({
               symbol={symbol}
               currency={input.currency}
               currencyId="be-break-revenue-currency"
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
               readOnly
             />
           </div>
