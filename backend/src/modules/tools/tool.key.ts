@@ -164,6 +164,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LiquidNetWorthCalculator',
   'ManHoursCalculator',
   'MarginInterestCalculator',
+  'MirrCalculator',
   'MoneyFactorCalculator',
   'MoneyMarketAccountCalculator',
   'MovingAverageCalculator',
@@ -383,6 +384,7 @@ if (isDirect) {
     !isApprovedComponentKey('LiquidNetWorthCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
+    !isApprovedComponentKey('MirrCalculator') ||
     !isApprovedComponentKey('MoneyFactorCalculator') ||
     !isApprovedComponentKey('MoneyMarketAccountCalculator') ||
     !isApprovedComponentKey('MovingAverageCalculator') ||

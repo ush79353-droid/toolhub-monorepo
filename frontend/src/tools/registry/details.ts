@@ -240,6 +240,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/man-hours/detail'),
   MarginInterestCalculator: () =>
     import('@/tools/calculators/margin-interest/detail'),
+  MirrCalculator: () =>
+    import('@/tools/calculators/mirr/detail'),
   MoneyFactorCalculator: () =>
     import('@/tools/calculators/money-factor/detail'),
   MoneyMarketAccountCalculator: () =>
