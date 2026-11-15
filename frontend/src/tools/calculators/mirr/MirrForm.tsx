@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   INITIAL_YEARS,
@@ -19,6 +19,7 @@ interface MirrFormProps {
   errors: MirrFieldErrors;
   result: MirrResult | null;
   onChange: (input: MirrInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -44,7 +45,14 @@ function FieldLabel({
   );
 }
 
-export function MirrForm({ input, errors, result, onChange, onReset }: MirrFormProps) {
+export function MirrForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: MirrFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const [moreOpen, setMoreOpen] = React.useState(input.cashFlows.length > INITIAL_YEARS);
 
@@ -146,7 +154,7 @@ export function MirrForm({ input, errors, result, onChange, onReset }: MirrFormP
             <CurrencySelect
               id="mirr-currency"
               value={input.currency}
-              onChange={(currency) => onChange({ ...input, currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -191,7 +199,7 @@ export function MirrForm({ input, errors, result, onChange, onReset }: MirrFormP
                     <CurrencySelect
                       id={`mirr-year-${year}-currency`}
                       value={input.currency}
-                      onChange={(currency) => onChange({ ...input, currency })}
+                      onChange={onCurrencyChange}
                     />
                   </div>
                 </div>
@@ -251,7 +259,7 @@ export function MirrForm({ input, errors, result, onChange, onReset }: MirrFormP
                         <CurrencySelect
                           id={`mirr-year-${year}-currency`}
                           value={input.currency}
-                          onChange={(currency) => onChange({ ...input, currency })}
+                          onChange={onCurrencyChange}
                         />
                       </div>
                     </div>

@@ -106,6 +106,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'website-ad-revenue-calculator',
   'youtube-money-calculator',
   'jensens-alpha-calculator',
+  'mva-calculator',
+  'mirr-calculator',
+  'money-market-account-calculator',
+  'moving-average-calculator',
+  'mutual-fund-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';

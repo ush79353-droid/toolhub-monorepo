@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   CONTRIBUTION_FREQUENCY_OPTIONS,
@@ -47,6 +47,7 @@ interface MoneyMarketAccountFormProps {
   errors: MoneyMarketAccountFieldErrors;
   result: MoneyMarketAccountResult | null;
   onChange: (input: MoneyMarketAccountInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -55,6 +56,7 @@ export function MoneyMarketAccountForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: MoneyMarketAccountFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -89,7 +91,7 @@ export function MoneyMarketAccountForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -158,7 +160,7 @@ export function MoneyMarketAccountForm({
               <CurrencySelect
                 id="mma-starting-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Starting balance currency"
               />
             </div>
@@ -195,7 +197,7 @@ export function MoneyMarketAccountForm({
                 <CurrencySelect
                   id="mma-recurring-currency"
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                   aria-label="Recurring investment currency"
                 />
               </div>
