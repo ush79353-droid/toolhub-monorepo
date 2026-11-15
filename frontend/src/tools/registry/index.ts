@@ -914,6 +914,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NopatCalculator,
     })),
   ),
+  NpvCalculator: lazyTool(() =>
+    import('@/tools/calculators/npv/NpvCalculator').then((mod) => ({
+      default: mod.NpvCalculator,
+    })),
+  ),
   OnlineMarketingConversionCalculator: lazyTool(() =>
     import('@/tools/calculators/online-marketing-conversion/OnlineMarketingConversionCalculator').then((mod) => ({
       default: mod.OnlineMarketingConversionCalculator,

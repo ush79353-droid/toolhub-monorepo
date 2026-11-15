@@ -180,6 +180,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mutual-fund-calculator',
   'mva-calculator',
   'nopat-calculator',
+  'npv-calculator-net-present-value',
   'online-marketing-conversion-calculator',
   'operating-asset-turnover-calculator',
   'parking-ratio-calculator',

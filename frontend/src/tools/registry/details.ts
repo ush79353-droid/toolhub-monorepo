@@ -254,6 +254,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mva/detail'),
   NopatCalculator: () =>
     import('@/tools/calculators/nopat/detail'),
+  NpvCalculator: () =>
+    import('@/tools/calculators/npv/detail'),
   OnlineMarketingConversionCalculator: () =>
     import('@/tools/calculators/online-marketing-conversion/detail'),
   OperatingAssetTurnoverCalculator: () =>
