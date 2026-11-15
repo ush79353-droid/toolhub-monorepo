@@ -1,4 +1,12 @@
-import { calculateMarginInterest } from './calculation';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  type CurrencyRatesSnapshot,
+} from '@/tools/shared/currency-rates';
+import {
+  calculateMarginInterestInBorrowed,
+  formatMarginInterestAmount,
+} from './calculation';
 import type {
   MarginInterestFieldErrors,
   MarginInterestInput,
@@ -26,8 +34,13 @@ function parseNumber(raw: string): {
   return { value, blank: false, invalid: false };
 }
 
+/**
+ * Validates inputs, computes interest in the borrowed currency at full precision,
+ * then converts that interest into `resultCurrency` before display rounding.
+ */
 export function validateMarginInterestInput(
-  input: MarginInterestInput
+  input: MarginInterestInput,
+  rates?: CurrencyRatesSnapshot | null
 ): MarginInterestValidation {
   const errors: MarginInterestFieldErrors = {};
 
@@ -60,17 +73,46 @@ export function validateMarginInterestInput(
     return { isValid: false, errors, result: null };
   }
 
-  const result = calculateMarginInterest({
+  const interestInBorrowed = calculateMarginInterestInBorrowed({
     amountBorrowed: amount.value!,
     interestRatePercent: rate.value!,
     numberOfDays: days.value!,
-    currency: input.currency,
   });
 
-  if (!result) {
+  if (interestInBorrowed === null) {
     errors.form = 'This combination does not produce a finite result.';
     return { isValid: false, errors, result: null };
   }
+
+  let marginInterestInResult = interestInBorrowed;
+  if (input.resultCurrency !== input.currency) {
+    if (!rates?.available) {
+      errors.form = CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+      return { isValid: false, errors, result: null };
+    }
+    const converted = convertCurrency({
+      amount: interestInBorrowed,
+      from: input.currency,
+      to: input.resultCurrency,
+      rates: rates.rates,
+    });
+    if (!converted.ok) {
+      errors.form = CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+      return { isValid: false, errors, result: null };
+    }
+    marginInterestInResult = converted.amount;
+  }
+
+  const result: MarginInterestResult = {
+    marginInterest: marginInterestInResult,
+    marginInterestInBorrowed: interestInBorrowed,
+    currency: input.resultCurrency,
+    borrowedCurrency: input.currency,
+    formattedMarginInterest: formatMarginInterestAmount(
+      marginInterestInResult,
+      input.resultCurrency
+    ),
+  };
 
   return { isValid: true, errors: {}, result };
 }

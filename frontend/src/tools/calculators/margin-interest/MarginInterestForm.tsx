@@ -7,6 +7,7 @@ import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { convertCurrency } from '@/tools/shared/convert-currency';
 import {
   CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
 } from '@/tools/shared/currency-rates';
 import {
   useCurrencyRates,
@@ -67,23 +68,44 @@ export function MarginInterestForm({
   const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const [conversionError, setConversionError] = React.useState<string | null>(null);
-  const symbol = getCurrencySymbol(input.currency);
+  const borrowedSymbol = getCurrencySymbol(input.currency);
+  const resultSymbol = getCurrencySymbol(input.resultCurrency);
+
   const set = (patch: Partial<MarginInterestInput>) => {
     setConversionError(null);
     onChange({ ...input, ...patch });
   };
 
-  const handleCurrencyChange = (next: SupportedCurrency) => {
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  /** Convert borrowed amount; leave result currency and non-money fields alone. */
+  const handleBorrowedCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.currency) return;
 
     const amount = parseMoneyInput(input.amountBorrowed);
     if (!Number.isFinite(amount)) {
+      if (input.resultCurrency !== next && !canConvertPair(next, input.resultCurrency)) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
       setConversionError(null);
       onChange({ ...input, currency: next });
       return;
     }
 
-    if (!rates.available) {
+    if (!canConvertPair(input.currency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    if (input.resultCurrency !== next && !canConvertPair(next, input.resultCurrency)) {
       setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
       return;
     }
@@ -106,6 +128,19 @@ export function MarginInterestForm({
       currency: next,
       amountBorrowed: moneyAmountToInputString(converted.amount),
     });
+  };
+
+  /** Change result display currency only — no change to borrowed amount/rate/days. */
+  const handleResultCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.resultCurrency) return;
+
+    if (!canConvertPair(input.currency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    setConversionError(null);
+    onChange({ ...input, resultCurrency: next });
   };
 
   return (
@@ -131,7 +166,7 @@ export function MarginInterestForm({
           <div className="flex gap-2">
             <FieldShell error={errors.amountBorrowed}>
               <span className="shrink-0 pl-3 text-sm text-muted-foreground" aria-hidden="true">
-                {symbol}
+                {borrowedSymbol}
               </span>
               <input
                 id="mi-amount"
@@ -146,8 +181,8 @@ export function MarginInterestForm({
               <CurrencySelect
                 id="mi-currency"
                 value={input.currency}
-                onChange={handleCurrencyChange}
-                aria-label="Currency"
+                onChange={handleBorrowedCurrencyChange}
+                aria-label="Borrowed amount currency"
               />
             </div>
           </div>
@@ -221,21 +256,31 @@ export function MarginInterestForm({
             <span>Margin interest</span>
             <InfoTooltip
               label="Margin interest"
-              text={`Simple interest = amount × rate/100 × days/${MARGIN_INTEREST_DAY_BASIS}.`}
+              text={`Simple interest = amount × rate/100 × days/${MARGIN_INTEREST_DAY_BASIS}, then converted into the result currency.`}
             />
           </label>
-          <FieldShell muted>
-            <span className="shrink-0 pl-3 text-sm text-muted-foreground" aria-hidden="true">
-              {symbol}
-            </span>
-            <input
-              id="mi-result"
-              className={`${inputClass} font-semibold`}
-              readOnly
-              value={result ? result.formattedMarginInterest : ''}
-              aria-live="polite"
-            />
-          </FieldShell>
+          <div className="flex gap-2">
+            <FieldShell muted>
+              <span className="shrink-0 pl-3 text-sm text-muted-foreground" aria-hidden="true">
+                {resultSymbol}
+              </span>
+              <input
+                id="mi-result"
+                className={`${inputClass} font-semibold`}
+                readOnly
+                value={result ? result.formattedMarginInterest : ''}
+                aria-live="polite"
+              />
+            </FieldShell>
+            <div className="w-[110px] shrink-0 sm:w-[120px]">
+              <CurrencySelect
+                id="mi-result-currency"
+                value={input.resultCurrency}
+                onChange={handleResultCurrencyChange}
+                aria-label="Margin interest currency"
+              />
+            </div>
+          </div>
         </div>
 
         {errors.form ? <p className="text-xs text-rose-600">{errors.form}</p> : null}

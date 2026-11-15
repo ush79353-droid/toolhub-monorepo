@@ -8,7 +8,10 @@ import { getCurrencySymbol } from '@/tools/shared/currency';
 import {
   CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
 } from '@/tools/shared/currency-rates';
-import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { MarginInterestForm } from './MarginInterestForm';
 import {
   createDefaultInput,
@@ -18,9 +21,9 @@ import {
 } from './types';
 import { validateMarginInterestInput } from './validation';
 
-/** Pilot copy — amounts convert using the stored MongoDB rate snapshot. */
+/** Pilot copy — borrowed and result currencies are independent. */
 const MARGIN_INTEREST_CURRENCY_NOTE =
-  'Changing currency converts the borrowed amount and margin interest using stored exchange rates. Rate and days stay the same.';
+  'Borrowed amount and margin interest each have their own currency. Changing borrowed currency converts that amount; changing result currency only re-expresses the interest.';
 
 export function MarginInterestCalculator({
   metadata,
@@ -29,9 +32,10 @@ export function MarginInterestCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
-  const initial = validateMarginInterestInput(defaults);
+  const initial = validateMarginInterestInput(defaults, rates);
   const [input, setInput] = React.useState<MarginInterestInput>(() => defaults);
   const [errors, setErrors] = React.useState<MarginInterestFieldErrors>(
     () => initial.errors
@@ -49,14 +53,14 @@ export function MarginInterestCalculator({
 
   const apply = (next: MarginInterestInput) => {
     setInput(next);
-    const validation = validateMarginInterestInput(next);
+    const validation = validateMarginInterestInput(next, rates);
     setErrors(validation.errors);
     setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
-    const validation = validateMarginInterestInput(fresh);
+    const validation = validateMarginInterestInput(fresh, rates);
     setInput(fresh);
     setErrors(validation.errors);
     setResult(validation.result);
@@ -67,14 +71,15 @@ export function MarginInterestCalculator({
   const currencyNote = ratesStatus.available
     ? MARGIN_INTEREST_CURRENCY_NOTE
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
-  const symbol = getCurrencySymbol(input.currency);
+  const borrowedSymbol = getCurrencySymbol(input.currency);
+  const resultSymbol = getCurrencySymbol(result?.currency ?? input.resultCurrency);
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
-        `Amount borrowed: ${symbol}${input.amountBorrowed}`,
+        `Amount borrowed: ${borrowedSymbol}${input.amountBorrowed}`,
         `Interest rate: ${input.interestRatePercent}%`,
         `Number of days: ${input.numberOfDays}`,
-        `Margin interest: ${symbol}${result.formattedMarginInterest}`,
+        `Margin interest: ${resultSymbol}${result.formattedMarginInterest}`,
         currencyNote,
       ].join('\n')
     : '';

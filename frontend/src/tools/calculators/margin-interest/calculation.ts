@@ -2,12 +2,14 @@ import {
   getCurrencyFractionDigits,
   type SupportedCurrency,
 } from '@/tools/shared/currency';
-import type { MarginInterestResult } from './types';
 
 /** Brokerage-style simple interest uses a 360-day year. */
 export const MARGIN_INTEREST_DAY_BASIS = 360;
 
-function formatMoney(amount: number, currency: SupportedCurrency): string {
+export function formatMarginInterestAmount(
+  amount: number,
+  currency: SupportedCurrency
+): string {
   const digits = Math.max(2, getCurrencyFractionDigits(currency));
   return new Intl.NumberFormat('en-US', {
     minimumFractionDigits: digits,
@@ -17,14 +19,14 @@ function formatMoney(amount: number, currency: SupportedCurrency): string {
 
 /**
  * Margin Interest = Amount Borrowed × (Annual Rate / 100) × (Days / 360)
+ * Full-precision result in the borrowed amount's currency.
  */
-export function calculateMarginInterest(input: {
+export function calculateMarginInterestInBorrowed(input: {
   amountBorrowed: number;
   interestRatePercent: number;
   numberOfDays: number;
-  currency: SupportedCurrency;
-}): MarginInterestResult | null {
-  const { amountBorrowed, interestRatePercent, numberOfDays, currency } = input;
+}): number | null {
+  const { amountBorrowed, interestRatePercent, numberOfDays } = input;
 
   if (![amountBorrowed, interestRatePercent, numberOfDays].every(Number.isFinite)) {
     return null;
@@ -36,11 +38,5 @@ export function calculateMarginInterest(input: {
   const marginInterest =
     amountBorrowed * (interestRatePercent / 100) * (numberOfDays / MARGIN_INTEREST_DAY_BASIS);
 
-  if (!Number.isFinite(marginInterest)) return null;
-
-  return {
-    marginInterest,
-    currency,
-    formattedMarginInterest: formatMoney(marginInterest, currency),
-  };
+  return Number.isFinite(marginInterest) ? marginInterest : null;
 }
