@@ -117,6 +117,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TimeZonesConverter: () => import('@/tools/calculators/time-zones/detail'),
   MinutesToHoursConverter: () => import('@/tools/calculators/minutes-to-hours/detail'),
   YearsToDecadesCalculator: () => import('@/tools/calculators/years-to-decades/detail'),
+  TimeUnitConverter: () => import('@/tools/calculators/time-unit/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

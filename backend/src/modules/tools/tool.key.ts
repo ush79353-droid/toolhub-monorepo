@@ -105,6 +105,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TimeZonesConverter',
   'MinutesToHoursConverter',
   'YearsToDecadesCalculator',
+  'TimeUnitConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -360,6 +361,7 @@ if (isDirect) {
     !isApprovedComponentKey('TimeZonesConverter') ||
     !isApprovedComponentKey('MinutesToHoursConverter') ||
     !isApprovedComponentKey('YearsToDecadesCalculator') ||
+    !isApprovedComponentKey('TimeUnitConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
