@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Money Market Account Calculator (Screenshot-First)
+- **Summary:** Shipped Money Market Account Calculator on existing catalog slug `money-market-account-calculator` (`MoneyMarketAccountCalculator`, catalog `6af46f0fa27d8d1d4e9900da`). SIP (default) vs one-time; starting balance; recurring investment + frequency; expected annual return; years/months; results total deposit / total interest / future value. Monthly compounding default; other frequencies compound per contribution period; end-of-period deposits. Denomination currency. Omega UI. Activated. Registry keys were already present from a prior commit; this delivery adds the calculator module.
+- **Example:** PKR 10,000 + 1,000/mo @ 6% × 1y → deposit 22,000, FV ≈ 22,952.34, interest ≈ 952.34.
+- **Important Files:** `frontend/src/tools/calculators/money-market-account/*`, `backend/src/scripts/assign-money-market-account-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Moving Average Calculator (Screenshot-First)
 - **Summary:** Shipped Moving Average Calculator on existing catalog slug `moving-average-calculator` (`MovingAverageCalculator`, catalog `6af46f0fa27d8d1d4e9900db`). Length N (≥2), three starter price fields with auto-trailing rows, incomplete guidance message, inline SMA of latest N prices. Denomination currency. Omega UI. Activated.
 - **Example:** Length 3 with 100/120/140 → PKR 120; with fourth price 160 → PKR 140.
