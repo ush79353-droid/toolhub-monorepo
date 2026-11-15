@@ -201,6 +201,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Effective Corporate Tax Rate: shared selectors; earnings before tax and income tax paid convert; effective tax rate % unchanged by FX alone.
 - EMV: shared selectors across risks and total; each risk impact converts; probabilities unchanged.
 - FIFO Inventory: synced selectors; batch purchase prices and selling price convert; unit quantities and gross margin % unchanged.
+- Progress commit: `Progress #56-60 Complete; totals 61/44; Batch 12 notes` `261515914f42ad48efa3a59c7fa3753f3d1ab6c5`.
 - Manual verification left Pending for user reference comparison.
 
 ## Batch 11 notes
