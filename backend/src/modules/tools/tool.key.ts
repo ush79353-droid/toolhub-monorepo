@@ -101,6 +101,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ProfitabilityIndexCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
+  'RoiCalculator',
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
   'SalesCommissionCalculator',
@@ -185,6 +186,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PriceQuantityCalculator',
   'PvgoCalculator',
   'PvifaCalculator',
+  'RateOfReturnCalculator',
   'BitcoinEtfCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
@@ -329,6 +331,7 @@ if (isDirect) {
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
     !isApprovedComponentKey('RevenuePerEmployeeCalculator') ||
     !isApprovedComponentKey('RoasCalculator') ||
+    !isApprovedComponentKey('RoiCalculator') ||
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
@@ -413,6 +416,7 @@ if (isDirect) {
     !isApprovedComponentKey('PriceQuantityCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('PvifaCalculator') ||
+    !isApprovedComponentKey('RateOfReturnCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('CdCalculator') ||
     !isApprovedComponentKey('CompoundInterestCalculator') ||

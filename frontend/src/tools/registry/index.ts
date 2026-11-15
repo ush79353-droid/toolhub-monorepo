@@ -984,6 +984,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PvifaCalculator,
     })),
   ),
+  RateOfReturnCalculator: lazyTool(() =>
+    import('@/tools/calculators/rate-of-return/RateOfReturnCalculator').then((mod) => ({
+      default: mod.RateOfReturnCalculator,
+    })),
+  ),
   BitcoinEtfCalculator: lazyTool(() =>
     import('@/tools/calculators/bitcoin-etf/BitcoinEtfCalculator').then((mod) => ({
       default: mod.BitcoinEtfCalculator,

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Rate of Return Calculator (Screenshot-First)
+- **Summary:** Shipped Rate of Return Calculator on existing catalog slug `rate-of-return-calculator` (`RateOfReturnCalculator`, catalog `6af46f0fa27d8d1d4e990013`). Main specifications (initial investment, final amount, investment length yrs/mos, compounding) plus interim periodic cash flows (deposit/withdrawal, frequency, end/beginning timing); statement result for annual nominal rate. Closed form without PMT; numerical solve with PMT. Distinct from Annualized Return / Annualized Rate of Return / Percentage Return. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 1,000 → 5,000 / 10 years / monthly compounding / PMT 0 → ≈ 16.203%.
+- **Important Files:** `frontend/src/tools/calculators/rate-of-return/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-rate-of-return-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Percentage Return Calculator (Screenshot-First)
 - **Summary:** Shipped Percentage Return Calculator on existing catalog slug `percentage-return-calculator` (`PercentageReturnCalculator`, catalog `6af46f10a27d8d1d4e9900e2`). Basic gain/loss + % return; annualized CAGR with start/end/duration sync (365.25-day year); time-needed solve via ln formula. Compare checkbox present without invented comparison fields. Distinct from Annualized Return tools. Denomination currency. Omega UI. Activated.
 - **Example:** PKR 10,000 → 12,100 over 2 years → gain 2,100; return 21%; annualized 10%.
