@@ -26,8 +26,15 @@ import { isApprovedComponentKey, isRegisteredComponentKey } from '@/tools/regist
 import { CurrencyRatesProvider } from '@/tools/shared/CurrencyRatesProvider';
 import type { ToolMetadata } from '@/types/tool';
 
-/** Phase 3 pilot: real FX conversion for this slug only. */
-const CURRENCY_CONVERSION_PILOT_SLUG = 'margin-interest-calculator';
+/** Phase 3: load FX rates only for conversion-enabled calculators. */
+const CURRENCY_CONVERSION_SLUGS = new Set([
+  'margin-interest-calculator',
+  '12-hour-shift-pay-calculator',
+  '3x-rent-calculator',
+  '401k-calculator',
+  '403b-calculator',
+  '529-calculator',
+]);
 
 function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {
   return {
@@ -132,8 +139,9 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
     notFound();
   }
 
-  const currencyRates =
-    dbTool.slug === CURRENCY_CONVERSION_PILOT_SLUG ? await getCurrencyRates() : null;
+  const currencyRates = CURRENCY_CONVERSION_SLUGS.has(dbTool.slug)
+    ? await getCurrencyRates()
+    : null;
 
   const GuideArticleComponent = pageDetail.GuideArticle;
     const sidebarGroupLabel = pillarName || categoryName;

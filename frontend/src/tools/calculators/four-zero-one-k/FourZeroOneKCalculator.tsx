@@ -4,7 +4,15 @@ import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import { calculateFourZeroOneK } from './calculation';
 import {
   DEFAULT_FOUR_ZERO_ONE_K_DRAFT,
@@ -16,11 +24,28 @@ import { FourZeroOneKResults } from './FourZeroOneKResults';
 import type { FourZeroOneKFieldErrors, FourZeroOneKResult } from './types';
 import { validateFourZeroOneK } from './validation';
 
+/** Money fields in the selected currency. USD statutory limit fields stay in USD. */
+const MONEY_FIELDS = [
+  'balance',
+  'annualSalary',
+  'salaryCap',
+  'employeeFixedAnnual',
+  'extraEmployerAnnual',
+  'targetBalance',
+] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts balances, salary, and dollar contributions using stored exchange rates. Percents, ages, and USD statutory limits stay as entered.';
+
 function formatPercent(decimal: number): string {
   return `${new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(decimal * 100)}%`;
 }
 
-function summaryText(result: FourZeroOneKResult, currency: FourZeroOneKDraft['currency']): string {
+function summaryText(
+  result: FourZeroOneKResult,
+  currency: FourZeroOneKDraft['currency'],
+  note: string
+): string {
   const money = (value: number) => formatCurrencyValue(value, currency);
   const lines = [
     '401(k) Calculator — Omega Calculators',
@@ -44,7 +69,7 @@ function summaryText(result: FourZeroOneKResult, currency: FourZeroOneKDraft['cu
   }
   if (result.impossible) lines.push('The target is out of reach under these limits.');
   lines.push('Projection from these assumptions, not a guaranteed return.');
-  lines.push(CURRENCY_DENOMINATION_NOTE);
+  lines.push(note);
   return lines.join('\n');
 }
 
@@ -55,16 +80,23 @@ export function FourZeroOneKCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<FourZeroOneKDraft>(DEFAULT_FOUR_ZERO_ONE_K_DRAFT);
   const [errors, setErrors] = React.useState<FourZeroOneKFieldErrors>({});
   const [result, setResult] = React.useState<FourZeroOneKResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const evaluate = React.useCallback((next: FourZeroOneKDraft) => {
     const parsed = draftToInput(next);
@@ -77,7 +109,30 @@ export function FourZeroOneKCalculator({
     evaluate(DEFAULT_FOUR_ZERO_ONE_K_DRAFT);
   }, [evaluate]);
 
-  const sharePayload = result ? summaryText(result, draft.currency) : '';
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next = { ...draft, ...converted.values, currency } as FourZeroOneKDraft;
+    setDraft(next);
+    evaluate(next);
+  };
+
+  const sharePayload = result ? summaryText(result, draft.currency, currencyNote) : '';
 
   return (
     <section
@@ -101,21 +156,26 @@ export function FourZeroOneKCalculator({
               id="fok-currency"
               aria-label="Display currency"
               value={draft.currency}
-              onChange={(currency) => {
-                const next = { ...draft, currency };
-                setDraft(next);
-                evaluate(next);
-              }}
+              onChange={handleCurrencyChange}
             />
           </div>
         </div>
       </div>
       <div className="space-y-4 p-4 sm:p-5">
-        <p className="text-xs font-normal leading-relaxed text-muted-foreground">{CURRENCY_DENOMINATION_NOTE}</p>
+        <p className="text-xs font-normal leading-relaxed text-muted-foreground">{currencyNote}</p>
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <FourZeroOneKForm
           draft={draft}
           errors={errors}
           onDraftChange={(next) => {
+            setConversionError(null);
             setDraft(next);
             evaluate(next);
           }}
@@ -127,6 +187,7 @@ export function FourZeroOneKCalculator({
             setDraft(DEFAULT_FOUR_ZERO_ONE_K_DRAFT);
             setCopied(false);
             setShared(false);
+            setConversionError(null);
             evaluate(DEFAULT_FOUR_ZERO_ONE_K_DRAFT);
           }}
         />

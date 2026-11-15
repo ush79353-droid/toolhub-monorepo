@@ -4,7 +4,15 @@ import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import { calculateFiveTwentyNine } from './calculation';
 import {
   DEFAULT_FIVE_TWENTY_NINE_INPUT,
@@ -21,7 +29,20 @@ import {
 } from './FiveTwentyNineForm';
 import { FiveTwentyNineResults } from './FiveTwentyNineResults';
 
-function summaryText(result: FiveTwentyNineResult): string {
+const MONEY_FIELDS = [
+  'currentAnnualCost',
+  'annualScholarship',
+  'currentBalance',
+  'initialLumpSum',
+  'monthlyContribution',
+  'additionalAnnualContribution',
+  'annualContributionAlert',
+] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts education costs, balances, and contributions using stored exchange rates. Ages, years, and percents stay the same. US 529 tax treatment is unchanged.';
+
+function summaryText(result: FiveTwentyNineResult, note: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   const required =
     result.requiredMonthlyContribution === null
@@ -35,9 +56,8 @@ function summaryText(result: FiveTwentyNineResult): string {
     `Covered by the 529: ${money(result.coveredByPlan)}. Gap: ${money(result.fundingGap)}. Surplus: ${money(result.surplusBalance)}.`,
     required,
     'Estimate only. Not guaranteed investment performance and not tax advice.',
-    'Changing the currency symbol does not convert amounts and does not change US 529 tax treatment.',
+    note,
     MONTHLY_RATE_NOTE,
-    CURRENCY_DENOMINATION_NOTE,
   ].join('\n');
 }
 
@@ -48,12 +68,19 @@ export function FiveTwentyNineCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<FiveTwentyNineDraft>(() => inputToDraft(DEFAULT_FIVE_TWENTY_NINE_INPUT));
   const [errors, setErrors] = React.useState<FiveTwentyNineFieldErrors>({});
   const [result, setResult] = React.useState<FiveTwentyNineResult | null>(() =>
     calculateFiveTwentyNine(DEFAULT_FIVE_TWENTY_NINE_INPUT)
   );
   const [copied, setCopied] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const evaluate = React.useCallback((next: FiveTwentyNineDraft) => {
     const parsed = draftToInput(next);
@@ -61,6 +88,29 @@ export function FiveTwentyNineCalculator({
     setErrors(validation.errors);
     setResult(validation.isValid ? calculateFiveTwentyNine(parsed) : null);
   }, []);
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next = { ...draft, ...converted.values, currency } as FiveTwentyNineDraft;
+    setDraft(next);
+    evaluate(next);
+  };
 
   return (
     <section
@@ -84,24 +134,26 @@ export function FiveTwentyNineCalculator({
               id="ftn-currency"
               aria-label="Display currency"
               value={draft.currency}
-              onChange={(currency) => {
-                const next = { ...draft, currency };
-                setDraft(next);
-                evaluate(next);
-              }}
+              onChange={handleCurrencyChange}
             />
           </div>
         </div>
       </div>
       <div className="space-y-4 p-4 sm:p-5">
-        <p className="text-xs leading-relaxed text-muted-foreground">
-          A 529 plan is a US education savings arrangement. USD is the default symbol. Choosing another currency changes
-          the symbol only. It does not convert exchange rates and it does not change the plan&apos;s US tax treatment.
-        </p>
+        <p className="text-xs leading-relaxed text-muted-foreground">{currencyNote}</p>
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <FiveTwentyNineForm
           draft={draft}
           errors={errors}
           onDraftChange={(next) => {
+            setConversionError(null);
             setDraft(next);
             evaluate(next);
           }}
@@ -113,6 +165,7 @@ export function FiveTwentyNineCalculator({
             const next = inputToDraft(DEFAULT_FIVE_TWENTY_NINE_INPUT);
             setDraft(next);
             setCopied(false);
+            setConversionError(null);
             evaluate(next);
           }}
         />
@@ -121,7 +174,7 @@ export function FiveTwentyNineCalculator({
           copied={copied}
           onCopy={() => {
             if (!result) return;
-            void copyTextToClipboard(summaryText(result)).then((ok) => {
+            void copyTextToClipboard(summaryText(result, currencyNote)).then((ok) => {
               if (!ok) return;
               setCopied(true);
               window.setTimeout(() => setCopied(false), 2000);

@@ -1,0 +1,150 @@
+﻿# Currency Conversion Progress (Phase 3)
+
+Tracks real FX conversion for the **105 currency-enabled calculators** from the Phase 3 selector audit (audit order preserved). Margin Interest was completed as a separate pilot and is listed once in the 105 table (not double-counted in totals).
+
+## Totals
+
+| Metric | Count |
+|---|---:|
+| Audit targets (105) | 105 |
+| Complete (implementation) | 6 |
+| Pending | 99 |
+| Blocked | 0 |
+| Manual verification Passed | 1 (pilot only) |
+| Manual verification Pending | 5 (Batch 1) + 99 Pending tools |
+
+## Pilot (outside batch numbering)
+
+| Calculator | Slug | Status | Commit | Manual verification | Notes |
+|---|---|---|---|---|---|
+| Margin Interest Calculator | `margin-interest-calculator` | **Pilot Complete** | `b968634` (result currency: `b968634`; initial: `ac974d1`) | **Passed** | Independent borrowed + result currencies; shared selector pattern evolved in correction. Counted once in #85 below. |
+
+## Batch map
+
+Batches are 21 × 5 in audit order. Batch 17 includes Margin Interest (#85), already Pilot Complete.
+
+## 105-calculator ledger
+
+Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending` / `Passed` / `Failed`.
+
+| # | Calculator | Slug | Batch | Status | Commit | Manual verification | Notes |
+|---:|---|---|---:|---|---|---|---|
+| 1 | 12-Hour Shift Pay | `12-hour-shift-pay-calculator` | 1 | Complete | `batch-1` | Pending | Shared selector; converts wages; hours unchanged |
+| 2 | 3x Rent | `3x-rent-calculator` | 1 | Complete | `batch-1` | Pending | Shared selector; converts rent/income; multiplier/shares unchanged |
+| 3 | 401(k) | `401k-calculator` | 1 | Complete | `batch-1` | Pending | Shared selector; USD statutory limit fields not converted |
+| 4 | 403(b) | `403b-calculator` | 1 | Complete | `batch-1` | Pending | Shared selector; converts money fields incl. optional limits |
+| 5 | 529 | `529-calculator` | 1 | Complete | `batch-1` | Pending | Shared selector; converts costs/balances/contributions |
+| 6 | 70/20/10 Rule Money | `702010-rule-money-calculator` | 2 | Pending | — | Pending | |
+| 7 | ADR | `adr-calculator` | 2 | Pending | — | Pending | |
+| 8 | Annualized Return | `annualized-return-calculator` | 2 | Pending | — | Pending | |
+| 9 | Appreciation | `appreciation-calculator` | 2 | Pending | — | Pending | |
+| 10 | APY | `apy-calculator` | 2 | Pending | — | Pending | |
+| 11 | Basis Point | `basis-point-calculator` | 3 | Pending | — | Pending | |
+| 12 | Bitcoin ETF | `bitcoin-etf-calculator` | 3 | Pending | — | Pending | |
+| 13 | CAGR | `cagr-calculator` | 3 | Pending | — | Pending | |
+| 14 | Capital Gains Yield | `capital-gains-yield-calculator` | 3 | Pending | — | Pending | |
+| 15 | CD | `cd-calculator` | 3 | Pending | — | Pending | |
+| 16 | Compound Growth | `compound-growth-calculator` | 4 | Pending | — | Pending | |
+| 17 | Compound Interest | `compound-interest-calculator` | 4 | Pending | — | Pending | |
+| 18 | Compound Interest Rate | `compound-interest-rate-calculator` | 4 | Pending | — | Pending | |
+| 19 | Continuous Compound Interest | `continuous-compound-interest-calculator` | 4 | Pending | — | Pending | |
+| 20 | DCF | `discounted-cash-flow-calculator-dcf` | 4 | Pending | — | Pending | |
+| 21 | Discount Rate | `discount-rate-calculator` | 5 | Pending | — | Pending | |
+| 22 | Effective Annual Yield | `effective-annual-yield-calculator` | 5 | Pending | — | Pending | |
+| 23 | Expected Utility | `expected-utility-calculator` | 5 | Pending | — | Pending | |
+| 24 | Expense Ratio | `expense-ratio-calculator` | 5 | Pending | — | Pending | |
+| 25 | FD | `fd-calculator` | 5 | Pending | — | Pending | |
+| 26 | Future Value | `future-value-calculator` | 6 | Pending | — | Pending | |
+| 27 | Hedge Ratio | `hedge-ratio-calculator` | 6 | Pending | — | Pending | |
+| 28 | Holding Period Return | `holding-period-return-calculator` | 6 | Pending | — | Pending | |
+| 29 | Impermanent Loss | `impermanent-loss-calculator` | 6 | Pending | — | Pending | |
+| 30 | Information Ratio | `information-ratio-calculator` | 6 | Pending | — | Pending | |
+| 31 | Interest Rate | `interest-rate-calculator` | 7 | Pending | — | Pending | |
+| 32 | Investment | `investment-calculator` | 7 | Pending | — | Pending | |
+| 33 | Investment Fee | `investment-fee-calculator` | 7 | Pending | — | Pending | |
+| 34 | IRR | `irr-calculator` | 7 | Pending | — | Pending | |
+| 35 | 3D Printer Buy vs Outsource | `3d-printer-buy-vs-outsource-calculator` | 7 | Pending | — | Pending | |
+| 36 | Accumulated Depreciation | `accumulated-depreciation-calculator` | 8 | Pending | — | Pending | |
+| 37 | Additional Funds Needed | `additional-funds-needed-calculator` | 8 | Pending | — | Pending | |
+| 38 | A/R Days | `ar-days-calculator` | 8 | Pending | — | Pending | |
+| 39 | Average Collection Period | `average-collection-period-calculator` | 8 | Pending | — | Pending | |
+| 40 | Average Fixed Cost | `average-fixed-cost-calculator` | 8 | Pending | — | Pending | |
+| 41 | Break-even | `break-even-calculator` | 9 | Pending | — | Pending | |
+| 42 | Build vs. Buy | `build-vs-buy-calculator` | 9 | Pending | — | Pending | |
+| 43 | Burn Rate | `burn-rate-calculator` | 9 | Pending | — | Pending | |
+| 44 | Business Budget | `business-budget-calculator` | 9 | Pending | — | Pending | |
+| 45 | Business Loan | `business-loan-calculator` | 9 | Pending | — | Pending | |
+| 46 | Business Valuation | `business-valuation-calculator` | 10 | Pending | — | Pending | |
+| 47 | Consulting Fees | `consulting-fees-calculator` | 10 | Pending | — | Pending | |
+| 48 | Contribution Margin | `contribution-margin-calculator` | 10 | Pending | — | Pending | |
+| 49 | Cost Function | `cost-function-calculator` | 10 | Pending | — | Pending | |
+| 50 | Cost of Doing Business | `cost-of-doing-business-calculator` | 10 | Pending | — | Pending | |
+| 51 | Cost of Goods Sold | `cost-of-goods-sold-calculator` | 11 | Pending | — | Pending | |
+| 52 | CPA | `cpa-calculator-cost-per-acquisition` | 11 | Pending | — | Pending | |
+| 53 | CPC and CPM | `cpc-and-cpm-calculator` | 11 | Pending | — | Pending | |
+| 54 | CPM | `cpm-calculator` | 11 | Pending | — | Pending | |
+| 55 | CAC | `customer-acquisition-cost-calculator` | 11 | Pending | — | Pending | |
+| 56 | Direct Material Price Variance | `direct-material-price-variance-calculator` | 12 | Pending | — | Pending | |
+| 57 | EVM | `evm-calculator` | 12 | Pending | — | Pending | |
+| 58 | Effective Corporate Tax Rate | `effective-corporate-tax-rate-calculator` | 12 | Pending | — | Pending | |
+| 59 | EMV | `emv-calculator-expected-monetary-value` | 12 | Pending | — | Pending | |
+| 60 | FIFO Inventory | `fifo-calculator-for-inventory` | 12 | Pending | — | Pending | |
+| 61 | GMROI | `gmroi-calculator-gross-margin-return-on-investment` | 13 | Pending | — | Pending | |
+| 62 | Google AdSense | `google-adsense-calculator` | 13 | Pending | — | Pending | |
+| 63 | High-Low Method | `high-low-method-calculator` | 13 | Pending | — | Pending | |
+| 64 | Labor Cost | `labor-cost-calculator` | 13 | Pending | — | Pending | |
+| 65 | Lemonade Stand | `lemonade-stand-calculator` | 13 | Pending | — | Pending | |
+| 66 | Lerner Index | `lerner-index-calculator` | 14 | Pending | — | Pending | |
+| 67 | Liquid Net Worth | `liquid-net-worth-calculator` | 14 | Pending | — | Pending | |
+| 68 | Man-Hours | `man-hours-calculator` | 14 | Pending | — | Pending | |
+| 69 | Online Marketing Conversion | `online-marketing-conversion-calculator` | 14 | Pending | — | Pending | |
+| 70 | Operating Asset Turnover | `operating-asset-turnover-calculator` | 14 | Pending | — | Pending | |
+| 71 | Payback Period | `payback-period-calculator` | 15 | Pending | — | Pending | |
+| 72 | Pre and Post Money Valuation | `pre-and-post-money-valuation-calculator` | 15 | Pending | — | Pending | |
+| 73 | PVGO | `pvgo-calculator` | 15 | Pending | — | Pending | |
+| 74 | Price / Quantity | `price-quantity-calculator` | 15 | Pending | — | Pending | |
+| 75 | Profitability Index | `profitability-index-calculator` | 15 | Pending | — | Pending | |
+| 76 | Revenue Per Employee | `revenue-per-employee-calculator` | 16 | Pending | — | Pending | |
+| 77 | ROAS | `roas-calculator` | 16 | Pending | — | Pending | |
+| 78 | SaaS Lifetime Value | `saas-lifetime-value-calculator` | 16 | Pending | — | Pending | |
+| 79 | Sales Commission | `sales-commission-calculator` | 16 | Pending | — | Pending | |
+| 80 | Smoker's CTC | `smokers-ctc-calculator` | 16 | Pending | — | Pending | |
+| 81 | Software Contract Value | `software-contract-value-calculator` | 17 | Pending | — | Pending | |
+| 82 | Website Ad Revenue | `website-ad-revenue-calculator` | 17 | Pending | — | Pending | |
+| 83 | YouTube Money | `youtube-money-calculator` | 17 | Pending | — | Pending | |
+| 84 | Jensen's Alpha | `jensens-alpha-calculator` | 17 | Pending | — | Pending | |
+| 85 | Margin Interest | `margin-interest-calculator` | 17 | Complete | `b968634` | Passed | Pilot Complete (see Pilot section); Batch 17 slot already done |
+| 86 | MVA | `mva-calculator` | 18 | Pending | — | Pending | |
+| 87 | MIRR | `mirr-calculator` | 18 | Pending | — | Pending | |
+| 88 | Money Market Account | `money-market-account-calculator` | 18 | Pending | — | Pending | |
+| 89 | Moving Average | `moving-average-calculator` | 18 | Pending | — | Pending | |
+| 90 | Mutual Fund | `mutual-fund-calculator` | 18 | Pending | — | Pending | |
+| 91 | NOPAT | `nopat-calculator` | 19 | Pending | — | Pending | |
+| 92 | NPV | `npv-calculator-net-present-value` | 19 | Pending | — | Pending | |
+| 93 | Opportunity Cost | `opportunity-cost-calculator` | 19 | Pending | — | Pending | |
+| 94 | Percentage Return | `percentage-return-calculator` | 19 | Pending | — | Pending | |
+| 95 | Perpetuity | `perpetuity-calculator` | 19 | Pending | — | Pending | |
+| 96 | Present Value | `present-value-calculator` | 20 | Pending | — | Pending | |
+| 97 | Rate of Return | `rate-of-return-calculator` | 20 | Pending | — | Pending | |
+| 98 | ROCE | `roce-calculator` | 20 | Pending | — | Pending | |
+| 99 | ROI | `roi-calculator` | 20 | Pending | — | Pending | |
+| 100 | Simple Interest | `simple-interest-calculator` | 20 | Pending | — | Pending | |
+| 101 | Sinking Fund | `sinking-fund-calculator` | 21 | Pending | — | Pending | |
+| 102 | Time Value of Money | `time-value-of-money-calculator` | 21 | Pending | — | Pending | |
+| 103 | Treynor Ratio | `treynor-ratio-calculator` | 21 | Pending | — | Pending | |
+| 104 | TTM | `ttm-calculator-trailing-twelve-months` | 21 | Pending | — | Pending | |
+| 105 | Value at Risk (VaR) | `value-at-risk-calculator-var` | 21 | Pending | — | Pending | |
+
+## Batch 1 notes
+
+- Local commit: `fix(currency): integrate conversion batch 1 calculators` (short SHA stamped in rows #1–#5 after commit).
+- Shared `/tools/[slug]` + embed routes load rates for: Margin Interest + Batch 1 slugs only.
+- Single shared `CurrencySelect` per tool; all monetary draft fields convert together.
+- 401(k): elective/catch-up/annual-additions limit fields remain USD (not converted).
+- Formulas unchanged; rates via `getCurrencyRates` → `CurrencyRatesProvider` → `convertCurrency`.
+- Manual verification left Pending for user reference comparison.
+
+## Changelog
+
+- 2026-11-16: Created ledger from Phase 3 audit; recorded Margin Interest Pilot Complete; marked Batch 1 (#1–#5) Complete (implementation).
+

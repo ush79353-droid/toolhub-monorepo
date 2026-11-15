@@ -16,8 +16,15 @@ import { isApprovedComponentKey, isRegisteredComponentKey } from '@/tools/regist
 import { CurrencyRatesProvider } from '@/tools/shared/CurrencyRatesProvider';
 import type { ToolMetadata } from '@/types/tool';
 
-/** Phase 3 pilot: real FX conversion for this slug only. */
-const CURRENCY_CONVERSION_PILOT_SLUG = 'margin-interest-calculator';
+/** Phase 3: load FX rates only for conversion-enabled calculators. */
+const CURRENCY_CONVERSION_SLUGS = new Set([
+  'margin-interest-calculator',
+  '12-hour-shift-pay-calculator',
+  '3x-rent-calculator',
+  '401k-calculator',
+  '403b-calculator',
+  '529-calculator',
+]);
 
 export const dynamic = 'force-dynamic';
 
@@ -95,8 +102,9 @@ export default async function EmbedToolPage({ params, searchParams }: EmbedPageP
 
   const metadata = toToolMetadata(tool);
   const compact = tool.embedPreferredLayout === 'compact';
-  const currencyRates =
-    tool.slug === CURRENCY_CONVERSION_PILOT_SLUG ? await getCurrencyRates() : null;
+  const currencyRates = CURRENCY_CONVERSION_SLUGS.has(tool.slug)
+    ? await getCurrencyRates()
+    : null;
   const workspace = <ToolWorkspace tool={metadata} presentation="embed" />;
 
   return (

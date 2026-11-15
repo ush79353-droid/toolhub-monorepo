@@ -4,6 +4,7 @@ import {
   type SupportedCurrency,
 } from './currency';
 import { isCurrencyRateUsable } from './currency-rates';
+import { moneyAmountToInputString, parseMoneyInput } from './money-value';
 
 export type ConvertCurrencyReason =
   | 'INVALID_AMOUNT'
@@ -113,4 +114,51 @@ export function normalizeAmountsToCurrency(
     out.push(converted.amount);
   }
   return out;
+}
+
+/**
+ * Convert selected draft money strings (blank stays blank). Fails closed if any
+ * finite amount cannot convert. Percent/age/duration fields must not be passed in.
+ */
+export function convertDraftMoneyFields(
+  draft: Record<string, string>,
+  keys: readonly string[],
+  from: string,
+  to: string,
+  rates: Record<string, number>
+): { ok: true; values: Record<string, string> } | { ok: false } {
+  const values: Record<string, string> = {};
+  for (const key of keys) {
+    const raw = draft[key] ?? '';
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) {
+      values[key] = raw;
+      continue;
+    }
+    const converted = convertCurrency({ amount, from, to, rates });
+    if (!converted.ok) return { ok: false };
+    values[key] = moneyAmountToInputString(converted.amount);
+  }
+  return { ok: true, values };
+}
+
+/** Convert every entry in a money string list (e.g. tenant incomes). */
+export function convertDraftMoneyList(
+  values: readonly string[],
+  from: string,
+  to: string,
+  rates: Record<string, number>
+): { ok: true; values: string[] } | { ok: false } {
+  const out: string[] = [];
+  for (const raw of values) {
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) {
+      out.push(raw);
+      continue;
+    }
+    const converted = convertCurrency({ amount, from, to, rates });
+    if (!converted.ok) return { ok: false };
+    out.push(moneyAmountToInputString(converted.amount));
+  }
+  return { ok: true, values: out };
 }
