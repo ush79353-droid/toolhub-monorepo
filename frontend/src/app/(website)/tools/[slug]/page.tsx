@@ -107,6 +107,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'pvgo-calculator',
   'price-quantity-calculator',
   'profitability-index-calculator',
+  'revenue-per-employee-calculator',
+  'roas-calculator',
+  'saas-lifetime-value-calculator',
+  'sales-commission-calculator',
+  'smokers-ctc-calculator',
 ]);
 
 function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {

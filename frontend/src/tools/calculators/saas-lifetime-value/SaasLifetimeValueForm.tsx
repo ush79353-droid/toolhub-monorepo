@@ -4,7 +4,11 @@ import type { FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencyFractionDigits, getCurrencySymbol } from '@/tools/shared/currency';
+import {
+  getCurrencyFractionDigits,
+  getCurrencySymbol,
+  type SupportedCurrency,
+} from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   SaasLifetimeValueFieldErrors,
@@ -208,6 +212,7 @@ interface SaasLifetimeValueFormProps {
   errors: SaasLifetimeValueFieldErrors;
   result: SaasLifetimeValueResult | null;
   onDraftChange: (draft: SaasLifetimeValueDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -217,12 +222,12 @@ export function SaasLifetimeValueForm({
   errors,
   result,
   onDraftChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: SaasLifetimeValueFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
   const set = (patch: Partial<SaasLifetimeValueDraft>) => onDraftChange({ ...draft, ...patch });
-  const setCurrency = (currency: SaasLifetimeValueDraft['currency']) => set({ currency });
 
   const ltvDisplay =
     !result
@@ -243,7 +248,7 @@ export function SaasLifetimeValueForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(arpa) => set({ arpa })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
       ) : null}
 
@@ -268,7 +273,7 @@ export function SaasLifetimeValueForm({
             symbol={symbol}
             currency={draft.currency}
             onValueChange={(recurringRevenue) => set({ recurringRevenue })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
           <div>
             <label className={labelClass} htmlFor="saas-accounts">
@@ -328,7 +333,7 @@ export function SaasLifetimeValueForm({
         symbol={symbol}
         currency={draft.currency}
         onValueChange={(accountExpansion) => set({ accountExpansion })}
-        onCurrencyChange={setCurrency}
+        onCurrencyChange={onCurrencyChange}
       />
 
       <MoneyRow
@@ -338,7 +343,7 @@ export function SaasLifetimeValueForm({
         value=""
         symbol={symbol}
         currency={draft.currency}
-        onCurrencyChange={setCurrency}
+        onCurrencyChange={onCurrencyChange}
         readOnly
         displayValue={ltvDisplay}
       />

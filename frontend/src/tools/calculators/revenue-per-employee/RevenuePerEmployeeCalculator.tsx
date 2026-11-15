@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import { RevenuePerEmployeeForm } from './RevenuePerEmployeeForm';
 import { RevenuePerEmployeeResults } from './RevenuePerEmployeeResults';
 import {
@@ -15,6 +21,11 @@ import {
 } from './types';
 import { validateRevenuePerEmployeeInput } from './validation';
 
+const MONEY_FIELDS = ['revenue'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts revenue and revenue per employee using stored exchange rates. Employee count stays the same.';
+
 export function RevenuePerEmployeeCalculator({
   metadata,
   className = '',
@@ -22,16 +33,23 @@ export function RevenuePerEmployeeCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<RevenuePerEmployeeInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<RevenuePerEmployeeFieldErrors>({});
   const [result, setResult] = React.useState<RevenuePerEmployeeResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: RevenuePerEmployeeInput) => {
     const validation = validateRevenuePerEmployeeInput(next);
@@ -39,21 +57,50 @@ export function RevenuePerEmployeeCalculator({
     setResult(validation.result);
   };
 
+  const handleChange = (next: RevenuePerEmployeeInput) => {
+    setConversionError(null);
+    setInput(next);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({ ...input, ...converted.values, currency });
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
     setErrors({});
     setResult(null);
+    setCopied(false);
+    setShared(false);
+    setConversionError(null);
   };
 
-  const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
-        `Revenue: ${symbol}${input.revenue}`,
+        `Revenue: ${formatCurrencyValue(result.revenue, result.currency)}`,
         `Number of employee: ${input.employeeCount}`,
-        `Revenue per employee: ${symbol}${result.formattedRevenuePerEmployee}`,
-        CURRENCY_DENOMINATION_NOTE,
+        `Revenue per employee: ${formatCurrencyValue(result.revenuePerEmployee, result.currency)}`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -68,21 +115,27 @@ export function RevenuePerEmployeeCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Revenue per employee = revenue ÷ employees. {CURRENCY_DENOMINATION_NOTE}
+            Revenue per employee = revenue ÷ employees. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <RevenuePerEmployeeForm
           input={input}
           errors={errors}
           result={result}
-          onChange={(next) => {
-            setInput(next);
-            run(next);
-          }}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <RevenuePerEmployeeResults />

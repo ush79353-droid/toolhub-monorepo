@@ -4,7 +4,13 @@ import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import { Button } from '@/components/ui/button';
 import {
   SalesCommissionForm,
@@ -21,7 +27,18 @@ import {
 } from './types';
 import { validateSalesCommission } from './validation';
 
-function summaryText(title: string, result: SalesCommissionResult): string {
+const MONEY_FIELDS = [
+  'revenue',
+  'cogs',
+  'sellingExpenses',
+  'baseSalary',
+  'salesQuota',
+] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts sales, costs, commissions, and thresholds using stored exchange rates. Percentage rates, brackets, and margin % stay the same.';
+
+function summaryText(title: string, result: SalesCommissionResult, currencyNote: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   return [
     `${title} — Omega Calculators`,
@@ -32,7 +49,7 @@ function summaryText(title: string, result: SalesCommissionResult): string {
     `Commission: ${money(result.commission)}`,
     `Total labor cost (OTE): ${money(result.totalLaborCost)}`,
     `Operational profit: ${money(result.operationalProfit)}`,
-    CURRENCY_DENOMINATION_NOTE,
+    currencyNote,
   ].join('\n');
 }
 
@@ -43,6 +60,8 @@ export function SalesCommissionCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<SalesCommissionDraft>(() =>
     inputToDraft(createDefaultSalesCommissionInput())
   );
@@ -53,10 +72,15 @@ export function SalesCommissionCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (nextDraft: SalesCommissionDraft) => {
     const input = draftToInput(nextDraft);
@@ -65,7 +89,34 @@ export function SalesCommissionCalculator({
     setResult(validation.isValid ? calculateSalesCommission(input) : null);
   };
 
-  const summary = result?.defined ? summaryText(metadata.title, result) : '';
+  const handleDraftChange = (nextDraft: SalesCommissionDraft) => {
+    setConversionError(null);
+    setDraft(nextDraft);
+    run(nextDraft);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleDraftChange({ ...draft, ...converted.values, currency });
+  };
+
+  const summary = result?.defined ? summaryText(metadata.title, result, currencyNote) : '';
 
   return (
     <section
@@ -77,7 +128,7 @@ export function SalesCommissionCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{CURRENCY_DENOMINATION_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         <div className="flex flex-wrap items-center justify-end gap-2">
           {headerActions}
@@ -85,27 +136,24 @@ export function SalesCommissionCalculator({
             <label htmlFor="sc-currency" className="sr-only">
               Display currency
             </label>
-            <CurrencySelect
-              id="sc-currency"
-              value={draft.currency}
-              onChange={(currency) => {
-                const next = { ...draft, currency };
-                setDraft(next);
-                run(next);
-              }}
-            />
+            <CurrencySelect id="sc-currency" value={draft.currency} onChange={handleCurrencyChange} />
           </div>
         </div>
       </div>
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <SalesCommissionForm
           draft={draft}
           errors={errors}
           result={result}
-          onDraftChange={(next) => {
-            setDraft(next);
-            run(next);
-          }}
+          onDraftChange={handleDraftChange}
           onSubmit={(event) => {
             event.preventDefault();
             run(draft);
@@ -116,6 +164,7 @@ export function SalesCommissionCalculator({
             setDraft(nextDraft);
             setErrors({});
             setResult(calculateSalesCommission(fresh));
+            setConversionError(null);
           }}
         />
         <div className="flex flex-wrap gap-2">

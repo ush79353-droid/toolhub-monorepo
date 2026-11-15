@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type { KnowRevenue, RoasFieldErrors, RoasInput, RoasResult } from './types';
 
@@ -37,10 +37,18 @@ interface RoasFormProps {
   errors: RoasFieldErrors;
   result: RoasResult | null;
   onChange: (input: RoasInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
-export function RoasForm({ input, errors, result, onChange, onReset }: RoasFormProps) {
+export function RoasForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: RoasFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<RoasInput>) => onChange({ ...input, ...patch });
 
@@ -82,7 +90,7 @@ export function RoasForm({ input, errors, result, onChange, onReset }: RoasFormP
                 <CurrencySelect
                   id="roas-spend-currency"
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                   aria-label="Ad spend currency"
                 />
               </div>
@@ -135,7 +143,7 @@ export function RoasForm({ input, errors, result, onChange, onReset }: RoasFormP
                   <CurrencySelect
                     id="roas-revenue-currency"
                     value={input.currency}
-                    onChange={(currency) => set({ currency })}
+                    onChange={onCurrencyChange}
                     aria-label="Ad revenue currency"
                   />
                 </div>

@@ -4,7 +4,7 @@ import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   SmokersCtcFieldErrors,
@@ -68,6 +68,7 @@ interface SmokersCtcFormProps {
   workdayOpen: boolean;
   smokingTimeOpen: boolean;
   onChange: (input: SmokersCtcInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onToggleWorkday: () => void;
   onToggleSmokingTime: () => void;
   onReset: () => void;
@@ -81,6 +82,7 @@ export function SmokersCtcForm({
   workdayOpen,
   smokingTimeOpen,
   onChange,
+  onCurrencyChange,
   onToggleWorkday,
   onToggleSmokingTime,
   onReset,
@@ -126,7 +128,7 @@ export function SmokersCtcForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -158,7 +160,7 @@ export function SmokersCtcForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -255,7 +257,7 @@ export function SmokersCtcForm({
           'wage',
           'smokers-wage',
           wageLabel(input.wagePeriod),
-          'Pay for the selected period. Converted to an hourly rate using work day settings. Currency changes the symbol only.'
+          'Pay for the selected period. Converted to an hourly rate using work day settings.'
         )}
       </section>
 

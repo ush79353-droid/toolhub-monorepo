@@ -3,7 +3,13 @@
 import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import {
   draftToInput,
   emptyDraft,
@@ -15,7 +21,12 @@ import { calculateSaasLifetimeValue } from './calculation';
 import type { SaasLifetimeValueFieldErrors, SaasLifetimeValueResult } from './types';
 import { validateSaasLifetimeValue } from './validation';
 
-function summaryText(metadataTitle: string, result: SaasLifetimeValueResult): string {
+const MONEY_FIELDS = ['arpa', 'recurringRevenue', 'accountExpansion'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts ARPA, recurring revenue, expansion, and LTV using stored exchange rates. Gross margin %, churn %, and account counts stay the same.';
+
+function summaryText(metadataTitle: string, result: SaasLifetimeValueResult, currencyNote: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   return [
     `${metadataTitle} — Omega Calculators`,
@@ -29,7 +40,7 @@ function summaryText(metadataTitle: string, result: SaasLifetimeValueResult): st
         ? 'No finite estimate'
         : money(result.customerLifetimeValue)
     }`,
-    CURRENCY_DENOMINATION_NOTE,
+    currencyNote,
   ].join('\n');
 }
 
@@ -40,6 +51,8 @@ export function SaasLifetimeValueCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<SaasLifetimeValueDraft>(() => emptyDraft());
   const [errors, setErrors] = React.useState<SaasLifetimeValueFieldErrors>({});
   const [result, setResult] = React.useState<SaasLifetimeValueResult | null>(null);
@@ -47,10 +60,15 @@ export function SaasLifetimeValueCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const evaluate = React.useCallback((next: SaasLifetimeValueDraft, reportBlanks = false) => {
     const parsed = draftToInput(next);
@@ -61,6 +79,32 @@ export function SaasLifetimeValueCalculator({
     setResult(validation.isValid ? calculateSaasLifetimeValue(parsed) : null);
   }, []);
 
+  const handleDraftChange = (next: SaasLifetimeValueDraft, reportBlanks = false) => {
+    setConversionError(null);
+    evaluate(next, reportBlanks);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleDraftChange({ ...draft, ...converted.values, currency });
+  };
+
   const resetAll = () => {
     setDraft(emptyDraft());
     setErrors({});
@@ -68,9 +112,10 @@ export function SaasLifetimeValueCalculator({
     setIncomplete(true);
     setCopied(false);
     setShared(false);
+    setConversionError(null);
   };
 
-  const sharePayload = result ? summaryText(metadata.title, result) : '';
+  const sharePayload = result ? summaryText(metadata.title, result, currencyNote) : '';
   const hasFieldErrors = Object.keys(errors).length > 0;
 
   return (
@@ -84,20 +129,29 @@ export function SaasLifetimeValueCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            LTV = ((ARPA + expansion) × margin) ÷ churn
+            LTV = ((ARPA + expansion) × margin) ÷ churn. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex flex-wrap justify-end gap-2">{headerActions}</div> : null}
       </div>
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <SaasLifetimeValueForm
           draft={draft}
           errors={errors}
           result={result}
-          onDraftChange={(next) => evaluate(next)}
+          onDraftChange={(next) => handleDraftChange(next)}
+          onCurrencyChange={handleCurrencyChange}
           onSubmit={(event) => {
             event.preventDefault();
-            evaluate(draft, true);
+            handleDraftChange(draft, true);
           }}
           onReset={resetAll}
         />
@@ -110,7 +164,7 @@ export function SaasLifetimeValueCalculator({
           canShare={canShare}
           onCopy={() => {
             if (!result || result.customerLifetimeValue === null) return;
-            void copyTextToClipboard(summaryText(metadata.title, result)).then((ok) => {
+            void copyTextToClipboard(summaryText(metadata.title, result, currencyNote)).then((ok) => {
               if (!ok) return;
               setCopied(true);
               window.setTimeout(() => setCopied(false), 2000);
