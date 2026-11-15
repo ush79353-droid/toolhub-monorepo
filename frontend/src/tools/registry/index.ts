@@ -529,6 +529,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KbToMbConverter,
     })),
   ),
+  UnixTimeConverter: lazyTool(() =>
+    import('@/tools/calculators/unix-time/UnixTimeConverter').then((mod) => ({
+      default: mod.UnixTimeConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

@@ -110,6 +110,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'hex-to-rgb-converter',
   'unicode-text-converter',
   'kb-to-mb-converter',
+  'unix-time-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
