@@ -554,6 +554,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MinutesToHoursConverter,
     })),
   ),
+  YearsToDecadesCalculator: lazyTool(() =>
+    import('@/tools/calculators/years-to-decades/YearsToDecadesCalculator').then((mod) => ({
+      default: mod.YearsToDecadesCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

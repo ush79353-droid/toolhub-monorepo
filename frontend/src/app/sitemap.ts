@@ -115,6 +115,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'military-time-converter',
   'time-zones-converter',
   'minutes-to-hours-converter',
+  'years-to-decades-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
