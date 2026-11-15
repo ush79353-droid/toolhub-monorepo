@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 21 |
-| Pending | 84 |
+| Complete (implementation) | 26 |
+| Pending | 79 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 84 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 79 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -49,11 +49,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 18 | Compound Interest Rate | `compound-interest-rate-calculator` | 4 | Complete | `81d17a1` | Pending | Shared selectors; converts initial+final together; implied rate/term unchanged |
 | 19 | Continuous Compound Interest | `continuous-compound-interest-calculator` | 4 | Complete | `81d17a1` | Pending | Shared selectors; converts balance + deposits; r and t unchanged |
 | 20 | DCF | `discounted-cash-flow-calculator-dcf` | 4 | Complete | `81d17a1` | Pending | Shared selectors; converts FCFF/EPS/cash/debt; rates/shares unchanged |
-| 21 | Discount Rate | `discount-rate-calculator` | 5 | Pending | — | Pending | |
-| 22 | Effective Annual Yield | `effective-annual-yield-calculator` | 5 | Pending | — | Pending | |
-| 23 | Expected Utility | `expected-utility-calculator` | 5 | Pending | — | Pending | |
-| 24 | Expense Ratio | `expense-ratio-calculator` | 5 | Pending | — | Pending | |
-| 25 | FD | `fd-calculator` | 5 | Pending | — | Pending | |
+| 21 | Discount Rate | `discount-rate-calculator` | 5 | Complete | `191200c` | Pending | Shared selectors; converts PV/FV/CF together; solved rate % unchanged |
+| 22 | Effective Annual Yield | `effective-annual-yield-calculator` | 5 | Complete | `191200c` | Pending | Shared selectors; converts face + coupon payment; yield % unchanged |
+| 23 | Expected Utility | `expected-utility-calculator` | 5 | Complete | `191200c` | Pending | Shared selectors; converts payoffs; probabilities unchanged |
+| 24 | Expense Ratio | `expense-ratio-calculator` | 5 | Complete | `191200c` | Pending | Shared selectors; converts initial + yearly investment; return/expense % unchanged |
+| 25 | FD | `fd-calculator` | 5 | Complete | `191200c` | Pending | Shared selectors; converts principal; rate/term/compounding unchanged |
 | 26 | Future Value | `future-value-calculator` | 6 | Pending | — | Pending | |
 | 27 | Hedge Ratio | `hedge-ratio-calculator` | 6 | Pending | — | Pending | |
 | 28 | Holding Period Return | `holding-period-return-calculator` | 6 | Pending | — | Pending | |
@@ -170,8 +170,19 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - DCF: cash-flow signs preserved via conversion of typed amounts; WACC/g/shares unconverted.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 5 notes
+
+- Local commit: `fix(currency): integrate conversion batch 5 calculators` `191200ce684139bbc2287cc15dfe04196d7f0c04`.
+- Provider slug allowlist extended for Batch 5 (preserves prior batches + Margin Interest).
+- Shared currency state across existing selectors; monetary draft fields convert together.
+- Discount Rate: PV/FV/CF convert together so solved discount rate % is unchanged by FX alone.
+- Effective Annual Yield / Expected Utility: monetary amounts only; percents and probabilities unchanged.
+- Expense Ratio / FD: investment or principal draft fields convert; return/expense/rate/term unchanged.
+- Manual verification left Pending for user reference comparison.
+
 ## Changelog
 
+- 2026-11-16: Batch 5 (#21–#25) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 4 (#16–#20) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 3 (#11–#15) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 2 (#6–#10) implementation Complete; manual verification Pending.
