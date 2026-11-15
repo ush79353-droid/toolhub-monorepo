@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 61 |
-| Pending | 44 |
+| Complete (implementation) | 66 |
+| Pending | 39 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 44 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 39 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -89,11 +89,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 58 | Effective Corporate Tax Rate | `effective-corporate-tax-rate-calculator` | 12 | Complete | `aec07c70cbb7f60c3c0b4633e0266c92070ab6b4` | Pending | Shared selectors; EBT and tax paid convert; effective rate % invariant to FX |
 | 59 | EMV | `emv-calculator-expected-monetary-value` | 12 | Complete | `aec07c70cbb7f60c3c0b4633e0266c92070ab6b4` | Pending | Shared selectors; risk impacts convert; probabilities and EMV weighting unchanged |
 | 60 | FIFO Inventory | `fifo-calculator-for-inventory` | 12 | Complete | `aec07c70cbb7f60c3c0b4633e0266c92070ab6b4` | Pending | Synced selectors; lot prices and selling price convert; FIFO qty order and margin % unchanged |
-| 61 | GMROI | `gmroi-calculator-gross-margin-return-on-investment` | 13 | Pending | — | Pending | |
-| 62 | Google AdSense | `google-adsense-calculator` | 13 | Pending | — | Pending | |
-| 63 | High-Low Method | `high-low-method-calculator` | 13 | Pending | — | Pending | |
-| 64 | Labor Cost | `labor-cost-calculator` | 13 | Pending | — | Pending | |
-| 65 | Lemonade Stand | `lemonade-stand-calculator` | 13 | Pending | — | Pending | |
+| 61 | GMROI | `gmroi-calculator-gross-margin-return-on-investment` | 13 | Complete | 4c54e9005feb6746f68443d90ddd048eaffaf4b2 | Pending | Synced selectors; inventory and gross profit convert; GMROI ratio/% unchanged |
+| 62 | Google AdSense | `google-adsense-calculator` | 13 | Complete | 4c54e9005feb6746f68443d90ddd048eaffaf4b2 | Pending | Synced selectors; CPC and revenue convert; pageviews/CTR/impressions unchanged |
+| 63 | High-Low Method | `high-low-method-calculator` | 13 | Complete | 4c54e9005feb6746f68443d90ddd048eaffaf4b2 | Pending | Synced selectors; high/low costs and derived VC/fixed/total convert; units unchanged |
+| 64 | Labor Cost | `labor-cost-calculator` | 13 | Complete | 4c54e9005feb6746f68443d90ddd048eaffaf4b2 | Pending | Synced selectors; wage and employer costs convert; hours and labor % unchanged |
+| 65 | Lemonade Stand | `lemonade-stand-calculator` | 13 | Complete | 4c54e9005feb6746f68443d90ddd048eaffaf4b2 | Pending | Synced selector; all cost/price fields convert; servings unchanged |
 | 66 | Lerner Index | `lerner-index-calculator` | 14 | Pending | — | Pending | |
 | 67 | Liquid Net Worth | `liquid-net-worth-calculator` | 14 | Pending | — | Pending | |
 | 68 | Man-Hours | `man-hours-calculator` | 14 | Pending | — | Pending | |
@@ -192,6 +192,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 13 notes
+
+- Local commit: `fix(currency): integrate conversion batch 13 calculators` `4c54e9005feb6746f68443d90ddd048eaffaf4b2`.
+- Provider slug allowlist extended for Batch 13 (preserves prior batches + Margin Interest).
+- GMROI: synced selectors; starting/final/average inventory and gross profit convert; GMROI ratio and % invariant to FX alone.
+- Google AdSense: synced selectors; CPC converts; impressions, clicks, CTR, and pageviews unchanged.
+- High-Low Method: synced selectors; high and low activity costs convert; variable cost per unit, fixed cost, total cost scale; activity units unchanged.
+- Labor Cost: synced selectors; pay rate, additional costs, revenue, and payroll outputs convert; hours and labor cost % unchanged.
+- Lemonade Stand: synced selector across money fields; ingredient, cup, permit, selling price, and profit amounts convert; servings unchanged.
+- Manual verification left Pending for user reference comparison.
+
 ## Batch 12 notes
 
 - Local commit: `fix(currency): integrate conversion batch 12 calculators` `aec07c70cbb7f60c3c0b4633e0266c92070ab6b4`.
@@ -262,6 +273,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 13 (#61–#65) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 12 (#56–#60) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 11 (#51–#55) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 10 (#46–#50) implementation Complete; manual verification Pending.
