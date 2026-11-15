@@ -196,6 +196,7 @@
 ## 4. Current Development Focus
 
 - Auto Loan Calculator is the locked master Tool Detail Page. New calculators also follow the module in `ARCHITECTURE.md` §7 and the playbook checklist (ADR-018). Next priorities: formal financial QA on Auto Loan Calculator, `listFeaturedTools` active filter (`BE-02`), and subsequent tools via the playbook (`TOOL-01`).
+- **Backend production emit (2026-11-15):** `backend/tsconfig.json` uses CommonJS/`node` so `npm run build` + `npm start` works on the server. Local day-to-day remains `npm run dev` (`tsx`).
 
 ---
 
