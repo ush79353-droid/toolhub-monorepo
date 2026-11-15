@@ -54,6 +54,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'investment-fee-calculator',
   'irr-calculator',
   '3d-printer-buy-vs-outsource-calculator',
+  'accumulated-depreciation-calculator',
+  'additional-funds-needed-calculator',
+  'ar-days-calculator',
+  'average-collection-period-calculator',
+  'average-fixed-cost-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';

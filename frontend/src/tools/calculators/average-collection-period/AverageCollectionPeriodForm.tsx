@@ -4,7 +4,7 @@ import * as React from 'react';
 import { ChevronDown, MoreHorizontal, RotateCcw, Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import { averageAccountsReceivable } from './calculation';
 import {
@@ -23,6 +23,7 @@ interface AverageCollectionPeriodFormProps {
   copied: boolean;
   onAverageSectionOpenChange: (open: boolean) => void;
   onChange: (input: AverageCollectionPeriodInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
   onShare: () => void;
 }
@@ -76,6 +77,7 @@ export function AverageCollectionPeriodForm({
   copied,
   onAverageSectionOpenChange,
   onChange,
+  onCurrencyChange,
   onReset,
   onShare,
 }: AverageCollectionPeriodFormProps) {
@@ -210,7 +212,7 @@ export function AverageCollectionPeriodForm({
                   <CurrencySelect
                     id="acp-begin-currency"
                     value={input.currency}
-                    onChange={(currency) => set({ currency })}
+                    onChange={onCurrencyChange}
                   />
                 </div>
               </div>
@@ -239,7 +241,7 @@ export function AverageCollectionPeriodForm({
                   <CurrencySelect
                     id="acp-end-currency"
                     value={input.currency}
-                    onChange={(currency) => set({ currency })}
+                    onChange={onCurrencyChange}
                   />
                 </div>
               </div>
@@ -274,7 +276,7 @@ export function AverageCollectionPeriodForm({
                 <CurrencySelect
                   id="acp-average-currency"
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                 />
               </div>
             </div>
@@ -307,7 +309,7 @@ export function AverageCollectionPeriodForm({
                 <CurrencySelect
                   id="acp-sales-currency"
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                 />
               </div>
             </div>

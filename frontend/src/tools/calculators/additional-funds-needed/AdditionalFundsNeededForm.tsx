@@ -142,6 +142,7 @@ interface AfnFormProps {
   errors: AfnFieldErrors;
   result: AfnResult | null;
   onDraftChange: (draft: AfnDraft) => void;
+  onCurrencyChange: (currency: AfnDraft['currency']) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -151,12 +152,12 @@ export function AdditionalFundsNeededForm({
   errors,
   result,
   onDraftChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: AfnFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
   const set = (patch: Partial<AfnDraft>) => onDraftChange({ ...draft, ...patch });
-  const setCurrency = (currency: AfnDraft['currency']) => set({ currency });
 
   return (
     <form className="space-y-3.5" onSubmit={onSubmit} noValidate autoComplete="off">
@@ -169,7 +170,7 @@ export function AdditionalFundsNeededForm({
         symbol={symbol}
         currency={draft.currency}
         onValueChange={(changeInAssets) => set({ changeInAssets })}
-        onCurrencyChange={setCurrency}
+        onCurrencyChange={onCurrencyChange}
       />
       <MoneyRow
         id="afn-liabilities"
@@ -180,7 +181,7 @@ export function AdditionalFundsNeededForm({
         symbol={symbol}
         currency={draft.currency}
         onValueChange={(changeInLiabilities) => set({ changeInLiabilities })}
-        onCurrencyChange={setCurrency}
+        onCurrencyChange={onCurrencyChange}
       />
       <MoneyRow
         id="afn-retained"
@@ -191,7 +192,7 @@ export function AdditionalFundsNeededForm({
         symbol={symbol}
         currency={draft.currency}
         onValueChange={(changeInRetainedEarnings) => set({ changeInRetainedEarnings })}
-        onCurrencyChange={setCurrency}
+        onCurrencyChange={onCurrencyChange}
       />
       <MoneyRow
         id="afn-result"
@@ -200,7 +201,7 @@ export function AdditionalFundsNeededForm({
         value=""
         symbol={symbol}
         currency={draft.currency}
-        onCurrencyChange={setCurrency}
+        onCurrencyChange={onCurrencyChange}
         readOnly
         displayValue={
           result ? formatPlainMoney(result.additionalFundsNeeded, result.currency) : '—'

@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import { averageReceivable } from './calculation';
 import { averageBalanceIsInput, type ARDaysInput, type ARDaysResult } from './types';
@@ -15,6 +15,7 @@ interface ARDaysFormProps {
   averageSectionOpen: boolean;
   onAverageSectionOpenChange: (open: boolean) => void;
   onChange: (input: ARDaysInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -55,6 +56,7 @@ export function ARDaysForm({
   averageSectionOpen,
   onAverageSectionOpenChange,
   onChange,
+  onCurrencyChange,
   onReset,
 }: ARDaysFormProps) {
   const set = (patch: Partial<ARDaysInput>) => onChange({ ...input, ...patch });
@@ -116,7 +118,7 @@ export function ARDaysForm({
                 <CurrencySelect
                   id="ar-currency"
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                 />
               </div>
             </div>

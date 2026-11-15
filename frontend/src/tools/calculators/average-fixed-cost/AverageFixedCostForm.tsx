@@ -4,7 +4,7 @@ import * as React from 'react';
 import { MoreHorizontal, RotateCcw, Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   AverageFixedCostFieldErrors,
@@ -18,6 +18,7 @@ interface AverageFixedCostFormProps {
   result: AverageFixedCostResult | null;
   copied: boolean;
   onChange: (input: AverageFixedCostInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
   onShare: () => void;
 }
@@ -55,6 +56,7 @@ export function AverageFixedCostForm({
   result,
   copied,
   onChange,
+  onCurrencyChange,
   onReset,
   onShare,
 }: AverageFixedCostFormProps) {
@@ -94,7 +96,7 @@ export function AverageFixedCostForm({
             <CurrencySelect
               id="afc-total-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -147,7 +149,7 @@ export function AverageFixedCostForm({
             <CurrencySelect
               id="afc-average-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Average fixed cost currency"
             />
           </div>
