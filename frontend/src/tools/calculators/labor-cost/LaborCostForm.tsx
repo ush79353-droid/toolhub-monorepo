@@ -4,7 +4,7 @@ import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import { countFilledAdditionalCosts } from './calculation';
 import type { LaborCostFieldErrors, LaborCostInput, LaborCostResult } from './types';
@@ -46,6 +46,7 @@ interface LaborCostFormProps {
   additionalOpen: boolean;
   percentageOpen: boolean;
   onChange: (input: LaborCostInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onToggleAdditional: () => void;
   onTogglePercentage: () => void;
   onReset: () => void;
@@ -58,6 +59,7 @@ export function LaborCostForm({
   additionalOpen,
   percentageOpen,
   onChange,
+  onCurrencyChange,
   onToggleAdditional,
   onTogglePercentage,
   onReset,
@@ -110,7 +112,7 @@ export function LaborCostForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -147,7 +149,7 @@ export function LaborCostForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

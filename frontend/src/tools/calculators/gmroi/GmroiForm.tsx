@@ -4,7 +4,7 @@ import type { FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type { GmroiDraft, GmroiFieldErrors, GmroiResult } from './types';
 
@@ -29,6 +29,7 @@ interface GmroiFormProps {
   errors: GmroiFieldErrors;
   result: GmroiResult | null;
   onDraftChange: (draft: GmroiDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -38,6 +39,7 @@ export function GmroiForm({
   errors,
   result,
   onDraftChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: GmroiFormProps) {
@@ -89,7 +91,7 @@ export function GmroiForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={draft.currency}
-            onChange={(currency) => onDraftChange({ ...draft, currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

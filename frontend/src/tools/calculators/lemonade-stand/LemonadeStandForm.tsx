@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Select } from '@/components/ui/select';
 import { ChevronDown, RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import {
   CUP_SIZE_OPTIONS,
   type LemonadeStandDraft,
@@ -118,6 +118,7 @@ interface LemonadeStandFormProps {
   result: LemonadeStandResult | null;
   sectionOpen: Record<string, boolean>;
   onDraftChange: (draft: LemonadeStandDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onToggleSection: (key: string) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
@@ -129,6 +130,7 @@ export function LemonadeStandForm({
   result,
   sectionOpen,
   onDraftChange,
+  onCurrencyChange,
   onToggleSection,
   onSubmit,
   onReset,
@@ -167,7 +169,7 @@ export function LemonadeStandForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={draft.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

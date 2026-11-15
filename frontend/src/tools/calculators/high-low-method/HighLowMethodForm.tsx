@@ -4,7 +4,7 @@ import type { ChangeEvent, FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   HighLowMethodFieldErrors,
@@ -38,6 +38,7 @@ interface HighLowMethodFormProps {
   errors: HighLowMethodFieldErrors;
   result: HighLowMethodResult | null;
   onChange: (input: HighLowMethodInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -47,6 +48,7 @@ export function HighLowMethodForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: HighLowMethodFormProps) {
@@ -87,7 +89,7 @@ export function HighLowMethodForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -144,7 +146,7 @@ export function HighLowMethodForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
