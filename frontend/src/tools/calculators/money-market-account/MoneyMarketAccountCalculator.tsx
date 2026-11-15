@@ -37,7 +37,7 @@ export function MoneyMarketAccountCalculator({
     const validation = validateMoneyMarketAccount(input);
     setErrors(validation.errors);
     setResult(validation.result);
-  }, []);
+  }, [input]);
 
   const run = (next: MoneyMarketAccountInput) => {
     const validation = validateMoneyMarketAccount(next);

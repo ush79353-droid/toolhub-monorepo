@@ -48,6 +48,7 @@ Admin SEO UI does **not** expose robots directives or sitemap fields. Public rob
 - `frontend/src/app/robots.ts` — allow public site; disallow `/admin/`, `/api/`, `/embed/`.
 - `frontend/src/app/sitemap.ts` — static + categories + allowlisted implemented tools that pass `resolveSitemapEligible` (skips localhost origins).
 - Extend `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts` when new registry calculators launch.
+- **Site-wide indexing kill switch:** `SITE_ALLOW_INDEXING` must be exactly `true` to allow crawling. When unset/false: `robots.txt` is `Disallow: /`, sitemap is empty, root + tool meta are `noindex,nofollow`. Use this while tools are still in development.
 
 ## 7. Cache Policy
 

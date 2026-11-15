@@ -165,7 +165,13 @@ export function resolveCanonicalUrl(input: {
   return `${origin}${buildToolPath(input.slug)}`;
 }
 
+/** Site-wide indexing gate (mirrors server/seo/site-indexing.ts; safe for lib/ tests). */
+export function isSiteIndexingEnabled(): boolean {
+  return process.env.SITE_ALLOW_INDEXING === 'true';
+}
+
 export function resolveEffectiveIndexable(tool: Pick<ToolSeoSource, 'indexable' | 'isActive'>, isImplemented: boolean): boolean {
+  if (!isSiteIndexingEnabled()) return false;
   return Boolean(tool.isActive && tool.indexable && isImplemented);
 }
 
@@ -195,11 +201,12 @@ export function buildToolPageMetadata(
   const twitterTitle = tool.twitterTitle.trim() || ogTitle;
   const twitterDescription = tool.twitterDescription.trim() || ogDescription;
   const twitterImage = tool.twitterImageUrl.trim() || ogImage;
+  const indexingOn = isSiteIndexingEnabled();
   const index = resolveEffectiveIndexable(tool, options.isImplemented);
 
   const robots: Metadata['robots'] = {
     index,
-    follow: tool.robotsFollow,
+    follow: indexingOn ? tool.robotsFollow : false,
     noarchive: tool.robotsNoArchive || undefined,
     nosnippet: tool.robotsNoSnippet || undefined,
     noimageindex: tool.robotsNoImageIndex || undefined,

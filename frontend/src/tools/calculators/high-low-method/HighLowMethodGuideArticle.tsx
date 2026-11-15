@@ -1,4 +1,4 @@
-import { FAQAccordion } from '@/components/shared/FAQAccordion';
+﻿import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { HIGH_LOW_METHOD_FAQS } from './content';
 
 const sections: { id: string; title: string; body: string[]; formula?: string }[] = [
@@ -55,7 +55,7 @@ export function HighLowMethodGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...HIGH_LOW_METHOD_FAQS]} />
+            <FAQAccordion items={[...HIGH_LOW_METHOD_FAQS]} />
           </div>
         </section>
       </div>
