@@ -107,6 +107,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'YearsToDecadesCalculator',
   'TimeUnitConverter',
   'ZuluTimeConverter',
+  'AngleConversionCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -364,6 +365,7 @@ if (isDirect) {
     !isApprovedComponentKey('YearsToDecadesCalculator') ||
     !isApprovedComponentKey('TimeUnitConverter') ||
     !isApprovedComponentKey('ZuluTimeConverter') ||
+    !isApprovedComponentKey('AngleConversionCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

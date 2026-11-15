@@ -119,6 +119,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   YearsToDecadesCalculator: () => import('@/tools/calculators/years-to-decades/detail'),
   TimeUnitConverter: () => import('@/tools/calculators/time-unit/detail'),
   ZuluTimeConverter: () => import('@/tools/calculators/zulu-time/detail'),
+  AngleConversionCalculator: () => import('@/tools/calculators/angle-conversion/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

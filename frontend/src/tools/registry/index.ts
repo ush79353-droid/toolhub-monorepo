@@ -569,6 +569,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ZuluTimeConverter,
     })),
   ),
+  AngleConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/angle-conversion/AngleConversionCalculator').then((mod) => ({
+      default: mod.AngleConversionCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
