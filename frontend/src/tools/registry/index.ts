@@ -564,6 +564,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TimeUnitConverter,
     })),
   ),
+  ZuluTimeConverter: lazyTool(() =>
+    import('@/tools/calculators/zulu-time/ZuluTimeConverter').then((mod) => ({
+      default: mod.ZuluTimeConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

@@ -117,6 +117,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'minutes-to-hours-converter',
   'years-to-decades-calculator',
   'time-unit-converter',
+  'zulu-time-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

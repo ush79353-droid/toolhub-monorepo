@@ -106,6 +106,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MinutesToHoursConverter',
   'YearsToDecadesCalculator',
   'TimeUnitConverter',
+  'ZuluTimeConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -362,6 +363,7 @@ if (isDirect) {
     !isApprovedComponentKey('MinutesToHoursConverter') ||
     !isApprovedComponentKey('YearsToDecadesCalculator') ||
     !isApprovedComponentKey('TimeUnitConverter') ||
+    !isApprovedComponentKey('ZuluTimeConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
