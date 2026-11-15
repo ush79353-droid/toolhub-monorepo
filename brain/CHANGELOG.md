@@ -10,6 +10,12 @@
 - **Important Files:** `frontend/src/tools/calculators/present-value/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-present-value-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
 
+### 2026-11-15 — Add PVIFA Calculator (Screenshot-First)
+- **Summary:** Shipped PVIFA Calculator on existing catalog slug `pvifa-calculator` (`PvifaCalculator`, catalog `6af46f10a27d8d1d4e9900e5`). Interest rate per period (r), periods (n), inline PVIFA; collapsed Additional settings with copy/share/reset. No currency. Omega UI. Activated.
+- **Example:** 5% / 10 periods → PVIFA ≈ 7.7217.
+- **Important Files:** `frontend/src/tools/calculators/pvifa/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pvifa-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add Optimal Hedge Ratio Calculator (Screenshot-First)
 - **Summary:** Shipped Optimal Hedge Ratio Calculator on existing catalog slug `optimal-hedge-ratio-calculator` (`OptimalHedgeRatioCalculator`, catalog `6af46f10a27d8d1d4e9900e1`). Four unitless fields: spot σ, futures σ, correlation, inline optimal hedge ratio. Formula h* = ρ × (σs / σf). Distinct from Hedge Ratio Calculator. Omega UI. Activated.
 - **Example:** σs 12 / σf 15 / ρ 0.8 → h* = 0.64.

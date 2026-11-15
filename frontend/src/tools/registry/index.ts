@@ -954,6 +954,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PercentageReturnCalculator,
     })),
   ),
+  PerpetuityCalculator: lazyTool(() =>
+    import('@/tools/calculators/perpetuity/PerpetuityCalculator').then((mod) => ({
+      default: mod.PerpetuityCalculator,
+    })),
+  ),
   PreAndPostMoneyValuationCalculator: lazyTool(() =>
     import('@/tools/calculators/pre-and-post-money-valuation/PreAndPostMoneyValuationCalculator').then((mod) => ({
       default: mod.PreAndPostMoneyValuationCalculator,
@@ -972,6 +977,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   PvgoCalculator: lazyTool(() =>
     import('@/tools/calculators/pvgo/PvgoCalculator').then((mod) => ({
       default: mod.PvgoCalculator,
+    })),
+  ),
+  PvifaCalculator: lazyTool(() =>
+    import('@/tools/calculators/pvifa/PvifaCalculator').then((mod) => ({
+      default: mod.PvifaCalculator,
     })),
   ),
   BitcoinEtfCalculator: lazyTool(() =>

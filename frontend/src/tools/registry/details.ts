@@ -270,6 +270,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/payback-period/detail'),
   PercentageReturnCalculator: () =>
     import('@/tools/calculators/percentage-return/detail'),
+  PerpetuityCalculator: () =>
+    import('@/tools/calculators/perpetuity/detail'),
   PreAndPostMoneyValuationCalculator: () =>
     import('@/tools/calculators/pre-and-post-money-valuation/detail'),
   PresentValueCalculator: () =>
@@ -278,6 +280,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/price-quantity/detail'),
   PvgoCalculator: () =>
     import('@/tools/calculators/pvgo/detail'),
+  PvifaCalculator: () =>
+    import('@/tools/calculators/pvifa/detail'),
   BitcoinEtfCalculator: () =>
     import('@/tools/calculators/bitcoin-etf/detail'),
   CapitalGainsYieldCalculator: () =>

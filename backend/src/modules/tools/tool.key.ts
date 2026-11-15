@@ -179,10 +179,12 @@ export const APPROVED_COMPONENT_KEYS = [
   'ParkingRatioCalculator',
   'PaybackPeriodCalculator',
   'PercentageReturnCalculator',
+  'PerpetuityCalculator',
   'PreAndPostMoneyValuationCalculator',
   'PresentValueCalculator',
   'PriceQuantityCalculator',
   'PvgoCalculator',
+  'PvifaCalculator',
   'BitcoinEtfCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
@@ -405,10 +407,12 @@ if (isDirect) {
     !isApprovedComponentKey('ParkingRatioCalculator') ||
     !isApprovedComponentKey('PaybackPeriodCalculator') ||
     !isApprovedComponentKey('PercentageReturnCalculator') ||
+    !isApprovedComponentKey('PerpetuityCalculator') ||
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
     !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
+    !isApprovedComponentKey('PvifaCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('CdCalculator') ||
     !isApprovedComponentKey('CompoundInterestCalculator') ||
