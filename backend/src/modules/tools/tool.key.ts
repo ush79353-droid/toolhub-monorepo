@@ -112,7 +112,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SmokersCtcCalculator',
   'TenureCalculator',
   'TimeValueOfMoneyCalculator',
-  'TtmCalculator',
+  'TreynorRatioCalculator',
   'TurnoverRateCalculator',
   'WebsiteAdRevenueCalculator',
   'SoftwareContractValueCalculator',
@@ -350,7 +350,7 @@ if (isDirect) {
     !isApprovedComponentKey('SmokersCtcCalculator') ||
     !isApprovedComponentKey('TenureCalculator') ||
     !isApprovedComponentKey('TimeValueOfMoneyCalculator') ||
-    !isApprovedComponentKey('TtmCalculator') ||
+    !isApprovedComponentKey('TreynorRatioCalculator') ||
     !isApprovedComponentKey('TurnoverRateCalculator') ||
     !isApprovedComponentKey('WebsiteAdRevenueCalculator') ||
     !isApprovedComponentKey('SoftwareContractValueCalculator') ||

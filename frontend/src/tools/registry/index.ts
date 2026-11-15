@@ -611,10 +611,12 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TimeValueOfMoneyCalculator,
     })),
   ),
-  TtmCalculator: lazyTool(() =>
-    import('@/tools/calculators/ttm/TtmCalculator').then((mod) => ({
-      default: mod.TtmCalculator,
-    })),
+  TreynorRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/treynor-ratio/TreynorRatioCalculator').then(
+      (mod) => ({
+        default: mod.TreynorRatioCalculator,
+      }),
+    ),
   ),
   TurnoverRateCalculator: lazyTool(() =>
     import(
