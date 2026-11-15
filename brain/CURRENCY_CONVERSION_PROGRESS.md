@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 76 |
-| Pending | 29 |
+| Complete (implementation) | 81 |
+| Pending | 24 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 5 (Batch 15) + 29 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 5 (Batch 15) + 5 (Batch 16) + 24 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -104,11 +104,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 73 | PVGO | `pvgo-calculator` | 15 | Complete | cf78d13c6333d9753395ff35f0d248c79eaea000 | Pending | Synced selectors; earnings and share price convert; EPS/PVGO method preserved |
 | 74 | Price / Quantity | `price-quantity-calculator` | 15 | Complete | cf78d13c6333d9753395ff35f0d248c79eaea000 | Pending | Synced selector; prices and savings convert; quantities unchanged |
 | 75 | Profitability Index | `profitability-index-calculator` | 15 | Complete | cf78d13c6333d9753395ff35f0d248c79eaea000 | Pending | Synced selectors; investment and PV convert; PI ratio invariant |
-| 76 | Revenue Per Employee | `revenue-per-employee-calculator` | 16 | Pending | — | Pending | |
-| 77 | ROAS | `roas-calculator` | 16 | Pending | — | Pending | |
-| 78 | SaaS Lifetime Value | `saas-lifetime-value-calculator` | 16 | Pending | — | Pending | |
-| 79 | Sales Commission | `sales-commission-calculator` | 16 | Pending | — | Pending | |
-| 80 | Smoker's CTC | `smokers-ctc-calculator` | 16 | Pending | — | Pending | |
+| 76 | Revenue Per Employee | `revenue-per-employee-calculator` | 16 | Complete | dced67764af8fc5daf1d80b436b097a1325cdaf9 | Pending | Synced selectors; revenue converts; employee count and per-head formula unchanged |
+| 77 | ROAS | `roas-calculator` | 16 | Complete | dced67764af8fc5daf1d80b436b097a1325cdaf9 | Pending | Synced selectors; ad spend and revenue convert; ROAS %/ratio and ad-only ROI invariant |
+| 78 | SaaS Lifetime Value | `saas-lifetime-value-calculator` | 16 | Complete | dced67764af8fc5daf1d80b436b097a1325cdaf9 | Pending | Synced selector; ARPA/revenue/expansion convert; margin %, churn %, accounts unchanged |
+| 79 | Sales Commission | `sales-commission-calculator` | 16 | Complete | dced67764af8fc5daf1d80b436b097a1325cdaf9 | Pending | Header selector; monetary inputs convert; commission % and tier semantics unchanged |
+| 80 | Smoker's CTC | `smokers-ctc-calculator` | 16 | Complete | dced67764af8fc5daf1d80b436b097a1325cdaf9 | Pending | Synced selectors; wage and pack price convert; time/holiday/life-days unchanged |
 | 81 | Software Contract Value | `software-contract-value-calculator` | 17 | Pending | — | Pending | |
 | 82 | Website Ad Revenue | `website-ad-revenue-calculator` | 17 | Pending | — | Pending | |
 | 83 | YouTube Money | `youtube-money-calculator` | 17 | Pending | — | Pending | |
@@ -190,6 +190,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Holding Period Return: bought, current, and dividend convert; all yield percentages unchanged.
 - Impermanent Loss: fiat deposit and token prices in quote currency convert; token quantities and IL % unchanged.
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
+- Manual verification left Pending for user reference comparison.
+
+## Batch 16 notes
+
+- Local commit: `fix(currency): integrate conversion batch 16 calculators` `dced67764af8fc5daf1d80b436b097a1325cdaf9`.
+- Provider slug allowlist extended for Batch 16 (preserves prior batches + Margin Interest).
+- Revenue Per Employee: synced selectors (×2); revenue converts; employee count and revenue-per-employee ratio unchanged by FX alone.
+- ROAS: synced selectors; ad spend and ad revenue convert; ROAS %, ratio, and ad-only ROI unchanged.
+- SaaS Lifetime Value: synced selector across money fields; ARPA, recurring revenue, expansion, and LTV amounts convert; churn/margin % and account count unchanged.
+- Sales Commission: header currency selector; sales, COGS, expenses, salary, and quota convert; percentage brackets and derived margins unchanged.
+- Smoker's CTC: synced selectors on wage/pack and labor/cigarette outputs; wage and pack price convert; break times, schedules, and life-expectancy days unchanged.
 - Manual verification left Pending for user reference comparison.
 
 ## Batch 15 notes
@@ -295,6 +306,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 16 (#76–#80) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 15 (#71–#75) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 14 (#66–#70) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 13 (#61–#65) implementation Complete; manual verification Pending.
