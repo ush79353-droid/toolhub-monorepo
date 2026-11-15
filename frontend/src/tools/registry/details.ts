@@ -260,8 +260,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/online-marketing-conversion/detail'),
   OperatingAssetTurnoverCalculator: () =>
     import('@/tools/calculators/operating-asset-turnover/detail'),
-  OptimalHedgeRatioCalculator: () =>
-    import('@/tools/calculators/optimal-hedge-ratio/detail'),
+  OpportunityCostCalculator: () =>
+    import('@/tools/calculators/opportunity-cost/detail'),
   ParkingRatioCalculator: () =>
     import('@/tools/calculators/parking-ratio/detail'),
   PaybackPeriodCalculator: () =>

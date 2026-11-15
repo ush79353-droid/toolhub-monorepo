@@ -183,7 +183,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'npv-calculator-net-present-value',
   'online-marketing-conversion-calculator',
   'operating-asset-turnover-calculator',
-  'optimal-hedge-ratio-calculator',
+  'opportunity-cost-calculator',
   'parking-ratio-calculator',
   'payback-period-calculator',
   'pre-and-post-money-valuation-calculator',
