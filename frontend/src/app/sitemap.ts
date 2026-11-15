@@ -119,6 +119,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'time-unit-converter',
   'zulu-time-converter',
   'angle-conversion-calculator',
+  'ms-to-kmh-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

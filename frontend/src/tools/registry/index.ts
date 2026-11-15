@@ -574,6 +574,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AngleConversionCalculator,
     })),
   ),
+  MsToKmhConverter: lazyTool(() =>
+    import('@/tools/calculators/ms-to-kmh/MsToKmhConverter').then((mod) => ({
+      default: mod.MsToKmhConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
