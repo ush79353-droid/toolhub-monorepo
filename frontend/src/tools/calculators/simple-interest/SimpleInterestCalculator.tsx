@@ -4,10 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
 import {
-  CURRENCY_DENOMINATION_NOTE,
-  getCurrencySymbol,
-} from '@/tools/shared/currency';
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { SimpleInterestForm } from './SimpleInterestForm';
 import {
   createDefaultInput,
@@ -17,6 +20,11 @@ import {
 } from './types';
 import { validateSimpleInterestInput } from './validation';
 
+const MONEY_FIELDS = ['principal'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts the principal using stored exchange rates. Interest rate % and term stay the same.';
+
 export function SimpleInterestCalculator({
   metadata,
   className = '',
@@ -24,28 +32,58 @@ export function SimpleInterestCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<SimpleInterestInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<SimpleInterestFieldErrors>({});
   const [result, setResult] = React.useState<SimpleInterestResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
   const handleChange = (next: SimpleInterestInput) => {
+    setConversionError(null);
     setInput(next);
     const validation = validateSimpleInterestInput(next);
     setErrors(validation.errors);
     setResult(validation.result);
   };
 
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({ ...input, ...converted.values, currency });
+  };
+
   const handleReset = () => {
     setInput(createDefaultInput());
     setErrors({});
     setResult(null);
+    setConversionError(null);
   };
 
   const symbol = getCurrencySymbol(input.currency);
@@ -57,7 +95,7 @@ export function SimpleInterestCalculator({
         `Term: ${input.termYears || '0'} yrs, ${input.termMonths || '0'} mos`,
         `Total interest: ${symbol}${result.formattedTotalInterest}`,
         `Final balance: ${symbol}${result.formattedFinalBalance}`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -72,18 +110,27 @@ export function SimpleInterestCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            I = P × (r ÷ 100) × t. {CURRENCY_DENOMINATION_NOTE}
+            I = P × (r ÷ 100) × t. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <SimpleInterestForm
           input={input}
           errors={errors}
           result={result}
           onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
         />
 
         <details className="rounded-xl border border-border bg-muted/15">

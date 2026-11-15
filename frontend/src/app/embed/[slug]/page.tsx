@@ -116,6 +116,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'opportunity-cost-calculator',
   'percentage-return-calculator',
   'perpetuity-calculator',
+  'present-value-calculator',
+  'rate-of-return-calculator',
+  'return-on-capital-employed-calculator-roce',
+  'roi-calculator',
+  'simple-interest-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';

@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   PresentValueFieldErrors,
@@ -42,6 +42,7 @@ interface PresentValueFormProps {
   errors: PresentValueFieldErrors;
   result: PresentValueResult | null;
   onChange: (input: PresentValueInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -50,6 +51,7 @@ export function PresentValueForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: PresentValueFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -78,7 +80,7 @@ export function PresentValueForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -124,7 +126,7 @@ export function PresentValueForm({
               <CurrencySelect
                 id="pv-future-value-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Future value currency"
               />
             </div>
