@@ -169,6 +169,7 @@ interface ContributionMarginFormProps {
   errors: ContributionMarginFieldErrors;
   result: ContributionMarginResult | null;
   onDraftChange: (draft: ContributionMarginDraft) => void;
+  onCurrencyChange: (currency: ContributionMarginInput['currency']) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -178,12 +179,12 @@ export function ContributionMarginForm({
   errors,
   result,
   onDraftChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: ContributionMarginFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
   const set = (patch: Partial<ContributionMarginDraft>) => onDraftChange({ ...draft, ...patch });
-  const setCurrency = (currency: ContributionMarginDraft['currency']) => set({ currency });
 
   const ratioDisplay =
     result?.contributionMarginRatioPercent === null ||
@@ -209,7 +210,7 @@ export function ContributionMarginForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(sellingPricePerUnit) => set({ sellingPricePerUnit })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <MoneyRow
           id="cm-variable-cost"
@@ -220,7 +221,7 @@ export function ContributionMarginForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(variableCostPerUnit) => set({ variableCostPerUnit })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
         <div>
           <label className={labelClass} htmlFor="cm-units">
@@ -257,7 +258,7 @@ export function ContributionMarginForm({
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(fixedCosts) => set({ fixedCosts })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
       </section>
 
@@ -275,7 +276,7 @@ export function ContributionMarginForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           displayValue={
             result ? formatPlainMoney(result.contributionMargin, result.currency) : '—'
@@ -311,7 +312,7 @@ export function ContributionMarginForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           displayValue={result ? formatPlainMoney(result.profitGenerated, result.currency) : '—'}
         />

@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   isFixedVariableMethod,
@@ -19,6 +19,7 @@ interface CostFunctionFormProps {
   result: CostFunctionResult | null;
   incomplete: boolean;
   onChange: (input: CostFunctionInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -127,10 +128,10 @@ export function CostFunctionForm({
   result,
   incomplete,
   onChange,
+  onCurrencyChange,
   onReset,
 }: CostFunctionFormProps) {
   const set = (patch: Partial<CostFunctionInput>) => onChange({ ...input, ...patch });
-  const setCurrency = (currency: CostFunctionInput['currency']) => set({ currency });
   const symbol = getCurrencySymbol(input.currency);
   const fixedVariable = isFixedVariableMethod(input);
   const showPlaceholder = !result && (incomplete || Object.keys(errors).length === 0);
@@ -184,7 +185,7 @@ export function CostFunctionForm({
             currencyId="cf-fixed-currency"
             error={errors.fixedCost}
             onValueChange={(fixedCost) => set({ fixedCost })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
           <MoneyField
             id="cf-variable"
@@ -196,7 +197,7 @@ export function CostFunctionForm({
             currencyId="cf-variable-currency"
             error={errors.variableCostPerUnit}
             onValueChange={(variableCostPerUnit) => set({ variableCostPerUnit })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
           <div>
             <FieldLabel
@@ -245,7 +246,7 @@ export function CostFunctionForm({
             currencyId="cf-c1-currency"
             error={errors.totalCost1}
             onValueChange={(totalCost1) => set({ totalCost1 })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
           <div>
             <FieldLabel
@@ -275,7 +276,7 @@ export function CostFunctionForm({
             currencyId="cf-c2-currency"
             error={errors.totalCost2}
             onValueChange={(totalCost2) => set({ totalCost2 })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
         </div>
       )}

@@ -64,6 +64,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'burn-rate-calculator',
   'business-budget-calculator',
   'business-loan-calculator',
+  'business-valuation-calculator',
+  'consulting-fees-calculator',
+  'contribution-margin-calculator',
+  'cost-function-calculator',
+  'cost-of-doing-business-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';
