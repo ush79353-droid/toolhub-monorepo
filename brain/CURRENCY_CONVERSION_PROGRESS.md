@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 81 |
-| Pending | 24 |
+| Complete (implementation) | 85 |
+| Pending | 20 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 5 (Batch 15) + 5 (Batch 16) + 24 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 5 (Batch 15) + 5 (Batch 16) + 4 (Batch 17) + 20 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -109,10 +109,10 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 78 | SaaS Lifetime Value | `saas-lifetime-value-calculator` | 16 | Complete | dced67764af8fc5daf1d80b436b097a1325cdaf9 | Pending | Synced selector; ARPA/revenue/expansion convert; margin %, churn %, accounts unchanged |
 | 79 | Sales Commission | `sales-commission-calculator` | 16 | Complete | dced67764af8fc5daf1d80b436b097a1325cdaf9 | Pending | Header selector; monetary inputs convert; commission % and tier semantics unchanged |
 | 80 | Smoker's CTC | `smokers-ctc-calculator` | 16 | Complete | dced67764af8fc5daf1d80b436b097a1325cdaf9 | Pending | Synced selectors; wage and pack price convert; time/holiday/life-days unchanged |
-| 81 | Software Contract Value | `software-contract-value-calculator` | 17 | Pending | — | Pending | |
-| 82 | Website Ad Revenue | `website-ad-revenue-calculator` | 17 | Pending | — | Pending | |
-| 83 | YouTube Money | `youtube-money-calculator` | 17 | Pending | — | Pending | |
-| 84 | Jensen's Alpha | `jensens-alpha-calculator` | 17 | Pending | — | Pending | |
+| 81 | Software Contract Value | `software-contract-value-calculator` | 17 | Complete | `137c28d5bd1423e33e32ff06b3cb6bf37c2f36a3` | Pending | Synced selectors; retail price converts; seats, discount %, and duration unchanged |
+| 82 | Website Ad Revenue | `website-ad-revenue-calculator` | 17 | Complete | `137c28d5bd1423e33e32ff06b3cb6bf37c2f36a3` | Pending | Synced selectors (×2); page RPM converts; visits and page views unchanged |
+| 83 | YouTube Money | `youtube-money-calculator` | 17 | Complete | `137c28d5bd1423e33e32ff06b3cb6bf37c2f36a3` | Pending | Synced selectors (×3); RPM converts; view counts and periods unchanged |
+| 84 | Jensen's Alpha | `jensens-alpha-calculator` | 17 | Complete | `137c28d5bd1423e33e32ff06b3cb6bf37c2f36a3` | Pending | Synced selectors (×2); beginning and ending values convert; return % and alpha unchanged by FX alone |
 | 85 | Margin Interest | `margin-interest-calculator` | 17 | Complete | `b968634` | Passed | Pilot Complete (see Pilot section); Batch 17 slot already done |
 | 86 | MVA | `mva-calculator` | 18 | Pending | — | Pending | |
 | 87 | MIRR | `mirr-calculator` | 18 | Pending | — | Pending | |
@@ -190,6 +190,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Holding Period Return: bought, current, and dividend convert; all yield percentages unchanged.
 - Impermanent Loss: fiat deposit and token prices in quote currency convert; token quantities and IL % unchanged.
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
+- Manual verification left Pending for user reference comparison.
+
+## Batch 17 notes
+
+- Local commit: `fix(currency): integrate conversion batch 17 calculators` `137c28d5bd1423e33e32ff06b3cb6bf37c2f36a3`.
+- Provider slug allowlist extended for Batch 17 (preserves prior batches + Margin Interest pilot).
+- Software Contract Value: synced selectors; retail price converts; seats, discount %, and contract months unchanged.
+- Website Ad Revenue: synced selectors (×2); page RPM converts; visits, page views per visit, and page view totals unchanged.
+- YouTube Money: synced selectors (×3); RPM converts; view counts and revenue time periods unchanged.
+- Jensen's Alpha: synced selectors (×2); beginning and ending portfolio values convert together; risk-free %, beta, market return %, and alpha % invariant to FX-only changes.
+- Margin Interest (#85): **not modified** — Pilot Complete, manual verification Passed (reference implementation for this batch).
 - Manual verification left Pending for user reference comparison.
 
 ## Batch 16 notes
@@ -306,6 +317,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 17 (#81–#84) implementation Complete; #85 unchanged (pilot); manual verification Pending for #81–#84.
 - 2026-11-16: Batch 16 (#76–#80) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 15 (#71–#75) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 14 (#66–#70) implementation Complete; manual verification Pending.
