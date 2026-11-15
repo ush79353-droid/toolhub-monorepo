@@ -622,6 +622,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SoftwareContractValueCalculator,
     })),
   ),
+  SortinoRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/sortino-ratio/SortinoRatioCalculator').then((mod) => ({
+      default: mod.SortinoRatioCalculator,
+    })),
+  ),
   YoutubeMoneyCalculator: lazyTool(() =>
     import('@/tools/calculators/youtube-money/YoutubeMoneyCalculator').then((mod) => ({
       default: mod.YoutubeMoneyCalculator,
@@ -1005,6 +1010,12 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   RateOfReturnCalculator: lazyTool(() =>
     import('@/tools/calculators/rate-of-return/RateOfReturnCalculator').then((mod) => ({
       default: mod.RateOfReturnCalculator,
+    })),
+  ),
+  
+  RealRateOfReturnCalculator: lazyTool(() =>
+    import('@/tools/calculators/real-rate-of-return/RealRateOfReturnCalculator').then((mod) => ({
+      default: mod.RealRateOfReturnCalculator,
     })),
   ),
   BitcoinEtfCalculator: lazyTool(() =>

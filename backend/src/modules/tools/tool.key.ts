@@ -113,6 +113,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TurnoverRateCalculator',
   'WebsiteAdRevenueCalculator',
   'SoftwareContractValueCalculator',
+  'SortinoRatioCalculator',
   'YoutubeMoneyCalculator',
   'AnnualizedRateOfReturnCalculator',
   'AppreciationCalculator',
@@ -189,6 +190,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PvgoCalculator',
   'PvifaCalculator',
   'RateOfReturnCalculator',
+  'RealRateOfReturnCalculator',
   'BitcoinEtfCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
@@ -346,6 +348,7 @@ if (isDirect) {
     !isApprovedComponentKey('TurnoverRateCalculator') ||
     !isApprovedComponentKey('WebsiteAdRevenueCalculator') ||
     !isApprovedComponentKey('SoftwareContractValueCalculator') ||
+    !isApprovedComponentKey('SortinoRatioCalculator') ||
     !isApprovedComponentKey('YoutubeMoneyCalculator') ||
     !isApprovedComponentKey('AnnualizedRateOfReturnCalculator') ||
     !isApprovedComponentKey('AppreciationCalculator') ||
@@ -422,6 +425,7 @@ if (isDirect) {
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('PvifaCalculator') ||
     !isApprovedComponentKey('RateOfReturnCalculator') ||
+    !isApprovedComponentKey('RealRateOfReturnCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('CdCalculator') ||
     !isApprovedComponentKey('CompoundInterestCalculator') ||

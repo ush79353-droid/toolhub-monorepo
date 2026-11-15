@@ -142,6 +142,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/website-ad-revenue/detail'),
   SoftwareContractValueCalculator: () =>
     import('@/tools/calculators/software-contract-value/detail'),
+  SortinoRatioCalculator: () =>
+    import('@/tools/calculators/sortino-ratio/detail'),
   YoutubeMoneyCalculator: () =>
     import('@/tools/calculators/youtube-money/detail'),
   AnnualizedRateOfReturnCalculator: () =>
@@ -289,6 +291,9 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pvifa/detail'),
   RateOfReturnCalculator: () =>
     import('@/tools/calculators/rate-of-return/detail'),
+  
+  RealRateOfReturnCalculator: () =>
+    import('@/tools/calculators/real-rate-of-return/detail'),
   BitcoinEtfCalculator: () =>
     import('@/tools/calculators/bitcoin-etf/detail'),
   CapitalGainsYieldCalculator: () =>
