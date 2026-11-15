@@ -606,6 +606,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TenureCalculator,
     })),
   ),
+  TimeValueOfMoneyCalculator: lazyTool(() =>
+    import('@/tools/calculators/time-value-of-money/TimeValueOfMoneyCalculator').then((mod) => ({
+      default: mod.TimeValueOfMoneyCalculator,
+    })),
+  ),
   TtmCalculator: lazyTool(() =>
     import('@/tools/calculators/ttm/TtmCalculator').then((mod) => ({
       default: mod.TtmCalculator,

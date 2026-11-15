@@ -111,6 +111,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SinkingFundCalculator',
   'SmokersCtcCalculator',
   'TenureCalculator',
+  'TimeValueOfMoneyCalculator',
   'TtmCalculator',
   'TurnoverRateCalculator',
   'WebsiteAdRevenueCalculator',
@@ -348,6 +349,7 @@ if (isDirect) {
     !isApprovedComponentKey('SinkingFundCalculator') ||
     !isApprovedComponentKey('SmokersCtcCalculator') ||
     !isApprovedComponentKey('TenureCalculator') ||
+    !isApprovedComponentKey('TimeValueOfMoneyCalculator') ||
     !isApprovedComponentKey('TtmCalculator') ||
     !isApprovedComponentKey('TurnoverRateCalculator') ||
     !isApprovedComponentKey('WebsiteAdRevenueCalculator') ||
