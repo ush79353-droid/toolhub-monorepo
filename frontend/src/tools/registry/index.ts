@@ -877,6 +877,18 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginInterestCalculator,
     })),
   ),
+  MoneyFactorCalculator: lazyTool(() =>
+    import('@/tools/calculators/money-factor/MoneyFactorCalculator').then((mod) => ({
+      default: mod.MoneyFactorCalculator,
+    })),
+  ),
+  MoneyMarketAccountCalculator: lazyTool(() =>
+    import('@/tools/calculators/money-market-account/MoneyMarketAccountCalculator').then(
+      (mod) => ({
+        default: mod.MoneyMarketAccountCalculator,
+      })
+    ),
+  ),
   MvaCalculator: lazyTool(() =>
     import('@/tools/calculators/mva/MvaCalculator').then((mod) => ({
       default: mod.MvaCalculator,

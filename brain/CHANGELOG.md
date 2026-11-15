@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add MIRR Calculator (Screenshot-First)
+- **Summary:** Shipped MIRR Calculator on existing catalog row (slug shortened to `mirr-calculator`, `MirrCalculator`, catalog `6af46f0fa27d8d1d4e990016`). Financing/reinvestment rates, initial investment, Years 1–5 (+ expandable years), inline MIRR. Denomination currency. Omega UI. Activated.
+- **Example:** PKR 1,000 / 10% finance / 8% reinvest / 500×3 years → MIRR ≈ 17.5%.
+- **Important Files:** `frontend/src/tools/calculators/mirr/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mirr-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add MVA Calculator (Screenshot-First)
 - **Summary:** Shipped MVA Calculator on existing catalog slug `mva-calculator` (`MvaCalculator`, catalog `6af46f10a27d8d1d4e9900dd`). Current share price, shares outstanding, inline current market value; capital invested, inline MVA. No debt/EV inputs. Denomination currency. Omega UI. Activated.
 - **Example:** PKR 150 × 10,000 = PKR 1,500,000 market value; − PKR 1,000,000 capital = PKR 500,000 MVA.

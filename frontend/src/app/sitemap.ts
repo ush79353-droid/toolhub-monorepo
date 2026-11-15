@@ -173,6 +173,8 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'liquid-net-worth-calculator',
   'man-hours-calculator',
   'margin-interest-calculator',
+  'money-factor-calculator',
+  'money-market-account-calculator',
   'mva-calculator',
   'online-marketing-conversion-calculator',
   'operating-asset-turnover-calculator',
