@@ -111,11 +111,13 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'profitability-index-calculator',
   'revenue-per-employee-calculator',
   'roas-calculator',
+  'return-on-capital-employed-calculator-roce',
   'roi-calculator',
   'saas-lifetime-value-calculator',
   'safety-stock-calculator',
   'sales-commission-calculator',
   'sell-through-rate-calculator',
+  'simple-interest-calculator',
   'smokers-ctc-calculator',
   'tenure-calculator',
   'turnover-rate-calculator',
@@ -218,6 +220,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'investment-calculator',
   'investment-fee-calculator',
   'jensens-alpha-calculator',
+  'savings-interest-rate-calculator',
 ] as const;
 
 const STATIC_PATHS = [

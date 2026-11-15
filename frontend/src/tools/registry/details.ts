@@ -120,6 +120,9 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   RevenuePerEmployeeCalculator: () =>
     import('@/tools/calculators/revenue-per-employee/detail'),
   RoasCalculator: () => import('@/tools/calculators/roas/detail'),
+  RoceCalculator: () => import('@/tools/calculators/roce/detail'),
+  RoiCalculator: () =>
+    import('@/tools/calculators/roi/detail'),
   SaasLifetimeValueCalculator: () =>
     import('@/tools/calculators/saas-lifetime-value/detail'),
   SafetyStockCalculator: () =>
@@ -128,6 +131,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/sales-commission/detail'),
   SellThroughRateCalculator: () =>
     import('@/tools/calculators/sell-through-rate/detail'),
+  SimpleInterestCalculator: () =>
+    import('@/tools/calculators/simple-interest/detail'),
   SmokersCtcCalculator: () =>
     import('@/tools/calculators/smokers-ctc/detail'),
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),
@@ -323,6 +328,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/investment-fee/detail'),
   JensensAlphaCalculator: () =>
     import('@/tools/calculators/jensens-alpha/detail'),
+  SavingsInterestRateCalculator: () =>
+    import('@/tools/calculators/savings-interest-rate/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

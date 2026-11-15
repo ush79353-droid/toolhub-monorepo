@@ -101,11 +101,13 @@ export const APPROVED_COMPONENT_KEYS = [
   'ProfitabilityIndexCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
+  'RoceCalculator',
   'RoiCalculator',
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
   'SalesCommissionCalculator',
   'SellThroughRateCalculator',
+  'SimpleInterestCalculator',
   'SmokersCtcCalculator',
   'TenureCalculator',
   'TurnoverRateCalculator',
@@ -208,6 +210,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InvestmentCalculator',
   'InvestmentFeeCalculator',
   'JensensAlphaCalculator',
+  'SavingsInterestRateCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -331,11 +334,13 @@ if (isDirect) {
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
     !isApprovedComponentKey('RevenuePerEmployeeCalculator') ||
     !isApprovedComponentKey('RoasCalculator') ||
+    !isApprovedComponentKey('RoceCalculator') ||
     !isApprovedComponentKey('RoiCalculator') ||
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
+    !isApprovedComponentKey('SimpleInterestCalculator') ||
     !isApprovedComponentKey('SmokersCtcCalculator') ||
     !isApprovedComponentKey('TenureCalculator') ||
     !isApprovedComponentKey('TurnoverRateCalculator') ||
@@ -438,6 +443,7 @@ if (isDirect) {
     !isApprovedComponentKey('InvestmentCalculator') ||
     !isApprovedComponentKey('InvestmentFeeCalculator') ||
     !isApprovedComponentKey('JensensAlphaCalculator') ||
+    !isApprovedComponentKey('SavingsInterestRateCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

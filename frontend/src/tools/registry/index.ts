@@ -547,6 +547,17 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RoasCalculator,
     })),
   ),
+  RoceCalculator: lazyTool(() =>
+    import('@/tools/calculators/roce/RoceCalculator').then((mod) => ({
+      default: mod.RoceCalculator,
+    })),
+  ),
+  RoiCalculator: lazyTool(() =>
+    import('@/tools/calculators/roi/RoiCalculator').then((mod) => ({
+      default: mod.RoiCalculator,
+    })),
+  ),
+
   SaasLifetimeValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/saas-lifetime-value/SaasLifetimeValueCalculator'
@@ -571,6 +582,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/sell-through-rate/SellThroughRateCalculator'
     ).then((mod) => ({
       default: mod.SellThroughRateCalculator,
+    })),
+  ),
+  SimpleInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/simple-interest/SimpleInterestCalculator'
+    ).then((mod) => ({
+      default: mod.SimpleInterestCalculator,
     })),
   ),
   SmokersCtcCalculator: lazyTool(() =>
@@ -1123,6 +1141,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     ).then((mod) => ({
       default: mod.JensensAlphaCalculator,
     })),
+  SavingsInterestRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/savings-interest-rate/SavingsInterestRateCalculator'
+    ).then((mod) => ({
+      default: mod.SavingsInterestRateCalculator,
+    })),
+  ),
   ),
 };
 
