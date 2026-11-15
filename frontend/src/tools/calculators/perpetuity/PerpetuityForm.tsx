@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   PerpetuityFieldErrors,
@@ -40,6 +40,7 @@ interface PerpetuityFormProps {
   errors: PerpetuityFieldErrors;
   result: PerpetuityResult | null;
   onChange: (input: PerpetuityInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -48,6 +49,7 @@ export function PerpetuityForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: PerpetuityFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -70,7 +72,7 @@ export function PerpetuityForm({
             <span>Dividend</span>
             <InfoTooltip
               label="Dividend"
-              text="Next-period payment (D₁). Currency labels amounts only; it does not convert."
+              text="Next-period payment (D₁)."
             />
           </label>
           <div className="flex gap-2">
@@ -91,7 +93,7 @@ export function PerpetuityForm({
               <CurrencySelect
                 id="perp-dividend-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Dividend currency"
               />
             </div>
@@ -178,7 +180,7 @@ export function PerpetuityForm({
               <CurrencySelect
                 id="perp-pv-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Present value currency"
               />
             </div>

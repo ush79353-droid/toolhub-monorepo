@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   INITIAL_YEARS,
@@ -45,10 +45,18 @@ interface NpvFormProps {
   errors: NpvFieldErrors;
   result: NpvResult | null;
   onChange: (input: NpvInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
-export function NpvForm({ input, errors, result, onChange, onReset }: NpvFormProps) {
+export function NpvForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: NpvFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<NpvInput>) => onChange({ ...input, ...patch });
 
@@ -101,7 +109,7 @@ export function NpvForm({ input, errors, result, onChange, onReset }: NpvFormPro
             <CurrencySelect
               id={`npv-year-${year}-currency`}
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label={`Year ${year} currency`}
             />
           </div>
@@ -139,7 +147,7 @@ export function NpvForm({ input, errors, result, onChange, onReset }: NpvFormPro
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -186,7 +194,7 @@ export function NpvForm({ input, errors, result, onChange, onReset }: NpvFormPro
             Initial costs
             <InfoTooltip
               label="Initial costs"
-              text="Upfront outflow at year 0. Non-negative. Currency labels denomination only."
+              text="Upfront outflow at year 0. Non-negative."
             />
           </label>
           <div className="flex gap-2">
@@ -207,7 +215,7 @@ export function NpvForm({ input, errors, result, onChange, onReset }: NpvFormPro
               <CurrencySelect
                 id="npv-initial-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Initial costs currency"
               />
             </div>

@@ -4,7 +4,16 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import {
+  convertDraftMoneyFields,
+  convertDraftMoneyList,
+} from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { NpvForm } from './NpvForm';
 import { NpvResults } from './NpvResults';
 import {
@@ -15,6 +24,11 @@ import {
 } from './types';
 import { validateNpvInput } from './validation';
 
+const MONEY_FIELDS = ['initialCosts'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts initial costs and every annual cash flow together using stored exchange rates. Signs and discount rate % stay the same.';
+
 export function NpvCalculator({
   metadata,
   className = '',
@@ -22,16 +36,23 @@ export function NpvCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<NpvInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<NpvFieldErrors>({});
   const [result, setResult] = React.useState<NpvResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: NpvInput) => {
     const validation = validateNpvInput(next);
@@ -39,11 +60,54 @@ export function NpvCalculator({
     setResult(validation.result);
   };
 
+  const handleChange = (next: NpvInput) => {
+    setConversionError(null);
+    setInput(next);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const convertedFields = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!convertedFields.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const cashFlows = convertDraftMoneyList(
+      input.cashFlows,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!cashFlows.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({
+      ...input,
+      ...convertedFields.values,
+      cashFlows: cashFlows.values,
+      currency,
+    });
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
     setErrors({});
     setResult(null);
+    setConversionError(null);
   };
 
   const symbol = getCurrencySymbol(input.currency);
@@ -56,7 +120,7 @@ export function NpvCalculator({
           ...input.cashFlows.map((cf, i) => `Year ${i + 1}: ${symbol}${cf}`),
           `Net present value: ${symbol}${result.npvDisplay}`,
           `Expected cash flows: ${symbol}${result.expectedCashFlowsDisplay}`,
-          CURRENCY_DENOMINATION_NOTE,
+          currencyNote,
         ].join('\n')
       : '';
 
@@ -71,22 +135,27 @@ export function NpvCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            NPV = −initial costs + discounted annual cash flows.{' '}
-            {CURRENCY_DENOMINATION_NOTE}
+            NPV = −initial costs + discounted annual cash flows. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <NpvForm
           input={input}
           errors={errors}
           result={result}
-          onChange={(next) => {
-            setInput(next);
-            run(next);
-          }}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <NpvResults />

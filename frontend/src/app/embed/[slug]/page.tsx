@@ -111,6 +111,11 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'money-market-account-calculator',
   'moving-average-calculator',
   'mutual-fund-calculator',
+  'nopat-calculator',
+  'npv-calculator-net-present-value',
+  'opportunity-cost-calculator',
+  'percentage-return-calculator',
+  'perpetuity-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';
