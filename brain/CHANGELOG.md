@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add Angle Conversion Calculator
+- **Summary:** Shipped Angle Conversion Calculator on existing catalog slug `angle-conversion-calculator` (`AngleConversionCalculator`, catalog `6af46f17a27d8d1d4e990bfb`). Degrees, DMS, radians, gradians, turns, π radians, plus arcminutes/arcseconds/microradians and NATO/Soviet/Swedish mils; canonical radians; live field sync. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 90° = π/2 rad = 100 gon = 0.25 turn = 0.5 π rad = 1,600 NATO mils; 45° 30′ 15″ ≈ 45.5041666667°.
+- **Important Files:** `frontend/src/tools/calculators/angle-conversion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-angle-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null). Full production build not run this pass.
+
 ### 2026-11-15 — Add Zulu Time Converter
 - **Summary:** Shipped Zulu Time Converter on existing catalog slug `zulu-time-converter` (`ZuluTimeConverter`, catalog `6af46f17a27d8d1d4e990bc3`). Country or IANA zone; conversion date; bidirectional Zulu↔local; DST from IANA rules; gap/fold handling reused from the Time Zones engine. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 2026-01-15 12:00Z → 07:00 EST (America/New_York, UTC−05); 2026-07-15 12:00Z → 08:00 EDT (UTC−04); 12:00Z → 17:30 IST / 17:45 NPT.
