@@ -112,6 +112,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'kb-to-mb-converter',
   'unix-time-converter',
   'mbps-calculator',
+  'military-time-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

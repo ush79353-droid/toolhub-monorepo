@@ -539,6 +539,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MbpsCalculator,
     })),
   ),
+  MilitaryTimeConverter: lazyTool(() =>
+    import('@/tools/calculators/military-time/MilitaryTimeConverter').then((mod) => ({
+      default: mod.MilitaryTimeConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

@@ -101,6 +101,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'KbToMbConverter',
   'UnixTimeConverter',
   'MbpsCalculator',
+  'MilitaryTimeConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -352,6 +353,7 @@ if (isDirect) {
     !isApprovedComponentKey('KbToMbConverter') ||
     !isApprovedComponentKey('UnixTimeConverter') ||
     !isApprovedComponentKey('MbpsCalculator') ||
+    !isApprovedComponentKey('MilitaryTimeConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

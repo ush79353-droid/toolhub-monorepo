@@ -113,6 +113,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KbToMbConverter: () => import('@/tools/calculators/kb-to-mb/detail'),
   UnixTimeConverter: () => import('@/tools/calculators/unix-time/detail'),
   MbpsCalculator: () => import('@/tools/calculators/mbps/detail'),
+  MilitaryTimeConverter: () => import('@/tools/calculators/military-time/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
