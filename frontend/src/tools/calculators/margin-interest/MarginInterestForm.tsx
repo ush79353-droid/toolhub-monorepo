@@ -1,9 +1,22 @@
 'use client';
 
+import * as React from 'react';
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import { MARGIN_INTEREST_DAY_BASIS } from './calculation';
 import type {
@@ -51,8 +64,49 @@ export function MarginInterestForm({
   onChange,
   onReset,
 }: MarginInterestFormProps) {
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
   const symbol = getCurrencySymbol(input.currency);
-  const set = (patch: Partial<MarginInterestInput>) => onChange({ ...input, ...patch });
+  const set = (patch: Partial<MarginInterestInput>) => {
+    setConversionError(null);
+    onChange({ ...input, ...patch });
+  };
+
+  const handleCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.currency) return;
+
+    const amount = parseMoneyInput(input.amountBorrowed);
+    if (!Number.isFinite(amount)) {
+      setConversionError(null);
+      onChange({ ...input, currency: next });
+      return;
+    }
+
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    const converted = convertCurrency({
+      amount,
+      from: input.currency,
+      to: next,
+      rates: rates.rates,
+    });
+
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    setConversionError(null);
+    onChange({
+      ...input,
+      currency: next,
+      amountBorrowed: moneyAmountToInputString(converted.amount),
+    });
+  };
 
   return (
     <form
@@ -92,13 +146,21 @@ export function MarginInterestForm({
               <CurrencySelect
                 id="mi-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={handleCurrencyChange}
                 aria-label="Currency"
               />
             </div>
           </div>
           {errors.amountBorrowed ? (
             <p className="mt-1 text-xs text-rose-600">{errors.amountBorrowed}</p>
+          ) : null}
+          {conversionError ? (
+            <p className="mt-1 text-xs text-rose-600" role="alert">
+              {conversionError}
+            </p>
+          ) : null}
+          {ratesStatus.warning && !conversionError ? (
+            <p className="mt-1 text-xs text-amber-700">{ratesStatus.warning}</p>
           ) : null}
         </div>
 
@@ -180,7 +242,15 @@ export function MarginInterestForm({
       </fieldset>
 
       <div className="flex flex-wrap gap-2.5 pt-1">
-        <Button type="button" variant="outline" className="h-11 font-medium" onClick={onReset}>
+        <Button
+          type="button"
+          variant="outline"
+          className="h-11 font-medium"
+          onClick={() => {
+            setConversionError(null);
+            onReset();
+          }}
+        >
           Reset
         </Button>
       </div>

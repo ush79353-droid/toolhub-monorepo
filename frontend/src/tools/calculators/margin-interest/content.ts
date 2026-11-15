@@ -22,6 +22,6 @@ export const MARGIN_INTEREST_FAQS: readonly FAQItem[] = [
   {
     question: 'Does changing the currency convert the amount?',
     answer:
-      'No. Currency selection only changes the denomination symbol and formatting. Entered numbers stay as typed.',
+      'Yes. Changing currency converts the borrowed amount (and therefore margin interest) using the stored exchange-rate snapshot. Interest rate and number of days are not converted. If rates are unavailable, currency switching is blocked.',
   },
 ];

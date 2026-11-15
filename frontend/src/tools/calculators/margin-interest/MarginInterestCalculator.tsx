@@ -4,10 +4,11 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { getCurrencySymbol } from '@/tools/shared/currency';
 import {
-  CURRENCY_DENOMINATION_NOTE,
-  getCurrencySymbol,
-} from '@/tools/shared/currency';
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
 import { MarginInterestForm } from './MarginInterestForm';
 import {
   createDefaultInput,
@@ -17,6 +18,10 @@ import {
 } from './types';
 import { validateMarginInterestInput } from './validation';
 
+/** Pilot copy — amounts convert using the stored MongoDB rate snapshot. */
+const MARGIN_INTEREST_CURRENCY_NOTE =
+  'Changing currency converts the borrowed amount and margin interest using stored exchange rates. Rate and days stay the same.';
+
 export function MarginInterestCalculator({
   metadata,
   className = '',
@@ -24,6 +29,7 @@ export function MarginInterestCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const initial = validateMarginInterestInput(defaults);
   const [input, setInput] = React.useState<MarginInterestInput>(() => defaults);
@@ -58,6 +64,9 @@ export function MarginInterestCalculator({
     setShared(false);
   };
 
+  const currencyNote = ratesStatus.available
+    ? MARGIN_INTEREST_CURRENCY_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
@@ -66,7 +75,7 @@ export function MarginInterestCalculator({
         `Interest rate: ${input.interestRatePercent}%`,
         `Number of days: ${input.numberOfDays}`,
         `Margin interest: ${symbol}${result.formattedMarginInterest}`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -80,9 +89,7 @@ export function MarginInterestCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">
-            {CURRENCY_DENOMINATION_NOTE}
-          </p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>

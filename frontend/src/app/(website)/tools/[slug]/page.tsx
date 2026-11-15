@@ -17,12 +17,17 @@ import {
   type ToolSeoSource,
 } from '@/lib/seo/tool-seo';
 import { getPublicToolBySlug, type PublicToolDetail } from '@/server/catalog/tools';
+import { getCurrencyRates } from '@/server/currency/rates';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
 import { StickyCalculatorAside } from '@/tools/calculators/auto-loan/StickyCalculatorAside';
 import { TableOfContents } from '@/tools/calculators/auto-loan/TableOfContents';
 import { loadToolPageDetail } from '@/tools/registry/details';
 import { isApprovedComponentKey, isRegisteredComponentKey } from '@/tools/registry/keys';
+import { CurrencyRatesProvider } from '@/tools/shared/CurrencyRatesProvider';
 import type { ToolMetadata } from '@/types/tool';
+
+/** Phase 3 pilot: real FX conversion for this slug only. */
+const CURRENCY_CONVERSION_PILOT_SLUG = 'margin-interest-calculator';
 
 function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {
   return {
@@ -127,6 +132,9 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
     notFound();
   }
 
+  const currencyRates =
+    dbTool.slug === CURRENCY_CONVERSION_PILOT_SLUG ? await getCurrencyRates() : null;
+
   const GuideArticleComponent = pageDetail.GuideArticle;
     const sidebarGroupLabel = pillarName || categoryName;
     const relatedToolsList = dbTool?.relatedTools ?? [];
@@ -155,6 +163,29 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
           faqs: pageDetail.faqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
         })
       );
+
+    const calculatorWorkspace = (
+      <ToolWorkspace
+        tool={toolMetadata}
+        headerActions={
+          dbTool &&
+            isToolEmbedEligible({
+              embedEnabled: dbTool.embedEnabled,
+              isActive: dbTool.isActive,
+              componentKey: dbTool.componentKey,
+              embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
+              embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
+              embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
+            }) ? (
+            <CalculatorEmbedDialog
+              toolName={dbTool.name}
+              toolSlug={dbTool.slug}
+              defaultHeight={dbTool.embedDefaultHeight}
+            />
+          ) : undefined
+        }
+      />
+    );
 
     return (
       <div className="py-6 sm:py-9">
@@ -199,26 +230,13 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
           <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)] lg:items-start lg:gap-8">
             <div className="order-1 min-w-0 space-y-6 lg:col-start-1 lg:row-start-1">
               <StickyCalculatorAside ariaLabel={pageDetail.asideAriaLabel}>
-                <ToolWorkspace
-                  tool={toolMetadata}
-                  headerActions={
-                    dbTool &&
-                      isToolEmbedEligible({
-                        embedEnabled: dbTool.embedEnabled,
-                        isActive: dbTool.isActive,
-                        componentKey: dbTool.componentKey,
-                        embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
-                        embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
-                        embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
-                      }) ? (
-                      <CalculatorEmbedDialog
-                        toolName={dbTool.name}
-                        toolSlug={dbTool.slug}
-                        defaultHeight={dbTool.embedDefaultHeight}
-                      />
-                    ) : undefined
-                  }
-                />
+                {currencyRates ? (
+                  <CurrencyRatesProvider rates={currencyRates}>
+                    {calculatorWorkspace}
+                  </CurrencyRatesProvider>
+                ) : (
+                  calculatorWorkspace
+                )}
               </StickyCalculatorAside>
 
               <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">

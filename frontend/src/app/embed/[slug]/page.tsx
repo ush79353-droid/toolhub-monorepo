@@ -10,9 +10,14 @@ import {
   isToolEmbedEligible,
 } from '@/lib/embed/tool-embed';
 import { getPublicToolBySlug } from '@/server/catalog/tools';
+import { getCurrencyRates } from '@/server/currency/rates';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
 import { isApprovedComponentKey, isRegisteredComponentKey } from '@/tools/registry/keys';
+import { CurrencyRatesProvider } from '@/tools/shared/CurrencyRatesProvider';
 import type { ToolMetadata } from '@/types/tool';
+
+/** Phase 3 pilot: real FX conversion for this slug only. */
+const CURRENCY_CONVERSION_PILOT_SLUG = 'margin-interest-calculator';
 
 export const dynamic = 'force-dynamic';
 
@@ -90,6 +95,9 @@ export default async function EmbedToolPage({ params, searchParams }: EmbedPageP
 
   const metadata = toToolMetadata(tool);
   const compact = tool.embedPreferredLayout === 'compact';
+  const currencyRates =
+    tool.slug === CURRENCY_CONVERSION_PILOT_SLUG ? await getCurrencyRates() : null;
+  const workspace = <ToolWorkspace tool={metadata} presentation="embed" />;
 
   return (
     <main className={`mx-auto w-full max-w-3xl px-3 py-3 sm:px-4 sm:py-4 ${compact ? 'max-w-xl' : ''}`}>
@@ -101,7 +109,11 @@ export default async function EmbedToolPage({ params, searchParams }: EmbedPageP
           ) : null}
         </header>
 
-        <ToolWorkspace tool={metadata} presentation="embed" />
+        {currencyRates ? (
+          <CurrencyRatesProvider rates={currencyRates}>{workspace}</CurrencyRatesProvider>
+        ) : (
+          workspace
+        )}
 
         <footer className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-3 text-xs text-muted-foreground">
           <p>
