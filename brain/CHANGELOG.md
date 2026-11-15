@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-15 — Add kB to MB Converter
+- **Summary:** Shipped kB to MB Converter on existing catalog slug `kb-to-mb-converter` (`KbToMbConverter`, catalog `6af46f17a27d8d1d4e990bca`). Bidirectional kB/KiB ↔ MB ↔ MiB via shared bytes; SI vs IEC labels; optional KiB input mode. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1024 kB → 1.024 MB · 0.9765625 MiB; 1024 KiB → 1 MiB · 1.048576 MB.
+- **Important Files:** `frontend/src/tools/calculators/kb-to-mb/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-kb-to-mb-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 38/160). Full production build not run this pass.
+
 ### 2026-11-15 — Add Unicode Text Converter
 - **Summary:** Shipped Unicode Text Converter on existing catalog slug `unicode-text-converter` (`UnicodeTextConverter`, catalog `6af46f17a27d8d1d4e990bd1`). Seven local styles (circled, negative circled, squared, negative squared, inverted, inverted reversed, mathematical monospace); grapheme-safe reverse; per-style copy; compatibility notice. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** `unicode` → circled `ⓤⓝⓘⓒⓞⓓⓔ`, negative circled `🅤🅝🅘🅒🅞🅓🅔`, monospace `𝚞𝚗𝚒𝚌𝚘𝚍𝚎`; `abc` inverted `ɐqɔ` / reversed `ɔqɐ`.
