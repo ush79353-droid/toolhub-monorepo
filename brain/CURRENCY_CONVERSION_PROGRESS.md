@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 95 |
-| Pending | 10 |
+| Complete (implementation) | 100 |
+| Pending | 5 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 5 (Batch 15) + 5 (Batch 16) + 4 (Batch 17) + 5 (Batch 18) + 5 (Batch 19) + 10 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 5 (Batch 15) + 5 (Batch 16) + 4 (Batch 17) + 5 (Batch 18) + 5 (Batch 19) + 5 (Batch 20) + 5 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -124,11 +124,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 93 | Opportunity Cost | `opportunity-cost-calculator` | 19 | Complete | f5ac043 | Pending | Synced selectors (×3); money to spend and savings outputs convert; tax/inflation/return % unchanged |
 | 94 | Percentage Return | `percentage-return-calculator` | 19 | Complete | f5ac043 | Pending | Synced selectors (×2); invested and returned amounts convert; percentage and time modes unchanged |
 | 95 | Perpetuity | `perpetuity-calculator` | 19 | Complete | f5ac043 | Pending | Synced selectors (×2); dividend and PV convert; discount and growth rates unchanged |
-| 96 | Present Value | `present-value-calculator` | 20 | Pending | — | Pending | |
-| 97 | Rate of Return | `rate-of-return-calculator` | 20 | Pending | — | Pending | |
-| 98 | ROCE | `roce-calculator` | 20 | Pending | — | Pending | |
-| 99 | ROI | `roi-calculator` | 20 | Pending | — | Pending | |
-| 100 | Simple Interest | `simple-interest-calculator` | 20 | Pending | — | Pending | |
+| 96 | Present Value | `present-value-calculator` | 20 | Complete | e18538a | Pending | Synced selectors (×2); future value converts; periods and rate % unchanged |
+| 97 | Rate of Return | `rate-of-return-calculator` | 20 | Complete | e18538a | Pending | Synced selector; initial, final, and periodic cash flows convert; solved return % FX-invariant |
+| 98 | ROCE | `return-on-capital-employed-calculator-roce` | 20 | Complete | e18538a | Pending | Synced selectors; EBIT and balance-sheet money fields convert; ROCE % unchanged |
+| 99 | ROI | `roi-calculator` | 20 | Complete | e18538a | Pending | Synced selectors (×3); invested, contribution, and returned convert; ROI and annualized % FX-invariant |
+| 100 | Simple Interest | `simple-interest-calculator` | 20 | Complete | e18538a | Pending | Synced selectors (×3); principal converts; rate % and term unchanged |
 | 101 | Sinking Fund | `sinking-fund-calculator` | 21 | Pending | — | Pending | |
 | 102 | Time Value of Money | `time-value-of-money-calculator` | 21 | Pending | — | Pending | |
 | 103 | Treynor Ratio | `treynor-ratio-calculator` | 21 | Pending | — | Pending | |
@@ -190,6 +190,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Holding Period Return: bought, current, and dividend convert; all yield percentages unchanged.
 - Impermanent Loss: fiat deposit and token prices in quote currency convert; token quantities and IL % unchanged.
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
+- Manual verification left Pending for user reference comparison.
+
+## Batch 20 notes
+
+- Local commit: `fix(currency): integrate conversion batch 20 calculators` `e18538a36272f01413568060174fe65b681b4836`.
+- Provider slug allowlist extended for Batch 20 (preserves prior batches + Margin Interest pilot).
+- Present Value: synced selectors (×2); future value converts; present value and total interest follow; periods and periodic rate % unchanged.
+- Rate of Return: synced selector; initial, final, and periodic cash flows convert before solving; nominal/effective rate semantics and return % FX-invariant.
+- ROCE: synced selectors; EBIT, assets/liabilities/equity fields convert together; ROCE % invariant.
+- ROI: synced selectors (×3); initial, contribution, and returned amounts convert; ROI, rate-of-return link, and annualized ROI % FX-invariant.
+- Simple Interest: synced selectors (×3); principal converts; interest rate and term unchanged.
 - Manual verification left Pending for user reference comparison.
 
 ## Batch 19 notes
@@ -339,6 +350,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 20 (#96–#100) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 19 (#91–#95) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 18 (#86–#90) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 17 (#81–#84) implementation Complete; #85 unchanged (pilot); manual verification Pending for #81–#84.
