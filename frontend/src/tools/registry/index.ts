@@ -606,6 +606,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TenureCalculator,
     })),
   ),
+  TtmCalculator: lazyTool(() =>
+    import('@/tools/calculators/ttm/TtmCalculator').then((mod) => ({
+      default: mod.TtmCalculator,
+    })),
+  ),
   TurnoverRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/turnover-rate/TurnoverRateCalculator'

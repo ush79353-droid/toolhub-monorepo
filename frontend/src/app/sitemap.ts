@@ -121,6 +121,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sinking-fund-calculator',
   'smokers-ctc-calculator',
   'tenure-calculator',
+  'ttm-calculator-trailing-twelve-months',
   'turnover-rate-calculator',
   'website-ad-revenue-calculator',
   'software-contract-value-calculator',
