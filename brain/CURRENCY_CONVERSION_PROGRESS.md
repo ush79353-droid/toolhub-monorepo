@@ -29,11 +29,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 | # | Calculator | Slug | Batch | Status | Commit | Manual verification | Notes |
 |---:|---|---|---:|---|---|---|---|
-| 1 | 12-Hour Shift Pay | `12-hour-shift-pay-calculator` | 1 | Complete | `batch-1` | Pending | Shared selector; converts wages; hours unchanged |
-| 2 | 3x Rent | `3x-rent-calculator` | 1 | Complete | `batch-1` | Pending | Shared selector; converts rent/income; multiplier/shares unchanged |
-| 3 | 401(k) | `401k-calculator` | 1 | Complete | `batch-1` | Pending | Shared selector; USD statutory limit fields not converted |
-| 4 | 403(b) | `403b-calculator` | 1 | Complete | `batch-1` | Pending | Shared selector; converts money fields incl. optional limits |
-| 5 | 529 | `529-calculator` | 1 | Complete | `batch-1` | Pending | Shared selector; converts costs/balances/contributions |
+| 1 | 12-Hour Shift Pay | `12-hour-shift-pay-calculator` | 1 | Complete | acaa18a | Pending | Shared selector; converts wages; hours unchanged |
+| 2 | 3x Rent | `3x-rent-calculator` | 1 | Complete | acaa18a | Pending | Shared selector; converts rent/income; multiplier/shares unchanged |
+| 3 | 401(k) | `401k-calculator` | 1 | Complete | acaa18a | Pending | Shared selector; USD statutory limit fields not converted |
+| 4 | 403(b) | `403b-calculator` | 1 | Complete | acaa18a | Pending | Shared selector; converts money fields incl. optional limits |
+| 5 | 529 | `529-calculator` | 1 | Complete | acaa18a | Pending | Shared selector; converts costs/balances/contributions |
 | 6 | 70/20/10 Rule Money | `702010-rule-money-calculator` | 2 | Pending | — | Pending | |
 | 7 | ADR | `adr-calculator` | 2 | Pending | — | Pending | |
 | 8 | Annualized Return | `annualized-return-calculator` | 2 | Pending | — | Pending | |
@@ -137,7 +137,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Batch 1 notes
 
-- Local commit: `fix(currency): integrate conversion batch 1 calculators` (short SHA stamped in rows #1–#5 after commit).
+- Local commit: `fix(currency): integrate conversion batch 1 calculators` `acaa18acaab6635d847603a52ae1c9a56e4bf7e6`.
 - Shared `/tools/[slug]` + embed routes load rates for: Margin Interest + Batch 1 slugs only.
 - Single shared `CurrencySelect` per tool; all monetary draft fields convert together.
 - 401(k): elective/catch-up/annual-additions limit fields remain USD (not converted).
@@ -147,4 +147,6 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 ## Changelog
 
 - 2026-11-16: Created ledger from Phase 3 audit; recorded Margin Interest Pilot Complete; marked Batch 1 (#1–#5) Complete (implementation).
+
+
 
