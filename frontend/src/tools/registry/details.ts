@@ -112,6 +112,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   UnicodeTextConverter: () => import('@/tools/calculators/unicode-text/detail'),
   KbToMbConverter: () => import('@/tools/calculators/kb-to-mb/detail'),
   UnixTimeConverter: () => import('@/tools/calculators/unix-time/detail'),
+  MbpsCalculator: () => import('@/tools/calculators/mbps/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
