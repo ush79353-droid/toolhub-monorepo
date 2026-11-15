@@ -74,11 +74,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 43 | Burn Rate | `burn-rate-calculator` | 9 | Complete | `fad37c0` | Pending | Balances and burn display convert; duration and runway units unchanged |
 | 44 | Business Budget | `business-budget-calculator` | 9 | Complete | `fad37c0` | Pending | All income/expense/one-time lines convert; recurring periods unchanged |
 | 45 | Business Loan | `business-loan-calculator` | 9 | Complete | `fad37c0` | Pending | Loan amount and fee cash convert; rate, term, and origination % unchanged |
-| 46 | Business Valuation | `business-valuation-calculator` | 10 | Complete | `d4afaed` | Pending | Synced selectors; monetary inputs convert; discount %, multiples, shares, scale unchanged |
-| 47 | Consulting Fees | `consulting-fees-calculator` | 10 | Complete | `d4afaed` | Pending | Header selector; operating costs and target income convert; billable days/hours unchanged |
-| 48 | Contribution Margin | `contribution-margin-calculator` | 10 | Complete | `d4afaed` | Pending | Shared selectors; price, variable cost, fixed costs convert; units and margin % unchanged |
-| 49 | Cost Function | `cost-function-calculator` | 10 | Complete | `d4afaed` | Pending | Shared selectors; fixed/variable/total costs convert; quantities and slopes unchanged |
-| 50 | Cost of Doing Business | `cost-of-doing-business-calculator` | 10 | Complete | `d4afaed` | Pending | Synced selectors; annual cost converts; billable days unchanged |
+| 46 | Business Valuation | `business-valuation-calculator` | 10 | Complete | `d4afaed149e66ef7c525cafdb09cff5423e22757` | Pending | Synced selectors; monetary inputs convert; discount %, multiples, shares, scale unchanged |
+| 47 | Consulting Fees | `consulting-fees-calculator` | 10 | Complete | `d4afaed149e66ef7c525cafdb09cff5423e22757` | Pending | Header selector; operating costs and target income convert; billable days/hours unchanged |
+| 48 | Contribution Margin | `contribution-margin-calculator` | 10 | Complete | `d4afaed149e66ef7c525cafdb09cff5423e22757` | Pending | Shared selectors; price, variable cost, fixed costs convert; units and margin % unchanged |
+| 49 | Cost Function | `cost-function-calculator` | 10 | Complete | `d4afaed149e66ef7c525cafdb09cff5423e22757` | Pending | Shared selectors; fixed/variable/total costs convert; quantities and slopes unchanged |
+| 50 | Cost of Doing Business | `cost-of-doing-business-calculator` | 10 | Complete | `d4afaed149e66ef7c525cafdb09cff5423e22757` | Pending | Synced selectors; annual cost converts; billable days unchanged |
 | 51 | Cost of Goods Sold | `cost-of-goods-sold-calculator` | 11 | Pending | — | Pending | |
 | 52 | CPA | `cpa-calculator-cost-per-acquisition` | 11 | Pending | — | Pending | |
 | 53 | CPC and CPM | `cpc-and-cpm-calculator` | 11 | Pending | — | Pending | |
