@@ -7,6 +7,7 @@ import {
 import { getPublicCategories } from '@/server/catalog/categories';
 import { getPublicToolBySlug, type PublicToolDetail } from '@/server/catalog/tools';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
+import { isSiteIndexingEnabled } from '@/server/seo/site-indexing';
 import { isRegisteredComponentKey } from '@/tools/registry/keys';
 
 /** Known implemented public tool slugs (registry-backed). Extend when new calculators ship. */
@@ -242,6 +243,11 @@ function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Empty until SITE_ALLOW_INDEXING=true (development / pre-launch lock).
+  if (!isSiteIndexingEnabled()) {
+    return [];
+  }
+
   const origin = getPublicSiteOrigin().replace(/\/+$/, '');
   if (!origin || origin.includes('localhost')) {
     // Avoid publishing localhost URLs; configure NEXT_PUBLIC_SITE_URL / SITE_URL in production.

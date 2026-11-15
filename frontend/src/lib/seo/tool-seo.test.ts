@@ -83,11 +83,21 @@ const fallbackMeta = buildToolPageMetadata(tool(), {
 assert.deepEqual(fallbackMeta.title, { absolute: 'Loan Calculator | Omega Calculators' });
 assert.equal(fallbackMeta.description, 'Estimate loan payments.');
 
+const previousIndexing = process.env.SITE_ALLOW_INDEXING;
+process.env.SITE_ALLOW_INDEXING = 'true';
 assert.equal(resolveEffectiveIndexable(tool({ indexable: true }), false), false);
 assert.equal(resolveEffectiveIndexable(tool({ indexable: true, isActive: false }), true), false);
 assert.equal(resolveEffectiveIndexable(tool({ indexable: true }), true), true);
 assert.equal(resolveSitemapEligible(tool({ sitemapInclude: false }), true), false);
 assert.equal(resolveSitemapEligible(tool({ sitemapInclude: true }), true), true);
+process.env.SITE_ALLOW_INDEXING = 'false';
+assert.equal(resolveEffectiveIndexable(tool({ indexable: true }), true), false);
+assert.equal(resolveSitemapEligible(tool({ sitemapInclude: true }), true), false);
+if (previousIndexing === undefined) {
+  delete process.env.SITE_ALLOW_INDEXING;
+} else {
+  process.env.SITE_ALLOW_INDEXING = previousIndexing;
+}
 
 const other = buildToolPageMetadata(tool({ slug: 'auto-loan-calculator', name: 'Auto Loan Calculator', metaTitle: 'Auto SEO' }), {
   siteName: 'Omega Calculators',
