@@ -7,11 +7,11 @@ Tracks real FX conversion for the **105 currency-enabled calculators** from the 
 | Metric | Count |
 |---|---:|
 | Audit targets (105) | 105 |
-| Complete (implementation) | 66 |
-| Pending | 39 |
+| Complete (implementation) | 71 |
+| Pending | 34 |
 | Blocked | 0 |
 | Manual verification Passed | 1 (pilot only) |
-| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 39 Pending tools |
+| Manual verification Pending | 5 (Batch 1) + 5 (Batch 2) + 5 (Batch 3) + 5 (Batch 4) + 5 (Batch 5) + 5 (Batch 6) + 5 (Batch 7) + 5 (Batch 8) + 5 (Batch 9) + 5 (Batch 10) + 5 (Batch 11) + 5 (Batch 12) + 5 (Batch 13) + 5 (Batch 14) + 34 Pending tools |
 
 ## Pilot (outside batch numbering)
 
@@ -94,11 +94,11 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 63 | High-Low Method | `high-low-method-calculator` | 13 | Complete | 4c54e9005feb6746f68443d90ddd048eaffaf4b2 | Pending | Synced selectors; high/low costs and derived VC/fixed/total convert; units unchanged |
 | 64 | Labor Cost | `labor-cost-calculator` | 13 | Complete | 4c54e9005feb6746f68443d90ddd048eaffaf4b2 | Pending | Synced selectors; wage and employer costs convert; hours and labor % unchanged |
 | 65 | Lemonade Stand | `lemonade-stand-calculator` | 13 | Complete | 4c54e9005feb6746f68443d90ddd048eaffaf4b2 | Pending | Synced selector; all cost/price fields convert; servings unchanged |
-| 66 | Lerner Index | `lerner-index-calculator` | 14 | Pending | — | Pending | |
-| 67 | Liquid Net Worth | `liquid-net-worth-calculator` | 14 | Pending | — | Pending | |
-| 68 | Man-Hours | `man-hours-calculator` | 14 | Pending | — | Pending | |
-| 69 | Online Marketing Conversion | `online-marketing-conversion-calculator` | 14 | Pending | — | Pending | |
-| 70 | Operating Asset Turnover | `operating-asset-turnover-calculator` | 14 | Pending | — | Pending | |
+| 66 | Lerner Index | `lerner-index-calculator` | 14 | Complete | 14b14abe0a1b0b1850d84dcd5582662f3a1cc1c7 | Pending | Synced selectors; price and marginal cost convert; Lerner index invariant |
+| 67 | Liquid Net Worth | `liquid-net-worth-calculator` | 14 | Complete | 14b14abe0a1b0b1850d84dcd5582662f3a1cc1c7 | Pending | Synced selectors; assets and liabilities convert; negative net worth preserved |
+| 68 | Man-Hours | `man-hours-calculator` | 14 | Complete | 14b14abe0a1b0b1850d84dcd5582662f3a1cc1c7 | Pending | Synced selectors (×3); hourly pay converts; people/hours/man-hours unchanged |
+| 69 | Online Marketing Conversion | `online-marketing-conversion-calculator` | 14 | Complete | 14b14abe0a1b0b1850d84dcd5582662f3a1cc1c7 | Pending | Synced money selectors; spend and revenue convert; funnel counts and % unchanged |
+| 70 | Operating Asset Turnover | `operating-asset-turnover-calculator` | 14 | Complete | 14b14abe0a1b0b1850d84dcd5582662f3a1cc1c7 | Pending | Synced selectors; assets and sales convert; turnover ratio invariant |
 | 71 | Payback Period | `payback-period-calculator` | 15 | Pending | — | Pending | |
 | 72 | Pre and Post Money Valuation | `pre-and-post-money-valuation-calculator` | 15 | Pending | — | Pending | |
 | 73 | PVGO | `pvgo-calculator` | 15 | Pending | — | Pending | |
@@ -192,6 +192,17 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - Information Ratio: beginning and ending values convert; benchmark, tracking error, and IR unchanged.
 - Manual verification left Pending for user reference comparison.
 
+## Batch 14 notes
+
+- Local commit: `fix(currency): integrate conversion batch 14 calculators` `14b14abe0a1b0b1850d84dcd5582662f3a1cc1c7`.
+- Provider slug allowlist extended for Batch 14 (preserves prior batches + Margin Interest).
+- Lerner Index: synced selectors; price and marginal cost convert; Lerner index decimal invariant to FX alone.
+- Liquid Net Worth: synced selectors; liquid assets and liabilities convert; subtraction and negative outcomes preserved.
+- Man-Hours: synced selectors (×3); hourly pay converts; people, hours, man-hours, and productivity unchanged.
+- Online Marketing Conversion: synced money selectors; ad spend and revenue fields convert; visits, leads, customers, and conversion % unchanged.
+- Operating Asset Turnover: synced selectors; operating asset components and sales convert; turnover multiple invariant.
+- Manual verification left Pending for user reference comparison.
+
 ## Batch 13 notes
 
 - Local commit: `fix(currency): integrate conversion batch 13 calculators` `4c54e9005feb6746f68443d90ddd048eaffaf4b2`.
@@ -273,6 +284,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 
 ## Changelog
 
+- 2026-11-16: Batch 14 (#66–#70) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 13 (#61–#65) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 12 (#56–#60) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 11 (#51–#55) implementation Complete; manual verification Pending.
