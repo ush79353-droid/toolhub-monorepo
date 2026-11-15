@@ -11,6 +11,12 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    rules: {
+      // Logos and /uploads media use plain <img>; next/image needs static sizing + remote config.
+      "@next/next/no-img-element": "off",
+    },
+  },
 ];
 
 export default eslintConfig;

@@ -9,7 +9,6 @@ import {
   formatCurrencyValue,
 } from '@/tools/shared/currency';
 import { HoldingPeriodReturnForm } from './HoldingPeriodReturnForm';
-import { HoldingPeriodReturnResults } from './HoldingPeriodReturnResults';
 import {
   createDefaultInput,
   type HoldingPeriodReturnFieldErrors,
@@ -126,7 +125,6 @@ export function HoldingPeriodReturnCalculator({
             </Button>
           ) : null}
         </div>
-        <HoldingPeriodReturnResults />
       </div>
     </section>
   );
