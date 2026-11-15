@@ -217,6 +217,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InvestmentFeeCalculator',
   'JensensAlphaCalculator',
   'SavingsInterestRateCalculator',
+  'SharpeRatioCalculator',
   'ValueAtRiskCalculator',
 ] as const;
 
@@ -446,6 +447,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'InvestmentFeeCalculator',
   'JensensAlphaCalculator',
   'SavingsInterestRateCalculator',
+  'SharpeRatioCalculator',
   'ValueAtRiskCalculator',
 ] as const;
 

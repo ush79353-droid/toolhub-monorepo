@@ -1196,6 +1196,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SavingsInterestRateCalculator,
     })),
   ),
+  SharpeRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/sharpe-ratio/SharpeRatioCalculator').then((mod) => ({
+      default: mod.SharpeRatioCalculator,
+    })),
+  ),
   ValueAtRiskCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/value-at-risk/ValueAtRiskCalculator'

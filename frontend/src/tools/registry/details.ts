@@ -346,6 +346,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/jensens-alpha/detail'),
   SavingsInterestRateCalculator: () =>
     import('@/tools/calculators/savings-interest-rate/detail'),
+  SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
 };
 

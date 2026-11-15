@@ -219,6 +219,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InvestmentFeeCalculator',
   'JensensAlphaCalculator',
   'SavingsInterestRateCalculator',
+  'SharpeRatioCalculator',
   'ValueAtRiskCalculator',
 ] as const;
 
@@ -461,6 +462,7 @@ if (isDirect) {
     !isApprovedComponentKey('InvestmentFeeCalculator') ||
     !isApprovedComponentKey('JensensAlphaCalculator') ||
     !isApprovedComponentKey('SavingsInterestRateCalculator') ||
+    !isApprovedComponentKey('SharpeRatioCalculator') ||
     !isApprovedComponentKey('ValueAtRiskCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {

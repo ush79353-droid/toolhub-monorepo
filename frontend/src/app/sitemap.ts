@@ -229,6 +229,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'investment-fee-calculator',
   'jensens-alpha-calculator',
   'savings-interest-rate-calculator',
+  'sharpe-ratio-calculator',
   'value-at-risk-calculator-var',
 ] as const;
 
