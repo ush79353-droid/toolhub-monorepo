@@ -4,7 +4,7 @@ import type { FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type { EvmFieldErrors, EvmInput } from './types';
 import { parseOptionalNumber } from './validation';
@@ -57,14 +57,21 @@ interface EvmFormProps {
   draft: EvmDraft;
   errors: EvmFieldErrors;
   onDraftChange: (draft: EvmDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
 
-export function EvmForm({ draft, errors, onDraftChange, onSubmit, onReset }: EvmFormProps) {
+export function EvmForm({
+  draft,
+  errors,
+  onDraftChange,
+  onCurrencyChange,
+  onSubmit,
+  onReset,
+}: EvmFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
   const set = (patch: Partial<EvmDraft>) => onDraftChange({ ...draft, ...patch });
-  const setCurrency = (currency: EvmDraft['currency']) => set({ currency });
 
   return (
     <form className="space-y-4" onSubmit={onSubmit} noValidate autoComplete="off">
@@ -168,7 +175,7 @@ export function EvmForm({ draft, errors, onDraftChange, onSubmit, onReset }: Evm
                 id="evm-budget-currency"
                 aria-label="Budget currency"
                 value={draft.currency}
-                onChange={setCurrency}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -207,7 +214,7 @@ export function EvmForm({ draft, errors, onDraftChange, onSubmit, onReset }: Evm
                 id="evm-costs-currency"
                 aria-label="Costs currency"
                 value={draft.currency}
-                onChange={setCurrency}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>

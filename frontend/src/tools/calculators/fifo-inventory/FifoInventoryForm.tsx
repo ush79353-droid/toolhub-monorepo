@@ -5,7 +5,7 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import type {
   FifoInventoryFieldErrors,
   FifoInventoryInput,
@@ -38,6 +38,7 @@ interface FifoInventoryFormProps {
   errors: FifoInventoryFieldErrors;
   result: FifoInventoryResult | null;
   onChange: (input: FifoInventoryInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -47,6 +48,7 @@ export function FifoInventoryForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: FifoInventoryFormProps) {
@@ -87,7 +89,7 @@ export function FifoInventoryForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -191,7 +193,7 @@ export function FifoInventoryForm({
               <CurrencySelect
                 id="fifo-revenue-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Revenues currency"
               />
             </div>

@@ -16,6 +16,7 @@ interface EffectiveCorporateTaxRateFormProps {
   errors: EffectiveCorporateTaxRateFieldErrors;
   result: EffectiveCorporateTaxRateResult | null;
   onChange: (input: EffectiveCorporateTaxRateInput) => void;
+  onCurrencyChange: (currency: EffectiveCorporateTaxRateInput['currency']) => void;
   onReset: () => void;
 }
 
@@ -46,13 +47,12 @@ export function EffectiveCorporateTaxRateForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: EffectiveCorporateTaxRateFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<EffectiveCorporateTaxRateInput>) =>
     onChange({ ...input, ...patch });
-  const setCurrency = (currency: EffectiveCorporateTaxRateInput['currency']) =>
-    set({ currency });
 
   return (
     <form
@@ -85,7 +85,7 @@ export function EffectiveCorporateTaxRateForm({
             <CurrencySelect
               id="ectr-earnings-currency"
               value={input.currency}
-              onChange={setCurrency}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -115,7 +115,7 @@ export function EffectiveCorporateTaxRateForm({
             />
           </div>
           <div className="w-[120px] shrink-0 sm:w-[130px]">
-            <CurrencySelect id="ectr-tax-currency" value={input.currency} onChange={setCurrency} />
+            <CurrencySelect id="ectr-tax-currency" value={input.currency} onChange={onCurrencyChange} />
           </div>
         </div>
         {errors.incomeTaxPaid ? (
