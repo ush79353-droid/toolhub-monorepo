@@ -187,6 +187,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MetricToImperialConverter: () => import('@/tools/calculators/metric-to-imperial/detail'),
   CelsiusToFahrenheitConverter: () =>
     import('@/tools/calculators/celsius-to-fahrenheit/detail'),
+  CentigradeToCelsiusConverter: () =>
+    import('@/tools/calculators/centigrade-to-celsius/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

@@ -897,6 +897,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  CentigradeToCelsiusConverter: lazyTool(() =>
+    import('@/tools/calculators/centigrade-to-celsius/CentigradeToCelsiusConverter').then(
+      (mod) => ({
+        default: mod.CentigradeToCelsiusConverter,
+      }),
+    ),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
