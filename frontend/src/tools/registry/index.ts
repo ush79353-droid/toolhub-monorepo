@@ -589,6 +589,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NaturalGasConverter,
     })),
   ),
+  CentsToDollarsCalculator: lazyTool(() =>
+    import('@/tools/calculators/cents-to-dollars/CentsToDollarsCalculator').then((mod) => ({
+      default: mod.CentsToDollarsCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

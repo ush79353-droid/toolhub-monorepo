@@ -123,6 +123,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MsToKmhConverter: () => import('@/tools/calculators/ms-to-kmh/detail'),
   CcfToThermsCalculator: () => import('@/tools/calculators/ccf-to-therms/detail'),
   NaturalGasConverter: () => import('@/tools/calculators/natural-gas/detail'),
+  CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

@@ -122,6 +122,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ms-to-kmh-converter',
   'ccf-to-therms-calculator',
   'natural-gas-converter',
+  'cents-to-dollars-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
