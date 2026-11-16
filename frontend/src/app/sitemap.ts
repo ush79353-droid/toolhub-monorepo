@@ -200,6 +200,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cubic-inches-to-gallons-converter',
   'cubic-meter-to-ton-converter',
   'cups-to-gallons-converter',
+  'cups-to-oz-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

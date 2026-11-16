@@ -189,6 +189,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CubicInchesToGallonsConverter',
   'CubicMeterToTonConverter',
   'CupsToGallonsConverter',
+  'CupsToOzConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -533,6 +534,7 @@ if (isDirect) {
     !isApprovedComponentKey('CubicInchesToGallonsConverter') ||
     !isApprovedComponentKey('CubicMeterToTonConverter') ||
     !isApprovedComponentKey('CupsToGallonsConverter') ||
+    !isApprovedComponentKey('CupsToOzConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
