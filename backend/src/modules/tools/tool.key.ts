@@ -310,6 +310,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BoatLoanCalculator',
   'LandLoanCalculator',
   'PagIbigHousingLoanCalculator',
+  'RvLoanCalculator',
   'LtvCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
@@ -668,6 +669,7 @@ if (isDirect) {
     !isApprovedComponentKey('BoatLoanCalculator') ||
     !isApprovedComponentKey('LandLoanCalculator') ||
     !isApprovedComponentKey('PagIbigHousingLoanCalculator') ||
+    !isApprovedComponentKey('RvLoanCalculator') ||
     !isApprovedComponentKey('LtvCalculator') ||
     !isApprovedComponentKey('CdCalculator') ||
     !isApprovedComponentKey('CompoundInterestCalculator') ||

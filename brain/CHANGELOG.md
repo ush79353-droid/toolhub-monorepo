@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — RV Loan Calculator (Screenshot-First + FX)
+- **Summary:** Shipped RV Loan Calculator on existing catalog slug `rv-loan-calculator` (`RvLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff61`). Screenshot sections: RV loan setup (price, down payment default 0.00, term yrs/mos, interest %/yr) and RV loan payments (loan amount, payment / mon, total paid, cost of loan). Independent real FX on all six monetary selectors; canonical = RV price currency; down payment normalized before P = V − D. Activated.
+- **Example:** 100,000 PKR / 20,000 down / 5 yrs / 6% → loan 80,000; payment ≈ 1,546.62; total paid ≈ 92,797.45; cost ≈ 12,797.45.
+- **Important Files:** `frontend/src/tools/calculators/rv-loan/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-rv-loan-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Quiz: Loan Balance Calculator
 - **Summary:** Shipped educational Quiz: Loan Balance Calculator on existing catalog slug `quiz-loan-balance-calculator` (`QuizLoanBalanceCalculator`, catalog `6af46f0fa27d8d1d4e98ff60`). Five MC questions, score `/5` after all answered, deferred explanations until complete, internal link to Interest Rate Calculator. No FX. Distinct from Loan Balance Calculator. Activated.
 - **Example:** Correct answers A/B/C/B/A → 5/5. Incomplete quiz shows “Please answer all questions to see your score!”

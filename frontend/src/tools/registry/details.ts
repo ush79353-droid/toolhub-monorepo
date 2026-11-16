@@ -443,6 +443,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/land-loan/detail'),
   PagIbigHousingLoanCalculator: () =>
     import('@/tools/calculators/pag-ibig-housing-loan/detail'),
+  RvLoanCalculator: () => import('@/tools/calculators/rv-loan/detail'),
   LtvCalculator: () => import('@/tools/calculators/ltv/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>

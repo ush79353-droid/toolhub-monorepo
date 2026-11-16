@@ -321,6 +321,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'boat-loan-calculator',
   'land-loan-calculator',
   'pag-ibig-housing-loan-calculator',
+  'rv-loan-calculator',
   'ltv-calculator-loan-to-value',
   'capital-gains-yield-calculator',
   'cd-calculator',
