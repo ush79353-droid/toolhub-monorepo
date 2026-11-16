@@ -624,6 +624,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CpsCalculator,
     })),
   ),
+  PenniesToDollarsCalculator: lazyTool(() =>
+    import('@/tools/calculators/pennies-to-dollars/PenniesToDollarsCalculator').then((mod) => ({
+      default: mod.PenniesToDollarsCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
