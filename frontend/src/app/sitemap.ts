@@ -187,6 +187,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'centigrade-to-celsius-converter',
   'metric-to-sae-calculator',
   'cm-height-conversion-calculator',
+  'centimeter-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

@@ -176,6 +176,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CentigradeToCelsiusConverter',
   'MetricToSaeCalculator',
   'CmHeightConversionCalculator',
+  'CentimeterCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -507,6 +508,7 @@ if (isDirect) {
     !isApprovedComponentKey('CentigradeToCelsiusConverter') ||
     !isApprovedComponentKey('MetricToSaeCalculator') ||
     !isApprovedComponentKey('CmHeightConversionCalculator') ||
+    !isApprovedComponentKey('CentimeterCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

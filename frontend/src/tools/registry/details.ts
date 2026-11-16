@@ -192,6 +192,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MetricToSaeCalculator: () => import('@/tools/calculators/metric-to-sae/detail'),
   CmHeightConversionCalculator: () =>
     import('@/tools/calculators/cm-height-conversion/detail'),
+  CentimeterCalculator: () => import('@/tools/calculators/centimeter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
