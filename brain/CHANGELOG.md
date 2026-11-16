@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Meter to Mile Converter
+- **Summary:** Shipped Meter to Mile Converter on existing catalog slug `meter-to-mile-converter` (`MeterToMileConverter`, catalog `6af46f17a27d8d1d4e990b0a`). Exact bidirectional m↔mi via international statute mile (1 mi = 1609.344 m); Metric/Imperial sections; empty default. Live pillar `6af451d1a27d8d1d4e98f9e9` preserved vs brief …d2…; subPillar null.
+- **Why:** TOOL-262 delivery for Conversion & Units distance converter.
+- **Important Files:** `frontend/src/tools/calculators/meter-to-mile/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-meter-to-mile-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; live pillar preserved; meta 53/148). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add cc to mL Converter
 - **Summary:** Shipped cc to mL Converter on existing catalog slug `cc-to-ml-converter` (`CcToMlConverter`, catalog `6af46f17a27d8d1d4e990b31`). Three-way cc↔mL↔L with exact 1 cc = 1 mL; empty default. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70.
 - **Why:** TOOL-261 delivery for Conversion & Units volume converter.
