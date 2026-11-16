@@ -134,6 +134,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DbmToWattsCalculator: () => import('@/tools/calculators/dbm-to-watts/detail'),
   PowerConverter: () => import('@/tools/calculators/power/detail'),
   DensityConversion: () => import('@/tools/calculators/density/detail'),
+  PpmCalculator: () => import('@/tools/calculators/ppm/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

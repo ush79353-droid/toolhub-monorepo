@@ -644,6 +644,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DensityConversion,
     })),
   ),
+  PpmCalculator: lazyTool(() =>
+    import('@/tools/calculators/ppm/PpmCalculator').then((mod) => ({
+      default: mod.PpmCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
