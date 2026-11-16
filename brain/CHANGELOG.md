@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Cubic Feet to Gallons Converter
+- **Summary:** Shipped Cubic Feet to Gallons Converter on existing catalog slug `cubic-feet-to-gallons-converter` (`CubicFeetToGallonsConverter`, catalog `6af46f17a27d8d1d4e990af8`). Bidirectional ft³ ↔ US/UK gallons via exact cubic-meter factors; default US gal; conversion tables and FAQs. Pillar `6af451d1a27d8d1d4e98f9e6` / subPillar `6af451d1a27d8d1d4e98f9e7` preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-279 delivery for Conversion & Units volume converter.
+- **Important Files:** `frontend/src/tools/calculators/cubic-feet-to-gallons/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cubic-feet-to-gallons-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Cubic Feet to Cubic Meters Converter
 - **Summary:** Shipped Cubic Feet to Cubic Meters Converter on existing catalog slug `cubic-feet-to-cubic-meters-converter` (`CubicFeetToCubicMetersConverter`, catalog `6af46f17a27d8d1d4e990af7`). Bidirectional ft³ ↔ m³ via reused `cubic-feet` helpers (exact 1 ft³ = 0.028316846592 m³); More Conversion Options (cm³/L/mL/US gal/in³/yd³); conversion table and FAQs. Pillar `6af451d1a27d8d1d4e98f9e6` / subPillar `6af451d1a27d8d1d4e98f9e7` preserved. Meta description shortened to schema maxLength 160. `indexable` left false.
 - **Why:** TOOL-278 delivery for Conversion & Units volume converter.
