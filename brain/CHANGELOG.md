@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Quarters to Dollars Calculator
+- **Summary:** Shipped Quarters to Dollars Calculator on existing catalog slug `quarters-to-dollars-calculator` (`QuartersToDollarsCalculator`, catalog `6af46f17a27d8d1d4e990c04`). Bidirectional quarters↔dollars via integer-cent BigInt (1 quarter = 25¢ = $0.25; 4 quarters = $1); amounts not divisible by $0.25 show quarter-equivalents plus whole-coin remainder. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 25 quarters → $6.25; $10 → 40 quarters; $1.10 → 4.4 quarter-equivalents (4 whole + 10¢).
+- **Important Files:** `frontend/src/tools/calculators/quarters-to-dollars/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-quarters-to-dollars-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 50/148). Full frontend `tsc` / production build not claimed (pre-existing unrelated typing errors on branch).
+
 ### 2026-11-16 — Add MPG to L/100 km Converter
 - **Summary:** Shipped MPG to L/100 km Converter on existing catalog slug `mpg-to-l100-km-converter` (`MpgToL100Converter`, catalog `6af46f17a27d8d1d4e990bed`). Bidirectional US mpg / UK mpg / L/100 km / km/L via km/L canonical; factors derived from exact mile and gallon definitions; zero/negative rejected. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 30 US mpg ≈ 7.840486 L/100 km; 5 L/100 km = 20 km/L ≈ 47.043 US mpg; 40 UK mpg ≈ 7.062023 L/100 km.
