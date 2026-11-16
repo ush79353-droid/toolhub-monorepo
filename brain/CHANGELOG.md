@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Weird Units Converter
+- **Summary:** Shipped Weird Units Converter on existing catalog slug `weird-units-converter` (`WeirdUnitsConverter`, catalog `6af46f17a27d8d1d4e990bf2`). Five categories (length/mass/time/area/volume) with documented weird references; bidirectional regular↔weird; CSS comparison; approximate biological/lifestyle refs labeled. Meta title shortened for schema maxLength 70.
+- **Example:** 100 m ≈ 10,416.67 LEGO brick heights (9.6 mm studs-up); 1 km = 20 Olympic pool lengths.
+- **Important Files:** `frontend/src/tools/calculators/weird-units/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-weird-units-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 59/145). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Leet-speak Translator
 - **Summary:** Shipped Leet-speak Translator on existing catalog slug `leet-speak-translator` (`LeetSpeakTranslator`, catalog `6af46f17a27d8d1d4e990beb`). Bidirectional text↔leet with Classic (default) and Basic profiles; reverse uses 1→I and is labeled approximate. No multi-character Advanced ASCII style.
 - **Example:** Classic `HELLO` → `H3110`; Basic `HELLO` → `H3LL0`; reverse `H3110` → `HEIIO`.
