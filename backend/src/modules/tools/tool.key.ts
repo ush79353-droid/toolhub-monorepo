@@ -119,6 +119,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PaperQuantityConverter',
   'CpsCalculator',
   'PenniesToDollarsCalculator',
+  'DbmToWattsCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -393,6 +394,7 @@ if (isDirect) {
     !isApprovedComponentKey('PaperQuantityConverter') ||
     !isApprovedComponentKey('CpsCalculator') ||
     !isApprovedComponentKey('PenniesToDollarsCalculator') ||
+    !isApprovedComponentKey('DbmToWattsCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

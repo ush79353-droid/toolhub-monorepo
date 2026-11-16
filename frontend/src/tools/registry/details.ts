@@ -131,6 +131,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PaperQuantityConverter: () => import('@/tools/calculators/paper-quantity/detail'),
   CpsCalculator: () => import('@/tools/calculators/cps/detail'),
   PenniesToDollarsCalculator: () => import('@/tools/calculators/pennies-to-dollars/detail'),
+  DbmToWattsCalculator: () => import('@/tools/calculators/dbm-to-watts/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

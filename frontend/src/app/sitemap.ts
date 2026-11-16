@@ -130,6 +130,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'paper-quantity-converter',
   'cps-calculator',
   'pennies-to-dollars-calculator',
+  'dbm-to-watts-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

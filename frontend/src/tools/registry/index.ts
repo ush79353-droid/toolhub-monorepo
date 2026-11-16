@@ -629,6 +629,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PenniesToDollarsCalculator,
     })),
   ),
+  DbmToWattsCalculator: lazyTool(() =>
+    import('@/tools/calculators/dbm-to-watts/DbmToWattsCalculator').then((mod) => ({
+      default: mod.DbmToWattsCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
