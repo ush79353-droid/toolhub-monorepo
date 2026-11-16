@@ -941,6 +941,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CmToKmConverter,
     })),
   ),
+  CmToMConverter: lazyTool(() =>
+    import('@/tools/calculators/cm-to-m/CmToMConverter').then((mod) => ({
+      default: mod.CmToMConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

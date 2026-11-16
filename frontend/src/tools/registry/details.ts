@@ -198,6 +198,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CmToFtInConverter: () => import('@/tools/calculators/cm-to-ft-in/detail'),
   CmToInConverter: () => import('@/tools/calculators/cm-to-in/detail'),
   CmToKmConverter: () => import('@/tools/calculators/cm-to-km/detail'),
+  CmToMConverter: () => import('@/tools/calculators/cm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
