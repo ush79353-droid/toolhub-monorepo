@@ -154,6 +154,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'uppercase-to-lowercase-converter',
   'leet-speak-translator',
   'weird-units-converter',
+  'lowercase-to-uppercase-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
