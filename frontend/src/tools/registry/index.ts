@@ -584,6 +584,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CcfToThermsCalculator,
     })),
   ),
+  NaturalGasConverter: lazyTool(() =>
+    import('@/tools/calculators/natural-gas/NaturalGasConverter').then((mod) => ({
+      default: mod.NaturalGasConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

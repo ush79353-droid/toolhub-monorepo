@@ -122,6 +122,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AngleConversionCalculator: () => import('@/tools/calculators/angle-conversion/detail'),
   MsToKmhConverter: () => import('@/tools/calculators/ms-to-kmh/detail'),
   CcfToThermsCalculator: () => import('@/tools/calculators/ccf-to-therms/detail'),
+  NaturalGasConverter: () => import('@/tools/calculators/natural-gas/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
