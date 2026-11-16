@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add PPM to mg/L Converter
+- **Summary:** Shipped PPM to mg/L Converter on existing catalog slug `ppm-to-mgl-converter` (`PpmToMglConverter`, catalog `6af46f17a27d8d1d4e990bef`). Mass-based ppm ↔ mg/L via density (default 1000 kg/m³); density unit selector; optional molar mass ↔ molarity; source-field tracking. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 100 ppm at 1000 kg/m³ → 100 mg/L; at 1200 kg/m³ → 120 mg/L; 1000 mg/L NaCl (58.44 g/mol) → ≈ 0.0171116 mol/L.
+- **Important Files:** `frontend/src/tools/calculators/ppm-to-mgl/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-ppm-to-mgl-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 41/126). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add Dimensional Analysis Calculator
 - **Summary:** Shipped Dimensional Analysis Calculator on existing catalog slug `dimensional-analysis-calculator` (`DimensionalAnalysisCalculator`, catalog `6af46f17a27d8d1d4e990bd4`). Compare and convert modes; seven SI base + common derived quantities; dimension-vector engine; affine temperature (incl. Rankine); floating-point-tolerant comparison. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 1 m vs 3 ft → 1 m greater by ≈ 0.0856 m; 5 m → ≈ 16.4042 ft; 0°C = 273.15 K.
