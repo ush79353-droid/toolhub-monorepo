@@ -141,6 +141,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TemperatureConversionCalculator',
   'KnotsToMphConverter',
   'UppercaseToLowercaseConverter',
+  'LeetSpeakTranslator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -437,6 +438,7 @@ if (isDirect) {
     !isApprovedComponentKey('TemperatureConversionCalculator') ||
     !isApprovedComponentKey('KnotsToMphConverter') ||
     !isApprovedComponentKey('UppercaseToLowercaseConverter') ||
+    !isApprovedComponentKey('LeetSpeakTranslator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

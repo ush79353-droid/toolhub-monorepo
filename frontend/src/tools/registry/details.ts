@@ -153,6 +153,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KnotsToMphConverter: () => import('@/tools/calculators/knots-to-mph/detail'),
   UppercaseToLowercaseConverter: () =>
     import('@/tools/calculators/uppercase-to-lowercase/detail'),
+  LeetSpeakTranslator: () => import('@/tools/calculators/leet-speak/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

@@ -733,6 +733,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  LeetSpeakTranslator: lazyTool(() =>
+    import('@/tools/calculators/leet-speak/LeetSpeakTranslator').then((mod) => ({
+      default: mod.LeetSpeakTranslator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
