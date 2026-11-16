@@ -47,6 +47,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'boat-loan-calculator',
   'land-loan-calculator',
   'rv-loan-calculator',
+  'student-loan-calculator',
   'student-loan-payment-calculator',
   'simple-mortgage-calculator',
   'ltv-calculator-loan-to-value',
