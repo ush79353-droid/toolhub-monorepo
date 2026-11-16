@@ -54,6 +54,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'future-value-calculator',
   'hedge-ratio-calculator',
   'holding-period-return-calculator',
+  'home-loan-emi-calculator',
   'impermanent-loss-calculator',
   'information-ratio-calculator',
   'interest-rate-calculator',

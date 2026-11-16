@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Home Loan EMI Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Home Loan EMI Calculator on existing catalog slug `home-loan-emi-calculator` (`HomeLoanEmiCalculator`, catalog `6af46f0fa27d8d1d4e98ff66`). Inputs: principal (FX), term yrs/mos, interest %. Results: EMI, total payable, total interest, principal-vs-interest chart (blue/red). Standard EMI formula; zero-rate = P/n. Principal converts on currency change; result currencies display-only. Activated. Distinct from Home Loan / Home Equity Loan.
+- **Example:** P 1,000,000 / 240 mos / 8% → EMI ≈ 8,364.39; payable ≈ 2,007,453.60; interest ≈ 1,007,453.60.
+- **Important Files:** `frontend/src/tools/calculators/home-loan-emi/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-home-loan-emi-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Home Loan Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Home Loan Calculator on existing catalog slug `home-loan-calculator` (`HomeLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff63`). Fields: home value, down payment amount/% sync, loan amount, rate, term years, interest method (US/UK monthly vs Canada semi-annual), payment frequency (incl. accelerated), first day, payment; further specs: annual PMI %, other periodic costs. Mortgage summary + principal/interest/PMI/other pie chart. Independent real FX on monetary selectors. Distinct from Home Loan EMI / Home Equity Loan. Activated.
 - **Example:** 150,000 / 10% down / 4.5% / 30y monthly → payment ≈ 684.03; 360 pays ≈ 246,249.06; interest ≈ 111,249.06; PMI 0.5% → 56.25 × 73 = 4,106.25; total with costs ≈ 250,355.31.
@@ -19,6 +25,12 @@
 - **Summary:** Shipped Home Loan EMI Calculator on existing catalog slug `home-loan-emi-calculator` (`HomeLoanEmiCalculator`, catalog `6af46f0fa27d8d1d4e98ff66`). Inputs: principal (FX), term yrs/mos, interest %. Results: EMI, total payable, total interest, principal-vs-interest chart (blue/red). Standard EMI formula; zero-rate = P/n. Principal converts on currency change; result currencies display-only. Activated. Left unrelated WIP `home-loan/` untouched.
 - **Example:** P 1,000,000 / 240 mos / 8% → EMI ≈ 8,364.39; payable ≈ 2,007,453.60; interest ≈ 1,007,453.60.
 - **Important Files:** `frontend/src/tools/calculators/home-loan-emi/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-home-loan-emi-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-16 — Student Loan Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Student Loan Calculator on existing catalog slug `student-loan-calculator` (`StudentLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff67`). Screenshot fields: loan balance, remaining term yrs/mos, interest rate % → monthly payment. Standard amortizing formula `M = P × r × (1+r)^n / ((1+r)^n − 1)` with `r = 0 → P/n`. Independent real FX on loan + payment; term/rate never convert. Activated.
+- **Example:** 100,000 PKR / 10 yrs / 6% → monthly ≈ 1,110.21 PKR.
+- **Important Files:** `frontend/src/tools/calculators/student-loan/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-student-loan-tool.ts`, `brain/*`.
 - **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
 
 ### 2026-11-16 — Home Equity Loan Calculator
