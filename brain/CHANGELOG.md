@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Cubic Meter to Ton Converter
+- **Summary:** Shipped Cubic Meter to Ton Converter on existing catalog slug `cubic-meter-to-ton-converter` (`CubicMeterToTonConverter`, catalog `6af46f17a27d8d1d4e990ade`). Density-based bidirectional m³ ↔ metric/US/UK tons; default Liquids / fresh water 4 °C / 1000 kg/m³; material lookup and custom density; guide/FAQs with density table. Pillar `6af451d0a27d8d1d4e98f9e3` / null subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-282 delivery for Conversion & Units volume-to-mass calculator.
+- **Important Files:** `frontend/src/tools/calculators/cubic-meter-to-ton/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cubic-meter-to-ton-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Cubic Inches to Gallons Converter
 - **Summary:** Shipped Cubic Inches to Gallons Converter on existing catalog slug `cubic-inches-to-gallons-converter` (`CubicInchesToGallonsConverter`, catalog `6af46f17a27d8d1d4e990ac6`). Bidirectional in³ ↔ US/UK gallons ↔ other units (L/mL/cm³/m³/ft³); exact 231 in³ per US gal and 4.54609 L per UK gal; empty default; guide/FAQs. Pillar `6af451d0a27d8d1d4e98f9e1` / null subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-281 delivery for Conversion & Units volume converter.
