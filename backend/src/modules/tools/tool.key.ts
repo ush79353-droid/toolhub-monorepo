@@ -335,6 +335,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MortgageAccelerationCalculator',
   'MortgageAmortizationCalculator',
   'CanadianMortgageCalculator',
+  'MortgageCalculatorUk',
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
