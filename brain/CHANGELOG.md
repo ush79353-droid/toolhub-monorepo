@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add RMS to Watts Converter
+- **Summary:** Shipped RMS to Watts Converter on existing catalog slug `rms-to-watts-converter` (`RmsToWattsConverter`, catalog `6af46f17a27d8d1d4e990bd0`). Primary bidirectional RMS↔peak for sinusoidal power waveforms (×√2); optional electrical-power accordion (V/I/PF, V/R, I/R, V_peak/R). Explicit non-universal amp-rating disclaimer. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 100 W RMS → ≈141.421 W peak; 120 V × 2 A × 0.8 PF = 192 W.
+- **Important Files:** `frontend/src/tools/calculators/rms-to-watts/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-rms-to-watts-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 61/148). Full frontend `tsc` / production build not claimed (pre-existing unrelated typing errors on branch).
+
 ### 2026-11-16 — Add Hardness Conversion Calculator
 - **Summary:** Shipped Hardness Conversion Calculator on existing catalog slug `hardness-conversion-calculator` (`HardnessConversionCalculator`, catalog `6af46f17a27d8d1d4e990bea`). Non-austenitic steel only; sparse ASTM E140-aligned soft (HRB) and hard (HRC) lookup tables; linear interpolation; no extrapolation; unavailable cells shown as em dash. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 40 HRC → 371 HBW / 392 HV; 300 HBW → ~32 HRC / ~317 HV (interpolated).
