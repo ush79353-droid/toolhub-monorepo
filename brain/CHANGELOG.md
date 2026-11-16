@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Biweekly Mortgage Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Biweekly Mortgage Calculator on existing catalog slug `biweekly-mortgage-calculator` (`BiweeklyMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff6d`). Mortgage details (loan FX, term yrs/mos, rate) + compounding (Monthly UK & US / Semi-annually Canada), points %, upfront fee FX, extra payment FX. Payment summary compares without-acceleration monthly vs accelerated biweekly (half monthly every 14 days) vs difference. Closing costs added once to totals. Independent FX normalized into loan currency. Activated.
+- **Example:** 150,000 PKR / 30y / 6% Monthly (UK & US) → monthly ≈ 899.33; biweekly ≈ 449.66; biweekly term ≈ 24 yrs 5 mos; interest ≈ 136,048.89; payment difference ≈ 74.94.
+- **Important Files:** `frontend/src/tools/calculators/biweekly-mortgage/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-biweekly-mortgage-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Mortgage Amortization Calculator (Screenshot-First)
 - **Summary:** Catalog row `mortgage-amortization-calculator` (`6af46f0fa27d8d1d4e98ff72`) had no frontend module. Implemented `MortgageAmortizationCalculator` to match reference: home price, down %, term years, rate, optional taxes/insurance/PMI/HOA/other, start month/year; monthly mortgage + cost table, out-of-pocket, summary, doughnut. Fixed USD (no FX selectors). Distinct from `amortization-calculator`. Activated.
 - **Example:** $500k / 20% / 30y / 7.319% → mortgage ≈ $2,747.45; interest ≈ $589,082.16; with optionals out-of-pocket ≈ $3,872.45/mo · $1,394,082.16 total; payoff Nov. 2056.

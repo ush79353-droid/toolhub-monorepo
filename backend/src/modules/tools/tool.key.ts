@@ -307,6 +307,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RateOfReturnCalculator',
   'RealRateOfReturnCalculator',
   'BitcoinEtfCalculator',
+  'BiweeklyMortgageCalculator',
   'BoatLoanCalculator',
   'LandLoanCalculator',
   'PagIbigHousingLoanCalculator',
@@ -677,6 +678,7 @@ if (isDirect) {
     !isApprovedComponentKey('RateOfReturnCalculator') ||
     !isApprovedComponentKey('RealRateOfReturnCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
+    !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
     !isApprovedComponentKey('LandLoanCalculator') ||
     !isApprovedComponentKey('PagIbigHousingLoanCalculator') ||
@@ -705,6 +707,7 @@ if (isDirect) {
     !isApprovedComponentKey('MortgageAccelerationCalculator') ||
     !isApprovedComponentKey('MortgageAmortizationCalculator') ||
     !isApprovedComponentKey('CanadianMortgageCalculator') ||
+    !isApprovedComponentKey('MortgageCalculatorUk') ||
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
