@@ -190,6 +190,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'centimeter-calculator',
   'cent-to-square-meter-converter',
   'cm-to-ft-in-converter',
+  'cm-to-in-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

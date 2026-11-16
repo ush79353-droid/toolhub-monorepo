@@ -196,6 +196,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CentToSquareMeterConverter: () =>
     import('@/tools/calculators/cent-to-square-meter/detail'),
   CmToFtInConverter: () => import('@/tools/calculators/cm-to-ft-in/detail'),
+  CmToInConverter: () => import('@/tools/calculators/cm-to-in/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
