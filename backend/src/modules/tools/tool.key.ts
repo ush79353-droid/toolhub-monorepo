@@ -187,6 +187,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CubicFeetToGallonsConverter',
   'CubicFeetToPoundsCalculator',
   'CubicInchesToGallonsConverter',
+  'CubicMeterToTonConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -529,6 +530,7 @@ if (isDirect) {
     !isApprovedComponentKey('CubicFeetToGallonsConverter') ||
     !isApprovedComponentKey('CubicFeetToPoundsCalculator') ||
     !isApprovedComponentKey('CubicInchesToGallonsConverter') ||
+    !isApprovedComponentKey('CubicMeterToTonConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

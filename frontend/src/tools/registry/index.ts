@@ -979,6 +979,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  CubicMeterToTonConverter: lazyTool(() =>
+    import('@/tools/calculators/cubic-meter-to-ton/CubicMeterToTonConverter').then((mod) => ({
+      default: mod.CubicMeterToTonConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
