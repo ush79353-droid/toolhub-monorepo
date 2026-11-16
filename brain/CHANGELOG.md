@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Power Converter
+- **Summary:** Shipped Power Converter on existing catalog slug `power-converter` (`PowerConverter`, catalog `6af46f17a27d8d1d4e990bfa`). Nine synchronized editable fields across SI / horsepower / other accordion groups; watts base; distinct hp(I) vs PS; BTU(IT)/h; negatives allowed. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1000 W → 1 kW, 1,000,000 mW, ≈ 1.34102209 hp(I), ≈ 1.35962162 PS, ≈ 3412.14163 BTU/h.
+- **Important Files:** `frontend/src/tools/calculators/power/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-power-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 35/133). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add dBm to Watts Calculator
 - **Summary:** Shipped dBm to Watts Calculator on existing catalog slug `dbm-to-watts-calculator` (`DbmToWattsCalculator`, catalog `6af46f17a27d8d1d4e990bc8`). Four radio modes (dBm→W, dBm→mW, W→dBm, mW→dBm); clear inputs on mode change; negative dBm valid; zero/negative watts/mW rejected for →dBm. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 30 dBm = 1 W; 20 dBm = 100 mW; 10 W = 40 dBm; −30 dBm = 0.000001 W.
