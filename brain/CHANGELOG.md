@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add CC to Grams Converter
+- **Summary:** Shipped CC to Grams Converter on existing catalog slug `cc-to-grams-converter` (`CcToGramsConverter`, catalog `6af46f17a27d8d1d4e990b2f`). Density-based bidirectional volume↔mass (internal g/cm³ + cc + g); Water ≈1 g/cm³ near 4 °C; ingredient presets + custom density; multi-unit density/volume/mass with physical-quantity preservation. Null pillar/subPillar preserved.
+- **Why:** TOOL-257 delivery for Conversion & Units density converter.
+- **Important Files:** `frontend/src/tools/calculators/cc-to-grams/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cc-to-grams-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 41/131). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Measurement Converter
 - **Summary:** Shipped Measurement Converter on existing catalog slug `measurement-converter` (`MeasurementConverter`, catalog `6af46f17a27d8d1d4e990b91`). Extensible multi-dimension registry (length through angle), conversion-factor panel, precision modes, affine temperature, dimensional mismatch rejection. Null pillar/subPillar preserved.
 - **Example:** 1500 m = 1.5 km; 100 km/h ≈ 27.7778 m/s; 0 °C = 32 °F; 1 bar = 100,000 Pa; 1 kWh = 3,600,000 J.
