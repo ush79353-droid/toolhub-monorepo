@@ -649,6 +649,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PpmCalculator,
     })),
   ),
+  DimensionalAnalysisCalculator: lazyTool(() =>
+    import('@/tools/calculators/dimensional-analysis/DimensionalAnalysisCalculator').then(
+      (mod) => ({
+        default: mod.DimensionalAnalysisCalculator,
+      }),
+    ),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

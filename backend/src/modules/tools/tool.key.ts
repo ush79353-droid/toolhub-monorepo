@@ -123,6 +123,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PowerConverter',
   'DensityConversion',
   'PpmCalculator',
+  'DimensionalAnalysisCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -401,6 +402,7 @@ if (isDirect) {
     !isApprovedComponentKey('PowerConverter') ||
     !isApprovedComponentKey('DensityConversion') ||
     !isApprovedComponentKey('PpmCalculator') ||
+    !isApprovedComponentKey('DimensionalAnalysisCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

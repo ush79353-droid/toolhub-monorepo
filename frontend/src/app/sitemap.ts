@@ -134,6 +134,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'power-converter',
   'density-conversion',
   'ppm-calculator',
+  'dimensional-analysis-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

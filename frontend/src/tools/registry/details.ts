@@ -135,6 +135,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PowerConverter: () => import('@/tools/calculators/power/detail'),
   DensityConversion: () => import('@/tools/calculators/density/detail'),
   PpmCalculator: () => import('@/tools/calculators/ppm/detail'),
+  DimensionalAnalysisCalculator: () =>
+    import('@/tools/calculators/dimensional-analysis/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
