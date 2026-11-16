@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Hardness Conversion Calculator
+- **Summary:** Shipped Hardness Conversion Calculator on existing catalog slug `hardness-conversion-calculator` (`HardnessConversionCalculator`, catalog `6af46f17a27d8d1d4e990bea`). Non-austenitic steel only; sparse ASTM E140-aligned soft (HRB) and hard (HRC) lookup tables; linear interpolation; no extrapolation; unavailable cells shown as em dash. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 40 HRC → 371 HBW / 392 HV; 300 HBW → ~32 HRC / ~317 HV (interpolated).
+- **Important Files:** `frontend/src/tools/calculators/hardness/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-hardness-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 67/130 — title shortened to schema maxLength 70). Full frontend `tsc` / production build not claimed (pre-existing unrelated typing errors on branch). Limitation: no austenitic stainless / aluminum / copper / nickel tables; sparse educational chart (not a full licensed ASTM table dump).
+
 ### 2026-11-16 — Add Radiation Converter
 - **Summary:** Shipped Radiation Converter on existing catalog slug `radiation-converter` (`RadiationConverter`, catalog `6af46f17a27d8d1d4e990bf0`). Independent accordion groups for absorbed dose (mGy/Gy/rad) and equivalent dose (µSv/mSv/rem); no universal Gy↔Sv conversion. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 250 mGy = 0.25 Gy = 25 rad; 50 mSv = 50,000 µSv = 5 rem.
