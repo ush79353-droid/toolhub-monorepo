@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Boat Loan Calculator
+- **Summary:** Shipped Boat Loan Calculator on existing catalog slug `boat-loan-calculator` (`BoatLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff4e`). Screenshot fields only: loan amount (empty default), term (5 yrs/mos), annual rate (5%), monthly payment, total interest. Independent FX on principal / payment / interest (Margin Interest pattern). Amortizing formula with zero-rate path. Activated.
+- **Example:** 100,000 PKR / 5 yrs / 5% → payment ≈ 1,887.12; interest ≈ 13,227.40.
+- **Important Files:** `frontend/src/tools/calculators/boat-loan/*`, registries, `CURRENCY_CONVERSION_SLUGS`, sitemap, `backend/src/scripts/assign-boat-loan-tool.ts`, `brain/*`.
+- **Verification:** Mongo activation verified; worked-example math inspected via `tsx`. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Add Cups to Quarts Converter
 - **Summary:** Shipped Cups to Quarts Converter on existing catalog slug `cups-to-quarts-converter` (`CupsToQuartsConverter`, catalog `6af46f17a27d8d1d4e990b35`). Bidirectional cups ↔ quarts via liters; US customary/legal, metric, and UK cups; US liquid, US dry, and imperial quarts; conversion chart and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-286 delivery for Conversion & Units kitchen/volume converter.

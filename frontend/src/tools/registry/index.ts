@@ -1603,6 +1603,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BitcoinEtfCalculator,
     })),
   ),
+  BoatLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/boat-loan/BoatLoanCalculator').then((mod) => ({
+      default: mod.BoatLoanCalculator,
+    })),
+  ),
   CdCalculator: lazyTool(() =>
     import('@/tools/calculators/cd/CdCalculator').then((mod) => ({
       default: mod.CdCalculator,

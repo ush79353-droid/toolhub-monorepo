@@ -312,6 +312,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'rate-of-return-calculator',
   'real-rate-of-return-calculator',
   'bitcoin-etf-calculator',
+  'boat-loan-calculator',
   'capital-gains-yield-calculator',
   'cd-calculator',
   'compound-interest-calculator',
