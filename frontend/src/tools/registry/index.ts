@@ -1482,6 +1482,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LoanBalanceCalculator,
     })),
   ),
+  QuizLoanBalanceCalculator: lazyTool(() =>
+    import('@/tools/calculators/quiz-loan-balance/QuizLoanBalanceCalculator').then(
+      (mod) => ({
+        default: mod.QuizLoanBalanceCalculator,
+      })
+    )
+  ),
   ManHoursCalculator: lazyTool(() =>
     import('@/tools/calculators/man-hours/ManHoursCalculator').then((mod) => ({
       default: mod.ManHoursCalculator,

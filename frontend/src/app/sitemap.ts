@@ -289,6 +289,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'lerner-index-calculator',
   'liquid-net-worth-calculator',
   'loan-balance-calculator',
+  'quiz-loan-balance-calculator',
   'man-hours-calculator',
   'margin-interest-calculator',
   'mirr-calculator',

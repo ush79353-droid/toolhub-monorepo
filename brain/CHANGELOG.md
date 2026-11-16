@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Quiz: Loan Balance Calculator
+- **Summary:** Shipped educational Quiz: Loan Balance Calculator on existing catalog slug `quiz-loan-balance-calculator` (`QuizLoanBalanceCalculator`, catalog `6af46f0fa27d8d1d4e98ff60`). Five MC questions, score `/5` after all answered, deferred explanations until complete, internal link to Interest Rate Calculator. No FX. Distinct from Loan Balance Calculator. Activated.
+- **Example:** Correct answers A/B/C/B/A → 5/5. Incomplete quiz shows “Please answer all questions to see your score!”
+- **Important Files:** `frontend/src/tools/calculators/quiz-loan-balance/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-quiz-loan-balance-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Add Payday Loan Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Payday Loan Calculator on existing catalog slug `payday-loan-calculator` (`PaydayLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff5d`). Fields: loan amount, finance charge, term (days), APR %, APR amount, monthly fee %, monthly fee, total debt. Simple APR `(F/P)×(365/d)×100` with bidirectional F↔APR via edit-source tracking. APR amount = annualized F (`F×365/d`). Monthly fee = one `P×(q/100)` assessment. Total debt = P+F+monthly fee (APR amount not double-counted). Independent FX on five monetary selectors. Activated.
 - **Example:** P 1,000 / F 150 / 14 days / q 0% → APR ≈ 391.0714%, APR amount ≈ 3,910.71, total debt 1,150.
