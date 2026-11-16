@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add CPS Calculator
+- **Summary:** Shipped CPS Calculator on existing catalog slug `cps-calculator` (`CpsCalculator`, catalog `6af46f17a27d8d1d4e990bc7`). Nine bidirectional fields (cps, cpm, RPM, Hz, kHz, MHz, GHz, deg/s, rad/s); base cps; RPM/angular assume one cycle = one revolution. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1 cps = 1 Hz = 60 RPM = 360 deg/s = 2π rad/s; 1 kHz = 1,000 cps = 60,000 RPM.
+- **Important Files:** `frontend/src/tools/calculators/cps/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cps-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 34/125). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add Paper Quantity Converter
 - **Summary:** Shipped Paper Quantity Converter on existing catalog slug `paper-quantity-converter` (`PaperQuantityConverter`, catalog `6af46f17a27d8d1d4e990bd6`). Five bidirectional fields (sheets, quires, reams, bundles, bales) on modern paper-count standard (25 / 500 / 1,000 / 5,000 sheets); short-ream / historical notes educational only (not mixed into default math). Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 1 ream = 500 sheets = 20 quires = 0.5 bundle = 0.1 bale; 1,000 sheets = 2 reams = 1 bundle.
