@@ -205,6 +205,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cups-to-quarts-converter',
   'day-converter',
   'days-to-months-calculator',
+  'days-to-weeks-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
