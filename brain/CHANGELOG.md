@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Celsius Converter
+- **Summary:** Shipped Celsius Converter on existing catalog slug `celsius-converter` (`CelsiusConverter`, catalog `6af46f17a27d8d1d4e990b2c`). Eight-scale bidirectional temperature converter with Celsius internal reference (°C/°F/K/°R/°De/°N/°Ré/°Rø); absolute-zero validation; Celsius + other-units sections. Pillar `6af451d3a27d8d1d4e98f9f1` / null subPillar preserved. Meta title shortened to schema maxLength 70.
+- **Why:** TOOL-265 delivery for Conversion & Units temperature converter.
+- **Important Files:** `frontend/src/tools/calculators/celsius-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-celsius-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar as expected; meta 58/128). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Metric Converter
 - **Summary:** Shipped Metric Converter on existing catalog slug `metric-converter` (`MetricConverter`, catalog `6af46f17a27d8d1d4e990b01`). Multi-category converter (length default with metric/imperial/other accordions; mass, area, volume, temperature affine, speed, time, energy, power, pressure, data storage decimal/binary). Live pillar `6af451d1a27d8d1d4e98f9e8` preserved vs brief …d2…; subPillar null. Meta title shortened to schema maxLength 70.
 - **Why:** TOOL-264 delivery for Conversion & Units multi-dimension metric converter.
