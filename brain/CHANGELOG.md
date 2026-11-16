@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Celsius to Fahrenheit Converter
+- **Summary:** Shipped Celsius to Fahrenheit Converter on existing catalog slug `celsius-to-fahrenheit-converter` (`CelsiusToFahrenheitConverter`, catalog `6af46f17a27d8d1d4e990b19`). Bidirectional °C↔°F via °F = (°C × 9/5) + 32; absolute-zero validation; conversion chart and FAQs. Live pillar `6af451d2a27d8d1d4e98f9ec` preserved (brief truncated …98fec); subPillar null.
+- **Why:** TOOL-267 delivery for Conversion & Units temperature converter.
+- **Important Files:** `frontend/src/tools/calculators/celsius-to-fahrenheit/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-celsius-to-fahrenheit-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; live pillar preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Metric to Imperial Converter
 - **Summary:** Shipped Metric to Imperial Converter on existing catalog slug `metric-to-imperial-converter` (`MetricToImperialConverter`, catalog `6af46f17a27d8d1d4e990b03`). Six categories (length/area/volume/mass/temperature/speed) with bidirectional metric↔imperial fields; US vs UK volume distinguished. Live pillar `6af451d1a27d8d1d4e98f9e8` preserved vs brief …d2…; subPillar null. Meta title shortened to schema maxLength 70.
 - **Why:** TOOL-266 delivery for Conversion & Units metric↔imperial converter.
