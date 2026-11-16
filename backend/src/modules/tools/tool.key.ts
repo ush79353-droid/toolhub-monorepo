@@ -171,6 +171,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CcToOzConverter',
   'MetricConverter',
   'CelsiusConverter',
+  'MetricToImperialConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -497,6 +498,7 @@ if (isDirect) {
     !isApprovedComponentKey('CcToOzConverter') ||
     !isApprovedComponentKey('MetricConverter') ||
     !isApprovedComponentKey('CelsiusConverter') ||
+    !isApprovedComponentKey('MetricToImperialConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
