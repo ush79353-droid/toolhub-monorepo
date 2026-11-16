@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Quantity Converter
+- **Summary:** Shipped Quantity Converter on existing catalog slug `quantity-converter` (`QuantityConverter`, catalog `6af46f17a27d8d1d4e990bd7`). Individual-units base with nine synchronized counting groups (pairs, decades, half-dozens, dozens, baker’s dozens, scores, grosses, great grosses); negatives rejected. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1 dozen = 12 units; 1 baker’s dozen = 13; 1 gross = 144; 1 great gross = 1,728; 12 dozens = 1 gross.
+- **Important Files:** `frontend/src/tools/calculators/quantity/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-quantity-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 38/127). Full frontend `tsc` / production build not claimed (pre-existing unrelated typing errors on branch).
+
 ### 2026-11-16 — Add Energy Conversion Calculator
 - **Summary:** Shipped Energy Conversion Calculator on existing catalog slug `energy-conversion-calculator` (`EnergyConversionCalculator`, catalog `6af46f17a27d8d1d4e990bf6`). Joule-based unit registry with SI / big energies / microscopic / other accordion groups; US therm, IT BTU, CODATA 2018 Hartree/Rydberg; signed values allowed. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 1 kcal = 4184 J; 1 kWh = 3,600,000 J; 1 eV = 1.602176634×10⁻¹⁹ J; 1 ton TNT = 4.184×10⁹ J.
