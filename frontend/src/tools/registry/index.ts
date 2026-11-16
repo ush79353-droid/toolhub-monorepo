@@ -639,6 +639,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PowerConverter,
     })),
   ),
+  DensityConversion: lazyTool(() =>
+    import('@/tools/calculators/density/DensityConversion').then((mod) => ({
+      default: mod.DensityConversion,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

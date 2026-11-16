@@ -121,6 +121,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PenniesToDollarsCalculator',
   'DbmToWattsCalculator',
   'PowerConverter',
+  'DensityConversion',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -397,6 +398,7 @@ if (isDirect) {
     !isApprovedComponentKey('PenniesToDollarsCalculator') ||
     !isApprovedComponentKey('DbmToWattsCalculator') ||
     !isApprovedComponentKey('PowerConverter') ||
+    !isApprovedComponentKey('DensityConversion') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

@@ -132,6 +132,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pennies-to-dollars-calculator',
   'dbm-to-watts-calculator',
   'power-converter',
+  'density-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
