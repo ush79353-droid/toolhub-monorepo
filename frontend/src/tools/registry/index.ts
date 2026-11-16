@@ -805,6 +805,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BarometricPressureConverter,
     })),
   ),
+  LotSizeToSqftCalculator: lazyTool(() =>
+    import('@/tools/calculators/lot-size-to-sqft/LotSizeToSqftCalculator').then((mod) => ({
+      default: mod.LotSizeToSqftCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
