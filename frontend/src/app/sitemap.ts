@@ -174,6 +174,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'bar-to-psig-converter',
   'measurement-converter',
   'cc-to-grams-converter',
+  'meter-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

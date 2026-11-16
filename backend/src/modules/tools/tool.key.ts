@@ -163,6 +163,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BarToPsigConverter',
   'MeasurementConverter',
   'CcToGramsConverter',
+  'MeterConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -481,6 +482,7 @@ if (isDirect) {
     !isApprovedComponentKey('BarToPsigConverter') ||
     !isApprovedComponentKey('MeasurementConverter') ||
     !isApprovedComponentKey('CcToGramsConverter') ||
+    !isApprovedComponentKey('MeterConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
