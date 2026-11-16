@@ -184,7 +184,7 @@ export function createDefaultArmInput(startDate: string): ArmMortgageInput {
     insuranceMonthly: 0,
     hoaMonthly: 0,
     mortgageInsuranceMonthly: 0,
-    currency: 'USD',
+    currency: 'PKR',
   };
 }
 
