@@ -167,6 +167,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'lot-size-to-acres-calculator',
   'barometric-pressure-conversion',
   'lot-size-to-square-feet-calculator',
+  'bar-to-atm-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

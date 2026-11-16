@@ -810,6 +810,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LotSizeToSqftCalculator,
     })),
   ),
+  BarToAtmConverter: lazyTool(() =>
+    import('@/tools/calculators/bar-to-atm/BarToAtmConverter').then((mod) => ({
+      default: mod.BarToAtmConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
