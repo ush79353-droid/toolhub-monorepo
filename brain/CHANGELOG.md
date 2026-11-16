@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Px to Em Converter
+- **Summary:** Shipped Px to Em Converter on existing catalog slug `px-to-em-converter` (`PxToEmConverter`, catalog `6af46f17a27d8d1d4e990bce`). Configurable base font size (default 16px); bidirectional px/em/pt/% with CSS reference 1px = 0.75pt; base changes preserve the last conversion source field. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** base 16, 24px → 1.5em / 18pt / 150%; base 20, 30px → 1.5em / 22.5pt / 150%; 12pt → 16px.
+- **Important Files:** `frontend/src/tools/calculators/px-to-em/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-px-to-em-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 38/132). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add Dimes to Dollars Calculator
 - **Summary:** Shipped Dimes to Dollars Calculator on existing catalog slug `dimes-to-dollars-calculator` (`DimesToDollarsCalculator`, catalog `6af46f17a27d8d1d4e990c01`). Bidirectional dimes↔dollars via integer-cent BigInt (1 dime = 10¢ = $0.10; 10 dimes = $1); dollar amounts not divisible by ten cents show dime-equivalents plus whole-coin remainder. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 1 dime → $0.10; 2000 dimes → $200.00; $25 → 250 dimes; $1.25 → 12.5 dime-equivalents (12 whole + 5¢).
