@@ -59,6 +59,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'holding-period-return-calculator',
   'home-loan-emi-calculator',
   'home-loan-calculator',
+  'mortgage-calculator-with-taxes-and-insurance',
   'home-mortgage-calculator',
   'impermanent-loss-calculator',
   'information-ratio-calculator',
