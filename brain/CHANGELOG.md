@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Density Conversion
+- **Summary:** Shipped Density Conversion on existing catalog slug `density-conversion` (`DensityConversion`, catalog `6af46f17a27d8d1d4e990b37`). Five synchronized fields (kg/dm³, kg/m³, lb/cu ft, lb/cu yd, lb/US gal) via kg/m³ base derived from exact pound/foot/yard/US-gallon constants; metric/imperial accordion groups; negatives rejected. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1 kg/dm³ = 1000 kg/m³ ≈ 62.428 lb/cu ft ≈ 1685.555 lb/cu yd ≈ 8.345 lb/US gal.
+- **Important Files:** `frontend/src/tools/calculators/density/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-density-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 38/148). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add Power Converter
 - **Summary:** Shipped Power Converter on existing catalog slug `power-converter` (`PowerConverter`, catalog `6af46f17a27d8d1d4e990bfa`). Nine synchronized editable fields across SI / horsepower / other accordion groups; watts base; distinct hp(I) vs PS; BTU(IT)/h; negatives allowed. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 1000 W → 1 kW, 1,000,000 mW, ≈ 1.34102209 hp(I), ≈ 1.35962162 PS, ≈ 3412.14163 BTU/h.
