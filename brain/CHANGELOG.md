@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Paper Quantity Converter
+- **Summary:** Shipped Paper Quantity Converter on existing catalog slug `paper-quantity-converter` (`PaperQuantityConverter`, catalog `6af46f17a27d8d1d4e990bd6`). Five bidirectional fields (sheets, quires, reams, bundles, bales) on modern paper-count standard (25 / 500 / 1,000 / 5,000 sheets); short-ream / historical notes educational only (not mixed into default math). Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1 ream = 500 sheets = 20 quires = 0.5 bundle = 0.1 bale; 1,000 sheets = 2 reams = 1 bundle.
+- **Important Files:** `frontend/src/tools/calculators/paper-quantity/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-paper-quantity-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 44/137). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add Conversion Calculator
 - **Summary:** Shipped universal Conversion Calculator on existing catalog slug `conversion-calculator` (`ConversionCalculator`, catalog `6af46f19a27d8d1d4e990dea`). Typed multi-category catalog (19 categories); linear base-unit factors; affine temperature; reciprocal fuel economy; bidirectional fields; swap units. Default 1 m → cm computed by engine. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 1 m = 100 cm; 0 °C = 32 °F; 1 MB = 1,000,000 B; 1 MiB = 1,048,576 B; 1 atm = 101,325 Pa.
