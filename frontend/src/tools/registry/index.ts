@@ -770,6 +770,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LbsToStoneConverter,
     })),
   ),
+  AngstromToNmConverter: lazyTool(() =>
+    import('@/tools/calculators/angstrom-to-nm/AngstromToNmConverter').then((mod) => ({
+      default: mod.AngstromToNmConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

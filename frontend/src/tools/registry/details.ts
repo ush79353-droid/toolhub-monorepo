@@ -161,6 +161,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LbsToPsiConverter: () => import('@/tools/calculators/lbs-to-psi/detail'),
   AcresToSquareFeetConverter: () => import('@/tools/calculators/acres-to-square-feet/detail'),
   LbsToStoneConverter: () => import('@/tools/calculators/lbs-to-stone/detail'),
+  AngstromToNmConverter: () => import('@/tools/calculators/angstrom-to-nm/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
