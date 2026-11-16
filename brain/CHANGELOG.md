@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Lowercase to Uppercase Converter
+- **Summary:** Shipped Lowercase to Uppercase Converter on existing catalog slug `lowercase-to-uppercase-converter` (`LowercaseToUppercaseConverter`, catalog `6af46f17a27d8d1d4e990bec`). Instant client-side `toUpperCase()` (default) with optional lowercase/title/sentence/toggle modes; Unicode code-point stats; copy/share.
+- **Example:** `hello world` → `HELLO WORLD`; `straße` → `STRASSE`.
+- **Important Files:** `frontend/src/tools/calculators/lowercase-to-uppercase/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-lowercase-to-uppercase-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 52/148). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Weird Units Converter
 - **Summary:** Shipped Weird Units Converter on existing catalog slug `weird-units-converter` (`WeirdUnitsConverter`, catalog `6af46f17a27d8d1d4e990bf2`). Five categories (length/mass/time/area/volume) with documented weird references; bidirectional regular↔weird; CSS comparison; approximate biological/lifestyle refs labeled. Meta title shortened for schema maxLength 70.
 - **Example:** 100 m ≈ 10,416.67 LEGO brick heights (9.6 mm studs-up); 1 km = 20 Olympic pool lengths.
