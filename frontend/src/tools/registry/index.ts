@@ -1286,6 +1286,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CanadianMortgageCalculator,
     })),
   ),
+  MortgageCalculatorUk: lazyTool(() =>
+    import('@/tools/calculators/mortgage-uk/MortgageCalculatorUk').then((mod) => ({
+      default: mod.MortgageCalculatorUk,
+    })),
+  ),
   CarriedInterestCalculator: lazyTool(() =>
     import('@/tools/calculators/carried-interest/CarriedInterestCalculator').then(
       (mod) => ({
@@ -1641,6 +1646,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BitcoinEtfCalculator,
     })),
   ),
+  BiweeklyMortgageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/biweekly-mortgage/BiweeklyMortgageCalculator'
+    ).then((mod) => ({
+      default: mod.BiweeklyMortgageCalculator,
+    })),
+  ),
   BoatLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/boat-loan/BoatLoanCalculator').then((mod) => ({
       default: mod.BoatLoanCalculator,
@@ -1675,6 +1687,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/student-loan-forgiveness/StudentLoanForgivenessCalculator'
     ).then((mod) => ({
       default: mod.StudentLoanForgivenessCalculator,
+    })),
+  ),
+  StudentLoanPaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/student-loan-payment/StudentLoanPaymentCalculator'
+    ).then((mod) => ({
+      default: mod.StudentLoanPaymentCalculator,
     })),
   ),
   LtvCalculator: lazyTool(() =>
@@ -1785,6 +1804,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/home-mortgage/HomeMortgageCalculator'
     ).then((mod) => ({
       default: mod.HomeMortgageCalculator,
+    })),
+  ),
+  MortgageAmortizationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-amortization/MortgageAmortizationCalculator'
+    ).then((mod) => ({
+      default: mod.MortgageAmortizationCalculator,
+    })),
+  ),
+  MortgageAccelerationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-acceleration/MortgageAccelerationCalculator'
+    ).then((mod) => ({
+      default: mod.MortgageAccelerationCalculator,
     })),
   ),
   FutureValueCalculator: lazyTool(() =>

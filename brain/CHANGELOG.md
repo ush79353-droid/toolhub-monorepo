@@ -4,6 +4,47 @@
 
 ---
 
+### 2026-11-16 — Mortgage Amortization Calculator (Screenshot-First)
+- **Summary:** Catalog row `mortgage-amortization-calculator` (`6af46f0fa27d8d1d4e98ff72`) had no frontend module. Implemented `MortgageAmortizationCalculator` to match reference: home price, down %, term years, rate, optional taxes/insurance/PMI/HOA/other, start month/year; monthly mortgage + cost table, out-of-pocket, summary, doughnut. Fixed USD (no FX selectors). Distinct from `amortization-calculator`. Activated.
+- **Example:** $500k / 20% / 30y / 7.319% → mortgage ≈ $2,747.45; interest ≈ $589,082.16; with optionals out-of-pocket ≈ $3,872.45/mo · $1,394,082.16 total; payoff Nov. 2056.
+- **Important Files:** `frontend/src/tools/calculators/mortgage-amortization/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mortgage-amortization-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-16 — Student Loan Payment Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Student Loan Payment Calculator on existing catalog slug `student-loan-payment-calculator` (`StudentLoanPaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ff69`). Loan specs + prepaid/loaned/origination fees with three repayment modes; text summary with Omni fee-inclusive APR and effective APR. Independent real FX on loan/prepaid/loaned. Activated.
+- **Example:** 10,000 PKR / 5% nominal monthly / 6y / prepaid 200 / loaned 500 / 8% from loan → payment ≈ 169.10; total ≈ 12,375.33; APR ≈ 10.31%; EAR ≈ 10.81%.
+- **Important Files:** `frontend/src/tools/calculators/student-loan-payment/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-student-loan-payment-tool.ts`, `brain/*`.
+- **Verification:** Formula self-check vs screenshot. MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-16 — Add Mortgage Calculator UK (Screenshot-First)
+- **Summary:** Shipped Mortgage Calculator UK on existing catalog slug `mortgage-calculator-uk` (`MortgageCalculatorUk`, catalog `6af46f0fa27d8d1d4e98ff73`). Home price (£), deposit %, term years, rate %; Include Optionals (taxes % of home, home/mortgage insurance £/yr, other £/yr); start month/year. Results: interest-only + monthly repayment, monthly/total cost table, out-of-pocket, loan/deposit/interest, doughnut. Fixed GBP (no FX). Distinct from Canadian / Home Mortgage / Home Loan / Interest-Only Mortgage. Activated.
+- **Example:** £500,000 / 25% / 25y / 5% → interest-only £1,562.50, repayment ≈ £2,192.21, OOP ≈ £3,400.55/mo, lifetime ≈ £1,020,163.80.
+- **Important Files:** `frontend/src/tools/calculators/mortgage-uk/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mortgage-uk-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-16 — Economic Injury Disaster Loan Emergency Advance (Historical Information Tool)
+- **Summary:** Shipped Economic Injury Disaster Loan Emergency Advance (EIDL) on existing catalog slug `economic-injury-disaster-loan-emergency-advance-eidl` (`EidlCalculator`, catalog `6af46f0fa27d8d1d4e98ff52`). Screenshot-first implementation of a historical/discontinued CARES Act COVID-19 emergency relief tool. Displays an informational notice explaining that the up to $10,000 emergency grant program is closed and old calculations are invalid for new financing. Features an internal link to the active general `/tools/loan-calculator`. Pure engine returns expired status; no financial calculation inputs, interest rates, or currency dropdowns. Action buttons include Share result, Reload calculator, and disabled Clear all changes. Activated with guide, SEO, and embed.
+- **Example:** Program status: expired; historical max: $10,000; redirects users seeking loan estimations to the active Loan Calculator.
+- **Important Files:** `frontend/src/tools/calculators/eidl/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-eidl-tool.ts`, `brain/*`.
+- **Verification:** Pure calculation tests pass (`eidl/calculation.test.ts`). Database assignment script verified record `6af46f0fa27d8d1d4e98ff52` active. Lint/builds/browser tests omitted per user instructions.
+
+### 2026-11-16 — Interest-Only Mortgage Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Interest-Only Mortgage Calculator on existing catalog slug `interest-only-mortgage-calculator` (`InterestOnlyMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff70`). Fields: loan amount, annual rate %, payment frequency radios (Daily / Monthly default / Quarterly / Yearly), frequency-labeled periodic payment, collapsible Interest-only period (yrs/mos + total interest paid). Formula: periodic = P × r / n (365/12/4/1); total IO interest = P × r × years. Independent real FX on loan, payment, and total currencies. No post-IO amortization schedule. Activated.
+- **Example:** 350,000 at 4% monthly → 1,166.67; 10-year IO total interest → 140,000; principal unchanged.
+- **Important Files:** `frontend/src/tools/calculators/interest-only-mortgage/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-interest-only-mortgage-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-16 — Student Loan Repayment Calculator | COVID-19 (Historical Notice)
+- **Summary:** Shipped informational historical notice on existing catalog slug `student-loan-repayment-calculator-covid-19` (`StudentLoanRepaymentCovidCalculator`, catalog `6af46f0fa27d8d1d4e98ff6a`). No financial inputs, repayment formulas, or currency selectors. Notice covers COVID-era federal payment suspension with historical December 31, 2020 reference; states COVID-era calculations are no longer valid; does not claim current federal loans are paused or 0% interest; internal link to `/tools/loan-calculator`. Share result / Reload / disabled Clear / feedback controls. Activated.
+- **Important Files:** `frontend/src/tools/calculators/student-loan-repayment-covid/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-student-loan-repayment-covid-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-16 — Student Loan Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Student Loan Calculator on existing catalog slug `student-loan-calculator` (`StudentLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff67`). Screenshot fields: loan balance, remaining term yrs/mos, interest rate % → monthly payment. Standard amortizing formula `M = P × r × (1+r)^n / ((1+r)^n − 1)` with `r = 0 → P/n`. Independent real FX on loan + payment; term/rate never convert. Activated.
+- **Example:** 100,000 PKR / 10 yrs / 6% → monthly ≈ 1,110.21 PKR.
+- **Important Files:** `frontend/src/tools/calculators/student-loan/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-student-loan-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Home Mortgage Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Home Mortgage Calculator on existing catalog slug `home-mortgage-calculator` (`HomeMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff6f`). Reuses Home Loan Calculator patterns without modifying that module: home value, synced down payment amount/%, loan amount, rate, term years, US/UK vs Canada interest method, payment frequency, first day, payment; further specs PMI % + other costs; mortgage summary + principal/interest/PMI/other pie chart. Independent real FX on monetary selectors. Left undeveloped `mortgage-calculator` untouched. Activated.
 - **Example:** 150,000 / 10% down / 4.5% / 30y monthly → payment ≈ 684.03; 360 pays ≈ 246,249.06; interest ≈ 111,249.06; PMI 0.5% → ≈ 4,106.25; total with costs ≈ 250,355.31.

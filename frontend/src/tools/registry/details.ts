@@ -303,6 +303,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CapmCalculator: () => import('@/tools/calculators/capm/detail'),
   CanadianMortgageCalculator: () =>
     import('@/tools/calculators/canadian-mortgage/detail'),
+  MortgageCalculatorUk: () =>
+    import('@/tools/calculators/mortgage-uk/detail'),
   CarriedInterestCalculator: () =>
     import('@/tools/calculators/carried-interest/detail'),
   ChurnRateCalculator: () =>
@@ -439,6 +441,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/real-rate-of-return/detail'),
   BitcoinEtfCalculator: () =>
     import('@/tools/calculators/bitcoin-etf/detail'),
+  BiweeklyMortgageCalculator: () =>
+    import('@/tools/calculators/biweekly-mortgage/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
   LandLoanCalculator: () =>
@@ -450,6 +454,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/student-loan/detail'),
   StudentLoanForgivenessCalculator: () =>
     import('@/tools/calculators/student-loan-forgiveness/detail'),
+  StudentLoanPaymentCalculator: () =>
+    import('@/tools/calculators/student-loan-payment/detail'),
   LtvCalculator: () => import('@/tools/calculators/ltv/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
@@ -483,6 +489,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   HomeLoanCalculator: () => import('@/tools/calculators/home-loan/detail'),
   HomeMortgageCalculator: () =>
     import('@/tools/calculators/home-mortgage/detail'),
+  MortgageAmortizationCalculator: () =>
+    import('@/tools/calculators/mortgage-amortization/detail'),
+  MortgageAccelerationCalculator: () =>
+    import('@/tools/calculators/mortgage-acceleration/detail'),
   HoldingPeriodReturnCalculator: () =>
     import('@/tools/calculators/holding-period-return/detail'),
   ImpermanentLossCalculator: () =>
