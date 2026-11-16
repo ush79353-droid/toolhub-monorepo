@@ -755,6 +755,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AcresToHectaresConverter,
     })),
   ),
+  LbsToPsiConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-psi/LbsToPsiConverter').then((mod) => ({
+      default: mod.LbsToPsiConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

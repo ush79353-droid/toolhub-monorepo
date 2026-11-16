@@ -145,6 +145,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'WeirdUnitsConverter',
   'LowercaseToUppercaseConverter',
   'AcresToHectaresConverter',
+  'LbsToPsiConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -445,6 +446,7 @@ if (isDirect) {
     !isApprovedComponentKey('WeirdUnitsConverter') ||
     !isApprovedComponentKey('LowercaseToUppercaseConverter') ||
     !isApprovedComponentKey('AcresToHectaresConverter') ||
+    !isApprovedComponentKey('LbsToPsiConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
