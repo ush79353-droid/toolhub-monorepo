@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add CM to IN Converter
+- **Summary:** Shipped CM to IN Converter on existing catalog slug `cm-to-in-converter` (`CmToInConverter`, catalog `6af46f17a27d8d1d4e990b7f`). Bidirectional cm ↔ in via reused `cm-height-conversion` helpers (exact 1 in = 2.54 cm); negatives rejected; conversion table and FAQs. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70. `indexable` left false.
+- **Why:** TOOL-274 delivery for Conversion & Units length converter.
+- **Important Files:** `frontend/src/tools/calculators/cm-to-in/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cm-to-in-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add CM to Ft In Converter
 - **Summary:** Shipped CM to Ft In Converter on existing catalog slug `cm-to-ft-in-converter` (`CmToFtInConverter`, catalog `6af46f17a27d8d1d4e990b7e`). Bidirectional cm ↔ mixed feet/inches via reused `cm-height-conversion` helpers (exact 2.54 / 30.48); inches normalized 0–&lt;12; conversion table and FAQs. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70. `indexable` left false.
 - **Why:** TOOL-273 delivery for Conversion & Units length converter.
