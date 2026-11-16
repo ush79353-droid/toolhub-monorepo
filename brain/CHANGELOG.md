@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Uppercase to Lowercase Converter
+- **Summary:** Shipped Uppercase to Lowercase Converter on existing catalog slug `uppercase-to-lowercase-converter` (`UppercaseToLowercaseConverter`, catalog `6af46f17a27d8d1d4e990bf1`). Instant client-side `toLowerCase()`, multiline/Unicode/emoji preservation, character/word/line stats, copy/share. Meta title shortened for schema maxLength 70.
+- **Example:** `HELLO WORLD` → `hello world`; `CAFÉ ÜBER` → `café über`.
+- **Important Files:** `frontend/src/tools/calculators/uppercase-to-lowercase/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-uppercase-to-lowercase-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 64/151). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Knots to mph Converter
 - **Summary:** Shipped Knots to mph Converter on existing catalog slug `knots-to-mph-converter` (`KnotsToMphConverter`, catalog `6af46f17a27d8d1d4e990c0a`). Five visible synced fields (kn/mph/km/h/ft/s/m/s) via shared speed m/s utilities; exact nautical/statute mile constants; Beaufort educational table.
 - **Example:** 1 kn ≈ 1.150779448 mph; 10 kn ≈ 11.50779448 mph; 60 mph ≈ 52.13857453 kn.
