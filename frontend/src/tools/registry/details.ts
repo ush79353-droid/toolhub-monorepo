@@ -132,6 +132,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CpsCalculator: () => import('@/tools/calculators/cps/detail'),
   PenniesToDollarsCalculator: () => import('@/tools/calculators/pennies-to-dollars/detail'),
   DbmToWattsCalculator: () => import('@/tools/calculators/dbm-to-watts/detail'),
+  PowerConverter: () => import('@/tools/calculators/power/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
