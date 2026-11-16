@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Mortgage Rate Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Mortgage Rate Calculator on existing catalog slug `mortgage-rate-calculator` (`MortgageRateCalculator`, catalog `6af46f0fa27d8d1d4e98ff7b`). Main configuration (loan FX, term yrs/mos, rate %, compounding Yearly / Semi-annually Canada / Quarterly / Monthly UK & US, Fixed-rate only) + fees (points %, up-front FX, annual FX). Results: monthly payment, fee-adjusted APR, paid interest, total payments. Independent FX on six money fields; mixed inputs normalized into loan currency. No ARM formulas. Activated.
+- **Example:** 200,000 PKR / 30y / 5% Monthly (UK & US) → payment ≈ 1,073.64; interest ≈ 186,511.57; total ≈ 386,511.57; APR 5%. With 1 point → APR ≈ 5.089%.
+- **Important Files:** `frontend/src/tools/calculators/mortgage-rate/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mortgage-rate-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Update Interest Calculator to Reference (Screenshot-First, Fixed USD)
 - **Summary:** Implemented Interest Calculator on existing undeveloped catalog slug `interest-calculator` (`InterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff7e`). Inputs: initial investment, annual/monthly contributions, beginning/end timing, interest rate, compounding (default annually), years/months, tax %, inflation %. Results: ending balance, total principal, contributions, total interest, interest on initial vs contributions, inflation-adjusted buying power, doughnut (initial/contributions/interest). After-tax rate and monthly compound step; separate initial/contribution buckets. Fixed USD — no FX selectors in the reference. Activated.
 - **Example:** $20,000 / $5,000 annual beginning / 5y / 5% annually / tax 0% / inflation 3% → ending $54,535.20; principal $45,000; contributions $25,000; interest $9,535.20; inflation-adjusted $47,042.54.
