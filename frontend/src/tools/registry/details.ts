@@ -144,6 +144,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   QuantityConverter: () => import('@/tools/calculators/quantity/detail'),
   MpgToL100Converter: () => import('@/tools/calculators/mpg-to-l100/detail'),
   QuartersToDollarsCalculator: () => import('@/tools/calculators/quarters-to-dollars/detail'),
+  GramsToCaloriesCalculator: () => import('@/tools/calculators/grams-to-calories/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

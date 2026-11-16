@@ -691,6 +691,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.QuartersToDollarsCalculator,
     })),
   ),
+  GramsToCaloriesCalculator: lazyTool(() =>
+    import('@/tools/calculators/grams-to-calories/GramsToCaloriesCalculator').then((mod) => ({
+      default: mod.GramsToCaloriesCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
