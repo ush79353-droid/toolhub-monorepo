@@ -376,6 +376,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lerner-index/detail'),
   LiquidNetWorthCalculator: () =>
     import('@/tools/calculators/liquid-net-worth/detail'),
+  LoanBalanceCalculator: () =>
+    import('@/tools/calculators/loan-balance/detail'),
   ManHoursCalculator: () =>
     import('@/tools/calculators/man-hours/detail'),
   MarginInterestCalculator: () =>
@@ -433,6 +435,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/boat-loan/detail'),
   LandLoanCalculator: () =>
     import('@/tools/calculators/land-loan/detail'),
+  LtvCalculator: () => import('@/tools/calculators/ltv/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
     import('@/tools/calculators/capital-gains-yield/detail'),

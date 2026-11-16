@@ -1477,6 +1477,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LiquidNetWorthCalculator,
     })),
   ),
+  LoanBalanceCalculator: lazyTool(() =>
+    import('@/tools/calculators/loan-balance/LoanBalanceCalculator').then((mod) => ({
+      default: mod.LoanBalanceCalculator,
+    })),
+  ),
   ManHoursCalculator: lazyTool(() =>
     import('@/tools/calculators/man-hours/ManHoursCalculator').then((mod) => ({
       default: mod.ManHoursCalculator,
@@ -1618,6 +1623,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   LandLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/land-loan/LandLoanCalculator').then((mod) => ({
       default: mod.LandLoanCalculator,
+    })),
+  ),
+  LtvCalculator: lazyTool(() =>
+    import('@/tools/calculators/ltv/LtvCalculator').then((mod) => ({
+      default: mod.LtvCalculator,
     })),
   ),
   CdCalculator: lazyTool(() =>

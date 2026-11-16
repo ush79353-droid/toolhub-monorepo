@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Loan Balance Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Loan Balance Calculator on existing catalog slug `loan-balance-calculator` (`LoanBalanceCalculator`, catalog `6af46f0fa27d8d1d4e98ff56`). Screenshot fields only: loan principal, interest rate %, loan term yrs/mos, period yrs/mos → loan remaining. Standard monthly amortization remaining-balance formula. Independent FX on loan + loan remaining (Margin Interest pattern). Activated.
+- **Example:** 100,000 PKR / 6% / 10 yrs / period 3 yrs → monthly ≈ 1,110.21; remaining ≈ 75,996.91 PKR (full-precision formula; screenshot note of ~76,717 not used).
+- **Important Files:** `frontend/src/tools/calculators/loan-balance/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-loan-balance-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Land Loan Calculator
 - **Summary:** Shipped Land Loan Calculator on existing catalog slug `land-loan-calculator` (`LandLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff55`). Screenshot fields: land value, down payment % (default 10), bidirectional down payment amount, loan value, APR, yrs/mos term, payment frequency (Monthly default), number of payments; results periodic payment / total payment / total interest / periodic rate. Independent FX on all six monetary selectors. Activated.
 - **Example:** 100,000 / 10% / 5 yrs / 6% / Monthly → down 10,000; loan 90,000; N 60; periodic rate 0.5%; payment ≈ 1,739.59; total ≈ 104,375.40; interest ≈ 14,375.40.
