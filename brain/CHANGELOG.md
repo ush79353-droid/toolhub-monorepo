@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Cents to Dollars Calculator
+- **Summary:** Shipped Cents to Dollars Calculator on existing catalog slug `cents-to-dollars-calculator` (`CentsToDollarsCalculator`, catalog `6af46f17a27d8d1d4e990c00`). Bidirectional cents↔dollars with integer-cent BigInt arithmetic (100 ¢ = $1); dollars limited to two decimal places; no FX. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 250 ¢ = $2.50; $12.75 = 1,275 ¢; 123,456 ¢ = $1,234.56.
+- **Important Files:** `frontend/src/tools/calculators/cents-to-dollars/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cents-to-dollars-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 47/154). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add Natural Gas Converter
 - **Summary:** Shipped Natural Gas Converter on existing catalog slug `natural-gas-converter` (`NaturalGasConverter`, catalog `6af46f17a27d8d1d4e990bf9`). Volume and energy unit selectors; bidirectional volume↔energy via adjustable heating value (BTU/ft³, MJ/m³, kWh/m³); illustrative default 1038 BTU/ft³. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 100 CCF at 1038 BTU/ft³ = 103.8 therms = 10.38 MMBTU; 100 ft³ at 1050 BTU/ft³ = 105,000 BTU.
