@@ -1656,6 +1656,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RvLoanCalculator,
     })),
   ),
+  StudentLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/student-loan/StudentLoanCalculator').then(
+      (mod) => ({
+        default: mod.StudentLoanCalculator,
+      })
+    ),
+  ),
   LtvCalculator: lazyTool(() =>
     import('@/tools/calculators/ltv/LtvCalculator').then((mod) => ({
       default: mod.LtvCalculator,
