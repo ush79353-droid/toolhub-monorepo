@@ -716,6 +716,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.JoulesToVoltsCalculator,
     })),
   ),
+  SpeedConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/speed/SpeedConversionCalculator').then((mod) => ({
+      default: mod.SpeedConversionCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

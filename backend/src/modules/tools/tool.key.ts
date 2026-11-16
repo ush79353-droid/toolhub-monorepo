@@ -136,6 +136,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HardnessConversionCalculator',
   'RmsToWattsConverter',
   'JoulesToVoltsCalculator',
+  'SpeedConversionCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -427,6 +428,7 @@ if (isDirect) {
     !isApprovedComponentKey('HardnessConversionCalculator') ||
     !isApprovedComponentKey('RmsToWattsConverter') ||
     !isApprovedComponentKey('JoulesToVoltsCalculator') ||
+    !isApprovedComponentKey('SpeedConversionCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
