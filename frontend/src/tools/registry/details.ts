@@ -180,6 +180,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CcToLiterConverter: () => import('@/tools/calculators/cc-to-liter/detail'),
   MetersToFeetConverter: () => import('@/tools/calculators/meters-to-feet/detail'),
   CcToMlConverter: () => import('@/tools/calculators/cc-to-ml/detail'),
+  MeterToMileConverter: () => import('@/tools/calculators/meter-to-mile/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

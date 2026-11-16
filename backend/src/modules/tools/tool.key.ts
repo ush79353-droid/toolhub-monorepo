@@ -167,6 +167,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CcToLiterConverter',
   'MetersToFeetConverter',
   'CcToMlConverter',
+  'MeterToMileConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -489,6 +490,7 @@ if (isDirect) {
     !isApprovedComponentKey('CcToLiterConverter') ||
     !isApprovedComponentKey('MetersToFeetConverter') ||
     !isApprovedComponentKey('CcToMlConverter') ||
+    !isApprovedComponentKey('MeterToMileConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
