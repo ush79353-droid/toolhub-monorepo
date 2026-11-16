@@ -696,6 +696,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GramsToCaloriesCalculator,
     })),
   ),
+  RadiationConverter: lazyTool(() =>
+    import('@/tools/calculators/radiation/RadiationConverter').then((mod) => ({
+      default: mod.RadiationConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
