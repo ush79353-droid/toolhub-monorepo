@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add dBm to Watts Calculator
+- **Summary:** Shipped dBm to Watts Calculator on existing catalog slug `dbm-to-watts-calculator` (`DbmToWattsCalculator`, catalog `6af46f17a27d8d1d4e990bc8`). Four radio modes (dBm→W, dBm→mW, W→dBm, mW→dBm); clear inputs on mode change; negative dBm valid; zero/negative watts/mW rejected for →dBm. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 30 dBm = 1 W; 20 dBm = 100 mW; 10 W = 40 dBm; −30 dBm = 0.000001 W.
+- **Important Files:** `frontend/src/tools/calculators/dbm-to-watts/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-dbm-to-watts-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 43/154). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add Pennies to Dollars Calculator
 - **Summary:** Shipped Pennies to Dollars Calculator on existing catalog slug `pennies-to-dollars-calculator` (`PenniesToDollarsCalculator`, catalog `6af46f17a27d8d1d4e990c03`). Bidirectional pennies↔dollars via integer-penny BigInt (100 pennies = $1); dollars at most two decimals; no FX. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 250 pennies = $2.50; $12.75 = 1,275 pennies; 1,000,000 pennies = $10,000.00.
