@@ -154,6 +154,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   UppercaseToLowercaseConverter: () =>
     import('@/tools/calculators/uppercase-to-lowercase/detail'),
   LeetSpeakTranslator: () => import('@/tools/calculators/leet-speak/detail'),
+  WeirdUnitsConverter: () => import('@/tools/calculators/weird-units/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

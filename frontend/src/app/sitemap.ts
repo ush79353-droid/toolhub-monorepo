@@ -153,6 +153,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'knots-to-mph-converter',
   'uppercase-to-lowercase-converter',
   'leet-speak-translator',
+  'weird-units-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

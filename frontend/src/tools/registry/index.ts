@@ -738,6 +738,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LeetSpeakTranslator,
     })),
   ),
+  WeirdUnitsConverter: lazyTool(() =>
+    import('@/tools/calculators/weird-units/WeirdUnitsConverter').then((mod) => ({
+      default: mod.WeirdUnitsConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
