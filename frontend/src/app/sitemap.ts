@@ -180,6 +180,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cc-to-ml-converter',
   'meter-to-mile-converter',
   'cc-to-oz-converter',
+  'metric-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
