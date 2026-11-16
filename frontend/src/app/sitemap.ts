@@ -163,6 +163,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'liters-to-pounds-calculator',
   'atm-conversion',
   'liter-to-cc-converter',
+  'atm-to-pascals-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

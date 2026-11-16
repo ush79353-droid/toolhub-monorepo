@@ -152,6 +152,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LitersToPoundsCalculator',
   'AtmConversionCalculator',
   'LiterToCcConverter',
+  'AtmToPascalsConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -459,6 +460,7 @@ if (isDirect) {
     !isApprovedComponentKey('LitersToPoundsCalculator') ||
     !isApprovedComponentKey('AtmConversionCalculator') ||
     !isApprovedComponentKey('LiterToCcConverter') ||
+    !isApprovedComponentKey('AtmToPascalsConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

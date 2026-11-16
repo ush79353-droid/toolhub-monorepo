@@ -790,6 +790,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LiterToCcConverter,
     })),
   ),
+  AtmToPascalsConverter: lazyTool(() =>
+    import('@/tools/calculators/atm-to-pascals/AtmToPascalsConverter').then((mod) => ({
+      default: mod.AtmToPascalsConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
