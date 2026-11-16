@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — LTV Calculator (Loan to Value)
+- **Summary:** Shipped LTV Calculator on existing catalog slug `ltv-calculator-loan-to-value` (`LtvCalculator`, catalog `6af46f0fa27d8d1d4e98ff59`). Screenshot fields only: purchase price, down payment, loan amount, LTV %. Bidirectional driver (`downPayment` | `loanAmount` | `ltv`). Independent real FX on three money fields; normalize into purchase currency before math; LTV % never converted. Activated.
+- **Example:** 200,000 PKR purchase + 40,000 down → loan 160,000 / LTV 80%. Alt: 200,000 + loan 180,000 → down 20,000 / LTV 90%.
+- **Important Files:** `frontend/src/tools/calculators/ltv/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-ltv-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Add Loan Balance Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Loan Balance Calculator on existing catalog slug `loan-balance-calculator` (`LoanBalanceCalculator`, catalog `6af46f0fa27d8d1d4e98ff56`). Screenshot fields only: loan principal, interest rate %, loan term yrs/mos, period yrs/mos → loan remaining. Standard monthly amortization remaining-balance formula. Independent FX on loan + loan remaining (Margin Interest pattern). Activated.
 - **Example:** 100,000 PKR / 6% / 10 yrs / period 3 yrs → monthly ≈ 1,110.21; remaining ≈ 75,996.91 PKR (full-precision formula; screenshot note of ~76,717 not used).
