@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Bar to PSI Conversion
+- **Summary:** Shipped Bar to PSI Conversion on existing catalog slug `bar-to-psi-conversion` (`BarToPsiConverter`, catalog `6af46f17a27d8d1d4e990ae4`). Bidirectional bar↔psi using Pa factors 100000 / ≈6894.757293; unit selectors; absolute negatives rejected. PSI Converter pillar preserved; subPillar null.
+- **Example:** 1 bar ≈ 14.503774 psi; 3 bar ≈ 43.511321 psi; 45 bar ≈ 652.669820 psi; 100 psi ≈ 6.894757 bar.
+- **Important Files:** `frontend/src/tools/calculators/bar-to-psi/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-bar-to-psi-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e4`, subPillar null; meta 41/140). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add L to gal Converter
 - **Summary:** Shipped L to gal Converter on existing catalog slug `l-to-gal-converter` (`LToGalConverter`, catalog `6af46f17a27d8d1d4e990b47`). Bidirectional liters↔US/Imperial gallons using exact factors 3.785411784 / 4.54609; optional third unit (default US fl oz); unit switches preserve volume; negatives rejected. Null pillar/subPillar preserved.
 - **Example:** 1 L ≈ 0.264172 US gal; 7 L ≈ 1.849204 US gal; 3 US gal = 11.356235352 L; 1 Imperial gal = 4.54609 L.
