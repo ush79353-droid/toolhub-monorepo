@@ -351,6 +351,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'holding-period-return-calculator',
   'impermanent-loss-calculator',
   'information-ratio-calculator',
+  'interest-only-mortgage-calculator',
   'interest-rate-calculator',
   'irr-calculator',
   'investment-calculator',

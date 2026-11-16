@@ -1848,6 +1848,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InformationRatioCalculator,
     })),
   ),
+  InterestOnlyMortgageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/interest-only-mortgage/InterestOnlyMortgageCalculator'
+    ).then((mod) => ({
+      default: mod.InterestOnlyMortgageCalculator,
+    })),
+  ),
   InterestRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/interest-rate/InterestRateCalculator'
