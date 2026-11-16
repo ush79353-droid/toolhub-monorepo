@@ -890,6 +890,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MetricToImperialConverter,
     })),
   ),
+  CelsiusToFahrenheitConverter: lazyTool(() =>
+    import('@/tools/calculators/celsius-to-fahrenheit/CelsiusToFahrenheitConverter').then(
+      (mod) => ({
+        default: mod.CelsiusToFahrenheitConverter,
+      }),
+    ),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
