@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Bar to PSIG Converter
+- **Summary:** Shipped Bar to PSIG Converter on existing catalog slug `bar-to-psig-converter` (`BarToPsigConverter`, catalog `6af46f17a27d8d1d4e990b9c`). Absolute/gauge bar↔PSIG using factor 14.5037738007; editable atmospheric pressure (default 1.01325 bar); negative gauge/PSIG allowed; absolute negatives rejected. Null pillar/subPillar preserved.
+- **Example:** 10 bar(a) ≈ 130.34 PSIG; 1.01325 bar(a) = 0 PSIG; 5 bar(g) ≈ 72.5189 PSIG; 100 PSIG ≈ 7.90799 bar(a).
+- **Important Files:** `frontend/src/tools/calculators/bar-to-psig/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-bar-to-psig-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 41/149). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add mcg to mL Conversion
 - **Summary:** Shipped mcg to mL Conversion on existing catalog slug `mcg-to-ml-conversion` (`McgToMlConverter`, catalog `6af46f17a27d8d1d4e990b50`). Medication concentration (example Vitamin B12 1,000 mcg/mL or custom) and density modes; never a fixed mcg↔mL factor; medication safety notice. Null pillar/subPillar preserved.
 - **Example:** 500 mcg at 1,000 mcg/mL → 0.5 mL; 2 mL × 1,000 mcg/mL = 2,000 mcg; 1,000,000 mcg at 1 g/mL → 1 mL.
