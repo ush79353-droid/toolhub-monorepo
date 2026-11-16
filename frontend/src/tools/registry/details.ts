@@ -200,6 +200,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CmToKmConverter: () => import('@/tools/calculators/cm-to-km/detail'),
   CmToMConverter: () => import('@/tools/calculators/cm-to-m/detail'),
   CmToMmConverter: () => import('@/tools/calculators/cm-to-mm/detail'),
+  CubicFeetToCubicMetersConverter: () =>
+    import('@/tools/calculators/cubic-feet-to-cubic-meters/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

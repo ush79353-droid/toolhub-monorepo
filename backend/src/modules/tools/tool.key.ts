@@ -183,6 +183,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CmToKmConverter',
   'CmToMConverter',
   'CmToMmConverter',
+  'CubicFeetToCubicMetersConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -521,6 +522,7 @@ if (isDirect) {
     !isApprovedComponentKey('CmToKmConverter') ||
     !isApprovedComponentKey('CmToMConverter') ||
     !isApprovedComponentKey('CmToMmConverter') ||
+    !isApprovedComponentKey('CubicFeetToCubicMetersConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
