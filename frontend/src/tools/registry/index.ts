@@ -1946,6 +1946,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EidlCalculator,
     })),
   ),
+  StudentLoanRepaymentCovidCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/student-loan-repayment-covid/StudentLoanRepaymentCovidCalculator'
+    ).then((mod) => ({
+      default: mod.StudentLoanRepaymentCovidCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {

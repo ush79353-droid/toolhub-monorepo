@@ -341,6 +341,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MortgagePointsCalculator',
   'CanadianMortgageCalculator',
   'MortgageCalculatorUk',
+  'MortgageRateCalculator',
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
@@ -356,6 +357,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
   'EidlCalculator',
+  'StudentLoanRepaymentCovidCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -719,6 +721,7 @@ if (isDirect) {
     !isApprovedComponentKey('MortgagePointsCalculator') ||
     !isApprovedComponentKey('CanadianMortgageCalculator') ||
     !isApprovedComponentKey('MortgageCalculatorUk') ||
+    !isApprovedComponentKey('MortgageRateCalculator') ||
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
@@ -734,6 +737,7 @@ if (isDirect) {
     !isApprovedComponentKey('VaMortgageCalculator') ||
     !isApprovedComponentKey('ValueAtRiskCalculator') ||
     !isApprovedComponentKey('EidlCalculator') ||
+    !isApprovedComponentKey('StudentLoanRepaymentCovidCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

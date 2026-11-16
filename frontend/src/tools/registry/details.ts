@@ -506,6 +506,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/impermanent-loss/detail'),
   InformationRatioCalculator: () =>
     import('@/tools/calculators/information-ratio/detail'),
+  InterestCalculator: () => import('@/tools/calculators/interest/detail'),
   InterestOnlyMortgageCalculator: () =>
     import('@/tools/calculators/interest-only-mortgage/detail'),
   MortgageRateCalculator: () =>
@@ -524,6 +525,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   VaMortgageCalculator: () => import('@/tools/calculators/va-mortgage/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
   EidlCalculator: () => import('@/tools/calculators/eidl/detail'),
+  StudentLoanRepaymentCovidCalculator: () =>
+    import('@/tools/calculators/student-loan-repayment-covid/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

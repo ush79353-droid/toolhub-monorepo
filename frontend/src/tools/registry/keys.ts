@@ -339,6 +339,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MortgagePointsCalculator',
   'CanadianMortgageCalculator',
   'MortgageCalculatorUk',
+  'MortgageRateCalculator',
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
@@ -354,6 +355,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
   'EidlCalculator',
+  'StudentLoanRepaymentCovidCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -704,6 +706,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'MortgagePointsCalculator',
   'CanadianMortgageCalculator',
   'MortgageCalculatorUk',
+  'MortgageRateCalculator',
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
@@ -719,6 +722,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
   'EidlCalculator',
+  'StudentLoanRepaymentCovidCalculator',
 ] as const;
 
 export type RegisteredComponentKey = (typeof REGISTERED_COMPONENT_KEYS)[number];

@@ -355,6 +355,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'holding-period-return-calculator',
   'impermanent-loss-calculator',
   'information-ratio-calculator',
+  'interest-calculator',
   'interest-only-mortgage-calculator',
   'mortgage-rate-calculator',
   'interest-rate-calculator',
@@ -367,6 +368,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'va-mortgage-calculator',
   'value-at-risk-calculator-var',
   'economic-injury-disaster-loan-emergency-advance-eidl',
+  'student-loan-repayment-calculator-covid-19',
 ] as const;
 
 const STATIC_PATHS = [
