@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add cc to mL Converter
+- **Summary:** Shipped cc to mL Converter on existing catalog slug `cc-to-ml-converter` (`CcToMlConverter`, catalog `6af46f17a27d8d1d4e990b31`). Three-way cc↔mL↔L with exact 1 cc = 1 mL; empty default. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70.
+- **Why:** TOOL-261 delivery for Conversion & Units volume converter.
+- **Important Files:** `frontend/src/tools/calculators/cc-to-ml/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cc-to-ml-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 50/147). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Meters to Feet Converter
 - **Summary:** Shipped Meters to Feet Converter on existing catalog slug `meters-to-feet-converter` (`MetersToFeetConverter`, catalog `6af46f17a27d8d1d4e990ae0`). Exact bidirectional m↔ft via international foot (1 ft = 0.3048 m); empty default; signed values allowed. Pillar `6af451d0a27d8d1d4e98f9e3` / null subPillar preserved.
 - **Why:** TOOL-260 delivery for Conversion & Units length converter.
