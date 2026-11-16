@@ -775,6 +775,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AngstromToNmConverter,
     })),
   ),
+  LitersToPoundsCalculator: lazyTool(() =>
+    import('@/tools/calculators/liters-to-pounds/LitersToPoundsCalculator').then((mod) => ({
+      default: mod.LitersToPoundsCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

@@ -162,6 +162,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AcresToSquareFeetConverter: () => import('@/tools/calculators/acres-to-square-feet/detail'),
   LbsToStoneConverter: () => import('@/tools/calculators/lbs-to-stone/detail'),
   AngstromToNmConverter: () => import('@/tools/calculators/angstrom-to-nm/detail'),
+  LitersToPoundsCalculator: () => import('@/tools/calculators/liters-to-pounds/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
