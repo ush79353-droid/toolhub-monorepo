@@ -268,6 +268,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'dividend-discount-model-calculator',
   'direct-material-price-variance-calculator',
   'ear-calculator',
+  'early-loan-payoff-calculator',
   'equivalent-rate-calculator-aer',
   'effective-corporate-tax-rate-calculator',
   'emv-calculator-expected-monetary-value',

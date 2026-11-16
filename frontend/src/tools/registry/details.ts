@@ -338,6 +338,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DirectMaterialPriceVarianceCalculator: () =>
     import('@/tools/calculators/direct-material-price-variance/detail'),
   EarCalculator: () => import('@/tools/calculators/ear/detail'),
+  EarlyLoanPayoffCalculator: () =>
+    import('@/tools/calculators/early-loan-payoff/detail'),
   EquivalentRateCalculator: () =>
     import('@/tools/calculators/equivalent-rate/detail'),
   EffectiveCorporateTaxRateCalculator: () =>

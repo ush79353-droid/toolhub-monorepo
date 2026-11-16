@@ -258,6 +258,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DividendDiscountModelCalculator',
   'DirectMaterialPriceVarianceCalculator',
   'EarCalculator',
+  'EarlyLoanPayoffCalculator',
   'EquivalentRateCalculator',
   'EffectiveCorporateTaxRateCalculator',
   'EmvCalculator',
@@ -606,6 +607,7 @@ if (isDirect) {
     !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
     !isApprovedComponentKey('EarCalculator') ||
+    !isApprovedComponentKey('EarlyLoanPayoffCalculator') ||
     !isApprovedComponentKey('EquivalentRateCalculator') ||
     !isApprovedComponentKey('EffectiveCorporateTaxRateCalculator') ||
     !isApprovedComponentKey('EmvCalculator') ||

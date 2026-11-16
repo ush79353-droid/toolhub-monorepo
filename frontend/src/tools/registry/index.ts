@@ -1378,6 +1378,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EarCalculator,
     })),
   ),
+  EarlyLoanPayoffCalculator: lazyTool(() =>
+    import('@/tools/calculators/early-loan-payoff/EarlyLoanPayoffCalculator').then(
+      (mod) => ({
+        default: mod.EarlyLoanPayoffCalculator,
+      })
+    )
+  ),
   EquivalentRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/equivalent-rate/EquivalentRateCalculator'
