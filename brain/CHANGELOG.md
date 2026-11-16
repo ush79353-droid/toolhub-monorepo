@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Angstrom to nm Converter
+- **Summary:** Shipped Angstrom to nm Converter on existing catalog slug `angstrom-to-nm-converter` (`AngstromToNmConverter`, catalog `6af46f17a27d8d1d4e990b0e`). Three synced fields Å/nm/mil via nm canonical; exact 1 Å = 0.1 nm and 1 mil = 25,400 nm; scientific notation supported; default 14 Å. Existing pillar preserved; subPillar null.
+- **Example:** 14 Å = 1.4 nm; 1 mil = 25,400 nm = 254,000 Å.
+- **Important Files:** `frontend/src/tools/calculators/angstrom-to-nm/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-angstrom-to-nm-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d2a27d8d1d4e98f9ea`, subPillar null; meta 44/149). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Lbs to Stone Converter
 - **Summary:** Shipped Lbs to Stone Converter on existing catalog slug `lbs-to-stone-converter` (`LbsToStoneConverter`, catalog `6af46f17a27d8d1d4e990b4b`). Bidirectional lb↔st using exact factor 14; default 140 lb; supplementary mixed stones+pounds readout; negatives rejected. Null pillar/subPillar preserved.
 - **Example:** 140 lb = 10 st; 100 lb ≈ 7.142857143 st; 150 lb = 10 st 10 lb.
