@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Pennies to Dollars Calculator
+- **Summary:** Shipped Pennies to Dollars Calculator on existing catalog slug `pennies-to-dollars-calculator` (`PenniesToDollarsCalculator`, catalog `6af46f17a27d8d1d4e990c03`). Bidirectional pennies↔dollars via integer-penny BigInt (100 pennies = $1); dollars at most two decimals; no FX. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 250 pennies = $2.50; $12.75 = 1,275 pennies; 1,000,000 pennies = $10,000.00.
+- **Important Files:** `frontend/src/tools/calculators/pennies-to-dollars/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pennies-to-dollars-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 49/152). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add CPS Calculator
 - **Summary:** Shipped CPS Calculator on existing catalog slug `cps-calculator` (`CpsCalculator`, catalog `6af46f17a27d8d1d4e990bc7`). Nine bidirectional fields (cps, cpm, RPM, Hz, kHz, MHz, GHz, deg/s, rad/s); base cps; RPM/angular assume one cycle = one revolution. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 1 cps = 1 Hz = 60 RPM = 360 deg/s = 2π rad/s; 1 kHz = 1,000 cps = 60,000 RPM.
