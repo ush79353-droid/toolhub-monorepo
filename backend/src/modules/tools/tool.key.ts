@@ -182,6 +182,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CmToInConverter',
   'CmToKmConverter',
   'CmToMConverter',
+  'CmToMmConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -519,6 +520,7 @@ if (isDirect) {
     !isApprovedComponentKey('CmToInConverter') ||
     !isApprovedComponentKey('CmToKmConverter') ||
     !isApprovedComponentKey('CmToMConverter') ||
+    !isApprovedComponentKey('CmToMmConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
