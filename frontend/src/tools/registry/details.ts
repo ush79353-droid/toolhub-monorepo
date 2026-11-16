@@ -183,6 +183,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MeterToMileConverter: () => import('@/tools/calculators/meter-to-mile/detail'),
   CcToOzConverter: () => import('@/tools/calculators/cc-to-oz/detail'),
   MetricConverter: () => import('@/tools/calculators/metric-converter/detail'),
+  CelsiusConverter: () => import('@/tools/calculators/celsius-converter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
