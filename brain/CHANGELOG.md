@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add CC to OZ Converter
+- **Summary:** Shipped CC to OZ Converter on existing catalog slug `cc-to-oz-converter` (`CcToOzConverter`, catalog `6af46f17a27d8d1d4e990b32`). Exact bidirectional cc↔fluid oz via US 29.5735295625 and UK 28.4130625; volume only (not weight oz); empty default. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70.
+- **Why:** TOOL-263 delivery for Conversion & Units volume converter.
+- **Important Files:** `frontend/src/tools/calculators/cc-to-oz/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cc-to-oz-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 52/154). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Meter to Mile Converter
 - **Summary:** Shipped Meter to Mile Converter on existing catalog slug `meter-to-mile-converter` (`MeterToMileConverter`, catalog `6af46f17a27d8d1d4e990b0a`). Exact bidirectional m↔mi via international statute mile (1 mi = 1609.344 m); Metric/Imperial sections; empty default. Live pillar `6af451d1a27d8d1d4e98f9e9` preserved vs brief …d2…; subPillar null.
 - **Why:** TOOL-262 delivery for Conversion & Units distance converter.
