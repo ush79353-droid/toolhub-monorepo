@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add CM to KM Conversion
+- **Summary:** Shipped CM to KM Conversion on existing catalog slug `cm-to-km-conversion` (`CmToKmConverter`, catalog `6af46f17a27d8d1d4e990b80`). Bidirectional cm ↔ km via `centimeter/units` convertLength (exact 1 km = 100,000 cm); collapsed Other metric/imperial units; conversion table and FAQs. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70. `indexable` left false.
+- **Why:** TOOL-275 delivery for Conversion & Units length converter.
+- **Important Files:** `frontend/src/tools/calculators/cm-to-km/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cm-to-km-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add CM to IN Converter
 - **Summary:** Shipped CM to IN Converter on existing catalog slug `cm-to-in-converter` (`CmToInConverter`, catalog `6af46f17a27d8d1d4e990b7f`). Bidirectional cm ↔ in via reused `cm-height-conversion` helpers (exact 1 in = 2.54 cm); negatives rejected; conversion table and FAQs. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70. `indexable` left false.
 - **Why:** TOOL-274 delivery for Conversion & Units length converter.
