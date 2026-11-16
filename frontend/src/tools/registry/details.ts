@@ -171,6 +171,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LotSizeToSqftCalculator: () => import('@/tools/calculators/lot-size-to-sqft/detail'),
   BarToAtmConverter: () => import('@/tools/calculators/bar-to-atm/detail'),
   LToGalConverter: () => import('@/tools/calculators/l-to-gal/detail'),
+  BarToPsiConverter: () => import('@/tools/calculators/bar-to-psi/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
