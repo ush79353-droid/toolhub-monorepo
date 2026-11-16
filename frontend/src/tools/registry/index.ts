@@ -656,6 +656,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  PpmToMglConverter: lazyTool(() =>
+    import('@/tools/calculators/ppm-to-mgl/PpmToMglConverter').then((mod) => ({
+      default: mod.PpmToMglConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
