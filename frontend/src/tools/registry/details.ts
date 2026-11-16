@@ -141,6 +141,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DimesToDollarsCalculator: () => import('@/tools/calculators/dimes-to-dollars/detail'),
   PxToEmConverter: () => import('@/tools/calculators/px-to-em/detail'),
   EnergyConversionCalculator: () => import('@/tools/calculators/energy/detail'),
+  QuantityConverter: () => import('@/tools/calculators/quantity/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

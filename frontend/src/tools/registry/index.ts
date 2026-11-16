@@ -676,6 +676,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EnergyConversionCalculator,
     })),
   ),
+  QuantityConverter: lazyTool(() =>
+    import('@/tools/calculators/quantity/QuantityConverter').then((mod) => ({
+      default: mod.QuantityConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
