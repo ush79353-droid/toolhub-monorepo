@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Mortgage Acceleration Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Mortgage Acceleration Calculator on existing catalog slug `mortgage-acceleration-calculator` (`MortgageAccelerationCalculator`, catalog `6af46f0fa27d8d1d4e98ff71`). Inputs: loan FX, acceleration type (accelerated biweekly default / ordinary biweekly / monthly overpayment), term, rate, optional fees & compounding, due date, extra payment FX. Scrollable payment summary compares without acceleration / accelerated / difference. Accelerated biweekly = M/2 every 14 days (26/yr); ordinary biweekly = (M×12)/26. Independent FX normalized into loan currency. Activated.
+- **Example:** 300,000 PKR / 30y / 7.5% accelerated biweekly → monthly ≈ 2,097.54; biweekly ≈ 1,048.77; shorter term and lower interest vs baseline.
+- **Important Files:** `frontend/src/tools/calculators/mortgage-acceleration/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mortgage-acceleration-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Add Mortgage Prepayment Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Prepayment Calculator on existing catalog slug `mortgage-prepayment-calculator` (`MortgagePrepaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ff7a`). Current mortgage (amount FX, rate, term yrs/mos, Monthly US&UK / Canada method, due date) + prepayment options (payment frequency, periodic FX + start, lump-sum FX + paid-on). Compares baseline vs prepaid payoff/payment/#/term/interest/total; balances chart. Independent FX normalized into mortgage currency. Activated.
 - **Example:** PKR 100,000 / 6% / 30y monthly → ≈ 599.55 payment; 360 payments; interest ≈ 115,838.19; total ≈ 215,838.19.
