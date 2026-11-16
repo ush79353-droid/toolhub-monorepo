@@ -154,6 +154,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LiterToCcConverter',
   'AtmToPascalsConverter',
   'LotSizeToAcresCalculator',
+  'BarometricPressureConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -463,6 +464,7 @@ if (isDirect) {
     !isApprovedComponentKey('LiterToCcConverter') ||
     !isApprovedComponentKey('AtmToPascalsConverter') ||
     !isApprovedComponentKey('LotSizeToAcresCalculator') ||
+    !isApprovedComponentKey('BarometricPressureConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
