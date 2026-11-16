@@ -212,6 +212,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cubic-meter-to-ton/detail'),
   CupsToGallonsConverter: () => import('@/tools/calculators/cups-to-gallons/detail'),
   CupsToOzConverter: () => import('@/tools/calculators/cups-to-oz/detail'),
+  CupsToPintsConverter: () => import('@/tools/calculators/cups-to-pints/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
