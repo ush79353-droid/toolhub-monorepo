@@ -130,6 +130,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EnergyConversionCalculator',
   'QuantityConverter',
   'MpgToL100Converter',
+  'QuartersToDollarsCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -415,6 +416,7 @@ if (isDirect) {
     !isApprovedComponentKey('EnergyConversionCalculator') ||
     !isApprovedComponentKey('QuantityConverter') ||
     !isApprovedComponentKey('MpgToL100Converter') ||
+    !isApprovedComponentKey('QuartersToDollarsCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

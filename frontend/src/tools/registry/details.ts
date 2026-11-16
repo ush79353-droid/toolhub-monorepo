@@ -143,6 +143,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EnergyConversionCalculator: () => import('@/tools/calculators/energy/detail'),
   QuantityConverter: () => import('@/tools/calculators/quantity/detail'),
   MpgToL100Converter: () => import('@/tools/calculators/mpg-to-l100/detail'),
+  QuartersToDollarsCalculator: () => import('@/tools/calculators/quarters-to-dollars/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

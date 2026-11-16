@@ -141,6 +141,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'energy-conversion-calculator',
   'quantity-converter',
   'mpg-to-l100-km-converter',
+  'quarters-to-dollars-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

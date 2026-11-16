@@ -686,6 +686,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MpgToL100Converter,
     })),
   ),
+  QuartersToDollarsCalculator: lazyTool(() =>
+    import('@/tools/calculators/quarters-to-dollars/QuartersToDollarsCalculator').then((mod) => ({
+      default: mod.QuartersToDollarsCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
