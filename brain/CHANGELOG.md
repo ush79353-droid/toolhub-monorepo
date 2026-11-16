@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Cubic Inches to Gallons Converter
+- **Summary:** Shipped Cubic Inches to Gallons Converter on existing catalog slug `cubic-inches-to-gallons-converter` (`CubicInchesToGallonsConverter`, catalog `6af46f17a27d8d1d4e990ac6`). Bidirectional in³ ↔ US/UK gallons ↔ other units (L/mL/cm³/m³/ft³); exact 231 in³ per US gal and 4.54609 L per UK gal; empty default; guide/FAQs. Pillar `6af451d0a27d8d1d4e98f9e1` / null subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-281 delivery for Conversion & Units volume converter.
+- **Important Files:** `frontend/src/tools/calculators/cubic-inches-to-gallons/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cubic-inches-to-gallons-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Cubic Feet to Pounds Calculator
 - **Summary:** Shipped Cubic Feet to Pounds Calculator on existing catalog slug `cubic-feet-to-pounds-calculator` (`CubicFeetToPoundsCalculator`, catalog `6af46f17a27d8d1d4e990af9`). Density-based bidirectional ft³ ↔ lb; default Non-metals / Concrete / 149.83 lb/ft³; material categories and custom density; density units lb/ft³, kg/m³, g/cm³, lb/in³, kg/L; guide/FAQs. Pillar `6af451d1a27d8d1d4e98f9e6` / subPillar `6af451d1a27d8d1d4e98f9e7` preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-280 delivery for Conversion & Units volume-to-mass calculator.
