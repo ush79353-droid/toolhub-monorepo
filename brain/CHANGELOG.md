@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Leet-speak Translator
+- **Summary:** Shipped Leet-speak Translator on existing catalog slug `leet-speak-translator` (`LeetSpeakTranslator`, catalog `6af46f17a27d8d1d4e990beb`). Bidirectional text↔leet with Classic (default) and Basic profiles; reverse uses 1→I and is labeled approximate. No multi-character Advanced ASCII style.
+- **Example:** Classic `HELLO` → `H3110`; Basic `HELLO` → `H3LL0`; reverse `H3110` → `HEIIO`.
+- **Important Files:** `frontend/src/tools/calculators/leet-speak/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-leet-speak-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned on retry (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 64/146). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Uppercase to Lowercase Converter
 - **Summary:** Shipped Uppercase to Lowercase Converter on existing catalog slug `uppercase-to-lowercase-converter` (`UppercaseToLowercaseConverter`, catalog `6af46f17a27d8d1d4e990bf1`). Instant client-side `toLowerCase()`, multiline/Unicode/emoji preservation, character/word/line stats, copy/share. Meta title shortened for schema maxLength 70.
 - **Example:** `HELLO WORLD` → `hello world`; `CAFÉ ÜBER` → `café über`.
