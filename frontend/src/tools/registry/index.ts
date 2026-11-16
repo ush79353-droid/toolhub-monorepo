@@ -830,6 +830,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.McgToMlConverter,
     })),
   ),
+  BarToPsigConverter: lazyTool(() =>
+    import('@/tools/calculators/bar-to-psig/BarToPsigConverter').then((mod) => ({
+      default: mod.BarToPsigConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

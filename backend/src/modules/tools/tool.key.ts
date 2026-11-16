@@ -160,6 +160,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LToGalConverter',
   'BarToPsiConverter',
   'McgToMlConverter',
+  'BarToPsigConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -475,6 +476,7 @@ if (isDirect) {
     !isApprovedComponentKey('LToGalConverter') ||
     !isApprovedComponentKey('BarToPsiConverter') ||
     !isApprovedComponentKey('McgToMlConverter') ||
+    !isApprovedComponentKey('BarToPsigConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
