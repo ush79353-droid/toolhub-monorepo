@@ -157,6 +157,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'lowercase-to-uppercase-converter',
   'acres-to-hectares-converter',
   'lbs-to-psi-converter',
+  'acres-to-square-feet-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

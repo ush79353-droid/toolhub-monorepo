@@ -159,6 +159,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lowercase-to-uppercase/detail'),
   AcresToHectaresConverter: () => import('@/tools/calculators/acres-to-hectares/detail'),
   LbsToPsiConverter: () => import('@/tools/calculators/lbs-to-psi/detail'),
+  AcresToSquareFeetConverter: () => import('@/tools/calculators/acres-to-square-feet/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
