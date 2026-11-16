@@ -1004,6 +1004,26 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CupsToQuartsConverter,
     })),
   ),
+  DayConverter: lazyTool(() =>
+    import('@/tools/calculators/day-converter/DayConverter').then((mod) => ({
+      default: mod.DayConverter,
+    })),
+  ),
+  DaysToMonthsCalculator: lazyTool(() =>
+    import('@/tools/calculators/days-to-months/DaysToMonthsCalculator').then((mod) => ({
+      default: mod.DaysToMonthsCalculator,
+    })),
+  ),
+  DaysToWeeksCalculator: lazyTool(() =>
+    import('@/tools/calculators/days-to-weeks/DaysToWeeksCalculator').then((mod) => ({
+      default: mod.DaysToWeeksCalculator,
+    })),
+  ),
+  DaysToYearsCalculator: lazyTool(() =>
+    import('@/tools/calculators/days-to-years/DaysToYearsCalculator').then((mod) => ({
+      default: mod.DaysToYearsCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

@@ -4,6 +4,7 @@
 
 ---
 
+<<<<<<< HEAD
 ### 2026-11-17 — Mortgage Rate Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Rate Calculator on existing catalog slug `mortgage-rate-calculator` (`MortgageRateCalculator`, catalog `6af46f0fa27d8d1d4e98ff7b`). Main configuration (loan FX, term yrs/mos, rate %, compounding Yearly / Semi-annually Canada / Quarterly / Monthly UK & US, Fixed-rate only) + fees (points %, up-front FX, annual FX). Results: monthly payment, fee-adjusted APR, paid interest, total payments. Independent FX on six money fields; mixed inputs normalized into loan currency. No ARM formulas. Activated.
 - **Example:** 200,000 PKR / 30y / 5% Monthly (UK & US) → payment ≈ 1,073.64; interest ≈ 186,511.57; total ≈ 386,511.57; APR 5%. With 1 point → APR ≈ 5.089%.
@@ -207,6 +208,31 @@
 - **Example:** 100,000 PKR / 5 yrs / 5% → payment ≈ 1,887.12; interest ≈ 13,227.40.
 - **Important Files:** `frontend/src/tools/calculators/boat-loan/*`, registries, `CURRENCY_CONVERSION_SLUGS`, sitemap, `backend/src/scripts/assign-boat-loan-tool.ts`, `brain/*`.
 - **Verification:** Mongo activation verified; worked-example math inspected via `tsx`. Lint/builds/browser/automated tests omitted per user.
+=======
+### 2026-11-16 — Add Days to Years Calculator
+- **Summary:** Shipped Days to Years Calculator on existing catalog slug `days-to-years-calculator` (`DaysToYearsCalculator`, catalog `6af46f17a27d8d1d4e990ba8`). Reuses Day Converter conversion engine; bidirectional days↔years via average Gregorian year 365.2425; common vs leap year guide and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-290 delivery for Conversion & Units time converter.
+- **Important Files:** `frontend/src/tools/calculators/days-to-years/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-days-to-years-calculator-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null preserved). Full frontend `tsc` / production build not claimed.
+
+### 2026-11-16 — Add Days to Weeks Calculator
+- **Summary:** Shipped Days to Weeks Calculator on existing catalog slug `days-to-weeks-calculator` (`DaysToWeeksCalculator`, catalog `6af46f17a27d8d1d4e990ba7`). Reuses Day Converter conversion engine; bidirectional days↔weeks (exact ÷7); other quantities accordion; interactive examples; days 1–100 and weeks charts; combined HMS; FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-289 delivery for Conversion & Units time converter.
+- **Important Files:** `frontend/src/tools/calculators/days-to-weeks/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-days-to-weeks-calculator-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null preserved). Full frontend `tsc` / production build not claimed.
+
+### 2026-11-16 — Add Days to Months Calculator
+- **Summary:** Shipped Days to Months Calculator on existing catalog slug `days-to-months-calculator` (`DaysToMonthsCalculator`, catalog `6af46f17a27d8d1d4e990ba6`). Reuses Day Converter conversion engine; bidirectional days↔months; other units accordion; interactive examples; combined HMS; calendar month-length table and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-288 delivery for Conversion & Units time converter.
+- **Important Files:** `frontend/src/tools/calculators/days-to-months/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-days-to-months-calculator-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null preserved). Full frontend `tsc` / production build not claimed.
+
+### 2026-11-16 — Add Day Converter
+- **Summary:** Shipped Day Converter on existing catalog slug `day-converter` (`DayConverter`, catalog `6af46f17a27d8d1d4e990ba5`). Bidirectional days ↔ years/months/weeks/hours/minutes/seconds; Gregorian averages 365.2425 d/yr and 30.436875 d/mo; fixed day subdivisions; combined HMS without 24 h wrap; guide and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-287 delivery for Conversion & Units time converter.
+- **Important Files:** `frontend/src/tools/calculators/day-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-day-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null preserved). Full frontend `tsc` / production build not claimed.
+>>>>>>> 12c46c254ef0dc395ab1418b968e0fe2432a799b
 
 ### 2026-11-16 — Add Cups to Quarts Converter
 - **Summary:** Shipped Cups to Quarts Converter on existing catalog slug `cups-to-quarts-converter` (`CupsToQuartsConverter`, catalog `6af46f17a27d8d1d4e990b35`). Bidirectional cups ↔ quarts via liters; US customary/legal, metric, and UK cups; US liquid, US dry, and imperial quarts; conversion chart and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
