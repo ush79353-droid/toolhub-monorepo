@@ -795,6 +795,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AtmToPascalsConverter,
     })),
   ),
+  LotSizeToAcresCalculator: lazyTool(() =>
+    import('@/tools/calculators/lot-size-to-acres/LotSizeToAcresCalculator').then((mod) => ({
+      default: mod.LotSizeToAcresCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

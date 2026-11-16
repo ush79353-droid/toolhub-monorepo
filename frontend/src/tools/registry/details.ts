@@ -166,6 +166,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AtmConversionCalculator: () => import('@/tools/calculators/atm-conversion/detail'),
   LiterToCcConverter: () => import('@/tools/calculators/liter-to-cc/detail'),
   AtmToPascalsConverter: () => import('@/tools/calculators/atm-to-pascals/detail'),
+  LotSizeToAcresCalculator: () => import('@/tools/calculators/lot-size-to-acres/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

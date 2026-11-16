@@ -164,6 +164,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'atm-conversion',
   'liter-to-cc-converter',
   'atm-to-pascals-conversion',
+  'lot-size-to-acres-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
