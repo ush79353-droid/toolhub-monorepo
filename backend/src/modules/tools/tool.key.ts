@@ -195,6 +195,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DayConverter',
   'DaysToMonthsCalculator',
   'DaysToWeeksCalculator',
+  'DaysToYearsCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -545,6 +546,7 @@ if (isDirect) {
     !isApprovedComponentKey('DayConverter') ||
     !isApprovedComponentKey('DaysToMonthsCalculator') ||
     !isApprovedComponentKey('DaysToWeeksCalculator') ||
+    !isApprovedComponentKey('DaysToYearsCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
