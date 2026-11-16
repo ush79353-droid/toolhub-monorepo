@@ -394,5 +394,10 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - 2026-11-16: Batch 2 (#6–#10) implementation Complete; manual verification Pending.
 - 2026-11-16: Created ledger from Phase 3 audit; recorded Margin Interest Pilot Complete; marked Batch 1 (#1–#5) Complete (implementation).
 
+## Additional FX calculators (post Phase-3 105 audit)
+
+| Calculator | Slug | Status | Notes |
+|---|---|---|---|
+| Mortgage Prepayment Calculator | `mortgage-prepayment-calculator` | Complete | Independent FX on mortgage amount, periodic prepayment, and lump-sum; normalize into mortgage currency before amortization. Manual verification Pending. |
 
 
