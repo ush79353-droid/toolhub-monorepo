@@ -174,6 +174,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BarToPsiConverter: () => import('@/tools/calculators/bar-to-psi/detail'),
   McgToMlConverter: () => import('@/tools/calculators/mcg-to-ml/detail'),
   BarToPsigConverter: () => import('@/tools/calculators/bar-to-psig/detail'),
+  MeasurementConverter: () => import('@/tools/calculators/measurement-converter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
