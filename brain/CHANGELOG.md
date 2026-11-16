@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Meters to Feet Converter
+- **Summary:** Shipped Meters to Feet Converter on existing catalog slug `meters-to-feet-converter` (`MetersToFeetConverter`, catalog `6af46f17a27d8d1d4e990ae0`). Exact bidirectional m↔ft via international foot (1 ft = 0.3048 m); empty default; signed values allowed. Pillar `6af451d0a27d8d1d4e98f9e3` / null subPillar preserved.
+- **Why:** TOOL-260 delivery for Conversion & Units length converter.
+- **Important Files:** `frontend/src/tools/calculators/meters-to-feet/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-meters-to-feet-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar as expected; meta 54/152). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add cc to Liter Converter
 - **Summary:** Shipped cc to Liter Converter on existing catalog slug `cc-to-liter-converter` (`CcToLiterConverter`, catalog `6af46f17a27d8d1d4e990b30`). Exact bidirectional cc↔L (1 L = 1000 cc); empty default; cm³/cc/mL label select. Null pillar/subPillar preserved.
 - **Why:** TOOL-259 delivery for Conversion & Units volume converter.
