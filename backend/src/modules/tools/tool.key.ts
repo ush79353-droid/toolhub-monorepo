@@ -344,6 +344,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
+  'InterestCalculator',
   'InterestOnlyMortgageCalculator',
   'InterestRateCalculator',
   'IrrCalculator',
@@ -352,6 +353,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'JensensAlphaCalculator',
   'SavingsInterestRateCalculator',
   'SharpeRatioCalculator',
+  'VaMortgageCalculator',
   'ValueAtRiskCalculator',
   'EidlCalculator',
 ] as const;
@@ -720,6 +722,7 @@ if (isDirect) {
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
+    !isApprovedComponentKey('InterestCalculator') ||
     !isApprovedComponentKey('InterestOnlyMortgageCalculator') ||
     !isApprovedComponentKey('InterestRateCalculator') ||
     !isApprovedComponentKey('IrrCalculator') ||
@@ -728,6 +731,7 @@ if (isDirect) {
     !isApprovedComponentKey('JensensAlphaCalculator') ||
     !isApprovedComponentKey('SavingsInterestRateCalculator') ||
     !isApprovedComponentKey('SharpeRatioCalculator') ||
+    !isApprovedComponentKey('VaMortgageCalculator') ||
     !isApprovedComponentKey('ValueAtRiskCalculator') ||
     !isApprovedComponentKey('EidlCalculator') ||
     isApprovedComponentKey('EvilEval')

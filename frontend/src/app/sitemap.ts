@@ -354,6 +354,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'holding-period-return-calculator',
   'impermanent-loss-calculator',
   'information-ratio-calculator',
+  'interest-calculator',
   'interest-only-mortgage-calculator',
   'interest-rate-calculator',
   'irr-calculator',
@@ -362,6 +363,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'jensens-alpha-calculator',
   'savings-interest-rate-calculator',
   'sharpe-ratio-calculator',
+  'va-mortgage-calculator',
   'value-at-risk-calculator-var',
   'economic-injury-disaster-loan-emergency-advance-eidl',
 ] as const;

@@ -1874,6 +1874,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InformationRatioCalculator,
     })),
   ),
+  InterestCalculator: lazyTool(() =>
+    import('@/tools/calculators/interest/InterestCalculator').then((mod) => ({
+      default: mod.InterestCalculator,
+    })),
+  ),
   InterestOnlyMortgageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/interest-only-mortgage/InterestOnlyMortgageCalculator'
@@ -1922,6 +1927,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   SharpeRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/sharpe-ratio/SharpeRatioCalculator').then((mod) => ({
       default: mod.SharpeRatioCalculator,
+    })),
+  ),
+  VaMortgageCalculator: lazyTool(() =>
+    import('@/tools/calculators/va-mortgage/VaMortgageCalculator').then((mod) => ({
+      default: mod.VaMortgageCalculator,
     })),
   ),
   ValueAtRiskCalculator: lazyTool(() =>
