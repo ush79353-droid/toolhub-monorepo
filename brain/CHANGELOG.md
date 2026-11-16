@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Nickels to Dollars Calculator
+- **Summary:** Shipped Nickels to Dollars Calculator on existing catalog slug `nickels-to-dollars-calculator` (`NickelsToDollarsCalculator`, catalog `6af46f17a27d8d1d4e990c02`). Bidirectional nickels↔dollars via integer-cent BigInt (1 nickel = 5¢ = $0.05; 20 nickels = $1); dollar amounts not divisible by five cents show mathematical nickel units plus whole-coin remainder. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 2,000 nickels = $100.00; 1 billion nickels = $50,000,000.00; $1.02 → 20.4 nickel units (20 whole + $0.02 remainder).
+- **Important Files:** `frontend/src/tools/calculators/nickels-to-dollars/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-nickels-to-dollars-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 49/155). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add CGS System of Units Converter
 - **Summary:** Shipped CGS System of Units Converter on existing catalog slug `cgs-system-of-units-converter` (`CgsSystemOfUnitsConverter`, catalog `6af46f17a27d8d1d4e990bd3`). Quantity selector (default Acceleration); 16 mechanical SI↔CGS quantities with typed factors; bidirectional fields; electromagnetism covered educationally only (ESU/EMU/Gaussian distinguished — no ambiguous universal EM factors). Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 9.80665 m/s² = 980.665 Gal; 1 N = 100,000 dyn; 1 J = 10,000,000 erg; 1 Pa = 10 Ba.
