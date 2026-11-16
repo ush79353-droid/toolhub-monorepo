@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Cups to Oz Converter
+- **Summary:** Shipped Cups to Oz Converter on existing catalog slug `cups-to-oz-converter` (`CupsToOzConverter`, catalog `6af46f17a27d8d1d4e990b33`). Bidirectional cups ↔ fluid ounces via liters; US customary/legal, metric, and UK cups; US and imperial fl oz; fluid-oz≠weight-oz copy; conversion chart and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-284 delivery for Conversion & Units kitchen/volume converter.
+- **Important Files:** `frontend/src/tools/calculators/cups-to-oz/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cups-to-oz-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Cups to Gallons Converter
 - **Summary:** Shipped Cups to Gallons Converter on existing catalog slug `cups-to-gallons-converter` (`CupsToGallonsConverter`, catalog `6af46f17a27d8d1d4e990ac7`). Bidirectional cups ↔ gallons via liters; US customary/legal, metric, and UK cups; US/UK gallons; More Conversion Options; conversion chart and FAQs. Pillar `6af451d0a27d8d1d4e98f9e1` / null subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-283 delivery for Conversion & Units kitchen/volume converter.
