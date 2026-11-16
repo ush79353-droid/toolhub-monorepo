@@ -498,15 +498,18 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mortgage-acceleration/detail'),
   MortgagePrepaymentCalculator: () =>
     import('@/tools/calculators/mortgage-prepayment/detail'),
+  MortgagePointsCalculator: () =>
+    import('@/tools/calculators/mortgage-points/detail'),
   HoldingPeriodReturnCalculator: () =>
     import('@/tools/calculators/holding-period-return/detail'),
   ImpermanentLossCalculator: () =>
     import('@/tools/calculators/impermanent-loss/detail'),
   InformationRatioCalculator: () =>
     import('@/tools/calculators/information-ratio/detail'),
-  InterestCalculator: () => import('@/tools/calculators/interest/detail'),
   InterestOnlyMortgageCalculator: () =>
     import('@/tools/calculators/interest-only-mortgage/detail'),
+  MortgageRateCalculator: () =>
+    import('@/tools/calculators/mortgage-rate/detail'),
   InterestRateCalculator: () =>
     import('@/tools/calculators/interest-rate/detail'),
   IrrCalculator: () => import('@/tools/calculators/irr/detail'),

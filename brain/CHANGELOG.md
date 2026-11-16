@@ -4,11 +4,23 @@
 
 ---
 
+### 2026-11-17 — Add Mortgage Points Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Mortgage Points Calculator on existing catalog slug `mortgage-points-calculator` (`MortgagePointsCalculator`, catalog `6af46f0fa27d8d1d4e98ff79`). Mortgage setup + Option I/II points/cost/rate; optional discount % per point and upfront vs rolled payment type. Comparison table + annual balances chart. Independent FX on loan and both points-cost fields, normalized into loan currency. Activated.
+- **Example:** PKR 250,000 / 30y / 3.25% Monthly (UK & US) → Option I 1 pt / 3% ≈ 1,054.01 payment, ~34.01 savings, 74 mos break-even; Option II 3 pt / 2.5% ≈ 987.80, ~100.21 savings, 75 mos.
+- **Important Files:** `frontend/src/tools/calculators/mortgage-points/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mortgage-points-tool.ts`, `brain/*`.
+- **Verification:** Reference math self-check vs Omni defaults. MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Mortgage Acceleration Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Acceleration Calculator on existing catalog slug `mortgage-acceleration-calculator` (`MortgageAccelerationCalculator`, catalog `6af46f0fa27d8d1d4e98ff71`). Inputs: loan FX, acceleration type (accelerated biweekly default / ordinary biweekly / monthly overpayment), term, rate, optional fees & compounding, due date, extra payment FX. Scrollable payment summary compares without acceleration / accelerated / difference. Accelerated biweekly = M/2 every 14 days (26/yr); ordinary biweekly = (M×12)/26. Independent FX normalized into loan currency. Activated.
 - **Example:** 300,000 PKR / 30y / 7.5% accelerated biweekly → monthly ≈ 2,097.54; biweekly ≈ 1,048.77; shorter term and lower interest vs baseline.
 - **Important Files:** `frontend/src/tools/calculators/mortgage-acceleration/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mortgage-acceleration-tool.ts`, `brain/*`.
 - **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-16 — Mortgage Calculator with Taxes and Insurance (Screenshot-First + FX)
+- **Summary:** Shipped Mortgage Calculator with Taxes and Insurance on existing catalog slug `mortgage-calculator-with-taxes-and-insurance` (`MortgageTaxesInsuranceCalculator`, catalog `6af46f0fa27d8d1d4e98ff74`). Omni inputs: home value, synced down payment, loan, rate, term, US/UK vs Canada method, payment frequency, first day, P&I payment. Further specifications: annual PMI %, property tax (% of home), homeowners insurance (annual money + FX), other periodic costs. Tax/insurance default 0; Payment stays P&I; escrow folds into total-with-costs and Other costs pie slice. Independent real FX. Activated.
+- **Example:** 150,000 / 10% / 4.5% / 30y → payment ≈ 684.03; 360 payments ≈ 246,249.06; interest ≈ 111,249.06; PMI 73 × 56.25 = 4,106.25; total with costs ≈ 250,355.31.
+- **Important Files:** `frontend/src/tools/calculators/mortgage-taxes-insurance/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mortgage-taxes-insurance-tool.ts`, `brain/*`.
+- **Verification:** Formula self-check vs screenshot. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true). Lint/builds/browser/automated tests omitted per user.
 
 ### 2026-11-17 — Add Mortgage Prepayment Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Prepayment Calculator on existing catalog slug `mortgage-prepayment-calculator` (`MortgagePrepaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ff7a`). Current mortgage (amount FX, rate, term yrs/mos, Monthly US&UK / Canada method, due date) + prepayment options (payment frequency, periodic FX + start, lump-sum FX + paid-on). Compares baseline vs prepaid payoff/payment/#/term/interest/total; balances chart. Independent FX normalized into mortgage currency. Activated.
