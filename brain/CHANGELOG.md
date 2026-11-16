@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Update Interest Calculator to Reference (Screenshot-First, Fixed USD)
+- **Summary:** Implemented Interest Calculator on existing undeveloped catalog slug `interest-calculator` (`InterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff7e`). Inputs: initial investment, annual/monthly contributions, beginning/end timing, interest rate, compounding (default annually), years/months, tax %, inflation %. Results: ending balance, total principal, contributions, total interest, interest on initial vs contributions, inflation-adjusted buying power, doughnut (initial/contributions/interest). After-tax rate and monthly compound step; separate initial/contribution buckets. Fixed USD — no FX selectors in the reference. Activated.
+- **Example:** $20,000 / $5,000 annual beginning / 5y / 5% annually / tax 0% / inflation 3% → ending $54,535.20; principal $45,000; contributions $25,000; interest $9,535.20; inflation-adjusted $47,042.54.
+- **Important Files:** `frontend/src/tools/calculators/interest/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-interest-tool.ts`, `brain/*`.
+- **Verification:** Reference math self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Add VA Mortgage Calculator (Screenshot-First, Fixed USD)
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
@@ -82,11 +88,6 @@
 - **Example:** 350,000 at 4% monthly → 1,166.67; 10-year IO total interest → 140,000; principal unchanged.
 - **Important Files:** `frontend/src/tools/calculators/interest-only-mortgage/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-interest-only-mortgage-tool.ts`, `brain/*`.
 - **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true). Lint/builds/browser/automated tests omitted per user.
-
-### 2026-11-16 — Student Loan Repayment Calculator | COVID-19 (Historical Notice)
-- **Summary:** Shipped informational historical notice on existing catalog slug `student-loan-repayment-calculator-covid-19` (`StudentLoanRepaymentCovidCalculator`, catalog `6af46f0fa27d8d1d4e98ff6a`). No financial inputs, repayment formulas, or currency selectors. Notice covers COVID-era federal payment suspension with historical December 31, 2020 reference; states COVID-era calculations are no longer valid; does not claim current federal loans are paused or 0% interest; internal link to `/tools/loan-calculator`. Share result / Reload / disabled Clear / feedback controls. Activated.
-- **Important Files:** `frontend/src/tools/calculators/student-loan-repayment-covid/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-student-loan-repayment-covid-tool.ts`, `brain/*`.
-- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
 
 ### 2026-11-16 — Student Loan Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Student Loan Calculator on existing catalog slug `student-loan-calculator` (`StudentLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff67`). Screenshot fields: loan balance, remaining term yrs/mos, interest rate % → monthly payment. Standard amortizing formula `M = P × r × (1+r)^n / ((1+r)^n − 1)` with `r = 0 → P/n`. Independent real FX on loan + payment; term/rate never convert. Activated.
