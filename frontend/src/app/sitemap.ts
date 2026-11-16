@@ -33,6 +33,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'acreage-calculator',
   'feet-to-inches-calculator',
   'fha-loan-calculator',
+  'home-equity-loan-calculator',
   'acres-to-square-miles-calculator',
   'height-in-inches-calculator',
   'acre-to-are-conversion',

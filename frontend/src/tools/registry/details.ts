@@ -470,6 +470,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FhaLoanCalculator: () => import('@/tools/calculators/fha-loan/detail'),
   FutureValueCalculator: () =>
     import('@/tools/calculators/future-value/detail'),
+  HomeEquityLoanCalculator: () =>
+    import('@/tools/calculators/home-equity-loan/detail'),
   HoldingPeriodReturnCalculator: () =>
     import('@/tools/calculators/holding-period-return/detail'),
   ImpermanentLossCalculator: () =>

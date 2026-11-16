@@ -1742,6 +1742,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FhaLoanCalculator,
     })),
   ),
+  HomeEquityLoanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/home-equity-loan/HomeEquityLoanCalculator'
+    ).then((mod) => ({
+      default: mod.HomeEquityLoanCalculator,
+    })),
+  ),
   FutureValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/future-value/FutureValueCalculator'

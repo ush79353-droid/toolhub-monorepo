@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Home Equity Loan Calculator
+- **Summary:** Shipped Home Equity Loan Calculator on existing catalog slug `home-equity-loan-calculator` (`HomeEquityLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff64`). Inputs: loan amount, interest %, term years, Include closing costs checkbox (blocks results when checked — no verified fee rule). Results: monthly pay, total of n payments, total interest, principal-vs-interest doughnut. Fixed USD ($) — no FX selectors in the reference. Activated.
+- **Example:** $150,000 / 8% / 15 yrs → monthly ≈ $1,433.48; 180 payments ≈ $258,026.06; interest ≈ $108,026.06.
+- **Important Files:** `frontend/src/tools/calculators/home-equity-loan/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-home-equity-loan-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — RV Loan Calculator (Screenshot-First + FX)
 - **Summary:** Shipped RV Loan Calculator on existing catalog slug `rv-loan-calculator` (`RvLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff61`). Screenshot sections: RV loan setup (price, down payment default 0.00, term yrs/mos, interest %/yr) and RV loan payments (loan amount, payment / mon, total paid, cost of loan). Independent real FX on all six monetary selectors; canonical = RV price currency; down payment normalized before P = V − D. Activated.
 - **Example:** 100,000 PKR / 20,000 down / 5 yrs / 6% → loan 80,000; payment ≈ 1,546.62; total paid ≈ 92,797.45; cost ≈ 12,797.45.
