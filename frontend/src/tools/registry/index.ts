@@ -666,6 +666,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DimesToDollarsCalculator,
     })),
   ),
+  PxToEmConverter: lazyTool(() =>
+    import('@/tools/calculators/px-to-em/PxToEmConverter').then((mod) => ({
+      default: mod.PxToEmConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

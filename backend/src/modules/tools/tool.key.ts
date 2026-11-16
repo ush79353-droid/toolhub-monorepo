@@ -126,6 +126,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DimensionalAnalysisCalculator',
   'PpmToMglConverter',
   'DimesToDollarsCalculator',
+  'PxToEmConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -407,6 +408,7 @@ if (isDirect) {
     !isApprovedComponentKey('DimensionalAnalysisCalculator') ||
     !isApprovedComponentKey('PpmToMglConverter') ||
     !isApprovedComponentKey('DimesToDollarsCalculator') ||
+    !isApprovedComponentKey('PxToEmConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

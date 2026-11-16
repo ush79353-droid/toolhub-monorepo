@@ -139,6 +139,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/dimensional-analysis/detail'),
   PpmToMglConverter: () => import('@/tools/calculators/ppm-to-mgl/detail'),
   DimesToDollarsCalculator: () => import('@/tools/calculators/dimes-to-dollars/detail'),
+  PxToEmConverter: () => import('@/tools/calculators/px-to-em/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
