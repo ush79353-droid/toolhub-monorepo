@@ -214,6 +214,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CupsToOzConverter: () => import('@/tools/calculators/cups-to-oz/detail'),
   CupsToPintsConverter: () => import('@/tools/calculators/cups-to-pints/detail'),
   CupsToQuartsConverter: () => import('@/tools/calculators/cups-to-quarts/detail'),
+  DayConverter: () => import('@/tools/calculators/day-converter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

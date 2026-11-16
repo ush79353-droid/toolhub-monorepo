@@ -1004,6 +1004,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CupsToQuartsConverter,
     })),
   ),
+  DayConverter: lazyTool(() =>
+    import('@/tools/calculators/day-converter/DayConverter').then((mod) => ({
+      default: mod.DayConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
