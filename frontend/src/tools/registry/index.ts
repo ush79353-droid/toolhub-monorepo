@@ -701,6 +701,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RadiationConverter,
     })),
   ),
+  HardnessConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/hardness/HardnessConversionCalculator').then((mod) => ({
+      default: mod.HardnessConversionCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

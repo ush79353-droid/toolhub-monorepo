@@ -146,6 +146,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   QuartersToDollarsCalculator: () => import('@/tools/calculators/quarters-to-dollars/detail'),
   GramsToCaloriesCalculator: () => import('@/tools/calculators/grams-to-calories/detail'),
   RadiationConverter: () => import('@/tools/calculators/radiation/detail'),
+  HardnessConversionCalculator: () => import('@/tools/calculators/hardness/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

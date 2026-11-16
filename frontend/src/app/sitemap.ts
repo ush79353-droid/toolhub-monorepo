@@ -144,6 +144,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'quarters-to-dollars-calculator',
   'grams-to-calories-calculator',
   'radiation-converter',
+  'hardness-conversion-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
