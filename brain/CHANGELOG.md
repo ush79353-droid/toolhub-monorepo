@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Liter to cc Converter
+- **Summary:** Shipped Liter to cc Converter on existing catalog slug `liter-to-cc-converter` (`LiterToCcConverter`, catalog `6af46f17a27d8d1d4e990b4c`). Bidirectional L↔cc using exact factor 1000; default 1 L; swap field order; negatives rejected. Null pillar/subPillar preserved.
+- **Example:** 1 L = 1000 cc; 2.5 L = 2500 cc; 500 cc = 0.5 L.
+- **Important Files:** `frontend/src/tools/calculators/liter-to-cc/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-liter-to-cc-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 41/131). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add ATM Conversion
 - **Summary:** Shipped ATM Conversion on existing catalog slug `atm-conversion` (`AtmConversionCalculator`, catalog `6af46f17a27d8d1d4e990aeb`). Synced atm/bar/psi/Pa via Pa canonical; exact 1 atm = 101,325 Pa; PSI factor 6894.757293168; default 1 atm; negatives flagged as gauge-relative. Existing pillar preserved; subPillar null.
 - **Example:** 1 atm = 1.01325 bar ≈ 14.6959488 psi = 101,325 Pa; 100,000 Pa = 1 bar.
