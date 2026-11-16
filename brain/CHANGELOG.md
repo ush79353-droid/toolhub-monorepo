@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Radiation Converter
+- **Summary:** Shipped Radiation Converter on existing catalog slug `radiation-converter` (`RadiationConverter`, catalog `6af46f17a27d8d1d4e990bf0`). Independent accordion groups for absorbed dose (mGy/Gy/rad) and equivalent dose (µSv/mSv/rem); no universal Gy↔Sv conversion. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 250 mGy = 0.25 Gy = 25 rad; 50 mSv = 50,000 µSv = 5 rem.
+- **Important Files:** `frontend/src/tools/calculators/radiation/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-radiation-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 59/140). Full frontend `tsc` / production build not claimed (pre-existing unrelated typing errors on branch). Limitation: no interactive w_R / tissue-weighting calculator (explained in guide).
+
 ### 2026-11-16 — Add Grams to Calories Calculator
 - **Summary:** Shipped Grams to Calories Calculator on existing catalog slug `grams-to-calories-calculator` (`GramsToCaloriesCalculator`, catalog `6af46f17a27d8d1d4e990bf7`). Atwater factors (carbs/protein 4, fat 9, alcohol 7 kcal/g); alcohol modes grams / volume×ABV×0.789 / none (default); per-nutrient and total kcal with percentages. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 30 g carbs + 20 g protein + 10 g fat = 290 kcal; 355 mL at 5% ABV ≈ 14.00475 g ethanol ≈ 98.033 kcal.
