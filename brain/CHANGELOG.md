@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Lbs to PSI Converter
+- **Summary:** Shipped Lbs to PSI Converter on existing catalog slug `lbs-to-psi-converter` (`LbsToPsiConverter`, catalog `6af46f17a27d8d1d4e990ae7`). Bidirectional psf↔psi using exact factor 144; signed gauge/differential values allowed; clarifies that bare lbf is not pressure. Existing pillar preserved.
+- **Example:** 144 psf = 1 psi; 100 psf ≈ 0.6944444444 psi; −144 psf = −1 psi.
+- **Important Files:** `frontend/src/tools/calculators/lbs-to-psi/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-lbs-to-psi-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d0a27d8d1d4e98f9e4` preserved; meta 40/155). Full frontend `tsc` / production build not claimed. Optional force÷area mode not implemented (ponytail).
+
 ### 2026-11-16 — Add Acres to Hectares Converter
 - **Summary:** Shipped Acres to Hectares Converter on existing catalog slug `acres-to-hectares-converter` (`AcresToHectaresConverter`, catalog `6af46f17a27d8d1d4e990b77`). Bidirectional ac↔ha using exact factor 0.40468564224; swap field order; default 10 acres; negative/blank validation.
 - **Example:** 10 ac = 4.0468564224 ha; 1 ha ≈ 2.47105381467 ac.
