@@ -164,6 +164,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AngstromToNmConverter: () => import('@/tools/calculators/angstrom-to-nm/detail'),
   LitersToPoundsCalculator: () => import('@/tools/calculators/liters-to-pounds/detail'),
   AtmConversionCalculator: () => import('@/tools/calculators/atm-conversion/detail'),
+  LiterToCcConverter: () => import('@/tools/calculators/liter-to-cc/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
