@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Lot Size to Square Feet Calculator
+- **Summary:** Shipped Lot Size to Square Feet Calculator on existing catalog slug `lot-size-to-square-feet-calculator` (`LotSizeToSqftCalculator`, catalog `6af46f17a27d8d1d4e990afe`). Width×length→ft² with multi-unit length/area, reverse solve, optional Unit and total price; default 50×100 ft. Pillar and subPillar preserved.
+- **Example:** 50×100 ft = 5,000 ft²; 24×18 ft = 432 ft²; 15×12 yd = 1,620 ft²; 5,000 ft² × $20/ft² = $100,000.
+- **Important Files:** `frontend/src/tools/calculators/lot-size-to-sqft/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-lot-size-to-sqft-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; live pillar `6af451d1a27d8d1d4e98f9e6` preserved vs brief …d2…; subPillar `6af46f0fae6d84bd3ef8f7e3`; meta 54/149). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Barometric Pressure Conversion
 - **Summary:** Shipped Barometric Pressure Conversion on existing catalog slug `barometric-pressure-conversion` (`BarometricPressureConverter`, catalog `6af46f17a27d8d1d4e990b9d`). Four primary fields (atm/bar/Pa/psi) with shared Pa base and more-options units; default 1 atm; reuses pressure-conversion factors (Torr ≠ mmHg). Null pillar/subPillar preserved.
 - **Example:** 1 atm = 101,325 Pa = 1.01325 bar ≈ 14.69595 psi; 1 hPa = 1 mbar; 12 bar ≈ 11.84308 atm.
