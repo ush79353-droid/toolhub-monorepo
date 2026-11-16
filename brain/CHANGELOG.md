@@ -4,11 +4,17 @@
 
 ---
 
+### 2026-11-16 — Add Cubic Feet to Cubic Meters Converter
+- **Summary:** Shipped Cubic Feet to Cubic Meters Converter on existing catalog slug `cubic-feet-to-cubic-meters-converter` (`CubicFeetToCubicMetersConverter`, catalog `6af46f17a27d8d1d4e990af7`). Bidirectional ft³ ↔ m³ via reused `cubic-feet` helpers (exact 1 ft³ = 0.028316846592 m³); More Conversion Options (cm³/L/mL/US gal/in³/yd³); conversion table and FAQs. Pillar `6af451d1a27d8d1d4e98f9e6` / subPillar `6af451d1a27d8d1d4e98f9e7` preserved. Meta description shortened to schema maxLength 160. `indexable` left false.
+- **Why:** TOOL-278 delivery for Conversion & Units volume converter.
+- **Important Files:** `frontend/src/tools/calculators/cubic-feet-to-cubic-meters/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cubic-feet-to-cubic-meters-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add CM to MM Converter
 - **Summary:** Shipped CM to MM Converter on existing catalog slug `cm-to-mm-converter` (`CmToMmConverter`, catalog `6af46f17a27d8d1d4e990b82`). Bidirectional cm ↔ mm via `centimeter/units` convertLength (exact 1 cm = 10 mm); conversion table and FAQs. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70. `indexable` left false.
 - **Why:** TOOL-277 delivery for Conversion & Units length converter.
 - **Important Files:** `frontend/src/tools/calculators/cm-to-mm/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cm-to-mm-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
-- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assign blocked by Atlas connection timeout — `isDeveloped` left unchanged; re-run `assign-cm-to-mm-converter-tool.ts` when Atlas is reachable. Full frontend `tsc` / production build not claimed.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned on retry (`isDeveloped: true`; metaDescription trimmed to ≤160). Full frontend `tsc` / production build not claimed.
 
 ### 2026-11-16 — Add CM to M Converter
 - **Summary:** Shipped CM to M Converter on existing catalog slug `cm-to-m-converter` (`CmToMConverter`, catalog `6af46f17a27d8d1d4e990b81`). Bidirectional cm ↔ m via `centimeter/units` convertLength (exact 1 m = 100 cm); Other units selector defaults to inches; conversion table and FAQs. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70. `indexable` left false.

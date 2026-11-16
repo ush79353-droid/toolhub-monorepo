@@ -45,7 +45,7 @@ async function run(): Promise<void> {
     // Schema metaTitle maxLength 70.
     tool.metaTitle = 'CM to MM Converter (cm ↔ mm) | Omega Calculators';
     tool.metaDescription =
-      'Convert centimeters to millimeters instantly with our free CM to MM Converter. Get accurate cm-to-mm and mm-to-cm results, formulas, examples, and conversion tables.';
+      'Convert centimeters to millimeters instantly with our free CM to MM Converter. Get accurate cm-to-mm and mm-to-cm results, formulas, and examples.';
     if (tool.embedEnabled !== false) {
       tool.embedEnabled = true;
     }
