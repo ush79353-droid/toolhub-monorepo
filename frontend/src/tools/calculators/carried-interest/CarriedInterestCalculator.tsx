@@ -4,7 +4,15 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { CarriedInterestForm } from './CarriedInterestForm';
 import {
   createDefaultInput,
@@ -14,6 +22,12 @@ import {
 } from './types';
 import { validateCarriedInterestInput } from './validation';
 
+const MONEY_FIELDS = ['initialFundValue', 'finalFundValue'] as const;
+
+/** Shared selectors: both fund values convert together so FX alone cannot invent profit or alter return/carry ratios. */
+const CARRIED_INTEREST_CURRENCY_NOTE =
+  'Changing currency converts initial and final fund values using stored exchange rates. Fund return %, hurdle %, carry %, and hold period stay the same.';
+
 export function CarriedInterestCalculator({
   metadata,
   className = '',
@@ -21,6 +35,8 @@ export function CarriedInterestCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<CarriedInterestInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<CarriedInterestFieldErrors>({});
   const [result, setResult] = React.useState<CarriedInterestResult | null>(null);
@@ -28,10 +44,15 @@ export function CarriedInterestCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CARRIED_INTEREST_CURRENCY_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const apply = (next: CarriedInterestInput) => {
     setInput(next);
@@ -45,6 +66,39 @@ export function CarriedInterestCalculator({
     );
   };
 
+  const handleChange = (next: CarriedInterestInput) => {
+    setConversionError(null);
+    apply(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      {
+        initialFundValue: input.initialFundValue,
+        finalFundValue: input.finalFundValue,
+      },
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    apply({
+      ...input,
+      ...converted.values,
+      currency,
+    });
+  };
+
   const handleReset = () => {
     setInput(createDefaultInput());
     setErrors({});
@@ -52,6 +106,7 @@ export function CarriedInterestCalculator({
     setFundReturnDisplay('');
     setCopied(false);
     setShared(false);
+    setConversionError(null);
   };
 
   const symbol = getCurrencySymbol(input.currency);
@@ -67,7 +122,7 @@ export function CarriedInterestCalculator({
         `GP catch-up: ${input.gpCatchUp === 'yes' ? 'Yes' : 'No'}`,
         `Total profit: ${symbol}${result.formattedTotalProfit}`,
         `GP carried interest amount: ${symbol}${result.formattedGpCarriedInterestAmount}`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -82,22 +137,30 @@ export function CarriedInterestCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Carry on profit above the compounded hurdle
+            Carry on profit above the compounded hurdle · {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <CarriedInterestForm
           input={input}
           errors={errors}
           result={result}
           fundReturnDisplay={fundReturnDisplay}
-          onChange={apply}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
-        <p className="text-xs text-muted-foreground">{CURRENCY_DENOMINATION_NOTE}</p>
         <div className="flex flex-wrap gap-2">
           <Button
             type="button"

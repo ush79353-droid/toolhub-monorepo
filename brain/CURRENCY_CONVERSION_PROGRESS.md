@@ -363,8 +363,15 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 - 3D Printer Buy vs Outsource: in-house and outsource monetary inputs convert; parts, hours, watts, and failure rate unchanged.
 - Manual verification left Pending for user reference comparison.
 
+## Out-of-ledger fixes
+
+| Calculator | Slug | Status | Commit | Notes |
+|---|---|---|---|---|
+| Carried Interest Calculator | `carried-interest-calculator` | Complete | (see git) | Not in the 105 Phase 3 audit list; fixed on request. Synced selectors; initial+final convert together; %/years unchanged. |
+
 ## Changelog
 
+- 2026-11-16: Carried Interest (`carried-interest-calculator`) out-of-ledger FX fix Complete; not in the 105 audit list.
 - 2026-11-16: **Phase 3 ALL BATCHES COMPLETE** — Batch 21 (#101–#105) implementation Complete; totals 105/0 Complete/Pending; manual verification Pending.
 - 2026-11-16: Batch 20 (#96–#100) implementation Complete; manual verification Pending.
 - 2026-11-16: Batch 19 (#91–#95) implementation Complete; manual verification Pending.

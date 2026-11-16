@@ -3,7 +3,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   CarriedInterestFieldErrors,
@@ -43,6 +43,7 @@ interface CarriedInterestFormProps {
   result: CarriedInterestResult | null;
   fundReturnDisplay: string;
   onChange: (input: CarriedInterestInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -52,6 +53,7 @@ export function CarriedInterestForm({
   result,
   fundReturnDisplay,
   onChange,
+  onCurrencyChange,
   onReset,
 }: CarriedInterestFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -77,7 +79,7 @@ export function CarriedInterestForm({
             <span>Initial fund value</span>
             <InfoTooltip
               label="Initial fund value"
-              text="Starting fund capital. Must be greater than zero. Currency labels amounts only."
+              text="Starting fund capital. Must be greater than zero. Changing currency converts both fund values together."
             />
           </label>
           <div className="flex gap-2">
@@ -98,7 +100,7 @@ export function CarriedInterestForm({
               <CurrencySelect
                 id="ci-initial-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Initial fund value currency"
               />
             </div>
@@ -134,7 +136,7 @@ export function CarriedInterestForm({
               <CurrencySelect
                 id="ci-final-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Final fund value currency"
               />
             </div>

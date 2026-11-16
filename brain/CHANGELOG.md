@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-16 — Fix Carried Interest currency conversion
+- **Summary:** Upgraded existing Carried Interest Calculator (`carried-interest-calculator`) from denomination-only synced selectors to real FX via Phase 2 `convertDraftMoneyFields` + `CurrencyRatesProvider`. Both initial and final fund values convert together so FX alone cannot invent profit or change fund return %, hurdle/carry ratios, or GP catch-up waterfall math. Hold period, hurdle %, and carry % never convert. Existing allocation formulas preserved. Slug already on `CURRENCY_CONVERSION_SLUGS`.
+- **Important Files:** `frontend/src/tools/calculators/carried-interest/{CarriedInterestCalculator,CarriedInterestForm}.tsx`, `brain/{CURRENT_STATE,FRONTEND,CHANGELOG,CURRENCY_CONVERSION_PROGRESS}.md`.
+- **Verification:** Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Cost of Equity independent FX conversion
 - **Summary:** Upgraded existing Cost of Equity Calculator (`cost-of-equity-calculator`, catalog `6af46f10a27d8d1d4e990154`) from denomination-only currency to independent dividend/share-price FX selectors (Margin Interest pattern). Changing either currency converts that field's amount; validation normalizes dividend into share-price currency before Gordon Growth `(D₁/P₀)+g`. Growth % and cost-of-equity % never convert. D₁ convention preserved. No/CAPM mode remains unavailable. Slug added to `CURRENCY_CONVERSION_SLUGS`.
 - **Example:** Same-currency D₁ 10 / P₀ 100 / g 3% → 13%. Mixed 10 USD / 2,770 PKR / g 3% with illustrative 1 USD = 277 PKR → 103%.
