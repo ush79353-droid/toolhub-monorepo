@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Liters to Pounds Calculator
+- **Summary:** Shipped Liters to Pounds Calculator on existing catalog slug `liters-to-pounds-calculator` (`LitersToPoundsCalculator`, catalog `6af46f17a27d8d1d4e990b4e`). Density-based bidirectional L↔lb using exact 1 lb = 0.45359237 kg; category/ingredient presets; density units kg/m³–lb/ft³ via kg/L; default 5 L water @ 1000 kg/m³. Null pillar/subPillar preserved.
+- **Example:** 5 L water @ 1 kg/L ≈ 11.023113 lb; 10 lb water ≈ 4.5359237 L.
+- **Important Files:** `frontend/src/tools/calculators/liters-to-pounds/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-liters-to-pounds-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 47/142). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Angstrom to nm Converter
 - **Summary:** Shipped Angstrom to nm Converter on existing catalog slug `angstrom-to-nm-converter` (`AngstromToNmConverter`, catalog `6af46f17a27d8d1d4e990b0e`). Three synced fields Å/nm/mil via nm canonical; exact 1 Å = 0.1 nm and 1 mil = 25,400 nm; scientific notation supported; default 14 Å. Existing pillar preserved; subPillar null.
 - **Example:** 14 Å = 1.4 nm; 1 mil = 25,400 nm = 254,000 Å.
