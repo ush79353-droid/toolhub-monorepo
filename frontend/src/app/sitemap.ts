@@ -161,6 +161,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'lbs-to-stone-converter',
   'angstrom-to-nm-converter',
   'liters-to-pounds-calculator',
+  'atm-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

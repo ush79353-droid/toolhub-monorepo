@@ -780,6 +780,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LitersToPoundsCalculator,
     })),
   ),
+  AtmConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/atm-conversion/AtmConversionCalculator').then((mod) => ({
+      default: mod.AtmConversionCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
