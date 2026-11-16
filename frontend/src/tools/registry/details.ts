@@ -193,6 +193,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CmHeightConversionCalculator: () =>
     import('@/tools/calculators/cm-height-conversion/detail'),
   CentimeterCalculator: () => import('@/tools/calculators/centimeter/detail'),
+  CentToSquareMeterConverter: () =>
+    import('@/tools/calculators/cent-to-square-meter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

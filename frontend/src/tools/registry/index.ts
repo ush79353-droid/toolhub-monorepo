@@ -921,6 +921,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CentimeterCalculator,
     })),
   ),
+  CentToSquareMeterConverter: lazyTool(() =>
+    import('@/tools/calculators/cent-to-square-meter/CentToSquareMeterConverter').then((mod) => ({
+      default: mod.CentToSquareMeterConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
