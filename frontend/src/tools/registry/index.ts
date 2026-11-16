@@ -958,6 +958,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CubicFeetToCubicMetersConverter,
     })),
   ),
+  CubicFeetToGallonsConverter: lazyTool(() =>
+    import('@/tools/calculators/cubic-feet-to-gallons/CubicFeetToGallonsConverter').then(
+      (mod) => ({
+        default: mod.CubicFeetToGallonsConverter,
+      }),
+    ),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
