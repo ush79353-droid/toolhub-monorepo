@@ -149,6 +149,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'joules-to-volts-calculator',
   'speed-conversion',
   'knots-to-kph-converter',
+  'temperature-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

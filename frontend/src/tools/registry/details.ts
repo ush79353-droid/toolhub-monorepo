@@ -151,6 +151,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   JoulesToVoltsCalculator: () => import('@/tools/calculators/joules-to-volts/detail'),
   SpeedConversionCalculator: () => import('@/tools/calculators/speed/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
+  TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

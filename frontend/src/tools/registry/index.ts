@@ -726,6 +726,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KnotsToKphConverter,
     })),
   ),
+  TemperatureConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/temperature/TemperatureConversionCalculator').then((mod) => ({
+      default: mod.TemperatureConversionCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

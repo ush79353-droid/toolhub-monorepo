@@ -138,6 +138,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'JoulesToVoltsCalculator',
   'SpeedConversionCalculator',
   'KnotsToKphConverter',
+  'TemperatureConversionCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -431,6 +432,7 @@ if (isDirect) {
     !isApprovedComponentKey('JoulesToVoltsCalculator') ||
     !isApprovedComponentKey('SpeedConversionCalculator') ||
     !isApprovedComponentKey('KnotsToKphConverter') ||
+    !isApprovedComponentKey('TemperatureConversionCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
