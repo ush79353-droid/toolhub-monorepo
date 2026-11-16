@@ -172,6 +172,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BarToAtmConverter: () => import('@/tools/calculators/bar-to-atm/detail'),
   LToGalConverter: () => import('@/tools/calculators/l-to-gal/detail'),
   BarToPsiConverter: () => import('@/tools/calculators/bar-to-psi/detail'),
+  McgToMlConverter: () => import('@/tools/calculators/mcg-to-ml/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
