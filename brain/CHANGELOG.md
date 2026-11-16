@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Days to Weeks Calculator
+- **Summary:** Shipped Days to Weeks Calculator on existing catalog slug `days-to-weeks-calculator` (`DaysToWeeksCalculator`, catalog `6af46f17a27d8d1d4e990ba7`). Reuses Day Converter conversion engine; bidirectional days↔weeks (exact ÷7); other quantities accordion; interactive examples; days 1–100 and weeks charts; combined HMS; FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-289 delivery for Conversion & Units time converter.
+- **Important Files:** `frontend/src/tools/calculators/days-to-weeks/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-days-to-weeks-calculator-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Days to Months Calculator
 - **Summary:** Shipped Days to Months Calculator on existing catalog slug `days-to-months-calculator` (`DaysToMonthsCalculator`, catalog `6af46f17a27d8d1d4e990ba6`). Reuses Day Converter conversion engine; bidirectional days↔months; other units accordion; interactive examples; combined HMS; calendar month-length table and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-288 delivery for Conversion & Units time converter.
