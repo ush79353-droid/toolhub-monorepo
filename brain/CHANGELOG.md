@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Cent to Square Meter Converter
+- **Summary:** Shipped Cent to Square Meter Converter on existing catalog slug `cent-to-square-meter-converter` (`CentToSquareMeterConverter`, catalog `6af46f17a27d8d1d4e990adc`). Bidirectional cent ↔ m² ↔ ft² via exact 1 cent = 40.468564224 m² = 435.6 ft²; negative areas rejected; conversion table and FAQs. Pillar `6af451d0a27d8d1d4e98f9e3` / null subPillar preserved when live matches brief. Meta title shortened to schema maxLength 70.
+- **Why:** TOOL-272 delivery for Conversion & Units land-area converter.
+- **Important Files:** `frontend/src/tools/calculators/cent-to-square-meter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cent-to-square-meter-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Centimeter Calculator
 - **Summary:** Shipped Centimeter Calculator on existing catalog slug `centimeter-calculator` (`CentimeterCalculator`, catalog `6af46f17a27d8d1d4e990b7c`). Primary cm with collapsible Imperial/US and Metric groups, other-unit selectors (thou/fathom/… and µm/nm/…); exact meter-base factors; conversion table and FAQs. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70.
 - **Why:** TOOL-271 delivery for Conversion & Units length converter.
