@@ -49,7 +49,11 @@ export function MortgageTaxesInsuranceGuideArticle() {
         <p>
           PMI 0.5%/yr → 56.25 per month · 73 periods → 4,106.25 until LTV ≤ 80%
         </p>
-        <p>Total with costs ≈ 250,355.31</p>
+        <p>
+          Property tax % and homeowners insurance default to 0 (Further
+          specifications), so total with costs ≈ 250,355.31 matches PMI-only
+          additional costs.
+        </p>
       </div>
 
       <h2
