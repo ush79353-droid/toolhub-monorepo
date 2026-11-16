@@ -114,6 +114,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CentsToDollarsCalculator',
   'NmToJoulesCalculator',
   'CgsSystemOfUnitsConverter',
+  'NickelsToDollarsCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -382,6 +383,7 @@ if (isDirect) {
     !isApprovedComponentKey('CentsToDollarsCalculator') ||
     !isApprovedComponentKey('NmToJoulesCalculator') ||
     !isApprovedComponentKey('CgsSystemOfUnitsConverter') ||
+    !isApprovedComponentKey('NickelsToDollarsCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
