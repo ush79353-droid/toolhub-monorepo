@@ -125,6 +125,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NaturalGasConverter: () => import('@/tools/calculators/natural-gas/detail'),
   CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
   NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
+  CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

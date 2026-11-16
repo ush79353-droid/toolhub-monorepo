@@ -599,6 +599,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NmToJoulesCalculator,
     })),
   ),
+  CgsSystemOfUnitsConverter: lazyTool(() =>
+    import('@/tools/calculators/cgs-system/CgsSystemOfUnitsConverter').then((mod) => ({
+      default: mod.CgsSystemOfUnitsConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
