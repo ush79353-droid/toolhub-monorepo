@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Cups to Quarts Converter
+- **Summary:** Shipped Cups to Quarts Converter on existing catalog slug `cups-to-quarts-converter` (`CupsToQuartsConverter`, catalog `6af46f17a27d8d1d4e990b35`). Bidirectional cups ↔ quarts via liters; US customary/legal, metric, and UK cups; US liquid, US dry, and imperial quarts; conversion chart and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-286 delivery for Conversion & Units kitchen/volume converter.
+- **Important Files:** `frontend/src/tools/calculators/cups-to-quarts/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cups-to-quarts-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Cups to Pints Converter
 - **Summary:** Shipped Cups to Pints Converter on existing catalog slug `cups-to-pints-converter` (`CupsToPintsConverter`, catalog `6af46f17a27d8d1d4e990b34`). Bidirectional cups ↔ pints via liters; US customary/legal, metric, and UK cups; US liquid, US dry, and imperial pints; conversion chart and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-285 delivery for Conversion & Units kitchen/volume converter.
