@@ -315,6 +315,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'StudentLoanCalculator',
   'StudentLoanForgivenessCalculator',
   'StudentLoanPaymentCalculator',
+  'SimpleMortgageCalculator',
   'LtvCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
@@ -332,9 +333,11 @@ export const APPROVED_COMPONENT_KEYS = [
   'HomeEquityLoanCalculator',
   'HomeLoanEmiCalculator',
   'HomeLoanCalculator',
+  'MortgageTaxesInsuranceCalculator',
   'HomeMortgageCalculator',
   'MortgageAccelerationCalculator',
   'MortgageAmortizationCalculator',
+  'MortgagePrepaymentCalculator',
   'CanadianMortgageCalculator',
   'MortgageCalculatorUk',
   'HoldingPeriodReturnCalculator',
@@ -687,6 +690,7 @@ if (isDirect) {
     !isApprovedComponentKey('StudentLoanCalculator') ||
     !isApprovedComponentKey('StudentLoanForgivenessCalculator') ||
     !isApprovedComponentKey('StudentLoanPaymentCalculator') ||
+    !isApprovedComponentKey('SimpleMortgageCalculator') ||
     !isApprovedComponentKey('LtvCalculator') ||
     !isApprovedComponentKey('CdCalculator') ||
     !isApprovedComponentKey('CompoundInterestCalculator') ||
@@ -704,9 +708,11 @@ if (isDirect) {
     !isApprovedComponentKey('HomeEquityLoanCalculator') ||
     !isApprovedComponentKey('HomeLoanEmiCalculator') ||
     !isApprovedComponentKey('HomeLoanCalculator') ||
+    !isApprovedComponentKey('MortgageTaxesInsuranceCalculator') ||
     !isApprovedComponentKey('HomeMortgageCalculator') ||
     !isApprovedComponentKey('MortgageAccelerationCalculator') ||
     !isApprovedComponentKey('MortgageAmortizationCalculator') ||
+    !isApprovedComponentKey('MortgagePrepaymentCalculator') ||
     !isApprovedComponentKey('CanadianMortgageCalculator') ||
     !isApprovedComponentKey('MortgageCalculatorUk') ||
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||

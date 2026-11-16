@@ -456,6 +456,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/student-loan-forgiveness/detail'),
   StudentLoanPaymentCalculator: () =>
     import('@/tools/calculators/student-loan-payment/detail'),
+  SimpleMortgageCalculator: () =>
+    import('@/tools/calculators/simple-mortgage/detail'),
   LtvCalculator: () => import('@/tools/calculators/ltv/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
@@ -487,12 +489,15 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   HomeLoanEmiCalculator: () =>
     import('@/tools/calculators/home-loan-emi/detail'),
   HomeLoanCalculator: () => import('@/tools/calculators/home-loan/detail'),
+  MortgageTaxesInsuranceCalculator: () => import('@/tools/calculators/mortgage-taxes-insurance/detail'),
   HomeMortgageCalculator: () =>
     import('@/tools/calculators/home-mortgage/detail'),
   MortgageAmortizationCalculator: () =>
     import('@/tools/calculators/mortgage-amortization/detail'),
   MortgageAccelerationCalculator: () =>
     import('@/tools/calculators/mortgage-acceleration/detail'),
+  MortgagePrepaymentCalculator: () =>
+    import('@/tools/calculators/mortgage-prepayment/detail'),
   HoldingPeriodReturnCalculator: () =>
     import('@/tools/calculators/holding-period-return/detail'),
   ImpermanentLossCalculator: () =>

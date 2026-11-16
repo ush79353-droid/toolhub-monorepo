@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Mortgage Prepayment Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Mortgage Prepayment Calculator on existing catalog slug `mortgage-prepayment-calculator` (`MortgagePrepaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ff7a`). Current mortgage (amount FX, rate, term yrs/mos, Monthly US&UK / Canada method, due date) + prepayment options (payment frequency, periodic FX + start, lump-sum FX + paid-on). Compares baseline vs prepaid payoff/payment/#/term/interest/total; balances chart. Independent FX normalized into mortgage currency. Activated.
+- **Example:** PKR 100,000 / 6% / 30y monthly → ≈ 599.55 payment; 360 payments; interest ≈ 115,838.19; total ≈ 215,838.19.
+- **Important Files:** `frontend/src/tools/calculators/mortgage-prepayment/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mortgage-prepayment-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Interest-Only Mortgage Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Interest-Only Mortgage Calculator on existing catalog slug `interest-only-mortgage-calculator` (`InterestOnlyMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff70`). Fields: loan amount, annual rate %, payment frequency radios (Daily / Monthly default / Quarterly / Yearly), frequency-labeled periodic payment, collapsible Interest-only period (yrs/mos + total interest paid). Formula: periodic = P × r / n (365/12/4/1); total IO interest = P × r × years. Independent real FX on loan, payment, and total currencies. No post-IO amortization schedule. Activated.
 - **Example:** 350,000 at 4% monthly → 1,166.67; 10-year IO total interest → 140,000; principal unchanged.

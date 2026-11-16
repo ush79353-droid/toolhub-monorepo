@@ -1696,6 +1696,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.StudentLoanPaymentCalculator,
     })),
   ),
+  SimpleMortgageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/simple-mortgage/SimpleMortgageCalculator'
+    ).then((mod) => ({
+      default: mod.SimpleMortgageCalculator,
+    })),
+  ),
   LtvCalculator: lazyTool(() =>
     import('@/tools/calculators/ltv/LtvCalculator').then((mod) => ({
       default: mod.LtvCalculator,
@@ -1799,6 +1806,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HomeLoanCalculator,
     })),
   ),
+  MortgageTaxesInsuranceCalculator: lazyTool(() =>
+    import('@/tools/calculators/mortgage-taxes-insurance/MortgageTaxesInsuranceCalculator').then((mod) => ({
+      default: mod.MortgageTaxesInsuranceCalculator,
+    })),
+  ),
   HomeMortgageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/home-mortgage/HomeMortgageCalculator'
@@ -1818,6 +1830,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/mortgage-acceleration/MortgageAccelerationCalculator'
     ).then((mod) => ({
       default: mod.MortgageAccelerationCalculator,
+    })),
+  ),
+  MortgagePrepaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-prepayment/MortgagePrepaymentCalculator'
+    ).then((mod) => ({
+      default: mod.MortgagePrepaymentCalculator,
     })),
   ),
   FutureValueCalculator: lazyTool(() =>
