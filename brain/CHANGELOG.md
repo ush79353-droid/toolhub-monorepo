@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Bar to ATM Conversion
+- **Summary:** Shipped Bar to ATM Conversion on existing catalog slug `bar-to-atm-conversion` (`BarToAtmConverter`, catalog `6af46f17a27d8d1d4e990aed`). Bidirectional bar↔atm using exact Pa factors 100000/101325; default 1 bar; absolute negatives rejected. ATM pillar preserved; subPillar null.
+- **Example:** 1 bar ≈ 0.986923 atm; 3 bar ≈ 2.960770 atm; 1 atm = 1.01325 bar; 5 atm = 5.06625 bar.
+- **Important Files:** `frontend/src/tools/calculators/bar-to-atm/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-bar-to-atm-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d1a27d8d1d4e98f9e5`, subPillar null; meta 41/155). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Lot Size to Square Feet Calculator
 - **Summary:** Shipped Lot Size to Square Feet Calculator on existing catalog slug `lot-size-to-square-feet-calculator` (`LotSizeToSqftCalculator`, catalog `6af46f17a27d8d1d4e990afe`). Width×length→ft² with multi-unit length/area, reverse solve, optional Unit and total price; default 50×100 ft. Pillar and subPillar preserved.
 - **Example:** 50×100 ft = 5,000 ft²; 24×18 ft = 432 ft²; 15×12 yd = 1,620 ft²; 5,000 ft² × $20/ft² = $100,000.
