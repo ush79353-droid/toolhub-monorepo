@@ -850,6 +850,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MeterConverter,
     })),
   ),
+  CcToLiterConverter: lazyTool(() =>
+    import('@/tools/calculators/cc-to-liter/CcToLiterConverter').then((mod) => ({
+      default: mod.CcToLiterConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
