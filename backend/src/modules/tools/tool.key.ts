@@ -139,6 +139,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SpeedConversionCalculator',
   'KnotsToKphConverter',
   'TemperatureConversionCalculator',
+  'KnotsToMphConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -433,6 +434,7 @@ if (isDirect) {
     !isApprovedComponentKey('SpeedConversionCalculator') ||
     !isApprovedComponentKey('KnotsToKphConverter') ||
     !isApprovedComponentKey('TemperatureConversionCalculator') ||
+    !isApprovedComponentKey('KnotsToMphConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

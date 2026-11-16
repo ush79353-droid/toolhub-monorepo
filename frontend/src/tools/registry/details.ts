@@ -150,6 +150,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   RmsToWattsConverter: () => import('@/tools/calculators/rms-to-watts/detail'),
   JoulesToVoltsCalculator: () => import('@/tools/calculators/joules-to-volts/detail'),
   SpeedConversionCalculator: () => import('@/tools/calculators/speed/detail'),
+  KnotsToMphConverter: () => import('@/tools/calculators/knots-to-mph/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
