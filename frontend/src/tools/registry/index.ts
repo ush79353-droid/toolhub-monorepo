@@ -999,6 +999,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CupsToPintsConverter,
     })),
   ),
+  CupsToQuartsConverter: lazyTool(() =>
+    import('@/tools/calculators/cups-to-quarts/CupsToQuartsConverter').then((mod) => ({
+      default: mod.CupsToQuartsConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

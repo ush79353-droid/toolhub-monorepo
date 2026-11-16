@@ -213,6 +213,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CupsToGallonsConverter: () => import('@/tools/calculators/cups-to-gallons/detail'),
   CupsToOzConverter: () => import('@/tools/calculators/cups-to-oz/detail'),
   CupsToPintsConverter: () => import('@/tools/calculators/cups-to-pints/detail'),
+  CupsToQuartsConverter: () => import('@/tools/calculators/cups-to-quarts/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
