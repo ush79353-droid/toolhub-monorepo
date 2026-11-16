@@ -4,11 +4,17 @@
 
 ---
 
+### 2026-11-16 — Add Temperature Conversion Calculator
+- **Summary:** Shipped Temperature Conversion on existing catalog slug `temperature-conversion` (`TemperatureConversionCalculator`, catalog `6af46f17a27d8d1d4e990bf4`). Kelvin-canonical conversions for °C/°F/K plus Rankine/Réaumur/Rømer/Delisle/Newton; absolute-zero validation (incl. inverted Delisle). Meta title shortened for schema maxLength 70.
+- **Example:** 0°C = 32°F = 273.15 K; 98.6°F ≈ 37°C; 300 K = 26.85°C.
+- **Important Files:** `frontend/src/tools/calculators/temperature/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-temperature-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 59/140). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Knots to kph Converter
-- **Summary:** Shipped Knots to kph Converter on existing catalog slug `knots-to-kph-converter` (`KnotsToKphConverter`, catalog `6af46f17a27d8d1d4e990c09`). Bidirectional kn↔km/h with exact 1.852 factor; expandable mph/m/s/ft/s via shared speed m/s utilities. Code/registry/tests complete.
+- **Summary:** Shipped Knots to kph Converter on existing catalog slug `knots-to-kph-converter` (`KnotsToKphConverter`, catalog `6af46f17a27d8d1d4e990c09`). Bidirectional kn↔km/h with exact 1.852 factor; expandable mph/m/s/ft/s via shared speed m/s utilities.
 - **Example:** 10 kn = 18.52 km/h; 100 km/h ≈ 53.99568 kn.
 - **Important Files:** `frontend/src/tools/calculators/knots-to-kph/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-knots-to-kph-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
-- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. **Activation blocker:** Mongo Atlas connection failed (IP whitelist / DNS timeout) — `isDeveloped` not updated; re-run `npx tsx src/scripts/assign-knots-to-kph-tool.ts` when Atlas is reachable. Full frontend `tsc` / production build not claimed (pre-existing unrelated typing errors on branch).
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned on retry (`isDeveloped: true`, meta 58/141). Full frontend `tsc` / production build not claimed.
 
 ### 2026-11-16 — Add Speed Conversion Calculator
 - **Summary:** Shipped Speed Conversion on existing catalog slug `speed-conversion` (`SpeedConversionCalculator`, catalog `6af46f17a27d8d1d4e990c0c`). Accordion groups for imperial/metric/other/run pace; m/s base; inverse pace (t = D/v); knots + vacuum c; Mach omitted. Publishing flags preserved; `isDeveloped` set true after verification.
