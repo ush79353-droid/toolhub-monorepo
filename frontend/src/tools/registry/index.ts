@@ -579,6 +579,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MsToKmhConverter,
     })),
   ),
+  CcfToThermsCalculator: lazyTool(() =>
+    import('@/tools/calculators/ccf-to-therms/CcfToThermsCalculator').then((mod) => ({
+      default: mod.CcfToThermsCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

@@ -109,6 +109,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ZuluTimeConverter',
   'AngleConversionCalculator',
   'MsToKmhConverter',
+  'CcfToThermsCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -372,6 +373,7 @@ if (isDirect) {
     !isApprovedComponentKey('ZuluTimeConverter') ||
     !isApprovedComponentKey('AngleConversionCalculator') ||
     !isApprovedComponentKey('MsToKmhConverter') ||
+    !isApprovedComponentKey('CcfToThermsCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

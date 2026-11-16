@@ -121,6 +121,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ZuluTimeConverter: () => import('@/tools/calculators/zulu-time/detail'),
   AngleConversionCalculator: () => import('@/tools/calculators/angle-conversion/detail'),
   MsToKmhConverter: () => import('@/tools/calculators/ms-to-kmh/detail'),
+  CcfToThermsCalculator: () => import('@/tools/calculators/ccf-to-therms/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
