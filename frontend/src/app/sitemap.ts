@@ -145,6 +145,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'grams-to-calories-calculator',
   'radiation-converter',
   'hardness-conversion-calculator',
+  'rms-to-watts-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

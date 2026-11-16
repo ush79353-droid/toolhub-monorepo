@@ -134,6 +134,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GramsToCaloriesCalculator',
   'RadiationConverter',
   'HardnessConversionCalculator',
+  'RmsToWattsConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -423,6 +424,7 @@ if (isDirect) {
     !isApprovedComponentKey('GramsToCaloriesCalculator') ||
     !isApprovedComponentKey('RadiationConverter') ||
     !isApprovedComponentKey('HardnessConversionCalculator') ||
+    !isApprovedComponentKey('RmsToWattsConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

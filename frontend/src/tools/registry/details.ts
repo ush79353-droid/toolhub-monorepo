@@ -147,6 +147,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GramsToCaloriesCalculator: () => import('@/tools/calculators/grams-to-calories/detail'),
   RadiationConverter: () => import('@/tools/calculators/radiation/detail'),
   HardnessConversionCalculator: () => import('@/tools/calculators/hardness/detail'),
+  RmsToWattsConverter: () => import('@/tools/calculators/rms-to-watts/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

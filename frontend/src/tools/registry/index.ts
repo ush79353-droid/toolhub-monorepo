@@ -706,6 +706,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HardnessConversionCalculator,
     })),
   ),
+  RmsToWattsConverter: lazyTool(() =>
+    import('@/tools/calculators/rms-to-watts/RmsToWattsConverter').then((mod) => ({
+      default: mod.RmsToWattsConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
