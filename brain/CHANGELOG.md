@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Centigrade to Celsius Converter
+- **Summary:** Shipped Centigrade to Celsius Converter on existing catalog slug `centigrade-to-celsius-converter` (`CentigradeToCelsiusConverter`, catalog `6af46f17a27d8d1d4e990b2d`). Identity °C = °centigrade; absolute-zero validation; chart and FAQs. Pillar `6af451d3a27d8d1d4e98f9f1` preserved (brief typo …d32…); subPillar null.
+- **Why:** TOOL-268 delivery for Conversion & Units temperature converter.
+- **Important Files:** `frontend/src/tools/calculators/centigrade-to-celsius/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-centigrade-to-celsius-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Celsius to Fahrenheit Converter
 - **Summary:** Shipped Celsius to Fahrenheit Converter on existing catalog slug `celsius-to-fahrenheit-converter` (`CelsiusToFahrenheitConverter`, catalog `6af46f17a27d8d1d4e990b19`). Bidirectional °C↔°F via °F = (°C × 9/5) + 32; absolute-zero validation; conversion chart and FAQs. Live pillar `6af451d2a27d8d1d4e98f9ec` preserved (brief truncated …98fec); subPillar null.
 - **Why:** TOOL-267 delivery for Conversion & Units temperature converter.
