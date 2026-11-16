@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — FHA Loan Calculator
+- **Summary:** Shipped FHA Loan Calculator on existing catalog slug `fha-loan-calculator` (`FhaLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff53`). Screenshot fields only; fixed 1.75% upfront MIP; monthly mortgage on base loan only; constant monthly MIP; total cost = total monthly × n. Independent FX on home price + eight monetary results. Activated.
+- **Example:** 200,000 / 10% / 30 yrs / 3% / 0.85% MIP → down 20,000; base 180,000; upfront 3,150; mortgage ≈ 758.89; monthly MIP 127.50; total monthly ≈ 886.39; cost ≈ 319,099.41.
+- **Important Files:** `frontend/src/tools/calculators/fha-loan/*`, registries, `CURRENCY_CONVERSION_SLUGS`, sitemap, `backend/src/scripts/assign-fha-loan-tool.ts`, `brain/*`.
+- **Verification:** Mongo activation verified; worked-example math inspected via `tsx`. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Early Loan Payoff Calculator
 - **Summary:** Shipped Early Loan Payoff Calculator on existing catalog slug `early-loan-payoff-calculator` (`EarlyLoanPayoffCalculator`, catalog `6af46f0fa27d8d1d4e98ff51`). Level + equal-principal decreasing schedules, extra monthly payments with baseline interest savings, balances chart (3 series), yearly repayment table, independent FX on loan balance + extra payment (normalize extra into loan currency). Balloon checkbox present but blocks results until a residual convention is confirmed. Activated.
 - **Example:** 10,000 PKR / 10 yrs / 7.5% monthly compounding / no extra → monthly ≈ 118.70; total ≈ 14,244; interest ≈ 4,244.

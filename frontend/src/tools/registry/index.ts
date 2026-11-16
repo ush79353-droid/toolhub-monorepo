@@ -1691,6 +1691,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FdCalculator,
     })),
   ),
+  FhaLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/fha-loan/FhaLoanCalculator').then((mod) => ({
+      default: mod.FhaLoanCalculator,
+    })),
+  ),
   FutureValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/future-value/FutureValueCalculator'
@@ -1767,6 +1772,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/value-at-risk/ValueAtRiskCalculator'
     ).then((mod) => ({
       default: mod.ValueAtRiskCalculator,
+    })),
+  ),
+  EidlCalculator: lazyTool(() =>
+    import('@/tools/calculators/eidl/EidlCalculator').then((mod) => ({
+      default: mod.EidlCalculator,
     })),
   ),
 };

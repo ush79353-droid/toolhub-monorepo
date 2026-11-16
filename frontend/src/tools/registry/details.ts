@@ -453,6 +453,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ExpectedUtilityCalculator: () =>
     import('@/tools/calculators/expected-utility/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
+  FhaLoanCalculator: () => import('@/tools/calculators/fha-loan/detail'),
   FutureValueCalculator: () =>
     import('@/tools/calculators/future-value/detail'),
   HoldingPeriodReturnCalculator: () =>
@@ -473,6 +474,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/savings-interest-rate/detail'),
   SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
+  EidlCalculator: () => import('@/tools/calculators/eidl/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

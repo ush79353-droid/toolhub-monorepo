@@ -47,6 +47,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'expected-utility-calculator',
   'expense-ratio-calculator',
   'fd-calculator',
+  'fha-loan-calculator',
   'future-value-calculator',
   'hedge-ratio-calculator',
   'holding-period-return-calculator',

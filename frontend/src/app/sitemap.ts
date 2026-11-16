@@ -32,6 +32,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'amortization-calculator',
   'acreage-calculator',
   'feet-to-inches-calculator',
+  'fha-loan-calculator',
   'acres-to-square-miles-calculator',
   'height-in-inches-calculator',
   'acre-to-are-conversion',
@@ -338,6 +339,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'savings-interest-rate-calculator',
   'sharpe-ratio-calculator',
   'value-at-risk-calculator-var',
+  'economic-injury-disaster-loan-emergency-advance-eidl',
 ] as const;
 
 const STATIC_PATHS = [
