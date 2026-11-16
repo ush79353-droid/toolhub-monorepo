@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Meter Converter
+- **Summary:** Shipped Meter Converter on existing catalog slug `meter-converter` (`MeterConverter`, catalog `6af46f17a27d8d1d4e990adb`). SI meter base with metric/imperial/other accordions, extra-unit selectors, and specialized units (nmi, R☉, ly, AU, Å, pc). Omni “kilotors” omitted. Pillar `6af451d0a27d8d1d4e98f9e3` / null subPillar preserved.
+- **Why:** TOOL-258 delivery for Conversion & Units length converter.
+- **Important Files:** `frontend/src/tools/calculators/meter-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-meter-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar as expected; meta 68/136). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add CC to Grams Converter
 - **Summary:** Shipped CC to Grams Converter on existing catalog slug `cc-to-grams-converter` (`CcToGramsConverter`, catalog `6af46f17a27d8d1d4e990b2f`). Density-based bidirectional volume↔mass (internal g/cm³ + cc + g); Water ≈1 g/cm³ near 4 °C; ingredient presets + custom density; multi-unit density/volume/mass with physical-quantity preservation. Null pillar/subPillar preserved.
 - **Why:** TOOL-257 delivery for Conversion & Units density converter.
