@@ -579,6 +579,36 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MsToKmhConverter,
     })),
   ),
+  CcfToThermsCalculator: lazyTool(() =>
+    import('@/tools/calculators/ccf-to-therms/CcfToThermsCalculator').then((mod) => ({
+      default: mod.CcfToThermsCalculator,
+    })),
+  ),
+  NaturalGasConverter: lazyTool(() =>
+    import('@/tools/calculators/natural-gas/NaturalGasConverter').then((mod) => ({
+      default: mod.NaturalGasConverter,
+    })),
+  ),
+  CentsToDollarsCalculator: lazyTool(() =>
+    import('@/tools/calculators/cents-to-dollars/CentsToDollarsCalculator').then((mod) => ({
+      default: mod.CentsToDollarsCalculator,
+    })),
+  ),
+  NmToJoulesCalculator: lazyTool(() =>
+    import('@/tools/calculators/nm-to-joules/NmToJoulesCalculator').then((mod) => ({
+      default: mod.NmToJoulesCalculator,
+    })),
+  ),
+  CgsSystemOfUnitsConverter: lazyTool(() =>
+    import('@/tools/calculators/cgs-system/CgsSystemOfUnitsConverter').then((mod) => ({
+      default: mod.CgsSystemOfUnitsConverter,
+    })),
+  ),
+  NickelsToDollarsCalculator: lazyTool(() =>
+    import('@/tools/calculators/nickels-to-dollars/NickelsToDollarsCalculator').then((mod) => ({
+      default: mod.NickelsToDollarsCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

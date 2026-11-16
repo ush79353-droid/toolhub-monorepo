@@ -121,6 +121,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ZuluTimeConverter: () => import('@/tools/calculators/zulu-time/detail'),
   AngleConversionCalculator: () => import('@/tools/calculators/angle-conversion/detail'),
   MsToKmhConverter: () => import('@/tools/calculators/ms-to-kmh/detail'),
+  CcfToThermsCalculator: () => import('@/tools/calculators/ccf-to-therms/detail'),
+  NaturalGasConverter: () => import('@/tools/calculators/natural-gas/detail'),
+  CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
+  NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
+  CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),
+  NickelsToDollarsCalculator: () => import('@/tools/calculators/nickels-to-dollars/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
