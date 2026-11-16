@@ -410,6 +410,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/parking-ratio/detail'),
   PartiallyAmortizedLoanCalculator: () =>
     import('@/tools/calculators/partially-amortized-loan/detail'),
+  PaydayLoanCalculator: () =>
+    import('@/tools/calculators/payday-loan/detail'),
   PaybackPeriodCalculator: () =>
     import('@/tools/calculators/payback-period/detail'),
   PercentageReturnCalculator: () =>

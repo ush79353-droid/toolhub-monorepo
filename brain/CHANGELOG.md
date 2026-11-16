@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Payday Loan Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Payday Loan Calculator on existing catalog slug `payday-loan-calculator` (`PaydayLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff5d`). Fields: loan amount, finance charge, term (days), APR %, APR amount, monthly fee %, monthly fee, total debt. Simple APR `(F/P)×(365/d)×100` with bidirectional F↔APR via edit-source tracking. APR amount = annualized F (`F×365/d`). Monthly fee = one `P×(q/100)` assessment. Total debt = P+F+monthly fee (APR amount not double-counted). Independent FX on five monetary selectors. Activated.
+- **Example:** P 1,000 / F 150 / 14 days / q 0% → APR ≈ 391.0714%, APR amount ≈ 3,910.71, total debt 1,150.
+- **Important Files:** `frontend/src/tools/calculators/payday-loan/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-payday-loan-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. Monthly-fee period treatment is a documented one-assessment assumption (reference omitted multi-month rules).
+
 ### 2026-11-16 — Pag-IBIG Housing Loan Calculator (partial, no invented rules)
 - **Summary:** Shipped Pag-IBIG Housing Loan Calculator on existing catalog slug `pag-ibig-housing-loan-calculator` (`PagIbigHousingLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff5a`). Screenshot sections preserved. Computes monthly principal and interest from loan amount + screenshot fixed-pricing example `30 years (9.750%)`. Bidirectional annual↔monthly income. PHP denomination only (no FX selectors). Loanable amount, insurance premium, total amortization, and Yes-mode extra values left unavailable with explanations — no fabricated LTV/insurance/eligibility rules.
 - **Example:** ₱1,000,000 / 30 yrs / 9.75% → monthly P&I ≈ ₱8,591.54 (reference note ≈ 8,591.74).

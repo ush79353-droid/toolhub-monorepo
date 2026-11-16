@@ -1566,6 +1566,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PartiallyAmortizedLoanCalculator,
     })),
   ),
+  PaydayLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/payday-loan/PaydayLoanCalculator').then((mod) => ({
+      default: mod.PaydayLoanCalculator,
+    })),
+  ),
   PaybackPeriodCalculator: lazyTool(() =>
     import('@/tools/calculators/payback-period/PaybackPeriodCalculator').then((mod) => ({
       default: mod.PaybackPeriodCalculator,
