@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Dividend Discount Model Calculator
+- **Summary:** Shipped Dividend Discount Model Calculator on existing catalog slug `dividend-discount-model-calculator` (`DividendDiscountModelCalculator`, catalog `6af46f0fa27d8d1d4e990005`). Four screenshot sections: expected growth `g = ROE × (1 − payout)`, expected dividend `D₁ = D₀ × (1 + g)`, CAPM `Ke = Rf + β × MRP`, stock value `P₀ = D₁ / (Ke − g)` with Ke > g guard. Three independent FX selectors (D₀ / D₁ / P₀) via Margin Interest pattern; percentages and beta never convert. Activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true).
+- **Example:** payout 40%, ROE 15%, D₀ 5 PKR, Rf 4%, MRP 6%, β 1.2 → g 9%, D₁ 5.45, Ke 11.2%, P₀ ≈ 247.73.
+- **Important Files:** `frontend/src/tools/calculators/dividend-discount-model/*`, registries, `CURRENCY_CONVERSION_SLUGS`, sitemap, `backend/src/scripts/assign-dividend-discount-model-tool.ts`, `brain/*`.
+- **Verification:** Mongo activation verified; worked-example math inspected via `tsx`. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Fix Carried Interest currency conversion
 - **Summary:** Upgraded existing Carried Interest Calculator (`carried-interest-calculator`) from denomination-only synced selectors to real FX via Phase 2 `convertDraftMoneyFields` + `CurrencyRatesProvider`. Both initial and final fund values convert together so FX alone cannot invent profit or change fund return %, hurdle/carry ratios, or GP catch-up waterfall math. Hold period, hurdle %, and carry % never convert. Existing allocation formulas preserved. Slug already on `CURRENCY_CONVERSION_SLUGS`.
 - **Important Files:** `frontend/src/tools/calculators/carried-interest/{CarriedInterestCalculator,CarriedInterestForm}.tsx`, `brain/{CURRENT_STATE,FRONTEND,CHANGELOG,CURRENCY_CONVERSION_PROGRESS}.md`.

@@ -50,6 +50,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'continuous-compound-interest-calculator',
   'discounted-cash-flow-calculator-dcf',
   'discount-rate-calculator',
+  'dividend-discount-model-calculator',
   'effective-annual-yield-calculator',
   'expected-utility-calculator',
   'expense-ratio-calculator',

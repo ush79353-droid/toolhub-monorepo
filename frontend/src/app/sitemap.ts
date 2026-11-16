@@ -182,6 +182,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'customer-acquisition-cost-calculator',
   'customer-retention-rate-calculator',
   'days-off-calculator',
+  'dividend-discount-model-calculator',
   'direct-material-price-variance-calculator',
   'ear-calculator',
   'equivalent-rate-calculator-aer',

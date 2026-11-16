@@ -926,6 +926,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DaysOffCalculator,
     })),
   ),
+  DividendDiscountModelCalculator: lazyTool(() =>
+    import('@/tools/calculators/dividend-discount-model/DividendDiscountModelCalculator').then(
+      (mod) => ({
+        default: mod.DividendDiscountModelCalculator,
+      })
+    )
+  ),
   DirectMaterialPriceVarianceCalculator: lazyTool(() =>
     import('@/tools/calculators/direct-material-price-variance/DirectMaterialPriceVarianceCalculator').then((mod) => ({
       default: mod.DirectMaterialPriceVarianceCalculator,

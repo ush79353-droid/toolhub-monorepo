@@ -172,6 +172,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CustomerAcquisitionCostCalculator',
   'CustomerRetentionRateCalculator',
   'DaysOffCalculator',
+  'DividendDiscountModelCalculator',
   'DirectMaterialPriceVarianceCalculator',
   'EarCalculator',
   'EquivalentRateCalculator',
@@ -435,6 +436,7 @@ if (isDirect) {
     !isApprovedComponentKey('CustomerAcquisitionCostCalculator') ||
     !isApprovedComponentKey('CustomerRetentionRateCalculator') ||
     !isApprovedComponentKey('DaysOffCalculator') ||
+    !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
     !isApprovedComponentKey('EarCalculator') ||
     !isApprovedComponentKey('EquivalentRateCalculator') ||
