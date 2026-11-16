@@ -815,6 +815,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BarToAtmConverter,
     })),
   ),
+  LToGalConverter: lazyTool(() =>
+    import('@/tools/calculators/l-to-gal/LToGalConverter').then((mod) => ({
+      default: mod.LToGalConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
