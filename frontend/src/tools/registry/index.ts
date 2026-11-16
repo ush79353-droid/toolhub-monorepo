@@ -1839,6 +1839,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MortgagePrepaymentCalculator,
     })),
   ),
+  MortgagePointsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-points/MortgagePointsCalculator'
+    ).then((mod) => ({
+      default: mod.MortgagePointsCalculator,
+    })),
+  ),
   FutureValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/future-value/FutureValueCalculator'

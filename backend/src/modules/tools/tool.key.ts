@@ -338,6 +338,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MortgageAccelerationCalculator',
   'MortgageAmortizationCalculator',
   'MortgagePrepaymentCalculator',
+  'MortgagePointsCalculator',
   'CanadianMortgageCalculator',
   'MortgageCalculatorUk',
   'HoldingPeriodReturnCalculator',
@@ -713,6 +714,7 @@ if (isDirect) {
     !isApprovedComponentKey('MortgageAccelerationCalculator') ||
     !isApprovedComponentKey('MortgageAmortizationCalculator') ||
     !isApprovedComponentKey('MortgagePrepaymentCalculator') ||
+    !isApprovedComponentKey('MortgagePointsCalculator') ||
     !isApprovedComponentKey('CanadianMortgageCalculator') ||
     !isApprovedComponentKey('MortgageCalculatorUk') ||
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
