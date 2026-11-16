@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Natural Gas Converter
+- **Summary:** Shipped Natural Gas Converter on existing catalog slug `natural-gas-converter` (`NaturalGasConverter`, catalog `6af46f17a27d8d1d4e990bf9`). Volume and energy unit selectors; bidirectional volume↔energy via adjustable heating value (BTU/ft³, MJ/m³, kWh/m³); illustrative default 1038 BTU/ft³. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 100 CCF at 1038 BTU/ft³ = 103.8 therms = 10.38 MMBTU; 100 ft³ at 1050 BTU/ft³ = 105,000 BTU.
+- **Important Files:** `frontend/src/tools/calculators/natural-gas/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-natural-gas-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 41/155). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add CCF to Therms Calculator
 - **Summary:** Shipped CCF to Therms Calculator on existing catalog slug `ccf-to-therms-calculator` (`CcfToThermsCalculator`, catalog `6af46f17a27d8d1d4e990bf5`). Bidirectional CCF↔therms; illustrative default factor 1.038 (1038 BTU/ft³); custom therms/CCF and heating value stay synchronized. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 100 CCF × 1.038 = 103.8 therms; 50 CCF at 1050 BTU/ft³ → factor 1.05 → 52.5 therms.
