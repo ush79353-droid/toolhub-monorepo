@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Cups to Gallons Converter
+- **Summary:** Shipped Cups to Gallons Converter on existing catalog slug `cups-to-gallons-converter` (`CupsToGallonsConverter`, catalog `6af46f17a27d8d1d4e990ac7`). Bidirectional cups ↔ gallons via liters; US customary/legal, metric, and UK cups; US/UK gallons; More Conversion Options; conversion chart and FAQs. Pillar `6af451d0a27d8d1d4e98f9e1` / null subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-283 delivery for Conversion & Units kitchen/volume converter.
+- **Important Files:** `frontend/src/tools/calculators/cups-to-gallons/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cups-to-gallons-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Cubic Meter to Ton Converter
 - **Summary:** Shipped Cubic Meter to Ton Converter on existing catalog slug `cubic-meter-to-ton-converter` (`CubicMeterToTonConverter`, catalog `6af46f17a27d8d1d4e990ade`). Density-based bidirectional m³ ↔ metric/US/UK tons; default Liquids / fresh water 4 °C / 1000 kg/m³; material lookup and custom density; guide/FAQs with density table. Pillar `6af451d0a27d8d1d4e98f9e3` / null subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-282 delivery for Conversion & Units volume-to-mass calculator.
