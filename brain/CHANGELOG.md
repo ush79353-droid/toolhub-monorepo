@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add PPM Calculator
+- **Summary:** Shipped PPM Calculator on existing catalog slug `ppm-calculator` (`PpmCalculator`, catalog `6af46f17a27d8d1d4e990bee`). Six synchronized fields (number, %, ‰, ppm, ppb, ppt) via dimensionless ratio; notice when ratio > 1; negatives rejected. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1 ppm = 0.000001 = 0.0001% = 0.001‰ = 1,000 ppb = 1,000,000 ppt; 0.05% = 500 ppm.
+- **Important Files:** `frontend/src/tools/calculators/ppm/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-ppm-calculator-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 34/138). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add Density Conversion
 - **Summary:** Shipped Density Conversion on existing catalog slug `density-conversion` (`DensityConversion`, catalog `6af46f17a27d8d1d4e990b37`). Five synchronized fields (kg/dm³, kg/m³, lb/cu ft, lb/cu yd, lb/US gal) via kg/m³ base derived from exact pound/foot/yard/US-gallon constants; metric/imperial accordion groups; negatives rejected. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 1 kg/dm³ = 1000 kg/m³ ≈ 62.428 lb/cu ft ≈ 1685.555 lb/cu yd ≈ 8.345 lb/US gal.
