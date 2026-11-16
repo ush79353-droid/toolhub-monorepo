@@ -146,6 +146,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'radiation-converter',
   'hardness-conversion-calculator',
   'rms-to-watts-converter',
+  'joules-to-volts-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

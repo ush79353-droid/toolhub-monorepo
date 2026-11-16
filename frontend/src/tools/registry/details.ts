@@ -148,6 +148,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   RadiationConverter: () => import('@/tools/calculators/radiation/detail'),
   HardnessConversionCalculator: () => import('@/tools/calculators/hardness/detail'),
   RmsToWattsConverter: () => import('@/tools/calculators/rms-to-watts/detail'),
+  JoulesToVoltsCalculator: () => import('@/tools/calculators/joules-to-volts/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

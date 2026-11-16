@@ -711,6 +711,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RmsToWattsConverter,
     })),
   ),
+  JoulesToVoltsCalculator: lazyTool(() =>
+    import('@/tools/calculators/joules-to-volts/JoulesToVoltsCalculator').then((mod) => ({
+      default: mod.JoulesToVoltsCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
