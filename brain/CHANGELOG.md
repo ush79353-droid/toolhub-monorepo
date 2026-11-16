@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Dimes to Dollars Calculator
+- **Summary:** Shipped Dimes to Dollars Calculator on existing catalog slug `dimes-to-dollars-calculator` (`DimesToDollarsCalculator`, catalog `6af46f17a27d8d1d4e990c01`). Bidirectional dimes↔dollars via integer-cent BigInt (1 dime = 10¢ = $0.10; 10 dimes = $1); dollar amounts not divisible by ten cents show dime-equivalents plus whole-coin remainder. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 1 dime → $0.10; 2000 dimes → $200.00; $25 → 250 dimes; $1.25 → 12.5 dime-equivalents (12 whole + 5¢).
+- **Important Files:** `frontend/src/tools/calculators/dimes-to-dollars/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-dimes-to-dollars-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 47/138). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add PPM to mg/L Converter
 - **Summary:** Shipped PPM to mg/L Converter on existing catalog slug `ppm-to-mgl-converter` (`PpmToMglConverter`, catalog `6af46f17a27d8d1d4e990bef`). Mass-based ppm ↔ mg/L via density (default 1000 kg/m³); density unit selector; optional molar mass ↔ molarity; source-field tracking. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 100 ppm at 1000 kg/m³ → 100 mg/L; at 1200 kg/m³ → 120 mg/L; 1000 mg/L NaCl (58.44 g/mol) → ≈ 0.0171116 mol/L.
