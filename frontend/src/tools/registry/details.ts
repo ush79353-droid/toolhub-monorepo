@@ -151,6 +151,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   JoulesToVoltsCalculator: () => import('@/tools/calculators/joules-to-volts/detail'),
   SpeedConversionCalculator: () => import('@/tools/calculators/speed/detail'),
   KnotsToMphConverter: () => import('@/tools/calculators/knots-to-mph/detail'),
+  UppercaseToLowercaseConverter: () =>
+    import('@/tools/calculators/uppercase-to-lowercase/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

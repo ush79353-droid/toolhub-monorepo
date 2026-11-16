@@ -151,6 +151,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'knots-to-kph-converter',
   'temperature-conversion',
   'knots-to-mph-converter',
+  'uppercase-to-lowercase-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

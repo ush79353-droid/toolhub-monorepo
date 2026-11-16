@@ -726,6 +726,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KnotsToMphConverter,
     }))
   ),
+  UppercaseToLowercaseConverter: lazyTool(() =>
+    import('@/tools/calculators/uppercase-to-lowercase/UppercaseToLowercaseConverter').then(
+      (mod) => ({
+        default: mod.UppercaseToLowercaseConverter,
+      }),
+    ),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
