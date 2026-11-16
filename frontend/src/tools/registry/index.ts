@@ -965,6 +965,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  CubicFeetToPoundsCalculator: lazyTool(() =>
+    import('@/tools/calculators/cubic-feet-to-pounds/CubicFeetToPoundsCalculator').then(
+      (mod) => ({
+        default: mod.CubicFeetToPoundsCalculator,
+      }),
+    ),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

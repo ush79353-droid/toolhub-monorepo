@@ -196,6 +196,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cm-to-mm-converter',
   'cubic-feet-to-cubic-meters-converter',
   'cubic-feet-to-gallons-converter',
+  'cubic-feet-to-pounds-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
