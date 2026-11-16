@@ -129,6 +129,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NickelsToDollarsCalculator: () => import('@/tools/calculators/nickels-to-dollars/detail'),
   ConversionCalculator: () => import('@/tools/calculators/conversion/detail'),
   PaperQuantityConverter: () => import('@/tools/calculators/paper-quantity/detail'),
+  CpsCalculator: () => import('@/tools/calculators/cps/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

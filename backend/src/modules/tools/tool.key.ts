@@ -117,6 +117,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NickelsToDollarsCalculator',
   'ConversionCalculator',
   'PaperQuantityConverter',
+  'CpsCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -389,6 +390,7 @@ if (isDirect) {
     !isApprovedComponentKey('NickelsToDollarsCalculator') ||
     !isApprovedComponentKey('ConversionCalculator') ||
     !isApprovedComponentKey('PaperQuantityConverter') ||
+    !isApprovedComponentKey('CpsCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

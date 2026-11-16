@@ -619,6 +619,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PaperQuantityConverter,
     })),
   ),
+  CpsCalculator: lazyTool(() =>
+    import('@/tools/calculators/cps/CpsCalculator').then((mod) => ({
+      default: mod.CpsCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
