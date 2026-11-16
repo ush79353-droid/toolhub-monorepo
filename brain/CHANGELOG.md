@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Speed Conversion Calculator
+- **Summary:** Shipped Speed Conversion on existing catalog slug `speed-conversion` (`SpeedConversionCalculator`, catalog `6af46f17a27d8d1d4e990c0c`). Accordion groups for imperial/metric/other/run pace; m/s base; inverse pace (t = D/v); knots + vacuum c; Mach omitted. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 60 mph = 96.56064 km/h; 12 km/h → 5 min/km; 10 kn = 18.52 km/h.
+- **Important Files:** `frontend/src/tools/calculators/speed/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-speed-conversion-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** Conversion self-check passed (mph/km/h/m/s/knots/pace). Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 64/134). Full frontend `tsc` / production build not claimed (pre-existing unrelated typing errors on branch). Limitation: Mach not supported (medium/temperature dependent).
+
 ### 2026-11-16 — Add Joules to Volts Calculator
 - **Summary:** Shipped Joules to Volts Calculator on existing catalog slug `joules-to-volts-calculator` (`JoulesToVoltsCalculator`, catalog `6af46f17a27d8d1d4e990bf8`). Three-way solve V=E/Q, E=VQ, Q=E/V with multi-unit energy/charge/voltage; signed values; division-by-zero guards; unit changes preserve SI quantity. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 1000 J / 10 C = 100 V; 12 V × 5 C = 60 J; 240 J / 12 V = 20 C.
