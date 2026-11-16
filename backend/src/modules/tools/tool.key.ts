@@ -304,6 +304,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RealRateOfReturnCalculator',
   'BitcoinEtfCalculator',
   'BoatLoanCalculator',
+  'LandLoanCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
   'DiscountedCashFlowCalculator',
@@ -655,6 +656,7 @@ if (isDirect) {
     !isApprovedComponentKey('RealRateOfReturnCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
+    !isApprovedComponentKey('LandLoanCalculator') ||
     !isApprovedComponentKey('CdCalculator') ||
     !isApprovedComponentKey('CompoundInterestCalculator') ||
     !isApprovedComponentKey('DiscountedCashFlowCalculator') ||

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Land Loan Calculator
+- **Summary:** Shipped Land Loan Calculator on existing catalog slug `land-loan-calculator` (`LandLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff55`). Screenshot fields: land value, down payment % (default 10), bidirectional down payment amount, loan value, APR, yrs/mos term, payment frequency (Monthly default), number of payments; results periodic payment / total payment / total interest / periodic rate. Independent FX on all six monetary selectors. Activated.
+- **Example:** 100,000 / 10% / 5 yrs / 6% / Monthly → down 10,000; loan 90,000; N 60; periodic rate 0.5%; payment ≈ 1,739.59; total ≈ 104,375.40; interest ≈ 14,375.40.
+- **Important Files:** `frontend/src/tools/calculators/land-loan/*`, registries, `CURRENCY_CONVERSION_SLUGS`, sitemap, `backend/src/scripts/assign-land-loan-tool.ts`, `brain/*`.
+- **Verification:** Mongo activation verified. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — FHA Loan Calculator
 - **Summary:** Shipped FHA Loan Calculator on existing catalog slug `fha-loan-calculator` (`FhaLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff53`). Screenshot fields only; fixed 1.75% upfront MIP; monthly mortgage on base loan only; constant monthly MIP; total cost = total monthly × n. Independent FX on home price + eight monetary results. Activated.
 - **Example:** 200,000 / 10% / 30 yrs / 3% / 0.85% MIP → down 20,000; base 180,000; upfront 3,150; mortgage ≈ 758.89; monthly MIP 127.50; total monthly ≈ 886.39; cost ≈ 319,099.41.

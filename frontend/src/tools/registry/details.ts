@@ -431,6 +431,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bitcoin-etf/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
+  LandLoanCalculator: () =>
+    import('@/tools/calculators/land-loan/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
     import('@/tools/calculators/capital-gains-yield/detail'),

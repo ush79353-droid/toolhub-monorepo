@@ -42,6 +42,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'basis-point-calculator',
   'bitcoin-etf-calculator',
   'boat-loan-calculator',
+  'land-loan-calculator',
   'cagr-calculator',
   'capital-gains-yield-calculator',
   'cd-calculator',

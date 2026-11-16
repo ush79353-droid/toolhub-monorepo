@@ -1615,6 +1615,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BoatLoanCalculator,
     })),
   ),
+  LandLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/land-loan/LandLoanCalculator').then((mod) => ({
+      default: mod.LandLoanCalculator,
+    })),
+  ),
   CdCalculator: lazyTool(() =>
     import('@/tools/calculators/cd/CdCalculator').then((mod) => ({
       default: mod.CdCalculator,
