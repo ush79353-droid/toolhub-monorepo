@@ -4,6 +4,19 @@
 
 ---
 
+### 2026-11-17 — Add VA Mortgage Calculator (Screenshot-First, Fixed USD)
+- **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
+- **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
+
+0,750 financed; loan $510,750; monthly ≈ $3,508.15; interest ≈ $752,184.28.
+- **Important Files:** `frontend/src/tools/calculators/va-mortgage/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-va-mortgage-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-16 — Student Loan Repayment Calculator | COVID-19 (Historical Notice)
+- **Summary:** Shipped informational historical notice on existing catalog slug `student-loan-repayment-calculator-covid-19` (`StudentLoanRepaymentCovidCalculator`, catalog `6af46f0fa27d8d1d4e98ff6a`). No financial inputs, repayment formulas, or currency selectors. Notice covers COVID-era federal payment suspension with historical December 31, 2020 reference; states COVID-era calculations are no longer valid; does not claim current federal loans are paused or 0% interest; internal link to `/tools/loan-calculator`. Share result / Reload / disabled Clear / feedback controls. Activated.
+- **Important Files:** `frontend/src/tools/calculators/student-loan-repayment-covid/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-student-loan-repayment-covid-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Add Mortgage Points Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Points Calculator on existing catalog slug `mortgage-points-calculator` (`MortgagePointsCalculator`, catalog `6af46f0fa27d8d1d4e98ff79`). Mortgage setup + Option I/II points/cost/rate; optional discount % per point and upfront vs rolled payment type. Comparison table + annual balances chart. Independent FX on loan and both points-cost fields, normalized into loan currency. Activated.
 - **Example:** PKR 250,000 / 30y / 3.25% Monthly (UK & US) → Option I 1 pt / 3% ≈ 1,054.01 payment, ~34.01 savings, 74 mos break-even; Option II 3 pt / 2.5% ≈ 987.80, ~100.21 savings, 75 mos.
