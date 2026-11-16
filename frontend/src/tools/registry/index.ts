@@ -614,6 +614,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ConversionCalculator,
     })),
   ),
+  PaperQuantityConverter: lazyTool(() =>
+    import('@/tools/calculators/paper-quantity/PaperQuantityConverter').then((mod) => ({
+      default: mod.PaperQuantityConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

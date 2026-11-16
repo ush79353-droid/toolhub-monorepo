@@ -127,6 +127,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cgs-system-of-units-converter',
   'nickels-to-dollars-calculator',
   'conversion-calculator',
+  'paper-quantity-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

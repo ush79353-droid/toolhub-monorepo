@@ -128,6 +128,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),
   NickelsToDollarsCalculator: () => import('@/tools/calculators/nickels-to-dollars/detail'),
   ConversionCalculator: () => import('@/tools/calculators/conversion/detail'),
+  PaperQuantityConverter: () => import('@/tools/calculators/paper-quantity/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
