@@ -155,6 +155,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'leet-speak-translator',
   'weird-units-converter',
   'lowercase-to-uppercase-converter',
+  'acres-to-hectares-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

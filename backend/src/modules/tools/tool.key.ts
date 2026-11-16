@@ -144,6 +144,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LeetSpeakTranslator',
   'WeirdUnitsConverter',
   'LowercaseToUppercaseConverter',
+  'AcresToHectaresConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -443,6 +444,7 @@ if (isDirect) {
     !isApprovedComponentKey('LeetSpeakTranslator') ||
     !isApprovedComponentKey('WeirdUnitsConverter') ||
     !isApprovedComponentKey('LowercaseToUppercaseConverter') ||
+    !isApprovedComponentKey('AcresToHectaresConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

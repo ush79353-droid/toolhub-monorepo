@@ -157,6 +157,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   WeirdUnitsConverter: () => import('@/tools/calculators/weird-units/detail'),
   LowercaseToUppercaseConverter: () =>
     import('@/tools/calculators/lowercase-to-uppercase/detail'),
+  AcresToHectaresConverter: () => import('@/tools/calculators/acres-to-hectares/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
