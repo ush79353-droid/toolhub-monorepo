@@ -301,6 +301,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/business-valuation/detail'),
   CagrCalculator: () => import('@/tools/calculators/cagr/detail'),
   CapmCalculator: () => import('@/tools/calculators/capm/detail'),
+  CanadianMortgageCalculator: () =>
+    import('@/tools/calculators/canadian-mortgage/detail'),
   CarriedInterestCalculator: () =>
     import('@/tools/calculators/carried-interest/detail'),
   ChurnRateCalculator: () =>
@@ -479,6 +481,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   HomeLoanEmiCalculator: () =>
     import('@/tools/calculators/home-loan-emi/detail'),
   HomeLoanCalculator: () => import('@/tools/calculators/home-loan/detail'),
+  HomeMortgageCalculator: () =>
+    import('@/tools/calculators/home-mortgage/detail'),
   HoldingPeriodReturnCalculator: () =>
     import('@/tools/calculators/holding-period-return/detail'),
   ImpermanentLossCalculator: () =>

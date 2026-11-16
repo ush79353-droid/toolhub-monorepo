@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Home Mortgage Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Home Mortgage Calculator on existing catalog slug `home-mortgage-calculator` (`HomeMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff6f`). Reuses Home Loan Calculator patterns without modifying that module: home value, synced down payment amount/%, loan amount, rate, term years, US/UK vs Canada interest method, payment frequency, first day, payment; further specs PMI % + other costs; mortgage summary + principal/interest/PMI/other pie chart. Independent real FX on monetary selectors. Left undeveloped `mortgage-calculator` untouched. Activated.
+- **Example:** 150,000 / 10% down / 4.5% / 30y monthly → payment ≈ 684.03; 360 pays ≈ 246,249.06; interest ≈ 111,249.06; PMI 0.5% → ≈ 4,106.25; total with costs ≈ 250,355.31.
+- **Important Files:** `frontend/src/tools/calculators/home-mortgage/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-home-mortgage-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Add Home Loan EMI Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Home Loan EMI Calculator on existing catalog slug `home-loan-emi-calculator` (`HomeLoanEmiCalculator`, catalog `6af46f0fa27d8d1d4e98ff66`). Inputs: principal (FX), term yrs/mos, interest %. Results: EMI, total payable, total interest, principal-vs-interest chart (blue/red). Standard EMI formula; zero-rate = P/n. Principal converts on currency change; result currencies display-only. Activated. Distinct from Home Loan / Home Equity Loan.
 - **Example:** P 1,000,000 / 240 mos / 8% → EMI ≈ 8,364.39; payable ≈ 2,007,453.60; interest ≈ 1,007,453.60.

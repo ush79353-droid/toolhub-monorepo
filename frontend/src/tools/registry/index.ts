@@ -1279,6 +1279,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CapmCalculator,
     })),
   ),
+  CanadianMortgageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/canadian-mortgage/CanadianMortgageCalculator'
+    ).then((mod) => ({
+      default: mod.CanadianMortgageCalculator,
+    })),
+  ),
   CarriedInterestCalculator: lazyTool(() =>
     import('@/tools/calculators/carried-interest/CarriedInterestCalculator').then(
       (mod) => ({
@@ -1771,6 +1778,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   HomeLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/home-loan/HomeLoanCalculator').then((mod) => ({
       default: mod.HomeLoanCalculator,
+    })),
+  ),
+  HomeMortgageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/home-mortgage/HomeMortgageCalculator'
+    ).then((mod) => ({
+      default: mod.HomeMortgageCalculator,
     })),
   ),
   FutureValueCalculator: lazyTool(() =>
