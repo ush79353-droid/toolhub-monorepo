@@ -127,6 +127,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PpmToMglConverter',
   'DimesToDollarsCalculator',
   'PxToEmConverter',
+  'EnergyConversionCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -409,6 +410,7 @@ if (isDirect) {
     !isApprovedComponentKey('PpmToMglConverter') ||
     !isApprovedComponentKey('DimesToDollarsCalculator') ||
     !isApprovedComponentKey('PxToEmConverter') ||
+    !isApprovedComponentKey('EnergyConversionCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

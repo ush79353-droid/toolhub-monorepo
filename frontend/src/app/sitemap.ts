@@ -138,6 +138,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ppm-to-mgl-converter',
   'dimes-to-dollars-calculator',
   'px-to-em-converter',
+  'energy-conversion-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
