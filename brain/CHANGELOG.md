@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Acres to Square Feet Converter
+- **Summary:** Shipped Acres to Square Feet Converter on existing catalog slug `acres-to-square-feet-converter` (`AcresToSquareFeetConverter`, catalog `6af46f17a27d8d1d4e990afc`). Bidirectional ac↔ft² using exact factor 43,560; swap field order; default 1 acre; negatives rejected. Live pillar/subPillar preserved (brief pillar `…d2…` differed from Mongo `…d1…`).
+- **Example:** 1 ac = 43,560 ft²; 0.5 ac = 21,780 ft²; 100 ft² ≈ 0.002295684 ac.
+- **Important Files:** `frontend/src/tools/calculators/acres-to-square-feet/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-acres-to-square-feet-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar `6af451d1a27d8d1d4e98f9e6`, subPillar `6af46f0fae6d84bd3ef8f7e3` preserved; meta 50/114). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Lbs to PSI Converter
 - **Summary:** Shipped Lbs to PSI Converter on existing catalog slug `lbs-to-psi-converter` (`LbsToPsiConverter`, catalog `6af46f17a27d8d1d4e990ae7`). Bidirectional psf↔psi using exact factor 144; signed gauge/differential values allowed; clarifies that bare lbf is not pressure. Existing pillar preserved.
 - **Example:** 144 psf = 1 psi; 100 psf ≈ 0.6944444444 psi; −144 psf = −1 psi.
