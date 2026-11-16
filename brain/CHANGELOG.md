@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Metric Converter
+- **Summary:** Shipped Metric Converter on existing catalog slug `metric-converter` (`MetricConverter`, catalog `6af46f17a27d8d1d4e990b01`). Multi-category converter (length default with metric/imperial/other accordions; mass, area, volume, temperature affine, speed, time, energy, power, pressure, data storage decimal/binary). Live pillar `6af451d1a27d8d1d4e98f9e8` preserved vs brief …d2…; subPillar null. Meta title shortened to schema maxLength 70.
+- **Why:** TOOL-264 delivery for Conversion & Units multi-dimension metric converter.
+- **Important Files:** `frontend/src/tools/calculators/metric-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-metric-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; live pillar preserved; meta 58/148). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add CC to OZ Converter
 - **Summary:** Shipped CC to OZ Converter on existing catalog slug `cc-to-oz-converter` (`CcToOzConverter`, catalog `6af46f17a27d8d1d4e990b32`). Exact bidirectional cc↔fluid oz via US 29.5735295625 and UK 28.4130625; volume only (not weight oz); empty default. Null pillar/subPillar preserved. Meta title shortened to schema maxLength 70.
 - **Why:** TOOL-263 delivery for Conversion & Units volume converter.
