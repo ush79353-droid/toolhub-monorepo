@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Lot Size to Acres Calculator
+- **Summary:** Shipped Lot Size to Acres Calculator on existing catalog slug `lot-size-to-acres-calculator` (`LotSizeToAcresCalculator`, catalog `6af46f17a27d8d1d4e990b8f`). Width×length→acres with multi-unit length/area, reverse solve for missing side, optional Unit and total price; default 150×175 yd. Null pillar/subPillar preserved.
+- **Example:** 150 yd × 175 yd ≈ 5.42355 ac; 100 ft × 200 ft = 20,000 ft² ≈ 0.45914 ac; 1 ac / 100 ft width → length 435.6 ft; 2 ac × $50,000/ac = $100,000.
+- **Important Files:** `frontend/src/tools/calculators/lot-size-to-acres/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-lot-size-to-acres-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 48/149). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add ATM to Pascals Conversion
 - **Summary:** Shipped ATM to Pascals Conversion on existing catalog slug `atm-to-pascals-conversion` (`AtmToPascalsConverter`, catalog `6af46f17a27d8d1d4e990aec`). Bidirectional atm↔Pa using exact factor 101,325; default 1 atm; absolute negatives rejected. Existing pillar preserved; subPillar null.
 - **Example:** 1 atm = 101,325 Pa; 2.5 atm = 253,312.5 Pa; 202,650 Pa = 2 atm.
