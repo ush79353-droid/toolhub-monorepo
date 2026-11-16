@@ -148,6 +148,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'rms-to-watts-converter',
   'joules-to-volts-calculator',
   'speed-conversion',
+  'knots-to-kph-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

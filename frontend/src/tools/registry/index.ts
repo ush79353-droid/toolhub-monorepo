@@ -721,6 +721,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SpeedConversionCalculator,
     })),
   ),
+  KnotsToKphConverter: lazyTool(() =>
+    import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
+      default: mod.KnotsToKphConverter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
