@@ -190,6 +190,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CentigradeToCelsiusConverter: () =>
     import('@/tools/calculators/centigrade-to-celsius/detail'),
   MetricToSaeCalculator: () => import('@/tools/calculators/metric-to-sae/detail'),
+  CmHeightConversionCalculator: () =>
+    import('@/tools/calculators/cm-height-conversion/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

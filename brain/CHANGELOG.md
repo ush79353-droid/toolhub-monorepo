@@ -4,9 +4,15 @@
 
 ---
 
+### 2026-11-16 — Add CM Height Conversion Calculator
+- **Summary:** Shipped CM Height Conversion Calculator on existing catalog slug `cm-height-conversion-calculator` (`CmHeightConversionCalculator`, catalog `6af46f17a27d8d1d4e990b7d`). Bidirectional cm ↔ feet/inches with Other Units (m, mm, total in, decimal ft); exact 2.54 / 30.48; collapsed accordion; height chart and FAQs. Null pillar/subPillar preserved.
+- **Why:** TOOL-270 delivery for Conversion & Units height converter.
+- **Important Files:** `frontend/src/tools/calculators/cm-height-conversion/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cm-height-conversion-calculator-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 61/153). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Metric to SAE Calculator
 - **Summary:** Shipped Metric to SAE Calculator on existing catalog slug `metric-to-sae-calculator` (`MetricToSaeCalculator`, catalog `6af46f17a27d8d1d4e990b05`). Eight synchronized fields (mm/cm/m/km ↔ in/ft/yd/mi) via meter base; collapsible Metric/SAE groups; wrench size chart with safety note. Live pillar `6af451d1a27d8d1d4e98f9e8` preserved (brief listed …d2…98f8e8); subPillar null.
-- **Why:** TOOL-270 delivery for Conversion & Units length converter.
+- **Why:** TOOL-269 delivery for Conversion & Units length converter.
 - **Important Files:** `frontend/src/tools/calculators/metric-to-sae/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-metric-to-sae-calculator-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; live pillar preserved). Full frontend `tsc` / production build not claimed.
 

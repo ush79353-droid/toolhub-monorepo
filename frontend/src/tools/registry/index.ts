@@ -909,6 +909,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MetricToSaeCalculator,
     })),
   ),
+  CmHeightConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/cm-height-conversion/CmHeightConversionCalculator').then(
+      (mod) => ({
+        default: mod.CmHeightConversionCalculator,
+      }),
+    ),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
