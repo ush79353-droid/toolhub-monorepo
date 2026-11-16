@@ -142,6 +142,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PxToEmConverter: () => import('@/tools/calculators/px-to-em/detail'),
   EnergyConversionCalculator: () => import('@/tools/calculators/energy/detail'),
   QuantityConverter: () => import('@/tools/calculators/quantity/detail'),
+  MpgToL100Converter: () => import('@/tools/calculators/mpg-to-l100/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

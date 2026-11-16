@@ -681,6 +681,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.QuantityConverter,
     })),
   ),
+  MpgToL100Converter: lazyTool(() =>
+    import('@/tools/calculators/mpg-to-l100/MpgToL100Converter').then((mod) => ({
+      default: mod.MpgToL100Converter,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({
