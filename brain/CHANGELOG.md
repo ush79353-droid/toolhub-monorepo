@@ -4,6 +4,18 @@
 
 ---
 
+### 2026-11-16 — Pag-IBIG Housing Loan Calculator (partial, no invented rules)
+- **Summary:** Shipped Pag-IBIG Housing Loan Calculator on existing catalog slug `pag-ibig-housing-loan-calculator` (`PagIbigHousingLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff5a`). Screenshot sections preserved. Computes monthly principal and interest from loan amount + screenshot fixed-pricing example `30 years (9.750%)`. Bidirectional annual↔monthly income. PHP denomination only (no FX selectors). Loanable amount, insurance premium, total amortization, and Yes-mode extra values left unavailable with explanations — no fabricated LTV/insurance/eligibility rules.
+- **Example:** ₱1,000,000 / 30 yrs / 9.75% → monthly P&I ≈ ₱8,591.54 (reference note ≈ 8,591.74).
+- **Important Files:** `frontend/src/tools/calculators/pag-ibig-housing-loan/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-pag-ibig-housing-loan-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activation targeted via assign script. Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-16 — Add Partially Amortized Loan Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Partially Amortized Loan Calculator on existing catalog slug `partially-amortized-loan-calculator` (`PartiallyAmortizedLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff5b`). Fields: full loan, annual rate %/yr, amortization time, payment period → monthly payment, total paid, balloon, total. Monthly payment sized on N; balloon after K. Independent FX on five monetary selectors. Activated.
+- **Example:** 100,000 PKR / 6% / amort 20y / pay 5y → M ≈ 716.43; paid ≈ 42,985.86; balloon ≈ 84,899.60; total ≈ 127,885.46.
+- **Important Files:** `frontend/src/tools/calculators/partially-amortized-loan/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-partially-amortized-loan-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user. Result fields calculated only (no inverse editing).
+
 ### 2026-11-16 — LTV Calculator (Loan to Value)
 - **Summary:** Shipped LTV Calculator on existing catalog slug `ltv-calculator-loan-to-value` (`LtvCalculator`, catalog `6af46f0fa27d8d1d4e98ff59`). Screenshot fields only: purchase price, down payment, loan amount, LTV %. Bidirectional driver (`downPayment` | `loanAmount` | `ltv`). Independent real FX on three money fields; normalize into purchase currency before math; LTV % never converted. Activated.
 - **Example:** 200,000 PKR purchase + 40,000 down → loan 160,000 / LTV 80%. Alt: 200,000 + loan 180,000 → down 20,000 / LTV 90%.

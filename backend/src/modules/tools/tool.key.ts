@@ -293,6 +293,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'OptimalHedgeRatioCalculator',
   'OpportunityCostCalculator',
   'ParkingRatioCalculator',
+  'PartiallyAmortizedLoanCalculator',
   'PaybackPeriodCalculator',
   'PercentageReturnCalculator',
   'PerpetuityCalculator',
@@ -306,6 +307,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BitcoinEtfCalculator',
   'BoatLoanCalculator',
   'LandLoanCalculator',
+  'PagIbigHousingLoanCalculator',
   'LtvCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
@@ -647,6 +649,7 @@ if (isDirect) {
     !isApprovedComponentKey('OptimalHedgeRatioCalculator') ||
     !isApprovedComponentKey('OpportunityCostCalculator') ||
     !isApprovedComponentKey('ParkingRatioCalculator') ||
+    !isApprovedComponentKey('PartiallyAmortizedLoanCalculator') ||
     !isApprovedComponentKey('PaybackPeriodCalculator') ||
     !isApprovedComponentKey('PercentageReturnCalculator') ||
     !isApprovedComponentKey('PerpetuityCalculator') ||
@@ -660,6 +663,7 @@ if (isDirect) {
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
     !isApprovedComponentKey('LandLoanCalculator') ||
+    !isApprovedComponentKey('PagIbigHousingLoanCalculator') ||
     !isApprovedComponentKey('LtvCalculator') ||
     !isApprovedComponentKey('CdCalculator') ||
     !isApprovedComponentKey('CompoundInterestCalculator') ||

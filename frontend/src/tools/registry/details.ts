@@ -408,6 +408,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/opportunity-cost/detail'),
   ParkingRatioCalculator: () =>
     import('@/tools/calculators/parking-ratio/detail'),
+  PartiallyAmortizedLoanCalculator: () =>
+    import('@/tools/calculators/partially-amortized-loan/detail'),
   PaybackPeriodCalculator: () =>
     import('@/tools/calculators/payback-period/detail'),
   PercentageReturnCalculator: () =>
@@ -435,6 +437,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/boat-loan/detail'),
   LandLoanCalculator: () =>
     import('@/tools/calculators/land-loan/detail'),
+  PagIbigHousingLoanCalculator: () =>
+    import('@/tools/calculators/pag-ibig-housing-loan/detail'),
   LtvCalculator: () => import('@/tools/calculators/ltv/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>

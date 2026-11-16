@@ -109,6 +109,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'man-hours-calculator',
   'online-marketing-conversion-calculator',
   'operating-asset-turnover-calculator',
+  'partially-amortized-loan-calculator',
   'payback-period-calculator',
   'pre-and-post-money-valuation-calculator',
   'pvgo-calculator',

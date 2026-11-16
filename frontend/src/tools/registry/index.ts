@@ -1559,6 +1559,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ParkingRatioCalculator,
     })),
   ),
+  PartiallyAmortizedLoanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/partially-amortized-loan/PartiallyAmortizedLoanCalculator'
+    ).then((mod) => ({
+      default: mod.PartiallyAmortizedLoanCalculator,
+    })),
+  ),
   PaybackPeriodCalculator: lazyTool(() =>
     import('@/tools/calculators/payback-period/PaybackPeriodCalculator').then((mod) => ({
       default: mod.PaybackPeriodCalculator,
@@ -1623,6 +1630,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   LandLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/land-loan/LandLoanCalculator').then((mod) => ({
       default: mod.LandLoanCalculator,
+    })),
+  ),
+  PagIbigHousingLoanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/pag-ibig-housing-loan/PagIbigHousingLoanCalculator'
+    ).then((mod) => ({
+      default: mod.PagIbigHousingLoanCalculator,
     })),
   ),
   LtvCalculator: lazyTool(() =>
