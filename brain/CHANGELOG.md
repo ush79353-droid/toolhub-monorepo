@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add CCF to Therms Calculator
+- **Summary:** Shipped CCF to Therms Calculator on existing catalog slug `ccf-to-therms-calculator` (`CcfToThermsCalculator`, catalog `6af46f17a27d8d1d4e990bf5`). Bidirectional CCF↔therms; illustrative default factor 1.038 (1038 BTU/ft³); custom therms/CCF and heating value stay synchronized. Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 100 CCF × 1.038 = 103.8 therms; 50 CCF at 1050 BTU/ft³ → factor 1.05 → 52.5 therms.
+- **Important Files:** `frontend/src/tools/calculators/ccf-to-therms/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-ccf-to-therms-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Frontend `tsc --noEmit` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 44/155). Full production build not run this pass.
+
 ### 2026-11-16 — Fix Carried Interest currency conversion
 - **Summary:** Upgraded existing Carried Interest Calculator (`carried-interest-calculator`) from denomination-only synced selectors to real FX via Phase 2 `convertDraftMoneyFields` + `CurrencyRatesProvider`. Both initial and final fund values convert together so FX alone cannot invent profit or change fund return %, hurdle/carry ratios, or GP catch-up waterfall math. Hold period, hurdle %, and carry % never convert. Existing allocation formulas preserved. Slug already on `CURRENCY_CONVERSION_SLUGS`.
 - **Important Files:** `frontend/src/tools/calculators/carried-interest/{CarriedInterestCalculator,CarriedInterestForm}.tsx`, `brain/{CURRENT_STATE,FRONTEND,CHANGELOG,CURRENCY_CONVERSION_PROGRESS}.md`.
@@ -48,6 +54,7 @@
 - **Example:** Asset 50/55/50/60, Benchmark 100/110/100/120 → β = 1.00.
 - **Important Files:** `frontend/src/tools/calculators/beta-stock/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-beta-stock-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-15 — Add m/s to km/h Converter
 - **Summary:** Shipped m/s to km/h Converter on existing catalog slug `ms-to-kmh-converter` (`MsToKmhConverter`, catalog `6af46f17a27d8d1d4e990c0b`). Main fields m/s, km/h, mph, ft/s, knots plus extras; canonical m/s; live bidirectional sync. Mach omitted. Publishing flags preserved; `isDeveloped` set true after verification.
 - **Example:** 10 m/s = 36 km/h ≈ 22.3693629 mph ≈ 32.808399 ft/s ≈ 19.4384449 kn; 72 km/h = 20 m/s.
