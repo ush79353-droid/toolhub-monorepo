@@ -765,6 +765,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AcresToSquareFeetConverter,
     })),
   ),
+  LbsToStoneConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-stone/LbsToStoneConverter').then((mod) => ({
+      default: mod.LbsToStoneConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

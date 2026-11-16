@@ -160,6 +160,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AcresToHectaresConverter: () => import('@/tools/calculators/acres-to-hectares/detail'),
   LbsToPsiConverter: () => import('@/tools/calculators/lbs-to-psi/detail'),
   AcresToSquareFeetConverter: () => import('@/tools/calculators/acres-to-square-feet/detail'),
+  LbsToStoneConverter: () => import('@/tools/calculators/lbs-to-stone/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

@@ -147,6 +147,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AcresToHectaresConverter',
   'LbsToPsiConverter',
   'AcresToSquareFeetConverter',
+  'LbsToStoneConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -449,6 +450,7 @@ if (isDirect) {
     !isApprovedComponentKey('AcresToHectaresConverter') ||
     !isApprovedComponentKey('LbsToPsiConverter') ||
     !isApprovedComponentKey('AcresToSquareFeetConverter') ||
+    !isApprovedComponentKey('LbsToStoneConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
