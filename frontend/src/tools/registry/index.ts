@@ -904,6 +904,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  MetricToSaeCalculator: lazyTool(() =>
+    import('@/tools/calculators/metric-to-sae/MetricToSaeCalculator').then((mod) => ({
+      default: mod.MetricToSaeCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

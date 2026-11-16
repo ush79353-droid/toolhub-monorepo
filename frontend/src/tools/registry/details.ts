@@ -189,6 +189,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/celsius-to-fahrenheit/detail'),
   CentigradeToCelsiusConverter: () =>
     import('@/tools/calculators/centigrade-to-celsius/detail'),
+  MetricToSaeCalculator: () => import('@/tools/calculators/metric-to-sae/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

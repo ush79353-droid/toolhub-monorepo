@@ -185,6 +185,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'metric-to-imperial-converter',
   'celsius-to-fahrenheit-converter',
   'centigrade-to-celsius-converter',
+  'metric-to-sae-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
