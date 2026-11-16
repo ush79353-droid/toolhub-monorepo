@@ -162,6 +162,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'McgToMlConverter',
   'BarToPsigConverter',
   'MeasurementConverter',
+  'CcToGramsConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -479,6 +480,7 @@ if (isDirect) {
     !isApprovedComponentKey('McgToMlConverter') ||
     !isApprovedComponentKey('BarToPsigConverter') ||
     !isApprovedComponentKey('MeasurementConverter') ||
+    !isApprovedComponentKey('CcToGramsConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
