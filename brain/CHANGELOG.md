@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Day Converter
+- **Summary:** Shipped Day Converter on existing catalog slug `day-converter` (`DayConverter`, catalog `6af46f17a27d8d1d4e990ba5`). Bidirectional days ↔ years/months/weeks/hours/minutes/seconds; Gregorian averages 365.2425 d/yr and 30.436875 d/mo; fixed day subdivisions; combined HMS without 24 h wrap; guide and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
+- **Why:** TOOL-287 delivery for Conversion & Units time converter.
+- **Important Files:** `frontend/src/tools/calculators/day-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-day-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null preserved). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Cups to Quarts Converter
 - **Summary:** Shipped Cups to Quarts Converter on existing catalog slug `cups-to-quarts-converter` (`CupsToQuartsConverter`, catalog `6af46f17a27d8d1d4e990b35`). Bidirectional cups ↔ quarts via liters; US customary/legal, metric, and UK cups; US liquid, US dry, and imperial quarts; conversion chart and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-286 delivery for Conversion & Units kitchen/volume converter.
