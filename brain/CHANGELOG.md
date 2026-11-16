@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add CGS System of Units Converter
+- **Summary:** Shipped CGS System of Units Converter on existing catalog slug `cgs-system-of-units-converter` (`CgsSystemOfUnitsConverter`, catalog `6af46f17a27d8d1d4e990bd3`). Quantity selector (default Acceleration); 16 mechanical SI↔CGS quantities with typed factors; bidirectional fields; electromagnetism covered educationally only (ESU/EMU/Gaussian distinguished — no ambiguous universal EM factors). Publishing flags preserved; `isDeveloped` set true after verification.
+- **Example:** 9.80665 m/s² = 980.665 Gal; 1 N = 100,000 dyn; 1 J = 10,000,000 erg; 1 Pa = 10 Ba.
+- **Important Files:** `frontend/src/tools/calculators/cgs-system/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cgs-system-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Module ESLint clean. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 49/138). Full frontend `tsc` / production build not claimed (pre-existing unrelated currency typing errors on branch).
+
 ### 2026-11-16 — Add Nm to Joules Calculator
 - **Summary:** Shipped Nm to Joules Calculator on existing catalog slug `nm-to-joules-calculator` (`NmToJoulesCalculator`, catalog `6af46f17a27d8d1d4e990b11`). Independent N ↔ J/m and J ↔ N·m sections (factor 1); optional W = F d cos(θ); torque≠energy called out. Publishing flags and pillar preserved; `isDeveloped` set true after verification.
 - **Example:** 10 N = 10 J/m; 50 J = 50 N·m; 10 N × 5 m × cos(0°) = 50 J; cos(60°) ≈ 25 J.
