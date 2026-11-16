@@ -112,6 +112,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CcfToThermsCalculator',
   'NaturalGasConverter',
   'CentsToDollarsCalculator',
+  'NmToJoulesCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -378,6 +379,7 @@ if (isDirect) {
     !isApprovedComponentKey('CcfToThermsCalculator') ||
     !isApprovedComponentKey('NaturalGasConverter') ||
     !isApprovedComponentKey('CentsToDollarsCalculator') ||
+    !isApprovedComponentKey('NmToJoulesCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

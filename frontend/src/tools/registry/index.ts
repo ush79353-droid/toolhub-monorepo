@@ -594,6 +594,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CentsToDollarsCalculator,
     })),
   ),
+  NmToJoulesCalculator: lazyTool(() =>
+    import('@/tools/calculators/nm-to-joules/NmToJoulesCalculator').then((mod) => ({
+      default: mod.NmToJoulesCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

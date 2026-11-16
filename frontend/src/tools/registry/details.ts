@@ -124,6 +124,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CcfToThermsCalculator: () => import('@/tools/calculators/ccf-to-therms/detail'),
   NaturalGasConverter: () => import('@/tools/calculators/natural-gas/detail'),
   CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
+  NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>
