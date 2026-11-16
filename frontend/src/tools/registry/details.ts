@@ -446,6 +446,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   RvLoanCalculator: () => import('@/tools/calculators/rv-loan/detail'),
   StudentLoanCalculator: () =>
     import('@/tools/calculators/student-loan/detail'),
+  StudentLoanForgivenessCalculator: () =>
+    import('@/tools/calculators/student-loan-forgiveness/detail'),
   LtvCalculator: () => import('@/tools/calculators/ltv/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
@@ -476,6 +478,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/home-equity-loan/detail'),
   HomeLoanEmiCalculator: () =>
     import('@/tools/calculators/home-loan-emi/detail'),
+  HomeLoanCalculator: () => import('@/tools/calculators/home-loan/detail'),
   HoldingPeriodReturnCalculator: () =>
     import('@/tools/calculators/holding-period-return/detail'),
   ImpermanentLossCalculator: () =>

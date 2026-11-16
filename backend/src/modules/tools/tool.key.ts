@@ -311,6 +311,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LandLoanCalculator',
   'PagIbigHousingLoanCalculator',
   'RvLoanCalculator',
+  'StudentLoanForgivenessCalculator',
   'LtvCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
@@ -327,6 +328,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FhaLoanCalculator',
   'HomeEquityLoanCalculator',
   'HomeLoanEmiCalculator',
+  'HomeLoanCalculator',
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
@@ -672,6 +674,7 @@ if (isDirect) {
     !isApprovedComponentKey('LandLoanCalculator') ||
     !isApprovedComponentKey('PagIbigHousingLoanCalculator') ||
     !isApprovedComponentKey('RvLoanCalculator') ||
+    !isApprovedComponentKey('StudentLoanForgivenessCalculator') ||
     !isApprovedComponentKey('LtvCalculator') ||
     !isApprovedComponentKey('CdCalculator') ||
     !isApprovedComponentKey('CompoundInterestCalculator') ||
@@ -688,6 +691,7 @@ if (isDirect) {
     !isApprovedComponentKey('FhaLoanCalculator') ||
     !isApprovedComponentKey('HomeEquityLoanCalculator') ||
     !isApprovedComponentKey('HomeLoanEmiCalculator') ||
+    !isApprovedComponentKey('HomeLoanCalculator') ||
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||

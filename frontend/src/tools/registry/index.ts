@@ -1663,6 +1663,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  StudentLoanForgivenessCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/student-loan-forgiveness/StudentLoanForgivenessCalculator'
+    ).then((mod) => ({
+      default: mod.StudentLoanForgivenessCalculator,
+    })),
+  ),
   LtvCalculator: lazyTool(() =>
     import('@/tools/calculators/ltv/LtvCalculator').then((mod) => ({
       default: mod.LtvCalculator,
@@ -1759,6 +1766,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   HomeLoanEmiCalculator: lazyTool(() =>
     import('@/tools/calculators/home-loan-emi/HomeLoanEmiCalculator').then((mod) => ({
       default: mod.HomeLoanEmiCalculator,
+    })),
+  ),
+  HomeLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/home-loan/HomeLoanCalculator').then((mod) => ({
+      default: mod.HomeLoanCalculator,
     })),
   ),
   FutureValueCalculator: lazyTool(() =>
