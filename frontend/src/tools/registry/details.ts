@@ -127,6 +127,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
   CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),
   NickelsToDollarsCalculator: () => import('@/tools/calculators/nickels-to-dollars/detail'),
+  ConversionCalculator: () => import('@/tools/calculators/conversion/detail'),
   AdditionalFundsNeededCalculator: () =>
     import('@/tools/calculators/additional-funds-needed/detail'),
   AbsencePercentageCalculator: () =>

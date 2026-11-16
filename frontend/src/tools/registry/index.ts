@@ -609,6 +609,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NickelsToDollarsCalculator,
     })),
   ),
+  ConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/conversion/ConversionCalculator').then((mod) => ({
+      default: mod.ConversionCalculator,
+    })),
+  ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
     import('@/tools/calculators/additional-funds-needed/AdditionalFundsNeededCalculator').then(
       (mod) => ({

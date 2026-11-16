@@ -126,6 +126,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'nm-to-joules-calculator',
   'cgs-system-of-units-converter',
   'nickels-to-dollars-calculator',
+  'conversion-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
