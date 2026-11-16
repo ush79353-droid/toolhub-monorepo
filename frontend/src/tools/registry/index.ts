@@ -1009,6 +1009,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DayConverter,
     })),
   ),
+  DaysToMonthsCalculator: lazyTool(() =>
+    import('@/tools/calculators/days-to-months/DaysToMonthsCalculator').then((mod) => ({
+      default: mod.DaysToMonthsCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

@@ -193,6 +193,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CupsToPintsConverter',
   'CupsToQuartsConverter',
   'DayConverter',
+  'DaysToMonthsCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -541,6 +542,7 @@ if (isDirect) {
     !isApprovedComponentKey('CupsToPintsConverter') ||
     !isApprovedComponentKey('CupsToQuartsConverter') ||
     !isApprovedComponentKey('DayConverter') ||
+    !isApprovedComponentKey('DaysToMonthsCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

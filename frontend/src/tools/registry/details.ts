@@ -215,6 +215,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CupsToPintsConverter: () => import('@/tools/calculators/cups-to-pints/detail'),
   CupsToQuartsConverter: () => import('@/tools/calculators/cups-to-quarts/detail'),
   DayConverter: () => import('@/tools/calculators/day-converter/detail'),
+  DaysToMonthsCalculator: () => import('@/tools/calculators/days-to-months/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
