@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-16 — Add Measurement Converter
+- **Summary:** Shipped Measurement Converter on existing catalog slug `measurement-converter` (`MeasurementConverter`, catalog `6af46f17a27d8d1d4e990b91`). Extensible multi-dimension registry (length through angle), conversion-factor panel, precision modes, affine temperature, dimensional mismatch rejection. Null pillar/subPillar preserved.
+- **Example:** 1500 m = 1.5 km; 100 km/h ≈ 27.7778 m/s; 0 °C = 32 °F; 1 bar = 100,000 Pa; 1 kWh = 3,600,000 J.
+- **Important Files:** `frontend/src/tools/calculators/measurement-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-measurement-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null; meta 41/142). Full frontend `tsc` / production build not claimed.
+
 ### 2026-11-16 — Add Bar to PSIG Converter
 - **Summary:** Shipped Bar to PSIG Converter on existing catalog slug `bar-to-psig-converter` (`BarToPsigConverter`, catalog `6af46f17a27d8d1d4e990b9c`). Absolute/gauge bar↔PSIG using factor 14.5037738007; editable atmospheric pressure (default 1.01325 bar); negative gauge/PSIG allowed; absolute negatives rejected. Null pillar/subPillar preserved.
 - **Example:** 10 bar(a) ≈ 130.34 PSIG; 1.01325 bar(a) = 0 PSIG; 5 bar(g) ≈ 72.5189 PSIG; 100 PSIG ≈ 7.90799 bar(a).
