@@ -228,6 +228,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/accumulated-depreciation/detail'),
   AfterTaxCostOfDebtCalculator: () =>
     import('@/tools/calculators/after-tax-cost-of-debt/detail'),
+  DebtServiceCoverageRatioCalculator: () =>
+    import('@/tools/calculators/debt-service-coverage-ratio/detail'),
   AttritionRateCalculator: () =>
     import('@/tools/calculators/attrition-rate/detail'),
   BusinessLoanCalculator: () =>
@@ -353,6 +355,9 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/customer-retention-rate/detail'),
   DaysOffCalculator: () =>
     import('@/tools/calculators/days-off/detail'),
+  DebtAvalancheCalculator: () =>
+    import('@/tools/calculators/debt-avalanche/detail'),
+  DebtCalculator: () => import('@/tools/calculators/debt/detail'),
   DividendDiscountModelCalculator: () =>
     import('@/tools/calculators/dividend-discount-model/detail'),
   DirectMaterialPriceVarianceCalculator: () =>

@@ -1060,6 +1060,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AfterTaxCostOfDebtCalculator,
     })),
   ),
+  DebtServiceCoverageRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-service-coverage-ratio/DebtServiceCoverageRatioCalculator'
+    ).then((mod) => ({
+      default: mod.DebtServiceCoverageRatioCalculator,
+    })),
+  ),
   AttritionRateCalculator: lazyTool(() =>
     import('@/tools/calculators/attrition-rate/AttritionRateCalculator').then((mod) => ({
       default: mod.AttritionRateCalculator,
@@ -1427,6 +1434,18 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   DaysOffCalculator: lazyTool(() =>
     import('@/tools/calculators/days-off/DaysOffCalculator').then((mod) => ({
       default: mod.DaysOffCalculator,
+    })),
+  ),
+  DebtAvalancheCalculator: lazyTool(() =>
+    import('@/tools/calculators/debt-avalanche/DebtAvalancheCalculator').then(
+      (mod) => ({
+        default: mod.DebtAvalancheCalculator,
+      })
+    )
+  ),
+  DebtCalculator: lazyTool(() =>
+    import('@/tools/calculators/debt/DebtCalculator').then((mod) => ({
+      default: mod.DebtCalculator,
     })),
   ),
   DividendDiscountModelCalculator: lazyTool(() =>

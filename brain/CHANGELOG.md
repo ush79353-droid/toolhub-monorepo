@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Debt Avalanche Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Debt Avalanche Calculator on existing catalog slug `debt-avalanche-calculator` (`DebtAvalancheCalculator`, catalog `6af46f0fa27d8d1d4e98ff93`). Debt count dropdown (default Two); per-debt balance/rate/payment with independent FX; total-debt result currency. Baseline = fixed minimums (no reallocation); avalanche keeps combined monthly budget and directs freed payments to the highest APR. Results: savings narrative + scrollable comparison table (APR, monthly payment, payoff term, total payable, total interest). Activated.
+- **Example:** 1,000 @ 6% / 100 + 5,000 @ 12% / 200 → baseline 29 mo / interest ≈ 810.92; avalanche 23 mo / interest ≈ 693.71; save ≈ 117.21 and 6 months.
+- **Important Files:** `frontend/src/tools/calculators/debt-avalanche/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-debt-avalanche-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Math self-check vs screenshot. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — After-tax Cost of Debt Calculator (Screenshot-First + FX)
 - **Summary:** Shipped After-tax Cost of Debt Calculator on existing catalog slug `after-tax-cost-of-debt-calculator` (`AfterTaxCostOfDebtCalculator`, catalog `6af46f0fa27d8d1d4e98ff92`). Two sections: Marginal corporate tax rate (net income + pre-tax income with independent FX); After-tax cost of debt (tax %, read-only after-tax %, cost of debt %). `taxRateSource` avoids circular income↔tax updates. Activated.
 - **Formulas:** Marginal Tax Rate (%) = (1 − Net Income / Pre-tax Income) × 100 (effective estimate, not statutory bracket). After-tax Cost of Debt (%) = Cost of Debt (%) × (1 − Tax Rate (%) / 100). Zero pre-tax income blocked for derived tax; zero tax allowed.
