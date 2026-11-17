@@ -1083,6 +1083,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  FootToCentimeterConverter: lazyTool(() =>
+    import('@/tools/calculators/foot-to-centimeter/FootToCentimeterConverter').then((mod) => ({
+      default: mod.FootToCentimeterConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
