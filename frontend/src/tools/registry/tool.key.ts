@@ -196,6 +196,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
   'DebtServiceCoverageRatioCalculator',
+  'DebtToCapitalRatioCalculator',
   'AttritionRateCalculator',
   'BusinessLoanCalculator',
   'ProfitabilityIndexCalculator',
@@ -263,10 +264,12 @@ export const APPROVED_COMPONENT_KEYS = [
   'DaysOffCalculator',
   'DebtAvalancheCalculator',
   'DebtCalculator',
+  'DebtToEquityCalculator',
   'DividendDiscountModelCalculator',
   'DirectMaterialPriceVarianceCalculator',
   'EarCalculator',
   'EarlyLoanPayoffCalculator',
+  'EbitdaMarginCalculator',
   'EquivalentRateCalculator',
   'EffectiveCorporateTaxRateCalculator',
   'EmvCalculator',
@@ -593,6 +596,7 @@ if (isDirect) {
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
     !isApprovedComponentKey('DebtServiceCoverageRatioCalculator') ||
+    !isApprovedComponentKey('DebtToCapitalRatioCalculator') ||
     !isApprovedComponentKey('AttritionRateCalculator') ||
     !isApprovedComponentKey('BusinessLoanCalculator') ||
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
@@ -660,10 +664,12 @@ if (isDirect) {
     !isApprovedComponentKey('DaysOffCalculator') ||
     !isApprovedComponentKey('DebtAvalancheCalculator') ||
     !isApprovedComponentKey('DebtCalculator') ||
+    !isApprovedComponentKey('DebtToEquityCalculator') ||
     !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
     !isApprovedComponentKey('EarCalculator') ||
     !isApprovedComponentKey('EarlyLoanPayoffCalculator') ||
+    !isApprovedComponentKey('EbitdaMarginCalculator') ||
     !isApprovedComponentKey('EquivalentRateCalculator') ||
     !isApprovedComponentKey('EffectiveCorporateTaxRateCalculator') ||
     !isApprovedComponentKey('EmvCalculator') ||

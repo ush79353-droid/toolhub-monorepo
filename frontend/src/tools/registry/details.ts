@@ -360,6 +360,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DebtAvalancheCalculator: () =>
     import('@/tools/calculators/debt-avalanche/detail'),
   DebtCalculator: () => import('@/tools/calculators/debt/detail'),
+  DebtToEquityCalculator: () =>
+    import('@/tools/calculators/debt-to-equity/detail'),
   DividendDiscountModelCalculator: () =>
     import('@/tools/calculators/dividend-discount-model/detail'),
   DirectMaterialPriceVarianceCalculator: () =>
@@ -367,6 +369,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EarCalculator: () => import('@/tools/calculators/ear/detail'),
   EarlyLoanPayoffCalculator: () =>
     import('@/tools/calculators/early-loan-payoff/detail'),
+  EbitdaMarginCalculator: () =>
+    import('@/tools/calculators/ebitda-margin/detail'),
   EquivalentRateCalculator: () =>
     import('@/tools/calculators/equivalent-rate/detail'),
   EffectiveCorporateTaxRateCalculator: () =>

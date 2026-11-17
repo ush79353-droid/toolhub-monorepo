@@ -1455,6 +1455,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DebtCalculator,
     })),
   ),
+  DebtToEquityCalculator: lazyTool(() =>
+    import('@/tools/calculators/debt-to-equity/DebtToEquityCalculator').then(
+      (mod) => ({
+        default: mod.DebtToEquityCalculator,
+      })
+    )
+  ),
   DividendDiscountModelCalculator: lazyTool(() =>
     import('@/tools/calculators/dividend-discount-model/DividendDiscountModelCalculator').then(
       (mod) => ({
@@ -1478,6 +1485,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.EarlyLoanPayoffCalculator,
       })
     )
+  ),
+  EbitdaMarginCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ebitda-margin/EbitdaMarginCalculator'
+    ).then((mod) => ({
+      default: mod.EbitdaMarginCalculator,
+    })),
   ),
   EquivalentRateCalculator: lazyTool(() =>
     import(
