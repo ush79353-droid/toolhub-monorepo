@@ -512,6 +512,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/present-value-of-annuity/detail'),
   PriceQuantityCalculator: () =>
     import('@/tools/calculators/price-quantity/detail'),
+  ProratedRentCalculator: () =>
+    import('@/tools/calculators/prorated-rent/detail'),
   PvgoCalculator: () =>
     import('@/tools/calculators/pvgo/detail'),
   PvifaCalculator: () =>

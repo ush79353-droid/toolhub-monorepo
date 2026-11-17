@@ -369,6 +369,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'present-value-calculator',
   'present-value-of-annuity-calculator',
   'price-quantity-calculator',
+  'prorated-rent-calculator',
   'pvgo-calculator',
   'pvifa-calculator',
   'rate-of-return-calculator',

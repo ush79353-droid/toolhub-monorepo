@@ -312,6 +312,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MutualFundCalculator',
   'MvaCalculator',
   'NetDebtCalculator',
+  'NetEffectiveRentCalculator',
   'NewYorkOvertimeCalculator',
   'NopatCalculator',
   'NpvCalculator',
@@ -336,6 +337,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PvifaCalculator',
   'RateOfReturnCalculator',
   'RealRateOfReturnCalculator',
+  'RentIncreaseCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BoatLoanCalculator',
@@ -733,6 +735,7 @@ if (isDirect) {
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
     !isApprovedComponentKey('NetDebtCalculator') ||
+    !isApprovedComponentKey('NetEffectiveRentCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('NpvCalculator') ||
@@ -757,6 +760,7 @@ if (isDirect) {
     !isApprovedComponentKey('PvifaCalculator') ||
     !isApprovedComponentKey('RateOfReturnCalculator') ||
     !isApprovedComponentKey('RealRateOfReturnCalculator') ||
+    !isApprovedComponentKey('RentIncreaseCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
