@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Gallons to Pints Converter
+- **Summary:** Shipped Gallons to Pints Converter on existing catalog slug gallons-to-pints-converter (GallonsToPintsConverter, catalog 6af46f17a27d8d1d4e990aca). Four-field sync US/UK gal + US/UK pt via volume-conversion liter engine; more-options mL/L/fl oz/qt/m³; negatives rejected; empty default. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-308b delivery for Conversion and Units volume converter (gal to pints).
+- **Important Files:** frontend/src/tools/calculators/gallons-to-pints/*, volume-conversion convertVolume reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal = 8 US pt; 1 UK gal = 8 UK pt; 1 US gal ≈ 6.661 UK pt). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Gallons to Grams Conversion
 - **Summary:** Shipped Gallons to Grams Conversion on existing catalog slug gallons-to-grams-conversion (GallonsToGramsConverter, catalog 6af46f17a27d8d1d4e990ac9). Density-based US gal ↔ grams with substance presets (water default 1000 kg/m³), editable density units, bidirectional sync; negatives and zero density rejected. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-307b delivery for Conversion and Units density-based gal ↔ g converter.
