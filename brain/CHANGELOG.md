@@ -4,6 +4,27 @@
 
 ---
 
+### 2026-11-18 — Balloon Payment Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Balloon Payment Calculator on existing catalog slug `balloon-payment-calculator` (`BalloonPaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ffc4`). Screenshot fields: loan amount + currency, amortization yrs/mos, balloon after yrs/mos, interest %, compounding method. Narrative results: monthly payment, balloon, total repayment, total monthly payments, total interest. Real FX converts loan amount on currency change (Margin Interest pattern); rate/durations never converted. No charts or amortization tables. Activated via `npm run tool:assign`.
+- **Formulas:** Effective monthly r from compounding; M = P×r/(1−(1+r)^(−N)); r=0 → P/N; Balloon = P(1+r)^K − M×((1+r)^K − 1)/r; r=0 → P − M×K; Total = M×K + Balloon; Interest = Total − P. Require 0 < K ≤ N.
+- **Example:** 200,000 PKR / 20y / balloon after 5y / 7% monthly → M ≈ 1,550.60; balloon ≈ 172,513.25; total ≈ 265,549.12; interest ≈ 65,549.12.
+- **Important Files:** `frontend/src/tools/calculators/balloon-payment/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. Local commit `b2d5a423` — no push/pull/sync.
+
+### 2026-11-18 — California Stimulus Check II Calculator (Screenshot-First, historical)
+- **Summary:** Shipped California Stimulus Check II Calculator on existing catalog slug `california-stimulus-check-ii-calculator` (`CaliforniaStimulusCheckIiCalculator`, catalog `6af46f0fa27d8d1d4e98ffcc`). Screenshot sections: historical GSS II notice; CA AGI + 2020 residency; Tax file SSN/ITIN, GSS I qualification, child dependent; payment method + tax filing date. Fixed USD (no FX). Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
+- **Rules:** FTB PSB 2021-18 / Cal. Welf. & Inst. Code §8150.2 — CA AGI $1–$75,000 (non-MFS), residency > half of 2020, filing by 2021-10-15 (ITIN extension note to 2022-02-15). Payments: $500 / $600 / $1,000 / $1,100; GSS I without dependents → ineligible. Timing guidance labeled historical; program complete (no new GSS payments since 2022-07-15).
+- **Example:** CA AGI 50,000 · resident Yes · SSN · GSS I No · dependent Yes · DD · filed 2021-04-15 → $1,100 historical estimate.
+- **Important Files:** `frontend/src/tools/calculators/california-stimulus-check-ii/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check (`calculation.test.ts`). MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated suite omitted per user. Local commits only — no push/pull/sync.
+
+### 2026-11-18 — Coupon Payment Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Coupon Payment Calculator on existing catalog slug `coupon-payment-calculator` (`CouponPaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ffc6`). Screenshot fields: face value + currency, annual coupon rate %, payments per annum, coupon payment + independent currency. Collapsible Current yield with market price (face currency) and current yield %. Real Phase 2 FX (Margin Interest pattern). Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
+- **Formulas:** Annual Coupon = Face × Rate/100; Coupon Payment = Annual Coupon ÷ Payments Per Annum; Current Yield (%) = Annual Coupon ÷ Market Price × 100.
+- **Example:** 1,000 PKR · 5% · 2 payments → coupon payment 25 PKR; market 980 → current yield ≈ 5.102%.
+- **Important Files:** `frontend/src/tools/calculators/coupon-payment/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. Local commit only — no push/pull/sync.
+
 ### 2026-11-18 — Bi-Weekly Mortgage Payment Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Bi-Weekly Mortgage Payment Calculator on existing catalog slug `bi-weekly-mortgage-payment-calculator` (`BiWeeklyMortgagePaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ffc5`). Inputs: mortgage amount FX, term yrs/mos, rate, extra payment FX, optional points/fee/compounding checkbox. Payment summary: Comparison with dropdown + horizontally scrollable Monthly vs Bi-weekly table (payment, term, payoff date, total interest, total payments). Accelerated biweekly = half monthly every 14 days (26/yr). Independent Phase 2 FX; rates/term never converted. Did not modify Biweekly Mortgage Calculator. Activated.
 - **Formulas:** M = P×r/(1−(1+r)^(-n)); biweekly payment = M/2; schedules accrue period interest then apply payment + extra principal.
