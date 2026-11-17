@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Kelvin Converter
+- **Summary:** Shipped Kelvin Converter on existing catalog slug kelvin-converter (KelvinConverter, catalog 6af46f17a27d8d1d4e990bf3). Eight bidirectional scales (K/°C/°F/°R/°De/°N/°Ré/°Rø) reusing celsius-converter temperature engine; absolute-zero rejection at 0 K; Kelvin-first UI; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-333b delivery for Conversion and Units Kelvin temperature hub.
+- **Important Files:** frontend/src/tools/calculators/kelvin-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0 K = −273.15°C / −459.67°F; 273.15 K = 0°C / 32°F; 300 K ≈ 26.85°C / 80.33°F; 373.15 K = 100°C / 212°F; round-trips; below absolute zero rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Katha to Square Feet Converter
 - **Summary:** Shipped Katha to Square Feet Converter on existing catalog slug katha-to-square-feet-converter (KathaToSquareFeetConverter, catalog 6af46f17a27d8d1d4e990afd). Verified regional factors only (Nepal 3645 ft² default; Bangladesh/West Bengal 720; Assam 2880; Patna/Gaya/Aurangabad 1361.25; Saran 1742.4). Bidirectional katha↔ft²↔m²; pending regions documented (Chhattisgarh, generic Bihar, Bigha). Pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-332b delivery for Conversion and Units regional katha land-area converter.
