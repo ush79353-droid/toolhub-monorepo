@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Inches to Yard Conversion
+- **Summary:** Shipped Inches to Yard Conversion on existing catalog slug inches-to-yard-conversion (InchesToYardConversion, catalog 6af46f17a27d8d1d4e990ad6). Bidirectional inches↔yards with exact 36:1 factor; empty default; signed values; original guide/examples/table/FAQs; Yard Conversion pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-329b delivery for Conversion and Units inches ↔ yards converter.
+- **Important Files:** frontend/src/tools/calculators/inches-to-yards/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (36 in = 1 yd; 72 in = 2 yd; 180 in = 5 yd; 18 in = 0.5 yd; reverse 5 yd = 180 in; registry cross-check; negatives/empty/NaN). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d0a27d8d1d4e98f9e2). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Inch Converter
 - **Summary:** Shipped Inch Converter on existing catalog slug inch-converter (InchConverter, catalog 6af46f17a27d8d1d4e990b13). Primary inches + Metric/Imperial/Others (nmi, IAU solar radius, Julian ly) reusing meter-converter length engine; signed values allowed; empty default; Conversion & Units pillar preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-328b delivery for Conversion and Units inch length converter.
