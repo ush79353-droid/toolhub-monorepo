@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Mile Conversion Calculator
+- **Summary:** Shipped Mile Conversion Calculator on existing catalog slug mile-conversion-calculator (MileConversionCalculator, catalog 6af46f17a27d8d1d4e990b07). Multi-group statute-mile hub: Metric km/m/cm + mm/um/nm, Imperial yd/ft + in/fur/ch/rd, Others ly/au/nmi + pc/solarRadius/angstrom; exact 1 mi = 1609.344 m; empty default; signed lengths; statute ≠ nautical clarified; chart/FAQs. Live pillar 6af451d1a27d8d1d4e98f9e9 preserved (brief typo …d2…); subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-363b delivery for Conversion and Units statute-mile hub.
+- **Important Files:** frontend/src/tools/calculators/mile-conversion/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 mi = 1609.344 m; 1.609344 km; 5280 ft; 1760 yd; 63360 in; 10 mi = 16.09344 km; 60 mi = 96.56064 km; 1 km ≈ 0.621371192237 mi; 1 nmi ≈ 1.150779448 mi; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e9). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add mil Conversion
 - **Summary:** Shipped mil Conversion on existing catalog slug mil-conversion (MilConversion, catalog 6af46f17a27d8d1d4e990b28). Multi-group mil-centered length converter: Metric µm/mm/cm + other selector, Imperial in/ft + yd/mi, Others nmi/solarRadius + Å/ly/au; exact 1 mil = 0.0000254 m = 25.4 µm; empty default; signed lengths; mil ≠ mm clarified; chart/FAQs. Pillar 6af451d3a27d8d1d4e98f9f0 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-362b delivery for Conversion and Units mil hub under mil Conversion pillar.
