@@ -289,6 +289,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AppreciationCalculator: () =>
     import('@/tools/calculators/appreciation/detail'),
   AnnuityCalculator: () => import('@/tools/calculators/annuity/detail'),
+  GrowingAnnuityCalculator: () =>
+    import('@/tools/calculators/growing-annuity/detail'),
+  AnnuityPayoutCalculator: () =>
+    import('@/tools/calculators/annuity-payout/detail'),
   AnnualizedReturnCalculator: () =>
     import('@/tools/calculators/annualized-return/detail'),
   ApyCalculator: () => import('@/tools/calculators/apy/detail'),

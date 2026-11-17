@@ -1262,6 +1262,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnuityCalculator,
     })),
   ),
+  GrowingAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/growing-annuity/GrowingAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.GrowingAnnuityCalculator,
+    })),
+  ),
+  AnnuityPayoutCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/annuity-payout/AnnuityPayoutCalculator'
+    ).then((mod) => ({
+      default: mod.AnnuityPayoutCalculator,
+    })),
+  ),
   AnnualizedReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/annualized-return/AnnualizedReturnCalculator'

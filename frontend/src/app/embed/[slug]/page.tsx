@@ -40,6 +40,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'growing-annuity-calculator',
   'annualized-return-calculator',
   'annuity-calculator',
+  'annuity-payout-calculator',
   'appreciation-calculator',
   'apy-calculator',
   'arm-mortgage-calculator',

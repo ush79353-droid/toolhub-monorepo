@@ -227,6 +227,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AnnualizedRateOfReturnCalculator',
   'AppreciationCalculator',
   'AnnualizedReturnCalculator',
+  'AnnuityPayoutCalculator',
   'ApyCalculator',
   'BasisPointCalculator',
   'BetaStockCalculator',
@@ -633,6 +634,7 @@ if (isDirect) {
     !isApprovedComponentKey('AnnualizedRateOfReturnCalculator') ||
     !isApprovedComponentKey('AppreciationCalculator') ||
     !isApprovedComponentKey('AnnualizedReturnCalculator') ||
+    !isApprovedComponentKey('AnnuityPayoutCalculator') ||
     !isApprovedComponentKey('ApyCalculator') ||
     !isApprovedComponentKey('BasisPointCalculator') ||
     !isApprovedComponentKey('BetaStockCalculator') ||

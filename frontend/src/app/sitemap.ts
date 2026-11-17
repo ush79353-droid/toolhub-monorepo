@@ -253,6 +253,8 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'annualized-rate-of-return-calculator',
   'appreciation-calculator',
   'annuity-calculator',
+  'growing-annuity-calculator',
+  'annuity-payout-calculator',
   'annualized-return-calculator',
   'apy-calculator',
   'basis-point-calculator',

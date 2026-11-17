@@ -233,6 +233,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AnnualizedRateOfReturnCalculator',
   'AppreciationCalculator',
   'AnnualizedReturnCalculator',
+  'AnnuityPayoutCalculator',
   'ApyCalculator',
   'BasisPointCalculator',
   'BetaStockCalculator',
@@ -272,6 +273,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DebtCalculator',
   'DebtSnowballCalculator',
   'DeferredAnnuityCalculator',
+  'GrowingAnnuityCalculator',
   'DividendDiscountModelCalculator',
   'DirectMaterialPriceVarianceCalculator',
   'EarCalculator',
@@ -648,6 +650,7 @@ if (isDirect) {
     !isApprovedComponentKey('AnnualizedRateOfReturnCalculator') ||
     !isApprovedComponentKey('AppreciationCalculator') ||
     !isApprovedComponentKey('AnnualizedReturnCalculator') ||
+    !isApprovedComponentKey('AnnuityPayoutCalculator') ||
     !isApprovedComponentKey('ApyCalculator') ||
     !isApprovedComponentKey('BasisPointCalculator') ||
     !isApprovedComponentKey('BetaStockCalculator') ||
@@ -687,6 +690,7 @@ if (isDirect) {
     !isApprovedComponentKey('DebtCalculator') ||
     !isApprovedComponentKey('DebtSnowballCalculator') ||
     !isApprovedComponentKey('DeferredAnnuityCalculator') ||
+    !isApprovedComponentKey('GrowingAnnuityCalculator') ||
     !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
     !isApprovedComponentKey('EarCalculator') ||

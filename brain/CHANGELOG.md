@@ -1,6 +1,22 @@
+### 2026-11-17 — Growing Annuity Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Growing Annuity Calculator on existing catalog slug `growing-annuity-calculator` (`GrowingAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffac`). Solve PV/FV/payment; deposit/withdrawal; ordinary/due; growth; independent Phase 2 FX. Activated.
+- **Formulas:** `i = (1 + r/m)^(m/q) − 1`; `g = (1 + G)^(1/q) − 1`; period schedule due/ordinary; total payments geometric sum; total return = FV − opening − net contributions.
+- **FX:** Independent currencies on initial deposit, annuity amount, target FV; normalize into initial-deposit currency. Rates/dates/frequencies/counts never convert.
+- **Example:** 0 / 1,000/mo due / 6y / 5% / 3% growth → FV ≈ 91,514.60; deposits ≈ 78,682.51; return ≈ 12,832.09.
+- **Important Files:** `frontend/src/tools/calculators/growing-annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-growing-annuity-tool.ts`, `brain/*`.
+- **Verification:** Catalog undeveloped before coding. MongoDB activated. Lint/builds/tests omitted per user. No push.
+
 # Development Changelog (`CHANGELOG.md`)
 
 > **Convention:** Append entries chronologically after verified tasks. Do not rewrite historical entries.
+
+### 2026-11-17 — Annuity Payout Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Annuity Payout Calculator on existing catalog slug `annuity-payout-calculator` (`AnnuityPayoutCalculator`, catalog `6af46f0fa27d8d1d4e98ffa9`). Modes: fixed length (default) and fixed payment. Main specs: initial balance, payout frequency, ordinary/due, length or payment, annuity rate; checkbox unlocks compounding, final balance, and annual growth. Narrative results for withdrawal, duration, total interest, and applicable final balance. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Default period rate `r = (1+i)^(1/k)−1`; with compounding `r = (1+i/m)^(m/k)−1`. Ordinary level payout `PMT = PV × r / (1 − (1+r)^(-n))`; due divides by `(1+r)`; `r = 0` → `PV/n`. Growing annuity closed form when growth ≠ 0. Total interest from the withdrawal schedule. Fixed-payment mode solves period count to the target final balance.
+- **FX:** Independent currencies on initial balance, fixed-payment amount, and final balance (Margin Interest / Phase 2). Normalize payment and final into the initial-balance currency before solving. Rates, lengths, and frequencies never convert. Stale/missing rate handling reused via `CURRENCY_CONVERSION_SLUGS`.
+- **Example:** 100,000 PKR / 6% / 10 years / monthly / ordinary → payment ≈ 1,102.24; total interest ≈ 32,268.83.
+- **Important Files:** `frontend/src/tools/calculators/annuity-payout/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-annuity-payout-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Math self-check matched screenshot. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
 
 ---
 
