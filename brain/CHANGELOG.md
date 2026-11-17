@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add kPa Converter
+- **Summary:** Shipped kPa Converter on existing catalog slug kpa-converter (KpaConverter, catalog 6af46f17a27d8d1d4e990b24). Primary kPa with expandable bar/psi/atm; reuses pressure-conversion convertPressure; exact 1 bar = 100 kPa and 1 atm = 101.325 kPa; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar preserved from live row; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-346b delivery for Conversion and Units kilopascal multi-unit pressure converter.
+- **Important Files:** frontend/src/tools/calculators/kpa-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100 kPa = 1 bar; 1 atm = 101.325 kPa; 100 kPa ≈ 14.503774 psi; 30 psi ≈ 206.842719 kPa; round-trip; negatives accepted). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add km to Feet Conversion
 - **Summary:** Shipped km to Feet Conversion on existing catalog slug km-to-feet-conversion (KmToFeetConversion, catalog 6af46f17a27d8d1d4e990af5). Bidirectional km↔ft via exact 1 ft = 0.3048 m; Other length units accordion (mm/cm/m/in/yd/mi); reuses meter-converter convertLength; empty default; negatives rejected; original guide/table/FAQs. Live Feet Converter pillar 6af451d1a27d8d1d4e98f9e6 preserved (brief typo …d2…); subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-345b delivery for Conversion and Units kilometers↔feet converter under Feet Converter pillar.
