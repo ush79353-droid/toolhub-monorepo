@@ -1645,6 +1645,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ApyCalculator,
     })),
   ),
+  BalloonPaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/balloon-payment/BalloonPaymentCalculator'
+    ).then((mod) => ({
+      default: mod.BalloonPaymentCalculator,
+    })),
+  ),
   BasisPointCalculator: lazyTool(() =>
     import('@/tools/calculators/basis-point/BasisPointCalculator').then((mod) => ({
       default: mod.BasisPointCalculator,
@@ -2123,11 +2130,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RentSplitCalculator,
     })),
   ),
-  RentVsBuyCalculator: lazyTool(() =>
-    import('@/tools/calculators/rent-vs-buy/RentVsBuyCalculator').then((mod) => ({
-      default: mod.RentVsBuyCalculator,
-    })),
-  ),
   BitcoinEtfCalculator: lazyTool(() =>
     import('@/tools/calculators/bitcoin-etf/BitcoinEtfCalculator').then((mod) => ({
       default: mod.BitcoinEtfCalculator,
@@ -2138,6 +2140,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/biweekly-mortgage/BiweeklyMortgageCalculator'
     ).then((mod) => ({
       default: mod.BiweeklyMortgageCalculator,
+    })),
+  ),
+  BiWeeklyMortgagePaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bi-weekly-mortgage-payment/BiWeeklyMortgagePaymentCalculator'
+    ).then((mod) => ({
+      default: mod.BiWeeklyMortgagePaymentCalculator,
     })),
   ),
   BoatLoanCalculator: lazyTool(() =>
@@ -2341,6 +2350,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/mortgage-prepayment/MortgagePrepaymentCalculator'
     ).then((mod) => ({
       default: mod.MortgagePrepaymentCalculator,
+    })),
+  ),
+  MortgageWithExtraPaymentsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-with-extra-payments/MortgageWithExtraPaymentsCalculator'
+    ).then((mod) => ({
+      default: mod.MortgageWithExtraPaymentsCalculator,
     })),
   ),
   MortgagePointsCalculator: lazyTool(() =>

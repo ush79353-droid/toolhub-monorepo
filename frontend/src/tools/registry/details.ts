@@ -366,6 +366,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AnnualizedReturnCalculator: () =>
     import('@/tools/calculators/annualized-return/detail'),
   ApyCalculator: () => import('@/tools/calculators/apy/detail'),
+  BalloonPaymentCalculator: () =>
+    import('@/tools/calculators/balloon-payment/detail'),
   BasisPointCalculator: () =>
     import('@/tools/calculators/basis-point/detail'),
   BetaStockCalculator: () =>
@@ -546,12 +548,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/real-rate-of-return/detail'),
   RentSplitCalculator: () =>
     import('@/tools/calculators/rent-split/detail'),
-  RentVsBuyCalculator: () =>
-    import('@/tools/calculators/rent-vs-buy/detail'),
   BitcoinEtfCalculator: () =>
     import('@/tools/calculators/bitcoin-etf/detail'),
   BiweeklyMortgageCalculator: () =>
     import('@/tools/calculators/biweekly-mortgage/detail'),
+  BiWeeklyMortgagePaymentCalculator: () =>
+    import('@/tools/calculators/bi-weekly-mortgage-payment/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
   JumboLoanCalculator: () =>
@@ -613,6 +615,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mortgage-acceleration/detail'),
   MortgagePrepaymentCalculator: () =>
     import('@/tools/calculators/mortgage-prepayment/detail'),
+  MortgageWithExtraPaymentsCalculator: () =>
+    import('@/tools/calculators/mortgage-with-extra-payments/detail'),
   MortgagePointsCalculator: () =>
     import('@/tools/calculators/mortgage-points/detail'),
   HoldingPeriodReturnCalculator: () =>

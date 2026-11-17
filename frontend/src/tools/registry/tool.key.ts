@@ -225,6 +225,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AppreciationCalculator',
   'AnnualizedReturnCalculator',
   'ApyCalculator',
+  'BalloonPaymentCalculator',
   'BasisPointCalculator',
   'BetaStockCalculator',
   'AverageCollectionPeriodCalculator',
@@ -315,9 +316,9 @@ export const APPROVED_COMPONENT_KEYS = [
   'RateOfReturnCalculator',
   'RealRateOfReturnCalculator',
   'RentSplitCalculator',
-  'RentVsBuyCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
+  'BiWeeklyMortgagePaymentCalculator',
   'BoatLoanCalculator',
   'JumboLoanCalculator',
   'LandLoanCalculator',
@@ -620,6 +621,7 @@ if (isDirect) {
     !isApprovedComponentKey('AppreciationCalculator') ||
     !isApprovedComponentKey('AnnualizedReturnCalculator') ||
     !isApprovedComponentKey('ApyCalculator') ||
+    !isApprovedComponentKey('BalloonPaymentCalculator') ||
     !isApprovedComponentKey('BasisPointCalculator') ||
     !isApprovedComponentKey('BetaStockCalculator') ||
         !isApprovedComponentKey('AverageCollectionPeriodCalculator') ||
@@ -709,9 +711,9 @@ if (isDirect) {
     !isApprovedComponentKey('RateOfReturnCalculator') ||
     !isApprovedComponentKey('RealRateOfReturnCalculator') ||
     !isApprovedComponentKey('RentSplitCalculator') ||
-    !isApprovedComponentKey('RentVsBuyCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
+    !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
     !isApprovedComponentKey('JumboLoanCalculator') ||
     !isApprovedComponentKey('LandLoanCalculator') ||
@@ -745,6 +747,7 @@ if (isDirect) {
     !isApprovedComponentKey('MortgageAccelerationCalculator') ||
     !isApprovedComponentKey('MortgageAmortizationCalculator') ||
     !isApprovedComponentKey('MortgagePrepaymentCalculator') ||
+    !isApprovedComponentKey('MortgageWithExtraPaymentsCalculator') ||
     !isApprovedComponentKey('MortgagePointsCalculator') ||
     !isApprovedComponentKey('CanadianMortgageCalculator') ||
     !isApprovedComponentKey('MortgageCalculatorUk') ||
