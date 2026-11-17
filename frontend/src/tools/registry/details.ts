@@ -24,6 +24,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),
   LoanInterestCalculator: () =>
     import('@/tools/calculators/loan-interest/detail'),
+  NetDebtCalculator: () =>
+    import('@/tools/calculators/net-debt/detail'),
   RrefCalculator: () => import('@/tools/calculators/rref/detail'),
   ArmMortgageCalculator: () => import('@/tools/calculators/arm-mortgage/detail'),
   HundredDayCalculator: () => import('@/tools/calculators/hundred-day/detail'),

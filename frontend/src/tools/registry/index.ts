@@ -95,6 +95,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LoanInterestCalculator,
     })),
   ),
+  NetDebtCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/net-debt/NetDebtCalculator'
+    ).then((mod) => ({
+      default: mod.NetDebtCalculator,
+    })),
+  ),
   RrefCalculator: lazyTool(() =>
     import('@/tools/calculators/rref/RrefCalculator').then((mod) => ({
       default: mod.RrefCalculator,
