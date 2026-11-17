@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add micron to mil Conversion Calculator
+- **Summary:** Shipped micron to mil Conversion Calculator on existing catalog slug micron-to-mil-conversion-calculator (MicronToMilConversionCalculator, catalog 6af46f17a27d8d1d4e990b29). Bidirectional µm↔mil via exact 1 mil = 25.4 µm (meter-converter um/mil); More options accordion mm/cm/m/in/nm; empty default; signed lengths allowed; mil ≠ mm clarified; chart/FAQs. Pillar 6af451d3a27d8d1d4e98f9f0 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-361b delivery for Conversion and Units micron-to-mil converter under mil Conversion pillar.
+- **Important Files:** frontend/src/tools/calculators/micron-to-mil/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (25.4 µm = 1 mil; 254 µm = 10 mil; 40 mil = 1016 µm; 1000 µm ≈ 39.37007874 mil; reverse; convertLength parity; signed lengths). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d3a27d8d1d4e98f9f0). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add mg to teaspoon Converter
 - **Summary:** Shipped mg to teaspoon Converter on existing catalog slug mg-to-teaspoon-converter (MgToTeaspoonConverter, catalog 6af46f17a27d8d1d4e990b55). Density-based bidirectional mg↔tsp; US tsp 4.92892159375 mL default (metric 5 mL); reuses mg-to-tablespoon density helpers/substances; Salt default ≈ 1.217 g/mL; empty mass/volume; medication-dose disclaimer; original guide/examples/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-360b delivery for Conversion and Units milligrams-to-teaspoons converter.
