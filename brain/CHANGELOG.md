@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-17 — Jumbo Loan Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Jumbo Loan Calculator on existing catalog slug `jumbo-loan-calculator` (`JumboLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff54`). Screenshot fields: property price, down payment, down payment %, jumbo loan amount, loan term yrs/mos, interest rate, first day, monthly payment. Bidirectional down-payment sync without circular updates. Independent FX on four monetary selectors; mixed inputs normalize into property-price currency. Share result / Reload / Clear / feedback. Activated.
+- **Formulas:** Down = Price × %/100; Loan = Price − Down; n = 12Y+M; r = APR/1200; Payment = P×r/(1−(1+r)^(-n)); r=0 → P/n. Payoff ≈ first day + n months.
+- **Example:** 750,000 / 20% / 30y / 6.5% → loan 600,000; monthly ≈ 3,792.41.
+- **Important Files:** `frontend/src/tools/calculators/jumbo-loan/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-jumbo-loan-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Reference math self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Home Improvement Loan Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Home Improvement Loan Calculator on existing catalog slug `home-improvement-loan-calculator` (`HomeImprovementLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff65`). Loan inputs: amount FX, term yrs/mos, interest %, synced application fee %/amount FX, home loan fees FX. Payment summary: monthly payment, fee-adjusted APR (cash-flow IRR), term, principal, total interest, loan fees, total payments, annual balances chart (balance / principal paid / interest paid). Independent real FX on three money inputs; fees normalized into loan currency. Activated.
 - **Example:** 50,000 PKR / 5y / 7.5% / application fee 0.4% (200) → monthly ≈ 1,001.90; APR ≈ 7.669%; interest ≈ 10,113.85; fees 200; total ≈ 60,313.85.
