@@ -1098,6 +1098,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ProfitabilityIndexCalculator,
     })),
   ),
+  RentOrBuyCalculator: lazyTool(() =>
+    import('@/tools/calculators/rent-or-buy/RentOrBuyCalculator').then((mod) => ({
+      default: mod.RentOrBuyCalculator,
+    })),
+  ),
   RevenuePerEmployeeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/revenue-per-employee/RevenuePerEmployeeCalculator'
@@ -1759,6 +1764,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   NetDebtCalculator: lazyTool(() =>
     import('@/tools/calculators/net-debt/NetDebtCalculator').then((mod) => ({
       default: mod.NetDebtCalculator,
+    })),
+  ),
+  NetEffectiveRentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/net-effective-rent/NetEffectiveRentCalculator'
+    ).then((mod) => ({
+      default: mod.NetEffectiveRentCalculator,
     })),
   ),
   NewYorkOvertimeCalculator: lazyTool(() =>

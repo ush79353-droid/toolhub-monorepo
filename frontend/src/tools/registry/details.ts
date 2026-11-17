@@ -240,6 +240,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/business-loan/detail'),
   ProfitabilityIndexCalculator: () =>
     import('@/tools/calculators/profitability-index/detail'),
+  RentOrBuyCalculator: () =>
+    import('@/tools/calculators/rent-or-buy/detail'),
   RevenuePerEmployeeCalculator: () =>
     import('@/tools/calculators/revenue-per-employee/detail'),
   RoasCalculator: () => import('@/tools/calculators/roas/detail'),
@@ -466,6 +468,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mva/detail'),
   NetDebtCalculator: () =>
     import('@/tools/calculators/net-debt/detail'),
+  NetEffectiveRentCalculator: () =>
+    import('@/tools/calculators/net-effective-rent/detail'),
   NewYorkOvertimeCalculator: () =>
     import('@/tools/calculators/new-york-overtime/detail'),
   NopatCalculator: () =>
@@ -484,6 +488,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/opportunity-cost/detail'),
   OvertimeCalculator: () =>
     import('@/tools/calculators/overtime/detail'),
+  OvertimePaycheckCalculator: () =>
+    import('@/tools/calculators/overtime-paycheck/detail'),
   ParkingRatioCalculator: () =>
     import('@/tools/calculators/parking-ratio/detail'),
   PartiallyAmortizedLoanCalculator: () =>

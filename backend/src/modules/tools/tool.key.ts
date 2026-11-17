@@ -206,6 +206,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AttritionRateCalculator',
   'BusinessLoanCalculator',
   'ProfitabilityIndexCalculator',
+  'RentOrBuyCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
   'RoceCalculator',
@@ -320,6 +321,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MutualFundCalculator',
   'MvaCalculator',
   'NetDebtCalculator',
+  'NetEffectiveRentCalculator',
   'NewYorkOvertimeCalculator',
   'NopatCalculator',
   'NpvCalculator',
@@ -637,6 +639,7 @@ if (isDirect) {
     !isApprovedComponentKey('AttritionRateCalculator') ||
     !isApprovedComponentKey('BusinessLoanCalculator') ||
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
+    !isApprovedComponentKey('RentOrBuyCalculator') ||
     !isApprovedComponentKey('RevenuePerEmployeeCalculator') ||
     !isApprovedComponentKey('RoasCalculator') ||
     !isApprovedComponentKey('RoceCalculator') ||
@@ -751,6 +754,7 @@ if (isDirect) {
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
     !isApprovedComponentKey('NetDebtCalculator') ||
+    !isApprovedComponentKey('NetEffectiveRentCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('NpvCalculator') ||

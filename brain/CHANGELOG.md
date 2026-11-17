@@ -1,3 +1,11 @@
+### 2026-11-17 — Rent or Buy Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Rent or Buy Calculator on existing catalog slug `rent-or-buy-calculator` (`RentOrBuyCalculator`, catalog `6af46f0fa27d8d1d4e98ffc0`). Staying period + money you have; collapsible Rent and Buy; Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Total rent = rent payments + agent + other − deposit interest. Total buy = down payment + buying commission + mortgage payments + other fees + selling commission + mortgage left − future property value. Periodic costs = totals ÷ staying months. Fixed-rate amortization; appreciation compounds annually.
+- **FX:** Independent currencies on money inputs and money results; normalize into money-you-have currency before comparison. Percentages/durations never convert. `CURRENCY_CONVERSION_SLUGS` + stale/missing handling.
+- **Example:** 5y · 50k cash · rent 2k/mo · deposit 2% · property 300k · 5%/30y · buy 4% · sell 7% · fees 2.3% · apprec 2% → total rent ≈ 114,746; total buy ≈ 98,557 (prefer buy).
+- **Important Files:** `frontend/src/tools/calculators/rent-or-buy/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-rent-or-buy-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Rent Increase Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Rent Increase Calculator on existing catalog slug `rent-increase-calculator` (`RentIncreaseCalculator`, catalog `6af46f0fa27d8d1d4e98ffbf`). Fields: current annual rent, average rent change %, years, expected future annual rent. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Future = Current × (1 + Change/100)^Years. Zero years → future = current. Growth may be zero or negative (≥ −100%). Full precision; round only for display.
@@ -141,6 +149,14 @@
 - **Verification:** Catalog verified undeveloped before coding. Math self-check matched screenshot. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
 
 ---
+
+### 2026-11-17 — Net Effective Rent Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Net Effective Rent Calculator on existing catalog slug `net-effective-rent-calculator` (`NetEffectiveRentCalculator`, catalog `6af46f0fa27d8d1d4e98ffbd`). Term/rent, tenant discounts, landlord expenses, monthly + annual NER results; Share/Reload/Clear/feedback. Area-based checkbox shown disabled (no area formula in reference). Activated.
+- **Formulas:** Lease months = yrs×12+mos. Gross = rent×months. Net lease = gross − rent-free − allowance − (fixed op-ex + rent×% /100)×months. Monthly NER = net/months; annual = monthly×12.
+- **FX:** Independent currencies on rent, allowance, op-ex, and both results; normalize into rent currency. Period mo/yr on rent/op-ex. % and month counts never convert.
+- **Example:** 1y / 10,000 rent / 1 free / 5,000 allowance / 500 op-ex → monthly NER 8,250; annual 99,000.
+- **Important Files:** `frontend/src/tools/calculators/net-effective-rent/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-net-effective-rent-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
 
 ### 2026-11-17 — New York Overtime Calculator (Screenshot-First + FX)
 - **Summary:** Shipped New York Overtime Calculator on existing catalog slug `new-york-overtime-calculator` (`NewYorkOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb6`). Regular work time + overtime + in-total sections; Share/Reload/Clear/feedback. Activated.
