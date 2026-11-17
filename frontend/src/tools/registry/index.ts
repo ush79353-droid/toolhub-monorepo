@@ -1126,6 +1126,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SimpleInterestCalculator,
     })),
   ),
+  TdsInterestCalculator: lazyTool(() =>
+    import('@/tools/calculators/tds-interest/TdsInterestCalculator').then((mod) => ({
+      default: mod.TdsInterestCalculator,
+    })),
+  ),
   SinkingFundCalculator: lazyTool(() =>
     import('@/tools/calculators/sinking-fund/SinkingFundCalculator').then((mod) => ({
       default: mod.SinkingFundCalculator,
@@ -1945,6 +1950,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   InterestCalculator: lazyTool(() =>
     import('@/tools/calculators/interest/InterestCalculator').then((mod) => ({
       default: mod.InterestCalculator,
+    })),
+  ),
+  InterestCoverageRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/interest-coverage-ratio/InterestCoverageRatioCalculator'
+    ).then((mod) => ({
+      default: mod.InterestCoverageRatioCalculator,
     })),
   ),
   InterestOnlyMortgageCalculator: lazyTool(() =>

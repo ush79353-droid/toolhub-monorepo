@@ -248,6 +248,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/sell-through-rate/detail'),
   SimpleInterestCalculator: () =>
     import('@/tools/calculators/simple-interest/detail'),
+  TdsInterestCalculator: () =>
+    import('@/tools/calculators/tds-interest/detail'),
   SinkingFundCalculator: () =>
     import('@/tools/calculators/sinking-fund/detail'),
   SmokersCtcCalculator: () =>
@@ -527,6 +529,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InformationRatioCalculator: () =>
     import('@/tools/calculators/information-ratio/detail'),
   InterestCalculator: () => import('@/tools/calculators/interest/detail'),
+  InterestCoverageRatioCalculator: () =>
+    import('@/tools/calculators/interest-coverage-ratio/detail'),
   InterestOnlyMortgageCalculator: () =>
     import('@/tools/calculators/interest-only-mortgage/detail'),
   InterestPerDayCalculator: () =>

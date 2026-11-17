@@ -207,6 +207,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SalesCommissionCalculator',
   'SellThroughRateCalculator',
   'SimpleInterestCalculator',
+  'TdsInterestCalculator',
   'SinkingFundCalculator',
   'SmokersCtcCalculator',
   'TenureCalculator',
@@ -355,6 +356,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
   'InterestCalculator',
+  'InterestCoverageRatioCalculator',
   'InterestOnlyMortgageCalculator',
   'InterestPerDayCalculator',
   'InterestRateCalculator',
@@ -596,6 +598,7 @@ if (isDirect) {
     !isApprovedComponentKey('SalesCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     !isApprovedComponentKey('SimpleInterestCalculator') ||
+    !isApprovedComponentKey('TdsInterestCalculator') ||
     !isApprovedComponentKey('SinkingFundCalculator') ||
     !isApprovedComponentKey('SmokersCtcCalculator') ||
     !isApprovedComponentKey('TenureCalculator') ||
@@ -744,6 +747,7 @@ if (isDirect) {
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
     !isApprovedComponentKey('InterestCalculator') ||
+    !isApprovedComponentKey('InterestCoverageRatioCalculator') ||
     !isApprovedComponentKey('InterestOnlyMortgageCalculator') ||
     !isApprovedComponentKey('InterestPerDayCalculator') ||
     !isApprovedComponentKey('InterestRateCalculator') ||
