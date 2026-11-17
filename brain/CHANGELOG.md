@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Minutes to Decimal Calculator
+- **Summary:** Shipped Minutes to Decimal Calculator on existing catalog slug minutes-to-decimal-calculator (MinutesToDecimalCalculator, catalog 6af46f17a27d8d1d4e990bb3). Clock minutes ↔ synchronized decimal Hours/Minutes/Seconds as equivalent expressions of one duration (not additive HMS); exact 1 h = 60 min = 3600 s; empty default; signed durations; clock vs decimal clarified (1:30 ≠ 1.30); guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-370b delivery for Conversion and Units minutes-to-decimal converter.
+- **Important Files:** frontend/src/tools/calculators/minutes-to-decimal/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0/1/15/30/45/60/75/90/120/150 min → hours; 15/30/60 min → sec; 1.75 h = 105 min; 2.5 h = 150 min; 1800 s = 0.5 h; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Minutes to Days Calculator
 - **Summary:** Shipped Minutes to Days Calculator on existing catalog slug minutes-to-days-calculator (MinutesToDaysCalculator, catalog 6af46f17a27d8d1d4e990bb2). Bidirectional minutes↔days via exact 1 day = 1440 min; example presets 1440→1 day and 180→0.125 days; collapsed Other equivalent amounts (sec/hrs/wks + HMS); reuses hour-converter engine; empty default; non-negative durations; chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-369b delivery for Conversion and Units minutes-to-days converter.
