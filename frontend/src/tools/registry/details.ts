@@ -658,12 +658,16 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   VaMortgageCalculator: () => import('@/tools/calculators/va-mortgage/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
   EidlCalculator: () => import('@/tools/calculators/eidl/detail'),
+  HealsActStimulusCalculator: () =>
+    import('@/tools/calculators/heals-act-stimulus/detail'),
   CaliforniaStimulusCheckIiCalculator: () =>
     import('@/tools/calculators/california-stimulus-check-ii/detail'),
   StudentLoanRepaymentCovidCalculator: () =>
     import('@/tools/calculators/student-loan-repayment-covid/detail'),
   CashActStimulusCalculator: () =>
     import('@/tools/calculators/cash-act-stimulus/detail'),
+  SecondStimulus900BillionCalculator: () =>
+    import('@/tools/calculators/second-stimulus-900-billion/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

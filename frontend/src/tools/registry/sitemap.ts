@@ -387,8 +387,11 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sharpe-ratio-calculator',
   'value-at-risk-calculator-var',
   'economic-injury-disaster-loan-emergency-advance-eidl',
+  'second-stimulus-check-calculator-heals-act',
   'california-stimulus-check-ii-calculator',
   'stimulus-check-calculator-40k-cap',
+  'second-stimulus-check-calculator-900-billion-bill',
+  'second-stimulus-check-calculator-cash-act',
 ] as const;
 
 const STATIC_PATHS = [

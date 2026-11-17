@@ -2518,6 +2518,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EidlCalculator,
     })),
   ),
+  HealsActStimulusCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/heals-act-stimulus/HealsActStimulusCalculator'
+    ).then((mod) => ({
+      default: mod.HealsActStimulusCalculator,
+    })),
+  ),
   CaliforniaStimulusCheckIiCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/california-stimulus-check-ii/CaliforniaStimulusCheckIiCalculator'
@@ -2538,6 +2545,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/cash-act-stimulus/CashActStimulusCalculator'
     ).then((mod) => ({
       default: mod.CashActStimulusCalculator,
+    })),
+  ),
+  SecondStimulus900BillionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/second-stimulus-900-billion/SecondStimulus900BillionCalculator'
+    ).then((mod) => ({
+      default: mod.SecondStimulus900BillionCalculator,
     })),
   ),
 };

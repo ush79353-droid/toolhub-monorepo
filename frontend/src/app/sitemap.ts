@@ -474,9 +474,11 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'va-mortgage-calculator',
   'value-at-risk-calculator-var',
   'economic-injury-disaster-loan-emergency-advance-eidl',
+  'second-stimulus-check-calculator-heals-act',
   'california-stimulus-check-ii-calculator',
   'student-loan-repayment-calculator-covid-19',
   'stimulus-check-calculator-40k-cap',
+  'second-stimulus-check-calculator-cash-act',
 ] as const;
 
 const STATIC_PATHS = [

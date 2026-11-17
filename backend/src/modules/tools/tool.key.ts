@@ -466,9 +466,11 @@ export const APPROVED_COMPONENT_KEYS = [
   'ValueAtRiskCalculator',
   'EidlCalculator',
   'CaliforniaStimulusCheckIiCalculator',
+  'HealsActStimulusCalculator',
   'StudentLoanRepaymentCovidCalculator',
   'StimulusCheck40kCalculator',
   'CashActStimulusCalculator',
+  'SecondStimulus900BillionCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -959,6 +961,8 @@ if (isDirect) {
     !isApprovedComponentKey('HealsActStimulusCalculator') ||
     !isApprovedComponentKey('StudentLoanRepaymentCovidCalculator') ||
     !isApprovedComponentKey('StimulusCheck40kCalculator') ||
+    !isApprovedComponentKey('CashActStimulusCalculator') ||
+    !isApprovedComponentKey('SecondStimulus900BillionCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
