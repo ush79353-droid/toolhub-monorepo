@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-18** (Deferred Payment Loan Calculator live at `/tools/deferred-payment-loan-calculator` with Phase 2 FX; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-18** (Rent vs. Buy Calculator live at `/tools/rent-vs-buy-calculator` with Phase 2 FX; Auto Loan remains master Tool Detail Page).
 
 ---
 

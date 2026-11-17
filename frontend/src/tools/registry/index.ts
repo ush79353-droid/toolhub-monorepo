@@ -2130,6 +2130,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RentSplitCalculator,
     })),
   ),
+  RentVsBuyCalculator: lazyTool(() =>
+    import('@/tools/calculators/rent-vs-buy/RentVsBuyCalculator').then((mod) => ({
+      default: mod.RentVsBuyCalculator,
+    })),
+  ),
   BitcoinEtfCalculator: lazyTool(() =>
     import('@/tools/calculators/bitcoin-etf/BitcoinEtfCalculator').then((mod) => ({
       default: mod.BitcoinEtfCalculator,

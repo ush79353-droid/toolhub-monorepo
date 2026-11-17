@@ -335,6 +335,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'price-quantity-calculator',
   'prorated-rent-calculator',
   'rent-split-calculator',
+  'rent-vs-buy-calculator',
   'pvgo-calculator',
   'pvifa-calculator',
   'rate-of-return-calculator',
