@@ -1093,6 +1093,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FtToMConverter,
     })),
   ),
+  GajToSquareYardConverter: lazyTool(() =>
+    import('@/tools/calculators/gaj-to-square-yard/GajToSquareYardConverter').then((mod) => ({
+      default: mod.GajToSquareYardConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
