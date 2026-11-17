@@ -1377,6 +1377,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MortgageCalculatorUk,
     })),
   ),
+  CaliforniaOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/california-overtime/CaliforniaOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.CaliforniaOvertimeCalculator,
+    })),
+  ),
   CarInterestCalculator: lazyTool(() =>
     import('@/tools/calculators/car-interest/CarInterestCalculator').then((mod) => ({
       default: mod.CarInterestCalculator,

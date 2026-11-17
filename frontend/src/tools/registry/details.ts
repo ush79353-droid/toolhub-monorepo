@@ -328,6 +328,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/canadian-mortgage/detail'),
   MortgageCalculatorUk: () =>
     import('@/tools/calculators/mortgage-uk/detail'),
+  CaliforniaOvertimeCalculator: () =>
+    import('@/tools/calculators/california-overtime/detail'),
   CarInterestCalculator: () =>
     import('@/tools/calculators/car-interest/detail'),
   CarLoanEmiCalculator: () =>

@@ -1,3 +1,28 @@
+### 2026-11-17 — Georgia Overtime Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Georgia Overtime Calculator on existing catalog slug `georgia-overtime-calculator` (`GeorgiaOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb4`). Regular work time + overtime + in-total sections; Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Regular monthly = hourly × weekly hours × 52/12; OT hourly = hourly × multiplier; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Unit normalization for rate/duration/frequency; blank OT hours → 0; negative pay/hours rejected.
+- **FX:** Independent currencies on all money selectors; normalize into regular-pay currency at full precision; display rounding only. Hours, time units, and multiplier never convert. Stale/missing rate handling via `CURRENCY_CONVERSION_SLUGS`.
+- **Legal:** Estimate only — does not claim Georgia/FLSA eligibility or workweek compliance.
+- **Example:** 20/hr × 40 hr/week × 1.5 × 10 OT hr/month → regular ≈ 3,466.67; OT rate 30; OT pay 300; total ≈ 3,766.67.
+- **Important Files:** `frontend/src/tools/calculators/georgia-overtime/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-georgia-overtime-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — California Overtime Calculator (Screenshot-First + FX)
+- **Summary:** Shipped California Overtime Calculator on existing catalog slug `california-overtime-calculator` (`CaliforniaOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb2`). Collapsible Regular work time + Overtime; In total; Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Regular Monthly = Hourly × Weekly Hours × 52/12; OT Rate = Hourly × Multiplier; OT Pay = OT Rate × OT Hours/month; Total = Regular + OT. Blank OT hours → 0. Unit selectors normalize pay/time. Does **not** model daily OT, double time, or seventh-day rules — not a legal-compliance claim.
+- **FX:** Independent currencies on regular pay + four money results; math in regular-pay currency; result selectors re-express only. Hours/units/multiplier never FX-convert. `CURRENCY_CONVERSION_SLUGS` + stale/missing handling.
+- **Example:** 20/hr × 40 hr/week × 1.5 × 10 OT hr/month → regular ≈ 3,466.67; OT rate 30; OT pay 300; total ≈ 3,766.67.
+- **Important Files:** `frontend/src/tools/calculators/california-overtime/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-california-overtime-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Variable Annuity Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Variable Annuity Calculator on existing catalog slug `variable-annuity-calculator` (`VariableAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffb0`). Final-balance mode; starting balance, ages/length sync, contribution, payment frequency, due/ordinary, return, compounding, contribution growth; tax section (US federal / Single); results summary + table. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** `i = (1+r/m)^(m/q)−1`; growing-annuity FV for contributions; due ×(1+i). Example: 10,000 + 100/mo due / 12% yearly compound / 35y → ≈ 1,079,079.31 before tax; 420 contributions; total contributed 42,000.
+- **Tax:** Year-by-year tax on investment gains using published IRS TY2024 Single ordinary brackets (Rev. Proc. 2023-34); brackets inflate with inflation; income grows with stated rate. Not Omni’s proprietary taxable model — may differ from third-party screenshots. No invented brackets.
+- **FX:** Independent currencies on starting balance, contribution, and annual income; normalize into starting-balance currency. Rates/ages/durations never convert.
+- **Important Files:** `frontend/src/tools/calculators/variable-annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-variable-annuity-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Pretax self-check matched screenshot. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Florida Overtime Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Florida Overtime Calculator on existing catalog slug `florida-overtime-calculator` (`FloridaOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb3`). Collapsible Regular work time + Overtime sections; In total; Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Regular monthly = hourly × weekly hours × 52/12; OT hourly = regular hourly × multiplier; monthly OT = OT hourly × monthly OT hours; total = regular + OT. Blank OT hours treated as zero. Unit selectors normalize pay/time. Does not invent daily overtime rules or claim statutory compliance.
@@ -34,6 +59,13 @@
 
 > **Convention:** Append entries chronologically after verified tasks. Do not rewrite historical entries.
 
+### 2026-11-17 — Illinois Overtime Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Illinois Overtime Calculator on existing catalog slug `illinois-overtime-calculator` (`IllinoisOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb5`). Sections: Regular work time, Overtime, In total. Defaults 40 hours/week and 1.5× multiplier. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Regular monthly = hourly × weekly hours × 52/12; OT hourly = hourly × multiplier; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Time-unit conversions supported; blank OT hours = 0.
+- **FX:** Independent currencies on regular pay and all money result fields (Margin Interest / Phase 2). Normalize compute in regular-pay currency; rates/hours/multiplier never convert. `CURRENCY_CONVERSION_SLUGS` + stale/missing handling.
+- **Example:** 20/hr · 40 hr/week · 1.5× · 10 OT hr/month → regular ≈ 3,466.67; OT rate 30; OT pay 300; total ≈ 3,766.67.
+- **Important Files:** `frontend/src/tools/calculators/illinois-overtime/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-illinois-overtime-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
 ### 2026-11-17 — Present Value of Annuity Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Present Value of Annuity Calculator on existing catalog slug `present-value-of-annuity-calculator` (`PresentValueOfAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffaf`). Ordinary/due, frequencies, growth section, independent FX. Activated.
 - **Formulas:** i = (1+r/m)^(m/q)−1; n = round(years×q); ordinary PV = PMT×(1−(1+i)^(−n))/i; due ×(1+i); growing closed forms when g ≠ 0.
