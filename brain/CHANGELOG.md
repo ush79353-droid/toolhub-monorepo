@@ -1,3 +1,9 @@
+### 2026-11-17 — Car Interest Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Car Interest Calculator on existing catalog slug `car-interest-calculator` (`CarInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff7f`). Two collapsible sections: Calculate the loan amount (car price / down payment / trade-in) + Car interest (calculated loan amount, rate %, yrs/mos, monthly payment, total interest). Formulas: P = price − down − trade-in; n = years×12+months; r = APR/1200; M = P×r/(1−(1+r)^(−n)) (P/n if r=0); interest = M×n−P. Independent real FX on all six money fields; mixed inputs normalize into loan-amount currency. Activated.
+- **Example:** 2,000,000 − 400,000 − 100,000 @ 12% / 5y → P 1,500,000; payment ≈ 33,366.67; interest ≈ 502,000.29.
+- **Important Files:** `frontend/src/tools/calculators/car-interest/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-car-interest-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated (`isDeveloped`/`isActive`/`indexable` true). Formula self-check via `tsx`. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Rent or Buy Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Rent or Buy Calculator on existing catalog slug `rent-or-buy-calculator` (`RentOrBuyCalculator`, catalog `6af46f0fa27d8d1d4e98ffc0`). Staying period + money you have; collapsible Rent and Buy; Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Total rent = rent payments + agent + other − deposit interest. Total buy = down payment + buying commission + mortgage payments + other fees + selling commission + mortgage left − future property value. Periodic costs = totals ÷ staying months. Fixed-rate amortization; appreciation compounds annually.
@@ -149,13 +155,6 @@
 - **Verification:** Catalog verified undeveloped before coding. Math self-check matched screenshot. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
 
 ---
-
-### 2026-11-17 — Lottery Annuity Calculator (Screenshot-First + FX)
-- **Summary:** Shipped Lottery Annuity Calculator on existing catalog slug `lottery-annuity-calculator` (`LotteryAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffae`). Prize FX, years, payout growth %, rate of return %, tax radios (without / US blocked / custom rate). Scrollable year/payout/total table. Activated.
-- **Formulas:** Prize = PV of growing ordinary annuity; First_Payout from PV factor; Payout_year = First × (1+g)^(year−1). Handles r=g, r=0, g=0. Custom tax: net = gross×(1−t). US taxes blocked (no invented brackets).
-- **Example:** 1,000,000 / 30y / 5% growth / 0% return → first ≈ 15,051.74.
-- **Important Files:** `frontend/src/tools/calculators/lottery-annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-lottery-annuity-tool.ts`, `brain/*`.
-- **Verification:** Catalog undeveloped before coding. Formula self-check. Mongo activated. Lint/builds/tests omitted per user. No push/pull/sync.
 
 ### 2026-11-17 — Net Effective Rent Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Net Effective Rent Calculator on existing catalog slug `net-effective-rent-calculator` (`NetEffectiveRentCalculator`, catalog `6af46f0fa27d8d1d4e98ffbd`). Term/rent, tenant discounts, landlord expenses, monthly + annual NER results; Share/Reload/Clear/feedback. Area-based checkbox shown disabled (no area formula in reference). Activated.
@@ -430,13 +429,6 @@
 ### 2026-11-17 — Add VA Mortgage Calculator (Screenshot-First, Fixed USD)
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
-
-### 2026-11-17 — Lottery Annuity Calculator (Screenshot-First + FX)
-- **Summary:** Shipped Lottery Annuity Calculator on existing catalog slug `lottery-annuity-calculator` (`LotteryAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffae`). Prize FX, years, payout growth %, rate of return %, tax radios (without / US blocked / custom rate). Scrollable year/payout/total table. Activated.
-- **Formulas:** Prize = PV of growing ordinary annuity; First_Payout from PV factor; Payout_year = First × (1+g)^(year−1). Handles r=g, r=0, g=0. Custom tax: net = gross×(1−t). US taxes blocked (no invented brackets).
-- **Example:** 1,000,000 / 30y / 5% growth / 0% return → first ≈ 15,051.74.
-- **Important Files:** `frontend/src/tools/calculators/lottery-annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-lottery-annuity-tool.ts`, `brain/*`.
-- **Verification:** Catalog undeveloped before coding. Formula self-check. Mongo activated. Lint/builds/tests omitted per user. No push/pull/sync.
 
 ### 2026-11-17 — Margin of Safety Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Margin of Safety Calculator on existing catalog slug `margin-of-safety-calculator` (`MarginOfSafetyCalculator`, catalog `6af46f0fa27d8d1d4e98ffa6`). Current/breakeven sales, per-unit section, MoS money/ratio/%/units. Independent FX on five money selectors. Activated.
