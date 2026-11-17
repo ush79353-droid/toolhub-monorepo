@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Kilometers to Miles Calculator
+- **Summary:** Shipped Kilometers to Miles Calculator on existing catalog slug kilometers-to-miles-calculator (KilometersToMilesCalculator, catalog 6af46f17a27d8d1d4e990b1e). Bidirectional km↔mi via exact 1 mi = 1.609344 km; reuses formatLength; empty default; negatives rejected; original guide/table/FAQs. Kilometer Calculator pillar 6af451d2a27d8d1d4e98f9ed preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-344b delivery for Conversion and Units kilometers↔miles pair converter under Kilometer Calculator pillar.
+- **Important Files:** frontend/src/tools/calculators/kilometers-to-miles/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 km ≈ 0.6213711922 mi; 10 km ≈ 6.21371192 mi; 5 mi = 8.04672 km; marathon 42.195 km ≈ 26.2188 mi; round-trip; meter-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Kilometer to Meter Converter
 - **Summary:** Shipped Kilometer to Meter Converter on existing catalog slug kilometer-to-meter-converter (KilometerToMeterConverter, catalog 6af46f17a27d8d1d4e990b1d). Bidirectional km↔m via exact 1 km = 1000 m; reuses formatLength; empty default; negatives rejected; original guide/table/FAQs. Kilometer Calculator pillar 6af451d2a27d8d1d4e98f9ed preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-343b delivery for Conversion and Units kilometers↔meters pair converter under Kilometer Calculator pillar.
