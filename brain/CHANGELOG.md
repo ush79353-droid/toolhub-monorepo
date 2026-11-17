@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add mg to tablespoon Converter
+- **Summary:** Shipped mg to tablespoon Converter on existing catalog slug mg-to-tablespoon-converter (MgToTablespoonConverter, catalog 6af46f17a27d8d1d4e990b54). Density-based bidirectional mg↔tbsp; US tbsp 14.78676478125 mL default (metric 15 / Australian 20); Salt default ≈ 1.217 g/mL with density unit normalize; ingredient presets + custom; empty mass/volume; medication-dose disclaimer; original guide/examples/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-359b delivery for Conversion and Units milligrams-to-tablespoons converter.
+- **Important Files:** frontend/src/tools/calculators/mg-to-tablespoon/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US tbsp water = 14786.76478125 mg; 1 US tbsp salt @ 1.217 ≈ 17994.49 mg; 10000 mg salt ≈ 0.55573 US tbsp; metric/Australian factors; zero density/negatives rejected; density unit normalize). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add mg to lbs Converter
 - **Summary:** Shipped mg to lbs Converter on existing catalog slug mg-to-lbs-converter (MgToLbsConverter, catalog 6af46f17a27d8d1d4e990b52). Bidirectional mg↔lb via exact 1 lb = 453,592.37 mg; milligrams-first UI; empty default; negatives rejected; tiny positive values preserved; original guide/table/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-358b delivery for Conversion and Units milligrams-to-pounds converter.
