@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Degrees to Radians Converter
+- **Summary:** Shipped Degrees to Radians Converter on existing catalog slug degrees-to-radians-converter (DegreesToRadiansConverter, catalog 6af46f17a27d8d1d4e990bfd). Bidirectional degrees ↔ radians via Math.PI; empty default; signed and >360 allowed; optional pi-fraction labels; guide + table + FAQs. Reuses hardened degreesToRadians/radiansToDegrees on angle-conversion/calculation.ts. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-292b delivery for Conversion & Units angle converter.
+- **Important Files:** frontend/src/tools/calculators/degrees-to-radians/*, frontend/src/tools/calculators/angle-conversion/calculation.ts, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md.
+- **Verification:** calculation.test.ts passed; angle-conversion and degrees-to-minutes tests still pass; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Degrees to Minutes Converter
 - **Summary:** Shipped Degrees to Minutes Converter on existing catalog slug `degrees-to-minutes-converter` (`DegreesToMinutesConverter`, catalog `6af46f17a27d8d1d4e990bfc`). Bidirectional degrees ↔ arcminutes with exact factor 60; empty default; signed and >360° allowed; angular-not-time copy; guide + FAQs. Reuses new exact helpers on `angle-conversion/calculation.ts`. Null pillar/subPillar preserved. Meta title ≤70. `indexable` left false.
 - **Why:** TOOL-291 delivery for Conversion & Units angle converter.
