@@ -1155,6 +1155,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GrToMlConverter,
     })),
   ),
+  GToTspConverter: lazyTool(() =>
+    import('@/tools/calculators/g-to-tsp/GToTspConverter').then((mod) => ({
+      default: mod.GToTspConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

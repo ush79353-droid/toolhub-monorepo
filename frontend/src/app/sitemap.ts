@@ -241,6 +241,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'grams-to-fl-oz-converter',
   'gram-to-liter-conversion',
   'gr-to-ml-converter',
+  'g-to-tsp-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

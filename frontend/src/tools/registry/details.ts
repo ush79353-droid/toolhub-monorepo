@@ -246,6 +246,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GramsToFlOzConverter: () => import('@/tools/calculators/grams-to-fl-oz/detail'),
   GramToLiterConversion: () => import('@/tools/calculators/gram-to-liter/detail'),
   GrToMlConverter: () => import('@/tools/calculators/gr-to-ml/detail'),
+  GToTspConverter: () => import('@/tools/calculators/g-to-tsp/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
