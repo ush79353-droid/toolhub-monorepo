@@ -1678,6 +1678,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BoatLoanCalculator,
     })),
   ),
+  JumboLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/jumbo-loan/JumboLoanCalculator').then((mod) => ({
+      default: mod.JumboLoanCalculator,
+    })),
+  ),
   LandLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/land-loan/LandLoanCalculator').then((mod) => ({
       default: mod.LandLoanCalculator,
@@ -1814,6 +1819,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/home-equity-loan/HomeEquityLoanCalculator'
     ).then((mod) => ({
       default: mod.HomeEquityLoanCalculator,
+    })),
+  ),
+  HomeImprovementLoanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/home-improvement-loan/HomeImprovementLoanCalculator'
+    ).then((mod) => ({
+      default: mod.HomeImprovementLoanCalculator,
     })),
   ),
   HomeLoanEmiCalculator: lazyTool(() =>

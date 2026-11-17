@@ -309,6 +309,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BoatLoanCalculator',
+  'JumboLoanCalculator',
   'LandLoanCalculator',
   'PagIbigHousingLoanCalculator',
   'RvLoanCalculator',
@@ -331,6 +332,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FdCalculator',
   'FhaLoanCalculator',
   'HomeEquityLoanCalculator',
+  'HomeImprovementLoanCalculator',
   'HomeLoanEmiCalculator',
   'HomeLoanCalculator',
   'MortgageTaxesInsuranceCalculator',
@@ -688,6 +690,7 @@ if (isDirect) {
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
+    !isApprovedComponentKey('JumboLoanCalculator') ||
     !isApprovedComponentKey('LandLoanCalculator') ||
     !isApprovedComponentKey('PagIbigHousingLoanCalculator') ||
     !isApprovedComponentKey('RvLoanCalculator') ||
@@ -710,6 +713,7 @@ if (isDirect) {
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||
     !isApprovedComponentKey('HomeEquityLoanCalculator') ||
+    !isApprovedComponentKey('HomeImprovementLoanCalculator') ||
     !isApprovedComponentKey('HomeLoanEmiCalculator') ||
     !isApprovedComponentKey('HomeLoanCalculator') ||
     !isApprovedComponentKey('MortgageTaxesInsuranceCalculator') ||

@@ -4,7 +4,12 @@
 
 ---
 
-<<<<<<< HEAD
+### 2026-11-17 — Home Improvement Loan Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Home Improvement Loan Calculator on existing catalog slug `home-improvement-loan-calculator` (`HomeImprovementLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff65`). Loan inputs: amount FX, term yrs/mos, interest %, synced application fee %/amount FX, home loan fees FX. Payment summary: monthly payment, fee-adjusted APR (cash-flow IRR), term, principal, total interest, loan fees, total payments, annual balances chart (balance / principal paid / interest paid). Independent real FX on three money inputs; fees normalized into loan currency. Activated.
+- **Example:** 50,000 PKR / 5y / 7.5% / application fee 0.4% (200) → monthly ≈ 1,001.90; APR ≈ 7.669%; interest ≈ 10,113.85; fees 200; total ≈ 60,313.85.
+- **Important Files:** `frontend/src/tools/calculators/home-improvement-loan/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-home-improvement-loan-tool.ts`, `brain/*`.
+- **Verification:** Formula self-check vs screenshot. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Mortgage Rate Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Rate Calculator on existing catalog slug `mortgage-rate-calculator` (`MortgageRateCalculator`, catalog `6af46f0fa27d8d1d4e98ff7b`). Main configuration (loan FX, term yrs/mos, rate %, compounding Yearly / Semi-annually Canada / Quarterly / Monthly UK & US, Fixed-rate only) + fees (points %, up-front FX, annual FX). Results: monthly payment, fee-adjusted APR, paid interest, total payments. Independent FX on six money fields; mixed inputs normalized into loan currency. No ARM formulas. Activated.
 - **Example:** 200,000 PKR / 30y / 5% Monthly (UK & US) → payment ≈ 1,073.64; interest ≈ 186,511.57; total ≈ 386,511.57; APR 5%. With 1 point → APR ≈ 5.089%.
@@ -208,7 +213,7 @@
 - **Example:** 100,000 PKR / 5 yrs / 5% → payment ≈ 1,887.12; interest ≈ 13,227.40.
 - **Important Files:** `frontend/src/tools/calculators/boat-loan/*`, registries, `CURRENCY_CONVERSION_SLUGS`, sitemap, `backend/src/scripts/assign-boat-loan-tool.ts`, `brain/*`.
 - **Verification:** Mongo activation verified; worked-example math inspected via `tsx`. Lint/builds/browser/automated tests omitted per user.
-=======
+
 ### 2026-11-16 — Add Days to Years Calculator
 - **Summary:** Shipped Days to Years Calculator on existing catalog slug `days-to-years-calculator` (`DaysToYearsCalculator`, catalog `6af46f17a27d8d1d4e990ba8`). Reuses Day Converter conversion engine; bidirectional days↔years via average Gregorian year 365.2425; common vs leap year guide and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-290 delivery for Conversion & Units time converter.
@@ -232,7 +237,6 @@
 - **Why:** TOOL-287 delivery for Conversion & Units time converter.
 - **Important Files:** `frontend/src/tools/calculators/day-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-day-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null preserved). Full frontend `tsc` / production build not claimed.
->>>>>>> 12c46c254ef0dc395ab1418b968e0fe2432a799b
 
 ### 2026-11-16 — Add Cups to Quarts Converter
 - **Summary:** Shipped Cups to Quarts Converter on existing catalog slug `cups-to-quarts-converter` (`CupsToQuartsConverter`, catalog `6af46f17a27d8d1d4e990b35`). Bidirectional cups ↔ quarts via liters; US customary/legal, metric, and UK cups; US liquid, US dry, and imperial quarts; conversion chart and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.

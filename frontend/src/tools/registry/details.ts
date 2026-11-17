@@ -449,6 +449,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/biweekly-mortgage/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
+  JumboLoanCalculator: () =>
+    import('@/tools/calculators/jumbo-loan/detail'),
   LandLoanCalculator: () =>
     import('@/tools/calculators/land-loan/detail'),
   PagIbigHousingLoanCalculator: () =>
@@ -490,6 +492,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/future-value/detail'),
   HomeEquityLoanCalculator: () =>
     import('@/tools/calculators/home-equity-loan/detail'),
+  HomeImprovementLoanCalculator: () =>
+    import('@/tools/calculators/home-improvement-loan/detail'),
   HomeLoanEmiCalculator: () =>
     import('@/tools/calculators/home-loan-emi/detail'),
   HomeLoanCalculator: () => import('@/tools/calculators/home-loan/detail'),
