@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add in to cm Converter
+- **Summary:** Shipped in to cm Converter on existing catalog slug in-to-cm-converter (InToCmConverter, catalog 6af46f17a27d8d1d4e990b8a). Bidirectional inches↔centimeters with exact 2.54 factor; empty default; signed values; original guide/examples/table/FAQs; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-331b delivery for Conversion and Units inches ↔ centimeters converter.
+- **Important Files:** frontend/src/tools/calculators/in-to-cm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 in = 2.54 cm; 12 in = 30.48 cm; 22 in = 55.88 cm; 72 in = 182.88 cm; 100 in = 254 cm; reverse 2.54 cm = 1 in; 100 cm ≈ 39.37007874 in; registry cross-check). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Inch to Meter Calculator
 - **Summary:** Shipped Inch to Meter Calculator on existing catalog slug inch-to-meter-calculator (InchToMeterCalculator, catalog 6af46f17a27d8d1d4e990b14). Bidirectional inches↔meters with exact 0.0254 factor; feet-and-inches related units with remainder normalization; empty default; signed values; original guide/examples/table/FAQs; Inch Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-330b delivery for Conversion and Units inches ↔ meters converter.
