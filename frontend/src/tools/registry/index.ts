@@ -15,6 +15,13 @@ function lazyTool(
  * The chunk loads when that tool is rendered.
  */
 const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolComponent>> = {
+  AfterTaxCostOfDebtCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/after-tax-cost-of-debt/AfterTaxCostOfDebtCalculator'
+    ).then((mod) => ({
+      default: mod.AfterTaxCostOfDebtCalculator,
+    })),
+  ),
   AutoLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/auto-loan/AutoLoanCalculator').then((mod) => ({
       default: mod.AutoLoanCalculator,
