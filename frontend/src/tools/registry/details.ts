@@ -299,6 +299,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MilToInchConversion: () => import('@/tools/calculators/mil-to-inch/detail'),
   MilToMmConversion: () => import('@/tools/calculators/mil-to-mm/detail'),
   MinuteConverter: () => import('@/tools/calculators/minute-converter/detail'),
+  MinutesToDaysCalculator: () => import('@/tools/calculators/minutes-to-days/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
