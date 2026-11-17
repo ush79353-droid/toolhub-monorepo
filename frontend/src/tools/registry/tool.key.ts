@@ -15,6 +15,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InterestRateParityCalculator',
   'LoanCalculator',
   'LoanInterestCalculator',
+  'MarginAndMarkupCalculator',
   'NetDebtCalculator',
   'RrefCalculator',
   'ArmMortgageCalculator',
@@ -817,6 +818,7 @@ if (isDirect) {
     !isApprovedComponentKey('NetDebtCalculator') ||
     !isApprovedComponentKey('EbitdaMarginCalculator') ||
     !isApprovedComponentKey('GrossMarginCalculator') ||
+    !isApprovedComponentKey('MarginAndMarkupCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

@@ -40,6 +40,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'gross-margin-calculator',
   'interest-rate-parity-calculator',
   'loan-interest-calculator',
+  'margin-and-markup-calculator',
   'margin-interest-calculator',
   '12-hour-shift-pay-calculator',
   '3x-rent-calculator',
