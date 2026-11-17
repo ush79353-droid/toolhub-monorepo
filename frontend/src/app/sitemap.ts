@@ -261,6 +261,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'kelvin-converter',
   'kelvin-to-celsius-converter',
   'kelvin-to-fahrenheit-converter',
+  'kgcm-to-psi-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
