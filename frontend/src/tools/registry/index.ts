@@ -1335,6 +1335,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KsiToPsiConversion,
     })),
   ),
+  LandAreaCalculator: lazyTool(() =>
+    import('@/tools/calculators/land-area/LandAreaCalculator').then((mod) => ({
+      default: mod.LandAreaCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
