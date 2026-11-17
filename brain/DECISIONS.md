@@ -172,3 +172,10 @@
 - **Consequences:** Does not supersede ADR-016 (visual shell), ADR-017/021 (currency), ADR-018 (module layout), ADR-019 (incremental commits), or ADR-022 (activation). Strengthens ADR-022 with an explicit verified activation gate tied to screenshot-first delivery. Every future calculator must pass the Screenshot-First Functional Parity & Simplicity checklist and the verified activation checklist before delivery. Cursor (`.cursor/rules/calculator-standards.mdc`, `.cursor/rules/tool-activation.mdc`) and Antigravity (`.agents/rules/calculator-standards.md`, `.agents/rules/tool-activation.md`) both apply this rule.
 - **Status:** Accepted
 
+## ADR-024: Single reusable `tool:assign` CLI (no per-tool assign scripts)
+- **Date:** 2026-11-17
+- **Decision:** Catalog component assignment and post-verify content updates use **only** `backend` `npm run tool:assign` → `assign-tool-component.ts`. Agents pass tool content via CLI flags (`--slug`, `--component`, `--id`, `--name`, `--short-description`, `--meta-title`, `--meta-description`, optional `--expected-pillar` / `--expected-subpillar`, optional activate/indexable flags). Creating `backend/src/scripts/assign-*-tool.ts`, `_tmp-*`, or one-off lookup scripts for a single tool is forbidden. Permanent keepers remain seeds, publish, admin bootstrap, currency fetch, and category helpers.
+- **Reason:** Hundreds of one-time assign scripts duplicated the same Mongo guards and cluttered the scripts folder; a single parameterized CLI matches Ponytail and ADR-022 activation without file sprawl.
+- **Consequences:** Does not supersede ADR-016–023. Extends ADR-022 activation with a locked assign path. Cursor (`.cursor/rules/tool-activation.mdc`) and Antigravity (`.agents/rules/tool-activation.md`) both enforce this. Preserve `isActive` / `indexable` / `isFeatured` by default; only flip with explicit flags when the task allows.
+- **Status:** Accepted
+

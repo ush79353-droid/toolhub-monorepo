@@ -35,6 +35,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `INFRA-03` | Collapse per-tool `assign-*-tool.ts` into reusable `npm run tool:assign`; delete tmp/lookup scripts; lock ADR-024 in rules | Cursor | Completed | `backend/src/scripts/assign-tool-component.ts`, `.cursor/rules/tool-activation.mdc`, `.agents/rules/tool-activation.md`, `AGENTS.md`, `brain/*` | `ADR-022` |
 | `INFRA-00` | Initialize project and restructure into independent `frontend/` and `backend/` applications | Bilal Ajmery | Completed | `frontend/`, `backend/`, `.gitignore` | — |
 | `FE-00` | Build public website UI (9 pages) and admin dashboard UI shell (13 pages) with locked teal palette | Bilal Ajmery | Completed | `frontend/src/app/`, `frontend/src/components/`, `frontend/tailwind.config.ts` | `INFRA-00` |
 | `AUTH-01` | Implement admin auth (`AdminUser`, `AdminSession`, Argon2id, `HttpOnly` cookie, Edge + Server guards, rate limits, SMTP password reset) | Bilal Ajmery / sameer52718 | Completed | `backend/src/modules/auth/`, `backend/src/modules/admins/`, `backend/src/services/email.service.ts`, `frontend/src/server/auth/` | `INFRA-00` |

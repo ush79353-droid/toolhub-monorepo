@@ -275,6 +275,7 @@ ADR-022 + ADR-023 verified automatic activation. Do this after the module, tests
 - [ ] `embedEnabled` omitted or true. Set false only when an admin disables embed.
 - [ ] Slug is in `IMPLEMENTED_TOOL_SLUGS`. Sitemap still needs `indexable` + `sitemapInclude`. Confirm category/search visibility.
 - [ ] A missing module, missing registry key, empty `componentKey`, or broken calculator stays inactive. Admin-disabled / draft / private / noindex decisions stay preserved and are reported as blockers.
+- [ ] **Mongo assign uses only** `cd backend && npm run tool:assign -- …` (`assign-tool-component.ts`). Pass `--slug`, `--component`, `--id`, `--name`, `--short-description`, `--meta-title`, `--meta-description`, and `--expected-pillar` / `--expected-subpillar` (`null` when empty). Do **not** create `assign-*-tool.ts` or other one-off scripts. Preserve `isActive` / `indexable` / `isFeatured` unless the task explicitly allows `--set-active` / `--set-indexable`.
 
 ---
 

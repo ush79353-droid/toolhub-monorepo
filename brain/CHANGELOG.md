@@ -4,7 +4,13 @@
 
 ---
 
-<<<<<<< HEAD
+### 2026-11-17 — Reusable 	ool:assign only (delete per-tool assign scripts)
+- **Summary:** Expanded ackend/src/scripts/assign-tool-component.ts into the sole catalog assign CLI (
+pm run tool:assign) with required --slug/--component/--id/--name/--short-description/--meta-title/--meta-description plus optional pillar guards and --set-active/--set-indexable. Deleted ~349 one-off ssign-*-tool.ts scripts and ~22 tmp/lookup/adapt helpers. Locked in Cursor/Antigravity tool-activation rules, AGENTS.md, and playbook Step 19c. Kept seeds/publish/admin/currency/category scripts only.
+- **Why:** Per-tool assign scripts were one-time use and cluttered ackend/src/scripts/; agents must pass content flags instead of inventing new files.
+- **Important Files:** ackend/src/scripts/assign-tool-component.ts, .cursor/rules/tool-activation.mdc, .agents/rules/tool-activation.md, AGENTS.md, rain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md, rain/BACKEND.md, rain/ARCHITECTURE.md, rain/DECISIONS.md.
+- **Verification:** Scripts folder reduced to 9 keepers. CLI help/header documented in script. Full Mongo smoke assign not re-run in this infra change.
+
 ### 2026-11-17 — Mortgage Rate Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Rate Calculator on existing catalog slug `mortgage-rate-calculator` (`MortgageRateCalculator`, catalog `6af46f0fa27d8d1d4e98ff7b`). Main configuration (loan FX, term yrs/mos, rate %, compounding Yearly / Semi-annually Canada / Quarterly / Monthly UK & US, Fixed-rate only) + fees (points %, up-front FX, annual FX). Results: monthly payment, fee-adjusted APR, paid interest, total payments. Independent FX on six money fields; mixed inputs normalized into loan currency. No ARM formulas. Activated.
 - **Example:** 200,000 PKR / 30y / 5% Monthly (UK & US) → payment ≈ 1,073.64; interest ≈ 186,511.57; total ≈ 386,511.57; APR 5%. With 1 point → APR ≈ 5.089%.
@@ -208,7 +214,6 @@
 - **Example:** 100,000 PKR / 5 yrs / 5% → payment ≈ 1,887.12; interest ≈ 13,227.40.
 - **Important Files:** `frontend/src/tools/calculators/boat-loan/*`, registries, `CURRENCY_CONVERSION_SLUGS`, sitemap, `backend/src/scripts/assign-boat-loan-tool.ts`, `brain/*`.
 - **Verification:** Mongo activation verified; worked-example math inspected via `tsx`. Lint/builds/browser/automated tests omitted per user.
-=======
 ### 2026-11-16 — Add Days to Years Calculator
 - **Summary:** Shipped Days to Years Calculator on existing catalog slug `days-to-years-calculator` (`DaysToYearsCalculator`, catalog `6af46f17a27d8d1d4e990ba8`). Reuses Day Converter conversion engine; bidirectional days↔years via average Gregorian year 365.2425; common vs leap year guide and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-290 delivery for Conversion & Units time converter.
@@ -232,7 +237,6 @@
 - **Why:** TOOL-287 delivery for Conversion & Units time converter.
 - **Important Files:** `frontend/src/tools/calculators/day-converter/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-day-converter-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** `calculation.test.ts` passed. Backend `tsc --noEmit` passed. Mongo assigned (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`; pillar/subPillar null preserved). Full frontend `tsc` / production build not claimed.
->>>>>>> 12c46c254ef0dc395ab1418b968e0fe2432a799b
 
 ### 2026-11-16 — Add Cups to Quarts Converter
 - **Summary:** Shipped Cups to Quarts Converter on existing catalog slug `cups-to-quarts-converter` (`CupsToQuartsConverter`, catalog `6af46f17a27d8d1d4e990b35`). Bidirectional cups ↔ quarts via liters; US customary/legal, metric, and UK cups; US liquid, US dry, and imperial quarts; conversion chart and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
