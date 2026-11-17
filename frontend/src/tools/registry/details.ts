@@ -255,6 +255,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   HoursToMinutesConverter: () => import('@/tools/calculators/hours-to-minutes/detail'),
   HoursToSecondsConverter: () => import('@/tools/calculators/hours-to-seconds/detail'),
   HoursToWeekConversion: () => import('@/tools/calculators/hours-to-weeks/detail'),
+  HoursToYearsConverter: () => import('@/tools/calculators/hours-to-years/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

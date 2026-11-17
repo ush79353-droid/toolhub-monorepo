@@ -250,6 +250,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'hours-to-minutes-converter',
   'hours-to-seconds-converter',
   'hours-to-week-conversion',
+  'hours-to-years-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
