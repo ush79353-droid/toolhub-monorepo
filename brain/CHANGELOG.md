@@ -1,3 +1,19 @@
+### 2026-11-17 — Salary Calculator With Overtime (Screenshot-First + FX)
+- **Summary:** Shipped Salary Calculator With Overtime on existing catalog slug `salary-calculator-with-overtime` (`SalaryWithOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb8`). Collapsible Regular worktime + Overtime; In total; Share/Reload/Clear/feedback. Defaults hours/month. Activated.
+- **Formulas:** OT hourly = regular hourly × multiplier; regular monthly = hourly × weekly hours × 52/12; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Blank OT hours → 0. Duration/rate/frequency units normalize without mixing quantities.
+- **FX:** Independent currencies on all monetary selectors; compute in regular-pay currency at full precision; re-express results; display rounding only. Hours, time units, and multiplier never convert. Stale/missing rate handling via `CURRENCY_CONVERSION_SLUGS`.
+- **Example:** 500/hr × 160 hr/month × 1.5 × 20 OT hr/month → OT rate 750; regular 80,000; OT 15,000; total 95,000.
+- **Important Files:** `frontend/src/tools/calculators/salary-with-overtime/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-salary-with-overtime-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Gross Rent Multiplier Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Gross Rent Multiplier Calculator on existing catalog slug `gross-rent-multiplier-calculator` (`GrossRentMultiplierCalculator`, catalog `6af46f0fa27d8d1d4e98ffbc`). Three screenshot fields: property price, gross rental income (mo/yr), dimensionless GRM. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** GRM = property price ÷ annual gross rental income. Monthly income ×12. Require positive income; safe zero/invalid guards. Display e.g. `11.76` without currency.
+- **FX:** Independent currencies on price + income; normalize into property-price currency before division so currency-only changes do not alter GRM. Period never FX-converted. `CURRENCY_CONVERSION_SLUGS` + stale/missing handling.
+- **Example:** 1,000,000 / 85,000 yr → GRM ≈ 11.76.
+- **Important Files:** `frontend/src/tools/calculators/gross-rent-multiplier/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-gross-rent-multiplier-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Overtime Paycheck Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Overtime Paycheck Calculator on existing catalog slug `overtime-paycheck-calculator` (`OvertimePaycheckCalculator`, catalog `6af46f0fa27d8d1d4e98ffb7`). Collapsible Regular work time + Overtime; In total; Share/Reload/Clear/feedback. Activated. Distinct from `overtime-calculator`.
 - **Formulas:** OT hourly = regular hourly × multiplier; regular monthly = hourly × weekly hours × 52/12; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Blank OT hours → 0. Duration/rate/frequency units normalize without mixing quantities. No tax/withholding fields.

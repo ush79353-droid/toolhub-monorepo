@@ -136,6 +136,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'fifo-calculator-for-inventory',
   'carried-interest-calculator',
   'gmroi-calculator-gross-margin-return-on-investment',
+  'gross-rent-multiplier-calculator',
   'google-adsense-calculator',
   'high-low-method-calculator',
   'labor-cost-calculator',

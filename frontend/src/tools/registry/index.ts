@@ -1614,6 +1614,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GrossMarginCalculator,
     })),
   ),
+  GrossRentMultiplierCalculator: lazyTool(() =>
+    import('@/tools/calculators/gross-rent-multiplier/GrossRentMultiplierCalculator').then((mod) => ({
+      default: mod.GrossRentMultiplierCalculator,
+    })),
+  ),
   HedgeRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/hedge-ratio/HedgeRatioCalculator').then((mod) => ({
       default: mod.HedgeRatioCalculator,
@@ -1777,6 +1782,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   OpportunityCostCalculator: lazyTool(() =>
     import('@/tools/calculators/opportunity-cost/OpportunityCostCalculator').then((mod) => ({
       default: mod.OpportunityCostCalculator,
+    })),
+  ),
+  OvertimeCalculator: lazyTool(() =>
+    import('@/tools/calculators/overtime/OvertimeCalculator').then((mod) => ({
+      default: mod.OvertimeCalculator,
     })),
   ),
   ParkingRatioCalculator: lazyTool(() =>

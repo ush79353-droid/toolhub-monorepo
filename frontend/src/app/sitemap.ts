@@ -321,6 +321,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gmroi-calculator-gross-margin-return-on-investment',
   'google-adsense-calculator',
   'gross-margin-calculator',
+  'gross-rent-multiplier-calculator',
   'hedge-ratio-calculator',
   'hhi-calculator',
   'high-low-method-calculator',

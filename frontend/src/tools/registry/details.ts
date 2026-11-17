@@ -412,6 +412,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/google-adsense/detail'),
   GrossMarginCalculator: () =>
     import('@/tools/calculators/gross-margin/detail'),
+  GrossRentMultiplierCalculator: () =>
+    import('@/tools/calculators/gross-rent-multiplier/detail'),
   HedgeRatioCalculator: () =>
     import('@/tools/calculators/hedge-ratio/detail'),
   HhiCalculator: () =>
@@ -476,6 +478,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/optimal-hedge-ratio/detail'),
   OpportunityCostCalculator: () =>
     import('@/tools/calculators/opportunity-cost/detail'),
+  OvertimeCalculator: () =>
+    import('@/tools/calculators/overtime/detail'),
   ParkingRatioCalculator: () =>
     import('@/tools/calculators/parking-ratio/detail'),
   PartiallyAmortizedLoanCalculator: () =>

@@ -292,6 +292,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FifoInventoryCalculator',
   'FullTimeEquivalentCalculator',
   'GmroiCalculator',
+  'GrossRentMultiplierCalculator',
   'GoogleAdsenseCalculator',
   'HedgeRatioCalculator',
   'HhiCalculator',
@@ -717,6 +718,7 @@ if (isDirect) {
     !isApprovedComponentKey('FifoInventoryCalculator') ||
     !isApprovedComponentKey('FullTimeEquivalentCalculator') ||
     !isApprovedComponentKey('GmroiCalculator') ||
+    !isApprovedComponentKey('GrossRentMultiplierCalculator') ||
     !isApprovedComponentKey('GoogleAdsenseCalculator') ||
     !isApprovedComponentKey('HedgeRatioCalculator') ||
     !isApprovedComponentKey('HhiCalculator') ||

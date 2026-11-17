@@ -287,6 +287,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GmroiCalculator',
   'GoogleAdsenseCalculator',
   'GrossMarginCalculator',
+  'GrossRentMultiplierCalculator',
   'HedgeRatioCalculator',
   'HhiCalculator',
   'HighLowMethodCalculator',
@@ -702,6 +703,7 @@ if (isDirect) {
     !isApprovedComponentKey('GmroiCalculator') ||
     !isApprovedComponentKey('GoogleAdsenseCalculator') ||
     !isApprovedComponentKey('GrossMarginCalculator') ||
+    !isApprovedComponentKey('GrossRentMultiplierCalculator') ||
     !isApprovedComponentKey('HedgeRatioCalculator') ||
     !isApprovedComponentKey('HhiCalculator') ||
     !isApprovedComponentKey('HighLowMethodCalculator') ||
