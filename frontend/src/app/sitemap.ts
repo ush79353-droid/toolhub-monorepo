@@ -264,6 +264,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'kgcm-to-psi-converter',
   'kg-to-lbs-converter',
   'kg-to-liter-converter',
+  'kg-to-ml-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

@@ -269,6 +269,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KgCmToPsiConverter: () => import('@/tools/calculators/kgcm-to-psi/detail'),
   KgToLbsConverter: () => import('@/tools/calculators/kg-to-lbs/detail'),
   KgToLiterConverter: () => import('@/tools/calculators/kg-to-liter/detail'),
+  KgToMlConverter: () => import('@/tools/calculators/kg-to-ml/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
