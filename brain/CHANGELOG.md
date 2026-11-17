@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Height Converter
+- **Summary:** Shipped Height Converter on existing catalog slug height-converter (HeightConverter, catalog 6af46f17a27d8d1d4e990b88). Synced cm/m/m+cm/in/ft/ft+in plus other mm/km/yd/mi from canonical meters; exact 2.54 cm/in and 30.48 cm/ft; compound normalization; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-319b delivery for Conversion and Units multi-field height converter.
+- **Important Files:** frontend/src/tools/calculators/height-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (170 cm = 1.7 m; 5 ft 10 in = 177.8 cm; 5 ft 14 in → 6 ft 2 in; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Hectares to Acres Converter
 - **Summary:** Shipped Hectares to Acres Converter on existing catalog slug hectares-to-acres-converter (HectaresToAcresConverter, catalog 6af46f17a27d8d1d4e990b87). Bidirectional ha↔ac with exact 1 ha = 10,000 m² and 1 international acre = 4,046.8564224 m²; simple two-field UI; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-318b delivery for Conversion and Units hectares ↔ acres land-area converter.
