@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Feet to Miles Converter
+- **Summary:** Shipped Feet to Miles Converter on existing catalog slug feet-to-miles-converter (FeetToMilesConverter, catalog 6af46f17a27d8d1d4e990b09). Bidirectional ft↔mi with feet first; exact 1 mi = 5,280 ft; cross-checks meter-converter length registry. Pillar 6af451d1a27d8d1d4e98f9e9 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-299b delivery for Conversion and Units length pair converter (ft to mi).
+- **Important Files:** frontend/src/tools/calculators/feet-to-miles/*, meter-converter convertLength cross-check, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Feet Converter
 - **Summary:** Shipped Feet Converter on existing catalog slug feet-converter (FeetConverter, catalog 6af46f17a27d8d1d4e990af2). Convert Feet / Metric / Imperial/US / Others accordions; meters as base; exact 1 ft = 0.3048 m; reuses meter-converter length factors via convertFeet. Pillar 6af451d1a27d8d1d4e98f9e6 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-298b delivery for Conversion and Units length converter (feet focus).
