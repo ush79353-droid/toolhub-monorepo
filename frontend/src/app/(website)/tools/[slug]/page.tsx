@@ -33,6 +33,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'debt-calculator',
   'debt-service-coverage-ratio-calculator-dscr',
   'debt-snowball-calculator',
+  'debt-to-asset-ratio-calculator',
   'interest-rate-parity-calculator',
   'loan-interest-calculator',
   'margin-interest-calculator',
