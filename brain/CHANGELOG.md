@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-18 — Bi-Weekly Mortgage Payment Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Bi-Weekly Mortgage Payment Calculator on existing catalog slug `bi-weekly-mortgage-payment-calculator` (`BiWeeklyMortgagePaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ffc5`). Inputs: mortgage amount FX, term yrs/mos, rate, extra payment FX, optional points/fee/compounding checkbox. Payment summary: Comparison with dropdown + horizontally scrollable Monthly vs Bi-weekly table (payment, term, payoff date, total interest, total payments). Accelerated biweekly = half monthly every 14 days (26/yr). Independent Phase 2 FX; rates/term never converted. Did not modify Biweekly Mortgage Calculator. Activated.
+- **Formulas:** M = P×r/(1−(1+r)^(-n)); biweekly payment = M/2; schedules accrue period interest then apply payment + extra principal.
+- **Example:** 300,000 / 30y / 7.5% → monthly ≈ 2,097.64; biweekly ≈ 1,048.82; earlier payoff and lower interest.
+- **Important Files:** `frontend/src/tools/calculators/bi-weekly-mortgage-payment/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-18 — Rent vs. Buy Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Rent vs. Buy Calculator on existing catalog slug `rent-vs-buy-calculator` (`RentVsBuyCalculator`, catalog `6af46f0fa27d8d1d4e98ffc2`). Screenshot sections: staying period + money you have; Rent (price/agent/other/deposit increase rate → rent cost + total); Buy (property, mortgage rate/term, mortgage left, buying/realtor commissions, other fees, appreciation → buy cost + total). Independent Phase 2 FX on money fields; percentages/durations never converted. Did not modify Rent Calculator or Rent or Buy Calculator. Activated.
 - **Formulas:** Total rent = rent payments + agent + other − deposit interest; Total buy = down payment + buying commission + mortgage payments + other fees + realtor commission + mortgage left − future property value; periodic costs = total ÷ staying months.
@@ -18,7 +25,6 @@
 - **Important Files:** `frontend/src/tools/calculators/rent-split/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
 - **Verification:** Catalog verified undeveloped before coding. Formula self-check (`calculation.test.ts`). MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser omitted per user.
 
-<<<<<<< HEAD
 ### 2026-11-18 — Payment Calculator (Screenshot-First)
 - **Summary:** Shipped Payment Calculator on existing catalog slug `payment-calculator` (`PaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ffc3`). Modes: Fixed Term (default) and Fixed Payments. Results: monthly payment, totals, principal/interest doughnut, annual/monthly amortization, repayment line chart. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** r = APR/1200; n = years×12; Payment = P·r/(1−(1+r)^(-n)); r=0 → P/n. Fixed Payments: n = ln(PMT/(PMT−P·r))/ln(1+r). Total interest = repayment − principal. Final installment clears balance.
