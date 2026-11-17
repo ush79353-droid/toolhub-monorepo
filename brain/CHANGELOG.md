@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add gr to ml Converter
+- **Summary:** Shipped gr to ml Converter on existing catalog slug gr-to-ml-converter (GrToMlConverter, catalog 6af46f17a27d8d1d4e990b3d). Density-based mass↔volume with ingredient presets; default water 1 g/mL and mL; null pillar/subPillar preserved. Meta title <=70; meta description trimmed to <=160. indexable left false.
+- **Why:** TOOL-315b delivery for Conversion and Units density-based grams ↔ milliliters converter (gr abbreviation branding).
+- **Important Files:** frontend/src/tools/calculators/gr-to-ml/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100 g water = 100 mL; milk ≈ 97.0874 mL; honey ≈ 70.4225 mL; reverse milk/honey). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Gram to Liter Conversion
 - **Summary:** Shipped Gram to Liter Conversion on existing catalog slug gram-to-liter-conversion (GramToLiterConversion, catalog 6af46f17a27d8d1d4e990b3e). Density-based mass↔volume with ingredient presets; default water 1000 kg/m³ and L; V_L = m_g / ρ_kg/m³; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-314b delivery for Conversion and Units density-based gram ↔ liter converter.
