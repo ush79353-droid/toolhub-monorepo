@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Gallons to Cubic Feet Converter
+- **Summary:** Shipped Gallons to Cubic Feet Converter on existing catalog slug gallons-to-cubic-feet-converter (GallonsToCubicFeetConverter, catalog 6af46f17a27d8d1d4e990afa). Three-field sync US gal / UK gal / ft³ via exact liter factors; negatives rejected. Pillar 6af451d1a27d8d1d4e98f9e6 and subPillar 6af451d1a27d8d1d4e98f9e7 preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-305b delivery for Conversion and Units volume converter (gal to ft³).
+- **Important Files:** frontend/src/tools/calculators/gallons-to-cubic-feet/*, cubic-feet formatMeasure reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal ≈ 0.133681 ft³; 1 ft³ ≈ 7.48052 US gal). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Gaj to Square Yard Converter
 - **Summary:** Shipped Gaj to Square Yard Converter on existing catalog slug gaj-to-square-yard-converter (GajToSquareYardConverter, catalog 6af46f17a27d8d1d4e990ad5). Primary land-area gaj↔yd² at 1:1 with ft² helper; independent linear gaj↔yd accordion; negative area rejected. Pillar 6af451d0a27d8d1d4e98f9e2 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-304b delivery for Conversion and Units land-area gaj converter.
