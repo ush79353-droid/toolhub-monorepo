@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-18 — Rent vs. Buy Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Rent vs. Buy Calculator on existing catalog slug `rent-vs-buy-calculator` (`RentVsBuyCalculator`, catalog `6af46f0fa27d8d1d4e98ffc2`). Screenshot sections: staying period + money you have; Rent (price/agent/other/deposit increase rate → rent cost + total); Buy (property, mortgage rate/term, mortgage left, buying/realtor commissions, other fees, appreciation → buy cost + total). Independent Phase 2 FX on money fields; percentages/durations never converted. Did not modify Rent Calculator or Rent or Buy Calculator. Activated.
+- **Formulas:** Total rent = rent payments + agent + other − deposit interest; Total buy = down payment + buying commission + mortgage payments + other fees + realtor commission + mortgage left − future property value; periodic costs = total ÷ staying months.
+- **Example:** 5y · 50k · rent 2k/mo · deposit 2% · property 300k @ 5%/30y · buy 4% · realtor 7% · fees 2.3% · appreciation 2% → total rent ≈ 114,746.05 vs total buy ≈ 98,556.53 (prefer buy).
+- **Important Files:** `frontend/src/tools/calculators/rent-vs-buy/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-18 — Rent Split Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Rent Split Calculator on existing catalog slug `rent-split-calculator` (`RentSplitCalculator`, catalog `6af46f0fa27d8d1d4e98ffc1`). Screenshot fields: total rent + currency, bedroom count radios (One/Two/Three), per-bedroom people with `person(s)` suffix. Results: per-bedroom share + per-person rent. Real FX converts total rent only; people counts unchanged. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Total People = Σ bedroom people; Per-Person = Total Rent ÷ Total People; Bedroom Share = (People ÷ Total People) × Total Rent. Zero total people → no calculation.

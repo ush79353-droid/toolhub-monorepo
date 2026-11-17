@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-18** (Payment Calculator live at `/tools/payment-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-18** (Rent vs. Buy Calculator live at `/tools/rent-vs-buy-calculator` with Phase 2 FX; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,7 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
-- **Rent vs. Buy Calculator (`/tools/rent-vs-buy-calculator`):** Live client-side rent-vs-buy comparison (`componentKey: 'RentVsBuyCalculator'`, catalog `6af46f0fa27d8d1d4e98ffc2`). Staying period + money you have; Rent (price, agent, other, deposit increase rate → rent cost / total); Buy (property, mortgage rate/term, commissions, fees, appreciation → mortgage left / buy cost / total). Independent Phase 2 FX on money fields. Example: 5y · 50k · rent 2k/mo · 300k @ 5%/30y → prefer buy (~98.6k vs ~114.7k). Activated. Separate from Rent Calculator and Rent or Buy Calculator (untouched).
+- **Rent vs. Buy Calculator (`/tools/rent-vs-buy-calculator`):** Live client-side rent-vs-buy comparison (`componentKey: 'RentVsBuyCalculator'`, catalog `6af46f0fa27d8d1d4e98ffc2`). Staying period + money you have; Rent (price, agent, other, deposit increase rate → rent cost / total); Buy (property, mortgage rate/term, commissions, fees, appreciation → mortgage left / buy cost / total). Independent Phase 2 FX on money fields. Example: 5y · 50k · rent 2k/mo · 300k @ 5%/30y → prefer buy (~98.6k vs ~114.7k total). Activated. Separate from Rent Calculator and Rent or Buy Calculator (untouched).
 - Express server bootstrap, `/api/v1/health`, Zod env config, Mongoose connection & graceful shutdown (`backend/src/server.ts`, `app.ts`). After Mongo connects, a currency job is armed for the next local midnight.
 - Admin authentication: Argon2id hashing, MongoDB TTL `AdminSession`, `HttpOnly` `admin_session` cookie, Edge + Server layout route protection, brute-force lockout, IP rate limiters, SMTP password reset, profile name update, password change with global session revocation (`backend/src/modules/auth/`, `frontend/src/server/auth/`).
 - Admin Category tree management (`/admin/categories`, `new`, `[id]/edit`) — 3-level `category → pillar → sub_pillar` CRUD, search, pagination, cascade delete, and `categories:seed` script (`19` categories, `155` pillars). Root categories also store `iconUrl` / `iconMedia` (`categories:icons`) and a public `description` (`categories:descriptions` fills empty root descriptions). The create and edit forms save that description.
