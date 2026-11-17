@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Kelvin to Fahrenheit Converter
+- **Summary:** Shipped Kelvin to Fahrenheit Converter on existing catalog slug kelvin-to-fahrenheit-converter (KelvinToFahrenheitConverter, catalog 6af46f17a27d8d1d4e990b1b). Bidirectional K↔°F with exact (K−273.15)×9/5+32 and reverse; equivalent 1.8K−459.67 forms verified; absolute-zero validation (0 K / −459.67°F); empty default; formatTemp reuse; original guide/table/FAQs. Fahrenheit Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-335b delivery for Conversion and Units Kelvin↔Fahrenheit pair converter.
+- **Important Files:** frontend/src/tools/calculators/kelvin-to-fahrenheit/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0 K = −459.67°F; 273.15 K = 32°F; 300 K = 80.33°F; 310.15 K = 98.6°F; 373.15 K = 212°F; −459.67°F = 0 K; equivalent formula pairs; absolute-zero bounds). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ec). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Kelvin to Celsius Converter
 - **Summary:** Shipped Kelvin to Celsius Converter on existing catalog slug kelvin-to-celsius-converter (KelvinToCelsiusConverter, catalog 6af46f17a27d8d1d4e990b2e). Bidirectional K↔°C with exact ±273.15 offset; absolute-zero validation (0 K / −273.15°C); empty default; formatTemp reuse from kelvin-converter; original guide/table/FAQs. Celsius Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-334b delivery for Conversion and Units Kelvin↔Celsius pair converter.
