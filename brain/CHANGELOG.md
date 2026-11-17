@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Degrees to Seconds Converter
+- **Summary:** Shipped Degrees to Seconds Converter on existing catalog slug degrees-to-seconds-converter (DegreesToSecondsConverter, catalog 6af46f17a27d8d1d4e990bfe). Bidirectional degrees to arcseconds with exact factor 3600; expandable other units (arcminutes, radians, gradians, revolutions); empty default; angular-not-time copy; guide + table + FAQs. Reuses degreesToArcseconds/arcsecondsToDegrees on angle-conversion. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-293b delivery for Conversion and Units angle converter.
+- **Important Files:** frontend/src/tools/calculators/degrees-to-seconds/*, frontend/src/tools/calculators/angle-conversion/calculation.ts, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; angle-conversion tests still pass; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Degrees to Radians Converter
 - **Summary:** Shipped Degrees to Radians Converter on existing catalog slug degrees-to-radians-converter (DegreesToRadiansConverter, catalog 6af46f17a27d8d1d4e990bfd). Bidirectional degrees ↔ radians via Math.PI; empty default; signed and >360 allowed; optional pi-fraction labels; guide + table + FAQs. Reuses hardened degreesToRadians/radiansToDegrees on angle-conversion/calculation.ts. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-292b delivery for Conversion & Units angle converter.
