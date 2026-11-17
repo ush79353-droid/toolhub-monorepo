@@ -4,6 +4,14 @@
 
 ---
 
+### 2026-11-17 — Debt to Asset Ratio Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Debt to Asset Ratio Calculator on existing catalog slug `debt-to-asset-ratio-calculator` (`DebtToAssetRatioCalculator`, catalog `6af46f0fa27d8d1d4e98ff98`). Five fields: long-term debt, short-term debt, total debt (calculated + independent FX), total assets, debt to assets ratio %. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Total Debt = Long-term + Short-term. Debt to Assets Ratio (%) = (Total Debt / Total Assets) × 100. Assets must be &gt; 0; zero debt → 0%; ratios above 100% uncapped.
+- **FX:** Independent currencies on all four money selectors; debts normalize into total-assets currency before the ratio; total-debt currency only re-expresses the calculated sum. Currency-only changes preserve the ratio. Percentage never FX-converted.
+- **Example:** 100,000 + 50,000 / 300,000 → total debt 150,000; ratio 50%.
+- **Important Files:** `frontend/src/tools/calculators/debt-to-asset-ratio/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-debt-to-asset-ratio-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Debt Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Debt Calculator on existing catalog slug `debt-calculator` (`DebtCalculator`, catalog `6af46f0fa27d8d1d4e98ff91`). Number of debts (Two–Six); per-debt balance/rate/payment; consolidation rate + prepaid fee; debt summary with total debt, monthly payment, and horizontally scrollable comparison table (Min. payment / Snowball / Avalanche / Consolidation). Independent real FX on all money selectors (Margin Interest pattern). Activated.
 - **Formulas:** Total debt = Σ balances; monthly payment = Σ scheduled payments. Month-by-month amortization; final month skips interest when remaining principal fits in budget. Min = scheduled payments only (weighted-average APR*). Snowball/avalanche keep combined budget and redirect freed payments. Consolidation amortizes combined principal at consolidation rate with same payment; prepaid fee reduces net advance for cash-flow APR only (not double-counted into principal).

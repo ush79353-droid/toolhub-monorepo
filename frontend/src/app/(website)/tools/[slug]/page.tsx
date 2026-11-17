@@ -38,6 +38,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'adr-calculator',
   'after-tax-cost-of-debt-calculator',
   'debt-calculator',
+  'debt-to-asset-ratio-calculator',
   'annualized-return-calculator',
   'appreciation-calculator',
   'apy-calculator',

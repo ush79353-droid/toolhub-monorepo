@@ -287,6 +287,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'days-off-calculator',
   'debt-avalanche-calculator',
   'debt-calculator',
+  'debt-to-asset-ratio-calculator',
   'dividend-discount-model-calculator',
   'direct-material-price-variance-calculator',
   'ear-calculator',
