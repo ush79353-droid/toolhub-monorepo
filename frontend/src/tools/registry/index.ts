@@ -1039,6 +1039,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DegreesToSecondsConverter,
     })),
   ),
+  DistanceConverter: lazyTool(() =>
+    import('@/tools/calculators/distance-converter/DistanceConverter').then((mod) => ({
+      default: mod.DistanceConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

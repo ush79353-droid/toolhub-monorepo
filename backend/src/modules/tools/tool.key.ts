@@ -199,6 +199,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DegreesToMinutesConverter',
   'DegreesToRadiansConverter',
   'DegreesToSecondsConverter',
+  'DistanceConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -586,6 +587,7 @@ if (isDirect) {
     !isApprovedComponentKey('DegreesToMinutesConverter') ||
     !isApprovedComponentKey('DegreesToRadiansConverter') ||
     !isApprovedComponentKey('DegreesToSecondsConverter') ||
+    !isApprovedComponentKey('DistanceConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
