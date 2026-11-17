@@ -236,6 +236,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InchConverter',
   'InchToMeterCalculator',
   'InchesToYardConversion',
+  'InToCmConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -660,6 +661,7 @@ if (isDirect) {
     !isApprovedComponentKey('InchConverter') ||
     !isApprovedComponentKey('InchToMeterCalculator') ||
     !isApprovedComponentKey('InchesToYardConversion') ||
+    !isApprovedComponentKey('InToCmConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

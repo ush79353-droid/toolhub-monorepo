@@ -261,6 +261,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InchConverter: () => import('@/tools/calculators/inch-converter/detail'),
   InchToMeterCalculator: () => import('@/tools/calculators/inch-to-meter/detail'),
   InchesToYardConversion: () => import('@/tools/calculators/inches-to-yards/detail'),
+  InToCmConverter: () => import('@/tools/calculators/in-to-cm/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
