@@ -226,22 +226,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/absence-percentage/detail'),
   AccumulatedDepreciationCalculator: () =>
     import('@/tools/calculators/accumulated-depreciation/detail'),
-  AfterTaxCostOfDebtCalculator: () =>
-    import('@/tools/calculators/after-tax-cost-of-debt/detail'),
-  DebtServiceCoverageRatioCalculator: () =>
-    import('@/tools/calculators/debt-service-coverage-ratio/detail'),
-  DebtToAssetRatioCalculator: () =>
-    import('@/tools/calculators/debt-to-asset-ratio/detail'),
-  DebtToCapitalRatioCalculator: () =>
-    import('@/tools/calculators/debt-to-capital-ratio/detail'),
   AttritionRateCalculator: () =>
     import('@/tools/calculators/attrition-rate/detail'),
   BusinessLoanCalculator: () =>
     import('@/tools/calculators/business-loan/detail'),
   ProfitabilityIndexCalculator: () =>
     import('@/tools/calculators/profitability-index/detail'),
-  RentOrBuyCalculator: () =>
-    import('@/tools/calculators/rent-or-buy/detail'),
   RevenuePerEmployeeCalculator: () =>
     import('@/tools/calculators/revenue-per-employee/detail'),
   RoasCalculator: () => import('@/tools/calculators/roas/detail'),
@@ -252,8 +242,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/saas-lifetime-value/detail'),
   SafetyStockCalculator: () =>
     import('@/tools/calculators/safety-stock/detail'),
-  SalaryWithOvertimeCalculator: () =>
-    import('@/tools/calculators/salary-with-overtime/detail'),
   SalesCommissionCalculator: () =>
     import('@/tools/calculators/sales-commission/detail'),
   SellThroughRateCalculator: () =>
@@ -267,12 +255,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SmokersCtcCalculator: () =>
     import('@/tools/calculators/smokers-ctc/detail'),
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),
-  TexasOvertimeCalculator: () =>
-    import('@/tools/calculators/texas-overtime/detail'),
   TimeValueOfMoneyCalculator: () =>
     import('@/tools/calculators/time-value-of-money/detail'),
-  TimesInterestEarnedCalculator: () =>
-    import('@/tools/calculators/times-interest-earned/detail'),
   TtmCalculator: () => import('@/tools/calculators/ttm/detail'),
   TreynorRatioCalculator: () =>
     import('@/tools/calculators/treynor-ratio/detail'),
@@ -294,13 +278,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/annualized-rate-of-return/detail'),
   AppreciationCalculator: () =>
     import('@/tools/calculators/appreciation/detail'),
-  AnnuityCalculator: () => import('@/tools/calculators/annuity/detail'),
-  GeorgiaOvertimeCalculator: () =>
-    import('@/tools/calculators/georgia-overtime/detail'),
-  GrowingAnnuityCalculator: () =>
-    import('@/tools/calculators/growing-annuity/detail'),
-  AnnuityPayoutCalculator: () =>
-    import('@/tools/calculators/annuity-payout/detail'),
   AnnualizedReturnCalculator: () =>
     import('@/tools/calculators/annualized-return/detail'),
   ApyCalculator: () => import('@/tools/calculators/apy/detail'),
@@ -334,8 +311,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/canadian-mortgage/detail'),
   MortgageCalculatorUk: () =>
     import('@/tools/calculators/mortgage-uk/detail'),
-  CaliforniaOvertimeCalculator: () =>
-    import('@/tools/calculators/california-overtime/detail'),
   CarInterestCalculator: () =>
     import('@/tools/calculators/car-interest/detail'),
   CarLoanEmiCalculator: () =>
@@ -374,15 +349,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/customer-retention-rate/detail'),
   DaysOffCalculator: () =>
     import('@/tools/calculators/days-off/detail'),
-  DebtAvalancheCalculator: () =>
-    import('@/tools/calculators/debt-avalanche/detail'),
-  DebtCalculator: () => import('@/tools/calculators/debt/detail'),
-  DebtSnowballCalculator: () =>
-    import('@/tools/calculators/debt-snowball/detail'),
-  DebtToEquityCalculator: () =>
-    import('@/tools/calculators/debt-to-equity/detail'),
-  DeferredAnnuityCalculator: () =>
-    import('@/tools/calculators/deferred-annuity/detail'),
   DividendDiscountModelCalculator: () =>
     import('@/tools/calculators/dividend-discount-model/detail'),
   DirectMaterialPriceVarianceCalculator: () =>
@@ -390,8 +356,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EarCalculator: () => import('@/tools/calculators/ear/detail'),
   EarlyLoanPayoffCalculator: () =>
     import('@/tools/calculators/early-loan-payoff/detail'),
-  EbitdaMarginCalculator: () =>
-    import('@/tools/calculators/ebitda-margin/detail'),
   EquivalentRateCalculator: () =>
     import('@/tools/calculators/equivalent-rate/detail'),
   EffectiveCorporateTaxRateCalculator: () =>
@@ -414,10 +378,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gmroi/detail'),
   GoogleAdsenseCalculator: () =>
     import('@/tools/calculators/google-adsense/detail'),
-  GrossMarginCalculator: () =>
-    import('@/tools/calculators/gross-margin/detail'),
-  GrossRentMultiplierCalculator: () =>
-    import('@/tools/calculators/gross-rent-multiplier/detail'),
   HedgeRatioCalculator: () =>
     import('@/tools/calculators/hedge-ratio/detail'),
   HhiCalculator: () =>
@@ -434,28 +394,14 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/liquid-net-worth/detail'),
   LoanBalanceCalculator: () =>
     import('@/tools/calculators/loan-balance/detail'),
-  LoanInterestCalculator: () =>
-    import('@/tools/calculators/loan-interest/detail'),
-  LotteryAnnuityCalculator: () =>
-    import('@/tools/calculators/lottery-annuity/detail'),
   LoanRepaymentCalculator: () =>
     import('@/tools/calculators/loan-repayment/detail'),
   QuizLoanBalanceCalculator: () =>
     import('@/tools/calculators/quiz-loan-balance/detail'),
   ManHoursCalculator: () =>
     import('@/tools/calculators/man-hours/detail'),
-  MarginAndMarkupCalculator: () =>
-    import('@/tools/calculators/margin-and-markup/detail'),
-  MarginAndVatCalculator: () =>
-    import('@/tools/calculators/margin-and-vat/detail'),
-  MarginCalculatorClassic: () =>
-    import('@/tools/calculators/margin-calculator-classic/detail'),
-  MarginCallCalculator: () =>
-    import('@/tools/calculators/margin-call/detail'),
   MarginInterestCalculator: () =>
     import('@/tools/calculators/margin-interest/detail'),
-  MarginOfSafetyCalculator: () =>
-    import('@/tools/calculators/margin-of-safety/detail'),
   MirrCalculator: () =>
     import('@/tools/calculators/mirr/detail'),
   MoneyFactorCalculator: () =>
@@ -468,12 +414,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mutual-fund/detail'),
   MvaCalculator: () =>
     import('@/tools/calculators/mva/detail'),
-  NetDebtCalculator: () =>
-    import('@/tools/calculators/net-debt/detail'),
-  NetEffectiveRentCalculator: () =>
-    import('@/tools/calculators/net-effective-rent/detail'),
-  NewYorkOvertimeCalculator: () =>
-    import('@/tools/calculators/new-york-overtime/detail'),
   NopatCalculator: () =>
     import('@/tools/calculators/nopat/detail'),
   NpvCalculator: () =>
@@ -482,16 +422,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/online-marketing-conversion/detail'),
   OperatingAssetTurnoverCalculator: () =>
     import('@/tools/calculators/operating-asset-turnover/detail'),
-  OperatingMarginCalculator: () =>
-    import('@/tools/calculators/operating-margin/detail'),
   OptimalHedgeRatioCalculator: () =>
     import('@/tools/calculators/optimal-hedge-ratio/detail'),
   OpportunityCostCalculator: () =>
     import('@/tools/calculators/opportunity-cost/detail'),
-  OvertimeCalculator: () =>
-    import('@/tools/calculators/overtime/detail'),
-  OvertimePaycheckCalculator: () =>
-    import('@/tools/calculators/overtime-paycheck/detail'),
   ParkingRatioCalculator: () =>
     import('@/tools/calculators/parking-ratio/detail'),
   PartiallyAmortizedLoanCalculator: () =>
@@ -510,8 +444,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pre-and-post-money-valuation/detail'),
   PresentValueCalculator: () =>
     import('@/tools/calculators/present-value/detail'),
-  PresentValueOfAnnuityCalculator: () =>
-    import('@/tools/calculators/present-value-of-annuity/detail'),
   PriceQuantityCalculator: () =>
     import('@/tools/calculators/price-quantity/detail'),
   ProratedRentCalculator: () =>
@@ -570,12 +502,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/expected-utility/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
   FhaLoanCalculator: () => import('@/tools/calculators/fha-loan/detail'),
-  FloridaOvertimeCalculator: () =>
-    import('@/tools/calculators/florida-overtime/detail'),
   FutureValueCalculator: () =>
     import('@/tools/calculators/future-value/detail'),
-  FutureValueOfAnnuityCalculator: () =>
-    import('@/tools/calculators/future-value-of-annuity/detail'),
   HomeEquityLoanCalculator: () =>
     import('@/tools/calculators/home-equity-loan/detail'),
   HomeImprovementLoanCalculator: () =>
@@ -598,10 +526,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mortgage-points/detail'),
   HoldingPeriodReturnCalculator: () =>
     import('@/tools/calculators/holding-period-return/detail'),
-  ImmediateAnnuityCalculator: () =>
-    import('@/tools/calculators/immediate-annuity/detail'),
-  IllinoisOvertimeCalculator: () =>
-    import('@/tools/calculators/illinois-overtime/detail'),
   ImpermanentLossCalculator: () =>
     import('@/tools/calculators/impermanent-loss/detail'),
   InformationRatioCalculator: () =>
@@ -619,8 +543,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mortgage-rate/detail'),
   InterestRateCalculator: () =>
     import('@/tools/calculators/interest-rate/detail'),
-  InterestRateParityCalculator: () =>
-    import('@/tools/calculators/interest-rate-parity/detail'),
   IrrCalculator: () => import('@/tools/calculators/irr/detail'),
   InvestmentCalculator: () => import('@/tools/calculators/investment/detail'),
   InvestmentFeeCalculator: () =>
@@ -632,8 +554,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),
   VaMortgageCalculator: () => import('@/tools/calculators/va-mortgage/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
-  VariableAnnuityCalculator: () =>
-    import('@/tools/calculators/variable-annuity/detail'),
   EidlCalculator: () => import('@/tools/calculators/eidl/detail'),
   StudentLoanRepaymentCovidCalculator: () =>
     import('@/tools/calculators/student-loan-repayment-covid/detail'),

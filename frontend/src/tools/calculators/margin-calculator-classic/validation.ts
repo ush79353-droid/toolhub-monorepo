@@ -4,6 +4,7 @@ import {
   type CurrencyRatesSnapshot,
 } from '@/tools/shared/currency-rates';
 import type { SupportedCurrency } from '@/tools/shared/currency';
+import { moneyAmountToInputString } from '@/tools/shared/money-value';
 import {
   formatMoneyAmount,
   formatPercentValue,
@@ -187,24 +188,19 @@ export function validateMarginCalculatorClassicInput(
     formattedCost: formatMoneyAmount(solved.cost, calcCurrency),
   };
 
+  // Sync non-driver fields with full-precision input strings (display rounding stays in result.*).
   const synced: MarginClassicSyncedFields = {};
   if (input.driver !== 'cost') {
-    synced.cost = formatMoneyAmount(solved.cost, calcCurrency);
+    synced.cost = moneyAmountToInputString(solved.cost);
   }
   if (input.driver !== 'margin') {
     synced.marginPercent = formatPercentValue(solved.marginPercent);
   }
   if (input.driver !== 'revenue') {
-    synced.revenue = formatMoneyAmount(
-      revenueDisplayed.amount,
-      input.revenueCurrency
-    );
+    synced.revenue = moneyAmountToInputString(revenueDisplayed.amount);
   }
   if (input.driver !== 'profit') {
-    synced.profit = formatMoneyAmount(
-      profitDisplayed.amount,
-      input.profitCurrency
-    );
+    synced.profit = moneyAmountToInputString(profitDisplayed.amount);
   }
 
   // When margin is pinned and revenue/profit drove a cost change, cost was not the driver.
@@ -212,7 +208,7 @@ export function validateMarginCalculatorClassicInput(
     input.marginPinned &&
     (input.driver === 'revenue' || input.driver === 'profit')
   ) {
-    synced.cost = formatMoneyAmount(solved.cost, calcCurrency);
+    synced.cost = moneyAmountToInputString(solved.cost);
   }
 
   return { isValid: true, errors: {}, result, synced };
