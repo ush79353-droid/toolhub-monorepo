@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add mg to lbs Converter
+- **Summary:** Shipped mg to lbs Converter on existing catalog slug mg-to-lbs-converter (MgToLbsConverter, catalog 6af46f17a27d8d1d4e990b52). Bidirectional mg↔lb via exact 1 lb = 453,592.37 mg; milligrams-first UI; empty default; negatives rejected; tiny positive values preserved; original guide/table/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-358b delivery for Conversion and Units milligrams-to-pounds converter.
+- **Important Files:** frontend/src/tools/calculators/mg-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (453592.37 mg = 1 lb; 1000 mg ≈ 0.00220462262185 lb; 500 mg ≈ 0.001102311310925 lb; 0.5 lb = 226796.185 mg; zero; negatives rejected; tiny values not formatted as 0). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add mg to cc Conversion
 - **Summary:** Shipped mg to cc Conversion on existing catalog slug mg-to-cc-conversion (MgToCcConverter, catalog 6af46f17a27d8d1d4e990b51). Medication concentration vs substance density modes; 1 cc = 1 mL; custom concentration only (no clinical presets); water approx 1 g/mL; bidirectional mg↔cc; mg/5 mL and density unit normalization; medication safety notice; empty default; original guide/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-357b delivery for Conversion and Units milligram-to-cubic-centimeter converter.
