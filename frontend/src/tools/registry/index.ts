@@ -1170,6 +1170,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HectaresToAcresConverter,
     })),
   ),
+  HeightConverter: lazyTool(() =>
+    import('@/tools/calculators/height-converter/HeightConverter').then((mod) => ({
+      default: mod.HeightConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
