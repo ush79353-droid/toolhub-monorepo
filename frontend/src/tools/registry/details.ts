@@ -264,6 +264,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InToCmConverter: () => import('@/tools/calculators/in-to-cm/detail'),
   KathaToSquareFeetConverter: () => import('@/tools/calculators/katha-to-sqft/detail'),
   KelvinConverter: () => import('@/tools/calculators/kelvin-converter/detail'),
+  KelvinToCelsiusConverter: () => import('@/tools/calculators/kelvin-to-celsius/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
