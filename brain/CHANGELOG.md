@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Inch Converter
+- **Summary:** Shipped Inch Converter on existing catalog slug inch-converter (InchConverter, catalog 6af46f17a27d8d1d4e990b13). Primary inches + Metric/Imperial/Others (nmi, IAU solar radius, Julian ly) reusing meter-converter length engine; signed values allowed; empty default; Conversion & Units pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-328b delivery for Conversion and Units inch length converter.
+- **Important Files:** frontend/src/tools/calculators/inch-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 in = 25.4 mm / 2.54 cm / 0.0254 m; 12 in = 1 ft; 63360 in = 1 mi; reverse cm/mm/ft/yd/mi; nmi/ly/solarRadius finite). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9eb). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Imperial to Metric Conversion
 - **Summary:** Shipped Imperial to Metric Conversion on existing catalog slug imperial-to-metric-conversion (ImperialToMetricConversion, catalog 6af46f17a27d8d1d4e990b02). Branded wrapper over Imperial Calculator shared measurement hub (no duplicated conversion constants); original guide/tables/FAQs; Metric Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-327b delivery for Conversion and Units Metric Converter pillar imperial↔metric page.
