@@ -1076,6 +1076,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FeetToYardsConverter,
     })),
   ),
+  FluidOuncesToPoundsConverter: lazyTool(() =>
+    import('@/tools/calculators/fluid-ounces-to-pounds/FluidOuncesToPoundsConverter').then(
+      (mod) => ({
+        default: mod.FluidOuncesToPoundsConverter,
+      }),
+    ),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

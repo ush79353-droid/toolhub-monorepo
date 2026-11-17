@@ -229,6 +229,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FeetConverter: () => import('@/tools/calculators/feet-converter/detail'),
   FeetToMilesConverter: () => import('@/tools/calculators/feet-to-miles/detail'),
   FeetToYardsConverter: () => import('@/tools/calculators/feet-to-yards/detail'),
+  FluidOuncesToPoundsConverter: () =>
+    import('@/tools/calculators/fluid-ounces-to-pounds/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
