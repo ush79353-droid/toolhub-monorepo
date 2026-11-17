@@ -302,6 +302,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MinutesToDaysCalculator: () => import('@/tools/calculators/minutes-to-days/detail'),
   MinutesToDecimalCalculator: () => import('@/tools/calculators/minutes-to-decimal/detail'),
   MinutesToSecondsConverter: () => import('@/tools/calculators/minutes-to-seconds/detail'),
+  MinutesToYearsConversion: () => import('@/tools/calculators/minutes-to-years/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

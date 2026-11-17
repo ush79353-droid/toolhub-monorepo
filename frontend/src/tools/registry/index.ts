@@ -1435,6 +1435,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MinutesToSecondsConverter,
     })),
   ),
+  MinutesToYearsConversion: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-years/MinutesToYearsConversion').then((mod) => ({
+      default: mod.MinutesToYearsConversion,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
