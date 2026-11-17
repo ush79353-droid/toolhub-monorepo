@@ -9,6 +9,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/debt-avalanche/detail'),
   DebtCalculator: () =>
     import('@/tools/calculators/debt/detail'),
+  DebtServiceCoverageRatioCalculator: () =>
+    import('@/tools/calculators/debt-service-coverage-ratio/detail'),
   InterestRateParityCalculator: () =>
     import('@/tools/calculators/interest-rate-parity/detail'),
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),

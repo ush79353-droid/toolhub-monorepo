@@ -41,6 +41,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DebtCalculator,
     })),
   ),
+  DebtServiceCoverageRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-service-coverage-ratio/DebtServiceCoverageRatioCalculator'
+    ).then((mod) => ({
+      default: mod.DebtServiceCoverageRatioCalculator,
+    })),
+  ),
   InterestRateParityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/interest-rate-parity/InterestRateParityCalculator'

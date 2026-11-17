@@ -15,6 +15,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'after-tax-cost-of-debt-calculator',
   'debt-avalanche-calculator',
   'debt-calculator',
+  'debt-service-coverage-ratio-calculator-dscr',
   'interest-rate-parity-calculator',
   'loan-calculator',
   'auto-loan-calculator',
