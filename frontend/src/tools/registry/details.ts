@@ -5,6 +5,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AfterTaxCostOfDebtCalculator: () =>
     import('@/tools/calculators/after-tax-cost-of-debt/detail'),
   AutoLoanCalculator: () => import('@/tools/calculators/auto-loan/detail'),
+  DebtAvalancheCalculator: () =>
+    import('@/tools/calculators/debt-avalanche/detail'),
   DebtCalculator: () =>
     import('@/tools/calculators/debt/detail'),
   InterestRateParityCalculator: () =>

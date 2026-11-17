@@ -13,6 +13,7 @@ import { isRegisteredComponentKey } from '@/tools/registry/keys';
 /** Known implemented public tool slugs (registry-backed). Extend when new calculators ship. */
 const IMPLEMENTED_TOOL_SLUGS = [
   'after-tax-cost-of-debt-calculator',
+  'debt-avalanche-calculator',
   'debt-calculator',
   'interest-rate-parity-calculator',
   'loan-calculator',

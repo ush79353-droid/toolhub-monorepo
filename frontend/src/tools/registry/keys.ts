@@ -1,6 +1,7 @@
 export const APPROVED_COMPONENT_KEYS = [
   'AfterTaxCostOfDebtCalculator',
   'AutoLoanCalculator',
+  'DebtAvalancheCalculator',
   'DebtCalculator',
   'InterestRateParityCalculator',
   'LoanCalculator',
@@ -487,6 +488,7 @@ export function isApprovedComponentKey(key: string): key is ApprovedComponentKey
 export const REGISTERED_COMPONENT_KEYS = [
   'AfterTaxCostOfDebtCalculator',
   'AutoLoanCalculator',
+  'DebtAvalancheCalculator',
   'DebtCalculator',
   'InterestRateParityCalculator',
   'LoanCalculator',

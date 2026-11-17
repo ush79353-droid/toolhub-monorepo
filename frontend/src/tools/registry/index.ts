@@ -27,6 +27,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AutoLoanCalculator,
     })),
   ),
+  DebtAvalancheCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-avalanche/DebtAvalancheCalculator'
+    ).then((mod) => ({
+      default: mod.DebtAvalancheCalculator,
+    })),
+  ),
   DebtCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/debt/DebtCalculator'
