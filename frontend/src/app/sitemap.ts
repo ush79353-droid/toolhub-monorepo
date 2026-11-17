@@ -280,6 +280,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'land-area-calculator',
   'lbs-to-g-converter',
   'lbs-to-kg-converter',
+  'lbs-to-pounds-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

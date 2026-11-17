@@ -285,6 +285,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LandAreaCalculator: () => import('@/tools/calculators/land-area/detail'),
   LbsToGConverter: () => import('@/tools/calculators/lbs-to-g/detail'),
   LbsToKgConverter: () => import('@/tools/calculators/lbs-to-kg/detail'),
+  LbsToPoundsConverter: () => import('@/tools/calculators/lbs-to-pounds/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

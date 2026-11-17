@@ -260,6 +260,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LandAreaCalculator',
   'LbsToGConverter',
   'LbsToKgConverter',
+  'LbsToPoundsConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -708,6 +709,7 @@ if (isDirect) {
     !isApprovedComponentKey('LandAreaCalculator') ||
     !isApprovedComponentKey('LbsToGConverter') ||
     !isApprovedComponentKey('LbsToKgConverter') ||
+    !isApprovedComponentKey('LbsToPoundsConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
