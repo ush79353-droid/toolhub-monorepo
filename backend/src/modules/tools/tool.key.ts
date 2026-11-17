@@ -220,6 +220,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GramsInMlConverter',
   'GramsToFlOzConverter',
   'GramToLiterConversion',
+  'GrToMlConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -628,6 +629,7 @@ if (isDirect) {
     !isApprovedComponentKey('GramsInMlConverter') ||
     !isApprovedComponentKey('GramsToFlOzConverter') ||
     !isApprovedComponentKey('GramToLiterConversion') ||
+    !isApprovedComponentKey('GrToMlConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
