@@ -1250,6 +1250,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KelvinToCelsiusConverter,
     })),
   ),
+  KelvinToFahrenheitConverter: lazyTool(() =>
+    import('@/tools/calculators/kelvin-to-fahrenheit/KelvinToFahrenheitConverter').then((mod) => ({
+      default: mod.KelvinToFahrenheitConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

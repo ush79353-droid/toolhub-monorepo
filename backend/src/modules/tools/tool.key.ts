@@ -240,6 +240,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'KathaToSquareFeetConverter',
   'KelvinConverter',
   'KelvinToCelsiusConverter',
+  'KelvinToFahrenheitConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -668,6 +669,7 @@ if (isDirect) {
     !isApprovedComponentKey('KathaToSquareFeetConverter') ||
     !isApprovedComponentKey('KelvinConverter') ||
     !isApprovedComponentKey('KelvinToCelsiusConverter') ||
+    !isApprovedComponentKey('KelvinToFahrenheitConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

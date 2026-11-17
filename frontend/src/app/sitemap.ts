@@ -260,6 +260,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'katha-to-square-feet-converter',
   'kelvin-converter',
   'kelvin-to-celsius-converter',
+  'kelvin-to-fahrenheit-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
