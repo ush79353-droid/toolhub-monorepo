@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Minutes to Days Calculator
+- **Summary:** Shipped Minutes to Days Calculator on existing catalog slug minutes-to-days-calculator (MinutesToDaysCalculator, catalog 6af46f17a27d8d1d4e990bb2). Bidirectional minutes↔days via exact 1 day = 1440 min; example presets 1440→1 day and 180→0.125 days; collapsed Other equivalent amounts (sec/hrs/wks + HMS); reuses hour-converter engine; empty default; non-negative durations; chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-369b delivery for Conversion and Units minutes-to-days converter.
+- **Important Files:** frontend/src/tools/calculators/minutes-to-days/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1440/720/360/180/30/45/2880/10080 min → days; 2.5 days = 3600 min; sec/hrs/wks helpers; HMS 150.5 → 2h30m30s; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Minute Converter
 - **Summary:** Shipped Minute Converter on existing catalog slug minute-converter (MinuteConverter, catalog 6af46f17a27d8d1d4e990bb1). Minutes-centered bidirectional time converter: primary minutes plus years/months/weeks/days/hours/seconds and compound HMS; reuses hour-converter Gregorian seconds engine; exact 1 h = 60 min, 1 d = 1440 min, 1 wk = 10080 min; average Gregorian year 525949.2 min / month 43829.1 min; empty default; non-negative durations; chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-368b delivery for Conversion and Units minute converter.
