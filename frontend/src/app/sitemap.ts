@@ -268,6 +268,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'kg-to-ounce-converter',
   'kg-to-stones-converter',
   'kilometer-calculator',
+  'kilometer-to-meter-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
