@@ -328,6 +328,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'liquid-net-worth-calculator',
   'loan-balance-calculator',
   'loan-interest-calculator',
+  'lottery-annuity-calculator',
   'quiz-loan-balance-calculator',
   'man-hours-calculator',
   'margin-and-markup-calculator',

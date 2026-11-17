@@ -1676,6 +1676,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LoanInterestCalculator,
     })),
   ),
+  LotteryAnnuityCalculator: lazyTool(() =>
+    import('@/tools/calculators/lottery-annuity/LotteryAnnuityCalculator').then((mod) => ({
+      default: mod.LotteryAnnuityCalculator,
+    })),
+  ),
   LoanRepaymentCalculator: lazyTool(() =>
     import('@/tools/calculators/loan-repayment/LoanRepaymentCalculator').then(
       (mod) => ({

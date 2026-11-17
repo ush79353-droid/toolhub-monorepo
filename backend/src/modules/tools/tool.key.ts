@@ -305,6 +305,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LiquidNetWorthCalculator',
   'LoanBalanceCalculator',
   'LoanInterestCalculator',
+  'LotteryAnnuityCalculator',
   'LoanRepaymentCalculator',
   'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
@@ -739,6 +740,7 @@ if (isDirect) {
     !isApprovedComponentKey('LiquidNetWorthCalculator') ||
     !isApprovedComponentKey('LoanBalanceCalculator') ||
     !isApprovedComponentKey('LoanInterestCalculator') ||
+    !isApprovedComponentKey('LotteryAnnuityCalculator') ||
     !isApprovedComponentKey('LoanRepaymentCalculator') ||
     !isApprovedComponentKey('QuizLoanBalanceCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
