@@ -200,6 +200,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AttritionRateCalculator',
   'BusinessLoanCalculator',
   'ProfitabilityIndexCalculator',
+  'RentOrBuyCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
   'RoceCalculator',
@@ -620,6 +621,7 @@ if (isDirect) {
     !isApprovedComponentKey('AttritionRateCalculator') ||
     !isApprovedComponentKey('BusinessLoanCalculator') ||
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
+    !isApprovedComponentKey('RentOrBuyCalculator') ||
     !isApprovedComponentKey('RevenuePerEmployeeCalculator') ||
     !isApprovedComponentKey('RoasCalculator') ||
     !isApprovedComponentKey('RoceCalculator') ||
