@@ -1380,6 +1380,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MgToTeaspoonConverter,
     })),
   ),
+  MicronToMilConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/micron-to-mil/MicronToMilConversionCalculator').then((mod) => ({
+      default: mod.MicronToMilConversionCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
