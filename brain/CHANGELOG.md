@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Hectares to Acres Converter
+- **Summary:** Shipped Hectares to Acres Converter on existing catalog slug hectares-to-acres-converter (HectaresToAcresConverter, catalog 6af46f17a27d8d1d4e990b87). Bidirectional ha↔ac with exact 1 ha = 10,000 m² and 1 international acre = 4,046.8564224 m²; simple two-field UI; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-318b delivery for Conversion and Units hectares ↔ acres land-area converter.
+- **Important Files:** frontend/src/tools/calculators/hectares-to-acres/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 ha ≈ 2.4710538147 ac; 19 ac ≈ 7.68902720256 ha; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add g to lbs Converter
 - **Summary:** Shipped g to lbs Converter on existing catalog slug g-to-lbs-converter (GToLbsConverter, catalog 6af46f17a27d8d1d4e990b3a). Bidirectional grams↔pounds with exact 1 lb = 453.59237 g; simple two-field UI; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-317b delivery for Conversion and Units grams ↔ pounds mass converter.
