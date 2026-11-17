@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Hours to Week Conversion
+- **Summary:** Shipped Hours to Week Conversion on existing catalog slug hours-to-week-conversion (HoursToWeekConversion, catalog 6af46f17a27d8d1d4e990bad). Bidirectional hours↔weeks (exact ÷168); Other time units + HMS reusing hour-converter TIME_CONSTANTS; average Gregorian year/month labeled; GCD week-fraction table; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-324b delivery for Conversion and Units hours ↔ weeks converter.
+- **Important Files:** frontend/src/tools/calculators/hours-to-weeks/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (168 hr = 1 wk; 120 hr = 5/7 wk; 2.5 wk = 420 hr; 604800 s = 1 wk; 10h 30m 15s = 37815 s; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Hours to Seconds Converter
 - **Summary:** Shipped Hours to Seconds Converter on existing catalog slug hours-to-seconds-converter (HoursToSecondsConverter, catalog 6af46f17a27d8d1d4e990bac). Bidirectional hours↔seconds plus editable HMS compound reusing hour-converter TIME_CONSTANTS; exact ×3600; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-323b delivery for Conversion and Units hours ↔ seconds converter.
