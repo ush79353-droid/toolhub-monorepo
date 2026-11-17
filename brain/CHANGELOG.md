@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Fahrenheit to Celsius Converter
+- **Summary:** Shipped Fahrenheit to Celsius Converter on existing catalog slug fahrenheit-to-celsius-converter (FahrenheitToCelsiusConverter, catalog 6af46f17a27d8d1d4e990b1a). Bidirectional °F↔°C with Fahrenheit first; reverse callout; reuses celsius-to-fahrenheit affine helpers; absolute-zero rejection. Pillar 6af451d2a27d8d1d4e98f9ec preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-297b delivery for Conversion and Units temperature pair converter (°F to °C focus).
+- **Important Files:** frontend/src/tools/calculators/fahrenheit-to-celsius/*, celsius-to-fahrenheit helpers reused, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Fahrenheit Converter
 - **Summary:** Shipped Fahrenheit Converter on existing catalog slug fahrenheit-converter (FahrenheitConverter, catalog 6af46f17a27d8d1d4e990b18). Primary °F; Other temperatures accordion for °C/K/°R/°De/°N/°Ré/°Rø; Kelvin-normalized path reusing Celsius Converter affine formulas; absolute-zero rejection. Pillar 6af451d2a27d8d1d4e98f9ec preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-296b delivery for Conversion and Units temperature converter (Fahrenheit focus).
