@@ -56,6 +56,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'astronomical-unit-calculator',
   'pixels-to-inches-converter',
   'decimeter-to-meter-converter',
+  'deferred-payment-loan-calculator',
   'square-kilometers-to-acres-conversion',
   'feet-and-inches-calculator',
   'yards-to-acres-calculator',
@@ -392,6 +393,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'lerner-index-calculator',
   'liquid-net-worth-calculator',
   'loan-balance-calculator',
+  'loan-payment-calculator',
   'quiz-loan-balance-calculator',
   'man-hours-calculator',
   'margin-interest-calculator',
@@ -473,6 +475,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'value-at-risk-calculator-var',
   'economic-injury-disaster-loan-emergency-advance-eidl',
   'student-loan-repayment-calculator-covid-19',
+  'stimulus-check-calculator-40k-cap',
 ] as const;
 
 const STATIC_PATHS = [

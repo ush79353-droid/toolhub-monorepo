@@ -34,6 +34,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AstronomicalUnitCalculator',
   'PixelsToInchesConverter',
   'DecimeterToMeterConverter',
+  'DeferredPaymentLoanCalculator',
   'SquareKilometersToAcresConverter',
   'FeetAndInchesCalculator',
   'YardsToAcresCalculator',
@@ -283,6 +284,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LernerIndexCalculator',
   'LiquidNetWorthCalculator',
   'LoanBalanceCalculator',
+  'LoanPaymentCalculator',
   'LoanRepaymentCalculator',
   'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
@@ -375,6 +377,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
   'EidlCalculator',
+  'StimulusCheck40kCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -431,6 +434,7 @@ if (isDirect) {
     !isApprovedComponentKey('AstronomicalUnitCalculator') ||
     !isApprovedComponentKey('PixelsToInchesConverter') ||
     !isApprovedComponentKey('DecimeterToMeterConverter') ||
+    !isApprovedComponentKey('DeferredPaymentLoanCalculator') ||
     !isApprovedComponentKey('SquareKilometersToAcresConverter') ||
     !isApprovedComponentKey('FeetAndInchesCalculator') ||
     !isApprovedComponentKey('YardsToAcresCalculator') ||
@@ -680,6 +684,7 @@ if (isDirect) {
     !isApprovedComponentKey('LernerIndexCalculator') ||
     !isApprovedComponentKey('LiquidNetWorthCalculator') ||
     !isApprovedComponentKey('LoanBalanceCalculator') ||
+    !isApprovedComponentKey('LoanPaymentCalculator') ||
     !isApprovedComponentKey('LoanRepaymentCalculator') ||
     !isApprovedComponentKey('QuizLoanBalanceCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
@@ -772,6 +777,8 @@ if (isDirect) {
     !isApprovedComponentKey('VaMortgageCalculator') ||
     !isApprovedComponentKey('ValueAtRiskCalculator') ||
     !isApprovedComponentKey('EidlCalculator') ||
+    !isApprovedComponentKey('HealsActStimulusCalculator') ||
+    !isApprovedComponentKey('StimulusCheck40kCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

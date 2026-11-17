@@ -32,6 +32,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AstronomicalUnitCalculator',
   'PixelsToInchesConverter',
   'DecimeterToMeterConverter',
+  'DeferredPaymentLoanCalculator',
   'SquareKilometersToAcresConverter',
   'FeetAndInchesCalculator',
   'YardsToAcresCalculator',
@@ -368,6 +369,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LernerIndexCalculator',
   'LiquidNetWorthCalculator',
   'LoanBalanceCalculator',
+  'LoanPaymentCalculator',
   'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
   'MarginInterestCalculator',
@@ -461,6 +463,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EidlCalculator',
   'CaliforniaStimulusCheckIiCalculator',
   'StudentLoanRepaymentCovidCalculator',
+  'StimulusCheck40kCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -504,6 +507,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'AstronomicalUnitCalculator',
   'PixelsToInchesConverter',
   'DecimeterToMeterConverter',
+  'DeferredPaymentLoanCalculator',
   'SquareKilometersToAcresConverter',
   'FeetAndInchesCalculator',
   'YardsToAcresCalculator',
@@ -840,6 +844,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'LernerIndexCalculator',
   'LiquidNetWorthCalculator',
   'LoanBalanceCalculator',
+  'LoanPaymentCalculator',
   'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
   'MarginInterestCalculator',
@@ -933,6 +938,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'EidlCalculator',
   'CaliforniaStimulusCheckIiCalculator',
   'StudentLoanRepaymentCovidCalculator',
+  'StimulusCheck40kCalculator',
 ] as const;
 
 export type RegisteredComponentKey = (typeof REGISTERED_COMPONENT_KEYS)[number];
