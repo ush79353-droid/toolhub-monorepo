@@ -236,6 +236,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GajToSquareYardConverter: () => import('@/tools/calculators/gaj-to-square-yard/detail'),
   GallonsToCubicFeetConverter: () =>
     import('@/tools/calculators/gallons-to-cubic-feet/detail'),
+  GallonsToCupsConverter: () => import('@/tools/calculators/gallons-to-cups/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
