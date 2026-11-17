@@ -263,6 +263,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SmokersCtcCalculator: () =>
     import('@/tools/calculators/smokers-ctc/detail'),
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),
+  TexasOvertimeCalculator: () =>
+    import('@/tools/calculators/texas-overtime/detail'),
   TimeValueOfMoneyCalculator: () =>
     import('@/tools/calculators/time-value-of-money/detail'),
   TimesInterestEarnedCalculator: () =>
@@ -460,8 +462,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mva/detail'),
   NetDebtCalculator: () =>
     import('@/tools/calculators/net-debt/detail'),
-  NewYorkOvertimeCalculator: () =>
-    import('@/tools/calculators/new-york-overtime/detail'),
   NopatCalculator: () =>
     import('@/tools/calculators/nopat/detail'),
   NpvCalculator: () =>

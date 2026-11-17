@@ -213,6 +213,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SinkingFundCalculator',
   'SmokersCtcCalculator',
   'TenureCalculator',
+  'TexasOvertimeCalculator',
   'TimeValueOfMoneyCalculator',
   'TimesInterestEarnedCalculator',
   'TtmCalculator',
@@ -308,7 +309,6 @@ export const APPROVED_COMPONENT_KEYS = [
   'MutualFundCalculator',
   'MvaCalculator',
   'NetDebtCalculator',
-  'NewYorkOvertimeCalculator',
   'NopatCalculator',
   'NpvCalculator',
   'OnlineMarketingConversionCalculator',
@@ -628,6 +628,7 @@ if (isDirect) {
     !isApprovedComponentKey('SinkingFundCalculator') ||
     !isApprovedComponentKey('SmokersCtcCalculator') ||
     !isApprovedComponentKey('TenureCalculator') ||
+    !isApprovedComponentKey('TexasOvertimeCalculator') ||
     !isApprovedComponentKey('TimeValueOfMoneyCalculator') ||
     !isApprovedComponentKey('TimesInterestEarnedCalculator') ||
     !isApprovedComponentKey('TtmCalculator') ||
@@ -723,7 +724,6 @@ if (isDirect) {
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
     !isApprovedComponentKey('NetDebtCalculator') ||
-    !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('NpvCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||

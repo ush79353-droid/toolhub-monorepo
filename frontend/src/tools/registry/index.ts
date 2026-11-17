@@ -1174,6 +1174,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TenureCalculator,
     })),
   ),
+  TexasOvertimeCalculator: lazyTool(() =>
+    import('@/tools/calculators/texas-overtime/TexasOvertimeCalculator').then((mod) => ({
+      default: mod.TexasOvertimeCalculator,
+    })),
+  ),
   TimeValueOfMoneyCalculator: lazyTool(() =>
     import('@/tools/calculators/time-value-of-money/TimeValueOfMoneyCalculator').then((mod) => ({
       default: mod.TimeValueOfMoneyCalculator,
@@ -1742,13 +1747,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   NetDebtCalculator: lazyTool(() =>
     import('@/tools/calculators/net-debt/NetDebtCalculator').then((mod) => ({
       default: mod.NetDebtCalculator,
-    })),
-  ),
-  NewYorkOvertimeCalculator: lazyTool(() =>
-    import(
-      '@/tools/calculators/new-york-overtime/NewYorkOvertimeCalculator'
-    ).then((mod) => ({
-      default: mod.NewYorkOvertimeCalculator,
     })),
   ),
   NopatCalculator: lazyTool(() =>

@@ -1,3 +1,11 @@
+### 2026-11-17 — Overtime Paycheck Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Overtime Paycheck Calculator on existing catalog slug `overtime-paycheck-calculator` (`OvertimePaycheckCalculator`, catalog `6af46f0fa27d8d1d4e98ffb7`). Collapsible Regular work time + Overtime; In total; Share/Reload/Clear/feedback. Activated. Distinct from `overtime-calculator`.
+- **Formulas:** OT hourly = regular hourly × multiplier; regular monthly = hourly × weekly hours × 52/12; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Blank OT hours → 0. Duration/rate/frequency units normalize without mixing quantities. No tax/withholding fields.
+- **FX:** Independent currencies on all monetary selectors; compute in regular-pay currency at full precision; re-express results; display rounding only. Hours, time units, and multiplier never convert. Stale/missing rate handling via `CURRENCY_CONVERSION_SLUGS`.
+- **Example:** 20/hr × 40 hr/week × 1.5 × 10 OT hr/month → OT rate 30; regular ≈ 3,466.67; OT 300; total ≈ 3,766.67.
+- **Important Files:** `frontend/src/tools/calculators/overtime-paycheck/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-overtime-paycheck-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Overtime Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Overtime Calculator on existing catalog slug `overtime-calculator` (`OvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb1`). Collapsible Regular work time + Overtime; In total; Share/Reload/Clear/feedback. Activated.
 - **Formulas:** OT hourly = regular hourly × multiplier; regular monthly = hourly × weekly hours × 52/12; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Duration/rate/frequency units normalize without mixing hourly/weekly/monthly quantities.
@@ -66,6 +74,15 @@
 # Development Changelog (`CHANGELOG.md`)
 
 > **Convention:** Append entries chronologically after verified tasks. Do not rewrite historical entries.
+
+### 2026-11-17 — Texas Overtime Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Texas Overtime Calculator on existing catalog slug `texas-overtime-calculator` (`TexasOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb9`). Regular work time + overtime + in-total sections; unit selectors; Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Regular monthly = hourly × weekly hours × 52/12; OT hourly = hourly × multiplier; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Pay/time unit normalization via weekly schedule.
+- **FX:** Independent currencies on regular pay and each pay result (Margin Interest / Florida OT pattern). Hours and multiplier never convert. `CURRENCY_CONVERSION_SLUGS` + stale/missing handling.
+- **Example:** 20/hr · 40 hrs/week · 1.5× · 10 OT hrs/month → regular ≈ 3,466.67; OT 300; total ≈ 3,766.67.
+- **Important Files:** `frontend/src/tools/calculators/texas-overtime/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-texas-overtime-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. MongoDB activated. Lint/builds/tests omitted per user. No push.
+
 
 ### 2026-11-17 — Illinois Overtime Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Illinois Overtime Calculator on existing catalog slug `illinois-overtime-calculator` (`IllinoisOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb5`). Sections: Regular work time, Overtime, In total. Defaults 40 hours/week and 1.5× multiplier. Share/Reload/Clear/feedback. Activated.
