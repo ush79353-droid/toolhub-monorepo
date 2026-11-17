@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Minutes to Years Conversion
+- **Summary:** Shipped Minutes to Years Conversion on existing catalog slug minutes-to-years-conversion (MinutesToYearsConversion, catalog 6af46f17a27d8d1d4e990bb6). Bidirectional minutes↔average years via Julian 365.25-day year (525,960 min); Other Time Units accordion (mo/wk/d/h/s + HMS); empty default; signed durations; guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-372b delivery for Conversion and Units minutes-to-years converter.
+- **Important Files:** frontend/src/tools/calculators/minutes-to-years/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0/0.5/1/2 yr; 525960→365.25 d/8766 h/31557600 s/12 mo; 60/1440/10080; HMS 2h30m15s; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Minutes to Seconds Converter
 - **Summary:** Shipped Minutes to Seconds Converter on existing catalog slug minutes-to-seconds-converter (MinutesToSecondsConverter, catalog 6af46f17a27d8d1d4e990bb5). Bidirectional minutes↔seconds plus combined min|sec (remainder in [0, 60)); exact 1 min = 60 s; empty default; signed durations; 1.5 min ≠ 1 min 50 sec clarified; guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-371b delivery for Conversion and Units minutes-to-seconds converter.
