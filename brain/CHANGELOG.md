@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Fluid Ounces to Pounds Conversion
+- **Summary:** Shipped Fluid Ounces to Pounds Conversion on existing catalog slug fluid-ounces-to-pounds-conversion (FluidOuncesToPoundsConverter, catalog 6af46f17a27d8d1d4e990b39). Density-based volume↔mass with substance presets (water @ 1000 kg/m³), editable density units, US/Imp fl oz distinguished, bidirectional sync. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-301b delivery for Conversion and Units density-based fl oz ↔ lb converter.
+- **Important Files:** frontend/src/tools/calculators/fluid-ounces-to-pounds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (16 US fl oz water ≈ 1.04318 lb; 1 lb water ≈ 15.3378 US fl oz). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Feet to Yards Conversion
 - **Summary:** Shipped Feet to Yards Conversion on existing catalog slug feet-to-yards-conversion (FeetToYardsConverter, catalog 6af46f17a27d8d1d4e990ad4). Bidirectional ft↔yd with feet first; exact 1 yd = 3 ft; cross-checks meter-converter length registry. Pillar 6af451d0a27d8d1d4e98f9e2 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-300b delivery for Conversion and Units length pair converter (ft to yd).
