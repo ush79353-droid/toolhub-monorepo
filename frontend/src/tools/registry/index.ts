@@ -47,6 +47,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HundredDayCalculator,
     })),
   ),
+  TimesInterestEarnedCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/times-interest-earned/TimesInterestEarnedCalculator'
+    ).then((mod) => ({
+      default: mod.TimesInterestEarnedCalculator,
+    })),
+  ),
   TwelveVoltWireCalculator: lazyTool(() =>
     import('@/tools/calculators/twelve-volt-wire/TwelveVoltWireCalculator').then((mod) => ({
       default: mod.TwelveVoltWireCalculator,

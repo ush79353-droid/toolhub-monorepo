@@ -9,6 +9,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   RrefCalculator: () => import('@/tools/calculators/rref/detail'),
   ArmMortgageCalculator: () => import('@/tools/calculators/arm-mortgage/detail'),
   HundredDayCalculator: () => import('@/tools/calculators/hundred-day/detail'),
+  TimesInterestEarnedCalculator: () =>
+    import('@/tools/calculators/times-interest-earned/detail'),
   TwelveVoltWireCalculator: () => import('@/tools/calculators/twelve-volt-wire/detail'),
   ZeroToSixtyCalculator: () => import('@/tools/calculators/zero-to-sixty/detail'),
   TwelveHourShiftPayCalculator: () => import('@/tools/calculators/twelve-hour-shift-pay/detail'),
