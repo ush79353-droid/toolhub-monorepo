@@ -2009,6 +2009,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FhaLoanCalculator,
     })),
   ),
+  FloridaOvertimeCalculator: lazyTool(() =>
+    import('@/tools/calculators/florida-overtime/FloridaOvertimeCalculator').then((mod) => ({
+      default: mod.FloridaOvertimeCalculator,
+    })),
+  ),
   HomeEquityLoanCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/home-equity-loan/HomeEquityLoanCalculator'

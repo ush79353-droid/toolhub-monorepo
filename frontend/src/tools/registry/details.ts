@@ -550,6 +550,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/expected-utility/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
   FhaLoanCalculator: () => import('@/tools/calculators/fha-loan/detail'),
+  FloridaOvertimeCalculator: () =>
+    import('@/tools/calculators/florida-overtime/detail'),
   FutureValueCalculator: () =>
     import('@/tools/calculators/future-value/detail'),
   FutureValueOfAnnuityCalculator: () =>

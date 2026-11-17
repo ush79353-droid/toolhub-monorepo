@@ -33,6 +33,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'acreage-calculator',
   'feet-to-inches-calculator',
   'fha-loan-calculator',
+  'florida-overtime-calculator',
   'home-equity-loan-calculator',
   'home-improvement-loan-calculator',
   'home-loan-emi-calculator',
