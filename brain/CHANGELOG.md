@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Gram to Liter Conversion
+- **Summary:** Shipped Gram to Liter Conversion on existing catalog slug gram-to-liter-conversion (GramToLiterConversion, catalog 6af46f17a27d8d1d4e990b3e). Density-based mass↔volume with ingredient presets; default water 1000 kg/m³ and L; V_L = m_g / ρ_kg/m³; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-314b delivery for Conversion and Units density-based gram ↔ liter converter.
+- **Important Files:** frontend/src/tools/calculators/gram-to-liter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100/500/1000 g water → 0.1/0.5/1 L; 200 g milk ≈ 0.19417 L; 2 L milk = 2060 g). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Grams to fl oz Converter
 - **Summary:** Shipped Grams to fl oz Converter on existing catalog slug grams-to-fl-oz-converter (GramsToFlOzConverter, catalog 6af46f17a27d8d1d4e990b40). Density-based mass↔volume with substance presets; default water 1 g/mL and US fl oz; distinct US/UK fluid ounce factors; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-313b delivery for Conversion and Units density-based grams ↔ fluid ounces converter.
