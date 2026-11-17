@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Inch to Meter Calculator
+- **Summary:** Shipped Inch to Meter Calculator on existing catalog slug inch-to-meter-calculator (InchToMeterCalculator, catalog 6af46f17a27d8d1d4e990b14). Bidirectional inches↔meters with exact 0.0254 factor; feet-and-inches related units with remainder normalization; empty default; signed values; original guide/examples/table/FAQs; Inch Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-330b delivery for Conversion and Units inches ↔ meters converter.
+- **Important Files:** frontend/src/tools/calculators/inch-to-meter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 in = 0.0254 m; 12 in = 0.3048 m; 72 in = 1.8288 m; 100 in = 2.54 m; 1 m ≈ 39.37007874 in; 5 ft 8 in = 1.7272 m; 4 ft 12 in normalizes to 5 ft 0 in; registry cross-check). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9eb). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Inches to Yard Conversion
 - **Summary:** Shipped Inches to Yard Conversion on existing catalog slug inches-to-yard-conversion (InchesToYardConversion, catalog 6af46f17a27d8d1d4e990ad6). Bidirectional inches↔yards with exact 36:1 factor; empty default; signed values; original guide/examples/table/FAQs; Yard Conversion pillar preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-329b delivery for Conversion and Units inches ↔ yards converter.
