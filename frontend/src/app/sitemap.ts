@@ -475,6 +475,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'value-at-risk-calculator-var',
   'economic-injury-disaster-loan-emergency-advance-eidl',
   'second-stimulus-check-calculator-heals-act',
+  'second-stimulus-check-calculator-heroes-act',
   'california-stimulus-check-ii-calculator',
   'student-loan-repayment-calculator-covid-19',
   'stimulus-check-calculator-40k-cap',

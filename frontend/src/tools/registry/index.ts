@@ -2525,6 +2525,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HealsActStimulusCalculator,
     })),
   ),
+  HeroesActStimulusCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/heroes-act-stimulus/HeroesActStimulusCalculator'
+    ).then((mod) => ({
+      default: mod.HeroesActStimulusCalculator,
+    })),
+  ),
   CaliforniaStimulusCheckIiCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/california-stimulus-check-ii/CaliforniaStimulusCheckIiCalculator'

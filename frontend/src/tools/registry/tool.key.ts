@@ -380,6 +380,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ValueAtRiskCalculator',
   'EidlCalculator',
   'CaliforniaStimulusCheckIiCalculator',
+  'HeroesActStimulusCalculator',
   'StimulusCheck40kCalculator',
   'CashActStimulusCalculator',
   'SecondStimulus900BillionCalculator',
@@ -784,6 +785,7 @@ if (isDirect) {
     !isApprovedComponentKey('ValueAtRiskCalculator') ||
     !isApprovedComponentKey('EidlCalculator') ||
     !isApprovedComponentKey('CaliforniaStimulusCheckIiCalculator') ||
+    !isApprovedComponentKey('HeroesActStimulusCalculator') ||
     !isApprovedComponentKey('StimulusCheck40kCalculator') ||
     !isApprovedComponentKey('CashActStimulusCalculator') ||
     !isApprovedComponentKey('SecondStimulus900BillionCalculator') ||

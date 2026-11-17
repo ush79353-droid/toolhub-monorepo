@@ -660,6 +660,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EidlCalculator: () => import('@/tools/calculators/eidl/detail'),
   HealsActStimulusCalculator: () =>
     import('@/tools/calculators/heals-act-stimulus/detail'),
+  HeroesActStimulusCalculator: () =>
+    import('@/tools/calculators/heroes-act-stimulus/detail'),
   CaliforniaStimulusCheckIiCalculator: () =>
     import('@/tools/calculators/california-stimulus-check-ii/detail'),
   StudentLoanRepaymentCovidCalculator: () =>
