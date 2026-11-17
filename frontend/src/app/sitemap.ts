@@ -274,6 +274,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'kpa-converter',
   'kpa-to-atm-conversion',
   'kpa-to-mmhg-conversion',
+  'kpa-to-psi-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

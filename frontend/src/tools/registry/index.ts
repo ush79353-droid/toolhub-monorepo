@@ -1320,6 +1320,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KpaToMmhgConversion,
     })),
   ),
+  KpaToPsiConversion: lazyTool(() =>
+    import('@/tools/calculators/kpa-to-psi/KpaToPsiConversion').then((mod) => ({
+      default: mod.KpaToPsiConversion,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

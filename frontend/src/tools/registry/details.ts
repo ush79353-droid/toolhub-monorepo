@@ -279,6 +279,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KpaConverter: () => import('@/tools/calculators/kpa-converter/detail'),
   KpaToAtmConversion: () => import('@/tools/calculators/kpa-to-atm/detail'),
   KpaToMmhgConversion: () => import('@/tools/calculators/kpa-to-mmhg/detail'),
+  KpaToPsiConversion: () => import('@/tools/calculators/kpa-to-psi/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
