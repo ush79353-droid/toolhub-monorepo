@@ -664,6 +664,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/california-stimulus-check-ii/detail'),
   StudentLoanRepaymentCovidCalculator: () =>
     import('@/tools/calculators/student-loan-repayment-covid/detail'),
+  StimulusCheck40kCalculator: () =>
+    import('@/tools/calculators/stimulus-check-40k/detail'),
   CashActStimulusCalculator: () =>
     import('@/tools/calculators/cash-act-stimulus/detail'),
   SecondStimulus900BillionCalculator: () =>

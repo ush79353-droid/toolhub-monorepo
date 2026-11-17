@@ -2540,6 +2540,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.StudentLoanRepaymentCovidCalculator,
     })),
   ),
+  StimulusCheck40kCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/stimulus-check-40k/StimulusCheck40kCalculator'
+    ).then((mod) => ({
+      default: mod.StimulusCheck40kCalculator,
+    })),
+  ),
   CashActStimulusCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/cash-act-stimulus/CashActStimulusCalculator'
