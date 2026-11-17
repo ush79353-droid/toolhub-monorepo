@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add kg to lbs Converter
+- **Summary:** Shipped kg to lbs Converter on existing catalog slug kg-to-lbs-converter (KgToLbsConverter, catalog 6af46f17a27d8d1d4e990b42). Bidirectional kg↔lb via exact international avoirdupois pound (1 lb = 0.45359237 kg); reuses weight-converter KG_PER_POUND + formatMass; empty default; negative mass rejected; original guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-337b delivery for Conversion and Units kilograms↔pounds pair converter.
+- **Important Files:** frontend/src/tools/calculators/kg-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 kg ≈ 2.20462262 lb; 50 kg ≈ 110.23113 lb; 100 lb = 45.359237 kg; weight-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add kg/cm² to PSI Converter
 - **Summary:** Shipped kg/cm² to psi Converter on existing catalog slug kgcm-to-psi-converter (KgCmToPsiConverter, catalog 6af46f17a27d8d1d4e990ae5). Bidirectional kgf/cm²↔psi via exact 98,066.5 / 6,894.757293168 Pa factor; empty default; signed gauge values allowed; original guide/table/FAQs. Live PSI Converter pillar `6af451d0a27d8d1d4e98f9e4` preserved (brief listed `…d2…`; refuse overwrite). Meta title <=70. indexable left false.
 - **Why:** TOOL-336b delivery for Conversion and Units kgf/cm²↔PSI pair converter.
