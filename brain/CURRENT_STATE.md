@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-17** (Mortgage Interest Calculator at `/tools/mortgage-interest-calculator` with Phase 2 FX; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-17** (Cash Back or Low Interest Calculator live at `/tools/cash-back-or-low-interest-calculator` fixed USD; Auto Loan remains master Tool Detail Page).
 
 ---
 

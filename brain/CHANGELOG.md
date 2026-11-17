@@ -4,6 +4,14 @@
 
 ---
 
+### 2026-11-17 — Cash Back or Low Interest Calculator (Screenshot-First, Fixed USD)
+- **Summary:** Shipped Cash Back or Low Interest Calculator on existing catalog slug `cash-back-or-low-interest-calculator` (`CashBackOrLowInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff81`). Inputs: cash back + high APR, low APR, auto price, term months, down, trade-in, US state (identity only), sales tax %, title/registration fees, include-all-fees checkbox. Results: verdict + both offers (loan, tax, upfront, monthly, total payments, interest, total cost). Fixed USD; no currency selectors.
+- **Formulas:** Tax = price × %/100; cash-back loan = price − down − trade-in − cashBack [+ tax + fees if financed]; low-rate loan omits cashBack; r = APR/1200; Payment = P×r/(1−(1+r)^(-n)); r=0 → P/n; totalCost = price + interest + tax + fees − cashBack (once).
+- **Tax handling:** Manual sales tax % only. State dropdown lists verified US states/DC; never auto-fills rates (no verified per-state table in repo).
+- **Example:** $50,000 / $1,000 @ 5% vs 2% / 60 mo / $10,000 down / 7% tax / $2,000 fees upfront → cash-back ≈ $735.98/mo · total ≈ $59,658.69; low-rate ≈ $701.11/mo · total ≈ $57,566.62 (low rate better; interest savings ≈ $3,092).
+- **Important Files:** `frontend/src/tools/calculators/cash-back-or-low-interest/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-cash-back-or-low-interest-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Reference math self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Mortgage Interest Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Interest Calculator on existing catalog slug `mortgage-interest-calculator` (`MortgageInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff76`). Screenshot fields: principal FX, term yrs/mos, interest %, compounding radios (Yearly / Semi-annually Canada / Quarterly / Monthly UK&US), optional fees checkbox (points, up-front FX, annual FX), Fixed-rate only, monthly payment / mortgage interest / APR / total payments with independent result FX, chart/schedule/both, schedule-from date, annual balances chart, monthly amortization table. Activated when Mongo assign succeeds.
 - **Formulas:** Monthly r from compounding; M = P×r/(1−(1+r)^(-n)); r=0 → P/n; interest = Σ schedule interest; total = (M + annualFee/12)×n + points + up-front; APR = 12×IRR×100 on net proceeds.
