@@ -212,6 +212,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RoiCalculator',
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
+  'SalaryWithOvertimeCalculator',
   'SalesCommissionCalculator',
   'SellThroughRateCalculator',
   'SimpleInterestCalculator',
@@ -326,6 +327,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'OperatingAssetTurnoverCalculator',
   'OptimalHedgeRatioCalculator',
   'OpportunityCostCalculator',
+  'OvertimeCalculator',
   'OvertimePaycheckCalculator',
   'ParkingRatioCalculator',
   'PartiallyAmortizedLoanCalculator',
@@ -641,6 +643,7 @@ if (isDirect) {
     !isApprovedComponentKey('RoiCalculator') ||
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
+    !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     !isApprovedComponentKey('SimpleInterestCalculator') ||
@@ -755,6 +758,7 @@ if (isDirect) {
     !isApprovedComponentKey('OperatingAssetTurnoverCalculator') ||
     !isApprovedComponentKey('OptimalHedgeRatioCalculator') ||
     !isApprovedComponentKey('OpportunityCostCalculator') ||
+    !isApprovedComponentKey('OvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('ParkingRatioCalculator') ||
     !isApprovedComponentKey('PartiallyAmortizedLoanCalculator') ||

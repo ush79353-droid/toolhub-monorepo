@@ -1133,6 +1133,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SafetyStockCalculator,
     })),
   ),
+  SalaryWithOvertimeCalculator: lazyTool(() =>
+    import('@/tools/calculators/salary-with-overtime/SalaryWithOvertimeCalculator').then(
+      (mod) => ({
+        default: mod.SalaryWithOvertimeCalculator,
+      })
+    )
+  ),
   SalesCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/sales-commission/SalesCommissionCalculator'

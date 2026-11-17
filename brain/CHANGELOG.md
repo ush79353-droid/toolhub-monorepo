@@ -1,3 +1,19 @@
+### 2026-11-17 — Rent Increase Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Rent Increase Calculator on existing catalog slug `rent-increase-calculator` (`RentIncreaseCalculator`, catalog `6af46f0fa27d8d1d4e98ffbf`). Fields: current annual rent, average rent change %, years, expected future annual rent. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Future = Current × (1 + Change/100)^Years. Zero years → future = current. Growth may be zero or negative (≥ −100%). Full precision; round only for display.
+- **FX:** Independent currencies on current and future rent (Margin Interest / Phase 2). Math in current-rent currency; result selector re-expresses only. Percent and years never convert. `CURRENCY_CONVERSION_SLUGS` + stale/missing handling.
+- **Example:** 120,000 @ 5% × 3y → 138,915.00.
+- **Important Files:** `frontend/src/tools/calculators/rent-increase/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-rent-increase-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Prorated Rent Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Prorated Rent Calculator on existing catalog slug `prorated-rent-calculator` (`ProratedRentCalculator`, catalog `6af46f0fa27d8d1d4e98ffbe`). Sections: Moving in or out? (radio + moving date) and Costs (basic monthly rent + prorated rent). Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Daily = Monthly ÷ Days in Month (actual calendar days). Moving in: chargeable = days − day + 1. Moving out: chargeable = day. Prorated = daily × chargeable. Move date included. Leap February handled. Full precision; round only for display.
+- **FX:** Independent currencies on monthly rent and prorated result (Margin Interest / Phase 2). Math in monthly-rent currency; result selector re-expresses only. Currency changes never alter chargeable days. `CURRENCY_CONVERSION_SLUGS` + stale/missing handling.
+- **Example:** Moving in 2026-11-17 · 30,000 / 30 days → 14 chargeable days → 14,000.
+- **Important Files:** `frontend/src/tools/calculators/prorated-rent/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-prorated-rent-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Salary Calculator With Overtime (Screenshot-First + FX)
 - **Summary:** Shipped Salary Calculator With Overtime on existing catalog slug `salary-calculator-with-overtime` (`SalaryWithOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb8`). Collapsible Regular worktime + Overtime; In total; Share/Reload/Clear/feedback. Defaults hours/month. Activated.
 - **Formulas:** OT hourly = regular hourly × multiplier; regular monthly = hourly × weekly hours × 52/12; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Blank OT hours → 0. Duration/rate/frequency units normalize without mixing quantities.

@@ -228,6 +228,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'roi-calculator',
   'saas-lifetime-value-calculator',
   'safety-stock-calculator',
+  'salary-calculator-with-overtime',
   'sales-commission-calculator',
   'sell-through-rate-calculator',
   'simple-interest-calculator',

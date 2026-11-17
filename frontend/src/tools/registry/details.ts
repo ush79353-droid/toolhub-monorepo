@@ -250,6 +250,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/saas-lifetime-value/detail'),
   SafetyStockCalculator: () =>
     import('@/tools/calculators/safety-stock/detail'),
+  SalaryWithOvertimeCalculator: () =>
+    import('@/tools/calculators/salary-with-overtime/detail'),
   SalesCommissionCalculator: () =>
     import('@/tools/calculators/sales-commission/detail'),
   SellThroughRateCalculator: () =>
