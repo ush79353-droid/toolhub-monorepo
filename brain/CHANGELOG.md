@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add lbs to Pounds Converter
+- **Summary:** Shipped lbs to Pounds Converter on existing catalog slug lbs-to-pounds-converter (LbsToPoundsConverter, catalog 6af46f17a27d8d1d4e990b4a). Identity lbs↔pounds (factor 1); default 1/1; reload restores defaults; clear empties; identity text sync preserves typing precision; negatives rejected; original guide/chart/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-355b delivery for Conversion and Units lbs/pounds identity converter.
+- **Important Files:** frontend/src/tools/calculators/lbs-to-pounds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1=1; 22=22; 22.5=22.5; 100=100; 125 reverse; zero; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add lbs to kg Converter
 - **Summary:** Shipped lbs to kg Converter on existing catalog slug lbs-to-kg-converter (LbsToKgConverter, catalog 6af46f17a27d8d1d4e990b49). Bidirectional lb↔kg via exact 1 lb = 0.45359237 kg (reuses weight-converter KG_PER_POUND); pounds-first UI; empty default; negatives rejected; original guide/table/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-354b delivery for Conversion and Units pounds-to-kilograms converter.
