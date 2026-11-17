@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add km to Feet Conversion
+- **Summary:** Shipped km to Feet Conversion on existing catalog slug km-to-feet-conversion (KmToFeetConversion, catalog 6af46f17a27d8d1d4e990af5). Bidirectional km↔ft via exact 1 ft = 0.3048 m; Other length units accordion (mm/cm/m/in/yd/mi); reuses meter-converter convertLength; empty default; negatives rejected; original guide/table/FAQs. Live Feet Converter pillar 6af451d1a27d8d1d4e98f9e6 preserved (brief typo …d2…); subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-345b delivery for Conversion and Units kilometers↔feet converter under Feet Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/km-to-feet/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 km ≈ 3280.839895 ft; 5 km ≈ 16404.199475 ft; 1000 ft = 0.3048 km; 5000 ft = 1.524 km; round-trip; meter-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e6). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Kilometers to Miles Calculator
 - **Summary:** Shipped Kilometers to Miles Calculator on existing catalog slug kilometers-to-miles-calculator (KilometersToMilesCalculator, catalog 6af46f17a27d8d1d4e990b1e). Bidirectional km↔mi via exact 1 mi = 1.609344 km; reuses formatLength; empty default; negatives rejected; original guide/table/FAQs. Kilometer Calculator pillar 6af451d2a27d8d1d4e98f9ed preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-344b delivery for Conversion and Units kilometers↔miles pair converter under Kilometer Calculator pillar.
