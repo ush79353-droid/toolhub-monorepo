@@ -247,6 +247,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'height-converter',
   'hour-converter',
   'hours-to-days-calculator',
+  'hours-to-minutes-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
