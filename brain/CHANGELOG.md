@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Minute Converter
+- **Summary:** Shipped Minute Converter on existing catalog slug minute-converter (MinuteConverter, catalog 6af46f17a27d8d1d4e990bb1). Minutes-centered bidirectional time converter: primary minutes plus years/months/weeks/days/hours/seconds and compound HMS; reuses hour-converter Gregorian seconds engine; exact 1 h = 60 min, 1 d = 1440 min, 1 wk = 10080 min; average Gregorian year 525949.2 min / month 43829.1 min; empty default; non-negative durations; chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-368b delivery for Conversion and Units minute converter.
+- **Important Files:** frontend/src/tools/calculators/minute-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 min = 60 s; 60/120 min → h; 1440 → day; 10080 → week; Gregorian year/month; reverse; HMS 90/135.5/0.5 min and 150.5 → 2h30m30s; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add mil to mm Conversion
 - **Summary:** Shipped mil to mm Conversion on existing catalog slug mil-to-mm-conversion (MilToMmConversion, catalog 6af46f17a27d8d1d4e990b2b). Bidirectional mil↔mm via exact 1 mil = 0.0254 mm (meter-converter mil/mm); empty default; signed lengths; mil ≠ mm/mile/milliradian clarified; chart/FAQs. Pillar 6af451d3a27d8d1d4e98f9f0 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-367b delivery for Conversion and Units mil-to-mm converter under mil Conversion pillar.
