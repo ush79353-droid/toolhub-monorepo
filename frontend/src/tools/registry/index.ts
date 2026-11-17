@@ -1640,6 +1640,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginInterestCalculator,
     })),
   ),
+  MarginOfSafetyCalculator: lazyTool(() =>
+    import('@/tools/calculators/margin-of-safety/MarginOfSafetyCalculator').then((mod) => ({
+      default: mod.MarginOfSafetyCalculator,
+    })),
+  ),
   MirrCalculator: lazyTool(() =>
     import('@/tools/calculators/mirr/MirrCalculator').then((mod) => ({
       default: mod.MirrCalculator,

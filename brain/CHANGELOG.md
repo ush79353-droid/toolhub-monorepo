@@ -4,6 +4,44 @@
 
 ---
 
+### 2026-11-17 — Net Debt Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Net Debt Calculator on existing catalog slug `net-debt-calculator` (`NetDebtCalculator`, catalog `6af46f0fa27d8d1d4e98ff9c`). Accordion sections for cash, short-term debt, long-term debt, plus Net debt summary. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Cash total = Cash + Cash equivalents. Short-term debt = Σ ST items. Long-term debt = Σ LT items. Net debt = ST + LT − cash total (negative allowed when cash exceeds debt). Blank lines = 0; never NaN/Infinity.
+- **FX:** Independent currencies on all money selectors (Margin Interest / Phase 2). Normalize into cash currency before addition/subtraction; section totals and net debt re-express in their display currencies. Full precision; display rounding only. Stale/missing rate handling reused.
+- **Example:** Cash 50,000 + eq 10,000; ST 40,000; LT 100,000 → net debt 80,000.
+- **Important Files:** `frontend/src/tools/calculators/net-debt/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-net-debt-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Gross Margin Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Gross Margin Calculator on existing catalog slug `gross-margin-calculator` (`GrossMarginCalculator`, catalog `6af46f0fa27d8d1d4e98ffa0`). Gross profit section: revenue, COGS, gross profit; Gross margin section: margin %. Independent real FX on three money selectors (Margin Interest pattern). Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Gross Profit = Revenue − COGS; Gross Margin (%) = (Gross Profit / Revenue) × 100. COGS normalizes into revenue currency; profit display currency independent; margin % never FX-converted. Zero revenue blocked; negative profit/margin allowed; never NaN/Infinity.
+- **Example:** Revenue 100,000 / COGS 60,000 → profit 40,000 / margin 40.00%.
+- **Important Files:** `frontend/src/tools/calculators/gross-margin/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-gross-margin-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Margin and Markup Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Margin and Markup Calculator on existing catalog slug `margin-and-markup-calculator` (`MarginAndMarkupCalculator`, catalog `6af46f0fa27d8d1d4e98ffa1`). Fields: cost FX, compare-two checkbox, margin %, markup %, revenue FX, profit FX; optional second shared-cost scenario. Bidirectional driver sync. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Profit = Revenue − Cost; Margin = Profit/Revenue×100; Markup = Profit/Cost×100; Revenue = Cost/(1−Margin/100) or Cost×(1+Markup/100).
+- **Comparison:** Checkbox reveals Scenario 2 sharing cost + money currencies (Omni two-set).
+- **Example:** Cost 100 / margin 35% → revenue ≈ 153.85, markup ≈ 53.85%.
+- **Important Files:** `frontend/src/tools/calculators/margin-and-markup/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-margin-and-markup-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Operating Margin Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Operating Margin Calculator on existing catalog slug `operating-margin-calculator` (`OperatingMarginCalculator`, catalog `6af46f0fa27d8d1d4e98ffa7`). Sections: Operating income (revenue, COGS, operating expenses, calculated operating income) + Result (operating margin %). Share/Reload/Clear/feedback. Distinct from EBITDA Margin / Gross Margin. Activated.
+- **Formulas:** Operating Income = Revenue − COGS − Operating Expenses; Operating Margin (%) = (Operating Income / Revenue) × 100. Zero revenue blocked; negative income/margin allowed.
+- **FX:** Independent currencies on all four money fields; normalize COGS + opex into revenue currency; income display currency independent; currency-only changes preserve margin %. Percentage never FX-converted.
+- **Example:** 1,000,000 − 400,000 − 250,000 → income 350,000 / margin 35.00%.
+- **Important Files:** `frontend/src/tools/calculators/operating-margin/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-operating-margin-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Margin of Safety Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Margin of Safety Calculator on existing catalog slug `margin-of-safety-calculator` (`MarginOfSafetyCalculator`, catalog `6af46f0fa27d8d1d4e98ffa6`). Current/breakeven sales, per-unit section, MoS money/ratio/%/units. Independent FX on five money selectors. Activated.
+- **Formulas:** MoS = Current − Breakeven; Ratio = MoS/Current; % = Ratio×100; Units = MoS/Selling Price; optional Current = Volume×Price. Cost price not used for breakeven.
+- **Example:** 500,000 − 350,000 @ 50 → 150,000 / 0.30 / 30% / 3,000 units.
+- **Important Files:** `frontend/src/tools/calculators/margin-of-safety/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-margin-of-safety-tool.ts`, `brain/*`.
+- **Verification:** Catalog undeveloped before coding. Formula self-check. Mongo activated. Lint/builds/tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Margin Calculator Classic (Screenshot-First + FX)
 - **Summary:** Shipped Margin Calculator Classic on existing catalog slug `margin-calculator-classic` (`MarginCalculatorClassic`, catalog `6af46f0fa27d8d1d4e98ffa3`). Four fields: cost, margin % (pin), revenue, profit. Bidirectional solve with last-edited driver; margin pin holds %. Share/Reload/Clear/feedback. Separate from `margin-calculator`. Activated.
 - **Formulas:** Profit = Revenue − Cost; Margin (%) = (Profit / Revenue) × 100; Revenue = Cost / (1 − Margin/100); Revenue = Cost + Profit. Margin 100% and zero revenue blocked safely.
@@ -183,6 +221,13 @@
 ### 2026-11-17 — Add VA Mortgage Calculator (Screenshot-First, Fixed USD)
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
+
+### 2026-11-17 — Margin of Safety Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Margin of Safety Calculator on existing catalog slug `margin-of-safety-calculator` (`MarginOfSafetyCalculator`, catalog `6af46f0fa27d8d1d4e98ffa6`). Current/breakeven sales, per-unit section, MoS money/ratio/%/units. Independent FX on five money selectors. Activated.
+- **Formulas:** MoS = Current − Breakeven; Ratio = MoS/Current; % = Ratio×100; Units = MoS/Selling Price; optional Current = Volume×Price. Cost price not used for breakeven.
+- **Example:** 500,000 − 350,000 @ 50 → 150,000 / 0.30 / 30% / 3,000 units.
+- **Important Files:** `frontend/src/tools/calculators/margin-of-safety/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-margin-of-safety-tool.ts`, `brain/*`.
+- **Verification:** Catalog undeveloped before coding. Formula self-check. Mongo activated. Lint/builds/tests omitted per user. No push/pull/sync.
 
 ### 2026-11-17 — Debt-to-Capital Ratio Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Debt-to-Capital Ratio Calculator on existing catalog slug `debt-to-capital-ratio-calculator` (`DebtToCapitalRatioCalculator`, catalog `6af46f0fa27d8d1d4e98ff9a`). Three fields: interest bearing debt, shareholder's equity, dimensionless debt to capital ratio. Independent real FX. Activated.

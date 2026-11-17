@@ -321,6 +321,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'man-hours-calculator',
   'margin-calculator-classic',
   'margin-interest-calculator',
+  'margin-of-safety-calculator',
   'mirr-calculator',
   'money-factor-calculator',
   'money-market-account-calculator',

@@ -303,6 +303,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginCalculatorClassic',
   'MarginAndVatCalculator',
   'MarginInterestCalculator',
+  'MarginOfSafetyCalculator',
   'MirrCalculator',
   'MoneyFactorCalculator',
   'MoneyMarketAccountCalculator',
@@ -714,6 +715,7 @@ if (isDirect) {
     !isApprovedComponentKey('MarginCalculatorClassic') ||
     !isApprovedComponentKey('MarginAndVatCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
+    !isApprovedComponentKey('MarginOfSafetyCalculator') ||
     !isApprovedComponentKey('MirrCalculator') ||
     !isApprovedComponentKey('MoneyFactorCalculator') ||
     !isApprovedComponentKey('MoneyMarketAccountCalculator') ||

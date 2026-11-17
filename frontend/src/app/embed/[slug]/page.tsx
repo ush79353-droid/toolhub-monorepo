@@ -22,6 +22,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'margin-calculator-classic',
   'margin-and-vat-calculator',
   'margin-interest-calculator',
+  'margin-of-safety-calculator',
   '12-hour-shift-pay-calculator',
   '3x-rent-calculator',
   '401k-calculator',
