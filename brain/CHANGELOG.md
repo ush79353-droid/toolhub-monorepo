@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add kPa to psi Conversion
+- **Summary:** Shipped kPa to psi Conversion on existing catalog slug kpa-to-psi-conversion (KpaToPsiConversion, catalog 6af46f17a27d8d1d4e990b27). Bidirectional kPa↔psi via pressure-conversion convertPressure; empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ef preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-349b delivery for Conversion and Units kilopascal-to-psi converter under kPa Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/kpa-to-psi/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100 kPa ≈ 14.503773773 psi; 30 psi ≈ 206.842718795 kPa; 40 kPa ≈ 5.801509509 psi; 15 psi ≈ 103.421359397 kPa; round-trip; negatives accepted). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ef). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add kPa to mmHg Conversion
 - **Summary:** Shipped kPa to mmHg Conversion on existing catalog slug kpa-to-mmhg-conversion (KpaToMmhgConversion, catalog 6af46f17a27d8d1d4e990b26). Bidirectional kPa↔mmHg via conventional 101.325 kPa = 760 mmHg (MMHG_PER_KPA = 760000/101325, Torr-equivalent — distinct from CIPM mmHg in pressure-conversion); empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ef preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-348b delivery for Conversion and Units kilopascal-to-mmHg converter under kPa Converter pillar.
