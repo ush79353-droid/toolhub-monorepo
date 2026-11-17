@@ -274,6 +274,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KgToStonesConverter: () => import('@/tools/calculators/kg-to-stones/detail'),
   KilometerCalculator: () => import('@/tools/calculators/kilometer-calculator/detail'),
   KilometerToMeterConverter: () => import('@/tools/calculators/kilometer-to-meter/detail'),
+  KilometersToMilesCalculator: () => import('@/tools/calculators/kilometers-to-miles/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
