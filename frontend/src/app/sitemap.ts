@@ -254,6 +254,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'imperial-calculator',
   'imperial-to-metric-conversion',
   'inch-converter',
+  'inch-to-meter-calculator',
   'inches-to-yard-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',

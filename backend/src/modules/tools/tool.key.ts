@@ -234,6 +234,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ImperialCalculator',
   'ImperialToMetricConversion',
   'InchConverter',
+  'InchToMeterCalculator',
   'InchesToYardConversion',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
@@ -657,6 +658,7 @@ if (isDirect) {
     !isApprovedComponentKey('ImperialCalculator') ||
     !isApprovedComponentKey('ImperialToMetricConversion') ||
     !isApprovedComponentKey('InchConverter') ||
+    !isApprovedComponentKey('InchToMeterCalculator') ||
     !isApprovedComponentKey('InchesToYardConversion') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||

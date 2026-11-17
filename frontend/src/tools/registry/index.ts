@@ -1220,6 +1220,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InchConverter,
     })),
   ),
+  InchToMeterCalculator: lazyTool(() =>
+    import('@/tools/calculators/inch-to-meter/InchToMeterCalculator').then((mod) => ({
+      default: mod.InchToMeterCalculator,
+    })),
+  ),
   InchesToYardConversion: lazyTool(() =>
     import('@/tools/calculators/inches-to-yards/InchesToYardsConverter').then((mod) => ({
       default: mod.InchesToYardsConverter,
