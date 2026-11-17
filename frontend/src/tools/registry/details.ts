@@ -258,6 +258,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   HoursToYearsConverter: () => import('@/tools/calculators/hours-to-years/detail'),
   ImperialCalculator: () => import('@/tools/calculators/imperial/detail'),
   ImperialToMetricConversion: () => import('@/tools/calculators/imperial-to-metric/detail'),
+  InchConverter: () => import('@/tools/calculators/inch-converter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
