@@ -4,11 +4,16 @@
 
 ---
 
-### 2026-11-17 — Reusable 	ool:assign only (delete per-tool assign scripts)
-- **Summary:** Expanded ackend/src/scripts/assign-tool-component.ts into the sole catalog assign CLI (
-pm run tool:assign) with required --slug/--component/--id/--name/--short-description/--meta-title/--meta-description plus optional pillar guards and --set-active/--set-indexable. Deleted ~349 one-off ssign-*-tool.ts scripts and ~22 tmp/lookup/adapt helpers. Locked in Cursor/Antigravity tool-activation rules, AGENTS.md, and playbook Step 19c. Kept seeds/publish/admin/currency/category scripts only.
-- **Why:** Per-tool assign scripts were one-time use and cluttered ackend/src/scripts/; agents must pass content flags instead of inventing new files.
-- **Important Files:** ackend/src/scripts/assign-tool-component.ts, .cursor/rules/tool-activation.mdc, .agents/rules/tool-activation.md, AGENTS.md, rain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md, rain/BACKEND.md, rain/ARCHITECTURE.md, rain/DECISIONS.md.
+### 2026-11-17 — Add Degrees to Minutes Converter
+- **Summary:** Shipped Degrees to Minutes Converter on existing catalog slug `degrees-to-minutes-converter` (`DegreesToMinutesConverter`, catalog `6af46f17a27d8d1d4e990bfc`). Bidirectional degrees ↔ arcminutes with exact factor 60; empty default; signed and >360° allowed; angular-not-time copy; guide + FAQs. Reuses new exact helpers on `angle-conversion/calculation.ts`. Null pillar/subPillar preserved. Meta title ≤70. `indexable` left false.
+- **Why:** TOOL-291 delivery for Conversion & Units angle converter.
+- **Important Files:** `frontend/src/tools/calculators/degrees-to-minutes/*`, `frontend/src/tools/calculators/angle-conversion/calculation.ts`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed; angle-conversion tests still pass; `tool.key ok`. Mongo assigned via `npm run tool:assign` (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Full frontend `tsc` / production build not claimed.
+
+### 2026-11-17 — Reusable `tool:assign` only (delete per-tool assign scripts)
+- **Summary:** Expanded `backend/src/scripts/assign-tool-component.ts` into the sole catalog assign CLI (`npm run tool:assign`) with required `--slug`/`--component`/`--id`/`--name`/`--short-description`/`--meta-title`/`--meta-description` plus optional pillar guards and `--set-active`/`--set-indexable`. Deleted ~349 one-off `assign-*-tool.ts` scripts and ~22 tmp/lookup/adapt helpers. Locked in Cursor/Antigravity tool-activation rules, `AGENTS.md`, and playbook Step 19c. Kept seeds/publish/admin/currency/category scripts only.
+- **Why:** Per-tool assign scripts were one-time use and cluttered `backend/src/scripts/`; agents must pass content flags instead of inventing new files.
+- **Important Files:** `backend/src/scripts/assign-tool-component.ts`, `.cursor/rules/tool-activation.mdc`, `.agents/rules/tool-activation.md`, `AGENTS.md`, `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `brain/BACKEND.md`, `brain/ARCHITECTURE.md`, `brain/DECISIONS.md`.
 - **Verification:** Scripts folder reduced to 9 keepers. CLI help/header documented in script. Full Mongo smoke assign not re-run in this infra change.
 
 ### 2026-11-17 — Mortgage Rate Calculator (Screenshot-First + FX)
