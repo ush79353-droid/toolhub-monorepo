@@ -612,6 +612,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),
   VaMortgageCalculator: () => import('@/tools/calculators/va-mortgage/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
+  VariableAnnuityCalculator: () =>
+    import('@/tools/calculators/variable-annuity/detail'),
   EidlCalculator: () => import('@/tools/calculators/eidl/detail'),
   StudentLoanRepaymentCovidCalculator: () =>
     import('@/tools/calculators/student-loan-repayment-covid/detail'),

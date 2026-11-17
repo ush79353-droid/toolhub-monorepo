@@ -2234,6 +2234,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ValueAtRiskCalculator,
     })),
   ),
+  VariableAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/variable-annuity/VariableAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.VariableAnnuityCalculator,
+    })),
+  ),
   EidlCalculator: lazyTool(() =>
     import('@/tools/calculators/eidl/EidlCalculator').then((mod) => ({
       default: mod.EidlCalculator,

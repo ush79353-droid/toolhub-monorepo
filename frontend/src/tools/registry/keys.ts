@@ -401,6 +401,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SharpeRatioCalculator',
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
+  'VariableAnnuityCalculator',
   'EidlCalculator',
   'StudentLoanRepaymentCovidCalculator',
 ] as const;
@@ -815,6 +816,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'SharpeRatioCalculator',
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
+  'VariableAnnuityCalculator',
   'EidlCalculator',
   'StudentLoanRepaymentCovidCalculator',
 ] as const;

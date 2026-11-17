@@ -413,6 +413,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sharpe-ratio-calculator',
   'va-mortgage-calculator',
   'value-at-risk-calculator-var',
+  'variable-annuity-calculator',
   'economic-injury-disaster-loan-emergency-advance-eidl',
   'student-loan-repayment-calculator-covid-19',
 ] as const;

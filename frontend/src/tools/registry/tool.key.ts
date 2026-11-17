@@ -390,6 +390,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SharpeRatioCalculator',
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
+  'VariableAnnuityCalculator',
   'EidlCalculator',
 ] as const;
 
@@ -803,6 +804,7 @@ if (isDirect) {
     !isApprovedComponentKey('SharpeRatioCalculator') ||
     !isApprovedComponentKey('VaMortgageCalculator') ||
     !isApprovedComponentKey('ValueAtRiskCalculator') ||
+    !isApprovedComponentKey('VariableAnnuityCalculator') ||
     !isApprovedComponentKey('EidlCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {

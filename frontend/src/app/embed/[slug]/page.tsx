@@ -186,6 +186,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'treynor-ratio-calculator',
   'ttm-calculator-trailing-twelve-months',
   'value-at-risk-calculator-var',
+  'variable-annuity-calculator',
 ]);
 
 export const dynamic = 'force-dynamic';
