@@ -1462,6 +1462,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DebtCalculator,
     })),
   ),
+  DebtSnowballCalculator: lazyTool(() =>
+    import('@/tools/calculators/debt-snowball/DebtSnowballCalculator').then(
+      (mod) => ({
+        default: mod.DebtSnowballCalculator,
+      })
+    )
+  ),
   DebtToEquityCalculator: lazyTool(() =>
     import('@/tools/calculators/debt-to-equity/DebtToEquityCalculator').then(
       (mod) => ({
@@ -1656,6 +1663,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   MvaCalculator: lazyTool(() =>
     import('@/tools/calculators/mva/MvaCalculator').then((mod) => ({
       default: mod.MvaCalculator,
+    })),
+  ),
+  NetDebtCalculator: lazyTool(() =>
+    import('@/tools/calculators/net-debt/NetDebtCalculator').then((mod) => ({
+      default: mod.NetDebtCalculator,
     })),
   ),
   NopatCalculator: lazyTool(() =>

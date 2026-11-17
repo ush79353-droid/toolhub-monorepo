@@ -362,6 +362,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DebtAvalancheCalculator: () =>
     import('@/tools/calculators/debt-avalanche/detail'),
   DebtCalculator: () => import('@/tools/calculators/debt/detail'),
+  DebtSnowballCalculator: () =>
+    import('@/tools/calculators/debt-snowball/detail'),
   DebtToEquityCalculator: () =>
     import('@/tools/calculators/debt-to-equity/detail'),
   DividendDiscountModelCalculator: () =>
@@ -433,6 +435,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mutual-fund/detail'),
   MvaCalculator: () =>
     import('@/tools/calculators/mva/detail'),
+  NetDebtCalculator: () =>
+    import('@/tools/calculators/net-debt/detail'),
   NopatCalculator: () =>
     import('@/tools/calculators/nopat/detail'),
   NpvCalculator: () =>

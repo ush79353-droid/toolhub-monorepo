@@ -300,6 +300,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
   'MarginAndMarkupCalculator',
+  'MarginAndVatCalculator',
   'MarginInterestCalculator',
   'MirrCalculator',
   'MoneyFactorCalculator',
@@ -307,6 +308,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MovingAverageCalculator',
   'MutualFundCalculator',
   'MvaCalculator',
+  'NetDebtCalculator',
   'NopatCalculator',
   'NpvCalculator',
   'OnlineMarketingConversionCalculator',
@@ -708,6 +710,7 @@ if (isDirect) {
     !isApprovedComponentKey('QuizLoanBalanceCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
     !isApprovedComponentKey('MarginAndMarkupCalculator') ||
+    !isApprovedComponentKey('MarginAndVatCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
     !isApprovedComponentKey('MirrCalculator') ||
     !isApprovedComponentKey('MoneyFactorCalculator') ||
@@ -715,6 +718,7 @@ if (isDirect) {
     !isApprovedComponentKey('MovingAverageCalculator') ||
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
+    !isApprovedComponentKey('NetDebtCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('NpvCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||

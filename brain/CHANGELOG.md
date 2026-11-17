@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-17 — Debt Snowball Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Debt Snowball Calculator on existing catalog slug `debt-snowball-calculator` (`DebtSnowballCalculator`, catalog `6af46f0fa27d8d1d4e98ff97`). Debt count Two–Six; per-debt balance/rate/payment; aim dropdown (minimum / snowball / avalanche); repayment totals + optional increase; compare radio; horizontally scrollable payoff table. Independent real FX on all money selectors (Margin Interest pattern). Activated.
+- **Formulas:** Normalize mixed-currency balances/payments/increase into debt #1 balance currency. Minimum = independent per-debt schedules (combined payment can fall). Snowball/avalanche keep `Σ mins + increase` constant; interest accrues before principal; snowball targets smallest balance; avalanche targets highest rate; final month skips interest when principal fits.
+- **Example:** 1,500 @ 2.5% / 120 + 4,000 @ 6.2% / 150; increase 0 → total 5,500 / pay 270; min ≈ 5.19%* / 29 mo / payable ≈ 5,836.47 / interest ≈ 336.47; snowball ≈ 22 mo / payable ≈ 5,791.30 / interest ≈ 291.30.
+- **Important Files:** `frontend/src/tools/calculators/debt-snowball/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-debt-snowball-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Omni math self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — EBITDA Margin Calculator (Screenshot-First + FX)
 - **Summary:** Shipped EBITDA Margin Calculator on existing catalog slug `ebitda-margin-calculator` (`EbitdaMarginCalculator`, catalog `6af46f0fa27d8d1d4e98ff9f`). Three fields only: total revenues, EBITDA, EBITDA margin %. Independent real FX on both money selectors; normalize into total-revenues currency before dividing; currency-only changes preserve the margin. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** EBITDA Margin (%) = (EBITDA ÷ Total Revenues) × 100. Total revenues must be nonzero. Negative EBITDA/margin allowed; never displays NaN or Infinity.

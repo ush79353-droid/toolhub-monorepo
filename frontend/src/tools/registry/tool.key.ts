@@ -264,6 +264,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DaysOffCalculator',
   'DebtAvalancheCalculator',
   'DebtCalculator',
+  'DebtSnowballCalculator',
   'DebtToEquityCalculator',
   'DividendDiscountModelCalculator',
   'DirectMaterialPriceVarianceCalculator',
@@ -300,6 +301,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MovingAverageCalculator',
   'MutualFundCalculator',
   'MvaCalculator',
+  'NetDebtCalculator',
   'NopatCalculator',
   'NpvCalculator',
   'OnlineMarketingConversionCalculator',
@@ -664,6 +666,7 @@ if (isDirect) {
     !isApprovedComponentKey('DaysOffCalculator') ||
     !isApprovedComponentKey('DebtAvalancheCalculator') ||
     !isApprovedComponentKey('DebtCalculator') ||
+    !isApprovedComponentKey('DebtSnowballCalculator') ||
     !isApprovedComponentKey('DebtToEquityCalculator') ||
     !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
@@ -700,6 +703,7 @@ if (isDirect) {
     !isApprovedComponentKey('MovingAverageCalculator') ||
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
+    !isApprovedComponentKey('NetDebtCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('NpvCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
