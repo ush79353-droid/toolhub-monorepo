@@ -460,6 +460,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mva/detail'),
   NetDebtCalculator: () =>
     import('@/tools/calculators/net-debt/detail'),
+  NewYorkOvertimeCalculator: () =>
+    import('@/tools/calculators/new-york-overtime/detail'),
   NopatCalculator: () =>
     import('@/tools/calculators/nopat/detail'),
   NpvCalculator: () =>

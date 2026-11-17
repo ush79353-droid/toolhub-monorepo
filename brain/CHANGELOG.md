@@ -93,6 +93,15 @@
 
 ---
 
+### 2026-11-17 — New York Overtime Calculator (Screenshot-First + FX)
+- **Summary:** Shipped New York Overtime Calculator on existing catalog slug `new-york-overtime-calculator` (`NewYorkOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb6`). Regular work time + overtime + in-total sections; Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Regular monthly = hourly × weekly hours × 52/12; OT hourly = hourly × multiplier; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Unit normalization for rate/duration/frequency; blank OT hours → 0; negative pay/hours rejected.
+- **FX:** Independent currencies on all money selectors; normalize into regular-pay currency at full precision; display rounding only. Hours, time units, and multiplier never convert. Stale/missing rate handling via `CURRENCY_CONVERSION_SLUGS`.
+- **Legal:** Estimate only — does not claim New York/FLSA eligibility or workweek compliance.
+- **Example:** 20/hr × 40 hr/week × 1.5 × 10 OT hr/month → regular ≈ 3,466.67; OT rate 30; OT pay 300; total ≈ 3,766.67.
+- **Important Files:** `frontend/src/tools/calculators/new-york-overtime/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-new-york-overtime-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Margin and VAT Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Margin and VAT Calculator on existing catalog slug `margin-and-vat-calculator` (`MarginAndVatCalculator`, catalog `6af46f0fa27d8d1d4e98ffa2`). Eight screenshot fields: VAT %, net cost, gross cost, margin %, markup %, my net price, my gross price, profit. Last-edited driver sync; margin/markup pins for price-from-cost. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Gross = Net × (1+VAT/100); inverse Net = Gross ÷ (1+VAT/100); Profit = Net price − Net cost; Margin = Profit/Net price×100; Markup = Profit/Net cost×100; Net price = Net cost/(1−Margin/100) or Net cost×(1+Markup/100).

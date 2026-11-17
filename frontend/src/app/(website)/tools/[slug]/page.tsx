@@ -178,6 +178,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'moving-average-calculator',
   'mutual-fund-calculator',
   'net-debt-calculator',
+  'new-york-overtime-calculator',
   'nopat-calculator',
   'npv-calculator-net-present-value',
   'opportunity-cost-calculator',

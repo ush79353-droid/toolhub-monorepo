@@ -1744,6 +1744,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetDebtCalculator,
     })),
   ),
+  NewYorkOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/new-york-overtime/NewYorkOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.NewYorkOvertimeCalculator,
+    })),
+  ),
   NopatCalculator: lazyTool(() =>
     import('@/tools/calculators/nopat/NopatCalculator').then((mod) => ({
       default: mod.NopatCalculator,
