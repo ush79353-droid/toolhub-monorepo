@@ -294,6 +294,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MicronToMilConversionCalculator: () => import('@/tools/calculators/micron-to-mil/detail'),
   MilConversion: () => import('@/tools/calculators/mil-conversion/detail'),
   MileConversionCalculator: () => import('@/tools/calculators/mile-conversion/detail'),
+  MillimeterCalculator: () => import('@/tools/calculators/millimeter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
