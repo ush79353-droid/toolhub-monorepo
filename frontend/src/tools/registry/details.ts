@@ -232,6 +232,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FluidOuncesToPoundsConverter: () =>
     import('@/tools/calculators/fluid-ounces-to-pounds/detail'),
   FootToCentimeterConverter: () => import('@/tools/calculators/foot-to-centimeter/detail'),
+  FtToMConverter: () => import('@/tools/calculators/ft-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
