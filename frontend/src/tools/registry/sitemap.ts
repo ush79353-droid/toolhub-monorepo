@@ -234,6 +234,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'smokers-ctc-calculator',
   'tenure-calculator',
   'time-value-of-money-calculator',
+  'times-interest-earned-ratio-calculator',
   'ttm-calculator-trailing-twelve-months',
   'treynor-ratio-calculator',
   'turnover-rate-calculator',

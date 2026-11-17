@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-17 — Times Interest Earned Ratio Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Times Interest Earned Ratio Calculator on existing catalog slug `times-interest-earned-ratio-calculator` (`TimesInterestEarnedCalculator`, catalog `6af46f0fa27d8d1d4e98ff8a`). Three fields only: EBIT, total interest, dimensionless TIE ratio. Independent real FX on both money selectors; normalize into EBIT currency before dividing; currency-only changes preserve the ratio. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** TIE Ratio = EBIT ÷ Total Interest (total interest > 0). Zero/negative EBIT allowed; never displays NaN or Infinity.
+- **Example:** 400,000 / 100,000 → 4.00.
+- **Important Files:** `frontend/src/tools/calculators/times-interest-earned/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-times-interest-earned-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding (`6af46f0fa27d8d1d4e98ff8a`). Formula self-check (400k/100k → 4.00). MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Loan Interest Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Loan Interest Calculator on existing catalog slug `loan-interest-calculator` (`LoanInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff86`). Loan details: balance, term yrs/mos, APR %, payment frequency, compounding frequency → interest, total payment, frequency-labeled repayment, yearly balances chart. Independent real FX on four money selectors (Margin Interest pattern). Activated.
 - **Formulas:** r = (1 + APR/(100 × m))^(m/p) − 1; n = years × p; Payment = P × r / (1 − (1+r)^(-n)); r = 0 → P/n; Total = Payment × n; Interest = Total − Principal. Chart samples full amortization at year marks.

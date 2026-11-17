@@ -1151,6 +1151,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TimeValueOfMoneyCalculator,
     })),
   ),
+  TimesInterestEarnedCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/times-interest-earned/TimesInterestEarnedCalculator'
+    ).then((mod) => ({
+      default: mod.TimesInterestEarnedCalculator,
+    })),
+  ),
   TtmCalculator: lazyTool(() =>
     import('@/tools/calculators/ttm/TtmCalculator').then((mod) => ({
       default: mod.TtmCalculator,

@@ -156,6 +156,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'simple-interest-calculator',
   'sinking-fund-calculator',
   'time-value-of-money-calculator',
+  'times-interest-earned-ratio-calculator',
   'treynor-ratio-calculator',
   'ttm-calculator-trailing-twelve-months',
   'value-at-risk-calculator-var',
