@@ -303,6 +303,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PaybackPeriodCalculator',
   'PercentageReturnCalculator',
   'PerpetuityCalculator',
+  'PostJudgmentInterestCalculator',
   'PreAndPostMoneyValuationCalculator',
   'PresentValueCalculator',
   'PriceQuantityCalculator',
@@ -355,6 +356,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InformationRatioCalculator',
   'InterestCalculator',
   'InterestOnlyMortgageCalculator',
+  'InterestPerDayCalculator',
   'InterestRateCalculator',
   'IrrCalculator',
   'InvestmentCalculator',
@@ -690,6 +692,7 @@ if (isDirect) {
     !isApprovedComponentKey('PaybackPeriodCalculator') ||
     !isApprovedComponentKey('PercentageReturnCalculator') ||
     !isApprovedComponentKey('PerpetuityCalculator') ||
+    !isApprovedComponentKey('PostJudgmentInterestCalculator') ||
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
     !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
@@ -742,6 +745,7 @@ if (isDirect) {
     !isApprovedComponentKey('InformationRatioCalculator') ||
     !isApprovedComponentKey('InterestCalculator') ||
     !isApprovedComponentKey('InterestOnlyMortgageCalculator') ||
+    !isApprovedComponentKey('InterestPerDayCalculator') ||
     !isApprovedComponentKey('InterestRateCalculator') ||
     !isApprovedComponentKey('IrrCalculator') ||
     !isApprovedComponentKey('InvestmentCalculator') ||

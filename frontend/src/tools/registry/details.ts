@@ -436,6 +436,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/percentage-return/detail'),
   PerpetuityCalculator: () =>
     import('@/tools/calculators/perpetuity/detail'),
+  PostJudgmentInterestCalculator: () =>
+    import('@/tools/calculators/post-judgment-interest/detail'),
   PreAndPostMoneyValuationCalculator: () =>
     import('@/tools/calculators/pre-and-post-money-valuation/detail'),
   PresentValueCalculator: () =>
@@ -527,6 +529,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InterestCalculator: () => import('@/tools/calculators/interest/detail'),
   InterestOnlyMortgageCalculator: () =>
     import('@/tools/calculators/interest-only-mortgage/detail'),
+  InterestPerDayCalculator: () =>
+    import('@/tools/calculators/interest-per-day/detail'),
   MortgageInterestCalculator: () =>
     import('@/tools/calculators/mortgage-interest/detail'),
   MortgageRateCalculator: () =>

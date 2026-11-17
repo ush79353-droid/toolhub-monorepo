@@ -4,6 +4,20 @@
 
 ---
 
+### 2026-11-17 — Interest Coverage Ratio Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Interest Coverage Ratio Calculator on existing catalog slug `interest-coverage-ratio-calculator` (`InterestCoverageRatioCalculator`, catalog `6af46f0fa27d8d1d4e98ff84`). Three fields only: EBIT, interest expense, dimensionless interest coverage ratio. Independent real FX on both money selectors; normalize into EBIT currency before dividing; currency-only changes preserve the ratio. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Interest Coverage Ratio = EBIT ÷ Interest Expense (interest expense > 0). Zero/negative EBIT allowed; never displays NaN or Infinity.
+- **Example:** 400,000 / 100,000 → 4.00.
+- **Important Files:** `frontend/src/tools/calculators/interest-coverage-ratio/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-interest-coverage-ratio-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check (400k/100k → 4; 0 EBIT → 0; negative EBIT → negative ratio; zero interest → null). MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Interest Per Day Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Interest Per Day Calculator on existing catalog slug `interest-per-day-calculator` (`InterestPerDayCalculator`, catalog `6af46f0fa27d8d1d4e98ff85`). Screenshot fields: loan balance, annual interest rate %, interest per day, interest rate per day % (`%` unit dropdowns only). Independent real FX on loan balance + interest per day (Margin Interest pattern); percentages never converted. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Daily Rate (%) = Annual / 365; Interest Per Day = Loan Balance × (Annual / 100) / 365.
+- **Example:** 100,000 PKR @ 7.3% → 20 PKR/day and 0.02%/day.
+- **Important Files:** `frontend/src/tools/calculators/interest-per-day/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-interest-per-day-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Cash Back or Low Interest Calculator (Screenshot-First, Fixed USD)
 - **Summary:** Shipped Cash Back or Low Interest Calculator on existing catalog slug `cash-back-or-low-interest-calculator` (`CashBackOrLowInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff81`). Inputs: cash back + high APR, low APR, auto price, term months, down, trade-in, US state (identity only), sales tax %, title/registration fees, include-all-fees checkbox. Results: verdict + both offers (loan, tax, upfront, monthly, total payments, interest, total cost). Fixed USD; no currency selectors.
 - **Formulas:** Tax = price × %/100; cash-back loan = price − down − trade-in − cashBack [+ tax + fees if financed]; low-rate loan omits cashBack; r = APR/1200; Payment = P×r/(1−(1+r)^(-n)); r=0 → P/n; totalCost = price + interest + tax + fees − cashBack (once).

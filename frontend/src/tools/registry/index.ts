@@ -1649,6 +1649,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PerpetuityCalculator,
     })),
   ),
+  PostJudgmentInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/post-judgment-interest/PostJudgmentInterestCalculator'
+    ).then((mod) => ({
+      default: mod.PostJudgmentInterestCalculator,
+    })),
+  ),
   PreAndPostMoneyValuationCalculator: lazyTool(() =>
     import('@/tools/calculators/pre-and-post-money-valuation/PreAndPostMoneyValuationCalculator').then((mod) => ({
       default: mod.PreAndPostMoneyValuationCalculator,
@@ -1945,6 +1952,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/interest-only-mortgage/InterestOnlyMortgageCalculator'
     ).then((mod) => ({
       default: mod.InterestOnlyMortgageCalculator,
+    })),
+  ),
+  InterestPerDayCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/interest-per-day/InterestPerDayCalculator'
+    ).then((mod) => ({
+      default: mod.InterestPerDayCalculator,
     })),
   ),
   MortgageInterestCalculator: lazyTool(() =>
