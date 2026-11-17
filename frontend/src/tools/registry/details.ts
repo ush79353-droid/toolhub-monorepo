@@ -263,6 +263,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InchesToYardConversion: () => import('@/tools/calculators/inches-to-yards/detail'),
   InToCmConverter: () => import('@/tools/calculators/in-to-cm/detail'),
   KathaToSquareFeetConverter: () => import('@/tools/calculators/katha-to-sqft/detail'),
+  KelvinConverter: () => import('@/tools/calculators/kelvin-converter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
