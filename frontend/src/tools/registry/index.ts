@@ -1180,6 +1180,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HourConverter,
     })),
   ),
+  HoursToDaysCalculator: lazyTool(() =>
+    import('@/tools/calculators/hours-to-days/HoursToDaysCalculator').then((mod) => ({
+      default: mod.HoursToDaysCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

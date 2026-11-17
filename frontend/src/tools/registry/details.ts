@@ -251,6 +251,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   HectaresToAcresConverter: () => import('@/tools/calculators/hectares-to-acres/detail'),
   HeightConverter: () => import('@/tools/calculators/height-converter/detail'),
   HourConverter: () => import('@/tools/calculators/hour-converter/detail'),
+  HoursToDaysCalculator: () => import('@/tools/calculators/hours-to-days/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

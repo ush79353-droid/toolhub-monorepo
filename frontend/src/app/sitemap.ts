@@ -246,6 +246,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'hectares-to-acres-converter',
   'height-converter',
   'hour-converter',
+  'hours-to-days-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
