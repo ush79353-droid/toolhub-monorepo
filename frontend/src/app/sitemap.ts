@@ -12,6 +12,7 @@ import { isRegisteredComponentKey } from '@/tools/registry/keys';
 
 /** Known implemented public tool slugs (registry-backed). Extend when new calculators ship. */
 const IMPLEMENTED_TOOL_SLUGS = [
+  'interest-rate-parity-calculator',
   'loan-calculator',
   'auto-loan-calculator',
   'loan-interest-calculator',

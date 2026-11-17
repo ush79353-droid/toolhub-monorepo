@@ -20,6 +20,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AutoLoanCalculator,
     })),
   ),
+  InterestRateParityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/interest-rate-parity/InterestRateParityCalculator'
+    ).then((mod) => ({
+      default: mod.InterestRateParityCalculator,
+    })),
+  ),
   LoanCalculator: lazyTool(() =>
     import('@/tools/calculators/loan/LoanCalculator').then((mod) => ({
       default: mod.LoanCalculator,
