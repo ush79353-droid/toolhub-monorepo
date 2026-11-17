@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-18 — Second Stimulus Check Calculator – $900 Billion Bill (Screenshot-First, historical EIP2)
+- **Summary:** Shipped Second Stimulus Check Calculator – $900 Billion Bill on existing catalog slug `second-stimulus-check-calculator-900-billion-bill` (`SecondStimulus900BillionCalculator`, catalog `6af46f0fa27d8d1d4e98ffce`). Screenshot fields: filed 2019 taxes, filing status, kids, 2019 AGI USD, read-only result; historical EIP2 notice; Share/Reload/Clear/feedback. Fixed USD (no FX). Activated via `npm run tool:assign`.
+- **Rules (verified):** I.R.C. §6428A / IRS Pub. 5475 / CRS IN11575 — $600 single or HoH, $1,200 married joint, +$600 per qualifying child under 17; phase out 5% of AGI above $75,000 / $112,500 / $150,000. Filing=No → $0 (SSI/VA/RRB automatic paths acknowledged in copy, not modeled). Not a currently available benefit.
+- **Example:** Single · 0 kids · AGI $75,000 → $600; $81,000 → $300; Married · 2 kids · AGI $150,000 → $2,400; $198,000 → $0.
+- **Important Files:** `frontend/src/tools/calculators/second-stimulus-900-billion/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check (`calculation.test.ts`). MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated suite omitted per user. Local commits only — no push/pull/sync.
+
 ### 2026-11-18 — Deferred Payment Loan Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Deferred Payment Loan Calculator on existing catalog slug `deferred-payment-loan-calculator` (`DeferredPaymentLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ffc7`). Screenshot sections: Loan inputs (estimation Loan term / Monthly payment, amount FX, balance date, term, rate, compounding, original monthly payment FX), Loan deferment (capitalized / paid monthly / equal parts / interest-free; increased original term / increased extended / original payment extended; deferment from; deferred months), Payment summary narrative + horizontally scrollable w/o def. vs Deferment* vs Diff. table. Independent Phase 2 FX (Margin Interest pattern). Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
 - **Formulas:** Equivalent monthly rate from compounding; amortizing M; deferment compounds or accrues per treatment; post-deferment re-amortize or solve n from original payment. Cash totals are economically correct (no double-count of capitalized interest). Zero rate and impossible amortization combinations return validation errors.
