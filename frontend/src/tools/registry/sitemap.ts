@@ -28,6 +28,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'loan-interest-calculator',
   'margin-and-markup-calculator',
   'margin-and-vat-calculator',
+  'margin-calculator-classic',
   'net-debt-calculator',
   'reduced-row-echelon-form-calculator',
   'arm-mortgage-calculator',
