@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Gallons to Grams Conversion
+- **Summary:** Shipped Gallons to Grams Conversion on existing catalog slug gallons-to-grams-conversion (GallonsToGramsConverter, catalog 6af46f17a27d8d1d4e990ac9). Density-based US gal ↔ grams with substance presets (water default 1000 kg/m³), editable density units, bidirectional sync; negatives and zero density rejected. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-307b delivery for Conversion and Units density-based gal ↔ g converter.
+- **Important Files:** frontend/src/tools/calculators/gallons-to-grams/*, cubic-feet formatMeasure reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal water @ 1000 kg/m³ = 3785.411784 g; milk @ 1030 ≈ 3898.97 g). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Gallons to Cups Converter
 - **Summary:** Shipped Gallons to Cups Converter on existing catalog slug gallons-to-cups-converter (GallonsToCupsConverter, catalog 6af46f17a27d8d1d4e990ac8). Bidirectional US gal ↔ US customary cups with exact factor 16; negatives rejected; empty default. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-306b delivery for Conversion and Units volume pair converter (gal to cups).
