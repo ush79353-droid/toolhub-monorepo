@@ -25,7 +25,7 @@ Whenever a calculator is requested with a reference screenshot or specification:
    - [ ] Tests and responsive QA completed
    - [ ] Tool registered and automatically activated after successful verification
    - [ ] Public calculator route verified
-   - [ ] Meaningful incremental Git commits created
+   - [ ] Two Git commits created (tool files, then Brain)
 4. **Currency Selector Rule:** Include a currency selector ONLY when:
    - The reference screenshot explicitly provides currency selection; OR
    - The user explicitly requests currency selection; OR

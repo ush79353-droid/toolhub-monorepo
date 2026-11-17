@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — ADR-019: two-commit calculator delivery
+- **Summary:** Amended ADR-019 from size-banded milestone commits (small 1–2 / medium 2–3 / large 3–5) to exactly two commits per new calculator: (1) all tool files, (2) Brain docs last. Synced Cursor/Antigravity git-commits rules, playbook Step 19, calculator standards, `AGENTS.md`, and related Brain references. No calculator source changed.
+- **Why:** Agents were landing ~4 commits per tool; the team wants a fixed tool + Brain split only.
+- **Important Files:** `.cursor/rules/git-commits.mdc`, `.agents/rules/git-commits.md`, `brain/DECISIONS.md`, `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `brain/CALCULATOR_STANDARDS.md`, `AGENTS.md`.
+- **Verification:** Docs-only amendment; no runtime checks required.
+
 ### 2026-11-17 — Add Degrees to Seconds Converter
 - **Summary:** Shipped Degrees to Seconds Converter on existing catalog slug degrees-to-seconds-converter (DegreesToSecondsConverter, catalog 6af46f17a27d8d1d4e990bfe). Bidirectional degrees to arcseconds with exact factor 3600; expandable other units (arcminutes, radians, gradians, revolutions); empty default; angular-not-time copy; guide + table + FAQs. Reuses degreesToArcseconds/arcsecondsToDegrees on angle-conversion. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-293b delivery for Conversion and Units angle converter.
