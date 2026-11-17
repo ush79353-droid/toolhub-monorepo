@@ -10,6 +10,12 @@
 - **Important Files:** `.cursor/rules/git-commits.mdc`, `.agents/rules/git-commits.md`, `brain/DECISIONS.md`, `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `brain/CALCULATOR_STANDARDS.md`, `AGENTS.md`.
 - **Verification:** Docs-only amendment; no runtime checks required.
 
+### 2026-11-17 — Add Distance Converter
+- **Summary:** Shipped Distance Converter on existing catalog slug distance-converter (DistanceConverter, catalog 6af46f17a27d8d1d4e990b83). Multi-field metric (mm/cm/m/km) and imperial/US (in/ft/yd/mi) groups plus other units (pm through pc); meters as base; non-negative validation; reuses length-converter factors/formatters. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-294b delivery for Conversion and Units length converter.
+- **Important Files:** frontend/src/tools/calculators/distance-converter/*, length-converter types reused, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Degrees to Seconds Converter
 - **Summary:** Shipped Degrees to Seconds Converter on existing catalog slug degrees-to-seconds-converter (DegreesToSecondsConverter, catalog 6af46f17a27d8d1d4e990bfe). Bidirectional degrees to arcseconds with exact factor 3600; expandable other units (arcminutes, radians, gradians, revolutions); empty default; angular-not-time copy; guide + table + FAQs. Reuses degreesToArcseconds/arcsecondsToDegrees on angle-conversion. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-293b delivery for Conversion and Units angle converter.
