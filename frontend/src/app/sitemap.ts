@@ -30,6 +30,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'margin-and-vat-calculator',
   'margin-calculator-classic',
   'margin-call-calculator',
+  'margin-of-safety-calculator',
   'net-debt-calculator',
   'reduced-row-echelon-form-calculator',
   'arm-mortgage-calculator',

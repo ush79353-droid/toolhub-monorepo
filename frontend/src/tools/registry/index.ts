@@ -137,6 +137,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginCallCalculator,
     })),
   ),
+  MarginOfSafetyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/margin-of-safety/MarginOfSafetyCalculator'
+    ).then((mod) => ({
+      default: mod.MarginOfSafetyCalculator,
+    })),
+  ),
   NetDebtCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/net-debt/NetDebtCalculator'

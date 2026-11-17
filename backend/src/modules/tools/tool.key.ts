@@ -19,6 +19,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginAndVatCalculator',
   'MarginCalculatorClassic',
   'MarginCallCalculator',
+  'MarginOfSafetyCalculator',
   'NetDebtCalculator',
   'RrefCalculator',
   'ArmMortgageCalculator',
@@ -1001,6 +1002,7 @@ if (isDirect) {
     !isApprovedComponentKey('MarginAndVatCalculator') ||
     !isApprovedComponentKey('MarginCalculatorClassic') ||
     !isApprovedComponentKey('MarginCallCalculator') ||
+    !isApprovedComponentKey('MarginOfSafetyCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
