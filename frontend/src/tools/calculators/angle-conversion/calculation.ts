@@ -154,6 +154,28 @@ export function arcminutesToDegrees(arcminutes: number): number {
   return result;
 }
 
+export function degreesToArcseconds(degrees: number): number {
+  if (!Number.isFinite(degrees)) {
+    throw new Error('Invalid angle in degrees');
+  }
+  const result = degrees * ARCSECONDS_PER_DEGREE;
+  if (!Number.isFinite(result)) {
+    throw new Error('Conversion result is out of range');
+  }
+  return result;
+}
+
+export function arcsecondsToDegrees(arcseconds: number): number {
+  if (!Number.isFinite(arcseconds)) {
+    throw new Error('Invalid angle in arcseconds');
+  }
+  const result = arcseconds / ARCSECONDS_PER_DEGREE;
+  if (!Number.isFinite(result)) {
+    throw new Error('Conversion result is out of range');
+  }
+  return result;
+}
+
 export function dmsToRadians(degrees: number, minutes: number, seconds: number, sign: 1 | -1): number {
   return degreesToRadians(dmsToDecimalDegrees(degrees, minutes, seconds, sign));
 }
