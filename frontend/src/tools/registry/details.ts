@@ -424,7 +424,11 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/quiz-loan-balance/detail'),
   ManHoursCalculator: () =>
     import('@/tools/calculators/man-hours/detail'),
-    MarginCalculatorClassic: () =>
+  MarginAndMarkupCalculator: () =>
+    import('@/tools/calculators/margin-and-markup/detail'),
+  MarginAndVatCalculator: () =>
+    import('@/tools/calculators/margin-and-vat/detail'),
+  MarginCalculatorClassic: () =>
     import('@/tools/calculators/margin-calculator-classic/detail'),
   MarginInterestCalculator: () =>
     import('@/tools/calculators/margin-interest/detail'),
@@ -452,6 +456,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/online-marketing-conversion/detail'),
   OperatingAssetTurnoverCalculator: () =>
     import('@/tools/calculators/operating-asset-turnover/detail'),
+  OperatingMarginCalculator: () =>
+    import('@/tools/calculators/operating-margin/detail'),
   OptimalHedgeRatioCalculator: () =>
     import('@/tools/calculators/optimal-hedge-ratio/detail'),
   OpportunityCostCalculator: () =>
