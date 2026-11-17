@@ -1175,6 +1175,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HeightConverter,
     })),
   ),
+  HourConverter: lazyTool(() =>
+    import('@/tools/calculators/hour-converter/HourConverter').then((mod) => ({
+      default: mod.HourConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
