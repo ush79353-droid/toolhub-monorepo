@@ -233,6 +233,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gallons-to-cubic-feet-converter',
   'gallons-to-cups-converter',
   'gallons-to-grams-conversion',
+  'gallons-to-pints-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

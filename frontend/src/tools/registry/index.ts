@@ -1115,6 +1115,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GallonsToGramsConverter,
     })),
   ),
+  GallonsToPintsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-pints/GallonsToPintsConverter').then((mod) => ({
+      default: mod.GallonsToPintsConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
