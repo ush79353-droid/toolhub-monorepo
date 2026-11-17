@@ -4,6 +4,20 @@
 
 ---
 
+### 2026-11-17 — TDS Interest Calculator (Screenshot-First, Fixed INR)
+- **Summary:** Shipped TDS Interest Calculator on existing catalog slug `tds-interest-calculator` (`TdsInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff89`). Three modes: late deduction (s.201(1A) 1%/month), late payment (s.201(1A) 1.5%/month after Rule 30 due date), late filing (s.234E ₹200/day capped at TDS). Conditional fields per mode; fixed INR; within-deadline message for late filing. Activated.
+- **Assumptions:** Non-government Rule 30 deposit due dates (7th next month; March → 30 April). Standard quarterly return due dates (31 Jul / 31 Oct / 31 Jan / 31 May). No CBDT extension circulars. No government-deductor same-day deposit toggle.
+- **Example:** Late filing ₹10,000 / FY 2027 Q1 / filed 2026-11-17 → within deadline (due 31 Jul 2027). Late deduction Apr 15→May 2 → ₹200. Late payment Apr deduction paid May 12 → ₹300.
+- **Important Files:** `frontend/src/tools/calculators/tds-interest/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-tds-interest-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped. Formula self-check vs Omni/IT Act examples. MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-17 — Post Judgment Interest Calculator (Screenshot-First, Fixed USD)
+- **Summary:** Shipped Post Judgment Interest Calculator on existing catalog slug `post-judgment-interest-calculator` (`PostJudgmentInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff87`). Fields: judgment amount ($), interest rate %, date of judgment, date of writ, time passed (wks/days), accumulated interest. Federal Reserve link. Share / Reload / Clear / feedback. Fixed USD — no currency selector.
+- **Formulas:** Elapsed days = civil days judgment→writ; weeks/leftover from elapsed; Interest = Amount × (Rate/100) × (Days/365). Same-day and 0% → $0. Writ before judgment rejected.
+- **Example:** $10,000 / 5% / 73 days → $100.00.
+- **Important Files:** `frontend/src/tools/calculators/post-judgment-interest/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-post-judgment-interest-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Math self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Interest Coverage Ratio Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Interest Coverage Ratio Calculator on existing catalog slug `interest-coverage-ratio-calculator` (`InterestCoverageRatioCalculator`, catalog `6af46f0fa27d8d1d4e98ff84`). Three fields only: EBIT, interest expense, dimensionless interest coverage ratio. Independent real FX on both money selectors; normalize into EBIT currency before dividing; currency-only changes preserve the ratio. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Interest Coverage Ratio = EBIT ÷ Interest Expense (interest expense > 0). Zero/negative EBIT allowed; never displays NaN or Infinity.
