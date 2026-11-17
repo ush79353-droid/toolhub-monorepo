@@ -288,6 +288,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/annualized-rate-of-return/detail'),
   AppreciationCalculator: () =>
     import('@/tools/calculators/appreciation/detail'),
+  AnnuityCalculator: () => import('@/tools/calculators/annuity/detail'),
   AnnualizedReturnCalculator: () =>
     import('@/tools/calculators/annualized-return/detail'),
   ApyCalculator: () => import('@/tools/calculators/apy/detail'),
@@ -397,6 +398,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gmroi/detail'),
   GoogleAdsenseCalculator: () =>
     import('@/tools/calculators/google-adsense/detail'),
+  GrossMarginCalculator: () =>
+    import('@/tools/calculators/gross-margin/detail'),
   HedgeRatioCalculator: () =>
     import('@/tools/calculators/hedge-ratio/detail'),
   HhiCalculator: () =>

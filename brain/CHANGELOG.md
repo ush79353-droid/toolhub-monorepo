@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-17 — Margin Call Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Margin Call Calculator on existing catalog slug `margin-call-calculator` (`MarginCallCalculator`, catalog `6af46f0fa27d8d1d4e98ffa4`). Sections: Account details, Contract specification, Trading, collapsible Total margin amounts. Point value = tick × ticks/point; long P/L = points × point value × contracts; short = −long; equity = deposit + P/L; call when equity < total maintenance. Independent real FX (Margin Interest pattern). Activated.
+- **Contract assumptions:** Presets set ticks-per-point only (E-Mini S&P 500 → 4). Tick value and margins are user-entered — no live prices or invented margin schedules.
+- **Example:** Tick 3,459.70 × 4 → point value 13,838.80; long buy 5,000 / sell 5,010 / 2 contracts → P/L 276,776.
+- **Important Files:** `frontend/src/tools/calculators/margin-call/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-margin-call-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped. Math self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Net Debt Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Net Debt Calculator on existing catalog slug `net-debt-calculator` (`NetDebtCalculator`, catalog `6af46f0fa27d8d1d4e98ff9c`). Accordion sections for cash, short-term debt, long-term debt, plus Net debt summary. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Cash total = Cash + Cash equivalents. Short-term debt = Σ ST items. Long-term debt = Σ LT items. Net debt = ST + LT − cash total (negative allowed when cash exceeds debt). Blank lines = 0; never NaN/Infinity.

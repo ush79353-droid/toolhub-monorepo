@@ -1257,6 +1257,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AppreciationCalculator,
     })),
   ),
+  AnnuityCalculator: lazyTool(() =>
+    import('@/tools/calculators/annuity/AnnuityCalculator').then((mod) => ({
+      default: mod.AnnuityCalculator,
+    })),
+  ),
   AnnualizedReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/annualized-return/AnnualizedReturnCalculator'
@@ -1564,6 +1569,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GoogleAdsenseCalculator,
     })),
   ),
+  GrossMarginCalculator: lazyTool(() =>
+    import('@/tools/calculators/gross-margin/GrossMarginCalculator').then((mod) => ({
+      default: mod.GrossMarginCalculator,
+    })),
+  ),
   HedgeRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/hedge-ratio/HedgeRatioCalculator').then((mod) => ({
       default: mod.HedgeRatioCalculator,
@@ -1626,6 +1636,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   ManHoursCalculator: lazyTool(() =>
     import('@/tools/calculators/man-hours/ManHoursCalculator').then((mod) => ({
       default: mod.ManHoursCalculator,
+    })),
+  ),
+  MarginAndMarkupCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/margin-and-markup/MarginAndMarkupCalculator'
+    ).then((mod) => ({
+      default: mod.MarginAndMarkupCalculator,
     })),
   ),
   MarginCalculatorClassic: lazyTool(() =>
