@@ -4,6 +4,20 @@
 
 ---
 
+### 2026-11-18 — Second Stimulus Check Calculator - CASH Act (Screenshot-First, historical)
+- **Summary:** Shipped Second Stimulus Check Calculator - CASH Act on existing catalog slug `second-stimulus-check-calculator-cash-act` (`CashActStimulusCalculator`, catalog `6af46f0fa27d8d1d4e98ffcf`). Screenshot fields: filed 2019 taxes, filing status, dependents, 2019 AGI, “You will receive”; supplemental “How much more will you get?” with dependents under 17 and additional vs enacted $600 EIP. Fixed USD (no FX). Historical proposal notice. Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
+- **Rules:** H.R.9051 CASH Act (House-passed, not enacted): base $2,000 single/HoH or $4,000 married; +$2,000 per dependent any age; 5% AGI phase-out above $75,000 / $112,500 / $150,000. Additional = max(0, CASH total − enacted $600 EIP). Dependents under 17 cannot exceed total dependents. “No” on 2019 filing → $0 with eligibility note. All results labeled historical/hypothetical.
+- **Example:** married · 2 under-17 dependents · AGI 150,000 → $8,000 CASH total; $2,400 enacted; $5,600 more.
+- **Important Files:** `frontend/src/tools/calculators/cash-act-stimulus/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check (`calculation.test.ts`). MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated suite omitted per user. Local commits only — no push/pull/sync.
+
+### 2026-11-18 — Second Stimulus Check Calculator (HEALS Act) (Screenshot-First, historical)
+- **Summary:** Shipped Second Stimulus Check Calculator (HEALS Act) on existing catalog slug `second-stimulus-check-calculator-heals-act` (`HealsActStimulusCalculator`, catalog `6af46f0fa27d8d1d4e98ffcd`). Screenshot fields: filed 2019 taxes, filing status, dependents, 2019 AGI, “You will receive”. Fixed USD (no FX). Historical proposal notice + verified HEROES Act / unemployment HEALS-vs-HEROES reference links. Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
+- **Rules:** July 2020 Senate GOP HEALS proposal (never enacted as written): base $1,200 single/HoH or $2,400 married; +$500 per dependent any age (no cap); 5% AGI phase-out above $75,000 / $112,500 / $150,000. “No” on 2019 filing → $0 with eligibility note. All results labeled historical/hypothetical.
+- **Example:** Single · 0 dependents · AGI $75,000 → $1,200; AGI $87,000 → $600; HoH · 1 dependent · AGI $112,500 → $1,700.
+- **Important Files:** `frontend/src/tools/calculators/heals-act-stimulus/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check (`calculation.test.ts`). MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated suite omitted per user. Local commits only — no push/pull/sync.
+
 ### 2026-11-18 — Stimulus Check Calculator (40k Cap) (Screenshot-First, historical)
 - **Summary:** Shipped Stimulus Check Calculator (40k Cap) on existing catalog slug `stimulus-check-calculator-40k-cap` (`StimulusCheck40kCalculator`, catalog `6af46f0fa27d8d1d4e98ffcb`). Screenshot fields: filing status, dependents, AGI USD, read-only result; historical HEROES / McConnell notice; Share/Reload/Clear/feedback. Fixed USD (no FX). Activated via `npm run tool:assign`.
 - **Assumptions (verified / documented):** HEROES Act amounts $1,200 / $2,400 / $1,200×≤3 dependents (CRS). McConnell 2020-07-06 ~$40,000 cut-off; married doubled to $80,000 in the named 40k-cap model; HoH uses $40,000. Phase-out for a hard $40k regime was never specified → hard cut-off (full amount at/below cap, else $0). Not an active benefit.
