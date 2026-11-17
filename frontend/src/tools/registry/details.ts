@@ -301,6 +301,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MinuteConverter: () => import('@/tools/calculators/minute-converter/detail'),
   MinutesToDaysCalculator: () => import('@/tools/calculators/minutes-to-days/detail'),
   MinutesToDecimalCalculator: () => import('@/tools/calculators/minutes-to-decimal/detail'),
+  MinutesToSecondsConverter: () => import('@/tools/calculators/minutes-to-seconds/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
