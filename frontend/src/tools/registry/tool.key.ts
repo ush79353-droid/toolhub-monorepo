@@ -282,6 +282,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FullTimeEquivalentCalculator',
   'GmroiCalculator',
   'GoogleAdsenseCalculator',
+  'GrossMarginCalculator',
   'HedgeRatioCalculator',
   'HhiCalculator',
   'HighLowMethodCalculator',
@@ -294,6 +295,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LoanRepaymentCalculator',
   'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
+  'MarginAndMarkupCalculator',
   'MarginInterestCalculator',
   'MirrCalculator',
   'MoneyFactorCalculator',
@@ -684,6 +686,7 @@ if (isDirect) {
     !isApprovedComponentKey('FullTimeEquivalentCalculator') ||
     !isApprovedComponentKey('GmroiCalculator') ||
     !isApprovedComponentKey('GoogleAdsenseCalculator') ||
+    !isApprovedComponentKey('GrossMarginCalculator') ||
     !isApprovedComponentKey('HedgeRatioCalculator') ||
     !isApprovedComponentKey('HhiCalculator') ||
     !isApprovedComponentKey('HighLowMethodCalculator') ||
@@ -696,6 +699,7 @@ if (isDirect) {
     !isApprovedComponentKey('LoanRepaymentCalculator') ||
     !isApprovedComponentKey('QuizLoanBalanceCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
+    !isApprovedComponentKey('MarginAndMarkupCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
     !isApprovedComponentKey('MirrCalculator') ||
     !isApprovedComponentKey('MoneyFactorCalculator') ||

@@ -4,6 +4,14 @@
 
 ---
 
+### 2026-11-17 — Margin Calculator Classic (Screenshot-First + FX)
+- **Summary:** Shipped Margin Calculator Classic on existing catalog slug `margin-calculator-classic` (`MarginCalculatorClassic`, catalog `6af46f0fa27d8d1d4e98ffa3`). Four fields: cost, margin % (pin), revenue, profit. Bidirectional solve with last-edited driver; margin pin holds %. Share/Reload/Clear/feedback. Separate from `margin-calculator`. Activated.
+- **Formulas:** Profit = Revenue − Cost; Margin (%) = (Profit / Revenue) × 100; Revenue = Cost / (1 − Margin/100); Revenue = Cost + Profit. Margin 100% and zero revenue blocked safely.
+- **FX:** Independent currencies on cost/revenue/profit; normalize into cost currency; currency-only changes preserve margin %. Percentage never FX-converted.
+- **Example:** Cost 100 / Margin 20% pinned → Revenue 125, Profit 25.
+- **Important Files:** `frontend/src/tools/calculators/margin-calculator-classic/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-margin-calculator-classic-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Debt Snowball Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Debt Snowball Calculator on existing catalog slug `debt-snowball-calculator` (`DebtSnowballCalculator`, catalog `6af46f0fa27d8d1d4e98ff97`). Debt count Two–Six; per-debt balance/rate/payment; aim dropdown (minimum / snowball / avalanche); repayment totals + optional increase; compare radio; horizontally scrollable payoff table. Independent real FX on all money selectors (Margin Interest pattern). Activated.
 - **Formulas:** Normalize mixed-currency balances/payments/increase into debt #1 balance currency. Minimum = independent per-debt schedules (combined payment can fall). Snowball/avalanche keep `Σ mins + increase` constant; interest accrues before principal; snowball targets smallest balance; avalanche targets highest rate; final month skips interest when principal fits.

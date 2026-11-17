@@ -300,6 +300,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
   'MarginAndMarkupCalculator',
+  'MarginCalculatorClassic',
   'MarginAndVatCalculator',
   'MarginInterestCalculator',
   'MirrCalculator',
@@ -710,6 +711,7 @@ if (isDirect) {
     !isApprovedComponentKey('QuizLoanBalanceCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
     !isApprovedComponentKey('MarginAndMarkupCalculator') ||
+    !isApprovedComponentKey('MarginCalculatorClassic') ||
     !isApprovedComponentKey('MarginAndVatCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
     !isApprovedComponentKey('MirrCalculator') ||
