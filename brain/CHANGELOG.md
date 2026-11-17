@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Minutes to Seconds Converter
+- **Summary:** Shipped Minutes to Seconds Converter on existing catalog slug minutes-to-seconds-converter (MinutesToSecondsConverter, catalog 6af46f17a27d8d1d4e990bb5). Bidirectional minutes↔seconds plus combined min|sec (remainder in [0, 60)); exact 1 min = 60 s; empty default; signed durations; 1.5 min ≠ 1 min 50 sec clarified; guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-371b delivery for Conversion and Units minutes-to-seconds converter.
+- **Important Files:** frontend/src/tools/calculators/minutes-to-seconds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–60 min → sec; reverse 30/90/150/300/3600; combined 2:52→172, 4:30→270, 125→2:5; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Minutes to Decimal Calculator
 - **Summary:** Shipped Minutes to Decimal Calculator on existing catalog slug minutes-to-decimal-calculator (MinutesToDecimalCalculator, catalog 6af46f17a27d8d1d4e990bb3). Clock minutes ↔ synchronized decimal Hours/Minutes/Seconds as equivalent expressions of one duration (not additive HMS); exact 1 h = 60 min = 3600 s; empty default; signed durations; clock vs decimal clarified (1:30 ≠ 1.30); guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-370b delivery for Conversion and Units minutes-to-decimal converter.
