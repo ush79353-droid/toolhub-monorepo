@@ -1536,6 +1536,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LoanBalanceCalculator,
     })),
   ),
+  LoanInterestCalculator: lazyTool(() =>
+    import('@/tools/calculators/loan-interest/LoanInterestCalculator').then((mod) => ({
+      default: mod.LoanInterestCalculator,
+    })),
+  ),
   LoanRepaymentCalculator: lazyTool(() =>
     import('@/tools/calculators/loan-repayment/LoanRepaymentCalculator').then(
       (mod) => ({

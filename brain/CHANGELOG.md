@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-17 — Loan Interest Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Loan Interest Calculator on existing catalog slug `loan-interest-calculator` (`LoanInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff86`). Loan details: balance, term yrs/mos, APR %, payment frequency, compounding frequency → interest, total payment, frequency-labeled repayment, yearly balances chart. Independent real FX on four money selectors (Margin Interest pattern). Activated.
+- **Formulas:** r = (1 + APR/(100 × m))^(m/p) − 1; n = years × p; Payment = P × r / (1 − (1+r)^(-n)); r = 0 → P/n; Total = Payment × n; Interest = Total − Principal. Chart samples full amortization at year marks.
+- **Example:** 10,000 PKR / 10y / 4% monthly/monthly → payment ≈ 101.25; total ≈ 12,149.42; interest ≈ 2,149.42.
+- **Important Files:** `frontend/src/tools/calculators/loan-interest/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-loan-interest-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — TDS Interest Calculator (Screenshot-First, Fixed INR)
 - **Summary:** Shipped TDS Interest Calculator on existing catalog slug `tds-interest-calculator` (`TdsInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff89`). Three modes: late deduction (s.201(1A) 1%/month), late payment (s.201(1A) 1.5%/month after Rule 30 due date), late filing (s.234E ₹200/day capped at TDS). Conditional fields per mode; fixed INR; within-deadline message for late filing. Activated.
 - **Assumptions:** Non-government Rule 30 deposit due dates (7th next month; March → 30 April). Standard quarterly return due dates (31 Jul / 31 Oct / 31 Jan / 31 May). No CBDT extension circulars. No government-deductor same-day deposit toggle.

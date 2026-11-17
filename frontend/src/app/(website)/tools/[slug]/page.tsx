@@ -128,6 +128,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'lerner-index-calculator',
   'liquid-net-worth-calculator',
   'loan-balance-calculator',
+  'loan-interest-calculator',
   'man-hours-calculator',
   'online-marketing-conversion-calculator',
   'operating-asset-turnover-calculator',
