@@ -182,6 +182,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DecimeterToMeterConverter,
     })),
   ),
+  DeferredPaymentLoanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/deferred-payment-loan/DeferredPaymentLoanCalculator'
+    ).then((mod) => ({
+      default: mod.DeferredPaymentLoanCalculator,
+    })),
+  ),
   SquareKilometersToAcresConverter: lazyTool(() =>
     import(
       '@/tools/calculators/square-kilometers-to-acres/SquareKilometersToAcresConverter'
@@ -2511,11 +2518,26 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EidlCalculator,
     })),
   ),
+  CaliforniaStimulusCheckIiCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/california-stimulus-check-ii/CaliforniaStimulusCheckIiCalculator'
+    ).then((mod) => ({
+      default: mod.CaliforniaStimulusCheckIiCalculator,
+    })),
+  ),
+
   StudentLoanRepaymentCovidCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/student-loan-repayment-covid/StudentLoanRepaymentCovidCalculator'
     ).then((mod) => ({
       default: mod.StudentLoanRepaymentCovidCalculator,
+    })),
+  ),
+  CashActStimulusCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cash-act-stimulus/CashActStimulusCalculator'
+    ).then((mod) => ({
+      default: mod.CashActStimulusCalculator,
     })),
   ),
 };

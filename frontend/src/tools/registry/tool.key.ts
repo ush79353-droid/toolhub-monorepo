@@ -356,6 +356,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MortgageAccelerationCalculator',
   'MortgageAmortizationCalculator',
   'MortgagePrepaymentCalculator',
+  'MortgageWithExtraPaymentsCalculator',
   'MortgagePointsCalculator',
   'CanadianMortgageCalculator',
   'MortgageCalculatorUk',
@@ -378,7 +379,9 @@ export const APPROVED_COMPONENT_KEYS = [
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
   'EidlCalculator',
+  'CaliforniaStimulusCheckIiCalculator',
   'StimulusCheck40kCalculator',
+  'CashActStimulusCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -779,6 +782,7 @@ if (isDirect) {
     !isApprovedComponentKey('VaMortgageCalculator') ||
     !isApprovedComponentKey('ValueAtRiskCalculator') ||
     !isApprovedComponentKey('EidlCalculator') ||
+    !isApprovedComponentKey('CaliforniaStimulusCheckIiCalculator') ||
     !isApprovedComponentKey('HealsActStimulusCalculator') ||
     !isApprovedComponentKey('StimulusCheck40kCalculator') ||
     isApprovedComponentKey('EvilEval')

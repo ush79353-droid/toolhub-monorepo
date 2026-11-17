@@ -36,6 +36,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AstronomicalUnitCalculator: () => import('@/tools/calculators/astronomical-unit/detail'),
   PixelsToInchesConverter: () => import('@/tools/calculators/pixels-to-inches/detail'),
   DecimeterToMeterConverter: () => import('@/tools/calculators/decimeter-to-meter/detail'),
+  DeferredPaymentLoanCalculator: () =>
+    import('@/tools/calculators/deferred-payment-loan/detail'),
   SquareKilometersToAcresConverter: () =>
     import('@/tools/calculators/square-kilometers-to-acres/detail'),
   FeetAndInchesCalculator: () => import('@/tools/calculators/feet-and-inches/detail'),
@@ -656,8 +658,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   VaMortgageCalculator: () => import('@/tools/calculators/va-mortgage/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
   EidlCalculator: () => import('@/tools/calculators/eidl/detail'),
+  CaliforniaStimulusCheckIiCalculator: () =>
+    import('@/tools/calculators/california-stimulus-check-ii/detail'),
   StudentLoanRepaymentCovidCalculator: () =>
     import('@/tools/calculators/student-loan-repayment-covid/detail'),
+  CashActStimulusCalculator: () =>
+    import('@/tools/calculators/cash-act-stimulus/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

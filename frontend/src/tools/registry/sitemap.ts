@@ -387,6 +387,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sharpe-ratio-calculator',
   'value-at-risk-calculator-var',
   'economic-injury-disaster-loan-emergency-advance-eidl',
+  'california-stimulus-check-ii-calculator',
   'stimulus-check-calculator-40k-cap',
 ] as const;
 
