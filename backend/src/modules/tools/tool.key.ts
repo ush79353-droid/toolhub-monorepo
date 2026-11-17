@@ -387,6 +387,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ParkingRatioCalculator',
   'PartiallyAmortizedLoanCalculator',
   'PaydayLoanCalculator',
+  'PaymentCalculator',
   'PaybackPeriodCalculator',
   'PercentageReturnCalculator',
   'PerpetuityCalculator',

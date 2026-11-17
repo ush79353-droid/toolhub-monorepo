@@ -323,6 +323,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'parking-ratio-calculator',
   'partially-amortized-loan-calculator',
   'payday-loan-calculator',
+  'payment-calculator',
   'payback-period-calculator',
   'percentage-return-calculator',
   'perpetuity-calculator',

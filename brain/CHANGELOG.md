@@ -4,7 +4,22 @@
 
 ---
 
+### 2026-11-18 — Rent Split Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Rent Split Calculator on existing catalog slug `rent-split-calculator` (`RentSplitCalculator`, catalog `6af46f0fa27d8d1d4e98ffc1`). Screenshot fields: total rent + currency, bedroom count radios (One/Two/Three), per-bedroom people with `person(s)` suffix. Results: per-bedroom share + per-person rent. Real FX converts total rent only; people counts unchanged. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Total People = Σ bedroom people; Per-Person = Total Rent ÷ Total People; Bedroom Share = (People ÷ Total People) × Total Rent. Zero total people → no calculation.
+- **Example:** 30,000 PKR · Bedroom 1 = 1 · Bedroom 2 = 2 → per-person 10,000; shares 10,000 / 20,000.
+- **Important Files:** `frontend/src/tools/calculators/rent-split/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check (`calculation.test.ts`). MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser omitted per user.
+
 <<<<<<< HEAD
+### 2026-11-18 — Payment Calculator (Screenshot-First)
+- **Summary:** Shipped Payment Calculator on existing catalog slug `payment-calculator` (`PaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ffc3`). Modes: Fixed Term (default) and Fixed Payments. Results: monthly payment, totals, principal/interest doughnut, annual/monthly amortization, repayment line chart. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** r = APR/1200; n = years×12; Payment = P·r/(1−(1+r)^(-n)); r=0 → P/n. Fixed Payments: n = ln(PMT/(PMT−P·r))/ln(1+r). Total interest = repayment − principal. Final installment clears balance.
+- **Currency:** Fixed USD display — no currency selectors (screenshot has none).
+- **Example:** $200,000 / 15y / 6% → $1,687.71/mo; 180 payments; total ≈ $303,788.46; interest ≈ $103,788.46.
+- **Important Files:** `frontend/src/tools/calculators/payment/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-payment-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check matched screenshot. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Interest Per Day Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Interest Per Day Calculator on existing catalog slug `interest-per-day-calculator` (`InterestPerDayCalculator`, catalog `6af46f0fa27d8d1d4e98ff85`). Screenshot fields: loan balance, annual interest rate %, interest per day, interest rate per day % (`%` unit dropdowns only). Independent real FX on loan balance + interest per day (Margin Interest pattern); percentages never converted. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Daily Rate (%) = Annual / 365; Interest Per Day = Loan Balance × (Annual / 100) / 365.
