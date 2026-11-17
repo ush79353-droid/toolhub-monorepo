@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Kilometer to Meter Converter
+- **Summary:** Shipped Kilometer to Meter Converter on existing catalog slug kilometer-to-meter-converter (KilometerToMeterConverter, catalog 6af46f17a27d8d1d4e990b1d). Bidirectional km↔m via exact 1 km = 1000 m; reuses formatLength; empty default; negatives rejected; original guide/table/FAQs. Kilometer Calculator pillar 6af451d2a27d8d1d4e98f9ed preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-343b delivery for Conversion and Units kilometers↔meters pair converter under Kilometer Calculator pillar.
+- **Important Files:** frontend/src/tools/calculators/kilometer-to-meter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 km = 1000 m; 2.5 km = 2500 m; 2.535 km = 2535 m; 7500 m = 7.5 km; round-trip; meter-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Kilometer Calculator
 - **Summary:** Shipped Kilometer Calculator on existing catalog slug kilometer-calculator (KilometerCalculator, catalog 6af46f17a27d8d1d4e990b1c). Eight synced fields in three accordions (Kilometer / Metric / Imperial-US); reuses meter-converter convertLength; exact SI and international mile factors; negatives rejected; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ed preserved; subPillar null. Meta title <=70. **isActive left false**; indexable left false.
 - **Why:** TOOL-342b delivery for Conversion and Units multi-unit kilometer length converter (inactive until authorized).
