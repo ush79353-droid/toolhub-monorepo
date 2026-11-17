@@ -272,6 +272,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'kilometers-to-miles-calculator',
   'km-to-feet-conversion',
   'kpa-converter',
+  'kpa-to-atm-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
