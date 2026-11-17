@@ -290,6 +290,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MgToCcConverter: () => import('@/tools/calculators/mg-to-cc/detail'),
   MgToLbsConverter: () => import('@/tools/calculators/mg-to-lbs/detail'),
   MgToTablespoonConverter: () => import('@/tools/calculators/mg-to-tablespoon/detail'),
+  MgToTeaspoonConverter: () => import('@/tools/calculators/mg-to-teaspoon/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

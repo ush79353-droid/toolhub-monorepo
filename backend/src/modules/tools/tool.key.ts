@@ -265,6 +265,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MgToCcConverter',
   'MgToLbsConverter',
   'MgToTablespoonConverter',
+  'MgToTeaspoonConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -718,6 +719,7 @@ if (isDirect) {
     !isApprovedComponentKey('MgToCcConverter') ||
     !isApprovedComponentKey('MgToLbsConverter') ||
     !isApprovedComponentKey('MgToTablespoonConverter') ||
+    !isApprovedComponentKey('MgToTeaspoonConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
