@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Gallons to Cups Converter
+- **Summary:** Shipped Gallons to Cups Converter on existing catalog slug gallons-to-cups-converter (GallonsToCupsConverter, catalog 6af46f17a27d8d1d4e990ac8). Bidirectional US gal ↔ US customary cups with exact factor 16; negatives rejected; empty default. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-306b delivery for Conversion and Units volume pair converter (gal to cups).
+- **Important Files:** frontend/src/tools/calculators/gallons-to-cups/*, cubic-feet formatMeasure reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 gal = 16 cups; 8 cups = 0.5 gal). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Gallons to Cubic Feet Converter
 - **Summary:** Shipped Gallons to Cubic Feet Converter on existing catalog slug gallons-to-cubic-feet-converter (GallonsToCubicFeetConverter, catalog 6af46f17a27d8d1d4e990afa). Three-field sync US gal / UK gal / ft³ via exact liter factors; negatives rejected. Pillar 6af451d1a27d8d1d4e98f9e6 and subPillar 6af451d1a27d8d1d4e98f9e7 preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-305b delivery for Conversion and Units volume converter (gal to ft³).
