@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-17** (Illinois Overtime Calculator live at `/tools/illinois-overtime-calculator` with FX; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-17** (Annuity Payout Calculator live at `/tools/annuity-payout-calculator` with FX; Auto Loan remains master Tool Detail Page).
 
 ---
 
