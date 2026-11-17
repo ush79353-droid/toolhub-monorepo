@@ -18,6 +18,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'debt-service-coverage-ratio-calculator-dscr',
   'debt-snowball-calculator',
   'debt-to-asset-ratio-calculator',
+  'debt-to-capital-ratio-calculator',
   'debt-to-equity-calculator',
   'interest-rate-parity-calculator',
   'loan-calculator',

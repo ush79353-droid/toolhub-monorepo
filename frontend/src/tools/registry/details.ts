@@ -15,6 +15,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/debt-snowball/detail'),
   DebtToAssetRatioCalculator: () =>
     import('@/tools/calculators/debt-to-asset-ratio/detail'),
+  DebtToCapitalRatioCalculator: () =>
+    import('@/tools/calculators/debt-to-capital-ratio/detail'),
   DebtToEquityCalculator: () =>
     import('@/tools/calculators/debt-to-equity/detail'),
   InterestRateParityCalculator: () =>
