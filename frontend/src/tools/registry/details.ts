@@ -234,6 +234,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FootToCentimeterConverter: () => import('@/tools/calculators/foot-to-centimeter/detail'),
   FtToMConverter: () => import('@/tools/calculators/ft-to-m/detail'),
   GajToSquareYardConverter: () => import('@/tools/calculators/gaj-to-square-yard/detail'),
+  GallonsToCubicFeetConverter: () =>
+    import('@/tools/calculators/gallons-to-cubic-feet/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
