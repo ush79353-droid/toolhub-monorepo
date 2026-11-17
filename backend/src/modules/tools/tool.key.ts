@@ -243,6 +243,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'KelvinToFahrenheitConverter',
   'KgCmToPsiConverter',
   'KgToLbsConverter',
+  'KgToLiterConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -674,6 +675,7 @@ if (isDirect) {
     !isApprovedComponentKey('KelvinToFahrenheitConverter') ||
     !isApprovedComponentKey('KgCmToPsiConverter') ||
     !isApprovedComponentKey('KgToLbsConverter') ||
+    !isApprovedComponentKey('KgToLiterConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

@@ -268,6 +268,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KelvinToFahrenheitConverter: () => import('@/tools/calculators/kelvin-to-fahrenheit/detail'),
   KgCmToPsiConverter: () => import('@/tools/calculators/kgcm-to-psi/detail'),
   KgToLbsConverter: () => import('@/tools/calculators/kg-to-lbs/detail'),
+  KgToLiterConverter: () => import('@/tools/calculators/kg-to-liter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

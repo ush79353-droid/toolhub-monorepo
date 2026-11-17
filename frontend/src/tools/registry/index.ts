@@ -1265,6 +1265,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KgToLbsConverter,
     })),
   ),
+  KgToLiterConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-liter/KgToLiterConverter').then((mod) => ({
+      default: mod.KgToLiterConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
