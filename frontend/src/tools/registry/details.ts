@@ -224,6 +224,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DistanceConverter: () => import('@/tools/calculators/distance-converter/detail'),
   DmConverter: () => import('@/tools/calculators/dm-converter/detail'),
   FahrenheitConverter: () => import('@/tools/calculators/fahrenheit-converter/detail'),
+  FahrenheitToCelsiusConverter: () =>
+    import('@/tools/calculators/fahrenheit-to-celsius/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
