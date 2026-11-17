@@ -253,6 +253,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'KmToFeetConversion',
   'KpaConverter',
   'KpaToAtmConversion',
+  'KpaToMmhgConversion',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -694,6 +695,7 @@ if (isDirect) {
     !isApprovedComponentKey('KmToFeetConversion') ||
     !isApprovedComponentKey('KpaConverter') ||
     !isApprovedComponentKey('KpaToAtmConversion') ||
+    !isApprovedComponentKey('KpaToMmhgConversion') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
