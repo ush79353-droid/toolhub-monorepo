@@ -1195,6 +1195,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HoursToSecondsConverter,
     })),
   ),
+  HoursToWeekConversion: lazyTool(() =>
+    import('@/tools/calculators/hours-to-weeks/HoursToWeekConversion').then((mod) => ({
+      default: mod.HoursToWeekConversion,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

@@ -229,6 +229,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HoursToDaysCalculator',
   'HoursToMinutesConverter',
   'HoursToSecondsConverter',
+  'HoursToWeekConversion',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -646,6 +647,7 @@ if (isDirect) {
     !isApprovedComponentKey('HoursToDaysCalculator') ||
     !isApprovedComponentKey('HoursToMinutesConverter') ||
     !isApprovedComponentKey('HoursToSecondsConverter') ||
+    !isApprovedComponentKey('HoursToWeekConversion') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
