@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Milliseconds Converter
+- **Summary:** Shipped Milliseconds Converter on existing catalog slug milliseconds-converter (MillisecondsConverter, catalog 6af46f17a27d8d1d4e990bb0). ms-centered bidirectional time converter: core ms/s/min/h/d plus other-unit selector (ns/µs/weeks/fortnights/years); reuses time-unit Decimal seconds engine; exact 1 s = 1000 ms; empty default; signed durations; Julian 365.25-day year documented (shared engine, not fixed 365); chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-365b delivery for Conversion and Units milliseconds converter.
+- **Important Files:** frontend/src/tools/calculators/milliseconds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 ms = 0.001 s; 1000 ms = 1 s; 60000 ms = 1 min; 3600000 ms = 1 h; 86400000 ms = 1 day; reverse; 500/220/2500/120000/7200000 cases; 1 ms = 1000 µs; 1 week = 604800000 ms; Julian year ms; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Millimeter Calculator
 - **Summary:** Shipped Millimeter Calculator on existing catalog slug millimeter-calculator (MillimeterCalculator, catalog 6af46f17a27d8d1d4e990b94). Multi-group mm hub: Imperial in/ft/mi + yd/fur/ch/rd, Metric cm/m/km + um/nm/dm/dam/hm; exact 1 mm = 0.001 m and 1 in = 25.4 mm; empty default; signed lengths; chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-364b delivery for Conversion and Units millimeter hub.
