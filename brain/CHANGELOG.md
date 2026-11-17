@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Hours to Minutes Converter
+- **Summary:** Shipped Hours to Minutes Converter on existing catalog slug hours-to-minutes-converter (HoursToMinutesConverter, catalog 6af46f17a27d8d1d4e990bab). Synced hrs/min/sec plus editable HMS compound reusing hour-converter TIME_CONSTANTS; exact ×60 / ×3600; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-322b delivery for Conversion and Units hours ↔ minutes converter.
+- **Important Files:** frontend/src/tools/calculators/hours-to-minutes/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (7 hr = 420 min / 25200 s; 2h 15m 30s = 135.5 min; 0h 90m → 1h 30m; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Hours to Days Calculator
 - **Summary:** Shipped Hours to Days Calculator on existing catalog slug hours-to-days-calculator (HoursToDaysCalculator, catalog 6af46f17a27d8d1d4e990baa). Bidirectional hours↔days (exact ÷24); Other Quantities + HMS reuse hour-converter TIME_CONSTANTS; GCD fraction table with 1–72 expand; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-321b delivery for Conversion and Units hours ↔ days calculator.
