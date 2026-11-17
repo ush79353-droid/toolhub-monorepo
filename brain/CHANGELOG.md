@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Grams to fl oz Converter
+- **Summary:** Shipped Grams to fl oz Converter on existing catalog slug grams-to-fl-oz-converter (GramsToFlOzConverter, catalog 6af46f17a27d8d1d4e990b40). Density-based mass↔volume with substance presets; default water 1 g/mL and US fl oz; distinct US/UK fluid ounce factors; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-313b delivery for Conversion and Units density-based grams ↔ fluid ounces converter.
+- **Important Files:** frontend/src/tools/calculators/grams-to-fl-oz/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100 g water ≈ 3.3814 US fl oz / 3.5195 UK fl oz; honey ≈ 2.3813 US fl oz; 4 US fl oz milk ≈ 121.84 g). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Grams in mL Converter
 - **Summary:** Shipped Grams in mL Converter on existing catalog slug grams-in-ml-converter (GramsInMlConverter, catalog 6af46f17a27d8d1d4e990b3f). Density-based mass↔volume with cooking ingredient presets; default water 1000 kg/m³; mass/volume unit selectors; density accordion expanded; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-312b delivery for Conversion and Units density-based grams ↔ milliliters converter.
