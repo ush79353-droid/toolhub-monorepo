@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Katha to Square Feet Converter
+- **Summary:** Shipped Katha to Square Feet Converter on existing catalog slug katha-to-square-feet-converter (KathaToSquareFeetConverter, catalog 6af46f17a27d8d1d4e990afd). Verified regional factors only (Nepal 3645 ft² default; Bangladesh/West Bengal 720; Assam 2880; Patna/Gaya/Aurangabad 1361.25; Saran 1742.4). Bidirectional katha↔ft²↔m²; pending regions documented (Chhattisgarh, generic Bihar, Bigha). Pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-332b delivery for Conversion and Units regional katha land-area converter.
+- **Important Files:** frontend/src/tools/calculators/katha-to-sqft/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (Nepal 1 katha = 3645 ft² / 338.6315808 m²; 2 katha = 7290 ft²; reverse; Bangladesh 720; Assam 2880; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e6, subPillar 6af46f0fae6d84bd3ef8f7e3). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add in to cm Converter
 - **Summary:** Shipped in to cm Converter on existing catalog slug in-to-cm-converter (InToCmConverter, catalog 6af46f17a27d8d1d4e990b8a). Bidirectional inches↔centimeters with exact 2.54 factor; empty default; signed values; original guide/examples/table/FAQs; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-331b delivery for Conversion and Units inches ↔ centimeters converter.
