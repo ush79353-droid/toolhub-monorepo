@@ -197,6 +197,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DaysToWeeksCalculator',
   'DaysToYearsCalculator',
   'DegreesToMinutesConverter',
+  'DegreesToRadiansConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -582,6 +583,7 @@ if (isDirect) {
     !isApprovedComponentKey('DaysToWeeksCalculator') ||
     !isApprovedComponentKey('DaysToYearsCalculator') ||
     !isApprovedComponentKey('DegreesToMinutesConverter') ||
+    !isApprovedComponentKey('DegreesToRadiansConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

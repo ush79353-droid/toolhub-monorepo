@@ -217,6 +217,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'days-to-weeks-calculator',
   'days-to-years-calculator',
   'degrees-to-minutes-converter',
+  'degrees-to-radians-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

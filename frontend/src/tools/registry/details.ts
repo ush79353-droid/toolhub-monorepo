@@ -219,6 +219,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DaysToWeeksCalculator: () => import('@/tools/calculators/days-to-weeks/detail'),
   DaysToYearsCalculator: () => import('@/tools/calculators/days-to-years/detail'),
   DegreesToMinutesConverter: () => import('@/tools/calculators/degrees-to-minutes/detail'),
+  DegreesToRadiansConverter: () => import('@/tools/calculators/degrees-to-radians/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
