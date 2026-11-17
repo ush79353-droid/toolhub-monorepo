@@ -578,6 +578,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/holding-period-return/detail'),
   ImmediateAnnuityCalculator: () =>
     import('@/tools/calculators/immediate-annuity/detail'),
+  IllinoisOvertimeCalculator: () =>
+    import('@/tools/calculators/illinois-overtime/detail'),
   ImpermanentLossCalculator: () =>
     import('@/tools/calculators/impermanent-loss/detail'),
   InformationRatioCalculator: () =>

@@ -91,6 +91,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'hedge-ratio-calculator',
   'holding-period-return-calculator',
   'immediate-annuity-calculator',
+  'illinois-overtime-calculator',
   'home-improvement-loan-calculator',
   'home-loan-emi-calculator',
   'home-loan-calculator',

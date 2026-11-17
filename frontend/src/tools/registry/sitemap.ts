@@ -387,6 +387,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fd-calculator-fixed-deposit-calculator',
   'holding-period-return-calculator',
   'immediate-annuity-calculator',
+  'illinois-overtime-calculator',
   'impermanent-loss-calculator',
   'information-ratio-calculator',
   'interest-coverage-ratio-calculator',

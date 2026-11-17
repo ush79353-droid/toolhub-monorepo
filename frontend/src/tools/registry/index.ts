@@ -2139,6 +2139,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InterestOnlyMortgageCalculator,
     })),
   ),
+  IllinoisOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/illinois-overtime/IllinoisOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.IllinoisOvertimeCalculator,
+    })),
+  ),
   InterestPerDayCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/interest-per-day/InterestPerDayCalculator'

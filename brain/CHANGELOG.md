@@ -1,3 +1,11 @@
+### 2026-11-17 — Overtime Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Overtime Calculator on existing catalog slug `overtime-calculator` (`OvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb1`). Collapsible Regular work time + Overtime; In total; Share/Reload/Clear/feedback. Activated.
+- **Formulas:** OT hourly = regular hourly × multiplier; regular monthly = hourly × weekly hours × 52/12; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Duration/rate/frequency units normalize without mixing hourly/weekly/monthly quantities.
+- **FX:** Independent currencies on all monetary selectors; compute in regular-pay currency at full precision; re-express results; display rounding only. Hours, time units, and multiplier never convert. Stale/missing rate handling via `CURRENCY_CONVERSION_SLUGS`.
+- **Example:** 500/hr × 40 hr/week × 1.5 × 20 OT hr/month → OT rate 750; regular ≈ 86,666.67; OT 15,000; total ≈ 101,666.67.
+- **Important Files:** `frontend/src/tools/calculators/overtime/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-overtime-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Georgia Overtime Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Georgia Overtime Calculator on existing catalog slug `georgia-overtime-calculator` (`GeorgiaOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb4`). Regular work time + overtime + in-total sections; Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Regular monthly = hourly × weekly hours × 52/12; OT hourly = hourly × multiplier; OT monthly = OT hourly × monthly OT hours; total = regular + OT. Unit normalization for rate/duration/frequency; blank OT hours → 0; negative pay/hours rejected.
