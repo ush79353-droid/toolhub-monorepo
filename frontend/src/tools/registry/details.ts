@@ -545,6 +545,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mortgage-rate/detail'),
   InterestRateCalculator: () =>
     import('@/tools/calculators/interest-rate/detail'),
+  InterestRateParityCalculator: () =>
+    import('@/tools/calculators/interest-rate-parity/detail'),
   IrrCalculator: () => import('@/tools/calculators/irr/detail'),
   InvestmentCalculator: () => import('@/tools/calculators/investment/detail'),
   InvestmentFeeCalculator: () =>

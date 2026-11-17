@@ -362,6 +362,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InterestOnlyMortgageCalculator',
   'InterestPerDayCalculator',
   'InterestRateCalculator',
+  'InterestRateParityCalculator',
   'IrrCalculator',
   'InvestmentCalculator',
   'InvestmentFeeCalculator',
@@ -755,6 +756,7 @@ if (isDirect) {
     !isApprovedComponentKey('InterestOnlyMortgageCalculator') ||
     !isApprovedComponentKey('InterestPerDayCalculator') ||
     !isApprovedComponentKey('InterestRateCalculator') ||
+    !isApprovedComponentKey('InterestRateParityCalculator') ||
     !isApprovedComponentKey('IrrCalculator') ||
     !isApprovedComponentKey('InvestmentCalculator') ||
     !isApprovedComponentKey('InvestmentFeeCalculator') ||

@@ -2006,6 +2006,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InterestRateCalculator,
     })),
   ),
+  InterestRateParityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/interest-rate-parity/InterestRateParityCalculator'
+    ).then((mod) => ({
+      default: mod.InterestRateParityCalculator,
+    })),
+  ),
   IrrCalculator: lazyTool(() =>
     import('@/tools/calculators/irr/IrrCalculator').then((mod) => ({
       default: mod.IrrCalculator,

@@ -79,6 +79,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'mortgage-interest-calculator',
   'mortgage-rate-calculator',
   'interest-rate-calculator',
+  'interest-rate-parity-calculator',
   'investment-calculator',
   'investment-fee-calculator',
   'irr-calculator',

@@ -377,6 +377,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mortgage-interest-calculator',
   'mortgage-rate-calculator',
   'interest-rate-calculator',
+  'interest-rate-parity-calculator',
   'irr-calculator',
   'investment-calculator',
   'investment-fee-calculator',

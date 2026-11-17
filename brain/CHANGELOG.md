@@ -4,6 +4,15 @@
 
 ---
 
+### 2026-11-17 — Interest Rate Parity Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Interest Rate Parity Calculator on existing catalog slug `interest-rate-parity-calculator` (`InterestRateParityCalculator`, catalog `6af46f0fa27d8d1d4e98ff8e`). Covered/Uncovered radios, contract days, annualised↔period price/base rates (360-day), spot + calculated forward with quote-currency selectors. Share/Reload/Clear/feedback. Activated.
+- **Quote convention:** Spot/forward = price-currency units per one base-currency unit.
+- **Formulas:** Period % = Annualised % × (days/360). Covered F = S×(1+r_p)/(1+r_b). Uncovered E[S] = S×(1+(r_p−r_b)) (expected future spot, not a locked forward).
+- **FX:** Selectors are quote currencies for the FX rate. Spot currency change re-quotes via stored MongoDB rates; forward selector re-expresses the calculated quote once. Rates/days never convert.
+- **Example:** Covered · 90d · 0.8%/3.2% annualised · spot 0.1735 → period 0.2%/0.8%; F ≈ 0.1725.
+- **Important Files:** `frontend/src/tools/calculators/interest-rate-parity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-interest-rate-parity-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Times Interest Earned Ratio Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Times Interest Earned Ratio Calculator on existing catalog slug `times-interest-earned-ratio-calculator` (`TimesInterestEarnedCalculator`, catalog `6af46f0fa27d8d1d4e98ff8a`). Three fields only: EBIT, total interest, dimensionless TIE ratio. Independent real FX on both money selectors; normalize into EBIT currency before dividing; currency-only changes preserve the ratio. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** TIE Ratio = EBIT ÷ Total Interest (total interest > 0). Zero/negative EBIT allowed; never displays NaN or Infinity.
