@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Kelvin to Celsius Converter
+- **Summary:** Shipped Kelvin to Celsius Converter on existing catalog slug kelvin-to-celsius-converter (KelvinToCelsiusConverter, catalog 6af46f17a27d8d1d4e990b2e). Bidirectional K↔°C with exact ±273.15 offset; absolute-zero validation (0 K / −273.15°C); empty default; formatTemp reuse from kelvin-converter; original guide/table/FAQs. Celsius Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-334b delivery for Conversion and Units Kelvin↔Celsius pair converter.
+- **Important Files:** frontend/src/tools/calculators/kelvin-to-celsius/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0 K = −273.15°C; 100 K = −173.15°C; 273.15 K = 0°C; 300 K = 26.85°C; 373.15 K = 100°C; 0°C = 273.15 K; 100°C = 373.15 K; −40°C = 233.15 K; absolute-zero bounds). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d3a27d8d1d4e98f9f1). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Kelvin Converter
 - **Summary:** Shipped Kelvin Converter on existing catalog slug kelvin-converter (KelvinConverter, catalog 6af46f17a27d8d1d4e990bf3). Eight bidirectional scales (K/°C/°F/°R/°De/°N/°Ré/°Rø) reusing celsius-converter temperature engine; absolute-zero rejection at 0 K; Kelvin-first UI; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-333b delivery for Conversion and Units Kelvin temperature hub.
