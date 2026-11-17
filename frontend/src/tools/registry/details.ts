@@ -270,6 +270,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KgToLbsConverter: () => import('@/tools/calculators/kg-to-lbs/detail'),
   KgToLiterConverter: () => import('@/tools/calculators/kg-to-liter/detail'),
   KgToMlConverter: () => import('@/tools/calculators/kg-to-ml/detail'),
+  KgToOunceConverter: () => import('@/tools/calculators/kg-to-ounce/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
