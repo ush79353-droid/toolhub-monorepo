@@ -19,6 +19,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/debt-to-capital-ratio/detail'),
   DebtToEquityCalculator: () =>
     import('@/tools/calculators/debt-to-equity/detail'),
+  EbitdaMarginCalculator: () =>
+    import('@/tools/calculators/ebitda-margin/detail'),
   InterestRateParityCalculator: () =>
     import('@/tools/calculators/interest-rate-parity/detail'),
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),

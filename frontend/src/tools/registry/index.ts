@@ -76,6 +76,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DebtToEquityCalculator,
     })),
   ),
+  EbitdaMarginCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ebitda-margin/EbitdaMarginCalculator'
+    ).then((mod) => ({
+      default: mod.EbitdaMarginCalculator,
+    })),
+  ),
   InterestRateParityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/interest-rate-parity/InterestRateParityCalculator'
