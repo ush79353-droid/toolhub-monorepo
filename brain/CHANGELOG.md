@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add mil to mm Conversion
+- **Summary:** Shipped mil to mm Conversion on existing catalog slug mil-to-mm-conversion (MilToMmConversion, catalog 6af46f17a27d8d1d4e990b2b). Bidirectional mil↔mm via exact 1 mil = 0.0254 mm (meter-converter mil/mm); empty default; signed lengths; mil ≠ mm/mile/milliradian clarified; chart/FAQs. Pillar 6af451d3a27d8d1d4e98f9f0 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-367b delivery for Conversion and Units mil-to-mm converter under mil Conversion pillar.
+- **Important Files:** frontend/src/tools/calculators/mil-to-mm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/5/7/10/12/20/25/50/100/250/500/1000 mil → mm; reverse; 5000/127 mils per mm; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d3a27d8d1d4e98f9f0). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add mil to inch Conversion
 - **Summary:** Shipped mil to inch Conversion on existing catalog slug mil-to-inch-conversion (MilToInchConversion, catalog 6af46f17a27d8d1d4e990b2a). Bidirectional mil↔in via exact 1 mil = 0.001 in (meter-converter mil/in); empty default; signed lengths; mil ≠ mm/mile/milliradian clarified; chart/FAQs. Pillar 6af451d3a27d8d1d4e98f9f0 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-366b delivery for Conversion and Units mil-to-inch converter under mil Conversion pillar.
