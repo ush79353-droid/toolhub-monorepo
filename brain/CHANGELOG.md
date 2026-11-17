@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-18 — Second Stimulus Check Calculator – HEROES Act (Screenshot-First, historical)
+- **Summary:** Shipped Second Stimulus Check Calculator – HEROES Act on existing catalog slug `second-stimulus-check-calculator-heroes-act` (`HeroesActStimulusCalculator`, catalog `6af46f0fa27d8d1d4e98ffd0`). Screenshot fields: filing status, dependents, AGI, “You could receive”; historical House-passage / Senate-timing notice; additional-payments and HEALS-vs-HEROES unemployment links; Share/Reload/Clear/feedback. Fixed USD (no FX). Activated via `npm run tool:assign`.
+- **Rules:** House-passed H.R. 6800 (CRS IN11513): base $1,200 single/HoH or $2,400 married; +$1,200 per dependent (any age under IRC §152) capped at three; 5% AGI phase-out above $75,000 / $112,500 / $150,000. Distinct from CARES ($500 under-17) and later enacted EIPs. All results labeled historical/hypothetical — not claimable today.
+- **Example:** Single · 0 dependents · AGI $75,000 → $1,200; AGI $87,000 → $600; married · 3 dependents · AGI $150,000 → $6,000; fourth dependent still $6,000.
+- **Important Files:** `frontend/src/tools/calculators/heroes-act-stimulus/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check file present (`calculation.test.ts`; not executed per user). MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated suite omitted per user. Local commits only — no push/pull/sync.
+
 ### 2026-11-18 — Second Stimulus Check Calculator - CASH Act (Screenshot-First, historical)
 - **Summary:** Shipped Second Stimulus Check Calculator - CASH Act on existing catalog slug `second-stimulus-check-calculator-cash-act` (`CashActStimulusCalculator`, catalog `6af46f0fa27d8d1d4e98ffcf`). Screenshot fields: filed 2019 taxes, filing status, dependents, 2019 AGI, “You will receive”; supplemental “How much more will you get?” with dependents under 17 and additional vs enacted $600 EIP. Fixed USD (no FX). Historical proposal notice. Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
 - **Rules:** H.R.9051 CASH Act (House-passed, not enacted): base $2,000 single/HoH or $4,000 married; +$2,000 per dependent any age; 5% AGI phase-out above $75,000 / $112,500 / $150,000. Additional = max(0, CASH total − enacted $600 EIP). Dependents under 17 cannot exceed total dependents. “No” on 2019 filing → $0 with eligibility note. All results labeled historical/hypothetical.
