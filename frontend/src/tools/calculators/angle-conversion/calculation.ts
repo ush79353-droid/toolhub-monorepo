@@ -19,11 +19,25 @@ export { formatAngle, formatSecondsField };
 const TWO_PI = 2 * Math.PI;
 
 export function degreesToRadians(degrees: number): number {
-  return (degrees * Math.PI) / 180;
+  if (!Number.isFinite(degrees)) {
+    throw new Error('Invalid angle in degrees');
+  }
+  const result = (degrees * Math.PI) / 180;
+  if (!Number.isFinite(result)) {
+    throw new Error('Conversion result is out of range');
+  }
+  return result;
 }
 
 export function radiansToDegrees(radians: number): number {
-  return (radians * 180) / Math.PI;
+  if (!Number.isFinite(radians)) {
+    throw new Error('Invalid angle in radians');
+  }
+  const result = (radians * 180) / Math.PI;
+  if (!Number.isFinite(result)) {
+    throw new Error('Conversion result is out of range');
+  }
+  return result;
 }
 
 export function degreesToGradians(degrees: number): number {
