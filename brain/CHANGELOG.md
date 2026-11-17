@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Gal to kg Converter
+- **Summary:** Shipped Gal to kg Converter on existing catalog slug gal-to-kg-converter (GalToKgConverter, catalog 6af46f17a27d8d1d4e990b3c). Density-based US/UK gal ↔ kg with other mass units; cubic-meter-to-ton materials reuse; density accordion default kg/L water; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-311b delivery for Conversion and Units density-based gal ↔ kg converter.
+- **Important Files:** frontend/src/tools/calculators/gal-to-kg/*, cubic-meter-to-ton materials reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal water = 3.785411784 kg; 1 UK gal = 4.54609 kg; milk @ 1.03; round-trip). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Gallons to Tons Converter
 - **Summary:** Shipped Gallons to Tons Converter on existing catalog slug gallons-to-tons-converter (GallonsToTonsConverter, catalog 6af46f17a27d8d1d4e990acd). Density-based volume↔mass with cubic-meter-to-ton materials reuse; US/UK/metric tons and multi volume units; density unit switching; negatives and zero density rejected. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-310b delivery for Conversion and Units density-based gal ↔ tons converter.
