@@ -1074,6 +1074,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DebtToAssetRatioCalculator,
     })),
   ),
+  DebtToCapitalRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-to-capital-ratio/DebtToCapitalRatioCalculator'
+    ).then((mod) => ({
+      default: mod.DebtToCapitalRatioCalculator,
+    })),
+  ),
   AttritionRateCalculator: lazyTool(() =>
     import('@/tools/calculators/attrition-rate/AttritionRateCalculator').then((mod) => ({
       default: mod.AttritionRateCalculator,

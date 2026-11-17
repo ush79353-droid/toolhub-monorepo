@@ -18,6 +18,7 @@ import type { ToolMetadata } from '@/types/tool';
 
 /** Phase 3: load FX rates only for conversion-enabled calculators. */
 const CURRENCY_CONVERSION_SLUGS = new Set([
+  'margin-and-markup-calculator',
   'margin-interest-calculator',
   '12-hour-shift-pay-calculator',
   '3x-rent-calculator',
@@ -28,8 +29,8 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'adr-calculator',
   'after-tax-cost-of-debt-calculator',
   'debt-calculator',
-  'debt-to-equity-calculator',
   'debt-to-asset-ratio-calculator',
+  'debt-to-capital-ratio-calculator',
   'annualized-return-calculator',
   'appreciation-calculator',
   'apy-calculator',

@@ -232,6 +232,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/debt-service-coverage-ratio/detail'),
   DebtToAssetRatioCalculator: () =>
     import('@/tools/calculators/debt-to-asset-ratio/detail'),
+  DebtToCapitalRatioCalculator: () =>
+    import('@/tools/calculators/debt-to-capital-ratio/detail'),
   AttritionRateCalculator: () =>
     import('@/tools/calculators/attrition-rate/detail'),
   BusinessLoanCalculator: () =>

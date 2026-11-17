@@ -4,13 +4,6 @@
 
 ---
 
-### 2026-11-17 — Debt to Equity Calculator (Screenshot-First + FX)
-- **Summary:** Shipped Debt to Equity Calculator on existing catalog slug `debt-to-equity-calculator` (`DebtToEquityCalculator`, catalog `6af46f0fa27d8d1d4e98ff99`). Three fields: total liabilities (D), stockholders' equity (E), dimensionless D/E ratio. Share/Reload/Clear/feedback. Activated.
-- **Formulas:** Debt to Equity Ratio = Total Liabilities ÷ Stockholders' Equity. Equity must be nonzero; negative equity allowed; never NaN/Infinity. Uses total liabilities (not interest-bearing debt only).
-- **FX:** Independent currencies on both money selectors; equity normalizes into liabilities currency before dividing. Currency-only changes preserve the ratio. Dimensionless result never FX-converted. Stale/missing rate handling reused (Margin Interest pattern).
-- **Example:** 150,000 / 100,000 → 1.50.
-- **Important Files:** `frontend/src/tools/calculators/debt-to-equity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-debt-to-equity-tool.ts`, `brain/*`.
-- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
 ### 2026-11-17 — EBITDA Margin Calculator (Screenshot-First + FX)
 - **Summary:** Shipped EBITDA Margin Calculator on existing catalog slug `ebitda-margin-calculator` (`EbitdaMarginCalculator`, catalog `6af46f0fa27d8d1d4e98ff9f`). Three fields only: total revenues, EBITDA, EBITDA margin %. Independent real FX on both money selectors; normalize into total-revenues currency before dividing; currency-only changes preserve the margin. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** EBITDA Margin (%) = (EBITDA ÷ Total Revenues) × 100. Total revenues must be nonzero. Negative EBITDA/margin allowed; never displays NaN or Infinity.
@@ -18,6 +11,12 @@
 - **Important Files:** `frontend/src/tools/calculators/ebitda-margin/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-ebitda-margin-tool.ts`, `brain/*`.
 - **Verification:** Catalog verified undeveloped before coding (`6af46f0fa27d8d1d4e98ff9f`). Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
 
+### 2026-11-17 — Debt-to-Capital Ratio Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Debt-to-Capital Ratio Calculator on existing catalog slug `debt-to-capital-ratio-calculator` (`DebtToCapitalRatioCalculator`, catalog `6af46f0fa27d8d1d4e98ff9a`). Three fields: interest bearing debt, shareholder's equity, dimensionless debt to capital ratio. Independent real FX. Activated.
+- **Formulas:** Debt / (Debt + Equity). Debt + equity != 0.
+- **Example:** 400,000 / 600,000 -> 0.40.
+- **Important Files:** `frontend/src/tools/calculators/debt-to-capital-ratio/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-debt-to-capital-ratio-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
 ### 2026-11-17 — Debt to Asset Ratio Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Debt to Asset Ratio Calculator on existing catalog slug `debt-to-asset-ratio-calculator` (`DebtToAssetRatioCalculator`, catalog `6af46f0fa27d8d1d4e98ff98`). Five fields: long-term debt, short-term debt, total debt (calculated + independent FX), total assets, debt to assets ratio %. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Total Debt = Long-term + Short-term. Debt to Assets Ratio (%) = (Total Debt / Total Assets) × 100. Assets must be &gt; 0; zero debt → 0%; ratios above 100% uncapped.
@@ -170,13 +169,16 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
-### 2026-11-17 — Debt to Equity Calculator (Screenshot-First + FX)
-- **Summary:** Shipped Debt to Equity Calculator on existing catalog slug `debt-to-equity-calculator` (`DebtToEquityCalculator`, catalog `6af46f0fa27d8d1d4e98ff99`). Three fields: total liabilities (D), stockholders' equity (E), dimensionless D/E ratio. Share/Reload/Clear/feedback. Activated.
-- **Formulas:** Debt to Equity Ratio = Total Liabilities ÷ Stockholders' Equity. Equity must be nonzero; negative equity allowed; never NaN/Infinity. Uses total liabilities (not interest-bearing debt only).
-- **FX:** Independent currencies on both money selectors; equity normalizes into liabilities currency before dividing. Currency-only changes preserve the ratio. Dimensionless result never FX-converted. Stale/missing rate handling reused (Margin Interest pattern).
-- **Example:** 150,000 / 100,000 → 1.50.
-- **Important Files:** `frontend/src/tools/calculators/debt-to-equity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-debt-to-equity-tool.ts`, `brain/*`.
-- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+### 2026-11-17 — Debt-to-Capital Ratio Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Debt-to-Capital Ratio Calculator on existing catalog slug `debt-to-capital-ratio-calculator` (`DebtToCapitalRatioCalculator`, catalog `6af46f0fa27d8d1d4e98ff9a`). Three fields: interest bearing debt, shareholder's equity, dimensionless debt to capital ratio. Independent real FX. Activated.
+- **Formulas:** Debt / (Debt + Equity). Debt + equity != 0.
+- **Example:** 400,000 / 600,000 -> 0.40.
+- **Important Files:** `frontend/src/tools/calculators/debt-to-capital-ratio/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-debt-to-capital-ratio-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+0,750 financed; loan $510,750; monthly ≈ $3,508.15; interest ≈ $752,184.28.
+- **Important Files:** `frontend/src/tools/calculators/va-mortgage/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-va-mortgage-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-16 — Student Loan Repayment Calculator | COVID-19 (Historical Notice)
 - **Summary:** Shipped informational historical notice on existing catalog slug `student-loan-repayment-calculator-covid-19` (`StudentLoanRepaymentCovidCalculator`, catalog `6af46f0fa27d8d1d4e98ff6a`). No financial inputs, repayment formulas, or currency selectors. Notice covers COVID-era federal payment suspension with historical December 31, 2020 reference; states COVID-era calculations are no longer valid; does not claim current federal loans are paused or 0% interest; internal link to `/tools/loan-calculator`. Share result / Reload / disabled Clear / feedback controls. Activated.
 - **Important Files:** `frontend/src/tools/calculators/student-loan-repayment-covid/*`, registries, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-student-loan-repayment-covid-tool.ts`, `brain/*`.

@@ -202,6 +202,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AfterTaxCostOfDebtCalculator',
   'DebtServiceCoverageRatioCalculator',
   'DebtToAssetRatioCalculator',
+  'DebtToCapitalRatioCalculator',
   'AttritionRateCalculator',
   'BusinessLoanCalculator',
   'ProfitabilityIndexCalculator',
@@ -269,7 +270,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DaysOffCalculator',
   'DebtAvalancheCalculator',
   'DebtCalculator',
-  'DebtToEquityCalculator',
+  'DebtSnowballCalculator',
   'DividendDiscountModelCalculator',
   'DirectMaterialPriceVarianceCalculator',
   'EarCalculator',
@@ -298,6 +299,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LoanRepaymentCalculator',
   'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
+  'MarginAndMarkupCalculator',
   'MarginInterestCalculator',
   'MirrCalculator',
   'MoneyFactorCalculator',
@@ -608,6 +610,7 @@ if (isDirect) {
     !isApprovedComponentKey('AfterTaxCostOfDebtCalculator') ||
     !isApprovedComponentKey('DebtServiceCoverageRatioCalculator') ||
     !isApprovedComponentKey('DebtToAssetRatioCalculator') ||
+    !isApprovedComponentKey('DebtToCapitalRatioCalculator') ||
     !isApprovedComponentKey('AttritionRateCalculator') ||
     !isApprovedComponentKey('BusinessLoanCalculator') ||
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
@@ -675,7 +678,7 @@ if (isDirect) {
     !isApprovedComponentKey('DaysOffCalculator') ||
     !isApprovedComponentKey('DebtAvalancheCalculator') ||
     !isApprovedComponentKey('DebtCalculator') ||
-    !isApprovedComponentKey('DebtToEquityCalculator') ||
+    !isApprovedComponentKey('DebtSnowballCalculator') ||
     !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
     !isApprovedComponentKey('EarCalculator') ||
@@ -704,6 +707,7 @@ if (isDirect) {
     !isApprovedComponentKey('LoanRepaymentCalculator') ||
     !isApprovedComponentKey('QuizLoanBalanceCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
+    !isApprovedComponentKey('MarginAndMarkupCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
     !isApprovedComponentKey('MirrCalculator') ||
     !isApprovedComponentKey('MoneyFactorCalculator') ||

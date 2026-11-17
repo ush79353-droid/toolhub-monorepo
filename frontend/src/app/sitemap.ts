@@ -293,6 +293,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'debt-calculator',
   'debt-to-equity-calculator',
   'debt-to-asset-ratio-calculator',
+  'debt-to-capital-ratio-calculator',
   'dividend-discount-model-calculator',
   'direct-material-price-variance-calculator',
   'ear-calculator',
