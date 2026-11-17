@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Hours to Seconds Converter
+- **Summary:** Shipped Hours to Seconds Converter on existing catalog slug hours-to-seconds-converter (HoursToSecondsConverter, catalog 6af46f17a27d8d1d4e990bac). Bidirectional hours↔seconds plus editable HMS compound reusing hour-converter TIME_CONSTANTS; exact ×3600; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-323b delivery for Conversion and Units hours ↔ seconds converter.
+- **Important Files:** frontend/src/tools/calculators/hours-to-seconds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (13 hr = 46800 s; 1h 45m 30s = 6330 s; 0h 60m → 1h 0m; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Hours to Minutes Converter
 - **Summary:** Shipped Hours to Minutes Converter on existing catalog slug hours-to-minutes-converter (HoursToMinutesConverter, catalog 6af46f17a27d8d1d4e990bab). Synced hrs/min/sec plus editable HMS compound reusing hour-converter TIME_CONSTANTS; exact ×60 / ×3600; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-322b delivery for Conversion and Units hours ↔ minutes converter.
