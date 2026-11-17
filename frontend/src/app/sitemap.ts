@@ -279,6 +279,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ksi-to-psi-conversion',
   'land-area-calculator',
   'lbs-to-g-converter',
+  'lbs-to-kg-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

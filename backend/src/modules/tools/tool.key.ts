@@ -259,6 +259,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'KsiToPsiConversion',
   'LandAreaCalculator',
   'LbsToGConverter',
+  'LbsToKgConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -706,6 +707,7 @@ if (isDirect) {
     !isApprovedComponentKey('KsiToPsiConversion') ||
     !isApprovedComponentKey('LandAreaCalculator') ||
     !isApprovedComponentKey('LbsToGConverter') ||
+    !isApprovedComponentKey('LbsToKgConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
