@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Imperial to Metric Conversion
+- **Summary:** Shipped Imperial to Metric Conversion on existing catalog slug imperial-to-metric-conversion (ImperialToMetricConversion, catalog 6af46f17a27d8d1d4e990b02). Branded wrapper over Imperial Calculator shared measurement hub (no duplicated conversion constants); original guide/tables/FAQs; Metric Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-327b delivery for Conversion and Units Metric Converter pillar imperial↔metric page.
+- **Important Files:** frontend/src/tools/calculators/imperial-to-metric/*, imperial/ImperialCalculator branding props, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** imperial-to-metric + imperial calculation.test.ts passed. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e8). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Imperial Calculator
 - **Summary:** Shipped Imperial Calculator on existing catalog slug imperial-calculator (ImperialCalculator, catalog 6af46f17a27d8d1d4e990bd5). Multi-category Length/Area/Volume/Mass/Temperature converter reusing length/area/volume/weight/temperature unit registries; US vs Imperial gallons distinct; Kelvin temperature with absolute-zero guard; category switch clears values; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-326b delivery for Conversion and Units Imperial/US ↔ metric hub.
