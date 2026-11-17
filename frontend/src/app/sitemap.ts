@@ -281,6 +281,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'lbs-to-g-converter',
   'lbs-to-kg-converter',
   'lbs-to-pounds-converter',
+  'metric-to-standard-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
