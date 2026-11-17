@@ -14,6 +14,7 @@ import { isRegisteredComponentKey } from '@/tools/registry/keys';
 const IMPLEMENTED_TOOL_SLUGS = [
   'loan-calculator',
   'auto-loan-calculator',
+  'loan-interest-calculator',
   'reduced-row-echelon-form-calculator',
   'arm-mortgage-calculator',
   '100-day-calculator',

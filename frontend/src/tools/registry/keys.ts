@@ -1,6 +1,7 @@
 export const APPROVED_COMPONENT_KEYS = [
   'AutoLoanCalculator',
   'LoanCalculator',
+  'LoanInterestCalculator',
   'RrefCalculator',
   'ArmMortgageCalculator',
   'HundredDayCalculator',
@@ -850,6 +851,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'LernerIndexCalculator',
   'LiquidNetWorthCalculator',
   'LoanBalanceCalculator',
+  'LoanInterestCalculator',
   'LoanPaymentCalculator',
   'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
