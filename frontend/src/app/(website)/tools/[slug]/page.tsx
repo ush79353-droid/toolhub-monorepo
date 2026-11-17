@@ -43,6 +43,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'margin-and-markup-calculator',
   'margin-and-vat-calculator',
   'margin-calculator-classic',
+  'margin-call-calculator',
   'margin-interest-calculator',
   '12-hour-shift-pay-calculator',
   '3x-rent-calculator',
