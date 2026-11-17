@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Fahrenheit Converter
+- **Summary:** Shipped Fahrenheit Converter on existing catalog slug fahrenheit-converter (FahrenheitConverter, catalog 6af46f17a27d8d1d4e990b18). Primary °F; Other temperatures accordion for °C/K/°R/°De/°N/°Ré/°Rø; Kelvin-normalized path reusing Celsius Converter affine formulas; absolute-zero rejection. Pillar 6af451d2a27d8d1d4e98f9ec preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-296b delivery for Conversion and Units temperature converter (Fahrenheit focus).
+- **Important Files:** frontend/src/tools/calculators/fahrenheit-converter/*, celsius-converter formulas reused, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo tool:assign blocked by Atlas DNS/connect timeouts (isDeveloped still false). Re-run assign with expected pillar 6af451d2a27d8d1d4e98f9ec when network recovers. Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add dm Converter
 - **Summary:** Shipped dm Converter on existing catalog slug dm-converter (DmConverter, catalog 6af46f17a27d8d1d4e990b84). Primary decimeter field; Metric / Imperial/US / Others accordions; meters as base; non-negative validation; reuses meter-converter length factors/formatters via convertDm. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-295b delivery for Conversion and Units length converter (decimeter focus).
