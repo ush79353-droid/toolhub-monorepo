@@ -228,6 +228,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/fahrenheit-to-celsius/detail'),
   FeetConverter: () => import('@/tools/calculators/feet-converter/detail'),
   FeetToMilesConverter: () => import('@/tools/calculators/feet-to-miles/detail'),
+  FeetToYardsConverter: () => import('@/tools/calculators/feet-to-yards/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

@@ -205,6 +205,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FahrenheitToCelsiusConverter',
   'FeetConverter',
   'FeetToMilesConverter',
+  'FeetToYardsConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -598,6 +599,7 @@ if (isDirect) {
     !isApprovedComponentKey('FahrenheitToCelsiusConverter') ||
     !isApprovedComponentKey('FeetConverter') ||
     !isApprovedComponentKey('FeetToMilesConverter') ||
+    !isApprovedComponentKey('FeetToYardsConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

@@ -225,6 +225,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fahrenheit-to-celsius-converter',
   'feet-converter',
   'feet-to-miles-converter',
+  'feet-to-yards-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
