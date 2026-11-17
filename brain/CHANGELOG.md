@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add ft to m Converter
+- **Summary:** Shipped ft to m Converter on existing catalog slug ft-to-m-converter (FtToMConverter, catalog 6af46f17a27d8d1d4e990b86). Bidirectional ft↔m with exact 0.3048; meter-converter registry cross-check. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-303b delivery for Conversion and Units length pair converter (ft to m).
+- **Important Files:** frontend/src/tools/calculators/ft-to-m/*, meter-converter convertLength cross-check, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (10 ft = 3.048 m; 1.8288 m = 6 ft). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Foot to Centimeter Converter
 - **Summary:** Shipped Foot to Centimeter Converter on existing catalog slug foot-to-centimeter-converter (FootToCentimeterConverter, catalog 6af46f17a27d8d1d4e990b85). Bidirectional ft↔cm with exact 30.48; More options mm/m/km/in/yd/mi via meter-converter registry. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-302b delivery for Conversion and Units length pair converter (ft to cm).
