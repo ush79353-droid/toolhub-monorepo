@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Land Area Calculator
+- **Summary:** Shipped Land Area Calculator on existing catalog slug land-area-calculator (LandAreaCalculator, catalog 6af46f17a27d8d1d4e990b8c). Rectangular Area = Length × Width with independent length units and area output units; optional collapsed Unit and total price (currency denomination only); empty default m/m/m²; negatives rejected; regional land units omitted. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-352b delivery for Conversion and Units rectangular land area and optional land price estimator.
+- **Important Files:** frontend/src/tools/calculators/land-area/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (10×20 m = 200 m²; 40×60 ft = 2400 ft²; 10 ft × 20 m ≈ 60.96 m²; 100×200 m = 2 ha; 200 m² × $150 = $30,000; 2 ac × $25,000 = $50,000; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add KSI to PSI Conversion
 - **Summary:** Shipped KSI to PSI Conversion on existing catalog slug ksi-to-psi-conversion (KsiToPsiConversion, catalog 6af46f17a27d8d1d4e990ae6). Bidirectional ksi↔psi via exact 1 ksi = 1,000 psi; empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d0a27d8d1d4e98f9e4 (PSI Converter) preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-351b delivery for Conversion and Units ksi-to-psi converter under PSI Converter pillar.
