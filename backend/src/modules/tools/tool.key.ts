@@ -400,6 +400,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PvifaCalculator',
   'RateOfReturnCalculator',
   'RealRateOfReturnCalculator',
+  'RentSplitCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BoatLoanCalculator',
@@ -879,6 +880,7 @@ if (isDirect) {
     !isApprovedComponentKey('PvifaCalculator') ||
     !isApprovedComponentKey('RateOfReturnCalculator') ||
     !isApprovedComponentKey('RealRateOfReturnCalculator') ||
+    !isApprovedComponentKey('RentSplitCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||

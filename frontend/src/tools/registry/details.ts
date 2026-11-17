@@ -544,6 +544,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   
   RealRateOfReturnCalculator: () =>
     import('@/tools/calculators/real-rate-of-return/detail'),
+  RentSplitCalculator: () =>
+    import('@/tools/calculators/rent-split/detail'),
   BitcoinEtfCalculator: () =>
     import('@/tools/calculators/bitcoin-etf/detail'),
   BiweeklyMortgageCalculator: () =>

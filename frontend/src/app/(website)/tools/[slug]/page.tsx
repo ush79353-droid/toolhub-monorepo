@@ -139,6 +139,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'pvgo-calculator',
   'price-quantity-calculator',
   'prorated-rent-calculator',
+  'rent-split-calculator',
   'profitability-index-calculator',
   'revenue-per-employee-calculator',
   'roas-calculator',
