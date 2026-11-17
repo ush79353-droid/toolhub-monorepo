@@ -74,6 +74,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'impermanent-loss-calculator',
   'information-ratio-calculator',
   'interest-only-mortgage-calculator',
+  'interest-coverage-ratio-calculator',
   'interest-per-day-calculator',
   'mortgage-interest-calculator',
   'mortgage-rate-calculator',
