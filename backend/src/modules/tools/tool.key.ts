@@ -212,6 +212,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GajToSquareYardConverter',
   'GallonsToCubicFeetConverter',
   'GallonsToCupsConverter',
+  'GallonsToGramsConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -612,6 +613,7 @@ if (isDirect) {
     !isApprovedComponentKey('GajToSquareYardConverter') ||
     !isApprovedComponentKey('GallonsToCubicFeetConverter') ||
     !isApprovedComponentKey('GallonsToCupsConverter') ||
+    !isApprovedComponentKey('GallonsToGramsConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

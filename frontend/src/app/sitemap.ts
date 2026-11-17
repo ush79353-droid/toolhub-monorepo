@@ -232,6 +232,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gaj-to-square-yard-converter',
   'gallons-to-cubic-feet-converter',
   'gallons-to-cups-converter',
+  'gallons-to-grams-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

@@ -237,6 +237,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GallonsToCubicFeetConverter: () =>
     import('@/tools/calculators/gallons-to-cubic-feet/detail'),
   GallonsToCupsConverter: () => import('@/tools/calculators/gallons-to-cups/detail'),
+  GallonsToGramsConverter: () => import('@/tools/calculators/gallons-to-grams/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
