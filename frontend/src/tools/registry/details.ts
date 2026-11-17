@@ -292,6 +292,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MgToTablespoonConverter: () => import('@/tools/calculators/mg-to-tablespoon/detail'),
   MgToTeaspoonConverter: () => import('@/tools/calculators/mg-to-teaspoon/detail'),
   MicronToMilConversionCalculator: () => import('@/tools/calculators/micron-to-mil/detail'),
+  MilConversion: () => import('@/tools/calculators/mil-conversion/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
