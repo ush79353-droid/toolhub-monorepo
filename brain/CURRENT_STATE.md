@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-18** (Balloon Payment Calculator live at `/tools/balloon-payment-calculator` with Phase 2 FX; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-18** (Deferred Payment Loan Calculator live at `/tools/deferred-payment-loan-calculator` with Phase 2 FX; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Loan Payment Calculator (`/tools/loan-payment-calculator`):** Live client-side amortizing payment tool (`componentKey: 'LoanPaymentCalculator'`, catalog `6af46f0fa27d8d1d4e98ffc9`). Loan amount, annual rate, term yrs/mos, payment frequency (default Yearly) → installments, periodic rate %, periodic payment, payment total. Independent Phase 2 FX on three money fields. Example: 100,000 PKR / 5% / 5y / Yearly → ≈ 23,097.48 payment, total ≈ 115,487.40. Activated.
 - **Rent vs. Buy Calculator (`/tools/rent-vs-buy-calculator`):** Live client-side rent-vs-buy comparison (`componentKey: 'RentVsBuyCalculator'`, catalog `6af46f0fa27d8d1d4e98ffc2`). Staying period + money you have; Rent (price, agent, other, deposit increase rate → rent cost / total); Buy (property, mortgage rate/term, commissions, fees, appreciation → mortgage left / buy cost / total). Independent Phase 2 FX on money fields. Example: 5y · 50k · rent 2k/mo · 300k @ 5%/30y → prefer buy (~98.6k vs ~114.7k total). Activated. Separate from Rent Calculator and Rent or Buy Calculator (untouched).
 - Express server bootstrap, `/api/v1/health`, Zod env config, Mongoose connection & graceful shutdown (`backend/src/server.ts`, `app.ts`). After Mongo connects, a currency job is armed for the next local midnight.
 - Admin authentication: Argon2id hashing, MongoDB TTL `AdminSession`, `HttpOnly` `admin_session` cookie, Edge + Server layout route protection, brute-force lockout, IP rate limiters, SMTP password reset, profile name update, password change with global session revocation (`backend/src/modules/auth/`, `frontend/src/server/auth/`).

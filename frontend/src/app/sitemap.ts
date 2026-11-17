@@ -446,6 +446,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'compound-growth-calculator',
   'compound-interest-rate-calculator',
   'continuous-compound-interest-calculator',
+  'coupon-payment-calculator',
   'effective-annual-yield-calculator',
   'effective-interest-rate-calculator',
   'expected-utility-calculator',

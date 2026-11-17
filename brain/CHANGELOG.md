@@ -4,6 +4,20 @@
 
 ---
 
+### 2026-11-18 — Deferred Payment Loan Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Deferred Payment Loan Calculator on existing catalog slug `deferred-payment-loan-calculator` (`DeferredPaymentLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ffc7`). Screenshot sections: Loan inputs (estimation Loan term / Monthly payment, amount FX, balance date, term, rate, compounding, original monthly payment FX), Loan deferment (capitalized / paid monthly / equal parts / interest-free; increased original term / increased extended / original payment extended; deferment from; deferred months), Payment summary narrative + horizontally scrollable w/o def. vs Deferment* vs Diff. table. Independent Phase 2 FX (Margin Interest pattern). Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
+- **Formulas:** Equivalent monthly rate from compounding; amortizing M; deferment compounds or accrues per treatment; post-deferment re-amortize or solve n from original payment. Cash totals are economically correct (no double-count of capitalized interest). Zero rate and impossible amortization combinations return validation errors.
+- **Example:** 100,000 PKR / 10y / 5% monthly / 12 mo capitalized / increased original term → original M ≈ 1,060.66; balance after ≈ 105,116.19; post M ≈ 1,210.65 over 108 payments.
+- **Important Files:** `frontend/src/tools/calculators/deferred-payment-loan/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. Local commits only — no push/pull/sync.
+
+### 2026-11-18 — Loan Payment Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Loan Payment Calculator on existing catalog slug `loan-payment-calculator` (`LoanPaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ffc9`). Screenshot fields: loan amount, annual rate, term yrs/mos, payment frequency (default Yearly), number of installments, periodic interest rate, periodic loan payment, loan payment total. Independent Phase 2 FX on three money selectors (Margin Interest pattern). Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
+- **Formulas:** n = round((years + months/12) × payments per year); r = (annual%/100) / payments per year; Payment = P×r/(1−(1+r)^(−n)); r=0 → P/n; Total = Payment × n. Full precision; display rounding only.
+- **Example:** 100,000 PKR / 5% / 5y / Yearly → n=5; r=5%; Payment ≈ 23,097.48; Total ≈ 115,487.40.
+- **Important Files:** `frontend/src/tools/calculators/loan-payment/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. Local commit only — no push/pull/sync.
+
 ### 2026-11-18 — Balloon Payment Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Balloon Payment Calculator on existing catalog slug `balloon-payment-calculator` (`BalloonPaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ffc4`). Screenshot fields: loan amount + currency, amortization yrs/mos, balloon after yrs/mos, interest %, compounding method. Narrative results: monthly payment, balloon, total repayment, total monthly payments, total interest. Real FX converts loan amount on currency change (Margin Interest pattern); rate/durations never converted. No charts or amortization tables. Activated via `npm run tool:assign`.
 - **Formulas:** Effective monthly r from compounding; M = P×r/(1−(1+r)^(−N)); r=0 → P/N; Balloon = P(1+r)^K − M×((1+r)^K − 1)/r; r=0 → P − M×K; Total = M×K + Balloon; Interest = Total − P. Require 0 < K ≤ N.
