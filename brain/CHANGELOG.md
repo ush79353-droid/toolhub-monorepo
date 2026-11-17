@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add mg to teaspoon Converter
+- **Summary:** Shipped mg to teaspoon Converter on existing catalog slug mg-to-teaspoon-converter (MgToTeaspoonConverter, catalog 6af46f17a27d8d1d4e990b55). Density-based bidirectional mg↔tsp; US tsp 4.92892159375 mL default (metric 5 mL); reuses mg-to-tablespoon density helpers/substances; Salt default ≈ 1.217 g/mL; empty mass/volume; medication-dose disclaimer; original guide/examples/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-360b delivery for Conversion and Units milligrams-to-teaspoons converter.
+- **Important Files:** frontend/src/tools/calculators/mg-to-teaspoon/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US tsp water = 4928.92159375 mg; 1 US tsp salt @ 1.217 ≈ 5998.50 mg; 6000 mg salt ≈ 1.00025 US tsp; metric 5 mL; zero density/negatives rejected; density unit normalize). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add mg to tablespoon Converter
 - **Summary:** Shipped mg to tablespoon Converter on existing catalog slug mg-to-tablespoon-converter (MgToTablespoonConverter, catalog 6af46f17a27d8d1d4e990b54). Density-based bidirectional mg↔tbsp; US tbsp 14.78676478125 mL default (metric 15 / Australian 20); Salt default ≈ 1.217 g/mL with density unit normalize; ingredient presets + custom; empty mass/volume; medication-dose disclaimer; original guide/examples/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-359b delivery for Conversion and Units milligrams-to-tablespoons converter.
