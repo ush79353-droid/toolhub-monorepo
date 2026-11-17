@@ -6,6 +6,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DebtAvalancheCalculator',
   'DebtCalculator',
   'DebtServiceCoverageRatioCalculator',
+  'DebtSnowballCalculator',
   'InterestRateParityCalculator',
   'LoanCalculator',
   'LoanInterestCalculator',
@@ -803,6 +804,7 @@ if (isDirect) {
     !isApprovedComponentKey('AfterTaxCostOfDebtCalculator') ||
     !isApprovedComponentKey('DebtAvalancheCalculator') ||
     !isApprovedComponentKey('DebtServiceCoverageRatioCalculator') ||
+    !isApprovedComponentKey('DebtSnowballCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

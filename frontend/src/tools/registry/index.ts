@@ -48,6 +48,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DebtServiceCoverageRatioCalculator,
     })),
   ),
+  DebtSnowballCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-snowball/DebtSnowballCalculator'
+    ).then((mod) => ({
+      default: mod.DebtSnowballCalculator,
+    })),
+  ),
   InterestRateParityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/interest-rate-parity/InterestRateParityCalculator'
