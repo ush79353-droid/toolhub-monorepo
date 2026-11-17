@@ -22,6 +22,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AfterTaxCostOfDebtCalculator,
     })),
   ),
+  AnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/annuity/AnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.AnnuityCalculator,
+    })),
+  ),
   AutoLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/auto-loan/AutoLoanCalculator').then((mod) => ({
       default: mod.AutoLoanCalculator,

@@ -29,6 +29,7 @@ import type { ToolMetadata } from '@/types/tool';
 /** Phase 3: load FX rates only for conversion-enabled calculators. */
 const CURRENCY_CONVERSION_SLUGS = new Set([
   'after-tax-cost-of-debt-calculator',
+  'annuity-calculator',
   'debt-avalanche-calculator',
   'debt-calculator',
   'debt-service-coverage-ratio-calculator-dscr',
