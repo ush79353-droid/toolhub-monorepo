@@ -1495,6 +1495,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  DeferredAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/deferred-annuity/DeferredAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.DeferredAnnuityCalculator,
+    })),
+  ),
   DividendDiscountModelCalculator: lazyTool(() =>
     import('@/tools/calculators/dividend-discount-model/DividendDiscountModelCalculator').then(
       (mod) => ({

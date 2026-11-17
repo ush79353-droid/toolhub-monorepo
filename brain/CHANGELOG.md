@@ -6,6 +6,14 @@
 - **Important Files:** `frontend/src/tools/calculators/growing-annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-growing-annuity-tool.ts`, `brain/*`.
 - **Verification:** Catalog undeveloped before coding. MongoDB activated. Lint/builds/tests omitted per user. No push.
 
+### 2026-11-17 — Deferred Annuity Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Deferred Annuity Calculator on existing catalog slug `deferred-annuity-calculator` (`DeferredAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffaa`). Know mode default how-much-I-can-withdraw; advanced checkbox; deferral until date (or period when advanced); lump sum + monthly contribution; accumulation/payout rates; payout length yrs/mos. Results summary + table (balance at first withdrawal, monthly/total withdrawal, contribution, return, count, last date). Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Ordinary monthly `r = annual%/1200`. Accumulation `FV = PV(1+r)^n + PMT*((1+r)^n-1)/r`. Withdrawal `PMT = FV*r/(1-(1+r)^(-m))`. Total contribution = monthly deposits only; total return = withdrawals − lump − deposits. Zero-rate and impossible-payout guards.
+- **FX:** Independent currencies on lump sum, monthly contribution, and (duration-mode) withdrawal amount; normalize into lump currency before math (Margin Interest / Phase 2). Rates/dates/durations never convert. `CURRENCY_CONVERSION_SLUGS` + stale/missing handling.
+- **Example:** 20,000 + 500/mo · defer 180 months · 1.5%/1.5% · 20y payout → monthly withdrawal ≈ 607.53; balance ≈ 125,901.64.
+- **Important Files:** `frontend/src/tools/calculators/deferred-annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-deferred-annuity-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. MongoDB activated (`isDeveloped`/`isActive`/`indexable`). Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 # Development Changelog (`CHANGELOG.md`)
 
 > **Convention:** Append entries chronologically after verified tasks. Do not rewrite historical entries.

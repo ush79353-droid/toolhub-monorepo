@@ -266,6 +266,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DebtAvalancheCalculator',
   'DebtCalculator',
   'DebtSnowballCalculator',
+  'DeferredAnnuityCalculator',
   'DebtToEquityCalculator',
   'DividendDiscountModelCalculator',
   'DirectMaterialPriceVarianceCalculator',
@@ -673,6 +674,7 @@ if (isDirect) {
     !isApprovedComponentKey('DebtAvalancheCalculator') ||
     !isApprovedComponentKey('DebtCalculator') ||
     !isApprovedComponentKey('DebtSnowballCalculator') ||
+    !isApprovedComponentKey('DeferredAnnuityCalculator') ||
     !isApprovedComponentKey('DebtToEquityCalculator') ||
     !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
