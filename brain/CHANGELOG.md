@@ -4,6 +4,30 @@
 
 ---
 
+### 2026-11-17 — Margin and VAT Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Margin and VAT Calculator on existing catalog slug `margin-and-vat-calculator` (`MarginAndVatCalculator`, catalog `6af46f0fa27d8d1d4e98ffa2`). Eight screenshot fields: VAT %, net cost, gross cost, margin %, markup %, my net price, my gross price, profit. Last-edited driver sync; margin/markup pins for price-from-cost. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Gross = Net × (1+VAT/100); inverse Net = Gross ÷ (1+VAT/100); Profit = Net price − Net cost; Margin = Profit/Net price×100; Markup = Profit/Net cost×100; Net price = Net cost/(1−Margin/100) or Net cost×(1+Markup/100).
+- **FX:** Independent currencies on five money selectors (Margin Interest / LTV pattern). Normalize into net-cost currency before math; re-express derived money per field currency. VAT/margin/markup never converted.
+- **Example:** Net cost 100 / VAT 20% / margin 20% → gross cost 120, net price 125, gross price 150, profit 25, markup 25%.
+- **Important Files:** `frontend/src/tools/calculators/margin-and-vat/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-margin-and-vat-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Future Value of Annuity Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Future Value of Annuity Calculator on existing catalog slug `future-value-of-annuity-calculator` (`FutureValueOfAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffab`). Payment, interest rate, term yrs/mos, compounding/payment frequency, ordinary/due radios, future-value result; Advanced parameters: growth rate, number of periods, equivalent rates. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** i = (1+r/m)^(m/q)−1 (discrete) or e^(r/q)−1 (continuous); n = round(years×q). Ordinary FV = PMT×((1+i)^n−1)/i; due ×(1+i); zero interest FV = PMT×n; growing-annuity variants when g ≠ 0.
+- **FX:** Independent currencies on payment and result; compute in payment currency then convert once. Rates/term/frequencies never convert.
+- **Example:** 100 @ 5% / 3y yearly/yearly ordinary → 315.25; due → 331.0125.
+- **Important Files:** `frontend/src/tools/calculators/future-value-of-annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-future-value-of-annuity-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Annuity Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Annuity Calculator on existing catalog slug `annuity-calculator` (`AnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffa8`). Solve for initial deposit / final balance / annuity amount / time length / rate of return; deposit or withdrawal; ordinary or due; payment + compounding frequencies; start date; linked annual/periodic growth. Results summary + table (opening/final balance, periodic payment, totals, count, last payment date). Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Period rate `i = (1 + r/m)^(m/q) − 1`. Schedule-based FV for ordinary/due with optional growth; inverse modes via closed form or bisection. Dates from payment-period calendar math.
+- **FX:** Independent currencies on initial deposit, annuity amount, and target final balance; normalize into initial-deposit currency. Rates/dates/durations never FX-converted.
+- **Example:** 0 opening · 1,000 monthly due · 6y · 5% monthly compound · no growth → final ≈ 84,113.28; total deposits 72,000; return ≈ 12,113.28; last deposit Oct 17, 2032 from Nov 17, 2026 start.
+- **Important Files:** `frontend/src/tools/calculators/annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-annuity-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped (`6af46f0fa27d8d1d4e98ffa8`). Screenshot math self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Margin Call Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Margin Call Calculator on existing catalog slug `margin-call-calculator` (`MarginCallCalculator`, catalog `6af46f0fa27d8d1d4e98ffa4`). Sections: Account details, Contract specification, Trading, collapsible Total margin amounts. Point value = tick × ticks/point; long P/L = points × point value × contracts; short = −long; equity = deposit + P/L; call when equity < total maintenance. Independent real FX (Margin Interest pattern). Activated.
 - **Contract assumptions:** Presets set ticks-per-point only (E-Mini S&P 500 → 4). Tick value and margins are user-entered — no live prices or invented margin schedules.

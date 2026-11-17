@@ -82,6 +82,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'fd-calculator',
   'fha-loan-calculator',
   'future-value-calculator',
+  'future-value-of-annuity-calculator',
   'hedge-ratio-calculator',
   'holding-period-return-calculator',
   'home-improvement-loan-calculator',

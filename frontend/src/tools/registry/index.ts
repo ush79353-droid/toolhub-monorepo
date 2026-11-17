@@ -1645,6 +1645,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginAndMarkupCalculator,
     })),
   ),
+  MarginAndVatCalculator: lazyTool(() =>
+    import('@/tools/calculators/margin-and-vat/MarginAndVatCalculator').then((mod) => ({
+      default: mod.MarginAndVatCalculator,
+    })),
+  ),
   MarginCalculatorClassic: lazyTool(() =>
     import(
       '@/tools/calculators/margin-calculator-classic/MarginCalculatorClassicCalculator'
@@ -2031,6 +2036,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/future-value/FutureValueCalculator'
     ).then((mod) => ({
       default: mod.FutureValueCalculator,
+    })),
+  ),
+  FutureValueOfAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/future-value-of-annuity/FutureValueOfAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.FutureValueOfAnnuityCalculator,
     })),
   ),
   HoldingPeriodReturnCalculator: lazyTool(() =>

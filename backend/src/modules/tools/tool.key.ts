@@ -354,6 +354,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EffectiveInterestRateCalculator',
   'ExpectedUtilityCalculator',
   'FutureValueCalculator',
+  'FutureValueOfAnnuityCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
   'HomeEquityLoanCalculator',
@@ -766,6 +767,7 @@ if (isDirect) {
     !isApprovedComponentKey('EffectiveInterestRateCalculator') ||
     !isApprovedComponentKey('ExpectedUtilityCalculator') ||
     !isApprovedComponentKey('FutureValueCalculator') ||
+    !isApprovedComponentKey('FutureValueOfAnnuityCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||
     !isApprovedComponentKey('HomeEquityLoanCalculator') ||
