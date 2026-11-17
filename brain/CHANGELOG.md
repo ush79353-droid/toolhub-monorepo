@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add KSI to PSI Conversion
+- **Summary:** Shipped KSI to PSI Conversion on existing catalog slug ksi-to-psi-conversion (KsiToPsiConversion, catalog 6af46f17a27d8d1d4e990ae6). Bidirectional ksi↔psi via exact 1 ksi = 1,000 psi; empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d0a27d8d1d4e98f9e4 (PSI Converter) preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-351b delivery for Conversion and Units ksi-to-psi converter under PSI Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/ksi-to-psi/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 ksi = 1000 psi; 5 ksi = 5000 psi; 150 ksi = 150000 psi; 5000 psi = 5 ksi; 0.75 ksi = 750 psi; round-trip; negatives accepted). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d0a27d8d1d4e98f9e4). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add KSI to MPa Converter
 - **Summary:** Shipped KSI to MPa Converter on existing catalog slug ksi-to-mpa-converter (KsiToMpaConverter, catalog 6af46f17a27d8d1d4e990b21). Bidirectional ksi↔MPa via pressure-conversion convertPressure (1 ksi = 1000 psi); empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ee (MPa Conversion) preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-350b delivery for Conversion and Units ksi-to-megapascal converter under MPa Conversion pillar.
