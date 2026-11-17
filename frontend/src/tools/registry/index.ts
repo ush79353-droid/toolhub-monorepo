@@ -1280,6 +1280,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KgToOunceConverter,
     })),
   ),
+  KgToStonesConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-stones/KgToStonesConverter').then((mod) => ({
+      default: mod.KgToStonesConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
