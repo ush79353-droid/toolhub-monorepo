@@ -1285,6 +1285,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KgToStonesConverter,
     })),
   ),
+  KilometerCalculator: lazyTool(() =>
+    import('@/tools/calculators/kilometer-calculator/KilometerCalculator').then((mod) => ({
+      default: mod.KilometerCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

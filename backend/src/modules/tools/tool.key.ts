@@ -247,6 +247,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'KgToMlConverter',
   'KgToOunceConverter',
   'KgToStonesConverter',
+  'KilometerCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -682,6 +683,7 @@ if (isDirect) {
     !isApprovedComponentKey('KgToMlConverter') ||
     !isApprovedComponentKey('KgToOunceConverter') ||
     !isApprovedComponentKey('KgToStonesConverter') ||
+    !isApprovedComponentKey('KilometerCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
