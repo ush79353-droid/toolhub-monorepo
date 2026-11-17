@@ -292,6 +292,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'millimeter-calculator',
   'milliseconds-converter',
   'mil-to-inch-conversion',
+  'mil-to-mm-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
