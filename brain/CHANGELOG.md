@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Gallons to Tons Converter
+- **Summary:** Shipped Gallons to Tons Converter on existing catalog slug gallons-to-tons-converter (GallonsToTonsConverter, catalog 6af46f17a27d8d1d4e990acd). Density-based volume↔mass with cubic-meter-to-ton materials reuse; US/UK/metric tons and multi volume units; density unit switching; negatives and zero density rejected. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-310b delivery for Conversion and Units density-based gal ↔ tons converter.
+- **Important Files:** frontend/src/tools/calculators/gallons-to-tons/*, cubic-meter-to-ton materials reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal water ≈ 0.0041727 US ton; UK gal→UK ton; round-trip). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Gallons to Quarts Converter
 - **Summary:** Shipped Gallons to Quarts Converter on existing catalog slug gallons-to-quarts-converter (GallonsToQuartsConverter, catalog 6af46f17a27d8d1d4e990acc). Bidirectional gallons↔quarts with US/UK unit selectors; unit switches preserve physical volume via liters; 1 gal = 4 qt same-system; negatives rejected; empty default. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-309b delivery for Conversion and Units volume pair converter (gal to quarts).
