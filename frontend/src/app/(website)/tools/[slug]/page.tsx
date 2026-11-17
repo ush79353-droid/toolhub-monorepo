@@ -37,6 +37,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'debt-to-capital-ratio-calculator',
   'debt-to-equity-calculator',
   'ebitda-margin-calculator',
+  'gross-margin-calculator',
   'interest-rate-parity-calculator',
   'loan-interest-calculator',
   'margin-interest-calculator',

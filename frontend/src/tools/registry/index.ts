@@ -83,6 +83,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EbitdaMarginCalculator,
     })),
   ),
+  GrossMarginCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gross-margin/GrossMarginCalculator'
+    ).then((mod) => ({
+      default: mod.GrossMarginCalculator,
+    })),
+  ),
   InterestRateParityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/interest-rate-parity/InterestRateParityCalculator'

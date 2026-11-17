@@ -21,6 +21,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'debt-to-capital-ratio-calculator',
   'debt-to-equity-calculator',
   'ebitda-margin-calculator',
+  'gross-margin-calculator',
   'interest-rate-parity-calculator',
   'loan-calculator',
   'auto-loan-calculator',
