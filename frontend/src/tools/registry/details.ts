@@ -223,6 +223,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DegreesToSecondsConverter: () => import('@/tools/calculators/degrees-to-seconds/detail'),
   DistanceConverter: () => import('@/tools/calculators/distance-converter/detail'),
   DmConverter: () => import('@/tools/calculators/dm-converter/detail'),
+  FahrenheitConverter: () => import('@/tools/calculators/fahrenheit-converter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

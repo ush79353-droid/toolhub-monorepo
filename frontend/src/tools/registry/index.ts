@@ -1049,6 +1049,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DmConverter,
     })),
   ),
+  FahrenheitConverter: lazyTool(() =>
+    import('@/tools/calculators/fahrenheit-converter/FahrenheitConverter').then((mod) => ({
+      default: mod.FahrenheitConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
