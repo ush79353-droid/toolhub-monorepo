@@ -36,6 +36,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   '529-calculator',
   '702010-rule-money-calculator',
   'adr-calculator',
+  'after-tax-cost-of-debt-calculator',
   'annualized-return-calculator',
   'appreciation-calculator',
   'apy-calculator',

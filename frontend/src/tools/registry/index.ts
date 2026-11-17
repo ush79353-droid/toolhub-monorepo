@@ -1053,6 +1053,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  AfterTaxCostOfDebtCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/after-tax-cost-of-debt/AfterTaxCostOfDebtCalculator'
+    ).then((mod) => ({
+      default: mod.AfterTaxCostOfDebtCalculator,
+    })),
+  ),
   AttritionRateCalculator: lazyTool(() =>
     import('@/tools/calculators/attrition-rate/AttritionRateCalculator').then((mod) => ({
       default: mod.AttritionRateCalculator,

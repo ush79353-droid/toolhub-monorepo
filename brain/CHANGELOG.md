@@ -4,6 +4,14 @@
 
 ---
 
+### 2026-11-17 — After-tax Cost of Debt Calculator (Screenshot-First + FX)
+- **Summary:** Shipped After-tax Cost of Debt Calculator on existing catalog slug `after-tax-cost-of-debt-calculator` (`AfterTaxCostOfDebtCalculator`, catalog `6af46f0fa27d8d1d4e98ff92`). Two sections: Marginal corporate tax rate (net income + pre-tax income with independent FX); After-tax cost of debt (tax %, read-only after-tax %, cost of debt %). `taxRateSource` avoids circular income↔tax updates. Activated.
+- **Formulas:** Marginal Tax Rate (%) = (1 − Net Income / Pre-tax Income) × 100 (effective estimate, not statutory bracket). After-tax Cost of Debt (%) = Cost of Debt (%) × (1 − Tax Rate (%) / 100). Zero pre-tax income blocked for derived tax; zero tax allowed.
+- **FX:** Independent currencies on both incomes; pretax normalized into net-income currency before the ratio. Currency-only changes preserve percentages. Percentages never FX-converted. Stale/missing rate handling reused.
+- **Example:** Net 800,000 / Pretax 1,000,000 / Cost 8% → tax 20%; after-tax cost 6.4%.
+- **Important Files:** `frontend/src/tools/calculators/after-tax-cost-of-debt/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-after-tax-cost-of-debt-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Interest Rate Parity Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Interest Rate Parity Calculator on existing catalog slug `interest-rate-parity-calculator` (`InterestRateParityCalculator`, catalog `6af46f0fa27d8d1d4e98ff8e`). Covered/Uncovered radios, contract days, annualised↔period price/base rates (360-day), spot + calculated forward with quote-currency selectors. Share/Reload/Clear/feedback. Activated.
 - **Quote convention:** Spot/forward = price-currency units per one base-currency unit.
