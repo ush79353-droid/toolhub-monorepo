@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Kilometer Calculator
+- **Summary:** Shipped Kilometer Calculator on existing catalog slug kilometer-calculator (KilometerCalculator, catalog 6af46f17a27d8d1d4e990b1c). Eight synced fields in three accordions (Kilometer / Metric / Imperial-US); reuses meter-converter convertLength; exact SI and international mile factors; negatives rejected; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ed preserved; subPillar null. Meta title <=70. **isActive left false**; indexable left false.
+- **Why:** TOOL-342b delivery for Conversion and Units multi-unit kilometer length converter (inactive until authorized).
+- **Important Files:** frontend/src/tools/calculators/kilometer-calculator/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 km = 1000 m / 100000 cm / 1000000 mm; ≈0.6213711922 mi; ≈3280.839895 ft; 1 mi = 1.609344 km; round-trip; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive false preserved, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add kg to Stones Converter
 - **Summary:** Shipped kg to Stones Converter on existing catalog slug kg-to-stones-converter (KgToStonesConverter, catalog 6af46f17a27d8d1d4e990b46). Bidirectional kg↔st via exact 1 st = 6.35029318 kg (14 lb); reuses weight-converter KG_PER_STONE + formatMass; empty default; negative mass rejected; original guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-341b delivery for Conversion and Units kilograms↔stones pair converter.
