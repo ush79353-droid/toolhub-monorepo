@@ -4,6 +4,21 @@
 
 ---
 
+### 2026-11-17 — Debt Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Debt Calculator on existing catalog slug `debt-calculator` (`DebtCalculator`, catalog `6af46f0fa27d8d1d4e98ff91`). Number of debts (Two–Six); per-debt balance/rate/payment; consolidation rate + prepaid fee; debt summary with total debt, monthly payment, and horizontally scrollable comparison table (Min. payment / Snowball / Avalanche / Consolidation). Independent real FX on all money selectors (Margin Interest pattern). Activated.
+- **Formulas:** Total debt = Σ balances; monthly payment = Σ scheduled payments. Month-by-month amortization; final month skips interest when remaining principal fits in budget. Min = scheduled payments only (weighted-average APR*). Snowball/avalanche keep combined budget and redirect freed payments. Consolidation amortizes combined principal at consolidation rate with same payment; prepaid fee reduces net advance for cash-flow APR only (not double-counted into principal).
+- **Example:** 4,500 @ 6.2% / 120 + 12,000 @ 18.2% / 220; consol 9.5% + fee 200 → total 16,500 / pay 340; min ≈ 14.93%* / 14,178.03 / 117 mo; snowball & avalanche ≈ 16.35% / 10,695.50 / 80 mo; consolidation ≈ 10.01% / 4,403.04 / 62 mo.
+- **Important Files:** `frontend/src/tools/calculators/debt/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-debt-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Reference math self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Debt Service Coverage Ratio Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Debt Service Coverage Ratio Calculator (DSCR) on existing catalog slug `debt-service-coverage-ratio-calculator-dscr` (`DebtServiceCoverageRatioCalculator`, catalog `6af46f0fa27d8d1d4e98ff96`). Debt service section (rate/term/loan/payment), collapsible NOI builder (GI/expenses%/vacancy%), NOI + DSCR `×` result. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Amortizing monthly payment `M = P × r / (1 − (1+r)^(-n))` with `r = annual%/1200`, `n = term months` (zero interest → `P/n`). Optional NOI = `(1 − expenses%)(1 − vacancy%) × GI`. DSCR = monthly NOI ÷ monthly debt service (payment field). Periods aligned to monthly; zero debt service blocked; never NaN/Infinity.
+- **FX:** Independent currencies on total loan, loan payment, and NOI (plus GI in the builder). Payment + NOI normalize into total-loan currency at full precision before monthly alignment. Currency-only changes preserve DSCR. Rate/term/DSCR never FX-converted. Stale/missing rate handling reused.
+- **Example:** 1,000,000 @ 4%/20y → payment ≈ 4,183.42; NOI 9,000 → DSCR ≈ 2.15×.
+- **Important Files:** `frontend/src/tools/calculators/debt-service-coverage-ratio/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-debt-service-coverage-ratio-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding (`6af46f0fa27d8d1d4e98ff96`). Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Debt Avalanche Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Debt Avalanche Calculator on existing catalog slug `debt-avalanche-calculator` (`DebtAvalancheCalculator`, catalog `6af46f0fa27d8d1d4e98ff93`). Debt count dropdown (default Two); per-debt balance/rate/payment with independent FX; total-debt result currency. Baseline = fixed minimums (no reallocation); avalanche keeps combined monthly budget and directs freed payments to the highest APR. Results: savings narrative + scrollable comparison table (APR, monthly payment, payoff term, total payable, total interest). Activated.
 - **Example:** 1,000 @ 6% / 100 + 5,000 @ 12% / 200 → baseline 29 mo / interest ≈ 810.92; avalanche 23 mo / interest ≈ 693.71; save ≈ 117.21 and 6 months.
