@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Feet to Yards Conversion
+- **Summary:** Shipped Feet to Yards Conversion on existing catalog slug feet-to-yards-conversion (FeetToYardsConverter, catalog 6af46f17a27d8d1d4e990ad4). Bidirectional ft↔yd with feet first; exact 1 yd = 3 ft; cross-checks meter-converter length registry. Pillar 6af451d0a27d8d1d4e98f9e2 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-300b delivery for Conversion and Units length pair converter (ft to yd).
+- **Important Files:** frontend/src/tools/calculators/feet-to-yards/*, meter-converter convertLength cross-check, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Feet to Miles Converter
 - **Summary:** Shipped Feet to Miles Converter on existing catalog slug feet-to-miles-converter (FeetToMilesConverter, catalog 6af46f17a27d8d1d4e990b09). Bidirectional ft↔mi with feet first; exact 1 mi = 5,280 ft; cross-checks meter-converter length registry. Pillar 6af451d1a27d8d1d4e98f9e9 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-299b delivery for Conversion and Units length pair converter (ft to mi).
