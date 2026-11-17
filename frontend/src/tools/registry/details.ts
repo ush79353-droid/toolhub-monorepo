@@ -40,6 +40,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-of-safety/detail'),
   NetDebtCalculator: () =>
     import('@/tools/calculators/net-debt/detail'),
+  OperatingMarginCalculator: () =>
+    import('@/tools/calculators/operating-margin/detail'),
   RrefCalculator: () => import('@/tools/calculators/rref/detail'),
   ArmMortgageCalculator: () => import('@/tools/calculators/arm-mortgage/detail'),
   HundredDayCalculator: () => import('@/tools/calculators/hundred-day/detail'),

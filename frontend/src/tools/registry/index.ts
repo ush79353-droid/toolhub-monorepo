@@ -151,6 +151,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetDebtCalculator,
     })),
   ),
+  OperatingMarginCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/operating-margin/OperatingMarginCalculator'
+    ).then((mod) => ({
+      default: mod.OperatingMarginCalculator,
+    })),
+  ),
   RrefCalculator: lazyTool(() =>
     import('@/tools/calculators/rref/RrefCalculator').then((mod) => ({
       default: mod.RrefCalculator,
