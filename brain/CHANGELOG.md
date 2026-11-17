@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Imperial Calculator
+- **Summary:** Shipped Imperial Calculator on existing catalog slug imperial-calculator (ImperialCalculator, catalog 6af46f17a27d8d1d4e990bd5). Multi-category Length/Area/Volume/Mass/Temperature converter reusing length/area/volume/weight/temperature unit registries; US vs Imperial gallons distinct; Kelvin temperature with absolute-zero guard; category switch clears values; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-326b delivery for Conversion and Units Imperial/US ↔ metric hub.
+- **Important Files:** frontend/src/tools/calculators/imperial/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (12 in = 1 ft; 1 US gal = 3.785411784 L; 1 Imp gal = 4.54609 L; 1 lb = 0.45359237 kg; 0°C = 32°F; 0 K absolute-zero bound). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Hours to Years Converter
 - **Summary:** Shipped Hours to Years Converter on existing catalog slug hours-to-years-converter (HoursToYearsConverter, catalog 6af46f17a27d8d1d4e990bae). Bidirectional hours↔years using average Gregorian year (8,765.82 hr); Other time units + HMS reusing hour-converter TIME_CONSTANTS; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-325b delivery for Conversion and Units hours ↔ years converter.
