@@ -268,6 +268,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MgToTeaspoonConverter',
   'MicronToMilConversionCalculator',
   'MilConversion',
+  'MileConversionCalculator',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -724,6 +725,7 @@ if (isDirect) {
     !isApprovedComponentKey('MgToTeaspoonConverter') ||
     !isApprovedComponentKey('MicronToMilConversionCalculator') ||
     !isApprovedComponentKey('MilConversion') ||
+    !isApprovedComponentKey('MileConversionCalculator') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

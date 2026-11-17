@@ -1390,6 +1390,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MilConversion,
     })),
   ),
+  MileConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/mile-conversion/MileConversionCalculator').then((mod) => ({
+      default: mod.MileConversionCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

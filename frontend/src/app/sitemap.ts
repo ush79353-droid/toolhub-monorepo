@@ -288,6 +288,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mg-to-teaspoon-converter',
   'micron-to-mil-conversion-calculator',
   'mil-conversion',
+  'mile-conversion-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
