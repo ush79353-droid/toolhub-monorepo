@@ -244,6 +244,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GalToKgConverter: () => import('@/tools/calculators/gal-to-kg/detail'),
   GramsInMlConverter: () => import('@/tools/calculators/grams-in-ml/detail'),
   GramsToFlOzConverter: () => import('@/tools/calculators/grams-to-fl-oz/detail'),
+  GramToLiterConversion: () => import('@/tools/calculators/gram-to-liter/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

@@ -1145,6 +1145,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GramsToFlOzConverter,
     })),
   ),
+  GramToLiterConversion: lazyTool(() =>
+    import('@/tools/calculators/gram-to-liter/GramToLiterConversion').then((mod) => ({
+      default: mod.GramToLiterConversion,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

@@ -239,6 +239,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gal-to-kg-converter',
   'grams-in-ml-converter',
   'grams-to-fl-oz-converter',
+  'gram-to-liter-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

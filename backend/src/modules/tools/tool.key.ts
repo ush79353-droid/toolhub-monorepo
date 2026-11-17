@@ -219,6 +219,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GalToKgConverter',
   'GramsInMlConverter',
   'GramsToFlOzConverter',
+  'GramToLiterConversion',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -626,6 +627,7 @@ if (isDirect) {
     !isApprovedComponentKey('GalToKgConverter') ||
     !isApprovedComponentKey('GramsInMlConverter') ||
     !isApprovedComponentKey('GramsToFlOzConverter') ||
+    !isApprovedComponentKey('GramToLiterConversion') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
