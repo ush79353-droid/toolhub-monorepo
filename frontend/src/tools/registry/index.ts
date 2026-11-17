@@ -1165,6 +1165,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GToLbsConverter,
     })),
   ),
+  HectaresToAcresConverter: lazyTool(() =>
+    import('@/tools/calculators/hectares-to-acres/HectaresToAcresConverter').then((mod) => ({
+      default: mod.HectaresToAcresConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

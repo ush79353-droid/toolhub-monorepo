@@ -223,6 +223,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GrToMlConverter',
   'GToTspConverter',
   'GToLbsConverter',
+  'HectaresToAcresConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -634,6 +635,7 @@ if (isDirect) {
     !isApprovedComponentKey('GrToMlConverter') ||
     !isApprovedComponentKey('GToTspConverter') ||
     !isApprovedComponentKey('GToLbsConverter') ||
+    !isApprovedComponentKey('HectaresToAcresConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
