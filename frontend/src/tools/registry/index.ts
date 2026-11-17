@@ -1235,6 +1235,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InToCmConverter,
     })),
   ),
+  KathaToSquareFeetConverter: lazyTool(() =>
+    import('@/tools/calculators/katha-to-sqft/KathaToSquareFeetConverter').then((mod) => ({
+      default: mod.KathaToSquareFeetConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

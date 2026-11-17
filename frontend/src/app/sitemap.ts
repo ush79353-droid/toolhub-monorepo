@@ -257,6 +257,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'inch-to-meter-calculator',
   'inches-to-yard-conversion',
   'in-to-cm-converter',
+  'katha-to-square-feet-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
