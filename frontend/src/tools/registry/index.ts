@@ -1210,6 +1210,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ImperialCalculator,
     })),
   ),
+  ImperialToMetricConversion: lazyTool(() =>
+    import('@/tools/calculators/imperial-to-metric/ImperialToMetricConversion').then((mod) => ({
+      default: mod.ImperialToMetricConversion,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

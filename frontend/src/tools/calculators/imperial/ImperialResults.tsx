@@ -15,6 +15,8 @@ interface ImperialResultsProps {
   canShare: boolean;
   onCopy: () => void;
   onShare: () => void;
+  /** Eyebrow above the primary result line. */
+  resultHeading?: string;
 }
 
 export function ImperialResults({
@@ -25,6 +27,7 @@ export function ImperialResults({
   canShare,
   onCopy,
   onShare,
+  resultHeading = 'Imperial conversion',
 }: ImperialResultsProps) {
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
 
@@ -59,7 +62,7 @@ export function ImperialResults({
         aria-live="polite"
       >
         <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-          Imperial conversion
+          {resultHeading}
         </p>
         <p className="mt-1 font-mono text-lg font-semibold tabular-nums text-accent sm:text-xl">
           {formatImperial(result.values[result.sourceKey]!, result.category)}{' '}

@@ -43,12 +43,24 @@ function sourceIncomplete(draft: ImperialDraft): boolean {
   return raw === '' || isIncompleteNumber(raw);
 }
 
+export interface ImperialPanelProps extends ToolComponentProps {
+  /** Share / clipboard brand line. */
+  brandName?: string;
+  /** Subtitle under Calculator heading. */
+  panelSubtitle?: string;
+  /** Results card eyebrow. */
+  resultHeading?: string;
+}
+
 export function ImperialCalculator({
   metadata,
   className = '',
   presentation = 'default',
   headerActions,
-}: ToolComponentProps) {
+  brandName = 'Imperial Calculator',
+  panelSubtitle = 'Imperial / US ↔ metric by category',
+  resultHeading = 'Imperial conversion',
+}: ImperialPanelProps) {
   const isEmbed = presentation === 'embed';
   const [draft, setDraft] = React.useState<ImperialDraft>(emptyDraft);
   const [errors, setErrors] = React.useState<ImperialFieldErrors>({});
@@ -91,7 +103,7 @@ export function ImperialCalculator({
     setDraft(emptyDraft(category));
   };
 
-  const payload = result ? shareResultText(result) : '';
+  const payload = result ? shareResultText(result, brandName) : '';
 
   return (
     <section
@@ -103,9 +115,7 @@ export function ImperialCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">
-            Imperial / US ↔ metric by category
-          </p>
+          <p className="text-xs font-normal text-muted-foreground">{panelSubtitle}</p>
         </div>
         {headerActions ? <div className="flex flex-wrap justify-end gap-2">{headerActions}</div> : null}
       </div>
@@ -140,6 +150,7 @@ export function ImperialCalculator({
             copied={copied}
             shared={shared}
             canShare={canShare || Boolean(result)}
+            resultHeading={resultHeading}
             onCopy={() => {
               if (!result) return;
               const text =

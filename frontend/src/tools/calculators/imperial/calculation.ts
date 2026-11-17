@@ -121,7 +121,10 @@ function pickHighlights(
   return [fmt('fahrenheit', '°F'), fmt('celsius', '°C'), fmt('kelvin', 'K')];
 }
 
-export function shareResultText(result: ImperialResult): string {
+export function shareResultText(
+  result: ImperialResult,
+  brand = 'Imperial Calculator',
+): string {
   const fields = fieldsForCategory(result.category);
   const lines = fields
     .filter((f) => f.section !== 'other')
@@ -132,9 +135,9 @@ export function shareResultText(result: ImperialResult): string {
     );
 
   return [
-    'Imperial Calculator — Omega Calculators',
+    `${brand} — Omega Calculators`,
     '',
-    `Category: ${labelForCategory(result.category)}`,
+    `Measurement: ${labelForCategory(result.category)}`,
     '',
     ...lines,
     '',

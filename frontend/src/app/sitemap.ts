@@ -252,6 +252,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'hours-to-week-conversion',
   'hours-to-years-converter',
   'imperial-calculator',
+  'imperial-to-metric-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
