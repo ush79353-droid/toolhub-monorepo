@@ -262,6 +262,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LbsToKgConverter',
   'LbsToPoundsConverter',
   'MetricToStandardConverter',
+  'MgToCcConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -712,6 +713,7 @@ if (isDirect) {
     !isApprovedComponentKey('LbsToKgConverter') ||
     !isApprovedComponentKey('LbsToPoundsConverter') ||
     !isApprovedComponentKey('MetricToStandardConverter') ||
+    !isApprovedComponentKey('MgToCcConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

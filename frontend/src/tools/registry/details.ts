@@ -287,6 +287,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LbsToKgConverter: () => import('@/tools/calculators/lbs-to-kg/detail'),
   LbsToPoundsConverter: () => import('@/tools/calculators/lbs-to-pounds/detail'),
   MetricToStandardConverter: () => import('@/tools/calculators/metric-to-standard/detail'),
+  MgToCcConverter: () => import('@/tools/calculators/mg-to-cc/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
