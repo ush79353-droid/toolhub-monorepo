@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add kg to Stones Converter
+- **Summary:** Shipped kg to Stones Converter on existing catalog slug kg-to-stones-converter (KgToStonesConverter, catalog 6af46f17a27d8d1d4e990b46). Bidirectional kg↔st via exact 1 st = 6.35029318 kg (14 lb); reuses weight-converter KG_PER_STONE + formatMass; empty default; negative mass rejected; original guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-341b delivery for Conversion and Units kilograms↔stones pair converter.
+- **Important Files:** frontend/src/tools/calculators/kg-to-stones/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 kg ≈ 0.15747304 st; 70 kg ≈ 11.023113 st; 10 st = 63.5029318 kg; 14 st = 88.90410452 kg; weight-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add kg to Ounce Converter
 - **Summary:** Shipped kg to Ounce Converter on existing catalog slug kg-to-ounce-converter (KgToOunceConverter, catalog 6af46f17a27d8d1d4e990b45). Bidirectional kg↔avoirdupois oz via exact 1 oz = 0.028349523125 kg; Other units accordion with troy oz, pounds+ounces remainder normalization, and more-units selector; reuses weight-converter constants + formatMass; empty default; negative mass rejected; original guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-340b delivery for Conversion and Units kilograms↔ounces pair converter with related mass units.
