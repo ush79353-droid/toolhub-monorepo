@@ -4,6 +4,26 @@
 
 ---
 
+### 2026-11-17 — Mortgage Interest Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Mortgage Interest Calculator on existing catalog slug `mortgage-interest-calculator` (`MortgageInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ff76`). Screenshot fields: principal FX, term yrs/mos, interest %, compounding radios (Yearly / Semi-annually Canada / Quarterly / Monthly UK&US), optional fees checkbox (points, up-front FX, annual FX), Fixed-rate only, monthly payment / mortgage interest / APR / total payments with independent result FX, chart/schedule/both, schedule-from date, annual balances chart, monthly amortization table. Activated when Mongo assign succeeds.
+- **Formulas:** Monthly r from compounding; M = P×r/(1−(1+r)^(-n)); r=0 → P/n; interest = Σ schedule interest; total = (M + annualFee/12)×n + points + up-front; APR = 12×IRR×100 on net proceeds.
+- **Example:** 250,000 / 20y / 5% Monthly (UK & US) → payment ≈ 1,649.89; interest ≈ 145,973.44; total ≈ 395,973.44; APR = 5.
+- **Important Files:** `frontend/src/tools/calculators/mortgage-interest/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mortgage-interest-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Reference math matches screenshot defaults. Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-17 — Car Loan EMI Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Car Loan EMI Calculator on existing catalog slug `car-loan-emi-calculator` (`CarLoanEmiCalculator`, catalog `6af46f0fa27d8d1d4e98ff50`). Screenshot fields: car price, money you have, trade-in, sales tax %, loan amount, interest rate, term yrs/mos, monthly payment, total interest. Independent real FX on six money selectors; mixed inputs normalize into loan-amount currency. Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Tax = Price × %/100; Loan = Price + Tax − Money − Trade-in; n = 12Y+M; r = APR/1200; Payment = P×r/(1−(1+r)^(-n)); r=0 → P/n; Interest = Payment×n − P.
+- **Example:** 2,000,000 − 400,000 − 100,000 @ 0% tax / 12% / 5y → P 1,500,000; payment ≈ 33,366.67; interest ≈ 502,000.29.
+- **Important Files:** `frontend/src/tools/calculators/car-loan-emi/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-car-loan-emi-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding (`6af46f0fa27d8d1d4e98ff50`). Formula self-check passed (2,000,000 − 400,000 − 100,000 @ 12%/5y → ≈ 33,366.67 / 502,000.29). MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
+### 2026-11-17 — Loan Repayment Calculator | Loan Payoff Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Loan Repayment Calculator | Loan Payoff Calculator on existing catalog slug `loan-repayment-calculator-loan-payoff-calculator` (`LoanRepaymentCalculator`, catalog `6af46f0fa27d8d1d4e98ff58`). Payment types: even total / even principal / balloon (blocked — no residual in reference). Loan amount + extra monthly with independent FX; balances chart; yearly datasheet; early-payoff savings. Activated.
+- **Example:** 10,000 PKR / 10y / 7.5% monthly → ≈ 118.70 monthly; interest ≈ 4,244.18.
+- **Important Files:** `frontend/src/tools/calculators/loan-repayment/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-loan-repayment-tool.ts`, `brain/*`.
+- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Mortgage Comparison Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Comparison Calculator on existing catalog slug `mortgage-comparison-calculator` (`MortgageComparisonCalculator`, catalog `6af46f0fa27d8d1d4e98ff75`). Screenshot is a single mortgage scenario (no dual-form comparison UI verified). Specs + Further specifications (PMI / tax / insurance / other) + summary + doughnut. Independent real FX on money fields; normalize into home-value currency. Activated.
 - **Comparison note:** Dual Scenario A/B UI not evidenced; comparison is by changing inputs on one form (Omni “compare constructions” wording).

@@ -309,8 +309,14 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/canadian-mortgage/detail'),
   MortgageCalculatorUk: () =>
     import('@/tools/calculators/mortgage-uk/detail'),
+  CarInterestCalculator: () =>
+    import('@/tools/calculators/car-interest/detail'),
+  CarLoanEmiCalculator: () =>
+    import('@/tools/calculators/car-loan-emi/detail'),
   CarriedInterestCalculator: () =>
     import('@/tools/calculators/carried-interest/detail'),
+  CashBackOrLowInterestCalculator: () =>
+    import('@/tools/calculators/cash-back-or-low-interest/detail'),
   ChurnRateCalculator: () =>
     import('@/tools/calculators/churn-rate/detail'),
   ConsultingFeesCalculator: () =>
@@ -386,6 +392,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/liquid-net-worth/detail'),
   LoanBalanceCalculator: () =>
     import('@/tools/calculators/loan-balance/detail'),
+  LoanRepaymentCalculator: () =>
+    import('@/tools/calculators/loan-repayment/detail'),
   QuizLoanBalanceCalculator: () =>
     import('@/tools/calculators/quiz-loan-balance/detail'),
   ManHoursCalculator: () =>
@@ -519,6 +527,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InterestCalculator: () => import('@/tools/calculators/interest/detail'),
   InterestOnlyMortgageCalculator: () =>
     import('@/tools/calculators/interest-only-mortgage/detail'),
+  MortgageInterestCalculator: () =>
+    import('@/tools/calculators/mortgage-interest/detail'),
   MortgageRateCalculator: () =>
     import('@/tools/calculators/mortgage-rate/detail'),
   InterestRateCalculator: () =>

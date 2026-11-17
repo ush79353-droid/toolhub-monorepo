@@ -243,7 +243,10 @@ export const APPROVED_COMPONENT_KEYS = [
   'CagrCalculator',
   'CapmCalculator',
   'CapitalGainsYieldCalculator',
+  'CarInterestCalculator',
+  'CarLoanEmiCalculator',
   'CarriedInterestCalculator',
+  'CashBackOrLowInterestCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
   'ContributionMarginCalculator',
@@ -282,6 +285,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LernerIndexCalculator',
   'LiquidNetWorthCalculator',
   'LoanBalanceCalculator',
+  'LoanRepaymentCalculator',
   'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
   'MarginInterestCalculator',
@@ -348,6 +352,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MortgagePointsCalculator',
   'CanadianMortgageCalculator',
   'MortgageCalculatorUk',
+  'MortgageInterestCalculator',
   'MortgageRateCalculator',
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
@@ -630,7 +635,10 @@ if (isDirect) {
     !isApprovedComponentKey('CagrCalculator') ||
     !isApprovedComponentKey('CapmCalculator') ||
     !isApprovedComponentKey('CapitalGainsYieldCalculator') ||
+    !isApprovedComponentKey('CarInterestCalculator') ||
+    !isApprovedComponentKey('CarLoanEmiCalculator') ||
     !isApprovedComponentKey('CarriedInterestCalculator') ||
+    !isApprovedComponentKey('CashBackOrLowInterestCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
     !isApprovedComponentKey('ConsultingFeesCalculator') ||
     !isApprovedComponentKey('ContributionMarginCalculator') ||
@@ -669,6 +677,7 @@ if (isDirect) {
     !isApprovedComponentKey('LernerIndexCalculator') ||
     !isApprovedComponentKey('LiquidNetWorthCalculator') ||
     !isApprovedComponentKey('LoanBalanceCalculator') ||
+    !isApprovedComponentKey('LoanRepaymentCalculator') ||
     !isApprovedComponentKey('QuizLoanBalanceCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
@@ -735,6 +744,7 @@ if (isDirect) {
     !isApprovedComponentKey('MortgagePointsCalculator') ||
     !isApprovedComponentKey('CanadianMortgageCalculator') ||
     !isApprovedComponentKey('MortgageCalculatorUk') ||
+    !isApprovedComponentKey('MortgageInterestCalculator') ||
     !isApprovedComponentKey('MortgageRateCalculator') ||
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||

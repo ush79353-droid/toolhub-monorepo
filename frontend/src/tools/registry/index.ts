@@ -1311,12 +1311,29 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MortgageCalculatorUk,
     })),
   ),
+  CarInterestCalculator: lazyTool(() =>
+    import('@/tools/calculators/car-interest/CarInterestCalculator').then((mod) => ({
+      default: mod.CarInterestCalculator,
+    })),
+  ),
+  CarLoanEmiCalculator: lazyTool(() =>
+    import('@/tools/calculators/car-loan-emi/CarLoanEmiCalculator').then((mod) => ({
+      default: mod.CarLoanEmiCalculator,
+    })),
+  ),
   CarriedInterestCalculator: lazyTool(() =>
     import('@/tools/calculators/carried-interest/CarriedInterestCalculator').then(
       (mod) => ({
         default: mod.CarriedInterestCalculator,
       })
     ),
+  ),
+  CashBackOrLowInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cash-back-or-low-interest/CashBackOrLowInterestCalculator'
+    ).then((mod) => ({
+      default: mod.CashBackOrLowInterestCalculator,
+    })),
   ),
   ChurnRateCalculator: lazyTool(() =>
     import('@/tools/calculators/churn-rate/ChurnRateCalculator').then((mod) => ({
@@ -1513,6 +1530,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/loan-balance/LoanBalanceCalculator').then((mod) => ({
       default: mod.LoanBalanceCalculator,
     })),
+  ),
+  LoanRepaymentCalculator: lazyTool(() =>
+    import('@/tools/calculators/loan-repayment/LoanRepaymentCalculator').then(
+      (mod) => ({
+        default: mod.LoanRepaymentCalculator,
+      })
+    )
   ),
   QuizLoanBalanceCalculator: lazyTool(() =>
     import('@/tools/calculators/quiz-loan-balance/QuizLoanBalanceCalculator').then(
@@ -1921,6 +1945,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/interest-only-mortgage/InterestOnlyMortgageCalculator'
     ).then((mod) => ({
       default: mod.InterestOnlyMortgageCalculator,
+    })),
+  ),
+  MortgageInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-interest/MortgageInterestCalculator'
+    ).then((mod) => ({
+      default: mod.MortgageInterestCalculator,
     })),
   ),
   MortgageRateCalculator: lazyTool(() =>
