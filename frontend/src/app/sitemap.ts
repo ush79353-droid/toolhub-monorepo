@@ -291,6 +291,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mile-conversion-calculator',
   'millimeter-calculator',
   'milliseconds-converter',
+  'mil-to-inch-conversion',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
