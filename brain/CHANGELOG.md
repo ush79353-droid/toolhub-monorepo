@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Grams in mL Converter
+- **Summary:** Shipped Grams in mL Converter on existing catalog slug grams-in-ml-converter (GramsInMlConverter, catalog 6af46f17a27d8d1d4e990b3f). Density-based mass↔volume with cooking ingredient presets; default water 1000 kg/m³; mass/volume unit selectors; density accordion expanded; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-312b delivery for Conversion and Units density-based grams ↔ milliliters converter.
+- **Important Files:** frontend/src/tools/calculators/grams-in-ml/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100 g water = 100 mL; 100 g honey ≈ 70.42 mL; 150 mL oil = 138 g; kg/m³↔g/mL; round-trip). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add Gal to kg Converter
 - **Summary:** Shipped Gal to kg Converter on existing catalog slug gal-to-kg-converter (GalToKgConverter, catalog 6af46f17a27d8d1d4e990b3c). Density-based US/UK gal ↔ kg with other mass units; cubic-meter-to-ton materials reuse; density accordion default kg/L water; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-311b delivery for Conversion and Units density-based gal ↔ kg converter.
