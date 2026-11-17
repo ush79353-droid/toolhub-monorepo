@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Millimeter Calculator
+- **Summary:** Shipped Millimeter Calculator on existing catalog slug millimeter-calculator (MillimeterCalculator, catalog 6af46f17a27d8d1d4e990b94). Multi-group mm hub: Imperial in/ft/mi + yd/fur/ch/rd, Metric cm/m/km + um/nm/dm/dam/hm; exact 1 mm = 0.001 m and 1 in = 25.4 mm; empty default; signed lengths; chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-364b delivery for Conversion and Units millimeter hub.
+- **Important Files:** frontend/src/tools/calculators/millimeter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 mm = 0.1 cm / 0.001 m; 10 mm = 1 cm; 1000 mm = 1 m; 25.4 mm = 1 in; 304.8 mm = 1 ft; 914.4 mm = 1 yd; 1609344 mm = 1 mi; 50.8/127/2500 cases; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Mile Conversion Calculator
 - **Summary:** Shipped Mile Conversion Calculator on existing catalog slug mile-conversion-calculator (MileConversionCalculator, catalog 6af46f17a27d8d1d4e990b07). Multi-group statute-mile hub: Metric km/m/cm + mm/um/nm, Imperial yd/ft + in/fur/ch/rd, Others ly/au/nmi + pc/solarRadius/angstrom; exact 1 mi = 1609.344 m; empty default; signed lengths; statute ≠ nautical clarified; chart/FAQs. Live pillar 6af451d1a27d8d1d4e98f9e9 preserved (brief typo …d2…); subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-363b delivery for Conversion and Units statute-mile hub.
