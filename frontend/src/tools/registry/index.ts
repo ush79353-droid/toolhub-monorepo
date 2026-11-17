@@ -1843,6 +1843,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MortgageTaxesInsuranceCalculator,
     })),
   ),
+  MortgageComparisonCalculator: lazyTool(() =>
+    import('@/tools/calculators/mortgage-comparison/MortgageComparisonCalculator').then((mod) => ({
+      default: mod.MortgageComparisonCalculator,
+    })),
+  ),
   HomeMortgageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/home-mortgage/HomeMortgageCalculator'

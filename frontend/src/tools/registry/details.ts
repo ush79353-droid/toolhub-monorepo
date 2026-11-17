@@ -498,6 +498,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/home-loan-emi/detail'),
   HomeLoanCalculator: () => import('@/tools/calculators/home-loan/detail'),
   MortgageTaxesInsuranceCalculator: () => import('@/tools/calculators/mortgage-taxes-insurance/detail'),
+  MortgageComparisonCalculator: () =>
+    import('@/tools/calculators/mortgage-comparison/detail'),
   HomeMortgageCalculator: () =>
     import('@/tools/calculators/home-mortgage/detail'),
   MortgageAmortizationCalculator: () =>

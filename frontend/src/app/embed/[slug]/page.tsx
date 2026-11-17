@@ -65,6 +65,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'home-loan-emi-calculator',
   'home-loan-calculator',
   'mortgage-calculator-with-taxes-and-insurance',
+  'mortgage-comparison-calculator',
   'home-mortgage-calculator',
   'mortgage-acceleration-calculator',
   'mortgage-prepayment-calculator',

@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-17 — Mortgage Comparison Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Mortgage Comparison Calculator on existing catalog slug `mortgage-comparison-calculator` (`MortgageComparisonCalculator`, catalog `6af46f0fa27d8d1d4e98ff75`). Screenshot is a single mortgage scenario (no dual-form comparison UI verified). Specs + Further specifications (PMI / tax / insurance / other) + summary + doughnut. Independent real FX on money fields; normalize into home-value currency. Activated.
+- **Comparison note:** Dual Scenario A/B UI not evidenced; comparison is by changing inputs on one form (Omni “compare constructions” wording).
+- **Example:** 150,000 / 10% / 4.5% / 30y → payment ≈ 684.03; 360 payments ≈ 246,249.06; interest ≈ 111,249.06; PMI ≈ 4,106.25; total with costs ≈ 250,355.31.
+- **Important Files:** `frontend/src/tools/calculators/mortgage-comparison/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-mortgage-comparison-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+
 ### 2026-11-17 — Jumbo Loan Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Jumbo Loan Calculator on existing catalog slug `jumbo-loan-calculator` (`JumboLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff54`). Screenshot fields: property price, down payment, down payment %, jumbo loan amount, loan term yrs/mos, interest rate, first day, monthly payment. Bidirectional down-payment sync without circular updates. Independent FX on four monetary selectors; mixed inputs normalize into property-price currency. Share result / Reload / Clear / feedback. Activated.
 - **Formulas:** Down = Price × %/100; Loan = Price − Down; n = 12Y+M; r = APR/1200; Payment = P×r/(1−(1+r)^(-n)); r=0 → P/n. Payoff ≈ first day + n months.

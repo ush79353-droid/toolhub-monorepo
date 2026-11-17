@@ -38,6 +38,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'home-loan-emi-calculator',
   'home-loan-calculator',
   'mortgage-calculator-with-taxes-and-insurance',
+  'mortgage-comparison-calculator',
   'home-mortgage-calculator',
   'mortgage-amortization-calculator',
   'mortgage-acceleration-calculator',
