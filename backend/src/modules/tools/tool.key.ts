@@ -250,6 +250,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CagrCalculator',
   'CapmCalculator',
   'CapitalGainsYieldCalculator',
+  'CaliforniaOvertimeCalculator',
   'CarInterestCalculator',
   'CarLoanEmiCalculator',
   'CarriedInterestCalculator',
@@ -273,6 +274,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DebtCalculator',
   'DebtSnowballCalculator',
   'DeferredAnnuityCalculator',
+  'GeorgiaOvertimeCalculator',
   'GrowingAnnuityCalculator',
   'DividendDiscountModelCalculator',
   'DirectMaterialPriceVarianceCalculator',
@@ -330,6 +332,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PostJudgmentInterestCalculator',
   'PreAndPostMoneyValuationCalculator',
   'PresentValueCalculator',
+  'PresentValueOfAnnuityCalculator',
   'PriceQuantityCalculator',
   'PvgoCalculator',
   'PvifaCalculator',
@@ -377,6 +380,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MortgageInterestCalculator',
   'MortgageRateCalculator',
   'HoldingPeriodReturnCalculator',
+  'ImmediateAnnuityCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
   'InterestCalculator',
@@ -667,6 +671,7 @@ if (isDirect) {
     !isApprovedComponentKey('CagrCalculator') ||
     !isApprovedComponentKey('CapmCalculator') ||
     !isApprovedComponentKey('CapitalGainsYieldCalculator') ||
+    !isApprovedComponentKey('CaliforniaOvertimeCalculator') ||
     !isApprovedComponentKey('CarInterestCalculator') ||
     !isApprovedComponentKey('CarLoanEmiCalculator') ||
     !isApprovedComponentKey('CarriedInterestCalculator') ||
@@ -690,6 +695,7 @@ if (isDirect) {
     !isApprovedComponentKey('DebtCalculator') ||
     !isApprovedComponentKey('DebtSnowballCalculator') ||
     !isApprovedComponentKey('DeferredAnnuityCalculator') ||
+    !isApprovedComponentKey('GeorgiaOvertimeCalculator') ||
     !isApprovedComponentKey('GrowingAnnuityCalculator') ||
     !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
@@ -747,6 +753,7 @@ if (isDirect) {
     !isApprovedComponentKey('PostJudgmentInterestCalculator') ||
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
     !isApprovedComponentKey('PresentValueCalculator') ||
+    !isApprovedComponentKey('PresentValueOfAnnuityCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('PvifaCalculator') ||
@@ -794,6 +801,7 @@ if (isDirect) {
     !isApprovedComponentKey('MortgageInterestCalculator') ||
     !isApprovedComponentKey('MortgageRateCalculator') ||
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
+    !isApprovedComponentKey('ImmediateAnnuityCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
     !isApprovedComponentKey('InterestCalculator') ||

@@ -1,3 +1,19 @@
+### 2026-11-17 — Florida Overtime Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Florida Overtime Calculator on existing catalog slug `florida-overtime-calculator` (`FloridaOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e98ffb3`). Collapsible Regular work time + Overtime sections; In total; Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Regular monthly = hourly × weekly hours × 52/12; OT hourly = regular hourly × multiplier; monthly OT = OT hourly × monthly OT hours; total = regular + OT. Blank OT hours treated as zero. Unit selectors normalize pay/time. Does not invent daily overtime rules or claim statutory compliance.
+- **FX:** Independent currencies on regular pay + four money results; normalize into regular-pay currency for math; result selectors re-express only. Hours/units/multiplier never convert. `CURRENCY_CONVERSION_SLUGS` + stale/missing handling.
+- **Example:** 20/hr × 40 hr/week × 1.5 × 10 OT hr/month → regular ≈ 3,466.67; OT rate 30; OT pay 300; total ≈ 3,766.67.
+- **Important Files:** `frontend/src/tools/calculators/florida-overtime/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-florida-overtime-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Colleague `overtime/` WIP left untouched. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
+### 2026-11-17 — Immediate Annuity Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Immediate Annuity Calculator on existing catalog slug `immediate-annuity-calculator` (`ImmediateAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffad`). Five solve modes (withdraw default, invest, duration, rate, remain); payment frequency; beginning/end timing; start date; optional compounding; optional remaining balance + withdrawal growth; yearly schedule; independent Phase 2 FX. Activated.
+- **Formulas:** Reuses shared annuity engine — period rate `i = (1 + r/m)^(m/q) − 1` (default m = payment frequency); ordinary/due withdrawal schedule; inverse solves for PV/PMT/n/r/FV; totals and last withdrawal date from full-precision schedule.
+- **FX:** Independent currencies on amount to invest, withdrawal amount, and optional remaining balance; normalize into invest currency before solving. Rates, lengths, growth percents, and dates never convert. Stale/missing rate handling via `CURRENCY_CONVERSION_SLUGS`.
+- **Example:** 100,000 PKR / 10y / 1.5% / monthly / beginning → PMT ≈ 896.79; 120 withdrawals; total ≈ 107,615.28; return ≈ 7,615.28.
+- **Important Files:** `frontend/src/tools/calculators/immediate-annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-immediate-annuity-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Math self-check ≈ Omni. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Growing Annuity Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Growing Annuity Calculator on existing catalog slug `growing-annuity-calculator` (`GrowingAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffac`). Solve PV/FV/payment; deposit/withdrawal; ordinary/due; growth; independent Phase 2 FX. Activated.
 - **Formulas:** `i = (1 + r/m)^(m/q) − 1`; `g = (1 + G)^(1/q) − 1`; period schedule due/ordinary; total payments geometric sum; total return = FV − opening − net contributions.
@@ -17,6 +33,15 @@
 # Development Changelog (`CHANGELOG.md`)
 
 > **Convention:** Append entries chronologically after verified tasks. Do not rewrite historical entries.
+
+### 2026-11-17 — Present Value of Annuity Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Present Value of Annuity Calculator on existing catalog slug `present-value-of-annuity-calculator` (`PresentValueOfAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffaf`). Ordinary/due, frequencies, growth section, independent FX. Activated.
+- **Formulas:** i = (1+r/m)^(m/q)−1; n = round(years×q); ordinary PV = PMT×(1−(1+i)^(−n))/i; due ×(1+i); growing closed forms when g ≠ 0.
+- **FX:** Independent currencies on payment + present value via shared Mongo rates. Rates/term/frequencies/growth never convert.
+- **Example:** 100 @ 5% / 3y yearly ordinary → ≈ 272.32; due ≈ 285.94.
+- **Important Files:** `frontend/src/tools/calculators/present-value-of-annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-present-value-of-annuity-tool.ts`, `brain/*`.
+- **Verification:** Catalog undeveloped before coding. MongoDB activated. Lint/builds/tests omitted per user. No push.
+
 
 ### 2026-11-17 — Annuity Payout Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Annuity Payout Calculator on existing catalog slug `annuity-payout-calculator` (`AnnuityPayoutCalculator`, catalog `6af46f0fa27d8d1d4e98ffa9`). Modes: fixed length (default) and fixed payment. Main specs: initial balance, payout frequency, ordinary/due, length or payment, annuity rate; checkbox unlocks compounding, final balance, and annual growth. Narrative results for withdrawal, duration, total interest, and applicable final balance. Share/Reload/Clear/feedback. Activated.

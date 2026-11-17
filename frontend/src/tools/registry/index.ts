@@ -1262,6 +1262,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnuityCalculator,
     })),
   ),
+  GeorgiaOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/georgia-overtime/GeorgiaOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.GeorgiaOvertimeCalculator,
+    })),
+  ),
   GrowingAnnuityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/growing-annuity/GrowingAnnuityCalculator'
@@ -1809,6 +1816,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PresentValueCalculator,
     })),
   ),
+  PresentValueOfAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/present-value-of-annuity/PresentValueOfAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.PresentValueOfAnnuityCalculator,
+    })),
+  ),
   PriceQuantityCalculator: lazyTool(() =>
     import('@/tools/calculators/price-quantity/PriceQuantityCalculator').then((mod) => ({
       default: mod.PriceQuantityCalculator,
@@ -2076,6 +2090,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/holding-period-return/HoldingPeriodReturnCalculator'
     ).then((mod) => ({
       default: mod.HoldingPeriodReturnCalculator,
+    })),
+  ),
+  ImmediateAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/immediate-annuity/ImmediateAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.ImmediateAnnuityCalculator,
     })),
   ),
   ImpermanentLossCalculator: lazyTool(() =>

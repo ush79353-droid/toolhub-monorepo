@@ -289,6 +289,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AppreciationCalculator: () =>
     import('@/tools/calculators/appreciation/detail'),
   AnnuityCalculator: () => import('@/tools/calculators/annuity/detail'),
+  GeorgiaOvertimeCalculator: () =>
+    import('@/tools/calculators/georgia-overtime/detail'),
   GrowingAnnuityCalculator: () =>
     import('@/tools/calculators/growing-annuity/detail'),
   AnnuityPayoutCalculator: () =>
@@ -488,6 +490,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pre-and-post-money-valuation/detail'),
   PresentValueCalculator: () =>
     import('@/tools/calculators/present-value/detail'),
+  PresentValueOfAnnuityCalculator: () =>
+    import('@/tools/calculators/present-value-of-annuity/detail'),
   PriceQuantityCalculator: () =>
     import('@/tools/calculators/price-quantity/detail'),
   PvgoCalculator: () =>
@@ -570,6 +574,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mortgage-points/detail'),
   HoldingPeriodReturnCalculator: () =>
     import('@/tools/calculators/holding-period-return/detail'),
+  ImmediateAnnuityCalculator: () =>
+    import('@/tools/calculators/immediate-annuity/detail'),
   ImpermanentLossCalculator: () =>
     import('@/tools/calculators/impermanent-loss/detail'),
   InformationRatioCalculator: () =>
