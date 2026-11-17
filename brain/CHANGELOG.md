@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add kg to mL Converter
+- **Summary:** Shipped kg to mL Converter on existing catalog slug kg-to-ml-converter (KgToMlConverter, catalog 6af46f17a27d8d1d4e990b44). Density-based bidirectional kg↔mL via kg/m³ canonical; Water default 1000 kg/m³; collapsible density lookup; substance presets (milk 1030, olive oil 918, honey 1420, …); Custom density with unit normalization; empty mass/volume; negatives/zero density rejected. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-339b delivery for Conversion and Units mass↔milliliters via density.
+- **Important Files:** frontend/src/tools/calculators/kg-to-ml/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (water 1 kg = 1000 mL; milk 1 kg ≈ 970.87 mL; olive oil 2 kg ≈ 2178.65 mL; honey 1000 mL = 1.42 kg; density unit normalization; zero/negative rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add kg to Liter Converter
 - **Summary:** Shipped kg to Liter Converter on existing catalog slug kg-to-liter-converter (KgToLiterConverter, catalog 6af46f17a27d8d1d4e990b43). Density-based bidirectional kg↔L; Fresh water default ≈ 1 kg/L; substance presets (olive oil 0.918, milk 1.03, honey 1.42, …); Custom density with kg/L·g/mL·g/cm³·kg/m³ normalization; empty mass/volume; negatives/zero density rejected. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-338b delivery for Conversion and Units mass↔volume via density.
