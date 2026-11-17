@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add mg to cc Conversion
+- **Summary:** Shipped mg to cc Conversion on existing catalog slug mg-to-cc-conversion (MgToCcConverter, catalog 6af46f17a27d8d1d4e990b51). Medication concentration vs substance density modes; 1 cc = 1 mL; custom concentration only (no clinical presets); water approx 1 g/mL; bidirectional mg↔cc; mg/5 mL and density unit normalization; medication safety notice; empty default; original guide/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-357b delivery for Conversion and Units milligram-to-cubic-centimeter converter.
+- **Important Files:** frontend/src/tools/calculators/mg-to-cc/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (200 mg @ 50 mg/mL = 4 cc; 100 mg/5 mL → 20 mg/mL → 200 mg = 10 cc; water 5000 mg = 5 cc; oil 920 mg @ 0.92 g/mL = 1 cc; zero/negative/missing factor guards). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Metric to Standard Converter
 - **Summary:** Shipped Metric to Standard Converter on existing catalog slug metric-to-standard-converter (MetricToStandardConverter, catalog 6af46f17a27d8d1d4e990b06). Multi-field hub for length/area/mass/volume/temperature with accordion groups; US vs UK volume differentiated; temperature affine + absolute-zero guard; empty default; category switch clears values; original guide/charts/FAQs. Live Metric Converter pillar 6af451d1a27d8d1d4e98f9e8 preserved (brief typo …d2…); subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-356b delivery for Conversion and Units metric-to-standard hub under Metric Converter pillar.
