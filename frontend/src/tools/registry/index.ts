@@ -1205,6 +1205,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HoursToYearsConverter,
     })),
   ),
+  ImperialCalculator: lazyTool(() =>
+    import('@/tools/calculators/imperial/ImperialCalculator').then((mod) => ({
+      default: mod.ImperialCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
