@@ -242,6 +242,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GallonsToQuartsConverter: () => import('@/tools/calculators/gallons-to-quarts/detail'),
   GallonsToTonsConverter: () => import('@/tools/calculators/gallons-to-tons/detail'),
   GalToKgConverter: () => import('@/tools/calculators/gal-to-kg/detail'),
+  GramsInMlConverter: () => import('@/tools/calculators/grams-in-ml/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
