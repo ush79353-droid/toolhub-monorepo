@@ -275,6 +275,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KilometerCalculator: () => import('@/tools/calculators/kilometer-calculator/detail'),
   KilometerToMeterConverter: () => import('@/tools/calculators/kilometer-to-meter/detail'),
   KilometersToMilesCalculator: () => import('@/tools/calculators/kilometers-to-miles/detail'),
+  KmToFeetConversion: () => import('@/tools/calculators/km-to-feet/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

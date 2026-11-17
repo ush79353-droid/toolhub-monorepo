@@ -250,6 +250,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'KilometerCalculator',
   'KilometerToMeterConverter',
   'KilometersToMilesCalculator',
+  'KmToFeetConversion',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -688,6 +689,7 @@ if (isDirect) {
     !isApprovedComponentKey('KilometerCalculator') ||
     !isApprovedComponentKey('KilometerToMeterConverter') ||
     !isApprovedComponentKey('KilometersToMilesCalculator') ||
+    !isApprovedComponentKey('KmToFeetConversion') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
