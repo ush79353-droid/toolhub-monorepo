@@ -43,6 +43,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mortgage-amortization-calculator',
   'mortgage-acceleration-calculator',
   'mortgage-prepayment-calculator',
+  'mortgage-with-extra-payments-calculator',
   'acres-to-square-miles-calculator',
   'height-in-inches-calculator',
   'acre-to-are-conversion',
