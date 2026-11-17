@@ -284,6 +284,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'metric-to-standard-converter',
   'mg-to-cc-conversion',
   'mg-to-lbs-converter',
+  'mg-to-tablespoon-converter',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

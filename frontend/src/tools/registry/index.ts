@@ -1370,6 +1370,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MgToLbsConverter,
     })),
   ),
+  MgToTablespoonConverter: lazyTool(() =>
+    import('@/tools/calculators/mg-to-tablespoon/MgToTablespoonConverter').then((mod) => ({
+      default: mod.MgToTablespoonConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

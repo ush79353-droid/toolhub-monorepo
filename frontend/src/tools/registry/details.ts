@@ -289,6 +289,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MetricToStandardConverter: () => import('@/tools/calculators/metric-to-standard/detail'),
   MgToCcConverter: () => import('@/tools/calculators/mg-to-cc/detail'),
   MgToLbsConverter: () => import('@/tools/calculators/mg-to-lbs/detail'),
+  MgToTablespoonConverter: () => import('@/tools/calculators/mg-to-tablespoon/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
