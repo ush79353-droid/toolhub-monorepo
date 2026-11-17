@@ -1657,6 +1657,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginCalculatorClassicCalculator,
     })),
   ),
+  MarginCallCalculator: lazyTool(() =>
+    import('@/tools/calculators/margin-call/MarginCallCalculator').then((mod) => ({
+      default: mod.MarginCallCalculator,
+    })),
+  ),
   MarginInterestCalculator: lazyTool(() =>
     import('@/tools/calculators/margin-interest/MarginInterestCalculator').then((mod) => ({
       default: mod.MarginInterestCalculator,

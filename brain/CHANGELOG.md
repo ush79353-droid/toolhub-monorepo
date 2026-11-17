@@ -12,6 +12,14 @@
 - **Important Files:** `frontend/src/tools/calculators/margin-and-vat/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-margin-and-vat-tool.ts`, `brain/*`.
 - **Verification:** Catalog verified undeveloped before coding. Formula self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
 
+### 2026-11-17 — Annuity Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Annuity Calculator on existing catalog slug `annuity-calculator` (`AnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffa8`). Solve for initial deposit / final balance / annuity amount / time length / rate of return; deposit or withdrawal; ordinary or due; payment + compounding frequencies; start date; linked annual/periodic growth. Results summary + table (opening/final balance, periodic payment, totals, count, last payment date). Share/Reload/Clear/feedback. Activated.
+- **Formulas:** Period rate `i = (1 + r/m)^(m/q) − 1`. Schedule-based FV for ordinary/due with optional growth; inverse modes via closed form or bisection. Dates from payment-period calendar math.
+- **FX:** Independent currencies on initial deposit, annuity amount, and target final balance; normalize into initial-deposit currency. Rates/dates/durations never FX-converted.
+- **Example:** 0 opening · 1,000 monthly due · 6y · 5% monthly compound · no growth → final ≈ 84,113.28; total deposits 72,000; return ≈ 12,113.28; last deposit Oct 17, 2032 from Nov 17, 2026 start.
+- **Important Files:** `frontend/src/tools/calculators/annuity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-annuity-tool.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped (`6af46f0fa27d8d1d4e98ffa8`). Screenshot math self-check. MongoDB activated. Lint/builds/browser/automated tests omitted per user. No push/pull/sync.
+
 ### 2026-11-17 — Future Value of Annuity Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Future Value of Annuity Calculator on existing catalog slug `future-value-of-annuity-calculator` (`FutureValueOfAnnuityCalculator`, catalog `6af46f0fa27d8d1d4e98ffab`). Payment, interest rate, term yrs/mos, compounding/payment frequency, ordinary/due radios, future-value result; Advanced parameters: growth rate, number of periods, equivalent rates. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** i = (1+r/m)^(m/q)−1 (discrete) or e^(r/q)−1 (continuous); n = round(years×q). Ordinary FV = PMT×((1+i)^n−1)/i; due ×(1+i); zero interest FV = PMT×n; growing-annuity variants when g ≠ 0.

@@ -367,6 +367,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/debt-snowball/detail'),
   DebtToEquityCalculator: () =>
     import('@/tools/calculators/debt-to-equity/detail'),
+  DeferredAnnuityCalculator: () =>
+    import('@/tools/calculators/deferred-annuity/detail'),
   DividendDiscountModelCalculator: () =>
     import('@/tools/calculators/dividend-discount-model/detail'),
   DirectMaterialPriceVarianceCalculator: () =>
@@ -430,6 +432,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-and-vat/detail'),
   MarginCalculatorClassic: () =>
     import('@/tools/calculators/margin-calculator-classic/detail'),
+  MarginCallCalculator: () =>
+    import('@/tools/calculators/margin-call/detail'),
   MarginInterestCalculator: () =>
     import('@/tools/calculators/margin-interest/detail'),
   MarginOfSafetyCalculator: () =>

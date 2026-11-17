@@ -271,6 +271,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DebtAvalancheCalculator',
   'DebtCalculator',
   'DebtSnowballCalculator',
+  'DeferredAnnuityCalculator',
   'DividendDiscountModelCalculator',
   'DirectMaterialPriceVarianceCalculator',
   'EarCalculator',
@@ -302,6 +303,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginAndMarkupCalculator',
   'MarginCalculatorClassic',
   'MarginAndVatCalculator',
+  'MarginCallCalculator',
   'MarginInterestCalculator',
   'MarginOfSafetyCalculator',
   'MirrCalculator',
@@ -684,6 +686,7 @@ if (isDirect) {
     !isApprovedComponentKey('DebtAvalancheCalculator') ||
     !isApprovedComponentKey('DebtCalculator') ||
     !isApprovedComponentKey('DebtSnowballCalculator') ||
+    !isApprovedComponentKey('DeferredAnnuityCalculator') ||
     !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
     !isApprovedComponentKey('EarCalculator') ||
@@ -715,6 +718,7 @@ if (isDirect) {
     !isApprovedComponentKey('MarginAndMarkupCalculator') ||
     !isApprovedComponentKey('MarginCalculatorClassic') ||
     !isApprovedComponentKey('MarginAndVatCalculator') ||
+    !isApprovedComponentKey('MarginCallCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
     !isApprovedComponentKey('MarginOfSafetyCalculator') ||
     !isApprovedComponentKey('MirrCalculator') ||
