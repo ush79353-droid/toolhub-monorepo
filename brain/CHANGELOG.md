@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add lbs to g Converter
+- **Summary:** Shipped lbs to g Converter on existing catalog slug lbs-to-g-converter (LbsToGConverter, catalog 6af46f17a27d8d1d4e990b48). Bidirectional lb↔g via exact 1 lb = 453.59237 g; pounds-first UI; empty default; negatives rejected; original guide/table/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-353b delivery for Conversion and Units pounds-to-grams converter.
+- **Important Files:** frontend/src/tools/calculators/lbs-to-g/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 lb = 453.59237 g; 5 lb = 2267.96185 g; 0.5 lb = 226.796185 g; 500 g ≈ 1.10231131 lb; 1000 g ≈ 2.20462262 lb; zero; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Land Area Calculator
 - **Summary:** Shipped Land Area Calculator on existing catalog slug land-area-calculator (LandAreaCalculator, catalog 6af46f17a27d8d1d4e990b8c). Rectangular Area = Length × Width with independent length units and area output units; optional collapsed Unit and total price (currency denomination only); empty default m/m/m²; negatives rejected; regional land units omitted. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-352b delivery for Conversion and Units rectangular land area and optional land price estimator.
