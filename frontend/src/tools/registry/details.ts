@@ -240,6 +240,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GallonsToGramsConverter: () => import('@/tools/calculators/gallons-to-grams/detail'),
   GallonsToPintsConverter: () => import('@/tools/calculators/gallons-to-pints/detail'),
   GallonsToQuartsConverter: () => import('@/tools/calculators/gallons-to-quarts/detail'),
+  GallonsToTonsConverter: () => import('@/tools/calculators/gallons-to-tons/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
