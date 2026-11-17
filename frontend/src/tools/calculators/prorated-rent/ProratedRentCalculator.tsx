@@ -55,6 +55,15 @@ export function ProratedRentCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  // Re-run when FX snapshot arrives/changes so result currency converts without edits.
+  React.useEffect(() => {
+    const validation = validateProratedRentInput(input, rates);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    // ponytail: input intentionally omitted — keystroke path validates in apply()
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- rates snapshot only
+  }, [rates]);
+
   const apply = (next: ProratedRentInput) => {
     setInput(next);
     const validation = validateProratedRentInput(next, rates);
