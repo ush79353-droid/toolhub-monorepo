@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Metric to Standard Converter
+- **Summary:** Shipped Metric to Standard Converter on existing catalog slug metric-to-standard-converter (MetricToStandardConverter, catalog 6af46f17a27d8d1d4e990b06). Multi-field hub for length/area/mass/volume/temperature with accordion groups; US vs UK volume differentiated; temperature affine + absolute-zero guard; empty default; category switch clears values; original guide/charts/FAQs. Live Metric Converter pillar 6af451d1a27d8d1d4e98f9e8 preserved (brief typo …d2…); subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-356b delivery for Conversion and Units metric-to-standard hub under Metric Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/metric-to-standard/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 m = 100 cm; 1 in = 2.54 cm; 1 ft = 0.3048 m; 1 mi = 1.609344 km; area/mass/volume factors; US≠UK gallon; 0°C=32°F; 100°C=212°F; −40°C=−40°F; absolute-zero reject). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e8). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add lbs to Pounds Converter
 - **Summary:** Shipped lbs to Pounds Converter on existing catalog slug lbs-to-pounds-converter (LbsToPoundsConverter, catalog 6af46f17a27d8d1d4e990b4a). Identity lbs↔pounds (factor 1); default 1/1; reload restores defaults; clear empties; identity text sync preserves typing precision; negatives rejected; original guide/chart/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-355b delivery for Conversion and Units lbs/pounds identity converter.
