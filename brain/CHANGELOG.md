@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add g to tsp Converter
+- **Summary:** Shipped g to tsp Converter on existing catalog slug g-to-tsp-converter (GToTspConverter, catalog 6af46f17a27d8d1d4e990b3b). Density-based mass↔volume with salt default 1217 kg/m³; US tsp 4.92892159375 mL distinct from metric tsp; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-316b delivery for Conversion and Units density-based grams ↔ teaspoons cooking converter.
+- **Important Files:** frontend/src/tools/calculators/g-to-tsp/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (10 g water ≈ 2.0288 US tsp; salt @ 1.217; reverse 1 US tsp water = 4.92892159375 g). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add gr to ml Converter
 - **Summary:** Shipped gr to ml Converter on existing catalog slug gr-to-ml-converter (GrToMlConverter, catalog 6af46f17a27d8d1d4e990b3d). Density-based mass↔volume with ingredient presets; default water 1 g/mL and mL; null pillar/subPillar preserved. Meta title <=70; meta description trimmed to <=160. indexable left false.
 - **Why:** TOOL-315b delivery for Conversion and Units density-based grams ↔ milliliters converter (gr abbreviation branding).
