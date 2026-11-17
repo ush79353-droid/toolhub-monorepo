@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add Hours to Days Calculator
+- **Summary:** Shipped Hours to Days Calculator on existing catalog slug hours-to-days-calculator (HoursToDaysCalculator, catalog 6af46f17a27d8d1d4e990baa). Bidirectional hours↔days (exact ÷24); Other Quantities + HMS reuse hour-converter TIME_CONSTANTS; GCD fraction table with 1–72 expand; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-321b delivery for Conversion and Units hours ↔ days calculator.
+- **Important Files:** frontend/src/tools/calculators/hours-to-days/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (48 hr = 2 days; 100 hr ≈ 4.1666667 days; fraction labels 6→1/4, 36→3/2; HMS 2:30:45 → 0.1046875 day). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Hour Converter
 - **Summary:** Shipped Hour Converter on existing catalog slug hour-converter (HourConverter, catalog 6af46f17a27d8d1d4e990ba9). Synced hrs/yrs/mos/wks/days/min/sec plus editable HMS compound from canonical seconds; exact 3600 s/hr and 168 hr/wk; average Gregorian year/month (8765.82 / 730.485 hr); empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-320b delivery for Conversion and Units multi-field hour/time converter.
