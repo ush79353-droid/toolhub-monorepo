@@ -113,6 +113,33 @@ export function convertAngle(
   return fromRadians(toRadians(value, from), to);
 }
 
+/** Exact sexagesimal factor — prefer over radians round-trips for degree↔arcminute tools. */
+export const ARCMINUTES_PER_DEGREE = 60;
+export const ARCSECONDS_PER_ARCMINUTE = 60;
+export const ARCSECONDS_PER_DEGREE = ARCMINUTES_PER_DEGREE * ARCSECONDS_PER_ARCMINUTE;
+
+export function degreesToArcminutes(degrees: number): number {
+  if (!Number.isFinite(degrees)) {
+    throw new Error('Invalid angle in degrees');
+  }
+  const result = degrees * ARCMINUTES_PER_DEGREE;
+  if (!Number.isFinite(result)) {
+    throw new Error('Conversion result is out of range');
+  }
+  return result;
+}
+
+export function arcminutesToDegrees(arcminutes: number): number {
+  if (!Number.isFinite(arcminutes)) {
+    throw new Error('Invalid angle in arcminutes');
+  }
+  const result = arcminutes / ARCMINUTES_PER_DEGREE;
+  if (!Number.isFinite(result)) {
+    throw new Error('Conversion result is out of range');
+  }
+  return result;
+}
+
 export function dmsToRadians(degrees: number, minutes: number, seconds: number, sign: 1 | -1): number {
   return degreesToRadians(dmsToDecimalDegrees(degrees, minutes, seconds, sign));
 }
