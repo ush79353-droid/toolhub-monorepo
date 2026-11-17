@@ -1,5 +1,6 @@
 export const APPROVED_COMPONENT_KEYS = [
   'AutoLoanCalculator',
+  'DebtCalculator',
   'InterestRateParityCalculator',
   'LoanCalculator',
   'LoanInterestCalculator',
@@ -484,6 +485,7 @@ export function isApprovedComponentKey(key: string): key is ApprovedComponentKey
 /** Keys with a React component in `tools/registry`. Allowlisted keys without a component stay out. */
 export const REGISTERED_COMPONENT_KEYS = [
   'AutoLoanCalculator',
+  'DebtCalculator',
   'InterestRateParityCalculator',
   'LoanCalculator',
   'RrefCalculator',

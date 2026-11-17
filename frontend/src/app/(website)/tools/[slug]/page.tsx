@@ -28,6 +28,7 @@ import type { ToolMetadata } from '@/types/tool';
 
 /** Phase 3: load FX rates only for conversion-enabled calculators. */
 const CURRENCY_CONVERSION_SLUGS = new Set([
+  'debt-calculator',
   'interest-rate-parity-calculator',
   'loan-interest-calculator',
   'margin-interest-calculator',
