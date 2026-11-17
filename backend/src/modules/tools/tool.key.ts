@@ -256,6 +256,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'KpaToMmhgConversion',
   'KpaToPsiConversion',
   'KsiToMpaConverter',
+  'KsiToPsiConversion',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -700,6 +701,7 @@ if (isDirect) {
     !isApprovedComponentKey('KpaToMmhgConversion') ||
     !isApprovedComponentKey('KpaToPsiConversion') ||
     !isApprovedComponentKey('KsiToMpaConverter') ||
+    !isApprovedComponentKey('KsiToPsiConversion') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
