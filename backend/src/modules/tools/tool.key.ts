@@ -273,6 +273,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MillisecondsConverter',
   'MilToInchConversion',
   'MilToMmConversion',
+  'MinuteConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -734,6 +735,7 @@ if (isDirect) {
     !isApprovedComponentKey('MillisecondsConverter') ||
     !isApprovedComponentKey('MilToInchConversion') ||
     !isApprovedComponentKey('MilToMmConversion') ||
+    !isApprovedComponentKey('MinuteConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
