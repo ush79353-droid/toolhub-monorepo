@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add lbs to kg Converter
+- **Summary:** Shipped lbs to kg Converter on existing catalog slug lbs-to-kg-converter (LbsToKgConverter, catalog 6af46f17a27d8d1d4e990b49). Bidirectional lb↔kg via exact 1 lb = 0.45359237 kg (reuses weight-converter KG_PER_POUND); pounds-first UI; empty default; negatives rejected; original guide/table/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-354b delivery for Conversion and Units pounds-to-kilograms converter.
+- **Important Files:** frontend/src/tools/calculators/lbs-to-kg/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 lb = 0.45359237 kg; 100 lb = 45.359237 kg; 125 lb = 56.69904625 kg; 50 kg ≈ 110.231131 lb; zero; negatives rejected; weight-converter cross-check). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add lbs to g Converter
 - **Summary:** Shipped lbs to g Converter on existing catalog slug lbs-to-g-converter (LbsToGConverter, catalog 6af46f17a27d8d1d4e990b48). Bidirectional lb↔g via exact 1 lb = 453.59237 g; pounds-first UI; empty default; negatives rejected; original guide/table/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-353b delivery for Conversion and Units pounds-to-grams converter.
