@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add g to lbs Converter
+- **Summary:** Shipped g to lbs Converter on existing catalog slug g-to-lbs-converter (GToLbsConverter, catalog 6af46f17a27d8d1d4e990b3a). Bidirectional grams↔pounds with exact 1 lb = 453.59237 g; simple two-field UI; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-317b delivery for Conversion and Units grams ↔ pounds mass converter.
+- **Important Files:** frontend/src/tools/calculators/g-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (500 g ≈ 1.10231131 lb; 1 lb = 453.59237 g; 2 lb = 907.18474 g). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — Add g to tsp Converter
 - **Summary:** Shipped g to tsp Converter on existing catalog slug g-to-tsp-converter (GToTspConverter, catalog 6af46f17a27d8d1d4e990b3b). Density-based mass↔volume with salt default 1217 kg/m³; US tsp 4.92892159375 mL distinct from metric tsp; null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-316b delivery for Conversion and Units density-based grams ↔ teaspoons cooking converter.
