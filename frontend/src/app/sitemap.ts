@@ -295,6 +295,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mil-to-mm-conversion',
   'minute-converter',
   'minutes-to-days-calculator',
+  'minutes-to-decimal-calculator',
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',

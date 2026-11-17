@@ -1425,6 +1425,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MinutesToDaysCalculator,
     })),
   ),
+  MinutesToDecimalCalculator: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-decimal/MinutesToDecimalCalculator').then((mod) => ({
+      default: mod.MinutesToDecimalCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
