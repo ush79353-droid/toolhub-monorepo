@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add kg to Ounce Converter
+- **Summary:** Shipped kg to Ounce Converter on existing catalog slug kg-to-ounce-converter (KgToOunceConverter, catalog 6af46f17a27d8d1d4e990b45). Bidirectional kg↔avoirdupois oz via exact 1 oz = 0.028349523125 kg; Other units accordion with troy oz, pounds+ounces remainder normalization, and more-units selector; reuses weight-converter constants + formatMass; empty default; negative mass rejected; original guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-340b delivery for Conversion and Units kilograms↔ounces pair converter with related mass units.
+- **Important Files:** frontend/src/tools/calculators/kg-to-ounce/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 kg ≈ 35.27396195 oz; 16 oz = 0.45359237 kg; 1 kg ≈ 32.15074657 oz t; 1 kg → 2 lb 3.27396195 oz; weight-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add kg to mL Converter
 - **Summary:** Shipped kg to mL Converter on existing catalog slug kg-to-ml-converter (KgToMlConverter, catalog 6af46f17a27d8d1d4e990b44). Density-based bidirectional kg↔mL via kg/m³ canonical; Water default 1000 kg/m³; collapsible density lookup; substance presets (milk 1030, olive oil 918, honey 1420, …); Custom density with unit normalization; empty mass/volume; negatives/zero density rejected. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-339b delivery for Conversion and Units mass↔milliliters via density.
