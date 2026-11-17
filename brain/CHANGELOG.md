@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add kg to Liter Converter
+- **Summary:** Shipped kg to Liter Converter on existing catalog slug kg-to-liter-converter (KgToLiterConverter, catalog 6af46f17a27d8d1d4e990b43). Density-based bidirectional kg↔L; Fresh water default ≈ 1 kg/L; substance presets (olive oil 0.918, milk 1.03, honey 1.42, …); Custom density with kg/L·g/mL·g/cm³·kg/m³ normalization; empty mass/volume; negatives/zero density rejected. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-338b delivery for Conversion and Units mass↔volume via density.
+- **Important Files:** frontend/src/tools/calculators/kg-to-liter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (water 1 kg = 1 L; olive oil 5 kg ≈ 5.4466 L; honey 2 L = 2.84 kg; milk 10 kg ≈ 9.7087 L; density unit normalization; zero/negative rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add kg to lbs Converter
 - **Summary:** Shipped kg to lbs Converter on existing catalog slug kg-to-lbs-converter (KgToLbsConverter, catalog 6af46f17a27d8d1d4e990b42). Bidirectional kg↔lb via exact international avoirdupois pound (1 lb = 0.45359237 kg); reuses weight-converter KG_PER_POUND + formatMass; empty default; negative mass rejected; original guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-337b delivery for Conversion and Units kilograms↔pounds pair converter.
