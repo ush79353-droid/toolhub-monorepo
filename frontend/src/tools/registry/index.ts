@@ -1754,6 +1754,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetDebtCalculator,
     })),
   ),
+  NewYorkOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/new-york-overtime/NewYorkOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.NewYorkOvertimeCalculator,
+    })),
+  ),
   NopatCalculator: lazyTool(() =>
     import('@/tools/calculators/nopat/NopatCalculator').then((mod) => ({
       default: mod.NopatCalculator,
@@ -1782,6 +1789,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   OpportunityCostCalculator: lazyTool(() =>
     import('@/tools/calculators/opportunity-cost/OpportunityCostCalculator').then((mod) => ({
       default: mod.OpportunityCostCalculator,
+    })),
+  ),
+  OvertimePaycheckCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/overtime-paycheck/OvertimePaycheckCalculator'
+    ).then((mod) => ({
+      default: mod.OvertimePaycheckCalculator,
     })),
   ),
   OvertimeCalculator: lazyTool(() =>
@@ -1848,6 +1862,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   PriceQuantityCalculator: lazyTool(() =>
     import('@/tools/calculators/price-quantity/PriceQuantityCalculator').then((mod) => ({
       default: mod.PriceQuantityCalculator,
+    })),
+  ),
+  ProratedRentCalculator: lazyTool(() =>
+    import('@/tools/calculators/prorated-rent/ProratedRentCalculator').then((mod) => ({
+      default: mod.ProratedRentCalculator,
     })),
   ),
   PvgoCalculator: lazyTool(() =>

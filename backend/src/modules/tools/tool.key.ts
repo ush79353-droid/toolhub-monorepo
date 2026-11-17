@@ -319,12 +319,14 @@ export const APPROVED_COMPONENT_KEYS = [
   'MutualFundCalculator',
   'MvaCalculator',
   'NetDebtCalculator',
+  'NewYorkOvertimeCalculator',
   'NopatCalculator',
   'NpvCalculator',
   'OnlineMarketingConversionCalculator',
   'OperatingAssetTurnoverCalculator',
   'OptimalHedgeRatioCalculator',
   'OpportunityCostCalculator',
+  'OvertimePaycheckCalculator',
   'ParkingRatioCalculator',
   'PartiallyAmortizedLoanCalculator',
   'PaydayLoanCalculator',
@@ -336,6 +338,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PresentValueCalculator',
   'PresentValueOfAnnuityCalculator',
   'PriceQuantityCalculator',
+  'ProratedRentCalculator',
   'PvgoCalculator',
   'PvifaCalculator',
   'RateOfReturnCalculator',
@@ -745,12 +748,14 @@ if (isDirect) {
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
     !isApprovedComponentKey('NetDebtCalculator') ||
+    !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('NpvCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
     !isApprovedComponentKey('OperatingAssetTurnoverCalculator') ||
     !isApprovedComponentKey('OptimalHedgeRatioCalculator') ||
     !isApprovedComponentKey('OpportunityCostCalculator') ||
+    !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('ParkingRatioCalculator') ||
     !isApprovedComponentKey('PartiallyAmortizedLoanCalculator') ||
     !isApprovedComponentKey('PaydayLoanCalculator') ||
@@ -762,6 +767,7 @@ if (isDirect) {
     !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PresentValueOfAnnuityCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
+    !isApprovedComponentKey('ProratedRentCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('PvifaCalculator') ||
     !isApprovedComponentKey('RateOfReturnCalculator') ||

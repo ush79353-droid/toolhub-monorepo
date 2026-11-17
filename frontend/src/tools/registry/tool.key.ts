@@ -310,6 +310,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MutualFundCalculator',
   'MvaCalculator',
   'NetDebtCalculator',
+  'NewYorkOvertimeCalculator',
   'NopatCalculator',
   'NpvCalculator',
   'OnlineMarketingConversionCalculator',
@@ -327,6 +328,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PresentValueCalculator',
   'PresentValueOfAnnuityCalculator',
   'PriceQuantityCalculator',
+  'ProratedRentCalculator',
   'PvgoCalculator',
   'PvifaCalculator',
   'RateOfReturnCalculator',
@@ -726,6 +728,7 @@ if (isDirect) {
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
     !isApprovedComponentKey('NetDebtCalculator') ||
+    !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('NpvCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
@@ -743,6 +746,7 @@ if (isDirect) {
     !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PresentValueOfAnnuityCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
+    !isApprovedComponentKey('ProratedRentCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('PvifaCalculator') ||
     !isApprovedComponentKey('RateOfReturnCalculator') ||
