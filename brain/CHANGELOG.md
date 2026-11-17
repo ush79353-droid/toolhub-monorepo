@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add dm Converter
+- **Summary:** Shipped dm Converter on existing catalog slug dm-converter (DmConverter, catalog 6af46f17a27d8d1d4e990b84). Primary decimeter field; Metric / Imperial/US / Others accordions; meters as base; non-negative validation; reuses meter-converter length factors/formatters via convertDm. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-295b delivery for Conversion and Units length converter (decimeter focus).
+- **Important Files:** frontend/src/tools/calculators/dm-converter/*, meter-converter types reused, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-17 — ADR-019: two-commit calculator delivery
 - **Summary:** Amended ADR-019 from size-banded milestone commits (small 1–2 / medium 2–3 / large 3–5) to exactly two commits per new calculator: (1) all tool files, (2) Brain docs last. Synced Cursor/Antigravity git-commits rules, playbook Step 19, calculator standards, `AGENTS.md`, and related Brain references. No calculator source changed.
 - **Why:** Agents were landing ~4 commits per tool; the team wants a fixed tool + Brain split only.
