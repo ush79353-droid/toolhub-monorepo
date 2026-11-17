@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add kg/cm² to PSI Converter
+- **Summary:** Shipped kg/cm² to psi Converter on existing catalog slug kgcm-to-psi-converter (KgCmToPsiConverter, catalog 6af46f17a27d8d1d4e990ae5). Bidirectional kgf/cm²↔psi via exact 98,066.5 / 6,894.757293168 Pa factor; empty default; signed gauge values allowed; original guide/table/FAQs. Live PSI Converter pillar `6af451d0a27d8d1d4e98f9e4` preserved (brief listed `…d2…`; refuse overwrite). Meta title <=70. indexable left false.
+- **Why:** TOOL-336b delivery for Conversion and Units kgf/cm²↔PSI pair converter.
+- **Important Files:** frontend/src/tools/calculators/kgcm-to-psi/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 kgf/cm² ≈ 14.223343 psi; 7 ≈ 99.563403; 100 psi ≈ 7.030696 kgf/cm²; negatives accepted; round-trips). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d0a27d8d1d4e98f9e4). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add Kelvin to Fahrenheit Converter
 - **Summary:** Shipped Kelvin to Fahrenheit Converter on existing catalog slug kelvin-to-fahrenheit-converter (KelvinToFahrenheitConverter, catalog 6af46f17a27d8d1d4e990b1b). Bidirectional K↔°F with exact (K−273.15)×9/5+32 and reverse; equivalent 1.8K−459.67 forms verified; absolute-zero validation (0 K / −459.67°F); empty default; formatTemp reuse; original guide/table/FAQs. Fahrenheit Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-335b delivery for Conversion and Units Kelvin↔Fahrenheit pair converter.
