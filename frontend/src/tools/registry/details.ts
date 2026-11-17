@@ -259,6 +259,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ImperialCalculator: () => import('@/tools/calculators/imperial/detail'),
   ImperialToMetricConversion: () => import('@/tools/calculators/imperial-to-metric/detail'),
   InchConverter: () => import('@/tools/calculators/inch-converter/detail'),
+  InchesToYardConversion: () => import('@/tools/calculators/inches-to-yards/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>
