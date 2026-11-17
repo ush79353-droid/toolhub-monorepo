@@ -283,6 +283,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KsiToMpaConverter: () => import('@/tools/calculators/ksi-to-mpa/detail'),
   KsiToPsiConversion: () => import('@/tools/calculators/ksi-to-psi/detail'),
   LandAreaCalculator: () => import('@/tools/calculators/land-area/detail'),
+  LbsToGConverter: () => import('@/tools/calculators/lbs-to-g/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

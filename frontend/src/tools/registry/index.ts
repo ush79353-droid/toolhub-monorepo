@@ -1340,6 +1340,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LandAreaCalculator,
     })),
   ),
+  LbsToGConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-g/LbsToGConverter').then((mod) => ({
+      default: mod.LbsToGConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
