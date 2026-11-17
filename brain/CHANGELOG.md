@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-17 — Add kPa to atm Conversion
+- **Summary:** Shipped kPa to atm Conversion on existing catalog slug kpa-to-atm-conversion (KpaToAtmConversion, catalog 6af46f17a27d8d1d4e990b25). Bidirectional kPa↔atm via exact 1 atm = 101.325 kPa; reuses pressure-conversion convertPressure; empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ef preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-347b delivery for Conversion and Units kilopascal-to-atmosphere converter under kPa Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/kpa-to-atm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (101.325 kPa = 1 atm; 2 atm = 202.65 kPa; 20 kPa ≈ 0.19738465 atm; 2.5 atm = 253.3125 kPa; round-trip; negatives accepted). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ef). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
 ### 2026-11-17 — Add kPa Converter
 - **Summary:** Shipped kPa Converter on existing catalog slug kpa-converter (KpaConverter, catalog 6af46f17a27d8d1d4e990b24). Primary kPa with expandable bar/psi/atm; reuses pressure-conversion convertPressure; exact 1 bar = 100 kPa and 1 atm = 101.325 kPa; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar preserved from live row; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-346b delivery for Conversion and Units kilopascal multi-unit pressure converter.
