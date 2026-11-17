@@ -1024,6 +1024,422 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DaysToYearsCalculator,
     })),
   ),
+  DegreesToMinutesConverter: lazyTool(() =>
+    import('@/tools/calculators/degrees-to-minutes/DegreesToMinutesConverter').then((mod) => ({
+      default: mod.DegreesToMinutesConverter,
+    })),
+  ),
+  DegreesToRadiansConverter: lazyTool(() =>
+    import('@/tools/calculators/degrees-to-radians/DegreesToRadiansConverter').then((mod) => ({
+      default: mod.DegreesToRadiansConverter,
+    })),
+  ),
+  DegreesToSecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/degrees-to-seconds/DegreesToSecondsConverter').then((mod) => ({
+      default: mod.DegreesToSecondsConverter,
+    })),
+  ),
+  DistanceConverter: lazyTool(() =>
+    import('@/tools/calculators/distance-converter/DistanceConverter').then((mod) => ({
+      default: mod.DistanceConverter,
+    })),
+  ),
+  DmConverter: lazyTool(() =>
+    import('@/tools/calculators/dm-converter/DmConverter').then((mod) => ({
+      default: mod.DmConverter,
+    })),
+  ),
+  FahrenheitConverter: lazyTool(() =>
+    import('@/tools/calculators/fahrenheit-converter/FahrenheitConverter').then((mod) => ({
+      default: mod.FahrenheitConverter,
+    })),
+  ),
+  FahrenheitToCelsiusConverter: lazyTool(() =>
+    import('@/tools/calculators/fahrenheit-to-celsius/FahrenheitToCelsiusConverter').then(
+      (mod) => ({
+        default: mod.FahrenheitToCelsiusConverter,
+      }),
+    ),
+  ),
+  FeetConverter: lazyTool(() =>
+    import('@/tools/calculators/feet-converter/FeetConverter').then((mod) => ({
+      default: mod.FeetConverter,
+    })),
+  ),
+  FeetToMilesConverter: lazyTool(() =>
+    import('@/tools/calculators/feet-to-miles/FeetToMilesConverter').then((mod) => ({
+      default: mod.FeetToMilesConverter,
+    })),
+  ),
+  FeetToYardsConverter: lazyTool(() =>
+    import('@/tools/calculators/feet-to-yards/FeetToYardsConverter').then((mod) => ({
+      default: mod.FeetToYardsConverter,
+    })),
+  ),
+  FluidOuncesToPoundsConverter: lazyTool(() =>
+    import('@/tools/calculators/fluid-ounces-to-pounds/FluidOuncesToPoundsConverter').then(
+      (mod) => ({
+        default: mod.FluidOuncesToPoundsConverter,
+      }),
+    ),
+  ),
+  FootToCentimeterConverter: lazyTool(() =>
+    import('@/tools/calculators/foot-to-centimeter/FootToCentimeterConverter').then((mod) => ({
+      default: mod.FootToCentimeterConverter,
+    })),
+  ),
+  FtToMConverter: lazyTool(() =>
+    import('@/tools/calculators/ft-to-m/FtToMConverter').then((mod) => ({
+      default: mod.FtToMConverter,
+    })),
+  ),
+  GajToSquareYardConverter: lazyTool(() =>
+    import('@/tools/calculators/gaj-to-square-yard/GajToSquareYardConverter').then((mod) => ({
+      default: mod.GajToSquareYardConverter,
+    })),
+  ),
+  GallonsToCubicFeetConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-cubic-feet/GallonsToCubicFeetConverter').then(
+      (mod) => ({
+        default: mod.GallonsToCubicFeetConverter,
+      }),
+    ),
+  ),
+  GallonsToCupsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-cups/GallonsToCupsConverter').then((mod) => ({
+      default: mod.GallonsToCupsConverter,
+    })),
+  ),
+  GallonsToGramsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-grams/GallonsToGramsConverter').then((mod) => ({
+      default: mod.GallonsToGramsConverter,
+    })),
+  ),
+  GallonsToPintsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-pints/GallonsToPintsConverter').then((mod) => ({
+      default: mod.GallonsToPintsConverter,
+    })),
+  ),
+  GallonsToQuartsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-quarts/GallonsToQuartsConverter').then((mod) => ({
+      default: mod.GallonsToQuartsConverter,
+    })),
+  ),
+  GallonsToTonsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-tons/GallonsToTonsConverter').then((mod) => ({
+      default: mod.GallonsToTonsConverter,
+    })),
+  ),
+  GalToKgConverter: lazyTool(() =>
+    import('@/tools/calculators/gal-to-kg/GalToKgConverter').then((mod) => ({
+      default: mod.GalToKgConverter,
+    })),
+  ),
+  GramsInMlConverter: lazyTool(() =>
+    import('@/tools/calculators/grams-in-ml/GramsInMlConverter').then((mod) => ({
+      default: mod.GramsInMlConverter,
+    })),
+  ),
+  GramsToFlOzConverter: lazyTool(() =>
+    import('@/tools/calculators/grams-to-fl-oz/GramsToFlOzConverter').then((mod) => ({
+      default: mod.GramsToFlOzConverter,
+    })),
+  ),
+  GramToLiterConversion: lazyTool(() =>
+    import('@/tools/calculators/gram-to-liter/GramToLiterConversion').then((mod) => ({
+      default: mod.GramToLiterConversion,
+    })),
+  ),
+  GrToMlConverter: lazyTool(() =>
+    import('@/tools/calculators/gr-to-ml/GrToMlConverter').then((mod) => ({
+      default: mod.GrToMlConverter,
+    })),
+  ),
+  GToTspConverter: lazyTool(() =>
+    import('@/tools/calculators/g-to-tsp/GToTspConverter').then((mod) => ({
+      default: mod.GToTspConverter,
+    })),
+  ),
+  GToLbsConverter: lazyTool(() =>
+    import('@/tools/calculators/g-to-lbs/GToLbsConverter').then((mod) => ({
+      default: mod.GToLbsConverter,
+    })),
+  ),
+  HectaresToAcresConverter: lazyTool(() =>
+    import('@/tools/calculators/hectares-to-acres/HectaresToAcresConverter').then((mod) => ({
+      default: mod.HectaresToAcresConverter,
+    })),
+  ),
+  HeightConverter: lazyTool(() =>
+    import('@/tools/calculators/height-converter/HeightConverter').then((mod) => ({
+      default: mod.HeightConverter,
+    })),
+  ),
+  HourConverter: lazyTool(() =>
+    import('@/tools/calculators/hour-converter/HourConverter').then((mod) => ({
+      default: mod.HourConverter,
+    })),
+  ),
+  HoursToDaysCalculator: lazyTool(() =>
+    import('@/tools/calculators/hours-to-days/HoursToDaysCalculator').then((mod) => ({
+      default: mod.HoursToDaysCalculator,
+    })),
+  ),
+  HoursToMinutesConverter: lazyTool(() =>
+    import('@/tools/calculators/hours-to-minutes/HoursToMinutesConverter').then((mod) => ({
+      default: mod.HoursToMinutesConverter,
+    })),
+  ),
+  HoursToSecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/hours-to-seconds/HoursToSecondsConverter').then((mod) => ({
+      default: mod.HoursToSecondsConverter,
+    })),
+  ),
+  HoursToWeekConversion: lazyTool(() =>
+    import('@/tools/calculators/hours-to-weeks/HoursToWeekConversion').then((mod) => ({
+      default: mod.HoursToWeekConversion,
+    })),
+  ),
+  HoursToYearsConverter: lazyTool(() =>
+    import('@/tools/calculators/hours-to-years/HoursToYearsConverter').then((mod) => ({
+      default: mod.HoursToYearsConverter,
+    })),
+  ),
+  ImperialCalculator: lazyTool(() =>
+    import('@/tools/calculators/imperial/ImperialCalculator').then((mod) => ({
+      default: mod.ImperialCalculator,
+    })),
+  ),
+  ImperialToMetricConversion: lazyTool(() =>
+    import('@/tools/calculators/imperial-to-metric/ImperialToMetricConversion').then((mod) => ({
+      default: mod.ImperialToMetricConversion,
+    })),
+  ),
+  InchConverter: lazyTool(() =>
+    import('@/tools/calculators/inch-converter/InchConverter').then((mod) => ({
+      default: mod.InchConverter,
+    })),
+  ),
+  InchToMeterCalculator: lazyTool(() =>
+    import('@/tools/calculators/inch-to-meter/InchToMeterCalculator').then((mod) => ({
+      default: mod.InchToMeterCalculator,
+    })),
+  ),
+  InchesToYardConversion: lazyTool(() =>
+    import('@/tools/calculators/inches-to-yards/InchesToYardsConverter').then((mod) => ({
+      default: mod.InchesToYardsConverter,
+    })),
+  ),
+  InToCmConverter: lazyTool(() =>
+    import('@/tools/calculators/in-to-cm/InToCmConverter').then((mod) => ({
+      default: mod.InToCmConverter,
+    })),
+  ),
+  KathaToSquareFeetConverter: lazyTool(() =>
+    import('@/tools/calculators/katha-to-sqft/KathaToSquareFeetConverter').then((mod) => ({
+      default: mod.KathaToSquareFeetConverter,
+    })),
+  ),
+  KelvinConverter: lazyTool(() =>
+    import('@/tools/calculators/kelvin-converter/KelvinConverter').then((mod) => ({
+      default: mod.KelvinConverter,
+    })),
+  ),
+  KelvinToCelsiusConverter: lazyTool(() =>
+    import('@/tools/calculators/kelvin-to-celsius/KelvinToCelsiusConverter').then((mod) => ({
+      default: mod.KelvinToCelsiusConverter,
+    })),
+  ),
+  KelvinToFahrenheitConverter: lazyTool(() =>
+    import('@/tools/calculators/kelvin-to-fahrenheit/KelvinToFahrenheitConverter').then((mod) => ({
+      default: mod.KelvinToFahrenheitConverter,
+    })),
+  ),
+  KgCmToPsiConverter: lazyTool(() =>
+    import('@/tools/calculators/kgcm-to-psi/KgCmToPsiConverter').then((mod) => ({
+      default: mod.KgCmToPsiConverter,
+    })),
+  ),
+  KgToLbsConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-lbs/KgToLbsConverter').then((mod) => ({
+      default: mod.KgToLbsConverter,
+    })),
+  ),
+  KgToLiterConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-liter/KgToLiterConverter').then((mod) => ({
+      default: mod.KgToLiterConverter,
+    })),
+  ),
+  KgToMlConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-ml/KgToMlConverter').then((mod) => ({
+      default: mod.KgToMlConverter,
+    })),
+  ),
+  KgToOunceConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-ounce/KgToOunceConverter').then((mod) => ({
+      default: mod.KgToOunceConverter,
+    })),
+  ),
+  KgToStonesConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-stones/KgToStonesConverter').then((mod) => ({
+      default: mod.KgToStonesConverter,
+    })),
+  ),
+  KilometerCalculator: lazyTool(() =>
+    import('@/tools/calculators/kilometer-calculator/KilometerCalculator').then((mod) => ({
+      default: mod.KilometerCalculator,
+    })),
+  ),
+  KilometerToMeterConverter: lazyTool(() =>
+    import('@/tools/calculators/kilometer-to-meter/KilometerToMeterConverter').then((mod) => ({
+      default: mod.KilometerToMeterConverter,
+    })),
+  ),
+  KilometersToMilesCalculator: lazyTool(() =>
+    import('@/tools/calculators/kilometers-to-miles/KilometersToMilesCalculator').then((mod) => ({
+      default: mod.KilometersToMilesCalculator,
+    })),
+  ),
+  KmToFeetConversion: lazyTool(() =>
+    import('@/tools/calculators/km-to-feet/KmToFeetConversion').then((mod) => ({
+      default: mod.KmToFeetConversion,
+    })),
+  ),
+  KpaConverter: lazyTool(() =>
+    import('@/tools/calculators/kpa-converter/KpaConverter').then((mod) => ({
+      default: mod.KpaConverter,
+    })),
+  ),
+  KpaToAtmConversion: lazyTool(() =>
+    import('@/tools/calculators/kpa-to-atm/KpaToAtmConversion').then((mod) => ({
+      default: mod.KpaToAtmConversion,
+    })),
+  ),
+  KpaToMmhgConversion: lazyTool(() =>
+    import('@/tools/calculators/kpa-to-mmhg/KpaToMmhgConversion').then((mod) => ({
+      default: mod.KpaToMmhgConversion,
+    })),
+  ),
+  KpaToPsiConversion: lazyTool(() =>
+    import('@/tools/calculators/kpa-to-psi/KpaToPsiConversion').then((mod) => ({
+      default: mod.KpaToPsiConversion,
+    })),
+  ),
+  KsiToMpaConverter: lazyTool(() =>
+    import('@/tools/calculators/ksi-to-mpa/KsiToMpaConverter').then((mod) => ({
+      default: mod.KsiToMpaConverter,
+    })),
+  ),
+  KsiToPsiConversion: lazyTool(() =>
+    import('@/tools/calculators/ksi-to-psi/KsiToPsiConversion').then((mod) => ({
+      default: mod.KsiToPsiConversion,
+    })),
+  ),
+  LandAreaCalculator: lazyTool(() =>
+    import('@/tools/calculators/land-area/LandAreaCalculator').then((mod) => ({
+      default: mod.LandAreaCalculator,
+    })),
+  ),
+  LbsToGConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-g/LbsToGConverter').then((mod) => ({
+      default: mod.LbsToGConverter,
+    })),
+  ),
+  LbsToKgConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-kg/LbsToKgConverter').then((mod) => ({
+      default: mod.LbsToKgConverter,
+    })),
+  ),
+  LbsToPoundsConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-pounds/LbsToPoundsConverter').then((mod) => ({
+      default: mod.LbsToPoundsConverter,
+    })),
+  ),
+  MetricToStandardConverter: lazyTool(() =>
+    import('@/tools/calculators/metric-to-standard/MetricToStandardConverter').then((mod) => ({
+      default: mod.MetricToStandardConverter,
+    })),
+  ),
+  MgToCcConverter: lazyTool(() =>
+    import('@/tools/calculators/mg-to-cc/MgToCcConverter').then((mod) => ({
+      default: mod.MgToCcConverter,
+    })),
+  ),
+  MgToLbsConverter: lazyTool(() =>
+    import('@/tools/calculators/mg-to-lbs/MgToLbsConverter').then((mod) => ({
+      default: mod.MgToLbsConverter,
+    })),
+  ),
+  MgToTablespoonConverter: lazyTool(() =>
+    import('@/tools/calculators/mg-to-tablespoon/MgToTablespoonConverter').then((mod) => ({
+      default: mod.MgToTablespoonConverter,
+    })),
+  ),
+  MgToTeaspoonConverter: lazyTool(() =>
+    import('@/tools/calculators/mg-to-teaspoon/MgToTeaspoonConverter').then((mod) => ({
+      default: mod.MgToTeaspoonConverter,
+    })),
+  ),
+  MicronToMilConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/micron-to-mil/MicronToMilConversionCalculator').then((mod) => ({
+      default: mod.MicronToMilConversionCalculator,
+    })),
+  ),
+  MilConversion: lazyTool(() =>
+    import('@/tools/calculators/mil-conversion/MilConversion').then((mod) => ({
+      default: mod.MilConversion,
+    })),
+  ),
+  MileConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/mile-conversion/MileConversionCalculator').then((mod) => ({
+      default: mod.MileConversionCalculator,
+    })),
+  ),
+  MillimeterCalculator: lazyTool(() =>
+    import('@/tools/calculators/millimeter/MillimeterCalculator').then((mod) => ({
+      default: mod.MillimeterCalculator,
+    })),
+  ),
+  MillisecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/milliseconds/MillisecondsConverter').then((mod) => ({
+      default: mod.MillisecondsConverter,
+    })),
+  ),
+  MilToInchConversion: lazyTool(() =>
+    import('@/tools/calculators/mil-to-inch/MilToInchConversion').then((mod) => ({
+      default: mod.MilToInchConversion,
+    })),
+  ),
+  MilToMmConversion: lazyTool(() =>
+    import('@/tools/calculators/mil-to-mm/MilToMmConversion').then((mod) => ({
+      default: mod.MilToMmConversion,
+    })),
+  ),
+  MinuteConverter: lazyTool(() =>
+    import('@/tools/calculators/minute-converter/MinuteConverter').then((mod) => ({
+      default: mod.MinuteConverter,
+    })),
+  ),
+  MinutesToDaysCalculator: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-days/MinutesToDaysCalculator').then((mod) => ({
+      default: mod.MinutesToDaysCalculator,
+    })),
+  ),
+  MinutesToDecimalCalculator: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-decimal/MinutesToDecimalCalculator').then((mod) => ({
+      default: mod.MinutesToDecimalCalculator,
+    })),
+  ),
+  MinutesToSecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-seconds/MinutesToSecondsConverter').then((mod) => ({
+      default: mod.MinutesToSecondsConverter,
+    })),
+  ),
+  MinutesToYearsConversion: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-years/MinutesToYearsConversion').then((mod) => ({
+      default: mod.MinutesToYearsConversion,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

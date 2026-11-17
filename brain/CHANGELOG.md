@@ -4,6 +4,7 @@
 
 ---
 
+<<<<<<< HEAD
 ### 2026-11-17 — Interest Per Day Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Interest Per Day Calculator on existing catalog slug `interest-per-day-calculator` (`InterestPerDayCalculator`, catalog `6af46f0fa27d8d1d4e98ff85`). Screenshot fields: loan balance, annual interest rate %, interest per day, interest rate per day % (`%` unit dropdowns only). Independent real FX on loan balance + interest per day (Margin Interest pattern); percentages never converted. Share/Reload/Clear/feedback. Activated.
 - **Formulas:** Daily Rate (%) = Annual / 365; Interest Per Day = Loan Balance × (Annual / 100) / 365.
@@ -58,6 +59,511 @@
 - **Example:** 50,000 PKR / 5y / 7.5% / application fee 0.4% (200) → monthly ≈ 1,001.90; APR ≈ 7.669%; interest ≈ 10,113.85; fees 200; total ≈ 60,313.85.
 - **Important Files:** `frontend/src/tools/calculators/home-improvement-loan/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-home-improvement-loan-tool.ts`, `brain/*`.
 - **Verification:** Formula self-check vs screenshot. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
+=======
+### 2026-11-17 — Add Minutes to Years Conversion
+- **Summary:** Shipped Minutes to Years Conversion on existing catalog slug minutes-to-years-conversion (MinutesToYearsConversion, catalog 6af46f17a27d8d1d4e990bb6). Bidirectional minutes↔average years via Julian 365.25-day year (525,960 min); Other Time Units accordion (mo/wk/d/h/s + HMS); empty default; signed durations; guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-372b delivery for Conversion and Units minutes-to-years converter.
+- **Important Files:** frontend/src/tools/calculators/minutes-to-years/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0/0.5/1/2 yr; 525960→365.25 d/8766 h/31557600 s/12 mo; 60/1440/10080; HMS 2h30m15s; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Minutes to Seconds Converter
+- **Summary:** Shipped Minutes to Seconds Converter on existing catalog slug minutes-to-seconds-converter (MinutesToSecondsConverter, catalog 6af46f17a27d8d1d4e990bb5). Bidirectional minutes↔seconds plus combined min|sec (remainder in [0, 60)); exact 1 min = 60 s; empty default; signed durations; 1.5 min ≠ 1 min 50 sec clarified; guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-371b delivery for Conversion and Units minutes-to-seconds converter.
+- **Important Files:** frontend/src/tools/calculators/minutes-to-seconds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–60 min → sec; reverse 30/90/150/300/3600; combined 2:52→172, 4:30→270, 125→2:5; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Minutes to Decimal Calculator
+- **Summary:** Shipped Minutes to Decimal Calculator on existing catalog slug minutes-to-decimal-calculator (MinutesToDecimalCalculator, catalog 6af46f17a27d8d1d4e990bb3). Clock minutes ↔ synchronized decimal Hours/Minutes/Seconds as equivalent expressions of one duration (not additive HMS); exact 1 h = 60 min = 3600 s; empty default; signed durations; clock vs decimal clarified (1:30 ≠ 1.30); guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-370b delivery for Conversion and Units minutes-to-decimal converter.
+- **Important Files:** frontend/src/tools/calculators/minutes-to-decimal/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0/1/15/30/45/60/75/90/120/150 min → hours; 15/30/60 min → sec; 1.75 h = 105 min; 2.5 h = 150 min; 1800 s = 0.5 h; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Minutes to Days Calculator
+- **Summary:** Shipped Minutes to Days Calculator on existing catalog slug minutes-to-days-calculator (MinutesToDaysCalculator, catalog 6af46f17a27d8d1d4e990bb2). Bidirectional minutes↔days via exact 1 day = 1440 min; example presets 1440→1 day and 180→0.125 days; collapsed Other equivalent amounts (sec/hrs/wks + HMS); reuses hour-converter engine; empty default; non-negative durations; chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-369b delivery for Conversion and Units minutes-to-days converter.
+- **Important Files:** frontend/src/tools/calculators/minutes-to-days/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1440/720/360/180/30/45/2880/10080 min → days; 2.5 days = 3600 min; sec/hrs/wks helpers; HMS 150.5 → 2h30m30s; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Minute Converter
+- **Summary:** Shipped Minute Converter on existing catalog slug minute-converter (MinuteConverter, catalog 6af46f17a27d8d1d4e990bb1). Minutes-centered bidirectional time converter: primary minutes plus years/months/weeks/days/hours/seconds and compound HMS; reuses hour-converter Gregorian seconds engine; exact 1 h = 60 min, 1 d = 1440 min, 1 wk = 10080 min; average Gregorian year 525949.2 min / month 43829.1 min; empty default; non-negative durations; chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-368b delivery for Conversion and Units minute converter.
+- **Important Files:** frontend/src/tools/calculators/minute-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 min = 60 s; 60/120 min → h; 1440 → day; 10080 → week; Gregorian year/month; reverse; HMS 90/135.5/0.5 min and 150.5 → 2h30m30s; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add mil to mm Conversion
+- **Summary:** Shipped mil to mm Conversion on existing catalog slug mil-to-mm-conversion (MilToMmConversion, catalog 6af46f17a27d8d1d4e990b2b). Bidirectional mil↔mm via exact 1 mil = 0.0254 mm (meter-converter mil/mm); empty default; signed lengths; mil ≠ mm/mile/milliradian clarified; chart/FAQs. Pillar 6af451d3a27d8d1d4e98f9f0 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-367b delivery for Conversion and Units mil-to-mm converter under mil Conversion pillar.
+- **Important Files:** frontend/src/tools/calculators/mil-to-mm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/5/7/10/12/20/25/50/100/250/500/1000 mil → mm; reverse; 5000/127 mils per mm; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d3a27d8d1d4e98f9f0). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add mil to inch Conversion
+- **Summary:** Shipped mil to inch Conversion on existing catalog slug mil-to-inch-conversion (MilToInchConversion, catalog 6af46f17a27d8d1d4e990b2a). Bidirectional mil↔in via exact 1 mil = 0.001 in (meter-converter mil/in); empty default; signed lengths; mil ≠ mm/mile/milliradian clarified; chart/FAQs. Pillar 6af451d3a27d8d1d4e98f9f0 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-366b delivery for Conversion and Units mil-to-inch converter under mil Conversion pillar.
+- **Important Files:** frontend/src/tools/calculators/mil-to-inch/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/10/20/60/100/250/500/1000 mil → in; reverse 0.001–1 in; mil≠mm via 0.0254; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d3a27d8d1d4e98f9f0). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Milliseconds Converter
+- **Summary:** Shipped Milliseconds Converter on existing catalog slug milliseconds-converter (MillisecondsConverter, catalog 6af46f17a27d8d1d4e990bb0). ms-centered bidirectional time converter: core ms/s/min/h/d plus other-unit selector (ns/µs/weeks/fortnights/years); reuses time-unit Decimal seconds engine; exact 1 s = 1000 ms; empty default; signed durations; Julian 365.25-day year documented (shared engine, not fixed 365); chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-365b delivery for Conversion and Units milliseconds converter.
+- **Important Files:** frontend/src/tools/calculators/milliseconds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 ms = 0.001 s; 1000 ms = 1 s; 60000 ms = 1 min; 3600000 ms = 1 h; 86400000 ms = 1 day; reverse; 500/220/2500/120000/7200000 cases; 1 ms = 1000 µs; 1 week = 604800000 ms; Julian year ms; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Millimeter Calculator
+- **Summary:** Shipped Millimeter Calculator on existing catalog slug millimeter-calculator (MillimeterCalculator, catalog 6af46f17a27d8d1d4e990b94). Multi-group mm hub: Imperial in/ft/mi + yd/fur/ch/rd, Metric cm/m/km + um/nm/dm/dam/hm; exact 1 mm = 0.001 m and 1 in = 25.4 mm; empty default; signed lengths; chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-364b delivery for Conversion and Units millimeter hub.
+- **Important Files:** frontend/src/tools/calculators/millimeter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 mm = 0.1 cm / 0.001 m; 10 mm = 1 cm; 1000 mm = 1 m; 25.4 mm = 1 in; 304.8 mm = 1 ft; 914.4 mm = 1 yd; 1609344 mm = 1 mi; 50.8/127/2500 cases; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Mile Conversion Calculator
+- **Summary:** Shipped Mile Conversion Calculator on existing catalog slug mile-conversion-calculator (MileConversionCalculator, catalog 6af46f17a27d8d1d4e990b07). Multi-group statute-mile hub: Metric km/m/cm + mm/um/nm, Imperial yd/ft + in/fur/ch/rd, Others ly/au/nmi + pc/solarRadius/angstrom; exact 1 mi = 1609.344 m; empty default; signed lengths; statute ≠ nautical clarified; chart/FAQs. Live pillar 6af451d1a27d8d1d4e98f9e9 preserved (brief typo …d2…); subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-363b delivery for Conversion and Units statute-mile hub.
+- **Important Files:** frontend/src/tools/calculators/mile-conversion/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 mi = 1609.344 m; 1.609344 km; 5280 ft; 1760 yd; 63360 in; 10 mi = 16.09344 km; 60 mi = 96.56064 km; 1 km ≈ 0.621371192237 mi; 1 nmi ≈ 1.150779448 mi; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e9). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add mil Conversion
+- **Summary:** Shipped mil Conversion on existing catalog slug mil-conversion (MilConversion, catalog 6af46f17a27d8d1d4e990b28). Multi-group mil-centered length converter: Metric µm/mm/cm + other selector, Imperial in/ft + yd/mi, Others nmi/solarRadius + Å/ly/au; exact 1 mil = 0.0000254 m = 25.4 µm; empty default; signed lengths; mil ≠ mm clarified; chart/FAQs. Pillar 6af451d3a27d8d1d4e98f9f0 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-362b delivery for Conversion and Units mil hub under mil Conversion pillar.
+- **Important Files:** frontend/src/tools/calculators/mil-conversion/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 mil = 0.001 in; 1000 mil = 1 in; 1 mil = 25.4 µm; 100 mil = 2.54 mm; 1 mm ≈ 39.37007874 mil; signed; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d3a27d8d1d4e98f9f0). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add micron to mil Conversion Calculator
+- **Summary:** Shipped micron to mil Conversion Calculator on existing catalog slug micron-to-mil-conversion-calculator (MicronToMilConversionCalculator, catalog 6af46f17a27d8d1d4e990b29). Bidirectional µm↔mil via exact 1 mil = 25.4 µm (meter-converter um/mil); More options accordion mm/cm/m/in/nm; empty default; signed lengths allowed; mil ≠ mm clarified; chart/FAQs. Pillar 6af451d3a27d8d1d4e98f9f0 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-361b delivery for Conversion and Units micron-to-mil converter under mil Conversion pillar.
+- **Important Files:** frontend/src/tools/calculators/micron-to-mil/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (25.4 µm = 1 mil; 254 µm = 10 mil; 40 mil = 1016 µm; 1000 µm ≈ 39.37007874 mil; reverse; convertLength parity; signed lengths). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d3a27d8d1d4e98f9f0). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add mg to teaspoon Converter
+- **Summary:** Shipped mg to teaspoon Converter on existing catalog slug mg-to-teaspoon-converter (MgToTeaspoonConverter, catalog 6af46f17a27d8d1d4e990b55). Density-based bidirectional mg↔tsp; US tsp 4.92892159375 mL default (metric 5 mL); reuses mg-to-tablespoon density helpers/substances; Salt default ≈ 1.217 g/mL; empty mass/volume; medication-dose disclaimer; original guide/examples/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-360b delivery for Conversion and Units milligrams-to-teaspoons converter.
+- **Important Files:** frontend/src/tools/calculators/mg-to-teaspoon/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US tsp water = 4928.92159375 mg; 1 US tsp salt @ 1.217 ≈ 5998.50 mg; 6000 mg salt ≈ 1.00025 US tsp; metric 5 mL; zero density/negatives rejected; density unit normalize). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add mg to tablespoon Converter
+- **Summary:** Shipped mg to tablespoon Converter on existing catalog slug mg-to-tablespoon-converter (MgToTablespoonConverter, catalog 6af46f17a27d8d1d4e990b54). Density-based bidirectional mg↔tbsp; US tbsp 14.78676478125 mL default (metric 15 / Australian 20); Salt default ≈ 1.217 g/mL with density unit normalize; ingredient presets + custom; empty mass/volume; medication-dose disclaimer; original guide/examples/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-359b delivery for Conversion and Units milligrams-to-tablespoons converter.
+- **Important Files:** frontend/src/tools/calculators/mg-to-tablespoon/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US tbsp water = 14786.76478125 mg; 1 US tbsp salt @ 1.217 ≈ 17994.49 mg; 10000 mg salt ≈ 0.55573 US tbsp; metric/Australian factors; zero density/negatives rejected; density unit normalize). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add mg to lbs Converter
+- **Summary:** Shipped mg to lbs Converter on existing catalog slug mg-to-lbs-converter (MgToLbsConverter, catalog 6af46f17a27d8d1d4e990b52). Bidirectional mg↔lb via exact 1 lb = 453,592.37 mg; milligrams-first UI; empty default; negatives rejected; tiny positive values preserved; original guide/table/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-358b delivery for Conversion and Units milligrams-to-pounds converter.
+- **Important Files:** frontend/src/tools/calculators/mg-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (453592.37 mg = 1 lb; 1000 mg ≈ 0.00220462262185 lb; 500 mg ≈ 0.001102311310925 lb; 0.5 lb = 226796.185 mg; zero; negatives rejected; tiny values not formatted as 0). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add mg to cc Conversion
+- **Summary:** Shipped mg to cc Conversion on existing catalog slug mg-to-cc-conversion (MgToCcConverter, catalog 6af46f17a27d8d1d4e990b51). Medication concentration vs substance density modes; 1 cc = 1 mL; custom concentration only (no clinical presets); water approx 1 g/mL; bidirectional mg↔cc; mg/5 mL and density unit normalization; medication safety notice; empty default; original guide/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-357b delivery for Conversion and Units milligram-to-cubic-centimeter converter.
+- **Important Files:** frontend/src/tools/calculators/mg-to-cc/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (200 mg @ 50 mg/mL = 4 cc; 100 mg/5 mL → 20 mg/mL → 200 mg = 10 cc; water 5000 mg = 5 cc; oil 920 mg @ 0.92 g/mL = 1 cc; zero/negative/missing factor guards). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Metric to Standard Converter
+- **Summary:** Shipped Metric to Standard Converter on existing catalog slug metric-to-standard-converter (MetricToStandardConverter, catalog 6af46f17a27d8d1d4e990b06). Multi-field hub for length/area/mass/volume/temperature with accordion groups; US vs UK volume differentiated; temperature affine + absolute-zero guard; empty default; category switch clears values; original guide/charts/FAQs. Live Metric Converter pillar 6af451d1a27d8d1d4e98f9e8 preserved (brief typo …d2…); subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-356b delivery for Conversion and Units metric-to-standard hub under Metric Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/metric-to-standard/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 m = 100 cm; 1 in = 2.54 cm; 1 ft = 0.3048 m; 1 mi = 1.609344 km; area/mass/volume factors; US≠UK gallon; 0°C=32°F; 100°C=212°F; −40°C=−40°F; absolute-zero reject). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e8). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add lbs to Pounds Converter
+- **Summary:** Shipped lbs to Pounds Converter on existing catalog slug lbs-to-pounds-converter (LbsToPoundsConverter, catalog 6af46f17a27d8d1d4e990b4a). Identity lbs↔pounds (factor 1); default 1/1; reload restores defaults; clear empties; identity text sync preserves typing precision; negatives rejected; original guide/chart/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-355b delivery for Conversion and Units lbs/pounds identity converter.
+- **Important Files:** frontend/src/tools/calculators/lbs-to-pounds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1=1; 22=22; 22.5=22.5; 100=100; 125 reverse; zero; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add lbs to kg Converter
+- **Summary:** Shipped lbs to kg Converter on existing catalog slug lbs-to-kg-converter (LbsToKgConverter, catalog 6af46f17a27d8d1d4e990b49). Bidirectional lb↔kg via exact 1 lb = 0.45359237 kg (reuses weight-converter KG_PER_POUND); pounds-first UI; empty default; negatives rejected; original guide/table/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-354b delivery for Conversion and Units pounds-to-kilograms converter.
+- **Important Files:** frontend/src/tools/calculators/lbs-to-kg/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 lb = 0.45359237 kg; 100 lb = 45.359237 kg; 125 lb = 56.69904625 kg; 50 kg ≈ 110.231131 lb; zero; negatives rejected; weight-converter cross-check). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add lbs to g Converter
+- **Summary:** Shipped lbs to g Converter on existing catalog slug lbs-to-g-converter (LbsToGConverter, catalog 6af46f17a27d8d1d4e990b48). Bidirectional lb↔g via exact 1 lb = 453.59237 g; pounds-first UI; empty default; negatives rejected; original guide/table/FAQs. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-353b delivery for Conversion and Units pounds-to-grams converter.
+- **Important Files:** frontend/src/tools/calculators/lbs-to-g/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 lb = 453.59237 g; 5 lb = 2267.96185 g; 0.5 lb = 226.796185 g; 500 g ≈ 1.10231131 lb; 1000 g ≈ 2.20462262 lb; zero; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Land Area Calculator
+- **Summary:** Shipped Land Area Calculator on existing catalog slug land-area-calculator (LandAreaCalculator, catalog 6af46f17a27d8d1d4e990b8c). Rectangular Area = Length × Width with independent length units and area output units; optional collapsed Unit and total price (currency denomination only); empty default m/m/m²; negatives rejected; regional land units omitted. Pillar null preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-352b delivery for Conversion and Units rectangular land area and optional land price estimator.
+- **Important Files:** frontend/src/tools/calculators/land-area/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (10×20 m = 200 m²; 40×60 ft = 2400 ft²; 10 ft × 20 m ≈ 60.96 m²; 100×200 m = 2 ha; 200 m² × $150 = $30,000; 2 ac × $25,000 = $50,000; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add KSI to PSI Conversion
+- **Summary:** Shipped KSI to PSI Conversion on existing catalog slug ksi-to-psi-conversion (KsiToPsiConversion, catalog 6af46f17a27d8d1d4e990ae6). Bidirectional ksi↔psi via exact 1 ksi = 1,000 psi; empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d0a27d8d1d4e98f9e4 (PSI Converter) preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-351b delivery for Conversion and Units ksi-to-psi converter under PSI Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/ksi-to-psi/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 ksi = 1000 psi; 5 ksi = 5000 psi; 150 ksi = 150000 psi; 5000 psi = 5 ksi; 0.75 ksi = 750 psi; round-trip; negatives accepted). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d0a27d8d1d4e98f9e4). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add KSI to MPa Converter
+- **Summary:** Shipped KSI to MPa Converter on existing catalog slug ksi-to-mpa-converter (KsiToMpaConverter, catalog 6af46f17a27d8d1d4e990b21). Bidirectional ksi↔MPa via pressure-conversion convertPressure (1 ksi = 1000 psi); empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ee (MPa Conversion) preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-350b delivery for Conversion and Units ksi-to-megapascal converter under MPa Conversion pillar.
+- **Important Files:** frontend/src/tools/calculators/ksi-to-mpa/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 ksi ≈ 6.894757293168 MPa; 5 ksi ≈ 34.473786 MPa; 100 MPa ≈ 14.503774 ksi; round-trip; negatives accepted). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ee). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add kPa to psi Conversion
+- **Summary:** Shipped kPa to psi Conversion on existing catalog slug kpa-to-psi-conversion (KpaToPsiConversion, catalog 6af46f17a27d8d1d4e990b27). Bidirectional kPa↔psi via pressure-conversion convertPressure; empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ef preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-349b delivery for Conversion and Units kilopascal-to-psi converter under kPa Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/kpa-to-psi/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100 kPa ≈ 14.503773773 psi; 30 psi ≈ 206.842718795 kPa; 40 kPa ≈ 5.801509509 psi; 15 psi ≈ 103.421359397 kPa; round-trip; negatives accepted). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ef). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add kPa to mmHg Conversion
+- **Summary:** Shipped kPa to mmHg Conversion on existing catalog slug kpa-to-mmhg-conversion (KpaToMmhgConversion, catalog 6af46f17a27d8d1d4e990b26). Bidirectional kPa↔mmHg via conventional 101.325 kPa = 760 mmHg (MMHG_PER_KPA = 760000/101325, Torr-equivalent — distinct from CIPM mmHg in pressure-conversion); empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ef preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-348b delivery for Conversion and Units kilopascal-to-mmHg converter under kPa Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/kpa-to-mmhg/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (101.325 kPa = 760 mmHg; 1 kPa ≈ 7.50061683 mmHg; 7 kPa ≈ 52.5043 mmHg; 30 mmHg ≈ 3.99967 kPa; round-trip; negatives accepted). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ef). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add kPa to atm Conversion
+- **Summary:** Shipped kPa to atm Conversion on existing catalog slug kpa-to-atm-conversion (KpaToAtmConversion, catalog 6af46f17a27d8d1d4e990b25). Bidirectional kPa↔atm via exact 1 atm = 101.325 kPa; reuses pressure-conversion convertPressure; empty default; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ef preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-347b delivery for Conversion and Units kilopascal-to-atmosphere converter under kPa Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/kpa-to-atm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (101.325 kPa = 1 atm; 2 atm = 202.65 kPa; 20 kPa ≈ 0.19738465 atm; 2.5 atm = 253.3125 kPa; round-trip; negatives accepted). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ef). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add kPa Converter
+- **Summary:** Shipped kPa Converter on existing catalog slug kpa-converter (KpaConverter, catalog 6af46f17a27d8d1d4e990b24). Primary kPa with expandable bar/psi/atm; reuses pressure-conversion convertPressure; exact 1 bar = 100 kPa and 1 atm = 101.325 kPa; signed gauge values allowed; no absolute/gauge offset; original guide/table/FAQs. Pillar preserved from live row; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-346b delivery for Conversion and Units kilopascal multi-unit pressure converter.
+- **Important Files:** frontend/src/tools/calculators/kpa-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100 kPa = 1 bar; 1 atm = 101.325 kPa; 100 kPa ≈ 14.503774 psi; 30 psi ≈ 206.842719 kPa; round-trip; negatives accepted). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add km to Feet Conversion
+- **Summary:** Shipped km to Feet Conversion on existing catalog slug km-to-feet-conversion (KmToFeetConversion, catalog 6af46f17a27d8d1d4e990af5). Bidirectional km↔ft via exact 1 ft = 0.3048 m; Other length units accordion (mm/cm/m/in/yd/mi); reuses meter-converter convertLength; empty default; negatives rejected; original guide/table/FAQs. Live Feet Converter pillar 6af451d1a27d8d1d4e98f9e6 preserved (brief typo …d2…); subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-345b delivery for Conversion and Units kilometers↔feet converter under Feet Converter pillar.
+- **Important Files:** frontend/src/tools/calculators/km-to-feet/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 km ≈ 3280.839895 ft; 5 km ≈ 16404.199475 ft; 1000 ft = 0.3048 km; 5000 ft = 1.524 km; round-trip; meter-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e6). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Kilometers to Miles Calculator
+- **Summary:** Shipped Kilometers to Miles Calculator on existing catalog slug kilometers-to-miles-calculator (KilometersToMilesCalculator, catalog 6af46f17a27d8d1d4e990b1e). Bidirectional km↔mi via exact 1 mi = 1.609344 km; reuses formatLength; empty default; negatives rejected; original guide/table/FAQs. Kilometer Calculator pillar 6af451d2a27d8d1d4e98f9ed preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-344b delivery for Conversion and Units kilometers↔miles pair converter under Kilometer Calculator pillar.
+- **Important Files:** frontend/src/tools/calculators/kilometers-to-miles/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 km ≈ 0.6213711922 mi; 10 km ≈ 6.21371192 mi; 5 mi = 8.04672 km; marathon 42.195 km ≈ 26.2188 mi; round-trip; meter-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Kilometer to Meter Converter
+- **Summary:** Shipped Kilometer to Meter Converter on existing catalog slug kilometer-to-meter-converter (KilometerToMeterConverter, catalog 6af46f17a27d8d1d4e990b1d). Bidirectional km↔m via exact 1 km = 1000 m; reuses formatLength; empty default; negatives rejected; original guide/table/FAQs. Kilometer Calculator pillar 6af451d2a27d8d1d4e98f9ed preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-343b delivery for Conversion and Units kilometers↔meters pair converter under Kilometer Calculator pillar.
+- **Important Files:** frontend/src/tools/calculators/kilometer-to-meter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 km = 1000 m; 2.5 km = 2500 m; 2.535 km = 2535 m; 7500 m = 7.5 km; round-trip; meter-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Kilometer Calculator
+- **Summary:** Shipped Kilometer Calculator on existing catalog slug kilometer-calculator (KilometerCalculator, catalog 6af46f17a27d8d1d4e990b1c). Eight synced fields in three accordions (Kilometer / Metric / Imperial-US); reuses meter-converter convertLength; exact SI and international mile factors; negatives rejected; original guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ed preserved; subPillar null. Meta title <=70. **isActive left false**; indexable left false.
+- **Why:** TOOL-342b delivery for Conversion and Units multi-unit kilometer length converter (inactive until authorized).
+- **Important Files:** frontend/src/tools/calculators/kilometer-calculator/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 km = 1000 m / 100000 cm / 1000000 mm; ≈0.6213711922 mi; ≈3280.839895 ft; 1 mi = 1.609344 km; round-trip; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive false preserved, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add kg to Stones Converter
+- **Summary:** Shipped kg to Stones Converter on existing catalog slug kg-to-stones-converter (KgToStonesConverter, catalog 6af46f17a27d8d1d4e990b46). Bidirectional kg↔st via exact 1 st = 6.35029318 kg (14 lb); reuses weight-converter KG_PER_STONE + formatMass; empty default; negative mass rejected; original guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-341b delivery for Conversion and Units kilograms↔stones pair converter.
+- **Important Files:** frontend/src/tools/calculators/kg-to-stones/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 kg ≈ 0.15747304 st; 70 kg ≈ 11.023113 st; 10 st = 63.5029318 kg; 14 st = 88.90410452 kg; weight-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add kg to Ounce Converter
+- **Summary:** Shipped kg to Ounce Converter on existing catalog slug kg-to-ounce-converter (KgToOunceConverter, catalog 6af46f17a27d8d1d4e990b45). Bidirectional kg↔avoirdupois oz via exact 1 oz = 0.028349523125 kg; Other units accordion with troy oz, pounds+ounces remainder normalization, and more-units selector; reuses weight-converter constants + formatMass; empty default; negative mass rejected; original guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-340b delivery for Conversion and Units kilograms↔ounces pair converter with related mass units.
+- **Important Files:** frontend/src/tools/calculators/kg-to-ounce/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 kg ≈ 35.27396195 oz; 16 oz = 0.45359237 kg; 1 kg ≈ 32.15074657 oz t; 1 kg → 2 lb 3.27396195 oz; weight-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add kg to mL Converter
+- **Summary:** Shipped kg to mL Converter on existing catalog slug kg-to-ml-converter (KgToMlConverter, catalog 6af46f17a27d8d1d4e990b44). Density-based bidirectional kg↔mL via kg/m³ canonical; Water default 1000 kg/m³; collapsible density lookup; substance presets (milk 1030, olive oil 918, honey 1420, …); Custom density with unit normalization; empty mass/volume; negatives/zero density rejected. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-339b delivery for Conversion and Units mass↔milliliters via density.
+- **Important Files:** frontend/src/tools/calculators/kg-to-ml/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (water 1 kg = 1000 mL; milk 1 kg ≈ 970.87 mL; olive oil 2 kg ≈ 2178.65 mL; honey 1000 mL = 1.42 kg; density unit normalization; zero/negative rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add kg to Liter Converter
+- **Summary:** Shipped kg to Liter Converter on existing catalog slug kg-to-liter-converter (KgToLiterConverter, catalog 6af46f17a27d8d1d4e990b43). Density-based bidirectional kg↔L; Fresh water default ≈ 1 kg/L; substance presets (olive oil 0.918, milk 1.03, honey 1.42, …); Custom density with kg/L·g/mL·g/cm³·kg/m³ normalization; empty mass/volume; negatives/zero density rejected. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-338b delivery for Conversion and Units mass↔volume via density.
+- **Important Files:** frontend/src/tools/calculators/kg-to-liter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (water 1 kg = 1 L; olive oil 5 kg ≈ 5.4466 L; honey 2 L = 2.84 kg; milk 10 kg ≈ 9.7087 L; density unit normalization; zero/negative rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add kg to lbs Converter
+- **Summary:** Shipped kg to lbs Converter on existing catalog slug kg-to-lbs-converter (KgToLbsConverter, catalog 6af46f17a27d8d1d4e990b42). Bidirectional kg↔lb via exact international avoirdupois pound (1 lb = 0.45359237 kg); reuses weight-converter KG_PER_POUND + formatMass; empty default; negative mass rejected; original guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-337b delivery for Conversion and Units kilograms↔pounds pair converter.
+- **Important Files:** frontend/src/tools/calculators/kg-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 kg ≈ 2.20462262 lb; 50 kg ≈ 110.23113 lb; 100 lb = 45.359237 kg; weight-converter cross-check; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add kg/cm² to PSI Converter
+- **Summary:** Shipped kg/cm² to psi Converter on existing catalog slug kgcm-to-psi-converter (KgCmToPsiConverter, catalog 6af46f17a27d8d1d4e990ae5). Bidirectional kgf/cm²↔psi via exact 98,066.5 / 6,894.757293168 Pa factor; empty default; signed gauge values allowed; original guide/table/FAQs. Live PSI Converter pillar `6af451d0a27d8d1d4e98f9e4` preserved (brief listed `…d2…`; refuse overwrite). Meta title <=70. indexable left false.
+- **Why:** TOOL-336b delivery for Conversion and Units kgf/cm²↔PSI pair converter.
+- **Important Files:** frontend/src/tools/calculators/kgcm-to-psi/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 kgf/cm² ≈ 14.223343 psi; 7 ≈ 99.563403; 100 psi ≈ 7.030696 kgf/cm²; negatives accepted; round-trips). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d0a27d8d1d4e98f9e4). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Kelvin to Fahrenheit Converter
+- **Summary:** Shipped Kelvin to Fahrenheit Converter on existing catalog slug kelvin-to-fahrenheit-converter (KelvinToFahrenheitConverter, catalog 6af46f17a27d8d1d4e990b1b). Bidirectional K↔°F with exact (K−273.15)×9/5+32 and reverse; equivalent 1.8K−459.67 forms verified; absolute-zero validation (0 K / −459.67°F); empty default; formatTemp reuse; original guide/table/FAQs. Fahrenheit Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-335b delivery for Conversion and Units Kelvin↔Fahrenheit pair converter.
+- **Important Files:** frontend/src/tools/calculators/kelvin-to-fahrenheit/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0 K = −459.67°F; 273.15 K = 32°F; 300 K = 80.33°F; 310.15 K = 98.6°F; 373.15 K = 212°F; −459.67°F = 0 K; equivalent formula pairs; absolute-zero bounds). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ec). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Kelvin to Celsius Converter
+- **Summary:** Shipped Kelvin to Celsius Converter on existing catalog slug kelvin-to-celsius-converter (KelvinToCelsiusConverter, catalog 6af46f17a27d8d1d4e990b2e). Bidirectional K↔°C with exact ±273.15 offset; absolute-zero validation (0 K / −273.15°C); empty default; formatTemp reuse from kelvin-converter; original guide/table/FAQs. Celsius Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-334b delivery for Conversion and Units Kelvin↔Celsius pair converter.
+- **Important Files:** frontend/src/tools/calculators/kelvin-to-celsius/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0 K = −273.15°C; 100 K = −173.15°C; 273.15 K = 0°C; 300 K = 26.85°C; 373.15 K = 100°C; 0°C = 273.15 K; 100°C = 373.15 K; −40°C = 233.15 K; absolute-zero bounds). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d3a27d8d1d4e98f9f1). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Kelvin Converter
+- **Summary:** Shipped Kelvin Converter on existing catalog slug kelvin-converter (KelvinConverter, catalog 6af46f17a27d8d1d4e990bf3). Eight bidirectional scales (K/°C/°F/°R/°De/°N/°Ré/°Rø) reusing celsius-converter temperature engine; absolute-zero rejection at 0 K; Kelvin-first UI; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-333b delivery for Conversion and Units Kelvin temperature hub.
+- **Important Files:** frontend/src/tools/calculators/kelvin-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0 K = −273.15°C / −459.67°F; 273.15 K = 0°C / 32°F; 300 K ≈ 26.85°C / 80.33°F; 373.15 K = 100°C / 212°F; round-trips; below absolute zero rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Katha to Square Feet Converter
+- **Summary:** Shipped Katha to Square Feet Converter on existing catalog slug katha-to-square-feet-converter (KathaToSquareFeetConverter, catalog 6af46f17a27d8d1d4e990afd). Verified regional factors only (Nepal 3645 ft² default; Bangladesh/West Bengal 720; Assam 2880; Patna/Gaya/Aurangabad 1361.25; Saran 1742.4). Bidirectional katha↔ft²↔m²; pending regions documented (Chhattisgarh, generic Bihar, Bigha). Pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-332b delivery for Conversion and Units regional katha land-area converter.
+- **Important Files:** frontend/src/tools/calculators/katha-to-sqft/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (Nepal 1 katha = 3645 ft² / 338.6315808 m²; 2 katha = 7290 ft²; reverse; Bangladesh 720; Assam 2880; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e6, subPillar 6af46f0fae6d84bd3ef8f7e3). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add in to cm Converter
+- **Summary:** Shipped in to cm Converter on existing catalog slug in-to-cm-converter (InToCmConverter, catalog 6af46f17a27d8d1d4e990b8a). Bidirectional inches↔centimeters with exact 2.54 factor; empty default; signed values; original guide/examples/table/FAQs; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-331b delivery for Conversion and Units inches ↔ centimeters converter.
+- **Important Files:** frontend/src/tools/calculators/in-to-cm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 in = 2.54 cm; 12 in = 30.48 cm; 22 in = 55.88 cm; 72 in = 182.88 cm; 100 in = 254 cm; reverse 2.54 cm = 1 in; 100 cm ≈ 39.37007874 in; registry cross-check). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Inch to Meter Calculator
+- **Summary:** Shipped Inch to Meter Calculator on existing catalog slug inch-to-meter-calculator (InchToMeterCalculator, catalog 6af46f17a27d8d1d4e990b14). Bidirectional inches↔meters with exact 0.0254 factor; feet-and-inches related units with remainder normalization; empty default; signed values; original guide/examples/table/FAQs; Inch Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-330b delivery for Conversion and Units inches ↔ meters converter.
+- **Important Files:** frontend/src/tools/calculators/inch-to-meter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 in = 0.0254 m; 12 in = 0.3048 m; 72 in = 1.8288 m; 100 in = 2.54 m; 1 m ≈ 39.37007874 in; 5 ft 8 in = 1.7272 m; 4 ft 12 in normalizes to 5 ft 0 in; registry cross-check). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9eb). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Inches to Yard Conversion
+- **Summary:** Shipped Inches to Yard Conversion on existing catalog slug inches-to-yard-conversion (InchesToYardConversion, catalog 6af46f17a27d8d1d4e990ad6). Bidirectional inches↔yards with exact 36:1 factor; empty default; signed values; original guide/examples/table/FAQs; Yard Conversion pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-329b delivery for Conversion and Units inches ↔ yards converter.
+- **Important Files:** frontend/src/tools/calculators/inches-to-yards/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (36 in = 1 yd; 72 in = 2 yd; 180 in = 5 yd; 18 in = 0.5 yd; reverse 5 yd = 180 in; registry cross-check; negatives/empty/NaN). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d0a27d8d1d4e98f9e2). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Inch Converter
+- **Summary:** Shipped Inch Converter on existing catalog slug inch-converter (InchConverter, catalog 6af46f17a27d8d1d4e990b13). Primary inches + Metric/Imperial/Others (nmi, IAU solar radius, Julian ly) reusing meter-converter length engine; signed values allowed; empty default; Conversion & Units pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-328b delivery for Conversion and Units inch length converter.
+- **Important Files:** frontend/src/tools/calculators/inch-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 in = 25.4 mm / 2.54 cm / 0.0254 m; 12 in = 1 ft; 63360 in = 1 mi; reverse cm/mm/ft/yd/mi; nmi/ly/solarRadius finite). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9eb). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Imperial to Metric Conversion
+- **Summary:** Shipped Imperial to Metric Conversion on existing catalog slug imperial-to-metric-conversion (ImperialToMetricConversion, catalog 6af46f17a27d8d1d4e990b02). Branded wrapper over Imperial Calculator shared measurement hub (no duplicated conversion constants); original guide/tables/FAQs; Metric Converter pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-327b delivery for Conversion and Units Metric Converter pillar imperial↔metric page.
+- **Important Files:** frontend/src/tools/calculators/imperial-to-metric/*, imperial/ImperialCalculator branding props, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** imperial-to-metric + imperial calculation.test.ts passed. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e8). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Imperial Calculator
+- **Summary:** Shipped Imperial Calculator on existing catalog slug imperial-calculator (ImperialCalculator, catalog 6af46f17a27d8d1d4e990bd5). Multi-category Length/Area/Volume/Mass/Temperature converter reusing length/area/volume/weight/temperature unit registries; US vs Imperial gallons distinct; Kelvin temperature with absolute-zero guard; category switch clears values; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-326b delivery for Conversion and Units Imperial/US ↔ metric hub.
+- **Important Files:** frontend/src/tools/calculators/imperial/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (12 in = 1 ft; 1 US gal = 3.785411784 L; 1 Imp gal = 4.54609 L; 1 lb = 0.45359237 kg; 0°C = 32°F; 0 K absolute-zero bound). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Hours to Years Converter
+- **Summary:** Shipped Hours to Years Converter on existing catalog slug hours-to-years-converter (HoursToYearsConverter, catalog 6af46f17a27d8d1d4e990bae). Bidirectional hours↔years using average Gregorian year (8,765.82 hr); Other time units + HMS reusing hour-converter TIME_CONSTANTS; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-325b delivery for Conversion and Units hours ↔ years converter.
+- **Important Files:** frontend/src/tools/calculators/hours-to-years/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (8765.82 hr = 1 yr; 5 yr = 43829.1 hr; 12 months = 1 yr; 31556952 s = 1 yr; 10h 30m 15s = 37815 s; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Hours to Week Conversion
+- **Summary:** Shipped Hours to Week Conversion on existing catalog slug hours-to-week-conversion (HoursToWeekConversion, catalog 6af46f17a27d8d1d4e990bad). Bidirectional hours↔weeks (exact ÷168); Other time units + HMS reusing hour-converter TIME_CONSTANTS; average Gregorian year/month labeled; GCD week-fraction table; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-324b delivery for Conversion and Units hours ↔ weeks converter.
+- **Important Files:** frontend/src/tools/calculators/hours-to-weeks/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (168 hr = 1 wk; 120 hr = 5/7 wk; 2.5 wk = 420 hr; 604800 s = 1 wk; 10h 30m 15s = 37815 s; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Hours to Seconds Converter
+- **Summary:** Shipped Hours to Seconds Converter on existing catalog slug hours-to-seconds-converter (HoursToSecondsConverter, catalog 6af46f17a27d8d1d4e990bac). Bidirectional hours↔seconds plus editable HMS compound reusing hour-converter TIME_CONSTANTS; exact ×3600; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-323b delivery for Conversion and Units hours ↔ seconds converter.
+- **Important Files:** frontend/src/tools/calculators/hours-to-seconds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (13 hr = 46800 s; 1h 45m 30s = 6330 s; 0h 60m → 1h 0m; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Hours to Minutes Converter
+- **Summary:** Shipped Hours to Minutes Converter on existing catalog slug hours-to-minutes-converter (HoursToMinutesConverter, catalog 6af46f17a27d8d1d4e990bab). Synced hrs/min/sec plus editable HMS compound reusing hour-converter TIME_CONSTANTS; exact ×60 / ×3600; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-322b delivery for Conversion and Units hours ↔ minutes converter.
+- **Important Files:** frontend/src/tools/calculators/hours-to-minutes/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (7 hr = 420 min / 25200 s; 2h 15m 30s = 135.5 min; 0h 90m → 1h 30m; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Hours to Days Calculator
+- **Summary:** Shipped Hours to Days Calculator on existing catalog slug hours-to-days-calculator (HoursToDaysCalculator, catalog 6af46f17a27d8d1d4e990baa). Bidirectional hours↔days (exact ÷24); Other Quantities + HMS reuse hour-converter TIME_CONSTANTS; GCD fraction table with 1–72 expand; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-321b delivery for Conversion and Units hours ↔ days calculator.
+- **Important Files:** frontend/src/tools/calculators/hours-to-days/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (48 hr = 2 days; 100 hr ≈ 4.1666667 days; fraction labels 6→1/4, 36→3/2; HMS 2:30:45 → 0.1046875 day). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Hour Converter
+- **Summary:** Shipped Hour Converter on existing catalog slug hour-converter (HourConverter, catalog 6af46f17a27d8d1d4e990ba9). Synced hrs/yrs/mos/wks/days/min/sec plus editable HMS compound from canonical seconds; exact 3600 s/hr and 168 hr/wk; average Gregorian year/month (8765.82 / 730.485 hr); empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-320b delivery for Conversion and Units multi-field hour/time converter.
+- **Important Files:** frontend/src/tools/calculators/hour-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (2 hr = 120 min / 7200 s; 1 yr = 8765.82 hr; 1 hr 75 min 90 sec → 2 hrs 16 min 30 sec; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Height Converter
+- **Summary:** Shipped Height Converter on existing catalog slug height-converter (HeightConverter, catalog 6af46f17a27d8d1d4e990b88). Synced cm/m/m+cm/in/ft/ft+in plus other mm/km/yd/mi from canonical meters; exact 2.54 cm/in and 30.48 cm/ft; compound normalization; empty default; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-319b delivery for Conversion and Units multi-field height converter.
+- **Important Files:** frontend/src/tools/calculators/height-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (170 cm = 1.7 m; 5 ft 10 in = 177.8 cm; 5 ft 14 in → 6 ft 2 in; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add Hectares to Acres Converter
+- **Summary:** Shipped Hectares to Acres Converter on existing catalog slug hectares-to-acres-converter (HectaresToAcresConverter, catalog 6af46f17a27d8d1d4e990b87). Bidirectional ha↔ac with exact 1 ha = 10,000 m² and 1 international acre = 4,046.8564224 m²; simple two-field UI; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-318b delivery for Conversion and Units hectares ↔ acres land-area converter.
+- **Important Files:** frontend/src/tools/calculators/hectares-to-acres/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 ha ≈ 2.4710538147 ac; 19 ac ≈ 7.68902720256 ha; negatives rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed (pre-existing gallons-to-grams content.ts syntax error unrelated).
+
+### 2026-11-17 — Add g to lbs Converter
+- **Summary:** Shipped g to lbs Converter on existing catalog slug g-to-lbs-converter (GToLbsConverter, catalog 6af46f17a27d8d1d4e990b3a). Bidirectional grams↔pounds with exact 1 lb = 453.59237 g; simple two-field UI; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-317b delivery for Conversion and Units grams ↔ pounds mass converter.
+- **Important Files:** frontend/src/tools/calculators/g-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (500 g ≈ 1.10231131 lb; 1 lb = 453.59237 g; 2 lb = 907.18474 g). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add g to tsp Converter
+- **Summary:** Shipped g to tsp Converter on existing catalog slug g-to-tsp-converter (GToTspConverter, catalog 6af46f17a27d8d1d4e990b3b). Density-based mass↔volume with salt default 1217 kg/m³; US tsp 4.92892159375 mL distinct from metric tsp; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-316b delivery for Conversion and Units density-based grams ↔ teaspoons cooking converter.
+- **Important Files:** frontend/src/tools/calculators/g-to-tsp/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (10 g water ≈ 2.0288 US tsp; salt @ 1.217; reverse 1 US tsp water = 4.92892159375 g). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add gr to ml Converter
+- **Summary:** Shipped gr to ml Converter on existing catalog slug gr-to-ml-converter (GrToMlConverter, catalog 6af46f17a27d8d1d4e990b3d). Density-based mass↔volume with ingredient presets; default water 1 g/mL and mL; null pillar/subPillar preserved. Meta title <=70; meta description trimmed to <=160. indexable left false.
+- **Why:** TOOL-315b delivery for Conversion and Units density-based grams ↔ milliliters converter (gr abbreviation branding).
+- **Important Files:** frontend/src/tools/calculators/gr-to-ml/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100 g water = 100 mL; milk ≈ 97.0874 mL; honey ≈ 70.4225 mL; reverse milk/honey). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Gram to Liter Conversion
+- **Summary:** Shipped Gram to Liter Conversion on existing catalog slug gram-to-liter-conversion (GramToLiterConversion, catalog 6af46f17a27d8d1d4e990b3e). Density-based mass↔volume with ingredient presets; default water 1000 kg/m³ and L; V_L = m_g / ρ_kg/m³; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-314b delivery for Conversion and Units density-based gram ↔ liter converter.
+- **Important Files:** frontend/src/tools/calculators/gram-to-liter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100/500/1000 g water → 0.1/0.5/1 L; 200 g milk ≈ 0.19417 L; 2 L milk = 2060 g). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Grams to fl oz Converter
+- **Summary:** Shipped Grams to fl oz Converter on existing catalog slug grams-to-fl-oz-converter (GramsToFlOzConverter, catalog 6af46f17a27d8d1d4e990b40). Density-based mass↔volume with substance presets; default water 1 g/mL and US fl oz; distinct US/UK fluid ounce factors; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-313b delivery for Conversion and Units density-based grams ↔ fluid ounces converter.
+- **Important Files:** frontend/src/tools/calculators/grams-to-fl-oz/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100 g water ≈ 3.3814 US fl oz / 3.5195 UK fl oz; honey ≈ 2.3813 US fl oz; 4 US fl oz milk ≈ 121.84 g). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Grams in mL Converter
+- **Summary:** Shipped Grams in mL Converter on existing catalog slug grams-in-ml-converter (GramsInMlConverter, catalog 6af46f17a27d8d1d4e990b3f). Density-based mass↔volume with cooking ingredient presets; default water 1000 kg/m³; mass/volume unit selectors; density accordion expanded; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-312b delivery for Conversion and Units density-based grams ↔ milliliters converter.
+- **Important Files:** frontend/src/tools/calculators/grams-in-ml/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (100 g water = 100 mL; 100 g honey ≈ 70.42 mL; 150 mL oil = 138 g; kg/m³↔g/mL; round-trip). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Gal to kg Converter
+- **Summary:** Shipped Gal to kg Converter on existing catalog slug gal-to-kg-converter (GalToKgConverter, catalog 6af46f17a27d8d1d4e990b3c). Density-based US/UK gal ↔ kg with other mass units; cubic-meter-to-ton materials reuse; density accordion default kg/L water; null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-311b delivery for Conversion and Units density-based gal ↔ kg converter.
+- **Important Files:** frontend/src/tools/calculators/gal-to-kg/*, cubic-meter-to-ton materials reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal water = 3.785411784 kg; 1 UK gal = 4.54609 kg; milk @ 1.03; round-trip). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Gallons to Tons Converter
+- **Summary:** Shipped Gallons to Tons Converter on existing catalog slug gallons-to-tons-converter (GallonsToTonsConverter, catalog 6af46f17a27d8d1d4e990acd). Density-based volume↔mass with cubic-meter-to-ton materials reuse; US/UK/metric tons and multi volume units; density unit switching; negatives and zero density rejected. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-310b delivery for Conversion and Units density-based gal ↔ tons converter.
+- **Important Files:** frontend/src/tools/calculators/gallons-to-tons/*, cubic-meter-to-ton materials reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal water ≈ 0.0041727 US ton; UK gal→UK ton; round-trip). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Gallons to Quarts Converter
+- **Summary:** Shipped Gallons to Quarts Converter on existing catalog slug gallons-to-quarts-converter (GallonsToQuartsConverter, catalog 6af46f17a27d8d1d4e990acc). Bidirectional gallons↔quarts with US/UK unit selectors; unit switches preserve physical volume via liters; 1 gal = 4 qt same-system; negatives rejected; empty default. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-309b delivery for Conversion and Units volume pair converter (gal to quarts).
+- **Important Files:** frontend/src/tools/calculators/gallons-to-quarts/*, volume-conversion engine reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal = 4 US qt; 1 UK gal = 4 UK qt; cross-system via liters). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Gallons to Pints Converter
+- **Summary:** Shipped Gallons to Pints Converter on existing catalog slug gallons-to-pints-converter (GallonsToPintsConverter, catalog 6af46f17a27d8d1d4e990aca). Four-field sync US/UK gal + US/UK pt via volume-conversion liter engine; more-options mL/L/fl oz/qt/m³; negatives rejected; empty default. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-308b delivery for Conversion and Units volume converter (gal to pints).
+- **Important Files:** frontend/src/tools/calculators/gallons-to-pints/*, volume-conversion convertVolume reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal = 8 US pt; 1 UK gal = 8 UK pt; 1 US gal ≈ 6.661 UK pt). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Gallons to Grams Conversion
+- **Summary:** Shipped Gallons to Grams Conversion on existing catalog slug gallons-to-grams-conversion (GallonsToGramsConverter, catalog 6af46f17a27d8d1d4e990ac9). Density-based US gal ↔ grams with substance presets (water default 1000 kg/m³), editable density units, bidirectional sync; negatives and zero density rejected. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-307b delivery for Conversion and Units density-based gal ↔ g converter.
+- **Important Files:** frontend/src/tools/calculators/gallons-to-grams/*, cubic-feet formatMeasure reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal water @ 1000 kg/m³ = 3785.411784 g; milk @ 1030 ≈ 3898.97 g). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Gallons to Cups Converter
+- **Summary:** Shipped Gallons to Cups Converter on existing catalog slug gallons-to-cups-converter (GallonsToCupsConverter, catalog 6af46f17a27d8d1d4e990ac8). Bidirectional US gal ↔ US customary cups with exact factor 16; negatives rejected; empty default. Pillar 6af451d0a27d8d1d4e98f9e1 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-306b delivery for Conversion and Units volume pair converter (gal to cups).
+- **Important Files:** frontend/src/tools/calculators/gallons-to-cups/*, cubic-feet formatMeasure reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 gal = 16 cups; 8 cups = 0.5 gal). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Gallons to Cubic Feet Converter
+- **Summary:** Shipped Gallons to Cubic Feet Converter on existing catalog slug gallons-to-cubic-feet-converter (GallonsToCubicFeetConverter, catalog 6af46f17a27d8d1d4e990afa). Three-field sync US gal / UK gal / ft³ via exact liter factors; negatives rejected. Pillar 6af451d1a27d8d1d4e98f9e6 and subPillar 6af451d1a27d8d1d4e98f9e7 preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-305b delivery for Conversion and Units volume converter (gal to ft³).
+- **Important Files:** frontend/src/tools/calculators/gallons-to-cubic-feet/*, cubic-feet formatMeasure reuse, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 US gal ≈ 0.133681 ft³; 1 ft³ ≈ 7.48052 US gal). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Gaj to Square Yard Converter
+- **Summary:** Shipped Gaj to Square Yard Converter on existing catalog slug gaj-to-square-yard-converter (GajToSquareYardConverter, catalog 6af46f17a27d8d1d4e990ad5). Primary land-area gaj↔yd² at 1:1 with ft² helper; independent linear gaj↔yd accordion; negative area rejected. Pillar 6af451d0a27d8d1d4e98f9e2 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-304b delivery for Conversion and Units land-area gaj converter.
+- **Important Files:** frontend/src/tools/calculators/gaj-to-square-yard/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (150 gaj = 150 yd² = 1350 ft²; linear 12 gaj = 12 yd). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add ft to m Converter
+- **Summary:** Shipped ft to m Converter on existing catalog slug ft-to-m-converter (FtToMConverter, catalog 6af46f17a27d8d1d4e990b86). Bidirectional ft↔m with exact 0.3048; meter-converter registry cross-check. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-303b delivery for Conversion and Units length pair converter (ft to m).
+- **Important Files:** frontend/src/tools/calculators/ft-to-m/*, meter-converter convertLength cross-check, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (10 ft = 3.048 m; 1.8288 m = 6 ft). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Foot to Centimeter Converter
+- **Summary:** Shipped Foot to Centimeter Converter on existing catalog slug foot-to-centimeter-converter (FootToCentimeterConverter, catalog 6af46f17a27d8d1d4e990b85). Bidirectional ft↔cm with exact 30.48; More options mm/m/km/in/yd/mi via meter-converter registry. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-302b delivery for Conversion and Units length pair converter (ft to cm).
+- **Important Files:** frontend/src/tools/calculators/foot-to-centimeter/*, meter-converter convertLength cross-check, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (6 ft = 182.88 cm; 152.4 cm = 5 ft). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Fluid Ounces to Pounds Conversion
+- **Summary:** Shipped Fluid Ounces to Pounds Conversion on existing catalog slug fluid-ounces-to-pounds-conversion (FluidOuncesToPoundsConverter, catalog 6af46f17a27d8d1d4e990b39). Density-based volume↔mass with substance presets (water @ 1000 kg/m³), editable density units, US/Imp fl oz distinguished, bidirectional sync. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-301b delivery for Conversion and Units density-based fl oz ↔ lb converter.
+- **Important Files:** frontend/src/tools/calculators/fluid-ounces-to-pounds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (16 US fl oz water ≈ 1.04318 lb; 1 lb water ≈ 15.3378 US fl oz). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Feet to Yards Conversion
+- **Summary:** Shipped Feet to Yards Conversion on existing catalog slug feet-to-yards-conversion (FeetToYardsConverter, catalog 6af46f17a27d8d1d4e990ad4). Bidirectional ft↔yd with feet first; exact 1 yd = 3 ft; cross-checks meter-converter length registry. Pillar 6af451d0a27d8d1d4e98f9e2 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-300b delivery for Conversion and Units length pair converter (ft to yd).
+- **Important Files:** frontend/src/tools/calculators/feet-to-yards/*, meter-converter convertLength cross-check, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Feet to Miles Converter
+- **Summary:** Shipped Feet to Miles Converter on existing catalog slug feet-to-miles-converter (FeetToMilesConverter, catalog 6af46f17a27d8d1d4e990b09). Bidirectional ft↔mi with feet first; exact 1 mi = 5,280 ft; cross-checks meter-converter length registry. Pillar 6af451d1a27d8d1d4e98f9e9 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-299b delivery for Conversion and Units length pair converter (ft to mi).
+- **Important Files:** frontend/src/tools/calculators/feet-to-miles/*, meter-converter convertLength cross-check, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Feet Converter
+- **Summary:** Shipped Feet Converter on existing catalog slug feet-converter (FeetConverter, catalog 6af46f17a27d8d1d4e990af2). Convert Feet / Metric / Imperial/US / Others accordions; meters as base; exact 1 ft = 0.3048 m; reuses meter-converter length factors via convertFeet. Pillar 6af451d1a27d8d1d4e98f9e6 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-298b delivery for Conversion and Units length converter (feet focus).
+- **Important Files:** frontend/src/tools/calculators/feet-converter/*, meter-converter types reused, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Fahrenheit to Celsius Converter
+- **Summary:** Shipped Fahrenheit to Celsius Converter on existing catalog slug fahrenheit-to-celsius-converter (FahrenheitToCelsiusConverter, catalog 6af46f17a27d8d1d4e990b1a). Bidirectional °F↔°C with Fahrenheit first; reverse callout; reuses celsius-to-fahrenheit affine helpers; absolute-zero rejection. Pillar 6af451d2a27d8d1d4e98f9ec preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-297b delivery for Conversion and Units temperature pair converter (°F to °C focus).
+- **Important Files:** frontend/src/tools/calculators/fahrenheit-to-celsius/*, celsius-to-fahrenheit helpers reused, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Fahrenheit Converter
+- **Summary:** Shipped Fahrenheit Converter on existing catalog slug fahrenheit-converter (FahrenheitConverter, catalog 6af46f17a27d8d1d4e990b18). Primary °F; Other temperatures accordion for °C/K/°R/°De/°N/°Ré/°Rø; Kelvin-normalized path reusing Celsius Converter affine formulas; absolute-zero rejection. Pillar 6af451d2a27d8d1d4e98f9ec preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-296b delivery for Conversion and Units temperature converter (Fahrenheit focus).
+- **Important Files:** frontend/src/tools/calculators/fahrenheit-converter/*, celsius-converter formulas reused, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign after transient Atlas DNS timeouts (isDeveloped true, isActive true, indexable false, isFeatured false; pillar 6af451d2a27d8d1d4e98f9ec preserved). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add dm Converter
+- **Summary:** Shipped dm Converter on existing catalog slug dm-converter (DmConverter, catalog 6af46f17a27d8d1d4e990b84). Primary decimeter field; Metric / Imperial/US / Others accordions; meters as base; non-negative validation; reuses meter-converter length factors/formatters via convertDm. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-295b delivery for Conversion and Units length converter (decimeter focus).
+- **Important Files:** frontend/src/tools/calculators/dm-converter/*, meter-converter types reused, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — ADR-019: two-commit calculator delivery
+- **Summary:** Amended ADR-019 from size-banded milestone commits (small 1–2 / medium 2–3 / large 3–5) to exactly two commits per new calculator: (1) all tool files, (2) Brain docs last. Synced Cursor/Antigravity git-commits rules, playbook Step 19, calculator standards, `AGENTS.md`, and related Brain references. No calculator source changed.
+- **Why:** Agents were landing ~4 commits per tool; the team wants a fixed tool + Brain split only.
+- **Important Files:** `.cursor/rules/git-commits.mdc`, `.agents/rules/git-commits.md`, `brain/DECISIONS.md`, `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `brain/CALCULATOR_STANDARDS.md`, `AGENTS.md`.
+- **Verification:** Docs-only amendment; no runtime checks required.
+
+### 2026-11-17 — Add Distance Converter
+- **Summary:** Shipped Distance Converter on existing catalog slug distance-converter (DistanceConverter, catalog 6af46f17a27d8d1d4e990b83). Multi-field metric (mm/cm/m/km) and imperial/US (in/ft/yd/mi) groups plus other units (pm through pc); meters as base; non-negative validation; reuses length-converter factors/formatters. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-294b delivery for Conversion and Units length converter.
+- **Important Files:** frontend/src/tools/calculators/distance-converter/*, length-converter types reused, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Degrees to Seconds Converter
+- **Summary:** Shipped Degrees to Seconds Converter on existing catalog slug degrees-to-seconds-converter (DegreesToSecondsConverter, catalog 6af46f17a27d8d1d4e990bfe). Bidirectional degrees to arcseconds with exact factor 3600; expandable other units (arcminutes, radians, gradians, revolutions); empty default; angular-not-time copy; guide + table + FAQs. Reuses degreesToArcseconds/arcsecondsToDegrees on angle-conversion. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-293b delivery for Conversion and Units angle converter.
+- **Important Files:** frontend/src/tools/calculators/degrees-to-seconds/*, frontend/src/tools/calculators/angle-conversion/calculation.ts, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed; angle-conversion tests still pass; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Degrees to Radians Converter
+- **Summary:** Shipped Degrees to Radians Converter on existing catalog slug degrees-to-radians-converter (DegreesToRadiansConverter, catalog 6af46f17a27d8d1d4e990bfd). Bidirectional degrees ↔ radians via Math.PI; empty default; signed and >360 allowed; optional pi-fraction labels; guide + table + FAQs. Reuses hardened degreesToRadians/radiansToDegrees on angle-conversion/calculation.ts. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-292b delivery for Conversion & Units angle converter.
+- **Important Files:** frontend/src/tools/calculators/degrees-to-radians/*, frontend/src/tools/calculators/angle-conversion/calculation.ts, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md.
+- **Verification:** calculation.test.ts passed; angle-conversion and degrees-to-minutes tests still pass; tool.key ok. Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-17 — Add Degrees to Minutes Converter
+- **Summary:** Shipped Degrees to Minutes Converter on existing catalog slug `degrees-to-minutes-converter` (`DegreesToMinutesConverter`, catalog `6af46f17a27d8d1d4e990bfc`). Bidirectional degrees ↔ arcminutes with exact factor 60; empty default; signed and >360° allowed; angular-not-time copy; guide + FAQs. Reuses new exact helpers on `angle-conversion/calculation.ts`. Null pillar/subPillar preserved. Meta title ≤70. `indexable` left false.
+- **Why:** TOOL-291 delivery for Conversion & Units angle converter.
+- **Important Files:** `frontend/src/tools/calculators/degrees-to-minutes/*`, `frontend/src/tools/calculators/angle-conversion/calculation.ts`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
+- **Verification:** `calculation.test.ts` passed; angle-conversion tests still pass; `tool.key ok`. Mongo assigned via `npm run tool:assign` (`isDeveloped: true`, `isActive: true`, `indexable: false`, `isFeatured: false`). Full frontend `tsc` / production build not claimed.
+
+### 2026-11-17 — Reusable `tool:assign` only (delete per-tool assign scripts)
+- **Summary:** Expanded `backend/src/scripts/assign-tool-component.ts` into the sole catalog assign CLI (`npm run tool:assign`) with required `--slug`/`--component`/`--id`/`--name`/`--short-description`/`--meta-title`/`--meta-description` plus optional pillar guards and `--set-active`/`--set-indexable`. Deleted ~349 one-off `assign-*-tool.ts` scripts and ~22 tmp/lookup/adapt helpers. Locked in Cursor/Antigravity tool-activation rules, `AGENTS.md`, and playbook Step 19c. Kept seeds/publish/admin/currency/category scripts only.
+- **Why:** Per-tool assign scripts were one-time use and cluttered `backend/src/scripts/`; agents must pass content flags instead of inventing new files.
+- **Important Files:** `backend/src/scripts/assign-tool-component.ts`, `.cursor/rules/tool-activation.mdc`, `.agents/rules/tool-activation.md`, `AGENTS.md`, `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `brain/BACKEND.md`, `brain/ARCHITECTURE.md`, `brain/DECISIONS.md`.
+- **Verification:** Scripts folder reduced to 9 keepers. CLI help/header documented in script. Full Mongo smoke assign not re-run in this infra change.
+>>>>>>> 187e375d1faf04a647ea7f218d044c71b4f0371b
 
 ### 2026-11-17 — Mortgage Rate Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Rate Calculator on existing catalog slug `mortgage-rate-calculator` (`MortgageRateCalculator`, catalog `6af46f0fa27d8d1d4e98ff7b`). Main configuration (loan FX, term yrs/mos, rate %, compounding Yearly / Semi-annually Canada / Quarterly / Monthly UK & US, Fixed-rate only) + fees (points %, up-front FX, annual FX). Results: monthly payment, fee-adjusted APR, paid interest, total payments. Independent FX on six money fields; mixed inputs normalized into loan currency. No ARM formulas. Activated.
@@ -262,7 +768,10 @@
 - **Example:** 100,000 PKR / 5 yrs / 5% → payment ≈ 1,887.12; interest ≈ 13,227.40.
 - **Important Files:** `frontend/src/tools/calculators/boat-loan/*`, registries, `CURRENCY_CONVERSION_SLUGS`, sitemap, `backend/src/scripts/assign-boat-loan-tool.ts`, `brain/*`.
 - **Verification:** Mongo activation verified; worked-example math inspected via `tsx`. Lint/builds/browser/automated tests omitted per user.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 187e375d1faf04a647ea7f218d044c71b4f0371b
 ### 2026-11-16 — Add Days to Years Calculator
 - **Summary:** Shipped Days to Years Calculator on existing catalog slug `days-to-years-calculator` (`DaysToYearsCalculator`, catalog `6af46f17a27d8d1d4e990ba8`). Reuses Day Converter conversion engine; bidirectional days↔years via average Gregorian year 365.2425; common vs leap year guide and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-290 delivery for Conversion & Units time converter.

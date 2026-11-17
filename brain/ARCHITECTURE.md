@@ -81,7 +81,7 @@ Browser  ──►  Next.js Server (RSC / Server Actions)  ──►  Express AP
 - `backend/src/modules/`: Implemented (`health`, `admins`, `auth`, `categories`, `media`, `tools`, `catalog`, `currency`) and placeholders (`analytics`, `integrations`, `seo`, `uploads`, `users`).
 - `backend/src/jobs/`: `currency-rates.cron.ts` (daily USD rate fetch, ADR-017).
 - `backend/src/services/`: `email.service.ts`, `s3.service.ts`.
-- `backend/src/scripts/`: `create-admin.ts`, `seed-categories.ts`, `seed-tools.ts`, `fetch-currency-rates.ts`, plus per-tool `assign-*-tool.ts` helpers.
+- `backend/src/scripts/`: reusable keepers only — `assign-tool-component.ts` (`npm run tool:assign`), `create-admin.ts`, `seed-categories.ts`, `seed-tools.ts`, `publish-browser-tools.ts`, `enable-default-embeds.ts`, `attach-category-icons.ts`, `set-category-descriptions.ts`, `fetch-currency-rates.ts`. No per-tool `assign-*-tool.ts` (ADR-024).
 - `backend/data/`: `tools-directory-hierarchy.json`, `tools-catalog.json`.
 
 ---

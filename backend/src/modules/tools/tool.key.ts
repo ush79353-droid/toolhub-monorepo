@@ -196,6 +196,88 @@ export const APPROVED_COMPONENT_KEYS = [
   'DaysToMonthsCalculator',
   'DaysToWeeksCalculator',
   'DaysToYearsCalculator',
+  'DegreesToMinutesConverter',
+  'DegreesToRadiansConverter',
+  'DegreesToSecondsConverter',
+  'DistanceConverter',
+  'DmConverter',
+  'FahrenheitConverter',
+  'FahrenheitToCelsiusConverter',
+  'FeetConverter',
+  'FeetToMilesConverter',
+  'FeetToYardsConverter',
+  'FluidOuncesToPoundsConverter',
+  'FootToCentimeterConverter',
+  'FtToMConverter',
+  'GajToSquareYardConverter',
+  'GallonsToCubicFeetConverter',
+  'GallonsToCupsConverter',
+  'GallonsToGramsConverter',
+  'GallonsToPintsConverter',
+  'GallonsToQuartsConverter',
+  'GallonsToTonsConverter',
+  'GalToKgConverter',
+  'GramsInMlConverter',
+  'GramsToFlOzConverter',
+  'GramToLiterConversion',
+  'GrToMlConverter',
+  'GToTspConverter',
+  'GToLbsConverter',
+  'HectaresToAcresConverter',
+  'HeightConverter',
+  'HourConverter',
+  'HoursToDaysCalculator',
+  'HoursToMinutesConverter',
+  'HoursToSecondsConverter',
+  'HoursToWeekConversion',
+  'HoursToYearsConverter',
+  'ImperialCalculator',
+  'ImperialToMetricConversion',
+  'InchConverter',
+  'InchToMeterCalculator',
+  'InchesToYardConversion',
+  'InToCmConverter',
+  'KathaToSquareFeetConverter',
+  'KelvinConverter',
+  'KelvinToCelsiusConverter',
+  'KelvinToFahrenheitConverter',
+  'KgCmToPsiConverter',
+  'KgToLbsConverter',
+  'KgToLiterConverter',
+  'KgToMlConverter',
+  'KgToOunceConverter',
+  'KgToStonesConverter',
+  'KilometerCalculator',
+  'KilometerToMeterConverter',
+  'KilometersToMilesCalculator',
+  'KmToFeetConversion',
+  'KpaConverter',
+  'KpaToAtmConversion',
+  'KpaToMmhgConversion',
+  'KpaToPsiConversion',
+  'KsiToMpaConverter',
+  'KsiToPsiConversion',
+  'LandAreaCalculator',
+  'LbsToGConverter',
+  'LbsToKgConverter',
+  'LbsToPoundsConverter',
+  'MetricToStandardConverter',
+  'MgToCcConverter',
+  'MgToLbsConverter',
+  'MgToTablespoonConverter',
+  'MgToTeaspoonConverter',
+  'MicronToMilConversionCalculator',
+  'MilConversion',
+  'MileConversionCalculator',
+  'MillimeterCalculator',
+  'MillisecondsConverter',
+  'MilToInchConversion',
+  'MilToMmConversion',
+  'MinuteConverter',
+  'MinutesToDaysCalculator',
+  'MinutesToDecimalCalculator',
+  'MinutesToSecondsConverter',
+  'MinutesToYearsConversion',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -593,6 +675,88 @@ if (isDirect) {
     !isApprovedComponentKey('DaysToMonthsCalculator') ||
     !isApprovedComponentKey('DaysToWeeksCalculator') ||
     !isApprovedComponentKey('DaysToYearsCalculator') ||
+    !isApprovedComponentKey('DegreesToMinutesConverter') ||
+    !isApprovedComponentKey('DegreesToRadiansConverter') ||
+    !isApprovedComponentKey('DegreesToSecondsConverter') ||
+    !isApprovedComponentKey('DistanceConverter') ||
+    !isApprovedComponentKey('DmConverter') ||
+    !isApprovedComponentKey('FahrenheitConverter') ||
+    !isApprovedComponentKey('FahrenheitToCelsiusConverter') ||
+    !isApprovedComponentKey('FeetConverter') ||
+    !isApprovedComponentKey('FeetToMilesConverter') ||
+    !isApprovedComponentKey('FeetToYardsConverter') ||
+    !isApprovedComponentKey('FluidOuncesToPoundsConverter') ||
+    !isApprovedComponentKey('FootToCentimeterConverter') ||
+    !isApprovedComponentKey('FtToMConverter') ||
+    !isApprovedComponentKey('GajToSquareYardConverter') ||
+    !isApprovedComponentKey('GallonsToCubicFeetConverter') ||
+    !isApprovedComponentKey('GallonsToCupsConverter') ||
+    !isApprovedComponentKey('GallonsToGramsConverter') ||
+    !isApprovedComponentKey('GallonsToPintsConverter') ||
+    !isApprovedComponentKey('GallonsToQuartsConverter') ||
+    !isApprovedComponentKey('GallonsToTonsConverter') ||
+    !isApprovedComponentKey('GalToKgConverter') ||
+    !isApprovedComponentKey('GramsInMlConverter') ||
+    !isApprovedComponentKey('GramsToFlOzConverter') ||
+    !isApprovedComponentKey('GramToLiterConversion') ||
+    !isApprovedComponentKey('GrToMlConverter') ||
+    !isApprovedComponentKey('GToTspConverter') ||
+    !isApprovedComponentKey('GToLbsConverter') ||
+    !isApprovedComponentKey('HectaresToAcresConverter') ||
+    !isApprovedComponentKey('HeightConverter') ||
+    !isApprovedComponentKey('HourConverter') ||
+    !isApprovedComponentKey('HoursToDaysCalculator') ||
+    !isApprovedComponentKey('HoursToMinutesConverter') ||
+    !isApprovedComponentKey('HoursToSecondsConverter') ||
+    !isApprovedComponentKey('HoursToWeekConversion') ||
+    !isApprovedComponentKey('HoursToYearsConverter') ||
+    !isApprovedComponentKey('ImperialCalculator') ||
+    !isApprovedComponentKey('ImperialToMetricConversion') ||
+    !isApprovedComponentKey('InchConverter') ||
+    !isApprovedComponentKey('InchToMeterCalculator') ||
+    !isApprovedComponentKey('InchesToYardConversion') ||
+    !isApprovedComponentKey('InToCmConverter') ||
+    !isApprovedComponentKey('KathaToSquareFeetConverter') ||
+    !isApprovedComponentKey('KelvinConverter') ||
+    !isApprovedComponentKey('KelvinToCelsiusConverter') ||
+    !isApprovedComponentKey('KelvinToFahrenheitConverter') ||
+    !isApprovedComponentKey('KgCmToPsiConverter') ||
+    !isApprovedComponentKey('KgToLbsConverter') ||
+    !isApprovedComponentKey('KgToLiterConverter') ||
+    !isApprovedComponentKey('KgToMlConverter') ||
+    !isApprovedComponentKey('KgToOunceConverter') ||
+    !isApprovedComponentKey('KgToStonesConverter') ||
+    !isApprovedComponentKey('KilometerCalculator') ||
+    !isApprovedComponentKey('KilometerToMeterConverter') ||
+    !isApprovedComponentKey('KilometersToMilesCalculator') ||
+    !isApprovedComponentKey('KmToFeetConversion') ||
+    !isApprovedComponentKey('KpaConverter') ||
+    !isApprovedComponentKey('KpaToAtmConversion') ||
+    !isApprovedComponentKey('KpaToMmhgConversion') ||
+    !isApprovedComponentKey('KpaToPsiConversion') ||
+    !isApprovedComponentKey('KsiToMpaConverter') ||
+    !isApprovedComponentKey('KsiToPsiConversion') ||
+    !isApprovedComponentKey('LandAreaCalculator') ||
+    !isApprovedComponentKey('LbsToGConverter') ||
+    !isApprovedComponentKey('LbsToKgConverter') ||
+    !isApprovedComponentKey('LbsToPoundsConverter') ||
+    !isApprovedComponentKey('MetricToStandardConverter') ||
+    !isApprovedComponentKey('MgToCcConverter') ||
+    !isApprovedComponentKey('MgToLbsConverter') ||
+    !isApprovedComponentKey('MgToTablespoonConverter') ||
+    !isApprovedComponentKey('MgToTeaspoonConverter') ||
+    !isApprovedComponentKey('MicronToMilConversionCalculator') ||
+    !isApprovedComponentKey('MilConversion') ||
+    !isApprovedComponentKey('MileConversionCalculator') ||
+    !isApprovedComponentKey('MillimeterCalculator') ||
+    !isApprovedComponentKey('MillisecondsConverter') ||
+    !isApprovedComponentKey('MilToInchConversion') ||
+    !isApprovedComponentKey('MilToMmConversion') ||
+    !isApprovedComponentKey('MinuteConverter') ||
+    !isApprovedComponentKey('MinutesToDaysCalculator') ||
+    !isApprovedComponentKey('MinutesToDecimalCalculator') ||
+    !isApprovedComponentKey('MinutesToSecondsConverter') ||
+    !isApprovedComponentKey('MinutesToYearsConversion') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

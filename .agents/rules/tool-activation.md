@@ -31,3 +31,28 @@ Rules:
 - Do not turn an admin-disabled, draft, private, or noindex tool back on unless the task says to — report those as activation blockers.
 - Do not activate missing, incomplete, or broken calculators.
 - An unregistered or empty `componentKey` stays off the public route (`notFound()`).
+
+## Mongo assign — single reusable script (locked)
+
+Assign/update an existing catalog row **only** via:
+
+```bash
+cd backend && npm run tool:assign -- \
+  --slug <slug> \
+  --component <ApprovedComponentKey> \
+  --id <expectedMongoObjectId> \
+  --name "…" \
+  --short-description "…" \
+  --meta-title "…" \
+  --meta-description "…" \
+  --expected-pillar null \
+  --expected-subpillar null
+```
+
+Optional: `--set-active`, `--set-indexable` / `--unset-indexable`, `--no-developed`, `--no-embed`, `--execution client`.
+
+- **Forbidden:** new `backend/src/scripts/assign-*-tool.ts` (or any per-tool one-off assign/lookup/tmp script). Pass tool content as CLI flags to `tool:assign`.
+- Keepers in `backend/src/scripts/`: `assign-tool-component.ts`, seeds, publish, admin, currency, category helpers only.
+- Default preserve `isActive` / `indexable` / `isFeatured` / pillar / subPillar. Use `--set-active` / `--set-indexable` only when the task explicitly allows it.
+- `--id` and `--expected-pillar` / `--expected-subpillar` (use `null` when empty) must match the live row or refuse.
+- Register `componentKey` in `tool.key.ts` before running assign.

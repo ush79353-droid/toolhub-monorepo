@@ -31,7 +31,7 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 8. Keep changes scoped to the requested task and follow engineering standards in `.agents/rules/ponytail.md` / `.cursor/rules/ponytail.mdc`.
 9. Validate security-sensitive changes carefully (auth, sessions, cookies, RBAC, input schemas, storage keys, secret handling).
 10. Currency conversion reuses the ADR-017 store (ADR-021). Do not call ExchangeRate-API from a calculator, and do not add a per-tool cron. A currency selector that only labels one currency must not pretend to convert amounts.
-11. A new calculator is not delivered until its existing catalog record is active and `/tools/{slug}` renders (ADR-022 + ADR-023 verified activation), or an explicit activation blocker is reported. Do not activate a tool with no module, and do not re-enable a tool an admin turned off.
+11. A new calculator is not delivered until its existing catalog record is active and `/tools/{slug}` renders (ADR-022 + ADR-023 verified activation), or an explicit activation blocker is reported. Do not activate a tool with no module, and do not re-enable a tool an admin turned off. Catalog assign/update uses **only** `backend` `npm run tool:assign` (`assign-tool-component.ts`) with CLI content flags — never add per-tool `assign-*-tool.ts` or tmp lookup scripts under `backend/src/scripts/`.
 12. Follow the Screenshot-First Simplicity Standard (ADR-023). Auto Loan is our visual master, NOT our functional master. Functional scope is determined strictly by the reference screenshot. Do not invent unrequested inputs, extra calculation modes, advanced settings drawers, or unnecessary charts/dashboards. Add a currency selector ONLY when explicitly justified. Results must be compact and focused on the core answer. Perform a field-by-field screenshot parity check before marking complete.
 
 ---
@@ -44,7 +44,7 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 4. Update `brain/TASKS.md`.
 5. Append a chronological entry to `brain/CHANGELOG.md`.
 6. Update `brain/DECISIONS.md` if an architectural or design decision changed (never silently delete prior decisions).
-7. Report exact files changed and observed verification results. For a calculator, list each commit in the delivery and the checks run at that milestone.
+7. Report exact files changed and observed verification results. For a calculator, list both commits in the delivery and the checks run.
 8. Do not claim a feature or check is complete unless directly verified after your final edit.
 
 ---
@@ -57,7 +57,7 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 - Never automatically resolve conflicting architectural changes — stop and coordinate or ask for clarification.
 - Follow the user's Git instructions for committing and pushing (`git fetch` and inspect divergence/conflicts before pushing).
 - Stage only files that belong to the current task. Leave unrelated and uncommitted work untouched.
-- New calculators follow the meaningful incremental commit sequence in ADR-019 and `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`. Commit each finished milestone. A very small tool may be one commit. Do not invent empty commits to raise the count.
+- New calculators follow the two-commit rule in ADR-019 and `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`: (1) all tool files, (2) Brain docs. Do not invent extra milestone commits.
 - Non-calculator work still keeps its Brain update in the same commit as the code it describes.
-- A calculator's closing Brain commit (`CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`, and any ADR) is the last commit of that delivery. Push the finished sequence together to `origin/development` after `git fetch` shows it can fast-forward. Do not push a registered calculator without that Brain commit in the same push.
+- A calculator's Brain commit (`CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`, and any ADR) is the second and last commit of that delivery. Push both commits together to `origin/development` after `git fetch` shows it can fast-forward. Do not push a registered calculator without that Brain commit in the same push.
 
