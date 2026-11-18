@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Square Feet to Acres Calculator
+- **Summary:** Shipped Square Feet to Acres Calculator on existing catalog slug square-feet-to-acres-calculator (SquareFeetToAcresCalculator, catalog 6af46f17a27d8d1d4e990aff). Bidirectional ft²↔ac with exact 43,560; expandable Other area units (mm²/cm²/m²/km²/in²/yd²/ha/mi², default m²); empty default; negatives rejected. Reuses square-feet-converter area map for equivalents. Pillar/subPillar preserved (live pillar 6af451d1…). isActive preserved true; **indexable left false**.
+- **Why:** TOOL-449b delivery for Conversion and Units square feet to acres calculator.
+- **Important Files:** frontend/src/tools/calculators/square-feet-to-acres/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (43560→1 ac, 21780→0.5, 2 ac→87120, 10000≈0.2295684114; other units 43560 ft²→4046.8564224 m² / 4840 yd²; negatives rejected; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Square Feet Converter
 - **Summary:** Shipped Square Feet Converter on existing catalog slug square-feet-converter (SquareFeetConverter, catalog 6af46f17a27d8d1d4e990afb). Bidirectional ft² ↔ selectable area units via square-meter base (mm²/cm²/m²/km²/in²/ft²/yd²/ac/ha/mi²); empty default; destination defaults to m²; unit change preserves ft². Pillar/subPillar preserved (live pillar 6af451d1…). Meta title 41 chars. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-448b delivery for Conversion and Units square feet converter.
