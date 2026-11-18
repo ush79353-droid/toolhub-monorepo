@@ -1,0 +1,522 @@
+[
+  {
+    "n": "1",
+    "name": "Car Interest Calculator",
+    "slug": "car-interest-calculator",
+    "key": "CarInterestCalculator",
+    "status": "**FX gap**",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "2",
+    "name": "Cash Back or Low Interest Calculator",
+    "slug": "cash-back-or-low-interest-calculator",
+    "key": "CashBackOrLowInterestCalculator",
+    "status": "N/A",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "3",
+    "name": "Interest Coverage Ratio Calculator",
+    "slug": "interest-coverage-ratio-calculator",
+    "key": "InterestCoverageRatioCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "4",
+    "name": "Interest Per Day Calculator",
+    "slug": "interest-per-day-calculator",
+    "key": "InterestPerDayCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "5",
+    "name": "Loan Interest Calculator",
+    "slug": "loan-interest-calculator",
+    "key": "LoanInterestCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "6",
+    "name": "Post Judgment Interest Calculator",
+    "slug": "post-judgment-interest-calculator",
+    "key": "PostJudgmentInterestCalculator",
+    "status": "N/A",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "7",
+    "name": "TDS Interest Calculator",
+    "slug": "tds-interest-calculator",
+    "key": "TdsInterestCalculator",
+    "status": "N/A",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "8",
+    "name": "Times Interest Earned Ratio Calculator",
+    "slug": "times-interest-earned-ratio-calculator",
+    "key": "TimesInterestEarnedCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "9",
+    "name": "Interest Rate Parity Calculator",
+    "slug": "interest-rate-parity-calculator",
+    "key": "InterestRateParityCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "10",
+    "name": "Debt Calculator",
+    "slug": "debt-calculator",
+    "key": "DebtCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "11",
+    "name": "After-tax Cost of Debt Calculator",
+    "slug": "after-tax-cost-of-debt-calculator",
+    "key": "AfterTaxCostOfDebtCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "12",
+    "name": "Debt Avalanche Calculator",
+    "slug": "debt-avalanche-calculator",
+    "key": "DebtAvalancheCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "13",
+    "name": "Debt Service Coverage Ratio (DSCR)",
+    "slug": "debt-service-coverage-ratio-calculator-dscr",
+    "key": "DebtServiceCoverageRatioCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "14",
+    "name": "Debt Snowball Calculator",
+    "slug": "debt-snowball-calculator",
+    "key": "DebtSnowballCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "15",
+    "name": "Debt to Asset Ratio Calculator",
+    "slug": "debt-to-asset-ratio-calculator",
+    "key": "DebtToAssetRatioCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "16",
+    "name": "Debt to Equity Calculator",
+    "slug": "debt-to-equity-calculator",
+    "key": "DebtToEquityCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "17",
+    "name": "Debt-to-Capital Ratio Calculator",
+    "slug": "debt-to-capital-ratio-calculator",
+    "key": "DebtToCapitalRatioCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "18",
+    "name": "Net Debt Calculator",
+    "slug": "net-debt-calculator",
+    "key": "NetDebtCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "19",
+    "name": "EBITDA Margin Calculator",
+    "slug": "ebitda-margin-calculator",
+    "key": "EbitdaMarginCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "20",
+    "name": "Gross Margin Calculator",
+    "slug": "gross-margin-calculator",
+    "key": "GrossMarginCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "21",
+    "name": "Margin and Markup Calculator",
+    "slug": "margin-and-markup-calculator",
+    "key": "MarginAndMarkupCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "22",
+    "name": "Margin and VAT Calculator",
+    "slug": "margin-and-vat-calculator",
+    "key": "MarginAndVatCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "23",
+    "name": "Margin Calculator Classic",
+    "slug": "margin-calculator-classic",
+    "key": "MarginCalculatorClassic",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "24",
+    "name": "Margin Call Calculator",
+    "slug": "margin-call-calculator",
+    "key": "MarginCallCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "25",
+    "name": "Margin of Safety Calculator",
+    "slug": "margin-of-safety-calculator",
+    "key": "MarginOfSafetyCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "26",
+    "name": "Operating Margin Calculator",
+    "slug": "operating-margin-calculator",
+    "key": "OperatingMarginCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "27",
+    "name": "Annuity Calculator",
+    "slug": "annuity-calculator",
+    "key": "AnnuityCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "28",
+    "name": "Annuity Payout Calculator",
+    "slug": "annuity-payout-calculator",
+    "key": "AnnuityPayoutCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "29",
+    "name": "Deferred Annuity Calculator",
+    "slug": "deferred-annuity-calculator",
+    "key": "DeferredAnnuityCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "30",
+    "name": "Future Value of Annuity Calculator",
+    "slug": "future-value-of-annuity-calculator",
+    "key": "FutureValueOfAnnuityCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "31",
+    "name": "Growing Annuity Calculator",
+    "slug": "growing-annuity-calculator",
+    "key": "GrowingAnnuityCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "32",
+    "name": "Immediate Annuity Calculator",
+    "slug": "immediate-annuity-calculator",
+    "key": "ImmediateAnnuityCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "33",
+    "name": "Lottery Annuity Calculator",
+    "slug": "lottery-annuity-calculator",
+    "key": "LotteryAnnuityCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "34",
+    "name": "Loan Repayment / Loan Payoff",
+    "slug": "loan-repayment-calculator-loan-payoff-calculator",
+    "key": "LoanRepaymentCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "35",
+    "name": "Present Value of Annuity Calculator",
+    "slug": "present-value-of-annuity-calculator",
+    "key": "PresentValueOfAnnuityCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "36",
+    "name": "Variable Annuity Calculator",
+    "slug": "variable-annuity-calculator",
+    "key": "VariableAnnuityCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "37",
+    "name": "Overtime Calculator",
+    "slug": "overtime-calculator",
+    "key": "OvertimeCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "38",
+    "name": "California Overtime Calculator",
+    "slug": "california-overtime-calculator",
+    "key": "CaliforniaOvertimeCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "39",
+    "name": "Florida Overtime Calculator",
+    "slug": "florida-overtime-calculator",
+    "key": "FloridaOvertimeCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "40",
+    "name": "Georgia Overtime Calculator",
+    "slug": "georgia-overtime-calculator",
+    "key": "GeorgiaOvertimeCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "41",
+    "name": "Illinois Overtime Calculator",
+    "slug": "illinois-overtime-calculator",
+    "key": "IllinoisOvertimeCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "42",
+    "name": "New York Overtime Calculator",
+    "slug": "new-york-overtime-calculator",
+    "key": "NewYorkOvertimeCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "43",
+    "name": "Overtime Paycheck Calculator",
+    "slug": "overtime-paycheck-calculator",
+    "key": "OvertimePaycheckCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "44",
+    "name": "Salary Calculator With Overtime",
+    "slug": "salary-calculator-with-overtime",
+    "key": "SalaryWithOvertimeCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "45",
+    "name": "Texas Overtime Calculator",
+    "slug": "texas-overtime-calculator",
+    "key": "TexasOvertimeCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "46",
+    "name": "Gross Rent Multiplier Calculator",
+    "slug": "gross-rent-multiplier-calculator",
+    "key": "GrossRentMultiplierCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "47",
+    "name": "Net Effective Rent Calculator",
+    "slug": "net-effective-rent-calculator",
+    "key": "NetEffectiveRentCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "48",
+    "name": "Prorated Rent Calculator",
+    "slug": "prorated-rent-calculator",
+    "key": "ProratedRentCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "49",
+    "name": "Rent Increase Calculator",
+    "slug": "rent-increase-calculator",
+    "key": "RentIncreaseCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "50",
+    "name": "Rent or Buy Calculator",
+    "slug": "rent-or-buy-calculator",
+    "key": "RentOrBuyCalculator",
+    "status": "FX gap",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "51",
+    "name": "Rent Split Calculator",
+    "slug": "rent-split-calculator",
+    "key": "RentSplitCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "52",
+    "name": "Rent vs. Buy Calculator",
+    "slug": "rent-vs-buy-calculator",
+    "key": "RentVsBuyCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "53",
+    "name": "Payment Calculator",
+    "slug": "payment-calculator",
+    "key": "PaymentCalculator",
+    "status": "N/A",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "54",
+    "name": "Balloon Payment Calculator",
+    "slug": "balloon-payment-calculator",
+    "key": "BalloonPaymentCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "55",
+    "name": "Bi-Weekly Mortgage Payment Calculator",
+    "slug": "bi-weekly-mortgage-payment-calculator",
+    "key": "BiWeeklyMortgagePaymentCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "56",
+    "name": "Coupon Payment Calculator",
+    "slug": "coupon-payment-calculator",
+    "key": "CouponPaymentCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "57",
+    "name": "Deferred Payment Loan Calculator",
+    "slug": "deferred-payment-loan-calculator",
+    "key": "DeferredPaymentLoanCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "58",
+    "name": "Loan Payment Calculator",
+    "slug": "loan-payment-calculator",
+    "key": "LoanPaymentCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "59",
+    "name": "Mortgage with Extra Payments Calculator",
+    "slug": "mortgage-with-extra-payments-calculator",
+    "key": "MortgageWithExtraPaymentsCalculator",
+    "status": "Phase2 (static)",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "60",
+    "name": "Stimulus Check Calculator (40k Cap)",
+    "slug": "stimulus-check-calculator-40k-cap",
+    "key": "StimulusCheck40kCalculator",
+    "status": "N/A",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "61",
+    "name": "California Stimulus Check II Calculator",
+    "slug": "california-stimulus-check-ii-calculator",
+    "key": "CaliforniaStimulusCheckIiCalculator",
+    "status": "N/A",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "62",
+    "name": "Second Stimulus Check (HEALS Act)",
+    "slug": "second-stimulus-check-calculator-heals-act",
+    "key": "HealsActStimulusCalculator",
+    "status": "N/A",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "63",
+    "name": "Second Stimulus Check – $900 Billion Bill",
+    "slug": "second-stimulus-check-calculator-900-billion-bill",
+    "key": "SecondStimulus900BillionCalculator",
+    "status": "N/A",
+    "issues": "**PARTIAL**"
+  },
+  {
+    "n": "64",
+    "name": "Second Stimulus Check – CASH Act",
+    "slug": "second-stimulus-check-calculator-cash-act",
+    "key": "CashActStimulusCalculator",
+    "status": "N/A",
+    "issues": "**DEVELOPED**"
+  },
+  {
+    "n": "65",
+    "name": "Second Stimulus Check – HEROES Act",
+    "slug": "second-stimulus-check-calculator-heroes-act",
+    "key": "HeroesActStimulusCalculator",
+    "status": "N/A",
+    "issues": "**DEVELOPED**"
+  }
+]
