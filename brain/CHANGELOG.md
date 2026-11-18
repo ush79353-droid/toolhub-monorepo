@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Pascal Conversion
+- **Summary:** Shipped Pascal Conversion on existing catalog slug pascal-conversion (PascalConversion, catalog 6af46f17a27d8d1d4e990ba0). Multi-unit Pa↔bar/atm/psi/Torr plus kPa/MPa/mbar/mmHg via shared pressure-conversion engine; empty default; signed gauge values; conventional mmHg distinct from Torr; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-428b delivery for Conversion and Units pascal pressure converter.
+- **Important Files:** frontend/src/tools/calculators/pascal-conversion/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (Pa↔kPa/bar/atm/Torr/MPa/psi; negatives; mmHg≠Torr; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Ounces to Milliliters Converter
 - **Summary:** Shipped Ounces to Milliliters Converter on existing catalog slug ounces-to-milliliters-converter (OuncesToMillilitersConverter, catalog 6af46f17a27d8d1d4e990b60). Bidirectional US/UK fluid ounces↔mL with exact 29.5735295625 / 28.4130625 mL per fl oz; US/UK selector; default 1 US fl oz; rejects negative volume; fluid ounces only (not mass oz); guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-427b delivery for Conversion and Units fluid ounces↔milliliters volume converter.
