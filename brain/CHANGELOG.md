@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add mL to tbsp Converter
+- **Summary:** Shipped mL to tbsp Converter on existing catalog slug ml-to-tbsp-converter (MlToTbspConverter, catalog 6af46f17a27d8d1d4e990b5b). Three-field bidirectional volume (mL / US·metric·AU·Imp tbsp / accordion other units default US cup); reuses volume-conversion engine; added shared `impTbsp` (imperial gallon/256 = 17.7581640625 mL); exact US tbsp 14.78676478125 mL; empty default; guide/chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-406b delivery for Conversion and Units mL↔tablespoon volume converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-tbsp/*, volume-conversion/types.ts, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/15/30 mL US+metric tbsp; 1 US tbsp; 1 AU tbsp; 1 US cup = 16 US tbsp; Imperial tbsp; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add mL to oz Converter
 - **Summary:** Shipped mL to oz Converter on existing catalog slug ml-to-oz-converter (MlToOzConverter, catalog 6af46f17a27d8d1d4e990b5a). Three-field bidirectional volume converter (mL / US·UK fl oz / other units); reuses volume-conversion engine; exact 1 US fl oz = 29.5735295625 mL and 1 UK fl oz = 28.4130625 mL; default mL / US fl oz / m³; empty default; fl oz labeled as volume not mass; guide/chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-405b delivery for Conversion and Units mL↔fluid ounce volume converter.
