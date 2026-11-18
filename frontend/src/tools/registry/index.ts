@@ -1537,6 +1537,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MpaToPsigConversion,
     })),
   ),
+  MsToSecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/ms-to-seconds/MsToSecondsConverter').then((mod) => ({
+      default: mod.MsToSecondsConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

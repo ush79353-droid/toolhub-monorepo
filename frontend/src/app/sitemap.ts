@@ -290,6 +290,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mpa-conversion',
   'mpa-to-psi-conversion',
   'mpa-to-psig-conversion',
+  'ms-to-seconds-converter',
   'kilometer-to-meter-converter',
   'kilometers-to-miles-calculator',
   'km-to-feet-conversion',
