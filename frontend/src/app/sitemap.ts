@@ -95,6 +95,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'decimeter-to-meter-converter',
   'deferred-payment-loan-calculator',
   'rent-increase-calculator',
+  'rent-or-buy-calculator',
   'salary-calculator-with-overtime',
   'square-kilometers-to-acres-conversion',
   'feet-and-inches-calculator',

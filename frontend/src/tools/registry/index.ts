@@ -284,6 +284,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RentIncreaseCalculator,
     })),
   ),
+  RentOrBuyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/rent-or-buy/RentOrBuyCalculator'
+    ).then((mod) => ({
+      default: mod.RentOrBuyCalculator,
+    })),
+  ),
   RrefCalculator: lazyTool(() =>
     import('@/tools/calculators/rref/RrefCalculator').then((mod) => ({
       default: mod.RrefCalculator,
