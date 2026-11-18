@@ -1547,6 +1547,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NmConverter,
     })),
   ),
+  NmToMConverter: lazyTool(() =>
+    import('@/tools/calculators/nm-to-m/NmToMConverter').then((mod) => ({
+      default: mod.NmToMConverter,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
