@@ -298,6 +298,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MpaToPsiConversion',
   'MpaToPsigConversion',
   'MsToSecondsConverter',
+  'NmConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -811,6 +812,7 @@ if (isDirect) {
     !isApprovedComponentKey('MpaToPsiConversion') ||
     !isApprovedComponentKey('MpaToPsigConversion') ||
     !isApprovedComponentKey('MsToSecondsConverter') ||
+    !isApprovedComponentKey('NmConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
