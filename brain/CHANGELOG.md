@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Ounces to Milliliters Converter
+- **Summary:** Shipped Ounces to Milliliters Converter on existing catalog slug ounces-to-milliliters-converter (OuncesToMillilitersConverter, catalog 6af46f17a27d8d1d4e990b60). Bidirectional US/UK fluid ounces↔mL with exact 29.5735295625 / 28.4130625 mL per fl oz; US/UK selector; default 1 US fl oz; rejects negative volume; fluid ounces only (not mass oz); guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-427b delivery for Conversion and Units fluid ounces↔milliliters volume converter.
+- **Important Files:** frontend/src/tools/calculators/ounces-to-milliliters/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (US/UK fl oz→mL; 100 mL reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add oz to cc Converter
 - **Summary:** Shipped oz to cc Converter on existing catalog slug oz-to-cc-converter (OzToCcConverter, catalog 6af46f17a27d8d1d4e990b62). Bidirectional US/UK fluid ounces↔cc with exact 29.5735295625 / 28.4130625 cc per fl oz; US/UK selector; default 1 US fl oz; rejects negative volume; fluid ounces only (not mass oz); guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-426b delivery for Conversion and Units fluid ounces↔cubic centimeters volume converter.
