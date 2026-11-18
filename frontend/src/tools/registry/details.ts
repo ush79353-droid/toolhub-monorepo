@@ -437,6 +437,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SecondsToYearsConversion: () => import('@/tools/calculators/seconds-to-years/detail'),
   SquareCmToSquareMmConverter: () => import('@/tools/calculators/square-cm-to-square-mm/detail'),
   SquareFeetConverter: () => import('@/tools/calculators/square-feet-converter/detail'),
+  SquareFeetToAcresCalculator: () => import('@/tools/calculators/square-feet-to-acres/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),

@@ -361,6 +361,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'seconds-to-years-conversion',
   'square-centimeters-to-square-millimeters-converter',
   'square-feet-converter',
+  'square-feet-to-acres-calculator',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',

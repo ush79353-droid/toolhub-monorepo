@@ -1977,6 +1977,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SquareFeetConverter,
     })),
   ),
+  SquareFeetToAcresCalculator: lazyTool(() =>
+    import('@/tools/calculators/square-feet-to-acres/SquareFeetToAcresCalculator').then((mod) => ({
+      default: mod.SquareFeetToAcresCalculator,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,

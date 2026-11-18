@@ -366,6 +366,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SecondsToYearsConversion',
   'SquareCmToSquareMmConverter',
   'SquareFeetConverter',
+  'SquareFeetToAcresCalculator',
   'NmConverter',
   'NmToMConverter',
   'AdditionalFundsNeededCalculator',
@@ -907,6 +908,7 @@ if (isDirect) {
     !isApprovedComponentKey('SecondsToYearsConversion') ||
     !isApprovedComponentKey('SquareCmToSquareMmConverter') ||
     !isApprovedComponentKey('SquareFeetConverter') ||
+    !isApprovedComponentKey('SquareFeetToAcresCalculator') ||
     !isApprovedComponentKey('NmConverter') ||
     !isApprovedComponentKey('NmToMConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
