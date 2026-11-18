@@ -321,6 +321,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SecondsToDaysConverter',
   'SecondsToHoursConverter',
   'SecondsToMinutesConverter',
+  'SecondsToYearsConversion',
   'NmConverter',
   'NmToMConverter',
   'AdditionalFundsNeededCalculator',
@@ -859,6 +860,7 @@ if (isDirect) {
     !isApprovedComponentKey('SecondsToDaysConverter') ||
     !isApprovedComponentKey('SecondsToHoursConverter') ||
     !isApprovedComponentKey('SecondsToMinutesConverter') ||
+    !isApprovedComponentKey('SecondsToYearsConversion') ||
     !isApprovedComponentKey('NmConverter') ||
     !isApprovedComponentKey('NmToMConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||

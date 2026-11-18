@@ -350,6 +350,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SecondsToDaysConverter: () => import('@/tools/calculators/seconds-to-days/detail'),
   SecondsToHoursConverter: () => import('@/tools/calculators/seconds-to-hours/detail'),
   SecondsToMinutesConverter: () => import('@/tools/calculators/seconds-to-minutes/detail'),
+  SecondsToYearsConversion: () => import('@/tools/calculators/seconds-to-years/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
