@@ -362,6 +362,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'square-centimeters-to-square-millimeters-converter',
   'square-feet-converter',
   'square-feet-to-acres-calculator',
+  'square-inch-to-square-foot-converter',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',
