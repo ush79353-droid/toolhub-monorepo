@@ -319,6 +319,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  PoundsToGramsConverter: lazyTool(() =>
+    import('@/tools/calculators/pounds-to-grams/PoundsToGramsConverter').then((mod) => ({
+      default: mod.PoundsToGramsConverter,
+    })),
+  ),
   OunceToKgConverter: lazyTool(() =>
     import('@/tools/calculators/ounce-to-kg/OunceToKgConverter').then((mod) => ({
       default: mod.OunceToKgConverter,

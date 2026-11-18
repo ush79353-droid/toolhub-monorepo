@@ -59,6 +59,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PintsToGallonsConverter',
   'DropsToMlConverter',
   'PoundsAndOuncesCalculator',
+  'PoundsToGramsConverter',
   'OunceToKgConverter',
   'OuncesToGramsConverter',
   'OuncesToMillilitersConverter',
@@ -583,6 +584,7 @@ if (isDirect) {
     !isApprovedComponentKey('PintsToGallonsConverter') ||
     !isApprovedComponentKey('DropsToMlConverter') ||
     !isApprovedComponentKey('PoundsAndOuncesCalculator') ||
+    !isApprovedComponentKey('PoundsToGramsConverter') ||
     !isApprovedComponentKey('OunceToKgConverter') ||
     !isApprovedComponentKey('OuncesToGramsConverter') ||
     !isApprovedComponentKey('OuncesToMillilitersConverter') ||
