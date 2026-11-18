@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Pounds to Grams Converter
+- **Summary:** Shipped Pounds to Grams Converter on existing catalog slug pounds-to-grams-converter (PoundsToGramsConverter, catalog 6af46f17a27d8d1d4e990b67). Bidirectional lb↔g with exact 453.59237 g per lb; default 1 lb; rejects negative mass; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-432b delivery for Conversion and Units pounds↔grams mass converter.
+- **Important Files:** frontend/src/tools/calculators/pounds-to-grams/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/2/3/5/10/0.5 lb; 500/1000 g reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Pints to Gallons Converter
 - **Summary:** Shipped Pints to Gallons Converter on existing catalog slug pints-to-gallons-converter (PintsToGallonsConverter, catalog 6af46f17a27d8d1d4e990acf). Four-field US/UK pt↔gal sync via shared volume-conversion engine; accordion Pints/Gallons groups; default 1 US pt; rejects negative volume; guide/table/FAQs. Pillar preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-431b delivery for Conversion and Units US/UK pint↔gallon converter.
