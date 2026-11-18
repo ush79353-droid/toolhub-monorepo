@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add FCFF Calculator — Free Cash Flow to Firm
+- **Summary:** Shipped FCFF Calculator on existing catalog slug `fcff-calculator-free-cash-flow-to-firm` (`FcffCalculator`, catalog `6af46f0fa27d8d1d4e98fff5`). Screenshot-first (ADR-023): Source radios Net income (default) / EBITDA / EBIT / CFO with dynamic source-value FX; Adjustments D&A / Interest / Corporate tax % / CapEx / ΔNWC with source-aware show/hide; Result FCFF FX. Share/Reload/Clear/feedback; how-to-use → `#how-to-use`. Independent Phase 2 FX; tax % never converts. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96b` / subPillar null preserved.
+- **Formulas:** NI: FCFF = NI + D&A + Interest×(1−T) − CapEx − ΔNWC; EBITDA: FCFF = EBITDA×(1−T) + D&A×T − CapEx − ΔNWC; EBIT: FCFF = EBIT×(1−T) + D&A − CapEx − ΔNWC; CFO: FCFF = CFO + Interest×(1−T) − CapEx (no ΔNWC). CapEx/ΔNWC positive outflows; negative FCFF allowed; tax 0–100%.
+- **Example:** NI 100,000 · D&A 20,000 · Interest 10,000 · T 25% · CapEx 30,000 · ΔNWC 5,000 → FCFF 92,500.
+- **Important Files:** `frontend/src/tools/calculators/fcff/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check present in `calculation.test.ts` (execution omitted per task). Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Dividend Yield Calculator
 - **Summary:** Shipped Dividend Yield Calculator on existing catalog slug `dividend-yield-calculator` (`DividendYieldCalculator`, catalog `6af46f0fa27d8d1d4e990007`). Screenshot-first (ADR-023): Annual dividends — Dividends per period FX, Dividend frequency (Annually/Semiannually/Quarterly/Monthly; selection required), Annual dividends FX output; Dividend yield — Share price FX, Dividend yield %. Share/Reload/Clear/feedback; how-to-use → `#how-to-use`. Independent Phase 2 FX; yield % and frequency never convert. DividendDiscountModelCalculator and DividendPayoutRatioCalculator untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96e` / subPillar null preserved.
 - **Formulas:** Annual Dividends = Dividends per Period × Payments per Year; Dividend Yield (%) = Annual Dividends ÷ Share Price × 100. Full precision with display rounding only. Zero dividends allowed (0% yield); share price must be > 0; unselected frequency blocks results.

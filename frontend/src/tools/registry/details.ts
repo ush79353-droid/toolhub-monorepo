@@ -808,6 +808,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/effective-interest-rate/detail'),
   ExpectedUtilityCalculator: () =>
     import('@/tools/calculators/expected-utility/detail'),
+  FcffCalculator: () => import('@/tools/calculators/fcff/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
   FhaLoanCalculator: () => import('@/tools/calculators/fha-loan/detail'),
   FutureValueCalculator: () =>

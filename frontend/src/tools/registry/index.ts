@@ -3118,6 +3118,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ExpectedUtilityCalculator,
     })),
   ),
+  FcffCalculator: lazyTool(() =>
+    import('@/tools/calculators/fcff/FcffCalculator').then((mod) => ({
+      default: mod.FcffCalculator,
+    })),
+  ),
   FdCalculator: lazyTool(() =>
     import('@/tools/calculators/fd/FdCalculator').then((mod) => ({
       default: mod.FdCalculator,

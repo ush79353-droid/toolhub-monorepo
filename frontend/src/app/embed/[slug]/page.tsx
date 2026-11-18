@@ -80,6 +80,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'effective-annual-yield-calculator',
   'expected-utility-calculator',
   'expense-ratio-calculator',
+  'fcff-calculator-free-cash-flow-to-firm',
   'fd-calculator',
   'fha-loan-calculator',
   'future-value-calculator',

@@ -594,6 +594,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'effective-interest-rate-calculator',
   'expected-utility-calculator',
   'future-value-calculator',
+  'fcff-calculator-free-cash-flow-to-firm',
   'fd-calculator-fixed-deposit-calculator',
   'holding-period-return-calculator',
   'impermanent-loss-calculator',
