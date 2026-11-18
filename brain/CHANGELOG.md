@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Price Per Liter to Price Per Gallon Converter
+- **Summary:** Shipped Price Per Liter to Price Per Gallon Converter on existing catalog slug price-per-liter-to-price-per-gallon-converter (PricePerLiterToGallonConverter, catalog 6af46f17a27d8d1d4e990ad0). Bidirectional price-per-volume $/L↔$/gal using US liquid 3.785411784 L and Imperial 4.54609 L; denomination-only CurrencySelect (no FX); empty default; negatives rejected. Gallon Calculator pillar preserved; subPillar null. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-467b delivery for Conversion and Units price-per-liter-to-gallon converter.
+- **Important Files:** frontend/src/tools/calculators/price-per-liter-to-gallon/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 L→3.785411784 US gal; 1.5→5.678117676; 2 L→9.09218 imp; 4 US gal→≈1.05669/L; PKR 300→1135.6235352; zero; round-trip; validation). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d0a27d8d1d4e98f9e1). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Yard to Mile Converter
 - **Summary:** Shipped Yard to Mile Converter on existing catalog slug yard-to-mile-converter (YardToMileConverter, catalog 6af46f17a27d8d1d4e990b0c). Bidirectional yd↔mi via exact 1 mi = 1,760 yd; Equivalence in other units (in/ft/cm/m/km); conversion diagram + chart; empty default; negatives rejected. Mile Conversion Calculator pillar preserved; subPillar null. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-466b delivery for Conversion and Units yard-to-mile converter.
