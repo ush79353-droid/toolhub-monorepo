@@ -111,6 +111,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EbitdaMarginCalculator,
     })),
   ),
+  FloridaOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/florida-overtime/FloridaOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.FloridaOvertimeCalculator,
+    })),
+  ),
   FutureValueOfAnnuityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/future-value-of-annuity/FutureValueOfAnnuityCalculator'

@@ -15,6 +15,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DebtToEquityCalculator',
   'DeferredAnnuityCalculator',
   'EbitdaMarginCalculator',
+  'FloridaOvertimeCalculator',
   'FutureValueOfAnnuityCalculator',
   'GrossMarginCalculator',
   'GrowingAnnuityCalculator',
@@ -1027,6 +1028,7 @@ if (isDirect) {
     !isApprovedComponentKey('VariableAnnuityCalculator') ||
     !isApprovedComponentKey('OvertimeCalculator') ||
     !isApprovedComponentKey('CaliforniaOvertimeCalculator') ||
+    !isApprovedComponentKey('FloridaOvertimeCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
