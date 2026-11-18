@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Stone to lbs Converter
+- **Summary:** Shipped Stone to lbs Converter on existing catalog slug stone-to-lbs-converter (StoneToLbsConverter, catalog 6af46f17a27d8d1d4e990b6e). Synchronized st↔lb with exact 1 st = 14 lb plus other mass units (default kg) via weight-converter `convertMass`; empty default; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-456b delivery for Conversion and Units stone to lbs converter.
+- **Important Files:** frontend/src/tools/calculators/stone-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/8/18/120 st→lb, 150 lb→≈10.7142857143 st, 10 st→63.5029318 kg, 14 lb→6.35029318 kg; round-trip; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Stone to kg Converter
 - **Summary:** Shipped Stone to kg Converter on existing catalog slug stone-to-kg-converter (StoneToKgConverter, catalog 6af46f17a27d8d1d4e990b6d). Bidirectional st↔kg with exact 1 st = 6.35029318 kg (shared KG_PER_STONE); stone-first fields; reverse-conversion notice; empty default; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-455b delivery for Conversion and Units stone to kg converter.
