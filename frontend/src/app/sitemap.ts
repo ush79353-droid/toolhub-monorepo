@@ -581,6 +581,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'credit-card-interest-calculator',
   'credit-card-minimum-payment-calculator',
   'credit-card-payment-calculator',
+  'credit-card-payoff-calculator',
   'effective-annual-yield-calculator',
   'effective-interest-rate-calculator',
   'expected-utility-calculator',
