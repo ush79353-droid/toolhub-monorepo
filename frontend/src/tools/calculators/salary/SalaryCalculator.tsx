@@ -5,11 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import type { SupportedCurrency } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
 import {
   useCurrencyRates,
   useCurrencyRatesStatus,
 } from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import {
   SalaryCalculatorForm,
   type OutputCurrencyKey,
@@ -21,6 +30,9 @@ import {
   type SalaryResult,
 } from './types';
 import { validateSalaryInput } from './validation';
+
+const FX_NOTE =
+  'Pay and each result (hourly, daily, weekly, monthly, annual) have their own currency. Salary math runs in the pay currency; results convert for display. Hours, days, holidays, and vacation counts are never converted. Missing rates block conversion; stale rates warn but still convert. Annual uses a 52-week schedule; holidays and paid vacation are not subtracted.';
 
 function inputsEqual(a: SalaryInput, b: SalaryInput): boolean {
   return (
@@ -75,9 +87,50 @@ export function SalaryCalculator({
     setResult(validation.isValid ? validation.result : null);
   };
 
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
   const handlePayCurrencyChange = (next: SupportedCurrency) => {
     if (input.payCurrency === next) return;
-    apply({ ...input, payCurrency: next });
+    const converted = convertFieldAmount(
+      input.payAmount,
+      input.payCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      payCurrency: next,
+      payAmount: converted.text,
+    });
   };
 
   const handleOutputCurrencyChange = (
@@ -85,6 +138,10 @@ export function SalaryCalculator({
     next: SupportedCurrency
   ) => {
     if (input[key] === next) return;
+    if (!canConvertPair(input.payCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, [key]: next });
   };
 
@@ -102,15 +159,25 @@ export function SalaryCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
-        `Pay: ${input.payAmount} ${input.payCurrency} (${input.payFrequency})`,
+        `Pay: ${getCurrencySymbol(input.payCurrency)}${input.payAmount} ${input.payCurrency} (per hour)`,
         `Hours/day: ${input.hoursPerDay}`,
         `Days/week: ${input.daysPerWeek}`,
-        `Holidays/year: ${input.holidaysPerYear}`,
-        `Paid vacation/year: ${input.paidVacationPerYear}`,
+        `Holidays/year: ${input.holidaysPerYear} (not deducted)`,
+        `Paid vacation/year: ${input.paidVacationPerYear} (not deducted)`,
+        `Hourly: ${getCurrencySymbol(result.hourlyCurrency)}${result.formattedHourly} ${result.hourlyCurrency}`,
+        `Daily: ${getCurrencySymbol(result.dailyCurrency)}${result.formattedDaily} ${result.dailyCurrency}`,
+        `Weekly: ${getCurrencySymbol(result.weeklyCurrency)}${result.formattedWeekly} ${result.weeklyCurrency}`,
+        `Monthly: ${getCurrencySymbol(result.monthlyCurrency)}${result.formattedMonthly} ${result.monthlyCurrency}`,
+        `Annual: ${getCurrencySymbol(result.annualCurrency)}${result.formattedAnnual} ${result.annualCurrency}`,
+        `Assumptions: weekly hours = hours/day × days/week; annual days = days/week × 52; holidays/vacation not subtracted`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -143,8 +210,7 @@ export function SalaryCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Convert hourly pay into daily, weekly, monthly, and annual salary
-            from your schedule.
+            {currencyNote}
           </p>
         </div>
         {headerActions ? (
