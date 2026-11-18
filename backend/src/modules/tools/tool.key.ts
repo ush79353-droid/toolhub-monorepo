@@ -73,6 +73,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ForceConverter',
   'NmToInLbsConverter',
   'InchLbsToNmConverter',
+  'PascalConversion',
   'PressureConversion',
   'InchPoundsToFootPoundsConverter',
   'PsiToGpmCalculator',
@@ -593,6 +594,7 @@ if (isDirect) {
     !isApprovedComponentKey('ForceConverter') ||
     !isApprovedComponentKey('NmToInLbsConverter') ||
     !isApprovedComponentKey('InchLbsToNmConverter') ||
+    !isApprovedComponentKey('PascalConversion') ||
     !isApprovedComponentKey('PressureConversion') ||
     !isApprovedComponentKey('InchPoundsToFootPoundsConverter') ||
     !isApprovedComponentKey('PsiToGpmCalculator') ||

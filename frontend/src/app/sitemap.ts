@@ -96,6 +96,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'force-converter',
   'nm-to-in-lbs-converter',
   'inch-lbs-to-nm-converter',
+  'pascal-conversion',
   'pressure-conversion',
   'inch-pounds-to-foot-pounds-converter',
   'psi-to-gpm-calculator',

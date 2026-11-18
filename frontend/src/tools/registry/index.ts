@@ -391,6 +391,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InchLbsToNmConverter,
     })),
   ),
+  PascalConversion: lazyTool(() =>
+    import('@/tools/calculators/pascal-conversion/PascalConversion').then((mod) => ({
+      default: mod.PascalConversion,
+    })),
+  ),
   PressureConversion: lazyTool(() =>
     import('@/tools/calculators/pressure-conversion/PressureConverterCalculator').then(
       (mod) => ({
