@@ -19,6 +19,7 @@ import {
   type SavingsWithdrawalInput,
   type SavingsWithdrawalResult,
 } from './types';
+import { validateSavingsWithdrawalInput } from './validation';
 
 const FX_NOTE =
   'Balance and withdrawal amount each have their own currency. The withdrawal is converted into the balance currency before the monthly interest-and-withdrawal simulation. Dates, durations, counts, and the interest rate are never converted.';
@@ -61,20 +62,30 @@ export function SavingsWithdrawalCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  // UI commit: form state only. Engine wiring lands in the calculation commit.
+  React.useEffect(() => {
+    const validation = validateSavingsWithdrawalInput(defaults, rates);
+    if (validation.isValid && validation.result) {
+      setResult(validation.result);
+      setErrors({});
+    }
+    // Initial sample only.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const apply = (next: SavingsWithdrawalInput) => {
+    const validation = validateSavingsWithdrawalInput(next, rates);
     setInput(next);
-    setErrors({});
-    setResult(null);
-    void rates;
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateSavingsWithdrawalInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
