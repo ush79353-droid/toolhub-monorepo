@@ -32,6 +32,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'loan-calculator',
   'auto-loan-calculator',
   'loan-interest-calculator',
+  'lottery-annuity-calculator',
   'margin-and-markup-calculator',
   'margin-and-vat-calculator',
   'margin-calculator-classic',

@@ -46,6 +46,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'immediate-annuity-calculator',
   'interest-rate-parity-calculator',
   'loan-interest-calculator',
+  'lottery-annuity-calculator',
   'margin-and-markup-calculator',
   'margin-and-vat-calculator',
   'margin-calculator-classic',

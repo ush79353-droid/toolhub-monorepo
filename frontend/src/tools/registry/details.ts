@@ -40,6 +40,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),
   LoanInterestCalculator: () =>
     import('@/tools/calculators/loan-interest/detail'),
+  LotteryAnnuityCalculator: () =>
+    import('@/tools/calculators/lottery-annuity/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),
   MarginAndVatCalculator: () =>

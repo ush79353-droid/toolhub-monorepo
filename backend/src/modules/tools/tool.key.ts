@@ -21,6 +21,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InterestRateParityCalculator',
   'LoanCalculator',
   'LoanInterestCalculator',
+  'LotteryAnnuityCalculator',
   'MarginAndMarkupCalculator',
   'MarginAndVatCalculator',
   'MarginCalculatorClassic',
@@ -1017,6 +1018,7 @@ if (isDirect) {
     !isApprovedComponentKey('FutureValueOfAnnuityCalculator') ||
     !isApprovedComponentKey('GrowingAnnuityCalculator') ||
     !isApprovedComponentKey('ImmediateAnnuityCalculator') ||
+    !isApprovedComponentKey('LotteryAnnuityCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
