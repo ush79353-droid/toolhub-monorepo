@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { shouldRevealAnswers } from './calculation';
+import { isQuestionCorrect, shouldRevealAnswers } from './calculation';
 import {
   DIVIDEND_YIELD_CALCULATOR_HREF,
   QUIZ_MAX_SCORE,
@@ -120,7 +120,7 @@ export function QuizDividendForm({
                   >
                     <p>
                       <span className="font-semibold">
-                        {selected === question.correctAnswer
+                        {isQuestionCorrect(input.answers, question.id)
                           ? 'Correct'
                           : 'Incorrect'}
                         .
@@ -197,6 +197,12 @@ export function QuizDividendForm({
                   aria-live="polite"
                 >
                   <p>
+                    <span className="font-semibold">
+                      {isQuestionCorrect(input.answers, question.id)
+                        ? 'Correct'
+                        : 'Incorrect'}
+                      .
+                    </span>{' '}
                     <span className="font-semibold">Correct answer:</span>{' '}
                     {question.correctLabel}
                   </p>
