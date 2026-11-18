@@ -7,7 +7,10 @@ import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
-import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { FreeCashFlowForm } from './FreeCashFlowForm';
 import {
   createDefaultInput,
@@ -15,6 +18,7 @@ import {
   type FreeCashFlowInput,
   type FreeCashFlowResult,
 } from './types';
+import { validateFreeCashFlowInput } from './validation';
 
 const FX_NOTE =
   'Operating cash flow, CapEx, free cash flow, stock price, market cap, and revenue each have their own currency. Money fields are normalized into the FCF currency before formulas run. Shares outstanding and percentage results are never FX-converted. Missing rates block conversion; stale rates warn but still convert.';
@@ -47,6 +51,7 @@ export function FreeCashFlowCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<FreeCashFlowInput>(
@@ -64,19 +69,20 @@ export function FreeCashFlowCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  // UI shell: live form state only. Formulas + FX validation land in engine commit.
   const apply = (next: FreeCashFlowInput) => {
+    const validation = validateFreeCashFlowInput(next, rates);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateFreeCashFlowInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
