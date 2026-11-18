@@ -1,7 +1,13 @@
-/**
- * UI-wiring validation (same-currency path).
- * Commit 2 replaces this with Phase 2 FX normalization.
- */
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import type { SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  type CurrencyRatesSnapshot,
+} from '@/tools/shared/currency-rates';
+import {
+  calculatePrivateSavings,
+  formatPrivateSavingsMoney,
+} from './calculation';
 import type {
   PrivateSavingsFieldErrors,
   PrivateSavingsInput,
@@ -29,18 +35,40 @@ function parseNumber(raw: string): {
   return { value, blank: false, invalid: false };
 }
 
-function formatMoney(amount: number): string {
-  return new Intl.NumberFormat('en-US', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(amount);
+function convertMoney(
+  amount: number,
+  from: SupportedCurrency,
+  to: SupportedCurrency,
+  rates: CurrencyRatesSnapshot | null | undefined
+): { ok: true; amount: number } | { ok: false; message: string } {
+  if (from === to) return { ok: true, amount };
+  if (!rates?.available) {
+    return { ok: false, message: CURRENCY_CONVERSION_UNAVAILABLE_NOTE };
+  }
+  const converted = convertCurrency({
+    amount,
+    from,
+    to,
+    rates: rates.rates,
+  });
+  if (!converted.ok) {
+    return { ok: false, message: CURRENCY_CONVERSION_UNAVAILABLE_NOTE };
+  }
+  return { ok: true, amount: converted.amount };
 }
 
-/** Same-currency Sp = Y − T − C for UI commit. FX lands in the engine commit. */
+/**
+ * Validates monetary inputs, normalizes Y/T/C into the private-savings currency
+ * with stored FX rates, then computes Sp = Y − T − C at full precision.
+ * Zero and negative Sp (dissaving) are allowed. The additional-parameters
+ * checkbox does not change the formula (no verified extra fields in specs).
+ */
 export function validatePrivateSavingsInput(
-  input: PrivateSavingsInput
+  input: PrivateSavingsInput,
+  rates?: CurrencyRatesSnapshot | null
 ): PrivateSavingsValidation {
   const errors: PrivateSavingsFieldErrors = {};
+
   const income = parseNumber(input.totalIncome);
   const taxes = parseNumber(input.taxes);
   const consumption = parseNumber(input.consumption);
@@ -67,20 +95,48 @@ export function validatePrivateSavingsInput(
     return { isValid: false, errors, result: null };
   }
 
-  // UI commit: require matching currencies; mixed FX is handled in the engine commit.
-  if (
-    input.totalIncomeCurrency !== input.privateSavingsCurrency ||
-    input.taxesCurrency !== input.privateSavingsCurrency ||
-    input.consumptionCurrency !== input.privateSavingsCurrency
-  ) {
-    errors.form =
-      'Use the same currency on all fields, or wait for FX rates to normalize mixed currencies.';
+  const target = input.privateSavingsCurrency;
+
+  const incomeNorm = convertMoney(
+    income.value!,
+    input.totalIncomeCurrency,
+    target,
+    rates
+  );
+  if (!incomeNorm.ok) {
+    errors.form = incomeNorm.message;
     return { isValid: false, errors, result: null };
   }
 
-  const privateSavings =
-    income.value! - taxes.value! - consumption.value!;
-  if (!Number.isFinite(privateSavings)) {
+  const taxesNorm = convertMoney(
+    taxes.value!,
+    input.taxesCurrency,
+    target,
+    rates
+  );
+  if (!taxesNorm.ok) {
+    errors.form = taxesNorm.message;
+    return { isValid: false, errors, result: null };
+  }
+
+  const consumptionNorm = convertMoney(
+    consumption.value!,
+    input.consumptionCurrency,
+    target,
+    rates
+  );
+  if (!consumptionNorm.ok) {
+    errors.form = consumptionNorm.message;
+    return { isValid: false, errors, result: null };
+  }
+
+  const privateSavings = calculatePrivateSavings({
+    totalIncome: incomeNorm.amount,
+    taxes: taxesNorm.amount,
+    consumption: consumptionNorm.amount,
+  });
+
+  if (privateSavings === null) {
     errors.form = 'This combination does not produce a finite result.';
     return { isValid: false, errors, result: null };
   }
@@ -88,8 +144,8 @@ export function validatePrivateSavingsInput(
   const result: PrivateSavingsResult = {
     privateSavings,
     privateSavingsCanonical: privateSavings,
-    currency: input.privateSavingsCurrency,
-    formattedPrivateSavings: formatMoney(privateSavings),
+    currency: target,
+    formattedPrivateSavings: formatPrivateSavingsMoney(privateSavings, target),
     isDissaving: privateSavings < 0,
   };
 

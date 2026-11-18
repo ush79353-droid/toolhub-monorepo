@@ -7,7 +7,10 @@ import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
-import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { PrivateSavingsForm } from './PrivateSavingsForm';
 import {
   createDefaultInput,
@@ -18,7 +21,7 @@ import {
 import { validatePrivateSavingsInput } from './validation';
 
 const FX_NOTE =
-  'Total income, taxes, consumption, and private savings each have their own currency. Mixed-currency inputs normalize into the private-savings currency when FX rates are available.';
+  'Total income, taxes, consumption, and private savings each have their own currency. Inputs are normalized into the private-savings currency before Sp = Y − T − C. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: PrivateSavingsInput, b: PrivateSavingsInput): boolean {
   return (
@@ -40,6 +43,7 @@ export function PrivateSavingsCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<PrivateSavingsInput>(
@@ -58,7 +62,7 @@ export function PrivateSavingsCalculator({
   }, []);
 
   const apply = (next: PrivateSavingsInput) => {
-    const validation = validatePrivateSavingsInput(next);
+    const validation = validatePrivateSavingsInput(next, rates);
     setInput(next);
     setErrors(validation.errors);
     setResult(validation.isValid ? validation.result : null);
@@ -66,7 +70,7 @@ export function PrivateSavingsCalculator({
 
   const handleReset = () => {
     const fresh = createDefaultInput();
-    const validation = validatePrivateSavingsInput(fresh);
+    const validation = validatePrivateSavingsInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
     setErrors(validation.errors);
