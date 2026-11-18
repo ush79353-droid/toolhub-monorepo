@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-18 — Add Bond YTM Calculator
+- **Summary:** Shipped Bond YTM Calculator on existing catalog slug `bond-ytm-calculator` (`BondYtmCalculator`, catalog `6af46f0fa27d8d1d4e98ffd9`). Screenshot fields: face value FX, bond price FX, annual coupon rate %, coupon frequency (default Annually), years to maturity, read-only Yield to maturity (YTM) %. Coupon-date price equation solved with bounded bisection (zero-coupon closed form); same numerical approach as Bond Yield without modifying that module. Independent Phase 2 FX; normalize price into face currency; %/years never convert. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Bond Calculator pillar preserved; subPillar null. Left Bond Yield / Current Yield / Equivalent Yield / Bond Price peers untouched.
+- **Formula:** P = Σ C/(1+y/m)^t + F/(1+y/m)^N with C = F·(r/m), N = years·m; solve annual nominal y.
+- **Example:** 1,000 PKR · 950 PKR · 5% · Annually · 10 years → YTM ≈ 5.6687%.
+- **Important Files:** `frontend/src/tools/calculators/bond-ytm/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Separate undeveloped catalog row from Bond Yield (`bond-yield-calculator`). Solver self-check via tsx sample. Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f966`). Lint/typecheck/build/Playwright omitted per user. One local commit — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-18 — Add Rental Commission Calculator
 - **Summary:** Shipped Rental Commission Calculator on existing catalog slug `rental-commission-calculator` (`RentalCommissionCalculator`, catalog `6af46f0fa27d8d1d4e98ffe4`). Screenshot sections: Rental Details (annual/monthly rent FX sync); Commission (½ / 1 / 1½ month outputs FX); Custom commission (percent default 15%, amount FX). Preset fees use exact month fractions; custom = annual × % / 100. Independent Phase 2 FX; percent never converted. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Commission Calculator pillar preserved; subPillar null.
 - **Formulas:** Annual = Monthly × 12; Monthly = Annual ÷ 12; Half = Monthly × 0.5; One = Monthly; 1½ = Monthly × 1.5; Custom = Annual × % / 100.
