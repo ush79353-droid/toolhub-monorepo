@@ -3178,11 +3178,25 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SavingsCalculator,
     })),
   ),
+  SavingsGoalCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/savings-goal/SavingsGoalCalculator'
+    ).then((mod) => ({
+      default: mod.SavingsGoalCalculator,
+    })),
+  ),
   SavingsInterestRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/savings-interest-rate/SavingsInterestRateCalculator'
     ).then((mod) => ({
       default: mod.SavingsInterestRateCalculator,
+    })),
+  ),
+  SavingsPlanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/savings-plan/SavingsPlanCalculator'
+    ).then((mod) => ({
+      default: mod.SavingsPlanCalculator,
     })),
   ),
   SharpeRatioCalculator: lazyTool(() =>

@@ -823,8 +823,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   JensensAlphaCalculator: () =>
     import('@/tools/calculators/jensens-alpha/detail'),
   SavingsCalculator: () => import('@/tools/calculators/savings/detail'),
+  SavingsGoalCalculator: () =>
+    import('@/tools/calculators/savings-goal/detail'),
   SavingsInterestRateCalculator: () =>
     import('@/tools/calculators/savings-interest-rate/detail'),
+  SavingsPlanCalculator: () =>
+    import('@/tools/calculators/savings-plan/detail'),
   SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),
   VaMortgageCalculator: () => import('@/tools/calculators/va-mortgage/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),

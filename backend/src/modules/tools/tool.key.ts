@@ -576,7 +576,9 @@ export const APPROVED_COMPONENT_KEYS = [
   'InvestmentFeeCalculator',
   'JensensAlphaCalculator',
   'SavingsCalculator',
+  'SavingsGoalCalculator',
   'SavingsInterestRateCalculator',
+  'SavingsPlanCalculator',
   'SharpeRatioCalculator',
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
@@ -1144,7 +1146,9 @@ if (isDirect) {
     !isApprovedComponentKey('InvestmentFeeCalculator') ||
     !isApprovedComponentKey('JensensAlphaCalculator') ||
     !isApprovedComponentKey('SavingsCalculator') ||
+    !isApprovedComponentKey('SavingsGoalCalculator') ||
     !isApprovedComponentKey('SavingsInterestRateCalculator') ||
+    !isApprovedComponentKey('SavingsPlanCalculator') ||
     !isApprovedComponentKey('SharpeRatioCalculator') ||
     !isApprovedComponentKey('VaMortgageCalculator') ||
     !isApprovedComponentKey('ValueAtRiskCalculator') ||
