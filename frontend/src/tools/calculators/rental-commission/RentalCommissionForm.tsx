@@ -73,6 +73,7 @@ interface RentalCommissionFormProps {
   errors: RentalCommissionFieldErrors;
   result: RentalCommissionResult | null;
   conversionError: string | null;
+  ratesWarning?: string | null;
   onChange: (input: RentalCommissionInput) => void;
   onAnnualCurrencyChange: (currency: SupportedCurrency) => void;
   onMonthlyCurrencyChange: (currency: SupportedCurrency) => void;
@@ -91,6 +92,7 @@ export function RentalCommissionForm({
   errors,
   result,
   conversionError,
+  ratesWarning = null,
   onChange,
   onAnnualCurrencyChange,
   onMonthlyCurrencyChange,
@@ -116,7 +118,7 @@ export function RentalCommissionForm({
       autoComplete="off"
     >
       <fieldset className="space-y-3.5 rounded-xl border border-border bg-muted/15 p-3.5 sm:p-4">
-        <legend className="px-1 text-[13px] font-semibold text-accent">Rental details</legend>
+        <legend className="px-1 text-[13px] font-semibold text-accent">Rental Details</legend>
 
         <div>
           <label className={labelClass} htmlFor="rc-annual">
@@ -361,6 +363,9 @@ export function RentalCommissionForm({
 
       {conversionError ? (
         <p className="text-xs text-amber-800">{conversionError}</p>
+      ) : null}
+      {!conversionError && ratesWarning ? (
+        <p className="text-xs text-amber-800">{ratesWarning}</p>
       ) : null}
       {errors.form ? <p className="text-xs text-rose-600">{errors.form}</p> : null}
     </form>

@@ -12,10 +12,9 @@ export function RentalCommissionGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Rental commission is the fee commonly charged by a letting agent or broker, often expressed
-        as a fraction of one month&apos;s rent or as a percent of annual rent. This calculator
-        converts between annual and monthly rent and estimates common half-month, one-month, and
-        one-and-a-half-month fees plus a custom percentage. It does not add taxes, VAT, or other
-        deductions.
+        as a fraction of one month&apos;s rent or as a percent of annual rent. Enter annual or
+        monthly rent under Rental Details, then read preset month-fraction fees and an optional
+        custom percentage. Taxes, VAT, and other deductions are not included.
       </p>
 
       <h2
