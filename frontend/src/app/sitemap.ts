@@ -81,6 +81,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'drops-to-ml-conversion',
   'pounds-and-ounces-calculator',
   'pounds-to-grams-converter',
+  'pounds-to-lbs-converter',
   'ounce-to-kg-converter',
   'ounces-to-grams-converter',
   'ounces-to-milliliters-converter',
