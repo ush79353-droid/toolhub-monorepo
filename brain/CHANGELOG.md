@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Levered Free Cash Flow Calculator
+- **Summary:** Shipped Levered Free Cash Flow Calculator on existing catalog slug `levered-free-cash-flow-calculator` (`LeveredFreeCashFlowCalculator`, catalog `6af46f0fa27d8d1d4e98fff6`). Screenshot-first (ADR-023): EBITDA FX, CapEx FX, Net change in WC FX, Mandatory debt repayments FX → Levered FCF FX. Simplified-estimate disclosure (not full FCFE; EBITDA excludes cash interest/taxes). Share/Reload/Clear/feedback. Independent Phase 2 FX. FreeCashFlowCalculator and FcffCalculator siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96b` / subPillar null.
+- **Formulas:** Levered FCF = EBITDA − CapEx − ΔWC − Debt repayments. CapEx and debt repayments are positive outflows; negative ΔWC and negative results allowed; full precision with display rounding only.
+- **Example:** EBITDA 500,000 · CapEx 120,000 · ΔWC 30,000 · Debt 50,000 → Levered FCF 300,000.
+- **Important Files:** `frontend/src/tools/calculators/levered-free-cash-flow/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Hourly to Salary - Wage Calculator
 - **Summary:** Shipped Hourly to Salary - Wage Calculator on existing catalog slug `hourly-to-salary-wage-calculator` (`HourlyToSalaryWageCalculator`, catalog `6af46f0fa27d8d1d4e990002`). Screenshot-first (ADR-023): Hourly wage FX ↔ Annual salary FX (last-edited authoritative); Hours/week default 40; Your wage as Daily/Monthly/Weekly/Biweekly FX; empty collapsed Other time intervals. Share/Reload/Clear/feedback. Independent Phase 2 FX; hours never convert. Hourly to Annual / Annual Salary per Hour / Overtime siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar `6af46f0dae6d84bd3ef8f7cf`. Prompt sourced from sibling Overtime folder (Wage Calculator section); Overtime tool not developed.
 - **Formulas:** Annual = Hourly × Hours/week × 52; Hourly = Annual ÷ (Hours/week × 52); Weekly = Hourly × Hours/week; Biweekly = Weekly × 2; Monthly = Annual ÷ 12; Daily = Weekly ÷ 5. Wages ≥ 0; hours > 0; full precision with display rounding only.

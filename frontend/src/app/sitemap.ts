@@ -598,6 +598,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fcff-calculator-free-cash-flow-to-firm',
   'fd-calculator-fixed-deposit-calculator',
   'free-cash-flow-calculator',
+  'levered-free-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',
   'hourly-to-salary-wage-calculator',

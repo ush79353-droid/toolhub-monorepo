@@ -133,6 +133,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'fcff-calculator-free-cash-flow-to-firm',
   'fd-calculator',
   'free-cash-flow-calculator',
+  'levered-free-cash-flow-calculator',
   'fha-loan-calculator',
   'future-salary-calculator',
   'future-value-calculator',

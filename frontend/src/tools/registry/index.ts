@@ -3130,6 +3130,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FcffCalculator,
     })),
   ),
+  LeveredFreeCashFlowCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/levered-free-cash-flow/LeveredFreeCashFlowCalculator'
+    ).then((mod) => ({
+      default: mod.LeveredFreeCashFlowCalculator,
+    })),
+  ),
   FdCalculator: lazyTool(() =>
     import('@/tools/calculators/fd/FdCalculator').then((mod) => ({
       default: mod.FdCalculator,

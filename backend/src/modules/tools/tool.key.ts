@@ -567,6 +567,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FutureSalaryCalculator',
   'FreeCashFlowCalculator',
   'FcffCalculator',
+  'LeveredFreeCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
   'HomeEquityLoanCalculator',
@@ -1163,6 +1164,7 @@ if (isDirect) {
     !isApprovedComponentKey('FutureSalaryCalculator') ||
     !isApprovedComponentKey('FreeCashFlowCalculator') ||
     !isApprovedComponentKey('FcffCalculator') ||
+    !isApprovedComponentKey('LeveredFreeCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||
     !isApprovedComponentKey('HomeEquityLoanCalculator') ||
