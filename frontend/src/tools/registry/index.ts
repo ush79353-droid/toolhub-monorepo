@@ -1646,6 +1646,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SecondsConverter,
     })),
   ),
+  SecondsToDaysConverter: lazyTool(() =>
+    import('@/tools/calculators/seconds-to-days/SecondsToDaysConverter').then((mod) => ({
+      default: mod.SecondsToDaysConverter,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,
