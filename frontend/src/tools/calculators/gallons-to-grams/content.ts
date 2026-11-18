@@ -42,8 +42,8 @@ export const GAL_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'gallons-to-grams',
     title: 'Gallons to Grams Conversion',
     paragraphs: [
-      `When density is in g/mL: m_g = V_gal × ${LITERS_PER_US_GALLON × 1000} × ρ_g/mL (since 1 L = 1000 mL). Equivalently with density in kg/m³: m_g = V_gal × ${LITERS_PER_US_GALLON} × ρ_kg/m³.`,
-      `Example: mass of 3 US gallons of water at 1 g/mL (1000 kg/m³). 3 × ${LITERS_PER_US_GALLON × 1000} = ${formatMeasure(water3)}. Approximately ${formatMeasure(Number(water3.toFixed(2)))} grams.`,
+      `When density is in g/mL: m_g = V_gal × ${LITERS_PER_US_GALLON * 1000} × ρ_g/mL (since 1 L = 1000 mL). Equivalently with density in kg/m³: m_g = V_gal × ${LITERS_PER_US_GALLON} × ρ_kg/m³.`,
+      `Example: mass of 3 US gallons of water at 1 g/mL (1000 kg/m³). 3 × ${LITERS_PER_US_GALLON * 1000} = ${formatMeasure(water3)}. Approximately ${formatMeasure(Number(water3.toFixed(2)))} grams.`,
       'Equal volumes of different liquids do not share the same mass. One gallon of honey weighs more than one gallon of gasoline because honey is denser.',
     ],
     formula: `m_g = V_gal × ${LITERS_PER_US_GALLON} × ρ_kg/m³`,
@@ -52,8 +52,8 @@ export const GAL_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'grams-to-gallons',
     title: 'Grams to Gallons Conversion',
     paragraphs: [
-      `Reverse formula with density in g/mL: V_gal = m_g / (${LITERS_PER_US_GALLON × 1000} × ρ_g/mL). With density in kg/m³: V_gal = m_g / (${LITERS_PER_US_GALLON} × ρ_kg/m³).`,
-      `Example: convert 5000 g of water at 1000 kg/m³ into US gallons. V_gal = 5000 / ${LITERS_PER_US_GALLON × 1000} ≈ ${formatMeasure(reverse5000)}. Approximately ${formatMeasure(Number(reverse5000.toFixed(3)))} US gallons.`,
+      `Reverse formula with density in g/mL: V_gal = m_g / (${LITERS_PER_US_GALLON * 1000} × ρ_g/mL). With density in kg/m³: V_gal = m_g / (${LITERS_PER_US_GALLON} × ρ_kg/m³).`,
+      `Example: convert 5000 g of water at 1000 kg/m³ into US gallons. V_gal = 5000 / ${LITERS_PER_US_GALLON * 1000} ≈ ${formatMeasure(reverse5000)}. Approximately ${formatMeasure(Number(reverse5000.toFixed(3)))} US gallons.`,
     ],
     formula: `V_gal = m_g / (${LITERS_PER_US_GALLON} × ρ_kg/m³)`,
   },
@@ -92,7 +92,7 @@ export const GAL_TO_GRAMS_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'How Do I Convert 5 Gallons of Water to Grams?',
-    answer: `Using a reference density of 1000 kg/m³: 5 × ${LITERS_PER_US_GALLON × 1000} = ${formatMeasure(water5)}. Approximately ${formatMeasure(Number(water5.toFixed(2)))} grams.`,
+    answer: `Using a reference density of 1000 kg/m³: 5 × ${LITERS_PER_US_GALLON * 1000} = ${formatMeasure(water5)}. Approximately ${formatMeasure(Number(water5.toFixed(2)))} grams.`,
   },
   {
     question: 'Is One Gallon Always 3,785 Grams?',
