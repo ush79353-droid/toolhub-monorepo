@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { DividendYieldForm } from './DividendYieldForm';
 import {
   createDefaultInput,
@@ -13,6 +26,10 @@ import {
   type DividendYieldInput,
   type DividendYieldResult,
 } from './types';
+import { validateDividendYieldInput } from './validation';
+
+const FX_NOTE =
+  'Dividends per period, annual dividends, and share price each have their own currency. Dividends and share price are normalized into the dividends-per-period currency before the formulas run. Frequency and dividend yield % are never FX-converted. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: DividendYieldInput, b: DividendYieldInput): boolean {
   return (
@@ -27,10 +44,6 @@ function inputsEqual(a: DividendYieldInput, b: DividendYieldInput): boolean {
   );
 }
 
-/**
- * UI shell — live calculation, FX conversion, and validation land in the engine
- * commit. Currency selectors currently update denomination only.
- */
 export function DividendYieldCalculator({
   metadata,
   className = '',
@@ -38,6 +51,8 @@ export function DividendYieldCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<DividendYieldInput>(
     () => defaults
@@ -45,6 +60,9 @@ export function DividendYieldCalculator({
   const [input, setInput] = React.useState<DividendYieldInput>(() => defaults);
   const [errors, setErrors] = React.useState<DividendYieldFieldErrors>({});
   const [result, setResult] = React.useState<DividendYieldResult | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -55,36 +73,133 @@ export function DividendYieldCalculator({
   }, []);
 
   const apply = (next: DividendYieldInput) => {
+    setConversionError(null);
+    const validation = validateDividendYieldInput(next, rates);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
-  const handleCurrencyChange = (
-    key:
-      | 'dividendsPerPeriodCurrency'
-      | 'annualDividendsCurrency'
-      | 'sharePriceCurrency',
-    next: SupportedCurrency
-  ) => {
-    if (input[key] === next) return;
-    apply({ ...input, [key]: next });
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
+  const handleDividendsPerPeriodCurrencyChange = (next: SupportedCurrency) => {
+    const from = input.dividendsPerPeriodCurrency;
+    if (next === from) return;
+
+    const amount = parseMoneyInput(input.dividendsPerPeriod);
+    const hasAmount = Number.isFinite(amount);
+
+    if (
+      (input.sharePriceCurrency !== next &&
+        !canConvertPair(input.sharePriceCurrency, next)) ||
+      (input.annualDividendsCurrency !== next &&
+        !canConvertPair(next, input.annualDividendsCurrency))
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    if (!hasAmount) {
+      apply({ ...input, dividendsPerPeriodCurrency: next });
+      return;
+    }
+
+    const converted = convertFieldAmount(input.dividendsPerPeriod, from, next);
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      dividendsPerPeriodCurrency: next,
+      dividendsPerPeriod: converted.text,
+    });
+  };
+
+  const handleSharePriceCurrencyChange = (next: SupportedCurrency) => {
+    const from = input.sharePriceCurrency;
+    if (next === from) return;
+
+    const amount = parseMoneyInput(input.sharePrice);
+    const hasAmount = Number.isFinite(amount);
+
+    if (
+      next !== input.dividendsPerPeriodCurrency &&
+      !canConvertPair(next, input.dividendsPerPeriodCurrency)
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    if (!hasAmount) {
+      apply({ ...input, sharePriceCurrency: next });
+      return;
+    }
+
+    const converted = convertFieldAmount(input.sharePrice, from, next);
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      sharePriceCurrency: next,
+      sharePrice: converted.text,
+    });
+  };
+
+  const handleAnnualDividendsCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.annualDividendsCurrency) return;
+    if (!canConvertPair(input.dividendsPerPeriodCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({ ...input, annualDividendsCurrency: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateDividendYieldInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
-  const currencyNote =
-    'Dividends per period, annual dividends, and share price each have their own currency. Yield % and frequency are never converted.';
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const summary = result
     ? [
@@ -149,15 +264,13 @@ export function DividendYieldCalculator({
           errors={errors}
           result={result}
           onChange={apply}
-          onDividendsPerPeriodCurrencyChange={(next) =>
-            handleCurrencyChange('dividendsPerPeriodCurrency', next)
+          onDividendsPerPeriodCurrencyChange={
+            handleDividendsPerPeriodCurrencyChange
           }
-          onAnnualDividendsCurrencyChange={(next) =>
-            handleCurrencyChange('annualDividendsCurrency', next)
-          }
-          onSharePriceCurrencyChange={(next) =>
-            handleCurrencyChange('sharePriceCurrency', next)
-          }
+          onAnnualDividendsCurrencyChange={handleAnnualDividendsCurrencyChange}
+          onSharePriceCurrencyChange={handleSharePriceCurrencyChange}
+          conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
