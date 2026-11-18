@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Yard Conversion
+- **Summary:** Shipped Yard Conversion on existing catalog slug yard-conversion (YardConversionCalculator, catalog 6af46f17a27d8d1d4e990ad2). Bidirectional yards↔imperial/metric via exact international yard (1 yd = 0.9144 m); Imperial/US (in/ft/mi + ft/in) and Metric (mm/cm/m + other nm–km); empty default; negatives rejected. Yard Conversion pillar preserved; subPillar null. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-463b delivery for Conversion and Units yard conversion calculator.
+- **Important Files:** frontend/src/tools/calculators/yard-conversion/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 yd→3 ft/36 in/0.9144 m; 100 yd→91.44 m; 1760 yd→1 mi; 2.5 yd→7 ft 6 in; 7+12 in normalize; round-trip; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d0a27d8d1d4e98f9e2). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Weeks to Years Converter
 - **Summary:** Shipped Weeks to Years Converter on existing catalog slug weeks-to-years-converter (WeeksToYearsConverter, catalog 6af46f17a27d8d1d4e990bc1). Bidirectional weeks↔years via average Gregorian year (365.2425 days ≈ 52.1775 weeks); Time in other units (yrs/mos/days/hrs/min/sec/HMS); canonical seconds; empty default; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-462b delivery for Conversion and Units weeks-to-years converter.
