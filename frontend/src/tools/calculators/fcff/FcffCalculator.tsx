@@ -7,7 +7,10 @@ import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
-import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { FcffForm } from './FcffForm';
 import {
   createDefaultInput,
@@ -17,6 +20,7 @@ import {
   type FcffInput,
   type FcffResult,
 } from './types';
+import { validateFcffInput } from './validation';
 
 const FX_NOTE =
   'Source value, D&A, interest, CapEx, working capital, and FCFF each have their own currency. Money fields are normalized into the FCFF currency before the formula runs. Corporate tax % is never FX-converted. Missing rates block conversion; stale rates warn but still convert.';
@@ -48,6 +52,7 @@ export function FcffCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<FcffInput>(() => defaults);
@@ -63,19 +68,20 @@ export function FcffCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  // UI shell: live form state only. Formulas + FX validation land in engine commit.
   const apply = (next: FcffInput) => {
+    const validation = validateFcffInput(next, rates);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateFcffInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
