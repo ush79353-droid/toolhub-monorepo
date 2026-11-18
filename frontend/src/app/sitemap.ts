@@ -70,6 +70,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cubic-yards-to-tons-calculator',
   'ml-to-cups-converter',
   'ml-to-cc-converter',
+  'ml-to-kg-converter',
   'decagram-to-gram-converter',
   'pint-to-pound-conversion',
   'drops-to-ml-conversion',

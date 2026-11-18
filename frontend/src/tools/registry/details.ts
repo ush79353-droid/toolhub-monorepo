@@ -52,6 +52,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cubic-yards-to-tons/detail'),
   MlToCupsConverter: () => import('@/tools/calculators/ml-to-cups/detail'),
   MlToCcConverter: () => import('@/tools/calculators/ml-to-cc/detail'),
+  MlToKgConverter: () => import('@/tools/calculators/ml-to-kg/detail'),
   DecagramToGramConverter: () => import('@/tools/calculators/decagram-to-gram/detail'),
   PintToPoundCalculator: () => import('@/tools/calculators/pint-to-pound/detail'),
   DropsToMlConverter: () => import('@/tools/calculators/drops-to-ml/detail'),
