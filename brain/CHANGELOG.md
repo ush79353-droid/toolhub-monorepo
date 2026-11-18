@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add nm converter
+- **Summary:** Shipped nm converter on existing catalog slug nm-converter (NmConverter, catalog 6af46f17a27d8d1d4e990b0d). Nanometer-primary multi-unit length conversion via shared meter-converter engine (1 nm = 10⁻⁹ m); Metric/Imperial/Others accordions with selectors (default µm/mi/Å); empty default; signed values; scientific notation for tiny lengths; guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ea preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-421b delivery for Conversion and Units nanometer length converter.
+- **Important Files:** frontend/src/tools/calculators/nm-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (nm↔µm/mm/m/Å; 1 in/ft; reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ea). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add ms to Seconds Converter
 - **Summary:** Shipped ms to Seconds Converter on existing catalog slug ms-to-seconds-converter (MsToSecondsConverter, catalog 6af46f17a27d8d1d4e990bb8). Bidirectional exact 1 s = 1000 ms; Other Units accordion (yr/mo/wk/d/h/min + mixed HMS); average Gregorian year/month (365.2425 days); empty default; signed durations; guide/chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-420b delivery for Conversion and Units milliseconds↔seconds time converter.
