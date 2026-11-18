@@ -455,6 +455,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   WeeksToMonthsCalculator: () => import('@/tools/calculators/weeks-to-months/detail'),
   WeeksToYearsConverter: () => import('@/tools/calculators/weeks-to-years/detail'),
   YardConversionCalculator: () => import('@/tools/calculators/yard-conversion/detail'),
+  YardsToMetersConversion: () => import('@/tools/calculators/yards-to-meters/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),

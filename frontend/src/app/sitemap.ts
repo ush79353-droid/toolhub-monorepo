@@ -376,6 +376,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'weeks-to-months-calculator',
   'weeks-to-years-converter',
   'yard-conversion',
+  'yards-to-meters-conversion',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',
