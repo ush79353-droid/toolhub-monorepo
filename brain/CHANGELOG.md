@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add mm to Foot Converter
+- **Summary:** Shipped mm to Foot Converter on existing catalog slug mm-to-foot-converter (MmToFootConverter, catalog 6af46f17a27d8d1d4e990b96). Bidirectional exact 304.8 mm = 1 ft via meter-converter; selectable other unit (cm/m/km/in/yd/mi/µm); empty default; signed values; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-412b delivery for Conversion and Units millimeters↔feet length converter.
+- **Important Files:** frontend/src/tools/calculators/mm-to-foot/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (304.8/1219.2/2438.4 mm; reverse ft; 150/1000 mm; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add mm to ATM Converter
 - **Summary:** Shipped mm to ATM Converter on existing catalog slug mm-to-atm-converter (MmToAtmConverter, catalog 6af46f17a27d8d1d4e990aee). Bidirectional conventional 760 mmHg = 1 atm; clarifies catalog “mm” means mmHg pressure not length; empty default; signed gauge values; guide/table/FAQs. ATM Conversion pillar 6af451d1a27d8d1d4e98f9e5 preserved; subPillar null. Meta title <=70. indexable left false. Distinct from MmhgToAtmConversion.
 - **Why:** TOOL-411b delivery for Conversion and Units mmHg↔atm pressure converter under ATM Conversion pillar.
