@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-18** (Commission Calculator live at `/tools/commission-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-18** (Real Estate Commission Calculator live at `/tools/real-estate-commission-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
