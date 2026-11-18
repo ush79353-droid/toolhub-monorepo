@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Seconds to Hours Converter
+- **Summary:** Shipped Seconds to Hours Converter on existing catalog slug seconds-to-hours-converter (SecondsToHoursConverter, catalog 6af46f17a27d8d1d4e990bbb). Bidirectional seconds↔hours with exact 3,600 s/hour; editable HMS breakdown with signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-444b delivery for Conversion and Units seconds-to-hours converter.
+- **Important Files:** frontend/src/tools/calculators/seconds-to-hours/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (3600→1, 7200→2, 1800→0.5, negatives, 1920≈0.5333; HMS 7260→2h1m; 1h45m30s→6330; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Seconds to Days Converter
 - **Summary:** Shipped Seconds to Days Converter on existing catalog slug seconds-to-days-converter (SecondsToDaysConverter, catalog 6af46f17a27d8d1d4e990bba). Bidirectional seconds↔days with exact 86,400 s/day (24-hour day); signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta description trimmed to <=160. Meta title <=70. indexable left false.
 - **Why:** TOOL-443b delivery for Conversion and Units seconds-to-days converter.
