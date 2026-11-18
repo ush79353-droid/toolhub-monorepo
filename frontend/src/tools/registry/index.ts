@@ -2824,6 +2824,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PrivateSavingsCalculator,
     })),
   ),
+  ProratedSalaryCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/prorated-salary/ProratedSalaryCalculator'
+    ).then((mod) => ({
+      default: mod.ProratedSalaryCalculator,
+    })),
+  ),
   ProratedRentCalculator: lazyTool(() =>
     import('@/tools/calculators/prorated-rent/ProratedRentCalculator').then((mod) => ({
       default: mod.ProratedRentCalculator,

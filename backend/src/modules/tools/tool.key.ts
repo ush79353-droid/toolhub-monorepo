@@ -517,6 +517,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PresentValueCalculator',
   'PriceQuantityCalculator',
   'PrivateSavingsCalculator',
+  'ProratedSalaryCalculator',
   'ProratedRentCalculator',
   'PvgoCalculator',
   'PvifaCalculator',
@@ -1116,6 +1117,7 @@ if (isDirect) {
     !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
     !isApprovedComponentKey('PrivateSavingsCalculator') ||
+    !isApprovedComponentKey('ProratedSalaryCalculator') ||
     !isApprovedComponentKey('ProratedRentCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('PvifaCalculator') ||

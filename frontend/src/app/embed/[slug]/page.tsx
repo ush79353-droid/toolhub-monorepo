@@ -160,6 +160,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'pre-and-post-money-valuation-calculator',
   'pvgo-calculator',
   'price-quantity-calculator',
+  'prorated-salary-calculator',
   'prorated-rent-calculator',
   'rent-split-calculator',
   'rent-vs-buy-calculator',

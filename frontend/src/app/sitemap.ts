@@ -545,6 +545,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'private-savings-calculator',
   'savings-plan-calculator',
   'savings-withdrawal-calculator',
+  'prorated-salary-calculator',
   'prorated-rent-calculator',
   'rent-split-calculator',
   'rent-vs-buy-calculator',

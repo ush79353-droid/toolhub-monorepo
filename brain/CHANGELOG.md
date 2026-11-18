@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Prorated Salary Calculator
+- **Summary:** Shipped Prorated Salary Calculator on existing catalog slug `prorated-salary-calculator` (`ProratedSalaryCalculator`, catalog `6af46f0fa27d8d1d4e98fffb`). Screenshot-first (ADR-023): Year/Month calendar; Gross salary FX + pay period; Days worked; Holidays; Approved leave; Days worked per week; Days off → eligible working days + Prorated salary FX. Payable-day convention verified from screenshot (worked + paid holidays + paid leave). Share/Reload/Clear/feedback. Independent Phase 2 FX; day counts never convert. ProratedRentCalculator sibling untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar null.
+- **Formulas:** Scheduled = civil calendar days minus selected days off; Payable = Worked + Holidays + Leave; Monthly = month as-is / year÷12 / week×52/12 / day×scheduled; Prorated = Monthly × Payable / Scheduled. Zero scheduled blocked; payable cannot exceed scheduled; full precision with display rounding only.
+- **Example:** Jan 2025 · Five-day · Sun/Sat off · 2,000 PKR/mo · 10+1+1 → 23 working days · ≈ 1,043.48 PKR.
+- **Important Files:** `frontend/src/tools/calculators/prorated-salary/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Percentage Discount Calculator
 - **Summary:** Shipped Percentage Discount Calculator on existing catalog slug `percentage-discount-calculator` (`PercentageDiscountCalculator`, catalog `6af46f0fa27d8d1d4e98fff1`). Screenshot-first (ADR-023): Price before discount FX; Discount %; Price after discount FX; You save FX. Link to advanced Discount Calculator (`/tools/discount-calculator`). Examples: new dress 20%; new bed 15%. Share/Reload/Clear/feedback. Independent Phase 2 FX; percent never converts. DiscountCalculator sibling untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bda27d8d1d4e98f96a` / subPillar null.
 - **Formulas:** Discount Amount = Price × Discount / 100; Price After = Price − Amount; You Save = Amount. Price ≥ 0; discount 0–100 inclusive; full precision with display rounding only.
