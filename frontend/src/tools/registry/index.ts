@@ -270,6 +270,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MlToOzConverter,
     })),
   ),
+  MlToTbspConverter: lazyTool(() =>
+    import('@/tools/calculators/ml-to-tbsp/MlToTbspConverter').then((mod) => ({
+      default: mod.MlToTbspConverter,
+    })),
+  ),
   DecagramToGramConverter: lazyTool(() =>
     import('@/tools/calculators/decagram-to-gram/DecagramToGramConverter').then(
       (mod) => ({
