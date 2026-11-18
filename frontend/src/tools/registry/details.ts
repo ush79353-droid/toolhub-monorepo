@@ -443,6 +443,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SquareMeterConverter: () => import('@/tools/calculators/square-meter-converter/detail'),
   SquareMetersToSquareFeetConverter: () =>
     import('@/tools/calculators/square-meters-to-square-feet/detail'),
+  SquareMilesToSquareKmConverter: () =>
+    import('@/tools/calculators/square-miles-to-square-km/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),

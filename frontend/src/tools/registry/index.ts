@@ -2001,6 +2001,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SquareMetersToSquareFeetConverter,
     })),
   ),
+  SquareMilesToSquareKmConverter: lazyTool(() =>
+    import(
+      '@/tools/calculators/square-miles-to-square-km/SquareMilesToSquareKmConverter'
+    ).then((mod) => ({
+      default: mod.SquareMilesToSquareKmConverter,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,

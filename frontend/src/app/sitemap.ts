@@ -365,6 +365,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'square-inch-to-square-foot-converter',
   'square-meter-converter',
   'square-meters-to-square-feet-converter',
+  'square-miles-to-square-km-converter',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',
