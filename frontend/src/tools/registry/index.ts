@@ -1462,6 +1462,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MmToFootConverter,
     })),
   ),
+  MmToInchesConversion: lazyTool(() =>
+    import('@/tools/calculators/mm-to-inches/MmToInchesConversion').then((mod) => ({
+      default: mod.MmToInchesConversion,
+    })),
+  ),
   MillisecondsConverter: lazyTool(() =>
     import('@/tools/calculators/milliseconds/MillisecondsConverter').then((mod) => ({
       default: mod.MillisecondsConverter,
