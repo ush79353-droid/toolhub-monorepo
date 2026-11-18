@@ -2290,6 +2290,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnualSalaryCalculator,
     })),
   ),
+  AnnualSalaryPerHourCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/annual-salary-per-hour/AnnualSalaryPerHourCalculator'
+    ).then((mod) => ({
+      default: mod.AnnualSalaryPerHourCalculator,
+    })),
+  ),
   AnnualizedRateOfReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/annualized-rate-of-return/AnnualizedRateOfReturnCalculator'

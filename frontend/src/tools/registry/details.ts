@@ -524,6 +524,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/youtube-money/detail'),
   AnnualSalaryCalculator: () =>
     import('@/tools/calculators/annual-salary/detail'),
+  AnnualSalaryPerHourCalculator: () =>
+    import('@/tools/calculators/annual-salary-per-hour/detail'),
   AnnualizedRateOfReturnCalculator: () =>
     import('@/tools/calculators/annualized-rate-of-return/detail'),
   AppreciationCalculator: () =>
