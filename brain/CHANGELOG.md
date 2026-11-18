@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add mL to cc Converter
+- **Summary:** Shipped mL to cc Converter on existing catalog slug ml-to-cc-converter (MlToCcConverter, catalog 6af46f17a27d8d1d4e990b56). Synchronized mL / L / cc (cm³); exact 1 mL = 1 cc = 1 cm³ and 1 L = 1000 mL; empty default; non-negative volumes; guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-402b delivery for Conversion and Units mL↔cc volume converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-cc/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1–1000 mL = cc; liters 0.25/0.5/1/2.5; 0/0.5/0.001; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Second Stimulus Check Calculator – $900 Billion Bill (Screenshot-First, historical EIP2)
 - **Summary:** Shipped Second Stimulus Check Calculator – $900 Billion Bill on existing catalog slug `second-stimulus-check-calculator-900-billion-bill` (`SecondStimulus900BillionCalculator`, catalog `6af46f0fa27d8d1d4e98ffce`). Screenshot fields: filed 2019 taxes, filing status, kids, 2019 AGI USD, read-only result; historical EIP2 notice; Share/Reload/Clear/feedback. Fixed USD (no FX). Activated via `npm run tool:assign`.
 - **Rules (verified):** I.R.C. §6428A / IRS Pub. 5475 / CRS IN11575 — $600 single or HoH, $1,200 married joint, +$600 per qualifying child under 17; phase out 5% of AGI above $75,000 / $112,500 / $150,000. Filing=No → $0 (SSI/VA/RRB automatic paths acknowledged in copy, not modeled). Not a currently available benefit.
