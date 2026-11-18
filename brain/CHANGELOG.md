@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Pints to Cups Converter
+- **Summary:** Shipped Pints to Cups Converter on existing catalog slug pints-to-cups-converter (PintsToCupsConverter, catalog 6af46f17a27d8d1d4e990b65). Bidirectional pt↔cup via liter factors; default 1 US liquid pt = 2 US cups; US/UK/metric cup and US liquid/dry/imperial pint selectors; rejects negative volume; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-430b delivery for Conversion and Units kitchen volume pint↔cup converter.
+- **Important Files:** frontend/src/tools/calculators/pints-to-cups/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (US pt↔cups; imperial match; mismatched metric; negatives rejected; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Pa to psi Converter
 - **Summary:** Shipped Pa to psi Converter on existing catalog slug pa-to-psi-converter (PaToPsiConversion, catalog 6af46f17a27d8d1d4e990ae8). Bidirectional Pa↔psi via shared pressure-conversion engine (exact PASCALS_PER_PSI); empty default; signed gauge values; guide/table/FAQs. Live pillar 6af451d0a27d8d1d4e98f9e4 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-429b delivery for Conversion and Units pascal↔psi pair converter.
