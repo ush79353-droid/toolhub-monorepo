@@ -381,6 +381,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'WeeksToMonthsCalculator',
   'WeeksToYearsConverter',
   'YardConversionCalculator',
+  'YardToMeterConverter',
   'YardsToMetersConversion',
   'NmConverter',
   'NmToMConverter',
@@ -938,6 +939,7 @@ if (isDirect) {
     !isApprovedComponentKey('WeeksToMonthsCalculator') ||
     !isApprovedComponentKey('WeeksToYearsConverter') ||
     !isApprovedComponentKey('YardConversionCalculator') ||
+    !isApprovedComponentKey('YardToMeterConverter') ||
     !isApprovedComponentKey('YardsToMetersConversion') ||
     !isApprovedComponentKey('NmConverter') ||
     !isApprovedComponentKey('NmToMConverter') ||
