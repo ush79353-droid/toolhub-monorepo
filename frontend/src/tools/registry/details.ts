@@ -9,6 +9,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AnnuityPayoutCalculator: () =>
     import('@/tools/calculators/annuity-payout/detail'),
   AutoLoanCalculator: () => import('@/tools/calculators/auto-loan/detail'),
+  CaliforniaOvertimeCalculator: () =>
+    import('@/tools/calculators/california-overtime/detail'),
   DebtAvalancheCalculator: () =>
     import('@/tools/calculators/debt-avalanche/detail'),
   DebtCalculator: () =>
