@@ -83,6 +83,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PascalConversion',
   'PsiConverter',
   'PsiToAtmConversion',
+  'PsiToInchesOfWaterConversion',
   'PressureUnitConversion',
   'PressureConversion',
   'InchPoundsToFootPoundsConverter',
@@ -614,6 +615,7 @@ if (isDirect) {
     !isApprovedComponentKey('PascalConversion') ||
     !isApprovedComponentKey('PsiConverter') ||
     !isApprovedComponentKey('PsiToAtmConversion') ||
+    !isApprovedComponentKey('PsiToInchesOfWaterConversion') ||
     !isApprovedComponentKey('PressureUnitConversion') ||
     !isApprovedComponentKey('PressureConversion') ||
     !isApprovedComponentKey('InchPoundsToFootPoundsConverter') ||

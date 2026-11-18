@@ -104,6 +104,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pascal-conversion',
   'psi-converter',
   'psi-to-atm-conversion',
+  'psi-to-inches-of-water-conversion',
   'pressure-unit-conversion',
   'pressure-conversion',
   'inch-pounds-to-foot-pounds-converter',

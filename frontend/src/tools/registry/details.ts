@@ -90,6 +90,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PascalConversion: () => import('@/tools/calculators/pascal-conversion/detail'),
   PsiConverter: () => import('@/tools/calculators/psi-converter/detail'),
   PsiToAtmConversion: () => import('@/tools/calculators/psi-to-atm/detail'),
+  PsiToInchesOfWaterConversion: () =>
+    import('@/tools/calculators/psi-to-inches-of-water/detail'),
   PressureUnitConversion: () =>
     import('@/tools/calculators/pressure-unit-conversion/detail'),
   PressureConversion: () => import('@/tools/calculators/pressure-conversion/detail'),

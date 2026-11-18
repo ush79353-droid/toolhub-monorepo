@@ -441,6 +441,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PsiToAtmConversion,
     })),
   ),
+  PsiToInchesOfWaterConversion: lazyTool(() =>
+    import('@/tools/calculators/psi-to-inches-of-water/PsiToInchesOfWaterConversion').then(
+      (mod) => ({
+        default: mod.PsiToInchesOfWaterConversion,
+      }),
+    ),
+  ),
   PressureUnitConversion: lazyTool(() =>
     import('@/tools/calculators/pressure-unit-conversion/PressureUnitConversion').then((mod) => ({
       default: mod.PressureUnitConversion,
