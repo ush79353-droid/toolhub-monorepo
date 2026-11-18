@@ -320,6 +320,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MinutesToSecondsConverter: () => import('@/tools/calculators/minutes-to-seconds/detail'),
   MinutesToYearsConversion: () => import('@/tools/calculators/minutes-to-years/detail'),
   MonthsToYearsCalculator: () => import('@/tools/calculators/months-to-years/detail'),
+  MpaConversion: () => import('@/tools/calculators/mpa-conversion/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

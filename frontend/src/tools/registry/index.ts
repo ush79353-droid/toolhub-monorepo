@@ -1522,6 +1522,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MonthsToYearsCalculator,
     })),
   ),
+  MpaConversion: lazyTool(() =>
+    import('@/tools/calculators/mpa-conversion/MpaConversion').then((mod) => ({
+      default: mod.MpaConversion,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,
