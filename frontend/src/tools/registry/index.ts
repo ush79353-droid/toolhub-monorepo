@@ -90,6 +90,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DebtToEquityCalculator,
     })),
   ),
+  DeferredAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/deferred-annuity/DeferredAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.DeferredAnnuityCalculator,
+    })),
+  ),
   EbitdaMarginCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/ebitda-margin/EbitdaMarginCalculator'
