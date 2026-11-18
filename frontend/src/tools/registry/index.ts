@@ -319,6 +319,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OuncesToGramsConverter,
     })),
   ),
+  OuncesToMillilitersConverter: lazyTool(() =>
+    import('@/tools/calculators/ounces-to-milliliters/OuncesToMillilitersConverter').then(
+      (mod) => ({
+        default: mod.OuncesToMillilitersConverter,
+      }),
+    ),
+  ),
   OuncesToPoundsConverter: lazyTool(() =>
     import('@/tools/calculators/ounces-to-pounds/OuncesToPoundsConverter').then((mod) => ({
       default: mod.OuncesToPoundsConverter,

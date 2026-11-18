@@ -59,6 +59,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PoundsAndOuncesCalculator',
   'OunceToKgConverter',
   'OuncesToGramsConverter',
+  'OuncesToMillilitersConverter',
   'OuncesToPoundsConverter',
   'OzToCcConverter',
   'OzToCupsConverter',
@@ -578,6 +579,7 @@ if (isDirect) {
     !isApprovedComponentKey('PoundsAndOuncesCalculator') ||
     !isApprovedComponentKey('OunceToKgConverter') ||
     !isApprovedComponentKey('OuncesToGramsConverter') ||
+    !isApprovedComponentKey('OuncesToMillilitersConverter') ||
     !isApprovedComponentKey('OuncesToPoundsConverter') ||
     !isApprovedComponentKey('OzToCcConverter') ||
     !isApprovedComponentKey('OzToCupsConverter') ||
