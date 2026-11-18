@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { PercentageDiscountForm } from './PercentageDiscountForm';
 import {
   createDefaultInput,
@@ -13,9 +26,10 @@ import {
   type PercentageDiscountInput,
   type PercentageDiscountResult,
 } from './types';
+import { validatePercentageDiscountInput } from './validation';
 
 const FX_NOTE =
-  'Price before, price after, and you save each have their own currency. Results appear after the calculation engine is connected; changing a selector updates the denomination shown on that field. The discount percent is never converted.';
+  'Price before, price after, and you save each have their own currency. Discount math runs in the price-before currency; results convert for display. The discount percent is never converted. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(
   a: PercentageDiscountInput,
@@ -37,6 +51,8 @@ export function PercentageDiscountCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<PercentageDiscountInput>(
     () => defaults
@@ -51,44 +67,103 @@ export function PercentageDiscountCalculator({
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
   const apply = (next: PercentageDiscountInput) => {
+    const validation = validatePercentageDiscountInput(next, rates);
+    setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handlePriceBeforeCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.priceBeforeCurrency) return;
-    apply({ ...input, priceBeforeCurrency: next });
+    const converted = convertFieldAmount(
+      input.priceBefore,
+      input.priceBeforeCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      priceBeforeCurrency: next,
+      priceBefore: converted.text,
+    });
   };
 
   const handlePriceAfterCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.priceAfterCurrency) return;
+    if (!canConvertPair(input.priceBeforeCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, priceAfterCurrency: next });
   };
 
   const handleYouSaveCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.youSaveCurrency) return;
+    if (!canConvertPair(input.priceBeforeCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, youSaveCurrency: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validatePercentageDiscountInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const beforeSymbol = getCurrencySymbol(input.priceBeforeCurrency);
   const afterSymbol = getCurrencySymbol(
     result?.priceAfterCurrency ?? input.priceAfterCurrency
@@ -104,7 +179,7 @@ export function PercentageDiscountCalculator({
         `Price after discount: ${afterSymbol}${result.formattedPriceAfter} ${result.priceAfterCurrency}`,
         `You save: ${saveSymbol}${result.formattedYouSave} ${result.youSaveCurrency}`,
         `Formulas: Discount = Price × Rate / 100; After = Price − Discount; Save = Discount`,
-        FX_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -136,7 +211,9 @@ export function PercentageDiscountCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{FX_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">
+            {currencyNote}
+          </p>
         </div>
         {headerActions ? (
           <div className="flex items-center gap-2">{headerActions}</div>
@@ -152,6 +229,8 @@ export function PercentageDiscountCalculator({
           onPriceBeforeCurrencyChange={handlePriceBeforeCurrencyChange}
           onPriceAfterCurrencyChange={handlePriceAfterCurrencyChange}
           onYouSaveCurrencyChange={handleYouSaveCurrencyChange}
+          conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
