@@ -57,7 +57,7 @@ export function CreditCardPayoffGuideArticle() {
           Balance = 2,000 PKR · APR = 18% · Monthly payment = 100 PKR
         </p>
         <p className="mt-1">
-          Paid off after ≈ 2 years 0 months 0 days · Total paid ≈ 2,395.65 PKR
+          Paid off after ≈ 1 year 11 months 29 days · Total paid ≈ 2,395.65 PKR
         </p>
       </div>
 

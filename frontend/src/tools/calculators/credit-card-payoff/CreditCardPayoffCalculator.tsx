@@ -5,7 +5,23 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  getCurrencySymbol,
+  type SupportedCurrency,
+} from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { CreditCardPayoffForm } from './CreditCardPayoffForm';
 import {
   createDefaultInput,
@@ -13,6 +29,7 @@ import {
   type CreditCardPayoffInput,
   type CreditCardPayoffResult,
 } from './types';
+import { validateCreditCardPayoffInput } from './validation';
 
 const FX_NOTE =
   'Balance, monthly payment, and total paid each have their own currency. Payment amounts are normalized into the balance currency before calculating; total paid converts for display. APR and years/months/days are never converted.';
@@ -31,10 +48,18 @@ function inputsEqual(
   );
 }
 
-/**
- * UI shell for Credit Card Payoff Calculator.
- * Live calculation / FX wiring lands in the engine commit.
- */
+type MoneyCurrencyField =
+  | 'balanceCurrency'
+  | 'monthlyPaymentCurrency'
+  | 'totalPaidCurrency';
+
+type MoneyAmountField = 'balance' | 'monthlyPayment';
+
+const CURRENCY_AMOUNT: Partial<Record<MoneyCurrencyField, MoneyAmountField>> = {
+  balanceCurrency: 'balance',
+  monthlyPaymentCurrency: 'monthlyPayment',
+};
+
 export function CreditCardPayoffCalculator({
   metadata,
   className = '',
@@ -42,6 +67,8 @@ export function CreditCardPayoffCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<CreditCardPayoffInput>(
     () => defaults
@@ -49,8 +76,13 @@ export function CreditCardPayoffCalculator({
   const [input, setInput] = React.useState<CreditCardPayoffInput>(
     () => defaults
   );
-  const [errors] = React.useState<CreditCardPayoffFieldErrors>({});
-  const [result] = React.useState<CreditCardPayoffResult | null>(null);
+  const [errors, setErrors] = React.useState<CreditCardPayoffFieldErrors>({});
+  const [result, setResult] = React.useState<CreditCardPayoffResult | null>(
+    null
+  );
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -60,20 +92,122 @@ export function CreditCardPayoffCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  React.useEffect(() => {
+    const validation = validateCreditCardPayoffInput(defaults, rates);
+    if (validation.isValid && validation.result) {
+      setResult(validation.result);
+      setErrors({});
+    }
+    // Initial sample only.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const apply = (next: CreditCardPayoffInput) => {
+    const validation = validateCreditCardPayoffInput(next, rates);
     setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    setConversionError(null);
   };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const handleMoneyCurrencyChange =
+    (currencyField: MoneyCurrencyField) => (next: SupportedCurrency) => {
+      if (input[currencyField] === next) return;
+
+      // Result-only currency: convert display target, keep amount untouched.
+      if (currencyField === 'totalPaidCurrency') {
+        if (
+          next !== input.balanceCurrency &&
+          !canConvertPair(input.balanceCurrency, next)
+        ) {
+          setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+          return;
+        }
+        apply({ ...input, totalPaidCurrency: next });
+        return;
+      }
+
+      const amountField = CURRENCY_AMOUNT[currencyField]!;
+      const amount = parseMoneyInput(input[amountField]);
+      const hasAmount = Number.isFinite(amount);
+
+      if (currencyField === 'balanceCurrency') {
+        if (
+          input.monthlyPaymentCurrency !== next &&
+          !canConvertPair(input.monthlyPaymentCurrency, next)
+        ) {
+          setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+          return;
+        }
+        if (
+          input.totalPaidCurrency !== next &&
+          !canConvertPair(next, input.totalPaidCurrency)
+        ) {
+          setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+          return;
+        }
+      } else if (
+        next !== input.balanceCurrency &&
+        !canConvertPair(next, input.balanceCurrency)
+      ) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+
+      if (!hasAmount) {
+        apply({ ...input, [currencyField]: next });
+        return;
+      }
+
+      if (!canConvertPair(input[currencyField], next)) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+
+      const converted = convertCurrency({
+        amount,
+        from: input[currencyField],
+        to: next,
+        rates: rates.rates,
+      });
+      if (!converted.ok) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+
+      apply({
+        ...input,
+        [currencyField]: next,
+        [amountField]: moneyAmountToInputString(converted.amount),
+      });
+    };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateCreditCardPayoffInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const balanceSymbol = getCurrencySymbol(input.balanceCurrency);
   const summary = result
     ? [
@@ -81,7 +215,7 @@ export function CreditCardPayoffCalculator({
         result.summary,
         result.breakdown,
         `Balance currency: ${balanceSymbol}`,
-        FX_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -113,7 +247,9 @@ export function CreditCardPayoffCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{FX_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">
+            {currencyNote}
+          </p>
         </div>
         {headerActions ? (
           <div className="flex items-center gap-2">{headerActions}</div>
@@ -125,18 +261,16 @@ export function CreditCardPayoffCalculator({
           input={input}
           errors={errors}
           result={result}
-          conversionError={null}
-          ratesWarning={null}
+          conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
           onChange={apply}
-          onBalanceCurrencyChange={(next) =>
-            apply({ ...input, balanceCurrency: next })
-          }
-          onMonthlyPaymentCurrencyChange={(next) =>
-            apply({ ...input, monthlyPaymentCurrency: next })
-          }
-          onTotalPaidCurrencyChange={(next) =>
-            apply({ ...input, totalPaidCurrency: next })
-          }
+          onBalanceCurrencyChange={handleMoneyCurrencyChange('balanceCurrency')}
+          onMonthlyPaymentCurrencyChange={handleMoneyCurrencyChange(
+            'monthlyPaymentCurrency'
+          )}
+          onTotalPaidCurrencyChange={handleMoneyCurrencyChange(
+            'totalPaidCurrency'
+          )}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
