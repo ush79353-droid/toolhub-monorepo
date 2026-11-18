@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add ms to Seconds Converter
+- **Summary:** Shipped ms to Seconds Converter on existing catalog slug ms-to-seconds-converter (MsToSecondsConverter, catalog 6af46f17a27d8d1d4e990bb8). Bidirectional exact 1 s = 1000 ms; Other Units accordion (yr/mo/wk/d/h/min + mixed HMS); average Gregorian year/month (365.2425 days); empty default; signed durations; guide/chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-420b delivery for Conversion and Units milliseconds↔seconds time converter.
+- **Important Files:** frontend/src/tools/calculators/ms-to-seconds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–7000 ms; reverse seconds; 1 min; mixed HMS 3723000 ms; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add MPa to psig Conversion
 - **Summary:** Shipped MPa to psig Conversion on existing catalog slug mpa-to-psig-conversion (MpaToPsigConversion, catalog 6af46f17a27d8d1d4e990b23). Bidirectional exact MPa(g)↔psig via shared pressure-conversion Pa engine (~145.03773773 psig/MPa(g)); no atmospheric offset; rejects inaccurate ~130.34 absolute-with-atm factor; empty default; negative gauge allowed; guide/chart/FAQs on gauge vs absolute. Pillar 6af451d2a27d8d1d4e98f9ee preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-419b delivery for Conversion and Units megapascal gauge↔psig pressure converter.
