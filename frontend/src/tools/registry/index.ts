@@ -2821,6 +2821,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BoatLoanCalculator,
     })),
   ),
+  BondCalculator: lazyTool(() =>
+    import('@/tools/calculators/bond/BondCalculator').then((mod) => ({
+      default: mod.BondCalculator,
+    })),
+  ),
   BondConvexityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/bond-convexity/BondConvexityCalculator'
@@ -2833,6 +2838,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/bond-current-yield/BondCurrentYieldCalculator'
     ).then((mod) => ({
       default: mod.BondCurrentYieldCalculator,
+    })),
+  ),
+  BondPriceCalculator: lazyTool(() =>
+    import('@/tools/calculators/bond-price/BondPriceCalculator').then((mod) => ({
+      default: mod.BondPriceCalculator,
     })),
   ),
   BondYieldCalculator: lazyTool(() =>
@@ -3161,6 +3171,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/jensens-alpha/JensensAlphaCalculator'
     ).then((mod) => ({
       default: mod.JensensAlphaCalculator,
+    })),
+  ),
+  SavingsCalculator: lazyTool(() =>
+    import('@/tools/calculators/savings/SavingsCalculator').then((mod) => ({
+      default: mod.SavingsCalculator,
     })),
   ),
   SavingsInterestRateCalculator: lazyTool(() =>

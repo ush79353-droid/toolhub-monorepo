@@ -518,8 +518,10 @@ export const APPROVED_COMPONENT_KEYS = [
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
   'BoatLoanCalculator',
+  'BondCalculator',
   'BondConvexityCalculator',
   'BondCurrentYieldCalculator',
+  'BondPriceCalculator',
   'BondYieldCalculator',
   'BondYtmCalculator',
   'JumboLoanCalculator',
@@ -573,6 +575,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InvestmentCalculator',
   'InvestmentFeeCalculator',
   'JensensAlphaCalculator',
+  'SavingsCalculator',
   'SavingsInterestRateCalculator',
   'SharpeRatioCalculator',
   'VaMortgageCalculator',
@@ -1083,8 +1086,10 @@ if (isDirect) {
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
+    !isApprovedComponentKey('BondCalculator') ||
     !isApprovedComponentKey('BondConvexityCalculator') ||
     !isApprovedComponentKey('BondCurrentYieldCalculator') ||
+    !isApprovedComponentKey('BondPriceCalculator') ||
     !isApprovedComponentKey('BondYieldCalculator') ||
     !isApprovedComponentKey('BondYtmCalculator') ||
     !isApprovedComponentKey('JumboLoanCalculator') ||
@@ -1138,6 +1143,7 @@ if (isDirect) {
     !isApprovedComponentKey('InvestmentCalculator') ||
     !isApprovedComponentKey('InvestmentFeeCalculator') ||
     !isApprovedComponentKey('JensensAlphaCalculator') ||
+    !isApprovedComponentKey('SavingsCalculator') ||
     !isApprovedComponentKey('SavingsInterestRateCalculator') ||
     !isApprovedComponentKey('SharpeRatioCalculator') ||
     !isApprovedComponentKey('VaMortgageCalculator') ||

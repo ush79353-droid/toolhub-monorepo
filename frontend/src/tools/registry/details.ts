@@ -721,10 +721,13 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bi-weekly-mortgage-payment/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
+  BondCalculator: () => import('@/tools/calculators/bond/detail'),
   BondConvexityCalculator: () =>
     import('@/tools/calculators/bond-convexity/detail'),
   BondCurrentYieldCalculator: () =>
     import('@/tools/calculators/bond-current-yield/detail'),
+  BondPriceCalculator: () =>
+    import('@/tools/calculators/bond-price/detail'),
   BondYieldCalculator: () =>
     import('@/tools/calculators/bond-yield/detail'),
   BondYtmCalculator: () =>
@@ -819,6 +822,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/investment-fee/detail'),
   JensensAlphaCalculator: () =>
     import('@/tools/calculators/jensens-alpha/detail'),
+  SavingsCalculator: () => import('@/tools/calculators/savings/detail'),
   SavingsInterestRateCalculator: () =>
     import('@/tools/calculators/savings-interest-rate/detail'),
   SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),

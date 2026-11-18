@@ -4,6 +4,25 @@
 
 ---
 
+### 2026-11-18 — Add Savings Calculator
+- **Summary:** Shipped Savings Calculator on existing catalog slug `savings-calculator` (`SavingsCalculator`, catalog `6af46f0fa27d8d1d4e98ffda`). Screenshot-first: Savings balance goal, Interest rate / APY, initial savings FX, rate, yrs/mos, compound frequency, optional inflation + deposit growth, additional deposits FX with frequency and begin/end timing. Narrative APY/final/deposits/principal/interest results plus three-segment pie. Independent Phase 2 FX. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Three local commits (UI → calc/FX → integration); no push.
+- **Formulas:** APY = (1 + r/m)^m − 1; nominal from APY r = m((1+APY)^(1/m)−1); compounding-grid ledger with prorated deposits and begin/end timing; Final = Initial + Deposits + Interest; real FV = FV/(1+i)^t when inflation on.
+- **Example:** 1,000 PKR · 1.3% nominal · monthly · 6y · 100 PKR monthly begin → APY ≈ 1.3077%.
+- **Important Files:** `frontend/src/tools/calculators/savings/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog undeveloped before coding. Assert self-check in `calculation.test.ts` (written; suite not run per task). Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f967`). Temporary files cleaned: YES.
+
+### 2026-11-18 — Add Bond Calculator
+- **Summary:** Shipped Bond Calculator on existing catalog slug `bond-calculator` (`BondCalculator`, catalog `6af46f0fa27d8d1d4e98ffd3`). Coupon-date solver: leave exactly one of Price/Face/Yield/Maturity/Annual coupon blank; frequency annually–monthly; coupon % or USD. Fixed USD. Activated via `npm run tool:assign`.
+- **Why:** TOOL-410 delivery for Finance & Business Bond Calculator pillar.
+- **Important Files:** `frontend/src/tools/calculators/bond/*`, registries, `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** `calculation.test.ts` assert self-check (screenshot ≈ $97.3270; zero yield; zero-coupon YTM; round-trips; validation). Mongo `isDeveloped`/`isActive`/`indexable` true, embed on. Lint/type-check/build/Playwright omitted per task. Temporary files cleaned: YES.
+
+### 2026-11-18 — Add Bond Price Calculator
+- **Summary:** Shipped Bond Price Calculator on existing catalog slug `bond-price-calculator` (`BondPriceCalculator`, catalog `6af46f0fa27d8d1d4e98ffd7`). Screenshot sections: Coupon per period (face FX, annual coupon rate %, frequency dropdown default Annually, coupon per period FX, annual coupon FX); Bond price (years to maturity, YTM %, bond price FX). Formulas: Annual Coupon = F×r; Coupon/period = F×r/m; P = Σ (F r/m)/(1+y/m)^t + F/(1+y/m)^N; zero-YTM limit P = C×N+F. Regular coupon-date (clean price) assumption; fractional periods rejected. Independent Phase 2 FX. Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
+- **Why:** TOOL-408 delivery for Finance & Business Bond Calculator pillar.
+- **Important Files:** `frontend/src/tools/calculators/bond-price/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** `calculation.test.ts` assert self-check (par/semi-annual/zero coupon/zero YTM/premium/discount/fractional reject). Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f966`). Lint/builds/browser/automated tests omitted per user. Single local commit per user request. Temporary files cleaned: YES.
+
 ### 2026-11-18 — Add Bond Yield Calculator
 - **Summary:** Shipped Bond Yield Calculator on existing catalog slug `bond-yield-calculator` (`BondYieldCalculator`, catalog `6af46f0fa27d8d1d4e98ffd8`). Screenshot-first YTM (not current yield): face value FX, bond price FX, annual coupon rate %, coupon frequency (Annually default), years to maturity, read-only bond yield %. Bounded bisection on coupon-date price equation; zero-coupon closed form; premium/discount/par/negative-yield; N = years×m must be a whole period count. Independent Phase 2 FX; normalize bond price into face currency before solve. Activated (`isDeveloped`/`isActive`/`indexable` true, embed on). Bond Calculator pillar preserved; subPillar null.
 - **Why:** TOOL-407 delivery for Finance Bond Yield Calculator.

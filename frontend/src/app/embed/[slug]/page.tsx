@@ -164,6 +164,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'perpetuity-calculator',
   'present-value-calculator',
   'private-savings-calculator',
+  'savings-calculator',
   'rate-of-return-calculator',
   'return-on-capital-employed-calculator-roce',
   'roi-calculator',
