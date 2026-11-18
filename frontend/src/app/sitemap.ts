@@ -26,6 +26,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ebitda-margin-calculator',
   'future-value-of-annuity-calculator',
   'gross-margin-calculator',
+  'growing-annuity-calculator',
   'interest-rate-parity-calculator',
   'loan-calculator',
   'auto-loan-calculator',

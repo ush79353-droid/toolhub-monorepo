@@ -42,6 +42,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'ebitda-margin-calculator',
   'future-value-of-annuity-calculator',
   'gross-margin-calculator',
+  'growing-annuity-calculator',
   'interest-rate-parity-calculator',
   'loan-interest-calculator',
   'margin-and-markup-calculator',
