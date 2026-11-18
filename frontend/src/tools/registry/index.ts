@@ -313,6 +313,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SalaryWithOvertimeCalculator,
     })),
   ),
+  TdsInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/tds-interest/TdsInterestCalculator'
+    ).then((mod) => ({
+      default: mod.TdsInterestCalculator,
+    })),
+  ),
   TexasOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/texas-overtime/TexasOvertimeCalculator'
