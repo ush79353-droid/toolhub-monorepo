@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Ounces to Grams Converter
+- **Summary:** Shipped Ounces to Grams Converter on existing catalog slug ounces-to-grams-converter (OuncesToGramsConverter, catalog 6af46f17a27d8d1d4e990b5f). Bidirectional exact avoirdupois oz↔g (1 oz = 28.349523125 g); default 1 oz; rejects negative mass; troy/fluid-ounce informational note; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-423b delivery for Conversion and Units ounces↔grams mass converter.
+- **Important Files:** frontend/src/tools/calculators/ounces-to-grams/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–16 oz; 100/250 g reverse; 453.59237 g = 16 oz; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add nm to m Converter
 - **Summary:** Shipped nm to m Converter on existing catalog slug nm-to-m-converter (NmToMConverter, catalog 6af46f17a27d8d1d4e990b12). Bidirectional exact SI nm↔m (1 nm = 10⁻⁹ m; 1 m = 1e9 nm); default 100 nm; signed values; scientific notation for tiny meters; guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ea preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-422b delivery for Conversion and Units nanometers↔meters pair converter.
