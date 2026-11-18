@@ -207,6 +207,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OperatingMarginCalculator,
     })),
   ),
+  OvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/overtime/OvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.OvertimeCalculator,
+    })),
+  ),
   PresentValueOfAnnuityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/present-value-of-annuity/PresentValueOfAnnuityCalculator'

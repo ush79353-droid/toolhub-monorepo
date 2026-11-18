@@ -56,6 +56,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/net-debt/detail'),
   OperatingMarginCalculator: () =>
     import('@/tools/calculators/operating-margin/detail'),
+  OvertimeCalculator: () =>
+    import('@/tools/calculators/overtime/detail'),
   PresentValueOfAnnuityCalculator: () =>
     import('@/tools/calculators/present-value-of-annuity/detail'),
   RrefCalculator: () => import('@/tools/calculators/rref/detail'),
