@@ -20,7 +20,7 @@ Rules:
 - Currency selectors follow ADR-023: include only when the reference shows one, the user asks, or real conversion is essential. Otherwise format a fixed currency. Real conversion still uses ADR-017 rates through ADR-021 (`.agents/rules/currency-conversion.md`). A denomination selector does not convert numbers.
 - Follow `brain/ARCHITECTURE.md` §7: `calculation.ts`, `validation.ts`, `types.ts`, `detail.tsx`, `calculation.test.ts`, lazy `registry/index.ts`, and `registry/details.ts`. Mirror the key in `backend/src/modules/tools/tool.key.ts`.
 - Complete the playbook checklist before calling the calculator done: screenshot-first scope (ADR-023), architecture, reusable components, pure engine, validation, tests, SEO, embed, responsive QA, and activation (ADR-022, `.agents/rules/tool-activation.md`).
-- Use exactly two commits under ADR-019 (`.agents/rules/git-commits.md`): tool files, then Brain. Do not pad history. The delivery report lists both commits and their checks.
+- Use exactly three commits under ADR-019 (`.agents/rules/git-commits.md`): UI, engine (+ FX when applicable), then registration/SEO/Brain/cleanup. Do not pad history. The delivery report lists all three commit hashes separately and their checks.
 - Do not add `app/(website)/tools/<slug>/page.tsx`. Unregistered keys call `notFound()`.
 - Import `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/`. Do not copy them.
 - Do not hardcode per-tool SEO metadata in calculator components.

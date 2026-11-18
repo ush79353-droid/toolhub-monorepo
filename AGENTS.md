@@ -44,8 +44,9 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 4. Update `brain/TASKS.md`.
 5. Append a chronological entry to `brain/CHANGELOG.md`.
 6. Update `brain/DECISIONS.md` if an architectural or design decision changed (never silently delete prior decisions).
-7. Report exact files changed and observed verification results. For a calculator, list both commits in the delivery and the checks run.
-8. Do not claim a feature or check is complete unless directly verified after your final edit.
+7. **Temporary file cleanup (ADR-025):** Prefer existing utilities over temp scripts. Track any temp files you created; delete them as soon as they are unused. Prefer a temp directory outside the repo. Before finishing, run `git status --short` and remove **only** this task’s temporary artifacts — never delete unknown/untracked colleague files, never `git clean -fd`, never `rm -rf` project trees, never Git reset for cleanup. If a temp file cannot be deleted safely, report path + reason. Final reports must include `Temporary files cleaned: YES/NO`. See `.cursor/rules/temporary-file-cleanup.mdc` / `.agents/rules/temporary-file-cleanup.md`.
+8. Report exact files changed and observed verification results. For a calculator, list all three ADR-019 commit hashes separately in the delivery and the checks run.
+9. Do not claim a feature or check is complete unless directly verified after your final edit.
 
 ---
 
@@ -57,7 +58,7 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 - Never automatically resolve conflicting architectural changes — stop and coordinate or ask for clarification.
 - Follow the user's Git instructions for committing and pushing (`git fetch` and inspect divergence/conflicts before pushing).
 - Stage only files that belong to the current task. Leave unrelated and uncommitted work untouched.
-- New calculators follow the two-commit rule in ADR-019 and `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`: (1) all tool files, (2) Brain docs. Do not invent extra milestone commits.
+- New calculators follow the three-commit rule in ADR-019 and `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`: (1) UI/components/fields/layout, (2) formulas/validation/results/FX where applicable, (3) registration/sitemap/Mongo/SEO/Brain/cleanup. Do not invent empty or padded commits. If development is skipped or blocked, create no unnecessary commits.
 - Non-calculator work still keeps its Brain update in the same commit as the code it describes.
-- A calculator's Brain commit (`CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`, and any ADR) is the second and last commit of that delivery. Push both commits together to `origin/development` after `git fetch` shows it can fast-forward. Do not push a registered calculator without that Brain commit in the same push.
+- A calculator's Brain docs land in the third ADR-019 commit with registration and cleanup. Push all three commits together to `origin/development` after `git fetch` shows it can fast-forward. Do not push a registered calculator without that third commit in the same push. Report all three commit hashes separately.
 

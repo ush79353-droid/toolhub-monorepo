@@ -2,8 +2,8 @@
 
 This directory is the version-controlled, single source of truth for **Mega Tools / Omega Calculators** (`ToolHub`), shared by:
 
-- **Developer A** using **Google Antigravity** (`.agents/rules/mega-tools-brain.md`, `.agents/rules/ponytail.md`)
-- **Developer B** using **Cursor** (`.cursor/rules/mega-tools-brain.mdc`, `.cursor/rules/ponytail.mdc`)
+- **Developer A** using **Google Antigravity** (`.agents/rules/mega-tools-brain.md`, `.agents/rules/ponytail.md`, `.agents/rules/temporary-file-cleanup.md`)
+- **Developer B** using **Cursor** (`.cursor/rules/mega-tools-brain.mdc`, `.cursor/rules/ponytail.mdc`, `.cursor/rules/temporary-file-cleanup.mdc`)
 - Root shared instructions: [`AGENTS.md`](../AGENTS.md)
 
 ---
@@ -20,7 +20,7 @@ To avoid merge conflicts and stale context:
 4. **Use stable Task IDs** in `TASKS.md` (e.g., `CORE-01`, `FE-01`, `BE-01`) — never renumber existing IDs.
 5. **Preserve prior decisions** in `DECISIONS.md` — add new ADRs or supersede status rather than deleting history.
 6. **Append chronologically** to `CHANGELOG.md` — place new entries consistently without rewriting older entries.
-7. **Bundle Brain updates with the work they describe.** Non-calculator changes that alter routes, schemas, auth, UI tokens, or task status update the matching Brain files in the same commit. A new calculator follows ADR-019: one tool-files commit, then one Brain commit, pushed together. Do not push the tool commit without that Brain commit.
+7. **Bundle Brain updates with the work they describe.** Non-calculator changes that alter routes, schemas, auth, UI tokens, or task status update the matching Brain files in the same commit. A new calculator follows ADR-019: three commits (UI, engine/+FX, registration/SEO/Brain/cleanup), pushed together. Do not push registration without that third commit.
 8. **Never force push or silently overwrite another developer's work.** Stop and resolve conflicts explicitly.
 
 ---

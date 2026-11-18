@@ -24,8 +24,9 @@ A new calculator is not done until every gate below is true, in this order. Deta
 9. **Responsive QA** — Check 375, 768, 1024, and 1280. Calculator first below `lg`. No horizontal overflow.
 10. **Currency** — Follow the checklist in Step 19b and ADR-023. Denomination and conversion are different. Include currency selector ONLY when reference requires it.
 11. **Activation** — Follow Step 19c (ADR-022 + ADR-023 verified activation). After module, registry, tests, and `/tools/{slug}` succeed: set `isDeveloped`, `isActive`, and `indexable` when eligible. Report admin-disabled/noindex blockers instead of overriding them. Do not activate a placeholder. A calculator is not delivered until the public route works for testing.
+12. **Temporary file cleanup (ADR-025)** — Prefer existing utilities; keep any temps outside the repo when possible; delete only this task’s temps after `git status --short`; never `git clean -fd` / project `rm -rf` / Git reset. Final report must include `Temporary files cleaned: YES/NO`.
 
-Then finish accessibility, type-check, lint, and the Brain update (steps 16–19). Under ADR-019, land the delivery as two commits: tool files first, Brain last.
+Then finish accessibility, type-check, lint, and the Brain update (steps 16–19). Under ADR-019, land the delivery as three commits: UI first, engine (+ FX when applicable) second, registration/SEO/Brain/cleanup last.
 
 ---
 
@@ -220,27 +221,29 @@ ADR-016 (Auto Loan visual shell) and ADR-018 (calculator module) stay in force. 
 
 ---
 
-## Step 19 — Two commits and push
+## Step 19 — Three commits and push
 
-ADR-019. After the calculator is complete and verified, create exactly two commits, then push once after `git fetch` only if `origin/development` can take a fast-forward. Never force-push.
+ADR-019. After the calculator is complete and verified, create exactly three meaningful commits, then push once after `git fetch` only if `origin/development` can take a fast-forward. Never force-push. If development is skipped or blocked, create no unnecessary commits.
 
 Example, using the tool name in place of `calculator`:
 
-1. `feat(calculator): add calculator module, registry and activation`
-2. `docs(calculator): update Brain and development records`
+1. `feat(calculator): add calculator UI fields and layout`
+2. `feat(calculator): add calculation validation and results`
+3. `feat(calculator): register activate SEO and Brain cleanup`
 
 | Commit | Includes |
 | :--- | :--- |
-| 1 — Tool files | Module (`calculation.ts`, `validation.ts`, `detail.tsx`, tests, UI), registry, sitemap, backend `tool.key.ts`, assign/activation work, and other non-Brain code |
-| 2 — Brain | `CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`, and any ADR or other `brain/` docs |
+| 1 — UI | Calculator UI, components, fields, and layout (`detail.tsx` shell, form/results presentation). No registry, sitemap, or Mongo activation. |
+| 2 — Engine | `calculation.ts`, `validation.ts`, results wiring, `calculation.test.ts`, and Phase 2 FX where applicable. When FX is not used, ship formulas/validation/results only — do not invent an empty FX commit. |
+| 3 — Registration & cleanup | Frontend/backend registration, sitemap, authorized MongoDB `tool:assign` / activation, SEO, Brain docs (`CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`, ADRs), temporary-file cleanup, and final delivery cleanup |
 
 Rules:
 
-- Exactly two commits. Do not split into engine / tests / UI / registry milestones. No empty, duplicate, or padded commits.
-- Register the calculator only when its component and `detail.tsx` exist in the tool commit.
-- Run engine tests, `type-check`, `lint`, and responsive/embed checks before the tool commit; Brain commit is docs only.
-- Use Conventional Commit subjects. Stage only this task's files.
-- The delivery report lists both commit hashes and the checks run.
+- Exactly three meaningful commits. No empty, duplicate, padded, or artificial commits.
+- Do not register or activate Mongo before the UI and engine commits exist for that tool.
+- Run engine tests before the engine commit; run route/activation checks before or with the registration commit.
+- Use Conventional Commit subjects. Stage only this calculator/task's files. Never include colleague or unrelated files.
+- The delivery report lists all three commit hashes separately and the checks run.
 
 ---
 
@@ -295,7 +298,8 @@ A new calculator is **not** done when the form merely renders. The first items a
 - [ ] Accessibility basics (labels, focus, FAQ, table headers)
 - [ ] `type-check` and `lint` passing
 - [ ] Verified activation (ADR-022/023): `isDeveloped` / `isActive` / eligible `indexable`, public `/tools/{slug}` works, or blocker reported
-- [ ] Brain docs updated in the second ADR-019 commit (tool files first, Brain last)
+- [ ] Temporary artifacts cleaned (ADR-025); report includes `Temporary files cleaned: YES/NO`
+- [ ] Three ADR-019 commits created (UI, engine/+FX, registration/SEO/Brain/cleanup); all three hashes reported separately
 
 ---
 
@@ -312,6 +316,6 @@ If asked to ship a Percentage Calculator, agents should automatically:
 7. Write percentage-specific guide/TOC/FAQ (not loan copy)
 8. Rely on shared SEO/ads/embed
 9. Verify responsive + a11y + gates
-10. Commit per Step 19: tool files first, Brain second
+10. Commit per Step 19: UI, engine/+FX, then registration/SEO/Brain/cleanup
 
 No new design brief required — the master standards already define the shell.
