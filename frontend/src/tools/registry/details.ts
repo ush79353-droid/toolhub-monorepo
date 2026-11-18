@@ -61,6 +61,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DecagramToGramConverter: () => import('@/tools/calculators/decagram-to-gram/detail'),
   PintToPoundCalculator: () => import('@/tools/calculators/pint-to-pound/detail'),
   PintsToCupsConverter: () => import('@/tools/calculators/pints-to-cups/detail'),
+  PintsToGallonsConverter: () => import('@/tools/calculators/pints-to-gallons/detail'),
   DropsToMlConverter: () => import('@/tools/calculators/drops-to-ml/detail'),
   PoundsAndOuncesCalculator: () =>
     import('@/tools/calculators/pounds-and-ounces/detail'),

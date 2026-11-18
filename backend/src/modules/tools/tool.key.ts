@@ -56,6 +56,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DecagramToGramConverter',
   'PintToPoundCalculator',
   'PintsToCupsConverter',
+  'PintsToGallonsConverter',
   'DropsToMlConverter',
   'PoundsAndOuncesCalculator',
   'OunceToKgConverter',
@@ -579,6 +580,7 @@ if (isDirect) {
     !isApprovedComponentKey('DecagramToGramConverter') ||
     !isApprovedComponentKey('PintToPoundCalculator') ||
     !isApprovedComponentKey('PintsToCupsConverter') ||
+    !isApprovedComponentKey('PintsToGallonsConverter') ||
     !isApprovedComponentKey('DropsToMlConverter') ||
     !isApprovedComponentKey('PoundsAndOuncesCalculator') ||
     !isApprovedComponentKey('OunceToKgConverter') ||
