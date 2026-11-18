@@ -62,6 +62,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PintToPoundCalculator: () => import('@/tools/calculators/pint-to-pound/detail'),
   PintsToCupsConverter: () => import('@/tools/calculators/pints-to-cups/detail'),
   PintsToGallonsConverter: () => import('@/tools/calculators/pints-to-gallons/detail'),
+  QuartsToGallonsConverter: () => import('@/tools/calculators/quarts-to-gallons/detail'),
   DropsToMlConverter: () => import('@/tools/calculators/drops-to-ml/detail'),
   PoundsAndOuncesCalculator: () =>
     import('@/tools/calculators/pounds-and-ounces/detail'),

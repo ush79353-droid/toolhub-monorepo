@@ -307,6 +307,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PintsToGallonsConverter,
     })),
   ),
+  QuartsToGallonsConverter: lazyTool(() =>
+    import('@/tools/calculators/quarts-to-gallons/QuartsToGallonsConverter').then((mod) => ({
+      default: mod.QuartsToGallonsConverter,
+    })),
+  ),
   DropsToMlConverter: lazyTool(() =>
     import('@/tools/calculators/drops-to-ml/DropsToMlConverter').then((mod) => ({
       default: mod.DropsToMlConverter,

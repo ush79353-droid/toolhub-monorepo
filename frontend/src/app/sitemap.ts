@@ -242,6 +242,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cups-to-quarts-converter',
   'pints-to-cups-converter',
   'pints-to-gallons-converter',
+  'quarts-to-gallons-converter',
   'day-converter',
   'days-to-months-calculator',
   'days-to-weeks-calculator',
