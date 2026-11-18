@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Pounds to Stone Converter
+- **Summary:** Shipped Pounds to Stone Converter on existing catalog slug pounds-to-stone-converter (PoundsToStoneConverter, catalog 6af46f17a27d8d1d4e990b6a). Bidirectional lb↔st with exact 14 lb per st; default 14 lb; secondary mixed stone+pounds; rejects negative mass; guide/charts/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-435b delivery for Conversion and Units pounds↔stone mass converter.
+- **Important Files:** frontend/src/tools/calculators/pounds-to-stone/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–210 lb forward; st reverse; mixed 150/128/168; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Pounds to Ounces Converter
 - **Summary:** Shipped Pounds to Ounces Converter on existing catalog slug pounds-to-ounces-converter (PoundsToOuncesConverter, catalog 6af46f17a27d8d1d4e990b69). Bidirectional lb↔oz with exact 16 oz per lb; default 1 lb; rejects negative mass; mass ounces only (not fl oz); guide/charts/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-434b delivery for Conversion and Units pounds↔ounces mass converter.
