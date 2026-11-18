@@ -190,6 +190,7 @@ export function calculateRoi(input: {
     periodUnit,
     initialInvestment,
     contributionFrequency,
+    contributionAmount,
     sourceField,
     startDate,
     endDate,
@@ -201,8 +202,7 @@ export function calculateRoi(input: {
   if (years === null) return null;
 
   const ppy = periodsPerYear(contributionFrequency);
-  const contrib =
-    contributionFrequency === 'none' ? 0 : input.contributionAmount;
+  const contrib = contributionFrequency === 'none' ? 0 : contributionAmount;
   if (contributionFrequency !== 'none') {
     if (!Number.isFinite(contrib) || contrib < 0) return null;
   }
