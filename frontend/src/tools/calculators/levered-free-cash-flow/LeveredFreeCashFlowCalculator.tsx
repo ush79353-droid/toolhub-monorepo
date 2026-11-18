@@ -18,6 +18,7 @@ import {
   type LeveredFreeCashFlowInput,
   type LeveredFreeCashFlowResult,
 } from './types';
+import { validateLeveredFreeCashFlowInput } from './validation';
 
 const FX_NOTE =
   'EBITDA, CapEx, working-capital change, debt repayments, and levered FCF each have their own currency. Inputs are normalized into the result currency before Levered FCF = EBITDA − CapEx − ΔWC − Debt repayments. Missing rates block conversion; stale rates warn but still convert.';
@@ -69,21 +70,20 @@ export function LeveredFreeCashFlowCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  // UI shell: input state only. Engine wiring lands in the calculation commit.
-  void rates;
-
   const apply = (next: LeveredFreeCashFlowInput) => {
+    const validation = validateLeveredFreeCashFlowInput(next, rates);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateLeveredFreeCashFlowInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
