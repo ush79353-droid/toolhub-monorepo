@@ -88,10 +88,29 @@ export const APPROVED_COMPONENT_KEYS = [
   'MgToMlCalculator',
   'CubicYardsToTonsCalculator',
   'MlToCupsConverter',
+  'MlToCcConverter',
+  'MlToKgConverter',
+  'MlToLbsConversion',
+  'MlToOzConverter',
+  'MlToTbspConverter',
+  'MlToTspConverter',
+  'MlToUlConversion',
   'DecagramToGramConverter',
   'PintToPoundCalculator',
+  'PintsToCupsConverter',
+  'PintsToGallonsConverter',
+  'QuartsToGallonsConverter',
   'DropsToMlConverter',
   'PoundsAndOuncesCalculator',
+  'PoundsToGramsConverter',
+  'PoundsToLbsConverter',
+  'PoundsToOuncesConverter',
+  'PoundsToStoneConverter',
+  'OunceToKgConverter',
+  'OuncesToGramsConverter',
+  'OuncesToMillilitersConverter',
+  'OuncesToPoundsConverter',
+  'OzToCcConverter',
   'OzToCupsConverter',
   'GallonCalculator',
   'QuartsToPoundsConverter',
@@ -103,6 +122,12 @@ export const APPROVED_COMPONENT_KEYS = [
   'ForceConverter',
   'NmToInLbsConverter',
   'InchLbsToNmConverter',
+  'PaToPsiConversion',
+  'PascalConversion',
+  'PsiConverter',
+  'PsiToAtmConversion',
+  'PsiToInchesOfWaterConversion',
+  'PressureUnitConversion',
   'PressureConversion',
   'InchPoundsToFootPoundsConverter',
   'PsiToGpmCalculator',
@@ -110,6 +135,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'TorqueToHpCalculator',
   'NewtonMeterCalculator',
   'TorrToAtmConverter',
+  'MmhgToAtmConversion',
+  'MmToAtmConverter',
   'NmToFtLbsConverter',
   'CoordinatesConverter',
   'LatLongToUtmConverter',
@@ -241,6 +268,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DaysToYearsCalculator',
   'DegreesToMinutesConverter',
   'DegreesToRadiansConverter',
+  'RadiansToDegreesConverter',
   'DegreesToSecondsConverter',
   'DistanceConverter',
   'DmConverter',
@@ -313,6 +341,11 @@ export const APPROVED_COMPONENT_KEYS = [
   'MilConversion',
   'MileConversionCalculator',
   'MillimeterCalculator',
+  'MmCalculator',
+  'MmToFootConverter',
+  'MmToInchesConversion',
+  'MmToKmConversion',
+  'MmToMConversion',
   'MillisecondsConverter',
   'MilToInchConversion',
   'MilToMmConversion',
@@ -321,6 +354,20 @@ export const APPROVED_COMPONENT_KEYS = [
   'MinutesToDecimalCalculator',
   'MinutesToSecondsConverter',
   'MinutesToYearsConversion',
+  'MonthsToYearsCalculator',
+  'MpaConversion',
+  'MpaToPsiConversion',
+  'MpaToPsigConversion',
+  'MsToSecondsConverter',
+  'SecondsConverter',
+  'SecondsToDaysConverter',
+  'SecondsToHoursConverter',
+  'SecondsToMinutesConverter',
+  'SecondsToYearsConversion',
+  'SquareCmToSquareMmConverter',
+  'SquareFeetConverter',
+  'NmConverter',
+  'NmToMConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -582,10 +629,29 @@ if (isDirect) {
     !isApprovedComponentKey('MgToMlCalculator') ||
     !isApprovedComponentKey('CubicYardsToTonsCalculator') ||
     !isApprovedComponentKey('MlToCupsConverter') ||
+    !isApprovedComponentKey('MlToCcConverter') ||
+    !isApprovedComponentKey('MlToKgConverter') ||
+    !isApprovedComponentKey('MlToLbsConversion') ||
+    !isApprovedComponentKey('MlToOzConverter') ||
+    !isApprovedComponentKey('MlToTbspConverter') ||
+    !isApprovedComponentKey('MlToTspConverter') ||
+    !isApprovedComponentKey('MlToUlConversion') ||
     !isApprovedComponentKey('DecagramToGramConverter') ||
     !isApprovedComponentKey('PintToPoundCalculator') ||
+    !isApprovedComponentKey('PintsToCupsConverter') ||
+    !isApprovedComponentKey('PintsToGallonsConverter') ||
+    !isApprovedComponentKey('QuartsToGallonsConverter') ||
     !isApprovedComponentKey('DropsToMlConverter') ||
     !isApprovedComponentKey('PoundsAndOuncesCalculator') ||
+    !isApprovedComponentKey('PoundsToGramsConverter') ||
+    !isApprovedComponentKey('PoundsToLbsConverter') ||
+    !isApprovedComponentKey('PoundsToOuncesConverter') ||
+    !isApprovedComponentKey('PoundsToStoneConverter') ||
+    !isApprovedComponentKey('OunceToKgConverter') ||
+    !isApprovedComponentKey('OuncesToGramsConverter') ||
+    !isApprovedComponentKey('OuncesToMillilitersConverter') ||
+    !isApprovedComponentKey('OuncesToPoundsConverter') ||
+    !isApprovedComponentKey('OzToCcConverter') ||
     !isApprovedComponentKey('OzToCupsConverter') ||
     !isApprovedComponentKey('GallonCalculator') ||
     !isApprovedComponentKey('QuartsToPoundsConverter') ||
@@ -597,6 +663,12 @@ if (isDirect) {
     !isApprovedComponentKey('ForceConverter') ||
     !isApprovedComponentKey('NmToInLbsConverter') ||
     !isApprovedComponentKey('InchLbsToNmConverter') ||
+    !isApprovedComponentKey('PaToPsiConversion') ||
+    !isApprovedComponentKey('PascalConversion') ||
+    !isApprovedComponentKey('PsiConverter') ||
+    !isApprovedComponentKey('PsiToAtmConversion') ||
+    !isApprovedComponentKey('PsiToInchesOfWaterConversion') ||
+    !isApprovedComponentKey('PressureUnitConversion') ||
     !isApprovedComponentKey('PressureConversion') ||
     !isApprovedComponentKey('InchPoundsToFootPoundsConverter') ||
     !isApprovedComponentKey('PsiToGpmCalculator') ||
@@ -604,6 +676,8 @@ if (isDirect) {
     !isApprovedComponentKey('TorqueToHpCalculator') ||
     !isApprovedComponentKey('NewtonMeterCalculator') ||
     !isApprovedComponentKey('TorrToAtmConverter') ||
+    !isApprovedComponentKey('MmhgToAtmConversion') ||
+    !isApprovedComponentKey('MmToAtmConverter') ||
     !isApprovedComponentKey('NmToFtLbsConverter') ||
     !isApprovedComponentKey('CoordinatesConverter') ||
     !isApprovedComponentKey('LatLongToUtmConverter') ||
@@ -735,6 +809,7 @@ if (isDirect) {
     !isApprovedComponentKey('DaysToYearsCalculator') ||
     !isApprovedComponentKey('DegreesToMinutesConverter') ||
     !isApprovedComponentKey('DegreesToRadiansConverter') ||
+    !isApprovedComponentKey('RadiansToDegreesConverter') ||
     !isApprovedComponentKey('DegreesToSecondsConverter') ||
     !isApprovedComponentKey('DistanceConverter') ||
     !isApprovedComponentKey('DmConverter') ||
@@ -807,6 +882,11 @@ if (isDirect) {
     !isApprovedComponentKey('MilConversion') ||
     !isApprovedComponentKey('MileConversionCalculator') ||
     !isApprovedComponentKey('MillimeterCalculator') ||
+    !isApprovedComponentKey('MmCalculator') ||
+    !isApprovedComponentKey('MmToFootConverter') ||
+    !isApprovedComponentKey('MmToInchesConversion') ||
+    !isApprovedComponentKey('MmToKmConversion') ||
+    !isApprovedComponentKey('MmToMConversion') ||
     !isApprovedComponentKey('MillisecondsConverter') ||
     !isApprovedComponentKey('MilToInchConversion') ||
     !isApprovedComponentKey('MilToMmConversion') ||
@@ -815,6 +895,20 @@ if (isDirect) {
     !isApprovedComponentKey('MinutesToDecimalCalculator') ||
     !isApprovedComponentKey('MinutesToSecondsConverter') ||
     !isApprovedComponentKey('MinutesToYearsConversion') ||
+    !isApprovedComponentKey('MonthsToYearsCalculator') ||
+    !isApprovedComponentKey('MpaConversion') ||
+    !isApprovedComponentKey('MpaToPsiConversion') ||
+    !isApprovedComponentKey('MpaToPsigConversion') ||
+    !isApprovedComponentKey('MsToSecondsConverter') ||
+    !isApprovedComponentKey('SecondsConverter') ||
+    !isApprovedComponentKey('SecondsToDaysConverter') ||
+    !isApprovedComponentKey('SecondsToHoursConverter') ||
+    !isApprovedComponentKey('SecondsToMinutesConverter') ||
+    !isApprovedComponentKey('SecondsToYearsConversion') ||
+    !isApprovedComponentKey('SquareCmToSquareMmConverter') ||
+    !isApprovedComponentKey('SquareFeetConverter') ||
+    !isApprovedComponentKey('NmConverter') ||
+    !isApprovedComponentKey('NmToMConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||

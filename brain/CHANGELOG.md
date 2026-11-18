@@ -4,6 +4,288 @@
 
 ---
 
+### 2026-11-18 — Add Square Feet Converter
+- **Summary:** Shipped Square Feet Converter on existing catalog slug square-feet-converter (SquareFeetConverter, catalog 6af46f17a27d8d1d4e990afb). Bidirectional ft² ↔ selectable area units via square-meter base (mm²/cm²/m²/km²/in²/ft²/yd²/ac/ha/mi²); empty default; destination defaults to m²; unit change preserves ft². Pillar/subPillar preserved (live pillar 6af451d1…). Meta title 41 chars. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-448b delivery for Conversion and Units square feet converter.
+- **Important Files:** frontend/src/tools/calculators/square-feet-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 ft²→0.09290304 m², 100→9.290304, 1→144 in², 9→1 yd², 43560→1 ac, 10 m²→≈107.64 ft²; negatives rejected; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Square Centimeters to Square Millimeters Converter
+- **Summary:** Shipped Square Centimeters to Square Millimeters Converter on existing catalog slug square-centimeters-to-square-millimeters-converter (SquareCmToSquareMmConverter, catalog 6af46f17a27d8d1d4e990b9b). Bidirectional cm²↔mm² with exact ×100; non-negative areas; empty default; guide/chart/FAQs/notation notes. Null pillar/subPillar preserved. Meta title trimmed to <=70. **isActive left false** (explicit). indexable left true.
+- **Why:** TOOL-447b delivery for Conversion and Units area converter.
+- **Important Files:** frontend/src/tools/calculators/square-cm-to-square-mm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1→100, 5→500, 500→50000; reverse 100→1, 250→2.5; 0/decimals; negatives rejected; share text). Mongo assigned via npm run tool:assign without --set-active (isDeveloped true, isActive false, indexable true, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Seconds to Years Conversion
+- **Summary:** Shipped Seconds to Years Conversion on existing catalog slug seconds-to-years-conversion (SecondsToYearsConversion, catalog 6af46f17a27d8d1d4e990bbd). Bidirectional seconds↔years with Gregorian mean year 365.2425 days (31,556,952 s); Other time units accordion (mo/wk/d/h/min + HMS); signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-446b delivery for Conversion and Units seconds-to-years converter.
+- **Important Files:** frontend/src/tools/calculators/seconds-to-years/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (31556952→1, 63113904→2, negatives, 0.5 yr; months≈12; HMS 2h30m→9000; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Seconds to Minutes Converter
+- **Summary:** Shipped Seconds to Minutes Converter on existing catalog slug seconds-to-minutes-converter (SecondsToMinutesConverter, catalog 6af46f17a27d8d1d4e990bbc). Bidirectional seconds↔minutes with exact 60 s/min; signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-445b delivery for Conversion and Units seconds-to-minutes converter.
+- **Important Files:** frontend/src/tools/calculators/seconds-to-minutes/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (60→1, 120→2, 30→0.5, 78→1.3, negatives; minutes→seconds; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Seconds to Hours Converter
+- **Summary:** Shipped Seconds to Hours Converter on existing catalog slug seconds-to-hours-converter (SecondsToHoursConverter, catalog 6af46f17a27d8d1d4e990bbb). Bidirectional seconds↔hours with exact 3,600 s/hour; editable HMS breakdown with signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-444b delivery for Conversion and Units seconds-to-hours converter.
+- **Important Files:** frontend/src/tools/calculators/seconds-to-hours/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (3600→1, 7200→2, 1800→0.5, negatives, 1920≈0.5333; HMS 7260→2h1m; 1h45m30s→6330; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Seconds to Days Converter
+- **Summary:** Shipped Seconds to Days Converter on existing catalog slug seconds-to-days-converter (SecondsToDaysConverter, catalog 6af46f17a27d8d1d4e990bba). Bidirectional seconds↔days with exact 86,400 s/day (24-hour day); signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta description trimmed to <=160. Meta title <=70. indexable left false.
+- **Why:** TOOL-443b delivery for Conversion and Units seconds-to-days converter.
+- **Important Files:** frontend/src/tools/calculators/seconds-to-days/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (86400→1, 172800→2, 43200→0.5, negatives, 1e6≈11.574074074; days→seconds; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Seconds Converter
+- **Summary:** Shipped Seconds Converter on existing catalog slug seconds-converter (SecondsConverter, catalog 6af46f17a27d8d1d4e990bb9). Bidirectional seconds↔min/hr/day/wk/mo/yr with average Gregorian year/month (31,556,952 / 2,629,746 sec); HMS compound fields; Time in other units accordion; signed durations; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-442b delivery for Conversion and Units seconds multi-unit time converter.
+- **Important Files:** frontend/src/tools/calculators/seconds-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (60/3600/86400/604800/yrs/mos; HMS 3665 and 90.5; negatives; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Radians to Degrees Converter
+- **Summary:** Shipped Radians to Degrees Converter on existing catalog slug radians-to-degrees-converter (RadiansToDegreesConverter, catalog 6af46f17a27d8d1d4e990bff). Bidirectional rad↔deg via shared angle-conversion Math.PI helpers; default π rad = 180°; restricted π expression input; Other angle units accordion (gon/turns/′/″/mrad); signed angles preserved; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-441b delivery for Conversion and Units radians↔degrees angle converter.
+- **Important Files:** frontend/src/tools/calculators/radians-to-degrees/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (π/2/π/4/1/−π/2; reverse; extras; π expressions; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Quarts to Gallons Converter
+- **Summary:** Shipped Quarts to Gallons Converter on existing catalog slug quarts-to-gallons-converter (QuartsToGallonsConverter, catalog 6af46f17a27d8d1d4e990ad1). Bidirectional quarts↔gallons with US/UK (+ US dry qt) selectors via shared volume engine; default 4 US qt = 1 US gal; Other relevant units accordion (cups/pt/fl oz/mL/L/UK); guide/table/FAQs. Live pillar 6af451d0a27d8d1d4e98f9e1 preserved (task screenshot listed …d2…); subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-440b delivery for Conversion and Units quarts↔gallons volume converter.
+- **Important Files:** frontend/src/tools/calculators/quarts-to-gallons/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–10 qt; reverse; UK same-system; extras 16 cups/8 pt/128 fl oz; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, live pillar preserved). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add PSI to Inches of Water Conversion
+- **Summary:** Shipped PSI to Inches of Water Conversion on existing catalog slug psi-to-inches-of-water-conversion (PsiToInchesOfWaterConversion, catalog 6af46f17a27d8d1d4e990aea). Bidirectional psi↔inH₂O via shared Pascal-base engine with conventional inH₂O at 4 °C (PASCALS_PER_INH2O = 249.08891); empty default; signed numerical values; unit-only (not gauge↔absolute); not inHg; guide/table/FAQs document temperature convention. Pillar 6af451d0a27d8d1d4e98f9e4 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-439b delivery for Conversion and Units PSI↔inH₂O pressure converter.
+- **Important Files:** frontend/src/tools/calculators/psi-to-inches-of-water/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0/1/2/5/8/10/15/20/30/50/100 psi; reverse round-trips; negatives; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar preserved). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add PSI to ATM Conversion
+- **Summary:** Shipped PSI to ATM Conversion on existing catalog slug psi-to-atm-conversion (PsiToAtmConversion, catalog 6af46f17a27d8d1d4e990af0). Bidirectional psi↔atm via shared Pascal-base engine; empty default; signed numerical values; unit-only (not gauge↔absolute); guide/table/FAQs. Pillar 6af451d1a27d8d1d4e98f9e5 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-438b delivery for Conversion and Units PSI↔ATM pressure converter.
+- **Important Files:** frontend/src/tools/calculators/psi-to-atm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0/1/10/100/1000 psi; 1/2/5 atm reverse; negatives; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar preserved). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add PSI Converter
+- **Summary:** Shipped PSI Converter on existing catalog slug psi-converter (PsiConverter, catalog 6af46f17a27d8d1d4e990ae3). PSI-centered multi-field converter with expandable bar/atm/Pa and more units via shared Pascal-base engine; default 1 psi; signed values allowed; clarifies PSI vs PSIG/PSIA; guide/table/FAQs. Pillar 6af451d0a27d8d1d4e98f9e4 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-437b delivery for Conversion and Units PSI pressure converter.
+- **Important Files:** frontend/src/tools/calculators/psi-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 psi↔Pa/kPa/bar/atm; bar/atm/kPa reverse; negatives; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar preserved). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Pressure Unit Conversion
+- **Summary:** Shipped Pressure Unit Conversion on existing catalog slug pressure-unit-conversion (PressureUnitConversion, catalog 6af46f17a27d8d1d4e990ba2). Multi-field bar/psi/atm/Pa plus expandable kPa/MPa/hPa/mbar/mmHg/Torr/inHg/kgf·cm⁻² via shared Pascal-base engine; default 1 bar; signed values allowed; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-436b delivery for Conversion and Units universal pressure converter.
+- **Important Files:** frontend/src/tools/calculators/pressure-unit-conversion/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (bar/atm/MPa/kPa/psi; Torr≠mmHg; negatives; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Pounds to Stone Converter
+- **Summary:** Shipped Pounds to Stone Converter on existing catalog slug pounds-to-stone-converter (PoundsToStoneConverter, catalog 6af46f17a27d8d1d4e990b6a). Bidirectional lb↔st with exact 14 lb per st; default 14 lb; secondary mixed stone+pounds; rejects negative mass; guide/charts/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-435b delivery for Conversion and Units pounds↔stone mass converter.
+- **Important Files:** frontend/src/tools/calculators/pounds-to-stone/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–210 lb forward; st reverse; mixed 150/128/168; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Pounds to Ounces Converter
+- **Summary:** Shipped Pounds to Ounces Converter on existing catalog slug pounds-to-ounces-converter (PoundsToOuncesConverter, catalog 6af46f17a27d8d1d4e990b69). Bidirectional lb↔oz with exact 16 oz per lb; default 1 lb; rejects negative mass; mass ounces only (not fl oz); guide/charts/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-434b delivery for Conversion and Units pounds↔ounces mass converter.
+- **Important Files:** frontend/src/tools/calculators/pounds-to-ounces/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–100 lb forward; oz reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Pounds to lbs Converter
+- **Summary:** Shipped Pounds to lbs Converter on existing catalog slug pounds-to-lbs-converter (PoundsToLbsConverter, catalog 6af46f17a27d8d1d4e990b68). Bidirectional identity pound↔lb (factor 1); default 1; rejects negative mass; preserves raw decimal strings; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-433b delivery for Conversion and Units pounds↔lbs identity converter.
+- **Important Files:** frontend/src/tools/calculators/pounds-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0/0.5/1/2/5/10/12.5/22.5/100/1000; reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Pounds to Grams Converter
+- **Summary:** Shipped Pounds to Grams Converter on existing catalog slug pounds-to-grams-converter (PoundsToGramsConverter, catalog 6af46f17a27d8d1d4e990b67). Bidirectional lb↔g with exact 453.59237 g per lb; default 1 lb; rejects negative mass; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-432b delivery for Conversion and Units pounds↔grams mass converter.
+- **Important Files:** frontend/src/tools/calculators/pounds-to-grams/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/2/3/5/10/0.5 lb; 500/1000 g reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Pints to Gallons Converter
+- **Summary:** Shipped Pints to Gallons Converter on existing catalog slug pints-to-gallons-converter (PintsToGallonsConverter, catalog 6af46f17a27d8d1d4e990acf). Four-field US/UK pt↔gal sync via shared volume-conversion engine; accordion Pints/Gallons groups; default 1 US pt; rejects negative volume; guide/table/FAQs. Pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-431b delivery for Conversion and Units US/UK pint↔gallon converter.
+- **Important Files:** frontend/src/tools/calculators/pints-to-gallons/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (same-system 8×; cross-system mL; reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, live pillar 6af451d0a27d8d1d4e98f9e1 preserved). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Pints to Cups Converter
+- **Summary:** Shipped Pints to Cups Converter on existing catalog slug pints-to-cups-converter (PintsToCupsConverter, catalog 6af46f17a27d8d1d4e990b65). Bidirectional pt↔cup via liter factors; default 1 US liquid pt = 2 US cups; US/UK/metric cup and US liquid/dry/imperial pint selectors; rejects negative volume; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-430b delivery for Conversion and Units kitchen volume pint↔cup converter.
+- **Important Files:** frontend/src/tools/calculators/pints-to-cups/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (US pt↔cups; imperial match; mismatched metric; negatives rejected; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Pa to psi Converter
+- **Summary:** Shipped Pa to psi Converter on existing catalog slug pa-to-psi-converter (PaToPsiConversion, catalog 6af46f17a27d8d1d4e990ae8). Bidirectional Pa↔psi via shared pressure-conversion engine (exact PASCALS_PER_PSI); empty default; signed gauge values; guide/table/FAQs. Live pillar 6af451d0a27d8d1d4e98f9e4 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-429b delivery for Conversion and Units pascal↔psi pair converter.
+- **Important Files:** frontend/src/tools/calculators/pa-to-psi/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/1000/101325 Pa; 1/10/30/122 psi; negatives; reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, live pillar preserved). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Pascal Conversion
+- **Summary:** Shipped Pascal Conversion on existing catalog slug pascal-conversion (PascalConversion, catalog 6af46f17a27d8d1d4e990ba0). Multi-unit Pa↔bar/atm/psi/Torr plus kPa/MPa/mbar/mmHg via shared pressure-conversion engine; empty default; signed gauge values; conventional mmHg distinct from Torr; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-428b delivery for Conversion and Units pascal pressure converter.
+- **Important Files:** frontend/src/tools/calculators/pascal-conversion/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (Pa↔kPa/bar/atm/Torr/MPa/psi; negatives; mmHg≠Torr; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Ounces to Milliliters Converter
+- **Summary:** Shipped Ounces to Milliliters Converter on existing catalog slug ounces-to-milliliters-converter (OuncesToMillilitersConverter, catalog 6af46f17a27d8d1d4e990b60). Bidirectional US/UK fluid ounces↔mL with exact 29.5735295625 / 28.4130625 mL per fl oz; US/UK selector; default 1 US fl oz; rejects negative volume; fluid ounces only (not mass oz); guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-427b delivery for Conversion and Units fluid ounces↔milliliters volume converter.
+- **Important Files:** frontend/src/tools/calculators/ounces-to-milliliters/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (US/UK fl oz→mL; 100 mL reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add oz to cc Converter
+- **Summary:** Shipped oz to cc Converter on existing catalog slug oz-to-cc-converter (OzToCcConverter, catalog 6af46f17a27d8d1d4e990b62). Bidirectional US/UK fluid ounces↔cc with exact 29.5735295625 / 28.4130625 cc per fl oz; US/UK selector; default 1 US fl oz; rejects negative volume; fluid ounces only (not mass oz); guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-426b delivery for Conversion and Units fluid ounces↔cubic centimeters volume converter.
+- **Important Files:** frontend/src/tools/calculators/oz-to-cc/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (US/UK fl oz→cc; 100 cc reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Ounce to kg Converter
+- **Summary:** Shipped Ounce to kg Converter on existing catalog slug ounce-to-kg-converter (OunceToKgConverter, catalog 6af46f17a27d8d1d4e990b5e). Three-field oz↔kg↔lb with exact avoirdupois 1 oz = 0.028349523125 kg and 1 lb = 16 oz; default 16 oz; rejects negative mass; mass ounces only; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-425b delivery for Conversion and Units ounce↔kilogram mass converter.
+- **Important Files:** frontend/src/tools/calculators/ounce-to-kg/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–100 oz→kg; reverse kg/lb; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Ounces to Pounds Converter
+- **Summary:** Shipped Ounces to Pounds Converter on existing catalog slug ounces-to-pounds-converter (OuncesToPoundsConverter, catalog 6af46f17a27d8d1d4e990b61). Three-field oz↔lb↔kg with exact avoirdupois 1 lb = 16 oz and 1 lb = 0.45359237 kg; default 16 oz; rejects negative mass; mass ounces only; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-424b delivery for Conversion and Units ounces↔pounds mass converter.
+- **Important Files:** frontend/src/tools/calculators/ounces-to-pounds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–64 oz; reverse lb; 16/32 oz→kg; 1 kg reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Ounces to Grams Converter
+- **Summary:** Shipped Ounces to Grams Converter on existing catalog slug ounces-to-grams-converter (OuncesToGramsConverter, catalog 6af46f17a27d8d1d4e990b5f). Bidirectional exact avoirdupois oz↔g (1 oz = 28.349523125 g); default 1 oz; rejects negative mass; troy/fluid-ounce informational note; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-423b delivery for Conversion and Units ounces↔grams mass converter.
+- **Important Files:** frontend/src/tools/calculators/ounces-to-grams/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–16 oz; 100/250 g reverse; 453.59237 g = 16 oz; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add nm to m Converter
+- **Summary:** Shipped nm to m Converter on existing catalog slug nm-to-m-converter (NmToMConverter, catalog 6af46f17a27d8d1d4e990b12). Bidirectional exact SI nm↔m (1 nm = 10⁻⁹ m; 1 m = 1e9 nm); default 100 nm; signed values; scientific notation for tiny meters; guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ea preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-422b delivery for Conversion and Units nanometers↔meters pair converter.
+- **Important Files:** frontend/src/tools/calculators/nm-to-m/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1–1e9 nm; reverse 1/0.1/0.001 m; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ea). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add nm converter
+- **Summary:** Shipped nm converter on existing catalog slug nm-converter (NmConverter, catalog 6af46f17a27d8d1d4e990b0d). Nanometer-primary multi-unit length conversion via shared meter-converter engine (1 nm = 10⁻⁹ m); Metric/Imperial/Others accordions with selectors (default µm/mi/Å); empty default; signed values; scientific notation for tiny lengths; guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ea preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-421b delivery for Conversion and Units nanometer length converter.
+- **Important Files:** frontend/src/tools/calculators/nm-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (nm↔µm/mm/m/Å; 1 in/ft; reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ea). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add ms to Seconds Converter
+- **Summary:** Shipped ms to Seconds Converter on existing catalog slug ms-to-seconds-converter (MsToSecondsConverter, catalog 6af46f17a27d8d1d4e990bb8). Bidirectional exact 1 s = 1000 ms; Other Units accordion (yr/mo/wk/d/h/min + mixed HMS); average Gregorian year/month (365.2425 days); empty default; signed durations; guide/chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-420b delivery for Conversion and Units milliseconds↔seconds time converter.
+- **Important Files:** frontend/src/tools/calculators/ms-to-seconds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–7000 ms; reverse seconds; 1 min; mixed HMS 3723000 ms; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add MPa to psig Conversion
+- **Summary:** Shipped MPa to psig Conversion on existing catalog slug mpa-to-psig-conversion (MpaToPsigConversion, catalog 6af46f17a27d8d1d4e990b23). Bidirectional exact MPa(g)↔psig via shared pressure-conversion Pa engine (~145.03773773 psig/MPa(g)); no atmospheric offset; rejects inaccurate ~130.34 absolute-with-atm factor; empty default; negative gauge allowed; guide/chart/FAQs on gauge vs absolute. Pillar 6af451d2a27d8d1d4e98f9ee preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-419b delivery for Conversion and Units megapascal gauge↔psig pressure converter.
+- **Important Files:** frontend/src/tools/calculators/mpa-to-psig/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–100 MPa(g); 150/300/1000 psig reverse; negative gauge; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ee). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add MPa to PSI Conversion
+- **Summary:** Shipped MPa to PSI Conversion on existing catalog slug mpa-to-psi-conversion (MpaToPsiConversion, catalog 6af46f17a27d8d1d4e990b22). Bidirectional exact MPa↔psi via shared pressure-conversion Pa engine (~145.03773773 psi/MPa); empty default; signed gauge values; guide/chart/FAQs. Pillar 6af451d2a27d8d1d4e98f9ee preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-418b delivery for Conversion and Units megapascal↔psi pressure converter.
+- **Important Files:** frontend/src/tools/calculators/mpa-to-psi/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1–100 MPa; 150/240/1000 psi reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ee). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add MPa Conversion
+- **Summary:** Shipped MPa Conversion on existing catalog slug mpa-conversion (MpaConversion, catalog 6af46f17a27d8d1d4e990b20). Bidirectional MPa↔bar↔psi↔atm↔Torr via shared pressure-conversion Pa engine; other-units accordion; empty default; signed gauge values; guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ee preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-417b delivery for Conversion and Units megapascal pressure converter.
+- **Important Files:** frontend/src/tools/calculators/mpa-conversion/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 MPa factors; bar/atm/Torr reverse; 1000 kPa=1 MPa; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ee). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add Months to Years Calculator
+- **Summary:** Shipped Months to Years Calculator on existing catalog slug months-to-years-calculator (MonthsToYearsCalculator, catalog 6af46f17a27d8d1d4e990bb7). Bidirectional exact 1 year = 12 months; decimal years plus editable years+months breakdown with normalize; empty default; signed same-sign remainder; guide/table/FAQs distinguishing decimal years vs yr+mo. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-416b delivery for Conversion and Units months↔years duration converter.
+- **Important Files:** frontend/src/tools/calculators/months-to-years/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–120 months; yearsMonths split/normalize; reverse years; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mm to m Conversion
+- **Summary:** Shipped mm to m Conversion on existing catalog slug mm-to-m-conversion (MmToMConversion, catalog 6af46f17a27d8d1d4e990b99). Bidirectional exact 1 m = 1000 mm; more-length-units accordion (cm/km/in/ft/yd/mi); empty default; signed values; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-415b delivery for Conversion and Units millimeters↔meters length converter.
+- **Important Files:** frontend/src/tools/calculators/mm-to-m/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1–100000 mm; reverse m; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mm to km Conversion
+- **Summary:** Shipped mm to km Conversion on existing catalog slug mm-to-km-conversion (MmToKmConversion, catalog 6af46f17a27d8d1d4e990b98). Bidirectional exact 1 km = 1,000,000 mm; other-units accordion (m/cm/in/ft/yd/mi); empty default; signed values; tiny km decimals preserved; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-414b delivery for Conversion and Units millimeters↔kilometers length converter.
+- **Important Files:** frontend/src/tools/calculators/mm-to-km/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1–1e6 mm; reverse km; 1 mm ≠ formatted 0; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mm to Inches Conversion
+- **Summary:** Shipped mm to Inches Conversion on existing catalog slug mm-to-inches-conversion (MmToInchesConversion, catalog 6af46f17a27d8d1d4e990b97). Bidirectional exact 25.4 mm = 1 in; empty default; signed values; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-413b delivery for Conversion and Units millimeters↔inches length converter.
+- **Important Files:** frontend/src/tools/calculators/mm-to-inches/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (25.4/127/254 mm; reverse in; 20/100/150 mm; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mm to Foot Converter
+- **Summary:** Shipped mm to Foot Converter on existing catalog slug mm-to-foot-converter (MmToFootConverter, catalog 6af46f17a27d8d1d4e990b96). Bidirectional exact 304.8 mm = 1 ft via meter-converter; selectable other unit (cm/m/km/in/yd/mi/µm); empty default; signed values; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-412b delivery for Conversion and Units millimeters↔feet length converter.
+- **Important Files:** frontend/src/tools/calculators/mm-to-foot/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (304.8/1219.2/2438.4 mm; reverse ft; 150/1000 mm; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mm to ATM Converter
+- **Summary:** Shipped mm to ATM Converter on existing catalog slug mm-to-atm-converter (MmToAtmConverter, catalog 6af46f17a27d8d1d4e990aee). Bidirectional conventional 760 mmHg = 1 atm; clarifies catalog “mm” means mmHg pressure not length; empty default; signed gauge values; guide/table/FAQs. ATM Conversion pillar 6af451d1a27d8d1d4e98f9e5 preserved; subPillar null. Meta title <=70. indexable left false. Distinct from MmhgToAtmConversion.
+- **Why:** TOOL-411b delivery for Conversion and Units mmHg↔atm pressure converter under ATM Conversion pillar.
+- **Important Files:** frontend/src/tools/calculators/mm-to-atm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (760/380/150/475 mmHg; reverse atm; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e5). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mm Calculator
+- **Summary:** Shipped mm Calculator on existing catalog slug mm-calculator (MmCalculator, catalog 6af46f17a27d8d1d4e990b95). Bidirectional eight-unit length sync (mm/cm/m/km/in/ft/yd/mi) via meter-converter engine; Input + Metric + Imperial/US accordions; empty default; nonnegative lengths; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false. Distinct from MillimeterCalculator.
+- **Why:** TOOL-410b delivery for Conversion and Units millimeter multi-unit length calculator.
+- **Important Files:** frontend/src/tools/calculators/mm-calculator/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (10 mm=1 cm; 1000 mm=1 m; 25.4 mm=1 in; reverse factors; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add MmHg to Atm Conversion
+- **Summary:** Shipped MmHg to Atm Conversion on existing catalog slug mmhg-to-atm-conversion (MmhgToAtmConversion, catalog 6af46f17a27d8d1d4e990aef). Bidirectional conventional 760 mmHg = 1 atm (Torr-equivalent; CIPM mmHg noted distinct); empty default; signed gauge values; other units accordion via atm→Pa; guide/table/FAQs. ATM Conversion pillar 6af451d1a27d8d1d4e98f9e5 preserved (brief typo 6af451da… corrected); subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-409b delivery for Conversion and Units mmHg↔atm pressure converter.
+- **Important Files:** frontend/src/tools/calculators/mmhg-to-atm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–7600 mmHg; reverse atm; 760 mmHg → 101325 Pa; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e5). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mL to µL Conversion
+- **Summary:** Shipped mL to µL Conversion on existing catalog slug ml-to-ul-conversion (MlToUlConversion, catalog 6af46f17a27d8d1d4e990b5d). Bidirectional exact mL↔µL (1 mL = 1000 µL) with accordion other volume units via volume-conversion engine; µL/uL labeled; empty default; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-408b delivery for Conversion and Units mL↔microliter volume converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-ul/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0.001–10 mL ↔ µL; reverse 1/24/500/1000 µL; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mL to tsp Converter
+- **Summary:** Shipped mL to tsp Converter on existing catalog slug ml-to-tsp-converter (MlToTspConverter, catalog 6af46f17a27d8d1d4e990b5c). Two-field bidirectional volume (mL / US·metric·Imp tsp); reuses volume-conversion engine; added shared `impTsp` (imperial gallon/768); exact US tsp 4.92892159375 mL (not silently 5); metric 5 mL; US tsp default; empty default; US conversion table + metric distinction; guide/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-407b delivery for Conversion and Units mL↔teaspoon volume converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-tsp/*, volume-conversion/types.ts, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1–40 mL US tsp; metric 5/10 mL; 1 US tsp; 3 US tsp = 1 US tbsp; Imperial tsp; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mL to tbsp Converter
+- **Summary:** Shipped mL to tbsp Converter on existing catalog slug ml-to-tbsp-converter (MlToTbspConverter, catalog 6af46f17a27d8d1d4e990b5b). Three-field bidirectional volume (mL / US·metric·AU·Imp tbsp / accordion other units default US cup); reuses volume-conversion engine; added shared `impTbsp` (imperial gallon/256 = 17.7581640625 mL); exact US tbsp 14.78676478125 mL; empty default; guide/chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-406b delivery for Conversion and Units mL↔tablespoon volume converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-tbsp/*, volume-conversion/types.ts, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/15/30 mL US+metric tbsp; 1 US tbsp; 1 AU tbsp; 1 US cup = 16 US tbsp; Imperial tbsp; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mL to oz Converter
+- **Summary:** Shipped mL to oz Converter on existing catalog slug ml-to-oz-converter (MlToOzConverter, catalog 6af46f17a27d8d1d4e990b5a). Three-field bidirectional volume converter (mL / US·UK fl oz / other units); reuses volume-conversion engine; exact 1 US fl oz = 29.5735295625 mL and 1 UK fl oz = 28.4130625 mL; default mL / US fl oz / m³; empty default; fl oz labeled as volume not mass; guide/chart/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-405b delivery for Conversion and Units mL↔fluid ounce volume converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-oz/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/100/250 mL → US fl oz; 8 US fl oz → mL; UK fl oz; L/m³/cm³; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mL to lbs Conversion
+- **Summary:** Shipped mL to lbs Conversion on existing catalog slug ml-to-lbs-conversion (MlToLbsConversion, catalog 6af46f17a27d8d1d4e990b59). Density-based bidirectional volume↔mass; reuses ml-to-kg / kg-to-ml substance presets and density engine; default mass unit lb; exact 1 lb = 0.45359237 kg; lb = (mL × ρ) / 453592.37; density accordion; volume/mass unit selects; empty volume/mass default; water ≈ 1000 kg/m³; guide/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-404b delivery for Conversion and Units density-based mL↔lb converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (water 250/500/1000 mL → lb; 1/2 lb → mL; custom 850/910 kg/m³; reverse; share text; zero density rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mL to kg Converter
+- **Summary:** Shipped mL to kg Converter on existing catalog slug ml-to-kg-converter (MlToKgConverter, catalog 6af46f17a27d8d1d4e990b58). Density-based bidirectional volume↔mass; reuses kg-to-ml substance presets and mlToKg/kgToMl engine; substance/custom density; volume units mL/L/cm³/m³/US fl oz and mass units kg/g/mg/lb/oz; empty volume/mass default; water ≈ 1000 kg/m³; guide/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-403b delivery for Conversion and Units density-based mL↔kg converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-kg/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (water 250–2000 mL; custom 850/1250/800 kg/m³; L unit; reverse 2.5 kg; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
+### 2026-11-18 — Add mL to cc Converter
+- **Summary:** Shipped mL to cc Converter on existing catalog slug ml-to-cc-converter (MlToCcConverter, catalog 6af46f17a27d8d1d4e990b56). Synchronized mL / L / cc (cm³); exact 1 mL = 1 cc = 1 cm³ and 1 L = 1000 mL; empty default; non-negative volumes; guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-402b delivery for Conversion and Units mL↔cc volume converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-cc/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1–1000 mL = cc; liters 0.25/0.5/1/2.5; 0/0.5/0.001; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Second Stimulus Check Calculator – $900 Billion Bill (Screenshot-First, historical EIP2)
 - **Summary:** Shipped Second Stimulus Check Calculator – $900 Billion Bill on existing catalog slug `second-stimulus-check-calculator-900-billion-bill` (`SecondStimulus900BillionCalculator`, catalog `6af46f0fa27d8d1d4e98ffce`). Screenshot fields: filed 2019 taxes, filing status, kids, 2019 AGI USD, read-only result; historical EIP2 notice; Share/Reload/Clear/feedback. Fixed USD (no FX). Activated via `npm run tool:assign`.
 - **Rules (verified):** I.R.C. §6428A / IRS Pub. 5475 / CRS IN11575 — $600 single or HoH, $1,200 married joint, +$600 per qualifying child under 17; phase out 5% of AGI above $75,000 / $112,500 / $150,000. Filing=No → $0 (SSI/VA/RRB automatic paths acknowledged in copy, not modeled). Not a currently available benefit.
