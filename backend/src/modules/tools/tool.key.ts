@@ -581,6 +581,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'StimulusCheck40kCalculator',
   'CashActStimulusCalculator',
   'SecondStimulus900BillionCalculator',
+  'AmericanRescuePlanStimulusCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -1141,6 +1142,7 @@ if (isDirect) {
     !isApprovedComponentKey('StimulusCheck40kCalculator') ||
     !isApprovedComponentKey('CashActStimulusCalculator') ||
     !isApprovedComponentKey('SecondStimulus900BillionCalculator') ||
+    !isApprovedComponentKey('AmericanRescuePlanStimulusCalculator') ||
     !isApprovedComponentKey('LoanInterestCalculator') ||
     !isApprovedComponentKey('TimesInterestEarnedCalculator') ||
     !isApprovedComponentKey('InterestRateParityCalculator') ||

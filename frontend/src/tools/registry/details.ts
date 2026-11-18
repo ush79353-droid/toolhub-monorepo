@@ -831,6 +831,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cash-act-stimulus/detail'),
   SecondStimulus900BillionCalculator: () =>
     import('@/tools/calculators/second-stimulus-900-billion/detail'),
+  AmericanRescuePlanStimulusCalculator: () =>
+    import('@/tools/calculators/american-rescue-plan-stimulus/detail'),
 };
 
 export async function loadToolPageDetail(key: string): Promise<ToolPageDetail | null> {

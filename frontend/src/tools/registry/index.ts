@@ -3218,6 +3218,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SecondStimulus900BillionCalculator,
     })),
   ),
+  AmericanRescuePlanStimulusCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/american-rescue-plan-stimulus/AmericanRescuePlanStimulusCalculator'
+    ).then((mod) => ({
+      default: mod.AmericanRescuePlanStimulusCalculator,
+    })),
+  ),
 };
 
 export function getToolComponent(key: string): LazyExoticComponent<ToolComponent> | null {
