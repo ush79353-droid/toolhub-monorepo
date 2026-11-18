@@ -346,6 +346,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MpaToPsiConversion: () => import('@/tools/calculators/mpa-to-psi/detail'),
   MpaToPsigConversion: () => import('@/tools/calculators/mpa-to-psig/detail'),
   MsToSecondsConverter: () => import('@/tools/calculators/ms-to-seconds/detail'),
+  SecondsConverter: () => import('@/tools/calculators/seconds-converter/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
