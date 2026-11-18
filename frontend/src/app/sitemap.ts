@@ -587,6 +587,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'discount-calculator',
   'discount-rate-calculator',
   'double-discount-calculator',
+  'triple-discount-calculator',
   'compound-growth-calculator',
   'compound-interest-rate-calculator',
   'continuous-compound-interest-calculator',

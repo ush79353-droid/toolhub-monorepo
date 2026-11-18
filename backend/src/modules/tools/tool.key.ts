@@ -554,6 +554,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DiscountCalculator',
   'DiscountRateCalculator',
   'DoubleDiscountCalculator',
+  'TripleDiscountCalculator',
   'CompoundGrowthCalculator',
   'CompoundInterestRateCalculator',
   'ContinuousCompoundInterestCalculator',
@@ -1158,6 +1159,7 @@ if (isDirect) {
     !isApprovedComponentKey('DiscountCalculator') ||
     !isApprovedComponentKey('DiscountRateCalculator') ||
     !isApprovedComponentKey('DoubleDiscountCalculator') ||
+    !isApprovedComponentKey('TripleDiscountCalculator') ||
     !isApprovedComponentKey('CompoundGrowthCalculator') ||
     !isApprovedComponentKey('CompoundInterestRateCalculator') ||
     !isApprovedComponentKey('ContinuousCompoundInterestCalculator') ||

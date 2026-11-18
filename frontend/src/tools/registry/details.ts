@@ -810,6 +810,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/discount-rate/detail'),
   DoubleDiscountCalculator: () =>
     import('@/tools/calculators/double-discount/detail'),
+  TripleDiscountCalculator: () =>
+    import('@/tools/calculators/triple-discount/detail'),
   EffectiveAnnualYieldCalculator: () =>
     import('@/tools/calculators/effective-annual-yield/detail'),
   EffectiveInterestRateCalculator: () =>

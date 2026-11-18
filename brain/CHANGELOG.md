@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Triple Discount Calculator
+- **Summary:** Shipped Triple Discount Calculator on existing catalog slug `triple-discount-calculator` (`TripleDiscountCalculator`, catalog `6af46f0fa27d8d1d4e98fff2`). Screenshot-first (ADR-023): Original price FX; 1st discount %; 2nd discount % (default 0); 3rd discount % (default 0); Final price FX; Price difference FX; collapsible Effective discount %. Share/Reload/Clear/feedback. Reused Double Discount UI/FX patterns without modifying that sibling. Independent Phase 2 FX; discount percents and effective % never convert. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Pillar `6af451bda27d8d1d4e98f96a` preserved; subPillar null.
+- **Formulas:** Final = P×(1−D1/100)×(1−D2/100)×(1−D3/100); Diff = P−Final; Effective = [1−(1−D1/100)(1−D2/100)(1−D3/100)]×100. Clamp each discount 0–100%; nonnegative price; full precision with display rounding only.
+- **Example:** 10,000 PKR · 20% · 20% · 20% → final 5,120 · difference 4,880 · effective 48.8%.
+- **Important Files:** `frontend/src/tools/calculators/triple-discount/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Salary to Hourly Calculator
 - **Summary:** Shipped Salary to Hourly Calculator on existing catalog slug `salary-to-hourly-calculator` (`SalaryToHourlyCalculator`, catalog `6af46f0fa27d8d1d4e990000`). Screenshot-first (ADR-023): Hourly wage FX ↔ Annual salary FX (last-edited authoritative; default annual); Hours/week default 40; Your wage as Daily/Monthly/Weekly/Biweekly FX; empty collapsed Other time intervals. Share/Reload/Clear/feedback. Independent Phase 2 FX; hours never convert. HourlyToSalaryWageCalculator patterns reused lightly (sibling untouched). Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar `6af46f0dae6d84bd3ef8f7cf`.
 - **Formulas:** Annual hours = Hours × 52; Annual = Hourly × annualHours; Hourly = Annual / annualHours; Weekly = Hourly × Hours; Biweekly = Weekly × 2; Monthly = Annual / 12; Daily = Weekly / 5. Full precision with display rounding only.
