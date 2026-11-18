@@ -125,6 +125,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GrowingAnnuityCalculator,
     })),
   ),
+  ImmediateAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/immediate-annuity/ImmediateAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.ImmediateAnnuityCalculator,
+    })),
+  ),
   InterestRateParityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/interest-rate-parity/InterestRateParityCalculator'

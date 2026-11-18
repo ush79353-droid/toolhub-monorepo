@@ -27,6 +27,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'future-value-of-annuity-calculator',
   'gross-margin-calculator',
   'growing-annuity-calculator',
+  'immediate-annuity-calculator',
   'interest-rate-parity-calculator',
   'loan-calculator',
   'auto-loan-calculator',
