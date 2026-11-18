@@ -2525,6 +2525,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  DividendPayoutRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/dividend-payout-ratio/DividendPayoutRatioCalculator').then(
+      (mod) => ({
+        default: mod.DividendPayoutRatioCalculator,
+      })
+    )
+  ),
   DirectMaterialPriceVarianceCalculator: lazyTool(() =>
     import('@/tools/calculators/direct-material-price-variance/DirectMaterialPriceVarianceCalculator').then((mod) => ({
       default: mod.DirectMaterialPriceVarianceCalculator,

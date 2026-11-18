@@ -488,6 +488,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'customer-retention-rate-calculator',
   'days-off-calculator',
   'dividend-discount-model-calculator',
+  'dividend-payout-ratio-calculator',
   'direct-material-price-variance-calculator',
   'ear-calculator',
   'early-loan-payoff-calculator',

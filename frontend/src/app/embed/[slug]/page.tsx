@@ -73,6 +73,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'discount-rate-calculator',
   'double-discount-calculator',
   'dividend-discount-model-calculator',
+  'dividend-payout-ratio-calculator',
   'early-loan-payoff-calculator',
   'loan-repayment-calculator-loan-payoff-calculator',
   'effective-annual-yield-calculator',

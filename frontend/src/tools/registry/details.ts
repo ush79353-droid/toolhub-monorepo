@@ -607,6 +607,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/days-off/detail'),
   DividendDiscountModelCalculator: () =>
     import('@/tools/calculators/dividend-discount-model/detail'),
+  DividendPayoutRatioCalculator: () =>
+    import('@/tools/calculators/dividend-payout-ratio/detail'),
   DirectMaterialPriceVarianceCalculator: () =>
     import('@/tools/calculators/direct-material-price-variance/detail'),
   EarCalculator: () => import('@/tools/calculators/ear/detail'),

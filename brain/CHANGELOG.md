@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Dividend Payout Ratio Calculator
+- **Summary:** Shipped Dividend Payout Ratio Calculator on existing catalog slug `dividend-payout-ratio-calculator` (`DividendPayoutRatioCalculator`, catalog `6af46f0fa27d8d1d4e990006`). Screenshot-first (ADR-023): Main — Total dividends FX, Net income FX, Dividend payout ratio %; Per share — Declared DPS FX, Diluted EPS FX, payout per share %; empty collapsed Diluted earnings per share (no invented fields; DDM sibling has no diluted-EPS builder). Share/Reload/Clear/feedback. Independent Phase 2 FX; payout % never converts. Zero NI/EPS → undefined (error), not 0%; >100% and negative ratios allowed with explanation. DividendDiscountModelCalculator untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96e` / subPillar null preserved.
+- **Formulas:** Company payout (%) = Total Dividends ÷ Net Income × 100; Per-share payout (%) = Declared DPS ÷ Diluted EPS × 100. Full precision with display rounding only.
+- **Example:** 40,000 / 100,000 → 40%; DPS 2 / diluted EPS 5 → 40%.
+- **Important Files:** `frontend/src/tools/calculators/dividend-payout-ratio/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** DividendDiscountModelCalculator sibling untouched. Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Annual to Monthly Salary Calculator
 - **Summary:** Shipped Annual to Monthly Salary Calculator on existing catalog slug `annual-to-monthly-salary-calculator` (`AnnualToMonthlySalaryCalculator`, catalog `6af46f0fa27d8d1d4e98ffff`). Screenshot-first (ADR-023): Your salary — Annual salary FX + Hours/week default 40; Other wage measures — Monthly/Weekly/Daily/Hourly FX outputs; empty collapsed More wage measures (no invented fields). Assumptions disclosed: monthly = annual/12; weekly = annual/52; daily = annual/(52×5); hourly = annual/(52×hours). Share/Reload/Clear/feedback. Independent Phase 2 FX; hours never convert. Annual Salary and Annual Salary per Hour siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96c` / subPillar `6af451bea27d8d1d4e98f96d` preserved.
 - **Formulas:** Monthly = Annual/12; Weekly = Annual/52; Daily = Annual/(52×5); Hourly = Annual/(52×Hours Per Week). Positive hours; nonnegative annual; full precision with display rounding only.
