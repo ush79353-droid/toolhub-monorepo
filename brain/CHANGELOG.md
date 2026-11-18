@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Yards to Meters Conversion
+- **Summary:** Shipped Yards to Meters Conversion on existing catalog slug yards-to-meters-conversion (YardsToMetersConversion, catalog 6af46f17a27d8d1d4e990ada). Bidirectional yd↔m via exact international yard (1 yd = 0.9144 m); two-field real-time sync; empty default; negatives rejected. Yard Conversion pillar preserved; subPillar null. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-464b delivery for Conversion and Units yards-to-meters converter.
+- **Important Files:** frontend/src/tools/calculators/yards-to-meters/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/10/25/100/120 yd→m; 1 m→≈1.093613298 yd; 50 m→≈54.68 yd; round-trip; negatives rejected; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d0a27d8d1d4e98f9e2). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Yard Conversion
 - **Summary:** Shipped Yard Conversion on existing catalog slug yard-conversion (YardConversionCalculator, catalog 6af46f17a27d8d1d4e990ad2). Bidirectional yards↔imperial/metric via exact international yard (1 yd = 0.9144 m); Imperial/US (in/ft/mi + ft/in) and Metric (mm/cm/m + other nm–km); empty default; negatives rejected. Yard Conversion pillar preserved; subPillar null. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-463b delivery for Conversion and Units yard conversion calculator.
