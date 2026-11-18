@@ -376,6 +376,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'StoneToLbsConverter',
   'TbspToGramsConverter',
   'TbspToMlConverter',
+  'TspToGramsConverter',
   'NmConverter',
   'NmToMConverter',
   'AdditionalFundsNeededCalculator',
@@ -927,6 +928,7 @@ if (isDirect) {
     !isApprovedComponentKey('StoneToLbsConverter') ||
     !isApprovedComponentKey('TbspToGramsConverter') ||
     !isApprovedComponentKey('TbspToMlConverter') ||
+    !isApprovedComponentKey('TspToGramsConverter') ||
     !isApprovedComponentKey('NmConverter') ||
     !isApprovedComponentKey('NmToMConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||

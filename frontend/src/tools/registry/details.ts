@@ -450,6 +450,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   StoneToLbsConverter: () => import('@/tools/calculators/stone-to-lbs/detail'),
   TbspToGramsConverter: () => import('@/tools/calculators/tbsp-to-grams/detail'),
   TbspToMlConverter: () => import('@/tools/calculators/tbsp-to-ml/detail'),
+  TspToGramsConverter: () => import('@/tools/calculators/tsp-to-grams/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
