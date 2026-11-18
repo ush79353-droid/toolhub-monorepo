@@ -7,7 +7,10 @@ import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
-import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { UnleveredFreeCashFlowForm } from './UnleveredFreeCashFlowForm';
 import {
   createDefaultInput,
@@ -15,6 +18,7 @@ import {
   type UnleveredFreeCashFlowInput,
   type UnleveredFreeCashFlowResult,
 } from './types';
+import { validateUnleveredFreeCashFlowInput } from './validation';
 
 const FX_NOTE =
   'EBIT, D&A, CapEx, ΔWC, and UFCF each have their own currency. Inputs are normalized into the result currency before NOPAT = EBIT × (1 − ETR/100) and UFCF = NOPAT + DA − CapEx − ΔWC. The tax rate is never converted. Missing rates block conversion; stale rates warn but still convert.';
@@ -44,6 +48,7 @@ export function UnleveredFreeCashFlowCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<UnleveredFreeCashFlowInput>(
@@ -66,19 +71,20 @@ export function UnleveredFreeCashFlowCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  // UI shell: results wiring lands with the formula/FX commit.
   const apply = (next: UnleveredFreeCashFlowInput) => {
+    const validation = validateUnleveredFreeCashFlowInput(next, rates);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateUnleveredFreeCashFlowInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
