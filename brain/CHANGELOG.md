@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Ounce to kg Converter
+- **Summary:** Shipped Ounce to kg Converter on existing catalog slug ounce-to-kg-converter (OunceToKgConverter, catalog 6af46f17a27d8d1d4e990b5e). Three-field oz↔kg↔lb with exact avoirdupois 1 oz = 0.028349523125 kg and 1 lb = 16 oz; default 16 oz; rejects negative mass; mass ounces only; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-425b delivery for Conversion and Units ounce↔kilogram mass converter.
+- **Important Files:** frontend/src/tools/calculators/ounce-to-kg/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–100 oz→kg; reverse kg/lb; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Ounces to Pounds Converter
 - **Summary:** Shipped Ounces to Pounds Converter on existing catalog slug ounces-to-pounds-converter (OuncesToPoundsConverter, catalog 6af46f17a27d8d1d4e990b61). Three-field oz↔lb↔kg with exact avoirdupois 1 lb = 16 oz and 1 lb = 0.45359237 kg; default 16 oz; rejects negative mass; mass ounces only; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-424b delivery for Conversion and Units ounces↔pounds mass converter.
