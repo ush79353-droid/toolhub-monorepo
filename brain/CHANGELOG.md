@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add tbsp to Grams Converter (with Ingredient Weights)
+- **Summary:** Shipped tbsp to Grams Converter (with Ingredient Weights) on existing catalog slug tbsp-to-grams-converter-with-ingredient-weights (TbspToGramsConverter, catalog 6af46f17a27d8d1d4e990b6f). Density-based US tbsp↔g (US_TABLESPOON_ML = 14.78676478125); ingredient dropdown default Butter 0.959 g/mL; Show ingredient density checkbox (off by default); empty measures; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-457b delivery for Conversion and Units ingredient weight converter.
+- **Important Files:** frontend/src/tools/calculators/tbsp-to-grams/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (US tbsp volume; water 2 tbsp→29.5735…; butter 2 tbsp≈28.36 g; sugar round-trip; gramsPerTablespoon; zero; invalid density NaN; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Stone to lbs Converter
 - **Summary:** Shipped Stone to lbs Converter on existing catalog slug stone-to-lbs-converter (StoneToLbsConverter, catalog 6af46f17a27d8d1d4e990b6e). Synchronized st↔lb with exact 1 st = 14 lb plus other mass units (default kg) via weight-converter `convertMass`; empty default; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-456b delivery for Conversion and Units stone to lbs converter.
