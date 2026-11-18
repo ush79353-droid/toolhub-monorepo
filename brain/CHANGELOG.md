@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Seconds Converter
+- **Summary:** Shipped Seconds Converter on existing catalog slug seconds-converter (SecondsConverter, catalog 6af46f17a27d8d1d4e990bb9). Bidirectional seconds↔min/hr/day/wk/mo/yr with average Gregorian year/month (31,556,952 / 2,629,746 sec); HMS compound fields; Time in other units accordion; signed durations; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-442b delivery for Conversion and Units seconds multi-unit time converter.
+- **Important Files:** frontend/src/tools/calculators/seconds-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (60/3600/86400/604800/yrs/mos; HMS 3665 and 90.5; negatives; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Radians to Degrees Converter
 - **Summary:** Shipped Radians to Degrees Converter on existing catalog slug radians-to-degrees-converter (RadiansToDegreesConverter, catalog 6af46f17a27d8d1d4e990bff). Bidirectional rad↔deg via shared angle-conversion Math.PI helpers; default π rad = 180°; restricted π expression input; Other angle units accordion (gon/turns/′/″/mrad); signed angles preserved; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-441b delivery for Conversion and Units radians↔degrees angle converter.
