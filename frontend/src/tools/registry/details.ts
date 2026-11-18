@@ -88,6 +88,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InchLbsToNmConverter: () => import('@/tools/calculators/inch-lbs-to-nm/detail'),
   PaToPsiConversion: () => import('@/tools/calculators/pa-to-psi/detail'),
   PascalConversion: () => import('@/tools/calculators/pascal-conversion/detail'),
+  PressureUnitConversion: () =>
+    import('@/tools/calculators/pressure-unit-conversion/detail'),
   PressureConversion: () => import('@/tools/calculators/pressure-conversion/detail'),
   InchPoundsToFootPoundsConverter: () =>
     import('@/tools/calculators/inch-pounds-to-foot-pounds/detail'),
