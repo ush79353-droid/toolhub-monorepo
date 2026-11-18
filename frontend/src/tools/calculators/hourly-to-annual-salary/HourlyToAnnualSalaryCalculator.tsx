@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import {
   HourlyToAnnualSalaryForm,
   type OutputCurrencyKey,
@@ -16,9 +29,10 @@ import {
   type HourlyToAnnualSalaryInput,
   type HourlyToAnnualSalaryResult,
 } from './types';
+import { validateHourlyToAnnualSalaryInput } from './validation';
 
 const FX_NOTE =
-  'Hourly wage and each result (annual, monthly, weekly, daily) have their own currency. Hours and days per week are never FX-converted.';
+  'Hourly wage and each result (annual, monthly, weekly, daily) have their own currency. Salary math runs in the hourly wage currency; results convert for display. Hours and days per week are never converted. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(
   a: HourlyToAnnualSalaryInput,
@@ -45,6 +59,8 @@ export function HourlyToAnnualSalaryCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<HourlyToAnnualSalaryInput>(
     () => defaults
@@ -70,15 +86,57 @@ export function HourlyToAnnualSalaryCalculator({
   }, []);
 
   const apply = (next: HourlyToAnnualSalaryInput) => {
+    const validation = validateHourlyToAnnualSalaryInput(next, rates);
     setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handleHourlyWageCurrencyChange = (next: SupportedCurrency) => {
-    if (next === input.hourlyWageCurrency) return;
-    apply({ ...input, hourlyWageCurrency: next });
+    if (input.hourlyWageCurrency === next) return;
+    const converted = convertFieldAmount(
+      input.hourlyWage,
+      input.hourlyWageCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      hourlyWageCurrency: next,
+      hourlyWage: converted.text,
+    });
   };
 
   const handleOutputCurrencyChange = (
@@ -86,15 +144,20 @@ export function HourlyToAnnualSalaryCalculator({
     next: SupportedCurrency
   ) => {
     if (input[key] === next) return;
+    if (!canConvertPair(input.hourlyWageCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, [key]: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateHourlyToAnnualSalaryInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -102,23 +165,23 @@ export function HourlyToAnnualSalaryCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
-        input.hourlyWage.trim()
-          ? `Hourly wage: ${getCurrencySymbol(input.hourlyWageCurrency)}${input.hourlyWage} ${input.hourlyWageCurrency}`
-          : null,
+        `Hourly wage: ${getCurrencySymbol(input.hourlyWageCurrency)}${input.hourlyWage} ${input.hourlyWageCurrency}`,
         `Hours/week: ${input.hoursPerWeek}`,
         `Days/week: ${input.daysPerWeek}`,
         `Annual: ${getCurrencySymbol(result.annualCurrency)}${result.formattedAnnual} ${result.annualCurrency}`,
         `Monthly: ${getCurrencySymbol(result.monthlyCurrency)}${result.formattedMonthly} ${result.monthlyCurrency}`,
         `Per week: ${getCurrencySymbol(result.weeklyCurrency)}${result.formattedWeekly} ${result.weeklyCurrency}`,
         `Per day: ${getCurrencySymbol(result.dailyCurrency)}${result.formattedDaily} ${result.dailyCurrency}`,
-        FX_NOTE,
-      ]
-        .filter(Boolean)
-        .join('\n')
+        `Assumptions: weekly = hourly×hours; annual = weekly×52; monthly = annual/12; per day = weekly÷days`,
+        currencyNote,
+      ].join('\n')
     : '';
 
   const handleShare = async () => {
@@ -150,7 +213,7 @@ export function HourlyToAnnualSalaryCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            {FX_NOTE}
+            {currencyNote}
           </p>
         </div>
         {headerActions ? (
@@ -167,6 +230,7 @@ export function HourlyToAnnualSalaryCalculator({
           onHourlyWageCurrencyChange={handleHourlyWageCurrencyChange}
           onOutputCurrencyChange={handleOutputCurrencyChange}
           conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
