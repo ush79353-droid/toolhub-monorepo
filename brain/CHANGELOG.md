@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Pounds to Ounces Converter
+- **Summary:** Shipped Pounds to Ounces Converter on existing catalog slug pounds-to-ounces-converter (PoundsToOuncesConverter, catalog 6af46f17a27d8d1d4e990b69). Bidirectional lb↔oz with exact 16 oz per lb; default 1 lb; rejects negative mass; mass ounces only (not fl oz); guide/charts/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-434b delivery for Conversion and Units pounds↔ounces mass converter.
+- **Important Files:** frontend/src/tools/calculators/pounds-to-ounces/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–100 lb forward; oz reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Pounds to lbs Converter
 - **Summary:** Shipped Pounds to lbs Converter on existing catalog slug pounds-to-lbs-converter (PoundsToLbsConverter, catalog 6af46f17a27d8d1d4e990b68). Bidirectional identity pound↔lb (factor 1); default 1; rejects negative mass; preserves raw decimal strings; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-433b delivery for Conversion and Units pounds↔lbs identity converter.
