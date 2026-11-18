@@ -46,6 +46,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'new-york-overtime-calculator',
   'operating-margin-calculator',
   'overtime-calculator',
+  'overtime-paycheck-calculator',
   'present-value-of-annuity-calculator',
   'reduced-row-echelon-form-calculator',
   'arm-mortgage-calculator',
