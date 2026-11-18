@@ -75,6 +75,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ml-to-oz-converter',
   'ml-to-tbsp-converter',
   'ml-to-tsp-converter',
+  'ml-to-ul-conversion',
   'decagram-to-gram-converter',
   'pint-to-pound-conversion',
   'drops-to-ml-conversion',
