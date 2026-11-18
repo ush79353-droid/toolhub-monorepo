@@ -4,6 +4,14 @@
 
 ---
 
+### 2026-11-19 — Add Discount Calculator
+- **Summary:** Shipped Discount Calculator on existing catalog slug `discount-calculator` (`DiscountCalculator`, catalog `6af46f0fa27d8d1d4e98ffed`). Screenshot-first (ADR-023): What type of discount? default **% off** only (no BOGO/fixed-$ invented); Original price FX; Discount %; Tax included? Yes (default) / No as informational price labeling only — no tax rate applied (no Simple Discount / project tax specs found); After discount: You pay + You're saving with independent FX. Share/Reload/Clear/feedback. No Simple Discount Calculator route in repo — link omitted. Independent Phase 2 FX; percent and Yes/No never convert. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Pillar `6af451bda27d8d1d4e98f96a` preserved; subPillar null.
+- **Formulas:** Discount Amount = Original Price × Discount Rate / 100; Final Price = Original Price − Discount Amount; Savings = Discount Amount. Clamp discount 0–100%; nonnegative price; full precision with display rounding only.
+- **Tax assumption:** Yes/No labels whether the entered original price already includes tax vs excludes tax; calculator does not add/remove/invent a tax percentage.
+- **Example:** 10,000 PKR · 20% → you pay 8,000 · you're saving 2,000 (identical for Tax Yes or No).
+- **Important Files:** `frontend/src/tools/calculators/discount/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** No SimpleDiscount / simple-discount-calculator module or route. Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-18 — Add Credit Cards Payoff Calculator
 - **Summary:** Shipped Credit Cards Payoff Calculator on existing catalog slug `credit-cards-payoff-calculator` (`CreditCardsPayoffCalculator`, catalog `6af46f0fa27d8d1d4e98ffec`). Screenshot-first (ADR-023): monthly budget default $500 (fixed USD — no currency selectors / no FX / not in `CURRENCY_CONVERSION_SLUGS`); 6-row card table with Card 1/2/3 prefilled and blank rows 4–6; Show more input fields adds rows; Calculate/Clear + Share/Reload/feedback. Results: duration, total interest, total paid, optimal order, per-card payoff months, collapsible monthly schedule. New `credit-cards-payoff/` module; Debt Avalanche / Credit Card Payoff siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Pillar `6af451bda27d8d1d4e98f969` preserved; subPillar null.
 - **Formulas:** Monthly interest = balance × (APR/100/12); pay minimums on all active cards; apply surplus to highest APR; roll payment capacity when a card hits zero; never exceed monthly budget; stuck when budget cannot amortize within 1,200 months.
