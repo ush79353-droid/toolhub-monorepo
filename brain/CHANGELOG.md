@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Square Centimeters to Square Millimeters Converter
+- **Summary:** Shipped Square Centimeters to Square Millimeters Converter on existing catalog slug square-centimeters-to-square-millimeters-converter (SquareCmToSquareMmConverter, catalog 6af46f17a27d8d1d4e990b9b). Bidirectional cm²↔mm² with exact ×100; non-negative areas; empty default; guide/chart/FAQs/notation notes. Null pillar/subPillar preserved. Meta title trimmed to <=70. **isActive left false** (explicit). indexable left true.
+- **Why:** TOOL-447b delivery for Conversion and Units area converter.
+- **Important Files:** frontend/src/tools/calculators/square-cm-to-square-mm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1→100, 5→500, 500→50000; reverse 100→1, 250→2.5; 0/decimals; negatives rejected; share text). Mongo assigned via npm run tool:assign without --set-active (isDeveloped true, isActive false, indexable true, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Seconds to Years Conversion
 - **Summary:** Shipped Seconds to Years Conversion on existing catalog slug seconds-to-years-conversion (SecondsToYearsConversion, catalog 6af46f17a27d8d1d4e990bbd). Bidirectional seconds↔years with Gregorian mean year 365.2425 days (31,556,952 s); Other time units accordion (mo/wk/d/h/min + HMS); signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-446b delivery for Conversion and Units seconds-to-years converter.
