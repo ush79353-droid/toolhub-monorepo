@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { DividendPayoutRatioForm } from './DividendPayoutRatioForm';
 import {
   createDefaultInput,
@@ -13,6 +26,10 @@ import {
   type DividendPayoutRatioInput,
   type DividendPayoutRatioResult,
 } from './types';
+import { validateDividendPayoutRatioInput } from './validation';
+
+const FX_NOTE =
+  'Total dividends, net income, DPS, and diluted EPS each have their own currency. Each pair is normalized into one currency before the ratio. Payout percentages are never FX-converted. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(
   a: DividendPayoutRatioInput,
@@ -39,13 +56,20 @@ export function DividendPayoutRatioCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<DividendPayoutRatioInput>(
     () => defaults
   );
   const [input, setInput] = React.useState<DividendPayoutRatioInput>(() => defaults);
-  const [errors] = React.useState<DividendPayoutRatioFieldErrors>({});
-  const [result] = React.useState<DividendPayoutRatioResult | null>(null);
+  const [errors, setErrors] = React.useState<DividendPayoutRatioFieldErrors>({});
+  const [result, setResult] = React.useState<DividendPayoutRatioResult | null>(
+    null
+  );
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -56,43 +80,108 @@ export function DividendPayoutRatioCalculator({
   }, []);
 
   const apply = (next: DividendPayoutRatioInput) => {
+    setConversionError(null);
+    const validation = validateDividendPayoutRatioInput(next, rates);
     setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
-  const handleCurrencyOnly = (
-    key:
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
+  const handleMoneyCurrencyChange = (
+    amountKey:
+      | 'totalDividends'
+      | 'netIncome'
+      | 'declaredDps'
+      | 'dilutedEps',
+    currencyKey:
       | 'totalDividendsCurrency'
       | 'netIncomeCurrency'
       | 'declaredDpsCurrency'
       | 'dilutedEpsCurrency',
     next: SupportedCurrency
   ) => {
-    setInput({ ...input, [key]: next });
+    const from = input[currencyKey];
+    if (next === from) return;
+    const converted = convertFieldAmount(input[amountKey], from, next);
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      [currencyKey]: next,
+      [amountKey]: converted.text,
+    });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateDividendPayoutRatioInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
-        `Total dividends: ${getCurrencySymbol(input.totalDividendsCurrency)}${input.totalDividends} ${input.totalDividendsCurrency}`,
-        `Net income: ${getCurrencySymbol(input.netIncomeCurrency)}${input.netIncome} ${input.netIncomeCurrency}`,
+        input.totalDividends.trim()
+          ? `Total dividends: ${getCurrencySymbol(input.totalDividendsCurrency)}${input.totalDividends} ${input.totalDividendsCurrency}`
+          : null,
+        input.netIncome.trim()
+          ? `Net income: ${getCurrencySymbol(input.netIncomeCurrency)}${input.netIncome} ${input.netIncomeCurrency}`
+          : null,
         result.formattedPayoutRatioPercent !== null
           ? `Dividend payout ratio: ${result.formattedPayoutRatioPercent}%`
           : null,
-        `Declared DPS: ${getCurrencySymbol(input.declaredDpsCurrency)}${input.declaredDps} ${input.declaredDpsCurrency}`,
-        `Diluted EPS: ${getCurrencySymbol(input.dilutedEpsCurrency)}${input.dilutedEps} ${input.dilutedEpsCurrency}`,
+        input.declaredDps.trim()
+          ? `Declared DPS: ${getCurrencySymbol(input.declaredDpsCurrency)}${input.declaredDps} ${input.declaredDpsCurrency}`
+          : null,
+        input.dilutedEps.trim()
+          ? `Diluted EPS: ${getCurrencySymbol(input.dilutedEpsCurrency)}${input.dilutedEps} ${input.dilutedEpsCurrency}`
+          : null,
         result.formattedPayoutPerSharePercent !== null
           ? `Payout per share: ${result.formattedPayoutPerSharePercent}%`
           : null,
+        currencyNote,
       ]
         .filter(Boolean)
         .join('\n')
@@ -127,8 +216,7 @@ export function DividendPayoutRatioCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Enter total dividends and net income, or DPS and diluted EPS, for the same
-            period. Currency selectors convert money amounts; payout % never converts.
+            {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
@@ -141,17 +229,23 @@ export function DividendPayoutRatioCalculator({
           result={result}
           onChange={apply}
           onTotalDividendsCurrencyChange={(next) =>
-            handleCurrencyOnly('totalDividendsCurrency', next)
+            handleMoneyCurrencyChange(
+              'totalDividends',
+              'totalDividendsCurrency',
+              next
+            )
           }
           onNetIncomeCurrencyChange={(next) =>
-            handleCurrencyOnly('netIncomeCurrency', next)
+            handleMoneyCurrencyChange('netIncome', 'netIncomeCurrency', next)
           }
           onDeclaredDpsCurrencyChange={(next) =>
-            handleCurrencyOnly('declaredDpsCurrency', next)
+            handleMoneyCurrencyChange('declaredDps', 'declaredDpsCurrency', next)
           }
           onDilutedEpsCurrencyChange={(next) =>
-            handleCurrencyOnly('dilutedEpsCurrency', next)
+            handleMoneyCurrencyChange('dilutedEps', 'dilutedEpsCurrency', next)
           }
+          conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
