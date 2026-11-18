@@ -2171,11 +2171,25 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SafetyStockCalculator,
     })),
   ),
+  CommissionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/commission/CommissionCalculator'
+    ).then((mod) => ({
+      default: mod.CommissionCalculator,
+    })),
+  ),
   SalesCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/sales-commission/SalesCommissionCalculator'
     ).then((mod) => ({
       default: mod.SalesCommissionCalculator,
+    })),
+  ),
+  TrueCostOfRealEstateCommissionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/true-cost-real-estate-commission/TrueCostRealEstateCommissionCalculator'
+    ).then((mod) => ({
+      default: mod.TrueCostOfRealEstateCommissionCalculator,
     })),
   ),
   SellThroughRateCalculator: lazyTool(() =>
@@ -2838,6 +2852,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/bond-current-yield/BondCurrentYieldCalculator'
     ).then((mod) => ({
       default: mod.BondCurrentYieldCalculator,
+    })),
+  ),
+  BondEquivalentYieldCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bond-equivalent-yield/BondEquivalentYieldCalculator'
+    ).then((mod) => ({
+      default: mod.BondEquivalentYieldCalculator,
     })),
   ),
   BondPriceCalculator: lazyTool(() =>

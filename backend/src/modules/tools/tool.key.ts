@@ -399,8 +399,10 @@ export const APPROVED_COMPONENT_KEYS = [
   'RoiCalculator',
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
+  'CommissionCalculator',
   'SalesCommissionCalculator',
   'RentalCommissionCalculator',
+  'TrueCostOfRealEstateCommissionCalculator',
   'SellThroughRateCalculator',
   'SimpleInterestCalculator',
   'TdsInterestCalculator',
@@ -522,6 +524,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BondCalculator',
   'BondConvexityCalculator',
   'BondCurrentYieldCalculator',
+  'BondEquivalentYieldCalculator',
   'BondPriceCalculator',
   'BondYieldCalculator',
   'BondYtmCalculator',
@@ -971,8 +974,10 @@ if (isDirect) {
     !isApprovedComponentKey('RoiCalculator') ||
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
+    !isApprovedComponentKey('CommissionCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
     !isApprovedComponentKey('RentalCommissionCalculator') ||
+    !isApprovedComponentKey('TrueCostOfRealEstateCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     !isApprovedComponentKey('SimpleInterestCalculator') ||
     !isApprovedComponentKey('TdsInterestCalculator') ||
@@ -1093,6 +1098,7 @@ if (isDirect) {
     !isApprovedComponentKey('BondCalculator') ||
     !isApprovedComponentKey('BondConvexityCalculator') ||
     !isApprovedComponentKey('BondCurrentYieldCalculator') ||
+    !isApprovedComponentKey('BondEquivalentYieldCalculator') ||
     !isApprovedComponentKey('BondPriceCalculator') ||
     !isApprovedComponentKey('BondYieldCalculator') ||
     !isApprovedComponentKey('BondYtmCalculator') ||

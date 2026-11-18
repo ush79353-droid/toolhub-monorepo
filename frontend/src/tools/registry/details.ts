@@ -486,8 +486,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/saas-lifetime-value/detail'),
   SafetyStockCalculator: () =>
     import('@/tools/calculators/safety-stock/detail'),
+  CommissionCalculator: () =>
+    import('@/tools/calculators/commission/detail'),
   SalesCommissionCalculator: () =>
     import('@/tools/calculators/sales-commission/detail'),
+  TrueCostOfRealEstateCommissionCalculator: () =>
+    import('@/tools/calculators/true-cost-real-estate-commission/detail'),
   SellThroughRateCalculator: () =>
     import('@/tools/calculators/sell-through-rate/detail'),
   SimpleInterestCalculator: () =>
@@ -726,6 +730,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bond-convexity/detail'),
   BondCurrentYieldCalculator: () =>
     import('@/tools/calculators/bond-current-yield/detail'),
+  BondEquivalentYieldCalculator: () =>
+    import('@/tools/calculators/bond-equivalent-yield/detail'),
   BondPriceCalculator: () =>
     import('@/tools/calculators/bond-price/detail'),
   BondYieldCalculator: () =>

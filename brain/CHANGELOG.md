@@ -4,6 +4,27 @@
 
 ---
 
+### 2026-11-18 — Add Bond Equivalent Yield Calculator
+- **Summary:** Shipped Bond Equivalent Yield Calculator on existing catalog slug `bond-equivalent-yield-calculator` (`BondEquivalentYieldCalculator`, catalog `6af46f0fa27d8d1d4e98ffd6`). Screenshot fields: bond price FX, face value FX, days to maturity, read-only BEY %. Investment-basis formula with 365-day year; discount/par only; not bank discount yield, YTM, or current yield. Independent Phase 2 FX; days and BEY % never convert. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Bond Calculator pillar preserved; subPillar null.
+- **Formula:** BEY (%) = ((Face Value − Bond Price) / Bond Price) × (365 / Days to Maturity) × 100.
+- **Example:** 980 PKR · 1,000 PKR · 180 days → ≈ 4.138322%.
+- **Important Files:** `frontend/src/tools/calculators/bond-equivalent-yield/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Catalog undeveloped before coding (`6af46f0fa27d8d1d4e98ffd6`). `calculation.test.ts` assert self-check passed. Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f966`). Lint/typecheck/build/Playwright omitted per user. Single local commit — no push/pull/sync. Temporary files cleaned: YES.
+
+### 2026-11-18 — Add True Cost of Real Estate Commission Calculator
+- **Summary:** Shipped True Cost of Real Estate Commission Calculator on existing catalog slug `true-cost-of-real-estate-commission-calculator` (`TrueCostOfRealEstateCommissionCalculator`, catalog `6af46f0fa27d8d1d4e98ffe6`). Screenshot-first property + mortgage + commission-cost sections with independent Phase 2 FX on money fields. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Commission Calculator pillar preserved; subPillar null.
+- **Formulas:** Loan = Price − Down; Apparent = Price × Buyer%; Commission amount = Price × (Seller% + Buyer%); Loan commission = Amount × Loan/Price; monthly amortizing payments on loan and on loan-commission (r = annual/12); Real = (Amount − loan commission) + monthly commission × n.
+- **Example:** 300,000 · 60,000 down · 6% seller · 0% buyer · 30y · 7.83% → loan 240,000; commission 18,000; loan commission 14,400; monthly ≈ 1,732.68; real ≈ 41,025.81.
+- **Important Files:** `frontend/src/tools/calculators/true-cost-real-estate-commission/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Catalog undeveloped before coding; distinct from Real Estate Commission Calculator (`6af46f0fa27d8d1d4e98ffe2`). Inline math self-check. Mongo activated. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
+### 2026-11-18 — Add Commission Calculator
+- **Summary:** Shipped Commission Calculator on existing catalog slug `commission-calculator` (`CommissionCalculator`, catalog `6af46f0fa27d8d1d4e98ffe1`). Screenshot-first bidirectional solve among Sales Price, Commission Rate %, and Commission $. Fixed USD (no FX). Leave exactly one field blank. Distinct from Sales Commission Calculator (untouched). Activated via `npm run tool:assign` with `--set-active --set-indexable`. Commission Calculator pillar preserved; subPillar null.
+- **Formulas:** Commission = Sales Price × Rate / 100; Rate = Commission / Sales Price × 100; Sales Price = Commission / (Rate / 100). Zero is filled, not blank; zero denominators rejected; nonnegative inputs only.
+- **Example:** $200,000 · 3% · blank → $6,000.00 commission.
+- **Important Files:** `frontend/src/tools/calculators/commission/*`, registry `keys`/`index`/`details`, `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Catalog undeveloped before coding; separate from Sales Commission (`6af46f0fa27d8d1d4e98ffe5`). `calculation.test.ts` assert self-check passed. Mongo activated. Lint/typecheck/build/Playwright omitted per user. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-18 — Add Realtor Commission Calculator with VAT
 - **Summary:** Shipped Realtor Commission Calculator with VAT on existing catalog slug `realtor-commission-calculator-with-vat` (`RealtorCommissionVatCalculator`, catalog `6af46f0fa27d8d1d4e98ffe3`). Screenshot fields: house price FX, commission %, VAT rate %, commission gross FX, owner receives FX; collapsible net commission + VAT amount. VAT-exclusive commission on house price only. Independent Phase 2 FX; percentages never converted. Share/Reload/Clear/feedback. Activated via `npm run tool:assign`. Separate from undeveloped Commission Calculator and Real Estate Commission Calculator.
 - **Why:** TOOL-415 delivery for Finance & Business Commission Calculator pillar.
