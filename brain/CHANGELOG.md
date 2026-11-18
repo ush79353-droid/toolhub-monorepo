@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Salary to Hourly Calculator
+- **Summary:** Shipped Salary to Hourly Calculator on existing catalog slug `salary-to-hourly-calculator` (`SalaryToHourlyCalculator`, catalog `6af46f0fa27d8d1d4e990000`). Screenshot-first (ADR-023): Hourly wage FX ↔ Annual salary FX (last-edited authoritative; default annual); Hours/week default 40; Your wage as Daily/Monthly/Weekly/Biweekly FX; empty collapsed Other time intervals. Share/Reload/Clear/feedback. Independent Phase 2 FX; hours never convert. HourlyToSalaryWageCalculator patterns reused lightly (sibling untouched). Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar `6af46f0dae6d84bd3ef8f7cf`.
+- **Formulas:** Annual hours = Hours × 52; Annual = Hourly × annualHours; Hourly = Annual / annualHours; Weekly = Hourly × Hours; Biweekly = Weekly × 2; Monthly = Annual / 12; Daily = Weekly / 5. Full precision with display rounding only.
+- **Example:** 1,040,000 PKR annual · 40h → hourly 500 · weekly 20,000 · biweekly 40,000 · monthly ≈ 86,666.67 · daily 4,000.
+- **Important Files:** `frontend/src/tools/calculators/salary-to-hourly/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Salary Inflation Calculator
 - **Summary:** Shipped Salary Inflation Calculator on existing catalog slug `salary-inflation-calculator` (`SalaryInflationCalculator`, catalog `6af46f0fa27d8d1d4e98fffc`). Screenshot-first (ADR-023): Reference salary FX; Inflation %; Inflation-adjusted salary FX; Current salary FX; Gain/Loss FX. Single-period only (no multi-year compounding). Share/Reload/Clear/feedback. Independent Phase 2 FX; normalize current into reference currency before comparison; inflation % never converts. FutureSalaryCalculator patterns reused lightly (sibling untouched). Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar null.
 - **Formulas:** Adjusted = Reference × (1 + Inflation/100); Gain/Loss = Current − Adjusted. Inflation > −100%; salaries ≥ 0; full precision with display rounding only.

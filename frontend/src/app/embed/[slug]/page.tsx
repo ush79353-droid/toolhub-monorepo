@@ -192,6 +192,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'private-savings-calculator',
   'salary-calculator',
   'salary-inflation-calculator',
+  'salary-to-hourly-calculator',
   'savings-calculator',
   'savings-goal-calculator',
   'savings-plan-calculator',

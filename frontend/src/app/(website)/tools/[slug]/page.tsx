@@ -102,6 +102,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'salary-calculator',
   'salary-calculator-with-overtime',
   'salary-inflation-calculator',
+  'salary-to-hourly-calculator',
   'student-loan-calculator',
   'student-loan-payment-calculator',
   'simple-mortgage-calculator',

@@ -883,6 +883,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SalaryCalculator: () => import('@/tools/calculators/salary/detail'),
   SalaryInflationCalculator: () =>
     import('@/tools/calculators/salary-inflation/detail'),
+  SalaryToHourlyCalculator: () =>
+    import('@/tools/calculators/salary-to-hourly/detail'),
   SavingsCalculator: () => import('@/tools/calculators/savings/detail'),
   SavingsGoalCalculator: () =>
     import('@/tools/calculators/savings-goal/detail'),

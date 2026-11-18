@@ -100,6 +100,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'salary-calculator',
   'salary-calculator-with-overtime',
   'salary-inflation-calculator',
+  'salary-to-hourly-calculator',
   'second-stimulus-check-calculator-900-billion-bill',
   'third-stimulus-check-calculator-american-rescue-plan',
   'square-kilometers-to-acres-conversion',
