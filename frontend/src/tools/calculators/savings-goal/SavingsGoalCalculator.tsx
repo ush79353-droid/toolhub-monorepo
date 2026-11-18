@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import type { SupportedCurrency } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  getCurrencySymbol,
+  type SupportedCurrency,
+} from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { moneyAmountToInputString, parseMoneyInput } from '@/tools/shared/money-value';
 import { SavingsGoalForm } from './SavingsGoalForm';
 import { SavingsGoalResults } from './SavingsGoalResults';
 import {
@@ -14,6 +27,10 @@ import {
   type SavingsGoalInput,
   type SavingsGoalResult,
 } from './types';
+import { validateSavingsGoalInput } from './validation';
+
+const FX_NOTE =
+  'Goal and starting savings each have their own currency and are normalized into the goal currency before formulas run. Ages, years, interest, inflation, and growth percents are never converted.';
 
 function inputsEqual(a: SavingsGoalInput, b: SavingsGoalInput): boolean {
   return (
@@ -35,10 +52,6 @@ function inputsEqual(a: SavingsGoalInput, b: SavingsGoalInput): boolean {
   );
 }
 
-/**
- * UI shell for the Savings Goal Calculator.
- * Live validation, FX normalization, and engine wiring land in the calculations commit.
- */
 export function SavingsGoalCalculator({
   metadata,
   className = '',
@@ -46,13 +59,18 @@ export function SavingsGoalCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<SavingsGoalInput>(
     () => defaults
   );
   const [input, setInput] = React.useState<SavingsGoalInput>(() => defaults);
-  const [errors] = React.useState<SavingsGoalFieldErrors>({});
-  const [result] = React.useState<SavingsGoalResult | null>(null);
+  const [errors, setErrors] = React.useState<SavingsGoalFieldErrors>({});
+  const [result, setResult] = React.useState<SavingsGoalResult | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -62,35 +80,154 @@ export function SavingsGoalCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  React.useEffect(() => {
+    const validation = validateSavingsGoalInput(defaults, rates);
+    if (validation.isValid && validation.result) {
+      setResult(validation.result);
+      setErrors({});
+    }
+    // Initial sample only.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const apply = (next: SavingsGoalInput) => {
+    const validation = validateSavingsGoalInput(next, rates);
     setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    setConversionError(null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
   };
 
   const handleGoalCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.goalCurrency) return;
-    setInput({ ...input, goalCurrency: next });
+
+    const goalAmount = parseMoneyInput(input.goalAmount);
+    const hasGoal = Number.isFinite(goalAmount);
+
+    if (!hasGoal) {
+      if (
+        input.startingCurrency !== next &&
+        !canConvertPair(input.startingCurrency, next)
+      ) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      apply({ ...input, goalCurrency: next });
+      return;
+    }
+
+    if (!canConvertPair(input.goalCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    if (
+      input.startingCurrency !== next &&
+      !canConvertPair(input.startingCurrency, next)
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    const converted = convertCurrency({
+      amount: goalAmount,
+      from: input.goalCurrency,
+      to: next,
+      rates: rates.rates,
+    });
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    apply({
+      ...input,
+      goalCurrency: next,
+      goalAmount: moneyAmountToInputString(converted.amount),
+    });
   };
 
   const handleStartingCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.startingCurrency) return;
-    setInput({ ...input, startingCurrency: next });
+
+    const startingAmount = parseMoneyInput(input.startingSavings);
+    const hasStarting = Number.isFinite(startingAmount);
+
+    if (!hasStarting) {
+      if (
+        next !== input.goalCurrency &&
+        !canConvertPair(next, input.goalCurrency)
+      ) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      apply({ ...input, startingCurrency: next });
+      return;
+    }
+
+    if (!canConvertPair(input.startingCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    if (
+      next !== input.goalCurrency &&
+      !canConvertPair(next, input.goalCurrency)
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    const converted = convertCurrency({
+      amount: startingAmount,
+      from: input.startingCurrency,
+      to: next,
+      rates: rates.rates,
+    });
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    apply({
+      ...input,
+      startingCurrency: next,
+      startingSavings: moneyAmountToInputString(converted.amount),
+    });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateSavingsGoalInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const goalSymbol = getCurrencySymbol(input.goalCurrency);
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
         result.summary,
         result.breakdown,
+        `Goal currency: ${goalSymbol}`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -123,8 +260,7 @@ export function SavingsGoalCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Goal and starting savings support independent currencies. Ages, rates,
-            and frequencies are never converted.
+            {currencyNote}
           </p>
         </div>
         {headerActions ? (
@@ -136,14 +272,17 @@ export function SavingsGoalCalculator({
         <SavingsGoalForm
           input={input}
           errors={errors}
-          conversionError={null}
-          ratesWarning={null}
+          conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
           onChange={apply}
           onGoalCurrencyChange={handleGoalCurrencyChange}
           onStartingCurrencyChange={handleStartingCurrencyChange}
         />
 
-        <SavingsGoalResults result={result} hasErrors={Object.keys(errors).length > 0} />
+        <SavingsGoalResults
+          result={result}
+          hasErrors={Object.keys(errors).length > 0}
+        />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
           <button
