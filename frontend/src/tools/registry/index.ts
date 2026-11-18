@@ -265,6 +265,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MlToLbsConversion,
     })),
   ),
+  MlToOzConverter: lazyTool(() =>
+    import('@/tools/calculators/ml-to-oz/MlToOzConverter').then((mod) => ({
+      default: mod.MlToOzConverter,
+    })),
+  ),
   DecagramToGramConverter: lazyTool(() =>
     import('@/tools/calculators/decagram-to-gram/DecagramToGramConverter').then(
       (mod) => ({

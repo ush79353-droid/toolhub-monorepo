@@ -72,6 +72,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ml-to-cc-converter',
   'ml-to-kg-converter',
   'ml-to-lbs-conversion',
+  'ml-to-oz-converter',
   'decagram-to-gram-converter',
   'pint-to-pound-conversion',
   'drops-to-ml-conversion',
