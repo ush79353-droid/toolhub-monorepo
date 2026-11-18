@@ -5,11 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import type { SupportedCurrency } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
 import {
   useCurrencyRates,
   useCurrencyRatesStatus,
 } from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { SalaryInflationForm } from './SalaryInflationForm';
 import {
   createDefaultInput,
@@ -77,24 +86,100 @@ export function SalaryInflationCalculator({
     setResult(validation.isValid ? validation.result : null);
   };
 
-  // FX conversion handlers land in the engine commit.
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
   const handleReferenceSalaryCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.referenceSalaryCurrency) return;
-    apply({ ...input, referenceSalaryCurrency: next });
+    const converted = convertFieldAmount(
+      input.referenceSalary,
+      input.referenceSalaryCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    // Current salary stays in its own currency; validation normalizes it.
+    if (
+      input.currentSalaryCurrency !== next &&
+      !canConvertPair(input.currentSalaryCurrency, next)
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      referenceSalaryCurrency: next,
+      referenceSalary: converted.text,
+    });
   };
 
   const handleAdjustedSalaryCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.adjustedSalaryCurrency) return;
+    if (!canConvertPair(input.referenceSalaryCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, adjustedSalaryCurrency: next });
   };
 
   const handleCurrentSalaryCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.currentSalaryCurrency) return;
-    apply({ ...input, currentSalaryCurrency: next });
+    const converted = convertFieldAmount(
+      input.currentSalary,
+      input.currentSalaryCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    if (
+      next !== input.referenceSalaryCurrency &&
+      !canConvertPair(next, input.referenceSalaryCurrency)
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      currentSalaryCurrency: next,
+      currentSalary: converted.text,
+    });
   };
 
   const handleGainLossCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.gainLossCurrency) return;
+    if (!canConvertPair(input.referenceSalaryCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, gainLossCurrency: next });
   };
 
@@ -114,22 +199,23 @@ export function SalaryInflationCalculator({
   const dirty = !inputsEqual(input, baseline);
   const currencyNote = ratesStatus.available
     ? FX_NOTE
-    : 'Currency conversion is currently unavailable.';
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
         input.referenceSalary.trim()
-          ? `Reference salary: ${input.referenceSalary} ${input.referenceSalaryCurrency}`
+          ? `Reference salary: ${getCurrencySymbol(input.referenceSalaryCurrency)}${input.referenceSalary} ${input.referenceSalaryCurrency}`
           : null,
         input.inflationPercent.trim()
-          ? `Inflation rate: ${input.inflationPercent}%`
+          ? `Inflation rate: ${input.inflationPercent}% (single period)`
           : null,
-        `Inflation-adjusted salary: ${result.formattedAdjustedSalary} ${result.adjustedSalaryCurrency}`,
+        `Inflation-adjusted salary: ${getCurrencySymbol(result.adjustedSalaryCurrency)}${result.formattedAdjustedSalary} ${result.adjustedSalaryCurrency}`,
         input.currentSalary.trim()
-          ? `Current salary: ${input.currentSalary} ${input.currentSalaryCurrency}`
+          ? `Current salary: ${getCurrencySymbol(input.currentSalaryCurrency)}${input.currentSalary} ${input.currentSalaryCurrency}`
           : null,
-        `Gain or loss: ${result.formattedGainLoss} ${result.gainLossCurrency}`,
+        `Gain or loss: ${getCurrencySymbol(result.gainLossCurrency)}${result.formattedGainLoss} ${result.gainLossCurrency}`,
+        'Formulas: Adjusted = Ref × (1 + i/100); Gain/Loss = Current − Adjusted',
         currencyNote,
       ]
         .filter(Boolean)
