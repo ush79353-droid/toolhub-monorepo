@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add MPa to psig Conversion
+- **Summary:** Shipped MPa to psig Conversion on existing catalog slug mpa-to-psig-conversion (MpaToPsigConversion, catalog 6af46f17a27d8d1d4e990b23). Bidirectional exact MPa(g)↔psig via shared pressure-conversion Pa engine (~145.03773773 psig/MPa(g)); no atmospheric offset; rejects inaccurate ~130.34 absolute-with-atm factor; empty default; negative gauge allowed; guide/chart/FAQs on gauge vs absolute. Pillar 6af451d2a27d8d1d4e98f9ee preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-419b delivery for Conversion and Units megapascal gauge↔psig pressure converter.
+- **Important Files:** frontend/src/tools/calculators/mpa-to-psig/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–100 MPa(g); 150/300/1000 psig reverse; negative gauge; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ee). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add MPa to PSI Conversion
 - **Summary:** Shipped MPa to PSI Conversion on existing catalog slug mpa-to-psi-conversion (MpaToPsiConversion, catalog 6af46f17a27d8d1d4e990b22). Bidirectional exact MPa↔psi via shared pressure-conversion Pa engine (~145.03773773 psi/MPa); empty default; signed gauge values; guide/chart/FAQs. Pillar 6af451d2a27d8d1d4e98f9ee preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-418b delivery for Conversion and Units megapascal↔psi pressure converter.
