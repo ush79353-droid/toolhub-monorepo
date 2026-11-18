@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add MPa Conversion
+- **Summary:** Shipped MPa Conversion on existing catalog slug mpa-conversion (MpaConversion, catalog 6af46f17a27d8d1d4e990b20). Bidirectional MPa↔bar↔psi↔atm↔Torr via shared pressure-conversion Pa engine; other-units accordion; empty default; signed gauge values; guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ee preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-417b delivery for Conversion and Units megapascal pressure converter.
+- **Important Files:** frontend/src/tools/calculators/mpa-conversion/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 MPa factors; bar/atm/Torr reverse; 1000 kPa=1 MPa; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ee). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Months to Years Calculator
 - **Summary:** Shipped Months to Years Calculator on existing catalog slug months-to-years-calculator (MonthsToYearsCalculator, catalog 6af46f17a27d8d1d4e990bb7). Bidirectional exact 1 year = 12 months; decimal years plus editable years+months breakdown with normalize; empty default; signed same-sign remainder; guide/table/FAQs distinguishing decimal years vs yr+mo. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-416b delivery for Conversion and Units months↔years duration converter.
