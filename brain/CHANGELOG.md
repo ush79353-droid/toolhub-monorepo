@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add oz to cc Converter
+- **Summary:** Shipped oz to cc Converter on existing catalog slug oz-to-cc-converter (OzToCcConverter, catalog 6af46f17a27d8d1d4e990b62). Bidirectional US/UK fluid ounces↔cc with exact 29.5735295625 / 28.4130625 cc per fl oz; US/UK selector; default 1 US fl oz; rejects negative volume; fluid ounces only (not mass oz); guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-426b delivery for Conversion and Units fluid ounces↔cubic centimeters volume converter.
+- **Important Files:** frontend/src/tools/calculators/oz-to-cc/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (US/UK fl oz→cc; 100 cc reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Ounce to kg Converter
 - **Summary:** Shipped Ounce to kg Converter on existing catalog slug ounce-to-kg-converter (OunceToKgConverter, catalog 6af46f17a27d8d1d4e990b5e). Three-field oz↔kg↔lb with exact avoirdupois 1 oz = 0.028349523125 kg and 1 lb = 16 oz; default 16 oz; rejects negative mass; mass ounces only; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-425b delivery for Conversion and Units ounce↔kilogram mass converter.
