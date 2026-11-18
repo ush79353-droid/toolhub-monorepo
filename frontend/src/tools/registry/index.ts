@@ -2063,6 +2063,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.YardToMeterConverter,
     })),
   ),
+  YardToMileConverter: lazyTool(() =>
+    import('@/tools/calculators/yard-to-mile/YardToMileConverter').then((mod) => ({
+      default: mod.YardToMileConverter,
+    })),
+  ),
   YardsToMetersConversion: lazyTool(() =>
     import('@/tools/calculators/yards-to-meters/YardsToMetersConversion').then((mod) => ({
       default: mod.YardsToMetersConversion,
