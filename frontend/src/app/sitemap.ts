@@ -280,6 +280,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'kg-to-ounce-converter',
   'kg-to-stones-converter',
   'kilometer-calculator',
+  'mm-calculator',
   'kilometer-to-meter-converter',
   'kilometers-to-miles-calculator',
   'km-to-feet-conversion',
