@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Square Feet Converter
+- **Summary:** Shipped Square Feet Converter on existing catalog slug square-feet-converter (SquareFeetConverter, catalog 6af46f17a27d8d1d4e990afb). Bidirectional ft² ↔ selectable area units via square-meter base (mm²/cm²/m²/km²/in²/ft²/yd²/ac/ha/mi²); empty default; destination defaults to m²; unit change preserves ft². Pillar/subPillar preserved (live pillar 6af451d1…). Meta title 41 chars. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-448b delivery for Conversion and Units square feet converter.
+- **Important Files:** frontend/src/tools/calculators/square-feet-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 ft²→0.09290304 m², 100→9.290304, 1→144 in², 9→1 yd², 43560→1 ac, 10 m²→≈107.64 ft²; negatives rejected; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Square Centimeters to Square Millimeters Converter
 - **Summary:** Shipped Square Centimeters to Square Millimeters Converter on existing catalog slug square-centimeters-to-square-millimeters-converter (SquareCmToSquareMmConverter, catalog 6af46f17a27d8d1d4e990b9b). Bidirectional cm²↔mm² with exact ×100; non-negative areas; empty default; guide/chart/FAQs/notation notes. Null pillar/subPillar preserved. Meta title trimmed to <=70. **isActive left false** (explicit). indexable left true.
 - **Why:** TOOL-447b delivery for Conversion and Units area converter.
