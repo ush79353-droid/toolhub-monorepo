@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Dividend Yield Calculator
+- **Summary:** Shipped Dividend Yield Calculator on existing catalog slug `dividend-yield-calculator` (`DividendYieldCalculator`, catalog `6af46f0fa27d8d1d4e990007`). Screenshot-first (ADR-023): Annual dividends — Dividends per period FX, Dividend frequency (Annually/Semiannually/Quarterly/Monthly; selection required), Annual dividends FX output; Dividend yield — Share price FX, Dividend yield %. Share/Reload/Clear/feedback; how-to-use → `#how-to-use`. Independent Phase 2 FX; yield % and frequency never convert. DividendDiscountModelCalculator and DividendPayoutRatioCalculator untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96e` / subPillar null preserved.
+- **Formulas:** Annual Dividends = Dividends per Period × Payments per Year; Dividend Yield (%) = Annual Dividends ÷ Share Price × 100. Full precision with display rounding only. Zero dividends allowed (0% yield); share price must be > 0; unselected frequency blocks results.
+- **Example:** 2.50 PKR quarterly / share price 100 PKR → annual 10.00 · yield 10%.
+- **Important Files:** `frontend/src/tools/calculators/dividend-yield/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** DDM and DividendPayoutRatio siblings untouched. Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Dividend Payout Ratio Calculator
 - **Summary:** Shipped Dividend Payout Ratio Calculator on existing catalog slug `dividend-payout-ratio-calculator` (`DividendPayoutRatioCalculator`, catalog `6af46f0fa27d8d1d4e990006`). Screenshot-first (ADR-023): Main — Total dividends FX, Net income FX, Dividend payout ratio %; Per share — Declared DPS FX, Diluted EPS FX, payout per share %; empty collapsed Diluted earnings per share (no invented fields; DDM sibling has no diluted-EPS builder). Share/Reload/Clear/feedback. Independent Phase 2 FX; payout % never converts. Zero NI/EPS → undefined (error), not 0%; >100% and negative ratios allowed with explanation. DividendDiscountModelCalculator untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96e` / subPillar null preserved.
 - **Formulas:** Company payout (%) = Total Dividends ÷ Net Income × 100; Per-share payout (%) = Declared DPS ÷ Diluted EPS × 100. Full precision with display rounding only.

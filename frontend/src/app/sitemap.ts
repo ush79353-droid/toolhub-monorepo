@@ -489,6 +489,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'days-off-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',
+  'dividend-yield-calculator',
   'direct-material-price-variance-calculator',
   'ear-calculator',
   'early-loan-payoff-calculator',
