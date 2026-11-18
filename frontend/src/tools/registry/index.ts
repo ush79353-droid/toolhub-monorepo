@@ -3144,6 +3144,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LeveredFreeCashFlowCalculator,
     })),
   ),
+  OperatingCashFlowCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
+    ).then((mod) => ({
+      default: mod.OperatingCashFlowCalculator,
+    })),
+  ),
   FdCalculator: lazyTool(() =>
     import('@/tools/calculators/fd/FdCalculator').then((mod) => ({
       default: mod.FdCalculator,

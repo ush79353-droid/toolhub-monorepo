@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Operating Cash Flow Calculator
+- **Summary:** Shipped Operating Cash Flow Calculator on existing catalog slug `operating-cash-flow-calculator` (`OperatingCashFlowCalculator`, catalog `6af46f0fa27d8d1d4e98fff7`). Screenshot-first (ADR-023): Net income, Depreciation, Amortization, ΔInventories, ΔAR, ΔAP, Income tax payable (change), Net other cash flows → Change in operating WC (WC cash adj) + Operating cash flow; empty collapsed Balance changes. Share/Reload/Clear/feedback. Independent Phase 2 FX. FreeCashFlow / FCFF / Levered FCF siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96b` / subPillar null.
+- **Formulas:** WC cash adj = −ΔInv −ΔAR +ΔAP +ΔTaxPayable (ending − beginning); OCF = NI + Dep + Amort + WC adj + Other. Tax payable is a change, not a stock balance. Negative results allowed; full precision with display rounding only.
+- **Example:** NI 100,000 · Dep 20,000 · Amort 5,000 · ΔInv 8,000 · ΔAR 4,000 · ΔAP 6,000 · ΔTax 1,000 · Other 2,000 → WC adj −5,000 · OCF 122,000.
+- **Important Files:** `frontend/src/tools/calculators/operating-cash-flow/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Margin With Discount Calculator
 - **Summary:** Shipped Margin With Discount Calculator on existing catalog slug `margin-with-discount-calculator` (`MarginWithDiscountCalculator`, catalog `6af46f0fa27d8d1d4e98fff0`). Screenshot-first (ADR-023): Cost before discount FX; Base margin %; Base markup %; Base revenue FX (last-edited among margin/markup/revenue authoritative); Discount % → Price after discount FX, True margin %, True markup %, Profit FX. Share/Reload/Clear/feedback. Independent Phase 2 FX; percents never convert. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bda27d8d1d4e98f96a` / subPillar null.
 - **Formulas:** Base Revenue = Cost/(1−Margin/100) or Cost×(1+Markup/100); Price After Discount = Revenue×(1−Discount/100); Profit = Price−Cost; True Margin = Profit/Price×100; True Markup = Profit/Cost×100. Cost ≥ 0; discount 0–100; margin < 100 when deriving revenue; full precision with display rounding only.
