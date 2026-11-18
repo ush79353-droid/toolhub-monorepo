@@ -297,6 +297,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PintToPoundCalculator,
     })),
   ),
+  PintsToCupsConverter: lazyTool(() =>
+    import('@/tools/calculators/pints-to-cups/PintsToCupsConverter').then((mod) => ({
+      default: mod.PintsToCupsConverter,
+    })),
+  ),
   DropsToMlConverter: lazyTool(() =>
     import('@/tools/calculators/drops-to-ml/DropsToMlConverter').then((mod) => ({
       default: mod.DropsToMlConverter,

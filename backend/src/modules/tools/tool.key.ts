@@ -55,6 +55,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MlToUlConversion',
   'DecagramToGramConverter',
   'PintToPoundCalculator',
+  'PintsToCupsConverter',
   'DropsToMlConverter',
   'PoundsAndOuncesCalculator',
   'OunceToKgConverter',
@@ -577,6 +578,7 @@ if (isDirect) {
     !isApprovedComponentKey('MlToUlConversion') ||
     !isApprovedComponentKey('DecagramToGramConverter') ||
     !isApprovedComponentKey('PintToPoundCalculator') ||
+    !isApprovedComponentKey('PintsToCupsConverter') ||
     !isApprovedComponentKey('DropsToMlConverter') ||
     !isApprovedComponentKey('PoundsAndOuncesCalculator') ||
     !isApprovedComponentKey('OunceToKgConverter') ||

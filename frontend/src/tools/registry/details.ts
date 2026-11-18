@@ -60,6 +60,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MlToUlConversion: () => import('@/tools/calculators/ml-to-ul/detail'),
   DecagramToGramConverter: () => import('@/tools/calculators/decagram-to-gram/detail'),
   PintToPoundCalculator: () => import('@/tools/calculators/pint-to-pound/detail'),
+  PintsToCupsConverter: () => import('@/tools/calculators/pints-to-cups/detail'),
   DropsToMlConverter: () => import('@/tools/calculators/drops-to-ml/detail'),
   PoundsAndOuncesCalculator: () =>
     import('@/tools/calculators/pounds-and-ounces/detail'),

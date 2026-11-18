@@ -232,6 +232,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cups-to-oz-converter',
   'cups-to-pints-converter',
   'cups-to-quarts-converter',
+  'pints-to-cups-converter',
   'day-converter',
   'days-to-months-calculator',
   'days-to-weeks-calculator',
