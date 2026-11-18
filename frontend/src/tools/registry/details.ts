@@ -62,6 +62,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-of-safety/detail'),
   NetDebtCalculator: () =>
     import('@/tools/calculators/net-debt/detail'),
+  NewYorkOvertimeCalculator: () =>
+    import('@/tools/calculators/new-york-overtime/detail'),
   OperatingMarginCalculator: () =>
     import('@/tools/calculators/operating-margin/detail'),
   OvertimeCalculator: () =>

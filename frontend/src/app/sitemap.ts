@@ -43,6 +43,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'margin-call-calculator',
   'margin-of-safety-calculator',
   'net-debt-calculator',
+  'new-york-overtime-calculator',
   'operating-margin-calculator',
   'overtime-calculator',
   'present-value-of-annuity-calculator',
