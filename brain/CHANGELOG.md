@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Square Meter Converter
+- **Summary:** Shipped Square Meter Converter on existing catalog slug square-meter-converter (SquareMeterConverter, catalog 6af46f17a27d8d1d4e990ae2). Multi-unit area sync via m² base (m²/ft² primary + Other Area Units: in²/yd²/cm²/mm²/km²/ac/ha/mi²); empty default; negatives rejected. Reuses square-feet-converter `convertArea`. Meter Converter pillar preserved (live 6af451d0…); subPillar null. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-451b delivery for Conversion and Units square meter converter.
+- **Important Files:** frontend/src/tools/calculators/square-meter-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 m²≈10.7639104167 ft², 100 ft²→9.290304 m², cm²/mm²/ha/km²/acre factors; round-trip; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Square Inch to Square Foot Converter
 - **Summary:** Shipped Square Inch to Square Foot Converter on existing catalog slug square-inch-to-square-foot-converter (SquareInchToSquareFootConverter, catalog 6af46f17a27d8d1d4e990b17). Bidirectional in²↔ft² with exact ×144; empty default; negatives rejected. Inch Converter pillar preserved; subPillar null. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-450b delivery for Conversion and Units square inch to square foot converter.
