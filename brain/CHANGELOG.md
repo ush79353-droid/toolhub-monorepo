@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Annual Salary Calculator
+- **Summary:** Shipped Annual Salary Calculator on existing catalog slug `annual-salary-calculator` (`AnnualSalaryCalculator`, catalog `6af46f0fa27d8d1d4e98fffd`). Screenshot-first (ADR-023): Working hours/week default 40; Working weeks/year default 52; Hourly wage FX; Annual salary FX; Net salary — Tax default 12% (simplified flat-rate label only), Net hourly FX, Net annual FX. Share/Reload/Clear/feedback. Reused Discount/Credit Card UI/FX patterns without modifying Salary With Overtime sibling. Independent Phase 2 FX; hours, weeks, and tax % never convert. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96c` / subPillar `6af451bea27d8d1d4e98f96d` preserved.
+- **Formulas:** Annual Salary = Hourly Wage × Hours Per Week × Weeks Per Year; Net Hourly = Hourly × (1 − Tax/100); Net Annual = Annual × (1 − Tax/100). Nonnegative hours/weeks/wage; tax 0–100%; full precision with display rounding only.
+- **Example:** 500 PKR · 40 h · 52 wk · 12% → annual 1,040,000 · net hourly 440 · net annual 915,200.
+- **Important Files:** `frontend/src/tools/calculators/annual-salary/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** SalaryWithOvertimeCalculator sibling untouched. Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Double Discount Calculator
 - **Summary:** Shipped Double Discount Calculator on existing catalog slug `double-discount-calculator` (`DoubleDiscountCalculator`, catalog `6af46f0fa27d8d1d4e98ffef`). Screenshot-first (ADR-023): Original price FX; 1st discount %; 2nd discount %; Final price FX; Total savings FX; collapsible Effective discount %. Share/Reload/Clear/feedback. Reused Discount Calculator UI/FX patterns without modifying that sibling. Independent Phase 2 FX; discount percents and effective % never convert. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Pillar `6af451bda27d8d1d4e98f96a` preserved; subPillar null.
 - **Formulas:** Final Price = Original Price × (1 − D1/100) × (1 − D2/100); Total Savings = Original Price − Final Price; Effective Discount (%) = D1 + D2 − (D1 × D2 / 100). Clamp each discount 0–100%; nonnegative price; full precision with display rounding only.

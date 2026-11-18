@@ -2283,6 +2283,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.YoutubeMoneyCalculator,
     })),
   ),
+  AnnualSalaryCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/annual-salary/AnnualSalaryCalculator'
+    ).then((mod) => ({
+      default: mod.AnnualSalaryCalculator,
+    })),
+  ),
   AnnualizedRateOfReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/annualized-rate-of-return/AnnualizedRateOfReturnCalculator'

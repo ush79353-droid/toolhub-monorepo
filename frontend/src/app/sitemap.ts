@@ -443,6 +443,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sortino-ratio-calculator',
   'year-over-year-growth-calculator',
   'youtube-money-calculator',
+  'annual-salary-calculator',
   'annualized-rate-of-return-calculator',
   'appreciation-calculator',
   'annualized-return-calculator',
