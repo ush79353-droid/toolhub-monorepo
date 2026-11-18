@@ -56,6 +56,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MlToLbsConversion: () => import('@/tools/calculators/ml-to-lbs/detail'),
   MlToOzConverter: () => import('@/tools/calculators/ml-to-oz/detail'),
   MlToTbspConverter: () => import('@/tools/calculators/ml-to-tbsp/detail'),
+  MlToTspConverter: () => import('@/tools/calculators/ml-to-tsp/detail'),
   DecagramToGramConverter: () => import('@/tools/calculators/decagram-to-gram/detail'),
   PintToPoundCalculator: () => import('@/tools/calculators/pint-to-pound/detail'),
   DropsToMlConverter: () => import('@/tools/calculators/drops-to-ml/detail'),
