@@ -29,6 +29,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'future-value-of-annuity-calculator',
   'georgia-overtime-calculator',
   'gross-margin-calculator',
+  'gross-rent-multiplier-calculator',
   'growing-annuity-calculator',
   'illinois-overtime-calculator',
   'immediate-annuity-calculator',

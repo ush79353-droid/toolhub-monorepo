@@ -19,6 +19,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FutureValueOfAnnuityCalculator',
   'GeorgiaOvertimeCalculator',
   'GrossMarginCalculator',
+  'GrossRentMultiplierCalculator',
   'GrowingAnnuityCalculator',
   'IllinoisOvertimeCalculator',
   'ImmediateAnnuityCalculator',
@@ -1041,6 +1042,7 @@ if (isDirect) {
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||
     !isApprovedComponentKey('TexasOvertimeCalculator') ||
+    !isApprovedComponentKey('GrossRentMultiplierCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

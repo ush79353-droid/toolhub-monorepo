@@ -139,6 +139,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GrossMarginCalculator,
     })),
   ),
+  GrossRentMultiplierCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gross-rent-multiplier/GrossRentMultiplierCalculator'
+    ).then((mod) => ({
+      default: mod.GrossRentMultiplierCalculator,
+    })),
+  ),
   GrowingAnnuityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/growing-annuity/GrowingAnnuityCalculator'

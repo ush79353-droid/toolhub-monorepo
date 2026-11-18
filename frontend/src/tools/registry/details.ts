@@ -37,6 +37,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/georgia-overtime/detail'),
   GrossMarginCalculator: () =>
     import('@/tools/calculators/gross-margin/detail'),
+  GrossRentMultiplierCalculator: () =>
+    import('@/tools/calculators/gross-rent-multiplier/detail'),
   GrowingAnnuityCalculator: () =>
     import('@/tools/calculators/growing-annuity/detail'),
   IllinoisOvertimeCalculator: () =>
