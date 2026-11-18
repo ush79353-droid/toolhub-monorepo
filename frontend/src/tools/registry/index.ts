@@ -1180,6 +1180,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DegreesToRadiansConverter,
     })),
   ),
+  RadiansToDegreesConverter: lazyTool(() =>
+    import('@/tools/calculators/radians-to-degrees/RadiansToDegreesConverter').then((mod) => ({
+      default: mod.RadiansToDegreesConverter,
+    })),
+  ),
   DegreesToSecondsConverter: lazyTool(() =>
     import('@/tools/calculators/degrees-to-seconds/DegreesToSecondsConverter').then((mod) => ({
       default: mod.DegreesToSecondsConverter,

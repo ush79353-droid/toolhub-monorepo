@@ -252,6 +252,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DaysToYearsCalculator: () => import('@/tools/calculators/days-to-years/detail'),
   DegreesToMinutesConverter: () => import('@/tools/calculators/degrees-to-minutes/detail'),
   DegreesToRadiansConverter: () => import('@/tools/calculators/degrees-to-radians/detail'),
+  RadiansToDegreesConverter: () => import('@/tools/calculators/radians-to-degrees/detail'),
   DegreesToSecondsConverter: () => import('@/tools/calculators/degrees-to-seconds/detail'),
   DistanceConverter: () => import('@/tools/calculators/distance-converter/detail'),
   DmConverter: () => import('@/tools/calculators/dm-converter/detail'),

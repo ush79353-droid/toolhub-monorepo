@@ -249,6 +249,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'days-to-years-calculator',
   'degrees-to-minutes-converter',
   'degrees-to-radians-converter',
+  'radians-to-degrees-converter',
   'degrees-to-seconds-converter',
   'distance-converter',
   'dm-converter',

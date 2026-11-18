@@ -226,6 +226,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DaysToYearsCalculator',
   'DegreesToMinutesConverter',
   'DegreesToRadiansConverter',
+  'RadiansToDegreesConverter',
   'DegreesToSecondsConverter',
   'DistanceConverter',
   'DmConverter',
@@ -759,6 +760,7 @@ if (isDirect) {
     !isApprovedComponentKey('DaysToYearsCalculator') ||
     !isApprovedComponentKey('DegreesToMinutesConverter') ||
     !isApprovedComponentKey('DegreesToRadiansConverter') ||
+    !isApprovedComponentKey('RadiansToDegreesConverter') ||
     !isApprovedComponentKey('DegreesToSecondsConverter') ||
     !isApprovedComponentKey('DistanceConverter') ||
     !isApprovedComponentKey('DmConverter') ||
