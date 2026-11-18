@@ -46,6 +46,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'georgia-overtime-calculator',
   'gross-margin-calculator',
   'growing-annuity-calculator',
+  'illinois-overtime-calculator',
   'immediate-annuity-calculator',
   'interest-rate-parity-calculator',
   'loan-interest-calculator',

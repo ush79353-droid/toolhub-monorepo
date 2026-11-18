@@ -146,6 +146,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GrowingAnnuityCalculator,
     })),
   ),
+  IllinoisOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/illinois-overtime/IllinoisOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.IllinoisOvertimeCalculator,
+    })),
+  ),
   ImmediateAnnuityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/immediate-annuity/ImmediateAnnuityCalculator'

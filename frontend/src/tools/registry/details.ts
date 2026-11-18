@@ -39,6 +39,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gross-margin/detail'),
   GrowingAnnuityCalculator: () =>
     import('@/tools/calculators/growing-annuity/detail'),
+  IllinoisOvertimeCalculator: () =>
+    import('@/tools/calculators/illinois-overtime/detail'),
   ImmediateAnnuityCalculator: () =>
     import('@/tools/calculators/immediate-annuity/detail'),
   InterestRateParityCalculator: () =>

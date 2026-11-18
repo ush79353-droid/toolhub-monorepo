@@ -30,6 +30,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'georgia-overtime-calculator',
   'gross-margin-calculator',
   'growing-annuity-calculator',
+  'illinois-overtime-calculator',
   'immediate-annuity-calculator',
   'interest-rate-parity-calculator',
   'loan-calculator',
