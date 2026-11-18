@@ -278,6 +278,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HundredDayCalculator,
     })),
   ),
+  SalaryWithOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/salary-with-overtime/SalaryWithOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.SalaryWithOvertimeCalculator,
+    })),
+  ),
   TimesInterestEarnedCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/times-interest-earned/TimesInterestEarnedCalculator'

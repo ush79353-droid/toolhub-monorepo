@@ -92,6 +92,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pixels-to-inches-converter',
   'decimeter-to-meter-converter',
   'deferred-payment-loan-calculator',
+  'salary-calculator-with-overtime',
   'square-kilometers-to-acres-conversion',
   'feet-and-inches-calculator',
   'times-interest-earned-ratio-calculator',

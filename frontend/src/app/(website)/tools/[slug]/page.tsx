@@ -84,6 +84,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'overtime-paycheck-calculator',
   'present-value-of-annuity-calculator',
   'rv-loan-calculator',
+  'salary-calculator-with-overtime',
   'student-loan-calculator',
   'student-loan-payment-calculator',
   'simple-mortgage-calculator',
