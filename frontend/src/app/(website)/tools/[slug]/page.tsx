@@ -40,6 +40,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'debt-to-equity-calculator',
   'deferred-annuity-calculator',
   'ebitda-margin-calculator',
+  'future-value-of-annuity-calculator',
   'gross-margin-calculator',
   'interest-rate-parity-calculator',
   'loan-interest-calculator',

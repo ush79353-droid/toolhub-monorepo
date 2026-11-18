@@ -104,6 +104,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EbitdaMarginCalculator,
     })),
   ),
+  FutureValueOfAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/future-value-of-annuity/FutureValueOfAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.FutureValueOfAnnuityCalculator,
+    })),
+  ),
   GrossMarginCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/gross-margin/GrossMarginCalculator'

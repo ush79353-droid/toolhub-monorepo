@@ -24,6 +24,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'debt-to-equity-calculator',
   'deferred-annuity-calculator',
   'ebitda-margin-calculator',
+  'future-value-of-annuity-calculator',
   'gross-margin-calculator',
   'interest-rate-parity-calculator',
   'loan-calculator',

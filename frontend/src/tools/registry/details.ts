@@ -27,6 +27,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/deferred-annuity/detail'),
   EbitdaMarginCalculator: () =>
     import('@/tools/calculators/ebitda-margin/detail'),
+  FutureValueOfAnnuityCalculator: () =>
+    import('@/tools/calculators/future-value-of-annuity/detail'),
   GrossMarginCalculator: () =>
     import('@/tools/calculators/gross-margin/detail'),
   InterestRateParityCalculator: () =>
