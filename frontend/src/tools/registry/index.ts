@@ -235,6 +235,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetDebtCalculator,
     })),
   ),
+  NetEffectiveRentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/net-effective-rent/NetEffectiveRentCalculator'
+    ).then((mod) => ({
+      default: mod.NetEffectiveRentCalculator,
+    })),
+  ),
   NewYorkOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/new-york-overtime/NewYorkOvertimeCalculator'

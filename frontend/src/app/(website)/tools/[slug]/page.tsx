@@ -79,6 +79,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'jumbo-loan-calculator',
   'land-loan-calculator',
   'net-debt-calculator',
+  'net-effective-rent-calculator',
   'new-york-overtime-calculator',
   'operating-margin-calculator',
   'overtime-calculator',

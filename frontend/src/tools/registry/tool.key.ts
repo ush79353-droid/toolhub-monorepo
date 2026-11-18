@@ -33,6 +33,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginCallCalculator',
   'MarginOfSafetyCalculator',
   'NetDebtCalculator',
+  'NetEffectiveRentCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
   'OvertimeCalculator',
@@ -867,6 +868,7 @@ if (isDirect) {
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||
     !isApprovedComponentKey('TexasOvertimeCalculator') ||
     !isApprovedComponentKey('GrossRentMultiplierCalculator') ||
+    !isApprovedComponentKey('NetEffectiveRentCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
