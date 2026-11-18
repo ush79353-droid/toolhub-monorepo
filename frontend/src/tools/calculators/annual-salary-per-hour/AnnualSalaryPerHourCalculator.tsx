@@ -5,10 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
   useCurrencyRatesStatus,
 } from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { AnnualSalaryPerHourForm } from './AnnualSalaryPerHourForm';
 import {
   createDefaultInput,
@@ -17,6 +27,7 @@ import {
   type AnnualSalaryPerHourResult,
   type WageSourceField,
 } from './types';
+import { validateAnnualSalaryPerHourInput } from './validation';
 
 const FX_NOTE =
   'Each wage field has its own currency. Salary math runs in the last-edited wage currency; other periods convert for display. Hours per week are never converted. Missing rates block conversion; stale rates warn but still convert.';
@@ -67,6 +78,7 @@ export function AnnualSalaryPerHourCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<AnnualSalaryPerHourInput>(
@@ -94,10 +106,39 @@ export function AnnualSalaryPerHourCalculator({
   }, []);
 
   const apply = (next: AnnualSalaryPerHourInput) => {
+    const validation = validateAnnualSalaryPerHourInput(next, rates);
     setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handleWageCurrencyChange = (
@@ -105,16 +146,39 @@ export function AnnualSalaryPerHourCalculator({
     next: SupportedCurrency
   ) => {
     const key = CURRENCY_KEY[field];
-    if (input[key] === next) return;
+    const prev = input[key];
+    if (prev === next) return;
+
+    // Authoritative field: convert the typed amount with FX.
+    if (field === input.sourceField) {
+      const converted = convertFieldAmount(input[field], prev, next);
+      if (!converted.ok) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      apply({
+        ...input,
+        [key]: next,
+        [field]: converted.text,
+      });
+      return;
+    }
+
+    // Derived display currency: re-express computed amount only.
+    if (!canConvertPair(input[CURRENCY_KEY[input.sourceField]], next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, [key]: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateAnnualSalaryPerHourInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -124,12 +188,13 @@ export function AnnualSalaryPerHourCalculator({
   const dirty = !inputsEqual(input, baseline);
   const currencyNote = ratesStatus.available
     ? FX_NOTE
-    : 'Currency conversion rates are unavailable. Wage math still works when all currencies match.';
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
         `Hours/week: ${input.hoursPerWeek}`,
+        `Authoritative: ${result.sourceField}`,
         `Hourly: ${getCurrencySymbol(result.hourlyCurrency)}${result.formattedHourly} ${result.hourlyCurrency}`,
         `Daily: ${getCurrencySymbol(result.dailyCurrency)}${result.formattedDaily} ${result.dailyCurrency}`,
         `Weekly: ${getCurrencySymbol(result.weeklyCurrency)}${result.formattedWeekly} ${result.weeklyCurrency}`,
