@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add tsp to mL Converter
+- **Summary:** Shipped tsp to mL Converter on existing catalog slug tsp-to-ml-converter (TspToMlConverter, catalog 6af46f17a27d8d1d4e990b72). Bidirectional tsp↔mL with metric default (5 mL), US customary (4.92892159375), US nutrition = metric; Other related units default cm³/cc; metric conversion chart; empty default; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-460b delivery for Conversion and Units teaspoon-to-milliliter converter.
+- **Important Files:** frontend/src/tools/calculators/tsp-to-ml/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/2/0.5/0.25 metric tsp; 15 mL→3 tsp; US customary; us_nutrition; cc identity; chart fractions; round-trip; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add tsp to grams Converter
 - **Summary:** Shipped tsp to grams Converter on existing catalog slug tsp-to-grams-converter (TspToGramsConverter, catalog 6af46f17a27d8d1d4e990b71). Density-based US/metric tsp↔g; Ingredient + Type lookup default Sugar / Granulated sugar / 845 kg/m³; custom density kg/m³|g/mL|g/cm³; density accordion expanded by default; empty measures; negatives and non-positive density rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-459b delivery for Conversion and Units teaspoon-to-gram ingredient converter.
