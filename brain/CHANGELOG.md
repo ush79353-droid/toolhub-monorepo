@@ -5,11 +5,11 @@
 ---
 
 ### 2026-11-18 — Add Savings Calculator
-- **Summary:** Shipped Savings Calculator on existing catalog slug `savings-calculator` (`SavingsCalculator`, catalog `6af46f0fa27d8d1d4e98ffda`). Screenshot-first: Savings balance goal, Interest rate / APY, initial savings FX, rate, yrs/mos, compound frequency, optional inflation + deposit growth, additional deposits FX with frequency and begin/end timing. Narrative APY/final/deposits/principal/interest results plus three-segment pie. Independent Phase 2 FX. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Three local commits (UI → calc/FX → integration); no push.
+- **Summary:** Shipped Savings Calculator on existing catalog slug `savings-calculator` (`SavingsCalculator`, catalog `6af46f0fa27d8d1d4e98ffda`). Screenshot-first: Savings balance goal, Interest rate / APY, initial savings FX, rate, yrs/mos, compound frequency, optional inflation + deposit growth, additional deposits FX with frequency and begin/end timing. Narrative APY/final/deposits/principal/interest results plus three-segment pie. Independent Phase 2 FX. Registry/sitemap/`CURRENCY_CONVERSION_SLUGS`/`tool.key.ts` complete. Three local commits (UI → calc/FX → integration); no push.
 - **Formulas:** APY = (1 + r/m)^m − 1; nominal from APY r = m((1+APY)^(1/m)−1); compounding-grid ledger with prorated deposits and begin/end timing; Final = Initial + Deposits + Interest; real FV = FV/(1+i)^t when inflation on.
 - **Example:** 1,000 PKR · 1.3% nominal · monthly · 6y · 100 PKR monthly begin → APY ≈ 1.3077%.
 - **Important Files:** `frontend/src/tools/calculators/savings/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `backend/src/modules/tools/tool.key.ts`, `brain/*`.
-- **Verification:** Catalog undeveloped before coding. Assert self-check in `calculation.test.ts` (written; suite not run per task). Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f967`). Temporary files cleaned: YES.
+- **Verification:** Catalog undeveloped before coding. Assert self-check written in `calculation.test.ts` (not run per task). Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f967`) after transient Atlas timeouts blocked `tool:assign`. Temporary files cleaned: YES.
 
 ### 2026-11-18 — Add Bond Calculator
 - **Summary:** Shipped Bond Calculator on existing catalog slug `bond-calculator` (`BondCalculator`, catalog `6af46f0fa27d8d1d4e98ffd3`). Coupon-date solver: leave exactly one of Price/Face/Yield/Maturity/Annual coupon blank; frequency annually–monthly; coupon % or USD. Fixed USD. Activated via `npm run tool:assign`.
