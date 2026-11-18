@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Ounces to Pounds Converter
+- **Summary:** Shipped Ounces to Pounds Converter on existing catalog slug ounces-to-pounds-converter (OuncesToPoundsConverter, catalog 6af46f17a27d8d1d4e990b61). Three-field oz↔lb↔kg with exact avoirdupois 1 lb = 16 oz and 1 lb = 0.45359237 kg; default 16 oz; rejects negative mass; mass ounces only; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-424b delivery for Conversion and Units ounces↔pounds mass converter.
+- **Important Files:** frontend/src/tools/calculators/ounces-to-pounds/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–64 oz; reverse lb; 16/32 oz→kg; 1 kg reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Ounces to Grams Converter
 - **Summary:** Shipped Ounces to Grams Converter on existing catalog slug ounces-to-grams-converter (OuncesToGramsConverter, catalog 6af46f17a27d8d1d4e990b5f). Bidirectional exact avoirdupois oz↔g (1 oz = 28.349523125 g); default 1 oz; rejects negative mass; troy/fluid-ounce informational note; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-423b delivery for Conversion and Units ounces↔grams mass converter.
