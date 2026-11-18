@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { type SupportedCurrency } from '@/tools/shared/currency';
 import { InvestmentForm } from './InvestmentForm';
 import { InvestmentResults } from './InvestmentResults';
 import {
@@ -15,6 +21,11 @@ import {
 } from './types';
 import { validateInvestmentInput } from './validation';
 
+const MONEY_FIELDS = ['initialInvestment', 'contributionAmount'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts initial investment and contribution amounts using stored exchange rates. Return rate, term, compounding, and schedule stay the same.';
+
 export function InvestmentCalculator({
   metadata,
   className = '',
@@ -22,6 +33,8 @@ export function InvestmentCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<InvestmentInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<InvestmentFieldErrors>({});
   const [result, setResult] = React.useState<InvestmentResult | null>(() => {
@@ -32,10 +45,15 @@ export function InvestmentCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const apply = (next: InvestmentInput) => {
     setInput(next);
@@ -43,6 +61,36 @@ export function InvestmentCalculator({
     setErrors(validation.errors);
     setResult(validation.result);
     setIncomplete(!validation.isValid && Object.keys(validation.errors).length === 0);
+  };
+
+  const handleChange = (next: InvestmentInput) => {
+    setConversionError(null);
+    apply(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    apply({
+      ...input,
+      ...converted.values,
+      currency,
+    });
   };
 
   const handleReset = () => {
@@ -54,6 +102,7 @@ export function InvestmentCalculator({
     setIncomplete(false);
     setCopied(false);
     setShared(false);
+    setConversionError(null);
   };
 
   const summary = result
@@ -64,7 +113,7 @@ export function InvestmentCalculator({
         result.formattedInflationAdjusted
           ? `Inflation-adjusted: ${result.formattedInflationAdjusted}`
           : null,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ]
         .filter(Boolean)
         .join('\n')
@@ -81,18 +130,26 @@ export function InvestmentCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Project final balance with compounding and optional contributions.{' '}
-            {CURRENCY_DENOMINATION_NOTE}
+            Project final balance with compounding and optional contributions. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="mt-1 text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <InvestmentForm
           input={input}
           errors={errors}
-          onChange={apply}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <InvestmentResults

@@ -4,7 +4,18 @@ import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import {
+  convertDraftMoneyFields,
+  convertDraftMoneyList,
+} from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import { calculateThreeXRent } from './calculation';
 import { ThreeXRentForm, draftToInput, inputToDraft, type ThreeXRentDraft } from './ThreeXRentForm';
 import { ThreeXRentResults } from './ThreeXRentResults';
@@ -15,11 +26,16 @@ import {
 } from './types';
 import { validateThreeXRent } from './validation';
 
+const MONEY_FIELDS = ['monthlyRent', 'grossMonthlyIncome'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts rent and income amounts using stored exchange rates. Multiplier and share percents stay the same.';
+
 function formatMultiple(value: number): string {
   return new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(value);
 }
 
-function summaryText(result: ThreeXRentResult): string {
+function summaryText(result: ThreeXRentResult, note: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   const lines = ['3x Rent Calculator — Omega Calculators'];
   if (result.mode === 'required-income' && result.requiredMonthlyIncome !== null && result.requiredAnnualIncome !== null) {
@@ -40,7 +56,7 @@ function summaryText(result: ThreeXRentResult): string {
   if (result.split === 'equal') {
     lines.push('Equal tenant shares are an assumption. Landlords may assess combined household income.');
   }
-  lines.push(CURRENCY_DENOMINATION_NOTE);
+  lines.push(note);
   return lines.join('\n');
 }
 
@@ -51,16 +67,23 @@ export function ThreeXRentCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<ThreeXRentDraft>(() => inputToDraft(DEFAULT_THREE_X_RENT_INPUT));
   const [errors, setErrors] = React.useState<ThreeXRentFieldErrors>({});
   const [result, setResult] = React.useState<ThreeXRentResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const evaluate = React.useCallback((next: ThreeXRentDraft) => {
     const parsed = draftToInput(next);
@@ -69,7 +92,45 @@ export function ThreeXRentCalculator({
     setResult(validation.isValid ? calculateThreeXRent(parsed) : null);
   }, []);
 
-  const sharePayload = result ? summaryText(result) : '';
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const incomes = convertDraftMoneyList(
+      draft.tenantIncomes,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!incomes.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next: ThreeXRentDraft = {
+      ...draft,
+      ...converted.values,
+      tenantIncomes: incomes.values,
+      currency,
+    };
+    setDraft(next);
+    evaluate(next);
+  };
+
+  const sharePayload = result ? summaryText(result, currencyNote) : '';
 
   return (
     <section
@@ -93,20 +154,25 @@ export function ThreeXRentCalculator({
               id="three-x-currency"
               aria-label="Display currency"
               value={draft.currency}
-              onChange={(currency) => {
-                const next = { ...draft, currency };
-                setDraft(next);
-                evaluate(next);
-              }}
+              onChange={handleCurrencyChange}
             />
           </div>
         </div>
       </div>
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <ThreeXRentForm
           draft={draft}
           errors={errors}
           onDraftChange={(next) => {
+            setConversionError(null);
             setDraft(next);
             evaluate(next);
           }}
@@ -121,6 +187,7 @@ export function ThreeXRentCalculator({
             setResult(null);
             setCopied(false);
             setShared(false);
+            setConversionError(null);
           }}
         />
         <ThreeXRentResults

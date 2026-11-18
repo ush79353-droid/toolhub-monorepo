@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   BusinessLoanFieldErrors,
@@ -18,6 +18,7 @@ interface BusinessLoanFormProps {
   input: BusinessLoanInput;
   errors: BusinessLoanFieldErrors;
   onChange: (field: keyof BusinessLoanInput, value: unknown) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
 }
 
 const inputClass =
@@ -49,7 +50,7 @@ function FieldLabel({
   );
 }
 
-export function BusinessLoanForm({ input, errors, onChange }: BusinessLoanFormProps) {
+export function BusinessLoanForm({ input, errors, onChange, onCurrencyChange }: BusinessLoanFormProps) {
   const [specsOpen, setSpecsOpen] = React.useState(true);
   const [feesOpen, setFeesOpen] = React.useState(true);
 
@@ -168,7 +169,7 @@ export function BusinessLoanForm({ input, errors, onChange }: BusinessLoanFormPr
                   <CurrencySelect
                     id="biz-currency"
                     value={input.currency}
-                    onChange={(currency) => onChange('currency', currency)}
+                    onChange={onCurrencyChange}
                   />
                 </div>
               </div>

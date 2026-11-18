@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Select } from '@/components/ui/select';
 import { ChevronDown, RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import {
   MAX_RISKS,
   MIN_RISKS,
@@ -38,6 +38,7 @@ interface EmvFormProps {
   result: EmvResult | null;
   openRisks: Record<number, boolean>;
   onDraftChange: (draft: EmvDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onToggleRisk: (index: number) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
@@ -49,6 +50,7 @@ export function EmvForm({
   result,
   openRisks,
   onDraftChange,
+  onCurrencyChange,
   onToggleRisk,
   onSubmit,
   onReset,
@@ -134,7 +136,7 @@ export function EmvForm({
                       <CurrencySelect
                         id={`emv-impact-currency-${n}`}
                         value={draft.currency}
-                        onChange={(currency) => onDraftChange({ ...draft, currency })}
+                        onChange={onCurrencyChange}
                         aria-label={`Risk ${n} impact currency`}
                       />
                     </div>
@@ -201,7 +203,7 @@ export function EmvForm({
               <CurrencySelect
                 id="emv-total-currency"
                 value={draft.currency}
-                onChange={(currency) => onDraftChange({ ...draft, currency })}
+                onChange={onCurrencyChange}
                 aria-label="EMV currency"
               />
             </div>

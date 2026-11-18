@@ -1,11 +1,53 @@
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 export const APPROVED_COMPONENT_KEYS = [
+  'AfterTaxCostOfDebtCalculator',
+  'AnnuityCalculator',
+  'AnnuityPayoutCalculator',
   'AutoLoanCalculator',
+  'CaliforniaOvertimeCalculator',
+  'DebtAvalancheCalculator',
+  'DebtCalculator',
+  'DebtServiceCoverageRatioCalculator',
+  'DebtSnowballCalculator',
+  'DebtToAssetRatioCalculator',
+  'DebtToCapitalRatioCalculator',
+  'DebtToEquityCalculator',
+  'DeferredAnnuityCalculator',
+  'EbitdaMarginCalculator',
+  'FloridaOvertimeCalculator',
+  'FutureValueOfAnnuityCalculator',
+  'GeorgiaOvertimeCalculator',
+  'GrossMarginCalculator',
+  'GrossRentMultiplierCalculator',
+  'GrowingAnnuityCalculator',
+  'IllinoisOvertimeCalculator',
+  'ImmediateAnnuityCalculator',
+  'InterestRateParityCalculator',
   'LoanCalculator',
+  'LoanInterestCalculator',
+  'LotteryAnnuityCalculator',
+  'MarginAndMarkupCalculator',
+  'MarginAndVatCalculator',
+  'MarginCalculatorClassic',
+  'MarginCallCalculator',
+  'MarginOfSafetyCalculator',
+  'NetDebtCalculator',
+  'NetEffectiveRentCalculator',
+  'NewYorkOvertimeCalculator',
+  'OperatingMarginCalculator',
+  'OvertimeCalculator',
+  'OvertimePaycheckCalculator',
+  'PresentValueOfAnnuityCalculator',
+  'RentIncreaseCalculator',
+  'RentOrBuyCalculator',
   'RrefCalculator',
   'ArmMortgageCalculator',
   'HundredDayCalculator',
+  'SalaryWithOvertimeCalculator',
+  'TexasOvertimeCalculator',
+  'TimesInterestEarnedCalculator',
+  'VariableAnnuityCalculator',
   'ZeroToSixtyCalculator',
   'TwelveVoltWireCalculator',
   'TwelveHourShiftPayCalculator',
@@ -34,6 +76,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AstronomicalUnitCalculator',
   'PixelsToInchesConverter',
   'DecimeterToMeterConverter',
+  'DeferredPaymentLoanCalculator',
   'SquareKilometersToAcresConverter',
   'FeetAndInchesCalculator',
   'YardsToAcresCalculator',
@@ -45,12 +88,32 @@ export const APPROVED_COMPONENT_KEYS = [
   'MgToMlCalculator',
   'CubicYardsToTonsCalculator',
   'MlToCupsConverter',
+  'MlToCcConverter',
+  'MlToKgConverter',
+  'MlToLbsConversion',
+  'MlToOzConverter',
+  'MlToTbspConverter',
+  'MlToTspConverter',
+  'MlToUlConversion',
   'DecagramToGramConverter',
   'PintToPoundCalculator',
+  'PintsToCupsConverter',
+  'PintsToGallonsConverter',
+  'QuartsToGallonsConverter',
   'DropsToMlConverter',
   'PoundsAndOuncesCalculator',
+  'PoundsToGramsConverter',
+  'PoundsToLbsConverter',
+  'PoundsToOuncesConverter',
+  'PoundsToStoneConverter',
+  'OunceToKgConverter',
+  'OuncesToGramsConverter',
+  'OuncesToMillilitersConverter',
+  'OuncesToPoundsConverter',
+  'OzToCcConverter',
   'OzToCupsConverter',
   'GallonCalculator',
+  'PricePerLiterToGallonConverter',
   'QuartsToPoundsConverter',
   'GallonsToPoundsConverter',
   'VolumeConversion',
@@ -60,6 +123,12 @@ export const APPROVED_COMPONENT_KEYS = [
   'ForceConverter',
   'NmToInLbsConverter',
   'InchLbsToNmConverter',
+  'PaToPsiConversion',
+  'PascalConversion',
+  'PsiConverter',
+  'PsiToAtmConversion',
+  'PsiToInchesOfWaterConversion',
+  'PressureUnitConversion',
   'PressureConversion',
   'InchPoundsToFootPoundsConverter',
   'PsiToGpmCalculator',
@@ -67,6 +136,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'TorqueToHpCalculator',
   'NewtonMeterCalculator',
   'TorrToAtmConverter',
+  'MmhgToAtmConversion',
+  'MmToAtmConverter',
   'NmToFtLbsConverter',
   'CoordinatesConverter',
   'LatLongToUtmConverter',
@@ -93,6 +164,229 @@ export const APPROVED_COMPONENT_KEYS = [
   'ByteConversionCalculator',
   'MbpsToGbpsConverter',
   'CapacitanceConverter',
+  'MbToGbConverter',
+  'ColorConverter',
+  'RgbToHexConverter',
+  'HexToRgbConverter',
+  'UnicodeTextConverter',
+  'KbToMbConverter',
+  'UnixTimeConverter',
+  'MbpsCalculator',
+  'MilitaryTimeConverter',
+  'TimeZonesConverter',
+  'MinutesToHoursConverter',
+  'YearsToDecadesCalculator',
+  'TimeUnitConverter',
+  'ZuluTimeConverter',
+  'AngleConversionCalculator',
+  'MsToKmhConverter',
+  'CcfToThermsCalculator',
+  'NaturalGasConverter',
+  'CentsToDollarsCalculator',
+  'NmToJoulesCalculator',
+  'CgsSystemOfUnitsConverter',
+  'NickelsToDollarsCalculator',
+  'ConversionCalculator',
+  'PaperQuantityConverter',
+  'CpsCalculator',
+  'PenniesToDollarsCalculator',
+  'DbmToWattsCalculator',
+  'PowerConverter',
+  'DensityConversion',
+  'PpmCalculator',
+  'DimensionalAnalysisCalculator',
+  'PpmToMglConverter',
+  'DimesToDollarsCalculator',
+  'PxToEmConverter',
+  'EnergyConversionCalculator',
+  'QuantityConverter',
+  'MpgToL100Converter',
+  'QuartersToDollarsCalculator',
+  'GramsToCaloriesCalculator',
+  'RadiationConverter',
+  'HardnessConversionCalculator',
+  'RmsToWattsConverter',
+  'JoulesToVoltsCalculator',
+  'SpeedConversionCalculator',
+  'KnotsToKphConverter',
+  'TemperatureConversionCalculator',
+  'KnotsToMphConverter',
+  'UppercaseToLowercaseConverter',
+  'LeetSpeakTranslator',
+  'WeirdUnitsConverter',
+  'LowercaseToUppercaseConverter',
+  'AcresToHectaresConverter',
+  'LbsToPsiConverter',
+  'AcresToSquareFeetConverter',
+  'LbsToStoneConverter',
+  'AngstromToNmConverter',
+  'LitersToPoundsCalculator',
+  'AtmConversionCalculator',
+  'LiterToCcConverter',
+  'AtmToPascalsConverter',
+  'LotSizeToAcresCalculator',
+  'BarometricPressureConverter',
+  'LotSizeToSqftCalculator',
+  'BarToAtmConverter',
+  'LToGalConverter',
+  'BarToPsiConverter',
+  'McgToMlConverter',
+  'BarToPsigConverter',
+  'MeasurementConverter',
+  'CcToGramsConverter',
+  'MeterConverter',
+  'CcToLiterConverter',
+  'MetersToFeetConverter',
+  'CcToMlConverter',
+  'MeterToMileConverter',
+  'CcToOzConverter',
+  'MetricConverter',
+  'CelsiusConverter',
+  'MetricToImperialConverter',
+  'CelsiusToFahrenheitConverter',
+  'CentigradeToCelsiusConverter',
+  'MetricToSaeCalculator',
+  'CmHeightConversionCalculator',
+  'CentimeterCalculator',
+  'CentToSquareMeterConverter',
+  'CmToFtInConverter',
+  'CmToInConverter',
+  'CmToKmConverter',
+  'CmToMConverter',
+  'CmToMmConverter',
+  'CubicFeetToCubicMetersConverter',
+  'CubicFeetToGallonsConverter',
+  'CubicFeetToPoundsCalculator',
+  'CubicInchesToGallonsConverter',
+  'CubicMeterToTonConverter',
+  'CupsToGallonsConverter',
+  'CupsToOzConverter',
+  'CupsToPintsConverter',
+  'CupsToQuartsConverter',
+  'DayConverter',
+  'DaysToMonthsCalculator',
+  'DaysToWeeksCalculator',
+  'DaysToYearsCalculator',
+  'DegreesToMinutesConverter',
+  'DegreesToRadiansConverter',
+  'RadiansToDegreesConverter',
+  'DegreesToSecondsConverter',
+  'DistanceConverter',
+  'DmConverter',
+  'FahrenheitConverter',
+  'FahrenheitToCelsiusConverter',
+  'FeetConverter',
+  'FeetToMilesConverter',
+  'FeetToYardsConverter',
+  'FluidOuncesToPoundsConverter',
+  'FootToCentimeterConverter',
+  'FtToMConverter',
+  'GajToSquareYardConverter',
+  'GallonsToCubicFeetConverter',
+  'GallonsToCupsConverter',
+  'GallonsToGramsConverter',
+  'GallonsToPintsConverter',
+  'GallonsToQuartsConverter',
+  'GallonsToTonsConverter',
+  'GalToKgConverter',
+  'GramsInMlConverter',
+  'GramsToFlOzConverter',
+  'GramToLiterConversion',
+  'GrToMlConverter',
+  'GToTspConverter',
+  'GToLbsConverter',
+  'HectaresToAcresConverter',
+  'HeightConverter',
+  'HourConverter',
+  'HoursToDaysCalculator',
+  'HoursToMinutesConverter',
+  'HoursToSecondsConverter',
+  'HoursToWeekConversion',
+  'HoursToYearsConverter',
+  'ImperialCalculator',
+  'ImperialToMetricConversion',
+  'InchConverter',
+  'InchToMeterCalculator',
+  'InchesToYardConversion',
+  'InToCmConverter',
+  'KathaToSquareFeetConverter',
+  'KelvinConverter',
+  'KelvinToCelsiusConverter',
+  'KelvinToFahrenheitConverter',
+  'KgCmToPsiConverter',
+  'KgToLbsConverter',
+  'KgToLiterConverter',
+  'KgToMlConverter',
+  'KgToOunceConverter',
+  'KgToStonesConverter',
+  'KilometerCalculator',
+  'KilometerToMeterConverter',
+  'KilometersToMilesCalculator',
+  'KmToFeetConversion',
+  'KpaConverter',
+  'KpaToAtmConversion',
+  'KpaToMmhgConversion',
+  'KpaToPsiConversion',
+  'KsiToMpaConverter',
+  'KsiToPsiConversion',
+  'LandAreaCalculator',
+  'LbsToGConverter',
+  'LbsToKgConverter',
+  'LbsToPoundsConverter',
+  'MetricToStandardConverter',
+  'MgToCcConverter',
+  'MgToLbsConverter',
+  'MgToTablespoonConverter',
+  'MgToTeaspoonConverter',
+  'MicronToMilConversionCalculator',
+  'MilConversion',
+  'MileConversionCalculator',
+  'MillimeterCalculator',
+  'MmCalculator',
+  'MmToFootConverter',
+  'MmToInchesConversion',
+  'MmToKmConversion',
+  'MmToMConversion',
+  'MillisecondsConverter',
+  'MilToInchConversion',
+  'MilToMmConversion',
+  'MinuteConverter',
+  'MinutesToDaysCalculator',
+  'MinutesToDecimalCalculator',
+  'MinutesToSecondsConverter',
+  'MinutesToYearsConversion',
+  'MonthsToYearsCalculator',
+  'MpaConversion',
+  'MpaToPsiConversion',
+  'MpaToPsigConversion',
+  'MsToSecondsConverter',
+  'SecondsConverter',
+  'SecondsToDaysConverter',
+  'SecondsToHoursConverter',
+  'SecondsToMinutesConverter',
+  'SecondsToYearsConversion',
+  'SquareCmToSquareMmConverter',
+  'SquareFeetConverter',
+  'SquareFeetToAcresCalculator',
+  'SquareInchToSquareFootConverter',
+  'SquareMeterConverter',
+  'SquareMetersToSquareFeetConverter',
+  'SquareMilesToSquareKmConverter',
+  'SquareYardConverter',
+  'StoneToKgConverter',
+  'StoneToLbsConverter',
+  'TbspToGramsConverter',
+  'TbspToMlConverter',
+  'TspToGramsConverter',
+  'TspToMlConverter',
+  'WeeksToMonthsCalculator',
+  'WeeksToYearsConverter',
+  'YardConversionCalculator',
+  'YardToMeterConverter',
+  'YardToMileConverter',
+  'YardsToMetersConversion',
+  'NmConverter',
+  'NmToMConverter',
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
@@ -108,6 +402,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SalesCommissionCalculator',
   'SellThroughRateCalculator',
   'SimpleInterestCalculator',
+  'TdsInterestCalculator',
   'SinkingFundCalculator',
   'SmokersCtcCalculator',
   'TenureCalculator',
@@ -125,7 +420,9 @@ export const APPROVED_COMPONENT_KEYS = [
   'AppreciationCalculator',
   'AnnualizedReturnCalculator',
   'ApyCalculator',
+  'BalloonPaymentCalculator',
   'BasisPointCalculator',
+  'BetaStockCalculator',
   'AverageCollectionPeriodCalculator',
   'AverageFixedCostCalculator',
   'BounceRateCalculator',
@@ -137,7 +434,12 @@ export const APPROVED_COMPONENT_KEYS = [
   'BusinessBudgetCalculator',
   'BusinessValuationCalculator',
   'CagrCalculator',
+  'CapmCalculator',
   'CapitalGainsYieldCalculator',
+  'CarInterestCalculator',
+  'CarLoanEmiCalculator',
+  'CarriedInterestCalculator',
+  'CashBackOrLowInterestCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
   'ContributionMarginCalculator',
@@ -145,6 +447,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CostFunctionCalculator',
   'CostOfDoingBusinessCalculator',
   'CostOfGoodsSoldCalculator',
+  'CostOfEquityCalculator',
   'CpaCalculator',
   'CpcAndCpmCalculator',
   'CpmCalculator',
@@ -152,8 +455,10 @@ export const APPROVED_COMPONENT_KEYS = [
   'CustomerAcquisitionCostCalculator',
   'CustomerRetentionRateCalculator',
   'DaysOffCalculator',
+  'DividendDiscountModelCalculator',
   'DirectMaterialPriceVarianceCalculator',
   'EarCalculator',
+  'EarlyLoanPayoffCalculator',
   'EquivalentRateCalculator',
   'EffectiveCorporateTaxRateCalculator',
   'EmvCalculator',
@@ -172,6 +477,10 @@ export const APPROVED_COMPONENT_KEYS = [
   'LemonadeStandCalculator',
   'LernerIndexCalculator',
   'LiquidNetWorthCalculator',
+  'LoanBalanceCalculator',
+  'LoanPaymentCalculator',
+  'LoanRepaymentCalculator',
+  'QuizLoanBalanceCalculator',
   'ManHoursCalculator',
   'MarginInterestCalculator',
   'MirrCalculator',
@@ -187,17 +496,36 @@ export const APPROVED_COMPONENT_KEYS = [
   'OptimalHedgeRatioCalculator',
   'OpportunityCostCalculator',
   'ParkingRatioCalculator',
+  'PartiallyAmortizedLoanCalculator',
+  'PaydayLoanCalculator',
+  'PaymentCalculator',
   'PaybackPeriodCalculator',
   'PercentageReturnCalculator',
   'PerpetuityCalculator',
+  'PostJudgmentInterestCalculator',
   'PreAndPostMoneyValuationCalculator',
   'PresentValueCalculator',
   'PriceQuantityCalculator',
+  'ProratedRentCalculator',
   'PvgoCalculator',
   'PvifaCalculator',
   'RateOfReturnCalculator',
   'RealRateOfReturnCalculator',
+  'RentSplitCalculator',
+  'RentVsBuyCalculator',
   'BitcoinEtfCalculator',
+  'BiweeklyMortgageCalculator',
+  'BiWeeklyMortgagePaymentCalculator',
+  'BoatLoanCalculator',
+  'JumboLoanCalculator',
+  'LandLoanCalculator',
+  'PagIbigHousingLoanCalculator',
+  'RvLoanCalculator',
+  'StudentLoanCalculator',
+  'StudentLoanForgivenessCalculator',
+  'StudentLoanPaymentCalculator',
+  'SimpleMortgageCalculator',
+  'LtvCalculator',
   'CdCalculator',
   'CompoundInterestCalculator',
   'DiscountedCashFlowCalculator',
@@ -205,14 +533,36 @@ export const APPROVED_COMPONENT_KEYS = [
   'CompoundGrowthCalculator',
   'CompoundInterestRateCalculator',
   'ContinuousCompoundInterestCalculator',
+  'CouponPaymentCalculator',
   'EffectiveAnnualYieldCalculator',
   'EffectiveInterestRateCalculator',
   'ExpectedUtilityCalculator',
   'FutureValueCalculator',
   'FdCalculator',
+  'FhaLoanCalculator',
+  'HomeEquityLoanCalculator',
+  'HomeImprovementLoanCalculator',
+  'HomeLoanEmiCalculator',
+  'HomeLoanCalculator',
+  'MortgageTaxesInsuranceCalculator',
+  'MortgageComparisonCalculator',
+  'HomeMortgageCalculator',
+  'MortgageAccelerationCalculator',
+  'MortgageAmortizationCalculator',
+  'MortgagePrepaymentCalculator',
+  'MortgageWithExtraPaymentsCalculator',
+  'MortgagePointsCalculator',
+  'CanadianMortgageCalculator',
+  'MortgageCalculatorUk',
+  'MortgageInterestCalculator',
+  'MortgageRateCalculator',
   'HoldingPeriodReturnCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
+  'InterestCalculator',
+  'InterestCoverageRatioCalculator',
+  'InterestOnlyMortgageCalculator',
+  'InterestPerDayCalculator',
   'InterestRateCalculator',
   'IrrCalculator',
   'InvestmentCalculator',
@@ -220,7 +570,16 @@ export const APPROVED_COMPONENT_KEYS = [
   'JensensAlphaCalculator',
   'SavingsInterestRateCalculator',
   'SharpeRatioCalculator',
+  'VaMortgageCalculator',
   'ValueAtRiskCalculator',
+  'EidlCalculator',
+  'CaliforniaStimulusCheckIiCalculator',
+  'HealsActStimulusCalculator',
+  'HeroesActStimulusCalculator',
+  'StudentLoanRepaymentCovidCalculator',
+  'StimulusCheck40kCalculator',
+  'CashActStimulusCalculator',
+  'SecondStimulus900BillionCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
@@ -277,6 +636,7 @@ if (isDirect) {
     !isApprovedComponentKey('AstronomicalUnitCalculator') ||
     !isApprovedComponentKey('PixelsToInchesConverter') ||
     !isApprovedComponentKey('DecimeterToMeterConverter') ||
+    !isApprovedComponentKey('DeferredPaymentLoanCalculator') ||
     !isApprovedComponentKey('SquareKilometersToAcresConverter') ||
     !isApprovedComponentKey('FeetAndInchesCalculator') ||
     !isApprovedComponentKey('YardsToAcresCalculator') ||
@@ -288,12 +648,32 @@ if (isDirect) {
     !isApprovedComponentKey('MgToMlCalculator') ||
     !isApprovedComponentKey('CubicYardsToTonsCalculator') ||
     !isApprovedComponentKey('MlToCupsConverter') ||
+    !isApprovedComponentKey('MlToCcConverter') ||
+    !isApprovedComponentKey('MlToKgConverter') ||
+    !isApprovedComponentKey('MlToLbsConversion') ||
+    !isApprovedComponentKey('MlToOzConverter') ||
+    !isApprovedComponentKey('MlToTbspConverter') ||
+    !isApprovedComponentKey('MlToTspConverter') ||
+    !isApprovedComponentKey('MlToUlConversion') ||
     !isApprovedComponentKey('DecagramToGramConverter') ||
     !isApprovedComponentKey('PintToPoundCalculator') ||
+    !isApprovedComponentKey('PintsToCupsConverter') ||
+    !isApprovedComponentKey('PintsToGallonsConverter') ||
+    !isApprovedComponentKey('QuartsToGallonsConverter') ||
     !isApprovedComponentKey('DropsToMlConverter') ||
     !isApprovedComponentKey('PoundsAndOuncesCalculator') ||
+    !isApprovedComponentKey('PoundsToGramsConverter') ||
+    !isApprovedComponentKey('PoundsToLbsConverter') ||
+    !isApprovedComponentKey('PoundsToOuncesConverter') ||
+    !isApprovedComponentKey('PoundsToStoneConverter') ||
+    !isApprovedComponentKey('OunceToKgConverter') ||
+    !isApprovedComponentKey('OuncesToGramsConverter') ||
+    !isApprovedComponentKey('OuncesToMillilitersConverter') ||
+    !isApprovedComponentKey('OuncesToPoundsConverter') ||
+    !isApprovedComponentKey('OzToCcConverter') ||
     !isApprovedComponentKey('OzToCupsConverter') ||
     !isApprovedComponentKey('GallonCalculator') ||
+    !isApprovedComponentKey('PricePerLiterToGallonConverter') ||
     !isApprovedComponentKey('QuartsToPoundsConverter') ||
     !isApprovedComponentKey('GallonsToPoundsConverter') ||
     !isApprovedComponentKey('VolumeConversion') ||
@@ -303,6 +683,12 @@ if (isDirect) {
     !isApprovedComponentKey('ForceConverter') ||
     !isApprovedComponentKey('NmToInLbsConverter') ||
     !isApprovedComponentKey('InchLbsToNmConverter') ||
+    !isApprovedComponentKey('PaToPsiConversion') ||
+    !isApprovedComponentKey('PascalConversion') ||
+    !isApprovedComponentKey('PsiConverter') ||
+    !isApprovedComponentKey('PsiToAtmConversion') ||
+    !isApprovedComponentKey('PsiToInchesOfWaterConversion') ||
+    !isApprovedComponentKey('PressureUnitConversion') ||
     !isApprovedComponentKey('PressureConversion') ||
     !isApprovedComponentKey('InchPoundsToFootPoundsConverter') ||
     !isApprovedComponentKey('PsiToGpmCalculator') ||
@@ -310,6 +696,8 @@ if (isDirect) {
     !isApprovedComponentKey('TorqueToHpCalculator') ||
     !isApprovedComponentKey('NewtonMeterCalculator') ||
     !isApprovedComponentKey('TorrToAtmConverter') ||
+    !isApprovedComponentKey('MmhgToAtmConversion') ||
+    !isApprovedComponentKey('MmToAtmConverter') ||
     !isApprovedComponentKey('NmToFtLbsConverter') ||
     !isApprovedComponentKey('CoordinatesConverter') ||
     !isApprovedComponentKey('LatLongToUtmConverter') ||
@@ -336,6 +724,229 @@ if (isDirect) {
     !isApprovedComponentKey('ByteConversionCalculator') ||
     !isApprovedComponentKey('MbpsToGbpsConverter') ||
     !isApprovedComponentKey('CapacitanceConverter') ||
+    !isApprovedComponentKey('MbToGbConverter') ||
+    !isApprovedComponentKey('ColorConverter') ||
+    !isApprovedComponentKey('RgbToHexConverter') ||
+    !isApprovedComponentKey('HexToRgbConverter') ||
+    !isApprovedComponentKey('UnicodeTextConverter') ||
+    !isApprovedComponentKey('KbToMbConverter') ||
+    !isApprovedComponentKey('UnixTimeConverter') ||
+    !isApprovedComponentKey('MbpsCalculator') ||
+    !isApprovedComponentKey('MilitaryTimeConverter') ||
+    !isApprovedComponentKey('TimeZonesConverter') ||
+    !isApprovedComponentKey('MinutesToHoursConverter') ||
+    !isApprovedComponentKey('YearsToDecadesCalculator') ||
+    !isApprovedComponentKey('TimeUnitConverter') ||
+    !isApprovedComponentKey('ZuluTimeConverter') ||
+    !isApprovedComponentKey('AngleConversionCalculator') ||
+    !isApprovedComponentKey('MsToKmhConverter') ||
+    !isApprovedComponentKey('CcfToThermsCalculator') ||
+    !isApprovedComponentKey('NaturalGasConverter') ||
+    !isApprovedComponentKey('CentsToDollarsCalculator') ||
+    !isApprovedComponentKey('NmToJoulesCalculator') ||
+    !isApprovedComponentKey('CgsSystemOfUnitsConverter') ||
+    !isApprovedComponentKey('NickelsToDollarsCalculator') ||
+    !isApprovedComponentKey('ConversionCalculator') ||
+    !isApprovedComponentKey('PaperQuantityConverter') ||
+    !isApprovedComponentKey('CpsCalculator') ||
+    !isApprovedComponentKey('PenniesToDollarsCalculator') ||
+    !isApprovedComponentKey('DbmToWattsCalculator') ||
+    !isApprovedComponentKey('PowerConverter') ||
+    !isApprovedComponentKey('DensityConversion') ||
+    !isApprovedComponentKey('PpmCalculator') ||
+    !isApprovedComponentKey('DimensionalAnalysisCalculator') ||
+    !isApprovedComponentKey('PpmToMglConverter') ||
+    !isApprovedComponentKey('DimesToDollarsCalculator') ||
+    !isApprovedComponentKey('PxToEmConverter') ||
+    !isApprovedComponentKey('EnergyConversionCalculator') ||
+    !isApprovedComponentKey('QuantityConverter') ||
+    !isApprovedComponentKey('MpgToL100Converter') ||
+    !isApprovedComponentKey('QuartersToDollarsCalculator') ||
+    !isApprovedComponentKey('GramsToCaloriesCalculator') ||
+    !isApprovedComponentKey('RadiationConverter') ||
+    !isApprovedComponentKey('HardnessConversionCalculator') ||
+    !isApprovedComponentKey('RmsToWattsConverter') ||
+    !isApprovedComponentKey('JoulesToVoltsCalculator') ||
+    !isApprovedComponentKey('SpeedConversionCalculator') ||
+    !isApprovedComponentKey('KnotsToKphConverter') ||
+    !isApprovedComponentKey('TemperatureConversionCalculator') ||
+    !isApprovedComponentKey('KnotsToMphConverter') ||
+    !isApprovedComponentKey('UppercaseToLowercaseConverter') ||
+    !isApprovedComponentKey('LeetSpeakTranslator') ||
+    !isApprovedComponentKey('WeirdUnitsConverter') ||
+    !isApprovedComponentKey('LowercaseToUppercaseConverter') ||
+    !isApprovedComponentKey('AcresToHectaresConverter') ||
+    !isApprovedComponentKey('LbsToPsiConverter') ||
+    !isApprovedComponentKey('AcresToSquareFeetConverter') ||
+    !isApprovedComponentKey('LbsToStoneConverter') ||
+    !isApprovedComponentKey('AngstromToNmConverter') ||
+    !isApprovedComponentKey('LitersToPoundsCalculator') ||
+    !isApprovedComponentKey('AtmConversionCalculator') ||
+    !isApprovedComponentKey('LiterToCcConverter') ||
+    !isApprovedComponentKey('AtmToPascalsConverter') ||
+    !isApprovedComponentKey('LotSizeToAcresCalculator') ||
+    !isApprovedComponentKey('BarometricPressureConverter') ||
+    !isApprovedComponentKey('LotSizeToSqftCalculator') ||
+    !isApprovedComponentKey('BarToAtmConverter') ||
+    !isApprovedComponentKey('LToGalConverter') ||
+    !isApprovedComponentKey('BarToPsiConverter') ||
+    !isApprovedComponentKey('McgToMlConverter') ||
+    !isApprovedComponentKey('BarToPsigConverter') ||
+    !isApprovedComponentKey('MeasurementConverter') ||
+    !isApprovedComponentKey('CcToGramsConverter') ||
+    !isApprovedComponentKey('MeterConverter') ||
+    !isApprovedComponentKey('CcToLiterConverter') ||
+    !isApprovedComponentKey('MetersToFeetConverter') ||
+    !isApprovedComponentKey('CcToMlConverter') ||
+    !isApprovedComponentKey('MeterToMileConverter') ||
+    !isApprovedComponentKey('CcToOzConverter') ||
+    !isApprovedComponentKey('MetricConverter') ||
+    !isApprovedComponentKey('CelsiusConverter') ||
+    !isApprovedComponentKey('MetricToImperialConverter') ||
+    !isApprovedComponentKey('CelsiusToFahrenheitConverter') ||
+    !isApprovedComponentKey('CentigradeToCelsiusConverter') ||
+    !isApprovedComponentKey('MetricToSaeCalculator') ||
+    !isApprovedComponentKey('CmHeightConversionCalculator') ||
+    !isApprovedComponentKey('CentimeterCalculator') ||
+    !isApprovedComponentKey('CentToSquareMeterConverter') ||
+    !isApprovedComponentKey('CmToFtInConverter') ||
+    !isApprovedComponentKey('CmToInConverter') ||
+    !isApprovedComponentKey('CmToKmConverter') ||
+    !isApprovedComponentKey('CmToMConverter') ||
+    !isApprovedComponentKey('CmToMmConverter') ||
+    !isApprovedComponentKey('CubicFeetToCubicMetersConverter') ||
+    !isApprovedComponentKey('CubicFeetToGallonsConverter') ||
+    !isApprovedComponentKey('CubicFeetToPoundsCalculator') ||
+    !isApprovedComponentKey('CubicInchesToGallonsConverter') ||
+    !isApprovedComponentKey('CubicMeterToTonConverter') ||
+    !isApprovedComponentKey('CupsToGallonsConverter') ||
+    !isApprovedComponentKey('CupsToOzConverter') ||
+    !isApprovedComponentKey('CupsToPintsConverter') ||
+    !isApprovedComponentKey('CupsToQuartsConverter') ||
+    !isApprovedComponentKey('DayConverter') ||
+    !isApprovedComponentKey('DaysToMonthsCalculator') ||
+    !isApprovedComponentKey('DaysToWeeksCalculator') ||
+    !isApprovedComponentKey('DaysToYearsCalculator') ||
+    !isApprovedComponentKey('DegreesToMinutesConverter') ||
+    !isApprovedComponentKey('DegreesToRadiansConverter') ||
+    !isApprovedComponentKey('RadiansToDegreesConverter') ||
+    !isApprovedComponentKey('DegreesToSecondsConverter') ||
+    !isApprovedComponentKey('DistanceConverter') ||
+    !isApprovedComponentKey('DmConverter') ||
+    !isApprovedComponentKey('FahrenheitConverter') ||
+    !isApprovedComponentKey('FahrenheitToCelsiusConverter') ||
+    !isApprovedComponentKey('FeetConverter') ||
+    !isApprovedComponentKey('FeetToMilesConverter') ||
+    !isApprovedComponentKey('FeetToYardsConverter') ||
+    !isApprovedComponentKey('FluidOuncesToPoundsConverter') ||
+    !isApprovedComponentKey('FootToCentimeterConverter') ||
+    !isApprovedComponentKey('FtToMConverter') ||
+    !isApprovedComponentKey('GajToSquareYardConverter') ||
+    !isApprovedComponentKey('GallonsToCubicFeetConverter') ||
+    !isApprovedComponentKey('GallonsToCupsConverter') ||
+    !isApprovedComponentKey('GallonsToGramsConverter') ||
+    !isApprovedComponentKey('GallonsToPintsConverter') ||
+    !isApprovedComponentKey('GallonsToQuartsConverter') ||
+    !isApprovedComponentKey('GallonsToTonsConverter') ||
+    !isApprovedComponentKey('GalToKgConverter') ||
+    !isApprovedComponentKey('GramsInMlConverter') ||
+    !isApprovedComponentKey('GramsToFlOzConverter') ||
+    !isApprovedComponentKey('GramToLiterConversion') ||
+    !isApprovedComponentKey('GrToMlConverter') ||
+    !isApprovedComponentKey('GToTspConverter') ||
+    !isApprovedComponentKey('GToLbsConverter') ||
+    !isApprovedComponentKey('HectaresToAcresConverter') ||
+    !isApprovedComponentKey('HeightConverter') ||
+    !isApprovedComponentKey('HourConverter') ||
+    !isApprovedComponentKey('HoursToDaysCalculator') ||
+    !isApprovedComponentKey('HoursToMinutesConverter') ||
+    !isApprovedComponentKey('HoursToSecondsConverter') ||
+    !isApprovedComponentKey('HoursToWeekConversion') ||
+    !isApprovedComponentKey('HoursToYearsConverter') ||
+    !isApprovedComponentKey('ImperialCalculator') ||
+    !isApprovedComponentKey('ImperialToMetricConversion') ||
+    !isApprovedComponentKey('InchConverter') ||
+    !isApprovedComponentKey('InchToMeterCalculator') ||
+    !isApprovedComponentKey('InchesToYardConversion') ||
+    !isApprovedComponentKey('InToCmConverter') ||
+    !isApprovedComponentKey('KathaToSquareFeetConverter') ||
+    !isApprovedComponentKey('KelvinConverter') ||
+    !isApprovedComponentKey('KelvinToCelsiusConverter') ||
+    !isApprovedComponentKey('KelvinToFahrenheitConverter') ||
+    !isApprovedComponentKey('KgCmToPsiConverter') ||
+    !isApprovedComponentKey('KgToLbsConverter') ||
+    !isApprovedComponentKey('KgToLiterConverter') ||
+    !isApprovedComponentKey('KgToMlConverter') ||
+    !isApprovedComponentKey('KgToOunceConverter') ||
+    !isApprovedComponentKey('KgToStonesConverter') ||
+    !isApprovedComponentKey('KilometerCalculator') ||
+    !isApprovedComponentKey('KilometerToMeterConverter') ||
+    !isApprovedComponentKey('KilometersToMilesCalculator') ||
+    !isApprovedComponentKey('KmToFeetConversion') ||
+    !isApprovedComponentKey('KpaConverter') ||
+    !isApprovedComponentKey('KpaToAtmConversion') ||
+    !isApprovedComponentKey('KpaToMmhgConversion') ||
+    !isApprovedComponentKey('KpaToPsiConversion') ||
+    !isApprovedComponentKey('KsiToMpaConverter') ||
+    !isApprovedComponentKey('KsiToPsiConversion') ||
+    !isApprovedComponentKey('LandAreaCalculator') ||
+    !isApprovedComponentKey('LbsToGConverter') ||
+    !isApprovedComponentKey('LbsToKgConverter') ||
+    !isApprovedComponentKey('LbsToPoundsConverter') ||
+    !isApprovedComponentKey('MetricToStandardConverter') ||
+    !isApprovedComponentKey('MgToCcConverter') ||
+    !isApprovedComponentKey('MgToLbsConverter') ||
+    !isApprovedComponentKey('MgToTablespoonConverter') ||
+    !isApprovedComponentKey('MgToTeaspoonConverter') ||
+    !isApprovedComponentKey('MicronToMilConversionCalculator') ||
+    !isApprovedComponentKey('MilConversion') ||
+    !isApprovedComponentKey('MileConversionCalculator') ||
+    !isApprovedComponentKey('MillimeterCalculator') ||
+    !isApprovedComponentKey('MmCalculator') ||
+    !isApprovedComponentKey('MmToFootConverter') ||
+    !isApprovedComponentKey('MmToInchesConversion') ||
+    !isApprovedComponentKey('MmToKmConversion') ||
+    !isApprovedComponentKey('MmToMConversion') ||
+    !isApprovedComponentKey('MillisecondsConverter') ||
+    !isApprovedComponentKey('MilToInchConversion') ||
+    !isApprovedComponentKey('MilToMmConversion') ||
+    !isApprovedComponentKey('MinuteConverter') ||
+    !isApprovedComponentKey('MinutesToDaysCalculator') ||
+    !isApprovedComponentKey('MinutesToDecimalCalculator') ||
+    !isApprovedComponentKey('MinutesToSecondsConverter') ||
+    !isApprovedComponentKey('MinutesToYearsConversion') ||
+    !isApprovedComponentKey('MonthsToYearsCalculator') ||
+    !isApprovedComponentKey('MpaConversion') ||
+    !isApprovedComponentKey('MpaToPsiConversion') ||
+    !isApprovedComponentKey('MpaToPsigConversion') ||
+    !isApprovedComponentKey('MsToSecondsConverter') ||
+    !isApprovedComponentKey('SecondsConverter') ||
+    !isApprovedComponentKey('SecondsToDaysConverter') ||
+    !isApprovedComponentKey('SecondsToHoursConverter') ||
+    !isApprovedComponentKey('SecondsToMinutesConverter') ||
+    !isApprovedComponentKey('SecondsToYearsConversion') ||
+    !isApprovedComponentKey('SquareCmToSquareMmConverter') ||
+    !isApprovedComponentKey('SquareFeetConverter') ||
+    !isApprovedComponentKey('SquareFeetToAcresCalculator') ||
+    !isApprovedComponentKey('SquareInchToSquareFootConverter') ||
+    !isApprovedComponentKey('SquareMeterConverter') ||
+    !isApprovedComponentKey('SquareMetersToSquareFeetConverter') ||
+    !isApprovedComponentKey('SquareMilesToSquareKmConverter') ||
+    !isApprovedComponentKey('SquareYardConverter') ||
+    !isApprovedComponentKey('StoneToKgConverter') ||
+    !isApprovedComponentKey('StoneToLbsConverter') ||
+    !isApprovedComponentKey('TbspToGramsConverter') ||
+    !isApprovedComponentKey('TbspToMlConverter') ||
+    !isApprovedComponentKey('TspToGramsConverter') ||
+    !isApprovedComponentKey('TspToMlConverter') ||
+    !isApprovedComponentKey('WeeksToMonthsCalculator') ||
+    !isApprovedComponentKey('WeeksToYearsConverter') ||
+    !isApprovedComponentKey('YardConversionCalculator') ||
+    !isApprovedComponentKey('YardToMeterConverter') ||
+    !isApprovedComponentKey('YardToMileConverter') ||
+    !isApprovedComponentKey('YardsToMetersConversion') ||
+    !isApprovedComponentKey('NmConverter') ||
+    !isApprovedComponentKey('NmToMConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
@@ -351,6 +962,7 @@ if (isDirect) {
     !isApprovedComponentKey('SalesCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     !isApprovedComponentKey('SimpleInterestCalculator') ||
+    !isApprovedComponentKey('TdsInterestCalculator') ||
     !isApprovedComponentKey('SinkingFundCalculator') ||
     !isApprovedComponentKey('SmokersCtcCalculator') ||
     !isApprovedComponentKey('TenureCalculator') ||
@@ -368,7 +980,9 @@ if (isDirect) {
     !isApprovedComponentKey('AppreciationCalculator') ||
     !isApprovedComponentKey('AnnualizedReturnCalculator') ||
     !isApprovedComponentKey('ApyCalculator') ||
+    !isApprovedComponentKey('BalloonPaymentCalculator') ||
     !isApprovedComponentKey('BasisPointCalculator') ||
+    !isApprovedComponentKey('BetaStockCalculator') ||
         !isApprovedComponentKey('AverageCollectionPeriodCalculator') ||
     !isApprovedComponentKey('AverageFixedCostCalculator') ||
     !isApprovedComponentKey('BounceRateCalculator') ||
@@ -380,7 +994,12 @@ if (isDirect) {
     !isApprovedComponentKey('BusinessBudgetCalculator') ||
     !isApprovedComponentKey('BusinessValuationCalculator') ||
     !isApprovedComponentKey('CagrCalculator') ||
+    !isApprovedComponentKey('CapmCalculator') ||
     !isApprovedComponentKey('CapitalGainsYieldCalculator') ||
+    !isApprovedComponentKey('CarInterestCalculator') ||
+    !isApprovedComponentKey('CarLoanEmiCalculator') ||
+    !isApprovedComponentKey('CarriedInterestCalculator') ||
+    !isApprovedComponentKey('CashBackOrLowInterestCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
     !isApprovedComponentKey('ConsultingFeesCalculator') ||
     !isApprovedComponentKey('ContributionMarginCalculator') ||
@@ -388,6 +1007,7 @@ if (isDirect) {
     !isApprovedComponentKey('CostFunctionCalculator') ||
     !isApprovedComponentKey('CostOfDoingBusinessCalculator') ||
     !isApprovedComponentKey('CostOfGoodsSoldCalculator') ||
+    !isApprovedComponentKey('CostOfEquityCalculator') ||
     !isApprovedComponentKey('CpaCalculator') ||
     !isApprovedComponentKey('CpcAndCpmCalculator') ||
     !isApprovedComponentKey('CpmCalculator') ||
@@ -395,8 +1015,10 @@ if (isDirect) {
     !isApprovedComponentKey('CustomerAcquisitionCostCalculator') ||
     !isApprovedComponentKey('CustomerRetentionRateCalculator') ||
     !isApprovedComponentKey('DaysOffCalculator') ||
+    !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
     !isApprovedComponentKey('EarCalculator') ||
+    !isApprovedComponentKey('EarlyLoanPayoffCalculator') ||
     !isApprovedComponentKey('EquivalentRateCalculator') ||
     !isApprovedComponentKey('EffectiveCorporateTaxRateCalculator') ||
     !isApprovedComponentKey('EmvCalculator') ||
@@ -415,6 +1037,10 @@ if (isDirect) {
     !isApprovedComponentKey('LemonadeStandCalculator') ||
     !isApprovedComponentKey('LernerIndexCalculator') ||
     !isApprovedComponentKey('LiquidNetWorthCalculator') ||
+    !isApprovedComponentKey('LoanBalanceCalculator') ||
+    !isApprovedComponentKey('LoanPaymentCalculator') ||
+    !isApprovedComponentKey('LoanRepaymentCalculator') ||
+    !isApprovedComponentKey('QuizLoanBalanceCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
     !isApprovedComponentKey('MirrCalculator') ||
@@ -430,17 +1056,35 @@ if (isDirect) {
     !isApprovedComponentKey('OptimalHedgeRatioCalculator') ||
     !isApprovedComponentKey('OpportunityCostCalculator') ||
     !isApprovedComponentKey('ParkingRatioCalculator') ||
+    !isApprovedComponentKey('PartiallyAmortizedLoanCalculator') ||
+    !isApprovedComponentKey('PaydayLoanCalculator') ||
     !isApprovedComponentKey('PaybackPeriodCalculator') ||
     !isApprovedComponentKey('PercentageReturnCalculator') ||
     !isApprovedComponentKey('PerpetuityCalculator') ||
+    !isApprovedComponentKey('PostJudgmentInterestCalculator') ||
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
     !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
+    !isApprovedComponentKey('ProratedRentCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('PvifaCalculator') ||
     !isApprovedComponentKey('RateOfReturnCalculator') ||
     !isApprovedComponentKey('RealRateOfReturnCalculator') ||
+    !isApprovedComponentKey('RentSplitCalculator') ||
+    !isApprovedComponentKey('RentVsBuyCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
+    !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
+    !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
+    !isApprovedComponentKey('BoatLoanCalculator') ||
+    !isApprovedComponentKey('JumboLoanCalculator') ||
+    !isApprovedComponentKey('LandLoanCalculator') ||
+    !isApprovedComponentKey('PagIbigHousingLoanCalculator') ||
+    !isApprovedComponentKey('RvLoanCalculator') ||
+    !isApprovedComponentKey('StudentLoanCalculator') ||
+    !isApprovedComponentKey('StudentLoanForgivenessCalculator') ||
+    !isApprovedComponentKey('StudentLoanPaymentCalculator') ||
+    !isApprovedComponentKey('SimpleMortgageCalculator') ||
+    !isApprovedComponentKey('LtvCalculator') ||
     !isApprovedComponentKey('CdCalculator') ||
     !isApprovedComponentKey('CompoundInterestCalculator') ||
     !isApprovedComponentKey('DiscountedCashFlowCalculator') ||
@@ -448,14 +1092,36 @@ if (isDirect) {
     !isApprovedComponentKey('CompoundGrowthCalculator') ||
     !isApprovedComponentKey('CompoundInterestRateCalculator') ||
     !isApprovedComponentKey('ContinuousCompoundInterestCalculator') ||
+    !isApprovedComponentKey('CouponPaymentCalculator') ||
     !isApprovedComponentKey('EffectiveAnnualYieldCalculator') ||
     !isApprovedComponentKey('EffectiveInterestRateCalculator') ||
     !isApprovedComponentKey('ExpectedUtilityCalculator') ||
     !isApprovedComponentKey('FutureValueCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
+    !isApprovedComponentKey('FhaLoanCalculator') ||
+    !isApprovedComponentKey('HomeEquityLoanCalculator') ||
+    !isApprovedComponentKey('HomeImprovementLoanCalculator') ||
+    !isApprovedComponentKey('HomeLoanEmiCalculator') ||
+    !isApprovedComponentKey('HomeLoanCalculator') ||
+    !isApprovedComponentKey('MortgageTaxesInsuranceCalculator') ||
+    !isApprovedComponentKey('MortgageComparisonCalculator') ||
+    !isApprovedComponentKey('HomeMortgageCalculator') ||
+    !isApprovedComponentKey('MortgageAccelerationCalculator') ||
+    !isApprovedComponentKey('MortgageAmortizationCalculator') ||
+    !isApprovedComponentKey('MortgagePrepaymentCalculator') ||
+    !isApprovedComponentKey('MortgageWithExtraPaymentsCalculator') ||
+    !isApprovedComponentKey('MortgagePointsCalculator') ||
+    !isApprovedComponentKey('CanadianMortgageCalculator') ||
+    !isApprovedComponentKey('MortgageCalculatorUk') ||
+    !isApprovedComponentKey('MortgageInterestCalculator') ||
+    !isApprovedComponentKey('MortgageRateCalculator') ||
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
+    !isApprovedComponentKey('InterestCalculator') ||
+    !isApprovedComponentKey('InterestCoverageRatioCalculator') ||
+    !isApprovedComponentKey('InterestOnlyMortgageCalculator') ||
+    !isApprovedComponentKey('InterestPerDayCalculator') ||
     !isApprovedComponentKey('InterestRateCalculator') ||
     !isApprovedComponentKey('IrrCalculator') ||
     !isApprovedComponentKey('InvestmentCalculator') ||
@@ -463,7 +1129,58 @@ if (isDirect) {
     !isApprovedComponentKey('JensensAlphaCalculator') ||
     !isApprovedComponentKey('SavingsInterestRateCalculator') ||
     !isApprovedComponentKey('SharpeRatioCalculator') ||
+    !isApprovedComponentKey('VaMortgageCalculator') ||
     !isApprovedComponentKey('ValueAtRiskCalculator') ||
+    !isApprovedComponentKey('EidlCalculator') ||
+    !isApprovedComponentKey('CaliforniaStimulusCheckIiCalculator') ||
+    !isApprovedComponentKey('HealsActStimulusCalculator') ||
+    !isApprovedComponentKey('HeroesActStimulusCalculator') ||
+    !isApprovedComponentKey('StudentLoanRepaymentCovidCalculator') ||
+    !isApprovedComponentKey('StimulusCheck40kCalculator') ||
+    !isApprovedComponentKey('CashActStimulusCalculator') ||
+    !isApprovedComponentKey('SecondStimulus900BillionCalculator') ||
+    !isApprovedComponentKey('LoanInterestCalculator') ||
+    !isApprovedComponentKey('TimesInterestEarnedCalculator') ||
+    !isApprovedComponentKey('InterestRateParityCalculator') ||
+    !isApprovedComponentKey('DebtCalculator') ||
+    !isApprovedComponentKey('AfterTaxCostOfDebtCalculator') ||
+    !isApprovedComponentKey('DebtAvalancheCalculator') ||
+    !isApprovedComponentKey('DebtServiceCoverageRatioCalculator') ||
+    !isApprovedComponentKey('DebtSnowballCalculator') ||
+    !isApprovedComponentKey('DebtToAssetRatioCalculator') ||
+    !isApprovedComponentKey('DebtToEquityCalculator') ||
+    !isApprovedComponentKey('DebtToCapitalRatioCalculator') ||
+    !isApprovedComponentKey('NetDebtCalculator') ||
+    !isApprovedComponentKey('EbitdaMarginCalculator') ||
+    !isApprovedComponentKey('GrossMarginCalculator') ||
+    !isApprovedComponentKey('MarginAndMarkupCalculator') ||
+    !isApprovedComponentKey('MarginAndVatCalculator') ||
+    !isApprovedComponentKey('MarginCalculatorClassic') ||
+    !isApprovedComponentKey('MarginCallCalculator') ||
+    !isApprovedComponentKey('MarginOfSafetyCalculator') ||
+    !isApprovedComponentKey('OperatingMarginCalculator') ||
+    !isApprovedComponentKey('AnnuityCalculator') ||
+    !isApprovedComponentKey('AnnuityPayoutCalculator') ||
+    !isApprovedComponentKey('DeferredAnnuityCalculator') ||
+    !isApprovedComponentKey('FutureValueOfAnnuityCalculator') ||
+    !isApprovedComponentKey('GrowingAnnuityCalculator') ||
+    !isApprovedComponentKey('ImmediateAnnuityCalculator') ||
+    !isApprovedComponentKey('LotteryAnnuityCalculator') ||
+    !isApprovedComponentKey('PresentValueOfAnnuityCalculator') ||
+    !isApprovedComponentKey('VariableAnnuityCalculator') ||
+    !isApprovedComponentKey('OvertimeCalculator') ||
+    !isApprovedComponentKey('CaliforniaOvertimeCalculator') ||
+    !isApprovedComponentKey('FloridaOvertimeCalculator') ||
+    !isApprovedComponentKey('GeorgiaOvertimeCalculator') ||
+    !isApprovedComponentKey('IllinoisOvertimeCalculator') ||
+    !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
+    !isApprovedComponentKey('OvertimePaycheckCalculator') ||
+    !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||
+    !isApprovedComponentKey('TexasOvertimeCalculator') ||
+    !isApprovedComponentKey('GrossRentMultiplierCalculator') ||
+    !isApprovedComponentKey('NetEffectiveRentCalculator') ||
+    !isApprovedComponentKey('RentIncreaseCalculator') ||
+    !isApprovedComponentKey('RentOrBuyCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

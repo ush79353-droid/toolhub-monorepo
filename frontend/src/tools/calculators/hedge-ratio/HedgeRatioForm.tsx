@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type { HedgeRatioFieldErrors, HedgeRatioInput, HedgeRatioResult } from './types';
 
@@ -11,6 +11,7 @@ interface HedgeRatioFormProps {
   errors: HedgeRatioFieldErrors;
   result: HedgeRatioResult | null;
   onChange: (input: HedgeRatioInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -41,6 +42,7 @@ export function HedgeRatioForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: HedgeRatioFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -77,7 +79,7 @@ export function HedgeRatioForm({
             <CurrencySelect
               id="hr-exposure-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -110,7 +112,7 @@ export function HedgeRatioForm({
             <CurrencySelect
               id="hr-hedge-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>

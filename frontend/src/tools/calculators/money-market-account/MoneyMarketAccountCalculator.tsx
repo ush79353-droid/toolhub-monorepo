@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { MoneyMarketAccountForm } from './MoneyMarketAccountForm';
 import { formatMoney } from './calculation';
 import {
@@ -15,6 +21,11 @@ import {
 } from './types';
 import { validateMoneyMarketAccount } from './validation';
 
+const MONEY_FIELDS = ['startingBalance', 'recurringInvestment'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts starting balance, recurring deposits, and projected money amounts using stored exchange rates. Return %, SIP/one-time mode, and contribution frequency are unchanged.';
+
 export function MoneyMarketAccountCalculator({
   metadata,
   className = '',
@@ -22,22 +33,23 @@ export function MoneyMarketAccountCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<MoneyMarketAccountInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<MoneyMarketAccountFieldErrors>({});
   const [result, setResult] = React.useState<MoneyMarketAccountResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  React.useEffect(() => {
-    const validation = validateMoneyMarketAccount(input);
-    setErrors(validation.errors);
-    setResult(validation.result);
-  }, [input]);
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: MoneyMarketAccountInput) => {
     const validation = validateMoneyMarketAccount(next);
@@ -45,11 +57,39 @@ export function MoneyMarketAccountCalculator({
     setResult(validation.result);
   };
 
+  const handleChange = (next: MoneyMarketAccountInput) => {
+    setConversionError(null);
+    setInput(next);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates,
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({ ...input, ...converted.values, currency });
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
     setErrors({});
     setResult(null);
+    setConversionError(null);
     run(fresh);
   };
 
@@ -68,7 +108,7 @@ export function MoneyMarketAccountCalculator({
           `Total deposit: ${symbol}${result.formattedTotalDeposit}`,
           `Total interest: ${symbol}${result.formattedTotalInterest}`,
           `Future value: ${symbol}${result.formattedFutureValue}`,
-          CURRENCY_DENOMINATION_NOTE,
+          currencyNote,
         ]
           .filter(Boolean)
           .join('\n')
@@ -85,22 +125,27 @@ export function MoneyMarketAccountCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Project money market growth with optional recurring deposits.{' '}
-            {CURRENCY_DENOMINATION_NOTE}
+            Project money market growth with optional recurring deposits. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <MoneyMarketAccountForm
           input={input}
           errors={errors}
           result={result}
-          onChange={(next) => {
-            setInput(next);
-            run(next);
-          }}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <div className="flex flex-wrap gap-2">

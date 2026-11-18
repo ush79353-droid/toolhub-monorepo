@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type { CpcCpmDraft, CpcCpmField } from './types';
 
@@ -27,10 +27,17 @@ interface CpcAndCpmFormProps {
   draft: CpcCpmDraft;
   errors: Partial<Record<CpcCpmField | 'form', string>>;
   onDraftChange: (draft: CpcCpmDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
-export function CpcAndCpmForm({ draft, errors, onDraftChange, onReset }: CpcAndCpmFormProps) {
+export function CpcAndCpmForm({
+  draft,
+  errors,
+  onDraftChange,
+  onCurrencyChange,
+  onReset,
+}: CpcAndCpmFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
 
   const setField = (field: CpcCpmField, value: string) => {
@@ -41,10 +48,6 @@ export function CpcAndCpmForm({ draft, errors, onDraftChange, onReset }: CpcAndC
       manual[field] = true;
     }
     onDraftChange({ ...draft, [field]: value, manual });
-  };
-
-  const setCurrency = (currency: CpcCpmDraft['currency']) => {
-    onDraftChange({ ...draft, currency });
   };
 
   const moneyRow = (
@@ -76,7 +79,7 @@ export function CpcAndCpmForm({ draft, errors, onDraftChange, onReset }: CpcAndC
           <CurrencySelect
             id={`${id}-currency`}
             value={draft.currency}
-            onChange={setCurrency}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

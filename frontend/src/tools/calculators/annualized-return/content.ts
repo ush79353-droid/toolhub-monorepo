@@ -27,6 +27,6 @@ export const ANNUALIZED_RETURN_FAQS: readonly FAQItem[] = [
   {
     question: 'Does the currency selector convert amounts?',
     answer:
-      'No. In beginning/ending mode, currency only changes the symbol and grouping. Amounts stay in the denomination you enter.',
+      'Yes. In beginning/ending mode, changing either currency control converts both monetary values with stored exchange rates so the annualized return stays the same. Holding period and total-return % are not converted.',
   },
 ];

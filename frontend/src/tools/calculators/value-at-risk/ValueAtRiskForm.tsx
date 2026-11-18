@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   TIMEFRAME_UNIT_OPTIONS,
@@ -46,6 +46,7 @@ interface ValueAtRiskFormProps {
   errors: ValueAtRiskFieldErrors;
   result: ValueAtRiskResult | null;
   onChange: (input: ValueAtRiskInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -54,6 +55,7 @@ export function ValueAtRiskForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: ValueAtRiskFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -93,7 +95,7 @@ export function ValueAtRiskForm({
               <CurrencySelect
                 id="var-portfolio-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Portfolio currency"
               />
             </div>
@@ -282,7 +284,7 @@ export function ValueAtRiskForm({
               <CurrencySelect
                 id="var-result-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="VaR currency"
               />
             </div>

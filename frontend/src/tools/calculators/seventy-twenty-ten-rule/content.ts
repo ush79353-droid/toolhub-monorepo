@@ -48,6 +48,6 @@ export const SEVENTY_TWENTY_TEN_FAQS: FAQItem[] = [
   {
     question: 'Does the currency selector convert my income?',
     answer:
-      'No. It changes the symbol and grouping only. Enter income and spending in the same currency. This calculator does not look up an exchange rate.',
+      'Yes. Changing currency converts income and spending amounts with stored exchange rates so the economic value stays the same. Allocation percentages are not converted.',
   },
 ];

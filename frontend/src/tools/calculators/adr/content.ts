@@ -37,7 +37,7 @@ export const ADR_GUIDE_SECTIONS: readonly AdrGuideSection[] = [
     title: 'How to calculate hotel ADR',
     paragraphs: [
       'Add the room revenue for the period you care about, then divide by the room-nights sold in that same period. One occupied room for one night is one room-night. A 3-night stay in one room is three room-nights if the room was sold each night.',
-      'Choose Solve for ADR and enter those two figures. The other modes reverse the same relationship: revenue equals ADR times room-nights, and room-nights equal revenue divided by ADR. Currency only changes the symbol. It does not convert PKR into another currency.',
+      'Choose Solve for ADR and enter those two figures. The other modes reverse the same relationship: revenue equals ADR times room-nights, and room-nights equal revenue divided by ADR. Changing currency converts room revenue and ADR together so the economic ADR stays the same.',
     ],
     formula: 'ADR = total room revenue ÷ room-nights sold',
   },
@@ -142,6 +142,6 @@ export const ADR_FAQS: readonly FAQItem[] = [
   {
     question: 'Does changing the currency convert my revenue?',
     answer:
-      'No. The currency control changes the symbol and the decimal format. Enter room revenue and ADR in the same currency. Room-night counts and occupancy are not converted.',
+      'Yes. Changing currency converts room revenue and ADR with stored exchange rates so the economic ADR stays the same. Room-night counts and occupancy are not converted.',
   },
 ];

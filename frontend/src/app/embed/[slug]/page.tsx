@@ -10,9 +10,164 @@ import {
   isToolEmbedEligible,
 } from '@/lib/embed/tool-embed';
 import { getPublicToolBySlug } from '@/server/catalog/tools';
+import { getCurrencyRates } from '@/server/currency/rates';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
 import { isApprovedComponentKey, isRegisteredComponentKey } from '@/tools/registry/keys';
+import { CurrencyRatesProvider } from '@/tools/shared/CurrencyRatesProvider';
 import type { ToolMetadata } from '@/types/tool';
+
+/** Phase 3: load FX rates only for conversion-enabled calculators. */
+const CURRENCY_CONVERSION_SLUGS = new Set([
+  'margin-interest-calculator',
+  '12-hour-shift-pay-calculator',
+  '3x-rent-calculator',
+  '401k-calculator',
+  '403b-calculator',
+  '529-calculator',
+  '702010-rule-money-calculator',
+  'adr-calculator',
+  'annualized-return-calculator',
+  'appreciation-calculator',
+  'apy-calculator',
+  'arm-mortgage-calculator',
+  'balloon-payment-calculator',
+  'basis-point-calculator',
+  'bitcoin-etf-calculator',
+  'biweekly-mortgage-calculator',
+  'bi-weekly-mortgage-payment-calculator',
+  'mortgage-points-calculator',
+  'boat-loan-calculator',
+  'jumbo-loan-calculator',
+  'land-loan-calculator',
+  'rv-loan-calculator',
+  'student-loan-calculator',
+  'student-loan-payment-calculator',
+  'simple-mortgage-calculator',
+  'ltv-calculator-loan-to-value',
+  'cagr-calculator',
+  'capital-gains-yield-calculator',
+  'car-loan-emi-calculator',
+  'cd-calculator',
+  'compound-growth-calculator',
+  'compound-interest-calculator',
+  'compound-interest-rate-calculator',
+  'continuous-compound-interest-calculator',
+  'coupon-payment-calculator',
+  'deferred-payment-loan-calculator',
+  'discounted-cash-flow-calculator-dcf',
+  'discount-rate-calculator',
+  'dividend-discount-model-calculator',
+  'early-loan-payoff-calculator',
+  'loan-repayment-calculator-loan-payoff-calculator',
+  'effective-annual-yield-calculator',
+  'expected-utility-calculator',
+  'expense-ratio-calculator',
+  'fd-calculator',
+  'fha-loan-calculator',
+  'future-value-calculator',
+  'hedge-ratio-calculator',
+  'holding-period-return-calculator',
+  'home-improvement-loan-calculator',
+  'home-loan-emi-calculator',
+  'home-loan-calculator',
+  'mortgage-calculator-with-taxes-and-insurance',
+  'mortgage-comparison-calculator',
+  'home-mortgage-calculator',
+  'mortgage-acceleration-calculator',
+  'mortgage-prepayment-calculator',
+  'mortgage-with-extra-payments-calculator',
+  'impermanent-loss-calculator',
+  'information-ratio-calculator',
+  'interest-only-mortgage-calculator',
+  'interest-coverage-ratio-calculator',
+  'interest-per-day-calculator',
+  'mortgage-interest-calculator',
+  'mortgage-rate-calculator',
+  'interest-rate-calculator',
+  'investment-calculator',
+  'investment-fee-calculator',
+  'irr-calculator',
+  '3d-printer-buy-vs-outsource-calculator',
+  'accumulated-depreciation-calculator',
+  'additional-funds-needed-calculator',
+  'ar-days-calculator',
+  'average-collection-period-calculator',
+  'average-fixed-cost-calculator',
+  'break-even-calculator',
+  'build-vs-buy-calculator',
+  'burn-rate-calculator',
+  'business-budget-calculator',
+  'business-loan-calculator',
+  'business-valuation-calculator',
+  'consulting-fees-calculator',
+  'contribution-margin-calculator',
+  'cost-function-calculator',
+  'cost-of-doing-business-calculator',
+  'cost-of-equity-calculator',
+  'cost-of-goods-sold-calculator',
+  'cpa-calculator-cost-per-acquisition',
+  'cpc-and-cpm-calculator',
+  'cpm-calculator',
+  'customer-acquisition-cost-calculator',
+  'dividend-calculator',
+  'direct-material-price-variance-calculator',
+  'evm-calculator',
+  'effective-corporate-tax-rate-calculator',
+  'emv-calculator-expected-monetary-value',
+  'fifo-calculator-for-inventory',
+  'carried-interest-calculator',
+  'gmroi-calculator-gross-margin-return-on-investment',
+  'google-adsense-calculator',
+  'high-low-method-calculator',
+  'labor-cost-calculator',
+  'lemonade-stand-calculator',
+  'lerner-index-calculator',
+  'liquid-net-worth-calculator',
+  'loan-balance-calculator',
+  'loan-payment-calculator',
+  'man-hours-calculator',
+  'online-marketing-conversion-calculator',
+  'operating-asset-turnover-calculator',
+  'partially-amortized-loan-calculator',
+  'payday-loan-calculator',
+  'payback-period-calculator',
+  'pre-and-post-money-valuation-calculator',
+  'pvgo-calculator',
+  'price-quantity-calculator',
+  'prorated-rent-calculator',
+  'rent-split-calculator',
+  'rent-vs-buy-calculator',
+  'profitability-index-calculator',
+  'revenue-per-employee-calculator',
+  'roas-calculator',
+  'saas-lifetime-value-calculator',
+  'sales-commission-calculator',
+  'smokers-ctc-calculator',
+  'software-contract-value-calculator',
+  'website-ad-revenue-calculator',
+  'youtube-money-calculator',
+  'jensens-alpha-calculator',
+  'mva-calculator',
+  'mirr-calculator',
+  'money-market-account-calculator',
+  'moving-average-calculator',
+  'mutual-fund-calculator',
+  'nopat-calculator',
+  'npv-calculator-net-present-value',
+  'opportunity-cost-calculator',
+  'percentage-return-calculator',
+  'perpetuity-calculator',
+  'present-value-calculator',
+  'rate-of-return-calculator',
+  'return-on-capital-employed-calculator-roce',
+  'roi-calculator',
+  'simple-interest-calculator',
+  'sinking-fund-calculator',
+  'time-value-of-money-calculator',
+  'treynor-ratio-calculator',
+  'ttm-calculator-trailing-twelve-months',
+  'value-at-risk-calculator-var',
+]);
 
 export const dynamic = 'force-dynamic';
 
@@ -90,6 +245,10 @@ export default async function EmbedToolPage({ params, searchParams }: EmbedPageP
 
   const metadata = toToolMetadata(tool);
   const compact = tool.embedPreferredLayout === 'compact';
+  const currencyRates = CURRENCY_CONVERSION_SLUGS.has(tool.slug)
+    ? await getCurrencyRates()
+    : null;
+  const workspace = <ToolWorkspace tool={metadata} presentation="embed" />;
 
   return (
     <main className={`mx-auto w-full max-w-3xl px-3 py-3 sm:px-4 sm:py-4 ${compact ? 'max-w-xl' : ''}`}>
@@ -101,7 +260,11 @@ export default async function EmbedToolPage({ params, searchParams }: EmbedPageP
           ) : null}
         </header>
 
-        <ToolWorkspace tool={metadata} presentation="embed" />
+        {currencyRates ? (
+          <CurrencyRatesProvider rates={currencyRates}>{workspace}</CurrencyRatesProvider>
+        ) : (
+          workspace
+        )}
 
         <footer className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-3 text-xs text-muted-foreground">
           <p>

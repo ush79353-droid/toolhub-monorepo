@@ -4,7 +4,7 @@ import type { ChangeEvent, FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import {
   PERIODS,
   PERIOD_LABEL,
@@ -72,6 +72,7 @@ interface BusinessBudgetFormProps {
   errors: BusinessBudgetFieldErrors;
   result: BusinessBudgetResult | null;
   onChange: (input: BusinessBudgetInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -81,13 +82,11 @@ export function BusinessBudgetForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: BusinessBudgetFormProps) {
   const symbol = getCurrencySymbol(input.currency);
-
-  const setCurrency = (currency: BusinessBudgetInput['currency']) =>
-    onChange({ ...input, currency });
 
   const setLine = (key: LineKey, patch: Partial<MoneyLine>) => {
     onChange({ ...input, [key]: { ...input[key], ...patch } });
@@ -126,7 +125,7 @@ export function BusinessBudgetForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={setCurrency}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -170,7 +169,7 @@ export function BusinessBudgetForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={setCurrency}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -207,7 +206,7 @@ export function BusinessBudgetForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={setCurrency}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

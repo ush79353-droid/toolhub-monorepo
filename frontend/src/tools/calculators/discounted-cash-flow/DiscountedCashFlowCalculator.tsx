@@ -4,10 +4,15 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
 import {
-  CURRENCY_DENOMINATION_NOTE,
-  formatCurrencyValue,
-} from '@/tools/shared/currency';
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import { DcfForm } from './DcfForm';
 import { DcfResults } from './DcfResults';
 import {
@@ -18,6 +23,18 @@ import {
 } from './types';
 import { validateDcfInput } from './validation';
 
+const MONEY_FIELDS = [
+  'firstFcff',
+  'secondFcff',
+  'firstEps',
+  'secondEps',
+  'cash',
+  'outstandingDebt',
+] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts cash flows, cash, and debt using stored exchange rates. Growth rates, discount rates, and share count stay the same.';
+
 export function DiscountedCashFlowCalculator({
   metadata,
   className = '',
@@ -25,18 +42,62 @@ export function DiscountedCashFlowCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<DcfInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<DcfFieldErrors>({});
   const [result, setResult] = React.useState<DcfResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
   const apply = (next: DcfInput) => {
+    setConversionError(null);
+    setInput(next);
+    const validation = validateDcfInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      {
+        firstFcff: input.firstFcff,
+        secondFcff: input.secondFcff,
+        firstEps: input.firstEps,
+        secondEps: input.secondEps,
+        cash: input.cash,
+        outstandingDebt: input.outstandingDebt,
+      },
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next: DcfInput = {
+      ...input,
+      ...converted.values,
+      currency,
+    };
     setInput(next);
     const validation = validateDcfInput(next);
     setErrors(validation.errors);
@@ -49,6 +110,7 @@ export function DiscountedCashFlowCalculator({
     setResult(null);
     setCopied(false);
     setShared(false);
+    setConversionError(null);
   };
 
   const summary = result
@@ -61,7 +123,7 @@ export function DiscountedCashFlowCalculator({
         `Equity value: ${formatCurrencyValue(result.equityValue, result.currency)}`,
         `Estimated share value: ${formatCurrencyValue(result.estimatedShareValue, result.currency)}`,
         `Outstanding shares: ${result.outstandingShares}`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ]
         .filter(Boolean)
         .join('\n')
@@ -78,18 +140,27 @@ export function DiscountedCashFlowCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Two-year DCF with Gordon terminal value · {CURRENCY_DENOMINATION_NOTE}
+            Two-year DCF with Gordon terminal value · {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <DcfForm
           input={input}
           errors={errors}
           result={result}
           onChange={apply}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <DcfResults result={result} />

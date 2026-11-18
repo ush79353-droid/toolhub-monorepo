@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   COMPOUND_OPTIONS,
@@ -18,6 +18,7 @@ interface CompoundGrowthFormProps {
   input: CompoundGrowthInput;
   errors: CompoundGrowthFieldErrors;
   onChange: (input: CompoundGrowthInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -50,6 +51,7 @@ export function CompoundGrowthForm({
   input,
   errors,
   onChange,
+  onCurrencyChange,
   onReset,
 }: CompoundGrowthFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -86,7 +88,7 @@ export function CompoundGrowthForm({
             <CurrencySelect
               id="cg-initial-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -232,7 +234,7 @@ export function CompoundGrowthForm({
               <CurrencySelect
                 id="cg-contrib-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Contribution currency"
               />
             </div>

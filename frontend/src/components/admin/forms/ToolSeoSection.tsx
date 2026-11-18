@@ -264,7 +264,6 @@ export function ToolSeoSection({
               Social preview
             </div>
             <div className="aspect-[1.91/1] bg-muted">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={ogImage} alt="" className="h-full w-full object-cover" />
             </div>
             <div className="space-y-1 p-3">
@@ -319,7 +318,6 @@ function ImagePickerRow({
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <div className="flex h-16 w-28 items-center justify-center overflow-hidden rounded-lg border border-border bg-muted/40">
           {url ? (
-            // eslint-disable-next-line @next/next/no-img-element
             <img src={url} alt="" className="h-full w-full object-cover" />
           ) : (
             <ImageIcon className="h-5 w-5 text-muted-foreground" />

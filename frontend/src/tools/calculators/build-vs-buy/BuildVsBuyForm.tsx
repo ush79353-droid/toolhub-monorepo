@@ -4,7 +4,7 @@ import type { ChangeEvent, FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   BUILD_TIME_UNITS,
@@ -54,6 +54,7 @@ interface BuildVsBuyFormProps {
   errors: BuildVsBuyFieldErrors;
   result: BuildVsBuyResult | null;
   onChange: (input: BuildVsBuyInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -63,6 +64,7 @@ export function BuildVsBuyForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: BuildVsBuyFormProps) {
@@ -103,7 +105,7 @@ export function BuildVsBuyForm({
               <CurrencySelect
                 id="bvb-buy-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
             <span className={selectClass} aria-hidden="true">
@@ -191,7 +193,7 @@ export function BuildVsBuyForm({
               <CurrencySelect
                 id="bvb-salary-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
             <span className={selectClass} aria-hidden="true">
@@ -305,7 +307,7 @@ export function BuildVsBuyForm({
               <CurrencySelect
                 id="bvb-build-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Cost to build currency"
               />
             </div>
@@ -334,7 +336,7 @@ export function BuildVsBuyForm({
               <CurrencySelect
                 id="bvb-maint-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Annual maintenance currency"
               />
             </div>
@@ -368,7 +370,7 @@ export function BuildVsBuyForm({
               <CurrencySelect
                 id="bvb-savings-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Annual savings currency"
               />
             </div>

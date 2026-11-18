@@ -1,7 +1,7 @@
 'use client';
 
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   SimpleInterestFieldErrors,
@@ -14,6 +14,7 @@ interface SimpleInterestFormProps {
   errors: SimpleInterestFieldErrors;
   result: SimpleInterestResult | null;
   onChange: (input: SimpleInterestInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
 }
 
 const inputClass =
@@ -43,6 +44,7 @@ export function SimpleInterestForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
 }: SimpleInterestFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<SimpleInterestInput>) => onChange({ ...input, ...patch });
@@ -81,7 +83,7 @@ export function SimpleInterestForm({
               <CurrencySelect
                 id="si-principal-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -180,7 +182,7 @@ export function SimpleInterestForm({
               <CurrencySelect
                 id="si-interest-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -210,7 +212,7 @@ export function SimpleInterestForm({
               <CurrencySelect
                 id="si-balance-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>

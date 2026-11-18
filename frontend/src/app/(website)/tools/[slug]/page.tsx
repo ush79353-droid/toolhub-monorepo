@@ -17,12 +17,210 @@ import {
   type ToolSeoSource,
 } from '@/lib/seo/tool-seo';
 import { getPublicToolBySlug, type PublicToolDetail } from '@/server/catalog/tools';
+import { getCurrencyRates } from '@/server/currency/rates';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
 import { StickyCalculatorAside } from '@/tools/calculators/auto-loan/StickyCalculatorAside';
 import { TableOfContents } from '@/tools/calculators/auto-loan/TableOfContents';
 import { loadToolPageDetail } from '@/tools/registry/details';
 import { isApprovedComponentKey, isRegisteredComponentKey } from '@/tools/registry/keys';
+import { CurrencyRatesProvider } from '@/tools/shared/CurrencyRatesProvider';
 import type { ToolMetadata } from '@/types/tool';
+
+/** Phase 3: load FX rates only for conversion-enabled calculators. */
+const CURRENCY_CONVERSION_SLUGS = new Set([
+  'after-tax-cost-of-debt-calculator',
+  'annuity-calculator',
+  'annuity-payout-calculator',
+  'california-overtime-calculator',
+  'car-interest-calculator',
+  'debt-avalanche-calculator',
+  'debt-calculator',
+  'debt-service-coverage-ratio-calculator-dscr',
+  'debt-snowball-calculator',
+  'debt-to-asset-ratio-calculator',
+  'debt-to-capital-ratio-calculator',
+  'debt-to-equity-calculator',
+  'deferred-annuity-calculator',
+  'ebitda-margin-calculator',
+  'florida-overtime-calculator',
+  'future-value-of-annuity-calculator',
+  'georgia-overtime-calculator',
+  'gross-margin-calculator',
+  'gross-rent-multiplier-calculator',
+  'growing-annuity-calculator',
+  'illinois-overtime-calculator',
+  'immediate-annuity-calculator',
+  'interest-rate-parity-calculator',
+  'loan-interest-calculator',
+  'lottery-annuity-calculator',
+  'margin-and-markup-calculator',
+  'margin-and-vat-calculator',
+  'margin-calculator-classic',
+  'margin-call-calculator',
+  'margin-interest-calculator',
+  '12-hour-shift-pay-calculator',
+  '3x-rent-calculator',
+  '401k-calculator',
+  '403b-calculator',
+  '529-calculator',
+  '702010-rule-money-calculator',
+  'adr-calculator',
+  'annualized-return-calculator',
+  'appreciation-calculator',
+  'apy-calculator',
+  'arm-mortgage-calculator',
+  'balloon-payment-calculator',
+  'basis-point-calculator',
+  'bitcoin-etf-calculator',
+  'biweekly-mortgage-calculator',
+  'bi-weekly-mortgage-payment-calculator',
+  'margin-of-safety-calculator',
+  'mortgage-points-calculator',
+  'boat-loan-calculator',
+  'jumbo-loan-calculator',
+  'land-loan-calculator',
+  'net-debt-calculator',
+  'net-effective-rent-calculator',
+  'new-york-overtime-calculator',
+  'operating-margin-calculator',
+  'overtime-calculator',
+  'overtime-paycheck-calculator',
+  'present-value-of-annuity-calculator',
+  'rent-increase-calculator',
+  'rent-or-buy-calculator',
+  'rv-loan-calculator',
+  'salary-calculator-with-overtime',
+  'student-loan-calculator',
+  'student-loan-payment-calculator',
+  'simple-mortgage-calculator',
+  'ltv-calculator-loan-to-value',
+  'cagr-calculator',
+  'capital-gains-yield-calculator',
+  'car-loan-emi-calculator',
+  'cd-calculator',
+  'compound-growth-calculator',
+  'compound-interest-calculator',
+  'compound-interest-rate-calculator',
+  'continuous-compound-interest-calculator',
+  'coupon-payment-calculator',
+  'deferred-payment-loan-calculator',
+  'discounted-cash-flow-calculator-dcf',
+  'discount-rate-calculator',
+  'dividend-discount-model-calculator',
+  'early-loan-payoff-calculator',
+  'loan-repayment-calculator-loan-payoff-calculator',
+  'effective-annual-yield-calculator',
+  'expected-utility-calculator',
+  'expense-ratio-calculator',
+  'fd-calculator',
+  'fha-loan-calculator',
+  'future-value-calculator',
+  'hedge-ratio-calculator',
+  'holding-period-return-calculator',
+  'home-improvement-loan-calculator',
+  'home-loan-emi-calculator',
+  'home-loan-calculator',
+  'mortgage-calculator-with-taxes-and-insurance',
+  'mortgage-comparison-calculator',
+  'home-mortgage-calculator',
+  'mortgage-acceleration-calculator',
+  'mortgage-prepayment-calculator',
+  'mortgage-with-extra-payments-calculator',
+  'impermanent-loss-calculator',
+  'information-ratio-calculator',
+  'interest-only-mortgage-calculator',
+  'interest-coverage-ratio-calculator',
+  'interest-per-day-calculator',
+  'mortgage-interest-calculator',
+  'mortgage-rate-calculator',
+  'interest-rate-calculator',
+  'investment-calculator',
+  'investment-fee-calculator',
+  'irr-calculator',
+  '3d-printer-buy-vs-outsource-calculator',
+  'accumulated-depreciation-calculator',
+  'additional-funds-needed-calculator',
+  'ar-days-calculator',
+  'average-collection-period-calculator',
+  'average-fixed-cost-calculator',
+  'break-even-calculator',
+  'build-vs-buy-calculator',
+  'burn-rate-calculator',
+  'business-budget-calculator',
+  'business-loan-calculator',
+  'business-valuation-calculator',
+  'consulting-fees-calculator',
+  'contribution-margin-calculator',
+  'cost-function-calculator',
+  'cost-of-doing-business-calculator',
+  'cost-of-equity-calculator',
+  'cost-of-goods-sold-calculator',
+  'cpa-calculator-cost-per-acquisition',
+  'cpc-and-cpm-calculator',
+  'cpm-calculator',
+  'customer-acquisition-cost-calculator',
+  'dividend-calculator',
+  'direct-material-price-variance-calculator',
+  'evm-calculator',
+  'effective-corporate-tax-rate-calculator',
+  'emv-calculator-expected-monetary-value',
+  'fifo-calculator-for-inventory',
+  'carried-interest-calculator',
+  'gmroi-calculator-gross-margin-return-on-investment',
+  'google-adsense-calculator',
+  'high-low-method-calculator',
+  'labor-cost-calculator',
+  'lemonade-stand-calculator',
+  'lerner-index-calculator',
+  'liquid-net-worth-calculator',
+  'loan-balance-calculator',
+  'loan-payment-calculator',
+  'man-hours-calculator',
+  'online-marketing-conversion-calculator',
+  'operating-asset-turnover-calculator',
+  'partially-amortized-loan-calculator',
+  'payday-loan-calculator',
+  'payback-period-calculator',
+  'pre-and-post-money-valuation-calculator',
+  'pvgo-calculator',
+  'price-quantity-calculator',
+  'prorated-rent-calculator',
+  'rent-split-calculator',
+  'rent-vs-buy-calculator',
+  'profitability-index-calculator',
+  'revenue-per-employee-calculator',
+  'roas-calculator',
+  'saas-lifetime-value-calculator',
+  'sales-commission-calculator',
+  'smokers-ctc-calculator',
+  'software-contract-value-calculator',
+  'texas-overtime-calculator',
+  'times-interest-earned-ratio-calculator',
+  'variable-annuity-calculator',
+  'website-ad-revenue-calculator',
+  'youtube-money-calculator',
+  'jensens-alpha-calculator',
+  'mva-calculator',
+  'mirr-calculator',
+  'money-market-account-calculator',
+  'moving-average-calculator',
+  'mutual-fund-calculator',
+  'nopat-calculator',
+  'npv-calculator-net-present-value',
+  'opportunity-cost-calculator',
+  'percentage-return-calculator',
+  'perpetuity-calculator',
+  'present-value-calculator',
+  'rate-of-return-calculator',
+  'return-on-capital-employed-calculator-roce',
+  'roi-calculator',
+  'simple-interest-calculator',
+  'sinking-fund-calculator',
+  'time-value-of-money-calculator',
+  'treynor-ratio-calculator',
+  'ttm-calculator-trailing-twelve-months',
+  'value-at-risk-calculator-var',
+]);
 
 function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {
   return {
@@ -127,6 +325,10 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
     notFound();
   }
 
+  const currencyRates = CURRENCY_CONVERSION_SLUGS.has(dbTool.slug)
+    ? await getCurrencyRates()
+    : null;
+
   const GuideArticleComponent = pageDetail.GuideArticle;
     const sidebarGroupLabel = pillarName || categoryName;
     const relatedToolsList = dbTool?.relatedTools ?? [];
@@ -155,6 +357,29 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
           faqs: pageDetail.faqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
         })
       );
+
+    const calculatorWorkspace = (
+      <ToolWorkspace
+        tool={toolMetadata}
+        headerActions={
+          dbTool &&
+            isToolEmbedEligible({
+              embedEnabled: dbTool.embedEnabled,
+              isActive: dbTool.isActive,
+              componentKey: dbTool.componentKey,
+              embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
+              embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
+              embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
+            }) ? (
+            <CalculatorEmbedDialog
+              toolName={dbTool.name}
+              toolSlug={dbTool.slug}
+              defaultHeight={dbTool.embedDefaultHeight}
+            />
+          ) : undefined
+        }
+      />
+    );
 
     return (
       <div className="py-6 sm:py-9">
@@ -199,26 +424,13 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
           <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)] lg:items-start lg:gap-8">
             <div className="order-1 min-w-0 space-y-6 lg:col-start-1 lg:row-start-1">
               <StickyCalculatorAside ariaLabel={pageDetail.asideAriaLabel}>
-                <ToolWorkspace
-                  tool={toolMetadata}
-                  headerActions={
-                    dbTool &&
-                      isToolEmbedEligible({
-                        embedEnabled: dbTool.embedEnabled,
-                        isActive: dbTool.isActive,
-                        componentKey: dbTool.componentKey,
-                        embedDefaultHeight: dbTool.embedDefaultHeight ?? 650,
-                        embedPreferredLayout: dbTool.embedPreferredLayout ?? 'responsive',
-                        embedAllowedDomains: dbTool.embedAllowedDomains ?? '',
-                      }) ? (
-                      <CalculatorEmbedDialog
-                        toolName={dbTool.name}
-                        toolSlug={dbTool.slug}
-                        defaultHeight={dbTool.embedDefaultHeight}
-                      />
-                    ) : undefined
-                  }
-                />
+                {currencyRates ? (
+                  <CurrencyRatesProvider rates={currencyRates}>
+                    {calculatorWorkspace}
+                  </CurrencyRatesProvider>
+                ) : (
+                  calculatorWorkspace
+                )}
               </StickyCalculatorAside>
 
               <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">

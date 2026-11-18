@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   CASH_FLOW_FREQUENCY_OPTIONS,
@@ -43,6 +43,7 @@ interface RateOfReturnFormProps {
   errors: RateOfReturnFieldErrors;
   result: RateOfReturnResult | null;
   onChange: (input: RateOfReturnInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -51,6 +52,7 @@ export function RateOfReturnForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: RateOfReturnFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -85,7 +87,7 @@ export function RateOfReturnForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

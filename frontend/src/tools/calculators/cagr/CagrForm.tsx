@@ -113,7 +113,7 @@ export function CagrForm({
         label="Initial value"
         htmlFor="cagr-initial"
         error={errors.initialValue}
-        tip="Starting amount. Must be greater than zero. Currency labels only."
+        tip="Starting amount. Must be greater than zero. Changing currency converts both monetary values together."
       >
         <div className="flex gap-2">
           <div className={`relative min-w-0 flex-1 ${shellClass}`}>
@@ -144,7 +144,7 @@ export function CagrForm({
         label="Final value"
         htmlFor="cagr-final"
         error={errors.finalValue}
-        tip="Ending amount after the periods. Currency labels only."
+        tip="Ending amount after the periods. Changing currency converts both monetary values together."
       >
         <div className="flex gap-2">
           <div className={`relative min-w-0 flex-1 ${shellClass}`}>

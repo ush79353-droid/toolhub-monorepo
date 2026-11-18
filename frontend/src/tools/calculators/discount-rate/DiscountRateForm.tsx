@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   CASH_FLOW_FREQUENCY_OPTIONS,
@@ -21,6 +21,7 @@ interface DiscountRateFormProps {
   errors: DiscountRateFieldErrors;
   result: DiscountRateResult | null;
   onChange: (input: DiscountRateInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -54,6 +55,7 @@ export function DiscountRateForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: DiscountRateFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -93,7 +95,7 @@ export function DiscountRateForm({
               <CurrencySelect
                 id="dr-pv-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -126,7 +128,7 @@ export function DiscountRateForm({
               <CurrencySelect
                 id="dr-fv-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -214,7 +216,7 @@ export function DiscountRateForm({
               <CurrencySelect
                 id="dr-cf-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>

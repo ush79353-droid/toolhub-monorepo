@@ -27,6 +27,6 @@ export const APY_FAQS: readonly FAQItem[] = [
   {
     question: 'Does changing the currency convert the amount?',
     answer:
-      'No. Currency selection changes denomination and formatting only. It does not apply a live exchange rate.',
+      'Yes. Changing currency converts the initial and final deposit with stored exchange rates. APR, compounding frequency, term, and APY percentage are not converted.',
   },
 ];

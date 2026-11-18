@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { JensensAlphaForm } from './JensensAlphaForm';
 import {
   createDefaultInput,
@@ -14,6 +20,11 @@ import {
 } from './types';
 import { validateJensensAlphaInput } from './validation';
 
+const MONEY_FIELDS = ['beginningValue', 'endingValue'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts beginning and ending portfolio values together using stored exchange rates. Return %, beta, and Jensen\'s alpha stay economically consistent.';
+
 export function JensensAlphaCalculator({
   metadata,
   className = '',
@@ -21,28 +32,58 @@ export function JensensAlphaCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<JensensAlphaInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<JensensAlphaFieldErrors>({});
   const [result, setResult] = React.useState<JensensAlphaResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
   const handleChange = (next: JensensAlphaInput) => {
+    setConversionError(null);
     setInput(next);
     const validation = validateJensensAlphaInput(next);
     setErrors(validation.errors);
     setResult(validation.result);
   };
 
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates,
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({ ...input, ...converted.values, currency });
+  };
+
   const handleReset = () => {
     setInput(createDefaultInput());
     setErrors({});
     setResult(null);
+    setConversionError(null);
   };
 
   const symbol = getCurrencySymbol(input.currency);
@@ -57,7 +98,7 @@ export function JensensAlphaCalculator({
         `Market return: ${input.marketReturn}%`,
         `Expected return: ${result.formattedExpectedReturn}%`,
         `Jensen's alpha: ${result.formattedJensensAlpha}%`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -72,19 +113,27 @@ export function JensensAlphaCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Alpha = portfolio return − CAPM expected return.{' '}
-            {CURRENCY_DENOMINATION_NOTE}
+            Alpha = portfolio return − CAPM expected return. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <JensensAlphaForm
           input={input}
           errors={errors}
           result={result}
           onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <div className="flex flex-wrap gap-2">

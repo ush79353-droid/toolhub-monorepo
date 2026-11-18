@@ -1,6 +1,7 @@
 'use client';
 
 import type { FormEvent, ReactNode } from 'react';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
@@ -156,6 +157,7 @@ interface SoftwareContractValueFormProps {
   errors: SoftwareContractValueFieldErrors;
   result: SoftwareContractValueResult | null;
   onDraftChange: (draft: SoftwareContractValueDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -165,13 +167,13 @@ export function SoftwareContractValueForm({
   errors,
   result,
   onDraftChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: SoftwareContractValueFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
   const set = (patch: Partial<SoftwareContractValueDraft>) =>
     onDraftChange({ ...draft, ...patch });
-  const setCurrency = (currency: SoftwareContractValueDraft['currency']) => set({ currency });
 
   const moneyOut = (value: number | undefined) =>
     value === undefined ? '—' : formatPlainMoney(value, draft.currency);
@@ -188,13 +190,13 @@ export function SoftwareContractValueForm({
         <MoneyRow
           id="scv-retail-price"
           label="Retail price"
-          tip="Monthly list price per seat before discount. Currency changes the symbol only."
+          tip="Monthly list price per seat before discount. Changing currency converts retail price and derived contract amounts; seats, discount %, and duration stay the same."
           value={draft.retailPrice}
           error={errors.retailPrice}
           symbol={symbol}
           currency={draft.currency}
           onValueChange={(retailPrice) => set({ retailPrice })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
 
         <div>
@@ -247,7 +249,7 @@ export function SoftwareContractValueForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           displayValue={moneyOut(result?.discountAmount)}
         />
@@ -313,7 +315,7 @@ export function SoftwareContractValueForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           displayValue={moneyOut(result?.discountedPrice)}
         />
@@ -324,7 +326,7 @@ export function SoftwareContractValueForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           displayValue={moneyOut(result?.monthlyCost)}
         />
@@ -335,7 +337,7 @@ export function SoftwareContractValueForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           displayValue={moneyOut(result?.annualCost)}
         />
@@ -346,7 +348,7 @@ export function SoftwareContractValueForm({
           value=""
           symbol={symbol}
           currency={draft.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
           displayValue={moneyOut(result?.contractValue)}
         />

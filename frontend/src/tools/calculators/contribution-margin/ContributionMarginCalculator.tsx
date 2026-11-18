@@ -3,7 +3,13 @@
 import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import {
   ContributionMarginForm,
   draftToInput,
@@ -15,7 +21,12 @@ import { calculateContributionMargin } from './calculation';
 import type { ContributionMarginFieldErrors, ContributionMarginResult } from './types';
 import { validateContributionMargin } from './validation';
 
-function summaryText(metadataTitle: string, result: ContributionMarginResult): string {
+const MONEY_FIELDS = ['sellingPricePerUnit', 'variableCostPerUnit', 'fixedCosts'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts price, variable cost, and fixed costs using stored exchange rates. Unit counts and margin % stay the same.';
+
+function summaryText(metadataTitle: string, result: ContributionMarginResult, note: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   const ratio =
     result.contributionMarginRatioPercent === null
@@ -31,7 +42,7 @@ function summaryText(metadataTitle: string, result: ContributionMarginResult): s
     `Contribution margin: ${money(result.contributionMargin)}`,
     `Contribution margin ratio: ${ratio}`,
     `Profit generated: ${money(result.profitGenerated)}`,
-    CURRENCY_DENOMINATION_NOTE,
+    note,
   ].join('\n');
 }
 
@@ -42,6 +53,8 @@ export function ContributionMarginCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<ContributionMarginDraft>(() => emptyDraft());
   const [errors, setErrors] = React.useState<ContributionMarginFieldErrors>({});
   const [result, setResult] = React.useState<ContributionMarginResult | null>(null);
@@ -49,10 +62,15 @@ export function ContributionMarginCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const evaluate = React.useCallback((next: ContributionMarginDraft, reportBlanks = false) => {
     const parsed = draftToInput(next);
@@ -63,6 +81,32 @@ export function ContributionMarginCalculator({
     setResult(validation.isValid ? calculateContributionMargin(parsed) : null);
   }, []);
 
+  const handleDraftChange = (next: ContributionMarginDraft) => {
+    setConversionError(null);
+    evaluate(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    evaluate({ ...draft, ...converted.values, currency });
+  };
+
   const resetAll = () => {
     setDraft(emptyDraft());
     setErrors({});
@@ -70,9 +114,10 @@ export function ContributionMarginCalculator({
     setIncomplete(true);
     setCopied(false);
     setShared(false);
+    setConversionError(null);
   };
 
-  const sharePayload = result ? summaryText(metadata.title, result) : '';
+  const sharePayload = result ? summaryText(metadata.title, result, currencyNote) : '';
   const hasFieldErrors = Object.keys(errors).length > 0;
 
   return (
@@ -85,16 +130,25 @@ export function ContributionMarginCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{CURRENCY_DENOMINATION_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex flex-wrap justify-end gap-2">{headerActions}</div> : null}
       </div>
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <ContributionMarginForm
           draft={draft}
           errors={errors}
           result={result}
-          onDraftChange={(next) => evaluate(next)}
+          onDraftChange={handleDraftChange}
+          onCurrencyChange={handleCurrencyChange}
           onSubmit={(event) => {
             event.preventDefault();
             evaluate(draft, true);
@@ -110,7 +164,7 @@ export function ContributionMarginCalculator({
           canShare={canShare}
           onCopy={() => {
             if (!result) return;
-            void copyTextToClipboard(summaryText(metadata.title, result)).then((ok) => {
+            void copyTextToClipboard(summaryText(metadata.title, result, currencyNote)).then((ok) => {
               if (!ok) return;
               setCopied(true);
               window.setTimeout(() => setCopied(false), 2000);

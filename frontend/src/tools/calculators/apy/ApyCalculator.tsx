@@ -4,10 +4,11 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { formatCurrencyValue } from '@/tools/shared/currency';
 import {
-  CURRENCY_DENOMINATION_NOTE,
-  formatCurrencyValue,
-} from '@/tools/shared/currency';
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
 import { ApyForm } from './ApyForm';
 import { ApyResults } from './ApyResults';
 import {
@@ -17,6 +18,9 @@ import {
   type ApyResult,
 } from './types';
 import { validateApyInput } from './validation';
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts the deposit and final balance using stored exchange rates. APR, compounding, term, and APY % stay the same.';
 
 const COMPOUND_LABEL: Record<ApyResult['compoundFrequency'], string> = {
   annually: 'Annually',
@@ -35,6 +39,7 @@ export function ApyCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<ApyInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<ApyFieldErrors>(() => {
     return validateApyInput(createDefaultInput()).errors;
@@ -50,6 +55,10 @@ export function ApyCalculator({
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const apply = (next: ApyInput) => {
     setInput(next);
@@ -77,7 +86,7 @@ export function ApyCalculator({
         `APY: ${result.formattedApyPercent}%`,
         `Term: ${result.term} ${result.termUnit}`,
         `Final deposit: ${formatCurrencyValue(result.finalDeposit, result.currency)}`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -92,7 +101,7 @@ export function ApyCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            APY = (1 + APR/n)^n − 1 · {CURRENCY_DENOMINATION_NOTE}
+            APY = (1 + APR/n)^n − 1 · {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}

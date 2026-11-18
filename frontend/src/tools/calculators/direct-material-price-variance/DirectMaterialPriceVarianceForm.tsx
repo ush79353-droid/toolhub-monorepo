@@ -3,7 +3,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import { statusLabel } from './calculation';
 import type {
@@ -37,6 +37,7 @@ interface DirectMaterialPriceVarianceFormProps {
   errors: DirectMaterialPriceVarianceFieldErrors;
   result: DirectMaterialPriceVarianceResult | null;
   onChange: (input: DirectMaterialPriceVarianceInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -45,6 +46,7 @@ export function DirectMaterialPriceVarianceForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: DirectMaterialPriceVarianceFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -88,7 +90,7 @@ export function DirectMaterialPriceVarianceForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -170,7 +172,7 @@ export function DirectMaterialPriceVarianceForm({
             <CurrencySelect
               id="dmpv-variance-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Variance currency"
             />
           </div>

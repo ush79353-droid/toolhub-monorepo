@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   MutualFundFieldErrors,
@@ -41,6 +41,7 @@ interface MutualFundFormProps {
   errors: MutualFundFieldErrors;
   result: MutualFundResult | null;
   onChange: (input: MutualFundInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -54,6 +55,7 @@ export function MutualFundForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: MutualFundFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -121,7 +123,7 @@ export function MutualFundForm({
             <CurrencySelect
               id="mutual-fund-amount-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Investment currency"
             />
           </div>
@@ -229,7 +231,7 @@ export function MutualFundForm({
             <CurrencySelect
               id="mutual-fund-maturity-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Maturity currency"
             />
           </div>

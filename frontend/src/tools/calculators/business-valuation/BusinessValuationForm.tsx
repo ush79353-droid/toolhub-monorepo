@@ -4,7 +4,7 @@ import type { ChangeEvent, FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   CASH_FLOW_SCALES,
@@ -56,6 +56,7 @@ interface BusinessValuationFormProps {
   errors: BusinessValuationFieldErrors;
   result: BusinessValuationResult | null;
   onChange: (input: BusinessValuationInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -65,6 +66,7 @@ export function BusinessValuationForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: BusinessValuationFormProps) {
@@ -151,7 +153,7 @@ export function BusinessValuationForm({
                     <CurrencySelect
                       id="bv-cash-currency"
                       value={input.currency}
-                      onChange={(currency) => set({ currency })}
+                      onChange={onCurrencyChange}
                     />
                   </div>
                   <select
@@ -243,7 +245,7 @@ export function BusinessValuationForm({
                 symbol={symbol}
                 currency={input.currency}
                 onValue={onNumber('totalAssets')}
-                onCurrency={(currency) => set({ currency })}
+                onCurrency={onCurrencyChange}
               />
               <MoneyField
                 id="bv-liabilities"
@@ -254,7 +256,7 @@ export function BusinessValuationForm({
                 symbol={symbol}
                 currency={input.currency}
                 onValue={onNumber('totalLiabilities')}
-                onCurrency={(currency) => set({ currency })}
+                onCurrency={onCurrencyChange}
               />
             </>
           ) : null}
@@ -270,7 +272,7 @@ export function BusinessValuationForm({
                 symbol={symbol}
                 currency={input.currency}
                 onValue={onNumber('sharePrice')}
-                onCurrency={(currency) => set({ currency })}
+                onCurrency={onCurrencyChange}
               />
               <div>
                 <label className={labelClass} htmlFor="bv-shares">
@@ -304,7 +306,7 @@ export function BusinessValuationForm({
                 symbol={symbol}
                 currency={input.currency}
                 onValue={onNumber('financialMetric')}
-                onCurrency={(currency) => set({ currency })}
+                onCurrency={onCurrencyChange}
               />
               <div>
                 <label className={labelClass} htmlFor="bv-multiple">
@@ -351,7 +353,7 @@ export function BusinessValuationForm({
             <CurrencySelect
               id="bv-value-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Estimated value currency"
             />
           </div>

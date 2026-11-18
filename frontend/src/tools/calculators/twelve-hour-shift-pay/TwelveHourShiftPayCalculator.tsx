@@ -4,7 +4,15 @@ import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { CURRENCY_DENOMINATION_NOTE } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import { calculateTwelveHourShiftPay } from './calculation';
 import {
   DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT,
@@ -20,7 +28,12 @@ import {
 } from './TwelveHourShiftPayForm';
 import { formatShiftPay, TwelveHourShiftPayResults } from './TwelveHourShiftPayResults';
 
-function summaryText(result: TwelveHourShiftPayResult): string {
+const MONEY_FIELDS = ['hourlyWage', 'overtimeHourlyWage'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts wage amounts using stored exchange rates. Hours stay the same.';
+
+function summaryText(result: TwelveHourShiftPayResult, note: string): string {
   const money = (value: number) => formatShiftPay(value, result.currency);
   return [
     '12-Hour Shift Pay Calculator — Omega Calculators',
@@ -30,7 +43,7 @@ function summaryText(result: TwelveHourShiftPayResult): string {
     `Pay per month: ${money(result.payPerMonth)}`,
     `Pay per year: ${money(result.payPerYear)}`,
     'Assumes a 12-hour shift, 5 workdays per week, 4.4 weeks per month, and 52 weeks per year.',
-    CURRENCY_DENOMINATION_NOTE,
+    note,
   ].join('\n');
 }
 
@@ -41,6 +54,8 @@ export function TwelveHourShiftPayCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<TwelveHourShiftPayDraft>(() =>
     inputToDraft(DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT)
   );
@@ -49,6 +64,11 @@ export function TwelveHourShiftPayCalculator({
     calculateTwelveHourShiftPay(DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT)
   );
   const [copied, setCopied] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const evaluate = React.useCallback((next: TwelveHourShiftPayDraft) => {
     const parsed = draftToInput(next);
@@ -56,6 +76,33 @@ export function TwelveHourShiftPayCalculator({
     setErrors(validation.errors);
     setResult(validation.isValid ? calculateTwelveHourShiftPay(parsed) : null);
   }, []);
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next = {
+      ...draft,
+      ...converted.values,
+      currency,
+    } as TwelveHourShiftPayDraft;
+    setDraft(next);
+    evaluate(next);
+  };
 
   return (
     <section
@@ -67,7 +114,7 @@ export function TwelveHourShiftPayCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">Formatting currency only</p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         <div className="flex flex-wrap items-center justify-end gap-2">
           {headerActions}
@@ -79,20 +126,25 @@ export function TwelveHourShiftPayCalculator({
               id="shift-pay-currency"
               aria-label="Display currency"
               value={draft.currency}
-              onChange={(currency) => {
-                const next = { ...draft, currency };
-                setDraft(next);
-                evaluate(next);
-              }}
+              onChange={handleCurrencyChange}
             />
           </div>
         </div>
       </div>
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <TwelveHourShiftPayForm
           draft={draft}
           errors={errors}
           onDraftChange={(next) => {
+            setConversionError(null);
             setDraft(next);
             evaluate(next);
           }}
@@ -106,6 +158,7 @@ export function TwelveHourShiftPayCalculator({
             setErrors({});
             setResult(calculateTwelveHourShiftPay(DEFAULT_TWELVE_HOUR_SHIFT_PAY_INPUT));
             setCopied(false);
+            setConversionError(null);
           }}
         />
         <TwelveHourShiftPayResults
@@ -113,7 +166,7 @@ export function TwelveHourShiftPayCalculator({
           copied={copied}
           onCopy={() => {
             if (!result) return;
-            void copyTextToClipboard(summaryText(result)).then((ok) => {
+            void copyTextToClipboard(summaryText(result, currencyNote)).then((ok) => {
               if (!ok) return;
               setCopied(true);
               window.setTimeout(() => setCopied(false), 2000);

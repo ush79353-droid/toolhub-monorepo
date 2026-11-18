@@ -4,7 +4,7 @@ import type { ChangeEvent, FormEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { RotateCcw } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import type {
   CostOfDoingBusinessFieldErrors,
   CostOfDoingBusinessInput,
@@ -38,6 +38,7 @@ interface CostOfDoingBusinessFormProps {
   errors: CostOfDoingBusinessFieldErrors;
   result: CostOfDoingBusinessResult | null;
   onChange: (input: CostOfDoingBusinessInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: FormEvent) => void;
   onReset: () => void;
 }
@@ -47,6 +48,7 @@ export function CostOfDoingBusinessForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onSubmit,
   onReset,
 }: CostOfDoingBusinessFormProps) {
@@ -83,7 +85,7 @@ export function CostOfDoingBusinessForm({
             <CurrencySelect
               id="codb-annual-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -138,7 +140,7 @@ export function CostOfDoingBusinessForm({
             <CurrencySelect
               id="codb-result-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Cost of doing business currency"
             />
           </div>

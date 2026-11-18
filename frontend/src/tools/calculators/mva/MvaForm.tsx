@@ -3,7 +3,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type { MvaFieldErrors, MvaInput, MvaResult } from './types';
 
@@ -42,10 +42,18 @@ interface MvaFormProps {
   errors: MvaFieldErrors;
   result: MvaResult | null;
   onChange: (input: MvaInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
-export function MvaForm({ input, errors, result, onChange, onReset }: MvaFormProps) {
+export function MvaForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: MvaFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<MvaInput>) => onChange({ ...input, ...patch });
 
@@ -86,7 +94,7 @@ export function MvaForm({ input, errors, result, onChange, onReset }: MvaFormPro
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -118,7 +126,7 @@ export function MvaForm({ input, errors, result, onChange, onReset }: MvaFormPro
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

@@ -1,9 +1,18 @@
 'use client';
 
+import * as React from 'react';
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   ApyFieldErrors,
@@ -12,6 +21,8 @@ import type {
   CompoundFrequency,
   TermUnit,
 } from './types';
+
+const MONEY_FIELDS = ['initialDeposit'] as const;
 
 const labelClass = 'mb-1.5 flex items-center gap-1.5 text-[13px] font-medium text-accent';
 const inputClass =
@@ -58,8 +69,40 @@ interface ApyFormProps {
 }
 
 export function ApyForm({ input, errors, result, onChange, onReset }: ApyFormProps) {
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
   const symbol = getCurrencySymbol(input.currency);
-  const set = (patch: Partial<ApyInput>) => onChange({ ...input, ...patch });
+  const set = (patch: Partial<ApyInput>) => {
+    setConversionError(null);
+    onChange({ ...input, ...patch });
+  };
+
+  /** Shared currency — convert deposit only; APR, frequency, term, and APY % unchanged. */
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    onChange({
+      ...input,
+      ...converted.values,
+      currency,
+    });
+  };
 
   return (
     <form
@@ -94,13 +137,21 @@ export function ApyForm({ input, errors, result, onChange, onReset }: ApyFormPro
             <CurrencySelect
               id="apy-deposit-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={handleCurrencyChange}
               aria-label="Initial deposit currency"
             />
           </div>
         </div>
         {errors.initialDeposit ? (
           <p className="mt-1 text-xs text-rose-600">{errors.initialDeposit}</p>
+        ) : null}
+        {conversionError ? (
+          <p className="mt-1 text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="mt-1 text-xs text-amber-700">{ratesStatus.warning}</p>
         ) : null}
       </div>
 
@@ -236,7 +287,7 @@ export function ApyForm({ input, errors, result, onChange, onReset }: ApyFormPro
             <CurrencySelect
               id="apy-final-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={handleCurrencyChange}
               aria-label="Final deposit currency"
             />
           </div>
@@ -246,7 +297,15 @@ export function ApyForm({ input, errors, result, onChange, onReset }: ApyFormPro
       {errors.form ? <p className="text-xs text-rose-600">{errors.form}</p> : null}
 
       <div className="flex flex-wrap gap-2.5 pt-1">
-        <Button type="button" variant="outline" className="h-11 font-medium" onClick={onReset}>
+        <Button
+          type="button"
+          variant="outline"
+          className="h-11 font-medium"
+          onClick={() => {
+            setConversionError(null);
+            onReset();
+          }}
+        >
           Reset
         </Button>
       </div>

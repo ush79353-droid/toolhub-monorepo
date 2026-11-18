@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { ChevronDown, RotateCcw } from 'lucide-react';
 import { CpmCampaignFields } from './CpmCampaignFields';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import type { CpmCampaignDraft, CpmDraft, CpmField } from './types';
 
 interface CpmFormProps {
@@ -11,6 +12,8 @@ interface CpmFormProps {
   secondaryErrors: Partial<Record<CpmField | 'form', string>>;
   onPrimaryChange: (campaign: CpmCampaignDraft) => void;
   onSecondaryChange: (campaign: CpmCampaignDraft) => void;
+  onPrimaryCurrencyChange: (currency: SupportedCurrency) => void;
+  onSecondaryCurrencyChange: (currency: SupportedCurrency) => void;
   onToggleSecond: () => void;
   onReset: () => void;
 }
@@ -21,6 +24,8 @@ export function CpmForm({
   secondaryErrors,
   onPrimaryChange,
   onSecondaryChange,
+  onPrimaryCurrencyChange,
+  onSecondaryCurrencyChange,
   onToggleSecond,
   onReset,
 }: CpmFormProps) {
@@ -37,6 +42,7 @@ export function CpmForm({
           draft={draft.primary}
           errors={primaryErrors}
           onChange={onPrimaryChange}
+          onCurrencyChange={onPrimaryCurrencyChange}
         />
       </section>
 
@@ -60,6 +66,7 @@ export function CpmForm({
               draft={draft.secondary}
               errors={secondaryErrors}
               onChange={onSecondaryChange}
+              onCurrencyChange={onSecondaryCurrencyChange}
             />
           </div>
         ) : null}

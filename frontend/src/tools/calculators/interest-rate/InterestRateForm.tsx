@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   CapitalizationFrequency,
@@ -101,6 +101,7 @@ interface InterestRateFormProps {
   errors: InterestRateFieldErrors;
   result: InterestRateResult | null;
   onChange: (input: InterestRateInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -109,11 +110,11 @@ export function InterestRateForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: InterestRateFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<InterestRateInput>) => onChange({ ...input, ...patch });
-  const setCurrency = (currency: InterestRateInput['currency']) => set({ currency });
   const isLoan = input.mode === 'loan';
 
   return (
@@ -164,7 +165,7 @@ export function InterestRateForm({
             symbol={symbol}
             currency={input.currency}
             onValueChange={(loanAmount) => set({ loanAmount })}
-            onCurrencyChange={setCurrency}
+            onCurrencyChange={onCurrencyChange}
           />
         ) : (
           <>
@@ -177,7 +178,7 @@ export function InterestRateForm({
               symbol={symbol}
               currency={input.currency}
               onValueChange={(initialDeposit) => set({ initialDeposit })}
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
             />
             <MoneyField
               id="ir-current-balance"
@@ -188,7 +189,7 @@ export function InterestRateForm({
               symbol={symbol}
               currency={input.currency}
               onValueChange={(currentBalance) => set({ currentBalance })}
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
             />
           </>
         )}
@@ -294,7 +295,7 @@ export function InterestRateForm({
               symbol={symbol}
               currency={input.currency}
               onValueChange={(periodicPayment) => set({ periodicPayment })}
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
             />
             <MoneyField
               id="ir-prepaid-fees"
@@ -305,7 +306,7 @@ export function InterestRateForm({
               symbol={symbol}
               currency={input.currency}
               onValueChange={(prepaidFees) => set({ prepaidFees })}
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
             />
             <MoneyField
               id="ir-loaned-fees"
@@ -316,7 +317,7 @@ export function InterestRateForm({
               symbol={symbol}
               currency={input.currency}
               onValueChange={(loanedFees) => set({ loanedFees })}
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
             />
           </>
         ) : null}

@@ -3,7 +3,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   PercentageReturnFieldErrors,
@@ -43,6 +43,7 @@ interface PercentageReturnFormProps {
   errors: PercentageReturnFieldErrors;
   result: PercentageReturnResult | null;
   onChange: (input: PercentageReturnInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -51,6 +52,7 @@ export function PercentageReturnForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: PercentageReturnFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -94,7 +96,7 @@ export function PercentageReturnForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -126,7 +128,7 @@ export function PercentageReturnForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

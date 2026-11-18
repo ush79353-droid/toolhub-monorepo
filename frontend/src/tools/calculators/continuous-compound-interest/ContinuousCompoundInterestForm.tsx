@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   DEPOSIT_FREQUENCY_OPTIONS,
@@ -16,6 +16,7 @@ interface ContinuousCompoundInterestFormProps {
   errors: ContinuousCompoundInterestFieldErrors;
   result: ContinuousCompoundInterestResult | null;
   onChange: (input: ContinuousCompoundInterestInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -48,6 +49,7 @@ export function ContinuousCompoundInterestForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: ContinuousCompoundInterestFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -87,7 +89,7 @@ export function ContinuousCompoundInterestForm({
               <CurrencySelect
                 id="cci-balance-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -267,7 +269,7 @@ export function ContinuousCompoundInterestForm({
               <CurrencySelect
                 id="cci-final-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Final balance currency"
               />
             </div>
@@ -291,7 +293,7 @@ export function ContinuousCompoundInterestForm({
               <CurrencySelect
                 id="cci-interest-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Compound interest currency"
               />
             </div>

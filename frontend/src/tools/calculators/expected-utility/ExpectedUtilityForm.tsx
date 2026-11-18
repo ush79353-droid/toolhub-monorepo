@@ -2,7 +2,11 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import {
+  CURRENCY_DENOMINATION_NOTE,
+  getCurrencySymbol,
+  type SupportedCurrency,
+} from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   ExpectedUtilityFieldErrors,
@@ -15,6 +19,7 @@ interface ExpectedUtilityFormProps {
   errors: ExpectedUtilityFieldErrors;
   result: ExpectedUtilityResult | null;
   onChange: (input: ExpectedUtilityInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -47,6 +52,7 @@ export function ExpectedUtilityForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: ExpectedUtilityFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -110,7 +116,7 @@ export function ExpectedUtilityForm({
               <CurrencySelect
                 id="eu-v1-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -169,7 +175,7 @@ export function ExpectedUtilityForm({
               <CurrencySelect
                 id="eu-v2-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>

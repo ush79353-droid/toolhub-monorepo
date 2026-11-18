@@ -188,7 +188,7 @@ export function BasisPointForm({
           <FieldLabel
             htmlFor="bps-of"
             label="Of"
-            tip="Monetary base amount. Currency labels the denomination only."
+            tip="Monetary base amount. Changing currency converts this amount using stored rates."
           />
           <div className="flex gap-2">
             <div className="relative min-w-0 flex-1">

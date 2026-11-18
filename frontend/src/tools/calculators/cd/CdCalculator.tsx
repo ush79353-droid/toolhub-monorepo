@@ -4,7 +4,15 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import { CdForm } from './CdForm';
 import { CdResults } from './CdResults';
 import { describeCdResult } from './calculation';
@@ -16,6 +24,11 @@ import {
 } from './types';
 import { validateCdInput } from './validation';
 
+const MONEY_FIELDS = ['initialDeposit'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts the deposit and result amounts using stored exchange rates. Interest rate, term, and compounding stay the same.';
+
 export function CdCalculator({
   metadata,
   className = '',
@@ -23,16 +36,23 @@ export function CdCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<CdInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<CdFieldErrors>({});
   const [result, setResult] = React.useState<CdResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: CdInput) => {
     const validation = validateCdInput(next);
@@ -40,11 +60,45 @@ export function CdCalculator({
     setResult(validation.result);
   };
 
+  const handleChange = (next: CdInput) => {
+    setConversionError(null);
+    setInput(next);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      { initialDeposit: input.initialDeposit },
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next: CdInput = {
+      ...input,
+      ...converted.values,
+      currency,
+    };
+    setInput(next);
+    run(next);
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
     setErrors({});
     setResult(null);
+    setConversionError(null);
   };
 
   const summary = result
@@ -55,7 +109,7 @@ export function CdCalculator({
         `Term: ${input.termYears || '0'} yrs, ${input.termMonths || '0'} mos`,
         `Compounding: ${input.compounding}`,
         describeCdResult(result),
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -70,21 +124,27 @@ export function CdCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Certificate of deposit compound interest. {CURRENCY_DENOMINATION_NOTE}
+            Certificate of deposit compound interest. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <CdForm
           input={input}
           errors={errors}
           result={result}
-          onChange={(next) => {
-            setInput(next);
-            run(next);
-          }}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <CdResults />

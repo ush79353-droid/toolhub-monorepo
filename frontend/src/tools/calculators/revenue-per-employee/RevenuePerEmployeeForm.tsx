@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   RevenuePerEmployeeFieldErrors,
@@ -15,6 +15,7 @@ interface RevenuePerEmployeeFormProps {
   errors: RevenuePerEmployeeFieldErrors;
   result: RevenuePerEmployeeResult | null;
   onChange: (input: RevenuePerEmployeeInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -45,6 +46,7 @@ export function RevenuePerEmployeeForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: RevenuePerEmployeeFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -61,7 +63,7 @@ export function RevenuePerEmployeeForm({
         <FieldLabel
           htmlFor="rpe-revenue"
           label="Revenue"
-          tip="Total revenue for the period. Currency labels amounts only; it does not convert."
+          tip="Total revenue for the period."
         />
         <div className="flex gap-2">
           <div className="relative min-w-0 flex-1">
@@ -81,7 +83,7 @@ export function RevenuePerEmployeeForm({
             <CurrencySelect
               id="rpe-revenue-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -132,7 +134,7 @@ export function RevenuePerEmployeeForm({
             <CurrencySelect
               id="rpe-result-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Revenue per employee currency"
             />
           </div>

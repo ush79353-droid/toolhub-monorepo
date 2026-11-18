@@ -3,7 +3,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   CostOfGoodsSoldFieldErrors,
@@ -36,6 +36,7 @@ interface CostOfGoodsSoldFormProps {
   errors: CostOfGoodsSoldFieldErrors;
   result: CostOfGoodsSoldResult | null;
   onChange: (input: CostOfGoodsSoldInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -44,6 +45,7 @@ export function CostOfGoodsSoldForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: CostOfGoodsSoldFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -83,7 +85,7 @@ export function CostOfGoodsSoldForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -143,7 +145,7 @@ export function CostOfGoodsSoldForm({
             <CurrencySelect
               id="cogs-result-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="COGS currency"
             />
           </div>

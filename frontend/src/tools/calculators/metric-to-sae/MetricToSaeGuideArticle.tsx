@@ -1,0 +1,84 @@
+import { FAQAccordion } from '@/components/shared/FAQAccordion';
+import { METRIC_TO_SAE_FAQS, METRIC_TO_SAE_GUIDE_SECTIONS } from './content';
+
+export function MetricToSaeGuideArticle() {
+  return (
+    <div className="rounded-2xl border border-border bg-white px-5 py-6 shadow-xs sm:px-8 sm:py-8">
+      <div className="divide-y divide-border">
+        {METRIC_TO_SAE_GUIDE_SECTIONS.map((section) => (
+          <article key={section.id} id={section.id} className="scroll-mt-24 py-7 first:pt-0">
+            <h2 className="text-[21px] font-semibold leading-snug tracking-tight text-accent sm:text-2xl">
+              {section.title}
+            </h2>
+            <div className="mt-3.5 space-y-4 text-[15px] font-normal leading-[1.72] text-foreground/85 sm:text-base sm:leading-[1.75]">
+              {section.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            {section.subsections?.map((sub) => (
+              <div key={sub.id} id={sub.id} className="mt-6 scroll-mt-24">
+                <h3 className="text-lg font-semibold text-accent sm:text-xl">{sub.title}</h3>
+                <div className="mt-2.5 space-y-3 text-[15px] leading-[1.72] text-foreground/85 sm:text-base">
+                  {sub.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
+            {section.formula ? (
+              <div className="mt-5 overflow-x-auto rounded-xl border border-border bg-brand-softTeal/55 px-4 py-3.5 sm:px-5">
+                <p className="font-mono text-xs font-medium text-accent sm:text-sm">{section.formula}</p>
+              </div>
+            ) : null}
+            {section.table ? (
+              <div className="mt-5 overflow-x-auto rounded-xl border border-border">
+                <table className="w-full min-w-[280px] text-left text-sm">
+                  <caption className="sr-only">{section.title}</caption>
+                  <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground">
+                    <tr>
+                      {section.tableHeaders?.map((header) => (
+                        <th key={header} scope="col" className="px-3 py-2.5 font-medium">
+                          {header}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.table.map((row) => (
+                      <tr key={row.join('|')} className="border-t border-border">
+                        {row.map((cell, index) => (
+                          <td
+                            key={`${index}-${cell}`}
+                            className="px-3 py-2.5 font-mono tabular-nums text-accent"
+                          >
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : null}
+            {section.callout ? (
+              <aside className="mt-5 rounded-xl border border-amber-200/90 bg-amber-50/90 px-4 py-3.5 text-sm leading-relaxed text-amber-950/90">
+                <p>
+                  <strong className="font-semibold">Safety note: </strong>
+                  {section.callout}
+                </p>
+              </aside>
+            ) : null}
+          </article>
+        ))}
+        <section id="metric-to-sae-faq" className="scroll-mt-24 py-7">
+          <h2 className="text-[21px] font-semibold leading-snug tracking-tight text-accent sm:text-2xl">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-4">
+            <FAQAccordion items={METRIC_TO_SAE_FAQS} />
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}

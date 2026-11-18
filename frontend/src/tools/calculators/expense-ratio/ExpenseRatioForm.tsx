@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { ChevronDown } from 'lucide-react';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
@@ -17,6 +17,7 @@ interface ExpenseRatioFormProps {
   errors: ExpenseRatioFieldErrors;
   result: ExpenseRatioResult | null;
   onChange: (input: ExpenseRatioInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -47,6 +48,7 @@ export function ExpenseRatioForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: ExpenseRatioFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -84,7 +86,7 @@ export function ExpenseRatioForm({
             <CurrencySelect
               id="er-initial-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -117,7 +119,7 @@ export function ExpenseRatioForm({
             <CurrencySelect
               id="er-yearly-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -222,7 +224,7 @@ export function ExpenseRatioForm({
             <CurrencySelect
               id="er-gross-fv-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -252,7 +254,7 @@ export function ExpenseRatioForm({
             <CurrencySelect
               id="er-etf-cost-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
             />
           </div>
         </div>
@@ -296,7 +298,7 @@ export function ExpenseRatioForm({
                 <CurrencySelect
                   id="er-net-fv-currency"
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                 />
               </div>
             </div>

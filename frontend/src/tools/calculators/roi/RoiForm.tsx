@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   CONTRIBUTION_FREQUENCY_OPTIONS,
@@ -48,10 +48,18 @@ interface RoiFormProps {
   errors: RoiFieldErrors;
   result: RoiResult | null;
   onChange: (input: RoiInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
-export function RoiForm({ input, errors, result, onChange, onReset }: RoiFormProps) {
+export function RoiForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: RoiFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<RoiInput>) => onChange({ ...input, ...patch });
   const showContrib = input.contributionFrequency !== 'none';
@@ -137,7 +145,7 @@ export function RoiForm({ input, errors, result, onChange, onReset }: RoiFormPro
               <CurrencySelect
                 id="roi-initial-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Initial investment currency"
               />
             </div>
@@ -196,7 +204,7 @@ export function RoiForm({ input, errors, result, onChange, onReset }: RoiFormPro
                 <CurrencySelect
                   id="roi-contrib-currency"
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                   aria-label="Contribution currency"
                 />
               </div>
@@ -270,7 +278,7 @@ export function RoiForm({ input, errors, result, onChange, onReset }: RoiFormPro
                 <CurrencySelect
                   id="roi-returned-currency"
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                   aria-label="Returned amount currency"
                 />
               </div>

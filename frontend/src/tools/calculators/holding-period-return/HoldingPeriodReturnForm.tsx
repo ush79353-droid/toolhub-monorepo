@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   HoldingPeriodReturnFieldErrors,
@@ -40,6 +40,7 @@ interface HoldingPeriodReturnFormProps {
   errors: HoldingPeriodReturnFieldErrors;
   result: HoldingPeriodReturnResult | null;
   onChange: (input: HoldingPeriodReturnInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -48,6 +49,7 @@ export function HoldingPeriodReturnForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: HoldingPeriodReturnFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -89,7 +91,7 @@ export function HoldingPeriodReturnForm({
               <CurrencySelect
                 id="hpr-bought-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Bought price currency"
               />
             </div>
@@ -125,7 +127,7 @@ export function HoldingPeriodReturnForm({
               <CurrencySelect
                 id="hpr-current-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Current price currency"
               />
             </div>
@@ -187,7 +189,7 @@ export function HoldingPeriodReturnForm({
               <CurrencySelect
                 id="hpr-dividend-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Dividend income currency"
               />
             </div>

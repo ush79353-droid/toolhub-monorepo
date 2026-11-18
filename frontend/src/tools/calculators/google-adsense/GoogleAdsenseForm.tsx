@@ -3,7 +3,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   GoogleAdsenseFieldErrors,
@@ -38,6 +38,7 @@ interface GoogleAdsenseFormProps {
   errors: GoogleAdsenseFieldErrors;
   result: GoogleAdsenseResult | null;
   onChange: (input: GoogleAdsenseInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -46,6 +47,7 @@ export function GoogleAdsenseForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: GoogleAdsenseFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -239,7 +241,7 @@ export function GoogleAdsenseForm({
               <CurrencySelect
                 id="adsense-cpc-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Cost per click currency"
               />
             </div>
@@ -275,7 +277,7 @@ export function GoogleAdsenseForm({
               <CurrencySelect
                 id="adsense-revenue-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Revenue currency"
               />
             </div>

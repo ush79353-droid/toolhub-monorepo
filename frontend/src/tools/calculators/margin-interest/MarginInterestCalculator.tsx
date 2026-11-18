@@ -4,10 +4,14 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { getCurrencySymbol } from '@/tools/shared/currency';
 import {
-  CURRENCY_DENOMINATION_NOTE,
-  getCurrencySymbol,
-} from '@/tools/shared/currency';
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { MarginInterestForm } from './MarginInterestForm';
 import {
   createDefaultInput,
@@ -17,6 +21,10 @@ import {
 } from './types';
 import { validateMarginInterestInput } from './validation';
 
+/** Pilot copy — borrowed and result currencies are independent. */
+const MARGIN_INTEREST_CURRENCY_NOTE =
+  'Borrowed amount and margin interest each have their own currency. Changing borrowed currency converts that amount; changing result currency only re-expresses the interest.';
+
 export function MarginInterestCalculator({
   metadata,
   className = '',
@@ -24,8 +32,10 @@ export function MarginInterestCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
-  const initial = validateMarginInterestInput(defaults);
+  const initial = validateMarginInterestInput(defaults, rates);
   const [input, setInput] = React.useState<MarginInterestInput>(() => defaults);
   const [errors, setErrors] = React.useState<MarginInterestFieldErrors>(
     () => initial.errors
@@ -43,14 +53,14 @@ export function MarginInterestCalculator({
 
   const apply = (next: MarginInterestInput) => {
     setInput(next);
-    const validation = validateMarginInterestInput(next);
+    const validation = validateMarginInterestInput(next, rates);
     setErrors(validation.errors);
     setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
-    const validation = validateMarginInterestInput(fresh);
+    const validation = validateMarginInterestInput(fresh, rates);
     setInput(fresh);
     setErrors(validation.errors);
     setResult(validation.result);
@@ -58,15 +68,19 @@ export function MarginInterestCalculator({
     setShared(false);
   };
 
-  const symbol = getCurrencySymbol(input.currency);
+  const currencyNote = ratesStatus.available
+    ? MARGIN_INTEREST_CURRENCY_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const borrowedSymbol = getCurrencySymbol(input.currency);
+  const resultSymbol = getCurrencySymbol(result?.currency ?? input.resultCurrency);
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
-        `Amount borrowed: ${symbol}${input.amountBorrowed}`,
+        `Amount borrowed: ${borrowedSymbol}${input.amountBorrowed}`,
         `Interest rate: ${input.interestRatePercent}%`,
         `Number of days: ${input.numberOfDays}`,
-        `Margin interest: ${symbol}${result.formattedMarginInterest}`,
-        CURRENCY_DENOMINATION_NOTE,
+        `Margin interest: ${resultSymbol}${result.formattedMarginInterest}`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -80,9 +94,7 @@ export function MarginInterestCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">
-            {CURRENCY_DENOMINATION_NOTE}
-          </p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>

@@ -4,7 +4,15 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import { ContinuousCompoundInterestForm } from './ContinuousCompoundInterestForm';
 import { ContinuousCompoundInterestResults } from './ContinuousCompoundInterestResults';
 import { describeResult } from './calculation';
@@ -16,6 +24,11 @@ import {
 } from './types';
 import { validateContinuousCompoundInterestInput } from './validation';
 
+const MONEY_FIELDS = ['initialBalance', 'depositAmount'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts balances and deposits using stored exchange rates. Interest rate and term stay the same.';
+
 export function ContinuousCompoundInterestCalculator({
   metadata,
   className = '',
@@ -23,6 +36,8 @@ export function ContinuousCompoundInterestCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<ContinuousCompoundInterestInput>(() =>
     createDefaultInput(),
   );
@@ -35,10 +50,15 @@ export function ContinuousCompoundInterestCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: ContinuousCompoundInterestInput) => {
     const validation = validateContinuousCompoundInterestInput(next);
@@ -46,11 +66,42 @@ export function ContinuousCompoundInterestCalculator({
     setResult(validation.result);
   };
 
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      {
+        initialBalance: input.initialBalance,
+        depositAmount: input.depositAmount,
+      },
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next: ContinuousCompoundInterestInput = {
+      ...input,
+      ...converted.values,
+      currency,
+    };
+    setInput(next);
+    run(next);
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
     setCopied(false);
     setShared(false);
+    setConversionError(null);
     run(fresh);
   };
 
@@ -62,7 +113,7 @@ export function ContinuousCompoundInterestCalculator({
         `Term: ${input.termYears || '0'} yrs, ${input.termMonths || '0'} mos`,
         `Additional deposits: ${input.depositFrequency}`,
         describeResult(result),
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -77,21 +128,31 @@ export function ContinuousCompoundInterestCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Continuous compounding with optional deposits. {CURRENCY_DENOMINATION_NOTE}
+            Continuous compounding with optional deposits. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <ContinuousCompoundInterestForm
           input={input}
           errors={errors}
           result={result}
           onChange={(next) => {
+            setConversionError(null);
             setInput(next);
             run(next);
           }}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <ContinuousCompoundInterestResults />

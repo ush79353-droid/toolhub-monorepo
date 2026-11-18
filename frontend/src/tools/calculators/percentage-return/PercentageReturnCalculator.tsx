@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { PercentageReturnForm } from './PercentageReturnForm';
 import { PercentageReturnResults } from './PercentageReturnResults';
 import {
@@ -15,6 +21,11 @@ import {
 } from './types';
 import { syncDurationFields, validatePercentageReturn } from './validation';
 
+const MONEY_FIELDS = ['investedAmount', 'returnedAmount'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts invested and returned amounts together using stored exchange rates. Percentage and annualized returns stay unchanged.';
+
 export function PercentageReturnCalculator({
   metadata,
   className = '',
@@ -22,16 +33,23 @@ export function PercentageReturnCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<PercentageReturnInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<PercentageReturnFieldErrors>({});
   const [result, setResult] = React.useState<PercentageReturnResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: PercentageReturnInput) => {
     const synced = syncDurationFields(next);
@@ -41,11 +59,38 @@ export function PercentageReturnCalculator({
     setResult(validation.result);
   };
 
+  const handleChange = (next: PercentageReturnInput) => {
+    setConversionError(null);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({ ...input, ...converted.values, currency });
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
     setErrors({});
     setResult(null);
+    setConversionError(null);
   };
 
   const symbol = getCurrencySymbol(input.currency);
@@ -67,7 +112,7 @@ export function PercentageReturnCalculator({
           input.solveMode === 'time-needed' && result.timeNeededDisplay
             ? `Time needed: ${result.timeNeededDisplay} yrs`
             : null,
-          CURRENCY_DENOMINATION_NOTE,
+          currencyNote,
         ]
           .filter(Boolean)
           .join('\n')
@@ -84,18 +129,27 @@ export function PercentageReturnCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Total and annualized percentage return. {CURRENCY_DENOMINATION_NOTE}
+            Total and annualized percentage return. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <PercentageReturnForm
           input={input}
           errors={errors}
           result={result}
-          onChange={run}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <PercentageReturnResults />

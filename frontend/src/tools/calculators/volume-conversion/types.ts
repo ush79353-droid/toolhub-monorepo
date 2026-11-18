@@ -31,8 +31,10 @@ export type VolumeUnitId =
   | 'usTbsp'
   | 'metricTbsp'
   | 'auTbsp'
+  | 'impTbsp'
   | 'usTsp'
   | 'metricTsp'
+  | 'impTsp'
   | 'usBushel';
 
 export type VolumeFieldId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
@@ -160,12 +162,26 @@ export const VOLUME_UNITS: readonly VolumeUnitDef[] = [
     toLiters: 0.02,
   },
   {
+    id: 'impTbsp',
+    symbol: 'Imp. tbsp',
+    name: 'Imperial tablespoon',
+    /** Traditional: imperial gallon / 256 = 17.7581640625 mL. */
+    toLiters: LITERS_PER_IMPERIAL_GALLON / 256,
+  },
+  {
     id: 'usTsp',
     symbol: 'US tsp',
     name: 'US teaspoon',
     toLiters: LITERS_PER_US_LIQUID_GALLON / 768,
   },
   { id: 'metricTsp', symbol: 'metric tsp', name: 'Metric teaspoon', toLiters: 0.005 },
+  {
+    id: 'impTsp',
+    symbol: 'Imp. tsp',
+    name: 'Imperial teaspoon',
+    /** Traditional: imperial gallon / 768 ≈ 5.919388020833 mL. */
+    toLiters: LITERS_PER_IMPERIAL_GALLON / 768,
+  },
   {
     id: 'usBushel',
     symbol: 'US bu',
@@ -199,8 +215,8 @@ export const FIELD_UNIT_OPTIONS: readonly (readonly VolumeUnitId[])[] = [
   ['usPt', 'impPt', 'usDryPt'],
   ['usCup', 'usLegalCup', 'metricCup', 'imperialCup'],
   ['usFlOz', 'impFlOz'],
-  ['usTbsp', 'metricTbsp', 'auTbsp'],
-  ['usTsp', 'metricTsp'],
+  ['usTbsp', 'metricTbsp', 'auTbsp', 'impTbsp'],
+  ['usTsp', 'metricTsp', 'impTsp'],
 ] as const;
 
 export const DEFAULT_FIELD_UNITS: readonly [

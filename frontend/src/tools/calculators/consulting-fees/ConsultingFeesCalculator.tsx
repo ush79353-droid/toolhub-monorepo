@@ -4,17 +4,53 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { type SupportedCurrency } from '@/tools/shared/currency';
 import { ConsultingFeesForm } from './ConsultingFeesForm';
 import { ConsultingFeesResults } from './ConsultingFeesResults';
 import { formatDays, formatMoney } from './calculation';
 import {
+  OPERATING_COST_KEYS,
   createDefaultInput,
   type ConsultingFeesFieldErrors,
   type ConsultingFeesInput,
   type ConsultingFeesResult,
 } from './types';
 import { validateConsultingFees } from './validation';
+
+const MONEY_KEYS = [...OPERATING_COST_KEYS, 'averageProjectValue', 'targetIncome'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts operating costs, target income, and fee outputs using stored exchange rates. Billable days and hours per day stay the same.';
+
+function convertConsultingFeesMoney(
+  input: ConsultingFeesInput,
+  from: string,
+  to: string,
+  rates: Record<string, number>
+): Partial<ConsultingFeesInput> | null {
+  const patch: Partial<ConsultingFeesInput> = {};
+  for (const key of MONEY_KEYS) {
+    const amount = input[key];
+    if (!Number.isFinite(amount)) {
+      patch[key] = amount;
+      continue;
+    }
+    if (amount === 0) {
+      patch[key] = 0;
+      continue;
+    }
+    const converted = convertCurrency({ amount, from, to, rates });
+    if (!converted.ok) return null;
+    patch[key] = converted.amount;
+  }
+  return patch;
+}
 
 export function ConsultingFeesCalculator({
   metadata,
@@ -23,6 +59,8 @@ export function ConsultingFeesCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<ConsultingFeesInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<ConsultingFeesFieldErrors>({});
   const [result, setResult] = React.useState<ConsultingFeesResult | null>(null);
@@ -35,10 +73,15 @@ export function ConsultingFeesCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: ConsultingFeesInput) => {
     const validation = validateConsultingFees(next);
@@ -48,10 +91,31 @@ export function ConsultingFeesCalculator({
     setResult(validation.isValid ? validation.result : null);
   };
 
+  const handleChange = (next: ConsultingFeesInput) => {
+    setConversionError(null);
+    setInput(next);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const moneyPatch = convertConsultingFeesMoney(input, input.currency, currency, rates.rates);
+    if (!moneyPatch) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({ ...input, ...moneyPatch, currency });
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
-    setInput(fresh);
-    run(fresh);
+    setConversionError(null);
+    handleChange(fresh);
   };
 
   const summary = result
@@ -61,7 +125,7 @@ export function ConsultingFeesCalculator({
         `Annual operating costs: ${formatMoney(result.annualOperatingCosts, result.currency)}`,
         `Daily billable rate: ${formatMoney(result.dailyBillableRate, result.currency)}`,
         `Hourly rate: ${formatMoney(result.hourlyRate, result.currency)}`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -75,22 +139,28 @@ export function ConsultingFeesCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{CURRENCY_DENOMINATION_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <ConsultingFeesForm
           input={input}
           errors={errors}
           result={result}
           billableDays={billableDays}
           annualOperatingCosts={annualOperatingCosts}
-          onChange={(next) => {
-            setInput(next);
-            run(next);
-          }}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <ConsultingFeesResults />

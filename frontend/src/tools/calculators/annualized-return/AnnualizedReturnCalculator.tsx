@@ -87,7 +87,8 @@ export function AnnualizedReturnCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Annualized return from total return or beginning/ending values
+            Annualized return from total return or beginning/ending values. Currency change converts
+            both monetary inputs together; holding period and return % stay economic.
           </p>
         </div>
         {headerActions ? <div className="flex flex-wrap justify-end gap-2">{headerActions}</div> : null}

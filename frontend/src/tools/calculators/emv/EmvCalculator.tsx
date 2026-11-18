@@ -3,7 +3,13 @@
 import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE } from '@/tools/shared/currency';
+import { convertDraftMoneyList } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { type SupportedCurrency } from '@/tools/shared/currency';
 import { EmvForm } from './EmvForm';
 import { EmvResults } from './EmvResults';
 import {
@@ -14,7 +20,10 @@ import {
 } from './types';
 import { validateEmvDraft } from './validation';
 
-function summaryText(metadataTitle: string, result: EmvResult): string {
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts risk impact amounts using stored exchange rates. Probabilities unchanged.';
+
+function summaryText(metadataTitle: string, result: EmvResult, currencyNote: string): string {
   const lines = [
     `${metadataTitle} — Omega Calculators`,
     `Risks: ${result.risks.length}`,
@@ -28,7 +37,7 @@ function summaryText(metadataTitle: string, result: EmvResult): string {
   lines.push(
     'Convention: positive EMV = expected loss (threat); negative impact = expected gain (opportunity).'
   );
-  lines.push(CURRENCY_DENOMINATION_NOTE);
+  lines.push(currencyNote);
   return lines.join('\n');
 }
 
@@ -39,6 +48,8 @@ export function EmvCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<EmvDraft>(() => createDefaultDraft());
   const [errors, setErrors] = React.useState<EmvFieldErrors>({});
   const [result, setResult] = React.useState<EmvResult | null>(null);
@@ -47,10 +58,15 @@ export function EmvCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: EmvDraft) => {
     const validation = validateEmvDraft(next);
@@ -58,6 +74,36 @@ export function EmvCalculator({
     setErrors(validation.errors);
     setIncomplete(validation.incomplete);
     setResult(validation.isValid ? validation.result : null);
+  };
+
+  const handleDraftChange = (next: EmvDraft) => {
+    setConversionError(null);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const impacts = draft.risks.map((risk) => risk.impact);
+    const convertedImpacts = convertDraftMoneyList(
+      impacts,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!convertedImpacts.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const risks = draft.risks.map((risk, index) => ({
+      ...risk,
+      impact: convertedImpacts.values[index] ?? risk.impact,
+    }));
+    run({ ...draft, risks, currency });
   };
 
   const resetAll = () => {
@@ -68,9 +114,10 @@ export function EmvCalculator({
     setOpenRisks({ 0: true });
     setCopied(false);
     setShared(false);
+    setConversionError(null);
   };
 
-  const sharePayload = result ? summaryText(metadata.title, result) : '';
+  const sharePayload = result ? summaryText(metadata.title, result, currencyNote) : '';
   const hasFieldErrors = Object.keys(errors).length > 0;
 
   return (
@@ -83,17 +130,26 @@ export function EmvCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{CURRENCY_DENOMINATION_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex flex-wrap justify-end gap-2">{headerActions}</div> : null}
       </div>
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <EmvForm
           draft={draft}
           errors={errors}
           result={result}
           openRisks={openRisks}
-          onDraftChange={run}
+          onDraftChange={handleDraftChange}
+          onCurrencyChange={handleCurrencyChange}
           onToggleRisk={(index) =>
             setOpenRisks((prev) => ({
               ...prev,
@@ -115,7 +171,7 @@ export function EmvCalculator({
           canShare={canShare}
           onCopy={() => {
             if (!result) return;
-            void copyTextToClipboard(summaryText(metadata.title, result)).then((ok) => {
+            void copyTextToClipboard(summaryText(metadata.title, result, currencyNote)).then((ok) => {
               if (!ok) return;
               setCopied(true);
               window.setTimeout(() => setCopied(false), 2000);

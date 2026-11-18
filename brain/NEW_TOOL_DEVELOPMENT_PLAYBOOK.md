@@ -25,7 +25,7 @@ A new calculator is not done until every gate below is true, in this order. Deta
 10. **Currency** — Follow the checklist in Step 19b and ADR-023. Denomination and conversion are different. Include currency selector ONLY when reference requires it.
 11. **Activation** — Follow Step 19c (ADR-022 + ADR-023 verified activation). After module, registry, tests, and `/tools/{slug}` succeed: set `isDeveloped`, `isActive`, and `indexable` when eligible. Report admin-disabled/noindex blockers instead of overriding them. Do not activate a placeholder. A calculator is not delivered until the public route works for testing.
 
-Then finish accessibility, type-check, lint, and the Brain update (steps 16–19). Commit each finished milestone under ADR-019. Do not wait until the end for every file.
+Then finish accessibility, type-check, lint, and the Brain update (steps 16–19). Under ADR-019, land the delivery as two commits: tool files first, Brain last.
 
 ---
 
@@ -220,31 +220,27 @@ ADR-016 (Auto Loan visual shell) and ADR-018 (calculator module) stay in force. 
 
 ---
 
-## Step 19 — Incremental commits and push
+## Step 19 — Two commits and push
 
-ADR-019. Commit a finished milestone when it is coherent and the checks that apply to it pass. Push the finished sequence once, after `git fetch`, only if `origin/development` can take a fast-forward. Never force-push.
+ADR-019. After the calculator is complete and verified, create exactly two commits, then push once after `git fetch` only if `origin/development` can take a fast-forward. Never force-push.
 
-| Size | Commits |
+Example, using the tool name in place of `calculator`:
+
+1. `feat(calculator): add calculator module, registry and activation`
+2. `docs(calculator): update Brain and development records`
+
+| Commit | Includes |
 | :--- | :--- |
-| Small | 1–2. One commit is enough when the engine, UI, registration, and Brain note are one change. |
-| Medium | 2–3 |
-| Large | 3–5. More than five is allowed when each extra commit is a real milestone. |
-
-Example for a large calculator, using the tool name in place of `calculator`:
-
-1. `feat(calculator): add calculation engine, types and validation`
-2. `test(calculator): add calculation unit tests`
-3. `feat(calculator): implement form and results UI`
-4. `feat(calculator): integrate registry, guide, SEO and embed`
-5. `docs(calculator): update Brain and development records`
+| 1 — Tool files | Module (`calculation.ts`, `validation.ts`, `detail.tsx`, tests, UI), registry, sitemap, backend `tool.key.ts`, assign/activation work, and other non-Brain code |
+| 2 — Brain | `CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`, and any ADR or other `brain/` docs |
 
 Rules:
 
-- Each commit contains a real, reviewable change. No empty, duplicate, or padded commits.
-- Do not split a change so the tree cannot build. Register the calculator only when its component and `detail.tsx` exist. Keep the engine commit free of React.
-- Run the checks that match the milestone: engine tests after the test commit, `type-check` and `lint` after UI and registry commits, responsive and embed checks before the closing docs commit.
+- Exactly two commits. Do not split into engine / tests / UI / registry milestones. No empty, duplicate, or padded commits.
+- Register the calculator only when its component and `detail.tsx` exist in the tool commit.
+- Run engine tests, `type-check`, `lint`, and responsive/embed checks before the tool commit; Brain commit is docs only.
 - Use Conventional Commit subjects. Stage only this task's files.
-- The delivery report lists every commit hash and the checks run at that milestone.
+- The delivery report lists both commit hashes and the checks run.
 
 ---
 
@@ -275,6 +271,7 @@ ADR-022 + ADR-023 verified automatic activation. Do this after the module, tests
 - [ ] `embedEnabled` omitted or true. Set false only when an admin disables embed.
 - [ ] Slug is in `IMPLEMENTED_TOOL_SLUGS`. Sitemap still needs `indexable` + `sitemapInclude`. Confirm category/search visibility.
 - [ ] A missing module, missing registry key, empty `componentKey`, or broken calculator stays inactive. Admin-disabled / draft / private / noindex decisions stay preserved and are reported as blockers.
+- [ ] **Mongo assign uses only** `cd backend && npm run tool:assign -- …` (`assign-tool-component.ts`). Pass `--slug`, `--component`, `--id`, `--name`, `--short-description`, `--meta-title`, `--meta-description`, and `--expected-pillar` / `--expected-subpillar` (`null` when empty). Do **not** create `assign-*-tool.ts` or other one-off scripts. Preserve `isActive` / `indexable` / `isFeatured` unless the task explicitly allows `--set-active` / `--set-indexable`.
 
 ---
 
@@ -298,7 +295,7 @@ A new calculator is **not** done when the form merely renders. The first items a
 - [ ] Accessibility basics (labels, focus, FAQ, table headers)
 - [ ] `type-check` and `lint` passing
 - [ ] Verified activation (ADR-022/023): `isDeveloped` / `isActive` / eligible `indexable`, public `/tools/{slug}` works, or blocker reported
-- [ ] Brain docs updated in the closing commit of the ADR-019 sequence (or in the only commit when the tool is small)
+- [ ] Brain docs updated in the second ADR-019 commit (tool files first, Brain last)
 
 ---
 
@@ -315,6 +312,6 @@ If asked to ship a Percentage Calculator, agents should automatically:
 7. Write percentage-specific guide/TOC/FAQ (not loan copy)
 8. Rely on shared SEO/ads/embed
 9. Verify responsive + a11y + gates
-10. Commit the milestones from Step 19 (one commit is enough for this small tool), with the Brain update in the last of those commits
+10. Commit per Step 19: tool files first, Brain second
 
 No new design brief required — the master standards already define the shell.

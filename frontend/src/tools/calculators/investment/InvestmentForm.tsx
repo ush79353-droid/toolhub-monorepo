@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   COMPOUNDING_OPTIONS,
@@ -42,10 +42,17 @@ interface InvestmentFormProps {
   input: InvestmentInput;
   errors: InvestmentFieldErrors;
   onChange: (input: InvestmentInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
-export function InvestmentForm({ input, errors, onChange, onReset }: InvestmentFormProps) {
+export function InvestmentForm({
+  input,
+  errors,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: InvestmentFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<InvestmentInput>) => onChange({ ...input, ...patch });
   const showContrib = input.contributionFrequency !== 'never';
@@ -110,7 +117,7 @@ export function InvestmentForm({ input, errors, onChange, onReset }: InvestmentF
               <CurrencySelect
                 id="inv-initial-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Initial investment currency"
               />
             </div>
@@ -279,7 +286,7 @@ export function InvestmentForm({ input, errors, onChange, onReset }: InvestmentF
                   <CurrencySelect
                     id="inv-contrib-currency"
                     value={input.currency}
-                    onChange={(currency) => set({ currency })}
+                    onChange={onCurrencyChange}
                     aria-label="Contribution currency"
                   />
                 </div>

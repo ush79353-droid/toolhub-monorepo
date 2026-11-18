@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import { RateOfReturnForm } from './RateOfReturnForm';
 import { RateOfReturnResults } from './RateOfReturnResults';
 import {
@@ -17,6 +23,11 @@ import {
 } from './types';
 import { validateRateOfReturnInput } from './validation';
 
+const MONEY_FIELDS = ['initialInvestment', 'finalAmount', 'periodicCashFlow'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts initial, final, and periodic cash flow amounts using stored exchange rates. The solved rate of return % stays the same.';
+
 export function RateOfReturnCalculator({
   metadata,
   className = '',
@@ -24,6 +35,8 @@ export function RateOfReturnCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<RateOfReturnInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<RateOfReturnFieldErrors>(() => {
     const seed = validateRateOfReturnInput(createDefaultInput());
@@ -36,16 +49,47 @@ export function RateOfReturnCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const apply = (next: RateOfReturnInput) => {
     setInput(next);
     const validation = validateRateOfReturnInput(next);
     setErrors(validation.errors);
     setResult(validation.isValid ? validation.result : null);
+  };
+
+  const handleChange = (next: RateOfReturnInput) => {
+    setConversionError(null);
+    apply(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({ ...input, ...converted.values, currency });
   };
 
   const handleReset = () => {
@@ -56,6 +100,7 @@ export function RateOfReturnCalculator({
     setResult(validation.isValid ? validation.result : null);
     setCopied(false);
     setShared(false);
+    setConversionError(null);
   };
 
   const compoundingLabel =
@@ -75,7 +120,7 @@ export function RateOfReturnCalculator({
         `Cash flow frequency: ${cashFlowLabel}`,
         `Timing: ${result.paymentTiming === 'end' ? 'End of period' : 'Beginning of period'}`,
         `The rate of return is ${result.formattedRate}%.`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -90,18 +135,27 @@ export function RateOfReturnCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Annual nominal rate of return · {CURRENCY_DENOMINATION_NOTE}
+            Annual nominal rate of return · {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <RateOfReturnForm
           input={input}
           errors={errors}
           result={result}
-          onChange={apply}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <RateOfReturnResults />

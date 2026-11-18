@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { HedgeRatioForm } from './HedgeRatioForm';
 import {
   createDefaultInput,
@@ -14,6 +20,11 @@ import {
 } from './types';
 import { validateHedgeRatioInput } from './validation';
 
+const MONEY_FIELDS = ['totalExposure', 'hedgePosition'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts exposure and hedge notionals using stored exchange rates. Hedge ratio % stays the same.';
+
 export function HedgeRatioCalculator({
   metadata,
   className = '',
@@ -21,18 +32,58 @@ export function HedgeRatioCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<HedgeRatioInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<HedgeRatioFieldErrors>({});
   const [result, setResult] = React.useState<HedgeRatioResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
   const handleChange = (next: HedgeRatioInput) => {
+    setConversionError(null);
+    setInput(next);
+    const validation = validateHedgeRatioInput(next);
+    setErrors(validation.errors);
+    setResult(validation.result);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      {
+        totalExposure: input.totalExposure,
+        hedgePosition: input.hedgePosition,
+      },
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next: HedgeRatioInput = {
+      ...input,
+      ...converted.values,
+      currency,
+    };
     setInput(next);
     const validation = validateHedgeRatioInput(next);
     setErrors(validation.errors);
@@ -43,6 +94,7 @@ export function HedgeRatioCalculator({
     setInput(createDefaultInput());
     setErrors({});
     setResult(null);
+    setConversionError(null);
   };
 
   const symbol = getCurrencySymbol(input.currency);
@@ -52,7 +104,7 @@ export function HedgeRatioCalculator({
         `Total exposure: ${symbol}${input.totalExposure}`,
         `Hedge position: ${symbol}${input.hedgePosition}`,
         `Hedge ratio: ${result.formattedHedgeRatio}%`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -67,18 +119,27 @@ export function HedgeRatioCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Hedge ratio = (hedge ÷ exposure) × 100. {CURRENCY_DENOMINATION_NOTE}
+            Hedge ratio = (hedge ÷ exposure) × 100. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <HedgeRatioForm
           input={input}
           errors={errors}
           result={result}
           onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <div className="flex flex-wrap gap-2">

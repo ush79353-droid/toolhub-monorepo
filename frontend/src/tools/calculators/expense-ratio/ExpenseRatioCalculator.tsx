@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { ExpenseRatioForm } from './ExpenseRatioForm';
 import {
   createDefaultInput,
@@ -14,6 +20,11 @@ import {
 } from './types';
 import { validateExpenseRatioInput } from './validation';
 
+const MONEY_FIELDS = ['initialInvestment', 'yearlyInvestment'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts investment amounts using stored exchange rates. Return %, expense ratio %, duration, and computed future values scale together.';
+
 export function ExpenseRatioCalculator({
   metadata,
   className = '',
@@ -21,18 +32,58 @@ export function ExpenseRatioCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<ExpenseRatioInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<ExpenseRatioFieldErrors>({});
   const [result, setResult] = React.useState<ExpenseRatioResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
   const handleChange = (next: ExpenseRatioInput) => {
+    setConversionError(null);
+    setInput(next);
+    const validation = validateExpenseRatioInput(next);
+    setErrors(validation.errors);
+    setResult(validation.result);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      {
+        initialInvestment: input.initialInvestment,
+        yearlyInvestment: input.yearlyInvestment,
+      },
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next: ExpenseRatioInput = {
+      ...input,
+      ...converted.values,
+      currency,
+    };
     setInput(next);
     const validation = validateExpenseRatioInput(next);
     setErrors(validation.errors);
@@ -43,6 +94,7 @@ export function ExpenseRatioCalculator({
     setInput(createDefaultInput());
     setErrors({});
     setResult(null);
+    setConversionError(null);
   };
 
   const symbol = getCurrencySymbol(input.currency);
@@ -57,7 +109,7 @@ export function ExpenseRatioCalculator({
         `Gross FV: ${symbol}${result.formattedGrossFutureValue}`,
         `Total ETF cost: ${symbol}${result.formattedTotalEtfCost}`,
         `Net FV: ${symbol}${result.formattedNetFutureValue}`,
-        CURRENCY_DENOMINATION_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -72,19 +124,27 @@ export function ExpenseRatioCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Project investment growth and ETF expense-ratio drag.{' '}
-            {CURRENCY_DENOMINATION_NOTE}
+            Project investment growth and ETF expense-ratio drag. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <ExpenseRatioForm
           input={input}
           errors={errors}
           result={result}
           onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <div className="flex flex-wrap gap-2">

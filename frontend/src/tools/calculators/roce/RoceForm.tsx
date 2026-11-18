@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type { RoceFieldErrors, RoceInput, RoceResult } from './types';
 
@@ -96,13 +96,20 @@ interface RoceFormProps {
   errors: RoceFieldErrors;
   result: RoceResult | null;
   onChange: (input: RoceInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
-export function RoceForm({ input, errors, result, onChange, onReset }: RoceFormProps) {
+export function RoceForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: RoceFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<RoceInput>) => onChange({ ...input, ...patch });
-  const setCurrency = (currency: RoceInput['currency']) => set({ currency });
   const useAssets = input.method === 'assets';
 
   return (
@@ -151,7 +158,7 @@ export function RoceForm({ input, errors, result, onChange, onReset }: RoceFormP
           symbol={symbol}
           currency={input.currency}
           onValueChange={(ebit) => set({ ebit })}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
         />
       </fieldset>
 
@@ -169,7 +176,7 @@ export function RoceForm({ input, errors, result, onChange, onReset }: RoceFormP
               symbol={symbol}
               currency={input.currency}
               onValueChange={(totalAssets) => set({ totalAssets })}
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
             />
             <MoneyField
               id="roce-current-liabilities"
@@ -179,7 +186,7 @@ export function RoceForm({ input, errors, result, onChange, onReset }: RoceFormP
               symbol={symbol}
               currency={input.currency}
               onValueChange={(currentLiabilities) => set({ currentLiabilities })}
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
             />
           </>
         ) : (
@@ -192,7 +199,7 @@ export function RoceForm({ input, errors, result, onChange, onReset }: RoceFormP
               symbol={symbol}
               currency={input.currency}
               onValueChange={(totalEquity) => set({ totalEquity })}
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
             />
             <MoneyField
               id="roce-ncl"
@@ -202,7 +209,7 @@ export function RoceForm({ input, errors, result, onChange, onReset }: RoceFormP
               symbol={symbol}
               currency={input.currency}
               onValueChange={(nonCurrentLiabilities) => set({ nonCurrentLiabilities })}
-              onCurrencyChange={setCurrency}
+              onCurrencyChange={onCurrencyChange}
             />
           </>
         )}
@@ -221,7 +228,7 @@ export function RoceForm({ input, errors, result, onChange, onReset }: RoceFormP
           value={result ? result.formattedCapitalEmployed : ''}
           symbol={symbol}
           currency={input.currency}
-          onCurrencyChange={setCurrency}
+          onCurrencyChange={onCurrencyChange}
           readOnly
         />
         <div>

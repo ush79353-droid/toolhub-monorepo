@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   InformationRatioFieldErrors,
@@ -15,6 +15,7 @@ interface InformationRatioFormProps {
   errors: InformationRatioFieldErrors;
   result: InformationRatioResult | null;
   onChange: (input: InformationRatioInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -45,6 +46,7 @@ export function InformationRatioForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: InformationRatioFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -84,7 +86,7 @@ export function InformationRatioForm({
               <CurrencySelect
                 id="ir-begin-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -117,7 +119,7 @@ export function InformationRatioForm({
               <CurrencySelect
                 id="ir-end-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>

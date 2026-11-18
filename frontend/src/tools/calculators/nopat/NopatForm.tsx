@@ -3,7 +3,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   NopatFieldErrors,
@@ -47,10 +47,18 @@ interface NopatFormProps {
   errors: NopatFieldErrors;
   result: NopatResult | null;
   onChange: (input: NopatInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
-export function NopatForm({ input, errors, result, onChange, onReset }: NopatFormProps) {
+export function NopatForm({
+  input,
+  errors,
+  result,
+  onChange,
+  onCurrencyChange,
+  onReset,
+}: NopatFormProps) {
   const symbol = getCurrencySymbol(input.currency);
   const set = (patch: Partial<NopatInput>) => onChange({ ...input, ...patch });
 
@@ -99,7 +107,7 @@ export function NopatForm({ input, errors, result, onChange, onReset }: NopatFor
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
@@ -158,7 +166,7 @@ export function NopatForm({ input, errors, result, onChange, onReset }: NopatFor
           <CurrencySelect
             id="nopat-result-currency"
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label="NOPAT currency"
           />
         </div>

@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   TreynorRatioFieldErrors,
@@ -15,6 +15,7 @@ interface TreynorRatioFormProps {
   errors: TreynorRatioFieldErrors;
   result: TreynorRatioResult | null;
   onChange: (input: TreynorRatioInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -45,6 +46,7 @@ export function TreynorRatioForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: TreynorRatioFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -86,7 +88,7 @@ export function TreynorRatioForm({
               <CurrencySelect
                 id="tr-begin-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>
@@ -119,7 +121,7 @@ export function TreynorRatioForm({
               <CurrencySelect
                 id="tr-end-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
               />
             </div>
           </div>

@@ -81,7 +81,7 @@ Browser  ──►  Next.js Server (RSC / Server Actions)  ──►  Express AP
 - `backend/src/modules/`: Implemented (`health`, `admins`, `auth`, `categories`, `media`, `tools`, `catalog`, `currency`) and placeholders (`analytics`, `integrations`, `seo`, `uploads`, `users`).
 - `backend/src/jobs/`: `currency-rates.cron.ts` (daily USD rate fetch, ADR-017).
 - `backend/src/services/`: `email.service.ts`, `s3.service.ts`.
-- `backend/src/scripts/`: `create-admin.ts`, `seed-categories.ts`, `seed-tools.ts`, `fetch-currency-rates.ts`, plus per-tool `assign-*-tool.ts` helpers.
+- `backend/src/scripts/`: reusable keepers only — `assign-tool-component.ts` (`npm run tool:assign`), `create-admin.ts`, `seed-categories.ts`, `seed-tools.ts`, `publish-browser-tools.ts`, `enable-default-embeds.ts`, `attach-category-icons.ts`, `set-category-descriptions.ts`, `fetch-currency-rates.ts`. No per-tool `assign-*-tool.ts` (ADR-024).
 - `backend/data/`: `tools-directory-hierarchy.json`, `tools-catalog.json`.
 
 ---
@@ -189,7 +189,7 @@ converted = amount * rate[target] / rate[source]
 
 Round the money result once, half up, to the target currency's ISO minor units (`getCurrencyFractionDigits`). Do not round the rate. Do not assume a missing rate is 1.
 
-There is no Express read route and no Next.js loader for these documents yet. The first calculator that converts money adds one shared read on that path: Next.js server → Express → `CurrencyRate`. Later calculators call that read. They do not add a cron, a collection, or a browser call to ExchangeRate-API. Load the snapshot once per page, not on each keystroke. Show `fetchedAt`. A rate older than 48 hours is stale: still use it, and say so. If the code is missing, show that conversion is unavailable.
+Phase 1 read path: `GET /api/v1/currency/rates` and Next.js `getCurrencyRates` on Next.js server → Express → `CurrencyRate`. Phase 2 shared engine: `convertCurrency` (`amount * rate[target] / rate[source]`), `MoneyValue` + `useConvertibleMoneyField`, and `CurrencyRatesProvider`. Calculator modules are not auto-wired — integration is opt-in per tool. Do not add a cron, a collection, or a browser call to ExchangeRate-API. Load the snapshot once per page. Show `fetchedAt`. Older than 48 hours is stale but usable. Missing rates are unavailable, not 1:1.
 
 `frontend/src/tools/shared/currency.ts` and `CurrencySelect` format a denomination. Changing that selector does not convert numbers. Use it only when every money input is already in the selected currency. Auto Loan, Loan, ARM Mortgage, 12-hour shift pay, 3× rent, 3D-printer buy vs outsource, A/R days, and the 401(k) calculator are denomination-only. US 401(k) limit checks stay in USD. Do not retrofit them in an unrelated task.
 

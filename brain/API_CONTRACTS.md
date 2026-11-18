@@ -164,7 +164,23 @@ Mounted at `/api/v1/admin/tools` (`backend/src/modules/tools/tool.router.ts`). A
 
 ---
 
-## 7. Planned / Unimplemented Endpoints
+## 7. Public Currency Rates (Implemented)
+
+Mounted at `/api/v1/currency` (`backend/src/modules/currency/currency.router.ts`).
+
+### `GET /api/v1/currency/rates`
+- **Auth:** Public
+- **Query:** `base` (optional, default `USD`) — 3-letter ISO code for the stored `CurrencyRate` document
+- **Response (`200`):** `{ available, baseCurrency, rates, fetchedAt, isStale, staleThresholdHours, supportedCurrencies }`
+  - `rates` is units of each code per 1 unit of `baseCurrency` (base rate = 1)
+  - `isStale` is true when `fetchedAt` is older than 48 hours (still readable)
+  - When no active rates exist, `available` is false and `rates` is empty
+- **Errors:** `400 VALIDATION_ERROR` for a bad `base`; `404 NOT_FOUND` when other bases exist but the requested base does not
+- **Next.js loader:** `frontend/src/server/currency/rates.ts` (`getCurrencyRates`) — server-only, `Browser → Next.js → Express → MongoDB`
+
+---
+
+## 8. Planned / Unimplemented Endpoints
 
 The following capabilities exist only as empty backend module directories (`.gitkeep`) or frontend UI previews and are **not implemented**:
 
@@ -177,5 +193,4 @@ The following capabilities exist only as empty backend module directories (`.git
 - Global SEO & system settings persistence (`/api/v1/admin/seo`, `/api/v1/admin/settings`)
 - Third-party integration credential management (`/api/v1/admin/integrations`)
 - Background jobs (`/api/v1/admin/jobs`) & public user uploads (`/api/v1/uploads`)
-- Currency rate reads. ADR-017 writes `CurrencyRate` from the daily job. No `GET` route serves those documents yet (ADR-021).
 

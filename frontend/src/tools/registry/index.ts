@@ -15,14 +15,280 @@ function lazyTool(
  * The chunk loads when that tool is rendered.
  */
 const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolComponent>> = {
+  AfterTaxCostOfDebtCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/after-tax-cost-of-debt/AfterTaxCostOfDebtCalculator'
+    ).then((mod) => ({
+      default: mod.AfterTaxCostOfDebtCalculator,
+    })),
+  ),
+  AnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/annuity/AnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.AnnuityCalculator,
+    })),
+  ),
+  AnnuityPayoutCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/annuity-payout/AnnuityPayoutCalculator'
+    ).then((mod) => ({
+      default: mod.AnnuityPayoutCalculator,
+    })),
+  ),
   AutoLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/auto-loan/AutoLoanCalculator').then((mod) => ({
       default: mod.AutoLoanCalculator,
     })),
   ),
+  CaliforniaOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/california-overtime/CaliforniaOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.CaliforniaOvertimeCalculator,
+    })),
+  ),
+  DebtAvalancheCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-avalanche/DebtAvalancheCalculator'
+    ).then((mod) => ({
+      default: mod.DebtAvalancheCalculator,
+    })),
+  ),
+  DebtCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt/DebtCalculator'
+    ).then((mod) => ({
+      default: mod.DebtCalculator,
+    })),
+  ),
+  DebtServiceCoverageRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-service-coverage-ratio/DebtServiceCoverageRatioCalculator'
+    ).then((mod) => ({
+      default: mod.DebtServiceCoverageRatioCalculator,
+    })),
+  ),
+  DebtSnowballCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-snowball/DebtSnowballCalculator'
+    ).then((mod) => ({
+      default: mod.DebtSnowballCalculator,
+    })),
+  ),
+  DebtToAssetRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-to-asset-ratio/DebtToAssetRatioCalculator'
+    ).then((mod) => ({
+      default: mod.DebtToAssetRatioCalculator,
+    })),
+  ),
+  DebtToCapitalRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-to-capital-ratio/DebtToCapitalRatioCalculator'
+    ).then((mod) => ({
+      default: mod.DebtToCapitalRatioCalculator,
+    })),
+  ),
+  DebtToEquityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/debt-to-equity/DebtToEquityCalculator'
+    ).then((mod) => ({
+      default: mod.DebtToEquityCalculator,
+    })),
+  ),
+  DeferredAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/deferred-annuity/DeferredAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.DeferredAnnuityCalculator,
+    })),
+  ),
+  EbitdaMarginCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ebitda-margin/EbitdaMarginCalculator'
+    ).then((mod) => ({
+      default: mod.EbitdaMarginCalculator,
+    })),
+  ),
+  FloridaOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/florida-overtime/FloridaOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.FloridaOvertimeCalculator,
+    })),
+  ),
+  FutureValueOfAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/future-value-of-annuity/FutureValueOfAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.FutureValueOfAnnuityCalculator,
+    })),
+  ),
+  GeorgiaOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/georgia-overtime/GeorgiaOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.GeorgiaOvertimeCalculator,
+    })),
+  ),
+  GrossMarginCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gross-margin/GrossMarginCalculator'
+    ).then((mod) => ({
+      default: mod.GrossMarginCalculator,
+    })),
+  ),
+  GrossRentMultiplierCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gross-rent-multiplier/GrossRentMultiplierCalculator'
+    ).then((mod) => ({
+      default: mod.GrossRentMultiplierCalculator,
+    })),
+  ),
+  GrowingAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/growing-annuity/GrowingAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.GrowingAnnuityCalculator,
+    })),
+  ),
+  IllinoisOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/illinois-overtime/IllinoisOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.IllinoisOvertimeCalculator,
+    })),
+  ),
+  ImmediateAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/immediate-annuity/ImmediateAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.ImmediateAnnuityCalculator,
+    })),
+  ),
+  InterestRateParityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/interest-rate-parity/InterestRateParityCalculator'
+    ).then((mod) => ({
+      default: mod.InterestRateParityCalculator,
+    })),
+  ),
   LoanCalculator: lazyTool(() =>
     import('@/tools/calculators/loan/LoanCalculator').then((mod) => ({
       default: mod.LoanCalculator,
+    })),
+  ),
+  LoanInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/loan-interest/LoanInterestCalculator'
+    ).then((mod) => ({
+      default: mod.LoanInterestCalculator,
+    })),
+  ),
+  LotteryAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/lottery-annuity/LotteryAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.LotteryAnnuityCalculator,
+    })),
+  ),
+  MarginAndMarkupCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/margin-and-markup/MarginAndMarkupCalculator'
+    ).then((mod) => ({
+      default: mod.MarginAndMarkupCalculator,
+    })),
+  ),
+  MarginAndVatCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/margin-and-vat/MarginAndVatCalculator'
+    ).then((mod) => ({
+      default: mod.MarginAndVatCalculator,
+    })),
+  ),
+  MarginCalculatorClassic: lazyTool(() =>
+    import(
+      '@/tools/calculators/margin-calculator-classic/MarginCalculatorClassicCalculator'
+    ).then((mod) => ({
+      default: mod.MarginCalculatorClassicCalculator,
+    })),
+  ),
+  MarginCallCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/margin-call/MarginCallCalculator'
+    ).then((mod) => ({
+      default: mod.MarginCallCalculator,
+    })),
+  ),
+  MarginOfSafetyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/margin-of-safety/MarginOfSafetyCalculator'
+    ).then((mod) => ({
+      default: mod.MarginOfSafetyCalculator,
+    })),
+  ),
+  NetDebtCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/net-debt/NetDebtCalculator'
+    ).then((mod) => ({
+      default: mod.NetDebtCalculator,
+    })),
+  ),
+  NetEffectiveRentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/net-effective-rent/NetEffectiveRentCalculator'
+    ).then((mod) => ({
+      default: mod.NetEffectiveRentCalculator,
+    })),
+  ),
+  NewYorkOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/new-york-overtime/NewYorkOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.NewYorkOvertimeCalculator,
+    })),
+  ),
+  OperatingMarginCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/operating-margin/OperatingMarginCalculator'
+    ).then((mod) => ({
+      default: mod.OperatingMarginCalculator,
+    })),
+  ),
+  OvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/overtime/OvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.OvertimeCalculator,
+    })),
+  ),
+  OvertimePaycheckCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/overtime-paycheck/OvertimePaycheckCalculator'
+    ).then((mod) => ({
+      default: mod.OvertimePaycheckCalculator,
+    })),
+  ),
+  PresentValueOfAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/present-value-of-annuity/PresentValueOfAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.PresentValueOfAnnuityCalculator,
+    })),
+  ),
+  RentIncreaseCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/rent-increase/RentIncreaseCalculator'
+    ).then((mod) => ({
+      default: mod.RentIncreaseCalculator,
+    })),
+  ),
+  RentOrBuyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/rent-or-buy/RentOrBuyCalculator'
+    ).then((mod) => ({
+      default: mod.RentOrBuyCalculator,
     })),
   ),
   RrefCalculator: lazyTool(() =>
@@ -40,9 +306,44 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HundredDayCalculator,
     })),
   ),
+  SalaryWithOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/salary-with-overtime/SalaryWithOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.SalaryWithOvertimeCalculator,
+    })),
+  ),
+  TdsInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/tds-interest/TdsInterestCalculator'
+    ).then((mod) => ({
+      default: mod.TdsInterestCalculator,
+    })),
+  ),
+  TexasOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/texas-overtime/TexasOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.TexasOvertimeCalculator,
+    })),
+  ),
+  TimesInterestEarnedCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/times-interest-earned/TimesInterestEarnedCalculator'
+    ).then((mod) => ({
+      default: mod.TimesInterestEarnedCalculator,
+    })),
+  ),
   TwelveVoltWireCalculator: lazyTool(() =>
     import('@/tools/calculators/twelve-volt-wire/TwelveVoltWireCalculator').then((mod) => ({
       default: mod.TwelveVoltWireCalculator,
+    })),
+  ),
+  VariableAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/variable-annuity/VariableAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.VariableAnnuityCalculator,
     })),
   ),
   ZeroToSixtyCalculator: lazyTool(() =>
@@ -182,6 +483,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DecimeterToMeterConverter,
     })),
   ),
+  DeferredPaymentLoanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/deferred-payment-loan/DeferredPaymentLoanCalculator'
+    ).then((mod) => ({
+      default: mod.DeferredPaymentLoanCalculator,
+    })),
+  ),
   SquareKilometersToAcresConverter: lazyTool(() =>
     import(
       '@/tools/calculators/square-kilometers-to-acres/SquareKilometersToAcresConverter'
@@ -243,6 +551,41 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MlToCupsConverter,
     })),
   ),
+  MlToCcConverter: lazyTool(() =>
+    import('@/tools/calculators/ml-to-cc/MlToCcConverter').then((mod) => ({
+      default: mod.MlToCcConverter,
+    })),
+  ),
+  MlToKgConverter: lazyTool(() =>
+    import('@/tools/calculators/ml-to-kg/MlToKgConverter').then((mod) => ({
+      default: mod.MlToKgConverter,
+    })),
+  ),
+  MlToLbsConversion: lazyTool(() =>
+    import('@/tools/calculators/ml-to-lbs/MlToLbsConverter').then((mod) => ({
+      default: mod.MlToLbsConversion,
+    })),
+  ),
+  MlToOzConverter: lazyTool(() =>
+    import('@/tools/calculators/ml-to-oz/MlToOzConverter').then((mod) => ({
+      default: mod.MlToOzConverter,
+    })),
+  ),
+  MlToTbspConverter: lazyTool(() =>
+    import('@/tools/calculators/ml-to-tbsp/MlToTbspConverter').then((mod) => ({
+      default: mod.MlToTbspConverter,
+    })),
+  ),
+  MlToTspConverter: lazyTool(() =>
+    import('@/tools/calculators/ml-to-tsp/MlToTspConverter').then((mod) => ({
+      default: mod.MlToTspConverter,
+    })),
+  ),
+  MlToUlConversion: lazyTool(() =>
+    import('@/tools/calculators/ml-to-ul/MlToUlConverter').then((mod) => ({
+      default: mod.MlToUlConversion,
+    })),
+  ),
   DecagramToGramConverter: lazyTool(() =>
     import('@/tools/calculators/decagram-to-gram/DecagramToGramConverter').then(
       (mod) => ({
@@ -253,6 +596,21 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   PintToPoundCalculator: lazyTool(() =>
     import('@/tools/calculators/pint-to-pound/PintToPoundCalculator').then((mod) => ({
       default: mod.PintToPoundCalculator,
+    })),
+  ),
+  PintsToCupsConverter: lazyTool(() =>
+    import('@/tools/calculators/pints-to-cups/PintsToCupsConverter').then((mod) => ({
+      default: mod.PintsToCupsConverter,
+    })),
+  ),
+  PintsToGallonsConverter: lazyTool(() =>
+    import('@/tools/calculators/pints-to-gallons/PintsToGallonsConverter').then((mod) => ({
+      default: mod.PintsToGallonsConverter,
+    })),
+  ),
+  QuartsToGallonsConverter: lazyTool(() =>
+    import('@/tools/calculators/quarts-to-gallons/QuartsToGallonsConverter').then((mod) => ({
+      default: mod.QuartsToGallonsConverter,
     })),
   ),
   DropsToMlConverter: lazyTool(() =>
@@ -267,6 +625,53 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  PoundsToGramsConverter: lazyTool(() =>
+    import('@/tools/calculators/pounds-to-grams/PoundsToGramsConverter').then((mod) => ({
+      default: mod.PoundsToGramsConverter,
+    })),
+  ),
+  PoundsToLbsConverter: lazyTool(() =>
+    import('@/tools/calculators/pounds-to-lbs/PoundsToLbsConverter').then((mod) => ({
+      default: mod.PoundsToLbsConverter,
+    })),
+  ),
+  PoundsToOuncesConverter: lazyTool(() =>
+    import('@/tools/calculators/pounds-to-ounces/PoundsToOuncesConverter').then((mod) => ({
+      default: mod.PoundsToOuncesConverter,
+    })),
+  ),
+  PoundsToStoneConverter: lazyTool(() =>
+    import('@/tools/calculators/pounds-to-stone/PoundsToStoneConverter').then((mod) => ({
+      default: mod.PoundsToStoneConverter,
+    })),
+  ),
+  OunceToKgConverter: lazyTool(() =>
+    import('@/tools/calculators/ounce-to-kg/OunceToKgConverter').then((mod) => ({
+      default: mod.OunceToKgConverter,
+    })),
+  ),
+  OuncesToGramsConverter: lazyTool(() =>
+    import('@/tools/calculators/ounces-to-grams/OuncesToGramsConverter').then((mod) => ({
+      default: mod.OuncesToGramsConverter,
+    })),
+  ),
+  OuncesToMillilitersConverter: lazyTool(() =>
+    import('@/tools/calculators/ounces-to-milliliters/OuncesToMillilitersConverter').then(
+      (mod) => ({
+        default: mod.OuncesToMillilitersConverter,
+      }),
+    ),
+  ),
+  OuncesToPoundsConverter: lazyTool(() =>
+    import('@/tools/calculators/ounces-to-pounds/OuncesToPoundsConverter').then((mod) => ({
+      default: mod.OuncesToPoundsConverter,
+    })),
+  ),
+  OzToCcConverter: lazyTool(() =>
+    import('@/tools/calculators/oz-to-cc/OzToCcConverter').then((mod) => ({
+      default: mod.OzToCcConverter,
+    })),
+  ),
   OzToCupsConverter: lazyTool(() =>
     import('@/tools/calculators/oz-to-cups/OzToCupsConverter').then((mod) => ({
       default: mod.OzToCupsConverter,
@@ -276,6 +681,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/gallon/GallonCalculator').then((mod) => ({
       default: mod.GallonCalculator,
     })),
+  ),
+  PricePerLiterToGallonConverter: lazyTool(() =>
+    import('@/tools/calculators/price-per-liter-to-gallon/PricePerLiterToGallonConverter').then(
+      (mod) => ({
+        default: mod.PricePerLiterToGallonConverter,
+      }),
+    ),
   ),
   QuartsToPoundsConverter: lazyTool(() =>
     import('@/tools/calculators/quarts-to-pounds/QuartsToPoundsCalculator').then((mod) => ({
@@ -322,6 +734,38 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InchLbsToNmConverter,
     })),
   ),
+  PaToPsiConversion: lazyTool(() =>
+    import('@/tools/calculators/pa-to-psi/PaToPsiConversion').then((mod) => ({
+      default: mod.PaToPsiConversion,
+    })),
+  ),
+  PascalConversion: lazyTool(() =>
+    import('@/tools/calculators/pascal-conversion/PascalConversion').then((mod) => ({
+      default: mod.PascalConversion,
+    })),
+  ),
+  PsiConverter: lazyTool(() =>
+    import('@/tools/calculators/psi-converter/PsiConverter').then((mod) => ({
+      default: mod.PsiConverter,
+    })),
+  ),
+  PsiToAtmConversion: lazyTool(() =>
+    import('@/tools/calculators/psi-to-atm/PsiToAtmConversion').then((mod) => ({
+      default: mod.PsiToAtmConversion,
+    })),
+  ),
+  PsiToInchesOfWaterConversion: lazyTool(() =>
+    import('@/tools/calculators/psi-to-inches-of-water/PsiToInchesOfWaterConversion').then(
+      (mod) => ({
+        default: mod.PsiToInchesOfWaterConversion,
+      }),
+    ),
+  ),
+  PressureUnitConversion: lazyTool(() =>
+    import('@/tools/calculators/pressure-unit-conversion/PressureUnitConversion').then((mod) => ({
+      default: mod.PressureUnitConversion,
+    })),
+  ),
   PressureConversion: lazyTool(() =>
     import('@/tools/calculators/pressure-conversion/PressureConverterCalculator').then(
       (mod) => ({
@@ -359,6 +803,16 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   TorrToAtmConverter: lazyTool(() =>
     import('@/tools/calculators/torr-to-atm/TorrToAtmCalculator').then((mod) => ({
       default: mod.TorrToAtmConverter,
+    })),
+  ),
+  MmhgToAtmConversion: lazyTool(() =>
+    import('@/tools/calculators/mmhg-to-atm/MmhgToAtmConversion').then((mod) => ({
+      default: mod.MmhgToAtmConversion,
+    })),
+  ),
+  MmToAtmConverter: lazyTool(() =>
+    import('@/tools/calculators/mm-to-atm/MmToAtmConverter').then((mod) => ({
+      default: mod.MmToAtmConverter,
     })),
   ),
   NmToFtLbsConverter: lazyTool(() =>
@@ -497,6 +951,1153 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   CapacitanceConverter: lazyTool(() =>
     import('@/tools/calculators/capacitance/CapacitanceCalculator').then((mod) => ({
       default: mod.CapacitanceConverter,
+    })),
+  ),
+  MbToGbConverter: lazyTool(() =>
+    import('@/tools/calculators/mb-to-gb/MbToGbCalculator').then((mod) => ({
+      default: mod.MbToGbConverter,
+    })),
+  ),
+  ColorConverter: lazyTool(() =>
+    import('@/tools/calculators/color/ColorConverter').then((mod) => ({
+      default: mod.ColorConverter,
+    })),
+  ),
+  RgbToHexConverter: lazyTool(() =>
+    import('@/tools/calculators/rgb-to-hex/RgbToHexConverter').then((mod) => ({
+      default: mod.RgbToHexConverter,
+    })),
+  ),
+  HexToRgbConverter: lazyTool(() =>
+    import('@/tools/calculators/hex-to-rgb/HexToRgbConverter').then((mod) => ({
+      default: mod.HexToRgbConverter,
+    })),
+  ),
+  UnicodeTextConverter: lazyTool(() =>
+    import('@/tools/calculators/unicode-text/UnicodeTextConverter').then((mod) => ({
+      default: mod.UnicodeTextConverter,
+    })),
+  ),
+  KbToMbConverter: lazyTool(() =>
+    import('@/tools/calculators/kb-to-mb/KbToMbConverter').then((mod) => ({
+      default: mod.KbToMbConverter,
+    })),
+  ),
+  UnixTimeConverter: lazyTool(() =>
+    import('@/tools/calculators/unix-time/UnixTimeConverter').then((mod) => ({
+      default: mod.UnixTimeConverter,
+    })),
+  ),
+  MbpsCalculator: lazyTool(() =>
+    import('@/tools/calculators/mbps/MbpsCalculator').then((mod) => ({
+      default: mod.MbpsCalculator,
+    })),
+  ),
+  MilitaryTimeConverter: lazyTool(() =>
+    import('@/tools/calculators/military-time/MilitaryTimeConverter').then((mod) => ({
+      default: mod.MilitaryTimeConverter,
+    })),
+  ),
+  TimeZonesConverter: lazyTool(() =>
+    import('@/tools/calculators/time-zones/TimeZonesConverter').then((mod) => ({
+      default: mod.TimeZonesConverter,
+    })),
+  ),
+  MinutesToHoursConverter: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-hours/MinutesToHoursConverter').then((mod) => ({
+      default: mod.MinutesToHoursConverter,
+    })),
+  ),
+  YearsToDecadesCalculator: lazyTool(() =>
+    import('@/tools/calculators/years-to-decades/YearsToDecadesCalculator').then((mod) => ({
+      default: mod.YearsToDecadesCalculator,
+    })),
+  ),
+  TimeUnitConverter: lazyTool(() =>
+    import('@/tools/calculators/time-unit/TimeUnitConverter').then((mod) => ({
+      default: mod.TimeUnitConverter,
+    })),
+  ),
+  ZuluTimeConverter: lazyTool(() =>
+    import('@/tools/calculators/zulu-time/ZuluTimeConverter').then((mod) => ({
+      default: mod.ZuluTimeConverter,
+    })),
+  ),
+  AngleConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/angle-conversion/AngleConversionCalculator').then((mod) => ({
+      default: mod.AngleConversionCalculator,
+    })),
+  ),
+  MsToKmhConverter: lazyTool(() =>
+    import('@/tools/calculators/ms-to-kmh/MsToKmhConverter').then((mod) => ({
+      default: mod.MsToKmhConverter,
+    })),
+  ),
+  CcfToThermsCalculator: lazyTool(() =>
+    import('@/tools/calculators/ccf-to-therms/CcfToThermsCalculator').then((mod) => ({
+      default: mod.CcfToThermsCalculator,
+    })),
+  ),
+  NaturalGasConverter: lazyTool(() =>
+    import('@/tools/calculators/natural-gas/NaturalGasConverter').then((mod) => ({
+      default: mod.NaturalGasConverter,
+    })),
+  ),
+  CentsToDollarsCalculator: lazyTool(() =>
+    import('@/tools/calculators/cents-to-dollars/CentsToDollarsCalculator').then((mod) => ({
+      default: mod.CentsToDollarsCalculator,
+    })),
+  ),
+  NmToJoulesCalculator: lazyTool(() =>
+    import('@/tools/calculators/nm-to-joules/NmToJoulesCalculator').then((mod) => ({
+      default: mod.NmToJoulesCalculator,
+    })),
+  ),
+  CgsSystemOfUnitsConverter: lazyTool(() =>
+    import('@/tools/calculators/cgs-system/CgsSystemOfUnitsConverter').then((mod) => ({
+      default: mod.CgsSystemOfUnitsConverter,
+    })),
+  ),
+  NickelsToDollarsCalculator: lazyTool(() =>
+    import('@/tools/calculators/nickels-to-dollars/NickelsToDollarsCalculator').then((mod) => ({
+      default: mod.NickelsToDollarsCalculator,
+    })),
+  ),
+  ConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/conversion/ConversionCalculator').then((mod) => ({
+      default: mod.ConversionCalculator,
+    })),
+  ),
+  PaperQuantityConverter: lazyTool(() =>
+    import('@/tools/calculators/paper-quantity/PaperQuantityConverter').then((mod) => ({
+      default: mod.PaperQuantityConverter,
+    })),
+  ),
+  CpsCalculator: lazyTool(() =>
+    import('@/tools/calculators/cps/CpsCalculator').then((mod) => ({
+      default: mod.CpsCalculator,
+    })),
+  ),
+  PenniesToDollarsCalculator: lazyTool(() =>
+    import('@/tools/calculators/pennies-to-dollars/PenniesToDollarsCalculator').then((mod) => ({
+      default: mod.PenniesToDollarsCalculator,
+    })),
+  ),
+  DbmToWattsCalculator: lazyTool(() =>
+    import('@/tools/calculators/dbm-to-watts/DbmToWattsCalculator').then((mod) => ({
+      default: mod.DbmToWattsCalculator,
+    })),
+  ),
+  PowerConverter: lazyTool(() =>
+    import('@/tools/calculators/power/PowerConverter').then((mod) => ({
+      default: mod.PowerConverter,
+    })),
+  ),
+  DensityConversion: lazyTool(() =>
+    import('@/tools/calculators/density/DensityConversion').then((mod) => ({
+      default: mod.DensityConversion,
+    })),
+  ),
+  PpmCalculator: lazyTool(() =>
+    import('@/tools/calculators/ppm/PpmCalculator').then((mod) => ({
+      default: mod.PpmCalculator,
+    })),
+  ),
+  DimensionalAnalysisCalculator: lazyTool(() =>
+    import('@/tools/calculators/dimensional-analysis/DimensionalAnalysisCalculator').then(
+      (mod) => ({
+        default: mod.DimensionalAnalysisCalculator,
+      }),
+    ),
+  ),
+  PpmToMglConverter: lazyTool(() =>
+    import('@/tools/calculators/ppm-to-mgl/PpmToMglConverter').then((mod) => ({
+      default: mod.PpmToMglConverter,
+    })),
+  ),
+  DimesToDollarsCalculator: lazyTool(() =>
+    import('@/tools/calculators/dimes-to-dollars/DimesToDollarsCalculator').then((mod) => ({
+      default: mod.DimesToDollarsCalculator,
+    })),
+  ),
+  PxToEmConverter: lazyTool(() =>
+    import('@/tools/calculators/px-to-em/PxToEmConverter').then((mod) => ({
+      default: mod.PxToEmConverter,
+    })),
+  ),
+  EnergyConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/energy/EnergyConversionCalculator').then((mod) => ({
+      default: mod.EnergyConversionCalculator,
+    })),
+  ),
+  QuantityConverter: lazyTool(() =>
+    import('@/tools/calculators/quantity/QuantityConverter').then((mod) => ({
+      default: mod.QuantityConverter,
+    })),
+  ),
+  MpgToL100Converter: lazyTool(() =>
+    import('@/tools/calculators/mpg-to-l100/MpgToL100Converter').then((mod) => ({
+      default: mod.MpgToL100Converter,
+    })),
+  ),
+  QuartersToDollarsCalculator: lazyTool(() =>
+    import('@/tools/calculators/quarters-to-dollars/QuartersToDollarsCalculator').then((mod) => ({
+      default: mod.QuartersToDollarsCalculator,
+    })),
+  ),
+  GramsToCaloriesCalculator: lazyTool(() =>
+    import('@/tools/calculators/grams-to-calories/GramsToCaloriesCalculator').then((mod) => ({
+      default: mod.GramsToCaloriesCalculator,
+    })),
+  ),
+  RadiationConverter: lazyTool(() =>
+    import('@/tools/calculators/radiation/RadiationConverter').then((mod) => ({
+      default: mod.RadiationConverter,
+    })),
+  ),
+  HardnessConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/hardness/HardnessConversionCalculator').then((mod) => ({
+      default: mod.HardnessConversionCalculator,
+    })),
+  ),
+  RmsToWattsConverter: lazyTool(() =>
+    import('@/tools/calculators/rms-to-watts/RmsToWattsConverter').then((mod) => ({
+      default: mod.RmsToWattsConverter,
+    })),
+  ),
+  JoulesToVoltsCalculator: lazyTool(() =>
+    import('@/tools/calculators/joules-to-volts/JoulesToVoltsCalculator').then((mod) => ({
+      default: mod.JoulesToVoltsCalculator,
+    })),
+  ),
+  SpeedConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/speed/SpeedConversionCalculator').then((mod) => ({
+      default: mod.SpeedConversionCalculator,
+    })),
+  ),
+  KnotsToMphConverter: lazyTool(() =>
+    import('@/tools/calculators/knots-to-mph/KnotsToMphConverter').then((mod) => ({
+      default: mod.KnotsToMphConverter,
+    }))
+  ),
+  UppercaseToLowercaseConverter: lazyTool(() =>
+    import('@/tools/calculators/uppercase-to-lowercase/UppercaseToLowercaseConverter').then(
+      (mod) => ({
+        default: mod.UppercaseToLowercaseConverter,
+      }),
+    ),
+  ),
+  LeetSpeakTranslator: lazyTool(() =>
+    import('@/tools/calculators/leet-speak/LeetSpeakTranslator').then((mod) => ({
+      default: mod.LeetSpeakTranslator,
+    })),
+  ),
+  WeirdUnitsConverter: lazyTool(() =>
+    import('@/tools/calculators/weird-units/WeirdUnitsConverter').then((mod) => ({
+      default: mod.WeirdUnitsConverter,
+    })),
+  ),
+  LowercaseToUppercaseConverter: lazyTool(() =>
+    import('@/tools/calculators/lowercase-to-uppercase/LowercaseToUppercaseConverter').then(
+      (mod) => ({
+        default: mod.LowercaseToUppercaseConverter,
+      }),
+    ),
+  ),
+  AcresToHectaresConverter: lazyTool(() =>
+    import('@/tools/calculators/acres-to-hectares/AcresToHectaresConverter').then((mod) => ({
+      default: mod.AcresToHectaresConverter,
+    })),
+  ),
+  LbsToPsiConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-psi/LbsToPsiConverter').then((mod) => ({
+      default: mod.LbsToPsiConverter,
+    })),
+  ),
+  AcresToSquareFeetConverter: lazyTool(() =>
+    import('@/tools/calculators/acres-to-square-feet/AcresToSquareFeetConverter').then((mod) => ({
+      default: mod.AcresToSquareFeetConverter,
+    })),
+  ),
+  LbsToStoneConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-stone/LbsToStoneConverter').then((mod) => ({
+      default: mod.LbsToStoneConverter,
+    })),
+  ),
+  AngstromToNmConverter: lazyTool(() =>
+    import('@/tools/calculators/angstrom-to-nm/AngstromToNmConverter').then((mod) => ({
+      default: mod.AngstromToNmConverter,
+    })),
+  ),
+  LitersToPoundsCalculator: lazyTool(() =>
+    import('@/tools/calculators/liters-to-pounds/LitersToPoundsCalculator').then((mod) => ({
+      default: mod.LitersToPoundsCalculator,
+    })),
+  ),
+  AtmConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/atm-conversion/AtmConversionCalculator').then((mod) => ({
+      default: mod.AtmConversionCalculator,
+    })),
+  ),
+  LiterToCcConverter: lazyTool(() =>
+    import('@/tools/calculators/liter-to-cc/LiterToCcConverter').then((mod) => ({
+      default: mod.LiterToCcConverter,
+    })),
+  ),
+  AtmToPascalsConverter: lazyTool(() =>
+    import('@/tools/calculators/atm-to-pascals/AtmToPascalsConverter').then((mod) => ({
+      default: mod.AtmToPascalsConverter,
+    })),
+  ),
+  LotSizeToAcresCalculator: lazyTool(() =>
+    import('@/tools/calculators/lot-size-to-acres/LotSizeToAcresCalculator').then((mod) => ({
+      default: mod.LotSizeToAcresCalculator,
+    })),
+  ),
+  BarometricPressureConverter: lazyTool(() =>
+    import('@/tools/calculators/barometric-pressure/BarometricPressureConverter').then((mod) => ({
+      default: mod.BarometricPressureConverter,
+    })),
+  ),
+  LotSizeToSqftCalculator: lazyTool(() =>
+    import('@/tools/calculators/lot-size-to-sqft/LotSizeToSqftCalculator').then((mod) => ({
+      default: mod.LotSizeToSqftCalculator,
+    })),
+  ),
+  BarToAtmConverter: lazyTool(() =>
+    import('@/tools/calculators/bar-to-atm/BarToAtmConverter').then((mod) => ({
+      default: mod.BarToAtmConverter,
+    })),
+  ),
+  LToGalConverter: lazyTool(() =>
+    import('@/tools/calculators/l-to-gal/LToGalConverter').then((mod) => ({
+      default: mod.LToGalConverter,
+    })),
+  ),
+  BarToPsiConverter: lazyTool(() =>
+    import('@/tools/calculators/bar-to-psi/BarToPsiConverter').then((mod) => ({
+      default: mod.BarToPsiConverter,
+    })),
+  ),
+  McgToMlConverter: lazyTool(() =>
+    import('@/tools/calculators/mcg-to-ml/McgToMlConverter').then((mod) => ({
+      default: mod.McgToMlConverter,
+    })),
+  ),
+  BarToPsigConverter: lazyTool(() =>
+    import('@/tools/calculators/bar-to-psig/BarToPsigConverter').then((mod) => ({
+      default: mod.BarToPsigConverter,
+    })),
+  ),
+  MeasurementConverter: lazyTool(() =>
+    import('@/tools/calculators/measurement-converter/MeasurementConverter').then((mod) => ({
+      default: mod.MeasurementConverter,
+    })),
+  ),
+  CcToGramsConverter: lazyTool(() =>
+    import('@/tools/calculators/cc-to-grams/CcToGramsConverter').then((mod) => ({
+      default: mod.CcToGramsConverter,
+    })),
+  ),
+  MeterConverter: lazyTool(() =>
+    import('@/tools/calculators/meter-converter/MeterConverter').then((mod) => ({
+      default: mod.MeterConverter,
+    })),
+  ),
+  CcToLiterConverter: lazyTool(() =>
+    import('@/tools/calculators/cc-to-liter/CcToLiterConverter').then((mod) => ({
+      default: mod.CcToLiterConverter,
+    })),
+  ),
+  MetersToFeetConverter: lazyTool(() =>
+    import('@/tools/calculators/meters-to-feet/MetersToFeetConverter').then((mod) => ({
+      default: mod.MetersToFeetConverter,
+    })),
+  ),
+  CcToMlConverter: lazyTool(() =>
+    import('@/tools/calculators/cc-to-ml/CcToMlConverter').then((mod) => ({
+      default: mod.CcToMlConverter,
+    })),
+  ),
+  MeterToMileConverter: lazyTool(() =>
+    import('@/tools/calculators/meter-to-mile/MeterToMileConverter').then((mod) => ({
+      default: mod.MeterToMileConverter,
+    })),
+  ),
+  CcToOzConverter: lazyTool(() =>
+    import('@/tools/calculators/cc-to-oz/CcToOzConverter').then((mod) => ({
+      default: mod.CcToOzConverter,
+    })),
+  ),
+  MetricConverter: lazyTool(() =>
+    import('@/tools/calculators/metric-converter/MetricConverter').then((mod) => ({
+      default: mod.MetricConverter,
+    })),
+  ),
+  CelsiusConverter: lazyTool(() =>
+    import('@/tools/calculators/celsius-converter/CelsiusConverter').then((mod) => ({
+      default: mod.CelsiusConverter,
+    })),
+  ),
+  MetricToImperialConverter: lazyTool(() =>
+    import('@/tools/calculators/metric-to-imperial/MetricToImperialConverter').then((mod) => ({
+      default: mod.MetricToImperialConverter,
+    })),
+  ),
+  CelsiusToFahrenheitConverter: lazyTool(() =>
+    import('@/tools/calculators/celsius-to-fahrenheit/CelsiusToFahrenheitConverter').then(
+      (mod) => ({
+        default: mod.CelsiusToFahrenheitConverter,
+      }),
+    ),
+  ),
+  CentigradeToCelsiusConverter: lazyTool(() =>
+    import('@/tools/calculators/centigrade-to-celsius/CentigradeToCelsiusConverter').then(
+      (mod) => ({
+        default: mod.CentigradeToCelsiusConverter,
+      }),
+    ),
+  ),
+  MetricToSaeCalculator: lazyTool(() =>
+    import('@/tools/calculators/metric-to-sae/MetricToSaeCalculator').then((mod) => ({
+      default: mod.MetricToSaeCalculator,
+    })),
+  ),
+  CmHeightConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/cm-height-conversion/CmHeightConversionCalculator').then(
+      (mod) => ({
+        default: mod.CmHeightConversionCalculator,
+      }),
+    ),
+  ),
+  CentimeterCalculator: lazyTool(() =>
+    import('@/tools/calculators/centimeter/CentimeterCalculator').then((mod) => ({
+      default: mod.CentimeterCalculator,
+    })),
+  ),
+  CentToSquareMeterConverter: lazyTool(() =>
+    import('@/tools/calculators/cent-to-square-meter/CentToSquareMeterConverter').then((mod) => ({
+      default: mod.CentToSquareMeterConverter,
+    })),
+  ),
+  CmToFtInConverter: lazyTool(() =>
+    import('@/tools/calculators/cm-to-ft-in/CmToFtInConverter').then((mod) => ({
+      default: mod.CmToFtInConverter,
+    })),
+  ),
+  CmToInConverter: lazyTool(() =>
+    import('@/tools/calculators/cm-to-in/CmToInConverter').then((mod) => ({
+      default: mod.CmToInConverter,
+    })),
+  ),
+  CmToKmConverter: lazyTool(() =>
+    import('@/tools/calculators/cm-to-km/CmToKmConverter').then((mod) => ({
+      default: mod.CmToKmConverter,
+    })),
+  ),
+  CmToMConverter: lazyTool(() =>
+    import('@/tools/calculators/cm-to-m/CmToMConverter').then((mod) => ({
+      default: mod.CmToMConverter,
+    })),
+  ),
+  CmToMmConverter: lazyTool(() =>
+    import('@/tools/calculators/cm-to-mm/CmToMmConverter').then((mod) => ({
+      default: mod.CmToMmConverter,
+    })),
+  ),
+  CubicFeetToCubicMetersConverter: lazyTool(() =>
+    import(
+      '@/tools/calculators/cubic-feet-to-cubic-meters/CubicFeetToCubicMetersConverter'
+    ).then((mod) => ({
+      default: mod.CubicFeetToCubicMetersConverter,
+    })),
+  ),
+  CubicFeetToGallonsConverter: lazyTool(() =>
+    import('@/tools/calculators/cubic-feet-to-gallons/CubicFeetToGallonsConverter').then(
+      (mod) => ({
+        default: mod.CubicFeetToGallonsConverter,
+      }),
+    ),
+  ),
+  CubicFeetToPoundsCalculator: lazyTool(() =>
+    import('@/tools/calculators/cubic-feet-to-pounds/CubicFeetToPoundsCalculator').then(
+      (mod) => ({
+        default: mod.CubicFeetToPoundsCalculator,
+      }),
+    ),
+  ),
+  CubicInchesToGallonsConverter: lazyTool(() =>
+    import('@/tools/calculators/cubic-inches-to-gallons/CubicInchesToGallonsConverter').then(
+      (mod) => ({
+        default: mod.CubicInchesToGallonsConverter,
+      }),
+    ),
+  ),
+  CubicMeterToTonConverter: lazyTool(() =>
+    import('@/tools/calculators/cubic-meter-to-ton/CubicMeterToTonConverter').then((mod) => ({
+      default: mod.CubicMeterToTonConverter,
+    })),
+  ),
+  CupsToGallonsConverter: lazyTool(() =>
+    import('@/tools/calculators/cups-to-gallons/CupsToGallonsConverter').then((mod) => ({
+      default: mod.CupsToGallonsConverter,
+    })),
+  ),
+  CupsToOzConverter: lazyTool(() =>
+    import('@/tools/calculators/cups-to-oz/CupsToOzConverter').then((mod) => ({
+      default: mod.CupsToOzConverter,
+    })),
+  ),
+  CupsToPintsConverter: lazyTool(() =>
+    import('@/tools/calculators/cups-to-pints/CupsToPintsConverter').then((mod) => ({
+      default: mod.CupsToPintsConverter,
+    })),
+  ),
+  CupsToQuartsConverter: lazyTool(() =>
+    import('@/tools/calculators/cups-to-quarts/CupsToQuartsConverter').then((mod) => ({
+      default: mod.CupsToQuartsConverter,
+    })),
+  ),
+  DayConverter: lazyTool(() =>
+    import('@/tools/calculators/day-converter/DayConverter').then((mod) => ({
+      default: mod.DayConverter,
+    })),
+  ),
+  DaysToMonthsCalculator: lazyTool(() =>
+    import('@/tools/calculators/days-to-months/DaysToMonthsCalculator').then((mod) => ({
+      default: mod.DaysToMonthsCalculator,
+    })),
+  ),
+  DaysToWeeksCalculator: lazyTool(() =>
+    import('@/tools/calculators/days-to-weeks/DaysToWeeksCalculator').then((mod) => ({
+      default: mod.DaysToWeeksCalculator,
+    })),
+  ),
+  DaysToYearsCalculator: lazyTool(() =>
+    import('@/tools/calculators/days-to-years/DaysToYearsCalculator').then((mod) => ({
+      default: mod.DaysToYearsCalculator,
+    })),
+  ),
+  DegreesToMinutesConverter: lazyTool(() =>
+    import('@/tools/calculators/degrees-to-minutes/DegreesToMinutesConverter').then((mod) => ({
+      default: mod.DegreesToMinutesConverter,
+    })),
+  ),
+  DegreesToRadiansConverter: lazyTool(() =>
+    import('@/tools/calculators/degrees-to-radians/DegreesToRadiansConverter').then((mod) => ({
+      default: mod.DegreesToRadiansConverter,
+    })),
+  ),
+  RadiansToDegreesConverter: lazyTool(() =>
+    import('@/tools/calculators/radians-to-degrees/RadiansToDegreesConverter').then((mod) => ({
+      default: mod.RadiansToDegreesConverter,
+    })),
+  ),
+  DegreesToSecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/degrees-to-seconds/DegreesToSecondsConverter').then((mod) => ({
+      default: mod.DegreesToSecondsConverter,
+    })),
+  ),
+  DistanceConverter: lazyTool(() =>
+    import('@/tools/calculators/distance-converter/DistanceConverter').then((mod) => ({
+      default: mod.DistanceConverter,
+    })),
+  ),
+  DmConverter: lazyTool(() =>
+    import('@/tools/calculators/dm-converter/DmConverter').then((mod) => ({
+      default: mod.DmConverter,
+    })),
+  ),
+  FahrenheitConverter: lazyTool(() =>
+    import('@/tools/calculators/fahrenheit-converter/FahrenheitConverter').then((mod) => ({
+      default: mod.FahrenheitConverter,
+    })),
+  ),
+  FahrenheitToCelsiusConverter: lazyTool(() =>
+    import('@/tools/calculators/fahrenheit-to-celsius/FahrenheitToCelsiusConverter').then(
+      (mod) => ({
+        default: mod.FahrenheitToCelsiusConverter,
+      }),
+    ),
+  ),
+  FeetConverter: lazyTool(() =>
+    import('@/tools/calculators/feet-converter/FeetConverter').then((mod) => ({
+      default: mod.FeetConverter,
+    })),
+  ),
+  FeetToMilesConverter: lazyTool(() =>
+    import('@/tools/calculators/feet-to-miles/FeetToMilesConverter').then((mod) => ({
+      default: mod.FeetToMilesConverter,
+    })),
+  ),
+  FeetToYardsConverter: lazyTool(() =>
+    import('@/tools/calculators/feet-to-yards/FeetToYardsConverter').then((mod) => ({
+      default: mod.FeetToYardsConverter,
+    })),
+  ),
+  FluidOuncesToPoundsConverter: lazyTool(() =>
+    import('@/tools/calculators/fluid-ounces-to-pounds/FluidOuncesToPoundsConverter').then(
+      (mod) => ({
+        default: mod.FluidOuncesToPoundsConverter,
+      }),
+    ),
+  ),
+  FootToCentimeterConverter: lazyTool(() =>
+    import('@/tools/calculators/foot-to-centimeter/FootToCentimeterConverter').then((mod) => ({
+      default: mod.FootToCentimeterConverter,
+    })),
+  ),
+  FtToMConverter: lazyTool(() =>
+    import('@/tools/calculators/ft-to-m/FtToMConverter').then((mod) => ({
+      default: mod.FtToMConverter,
+    })),
+  ),
+  GajToSquareYardConverter: lazyTool(() =>
+    import('@/tools/calculators/gaj-to-square-yard/GajToSquareYardConverter').then((mod) => ({
+      default: mod.GajToSquareYardConverter,
+    })),
+  ),
+  GallonsToCubicFeetConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-cubic-feet/GallonsToCubicFeetConverter').then(
+      (mod) => ({
+        default: mod.GallonsToCubicFeetConverter,
+      }),
+    ),
+  ),
+  GallonsToCupsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-cups/GallonsToCupsConverter').then((mod) => ({
+      default: mod.GallonsToCupsConverter,
+    })),
+  ),
+  GallonsToGramsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-grams/GallonsToGramsConverter').then((mod) => ({
+      default: mod.GallonsToGramsConverter,
+    })),
+  ),
+  GallonsToPintsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-pints/GallonsToPintsConverter').then((mod) => ({
+      default: mod.GallonsToPintsConverter,
+    })),
+  ),
+  GallonsToQuartsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-quarts/GallonsToQuartsConverter').then((mod) => ({
+      default: mod.GallonsToQuartsConverter,
+    })),
+  ),
+  GallonsToTonsConverter: lazyTool(() =>
+    import('@/tools/calculators/gallons-to-tons/GallonsToTonsConverter').then((mod) => ({
+      default: mod.GallonsToTonsConverter,
+    })),
+  ),
+  GalToKgConverter: lazyTool(() =>
+    import('@/tools/calculators/gal-to-kg/GalToKgConverter').then((mod) => ({
+      default: mod.GalToKgConverter,
+    })),
+  ),
+  GramsInMlConverter: lazyTool(() =>
+    import('@/tools/calculators/grams-in-ml/GramsInMlConverter').then((mod) => ({
+      default: mod.GramsInMlConverter,
+    })),
+  ),
+  GramsToFlOzConverter: lazyTool(() =>
+    import('@/tools/calculators/grams-to-fl-oz/GramsToFlOzConverter').then((mod) => ({
+      default: mod.GramsToFlOzConverter,
+    })),
+  ),
+  GramToLiterConversion: lazyTool(() =>
+    import('@/tools/calculators/gram-to-liter/GramToLiterConversion').then((mod) => ({
+      default: mod.GramToLiterConversion,
+    })),
+  ),
+  GrToMlConverter: lazyTool(() =>
+    import('@/tools/calculators/gr-to-ml/GrToMlConverter').then((mod) => ({
+      default: mod.GrToMlConverter,
+    })),
+  ),
+  GToTspConverter: lazyTool(() =>
+    import('@/tools/calculators/g-to-tsp/GToTspConverter').then((mod) => ({
+      default: mod.GToTspConverter,
+    })),
+  ),
+  GToLbsConverter: lazyTool(() =>
+    import('@/tools/calculators/g-to-lbs/GToLbsConverter').then((mod) => ({
+      default: mod.GToLbsConverter,
+    })),
+  ),
+  HectaresToAcresConverter: lazyTool(() =>
+    import('@/tools/calculators/hectares-to-acres/HectaresToAcresConverter').then((mod) => ({
+      default: mod.HectaresToAcresConverter,
+    })),
+  ),
+  HeightConverter: lazyTool(() =>
+    import('@/tools/calculators/height-converter/HeightConverter').then((mod) => ({
+      default: mod.HeightConverter,
+    })),
+  ),
+  HourConverter: lazyTool(() =>
+    import('@/tools/calculators/hour-converter/HourConverter').then((mod) => ({
+      default: mod.HourConverter,
+    })),
+  ),
+  HoursToDaysCalculator: lazyTool(() =>
+    import('@/tools/calculators/hours-to-days/HoursToDaysCalculator').then((mod) => ({
+      default: mod.HoursToDaysCalculator,
+    })),
+  ),
+  HoursToMinutesConverter: lazyTool(() =>
+    import('@/tools/calculators/hours-to-minutes/HoursToMinutesConverter').then((mod) => ({
+      default: mod.HoursToMinutesConverter,
+    })),
+  ),
+  HoursToSecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/hours-to-seconds/HoursToSecondsConverter').then((mod) => ({
+      default: mod.HoursToSecondsConverter,
+    })),
+  ),
+  HoursToWeekConversion: lazyTool(() =>
+    import('@/tools/calculators/hours-to-weeks/HoursToWeekConversion').then((mod) => ({
+      default: mod.HoursToWeekConversion,
+    })),
+  ),
+  HoursToYearsConverter: lazyTool(() =>
+    import('@/tools/calculators/hours-to-years/HoursToYearsConverter').then((mod) => ({
+      default: mod.HoursToYearsConverter,
+    })),
+  ),
+  ImperialCalculator: lazyTool(() =>
+    import('@/tools/calculators/imperial/ImperialCalculator').then((mod) => ({
+      default: mod.ImperialCalculator,
+    })),
+  ),
+  ImperialToMetricConversion: lazyTool(() =>
+    import('@/tools/calculators/imperial-to-metric/ImperialToMetricConversion').then((mod) => ({
+      default: mod.ImperialToMetricConversion,
+    })),
+  ),
+  InchConverter: lazyTool(() =>
+    import('@/tools/calculators/inch-converter/InchConverter').then((mod) => ({
+      default: mod.InchConverter,
+    })),
+  ),
+  InchToMeterCalculator: lazyTool(() =>
+    import('@/tools/calculators/inch-to-meter/InchToMeterCalculator').then((mod) => ({
+      default: mod.InchToMeterCalculator,
+    })),
+  ),
+  InchesToYardConversion: lazyTool(() =>
+    import('@/tools/calculators/inches-to-yards/InchesToYardsConverter').then((mod) => ({
+      default: mod.InchesToYardsConverter,
+    })),
+  ),
+  InToCmConverter: lazyTool(() =>
+    import('@/tools/calculators/in-to-cm/InToCmConverter').then((mod) => ({
+      default: mod.InToCmConverter,
+    })),
+  ),
+  KathaToSquareFeetConverter: lazyTool(() =>
+    import('@/tools/calculators/katha-to-sqft/KathaToSquareFeetConverter').then((mod) => ({
+      default: mod.KathaToSquareFeetConverter,
+    })),
+  ),
+  KelvinConverter: lazyTool(() =>
+    import('@/tools/calculators/kelvin-converter/KelvinConverter').then((mod) => ({
+      default: mod.KelvinConverter,
+    })),
+  ),
+  KelvinToCelsiusConverter: lazyTool(() =>
+    import('@/tools/calculators/kelvin-to-celsius/KelvinToCelsiusConverter').then((mod) => ({
+      default: mod.KelvinToCelsiusConverter,
+    })),
+  ),
+  KelvinToFahrenheitConverter: lazyTool(() =>
+    import('@/tools/calculators/kelvin-to-fahrenheit/KelvinToFahrenheitConverter').then((mod) => ({
+      default: mod.KelvinToFahrenheitConverter,
+    })),
+  ),
+  KgCmToPsiConverter: lazyTool(() =>
+    import('@/tools/calculators/kgcm-to-psi/KgCmToPsiConverter').then((mod) => ({
+      default: mod.KgCmToPsiConverter,
+    })),
+  ),
+  KgToLbsConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-lbs/KgToLbsConverter').then((mod) => ({
+      default: mod.KgToLbsConverter,
+    })),
+  ),
+  KgToLiterConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-liter/KgToLiterConverter').then((mod) => ({
+      default: mod.KgToLiterConverter,
+    })),
+  ),
+  KgToMlConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-ml/KgToMlConverter').then((mod) => ({
+      default: mod.KgToMlConverter,
+    })),
+  ),
+  KgToOunceConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-ounce/KgToOunceConverter').then((mod) => ({
+      default: mod.KgToOunceConverter,
+    })),
+  ),
+  KgToStonesConverter: lazyTool(() =>
+    import('@/tools/calculators/kg-to-stones/KgToStonesConverter').then((mod) => ({
+      default: mod.KgToStonesConverter,
+    })),
+  ),
+  KilometerCalculator: lazyTool(() =>
+    import('@/tools/calculators/kilometer-calculator/KilometerCalculator').then((mod) => ({
+      default: mod.KilometerCalculator,
+    })),
+  ),
+  KilometerToMeterConverter: lazyTool(() =>
+    import('@/tools/calculators/kilometer-to-meter/KilometerToMeterConverter').then((mod) => ({
+      default: mod.KilometerToMeterConverter,
+    })),
+  ),
+  KilometersToMilesCalculator: lazyTool(() =>
+    import('@/tools/calculators/kilometers-to-miles/KilometersToMilesCalculator').then((mod) => ({
+      default: mod.KilometersToMilesCalculator,
+    })),
+  ),
+  KmToFeetConversion: lazyTool(() =>
+    import('@/tools/calculators/km-to-feet/KmToFeetConversion').then((mod) => ({
+      default: mod.KmToFeetConversion,
+    })),
+  ),
+  KpaConverter: lazyTool(() =>
+    import('@/tools/calculators/kpa-converter/KpaConverter').then((mod) => ({
+      default: mod.KpaConverter,
+    })),
+  ),
+  KpaToAtmConversion: lazyTool(() =>
+    import('@/tools/calculators/kpa-to-atm/KpaToAtmConversion').then((mod) => ({
+      default: mod.KpaToAtmConversion,
+    })),
+  ),
+  KpaToMmhgConversion: lazyTool(() =>
+    import('@/tools/calculators/kpa-to-mmhg/KpaToMmhgConversion').then((mod) => ({
+      default: mod.KpaToMmhgConversion,
+    })),
+  ),
+  KpaToPsiConversion: lazyTool(() =>
+    import('@/tools/calculators/kpa-to-psi/KpaToPsiConversion').then((mod) => ({
+      default: mod.KpaToPsiConversion,
+    })),
+  ),
+  KsiToMpaConverter: lazyTool(() =>
+    import('@/tools/calculators/ksi-to-mpa/KsiToMpaConverter').then((mod) => ({
+      default: mod.KsiToMpaConverter,
+    })),
+  ),
+  KsiToPsiConversion: lazyTool(() =>
+    import('@/tools/calculators/ksi-to-psi/KsiToPsiConversion').then((mod) => ({
+      default: mod.KsiToPsiConversion,
+    })),
+  ),
+  LandAreaCalculator: lazyTool(() =>
+    import('@/tools/calculators/land-area/LandAreaCalculator').then((mod) => ({
+      default: mod.LandAreaCalculator,
+    })),
+  ),
+  LbsToGConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-g/LbsToGConverter').then((mod) => ({
+      default: mod.LbsToGConverter,
+    })),
+  ),
+  LbsToKgConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-kg/LbsToKgConverter').then((mod) => ({
+      default: mod.LbsToKgConverter,
+    })),
+  ),
+  LbsToPoundsConverter: lazyTool(() =>
+    import('@/tools/calculators/lbs-to-pounds/LbsToPoundsConverter').then((mod) => ({
+      default: mod.LbsToPoundsConverter,
+    })),
+  ),
+  MetricToStandardConverter: lazyTool(() =>
+    import('@/tools/calculators/metric-to-standard/MetricToStandardConverter').then((mod) => ({
+      default: mod.MetricToStandardConverter,
+    })),
+  ),
+  MgToCcConverter: lazyTool(() =>
+    import('@/tools/calculators/mg-to-cc/MgToCcConverter').then((mod) => ({
+      default: mod.MgToCcConverter,
+    })),
+  ),
+  MgToLbsConverter: lazyTool(() =>
+    import('@/tools/calculators/mg-to-lbs/MgToLbsConverter').then((mod) => ({
+      default: mod.MgToLbsConverter,
+    })),
+  ),
+  MgToTablespoonConverter: lazyTool(() =>
+    import('@/tools/calculators/mg-to-tablespoon/MgToTablespoonConverter').then((mod) => ({
+      default: mod.MgToTablespoonConverter,
+    })),
+  ),
+  MgToTeaspoonConverter: lazyTool(() =>
+    import('@/tools/calculators/mg-to-teaspoon/MgToTeaspoonConverter').then((mod) => ({
+      default: mod.MgToTeaspoonConverter,
+    })),
+  ),
+  MicronToMilConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/micron-to-mil/MicronToMilConversionCalculator').then((mod) => ({
+      default: mod.MicronToMilConversionCalculator,
+    })),
+  ),
+  MilConversion: lazyTool(() =>
+    import('@/tools/calculators/mil-conversion/MilConversion').then((mod) => ({
+      default: mod.MilConversion,
+    })),
+  ),
+  MileConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/mile-conversion/MileConversionCalculator').then((mod) => ({
+      default: mod.MileConversionCalculator,
+    })),
+  ),
+  MillimeterCalculator: lazyTool(() =>
+    import('@/tools/calculators/millimeter/MillimeterCalculator').then((mod) => ({
+      default: mod.MillimeterCalculator,
+    })),
+  ),
+  MmCalculator: lazyTool(() =>
+    import('@/tools/calculators/mm-calculator/MmCalculator').then((mod) => ({
+      default: mod.MmCalculator,
+    })),
+  ),
+  MmToFootConverter: lazyTool(() =>
+    import('@/tools/calculators/mm-to-foot/MmToFootConverter').then((mod) => ({
+      default: mod.MmToFootConverter,
+    })),
+  ),
+  MmToInchesConversion: lazyTool(() =>
+    import('@/tools/calculators/mm-to-inches/MmToInchesConversion').then((mod) => ({
+      default: mod.MmToInchesConversion,
+    })),
+  ),
+  MmToKmConversion: lazyTool(() =>
+    import('@/tools/calculators/mm-to-km/MmToKmConversion').then((mod) => ({
+      default: mod.MmToKmConversion,
+    })),
+  ),
+  MmToMConversion: lazyTool(() =>
+    import('@/tools/calculators/mm-to-m/MmToMConversion').then((mod) => ({
+      default: mod.MmToMConversion,
+    })),
+  ),
+  MillisecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/milliseconds/MillisecondsConverter').then((mod) => ({
+      default: mod.MillisecondsConverter,
+    })),
+  ),
+  MilToInchConversion: lazyTool(() =>
+    import('@/tools/calculators/mil-to-inch/MilToInchConversion').then((mod) => ({
+      default: mod.MilToInchConversion,
+    })),
+  ),
+  MilToMmConversion: lazyTool(() =>
+    import('@/tools/calculators/mil-to-mm/MilToMmConversion').then((mod) => ({
+      default: mod.MilToMmConversion,
+    })),
+  ),
+  MinuteConverter: lazyTool(() =>
+    import('@/tools/calculators/minute-converter/MinuteConverter').then((mod) => ({
+      default: mod.MinuteConverter,
+    })),
+  ),
+  MinutesToDaysCalculator: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-days/MinutesToDaysCalculator').then((mod) => ({
+      default: mod.MinutesToDaysCalculator,
+    })),
+  ),
+  MinutesToDecimalCalculator: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-decimal/MinutesToDecimalCalculator').then((mod) => ({
+      default: mod.MinutesToDecimalCalculator,
+    })),
+  ),
+  MinutesToSecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-seconds/MinutesToSecondsConverter').then((mod) => ({
+      default: mod.MinutesToSecondsConverter,
+    })),
+  ),
+  MinutesToYearsConversion: lazyTool(() =>
+    import('@/tools/calculators/minutes-to-years/MinutesToYearsConversion').then((mod) => ({
+      default: mod.MinutesToYearsConversion,
+    })),
+  ),
+  MonthsToYearsCalculator: lazyTool(() =>
+    import('@/tools/calculators/months-to-years/MonthsToYearsCalculator').then((mod) => ({
+      default: mod.MonthsToYearsCalculator,
+    })),
+  ),
+  MpaConversion: lazyTool(() =>
+    import('@/tools/calculators/mpa-conversion/MpaConversion').then((mod) => ({
+      default: mod.MpaConversion,
+    })),
+  ),
+  MpaToPsiConversion: lazyTool(() =>
+    import('@/tools/calculators/mpa-to-psi/MpaToPsiConversion').then((mod) => ({
+      default: mod.MpaToPsiConversion,
+    })),
+  ),
+  MpaToPsigConversion: lazyTool(() =>
+    import('@/tools/calculators/mpa-to-psig/MpaToPsigConversion').then((mod) => ({
+      default: mod.MpaToPsigConversion,
+    })),
+  ),
+  MsToSecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/ms-to-seconds/MsToSecondsConverter').then((mod) => ({
+      default: mod.MsToSecondsConverter,
+    })),
+  ),
+  SecondsConverter: lazyTool(() =>
+    import('@/tools/calculators/seconds-converter/SecondsConverter').then((mod) => ({
+      default: mod.SecondsConverter,
+    })),
+  ),
+  SecondsToDaysConverter: lazyTool(() =>
+    import('@/tools/calculators/seconds-to-days/SecondsToDaysConverter').then((mod) => ({
+      default: mod.SecondsToDaysConverter,
+    })),
+  ),
+  SecondsToHoursConverter: lazyTool(() =>
+    import('@/tools/calculators/seconds-to-hours/SecondsToHoursConverter').then((mod) => ({
+      default: mod.SecondsToHoursConverter,
+    })),
+  ),
+  SecondsToMinutesConverter: lazyTool(() =>
+    import('@/tools/calculators/seconds-to-minutes/SecondsToMinutesConverter').then((mod) => ({
+      default: mod.SecondsToMinutesConverter,
+    })),
+  ),
+  SecondsToYearsConversion: lazyTool(() =>
+    import('@/tools/calculators/seconds-to-years/SecondsToYearsConversion').then((mod) => ({
+      default: mod.SecondsToYearsConversion,
+    })),
+  ),
+  SquareCmToSquareMmConverter: lazyTool(() =>
+    import('@/tools/calculators/square-cm-to-square-mm/SquareCmToSquareMmConverter').then((mod) => ({
+      default: mod.SquareCmToSquareMmConverter,
+    })),
+  ),
+  SquareFeetConverter: lazyTool(() =>
+    import('@/tools/calculators/square-feet-converter/SquareFeetConverter').then((mod) => ({
+      default: mod.SquareFeetConverter,
+    })),
+  ),
+  SquareFeetToAcresCalculator: lazyTool(() =>
+    import('@/tools/calculators/square-feet-to-acres/SquareFeetToAcresCalculator').then((mod) => ({
+      default: mod.SquareFeetToAcresCalculator,
+    })),
+  ),
+  SquareInchToSquareFootConverter: lazyTool(() =>
+    import('@/tools/calculators/square-inch-to-square-foot/SquareInchToSquareFootConverter').then(
+      (mod) => ({
+        default: mod.SquareInchToSquareFootConverter,
+      }),
+    ),
+  ),
+  SquareMeterConverter: lazyTool(() =>
+    import('@/tools/calculators/square-meter-converter/SquareMeterConverter').then((mod) => ({
+      default: mod.SquareMeterConverter,
+    })),
+  ),
+  SquareMetersToSquareFeetConverter: lazyTool(() =>
+    import(
+      '@/tools/calculators/square-meters-to-square-feet/SquareMetersToSquareFeetConverter'
+    ).then((mod) => ({
+      default: mod.SquareMetersToSquareFeetConverter,
+    })),
+  ),
+  SquareMilesToSquareKmConverter: lazyTool(() =>
+    import(
+      '@/tools/calculators/square-miles-to-square-km/SquareMilesToSquareKmConverter'
+    ).then((mod) => ({
+      default: mod.SquareMilesToSquareKmConverter,
+    })),
+  ),
+  SquareYardConverter: lazyTool(() =>
+    import('@/tools/calculators/square-yard-converter/SquareYardConverter').then((mod) => ({
+      default: mod.SquareYardConverter,
+    })),
+  ),
+  StoneToKgConverter: lazyTool(() =>
+    import('@/tools/calculators/stone-to-kg/StoneToKgConverter').then((mod) => ({
+      default: mod.StoneToKgConverter,
+    })),
+  ),
+  StoneToLbsConverter: lazyTool(() =>
+    import('@/tools/calculators/stone-to-lbs/StoneToLbsConverter').then((mod) => ({
+      default: mod.StoneToLbsConverter,
+    })),
+  ),
+  TbspToGramsConverter: lazyTool(() =>
+    import('@/tools/calculators/tbsp-to-grams/TbspToGramsConverter').then((mod) => ({
+      default: mod.TbspToGramsConverter,
+    })),
+  ),
+  TbspToMlConverter: lazyTool(() =>
+    import('@/tools/calculators/tbsp-to-ml/TbspToMlConverter').then((mod) => ({
+      default: mod.TbspToMlConverter,
+    })),
+  ),
+  TspToGramsConverter: lazyTool(() =>
+    import('@/tools/calculators/tsp-to-grams/TspToGramsConverter').then((mod) => ({
+      default: mod.TspToGramsConverter,
+    })),
+  ),
+  TspToMlConverter: lazyTool(() =>
+    import('@/tools/calculators/tsp-to-ml/TspToMlConverter').then((mod) => ({
+      default: mod.TspToMlConverter,
+    })),
+  ),
+  WeeksToMonthsCalculator: lazyTool(() =>
+    import('@/tools/calculators/weeks-to-months/WeeksToMonthsCalculator').then((mod) => ({
+      default: mod.WeeksToMonthsCalculator,
+    })),
+  ),
+  WeeksToYearsConverter: lazyTool(() =>
+    import('@/tools/calculators/weeks-to-years/WeeksToYearsConverter').then((mod) => ({
+      default: mod.WeeksToYearsConverter,
+    })),
+  ),
+  YardConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/yard-conversion/YardConversionCalculator').then((mod) => ({
+      default: mod.YardConversionCalculator,
+    })),
+  ),
+  YardToMeterConverter: lazyTool(() =>
+    import('@/tools/calculators/yard-to-meter/YardToMeterConverter').then((mod) => ({
+      default: mod.YardToMeterConverter,
+    })),
+  ),
+  YardToMileConverter: lazyTool(() =>
+    import('@/tools/calculators/yard-to-mile/YardToMileConverter').then((mod) => ({
+      default: mod.YardToMileConverter,
+    })),
+  ),
+  YardsToMetersConversion: lazyTool(() =>
+    import('@/tools/calculators/yards-to-meters/YardsToMetersConversion').then((mod) => ({
+      default: mod.YardsToMetersConversion,
+    })),
+  ),
+  NmConverter: lazyTool(() =>
+    import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
+      default: mod.NmConverter,
+    })),
+  ),
+  NmToMConverter: lazyTool(() =>
+    import('@/tools/calculators/nm-to-m/NmToMConverter').then((mod) => ({
+      default: mod.NmToMConverter,
+    })),
+  ),
+  KnotsToKphConverter: lazyTool(() =>
+    import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
+      default: mod.KnotsToKphConverter,
+    })),
+  ),
+  TemperatureConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/temperature/TemperatureConversionCalculator').then((mod) => ({
+      default: mod.TemperatureConversionCalculator,
     })),
   ),
   AdditionalFundsNeededCalculator: lazyTool(() =>
@@ -694,9 +2295,21 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ApyCalculator,
     })),
   ),
+  BalloonPaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/balloon-payment/BalloonPaymentCalculator'
+    ).then((mod) => ({
+      default: mod.BalloonPaymentCalculator,
+    })),
+  ),
   BasisPointCalculator: lazyTool(() =>
     import('@/tools/calculators/basis-point/BasisPointCalculator').then((mod) => ({
       default: mod.BasisPointCalculator,
+    })),
+  ),
+  BetaStockCalculator: lazyTool(() =>
+    import('@/tools/calculators/beta-stock/BetaStockCalculator').then((mod) => ({
+      default: mod.BetaStockCalculator,
     })),
   ),
   AverageCollectionPeriodCalculator: lazyTool(() =>
@@ -754,6 +2367,47 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CagrCalculator,
     })),
   ),
+  CapmCalculator: lazyTool(() =>
+    import('@/tools/calculators/capm/CapmCalculator').then((mod) => ({
+      default: mod.CapmCalculator,
+    })),
+  ),
+  CanadianMortgageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/canadian-mortgage/CanadianMortgageCalculator'
+    ).then((mod) => ({
+      default: mod.CanadianMortgageCalculator,
+    })),
+  ),
+  MortgageCalculatorUk: lazyTool(() =>
+    import('@/tools/calculators/mortgage-uk/MortgageCalculatorUk').then((mod) => ({
+      default: mod.MortgageCalculatorUk,
+    })),
+  ),
+  CarInterestCalculator: lazyTool(() =>
+    import('@/tools/calculators/car-interest/CarInterestCalculator').then((mod) => ({
+      default: mod.CarInterestCalculator,
+    })),
+  ),
+  CarLoanEmiCalculator: lazyTool(() =>
+    import('@/tools/calculators/car-loan-emi/CarLoanEmiCalculator').then((mod) => ({
+      default: mod.CarLoanEmiCalculator,
+    })),
+  ),
+  CarriedInterestCalculator: lazyTool(() =>
+    import('@/tools/calculators/carried-interest/CarriedInterestCalculator').then(
+      (mod) => ({
+        default: mod.CarriedInterestCalculator,
+      })
+    ),
+  ),
+  CashBackOrLowInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cash-back-or-low-interest/CashBackOrLowInterestCalculator'
+    ).then((mod) => ({
+      default: mod.CashBackOrLowInterestCalculator,
+    })),
+  ),
   ChurnRateCalculator: lazyTool(() =>
     import('@/tools/calculators/churn-rate/ChurnRateCalculator').then((mod) => ({
       default: mod.ChurnRateCalculator,
@@ -787,6 +2441,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   CostOfGoodsSoldCalculator: lazyTool(() =>
     import('@/tools/calculators/cost-of-goods-sold/CostOfGoodsSoldCalculator').then((mod) => ({
       default: mod.CostOfGoodsSoldCalculator,
+    })),
+  ),
+  CostOfEquityCalculator: lazyTool(() =>
+    import('@/tools/calculators/cost-of-equity/CostOfEquityCalculator').then((mod) => ({
+      default: mod.CostOfEquityCalculator,
     })),
   ),
   CpaCalculator: lazyTool(() =>
@@ -824,6 +2483,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DaysOffCalculator,
     })),
   ),
+  DividendDiscountModelCalculator: lazyTool(() =>
+    import('@/tools/calculators/dividend-discount-model/DividendDiscountModelCalculator').then(
+      (mod) => ({
+        default: mod.DividendDiscountModelCalculator,
+      })
+    )
+  ),
   DirectMaterialPriceVarianceCalculator: lazyTool(() =>
     import('@/tools/calculators/direct-material-price-variance/DirectMaterialPriceVarianceCalculator').then((mod) => ({
       default: mod.DirectMaterialPriceVarianceCalculator,
@@ -833,6 +2499,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/ear/EarCalculator').then((mod) => ({
       default: mod.EarCalculator,
     })),
+  ),
+  EarlyLoanPayoffCalculator: lazyTool(() =>
+    import('@/tools/calculators/early-loan-payoff/EarlyLoanPayoffCalculator').then(
+      (mod) => ({
+        default: mod.EarlyLoanPayoffCalculator,
+      })
+    )
   ),
   EquivalentRateCalculator: lazyTool(() =>
     import(
@@ -926,6 +2599,30 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LiquidNetWorthCalculator,
     })),
   ),
+  LoanBalanceCalculator: lazyTool(() =>
+    import('@/tools/calculators/loan-balance/LoanBalanceCalculator').then((mod) => ({
+      default: mod.LoanBalanceCalculator,
+    })),
+  ),
+  LoanPaymentCalculator: lazyTool(() =>
+    import('@/tools/calculators/loan-payment/LoanPaymentCalculator').then((mod) => ({
+      default: mod.LoanPaymentCalculator,
+    })),
+  ),
+  LoanRepaymentCalculator: lazyTool(() =>
+    import('@/tools/calculators/loan-repayment/LoanRepaymentCalculator').then(
+      (mod) => ({
+        default: mod.LoanRepaymentCalculator,
+      })
+    )
+  ),
+  QuizLoanBalanceCalculator: lazyTool(() =>
+    import('@/tools/calculators/quiz-loan-balance/QuizLoanBalanceCalculator').then(
+      (mod) => ({
+        default: mod.QuizLoanBalanceCalculator,
+      })
+    )
+  ),
   ManHoursCalculator: lazyTool(() =>
     import('@/tools/calculators/man-hours/ManHoursCalculator').then((mod) => ({
       default: mod.ManHoursCalculator,
@@ -1003,6 +2700,23 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ParkingRatioCalculator,
     })),
   ),
+  PartiallyAmortizedLoanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/partially-amortized-loan/PartiallyAmortizedLoanCalculator'
+    ).then((mod) => ({
+      default: mod.PartiallyAmortizedLoanCalculator,
+    })),
+  ),
+  PaydayLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/payday-loan/PaydayLoanCalculator').then((mod) => ({
+      default: mod.PaydayLoanCalculator,
+    })),
+  ),
+  PaymentCalculator: lazyTool(() =>
+    import('@/tools/calculators/payment/PaymentCalculator').then((mod) => ({
+      default: mod.PaymentCalculator,
+    })),
+  ),
   PaybackPeriodCalculator: lazyTool(() =>
     import('@/tools/calculators/payback-period/PaybackPeriodCalculator').then((mod) => ({
       default: mod.PaybackPeriodCalculator,
@@ -1018,6 +2732,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PerpetuityCalculator,
     })),
   ),
+  PostJudgmentInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/post-judgment-interest/PostJudgmentInterestCalculator'
+    ).then((mod) => ({
+      default: mod.PostJudgmentInterestCalculator,
+    })),
+  ),
   PreAndPostMoneyValuationCalculator: lazyTool(() =>
     import('@/tools/calculators/pre-and-post-money-valuation/PreAndPostMoneyValuationCalculator').then((mod) => ({
       default: mod.PreAndPostMoneyValuationCalculator,
@@ -1031,6 +2752,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   PriceQuantityCalculator: lazyTool(() =>
     import('@/tools/calculators/price-quantity/PriceQuantityCalculator').then((mod) => ({
       default: mod.PriceQuantityCalculator,
+    })),
+  ),
+  ProratedRentCalculator: lazyTool(() =>
+    import('@/tools/calculators/prorated-rent/ProratedRentCalculator').then((mod) => ({
+      default: mod.ProratedRentCalculator,
     })),
   ),
   PvgoCalculator: lazyTool(() =>
@@ -1054,9 +2780,93 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RealRateOfReturnCalculator,
     })),
   ),
+  RentSplitCalculator: lazyTool(() =>
+    import('@/tools/calculators/rent-split/RentSplitCalculator').then((mod) => ({
+      default: mod.RentSplitCalculator,
+    })),
+  ),
+  RentVsBuyCalculator: lazyTool(() =>
+    import('@/tools/calculators/rent-vs-buy/RentVsBuyCalculator').then((mod) => ({
+      default: mod.RentVsBuyCalculator,
+    })),
+  ),
   BitcoinEtfCalculator: lazyTool(() =>
     import('@/tools/calculators/bitcoin-etf/BitcoinEtfCalculator').then((mod) => ({
       default: mod.BitcoinEtfCalculator,
+    })),
+  ),
+  BiweeklyMortgageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/biweekly-mortgage/BiweeklyMortgageCalculator'
+    ).then((mod) => ({
+      default: mod.BiweeklyMortgageCalculator,
+    })),
+  ),
+  BiWeeklyMortgagePaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bi-weekly-mortgage-payment/BiWeeklyMortgagePaymentCalculator'
+    ).then((mod) => ({
+      default: mod.BiWeeklyMortgagePaymentCalculator,
+    })),
+  ),
+  BoatLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/boat-loan/BoatLoanCalculator').then((mod) => ({
+      default: mod.BoatLoanCalculator,
+    })),
+  ),
+  JumboLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/jumbo-loan/JumboLoanCalculator').then((mod) => ({
+      default: mod.JumboLoanCalculator,
+    })),
+  ),
+  LandLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/land-loan/LandLoanCalculator').then((mod) => ({
+      default: mod.LandLoanCalculator,
+    })),
+  ),
+  PagIbigHousingLoanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/pag-ibig-housing-loan/PagIbigHousingLoanCalculator'
+    ).then((mod) => ({
+      default: mod.PagIbigHousingLoanCalculator,
+    })),
+  ),
+  RvLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/rv-loan/RvLoanCalculator').then((mod) => ({
+      default: mod.RvLoanCalculator,
+    })),
+  ),
+  StudentLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/student-loan/StudentLoanCalculator').then(
+      (mod) => ({
+        default: mod.StudentLoanCalculator,
+      })
+    ),
+  ),
+  StudentLoanForgivenessCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/student-loan-forgiveness/StudentLoanForgivenessCalculator'
+    ).then((mod) => ({
+      default: mod.StudentLoanForgivenessCalculator,
+    })),
+  ),
+  StudentLoanPaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/student-loan-payment/StudentLoanPaymentCalculator'
+    ).then((mod) => ({
+      default: mod.StudentLoanPaymentCalculator,
+    })),
+  ),
+  SimpleMortgageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/simple-mortgage/SimpleMortgageCalculator'
+    ).then((mod) => ({
+      default: mod.SimpleMortgageCalculator,
+    })),
+  ),
+  LtvCalculator: lazyTool(() =>
+    import('@/tools/calculators/ltv/LtvCalculator').then((mod) => ({
+      default: mod.LtvCalculator,
     })),
   ),
   CdCalculator: lazyTool(() =>
@@ -1097,6 +2907,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ContinuousCompoundInterestCalculator,
     })),
   ),
+  CouponPaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/coupon-payment/CouponPaymentCalculator'
+    ).then((mod) => ({
+      default: mod.CouponPaymentCalculator,
+    })),
+  ),
   DiscountedCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/discounted-cash-flow/DiscountedCashFlowCalculator'
@@ -1135,6 +2952,87 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FdCalculator,
     })),
   ),
+  FhaLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/fha-loan/FhaLoanCalculator').then((mod) => ({
+      default: mod.FhaLoanCalculator,
+    })),
+  ),
+  HomeEquityLoanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/home-equity-loan/HomeEquityLoanCalculator'
+    ).then((mod) => ({
+      default: mod.HomeEquityLoanCalculator,
+    })),
+  ),
+  HomeImprovementLoanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/home-improvement-loan/HomeImprovementLoanCalculator'
+    ).then((mod) => ({
+      default: mod.HomeImprovementLoanCalculator,
+    })),
+  ),
+  HomeLoanEmiCalculator: lazyTool(() =>
+    import('@/tools/calculators/home-loan-emi/HomeLoanEmiCalculator').then((mod) => ({
+      default: mod.HomeLoanEmiCalculator,
+    })),
+  ),
+  HomeLoanCalculator: lazyTool(() =>
+    import('@/tools/calculators/home-loan/HomeLoanCalculator').then((mod) => ({
+      default: mod.HomeLoanCalculator,
+    })),
+  ),
+  MortgageTaxesInsuranceCalculator: lazyTool(() =>
+    import('@/tools/calculators/mortgage-taxes-insurance/MortgageTaxesInsuranceCalculator').then((mod) => ({
+      default: mod.MortgageTaxesInsuranceCalculator,
+    })),
+  ),
+  MortgageComparisonCalculator: lazyTool(() =>
+    import('@/tools/calculators/mortgage-comparison/MortgageComparisonCalculator').then((mod) => ({
+      default: mod.MortgageComparisonCalculator,
+    })),
+  ),
+  HomeMortgageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/home-mortgage/HomeMortgageCalculator'
+    ).then((mod) => ({
+      default: mod.HomeMortgageCalculator,
+    })),
+  ),
+  MortgageAmortizationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-amortization/MortgageAmortizationCalculator'
+    ).then((mod) => ({
+      default: mod.MortgageAmortizationCalculator,
+    })),
+  ),
+  MortgageAccelerationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-acceleration/MortgageAccelerationCalculator'
+    ).then((mod) => ({
+      default: mod.MortgageAccelerationCalculator,
+    })),
+  ),
+  MortgagePrepaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-prepayment/MortgagePrepaymentCalculator'
+    ).then((mod) => ({
+      default: mod.MortgagePrepaymentCalculator,
+    })),
+  ),
+  MortgageWithExtraPaymentsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-with-extra-payments/MortgageWithExtraPaymentsCalculator'
+    ).then((mod) => ({
+      default: mod.MortgageWithExtraPaymentsCalculator,
+    })),
+  ),
+  MortgagePointsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-points/MortgagePointsCalculator'
+    ).then((mod) => ({
+      default: mod.MortgagePointsCalculator,
+    })),
+  ),
   FutureValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/future-value/FutureValueCalculator'
@@ -1161,6 +3059,46 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/information-ratio/InformationRatioCalculator'
     ).then((mod) => ({
       default: mod.InformationRatioCalculator,
+    })),
+  ),
+  InterestCalculator: lazyTool(() =>
+    import('@/tools/calculators/interest/InterestCalculator').then((mod) => ({
+      default: mod.InterestCalculator,
+    })),
+  ),
+  InterestCoverageRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/interest-coverage-ratio/InterestCoverageRatioCalculator'
+    ).then((mod) => ({
+      default: mod.InterestCoverageRatioCalculator,
+    })),
+  ),
+  InterestOnlyMortgageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/interest-only-mortgage/InterestOnlyMortgageCalculator'
+    ).then((mod) => ({
+      default: mod.InterestOnlyMortgageCalculator,
+    })),
+  ),
+  InterestPerDayCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/interest-per-day/InterestPerDayCalculator'
+    ).then((mod) => ({
+      default: mod.InterestPerDayCalculator,
+    })),
+  ),
+  MortgageInterestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-interest/MortgageInterestCalculator'
+    ).then((mod) => ({
+      default: mod.MortgageInterestCalculator,
+    })),
+  ),
+  MortgageRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-rate/MortgageRateCalculator'
+    ).then((mod) => ({
+      default: mod.MortgageRateCalculator,
     })),
   ),
   InterestRateCalculator: lazyTool(() =>
@@ -1206,11 +3144,71 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SharpeRatioCalculator,
     })),
   ),
+  VaMortgageCalculator: lazyTool(() =>
+    import('@/tools/calculators/va-mortgage/VaMortgageCalculator').then((mod) => ({
+      default: mod.VaMortgageCalculator,
+    })),
+  ),
   ValueAtRiskCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/value-at-risk/ValueAtRiskCalculator'
     ).then((mod) => ({
       default: mod.ValueAtRiskCalculator,
+    })),
+  ),
+  EidlCalculator: lazyTool(() =>
+    import('@/tools/calculators/eidl/EidlCalculator').then((mod) => ({
+      default: mod.EidlCalculator,
+    })),
+  ),
+  HealsActStimulusCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/heals-act-stimulus/HealsActStimulusCalculator'
+    ).then((mod) => ({
+      default: mod.HealsActStimulusCalculator,
+    })),
+  ),
+  HeroesActStimulusCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/heroes-act-stimulus/HeroesActStimulusCalculator'
+    ).then((mod) => ({
+      default: mod.HeroesActStimulusCalculator,
+    })),
+  ),
+  CaliforniaStimulusCheckIiCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/california-stimulus-check-ii/CaliforniaStimulusCheckIiCalculator'
+    ).then((mod) => ({
+      default: mod.CaliforniaStimulusCheckIiCalculator,
+    })),
+  ),
+
+  StudentLoanRepaymentCovidCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/student-loan-repayment-covid/StudentLoanRepaymentCovidCalculator'
+    ).then((mod) => ({
+      default: mod.StudentLoanRepaymentCovidCalculator,
+    })),
+  ),
+  StimulusCheck40kCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/stimulus-check-40k/StimulusCheck40kCalculator'
+    ).then((mod) => ({
+      default: mod.StimulusCheck40kCalculator,
+    })),
+  ),
+  CashActStimulusCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cash-act-stimulus/CashActStimulusCalculator'
+    ).then((mod) => ({
+      default: mod.CashActStimulusCalculator,
+    })),
+  ),
+  SecondStimulus900BillionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/second-stimulus-900-billion/SecondStimulus900BillionCalculator'
+    ).then((mod) => ({
+      default: mod.SecondStimulus900BillionCalculator,
     })),
   ),
 };

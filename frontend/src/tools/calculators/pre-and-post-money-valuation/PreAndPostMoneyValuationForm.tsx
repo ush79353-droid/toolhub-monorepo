@@ -5,6 +5,7 @@ import { RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { getCurrencySymbol } from '@/tools/shared/currency';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import type { PpmDraft, PpmField } from './types';
 
 const labelClass = 'mb-1.5 block text-[13px] font-medium text-accent';
@@ -29,6 +30,7 @@ interface PreAndPostMoneyValuationFormProps {
   draft: PpmDraft;
   errors: Partial<Record<PpmField | 'form', string>>;
   onDraftChange: (draft: PpmDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -36,6 +38,7 @@ export function PreAndPostMoneyValuationForm({
   draft,
   errors,
   onDraftChange,
+  onCurrencyChange,
   onReset,
 }: PreAndPostMoneyValuationFormProps) {
   const symbol = getCurrencySymbol(draft.currency);
@@ -48,10 +51,6 @@ export function PreAndPostMoneyValuationForm({
       manual[field] = true;
     }
     onDraftChange({ ...draft, [field]: value, manual });
-  };
-
-  const setCurrency = (currency: PpmDraft['currency']) => {
-    onDraftChange({ ...draft, currency });
   };
 
   const moneyRow = (field: PpmField, id: string, label: string) => (
@@ -77,7 +76,7 @@ export function PreAndPostMoneyValuationForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={draft.currency}
-            onChange={setCurrency}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

@@ -4,7 +4,13 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, getCurrencySymbol } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { PresentValueForm } from './PresentValueForm';
 import { PresentValueResults } from './PresentValueResults';
 import {
@@ -15,6 +21,11 @@ import {
 } from './types';
 import { validatePresentValueInput } from './validation';
 
+const MONEY_FIELDS = ['futureValue'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts the future value using stored exchange rates. Periods and interest rate % stay the same.';
+
 export function PresentValueCalculator({
   metadata,
   className = '',
@@ -22,6 +33,8 @@ export function PresentValueCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [input, setInput] = React.useState<PresentValueInput>(() => createDefaultInput());
   const [errors, setErrors] = React.useState<PresentValueFieldErrors>({});
   const [result, setResult] = React.useState<PresentValueResult | null>(() => {
@@ -30,10 +43,15 @@ export function PresentValueCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (next: PresentValueInput) => {
     const validation = validatePresentValueInput(next);
@@ -41,11 +59,39 @@ export function PresentValueCalculator({
     setResult(validation.result);
   };
 
+  const handleChange = (next: PresentValueInput) => {
+    setConversionError(null);
+    setInput(next);
+    run(next);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === input.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      input,
+      MONEY_FIELDS,
+      input.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    handleChange({ ...input, ...converted.values, currency });
+  };
+
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
     setErrors({});
     setResult(validatePresentValueInput(fresh).result);
+    setConversionError(null);
   };
 
   const symbol = getCurrencySymbol(input.currency);
@@ -58,7 +104,7 @@ export function PresentValueCalculator({
           `Interest rate: ${input.interestRatePercent}%`,
           `Present value: ${symbol}${result.presentValueDisplay}`,
           `Total interest: ${symbol}${result.totalInterestDisplay}`,
-          CURRENCY_DENOMINATION_NOTE,
+          currencyNote,
         ].join('\n')
       : '';
 
@@ -73,22 +119,27 @@ export function PresentValueCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            PV = FV ÷ (1 + r)^n. Rate must match the period frequency.{' '}
-            {CURRENCY_DENOMINATION_NOTE}
+            PV = FV ÷ (1 + r)^n. Rate must match the period frequency. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <PresentValueForm
           input={input}
           errors={errors}
           result={result}
-          onChange={(next) => {
-            setInput(next);
-            run(next);
-          }}
+          onChange={handleChange}
+          onCurrencyChange={handleCurrencyChange}
           onReset={handleReset}
         />
         <PresentValueResults />

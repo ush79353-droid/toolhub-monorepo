@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   ARM_STRUCTURES,
@@ -17,6 +17,7 @@ interface ArmMortgageFormProps {
   input: ArmMortgageInput;
   errors: Record<string, string>;
   onChange: (input: ArmMortgageInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onSubmit: (event: React.FormEvent) => void;
   onReset: () => void;
 }
@@ -47,7 +48,14 @@ function FieldLabel({
   );
 }
 
-export function ArmMortgageForm({ input, errors, onChange, onSubmit, onReset }: ArmMortgageFormProps) {
+export function ArmMortgageForm({
+  input,
+  errors,
+  onChange,
+  onCurrencyChange,
+  onSubmit,
+  onReset,
+}: ArmMortgageFormProps) {
   const [showCompoundingAndFees, setShowCompoundingAndFees] = React.useState(
     input.compounding !== 'monthly' || input.upfrontFees > 0
   );
@@ -83,7 +91,8 @@ export function ArmMortgageForm({ input, errors, onChange, onSubmit, onReset }: 
             <CurrencySelect
               id="arm-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
+              aria-label="Mortgage balance currency"
             />
           </div>
         </div>

@@ -4,7 +4,15 @@ import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE, formatCurrencyValue } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
 import { Button } from '@/components/ui/button';
 import {
   AccumulatedDepreciationForm,
@@ -21,7 +29,12 @@ import {
 } from './types';
 import { validateAccumulatedDepreciation } from './validation';
 
-function summaryText(metadataTitle: string, result: AccumulatedDepreciationResult): string {
+const MONEY_FIELDS = ['assetCost', 'salvageValue'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts asset cost and salvage value using stored exchange rates. Useful life, years elapsed, units, and depreciation method stay the same.';
+
+function summaryText(metadataTitle: string, result: AccumulatedDepreciationResult, note: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   const lines = [
     `${metadataTitle} — Omega Calculators`,
@@ -37,7 +50,7 @@ function summaryText(metadataTitle: string, result: AccumulatedDepreciationResul
   if (result.unitsProduced !== null) lines.push(`Units produced: ${result.unitsProduced}`);
   lines.push(`Accumulated depreciation: ${money(result.accumulatedDepreciation)}`);
   lines.push(`Net book value: ${money(result.netBookValue)}`);
-  lines.push(CURRENCY_DENOMINATION_NOTE);
+  lines.push(note);
   return lines.join('\n');
 }
 
@@ -48,6 +61,8 @@ export function AccumulatedDepreciationCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<AccumulatedDepreciationDraft>(() =>
     inputToDraft(createDefaultAccumulatedDepreciationInput())
   );
@@ -58,10 +73,15 @@ export function AccumulatedDepreciationCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
+
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const run = (nextDraft: AccumulatedDepreciationDraft) => {
     const input = draftToInput(nextDraft);
@@ -70,7 +90,34 @@ export function AccumulatedDepreciationCalculator({
     setResult(validation.isValid ? calculateAccumulatedDepreciation(input) : null);
   };
 
-  const summary = result?.defined ? summaryText(metadata.title, result) : '';
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      draft,
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next: AccumulatedDepreciationDraft = {
+      ...draft,
+      ...converted.values,
+      currency,
+    };
+    setDraft(next);
+    run(next);
+  };
+
+  const summary = result?.defined ? summaryText(metadata.title, result, currencyNote) : '';
 
   return (
     <section
@@ -82,7 +129,7 @@ export function AccumulatedDepreciationCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{CURRENCY_DENOMINATION_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         <div className="flex flex-wrap items-center justify-end gap-2">
           {headerActions}
@@ -93,20 +140,25 @@ export function AccumulatedDepreciationCalculator({
             <CurrencySelect
               id="ad-currency"
               value={draft.currency}
-              onChange={(currency) => {
-                const next = { ...draft, currency };
-                setDraft(next);
-                run(next);
-              }}
+              onChange={handleCurrencyChange}
             />
           </div>
         </div>
       </div>
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <AccumulatedDepreciationForm
           draft={draft}
           errors={errors}
           onDraftChange={(next) => {
+            setConversionError(null);
             setDraft(next);
             run(next);
           }}
@@ -120,6 +172,7 @@ export function AccumulatedDepreciationCalculator({
             setDraft(nextDraft);
             setErrors({});
             setResult(calculateAccumulatedDepreciation(fresh));
+            setConversionError(null);
           }}
         />
         <div className="flex flex-wrap gap-2">

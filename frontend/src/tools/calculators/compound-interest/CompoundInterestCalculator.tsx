@@ -5,7 +5,15 @@ import { Button } from '@/components/ui/button';
 import { Check, Copy, Share2 } from 'lucide-react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_DENOMINATION_NOTE } from '@/tools/shared/currency';
+import { convertDraftMoneyFields } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import { CompoundInterestBalances } from './CompoundInterestBalances';
 import { CompoundInterestForm } from './CompoundInterestForm';
 import {
@@ -17,10 +25,16 @@ import {
 } from './types';
 import { validateCompoundInterestDraft } from './validation';
 
+const MONEY_FIELDS = ['initialBalance', 'depositAmount'] as const;
+
+const CURRENCY_CONVERSION_NOTE =
+  'Changing currency converts principal and deposit amounts using stored exchange rates. Interest rate, term, and compounding stay the same.';
+
 function summaryText(
   title: string,
   draft: CompoundInterestDraft,
-  result: CompoundInterestResult
+  result: CompoundInterestResult,
+  note: string
 ): string {
   return [
     `${title} — Omega Calculators`,
@@ -31,7 +45,7 @@ function summaryText(
     `Additional deposits: ${draft.depositFrequency}`,
     `Final balance: ${result.formattedFinalBalance}`,
     `Total compound interest: ${result.formattedInterest}`,
-    CURRENCY_DENOMINATION_NOTE,
+    note,
   ].join('\n');
 }
 
@@ -42,6 +56,8 @@ export function CompoundInterestCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const [draft, setDraft] = React.useState<CompoundInterestDraft>(createDefaultDraft);
   const [errors, setErrors] = React.useState<CompoundInterestFieldErrors>(() =>
     validateCompoundInterestDraft(createDefaultDraft()).errors
@@ -53,12 +69,50 @@ export function CompoundInterestCalculator({
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  const currencyNote = ratesStatus.available
+    ? CURRENCY_CONVERSION_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
   const evaluate = (next: CompoundInterestDraft) => {
+    setConversionError(null);
+    setDraft(next);
+    const validation = validateCompoundInterestDraft(next);
+    setErrors(validation.errors);
+    setResult(validation.result);
+  };
+
+  const handleCurrencyChange = (currency: SupportedCurrency) => {
+    if (currency === draft.currency) return;
+    if (!rates.available) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertDraftMoneyFields(
+      {
+        initialBalance: draft.initialBalance,
+        depositAmount: draft.depositAmount,
+      },
+      MONEY_FIELDS,
+      draft.currency,
+      currency,
+      rates.rates
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    const next: CompoundInterestDraft = {
+      ...draft,
+      ...converted.values,
+      currency,
+    };
     setDraft(next);
     const validation = validateCompoundInterestDraft(next);
     setErrors(validation.errors);
@@ -71,12 +125,13 @@ export function CompoundInterestCalculator({
     setDepositsOpen(true);
     setCopied(false);
     setShared(false);
+    setConversionError(null);
     const validation = validateCompoundInterestDraft(fresh);
     setErrors(validation.errors);
     setResult(validation.result);
   };
 
-  const sharePayload = result ? summaryText(metadata.title, draft, result) : '';
+  const sharePayload = result ? summaryText(metadata.title, draft, result, currencyNote) : '';
 
   return (
     <section
@@ -89,13 +144,21 @@ export function CompoundInterestCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Compound interest with optional deposits. {CURRENCY_DENOMINATION_NOTE}
+            Compound interest with optional deposits. {currencyNote}
           </p>
         </div>
         {headerActions ? <div className="flex flex-wrap justify-end gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
         <CompoundInterestForm
           draft={draft}
           errors={errors}
@@ -103,6 +166,7 @@ export function CompoundInterestCalculator({
           depositsOpen={depositsOpen}
           onDepositsOpen={setDepositsOpen}
           onChange={evaluate}
+          onCurrencyChange={handleCurrencyChange}
           onSubmit={(event) => {
             event.preventDefault();
             evaluate(draft);
@@ -126,7 +190,9 @@ export function CompoundInterestCalculator({
             disabled={!result}
             onClick={() => {
               if (!result) return;
-              void copyTextToClipboard(summaryText(metadata.title, draft, result)).then((ok) => {
+              void copyTextToClipboard(
+                summaryText(metadata.title, draft, result, currencyNote)
+              ).then((ok) => {
                 if (!ok) return;
                 setCopied(true);
                 window.setTimeout(() => setCopied(false), 2000);

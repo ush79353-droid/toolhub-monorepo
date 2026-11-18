@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   COMPOUNDING_OPTIONS,
@@ -46,6 +46,7 @@ interface TimeValueOfMoneyFormProps {
   errors: TimeValueOfMoneyFieldErrors;
   result: TimeValueOfMoneyResult | null;
   onChange: (input: TimeValueOfMoneyInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -54,6 +55,7 @@ export function TimeValueOfMoneyForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: TimeValueOfMoneyFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -105,7 +107,7 @@ export function TimeValueOfMoneyForm({
           <CurrencySelect
             id={`${id}-currency`}
             value={input.currency}
-            onChange={(currency) => set({ currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>

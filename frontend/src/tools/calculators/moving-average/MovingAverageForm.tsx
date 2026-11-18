@@ -3,7 +3,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   MovingAverageFieldErrors,
@@ -45,6 +45,7 @@ interface MovingAverageFormProps {
   result: MovingAverageResult | null;
   incomplete: boolean;
   onChange: (input: MovingAverageInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -54,6 +55,7 @@ export function MovingAverageForm({
   result,
   incomplete,
   onChange,
+  onCurrencyChange,
   onReset,
 }: MovingAverageFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -135,7 +137,7 @@ export function MovingAverageForm({
                 <CurrencySelect
                   id={`${id}-currency`}
                   value={input.currency}
-                  onChange={(currency) => set({ currency })}
+                  onChange={onCurrencyChange}
                   aria-label={`${label} currency`}
                 />
               </div>
@@ -184,7 +186,7 @@ export function MovingAverageForm({
               <CurrencySelect
                 id="ma-result-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Moving average currency"
               />
             </div>

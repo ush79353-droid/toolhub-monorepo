@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   OpportunityCostFieldErrors,
@@ -40,6 +40,7 @@ interface OpportunityCostFormProps {
   errors: OpportunityCostFieldErrors;
   result: OpportunityCostResult | null;
   onChange: (input: OpportunityCostInput) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
   onReset: () => void;
 }
 
@@ -48,6 +49,7 @@ export function OpportunityCostForm({
   errors,
   result,
   onChange,
+  onCurrencyChange,
   onReset,
 }: OpportunityCostFormProps) {
   const symbol = getCurrencySymbol(input.currency);
@@ -86,7 +88,7 @@ export function OpportunityCostForm({
             <CurrencySelect
               id="oc-money-currency"
               value={input.currency}
-              onChange={(currency) => set({ currency })}
+              onChange={onCurrencyChange}
               aria-label="Money to spend currency"
             />
           </div>
@@ -256,7 +258,7 @@ export function OpportunityCostForm({
               <CurrencySelect
                 id="oc-total-savings-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Total savings currency"
               />
             </div>
@@ -288,7 +290,7 @@ export function OpportunityCostForm({
               <CurrencySelect
                 id="oc-opportunity-cost-currency"
                 value={input.currency}
-                onChange={(currency) => set({ currency })}
+                onChange={onCurrencyChange}
                 aria-label="Opportunity cost currency"
               />
             </div>

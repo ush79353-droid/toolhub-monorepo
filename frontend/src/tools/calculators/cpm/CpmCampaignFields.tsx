@@ -2,7 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
-import { getCurrencySymbol } from '@/tools/shared/currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type { CpmCampaignDraft, CpmField } from './types';
 
@@ -27,6 +27,7 @@ interface CpmCampaignFieldsProps {
   draft: CpmCampaignDraft;
   errors: Partial<Record<CpmField | 'form', string>>;
   onChange: (draft: CpmCampaignDraft) => void;
+  onCurrencyChange: (currency: SupportedCurrency) => void;
 }
 
 export function CpmCampaignFields({
@@ -34,6 +35,7 @@ export function CpmCampaignFields({
   draft,
   errors,
   onChange,
+  onCurrencyChange,
 }: CpmCampaignFieldsProps) {
   const symbol = getCurrencySymbol(draft.currency);
 
@@ -71,7 +73,7 @@ export function CpmCampaignFields({
           <CurrencySelect
             id={`${id}-currency`}
             value={draft.currency}
-            onChange={(currency) => onChange({ ...draft, currency })}
+            onChange={onCurrencyChange}
             aria-label={`${label} currency`}
           />
         </div>
