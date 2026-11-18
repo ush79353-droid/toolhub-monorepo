@@ -452,6 +452,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TbspToMlConverter: () => import('@/tools/calculators/tbsp-to-ml/detail'),
   TspToGramsConverter: () => import('@/tools/calculators/tsp-to-grams/detail'),
   TspToMlConverter: () => import('@/tools/calculators/tsp-to-ml/detail'),
+  WeeksToMonthsCalculator: () => import('@/tools/calculators/weeks-to-months/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),

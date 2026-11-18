@@ -2043,6 +2043,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TspToMlConverter,
     })),
   ),
+  WeeksToMonthsCalculator: lazyTool(() =>
+    import('@/tools/calculators/weeks-to-months/WeeksToMonthsCalculator').then((mod) => ({
+      default: mod.WeeksToMonthsCalculator,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,
