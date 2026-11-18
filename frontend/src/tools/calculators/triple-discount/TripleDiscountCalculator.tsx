@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { TripleDiscountForm } from './TripleDiscountForm';
 import {
   createDefaultInput,
@@ -13,9 +26,10 @@ import {
   type TripleDiscountInput,
   type TripleDiscountResult,
 } from './types';
+import { validateTripleDiscountInput } from './validation';
 
 const FX_NOTE =
-  'Original price, final price, and price difference each have their own currency. Discount math runs in the original-price currency; results convert for display. The three discount percents and effective discount % are never converted.';
+  'Original price, final price, and price difference each have their own currency. Discount math runs in the original-price currency; results convert for display. The three discount percents and effective discount % are never converted. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: TripleDiscountInput, b: TripleDiscountInput): boolean {
   return (
@@ -37,6 +51,8 @@ export function TripleDiscountCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<TripleDiscountInput>(
     () => defaults
@@ -57,33 +73,84 @@ export function TripleDiscountCalculator({
   }, []);
 
   const apply = (next: TripleDiscountInput) => {
+    const validation = validateTripleDiscountInput(next, rates);
     setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handleOriginalPriceCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.originalPriceCurrency) return;
-    apply({ ...input, originalPriceCurrency: next });
+    const converted = convertFieldAmount(
+      input.originalPrice,
+      input.originalPriceCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      originalPriceCurrency: next,
+      originalPrice: converted.text,
+    });
   };
 
   const handleFinalPriceCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.finalPriceCurrency) return;
+    if (!canConvertPair(input.originalPriceCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, finalPriceCurrency: next });
   };
 
   const handlePriceDifferenceCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.priceDifferenceCurrency) return;
+    if (!canConvertPair(input.originalPriceCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, priceDifferenceCurrency: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateTripleDiscountInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -91,6 +158,9 @@ export function TripleDiscountCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const priceSymbol = getCurrencySymbol(input.originalPriceCurrency);
   const finalSymbol = getCurrencySymbol(
     result?.finalPriceCurrency ?? input.finalPriceCurrency
@@ -109,7 +179,7 @@ export function TripleDiscountCalculator({
         `Price difference: ${diffSymbol}${result.formattedPriceDifference} ${result.priceDifferenceCurrency}`,
         `Effective discount: ${result.formattedEffectiveDiscountPercent}%`,
         `Formulas: Final = P×(1−D1/100)×(1−D2/100)×(1−D3/100); Diff = P−Final; Effective = [1−∏(1−Di/100)]×100`,
-        FX_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -141,7 +211,9 @@ export function TripleDiscountCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{FX_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">
+            {currencyNote}
+          </p>
         </div>
         {headerActions ? (
           <div className="flex items-center gap-2">{headerActions}</div>
@@ -158,6 +230,7 @@ export function TripleDiscountCalculator({
           onFinalPriceCurrencyChange={handleFinalPriceCurrencyChange}
           onPriceDifferenceCurrencyChange={handlePriceDifferenceCurrencyChange}
           conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
