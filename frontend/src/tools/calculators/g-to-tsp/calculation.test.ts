@@ -23,7 +23,7 @@ function assertClose(actual: number, expected: number, digits = 6): void {
 
 assert.equal(US_TEASPOON_ML, 4.92892159375);
 assert.equal(METRIC_TEASPOON_ML, 5);
-assert.ok(US_TEASPOON_ML !== METRIC_TEASPOON_ML);
+assert.ok(Number(US_TEASPOON_ML) !== Number(METRIC_TEASPOON_ML));
 assert.equal(SALT_DENSITY_G_PER_ML, 1.217);
 assert.equal(SALT_DENSITY_KG_PER_M3, 1217);
 

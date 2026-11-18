@@ -7,6 +7,8 @@ import {
   type KgToLiterResult,
 } from './types';
 
+export type { KgToLiterResult };
+
 export function formatMeasure(value: number): string {
   if (!Number.isFinite(value)) return '';
   if (Object.is(value, -0) || value === 0) return '0';

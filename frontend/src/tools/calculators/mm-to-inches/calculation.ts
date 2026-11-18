@@ -2,6 +2,7 @@ import { formatLength } from '../meter-converter/calculation';
 import { MM_PER_INCH, type MmToInchesInput, type MmToInchesResult } from './types';
 
 export { formatLength, MM_PER_INCH };
+export type { MmToInchesResult };
 
 export function millimetersToInches(millimeters: number): number {
   return millimeters / MM_PER_INCH;

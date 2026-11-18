@@ -2,6 +2,7 @@ import { formatPressure } from '../pressure-conversion/calculation';
 import { MMHG_PER_ATM, type MmToAtmInput, type MmToAtmResult } from './types';
 
 export { formatPressure, MMHG_PER_ATM };
+export type { MmToAtmResult };
 
 export function mmHgToAtm(mmHg: number): number {
   return mmHg / MMHG_PER_ATM;

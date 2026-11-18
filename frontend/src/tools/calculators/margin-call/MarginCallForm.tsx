@@ -184,7 +184,7 @@ export function MarginCallForm({
 
   return (
     <div className="space-y-3">
-      {ratesStatus.stale ? (
+      {ratesStatus.isStale ? (
         <p className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900">
           Exchange rates are older than 48 hours. Stored rates are still used for conversion.
         </p>
@@ -221,6 +221,7 @@ export function MarginCallForm({
               />
             </FieldShell>
             <CurrencySelect
+              id="mc-deposit-currency"
               value={input.initialDepositCurrency}
               onChange={(next) =>
                 changeMoneyCurrency(
@@ -261,6 +262,7 @@ export function MarginCallForm({
               />
             </FieldShell>
             <CurrencySelect
+              id="mc-initial-margin-currency"
               value={input.initialMarginCurrency}
               onChange={(next) =>
                 changeMoneyCurrency(
@@ -301,6 +303,7 @@ export function MarginCallForm({
               />
             </FieldShell>
             <CurrencySelect
+              id="mc-maintenance-margin-currency"
               value={input.maintenanceMarginCurrency}
               onChange={(next) =>
                 changeMoneyCurrency(
@@ -412,6 +415,7 @@ export function MarginCallForm({
               />
             </FieldShell>
             <CurrencySelect
+              id="mc-tick-value-currency"
               value={input.tickValueCurrency}
               onChange={(next) =>
                 changeMoneyCurrency(
@@ -466,6 +470,7 @@ export function MarginCallForm({
               />
             </FieldShell>
             <CurrencySelect
+              id="mc-point-value-currency"
               value={input.pointValueCurrency}
               onChange={(next) => {
                 if (next === input.pointValueCurrency) return;
@@ -567,6 +572,7 @@ export function MarginCallForm({
               />
             </FieldShell>
             <CurrencySelect
+              id="mc-profit-loss-currency"
               value={input.profitLossCurrency}
               onChange={(next) => {
                 if (next === input.profitLossCurrency) return;

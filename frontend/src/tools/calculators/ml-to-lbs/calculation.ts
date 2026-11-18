@@ -9,7 +9,13 @@ import {
   mlToVolume,
   volumeToMl,
 } from '../ml-to-kg/calculation';
-import type { MlToKgInput, MlToKgResult } from '../ml-to-kg/types';
+import {
+  DENSITY_UNIT_OPTIONS,
+  MASS_UNIT_OPTIONS,
+  VOLUME_UNIT_OPTIONS,
+  type MlToKgInput,
+  type MlToKgResult,
+} from '../ml-to-kg/types';
 import { findSubstance } from './substances';
 import { KG_PER_POUND } from './types';
 
@@ -49,14 +55,20 @@ export function shareResultText(
 ): string {
   const substance = findSubstance(result.substanceId);
   const name = substance?.name ?? 'Custom substance';
+  const densityLabel =
+    DENSITY_UNIT_OPTIONS.find((o) => o.value === result.densityUnit)?.label ?? result.densityUnit;
+  const volumeLabel =
+    VOLUME_UNIT_OPTIONS.find((o) => o.value === result.volumeUnit)?.label ?? result.volumeUnit;
+  const massLabel =
+    MASS_UNIT_OPTIONS.find((o) => o.value === result.massUnit)?.label ?? result.massUnit;
   return [
     'mL to lbs Conversion — Omega Calculators',
     '',
     `Ingredient: ${name}`,
-    `Density: ${formatMeasure(result.densityValue)} ${result.densityUnitLabel}`,
+    `Density: ${formatMeasure(result.densityValue)} ${densityLabel}`,
     '',
-    `Volume: ${formatMeasure(result.volumeValue)} ${result.volumeUnitLabel}`,
-    `Mass: ${formatMeasure(result.massValue)} ${result.massUnitLabel}`,
+    `Volume: ${formatMeasure(result.volumeValue)} ${volumeLabel}`,
+    `Mass: ${formatMeasure(result.massValue)} ${massLabel}`,
     '',
     path,
   ].join('\n');

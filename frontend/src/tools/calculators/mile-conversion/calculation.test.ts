@@ -39,7 +39,7 @@ assertClose(convertLength(1, 'nmi', 'mi'), 1852 / 1609.344, 10);
 assertClose(milesToMeters(1), 1609.344, 12);
 assertClose(metersToMiles(1609.344), 1, 12);
 assert.equal(METERS_PER_NAUTICAL_MILE, 1852);
-assert.ok(METERS_PER_NAUTICAL_MILE !== METERS_PER_MILE);
+assert.ok(Number(METERS_PER_NAUTICAL_MILE) !== Number(METERS_PER_MILE));
 
 assertClose(convertLength(-2, 'mi', 'km'), -3.218688, 12);
 assert.equal(convertLength(0, 'mi', 'ft'), 0);

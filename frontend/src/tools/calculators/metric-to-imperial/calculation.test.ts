@@ -11,7 +11,6 @@ function assertClose(actual: number, expected: number, digits = 10): void {
 }
 
 function must(result: ReturnType<typeof convertMeasurement>): number {
-  assert.equal(result.ok, true);
   if (!result.ok) throw new Error(result.error);
   return result.value;
 }

@@ -13,6 +13,7 @@ import {
 } from './types';
 
 export { formatPressure, MMHG_PER_ATM };
+export type { MmhgToAtmResult };
 
 export function mmHgToAtm(mmHg: number): number {
   return mmHg / MMHG_PER_ATM;
