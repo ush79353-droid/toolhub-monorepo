@@ -64,7 +64,7 @@ export function MortgageWithExtraPaymentsGuideArticle() {
         Frequently Asked Questions
       </h2>
       <div className="mt-4">
-        <FAQAccordion faqs={[...MORTGAGE_WITH_EXTRA_PAYMENTS_FAQS]} />
+        <FAQAccordion items={MORTGAGE_WITH_EXTRA_PAYMENTS_FAQS} />
       </div>
     </article>
   );

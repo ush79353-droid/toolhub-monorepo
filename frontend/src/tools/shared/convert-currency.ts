@@ -119,17 +119,20 @@ export function normalizeAmountsToCurrency(
 /**
  * Convert selected draft money strings (blank stays blank). Fails closed if any
  * finite amount cannot convert. Percent/age/duration fields must not be passed in.
+ *
+ * Accepts typed calculator drafts (no index signature) — only `keys` are read.
  */
 export function convertDraftMoneyFields(
-  draft: Record<string, string>,
+  draft: object,
   keys: readonly string[],
   from: string,
   to: string,
   rates: Record<string, number>
 ): { ok: true; values: Record<string, string> } | { ok: false } {
+  const source = draft as Record<string, unknown>;
   const values: Record<string, string> = {};
   for (const key of keys) {
-    const raw = draft[key] ?? '';
+    const raw = typeof source[key] === 'string' ? source[key] : '';
     const amount = parseMoneyInput(raw);
     if (!Number.isFinite(amount)) {
       values[key] = raw;

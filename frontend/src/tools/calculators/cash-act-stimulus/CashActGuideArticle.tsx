@@ -167,7 +167,7 @@ export function CashActGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-3.5">
-            <FAQAccordion faqs={[...CASH_FAQS]} />
+            <FAQAccordion items={CASH_FAQS} />
           </div>
         </article>
       </div>

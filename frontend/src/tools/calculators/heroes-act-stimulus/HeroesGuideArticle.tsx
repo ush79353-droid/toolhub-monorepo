@@ -167,7 +167,7 @@ export function HeroesGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...HEROES_FAQS]} />
+            <FAQAccordion items={HEROES_FAQS} />
           </div>
         </article>
       </div>

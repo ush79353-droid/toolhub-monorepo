@@ -247,22 +247,32 @@ export function validateHomeLoanInput(
     rates
   );
 
-  for (const step of [
-    downDisplay,
-    loanDisplay,
-    paymentDisplay,
-    totalPayDisplay,
-    interestDisplay,
-    pmiPeriodicDisplay,
-    pmiTotalDisplay,
-    otherPeriodicDisplay,
-    totalWithDisplay,
-    totalOtherDisplay,
-  ]) {
-    if (!step.ok) {
-      errors.form = step.message;
-      return { isValid: false, errors, result: null };
-    }
+  if (
+    !downDisplay.ok ||
+    !loanDisplay.ok ||
+    !paymentDisplay.ok ||
+    !totalPayDisplay.ok ||
+    !interestDisplay.ok ||
+    !pmiPeriodicDisplay.ok ||
+    !pmiTotalDisplay.ok ||
+    !otherPeriodicDisplay.ok ||
+    !totalWithDisplay.ok ||
+    !totalOtherDisplay.ok
+  ) {
+    const failed = [
+      downDisplay,
+      loanDisplay,
+      paymentDisplay,
+      totalPayDisplay,
+      interestDisplay,
+      pmiPeriodicDisplay,
+      pmiTotalDisplay,
+      otherPeriodicDisplay,
+      totalWithDisplay,
+      totalOtherDisplay,
+    ].find((step) => !step.ok);
+    errors.form = failed && !failed.ok ? failed.message : 'Conversion failed.';
+    return { isValid: false, errors, result: null };
   }
 
   const result: HomeLoanResult = {
