@@ -2008,6 +2008,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SquareMilesToSquareKmConverter,
     })),
   ),
+  SquareYardConverter: lazyTool(() =>
+    import('@/tools/calculators/square-yard-converter/SquareYardConverter').then((mod) => ({
+      default: mod.SquareYardConverter,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,
