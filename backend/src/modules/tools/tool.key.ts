@@ -48,6 +48,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MlToCupsConverter',
   'MlToCcConverter',
   'MlToKgConverter',
+  'MlToLbsConversion',
   'DecagramToGramConverter',
   'PintToPoundCalculator',
   'DropsToMlConverter',
@@ -544,6 +545,7 @@ if (isDirect) {
     !isApprovedComponentKey('MlToCupsConverter') ||
     !isApprovedComponentKey('MlToCcConverter') ||
     !isApprovedComponentKey('MlToKgConverter') ||
+    !isApprovedComponentKey('MlToLbsConversion') ||
     !isApprovedComponentKey('DecagramToGramConverter') ||
     !isApprovedComponentKey('PintToPoundCalculator') ||
     !isApprovedComponentKey('DropsToMlConverter') ||
