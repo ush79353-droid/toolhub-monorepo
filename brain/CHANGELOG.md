@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add mL to kg Converter
+- **Summary:** Shipped mL to kg Converter on existing catalog slug ml-to-kg-converter (MlToKgConverter, catalog 6af46f17a27d8d1d4e990b58). Density-based bidirectional volume↔mass; reuses kg-to-ml substance presets and mlToKg/kgToMl engine; substance/custom density; volume units mL/L/cm³/m³/US fl oz and mass units kg/g/mg/lb/oz; empty volume/mass default; water ≈ 1000 kg/m³; guide/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-403b delivery for Conversion and Units density-based mL↔kg converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-kg/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (water 250–2000 mL; custom 850/1250/800 kg/m³; L unit; reverse 2.5 kg; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add mL to cc Converter
 - **Summary:** Shipped mL to cc Converter on existing catalog slug ml-to-cc-converter (MlToCcConverter, catalog 6af46f17a27d8d1d4e990b56). Synchronized mL / L / cc (cm³); exact 1 mL = 1 cc = 1 cm³ and 1 L = 1000 mL; empty default; non-negative volumes; guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-402b delivery for Conversion and Units mL↔cc volume converter.
