@@ -5,41 +5,57 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { FREQUENCY_LABEL } from './calculation';
-import { BondForm } from './BondForm';
+import { getCurrencySymbol } from '@/tools/shared/currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
 import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { BondConvexityForm } from './BondConvexityForm';
+import {
+  COUPON_FREQUENCY_OPTIONS,
   createDefaultInput,
-  type BondFieldErrors,
-  type BondInput,
-  type BondResult,
+  type BondConvexityFieldErrors,
+  type BondConvexityInput,
+  type BondConvexityResult,
 } from './types';
-import { validateBondInput } from './validation';
+import { validateBondConvexityInput } from './validation';
 
-function inputsEqual(a: BondInput, b: BondInput): boolean {
+const FX_NOTE =
+  'Face value, coupon per period, annual coupon, and bond price each have their own currency. Changing face currency converts face value; changing result currencies only re-expresses money results. Coupon rate %, yield %, years, frequency, and dimensionless convexity are never converted.';
+
+function inputsEqual(a: BondConvexityInput, b: BondConvexityInput): boolean {
   return (
-    a.price === b.price &&
     a.faceValue === b.faceValue &&
-    a.yieldPercent === b.yieldPercent &&
-    a.timeToMaturityYears === b.timeToMaturityYears &&
-    a.annualCoupon === b.annualCoupon &&
-    a.couponMode === b.couponMode &&
-    a.couponFrequency === b.couponFrequency
+    a.faceValueCurrency === b.faceValueCurrency &&
+    a.annualCouponRatePercent === b.annualCouponRatePercent &&
+    a.couponFrequency === b.couponFrequency &&
+    a.couponPerPeriodCurrency === b.couponPerPeriodCurrency &&
+    a.annualCouponCurrency === b.annualCouponCurrency &&
+    a.yearsToMaturity === b.yearsToMaturity &&
+    a.yieldToMaturityPercent === b.yieldToMaturityPercent &&
+    a.bondPriceCurrency === b.bondPriceCurrency &&
+    a.yieldDifferentialPercent === b.yieldDifferentialPercent &&
+    a.couponSectionOpen === b.couponSectionOpen &&
+    a.priceSectionOpen === b.priceSectionOpen &&
+    a.convexitySectionOpen === b.convexitySectionOpen
   );
 }
 
-export function BondCalculator({
+export function BondConvexityCalculator({
   metadata,
   className = '',
   presentation = 'default',
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
-  const initial = validateBondInput(defaults);
-  const [baseline, setBaseline] = React.useState<BondInput>(() => defaults);
-  const [input, setInput] = React.useState<BondInput>(() => defaults);
-  const [errors, setErrors] = React.useState<BondFieldErrors>(() => initial.errors);
-  const [result, setResult] = React.useState<BondResult | null>(() => initial.result);
+  const [baseline, setBaseline] = React.useState<BondConvexityInput>(() => defaults);
+  const [input, setInput] = React.useState<BondConvexityInput>(() => defaults);
+  const [errors, setErrors] = React.useState<BondConvexityFieldErrors>({});
+  const [result, setResult] = React.useState<BondConvexityResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -49,21 +65,26 @@ export function BondCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const applyDraft = (next: BondInput) => {
-    setInput(next);
-    const partial = validateBondInput(next);
-    setErrors(partial.errors);
-  };
+  React.useEffect(() => {
+    const validation = validateBondConvexityInput(defaults, rates);
+    if (validation.isValid && validation.result) {
+      setResult(validation.result);
+      setErrors({});
+    }
+    // Initial sample only.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const handleCalculate = () => {
-    const validation = validateBondInput(input);
+  const apply = (next: BondConvexityInput) => {
+    const validation = validateBondConvexityInput(next, rates);
+    setInput(next);
     setErrors(validation.errors);
     setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
-    const validation = validateBondInput(fresh);
+    const validation = validateBondConvexityInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
     setErrors(validation.errors);
@@ -74,19 +95,35 @@ export function BondCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const faceSymbol = getCurrencySymbol(input.faceValueCurrency);
+  const couponSymbol = getCurrencySymbol(
+    result?.couponPerPeriodCurrency ?? input.couponPerPeriodCurrency
+  );
+  const annualSymbol = getCurrencySymbol(
+    result?.annualCouponCurrency ?? input.annualCouponCurrency
+  );
+  const priceSymbol = getCurrencySymbol(
+    result?.bondPriceCurrency ?? input.bondPriceCurrency
+  );
+  const frequencyLabel =
+    COUPON_FREQUENCY_OPTIONS.find((o) => o.value === input.couponFrequency)
+      ?.label ?? input.couponFrequency;
+
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
-        `Price: $${result.formattedPrice}`,
-        `Face value: $${result.formattedFaceValue}`,
-        `Yield: ${result.formattedYieldPercent}%`,
-        `Time to maturity: ${result.formattedTimeToMaturityYears} years`,
-        result.couponMode === 'percent'
-          ? `Annual coupon: ${result.formattedAnnualCoupon}%`
-          : `Annual coupon: $${result.formattedAnnualCoupon}`,
-        `Coupon frequency: ${FREQUENCY_LABEL[result.couponFrequency]}`,
-        `Solved: ${result.solvedField}`,
-        result.summaryText,
+        `Face value: ${faceSymbol}${input.faceValue}`,
+        `Annual coupon rate: ${input.annualCouponRatePercent}%`,
+        `Coupon frequency: ${frequencyLabel}`,
+        `Coupon per period: ${couponSymbol}${result.formattedCouponPerPeriod}`,
+        `Annual coupon: ${annualSymbol}${result.formattedAnnualCoupon}`,
+        `Years to maturity: ${input.yearsToMaturity}`,
+        `Yield to maturity: ${input.yieldToMaturityPercent}%`,
+        `Bond price: ${priceSymbol}${result.formattedBondPrice}`,
+        `Yield differential: ${input.yieldDifferentialPercent}%`,
+        `Bond convexity (finite-difference): ${result.formattedBondConvexity}`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -99,7 +136,7 @@ export function BondCalculator({
         window.setTimeout(() => setShared(false), 2000);
         return;
       } catch {
-        // fall through
+        // fall through to clipboard
       }
     }
     if (await copyTextToClipboard(summary)) {
@@ -118,21 +155,17 @@ export function BondCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">
-            Coupon-date bond pricing in USD. Leave one field blank and click Calculate.
-          </p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
-        <BondForm
+        <BondConvexityForm
           input={input}
           errors={errors}
           result={result}
-          onChange={applyDraft}
-          onCalculate={handleCalculate}
-          onClear={handleReset}
+          onChange={apply}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">

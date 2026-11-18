@@ -696,6 +696,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/present-value/detail'),
   PriceQuantityCalculator: () =>
     import('@/tools/calculators/price-quantity/detail'),
+  PrivateSavingsCalculator: () =>
+    import('@/tools/calculators/private-savings/detail'),
   ProratedRentCalculator: () =>
     import('@/tools/calculators/prorated-rent/detail'),
   PvgoCalculator: () =>
@@ -719,8 +721,14 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bi-weekly-mortgage-payment/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
+  BondConvexityCalculator: () =>
+    import('@/tools/calculators/bond-convexity/detail'),
   BondCurrentYieldCalculator: () =>
     import('@/tools/calculators/bond-current-yield/detail'),
+  BondYieldCalculator: () =>
+    import('@/tools/calculators/bond-yield/detail'),
+  BondYtmCalculator: () =>
+    import('@/tools/calculators/bond-ytm/detail'),
   JumboLoanCalculator: () =>
     import('@/tools/calculators/jumbo-loan/detail'),
   LandLoanCalculator: () =>

@@ -4,6 +4,19 @@
 
 ---
 
+### 2026-11-18 — Add Bond Yield Calculator
+- **Summary:** Shipped Bond Yield Calculator on existing catalog slug `bond-yield-calculator` (`BondYieldCalculator`, catalog `6af46f0fa27d8d1d4e98ffd8`). Screenshot-first YTM (not current yield): face value FX, bond price FX, annual coupon rate %, coupon frequency (Annually default), years to maturity, read-only bond yield %. Bounded bisection on coupon-date price equation; zero-coupon closed form; premium/discount/par/negative-yield; N = years×m must be a whole period count. Independent Phase 2 FX; normalize bond price into face currency before solve. Activated (`isDeveloped`/`isActive`/`indexable` true, embed on). Bond Calculator pillar preserved; subPillar null.
+- **Why:** TOOL-407 delivery for Finance Bond Yield Calculator.
+- **Important Files:** `frontend/src/tools/calculators/bond-yield/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Solver check: par 1000/1000/5%/10y annually → ≈5%; discount 950 → ≈5.6687%; zero-coupon 800/0%/10y → ≈2.2565%. Mongo `tool:assign` with `--set-active --set-indexable`. No lint/typecheck/build per task scope. Temporary files cleaned: YES.
+
+### 2026-11-18 — Bond Convexity Calculator (Screenshot-First + FX)
+- **Summary:** Shipped Bond Convexity Calculator on existing catalog slug `bond-convexity-calculator` (`BondConvexityCalculator`, catalog `6af46f0fa27d8d1d4e98ffd4`). Screenshot sections: Coupon per period (face FX, rate %, frequency Annually default / Semi / Quarterly / Monthly, coupon per period FX, annual coupon FX); Bond price (years, YTM %, price FX); Bond convexity (yield differential %, dimensionless output). Independent Phase 2 FX. Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
+- **Formulas:** Coupon/Period = Face × Rate / m; Annual Coupon = Face × Rate; Bond Price = PV(coupons) + PV(face) at r = y/m; Finite-difference convexity = (P₋ + P₊ − 2P₀) / (P₀ (Δy)²) in annual-yield units (not analytic Macaulay). Zero coupon allowed; Δy=0 and 1+r≤0 rejected.
+- **Example:** 1,000 PKR · 5% · Annually · 10y · YTM 5% · Δy 0.01% → coupons 50/50, price 1,000, convexity ≈ 74.9977.
+- **Important Files:** `frontend/src/tools/calculators/bond-convexity/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog verified undeveloped before coding. Inline formula self-check. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f966`). Lint/builds/browser/automated suite omitted per user. Local commits only — no push/pull/sync.
+
 ### 2026-11-18 — Add Third Stimulus Check Calculator – American Rescue Plan
 - **Summary:** Shipped Third Stimulus Check Calculator – American Rescue Plan on existing catalog slug `third-stimulus-check-calculator-american-rescue-plan` (`AmericanRescuePlanStimulusCalculator`, catalog `6af46f0fa27d8d1d4e98ffd2`). Screenshot fields: filed 2019 or 2020 taxes, filing status, dependents, 2019/2020 AGI USD, read-only “According to the bill, you could receive”; historical EIP3 notice; Share/Reload/Clear/feedback. Fixed USD (no FX). Activated via `npm run tool:assign` with `--set-active --set-indexable`.
 - **Why:** TOOL-404 delivery for historical American Rescue Plan / I.R.C. §6428B third Economic Impact Payment estimator.

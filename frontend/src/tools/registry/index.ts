@@ -2754,6 +2754,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PriceQuantityCalculator,
     })),
   ),
+  PrivateSavingsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/private-savings/PrivateSavingsCalculator'
+    ).then((mod) => ({
+      default: mod.PrivateSavingsCalculator,
+    })),
+  ),
   ProratedRentCalculator: lazyTool(() =>
     import('@/tools/calculators/prorated-rent/ProratedRentCalculator').then((mod) => ({
       default: mod.ProratedRentCalculator,
@@ -2814,11 +2821,28 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BoatLoanCalculator,
     })),
   ),
+  BondConvexityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bond-convexity/BondConvexityCalculator'
+    ).then((mod) => ({
+      default: mod.BondConvexityCalculator,
+    })),
+  ),
   BondCurrentYieldCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/bond-current-yield/BondCurrentYieldCalculator'
     ).then((mod) => ({
       default: mod.BondCurrentYieldCalculator,
+    })),
+  ),
+  BondYieldCalculator: lazyTool(() =>
+    import('@/tools/calculators/bond-yield/BondYieldCalculator').then((mod) => ({
+      default: mod.BondYieldCalculator,
+    })),
+  ),
+  BondYtmCalculator: lazyTool(() =>
+    import('@/tools/calculators/bond-ytm/BondYtmCalculator').then((mod) => ({
+      default: mod.BondYtmCalculator,
     })),
   ),
   JumboLoanCalculator: lazyTool(() =>

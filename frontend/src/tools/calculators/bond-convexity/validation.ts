@@ -4,19 +4,23 @@ import {
   type CurrencyRatesSnapshot,
 } from '@/tools/shared/currency-rates';
 import type { SupportedCurrency } from '@/tools/shared/currency';
-import { calculateBondPrice, formatBondMoney } from './calculation';
+import {
+  calculateBondConvexity,
+  formatBondMoney,
+  formatConvexity,
+} from './calculation';
 import {
   COUPON_FREQUENCY_OPTIONS,
-  type BondPriceFieldErrors,
-  type BondPriceInput,
-  type BondPriceResult,
+  type BondConvexityFieldErrors,
+  type BondConvexityInput,
+  type BondConvexityResult,
   type CouponFrequency,
 } from './types';
 
-export interface BondPriceValidation {
+export interface BondConvexityValidation {
   isValid: boolean;
-  errors: BondPriceFieldErrors;
-  result: BondPriceResult | null;
+  errors: BondConvexityFieldErrors;
+  result: BondConvexityResult | null;
 }
 
 function parseNumber(raw: string): {
@@ -62,19 +66,20 @@ function convertMoney(
 
 /**
  * Validates inputs, prices the bond in face-value currency at full precision,
- * then converts money results into independent display currencies. Rates,
- * years, and coupon frequency are never FX-converted.
+ * then converts money results into independent display currencies.
+ * Percentages, years, frequency, and dimensionless convexity are never FX-converted.
  */
-export function validateBondPriceInput(
-  input: BondPriceInput,
+export function validateBondConvexityInput(
+  input: BondConvexityInput,
   rates?: CurrencyRatesSnapshot | null
-): BondPriceValidation {
-  const errors: BondPriceFieldErrors = {};
+): BondConvexityValidation {
+  const errors: BondConvexityFieldErrors = {};
 
   const face = parseNumber(input.faceValue);
   const rate = parseNumber(input.annualCouponRatePercent);
   const years = parseNumber(input.yearsToMaturity);
   const ytm = parseNumber(input.yieldToMaturityPercent);
+  const dy = parseNumber(input.yieldDifferentialPercent);
 
   if (!face.blank && (face.invalid || face.value === null)) {
     errors.faceValue = 'Enter a valid face value.';
@@ -100,8 +105,13 @@ export function validateBondPriceInput(
 
   if (!ytm.blank && (ytm.invalid || ytm.value === null)) {
     errors.yieldToMaturityPercent = 'Enter a valid yield to maturity.';
-  } else if (!ytm.blank && ytm.value !== null && ytm.value < 0) {
-    errors.yieldToMaturityPercent = 'Yield to maturity cannot be negative.';
+  }
+
+  if (!dy.blank && (dy.invalid || dy.value === null)) {
+    errors.yieldDifferentialPercent = 'Enter a valid yield differential.';
+  } else if (!dy.blank && dy.value !== null && !(dy.value > 0)) {
+    errors.yieldDifferentialPercent =
+      'Yield differential must be greater than zero.';
   }
 
   const incomplete =
@@ -109,56 +119,47 @@ export function validateBondPriceInput(
     rate.blank ||
     years.blank ||
     ytm.blank ||
+    dy.blank ||
     Boolean(errors.faceValue) ||
     Boolean(errors.annualCouponRatePercent) ||
     Boolean(errors.couponFrequency) ||
     Boolean(errors.yearsToMaturity) ||
-    Boolean(errors.yieldToMaturityPercent);
+    Boolean(errors.yieldToMaturityPercent) ||
+    Boolean(errors.yieldDifferentialPercent);
 
   if (incomplete) {
     return { isValid: false, errors, result: null };
   }
 
-  const frequency = input.couponFrequency;
-  const m = COUPON_FREQUENCY_OPTIONS.find((o) => o.value === frequency)!
-    .periodsPerYear;
-  const rawPeriods = years.value! * m;
-  if (Math.abs(rawPeriods - Math.round(rawPeriods)) > 1e-9) {
-    errors.yearsToMaturity =
-      'Years × coupon frequency must be a whole number of periods (regular coupon dates).';
-    return { isValid: false, errors, result: null };
-  }
-
-  const computed = calculateBondPrice({
+  const computed = calculateBondConvexity({
     faceValue: face.value!,
     annualCouponRatePercent: rate.value!,
-    couponFrequency: frequency,
+    couponFrequency: input.couponFrequency,
     yearsToMaturity: years.value!,
     yieldToMaturityPercent: ytm.value!,
+    yieldDifferentialPercent: dy.value!,
   });
 
   if (computed === null) {
     errors.form =
-      'This combination does not produce a finite bond price under the regular coupon-date assumption.';
+      'This combination does not produce a finite bond price or convexity. Check that yield shifts keep 1 + y/m > 0.';
     return { isValid: false, errors, result: null };
   }
 
-  const faceCurrency = input.faceValueCurrency;
-
-  const couponPeriodOut = convertMoney(
+  const couponOut = convertMoney(
     computed.couponPerPeriod,
-    faceCurrency,
+    input.faceValueCurrency,
     input.couponPerPeriodCurrency,
     rates
   );
-  if (!couponPeriodOut.ok) {
-    errors.form = couponPeriodOut.message;
+  if (!couponOut.ok) {
+    errors.form = couponOut.message;
     return { isValid: false, errors, result: null };
   }
 
   const annualOut = convertMoney(
     computed.annualCoupon,
-    faceCurrency,
+    input.faceValueCurrency,
     input.annualCouponCurrency,
     rates
   );
@@ -169,7 +170,7 @@ export function validateBondPriceInput(
 
   const priceOut = convertMoney(
     computed.bondPrice,
-    faceCurrency,
+    input.faceValueCurrency,
     input.bondPriceCurrency,
     rates
   );
@@ -178,31 +179,29 @@ export function validateBondPriceInput(
     return { isValid: false, errors, result: null };
   }
 
-  const result: BondPriceResult = {
-    annualCouponInFace: computed.annualCoupon,
+  const result: BondConvexityResult = {
+    paymentsPerYear: computed.paymentsPerYear,
     couponPerPeriodInFace: computed.couponPerPeriod,
-    bondPriceInFace: computed.bondPrice,
-    periodsPerYear: computed.periodsPerYear,
-    totalPeriods: computed.totalPeriods,
+    couponPerPeriod: couponOut.amount,
+    annualCouponInFace: computed.annualCoupon,
     annualCoupon: annualOut.amount,
-    couponPerPeriod: couponPeriodOut.amount,
+    bondPriceInFace: computed.bondPrice,
     bondPrice: priceOut.amount,
-    faceValueCurrency: faceCurrency,
+    bondConvexity: computed.bondConvexity,
+    faceValueCurrency: input.faceValueCurrency,
     couponPerPeriodCurrency: input.couponPerPeriodCurrency,
     annualCouponCurrency: input.annualCouponCurrency,
     bondPriceCurrency: input.bondPriceCurrency,
+    formattedCouponPerPeriod: formatBondMoney(
+      couponOut.amount,
+      input.couponPerPeriodCurrency
+    ),
     formattedAnnualCoupon: formatBondMoney(
       annualOut.amount,
       input.annualCouponCurrency
     ),
-    formattedCouponPerPeriod: formatBondMoney(
-      couponPeriodOut.amount,
-      input.couponPerPeriodCurrency
-    ),
-    formattedBondPrice: formatBondMoney(
-      priceOut.amount,
-      input.bondPriceCurrency
-    ),
+    formattedBondPrice: formatBondMoney(priceOut.amount, input.bondPriceCurrency),
+    formattedBondConvexity: formatConvexity(computed.bondConvexity),
   };
 
   return { isValid: true, errors: {}, result };

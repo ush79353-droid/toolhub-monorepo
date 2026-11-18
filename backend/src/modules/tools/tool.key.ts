@@ -506,6 +506,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PreAndPostMoneyValuationCalculator',
   'PresentValueCalculator',
   'PriceQuantityCalculator',
+  'PrivateSavingsCalculator',
   'ProratedRentCalculator',
   'PvgoCalculator',
   'PvifaCalculator',
@@ -517,7 +518,10 @@ export const APPROVED_COMPONENT_KEYS = [
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
   'BoatLoanCalculator',
+  'BondConvexityCalculator',
   'BondCurrentYieldCalculator',
+  'BondYieldCalculator',
+  'BondYtmCalculator',
   'JumboLoanCalculator',
   'LandLoanCalculator',
   'PagIbigHousingLoanCalculator',
@@ -1067,6 +1071,7 @@ if (isDirect) {
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
     !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
+    !isApprovedComponentKey('PrivateSavingsCalculator') ||
     !isApprovedComponentKey('ProratedRentCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('PvifaCalculator') ||
@@ -1078,7 +1083,10 @@ if (isDirect) {
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
+    !isApprovedComponentKey('BondConvexityCalculator') ||
     !isApprovedComponentKey('BondCurrentYieldCalculator') ||
+    !isApprovedComponentKey('BondYieldCalculator') ||
+    !isApprovedComponentKey('BondYtmCalculator') ||
     !isApprovedComponentKey('JumboLoanCalculator') ||
     !isApprovedComponentKey('LandLoanCalculator') ||
     !isApprovedComponentKey('PagIbigHousingLoanCalculator') ||
