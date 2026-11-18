@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-18 — Add Third Stimulus Check Calculator – American Rescue Plan
+- **Summary:** Shipped Third Stimulus Check Calculator – American Rescue Plan on existing catalog slug `third-stimulus-check-calculator-american-rescue-plan` (`AmericanRescuePlanStimulusCalculator`, catalog `6af46f0fa27d8d1d4e98ffd2`). Screenshot fields: filed 2019 or 2020 taxes, filing status, dependents, 2019/2020 AGI USD, read-only “According to the bill, you could receive”; historical EIP3 notice; Share/Reload/Clear/feedback. Fixed USD (no FX). Activated via `npm run tool:assign` with `--set-active --set-indexable`.
+- **Why:** TOOL-404 delivery for historical American Rescue Plan / I.R.C. §6428B third Economic Impact Payment estimator.
+- **Important Files:** `frontend/src/tools/calculators/american-rescue-plan-stimulus/*`, registries, `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** `calculation.test.ts` assert self-check (single $75k→$1,400; $77.5k→$700; $80k→$0; married+2@$150k→$5,600; HoH+1@$112.5k→$2,800; no-filing→$0). Mongo assign confirmed `isDeveloped`/`isActive`/`indexable` true, embed on, pillar preserved. Full frontend lint/type-check/build not run per task restriction.
 ### 2026-11-18 — Add Bond Current Yield Calculator
 - **Summary:** Shipped Bond Current Yield Calculator on existing catalog slug `bond-current-yield-calculator` (`BondCurrentYieldCalculator`, catalog `6af46f0fa27d8d1d4e98ffd5`). Screenshot sections: Annual coupon payment (face FX, frequency Annually/Semiannually/Quarterly/Monthly, coupon rate %, coupon per period FX, annual coupon FX); Bond current yield (bond price FX, current yield %). Formulas: Annual Coupon = Face × Rate/100; Coupon Per Period = Annual ÷ N; Current Yield (%) = Annual ÷ Price × 100. Independent Phase 2 FX; not YTM. Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
 - **Why:** TOOL-402 delivery for Finance & Business Bond Calculator pillar.
