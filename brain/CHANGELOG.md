@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Realtor Commission Calculator with VAT
+- **Summary:** Shipped Realtor Commission Calculator with VAT on existing catalog slug `realtor-commission-calculator-with-vat` (`RealtorCommissionVatCalculator`, catalog `6af46f0fa27d8d1d4e98ffe3`). Screenshot fields: house price FX, commission %, VAT rate %, commission gross FX, owner receives FX; collapsible net commission + VAT amount. VAT-exclusive commission on house price only. Independent Phase 2 FX; percentages never converted. Share/Reload/Clear/feedback. Activated via `npm run tool:assign`. Separate from undeveloped Commission Calculator and Real Estate Commission Calculator.
+- **Why:** TOOL-415 delivery for Finance & Business Commission Calculator pillar.
+- **Important Files:** `frontend/src/tools/calculators/realtor-commission-vat/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Catalog undeveloped before coding (`6af46f0fa27d8d1d4e98ffe3`). Formula self-check: 250,000 / 3% / 20% → 7,500 / 1,500 / 9,000 / 241,000. Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f968`). Lint/builds/Playwright omitted per user. Three local commits — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-18 — Add Savings Plan Calculator
 - **Summary:** Shipped Savings Plan Calculator on existing catalog slug `savings-plan-calculator` (`SavingsPlanCalculator`, catalog `6af46f0fa27d8d1d4e98ffde`). Screenshot-first: plan frequency (weekly default), duration, fixed/growing deposit vs given final balance, put-aside FX, repeatedly-increased-by FX. Principal-only arithmetic series; no invented interest. Responsive principal bar chart + period balances table. Independent Phase 2 FX; durations never convert. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Savings Calculator pillar preserved; subPillar null.
 - **Formulas:** Total = n × A + G × n × (n − 1) / 2; target mode A = (T − G × n × (n − 1) / 2) / n. Chart final balance matches closed form.

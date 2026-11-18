@@ -400,6 +400,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
   'SalesCommissionCalculator',
+  'RentalCommissionCalculator',
   'SellThroughRateCalculator',
   'SimpleInterestCalculator',
   'TdsInterestCalculator',
@@ -971,6 +972,7 @@ if (isDirect) {
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
+    !isApprovedComponentKey('RentalCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     !isApprovedComponentKey('SimpleInterestCalculator') ||
     !isApprovedComponentKey('TdsInterestCalculator') ||
