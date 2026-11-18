@@ -372,6 +372,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SquareMetersToSquareFeetConverter',
   'SquareMilesToSquareKmConverter',
   'SquareYardConverter',
+  'StoneToKgConverter',
   'NmConverter',
   'NmToMConverter',
   'AdditionalFundsNeededCalculator',
@@ -919,6 +920,7 @@ if (isDirect) {
     !isApprovedComponentKey('SquareMetersToSquareFeetConverter') ||
     !isApprovedComponentKey('SquareMilesToSquareKmConverter') ||
     !isApprovedComponentKey('SquareYardConverter') ||
+    !isApprovedComponentKey('StoneToKgConverter') ||
     !isApprovedComponentKey('NmConverter') ||
     !isApprovedComponentKey('NmToMConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||

@@ -446,6 +446,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SquareMilesToSquareKmConverter: () =>
     import('@/tools/calculators/square-miles-to-square-km/detail'),
   SquareYardConverter: () => import('@/tools/calculators/square-yard-converter/detail'),
+  StoneToKgConverter: () => import('@/tools/calculators/stone-to-kg/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),

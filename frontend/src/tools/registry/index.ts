@@ -2013,6 +2013,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SquareYardConverter,
     })),
   ),
+  StoneToKgConverter: lazyTool(() =>
+    import('@/tools/calculators/stone-to-kg/StoneToKgConverter').then((mod) => ({
+      default: mod.StoneToKgConverter,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,

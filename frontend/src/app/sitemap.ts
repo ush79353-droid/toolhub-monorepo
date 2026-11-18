@@ -367,6 +367,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'square-meters-to-square-feet-converter',
   'square-miles-to-square-km-converter',
   'square-yard-converter',
+  'stone-to-kg-converter',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',
