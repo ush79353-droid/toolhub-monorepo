@@ -1666,6 +1666,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SecondsToYearsConversion,
     })),
   ),
+  SquareCmToSquareMmConverter: lazyTool(() =>
+    import('@/tools/calculators/square-cm-to-square-mm/SquareCmToSquareMmConverter').then((mod) => ({
+      default: mod.SquareCmToSquareMmConverter,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,

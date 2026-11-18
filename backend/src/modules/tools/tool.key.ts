@@ -322,6 +322,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SecondsToHoursConverter',
   'SecondsToMinutesConverter',
   'SecondsToYearsConversion',
+  'SquareCmToSquareMmConverter',
   'NmConverter',
   'NmToMConverter',
   'AdditionalFundsNeededCalculator',
@@ -861,6 +862,7 @@ if (isDirect) {
     !isApprovedComponentKey('SecondsToHoursConverter') ||
     !isApprovedComponentKey('SecondsToMinutesConverter') ||
     !isApprovedComponentKey('SecondsToYearsConversion') ||
+    !isApprovedComponentKey('SquareCmToSquareMmConverter') ||
     !isApprovedComponentKey('NmConverter') ||
     !isApprovedComponentKey('NmToMConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||

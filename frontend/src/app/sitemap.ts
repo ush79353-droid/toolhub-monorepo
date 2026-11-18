@@ -315,6 +315,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'seconds-to-hours-converter',
   'seconds-to-minutes-converter',
   'seconds-to-years-conversion',
+  'square-centimeters-to-square-millimeters-converter',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',
