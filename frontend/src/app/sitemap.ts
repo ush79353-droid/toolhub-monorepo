@@ -372,6 +372,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'tbsp-to-grams-converter-with-ingredient-weights',
   'tbsp-to-ml-converter',
   'tsp-to-grams-converter',
+  'tsp-to-ml-converter',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',

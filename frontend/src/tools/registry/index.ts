@@ -2038,6 +2038,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TspToGramsConverter,
     })),
   ),
+  TspToMlConverter: lazyTool(() =>
+    import('@/tools/calculators/tsp-to-ml/TspToMlConverter').then((mod) => ({
+      default: mod.TspToMlConverter,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,
