@@ -80,6 +80,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pint-to-pound-conversion',
   'drops-to-ml-conversion',
   'pounds-and-ounces-calculator',
+  'ounce-to-kg-converter',
   'ounces-to-grams-converter',
   'ounces-to-pounds-converter',
   'oz-to-cups-converter',
