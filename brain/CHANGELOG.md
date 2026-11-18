@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Salary Calculator
+- **Summary:** Shipped Salary Calculator on existing catalog slug `salary-calculator` (`SalaryCalculator`, catalog `6af46f0fa27d8d1d4e98fff9`). Screenshot-first (ADR-023): I get paid dropdown default Per hour (only verified mode); Pay per hour FX (label adapts); I work hours/day default 8; days/week default 5; Holidays/year 8; Paid vacation/year 15 → Hourly/Daily/Weekly/Monthly/Annual FX. Holidays and paid vacation are not subtracted from annual paid salary; 52-week convention disclosed. Share/Reload/Clear/feedback. Independent Phase 2 FX; hours/days/leave never convert. SalaryWithOvertimeCalculator and HourlyToAnnualSalaryCalculator siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar null.
+- **Formulas:** Weekly hours = Hours/day × Days/week; Weekly = Hourly × Weekly hours; Annual scheduled days = Days/week × 52; Annual = Hourly × Hours/day × Annual scheduled days; Monthly = Annual ÷ 12; Daily = Hourly × Hours/day. Full precision with display rounding only.
+- **Example:** 500 PKR/hr · 8h/day · 5d/week → weekly 20,000 · annual 1,040,000 · monthly ≈ 86,666.67 · daily 4,000.
+- **Important Files:** `frontend/src/tools/calculators/salary/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Quiz: Dividend Calculator
 - **Summary:** Shipped educational Quiz: Dividend Calculator on existing catalog slug `quiz-dividend-calculator` (`QuizDividendCalculator`, catalog `6af46f0fa27d8d1d4e990008`). Screenshot-first (ADR-023) six-question quiz: dividend definition, why yield, yield formula, yield numeric (1%), reinvestment, compounding balance (≈ $2,593.74). Score `/6` + accuracy % after all answered; per-question correct/incorrect + explanations when checkbox checked and complete; Share/Reload/Clear/feedback; link to Dividend Yield Calculator. Fixed USD; no FX; not added to `CURRENCY_CONVERSION_SLUGS`. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96e` / subPillar null.
 - **Answers:** Q1 B; Q2 C; Q3 A; Q4 1% (±0.05); Q5 B; Q6 `1000×(1.1)^10` ≈ 2593.74 (±1).

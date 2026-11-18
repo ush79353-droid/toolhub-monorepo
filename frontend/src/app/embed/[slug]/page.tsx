@@ -190,6 +190,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'perpetuity-calculator',
   'present-value-calculator',
   'private-savings-calculator',
+  'salary-calculator',
   'savings-calculator',
   'savings-goal-calculator',
   'savings-plan-calculator',

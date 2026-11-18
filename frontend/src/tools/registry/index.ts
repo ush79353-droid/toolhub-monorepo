@@ -3379,6 +3379,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.JensensAlphaCalculator,
     })),
   ),
+  SalaryCalculator: lazyTool(() =>
+    import('@/tools/calculators/salary/SalaryCalculator').then((mod) => ({
+      default: mod.SalaryCalculator,
+    })),
+  ),
   SavingsCalculator: lazyTool(() =>
     import('@/tools/calculators/savings/SavingsCalculator').then((mod) => ({
       default: mod.SavingsCalculator,

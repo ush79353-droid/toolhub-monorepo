@@ -99,6 +99,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'rent-increase-calculator',
   'rent-or-buy-calculator',
   'rv-loan-calculator',
+  'salary-calculator',
   'salary-calculator-with-overtime',
   'student-loan-calculator',
   'student-loan-payment-calculator',
