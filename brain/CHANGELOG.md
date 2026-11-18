@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Pounds to lbs Converter
+- **Summary:** Shipped Pounds to lbs Converter on existing catalog slug pounds-to-lbs-converter (PoundsToLbsConverter, catalog 6af46f17a27d8d1d4e990b68). Bidirectional identity pound↔lb (factor 1); default 1; rejects negative mass; preserves raw decimal strings; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-433b delivery for Conversion and Units pounds↔lbs identity converter.
+- **Important Files:** frontend/src/tools/calculators/pounds-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0/0.5/1/2/5/10/12.5/22.5/100/1000; reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Pounds to Grams Converter
 - **Summary:** Shipped Pounds to Grams Converter on existing catalog slug pounds-to-grams-converter (PoundsToGramsConverter, catalog 6af46f17a27d8d1d4e990b67). Bidirectional lb↔g with exact 453.59237 g per lb; default 1 lb; rejects negative mass; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-432b delivery for Conversion and Units pounds↔grams mass converter.
