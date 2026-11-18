@@ -19,6 +19,7 @@ import type { ToolMetadata } from '@/types/tool';
 /** Phase 3: load FX rates only for conversion-enabled calculators. */
 const CURRENCY_CONVERSION_SLUGS = new Set([
   'margin-interest-calculator',
+  'margin-with-discount-calculator',
   '12-hour-shift-pay-calculator',
   '3x-rent-calculator',
   '401k-calculator',

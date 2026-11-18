@@ -62,6 +62,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-call/detail'),
   MarginOfSafetyCalculator: () =>
     import('@/tools/calculators/margin-of-safety/detail'),
+  MarginWithDiscountCalculator: () =>
+    import('@/tools/calculators/margin-with-discount/detail'),
   NetDebtCalculator: () =>
     import('@/tools/calculators/net-debt/detail'),
   NetEffectiveRentCalculator: () =>

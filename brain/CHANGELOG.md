@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Margin With Discount Calculator
+- **Summary:** Shipped Margin With Discount Calculator on existing catalog slug `margin-with-discount-calculator` (`MarginWithDiscountCalculator`, catalog `6af46f0fa27d8d1d4e98fff0`). Screenshot-first (ADR-023): Cost before discount FX; Base margin %; Base markup %; Base revenue FX (last-edited among margin/markup/revenue authoritative); Discount % → Price after discount FX, True margin %, True markup %, Profit FX. Share/Reload/Clear/feedback. Independent Phase 2 FX; percents never convert. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bda27d8d1d4e98f96a` / subPillar null.
+- **Formulas:** Base Revenue = Cost/(1−Margin/100) or Cost×(1+Markup/100); Price After Discount = Revenue×(1−Discount/100); Profit = Price−Cost; True Margin = Profit/Price×100; True Markup = Profit/Cost×100. Cost ≥ 0; discount 0–100; margin < 100 when deriving revenue; full precision with display rounding only.
+- **Example:** Cost 100 · margin 25% · discount 10% → revenue ≈ 133.33 · price 120 · profit 20 · true margin ≈ 16.67% · true markup 20%.
+- **Important Files:** `frontend/src/tools/calculators/margin-with-discount/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Levered Free Cash Flow Calculator
 - **Summary:** Shipped Levered Free Cash Flow Calculator on existing catalog slug `levered-free-cash-flow-calculator` (`LeveredFreeCashFlowCalculator`, catalog `6af46f0fa27d8d1d4e98fff6`). Screenshot-first (ADR-023): EBITDA FX, CapEx FX, Net change in WC FX, Mandatory debt repayments FX → Levered FCF FX. Simplified-estimate disclosure (not full FCFE; EBITDA excludes cash interest/taxes). Share/Reload/Clear/feedback. Independent Phase 2 FX. FreeCashFlowCalculator and FcffCalculator siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96b` / subPillar null.
 - **Formulas:** Levered FCF = EBITDA − CapEx − ΔWC − Debt repayments. CapEx and debt repayments are positive outflows; negative ΔWC and negative results allowed; full precision with display rounding only.
