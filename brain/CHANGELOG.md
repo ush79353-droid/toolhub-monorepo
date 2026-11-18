@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add MmHg to Atm Conversion
+- **Summary:** Shipped MmHg to Atm Conversion on existing catalog slug mmhg-to-atm-conversion (MmhgToAtmConversion, catalog 6af46f17a27d8d1d4e990aef). Bidirectional conventional 760 mmHg = 1 atm (Torr-equivalent; CIPM mmHg noted distinct); empty default; signed gauge values; other units accordion via atm→Pa; guide/table/FAQs. ATM Conversion pillar 6af451d1a27d8d1d4e98f9e5 preserved (brief typo 6af451da… corrected); subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-409b delivery for Conversion and Units mmHg↔atm pressure converter.
+- **Important Files:** frontend/src/tools/calculators/mmhg-to-atm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–7600 mmHg; reverse atm; 760 mmHg → 101325 Pa; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e5). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add mL to µL Conversion
 - **Summary:** Shipped mL to µL Conversion on existing catalog slug ml-to-ul-conversion (MlToUlConversion, catalog 6af46f17a27d8d1d4e990b5d). Bidirectional exact mL↔µL (1 mL = 1000 µL) with accordion other volume units via volume-conversion engine; µL/uL labeled; empty default; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-408b delivery for Conversion and Units mL↔microliter volume converter.
