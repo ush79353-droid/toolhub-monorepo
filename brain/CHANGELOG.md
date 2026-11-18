@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add mL to lbs Conversion
+- **Summary:** Shipped mL to lbs Conversion on existing catalog slug ml-to-lbs-conversion (MlToLbsConversion, catalog 6af46f17a27d8d1d4e990b59). Density-based bidirectional volume↔mass; reuses ml-to-kg / kg-to-ml substance presets and density engine; default mass unit lb; exact 1 lb = 0.45359237 kg; lb = (mL × ρ) / 453592.37; density accordion; volume/mass unit selects; empty volume/mass default; water ≈ 1000 kg/m³; guide/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-404b delivery for Conversion and Units density-based mL↔lb converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-lbs/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (water 250/500/1000 mL → lb; 1/2 lb → mL; custom 850/910 kg/m³; reverse; share text; zero density rejected). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add mL to kg Converter
 - **Summary:** Shipped mL to kg Converter on existing catalog slug ml-to-kg-converter (MlToKgConverter, catalog 6af46f17a27d8d1d4e990b58). Density-based bidirectional volume↔mass; reuses kg-to-ml substance presets and mlToKg/kgToMl engine; substance/custom density; volume units mL/L/cm³/m³/US fl oz and mass units kg/g/mg/lb/oz; empty volume/mass default; water ≈ 1000 kg/m³; guide/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-403b delivery for Conversion and Units density-based mL↔kg converter.
