@@ -370,6 +370,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'stone-to-kg-converter',
   'stone-to-lbs-converter',
   'tbsp-to-grams-converter-with-ingredient-weights',
+  'tbsp-to-ml-converter',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',
