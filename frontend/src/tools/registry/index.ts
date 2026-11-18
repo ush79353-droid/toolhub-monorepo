@@ -2814,6 +2814,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BoatLoanCalculator,
     })),
   ),
+  BondCurrentYieldCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bond-current-yield/BondCurrentYieldCalculator'
+    ).then((mod) => ({
+      default: mod.BondCurrentYieldCalculator,
+    })),
+  ),
   JumboLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/jumbo-loan/JumboLoanCalculator').then((mod) => ({
       default: mod.JumboLoanCalculator,

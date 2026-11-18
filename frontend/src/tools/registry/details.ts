@@ -719,6 +719,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bi-weekly-mortgage-payment/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
+  BondCurrentYieldCalculator: () =>
+    import('@/tools/calculators/bond-current-yield/detail'),
   JumboLoanCalculator: () =>
     import('@/tools/calculators/jumbo-loan/detail'),
   LandLoanCalculator: () =>

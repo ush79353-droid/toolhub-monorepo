@@ -77,6 +77,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'margin-of-safety-calculator',
   'mortgage-points-calculator',
   'boat-loan-calculator',
+  'bond-current-yield-calculator',
   'jumbo-loan-calculator',
   'land-loan-calculator',
   'net-debt-calculator',

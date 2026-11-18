@@ -517,6 +517,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
   'BoatLoanCalculator',
+  'BondCurrentYieldCalculator',
   'JumboLoanCalculator',
   'LandLoanCalculator',
   'PagIbigHousingLoanCalculator',
@@ -1076,6 +1077,7 @@ if (isDirect) {
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
+    !isApprovedComponentKey('BondCurrentYieldCalculator') ||
     !isApprovedComponentKey('JumboLoanCalculator') ||
     !isApprovedComponentKey('LandLoanCalculator') ||
     !isApprovedComponentKey('PagIbigHousingLoanCalculator') ||

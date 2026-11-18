@@ -543,6 +543,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'bi-weekly-mortgage-payment-calculator',
   'mortgage-points-calculator',
   'boat-loan-calculator',
+  'bond-current-yield-calculator',
   'jumbo-loan-calculator',
   'land-loan-calculator',
   'pag-ibig-housing-loan-calculator',

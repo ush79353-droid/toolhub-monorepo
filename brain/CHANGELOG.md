@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Bond Current Yield Calculator
+- **Summary:** Shipped Bond Current Yield Calculator on existing catalog slug `bond-current-yield-calculator` (`BondCurrentYieldCalculator`, catalog `6af46f0fa27d8d1d4e98ffd5`). Screenshot sections: Annual coupon payment (face FX, frequency Annually/Semiannually/Quarterly/Monthly, coupon rate %, coupon per period FX, annual coupon FX); Bond current yield (bond price FX, current yield %). Formulas: Annual Coupon = Face × Rate/100; Coupon Per Period = Annual ÷ N; Current Yield (%) = Annual ÷ Price × 100. Independent Phase 2 FX; not YTM. Share/Reload/Clear/feedback. Activated via `npm run tool:assign`.
+- **Why:** TOOL-402 delivery for Finance & Business Bond Calculator pillar.
+- **Important Files:** `frontend/src/tools/calculators/bond-current-yield/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed pages), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Catalog undeveloped before coding (`6af46f0fa27d8d1d4e98ffd5`). Formula self-check: 1,000 / 5% / Annually / 980 → 50 / 50 / ≈5.102%. Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f966`). Lint/builds/browser/automated tests omitted per user. Single local commit per user request.
+
 ### 2026-11-18 — Add Price Per Liter to Price Per Gallon Converter
 - **Summary:** Shipped Price Per Liter to Price Per Gallon Converter on existing catalog slug price-per-liter-to-price-per-gallon-converter (PricePerLiterToGallonConverter, catalog 6af46f17a27d8d1d4e990ad0). Bidirectional price-per-volume $/L↔$/gal using US liquid 3.785411784 L and Imperial 4.54609 L; denomination-only CurrencySelect (no FX); empty default; negatives rejected. Gallon Calculator pillar preserved; subPillar null. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-467b delivery for Conversion and Units price-per-liter-to-gallon converter.
