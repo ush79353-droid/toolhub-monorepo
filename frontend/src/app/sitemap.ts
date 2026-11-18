@@ -69,6 +69,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mg-to-ml-calculator',
   'cubic-yards-to-tons-calculator',
   'ml-to-cups-converter',
+  'ml-to-cc-converter',
   'decagram-to-gram-converter',
   'pint-to-pound-conversion',
   'drops-to-ml-conversion',

@@ -1,0 +1,68 @@
+import { MAX_ABS_VALUE, type MlCcUnit } from './types';
+import { mlFromField } from './calculation';
+
+export function isIncompleteNumber(raw: string): boolean {
+  const cleaned = raw.trim();
+  return (
+    cleaned === '' ||
+    cleaned === '.' ||
+    cleaned === '-' ||
+    cleaned === '-.' ||
+    cleaned.endsWith('.') ||
+    /e[+-]?$/i.test(cleaned)
+  );
+}
+
+export function parseOptionalNumber(raw: string): number | null {
+  const cleaned = raw.trim().replace(/,/g, '');
+  if (isIncompleteNumber(cleaned)) return null;
+  const value = Number(cleaned);
+  return Number.isFinite(value) ? value : Number.NaN;
+}
+
+export type ParseResult =
+  | { blank: true; incomplete?: false; value?: undefined; error?: undefined }
+  | { blank?: false; incomplete: true; value?: undefined; error?: undefined }
+  | { blank?: false; incomplete?: false; value: null; error: string }
+  | { blank?: false; incomplete?: false; value: number; error?: undefined };
+
+export function parseVolumeInput(raw: string): ParseResult {
+  const cleaned = raw.trim();
+  if (cleaned === '') return { blank: true };
+  if (isIncompleteNumber(cleaned)) return { incomplete: true };
+  const value = parseOptionalNumber(cleaned);
+  if (value === null || !Number.isFinite(value)) {
+    return { value: null, error: 'Enter a valid finite number.' };
+  }
+  if (value < 0) {
+    return { value: null, error: 'Volume cannot be negative.' };
+  }
+  if (value > MAX_ABS_VALUE) {
+    return { value: null, error: 'Enter a smaller finite value.' };
+  }
+  return { value };
+}
+
+export function millilitersFromField(
+  value: number,
+  unit: MlCcUnit,
+): { ok: true; ml: number } | { ok: false; error: string } {
+  if (!Number.isFinite(value)) {
+    return { ok: false, error: 'Enter a valid finite number.' };
+  }
+  if (value < 0) {
+    return { ok: false, error: 'Volume cannot be negative.' };
+  }
+  if (value > MAX_ABS_VALUE) {
+    return { ok: false, error: 'Enter a smaller finite value.' };
+  }
+  try {
+    const ml = mlFromField(value, unit);
+    if (!Number.isFinite(ml) || ml < 0) {
+      return { ok: false, error: 'Result is not a valid volume.' };
+    }
+    return { ok: true, ml };
+  } catch {
+    return { ok: false, error: 'Enter a valid finite volume.' };
+  }
+}
