@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import {
   SalaryToHourlyForm,
   type OutputCurrencyKey,
@@ -17,9 +30,10 @@ import {
   type SalaryToHourlyResult,
   type WageSourceField,
 } from './types';
+import { validateSalaryToHourlyInput } from './validation';
 
 const FX_NOTE =
-  'Hourly wage, annual salary, and each “Your wage as” field have their own currency. Hours per week are never FX-converted.';
+  'Hourly wage, annual salary, and each “Your wage as” field have their own currency. Salary math runs in the last-edited of hourly/annual; other amounts convert for display. Hours per week are never converted. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(
   a: SalaryToHourlyInput,
@@ -48,6 +62,8 @@ export function SalaryToHourlyCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<SalaryToHourlyInput>(
     () => defaults
@@ -70,11 +86,45 @@ export function SalaryToHourlyCalculator({
   }, []);
 
   const apply = (next: SalaryToHourlyInput) => {
+    const validation = validateSalaryToHourlyInput(next, rates);
     setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
+  const sourceCurrency = (state: SalaryToHourlyInput): SupportedCurrency =>
+    state.sourceField === 'hourly'
+      ? state.hourlyWageCurrency
+      : state.annualSalaryCurrency;
 
   const handleWageCurrencyChange = (
     field: WageSourceField,
@@ -82,10 +132,53 @@ export function SalaryToHourlyCalculator({
   ) => {
     if (field === 'hourly') {
       if (input.hourlyWageCurrency === next) return;
+      if (input.sourceField === 'hourly') {
+        const converted = convertFieldAmount(
+          input.hourlyWage,
+          input.hourlyWageCurrency,
+          next
+        );
+        if (!converted.ok) {
+          setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+          return;
+        }
+        apply({
+          ...input,
+          hourlyWageCurrency: next,
+          hourlyWage: converted.text,
+        });
+        return;
+      }
+      if (!canConvertPair(sourceCurrency(input), next)) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
       apply({ ...input, hourlyWageCurrency: next });
       return;
     }
+
     if (input.annualSalaryCurrency === next) return;
+    if (input.sourceField === 'annual') {
+      const converted = convertFieldAmount(
+        input.annualSalary,
+        input.annualSalaryCurrency,
+        next
+      );
+      if (!converted.ok) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      apply({
+        ...input,
+        annualSalaryCurrency: next,
+        annualSalary: converted.text,
+      });
+      return;
+    }
+    if (!canConvertPair(sourceCurrency(input), next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, annualSalaryCurrency: next });
   };
 
@@ -94,15 +187,20 @@ export function SalaryToHourlyCalculator({
     next: SupportedCurrency
   ) => {
     if (input[key] === next) return;
+    if (!canConvertPair(sourceCurrency(input), next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, [key]: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateSalaryToHourlyInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -110,6 +208,9 @@ export function SalaryToHourlyCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const summary = result
     ? [
@@ -122,7 +223,8 @@ export function SalaryToHourlyCalculator({
         `Weekly: ${getCurrencySymbol(result.weeklyCurrency)}${result.formattedWeekly} ${result.weeklyCurrency}`,
         `Biweekly: ${getCurrencySymbol(result.biweeklyCurrency)}${result.formattedBiweekly} ${result.biweeklyCurrency}`,
         `Monthly: ${getCurrencySymbol(result.monthlyCurrency)}${result.formattedMonthly} ${result.monthlyCurrency}`,
-        FX_NOTE,
+        `Assumptions: annual hours = hours×52; hourly = annual/annualHours; weekly = hourly×hours; biweekly = weekly×2; monthly = annual/12; daily = weekly/5`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -154,7 +256,9 @@ export function SalaryToHourlyCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{FX_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">
+            {currencyNote}
+          </p>
         </div>
         {headerActions ? (
           <div className="flex items-center gap-2">{headerActions}</div>
@@ -170,6 +274,7 @@ export function SalaryToHourlyCalculator({
           onWageCurrencyChange={handleWageCurrencyChange}
           onOutputCurrencyChange={handleOutputCurrencyChange}
           conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
