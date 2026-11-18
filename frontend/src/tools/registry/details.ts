@@ -526,6 +526,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/annual-salary/detail'),
   AnnualSalaryPerHourCalculator: () =>
     import('@/tools/calculators/annual-salary-per-hour/detail'),
+  AnnualToMonthlySalaryCalculator: () =>
+    import('@/tools/calculators/annual-to-monthly-salary/detail'),
   AnnualizedRateOfReturnCalculator: () =>
     import('@/tools/calculators/annualized-rate-of-return/detail'),
   AppreciationCalculator: () =>

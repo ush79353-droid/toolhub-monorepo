@@ -445,6 +445,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'youtube-money-calculator',
   'annual-salary-calculator',
   'annual-salary-per-hour-calculator',
+  'annual-to-monthly-salary-calculator',
   'annualized-rate-of-return-calculator',
   'appreciation-calculator',
   'annualized-return-calculator',

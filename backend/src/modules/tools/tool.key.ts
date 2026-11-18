@@ -421,6 +421,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'YoutubeMoneyCalculator',
   'AnnualSalaryCalculator',
   'AnnualSalaryPerHourCalculator',
+  'AnnualToMonthlySalaryCalculator',
   'AnnualizedRateOfReturnCalculator',
   'AppreciationCalculator',
   'AnnualizedReturnCalculator',
@@ -1010,6 +1011,7 @@ if (isDirect) {
     !isApprovedComponentKey('YoutubeMoneyCalculator') ||
     !isApprovedComponentKey('AnnualSalaryCalculator') ||
     !isApprovedComponentKey('AnnualSalaryPerHourCalculator') ||
+    !isApprovedComponentKey('AnnualToMonthlySalaryCalculator') ||
     !isApprovedComponentKey('AnnualizedRateOfReturnCalculator') ||
     !isApprovedComponentKey('AppreciationCalculator') ||
     !isApprovedComponentKey('AnnualizedReturnCalculator') ||
