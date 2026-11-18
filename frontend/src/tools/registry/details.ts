@@ -307,6 +307,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MileConversionCalculator: () => import('@/tools/calculators/mile-conversion/detail'),
   MillimeterCalculator: () => import('@/tools/calculators/millimeter/detail'),
   MmCalculator: () => import('@/tools/calculators/mm-calculator/detail'),
+  MmToFootConverter: () => import('@/tools/calculators/mm-to-foot/detail'),
   MillisecondsConverter: () => import('@/tools/calculators/milliseconds/detail'),
   MilToInchConversion: () => import('@/tools/calculators/mil-to-inch/detail'),
   MilToMmConversion: () => import('@/tools/calculators/mil-to-mm/detail'),

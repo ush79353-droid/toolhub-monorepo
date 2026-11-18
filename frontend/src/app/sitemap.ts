@@ -282,6 +282,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'kg-to-stones-converter',
   'kilometer-calculator',
   'mm-calculator',
+  'mm-to-foot-converter',
   'kilometer-to-meter-converter',
   'kilometers-to-miles-calculator',
   'km-to-feet-conversion',
