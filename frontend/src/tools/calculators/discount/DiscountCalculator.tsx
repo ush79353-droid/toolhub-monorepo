@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { DiscountForm } from './DiscountForm';
 import {
   createDefaultInput,
@@ -13,6 +26,10 @@ import {
   type DiscountInput,
   type DiscountResult,
 } from './types';
+import { validateDiscountInput } from './validation';
+
+const FX_NOTE =
+  'Original price, you pay, and you\'re saving each have their own currency. Discount math runs in the original-price currency; results convert for display. The discount percent and tax Yes/No choice are never converted. Tax included is a price label only — no tax rate is applied. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: DiscountInput, b: DiscountInput): boolean {
   return (
@@ -26,10 +43,6 @@ function inputsEqual(a: DiscountInput, b: DiscountInput): boolean {
   );
 }
 
-/**
- * UI shell for Discount Calculator (fields, results layout, Share/Reload/Clear/feedback).
- * Calculation and Phase 2 FX wiring land in the engine commit.
- */
 export function DiscountCalculator({
   metadata,
   className = '',
@@ -37,6 +50,8 @@ export function DiscountCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<DiscountInput>(() => defaults);
   const [input, setInput] = React.useState<DiscountInput>(() => defaults);
@@ -55,33 +70,84 @@ export function DiscountCalculator({
   }, []);
 
   const apply = (next: DiscountInput) => {
+    const validation = validateDiscountInput(next, rates);
     setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handleOriginalPriceCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.originalPriceCurrency) return;
-    apply({ ...input, originalPriceCurrency: next });
+    const converted = convertFieldAmount(
+      input.originalPrice,
+      input.originalPriceCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      originalPriceCurrency: next,
+      originalPrice: converted.text,
+    });
   };
 
   const handleYouPayCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.youPayCurrency) return;
+    if (!canConvertPair(input.originalPriceCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, youPayCurrency: next });
   };
 
   const handleYouSaveCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.youSaveCurrency) return;
+    if (!canConvertPair(input.originalPriceCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, youSaveCurrency: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateDiscountInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -89,6 +155,9 @@ export function DiscountCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const priceSymbol = getCurrencySymbol(input.originalPriceCurrency);
   const paySymbol = getCurrencySymbol(
     result?.youPayCurrency ?? input.youPayCurrency
@@ -101,9 +170,11 @@ export function DiscountCalculator({
         `${metadata.title} — Omega Calculators`,
         `Original price: ${priceSymbol}${input.originalPrice} ${input.originalPriceCurrency}`,
         `Discount: ${input.discountPercent}% off`,
-        `Tax included?: ${input.taxIncluded === 'yes' ? 'Yes' : 'No'} (label only)`,
+        `Tax included?: ${input.taxIncluded === 'yes' ? 'Yes' : 'No'} (label only — no tax rate applied)`,
         `You pay: ${paySymbol}${result.formattedYouPay} ${result.youPayCurrency}`,
         `You're saving: ${saveSymbol}${result.formattedYouSave} ${result.youSaveCurrency}`,
+        `Formulas: Discount = Price × Rate / 100; Final = Price − Discount; Savings = Discount`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -136,7 +207,7 @@ export function DiscountCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Percent-off sale price and savings. Tax included is a price label only.
+            {currencyNote}
           </p>
         </div>
         {headerActions ? (
@@ -154,6 +225,7 @@ export function DiscountCalculator({
           onYouPayCurrencyChange={handleYouPayCurrencyChange}
           onYouSaveCurrencyChange={handleYouSaveCurrencyChange}
           conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
