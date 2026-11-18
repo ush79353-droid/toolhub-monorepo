@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Square Yard Converter
+- **Summary:** Shipped Square Yard Converter on existing catalog slug square-yard-converter (SquareYardConverter, catalog 6af46f17a27d8d1d4e990ad7). Multi-unit yd²-base sync: primary yd², common ft²/m²/ac (open by default), other in²/cm²/mm²/km²/mi²/ha; empty default; negatives rejected. Reuses square-feet-converter `convertArea` (1 yd² = 0.83612736 m²). Yard Conversion pillar preserved (live 6af451d0…; task listed …d2…); subPillar null. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-454b delivery for Conversion and Units square yard converter.
+- **Important Files:** frontend/src/tools/calculators/square-yard-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 yd²→9 ft² / 0.83612736 m², 10→8.3612736 m², 1 acre→4840 yd², 100 yd²→100/4840 ac, 1296 in², round-trip; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d0a27d8d1d4e98f9e2). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Square Miles to Square km Converter
 - **Summary:** Shipped Square Miles to Square km Converter on existing catalog slug square-miles-to-square-km-converter (SquareMilesToSquareKmConverter, catalog 6af46f17a27d8d1d4e990b0b). Bidirectional mi²↔km² with exact 1 mi² = 2.589988110336 km² ((1.609344)²); Other Area Conversion Units accordion; empty default; negatives rejected. Reuses square-feet-converter `convertArea` for extras. Mile Conversion Calculator pillar preserved (live 6af451d1…; task listed …d2…); subPillar null. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-453b delivery for Conversion and Units square miles to square km converter.
