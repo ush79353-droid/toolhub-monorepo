@@ -5,7 +5,12 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import { getCurrencySymbol } from '@/tools/shared/currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { SavingsPlanForm } from './SavingsPlanForm';
 import { SavingsPlanResults } from './SavingsPlanResults';
 import {
@@ -14,6 +19,10 @@ import {
   type SavingsPlanInput,
   type SavingsPlanResult,
 } from './types';
+import { validateSavingsPlanInput } from './validation';
+
+const FX_NOTE =
+  'Deposit, increase, and target each have their own currency. Amounts are normalized into the plan currency before the principal series runs. Period counts never convert. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: SavingsPlanInput, b: SavingsPlanInput): boolean {
   return (
@@ -29,10 +38,6 @@ function inputsEqual(a: SavingsPlanInput, b: SavingsPlanInput): boolean {
   );
 }
 
-/**
- * UI shell for Savings Plan Calculator (fields + actions).
- * Live validation, chart, and FX land in the calculation commit.
- */
 export function SavingsPlanCalculator({
   metadata,
   className = '',
@@ -40,11 +45,14 @@ export function SavingsPlanCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<SavingsPlanInput>(() => defaults);
   const [input, setInput] = React.useState<SavingsPlanInput>(() => defaults);
   const [errors, setErrors] = React.useState<SavingsPlanFieldErrors>({});
   const [result, setResult] = React.useState<SavingsPlanResult | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -54,30 +62,38 @@ export function SavingsPlanCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  React.useEffect(() => {
+    const validation = validateSavingsPlanInput(defaults, rates);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    // Defaults once on mount with current rate snapshot.
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional mount-only seed
+  }, []);
+
   const apply = (next: SavingsPlanInput) => {
+    const validation = validateSavingsPlanInput(next, rates);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateSavingsPlanInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
-  const setCurrency =
-    (field: 'depositCurrency' | 'increaseCurrency' | 'targetCurrency') =>
-    (currency: SupportedCurrency) => {
-      apply({ ...input, [field]: currency });
-    };
-
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const symbol = getCurrencySymbol(
     result?.currency ??
       (input.mode === 'deposit' ? input.depositCurrency : input.targetCurrency)
@@ -90,6 +106,7 @@ export function SavingsPlanCalculator({
         `Starting deposit: ${symbol}${result.formattedStartingDeposit} ${result.currency}`,
         `Final balance: ${symbol}${result.formattedFinalBalance} ${result.currency}`,
         'Principal only — no interest.',
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -121,10 +138,7 @@ export function SavingsPlanCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">
-            Plan fixed or growing deposits, or solve the deposit needed for a target balance.
-            Principal only — no interest.
-          </p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
@@ -133,15 +147,15 @@ export function SavingsPlanCalculator({
         <SavingsPlanForm
           input={input}
           errors={errors}
-          conversionError={null}
-          ratesWarning={null}
+          conversionError={conversionError}
+          onConversionError={setConversionError}
           onChange={apply}
-          onDepositCurrencyChange={setCurrency('depositCurrency')}
-          onIncreaseCurrencyChange={setCurrency('increaseCurrency')}
-          onTargetCurrencyChange={setCurrency('targetCurrency')}
         />
 
-        <SavingsPlanResults result={result} hasErrors={Object.keys(errors).length > 0} />
+        <SavingsPlanResults
+          result={result}
+          hasErrors={Object.keys(errors).length > 0}
+        />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
           <button

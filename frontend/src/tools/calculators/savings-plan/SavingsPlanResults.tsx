@@ -1,6 +1,8 @@
 'use client';
 
 import { getCurrencySymbol } from '@/tools/shared/currency';
+import { SavingsPlanChart } from './SavingsPlanChart';
+import { formatSavingsPlanMoney } from './calculation';
 import type { SavingsPlanResult } from './types';
 
 interface SavingsPlanResultsProps {
@@ -21,40 +23,36 @@ export function SavingsPlanResults({ result, hasErrors }: SavingsPlanResultsProp
   }
 
   const symbol = getCurrencySymbol(result.currency);
-  const summary =
-    result.mode === 'deposit'
-      ? `Your final balance will be ${symbol}${result.formattedFinalBalance}.`
-      : `To reach ${symbol}${result.formattedFinalBalance}, put aside ${symbol}${result.formattedStartingDeposit} each ${result.periodUnitSingular} (increasing by the amount shown).`;
+  const axisLabel =
+    result.periodUnitPlural.charAt(0).toUpperCase() + result.periodUnitPlural.slice(1);
 
   return (
     <div className="space-y-4 rounded-xl border border-border bg-muted/10 p-4 sm:p-5">
       <h3 className="text-sm font-semibold text-accent">Results</h3>
-      <p className="text-sm leading-relaxed text-foreground/90">
-        {summary.split(symbol).map((part, index, parts) => {
-          if (index === 0) return <span key={index}>{part}</span>;
-          const match = part.match(/^([\d,.]+)/);
-          if (!match) {
-            return (
-              <span key={index}>
-                {symbol}
-                {part}
-              </span>
-            );
-          }
-          const amount = match[1];
-          const rest = part.slice(amount.length);
-          return (
-            <span key={index}>
-              <strong className="font-semibold text-accent">
-                {symbol}
-                {amount}
-              </strong>
-              {rest}
-              {index < parts.length - 1 ? null : null}
-            </span>
-          );
-        })}
-      </p>
+
+      {result.mode === 'deposit' ? (
+        <p className="text-sm leading-relaxed text-foreground/90">
+          Your final balance will be{' '}
+          <strong className="font-semibold text-accent">
+            {symbol}
+            {result.formattedFinalBalance}.
+          </strong>
+        </p>
+      ) : (
+        <p className="text-sm leading-relaxed text-foreground/90">
+          To reach{' '}
+          <strong className="font-semibold text-accent">
+            {symbol}
+            {result.formattedFinalBalance}
+          </strong>
+          , start with{' '}
+          <strong className="font-semibold text-accent">
+            {symbol}
+            {result.formattedStartingDeposit}
+          </strong>{' '}
+          each {result.periodUnitSingular}.
+        </p>
+      )}
 
       <div className="grid gap-2 text-xs text-muted-foreground sm:grid-cols-2">
         <p>
@@ -77,11 +75,39 @@ export function SavingsPlanResults({ result, hasErrors }: SavingsPlanResultsProp
             {result.periods} {result.periodUnitPlural}
           </span>
         </p>
-        <p className="text-muted-foreground">Principal only — no interest applied.</p>
+        <p>Principal only — no interest applied.</p>
       </div>
 
-      {/* Chart and period table are wired in the calculation/FX commit. */}
+      <SavingsPlanChart balances={result.balances} periodAxisLabel={axisLabel} />
+
       <p className="text-xs italic text-muted-foreground">{result.balancesLabel}</p>
+
+      <div className="max-h-56 overflow-auto rounded-lg border border-border">
+        <table className="w-full min-w-[280px] border-collapse text-left text-xs">
+          <thead className="sticky top-0 bg-muted/80 text-muted-foreground">
+            <tr>
+              <th className="px-3 py-2 font-medium">#</th>
+              <th className="px-3 py-2 font-medium">Deposit</th>
+              <th className="px-3 py-2 font-medium">Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            {result.balances.map((row) => (
+              <tr key={row.period} className="border-t border-border/70">
+                <td className="px-3 py-1.5 tabular-nums text-accent">{row.period}</td>
+                <td className="px-3 py-1.5 tabular-nums text-accent">
+                  {symbol}
+                  {formatSavingsPlanMoney(row.deposit, result.currency)}
+                </td>
+                <td className="px-3 py-1.5 tabular-nums text-accent">
+                  {symbol}
+                  {formatSavingsPlanMoney(row.balance, result.currency)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

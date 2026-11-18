@@ -2,7 +2,20 @@
 
 import type { ReactNode } from 'react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   PLAN_FREQUENCY_OPTIONS,
@@ -49,30 +62,114 @@ interface SavingsPlanFormProps {
   input: SavingsPlanInput;
   errors: SavingsPlanFieldErrors;
   conversionError: string | null;
-  ratesWarning: string | null;
+  onConversionError: (message: string | null) => void;
   onChange: (input: SavingsPlanInput) => void;
-  onDepositCurrencyChange: (currency: SupportedCurrency) => void;
-  onIncreaseCurrencyChange: (currency: SupportedCurrency) => void;
-  onTargetCurrencyChange: (currency: SupportedCurrency) => void;
 }
 
 export function SavingsPlanForm({
   input,
   errors,
   conversionError,
-  ratesWarning,
+  onConversionError,
   onChange,
-  onDepositCurrencyChange,
-  onIncreaseCurrencyChange,
-  onTargetCurrencyChange,
 }: SavingsPlanFormProps) {
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const units = periodUnits(input.frequency);
   const depositSymbol = getCurrencySymbol(input.depositCurrency);
   const increaseSymbol = getCurrencySymbol(input.increaseCurrency);
   const targetSymbol = getCurrencySymbol(input.targetCurrency);
   const isDepositMode = input.mode === 'deposit';
 
-  const set = (patch: Partial<SavingsPlanInput>) => onChange({ ...input, ...patch });
+  const set = (patch: Partial<SavingsPlanInput>) => {
+    onConversionError(null);
+    onChange({ ...input, ...patch });
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
+  const handleDepositCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.depositCurrency) return;
+    const converted = convertFieldAmount(
+      input.depositAmount,
+      input.depositCurrency,
+      next
+    );
+    if (!converted.ok) {
+      onConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    onConversionError(null);
+    onChange({
+      ...input,
+      depositCurrency: next,
+      depositAmount: converted.text,
+    });
+  };
+
+  const handleIncreaseCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.increaseCurrency) return;
+    const converted = convertFieldAmount(
+      input.increaseAmount,
+      input.increaseCurrency,
+      next
+    );
+    if (!converted.ok) {
+      onConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    onConversionError(null);
+    onChange({
+      ...input,
+      increaseCurrency: next,
+      increaseAmount: converted.text,
+    });
+  };
+
+  const handleTargetCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.targetCurrency) return;
+    const converted = convertFieldAmount(
+      input.targetBalance,
+      input.targetCurrency,
+      next
+    );
+    if (!converted.ok) {
+      onConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    onConversionError(null);
+    onChange({
+      ...input,
+      targetCurrency: next,
+      targetBalance: converted.text,
+    });
+  };
 
   return (
     <form
@@ -173,7 +270,7 @@ export function SavingsPlanForm({
                 <CurrencySelect
                   id="sp-deposit-currency"
                   value={input.depositCurrency}
-                  onChange={onDepositCurrencyChange}
+                  onChange={handleDepositCurrencyChange}
                   aria-label="Deposit currency"
                 />
               </div>
@@ -208,7 +305,7 @@ export function SavingsPlanForm({
                 <CurrencySelect
                   id="sp-target-currency"
                   value={input.targetCurrency}
-                  onChange={onTargetCurrencyChange}
+                  onChange={handleTargetCurrencyChange}
                   aria-label="Target balance currency"
                 />
               </div>
@@ -224,7 +321,7 @@ export function SavingsPlanForm({
             <span>Repeatedly increased by</span>
             <InfoTooltip
               label="Repeatedly increased by"
-              text="Each period’s deposit grows by this fixed amount. Period 1 uses the starting deposit A; period 2 uses A+G; period 3 uses A+2G. Use 0 for a fixed deposit every period. Changing currency converts this amount with stored FX rates."
+              text="Each period’s deposit grows by this fixed amount. Period 1 uses the starting deposit A; period 2 uses A+G; period 3 uses A+2G. Use 0 for a fixed deposit every period. Changing currency converts this amount with stored FX rates. Period counts never convert."
             />
           </label>
           <div className="flex gap-2">
@@ -248,7 +345,7 @@ export function SavingsPlanForm({
               <CurrencySelect
                 id="sp-increase-currency"
                 value={input.increaseCurrency}
-                onChange={onIncreaseCurrencyChange}
+                onChange={handleIncreaseCurrencyChange}
                 aria-label="Increase currency"
               />
             </div>
@@ -274,8 +371,8 @@ export function SavingsPlanForm({
           {errors.currency}
         </p>
       ) : null}
-      {ratesWarning && !conversionError ? (
-        <p className="text-xs text-amber-700">{ratesWarning}</p>
+      {ratesStatus.warning && !conversionError ? (
+        <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
       ) : null}
     </form>
   );
