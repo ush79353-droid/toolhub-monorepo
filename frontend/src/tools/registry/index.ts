@@ -2989,6 +2989,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CouponPaymentCalculator,
     })),
   ),
+  CreditCardCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/credit-card/CreditCardCalculator'
+    ).then((mod) => ({
+      default: mod.CreditCardCalculator,
+    })),
+  ),
   DiscountedCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/discounted-cash-flow/DiscountedCashFlowCalculator'

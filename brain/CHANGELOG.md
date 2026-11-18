@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Real Estate Commission Calculator
+- **Summary:** Shipped Real Estate Commission Calculator on existing catalog slug `real-estate-commission-calculator` (`RealEstateCommissionCalculator`, catalog `6af46f0fa27d8d1d4e98ffe2`). Screenshot fields: house price FX, commission %, commission amount FX, owner receives FX; how-to-use help; Share/Reload/Clear/feedback. Formulas: Commission = Price × Rate / 100; Owner = Price − Commission. Independent Phase 2 FX; percent never converted; no taxes/closing costs. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Three local commits; no push. Left Commission / Rental / Realtor VAT / Sales / True Cost tools untouched.
+- **Example:** 10,000,000 PKR · 2% → commission 200,000; owner 9,800,000.
+- **Important Files:** `frontend/src/tools/calculators/real-estate-commission/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `backend/src/modules/tools/tool.key.ts`, `brain/*`.
+- **Verification:** Catalog undeveloped before coding. Assert self-check in `calculation.test.ts` (written; suite not run per task). Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f968`). Temporary files cleaned: YES.
+
 ### 2026-11-18 — Add Credit Card Calculator
 - **Summary:** Shipped Credit Card Calculator on existing catalog slug `credit-card-calculator` (`CreditCardCalculator`, catalog `6af46f0fa27d8d1d4e98ffe7`). Screenshot sections: Specifications (balance FX, APR %, fixed/minimum repayment radios, monthly fixed FX, additional FX); collapsible Minimum payment & compounding (floor FX, min %, flat or % + interest, monthly/daily_365/daily_360 compounding). Results: years/months to payoff, total paid, total interest. Independent Phase 2 FX normalize money into balance currency. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Credit Card Calculator pillar preserved; subPillar null.
 - **Formulas:** Monthly interest (default) = Balance × APR / 1200; payment = fixed+additional or max(floor, %×balance [+ interest])+additional; New Balance = Balance + Interest − capped payment; never-pays-off when payment ≤ interest.
