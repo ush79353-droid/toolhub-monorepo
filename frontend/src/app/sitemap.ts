@@ -313,6 +313,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'seconds-converter',
   'seconds-to-days-converter',
   'seconds-to-hours-converter',
+  'seconds-to-minutes-converter',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',
