@@ -57,6 +57,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PintToPoundCalculator',
   'DropsToMlConverter',
   'PoundsAndOuncesCalculator',
+  'OuncesToGramsConverter',
   'OzToCupsConverter',
   'GallonCalculator',
   'QuartsToPoundsConverter',
@@ -572,6 +573,7 @@ if (isDirect) {
     !isApprovedComponentKey('PintToPoundCalculator') ||
     !isApprovedComponentKey('DropsToMlConverter') ||
     !isApprovedComponentKey('PoundsAndOuncesCalculator') ||
+    !isApprovedComponentKey('OuncesToGramsConverter') ||
     !isApprovedComponentKey('OzToCupsConverter') ||
     !isApprovedComponentKey('GallonCalculator') ||
     !isApprovedComponentKey('QuartsToPoundsConverter') ||

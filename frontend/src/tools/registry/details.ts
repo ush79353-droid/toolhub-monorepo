@@ -63,6 +63,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DropsToMlConverter: () => import('@/tools/calculators/drops-to-ml/detail'),
   PoundsAndOuncesCalculator: () =>
     import('@/tools/calculators/pounds-and-ounces/detail'),
+  OuncesToGramsConverter: () => import('@/tools/calculators/ounces-to-grams/detail'),
   OzToCupsConverter: () => import('@/tools/calculators/oz-to-cups/detail'),
   GallonCalculator: () => import('@/tools/calculators/gallon/detail'),
   QuartsToPoundsConverter: () => import('@/tools/calculators/quarts-to-pounds/detail'),

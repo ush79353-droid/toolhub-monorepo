@@ -309,6 +309,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  OuncesToGramsConverter: lazyTool(() =>
+    import('@/tools/calculators/ounces-to-grams/OuncesToGramsConverter').then((mod) => ({
+      default: mod.OuncesToGramsConverter,
+    })),
+  ),
   OzToCupsConverter: lazyTool(() =>
     import('@/tools/calculators/oz-to-cups/OzToCupsConverter').then((mod) => ({
       default: mod.OzToCupsConverter,
