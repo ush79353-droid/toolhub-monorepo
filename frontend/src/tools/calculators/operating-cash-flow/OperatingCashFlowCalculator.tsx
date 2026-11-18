@@ -6,6 +6,11 @@ import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { getCurrencySymbol } from '@/tools/shared/currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { OperatingCashFlowForm } from './OperatingCashFlowForm';
 import {
   createDefaultInput,
@@ -13,9 +18,10 @@ import {
   type OperatingCashFlowInput,
   type OperatingCashFlowResult,
 } from './types';
+import { validateOperatingCashFlowInput } from './validation';
 
 const FX_NOTE =
-  'Every money field has its own currency. Results appear after the calculation engine is connected; changing a selector updates the denomination shown on that field.';
+  'Every money field has its own currency. Inputs are normalized into the operating cash flow currency before WC adj = −ΔInv −ΔAR +ΔAP +ΔTax payable and OCF = NI + Dep + Amort + WC adj + Other. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(
   a: OperatingCashFlowInput,
@@ -51,6 +57,8 @@ export function OperatingCashFlowCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<OperatingCashFlowInput>(
     () => defaults
@@ -71,23 +79,28 @@ export function OperatingCashFlowCalculator({
   }, []);
 
   const apply = (next: OperatingCashFlowInput) => {
+    const validation = validateOperatingCashFlowInput(next, rates);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateOperatingCashFlowInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const ocfSymbol = getCurrencySymbol(
     result?.operatingCashFlowCurrency ?? input.operatingCashFlowCurrency
   );
@@ -97,10 +110,15 @@ export function OperatingCashFlowCalculator({
         `Net income: ${getCurrencySymbol(input.netIncomeCurrency)}${input.netIncome} ${input.netIncomeCurrency}`,
         `Depreciation: ${getCurrencySymbol(input.depreciationCurrency)}${input.depreciation} ${input.depreciationCurrency}`,
         `Amortization: ${getCurrencySymbol(input.amortizationCurrency)}${input.amortization} ${input.amortizationCurrency}`,
+        `ΔInventories: ${getCurrencySymbol(input.changeInInventoriesCurrency)}${input.changeInInventories} ${input.changeInInventoriesCurrency}`,
+        `ΔAR: ${getCurrencySymbol(input.changeInArCurrency)}${input.changeInAr} ${input.changeInArCurrency}`,
+        `ΔAP: ${getCurrencySymbol(input.changeInApCurrency)}${input.changeInAp} ${input.changeInApCurrency}`,
+        `ΔTax payable: ${getCurrencySymbol(input.incomeTaxPayableCurrency)}${input.incomeTaxPayable} ${input.incomeTaxPayableCurrency}`,
+        `Net other: ${getCurrencySymbol(input.netOtherCashFlowsCurrency)}${input.netOtherCashFlows} ${input.netOtherCashFlowsCurrency}`,
         `WC cash adj: ${getCurrencySymbol(result.changeInOperatingWcCurrency)}${result.formattedChangeInOperatingWc} ${result.changeInOperatingWcCurrency}`,
         `Operating cash flow: ${ocfSymbol}${result.formattedOperatingCashFlow} ${result.operatingCashFlowCurrency}`,
-        `Formula: OCF = NI + Dep + Amort + WC adj + Other`,
-        FX_NOTE,
+        `Formula: OCF = NI + Dep + Amort + (−ΔInv −ΔAR +ΔAP +ΔTax) + Other`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -132,7 +150,9 @@ export function OperatingCashFlowCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{FX_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">
+            {currencyNote}
+          </p>
         </div>
         {headerActions ? (
           <div className="flex items-center gap-2">{headerActions}</div>
