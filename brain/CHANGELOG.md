@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add PSI to ATM Conversion
+- **Summary:** Shipped PSI to ATM Conversion on existing catalog slug psi-to-atm-conversion (PsiToAtmConversion, catalog 6af46f17a27d8d1d4e990af0). Bidirectional psi↔atm via shared Pascal-base engine; empty default; signed numerical values; unit-only (not gauge↔absolute); guide/table/FAQs. Pillar 6af451d1a27d8d1d4e98f9e5 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-438b delivery for Conversion and Units PSI↔ATM pressure converter.
+- **Important Files:** frontend/src/tools/calculators/psi-to-atm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0/1/10/100/1000 psi; 1/2/5 atm reverse; negatives; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar preserved). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add PSI Converter
 - **Summary:** Shipped PSI Converter on existing catalog slug psi-converter (PsiConverter, catalog 6af46f17a27d8d1d4e990ae3). PSI-centered multi-field converter with expandable bar/atm/Pa and more units via shared Pascal-base engine; default 1 psi; signed values allowed; clarifies PSI vs PSIG/PSIA; guide/table/FAQs. Pillar 6af451d0a27d8d1d4e98f9e4 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-437b delivery for Conversion and Units PSI pressure converter.
