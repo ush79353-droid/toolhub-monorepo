@@ -431,6 +431,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PascalConversion,
     })),
   ),
+  PsiConverter: lazyTool(() =>
+    import('@/tools/calculators/psi-converter/PsiConverter').then((mod) => ({
+      default: mod.PsiConverter,
+    })),
+  ),
   PressureUnitConversion: lazyTool(() =>
     import('@/tools/calculators/pressure-unit-conversion/PressureUnitConversion').then((mod) => ({
       default: mod.PressureUnitConversion,

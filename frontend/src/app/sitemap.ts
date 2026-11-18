@@ -102,6 +102,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'inch-lbs-to-nm-converter',
   'pa-to-psi-converter',
   'pascal-conversion',
+  'psi-converter',
   'pressure-unit-conversion',
   'pressure-conversion',
   'inch-pounds-to-foot-pounds-converter',
