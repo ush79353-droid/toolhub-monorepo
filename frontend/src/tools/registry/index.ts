@@ -3118,6 +3118,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ExpectedUtilityCalculator,
     })),
   ),
+  FreeCashFlowCalculator: lazyTool(() =>
+    import('@/tools/calculators/free-cash-flow/FreeCashFlowCalculator').then(
+      (mod) => ({
+        default: mod.FreeCashFlowCalculator,
+      })
+    ),
+  ),
   FcffCalculator: lazyTool(() =>
     import('@/tools/calculators/fcff/FcffCalculator').then((mod) => ({
       default: mod.FcffCalculator,

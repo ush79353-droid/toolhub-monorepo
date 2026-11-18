@@ -596,6 +596,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'future-value-calculator',
   'fcff-calculator-free-cash-flow-to-firm',
   'fd-calculator-fixed-deposit-calculator',
+  'free-cash-flow-calculator',
   'holding-period-return-calculator',
   'impermanent-loss-calculator',
   'information-ratio-calculator',

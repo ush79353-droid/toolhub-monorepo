@@ -132,6 +132,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'expense-ratio-calculator',
   'fcff-calculator-free-cash-flow-to-firm',
   'fd-calculator',
+  'free-cash-flow-calculator',
   'fha-loan-calculator',
   'future-value-calculator',
   'hedge-ratio-calculator',

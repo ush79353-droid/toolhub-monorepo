@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Free Cash Flow Calculator
+- **Summary:** Shipped Free Cash Flow Calculator on existing catalog slug `free-cash-flow-calculator` (`FreeCashFlowCalculator`, catalog `6af46f0fa27d8d1d4e98fff3`). Screenshot-first (ADR-023): FCF = OCF − CapEx (CapEx as positive spending); collapsible per-share (shares → FCF/share); yield via market cap; margin via revenue; stock price optional consistency only. Share/Reload/Clear/feedback; how-to-use → `#how-to-use`. Independent Phase 2 FX; shares/% never convert. FcffCalculator untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96b` / subPillar null preserved.
+- **Formulas:** FCF = OCF − CapEx; FCF/Share = FCF ÷ shares (shares > 0); Yield (%) = FCF ÷ Market Cap × 100; Margin (%) = FCF ÷ Revenue × 100. Negative FCF/yield/margin allowed; stock price alone does not invent market cap.
+- **Example:** OCF 500,000 · CapEx 120,000 → FCF 380,000; shares 100,000 → 3.80/share; market cap 3,800,000 → yield 10%; revenue 2,000,000 → margin 19%.
+- **Important Files:** `frontend/src/tools/calculators/free-cash-flow/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add FCFF Calculator — Free Cash Flow to Firm
 - **Summary:** Shipped FCFF Calculator on existing catalog slug `fcff-calculator-free-cash-flow-to-firm` (`FcffCalculator`, catalog `6af46f0fa27d8d1d4e98fff5`). Screenshot-first (ADR-023): Source radios Net income (default) / EBITDA / EBIT / CFO with dynamic source-value FX; Adjustments D&A / Interest / Corporate tax % / CapEx / ΔNWC with source-aware show/hide; Result FCFF FX. Share/Reload/Clear/feedback; how-to-use → `#how-to-use`. Independent Phase 2 FX; tax % never converts. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96b` / subPillar null preserved.
 - **Formulas:** NI: FCFF = NI + D&A + Interest×(1−T) − CapEx − ΔNWC; EBITDA: FCFF = EBITDA×(1−T) + D&A×T − CapEx − ΔNWC; EBIT: FCFF = EBIT×(1−T) + D&A − CapEx − ΔNWC; CFO: FCFF = CFO + Interest×(1−T) − CapEx (no ΔNWC). CapEx/ΔNWC positive outflows; negative FCFF allowed; tax 0–100%.
