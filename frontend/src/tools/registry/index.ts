@@ -1517,6 +1517,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MinutesToYearsConversion,
     })),
   ),
+  MonthsToYearsCalculator: lazyTool(() =>
+    import('@/tools/calculators/months-to-years/MonthsToYearsCalculator').then((mod) => ({
+      default: mod.MonthsToYearsCalculator,
+    })),
+  ),
   KnotsToKphConverter: lazyTool(() =>
     import('@/tools/calculators/knots-to-kph/KnotsToKphConverter').then((mod) => ({
       default: mod.KnotsToKphConverter,

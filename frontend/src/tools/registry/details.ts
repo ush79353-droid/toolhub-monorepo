@@ -319,6 +319,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MinutesToDecimalCalculator: () => import('@/tools/calculators/minutes-to-decimal/detail'),
   MinutesToSecondsConverter: () => import('@/tools/calculators/minutes-to-seconds/detail'),
   MinutesToYearsConversion: () => import('@/tools/calculators/minutes-to-years/detail'),
+  MonthsToYearsCalculator: () => import('@/tools/calculators/months-to-years/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
   TemperatureConversionCalculator: () => import('@/tools/calculators/temperature/detail'),
   AdditionalFundsNeededCalculator: () =>

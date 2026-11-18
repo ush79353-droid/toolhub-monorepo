@@ -286,6 +286,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mm-to-inches-conversion',
   'mm-to-km-conversion',
   'mm-to-m-conversion',
+  'months-to-years-calculator',
   'kilometer-to-meter-converter',
   'kilometers-to-miles-calculator',
   'km-to-feet-conversion',
