@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Radians to Degrees Converter
+- **Summary:** Shipped Radians to Degrees Converter on existing catalog slug radians-to-degrees-converter (RadiansToDegreesConverter, catalog 6af46f17a27d8d1d4e990bff). Bidirectional rad↔deg via shared angle-conversion Math.PI helpers; default π rad = 180°; restricted π expression input; Other angle units accordion (gon/turns/′/″/mrad); signed angles preserved; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-441b delivery for Conversion and Units radians↔degrees angle converter.
+- **Important Files:** frontend/src/tools/calculators/radians-to-degrees/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (π/2/π/4/1/−π/2; reverse; extras; π expressions; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Quarts to Gallons Converter
 - **Summary:** Shipped Quarts to Gallons Converter on existing catalog slug quarts-to-gallons-converter (QuartsToGallonsConverter, catalog 6af46f17a27d8d1d4e990ad1). Bidirectional quarts↔gallons with US/UK (+ US dry qt) selectors via shared volume engine; default 4 US qt = 1 US gal; Other relevant units accordion (cups/pt/fl oz/mL/L/UK); guide/table/FAQs. Live pillar 6af451d0a27d8d1d4e98f9e1 preserved (task screenshot listed …d2…); subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-440b delivery for Conversion and Units quarts↔gallons volume converter.
