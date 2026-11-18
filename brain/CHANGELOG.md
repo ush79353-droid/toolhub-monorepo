@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Weeks to Years Converter
+- **Summary:** Shipped Weeks to Years Converter on existing catalog slug weeks-to-years-converter (WeeksToYearsConverter, catalog 6af46f17a27d8d1d4e990bc1). Bidirectional weeks↔years via average Gregorian year (365.2425 days ≈ 52.1775 weeks); Time in other units (yrs/mos/days/hrs/min/sec/HMS); canonical seconds; empty default; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-462b delivery for Conversion and Units weeks-to-years converter.
+- **Important Files:** frontend/src/tools/calculators/weeks-to-years/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/20/50/72 weeks→years; 3 years→156.5325 weeks; days; round-trip; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Weeks to Months Calculator
 - **Summary:** Shipped Weeks to Months Calculator on existing catalog slug weeks-to-months-calculator (WeeksToMonthsCalculator, catalog 6af46f17a27d8d1d4e990bc0). Bidirectional weeks↔months via average Gregorian month (≈4.348125 weeks / 30.436875 days); Other time units (yrs/days/hrs/min/sec/HMS); canonical seconds; empty default; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-461b delivery for Conversion and Units weeks-to-months converter.
