@@ -12,6 +12,7 @@ import {
   type CommissionInput,
   type CommissionResult,
 } from './types';
+import { validateCommissionInput } from './validation';
 
 function inputsEqual(a: CommissionInput, b: CommissionInput): boolean {
   return (
@@ -29,10 +30,11 @@ export function CommissionCalculator({
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
   const defaults = createDefaultInput();
+  const initial = validateCommissionInput(defaults);
   const [baseline, setBaseline] = React.useState<CommissionInput>(() => defaults);
   const [input, setInput] = React.useState<CommissionInput>(() => defaults);
-  const [errors, setErrors] = React.useState<CommissionFieldErrors>({});
-  const [result, setResult] = React.useState<CommissionResult | null>(null);
+  const [errors, setErrors] = React.useState<CommissionFieldErrors>(() => initial.errors);
+  const [result, setResult] = React.useState<CommissionResult | null>(() => initial.result);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -44,22 +46,23 @@ export function CommissionCalculator({
 
   const applyDraft = (next: CommissionInput) => {
     setInput(next);
-    setErrors({});
-    setResult(null);
+    const partial = validateCommissionInput(next);
+    setErrors(partial.errors);
   };
 
   const handleCalculate = () => {
-    // Validation and bidirectional solve are wired in the engine commit.
-    setErrors({});
-    setResult(null);
+    const validation = validateCommissionInput(input);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateCommissionInput(fresh);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
