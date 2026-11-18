@@ -544,6 +544,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pvifa-calculator',
   'rate-of-return-calculator',
   'real-rate-of-return-calculator',
+  'realtor-commission-calculator-with-vat',
   'bitcoin-etf-calculator',
   'biweekly-mortgage-calculator',
   'bi-weekly-mortgage-payment-calculator',

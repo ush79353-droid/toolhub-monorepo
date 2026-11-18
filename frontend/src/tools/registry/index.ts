@@ -2801,6 +2801,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RealRateOfReturnCalculator,
     })),
   ),
+  RealtorCommissionVatCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/realtor-commission-vat/RealtorCommissionVatCalculator'
+    ).then((mod) => ({
+      default: mod.RealtorCommissionVatCalculator,
+    })),
+  ),
   RentSplitCalculator: lazyTool(() =>
     import('@/tools/calculators/rent-split/RentSplitCalculator').then((mod) => ({
       default: mod.RentSplitCalculator,
