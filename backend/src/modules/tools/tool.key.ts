@@ -113,6 +113,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'OzToCcConverter',
   'OzToCupsConverter',
   'GallonCalculator',
+  'PricePerLiterToGallonConverter',
   'QuartsToPoundsConverter',
   'GallonsToPoundsConverter',
   'VolumeConversion',
@@ -672,6 +673,7 @@ if (isDirect) {
     !isApprovedComponentKey('OzToCcConverter') ||
     !isApprovedComponentKey('OzToCupsConverter') ||
     !isApprovedComponentKey('GallonCalculator') ||
+    !isApprovedComponentKey('PricePerLiterToGallonConverter') ||
     !isApprovedComponentKey('QuartsToPoundsConverter') ||
     !isApprovedComponentKey('GallonsToPoundsConverter') ||
     !isApprovedComponentKey('VolumeConversion') ||

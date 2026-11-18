@@ -162,6 +162,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   OzToCcConverter: () => import('@/tools/calculators/oz-to-cc/detail'),
   OzToCupsConverter: () => import('@/tools/calculators/oz-to-cups/detail'),
   GallonCalculator: () => import('@/tools/calculators/gallon/detail'),
+  PricePerLiterToGallonConverter: () =>
+    import('@/tools/calculators/price-per-liter-to-gallon/detail'),
   QuartsToPoundsConverter: () => import('@/tools/calculators/quarts-to-pounds/detail'),
   GallonsToPoundsConverter: () => import('@/tools/calculators/gallons-to-pounds/detail'),
   VolumeConversion: () => import('@/tools/calculators/volume-conversion/detail'),

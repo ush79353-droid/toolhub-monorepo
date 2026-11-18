@@ -135,6 +135,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'oz-to-cc-converter',
   'oz-to-cups-converter',
   'gallon-calculator',
+  'price-per-liter-to-price-per-gallon-converter',
   'quarts-to-pounds-conversion',
   'gallons-to-pounds-converter',
   'volume-conversion',

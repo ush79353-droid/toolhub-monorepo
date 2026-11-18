@@ -682,6 +682,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GallonCalculator,
     })),
   ),
+  PricePerLiterToGallonConverter: lazyTool(() =>
+    import('@/tools/calculators/price-per-liter-to-gallon/PricePerLiterToGallonConverter').then(
+      (mod) => ({
+        default: mod.PricePerLiterToGallonConverter,
+      }),
+    ),
+  ),
   QuartsToPoundsConverter: lazyTool(() =>
     import('@/tools/calculators/quarts-to-pounds/QuartsToPoundsCalculator').then((mod) => ({
       default: mod.QuartsToPoundsConverter,
