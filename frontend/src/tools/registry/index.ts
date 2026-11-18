@@ -285,6 +285,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SalaryWithOvertimeCalculator,
     })),
   ),
+  TexasOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/texas-overtime/TexasOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.TexasOvertimeCalculator,
+    })),
+  ),
   TimesInterestEarnedCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/times-interest-earned/TimesInterestEarnedCalculator'

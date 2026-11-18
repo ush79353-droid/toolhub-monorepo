@@ -95,6 +95,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'salary-calculator-with-overtime',
   'square-kilometers-to-acres-conversion',
   'feet-and-inches-calculator',
+  'texas-overtime-calculator',
   'times-interest-earned-ratio-calculator',
   'variable-annuity-calculator',
   'yards-to-acres-calculator',

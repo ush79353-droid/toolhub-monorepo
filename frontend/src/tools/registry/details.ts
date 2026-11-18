@@ -77,6 +77,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   HundredDayCalculator: () => import('@/tools/calculators/hundred-day/detail'),
   SalaryWithOvertimeCalculator: () =>
     import('@/tools/calculators/salary-with-overtime/detail'),
+  TexasOvertimeCalculator: () =>
+    import('@/tools/calculators/texas-overtime/detail'),
   TimesInterestEarnedCalculator: () =>
     import('@/tools/calculators/times-interest-earned/detail'),
   TwelveVoltWireCalculator: () => import('@/tools/calculators/twelve-volt-wire/detail'),

@@ -189,6 +189,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'sales-commission-calculator',
   'smokers-ctc-calculator',
   'software-contract-value-calculator',
+  'texas-overtime-calculator',
   'times-interest-earned-ratio-calculator',
   'variable-annuity-calculator',
   'website-ad-revenue-calculator',
