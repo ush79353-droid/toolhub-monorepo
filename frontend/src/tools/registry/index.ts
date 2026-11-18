@@ -241,6 +241,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TwelveVoltWireCalculator,
     })),
   ),
+  VariableAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/variable-annuity/VariableAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.VariableAnnuityCalculator,
+    })),
+  ),
   ZeroToSixtyCalculator: lazyTool(() =>
     import('@/tools/calculators/zero-to-sixty/ZeroToSixtyCalculator').then((mod) => ({
       default: mod.ZeroToSixtyCalculator,

@@ -64,6 +64,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TimesInterestEarnedCalculator: () =>
     import('@/tools/calculators/times-interest-earned/detail'),
   TwelveVoltWireCalculator: () => import('@/tools/calculators/twelve-volt-wire/detail'),
+  VariableAnnuityCalculator: () =>
+    import('@/tools/calculators/variable-annuity/detail'),
   ZeroToSixtyCalculator: () => import('@/tools/calculators/zero-to-sixty/detail'),
   TwelveHourShiftPayCalculator: () => import('@/tools/calculators/twelve-hour-shift-pay/detail'),
   ThreeXRentCalculator: () => import('@/tools/calculators/three-x-rent/detail'),

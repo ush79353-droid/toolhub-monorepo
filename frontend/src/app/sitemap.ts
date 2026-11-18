@@ -88,6 +88,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'square-kilometers-to-acres-conversion',
   'feet-and-inches-calculator',
   'times-interest-earned-ratio-calculator',
+  'variable-annuity-calculator',
   'yards-to-acres-calculator',
   'ccf-to-gallons-conversion',
   'liters-to-centiliters-converter',

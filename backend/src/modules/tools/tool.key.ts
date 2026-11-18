@@ -34,6 +34,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ArmMortgageCalculator',
   'HundredDayCalculator',
   'TimesInterestEarnedCalculator',
+  'VariableAnnuityCalculator',
   'ZeroToSixtyCalculator',
   'TwelveVoltWireCalculator',
   'TwelveHourShiftPayCalculator',
@@ -1021,6 +1022,7 @@ if (isDirect) {
     !isApprovedComponentKey('ImmediateAnnuityCalculator') ||
     !isApprovedComponentKey('LotteryAnnuityCalculator') ||
     !isApprovedComponentKey('PresentValueOfAnnuityCalculator') ||
+    !isApprovedComponentKey('VariableAnnuityCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
