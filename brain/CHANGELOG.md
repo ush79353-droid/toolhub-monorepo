@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add mL to µL Conversion
+- **Summary:** Shipped mL to µL Conversion on existing catalog slug ml-to-ul-conversion (MlToUlConversion, catalog 6af46f17a27d8d1d4e990b5d). Bidirectional exact mL↔µL (1 mL = 1000 µL) with accordion other volume units via volume-conversion engine; µL/uL labeled; empty default; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-408b delivery for Conversion and Units mL↔microliter volume converter.
+- **Important Files:** frontend/src/tools/calculators/ml-to-ul/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0.001–10 mL ↔ µL; reverse 1/24/500/1000 µL; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add mL to tsp Converter
 - **Summary:** Shipped mL to tsp Converter on existing catalog slug ml-to-tsp-converter (MlToTspConverter, catalog 6af46f17a27d8d1d4e990b5c). Two-field bidirectional volume (mL / US·metric·Imp tsp); reuses volume-conversion engine; added shared `impTsp` (imperial gallon/768); exact US tsp 4.92892159375 mL (not silently 5); metric 5 mL; US tsp default; empty default; US conversion table + metric distinction; guide/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-407b delivery for Conversion and Units mL↔teaspoon volume converter.
