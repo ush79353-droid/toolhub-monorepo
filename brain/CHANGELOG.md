@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Hourly to Salary - Wage Calculator
+- **Summary:** Shipped Hourly to Salary - Wage Calculator on existing catalog slug `hourly-to-salary-wage-calculator` (`HourlyToSalaryWageCalculator`, catalog `6af46f0fa27d8d1d4e990002`). Screenshot-first (ADR-023): Hourly wage FX ↔ Annual salary FX (last-edited authoritative); Hours/week default 40; Your wage as Daily/Monthly/Weekly/Biweekly FX; empty collapsed Other time intervals. Share/Reload/Clear/feedback. Independent Phase 2 FX; hours never convert. Hourly to Annual / Annual Salary per Hour / Overtime siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar `6af46f0dae6d84bd3ef8f7cf`. Prompt sourced from sibling Overtime folder (Wage Calculator section); Overtime tool not developed.
+- **Formulas:** Annual = Hourly × Hours/week × 52; Hourly = Annual ÷ (Hours/week × 52); Weekly = Hourly × Hours/week; Biweekly = Weekly × 2; Monthly = Annual ÷ 12; Daily = Weekly ÷ 5. Wages ≥ 0; hours > 0; full precision with display rounding only.
+- **Example:** 500 PKR · 40h → weekly 20,000 · annual 1,040,000 · biweekly 40,000 · monthly ≈ 86,666.67 · daily 4,000.
+- **Important Files:** `frontend/src/tools/calculators/hourly-to-salary-wage/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Hourly to Annual Salary Calculator
 - **Summary:** Shipped Hourly to Annual Salary Calculator on existing catalog slug `hourly-to-annual-salary-calculator` (`HourlyToAnnualSalaryCalculator`, catalog `6af46f0fa27d8d1d4e990001`). Screenshot-first (ADR-023): Data — Hourly wage FX, Hours/week default 40, Days/week default 5; Results — Annual salary, Monthly pay, Per week, Per day (all FX). Share/Reload/Clear/feedback. Independent Phase 2 FX; hours/days never convert. Annual Salary / Annual to Monthly / Annual Salary per Hour siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar `6af46f0dae6d84bd3ef8f7cf`.
 - **Formulas:** Weekly = Hourly × Hours/week; Annual = Weekly × 52; Monthly = Annual ÷ 12; Per day = Weekly ÷ Days/week. Hourly ≥ 0; hours/days > 0; full precision with display rounding only.

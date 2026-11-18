@@ -600,6 +600,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'free-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',
+  'hourly-to-salary-wage-calculator',
   'impermanent-loss-calculator',
   'information-ratio-calculator',
   'interest-calculator',

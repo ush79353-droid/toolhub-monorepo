@@ -843,6 +843,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/holding-period-return/detail'),
   HourlyToAnnualSalaryCalculator: () =>
     import('@/tools/calculators/hourly-to-annual-salary/detail'),
+  HourlyToSalaryWageCalculator: () =>
+    import('@/tools/calculators/hourly-to-salary-wage/detail'),
   ImpermanentLossCalculator: () =>
     import('@/tools/calculators/impermanent-loss/detail'),
   InformationRatioCalculator: () =>
