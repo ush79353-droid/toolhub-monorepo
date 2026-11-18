@@ -514,6 +514,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PvgoCalculator',
   'PvifaCalculator',
   'RateOfReturnCalculator',
+  'RealEstateCommissionCalculator',
   'RealRateOfReturnCalculator',
   'RealtorCommissionVatCalculator',
   'RentSplitCalculator',
@@ -584,6 +585,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SavingsGoalCalculator',
   'SavingsInterestRateCalculator',
   'SavingsPlanCalculator',
+  'SavingsWithdrawalCalculator',
   'SharpeRatioCalculator',
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
@@ -1089,6 +1091,7 @@ if (isDirect) {
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('PvifaCalculator') ||
     !isApprovedComponentKey('RateOfReturnCalculator') ||
+    !isApprovedComponentKey('RealEstateCommissionCalculator') ||
     !isApprovedComponentKey('RealRateOfReturnCalculator') ||
     !isApprovedComponentKey('RealtorCommissionVatCalculator') ||
     !isApprovedComponentKey('RentSplitCalculator') ||
@@ -1159,6 +1162,7 @@ if (isDirect) {
     !isApprovedComponentKey('SavingsGoalCalculator') ||
     !isApprovedComponentKey('SavingsInterestRateCalculator') ||
     !isApprovedComponentKey('SavingsPlanCalculator') ||
+    !isApprovedComponentKey('SavingsWithdrawalCalculator') ||
     !isApprovedComponentKey('SharpeRatioCalculator') ||
     !isApprovedComponentKey('VaMortgageCalculator') ||
     !isApprovedComponentKey('ValueAtRiskCalculator') ||

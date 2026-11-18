@@ -710,7 +710,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pvifa/detail'),
   RateOfReturnCalculator: () =>
     import('@/tools/calculators/rate-of-return/detail'),
-  
+  RealEstateCommissionCalculator: () =>
+    import('@/tools/calculators/real-estate-commission/detail'),
   RealRateOfReturnCalculator: () =>
     import('@/tools/calculators/real-rate-of-return/detail'),
   RealtorCommissionVatCalculator: () =>
@@ -837,6 +838,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/savings-interest-rate/detail'),
   SavingsPlanCalculator: () =>
     import('@/tools/calculators/savings-plan/detail'),
+  SavingsWithdrawalCalculator: () =>
+    import('@/tools/calculators/savings-withdrawal/detail'),
   SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),
   VaMortgageCalculator: () => import('@/tools/calculators/va-mortgage/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),

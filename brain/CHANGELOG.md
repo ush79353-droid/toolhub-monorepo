@@ -4,6 +4,20 @@
 
 ---
 
+### 2026-11-18 — Add Credit Card Calculator
+- **Summary:** Shipped Credit Card Calculator on existing catalog slug `credit-card-calculator` (`CreditCardCalculator`, catalog `6af46f0fa27d8d1d4e98ffe7`). Screenshot sections: Specifications (balance FX, APR %, fixed/minimum repayment radios, monthly fixed FX, additional FX); collapsible Minimum payment & compounding (floor FX, min %, flat or % + interest, monthly/daily_365/daily_360 compounding). Results: years/months to payoff, total paid, total interest. Independent Phase 2 FX normalize money into balance currency. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Credit Card Calculator pillar preserved; subPillar null.
+- **Formulas:** Monthly interest (default) = Balance × APR / 1200; payment = fixed+additional or max(floor, %×balance [+ interest])+additional; New Balance = Balance + Interest − capped payment; never-pays-off when payment ≤ interest.
+- **Example:** 2,000 PKR · 18% · fixed 100 · monthly → 2y 0m; total ≈ 2,395.65; interest ≈ 395.65.
+- **Important Files:** `frontend/src/tools/calculators/credit-card/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Catalog undeveloped before coding. `calculation.test.ts` assert self-check passed. Mongo assign in delivery report. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
+### 2026-11-18 — Add Savings Withdrawal Calculator
+- **Summary:** Shipped Savings Withdrawal Calculator on existing catalog slug `savings-withdrawal-calculator` (`SavingsWithdrawalCalculator`, catalog `6af46f0fa27d8d1d4e98ffdf`). Screenshot-first: how-long mode only, balance FX, first withdrawal date, withdrawal FX, annual rate, Advanced settings disclosure without invented fields. Monthly interest-first withdrawal simulation with partial final withdrawal and never-deplete guard. Independent Phase 2 FX normalize withdrawal into balance currency. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Savings Calculator pillar preserved; subPillar null.
+- **Formulas:** r = (annual/100)/12; each period balance ← balance×(1+r) then withdraw min(PMT, balance); duration months = withdrawal count; last date = first + (n−1) months.
+- **Example:** 100,000 PKR · 500/mo · 2% · first 2026-11-18 → 20y 4m · 244 withdrawals · total ≈ 121,740.97 · interest ≈ 21,740.97 · last Feb 18, 2047.
+- **Important Files:** `frontend/src/tools/calculators/savings-withdrawal/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Catalog undeveloped before coding. `calculation.test.ts` assert self-check passed. Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f967`). Lint/typecheck/build/Playwright omitted per user. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-18 — Add Bond Equivalent Yield Calculator
 - **Summary:** Shipped Bond Equivalent Yield Calculator on existing catalog slug `bond-equivalent-yield-calculator` (`BondEquivalentYieldCalculator`, catalog `6af46f0fa27d8d1d4e98ffd6`). Screenshot fields: bond price FX, face value FX, days to maturity, read-only BEY %. Investment-basis formula with 365-day year; discount/par only; not bank discount yield, YTM, or current yield. Independent Phase 2 FX; days and BEY % never convert. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Bond Calculator pillar preserved; subPillar null.
 - **Formula:** BEY (%) = ((Face Value − Bond Price) / Bond Price) × (365 / Days to Maturity) × 100.

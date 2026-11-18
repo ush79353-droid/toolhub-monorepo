@@ -2795,7 +2795,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RateOfReturnCalculator,
     })),
   ),
-  
+  RealEstateCommissionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/real-estate-commission/RealEstateCommissionCalculator'
+    ).then((mod) => ({
+      default: mod.RealEstateCommissionCalculator,
+    })),
+  ),
   RealRateOfReturnCalculator: lazyTool(() =>
     import('@/tools/calculators/real-rate-of-return/RealRateOfReturnCalculator').then((mod) => ({
       default: mod.RealRateOfReturnCalculator,
@@ -3225,6 +3231,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/savings-plan/SavingsPlanCalculator'
     ).then((mod) => ({
       default: mod.SavingsPlanCalculator,
+    })),
+  ),
+  SavingsWithdrawalCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/savings-withdrawal/SavingsWithdrawalCalculator'
+    ).then((mod) => ({
+      default: mod.SavingsWithdrawalCalculator,
     })),
   ),
   SharpeRatioCalculator: lazyTool(() =>
