@@ -284,6 +284,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MmToFootConverter',
   'MmToInchesConversion',
   'MmToKmConversion',
+  'MmToMConversion',
   'MillisecondsConverter',
   'MilToInchConversion',
   'MilToMmConversion',
@@ -791,6 +792,7 @@ if (isDirect) {
     !isApprovedComponentKey('MmToFootConverter') ||
     !isApprovedComponentKey('MmToInchesConversion') ||
     !isApprovedComponentKey('MmToKmConversion') ||
+    !isApprovedComponentKey('MmToMConversion') ||
     !isApprovedComponentKey('MillisecondsConverter') ||
     !isApprovedComponentKey('MilToInchConversion') ||
     !isApprovedComponentKey('MilToMmConversion') ||
