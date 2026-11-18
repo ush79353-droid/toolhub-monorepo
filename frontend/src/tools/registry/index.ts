@@ -3010,6 +3010,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CreditCardInterestCalculator,
     })),
   ),
+  CreditCardMinimumPaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/credit-card-minimum-payment/CreditCardMinimumPaymentCalculator'
+    ).then((mod) => ({
+      default: mod.CreditCardMinimumPaymentCalculator,
+    })),
+  ),
   DiscountedCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/discounted-cash-flow/DiscountedCashFlowCalculator'
