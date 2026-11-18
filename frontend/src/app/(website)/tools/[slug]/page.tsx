@@ -32,6 +32,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'annuity-calculator',
   'annuity-payout-calculator',
   'california-overtime-calculator',
+  'car-interest-calculator',
   'debt-avalanche-calculator',
   'debt-calculator',
   'debt-service-coverage-ratio-calculator-dscr',
