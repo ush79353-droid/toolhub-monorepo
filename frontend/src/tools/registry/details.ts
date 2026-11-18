@@ -448,6 +448,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SquareYardConverter: () => import('@/tools/calculators/square-yard-converter/detail'),
   StoneToKgConverter: () => import('@/tools/calculators/stone-to-kg/detail'),
   StoneToLbsConverter: () => import('@/tools/calculators/stone-to-lbs/detail'),
+  TbspToGramsConverter: () => import('@/tools/calculators/tbsp-to-grams/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),

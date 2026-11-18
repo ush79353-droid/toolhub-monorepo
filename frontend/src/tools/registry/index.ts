@@ -2023,6 +2023,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.StoneToLbsConverter,
     })),
   ),
+  TbspToGramsConverter: lazyTool(() =>
+    import('@/tools/calculators/tbsp-to-grams/TbspToGramsConverter').then((mod) => ({
+      default: mod.TbspToGramsConverter,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,

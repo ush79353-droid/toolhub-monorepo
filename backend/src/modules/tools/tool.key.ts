@@ -374,6 +374,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SquareYardConverter',
   'StoneToKgConverter',
   'StoneToLbsConverter',
+  'TbspToGramsConverter',
   'NmConverter',
   'NmToMConverter',
   'AdditionalFundsNeededCalculator',
@@ -923,6 +924,7 @@ if (isDirect) {
     !isApprovedComponentKey('SquareYardConverter') ||
     !isApprovedComponentKey('StoneToKgConverter') ||
     !isApprovedComponentKey('StoneToLbsConverter') ||
+    !isApprovedComponentKey('TbspToGramsConverter') ||
     !isApprovedComponentKey('NmConverter') ||
     !isApprovedComponentKey('NmToMConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||

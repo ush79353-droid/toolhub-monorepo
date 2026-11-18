@@ -369,6 +369,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'square-yard-converter',
   'stone-to-kg-converter',
   'stone-to-lbs-converter',
+  'tbsp-to-grams-converter-with-ingredient-weights',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',
