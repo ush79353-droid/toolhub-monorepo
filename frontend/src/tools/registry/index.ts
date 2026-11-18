@@ -324,6 +324,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OuncesToPoundsConverter,
     })),
   ),
+  OzToCcConverter: lazyTool(() =>
+    import('@/tools/calculators/oz-to-cc/OzToCcConverter').then((mod) => ({
+      default: mod.OzToCcConverter,
+    })),
+  ),
   OzToCupsConverter: lazyTool(() =>
     import('@/tools/calculators/oz-to-cups/OzToCupsConverter').then((mod) => ({
       default: mod.OzToCupsConverter,

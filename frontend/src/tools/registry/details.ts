@@ -66,6 +66,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   OunceToKgConverter: () => import('@/tools/calculators/ounce-to-kg/detail'),
   OuncesToGramsConverter: () => import('@/tools/calculators/ounces-to-grams/detail'),
   OuncesToPoundsConverter: () => import('@/tools/calculators/ounces-to-pounds/detail'),
+  OzToCcConverter: () => import('@/tools/calculators/oz-to-cc/detail'),
   OzToCupsConverter: () => import('@/tools/calculators/oz-to-cups/detail'),
   GallonCalculator: () => import('@/tools/calculators/gallon/detail'),
   QuartsToPoundsConverter: () => import('@/tools/calculators/quarts-to-pounds/detail'),

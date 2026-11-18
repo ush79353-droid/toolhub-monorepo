@@ -83,6 +83,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ounce-to-kg-converter',
   'ounces-to-grams-converter',
   'ounces-to-pounds-converter',
+  'oz-to-cc-converter',
   'oz-to-cups-converter',
   'gallon-calculator',
   'quarts-to-pounds-conversion',

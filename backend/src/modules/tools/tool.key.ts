@@ -60,6 +60,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'OunceToKgConverter',
   'OuncesToGramsConverter',
   'OuncesToPoundsConverter',
+  'OzToCcConverter',
   'OzToCupsConverter',
   'GallonCalculator',
   'QuartsToPoundsConverter',
@@ -578,6 +579,7 @@ if (isDirect) {
     !isApprovedComponentKey('OunceToKgConverter') ||
     !isApprovedComponentKey('OuncesToGramsConverter') ||
     !isApprovedComponentKey('OuncesToPoundsConverter') ||
+    !isApprovedComponentKey('OzToCcConverter') ||
     !isApprovedComponentKey('OzToCupsConverter') ||
     !isApprovedComponentKey('GallonCalculator') ||
     !isApprovedComponentKey('QuartsToPoundsConverter') ||
