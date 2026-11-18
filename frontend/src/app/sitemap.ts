@@ -599,6 +599,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fd-calculator-fixed-deposit-calculator',
   'free-cash-flow-calculator',
   'holding-period-return-calculator',
+  'hourly-to-annual-salary-calculator',
   'impermanent-loss-calculator',
   'information-ratio-calculator',
   'interest-calculator',

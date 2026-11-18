@@ -3237,6 +3237,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HoldingPeriodReturnCalculator,
     })),
   ),
+  HourlyToAnnualSalaryCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/hourly-to-annual-salary/HourlyToAnnualSalaryCalculator'
+    ).then((mod) => ({
+      default: mod.HourlyToAnnualSalaryCalculator,
+    })),
+  ),
   ImpermanentLossCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/impermanent-loss/ImpermanentLossCalculator'

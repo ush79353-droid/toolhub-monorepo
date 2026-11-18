@@ -138,6 +138,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'future-value-calculator',
   'hedge-ratio-calculator',
   'holding-period-return-calculator',
+  'hourly-to-annual-salary-calculator',
   'home-improvement-loan-calculator',
   'home-loan-emi-calculator',
   'home-loan-calculator',
