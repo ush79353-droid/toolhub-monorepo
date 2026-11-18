@@ -76,6 +76,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NewtonMeterCalculator',
   'TorrToAtmConverter',
   'MmhgToAtmConversion',
+  'MmToAtmConverter',
   'NmToFtLbsConverter',
   'CoordinatesConverter',
   'LatLongToUtmConverter',
@@ -579,6 +580,7 @@ if (isDirect) {
     !isApprovedComponentKey('NewtonMeterCalculator') ||
     !isApprovedComponentKey('TorrToAtmConverter') ||
     !isApprovedComponentKey('MmhgToAtmConversion') ||
+    !isApprovedComponentKey('MmToAtmConverter') ||
     !isApprovedComponentKey('NmToFtLbsConverter') ||
     !isApprovedComponentKey('CoordinatesConverter') ||
     !isApprovedComponentKey('LatLongToUtmConverter') ||

@@ -83,6 +83,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NewtonMeterCalculator: () => import('@/tools/calculators/newton-meter/detail'),
   TorrToAtmConverter: () => import('@/tools/calculators/torr-to-atm/detail'),
   MmhgToAtmConversion: () => import('@/tools/calculators/mmhg-to-atm/detail'),
+  MmToAtmConverter: () => import('@/tools/calculators/mm-to-atm/detail'),
   NmToFtLbsConverter: () => import('@/tools/calculators/nm-to-ft-lbs/detail'),
   CoordinatesConverter: () => import('@/tools/calculators/coordinates/detail'),
   LatLongToUtmConverter: () => import('@/tools/calculators/lat-long-to-utm/detail'),

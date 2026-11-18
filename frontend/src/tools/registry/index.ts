@@ -408,6 +408,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MmhgToAtmConversion,
     })),
   ),
+  MmToAtmConverter: lazyTool(() =>
+    import('@/tools/calculators/mm-to-atm/MmToAtmConverter').then((mod) => ({
+      default: mod.MmToAtmConverter,
+    })),
+  ),
   NmToFtLbsConverter: lazyTool(() =>
     import('@/tools/calculators/nm-to-ft-lbs/NmToFtLbsCalculator').then((mod) => ({
       default: mod.NmToFtLbsConverter,

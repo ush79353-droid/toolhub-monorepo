@@ -99,6 +99,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'newton-meter-calculator',
   'torr-to-atm-conversion',
   'mmhg-to-atm-conversion',
+  'mm-to-atm-converter',
   'nm-to-ft-lbs-converter',
   'coordinates-converter',
   'lat-long-to-utm-converter',
