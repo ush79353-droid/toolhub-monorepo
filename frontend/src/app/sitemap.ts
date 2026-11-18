@@ -83,6 +83,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pounds-to-grams-converter',
   'pounds-to-lbs-converter',
   'pounds-to-ounces-converter',
+  'pounds-to-stone-converter',
   'ounce-to-kg-converter',
   'ounces-to-grams-converter',
   'ounces-to-milliliters-converter',

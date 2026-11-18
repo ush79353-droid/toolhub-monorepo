@@ -62,6 +62,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PoundsToGramsConverter',
   'PoundsToLbsConverter',
   'PoundsToOuncesConverter',
+  'PoundsToStoneConverter',
   'OunceToKgConverter',
   'OuncesToGramsConverter',
   'OuncesToMillilitersConverter',
@@ -589,6 +590,7 @@ if (isDirect) {
     !isApprovedComponentKey('PoundsToGramsConverter') ||
     !isApprovedComponentKey('PoundsToLbsConverter') ||
     !isApprovedComponentKey('PoundsToOuncesConverter') ||
+    !isApprovedComponentKey('PoundsToStoneConverter') ||
     !isApprovedComponentKey('OunceToKgConverter') ||
     !isApprovedComponentKey('OuncesToGramsConverter') ||
     !isApprovedComponentKey('OuncesToMillilitersConverter') ||

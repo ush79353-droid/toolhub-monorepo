@@ -334,6 +334,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PoundsToOuncesConverter,
     })),
   ),
+  PoundsToStoneConverter: lazyTool(() =>
+    import('@/tools/calculators/pounds-to-stone/PoundsToStoneConverter').then((mod) => ({
+      default: mod.PoundsToStoneConverter,
+    })),
+  ),
   OunceToKgConverter: lazyTool(() =>
     import('@/tools/calculators/ounce-to-kg/OunceToKgConverter').then((mod) => ({
       default: mod.OunceToKgConverter,
