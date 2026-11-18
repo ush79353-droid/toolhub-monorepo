@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Quarts to Gallons Converter
+- **Summary:** Shipped Quarts to Gallons Converter on existing catalog slug quarts-to-gallons-converter (QuartsToGallonsConverter, catalog 6af46f17a27d8d1d4e990ad1). Bidirectional quarts↔gallons with US/UK (+ US dry qt) selectors via shared volume engine; default 4 US qt = 1 US gal; Other relevant units accordion (cups/pt/fl oz/mL/L/UK); guide/table/FAQs. Live pillar 6af451d0a27d8d1d4e98f9e1 preserved (task screenshot listed …d2…); subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-440b delivery for Conversion and Units quarts↔gallons volume converter.
+- **Important Files:** frontend/src/tools/calculators/quarts-to-gallons/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (0–10 qt; reverse; UK same-system; extras 16 cups/8 pt/128 fl oz; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, live pillar preserved). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add PSI to Inches of Water Conversion
 - **Summary:** Shipped PSI to Inches of Water Conversion on existing catalog slug psi-to-inches-of-water-conversion (PsiToInchesOfWaterConversion, catalog 6af46f17a27d8d1d4e990aea). Bidirectional psi↔inH₂O via shared Pascal-base engine with conventional inH₂O at 4 °C (PASCALS_PER_INH2O = 249.08891); empty default; signed numerical values; unit-only (not gauge↔absolute); not inHg; guide/table/FAQs document temperature convention. Pillar 6af451d0a27d8d1d4e98f9e4 preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-439b delivery for Conversion and Units PSI↔inH₂O pressure converter.
