@@ -441,6 +441,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SquareInchToSquareFootConverter: () =>
     import('@/tools/calculators/square-inch-to-square-foot/detail'),
   SquareMeterConverter: () => import('@/tools/calculators/square-meter-converter/detail'),
+  SquareMetersToSquareFeetConverter: () =>
+    import('@/tools/calculators/square-meters-to-square-feet/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
