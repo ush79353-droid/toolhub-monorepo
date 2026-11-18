@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import type { SupportedCurrency } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  getCurrencySymbol,
+  type SupportedCurrency,
+} from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import { moneyAmountToInputString, parseMoneyInput } from '@/tools/shared/money-value';
 import { CreditCardForm } from './CreditCardForm';
 import { CreditCardResults } from './CreditCardResults';
 import {
@@ -14,6 +27,10 @@ import {
   type CreditCardInput,
   type CreditCardResult,
 } from './types';
+import { validateCreditCardInput } from './validation';
+
+const FX_NOTE =
+  'Balance, fixed payment, additional payment, and the minimum-payment floor each have their own currency and are normalized into the balance currency before amortization. APR %, percentages, months, and years are never converted.';
 
 function inputsEqual(a: CreditCardInput, b: CreditCardInput): boolean {
   return (
@@ -33,10 +50,25 @@ function inputsEqual(a: CreditCardInput, b: CreditCardInput): boolean {
   );
 }
 
-/**
- * UI shell for the Credit Card Calculator.
- * Live validation, FX normalization, and engine wiring land in the calculations commit.
- */
+type MoneyCurrencyField =
+  | 'balanceCurrency'
+  | 'fixedPaymentCurrency'
+  | 'additionalPaymentCurrency'
+  | 'minPaymentFloorCurrency';
+
+type MoneyAmountField =
+  | 'balance'
+  | 'fixedPayment'
+  | 'additionalPayment'
+  | 'minPaymentFloor';
+
+const CURRENCY_AMOUNT: Record<MoneyCurrencyField, MoneyAmountField> = {
+  balanceCurrency: 'balance',
+  fixedPaymentCurrency: 'fixedPayment',
+  additionalPaymentCurrency: 'additionalPayment',
+  minPaymentFloorCurrency: 'minPaymentFloor',
+};
+
 export function CreditCardCalculator({
   metadata,
   className = '',
@@ -44,11 +76,16 @@ export function CreditCardCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<CreditCardInput>(() => defaults);
   const [input, setInput] = React.useState<CreditCardInput>(() => defaults);
-  const [errors] = React.useState<CreditCardFieldErrors>({});
-  const [result] = React.useState<CreditCardResult | null>(null);
+  const [errors, setErrors] = React.useState<CreditCardFieldErrors>({});
+  const [result, setResult] = React.useState<CreditCardResult | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -58,30 +95,115 @@ export function CreditCardCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  React.useEffect(() => {
+    const validation = validateCreditCardInput(defaults, rates);
+    if (validation.isValid && validation.result) {
+      setResult(validation.result);
+      setErrors({});
+    }
+    // Initial sample only.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const apply = (next: CreditCardInput) => {
+    const validation = validateCreditCardInput(next, rates);
     setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    setConversionError(null);
   };
 
-  const handleCurrency =
-    (field: keyof CreditCardInput) => (next: SupportedCurrency) => {
-      if (input[field] === next) return;
-      setInput({ ...input, [field]: next });
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const handleMoneyCurrencyChange =
+    (currencyField: MoneyCurrencyField) => (next: SupportedCurrency) => {
+      if (input[currencyField] === next) return;
+      const amountField = CURRENCY_AMOUNT[currencyField];
+      const amount = parseMoneyInput(input[amountField]);
+      const hasAmount = Number.isFinite(amount);
+
+      // Changing balance currency also requires other money fields to convert into it later.
+      if (currencyField === 'balanceCurrency') {
+        const others: SupportedCurrency[] = [
+          input.fixedPaymentCurrency,
+          input.additionalPaymentCurrency,
+          input.minPaymentFloorCurrency,
+        ];
+        for (const other of others) {
+          if (other !== next && !canConvertPair(other, next)) {
+            setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+            return;
+          }
+        }
+      } else if (
+        next !== input.balanceCurrency &&
+        !canConvertPair(next, input.balanceCurrency)
+      ) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+
+      if (!hasAmount) {
+        apply({ ...input, [currencyField]: next });
+        return;
+      }
+
+      if (!canConvertPair(input[currencyField], next)) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+
+      const converted = convertCurrency({
+        amount,
+        from: input[currencyField],
+        to: next,
+        rates: rates.rates,
+      });
+      if (!converted.ok) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+
+      apply({
+        ...input,
+        [currencyField]: next,
+        [amountField]: moneyAmountToInputString(converted.amount),
+      });
     };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateCreditCardInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const balanceSymbol = getCurrencySymbol(input.balanceCurrency);
   const summary = result
-    ? [`${metadata.title} — Omega Calculators`, result.summary, result.breakdown].join(
-        '\n'
-      )
+    ? [
+        `${metadata.title} — Omega Calculators`,
+        result.summary,
+        result.breakdown,
+        `Balance currency: ${balanceSymbol}`,
+        currencyNote,
+      ].join('\n')
     : '';
 
   const handleShare = async () => {
@@ -113,8 +235,7 @@ export function CreditCardCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Balance and payments support independent currencies. APR and durations
-            are never converted.
+            {currencyNote}
           </p>
         </div>
         {headerActions ? (
@@ -126,13 +247,17 @@ export function CreditCardCalculator({
         <CreditCardForm
           input={input}
           errors={errors}
-          conversionError={null}
-          ratesWarning={null}
+          conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
           onChange={apply}
-          onBalanceCurrencyChange={handleCurrency('balanceCurrency')}
-          onFixedCurrencyChange={handleCurrency('fixedPaymentCurrency')}
-          onAdditionalCurrencyChange={handleCurrency('additionalPaymentCurrency')}
-          onFloorCurrencyChange={handleCurrency('minPaymentFloorCurrency')}
+          onBalanceCurrencyChange={handleMoneyCurrencyChange('balanceCurrency')}
+          onFixedCurrencyChange={handleMoneyCurrencyChange('fixedPaymentCurrency')}
+          onAdditionalCurrencyChange={handleMoneyCurrencyChange(
+            'additionalPaymentCurrency'
+          )}
+          onFloorCurrencyChange={handleMoneyCurrencyChange(
+            'minPaymentFloorCurrency'
+          )}
         />
 
         <CreditCardResults
