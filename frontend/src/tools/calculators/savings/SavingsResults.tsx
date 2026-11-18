@@ -1,6 +1,8 @@
 'use client';
 
+import { ChevronDown } from 'lucide-react';
 import { formatCurrencyValue } from '@/tools/shared/currency';
+import { SavingsBreakdownChart } from './SavingsBreakdownChart';
 import type { SavingsDraft, SavingsResult } from './types';
 
 interface SavingsResultsProps {
@@ -18,7 +20,6 @@ function formatPct(value: number): string {
   })}%`;
 }
 
-/** UI shell for narrative savings details + pie placeholder (chart filled in calc commit). */
 export function SavingsResults({
   draft,
   result,
@@ -74,20 +75,13 @@ export function SavingsResults({
           onClick={() => onBreakdownOpen(!breakdownOpen)}
         >
           Final balance breakdown as percentages
-          <span className="text-xs font-normal text-muted-foreground">
-            {breakdownOpen ? 'Hide' : 'Show'}
-          </span>
+          <ChevronDown
+            className={`h-4 w-4 shrink-0 transition-transform ${breakdownOpen ? 'rotate-180' : ''}`}
+          />
         </button>
         {breakdownOpen ? (
           <div className="border-t border-border px-3.5 py-3.5">
-            <div
-              className="flex min-h-[10rem] items-center justify-center rounded-lg border border-dashed border-border bg-white/70 text-xs text-muted-foreground"
-              role="img"
-              aria-label="Final balance breakdown chart placeholder"
-            >
-              Pie chart: initial {result.initialShare.toFixed(1)}% · deposits{' '}
-              {result.depositsShare.toFixed(1)}% · interest {result.interestShare.toFixed(1)}%
-            </div>
+            <SavingsBreakdownChart result={result} currency={currency} />
             <p className="mt-2 text-center text-xs italic text-muted-foreground">
               yearly savings pie chart
             </p>

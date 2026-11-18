@@ -5,8 +5,17 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import type { SupportedCurrency } from '@/tools/shared/currency';
-import { formatCurrencyValue } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { SavingsForm } from './SavingsForm';
 import { SavingsResults } from './SavingsResults';
 import {
@@ -16,6 +25,9 @@ import {
   type SavingsResult,
 } from './types';
 import { validateSavingsDraft } from './validation';
+
+const FX_NOTE =
+  'Initial savings and additional deposits each have their own currency. Changing a selector converts that amount using stored rates; mixed currencies are normalized into the initial-savings currency before calculation. Rates, APY, and time periods are never converted.';
 
 function draftsEqual(a: SavingsDraft, b: SavingsDraft): boolean {
   return (
@@ -38,11 +50,7 @@ function draftsEqual(a: SavingsDraft, b: SavingsDraft): boolean {
   );
 }
 
-function summaryText(
-  title: string,
-  draft: SavingsDraft,
-  result: SavingsResult
-): string {
+function summaryText(title: string, draft: SavingsDraft, result: SavingsResult, note: string): string {
   return [
     `${title} — Omega Calculators`,
     `Initial savings: ${draft.initialSavings} ${draft.initialCurrency}`,
@@ -54,6 +62,7 @@ function summaryText(
     `Final balance: ${formatCurrencyValue(result.finalBalance, result.resultCurrency)}`,
     `Total deposits: ${formatCurrencyValue(result.totalAdditionalDeposits, result.resultCurrency)}`,
     `Total interest: ${formatCurrencyValue(result.totalInterest, result.resultCurrency)}`,
+    note,
   ].join('\n');
 }
 
@@ -64,6 +73,8 @@ export function SavingsCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultDraft();
   const [baseline, setBaseline] = React.useState<SavingsDraft>(() => defaults);
   const [draft, setDraft] = React.useState<SavingsDraft>(() => defaults);
@@ -76,13 +87,14 @@ export function SavingsCalculator({
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
   React.useEffect(() => {
-    const validation = validateSavingsDraft(defaults);
+    const validation = validateSavingsDraft(defaults, rates);
     setErrors(validation.errors);
     setResult(validation.result);
     // Initial defaults only.
@@ -90,24 +102,72 @@ export function SavingsCalculator({
   }, []);
 
   const apply = (next: SavingsDraft) => {
-    const validation = validateSavingsDraft(next);
+    setConversionError(null);
+    const validation = validateSavingsDraft(next, rates);
     setDraft(next);
     setErrors(validation.errors);
     setResult(validation.result);
   };
 
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; value: string } | { ok: false } => {
+    if (from === to) return { ok: true, value: raw };
+    if (!rates.available) return { ok: false };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, value: raw };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, value: moneyAmountToInputString(converted.amount) };
+  };
+
   const handleInitialCurrencyChange = (currency: SupportedCurrency) => {
-    // FX conversion wired in calculations commit; UI commit syncs denomination labels.
-    apply({ ...draft, initialCurrency: currency, resultCurrency: currency });
+    if (currency === draft.initialCurrency) return;
+    const converted = convertFieldAmount(
+      draft.initialSavings,
+      draft.initialCurrency,
+      currency
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...draft,
+      initialSavings: converted.value,
+      initialCurrency: currency,
+      resultCurrency: currency,
+    });
   };
 
   const handleDepositCurrencyChange = (currency: SupportedCurrency) => {
-    apply({ ...draft, depositCurrency: currency });
+    if (currency === draft.depositCurrency) return;
+    const converted = convertFieldAmount(
+      draft.depositAmount,
+      draft.depositCurrency,
+      currency
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...draft,
+      depositAmount: converted.value,
+      depositCurrency: currency,
+    });
   };
 
   const handleReset = () => {
     const fresh = createDefaultDraft();
-    const validation = validateSavingsDraft(fresh);
+    const validation = validateSavingsDraft(fresh, rates);
     setDraft(fresh);
     setBaseline(fresh);
     setErrors(validation.errors);
@@ -118,10 +178,12 @@ export function SavingsCalculator({
     setCopied(false);
     setShared(false);
     setFeedback(null);
+    setConversionError(null);
   };
 
   const dirty = !draftsEqual(draft, baseline);
-  const summary = result ? summaryText(metadata.title, draft, result) : '';
+  const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const summary = result ? summaryText(metadata.title, draft, result, currencyNote) : '';
 
   const handleShare = async () => {
     if (!summary) return;
@@ -132,7 +194,7 @@ export function SavingsCalculator({
         window.setTimeout(() => setShared(false), 2000);
         return;
       } catch {
-        // fall through to clipboard
+        // fall through
       }
     }
     if (await copyTextToClipboard(summary)) {
@@ -151,15 +213,21 @@ export function SavingsCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">
-            Project compound savings with recurring deposits. Currency conversion arrives with the
-            calculation engine.
-          </p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
+        {conversionError ? (
+          <p className="text-xs text-rose-600" role="alert">
+            {conversionError}
+          </p>
+        ) : null}
+        {ratesStatus.warning && !conversionError ? (
+          <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+        ) : null}
+
         <SavingsForm
           draft={draft}
           errors={errors}
