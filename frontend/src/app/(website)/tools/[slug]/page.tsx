@@ -195,6 +195,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'rent-split-calculator',
   'rent-vs-buy-calculator',
   'realtor-commission-calculator-with-vat',
+  'rental-commission-calculator',
   'profitability-index-calculator',
   'revenue-per-employee-calculator',
   'roas-calculator',

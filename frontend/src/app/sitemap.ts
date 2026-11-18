@@ -547,6 +547,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'real-estate-commission-calculator',
   'real-rate-of-return-calculator',
   'realtor-commission-calculator-with-vat',
+  'rental-commission-calculator',
   'bitcoin-etf-calculator',
   'biweekly-mortgage-calculator',
   'bi-weekly-mortgage-payment-calculator',

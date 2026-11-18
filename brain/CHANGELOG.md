@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-18 — Add Rental Commission Calculator
+- **Summary:** Shipped Rental Commission Calculator on existing catalog slug `rental-commission-calculator` (`RentalCommissionCalculator`, catalog `6af46f0fa27d8d1d4e98ffe4`). Screenshot sections: Rental Details (annual/monthly rent FX sync); Commission (½ / 1 / 1½ month outputs FX); Custom commission (percent default 15%, amount FX). Preset fees use exact month fractions; custom = annual × % / 100. Independent Phase 2 FX; percent never converted. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Commission Calculator pillar preserved; subPillar null.
+- **Formulas:** Annual = Monthly × 12; Monthly = Annual ÷ 12; Half = Monthly × 0.5; One = Monthly; 1½ = Monthly × 1.5; Custom = Annual × % / 100.
+- **Example:** monthly 10,000 → half 5,000 · one 10,000 · 1½ 15,000; annual 120,000 × 15% → custom 18,000.
+- **Important Files:** `frontend/src/tools/calculators/rental-commission/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Catalog undeveloped before coding; distinct from Commission / Real Estate / Realtor VAT peers. Assert self-check in `calculation.test.ts` (label % ≠ engine fractions). Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f968`). Lint/typecheck/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-18 — Add Real Estate Commission Calculator
 - **Summary:** Shipped Real Estate Commission Calculator on existing catalog slug `real-estate-commission-calculator` (`RealEstateCommissionCalculator`, catalog `6af46f0fa27d8d1d4e98ffe2`). Screenshot fields: house price FX, commission %, commission amount FX, owner receives FX; how-to-use help; Share/Reload/Clear/feedback. Formulas: Commission = Price × Rate / 100; Owner = Price − Commission. Independent Phase 2 FX; percent never converted; no taxes/closing costs. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Three local commits; no push. Left Commission / Rental / Realtor VAT / Sales / True Cost tools untouched.
 - **Example:** 10,000,000 PKR · 2% → commission 200,000; owner 9,800,000.
