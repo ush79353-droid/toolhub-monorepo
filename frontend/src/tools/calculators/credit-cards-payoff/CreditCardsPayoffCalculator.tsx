@@ -12,6 +12,7 @@ import {
   type CreditCardsPayoffInput,
   type CreditCardsPayoffResult,
 } from './types';
+import { validateCreditCardsPayoffInput } from './validation';
 
 const USD_NOTE =
   'Amounts are fixed USD. Monthly interest = balance × (APR / 100 / 12). Avalanche pays minimums first, then surplus to the highest APR.';
@@ -37,10 +38,6 @@ function inputsEqual(
   return true;
 }
 
-/**
- * UI shell for Credit Cards Payoff Calculator.
- * Avalanche schedule wiring lands in the engine commit.
- */
 export function CreditCardsPayoffCalculator({
   metadata,
   className = '',
@@ -49,14 +46,19 @@ export function CreditCardsPayoffCalculator({
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
   const defaults = createDefaultInput();
+  const initial = validateCreditCardsPayoffInput(defaults);
   const [baseline, setBaseline] = React.useState<CreditCardsPayoffInput>(
     () => defaults
   );
   const [input, setInput] = React.useState<CreditCardsPayoffInput>(
     () => defaults
   );
-  const [errors] = React.useState<CreditCardsPayoffFieldErrors>({});
-  const [result] = React.useState<CreditCardsPayoffResult | null>(null);
+  const [errors, setErrors] = React.useState<CreditCardsPayoffFieldErrors>(
+    () => initial.errors
+  );
+  const [result, setResult] = React.useState<CreditCardsPayoffResult | null>(
+    () => initial.result
+  );
   const [showSchedule, setShowSchedule] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
@@ -69,16 +71,24 @@ export function CreditCardsPayoffCalculator({
 
   const applyDraft = (next: CreditCardsPayoffInput) => {
     setInput(next);
+    const partial = validateCreditCardsPayoffInput(next);
+    setErrors(partial.errors);
   };
 
   const handleCalculate = () => {
-    // Engine commit wires validation + avalanche schedule.
+    const validation = validateCreditCardsPayoffInput(input);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    if (!validation.isValid) setShowSchedule(false);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateCreditCardsPayoffInput(fresh);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setShowSchedule(false);
     setCopied(false);
     setShared(false);
@@ -93,6 +103,9 @@ export function CreditCardsPayoffCalculator({
         `Total interest: $${result.formattedTotalInterest}`,
         `Total paid: $${result.formattedTotalPaid}`,
         `Order: ${result.formattedOptimalOrder}`,
+        ...result.cardPayoffs.map(
+          (c) => `${c.name} payoff: month ${c.payoffMonth}`
+        ),
         USD_NOTE,
       ].join('\n')
     : '';

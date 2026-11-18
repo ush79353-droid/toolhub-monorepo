@@ -40,8 +40,8 @@ export function CreditCardsPayoffGuideArticle() {
         <p>Budget $500 · Card 1 $4,600 @ 18.99% / min $100</p>
         <p>Card 2 $3,900 @ 19.99% / min $90 · Card 3 $6,000 @ 15.99% / min $120</p>
         <p>
-          Avalanche order starts with Card 2 (highest APR), then Card 1, then Card 3. Surplus
-          after minimums goes to the current focus card each month.
+          Order Card 2 → Card 1 → Card 3 · duration 3 years 2 months · interest ≈ $4,471.20 ·
+          total paid ≈ $18,971.20 · payoffs months 16 / 28 / 38
         </p>
       </div>
 
