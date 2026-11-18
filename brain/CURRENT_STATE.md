@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-18** (Savings Goal Calculator live at `/tools/savings-goal-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-18** (Savings Plan Calculator live at `/tools/savings-plan-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Savings Plan Calculator (`/tools/savings-plan-calculator`):** Live client-side principal-only savings schedule (`componentKey: 'SavingsPlanCalculator'`, catalog `6af46f0fa27d8d1d4e98ffde`). Screenshot fields: plan frequency (weekly default), planning periods (52), mode fixed/growing deposit vs given final balance, put-aside FX (100 PKR), repeatedly increased by FX (0 PKR). Formula Total = n×A + G×n×(n−1)/2; target mode solves A = (T − G×n×(n−1)/2)/n. No interest. Bar chart + period balances; chart final matches closed form. Independent Phase 2 FX; periods never convert. Share/Reload/Clear/feedback. Activated. Example: weekly · 52 · 100 · G=0 → 5,200 PKR.
 - **Private Savings Calculator (`/tools/private-savings-calculator`):** Live client-side macroeconomic savings tool (`componentKey: 'PrivateSavingsCalculator'`, catalog `6af46f0fa27d8d1d4e98ffdc`). Screenshot fields: total income FX, taxes paid to government FX, consumption FX, include-additional-parameters checkbox (unchecked; no extra fields — specs undefined), private savings FX output. Formula Sp = Y − T − C; zero and negative (dissaving) allowed. Independent Phase 2 FX; normalize Y/T/C into result currency. Share/Reload/Clear/feedback. Activated. Example: 100,000 − 15,000 − 70,000 = 15,000 PKR; 100,000 − 15,000 − 95,000 = −10,000 (dissaving).
 - **Savings Goal Calculator (`/tools/savings-goal-calculator`):** Live client-side required-deposit solver (`componentKey: 'SavingsGoalCalculator'`, catalog `6af46f0fa27d8d1d4e98ffdd`). Screenshot sections: Saving objectives (goal FX default 1,000,000 PKR, reach at age / in years, ages 32→65, starting savings FX); Saving conditions (4% rate, monthly compounding, inflation %); Periodic contribution (monthly default, end of period, annual XOR periodic growth). Results: required periodic contribution, total contributions, total return. Formulas: Nominal Target = Goal×(1+f)^years; i=(1+r/m)^(m/k)−1; growing annuity solve for PMT; Total Return = Final−Starting−Contributions. Independent Phase 2 FX; ages/rates/frequencies never converted. Share/Reload/Clear/feedback. Activated. Example: 1,000,000 / 32→65 / 4% monthly / monthly end → ≈ 1,218.67/mo; contributions ≈ 482,594.94; return ≈ 517,405.06.
 - **Bond Calculator (`/tools/bond-calculator`):** Live client-side coupon-date bond solver (`componentKey: 'BondCalculator'`, catalog `6af46f0fa27d8d1d4e98ffd3`). Leave exactly one of Price/Face/Yield/Maturity/Annual coupon blank; frequency annually–monthly; annual coupon % or USD amount. Fixed USD. Formula P=Σ C/(1+y/m)^t + F/(1+y/m)^N. Activated. Example: 100 / 6% / 3y / 5% / annually → $97.3270.

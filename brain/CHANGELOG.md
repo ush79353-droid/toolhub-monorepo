@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-18 — Add Savings Plan Calculator
+- **Summary:** Shipped Savings Plan Calculator on existing catalog slug `savings-plan-calculator` (`SavingsPlanCalculator`, catalog `6af46f0fa27d8d1d4e98ffde`). Screenshot-first: plan frequency (weekly default), duration, fixed/growing deposit vs given final balance, put-aside FX, repeatedly-increased-by FX. Principal-only arithmetic series; no invented interest. Responsive principal bar chart + period balances table. Independent Phase 2 FX; durations never convert. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Savings Calculator pillar preserved; subPillar null.
+- **Formulas:** Total = n × A + G × n × (n − 1) / 2; target mode A = (T − G × n × (n − 1) / 2) / n. Chart final balance matches closed form.
+- **Example:** weekly · 52 · A=100 · G=0 → 5,200 PKR; G=10 → 18,460 PKR.
+- **Important Files:** `frontend/src/tools/calculators/savings-plan/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Catalog undeveloped before coding. `calculation.test.ts` assert self-check passed. Mongo activated (`isDeveloped`/`isActive`/`indexable` true, embed on, pillar `6af451bda27d8d1d4e98f967`). Lint/typecheck/build/Playwright omitted per user. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-18 — Add Private Savings Calculator
 - **Summary:** Shipped Private Savings Calculator on existing catalog slug `private-savings-calculator` (`PrivateSavingsCalculator`, catalog `6af46f0fa27d8d1d4e98ffdc`). Screenshot fields: total income FX, taxes FX, consumption FX, include-additional-parameters checkbox (no invented extra fields), private savings FX. Formula Sp = Y − T − C; zero/negative (dissaving) supported. Independent Phase 2 FX normalize into result currency. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Savings Calculator pillar preserved; subPillar null.
 - **Why:** TOOL-412 delivery for Finance & Business private-savings identity calculator.
