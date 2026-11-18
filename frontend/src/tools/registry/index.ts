@@ -3384,6 +3384,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SalaryCalculator,
     })),
   ),
+  SalaryInflationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/salary-inflation/SalaryInflationCalculator'
+    ).then((mod) => ({
+      default: mod.SalaryInflationCalculator,
+    })),
+  ),
   SavingsCalculator: lazyTool(() =>
     import('@/tools/calculators/savings/SavingsCalculator').then((mod) => ({
       default: mod.SavingsCalculator,

@@ -99,6 +99,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'rent-or-buy-calculator',
   'salary-calculator',
   'salary-calculator-with-overtime',
+  'salary-inflation-calculator',
   'second-stimulus-check-calculator-900-billion-bill',
   'third-stimulus-check-calculator-american-rescue-plan',
   'square-kilometers-to-acres-conversion',

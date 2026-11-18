@@ -881,6 +881,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   JensensAlphaCalculator: () =>
     import('@/tools/calculators/jensens-alpha/detail'),
   SalaryCalculator: () => import('@/tools/calculators/salary/detail'),
+  SalaryInflationCalculator: () =>
+    import('@/tools/calculators/salary-inflation/detail'),
   SavingsCalculator: () => import('@/tools/calculators/savings/detail'),
   SavingsGoalCalculator: () =>
     import('@/tools/calculators/savings-goal/detail'),

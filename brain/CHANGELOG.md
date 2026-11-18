@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Salary Inflation Calculator
+- **Summary:** Shipped Salary Inflation Calculator on existing catalog slug `salary-inflation-calculator` (`SalaryInflationCalculator`, catalog `6af46f0fa27d8d1d4e98fffc`). Screenshot-first (ADR-023): Reference salary FX; Inflation %; Inflation-adjusted salary FX; Current salary FX; Gain/Loss FX. Single-period only (no multi-year compounding). Share/Reload/Clear/feedback. Independent Phase 2 FX; normalize current into reference currency before comparison; inflation % never converts. FutureSalaryCalculator patterns reused lightly (sibling untouched). Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar null.
+- **Formulas:** Adjusted = Reference × (1 + Inflation/100); Gain/Loss = Current − Adjusted. Inflation > −100%; salaries ≥ 0; full precision with display rounding only.
+- **Example:** 100,000 PKR · 5% · current 110,000 → adjusted 105,000 · gain 5,000; flat 100,000 vs 10% → adjusted 110,000 · loss −10,000.
+- **Important Files:** `frontend/src/tools/calculators/salary-inflation/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Salary Calculator
 - **Summary:** Shipped Salary Calculator on existing catalog slug `salary-calculator` (`SalaryCalculator`, catalog `6af46f0fa27d8d1d4e98fff9`). Screenshot-first (ADR-023): I get paid dropdown default Per hour (only verified mode); Pay per hour FX (label adapts); I work hours/day default 8; days/week default 5; Holidays/year 8; Paid vacation/year 15 → Hourly/Daily/Weekly/Monthly/Annual FX. Holidays and paid vacation are not subtracted from annual paid salary; 52-week convention disclosed. Share/Reload/Clear/feedback. Independent Phase 2 FX; hours/days/leave never convert. SalaryWithOvertimeCalculator and HourlyToAnnualSalaryCalculator siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar null.
 - **Formulas:** Weekly hours = Hours/day × Days/week; Weekly = Hourly × Weekly hours; Annual scheduled days = Days/week × 52; Annual = Hourly × Hours/day × Annual scheduled days; Monthly = Annual ÷ 12; Daily = Hourly × Hours/day. Full precision with display rounding only.
