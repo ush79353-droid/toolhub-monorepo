@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Pressure Unit Conversion
+- **Summary:** Shipped Pressure Unit Conversion on existing catalog slug pressure-unit-conversion (PressureUnitConversion, catalog 6af46f17a27d8d1d4e990ba2). Multi-field bar/psi/atm/Pa plus expandable kPa/MPa/hPa/mbar/mmHg/Torr/inHg/kgf·cm⁻² via shared Pascal-base engine; default 1 bar; signed values allowed; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-436b delivery for Conversion and Units universal pressure converter.
+- **Important Files:** frontend/src/tools/calculators/pressure-unit-conversion/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (bar/atm/MPa/kPa/psi; Torr≠mmHg; negatives; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Pounds to Stone Converter
 - **Summary:** Shipped Pounds to Stone Converter on existing catalog slug pounds-to-stone-converter (PoundsToStoneConverter, catalog 6af46f17a27d8d1d4e990b6a). Bidirectional lb↔st with exact 14 lb per st; default 14 lb; secondary mixed stone+pounds; rejects negative mass; guide/charts/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-435b delivery for Conversion and Units pounds↔stone mass converter.
