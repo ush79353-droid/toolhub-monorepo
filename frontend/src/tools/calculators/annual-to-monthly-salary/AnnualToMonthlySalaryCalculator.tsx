@@ -5,8 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
-import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import {
   AnnualToMonthlySalaryForm,
   type OutputCurrencyKey,
@@ -17,6 +29,7 @@ import {
   type AnnualToMonthlySalaryInput,
   type AnnualToMonthlySalaryResult,
 } from './types';
+import { validateAnnualToMonthlySalaryInput } from './validation';
 
 const FX_NOTE =
   'Annual salary and each derived wage have their own currency. Salary math runs in the annual salary currency; other wages convert for display. Hours per week are never converted. Missing rates block conversion; stale rates warn but still convert.';
@@ -46,6 +59,7 @@ export function AnnualToMonthlySalaryCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<AnnualToMonthlySalaryInput>(
@@ -72,15 +86,57 @@ export function AnnualToMonthlySalaryCalculator({
   }, []);
 
   const apply = (next: AnnualToMonthlySalaryInput) => {
+    const validation = validateAnnualToMonthlySalaryInput(next, rates);
     setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handleAnnualSalaryCurrencyChange = (next: SupportedCurrency) => {
     if (input.annualSalaryCurrency === next) return;
-    apply({ ...input, annualSalaryCurrency: next });
+    const converted = convertFieldAmount(
+      input.annualSalary,
+      input.annualSalaryCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      annualSalaryCurrency: next,
+      annualSalary: converted.text,
+    });
   };
 
   const handleOutputCurrencyChange = (
@@ -88,15 +144,20 @@ export function AnnualToMonthlySalaryCalculator({
     next: SupportedCurrency
   ) => {
     if (input[key] === next) return;
+    if (!canConvertPair(input.annualSalaryCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, [key]: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateAnnualToMonthlySalaryInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -106,7 +167,7 @@ export function AnnualToMonthlySalaryCalculator({
   const dirty = !inputsEqual(input, baseline);
   const currencyNote = ratesStatus.available
     ? FX_NOTE
-    : 'Currency conversion rates are unavailable. Amounts stay in the selected labels until rates load.';
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const summary = result
     ? [
