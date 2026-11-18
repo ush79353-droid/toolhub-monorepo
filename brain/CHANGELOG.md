@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-18 — Add Credit Card Interest Calculator
+- **Summary:** Shipped Credit Card Interest Calculator on existing catalog slug `credit-card-interest-calculator` (`CreditCardInterestCalculator`, catalog `6af46f0fa27d8d1d4e98ffe8`). Screenshot sections: Specifications (balance FX, APR %, fixed/minimum radios, monthly fixed FX, additional FX); collapsible Minimum payment & compounding (min % default 3, floor FX default 25, flat or % + interest radios, Monthly compounding). Results: years/months, total paid, total interest, summary text. Reuses verified Credit Card Calculator payoff patterns in a new `credit-card-interest/` module (sibling left untouched). Independent Phase 2 FX. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Pillar `6af451bda27d8d1d4e98f969` preserved; subPillar null.
+- **Formulas:** Monthly interest (default) = Balance × APR / 1200; payment = fixed+additional or max(floor, %×balance [+ interest])+additional; New Balance = Balance + Interest − capped payment; never-pays-off when payment ≤ interest.
+- **Example:** 2,000 PKR · 18% · fixed 100 · monthly → 2y 0m; total ≈ 2,395.65; interest ≈ 395.65.
+- **Important Files:** `frontend/src/tools/calculators/credit-card-interest/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Distinct undeveloped catalog row from Credit Card Calculator (`6af46f0fa27d8d1d4e98ffe7`). Assert self-check written in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-18 — Repair Simple Savings Calculator registration
 - **Summary:** Completed integration for existing Simple Savings Calculator module on catalog slug `simple-savings-calculator` (`SimpleSavingsCalculator`, catalog `6af46f0fa27d8d1d4e98ffe0`). Registered keys/lazy/details/`tool.key`, sitemap, and both `CURRENCY_CONVERSION_SLUGS` lists. Reuses verified Savings Calculator engine (`simple-savings/calculation.ts` → `savings/calculation.ts`). Independent Phase 2 FX already present in module; slug wiring completed. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Savings Calculator pillar preserved; subPillar null. No formula rewrite.
 - **Important Files:** `frontend/src/tools/registry/{keys,index,details}.ts`, `frontend/src/app/sitemap.ts`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `backend/src/modules/tools/tool.key.ts`, brain docs.

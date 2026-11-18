@@ -578,6 +578,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'continuous-compound-interest-calculator',
   'coupon-payment-calculator',
   'credit-card-calculator',
+  'credit-card-interest-calculator',
   'effective-annual-yield-calculator',
   'effective-interest-rate-calculator',
   'expected-utility-calculator',

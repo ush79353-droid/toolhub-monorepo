@@ -774,6 +774,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/coupon-payment/detail'),
   CreditCardCalculator: () =>
     import('@/tools/calculators/credit-card/detail'),
+  CreditCardInterestCalculator: () =>
+    import('@/tools/calculators/credit-card-interest/detail'),
   DiscountedCashFlowCalculator: () =>
     import('@/tools/calculators/discounted-cash-flow/detail'),
   DiscountRateCalculator: () =>
