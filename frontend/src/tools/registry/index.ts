@@ -2053,6 +2053,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WeeksToYearsConverter,
     })),
   ),
+  YardConversionCalculator: lazyTool(() =>
+    import('@/tools/calculators/yard-conversion/YardConversionCalculator').then((mod) => ({
+      default: mod.YardConversionCalculator,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,

@@ -375,6 +375,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'tsp-to-ml-converter',
   'weeks-to-months-calculator',
   'weeks-to-years-converter',
+  'yard-conversion',
   'nm-converter',
   'nm-to-m-converter',
   'kilometer-to-meter-converter',

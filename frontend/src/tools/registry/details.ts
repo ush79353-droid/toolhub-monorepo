@@ -454,6 +454,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TspToMlConverter: () => import('@/tools/calculators/tsp-to-ml/detail'),
   WeeksToMonthsCalculator: () => import('@/tools/calculators/weeks-to-months/detail'),
   WeeksToYearsConverter: () => import('@/tools/calculators/weeks-to-years/detail'),
+  YardConversionCalculator: () => import('@/tools/calculators/yard-conversion/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
