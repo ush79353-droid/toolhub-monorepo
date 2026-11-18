@@ -45,4 +45,23 @@ import {
   assert.equal(r, null);
 }
 
+{
+  // Label percentages are display-only; engine uses exact month fractions.
+  const monthly = 10_000;
+  const annual = 120_000;
+  const r = calculateRentalCommission({
+    annualRent: annual,
+    monthlyRent: monthly,
+    customPercent: 12.5,
+  });
+  assert.ok(r);
+  assert.equal(r.halfMonth, monthly * 0.5);
+  assert.notEqual(r.halfMonth, annual * 0.0417);
+  assert.equal(r.oneMonth, monthly);
+  assert.notEqual(r.oneMonth, annual * 0.0833);
+  assert.equal(r.oneHalfMonth, monthly * 1.5);
+  assert.equal(r.oneHalfMonth, annual * 0.125);
+  assert.equal(r.customAmount, annual * 0.125);
+}
+
 console.log('rental-commission/calculation.test.ts: ok');

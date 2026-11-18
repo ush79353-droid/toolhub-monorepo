@@ -13,6 +13,7 @@ import {
   useCurrencyRatesStatus,
 } from '@/tools/shared/CurrencyRatesProvider';
 import {
+  CURRENCY_CONVERSION_STALE_NOTE,
   isCurrencyRateUsable,
 } from '@/tools/shared/currency-rates';
 import {
@@ -198,7 +199,12 @@ export function RentalCommissionCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
-  const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const currencyNote = !ratesStatus.available
+    ? CURRENCY_CONVERSION_UNAVAILABLE_NOTE
+    : ratesStatus.isStale
+      ? `${FX_NOTE} ${CURRENCY_CONVERSION_STALE_NOTE}`
+      : FX_NOTE;
+  const ratesWarning = ratesStatus.warning;
 
   const summary = result
     ? [
@@ -252,6 +258,7 @@ export function RentalCommissionCalculator({
           errors={errors}
           result={result}
           conversionError={conversionError}
+          ratesWarning={ratesWarning}
           onChange={apply}
           onAnnualCurrencyChange={handleAnnualCurrencyChange}
           onMonthlyCurrencyChange={handleMonthlyCurrencyChange}
