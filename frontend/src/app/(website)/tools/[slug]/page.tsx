@@ -30,6 +30,7 @@ import type { ToolMetadata } from '@/types/tool';
 const CURRENCY_CONVERSION_SLUGS = new Set([
   'after-tax-cost-of-debt-calculator',
   'annuity-calculator',
+  'annuity-payout-calculator',
   'debt-avalanche-calculator',
   'debt-calculator',
   'debt-service-coverage-ratio-calculator-dscr',

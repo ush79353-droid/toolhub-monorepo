@@ -6,6 +6,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/after-tax-cost-of-debt/detail'),
   AnnuityCalculator: () =>
     import('@/tools/calculators/annuity/detail'),
+  AnnuityPayoutCalculator: () =>
+    import('@/tools/calculators/annuity-payout/detail'),
   AutoLoanCalculator: () => import('@/tools/calculators/auto-loan/detail'),
   DebtAvalancheCalculator: () =>
     import('@/tools/calculators/debt-avalanche/detail'),

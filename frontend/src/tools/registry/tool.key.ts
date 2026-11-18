@@ -3,6 +3,7 @@ const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 export const APPROVED_COMPONENT_KEYS = [
   'AfterTaxCostOfDebtCalculator',
   'AnnuityCalculator',
+  'AnnuityPayoutCalculator',
   'AutoLoanCalculator',
   'DebtAvalancheCalculator',
   'DebtCalculator',
@@ -831,6 +832,7 @@ if (isDirect) {
     !isApprovedComponentKey('MarginOfSafetyCalculator') ||
     !isApprovedComponentKey('OperatingMarginCalculator') ||
     !isApprovedComponentKey('AnnuityCalculator') ||
+    !isApprovedComponentKey('AnnuityPayoutCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
