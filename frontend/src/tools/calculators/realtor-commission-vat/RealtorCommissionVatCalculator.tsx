@@ -6,6 +6,11 @@ import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { getCurrencySymbol } from '@/tools/shared/currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { RealtorCommissionVatForm } from './RealtorCommissionVatForm';
 import {
   createDefaultInput,
@@ -13,9 +18,10 @@ import {
   type RealtorCommissionVatInput,
   type RealtorCommissionVatResult,
 } from './types';
+import { validateRealtorCommissionVatInput } from './validation';
 
-const UI_NOTE =
-  'Commission % is VAT-exclusive: VAT applies to the net commission only, not the full house price. Currency conversion and live totals are wired in the calculations step.';
+const FX_NOTE =
+  'Commission % is VAT-exclusive: VAT applies to the net commission only, not the full house price. House price, commission gross, and owner receives each have their own currency. Commission % and VAT % are never converted.';
 
 function inputsEqual(
   a: RealtorCommissionVatInput,
@@ -39,6 +45,8 @@ export function RealtorCommissionVatCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<RealtorCommissionVatInput>(
     () => defaults
@@ -55,28 +63,46 @@ export function RealtorCommissionVatCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  React.useEffect(() => {
+    const validation = validateRealtorCommissionVatInput(defaults, rates);
+    if (validation.isValid && validation.result) {
+      setResult(validation.result);
+      setErrors({});
+    }
+    // Initial sample only.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const apply = (next: RealtorCommissionVatInput) => {
+    const validation = validateRealtorCommissionVatInput(next, rates);
     setInput(next);
-    // Results stay empty until calculation/FX commit wires validation.
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateRealtorCommissionVatInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const houseSymbol = getCurrencySymbol(input.housePriceCurrency);
-  const grossSymbol = getCurrencySymbol(input.commissionGrossCurrency);
-  const ownerSymbol = getCurrencySymbol(input.ownerReceivesCurrency);
+  const grossSymbol = getCurrencySymbol(
+    result?.commissionGrossCurrency ?? input.commissionGrossCurrency
+  );
+  const ownerSymbol = getCurrencySymbol(
+    result?.ownerReceivesCurrency ?? input.ownerReceivesCurrency
+  );
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
@@ -87,6 +113,7 @@ export function RealtorCommissionVatCalculator({
         `Owner receives: ${ownerSymbol}${result.formattedOwnerReceives}`,
         `Net commission: ${houseSymbol}${result.formattedNetCommission}`,
         `VAT amount: ${houseSymbol}${result.formattedVatAmount}`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -118,7 +145,7 @@ export function RealtorCommissionVatCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{UI_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>

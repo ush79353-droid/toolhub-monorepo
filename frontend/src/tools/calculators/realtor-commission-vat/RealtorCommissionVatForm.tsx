@@ -4,7 +4,20 @@ import * as React from 'react';
 import type { ReactNode } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   RealtorCommissionVatFieldErrors,
@@ -36,17 +49,11 @@ function FieldShell({
   );
 }
 
-export interface RealtorCommissionVatFormProps {
+interface RealtorCommissionVatFormProps {
   input: RealtorCommissionVatInput;
   errors: RealtorCommissionVatFieldErrors;
   result: RealtorCommissionVatResult | null;
   onChange: (input: RealtorCommissionVatInput) => void;
-  /** Optional FX handlers — wired in the calculations commit. */
-  onHouseCurrencyChange?: (next: SupportedCurrency) => void;
-  onGrossCurrencyChange?: (next: SupportedCurrency) => void;
-  onOwnerCurrencyChange?: (next: SupportedCurrency) => void;
-  conversionError?: string | null;
-  ratesWarning?: string | null;
 }
 
 export function RealtorCommissionVatForm({
@@ -54,18 +61,100 @@ export function RealtorCommissionVatForm({
   errors,
   result,
   onChange,
-  onHouseCurrencyChange,
-  onGrossCurrencyChange,
-  onOwnerCurrencyChange,
-  conversionError,
-  ratesWarning,
 }: RealtorCommissionVatFormProps) {
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
   const houseSymbol = getCurrencySymbol(input.housePriceCurrency);
   const grossSymbol = getCurrencySymbol(input.commissionGrossCurrency);
   const ownerSymbol = getCurrencySymbol(input.ownerReceivesCurrency);
 
   const set = (patch: Partial<RealtorCommissionVatInput>) => {
+    setConversionError(null);
     onChange({ ...input, ...patch });
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const ensureResultCurrenciesReachable = (calcCurrency: SupportedCurrency) => {
+    if (
+      input.commissionGrossCurrency !== calcCurrency &&
+      !canConvertPair(calcCurrency, input.commissionGrossCurrency)
+    ) {
+      return false;
+    }
+    if (
+      input.ownerReceivesCurrency !== calcCurrency &&
+      !canConvertPair(calcCurrency, input.ownerReceivesCurrency)
+    ) {
+      return false;
+    }
+    return true;
+  };
+
+  /** Convert house price amount; leave percentages and result currencies alone. */
+  const handleHouseCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.housePriceCurrency) return;
+
+    const amount = parseMoneyInput(input.housePrice);
+    const hasAmount = Number.isFinite(amount);
+
+    if (!hasAmount) {
+      if (!ensureResultCurrenciesReachable(next)) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      setConversionError(null);
+      onChange({ ...input, housePriceCurrency: next });
+      return;
+    }
+
+    if (!canConvertPair(input.housePriceCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    if (!ensureResultCurrenciesReachable(next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    const converted = convertCurrency({
+      amount,
+      from: input.housePriceCurrency,
+      to: next,
+      rates: rates.rates,
+    });
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+
+    setConversionError(null);
+    onChange({
+      ...input,
+      housePriceCurrency: next,
+      housePrice: moneyAmountToInputString(converted.amount),
+    });
+  };
+
+  const handleDisplayCurrencyChange = (
+    field: 'commissionGrossCurrency' | 'ownerReceivesCurrency',
+    next: SupportedCurrency
+  ) => {
+    if (next === input[field]) return;
+    if (!canConvertPair(input.housePriceCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    onChange({ ...input, [field]: next });
   };
 
   return (
@@ -104,11 +193,7 @@ export function RealtorCommissionVatForm({
             <CurrencySelect
               id="rcv-house-currency"
               value={input.housePriceCurrency}
-              onChange={(next) =>
-                onHouseCurrencyChange
-                  ? onHouseCurrencyChange(next)
-                  : set({ housePriceCurrency: next })
-              }
+              onChange={handleHouseCurrencyChange}
               aria-label="House price currency"
             />
           </div>
@@ -121,8 +206,8 @@ export function RealtorCommissionVatForm({
             {conversionError}
           </p>
         ) : null}
-        {ratesWarning && !conversionError ? (
-          <p className="mt-1 text-xs text-amber-700">{ratesWarning}</p>
+        {ratesStatus.warning && !conversionError ? (
+          <p className="mt-1 text-xs text-amber-700">{ratesStatus.warning}</p>
         ) : null}
       </div>
 
@@ -207,9 +292,7 @@ export function RealtorCommissionVatForm({
               id="rcv-gross-currency"
               value={input.commissionGrossCurrency}
               onChange={(next) =>
-                onGrossCurrencyChange
-                  ? onGrossCurrencyChange(next)
-                  : set({ commissionGrossCurrency: next })
+                handleDisplayCurrencyChange('commissionGrossCurrency', next)
               }
               aria-label="Commission gross currency"
             />
@@ -246,9 +329,7 @@ export function RealtorCommissionVatForm({
               id="rcv-owner-currency"
               value={input.ownerReceivesCurrency}
               onChange={(next) =>
-                onOwnerCurrencyChange
-                  ? onOwnerCurrencyChange(next)
-                  : set({ ownerReceivesCurrency: next })
+                handleDisplayCurrencyChange('ownerReceivesCurrency', next)
               }
               aria-label="Owner receives currency"
             />
