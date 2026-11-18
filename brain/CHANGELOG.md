@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Square Miles to Square km Converter
+- **Summary:** Shipped Square Miles to Square km Converter on existing catalog slug square-miles-to-square-km-converter (SquareMilesToSquareKmConverter, catalog 6af46f17a27d8d1d4e990b0b). Bidirectional mi²↔km² with exact 1 mi² = 2.589988110336 km² ((1.609344)²); Other Area Conversion Units accordion; empty default; negatives rejected. Reuses square-feet-converter `convertArea` for extras. Mile Conversion Calculator pillar preserved (live 6af451d1…; task listed …d2…); subPillar null. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-453b delivery for Conversion and Units square miles to square km converter.
+- **Important Files:** frontend/src/tools/calculators/square-miles-to-square-km/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 mi²→2.589988110336 km², 10→25.89988110336, 40→103.59952441344, 100 km²→≈38.6102158542 mi²; round-trip; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e9). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Square Meters to Square Feet Converter
 - **Summary:** Shipped Square Meters to Square Feet Converter on existing catalog slug square-meters-to-square-feet-converter (SquareMetersToSquareFeetConverter, catalog 6af46f17a27d8d1d4e990b00). Bidirectional m²↔ft² with exact 0.09290304 / 10.7639104167…; Other Conversion Options accordion; empty default; negatives rejected. Reuses square-feet-converter `convertArea` for extras. Pillar/subPillar preserved (live pillar 6af451d1…). isActive preserved true; **indexable left false**.
 - **Why:** TOOL-452b delivery for Conversion and Units square meters to square feet converter.
