@@ -125,6 +125,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FutureValueOfAnnuityCalculator,
     })),
   ),
+  GeorgiaOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/georgia-overtime/GeorgiaOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.GeorgiaOvertimeCalculator,
+    })),
+  ),
   GrossMarginCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/gross-margin/GrossMarginCalculator'

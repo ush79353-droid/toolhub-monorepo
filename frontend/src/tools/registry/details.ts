@@ -33,6 +33,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/florida-overtime/detail'),
   FutureValueOfAnnuityCalculator: () =>
     import('@/tools/calculators/future-value-of-annuity/detail'),
+  GeorgiaOvertimeCalculator: () =>
+    import('@/tools/calculators/georgia-overtime/detail'),
   GrossMarginCalculator: () =>
     import('@/tools/calculators/gross-margin/detail'),
   GrowingAnnuityCalculator: () =>

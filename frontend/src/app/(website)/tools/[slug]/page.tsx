@@ -43,6 +43,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'ebitda-margin-calculator',
   'florida-overtime-calculator',
   'future-value-of-annuity-calculator',
+  'georgia-overtime-calculator',
   'gross-margin-calculator',
   'growing-annuity-calculator',
   'immediate-annuity-calculator',
