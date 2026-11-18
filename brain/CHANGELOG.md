@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Tbsp to mL Converter
+- **Summary:** Shipped Tbsp to mL Converter on existing catalog slug tbsp-to-ml-converter (TbspToMlConverter, catalog 6af46f17a27d8d1d4e990b70). Bidirectional tbsp↔mL with US (14.78676478125), metric (15), and Australian (20) tablespoon standards; More relevant units accordion; empty default; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-458b delivery for Conversion and Units tablespoon-to-milliliter converter.
+- **Important Files:** frontend/src/tools/calculators/tbsp-to-ml/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (2 US→29.5735…; 2 metric→30; 2 AU→40; 100 mL→≈6.76 US tbsp; 0.5 metric→7.5; round-trip; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add tbsp to Grams Converter (with Ingredient Weights)
 - **Summary:** Shipped tbsp to Grams Converter (with Ingredient Weights) on existing catalog slug tbsp-to-grams-converter-with-ingredient-weights (TbspToGramsConverter, catalog 6af46f17a27d8d1d4e990b6f). Density-based US tbsp↔g (US_TABLESPOON_ML = 14.78676478125); ingredient dropdown default Butter 0.959 g/mL; Show ingredient density checkbox (off by default); empty measures; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-457b delivery for Conversion and Units ingredient weight converter.
