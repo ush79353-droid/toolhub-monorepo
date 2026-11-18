@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Seconds to Days Converter
+- **Summary:** Shipped Seconds to Days Converter on existing catalog slug seconds-to-days-converter (SecondsToDaysConverter, catalog 6af46f17a27d8d1d4e990bba). Bidirectional seconds↔days with exact 86,400 s/day (24-hour day); signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta description trimmed to <=160. Meta title <=70. indexable left false.
+- **Why:** TOOL-443b delivery for Conversion and Units seconds-to-days converter.
+- **Important Files:** frontend/src/tools/calculators/seconds-to-days/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (86400→1, 172800→2, 43200→0.5, negatives, 1e6≈11.574074074; days→seconds; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Seconds Converter
 - **Summary:** Shipped Seconds Converter on existing catalog slug seconds-converter (SecondsConverter, catalog 6af46f17a27d8d1d4e990bb9). Bidirectional seconds↔min/hr/day/wk/mo/yr with average Gregorian year/month (31,556,952 / 2,629,746 sec); HMS compound fields; Time in other units accordion; signed durations; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-442b delivery for Conversion and Units seconds multi-unit time converter.
