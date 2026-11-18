@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add mm to m Conversion
+- **Summary:** Shipped mm to m Conversion on existing catalog slug mm-to-m-conversion (MmToMConversion, catalog 6af46f17a27d8d1d4e990b99). Bidirectional exact 1 m = 1000 mm; more-length-units accordion (cm/km/in/ft/yd/mi); empty default; signed values; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-415b delivery for Conversion and Units millimeters↔meters length converter.
+- **Important Files:** frontend/src/tools/calculators/mm-to-m/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1–100000 mm; reverse m; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add mm to km Conversion
 - **Summary:** Shipped mm to km Conversion on existing catalog slug mm-to-km-conversion (MmToKmConversion, catalog 6af46f17a27d8d1d4e990b98). Bidirectional exact 1 km = 1,000,000 mm; other-units accordion (m/cm/in/ft/yd/mi); empty default; signed values; tiny km decimals preserved; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-414b delivery for Conversion and Units millimeters↔kilometers length converter.
