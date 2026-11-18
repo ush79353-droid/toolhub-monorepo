@@ -379,6 +379,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TspToGramsConverter',
   'TspToMlConverter',
   'WeeksToMonthsCalculator',
+  'WeeksToYearsConverter',
   'NmConverter',
   'NmToMConverter',
   'AdditionalFundsNeededCalculator',
@@ -933,6 +934,7 @@ if (isDirect) {
     !isApprovedComponentKey('TspToGramsConverter') ||
     !isApprovedComponentKey('TspToMlConverter') ||
     !isApprovedComponentKey('WeeksToMonthsCalculator') ||
+    !isApprovedComponentKey('WeeksToYearsConverter') ||
     !isApprovedComponentKey('NmConverter') ||
     !isApprovedComponentKey('NmToMConverter') ||
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
