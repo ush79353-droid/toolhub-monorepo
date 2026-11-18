@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { ProratedSalaryForm } from './ProratedSalaryForm';
 import {
   createDefaultInput,
@@ -13,9 +26,10 @@ import {
   type ProratedSalaryInput,
   type ProratedSalaryResult,
 } from './types';
+import { validateProratedSalaryInput } from './validation';
 
 const FX_NOTE =
-  'Gross salary and prorated salary each have their own currency. Proration runs in the gross-salary currency after normalizing the pay period to a monthly amount; the result converts for display. Year, month, days, holidays, leave, and workweek settings are never FX-converted.';
+  'Gross salary and prorated salary each have their own currency. Proration runs in the gross-salary currency after normalizing the pay period to a monthly amount; the result converts for display. Year, month, days, holidays, leave, and workweek settings are never FX-converted. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: ProratedSalaryInput, b: ProratedSalaryInput): boolean {
   return (
@@ -43,13 +57,20 @@ export function ProratedSalaryCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
+  const initial = validateProratedSalaryInput(defaults, rates);
   const [baseline, setBaseline] = React.useState<ProratedSalaryInput>(
     () => defaults
   );
   const [input, setInput] = React.useState<ProratedSalaryInput>(() => defaults);
-  const [errors, setErrors] = React.useState<ProratedSalaryFieldErrors>({});
-  const [result, setResult] = React.useState<ProratedSalaryResult | null>(null);
+  const [errors, setErrors] = React.useState<ProratedSalaryFieldErrors>(
+    () => initial.errors
+  );
+  const [result, setResult] = React.useState<ProratedSalaryResult | null>(
+    () => initial.result
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -63,29 +84,75 @@ export function ProratedSalaryCalculator({
   }, []);
 
   const apply = (next: ProratedSalaryInput) => {
+    const validation = validateProratedSalaryInput(next, rates);
     setConversionError(null);
     setInput(next);
-    // Engine wiring lands in the calculation/FX commit.
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handleGrossCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.grossSalaryCurrency) return;
-    apply({ ...input, grossSalaryCurrency: next });
+    const converted = convertFieldAmount(
+      input.grossSalary,
+      input.grossSalaryCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      grossSalaryCurrency: next,
+      grossSalary: converted.text,
+    });
   };
 
   const handleResultCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.resultCurrency) return;
+    if (!canConvertPair(input.grossSalaryCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, resultCurrency: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateProratedSalaryInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -93,6 +160,9 @@ export function ProratedSalaryCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
 
   const summary = result
     ? [
@@ -103,7 +173,7 @@ export function ProratedSalaryCalculator({
         `Scheduled working days: ${result.scheduledWorkingDays}`,
         `Payable days: ${result.payableDays}`,
         `Prorated salary: ${getCurrencySymbol(result.resultCurrency)}${result.formattedProratedSalary} ${result.resultCurrency}`,
-        FX_NOTE,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -135,7 +205,9 @@ export function ProratedSalaryCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{FX_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">
+            {currencyNote}
+          </p>
         </div>
         {headerActions ? (
           <div className="flex items-center gap-2">{headerActions}</div>
@@ -151,6 +223,7 @@ export function ProratedSalaryCalculator({
           onGrossCurrencyChange={handleGrossCurrencyChange}
           onResultCurrencyChange={handleResultCurrencyChange}
           conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
