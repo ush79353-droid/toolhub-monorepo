@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Pints to Gallons Converter
+- **Summary:** Shipped Pints to Gallons Converter on existing catalog slug pints-to-gallons-converter (PintsToGallonsConverter, catalog 6af46f17a27d8d1d4e990acf). Four-field US/UK pt↔gal sync via shared volume-conversion engine; accordion Pints/Gallons groups; default 1 US pt; rejects negative volume; guide/table/FAQs. Pillar preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-431b delivery for Conversion and Units US/UK pint↔gallon converter.
+- **Important Files:** frontend/src/tools/calculators/pints-to-gallons/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (same-system 8×; cross-system mL; reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, live pillar 6af451d0a27d8d1d4e98f9e1 preserved). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Pints to Cups Converter
 - **Summary:** Shipped Pints to Cups Converter on existing catalog slug pints-to-cups-converter (PintsToCupsConverter, catalog 6af46f17a27d8d1d4e990b65). Bidirectional pt↔cup via liter factors; default 1 US liquid pt = 2 US cups; US/UK/metric cup and US liquid/dry/imperial pint selectors; rejects negative volume; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-430b delivery for Conversion and Units kitchen volume pint↔cup converter.
