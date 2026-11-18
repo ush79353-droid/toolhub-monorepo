@@ -5,8 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
-import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { AnnualSalaryForm } from './AnnualSalaryForm';
 import {
   createDefaultInput,
@@ -14,6 +26,7 @@ import {
   type AnnualSalaryInput,
   type AnnualSalaryResult,
 } from './types';
+import { validateAnnualSalaryInput } from './validation';
 
 const FX_NOTE =
   'Hourly wage, annual salary, net hourly, and net annual each have their own currency. Salary math runs in the hourly-wage currency; results convert for display. Hours, weeks, and the flat tax percent are never converted. Missing rates block conversion; stale rates warn but still convert.';
@@ -32,10 +45,6 @@ function inputsEqual(a: AnnualSalaryInput, b: AnnualSalaryInput): boolean {
   );
 }
 
-/**
- * UI shell for Annual Salary Calculator (fields, share/reload/clear/feedback).
- * Calculation and Phase 2 FX conversion wire in a follow-up commit.
- */
 export function AnnualSalaryCalculator({
   metadata,
   className = '',
@@ -43,6 +52,7 @@ export function AnnualSalaryCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<AnnualSalaryInput>(
@@ -64,38 +74,93 @@ export function AnnualSalaryCalculator({
   }, []);
 
   const apply = (next: AnnualSalaryInput) => {
+    const validation = validateAnnualSalaryInput(next, rates);
     setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handleHourlyWageCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.hourlyWageCurrency) return;
-    apply({ ...input, hourlyWageCurrency: next });
+    const converted = convertFieldAmount(
+      input.hourlyWage,
+      input.hourlyWageCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      hourlyWageCurrency: next,
+      hourlyWage: converted.text,
+    });
   };
 
   const handleAnnualSalaryCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.annualSalaryCurrency) return;
+    if (!canConvertPair(input.hourlyWageCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, annualSalaryCurrency: next });
   };
 
   const handleNetHourlyCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.netHourlyCurrency) return;
+    if (!canConvertPair(input.hourlyWageCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, netHourlyCurrency: next });
   };
 
   const handleNetAnnualCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.netAnnualCurrency) return;
+    if (!canConvertPair(input.hourlyWageCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, netAnnualCurrency: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateAnnualSalaryInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -105,7 +170,7 @@ export function AnnualSalaryCalculator({
   const dirty = !inputsEqual(input, baseline);
   const currencyNote = ratesStatus.available
     ? FX_NOTE
-    : 'Currency conversion rates are unavailable. Money fields stay in their selected currency labels until rates load.';
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const wageSymbol = getCurrencySymbol(input.hourlyWageCurrency);
   const annualSymbol = getCurrencySymbol(
     result?.annualSalaryCurrency ?? input.annualSalaryCurrency
