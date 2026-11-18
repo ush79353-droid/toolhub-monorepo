@@ -68,6 +68,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'discounted-cash-flow-calculator-dcf',
   'discount-calculator',
   'discount-rate-calculator',
+  'double-discount-calculator',
   'dividend-discount-model-calculator',
   'early-loan-payoff-calculator',
   'loan-repayment-calculator-loan-payoff-calculator',

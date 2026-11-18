@@ -3055,6 +3055,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DiscountCalculator,
     })),
   ),
+  DoubleDiscountCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/double-discount/DoubleDiscountCalculator'
+    ).then((mod) => ({
+      default: mod.DoubleDiscountCalculator,
+    })),
+  ),
   EffectiveAnnualYieldCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/effective-annual-yield/EffectiveAnnualYieldCalculator'

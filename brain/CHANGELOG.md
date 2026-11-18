@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Double Discount Calculator
+- **Summary:** Shipped Double Discount Calculator on existing catalog slug `double-discount-calculator` (`DoubleDiscountCalculator`, catalog `6af46f0fa27d8d1d4e98ffef`). Screenshot-first (ADR-023): Original price FX; 1st discount %; 2nd discount %; Final price FX; Total savings FX; collapsible Effective discount %. Share/Reload/Clear/feedback. Reused Discount Calculator UI/FX patterns without modifying that sibling. Independent Phase 2 FX; discount percents and effective % never convert. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Pillar `6af451bda27d8d1d4e98f96a` preserved; subPillar null.
+- **Formulas:** Final Price = Original Price × (1 − D1/100) × (1 − D2/100); Total Savings = Original Price − Final Price; Effective Discount (%) = D1 + D2 − (D1 × D2 / 100). Clamp each discount 0–100%; nonnegative price; full precision with display rounding only.
+- **Example:** 10,000 PKR · 20% · 20% → final 6,400 · savings 3,600 · effective 36% (not 40%).
+- **Important Files:** `frontend/src/tools/calculators/double-discount/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** DiscountCalculator sibling untouched. Inline math self-check + assert suite in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Discount Calculator
 - **Summary:** Shipped Discount Calculator on existing catalog slug `discount-calculator` (`DiscountCalculator`, catalog `6af46f0fa27d8d1d4e98ffed`). Screenshot-first (ADR-023): What type of discount? default **% off** only (no BOGO/fixed-$ invented); Original price FX; Discount %; Tax included? Yes (default) / No as informational price labeling only — no tax rate applied (no Simple Discount / project tax specs found); After discount: You pay + You're saving with independent FX. Share/Reload/Clear/feedback. No Simple Discount Calculator route in repo — link omitted. Independent Phase 2 FX; percent and Yes/No never convert. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Pillar `6af451bda27d8d1d4e98f96a` preserved; subPillar null.
 - **Formulas:** Discount Amount = Original Price × Discount Rate / 100; Final Price = Original Price − Discount Amount; Savings = Discount Amount. Clamp discount 0–100%; nonnegative price; full precision with display rounding only.
