@@ -2679,6 +2679,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  QuizDividendCalculator: lazyTool(() =>
+    import('@/tools/calculators/quiz-dividend/QuizDividendCalculator').then(
+      (mod) => ({
+        default: mod.QuizDividendCalculator,
+      })
+    )
+  ),
   ManHoursCalculator: lazyTool(() =>
     import('@/tools/calculators/man-hours/ManHoursCalculator').then((mod) => ({
       default: mod.ManHoursCalculator,

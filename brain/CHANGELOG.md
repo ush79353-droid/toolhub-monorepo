@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Quiz: Dividend Calculator
+- **Summary:** Shipped educational Quiz: Dividend Calculator on existing catalog slug `quiz-dividend-calculator` (`QuizDividendCalculator`, catalog `6af46f0fa27d8d1d4e990008`). Screenshot-first (ADR-023) six-question quiz: dividend definition, why yield, yield formula, yield numeric (1%), reinvestment, compounding balance (≈ $2,593.74). Score `/6` + accuracy % after all answered; per-question correct/incorrect + explanations when checkbox checked and complete; Share/Reload/Clear/feedback; link to Dividend Yield Calculator. Fixed USD; no FX; not added to `CURRENCY_CONVERSION_SLUGS`. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96e` / subPillar null.
+- **Answers:** Q1 B; Q2 C; Q3 A; Q4 1% (±0.05); Q5 B; Q6 `1000×(1.1)^10` ≈ 2593.74 (±1).
+- **Important Files:** `frontend/src/tools/calculators/quiz-dividend/*`, registry `keys`/`index`/`details`, `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Prorated Salary Calculator
 - **Summary:** Shipped Prorated Salary Calculator on existing catalog slug `prorated-salary-calculator` (`ProratedSalaryCalculator`, catalog `6af46f0fa27d8d1d4e98fffb`). Screenshot-first (ADR-023): Year/Month calendar; Gross salary FX + pay period; Days worked; Holidays; Approved leave; Days worked per week; Days off → eligible working days + Prorated salary FX. Payable-day convention verified from screenshot (worked + paid holidays + paid leave). Share/Reload/Clear/feedback. Independent Phase 2 FX; day counts never convert. ProratedRentCalculator sibling untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96c` / subPillar null.
 - **Formulas:** Scheduled = civil calendar days minus selected days off; Payable = Worked + Holidays + Leave; Monthly = month as-is / year÷12 / week×52/12 / day×scheduled; Prorated = Monthly × Payable / Scheduled. Zero scheduled blocked; payable cannot exceed scheduled; full precision with display rounding only.
