@@ -573,6 +573,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FreeCashFlowCalculator',
   'FcffCalculator',
   'LeveredFreeCashFlowCalculator',
+  'UnleveredFreeCashFlowCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1178,6 +1179,7 @@ if (isDirect) {
     !isApprovedComponentKey('FreeCashFlowCalculator') ||
     !isApprovedComponentKey('FcffCalculator') ||
     !isApprovedComponentKey('LeveredFreeCashFlowCalculator') ||
+    !isApprovedComponentKey('UnleveredFreeCashFlowCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

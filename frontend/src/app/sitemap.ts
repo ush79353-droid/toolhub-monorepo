@@ -607,6 +607,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fd-calculator-fixed-deposit-calculator',
   'free-cash-flow-calculator',
   'levered-free-cash-flow-calculator',
+  'unlevered-free-cash-flow-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

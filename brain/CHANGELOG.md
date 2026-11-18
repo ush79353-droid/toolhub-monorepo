@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Unlevered Free Cash Flow Calculator
+- **Summary:** Shipped Unlevered Free Cash Flow Calculator on existing catalog slug `unlevered-free-cash-flow-calculator` (`UnleveredFreeCashFlowCalculator`, catalog `6af46f0fa27d8d1d4e98fff8`). Screenshot-first (ADR-023): EBIT FX; Effective tax rate %; Depreciation and amortization FX; CapEx FX; Change in working capital FX → Unlevered free cash flow FX. Share/Reload/Clear/feedback. Independent Phase 2 FX; ETR never converts. FreeCashFlowCalculator / FcffCalculator / LeveredFreeCashFlowCalculator siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96b` / subPillar null.
+- **Formulas:** NOPAT = EBIT × (1 − ETR / 100); UFCF = NOPAT + DA − CapEx − ΔWC. CapEx positive spending; negative ΔWC increases cash; no interest or debt repayments; ETR 0–100%; negative EBIT/UFCF allowed; full precision with display rounding only.
+- **Example:** EBIT 400,000 PKR · ETR 25% · DA 50,000 · CapEx 80,000 · ΔWC 20,000 → NOPAT 300,000 · UFCF 250,000 PKR.
+- **Important Files:** `frontend/src/tools/calculators/unlevered-free-cash-flow/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed (pure formula check + `calculation.test.ts` present). Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Triple Discount Calculator
 - **Summary:** Shipped Triple Discount Calculator on existing catalog slug `triple-discount-calculator` (`TripleDiscountCalculator`, catalog `6af46f0fa27d8d1d4e98fff2`). Screenshot-first (ADR-023): Original price FX; 1st discount %; 2nd discount % (default 0); 3rd discount % (default 0); Final price FX; Price difference FX; collapsible Effective discount %. Share/Reload/Clear/feedback. Reused Double Discount UI/FX patterns without modifying that sibling. Independent Phase 2 FX; discount percents and effective % never convert. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Pillar `6af451bda27d8d1d4e98f96a` preserved; subPillar null.
 - **Formulas:** Final = P×(1−D1/100)×(1−D2/100)×(1−D3/100); Diff = P−Final; Effective = [1−(1−D1/100)(1−D2/100)(1−D3/100)]×100. Clamp each discount 0–100%; nonnegative price; full precision with display rounding only.

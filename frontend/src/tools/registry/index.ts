@@ -3172,6 +3172,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LeveredFreeCashFlowCalculator,
     })),
   ),
+  UnleveredFreeCashFlowCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/unlevered-free-cash-flow/UnleveredFreeCashFlowCalculator'
+    ).then((mod) => ({
+      default: mod.UnleveredFreeCashFlowCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
