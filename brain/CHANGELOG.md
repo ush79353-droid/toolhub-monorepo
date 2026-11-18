@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add nm to m Converter
+- **Summary:** Shipped nm to m Converter on existing catalog slug nm-to-m-converter (NmToMConverter, catalog 6af46f17a27d8d1d4e990b12). Bidirectional exact SI nm↔m (1 nm = 10⁻⁹ m; 1 m = 1e9 nm); default 100 nm; signed values; scientific notation for tiny meters; guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ea preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-422b delivery for Conversion and Units nanometers↔meters pair converter.
+- **Important Files:** frontend/src/tools/calculators/nm-to-m/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1–1e9 nm; reverse 1/0.1/0.001 m; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d2a27d8d1d4e98f9ea). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add nm converter
 - **Summary:** Shipped nm converter on existing catalog slug nm-converter (NmConverter, catalog 6af46f17a27d8d1d4e990b0d). Nanometer-primary multi-unit length conversion via shared meter-converter engine (1 nm = 10⁻⁹ m); Metric/Imperial/Others accordions with selectors (default µm/mi/Å); empty default; signed values; scientific notation for tiny lengths; guide/table/FAQs. Pillar 6af451d2a27d8d1d4e98f9ea preserved; subPillar null. Meta title <=70. indexable left false.
 - **Why:** TOOL-421b delivery for Conversion and Units nanometer length converter.
