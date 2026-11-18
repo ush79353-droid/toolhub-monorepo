@@ -2778,6 +2778,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PaybackPeriodCalculator,
     })),
   ),
+  PercentageDiscountCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/percentage-discount/PercentageDiscountCalculator'
+    ).then((mod) => ({
+      default: mod.PercentageDiscountCalculator,
+    })),
+  ),
   PercentageReturnCalculator: lazyTool(() =>
     import('@/tools/calculators/percentage-return/PercentageReturnCalculator').then((mod) => ({
       default: mod.PercentageReturnCalculator,

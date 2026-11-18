@@ -535,6 +535,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'payday-loan-calculator',
   'payment-calculator',
   'payback-period-calculator',
+  'percentage-discount-calculator',
   'percentage-return-calculator',
   'perpetuity-calculator',
   'post-judgment-interest-calculator',

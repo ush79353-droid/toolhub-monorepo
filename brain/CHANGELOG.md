@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Percentage Discount Calculator
+- **Summary:** Shipped Percentage Discount Calculator on existing catalog slug `percentage-discount-calculator` (`PercentageDiscountCalculator`, catalog `6af46f0fa27d8d1d4e98fff1`). Screenshot-first (ADR-023): Price before discount FX; Discount %; Price after discount FX; You save FX. Link to advanced Discount Calculator (`/tools/discount-calculator`). Examples: new dress 20%; new bed 15%. Share/Reload/Clear/feedback. Independent Phase 2 FX; percent never converts. DiscountCalculator sibling untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bda27d8d1d4e98f96a` / subPillar null.
+- **Formulas:** Discount Amount = Price × Discount / 100; Price After = Price − Amount; You Save = Amount. Price ≥ 0; discount 0–100 inclusive; full precision with display rounding only.
+- **Example:** 5,000 PKR × 20% → after 4,000 · save 1,000; 25,000 × 15% → after 21,250 · save 3,750.
+- **Important Files:** `frontend/src/tools/calculators/percentage-discount/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check present in `calculation.test.ts` (execution omitted per task). Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Operating Cash Flow Calculator
 - **Summary:** Shipped Operating Cash Flow Calculator on existing catalog slug `operating-cash-flow-calculator` (`OperatingCashFlowCalculator`, catalog `6af46f0fa27d8d1d4e98fff7`). Screenshot-first (ADR-023): Net income, Depreciation, Amortization, ΔInventories, ΔAR, ΔAP, Income tax payable (change), Net other cash flows → Change in operating WC (WC cash adj) + Operating cash flow; empty collapsed Balance changes. Share/Reload/Clear/feedback. Independent Phase 2 FX. FreeCashFlow / FCFF / Levered FCF siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96b` / subPillar null.
 - **Formulas:** WC cash adj = −ΔInv −ΔAR +ΔAP +ΔTaxPayable (ending − beginning); OCF = NI + Dep + Amort + WC adj + Other. Tax payable is a change, not a stock balance. Negative results allowed; full precision with display rounding only.

@@ -237,6 +237,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'nopat-calculator',
   'npv-calculator-net-present-value',
   'opportunity-cost-calculator',
+  'percentage-discount-calculator',
   'percentage-return-calculator',
   'perpetuity-calculator',
   'present-value-calculator',
