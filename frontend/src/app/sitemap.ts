@@ -600,6 +600,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'savings-calculator',
   'savings-goal-calculator',
   'savings-interest-rate-calculator',
+  'simple-savings-calculator',
   'sharpe-ratio-calculator',
   'va-mortgage-calculator',
   'value-at-risk-calculator-var',

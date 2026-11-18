@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-18 — Repair Simple Savings Calculator registration
+- **Summary:** Completed integration for existing Simple Savings Calculator module on catalog slug `simple-savings-calculator` (`SimpleSavingsCalculator`, catalog `6af46f0fa27d8d1d4e98ffe0`). Registered keys/lazy/details/`tool.key`, sitemap, and both `CURRENCY_CONVERSION_SLUGS` lists. Reuses verified Savings Calculator engine (`simple-savings/calculation.ts` → `savings/calculation.ts`). Independent Phase 2 FX already present in module; slug wiring completed. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Savings Calculator pillar preserved; subPillar null. No formula rewrite.
+- **Important Files:** `frontend/src/tools/registry/{keys,index,details}.ts`, `frontend/src/app/sitemap.ts`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Mongo before: empty `componentKey`, A/D/I false. After assign: componentKey set, A/D/I true, embed on. Runtime FX/browser/lint/builds omitted per task. One local repair commit — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-18 — Add Bond YTM Calculator
 - **Summary:** Shipped Bond YTM Calculator on existing catalog slug `bond-ytm-calculator` (`BondYtmCalculator`, catalog `6af46f0fa27d8d1d4e98ffd9`). Screenshot fields: face value FX, bond price FX, annual coupon rate %, coupon frequency (default Annually), years to maturity, read-only Yield to maturity (YTM) %. Coupon-date price equation solved with bounded bisection (zero-coupon closed form); same numerical approach as Bond Yield without modifying that module. Independent Phase 2 FX; normalize price into face currency; %/years never convert. Share/Reload/Clear/feedback. Activated via `npm run tool:assign` with `--set-active --set-indexable`. Bond Calculator pillar preserved; subPillar null. Left Bond Yield / Current Yield / Equivalent Yield / Bond Price peers untouched.
 - **Formula:** P = Σ C/(1+y/m)^t + F/(1+y/m)^N with C = F·(r/m), N = years·m; solve annual nominal y.

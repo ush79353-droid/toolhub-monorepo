@@ -3254,6 +3254,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SavingsWithdrawalCalculator,
     })),
   ),
+  SimpleSavingsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/simple-savings/SimpleSavingsCalculator'
+    ).then((mod) => ({
+      default: mod.SimpleSavingsCalculator,
+    })),
+  ),
   SharpeRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/sharpe-ratio/SharpeRatioCalculator').then((mod) => ({
       default: mod.SharpeRatioCalculator,

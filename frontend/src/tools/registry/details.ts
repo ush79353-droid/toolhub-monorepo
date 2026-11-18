@@ -844,6 +844,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/savings-plan/detail'),
   SavingsWithdrawalCalculator: () =>
     import('@/tools/calculators/savings-withdrawal/detail'),
+  SimpleSavingsCalculator: () =>
+    import('@/tools/calculators/simple-savings/detail'),
   SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),
   VaMortgageCalculator: () => import('@/tools/calculators/va-mortgage/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),

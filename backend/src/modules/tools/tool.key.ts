@@ -587,6 +587,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SavingsInterestRateCalculator',
   'SavingsPlanCalculator',
   'SavingsWithdrawalCalculator',
+  'SimpleSavingsCalculator',
   'SharpeRatioCalculator',
   'VaMortgageCalculator',
   'ValueAtRiskCalculator',
@@ -1165,6 +1166,7 @@ if (isDirect) {
     !isApprovedComponentKey('SavingsInterestRateCalculator') ||
     !isApprovedComponentKey('SavingsPlanCalculator') ||
     !isApprovedComponentKey('SavingsWithdrawalCalculator') ||
+    !isApprovedComponentKey('SimpleSavingsCalculator') ||
     !isApprovedComponentKey('SharpeRatioCalculator') ||
     !isApprovedComponentKey('VaMortgageCalculator') ||
     !isApprovedComponentKey('ValueAtRiskCalculator') ||
