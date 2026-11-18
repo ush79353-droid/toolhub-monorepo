@@ -1989,6 +1989,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  SquareMeterConverter: lazyTool(() =>
+    import('@/tools/calculators/square-meter-converter/SquareMeterConverter').then((mod) => ({
+      default: mod.SquareMeterConverter,
+    })),
+  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,
