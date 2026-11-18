@@ -289,6 +289,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'months-to-years-calculator',
   'mpa-conversion',
   'mpa-to-psi-conversion',
+  'mpa-to-psig-conversion',
   'kilometer-to-meter-converter',
   'kilometers-to-miles-calculator',
   'km-to-feet-conversion',
