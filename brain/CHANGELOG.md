@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Pa to psi Converter
+- **Summary:** Shipped Pa to psi Converter on existing catalog slug pa-to-psi-converter (PaToPsiConversion, catalog 6af46f17a27d8d1d4e990ae8). Bidirectional Pa↔psi via shared pressure-conversion engine (exact PASCALS_PER_PSI); empty default; signed gauge values; guide/table/FAQs. Live pillar 6af451d0a27d8d1d4e98f9e4 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-429b delivery for Conversion and Units pascal↔psi pair converter.
+- **Important Files:** frontend/src/tools/calculators/pa-to-psi/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/1000/101325 Pa; 1/10/30/122 psi; negatives; reverse; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, live pillar preserved). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Pascal Conversion
 - **Summary:** Shipped Pascal Conversion on existing catalog slug pascal-conversion (PascalConversion, catalog 6af46f17a27d8d1d4e990ba0). Multi-unit Pa↔bar/atm/psi/Torr plus kPa/MPa/mbar/mmHg via shared pressure-conversion engine; empty default; signed gauge values; conventional mmHg distinct from Torr; guide/table/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-428b delivery for Conversion and Units pascal pressure converter.
