@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add mm to ATM Converter
+- **Summary:** Shipped mm to ATM Converter on existing catalog slug mm-to-atm-converter (MmToAtmConverter, catalog 6af46f17a27d8d1d4e990aee). Bidirectional conventional 760 mmHg = 1 atm; clarifies catalog “mm” means mmHg pressure not length; empty default; signed gauge values; guide/table/FAQs. ATM Conversion pillar 6af451d1a27d8d1d4e98f9e5 preserved; subPillar null. Meta title <=70. indexable left false. Distinct from MmhgToAtmConversion.
+- **Why:** TOOL-411b delivery for Conversion and Units mmHg↔atm pressure converter under ATM Conversion pillar.
+- **Important Files:** frontend/src/tools/calculators/mm-to-atm/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (760/380/150/475 mmHg; reverse atm; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar 6af451d1a27d8d1d4e98f9e5). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add mm Calculator
 - **Summary:** Shipped mm Calculator on existing catalog slug mm-calculator (MmCalculator, catalog 6af46f17a27d8d1d4e990b95). Bidirectional eight-unit length sync (mm/cm/m/km/in/ft/yd/mi) via meter-converter engine; Input + Metric + Imperial/US accordions; empty default; nonnegative lengths; guide/table/FAQs. Pillar/subPillar null preserved. Meta title <=70. indexable left false. Distinct from MillimeterCalculator.
 - **Why:** TOOL-410b delivery for Conversion and Units millimeter multi-unit length calculator.
