@@ -40,6 +40,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'margin-of-safety-calculator',
   'net-debt-calculator',
   'operating-margin-calculator',
+  'present-value-of-annuity-calculator',
   'reduced-row-echelon-form-calculator',
   'arm-mortgage-calculator',
   '100-day-calculator',

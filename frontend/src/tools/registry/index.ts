@@ -207,6 +207,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OperatingMarginCalculator,
     })),
   ),
+  PresentValueOfAnnuityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/present-value-of-annuity/PresentValueOfAnnuityCalculator'
+    ).then((mod) => ({
+      default: mod.PresentValueOfAnnuityCalculator,
+    })),
+  ),
   RrefCalculator: lazyTool(() =>
     import('@/tools/calculators/rref/RrefCalculator').then((mod) => ({
       default: mod.RrefCalculator,

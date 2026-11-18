@@ -29,6 +29,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginOfSafetyCalculator',
   'NetDebtCalculator',
   'OperatingMarginCalculator',
+  'PresentValueOfAnnuityCalculator',
   'RrefCalculator',
   'ArmMortgageCalculator',
   'HundredDayCalculator',
@@ -843,6 +844,7 @@ if (isDirect) {
     !isApprovedComponentKey('GrowingAnnuityCalculator') ||
     !isApprovedComponentKey('ImmediateAnnuityCalculator') ||
     !isApprovedComponentKey('LotteryAnnuityCalculator') ||
+    !isApprovedComponentKey('PresentValueOfAnnuityCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
