@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Seconds to Minutes Converter
+- **Summary:** Shipped Seconds to Minutes Converter on existing catalog slug seconds-to-minutes-converter (SecondsToMinutesConverter, catalog 6af46f17a27d8d1d4e990bbc). Bidirectional seconds↔minutes with exact 60 s/min; signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-445b delivery for Conversion and Units seconds-to-minutes converter.
+- **Important Files:** frontend/src/tools/calculators/seconds-to-minutes/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (60→1, 120→2, 30→0.5, 78→1.3, negatives; minutes→seconds; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Seconds to Hours Converter
 - **Summary:** Shipped Seconds to Hours Converter on existing catalog slug seconds-to-hours-converter (SecondsToHoursConverter, catalog 6af46f17a27d8d1d4e990bbb). Bidirectional seconds↔hours with exact 3,600 s/hour; editable HMS breakdown with signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-444b delivery for Conversion and Units seconds-to-hours converter.
