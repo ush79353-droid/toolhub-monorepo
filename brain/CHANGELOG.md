@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add PSI Converter
+- **Summary:** Shipped PSI Converter on existing catalog slug psi-converter (PsiConverter, catalog 6af46f17a27d8d1d4e990ae3). PSI-centered multi-field converter with expandable bar/atm/Pa and more units via shared Pascal-base engine; default 1 psi; signed values allowed; clarifies PSI vs PSIG/PSIA; guide/table/FAQs. Pillar 6af451d0a27d8d1d4e98f9e4 preserved; subPillar null. Meta title <=70. indexable left false.
+- **Why:** TOOL-437b delivery for Conversion and Units PSI pressure converter.
+- **Important Files:** frontend/src/tools/calculators/psi-converter/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1 psi↔Pa/kPa/bar/atm; bar/atm/kPa reverse; negatives; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar preserved). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Pressure Unit Conversion
 - **Summary:** Shipped Pressure Unit Conversion on existing catalog slug pressure-unit-conversion (PressureUnitConversion, catalog 6af46f17a27d8d1d4e990ba2). Multi-field bar/psi/atm/Pa plus expandable kPa/MPa/hPa/mbar/mmHg/Torr/inHg/kgf·cm⁻² via shared Pascal-base engine; default 1 bar; signed values allowed; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-436b delivery for Conversion and Units universal pressure converter.
