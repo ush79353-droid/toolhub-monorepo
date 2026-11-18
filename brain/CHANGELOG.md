@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Weeks to Months Calculator
+- **Summary:** Shipped Weeks to Months Calculator on existing catalog slug weeks-to-months-calculator (WeeksToMonthsCalculator, catalog 6af46f17a27d8d1d4e990bc0). Bidirectional weeks↔months via average Gregorian month (≈4.348125 weeks / 30.436875 days); Other time units (yrs/days/hrs/min/sec/HMS); canonical seconds; empty default; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
+- **Why:** TOOL-461b delivery for Conversion and Units weeks-to-months converter.
+- **Important Files:** frontend/src/tools/calculators/weeks-to-months/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (1/6/13/14 weeks→months; 6 months→≈26.09 weeks; 13 weeks=91 days; 1 week=168 hrs; round-trip; share text). Mongo assigned via npm run tool:assign without --set-indexable (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add tsp to mL Converter
 - **Summary:** Shipped tsp to mL Converter on existing catalog slug tsp-to-ml-converter (TspToMlConverter, catalog 6af46f17a27d8d1d4e990b72). Bidirectional tsp↔mL with metric default (5 mL), US customary (4.92892159375), US nutrition = metric; Other related units default cm³/cc; metric conversion chart; empty default; negatives rejected. Null pillar/subPillar preserved. isActive preserved true; **indexable left false**.
 - **Why:** TOOL-460b delivery for Conversion and Units teaspoon-to-milliliter converter.
