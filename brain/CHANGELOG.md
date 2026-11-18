@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Future Salary Calculator
+- **Summary:** Shipped Future Salary Calculator on existing catalog slug `future-salary-calculator` (`FutureSalaryCalculator`, catalog `6af46f0fa27d8d1d4e98fffa`). Screenshot-first (ADR-023): Future salary — Current salary FX, Average salary change %/yr, Number of years, Expected future salary FX; Real future salary — Average inflation %, Real future salary FX; Example 1 Career growth / Example 2 Inflation check. Share/Reload/Clear/feedback. Independent Phase 2 FX; growth/inflation/years never convert. Annual salary siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96c` / subPillar null preserved.
+- **Formulas:** Future = Current × (1 + Growth%/100)^Years; Real = Future ÷ (1 + Inflation%/100)^Years. Zero growth/inflation allowed; rates > −100%; years ≥ 0; full precision with display rounding only.
+- **Example:** 100,000 PKR · 5%/yr · 10 years · inflation 2% → future ≈ 162,889.46 · real ≈ 133,598.45.
+- **Important Files:** `frontend/src/tools/calculators/future-salary/*`, registry `keys`/`index`/`details`, `CURRENCY_CONVERSION_SLUGS` (tools + embed), `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activated. Lint/type-check/build/Playwright omitted per task. Three local commits only — no push/pull/sync. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Free Cash Flow Calculator
 - **Summary:** Shipped Free Cash Flow Calculator on existing catalog slug `free-cash-flow-calculator` (`FreeCashFlowCalculator`, catalog `6af46f0fa27d8d1d4e98fff3`). Screenshot-first (ADR-023): FCF = OCF − CapEx (CapEx as positive spending); collapsible per-share (shares → FCF/share); yield via market cap; margin via revenue; stock price optional consistency only. Share/Reload/Clear/feedback; how-to-use → `#how-to-use`. Independent Phase 2 FX; shares/% never convert. FcffCalculator untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar/subPillar. Pillar `6af451bea27d8d1d4e98f96b` / subPillar null preserved.
 - **Formulas:** FCF = OCF − CapEx; FCF/Share = FCF ÷ shares (shares > 0); Yield (%) = FCF ÷ Market Cap × 100; Margin (%) = FCF ÷ Revenue × 100. Negative FCF/yield/margin allowed; stock price alone does not invent market cap.

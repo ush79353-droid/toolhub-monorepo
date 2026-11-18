@@ -3223,6 +3223,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FutureValueCalculator,
     })),
   ),
+  FutureSalaryCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/future-salary/FutureSalaryCalculator'
+    ).then((mod) => ({
+      default: mod.FutureSalaryCalculator,
+    })),
+  ),
   HoldingPeriodReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/holding-period-return/HoldingPeriodReturnCalculator'

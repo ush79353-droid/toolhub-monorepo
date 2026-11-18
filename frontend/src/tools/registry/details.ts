@@ -815,6 +815,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FhaLoanCalculator: () => import('@/tools/calculators/fha-loan/detail'),
   FutureValueCalculator: () =>
     import('@/tools/calculators/future-value/detail'),
+  FutureSalaryCalculator: () =>
+    import('@/tools/calculators/future-salary/detail'),
   HomeEquityLoanCalculator: () =>
     import('@/tools/calculators/home-equity-loan/detail'),
   HomeImprovementLoanCalculator: () =>
