@@ -550,6 +550,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CreditCardCalculator',
   'CreditCardInterestCalculator',
   'CreditCardMinimumPaymentCalculator',
+  'CreditCardPaymentCalculator',
   'EffectiveAnnualYieldCalculator',
   'EffectiveInterestRateCalculator',
   'ExpectedUtilityCalculator',
@@ -1131,6 +1132,7 @@ if (isDirect) {
     !isApprovedComponentKey('CreditCardCalculator') ||
     !isApprovedComponentKey('CreditCardInterestCalculator') ||
     !isApprovedComponentKey('CreditCardMinimumPaymentCalculator') ||
+    !isApprovedComponentKey('CreditCardPaymentCalculator') ||
     !isApprovedComponentKey('EffectiveAnnualYieldCalculator') ||
     !isApprovedComponentKey('EffectiveInterestRateCalculator') ||
     !isApprovedComponentKey('ExpectedUtilityCalculator') ||
