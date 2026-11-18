@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-18 — Add Seconds to Years Conversion
+- **Summary:** Shipped Seconds to Years Conversion on existing catalog slug seconds-to-years-conversion (SecondsToYearsConversion, catalog 6af46f17a27d8d1d4e990bbd). Bidirectional seconds↔years with Gregorian mean year 365.2425 days (31,556,952 s); Other time units accordion (mo/wk/d/h/min + HMS); signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
+- **Why:** TOOL-446b delivery for Conversion and Units seconds-to-years converter.
+- **Important Files:** frontend/src/tools/calculators/seconds-to-years/*, registry, sitemap.ts, backend/src/modules/tools/tool.key.ts, brain docs.
+- **Verification:** calculation.test.ts passed (31556952→1, 63113904→2, negatives, 0.5 yr; months≈12; HMS 2h30m→9000; share text). Mongo assigned via npm run tool:assign (isDeveloped true, isActive true, indexable false, isFeatured false, pillar null). Full frontend tsc / production build not claimed.
+
 ### 2026-11-18 — Add Seconds to Minutes Converter
 - **Summary:** Shipped Seconds to Minutes Converter on existing catalog slug seconds-to-minutes-converter (SecondsToMinutesConverter, catalog 6af46f17a27d8d1d4e990bbc). Bidirectional seconds↔minutes with exact 60 s/min; signed durations; empty default; guide/chart/FAQs. Null pillar/subPillar preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-445b delivery for Conversion and Units seconds-to-minutes converter.
