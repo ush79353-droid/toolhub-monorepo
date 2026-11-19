@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { EconomicProfitForm } from './EconomicProfitForm';
 import {
   createDefaultInput,
@@ -13,6 +26,10 @@ import {
   type EconomicProfitInput,
   type EconomicProfitResult,
 } from './types';
+import { validateEconomicProfitInput } from './validation';
+
+const FX_NOTE =
+  'Total revenue, explicit costs, implicit costs, and economic profit each have their own currency. Cost fields normalize into the total-revenue currency before subtracting. Changing an input currency converts that amount with stored rates. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: EconomicProfitInput, b: EconomicProfitInput): boolean {
   return JSON.stringify(a) === JSON.stringify(b);
@@ -25,6 +42,8 @@ export function EconomicProfitCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<EconomicProfitInput>(() => defaults);
   const [input, setInput] = React.useState<EconomicProfitInput>(() => defaults);
@@ -34,42 +53,168 @@ export function EconomicProfitCalculator({
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
   const apply = (next: EconomicProfitInput) => {
+    const validation = validateEconomicProfitInput(next, rates);
+    setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
-  const setCurrency =
-    (key: keyof EconomicProfitInput) => (next: SupportedCurrency) => {
-      apply({ ...input, [key]: next });
-    };
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
+  const handleRevenueCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.totalRevenueCurrency) return;
+    const converted = convertFieldAmount(
+      input.totalRevenue,
+      input.totalRevenueCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    if (
+      (input.explicitCostsCurrency !== next &&
+        !canConvertPair(input.explicitCostsCurrency, next)) ||
+      (input.implicitCostsCurrency !== next &&
+        !canConvertPair(input.implicitCostsCurrency, next)) ||
+      (input.economicProfitCurrency !== next &&
+        !canConvertPair(next, input.economicProfitCurrency))
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      totalRevenueCurrency: next,
+      totalRevenue: converted.text,
+    });
+  };
+
+  const handleExplicitCostsCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.explicitCostsCurrency) return;
+    const converted = convertFieldAmount(
+      input.explicitCosts,
+      input.explicitCostsCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    if (
+      next !== input.totalRevenueCurrency &&
+      !canConvertPair(next, input.totalRevenueCurrency)
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      explicitCostsCurrency: next,
+      explicitCosts: converted.text,
+    });
+  };
+
+  const handleImplicitCostsCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.implicitCostsCurrency) return;
+    const converted = convertFieldAmount(
+      input.implicitCosts,
+      input.implicitCostsCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    if (
+      next !== input.totalRevenueCurrency &&
+      !canConvertPair(next, input.totalRevenueCurrency)
+    ) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      implicitCostsCurrency: next,
+      implicitCosts: converted.text,
+    });
+  };
+
+  const handleEconomicProfitCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.economicProfitCurrency) return;
+    if (!canConvertPair(input.totalRevenueCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({ ...input, economicProfitCurrency: next });
+  };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateEconomicProfitInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const profitSymbol = getCurrencySymbol(
+    result?.economicProfitCurrency ?? input.economicProfitCurrency
+  );
+
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
         `Total revenue: ${getCurrencySymbol(input.totalRevenueCurrency)}${input.totalRevenue} ${input.totalRevenueCurrency}`,
         `Explicit costs: ${getCurrencySymbol(input.explicitCostsCurrency)}${input.explicitCosts} ${input.explicitCostsCurrency}`,
         `Implicit costs: ${getCurrencySymbol(input.implicitCostsCurrency)}${input.implicitCosts} ${input.implicitCostsCurrency}`,
-        `Economic profit: ${getCurrencySymbol(result.economicProfitCurrency)}${result.formattedEconomicProfit} ${result.economicProfitCurrency}`,
+        `Economic profit: ${profitSymbol}${result.formattedEconomicProfit} ${result.economicProfitCurrency}`,
         result.summaryText,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -102,7 +247,7 @@ export function EconomicProfitCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Revenue minus explicit and implicit costs. Independent FX on every money field.
+            {currencyNote}
           </p>
         </div>
         {headerActions ? (
@@ -116,10 +261,12 @@ export function EconomicProfitCalculator({
           errors={errors}
           result={result}
           onChange={apply}
-          onRevenueCurrencyChange={setCurrency('totalRevenueCurrency')}
-          onExplicitCostsCurrencyChange={setCurrency('explicitCostsCurrency')}
-          onImplicitCostsCurrencyChange={setCurrency('implicitCostsCurrency')}
-          onEconomicProfitCurrencyChange={setCurrency('economicProfitCurrency')}
+          onRevenueCurrencyChange={handleRevenueCurrencyChange}
+          onExplicitCostsCurrencyChange={handleExplicitCostsCurrencyChange}
+          onImplicitCostsCurrencyChange={handleImplicitCostsCurrencyChange}
+          onEconomicProfitCurrencyChange={handleEconomicProfitCurrencyChange}
+          conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
