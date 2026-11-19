@@ -301,6 +301,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  CaliforniaSalesTaxCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/california-sales-tax/CaliforniaSalesTaxCalculator'
+    ).then((mod) => ({
+      default: mod.CaliforniaSalesTaxCalculator,
+    })),
+  ),
   FloridaSalesTaxCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/florida-sales-tax/FloridaSalesTaxCalculator'

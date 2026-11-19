@@ -47,7 +47,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `TOOL-497` | California Sales Tax Calculator blocked: authorized catalog `california-sales-tax-calculator` (`6af46f0fa27d8d1d4e990027`) exists, but no verified CDTFA/ZIP jurisdiction tax-rate dataset or authorized tax API is in the repo — must not invent ZIP rates (owned in `In Progress`; do not reclaim) | Cursor | Blocked | `In Progress/California Sales Tax Calculator` | `TOOL-01` |
+| `TOOL-497` | California Sales Tax Calculator developed: CDTFA `GetRateByAddress` via `/api/tax/california-rate`; PO-approved street+city+ZIP; Mongo `6af46f0fa27d8d1d4e990027` active; indexable false; commits `b672a9c1` / `019a79e5` / (reg) | Cursor | Done | `Completed Tools/California Sales Tax Calculator` | `TOOL-01` |
 | `TOOL-542` | Missouri Sales Tax Calculator blocked: prompt restored from screenshot (empty original preserved), but no verified Missouri DOR ZIP/jurisdiction rate dataset in repo — must not invent rates (owned in `In Progress`; do not reclaim) | Cursor | Blocked | `In Progress/Missouri Sales Tax Calculator` | `TOOL-01` |
 | `TOOL-451` | Hourly to Salary with Overtime Calculator — unblocked 2026-11-20 with corrected prompt/screenshot; completed as `TOOL-548` | Cursor | Completed | `frontend/src/tools/calculators/hourly-to-salary-with-overtime/*` | `TOOL-548` |
 

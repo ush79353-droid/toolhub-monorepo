@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add California Sales Tax Calculator
+- **Summary:** Shipped California Sales Tax Calculator on existing catalog slug `california-sales-tax-calculator` (`CaliforniaSalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e990027`). Screenshot-first + PO-approved Street/City: purchase USD + street + city + ZIP. Server-side CDTFA Tax Rate API `GetRateByAddress` via Next.js `/api/tax/california-rate`; decimal rate applied as fraction; ambiguous/no-match → unavailable (never invents). CDTFA Terms of Use reviewed (acceptance/indemnity); UI links terms and labels estimates. Fixed USD; no FX. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** $100 · 450 N St · Sacramento · 95814 → **8.75%** · tax **$8.75** · total **$108.75**.
+- **Important Files:** `frontend/src/tools/calculators/california-sales-tax/*`, `frontend/src/server/tax/cdtfa.ts`, `frontend/src/app/api/tax/california-rate/route.ts`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Live CDTFA sample verified. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Florida Sales Tax Calculator
 - **Summary:** Shipped Florida Sales Tax Calculator on existing catalog slug `florida-sales-tax-calculator` (`FloridaSalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e990028`). Screenshot-first (ADR-023): purchase amount (fixed USD) + ZIP; county picker when Census ZCTA is multi-county. State tax 6%; county discretionary surtax from FL DOR DR-15DSS CY 2026; ZIP→county from Census 2020 ZCTA→county (FL). Surtax base capped at $5,000 (single-item assumption). No FX. Sales Tax / NJ / Ohio / CA / MO siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** $100 · ZIP 33101 (Miami-Dade, 1% surtax) → state **$6.00** · surtax **$1.00** · total tax **$7.00** · total **$107.00**.
