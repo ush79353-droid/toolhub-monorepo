@@ -1,15 +1,15 @@
-# OmegaCalculators â€” Automated Development Tracker
+# OmegaCalculators — Automated Development Tracker
 
 ## Summary
 
-Total discovered: 50
-Newly developed: 29
+Total discovered: 53
+Newly developed: 33
 Already developed: 1
 Development failed: 0
 Skipped / blocked: 2
-Remaining pending: ~18 (plus in-progress claims by other agents)
+Remaining pending: 0 (Tools empty; only blocked In Progress claims remain)
 Audit completed: 0
-Audit pending: 30
+Audit pending: 34
 
 ## Calculator Register
 
@@ -22,7 +22,7 @@ Audit pending: 30
 | 5 | Credit Cards Payoff Calculator | DEVELOPED | AUDIT PENDING | 693f7927 | 65796e12 | e94b0cf8 | Completed Tools | `CreditCardsPayoffCalculator` |
 | 6 | Discount Calculator | DEVELOPED | AUDIT PENDING | cff0c679 | 2d21e88a | 3c42d462 | Completed Tools | `DiscountCalculator` |
 | 7 | Double Discount Calculator | DEVELOPED | AUDIT PENDING | eacefd35 | 2365072a | 0c5cc35a | Completed Tools | `DoubleDiscountCalculator` |
-| 8 | FCFF Calculator â€” Free Cash Flow to Firm | DEVELOPED | AUDIT PENDING | 64aec3f2 | ebd6f9cc | 299a14ad | Completed Tools | `FcffCalculator` |
+| 8 | FCFF Calculator — Free Cash Flow to Firm | DEVELOPED | AUDIT PENDING | 64aec3f2 | ebd6f9cc | 299a14ad | Completed Tools | `FcffCalculator` |
 | 9 | Free Cash Flow Calculator | DEVELOPED | AUDIT PENDING | a2200b14 | 5da49e57 | 008d603a | Completed Tools | `FreeCashFlowCalculator` |
 | 10 | Levered Free Cash Flow Calculator | DEVELOPED | AUDIT PENDING | a5ff0d78 | 916f413c | 792d9cbe | Completed Tools | `LeveredFreeCashFlowCalculator` |
 | 11 | Margin With Discount Calculator | DEVELOPED | AUDIT PENDING | a818e570 | d567fec1 | b3d426b3 | Completed Tools | `MarginWithDiscountCalculator` |
@@ -38,19 +38,29 @@ Audit pending: 30
 | 21 | Salary Calculator | DEVELOPED | AUDIT PENDING | 8f0c72b2 | ee4b0439 | 4492730f | Completed Tools | `SalaryCalculator` |
 | 22 | Salary Inflation Calculator | DEVELOPED | AUDIT PENDING | 90093329 | 01de4bce | 79e7569a | Completed Tools | `SalaryInflationCalculator` |
 | 23 | Salary to Hourly Calculator | DEVELOPED | AUDIT PENDING | 0c8c8690 | ff02b940 | d61bc4f9 | Completed Tools | `SalaryToHourlyCalculator` |
-| 24 | Dividend Discount Model Calculator | ALREADY DEVELOPED | AUDIT PENDING | â€” | â€” | â€” | Completed Tools | Existing `DividendDiscountModelCalculator` verified; no new commits |
+| 24 | Dividend Discount Model Calculator | ALREADY DEVELOPED | AUDIT PENDING | — | — | — | Completed Tools | Existing `DividendDiscountModelCalculator` verified; no new commits |
 | 25 | Dividend Payout Ratio Calculator | DEVELOPED | AUDIT PENDING | 90181242 | 6ad35499 | cad4370d | Completed Tools | `DividendPayoutRatioCalculator` |
 | 26 | Dividend Yield Calculator | DEVELOPED | AUDIT PENDING | e225cf05 | 7b809a04 | 7dbe8198 | Completed Tools | `DividendYieldCalculator` |
 | 27 | Hourly to Annual Salary Calculator | DEVELOPED | AUDIT PENDING | 73ed83c0 | 86bdc30d | 0d012594 | Completed Tools | `HourlyToAnnualSalaryCalculator` |
 | 28 | Hourly to Salary - Wage Calculator | DEVELOPED | AUDIT PENDING | db059afb | 579c85fe | 46c7bb6a | Completed Tools | `HourlyToSalaryWageCalculator`; prompt recovered from misfiled sibling |
-| 29 | Hourly to Salary with Overtime Calculator | BLOCKED | AUDIT PENDING | â€” | â€” | â€” | In Progress | prompt.txt conflicts with Overtime screenshot/folder (TOOL-451) |
+| 29 | Hourly to Salary with Overtime Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | prompt.txt conflicts with Overtime screenshot/folder (TOOL-451) |
 | 30 | Quiz Dividend Calculator | DEVELOPED | AUDIT PENDING | 71ed676f | 7ee0deac | b6bac9e4 | Completed Tools | `QuizDividendCalculator` |
-| 31 | California Sales Tax Calculator | BLOCKED | AUDIT PENDING | â€” | â€” | â€” | In Progress | No verified CDTFA/ZIP tax dataset; must not invent rates (TOOL-497) |
-| 32 | Commercial Lease Calculator | DEVELOPED | AUDIT PENDING | 0d994100 | 017cde44 | 22f51bea | Completed Tools | `CommercialLeaseCalculator`; slug `commercial-lease-calculator`; Mongo `6af46f0fa27d8d1d4e990011` active, indexable false |
+| 31 | California Sales Tax Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | No verified CDTFA/ZIP tax dataset; must not invent rates (TOOL-497) |
+| 32 | Commercial Lease Calculator | DEVELOPED | AUDIT PENDING | 0d994100 | 017cde44 | 2cb8ee80 | Completed Tools | `CommercialLeaseCalculator`; slug `commercial-lease-calculator`; Mongo `6af46f0fa27d8d1d4e990011` active; indexable false |
+| 33 | Auto Lease Calculator | DEVELOPED | AUDIT PENDING | 836bfb95 | d735d570 | (see agent) | Completed Tools | `AutoLeaseCalculator`; sibling of Car Lease |
+| 34 | Car Lease Calculator | DEVELOPED | AUDIT PENDING | c15e6c97 | ebd38b6a | 79a5822e | Completed Tools | `CarLeaseCalculator`; slug `car-lease-calculator`; Mongo `6af46f0fa27d8d1d4e990010`; Phase 2 FX; `indexable` false |
+| 35 | Car Refinance Calculator | DEVELOPED | AUDIT PENDING | b2929089 | 5a06eead | 22681270 | Completed Tools | `CarRefinanceCalculator`; slug `car-refinance-calculator`; Mongo `6af46f0fa27d8d1d4e990019`; Phase 2 FX; `indexable` false; TASKS `TOOL-498` |
+| 36 | Natural Rate of Unemployment Calculator | DEVELOPED | AUDIT PENDING | 83a42d4b | a8438ca8 | 5e684b43 | — | `NaturalRateOfUnemploymentCalculator`; slug `natural-rate-of-unemployment-calculator`; Mongo `6af46f0fa27d8d1d4e990033` active; indexable false; registry also in concurrent commits |
+| 37 | Income Tax Philippines Calculator | DEVELOPED | AUDIT PENDING | 56ccce77 | 2de2e870 | 6ecd6412 | — | `IncomeTaxCalculatorPhilippines`; slug `income-tax-philippines-calculator`; Mongo `6af46f0fa27d8d1d4e990042` active; indexable false; CY 2025 BIR/SSS/PhilHealth/Pag-IBIG |
+
 
 ## Session Log
 
 - 2026-11-18/19: Autonomous development queue on `D:\Project\ToolHub` (omega-calculators-frontend/backend). Local commits only; no push/pull/fetch.
 - Mid-queue folder arrivals (salary/dividend/hourly/quiz) appended without renumbering.
-- 2026-11-19 (continued): Claimed California Sales Tax â†’ BLOCKED (missing ZIP/CDTFA data). Claimed Commercial Lease â†’ DEVELOPED (3 local commits). Other agents hold Auto Lease / Car Lease / Car Refinance / Overtime in `In Progress`.
+- 2026-11-19 (continued): Claimed California Sales Tax ? BLOCKED (missing ZIP/CDTFA data). Claimed Commercial Lease ? DEVELOPED (`0d994100` / `017cde44` / `2cb8ee80`). Folder moved to Completed Tools. Registry/FX/sitemap lines also landed via concurrent car-lease registration commit `79a5822e`.
+- 2026-11-19 (peer): Car Lease / Auto Lease completed by other agents.
+- 2026-11-19 (this agent): Claimed Car Refinance Calculator ? DEVELOPED (`b2929089` / `5a06eead` / `22681270`). Mongo activated `isActive`/`isDeveloped` true; `indexable` left false. Folder moved to Completed Tools. `Tools/` empty; remaining In Progress are both BLOCKED (California Sales Tax, Hourly Overtime).
 - Temporary files cleaned: YES (task temps deleted; queue tracker + Completed Tools retained outside app source commits).
+
+| 35 | Unemployment Benefit Calculator - CARES Act | DEVELOPED | AUDIT PENDING | e9fe3fc1 | 71b1e994 | (registry via concurrent commits; no empty commit 3) | ? | `CaresActUnemploymentBenefitCalculator`; Mongo `6af46f0fa27d8d1d4e990034`; historical notice; link `/tools/unemployment-calculator-unemployment-rate`; no FX |

@@ -74,6 +74,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   IncomeTaxCalculator: () => import('@/tools/calculators/income-tax/detail'),
   IncomeTaxCalculatorPakistan: () =>
     import('@/tools/calculators/pakistan-income-tax/detail'),
+  IncomeTaxCalculatorPhilippines: () =>
+    import('@/tools/calculators/philippines-income-tax/detail'),
   NewJerseySalesTaxCalculator: () =>
     import('@/tools/calculators/new-jersey-sales-tax/detail'),
   NewYorkOvertimeCalculator: () =>
@@ -490,6 +492,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BusinessLoanCalculator: () =>
     import('@/tools/calculators/business-loan/detail'),
   ProfitCalculator: () => import('@/tools/calculators/profit/detail'),
+  EconomicProfitCalculator: () =>
+    import('@/tools/calculators/economic-profit/detail'),
   ProfitabilityIndexCalculator: () =>
     import('@/tools/calculators/profitability-index/detail'),
   RevenuePerEmployeeCalculator: () =>

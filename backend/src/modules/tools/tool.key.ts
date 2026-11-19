@@ -39,6 +39,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NetEffectiveRentCalculator',
   'IncomeTaxCalculator',
   'IncomeTaxCalculatorPakistan',
+  'IncomeTaxCalculatorPhilippines',
   'NewJerseySalesTaxCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
@@ -402,6 +403,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AttritionRateCalculator',
   'BusinessLoanCalculator',
   'ProfitCalculator',
+  'EconomicProfitCalculator',
   'ProfitabilityIndexCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
@@ -1069,6 +1071,7 @@ if (isDirect) {
     !isApprovedComponentKey('AttritionRateCalculator') ||
     !isApprovedComponentKey('BusinessLoanCalculator') ||
     !isApprovedComponentKey('ProfitCalculator') ||
+    !isApprovedComponentKey('EconomicProfitCalculator') ||
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
     !isApprovedComponentKey('RevenuePerEmployeeCalculator') ||
     !isApprovedComponentKey('RoasCalculator') ||
@@ -1396,6 +1399,7 @@ if (isDirect) {
     !isApprovedComponentKey('IllinoisOvertimeCalculator') ||
     !isApprovedComponentKey('IncomeTaxCalculator') ||
     !isApprovedComponentKey('IncomeTaxCalculatorPakistan') ||
+    !isApprovedComponentKey('IncomeTaxCalculatorPhilippines') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||

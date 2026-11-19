@@ -10,6 +10,12 @@
 - **Important Files:** `frontend/src/tools/calculators/philippines-income-tax/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
 - **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
+### 2026-11-19 — Add Economic Profit Calculator
+- **Summary:** Shipped Economic Profit Calculator on existing catalog slug `economic-profit-calculator` (`EconomicProfitCalculator`, catalog `6af46f0fa27d8d1d4e990045`, preserved `nameKey` `economic profit calculator`, pillar `6af451c0a27d8d1d4e98f97b`, subPillar null). Screenshot-first (ADR-023): total revenue FX; explicit costs FX; implicit costs FX; economic profit FX. Formula: Economic Profit = Total Revenue − Explicit Costs − Implicit Costs. Independent Phase 2 FX; dual `CURRENCY_CONVERSION_SLUGS`. Distinguishes economic vs accounting profit. Profit / Accounting Profit siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Revenue 100,000 · Explicit 40,000 · Implicit 25,000 → economic profit **35,000**.
+- **Important Files:** `frontend/src/tools/calculators/economic-profit/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Profit Calculator
 - **Summary:** Shipped Profit Calculator on existing catalog slug `profit-calculator` (`ProfitCalculator`, catalog `6af46f0fa27d8d1d4e990043`, preserved `nameKey` `profit calculator`). Screenshot-first (ADR-023): Buying cost (cost FX + per units) + Selling price (price FX + per units) + Profit (quantity, discount %, total cost / revenue / total profit FX outputs). Formulas: UnitCost=C/Cq; UnitPrice=P/Pq; TotalCost=UnitCost×Q; Revenue=UnitPrice×Q×(1−D/100); Profit=Revenue−TotalCost. Independent Phase 2 FX; unit counts and discount % never convert. Margin / Contribution Margin / Gross Profit siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Cost 100/1 · Price 150/1 · Qty 10 · Discount 10% → total cost **1,000** · revenue **1,350** · profit **350**.

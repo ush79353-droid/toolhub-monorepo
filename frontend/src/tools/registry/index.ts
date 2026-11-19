@@ -273,6 +273,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PakistanIncomeTaxCalculator,
     })),
   ),
+  IncomeTaxCalculatorPhilippines: lazyTool(() =>
+    import(
+      '@/tools/calculators/philippines-income-tax/PhilippinesIncomeTaxCalculator'
+    ).then((mod) => ({
+      default: mod.PhilippinesIncomeTaxCalculator,
+    })),
+  ),
   NewJerseySalesTaxCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/new-jersey-sales-tax/NewJerseySalesTaxCalculator'
@@ -2189,6 +2196,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   ProfitCalculator: lazyTool(() =>
     import('@/tools/calculators/profit/ProfitCalculator').then((mod) => ({
       default: mod.ProfitCalculator,
+    })),
+  ),
+  EconomicProfitCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/economic-profit/EconomicProfitCalculator'
+    ).then((mod) => ({
+      default: mod.EconomicProfitCalculator,
     })),
   ),
   ProfitabilityIndexCalculator: lazyTool(() =>
