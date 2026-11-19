@@ -212,6 +212,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginAndMarkupCalculator,
     })),
   ),
+  MarginAndSalesTaxCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/margin-and-sales-tax/MarginAndSalesTaxCalculator'
+    ).then((mod) => ({
+      default: mod.MarginAndSalesTaxCalculator,
+    })),
+  ),
   MarginAndVatCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/margin-and-vat/MarginAndVatCalculator'
@@ -300,6 +307,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     ).then((mod) => ({
       default: mod.NewJerseySalesTaxCalculator,
     })),
+  OhioSalesTaxCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ohio-sales-tax/OhioSalesTaxCalculator'
+    ).then((mod) => ({
+      default: mod.OhioSalesTaxCalculator,
+    })),
+  ),
   ),
   NewYorkOvertimeCalculator: lazyTool(() =>
     import(
@@ -2597,6 +2611,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CarLeaseCalculator,
     })),
   ),
+  LeaseMileageCalculator: lazyTool(() =>
+    import('@/tools/calculators/lease-mileage/LeaseMileageCalculator').then((mod) => ({
+      default: mod.LeaseMileageCalculator,
+    })),
+  ),
   CarLoanEmiCalculator: lazyTool(() =>
     import('@/tools/calculators/car-loan-emi/CarLoanEmiCalculator').then((mod) => ({
       default: mod.CarLoanEmiCalculator,
@@ -3166,6 +3185,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   LandLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/land-loan/LandLoanCalculator').then((mod) => ({
       default: mod.LandLoanCalculator,
+    })),
+  ),
+  LeaseCalculator: lazyTool(() =>
+    import('@/tools/calculators/lease/LeaseCalculator').then((mod) => ({
+      default: mod.LeaseCalculator,
     })),
   ),
   PagIbigHousingLoanCalculator: lazyTool(() =>

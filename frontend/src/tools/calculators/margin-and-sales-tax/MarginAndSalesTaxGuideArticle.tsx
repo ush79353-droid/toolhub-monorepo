@@ -61,7 +61,7 @@ export function MarginAndSalesTaxGuideArticle() {
         Frequently Asked Questions
       </h2>
       <div className="mt-4 not-prose">
-        <FAQAccordion faqs={[...MARGIN_SALES_TAX_FAQS]} />
+        <FAQAccordion items={[...MARGIN_SALES_TAX_FAQS]} />
       </div>
     </article>
   );

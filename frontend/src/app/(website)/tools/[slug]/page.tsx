@@ -61,6 +61,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'loan-interest-calculator',
   'lottery-annuity-calculator',
   'margin-and-markup-calculator',
+  'margin-and-sales-tax-calculator',
   'margin-and-vat-calculator',
   'margin-calculator-classic',
   'margin-call-calculator',

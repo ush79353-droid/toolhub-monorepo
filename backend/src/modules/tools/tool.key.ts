@@ -30,6 +30,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LoanInterestCalculator',
   'LotteryAnnuityCalculator',
   'MarginAndMarkupCalculator',
+  'MarginAndSalesTaxCalculator',
   'MarginAndVatCalculator',
   'MarginCalculatorClassic',
   'MarginCallCalculator',
@@ -43,6 +44,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AdjustedGrossIncomeCalculator',
   'AlabamaTaxCalculator',
   'NewJerseySalesTaxCalculator',
+  'OhioSalesTaxCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
   'NetProfitMarginCalculator',
@@ -470,6 +472,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CapitalGainsYieldCalculator',
   'CarInterestCalculator',
   'CarLeaseCalculator',
+  'LeaseMileageCalculator',
   'CarLoanEmiCalculator',
   'CarRefinanceCalculator',
   'CarriedInterestCalculator',
@@ -572,6 +575,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BondYtmCalculator',
   'JumboLoanCalculator',
   'LandLoanCalculator',
+  'LeaseCalculator',
   'PagIbigHousingLoanCalculator',
   'RvLoanCalculator',
   'StudentLoanCalculator',
@@ -1150,6 +1154,7 @@ if (isDirect) {
     !isApprovedComponentKey('CapitalGainsYieldCalculator') ||
     !isApprovedComponentKey('CarInterestCalculator') ||
     !isApprovedComponentKey('CarLeaseCalculator') ||
+    !isApprovedComponentKey('LeaseMileageCalculator') ||
     !isApprovedComponentKey('CarLoanEmiCalculator') ||    !isApprovedComponentKey('CarRefinanceCalculator') ||
 
     !isApprovedComponentKey('CarriedInterestCalculator') ||
@@ -1251,6 +1256,7 @@ if (isDirect) {
     !isApprovedComponentKey('BondYtmCalculator') ||
     !isApprovedComponentKey('JumboLoanCalculator') ||
     !isApprovedComponentKey('LandLoanCalculator') ||
+    !isApprovedComponentKey('LeaseCalculator') ||
     !isApprovedComponentKey('PagIbigHousingLoanCalculator') ||
     !isApprovedComponentKey('RvLoanCalculator') ||
     !isApprovedComponentKey('StudentLoanCalculator') ||
@@ -1403,6 +1409,7 @@ if (isDirect) {
     !isApprovedComponentKey('EbitdaMarginCalculator') ||
     !isApprovedComponentKey('GrossMarginCalculator') ||
     !isApprovedComponentKey('MarginAndMarkupCalculator') ||
+    !isApprovedComponentKey('MarginAndSalesTaxCalculator') ||
     !isApprovedComponentKey('MarginAndVatCalculator') ||
     !isApprovedComponentKey('MarginCalculatorClassic') ||
     !isApprovedComponentKey('MarginCallCalculator') ||
@@ -1431,6 +1438,7 @@ if (isDirect) {
     !isApprovedComponentKey('AdjustedGrossIncomeCalculator') ||
     !isApprovedComponentKey('AlabamaTaxCalculator') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
+    !isApprovedComponentKey('OhioSalesTaxCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||

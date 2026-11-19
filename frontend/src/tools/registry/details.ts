@@ -57,6 +57,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lottery-annuity/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),
+  MarginAndSalesTaxCalculator: () =>
+    import('@/tools/calculators/margin-and-sales-tax/detail'),
   MarginAndVatCalculator: () =>
     import('@/tools/calculators/margin-and-vat/detail'),
   MarginCalculatorClassic: () =>
@@ -82,6 +84,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/alabama-tax/detail'),
   NewJerseySalesTaxCalculator: () =>
     import('@/tools/calculators/new-jersey-sales-tax/detail'),
+  OhioSalesTaxCalculator: () =>
+    import('@/tools/calculators/ohio-sales-tax/detail'),
   NewYorkOvertimeCalculator: () =>
     import('@/tools/calculators/new-york-overtime/detail'),
   OperatingMarginCalculator: () =>
@@ -616,6 +620,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/car-interest/detail'),
   CarLeaseCalculator: () =>
     import('@/tools/calculators/car-lease/detail'),
+  LeaseMileageCalculator: () =>
+    import('@/tools/calculators/lease-mileage/detail'),
   CarLoanEmiCalculator: () =>
     import('@/tools/calculators/car-loan-emi/detail'),
   CarRefinanceCalculator: () =>
@@ -819,6 +825,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/jumbo-loan/detail'),
   LandLoanCalculator: () =>
     import('@/tools/calculators/land-loan/detail'),
+  LeaseCalculator: () => import('@/tools/calculators/lease/detail'),
   PagIbigHousingLoanCalculator: () =>
     import('@/tools/calculators/pag-ibig-housing-loan/detail'),
   RvLoanCalculator: () => import('@/tools/calculators/rv-loan/detail'),
