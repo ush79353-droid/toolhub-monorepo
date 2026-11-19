@@ -862,6 +862,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FinanceCalculator: () => import('@/tools/calculators/finance/detail'),
   FireCalculator: () => import('@/tools/calculators/fire/detail'),
   GoldMeltCalculator: () => import('@/tools/calculators/gold-melt/detail'),
+  LifetimeEarningsCalculator: () =>
+    import('@/tools/calculators/lifetime-earnings/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

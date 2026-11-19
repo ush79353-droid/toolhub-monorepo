@@ -3325,6 +3325,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GoldMeltCalculator,
     })),
   ),
+  LifetimeEarningsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/lifetime-earnings/LifetimeEarningsCalculator'
+    ).then((mod) => ({
+      default: mod.LifetimeEarningsCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
