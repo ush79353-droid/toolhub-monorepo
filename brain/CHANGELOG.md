@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Sales Tax Calculator New Jersey
+- **Summary:** Shipped Sales Tax Calculator New Jersey on existing catalog slug `sales-tax-calculator-new-jersey` (`NewJerseySalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e99002c`, preserved `nameKey` `sales tax calculator new jersey`). Screenshot-first (ADR-023): purchase amount (fixed USD) + five-digit NJ ZIP → applicable statewide rate, sales tax, total with tax. Rate source: NJ Division of Taxation Rates and Boundaries — single statewide **6.625%** since 2018-01-01; ZIP range **07001–08989**. UEZ reduced rates and product exemptions are not auto-applied from ZIP. Sales Tax / California / Ohio / Florida / Missouri / Margin siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** Sales Tax = Purchase × 6.625 / 100; Total = Purchase + Sales Tax (cent-rounded).
+- **Example:** $100 · ZIP 07102 → tax **$6.63** · total **$106.63**.
+- **Important Files:** `frontend/src/tools/calculators/new-jersey-sales-tax/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Car Refinance Calculator
 - **Summary:** Shipped Car Refinance Calculator on existing catalog slug `car-refinance-calculator` (`CarRefinanceCalculator`, catalog `6af46f0fa27d8d1d4e990019`, preserved `nameKey` `car refinance calculator`). Screenshot-first (ADR-023): Current loan (estimate by remaining term or monthly payment; balance; rate; optional due date/monthly compounding) + Loan refinancing (new term/rate; cash in/out; optional fees upfront or financed) → comparison table (loan amount, monthly payment, rate, term, total interest, total payments) plus savings/cost explanation. Independent Phase 2 FX on money fields; rates/terms/dates never convert. Refinance / Mortgage Refinance / Cash-Out Refinance siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Formulas:** Monthly Rate = APR/1200; Payment = P×r/(1−(1+r)^(-n)); 0% → P/n. Cash out adds to new principal; cash in reduces it. Financed fees add to principal; upfront fees add to new total payments only.

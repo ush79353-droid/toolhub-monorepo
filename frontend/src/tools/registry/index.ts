@@ -254,6 +254,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetEffectiveRentCalculator,
     })),
   ),
+  NewJerseySalesTaxCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/new-jersey-sales-tax/NewJerseySalesTaxCalculator'
+    ).then((mod) => ({
+      default: mod.NewJerseySalesTaxCalculator,
+    })),
+  ),
   NewYorkOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/new-york-overtime/NewYorkOvertimeCalculator'
@@ -2181,6 +2188,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   SafetyStockCalculator: lazyTool(() =>
     import('@/tools/calculators/safety-stock/SafetyStockCalculator').then((mod) => ({
       default: mod.SafetyStockCalculator,
+    })),
+  ),
+  StockCalculator: lazyTool(() =>
+    import('@/tools/calculators/stock/StockCalculator').then((mod) => ({
+      default: mod.StockCalculator,
     })),
   ),
   CommercialLeaseCalculator: lazyTool(() =>

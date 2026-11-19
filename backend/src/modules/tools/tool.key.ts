@@ -36,6 +36,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginWithDiscountCalculator',
   'NetDebtCalculator',
   'NetEffectiveRentCalculator',
+  'NewJerseySalesTaxCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
   'OvertimeCalculator',
@@ -401,6 +402,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RoiCalculator',
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
+  'StockCalculator',
   'CommercialLeaseCalculator',
   'CommissionCalculator',
   'SalesCommissionCalculator',
@@ -1053,6 +1055,7 @@ if (isDirect) {
     !isApprovedComponentKey('RoiCalculator') ||
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
+    !isApprovedComponentKey('StockCalculator') ||
     !isApprovedComponentKey('CommercialLeaseCalculator') ||
     !isApprovedComponentKey('CommissionCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
@@ -1359,6 +1362,7 @@ if (isDirect) {
     !isApprovedComponentKey('FloridaOvertimeCalculator') ||
     !isApprovedComponentKey('GeorgiaOvertimeCalculator') ||
     !isApprovedComponentKey('IllinoisOvertimeCalculator') ||
+    !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||

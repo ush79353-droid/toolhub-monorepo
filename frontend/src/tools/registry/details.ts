@@ -69,6 +69,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/net-debt/detail'),
   NetEffectiveRentCalculator: () =>
     import('@/tools/calculators/net-effective-rent/detail'),
+  NewJerseySalesTaxCalculator: () =>
+    import('@/tools/calculators/new-jersey-sales-tax/detail'),
   NewYorkOvertimeCalculator: () =>
     import('@/tools/calculators/new-york-overtime/detail'),
   OperatingMarginCalculator: () =>
@@ -489,6 +491,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/saas-lifetime-value/detail'),
   SafetyStockCalculator: () =>
     import('@/tools/calculators/safety-stock/detail'),
+  StockCalculator: () => import('@/tools/calculators/stock/detail'),
   CommercialLeaseCalculator: () =>
     import('@/tools/calculators/commercial-lease/detail'),
   CommissionCalculator: () =>
