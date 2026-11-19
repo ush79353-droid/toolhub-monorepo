@@ -3819,6 +3819,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.StimulusCheck40kCalculator,
     })),
   ),
+  CaresActUnemploymentBenefitCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cares-act-unemployment-benefit/CaresActUnemploymentBenefitCalculator'
+    ).then((mod) => ({
+      default: mod.CaresActUnemploymentBenefitCalculator,
+    })),
+  ),
   CashActStimulusCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/cash-act-stimulus/CashActStimulusCalculator'

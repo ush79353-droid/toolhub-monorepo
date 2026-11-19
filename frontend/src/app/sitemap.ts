@@ -433,6 +433,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'roi-calculator',
   'saas-lifetime-value-calculator',
   'safety-stock-calculator',
+  'stock-average-calculator',
   'commission-calculator',
   'sales-commission-calculator',
   'true-cost-of-real-estate-commission-calculator',

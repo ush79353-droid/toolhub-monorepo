@@ -404,6 +404,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
   'StockCalculator',
+  'StockAverageCalculator',
   'CommercialLeaseCalculator',
   'CommissionCalculator',
   'SalesCommissionCalculator',
@@ -673,6 +674,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HeroesActStimulusCalculator',
   'StudentLoanRepaymentCovidCalculator',
   'StimulusCheck40kCalculator',
+  'CaresActUnemploymentBenefitCalculator',
   'CashActStimulusCalculator',
   'SecondStimulus900BillionCalculator',
   'AmericanRescuePlanStimulusCalculator',
@@ -1058,6 +1060,7 @@ if (isDirect) {
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
     !isApprovedComponentKey('StockCalculator') ||
+    !isApprovedComponentKey('StockAverageCalculator') ||
     !isApprovedComponentKey('CommercialLeaseCalculator') ||
     !isApprovedComponentKey('CommissionCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
@@ -1326,6 +1329,7 @@ if (isDirect) {
     !isApprovedComponentKey('HeroesActStimulusCalculator') ||
     !isApprovedComponentKey('StudentLoanRepaymentCovidCalculator') ||
     !isApprovedComponentKey('StimulusCheck40kCalculator') ||
+    !isApprovedComponentKey('CaresActUnemploymentBenefitCalculator') ||
     !isApprovedComponentKey('CashActStimulusCalculator') ||
     !isApprovedComponentKey('SecondStimulus900BillionCalculator') ||
     !isApprovedComponentKey('AmericanRescuePlanStimulusCalculator') ||

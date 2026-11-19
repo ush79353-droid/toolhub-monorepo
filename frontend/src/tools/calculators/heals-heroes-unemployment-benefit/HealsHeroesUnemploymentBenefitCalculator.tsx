@@ -5,16 +5,10 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { buildHealsHeroesUnemploymentNoticeSummary } from './calculation';
 import { HealsHeroesUnemploymentBenefitForm } from './HealsHeroesUnemploymentBenefitForm';
 import { createDefaultInput } from './types';
-
-const DEFAULT_SUMMARY = [
-  'Unemployment Benefit Calculator - HEALS Act vs. HEROES Act — Omega Calculators',
-  'Historical notice only — HEALS and HEROES were 2020 legislative proposals, not active claim programs.',
-  'Neither proposal should be treated as a current unemployment benefit you can claim (2026).',
-  'Historical calculations associated with these proposals are no longer applicable.',
-  'For yearly salary / hourly wage conversion, use the Annual Salary Calculator: /tools/annual-salary-calculator',
-].join('\n');
+import { validateHealsHeroesUnemploymentBenefitInput } from './validation';
 
 export function HealsHeroesUnemploymentBenefitCalculator({
   metadata,
@@ -23,39 +17,32 @@ export function HealsHeroesUnemploymentBenefitCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
-  const [noticeVersion, setNoticeVersion] = React.useState(
-    () => createDefaultInput().noticeVersion
+  const notice = validateHealsHeroesUnemploymentBenefitInput(
+    createDefaultInput(),
+    metadata.title
   );
+  const summary =
+    notice.result?.summaryText ??
+    buildHealsHeroesUnemploymentNoticeSummary(metadata.title);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
-
-  const summary = [
-    `${metadata.title} — Omega Calculators`,
-    'Historical notice only — HEALS and HEROES were 2020 legislative proposals, not active claim programs.',
-    'Neither proposal should be treated as a current unemployment benefit you can claim (2026).',
-    'Historical calculations associated with these proposals are no longer applicable.',
-    'For yearly salary / hourly wage conversion, use the Annual Salary Calculator: /tools/annual-salary-calculator',
-    `Notice version: ${noticeVersion}`,
-  ].join('\n');
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
   const handleReset = () => {
-    setNoticeVersion((v) => v + 1);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const handleShare = async () => {
-    const text = summary || DEFAULT_SUMMARY;
     if (canShare) {
       try {
-        await navigator.share({ title: metadata.title, text });
+        await navigator.share({ title: metadata.title, text: summary });
         setShared(true);
         window.setTimeout(() => setShared(false), 2000);
         return;
@@ -63,7 +50,7 @@ export function HealsHeroesUnemploymentBenefitCalculator({
         // fall through
       }
     }
-    if (await copyTextToClipboard(text)) {
+    if (await copyTextToClipboard(summary)) {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     }
@@ -89,7 +76,7 @@ export function HealsHeroesUnemploymentBenefitCalculator({
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
-        <HealsHeroesUnemploymentBenefitForm key={noticeVersion} />
+        <HealsHeroesUnemploymentBenefitForm />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
           <button
