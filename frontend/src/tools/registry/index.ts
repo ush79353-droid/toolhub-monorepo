@@ -336,6 +336,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetProfitMarginCalculator,
     })),
   ),
+  ReturnOnSalesCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/return-on-sales/ReturnOnSalesCalculator'
+    ).then((mod) => ({
+      default: mod.ReturnOnSalesCalculator,
+    })),
+  ),
   OvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/overtime/OvertimeCalculator'
@@ -343,6 +350,7 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OvertimeCalculator,
     })),
   ),
+
   OvertimePaycheckCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/overtime-paycheck/OvertimePaycheckCalculator'
