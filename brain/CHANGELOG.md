@@ -4,6 +4,18 @@
 
 ---
 
+
+### 2026-11-19 — Add Budget Calculator
+- **Summary:** Shipped Budget Calculator on existing catalog slug `budget-calculator` (`BudgetCalculator`, catalog `6af46f0fa27d8d1d4e99004b`). Screenshot-first personal budget with independent FX and / mo·/ yr frequencies; tax rate on gross salary; dual FX slug lists. Activated with `--set-active`; **indexable** left false. Registry also via concurrent commits.
+- **Example:** 100,000/mo · 10% tax · 5,000 savings · 20,000 mo · 12,000/yr → income **90,000** · balance **64,000**/mo.
+- **Important Files:** `frontend/src/tools/calculators/budget/*`, registry, sitemap, FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** calculation.test.ts passed; tool:assign; three local commits. Temporary files cleaned: YES.
+### 2026-11-19 — Add Wedding Budget Calculator
+- **Summary:** Shipped Wedding Budget Calculator on existing catalog slug `wedding-budget-calculator` (`WeddingBudgetCalculator`, catalog `6af46f0fa27d8d1d4e99004d`, preserved `nameKey` `wedding budget calculator`, pillar `6af451c0a27d8d1d4e98f97d`). Screenshot-first (ADR-023): planned budget FX; guests (default 100); bride & groom; subcontractors; venue/food/drinks; ceremony; transportation/accommodation; add/remove custom expenses; section totals; total average cost per guest; wedding budget balance with under/balanced/over messaging. Formulas: section sum; grand total = section totals + custom; per guest = total/guests; balance = planned − total. Independent Phase 2 FX on every money field (normalize into planned-budget currency); guests never convert. Dual `CURRENCY_CONVERSION_SLUGS`. Budget Calculator / Business Budget siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Planned 100,000 · 100 guests · total expenses 120,000 → per guest **1,200** · balance **−20,000** (over budget).
+- **Important Files:** `frontend/src/tools/calculators/wedding-budget/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Stimulus Check Calculator (EIP1 / CARES)
 - **Summary:** Shipped Stimulus Check Calculator on existing catalog slug `stimulus-check-calculator` (`StimulusCheckCalculator`, catalog `6af46f0fa27d8d1d4e99004e`, preserved `nameKey` `stimulus check calculator`, pillar `6af451c1a27d8d1d4e98f97e`). Screenshot-first (ADR-023): US residency/SSN eligibility copy; filed 2019 taxes Yes/No; filing status Single/Married/HoH; kids; 2019 AGI USD; estimated historical payment. Fixed USD (no FX / not in `CURRENCY_CONVERSION_SLUGS`). Identified as first Economic Impact Payment (EIP1) under CARES Act / I.R.C. §6428: $1,200 / $2,400 + $500×kids under 17; 5% phase-out above $75k / $112.5k / $150k. Sources: 26 U.S.C. §6428, CRS IN11355, IRS EIP overview, P.L. 116-136. Second/third/proposal stimulus siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Single · 0 kids · AGI 75,000 → **$1,200**; AGI 87,000 → **$600**; married · 2 kids · AGI 150,000 → **$3,400**.
@@ -1914,9 +1926,6 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
-0,750 financed; loan $510,750; monthly ≈ $3,508.15; interest ≈ $752,184.28.
-- **Important Files:** `frontend/src/tools/calculators/va-mortgage/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-va-mortgage-tool.ts`, `brain/*`.
-- **Verification:** MongoDB activated. Lint/builds/browser/automated tests omitted per user.
 
 ### 2026-11-16 — Student Loan Repayment Calculator | COVID-19 (Historical Notice)
 - **Summary:** Shipped informational historical notice on existing catalog slug `student-loan-repayment-calculator-covid-19` (`StudentLoanRepaymentCovidCalculator`, catalog `6af46f0fa27d8d1d4e98ff6a`). No financial inputs, repayment formulas, or currency selectors. Notice covers COVID-era federal payment suspension with historical December 31, 2020 reference; states COVID-era calculations are no longer valid; does not claim current federal loans are paused or 0% interest; internal link to `/tools/loan-calculator`. Share result / Reload / disabled Clear / feedback controls. Activated.
