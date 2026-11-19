@@ -5,6 +5,10 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import {
+  convertPopulationDisplay,
+  formatPopulationInput,
+} from './calculation';
 import { NaturalUnemploymentForm } from './NaturalUnemploymentForm';
 import {
   createDefaultInput,
@@ -13,9 +17,17 @@ import {
   type NaturalUnemploymentResult,
   type PopulationUnit,
 } from './types';
+import { validateNaturalUnemploymentInput } from './validation';
 
 function inputsEqual(a: NaturalUnemploymentInput, b: NaturalUnemploymentInput): boolean {
   return JSON.stringify(a) === JSON.stringify(b);
+}
+
+function parseOptionalAmount(raw: string): number | null {
+  const cleaned = raw.trim().replace(/,/g, '');
+  if (cleaned === '') return null;
+  const value = Number(cleaned);
+  return Number.isFinite(value) ? value : null;
 }
 
 export function NaturalUnemploymentCalculator({
@@ -26,10 +38,15 @@ export function NaturalUnemploymentCalculator({
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
   const defaults = createDefaultInput();
+  const initial = validateNaturalUnemploymentInput(defaults);
   const [baseline, setBaseline] = React.useState<NaturalUnemploymentInput>(() => defaults);
   const [input, setInput] = React.useState<NaturalUnemploymentInput>(() => defaults);
-  const [errors] = React.useState<NaturalUnemploymentFieldErrors>({});
-  const [result] = React.useState<NaturalUnemploymentResult | null>(null);
+  const [errors, setErrors] = React.useState<NaturalUnemploymentFieldErrors>(
+    () => initial.errors
+  );
+  const [result, setResult] = React.useState<NaturalUnemploymentResult | null>(
+    () => initial.result
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -39,8 +56,11 @@ export function NaturalUnemploymentCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const handleChange = (next: NaturalUnemploymentInput) => {
+  const apply = (next: NaturalUnemploymentInput) => {
+    const validation = validateNaturalUnemploymentInput(next);
     setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleUnitChange = (
@@ -48,13 +68,36 @@ export function NaturalUnemploymentCalculator({
     unit: PopulationUnit
   ) => {
     if (unit === input[field]) return;
-    setInput({ ...input, [field]: unit });
+
+    const amountField =
+      field === 'frictionalUnit'
+        ? 'frictional'
+        : field === 'structuralUnit'
+          ? 'structural'
+          : 'laborForce';
+    const fromUnit = input[field];
+    const amount = parseOptionalAmount(input[amountField]);
+
+    if (amount === null) {
+      apply({ ...input, [field]: unit });
+      return;
+    }
+
+    const converted = convertPopulationDisplay(amount, fromUnit, unit);
+    apply({
+      ...input,
+      [field]: unit,
+      [amountField]: formatPopulationInput(converted),
+    });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateNaturalUnemploymentInput(fresh);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -66,6 +109,8 @@ export function NaturalUnemploymentCalculator({
     ? [
         `${metadata.title} — Omega Calculators`,
         `Natural rate of unemployment: ${result.formattedNaturalRate}%`,
+        `Natural unemployed: ${result.naturalUnemployedPeople.toLocaleString('en-US')} people`,
+        `Labor force: ${result.laborForcePeople.toLocaleString('en-US')} people`,
         'Simplified model: (frictional + structural) ÷ labor force × 100. Cyclical unemployment excluded.',
       ].join('\n')
     : '';
@@ -111,7 +156,7 @@ export function NaturalUnemploymentCalculator({
           input={input}
           errors={errors}
           result={result}
-          onChange={handleChange}
+          onChange={apply}
           onUnitChange={handleUnitChange}
         />
 
