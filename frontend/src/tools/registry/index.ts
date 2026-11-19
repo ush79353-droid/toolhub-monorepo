@@ -2512,6 +2512,18 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CashBackOrLowInterestCalculator,
     })),
   ),
+  CashFlowToDebtRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cash-flow-to-debt-ratio/CashFlowToDebtRatioCalculator'
+    ).then((mod) => ({
+      default: mod.CashFlowToDebtRatioCalculator,
+    })),
+  ),
+  CashRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/cash-ratio/CashRatioCalculator').then((mod) => ({
+      default: mod.CashRatioCalculator,
+    })),
+  ),
   ChurnRateCalculator: lazyTool(() =>
     import('@/tools/calculators/churn-rate/ChurnRateCalculator').then((mod) => ({
       default: mod.ChurnRateCalculator,
@@ -3843,6 +3855,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/lwa-unemployment-benefit/LwaUnemploymentBenefitCalculator'
     ).then((mod) => ({
       default: mod.LwaUnemploymentBenefitCalculator,
+    })),
+  ),
+  HealsHeroesUnemploymentBenefitCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/heals-heroes-unemployment-benefit/HealsHeroesUnemploymentBenefitCalculator'
+    ).then((mod) => ({
+      default: mod.HealsHeroesUnemploymentBenefitCalculator,
     })),
   ),
   CashActStimulusCalculator: lazyTool(() =>

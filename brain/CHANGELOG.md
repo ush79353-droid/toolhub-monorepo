@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Cash Flow to Debt Ratio Calculator
+- **Summary:** Shipped Cash Flow to Debt Ratio Calculator on existing catalog slug `cash-flow-to-debt-ratio-calculator` (`CashFlowToDebtRatioCalculator`, catalog `6af46f0fa27d8d1d4e990038`). Screenshot-first (ADR-023): OCF FX; total debt FX; cash-flow-to-debt %; expanded debt-to-cash-flow multiple; optional ST+LT debt components. Formulas OCF/Debt×100 and Debt/OCF. Dual `CURRENCY_CONVERSION_SLUGS`. Also registered pending Cash Ratio (`CashRatioCalculator`) module. Cash Ratio / OCF / DSCR siblings untouched. Activated with `--set-active`; **`indexable` preserved false**.
+- **Example:** OCF 50,000 · Debt 200,000 → **25%** · debt-to-CF **4x**.
+- **Important Files:** `frontend/src/tools/calculators/cash-flow-to-debt-ratio/*`, registry, sitemap, currency slug lists, `backend/.../tool.key.ts`, brain docs.
+- **Verification:** `calculation.test.ts` passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Stock Split Calculator
 - **Summary:** Shipped Stock Split Calculator on existing catalog slug `stock-split-calculator` (`StockSplitCalculator`, catalog `6af46f0fa27d8d1d4e990031`, preserved `nameKey` `stock split calculator`, pillar `6af451bfa27d8d1d4e98f976`). Screenshot-first (ADR-023): Before stock split (shares + price FX); Stock split ratio A-for-B with explanation (forward and reverse); After stock split (shares + price FX) plus portfolio value before/after. Independent Phase 2 FX on share prices and portfolio values; share counts and ratio never convert. Fractional shares kept mathematically with cash-in-lieu note. No taxes/fees/dividends. Stock / Stock Average / Beta Stock / Safety Stock siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Formulas:** New Shares = Original Shares × A / B; New Share Price = Original Share Price × B / A; Portfolio Before = Shares × Price; Portfolio After = New Shares × New Price.

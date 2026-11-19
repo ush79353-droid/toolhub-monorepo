@@ -457,6 +457,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarRefinanceCalculator',
   'CarriedInterestCalculator',
   'CashBackOrLowInterestCalculator',
+  'CashFlowToDebtRatioCalculator',
+  'CashRatioCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
   'ContributionMarginCalculator',
@@ -678,6 +680,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'StimulusCheck40kCalculator',
   'CaresActUnemploymentBenefitCalculator',
   'LwaUnemploymentBenefitCalculator',
+  'HealsHeroesUnemploymentBenefitCalculator',
   'CashActStimulusCalculator',
   'SecondStimulus900BillionCalculator',
   'AmericanRescuePlanStimulusCalculator',
@@ -1116,6 +1119,8 @@ if (isDirect) {
 
     !isApprovedComponentKey('CarriedInterestCalculator') ||
     !isApprovedComponentKey('CashBackOrLowInterestCalculator') ||
+    !isApprovedComponentKey('CashFlowToDebtRatioCalculator') ||
+    !isApprovedComponentKey('CashRatioCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
     !isApprovedComponentKey('ConsultingFeesCalculator') ||
     !isApprovedComponentKey('ContributionMarginCalculator') ||
@@ -1336,6 +1341,7 @@ if (isDirect) {
     !isApprovedComponentKey('StimulusCheck40kCalculator') ||
     !isApprovedComponentKey('CaresActUnemploymentBenefitCalculator') ||
     !isApprovedComponentKey('LwaUnemploymentBenefitCalculator') ||
+    !isApprovedComponentKey('HealsHeroesUnemploymentBenefitCalculator') ||
     !isApprovedComponentKey('CashActStimulusCalculator') ||
     !isApprovedComponentKey('SecondStimulus900BillionCalculator') ||
     !isApprovedComponentKey('AmericanRescuePlanStimulusCalculator') ||

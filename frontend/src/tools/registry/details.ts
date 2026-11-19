@@ -594,6 +594,9 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/carried-interest/detail'),
   CashBackOrLowInterestCalculator: () =>
     import('@/tools/calculators/cash-back-or-low-interest/detail'),
+  CashFlowToDebtRatioCalculator: () =>
+    import('@/tools/calculators/cash-flow-to-debt-ratio/detail'),
+  CashRatioCalculator: () => import('@/tools/calculators/cash-ratio/detail'),
   ChurnRateCalculator: () =>
     import('@/tools/calculators/churn-rate/detail'),
   ConsultingFeesCalculator: () =>
@@ -1005,6 +1008,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cares-act-unemployment-benefit/detail'),
   LwaUnemploymentBenefitCalculator: () =>
     import('@/tools/calculators/lwa-unemployment-benefit/detail'),
+  HealsHeroesUnemploymentBenefitCalculator: () =>
+    import('@/tools/calculators/heals-heroes-unemployment-benefit/detail'),
   CashActStimulusCalculator: () =>
     import('@/tools/calculators/cash-act-stimulus/detail'),
   SecondStimulus900BillionCalculator: () =>
