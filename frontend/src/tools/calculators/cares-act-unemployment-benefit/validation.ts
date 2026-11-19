@@ -1,7 +1,9 @@
-import type {
-  CaresActUnemploymentBenefitFieldErrors,
-  CaresActUnemploymentBenefitInput,
-  CaresActUnemploymentBenefitResult,
+import { buildCaresActUnemploymentNoticeSummary } from './calculation';
+import {
+  UNEMPLOYMENT_CALCULATOR_HREF,
+  type CaresActUnemploymentBenefitFieldErrors,
+  type CaresActUnemploymentBenefitInput,
+  type CaresActUnemploymentBenefitResult,
 } from './types';
 
 export interface CaresActUnemploymentBenefitValidation {
@@ -10,9 +12,16 @@ export interface CaresActUnemploymentBenefitValidation {
   result: CaresActUnemploymentBenefitResult | null;
 }
 
-/** UI commit placeholder — always-valid notice validation lands in the guidance commit. */
+/**
+ * Informational tool: always valid. No payout fields to check.
+ */
 export function validateCaresActUnemploymentBenefitInput(
-  _input: CaresActUnemploymentBenefitInput
+  _input: CaresActUnemploymentBenefitInput,
+  title = 'Unemployment Benefit Calculator - CARES Act'
 ): CaresActUnemploymentBenefitValidation {
-  return { isValid: false, errors: {}, result: null };
+  const result: CaresActUnemploymentBenefitResult = {
+    summaryText: buildCaresActUnemploymentNoticeSummary(title),
+    unemploymentCalculatorHref: UNEMPLOYMENT_CALCULATOR_HREF,
+  };
+  return { isValid: true, errors: {}, result };
 }

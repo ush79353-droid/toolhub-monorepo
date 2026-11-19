@@ -5,15 +5,10 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { buildCaresActUnemploymentNoticeSummary } from './calculation';
 import { CaresActUnemploymentBenefitForm } from './CaresActUnemploymentBenefitForm';
-import { UNEMPLOYMENT_CALCULATOR_HREF } from './types';
-
-const NOTICE_SUMMARY = [
-  'Unemployment Benefit Calculator - CARES Act — Omega Calculators',
-  'Historical notice only — CARES Act pandemic unemployment supplements are not available for current claims.',
-  'The Coronavirus Aid, Relief, and Economic Security (CARES) Act provided temporary pandemic unemployment relief.',
-  `For unemployment-rate calculations, see ${UNEMPLOYMENT_CALCULATOR_HREF}`,
-].join('\n');
+import { createDefaultInput } from './types';
+import { validateCaresActUnemploymentBenefitInput } from './validation';
 
 export function CaresActUnemploymentBenefitCalculator({
   metadata,
@@ -22,6 +17,13 @@ export function CaresActUnemploymentBenefitCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const notice = validateCaresActUnemploymentBenefitInput(
+    createDefaultInput(),
+    metadata.title
+  );
+  const summary =
+    notice.result?.summaryText ??
+    buildCaresActUnemploymentNoticeSummary(metadata.title);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -40,7 +42,7 @@ export function CaresActUnemploymentBenefitCalculator({
   const handleShare = async () => {
     if (canShare) {
       try {
-        await navigator.share({ title: metadata.title, text: NOTICE_SUMMARY });
+        await navigator.share({ title: metadata.title, text: summary });
         setShared(true);
         window.setTimeout(() => setShared(false), 2000);
         return;
@@ -48,7 +50,7 @@ export function CaresActUnemploymentBenefitCalculator({
         // fall through
       }
     }
-    if (await copyTextToClipboard(NOTICE_SUMMARY)) {
+    if (await copyTextToClipboard(summary)) {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     }

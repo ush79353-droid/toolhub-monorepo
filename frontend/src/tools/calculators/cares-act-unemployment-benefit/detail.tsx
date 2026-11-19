@@ -1,12 +1,16 @@
 import type { ToolPageDetail } from '@/tools/page-detail';
+import { CaresActUnemploymentBenefitGuideArticle } from './CaresActUnemploymentBenefitGuideArticle';
+import {
+  CARES_ACT_UNEMPLOYMENT_FAQS,
+  CARES_ACT_UNEMPLOYMENT_TOC_ITEMS,
+} from './content';
 
-/** UI commit placeholder — guide/FAQ land in the guidance commit. */
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Historical notice about CARES Act pandemic unemployment relief. Not a current benefit calculator.',
+    'Historical notice about CARES Act pandemic unemployment relief. Not a current benefit calculator — use the Unemployment Calculator for unemployment-rate math.',
   asideAriaLabel: 'CARES Act unemployment benefit historical notice',
-  tocItems: [],
-  GuideArticle: null,
-  faqs: [],
+  tocItems: CARES_ACT_UNEMPLOYMENT_TOC_ITEMS,
+  GuideArticle: CaresActUnemploymentBenefitGuideArticle,
+  faqs: CARES_ACT_UNEMPLOYMENT_FAQS,
   countryRules: null,
 };
