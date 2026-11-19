@@ -161,7 +161,7 @@ export function SecondStimulus900BillionGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...SECOND_STIMULUS_900B_FAQS]} />
+            <FAQAccordion items={SECOND_STIMULUS_900B_FAQS} />
           </div>
         </section>
       </div>

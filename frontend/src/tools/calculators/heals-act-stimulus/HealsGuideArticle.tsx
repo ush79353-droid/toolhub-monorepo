@@ -176,7 +176,7 @@ export function HealsGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...HEALS_FAQS]} />
+            <FAQAccordion items={HEALS_FAQS} />
           </div>
         </article>
       </div>

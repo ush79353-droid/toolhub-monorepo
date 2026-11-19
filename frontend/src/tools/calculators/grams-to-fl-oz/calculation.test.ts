@@ -30,7 +30,7 @@ function assertClose(actual: number, expected: number, digits = 6): void {
 assert.equal(WATER_DENSITY_G_PER_ML, 1);
 assert.equal(US_FL_OZ_IN_ML, 29.5735295625);
 assert.equal(UK_FL_OZ_IN_ML, 28.4130625);
-assert.ok(US_FL_OZ_IN_ML !== UK_FL_OZ_IN_ML);
+assert.ok(Number(US_FL_OZ_IN_ML) !== Number(UK_FL_OZ_IN_ML));
 
 assertClose(gramsToFluidOunces(100, 1, 'US'), 3.38140227, 4);
 assertClose(gramsToFluidOunces(250, 1, 'US'), 8.453505675, 4);

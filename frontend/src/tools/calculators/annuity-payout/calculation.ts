@@ -278,7 +278,7 @@ export function solvePaymentCount(input: {
 
   let lo = 1;
   let hi = 1;
-  let cur = one;
+  let cur: ScheduleTotals | null = one;
   let guard = 0;
   while (
     cur !== null &&

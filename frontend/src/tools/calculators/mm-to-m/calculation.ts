@@ -9,6 +9,7 @@ import {
 } from './types';
 
 export { formatLength, MM_PER_METER };
+export type { MmToMResult };
 
 export function millimetersToMeters(millimeters: number): number {
   return millimeters / MM_PER_METER;

@@ -10,5 +10,6 @@ export interface ToolPageDetail {
   tocItems: readonly TableOfContentsItem[];
   GuideArticle: ComponentType;
   faqs: readonly FAQItem[];
-  countryRules: ToolDetailSidebarCountryRules | null;
+  /** Optional; omitted tools render with no country-rules sidebar block. */
+  countryRules?: ToolDetailSidebarCountryRules | null;
 }

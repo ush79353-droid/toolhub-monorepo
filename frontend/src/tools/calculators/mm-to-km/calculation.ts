@@ -9,6 +9,7 @@ import {
 } from './types';
 
 export { formatLength, MM_PER_KILOMETER };
+export type { MmToKmResult };
 
 export function millimetersToKilometers(millimeters: number): number {
   return millimeters / MM_PER_KILOMETER;

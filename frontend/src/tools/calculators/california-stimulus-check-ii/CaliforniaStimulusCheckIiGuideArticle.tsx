@@ -108,7 +108,7 @@ export function CaliforniaStimulusCheckIiGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...CALIFORNIA_STIMULUS_CHECK_II_FAQS]} />
+            <FAQAccordion items={CALIFORNIA_STIMULUS_CHECK_II_FAQS} />
           </div>
         </section>
       </div>

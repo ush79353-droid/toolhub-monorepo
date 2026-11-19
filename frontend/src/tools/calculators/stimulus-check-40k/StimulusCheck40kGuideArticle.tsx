@@ -95,7 +95,7 @@ export function StimulusCheck40kGuideArticle() {
             Frequently Asked Questions
           </h2>
           <div className="mt-4">
-            <FAQAccordion faqs={[...STIMULUS_40K_FAQS]} />
+            <FAQAccordion items={STIMULUS_40K_FAQS} />
           </div>
         </section>
       </div>
