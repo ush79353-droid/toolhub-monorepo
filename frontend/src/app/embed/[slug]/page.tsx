@@ -75,6 +75,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'credit-card-payment-calculator',
   'credit-card-payoff-calculator',
   'deferred-payment-loan-calculator',
+  'depreciation-calculator',
   'discounted-cash-flow-calculator-dcf',
   'discount-calculator',
   'discount-rate-calculator',

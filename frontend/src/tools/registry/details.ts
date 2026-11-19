@@ -28,6 +28,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/debt-to-equity/detail'),
   DeferredAnnuityCalculator: () =>
     import('@/tools/calculators/deferred-annuity/detail'),
+  DepreciationCalculator: () =>
+    import('@/tools/calculators/depreciation/detail'),
   EbitdaMarginCalculator: () =>
     import('@/tools/calculators/ebitda-margin/detail'),
   FloridaOvertimeCalculator: () =>

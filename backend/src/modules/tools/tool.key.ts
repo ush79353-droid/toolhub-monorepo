@@ -15,6 +15,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DebtToCapitalRatioCalculator',
   'DebtToEquityCalculator',
   'DeferredAnnuityCalculator',
+  'DepreciationCalculator',
   'EbitdaMarginCalculator',
   'FloridaOvertimeCalculator',
   'FutureValueOfAnnuityCalculator',
@@ -1375,6 +1376,7 @@ if (isDirect) {
     !isApprovedComponentKey('AnnuityCalculator') ||
     !isApprovedComponentKey('AnnuityPayoutCalculator') ||
     !isApprovedComponentKey('DeferredAnnuityCalculator') ||
+    !isApprovedComponentKey('DepreciationCalculator') ||
     !isApprovedComponentKey('FutureValueOfAnnuityCalculator') ||
     !isApprovedComponentKey('GrowingAnnuityCalculator') ||
     !isApprovedComponentKey('ImmediateAnnuityCalculator') ||
