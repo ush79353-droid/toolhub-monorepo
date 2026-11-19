@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add SIP Calculator — Systematic Investment Plan
+- **Summary:** Shipped SIP Calculator on existing catalog slug `sip-calculator-systematic-investment-plan` (`SipCalculator`, catalog `6af46f0fa27d8d1d4e99000d`, pillar `6af451bea27d8d1d4e98f96f`, subPillar null). Screenshot-first (ADR-023): monthly SIP amount FX; years; expected annual return %; total investment FX; maturity FV FX; investment multiplication factor. Ordinary-annuity SIP FV with end-of-month compounding; zero rate → FV = total investment. Dual `CURRENCY_CONVERSION_SLUGS`; years/% never convert. SIP+Lumpsum / Mutual Fund siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 10,000/mo · 10y · 12% → investment **1,200,000** · maturity ≈ **2.3M** · factor > **1**.
+- **Important Files:** `frontend/src/tools/calculators/sip/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Sales Calculator
 - **Summary:** Shipped Sales Calculator on existing catalog slug `sales-calculator` (`SalesCalculator`, catalog `6af46f0fa27d8d1d4e990022`, pillar `6af451bfa27d8d1d4e98f974`). Screenshot-first (ADR-023): product price FX; quantity + period; revenue / annual revenue FX+period; collapsible Costs to be deducted (returns, allowances, discounts FX); net sales FX+period. Formulas: gross = price×qty; net = gross − returns − allowances − discounts; day/week/month/year conversion. Dual FX slug lists; quantity/periods never convert. Revenue / ROS / Sales Commission siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 100 × 25 / mo − 200 deductions → revenue **2,500**/mo · annual **30,000** · net **2,300**/mo.
