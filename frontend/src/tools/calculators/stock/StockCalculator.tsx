@@ -4,7 +4,21 @@ import * as React from 'react';
 import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
+import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { StockForm } from './StockForm';
 import {
   createDefaultInput,
@@ -12,9 +26,10 @@ import {
   type StockInput,
   type StockResult,
 } from './types';
+import { validateStockInput } from './validation';
 
 const FX_NOTE =
-  'Buying and selling prices, commission amounts, net totals, profit, and break-even each have their own currency. Trade math normalizes prices into the buying-price currency; results convert for display. Share count, commission percents, and ROI % are never converted.';
+  'Buying and selling prices, commission amounts, net totals, profit, and break-even each have their own currency. Trade math normalizes prices into the buying-price currency; results convert for display. Share count, commission percents, and ROI % are never converted. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: StockInput, b: StockInput): boolean {
   return (
@@ -41,6 +56,8 @@ export function StockCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<StockInput>(() => defaults);
   const [input, setInput] = React.useState<StockInput>(() => defaults);
@@ -58,27 +75,103 @@ export function StockCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  // UI shell — live trading math and FX land in the engine commit.
   const apply = (next: StockInput) => {
+    const validation = validateStockInput(next, rates);
     setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
-  const handleCurrencyOnly = (
-    key: keyof StockInput,
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
+  const handleBuyingPriceCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.buyingPriceCurrency) return;
+    const converted = convertFieldAmount(
+      input.buyingPrice,
+      input.buyingPriceCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      buyingPriceCurrency: next,
+      buyingPrice: converted.text,
+    });
+  };
+
+  const handleSellingPriceCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.sellingPriceCurrency) return;
+    const converted = convertFieldAmount(
+      input.sellingPrice,
+      input.sellingPriceCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      sellingPriceCurrency: next,
+      sellingPrice: converted.text,
+    });
+  };
+
+  const handleDisplayCurrencyChange = (
+    key:
+      | 'buyingCommissionAmountCurrency'
+      | 'netBuyingPriceCurrency'
+      | 'sellingCommissionAmountCurrency'
+      | 'netSellingPriceCurrency'
+      | 'profitCurrency'
+      | 'breakEvenSellingPriceCurrency',
     next: SupportedCurrency
   ) => {
+    if (next === input[key]) return;
+    if (!canConvertPair(input.buyingPriceCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, [key]: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateStockInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -86,16 +179,32 @@ export function StockCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const buySymbol = getCurrencySymbol(input.buyingPriceCurrency);
+  const sellSymbol = getCurrencySymbol(input.sellingPriceCurrency);
+  const profitSymbol = getCurrencySymbol(
+    result?.profitCurrency ?? input.profitCurrency
+  );
+  const breakEvenSymbol = getCurrencySymbol(
+    result?.breakEvenSellingPriceCurrency ?? input.breakEvenSellingPriceCurrency
+  );
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
         `Shares: ${input.numberOfShares}`,
-        `Buying price: ${getCurrencySymbol(input.buyingPriceCurrency)}${input.buyingPrice} ${input.buyingPriceCurrency}`,
-        `Selling price: ${getCurrencySymbol(input.sellingPriceCurrency)}${input.sellingPrice} ${input.sellingPriceCurrency}`,
-        `Profit: ${getCurrencySymbol(result.profitCurrency)}${result.formattedProfit} ${result.profitCurrency}`,
+        `Buying price/share: ${buySymbol}${input.buyingPrice} ${input.buyingPriceCurrency}`,
+        `Buying commission: ${input.buyingCommissionPercent}%`,
+        `Net buying cost: ${getCurrencySymbol(result.netBuyingPriceCurrency)}${result.formattedNetBuyingCost} ${result.netBuyingPriceCurrency}`,
+        `Selling price/share: ${sellSymbol}${input.sellingPrice} ${input.sellingPriceCurrency}`,
+        `Selling commission: ${input.sellingCommissionPercent}%`,
+        `Net selling proceeds: ${getCurrencySymbol(result.netSellingPriceCurrency)}${result.formattedNetSellingProceeds} ${result.netSellingPriceCurrency}`,
+        `Profit: ${profitSymbol}${result.formattedProfit} ${result.profitCurrency}`,
         `ROI: ${result.formattedRoiPercent}%`,
-        `Break-even/share: ${getCurrencySymbol(result.breakEvenSellingPriceCurrency)}${result.formattedBreakEvenSellingPrice} ${result.breakEvenSellingPriceCurrency}`,
-        FX_NOTE,
+        `Break-even/share: ${breakEvenSymbol}${result.formattedBreakEvenSellingPrice} ${result.breakEvenSellingPriceCurrency}`,
+        `Formulas: Net buy = N×B×(1+b/100); Net sell = N×S×(1−s/100); Profit = Net sell − Net buy; ROI = Profit/Net buy×100; Break-even = Net buy/[N×(1−s/100)]`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -111,12 +220,9 @@ export function StockCalculator({
         // fall through
       }
     }
-    try {
-      await navigator.clipboard.writeText(summary);
+    if (await copyTextToClipboard(summary)) {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // ignore
     }
   };
 
@@ -130,7 +236,9 @@ export function StockCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{FX_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">
+            {currencyNote}
+          </p>
         </div>
         {headerActions ? (
           <div className="flex items-center gap-2">{headerActions}</div>
@@ -143,31 +251,31 @@ export function StockCalculator({
           errors={errors}
           result={result}
           onChange={apply}
-          onBuyingPriceCurrencyChange={(next) =>
-            handleCurrencyOnly('buyingPriceCurrency', next)
-          }
+          onBuyingPriceCurrencyChange={handleBuyingPriceCurrencyChange}
           onBuyingCommissionAmountCurrencyChange={(next) =>
-            handleCurrencyOnly('buyingCommissionAmountCurrency', next)
+            handleDisplayCurrencyChange('buyingCommissionAmountCurrency', next)
           }
           onNetBuyingPriceCurrencyChange={(next) =>
-            handleCurrencyOnly('netBuyingPriceCurrency', next)
+            handleDisplayCurrencyChange('netBuyingPriceCurrency', next)
           }
-          onSellingPriceCurrencyChange={(next) =>
-            handleCurrencyOnly('sellingPriceCurrency', next)
-          }
+          onSellingPriceCurrencyChange={handleSellingPriceCurrencyChange}
           onSellingCommissionAmountCurrencyChange={(next) =>
-            handleCurrencyOnly('sellingCommissionAmountCurrency', next)
+            handleDisplayCurrencyChange(
+              'sellingCommissionAmountCurrency',
+              next
+            )
           }
           onNetSellingPriceCurrencyChange={(next) =>
-            handleCurrencyOnly('netSellingPriceCurrency', next)
+            handleDisplayCurrencyChange('netSellingPriceCurrency', next)
           }
           onProfitCurrencyChange={(next) =>
-            handleCurrencyOnly('profitCurrency', next)
+            handleDisplayCurrencyChange('profitCurrency', next)
           }
           onBreakEvenCurrencyChange={(next) =>
-            handleCurrencyOnly('breakEvenSellingPriceCurrency', next)
+            handleDisplayCurrencyChange('breakEvenSellingPriceCurrency', next)
           }
           conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
