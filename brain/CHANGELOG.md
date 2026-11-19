@@ -4,6 +4,18 @@
 
 ---
 
+### 2026-11-19 — Add Yearly Wage Calculator
+- **Summary:** Shipped Yearly Wage Calculator on existing catalog slug `yearly-wage-calculator` (`YearlyWageCalculator`, catalog `6af46f0fa27d8d1d4e99004a`, preserved `nameKey` `yearly wage calculator`, pillar `6af451c0a27d8d1d4e98f97c`, subPillar null). Screenshot-first (ADR-023): hours/week (40); weeks/year (0–52, default 52); hourly wage FX; yearly wage FX output; Net Salary flat tax % (default 12), net hourly FX, net yearly FX. Formulas: Yearly = Hourly × Hours × Weeks; Net Hourly = Hourly × (1 − Tax/100); Net Yearly = Yearly × (1 − Tax/100). Flat tax labeled simplified — not jurisdiction payroll. Dual `CURRENCY_CONVERSION_SLUGS`; hours/weeks/tax never convert. Annual Salary / Hourly Wage / Wage to Salary siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 500 PKR/hr · 40h · 52w · 12% tax → yearly **1,040,000** · net hourly **440** · net yearly **915,200**.
+- **Important Files:** `frontend/src/tools/calculators/yearly-wage/*`, registry, sitemap, both FX slug lists, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+### 2026-11-19 — Add Adjusted Gross Income (AGI) Calculator
+- **Summary:** Shipped AGI Calculator on existing catalog slug `adjusted-gross-income-agi-calculator` (`AdjustedGrossIncomeCalculator`, catalog `6af46f0fa27d8d1d4e990050`, preserved `nameKey` `adjusted gross income (agi) calculator`, pillar null). Screenshot-first (ADR-023): Gross income + Deductions (show-more) + Results; independent FX. Tax Year **2025** Schedule 1 adjustments with IRS caps/phaseouts (Pub. 590-A, 969, 970). Dual `CURRENCY_CONVERSION_SLUGS`. Income Tax / MAGI siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** Gross = sum of income (capital loss limited); Adjustments = eligible Schedule 1 items; AGI = Gross − Adjustments. Thresholds applied in USD after FX.
+- **Example:** Single · wages $80,000 · IRA $7,000 → AGI **$73,000**.
+- **Important Files:** `frontend/src/tools/calculators/adjusted-gross-income/*`, registry, sitemap, FX slug lists, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Hourly Wage Calculator
 - **Summary:** Shipped Hourly Wage Calculator on existing catalog slug `hourly-wage-calculator` (`HourlyWageCalculator`, catalog `6af46f0fa27d8d1d4e990048`, pillar `6af451c0a27d8d1d4e98f97c`). Screenshot-first (ADR-023): Hourly wage FX + Hours/week (default 40); Salary for time frames — Per second, Per minute, Daily, Weekly, Biweekly, Monthly, Annual (each independent FX). Formulas: Per second = H/3600; Per minute = H/60; Daily = H×W/5; Weekly = H×W; Biweekly = H×W×2; Monthly = H×W×52/12; Annual = H×W×52. Assumptions: 5 working days/week, 52 paid weeks/year. H≥0, W>0; zero hourly allowed. Hours never FX-convert. Wage / Hourly to Annual / Hourly to Salary - Wage siblings untouched. Activated via `npm run tool:assign` with `--set-active` (**indexable** preserved false).
 - **Example:** Hourly 500 · 40h → weekly **20,000** · annual **1,040,000** · daily **4,000** · biweekly **40,000**.

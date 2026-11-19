@@ -72,6 +72,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NetEffectiveRentCalculator: () =>
     import('@/tools/calculators/net-effective-rent/detail'),
   IncomeTaxCalculator: () => import('@/tools/calculators/income-tax/detail'),
+  AdjustedGrossIncomeCalculator: () =>
+    import('@/tools/calculators/adjusted-gross-income/detail'),
   IncomeTaxCalculatorPakistan: () =>
     import('@/tools/calculators/pakistan-income-tax/detail'),
   IncomeTaxCalculatorPhilippines: () =>
@@ -543,6 +545,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/turnover-rate/detail'),
   WebsiteAdRevenueCalculator: () =>
     import('@/tools/calculators/website-ad-revenue/detail'),
+  WeddingBudgetCalculator: () =>
+    import('@/tools/calculators/wedding-budget/detail'),
   WeekOverWeekCalculator: () =>
     import('@/tools/calculators/week-over-week/detail'),
   SoftwareContractValueCalculator: () =>

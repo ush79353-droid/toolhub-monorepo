@@ -266,6 +266,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.IncomeTaxCalculator,
     })),
   ),
+  AdjustedGrossIncomeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/adjusted-gross-income/AdjustedGrossIncomeCalculator'
+    ).then((mod) => ({
+      default: mod.AdjustedGrossIncomeCalculator,
+    })),
+  ),
   IncomeTaxCalculatorPakistan: lazyTool(() =>
     import(
       '@/tools/calculators/pakistan-income-tax/PakistanIncomeTaxCalculator'
@@ -2359,6 +2366,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/website-ad-revenue/WebsiteAdRevenueCalculator'
     ).then((mod) => ({
       default: mod.WebsiteAdRevenueCalculator,
+    })),
+  ),
+  WeddingBudgetCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/wedding-budget/WeddingBudgetCalculator'
+    ).then((mod) => ({
+      default: mod.WeddingBudgetCalculator,
     })),
   ),
   WeekOverWeekCalculator: lazyTool(() =>

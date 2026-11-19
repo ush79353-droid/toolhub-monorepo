@@ -40,6 +40,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'IncomeTaxCalculator',
   'IncomeTaxCalculatorPakistan',
   'IncomeTaxCalculatorPhilippines',
+  'AdjustedGrossIncomeCalculator',
   'AlabamaTaxCalculator',
   'NewJerseySalesTaxCalculator',
   'NewYorkOvertimeCalculator',
@@ -455,6 +456,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BuildVsBuyCalculator',
   'BurnRateCalculator',
   'BurndownChartCalculator',
+  'BudgetCalculator',
   'BusinessBudgetCalculator',
   'BusinessValuationCalculator',
   'CagrCalculator',
@@ -663,6 +665,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HourlyWageCalculator',
   'WageCalculator',
   'WageToSalaryCalculator',
+  'YearlyWageCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
   'InterestCalculator',
@@ -1127,6 +1130,7 @@ if (isDirect) {
     !isApprovedComponentKey('BuildVsBuyCalculator') ||
     !isApprovedComponentKey('BurnRateCalculator') ||
     !isApprovedComponentKey('BurndownChartCalculator') ||
+    !isApprovedComponentKey('BudgetCalculator') ||
     !isApprovedComponentKey('BusinessBudgetCalculator') ||
     !isApprovedComponentKey('BusinessValuationCalculator') ||
     !isApprovedComponentKey('CagrCalculator') ||
@@ -1334,6 +1338,7 @@ if (isDirect) {
     !isApprovedComponentKey('HourlyWageCalculator') ||
     !isApprovedComponentKey('WageCalculator') ||
     !isApprovedComponentKey('WageToSalaryCalculator') ||
+    !isApprovedComponentKey('YearlyWageCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
     !isApprovedComponentKey('InterestCalculator') ||
@@ -1411,6 +1416,7 @@ if (isDirect) {
     !isApprovedComponentKey('IncomeTaxCalculator') ||
     !isApprovedComponentKey('IncomeTaxCalculatorPakistan') ||
     !isApprovedComponentKey('IncomeTaxCalculatorPhilippines') ||
+    !isApprovedComponentKey('AdjustedGrossIncomeCalculator') ||
     !isApprovedComponentKey('AlabamaTaxCalculator') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||

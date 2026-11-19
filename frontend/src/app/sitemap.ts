@@ -484,6 +484,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'build-vs-buy-calculator',
   'burn-rate-calculator',
   'burndown-chart-calculator',
+  'budget-calculator',
   'business-budget-calculator',
   'business-valuation-calculator',
   'cagr-calculator',
@@ -685,6 +686,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'impermanent-loss-calculator',
 
   'income-tax-calculator',
+  'adjusted-gross-income-agi-calculator',
   'information-ratio-calculator',
   'interest-calculator',
   'interest-coverage-ratio-calculator',
