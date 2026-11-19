@@ -2496,6 +2496,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BurndownChartCalculator,
     })),
   ),
+  BudgetCalculator: lazyTool(() =>
+    import('@/tools/calculators/budget/BudgetCalculator').then((mod) => ({
+      default: mod.BudgetCalculator,
+    })),
+  ),
   BusinessBudgetCalculator: lazyTool(() =>
     import('@/tools/calculators/business-budget/BusinessBudgetCalculator').then((mod) => ({
       default: mod.BusinessBudgetCalculator,

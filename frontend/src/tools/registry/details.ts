@@ -586,6 +586,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/burn-rate/detail'),
   BurndownChartCalculator: () =>
     import('@/tools/calculators/burndown-chart/detail'),
+  BudgetCalculator: () => import('@/tools/calculators/budget/detail'),
   BusinessBudgetCalculator: () =>
     import('@/tools/calculators/business-budget/detail'),
   BusinessValuationCalculator: () =>
