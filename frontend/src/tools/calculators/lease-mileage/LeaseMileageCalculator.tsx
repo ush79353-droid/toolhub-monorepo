@@ -5,7 +5,22 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import type { SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_STALE_NOTE,
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
+import { shareLeaseMileageText } from './calculation';
 import { LeaseMileageForm } from './LeaseMileageForm';
 import {
   createDefaultInput,
@@ -14,6 +29,10 @@ import {
   type LeaseMileageInput,
   type LeaseMileageResult,
 } from './types';
+import { validateLeaseMileageInput } from './validation';
+
+const FX_NOTE =
+  'Excess fee, lease-end charge, and monthly savings each have their own currency. Charge math runs in the fee currency, then Phase 2 FX converts display outputs. km/mi convert with 1 mi = 1.609344 km. Years, months, and distance units are never FX-converted.';
 
 export function LeaseMileageCalculator({
   metadata,
@@ -22,46 +41,139 @@ export function LeaseMileageCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
+  const initialValidation = validateLeaseMileageInput(defaults, rates);
   const [baseline, setBaseline] = React.useState<LeaseMileageInput>(() => defaults);
   const [input, setInput] = React.useState<LeaseMileageInput>(() => defaults);
-  const [errors] = React.useState<LeaseMileageFieldErrors>({});
-  const [result] = React.useState<LeaseMileageResult | null>(null);
+  const [errors, setErrors] = React.useState<LeaseMileageFieldErrors>(
+    () => initialValidation.errors
+  );
+  const [result, setResult] = React.useState<LeaseMileageResult | null>(
+    () => (initialValidation.isValid ? initialValidation.result : null)
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const handleChange = (next: LeaseMileageInput) => setInput(next);
+  const apply = (next: LeaseMileageInput) => {
+    const validation = validateLeaseMileageInput(next, rates);
+    setConversionError(null);
+    setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
 
   const handleFeeCurrencyChange = (currency: SupportedCurrency) => {
     if (currency === input.excessFeeCurrency) return;
-    setInput({ ...input, excessFeeCurrency: currency });
+    const converted = convertFieldAmount(
+      input.excessFee,
+      input.excessFeeCurrency,
+      currency
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    apply({
+      ...input,
+      excessFeeCurrency: currency,
+      excessFee: converted.text,
+    });
   };
+
   const handleChargeCurrencyChange = (currency: SupportedCurrency) => {
     if (currency === input.chargeCurrency) return;
-    setInput({ ...input, chargeCurrency: currency });
+    if (!canConvertPair(input.excessFeeCurrency, currency)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    apply({ ...input, chargeCurrency: currency });
   };
+
   const handleSavingsCurrencyChange = (currency: SupportedCurrency) => {
     if (currency === input.savingsCurrency) return;
-    setInput({ ...input, savingsCurrency: currency });
+    if (!canConvertPair(input.excessFeeCurrency, currency)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    apply({ ...input, savingsCurrency: currency });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateLeaseMileageInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
-  const summary = '';
+  const currencyNote = !ratesStatus.available
+    ? CURRENCY_CONVERSION_UNAVAILABLE_NOTE
+    : ratesStatus.isStale
+      ? `${FX_NOTE} ${CURRENCY_CONVERSION_STALE_NOTE}`
+      : FX_NOTE;
+  const ratesWarning = ratesStatus.warning;
+
+  const summary =
+    result?.availability === 'ok'
+      ? shareLeaseMileageText({
+          title: metadata.title,
+          formattedExcess: result.formattedExcess,
+          excessUnit: result.excessDisplayUnit,
+          formattedCharge: result.formattedCharge,
+          chargeCurrency: result.chargeCurrency,
+          formattedSavings: result.formattedSavings,
+          savingsCurrency: result.savingsCurrency,
+          fxNote: currencyNote,
+        })
+      : '';
 
   const handleShare = async () => {
     if (!summary) return;
@@ -91,10 +203,7 @@ export function LeaseMileageCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">
-            Project excess lease miles and monthly savings. km/mi and currencies convert
-            independently.
-          </p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
@@ -104,7 +213,9 @@ export function LeaseMileageCalculator({
           input={input}
           errors={errors}
           result={result}
-          onChange={handleChange}
+          conversionError={conversionError}
+          ratesWarning={ratesWarning}
+          onChange={apply}
           onFeeCurrencyChange={handleFeeCurrencyChange}
           onChargeCurrencyChange={handleChargeCurrencyChange}
           onSavingsCurrencyChange={handleSavingsCurrencyChange}
