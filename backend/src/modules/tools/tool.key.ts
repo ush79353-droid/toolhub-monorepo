@@ -408,6 +408,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BusinessLoanCalculator',
   'ProfitCalculator',
   'EconomicProfitCalculator',
+  'EvToSalesCalculator',
   'ProfitabilityIndexCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
@@ -1086,6 +1087,7 @@ if (isDirect) {
     !isApprovedComponentKey('BusinessLoanCalculator') ||
     !isApprovedComponentKey('ProfitCalculator') ||
     !isApprovedComponentKey('EconomicProfitCalculator') ||
+    !isApprovedComponentKey('EvToSalesCalculator') ||
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
     !isApprovedComponentKey('RevenuePerEmployeeCalculator') ||
     !isApprovedComponentKey('RoasCalculator') ||

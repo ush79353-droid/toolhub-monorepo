@@ -501,6 +501,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ProfitCalculator: () => import('@/tools/calculators/profit/detail'),
   EconomicProfitCalculator: () =>
     import('@/tools/calculators/economic-profit/detail'),
+  EvToSalesCalculator: () =>
+    import('@/tools/calculators/ev-to-sales/detail'),
   ProfitabilityIndexCalculator: () =>
     import('@/tools/calculators/profitability-index/detail'),
   RevenuePerEmployeeCalculator: () =>

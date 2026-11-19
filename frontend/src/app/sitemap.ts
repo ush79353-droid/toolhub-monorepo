@@ -438,6 +438,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'business-loan-calculator',
   'profit-calculator',
   'economic-profit-calculator',
+  'ev-to-sales-calculator-enterprise-value-to-sales',
   'profitability-index-calculator',
   'revenue-per-employee-calculator',
   'roas-calculator',

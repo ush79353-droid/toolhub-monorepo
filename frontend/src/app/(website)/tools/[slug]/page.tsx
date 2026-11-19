@@ -267,6 +267,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'percentage-discount-calculator',
   'profit-calculator',
   'economic-profit-calculator',
+  'ev-to-sales-calculator-enterprise-value-to-sales',
   'percentage-return-calculator',
   'perpetuity-calculator',
   'present-value-calculator',
