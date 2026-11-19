@@ -36,6 +36,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnuityPayoutCalculator,
     })),
   ),
+  AutoLeaseCalculator: lazyTool(() =>
+    import('@/tools/calculators/auto-lease/AutoLeaseCalculator').then((mod) => ({
+      default: mod.AutoLeaseCalculator,
+    })),
+  ),
   AutoLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/auto-loan/AutoLoanCalculator').then((mod) => ({
       default: mod.AutoLoanCalculator,

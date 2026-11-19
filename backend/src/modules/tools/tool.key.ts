@@ -4,6 +4,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AfterTaxCostOfDebtCalculator',
   'AnnuityCalculator',
   'AnnuityPayoutCalculator',
+  'AutoLeaseCalculator',
   'AutoLoanCalculator',
   'CaliforniaOvertimeCalculator',
   'DebtAvalancheCalculator',
@@ -692,6 +693,7 @@ if (isDirect) {
     throw new Error('slug rule');
   }
   if (
+    !isApprovedComponentKey('AutoLeaseCalculator') ||
     !isApprovedComponentKey('AutoLoanCalculator') ||
     !isApprovedComponentKey('LoanCalculator') ||
     !isApprovedComponentKey('RrefCalculator') ||

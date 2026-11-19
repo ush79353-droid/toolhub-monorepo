@@ -29,7 +29,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `TOOL-451` | Hourly to Salary with Overtime Calculator blocked: prompt/specs conflict (Wage Calculator instructions vs Overtime screenshot/folder) — do not invent a merged scope until product clarifies | Unassigned | Blocked | `Completed Tools` / Tools queue materials; no registry key until unblocked | `TOOL-01` |
+| `TOOL-451` | Hourly to Salary with Overtime Calculator blocked: prompt is Wage Calculator (already live) while screenshot matches Salary Calculator With Overtime (already live); separate undeveloped catalog `hourly-to-salary-with-overtime-calculator` (`6af46f0fa27d8d1d4e990003`) must not be activated as a near-duplicate — owned in `In Progress` by Cursor Auto; do not reclaim | Cursor | Blocked | `In Progress/Hourly to Salary with Overtime Calculator` | `TOOL-01` |
 
 ---
 
@@ -37,6 +37,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-494` | Implement Auto Lease Calculator on existing slug `auto-lease-calculator` with Total Price / Monthly Payment tabs, money factor or APR, residual, down, trade-in, sales tax on monthly payment, USD fixed, guide/FAQ, and verified activation (leave Lease / Car Lease siblings untouched; **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/auto-lease/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*` | — |
 | `TOOL-493` | Implement Zakat Calculator on existing slug `zakat-calculator` with gold 87.48 g / silver 612.36 g / custom Nisab, 2.5% of net Zakatable wealth, Hawl note, dated metal reference prices plus manual override and ADR-021 conversion, guide/FAQ, and verified activation (preserve nameKey `zakat calculator`, isFeatured false, **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/zakat/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*` | — |
 | `TOOL-492` | Implement VA Disability Calculator on existing slug `va-disability-calculator` with 38 CFR 4.25 combined ratings, 4.26 bilateral factor, December 1 2025 VA compensation rates, dependents, guide/chart/FAQ, and verified activation (preserve nameKey `va disability calculator`, isFeatured false, **indexable false**; fixed USD) | Cursor | Completed | `frontend/src/tools/calculators/va-disability/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*` | — |
 | `TOOL-491` | Implement US Income Percentile Calculator on existing slug `us-income-percentile-calculator` with 2024 CPS individual (PINC-01) and household (P60-286 Table A-4a) distributions, interpolation only inside published thresholds, guide/SEO/embed, and registration (preserve nameKey `us income percentile calculator`, isFeatured false, **indexable false**, **isActive false**) | Cursor | Completed | `frontend/src/tools/calculators/us-income-percentile/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*` | — |

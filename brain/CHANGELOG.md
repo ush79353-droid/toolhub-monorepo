@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Auto Lease Calculator
+- **Summary:** Shipped Auto Lease Calculator on existing catalog slug `auto-lease-calculator` (`AutoLeaseCalculator`, catalog `6af46f0fa27d8d1d4e99000f`, preserved `nameKey` `auto lease calculator`). Screenshot-first (ADR-023): Total Price / Monthly Payment tabs; auto price; term months; Money Factor or APR (MF ≈ APR%/2400); down payment; trade-in; sales tax %; residual value. Money-factor lease model with tax applied to the monthly payment. Fixed USD (no currency selector / no FX). Lease Calculator and Car Lease Calculator siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** Cap = Price − Down − Trade-in; Dep/mo = (Cap − Residual)/n; Finance/mo = (Cap + Residual)×MF; Base = Dep + Finance; Payment = Base×(1+tax/100); Total cost = payments + down.
+- **Example:** $50,000 · 36 mo · MF 0.00208 · down $10,000 · tax 7% · residual $24,000 → payment ≈ **$617.99**/mo.
+- **Important Files:** `frontend/src/tools/calculators/auto-lease/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Zakat Calculator
 - **Summary:** Shipped Zakat Calculator on existing catalog slug `zakat-calculator` (`ZakatCalculator`, catalog `6af46f10a27d8d1d4e99010f`, preserved `nameKey` `zakat calculator`). Screenshot-first (ADR-023): gold Nisab 87.48 g, silver Nisab 612.36 g, or a custom threshold; cash, investments, metal weight × purity × price, trade assets; immediate liabilities only; 2.5% of net wealth when Nisab is met. Hawl is explained and does not hide the estimate. Metal prices are a dated 19 Nov 2026 USD reference (not a live feed) converted with stored ADR-021 rates, or a manual price per gram. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Assets 500,000 − liabilities 100,000 = net 400,000. Custom Nisab 150,000. Zakat **10,000**.

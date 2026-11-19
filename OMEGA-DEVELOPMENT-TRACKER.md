@@ -2,14 +2,14 @@
 
 ## Summary
 
-Total discovered: 30
-Newly developed: 28
+Total discovered: 51
+Newly developed: 29
 Already developed: 1
 Development failed: 0
 Skipped / blocked: 1
-Remaining pending: 0
+Remaining pending: ~20
 Audit completed: 0
-Audit pending: 29
+Audit pending: 30+
 
 ## Calculator Register
 
@@ -43,12 +43,14 @@ Audit pending: 29
 | 26 | Dividend Yield Calculator | DEVELOPED | AUDIT PENDING | e225cf05 | 7b809a04 | 7dbe8198 | Completed Tools | `DividendYieldCalculator` |
 | 27 | Hourly to Annual Salary Calculator | DEVELOPED | AUDIT PENDING | 73ed83c0 | 86bdc30d | 0d012594 | Completed Tools | `HourlyToAnnualSalaryCalculator` |
 | 28 | Hourly to Salary - Wage Calculator | DEVELOPED | AUDIT PENDING | db059afb | 579c85fe | 46c7bb6a | Completed Tools | `HourlyToSalaryWageCalculator`; prompt recovered from misfiled sibling |
-| 29 | Hourly to Salary with Overtime Calculator | BLOCKED | AUDIT PENDING | — | — | — | Tools | prompt.txt contains Wage Calculator instructions; conflicts with Overtime screenshot/folder |
+| 29 | Hourly to Salary with Overtime Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Cursor Auto; prompt=Wage (duplicate), screenshot≈SalaryWithOvertime (live); catalog `6af46f0fa27d8d1d4e990003` undeveloped — do not reclaim |
 | 30 | Quiz Dividend Calculator | DEVELOPED | AUDIT PENDING | 71ed676f | 7ee0deac | b6bac9e4 | Completed Tools | `QuizDividendCalculator` |
+| 31 | Auto Lease Calculator | DEVELOPED | AUDIT PENDING | 836bfb95 | d735d570 | (pending) | Completed Tools | `AutoLeaseCalculator`; slug `auto-lease-calculator` |
 
 ## Session Log
 
 - 2026-11-18/19: Autonomous development queue on `D:\Project\ToolHub` (omega-calculators-frontend/backend). Local commits only; no push/pull/fetch.
 - Mid-queue folder arrivals (salary/dividend/hourly/quiz) appended without renumbering.
-- Eligible queue exhausted except BLOCKED Overtime (#29).
-- Temporary files cleaned: YES (task temps deleted; queue tracker + Completed Tools retained outside app source commits).
+- 2026-11-19: Exclusive folder claiming (`Tools` → `In Progress`). Overtime #29 re-claimed, confirmed BLOCKED, kept in `In Progress` with `AGENT_STATUS.md`.
+- 2026-11-19: Claimed Auto Lease (#31); developed and activated; Lease/Car Lease siblings left for other agents.
+- Temporary files cleaned: YES (task temps deleted; queue tracker + Completed Tools / In Progress retained outside app source where applicable).

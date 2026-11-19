@@ -36,6 +36,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'interest-rate-parity-calculator',
   'loan-calculator',
   'auto-loan-calculator',
+  'auto-lease-calculator',
   'loan-interest-calculator',
   'lottery-annuity-calculator',
   'margin-and-markup-calculator',
