@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Wage to Salary Calculator
+- **Summary:** Shipped Wage to Salary Calculator on existing catalog slug `wage-to-salary-calculator` (`WageToSalaryCalculator`, catalog `6af46f0fa27d8d1d4e990049`, preserved `nameKey` `wage to salary calculator`, pillar `6af451c0a27d8d1d4e98f97c`). Screenshot-first (ADR-023): hourly/daily/weekly wage FX (last-edited authoritative); hours/week (40); days/week (5); monthly + yearly salary FX. Formulas: Weekly from source; Yearly = Weekly×52; Monthly = Weekly×52/12. Dual `CURRENCY_CONVERSION_SLUGS`; hours/days never convert. Wage / Hourly Wage / Yearly Wage / Salary to Hourly / Hourly to Salary siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 500 PKR/hr · 40h · 5d → weekly **20,000** · yearly **1,040,000** · monthly ≈ **86,666.67**.
+- **Important Files:** `frontend/src/tools/calculators/wage-to-salary/*`, registry, sitemap, both FX slug lists, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Net Profit Margin Calculator
 - **Summary:** Shipped Net Profit Margin Calculator on existing catalog slug `net-profit-margin-calculator` (`NetProfitMarginCalculator`, catalog `6af46f0fa27d8d1d4e990046`, preserved `nameKey` `net profit margin calculator`, pillar `6af451c0a27d8d1d4e98f97b`). Screenshot-first (ADR-023): Net profit FX; Total revenues FX; Net profit margin % output. Formula (Net Profit / Total Revenues) × 100. Independent Phase 2 FX; normalize net profit into revenues currency before dividing; margin % never converts. Allow negative profit/margin and zero profit → 0%; require revenues > 0. Distinct from Gross / Operating Margin / Profit Calculator. Dual `CURRENCY_CONVERSION_SLUGS`. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Net profit 25,000 · revenues 100,000 → margin **25.00%**.

@@ -658,6 +658,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HoldingPeriodReturnCalculator',
   'HourlyToAnnualSalaryCalculator',
   'HourlyToSalaryWageCalculator',
+  'WageToSalaryCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
   'InterestCalculator',
@@ -1325,6 +1326,7 @@ if (isDirect) {
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
     !isApprovedComponentKey('HourlyToAnnualSalaryCalculator') ||
     !isApprovedComponentKey('HourlyToSalaryWageCalculator') ||
+    !isApprovedComponentKey('WageToSalaryCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
     !isApprovedComponentKey('InterestCalculator') ||

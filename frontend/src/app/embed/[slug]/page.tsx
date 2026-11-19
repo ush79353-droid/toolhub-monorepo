@@ -102,6 +102,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',
   'hourly-to-salary-wage-calculator',
+  'wage-to-salary-calculator',
   'home-improvement-loan-calculator',
   'home-loan-emi-calculator',
   'home-loan-calculator',

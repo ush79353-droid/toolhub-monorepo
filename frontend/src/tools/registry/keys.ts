@@ -657,6 +657,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HoldingPeriodReturnCalculator',
   'HourlyToAnnualSalaryCalculator',
   'HourlyToSalaryWageCalculator',
+  'WageToSalaryCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
   'InterestCalculator',
@@ -1361,6 +1362,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'HoldingPeriodReturnCalculator',
   'HourlyToAnnualSalaryCalculator',
   'HourlyToSalaryWageCalculator',
+  'WageToSalaryCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
   'InterestCalculator',
@@ -1404,4 +1406,3 @@ export type RegisteredComponentKey = (typeof REGISTERED_COMPONENT_KEYS)[number];
 export function isRegisteredComponentKey(key: string): key is RegisteredComponentKey {
   return (REGISTERED_COMPONENT_KEYS as readonly string[]).includes(key);
 }
-
