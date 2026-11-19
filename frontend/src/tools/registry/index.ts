@@ -3256,6 +3256,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  FiftyThirtyTwentyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/fifty-thirty-twenty-rule/FiftyThirtyTwentyCalculator'
+    ).then((mod) => ({
+      default: mod.FiftyThirtyTwentyCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

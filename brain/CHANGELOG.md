@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add 50/30/20 Rule Calculator
+- **Summary:** Shipped 50/30/20 Rule Calculator on existing catalog slug `503020-rule-calculator` (`FiftyThirtyTwentyCalculator`, catalog `6af46f10a27d8d1d4e9900f2`, preserved `nameKey` `50/30/20 rule calculator`). Screenshot-first (ADR-023): monthly after-tax income → necessities/wants/savings; expandable distribution; monthly/annual views; donut + bar visualization. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** N=I×0.50; W=I×0.30; S=I×0.20 (currency-unit split so N+W+S equals rounded income); annual = monthly × 12.
+- **Example:** $4,500 → $2,250 / $1,350 / $900; annual $54,000 → $27,000 / $16,200 / $10,800.
+- **Important Files:** `frontend/src/tools/calculators/fifty-thirty-twenty-rule/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Maximum Drawdown Calculator
 - **Summary:** Shipped Maximum Drawdown Calculator on existing catalog slug `maximum-drawdown-calculator` (`MaximumDrawdownCalculator`, catalog `6af46f0fa27d8d1d4e9900d8`, preserved `nameKey` `maximum drawdown calculator`). Screenshot-first (ADR-023): peak/trough MDD %, absolute loss, required recovery gain; expandable Time for Recovery with assumed annual growth. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** MDD=(P−T)/P×100; AbsoluteLoss=P−T; RecoveryGain=D/(1−D)×100; t=−ln(1−D)/ln(1+g). Edge cases: 0% MDD → 0 time; 0% growth with D&gt;0 → undefined; 100% MDD → non-finite recovery.
