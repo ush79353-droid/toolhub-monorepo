@@ -510,6 +510,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/economic-profit/detail'),
   EvToSalesCalculator: () =>
     import('@/tools/calculators/ev-to-sales/detail'),
+  PriceToSalesRatioCalculator: () =>
+    import('@/tools/calculators/price-to-sales-ratio/detail'),
   ProfitabilityIndexCalculator: () =>
     import('@/tools/calculators/profitability-index/detail'),
   RevenueCalculator: () => import('@/tools/calculators/revenue/detail'),

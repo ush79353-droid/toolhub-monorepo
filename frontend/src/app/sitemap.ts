@@ -512,6 +512,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cash-flow-to-debt-ratio-calculator',
   'cash-ratio-calculator',
   'price-to-cash-flow-ratio-calculator',
+  'price-to-sales-ratio-calculator',
   'churn-rate-calculator',
   'consulting-fees-calculator',
   'contribution-margin-calculator',

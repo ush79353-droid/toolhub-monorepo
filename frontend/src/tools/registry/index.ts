@@ -2265,6 +2265,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EvToSalesCalculator,
     })),
   ),
+  PriceToSalesRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/price-to-sales-ratio/PriceToSalesRatioCalculator'
+    ).then((mod) => ({
+      default: mod.PriceToSalesRatioCalculator,
+    })),
+  ),
   ProfitabilityIndexCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/profitability-index/ProfitabilityIndexCalculator'

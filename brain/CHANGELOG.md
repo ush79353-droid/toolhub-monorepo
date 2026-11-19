@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Price to Sales Ratio Calculator
+- **Summary:** Shipped Price to Sales Ratio Calculator on existing catalog slug `price-to-sales-ratio-calculator` (`PriceToSalesRatioCalculator`, catalog `6af46f0fa27d8d1d4e990024`, pillar `6af451bfa27d8d1d4e98f974`, subPillar null). Screenshot-first (ADR-023): Revenue per share (Sales FX, shares, Sales per share FX); Price to sales ratio (Price per share FX, P/S ×). Formulas: SPS = Sales÷Shares; P/S = Price÷SPS; SPS=0 → undefined (not Infinity); zero price allowed → P/S=0. Dual `CURRENCY_CONVERSION_SLUGS`; shares/ratio never convert. Empty `PROMPT.txt` restored from screenshot (original preserved). EV to Sales / Price to Cash Flow siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 10,000,000 sales · 1,000,000 shares · price 50 → SPS **10** · P/S **5×**.
+- **Important Files:** `frontend/src/tools/calculators/price-to-sales-ratio/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add SIP Calculator — Systematic Investment Plan
 - **Summary:** Shipped SIP Calculator on existing catalog slug `sip-calculator-systematic-investment-plan` (`SipCalculator`, catalog `6af46f0fa27d8d1d4e99000d`, pillar `6af451bea27d8d1d4e98f96f`, subPillar null). Screenshot-first (ADR-023): monthly SIP amount FX; years; expected annual return %; total investment FX; maturity FV FX; investment multiplication factor. Ordinary-annuity SIP FV with end-of-month compounding; zero rate → FV = total investment. Dual `CURRENCY_CONVERSION_SLUGS`; years/% never convert. SIP+Lumpsum / Mutual Fund siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 10,000/mo · 10y · 12% → investment **1,200,000** · maturity ≈ **2.3M** · factor > **1**.
