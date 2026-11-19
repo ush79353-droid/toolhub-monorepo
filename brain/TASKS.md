@@ -27,7 +27,9 @@
 
 ## Blocked
 
-*None currently.*
+| ID | Description | Owner | Status | Relevant Files | Dependencies |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-451` | Hourly to Salary with Overtime Calculator blocked: prompt/specs conflict (Wage Calculator instructions vs Overtime screenshot/folder) — do not invent a merged scope until product clarifies | Unassigned | Blocked | `Completed Tools` / Tools queue materials; no registry key until unblocked | `TOOL-01` |
 
 ---
 
@@ -35,6 +37,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `INFRA-04` | Unblock frontend production build (ESLint unused/`prefer-const` → warn; `noUnusedLocals`/`noUnusedParameters` false; optional `countryRules`; structural TS fixes) and document Finance & Business (`6af451bba27d8d1d4e98f959`) dual-evidence audit (`isDeveloped` + sitemap) | Cursor | Completed | `frontend/eslint.config.mjs`, `frontend/tsconfig.json`, `frontend/src/tools/page-detail.ts`, `brain/*` | — |
 | `TOOL-450` | Implement Unlevered Free Cash Flow Calculator on existing slug `unlevered-free-cash-flow-calculator` with EBIT FX, ETR %, D&A FX, CapEx FX, ΔWC FX → UFCF FX; NOPAT = EBIT×(1−ETR/100); UFCF = NOPAT+DA−CapEx−ΔWC; no interest/debt; independent Phase 2 FX; Share/Reload/Clear/feedback; dual `CURRENCY_CONVERSION_SLUGS`; guide/SEO/embed; verified activation (leave FreeCashFlow / FCFF / Levered FCF siblings untouched) | Cursor | Completed | `frontend/src/tools/calculators/unlevered-free-cash-flow/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*` | `TOOL-440` |
 | `TOOL-449` | Implement Triple Discount Calculator on existing slug `triple-discount-calculator` with original price FX, 1st/2nd/3rd sequential % (2nd/3rd default 0), final price FX, price difference FX, collapsible effective discount %, Share/Reload/Clear/feedback, dual `CURRENCY_CONVERSION_SLUGS`, guide/SEO/embed, and verified activation (reuse Double Discount patterns; leave DoubleDiscountCalculator untouched) | Cursor | Completed | `frontend/src/tools/calculators/triple-discount/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*` | `TOOL-429` |
 | `TOOL-448` | Implement Salary to Hourly Calculator on existing slug `salary-to-hourly-calculator` with hourly↔annual FX (last-edited authoritative), hours/week (40), Daily/Monthly/Weekly/Biweekly FX, empty Other time intervals, 52-week + five-day assumptions, Share/Reload/Clear/feedback, dual `CURRENCY_CONVERSION_SLUGS`, guide/SEO/embed, and verified activation (reuse HourlyToSalaryWage patterns lightly; leave HourlyToSalaryWageCalculator untouched) | Cursor | Completed | `frontend/src/tools/calculators/salary-to-hourly/*`, registry, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `brain/*` | — |

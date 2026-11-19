@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-19 — Brain sync: frontend build green + Finance category dual-evidence audit
+- **Summary:** Documented verified frontend production build (`npm run build` exit 0) after ESLint soft-warns, `noUnusedLocals`/`noUnusedParameters` off, optional `ToolPageDetail.countryRules`, and structural TS fixes across calculators. Recorded Finance & Business category audit (`6af451bba27d8d1d4e98f959`): Mongo `isDeveloped` + `IMPLEMENTED_TOOL_SLUGS` dual evidence (644 / 299 / 298 / 298). Temp audit script + Desktop xlsx stay outside git (ADR-025).
+- **Important Files:** `frontend/eslint.config.mjs`, `frontend/tsconfig.json`, `frontend/src/tools/page-detail.ts`, `brain/CURRENT_STATE.md`, `brain/TASKS.md`, `brain/CHANGELOG.md`.
+- **Verification:** `cd frontend && npm run build` passed. Temporary files cleaned: YES (repo); audit temps remain under `%TEMP%/omni-finance-audit` by design.
+
 ### 2026-11-19 — Add Unlevered Free Cash Flow Calculator
 - **Summary:** Shipped Unlevered Free Cash Flow Calculator on existing catalog slug `unlevered-free-cash-flow-calculator` (`UnleveredFreeCashFlowCalculator`, catalog `6af46f0fa27d8d1d4e98fff8`). Screenshot-first (ADR-023): EBIT FX; Effective tax rate %; Depreciation and amortization FX; CapEx FX; Change in working capital FX → Unlevered free cash flow FX. Share/Reload/Clear/feedback. Independent Phase 2 FX; ETR never converts. FreeCashFlowCalculator / FcffCalculator / LeveredFreeCashFlowCalculator siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable` and expected pillar `6af451bea27d8d1d4e98f96b` / subPillar null.
 - **Formulas:** NOPAT = EBIT × (1 − ETR / 100); UFCF = NOPAT + DA − CapEx − ΔWC. CapEx positive spending; negative ΔWC increases cash; no interest or debt repayments; ETR 0–100%; negative EBIT/UFCF allowed; full precision with display rounding only.
