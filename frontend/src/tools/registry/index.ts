@@ -2246,6 +2246,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BusinessLoanCalculator,
     })),
   ),
+  AccountingProfitCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/accounting-profit/AccountingProfitCalculator'
+    ).then((mod) => ({
+      default: mod.AccountingProfitCalculator,
+    })),
+  ),
   ProfitCalculator: lazyTool(() =>
     import('@/tools/calculators/profit/ProfitCalculator').then((mod) => ({
       default: mod.ProfitCalculator,

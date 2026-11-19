@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Accounting Profit Calculator
+- **Summary:** Shipped Accounting Profit Calculator on existing catalog slug `accounting-profit-calculator` (`AccountingProfitCalculator`, catalog `6af46f0fa27d8d1d4e990044`, preserved `nameKey` `accounting profit calculator`, pillar `6af451c0a27d8d1d4e98f97b`, subPillar null). Screenshot-first (ADR-023): total revenue FX; operation expenses FX; interest FX; depreciation FX; taxes FX; total explicit costs FX; accounting profit FX. Formulas: Explicit = OpEx + Interest + Depreciation + Taxes; Profit = Revenue − Explicit. OpEx must exclude separately entered interest/depreciation/taxes. Independent Phase 2 FX; dual `CURRENCY_CONVERSION_SLUGS`. Profit / Economic Profit siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Revenue 100,000 · OpEx 25,000 · Interest 12,000 · Depreciation 10,000 · Taxes 15,000 → explicit **62,000** · profit **38,000**.
+- **Important Files:** `frontend/src/tools/calculators/accounting-profit/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Hourly to Salary with Overtime Calculator
 - **Summary:** Shipped Hourly to Salary with Overtime on existing catalog slug `hourly-to-salary-with-overtime-calculator` (`HourlyToSalaryWithOvertimeCalculator`, catalog `6af46f0fa27d8d1d4e990003`, pillar `6af451bea27d8d1d4e98f96c`). Screenshot-first (ADR-023): regular pay FX; 40 hours/week default; OT multiplier 1.5; OT rate/hours/totals; total pay. Reuses `salary-with-overtime` calculation helpers (distinct component/route). Dual `CURRENCY_CONVERSION_SLUGS`. Corrected prompt + screenshot; wage-mismatch original preserved. Salary Calculator With Overtime sibling untouched. Activated `--set-active` only — **`indexable` preserved false**.
 - **Important Files:** `frontend/src/tools/calculators/hourly-to-salary-with-overtime/*`, registry, sitemap, FX lists, `tool.key.ts`, brain docs.

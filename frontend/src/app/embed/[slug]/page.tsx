@@ -214,6 +214,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'npv-calculator-net-present-value',
   'opportunity-cost-calculator',
   'percentage-discount-calculator',
+  'accounting-profit-calculator',
   'profit-calculator',
   'net-profit-margin-calculator',
   'return-on-sales-calculator',

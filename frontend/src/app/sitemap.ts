@@ -439,6 +439,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'car-depreciation-calculator',
   'attrition-rate-calculator',
   'business-loan-calculator',
+  'accounting-profit-calculator',
   'profit-calculator',
   'economic-profit-calculator',
   'ev-to-sales-calculator-enterprise-value-to-sales',
