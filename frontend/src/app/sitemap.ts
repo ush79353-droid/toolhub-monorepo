@@ -212,6 +212,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ccf-to-therms-calculator',
   'natural-gas-converter',
   'natural-rate-of-unemployment-calculator',
+  'unemployment-benefit-calculator-cares-act',
   'cents-to-dollars-calculator',
   'nm-to-joules-calculator',
   'cgs-system-of-units-converter',

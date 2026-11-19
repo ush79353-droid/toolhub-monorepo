@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-19 — Add Unemployment Benefit Calculator - CARES Act
+- **Summary:** Shipped historical informational page on existing catalog slug `unemployment-benefit-calculator-cares-act` (`CaresActUnemploymentBenefitCalculator`, catalog `6af46f0fa27d8d1d4e990034`, preserved `nameKey` `unemployment benefit calculator - cares act`). Screenshot-first (ADR-023): no benefit inputs, payout estimates, or eligibility forms. Explains CARES Act (Pub. L. 116-136) pandemic unemployment relief is not available for current claims; links to Unemployment Calculator (`/tools/unemployment-calculator-unemployment-rate`) for unemployment-rate math. Official Act wording uses “Relief” (not screenshot “Response”). No FX / not in `CURRENCY_CONVERSION_SLUGS`. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Important Files:** `frontend/src/tools/calculators/cares-act-unemployment-benefit/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Stock Average Calculator
 - **Summary:** Shipped Stock Average Calculator on existing catalog slug `stock-average-calculator` (`StockAverageCalculator`, catalog `6af46f0fa27d8d1d4e990030`, preserved `nameKey` `stock average calculator`, pillar `6af451bfa27d8d1d4e98f976`). Screenshot-first (ADR-023): optional current stock price FX; two purchases (1st/2nd buy # + buy price FX) → total shares, total investment cost, weighted average buying price; with current price → market value, unrealized P/L, return % (undefined when total cost is 0). Independent Phase 2 FX; normalize 2nd buy + current into 1st buy currency; share counts and return % never convert. No commissions/dividends/taxes. Stock / Beta Stock / Safety Stock / Stock Split siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Formulas:** Total Shares = Q1+Q2; Total Cost = Q1×P1+Q2×P2; Avg = Total Cost/Total Shares; Market Value = Shares×M; P/L = MV−Cost; Return% = P/L/Cost×100.
@@ -31,6 +36,13 @@
 - **Example:** 32,000 · 6 yrs · 8.5% vs 5 yrs · 4.5% → current pay ≈ **568.91** · interest ≈ **8,961.40**; new pay ≈ **596.58** · interest ≈ **3,794.60**.
 - **Important Files:** `frontend/src/tools/calculators/car-refinance/*`, registry, sitemap, FX slug lists, `backend/src/modules/tools/tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts` (not run this session per queue rules). Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-19 — Add Natural Rate of Unemployment Calculator
+- **Summary:** Shipped Natural Rate of Unemployment Calculator on existing catalog slug `natural-rate-of-unemployment-calculator` (`NaturalRateOfUnemploymentCalculator`, catalog `6af46f0fa27d8d1d4e990033`, preserved `nameKey` `natural rate of unemployment calculator`). Screenshot-first (ADR-023): frictional + structural + labor force with people/thousand/million selectors → natural rate %. No FX. Cyclical unemployment excluded. Unemployment Rate sibling untouched. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**.
+- **Formulas:** Natural rate (%) = (Frictionally unemployed + Structurally unemployed) / Total labor force × 100 after normalizing each count to people (×1 / ×1,000 / ×1,000,000).
+- **Example:** 2M + 3M / 100M → **5%**.
+- **Important Files:** `frontend/src/tools/calculators/natural-rate-of-unemployment/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts` (not run per prompt). Mongo activation via `tool:assign`. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-19 — Add Commercial Lease Calculator
 - **Summary:** Shipped Commercial Lease Calculator on existing catalog slug `commercial-lease-calculator` (`CommercialLeaseCalculator`, catalog `6af46f0fa27d8d1d4e990011`, preserved `nameKey` `commercial lease calculator`). Screenshot-first (ADR-023): area m²/ft²; base rate + operating expenses (FX + area unit + yr/mo); total rental rate; rent (FX + yr/mo); agent fee % of N years of annual rent. Independent Phase 2 FX on money fields; area/period/% never convert. Lease / Auto Lease / Car Lease siblings untouched. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**.
