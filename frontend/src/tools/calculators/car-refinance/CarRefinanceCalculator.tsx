@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { CarRefinanceForm } from './CarRefinanceForm';
 import {
   createDefaultInput,
@@ -13,6 +26,7 @@ import {
   type CarRefinanceInput,
   type CarRefinanceResult,
 } from './types';
+import { validateCarRefinanceInput } from './validation';
 
 const FX_NOTE =
   'Balance, current monthly payment, cash in/out, and fees each have their own currency. Math runs in the balance currency after Phase 2 FX conversion. Interest rates, loan terms, and dates are never converted. Missing rates block conversion; stale rates warn but still convert.';
@@ -21,10 +35,6 @@ function inputsEqual(a: CarRefinanceInput, b: CarRefinanceInput): boolean {
   return JSON.stringify(a) === JSON.stringify(b);
 }
 
-/**
- * UI shell for Car Refinance Calculator (fields, summary layout, share/reload/clear/feedback).
- * Amortization math and Phase 2 FX conversion wire in a follow-up commit.
- */
 export function CarRefinanceCalculator({
   metadata,
   className = '',
@@ -32,31 +42,151 @@ export function CarRefinanceCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<CarRefinanceInput>(
     () => defaults
   );
   const [input, setInput] = React.useState<CarRefinanceInput>(() => defaults);
-  const [errors] = React.useState<CarRefinanceFieldErrors>({});
-  const [result] = React.useState<CarRefinanceResult | null>(null);
+  const [errors, setErrors] = React.useState<CarRefinanceFieldErrors>({});
+  const [result, setResult] = React.useState<CarRefinanceResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  React.useEffect(() => {
+    const validation = validateCarRefinanceInput(defaults, rates);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    // Initial compute with defaults only.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const apply = (next: CarRefinanceInput) => {
+    const validation = validateCarRefinanceInput(next, rates);
+    setConversionError(null);
     setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
+  const handleBalanceCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.balanceCurrency) return;
+    const converted = convertFieldAmount(
+      input.balance,
+      input.balanceCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      balanceCurrency: next,
+      balance: converted.text,
+    });
+  };
+
+  const handleCurrentPaymentCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.currentMonthlyPaymentCurrency) return;
+    const converted = convertFieldAmount(
+      input.currentMonthlyPayment,
+      input.currentMonthlyPaymentCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      currentMonthlyPaymentCurrency: next,
+      currentMonthlyPayment: converted.text,
+    });
+  };
+
+  const handleCashCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.cashInOutCurrency) return;
+    const converted = convertFieldAmount(
+      input.cashInOut,
+      input.cashInOutCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      cashInOutCurrency: next,
+      cashInOut: converted.text,
+    });
+  };
+
+  const handleFeesCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.feesAndCostsCurrency) return;
+    const converted = convertFieldAmount(
+      input.feesAndCosts,
+      input.feesAndCostsCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      feesAndCostsCurrency: next,
+      feesAndCosts: converted.text,
+    });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateCarRefinanceInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -65,10 +195,25 @@ export function CarRefinanceCalculator({
   const dirty = !inputsEqual(input, baseline);
   const currencyNote = ratesStatus.available
     ? FX_NOTE
-    : 'Currency conversion rates are unavailable.';
-  const summary = `${metadata.title} — Omega Calculators`;
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const symbol = getCurrencySymbol(result?.currency ?? input.balanceCurrency);
+  const summary = result
+    ? [
+        `${metadata.title} — Omega Calculators`,
+        `Balance: ${getCurrencySymbol(input.balanceCurrency)}${input.balance} ${input.balanceCurrency}`,
+        `Current rate: ${input.currentInterestRatePercent}%`,
+        `New rate: ${input.newInterestRatePercent}% · term ${input.newLoanTerm} ${input.newLoanTermUnit}`,
+        `Current payment: ${symbol}${result.current.formattedMonthlyPayment}`,
+        `New payment: ${symbol}${result.neu.formattedMonthlyPayment}`,
+        `Current total interest: ${symbol}${result.current.formattedTotalInterest}`,
+        `New total interest: ${symbol}${result.neu.formattedTotalInterest}`,
+        result.explanation,
+        currencyNote,
+      ].join('\n')
+    : '';
 
   const handleShare = async () => {
+    if (!summary) return;
     if (canShare) {
       try {
         await navigator.share({ title: metadata.title, text: summary });
@@ -83,10 +228,6 @@ export function CarRefinanceCalculator({
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     }
-  };
-
-  const noopCurrency = () => {
-    /* FX wiring lands with the calculation commit */
   };
 
   return (
@@ -114,10 +255,11 @@ export function CarRefinanceCalculator({
           errors={errors}
           result={result}
           onChange={apply}
-          onBalanceCurrencyChange={noopCurrency}
-          onCurrentPaymentCurrencyChange={noopCurrency}
-          onCashCurrencyChange={noopCurrency}
-          onFeesCurrencyChange={noopCurrency}
+          onBalanceCurrencyChange={handleBalanceCurrencyChange}
+          onCurrentPaymentCurrencyChange={handleCurrentPaymentCurrencyChange}
+          onCashCurrencyChange={handleCashCurrencyChange}
+          onFeesCurrencyChange={handleFeesCurrencyChange}
+          conversionError={conversionError}
           ratesWarning={ratesStatus.warning}
         />
 
@@ -125,7 +267,8 @@ export function CarRefinanceCalculator({
           <button
             type="button"
             onClick={() => void handleShare()}
-            className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border bg-white p-3.5 text-center transition-colors hover:bg-muted/20 active:scale-[0.99]"
+            disabled={!summary}
+            className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border bg-white p-3.5 text-center transition-colors hover:bg-muted/20 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50"
           >
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-500 text-white shadow-xs">
               <Share2 className="h-4 w-4" />
