@@ -503,6 +503,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'car-lease-calculator',
   'car-loan-emi-calculator',
   'car-refinance-calculator',
+  'refinance-calculator',
   'carried-interest-calculator',
   'cash-back-or-low-interest-calculator',
   'cash-flow-to-debt-ratio-calculator',

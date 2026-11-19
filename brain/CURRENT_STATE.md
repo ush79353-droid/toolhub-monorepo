@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Lease Calculator live at `/tools/lease-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Refinance Calculator live at `/tools/refinance-calculator`).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Refinance Calculator (`/tools/refinance-calculator`):** Live client-side refinance comparison (`componentKey: 'RefinanceCalculator'`, catalog `6af46f0fa27d8d1d4e990018`). Screenshot-first: know-balance current loan + new term/rate/points/fees/cash-out; Calculate/Clear; remaining term, new payment, closing costs, break-even, net savings. Fixed USD (no FX). Car/Mortgage refinance siblings untouched. Activated; **`indexable` left false**.
 - **Lease Calculator (/tools/lease-calculator):** Live client-side fixed-rate lease tool (componentKey: 'LeaseCalculator', catalog 6af46f0fa27d8d1d4e99000e). Product/residual/down/results FX; term yrs/mos; residual money or %; optional down payment. Activated; **indexable** left false.
 - **Lease Calculator (`/tools/lease-calculator`):** Live client-side fixed-rate lease tool (`componentKey: 'LeaseCalculator'`, catalog `6af46f0fa27d8d1d4e99000e`, `nameKey` `lease calculator`). Screenshot-first (ADR-023): product value FX; residual money or %; term yrs/mos; interest %/yr; optional down payment FX; monthly payment / total payments / total interest / total cost to own FX. Formulas: PV lease PMT with residual; zero-rate `(P−D−R)/n`; payments = D+PMT×n; interest = payments+R−P; cost to own = payments+R. Dual FX; term/rate/% never convert. Auto / Car / Commercial Lease untouched. Activated; **`indexable` left false**. Example: 100k · residual 40k · 3 yrs · 6% → monthly ≈ **1,936.68** · cost to own ≈ **109,720.55**.
 - **Lease Mileage Calculator (`/tools/lease-mileage-calculator`):** Live client-side lease excess-mileage projector (`componentKey: 'LeaseMileageCalculator'`, catalog `6af46f0fa27d8d1d4e990012`). Screenshot-first (ADR-023): total/remaining term yrs+mos; current miles + annual allowance (km/mi); excess fee FX + /km|/mi; results excess (km/mi), lease-end charge FX, monthly savings FX /mo. Constant-rate projection; 1 mi = 1.609344 km. Dual FX slug lists. Car Lease / Auto Lease siblings untouched. Activated; **`indexable` left false**. Example: 36 mo · 24 rem · 20k km · 10k km/yr · 5/km → excess **30,000** km · charge **150,000** · savings **6,250**/mo.

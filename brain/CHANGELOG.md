@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Refinance Calculator
+- **Summary:** Shipped Refinance Calculator on `refinance-calculator` (`RefinanceCalculator`, catalog `6af46f0fa27d8d1d4e990018`, pillar `6af451bfa27d8d1d4e98f972`). Know-balance mode; fixed USD; points/fees upfront; Calculate/Clear. Activated `--set-active` only — **`indexable` false**.
+- **Example:** $250k · $1,800 · 7% → 20y · 6% · 2 pts · $1,500 fees.
+- **Important Files:** `frontend/src/tools/calculators/refinance/*`, registry, sitemap, `tool.key.ts`, brain.
+- **Verification:** `calculation.test.ts` ok. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Ohio Sales Tax Calculator
 - **Summary:** Shipped Ohio Sales Tax Calculator on existing catalog slug `ohio-sales-tax-calculator` (`OhioSalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e99002b`, pillar `6af451bfa27d8d1d4e98f974` / subPillar `6af451bfa27d8d1d4e98f975`). Screenshot-first: purchase USD + ZIP. No verified Ohio ZIP→rate dataset — shows explicit unavailable-rate state (never invents combined rates). ZIP gated to 43001–45999. Fixed USD; not in `CURRENCY_CONVERSION_SLUGS`. Activated via `tool:assign --set-active`; **`indexable` preserved false**.
 - **Important Files:** `frontend/src/tools/calculators/ohio-sales-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.

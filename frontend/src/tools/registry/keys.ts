@@ -473,6 +473,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarLeaseCalculator',
   'LeaseMileageCalculator',
   'CarLoanEmiCalculator',  'CarRefinanceCalculator',
+  'RefinanceCalculator',
 
   'LoanRepaymentCalculator',
   'CarriedInterestCalculator',
@@ -1195,6 +1196,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'CarLeaseCalculator',
   'LeaseMileageCalculator',
   'CarLoanEmiCalculator',  'CarRefinanceCalculator',
+  'RefinanceCalculator',
 
   'LoanRepaymentCalculator',
   'CarriedInterestCalculator',

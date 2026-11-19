@@ -475,6 +475,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LeaseMileageCalculator',
   'CarLoanEmiCalculator',
   'CarRefinanceCalculator',
+  'RefinanceCalculator',
   'CarriedInterestCalculator',
   'CashBackOrLowInterestCalculator',
   'CashFlowToDebtRatioCalculator',
@@ -1156,6 +1157,7 @@ if (isDirect) {
     !isApprovedComponentKey('CarLeaseCalculator') ||
     !isApprovedComponentKey('LeaseMileageCalculator') ||
     !isApprovedComponentKey('CarLoanEmiCalculator') ||    !isApprovedComponentKey('CarRefinanceCalculator') ||
+    !isApprovedComponentKey('RefinanceCalculator') ||
 
     !isApprovedComponentKey('CarriedInterestCalculator') ||
     !isApprovedComponentKey('CashBackOrLowInterestCalculator') ||
