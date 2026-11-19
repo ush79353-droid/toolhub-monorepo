@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Long Term Care Calculator
+- **Summary:** Shipped Long Term Care Calculator on existing catalog slug `long-term-care-calculator` (`LongTermCareCalculator`, catalog `6af46f10a27d8d1d4e990100`, preserved `nameKey` `long term care calculator`). Screenshot-first (ADR-023): per-day/per-month; present-year annual baseline (synced, no double-count); inflation geometric total; annual projection. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** P=D×365 or M×12; TC=P×((1+i)^N−1)/i (or P×N when i=0); Year 1 = P.
+- **Example:** $7,500/mo · 4% · 5y → total ≈ **$487,469.03**.
+- **Important Files:** `frontend/src/tools/calculators/long-term-care/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Lifetime Earnings Calculator
 - **Summary:** Shipped Lifetime Earnings Calculator on existing catalog slug `lifetime-earnings-calculator` (`LifetimeEarningsCalculator`, catalog `6af46f10a27d8d1d4e9900ff`, preserved `nameKey` `lifetime earnings calculator`). Screenshot-first (ADR-023): years-left card; salary + raise % → geometric lifetime earnings; expandable annual projection. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** N=R−A; LE=S₀×((1+g)^N−1)/g (or S₀×N when g=0); Year 1 = S₀.

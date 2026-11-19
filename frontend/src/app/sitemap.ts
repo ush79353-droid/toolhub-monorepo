@@ -633,6 +633,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fire-calculator-financial-independence-retire-early',
   'gold-melt-calculator',
   'lifetime-earnings-calculator',
+  'long-term-care-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

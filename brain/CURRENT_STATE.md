@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Lifetime Earnings Calculator live at `/tools/lifetime-earnings-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Long Term Care Calculator live at `/tools/long-term-care-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Long Term Care Calculator (`/tools/long-term-care-calculator`):** Live client-side care-cost projector (`componentKey: 'LongTermCareCalculator'`, catalog `6af46f10a27d8d1d4e990100`, `nameKey` `long term care calculator`). Screenshot-first (ADR-023): per-day/per-month rate → annual baseline (present-year, no double-count); inflation geometric total + annual projection. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $7,500/mo · 4% · 5y → total ≈ **$487,469.03**.
 - **Lifetime Earnings Calculator (`/tools/lifetime-earnings-calculator`):** Live client-side career income projector (`componentKey: 'LifetimeEarningsCalculator'`, catalog `6af46f10a27d8d1d4e9900ff`, `nameKey` `lifetime earnings calculator`). Screenshot-first (ADR-023): current/retirement age → working years; annual salary + raise % → geometric lifetime earnings + year projection table. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: age 25→65 · $100k · 5% → LE = **$100,000×((1.05)^40−1)/0.05**.
 - **Gold Melt Calculator (`/tools/gold-melt-calculator`):** Live client-side gold valuation tool (`componentKey: 'GoldMeltCalculator'`, catalog `6af46f10a27d8d1d4e9900fe`, `nameKey` `gold melt calculator`). Screenshot-first (ADR-023): karat/custom purity; weight units; market price units; melt value; spread → bid/ask with manual overrides. Denomination-only CurrencySelect (no FX); manual spot price (no live feed). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: 10 g · 18K (75%) · $100/g → melt **$750**.
 - **FIRE Calculator (`/tools/fire-calculator-financial-independence-retire-early`):** Live client-side early-retirement planner (`componentKey: 'FireCalculator'`, catalog `6af46f10a27d8d1d4e9900fd`, `nameKey` `fire calculator - financial independence retire early`). Screenshot-first (ADR-023): ages/income/expenses/savings/returns; 4% / custom SWR / duration FIRE number; required annual/monthly savings + rate; projection chart; conservative/moderate/aggressive scenarios. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: age 30→45 · $40k expenses · 2.5% inflation · 4% SWR → FIRE ≈ **$1,448,298**.

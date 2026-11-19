@@ -599,6 +599,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FireCalculator',
   'GoldMeltCalculator',
   'LifetimeEarningsCalculator',
+  'LongTermCareCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1230,6 +1231,7 @@ if (isDirect) {
     !isApprovedComponentKey('FireCalculator') ||
     !isApprovedComponentKey('GoldMeltCalculator') ||
     !isApprovedComponentKey('LifetimeEarningsCalculator') ||
+    !isApprovedComponentKey('LongTermCareCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||
