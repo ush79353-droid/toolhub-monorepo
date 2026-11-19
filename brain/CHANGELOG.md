@@ -4,6 +4,24 @@
 
 ---
 
+### 2026-11-19 — Add Unemployment Benefit Calculator - HEALS Act vs. HEROES Act
+- **Summary:** Shipped historical informational page on existing catalog slug `unemployment-benefit-calculator-heals-act-vs-heroes-act` (`HealsHeroesUnemploymentBenefitCalculator`, catalog `6af46f0fa27d8d1d4e990035`, preserved `nameKey` `unemployment benefit calculator - heals act vs. heroes act`). Screenshot-first (ADR-023): no benefit inputs or payout estimates. Clarifies HEALS and HEROES were 2020 legislative proposals — not active claim programs. Links to live Annual Salary Calculator (`/tools/annual-salary-calculator`) because catalog `annual-income-calculator` is undeveloped. No FX / not in `CURRENCY_CONVERSION_SLUGS`. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Important Files:** `frontend/src/tools/calculators/heals-heroes-unemployment-benefit/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Local commits only (no push). Temporary files cleaned: YES.
+
+### 2026-11-19 — Add Quiz: Car Depreciation Calculator
+- **Summary:** Shipped Quiz: Car Depreciation Calculator on existing catalog slug `quiz-car-depreciation-calculator` (`QuizCarDepreciationCalculator`, catalog `6af46f0fa27d8d1d4e99003e`, preserved `nameKey` `quiz: car depreciation calculator`, pillar `6af451c0a27d8d1d4e98f979`). Screenshot-first (ADR-023): “Quiz: The Downward Drive” — five MCQs; “Show answers and explanations as I go” progressive reveal; score `/5` after all answered; Share/Reload/Clear/feedback. Correct answers: 9% · 5 years · False · Depreciation · $12,000 (40%). Fixed USD teaching model; no FX; not in `CURRENCY_CONVERSION_SLUGS`. Reused Dividend Quiz patterns; Car Depreciation Calculator linked from guide. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Scoring:** 1 point per correct radio; max 5; incomplete quizzes hide the numeric score; progressive explanations only when checkbox on and the question is answered.
+- **Important Files:** `frontend/src/tools/calculators/quiz-car-depreciation/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-19 — Add Depreciation Calculator
+- **Summary:** Shipped Depreciation Calculator on existing catalog slug `depreciation-calculator` (`DepreciationCalculator`, catalog `6af46f0fa27d8d1d4e99003b`, preserved `nameKey` `depreciation calculator`, pillar `6af451c0a27d8d1d4e98f979`, subPillar null). Screenshot-first (ADR-023): three methods (straight line default, declining balance with editable rate defaulting to double-declining 200%/life, SYD); original cost / salvage / expense / end-book independent FX; lifetime default 5; end book after default 2; whole years only; expense = selected year (not cumulative); book floored at salvage. Accumulated / Car / Quiz siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** SL annual=(C−S)/n; DB dep=min(Begin×rate, Begin−S); SYD=n(n+1)/2; year k=(C−S)×(n−k+1)/SYD.
+- **Example:** SL · 10,000 · 0 · 5y · after 2 → expense **2,000** · book **6,000**.
+- **Important Files:** `frontend/src/tools/calculators/depreciation/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Car Depreciation Calculator
 - **Summary:** Shipped Car Depreciation Calculator on existing catalog slug `car-depreciation-calculator` (`CarDepreciationCalculator`, catalog `6af46f0fa27d8d1d4e99003d`, preserved `nameKey` `car depreciation calculator`, pillar `6af451c0a27d8d1d4e98f979`). Screenshot-first (ADR-023): initial car value FX; car age (yrs); reduced car value FX; Car value after 1 minute and 1–5 years (independent FX); verified Car Lease link; educational note (no undeveloped quiz deep-link). Disclosed illustrative constant annual rate **15%** declining balance — not a market forecast. Depreciation / Accumulated Depreciation / Quiz siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Formulas:** V(t)=Initial×(1−r)^t; Reduced=V(age); After Δt=Reduced×(1−r)^Δt; 1 minute years=1/(365.25×24×60); floor at 0.

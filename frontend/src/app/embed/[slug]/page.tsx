@@ -62,6 +62,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'car-refinance-calculator',
   'cash-flow-to-debt-ratio-calculator',
   'cash-ratio-calculator',
+  'price-to-cash-flow-ratio-calculator',
   'commercial-lease-calculator',
   'compound-growth-calculator',
   'compound-interest-calculator',

@@ -738,6 +738,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/present-value/detail'),
   PriceQuantityCalculator: () =>
     import('@/tools/calculators/price-quantity/detail'),
+  PriceToCashFlowRatioCalculator: () =>
+    import('@/tools/calculators/price-to-cash-flow-ratio/detail'),
   PrivateSavingsCalculator: () =>
     import('@/tools/calculators/private-savings/detail'),
   ProratedSalaryCalculator: () =>

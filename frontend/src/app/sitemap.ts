@@ -491,6 +491,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cash-back-or-low-interest-calculator',
   'cash-flow-to-debt-ratio-calculator',
   'cash-ratio-calculator',
+  'price-to-cash-flow-ratio-calculator',
   'churn-rate-calculator',
   'consulting-fees-calculator',
   'contribution-margin-calculator',

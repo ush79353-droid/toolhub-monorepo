@@ -530,6 +530,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PreAndPostMoneyValuationCalculator',
   'PresentValueCalculator',
   'PriceQuantityCalculator',
+  'PriceToCashFlowRatioCalculator',
   'PrivateSavingsCalculator',
   'ProratedSalaryCalculator',
   'ProratedRentCalculator',
@@ -1192,6 +1193,7 @@ if (isDirect) {
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
     !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
+    !isApprovedComponentKey('PriceToCashFlowRatioCalculator') ||
     !isApprovedComponentKey('PrivateSavingsCalculator') ||
     !isApprovedComponentKey('ProratedSalaryCalculator') ||
     !isApprovedComponentKey('ProratedRentCalculator') ||

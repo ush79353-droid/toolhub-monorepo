@@ -38,6 +38,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'car-refinance-calculator',
   'cash-flow-to-debt-ratio-calculator',
   'cash-ratio-calculator',
+  'price-to-cash-flow-ratio-calculator',
   'debt-avalanche-calculator',
   'debt-calculator',
   'debt-service-coverage-ratio-calculator-dscr',
