@@ -512,6 +512,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ProfitabilityIndexCalculator: () =>
     import('@/tools/calculators/profitability-index/detail'),
   RevenueCalculator: () => import('@/tools/calculators/revenue/detail'),
+  RevenueGrowthCalculator: () =>
+    import('@/tools/calculators/revenue-growth/detail'),
   RevenuePerEmployeeCalculator: () =>
     import('@/tools/calculators/revenue-per-employee/detail'),
   RoasCalculator: () => import('@/tools/calculators/roas/detail'),

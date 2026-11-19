@@ -707,6 +707,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'interest-per-day-calculator',
   'mortgage-interest-calculator',
   'mortgage-rate-calculator',
+  'mortgage-refinance-calculator',
   'interest-rate-calculator',
   'irr-calculator',
   'investment-calculator',

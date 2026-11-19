@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-19 — Add Revenue Growth Calculator
+- **Summary:** Shipped Revenue Growth Calculator on existing catalog slug `revenue-growth-calculator` (`RevenueGrowthCalculator`, catalog `6af46f0fa27d8d1d4e99001f`, pillar `6af451bfa27d8d1d4e98f973`, subPillar null). Screenshot-first (ADR-023): Total growth section (initial/final FX → total %); Growth rate section (initial/final FX + periods → compound %/period via `solveCagr`); independent sections; Example 1/2 loaders. Dual `CURRENCY_CONVERSION_SLUGS`; periods/% never convert. Revenue / Marginal Revenue siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 100→120 → total **20%**; 100→161.051 · 5 periods → ≈ **10%**/period.
+- **Important Files:** `frontend/src/tools/calculators/revenue-growth/*`, registry, sitemap, both FX lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 ### 2026-11-19 — Add Return on Sales Calculator
 - **Summary:** Shipped Return on Sales Calculator on existing catalog slug `return-on-sales-calculator` (`ReturnOnSalesCalculator`, catalog `6af46f0fa27d8d1d4e990025`, pillar `6af451bfa27d8d1d4e98f974`). Screenshot-first (ADR-023): Operating profit FX; Net sales FX; ROS % = (Operating Profit / Net Sales) × 100. Normalize profit into sales currency; ROS % never FX-converts; net sales must be > 0; negative/zero operating profit allowed. Distinct from Net Profit Margin / Operating Margin. Dual `CURRENCY_CONVERSION_SLUGS`. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Operating profit 25,000 / Net sales 100,000 → ROS **25.00%**.

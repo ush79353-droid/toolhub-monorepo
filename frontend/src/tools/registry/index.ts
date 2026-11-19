@@ -2272,6 +2272,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RevenueCalculator,
     })),
   ),
+  RevenueGrowthCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/revenue-growth/RevenueGrowthCalculator'
+    ).then((mod) => ({
+      default: mod.RevenueGrowthCalculator,
+    })),
+  ),
   RevenuePerEmployeeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/revenue-per-employee/RevenuePerEmployeeCalculator'
