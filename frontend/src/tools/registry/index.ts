@@ -287,6 +287,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PhilippinesIncomeTaxCalculator,
     })),
   ),
+  AlabamaTaxCalculator: lazyTool(() =>
+    import('@/tools/calculators/alabama-tax/AlabamaTaxCalculator').then(
+      (mod) => ({
+        default: mod.AlabamaTaxCalculator,
+      }),
+    ),
+  ),
   NewJerseySalesTaxCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/new-jersey-sales-tax/NewJerseySalesTaxCalculator'
@@ -3730,6 +3737,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/hourly-wage/HourlyWageCalculator'
     ).then((mod) => ({
       default: mod.HourlyWageCalculator,
+    })),
+  ),
+  WageCalculator: lazyTool(() =>
+    import('@/tools/calculators/wage/WageCalculator').then((mod) => ({
+      default: mod.WageCalculator,
     })),
   ),
   WageToSalaryCalculator: lazyTool(() =>
