@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-19 — Add Sales Tax Calculator
+- **Summary:** Shipped Sales Tax Calculator on existing catalog slug `sales-tax-calculator` (`SalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e990026`, pillar/subPillar sales-tax). Generic rate: net↔gross + tax amount; independent FX; % never converts. Activated `--set-active`; **indexable** preserved false.
+- **Example:** 10% · net 100 → tax **10** · gross **110**.
+- **Important Files:** `frontend/src/tools/calculators/sales-tax/*`, registry, sitemap, FX lists, `tool.key.ts`, brain docs.
+- **Verification:** calculation.test.ts; tool:assign; three ADR-019 commits. Temporary files cleaned: YES.
 ### 2026-11-19 — Add Revenue Growth Calculator
 - **Summary:** Shipped Revenue Growth Calculator on existing catalog slug `revenue-growth-calculator` (`RevenueGrowthCalculator`, catalog `6af46f0fa27d8d1d4e99001f`, pillar `6af451bfa27d8d1d4e98f973`, subPillar null). Screenshot-first (ADR-023): Total growth section (initial/final FX → total %); Growth rate section (initial/final FX + periods → compound %/period via `solveCagr`); independent sections; Example 1/2 loaders. Dual `CURRENCY_CONVERSION_SLUGS`; periods/% never convert. Revenue / Marginal Revenue siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 100→120 → total **20%**; 100→161.051 · 5 periods → ≈ **10%**/period.
@@ -1985,6 +1990,11 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
+### 2026-11-19 — Add Sales Tax Calculator
+- **Summary:** Shipped Sales Tax Calculator on existing catalog slug `sales-tax-calculator` (`SalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e990026`, pillar/subPillar sales-tax). Generic rate: net↔gross + tax amount; independent FX; % never converts. Activated `--set-active`; **indexable** preserved false.
+- **Example:** 10% · net 100 → tax **10** · gross **110**.
+- **Important Files:** `frontend/src/tools/calculators/sales-tax/*`, registry, sitemap, FX lists, `tool.key.ts`, brain docs.
+- **Verification:** calculation.test.ts; tool:assign; three ADR-019 commits. Temporary files cleaned: YES.
 ### 2026-11-19 — Add Revenue Calculator
 - **Summary:** Shipped Revenue Calculator on existing catalog slug `revenue-calculator` (`RevenueCalculator`, catalog `6af46f0fa27d8d1d4e99001d`, pillar `6af451bfa27d8d1d4e98f973`). Bidirectional Price × Quantity ↔ Total revenue; independent FX on money; quantity never converts. Activated `--set-active`; **indexable** preserved false.
 - **Example:** Price 100 × Qty 25 → Total revenue **2,500**.

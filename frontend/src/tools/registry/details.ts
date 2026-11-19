@@ -86,6 +86,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/new-jersey-sales-tax/detail'),
   OhioSalesTaxCalculator: () =>
     import('@/tools/calculators/ohio-sales-tax/detail'),
+  SalesTaxCalculator: () => import('@/tools/calculators/sales-tax/detail'),
   NewYorkOvertimeCalculator: () =>
     import('@/tools/calculators/new-york-overtime/detail'),
   OperatingMarginCalculator: () =>

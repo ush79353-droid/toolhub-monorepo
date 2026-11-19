@@ -45,6 +45,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AlabamaTaxCalculator',
   'NewJerseySalesTaxCalculator',
   'OhioSalesTaxCalculator',
+  'SalesTaxCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
   'NetProfitMarginCalculator',
@@ -1447,6 +1448,7 @@ if (isDirect) {
     !isApprovedComponentKey('AlabamaTaxCalculator') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('OhioSalesTaxCalculator') ||
+    !isApprovedComponentKey('SalesTaxCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||

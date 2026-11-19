@@ -307,6 +307,7 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     ).then((mod) => ({
       default: mod.NewJerseySalesTaxCalculator,
     })),
+  ),
   OhioSalesTaxCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/ohio-sales-tax/OhioSalesTaxCalculator'
@@ -314,6 +315,10 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OhioSalesTaxCalculator,
     })),
   ),
+  SalesTaxCalculator: lazyTool(() =>
+    import('@/tools/calculators/sales-tax/SalesTaxCalculator').then((mod) => ({
+      default: mod.SalesTaxCalculator,
+    })),
   ),
   NewYorkOvertimeCalculator: lazyTool(() =>
     import(
