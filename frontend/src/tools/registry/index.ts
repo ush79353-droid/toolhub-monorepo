@@ -261,6 +261,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetEffectiveRentCalculator,
     })),
   ),
+  IncomeTaxCalculatorPakistan: lazyTool(() =>
+    import(
+      '@/tools/calculators/pakistan-income-tax/PakistanIncomeTaxCalculator'
+    ).then((mod) => ({
+      default: mod.PakistanIncomeTaxCalculator,
+    })),
+  ),
   NewJerseySalesTaxCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/new-jersey-sales-tax/NewJerseySalesTaxCalculator'
@@ -2174,6 +2181,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BusinessLoanCalculator,
     })),
   ),
+  ProfitCalculator: lazyTool(() =>
+    import('@/tools/calculators/profit/ProfitCalculator').then((mod) => ({
+      default: mod.ProfitCalculator,
+    })),
+  ),
   ProfitabilityIndexCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/profitability-index/ProfitabilityIndexCalculator'
@@ -3890,6 +3902,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/heals-heroes-unemployment-benefit/HealsHeroesUnemploymentBenefitCalculator'
     ).then((mod) => ({
       default: mod.HealsHeroesUnemploymentBenefitCalculator,
+    })),
+  ),
+  AustraliaFederalBudgetTaxCutsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/australia-federal-budget-tax-cuts/AustraliaFederalBudgetTaxCutsCalculator'
+    ).then((mod) => ({
+      default: mod.AustraliaFederalBudgetTaxCutsCalculator,
     })),
   ),
   CashActStimulusCalculator: lazyTool(() =>

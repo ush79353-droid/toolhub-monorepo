@@ -71,6 +71,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/net-debt/detail'),
   NetEffectiveRentCalculator: () =>
     import('@/tools/calculators/net-effective-rent/detail'),
+  IncomeTaxCalculatorPakistan: () =>
+    import('@/tools/calculators/pakistan-income-tax/detail'),
   NewJerseySalesTaxCalculator: () =>
     import('@/tools/calculators/new-jersey-sales-tax/detail'),
   NewYorkOvertimeCalculator: () =>
@@ -486,6 +488,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/attrition-rate/detail'),
   BusinessLoanCalculator: () =>
     import('@/tools/calculators/business-loan/detail'),
+  ProfitCalculator: () => import('@/tools/calculators/profit/detail'),
   ProfitabilityIndexCalculator: () =>
     import('@/tools/calculators/profitability-index/detail'),
   RevenuePerEmployeeCalculator: () =>
@@ -1018,6 +1021,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lwa-unemployment-benefit/detail'),
   HealsHeroesUnemploymentBenefitCalculator: () =>
     import('@/tools/calculators/heals-heroes-unemployment-benefit/detail'),
+  AustraliaFederalBudgetTaxCutsCalculator: () =>
+    import('@/tools/calculators/australia-federal-budget-tax-cuts/detail'),
   CashActStimulusCalculator: () =>
     import('@/tools/calculators/cash-act-stimulus/detail'),
   SecondStimulus900BillionCalculator: () =>

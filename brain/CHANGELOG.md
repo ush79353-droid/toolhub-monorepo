@@ -4,7 +4,19 @@
 
 ---
 
+### 2026-11-19 — Add Profit Calculator
+- **Summary:** Shipped Profit Calculator on existing catalog slug `profit-calculator` (`ProfitCalculator`, catalog `6af46f0fa27d8d1d4e990043`, preserved `nameKey` `profit calculator`). Screenshot-first (ADR-023): Buying cost (cost FX + per units) + Selling price (price FX + per units) + Profit (quantity, discount %, total cost / revenue / total profit FX outputs). Formulas: UnitCost=C/Cq; UnitPrice=P/Pq; TotalCost=UnitCost×Q; Revenue=UnitPrice×Q×(1−D/100); Profit=Revenue−TotalCost. Independent Phase 2 FX; unit counts and discount % never convert. Margin / Contribution Margin / Gross Profit siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Cost 100/1 · Price 150/1 · Qty 10 · Discount 10% → total cost **1,000** · revenue **1,350** · profit **350**.
+- **Important Files:** `frontend/src/tools/calculators/profit/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts` (not run this session per queue rules). Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-19 — Add Income Tax Cuts Calculator - Australia Federal Budget 2020/21
+- **Summary:** Shipped historical unavailable notice on existing catalog slug `income-tax-cuts-calculator-australia-federal-budget-202021` (`AustraliaFederalBudgetTaxCutsCalculator`, catalog `6af46f0fa27d8d1d4e990041`, preserved `nameKey` `income tax cuts calculator - australia federal budget 2020/21`, pillar `6af451c0a27d8d1d4e98f97a`). Screenshot-first (ADR-023): unavailable card; GST Calculator link to verified slug `gst-calculator` (GST module still undeveloped/inactive); Share/Reload/Clear(disabled)/feedback. No tax brackets, refunds, or FX. Distinguishes Budget 2020/21 proposals from enacted ATO-administered legislation. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Important Files:** `frontend/src/tools/calculators/australia-federal-budget-tax-cuts/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Price to Cash Flow Ratio Calculator
+
 - **Summary:** Shipped Price to Cash Flow Ratio Calculator on existing catalog slug `price-to-cash-flow-ratio-calculator` (`PriceToCashFlowRatioCalculator`, catalog `6af46f0fa27d8d1d4e99003a`, pillar `6af451c0a27d8d1d4e98f978`). Screenshot-first (ADR-023): Cash flow FX; shares outstanding; cash flow per share FX; price per share FX; P/CF ratio as dimensionless `x`. Formulas CFPS = CF/Shares; P/CF = Price/CFPS. Zero CFPS → undefined (not Infinity); negative CF allowed with valuation note. Independent Phase 2 FX; shares and ratio never convert. OCF / Cash Flow to Debt / Cash Ratio siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable`.
 - **Example:** CF 10,000,000 · 1,000,000 shares · price 150 → CFPS **10** · P/CF **15×**.
 - **Important Files:** `frontend/src/tools/calculators/price-to-cash-flow-ratio/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.

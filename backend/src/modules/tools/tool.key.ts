@@ -37,6 +37,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginWithDiscountCalculator',
   'NetDebtCalculator',
   'NetEffectiveRentCalculator',
+  'IncomeTaxCalculatorPakistan',
   'NewJerseySalesTaxCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
@@ -399,6 +400,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarDepreciationCalculator',
   'AttritionRateCalculator',
   'BusinessLoanCalculator',
+  'ProfitCalculator',
   'ProfitabilityIndexCalculator',
   'RevenuePerEmployeeCalculator',
   'RoasCalculator',
@@ -685,6 +687,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CaresActUnemploymentBenefitCalculator',
   'LwaUnemploymentBenefitCalculator',
   'HealsHeroesUnemploymentBenefitCalculator',
+  'AustraliaFederalBudgetTaxCutsCalculator',
   'CashActStimulusCalculator',
   'SecondStimulus900BillionCalculator',
   'AmericanRescuePlanStimulusCalculator',
@@ -1064,6 +1067,7 @@ if (isDirect) {
     !isApprovedComponentKey('CarDepreciationCalculator') ||
     !isApprovedComponentKey('AttritionRateCalculator') ||
     !isApprovedComponentKey('BusinessLoanCalculator') ||
+    !isApprovedComponentKey('ProfitCalculator') ||
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||
     !isApprovedComponentKey('RevenuePerEmployeeCalculator') ||
     !isApprovedComponentKey('RoasCalculator') ||
@@ -1349,6 +1353,7 @@ if (isDirect) {
     !isApprovedComponentKey('CaresActUnemploymentBenefitCalculator') ||
     !isApprovedComponentKey('LwaUnemploymentBenefitCalculator') ||
     !isApprovedComponentKey('HealsHeroesUnemploymentBenefitCalculator') ||
+    !isApprovedComponentKey('AustraliaFederalBudgetTaxCutsCalculator') ||
     !isApprovedComponentKey('CashActStimulusCalculator') ||
     !isApprovedComponentKey('SecondStimulus900BillionCalculator') ||
     !isApprovedComponentKey('AmericanRescuePlanStimulusCalculator') ||
@@ -1388,6 +1393,7 @@ if (isDirect) {
     !isApprovedComponentKey('FloridaOvertimeCalculator') ||
     !isApprovedComponentKey('GeorgiaOvertimeCalculator') ||
     !isApprovedComponentKey('IllinoisOvertimeCalculator') ||
+    !isApprovedComponentKey('IncomeTaxCalculatorPakistan') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
