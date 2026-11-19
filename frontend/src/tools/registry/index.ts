@@ -3179,6 +3179,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.UnleveredFreeCashFlowCalculator,
     })),
   ),
+  TrumpAccountsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/trump-accounts/TrumpAccountsCalculator'
+    ).then((mod) => ({
+      default: mod.TrumpAccountsCalculator,
+    })),
+  ),
   TrumpsTaxesVsYourTaxesCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/trumps-taxes-vs-your-taxes/TrumpsTaxesVsYourTaxesCalculator'

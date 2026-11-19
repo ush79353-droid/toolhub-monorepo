@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Trump Accounts Calculator
+- **Summary:** Shipped Trump Accounts Calculator on existing catalog slug `trump-accounts-calculator` (`TrumpAccountsCalculator`, catalog `6af46f10a27d8d1d4e99010b`, preserved `nameKey` `trump accounts calculator`). Screenshot-first (ADR-023): starting age / target age / starting balance / annual contribution; optimistic 10% / conservative 6% / pessimistic 4% scenarios; optional inflation; contributions-vs-growth pie; guide + 529/brokerage comparison. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (no FX).
+- **Formulas:** N=E−S; FV_initial=P(1+r)^N; FV_contrib=C×((1+r)^N−1)/r (or C×N if r=0); TotalContrib=P+C×N; Growth=FV−TotalContrib; Real=FV/(1+i)^N.
+- **Example:** age 0→18 · $1,000 · $5,000/yr · 6% · inflation 2.5% → final ≈ **$157,382.60** · contributions **$91,000** · real ≈ **$100,908.36**.
+- **Important Files:** `frontend/src/tools/calculators/trump-accounts/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Subscription Waste Calculator
 - **Summary:** Shipped Subscription Waste Calculator on existing catalog slug `subscription-waste-calculator` (`SubscriptionWasteCalculator`, catalog `6af46f10a27d8d1d4e99010a`, preserved `nameKey` `subscription waste calculator`). Screenshot-first (ADR-023): eight categories; dynamic add/remove; billing normalization; cancel → potential savings; monthly/annual totals. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (no FX).
 - **Formulas:** monthly=amount|amount/12|(amount×52)/12|amount/3; TotalMonthly=Σ; Annual=Monthly×12; Savings=Σ cancelled monthly.
