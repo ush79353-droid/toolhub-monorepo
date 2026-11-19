@@ -3220,6 +3220,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  LossRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/loss-ratio/LossRatioCalculator').then((mod) => ({
+      default: mod.LossRatioCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

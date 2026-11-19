@@ -615,6 +615,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'customer-effort-score-calculator',
   'dart-rate-calculator',
   'hr-software-roi-calculator',
+  'loss-ratio-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

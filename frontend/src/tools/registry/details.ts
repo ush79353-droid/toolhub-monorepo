@@ -835,6 +835,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   DartRateCalculator: () => import('@/tools/calculators/dart-rate/detail'),
   HrSoftwareRoiCalculator: () =>
     import('@/tools/calculators/hr-software-roi/detail'),
+  LossRatioCalculator: () => import('@/tools/calculators/loss-ratio/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

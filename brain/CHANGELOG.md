@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Loss Ratio Calculator
+- **Summary:** Shipped Loss Ratio Calculator on existing catalog slug `loss-ratio-calculator` (`LossRatioCalculator`, catalog `6af46f0fa27d8d1d4e9900a9`, preserved `nameKey` `loss ratio calculator`). Screenshot-first (ADR-023): Financial results accordion (earned premiums, claims paid, LAE); loss ratio %; interpretation + compact summary; denomination-only CurrencySelect (default PKR). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
+- **Formulas:** LR=((Claims Paid + Loss Adjustment Expenses) / Earned Premiums)×100; Total Loss-Related Costs = Claims + LAE; Premiums Remaining = Premiums − Total Costs (not net income).
+- **Example:** Premiums 10,000,000 · Claims 3,500,000 · LAE 1,800,000 → LR 53.00%. Zero claims/expenses → 0%; ratios above 100% supported; zero premiums blocked.
+- **Important Files:** `frontend/src/tools/calculators/loss-ratio/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add HR Software ROI Calculator
 - **Summary:** Shipped HR Software ROI Calculator on existing catalog slug `hr-software-roi-calculator` (`HrSoftwareRoiCalculator`, catalog `6af46f0fa27d8d1d4e9900a4`, preserved `nameKey` `hr software roi calculator`). Screenshot-first (ADR-023): simple cost/benefit/ROI%; optional advanced itemized costs & benefits; evaluation period; BCR; payback estimate. Denomination-only CurrencySelect (default PKR). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
 - **Formulas:** ROI=((B−C)/C)×100; Net=B−C; BCR=B/C; recurring amounts scaled by billing frequency × period months; payback ≈ one-time / annual net recurring when positive.
