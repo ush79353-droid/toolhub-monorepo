@@ -3374,6 +3374,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.QuizUsIncomePercentileCalculator,
     })),
   ),
+  SabbaticalCalculator: lazyTool(() =>
+    import('@/tools/calculators/sabbatical/SabbaticalCalculator').then((mod) => ({
+      default: mod.SabbaticalCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

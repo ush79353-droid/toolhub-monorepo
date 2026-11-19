@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Sabbatical Calculator
+- **Summary:** Shipped Sabbatical Calculator on existing catalog slug `sabbatical-calculator` (`SabbaticalCalculator`, catalog `6af46f10a27d8d1d4e990106`, preserved `nameKey` `sabbatical calculator`). Screenshot-first (ADR-023): Save + Financial Details; auto/manual monthly savings; duration yrs/mos/weeks; buffer; surplus/shortfall and affordable runway. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (no FX).
+- **Formulas:** MS=I×p/100; Accum=MS×Y×12; Available=Current+Accum; Required=Exp×Months; Buffer=Required×b/100; TotalReq=Required+Buffer; Affordable=Available/(Exp×(1+b/100)); Surplus=Available−TotalReq. Weeks→months via ×12/52.
+- **Example:** $5,000 · 50% · 1y save · 1y leave · $3,000 expenses · 10% buffer → available **$30,000** · required **$39,600** · shortfall **$9,600**.
+- **Important Files:** `frontend/src/tools/calculators/sabbatical/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Quiz: US Income Percentile Calculator
 - **Summary:** Shipped Quiz: US Income Percentile Calculator on existing catalog slug `quiz-us-income-percentile-calculator` (`QuizUsIncomePercentileCalculator`, catalog `6af46f10a27d8d1d4e990105`, preserved `nameKey` `quiz: us income percentile calculator`). Screenshot-first (ADR-023): eight MCQs; soft hints; Check answers → score/percentage/feedback bands; correct/incorrect/unanswered review. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Educational quiz (no FX).
 - **Formulas:** Score = Σ CorrectAnswerᵢ (unanswered = 0); Percentage = (Correct/8)×100; feedback bands 0–2 / 3–4 / 5–6 / 7–8.

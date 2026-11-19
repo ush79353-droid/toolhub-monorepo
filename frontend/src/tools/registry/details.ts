@@ -876,6 +876,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/powerball/detail'),
   QuizUsIncomePercentileCalculator: () =>
     import('@/tools/calculators/quiz-us-income-percentile/detail'),
+  SabbaticalCalculator: () =>
+    import('@/tools/calculators/sabbatical/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

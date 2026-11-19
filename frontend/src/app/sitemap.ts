@@ -639,6 +639,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'net-worth-calculator',
   'powerball-calculator',
   'quiz-us-income-percentile-calculator',
+  'sabbatical-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

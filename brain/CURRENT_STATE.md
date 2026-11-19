@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Quiz: US Income Percentile Calculator live at `/tools/quiz-us-income-percentile-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Sabbatical Calculator live at `/tools/sabbatical-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Sabbatical Calculator (`/tools/sabbatical-calculator`):** Live client-side sabbatical planner (`componentKey: 'SabbaticalCalculator'`, catalog `6af46f10a27d8d1d4e990106`, `nameKey` `sabbatical calculator`). Screenshot-first (ADR-023): Save (%, years, duration yrs/mos/weeks) + Financial Details (income, auto/manual monthly savings, current savings, expenses, buffer %); available vs required fund; affordable months with buffer; surplus/shortfall status. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Default example → available **$30,000** · required **$39,600** · shortfall **$9,600**.
 - **Quiz: US Income Percentile Calculator (`/tools/quiz-us-income-percentile-calculator`):** Live client-side educational MCQ quiz (`componentKey: 'QuizUsIncomePercentileCalculator'`, catalog `6af46f10a27d8d1d4e990105`, `nameKey` `quiz: us income percentile calculator`). Screenshot-first (ADR-023): eight radio questions; soft sky hints; Check answers → score `n / 8`, %, feedback bands (0–2/3–4/5–6/7–8), green/red/unanswered review + explanations. Unanswered = 0. Share/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. No FX. Perfect answers → **8 / 8**.
 - **Powerball Calculator (`/tools/powerball-calculator`):** Live client-side jackpot payout comparator (`componentKey: 'PowerballCalculator'`, catalog `6af46f10a27d8d1d4e990104`, `nameKey` `powerball calculator`). Screenshot-first (ADR-023): jackpot; lump-sum %; filing status; state/DC; lump vs 30×5% annuity; progressive federal + lottery state tax (CA exempt); 24% withholding shown separately. Reuses Mega Millions tax tables. Fixed USD. Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $281M · 52% → lump **$146,120,000**.
 - **Net Worth Calculator (`/tools/net-worth-calculator`):** Live client-side assets−liabilities tool (`componentKey: 'NetWorthCalculator'`, catalog `6af46f10a27d8d1d4e990103`, `nameKey` `net worth calculator`). Screenshot-first (ADR-023): 9 assets / 8 liabilities; results; SCF 2022 income/age/wealth household mean+median comparison (Fed Bulletin Table 2). Denomination-only CurrencySelect (no FX; SCF stays 2022 USD). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: assets $480k − liabilities $200k → **$280,000**.
