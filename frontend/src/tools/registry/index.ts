@@ -3230,6 +3230,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NpsCalculator,
     })),
   ),
+  RemoteVsOnLocationWorkersCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/remote-vs-on-location-workers/RemoteVsOnLocationCalculator'
+    ).then((mod) => ({
+      default: mod.RemoteVsOnLocationWorkersCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

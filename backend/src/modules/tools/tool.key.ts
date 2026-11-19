@@ -583,6 +583,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HrSoftwareRoiCalculator',
   'LossRatioCalculator',
   'NpsCalculator',
+  'RemoteVsOnLocationWorkersCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1198,6 +1199,7 @@ if (isDirect) {
     !isApprovedComponentKey('HrSoftwareRoiCalculator') ||
     !isApprovedComponentKey('LossRatioCalculator') ||
     !isApprovedComponentKey('NpsCalculator') ||
+    !isApprovedComponentKey('RemoteVsOnLocationWorkersCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Remote vs. On-Location Workers Calculator
+- **Summary:** Shipped Remote vs. On-Location Workers Calculator on existing catalog slug `remote-vs-on-location-workers-calculator` (`RemoteVsOnLocationWorkersCalculator`, catalog `6af46f0fa27d8d1d4e9900b4`, preserved `nameKey` `remote vs. on-location workers calculator`). Screenshot-first (ADR-023): period units; remote per-employee costs; on-location office-level costs with lease/own; extra expense rows; frequency→monthly normalization; denomination-only CurrencySelect. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
+- **Formulas:** Remote = N×A + N×R_monthly×T; On-location = O + (lease_monthly? + R_office)×T; per-employee = total/N when N>0; difference = TC_on − TC_remote.
+- **Example:** 10 remote · 20k one-time · 5k/mo · 12 mo → 800k; own office 150k + 50k/mo → 750k.
+- **Important Files:** `frontend/src/tools/calculators/remote-vs-on-location-workers/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add NPS Calculator
 - **Summary:** Shipped NPS Calculator on existing catalog slug `nps-calculator` (`NpsCalculator`, catalog `6af46f0fa27d8d1d4e9900ab`, preserved `nameKey` `nps calculator`). Screenshot-first (ADR-023): scores 0–10 response counts; promoters/passives/detractors analysis; NPS with mix visualization. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
 - **Formulas:** PR=S9+S10; PA=S7+S8; DR=S0…S6; NPS=((PR−DR)/TR)×100 = %PR−%DR. Average score optional, never replaces NPS.
