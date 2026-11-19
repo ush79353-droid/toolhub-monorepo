@@ -870,6 +870,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mega-millions-payout/detail'),
   MillionaireCalculator: () =>
     import('@/tools/calculators/millionaire/detail'),
+  NetWorthCalculator: () =>
+    import('@/tools/calculators/net-worth/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

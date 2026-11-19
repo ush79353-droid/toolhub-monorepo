@@ -3353,6 +3353,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MillionaireCalculator,
     })),
   ),
+  NetWorthCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/net-worth/NetWorthCalculator'
+    ).then((mod) => ({
+      default: mod.NetWorthCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

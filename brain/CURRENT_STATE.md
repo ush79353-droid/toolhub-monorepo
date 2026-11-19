@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Millionaire Calculator live at `/tools/millionaire-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Net Worth Calculator live at `/tools/net-worth-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Net Worth Calculator (`/tools/net-worth-calculator`):** Live client-side assets−liabilities tool (`componentKey: 'NetWorthCalculator'`, catalog `6af46f10a27d8d1d4e990103`, `nameKey` `net worth calculator`). Screenshot-first (ADR-023): 9 assets / 8 liabilities; results; SCF 2022 income/age/wealth household mean+median comparison (Fed Bulletin Table 2). Denomination-only CurrencySelect (no FX; SCF stays 2022 USD). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: assets $480k − liabilities $200k → **$280,000**.
 - **Millionaire Calculator (`/tools/millionaire-calculator`):** Live client-side time-to-goal savings tool (`componentKey: 'MillionaireCalculator'`, catalog `6af46f10a27d8d1d4e990102`, `nameKey` `millionaire calculator`). Screenshot-first (ADR-023): target; initial; rate; compound frequency (incl. continuous); deposits; begin/end timing; duration; stacked growth chart; inflation PV. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $1M · $20k · 4% monthly · $1k end → ~**35 years**.
 - **Mega Millions Payout Calculator (`/tools/mega-millions-payout-calculator`):** Live client-side jackpot payout comparator (`componentKey: 'MegaMillionsPayoutCalculator'`, catalog `6af46f10a27d8d1d4e990101`, `nameKey` `mega millions payout calculator`). Screenshot-first (ADR-023): advertised jackpot; annuity rate; filing status; US state/DC; lump-sum %; payout comparison (gross/federal/state/total/net); 30 graduated annuity schedule with per-payment tax; TY 2025 federal progressive + state none/flat/progressive configs. Fixed USD (no currency selector / no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $201M · 52% → lump **$104,520,000**; A₁ = J×0.05/((1.05)³⁰−1).
 - **Long Term Care Calculator (`/tools/long-term-care-calculator`):** Live client-side care-cost projector (`componentKey: 'LongTermCareCalculator'`, catalog `6af46f10a27d8d1d4e990100`, `nameKey` `long term care calculator`). Screenshot-first (ADR-023): per-day/per-month rate → annual baseline (present-year, no double-count); inflation geometric total + annual projection. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $7,500/mo · 4% · 5y → total ≈ **$487,469.03**.

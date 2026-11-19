@@ -602,6 +602,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LongTermCareCalculator',
   'MegaMillionsPayoutCalculator',
   'MillionaireCalculator',
+  'NetWorthCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1236,6 +1237,7 @@ if (isDirect) {
     !isApprovedComponentKey('LongTermCareCalculator') ||
     !isApprovedComponentKey('MegaMillionsPayoutCalculator') ||
     !isApprovedComponentKey('MillionaireCalculator') ||
+    !isApprovedComponentKey('NetWorthCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

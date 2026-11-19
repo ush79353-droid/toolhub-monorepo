@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Net Worth Calculator
+- **Summary:** Shipped Net Worth Calculator on existing catalog slug `net-worth-calculator` (`NetWorthCalculator`, catalog `6af46f10a27d8d1d4e990103`, preserved `nameKey` `net worth calculator`). Screenshot-first (ADR-023): 9 assets, 8 liabilities, results, SCF 2022 income/age/wealth comparison (mean + median). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX); SCF figures remain 2022 USD household benchmarks.
+- **Formulas:** TotalAssets=ΣAᵢ; TotalLiabilities=ΣLⱼ; NetWorth=Assets−Liabilities.
+- **Example:** $480,000 − $200,000 → **$280,000**.
+- **Important Files:** `frontend/src/tools/calculators/net-worth/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Millionaire Calculator
 - **Summary:** Shipped Millionaire Calculator on existing catalog slug `millionaire-calculator` (`MillionaireCalculator`, catalog `6af46f10a27d8d1d4e990102`, preserved `nameKey` `millionaire calculator`). Screenshot-first (ADR-023): target/initial/rate/compound frequency/deposits/timing; solve periods to goal; growth chart; inflation-adjusted PV. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** FV=PV(1+i)ⁿ+PMT×((1+i)ⁿ−1)/i (×(1+i) if beginning); i=r/m (continuous: e^(r/m)−1); n from closed form; PV_real=FV/(1+f)^t.
