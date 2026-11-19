@@ -3263,6 +3263,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FiftyThirtyTwentyCalculator,
     })),
   ),
+  ApcCalculator: lazyTool(() =>
+    import('@/tools/calculators/apc/ApcCalculator').then((mod) => ({
+      default: mod.ApcCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

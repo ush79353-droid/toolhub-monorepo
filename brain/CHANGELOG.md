@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add APC Calculator
+- **Summary:** Shipped APC Calculator on existing catalog slug `apc-calculator` (`ApcCalculator`, catalog `6af46f10a27d8d1d4e9900f5`, preserved `nameKey` `apc calculator`). Screenshot-first (ADR-023): total consumption + disposable income → APC ratio/percentage, implied savings, APS, dynamic interpretation; APC&gt;1 allowed. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** APC=C/Yd; APC%=(C/Yd)×100; S=Yd−C; APS=(Yd−C)/Yd; APC+APS=1. Advanced guide-only: APC=C₀/Yd+c from C=C₀+cYd.
+- **Example:** C 8,400 · Yd 10,000 → APC 0.84 (84%) · savings 1,600 · APS 16%; C 11,000 → APC 1.1 (110%).
+- **Important Files:** `frontend/src/tools/calculators/apc/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add 50/30/20 Rule Calculator
 - **Summary:** Shipped 50/30/20 Rule Calculator on existing catalog slug `503020-rule-calculator` (`FiftyThirtyTwentyCalculator`, catalog `6af46f10a27d8d1d4e9900f2`, preserved `nameKey` `50/30/20 rule calculator`). Screenshot-first (ADR-023): monthly after-tax income → necessities/wants/savings; expandable distribution; monthly/annual views; donut + bar visualization. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** N=I×0.50; W=I×0.30; S=I×0.20 (currency-unit split so N+W+S equals rounded income); annual = monthly × 12.

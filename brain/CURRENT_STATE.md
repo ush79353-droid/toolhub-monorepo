@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (50/30/20 Rule Calculator live at `/tools/503020-rule-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (APC Calculator live at `/tools/apc-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **APC Calculator (`/tools/apc-calculator`):** Live client-side Average Propensity to Consume tool (`componentKey: 'ApcCalculator'`, catalog `6af46f10a27d8d1d4e9900f5`, `nameKey` `apc calculator`). Screenshot-first (ADR-023): total consumption + disposable income → APC ratio/percentage, implied savings, APS; APC&gt;1 allowed; dynamic interpretation; advanced Keynesian formula in guide only. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: C $8,400 · Yd $10,000 → **APC 0.84 (84%)** · savings $1,600 · APS 16%.
 - **50/30/20 Rule Calculator (`/tools/503020-rule-calculator`):** Live client-side budgeting tool (`componentKey: 'FiftyThirtyTwentyCalculator'`, catalog `6af46f10a27d8d1d4e9900f2`, `nameKey` `50/30/20 rule calculator`). Screenshot-first (ADR-023): monthly after-tax income → 50% necessities / 30% wants / 20% savings; expandable distribution; monthly/annual views; donut + segment bar; unit-safe rounding so allocations sum to income. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $4,500 → **$2,250 / $1,350 / $900**.
 - **Maximum Drawdown Calculator (`/tools/maximum-drawdown-calculator`):** Live client-side peak-to-trough risk tool (`componentKey: 'MaximumDrawdownCalculator'`, catalog `6af46f0fa27d8d1d4e9900d8`, `nameKey` `maximum drawdown calculator`). Screenshot-first (ADR-023): peak value + lowest after peak → MDD % + absolute loss + required recovery gain; expandable Time for Recovery (synced/optional independent MDD, assumed annual growth) with t=−ln(1−D)/ln(1+g); handles 0%/100% drawdown and 0% growth. Denomination-only CurrencySelect (no FX). Share/Calculate/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $15,000 → $12,500 → **16.67%**; 20% MDD @ 10% growth ≈ **2.34 years**.
 - **CD Calculator (`/tools/cd-calculator`):** Live client-side Certificate of Deposit tool (`componentKey: 'CdCalculator'`, catalog `6af46f0fa27d8d1d4e9900c7`, `nameKey` `cd calculator`). Screenshot-first (ADR-023): initial deposit, nominal APR or APY, compounding (daily→annually), deposit length years+months (0–11), marginal tax estimate; end balance, gross interest, tax/net/after-tax; principal-vs-interest donut; annual/monthly accumulation schedule + stacked bar chart. Formula A=P(1+r/n)^(nt). Denomination-only CurrencySelect (removed from FX slug set). Share/Calculate/Clear/feedback/guide/FAQ. Activated; **`indexable` kept true**. Example: $10,000 · 5% · annually · 3y → **$11,576.25**.

@@ -588,6 +588,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AverageReturnCalculator',
   'MaximumDrawdownCalculator',
   'FiftyThirtyTwentyCalculator',
+  'ApcCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1208,6 +1209,7 @@ if (isDirect) {
     !isApprovedComponentKey('AverageReturnCalculator') ||
     !isApprovedComponentKey('MaximumDrawdownCalculator') ||
     !isApprovedComponentKey('FiftyThirtyTwentyCalculator') ||
+    !isApprovedComponentKey('ApcCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

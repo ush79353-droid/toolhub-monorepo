@@ -622,6 +622,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'average-return-calculator',
   'maximum-drawdown-calculator',
   '503020-rule-calculator',
+  'apc-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',
