@@ -109,6 +109,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',
   'hourly-to-salary-wage-calculator',
+  'hourly-to-salary-with-overtime-calculator',
   'hourly-wage-calculator',
   'wage-to-salary-calculator',
   'yearly-wage-calculator',

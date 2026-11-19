@@ -3836,6 +3836,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HourlyToSalaryWageCalculator,
     })),
   ),
+  HourlyToSalaryWithOvertimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/hourly-to-salary-with-overtime/HourlyToSalaryWithOvertimeCalculator'
+    ).then((mod) => ({
+      default: mod.HourlyToSalaryWithOvertimeCalculator,
+    })),
+  ),
   HourlyWageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/hourly-wage/HourlyWageCalculator'

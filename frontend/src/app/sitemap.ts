@@ -695,6 +695,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',
   'hourly-to-salary-wage-calculator',
+  'hourly-to-salary-with-overtime-calculator',
   'hourly-wage-calculator',
   'wage-calculator',
   'wage-to-salary-calculator',

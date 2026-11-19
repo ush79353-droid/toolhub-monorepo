@@ -1004,6 +1004,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/hourly-to-annual-salary/detail'),
   HourlyToSalaryWageCalculator: () =>
     import('@/tools/calculators/hourly-to-salary-wage/detail'),
+  HourlyToSalaryWithOvertimeCalculator: () =>
+    import('@/tools/calculators/hourly-to-salary-with-overtime/detail'),
   HourlyWageCalculator: () =>
     import('@/tools/calculators/hourly-wage/detail'),
   WageCalculator: () => import('@/tools/calculators/wage/detail'),
