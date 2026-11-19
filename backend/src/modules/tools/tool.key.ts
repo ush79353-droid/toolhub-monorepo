@@ -395,6 +395,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AdditionalFundsNeededCalculator',
   'AbsencePercentageCalculator',
   'AccumulatedDepreciationCalculator',
+  'CarDepreciationCalculator',
   'AttritionRateCalculator',
   'BusinessLoanCalculator',
   'ProfitabilityIndexCalculator',
@@ -1057,6 +1058,7 @@ if (isDirect) {
     !isApprovedComponentKey('AdditionalFundsNeededCalculator') ||
     !isApprovedComponentKey('AbsencePercentageCalculator') ||
     !isApprovedComponentKey('AccumulatedDepreciationCalculator') ||
+    !isApprovedComponentKey('CarDepreciationCalculator') ||
     !isApprovedComponentKey('AttritionRateCalculator') ||
     !isApprovedComponentKey('BusinessLoanCalculator') ||
     !isApprovedComponentKey('ProfitabilityIndexCalculator') ||

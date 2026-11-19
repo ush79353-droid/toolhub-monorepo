@@ -56,6 +56,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'ltv-calculator-loan-to-value',
   'cagr-calculator',
   'capital-gains-yield-calculator',
+  'car-depreciation-calculator',
   'car-lease-calculator',
   'car-loan-emi-calculator',
   'car-refinance-calculator',

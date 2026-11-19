@@ -427,6 +427,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'additional-funds-needed-calculator',
   'absence-percentage-calculator',
   'accumulated-depreciation-calculator',
+  'car-depreciation-calculator',
   'attrition-rate-calculator',
   'business-loan-calculator',
   'profitability-index-calculator',

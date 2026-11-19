@@ -33,6 +33,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'annuity-payout-calculator',
   'california-overtime-calculator',
   'car-interest-calculator',
+  'car-depreciation-calculator',
   'car-lease-calculator',
   'car-refinance-calculator',
   'cash-flow-to-debt-ratio-calculator',

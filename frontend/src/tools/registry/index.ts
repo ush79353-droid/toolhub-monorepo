@@ -2150,6 +2150,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  CarDepreciationCalculator: lazyTool(() =>
+    import('@/tools/calculators/car-depreciation/CarDepreciationCalculator').then(
+      (mod) => ({
+        default: mod.CarDepreciationCalculator,
+      }),
+    ),
+  ),
   AttritionRateCalculator: lazyTool(() =>
     import('@/tools/calculators/attrition-rate/AttritionRateCalculator').then((mod) => ({
       default: mod.AttritionRateCalculator,

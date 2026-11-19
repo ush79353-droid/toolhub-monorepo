@@ -478,6 +478,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/absence-percentage/detail'),
   AccumulatedDepreciationCalculator: () =>
     import('@/tools/calculators/accumulated-depreciation/detail'),
+  CarDepreciationCalculator: () =>
+    import('@/tools/calculators/car-depreciation/detail'),
   AttritionRateCalculator: () =>
     import('@/tools/calculators/attrition-rate/detail'),
   BusinessLoanCalculator: () =>
