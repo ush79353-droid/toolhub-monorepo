@@ -535,6 +535,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'loan-balance-calculator',
   'loan-payment-calculator',
   'quiz-loan-balance-calculator',
+  'quiz-car-depreciation-calculator',
   'quiz-dividend-calculator',
   'man-hours-calculator',
   'margin-interest-calculator',

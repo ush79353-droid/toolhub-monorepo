@@ -2760,6 +2760,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  QuizCarDepreciationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/quiz-car-depreciation/QuizCarDepreciationCalculator'
+    ).then((mod) => ({
+      default: mod.QuizCarDepreciationCalculator,
+    })),
+  ),
   QuizDividendCalculator: lazyTool(() =>
     import('@/tools/calculators/quiz-dividend/QuizDividendCalculator').then(
       (mod) => ({
