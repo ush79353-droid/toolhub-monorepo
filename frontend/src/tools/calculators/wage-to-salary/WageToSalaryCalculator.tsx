@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import type { SupportedCurrency } from '@/tools/shared/currency';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import {
   WageToSalaryForm,
   type OutputCurrencyKey,
@@ -17,6 +30,10 @@ import {
   type WageToSalaryInput,
   type WageToSalaryResult,
 } from './types';
+import { validateWageToSalaryInput } from './validation';
+
+const FX_NOTE =
+  'Each wage input and each salary result has its own currency. Math runs in the last-edited wage currency; other amounts convert for display. Hours and days per week are never converted. Missing rates block conversion; stale rates warn but still convert. Annualization uses 52 paid weeks.';
 
 function inputsEqual(a: WageToSalaryInput, b: WageToSalaryInput): boolean {
   return (
@@ -37,9 +54,6 @@ function inputsEqual(a: WageToSalaryInput, b: WageToSalaryInput): boolean {
   );
 }
 
-/**
- * UI shell — wage conversion + FX validation land in the engine commit.
- */
 export function WageToSalaryCalculator({
   metadata,
   className = '',
@@ -47,6 +61,8 @@ export function WageToSalaryCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<WageToSalaryInput>(
     () => defaults
@@ -67,23 +83,128 @@ export function WageToSalaryCalculator({
   }, []);
 
   const apply = (next: WageToSalaryInput) => {
+    const validation = validateWageToSalaryInput(next, rates);
     setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
+  const sourceCurrency = (state: WageToSalaryInput): SupportedCurrency => {
+    if (state.sourceField === 'hourly') return state.hourlyWageCurrency;
+    if (state.sourceField === 'daily') return state.dailyWageCurrency;
+    return state.weeklyWageCurrency;
   };
 
   const handleWageCurrencyChange = (
     field: WageSourceField,
     next: SupportedCurrency
   ) => {
-    if (field === 'hourly' && input.hourlyWageCurrency !== next) {
+    if (field === 'hourly') {
+      if (input.hourlyWageCurrency === next) return;
+      if (input.sourceField === 'hourly') {
+        const converted = convertFieldAmount(
+          input.hourlyWage,
+          input.hourlyWageCurrency,
+          next
+        );
+        if (!converted.ok) {
+          setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+          return;
+        }
+        apply({
+          ...input,
+          hourlyWageCurrency: next,
+          hourlyWage: converted.text,
+        });
+        return;
+      }
+      if (!canConvertPair(sourceCurrency(input), next)) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
       apply({ ...input, hourlyWageCurrency: next });
-    } else if (field === 'daily' && input.dailyWageCurrency !== next) {
-      apply({ ...input, dailyWageCurrency: next });
-    } else if (field === 'weekly' && input.weeklyWageCurrency !== next) {
-      apply({ ...input, weeklyWageCurrency: next });
+      return;
     }
+
+    if (field === 'daily') {
+      if (input.dailyWageCurrency === next) return;
+      if (input.sourceField === 'daily') {
+        const converted = convertFieldAmount(
+          input.dailyWage,
+          input.dailyWageCurrency,
+          next
+        );
+        if (!converted.ok) {
+          setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+          return;
+        }
+        apply({
+          ...input,
+          dailyWageCurrency: next,
+          dailyWage: converted.text,
+        });
+        return;
+      }
+      if (!canConvertPair(sourceCurrency(input), next)) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      apply({ ...input, dailyWageCurrency: next });
+      return;
+    }
+
+    if (input.weeklyWageCurrency === next) return;
+    if (input.sourceField === 'weekly') {
+      const converted = convertFieldAmount(
+        input.weeklyWage,
+        input.weeklyWageCurrency,
+        next
+      );
+      if (!converted.ok) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      apply({
+        ...input,
+        weeklyWageCurrency: next,
+        weeklyWage: converted.text,
+      });
+      return;
+    }
+    if (!canConvertPair(sourceCurrency(input), next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({ ...input, weeklyWageCurrency: next });
   };
 
   const handleOutputCurrencyChange = (
@@ -91,15 +212,20 @@ export function WageToSalaryCalculator({
     next: SupportedCurrency
   ) => {
     if (input[key] === next) return;
+    if (!canConvertPair(sourceCurrency(input), next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({ ...input, [key]: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateWageToSalaryInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -107,12 +233,31 @@ export function WageToSalaryCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+
+  const summary = result
+    ? [
+        `${metadata.title} — Omega Calculators`,
+        `Source: ${result.sourceField} wage`,
+        `Hourly: ${getCurrencySymbol(result.hourlyWageCurrency)}${result.formattedHourly} ${result.hourlyWageCurrency}`,
+        `Daily: ${getCurrencySymbol(result.dailyWageCurrency)}${result.formattedDaily} ${result.dailyWageCurrency}`,
+        `Weekly: ${getCurrencySymbol(result.weeklyWageCurrency)}${result.formattedWeekly} ${result.weeklyWageCurrency}`,
+        `Hours/week: ${input.hoursPerWeek}`,
+        `Days/week: ${input.daysPerWeek}`,
+        `Monthly: ${getCurrencySymbol(result.monthlyCurrency)}${result.formattedMonthly} ${result.monthlyCurrency}`,
+        `Yearly: ${getCurrencySymbol(result.yearlyCurrency)}${result.formattedYearly} ${result.yearlyCurrency}`,
+        `Assumptions: weekly from last-edited wage; yearly = weekly×52; monthly = weekly×52/12`,
+        currencyNote,
+      ].join('\n')
+    : '';
 
   const handleShare = async () => {
-    const text = `${metadata.title} — Omega Calculators`;
+    if (!summary) return;
     if (canShare) {
       try {
-        await navigator.share({ title: metadata.title, text });
+        await navigator.share({ title: metadata.title, text: summary });
         setShared(true);
         window.setTimeout(() => setShared(false), 2000);
         return;
@@ -120,7 +265,7 @@ export function WageToSalaryCalculator({
         // fall through
       }
     }
-    if (await copyTextToClipboard(text)) {
+    if (await copyTextToClipboard(summary)) {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     }
@@ -137,8 +282,7 @@ export function WageToSalaryCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Convert hourly, daily, or weekly wage to monthly and yearly salary
-            (52-week year). Independent currencies on money fields.
+            {currencyNote}
           </p>
         </div>
         {headerActions ? (
@@ -155,13 +299,15 @@ export function WageToSalaryCalculator({
           onWageCurrencyChange={handleWageCurrencyChange}
           onOutputCurrencyChange={handleOutputCurrencyChange}
           conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
           <button
             type="button"
             onClick={() => void handleShare()}
-            className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border bg-white p-3.5 text-center transition-colors hover:bg-muted/20 active:scale-[0.99]"
+            disabled={!summary}
+            className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border bg-white p-3.5 text-center transition-colors hover:bg-muted/20 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50"
           >
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-500 text-white shadow-xs">
               <Share2 className="h-4 w-4" />
