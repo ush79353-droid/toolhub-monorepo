@@ -3367,6 +3367,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PowerballCalculator,
     })),
   ),
+  QuizUsIncomePercentileCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/quiz-us-income-percentile/QuizUsIncomePercentileCalculator'
+    ).then((mod) => ({
+      default: mod.QuizUsIncomePercentileCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

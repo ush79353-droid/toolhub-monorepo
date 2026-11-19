@@ -604,6 +604,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MillionaireCalculator',
   'NetWorthCalculator',
   'PowerballCalculator',
+  'QuizUsIncomePercentileCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1240,6 +1241,7 @@ if (isDirect) {
     !isApprovedComponentKey('MillionaireCalculator') ||
     !isApprovedComponentKey('NetWorthCalculator') ||
     !isApprovedComponentKey('PowerballCalculator') ||
+    !isApprovedComponentKey('QuizUsIncomePercentileCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||
