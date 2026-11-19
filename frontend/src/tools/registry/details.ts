@@ -828,6 +828,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TrumpsTaxesVsYourTaxesCalculator: () =>
     import('@/tools/calculators/trumps-taxes-vs-your-taxes/detail'),
   VatCalculator: () => import('@/tools/calculators/vat/detail'),
+  WeeklyPayCalculator: () => import('@/tools/calculators/weekly-pay/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

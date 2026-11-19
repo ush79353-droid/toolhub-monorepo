@@ -3191,6 +3191,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.VatCalculator,
     })),
   ),
+  WeeklyPayCalculator: lazyTool(() =>
+    import('@/tools/calculators/weekly-pay/WeeklyPayCalculator').then((mod) => ({
+      default: mod.WeeklyPayCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

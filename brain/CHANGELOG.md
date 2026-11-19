@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Weekly Pay Calculator
+- **Summary:** Shipped Weekly Pay Calculator on existing catalog slug `weekly-pay-calculator` (`WeeklyPayCalculator`, catalog `6af46f0fa27d8d1d4e99007a`, preserved `nameKey` `weekly pay calculator`). Screenshot-first (ADR-023): bidirectional hourly/daily/monthly/annual gross pay via weekly hub; schedule hours/day, days/week, hours/week sync, paid weeks ↔ unpaid weeks (sum 52); examples; denomination-only CurrencySelect. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
+- **Formulas:** Weekly from H×HPW, D×DPW, M×12/WPY, A/WPY; reverse via weekly hub. HPW = HPD×DPW; average weeks/month = WPY/12.
+- **Example:** Hourly 18 · 8h · 5d · 52 weeks → weekly 720 · monthly 3,120 · annual 37,440. Monthly 4,000 → weekly ≈ 923.08 · annual 48,000.
+- **Important Files:** `frontend/src/tools/calculators/weekly-pay/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add VAT Calculator
 - **Summary:** Shipped VAT Calculator on existing catalog slug `vat-calculator` (`VatCalculator`, catalog `6af46f0fa27d8d1d4e990079`, preserved `nameKey` `vat calculator`). Screenshot-first (ADR-023): VAT excluded/included modes, custom rate (default 20% example), synchronized net/VAT/gross with last-edited driver, denomination-only CurrencySelect. Reverse VAT uses ÷(1+r/100). Activated via `npm run tool:assign` with `--set-active --set-indexable`; pillar/subPillar null; isFeatured left false.
 - **Formulas:** Add: VAT = Net×(Rate/100), Gross = Net+VAT. Remove: Net = Gross/(1+Rate/100), VAT = Gross−Net. Money rounded once at currency fraction digits.
