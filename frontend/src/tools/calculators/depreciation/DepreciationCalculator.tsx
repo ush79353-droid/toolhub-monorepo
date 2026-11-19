@@ -5,8 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
-import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { DepreciationForm } from './DepreciationForm';
 import {
   createDefaultInput,
@@ -15,6 +27,7 @@ import {
   type DepreciationInput,
   type DepreciationResult,
 } from './types';
+import { validateDepreciationInput } from './validation';
 
 const FX_NOTE =
   'Original cost, salvage value, depreciation expense, and end book value each have their own currency. Cost and salvage normalize before calculating; results convert for display. Lifetime, selected years, and declining-balance rate never convert.';
@@ -26,6 +39,7 @@ export function DepreciationCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<DepreciationInput>(() => defaults);
@@ -36,34 +50,128 @@ export function DepreciationCalculator({
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const applyDraft = (next: DepreciationInput) => {
+  const apply = (next: DepreciationInput) => {
+    setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    const validation = validateDepreciationInput(next, rates);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
+  const handleOriginalCostCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.originalCostCurrency) return;
+    const converted = convertFieldAmount(
+      input.originalCost,
+      input.originalCostCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      originalCost: converted.text,
+      originalCostCurrency: next,
+    });
+  };
+
+  const handleSalvageCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.salvageValueCurrency) return;
+    const converted = convertFieldAmount(
+      input.salvageValue,
+      input.salvageValueCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      salvageValue: converted.text,
+      salvageValueCurrency: next,
+    });
+  };
+
+  const handleExpenseCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.expenseCurrency) return;
+    apply({ ...input, expenseCurrency: next });
+  };
+
+  const handleEndBookCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.endBookCurrency) return;
+    apply({ ...input, endBookCurrency: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateDepreciationInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
+    setConversionError(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
   const currencyNote = ratesStatus.available
     ? FX_NOTE
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const ratesWarning =
+    ratesStatus.available && ratesStatus.stale ? ratesStatus.message : null;
 
-  const summary = result?.summaryText ?? '';
+  const summary = result
+    ? [
+        `${metadata.title} — Omega Calculators`,
+        `Method: ${input.method}`,
+        `Original cost: ${getCurrencySymbol(input.originalCostCurrency)}${input.originalCost}`,
+        `Salvage: ${getCurrencySymbol(input.salvageValueCurrency)}${input.salvageValue}`,
+        `Lifetime: ${input.lifetimeYears} yrs`,
+        `After: ${input.endBookAfterYears} yrs`,
+        `Depreciation expense: ${getCurrencySymbol(input.expenseCurrency)}${result.formattedDepreciationExpense}`,
+        `End book value: ${getCurrencySymbol(input.endBookCurrency)}${result.formattedEndBookValue}`,
+        result.summaryText,
+        currencyNote,
+      ].join('\n')
+    : '';
 
   const handleShare = async () => {
     if (!summary) return;
@@ -107,19 +215,13 @@ export function DepreciationCalculator({
           input={input}
           errors={errors}
           result={result}
-          onChange={applyDraft}
-          onOriginalCostCurrencyChange={(next) =>
-            applyDraft({ ...input, originalCostCurrency: next })
-          }
-          onSalvageCurrencyChange={(next) =>
-            applyDraft({ ...input, salvageValueCurrency: next })
-          }
-          onExpenseCurrencyChange={(next) =>
-            applyDraft({ ...input, expenseCurrency: next })
-          }
-          onEndBookCurrencyChange={(next) =>
-            applyDraft({ ...input, endBookCurrency: next })
-          }
+          onChange={apply}
+          onOriginalCostCurrencyChange={handleOriginalCostCurrencyChange}
+          onSalvageCurrencyChange={handleSalvageCurrencyChange}
+          onExpenseCurrencyChange={handleExpenseCurrencyChange}
+          onEndBookCurrencyChange={handleEndBookCurrencyChange}
+          conversionError={conversionError}
+          ratesWarning={ratesWarning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
