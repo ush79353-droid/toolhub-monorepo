@@ -5,20 +5,12 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { convertCurrency } from '@/tools/shared/convert-currency';
-import type { SupportedCurrency } from '@/tools/shared/currency';
-import {
-  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
-  isCurrencyRateUsable,
-} from '@/tools/shared/currency-rates';
+import { getCurrencySymbol } from '@/tools/shared/currency';
+import { CURRENCY_CONVERSION_UNAVAILABLE_NOTE } from '@/tools/shared/currency-rates';
 import {
   useCurrencyRates,
   useCurrencyRatesStatus,
 } from '@/tools/shared/CurrencyRatesProvider';
-import {
-  moneyAmountToInputString,
-  parseMoneyInput,
-} from '@/tools/shared/money-value';
 import { RevenueForm } from './RevenueForm';
 import {
   createDefaultDraft,
@@ -26,10 +18,7 @@ import {
   type RevenueFieldErrors,
   type RevenueResult,
 } from './types';
-import { validateRevenueDraft } from './validation';
-
-const FX_NOTE =
-  'Price and total revenue each have their own currency. Amounts are normalized into the price currency before Price × Quantity. Quantity is never converted. Missing rates block conversion; stale rates warn but still convert.';
+import { validateRevenueInput } from './validation';
 
 function draftsEqual(a: RevenueDraft, b: RevenueDraft): boolean {
   return (
@@ -37,11 +26,12 @@ function draftsEqual(a: RevenueDraft, b: RevenueDraft): boolean {
     a.priceCurrency === b.priceCurrency &&
     a.quantity === b.quantity &&
     a.totalRevenue === b.totalRevenue &&
-    a.totalRevenueCurrency === b.totalRevenueCurrency &&
-    a.solveFor === b.solveFor &&
-    a.lastEdited === b.lastEdited
+    a.totalRevenueCurrency === b.totalRevenueCurrency
   );
 }
+
+const REVENUE_CURRENCY_NOTE =
+  'Price and total revenue use independent currencies. Amounts are normalized into the price currency before Price × Quantity. Quantity is never converted.';
 
 export function RevenueCalculator({
   metadata,
@@ -53,205 +43,159 @@ export function RevenueCalculator({
   const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultDraft();
+  const initial = validateRevenueInput(defaults, rates);
   const [baseline, setBaseline] = React.useState<RevenueDraft>(() => defaults);
-  const [draft, setDraft] = React.useState<RevenueDraft>(() => defaults);
-  const [errors, setErrors] = React.useState<RevenueFieldErrors>({});
-  const [result, setResult] = React.useState<RevenueResult | null>(null);
+  const [input, setInput] = React.useState<RevenueDraft>(() => defaults);
+  const [errors, setErrors] = React.useState<RevenueFieldErrors>(() => initial.errors);
+  const [result, setResult] = React.useState<RevenueResult | null>(() => initial.result);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
-  const [conversionError, setConversionError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  React.useEffect(() => {
-    const validation = validateRevenueDraft(draft, rates);
-    setErrors(validation.errors);
-    setResult(validation.isValid ? validation.result : null);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- rates-driven resync
-  }, [rates]);
-
   const apply = (next: RevenueDraft) => {
-    const validation = validateRevenueDraft(next, rates);
-    setConversionError(null);
-    setDraft(next);
+    setInput(next);
+    const validation = validateRevenueInput(next, rates);
     setErrors(validation.errors);
     setResult(validation.isValid ? validation.result : null);
   };
 
-  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
-    if (from === to) return true;
-    return (
-      rates.available &&
-      isCurrencyRateUsable(rates.rates, from) &&
-      isCurrencyRateUsable(rates.rates, to)
-    );
+  const handleReset = () => {
+    const fresh = createDefaultDraft();
+    const validation = validateRevenueInput(fresh, rates);
+    setInput(fresh);
+    setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
+    setCopied(false);
+    setShared(false);
+    setFeedback(null);
   };
 
-  const convertFieldAmount = (
-    raw: string,
-    from: SupportedCurrency,
-    to: SupportedCurrency
-  ): { ok: true; text: string } | { ok: false } => {
-    if (from === to) return { ok: true, text: raw };
-    const amount = parseMoneyInput(raw);
-    if (!Number.isFinite(amount)) return { ok: true, text: raw };
-    if (!canConvertPair(from, to)) return { ok: false };
-    const converted = convertCurrency({
-      amount,
-      from,
-      to,
-      rates: rates.rates,
-    });
-    if (!converted.ok) return { ok: false };
-    return { ok: true, text: moneyAmountToInputString(converted.amount) };
-  };
-
-  const handlePriceCurrencyChange = (next: SupportedCurrency) => {
-    const converted = convertFieldAmount(draft.price, draft.priceCurrency, next);
-    if (!converted.ok) {
-      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
-      return;
-    }
-    apply({ ...draft, price: converted.text, priceCurrency: next });
-  };
-
-  const handleTotalRevenueCurrencyChange = (next: SupportedCurrency) => {
-    const converted = convertFieldAmount(
-      draft.totalRevenue,
-      draft.totalRevenueCurrency,
-      next
-    );
-    if (!converted.ok) {
-      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
-      return;
-    }
-    apply({
-      ...draft,
-      totalRevenue: converted.text,
-      totalRevenueCurrency: next,
-    });
-  };
-
-  const dirty = !draftsEqual(draft, baseline);
-  const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
-
-  const sharePayload = result
+  const currencyNote = ratesStatus.available
+    ? REVENUE_CURRENCY_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const dirty = !draftsEqual(input, baseline);
+  const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
-        `Price: ${result.formattedPrice} ${result.calcCurrency}`,
+        `Price: ${getCurrencySymbol(result.calcCurrency)}${result.formattedPrice}`,
         `Quantity: ${result.formattedQuantity}`,
-        `Total revenue: ${result.formattedTotalRevenue} ${result.totalRevenueCurrency}`,
+        `Total revenue: ${getCurrencySymbol(result.totalRevenueCurrency)}${result.formattedTotalRevenue}`,
+        `Solved: ${result.solvedField}`,
+        result.summaryText,
         currencyNote,
       ].join('\n')
-    : `${metadata.title} — Omega Calculators`;
+    : '';
 
   const handleShare = async () => {
-    if (!result) return;
-    try {
-      if (canShare && navigator.share) {
-        await navigator.share({ title: metadata.title, text: sharePayload });
+    if (!summary) return;
+    if (canShare) {
+      try {
+        await navigator.share({ title: metadata.title, text: summary });
         setShared(true);
+        window.setTimeout(() => setShared(false), 2000);
         return;
+      } catch {
+        // fall through
       }
-      const ok = await copyTextToClipboard(sharePayload);
-      setCopied(ok);
-      setShared(ok);
-    } catch {
-      setShared(false);
     }
-  };
-
-  const handleReload = () => {
-    apply(baseline);
-    setFeedback(null);
-    setCopied(false);
-    setShared(false);
-    setConversionError(null);
-  };
-
-  const handleClear = () => {
-    const fresh = createDefaultDraft();
-    setBaseline(fresh);
-    apply(fresh);
-    setFeedback(null);
-    setCopied(false);
-    setShared(false);
-    setConversionError(null);
+    if (await copyTextToClipboard(summary)) {
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    }
   };
 
   return (
-    <div className={`space-y-4 ${className}`}>
-      {!isEmbed && headerActions ? (
-        <div className="flex flex-wrap items-center justify-end gap-2">{headerActions}</div>
-      ) : null}
+    <section
+      aria-label={`${metadata.title} calculator panel`}
+      className={`overflow-hidden rounded-2xl border border-border bg-white ${
+        isEmbed ? 'shadow-sm' : 'shadow-[0_12px_40px_-16px_rgba(22,60,67,0.28)]'
+      } ${className}`}
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
+        <div>
+          <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
+          <p className="text-xs font-normal text-muted-foreground">
+            Price × Quantity · solve any one field · independent FX on money
+          </p>
+        </div>
+        {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
+      </div>
 
-      <RevenueForm
-        draft={draft}
-        errors={errors}
-        result={result}
-        onChange={apply}
-        onPriceCurrencyChange={handlePriceCurrencyChange}
-        onTotalRevenueCurrencyChange={handleTotalRevenueCurrencyChange}
-        conversionError={conversionError}
-        ratesWarning={ratesStatus.warning}
-      />
+      <div className="space-y-4 p-4 sm:p-5">
+        <p className="text-xs leading-relaxed text-muted-foreground">{currencyNote}</p>
+        <RevenueForm input={input} errors={errors} result={result} onChange={apply} />
 
-      <p className="text-xs leading-relaxed text-muted-foreground">{currencyNote}</p>
-
-      <div className="flex flex-col gap-2 border-t border-border pt-4 sm:flex-row sm:items-start">
-        <Button
-          type="button"
-          variant="outline"
-          className="h-auto min-h-11 flex-col gap-1 px-4 py-3 sm:w-36"
-          disabled={!result}
-          onClick={() => void handleShare()}
-        >
-          <Share2 className="h-4 w-4 text-primary" aria-hidden />
-          <span className="text-xs">{shared || copied ? 'Shared' : 'Share result'}</span>
-        </Button>
-        <div className="flex flex-1 flex-col gap-2">
-          <Button type="button" variant="outline" className="h-11" onClick={handleReload}>
-            Reload calculator
-          </Button>
-          <Button
+        <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
+          <button
             type="button"
-            variant="outline"
-            className="h-11"
-            disabled={!dirty}
-            onClick={handleClear}
+            onClick={() => void handleShare()}
+            disabled={!summary}
+            className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border bg-white p-3.5 text-center transition-colors hover:bg-muted/20 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50"
           >
-            Clear all changes
-          </Button>
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-500 text-white shadow-xs">
+              <Share2 className="h-4 w-4" />
+            </div>
+            <span className="text-xs font-semibold text-accent">
+              {copied ? 'Copied!' : shared ? 'Shared' : 'Share result'}
+            </span>
+          </button>
+          <div className="flex flex-col gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              className="h-10 w-full justify-center rounded-xl border-border text-xs font-semibold text-accent hover:bg-muted/30"
+              onClick={handleReset}
+            >
+              Reload calculator
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              className="h-10 w-full justify-center rounded-xl border-border text-xs font-semibold text-accent hover:bg-muted/30"
+              disabled={!dirty}
+              onClick={handleReset}
+            >
+              Clear all changes
+            </Button>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg bg-muted/20 px-3 py-2 text-xs text-muted-foreground">
+          <span>Did we solve your problem today?</span>
+          <div className="flex items-center gap-1.5">
+            <button
+              type="button"
+              onClick={() => setFeedback('yes')}
+              className={`flex items-center gap-1 rounded-md border px-2 py-1 transition-colors ${
+                feedback === 'yes'
+                  ? 'border-primary bg-primary text-white'
+                  : 'border-border bg-white text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              <ThumbsUp className="h-3 w-3" />
+              <span>Yes</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setFeedback('no')}
+              className={`flex items-center gap-1 rounded-md border px-2 py-1 transition-colors ${
+                feedback === 'no'
+                  ? 'border-primary bg-primary text-white'
+                  : 'border-border bg-white text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              <ThumbsDown className="h-3 w-3" />
+              <span>No</span>
+            </button>
+          </div>
         </div>
       </div>
-
-      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-        <span>Did we solve your problem today?</span>
-        <Button
-          type="button"
-          variant={feedback === 'yes' ? 'default' : 'outline'}
-          size="sm"
-          className="h-8 gap-1"
-          onClick={() => setFeedback('yes')}
-        >
-          <ThumbsUp className="h-3.5 w-3.5" aria-hidden />
-          Yes
-        </Button>
-        <Button
-          type="button"
-          variant={feedback === 'no' ? 'default' : 'outline'}
-          size="sm"
-          className="h-8 gap-1"
-          onClick={() => setFeedback('no')}
-        >
-          <ThumbsDown className="h-3.5 w-3.5" aria-hidden />
-          No
-        </Button>
-      </div>
-    </div>
+    </section>
   );
 }

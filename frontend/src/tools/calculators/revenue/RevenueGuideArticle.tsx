@@ -1,64 +1,57 @@
+import { FAQAccordion } from '@/components/shared/FAQAccordion';
+import { REVENUE_FAQS } from './content';
+
 export function RevenueGuideArticle() {
   return (
-    <div className="space-y-8 text-[15px] leading-relaxed text-foreground/90">
-      <section id="what-is-revenue-calculator" className="scroll-mt-24">
-        <h2 className="text-xl font-semibold tracking-tight text-accent">
-          What Is This Calculator?
-        </h2>
-        <p className="mt-3">
-          The Revenue Calculator solves the relationship between unit price, quantity sold, and
-          total revenue. Leave exactly one field blank to solve for price, quantity, or total
-          revenue.
-        </p>
-      </section>
+    <article className="prose prose-slate max-w-none rounded-2xl border border-border bg-white px-5 py-6 sm:px-8 sm:py-8">
+      <h2
+        id="what-is-revenue-calculator"
+        className="text-xl font-bold tracking-tight text-accent sm:text-2xl"
+      >
+        What Is This Calculator?
+      </h2>
+      <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
+        The Revenue Calculator solves the relationship between unit price, quantity sold, and total
+        revenue. Enter any two values and leave the third blank to solve for price, quantity, or
+        total revenue.
+      </p>
 
-      <section id="revenue-formulas" className="scroll-mt-24 pt-7">
-        <h2 className="text-xl font-semibold tracking-tight text-accent">Formulas</h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li>
-            Total Revenue = Price × Quantity
-          </li>
-          <li>
-            Price = Total Revenue ÷ Quantity
-          </li>
-          <li>
-            Quantity = Total Revenue ÷ Price
-          </li>
-        </ul>
-        <p className="mt-3">
-          Money fields are normalized into the price currency before multiplication or division.
-          Quantity is a count and is never FX-converted.
-        </p>
-      </section>
+      <h2
+        id="revenue-formulas"
+        className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
+      >
+        Formulas
+      </h2>
+      <div className="my-4 space-y-2 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
+        <p>Total Revenue = Price × Quantity</p>
+        <p>Price = Total Revenue ÷ Quantity</p>
+        <p>Quantity = Total Revenue ÷ Price</p>
+      </div>
+      <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
+        Money fields are normalized into the price currency before multiplication or division.
+        Quantity is a count and is never FX-converted.
+      </p>
 
-      <section id="revenue-example" className="scroll-mt-24 pt-7">
-        <h2 className="text-xl font-semibold tracking-tight text-accent">Example</h2>
-        <p className="mt-3">
-          Price 100 PKR × Quantity 25 → Total revenue 2,500 PKR. Solving for quantity with total
-          2,500 and price 100 returns 25.
-        </p>
-      </section>
+      <h2
+        id="revenue-example"
+        className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
+      >
+        Example
+      </h2>
+      <div className="my-3 rounded-lg border border-border bg-muted/20 p-3 text-xs leading-relaxed text-accent sm:text-sm">
+        <p>Price 100 PKR × Quantity 25 → Total revenue 2,500 PKR</p>
+        <p>Solving for quantity with total 2,500 and price 100 returns 25</p>
+      </div>
 
-      <section id="revenue-faq" className="scroll-mt-24 pt-7">
-        <h2 className="text-xl font-semibold tracking-tight text-accent">
-          Frequently Asked Questions
-        </h2>
-        <div className="mt-3 space-y-4">
-          <div>
-            <h3 className="font-medium text-accent">Can quantity be fractional?</h3>
-            <p className="mt-1">
-              Yes. Fractional quantities are allowed when they make sense for the unit sold.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-medium text-accent">What if I fill all three fields?</h3>
-            <p className="mt-1">
-              Leave exactly one blank to solve. If all three are filled, clear the field you want
-              recalculated.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
+      <h2
+        id="revenue-faq"
+        className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
+      >
+        Frequently Asked Questions
+      </h2>
+      <div className="mt-4">
+        <FAQAccordion items={[...REVENUE_FAQS]} />
+      </div>
+    </article>
   );
 }

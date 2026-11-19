@@ -1,8 +1,22 @@
 'use client';
 
+import * as React from 'react';
 import type { ReactNode } from 'react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
   RevenueDraft,
@@ -17,16 +31,18 @@ const inputClass =
 
 function FieldShell({
   error,
+  muted,
   children,
 }: {
   error?: string;
+  muted?: boolean;
   children: ReactNode;
 }) {
   return (
     <div
-      className={`relative flex h-11 min-w-0 flex-1 items-center rounded-lg border border-border bg-white focus-within:ring-2 focus-within:ring-ring ${
-        error ? 'border-rose-400' : ''
-      }`}
+      className={`relative flex h-11 min-w-0 flex-1 items-center rounded-lg border focus-within:ring-2 focus-within:ring-ring ${
+        muted ? 'border-border bg-muted/30' : 'border-border bg-white'
+      } ${error ? 'border-rose-400' : ''}`}
     >
       {children}
     </div>
@@ -34,105 +50,178 @@ function FieldShell({
 }
 
 interface RevenueFormProps {
-  draft: RevenueDraft;
+  input: RevenueDraft;
   errors: RevenueFieldErrors;
   result: RevenueResult | null;
-  onChange: (draft: RevenueDraft) => void;
-  onPriceCurrencyChange: (next: SupportedCurrency) => void;
-  onTotalRevenueCurrencyChange: (next: SupportedCurrency) => void;
-  conversionError?: string | null;
-  ratesWarning?: string | null;
+  onChange: (input: RevenueDraft) => void;
 }
 
-export function RevenueForm({
-  draft,
-  errors,
-  result,
-  onChange,
-  onPriceCurrencyChange,
-  onTotalRevenueCurrencyChange,
-  conversionError = null,
-  ratesWarning = null,
-}: RevenueFormProps) {
-  const priceSymbol = getCurrencySymbol(draft.priceCurrency);
-  const totalSymbol = getCurrencySymbol(draft.totalRevenueCurrency);
+export function RevenueForm({ input, errors, result, onChange }: RevenueFormProps) {
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
+  const [conversionError, setConversionError] = React.useState<string | null>(null);
+
+  const priceSymbol = getCurrencySymbol(input.priceCurrency);
+  const revenueSymbol = getCurrencySymbol(input.totalRevenueCurrency);
+
+  const displayPrice =
+    result && result.solvedField === 'price' ? result.formattedPrice : input.price;
+  const displayQuantity =
+    result && result.solvedField === 'quantity'
+      ? result.formattedQuantity
+      : input.quantity;
+  const displayRevenue =
+    result && result.solvedField === 'totalRevenue'
+      ? result.formattedTotalRevenue
+      : input.totalRevenue;
 
   const setField = (field: RevenueSolveTarget, value: string) => {
+    setConversionError(null);
     onChange({
-      ...draft,
-      [field]: value,
+      ...input,
+      [field === 'totalRevenue' ? 'totalRevenue' : field]: value,
       lastEdited: field,
-      solveFor: field === 'price' ? 'price' : field === 'quantity' ? 'quantity' : 'totalRevenue',
+      solveFor: field,
     });
   };
 
-  const priceDisplay =
-    result?.solvedField === 'price' ? result.formattedPrice : draft.price;
-  const quantityDisplay =
-    result?.solvedField === 'quantity' ? result.formattedQuantity : draft.quantity;
-  const totalDisplay =
-    result?.solvedField === 'totalRevenue'
-      ? result.formattedTotalRevenue
-      : draft.totalRevenue;
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const handlePriceCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.priceCurrency) return;
+    const amount = parseMoneyInput(input.price);
+    if (!Number.isFinite(amount)) {
+      if (
+        input.totalRevenueCurrency !== next &&
+        !canConvertPair(next, input.totalRevenueCurrency)
+      ) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      setConversionError(null);
+      onChange({ ...input, priceCurrency: next, lastEdited: 'price' });
+      return;
+    }
+    if (!canConvertPair(input.priceCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertCurrency({
+      amount,
+      from: input.priceCurrency,
+      to: next,
+      rates: rates.rates,
+    });
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    onChange({
+      ...input,
+      priceCurrency: next,
+      price: moneyAmountToInputString(converted.amount),
+      lastEdited: 'price',
+    });
+  };
+
+  const handleRevenueCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.totalRevenueCurrency) return;
+    const amount = parseMoneyInput(input.totalRevenue);
+    if (!Number.isFinite(amount)) {
+      if (!canConvertPair(input.priceCurrency, next)) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      setConversionError(null);
+      onChange({ ...input, totalRevenueCurrency: next, lastEdited: 'totalRevenue' });
+      return;
+    }
+    if (!canConvertPair(input.totalRevenueCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    const converted = convertCurrency({
+      amount,
+      from: input.totalRevenueCurrency,
+      to: next,
+      rates: rates.rates,
+    });
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    onChange({
+      ...input,
+      totalRevenueCurrency: next,
+      totalRevenue: moneyAmountToInputString(converted.amount),
+      lastEdited: 'totalRevenue',
+    });
+  };
 
   return (
     <form
       onSubmit={(event) => event.preventDefault()}
-      className="space-y-3.5 rounded-xl border border-border bg-muted/15 p-3.5 sm:p-4"
+      className="space-y-3.5"
       noValidate
       autoComplete="off"
     >
-      <p className="text-sm leading-relaxed text-foreground/90">
-        Enter any two of Price, Quantity, and Total revenue — leave exactly one blank to solve.
-        Zero is a filled value.
-      </p>
-
       <div>
-        <label className={labelClass} htmlFor="rev-price">
+        <label className={labelClass} htmlFor="revenue-price">
           <span>Price</span>
           <InfoTooltip
             label="Price"
-            text="Unit price. Leave blank to solve for price from total revenue and quantity."
+            text="Unit price. Leave blank to solve for price. Changing currency converts this amount."
           />
         </label>
-        <FieldShell error={errors.price}>
-          <span className="shrink-0 pl-3 text-sm text-muted-foreground" aria-hidden>
-            {priceSymbol}
-          </span>
-          <input
-            id="rev-price"
-            className={inputClass}
-            inputMode="decimal"
-            value={priceDisplay}
-            placeholder="Leave blank to solve"
-            aria-invalid={Boolean(errors.price)}
-            onChange={(e) => setField('price', e.target.value)}
-          />
-          <CurrencySelect
-            id="rev-price-currency"
-            value={draft.priceCurrency}
-            onChange={onPriceCurrencyChange}
-            className="mr-1"
-          />
-        </FieldShell>
+        <div className="flex gap-2">
+          <FieldShell error={errors.price} muted={result?.solvedField === 'price'}>
+            <span className="shrink-0 pl-3 text-sm text-muted-foreground" aria-hidden="true">
+              {priceSymbol}
+            </span>
+            <input
+              id="revenue-price"
+              className={inputClass}
+              inputMode="decimal"
+              value={displayPrice}
+              aria-invalid={Boolean(errors.price)}
+              onChange={(e) => setField('price', e.target.value)}
+            />
+          </FieldShell>
+          <div className="w-[110px] shrink-0 sm:w-[120px]">
+            <CurrencySelect
+              id="revenue-price-currency"
+              value={input.priceCurrency}
+              onChange={handlePriceCurrencyChange}
+              aria-label="Price currency"
+            />
+          </div>
+        </div>
         {errors.price ? <p className="mt-1 text-xs text-rose-600">{errors.price}</p> : null}
       </div>
 
       <div>
-        <label className={labelClass} htmlFor="rev-quantity">
+        <label className={labelClass} htmlFor="revenue-quantity">
           <span>Quantity</span>
           <InfoTooltip
             label="Quantity"
-            text="Units sold. Not currency-converted. Leave blank to solve for quantity."
+            text="Units sold. Leave blank to solve for quantity. Never FX-converted. Fractional values allowed."
           />
         </label>
-        <FieldShell error={errors.quantity}>
+        <FieldShell error={errors.quantity} muted={result?.solvedField === 'quantity'}>
           <input
-            id="rev-quantity"
+            id="revenue-quantity"
             className={inputClass}
             inputMode="decimal"
-            value={quantityDisplay}
-            placeholder="Leave blank to solve"
+            value={displayQuantity}
             aria-invalid={Boolean(errors.quantity)}
             onChange={(e) => setField('quantity', e.target.value)}
           />
@@ -143,46 +232,53 @@ export function RevenueForm({
       </div>
 
       <div>
-        <label className={labelClass} htmlFor="rev-total">
+        <label className={labelClass} htmlFor="revenue-total">
           <span>Total revenue</span>
           <InfoTooltip
             label="Total revenue"
-            text="Price × Quantity. Leave blank to solve for total revenue."
+            text="Price × Quantity in the selected display currency. Leave blank to solve for total revenue."
           />
         </label>
-        <FieldShell error={errors.totalRevenue}>
-          <span className="shrink-0 pl-3 text-sm text-muted-foreground" aria-hidden>
-            {totalSymbol}
-          </span>
-          <input
-            id="rev-total"
-            className={inputClass}
-            inputMode="decimal"
-            value={totalDisplay}
-            placeholder="Leave blank to solve"
-            aria-invalid={Boolean(errors.totalRevenue)}
-            onChange={(e) => setField('totalRevenue', e.target.value)}
-          />
-          <CurrencySelect
-            id="rev-total-currency"
-            value={draft.totalRevenueCurrency}
-            onChange={onTotalRevenueCurrencyChange}
-            className="mr-1"
-          />
-        </FieldShell>
+        <div className="flex gap-2">
+          <FieldShell
+            error={errors.totalRevenue}
+            muted={result?.solvedField === 'totalRevenue'}
+          >
+            <span className="shrink-0 pl-3 text-sm text-muted-foreground" aria-hidden="true">
+              {revenueSymbol}
+            </span>
+            <input
+              id="revenue-total"
+              className={`${inputClass} font-semibold`}
+              inputMode="decimal"
+              value={displayRevenue}
+              aria-invalid={Boolean(errors.totalRevenue)}
+              onChange={(e) => setField('totalRevenue', e.target.value)}
+            />
+          </FieldShell>
+          <div className="w-[110px] shrink-0 sm:w-[120px]">
+            <CurrencySelect
+              id="revenue-total-currency"
+              value={input.totalRevenueCurrency}
+              onChange={handleRevenueCurrencyChange}
+              aria-label="Total revenue currency"
+            />
+          </div>
+        </div>
         {errors.totalRevenue ? (
           <p className="mt-1 text-xs text-rose-600">{errors.totalRevenue}</p>
         ) : null}
       </div>
 
-      {errors.form ? <p className="text-xs text-rose-600">{errors.form}</p> : null}
-      {conversionError ? <p className="text-xs text-rose-600">{conversionError}</p> : null}
-      {ratesWarning ? <p className="text-xs text-amber-700">{ratesWarning}</p> : null}
-      {result ? (
-        <p className="text-sm text-foreground/90" aria-live="polite">
-          {result.summaryText}
+      {conversionError ? (
+        <p className="text-xs text-rose-600" role="alert">
+          {conversionError}
         </p>
       ) : null}
+      {ratesStatus.warning && !conversionError ? (
+        <p className="text-xs text-amber-700">{ratesStatus.warning}</p>
+      ) : null}
+      {errors.form ? <p className="text-xs text-rose-600">{errors.form}</p> : null}
     </form>
   );
 }
