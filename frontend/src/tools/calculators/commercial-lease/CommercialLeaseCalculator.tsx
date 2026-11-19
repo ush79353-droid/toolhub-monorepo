@@ -5,7 +5,21 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_STALE_NOTE,
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { CommercialLeaseForm } from './CommercialLeaseForm';
 import {
   createDefaultInput,
@@ -13,6 +27,10 @@ import {
   type CommercialLeaseInput,
   type CommercialLeaseResult,
 } from './types';
+import { validateCommercialLeaseInput } from './validation';
+
+const FX_NOTE =
+  'Each money field has its own currency. Mixed currencies are normalized with live rates before calculating; area units, periods, and percentages are never converted.';
 
 function inputsEqual(a: CommercialLeaseInput, b: CommercialLeaseInput): boolean {
   return JSON.stringify(a) === JSON.stringify(b);
@@ -25,11 +43,14 @@ export function CommercialLeaseCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
+  const initial = validateCommercialLeaseInput(defaults, rates);
   const [baseline, setBaseline] = React.useState<CommercialLeaseInput>(() => defaults);
   const [input, setInput] = React.useState<CommercialLeaseInput>(() => defaults);
-  const [errors] = React.useState<CommercialLeaseFieldErrors>({});
-  const [result] = React.useState<CommercialLeaseResult | null>(null);
+  const [errors, setErrors] = React.useState<CommercialLeaseFieldErrors>(() => initial.errors);
+  const [result, setResult] = React.useState<CommercialLeaseResult | null>(() => initial.result);
   const [conversionError, setConversionError] = React.useState<string | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
@@ -40,9 +61,39 @@ export function CommercialLeaseCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const handleChange = (next: CommercialLeaseInput) => {
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const apply = (next: CommercialLeaseInput) => {
+    const validation = validateCommercialLeaseInput(next, rates);
     setInput(next);
-    setConversionError(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const convertFieldAmount = (
+    amountText: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): string | null => {
+    const amount = parseMoneyInput(amountText);
+    if (!Number.isFinite(amount)) return amountText === '' ? '' : null;
+    if (from === to) return moneyAmountToInputString(amount);
+    if (!canConvertPair(from, to)) return null;
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return null;
+    return moneyAmountToInputString(converted.amount);
   };
 
   const handleMoneyCurrencyChange = (
@@ -50,14 +101,45 @@ export function CommercialLeaseCalculator({
     currency: SupportedCurrency
   ) => {
     if (currency === input[field]) return;
-    setInput({ ...input, [field]: currency });
+
+    if (field === 'baseCurrency') {
+      const convertedText = convertFieldAmount(input.baseRate, input.baseCurrency, currency);
+      if (convertedText === null) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      setConversionError(null);
+      apply({ ...input, baseCurrency: currency, baseRate: convertedText });
+      return;
+    }
+
+    if (field === 'opexCurrency') {
+      const convertedText = convertFieldAmount(input.opex, input.opexCurrency, currency);
+      if (convertedText === null) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
+      setConversionError(null);
+      apply({ ...input, opexCurrency: currency, opex: convertedText });
+      return;
+    }
+
+    // Result currencies only re-express outputs; require a path from base currency.
+    if (!canConvertPair(input.baseCurrency, currency)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     setConversionError(null);
+    apply({ ...input, [field]: currency });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateCommercialLeaseInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -65,13 +147,20 @@ export function CommercialLeaseCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = !ratesStatus.available
+    ? CURRENCY_CONVERSION_UNAVAILABLE_NOTE
+    : ratesStatus.isStale
+      ? `${FX_NOTE} ${CURRENCY_CONVERSION_STALE_NOTE}`
+      : FX_NOTE;
+  const ratesWarning = ratesStatus.warning;
 
   const summary = result
     ? [
         `${metadata.title} — Omega Calculators`,
-        `Total rental rate: ${getCurrencySymbol(result.totalRateCurrency)}${result.formattedTotalRate}`,
-        `Rent: ${getCurrencySymbol(result.rentCurrency)}${result.formattedRent}`,
-        `Agent fee: ${getCurrencySymbol(result.feeCurrency)}${result.formattedFee}`,
+        `Total rental rate: ${getCurrencySymbol(result.totalRateCurrency)}${result.formattedTotalRate} / ${result.totalRateAreaUnit === 'm2' ? 'm²' : 'ft²'} / ${result.totalRatePeriod}`,
+        `Rent (${result.rentPeriod}): ${getCurrencySymbol(result.rentCurrency)}${result.formattedRent}`,
+        `Agent fee (${result.agentPercent}% × ${result.agentYears} yrs): ${getCurrencySymbol(result.feeCurrency)}${result.formattedFee}`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -103,9 +192,7 @@ export function CommercialLeaseCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">
-            Enter area, rates, and agent terms. Money fields use independent currencies.
-          </p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
@@ -116,7 +203,8 @@ export function CommercialLeaseCalculator({
           errors={errors}
           result={result}
           conversionError={conversionError}
-          onChange={handleChange}
+          ratesWarning={ratesWarning}
+          onChange={apply}
           onMoneyCurrencyChange={handleMoneyCurrencyChange}
         />
 
