@@ -5,6 +5,7 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { shareResultText } from './calculation';
 import { PhilippinesIncomeTaxForm } from './PhilippinesIncomeTaxForm';
 import {
   createDefaultInput,
@@ -13,6 +14,7 @@ import {
   type PhilippinesIncomeTaxInput,
   type PhilippinesIncomeTaxResult,
 } from './types';
+import { validatePhilippinesIncomeTaxInput } from './validation';
 
 export function PhilippinesIncomeTaxCalculator({
   metadata,
@@ -22,12 +24,17 @@ export function PhilippinesIncomeTaxCalculator({
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
   const defaults = createDefaultInput();
+  const initialValidation = validatePhilippinesIncomeTaxInput(defaults);
   const [baseline, setBaseline] = React.useState<PhilippinesIncomeTaxInput>(
     () => defaults
   );
   const [input, setInput] = React.useState<PhilippinesIncomeTaxInput>(() => defaults);
-  const [errors] = React.useState<PhilippinesIncomeTaxFieldErrors>({});
-  const [result] = React.useState<PhilippinesIncomeTaxResult | null>(null);
+  const [errors, setErrors] = React.useState<PhilippinesIncomeTaxFieldErrors>(
+    () => initialValidation.errors
+  );
+  const [result, setResult] = React.useState<PhilippinesIncomeTaxResult | null>(
+    () => (initialValidation.isValid ? initialValidation.result : null)
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -37,21 +44,47 @@ export function PhilippinesIncomeTaxCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const handleChange = (next: PhilippinesIncomeTaxInput) => {
+  const apply = (next: PhilippinesIncomeTaxInput) => {
+    const validation = validatePhilippinesIncomeTaxInput(next);
     setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validatePhilippinesIncomeTaxInput(fresh);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
-  const summary = '';
+
+  const summary = result
+    ? shareResultText({
+        title: metadata.title,
+        monthlyIncomeRaw: input.monthlyIncome,
+        result: {
+          taxYearLabel: result.taxYearLabel,
+          employmentStatus: result.employmentStatus,
+          formattedSss: result.formattedSss,
+          formattedPhilHealth: result.formattedPhilHealth,
+          formattedPagIbig: result.formattedPagIbig,
+          formattedTotalContributions: result.formattedTotalContributions,
+          formattedTaxableIncome: result.formattedTaxableIncome,
+          formattedWithholdingTax: result.formattedWithholdingTax,
+          taxLabel: result.taxLabel,
+          formattedNetPayAfterTax: result.formattedNetPayAfterTax,
+          formattedTotalDeductions: result.formattedTotalDeductions,
+          formattedNetPayAfterDeductions: result.formattedNetPayAfterDeductions,
+        },
+      })
+    : '';
 
   const handleShare = async () => {
     if (!summary) return;
@@ -94,7 +127,7 @@ export function PhilippinesIncomeTaxCalculator({
           input={input}
           errors={errors}
           result={result}
-          onChange={handleChange}
+          onChange={apply}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
