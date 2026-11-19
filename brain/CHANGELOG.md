@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Powerball Calculator
+- **Summary:** Shipped Powerball Calculator on existing catalog slug `powerball-calculator` (`PowerballCalculator`, catalog `6af46f10a27d8d1d4e990104`, preserved `nameKey` `powerball calculator`). Screenshot-first (ADR-023): jackpot, lump-sum %, filing status, state; lump vs 30×5% annuity; progressive federal + lottery state tax (CA exempt); 24% withholding vs liability. Reuses Mega Millions tax engine. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Fixed USD.
+- **Formulas:** L=J×P/100; P₁=J/Σ(1.05)^k; Pₙ=P₁(1.05)ⁿ⁻¹; progressive federal; state via shared tables + CA lottery exemption.
+- **Example:** $281,000,000 · 52% → lump **$146,120,000**.
+- **Important Files:** `frontend/src/tools/calculators/powerball/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Net Worth Calculator
 - **Summary:** Shipped Net Worth Calculator on existing catalog slug `net-worth-calculator` (`NetWorthCalculator`, catalog `6af46f10a27d8d1d4e990103`, preserved `nameKey` `net worth calculator`). Screenshot-first (ADR-023): 9 assets, 8 liabilities, results, SCF 2022 income/age/wealth comparison (mean + median). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX); SCF figures remain 2022 USD household benchmarks.
 - **Formulas:** TotalAssets=ΣAᵢ; TotalLiabilities=ΣLⱼ; NetWorth=Assets−Liabilities.

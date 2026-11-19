@@ -3360,6 +3360,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetWorthCalculator,
     })),
   ),
+  PowerballCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/powerball/PowerballCalculator'
+    ).then((mod) => ({
+      default: mod.PowerballCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

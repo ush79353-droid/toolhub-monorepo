@@ -637,6 +637,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mega-millions-payout-calculator',
   'millionaire-calculator',
   'net-worth-calculator',
+  'powerball-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',
