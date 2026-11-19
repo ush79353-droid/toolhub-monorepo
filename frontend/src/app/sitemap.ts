@@ -54,6 +54,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'income-tax-calculator-pakistan',
   'income-tax-philippines-calculator',
   'sales-tax-calculator-new-jersey',
+  'florida-sales-tax-calculator',
   'ohio-sales-tax-calculator',
   'new-york-overtime-calculator',
   'operating-margin-calculator',

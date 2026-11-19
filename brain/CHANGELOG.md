@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Florida Sales Tax Calculator
+- **Summary:** Shipped Florida Sales Tax Calculator on existing catalog slug `florida-sales-tax-calculator` (`FloridaSalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e990028`). Screenshot-first (ADR-023): purchase amount (fixed USD) + ZIP; county picker when Census ZCTA is multi-county. State tax 6%; county discretionary surtax from FL DOR DR-15DSS CY 2026; ZIP→county from Census 2020 ZCTA→county (FL). Surtax base capped at $5,000 (single-item assumption). No FX. Sales Tax / NJ / Ohio / CA / MO siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** $100 · ZIP 33101 (Miami-Dade, 1% surtax) → state **$6.00** · surtax **$1.00** · total tax **$7.00** · total **$107.00**.
+- **Important Files:** `frontend/src/tools/calculators/florida-sales-tax/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Accounting Profit Calculator
 - **Summary:** Shipped Accounting Profit Calculator on existing catalog slug `accounting-profit-calculator` (`AccountingProfitCalculator`, catalog `6af46f0fa27d8d1d4e990044`, preserved `nameKey` `accounting profit calculator`, pillar `6af451c0a27d8d1d4e98f97b`, subPillar null). Screenshot-first (ADR-023): total revenue FX; operation expenses FX; interest FX; depreciation FX; taxes FX; total explicit costs FX; accounting profit FX. Formulas: Explicit = OpEx + Interest + Depreciation + Taxes; Profit = Revenue − Explicit. OpEx must exclude separately entered interest/depreciation/taxes. Independent Phase 2 FX; dual `CURRENCY_CONVERSION_SLUGS`. Profit / Economic Profit siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Revenue 100,000 · OpEx 25,000 · Interest 12,000 · Depreciation 10,000 · Taxes 15,000 → explicit **62,000** · profit **38,000**.
