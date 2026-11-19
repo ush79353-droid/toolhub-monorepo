@@ -74,6 +74,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   '702010-rule-money-calculator',
   'adr-calculator',
   'annual-salary-calculator',
+  'annual-income-calculator',
   'annual-salary-per-hour-calculator',
   'annual-to-monthly-salary-calculator',
   'annualized-return-calculator',

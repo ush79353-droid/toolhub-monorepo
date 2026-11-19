@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Annual Income Calculator
+- **Summary:** Shipped Annual Income Calculator on existing catalog slug `annual-income-calculator` (`AnnualIncomeCalculator`, catalog `6af46f0fa27d8d1d4e990053`, preserved `nameKey` `annual income calculator`, pillar/subPillar null). Screenshot-first (ADR-023): hours/week (40); weeks/year (0–52, default 52); hourly wage FX; annual income FX; Net Salary flat tax % (default 12), net hourly FX, net annual FX. Formulas: Annual = Hourly × Hours × Weeks; Net Hourly = Hourly × (1 − Tax/100); Net Annual = Annual × (1 − Tax/100). Flat tax labeled simplified — not jurisdiction payroll. Dual `CURRENCY_CONVERSION_SLUGS`; hours/weeks/tax never convert. Annual Salary / Yearly Wage / Hourly Wage siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Hourly 500 · 40h · 52w · 12% → annual **1,040,000** · net hourly **440** · net annual **915,200**.
+- **Important Files:** `frontend/src/tools/calculators/annual-income/*`, registry, sitemap, both FX slug lists, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 
 ### 2026-11-19 — Add Budget Calculator
 - **Summary:** Shipped Budget Calculator on existing catalog slug `budget-calculator` (`BudgetCalculator`, catalog `6af46f0fa27d8d1d4e99004b`). Screenshot-first personal budget with independent FX and / mo·/ yr frequencies; tax rate on gross salary; dual FX slug lists. Activated with `--set-active`; **indexable** left false. Registry also via concurrent commits.
