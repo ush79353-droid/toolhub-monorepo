@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Lease Mileage Calculator
+- **Summary:** Shipped Lease Mileage Calculator on existing catalog slug `lease-mileage-calculator` (`LeaseMileageCalculator`, catalog `6af46f0fa27d8d1d4e990012`). Screenshot-first (ADR-023): total/remaining term yrs+mos; current miles + annual allowance (km/mi); excess fee FX + /km|/mi; results excess (km/mi), lease-end charge FX, monthly savings FX /mo. Constant-rate projection; 1 mi = 1.609344 km. Dual FX slug lists. Car Lease / Auto Lease / Lease siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 36 mo · 24 rem · 20k km · 10k km/yr · 5/km → excess **30,000** km · charge **150,000** · savings **6,250**/mo.
+- **Important Files:** `frontend/src/tools/calculators/lease-mileage/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits (+ display-decimals fix). Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Refinance Calculator
 - **Summary:** Shipped Refinance Calculator on `refinance-calculator` (`RefinanceCalculator`, catalog `6af46f0fa27d8d1d4e990018`, pillar `6af451bfa27d8d1d4e98f972`). Know-balance mode; fixed USD; points/fees upfront; Calculate/Clear. Activated `--set-active` only — **`indexable` false**.
 - **Example:** $250k · $1,800 · 7% → 20y · 6% · 2 pts · $1,500 fees.

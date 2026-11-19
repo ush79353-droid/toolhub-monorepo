@@ -1,4 +1,4 @@
-import { formatCurrencyValue, type SupportedCurrency } from '@/tools/shared/currency';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import { KM_PER_MILE, type DistanceUnit } from './types';
 
 export function toMonths(years: number, months: number): number {

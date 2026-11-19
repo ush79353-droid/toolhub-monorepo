@@ -3,13 +3,13 @@
 ## Summary
 
 Total discovered: 53
-Newly developed: 33
+Newly developed: 34
 Already developed: 1
 Development failed: 0
-Skipped / blocked: 2
-Remaining pending: 0 (Tools empty; only blocked In Progress claims remain)
+Skipped / blocked: 3
+Remaining pending: 4 (Tools: Revenue Growth, Sales, Sales Tax, SIP)
 Audit completed: 0
-Audit pending: 34
+Audit pending: 35
 
 ## Calculator Register
 
@@ -52,12 +52,27 @@ Audit pending: 34
 | 35 | Car Refinance Calculator | DEVELOPED | AUDIT 83d9a878 | b2929089 | 5a06eead | 22681270 | Completed Tools | `CarRefinanceCalculator`; slug `car-refinance-calculator`; Mongo `6af46f0fa27d8d1d4e990019`; Phase 2 FX; `indexable` false; TASKS `TOOL-498` |
 | 36 | Natural Rate of Unemployment Calculator | DEVELOPED | AUDIT 83d9a878 | 83a42d4b | a8438ca8 | 5e684b43 | — | `NaturalRateOfUnemploymentCalculator`; slug `natural-rate-of-unemployment-calculator`; Mongo `6af46f0fa27d8d1d4e990033` active; indexable false; registry also in concurrent commits |
 | 37 | Income Tax Philippines Calculator | DEVELOPED | AUDIT 83d9a878 | 56ccce77 | 2de2e870 | d45a04e9 | — | `IncomeTaxCalculatorPhilippines`; slug `income-tax-philippines-calculator`; Mongo `6af46f0fa27d8d1d4e990042` active; indexable false; CY 2025 BIR/SSS/PhilHealth/Pag-IBIG |
-| 38 | Budget Calculator | DEVELOPED | AUDIT 83d9a878 | a1098582 | 973123f7 | 83d9a878 | — | `BudgetCalculator`; slug `budget-calculator`; Mongo `6af46f0fa27d8d1d4e99004b` active; indexable false; Phase 2 FX; registry also via concurrent commits |
+| 38 | Budget Calculator | DEVELOPED | AUDIT PENDING | a1098582 | 973123f7 | 9014fc3a | — | `BudgetCalculator`; slug `budget-calculator`; Mongo `6af46f0fa27d8d1d4e99004b` active; indexable false; Phase 2 FX; registry also via concurrent commits |
 
 
 | 38 | Yearly Wage Calculator | DEVELOPED | AUDIT 83d9a878 | 6f283076 | 1625db38 | 0d9bd6cf (+registry absorbed into later concurrent commits; HEAD has full registration) | — | `YearlyWageCalculator`; slug `yearly-wage-calculator`; Mongo `6af46f0fa27d8d1d4e99004a`; Phase 2 FX; indexable false |
 
+| 39 | EV to Sales Calculator — Enterprise Value to Sales | DEVELOPED | AUDIT PENDING | 5de33ac6 | 172eae50 | 4878b425 | Completed Tools | `EvToSalesCalculator`; slug `ev-to-sales-calculator-enterprise-value-to-sales`; Mongo `6af46f0fa27d8d1d4e990023`; Phase 2 FX; indexable false |
+| 40 | Lease Mileage Calculator | DEVELOPED | AUDIT PENDING | 0e609ddd | 2d65b710 (+b737f067) | (pending commit 3) | In Progress → Completed Tools | `LeaseMileageCalculator`; slug `lease-mileage-calculator`; Mongo `6af46f0fa27d8d1d4e990012`; Phase 2 FX; indexable false |
+
+| 41 | Marginal Revenue Calculator | DEVELOPED | AUDIT PENDING | c1adcd41 | 559980a3 | 300a24de | Completed Tools | `MarginalRevenueCalculator`; slug `marginal-revenue-calculator`; Mongo `6af46f0fa27d8d1d4e99001e`; Phase 2 FX; indexable false |
+
+| 42 | Price to Sales Ratio Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | PROMPT.txt empty (0 bytes); screenshot present — cannot develop without prompt |
+
+| 43 | Ohio Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 3be92376 | af2a603f | af4c7591 | Completed Tools | `OhioSalesTaxCalculator`; unavailable-rate (no OH ZIP tax table); Mongo `6af46f0fa27d8d1d4e99002b`; indexable false |
+| 41 | Margin and Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 42ba884d | a44097dc | f51294bf (reg absorbed into concurrent Ohio reg commit; HEAD has full MST registration) | Completed Tools | `MarginAndSalesTaxCalculator`; slug `margin-and-sales-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990029` active; indexable false; Phase 2 FX |
+
 ## Session Log
+- 2026-11-19 (this agent): Margin and Sales Tax DEVELOPED (`42ba884d` / `a44097dc` / reg via `f51294bf`). Mongo `6af46f0fa27d8d1d4e990029` active; indexable false. Moved to Completed Tools. Next: claim remaining Tools alphabetically.
+- 2026-11-19 (this agent): Ohio Sales Tax DEVELOPED (`3be92376` / `af2a603f` / `af4c7591`) unavailable-rate; EV to Sales also completed earlier this session.
+- 2026-11-19 (this agent): Claimed Price to Sales Ratio Calculator → BLOCKED (empty PROMPT.txt). Retained in In Progress.
+- 2026-11-19 (this agent): Marginal Revenue Calculator → DEVELOPED (`c1adcd41` / `559980a3` / `300a24de`). Moved to Completed Tools.
+- 2026-11-19 (this agent): EV to Sales Calculator DEVELOPED (`5de33ac6` / `172eae50` / `4878b425`). Mongo `6af46f0fa27d8d1d4e990023` active; indexable false. Moved to Completed Tools.
 
 - 2026-11-18/19: Autonomous development queue on `D:\Project\ToolHub` (omega-calculators-frontend/backend). Local commits only; no push/pull/fetch.
 - Mid-queue folder arrivals (salary/dividend/hourly/quiz) appended without renumbering.
