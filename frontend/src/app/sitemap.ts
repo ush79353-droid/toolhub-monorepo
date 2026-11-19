@@ -626,6 +626,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'bank-reconciliation-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
+  'college-cost-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add College Cost Calculator
+- **Summary:** Shipped College Cost Calculator on existing catalog slug `college-cost-calculator` (`CollegeCostCalculator`, catalog `6af46f10a27d8d1d4e9900f9`, preserved `nameKey` `college cost calculator`). Screenshot-first (ADR-023): eight inputs with College Board 2025–26 presets; per-year inflated costs; savings target; after-tax savings growth; gap/surplus; monthly/annual contribution estimates; breakdown table + bar chart. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** Cₙ=C₀(1+i)^(Y+n); Total=ΣCₙ; Target=Total×P/100; r_net=r(1−t); FutureSavings=S₀(1+r_net)^Y; Monthly gap annuity with r_m=(1+r_net)^(1/12)−1.
+- **Example:** $30,990 · 5% · 4y · 35% · $0 · 5%/25% · 3y → first year ≈ $35,874.80 · total ≈ $154,624.87 · target ≈ $54,118.70.
+- **Important Files:** `frontend/src/tools/calculators/college-cost/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Cell Phone Plan Calculator
 - **Summary:** Shipped Cell Phone Plan Calculator on existing catalog slug `cell-phone-plan-calculator` (`CellPhonePlanCalculator`, catalog `6af46f10a27d8d1d4e9900f8`, preserved `nameKey` `cell phone plan calculator`). Screenshot-first (ADR-023): contract duration + savings APR; buy outright vs carrier phone plan; invest phone price with monthly withdraw-then-compound; interest, effective carrier cost, recommendation / infeasible. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** C₁=P+B₁N; W=max(0,B₂−B₁); each month withdraw W then interest on remainder (matches Omni $35.73); C₂=B₂N−Interest; Difference=C₁−C₂.

@@ -3289,6 +3289,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CellPhonePlanCalculator,
     })),
   ),
+  CollegeCostCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/college-cost/CollegeCostCalculator'
+    ).then((mod) => ({
+      default: mod.CollegeCostCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
