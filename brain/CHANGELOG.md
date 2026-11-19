@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Car Depreciation Calculator
+- **Summary:** Shipped Car Depreciation Calculator on existing catalog slug `car-depreciation-calculator` (`CarDepreciationCalculator`, catalog `6af46f0fa27d8d1d4e99003d`, preserved `nameKey` `car depreciation calculator`, pillar `6af451c0a27d8d1d4e98f979`). Screenshot-first (ADR-023): initial car value FX; car age (yrs); reduced car value FX; Car value after 1 minute and 1–5 years (independent FX); verified Car Lease link; educational note (no undeveloped quiz deep-link). Disclosed illustrative constant annual rate **15%** declining balance — not a market forecast. Depreciation / Accumulated Depreciation / Quiz siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** V(t)=Initial×(1−r)^t; Reduced=V(age); After Δt=Reduced×(1−r)^Δt; 1 minute years=1/(365.25×24×60); floor at 0.
+- **Example:** 1,000,000 · age 2 → reduced **722,500**; +1y **614,125**; +5y ≈ **320,161.72**.
+- **Important Files:** `frontend/src/tools/calculators/car-depreciation/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts` (not run this session per prompt). Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Cash Flow to Debt Ratio Calculator
 - **Summary:** Shipped Cash Flow to Debt Ratio Calculator on existing catalog slug `cash-flow-to-debt-ratio-calculator` (`CashFlowToDebtRatioCalculator`, catalog `6af46f0fa27d8d1d4e990038`). Screenshot-first (ADR-023): OCF FX; total debt FX; cash-flow-to-debt %; expanded debt-to-cash-flow multiple; optional ST+LT debt components. Formulas OCF/Debt×100 and Debt/OCF. Dual `CURRENCY_CONVERSION_SLUGS`. Also registered pending Cash Ratio (`CashRatioCalculator`) module. Cash Ratio / OCF / DSCR siblings untouched. Activated with `--set-active`; **`indexable` preserved false**.
 - **Example:** OCF 50,000 · Debt 200,000 → **25%** · debt-to-CF **4x**.
