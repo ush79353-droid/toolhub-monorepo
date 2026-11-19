@@ -606,6 +606,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'bond-ytm-calculator',
   'jumbo-loan-calculator',
   'land-loan-calculator',
+  'lease-calculator',
   'pag-ibig-housing-loan-calculator',
   'rv-loan-calculator',
   'student-loan-calculator',
