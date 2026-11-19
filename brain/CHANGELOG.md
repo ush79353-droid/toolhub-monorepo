@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add US Income Percentile Calculator
+- **Summary:** Shipped US Income Percentile Calculator on existing catalog slug `us-income-percentile-calculator` (`UsIncomePercentileCalculator`, catalog `6af46f10a27d8d1d4e99010d`, preserved `nameKey` `us income percentile calculator`). Screenshot-first (ADR-023): individual vs household; 2024 CPS ASEC money income. Household ranks interpolate Table A-4a thresholds (10th–95th) only. Person ranks use PINC-01 $2,500 bins for people 15+ with income and stop at the $100,000 open interval. **`isActive` left false** (admin-off row; no `--set-active`). **`indexable` preserved false**. Fixed USD.
+- **Sources:** P60-286 Table A-4a / A-2 (household median $83,730, mean $121,000). PINC-01 both sexes, all races (person median $46,440, mean $69,360).
+- **Important Files:** `frontend/src/tools/calculators/us-income-percentile/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-active` or `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES. Activation blocker: catalog `isActive` remains false.
+
 ### 2026-11-19 — Add Unpaid Work Calculator
 - **Summary:** Shipped Unpaid Work Calculator on existing catalog slug `unpaid-work-calculator` (`UnpaidWorkCalculator`, catalog `6af46f10a27d8d1d4e99010c`, preserved `nameKey` `unpaid work calculator`). Screenshot-first (ADR-023): professional pay → hourly (40 h/week); ten household activities; illustrative editable outsourcing rates; weekly/monthly/annual replacement value kept separate from opportunity cost; family hours + outsourcing budget. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Country sets display currency only (no FX).
 - **Formulas:** Weekly=Σ(H×R); Monthly=Weekly×52/12; Annual=Weekly×52; Average=Weekly/ΣH; Opportunity=ΣH×hourly wage.

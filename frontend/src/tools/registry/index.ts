@@ -3179,6 +3179,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  UsIncomePercentileCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/us-income-percentile/UsIncomePercentileCalculator'
+    ).then((mod) => ({
+      default: mod.UsIncomePercentileCalculator,
+    })),
+  ),
   UnleveredFreeCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/unlevered-free-cash-flow/UnleveredFreeCashFlowCalculator'
