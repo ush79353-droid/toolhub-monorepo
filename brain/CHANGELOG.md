@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Customer Effort Score Calculator
+- **Summary:** Shipped Customer Effort Score Calculator on existing catalog slug `customer-effort-score-calculator` (`CustomerEffortScoreCalculator`, catalog `6af46f0fa27d8d1d4e990095`, preserved `nameKey` `customer effort score calculator`). Screenshot-first (ADR-023): 1–5/1–7 scale selector; dynamic response counts; weighted CES; low/neutral/high effort %; collapsible median/mode/distribution. Lower score = less effort. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
+- **Formulas:** CES = Σ(score × count) / Σ(count). Scale 5 low=1–2 / neutral=3 / high=4–5; scale 7 low=1–3 / neutral=4 / high=5–7.
+- **Example:** Responses [10,5,3,5,5] → total 28 · weighted 74 · CES 2.64/5.
+- **Important Files:** `frontend/src/tools/calculators/customer-effort-score/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Combined Ratio Calculator
 - **Summary:** Shipped Combined Ratio Calculator on existing catalog slug `combined-ratio-calculator` (`CombinedRatioCalculator`, catalog `6af46f0fa27d8d1d4e99008a`, preserved `nameKey` `combined ratio calculator`). Screenshot-first (ADR-023): claim loss + loss adjustments + loss expense; premiums + underwriting expense + combined ratio %; reverse solve for UE/premiums/LE; loss/expense ratios, underwriting result & margin. Denomination-only CurrencySelect. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
 - **Formulas:** LE=CL+LA; LR=(LE/P)×100; ER=(UE/P)×100; CR=LR+ER; UE=(CR/100)×P−LE; P=(LE+UE)/(CR/100); UW result=P−LE−UE; margin=100−CR.

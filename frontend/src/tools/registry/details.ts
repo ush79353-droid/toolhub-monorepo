@@ -830,6 +830,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   VatCalculator: () => import('@/tools/calculators/vat/detail'),
   WeeklyPayCalculator: () => import('@/tools/calculators/weekly-pay/detail'),
   CombinedRatioCalculator: () => import('@/tools/calculators/combined-ratio/detail'),
+  CustomerEffortScoreCalculator: () =>
+    import('@/tools/calculators/customer-effort-score/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

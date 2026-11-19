@@ -612,6 +612,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'vat-calculator',
   'weekly-pay-calculator',
   'combined-ratio-calculator',
+  'customer-effort-score-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

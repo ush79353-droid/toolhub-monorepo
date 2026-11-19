@@ -3201,6 +3201,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CombinedRatioCalculator,
     })),
   ),
+  CustomerEffortScoreCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/customer-effort-score/CustomerEffortScoreCalculator'
+    ).then((mod) => ({
+      default: mod.CustomerEffortScoreCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
