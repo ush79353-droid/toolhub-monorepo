@@ -973,8 +973,11 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/hourly-wage/detail'),
   WageToSalaryCalculator: () =>
     import('@/tools/calculators/wage-to-salary/detail'),
+  YearlyWageCalculator: () =>
+    import('@/tools/calculators/yearly-wage/detail'),
   ImpermanentLossCalculator: () =>
     import('@/tools/calculators/impermanent-loss/detail'),
+
   InformationRatioCalculator: () =>
     import('@/tools/calculators/information-ratio/detail'),
   InterestCalculator: () => import('@/tools/calculators/interest/detail'),
@@ -1026,6 +1029,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/student-loan-repayment-covid/detail'),
   StimulusCheck40kCalculator: () =>
     import('@/tools/calculators/stimulus-check-40k/detail'),
+  StimulusCheckCalculator: () =>
+    import('@/tools/calculators/stimulus-check/detail'),
   CaresActUnemploymentBenefitCalculator: () =>
     import('@/tools/calculators/cares-act-unemployment-benefit/detail'),
   LwaUnemploymentBenefitCalculator: () =>

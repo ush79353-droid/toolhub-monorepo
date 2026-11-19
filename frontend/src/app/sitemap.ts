@@ -680,7 +680,9 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'hourly-to-salary-wage-calculator',
   'hourly-wage-calculator',
   'wage-to-salary-calculator',
+  'yearly-wage-calculator',
   'impermanent-loss-calculator',
+
   'income-tax-calculator',
   'information-ratio-calculator',
   'interest-calculator',
@@ -707,6 +709,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'california-stimulus-check-ii-calculator',
   'student-loan-repayment-calculator-covid-19',
   'stimulus-check-calculator-40k-cap',
+  'stimulus-check-calculator',
   'second-stimulus-check-calculator-cash-act',
 ] as const;
 

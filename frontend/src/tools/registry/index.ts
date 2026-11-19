@@ -3720,6 +3720,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WageToSalaryCalculator,
     })),
   ),
+  YearlyWageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/yearly-wage/YearlyWageCalculator'
+    ).then((mod) => ({
+      default: mod.YearlyWageCalculator,
+    })),
+  ),
   ImpermanentLossCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/impermanent-loss/ImpermanentLossCalculator'
@@ -3727,6 +3734,7 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ImpermanentLossCalculator,
     })),
   ),
+
 
   InformationRatioCalculator: lazyTool(() =>
     import(
@@ -3921,6 +3929,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/stimulus-check-40k/StimulusCheck40kCalculator'
     ).then((mod) => ({
       default: mod.StimulusCheck40kCalculator,
+    })),
+  ),
+  StimulusCheckCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/stimulus-check/StimulusCheckCalculator'
+    ).then((mod) => ({
+      default: mod.StimulusCheckCalculator,
     })),
   ),
   CaresActUnemploymentBenefitCalculator: lazyTool(() =>

@@ -1359,6 +1359,7 @@ if (isDirect) {
     !isApprovedComponentKey('HeroesActStimulusCalculator') ||
     !isApprovedComponentKey('StudentLoanRepaymentCovidCalculator') ||
     !isApprovedComponentKey('StimulusCheck40kCalculator') ||
+    !isApprovedComponentKey('StimulusCheckCalculator') ||
     !isApprovedComponentKey('CaresActUnemploymentBenefitCalculator') ||
     !isApprovedComponentKey('LwaUnemploymentBenefitCalculator') ||
     !isApprovedComponentKey('HealsHeroesUnemploymentBenefitCalculator') ||
