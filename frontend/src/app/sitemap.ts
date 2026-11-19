@@ -628,6 +628,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cell-phone-plan-calculator',
   'college-cost-calculator',
   'dream-come-true-calculator',
+  'emergency-fund-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Emergency Fund Calculator
+- **Summary:** Shipped Emergency Fund Calculator on existing catalog slug `emergency-fund-calculator` (`EmergencyFundCalculator`, catalog `6af46f10a27d8d1d4e9900fb`, preserved `nameKey` `emergency fund calculator`). Screenshot-first (ADR-023): monthly expenses × months → fund target; annual/daily helpers; optional current-savings progress. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** EF=E×N; Annual=E×12; Daily=E/30; Progress=min(100,S/EF×100).
+- **Example:** $2,500 × 6 months → **$15,000**.
+- **Important Files:** `frontend/src/tools/calculators/emergency-fund/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Dream Come True Calculator
 - **Summary:** Shipped Dream Come True Calculator on existing catalog slug `dream-come-true-calculator` (`DreamComeTrueCalculator`, catalog `6af46f10a27d8d1d4e9900fa`, preserved `nameKey` `dream come true calculator`). Screenshot-first (ADR-023): dream price, initial savings, monthly savings, annual rate → months to goal; stacked growth chart; achieved/unreachable handling. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** r=R/12/100; n=ln((P r+M)/(I r+M))/ln(1+r) (ceil); zero-rate n=(P−I)/M; interest-only n=ln(P/I)/ln(1+r).
