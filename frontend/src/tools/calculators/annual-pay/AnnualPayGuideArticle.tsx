@@ -11,7 +11,7 @@ export function AnnualPayGuideArticle() {
         What Is Annual Pay From Hourly?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Annual income from an hourly wage is the product of that wage, the hours you work
+        Annual pay from an hourly wage is the product of that wage, the hours you work
         each week, and the weeks you work each year. This calculator also estimates net
         hourly and net annual pay after a single flat tax percent you enter — not brackets,
         withholdings, or country-specific payroll rules.
@@ -71,7 +71,7 @@ export function AnnualPayGuideArticle() {
       <div className="my-3 rounded-lg border border-border bg-muted/20 p-3 text-xs leading-relaxed text-accent sm:text-sm">
         <p>Hourly wage = 500 PKR</p>
         <p>Hours per week = 40 · Weeks per year = 52</p>
-        <p>Annual income = 500 × 40 × 52 = 1,040,000 PKR</p>
+        <p>Annual pay = 500 × 40 × 52 = 1,040,000 PKR</p>
         <p>Tax = 12%</p>
         <p>Net hourly = 500 × (1 − 0.12) = 440 PKR</p>
         <p>Net annual = 1,040,000 × (1 − 0.12) = 915,200 PKR</p>

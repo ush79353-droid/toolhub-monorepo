@@ -196,7 +196,7 @@ export function AnnualPayCalculator({
         `Hours/week: ${input.hoursPerWeek}`,
         `Weeks/year: ${input.weeksPerYear}`,
         `Hourly wage: ${wageSymbol}${input.hourlyWage} ${input.hourlyWageCurrency}`,
-        `Annual income: ${annualSymbol}${result.formattedAnnualPay} ${result.annualPayCurrency}`,
+        `Annual pay: ${annualSymbol}${result.formattedAnnualPay} ${result.annualPayCurrency}`,
         `Flat tax: ${input.taxPercent}% (simplified estimate — not jurisdiction-specific)`,
         `Net hourly: ${netHourlySymbol}${result.formattedNetHourly} ${result.netHourlyCurrency}`,
         `Net annual: ${netAnnualSymbol}${result.formattedNetAnnual} ${result.netAnnualCurrency}`,

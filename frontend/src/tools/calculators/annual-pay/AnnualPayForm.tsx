@@ -156,10 +156,10 @@ export function AnnualPayForm({
         </div>
 
         <div>
-          <label className={labelClass} htmlFor="ap-annual-income">
-            <span>Annual income</span>
+          <label className={labelClass} htmlFor="ap-annual-pay">
+            <span>Annual pay</span>
             <InfoTooltip
-              label="Annual income"
+              label="Annual pay"
               text="Hourly wage × hours per week × weeks per year, shown in the currency you select."
             />
           </label>
@@ -172,7 +172,7 @@ export function AnnualPayForm({
                 {annualSymbol}
               </span>
               <input
-                id="ap-annual-income"
+                id="ap-annual-pay"
                 className={`${inputClass} text-accent`}
                 readOnly
                 tabIndex={-1}
@@ -182,10 +182,10 @@ export function AnnualPayForm({
             </FieldShell>
             <div className="w-[110px] shrink-0 sm:w-[120px]">
               <CurrencySelect
-                id="ap-annual-income-currency"
+                id="ap-annual-pay-currency"
                 value={input.annualPayCurrency}
                 onChange={onAnnualPayCurrencyChange}
-                aria-label="Annual income currency"
+                aria-label="Annual pay currency"
               />
             </div>
           </div>
@@ -277,7 +277,7 @@ export function AnnualPayForm({
               <span>Net annual pay</span>
               <InfoTooltip
                 label="Net annual pay"
-                text="Annual income × (1 − tax ÷ 100), shown in the currency you select."
+                text="Annual pay × (1 − tax ÷ 100), shown in the currency you select."
               />
             </label>
             <div className="flex gap-2">

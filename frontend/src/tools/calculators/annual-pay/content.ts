@@ -14,7 +14,7 @@ export const ANNUAL_PAY_FAQS: readonly FAQItem[] = [
   {
     question: 'How is annual pay calculated from hourly wage?',
     answer:
-      'Annual income equals hourly wage × working hours per week × working weeks per year. Defaults are 40 hours and 52 weeks. Zero hours, weeks, or wage are allowed when valid. Weeks must stay between 0 and 52 under the standard calendar-year model.',
+      'Annual pay equals hourly wage × working hours per week × working weeks per year. Defaults are 40 hours and 52 weeks. Zero hours, weeks, or wage are allowed when valid. Weeks must stay between 0 and 52 under the standard calendar-year model.',
   },
   {
     question: 'How are net hourly and net annual pay estimated?',
@@ -27,8 +27,8 @@ export const ANNUAL_PAY_FAQS: readonly FAQItem[] = [
       'Yes. Hourly wage, annual pay, net hourly, and net annual each have independent currencies. Math runs in the hourly-wage currency at full precision; results convert for display. Hours, weeks, and tax percent are never FX-converted. Missing rates block conversion; stale rates warn but still convert.',
   },
   {
-    question: 'How is this different from Annual Income, Annual Salary, or Yearly Wage?',
+    question: 'How is this different from Annual Pay, Annual Salary, or Yearly Wage?',
     answer:
-      'The formulas match those siblings for hourly→annual conversion with a flat tax. This catalog tool uses the Annual Pay labels and slug. Annual Income, Annual Salary, and Yearly Wage calculators remain separate tools.',
+      'The formulas match those siblings for hourly→annual conversion with a flat tax. This catalog tool uses the Annual Pay labels and slug. Annual Pay, Annual Salary, and Yearly Wage calculators remain separate tools.',
   },
 ];
