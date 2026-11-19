@@ -1,0 +1,91 @@
+# Cursor Prompt — Unlevered Free Cash Flow Calculator
+
+Develop **Unlevered Free Cash Flow Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `unlevered-free-cash-flow-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+- Search existing MongoDB records by title, slug and aliases.
+- If no matching authorized record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Compare with FCFF Calculator and reuse shared financial calculation utilities where appropriate.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+Preserve this exact field order:
+
+1. **EBIT** — monetary input with PKR currency selector.
+2. **Effective tax rate (ETR)** — percentage input.
+3. **Depreciation and amortization (DA)** — monetary input with PKR selector.
+4. **Capital expenditures (CapEx)** — monetary input with PKR selector.
+5. **Change in working capital (ΔWC)** — monetary input with PKR selector.
+6. **Unlevered free cash flow (UFCF)** — read-only calculated monetary output with PKR currency selector.
+
+Reuse Share Result, Reload Calculator, Clear All Changes and feedback controls. Follow existing OmegaCalculators styling rather than reference styling.
+
+## 3. Accurate Calculation Logic
+
+Implement:
+
+`NOPAT = EBIT × (1 − ETR / 100)`
+
+`UFCF = NOPAT + DA − CapEx − ΔWC`
+
+Requirements:
+- Use EBIT before financing costs; do not deduct interest expense or mandatory debt repayments.
+- Define CapEx as positive spending and ΔWC as increase in operating working capital; negative ΔWC increases cash flow.
+- Validate ETR between 0% and 100%.
+- Allow negative EBIT and negative UFCF.
+- Prevent NaN, Infinity and invalid numeric input.
+- Preserve full precision; round only for display.
+- Do not invent unsupported fields, charts or calculation modes.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent PKR selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary amounts numerically, not merely symbols.
+- Normalize mixed-currency EBIT, DA, CapEx and ΔWC before calculation.
+- Preserve independent selectors and canonical full precision.
+- Register slug in `CURRENCY_CONVERSION_SLUGS`.
+- Handle missing/stale FX rates safely; never assume 1:1 exchange rates.
+- Never FX-convert tax percentages.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend tool key and both live sitemaps.
+- Reuse shared SEO, guides, ads, embeds and calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(unlevered-fcf): create calculator UI`
+2. `feat(unlevered-fcf): implement UFCF calculations and FX`
+3. `feat(unlevered-fcf): complete registration and integration`
+
+Never create empty or artificial commits. Stage only task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, test files and logs.
+- Delete only temporary files created during this task.
+- Preserve pre-existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short` before completion.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, UFCF formula, FX integration, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

@@ -1,0 +1,94 @@
+# Cursor Prompt — Operating Cash Flow Calculator
+
+Develop **Operating Cash Flow Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `operating-cash-flow-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+- Search existing MongoDB records by title, slug and aliases.
+- If no authorized matching record exists, SKIP; never create one.
+- If already implemented or colleague-owned, STOP.
+- Reuse existing cash flow calculation utilities where appropriate.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+Preserve the exact field order:
+
+1. Net income — monetary input, PKR selector.
+2. Depreciation — monetary input, PKR selector.
+3. Amortization — monetary input, PKR selector.
+4. Change in inventories — monetary input, PKR selector.
+5. Change in accounts receivables — monetary input, PKR selector.
+6. Change in accounts payable — monetary input, PKR selector.
+7. Income tax payable — monetary input, PKR selector.
+8. Net of other cash flows — monetary input, PKR selector.
+9. Change in operating working capital — calculated monetary result, PKR selector.
+10. Operating cash flow — calculated monetary result, PKR selector.
+
+**Collapsible section:** Balance changes — inspect available reference specifications before implementing additional controls. Do not invent unsupported inputs.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls.
+
+## 3. Accurate Calculation Logic
+
+Use the indirect cash flow method.
+
+Under the convention that working-capital change fields represent ending balance minus beginning balance:
+
+`Working Capital Cash Adjustment = − Change in Inventories − Change in Accounts Receivable + Change in Accounts Payable + Change in Income Tax Payable`
+
+`Operating Cash Flow = Net Income + Depreciation + Amortization + Working Capital Cash Adjustment + Net Other Operating Cash Flows`
+
+Important:
+- Confirm whether **Income tax payable** represents a change or an absolute balance. Do not treat an absolute tax payable balance as a cash flow adjustment.
+- Ensure working-capital signs are correct and consistent with the displayed result.
+- Do not double-count working-capital adjustments.
+- If the reference defines "Change in operating working capital" differently, preserve the verified convention and label it clearly.
+- Allow negative cash flows and negative working-capital changes.
+- Preserve full precision and prevent NaN/Infinity.
+
+## 4. Real Currency Conversion
+
+Screenshot includes independent PKR selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary values numerically, not symbols only.
+- Normalize all monetary inputs before calculating.
+- Preserve independent selectors and canonical full precision.
+- Register slug in `CURRENCY_CONVERSION_SLUGS`.
+- Handle stale/missing rates safely; never assume 1:1 exchange rates.
+
+## 5. Project Integration
+- Register both frontend component-key lists, lazy registry, details, backend key and both live sitemaps.
+- Reuse SEO, guides, ads, embeds and shared calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(operating-cash-flow): create calculator UI`
+2. `feat(operating-cash-flow): implement cash flow formulas and FX`
+3. `feat(operating-cash-flow): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, working-capital sign convention, formulas, FX integration, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

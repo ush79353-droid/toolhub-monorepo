@@ -1,0 +1,97 @@
+Cursor Prompt — Margin With Discount Calculator
+Develop Margin With Discount Calculator using the attached screenshot as the functionality reference.
+Tool name
+Margin With Discount Calculator
+1) First check
+- First search MongoDB / existing tool records by title, slug, and aliases.
+- If this calculator is already developed, registered, or belongs to a colleague, stop.
+- If no authorized existing DB record exists, do not create a new one unless already approved in project flow.
+- Suggested slug: margin-with-discount-calculator (verify before using).
+2) UI to build
+Create the calculator in the same OmegaCalculators theme and structure.
+Section 1: Margin, markup, and revenue
+Fields:
+1. Cost before discount → currency input with selector
+2. Base margin → percentage input
+3. Base markup → percentage input
+4. Base revenue → currency output/input depending on calculator logic
+Section 2: How much discount is being applied?
+5. Discount → percentage input
+Section 3: How the discount affects you
+6. Price after discount → currency output
+7. True margin → percentage output
+8. True markup → percentage output
+9. Profit → currency output
+Also keep:
+- Share result
+- Reload calculator
+- Clear all changes
+- Feedback buttons
+Use Omega styling only, not reference-site styling.
+3) Calculation logic
+Use these formulas:
+Base values
+If cost and base margin are known:
+- Base Revenue = Cost / (1 - Base Margin/100)
+If cost and base markup are known:
+- Base Revenue = Cost × (1 + Base Markup/100)
+Then derive:
+- Base Profit = Base Revenue - Cost
+- Base Margin = (Base Revenue - Cost) / Base Revenue × 100
+- Base Markup = (Base Revenue - Cost) / Cost × 100
+Discounted values
+- Price After Discount = Base Revenue × (1 - Discount/100)
+- Profit = Price After Discount - Cost
+- True Margin = Profit / Price After Discount × 100
+- True Markup = Profit / Cost × 100
+4) Behaviour rules
+- Allow user to enter cost + either base margin OR base markup.
+- Auto-calculate the other values.
+- If both base margin and base markup are filled, keep them synchronized or choose one as authoritative and document it clearly in code.
+- Validate:
+  - Cost ≥ 0
+  - Discount between 0 and 100
+  - Margin cannot be 100% or more when used to derive revenue
+- Prevent NaN, Infinity, division-by-zero, and negative broken outputs.
+- Round only for display.
+5) Currency conversion
+This calculator has currency selectors, so apply our locked currency-conversion concept:
+- Use the existing project FX / currency conversion system
+- Convert numerically, not just symbol swap
+- Register this slug in CURRENCY_CONVERSION_SLUGS
+- Independent currency selectors must work correctly
+- If rates are unavailable/stale, show the project-standard warning/fallback behavior
+- Percentages must never be currency-converted
+6) Registration / integration
+Register the calculator everywhere required:
+- frontend registry
+- lazy registry
+- details / metadata
+- backend tool key mapping if needed
+- sitemap entries
+- route/page wiring
+- any existing shared calculator config used in the project
+Do not modify unrelated tools.
+7) Git / commit rule
+Follow our locked rule: 3 local commits per tool
+1. feat(margin-with-discount): create calculator UI
+2. feat(margin-with-discount): implement calculations and FX
+3. feat(margin-with-discount): complete registration and integration
+8) Temp file cleanup
+- If you create temp/test/helper files during development or audit, delete them after use
+- Do not leave junk files behind
+- Do not delete unrelated existing files
+9) Restrictions
+- Work on this one calculator only
+- No push / pull / fetch / sync
+- No unrelated refactors
+- No fake completion claims
+10) Final report
+At the end, report:
+- verified slug
+- formulas implemented
+- currency conversion wiring status
+- files changed
+- temp files cleaned: YES/NO
+- 3 local commit hashes
+Stop after completing this calculator.

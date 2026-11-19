@@ -1,0 +1,92 @@
+# Cursor Prompt — Dividend Yield Calculator
+
+Develop **Dividend Yield Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `dividend-yield-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+- Search existing MongoDB records by title, slug and aliases.
+- If no matching authorized record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Compare with existing Dividend Calculator and Dividend Payout Ratio Calculator; reuse applicable calculation utilities.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+**Annual Dividends**
+- Dividends per period — monetary input with PKR currency selector.
+- Dividend frequency — dropdown (select applicable frequency).
+- Annual dividends — calculated monetary output with PKR currency selector.
+
+**Dividend Yield**
+- Share price — monetary input with PKR currency selector.
+- Dividend yield — calculated percentage output.
+
+Include the **How to use this calculator** help link where supported by the existing guides infrastructure.
+
+Reuse Share Result, Reload Calculator, Clear All Changes and feedback controls. Preserve screenshot functionality, not styling.
+
+## 3. Accurate Calculations
+
+- Annual Dividends = Dividends per Period × Payments per Year.
+- Dividend Yield (%) = Annual Dividends / Share Price × 100.
+
+Support verified frequencies such as annually (1), semiannually (2), quarterly (4) and monthly (12).
+
+Requirements:
+- Dividends and share price must refer to the same share unit.
+- Validate positive share price and nonnegative dividends.
+- Allow zero dividends with 0% yield.
+- Handle unavailable dividend frequency without calculating misleading results.
+- Prevent NaN, Infinity and division by zero.
+- Preserve full precision; round only for display.
+- Do not invent unsupported charts or calculation modes.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent PKR monetary selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary values numerically, not symbols only.
+- Normalize dividends and share price into the same calculation currency.
+- Preserve independent selectors and canonical full precision.
+- Register slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale exchange rates safely; never assume 1:1 conversion.
+- Never FX-convert dividend yield percentages or frequency counts.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend key and actual live sitemap.
+- Reuse existing SEO, guides, ads, embeds and calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(dividend-yield): create calculator UI`
+2. `feat(dividend-yield): implement dividend calculations and FX`
+3. `feat(dividend-yield): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, test files and logs.
+- Delete only temporary files created during this task.
+- Preserve pre-existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, dividend formulas, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

@@ -1,0 +1,158 @@
+# Cursor Prompt — Hourly to Annual Salary Calculator
+
+Develop **Hourly to Annual Salary Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `hourly-to-annual-salary-calculator` — verify against MongoDB before doing anything.
+
+---
+
+## 1) MongoDB & Ownership Check
+- Search existing MongoDB tool records by **title, slug, aliases, and close variants**.
+- Compare especially with:
+  - Salary Calculator
+  - Annual Salary Calculator
+  - Annual Salary per Hour Calculator
+  - Salary to Hourly Calculator
+- If no authorized matching MongoDB record exists, **STOP** and report it.
+- If the calculator is already developed or belongs to another in-progress task, **STOP**.
+- Follow existing project rules / ADRs and OmegaCalculators patterns.
+- Reuse existing salary conversion utilities/components where possible.
+
+---
+
+## 2) Screenshot-Based UI Fields
+
+### Section: Data
+1. **Hourly wage** — money input/output with currency selector (PKR by default).
+2. **Hours per week** — numeric input, default `40`.
+3. **Days per week** — numeric input, default `5`.
+
+### Section: Results
+1. **Annual salary** — money result with currency selector.
+2. **Monthly pay** — money result with currency selector.
+3. **Per week** — money result with currency selector.
+4. **Per day** — money result with currency selector.
+
+### Standard actions
+- Share result
+- Reload calculator
+- Clear all changes
+- Did we solve your problem? Yes / No
+
+---
+
+## 3) Required Calculator Logic
+
+Use these formulas:
+
+- **Weekly pay** = Hourly wage × Hours per week
+- **Annual salary** = Weekly pay × 52
+- **Monthly pay** = Annual salary ÷ 12
+- **Per day** = Weekly pay ÷ Days per week
+
+### Validation rules
+- Hourly wage must be **>= 0**
+- Hours per week must be **> 0**
+- Days per week must be **> 0**
+- Prevent divide-by-zero, NaN, Infinity
+- Keep internal precision high; round only for display
+- Do **not** add tax, overtime, deductions, holidays, or unsupported assumptions
+- Results should update instantly when inputs change
+
+### Notes / assumptions
+- Use **52 weeks per year**
+- Daily pay is based on **Days per week** input
+- Show clean helper text / tooltip if needed for assumptions
+
+---
+
+## 4) Currency Conversion (Important)
+This tool contains multiple money fields with currency selectors.
+
+- Reuse the project’s **real FX conversion infrastructure**
+- Convert actual numeric money values, not just symbols
+- Normalize currencies correctly before calculation where needed
+- Keep **hours per week** and **days per week** non-currency
+- Add this tool’s slug to the appropriate `CURRENCY_CONVERSION_SLUGS` registration if required by project architecture
+- Handle missing/stale FX rates safely
+- Preserve independent currency selectors if the shared pattern requires them
+
+---
+
+## 5) Registration / Integration
+Complete full integration exactly like other calculators in this codebase:
+
+- frontend registry keys
+- registry index / lazy loading
+- registry details
+- backend tool key mapping
+- live tool page registration
+- embed page registration (if architecture supports it)
+- sitemap entries where applicable
+- SEO metadata / guide wiring / share result wiring consistent with existing tools
+
+Use the project’s actual architecture — do not invent extra files if they don’t exist.
+
+---
+
+## 6) Mongo Activation
+Activate **only** the correct MongoDB record for this calculator:
+- set correct `componentKey`
+- mark developed / active / indexable / embedEnabled as appropriate
+- preserve title, slug, pillar and existing ownership data
+- do not modify unrelated calculators
+
+---
+
+## 7) Mandatory 3 Local Commits Per Tool
+Create exactly **3 meaningful LOCAL commits** for this single tool:
+
+1. `feat(hourly-to-annual-salary): create calculator UI`
+2. `feat(hourly-to-annual-salary): implement salary conversion logic and FX`
+3. `feat(hourly-to-annual-salary): complete registration and activation`
+
+Rules:
+- No fake/empty commits
+- Stage only relevant files
+- Keep commits local only
+
+---
+
+## 8) Temporary Files Cleanup
+If any temporary scripts / scratch files / test helpers are created during this task:
+- delete them before finishing
+- do not remove unrelated files
+- do not use destructive cleanup commands
+
+At the end, explicitly report:
+
+`Temporary files cleaned: YES`  
+or  
+`Temporary files cleaned: NO`
+
+---
+
+## 9) Restrictions
+- Work on **this calculator only**
+- No unrelated refactors
+- No push / pull / fetch / sync
+- No destructive git commands
+- Do not overwrite colleague work
+- Do not run broad automation beyond what is necessary for this single tool
+
+---
+
+## 10) Final Report Format
+When done, report:
+
+1. Confirmed calculator title
+2. Confirmed slug
+3. MongoDB record status
+4. Implemented formulas
+5. FX wiring status
+6. Files changed
+7. Mongo activation fields updated
+8. Three local commit hashes
+9. Temporary files cleaned: YES/NO
+
+Stop after completing **Hourly to Annual Salary Calculator** only.

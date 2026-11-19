@@ -1,0 +1,107 @@
+# Cursor Prompt — Discount Calculator
+
+Develop **Discount Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `discount-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+- Search existing MongoDB records by title, slug and aliases.
+- If no matching record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Compare with the existing Simple Discount Calculator to avoid duplication.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+Preserve the following fields and order:
+
+**Discount Settings**
+- What type of discount? — dropdown, default **% off**.
+- Original price — monetary input with PKR currency selector.
+- Discount — percentage input for `% off` mode; adapt units for other verified discount modes.
+- Tax included? — Yes (default) / No.
+
+**After Discount**
+- You pay — calculated monetary result with PKR selector.
+- You're saving — calculated monetary result with PKR selector.
+
+Include the reference to Simple Discount Calculator where an existing route is confirmed.
+
+Reuse standard Share Result, Reload Calculator, Clear Changes and feedback controls.
+
+## 3. Accurate Calculations
+
+For percentage discount:
+
+- Discount Amount = Original Price × Discount Rate / 100
+- Final Price = Original Price − Discount Amount
+- Savings = Discount Amount
+
+Additional requirements:
+- Support other discount types only when verified in existing specifications.
+- Validate nonnegative original price and discount between 0% and 100%.
+- Preserve zero discount as valid input.
+- **Tax included** must have a mathematically defined meaning; inspect existing reference specifications before implementing tax-sensitive behavior.
+- Do not invent tax rates or silently apply additional taxes.
+- If tax treatment cannot be verified, explain the limitation instead of producing misleading tax-adjusted results.
+- Preserve full precision; round only for display.
+- Prevent NaN, Infinity and negative final prices.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent PKR currency selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert actual monetary amounts numerically, not symbols only.
+- Normalize mixed currencies before calculations.
+- Preserve independent input/output currency selectors.
+- Maintain canonical full precision.
+- Register slug in `CURRENCY_CONVERSION_SLUGS`.
+- Handle stale or missing rates safely.
+- Never FX-convert percentages or Yes/No selections.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend tool key and both live sitemaps.
+- Reuse shared SEO, guides, ads, embeds and calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned work.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+**Commit 1 — UI & Fields**
+
+`feat(discount): create calculator UI and inputs`
+
+**Commit 2 — Calculations & FX**
+
+`feat(discount): implement calculations and currency conversion`
+
+**Commit 3 — Registration & Integration**
+
+`feat(discount): complete registration and integration`
+
+Never create empty or artificial commits. Stage only authorized task-related changes. Report all three commit hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, test files and logs.
+- Track and remove only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short` before completion.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated changes.
+- No Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, discount modes, tax assumptions, formulas, FX integration, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

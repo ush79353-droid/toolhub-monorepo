@@ -1,0 +1,91 @@
+# Cursor Prompt — Dividend Payout Ratio Calculator
+
+Develop **Dividend Payout Ratio Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `dividend-payout-ratio-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+- Search existing MongoDB records by title, slug and aliases.
+- If no authorized matching record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Reuse existing Dividend Calculator and financial utilities where appropriate.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+**Main Calculation**
+- Total dividends — monetary input with PKR selector.
+- Net income — monetary input with PKR selector.
+- Dividend payout ratio — calculated percentage output.
+
+**Per Share Calculation**
+- Declared dividends per share — monetary input with PKR selector.
+- Diluted EPS — monetary input with PKR selector.
+- Dividend payout ratio per share — calculated percentage output.
+
+**Diluted Earnings Per Share**
+- Collapsible section; implement additional diluted EPS calculation fields only if verified in existing project specifications.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls. Preserve screenshot functionality, not styling.
+
+## 3. Accurate Calculations
+
+Implement:
+
+- `Dividend Payout Ratio (%) = Total Dividends / Net Income × 100`
+- `Dividend Payout Ratio per Share (%) = Dividends per Share / Diluted EPS × 100`
+
+Requirements:
+- Use consistent monetary units and periods for numerator and denominator.
+- Support payout ratios above 100% and negative ratios where mathematically valid, with appropriate explanations.
+- Handle zero net income and zero EPS as undefined, not zero.
+- Avoid NaN, Infinity and misleading results.
+- Do not automatically equate negative earnings with a conventional payout ratio.
+- Preserve full precision; round only for display.
+- Do not invent unsupported formulas or fields.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent PKR currency selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary amounts numerically, not symbols only.
+- Normalize mixed-currency dividends, net income and per-share values before calculating.
+- Preserve independent selectors and canonical precision.
+- Register slug in both applicable `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale rates safely.
+- Never FX-convert payout percentages.
+
+## 5. Project Integration
+- Register both frontend key lists, lazy registry, details, backend key and live sitemap.
+- Reuse SEO, guides, ads, embeds and shared actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(dividend-payout-ratio): create calculator UI`
+2. `feat(dividend-payout-ratio): implement payout calculations and FX`
+3. `feat(dividend-payout-ratio): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, formulas, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

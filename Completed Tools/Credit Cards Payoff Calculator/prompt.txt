@@ -1,0 +1,118 @@
+# Cursor Prompt — Credit Cards Payoff Calculator
+
+Develop **Credit Cards Payoff Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `credit-cards-payoff-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Duplicate Check
+- Search existing MongoDB records by title, slug and aliases.
+- Compare with Credit Card Payoff Calculator and Debt Avalanche Calculator.
+- If already developed or colleague-owned, STOP.
+- If no separate authorized record exists, SKIP; never create one.
+- Reuse existing debt avalanche calculation utilities where appropriate.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+**Monthly Budget**
+- Monthly budget set aside for credit cards — monetary input, default $500.
+
+**Credit Cards Table**
+
+Create editable rows with:
+
+| Field | Default |
+|---|---|
+| Credit card name | Card 1, Card 2, Card 3 |
+| Balance | $4,600 / $3,900 / $6,000 |
+| Minimum payment | $100 / $90 / $120 |
+| Interest rate (APR) | 18.99% / 19.99% / 15.99% |
+
+- Show 6 rows initially: 3 prefilled and 3 blank.
+- Include **Show more input fields** to add additional cards.
+- Ignore entirely blank rows.
+- Preserve all entered card information.
+
+**Results**
+- Total repayment duration.
+- Total interest paid.
+- Total amount paid.
+- Optimal repayment order.
+- Monthly payment schedule showing each card's balance and payments.
+- Estimated payoff month for every card.
+
+Reuse Calculate, Clear and existing shared calculator actions.
+
+## 3. Debt Avalanche Calculation
+
+Implement accurate multiple-credit-card repayment using the **Debt Avalanche Method**:
+
+1. Calculate monthly interest for each outstanding card using its APR.
+2. Pay the required minimum on every active card.
+3. Allocate the remaining monthly budget to the card with the highest APR.
+4. Once a card is paid off, redirect its available payment allocation to the next highest-APR card.
+5. Continue until every card balance reaches zero.
+
+Requirements:
+- Never exceed the specified monthly budget.
+- Cap payments at each card's remaining balance plus accrued interest.
+- Validate positive balances, nonnegative APRs and minimum payments.
+- Detect when the budget cannot cover required minimums.
+- Detect non-amortizing repayment scenarios.
+- Handle zero-interest cards, equal APRs and partial final payments.
+- Preserve full precision and round only for display.
+- Prevent infinite loops and unrealistic schedules.
+- Explain the monthly interest-accrual assumption.
+
+Reuse the existing Debt Avalanche engine if its behavior matches these requirements.
+
+## 4. Currency Handling
+
+Screenshot uses fixed USD ($), without currency selectors.
+
+- Preserve USD.
+- Do not invent currency dropdowns.
+- No FX integration required unless an existing authorized specification explicitly requires it.
+- Never FX-convert interest percentages.
+
+## 5. Project Integration
+- Register both frontend key lists, lazy registry, details, backend key and both live sitemaps.
+- Reuse SEO, guides, ads, embeds and shared calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+**Commit 1 — UI & Card Table**
+
+`feat(credit-cards-payoff): create calculator UI`
+
+**Commit 2 — Debt Avalanche Calculations**
+
+`feat(credit-cards-payoff): implement avalanche repayment schedule`
+
+**Commit 3 — Registration & Integration**
+
+`feat(credit-cards-payoff): complete registration and integration`
+
+Never create empty or artificial commits. Stage only authorized task changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+- Avoid unnecessary temporary scripts, logs and test files.
+- Track and delete temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short` before completion.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, repayment algorithm, results, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

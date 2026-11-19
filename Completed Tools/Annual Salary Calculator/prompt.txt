@@ -1,0 +1,94 @@
+# Cursor Prompt — Annual Salary Calculator
+
+Develop **Annual Salary Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `annual-salary-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+- Search existing MongoDB records by title, slug and aliases.
+- If no matching authorized record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Reuse existing Salary Calculator utilities where appropriate.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+Preserve the exact order:
+
+1. **Working hours per week** — numeric input, default 40.
+2. **Working weeks per year** — numeric input, default 52.
+3. **Hourly wage** — monetary input with PKR selector.
+4. **Annual salary** — calculated monetary output with PKR selector.
+
+**Net Salary Section**
+5. **Tax** — percentage input, default 12%.
+6. **Net hourly wage** — calculated monetary output with PKR selector.
+7. **Net annual salary** — calculated monetary output with PKR selector.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls. Follow OmegaCalculators styling, not screenshot styling.
+
+## 3. Accurate Calculations
+
+Implement:
+
+- `Annual Salary = Hourly Wage × Working Hours Per Week × Working Weeks Per Year`
+- `Net Hourly Wage = Hourly Wage × (1 − Tax / 100)`
+- `Net Annual Salary = Annual Salary × (1 − Tax / 100)`
+
+Requirements:
+- Automatically recalculate when inputs change.
+- Validate nonnegative working hours, weeks and wages.
+- Validate tax rate between 0% and 100%.
+- Support zero wages and zero tax.
+- Clearly label the tax as a simplified flat-rate deduction, not a country-specific payroll calculation.
+- Prevent NaN, Infinity and invalid results.
+- Preserve full precision; round only for display.
+- Do not add unsupported payroll deductions or tax brackets.
+
+## 4. Real Currency Conversion
+
+Screenshot includes independent PKR monetary selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary values numerically, not symbols only.
+- Preserve independent input/output selectors and canonical full precision.
+- Register slug in `CURRENCY_CONVERSION_SLUGS`.
+- Handle missing/stale exchange rates safely.
+- Never FX-convert working hours, weeks or tax percentages.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend key and both live sitemaps.
+- Reuse SEO, guides, ads, embeds and shared calculator actions.
+- Activate only the authorized existing MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(annual-salary): create calculator UI`
+2. `feat(annual-salary): implement salary calculations and FX`
+3. `feat(annual-salary): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, test files and logs.
+- Delete only temporary files created during this task.
+- Preserve pre-existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, annual/net salary formulas, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

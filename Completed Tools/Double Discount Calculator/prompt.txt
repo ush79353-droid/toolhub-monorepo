@@ -1,0 +1,91 @@
+# Cursor Prompt — Double Discount Calculator
+
+Develop **Double Discount Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `double-discount-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+- Search existing MongoDB records by title, slug and aliases.
+- If no separate authorized record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Compare with Discount Calculator and Simple Discount Calculator; reuse shared utilities where appropriate.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators theme.
+
+## 2. Screenshot Fields
+
+Preserve the exact order:
+
+1. Original price — monetary input with PKR selector.
+2. 1st discount — percentage input.
+3. 2nd discount — percentage input.
+4. Final price — calculated monetary output with PKR selector.
+5. Total savings — calculated monetary output with PKR selector.
+
+**Collapsible section: Effective discount**
+- Display the combined effective discount percentage.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls. Follow project styling, not reference styling.
+
+## 3. Accurate Calculations
+
+Apply discounts **sequentially**, not by simply adding percentages.
+
+- Final Price = Original Price × (1 − D1/100) × (1 − D2/100)
+- Total Savings = Original Price − Final Price
+- Effective Discount (%) = D1 + D2 − (D1 × D2 / 100)
+
+Example: Two 20% discounts produce a **36% effective discount**, not 40%.
+
+Requirements:
+- Automatically recalculate results.
+- Validate original price ≥ 0 and discounts between 0% and 100%.
+- Support zero discounts and full 100% discounts.
+- Prevent NaN, Infinity and negative final prices.
+- Preserve full precision; round only for display.
+- Do not invent additional discount levels or unsupported calculation modes.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent PKR selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary values numerically, not symbols only.
+- Normalize mixed currencies before calculations.
+- Preserve independent input/output selectors and canonical precision.
+- Register slug in `CURRENCY_CONVERSION_SLUGS`.
+- Handle unavailable/stale FX rates safely.
+- Never FX-convert discount percentages.
+
+## 5. Project Integration
+- Register both frontend key lists, lazy registry, details, backend key and live sitemaps.
+- Reuse SEO, guides, ads, embeds and shared calculator actions.
+- Activate only the authorized existing MongoDB record.
+- Preserve unrelated code and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(double-discount): create calculator UI`
+2. `feat(double-discount): implement calculations and FX`
+3. `feat(double-discount): complete registration and integration`
+
+Never create empty or artificial commits. Stage only task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, formulas, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

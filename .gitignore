@@ -47,3 +47,5 @@ Thumbs.db
 *.zip
 /Tools/
 /Tools/**
+/Completed-Tools/
+/Completed-Tools/**
