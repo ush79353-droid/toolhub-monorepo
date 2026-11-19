@@ -426,12 +426,14 @@ export const APPROVED_COMPONENT_KEYS = [
   'CommercialLeaseCalculator',
   'CommissionCalculator',
   'SalesCommissionCalculator',
+  'SalesCalculator',
   'RentalCommissionCalculator',
   'TrueCostOfRealEstateCommissionCalculator',
   'SellThroughRateCalculator',
   'SimpleInterestCalculator',
   'TdsInterestCalculator',
   'SinkingFundCalculator',
+  'SipCalculator',
   'SmokersCtcCalculator',
   'TenureCalculator',
   'TimeValueOfMoneyCalculator',
@@ -1112,12 +1114,14 @@ if (isDirect) {
     !isApprovedComponentKey('CommercialLeaseCalculator') ||
     !isApprovedComponentKey('CommissionCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
+    !isApprovedComponentKey('SalesCalculator') ||
     !isApprovedComponentKey('RentalCommissionCalculator') ||
     !isApprovedComponentKey('TrueCostOfRealEstateCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     !isApprovedComponentKey('SimpleInterestCalculator') ||
     !isApprovedComponentKey('TdsInterestCalculator') ||
     !isApprovedComponentKey('SinkingFundCalculator') ||
+    !isApprovedComponentKey('SipCalculator') ||
     !isApprovedComponentKey('SmokersCtcCalculator') ||
     !isApprovedComponentKey('TenureCalculator') ||
     !isApprovedComponentKey('TimeValueOfMoneyCalculator') ||

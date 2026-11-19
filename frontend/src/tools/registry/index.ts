@@ -2359,6 +2359,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SalesCommissionCalculator,
     })),
   ),
+  SalesCalculator: lazyTool(() =>
+    import('@/tools/calculators/sales/SalesCalculator').then((mod) => ({
+      default: mod.SalesCalculator,
+    })),
+  ),
   TrueCostOfRealEstateCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/true-cost-real-estate-commission/TrueCostRealEstateCommissionCalculator'
@@ -2383,6 +2388,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   SinkingFundCalculator: lazyTool(() =>
     import('@/tools/calculators/sinking-fund/SinkingFundCalculator').then((mod) => ({
       default: mod.SinkingFundCalculator,
+    })),
+  ),
+  SipCalculator: lazyTool(() =>
+    import('@/tools/calculators/sip/SipCalculator').then((mod) => ({
+      default: mod.SipCalculator,
     })),
   ),
   SmokersCtcCalculator: lazyTool(() =>

@@ -536,6 +536,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/commission/detail'),
   SalesCommissionCalculator: () =>
     import('@/tools/calculators/sales-commission/detail'),
+  SalesCalculator: () => import('@/tools/calculators/sales/detail'),
   TrueCostOfRealEstateCommissionCalculator: () =>
     import('@/tools/calculators/true-cost-real-estate-commission/detail'),
   SellThroughRateCalculator: () =>
@@ -546,6 +547,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/tds-interest/detail'),
   SinkingFundCalculator: () =>
     import('@/tools/calculators/sinking-fund/detail'),
+  SipCalculator: () => import('@/tools/calculators/sip/detail'),
   SmokersCtcCalculator: () =>
     import('@/tools/calculators/smokers-ctc/detail'),
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),
