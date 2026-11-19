@@ -5,6 +5,11 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import {
+  convertPopulationDisplay,
+  formatPopulationInput,
+  shareResultText,
+} from './calculation';
 import { UnemploymentForm } from './UnemploymentForm';
 import {
   createDefaultInput,
@@ -14,21 +19,17 @@ import {
   type UnemploymentInput,
   type UnemploymentResult,
 } from './types';
+import { validateUnemploymentInput } from './validation';
 
 function inputsEqual(a: UnemploymentInput, b: UnemploymentInput): boolean {
   return JSON.stringify(a) === JSON.stringify(b);
 }
 
-/**
- * UI shell — live validation/results are wired in the engine commit.
- * ponytail: temporary no-op apply until calculation.ts / validation.ts land.
- */
-function applyUiOnly(next: UnemploymentInput): {
-  errors: UnemploymentFieldErrors;
-  result: UnemploymentResult | null;
-} {
-  void next;
-  return { errors: {}, result: null };
+function parseOptionalAmount(raw: string): number | null {
+  const cleaned = raw.trim().replace(/,/g, '');
+  if (cleaned === '') return null;
+  const value = Number(cleaned);
+  return Number.isFinite(value) ? value : null;
 }
 
 export function UnemploymentCalculator({
@@ -54,10 +55,11 @@ export function UnemploymentCalculator({
   }, []);
 
   const apply = (next: UnemploymentInput) => {
-    const outcome = applyUiOnly(next);
-    setInput(next);
-    setErrors(outcome.errors);
-    setResult(outcome.result);
+    const validation = validateUnemploymentInput(next);
+    // Write derived triad fields once — avoid circular re-entry by using synced display only.
+    setInput(validation.syncedInput);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleUnitChange = (
@@ -65,16 +67,38 @@ export function UnemploymentCalculator({
     unit: PopulationUnit
   ) => {
     if (unit === input[field]) return;
-    // Unit conversion preserving people count lands with the engine commit.
-    apply({ ...input, [field]: unit });
+
+    const amountField =
+      field === 'employedUnit'
+        ? 'employed'
+        : field === 'unemployedUnit'
+          ? 'unemployed'
+          : field === 'laborForceUnit'
+            ? 'laborForce'
+            : 'workingAge';
+    const fromUnit = input[field];
+    const amount = parseOptionalAmount(input[amountField]);
+
+    if (amount === null) {
+      apply({ ...input, [field]: unit });
+      return;
+    }
+
+    const converted = convertPopulationDisplay(amount, fromUnit, unit);
+    apply({
+      ...input,
+      [field]: unit,
+      [amountField]: formatPopulationInput(converted),
+    });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateUnemploymentInput(fresh);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setParticipationOpen(false);
     setCopied(false);
     setShared(false);
@@ -91,25 +115,7 @@ export function UnemploymentCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
-
-  const summary = result
-    ? [
-        `${metadata.title} — Omega Calculators`,
-        result.formattedUnemploymentRate
-          ? `Unemployment rate: ${result.formattedUnemploymentRate}%`
-          : 'Unemployment rate: undefined (labor force is zero)',
-        `Employed: ${result.employedPeople.toLocaleString('en-US')} people`,
-        `Unemployed: ${result.unemployedPeople.toLocaleString('en-US')} people`,
-        `Labor force: ${result.laborForcePeople.toLocaleString('en-US')} people`,
-        result.formattedParticipationRate
-          ? `Labor force participation rate: ${result.formattedParticipationRate}%`
-          : null,
-        result.interpretation,
-        '/tools/unemployment-calculator-unemployment-rate',
-      ]
-        .filter(Boolean)
-        .join('\n')
-    : '';
+  const summary = result ? shareResultText(result) : '';
 
   const handleShare = async () => {
     if (!summary) return;
@@ -156,7 +162,11 @@ export function UnemploymentCalculator({
           onChange={apply}
           onUnitChange={handleUnitChange}
           onToggleParticipation={() => setParticipationOpen((open) => !open)}
-          onLoadExample={() => apply(createExampleInput())}
+          onLoadExample={() => {
+            const example = createExampleInput();
+            apply(example);
+            setParticipationOpen(true);
+          }}
           onClear={handleClear}
           onReset={handleReset}
         />
