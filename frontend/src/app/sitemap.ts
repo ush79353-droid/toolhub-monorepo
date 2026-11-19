@@ -460,6 +460,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'treynor-ratio-calculator',
   'turnover-rate-calculator',
   'website-ad-revenue-calculator',
+  'wedding-budget-calculator',
   'week-over-week-calculator',
   'software-contract-value-calculator',
   'sortino-ratio-calculator',
