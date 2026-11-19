@@ -5,6 +5,7 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { shareResultText } from './calculation';
 import { PakistanIncomeTaxForm } from './PakistanIncomeTaxForm';
 import {
   createDefaultInput,
@@ -13,6 +14,7 @@ import {
   type PakistanIncomeTaxInput,
   type PakistanIncomeTaxResult,
 } from './types';
+import { validatePakistanIncomeTaxInput } from './validation';
 
 export function PakistanIncomeTaxCalculator({
   metadata,
@@ -22,12 +24,17 @@ export function PakistanIncomeTaxCalculator({
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
   const defaults = createDefaultInput();
+  const initialValidation = validatePakistanIncomeTaxInput(defaults);
   const [baseline, setBaseline] = React.useState<PakistanIncomeTaxInput>(
     () => defaults
   );
   const [input, setInput] = React.useState<PakistanIncomeTaxInput>(() => defaults);
-  const [errors] = React.useState<PakistanIncomeTaxFieldErrors>({});
-  const [result] = React.useState<PakistanIncomeTaxResult | null>(null);
+  const [errors, setErrors] = React.useState<PakistanIncomeTaxFieldErrors>(
+    () => initialValidation.errors
+  );
+  const [result, setResult] = React.useState<PakistanIncomeTaxResult | null>(
+    () => (initialValidation.isValid ? initialValidation.result : null)
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -37,14 +44,20 @@ export function PakistanIncomeTaxCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const handleChange = (next: PakistanIncomeTaxInput) => {
+  const apply = (next: PakistanIncomeTaxInput) => {
+    const validation = validatePakistanIncomeTaxInput(next);
     setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validatePakistanIncomeTaxInput(fresh);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -53,15 +66,11 @@ export function PakistanIncomeTaxCalculator({
   const dirty = !inputsEqual(input, baseline);
 
   const summary = result
-    ? [
-        `${metadata.title} — Omega Calculators`,
-        `Tax year: ${result.taxYearLabel} (FBR salaried / Finance Act 2026)`,
-        `Monthly income: Rs. ${input.monthlyIncome}`,
-        `Monthly tax: Rs. ${result.formattedMonthlyTax}`,
-        `Monthly income after tax: Rs. ${result.formattedMonthlyIncomeAfterTax}`,
-        `Yearly income: Rs. ${result.formattedYearlyIncome}`,
-        `Yearly tax: Rs. ${result.formattedYearlyTax}`,
-      ].join('\n')
+    ? shareResultText({
+        title: metadata.title,
+        monthlyIncomeRaw: input.monthlyIncome,
+        result,
+      })
     : '';
 
   const handleShare = async () => {
@@ -106,7 +115,7 @@ export function PakistanIncomeTaxCalculator({
           input={input}
           errors={errors}
           result={result}
-          onChange={handleChange}
+          onChange={apply}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
