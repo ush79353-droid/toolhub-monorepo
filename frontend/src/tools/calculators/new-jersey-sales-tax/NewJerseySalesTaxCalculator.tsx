@@ -5,6 +5,7 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { shareResultText } from './calculation';
 import { NewJerseySalesTaxForm } from './NewJerseySalesTaxForm';
 import { NewJerseySalesTaxResults } from './NewJerseySalesTaxResults';
 import {
@@ -14,6 +15,7 @@ import {
   type NewJerseySalesTaxInput,
   type NewJerseySalesTaxResult,
 } from './types';
+import { validateNewJerseySalesTaxInput } from './validation';
 
 export function NewJerseySalesTaxCalculator({
   metadata,
@@ -38,9 +40,9 @@ export function NewJerseySalesTaxCalculator({
 
   const applyDraft = (next: NewJerseySalesTaxInput) => {
     setInput(next);
-    // Engine wiring lands in the calculation commit; keep UI responsive for drafts.
-    setErrors({});
-    setResult(null);
+    const validation = validateNewJerseySalesTaxInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
@@ -55,7 +57,7 @@ export function NewJerseySalesTaxCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
-  const summary = result?.summaryText ?? '';
+  const summary = result ? shareResultText(result) : '';
 
   const handleShare = async () => {
     if (!summary) return;
