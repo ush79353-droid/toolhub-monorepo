@@ -439,6 +439,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TurnoverRateCalculator',
   'WebsiteAdRevenueCalculator',
   'MarginalRevenueCalculator',
+  'RevenueGrowthCalculator',
   'WeddingBudgetCalculator',
   'WeekOverWeekCalculator',
   'SoftwareContractValueCalculator',
@@ -564,6 +565,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RealtorCommissionVatCalculator',
   'RentSplitCalculator',
   'RentVsBuyCalculator',
+  'RevenueCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
@@ -1122,6 +1124,7 @@ if (isDirect) {
     !isApprovedComponentKey('TurnoverRateCalculator') ||
     !isApprovedComponentKey('WebsiteAdRevenueCalculator') ||
     !isApprovedComponentKey('MarginalRevenueCalculator') ||
+    !isApprovedComponentKey('RevenueGrowthCalculator') ||
     !isApprovedComponentKey('WeddingBudgetCalculator') ||
     !isApprovedComponentKey('WeekOverWeekCalculator') ||
     !isApprovedComponentKey('SoftwareContractValueCalculator') ||
@@ -1246,6 +1249,7 @@ if (isDirect) {
     !isApprovedComponentKey('RealtorCommissionVatCalculator') ||
     !isApprovedComponentKey('RentSplitCalculator') ||
     !isApprovedComponentKey('RentVsBuyCalculator') ||
+    !isApprovedComponentKey('RevenueCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
