@@ -76,6 +76,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pakistan-income-tax/detail'),
   IncomeTaxCalculatorPhilippines: () =>
     import('@/tools/calculators/philippines-income-tax/detail'),
+  AlabamaTaxCalculator: () =>
+    import('@/tools/calculators/alabama-tax/detail'),
   NewJerseySalesTaxCalculator: () =>
     import('@/tools/calculators/new-jersey-sales-tax/detail'),
   NewYorkOvertimeCalculator: () =>
@@ -972,6 +974,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/hourly-to-salary-wage/detail'),
   HourlyWageCalculator: () =>
     import('@/tools/calculators/hourly-wage/detail'),
+  WageCalculator: () => import('@/tools/calculators/wage/detail'),
   WageToSalaryCalculator: () =>
     import('@/tools/calculators/wage-to-salary/detail'),
   YearlyWageCalculator: () =>

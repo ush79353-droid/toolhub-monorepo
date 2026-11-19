@@ -40,6 +40,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'IncomeTaxCalculator',
   'IncomeTaxCalculatorPakistan',
   'IncomeTaxCalculatorPhilippines',
+  'AlabamaTaxCalculator',
   'NewJerseySalesTaxCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
@@ -691,6 +692,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HeroesActStimulusCalculator',
   'StudentLoanRepaymentCovidCalculator',
   'StimulusCheck40kCalculator',
+  'StimulusCheckCalculator',
   'CaresActUnemploymentBenefitCalculator',
   'LwaUnemploymentBenefitCalculator',
   'HealsHeroesUnemploymentBenefitCalculator',
@@ -1409,6 +1411,7 @@ if (isDirect) {
     !isApprovedComponentKey('IncomeTaxCalculator') ||
     !isApprovedComponentKey('IncomeTaxCalculatorPakistan') ||
     !isApprovedComponentKey('IncomeTaxCalculatorPhilippines') ||
+    !isApprovedComponentKey('AlabamaTaxCalculator') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
