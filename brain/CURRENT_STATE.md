@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Refinance Calculator live at `/tools/refinance-calculator`).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Revenue Calculator live at `/tools/revenue-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,8 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Return on Sales Calculator (`/tools/return-on-sales-calculator`):** Live client-side ROS tool (`componentKey: 'ReturnOnSalesCalculator'`, catalog `6af46f0fa27d8d1d4e990025`). Screenshot-first (ADR-023): Operating profit FX; Net sales FX; Return on sales (ROS) %. Formula: (Operating Profit / Net Sales) × 100. Normalize profit into sales currency before dividing; ROS % never FX-converts. Allow negative operating profit/ROS; require net sales > 0 (zero sales undefined). Distinct from Net Profit Margin. Dual FX slug lists. Activated; **`indexable` left false**. Example: 25,000 / 100,000 → **25.00%**.
+- **Revenue Calculator (`/tools/revenue-calculator`):** Live client-side bidirectional revenue tool (`componentKey: 'RevenueCalculator'`, catalog `6af46f0fa27d8d1d4e99001d`). Price FX × Quantity ↔ Total revenue FX; leave exactly one blank; zero is filled. Independent Phase 2 FX; quantity never converted. Share/Reload/Clear/feedback. Activated; **`indexable` left false**.
 - **Refinance Calculator (`/tools/refinance-calculator`):** Live client-side refinance comparison (`componentKey: 'RefinanceCalculator'`, catalog `6af46f0fa27d8d1d4e990018`). Screenshot-first: know-balance current loan + new term/rate/points/fees/cash-out; Calculate/Clear; remaining term, new payment, closing costs, break-even, net savings. Fixed USD (no FX). Car/Mortgage refinance siblings untouched. Activated; **`indexable` left false**.
 - **Lease Calculator (/tools/lease-calculator):** Live client-side fixed-rate lease tool (componentKey: 'LeaseCalculator', catalog 6af46f0fa27d8d1d4e99000e). Product/residual/down/results FX; term yrs/mos; residual money or %; optional down payment. Activated; **indexable** left false.
 - **Lease Calculator (`/tools/lease-calculator`):** Live client-side fixed-rate lease tool (`componentKey: 'LeaseCalculator'`, catalog `6af46f0fa27d8d1d4e99000e`, `nameKey` `lease calculator`). Screenshot-first (ADR-023): product value FX; residual money or %; term yrs/mos; interest %/yr; optional down payment FX; monthly payment / total payments / total interest / total cost to own FX. Formulas: PV lease PMT with residual; zero-rate `(P−D−R)/n`; payments = D+PMT×n; interest = payments+R−P; cost to own = payments+R. Dual FX; term/rate/% never convert. Auto / Car / Commercial Lease untouched. Activated; **`indexable` left false**. Example: 100k · residual 40k · 3 yrs · 6% → monthly ≈ **1,936.68** · cost to own ≈ **109,720.55**.

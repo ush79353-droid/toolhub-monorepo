@@ -48,6 +48,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
   'NetProfitMarginCalculator',
+  'ReturnOnSalesCalculator',
   'OvertimeCalculator',
   'OvertimePaycheckCalculator',
   'PresentValueOfAnnuityCalculator',
@@ -1419,6 +1420,7 @@ if (isDirect) {
     !isApprovedComponentKey('MarginWithDiscountCalculator') ||
     !isApprovedComponentKey('OperatingMarginCalculator') ||
     !isApprovedComponentKey('NetProfitMarginCalculator') ||
+    !isApprovedComponentKey('ReturnOnSalesCalculator') ||
     !isApprovedComponentKey('AnnuityCalculator') ||
     !isApprovedComponentKey('AnnuityPayoutCalculator') ||
     !isApprovedComponentKey('DeferredAnnuityCalculator') ||

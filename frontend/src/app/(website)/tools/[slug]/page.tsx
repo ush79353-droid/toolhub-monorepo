@@ -100,7 +100,6 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'jumbo-loan-calculator',
   'land-loan-calculator',
   'lease-calculator',
-  'lease-mileage-calculator',
   'net-debt-calculator',
   'net-effective-rent-calculator',
   'net-profit-margin-calculator',

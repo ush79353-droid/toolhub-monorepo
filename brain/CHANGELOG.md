@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Return on Sales Calculator
+- **Summary:** Shipped Return on Sales Calculator on existing catalog slug `return-on-sales-calculator` (`ReturnOnSalesCalculator`, catalog `6af46f0fa27d8d1d4e990025`, pillar `6af451bfa27d8d1d4e98f974`). Screenshot-first (ADR-023): Operating profit FX; Net sales FX; ROS % = (Operating Profit / Net Sales) × 100. Normalize profit into sales currency; ROS % never FX-converts; net sales must be > 0; negative/zero operating profit allowed. Distinct from Net Profit Margin / Operating Margin. Dual `CURRENCY_CONVERSION_SLUGS`. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Operating profit 25,000 / Net sales 100,000 → ROS **25.00%**.
+- **Important Files:** `frontend/src/tools/calculators/return-on-sales/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Lease Mileage Calculator
 - **Summary:** Shipped Lease Mileage Calculator on existing catalog slug `lease-mileage-calculator` (`LeaseMileageCalculator`, catalog `6af46f0fa27d8d1d4e990012`). Screenshot-first (ADR-023): total/remaining term yrs+mos; current miles + annual allowance (km/mi); excess fee FX + /km|/mi; results excess (km/mi), lease-end charge FX, monthly savings FX /mo. Constant-rate projection; 1 mi = 1.609344 km. Dual FX slug lists. Car Lease / Auto Lease / Lease siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 36 mo · 24 rem · 20k km · 10k km/yr · 5/km → excess **30,000** km · charge **150,000** · savings **6,250**/mo.
@@ -1974,6 +1980,11 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
+### 2026-11-19 — Add Revenue Calculator
+- **Summary:** Shipped Revenue Calculator on existing catalog slug `revenue-calculator` (`RevenueCalculator`, catalog `6af46f0fa27d8d1d4e99001d`, pillar `6af451bfa27d8d1d4e98f973`). Bidirectional Price × Quantity ↔ Total revenue; independent FX on money; quantity never converts. Activated `--set-active`; **indexable** preserved false.
+- **Example:** Price 100 × Qty 25 → Total revenue **2,500**.
+- **Important Files:** `frontend/src/tools/calculators/revenue/*`, registry, sitemap, FX lists, `tool.key.ts`, brain docs.
+- **Verification:** calculation.test.ts; tool:assign; three ADR-019 commits. Temporary files cleaned: YES.
 ### 2026-11-19 — Add Ohio Sales Tax Calculator
 - **Summary:** Shipped Ohio Sales Tax Calculator on existing catalog slug `ohio-sales-tax-calculator` (`OhioSalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e99002b`, pillar `6af451bfa27d8d1d4e98f974` / subPillar `6af451bfa27d8d1d4e98f975`). Screenshot-first: purchase USD + ZIP. No verified Ohio ZIP→rate dataset — shows explicit unavailable-rate state (never invents combined rates). ZIP gated to 43001–45999. Fixed USD; not in `CURRENCY_CONVERSION_SLUGS`. Activated via `tool:assign --set-active`; **`indexable` preserved false**.
 - **Important Files:** `frontend/src/tools/calculators/ohio-sales-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.

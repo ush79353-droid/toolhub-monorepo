@@ -3,13 +3,13 @@
 ## Summary
 
 Total discovered: 53
-Newly developed: 34
+Newly developed: 35
 Already developed: 1
 Development failed: 0
 Skipped / blocked: 3
 Remaining pending: 4 (Tools: Revenue Growth, Sales, Sales Tax, SIP)
 Audit completed: 0
-Audit pending: 35
+Audit pending: 36
 
 ## Calculator Register
 
@@ -66,6 +66,7 @@ Audit pending: 35
 
 | 43 | Ohio Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 3be92376 | af2a603f | af4c7591 | Completed Tools | `OhioSalesTaxCalculator`; unavailable-rate (no OH ZIP tax table); Mongo `6af46f0fa27d8d1d4e99002b`; indexable false |
 | 41 | Margin and Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 42ba884d | a44097dc | f51294bf (reg absorbed into concurrent Ohio reg commit; HEAD has full MST registration) | Completed Tools | `MarginAndSalesTaxCalculator`; slug `margin-and-sales-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990029` active; indexable false; Phase 2 FX |
+| 44 | Return on Sales Calculator | DEVELOPED | AUDIT PENDING | f6ee9195 | 84f312c8 | (pending) | Completed Tools | `ReturnOnSalesCalculator`; slug `return-on-sales-calculator`; Mongo `6af46f0fa27d8d1d4e990025`; Phase 2 FX; indexable false |
 
 ## Session Log
 - 2026-11-19 (this agent): Margin and Sales Tax DEVELOPED (`42ba884d` / `a44097dc` / reg via `f51294bf`). Mongo `6af46f0fa27d8d1d4e990029` active; indexable false. Moved to Completed Tools. Next: claim remaining Tools alphabetically.
