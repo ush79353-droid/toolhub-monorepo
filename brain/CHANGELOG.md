@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Dream Come True Calculator
+- **Summary:** Shipped Dream Come True Calculator on existing catalog slug `dream-come-true-calculator` (`DreamComeTrueCalculator`, catalog `6af46f10a27d8d1d4e9900fa`, preserved `nameKey` `dream come true calculator`). Screenshot-first (ADR-023): dream price, initial savings, monthly savings, annual rate → months to goal; stacked growth chart; achieved/unreachable handling. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** r=R/12/100; n=ln((P r+M)/(I r+M))/ln(1+r) (ceil); zero-rate n=(P−I)/M; interest-only n=ln(P/I)/ln(1+r).
+- **Example:** $30,000 · $5,000 · $500/mo · 4% → **45 months** (3 years, 9 months).
+- **Important Files:** `frontend/src/tools/calculators/dream-come-true/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add College Cost Calculator
 - **Summary:** Shipped College Cost Calculator on existing catalog slug `college-cost-calculator` (`CollegeCostCalculator`, catalog `6af46f10a27d8d1d4e9900f9`, preserved `nameKey` `college cost calculator`). Screenshot-first (ADR-023): eight inputs with College Board 2025–26 presets; per-year inflated costs; savings target; after-tax savings growth; gap/surplus; monthly/annual contribution estimates; breakdown table + bar chart. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** Cₙ=C₀(1+i)^(Y+n); Total=ΣCₙ; Target=Total×P/100; r_net=r(1−t); FutureSavings=S₀(1+r_net)^Y; Monthly gap annuity with r_m=(1+r_net)^(1/12)−1.

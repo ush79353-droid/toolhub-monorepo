@@ -3296,6 +3296,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CollegeCostCalculator,
     })),
   ),
+  DreamComeTrueCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/dream-come-true/DreamComeTrueCalculator'
+    ).then((mod) => ({
+      default: mod.DreamComeTrueCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

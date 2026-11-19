@@ -593,6 +593,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarAffordabilityCalculator',
   'CellPhonePlanCalculator',
   'CollegeCostCalculator',
+  'DreamComeTrueCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1218,6 +1219,7 @@ if (isDirect) {
     !isApprovedComponentKey('CarAffordabilityCalculator') ||
     !isApprovedComponentKey('CellPhonePlanCalculator') ||
     !isApprovedComponentKey('CollegeCostCalculator') ||
+    !isApprovedComponentKey('DreamComeTrueCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||
