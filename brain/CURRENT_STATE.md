@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Mega Millions Payout Calculator live at `/tools/mega-millions-payout-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Millionaire Calculator live at `/tools/millionaire-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Millionaire Calculator (`/tools/millionaire-calculator`):** Live client-side time-to-goal savings tool (`componentKey: 'MillionaireCalculator'`, catalog `6af46f10a27d8d1d4e990102`, `nameKey` `millionaire calculator`). Screenshot-first (ADR-023): target; initial; rate; compound frequency (incl. continuous); deposits; begin/end timing; duration; stacked growth chart; inflation PV. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $1M · $20k · 4% monthly · $1k end → ~**35 years**.
 - **Mega Millions Payout Calculator (`/tools/mega-millions-payout-calculator`):** Live client-side jackpot payout comparator (`componentKey: 'MegaMillionsPayoutCalculator'`, catalog `6af46f10a27d8d1d4e990101`, `nameKey` `mega millions payout calculator`). Screenshot-first (ADR-023): advertised jackpot; annuity rate; filing status; US state/DC; lump-sum %; payout comparison (gross/federal/state/total/net); 30 graduated annuity schedule with per-payment tax; TY 2025 federal progressive + state none/flat/progressive configs. Fixed USD (no currency selector / no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $201M · 52% → lump **$104,520,000**; A₁ = J×0.05/((1.05)³⁰−1).
 - **Long Term Care Calculator (`/tools/long-term-care-calculator`):** Live client-side care-cost projector (`componentKey: 'LongTermCareCalculator'`, catalog `6af46f10a27d8d1d4e990100`, `nameKey` `long term care calculator`). Screenshot-first (ADR-023): per-day/per-month rate → annual baseline (present-year, no double-count); inflation geometric total + annual projection. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $7,500/mo · 4% · 5y → total ≈ **$487,469.03**.
 - **Lifetime Earnings Calculator (`/tools/lifetime-earnings-calculator`):** Live client-side career income projector (`componentKey: 'LifetimeEarningsCalculator'`, catalog `6af46f10a27d8d1d4e9900ff`, `nameKey` `lifetime earnings calculator`). Screenshot-first (ADR-023): current/retirement age → working years; annual salary + raise % → geometric lifetime earnings + year projection table. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: age 25→65 · $100k · 5% → LE = **$100,000×((1.05)^40−1)/0.05**.

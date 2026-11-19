@@ -3346,6 +3346,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MegaMillionsPayoutCalculator,
     })),
   ),
+  MillionaireCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/millionaire/MillionaireCalculator'
+    ).then((mod) => ({
+      default: mod.MillionaireCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

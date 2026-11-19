@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Millionaire Calculator
+- **Summary:** Shipped Millionaire Calculator on existing catalog slug `millionaire-calculator` (`MillionaireCalculator`, catalog `6af46f10a27d8d1d4e990102`, preserved `nameKey` `millionaire calculator`). Screenshot-first (ADR-023): target/initial/rate/compound frequency/deposits/timing; solve periods to goal; growth chart; inflation-adjusted PV. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** FV=PV(1+i)ⁿ+PMT×((1+i)ⁿ−1)/i (×(1+i) if beginning); i=r/m (continuous: e^(r/m)−1); n from closed form; PV_real=FV/(1+f)^t.
+- **Example:** $1,000,000 · $20,000 · 4% monthly · $1,000 end → ~**35 years**.
+- **Important Files:** `frontend/src/tools/calculators/millionaire/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Mega Millions Payout Calculator
 - **Summary:** Shipped Mega Millions Payout Calculator on existing catalog slug `mega-millions-payout-calculator` (`MegaMillionsPayoutCalculator`, catalog `6af46f10a27d8d1d4e990101`, preserved `nameKey` `mega millions payout calculator`). Screenshot-first (ADR-023): jackpot, annuity rate, filing status, state/DC, lump-sum %; lump vs annuity tax comparison; 30-payment graduated schedule with per-payment federal/state tax (TY 2025). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Fixed USD (no FX / no denomination selector).
 - **Formulas:** L=J×P/100; A₁=J×g/((1+g)³⁰−1) (or J/30 when g=0); Aₙ=A₁(1+g)ⁿ⁻¹; progressive federal + state none/flat/progressive.
