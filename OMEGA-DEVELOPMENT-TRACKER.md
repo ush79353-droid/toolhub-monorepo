@@ -58,7 +58,7 @@ Audit pending: 36
 | 38 | Yearly Wage Calculator | DEVELOPED | AUDIT 83d9a878 | 6f283076 | 1625db38 | 0d9bd6cf (+registry absorbed into later concurrent commits; HEAD has full registration) | — | `YearlyWageCalculator`; slug `yearly-wage-calculator`; Mongo `6af46f0fa27d8d1d4e99004a`; Phase 2 FX; indexable false |
 
 | 39 | EV to Sales Calculator — Enterprise Value to Sales | DEVELOPED | AUDIT PENDING | 5de33ac6 | 172eae50 | 4878b425 | Completed Tools | `EvToSalesCalculator`; slug `ev-to-sales-calculator-enterprise-value-to-sales`; Mongo `6af46f0fa27d8d1d4e990023`; Phase 2 FX; indexable false |
-| 40 | Lease Mileage Calculator | DEVELOPED | AUDIT PENDING | 0e609ddd | 2d65b710 (+b737f067) | (pending commit 3) | In Progress → Completed Tools | `LeaseMileageCalculator`; slug `lease-mileage-calculator`; Mongo `6af46f0fa27d8d1d4e990012`; Phase 2 FX; indexable false |
+| 40 | Lease Mileage Calculator | DEVELOPED | AUDIT PENDING | 0e609ddd | 2d65b710 (+b737f067) | bf5456c6 | Completed Tools | `LeaseMileageCalculator`; slug `lease-mileage-calculator`; Mongo `6af46f0fa27d8d1d4e990012`; Phase 2 FX; indexable false |
 
 | 41 | Marginal Revenue Calculator | DEVELOPED | AUDIT PENDING | c1adcd41 | 559980a3 | 300a24de | Completed Tools | `MarginalRevenueCalculator`; slug `marginal-revenue-calculator`; Mongo `6af46f0fa27d8d1d4e99001e`; Phase 2 FX; indexable false |
 
@@ -66,9 +66,12 @@ Audit pending: 36
 
 | 43 | Ohio Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 3be92376 | af2a603f | af4c7591 | Completed Tools | `OhioSalesTaxCalculator`; unavailable-rate (no OH ZIP tax table); Mongo `6af46f0fa27d8d1d4e99002b`; indexable false |
 | 41 | Margin and Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 42ba884d | a44097dc | f51294bf (reg absorbed into concurrent Ohio reg commit; HEAD has full MST registration) | Completed Tools | `MarginAndSalesTaxCalculator`; slug `margin-and-sales-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990029` active; indexable false; Phase 2 FX |
-| 44 | Return on Sales Calculator | DEVELOPED | AUDIT PENDING | f6ee9195 | 84f312c8 | (pending) | Completed Tools | `ReturnOnSalesCalculator`; slug `return-on-sales-calculator`; Mongo `6af46f0fa27d8d1d4e990025`; Phase 2 FX; indexable false |
+| 44 | Return on Sales Calculator | DEVELOPED | AUDIT PENDING | f6ee9195 | 84f312c8 | (pending commit 3) | Completed Tools | `ReturnOnSalesCalculator`; slug `return-on-sales-calculator`; Mongo `6af46f0fa27d8d1d4e990025` active; Phase 2 FX; indexable false |
 
 ## Session Log
+
+- 2026-11-19 (this agent): Lease Calculator DEVELOPED (98bab42b / 7f1bd5b0 / 29908c83). Revenue Calculator DEVELOPED ( a88c118 / cb04cee / d6bb0538). Mongo active; indexable false. Folders moved to Completed Tools. Temporary files cleaned: YES.
+- 2026-11-19 (this agent): Marginal Revenue DEVELOPED; Price to Sales BLOCKED (empty prompt); Refinance DEVELOPED (feae7e7/4e439a67/48c5678+766b4339).
 - 2026-11-19 (this agent): Margin and Sales Tax DEVELOPED (`42ba884d` / `a44097dc` / reg via `f51294bf`). Mongo `6af46f0fa27d8d1d4e990029` active; indexable false. Moved to Completed Tools. Next: claim remaining Tools alphabetically.
 - 2026-11-19 (this agent): Ohio Sales Tax DEVELOPED (`3be92376` / `af2a603f` / `af4c7591`) unavailable-rate; EV to Sales also completed earlier this session.
 - 2026-11-19 (this agent): Claimed Price to Sales Ratio Calculator → BLOCKED (empty PROMPT.txt). Retained in In Progress.
