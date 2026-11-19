@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Cell Phone Plan Calculator
+- **Summary:** Shipped Cell Phone Plan Calculator on existing catalog slug `cell-phone-plan-calculator` (`CellPhonePlanCalculator`, catalog `6af46f10a27d8d1d4e9900f8`, preserved `nameKey` `cell phone plan calculator`). Screenshot-first (ADR-023): contract duration + savings APR; buy outright vs carrier phone plan; invest phone price with monthly withdraw-then-compound; interest, effective carrier cost, recommendation / infeasible. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** C₁=P+B₁N; W=max(0,B₂−B₁); each month withdraw W then interest on remainder (matches Omni $35.73); C₂=B₂N−Interest; Difference=C₁−C₂.
+- **Example:** $800 · 24 mo · $20 / $50 · 4% → interest ≈ $35.73 · carrier $1,164.27 · cheaper by ≈ $115.73.
+- **Important Files:** `frontend/src/tools/calculators/cell-phone-plan/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Car Affordability Calculator
 - **Summary:** Shipped Car Affordability Calculator on existing catalog slug `car-affordability-calculator` (`CarAffordabilityCalculator`, catalog `6af46f10a27d8d1d4e9900f7`, preserved `nameKey` `car affordability calculator`). Screenshot-first (ADR-023): affordable monthly payment + cash + trade-in + APR + loan term → max loan / max car value / interest; Additional options for sales tax and fixed fees with mathematically correct sticker-price solve; down payment allocates available cash only. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** L=P×(1−(1+r)^(−n))/r (r=APR/12); L=P×n when APR=0; MaxCar=L+cash+trade-in; with tax/fees: price=(budget−fees)/(1+tax); Interest=P×n−L.
