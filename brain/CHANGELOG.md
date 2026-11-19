@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Car Refinance Calculator
+- **Summary:** Shipped Car Refinance Calculator on existing catalog slug `car-refinance-calculator` (`CarRefinanceCalculator`, catalog `6af46f0fa27d8d1d4e990019`, preserved `nameKey` `car refinance calculator`). Screenshot-first (ADR-023): Current loan (estimate by remaining term or monthly payment; balance; rate; optional due date/monthly compounding) + Loan refinancing (new term/rate; cash in/out; optional fees upfront or financed) → comparison table (loan amount, monthly payment, rate, term, total interest, total payments) plus savings/cost explanation. Independent Phase 2 FX on money fields; rates/terms/dates never convert. Refinance / Mortgage Refinance / Cash-Out Refinance siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** Monthly Rate = APR/1200; Payment = P×r/(1−(1+r)^(-n)); 0% → P/n. Cash out adds to new principal; cash in reduces it. Financed fees add to principal; upfront fees add to new total payments only.
+- **Example:** 32,000 · 6 yrs · 8.5% vs 5 yrs · 4.5% → current pay ≈ **568.91** · interest ≈ **8,961.40**; new pay ≈ **596.58** · interest ≈ **3,794.60**.
+- **Important Files:** `frontend/src/tools/calculators/car-refinance/*`, registry, sitemap, FX slug lists, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts` (not run this session per queue rules). Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Commercial Lease Calculator
 - **Summary:** Shipped Commercial Lease Calculator on existing catalog slug `commercial-lease-calculator` (`CommercialLeaseCalculator`, catalog `6af46f0fa27d8d1d4e990011`, preserved `nameKey` `commercial lease calculator`). Screenshot-first (ADR-023): area m²/ft²; base rate + operating expenses (FX + area unit + yr/mo); total rental rate; rent (FX + yr/mo); agent fee % of N years of annual rent. Independent Phase 2 FX on money fields; area/period/% never convert. Lease / Auto Lease / Car Lease siblings untouched. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**.
 - **Formulas:** Total rate = Base + OpEx (normalized to currency / m² / year); Annual rent = Total rate × area m²; Fee = Annual × years × % / 100. 1 ft² = 0.09290304 m².

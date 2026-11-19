@@ -58,6 +58,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'capital-gains-yield-calculator',
   'car-lease-calculator',
   'car-loan-emi-calculator',
+  'car-refinance-calculator',
   'commercial-lease-calculator',
   'compound-growth-calculator',
   'compound-interest-calculator',

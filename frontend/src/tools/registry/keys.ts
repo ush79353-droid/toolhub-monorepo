@@ -445,7 +445,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'CapitalGainsYieldCalculator',
   'CarInterestCalculator',
   'CarLeaseCalculator',
-  'CarLoanEmiCalculator',
+  'CarLoanEmiCalculator',  'CarRefinanceCalculator',
+
   'LoanRepaymentCalculator',
   'CarriedInterestCalculator',
   'CashBackOrLowInterestCalculator',
@@ -1125,7 +1126,8 @@ export const REGISTERED_COMPONENT_KEYS = [
   'CapitalGainsYieldCalculator',
   'CarInterestCalculator',
   'CarLeaseCalculator',
-  'CarLoanEmiCalculator',
+  'CarLoanEmiCalculator',  'CarRefinanceCalculator',
+
   'LoanRepaymentCalculator',
   'CarriedInterestCalculator',
   'CashBackOrLowInterestCalculator',

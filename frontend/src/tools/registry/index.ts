@@ -2453,6 +2453,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CarLoanEmiCalculator,
     })),
   ),
+  CarRefinanceCalculator: lazyTool(() =>
+    import('@/tools/calculators/car-refinance/CarRefinanceCalculator').then(
+      (mod) => ({
+        default: mod.CarRefinanceCalculator,
+      })
+    ),
+  ),
   CarriedInterestCalculator: lazyTool(() =>
     import('@/tools/calculators/carried-interest/CarriedInterestCalculator').then(
       (mod) => ({
