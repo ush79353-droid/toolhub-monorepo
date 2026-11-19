@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add TRIR Calculator
+- **Summary:** Shipped TRIR Calculator on existing catalog slug `trir-calculator` (`TrirCalculator`, catalog `6af46f0fa27d8d1d4e9900bc`, preserved `nameKey` `trir calculator`). Screenshot-first (ADR-023): hours worked, recordable injuries, TRIR; reverse hours/estimated cases; illustrative low/moderate/high bands with disclaimer. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
+- **Formulas:** TRIR = (I × 200,000) / H; Hours = (I × 200,000) / TRIR; Estimated I = TRIR × H / 200,000.
+- **Example:** 2 cases · 2,000,000 hours → 0.20; 20 / 1,000,000 → 4.00; 50 / 1,000,000 → 10.00; 0 cases → 0.00.
+- **Important Files:** `frontend/src/tools/calculators/trir/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Remote vs. On-Location Workers Calculator
 - **Summary:** Shipped Remote vs. On-Location Workers Calculator on existing catalog slug `remote-vs-on-location-workers-calculator` (`RemoteVsOnLocationWorkersCalculator`, catalog `6af46f0fa27d8d1d4e9900b4`, preserved `nameKey` `remote vs. on-location workers calculator`). Screenshot-first (ADR-023): period units; remote per-employee costs; on-location office-level costs with lease/own; extra expense rows; frequency→monthly normalization; denomination-only CurrencySelect. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
 - **Formulas:** Remote = N×A + N×R_monthly×T; On-location = O + (lease_monthly? + R_office)×T; per-employee = total/N when N>0; difference = TC_on − TC_remote.

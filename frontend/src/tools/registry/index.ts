@@ -3237,6 +3237,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RemoteVsOnLocationWorkersCalculator,
     })),
   ),
+  TrirCalculator: lazyTool(() =>
+    import('@/tools/calculators/trir/TrirCalculator').then((mod) => ({
+      default: mod.TrirCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
