@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { AUSTRALIA_TAX_CUTS_FAQS } from './content';
+import { GST_CALCULATOR_HREF } from './types';
 
 export function AustraliaTaxCutsGuideArticle() {
   return (
@@ -36,8 +38,16 @@ export function AustraliaTaxCutsGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         For official Australian income tax guidance, use ATO publications and tools. On this site,
-        the notice points toward the GST Calculator catalog entry as an alternative finance tool —
-        not as a substitute for ATO income tax advice.
+        try our{' '}
+        <Link
+          href={GST_CALCULATOR_HREF}
+          className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+        >
+          GST Calculator
+        </Link>{' '}
+        (catalog slug <code>gst-calculator</code>) as the screenshot alternative — not as a
+        substitute for ATO income tax advice. That GST catalog row may still be undeveloped until it
+        is registered and activated separately.
       </p>
 
       <h2
