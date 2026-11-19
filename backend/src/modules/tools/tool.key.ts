@@ -186,6 +186,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CcfToThermsCalculator',
   'NaturalGasConverter',
   'NaturalRateOfUnemploymentCalculator',
+  'UnemploymentCalculator',
   'CentsToDollarsCalculator',
   'NmToJoulesCalculator',
   'CgsSystemOfUnitsConverter',
@@ -405,6 +406,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SafetyStockCalculator',
   'StockCalculator',
   'StockAverageCalculator',
+  'StockSplitCalculator',
   'CommercialLeaseCalculator',
   'CommissionCalculator',
   'SalesCommissionCalculator',
@@ -675,6 +677,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'StudentLoanRepaymentCovidCalculator',
   'StimulusCheck40kCalculator',
   'CaresActUnemploymentBenefitCalculator',
+  'LwaUnemploymentBenefitCalculator',
   'CashActStimulusCalculator',
   'SecondStimulus900BillionCalculator',
   'AmericanRescuePlanStimulusCalculator',
@@ -842,6 +845,7 @@ if (isDirect) {
     !isApprovedComponentKey('CcfToThermsCalculator') ||
     !isApprovedComponentKey('NaturalGasConverter') ||
     !isApprovedComponentKey('NaturalRateOfUnemploymentCalculator') ||
+    !isApprovedComponentKey('UnemploymentCalculator') ||
     !isApprovedComponentKey('CentsToDollarsCalculator') ||
     !isApprovedComponentKey('NmToJoulesCalculator') ||
     !isApprovedComponentKey('CgsSystemOfUnitsConverter') ||
@@ -1061,6 +1065,7 @@ if (isDirect) {
     !isApprovedComponentKey('SafetyStockCalculator') ||
     !isApprovedComponentKey('StockCalculator') ||
     !isApprovedComponentKey('StockAverageCalculator') ||
+    !isApprovedComponentKey('StockSplitCalculator') ||
     !isApprovedComponentKey('CommercialLeaseCalculator') ||
     !isApprovedComponentKey('CommissionCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
@@ -1330,6 +1335,7 @@ if (isDirect) {
     !isApprovedComponentKey('StudentLoanRepaymentCovidCalculator') ||
     !isApprovedComponentKey('StimulusCheck40kCalculator') ||
     !isApprovedComponentKey('CaresActUnemploymentBenefitCalculator') ||
+    !isApprovedComponentKey('LwaUnemploymentBenefitCalculator') ||
     !isApprovedComponentKey('CashActStimulusCalculator') ||
     !isApprovedComponentKey('SecondStimulus900BillionCalculator') ||
     !isApprovedComponentKey('AmericanRescuePlanStimulusCalculator') ||

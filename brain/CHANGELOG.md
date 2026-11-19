@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-19 — Add Unemployment Benefit Calculator - Lost Wages Assistance (LWA)
+- **Summary:** Shipped historical informational page on existing catalog slug `unemployment-benefit-calculator-lost-wages-assistance-lwa` (`LwaUnemploymentBenefitCalculator`, catalog `6af46f0fa27d8d1d4e990036`, preserved `nameKey` `unemployment benefit calculator - lost wages assistance (lwa)`). Screenshot-first (ADR-023): no benefit inputs or payout estimates. Explains LWA was a temporary 2020 FEMA Other Needs Assistance program authorized by presidential memorandum (not an “LWA Act”), related to earlier CARES Act FPUC, and ended (FEMA: Dec 27, 2020). Links to live Loan Calculator (`/tools/loan-calculator`) for installment/interest estimates — Personal Loan catalog slug exists but is undeveloped. No FX / not in `CURRENCY_CONVERSION_SLUGS`. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Important Files:** `frontend/src/tools/calculators/lwa-unemployment-benefit/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts` (not run this session per queue rules). Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Unemployment Benefit Calculator - CARES Act
 - **Summary:** Shipped historical informational page on existing catalog slug `unemployment-benefit-calculator-cares-act` (`CaresActUnemploymentBenefitCalculator`, catalog `6af46f0fa27d8d1d4e990034`, preserved `nameKey` `unemployment benefit calculator - cares act`). Screenshot-first (ADR-023): no benefit inputs, payout estimates, or eligibility forms. Explains CARES Act (Pub. L. 116-136) pandemic unemployment relief is not available for current claims; links to Unemployment Calculator (`/tools/unemployment-calculator-unemployment-rate`) for unemployment-rate math. Official Act wording uses “Relief” (not screenshot “Response”). No FX / not in `CURRENCY_CONVERSION_SLUGS`. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Important Files:** `frontend/src/tools/calculators/cares-act-unemployment-benefit/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.

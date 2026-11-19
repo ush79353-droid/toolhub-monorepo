@@ -248,6 +248,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NaturalGasConverter: () => import('@/tools/calculators/natural-gas/detail'),
   NaturalRateOfUnemploymentCalculator: () =>
     import('@/tools/calculators/natural-rate-of-unemployment/detail'),
+  UnemploymentCalculator: () => import('@/tools/calculators/unemployment/detail'),
   CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
   NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
   CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),
@@ -496,6 +497,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   StockCalculator: () => import('@/tools/calculators/stock/detail'),
   StockAverageCalculator: () =>
     import('@/tools/calculators/stock-average/detail'),
+  StockSplitCalculator: () =>
+    import('@/tools/calculators/stock-split/detail'),
   CommercialLeaseCalculator: () =>
     import('@/tools/calculators/commercial-lease/detail'),
   CommissionCalculator: () =>
@@ -1000,6 +1003,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/stimulus-check-40k/detail'),
   CaresActUnemploymentBenefitCalculator: () =>
     import('@/tools/calculators/cares-act-unemployment-benefit/detail'),
+  LwaUnemploymentBenefitCalculator: () =>
+    import('@/tools/calculators/lwa-unemployment-benefit/detail'),
   CashActStimulusCalculator: () =>
     import('@/tools/calculators/cash-act-stimulus/detail'),
   SecondStimulus900BillionCalculator: () =>

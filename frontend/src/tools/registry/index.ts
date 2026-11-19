@@ -1069,6 +1069,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NaturalUnemploymentCalculator,
     })),
   ),
+  UnemploymentCalculator: lazyTool(() =>
+    import('@/tools/calculators/unemployment/UnemploymentCalculator').then((mod) => ({
+      default: mod.UnemploymentCalculator,
+    })),
+  ),
   CentsToDollarsCalculator: lazyTool(() =>
     import('@/tools/calculators/cents-to-dollars/CentsToDollarsCalculator').then((mod) => ({
       default: mod.CentsToDollarsCalculator,
@@ -2206,6 +2211,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/stock-average/StockAverageCalculator').then(
       (mod) => ({
         default: mod.StockAverageCalculator,
+      }),
+    ),
+  ),
+  StockSplitCalculator: lazyTool(() =>
+    import('@/tools/calculators/stock-split/StockSplitCalculator').then(
+      (mod) => ({
+        default: mod.StockSplitCalculator,
       }),
     ),
   ),
@@ -3824,6 +3836,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/cares-act-unemployment-benefit/CaresActUnemploymentBenefitCalculator'
     ).then((mod) => ({
       default: mod.CaresActUnemploymentBenefitCalculator,
+    })),
+  ),
+  LwaUnemploymentBenefitCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/lwa-unemployment-benefit/LwaUnemploymentBenefitCalculator'
+    ).then((mod) => ({
+      default: mod.LwaUnemploymentBenefitCalculator,
     })),
   ),
   CashActStimulusCalculator: lazyTool(() =>
