@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Commercial Lease Calculator
+- **Summary:** Shipped Commercial Lease Calculator on existing catalog slug `commercial-lease-calculator` (`CommercialLeaseCalculator`, catalog `6af46f0fa27d8d1d4e990011`, preserved `nameKey` `commercial lease calculator`). Screenshot-first (ADR-023): area m²/ft²; base rate + operating expenses (FX + area unit + yr/mo); total rental rate; rent (FX + yr/mo); agent fee % of N years of annual rent. Independent Phase 2 FX on money fields; area/period/% never convert. Lease / Auto Lease / Car Lease siblings untouched. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**.
+- **Formulas:** Total rate = Base + OpEx (normalized to currency / m² / year); Annual rent = Total rate × area m²; Fee = Annual × years × % / 100. 1 ft² = 0.09290304 m².
+- **Example:** 100 m² · 1,000 + 200 /m²/yr · 6% × 2 yrs → rent **120,000** · fee **14,400**.
+- **Important Files:** `frontend/src/tools/calculators/commercial-lease/*`, registry, sitemap, FX slug lists, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts` (not run per queue). Mongo activation via `tool:assign` without leaving `indexable` true. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Car Lease Calculator
 - **Summary:** Shipped Car Lease Calculator on existing catalog slug `car-lease-calculator` (`CarLeaseCalculator`, catalog `6af46f0fa27d8d1d4e990010`, preserved `nameKey` `car lease calculator`). Screenshot-first (ADR-023): Basic (MSRP, negotiated price, term, sales tax %, residual factor %, money factor) + Additional (dealer/registration fees, down, trade-in, other reductions) → Results (net cap, residual, monthly depreciation/lease fee/base/tax/payment). Fees financed into cap cost; sales tax monthly on base. Independent Phase 2 FX; %/MF/term never convert. Auto Lease / Lease siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Formulas:** Residual = MSRP×RF/100; Net Cap = Negotiated + Fees − Down − Trade-in − Other; Dep/mo = (Net Cap − Residual)/n; Lease fee/mo = (Net Cap + Residual)×MF; Base = Dep + Fee; Tax = Base×tax%; Payment = Base + Tax.

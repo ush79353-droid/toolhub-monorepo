@@ -2,14 +2,14 @@
 
 ## Summary
 
-Total discovered: 51
+Total discovered: 50
 Newly developed: 29
 Already developed: 1
 Development failed: 0
-Skipped / blocked: 1
-Remaining pending: ~20
+Skipped / blocked: 2
+Remaining pending: ~18 (plus in-progress claims by other agents)
 Audit completed: 0
-Audit pending: 30+
+Audit pending: 30
 
 ## Calculator Register
 
@@ -43,14 +43,14 @@ Audit pending: 30+
 | 26 | Dividend Yield Calculator | DEVELOPED | AUDIT PENDING | e225cf05 | 7b809a04 | 7dbe8198 | Completed Tools | `DividendYieldCalculator` |
 | 27 | Hourly to Annual Salary Calculator | DEVELOPED | AUDIT PENDING | 73ed83c0 | 86bdc30d | 0d012594 | Completed Tools | `HourlyToAnnualSalaryCalculator` |
 | 28 | Hourly to Salary - Wage Calculator | DEVELOPED | AUDIT PENDING | db059afb | 579c85fe | 46c7bb6a | Completed Tools | `HourlyToSalaryWageCalculator`; prompt recovered from misfiled sibling |
-| 29 | Hourly to Salary with Overtime Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Cursor Auto; prompt=Wage (duplicate), screenshot≈SalaryWithOvertime (live); catalog `6af46f0fa27d8d1d4e990003` undeveloped — do not reclaim |
+| 29 | Hourly to Salary with Overtime Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | prompt.txt conflicts with Overtime screenshot/folder (TOOL-451) |
 | 30 | Quiz Dividend Calculator | DEVELOPED | AUDIT PENDING | 71ed676f | 7ee0deac | b6bac9e4 | Completed Tools | `QuizDividendCalculator` |
-| 31 | Auto Lease Calculator | DEVELOPED | AUDIT PENDING | 836bfb95 | d735d570 | (pending) | Completed Tools | `AutoLeaseCalculator`; slug `auto-lease-calculator` |
+| 31 | California Sales Tax Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | No verified CDTFA/ZIP tax dataset; must not invent rates (TOOL-497) |
+| 32 | Commercial Lease Calculator | DEVELOPED | AUDIT PENDING | 0d994100 | 017cde44 | 22f51bea | Completed Tools | `CommercialLeaseCalculator`; slug `commercial-lease-calculator`; Mongo `6af46f0fa27d8d1d4e990011` active, indexable false |
 
 ## Session Log
 
 - 2026-11-18/19: Autonomous development queue on `D:\Project\ToolHub` (omega-calculators-frontend/backend). Local commits only; no push/pull/fetch.
 - Mid-queue folder arrivals (salary/dividend/hourly/quiz) appended without renumbering.
-- 2026-11-19: Exclusive folder claiming (`Tools` → `In Progress`). Overtime #29 re-claimed, confirmed BLOCKED, kept in `In Progress` with `AGENT_STATUS.md`.
-- 2026-11-19: Claimed Auto Lease (#31); developed and activated; Lease/Car Lease siblings left for other agents.
-- Temporary files cleaned: YES (task temps deleted; queue tracker + Completed Tools / In Progress retained outside app source where applicable).
+- 2026-11-19 (continued): Claimed California Sales Tax → BLOCKED (missing ZIP/CDTFA data). Claimed Commercial Lease → DEVELOPED (3 local commits). Other agents hold Auto Lease / Car Lease / Car Refinance / Overtime in `In Progress`.
+- Temporary files cleaned: YES (task temps deleted; queue tracker + Completed Tools retained outside app source commits).

@@ -29,6 +29,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-497` | California Sales Tax Calculator blocked: authorized catalog `california-sales-tax-calculator` (`6af46f0fa27d8d1d4e990027`) exists, but no verified CDTFA/ZIP jurisdiction tax-rate dataset or authorized tax API is in the repo — must not invent ZIP rates (owned in `In Progress`; do not reclaim) | Cursor | Blocked | `In Progress/California Sales Tax Calculator` | `TOOL-01` |
 | `TOOL-451` | Hourly to Salary with Overtime Calculator blocked: prompt is Wage Calculator (already live) while screenshot matches Salary Calculator With Overtime (already live); separate undeveloped catalog `hourly-to-salary-with-overtime-calculator` (`6af46f0fa27d8d1d4e990003`) must not be activated as a near-duplicate — owned in `In Progress` by Cursor Auto; do not reclaim | Cursor | Blocked | `In Progress/Hourly to Salary with Overtime Calculator` | `TOOL-01` |
 
 ---
@@ -37,6 +38,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-496` | Implement Commercial Lease Calculator on existing slug `commercial-lease-calculator` with area m²/ft², base rate + OpEx (FX/area/period), total rate, rent, agent fee % of N years of annual rent, independent Phase 2 FX, guide/FAQ, and verified activation (leave Lease / Auto Lease / Car Lease siblings untouched; **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/commercial-lease/*`, registry, sitemap, FX slug lists, `backend/src/modules/tools/tool.key.ts`, `brain/*` | — |
 | `TOOL-495` | Implement Car Lease Calculator on existing slug `car-lease-calculator` with MSRP, negotiated price, residual factor, money factor, financed fees, monthly sales tax, independent Phase 2 FX, guide/FAQ, and verified activation (leave Auto Lease / Lease siblings untouched; **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/car-lease/*`, registry, sitemap, FX slug lists, `backend/src/modules/tools/tool.key.ts`, `brain/*` | — |
 | `TOOL-494` | Implement Auto Lease Calculator on existing slug `auto-lease-calculator` with Total Price / Monthly Payment tabs, money factor or APR, residual, down, trade-in, sales tax on monthly payment, USD fixed, guide/FAQ, and verified activation (leave Lease / Car Lease siblings untouched; **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/auto-lease/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*` | — |
 | `TOOL-493` | Implement Zakat Calculator on existing slug `zakat-calculator` with gold 87.48 g / silver 612.36 g / custom Nisab, 2.5% of net Zakatable wealth, Hawl note, dated metal reference prices plus manual override and ADR-021 conversion, guide/FAQ, and verified activation (preserve nameKey `zakat calculator`, isFeatured false, **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/zakat/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `brain/*` | — |
