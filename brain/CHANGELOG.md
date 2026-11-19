@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Subscription Waste Calculator
+- **Summary:** Shipped Subscription Waste Calculator on existing catalog slug `subscription-waste-calculator` (`SubscriptionWasteCalculator`, catalog `6af46f10a27d8d1d4e99010a`, preserved `nameKey` `subscription waste calculator`). Screenshot-first (ADR-023): eight categories; dynamic add/remove; billing normalization; cancel → potential savings; monthly/annual totals. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (no FX).
+- **Formulas:** monthly=amount|amount/12|(amount×52)/12|amount/3; TotalMonthly=Σ; Annual=Monthly×12; Savings=Σ cancelled monthly.
+- **Example:** Netflix $20 + Prime Video $45 + Spotify $10 + cloud $120/yr → **$85/mo** · **$1,020/yr**; cancel Spotify → savings **$10/mo** · **$120/yr**.
+- **Important Files:** `frontend/src/tools/calculators/subscription-waste/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Silver Melt Calculator
 - **Summary:** Shipped Silver Melt Calculator on existing catalog slug `silver-melt-calculator` (`SilverMeltCalculator`, catalog `6af46f10a27d8d1d4e990109`, preserved `nameKey` `silver melt calculator`). Screenshot-first (ADR-023): weight units incl. troy + avoirdupois oz; purity presets/custom; pure silver mass; melt value; expandable alloy (remainder or manual other-metal weight + price). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (manual spot; no FX).
 - **Formulas:** g=w×unit; pure=g×purity%/100; melt=pure×(price/GRAMS_PER[unit]); other=other_g×other_price/g; combined=melt+other. Troy ozt=31.1034768g; oz=28.349523125g.

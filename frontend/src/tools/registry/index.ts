@@ -3398,6 +3398,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  SubscriptionWasteCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/subscription-waste/SubscriptionWasteCalculator'
+    ).then((mod) => ({
+      default: mod.SubscriptionWasteCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

@@ -884,6 +884,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/scrap-silver/detail'),
   SilverMeltCalculator: () =>
     import('@/tools/calculators/silver-melt/detail'),
+  SubscriptionWasteCalculator: () =>
+    import('@/tools/calculators/subscription-waste/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
