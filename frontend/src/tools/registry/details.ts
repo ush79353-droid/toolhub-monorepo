@@ -860,6 +860,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EmergencyFundCalculator: () =>
     import('@/tools/calculators/emergency-fund/detail'),
   FinanceCalculator: () => import('@/tools/calculators/finance/detail'),
+  FireCalculator: () => import('@/tools/calculators/fire/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

@@ -3315,6 +3315,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FinanceCalculator,
     })),
   ),
+  FireCalculator: lazyTool(() =>
+    import('@/tools/calculators/fire/FireCalculator').then((mod) => ({
+      default: mod.FireCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

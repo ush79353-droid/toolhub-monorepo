@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Finance Calculator live at `/tools/finance-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (FIRE Calculator live at `/tools/fire-calculator-financial-independence-retire-early`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **FIRE Calculator (`/tools/fire-calculator-financial-independence-retire-early`):** Live client-side early-retirement planner (`componentKey: 'FireCalculator'`, catalog `6af46f10a27d8d1d4e9900fd`, `nameKey` `fire calculator - financial independence retire early`). Screenshot-first (ADR-023): ages/income/expenses/savings/returns; 4% / custom SWR / duration FIRE number; required annual/monthly savings + rate; projection chart; conservative/moderate/aggressive scenarios. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: age 30→45 · $40k expenses · 2.5% inflation · 4% SWR → FIRE ≈ **$1,448,298**.
 - **Finance Calculator (`/tools/finance-calculator`):** Live client-side TVM solver (`componentKey: 'FinanceCalculator'`, catalog `6af46f10a27d8d1d4e9900fc`, `nameKey` `finance calculator`). Screenshot-first (ADR-023): five modes FV / PMT / I/Y / N / PV; payment + compounding frequency; end/beginning timing; results panel; value-over-time chart; payment schedule. Denomination-only CurrencySelect (no FX). Share/Calculate/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: PV $20,000 · PMT −$2,000 · 6% · N 10 → **FV ≈ −$9,455.36**.
 - **Emergency Fund Calculator (`/tools/emergency-fund-calculator`):** Live client-side emergency savings target tool (`componentKey: 'EmergencyFundCalculator'`, catalog `6af46f10a27d8d1d4e9900fb`, `nameKey` `emergency fund calculator`). Screenshot-first (ADR-023): average monthly expenses × months of coverage → emergency fund; annual/daily expense helpers; optional current-savings progress. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $2,500 × 6 → **$15,000**.
 - **Dream Come True Calculator (`/tools/dream-come-true-calculator`):** Live client-side goal savings timer (`componentKey: 'DreamComeTrueCalculator'`, catalog `6af46f10a27d8d1d4e9900fa`, `nameKey` `dream come true calculator`). Screenshot-first (ADR-023): dream price + initial savings + monthly savings + annual rate → months to goal (end-of-month FV / log formula, ceil); achieved / unreachable cases; stacked growth chart (initial / contributions / interest). Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $30k · $5k · $500/mo · 4% → **45 months** (3 years, 9 months).

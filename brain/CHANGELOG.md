@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add FIRE Calculator
+- **Summary:** Shipped FIRE Calculator on existing catalog slug `fire-calculator-financial-independence-retire-early` (`FireCalculator`, catalog `6af46f10a27d8d1d4e9900fd`, preserved `nameKey` `fire calculator - financial independence retire early`). Screenshot-first (ADR-023): retirement inputs; 4%/custom/duration FIRE number; required annual/monthly savings + rate; projection chart; scenarios. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** E_R=E₀(1+g)^N; FIRE=E_R/SWR (or duration PV); C=(FIRE−S₀(1+r)^N)/(((1+r)^N−1)/r).
+- **Example:** age 30→45 · $40k expenses · 2.5% inflation · 4% → FIRE ≈ **$1,448,298**.
+- **Important Files:** `frontend/src/tools/calculators/fire/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Finance Calculator
 - **Summary:** Shipped Finance Calculator on existing catalog slug `finance-calculator` (`FinanceCalculator`, catalog `6af46f10a27d8d1d4e9900fc`, preserved `nameKey` `finance calculator`). Screenshot-first (ADR-023): FV/PMT/I/Y/N/PV tabs; payment + compounding frequencies; end/beginning timing; chart + schedule. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** PV(1+r)^n + PMT(1+r·type)[((1+r)^n−1)/r] + FV = 0; r from nominal I/Y via compounding/payment frequencies; I/Y via Newton + bisection.

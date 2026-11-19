@@ -630,6 +630,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'dream-come-true-calculator',
   'emergency-fund-calculator',
   'finance-calculator',
+  'fire-calculator-financial-independence-retire-early',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',
