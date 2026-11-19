@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add VA Disability Calculator
+- **Summary:** Shipped VA Disability Calculator on existing catalog slug `va-disability-calculator` (`VaDisabilityCalculator`, catalog `6af46f10a27d8d1d4e99010e`, preserved `nameKey` `va disability calculator`). Screenshot-first (ADR-023): multiple 10% steps; 38 CFR 4.25 remaining-efficiency combine and nearest-10 rounding; 38 CFR 4.26 bilateral factor only for both arms, both legs, or an arm with a leg. Monthly estimate uses VA.gov rates effective **2025-12-01** (2026 pay). Dependents do not change the percentage. 10% and 20% ignore dependents. Activated with existing `isActive: true`. **`indexable` preserved false**. Fixed USD.
+- **Example:** 50% + 30% + 20% → exact **72** → rounded **70%** → veteran alone **$1,808.45**/month.
+- **Important Files:** `frontend/src/tools/calculators/va-disability/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add US Income Percentile Calculator
 - **Summary:** Shipped US Income Percentile Calculator on existing catalog slug `us-income-percentile-calculator` (`UsIncomePercentileCalculator`, catalog `6af46f10a27d8d1d4e99010d`, preserved `nameKey` `us income percentile calculator`). Screenshot-first (ADR-023): individual vs household; 2024 CPS ASEC money income. Household ranks interpolate Table A-4a thresholds (10th–95th) only. Person ranks use PINC-01 $2,500 bins for people 15+ with income and stop at the $100,000 open interval. **`isActive` left false** (admin-off row; no `--set-active`). **`indexable` preserved false**. Fixed USD.
 - **Sources:** P60-286 Table A-4a / A-2 (household median $83,730, mean $121,000). PINC-01 both sexes, all races (person median $46,440, mean $69,360).

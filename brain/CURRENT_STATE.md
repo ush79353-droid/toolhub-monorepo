@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (US Income Percentile Calculator registered at `/tools/us-income-percentile-calculator`, catalog `isActive` still false; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (VA Disability Calculator live at `/tools/va-disability-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **VA Disability Calculator (`/tools/va-disability-calculator`):** Live client-side combined-rating and compensation estimate (`componentKey: 'VaDisabilityCalculator'`, catalog `6af46f10a27d8d1d4e99010e`, `nameKey` `va disability calculator`). 38 CFR 4.25 whole-person combine, nearest-10 rounding (5 up), cap 100. Bilateral factor (38 CFR 4.26) only when both arms, both legs, or an arm and a leg are marked. Pay from VA.gov rates effective 2025-12-01. Dependents affect dollars at 30%+, not the percentage. **`indexable` left false**. Example: 50/30/20 → **72** exact → **70%** → **$1,808.45** alone.
 - **US Income Percentile Calculator (`/tools/us-income-percentile-calculator`):** Client-side 2024 CPS rank tool (`componentKey: 'UsIncomePercentileCalculator'`, catalog `6af46f10a27d8d1d4e99010d`, `nameKey` `us income percentile calculator`). Individual (PINC-01 bins) vs household (P60-286 Table A-4a). No invented tails. `isDeveloped: true`. **`isActive` left false** — public route stays off until an admin turns the row on. **`indexable` false**. Fixed USD.
 - **Unpaid Work Calculator (`/tools/unpaid-work-calculator`):** Live client-side household-labor valuation tool (`componentKey: 'UnpaidWorkCalculator'`, catalog `6af46f10a27d8d1d4e99010c`, `nameKey` `unpaid work calculator`). Screenshot-first (ADR-023): country (display currency only); hourly/weekly/monthly pay normalized at 40 h/week; ten activities with hours and editable illustrative rates; replacement cost vs opportunity cost; family shared hours and weekly outsourcing budget. Share/Calculate/Reload/Clear(confirm)/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: meals/cleaning/laundry/childcare/gardening → **36 h** · **$600/wk** · **$2,600/mo** · **$31,200/yr**.
 - **Trump Accounts Calculator (`/tools/trump-accounts-calculator`):** Live client-side child-account growth projector (`componentKey: 'TrumpAccountsCalculator'`, catalog `6af46f10a27d8d1d4e99010b`, `nameKey` `trump accounts calculator`). Screenshot-first (ADR-023): starting age (0–17); target age (default 18); starting balance; annual contribution; optimistic 10% / conservative 6% / pessimistic 4% scenarios; optional inflation; final balance / contributions / growth / real value; contributions-vs-growth pie. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear(confirm)/feedback/guide/FAQ/comparison. Activated; **`indexable` left false**. Example: age 0→18 · $1,000 · $5,000/yr · 6% · 2.5% inflation → final ≈ **$157,382.60** · real ≈ **$100,908.36**.

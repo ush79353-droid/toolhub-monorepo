@@ -833,6 +833,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/trump-accounts/detail'),
   TrumpsTaxesVsYourTaxesCalculator: () =>
     import('@/tools/calculators/trumps-taxes-vs-your-taxes/detail'),
+  VaDisabilityCalculator: () =>
+    import('@/tools/calculators/va-disability/detail'),
   VatCalculator: () => import('@/tools/calculators/vat/detail'),
   WeeklyPayCalculator: () => import('@/tools/calculators/weekly-pay/detail'),
   CombinedRatioCalculator: () => import('@/tools/calculators/combined-ratio/detail'),

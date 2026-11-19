@@ -609,6 +609,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'levered-free-cash-flow-calculator',
   'unlevered-free-cash-flow-calculator',
   'trumps-taxes-vs-your-taxes-calculator',
+  'va-disability-calculator',
   'vat-calculator',
   'weekly-pay-calculator',
   'combined-ratio-calculator',

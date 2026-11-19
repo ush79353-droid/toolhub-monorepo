@@ -3207,6 +3207,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TrumpsTaxesVsYourTaxesCalculator,
     })),
   ),
+  VaDisabilityCalculator: lazyTool(() =>
+    import('@/tools/calculators/va-disability/VaDisabilityCalculator').then(
+      (mod) => ({
+        default: mod.VaDisabilityCalculator,
+      }),
+    ),
+  ),
   VatCalculator: lazyTool(() =>
     import('@/tools/calculators/vat/VatCalculator').then((mod) => ({
       default: mod.VatCalculator,
