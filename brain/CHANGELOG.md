@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Stimulus Check Calculator (EIP1 / CARES)
+- **Summary:** Shipped Stimulus Check Calculator on existing catalog slug `stimulus-check-calculator` (`StimulusCheckCalculator`, catalog `6af46f0fa27d8d1d4e99004e`, preserved `nameKey` `stimulus check calculator`, pillar `6af451c1a27d8d1d4e98f97e`). Screenshot-first (ADR-023): US residency/SSN eligibility copy; filed 2019 taxes Yes/No; filing status Single/Married/HoH; kids; 2019 AGI USD; estimated historical payment. Fixed USD (no FX / not in `CURRENCY_CONVERSION_SLUGS`). Identified as first Economic Impact Payment (EIP1) under CARES Act / I.R.C. §6428: $1,200 / $2,400 + $500×kids under 17; 5% phase-out above $75k / $112.5k / $150k. Sources: 26 U.S.C. §6428, CRS IN11355, IRS EIP overview, P.L. 116-136. Second/third/proposal stimulus siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Single · 0 kids · AGI 75,000 → **$1,200**; AGI 87,000 → **$600**; married · 2 kids · AGI 150,000 → **$3,400**.
+- **Important Files:** `frontend/src/tools/calculators/stimulus-check/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Yearly Wage Calculator
 - **Summary:** Shipped Yearly Wage Calculator on existing catalog slug `yearly-wage-calculator` (`YearlyWageCalculator`, catalog `6af46f0fa27d8d1d4e99004a`, preserved `nameKey` `yearly wage calculator`, pillar `6af451c0a27d8d1d4e98f97c`, subPillar null). Screenshot-first (ADR-023): hours/week (40); weeks/year (0–52, default 52); hourly wage FX; yearly wage FX output; Net Salary flat tax % (default 12), net hourly FX, net yearly FX. Formulas: Yearly = Hourly × Hours × Weeks; Net Hourly = Hourly × (1 − Tax/100); Net Yearly = Yearly × (1 − Tax/100). Flat tax labeled simplified — not jurisdiction payroll. Dual `CURRENCY_CONVERSION_SLUGS`; hours/weeks/tax never convert. Annual Salary / Hourly Wage / Wage to Salary siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 500 PKR/hr · 40h · 52w · 12% tax → yearly **1,040,000** · net hourly **440** · net yearly **915,200**.
