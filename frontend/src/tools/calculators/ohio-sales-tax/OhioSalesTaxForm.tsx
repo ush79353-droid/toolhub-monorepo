@@ -1,0 +1,111 @@
+'use client';
+
+import type { ReactNode } from 'react';
+import { InfoTooltip } from '../auto-loan/InfoTooltip';
+import type { OhioSalesTaxFieldErrors, OhioSalesTaxInput } from './types';
+
+const labelClass =
+  'mb-1.5 flex items-center gap-1.5 text-[13px] font-medium text-accent';
+const inputClass =
+  'h-11 w-full min-w-0 bg-transparent px-3 text-sm tabular-nums text-accent outline-none';
+
+function FieldShell({
+  error,
+  children,
+}: {
+  error?: string;
+  children: ReactNode;
+}) {
+  return (
+    <div
+      className={`relative flex h-11 min-w-0 flex-1 items-center rounded-lg border border-border bg-white focus-within:ring-2 focus-within:ring-ring ${
+        error ? 'border-rose-400' : ''
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+
+interface OhioSalesTaxFormProps {
+  input: OhioSalesTaxInput;
+  errors: OhioSalesTaxFieldErrors;
+  onChange: (input: OhioSalesTaxInput) => void;
+}
+
+export function OhioSalesTaxForm({
+  input,
+  errors,
+  onChange,
+}: OhioSalesTaxFormProps) {
+  const set = (patch: Partial<OhioSalesTaxInput>) =>
+    onChange({ ...input, ...patch });
+
+  return (
+    <form
+      className="space-y-3.5"
+      noValidate
+      autoComplete="off"
+      onSubmit={(event) => event.preventDefault()}
+    >
+      <div>
+        <label className={labelClass} htmlFor="oh-sales-tax-purchase">
+          <span>Purchase amount</span>
+        </label>
+        <FieldShell error={errors.purchaseAmount}>
+          <span
+            className="shrink-0 pl-3 text-sm text-muted-foreground"
+            aria-hidden
+          >
+            $
+          </span>
+          <input
+            id="oh-sales-tax-purchase"
+            className={inputClass}
+            inputMode="decimal"
+            value={input.purchaseAmount}
+            placeholder="0.00"
+            aria-invalid={Boolean(errors.purchaseAmount)}
+            onChange={(e) => set({ purchaseAmount: e.target.value })}
+          />
+        </FieldShell>
+        {errors.purchaseAmount ? (
+          <p className="mt-1 text-xs text-rose-600">{errors.purchaseAmount}</p>
+        ) : null}
+      </div>
+
+      <div>
+        <label className={labelClass} htmlFor="oh-sales-tax-zip">
+          <span>ZIP code</span>
+          <InfoTooltip
+            label="ZIP code"
+            text="Enter a five-digit Ohio ZIP (43001–45999). ZIP codes can span multiple tax jurisdictions; this tool never invents a combined rate without a verified rate table."
+          />
+        </label>
+        <FieldShell error={errors.zipCode}>
+          <input
+            id="oh-sales-tax-zip"
+            className={inputClass}
+            inputMode="numeric"
+            maxLength={5}
+            value={input.zipCode}
+            placeholder="#####"
+            aria-invalid={Boolean(errors.zipCode)}
+            onChange={(e) =>
+              set({ zipCode: e.target.value.replace(/[^\d]/g, '').slice(0, 5) })
+            }
+          />
+        </FieldShell>
+        {errors.zipCode ? (
+          <p className="mt-1 text-xs text-rose-600">{errors.zipCode}</p>
+        ) : null}
+      </div>
+
+      {errors.form ? (
+        <p className="text-xs text-rose-600" role="alert">
+          {errors.form}
+        </p>
+      ) : null}
+    </form>
+  );
+}
