@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { StockSplitForm } from './StockSplitForm';
 import {
   createDefaultInput,
@@ -13,6 +26,10 @@ import {
   type StockSplitInput,
   type StockSplitResult,
 } from './types';
+import { validateStockSplitInput } from './validation';
+
+const FX_NOTE =
+  'Before and after share prices and portfolio values each have their own currency. Split math runs in the before-price currency; results convert for display. Share counts and the A-for-B ratio are never converted. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: StockSplitInput, b: StockSplitInput): boolean {
   return (
@@ -33,11 +50,13 @@ export function StockSplitCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<StockSplitInput>(() => defaults);
   const [input, setInput] = React.useState<StockSplitInput>(() => defaults);
-  const [errors] = React.useState<StockSplitFieldErrors>({});
-  const [result] = React.useState<StockSplitResult | null>(null);
+  const [errors, setErrors] = React.useState<StockSplitFieldErrors>({});
+  const [result, setResult] = React.useState<StockSplitResult | null>(null);
   const [conversionError, setConversionError] = React.useState<string | null>(
     null
   );
@@ -50,33 +69,85 @@ export function StockSplitCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const handleChange = (next: StockSplitInput) => {
-    setInput(next);
+  const apply = (next: StockSplitInput) => {
+    const validation = validateStockSplitInput(next, rates);
     setConversionError(null);
+    setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handleSharePriceBeforeCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.sharePriceBeforeCurrency) return;
-    setInput({ ...input, sharePriceBeforeCurrency: next });
-    setConversionError(null);
+    const converted = convertFieldAmount(
+      input.sharePriceBefore,
+      input.sharePriceBeforeCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      sharePriceBeforeCurrency: next,
+      sharePriceBefore: converted.text,
+    });
   };
 
   const handleSharePriceAfterCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.sharePriceAfterCurrency) return;
-    setInput({ ...input, sharePriceAfterCurrency: next });
-    setConversionError(null);
+    if (!canConvertPair(input.sharePriceBeforeCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({ ...input, sharePriceAfterCurrency: next });
   };
 
   const handlePortfolioValueCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.portfolioValueCurrency) return;
-    setInput({ ...input, portfolioValueCurrency: next });
-    setConversionError(null);
+    if (!canConvertPair(input.sharePriceBeforeCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({ ...input, portfolioValueCurrency: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateStockSplitInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -84,6 +155,9 @@ export function StockSplitCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const afterSymbol = getCurrencySymbol(
     result?.sharePriceAfterCurrency ?? input.sharePriceAfterCurrency
   );
@@ -95,10 +169,12 @@ export function StockSplitCalculator({
     ? [
         `${metadata.title} — Omega Calculators`,
         `Before: ${input.sharesBefore} shares @ ${getCurrencySymbol(input.sharePriceBeforeCurrency)}${input.sharePriceBefore} ${input.sharePriceBeforeCurrency}`,
-        `Ratio: ${input.ratioA}-for-${input.ratioB}`,
+        `Ratio: ${input.ratioA}-for-${input.ratioB}${result.isReverseSplit ? ' (reverse)' : result.isForwardSplit ? ' (forward)' : ''}`,
         `After: ${result.formattedSharesAfter} shares @ ${afterSymbol}${result.formattedSharePriceAfter} ${result.sharePriceAfterCurrency}`,
-        `Portfolio before: ${portfolioSymbol}${result.formattedPortfolioValueBefore}`,
-        `Portfolio after: ${portfolioSymbol}${result.formattedPortfolioValueAfter}`,
+        `Portfolio before: ${portfolioSymbol}${result.formattedPortfolioValueBefore} ${result.portfolioValueCurrency}`,
+        `Portfolio after: ${portfolioSymbol}${result.formattedPortfolioValueAfter} ${result.portfolioValueCurrency}`,
+        `Formulas: New Shares = Shares × A / B; New Price = Price × B / A`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -131,8 +207,7 @@ export function StockSplitCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Enter shares, price, and an A-for-B ratio. Share prices use independent
-            currencies.
+            {currencyNote}
           </p>
         </div>
         {headerActions ? (
@@ -145,11 +220,12 @@ export function StockSplitCalculator({
           input={input}
           errors={errors}
           result={result}
-          conversionError={conversionError}
-          onChange={handleChange}
+          onChange={apply}
           onSharePriceBeforeCurrencyChange={handleSharePriceBeforeCurrencyChange}
           onSharePriceAfterCurrencyChange={handleSharePriceAfterCurrencyChange}
           onPortfolioValueCurrencyChange={handlePortfolioValueCurrencyChange}
+          conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
