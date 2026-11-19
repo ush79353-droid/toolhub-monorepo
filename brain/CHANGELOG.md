@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Mega Millions Payout Calculator
+- **Summary:** Shipped Mega Millions Payout Calculator on existing catalog slug `mega-millions-payout-calculator` (`MegaMillionsPayoutCalculator`, catalog `6af46f10a27d8d1d4e990101`, preserved `nameKey` `mega millions payout calculator`). Screenshot-first (ADR-023): jackpot, annuity rate, filing status, state/DC, lump-sum %; lump vs annuity tax comparison; 30-payment graduated schedule with per-payment federal/state tax (TY 2025). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Fixed USD (no FX / no denomination selector).
+- **Formulas:** L=J×P/100; A₁=J×g/((1+g)³⁰−1) (or J/30 when g=0); Aₙ=A₁(1+g)ⁿ⁻¹; progressive federal + state none/flat/progressive.
+- **Example:** $201,000,000 · 52% → lump **$104,520,000**; annuity sum = jackpot.
+- **Important Files:** `frontend/src/tools/calculators/mega-millions-payout/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Long Term Care Calculator
 - **Summary:** Shipped Long Term Care Calculator on existing catalog slug `long-term-care-calculator` (`LongTermCareCalculator`, catalog `6af46f10a27d8d1d4e990100`, preserved `nameKey` `long term care calculator`). Screenshot-first (ADR-023): per-day/per-month; present-year annual baseline (synced, no double-count); inflation geometric total; annual projection. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** P=D×365 or M×12; TC=P×((1+i)^N−1)/i (or P×N when i=0); Year 1 = P.
