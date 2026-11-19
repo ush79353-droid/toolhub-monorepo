@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Car Affordability Calculator
+- **Summary:** Shipped Car Affordability Calculator on existing catalog slug `car-affordability-calculator` (`CarAffordabilityCalculator`, catalog `6af46f10a27d8d1d4e9900f7`, preserved `nameKey` `car affordability calculator`). Screenshot-first (ADR-023): affordable monthly payment + cash + trade-in + APR + loan term → max loan / max car value / interest; Additional options for sales tax and fixed fees with mathematically correct sticker-price solve; down payment allocates available cash only. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** L=P×(1−(1+r)^(−n))/r (r=APR/12); L=P×n when APR=0; MaxCar=L+cash+trade-in; with tax/fees: price=(budget−fees)/(1+tax); Interest=P×n−L.
+- **Example:** $500/mo · $5,000 cash · $3,000 trade-in · 6% · 60 mo → loan ≈ $25,862.78 · max car ≈ $33,862.78 · interest ≈ $4,137.22.
+- **Important Files:** `frontend/src/tools/calculators/car-affordability/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Bank Reconciliation Calculator
 - **Summary:** Shipped Bank Reconciliation Calculator on existing catalog slug `bank-reconciliation-calculator` (`BankReconciliationCalculator`, catalog `6af46f10a27d8d1d4e9900f6`, preserved `nameKey` `bank reconciliation calculator`). Screenshot-first (ADR-023): independent cashbook and bank-statement adjustments with fixed items + dynamic add/subtract rows; adjusted balances, absolute difference, reconciled/unreconciled/incomplete. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** AdjustedCashbook = CB + Interest − Charges − NSF − AutoPayments ± Extras; AdjustedBank = BS + DepositsInTransit − OutstandingChecks ± Extras; Difference = |AdjCash − AdjBank|; reconciled iff difference rounds to 0.

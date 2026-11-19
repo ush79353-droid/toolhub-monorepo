@@ -849,6 +849,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ApcCalculator: () => import('@/tools/calculators/apc/detail'),
   BankReconciliationCalculator: () =>
     import('@/tools/calculators/bank-reconciliation/detail'),
+  CarAffordabilityCalculator: () =>
+    import('@/tools/calculators/car-affordability/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

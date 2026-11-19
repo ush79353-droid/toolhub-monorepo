@@ -3275,6 +3275,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BankReconciliationCalculator,
     })),
   ),
+  CarAffordabilityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/car-affordability/CarAffordabilityCalculator'
+    ).then((mod) => ({
+      default: mod.CarAffordabilityCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

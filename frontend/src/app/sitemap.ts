@@ -624,6 +624,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '503020-rule-calculator',
   'apc-calculator',
   'bank-reconciliation-calculator',
+  'car-affordability-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',
