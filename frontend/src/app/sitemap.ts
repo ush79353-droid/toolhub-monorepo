@@ -676,6 +676,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'hourly-to-annual-salary-calculator',
   'hourly-to-salary-wage-calculator',
   'impermanent-loss-calculator',
+  'income-tax-calculator',
   'information-ratio-calculator',
   'interest-calculator',
   'interest-coverage-ratio-calculator',

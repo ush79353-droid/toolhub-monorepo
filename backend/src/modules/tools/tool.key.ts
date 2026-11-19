@@ -37,6 +37,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginWithDiscountCalculator',
   'NetDebtCalculator',
   'NetEffectiveRentCalculator',
+  'IncomeTaxCalculator',
   'IncomeTaxCalculatorPakistan',
   'NewJerseySalesTaxCalculator',
   'NewYorkOvertimeCalculator',
@@ -1393,6 +1394,7 @@ if (isDirect) {
     !isApprovedComponentKey('FloridaOvertimeCalculator') ||
     !isApprovedComponentKey('GeorgiaOvertimeCalculator') ||
     !isApprovedComponentKey('IllinoisOvertimeCalculator') ||
+    !isApprovedComponentKey('IncomeTaxCalculator') ||
     !isApprovedComponentKey('IncomeTaxCalculatorPakistan') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||

@@ -261,6 +261,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetEffectiveRentCalculator,
     })),
   ),
+  IncomeTaxCalculator: lazyTool(() =>
+    import('@/tools/calculators/income-tax/IncomeTaxCalculator').then((mod) => ({
+      default: mod.IncomeTaxCalculator,
+    })),
+  ),
   IncomeTaxCalculatorPakistan: lazyTool(() =>
     import(
       '@/tools/calculators/pakistan-income-tax/PakistanIncomeTaxCalculator'
