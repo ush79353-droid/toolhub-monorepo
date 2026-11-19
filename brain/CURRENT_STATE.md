@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (US federal Income Tax Calculator live at `/tools/income-tax-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Hourly Wage Calculator live at `/tools/hourly-wage-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 

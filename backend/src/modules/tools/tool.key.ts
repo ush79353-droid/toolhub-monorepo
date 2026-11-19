@@ -43,6 +43,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NewJerseySalesTaxCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
+  'NetProfitMarginCalculator',
   'OvertimeCalculator',
   'OvertimePaycheckCalculator',
   'PresentValueOfAnnuityCalculator',
@@ -658,6 +659,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HoldingPeriodReturnCalculator',
   'HourlyToAnnualSalaryCalculator',
   'HourlyToSalaryWageCalculator',
+  'HourlyWageCalculator',
   'WageToSalaryCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
@@ -1326,6 +1328,7 @@ if (isDirect) {
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
     !isApprovedComponentKey('HourlyToAnnualSalaryCalculator') ||
     !isApprovedComponentKey('HourlyToSalaryWageCalculator') ||
+    !isApprovedComponentKey('HourlyWageCalculator') ||
     !isApprovedComponentKey('WageToSalaryCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
@@ -1384,6 +1387,7 @@ if (isDirect) {
     !isApprovedComponentKey('MarginOfSafetyCalculator') ||
     !isApprovedComponentKey('MarginWithDiscountCalculator') ||
     !isApprovedComponentKey('OperatingMarginCalculator') ||
+    !isApprovedComponentKey('NetProfitMarginCalculator') ||
     !isApprovedComponentKey('AnnuityCalculator') ||
     !isApprovedComponentKey('AnnuityPayoutCalculator') ||
     !isApprovedComponentKey('DeferredAnnuityCalculator') ||

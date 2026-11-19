@@ -82,6 +82,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/new-york-overtime/detail'),
   OperatingMarginCalculator: () =>
     import('@/tools/calculators/operating-margin/detail'),
+  NetProfitMarginCalculator: () =>
+    import('@/tools/calculators/net-profit-margin/detail'),
   OvertimeCalculator: () =>
     import('@/tools/calculators/overtime/detail'),
   OvertimePaycheckCalculator: () =>
@@ -967,6 +969,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/hourly-to-annual-salary/detail'),
   HourlyToSalaryWageCalculator: () =>
     import('@/tools/calculators/hourly-to-salary-wage/detail'),
+  HourlyWageCalculator: () =>
+    import('@/tools/calculators/hourly-wage/detail'),
   WageToSalaryCalculator: () =>
     import('@/tools/calculators/wage-to-salary/detail'),
   ImpermanentLossCalculator: () =>

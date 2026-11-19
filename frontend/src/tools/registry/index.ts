@@ -301,6 +301,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OperatingMarginCalculator,
     })),
   ),
+  NetProfitMarginCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/net-profit-margin/NetProfitMarginCalculator'
+    ).then((mod) => ({
+      default: mod.NetProfitMarginCalculator,
+    })),
+  ),
   OvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/overtime/OvertimeCalculator'
@@ -3697,6 +3704,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/hourly-to-salary-wage/HourlyToSalaryWageCalculator'
     ).then((mod) => ({
       default: mod.HourlyToSalaryWageCalculator,
+    })),
+  ),
+  HourlyWageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/hourly-wage/HourlyWageCalculator'
+    ).then((mod) => ({
+      default: mod.HourlyWageCalculator,
     })),
   ),
   WageToSalaryCalculator: lazyTool(() =>
