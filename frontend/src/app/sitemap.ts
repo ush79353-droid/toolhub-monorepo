@@ -73,6 +73,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '702010-rule-money-calculator',
   '401k-calculator',
   'amortization-calculator',
+  'amt-calculator',
   'acreage-calculator',
   'feet-to-inches-calculator',
   'fha-loan-calculator',

@@ -123,6 +123,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SeventyTwentyTenCalculator: () => import('@/tools/calculators/seventy-twenty-ten-rule/detail'),
   FourZeroOneKCalculator: () => import('@/tools/calculators/four-zero-one-k/detail'),
   AmortizationCalculator: () => import('@/tools/calculators/amortization/detail'),
+  AmtCalculator: () => import('@/tools/calculators/amt/detail'),
   AcreageCalculator: () => import('@/tools/calculators/acreage/detail'),
   FeetToInchesCalculator: () => import('@/tools/calculators/feet-to-inches/detail'),
   AcresToSquareMilesCalculator: () => import('@/tools/calculators/acres-to-square-miles/detail'),

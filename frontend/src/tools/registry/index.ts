@@ -472,6 +472,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AmortizationCalculator,
     })),
   ),
+  AmtCalculator: lazyTool(() =>
+    import('@/tools/calculators/amt/AmtCalculator').then((mod) => ({
+      default: mod.AmtCalculator,
+    })),
+  ),
   AcreageCalculator: lazyTool(() =>
     import('@/tools/calculators/acreage/AcreageCalculator').then((mod) => ({
       default: mod.AcreageCalculator,
