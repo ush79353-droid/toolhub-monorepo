@@ -307,13 +307,12 @@ export function MarginalRevenueForm({
               />
             </FieldShell>
             <div className="w-[110px] shrink-0 sm:w-[120px]">
-              <CurrencySelect
-                id="mr-marginal-currency"
-                value={input.marginalRevenueCurrency}
-                onChange={onMarginalRevenueCurrencyChange}
-                aria-label="Marginal revenue currency"
-                disabled={Boolean(result?.undefinedMarginalRevenue)}
-              />
+                <CurrencySelect
+                  id="mr-marginal-currency"
+                  value={input.marginalRevenueCurrency}
+                  onChange={onMarginalRevenueCurrencyChange}
+                  aria-label="Marginal revenue currency"
+                />
             </div>
           </div>
           {result?.undefinedMarginalRevenue ? (
