@@ -2387,6 +2387,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WebsiteAdRevenueCalculator,
     })),
   ),
+  MarginalRevenueCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/marginal-revenue/MarginalRevenueCalculator'
+    ).then((mod) => ({
+      default: mod.MarginalRevenueCalculator,
+    })),
+  ),
   WeddingBudgetCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/wedding-budget/WeddingBudgetCalculator'

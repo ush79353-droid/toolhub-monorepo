@@ -435,6 +435,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TreynorRatioCalculator',
   'TurnoverRateCalculator',
   'WebsiteAdRevenueCalculator',
+  'MarginalRevenueCalculator',
   'WeddingBudgetCalculator',
   'WeekOverWeekCalculator',
   'SoftwareContractValueCalculator',
@@ -1114,6 +1115,7 @@ if (isDirect) {
     !isApprovedComponentKey('TreynorRatioCalculator') ||
     !isApprovedComponentKey('TurnoverRateCalculator') ||
     !isApprovedComponentKey('WebsiteAdRevenueCalculator') ||
+    !isApprovedComponentKey('MarginalRevenueCalculator') ||
     !isApprovedComponentKey('WeddingBudgetCalculator') ||
     !isApprovedComponentKey('WeekOverWeekCalculator') ||
     !isApprovedComponentKey('SoftwareContractValueCalculator') ||

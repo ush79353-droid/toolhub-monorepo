@@ -253,6 +253,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'times-interest-earned-ratio-calculator',
   'variable-annuity-calculator',
   'website-ad-revenue-calculator',
+  'marginal-revenue-calculator',
   'wedding-budget-calculator',
   'youtube-money-calculator',
   'jensens-alpha-calculator',

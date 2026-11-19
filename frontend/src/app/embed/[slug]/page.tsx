@@ -193,6 +193,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'smokers-ctc-calculator',
   'software-contract-value-calculator',
   'website-ad-revenue-calculator',
+  'marginal-revenue-calculator',
   'wedding-budget-calculator',
   'youtube-money-calculator',
   'jensens-alpha-calculator',

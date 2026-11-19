@@ -548,6 +548,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/turnover-rate/detail'),
   WebsiteAdRevenueCalculator: () =>
     import('@/tools/calculators/website-ad-revenue/detail'),
+  MarginalRevenueCalculator: () =>
+    import('@/tools/calculators/marginal-revenue/detail'),
   WeddingBudgetCalculator: () =>
     import('@/tools/calculators/wedding-budget/detail'),
   WeekOverWeekCalculator: () =>

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Marginal Revenue Calculator
+- **Summary:** Shipped Marginal Revenue Calculator on existing catalog slug `marginal-revenue-calculator` (`MarginalRevenueCalculator`, catalog `6af46f0fa27d8d1d4e99001e`, pillar `6af451bfa27d8d1d4e98f973`). Screenshot-first (ADR-023): Change in revenue (initial/final FX, ΔTR FX); Change in quantity (initial/final, ΔQ); Marginal revenue FX as ΔTR/ΔQ (undefined when ΔQ=0). Dual `CURRENCY_CONVERSION_SLUGS`; quantities never convert. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 10,000→12,500 · 100→125 → ΔTR **2,500** · ΔQ **25** · MR **100**/unit.
+- **Important Files:** `frontend/src/tools/calculators/marginal-revenue/*`, registry, sitemap, both FX slug lists, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add EV to Sales Calculator
 - **Summary:** Shipped EV to Sales Calculator on existing catalog slug `ev-to-sales-calculator-enterprise-value-to-sales` (`EvToSalesCalculator`, catalog `6af46f0fa27d8d1d4e990023`, preserved `nameKey`, pillar `6af451bfa27d8d1d4e98f974`, subPillar null). Screenshot-first (ADR-023): cash FX; market cap FX; total debt FX; minority interest FX (default 0); preferred shares FX (default 0); EV FX output; sales FX; EV/Sales dimensionless. Formulas: EV = Market Cap + Debt + Minority + Preferred − Cash; EV/Sales = EV ÷ Sales (sales > 0; zero sales → undefined). Dual `CURRENCY_CONVERSION_SLUGS`; ratio never converts. Enterprise Value / Price to Sales siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Cap 1,000,000 · Debt 200,000 · Cash 50,000 · Sales 500,000 → EV **1,150,000** · EV/Sales **2.3**.

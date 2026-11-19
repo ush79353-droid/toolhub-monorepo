@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (AMT Calculator live at `/tools/amt-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Marginal Revenue Calculator live at `/tools/marginal-revenue-calculator`).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Marginal Revenue Calculator (`/tools/marginal-revenue-calculator`):** Live client-side discrete MR tool (`componentKey: 'MarginalRevenueCalculator'`, catalog `6af46f0fa27d8d1d4e99001e`, `nameKey` `marginal revenue calculator`). Screenshot-first (ADR-023): initial/final revenue FX; ΔTR FX; initial/final quantity; ΔQ; MR FX (ΔTR/ΔQ, undefined when ΔQ=0). Dual FX; quantities never convert. Revenue Calculator sibling untouched. Activated; **`indexable` left false**. Example: 10k→12.5k · 100→125 → MR **100**/unit.
 - **EV to Sales Calculator (`/tools/ev-to-sales-calculator-enterprise-value-to-sales`):** Live client-side EV + EV/Sales tool (`componentKey: 'EvToSalesCalculator'`, catalog `6af46f0fa27d8d1d4e990023`). Screenshot-first: cash/market cap/debt/minority/preferred/EV FX; sales FX; EV/Sales ratio. EV = Cap+Debt+Minority+Preferred−Cash; EV/Sales = EV÷Sales (zero sales undefined). Dual FX; ratio never converts. Activated; **`indexable` left false**. Example: 1M+200k−50k / 500k → EV **1,150,000** · **2.3×**.
 - **Annual Pay Calculator (`/tools/annual-pay-calculator`):** Live client-side hourly→annual pay tool (`componentKey: 'AnnualPayCalculator'`, catalog `6af46f0fa27d8d1d4e990054`, `nameKey` `annual pay calculator`). Screenshot-first (ADR-023): hours/week (40); weeks/year (0–52); hourly wage FX; annual pay FX; Net Salary flat tax (default 12%) → net hourly / net annual pay FX. Reuses Yearly Wage formulas. Dual FX; hours/weeks/tax never convert. Annual Income / Annual Salary / Yearly Wage untouched. Activated; **`indexable` left false**. Example: 500 · 40h · 52w · 12% → annual **1,040,000** · net hourly **440** · net annual **915,200**.
 - **Budget Calculator (`/tools/budget-calculator`):** Live client-side personal budget worksheet (`componentKey: 'BudgetCalculator'`, catalog `6af46f0fa27d8d1d4e99004b`, `nameKey` `budget calculator`). Screenshot-first (ADR-023): Income (gross salary + tax rate %), Savings, Monthly/Annual expenses, Summary balances. Independent Phase 2 FX; / mo·/ yr never convert. Totals in Salary currency. Balance = income − savings − monthly expenses − annual/12. Dual FX slug lists. Business Budget untouched. Activated; **`indexable` left false**. Example: 100k · 10% tax · 5k savings · 20k mo · 12k/yr → income **90,000** · balance **64,000**/mo.
