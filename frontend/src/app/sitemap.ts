@@ -620,6 +620,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'remote-vs-on-location-workers-calculator',
   'trir-calculator',
   'average-return-calculator',
+  'maximum-drawdown-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

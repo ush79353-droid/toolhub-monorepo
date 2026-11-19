@@ -842,6 +842,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TrirCalculator: () => import('@/tools/calculators/trir/detail'),
   AverageReturnCalculator: () =>
     import('@/tools/calculators/average-return/detail'),
+  MaximumDrawdownCalculator: () =>
+    import('@/tools/calculators/maximum-drawdown/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

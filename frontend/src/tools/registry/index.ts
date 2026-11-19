@@ -3249,6 +3249,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  MaximumDrawdownCalculator: lazyTool(() =>
+    import('@/tools/calculators/maximum-drawdown/MaximumDrawdownCalculator').then(
+      (mod) => ({
+        default: mod.MaximumDrawdownCalculator,
+      }),
+    ),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

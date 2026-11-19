@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Maximum Drawdown Calculator
+- **Summary:** Shipped Maximum Drawdown Calculator on existing catalog slug `maximum-drawdown-calculator` (`MaximumDrawdownCalculator`, catalog `6af46f0fa27d8d1d4e9900d8`, preserved `nameKey` `maximum drawdown calculator`). Screenshot-first (ADR-023): peak/trough MDD %, absolute loss, required recovery gain; expandable Time for Recovery with assumed annual growth. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** MDD=(P−T)/P×100; AbsoluteLoss=P−T; RecoveryGain=D/(1−D)×100; t=−ln(1−D)/ln(1+g). Edge cases: 0% MDD → 0 time; 0% growth with D&gt;0 → undefined; 100% MDD → non-finite recovery.
+- **Example:** $15,000 → $12,500 → 16.67% MDD · $2,500 loss; 20% @ 10% growth ≈ 2.34 years; 50% @ 10% ≈ 7.27 years.
+- **Important Files:** `frontend/src/tools/calculators/maximum-drawdown/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Rebuild CD Calculator (screenshot-first)
 - **Summary:** Rebuilt CD Calculator on existing catalog slug `cd-calculator` (`CdCalculator`, catalog `6af46f0fa27d8d1d4e9900c7`, preserved `nameKey` `cd calculator`) to match Calculator.net-style scope: deposit, APR/APY, compounding frequencies, years/months, marginal tax estimate, donut + accumulation schedules/charts, full guide/FAQ. Activated via `npm run tool:assign` with `--set-active --set-indexable` — **`indexable` kept true**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect; removed `cd-calculator` from FX slug sets.
 - **Formulas:** A=P(1+r/n)^(nt); I=A−P; APY=(1+r/n)^n−1; tax=I×m; after-tax=P+(I−tax). Schedules use the same balance-at-t path and reconcile final row to maturity.
