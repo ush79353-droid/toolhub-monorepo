@@ -579,6 +579,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'WeeklyPayCalculator',
   'CombinedRatioCalculator',
   'CustomerEffortScoreCalculator',
+  'DartRateCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1190,6 +1191,7 @@ if (isDirect) {
     !isApprovedComponentKey('WeeklyPayCalculator') ||
     !isApprovedComponentKey('CombinedRatioCalculator') ||
     !isApprovedComponentKey('CustomerEffortScoreCalculator') ||
+    !isApprovedComponentKey('DartRateCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

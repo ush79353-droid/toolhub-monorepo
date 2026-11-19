@@ -3208,6 +3208,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CustomerEffortScoreCalculator,
     })),
   ),
+  DartRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/dart-rate/DartRateCalculator').then((mod) => ({
+      default: mod.DartRateCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

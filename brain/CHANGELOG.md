@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add DART Rate Calculator
+- **Summary:** Shipped DART Rate Calculator on existing catalog slug `dart-rate-calculator` (`DartRateCalculator`, catalog `6af46f0fa27d8d1d4e990097`, preserved `nameKey` `dart rate calculator`). Screenshot-first (ADR-023): total DART incidents, total hours worked, DART rate; OSHA formula; reverse hours/estimated cases via last-edited driver. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
+- **Formulas:** Rate = (N × 200,000) / EH; Hours = (N × 200,000) / Rate; Estimated N = Rate × EH / 200,000.
+- **Example:** 5 cases · 400,000 hours → 2.50; 0 cases · 200,000 hours → 0.00.
+- **Important Files:** `frontend/src/tools/calculators/dart-rate/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Customer Effort Score Calculator
 - **Summary:** Shipped Customer Effort Score Calculator on existing catalog slug `customer-effort-score-calculator` (`CustomerEffortScoreCalculator`, catalog `6af46f0fa27d8d1d4e990095`, preserved `nameKey` `customer effort score calculator`). Screenshot-first (ADR-023): 1–5/1–7 scale selector; dynamic response counts; weighted CES; low/neutral/high effort %; collapsible median/mode/distribution. Lower score = less effort. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
 - **Formulas:** CES = Σ(score × count) / Σ(count). Scale 5 low=1–2 / neutral=3 / high=4–5; scale 7 low=1–3 / neutral=4 / high=5–7.
