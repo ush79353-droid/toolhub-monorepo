@@ -4,7 +4,22 @@
 
 ---
 
+### 2026-11-19 — Add Stock Split Calculator
+- **Summary:** Shipped Stock Split Calculator on existing catalog slug `stock-split-calculator` (`StockSplitCalculator`, catalog `6af46f0fa27d8d1d4e990031`, preserved `nameKey` `stock split calculator`, pillar `6af451bfa27d8d1d4e98f976`). Screenshot-first (ADR-023): Before stock split (shares + price FX); Stock split ratio A-for-B with explanation (forward and reverse); After stock split (shares + price FX) plus portfolio value before/after. Independent Phase 2 FX on share prices and portfolio values; share counts and ratio never convert. Fractional shares kept mathematically with cash-in-lieu note. No taxes/fees/dividends. Stock / Stock Average / Beta Stock / Safety Stock siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** New Shares = Original Shares × A / B; New Share Price = Original Share Price × B / A; Portfolio Before = Shares × Price; Portfolio After = New Shares × New Price.
+- **Example:** 100 shares @ 50 PKR · 2-for-1 → 200 @ 25 PKR · portfolio **5,000** before and after.
+- **Important Files:** `frontend/src/tools/calculators/stock-split/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-19 — Add Unemployment Calculator (Unemployment Rate)
+- **Summary:** Shipped Unemployment Calculator on existing catalog slug `unemployment-calculator-unemployment-rate` (`UnemploymentCalculator`, catalog `6af46f0fa27d8d1d4e990032`, preserved `nameKey` `unemployment calculator (unemployment rate)`, pillar `6af451bfa27d8d1d4e98f977`). Screenshot-first (ADR-023): employed / unemployed / labor force with people·thousand·million selectors (default thousand); unemployment rate %; collapsible labor-force participation (working-age population → participation %). Any two of E/U/LF derive the third; zero labor force → undefined rate; nonnegative validation; unit changes preserve people; percentages never unit-converted. No FX / not in `CURRENCY_CONVERSION_SLUGS`. Natural Rate / CARES / HEALS–HEROES / LWA / dedicated LFPR siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** Labor Force = Employed + Unemployed; Unemployment Rate (%) = Unemployed / Labor Force × 100; LFPR (%) = Labor Force / Working-Age Population × 100.
+- **Example:** 150 thousand employed + 10 thousand unemployed → LF **160** thousand · rate **6.25%**; WAP 250 thousand → LFPR **64%**.
+- **Important Files:** `frontend/src/tools/calculators/unemployment/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Unemployment Benefit Calculator - Lost Wages Assistance (LWA)
+
 - **Summary:** Shipped historical informational page on existing catalog slug `unemployment-benefit-calculator-lost-wages-assistance-lwa` (`LwaUnemploymentBenefitCalculator`, catalog `6af46f0fa27d8d1d4e990036`, preserved `nameKey` `unemployment benefit calculator - lost wages assistance (lwa)`). Screenshot-first (ADR-023): no benefit inputs or payout estimates. Explains LWA was a temporary 2020 FEMA Other Needs Assistance program authorized by presidential memorandum (not an “LWA Act”), related to earlier CARES Act FPUC, and ended (FEMA: Dec 27, 2020). Links to live Loan Calculator (`/tools/loan-calculator`) for installment/interest estimates — Personal Loan catalog slug exists but is undeveloped. No FX / not in `CURRENCY_CONVERSION_SLUGS`. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Important Files:** `frontend/src/tools/calculators/lwa-unemployment-benefit/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts` (not run this session per queue rules). Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
