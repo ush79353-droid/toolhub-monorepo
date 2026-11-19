@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add VAT Calculator
+- **Summary:** Shipped VAT Calculator on existing catalog slug `vat-calculator` (`VatCalculator`, catalog `6af46f0fa27d8d1d4e990079`, preserved `nameKey` `vat calculator`). Screenshot-first (ADR-023): VAT excluded/included modes, custom rate (default 20% example), synchronized net/VAT/gross with last-edited driver, denomination-only CurrencySelect. Reverse VAT uses ÷(1+r/100). Activated via `npm run tool:assign` with `--set-active --set-indexable`; pillar/subPillar null; isFeatured left false.
+- **Formulas:** Add: VAT = Net×(Rate/100), Gross = Net+VAT. Remove: Net = Gross/(1+Rate/100), VAT = Gross−Net. Money rounded once at currency fraction digits.
+- **Example:** Net 100 · 20% → VAT 20 · Gross 120; Gross 120 · 20% → Net 100.
+- **Important Files:** `frontend/src/tools/calculators/vat/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Trump's Taxes vs. Your Taxes Calculator
 - **Summary:** Shipped Trump's Taxes vs. Your Taxes Calculator on existing catalog slug `trumps-taxes-vs-your-taxes-calculator` (`TrumpsTaxesVsYourTaxesCalculator`, catalog `6af46f0fa27d8d1d4e990078`). Screenshot-first (ADR-023): your tax default $3,202; Trump tax default $750 with historical 2016/2017 labeling (not presented as 2019 liability); live ratio/difference/%; collapsible luxury and essentials lists; editable illustrative unit prices. Fixed USD (no FX). Activated via `npm run tool:assign` with `--set-active --set-indexable`; pillar/subPillar null preserved.
 - **Formulas:** ratio = user/trump; difference = user−trump; % = (difference/trump)×100; quantity = floor(max(difference,0)/unitPrice).

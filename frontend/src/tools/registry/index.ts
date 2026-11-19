@@ -3186,6 +3186,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TrumpsTaxesVsYourTaxesCalculator,
     })),
   ),
+  VatCalculator: lazyTool(() =>
+    import('@/tools/calculators/vat/VatCalculator').then((mod) => ({
+      default: mod.VatCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

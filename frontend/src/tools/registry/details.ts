@@ -827,6 +827,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/unlevered-free-cash-flow/detail'),
   TrumpsTaxesVsYourTaxesCalculator: () =>
     import('@/tools/calculators/trumps-taxes-vs-your-taxes/detail'),
+  VatCalculator: () => import('@/tools/calculators/vat/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
