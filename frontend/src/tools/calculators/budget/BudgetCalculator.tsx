@@ -5,7 +5,22 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
 import type { SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_STALE_NOTE,
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
+import { shareBudgetResultText } from './calculation';
 import { BudgetForm } from './BudgetForm';
 import {
   createDefaultInput,
@@ -14,7 +29,12 @@ import {
   type BudgetInput,
   type BudgetResult,
   type MoneyFieldKey,
+  type MoneyLine,
 } from './types';
+import { validateBudgetInput } from './validation';
+
+const FX_NOTE =
+  'Each money line has its own currency. Totals aggregate in the Salary currency after Phase 2 FX conversion. / mo and / yr frequencies are never converted. Missing rates block conversion; stale rates warn but still convert.';
 
 export function BudgetCalculator({
   metadata,
@@ -23,44 +43,118 @@ export function BudgetCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
+  const initialValidation = validateBudgetInput(defaults, rates);
   const [baseline, setBaseline] = React.useState<BudgetInput>(() => defaults);
   const [input, setInput] = React.useState<BudgetInput>(() => defaults);
-  const [errors] = React.useState<BudgetFieldErrors>({});
-  const [result] = React.useState<BudgetResult | null>(null);
+  const [errors, setErrors] = React.useState<BudgetFieldErrors>(
+    () => initialValidation.errors
+  );
+  const [result, setResult] = React.useState<BudgetResult | null>(
+    () => (initialValidation.isValid ? initialValidation.result : null)
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const handleChange = (next: BudgetInput) => {
+  const apply = (next: BudgetInput) => {
+    const validation = validateBudgetInput(next, rates);
+    setConversionError(null);
     setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handleMoneyCurrencyChange = (
     key: MoneyFieldKey,
     currency: SupportedCurrency
   ) => {
-    const line = input[key];
+    const line = input[key] as MoneyLine;
     if (line.currency === currency) return;
-    setInput({ ...input, [key]: { ...line, currency } });
+    const converted = convertFieldAmount(line.amount, line.currency, currency);
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    setConversionError(null);
+    apply({
+      ...input,
+      [key]: { ...line, currency, amount: converted.text },
+    });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateBudgetInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const dirty = !inputsEqual(input, baseline);
-  const summary = '';
+  const currencyNote = !ratesStatus.available
+    ? CURRENCY_CONVERSION_UNAVAILABLE_NOTE
+    : ratesStatus.isStale
+      ? `${FX_NOTE} ${CURRENCY_CONVERSION_STALE_NOTE}`
+      : FX_NOTE;
+  const ratesWarning = ratesStatus.warning;
+
+  const summary = result
+    ? shareBudgetResultText({
+        title: metadata.title,
+        currency: result.currency,
+        formattedMonthlyIncome: result.formattedMonthlyIncome,
+        formattedMonthlySavings: result.formattedMonthlySavings,
+        formattedMonthlyExpenses: result.formattedMonthlyExpenses,
+        formattedAnnualExpenses: result.formattedAnnualExpenses,
+        formattedMonthlyBudgetBalance: result.formattedMonthlyBudgetBalance,
+        formattedAnnualBudgetBalance: result.formattedAnnualBudgetBalance,
+        fxNote: currencyNote,
+      })
+    : '';
 
   const handleShare = async () => {
     if (!summary) return;
@@ -90,10 +184,7 @@ export function BudgetCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">
-            Personal budget worksheet with independent currencies and / mo · / yr frequencies.
-            Salary is gross; tax rate applies only to salary.
-          </p>
+          <p className="text-xs font-normal text-muted-foreground">{currencyNote}</p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}
       </div>
@@ -103,7 +194,9 @@ export function BudgetCalculator({
           input={input}
           errors={errors}
           result={result}
-          onChange={handleChange}
+          conversionError={conversionError}
+          ratesWarning={ratesWarning}
+          onChange={apply}
           onMoneyCurrencyChange={handleMoneyCurrencyChange}
         />
 
