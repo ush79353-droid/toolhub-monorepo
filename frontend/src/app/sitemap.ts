@@ -435,6 +435,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'roi-calculator',
   'saas-lifetime-value-calculator',
   'safety-stock-calculator',
+  'stock-calculator',
   'stock-average-calculator',
   'stock-split-calculator',
   'commission-calculator',
