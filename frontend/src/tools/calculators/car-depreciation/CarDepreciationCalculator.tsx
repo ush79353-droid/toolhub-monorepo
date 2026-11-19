@@ -5,11 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
 import {
   moneyAmountToInputString,
   parseMoneyInput,
 } from '@/tools/shared/money-value';
-import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
 import { CarDepreciationForm } from './CarDepreciationForm';
 import { CAR_DEPRECIATION_ANNUAL_RATE } from './content';
 import {
@@ -18,9 +27,10 @@ import {
   type CarDepreciationInput,
   type CarDepreciationResult,
 } from './types';
+import { validateCarDepreciationInput } from './validation';
 
-const UI_NOTE =
-  'Enter initial value and car age to estimate reduced value and future projections. Currency wiring arrives with the calculation engine.';
+const FX_NOTE =
+  'Initial value and every money result have independent currencies. Declining-balance math runs in the initial-value currency at a disclosed 15% annual rate; results convert for display. Car age and the depreciation rate are never converted. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: CarDepreciationInput, b: CarDepreciationInput): boolean {
   return (
@@ -45,6 +55,8 @@ export function CarDepreciationCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
+  const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<CarDepreciationInput>(
     () => defaults
@@ -65,33 +77,56 @@ export function CarDepreciationCalculator({
   }, []);
 
   const apply = (next: CarDepreciationInput) => {
+    const validation = validateCarDepreciationInput(next, rates);
     setConversionError(null);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
-  const relabelCurrency = (
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
     raw: string,
     from: SupportedCurrency,
     to: SupportedCurrency
-  ): string => {
-    if (from === to) return raw;
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
     const amount = parseMoneyInput(raw);
-    if (!Number.isFinite(amount)) return raw;
-    return moneyAmountToInputString(amount);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
   };
 
   const handleInitialValueCurrencyChange = (next: SupportedCurrency) => {
     if (next === input.initialValueCurrency) return;
+    const converted = convertFieldAmount(
+      input.initialValue,
+      input.initialValueCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
     apply({
       ...input,
       initialValueCurrency: next,
-      initialValue: relabelCurrency(
-        input.initialValue,
-        input.initialValueCurrency,
-        next
-      ),
+      initialValue: converted.text,
     });
   };
 
@@ -108,15 +143,20 @@ export function CarDepreciationCalculator({
     ) =>
     (next: SupportedCurrency) => {
       if (next === input[key]) return;
+      if (!canConvertPair(input.initialValueCurrency, next)) {
+        setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+        return;
+      }
       apply({ ...input, [key]: next });
     };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateCarDepreciationInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setConversionError(null);
     setCopied(false);
     setShared(false);
@@ -124,6 +164,9 @@ export function CarDepreciationCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
+  const currencyNote = ratesStatus.available
+    ? FX_NOTE
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const reducedSymbol = getCurrencySymbol(
     result?.reducedValueCurrency ?? input.reducedValueCurrency
   );
@@ -134,7 +177,10 @@ export function CarDepreciationCalculator({
         `Age: ${input.carAgeYears} yrs`,
         `Illustrative rate: ${CAR_DEPRECIATION_ANNUAL_RATE * 100}% / year`,
         `Reduced value: ${reducedSymbol}${result.formattedReducedValue} ${result.reducedValueCurrency}`,
-        UI_NOTE,
+        `After 1 year: ${result.formattedAfter1Year} ${result.after1YearCurrency}`,
+        `After 5 years: ${result.formattedAfter5Years} ${result.after5YearsCurrency}`,
+        `Formulas: V(t)=Initial×(1−r)^t; Reduced=V(age); After Δt=Reduced×(1−r)^Δt`,
+        currencyNote,
       ].join('\n')
     : '';
 
@@ -166,7 +212,9 @@ export function CarDepreciationCalculator({
       <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
-          <p className="text-xs font-normal text-muted-foreground">{UI_NOTE}</p>
+          <p className="text-xs font-normal text-muted-foreground">
+            {currencyNote}
+          </p>
         </div>
         {headerActions ? (
           <div className="flex items-center gap-2">{headerActions}</div>
@@ -202,6 +250,7 @@ export function CarDepreciationCalculator({
             'after5YearsCurrency'
           )}
           conversionError={conversionError}
+          ratesWarning={ratesStatus.warning}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
