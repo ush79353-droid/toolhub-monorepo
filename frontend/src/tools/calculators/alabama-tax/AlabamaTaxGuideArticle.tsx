@@ -63,8 +63,8 @@ export function AlabamaTaxGuideArticle() {
       <div className="my-3 rounded-lg border border-border bg-muted/20 p-3 text-xs leading-relaxed text-accent sm:text-sm">
         <p>Single · TY2026 · Bessemer · AGI $50,000/year · 0 dependents · itemized $0</p>
         <p>Standard deduction (chart) $2,500 · personal exemption $1,500 → taxable $46,000</p>
-        <p>State tax ≈ $2,265 · local 1% ≈ $500 · total tax ≈ $2,765</p>
-        <p>After-tax ≈ $47,235 · weekly take-home ≈ $47,235 / 52</p>
+        <p>State tax $2,260 · local 1% $500 · total tax $2,760</p>
+        <p>After-tax $47,240 · weekly take-home $47,240 / 52</p>
       </div>
 
       <h2

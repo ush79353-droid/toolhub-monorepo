@@ -13,6 +13,7 @@ import {
   type AlabamaTaxInput,
   type AlabamaTaxResult,
 } from './types';
+import { validateAlabamaTaxInput } from './validation';
 
 export function AlabamaTaxCalculator({
   metadata,
@@ -22,10 +23,15 @@ export function AlabamaTaxCalculator({
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
   const defaults = createDefaultInput();
+  const initial = validateAlabamaTaxInput(defaults);
   const [baseline, setBaseline] = React.useState<AlabamaTaxInput>(() => defaults);
   const [input, setInput] = React.useState<AlabamaTaxInput>(() => defaults);
-  const [errors, setErrors] = React.useState<AlabamaTaxFieldErrors>({});
-  const [result, setResult] = React.useState<AlabamaTaxResult | null>(null);
+  const [errors, setErrors] = React.useState<AlabamaTaxFieldErrors>(
+    () => initial.errors
+  );
+  const [result, setResult] = React.useState<AlabamaTaxResult | null>(
+    () => (initial.isValid ? initial.result : null)
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -36,17 +42,19 @@ export function AlabamaTaxCalculator({
   }, []);
 
   const apply = (next: AlabamaTaxInput) => {
+    const validation = validateAlabamaTaxInput(next);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateAlabamaTaxInput(fresh);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -98,6 +106,7 @@ export function AlabamaTaxCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             Alabama state + selected local occupational tax estimate. Fixed USD.
+            Educational only — not a filing substitute.
           </p>
         </div>
         {headerActions ? (
