@@ -3214,6 +3214,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  ZakatCalculator: lazyTool(() =>
+    import('@/tools/calculators/zakat/ZakatCalculator').then((mod) => ({
+      default: mod.ZakatCalculator,
+    })),
+  ),
   VatCalculator: lazyTool(() =>
     import('@/tools/calculators/vat/VatCalculator').then((mod) => ({
       default: mod.VatCalculator,

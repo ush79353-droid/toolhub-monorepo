@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Zakat Calculator
+- **Summary:** Shipped Zakat Calculator on existing catalog slug `zakat-calculator` (`ZakatCalculator`, catalog `6af46f10a27d8d1d4e99010f`, preserved `nameKey` `zakat calculator`). Screenshot-first (ADR-023): gold Nisab 87.48 g, silver Nisab 612.36 g, or a custom threshold; cash, investments, metal weight × purity × price, trade assets; immediate liabilities only; 2.5% of net wealth when Nisab is met. Hawl is explained and does not hide the estimate. Metal prices are a dated 19 Nov 2026 USD reference (not a live feed) converted with stored ADR-021 rates, or a manual price per gram. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Assets 500,000 − liabilities 100,000 = net 400,000. Custom Nisab 150,000. Zakat **10,000**.
+- **Important Files:** `frontend/src/tools/calculators/zakat/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add VA Disability Calculator
 - **Summary:** Shipped VA Disability Calculator on existing catalog slug `va-disability-calculator` (`VaDisabilityCalculator`, catalog `6af46f10a27d8d1d4e99010e`, preserved `nameKey` `va disability calculator`). Screenshot-first (ADR-023): multiple 10% steps; 38 CFR 4.25 remaining-efficiency combine and nearest-10 rounding; 38 CFR 4.26 bilateral factor only for both arms, both legs, or an arm with a leg. Monthly estimate uses VA.gov rates effective **2025-12-01** (2026 pay). Dependents do not change the percentage. 10% and 20% ignore dependents. Activated with existing `isActive: true`. **`indexable` preserved false**. Fixed USD.
 - **Example:** 50% + 30% + 20% → exact **72** → rounded **70%** → veteran alone **$1,808.45**/month.

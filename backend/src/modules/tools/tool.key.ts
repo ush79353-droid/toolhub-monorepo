@@ -579,6 +579,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TrumpAccountsCalculator',
   'TrumpsTaxesVsYourTaxesCalculator',
   'VaDisabilityCalculator',
+  'ZakatCalculator',
   'VatCalculator',
   'WeeklyPayCalculator',
   'CombinedRatioCalculator',
@@ -1225,6 +1226,7 @@ if (isDirect) {
     !isApprovedComponentKey('TrumpAccountsCalculator') ||
     !isApprovedComponentKey('TrumpsTaxesVsYourTaxesCalculator') ||
     !isApprovedComponentKey('VaDisabilityCalculator') ||
+    !isApprovedComponentKey('ZakatCalculator') ||
     !isApprovedComponentKey('VatCalculator') ||
     !isApprovedComponentKey('WeeklyPayCalculator') ||
     !isApprovedComponentKey('CombinedRatioCalculator') ||
