@@ -11,6 +11,7 @@ import {
   useCurrencyRates,
   useCurrencyRatesStatus,
 } from '@/tools/shared/CurrencyRatesProvider';
+import { shareResultText } from './calculation';
 import { NetProfitMarginForm } from './NetProfitMarginForm';
 import {
   createDefaultInput,
@@ -18,6 +19,7 @@ import {
   type NetProfitMarginInput,
   type NetProfitMarginResult,
 } from './types';
+import { validateNetProfitMarginInput } from './validation';
 
 const FX_NOTE =
   'Net profit and total revenues each have their own currency. Net profit normalizes into the revenues currency before dividing. Changing a money currency converts that amount so the margin percent stays the same.';
@@ -38,19 +40,22 @@ export function NetProfitMarginCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
+  const initial = validateNetProfitMarginInput(defaults, rates);
   const [baseline, setBaseline] = React.useState<NetProfitMarginInput>(() => defaults);
   const [input, setInput] = React.useState<NetProfitMarginInput>(() => defaults);
-  const [errors, setErrors] = React.useState<NetProfitMarginFieldErrors>({});
-  const [result, setResult] = React.useState<NetProfitMarginResult | null>(null);
+  const [errors, setErrors] = React.useState<NetProfitMarginFieldErrors>(
+    () => initial.errors
+  );
+  const [result, setResult] = React.useState<NetProfitMarginResult | null>(
+    () => initial.result
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
-
-  // Rates reserved for Phase 2 validation wiring.
-  useCurrencyRates();
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
@@ -58,16 +63,18 @@ export function NetProfitMarginCalculator({
 
   const apply = (next: NetProfitMarginInput) => {
     setInput(next);
-    setErrors({});
-    setResult(null);
+    const validation = validateNetProfitMarginInput(next, rates);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateNetProfitMarginInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -76,13 +83,13 @@ export function NetProfitMarginCalculator({
   const dirty = !inputsEqual(input, baseline);
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
-    ? [
-        `${metadata.title} — Omega Calculators`,
-        `Net profit: ${getCurrencySymbol(input.netProfitCurrency)}${input.netProfit}`,
-        `Total revenues: ${getCurrencySymbol(input.totalRevenuesCurrency)}${input.totalRevenues}`,
-        `Net profit margin: ${result.formattedMarginPercent}%`,
+    ? shareResultText({
+        title: metadata.title,
+        netProfitLabel: `${getCurrencySymbol(input.netProfitCurrency)}${input.netProfit}`,
+        totalRevenuesLabel: `${getCurrencySymbol(input.totalRevenuesCurrency)}${input.totalRevenues}`,
+        marginPercent: result.formattedMarginPercent,
         currencyNote,
-      ].join('\n')
+      })
     : '';
 
   const handleShare = async () => {

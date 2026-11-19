@@ -114,8 +114,8 @@ export function IncomeTaxForm({
     >
       <p className="text-sm leading-relaxed text-foreground/90">
         Modify the values and click Calculate. Amounts are fixed USD. This estimates federal
-        income tax for tax years 2025 and 2026 (including OBBBA adjustments) — not a complete
-        return.
+        income tax for tax years 2025 and 2026 (including OBBBA adjustments). It is an
+        educational estimate — not a complete Form 1040 or tax advice.
       </p>
 
       <div className="space-y-3.5 rounded-xl border border-border bg-muted/15 p-3.5 sm:p-4">
