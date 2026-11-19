@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Car Depreciation Calculator live at `/tools/car-depreciation-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Depreciation Calculator live at `/tools/depreciation-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Unemployment Benefit Calculator - HEALS Act vs. HEROES Act (`/tools/unemployment-benefit-calculator-heals-act-vs-heroes-act`):** Historical informational notice (`componentKey: 'HealsHeroesUnemploymentBenefitCalculator'`, catalog `6af46f0fa27d8d1d4e990035`, `nameKey` `unemployment benefit calculator - heals act vs. heroes act`). Screenshot-first (ADR-023): no benefit inputs or payout estimates; clarifies HEALS (incl. American Workers, Families, and Employers Assistance Act) and HEROES (H.R. 6800) were 2020 legislative proposals, not active claim programs; historical calculations no longer applicable. Links to live Annual Salary Calculator (`/tools/annual-salary-calculator`) — catalog `annual-income-calculator` exists but is undeveloped. Share/Reload/Clear(disabled)/feedback. No FX. CARES / LWA / Unemployment Rate siblings untouched. Activated; **`indexable` left false**.
 - **Car Depreciation Calculator (`/tools/car-depreciation-calculator`):** Live client-side declining-balance vehicle value tool (`componentKey: 'CarDepreciationCalculator'`, catalog `6af46f0fa27d8d1d4e99003d`, `nameKey` `car depreciation calculator`). Screenshot-first (ADR-023): initial value FX; car age (yrs); reduced value FX; Car value after 1 minute + 1–5 years (independent FX); link to Car Lease; educational depreciation note (no undeveloped quiz link). Illustrative constant **15%**/yr: V(t)=Initial×(1−0.15)^t; Reduced=V(age); After Δt=Reduced×(1−0.15)^Δt; 1 minute = 1/(365.25×24×60) yr. Independent Phase 2 FX; age/rate never convert. Depreciation / Accumulated / Quiz siblings untouched. Activated; **`indexable` left false**. Example: 1,000,000 · age 2 → reduced **722,500**; +1y **614,125**.
 - **Cash Flow to Debt Ratio Calculator (`/tools/cash-flow-to-debt-ratio-calculator`):** Live client-side coverage ratio (`componentKey: 'CashFlowToDebtRatioCalculator'`, catalog `6af46f0fa27d8d1d4e990038`). Screenshot-first (ADR-023): OCF FX; total debt FX; CF-to-debt %; expanded debt-to-CF `x`; optional ST+LT components. Formulas OCF/Debt×100 and Debt/OCF; zero debt/OCF → undefined (not Infinity). Dual FX slug lists. Cash Ratio / OCF / DSCR untouched. Activated; **`indexable` left false**. Example: 50k/200k → **25%** · **4x**.
 - **Cash Ratio Calculator (`/tools/cash-ratio-calculator`):** Live client-side liquidity ratio (`componentKey: 'CashRatioCalculator'`, catalog `6af46f0fa27d8d1d4e990037`). Screenshot-first (ADR-023): cash FX + liabilities FX → ratio as `x`; empty cash-equivalents disclosure. Formula Cash/Liabilities. Dual FX slug lists. Activated; **`indexable` left false**. Example: 75k/100k → **0.75x**.
