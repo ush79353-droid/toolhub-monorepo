@@ -4,6 +4,20 @@
 
 ---
 
+### 2026-11-19 — Add Stock Average Calculator
+- **Summary:** Shipped Stock Average Calculator on existing catalog slug `stock-average-calculator` (`StockAverageCalculator`, catalog `6af46f0fa27d8d1d4e990030`, preserved `nameKey` `stock average calculator`, pillar `6af451bfa27d8d1d4e98f976`). Screenshot-first (ADR-023): optional current stock price FX; two purchases (1st/2nd buy # + buy price FX) → total shares, total investment cost, weighted average buying price; with current price → market value, unrealized P/L, return % (undefined when total cost is 0). Independent Phase 2 FX; normalize 2nd buy + current into 1st buy currency; share counts and return % never convert. No commissions/dividends/taxes. Stock / Beta Stock / Safety Stock / Stock Split siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** Total Shares = Q1+Q2; Total Cost = Q1×P1+Q2×P2; Avg = Total Cost/Total Shares; Market Value = Shares×M; P/L = MV−Cost; Return% = P/L/Cost×100.
+- **Example:** 100@50 + 50@60 → avg ≈ **53.3333**; M=55 → MV **8,250** · P/L **250** · return **3.125%**.
+- **Important Files:** `frontend/src/tools/calculators/stock-average/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts` (not run this session per prompt). Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-19 — Add Stock Calculator
+- **Summary:** Shipped Stock Calculator on existing catalog slug `stock-calculator` (`StockCalculator`, catalog `6af46f0fa27d8d1d4e99002d`, preserved `nameKey` `stock calculator`, pillar `6af451bfa27d8d1d4e98f976`). Screenshot-first (ADR-023): number of shares; purchase (buying price/share FX, buy commission %, commission amount FX, net buying cost FX); selling (selling price/share FX, sell commission %, commission amount FX, net selling proceeds FX); performance (profit FX, ROI %, break-even selling price/share FX). Independent Phase 2 FX; shares/commission %/ROI never convert. No taxes/dividends. Distinct from Beta Stock / Safety Stock / Stock Average / Stock Split / ROI Calculator. Activated via `npm run tool:assign` with `--set-active --set-indexable`.
+- **Formulas:** Gross buy = N×B; Buy comm = Gross×b/100; Net buy = Gross+Comm; Gross sell = N×S; Sell comm = Gross×s/100; Net sell = Gross−Comm; Profit = Net sell − Net buy; ROI% = Profit/Net buy×100; Break-even/share = Net buy/[N×(1−s/100)] (undefined at s=100%).
+- **Example:** 100 · buy 50 @ 1% · sell 60 @ 1% → profit **890** · ROI ≈ **17.6238%** · break-even ≈ **51.0101**.
+- **Important Files:** `frontend/src/tools/calculators/stock/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Sales Tax Calculator New Jersey
 - **Summary:** Shipped Sales Tax Calculator New Jersey on existing catalog slug `sales-tax-calculator-new-jersey` (`NewJerseySalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e99002c`, preserved `nameKey` `sales tax calculator new jersey`). Screenshot-first (ADR-023): purchase amount (fixed USD) + five-digit NJ ZIP → applicable statewide rate, sales tax, total with tax. Rate source: NJ Division of Taxation Rates and Boundaries — single statewide **6.625%** since 2018-01-01; ZIP range **07001–08989**. UEZ reduced rates and product exemptions are not auto-applied from ZIP. Sales Tax / California / Ohio / Florida / Missouri / Margin siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Formulas:** Sales Tax = Purchase × 6.625 / 100; Total = Purchase + Sales Tax (cent-rounded).

@@ -256,6 +256,8 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'savings-plan-calculator',
   'savings-withdrawal-calculator',
   'simple-savings-calculator',
+  'stock-calculator',
+  'stock-average-calculator',
   'rate-of-return-calculator',
   'real-estate-commission-calculator',
   'return-on-capital-employed-calculator-roce',

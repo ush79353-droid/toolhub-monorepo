@@ -1062,6 +1062,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NaturalGasConverter,
     })),
   ),
+  NaturalRateOfUnemploymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/natural-rate-of-unemployment/NaturalUnemploymentCalculator'
+    ).then((mod) => ({
+      default: mod.NaturalUnemploymentCalculator,
+    })),
+  ),
   CentsToDollarsCalculator: lazyTool(() =>
     import('@/tools/calculators/cents-to-dollars/CentsToDollarsCalculator').then((mod) => ({
       default: mod.CentsToDollarsCalculator,
@@ -2194,6 +2201,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/stock/StockCalculator').then((mod) => ({
       default: mod.StockCalculator,
     })),
+  ),
+  StockAverageCalculator: lazyTool(() =>
+    import('@/tools/calculators/stock-average/StockAverageCalculator').then(
+      (mod) => ({
+        default: mod.StockAverageCalculator,
+      }),
+    ),
   ),
   CommercialLeaseCalculator: lazyTool(() =>
     import(

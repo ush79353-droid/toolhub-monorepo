@@ -185,6 +185,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MsToKmhConverter',
   'CcfToThermsCalculator',
   'NaturalGasConverter',
+  'NaturalRateOfUnemploymentCalculator',
   'CentsToDollarsCalculator',
   'NmToJoulesCalculator',
   'CgsSystemOfUnitsConverter',
@@ -838,6 +839,7 @@ if (isDirect) {
     !isApprovedComponentKey('MsToKmhConverter') ||
     !isApprovedComponentKey('CcfToThermsCalculator') ||
     !isApprovedComponentKey('NaturalGasConverter') ||
+    !isApprovedComponentKey('NaturalRateOfUnemploymentCalculator') ||
     !isApprovedComponentKey('CentsToDollarsCalculator') ||
     !isApprovedComponentKey('NmToJoulesCalculator') ||
     !isApprovedComponentKey('CgsSystemOfUnitsConverter') ||

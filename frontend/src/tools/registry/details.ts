@@ -246,6 +246,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MsToKmhConverter: () => import('@/tools/calculators/ms-to-kmh/detail'),
   CcfToThermsCalculator: () => import('@/tools/calculators/ccf-to-therms/detail'),
   NaturalGasConverter: () => import('@/tools/calculators/natural-gas/detail'),
+  NaturalRateOfUnemploymentCalculator: () =>
+    import('@/tools/calculators/natural-rate-of-unemployment/detail'),
   CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
   NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
   CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),
@@ -492,6 +494,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SafetyStockCalculator: () =>
     import('@/tools/calculators/safety-stock/detail'),
   StockCalculator: () => import('@/tools/calculators/stock/detail'),
+  StockAverageCalculator: () =>
+    import('@/tools/calculators/stock-average/detail'),
   CommercialLeaseCalculator: () =>
     import('@/tools/calculators/commercial-lease/detail'),
   CommissionCalculator: () =>
