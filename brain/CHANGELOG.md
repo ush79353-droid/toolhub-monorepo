@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add HR Software ROI Calculator
+- **Summary:** Shipped HR Software ROI Calculator on existing catalog slug `hr-software-roi-calculator` (`HrSoftwareRoiCalculator`, catalog `6af46f0fa27d8d1d4e9900a4`, preserved `nameKey` `hr software roi calculator`). Screenshot-first (ADR-023): simple cost/benefit/ROI%; optional advanced itemized costs & benefits; evaluation period; BCR; payback estimate. Denomination-only CurrencySelect (default PKR). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
+- **Formulas:** ROI=((B−C)/C)×100; Net=B−C; BCR=B/C; recurring amounts scaled by billing frequency × period months; payback ≈ one-time / annual net recurring when positive.
+- **Example:** Cost 500,000 · Benefit 750,000 → ROI 50% · net 250,000 · BCR 1.50.
+- **Important Files:** `frontend/src/tools/calculators/hr-software-roi/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add DART Rate Calculator
 - **Summary:** Shipped DART Rate Calculator on existing catalog slug `dart-rate-calculator` (`DartRateCalculator`, catalog `6af46f0fa27d8d1d4e990097`, preserved `nameKey` `dart rate calculator`). Screenshot-first (ADR-023): total DART incidents, total hours worked, DART rate; OSHA formula; reverse hours/estimated cases via last-edited driver. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
 - **Formulas:** Rate = (N × 200,000) / EH; Hours = (N × 200,000) / Rate; Estimated N = Rate × EH / 200,000.

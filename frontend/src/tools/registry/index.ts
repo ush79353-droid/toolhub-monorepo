@@ -3213,6 +3213,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DartRateCalculator,
     })),
   ),
+  HrSoftwareRoiCalculator: lazyTool(() =>
+    import('@/tools/calculators/hr-software-roi/HrSoftwareRoiCalculator').then(
+      (mod) => ({
+        default: mod.HrSoftwareRoiCalculator,
+      }),
+    ),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
