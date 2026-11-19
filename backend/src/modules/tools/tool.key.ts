@@ -401,6 +401,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RoiCalculator',
   'SaasLifetimeValueCalculator',
   'SafetyStockCalculator',
+  'CommercialLeaseCalculator',
   'CommissionCalculator',
   'SalesCommissionCalculator',
   'RentalCommissionCalculator',
@@ -445,6 +446,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CapmCalculator',
   'CapitalGainsYieldCalculator',
   'CarInterestCalculator',
+  'CarLeaseCalculator',
   'CarLoanEmiCalculator',
   'CarriedInterestCalculator',
   'CashBackOrLowInterestCalculator',
@@ -1050,6 +1052,7 @@ if (isDirect) {
     !isApprovedComponentKey('RoiCalculator') ||
     !isApprovedComponentKey('SaasLifetimeValueCalculator') ||
     !isApprovedComponentKey('SafetyStockCalculator') ||
+    !isApprovedComponentKey('CommercialLeaseCalculator') ||
     !isApprovedComponentKey('CommissionCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
     !isApprovedComponentKey('RentalCommissionCalculator') ||
@@ -1094,6 +1097,7 @@ if (isDirect) {
     !isApprovedComponentKey('CapmCalculator') ||
     !isApprovedComponentKey('CapitalGainsYieldCalculator') ||
     !isApprovedComponentKey('CarInterestCalculator') ||
+    !isApprovedComponentKey('CarLeaseCalculator') ||
     !isApprovedComponentKey('CarLoanEmiCalculator') ||
     !isApprovedComponentKey('CarriedInterestCalculator') ||
     !isApprovedComponentKey('CashBackOrLowInterestCalculator') ||

@@ -489,6 +489,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/saas-lifetime-value/detail'),
   SafetyStockCalculator: () =>
     import('@/tools/calculators/safety-stock/detail'),
+  CommercialLeaseCalculator: () =>
+    import('@/tools/calculators/commercial-lease/detail'),
   CommissionCalculator: () =>
     import('@/tools/calculators/commission/detail'),
   SalesCommissionCalculator: () =>
@@ -572,6 +574,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mortgage-uk/detail'),
   CarInterestCalculator: () =>
     import('@/tools/calculators/car-interest/detail'),
+  CarLeaseCalculator: () =>
+    import('@/tools/calculators/car-lease/detail'),
   CarLoanEmiCalculator: () =>
     import('@/tools/calculators/car-loan-emi/detail'),
   CarriedInterestCalculator: () =>

@@ -2183,6 +2183,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SafetyStockCalculator,
     })),
   ),
+  CommercialLeaseCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/commercial-lease/CommercialLeaseCalculator'
+    ).then((mod) => ({
+      default: mod.CommercialLeaseCalculator,
+    })),
+  ),
   CommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/commission/CommissionCalculator'
@@ -2434,6 +2441,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   CarInterestCalculator: lazyTool(() =>
     import('@/tools/calculators/car-interest/CarInterestCalculator').then((mod) => ({
       default: mod.CarInterestCalculator,
+    })),
+  ),
+  CarLeaseCalculator: lazyTool(() =>
+    import('@/tools/calculators/car-lease/CarLeaseCalculator').then((mod) => ({
+      default: mod.CarLeaseCalculator,
     })),
   ),
   CarLoanEmiCalculator: lazyTool(() =>

@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Car Lease Calculator
+- **Summary:** Shipped Car Lease Calculator on existing catalog slug `car-lease-calculator` (`CarLeaseCalculator`, catalog `6af46f0fa27d8d1d4e990010`, preserved `nameKey` `car lease calculator`). Screenshot-first (ADR-023): Basic (MSRP, negotiated price, term, sales tax %, residual factor %, money factor) + Additional (dealer/registration fees, down, trade-in, other reductions) → Results (net cap, residual, monthly depreciation/lease fee/base/tax/payment). Fees financed into cap cost; sales tax monthly on base. Independent Phase 2 FX; %/MF/term never convert. Auto Lease / Lease siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** Residual = MSRP×RF/100; Net Cap = Negotiated + Fees − Down − Trade-in − Other; Dep/mo = (Net Cap − Residual)/n; Lease fee/mo = (Net Cap + Residual)×MF; Base = Dep + Fee; Tax = Base×tax%; Payment = Base + Tax.
+- **Example:** MSRP 50,000 · negotiated 48,000 · 36 mo · 5% · RF 58% · MF 0.001 → residual 29,000 · payment ≈ **635.02**.
+- **Important Files:** `frontend/src/tools/calculators/car-lease/*`, registry, sitemap, FX slug lists, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Auto Lease Calculator
 - **Summary:** Shipped Auto Lease Calculator on existing catalog slug `auto-lease-calculator` (`AutoLeaseCalculator`, catalog `6af46f0fa27d8d1d4e99000f`, preserved `nameKey` `auto lease calculator`). Screenshot-first (ADR-023): Total Price / Monthly Payment tabs; auto price; term months; Money Factor or APR (MF ≈ APR%/2400); down payment; trade-in; sales tax %; residual value. Money-factor lease model with tax applied to the monthly payment. Fixed USD (no currency selector / no FX). Lease Calculator and Car Lease Calculator siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Formulas:** Cap = Price − Down − Trade-in; Dep/mo = (Cap − Residual)/n; Finance/mo = (Cap + Residual)×MF; Base = Dep + Finance; Payment = Base×(1+tax/100); Total cost = payments + down.
