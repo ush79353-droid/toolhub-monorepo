@@ -5,8 +5,8 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { formatFilingStatusLabel } from './calculation';
 import { IncomeTaxForm } from './IncomeTaxForm';
+import { formatFilingStatusLabel } from './labels';
 import {
   createDefaultInput,
   inputsEqual,

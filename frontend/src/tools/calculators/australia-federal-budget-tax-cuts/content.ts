@@ -6,6 +6,7 @@ export const AUSTRALIA_TAX_CUTS_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'what-was-budget', label: 'What Was Budget 2020/21 About?' },
   { id: 'why-unavailable', label: 'Why This Calculator Is Unavailable' },
   { id: 'where-to-go', label: 'Where to Go Next' },
+  { id: 'related-calculators', label: 'Related Calculators' },
   { id: 'australia-tax-cuts-faq', label: 'Frequently Asked Questions' },
 ];
 

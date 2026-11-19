@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { AUSTRALIA_TAX_CUTS_FAQS } from './content';
 import { GST_CALCULATOR_HREF } from './types';
@@ -49,6 +49,33 @@ export function AustraliaTaxCutsGuideArticle() {
         substitute for ATO income tax advice. That GST catalog row may still be undeveloped until it
         is registered and activated separately.
       </p>
+
+      <h2
+        id="related-calculators"
+        className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
+      >
+        Related Calculators
+      </h2>
+      <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
+        <li>
+          <Link
+            href="/tools/income-tax-calculator-pakistan"
+            className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+          >
+            Income Tax Calculator Pakistan
+          </Link>{' '}
+          — live FBR salaried estimate (separate jurisdiction; not Australian tax).
+        </li>
+        <li>
+          <Link
+            href={GST_CALCULATOR_HREF}
+            className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+          >
+            GST Calculator
+          </Link>{' '}
+          — verified catalog alternative named in the unavailable notice.
+        </li>
+      </ul>
 
       <h2
         id="australia-tax-cuts-faq"

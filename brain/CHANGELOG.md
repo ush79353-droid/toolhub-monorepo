@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Income Tax Philippines Calculator
+- **Summary:** Shipped Income Tax Philippines Calculator on existing catalog slug `income-tax-philippines-calculator` (`IncomeTaxCalculatorPhilippines`, catalog `6af46f0fa27d8d1d4e990042`, preserved pillar `6af451c0a27d8d1d4e98f97a`). Screenshot-first (ADR-023): Salary overview (Employed/Self-employed + monthly ₱); employed/self-employed contribution section (SSS, PhilHealth, Pag-IBIG, total); deductions (taxable income, withholding/estimated tax, net after tax, total deductions, net after deductions). Fixed PHP — no currency dropdown / no FX. CY 2025 sources: BIR TRAIN 2023+ monthly withholding + annual graduated (RMC 34-2025); SSS CI 2024-006/008; PhilHealth PA 2025-0002; Pag-IBIG Circular 460. Employer shares excluded. Self-employed uses member-paid contributions + graduated÷12 (not payroll withholding). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Employed ₱25,000/mo → SSS **1,250** · PhilHealth **625** · Pag-IBIG **200** · contributions **2,075** · taxable **22,925** · withholding ≈ **313.80**.
+- **Important Files:** `frontend/src/tools/calculators/philippines-income-tax/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Profit Calculator
 - **Summary:** Shipped Profit Calculator on existing catalog slug `profit-calculator` (`ProfitCalculator`, catalog `6af46f0fa27d8d1d4e990043`, preserved `nameKey` `profit calculator`). Screenshot-first (ADR-023): Buying cost (cost FX + per units) + Selling price (price FX + per units) + Profit (quantity, discount %, total cost / revenue / total profit FX outputs). Formulas: UnitCost=C/Cq; UnitPrice=P/Pq; TotalCost=UnitCost×Q; Revenue=UnitPrice×Q×(1−D/100); Profit=Revenue−TotalCost. Independent Phase 2 FX; unit counts and discount % never convert. Margin / Contribution Margin / Gross Profit siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Cost 100/1 · Price 150/1 · Qty 10 · Discount 10% → total cost **1,000** · revenue **1,350** · profit **350**.
@@ -13,9 +19,10 @@
 ### 2026-11-19 — Add Income Tax Cuts Calculator - Australia Federal Budget 2020/21
 - **Summary:** Shipped historical unavailable notice on existing catalog slug `income-tax-cuts-calculator-australia-federal-budget-202021` (`AustraliaFederalBudgetTaxCutsCalculator`, catalog `6af46f0fa27d8d1d4e990041`, preserved `nameKey` `income tax cuts calculator - australia federal budget 2020/21`, pillar `6af451c0a27d8d1d4e98f97a`). Screenshot-first (ADR-023): unavailable card; GST Calculator link to verified slug `gst-calculator` (GST module still undeveloped/inactive); Share/Reload/Clear(disabled)/feedback. No tax brackets, refunds, or FX. Distinguishes Budget 2020/21 proposals from enacted ATO-administered legislation. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Important Files:** `frontend/src/tools/calculators/australia-federal-budget-tax-cuts/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
-- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits (`be353d43` UI, `a4f07045` GST nav/actions, registration/Brain cleanup). Temporary files cleaned: YES.
 
 ### 2026-11-19 — Add Price to Cash Flow Ratio Calculator
+
 
 - **Summary:** Shipped Price to Cash Flow Ratio Calculator on existing catalog slug `price-to-cash-flow-ratio-calculator` (`PriceToCashFlowRatioCalculator`, catalog `6af46f0fa27d8d1d4e99003a`, pillar `6af451c0a27d8d1d4e98f978`). Screenshot-first (ADR-023): Cash flow FX; shares outstanding; cash flow per share FX; price per share FX; P/CF ratio as dimensionless `x`. Formulas CFPS = CF/Shares; P/CF = Price/CFPS. Zero CFPS → undefined (not Infinity); negative CF allowed with valuation note. Independent Phase 2 FX; shares and ratio never convert. OCF / Cash Flow to Debt / Cash Ratio siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable`.
 - **Example:** CF 10,000,000 · 1,000,000 shares · price 150 → CFPS **10** · P/CF **15×**.

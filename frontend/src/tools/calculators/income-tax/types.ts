@@ -1,6 +1,11 @@
-import type { FilingStatus, TaxYear } from './tax-parameters';
+export type TaxYear = 2025 | 2026;
 
-export type { FilingStatus, TaxYear };
+export type FilingStatus =
+  | 'single'
+  | 'married-joint'
+  | 'married-separate'
+  | 'head-of-household'
+  | 'qualifying-surviving-spouse';
 
 /** Screenshot-first US federal income tax inputs. Fixed USD — no FX. */
 export interface IncomeTaxInput {

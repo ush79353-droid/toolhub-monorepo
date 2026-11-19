@@ -3,8 +3,9 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
-import type { FilingStatus, TaxYear } from './tax-parameters';
+import { FILING_STATUS_OPTIONS, TAX_YEAR_OPTIONS } from './labels';
 import type {
+  FilingStatus,
   IncomeTaxFieldErrors,
   IncomeTaxInput,
   IncomeTaxResult,
@@ -134,11 +135,11 @@ export function IncomeTaxForm({
             value={input.filingStatus}
             onChange={(e) => set({ filingStatus: e.target.value as FilingStatus })}
           >
-            <option value="single">Single</option>
-            <option value="married-joint">Married Filing Jointly</option>
-            <option value="married-separate">Married Filing Separately</option>
-            <option value="head-of-household">Head of Household</option>
-            <option value="qualifying-surviving-spouse">Qualifying Surviving Spouse</option>
+            {FILING_STATUS_OPTIONS.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -194,12 +195,7 @@ export function IncomeTaxForm({
         <fieldset>
           <legend className={labelClass}>Tax year</legend>
           <div className="flex flex-col gap-2 sm:flex-row sm:gap-4">
-            {(
-              [
-                { year: 2026 as TaxYear, label: '2026 (return filed in 2027)' },
-                { year: 2025 as TaxYear, label: '2025 (return filed in 2026)' },
-              ] as const
-            ).map((opt) => (
+            {TAX_YEAR_OPTIONS.map((opt) => (
               <label
                 key={opt.year}
                 className="flex items-center gap-2 text-sm text-accent"
