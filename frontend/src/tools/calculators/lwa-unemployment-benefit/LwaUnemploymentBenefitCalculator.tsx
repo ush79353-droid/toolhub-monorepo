@@ -5,13 +5,11 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { buildLwaUnemploymentNoticeSummary } from './calculation';
 import { LwaUnemploymentBenefitForm } from './LwaUnemploymentBenefitForm';
-import { LOAN_CALCULATOR_HREF } from './types';
+import { createDefaultInput } from './types';
+import { validateLwaUnemploymentBenefitInput } from './validation';
 
-/**
- * UI shell for LWA historical notice (share/reload/clear/feedback).
- * Verified historical guidance strings wire in a follow-up commit.
- */
 export function LwaUnemploymentBenefitCalculator({
   metadata,
   className = '',
@@ -19,11 +17,13 @@ export function LwaUnemploymentBenefitCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
-  const summary = [
-    `${metadata.title} — Omega Calculators`,
-    'Historical notice only — Lost Wages Assistance (LWA) is not available for current claims.',
-    `For loan installment estimates, use the Loan Calculator: ${LOAN_CALCULATOR_HREF}`,
-  ].join('\n');
+  const notice = validateLwaUnemploymentBenefitInput(
+    createDefaultInput(),
+    metadata.title
+  );
+  const summary =
+    notice.result?.summaryText ??
+    buildLwaUnemploymentNoticeSummary(metadata.title);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
