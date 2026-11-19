@@ -120,11 +120,11 @@ export function formatDistanceAmount(amount: number): string {
 
 export function formatLeaseMileageMoney(
   amount: number,
-  currency: SupportedCurrency
+  _currency: SupportedCurrency
 ): string {
-  // Symbol shown separately in the form.
-  const full = formatCurrencyValue(amount, currency);
-  return full.replace(/[^\d.,\s-]/g, '').trim() || formatDistanceAmount(amount);
+  // Symbol shown separately in the form; always two display decimals.
+  void _currency;
+  return formatDistanceAmount(amount);
 }
 
 export const ASSUMPTION_NOTE =
