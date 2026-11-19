@@ -616,6 +616,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'dart-rate-calculator',
   'hr-software-roi-calculator',
   'loss-ratio-calculator',
+  'nps-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

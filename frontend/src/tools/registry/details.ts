@@ -836,6 +836,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   HrSoftwareRoiCalculator: () =>
     import('@/tools/calculators/hr-software-roi/detail'),
   LossRatioCalculator: () => import('@/tools/calculators/loss-ratio/detail'),
+  NpsCalculator: () => import('@/tools/calculators/nps/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

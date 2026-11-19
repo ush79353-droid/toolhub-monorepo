@@ -582,6 +582,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DartRateCalculator',
   'HrSoftwareRoiCalculator',
   'LossRatioCalculator',
+  'NpsCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1196,6 +1197,7 @@ if (isDirect) {
     !isApprovedComponentKey('DartRateCalculator') ||
     !isApprovedComponentKey('HrSoftwareRoiCalculator') ||
     !isApprovedComponentKey('LossRatioCalculator') ||
+    !isApprovedComponentKey('NpsCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add NPS Calculator
+- **Summary:** Shipped NPS Calculator on existing catalog slug `nps-calculator` (`NpsCalculator`, catalog `6af46f0fa27d8d1d4e9900ab`, preserved `nameKey` `nps calculator`). Screenshot-first (ADR-023): scores 0–10 response counts; promoters/passives/detractors analysis; NPS with mix visualization. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
+- **Formulas:** PR=S9+S10; PA=S7+S8; DR=S0…S6; NPS=((PR−DR)/TR)×100 = %PR−%DR. Average score optional, never replaces NPS.
+- **Example:** Spec Example A → promoters 50 · passives 25 · detractors 25 · NPS +25. Bounds ±100; all-passives → 0.
+- **Important Files:** `frontend/src/tools/calculators/nps/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Loss Ratio Calculator
 - **Summary:** Shipped Loss Ratio Calculator on existing catalog slug `loss-ratio-calculator` (`LossRatioCalculator`, catalog `6af46f0fa27d8d1d4e9900a9`, preserved `nameKey` `loss ratio calculator`). Screenshot-first (ADR-023): Financial results accordion (earned premiums, claims paid, LAE); loss ratio %; interpretation + compact summary; denomination-only CurrencySelect (default PKR). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
 - **Formulas:** LR=((Claims Paid + Loss Adjustment Expenses) / Earned Premiums)×100; Total Loss-Related Costs = Claims + LAE; Premiums Remaining = Premiums − Total Costs (not net income).

@@ -3225,6 +3225,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LossRatioCalculator,
     })),
   ),
+  NpsCalculator: lazyTool(() =>
+    import('@/tools/calculators/nps/NpsCalculator').then((mod) => ({
+      default: mod.NpsCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
