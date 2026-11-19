@@ -2259,6 +2259,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ProfitabilityIndexCalculator,
     })),
   ),
+  RevenueCalculator: lazyTool(() =>
+    import('@/tools/calculators/revenue/RevenueCalculator').then((mod) => ({
+      default: mod.RevenueCalculator,
+    })),
+  ),
   RevenuePerEmployeeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/revenue-per-employee/RevenuePerEmployeeCalculator'
@@ -2627,6 +2632,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.CarRefinanceCalculator,
       })
     ),
+  ),
+  RefinanceCalculator: lazyTool(() =>
+    import('@/tools/calculators/refinance/RefinanceCalculator').then((mod) => ({
+      default: mod.RefinanceCalculator,
+    })),
   ),
   CarriedInterestCalculator: lazyTool(() =>
     import('@/tools/calculators/carried-interest/CarriedInterestCalculator').then(

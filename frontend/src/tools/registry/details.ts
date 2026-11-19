@@ -509,6 +509,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/ev-to-sales/detail'),
   ProfitabilityIndexCalculator: () =>
     import('@/tools/calculators/profitability-index/detail'),
+  RevenueCalculator: () => import('@/tools/calculators/revenue/detail'),
   RevenuePerEmployeeCalculator: () =>
     import('@/tools/calculators/revenue-per-employee/detail'),
   RoasCalculator: () => import('@/tools/calculators/roas/detail'),
@@ -626,6 +627,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/car-loan-emi/detail'),
   CarRefinanceCalculator: () =>
     import('@/tools/calculators/car-refinance/detail'),
+  RefinanceCalculator: () =>
+    import('@/tools/calculators/refinance/detail'),
   CarriedInterestCalculator: () =>
     import('@/tools/calculators/carried-interest/detail'),
   CashBackOrLowInterestCalculator: () =>
