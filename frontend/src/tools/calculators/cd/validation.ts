@@ -1,7 +1,6 @@
 import { calculateCd } from './calculation';
 import {
   CD_COMPOUNDING_OPTIONS,
-  type CdCompounding,
   type CdFieldErrors,
   type CdInput,
   type CdResult,
@@ -14,11 +13,11 @@ function parseNumber(val: string): number | null {
   return Number.isFinite(num) ? num : Number.NaN;
 }
 
-function parseOptionalWhole(val: string): number | null {
+function parseOptionalInt(val: string): number | null {
   const trimmed = val.trim();
   if (!trimmed) return null;
   const num = Number(trimmed);
-  if (!Number.isFinite(num) || !Number.isInteger(num) || num < 0) return Number.NaN;
+  if (!Number.isFinite(num) || !Number.isInteger(num)) return Number.NaN;
   return num;
 }
 
@@ -31,39 +30,60 @@ export function validateCdInput(input: CdInput): {
 
   const deposit = parseNumber(input.initialDeposit);
   const rate = parseNumber(input.interestRate);
-  const yearsRaw = input.termYears.trim();
-  const monthsRaw = input.termMonths.trim();
+  const tax = parseNumber(input.marginalTaxRate);
+  const yearsRaw = input.depositYears.trim();
+  const monthsRaw = input.depositMonths.trim();
 
-  if (deposit === null || rate === null || (yearsRaw === '' && monthsRaw === '')) {
+  if (
+    deposit === null ||
+    rate === null ||
+    tax === null ||
+    (yearsRaw === '' && monthsRaw === '')
+  ) {
     return { isValid: false, errors, result: null };
   }
 
-  if (Number.isNaN(deposit) || deposit < 0) {
-    errors.initialDeposit = 'Enter a valid non-negative deposit';
+  if (Number.isNaN(deposit) || !(deposit > 0)) {
+    errors.initialDeposit = 'Enter a deposit greater than zero';
   }
 
   if (Number.isNaN(rate) || rate < 0) {
     errors.interestRate = 'Enter a valid non-negative interest rate';
+  } else if (rate > 1000) {
+    errors.interestRate = 'Interest rate is too large';
   }
 
-  const yearsParsed = yearsRaw === '' ? 0 : parseOptionalWhole(input.termYears);
-  const monthsParsed = monthsRaw === '' ? 0 : parseOptionalWhole(input.termMonths);
-
-  if (yearsRaw !== '' && Number.isNaN(yearsParsed as number)) {
-    errors.termYears = 'Enter whole years (0 or more)';
+  if (Number.isNaN(tax) || tax < 0 || tax > 100) {
+    errors.marginalTaxRate = 'Enter a tax rate between 0 and 100';
   }
-  if (monthsRaw !== '' && Number.isNaN(monthsParsed as number)) {
-    errors.termMonths = 'Enter whole months (0 or more)';
+
+  const yearsParsed = yearsRaw === '' ? 0 : parseOptionalInt(input.depositYears);
+  const monthsParsed = monthsRaw === '' ? 0 : parseOptionalInt(input.depositMonths);
+
+  if (yearsRaw !== '' && (Number.isNaN(yearsParsed as number) || (yearsParsed as number) < 0)) {
+    errors.depositYears = 'Enter whole years (0 or more)';
+  }
+  if (
+    monthsRaw !== '' &&
+    (Number.isNaN(monthsParsed as number) ||
+      (monthsParsed as number) < 0 ||
+      (monthsParsed as number) > 11)
+  ) {
+    errors.depositMonths = 'Enter whole months from 0 to 11';
   }
 
   const y = Number.isFinite(yearsParsed as number) ? (yearsParsed as number) : 0;
   const m = Number.isFinite(monthsParsed as number) ? (monthsParsed as number) : 0;
-  if (!errors.termYears && !errors.termMonths && y + m / 12 <= 0) {
-    errors.termYears = 'Term must be greater than zero';
+  if (!errors.depositYears && !errors.depositMonths && y + m / 12 <= 0) {
+    errors.depositYears = 'Deposit length must be greater than zero';
   }
 
   if (!CD_COMPOUNDING_OPTIONS.some((o) => o.value === input.compounding)) {
     errors.compounding = 'Select a valid compounding frequency';
+  }
+
+  if (input.rateConvention !== 'nominal' && input.rateConvention !== 'apy') {
+    errors.form = 'Select a valid rate convention';
   }
 
   const isValid = Object.keys(errors).length === 0;
@@ -71,13 +91,24 @@ export function validateCdInput(input: CdInput): {
     return { isValid: false, errors, result: null };
   }
 
-  const result = calculateCd(
-    deposit as number,
-    rate as number,
-    y,
-    m,
-    input.compounding as CdCompounding,
-    input.currency
-  );
-  return { isValid: result !== null, errors, result };
+  const result = calculateCd({
+    initialDeposit: deposit as number,
+    interestRatePercent: rate as number,
+    rateConvention: input.rateConvention,
+    compounding: input.compounding,
+    depositYears: y,
+    depositMonths: m,
+    marginalTaxRatePercent: tax as number,
+    currency: input.currency,
+  });
+
+  if (!result) {
+    return {
+      isValid: false,
+      errors: { form: 'Unable to calculate with the current inputs.' },
+      result: null,
+    };
+  }
+
+  return { isValid: true, errors, result };
 }
