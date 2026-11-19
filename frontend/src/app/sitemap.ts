@@ -641,6 +641,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'quiz-us-income-percentile-calculator',
   'sabbatical-calculator',
   'scrap-gold-calculator',
+  'scrap-silver-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

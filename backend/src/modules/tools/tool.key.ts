@@ -607,6 +607,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'QuizUsIncomePercentileCalculator',
   'SabbaticalCalculator',
   'ScrapGoldCalculator',
+  'ScrapSilverCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1246,6 +1247,7 @@ if (isDirect) {
     !isApprovedComponentKey('QuizUsIncomePercentileCalculator') ||
     !isApprovedComponentKey('SabbaticalCalculator') ||
     !isApprovedComponentKey('ScrapGoldCalculator') ||
+    !isApprovedComponentKey('ScrapSilverCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Scrap Silver Calculator
+- **Summary:** Shipped Scrap Silver Calculator on existing catalog slug `scrap-silver-calculator` (`ScrapSilverCalculator`, catalog `6af46f10a27d8d1d4e990108`, preserved `nameKey` `scrap silver calculator`). Screenshot-first (ADR-023): weight units; purity presets/custom; pure silver weight; price/unit; melt value; optional buy/sell (dealer % + refining/transaction fees). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (manual spot; no FX).
+- **Formulas:** g=w×unit; pure=g×purity%/100; melt=pure×(price/GRAMS_PER[unit]); sell=melt−(melt×discount%)−fees.
+- **Example:** 100g · .925 · $0.85/g → pure **92.5g** · melt **$78.63**.
+- **Important Files:** `frontend/src/tools/calculators/scrap-silver/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Scrap Gold Calculator
 - **Summary:** Shipped Scrap Gold Calculator on existing catalog slug `scrap-gold-calculator` (`ScrapGoldCalculator`, catalog `6af46f10a27d8d1d4e990107`, preserved `nameKey` `scrap gold calculator`). Screenshot-first (ADR-023): scrap weight units; karat↔% sync; pure gold weight; price/unit; total value. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (manual spot; no FX).
 - **Formulas:** g = w×unit; purity%=K/24×100; pure_g = g×purity%/100; value = pure_g × (price/GRAMS_PER[unit]). Troy ounce = 31.1034768 g.

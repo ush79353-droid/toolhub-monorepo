@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Scrap Gold Calculator live at `/tools/scrap-gold-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Scrap Silver Calculator live at `/tools/scrap-silver-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Scrap Silver Calculator (`/tools/scrap-silver-calculator`):** Live client-side scrap valuation tool (`componentKey: 'ScrapSilverCalculator'`, catalog `6af46f10a27d8d1d4e990108`, `nameKey` `scrap silver calculator`). Screenshot-first (ADR-023): weight + unit; purity presets (.999/.9999/.925/…/custom); pure silver weight; price/unit; melt value; optional buy/sell (dealer % + fees). Grams-internal; purity once. Denomination-only CurrencySelect (no FX; manual spot). Share/Calculate/Reload/Clear/feedback/guide/FAQ/sources. Activated; **`indexable` left false**. Example: 100g .925 @ $0.85/g → pure **92.5g** · melt **$78.63**.
 - **Scrap Gold Calculator (`/tools/scrap-gold-calculator`):** Live client-side scrap valuation tool (`componentKey: 'ScrapGoldCalculator'`, catalog `6af46f10a27d8d1d4e990107`, `nameKey` `scrap gold calculator`). Screenshot-first (ADR-023): weight + unit (g/kg/oz t/dwt/gr); karat↔% sync; pure gold weight; price/unit; total value. Grams-internal conversions; purity applied once. Denomination-only CurrencySelect (no FX; manual spot). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: 120g 18K @ $39/g → pure **90g** · **$3,510**; mixed guide example → **$8,628.75**.
 - **Sabbatical Calculator (`/tools/sabbatical-calculator`):** Live client-side sabbatical planner (`componentKey: 'SabbaticalCalculator'`, catalog `6af46f10a27d8d1d4e990106`, `nameKey` `sabbatical calculator`). Screenshot-first (ADR-023): Save (%, years, duration yrs/mos/weeks) + Financial Details (income, auto/manual monthly savings, current savings, expenses, buffer %); available vs required fund; affordable months with buffer; surplus/shortfall status. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Default example → available **$30,000** · required **$39,600** · shortfall **$9,600**.
 - **Quiz: US Income Percentile Calculator (`/tools/quiz-us-income-percentile-calculator`):** Live client-side educational MCQ quiz (`componentKey: 'QuizUsIncomePercentileCalculator'`, catalog `6af46f10a27d8d1d4e990105`, `nameKey` `quiz: us income percentile calculator`). Screenshot-first (ADR-023): eight radio questions; soft sky hints; Check answers → score `n / 8`, %, feedback bands (0–2/3–4/5–6/7–8), green/red/unanswered review + explanations. Unanswered = 0. Share/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. No FX. Perfect answers → **8 / 8**.

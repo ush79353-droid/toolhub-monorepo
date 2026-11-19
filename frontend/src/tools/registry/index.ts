@@ -3384,6 +3384,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ScrapGoldCalculator,
     })),
   ),
+  ScrapSilverCalculator: lazyTool(() =>
+    import('@/tools/calculators/scrap-silver/ScrapSilverCalculator').then(
+      (mod) => ({
+        default: mod.ScrapSilverCalculator,
+      }),
+    ),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
