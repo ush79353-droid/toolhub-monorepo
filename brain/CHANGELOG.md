@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Rebuild CD Calculator (screenshot-first)
+- **Summary:** Rebuilt CD Calculator on existing catalog slug `cd-calculator` (`CdCalculator`, catalog `6af46f0fa27d8d1d4e9900c7`, preserved `nameKey` `cd calculator`) to match Calculator.net-style scope: deposit, APR/APY, compounding frequencies, years/months, marginal tax estimate, donut + accumulation schedules/charts, full guide/FAQ. Activated via `npm run tool:assign` with `--set-active --set-indexable` — **`indexable` kept true**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect; removed `cd-calculator` from FX slug sets.
+- **Formulas:** A=P(1+r/n)^(nt); I=A−P; APY=(1+r/n)^n−1; tax=I×m; after-tax=P+(I−tax). Schedules use the same balance-at-t path and reconcile final row to maturity.
+- **Example:** $10,000 · 5% nominal · annually · 3 years · 0% tax → end $11,576.25 · interest $1,576.25; 20% tax → after-tax $11,261.00.
+- **Important Files:** `frontend/src/tools/calculators/cd/*`, `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/app/embed/[slug]/page.tsx`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Average Return Calculator
 - **Summary:** Shipped Average Return Calculator on existing catalog slug `average-return-calculator` (`AverageReturnCalculator`, catalog `6af46f0fa27d8d1d4e9900c2`, preserved `nameKey` `average return calculator`). Screenshot-first (ADR-023): dual independent sections — cash-flow money-weighted XIRR (starting/ending balance + dated deposits/withdrawals) and average/cumulative period returns (return % + years/months). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect on cash-flow section (no FX).
 - **Formulas:** XIRR Σ CFᵢ/(1+r)^((Dᵢ−D₀)/365)=0 (Newton + bisection); annualize (1+R)^(12/M)−1; arithmetic avg of annualized; cumulative ∏(1+Rᵢ)−1; overall annualized (1+cum)^(12/totalMonths)−1. Signs: −start/−deposit/+withdrawal/+end.
