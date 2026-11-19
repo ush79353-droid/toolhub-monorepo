@@ -585,6 +585,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NpsCalculator',
   'RemoteVsOnLocationWorkersCalculator',
   'TrirCalculator',
+  'AverageReturnCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1202,6 +1203,7 @@ if (isDirect) {
     !isApprovedComponentKey('NpsCalculator') ||
     !isApprovedComponentKey('RemoteVsOnLocationWorkersCalculator') ||
     !isApprovedComponentKey('TrirCalculator') ||
+    !isApprovedComponentKey('AverageReturnCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

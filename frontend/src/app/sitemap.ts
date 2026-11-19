@@ -619,6 +619,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'nps-calculator',
   'remote-vs-on-location-workers-calculator',
   'trir-calculator',
+  'average-return-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

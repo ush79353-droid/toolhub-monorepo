@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Average Return Calculator
+- **Summary:** Shipped Average Return Calculator on existing catalog slug `average-return-calculator` (`AverageReturnCalculator`, catalog `6af46f0fa27d8d1d4e9900c2`, preserved `nameKey` `average return calculator`). Screenshot-first (ADR-023): dual independent sections — cash-flow money-weighted XIRR (starting/ending balance + dated deposits/withdrawals) and average/cumulative period returns (return % + years/months). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect on cash-flow section (no FX).
+- **Formulas:** XIRR Σ CFᵢ/(1+r)^((Dᵢ−D₀)/365)=0 (Newton + bisection); annualize (1+R)^(12/M)−1; arithmetic avg of annualized; cumulative ∏(1+Rᵢ)−1; overall annualized (1+cum)^(12/totalMonths)−1. Signs: −start/−deposit/+withdrawal/+end.
+- **Example:** 10,000→12,100 over two years ≈ 10% XIRR; 10%/−2%/15% → cumulative 24.07%.
+- **Important Files:** `frontend/src/tools/calculators/average-return/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add TRIR Calculator
 - **Summary:** Shipped TRIR Calculator on existing catalog slug `trir-calculator` (`TrirCalculator`, catalog `6af46f0fa27d8d1d4e9900bc`, preserved `nameKey` `trir calculator`). Screenshot-first (ADR-023): hours worked, recordable injuries, TRIR; reverse hours/estimated cases; illustrative low/moderate/high bands with disclaimer. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
 - **Formulas:** TRIR = (I × 200,000) / H; Hours = (I × 200,000) / TRIR; Estimated I = TRIR × H / 200,000.

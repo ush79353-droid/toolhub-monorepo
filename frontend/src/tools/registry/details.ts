@@ -840,6 +840,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   RemoteVsOnLocationWorkersCalculator: () =>
     import('@/tools/calculators/remote-vs-on-location-workers/detail'),
   TrirCalculator: () => import('@/tools/calculators/trir/detail'),
+  AverageReturnCalculator: () =>
+    import('@/tools/calculators/average-return/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

@@ -3242,6 +3242,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TrirCalculator,
     })),
   ),
+  AverageReturnCalculator: lazyTool(() =>
+    import('@/tools/calculators/average-return/AverageReturnCalculator').then(
+      (mod) => ({
+        default: mod.AverageReturnCalculator,
+      }),
+    ),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
