@@ -573,6 +573,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FreeCashFlowCalculator',
   'FcffCalculator',
   'LeveredFreeCashFlowCalculator',
+  'UnpaidWorkCalculator',
   'UnleveredFreeCashFlowCalculator',
   'TrumpAccountsCalculator',
   'TrumpsTaxesVsYourTaxesCalculator',
@@ -1216,6 +1217,7 @@ if (isDirect) {
     !isApprovedComponentKey('FreeCashFlowCalculator') ||
     !isApprovedComponentKey('FcffCalculator') ||
     !isApprovedComponentKey('LeveredFreeCashFlowCalculator') ||
+    !isApprovedComponentKey('UnpaidWorkCalculator') ||
     !isApprovedComponentKey('UnleveredFreeCashFlowCalculator') ||
     !isApprovedComponentKey('TrumpAccountsCalculator') ||
     !isApprovedComponentKey('TrumpsTaxesVsYourTaxesCalculator') ||

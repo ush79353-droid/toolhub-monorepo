@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Unpaid Work Calculator
+- **Summary:** Shipped Unpaid Work Calculator on existing catalog slug `unpaid-work-calculator` (`UnpaidWorkCalculator`, catalog `6af46f10a27d8d1d4e99010c`, preserved `nameKey` `unpaid work calculator`). Screenshot-first (ADR-023): professional pay → hourly (40 h/week); ten household activities; illustrative editable outsourcing rates; weekly/monthly/annual replacement value kept separate from opportunity cost; family hours + outsourcing budget. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Country sets display currency only (no FX).
+- **Formulas:** Weekly=Σ(H×R); Monthly=Weekly×52/12; Annual=Weekly×52; Average=Weekly/ΣH; Opportunity=ΣH×hourly wage.
+- **Example:** 10×$15 + 5×$20 + 4×$12 + 15×$18 + 2×$16 → **36 h** · **$600/wk** · **$2,600/mo** · **$31,200/yr** · average **$16.67/hr**.
+- **Important Files:** `frontend/src/tools/calculators/unpaid-work/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Trump Accounts Calculator
 - **Summary:** Shipped Trump Accounts Calculator on existing catalog slug `trump-accounts-calculator` (`TrumpAccountsCalculator`, catalog `6af46f10a27d8d1d4e99010b`, preserved `nameKey` `trump accounts calculator`). Screenshot-first (ADR-023): starting age / target age / starting balance / annual contribution; optimistic 10% / conservative 6% / pessimistic 4% scenarios; optional inflation; contributions-vs-growth pie; guide + 529/brokerage comparison. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (no FX).
 - **Formulas:** N=E−S; FV_initial=P(1+r)^N; FV_contrib=C×((1+r)^N−1)/r (or C×N if r=0); TotalContrib=P+C×N; Growth=FV−TotalContrib; Real=FV/(1+i)^N.

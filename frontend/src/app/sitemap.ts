@@ -645,6 +645,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'silver-melt-calculator',
   'subscription-waste-calculator',
   'trump-accounts-calculator',
+  'unpaid-work-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

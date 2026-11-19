@@ -3172,6 +3172,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LeveredFreeCashFlowCalculator,
     })),
   ),
+  UnpaidWorkCalculator: lazyTool(() =>
+    import('@/tools/calculators/unpaid-work/UnpaidWorkCalculator').then(
+      (mod) => ({
+        default: mod.UnpaidWorkCalculator,
+      }),
+    ),
+  ),
   UnleveredFreeCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/unlevered-free-cash-flow/UnleveredFreeCashFlowCalculator'
