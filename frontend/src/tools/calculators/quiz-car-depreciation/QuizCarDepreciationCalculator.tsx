@@ -4,8 +4,14 @@ import * as React from 'react';
 import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
+import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import {
+  calculateQuizResult,
+  isQuestionCorrect,
+  shouldRevealQuestion,
+} from './calculation';
 import { QuizCarDepreciationForm } from './QuizCarDepreciationForm';
-import { QUIZ_MAX_SCORE, QUIZ_QUESTIONS } from './questions';
+import { QUIZ_QUESTIONS } from './questions';
 import {
   createDefaultInput,
   hasQuizChanges,
@@ -13,15 +19,6 @@ import {
   type QuizCarDepreciationResult,
   type QuizQuestionId,
 } from './types';
-
-function emptyResult(): QuizCarDepreciationResult {
-  return {
-    complete: false,
-    score: null,
-    maxScore: QUIZ_MAX_SCORE,
-    formattedScore: `/${QUIZ_MAX_SCORE}`,
-  };
-}
 
 export function QuizCarDepreciationCalculator({
   metadata,
@@ -34,8 +31,9 @@ export function QuizCarDepreciationCalculator({
   const [input, setInput] = React.useState<QuizCarDepreciationInput>(
     () => defaults
   );
-  const [result, setResult] =
-    React.useState<QuizCarDepreciationResult>(emptyResult);
+  const [result, setResult] = React.useState<QuizCarDepreciationResult>(() =>
+    calculateQuizResult(defaults)
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -47,23 +45,25 @@ export function QuizCarDepreciationCalculator({
 
   const dirty = hasQuizChanges(input);
 
-  // UI shell — scoring / progressive reveal land in the engine commit.
   const apply = (next: QuizCarDepreciationInput) => {
     setInput(next);
-    setResult(emptyResult());
+    setResult(calculateQuizResult(next));
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
-    setResult(emptyResult());
+    setResult(calculateQuizResult(fresh));
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
-  const revealQuestion = (_questionId: QuizQuestionId) => false;
-  const isQuestionCorrect = (_questionId: QuizQuestionId) => false;
+  const revealQuestion = (questionId: QuizQuestionId) =>
+    shouldRevealQuestion(input, questionId);
+
+  const questionCorrect = (questionId: QuizQuestionId) =>
+    isQuestionCorrect(input.answers, questionId);
 
   const summary = result.complete
     ? [
@@ -92,12 +92,9 @@ export function QuizCarDepreciationCalculator({
         // fall through
       }
     }
-    try {
-      await navigator.clipboard.writeText(summary);
+    if (await copyTextToClipboard(summary)) {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // ignore
     }
   };
 
@@ -128,7 +125,7 @@ export function QuizCarDepreciationCalculator({
           result={result}
           onChange={apply}
           revealQuestion={revealQuestion}
-          isQuestionCorrect={isQuestionCorrect}
+          isQuestionCorrect={questionCorrect}
         />
 
         <div className="grid grid-cols-[auto_1fr] gap-3 border-t border-border pt-4">
