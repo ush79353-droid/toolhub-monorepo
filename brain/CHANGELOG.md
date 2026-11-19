@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Gold Melt Calculator
+- **Summary:** Shipped Gold Melt Calculator on existing catalog slug `gold-melt-calculator` (`GoldMeltCalculator`, catalog `6af46f10a27d8d1d4e9900fe`, preserved `nameKey` `gold melt calculator`). Screenshot-first (ADR-023): Quality / Value / Trade sections; karat table + custom purity; weight & price unit conversions; melt value; spread bid/ask with manual overrides. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX); manual spot price.
+- **Formulas:** Melt=Weight_g×(Purity/100)×Price_g; Bid=Spot×(1−Spread/100); Ask=Spot×(1+Spread/100).
+- **Example:** 10 g · 18K (75%) · $100/g → melt **$750**.
+- **Important Files:** `frontend/src/tools/calculators/gold-melt/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add FIRE Calculator
 - **Summary:** Shipped FIRE Calculator on existing catalog slug `fire-calculator-financial-independence-retire-early` (`FireCalculator`, catalog `6af46f10a27d8d1d4e9900fd`, preserved `nameKey` `fire calculator - financial independence retire early`). Screenshot-first (ADR-023): retirement inputs; 4%/custom/duration FIRE number; required annual/monthly savings + rate; projection chart; scenarios. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** E_R=E₀(1+g)^N; FIRE=E_R/SWR (or duration PV); C=(FIRE−S₀(1+r)^N)/(((1+r)^N−1)/r).

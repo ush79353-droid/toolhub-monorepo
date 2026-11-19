@@ -597,6 +597,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EmergencyFundCalculator',
   'FinanceCalculator',
   'FireCalculator',
+  'GoldMeltCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1226,6 +1227,7 @@ if (isDirect) {
     !isApprovedComponentKey('EmergencyFundCalculator') ||
     !isApprovedComponentKey('FinanceCalculator') ||
     !isApprovedComponentKey('FireCalculator') ||
+    !isApprovedComponentKey('GoldMeltCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

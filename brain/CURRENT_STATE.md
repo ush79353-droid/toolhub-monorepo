@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (FIRE Calculator live at `/tools/fire-calculator-financial-independence-retire-early`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Gold Melt Calculator live at `/tools/gold-melt-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Gold Melt Calculator (`/tools/gold-melt-calculator`):** Live client-side gold valuation tool (`componentKey: 'GoldMeltCalculator'`, catalog `6af46f10a27d8d1d4e9900fe`, `nameKey` `gold melt calculator`). Screenshot-first (ADR-023): karat/custom purity; weight units; market price units; melt value; spread → bid/ask with manual overrides. Denomination-only CurrencySelect (no FX); manual spot price (no live feed). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: 10 g · 18K (75%) · $100/g → melt **$750**.
 - **FIRE Calculator (`/tools/fire-calculator-financial-independence-retire-early`):** Live client-side early-retirement planner (`componentKey: 'FireCalculator'`, catalog `6af46f10a27d8d1d4e9900fd`, `nameKey` `fire calculator - financial independence retire early`). Screenshot-first (ADR-023): ages/income/expenses/savings/returns; 4% / custom SWR / duration FIRE number; required annual/monthly savings + rate; projection chart; conservative/moderate/aggressive scenarios. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: age 30→45 · $40k expenses · 2.5% inflation · 4% SWR → FIRE ≈ **$1,448,298**.
 - **Finance Calculator (`/tools/finance-calculator`):** Live client-side TVM solver (`componentKey: 'FinanceCalculator'`, catalog `6af46f10a27d8d1d4e9900fc`, `nameKey` `finance calculator`). Screenshot-first (ADR-023): five modes FV / PMT / I/Y / N / PV; payment + compounding frequency; end/beginning timing; results panel; value-over-time chart; payment schedule. Denomination-only CurrencySelect (no FX). Share/Calculate/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: PV $20,000 · PMT −$2,000 · 6% · N 10 → **FV ≈ −$9,455.36**.
 - **Emergency Fund Calculator (`/tools/emergency-fund-calculator`):** Live client-side emergency savings target tool (`componentKey: 'EmergencyFundCalculator'`, catalog `6af46f10a27d8d1d4e9900fb`, `nameKey` `emergency fund calculator`). Screenshot-first (ADR-023): average monthly expenses × months of coverage → emergency fund; annual/daily expense helpers; optional current-savings progress. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: $2,500 × 6 → **$15,000**.

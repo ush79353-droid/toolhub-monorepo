@@ -3320,6 +3320,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FireCalculator,
     })),
   ),
+  GoldMeltCalculator: lazyTool(() =>
+    import('@/tools/calculators/gold-melt/GoldMeltCalculator').then((mod) => ({
+      default: mod.GoldMeltCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
