@@ -67,4 +67,51 @@ import { validateNetProfitMarginInput } from './validation';
   assert.match(validation.errors.totalRevenues ?? '', /negative/i);
 }
 
+{
+  // Cross-currency: 100 USD → PKR at USD=1, PKR=280 → 28,000 / 10,000 = 280%.
+  const rates = {
+    available: true,
+    baseCurrency: 'USD',
+    rates: { USD: 1, PKR: 280, EUR: 0.92 },
+    fetchedAt: new Date().toISOString(),
+    isStale: false,
+    staleThresholdHours: 48,
+    supportedCurrencies: ['USD', 'PKR', 'EUR'],
+  };
+  const validation = validateNetProfitMarginInput(
+    {
+      netProfit: '100',
+      netProfitCurrency: 'USD',
+      totalRevenues: '10000',
+      totalRevenuesCurrency: 'PKR',
+    },
+    rates
+  );
+  assert.equal(validation.isValid, true);
+  assert.ok(validation.result);
+  assert.equal(validation.result.marginPercent, 280);
+}
+
+{
+  const blocked = validateNetProfitMarginInput(
+    {
+      netProfit: '100',
+      netProfitCurrency: 'USD',
+      totalRevenues: '10000',
+      totalRevenuesCurrency: 'PKR',
+    },
+    {
+      available: false,
+      baseCurrency: null,
+      rates: {},
+      fetchedAt: null,
+      isStale: false,
+      staleThresholdHours: 48,
+      supportedCurrencies: [],
+    }
+  );
+  assert.equal(blocked.isValid, false);
+  assert.ok(blocked.errors.form);
+}
+
 console.log('net-profit-margin calculation.test.ts: all assertions passed');

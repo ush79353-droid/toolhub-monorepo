@@ -61,6 +61,14 @@ export function NetProfitMarginCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
+  // Re-validate when the FX snapshot becomes available or refreshes.
+  React.useEffect(() => {
+    const validation = validateNetProfitMarginInput(input, rates);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional rates-driven revalidate
+  }, [rates]);
+
   const apply = (next: NetProfitMarginInput) => {
     setInput(next);
     const validation = validateNetProfitMarginInput(next, rates);
