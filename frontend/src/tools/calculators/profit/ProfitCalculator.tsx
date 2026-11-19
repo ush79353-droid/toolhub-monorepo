@@ -5,7 +5,20 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { useCurrencyRatesStatus } from '@/tools/shared/CurrencyRatesProvider';
+import { convertCurrency } from '@/tools/shared/convert-currency';
+import { getCurrencySymbol, type SupportedCurrency } from '@/tools/shared/currency';
+import {
+  CURRENCY_CONVERSION_UNAVAILABLE_NOTE,
+  isCurrencyRateUsable,
+} from '@/tools/shared/currency-rates';
+import {
+  useCurrencyRates,
+  useCurrencyRatesStatus,
+} from '@/tools/shared/CurrencyRatesProvider';
+import {
+  moneyAmountToInputString,
+  parseMoneyInput,
+} from '@/tools/shared/money-value';
 import { ProfitForm } from './ProfitForm';
 import {
   createDefaultInput,
@@ -13,6 +26,7 @@ import {
   type ProfitInput,
   type ProfitResult,
 } from './types';
+import { validateProfitInput } from './validation';
 
 const FX_NOTE =
   'Cost, price, total cost, revenue, and total profit each have their own currency. Profit math runs in the buying-cost currency after Phase 2 FX conversion. Unit counts and discount % are never converted. Missing rates block conversion; stale rates warn but still convert.';
@@ -21,10 +35,6 @@ function inputsEqual(a: ProfitInput, b: ProfitInput): boolean {
   return JSON.stringify(a) === JSON.stringify(b);
 }
 
-/**
- * UI shell for Profit Calculator (fields, share/reload/clear/feedback).
- * Formulas and Phase 2 FX conversion wire in a follow-up commit.
- */
 export function ProfitCalculator({
   metadata,
   className = '',
@@ -32,29 +42,132 @@ export function ProfitCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
+  const rates = useCurrencyRates();
   const ratesStatus = useCurrencyRatesStatus();
   const defaults = createDefaultInput();
   const [baseline, setBaseline] = React.useState<ProfitInput>(() => defaults);
   const [input, setInput] = React.useState<ProfitInput>(() => defaults);
-  const [errors] = React.useState<ProfitFieldErrors>({});
-  const [result] = React.useState<ProfitResult | null>(null);
+  const [errors, setErrors] = React.useState<ProfitFieldErrors>({});
+  const [result, setResult] = React.useState<ProfitResult | null>(null);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
   const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
+  const [conversionError, setConversionError] = React.useState<string | null>(
+    null
+  );
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
   const apply = (next: ProfitInput) => {
+    const validation = validateProfitInput(next, rates);
+    setConversionError(null);
     setInput(next);
+    setErrors(validation.errors);
+    setResult(validation.isValid ? validation.result : null);
+  };
+
+  const canConvertPair = (from: SupportedCurrency, to: SupportedCurrency) => {
+    if (from === to) return true;
+    return (
+      rates.available &&
+      isCurrencyRateUsable(rates.rates, from) &&
+      isCurrencyRateUsable(rates.rates, to)
+    );
+  };
+
+  const convertFieldAmount = (
+    raw: string,
+    from: SupportedCurrency,
+    to: SupportedCurrency
+  ): { ok: true; text: string } | { ok: false } => {
+    if (from === to) return { ok: true, text: raw };
+    const amount = parseMoneyInput(raw);
+    if (!Number.isFinite(amount)) return { ok: true, text: raw };
+    if (!canConvertPair(from, to)) return { ok: false };
+    const converted = convertCurrency({
+      amount,
+      from,
+      to,
+      rates: rates.rates,
+    });
+    if (!converted.ok) return { ok: false };
+    return { ok: true, text: moneyAmountToInputString(converted.amount) };
+  };
+
+  const handleCostCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.costCurrency) return;
+    const converted = convertFieldAmount(
+      input.cost,
+      input.costCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      costCurrency: next,
+      cost: converted.text,
+    });
+  };
+
+  const handlePriceCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.priceCurrency) return;
+    const converted = convertFieldAmount(
+      input.price,
+      input.priceCurrency,
+      next
+    );
+    if (!converted.ok) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({
+      ...input,
+      priceCurrency: next,
+      price: converted.text,
+    });
+  };
+
+  const handleTotalCostCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.totalCostCurrency) return;
+    if (!canConvertPair(input.costCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({ ...input, totalCostCurrency: next });
+  };
+
+  const handleRevenueCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.revenueCurrency) return;
+    if (!canConvertPair(input.costCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({ ...input, revenueCurrency: next });
+  };
+
+  const handleTotalProfitCurrencyChange = (next: SupportedCurrency) => {
+    if (next === input.totalProfitCurrency) return;
+    if (!canConvertPair(input.costCurrency, next)) {
+      setConversionError(CURRENCY_CONVERSION_UNAVAILABLE_NOTE);
+      return;
+    }
+    apply({ ...input, totalProfitCurrency: next });
   };
 
   const handleReset = () => {
     const fresh = createDefaultInput();
+    const validation = validateProfitInput(fresh, rates);
     setInput(fresh);
     setBaseline(fresh);
+    setErrors(validation.errors);
+    setResult(validation.result);
+    setConversionError(null);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -63,10 +176,33 @@ export function ProfitCalculator({
   const dirty = !inputsEqual(input, baseline);
   const currencyNote = ratesStatus.available
     ? FX_NOTE
-    : 'Currency conversion rates are unavailable.';
-  const summary = `${metadata.title} — Omega Calculators`;
+    : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
+  const costSymbol = getCurrencySymbol(input.costCurrency);
+  const totalCostSymbol = getCurrencySymbol(
+    result?.totalCostCurrency ?? input.totalCostCurrency
+  );
+  const revenueSymbol = getCurrencySymbol(
+    result?.revenueCurrency ?? input.revenueCurrency
+  );
+  const profitSymbol = getCurrencySymbol(
+    result?.totalProfitCurrency ?? input.totalProfitCurrency
+  );
+  const summary = result
+    ? [
+        `${metadata.title} — Omega Calculators`,
+        `Cost: ${costSymbol}${input.cost} ${input.costCurrency} per ${input.costPer}`,
+        `Price: ${getCurrencySymbol(input.priceCurrency)}${input.price} ${input.priceCurrency} per ${input.pricePer}`,
+        `Quantity: ${input.quantity} · Discount: ${input.discountPercent}%`,
+        `Total cost: ${totalCostSymbol}${result.formattedTotalCost} ${result.totalCostCurrency}`,
+        `Revenue: ${revenueSymbol}${result.formattedRevenue} ${result.revenueCurrency}`,
+        `Total profit: ${profitSymbol}${result.formattedTotalProfit} ${result.totalProfitCurrency}`,
+        `Formulas: UnitCost=C/Cq; UnitPrice=P/Pq; TotalCost=UnitCost×Q; Revenue=UnitPrice×Q×(1−D/100); Profit=Revenue−TotalCost`,
+        currencyNote,
+      ].join('\n')
+    : '';
 
   const handleShare = async () => {
+    if (!summary) return;
     if (canShare) {
       try {
         await navigator.share({ title: metadata.title, text: summary });
@@ -81,10 +217,6 @@ export function ProfitCalculator({
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     }
-  };
-
-  const noopCurrency = () => {
-    /* FX wiring lands with the calculation commit */
   };
 
   return (
@@ -112,11 +244,12 @@ export function ProfitCalculator({
           errors={errors}
           result={result}
           onChange={apply}
-          onCostCurrencyChange={noopCurrency}
-          onPriceCurrencyChange={noopCurrency}
-          onTotalCostCurrencyChange={noopCurrency}
-          onRevenueCurrencyChange={noopCurrency}
-          onTotalProfitCurrencyChange={noopCurrency}
+          onCostCurrencyChange={handleCostCurrencyChange}
+          onPriceCurrencyChange={handlePriceCurrencyChange}
+          onTotalCostCurrencyChange={handleTotalCostCurrencyChange}
+          onRevenueCurrencyChange={handleRevenueCurrencyChange}
+          onTotalProfitCurrencyChange={handleTotalProfitCurrencyChange}
+          conversionError={conversionError}
           ratesWarning={ratesStatus.warning}
         />
 
@@ -124,7 +257,8 @@ export function ProfitCalculator({
           <button
             type="button"
             onClick={() => void handleShare()}
-            className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border bg-white p-3.5 text-center transition-colors hover:bg-muted/20 active:scale-[0.99]"
+            disabled={!summary}
+            className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border bg-white p-3.5 text-center transition-colors hover:bg-muted/20 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50"
           >
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-500 text-white shadow-xs">
               <Share2 className="h-4 w-4" />
