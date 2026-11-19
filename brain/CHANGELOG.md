@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Trump's Taxes vs. Your Taxes Calculator
+- **Summary:** Shipped Trump's Taxes vs. Your Taxes Calculator on existing catalog slug `trumps-taxes-vs-your-taxes-calculator` (`TrumpsTaxesVsYourTaxesCalculator`, catalog `6af46f0fa27d8d1d4e990078`). Screenshot-first (ADR-023): your tax default $3,202; Trump tax default $750 with historical 2016/2017 labeling (not presented as 2019 liability); live ratio/difference/%; collapsible luxury and essentials lists; editable illustrative unit prices. Fixed USD (no FX). Activated via `npm run tool:assign` with `--set-active --set-indexable`; pillar/subPillar null preserved.
+- **Formulas:** ratio = user/trump; difference = user−trump; % = (difference/trump)×100; quantity = floor(max(difference,0)/unitPrice).
+- **Example:** 3,202 / 750 → ≈ 4.2693× · difference 2,452 · Dom Pérignon quantity 43 at default assumption prices.
+- **Important Files:** `frontend/src/tools/calculators/trumps-taxes-vs-your-taxes/*`, registry `keys`/`index`/`details`, `frontend/src/app/sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign`. Three ADR-019 commits. Temporary files cleaned: YES (lookup script under `%TEMP%`).
+
 ### 2026-11-19 — Brain sync: frontend build green + Finance category dual-evidence audit
 - **Summary:** Documented verified frontend production build (`npm run build` exit 0) after ESLint soft-warns, `noUnusedLocals`/`noUnusedParameters` off, optional `ToolPageDetail.countryRules`, and structural TS fixes across calculators. Recorded Finance & Business category audit (`6af451bba27d8d1d4e98f959`): Mongo `isDeveloped` + `IMPLEMENTED_TOOL_SLUGS` dual evidence (644 / 299 / 298 / 298). Temp audit script + Desktop xlsx stay outside git (ADR-025).
 - **Important Files:** `frontend/eslint.config.mjs`, `frontend/tsconfig.json`, `frontend/src/tools/page-detail.ts`, `brain/CURRENT_STATE.md`, `brain/TASKS.md`, `brain/CHANGELOG.md`.
