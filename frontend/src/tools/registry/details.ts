@@ -1023,6 +1023,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mortgage-interest/detail'),
   MortgageRateCalculator: () =>
     import('@/tools/calculators/mortgage-rate/detail'),
+  MortgageRefinanceCalculator: () =>
+    import('@/tools/calculators/mortgage-refinance/detail'),
   InterestRateCalculator: () =>
     import('@/tools/calculators/interest-rate/detail'),
   IrrCalculator: () => import('@/tools/calculators/irr/detail'),

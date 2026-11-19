@@ -91,6 +91,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'bi-weekly-mortgage-payment-calculator',
   'margin-of-safety-calculator',
   'mortgage-points-calculator',
+  'mortgage-refinance-calculator',
   'boat-loan-calculator',
   'bond-convexity-calculator',
   'bond-current-yield-calculator',

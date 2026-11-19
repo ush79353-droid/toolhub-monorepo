@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-19 — Add Mortgage Refinance Calculator
+- **Summary:** Shipped Mortgage Refinance Calculator on existing catalog slug `mortgage-refinance-calculator` (`MortgageRefinanceCalculator`, catalog `6af46f0fa27d8d1d4e99001b`, preserved `nameKey` `mortgage refinance calculator`, pillar `6af451bfa27d8d1d4e98f972`). Screenshot-first (ADR-023): current mortgage (original amount, due date, term, rate, compounding) and refinance (new due date, term, rate, compounding, points, closing costs, cash in/out) with a current-vs-new payment summary, refinancing cost, monthly savings, and break-even. Nominal rates convert to an effective monthly rate; zero rate uses principal/months. Points and closing costs stay upfront (included in new total payments, not in principal). Positive cash out is extra principal; negative cash in reduces it. Break-even uses monthly payment savings versus upfront cost and reports when it never arrives. Independent Phase 2 FX on the three money fields; rates, points, dates, and terms never convert. Refinance / Car Refinance / Cash-Out Refinance siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 300,000 · due 2021-09-02 · 30 years · 3.5% monthly vs due 2026-11-16 · 25 years · 2.5% · 1 point · costs 1,500 · cash out 2,500 → remaining ≈ **267,965.01** · new principal ≈ **270,465.01** · payments ≈ **1,347.13** vs **1,213.35** · refinancing cost ≈ **4,204.65** · break-even **32** months (2029-07-16).
+- **Important Files:** `frontend/src/tools/calculators/mortgage-refinance/*`, registry, sitemap, both FX slug lists, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits `749a9467` / `60a84848` / registration. Temporary files cleaned: YES.
 ### 2026-11-19 — Add Sales Tax Calculator
 - **Summary:** Shipped Sales Tax Calculator on existing catalog slug `sales-tax-calculator` (`SalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e990026`, pillar/subPillar sales-tax). Generic rate: net↔gross + tax amount; independent FX; % never converts. Activated `--set-active`; **indexable** preserved false.
 - **Example:** 10% · net 100 → tax **10** · gross **110**.

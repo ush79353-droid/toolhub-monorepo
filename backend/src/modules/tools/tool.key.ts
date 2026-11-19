@@ -674,6 +674,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MortgageCalculatorUk',
   'MortgageInterestCalculator',
   'MortgageRateCalculator',
+  'MortgageRefinanceCalculator',
   'HoldingPeriodReturnCalculator',
   'HourlyToAnnualSalaryCalculator',
   'HourlyToSalaryWageCalculator',
@@ -1358,6 +1359,7 @@ if (isDirect) {
     !isApprovedComponentKey('MortgageCalculatorUk') ||
     !isApprovedComponentKey('MortgageInterestCalculator') ||
     !isApprovedComponentKey('MortgageRateCalculator') ||
+    !isApprovedComponentKey('MortgageRefinanceCalculator') ||
     !isApprovedComponentKey('HoldingPeriodReturnCalculator') ||
     !isApprovedComponentKey('HourlyToAnnualSalaryCalculator') ||
     !isApprovedComponentKey('HourlyToSalaryWageCalculator') ||

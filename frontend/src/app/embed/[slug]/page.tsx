@@ -44,6 +44,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'biweekly-mortgage-calculator',
   'bi-weekly-mortgage-payment-calculator',
   'mortgage-points-calculator',
+  'mortgage-refinance-calculator',
   'boat-loan-calculator',
   'bond-convexity-calculator',
   'bond-current-yield-calculator',

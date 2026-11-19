@@ -68,8 +68,11 @@ Audit pending: 36
 | 41 | Margin and Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 42ba884d | a44097dc | f51294bf (reg absorbed into concurrent Ohio reg commit; HEAD has full MST registration) | Completed Tools | `MarginAndSalesTaxCalculator`; slug `margin-and-sales-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990029` active; indexable false; Phase 2 FX |
 | 44 | Return on Sales Calculator | DEVELOPED | AUDIT PENDING | f6ee9195 | 84f312c8 | (pending commit 3) | Completed Tools | `ReturnOnSalesCalculator`; slug `return-on-sales-calculator`; Mongo `6af46f0fa27d8d1d4e990025` active; Phase 2 FX; indexable false |
 
+| 45 | Mortgage Refinance Calculator | DEVELOPED | AUDIT PENDING | 749a9467 | 60a84848 | (registration) | Completed Tools | `MortgageRefinanceCalculator`; slug `mortgage-refinance-calculator`; Mongo `6af46f0fa27d8d1d4e99001b`; Phase 2 FX; indexable false |
+
 ## Session Log
 
+- 2026-11-19: Mortgage Refinance Calculator DEVELOPED (`749a9467` / `60a84848` / registration). Mongo `6af46f0fa27d8d1d4e99001b` active; indexable false. Moved to Completed Tools.
 - 2026-11-19 (this agent): Lease Calculator DEVELOPED (98bab42b / 7f1bd5b0 / 29908c83). Revenue Calculator DEVELOPED ( a88c118 / cb04cee / d6bb0538). Mongo active; indexable false. Folders moved to Completed Tools. Temporary files cleaned: YES.
 - 2026-11-19 (this agent): Marginal Revenue DEVELOPED; Price to Sales BLOCKED (empty prompt); Refinance DEVELOPED (feae7e7/4e439a67/48c5678+766b4339).
 - 2026-11-19 (this agent): Margin and Sales Tax DEVELOPED (`42ba884d` / `a44097dc` / reg via `f51294bf`). Mongo `6af46f0fa27d8d1d4e990029` active; indexable false. Moved to Completed Tools. Next: claim remaining Tools alphabetically.

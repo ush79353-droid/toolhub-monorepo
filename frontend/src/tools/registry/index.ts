@@ -3901,6 +3901,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MortgageRateCalculator,
     })),
   ),
+  MortgageRefinanceCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mortgage-refinance/MortgageRefinanceCalculator'
+    ).then((mod) => ({
+      default: mod.MortgageRefinanceCalculator,
+    })),
+  ),
   InterestRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/interest-rate/InterestRateCalculator'
