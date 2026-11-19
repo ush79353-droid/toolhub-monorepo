@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-19 — Add Hourly Wage Calculator
+- **Summary:** Shipped Hourly Wage Calculator on existing catalog slug `hourly-wage-calculator` (`HourlyWageCalculator`, catalog `6af46f0fa27d8d1d4e990048`, pillar `6af451c0a27d8d1d4e98f97c`). Screenshot-first (ADR-023): Hourly wage FX + Hours/week (default 40); Salary for time frames — Per second, Per minute, Daily, Weekly, Biweekly, Monthly, Annual (each independent FX). Formulas: Per second = H/3600; Per minute = H/60; Daily = H×W/5; Weekly = H×W; Biweekly = H×W×2; Monthly = H×W×52/12; Annual = H×W×52. Assumptions: 5 working days/week, 52 paid weeks/year. H≥0, W>0; zero hourly allowed. Hours never FX-convert. Wage / Hourly to Annual / Hourly to Salary - Wage siblings untouched. Activated via `npm run tool:assign` with `--set-active` (**indexable** preserved false).
+- **Example:** Hourly 500 · 40h → weekly **20,000** · annual **1,040,000** · daily **4,000** · biweekly **40,000**.
+- **Important Files:** `frontend/src/tools/calculators/hourly-wage/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Wage to Salary Calculator
 - **Summary:** Shipped Wage to Salary Calculator on existing catalog slug `wage-to-salary-calculator` (`WageToSalaryCalculator`, catalog `6af46f0fa27d8d1d4e990049`, preserved `nameKey` `wage to salary calculator`, pillar `6af451c0a27d8d1d4e98f97c`). Screenshot-first (ADR-023): hourly/daily/weekly wage FX (last-edited authoritative); hours/week (40); days/week (5); monthly + yearly salary FX. Formulas: Weekly from source; Yearly = Weekly×52; Monthly = Weekly×52/12. Dual `CURRENCY_CONVERSION_SLUGS`; hours/days never convert. Wage / Hourly Wage / Yearly Wage / Salary to Hourly / Hourly to Salary siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 500 PKR/hr · 40h · 5d → weekly **20,000** · yearly **1,040,000** · monthly ≈ **86,666.67**.
