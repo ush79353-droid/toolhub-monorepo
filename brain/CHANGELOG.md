@@ -4,6 +4,19 @@
 
 ---
 
+### 2026-11-19 — Add Price to Cash Flow Ratio Calculator
+- **Summary:** Shipped Price to Cash Flow Ratio Calculator on existing catalog slug `price-to-cash-flow-ratio-calculator` (`PriceToCashFlowRatioCalculator`, catalog `6af46f0fa27d8d1d4e99003a`, pillar `6af451c0a27d8d1d4e98f978`). Screenshot-first (ADR-023): Cash flow FX; shares outstanding; cash flow per share FX; price per share FX; P/CF ratio as dimensionless `x`. Formulas CFPS = CF/Shares; P/CF = Price/CFPS. Zero CFPS → undefined (not Infinity); negative CF allowed with valuation note. Independent Phase 2 FX; shares and ratio never convert. OCF / Cash Flow to Debt / Cash Ratio siblings untouched. Activated via `npm run tool:assign` with `--set-active --set-indexable`.
+- **Example:** CF 10,000,000 · 1,000,000 shares · price 150 → CFPS **10** · P/CF **15×**.
+- **Important Files:** `frontend/src/tools/calculators/price-to-cash-flow-ratio/*`, registry, sitemap, both `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-19 — Add Income Tax Calculator Pakistan
+- **Summary:** Shipped Income Tax Calculator Pakistan on existing catalog slug `income-tax-calculator-pakistan` (`IncomeTaxCalculatorPakistan`, catalog `6af46f0fa27d8d1d4e990040`, preserved `nameKey` `income tax calculator pakistan`, pillar `6af451c0a27d8d1d4e98f97a`). Screenshot-first (ADR-023): Monthly income Rs. (default 0) → Monthly tax, Monthly income after tax, Yearly income, Yearly tax with alternating result rows; Share/Reload/Clear/feedback. Fixed PKR (no FX / not in `CURRENCY_CONVERSION_SLUGS`). Verified FBR Tax Year **2027** salaried progressive slabs from Finance Act, 2026 (First Schedule Part I Division I clause (2); Gazette Extra. 26 June 2026) and FBR Circular No. 02 of 2026-27; salaried section 4AB surcharge withdrawn. Income Tax / Philippines / Australia siblings untouched. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Formulas:** Annual = Monthly × 12; Yearly Tax = progressive FBR salary table; Monthly Tax = Yearly Tax ÷ 12; After-tax = Monthly − Monthly Tax.
+- **Example:** 100,000 Rs./mo → annual 1,200,000 → yearly tax **6,000** → monthly tax **500** → after-tax **99,500**.
+- **Important Files:** `frontend/src/tools/calculators/pakistan-income-tax/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Unemployment Benefit Calculator - HEALS Act vs. HEROES Act
 - **Summary:** Shipped historical informational page on existing catalog slug `unemployment-benefit-calculator-heals-act-vs-heroes-act` (`HealsHeroesUnemploymentBenefitCalculator`, catalog `6af46f0fa27d8d1d4e990035`, preserved `nameKey` `unemployment benefit calculator - heals act vs. heroes act`). Screenshot-first (ADR-023): no benefit inputs or payout estimates. Clarifies HEALS and HEROES were 2020 legislative proposals — not active claim programs. Links to live Annual Salary Calculator (`/tools/annual-salary-calculator`) because catalog `annual-income-calculator` is undeveloped. No FX / not in `CURRENCY_CONVERSION_SLUGS`. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Important Files:** `frontend/src/tools/calculators/heals-heroes-unemployment-benefit/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
