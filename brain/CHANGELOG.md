@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Scrap Gold Calculator
+- **Summary:** Shipped Scrap Gold Calculator on existing catalog slug `scrap-gold-calculator` (`ScrapGoldCalculator`, catalog `6af46f10a27d8d1d4e990107`, preserved `nameKey` `scrap gold calculator`). Screenshot-first (ADR-023): scrap weight units; karat↔% sync; pure gold weight; price/unit; total value. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (manual spot; no FX).
+- **Formulas:** g = w×unit; purity%=K/24×100; pure_g = g×purity%/100; value = pure_g × (price/GRAMS_PER[unit]). Troy ounce = 31.1034768 g.
+- **Example:** 120g 18K @ $39/g → **90g** pure · **$3,510**; mixed 18K+9K guide → **$8,628.75**.
+- **Important Files:** `frontend/src/tools/calculators/scrap-gold/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Sabbatical Calculator
 - **Summary:** Shipped Sabbatical Calculator on existing catalog slug `sabbatical-calculator` (`SabbaticalCalculator`, catalog `6af46f10a27d8d1d4e990106`, preserved `nameKey` `sabbatical calculator`). Screenshot-first (ADR-023): Save + Financial Details; auto/manual monthly savings; duration yrs/mos/weeks; buffer; surplus/shortfall and affordable runway. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (no FX).
 - **Formulas:** MS=I×p/100; Accum=MS×Y×12; Available=Current+Accum; Required=Exp×Months; Buffer=Required×b/100; TotalReq=Required+Buffer; Affordable=Available/(Exp×(1+b/100)); Surplus=Available−TotalReq. Weeks→months via ×12/52.
