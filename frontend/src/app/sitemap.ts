@@ -623,6 +623,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'maximum-drawdown-calculator',
   '503020-rule-calculator',
   'apc-calculator',
+  'bank-reconciliation-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

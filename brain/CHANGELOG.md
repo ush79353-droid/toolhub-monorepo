@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Bank Reconciliation Calculator
+- **Summary:** Shipped Bank Reconciliation Calculator on existing catalog slug `bank-reconciliation-calculator` (`BankReconciliationCalculator`, catalog `6af46f10a27d8d1d4e9900f6`, preserved `nameKey` `bank reconciliation calculator`). Screenshot-first (ADR-023): independent cashbook and bank-statement adjustments with fixed items + dynamic add/subtract rows; adjusted balances, absolute difference, reconciled/unreconciled/incomplete. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
+- **Formulas:** AdjustedCashbook = CB + Interest − Charges − NSF − AutoPayments ± Extras; AdjustedBank = BS + DepositsInTransit − OutstandingChecks ± Extras; Difference = |AdjCash − AdjBank|; reconciled iff difference rounds to 0.
+- **Example:** Cashbook 10,000 +100 −50 −200 −150 +300 −100 → 9,900; Bank 8,500 +2,000 −600 +100 −100 → 9,900; difference 0.
+- **Important Files:** `frontend/src/tools/calculators/bank-reconciliation/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add APC Calculator
 - **Summary:** Shipped APC Calculator on existing catalog slug `apc-calculator` (`ApcCalculator`, catalog `6af46f10a27d8d1d4e9900f5`, preserved `nameKey` `apc calculator`). Screenshot-first (ADR-023): total consumption + disposable income → APC ratio/percentage, implied savings, APS, dynamic interpretation; APC&gt;1 allowed. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false. Denomination-only CurrencySelect (no FX).
 - **Formulas:** APC=C/Yd; APC%=(C/Yd)×100; S=Yd−C; APS=(Yd−C)/Yd; APC+APS=1. Advanced guide-only: APC=C₀/Yd+c from C=C₀+cYd.

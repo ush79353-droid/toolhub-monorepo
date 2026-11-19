@@ -3268,6 +3268,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ApcCalculator,
     })),
   ),
+  BankReconciliationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bank-reconciliation/BankReconciliationCalculator'
+    ).then((mod) => ({
+      default: mod.BankReconciliationCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

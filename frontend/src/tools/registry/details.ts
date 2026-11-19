@@ -847,6 +847,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FiftyThirtyTwentyCalculator: () =>
     import('@/tools/calculators/fifty-thirty-twenty-rule/detail'),
   ApcCalculator: () => import('@/tools/calculators/apc/detail'),
+  BankReconciliationCalculator: () =>
+    import('@/tools/calculators/bank-reconciliation/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
