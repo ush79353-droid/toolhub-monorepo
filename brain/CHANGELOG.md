@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Combined Ratio Calculator
+- **Summary:** Shipped Combined Ratio Calculator on existing catalog slug `combined-ratio-calculator` (`CombinedRatioCalculator`, catalog `6af46f0fa27d8d1d4e99008a`, preserved `nameKey` `combined ratio calculator`). Screenshot-first (ADR-023): claim loss + loss adjustments + loss expense; premiums + underwriting expense + combined ratio %; reverse solve for UE/premiums/LE; loss/expense ratios, underwriting result & margin. Denomination-only CurrencySelect. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
+- **Formulas:** LE=CL+LA; LR=(LE/P)×100; ER=(UE/P)×100; CR=LR+ER; UE=(CR/100)×P−LE; P=(LE+UE)/(CR/100); UW result=P−LE−UE; margin=100−CR.
+- **Example:** CL 40M · LA 5M · P 100M · UE 25M → LE 45M · CR 70% · UW result 30M. Reverse: CR 85% · P 80M · LE 50M → UE 18M.
+- **Important Files:** `frontend/src/tools/calculators/combined-ratio/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Weekly Pay Calculator
 - **Summary:** Shipped Weekly Pay Calculator on existing catalog slug `weekly-pay-calculator` (`WeeklyPayCalculator`, catalog `6af46f0fa27d8d1d4e99007a`, preserved `nameKey` `weekly pay calculator`). Screenshot-first (ADR-023): bidirectional hourly/daily/monthly/annual gross pay via weekly hub; schedule hours/day, days/week, hours/week sync, paid weeks ↔ unpaid weeks (sum 52); examples; denomination-only CurrencySelect. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**; pillar/subPillar null; isFeatured left false.
 - **Formulas:** Weekly from H×HPW, D×DPW, M×12/WPY, A/WPY; reverse via weekly hub. HPW = HPD×DPW; average weeks/month = WPY/12.

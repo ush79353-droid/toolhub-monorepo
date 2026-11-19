@@ -611,6 +611,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'trumps-taxes-vs-your-taxes-calculator',
   'vat-calculator',
   'weekly-pay-calculator',
+  'combined-ratio-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',
