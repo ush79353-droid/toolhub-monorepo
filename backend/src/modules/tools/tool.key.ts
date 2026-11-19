@@ -660,6 +660,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HourlyToAnnualSalaryCalculator',
   'HourlyToSalaryWageCalculator',
   'HourlyWageCalculator',
+  'WageCalculator',
   'WageToSalaryCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
@@ -1329,6 +1330,7 @@ if (isDirect) {
     !isApprovedComponentKey('HourlyToAnnualSalaryCalculator') ||
     !isApprovedComponentKey('HourlyToSalaryWageCalculator') ||
     !isApprovedComponentKey('HourlyWageCalculator') ||
+    !isApprovedComponentKey('WageCalculator') ||
     !isApprovedComponentKey('WageToSalaryCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||

@@ -162,9 +162,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'hourly-to-salary-wage-calculator',
   'hourly-wage-calculator',
   'wage-to-salary-calculator',
-  'yearly-wage-calculator',
   'home-improvement-loan-calculator',
-
   'home-loan-emi-calculator',
   'home-loan-calculator',
   'mortgage-calculator-with-taxes-and-insurance',

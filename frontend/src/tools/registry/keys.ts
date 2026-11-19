@@ -659,6 +659,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'HourlyToAnnualSalaryCalculator',
   'HourlyToSalaryWageCalculator',
   'HourlyWageCalculator',
+  'WageCalculator',
+  'WageCalculator',
   'WageToSalaryCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
