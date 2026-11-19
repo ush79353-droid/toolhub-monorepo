@@ -14,7 +14,15 @@ export function NaturalUnemploymentGuideArticle() {
         The natural rate of unemployment is often described as the unemployment rate that remains
         when the economy is at full employment — typically the sum of frictional and structural
         unemployment, not cyclical joblessness from recessions. This calculator uses that simplified
-        textbook model only.
+        textbook model only. For the overall unemployment rate from employed and unemployed counts,
+        use the{' '}
+        <a
+          href="/tools/unemployment-calculator-unemployment-rate"
+          className="font-medium text-primary underline-offset-2 hover:underline"
+        >
+          Unemployment Calculator (Unemployment Rate)
+        </a>
+        .
       </p>
 
       <h2
