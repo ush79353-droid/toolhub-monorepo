@@ -3391,6 +3391,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  SilverMeltCalculator: lazyTool(() =>
+    import('@/tools/calculators/silver-melt/SilverMeltCalculator').then(
+      (mod) => ({
+        default: mod.SilverMeltCalculator,
+      }),
+    ),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-19 — Add Silver Melt Calculator
+- **Summary:** Shipped Silver Melt Calculator on existing catalog slug `silver-melt-calculator` (`SilverMeltCalculator`, catalog `6af46f10a27d8d1d4e990109`, preserved `nameKey` `silver melt calculator`). Screenshot-first (ADR-023): weight units incl. troy + avoirdupois oz; purity presets/custom; pure silver mass; melt value; expandable alloy (remainder or manual other-metal weight + price). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (manual spot; no FX).
+- **Formulas:** g=w×unit; pure=g×purity%/100; melt=pure×(price/GRAMS_PER[unit]); other=other_g×other_price/g; combined=melt+other. Troy ozt=31.1034768g; oz=28.349523125g.
+- **Example:** 225g · 92.5% · $0.90/g → pure **208.125g** · melt **$187.31**.
+- **Important Files:** `frontend/src/tools/calculators/silver-melt/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Scrap Silver Calculator
 - **Summary:** Shipped Scrap Silver Calculator on existing catalog slug `scrap-silver-calculator` (`ScrapSilverCalculator`, catalog `6af46f10a27d8d1d4e990108`, preserved `nameKey` `scrap silver calculator`). Screenshot-first (ADR-023): weight units; purity presets/custom; pure silver weight; price/unit; melt value; optional buy/sell (dealer % + refining/transaction fees). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Denomination-only CurrencySelect (manual spot; no FX).
 - **Formulas:** g=w×unit; pure=g×purity%/100; melt=pure×(price/GRAMS_PER[unit]); sell=melt−(melt×discount%)−fees.

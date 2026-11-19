@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Scrap Silver Calculator live at `/tools/scrap-silver-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Silver Melt Calculator live at `/tools/silver-melt-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Silver Melt Calculator (`/tools/silver-melt-calculator`):** Live client-side melt valuation tool (`componentKey: 'SilverMeltCalculator'`, catalog `6af46f10a27d8d1d4e990109`, `nameKey` `silver melt calculator`). Screenshot-first (ADR-023): weight units incl. troy + avoirdupois oz; purity presets/custom; pure silver mass; melt value; expandable alloy (other metal remainder or manual weight + price). Grams-internal; purity once. Denomination-only CurrencySelect (no FX; manual spot). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: 225g · 92.5% · $0.90/g → pure **208.125g** · melt **$187.31**.
 - **Scrap Silver Calculator (`/tools/scrap-silver-calculator`):** Live client-side scrap valuation tool (`componentKey: 'ScrapSilverCalculator'`, catalog `6af46f10a27d8d1d4e990108`, `nameKey` `scrap silver calculator`). Screenshot-first (ADR-023): weight + unit; purity presets (.999/.9999/.925/…/custom); pure silver weight; price/unit; melt value; optional buy/sell (dealer % + fees). Grams-internal; purity once. Denomination-only CurrencySelect (no FX; manual spot). Share/Calculate/Reload/Clear/feedback/guide/FAQ/sources. Activated; **`indexable` left false**. Example: 100g .925 @ $0.85/g → pure **92.5g** · melt **$78.63**.
 - **Scrap Gold Calculator (`/tools/scrap-gold-calculator`):** Live client-side scrap valuation tool (`componentKey: 'ScrapGoldCalculator'`, catalog `6af46f10a27d8d1d4e990107`, `nameKey` `scrap gold calculator`). Screenshot-first (ADR-023): weight + unit (g/kg/oz t/dwt/gr); karat↔% sync; pure gold weight; price/unit; total value. Grams-internal conversions; purity applied once. Denomination-only CurrencySelect (no FX; manual spot). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: 120g 18K @ $39/g → pure **90g** · **$3,510**; mixed guide example → **$8,628.75**.
 - **Sabbatical Calculator (`/tools/sabbatical-calculator`):** Live client-side sabbatical planner (`componentKey: 'SabbaticalCalculator'`, catalog `6af46f10a27d8d1d4e990106`, `nameKey` `sabbatical calculator`). Screenshot-first (ADR-023): Save (%, years, duration yrs/mos/weeks) + Financial Details (income, auto/manual monthly savings, current savings, expenses, buffer %); available vs required fund; affordable months with buffer; surplus/shortfall status. Denomination-only CurrencySelect (no FX). Share/Calculate/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Default example → available **$30,000** · required **$39,600** · shortfall **$9,600**.
