@@ -4,9 +4,16 @@ import {
 } from '@/tools/shared/currency';
 
 /**
- * UI scaffold placeholder — real yearly-wage math lands in the engine commit.
+ * Yearly wage from hourly wage (same family as Annual Salary Calculator):
+ *   Yearly Wage = Hourly Wage × Hours Per Week × Weeks Per Year
+ *   Net Hourly  = Hourly Wage × (1 − Tax / 100)
+ *   Net Yearly  = Yearly Wage × (1 − Tax / 100)
+ *
+ * Clamp: nonnegative hours/wage; weeks 0–52 inclusive; tax 0–100 inclusive.
+ * Tax is a simplified flat rate — not jurisdiction-specific payroll.
+ * Returns full-precision amounts. Rejects non-finite inputs.
  */
-export function calculateYearlyWage(_input: {
+export function calculateYearlyWage(input: {
   hourlyWage: number;
   hoursPerWeek: number;
   weeksPerYear: number;
@@ -16,7 +23,26 @@ export function calculateYearlyWage(_input: {
   netHourly: number;
   netYearly: number;
 } | null {
-  return null;
+  const { hourlyWage, hoursPerWeek, weeksPerYear, taxPercent } = input;
+  if (
+    ![hourlyWage, hoursPerWeek, weeksPerYear, taxPercent].every(Number.isFinite)
+  ) {
+    return null;
+  }
+  if (hourlyWage < 0 || hoursPerWeek < 0) return null;
+  if (weeksPerYear < 0 || weeksPerYear > 52) return null;
+  if (taxPercent < 0 || taxPercent > 100) return null;
+
+  const yearlyWage = hourlyWage * hoursPerWeek * weeksPerYear;
+  const keep = 1 - taxPercent / 100;
+  const netHourly = hourlyWage * keep;
+  const netYearly = yearlyWage * keep;
+
+  if (![yearlyWage, netHourly, netYearly].every(Number.isFinite)) {
+    return null;
+  }
+
+  return { yearlyWage, netHourly, netYearly };
 }
 
 /** Display rounding only — never used inside the formulas. */
