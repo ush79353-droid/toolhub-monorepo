@@ -8,6 +8,7 @@ export const UNEMPLOYMENT_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'population-units', label: 'Population Units' },
   { id: 'labor-force-participation', label: 'Labor Force Participation' },
   { id: 'worked-example', label: 'Worked Example' },
+  { id: 'related-calculators', label: 'Related Calculators' },
   { id: 'unemployment-faq', label: 'Frequently Asked Questions' },
 ];
 

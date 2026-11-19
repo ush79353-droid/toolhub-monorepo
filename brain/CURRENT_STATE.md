@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Stock Split Calculator live at `/tools/stock-split-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Unemployment Calculator live at `/tools/unemployment-calculator-unemployment-rate`; Auto Loan remains master Tool Detail Page).
 
 ---
 

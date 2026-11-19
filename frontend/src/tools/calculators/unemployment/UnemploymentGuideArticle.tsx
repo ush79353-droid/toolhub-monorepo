@@ -82,6 +82,30 @@ export function UnemploymentGuideArticle() {
         thousand, participation rate = 160,000 ÷ 250,000 × 100 = <strong>64%</strong>.
       </p>
 
+      <h2 id="related-calculators" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
+        Related Calculators
+      </h2>
+      <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
+        <li>
+          <Link
+            href="/tools/natural-rate-of-unemployment-calculator"
+            className="font-medium text-primary underline-offset-2 hover:underline"
+          >
+            Natural Rate of Unemployment Calculator
+          </Link>{' '}
+          — frictional + structural unemployment relative to the labor force (no cyclical component).
+        </li>
+        <li>
+          <Link
+            href="/tools/labor-force-participation-rate-calculator"
+            className="font-medium text-primary underline-offset-2 hover:underline"
+          >
+            Labor Force Participation Rate Calculator
+          </Link>{' '}
+          — dedicated participation-rate tool page (separate catalog record).
+        </li>
+      </ul>
+
       <h2 id="unemployment-faq" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
         Frequently Asked Questions
       </h2>

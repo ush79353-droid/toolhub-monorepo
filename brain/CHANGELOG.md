@@ -16,7 +16,7 @@
 - **Formulas:** Labor Force = Employed + Unemployed; Unemployment Rate (%) = Unemployed / Labor Force × 100; LFPR (%) = Labor Force / Working-Age Population × 100.
 - **Example:** 150 thousand employed + 10 thousand unemployed → LF **160** thousand · rate **6.25%**; WAP 250 thousand → LFPR **64%**.
 - **Important Files:** `frontend/src/tools/calculators/unemployment/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
-- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits (`d1dcabe0` UI, `bdd6e431` engine, registration/Brain cleanup). Temporary files cleaned: YES. Registry/sitemap/`tool.key.ts` lines for `UnemploymentCalculator` / `unemployment-calculator-unemployment-rate` verified on `development`.
 
 ### 2026-11-19 — Add Unemployment Benefit Calculator - Lost Wages Assistance (LWA)
 
