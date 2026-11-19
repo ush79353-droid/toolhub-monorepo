@@ -629,6 +629,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'college-cost-calculator',
   'dream-come-true-calculator',
   'emergency-fund-calculator',
+  'finance-calculator',
   'operating-cash-flow-calculator',
   'holding-period-return-calculator',
   'hourly-to-annual-salary-calculator',

@@ -3310,6 +3310,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EmergencyFundCalculator,
     })),
   ),
+  FinanceCalculator: lazyTool(() =>
+    import('@/tools/calculators/finance/FinanceCalculator').then((mod) => ({
+      default: mod.FinanceCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
