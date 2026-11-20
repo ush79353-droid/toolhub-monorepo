@@ -607,6 +607,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FcfeCalculator',
   'FcffCalculator',
   'FfoCalculator',
+  'FibonacciRetracementCalculator',
   'LeveredFreeCashFlowCalculator',
   'UnpaidWorkCalculator',
   'UsIncomePercentileCalculator',
@@ -1318,6 +1319,7 @@ if (isDirect) {
     !isApprovedComponentKey('FcfeCalculator') ||
     !isApprovedComponentKey('FcffCalculator') ||
     !isApprovedComponentKey('FfoCalculator') ||
+    !isApprovedComponentKey('FibonacciRetracementCalculator') ||
     !isApprovedComponentKey('LeveredFreeCashFlowCalculator') ||
     !isApprovedComponentKey('UnpaidWorkCalculator') ||
     !isApprovedComponentKey('UsIncomePercentileCalculator') ||

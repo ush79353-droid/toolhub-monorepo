@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Enterprise Value Calculator live at `/tools/enterprise-value-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Fibonacci Retracement Calculator live at `/tools/fibonacci-retracement-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Fibonacci Retracement Calculator (`/tools/fibonacci-retracement-calculator`):** Live client-side Fibonacci tool (`componentKey: 'FibonacciRetracementCalculator'`, catalog `6af46f10a27d8d1d4e99015b`, `nameKey` `fibonacci retracement calculator`). Screenshot-first (ADR-023): uptrend/downtrend × retracement/extension; low/high → difference + levels (retrace 0–100% incl. 76.4%/78.6%; extend 0–261.8%); no CurrencySelect (price levels only). Activated; **`indexable` left false**. Example: Low **100** · High **200** → uptrend 61.8% **138.2** · downtrend 61.8% **161.8** · uptrend ext 161.8% **261.8**.
 - **Enterprise Value Calculator (`/tools/enterprise-value-calculator`):** Live client-side EV tool (`componentKey: 'EnterpriseValueCalculator'`, catalog `6af46f10a27d8d1d4e99015a`, `nameKey` `enterprise value calculator`). Screenshot-first (ADR-023): Market Cap / Minority Interest / Preferred Shares / Debt / Cash → EV; negative EV preserved with caution; total claims + net debt breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$500M** + **$20M** + **$15M** + **$100M** − **$50M** → EV **$585M**.
 - **Economic Value Added Calculator (`/tools/economic-value-added-calculator`):** Live client-side EVA tool (`componentKey: 'EconomicValueAddedCalculator'`, catalog `6af46f10a27d8d1d4e990159`, `nameKey` `economic value added calculator`). Screenshot-first (ADR-023): NOPAT / Invested Capital / WACC% → capital charge + EVA; collapsible OA−OL invested-capital helper with explicit apply (no silent overwrite). Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NOPAT **$750k** · IC **$1M** · WACC **10%** → charge **$100k** · EVA **$650k**.
 - **EBITDA Multiple Calculator (`/tools/ebitda-multiple-calculator`):** Live client-side EV/EBITDA tool (`componentKey: 'EbitdaMultipleCalculator'`, catalog `6af46f10a27d8d1d4e990158`, `nameKey` `ebitda multiple calculator`). Screenshot-first (ADR-023): Cash / Market Cap / Minority Interest / Preferred Equity / Debt → EV; ÷ EBITDA → multiple; zero EBITDA undefined; negative EBITDA warned. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$450M** + **$100M** + **$5M** + **$10M** − **$20M** → EV **$545M** · EBITDA **$50M** → **10.90×**.

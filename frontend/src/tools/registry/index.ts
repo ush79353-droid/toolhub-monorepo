@@ -3311,6 +3311,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FfoCalculator,
     })),
   ),
+  FibonacciRetracementCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/fibonacci-retracement/FibonacciRetracementCalculator'
+    ).then((mod) => ({
+      default: mod.FibonacciRetracementCalculator,
+    })),
+  ),
   LeveredFreeCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/levered-free-cash-flow/LeveredFreeCashFlowCalculator'

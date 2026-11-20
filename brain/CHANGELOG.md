@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Fibonacci Retracement Calculator
+- **Summary:** Shipped Fibonacci Retracement Calculator on existing catalog slug `fibonacci-retracement-calculator` (`FibonacciRetracementCalculator`, catalog `6af46f10a27d8d1d4e99015b`, preserved `nameKey` `fibonacci retracement calculator`). Screenshot-first (ADR-023): uptrend/downtrend × retracement/extension; low/high → difference + levels; no CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Low **100** · High **200** → uptrend 61.8% retrace **138.2** · downtrend 61.8% **161.8** · uptrend 161.8% extension **261.8**.
+- **Important Files:** `frontend/src/tools/calculators/fibonacci-retracement/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Fibonacci tests 9/9 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Enterprise Value Calculator
 - **Summary:** Shipped Enterprise Value Calculator on existing catalog slug `enterprise-value-calculator` (`EnterpriseValueCalculator`, catalog `6af46f10a27d8d1d4e99015a`, preserved `nameKey` `enterprise value calculator`). Screenshot-first (ADR-023): market cap/MI/preferred/debt/cash → EV. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$500M** + **$20M** + **$15M** + **$100M** − **$50M** → EV **$585M**.

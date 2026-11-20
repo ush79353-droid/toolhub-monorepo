@@ -860,6 +860,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FcfeCalculator: () => import('@/tools/calculators/fcfe/detail'),
   FcffCalculator: () => import('@/tools/calculators/fcff/detail'),
   FfoCalculator: () => import('@/tools/calculators/ffo/detail'),
+  FibonacciRetracementCalculator: () =>
+    import('@/tools/calculators/fibonacci-retracement/detail'),
   LeveredFreeCashFlowCalculator: () =>
     import('@/tools/calculators/levered-free-cash-flow/detail'),
   UnpaidWorkCalculator: () =>
