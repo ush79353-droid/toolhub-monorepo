@@ -61,6 +61,11 @@
 - **Important Files:** `frontend/src/tools/calculators/hours-pay/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
+### 2026-11-20 — Add Monthly Income Hourly Calculator
+- **Summary:** Shipped Monthly Income Hourly Calculator on existing catalog slug `monthly-income-hourly-calculator` (`MonthlyIncomeHourlyCalculator`, catalog `6af46f0fa27d8d1d4e99006a`). Screenshot-first: monthly FX ↔ hourly FX; hours/week default 40; collapsed Other income measures (no invented fields). Formula Hourly=(M×12)/(H×52). Dual FX; hours never convert. Activated `--set-active` only — **indexable false**.
+- **Example:** 100,000/mo · 40h → hourly ≈ **576.92**.
+- **Verification:** `calculation.test.ts`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Time and a Half Calculator
 - **Summary:** Shipped Time and a Half Calculator on existing catalog slug `time-and-a-half-calculator` (`TimeAndAHalfCalculator`, catalog `6af46f0fa27d8d1d4e990077`, pillar/subPillar null). Screenshot-first (ADR-023): standard rate FX; derived 1.5×/2×/3× rates FX; hours per category; category earnings + total FX. Dual `CURRENCY_CONVERSION_SLUGS`; hours/multipliers never convert. Wage / Overtime siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 1,000 · 40h + 5h@1.5 + 2h@2 → total **51,500**.
