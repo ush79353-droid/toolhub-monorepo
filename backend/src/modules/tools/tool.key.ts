@@ -564,6 +564,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FullTimeEquivalentCalculator',
   'GmroiCalculator',
   'GoogleAdsenseCalculator',
+  'GrahamNumberCalculator',
   'HedgeRatioCalculator',
   'HhiCalculator',
   'HighLowMethodCalculator',
@@ -580,6 +581,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'ManHoursCalculator',
   'MarginInterestCalculator',
   'MarginalCostCalculator',
+  'MarketCapitalizationCalculator',
+  'MaturityValueCalculator',
   'MirrCalculator',
   'MoneyFactorCalculator',
   'MoneyMarketAccountCalculator',
@@ -587,6 +590,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MovingAverageCalculator',
   'MutualFundCalculator',
   'MvaCalculator',
+  'NavCalculator',
   'NopatCalculator',
   'NpvCalculator',
   'OnlineMarketingConversionCalculator',
@@ -600,16 +604,21 @@ export const APPROVED_COMPONENT_KEYS = [
   'PaymentCalculator',
   'PaybackPeriodCalculator',
   'PayRaiseCalculator',
+  'PegRatioCalculator',
   'PercentageDiscountCalculator',
   'PercentageReturnCalculator',
   'PerpetuityCalculator',
   'PitiCalculator',
+  'PivotPointCalculator',
+  'PortfolioBetaCalculator',
   'PostJudgmentInterestCalculator',
   'PreAndPostMoneyValuationCalculator',
   'PresentValueCalculator',
   'PriceElasticityOfDemandCalculator',
   'PriceQuantityCalculator',
+  'PriceToBookRatioCalculator',
   'PriceToCashFlowRatioCalculator',
+  'PriceToEarningsRatioCalculator',
   'PrivateSavingsCalculator',
   'ProratedSalaryCalculator',
   'ProratedRentCalculator',
@@ -619,6 +628,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'RealEstateCommissionCalculator',
   'RealRateOfReturnCalculator',
   'RealtorCommissionVatCalculator',
+  'RelativeStrengthIndexCalculator',
+  'ResidualIncomeCalculator',
   'RentSplitCalculator',
   'RentVsBuyCalculator',
   'RevenueCalculator',
@@ -676,6 +687,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FfoCalculator',
   'FibonacciRetracementCalculator',
   'FicaTaxCalculator',
+  'FreeFloatCalculator',
   'LeveredFreeCashFlowCalculator',
   'UnpaidWorkCalculator',
   'UsIncomePercentileCalculator',
@@ -791,6 +803,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InformationRatioCalculator',
   'InterestCalculator',
   'InterestCoverageRatioCalculator',
+  'IntrinsicValueCalculator',
   'InterestOnlyMortgageCalculator',
   'InterestPerDayCalculator',
   'InterestRateCalculator',
@@ -1336,6 +1349,7 @@ if (isDirect) {
     !isApprovedComponentKey('FullTimeEquivalentCalculator') ||
     !isApprovedComponentKey('GmroiCalculator') ||
     !isApprovedComponentKey('GoogleAdsenseCalculator') ||
+    !isApprovedComponentKey('GrahamNumberCalculator') ||
     !isApprovedComponentKey('HedgeRatioCalculator') ||
     !isApprovedComponentKey('HhiCalculator') ||
     !isApprovedComponentKey('HighLowMethodCalculator') ||
@@ -1352,6 +1366,8 @@ if (isDirect) {
     !isApprovedComponentKey('ManHoursCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
     !isApprovedComponentKey('MarginalCostCalculator') ||
+    !isApprovedComponentKey('MarketCapitalizationCalculator') ||
+    !isApprovedComponentKey('MaturityValueCalculator') ||
     !isApprovedComponentKey('MirrCalculator') ||
     !isApprovedComponentKey('MoneyFactorCalculator') ||
     !isApprovedComponentKey('MoneyMarketAccountCalculator') ||
@@ -1359,6 +1375,7 @@ if (isDirect) {
     !isApprovedComponentKey('MovingAverageCalculator') ||
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
+    !isApprovedComponentKey('NavCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('NpvCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
@@ -1371,16 +1388,21 @@ if (isDirect) {
     !isApprovedComponentKey('PaydayLoanCalculator') ||
     !isApprovedComponentKey('PaybackPeriodCalculator') ||
     !isApprovedComponentKey('PayRaiseCalculator') ||
+    !isApprovedComponentKey('PegRatioCalculator') ||
     !isApprovedComponentKey('PercentageDiscountCalculator') ||
     !isApprovedComponentKey('PercentageReturnCalculator') ||
     !isApprovedComponentKey('PerpetuityCalculator') ||
     !isApprovedComponentKey('PitiCalculator') ||
+    !isApprovedComponentKey('PivotPointCalculator') ||
+    !isApprovedComponentKey('PortfolioBetaCalculator') ||
     !isApprovedComponentKey('PostJudgmentInterestCalculator') ||
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
     !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PriceElasticityOfDemandCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
+    !isApprovedComponentKey('PriceToBookRatioCalculator') ||
     !isApprovedComponentKey('PriceToCashFlowRatioCalculator') ||
+    !isApprovedComponentKey('PriceToEarningsRatioCalculator') ||
     !isApprovedComponentKey('PrivateSavingsCalculator') ||
     !isApprovedComponentKey('ProratedSalaryCalculator') ||
     !isApprovedComponentKey('ProratedRentCalculator') ||
@@ -1390,6 +1412,8 @@ if (isDirect) {
     !isApprovedComponentKey('RealEstateCommissionCalculator') ||
     !isApprovedComponentKey('RealRateOfReturnCalculator') ||
     !isApprovedComponentKey('RealtorCommissionVatCalculator') ||
+    !isApprovedComponentKey('RelativeStrengthIndexCalculator') ||
+    !isApprovedComponentKey('ResidualIncomeCalculator') ||
     !isApprovedComponentKey('RentSplitCalculator') ||
     !isApprovedComponentKey('RentVsBuyCalculator') ||
     !isApprovedComponentKey('RevenueCalculator') ||
@@ -1447,6 +1471,7 @@ if (isDirect) {
     !isApprovedComponentKey('FfoCalculator') ||
     !isApprovedComponentKey('FibonacciRetracementCalculator') ||
     !isApprovedComponentKey('FicaTaxCalculator') ||
+    !isApprovedComponentKey('FreeFloatCalculator') ||
     !isApprovedComponentKey('LeveredFreeCashFlowCalculator') ||
     !isApprovedComponentKey('UnpaidWorkCalculator') ||
     !isApprovedComponentKey('UsIncomePercentileCalculator') ||
@@ -1564,6 +1589,7 @@ if (isDirect) {
     !isApprovedComponentKey('InformationRatioCalculator') ||
     !isApprovedComponentKey('InterestCalculator') ||
     !isApprovedComponentKey('InterestCoverageRatioCalculator') ||
+    !isApprovedComponentKey('IntrinsicValueCalculator') ||
     !isApprovedComponentKey('InterestOnlyMortgageCalculator') ||
     !isApprovedComponentKey('InterestPerDayCalculator') ||
     !isApprovedComponentKey('InterestRateCalculator') ||

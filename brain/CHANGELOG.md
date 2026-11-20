@@ -4,6 +4,83 @@
 
 ---
 
+### 2026-11-20 — Add Residual Income Calculator
+- **Summary:** Shipped Residual Income Calculator on existing catalog slug `residual-income-calculator` (`ResidualIncomeCalculator`, catalog `6af46f10a27d8d1d4e990169`, preserved `nameKey` `residual income calculator`). Screenshot-first (ADR-023): equity charge = EC × (r%÷100); RI = NI − charge; positive/zero/negative interpretation. Denomination-only CurrencySelect (PKR default, no FX). **`indexable` preserved false**.
+- **Example:** EC **800,000** · r **10%** · NI **140,000** → charge **80,000** · RI **60,000**; Company Alpha EC **500,000,000** · 12% · NI **17,000,000** → RI **−43,000,000**.
+- **Important Files:** `frontend/src/tools/calculators/residual-income/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Residual Income tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Also completed pending RSI `tool:assign` for `6af46f10a27d8d1d4e990168`. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Relative Strength Index Calculator (RSI)
+- **Summary:** Shipped Relative Strength Index Calculator (RSI) on existing catalog slug `relative-strength-index-calculator-rsi` (`RelativeStrengthIndexCalculator`, catalog `6af46f10a27d8d1d4e990168`, preserved `nameKey` `relative strength index calculator (rsi)`). Screenshot-first (ADR-023): dynamic closing prices; period default 14; Wilder smoothing (default) + simple-average mode; AvgGain/AvgLoss/RS/RSI; zero-gain→100, zero-loss→0, flat→50; insufficient-data messaging; minimal SVG RSI sparkline (no new chart dependency). No CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Period **5** · prices **100, 102, 101, 104, 103, 106** → AvgGain **1.60** · AvgLoss **0.40** · RS **4.00** · RSI **80.00**.
+- **Important Files:** `frontend/src/tools/calculators/relative-strength-index/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` RSI tests 21/21 pass. Three ADR-019 commits. Mongo `tool:assign` completed on retry (2026-11-20) — `isDeveloped: true`, `indexable` false. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Price to Earnings Ratio Calculator
+- **Summary:** Shipped Price to Earnings Ratio Calculator on existing catalog slug `price-to-earnings-ratio-calculator` (`PriceToEarningsRatioCalculator`, catalog `6af46f10a27d8d1d4e990167`, preserved `nameKey` `price to earnings ratio calculator`). Screenshot-first (ADR-023): price ÷ EPS → P/E; optional EPS from net income − preferred ÷ weighted shares; zero EPS → Not defined; negative EPS → N/M; interpretation bands. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Price **120** · EPS **10** → P/E **12.00×**; NI **1,000,000** − pref **100,000** ÷ shares **100,000** → EPS **9** · price **135** → P/E **15.00×**.
+- **Important Files:** `frontend/src/tools/calculators/price-to-earnings-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` P/E tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Price to Book Ratio Calculator
+- **Summary:** Shipped Price to Book Ratio Calculator on existing catalog slug `price-to-book-ratio-calculator` (`PriceToBookRatioCalculator`, catalog `6af46f10a27d8d1d4e990166`, preserved `nameKey` `price to book ratio calculator`). Screenshot-first (ADR-023): equity − preferred → BVPS → P/B; collapsible tangible book (goodwill/intangibles); negative BVPS keeps P/B unavailable. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Equity **500,000** − Pref **50,000** · Shares **10,000** · Price **90** → BVPS **45** · P/B **2.00×**; tangible → TBVPS **35** · P/TBV ≈ **2.57×**.
+- **Important Files:** `frontend/src/tools/calculators/price-to-book-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` P/B tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Portfolio Beta Calculator
+- **Summary:** Shipped Portfolio Beta Calculator on existing catalog slug `portfolio-beta-calculator` (`PortfolioBetaCalculator`, catalog `6af46f10a27d8d1d4e990164`, preserved `nameKey` `portfolio beta calculator`). Screenshot-first (ADR-023): dynamic stock beta × weight rows; βp = Σ(w%/100×β); portfolio beta only when weights ≈ 100%; add/remove stocks; no CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** 1.20@50% + 0.80@30% + 1.50@20% → βp **1.14**.
+- **Important Files:** `frontend/src/tools/calculators/portfolio-beta/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Portfolio Beta tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Pivot Point Calculator
+- **Summary:** Shipped Pivot Point Calculator on existing catalog slug `pivot-point-calculator` (`PivotPointCalculator`, catalog `6af46f10a27d8d1d4e990163`, preserved `nameKey` `pivot point calculator`). Screenshot-first (ADR-023): Classic / Woodie / Camarilla / Fibonacci / DeMark; H/L/C (+ open for DeMark); method-specific R/S levels. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Classic H **110** · L **90** · C **100** → PP **100** · R1–R3 **110/120/130** · S1–S3 **90/80/70**.
+- **Important Files:** `frontend/src/tools/calculators/pivot-point/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Pivot Point tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add PEG Ratio Calculator
+- **Summary:** Shipped PEG Ratio Calculator on existing catalog slug `peg-ratio-calculator` (`PegRatioCalculator`, catalog `6af46f10a27d8d1d4e990162`, preserved `nameKey` `peg ratio calculator`). Screenshot-first (ADR-023): P/E from price/EPS (optional EPS from net earnings÷shares); growth = (b%×ROE%)/100; PEG = P/E÷g%; undefined for ≤0 EPS or ≤0 growth. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Price **$250** · EPS **$15.50** · b **60%** · ROE **8%** → P/E ≈ **16.13×** · g **4.80%** · PEG ≈ **3.36**.
+- **Important Files:** `frontend/src/tools/calculators/peg-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` PEG tests 21/21 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add NAV Calculator – Net Asset Value
+- **Summary:** Shipped NAV Calculator on existing catalog slug `nav-calculator-net-asset-value` (`NavCalculator`, catalog `6af46f10a27d8d1d4e990161`, preserved `nameKey` `nav calculator – net asset value`). Screenshot-first (ADR-023): fund assets (IV+cash+AR), liabilities (STL+LTL), NAV = FA−FL, NAV/share; blank/zero shares keep NAV. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** FA **$1,800,000** − FL **$70,000** → NAV **$1,730,000** · 100,000 shares → **$17.30**/share.
+- **Important Files:** `frontend/src/tools/calculators/nav/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` NAV tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Maturity Value Calculator
+- **Summary:** Shipped Maturity Value Calculator on existing catalog slug `maturity-value-calculator` (`MaturityValueCalculator`, catalog `6af46f10a27d8d1d4e990160`, preserved `nameKey` `maturity value calculator`). Screenshot-first (ADR-023): principal × (1+r)^t annual compounding; years/months duration; interest earned summary. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$2,000** · **3%** · **2 years** → MV **$2,121.80** · interest **$121.80**.
+- **Important Files:** `frontend/src/tools/calculators/maturity-value/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Maturity Value tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Market Capitalization Calculator
+- **Summary:** Shipped Market Capitalization Calculator on existing catalog slug `market-capitalization-calculator` (`MarketCapitalizationCalculator`, catalog `6af46f10a27d8d1d4e99015f`, preserved `nameKey` `market capitalization calculator`). Screenshot-first (ADR-023): share price × outstanding shares → market cap + compact display. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$100** × **10,000,000** → **$1,000,000,000** (**$1B**).
+- **Important Files:** `frontend/src/tools/calculators/market-capitalization/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Market Cap tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Intrinsic Value Calculator
+- **Summary:** Shipped Intrinsic Value Calculator on existing catalog slug `intrinsic-value-calculator` (`IntrinsicValueCalculator`, catalog `6af46f10a27d8d1d4e99015e`, preserved `nameKey` `intrinsic value calculator`). Screenshot-first (ADR-023): EPS / g / Y / optional CMP → V = EPS(8.5+2g)×4.4/Y + margin of safety. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** EPS **$5** · g **6%** · Y **4.4%** · CMP **$80** → V **$102.50** · MS ≈ **21.95%**.
+- **Important Files:** `frontend/src/tools/calculators/intrinsic-value/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Intrinsic Value tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Graham Number Calculator
+- **Summary:** Shipped Graham Number Calculator on existing catalog slug `graham-number-calculator` (`GrahamNumberCalculator`, catalog `6af46f10a27d8d1d4e99015d`, preserved `nameKey` `graham number calculator`). Screenshot-first (ADR-023): BVPS/EPS → √(22.5×EPS×BVPS); optional price comparison; expandable derived EPS/BVPS with Apply. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** EPS **$5** · BVPS **$20** → GN ≈ **$47.43**; price **$40** → below · ≈ **15.67%**.
+- **Important Files:** `frontend/src/tools/calculators/graham-number/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Graham Number tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Free Float Calculator
+- **Summary:** Shipped Free Float Calculator on existing catalog slug `free-float-calculator` (`FreeFloatCalculator`, catalog `6af46f10a27d8d1d4e99015c`, preserved `nameKey` `free float calculator`). Screenshot-first (ADR-023): outstanding / restricted / closely held → free float + percentage; whole-share validation; no CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **10,000** − **2,000** − **1,000** → free float **7,000** shares (**70%**).
+- **Important Files:** `frontend/src/tools/calculators/free-float/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Free Float tests 18/18 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 ### 2026-11-20 — Add RMD Calculator (Required Minimum Distributions)
 - **Summary:** Shipped RMD Calculator on existing catalog slug `rmd-calculator-required-minimum-distributions-calculator` (`RmdCalculator`, catalog `6af46f0fa27d8d1d4e990070`, pillar/subPillar null). Screenshot-first (ADR-023): spouse >10y younger sole beneficiary; owner age (default 72); account balance FX; RMD FX. Uniform Lifetime Table (IRS Pub 590-B 2022+); age 72 factor **27.4** (not screenshot 25.6). Joint-life Yes → unavailable without spouse age. Dual `CURRENCY_CONVERSION_SLUGS`. Misfiled Rate-of-Pay prompt ignored. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Age 72 · $500,000 → factor **27.4** · RMD ≈ **$18,248.18**.

@@ -763,6 +763,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gmroi/detail'),
   GoogleAdsenseCalculator: () =>
     import('@/tools/calculators/google-adsense/detail'),
+  GrahamNumberCalculator: () =>
+    import('@/tools/calculators/graham-number/detail'),
   HedgeRatioCalculator: () =>
     import('@/tools/calculators/hedge-ratio/detail'),
   HhiCalculator: () =>
@@ -795,6 +797,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-interest/detail'),
   MarginalCostCalculator: () =>
     import('@/tools/calculators/marginal-cost/detail'),
+  MarketCapitalizationCalculator: () =>
+    import('@/tools/calculators/market-capitalization/detail'),
+  MaturityValueCalculator: () =>
+    import('@/tools/calculators/maturity-value/detail'),
   MirrCalculator: () =>
     import('@/tools/calculators/mirr/detail'),
   MoneyFactorCalculator: () =>
@@ -809,6 +815,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mutual-fund/detail'),
   MvaCalculator: () =>
     import('@/tools/calculators/mva/detail'),
+  NavCalculator: () =>
+    import('@/tools/calculators/nav/detail'),
   NopatCalculator: () =>
     import('@/tools/calculators/nopat/detail'),
   NpvCalculator: () =>
@@ -835,6 +843,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/payback-period/detail'),
   PayRaiseCalculator: () =>
     import('@/tools/calculators/pay-raise/detail'),
+  PegRatioCalculator: () =>
+    import('@/tools/calculators/peg-ratio/detail'),
   PercentageDiscountCalculator: () =>
     import('@/tools/calculators/percentage-discount/detail'),
   PercentageReturnCalculator: () =>
@@ -842,6 +852,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PerpetuityCalculator: () =>
     import('@/tools/calculators/perpetuity/detail'),
   PitiCalculator: () => import('@/tools/calculators/piti/detail'),
+  PivotPointCalculator: () =>
+    import('@/tools/calculators/pivot-point/detail'),
+  PortfolioBetaCalculator: () =>
+    import('@/tools/calculators/portfolio-beta/detail'),
   PostJudgmentInterestCalculator: () =>
     import('@/tools/calculators/post-judgment-interest/detail'),
   PreAndPostMoneyValuationCalculator: () =>
@@ -852,8 +866,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/price-elasticity-of-demand/detail'),
   PriceQuantityCalculator: () =>
     import('@/tools/calculators/price-quantity/detail'),
+  PriceToBookRatioCalculator: () =>
+    import('@/tools/calculators/price-to-book-ratio/detail'),
   PriceToCashFlowRatioCalculator: () =>
     import('@/tools/calculators/price-to-cash-flow-ratio/detail'),
+  PriceToEarningsRatioCalculator: () =>
+    import('@/tools/calculators/price-to-earnings-ratio/detail'),
   PrivateSavingsCalculator: () =>
     import('@/tools/calculators/private-savings/detail'),
   ProratedSalaryCalculator: () =>
@@ -872,6 +890,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/real-rate-of-return/detail'),
   RealtorCommissionVatCalculator: () =>
     import('@/tools/calculators/realtor-commission-vat/detail'),
+  RelativeStrengthIndexCalculator: () =>
+    import('@/tools/calculators/relative-strength-index/detail'),
+  ResidualIncomeCalculator: () =>
+    import('@/tools/calculators/residual-income/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>
@@ -976,6 +998,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FibonacciRetracementCalculator: () =>
     import('@/tools/calculators/fibonacci-retracement/detail'),
   FicaTaxCalculator: () => import('@/tools/calculators/fica-tax/detail'),
+  FreeFloatCalculator: () => import('@/tools/calculators/free-float/detail'),
   LeveredFreeCashFlowCalculator: () =>
     import('@/tools/calculators/levered-free-cash-flow/detail'),
   UnpaidWorkCalculator: () =>
@@ -1197,6 +1220,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InterestCalculator: () => import('@/tools/calculators/interest/detail'),
   InterestCoverageRatioCalculator: () =>
     import('@/tools/calculators/interest-coverage-ratio/detail'),
+  IntrinsicValueCalculator: () =>
+    import('@/tools/calculators/intrinsic-value/detail'),
   InterestOnlyMortgageCalculator: () =>
     import('@/tools/calculators/interest-only-mortgage/detail'),
   InterestPerDayCalculator: () =>
