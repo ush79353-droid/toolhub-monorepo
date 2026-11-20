@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (EBIT Calculator live at `/tools/ebit-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (EBITDA Calculator live at `/tools/ebitda-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **EBITDA Calculator (`/tools/ebitda-calculator`):** Live client-side Earnings Before Interest, Taxes, Depreciation, and Amortization tool (`componentKey: 'EbitdaCalculator'`, catalog `6af46f10a27d8d1d4e99012e`, `nameKey` `ebitda calculator`). Screenshot-first (ADR-023): operating profit / amortization / depreciation / EBITDA with reverse modes; signed operating profit and EBITDA; optional revenue → EBITDA margin. Denomination-only CurrencySelect (PKR default, no FX). No EV/EBITDA or net-income UI (ADR-023; covered in guide). Activated; **`indexable` left false**. Example: OP $100k + A $10k + D $20k → EBITDA **$130,000**.
 - **EBIT Calculator (`/tools/ebit-calculator`):** Live client-side Earnings Before Interest and Taxes tool (`componentKey: 'EbitCalculator'`, catalog `6af46f10a27d8d1d4e99012d`, `nameKey` `ebit calculator`). Screenshot-first (ADR-023): revenue / operating expenses / EBIT with reverse modes; positive/zero/negative EBIT preserved; EBIT margin when revenue &gt; 0. Denomination-only CurrencySelect (PKR default, no FX). No expense breakdown / EBITDA inputs (ADR-023; covered in guide). Activated; **`indexable` left false**. Example: revenue $50k − OE $24k → EBIT **$26,000**.
 - **DSO Calculator (`/tools/dso-calculator`):** Live client-side Days Sales Outstanding tool (`componentKey: 'DsoCalculator'`, catalog `6af46f10a27d8d1d4e99012c`, `nameKey` `dso calculator`). Screenshot-first (ADR-023): Receivables + Sales accordions; avg AR from beg/end or direct; total sales (default) or net credit sales basis; period days default 365; AR turnover supplementary; zero sales undefined; zero AR → DSO 0. Denomination-only CurrencySelect (PKR default, no FX). No reverse modes / no returns-allowances breakdown (ADR-023). Activated; **`indexable` left false**. Example: AR 20k/35k · sales 500k · 365d → avg **27.5k** · DSO ≈ **20.08 days**.
 - **DPO Calculator – Days Payable Outstanding (`/tools/dpo-calculator-days-payable-outstanding`):** Live client-side DPO tool (`componentKey: 'DpoCalculator'`, catalog `6af46f10a27d8d1d4e99012b`, `nameKey` `dpo calculator – days payable outstanding`). Screenshot-first (ADR-023): Average Payables / Purchases / DPO accordions; avg AP from beg/end or direct; purchases = COGS + end inv − beg inv or direct; period days default 365; AP turnover supplementary; zero purchases undefined; negative estimated purchases blocked. Denomination-only CurrencySelect (PKR default, no FX). No reverse solve modes (ADR-023). Activated; **`indexable` left false**. Example: AP 150k/200k · inv 500k/400k · COGS 1.5M · 365d → avg AP **175k** · purchases **1.4M** · DPO **45.63 days**.

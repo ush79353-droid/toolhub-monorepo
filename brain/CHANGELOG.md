@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add EBITDA Calculator
+- **Summary:** Shipped EBITDA Calculator on existing catalog slug `ebitda-calculator` (`EbitdaCalculator`, catalog `6af46f10a27d8d1d4e99012e`, preserved `nameKey` `ebitda calculator`). Screenshot-first (ADR-023): operating profit / amortization / depreciation / EBITDA with reverse modes; signed OP and EBITDA; optional revenue → EBITDA margin. Denomination-only CurrencySelect (PKR default, no FX). No EV/EBITDA or net-income UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** OP $100,000 + A $10,000 + D $20,000 → EBITDA **$130,000**; OP −$20k + A $10k + D $30k → EBITDA **$20,000**.
+- **Important Files:** `frontend/src/tools/calculators/ebitda/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add EBIT Calculator
 - **Summary:** Shipped EBIT Calculator on existing catalog slug `ebit-calculator` (`EbitCalculator`, catalog `6af46f10a27d8d1d4e99012d`, preserved `nameKey` `ebit calculator`). Screenshot-first (ADR-023): revenue / operating expenses / EBIT with reverse modes; signed EBIT; EBIT margin when revenue &gt; 0. Denomination-only CurrencySelect (PKR default, no FX). No expense-breakdown or EBITDA UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** revenue $50,000 − OE $24,000 → EBIT **$26,000**; OE $100k on $80k revenue → EBIT **−$20,000**.
