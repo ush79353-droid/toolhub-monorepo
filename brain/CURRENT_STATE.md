@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (PITI Calculator live at `/tools/piti-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Repayment Calculator live at `/tools/repayment-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Repayment Calculator (`/tools/repayment-calculator`):** Live client-side amortizing repayment tool (`componentKey: 'RepaymentCalculator'`, catalog `6af46f10a27d8d1d4e990151`, `nameKey` `repayment calculator`). Screenshot-first (ADR-023): balance + APR; compound & pay-back frequencies; fixed-term (years/months → n) or fixed-installment modes; i=(1+j/m)^(m/p)−1; A=P·i/(1−(1+i)^−n); schedule + final payment; principal/interest donut; non-amortizing guard. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$10k** @ **10%** × **5y** monthly → ≈ **$212.47**/mo · total ≈ **$12,748.23** · interest ≈ **$2,748.23**.
 - **PITI Calculator (`/tools/piti-calculator`):** Live client-side housing payment tool (`componentKey: 'PitiCalculator'`, catalog `6af46f10a27d8d1d4e990150`, `nameKey` `piti calculator`). Screenshot-first (ADR-023): principal; term years+months; annual rate; annual tax; annual insurance; M = Pr/(1−(1+r)^−n) (r=0 → P/n); PITI = M + T/12 + I/12; breakdown + annual PITI / total interest. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$200k** · **30y** · **7%** · tax **$3,600** · ins **$1,200** → PITI ≈ **$1,730.60**/mo.
 - **Finance Charge Calculator (`/tools/finance-charge-calculator`):** Live client-side simple-interest finance charge tool (`componentKey: 'FinanceChargeCalculator'`, catalog `6af46f10a27d8d1d4e99014e`, `nameKey` `finance charge calculator`). Screenshot-first (ADR-023): balance + APR; Billing cycle (days) or Given term (days|weeks|months|years with 365/12 month days); FC = B×(APR/100)×(Days/365); daily rate/charge; total due; period %; optional non-compounding daily breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$1,000** @ **18%** × **30** d → FC ≈ **$14.79**.
 - **Credit Utilization Calculator (`/tools/credit-utilization-calculator`):** Live client-side revolving utilization tool (`componentKey: 'CreditUtilizationCalculator'`, catalog `6af46f10a27d8d1d4e99014d`, `nameKey` `credit utilization calculator`). Screenshot-first (ADR-023): Credit line 1–2 (+ add/remove up to 20); money used + credit limit; CU = ΣU/ΣL×100 (never average per-card %); available/over-limit; target utilization → balance reduction + optional additional limit; per-card breakdown; empty optional rows ignored; partial-entry validation. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$500** / **$2,000** → **25%**; three-card **$9,400** / **$25,000** → **37.60%**.

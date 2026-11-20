@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Repayment Calculator
+- **Summary:** Shipped Repayment Calculator on existing catalog slug `repayment-calculator` (`RepaymentCalculator`, catalog `6af46f10a27d8d1d4e990151`, preserved `nameKey` `repayment calculator`). Screenshot-first (ADR-023): fixed-term and fixed-installment modes; compounding/payment frequencies; effective periodic rate; amortization schedule; principal/interest chart. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$10,000** @ **10%** · monthly · **5 years** → payment ≈ **$212.47** · total ≈ **$12,748.23** · interest ≈ **$2,748.23**.
+- **Important Files:** `frontend/src/tools/calculators/repayment/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Repayment calculation tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add PITI Calculator
 - **Summary:** Shipped PITI Calculator on existing catalog slug `piti-calculator` (`PitiCalculator`, catalog `6af46f10a27d8d1d4e990150`, preserved `nameKey` `piti calculator`). Screenshot-first (ADR-023): principal, term years+months, rate, annual tax/insurance; amortizing M + T/12 + I/12; zero-rate P/n; breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$200,000** · **30y** · **7%** · tax **$3,600** · insurance **$1,200** → PITI ≈ **$1,730.60**/month.

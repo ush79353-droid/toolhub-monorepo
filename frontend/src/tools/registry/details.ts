@@ -970,6 +970,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/quiz-us-income-percentile/detail'),
   ReceivablesTurnoverRatioCalculator: () =>
     import('@/tools/calculators/receivables-turnover-ratio/detail'),
+  RepaymentCalculator: () =>
+    import('@/tools/calculators/repayment/detail'),
   RetainedEarningsCalculator: () =>
     import('@/tools/calculators/retained-earnings/detail'),
   Rule2836Calculator: () =>

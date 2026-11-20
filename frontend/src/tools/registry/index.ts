@@ -3721,6 +3721,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ReceivablesTurnoverRatioCalculator,
     })),
   ),
+  RepaymentCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/repayment/RepaymentCalculator'
+    ).then((mod) => ({
+      default: mod.RepaymentCalculator,
+    })),
+  ),
   RetainedEarningsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/retained-earnings/RetainedEarningsCalculator'
