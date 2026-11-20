@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add 28/36 Rule Calculator
+- **Summary:** Shipped 28/36 Rule Calculator on existing catalog slug `2836-rule-calculator` (`Rule2836Calculator`, catalog `6af46f10a27d8d1d4e990148`, preserved `nameKey` `28/36 rule calculator`). Screenshot-first (ADR-023): Front-end (28%) — gross income, combined or itemized housing, FER; Back-end (36%) — other debts, total debt, BER; guideline limits + housing capacity; overall pass only when both ≤ limits; zero income → ratios unavailable. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Income **$5,000** · Housing **$1,200** · Other debts **$400** → FER **24.00%** · total debt **$1,600** · BER **32.00%** · max housing **$1,400** · max debt **$1,800**.
+- **Important Files:** `frontend/src/tools/calculators/rule-2836/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` 28/36 calculation tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Working Capital Turnover Ratio Calculator
 - **Summary:** Shipped Working Capital Turnover Ratio Calculator on existing catalog slug `working-capital-turnover-ratio-calculator` (`WorkingCapitalTurnoverRatioCalculator`, catalog `6af46f10a27d8d1d4e990146`, preserved `nameKey` `working capital turnover ratio calculator`). Screenshot-first (ADR-023): Average CA + Average CL + WCT (AWC = ACA − ACL; Revenue / AWC); zero AWC unavailable; negative AWC signed with warning; expandable breakdown. Denomination-only CurrencySelect (PKR default, no FX). Reuses WC turnover helper. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Opening/Closing CA **$500k/$700k** · CL **$200k/$300k** · Revenue **$3.5M** → ACA **$600k** · ACL **$250k** · AWC **$350k** · WCT **10.00x**.

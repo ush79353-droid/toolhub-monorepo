@@ -72,6 +72,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'feet-to-inches-calculator',
   'fha-loan-calculator',
   'heloc-calculator',
+  '2836-rule-calculator',
   'home-affordability-calculator',
   'home-equity-loan-calculator',
   'home-improvement-loan-calculator',

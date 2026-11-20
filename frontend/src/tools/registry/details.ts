@@ -962,6 +962,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/receivables-turnover-ratio/detail'),
   RetainedEarningsCalculator: () =>
     import('@/tools/calculators/retained-earnings/detail'),
+  Rule2836Calculator: () =>
+    import('@/tools/calculators/rule-2836/detail'),
   SabbaticalCalculator: () =>
     import('@/tools/calculators/sabbatical/detail'),
   ScrapGoldCalculator: () =>

@@ -3690,6 +3690,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RetainedEarningsCalculator,
     })),
   ),
+  Rule2836Calculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/rule-2836/Rule2836Calculator'
+    ).then((mod) => ({
+      default: mod.Rule2836Calculator,
+    })),
+  ),
   SabbaticalCalculator: lazyTool(() =>
     import('@/tools/calculators/sabbatical/SabbaticalCalculator').then((mod) => ({
       default: mod.SabbaticalCalculator,
