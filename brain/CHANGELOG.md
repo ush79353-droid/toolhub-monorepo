@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Home Value Calculator (US)
+- **Summary:** Shipped Home Value Calculator (US) on existing catalog slug `home-value-calculator-us` (`HomeValueUsCalculator`, catalog `6af46f10a27d8d1d4e990118`, preserved `nameKey` `home value calculator (us)`). Screenshot-first (ADR-023): Your home + Home valuation accordions; 20 Case-Shiller metros from FRED CSV (no fabricated indices); present/past modes; CPI-U NSA real appreciation; Express `/api/v1/home-value` with Mongo cache (7-day TTL). Fixed USD. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Miami (MIXRNSA) · Jan 2005 · $300,000 → Aug 2026 indexed ≈ **$664,036**; real ≈ **+26%** vs CPIAUCNS.
+- **Important Files:** `frontend/src/tools/calculators/home-value-us/*`, `frontend/src/server/home-value/actions.ts`, `backend/src/modules/home-value/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed; live FRED CSV + Mongo cache verified for Miami/CPI. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Home Affordability Calculator
 - **Summary:** Shipped Home Affordability Calculator on existing catalog slug `home-affordability-calculator` (`HomeAffordabilityCalculator`, catalog `6af46f10a27d8d1d4e990117`, preserved `nameKey` `home affordability calculator`). Screenshot-first (ADR-023): Loan specification + Additional information accordions; payment vs income/DTI modes; algebraic + binary price solver for tax/MI; down payment amount/percent; closing-cost display. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $2,000 P&I · 6% · 30y → loan ≈ **$333,583**; +$50k down → ≈ **$383,583**; $120k income · $800 debts · 28/36 → budget **$2,800**.

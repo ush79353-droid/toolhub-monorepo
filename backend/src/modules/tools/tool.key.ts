@@ -628,6 +628,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HomeImprovementLoanCalculator',
   'HomeLoanEmiCalculator',
   'HomeLoanCalculator',
+  'HomeValueUsCalculator',
   'MortgageTaxesInsuranceCalculator',
   'MortgageComparisonCalculator',
   'HomeMortgageCalculator',
@@ -1281,6 +1282,7 @@ if (isDirect) {
     !isApprovedComponentKey('HomeImprovementLoanCalculator') ||
     !isApprovedComponentKey('HomeLoanEmiCalculator') ||
     !isApprovedComponentKey('HomeLoanCalculator') ||
+    !isApprovedComponentKey('HomeValueUsCalculator') ||
     !isApprovedComponentKey('MortgageTaxesInsuranceCalculator') ||
     !isApprovedComponentKey('MortgageComparisonCalculator') ||
     !isApprovedComponentKey('HomeMortgageCalculator') ||

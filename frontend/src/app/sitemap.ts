@@ -76,6 +76,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'home-improvement-loan-calculator',
   'home-loan-emi-calculator',
   'home-loan-calculator',
+  'home-value-calculator-us',
   'mortgage-calculator-with-taxes-and-insurance',
   'mortgage-comparison-calculator',
   'home-mortgage-calculator',
