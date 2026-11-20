@@ -240,5 +240,5 @@ Prior SPECIFICATION REQUIRED resolved with authorized Rate of Pay screenshot (ho
 
 Prior blockers resolved with locked TY2022 TCJA baseline vs May 2021 AFP (ordinary 39.6% + ARP-style CTC). Age ≥65 → aged std deduction; dependents = ODC only. Capital gains/NIIT excluded (no inputs). Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
 
-| 63 | Biden's Tax Plan Calculator | DEVELOPED | AUDIT PENDING | f3a2a319 | 7ffceb3a | *(reg hash)* | Completed Tools | `BidensTaxPlanCalculator`; slug `bidens-tax-plan-calculator`; Mongo `6af46f0fa27d8d1d4e990055` active; fixed USD; indexable false; TASKS `TOOL-581` |
+| 63 | Biden's Tax Plan Calculator | DEVELOPED | AUDIT PENDING | f3a2a319 | 7ffceb3a | a186efe8 | Completed Tools | `BidensTaxPlanCalculator`; slug `bidens-tax-plan-calculator`; Mongo `6af46f0fa27d8d1d4e990055` active; fixed USD; indexable false; TASKS `TOOL-581` |
 

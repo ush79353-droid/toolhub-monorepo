@@ -11,7 +11,7 @@
 
 1. `f3a2a319` — feat(bidens-tax-plan): create historical comparison UI
 2. `7ffceb3a` — feat(bidens-tax-plan): implement verified historical tax calculations
-3. *(registration commit — see git log / tracker)*
+3. `a186efe8` — feat(bidens-tax-plan): complete registry and MongoDB integration
 
 ## Locked historical model
 
