@@ -55,6 +55,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ThreeXRentCalculator',
   'ThreeDPrinterBuyVsOutsourceCalculator',
   'ARDaysCalculator',
+  'ArvCalculator',
   'FourZeroThreeBCalculator',
   'ADRCalculator',
   'AFFOCalculator',
@@ -703,6 +704,7 @@ if (isDirect) {
     !isApprovedComponentKey('ThreeXRentCalculator') ||
     !isApprovedComponentKey('ThreeDPrinterBuyVsOutsourceCalculator') ||
     !isApprovedComponentKey('ARDaysCalculator') ||
+    !isApprovedComponentKey('ArvCalculator') ||
     !isApprovedComponentKey('FourZeroThreeBCalculator') ||
     !isApprovedComponentKey('ADRCalculator') ||
     !isApprovedComponentKey('AFFOCalculator') ||

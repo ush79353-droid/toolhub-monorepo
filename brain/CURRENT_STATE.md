@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-19** (Zakat Calculator live at `/tools/zakat-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (ARV Calculator live at `/tools/arv-calculator-after-repair-value`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **ARV Calculator – After Repair Value (`/tools/arv-calculator-after-repair-value`):** Live client-side flip/value-add planner (`componentKey: 'ArvCalculator'`, catalog `6af46f10a27d8d1d4e990112`, preserved `nameKey` `arv calculator – after repair value`). Screenshot-first (ADR-023): property value or average $/ft²|/m² × area (1 m² = 10.7639104167 ft²); ARV = PV + renovation value; max bid = ARV×rule% − renovation cost (negative bids warned); simplified gross ROI with optional custom purchase price or assumed max bid; optional target-ROI reverse purchase price. Denomination-only CurrencySelect (USD default, no FX). Share/Reload/Clear/feedback/guide/FAQ. Activated; **`indexable` left false**. Example: PV $300k + VR $50k → ARV **$350,000**; 70% − $50k cost → max bid **$195,000**; ROI ≈ **42.86%**.
 - **Zakat Calculator (`/tools/zakat-calculator`):** Live client-side Zakat estimate (`componentKey: 'ZakatCalculator'`, catalog `6af46f10a27d8d1d4e99010f`, `nameKey` `zakat calculator`). Gold Nisab 87.48 g, silver Nisab 612.36 g, or custom. Net wealth = eligible assets − immediate liabilities, floored at zero. 2.5% only when net ≥ Nisab. Hawl yes/no/not sure does not zero the estimate. Reference metal prices dated 2026-11-19 in USD (not live), converted with stored rates, or a manual per-gram price. CurrencySelect for entered amounts (denomination). **`indexable` left false**. Example: 500,000 − 100,000 → net **400,000** → Zakat **10,000** when Nisab is 150,000.
 - **VA Disability Calculator (`/tools/va-disability-calculator`):** Live client-side combined-rating and compensation estimate (`componentKey: 'VaDisabilityCalculator'`, catalog `6af46f10a27d8d1d4e99010e`, `nameKey` `va disability calculator`). 38 CFR 4.25 whole-person combine, nearest-10 rounding (5 up), cap 100. Bilateral factor (38 CFR 4.26) only when both arms, both legs, or an arm and a leg are marked. Pay from VA.gov rates effective 2025-12-01. Dependents affect dollars at 30%+, not the percentage. **`indexable` left false**. Example: 50/30/20 → **72** exact → **70%** → **$1,808.45** alone.
 - **US Income Percentile Calculator (`/tools/us-income-percentile-calculator`):** Client-side 2024 CPS rank tool (`componentKey: 'UsIncomePercentileCalculator'`, catalog `6af46f10a27d8d1d4e99010d`, `nameKey` `us income percentile calculator`). Individual (PINC-01 bins) vs household (P60-286 Table A-4a). No invented tails. `isDeveloped: true`. **`isActive` left false** — public route stays off until an admin turns the row on. **`indexable` false**. Fixed USD.

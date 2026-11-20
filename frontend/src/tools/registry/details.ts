@@ -100,6 +100,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ThreeDPrinterBuyVsOutsourceCalculator: () =>
     import('@/tools/calculators/three-d-printer-buy-vs-outsource/detail'),
   ARDaysCalculator: () => import('@/tools/calculators/ar-days/detail'),
+  ArvCalculator: () => import('@/tools/calculators/arv/detail'),
   FourZeroThreeBCalculator: () => import('@/tools/calculators/four-zero-three-b/detail'),
   ADRCalculator: () => import('@/tools/calculators/adr/detail'),
   AFFOCalculator: () => import('@/tools/calculators/affo/detail'),

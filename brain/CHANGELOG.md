@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add ARV Calculator – After Repair Value
+- **Summary:** Shipped ARV Calculator on existing catalog slug `arv-calculator-after-repair-value` (`ArvCalculator`, catalog `6af46f10a27d8d1d4e990112`, preserved `nameKey` `arv calculator – after repair value`). Screenshot-first (ADR-023): Property value accordion (direct value or average price × area with ft²/m² conversion); ARV = PV + renovation value; Property best purchase price (renovation cost + investor rule → maximum bid, negative bids warned); Potential ROI (gross ROI using custom purchase price or assumed max bid; optional target-ROI reverse purchase price kept separate); Additional settings for custom purchase price. Denomination-only CurrencySelect (USD default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** PV $300,000 + VR $50,000 → ARV **$350,000**; 70% rule − $50,000 cost → max bid **$195,000**; ROI ≈ **42.86%**.
+- **Important Files:** `frontend/src/tools/calculators/arv/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-19 — Add Zakat Calculator
 - **Summary:** Shipped Zakat Calculator on existing catalog slug `zakat-calculator` (`ZakatCalculator`, catalog `6af46f10a27d8d1d4e99010f`, preserved `nameKey` `zakat calculator`). Screenshot-first (ADR-023): gold Nisab 87.48 g, silver Nisab 612.36 g, or a custom threshold; cash, investments, metal weight × purity × price, trade assets; immediate liabilities only; 2.5% of net wealth when Nisab is met. Hawl is explained and does not hide the estimate. Metal prices are a dated 19 Nov 2026 USD reference (not a live feed) converted with stored ADR-021 rates, or a manual price per gram. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Assets 500,000 − liabilities 100,000 = net 400,000. Custom Nisab 150,000. Zakat **10,000**.

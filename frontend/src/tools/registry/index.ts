@@ -378,6 +378,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ARDaysCalculator,
     })),
   ),
+  ArvCalculator: lazyTool(() =>
+    import('@/tools/calculators/arv/ArvCalculator').then((mod) => ({
+      default: mod.ArvCalculator,
+    })),
+  ),
   FourZeroThreeBCalculator: lazyTool(() =>
     import('@/tools/calculators/four-zero-three-b/FourZeroThreeBCalculator').then((mod) => ({
       default: mod.FourZeroThreeBCalculator,

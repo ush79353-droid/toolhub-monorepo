@@ -60,6 +60,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '3x-rent-calculator',
   '3d-printer-buy-vs-outsource-calculator',
   'ar-days-calculator',
+  'arv-calculator-after-repair-value',
   '403b-calculator',
   'adr-calculator',
   'affo-calculator',
