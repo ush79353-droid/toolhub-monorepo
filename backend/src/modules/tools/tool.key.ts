@@ -661,6 +661,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SilverMeltCalculator',
   'SubscriptionWasteCalculator',
   'TotalAssetTurnoverCalculator',
+  'WorkingCapitalCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1358,6 +1359,7 @@ if (isDirect) {
     !isApprovedComponentKey('SilverMeltCalculator') ||
     !isApprovedComponentKey('SubscriptionWasteCalculator') ||
     !isApprovedComponentKey('TotalAssetTurnoverCalculator') ||
+    !isApprovedComponentKey('WorkingCapitalCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

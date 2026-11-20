@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Working Capital Calculator
+- **Summary:** Shipped Working Capital Calculator on existing catalog slug `working-capital-calculator` (`WorkingCapitalCalculator`, catalog `6af46f10a27d8d1d4e990145`, preserved `nameKey` `working capital calculator`). Screenshot-first (ADR-023): basic WC (CA − CL) + working capital ratio (current ratio); optional turnover section (beg/end CA·CL → beg/end/avg WC, ΔWC, Revenue/Avg WC); negative WC preserved; zero CL / zero avg WC unavailable. Denomination-only CurrencySelect (PKR default, no FX). Reuses current-ratio WC/ratio helpers. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** CA **$300,000** · CL **$150,000** → WC **$150,000** · ratio **2.00**. Company Alpha: Avg WC **$175,000** · turnover ≈ **8.57x** · ΔWC **+$50,000**.
+- **Important Files:** `frontend/src/tools/calculators/working-capital/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Working Capital calculation tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Total Asset Turnover Calculator
 - **Summary:** Shipped Total Asset Turnover Calculator on existing catalog slug `total-asset-turnover-calculator` (`TotalAssetTurnoverCalculator`, catalog `6af46f10a27d8d1d4e990144`, preserved `nameKey` `total asset turnover calculator`). Screenshot-first (ADR-023): Average asset (beginning / ending → average) + Total asset turnover (revenue → TAT with `x`); empty ≠ zero; zero average unavailable; zero revenue → 0.00x; expandable breakdown. Denomination-only CurrencySelect (PKR default, no FX). No intensity / reverse UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Beginning **$8,000,000** · Ending **$10,000,000** · Revenue **$10,000,000** → Average **$9,000,000** · TAT ≈ **1.11x**.
