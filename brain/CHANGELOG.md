@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Price to Earnings Ratio Calculator
+- **Summary:** Shipped Price to Earnings Ratio Calculator on existing catalog slug `price-to-earnings-ratio-calculator` (`PriceToEarningsRatioCalculator`, catalog `6af46f10a27d8d1d4e990167`, preserved `nameKey` `price to earnings ratio calculator`). Screenshot-first (ADR-023): price ÷ EPS → P/E; optional EPS from net income − preferred ÷ weighted shares; zero EPS → Not defined; negative EPS → N/M; interpretation bands. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Price **120** · EPS **10** → P/E **12.00×**; NI **1,000,000** − pref **100,000** ÷ shares **100,000** → EPS **9** · price **135** → P/E **15.00×**.
+- **Important Files:** `frontend/src/tools/calculators/price-to-earnings-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` P/E tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Price to Book Ratio Calculator
 - **Summary:** Shipped Price to Book Ratio Calculator on existing catalog slug `price-to-book-ratio-calculator` (`PriceToBookRatioCalculator`, catalog `6af46f10a27d8d1d4e990166`, preserved `nameKey` `price to book ratio calculator`). Screenshot-first (ADR-023): equity − preferred → BVPS → P/B; collapsible tangible book (goodwill/intangibles); negative BVPS keeps P/B unavailable. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Equity **500,000** − Pref **50,000** · Shares **10,000** · Price **90** → BVPS **45** · P/B **2.00×**; tangible → TBVPS **35** · P/TBV ≈ **2.57×**.

@@ -3268,6 +3268,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PriceToCashFlowRatioCalculator,
     })),
   ),
+  PriceToEarningsRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/price-to-earnings-ratio/PriceToEarningsRatioCalculator'
+    ).then((mod) => ({
+      default: mod.PriceToEarningsRatioCalculator,
+    })),
+  ),
   PrivateSavingsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/private-savings/PrivateSavingsCalculator'

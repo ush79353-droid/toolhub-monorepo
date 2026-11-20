@@ -730,6 +730,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pivot-point-calculator',
   'portfolio-beta-calculator',
   'price-to-book-ratio-calculator',
+  'price-to-earnings-ratio-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Price to Book Ratio Calculator live at `/tools/price-to-book-ratio-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Price to Earnings Ratio Calculator live at `/tools/price-to-earnings-ratio-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Price to Earnings Ratio Calculator (`/tools/price-to-earnings-ratio-calculator`):** Live client-side P/E tool (`componentKey: 'PriceToEarningsRatioCalculator'`, catalog `6af46f10a27d8d1d4e990167`, `nameKey` `price to earnings ratio calculator`). Screenshot-first (ADR-023): price ÷ EPS → P/E; optional EPS from NI−preferred÷shares; zero EPS → Not defined; negative EPS → N/M; interpretation bands; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **120** / **10** → **12.00×**; EPS path NI **1,000,000** − pref **100,000** ÷ **100,000** → EPS **9** · price **135** → P/E **15.00×**.
 - **Price to Book Ratio Calculator (`/tools/price-to-book-ratio-calculator`):** Live client-side P/B tool (`componentKey: 'PriceToBookRatioCalculator'`, catalog `6af46f10a27d8d1d4e990166`, `nameKey` `price to book ratio calculator`). Screenshot-first (ADR-023): equity − preferred → BVPS → P/B; collapsible tangible book; negative BVPS → P/B unavailable; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **500,000** − **50,000** · **10,000** shares · price **90** → BVPS **45** · P/B **2.00×**.
 - **Portfolio Beta Calculator (`/tools/portfolio-beta-calculator`):** Live client-side weighted beta tool (`componentKey: 'PortfolioBetaCalculator'`, catalog `6af46f10a27d8d1d4e990164`, `nameKey` `portfolio beta calculator`). Screenshot-first (ADR-023): dynamic stock beta/weight rows; βp = Σ(w%/100×β); beta only when weights ≈ 100%; add/remove; no CurrencySelect. Activated; **`indexable` left false**. Example: 1.20@50% + 0.80@30% + 1.50@20% → βp **1.14**.
 - **Pivot Point Calculator (`/tools/pivot-point-calculator`):** Live client-side trading pivots tool (`componentKey: 'PivotPointCalculator'`, catalog `6af46f10a27d8d1d4e990163`, `nameKey` `pivot point calculator`). Screenshot-first (ADR-023): Classic / Woodie / Camarilla / Fibonacci / DeMark; H/L/C (+ open for DeMark); method-specific R/S; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: Classic H **110** · L **90** · C **100** → PP **100** · R **110/120/130** · S **90/80/70**.
