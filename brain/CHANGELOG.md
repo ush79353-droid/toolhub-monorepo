@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add PEG Ratio Calculator
+- **Summary:** Shipped PEG Ratio Calculator on existing catalog slug `peg-ratio-calculator` (`PegRatioCalculator`, catalog `6af46f10a27d8d1d4e990162`, preserved `nameKey` `peg ratio calculator`). Screenshot-first (ADR-023): P/E from price/EPS (optional EPS from net earnings÷shares); growth = (b%×ROE%)/100; PEG = P/E÷g%; undefined for ≤0 EPS or ≤0 growth. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Price **$250** · EPS **$15.50** · b **60%** · ROE **8%** → P/E ≈ **16.13×** · g **4.80%** · PEG ≈ **3.36**.
+- **Important Files:** `frontend/src/tools/calculators/peg-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` PEG tests 21/21 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add NAV Calculator – Net Asset Value
 - **Summary:** Shipped NAV Calculator on existing catalog slug `nav-calculator-net-asset-value` (`NavCalculator`, catalog `6af46f10a27d8d1d4e990161`, preserved `nameKey` `nav calculator – net asset value`). Screenshot-first (ADR-023): fund assets (IV+cash+AR), liabilities (STL+LTL), NAV = FA−FL, NAV/share; blank/zero shares keep NAV. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** FA **$1,800,000** − FL **$70,000** → NAV **$1,730,000** · 100,000 shares → **$17.30**/share.

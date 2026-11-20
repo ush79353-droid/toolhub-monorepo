@@ -585,6 +585,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PaydayLoanCalculator',
   'PaymentCalculator',
   'PaybackPeriodCalculator',
+  'PegRatioCalculator',
   'PercentageDiscountCalculator',
   'PercentageReturnCalculator',
   'PerpetuityCalculator',
@@ -1346,6 +1347,7 @@ if (isDirect) {
     !isApprovedComponentKey('PartiallyAmortizedLoanCalculator') ||
     !isApprovedComponentKey('PaydayLoanCalculator') ||
     !isApprovedComponentKey('PaybackPeriodCalculator') ||
+    !isApprovedComponentKey('PegRatioCalculator') ||
     !isApprovedComponentKey('PercentageDiscountCalculator') ||
     !isApprovedComponentKey('PercentageReturnCalculator') ||
     !isApprovedComponentKey('PerpetuityCalculator') ||

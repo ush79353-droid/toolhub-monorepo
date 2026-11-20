@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (NAV Calculator live at `/tools/nav-calculator-net-asset-value`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (PEG Ratio Calculator live at `/tools/peg-ratio-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **PEG Ratio Calculator (`/tools/peg-ratio-calculator`):** Live client-side PEG tool (`componentKey: 'PegRatioCalculator'`, catalog `6af46f10a27d8d1d4e990162`, `nameKey` `peg ratio calculator`). Screenshot-first (ADR-023): price/EPS (optional EPS from net earnings÷shares) → P/E; retention×ROE → g%; PEG = P/E÷g%; undefined for ≤0 EPS/growth; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$250** · EPS **$15.50** · b **60%** · ROE **8%** → P/E ≈ **16.13×** · g **4.80%** · PEG ≈ **3.36**.
 - **NAV Calculator – Net Asset Value (`/tools/nav-calculator-net-asset-value`):** Live client-side fund NAV tool (`componentKey: 'NavCalculator'`, catalog `6af46f10a27d8d1d4e990161`, `nameKey` `nav calculator – net asset value`). Screenshot-first (ADR-023): IV+cash+AR → FA; STL+LTL → FL; NAV = FA−FL; NAV/share when shares > 0; blank/zero shares keep NAV; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: FA **$1,800,000** − FL **$70,000** → NAV **$1,730,000** · **$17.30**/share.
 - **Maturity Value Calculator (`/tools/maturity-value-calculator`):** Live client-side annual compound maturity tool (`componentKey: 'MaturityValueCalculator'`, catalog `6af46f10a27d8d1d4e990160`, `nameKey` `maturity value calculator`). Screenshot-first (ADR-023): principal / annual rate % / duration years|months → MV = P(1+r)^t + interest earned; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$2,000** · **3%** · **2 years** → **$2,121.80** · interest **$121.80**.
 - **Market Capitalization Calculator (`/tools/market-capitalization-calculator`):** Live client-side market-cap tool (`componentKey: 'MarketCapitalizationCalculator'`, catalog `6af46f10a27d8d1d4e99015f`, `nameKey` `market capitalization calculator`). Screenshot-first (ADR-023): share price × outstanding shares → market cap + compact display; whole-share validation; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$100** × **10,000,000** → **$1,000,000,000** (**$1B**).

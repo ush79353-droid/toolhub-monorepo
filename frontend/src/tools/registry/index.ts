@@ -3188,6 +3188,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PaybackPeriodCalculator,
     })),
   ),
+  PegRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/peg-ratio/PegRatioCalculator').then((mod) => ({
+      default: mod.PegRatioCalculator,
+    })),
+  ),
   PercentageDiscountCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/percentage-discount/PercentageDiscountCalculator'
