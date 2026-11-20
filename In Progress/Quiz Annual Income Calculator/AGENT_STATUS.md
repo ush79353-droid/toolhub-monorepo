@@ -1,0 +1,19 @@
+# AGENT STATUS — BLOCKED
+
+- **Status:** BLOCKED
+- **Claimed by:** Cursor agent (this session)
+- **Catalog:** `quiz-annual-income-calculator` (`6af46f0fa27d8d1d4e99006e`) — undeveloped; **not activated**
+- **Commits:** none
+
+## Exact blocker
+
+Screenshot and `prompt.txt` provide only **question 1/7** with options and the correct answer (“The amount of money earned in one year”).
+
+The remaining **6 questions, options, and correct answers are not present** in the task package, screenshot, or an approved project quiz bank for this slug.
+
+Prompt rule: *Do not invent hidden questions* — mark BLOCKED if they cannot be established.
+
+## Unblock checklist
+
+- Supply the full 7-question bank (text + options + correct answers) in the task package, **or**
+- Provide an authorized reference source the agent may use without inventing content.

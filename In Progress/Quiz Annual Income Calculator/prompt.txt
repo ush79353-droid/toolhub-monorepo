@@ -1,0 +1,328 @@
+Develop the calculator/tool **Quiz: Annual Income Calculator** for the Omega Calculators project by following the repository’s established architecture and all project rules.
+
+## Objective
+Implement the **quiz tool** shown in the provided screenshot. This is not a standard numeric calculator; it is a **7-question interactive quiz** titled:
+
+- **Annual income quiz: How much do you really earn?**
+
+The screenshot is a **functionality reference only**. Do **not** copy its exact visual design. Follow Omega’s existing styling system, ADRs, and shared UI patterns.
+
+---
+
+## Mandatory pre-checks
+Before making any code changes:
+
+1. **Search MongoDB first** for the exact existing calculator/tool record related to this quiz.
+   - Search by likely title / slug / aliases:
+     - `Quiz: Annual Income Calculator`
+     - `Annual income quiz`
+     - `annual-income-quiz`
+     - `annual-income-calculator-quiz`
+   - Confirm the exact authorized:
+     - MongoDB `_id`
+     - title
+     - slug
+     - componentKey
+     - pillar/category
+     - `isActive`
+     - `isDeveloped`
+     - `indexable`
+
+2. If the tool **does not exist in MongoDB**, **STOP**. Do **not** create a new unauthorized Mongo record.
+
+3. If the tool is **already developed**, **STOP** and report that it is already built. Do not rebuild it.
+
+4. Check whether another agent already owns this task / folder. If owned elsewhere, **STOP**.
+
+---
+
+## Project architecture / repository rules
+Use the project’s actual structure and existing patterns.
+
+### Frontend
+- Next.js
+- React
+- TypeScript
+
+### Backend
+- Node.js
+- Express
+- TypeScript
+- MongoDB / Mongoose
+
+### Required integration points
+Verify and update all real integration locations that apply, including:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also wire any additional actual project files required for:
+- tool routing
+- lazy loading / component registry
+- metadata / SEO
+- guide/details integration
+- shared actions
+- sitemap inclusion/exclusion
+- embeds if this tool type supports them
+
+Do not assume nonexistent files. Inspect the codebase first.
+
+---
+
+## Screenshot-derived functional requirements
+Build the tool as a **quiz interface**, matching the screenshot’s visible behavior and structure.
+
+### Main quiz card
+Display a main section/card with:
+
+- Title: **Annual income quiz: How much do you really earn?**
+- Intro/help text:
+  - “Start by answering the first question; the more questions will appear automatically as you go.”
+
+### Question progression
+- The quiz contains **7 questions total**
+- Show progress in the format:
+  - `1/7. ...`
+  - later `2/7`, `3/7`, etc.
+- Questions should appear **progressively / automatically as the user answers**
+- Only the currently relevant visible questions should be shown
+- There appears to be a collapse/expand affordance in the screenshot; preserve equivalent expected behavior using the project’s UI patterns
+
+### Visible first question from screenshot
+Use this exact first question and options:
+
+**1/7. What does annual income mean?**
+Options:
+- Money earned in one month
+- The amount of money earned in one year
+- The money saved after expenses
+
+This question should be scored correctly:
+- Correct answer: **The amount of money earned in one year**
+
+### Remaining questions (important rule)
+The screenshot shows only the first question. The remaining 6 questions are **not visible**.
+
+Therefore:
+
+- Locate the remaining questions, options, and correct answers from the task package / prompt file / approved spec / existing source material if available.
+- **Do not invent hidden questions** unless a previously approved project specification explicitly provides them.
+- If the remaining 6 questions cannot be reliably established from the task material or codebase context, **STOP and mark BLOCKED**, clearly reporting that the hidden quiz content is unavailable and cannot be safely fabricated.
+
+### Answer selection behavior
+- Each question should use single-choice radio-style options
+- When a user selects an answer:
+  - store the response
+  - auto-progress to reveal the next question
+  - preserve previously answered questions and selected choices as appropriate
+- Support changing an earlier answer if that is consistent with Omega’s quiz pattern; if changed, recalculate the score accordingly
+
+---
+
+## Results section
+Create a second section/card titled:
+
+- **Check your results 👇**
+
+This section must include:
+
+### Score display
+- Label: **Your score:**
+- A score/progress display showing current score out of 7
+- Initial state should show effectively `0 / 7` (or blank score state until answered, but visually aligned with the screenshot)
+- Before the quiz is fully answered, show the message:
+  - **Please answer all questions to see your score!**
+
+### Final score behavior
+Once all 7 questions are answered:
+- compute the total correct answers
+- show final score as `X / 7`
+- update the score/progress UI accordingly
+- optionally show a short completion message if the existing project’s quiz tools use one, but do not add extra content unless consistent with project patterns
+
+### Scoring logic
+- Each question contributes **1 point**
+- Total max score = **7**
+- No partial credit
+- Results must update reliably if answers are changed
+
+---
+
+## Shared actions / controls
+At the bottom, implement the standard Omega shared actions visible in the screenshot:
+
+1. **Share result**
+2. **Reload calculator**
+3. **Clear all changes**
+4. Feedback prompt:
+   - **Did we solve your problem today?**
+   - **Yes**
+   - **No**
+
+Use the project’s existing shared button/action components and behaviors.
+
+### Action behavior requirements
+- **Share result**
+  - Use the project’s existing share-result mechanism
+  - Share a concise summary of the quiz result (for example score out of 7), without exposing internal implementation details
+
+- **Reload calculator**
+  - Reset the quiz to its initial loaded state
+  - Same effect as a fresh page/tool state
+
+- **Clear all changes**
+  - Clear selected answers
+  - Reset progression and score state
+  - Return the tool to its initial unanswered state
+
+- **Yes/No feedback**
+  - Use the same existing feedback handling used in other Omega tools
+
+---
+
+## UX / state management requirements
+Implement robust quiz state handling:
+
+- Track:
+  - current answers
+  - visible question count / progression
+  - completion status
+  - computed score
+- Avoid brittle or circular state patterns
+- Ensure proper behavior for:
+  - no answers yet
+  - partial answers
+  - completed quiz
+  - answer changes after progression
+  - reload/reset/clear actions
+
+### Accessibility
+- Properly associate radio inputs with labels
+- Keyboard navigable options
+- Clear focus states using project standards
+- Screen-reader friendly question and result semantics
+
+### Responsiveness
+- Must work properly on:
+  - desktop
+  - tablet
+  - mobile
+- Follow Omega’s existing responsive layout patterns
+
+---
+
+## Styling rules
+- **Do not copy screenshot styling literally**
+- Use the Omega project’s own existing design system and component patterns
+- Respect:
+  - ADR-016
+  - ADR-018
+  - ADR-023
+- Match existing calculator/quiz layouts in the repository if similar tools exist
+
+---
+
+## Content / guide / SEO
+If this tool requires the project’s standard descriptive content integration, wire it consistently with other calculators/quizzes.
+
+Use the authorized Mongo/tool metadata. Do not invent unsupported claims.
+
+If `indexable` is already false in Mongo or admin configuration, **do not change it to true** unless explicitly required by the existing authorized record/policy.
+
+---
+
+## Similar-tool inspection
+Before implementation, inspect repository for:
+- any existing quiz-based calculators/tools
+- any annual-income-related calculator/tool
+- reusable shared quiz/question/result components
+
+Reuse existing patterns wherever possible, without breaking completed tools.
+
+---
+
+## Validation / correctness requirements
+- Do not allow broken score states
+- Ensure score is always between 0 and 7
+- Ensure unanswered questions do not count toward score
+- Ensure “Please answer all questions to see your score!” appears until completion
+- Ensure correct answer for Question 1 is exactly:
+  - **The amount of money earned in one year**
+
+---
+
+## Git / workflow rules
+If and only if development is authorized and completed, make **exactly 3 meaningful local commits** for this tool:
+
+1. **UI / quiz structure / progressive question flow**
+2. **Quiz state management / scoring / actions**
+3. **Registry / backend key / details / sitemap / metadata integration**
+
+Rules:
+- Local commits only
+- **Do NOT** push / pull / fetch / sync
+- Stage only task-related files
+- Do not disturb other agents’ work
+- Do not run destructive cleanup
+- Delete only task-created temporary files
+- After cleanup, report:
+  - `Temporary files cleaned: YES` or `NO`
+
+---
+
+## Restrictions
+Unless explicitly authorized in the task/package or by the user:
+
+- Do **not** use Playwright
+- Do **not** run automated browser testing
+- Do **not** run unnecessary lint/typecheck/build commands
+- Do **not** fabricate missing quiz questions
+- Do **not** create unauthorized MongoDB records
+- Do **not** modify unrelated completed calculators
+
+---
+
+## Final report format
+When done, STOP and provide a final report containing:
+
+1. Exact MongoDB record used:
+   - `_id`
+   - title
+   - slug
+   - componentKey
+   - pillar/category
+   - `isActive`
+   - `isDeveloped`
+   - `indexable`
+
+2. Whether the tool was:
+   - DEVELOPED
+   - ALREADY DEVELOPED
+   - BLOCKED
+
+3. Exact question source:
+   - where all 7 questions came from
+   - whether all were verified from task materials/spec
+
+4. Functional summary:
+   - question flow
+   - scoring logic
+   - score/result behavior
+   - share/reload/clear/feedback behavior
+
+5. List of changed files
+
+6. Exact **3 local commit hashes**
+
+7. Whether task folder / tracker were updated
+
+8. Temporary files cleaned:
+   - YES / NO
+
+9. Confirmation:
+   - no push/pull/fetch/sync performed
+
+If the hidden quiz content cannot be safely established, mark the task **BLOCKED** and explain the blocker precisely instead of inventing content.

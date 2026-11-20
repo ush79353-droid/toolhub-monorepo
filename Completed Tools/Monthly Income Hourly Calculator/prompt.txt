@@ -1,0 +1,394 @@
+# OMEGACALCULATORS — MONTHLY INCOME HOURLY CALCULATOR
+## Detailed Screenshot-Based Cursor Development Prompt
+
+### 1. Mission
+
+Develop **Monthly Income Hourly Calculator** using the attached screenshot as the authoritative functionality reference.
+
+**Suggested slug:** `monthly-income-hourly-calculator` — verify against MongoDB.
+
+Build a calculator that converts monthly income into an equivalent hourly income based on working hours per week.
+
+The calculator must support:
+
+- Monthly income entry.
+- Weekly working hours.
+- Hourly income calculation.
+- Bidirectional monthly/hourly conversion where supported by the field behavior.
+- An expandable **Other income measures** section.
+- Independent monetary currency selectors with real numeric FX conversion.
+
+Use the screenshot for functionality and layout structure only. Follow the existing OmegaCalculators design system instead of copying the reference screenshot's styling.
+
+Follow ADR-016, ADR-018 and ADR-023.
+
+---
+
+### 2. MongoDB-First Verification & Duplicate Prevention
+
+Before writing code:
+
+1. Search MongoDB records by exact title, slug and aliases.
+2. Confirm the authorized record ID, component key, slug, pillar and development status.
+3. Inspect the current development tracker and agent ownership.
+4. Check whether another agent is already developing this calculator.
+5. Compare existing implementations of:
+   - Monthly Income Calculator.
+   - Money per Hour Calculator.
+   - Hours Pay Calculator.
+   - Hourly Wage Calculator.
+   - Salary to Hourly Calculator.
+   - Annual to Monthly Salary Calculator.
+6. Reuse suitable calculation utilities, monetary inputs and FX components.
+7. Preserve the separate identities and existing functionality of those tools.
+
+**STOP CONDITIONS:**
+
+- If no authorized matching MongoDB record exists, SKIP/STOP.
+- If already fully developed, STOP.
+- If actively owned by another agent, STOP.
+- If a partial implementation exists, inspect existing changes and commits before resuming.
+
+Never create new MongoDB records or overwrite an existing calculator under a different title.
+
+---
+
+### 3. Screenshot UI — Exact Visible Structure
+
+Preserve the screenshot's order and section grouping.
+
+#### Section A — Your Income
+
+Expanded by default.
+
+Display the heading:
+
+**Your income**
+
+Provide the following fields:
+
+**1. Monthly income**
+
+- Monetary input.
+- Independent PKR currency selector.
+- Initially blank.
+- Editable.
+
+**2. Hours per week**
+
+- Numeric input.
+- Default: `40`.
+- No currency selector.
+- Supports valid fractional weekly working hours.
+
+**3. Hourly income**
+
+- Monetary value.
+- Independent PKR currency selector.
+- Initially blank.
+- Calculated from monthly income and working hours.
+- Support editing this field to reverse-calculate monthly income only if consistent with the authorized calculator specification and existing input conventions.
+
+Do not add unrelated fields to the main section.
+
+#### Section B — Other Income Measures
+
+Collapsed by default, as shown in the screenshot.
+
+Display heading:
+
+**Other income measures**
+
+Use the project's existing accessible accordion/collapsible components.
+
+The expanded contents are not visible in the screenshot.
+
+Before implementation, inspect the original saved prompt, reference specification and reusable project calculator patterns to determine the supported fields.
+
+Possible income equivalents may include daily, weekly or yearly income, but these are **not authorized additions by themselves**.
+
+Implement only the measures established by the original specification.
+
+If no expanded-section specification is available, preserve the accordion without inventing financial input fields and document the limitation.
+
+Do not introduce tax, overtime, bonuses, benefits or unrelated payroll functionality.
+
+#### Standard Actions
+
+Reuse the existing shared:
+
+- Share Result.
+- Reload Calculator.
+- Clear All Changes.
+- Yes/No feedback controls.
+
+Use established OmegaCalculators typography, spacing, responsive layout and accessibility.
+
+---
+
+### 4. Accurate Monthly to Hourly Conversion
+
+Use calendar-year average normalization.
+
+Let:
+
+- `M` = monthly income.
+- `H` = working hours per week.
+- `W = 52` weeks per year.
+- `Months = 12`.
+
+Calculate:
+
+`Annual Income = M × 12`
+
+`Annual Working Hours = H × 52`
+
+`Hourly Income = (M × 12) / (H × 52)`
+
+Equivalent:
+
+`Hourly Income = Monthly Income / (Hours Per Week × 52 / 12)`
+
+Do not use an inaccurate four-weeks-per-month assumption.
+
+**Example:**
+
+Monthly income: 100,000 PKR
+
+Hours per week: 40
+
+`Hourly Income = (100,000 × 12) / (40 × 52)`
+
+`Hourly Income ≈ 576.92 PKR/hour`
+
+Keep full numerical precision internally.
+
+Round only for display.
+
+---
+
+### 5. Reverse Conversion
+
+If the hourly income field is confirmed to be editable:
+
+`Monthly Income = Hourly Income × Hours Per Week × 52 / 12`
+
+Requirements:
+
+1. Track the most recently edited income field.
+2. Use it as the authoritative input.
+3. Recalculate the other income field.
+4. Preserve hours per week.
+5. Recalculate when working hours change.
+6. Prevent circular React state updates.
+7. Preserve monetary precision.
+8. Handle clearing the authoritative field consistently.
+
+If the original specification establishes Hourly Income as read-only, do not add reverse editing.
+
+---
+
+### 6. Other Income Measures
+
+If the authorized expanded section includes additional income measures, derive them from the same annualized earnings model.
+
+Only implement formulas corresponding to confirmed fields.
+
+Potential formulas:
+
+**Annual income**
+
+`Annual Income = Monthly Income × 12`
+
+**Weekly income**
+
+`Weekly Income = Annual Income / 52`
+
+**Biweekly income**
+
+`Biweekly Income = Annual Income / 26`
+
+**Daily income**
+
+A daily equivalent requires working days per week.
+
+Do not calculate daily income unless the specification establishes an appropriate working-day assumption or input.
+
+Do not invent invisible controls merely to provide extra results.
+
+Clearly disclose standard period-conversion assumptions.
+
+---
+
+### 7. Real Numerical Currency Conversion
+
+The screenshot contains independent PKR selectors for Monthly Income and Hourly Income.
+
+Reuse the existing **Phase 2 shared FX infrastructure**.
+
+Requirements:
+
+1. Both visible monetary fields must have independent currency selectors.
+2. Any authorized additional monetary fields must follow the same approach.
+3. Perform actual numeric currency conversion.
+4. Normalize the authoritative amount to the established canonical calculation currency.
+5. Preserve independent selected currencies.
+6. Calculate monthly/hourly equivalents at full precision.
+7. Convert results numerically using shared FX rates.
+8. Handle missing exchange rates safely.
+9. Show stale-rate warnings using established provider behavior.
+10. Never assume 1:1 exchange rates.
+11. Do not FX-convert hours per week.
+12. Avoid conversion drift when currency selectors change.
+
+Register the confirmed slug in both live `CURRENCY_CONVERSION_SLUGS` lists:
+
+- Frontend tools-page FX provider.
+- Embed FX provider.
+
+Reuse existing money input and selector components rather than building a new FX implementation.
+
+---
+
+### 8. Validation & Edge Cases
+
+- Monthly income must be finite and nonnegative.
+- Hourly income must be finite and nonnegative if editable.
+- Weekly working hours must be greater than zero.
+- Do not allow more than 168 hours per week.
+- Support fractional hours.
+- Handle zero income correctly.
+- Handle empty monetary fields.
+- Prevent division by zero.
+- Prevent NaN and Infinity.
+- Preserve canonical monetary precision.
+- Round only for display.
+- Handle missing/stale FX data safely.
+- Do not display misleading results if inputs are invalid.
+- Avoid circular updates during reverse conversions.
+
+Clearly label results as **gross income equivalents**, not take-home pay after taxes.
+
+---
+
+### 9. Architecture
+
+Follow existing React, Next.js and TypeScript conventions.
+
+Separate:
+
+- Form state.
+- Pay-period calculations.
+- Working-hours validation.
+- Monetary normalization.
+- FX conversion.
+- Result presentation.
+- Optional additional income measures.
+
+Reuse established calculator UI and currency components.
+
+Avoid unnecessary packages and unrelated refactoring.
+
+Ensure responsiveness and keyboard accessibility.
+
+---
+
+### 10. Complete Project Registration
+
+After successful implementation, integrate:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also wire:
+
+- Calculator page routing.
+- Embed rendering.
+- SEO metadata.
+- Guides.
+- Ads.
+- Shared calculator actions.
+- Correct pillar/category association.
+- Both live FX provider lists.
+
+Activate only the matching authorized MongoDB record.
+
+Preserve admin-controlled settings, including `indexable`.
+
+Do not create duplicate MongoDB records.
+
+---
+
+### 11. Exactly Three Meaningful LOCAL Git Commits
+
+Create exactly three meaningful local commits for newly developed work:
+
+1. `feat(monthly-income-hourly): create calculator UI`
+2. `feat(monthly-income-hourly): implement income calculations and FX`
+3. `feat(monthly-income-hourly): complete registration and integration`
+
+Requirements:
+
+- Each commit must contain genuine calculator-specific changes.
+- No empty/artificial commits.
+- Stage only authorized task files.
+- Preserve other agents' changes.
+- Do not rewrite Git history.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+
+---
+
+### 12. Mandatory Temporary File Cleanup
+
+Before completion:
+
+1. Identify task-created temporary files.
+2. Delete only those files.
+3. Preserve pre-existing and colleague-owned files.
+4. Never run `git clean -fd`.
+5. Never perform destructive resets.
+6. Inspect `git status --short`.
+7. Report `Temporary files cleaned: YES/NO`.
+
+---
+
+### 13. Strict Restrictions
+
+- Develop only Monthly Income Hourly Calculator.
+- Do not overwrite Monthly Income Calculator.
+- Do not modify existing salary/wage calculators.
+- Do not invent unsupported fields in the collapsed section.
+- Do not add tax, overtime or net-pay calculations.
+- No unrelated refactoring.
+- No Playwright or browser automation.
+- No automated tests, lint, typecheck or build unless explicitly authorized.
+- No duplicate MongoDB records.
+- No unauthorized package installation.
+- No Git push, pull, fetch or sync.
+
+---
+
+### 14. Final Development Report
+
+Provide:
+
+1. Confirmed title, slug and MongoDB ID.
+2. Exact screenshot fields implemented.
+3. Monthly-to-hourly formula.
+4. Reverse conversion behavior, if supported.
+5. Other Income Measures fields verified.
+6. Working-hours assumptions.
+7. Real numeric FX integration.
+8. Both currency provider registrations.
+9. Frontend/backend registration.
+10. Sitemap, SEO and embed integration.
+11. MongoDB activation.
+12. Changed files.
+13. Three meaningful local commit hashes.
+14. Temporary files cleaned: YES/NO.
+15. Final status: DEVELOPED / ALREADY DEVELOPED / BLOCKED.
+
+**START NOW. DEVELOP ONLY MONTHLY INCOME HOURLY CALCULATOR USING THE ATTACHED SCREENSHOT. STOP AFTER COMPLETION.**

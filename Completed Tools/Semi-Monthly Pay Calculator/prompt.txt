@@ -1,0 +1,656 @@
+# Cursor AI Development Prompt — Semi-Monthly Pay Calculator
+
+## 1. Objective
+
+Develop the **Semi-Monthly Pay Calculator** for the existing Omega Calculators project.
+
+The calculator must allow users to enter any one of the following wage amounts:
+
+- Hourly wage
+- Daily wage
+- Weekly wage
+- Monthly wage
+- Yearly wage
+
+It must automatically calculate the equivalent wage amounts and the final **Semi-monthly wage**, using the configured hours per week and days per week.
+
+**CRITICAL:** The supplied screenshot is a FUNCTIONALITY REFERENCE ONLY. Do not copy the screenshot's styling. Follow the existing Omega Calculators design system and ADRs.
+
+Implement correct mathematical formulas, bidirectional wage conversions, independent real currency conversion, responsive UI, and complete authorized project integration.
+
+---
+
+## 2. Mandatory Pre-Development Verification
+
+Before writing code:
+
+1. Search the existing MongoDB catalog by title, slug, and aliases:
+   - Semi-Monthly Pay Calculator
+   - Semi Monthly Pay Calculator
+   - `semi-monthly-pay-calculator`
+   - Relevant existing aliases.
+2. Confirm the exact authorized MongoDB record:
+   - `_id`
+   - title
+   - slug
+   - componentKey
+   - pillar/category
+   - `isActive`
+   - `isDeveloped`
+   - `indexable`
+3. Never create a new MongoDB calculator record.
+4. If already developed, STOP and report ALREADY DEVELOPED.
+5. Check whether another Cursor agent owns this calculator or task folder.
+6. Inspect the original task screenshot, prompt, and available notes.
+7. Inspect similar completed wage, salary, hourly pay, and semi-monthly calculators for reusable utilities.
+8. Read ADR-016, ADR-018, and ADR-023 before changing the UI.
+
+Proceed only when the calculator is authorized, undeveloped, and safely owned by the current agent.
+
+---
+
+## 3. Screenshot-Based UI Requirements
+
+### Main Calculator Section
+
+Display a collapsible section with the heading:
+
+**Input any of the wages below to obtain the answer**
+
+The section must be expanded by default.
+
+Implement the visible fields in this exact order.
+
+### Field 1 — Hourly wage
+
+- Editable monetary input.
+- Default value: Empty.
+- Default currency: PKR.
+- Independent currency selector.
+- When the user enters an hourly wage, automatically calculate all equivalent wage amounts and the semi-monthly result.
+
+### Field 2 — Daily wage
+
+- Editable monetary input.
+- Default value: Empty.
+- Default currency: PKR.
+- Independent currency selector.
+- Entering a daily wage must recalculate the hourly, weekly, monthly, yearly, and semi-monthly amounts.
+
+### Field 3 — Weekly wage
+
+- Editable monetary input.
+- Default value: Empty.
+- Default currency: PKR.
+- Independent currency selector.
+- Entering a weekly wage must update all equivalent wage values and the result.
+
+### Field 4 — Monthly wage
+
+- Editable monetary input.
+- Default value: Empty.
+- Default currency: PKR.
+- Independent currency selector.
+- Entering a monthly wage must update all equivalent wage values and the semi-monthly result.
+
+### Field 5 — Yearly wage
+
+- Editable monetary input.
+- Default value: Empty.
+- Default currency: PKR.
+- Independent currency selector.
+- Entering a yearly wage must update all equivalent wage amounts and the semi-monthly result.
+
+### Field 6 — Hours per week
+
+- Editable numerical input.
+- Default value: **40**.
+- Unit: `hrs`.
+- No currency selector.
+- Used to calculate hourly wage equivalents.
+- Must accept valid positive fractional hours, according to existing project input conventions.
+
+### Field 7 — Days per week
+
+- Editable numerical input.
+- Default value: **5**.
+- Unit: `days`.
+- No currency selector.
+- Used to calculate daily wage equivalents.
+- Must be greater than zero.
+- Follow existing project conventions for reasonable upper limits, including no more than 7 calendar days per week.
+
+Both work-schedule fields must update wage conversions when edited.
+
+Do not introduce additional schedule controls absent from the authorized specification.
+
+---
+
+## 4. Answer Section
+
+Below the input section, display a separate result section.
+
+Heading:
+
+**Answer**
+
+Output label:
+
+**Semi-monthly wage**
+
+Requirements:
+
+- Calculated monetary output.
+- Default currency: PKR.
+- Independent currency selector.
+- Automatically calculate after a valid wage is entered.
+- Update when the authoritative wage, schedule inputs, or relevant FX rates change.
+- Preserve full calculation precision internally.
+- Round only for display using project conventions.
+- Initially show an empty result, matching the screenshot.
+
+The result must not be an independent wage source.
+
+---
+
+## 5. Core Wage Conversion Formulas
+
+### Standard Assumptions
+
+Unless an existing authorized project specification defines a different convention, use:
+
+- 52 weeks per year.
+- 12 months per year.
+- 24 semi-monthly pay periods per year.
+- 2 semi-monthly payments per month.
+- Default 40 working hours per week.
+- Default 5 working days per week.
+
+**IMPORTANT:** Semi-monthly pay is not the same as biweekly pay.
+
+Semi-monthly = 24 pay periods/year.
+
+Biweekly = 26 pay periods/year.
+
+Never use the biweekly divisor for semi-monthly calculations.
+
+### A. When Hourly Wage Is Entered
+
+`Weekly Wage = Hourly Wage × Hours per Week`
+
+`Daily Wage = Weekly Wage / Days per Week`
+
+`Yearly Wage = Weekly Wage × 52`
+
+`Monthly Wage = Yearly Wage / 12`
+
+`Semi-Monthly Wage = Yearly Wage / 24`
+
+### B. When Daily Wage Is Entered
+
+`Weekly Wage = Daily Wage × Days per Week`
+
+`Hourly Wage = Weekly Wage / Hours per Week`
+
+`Yearly Wage = Weekly Wage × 52`
+
+`Monthly Wage = Yearly Wage / 12`
+
+`Semi-Monthly Wage = Yearly Wage / 24`
+
+### C. When Weekly Wage Is Entered
+
+`Yearly Wage = Weekly Wage × 52`
+
+`Daily Wage = Weekly Wage / Days per Week`
+
+`Hourly Wage = Weekly Wage / Hours per Week`
+
+`Monthly Wage = Yearly Wage / 12`
+
+`Semi-Monthly Wage = Yearly Wage / 24`
+
+### D. When Monthly Wage Is Entered
+
+`Yearly Wage = Monthly Wage × 12`
+
+`Weekly Wage = Yearly Wage / 52`
+
+`Daily Wage = Weekly Wage / Days per Week`
+
+`Hourly Wage = Weekly Wage / Hours per Week`
+
+`Semi-Monthly Wage = Monthly Wage / 2`
+
+### E. When Yearly Wage Is Entered
+
+`Monthly Wage = Yearly Wage / 12`
+
+`Weekly Wage = Yearly Wage / 52`
+
+`Daily Wage = Weekly Wage / Days per Week`
+
+`Hourly Wage = Weekly Wage / Hours per Week`
+
+`Semi-Monthly Wage = Yearly Wage / 24`
+
+All calculations must be mathematically consistent regardless of which wage field is the authoritative input.
+
+---
+
+## 6. Calculation Verification Example
+
+Use this example for reasoning and manual correctness checks.
+
+Inputs:
+
+- Hourly wage: PKR 500
+- Hours per week: 40
+- Days per week: 5
+
+Expected equivalent amounts:
+
+| Wage Type | Expected Amount |
+|---|---:|
+| Hourly wage | PKR 500.00 |
+| Daily wage | PKR 4,000.00 |
+| Weekly wage | PKR 20,000.00 |
+| Monthly wage | PKR 86,666.67 |
+| Yearly wage | PKR 1,040,000.00 |
+| Semi-monthly wage | PKR 43,333.33 |
+
+Calculation:
+
+`Weekly = 500 × 40 = 20,000`
+
+`Yearly = 20,000 × 52 = 1,040,000`
+
+`Semi-monthly = 1,040,000 / 24`
+
+**Expected semi-monthly result: PKR 43,333.33**
+
+Use unrounded values internally.
+
+The reverse conversion from any equivalent wage should produce the same economic result within the display rounding tolerance.
+
+---
+
+## 7. Bidirectional Input Behavior — Critical
+
+All five wage inputs must be editable.
+
+However, only ONE wage field should be authoritative at a time.
+
+Implement a robust last-edited-field model.
+
+### Example
+
+1. User enters Hourly wage = 500 PKR.
+2. All other wage fields are calculated.
+3. User changes Monthly wage to 100,000 PKR.
+4. Monthly wage becomes the authoritative source.
+5. The remaining hourly, daily, weekly, yearly, and semi-monthly amounts are recalculated.
+6. User changes Hours per week from 40 to 35.
+7. The calculator preserves the authoritative monthly salary and recalculates hourly equivalents accordingly.
+
+### State Management Rules
+
+- Track the last manually edited wage field.
+- Maintain only one authoritative wage amount.
+- Derive other wage fields instead of storing conflicting independent wage values.
+- Do not cause circular React state updates.
+- Avoid rounding accumulation during conversions.
+- Do not overwrite a user-entered authoritative amount with a rounded derived value.
+- Changing the hours/week or days/week must preserve the economic value of the authoritative wage.
+- Changing a currency selector must perform the actual currency conversion without silently changing the economic value.
+- Handle partially typed decimal values appropriately without prematurely overwriting the input.
+- Clearing the authoritative input should clear dependent calculated wages and the result.
+- Entering a valid zero wage should calculate zero, rather than be treated as an empty field.
+
+Use existing project patterns for editing and formatting.
+
+---
+
+## 8. Real Numerical Currency Conversion
+
+The screenshot contains separate currency selectors for:
+
+1. Hourly wage
+2. Daily wage
+3. Weekly wage
+4. Monthly wage
+5. Yearly wage
+6. Semi-monthly wage
+
+Default all six selectors to PKR.
+
+**REAL NUMERICAL FX CONVERSION IS MANDATORY.**
+
+Use the project's existing Phase 2 shared FX infrastructure.
+
+Do not implement currency changes by replacing the displayed currency symbol.
+
+### FX Requirements
+
+- Support independently selected currencies for every monetary field.
+- Normalize the authoritative wage to a consistent calculation currency.
+- Calculate all wage-period equivalents using full precision.
+- Convert each calculated amount to its individually selected output currency.
+- Preserve the authoritative wage's value when another field's currency selector changes.
+- If the authoritative field's currency changes, convert its amount so that the underlying economic value is maintained.
+- Handle unavailable and stale exchange rates using existing project conventions.
+- Never silently substitute a 1:1 exchange rate.
+- Never apply FX conversions to working hours, days, or period multipliers.
+
+### FX Infrastructure Integration
+
+Find the two actual live `CURRENCY_CONVERSION_SLUGS` lists:
+
+- Main tools page.
+- Calculator embed.
+
+Add the exact authorized calculator slug to both where required.
+
+Use the existing tools-page and embed FX providers rather than creating duplicate FX systems.
+
+---
+
+## 9. Validation and Edge Cases
+
+Handle the following:
+
+- All wage fields initially empty.
+- Only one wage entered.
+- Multiple wage fields edited sequentially.
+- Zero wage.
+- Negative wage.
+- Blank or invalid hours per week.
+- Zero hours per week.
+- Blank or invalid days per week.
+- Zero days per week.
+- Excessive days per week.
+- Fractional working hours.
+- Valid fractional monetary inputs.
+- Very large monetary values.
+- NaN and Infinity.
+- Rapid currency changes.
+- Missing exchange rates.
+- Editing wage values after changing currency.
+- Clearing and restoring input fields.
+- Resetting from a completed calculation.
+
+Do not display misleading numerical results when required schedule data or FX conversions are unavailable.
+
+Do not add automatic taxes, deductions, overtime, bonuses, or other income components because they do not appear in the supplied functional specification.
+
+---
+
+## 10. Shared Calculator Actions
+
+Implement the exact actions shown in the screenshot using existing Omega shared components.
+
+### Share result
+
+Share the computed semi-monthly wage with appropriate calculation context.
+
+Include the authoritative wage and relevant settings, following the project's existing share mechanism.
+
+### Reload calculator
+
+Restore the initial state:
+
+- Hourly wage: Empty.
+- Daily wage: Empty.
+- Weekly wage: Empty.
+- Monthly wage: Empty.
+- Yearly wage: Empty.
+- Hours per week: 40.
+- Days per week: 5.
+- Semi-monthly wage: Empty.
+- All monetary selectors: PKR.
+- Main accordion: Expanded.
+
+### Clear all changes
+
+Reset user-entered wage values, derived outputs, work schedule settings, and currencies to the approved default state.
+
+Follow the project's existing reset behavior.
+
+### Feedback
+
+Display:
+
+**Did we solve your problem today?**
+
+Buttons:
+
+- Yes
+- No
+
+Connect these buttons to the actual existing feedback functionality.
+
+---
+
+## 11. Styling and Responsive Design
+
+Follow ADR-016, ADR-018, and ADR-023.
+
+The screenshot is a functionality reference, NOT a visual design reference.
+
+Maintain this field order:
+
+1. Main expandable section heading.
+2. Hourly wage.
+3. Daily wage.
+4. Weekly wage.
+5. Monthly wage.
+6. Yearly wage.
+7. Hours per week.
+8. Days per week.
+9. Answer section.
+10. Semi-monthly wage.
+11. Share result.
+12. Reload calculator.
+13. Clear all changes.
+14. Yes/No feedback.
+
+Follow the existing Omega typography, spacing, form control, panel, and responsive design patterns.
+
+Maintain accessibility:
+
+- Semantic form labels.
+- Keyboard-accessible accordion.
+- Proper currency selector labeling.
+- Accessible validation messages.
+- Clear focus states.
+- Screen-reader-friendly result updates.
+
+Do not implement nonfunctional three-dot menus or pin icons solely because they are visible in the screenshot; reuse them only if equivalent controls already have defined behavior in the project's component system.
+
+---
+
+## 12. Frontend and Backend Integration
+
+Use the existing independent frontend and backend applications.
+
+Frontend:
+
+- Next.js App Router.
+- React.
+- TypeScript.
+
+Backend:
+
+- Node.js.
+- Express.
+- TypeScript.
+- MongoDB / Mongoose.
+
+Inspect and correctly integrate with:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also inspect and implement applicable:
+
+- Calculator route.
+- Lazy component registration.
+- ComponentKey mapping.
+- SEO metadata.
+- Canonical rules.
+- Sitemap inclusion/exclusion.
+- Calculator guide.
+- Shared actions.
+- Advertisements.
+- Calculator embeds.
+- Tool details.
+- Both live FX slug lists.
+
+Do not invent registry paths.
+
+Preserve the existing MongoDB `indexable` value and admin policies.
+
+Only mark the existing authorized record developed and active after successful implementation.
+
+---
+
+## 13. Multi-Agent Task Ownership
+
+The Omega project supports concurrent Cursor agents.
+
+Use the established workflow:
+
+`Tools → In Progress → Completed Tools`
+
+Task folders:
+
+- `D:\Project\ToolHub\Tools`
+- `D:\Project\ToolHub\In Progress`
+- `D:\Project\ToolHub\Completed Tools`
+
+Before starting:
+
+- Verify exclusive ownership.
+- Claim the correct calculator task using the project's existing atomic claim process.
+- Do not work on a task owned by another agent.
+- Preserve original screenshots, prompts, and notes.
+- Inspect shared Git worktree modifications.
+
+On successful development:
+
+- Move the entire original task folder to Completed Tools.
+- Update `OMEGA-DEVELOPMENT-TRACKER.md`.
+- Preserve all unrelated tracker entries.
+
+If blocked:
+
+- Keep the task in In Progress.
+- Record the blocker in `AGENT_STATUS.md`.
+- Do not falsely mark the calculator developed.
+
+---
+
+## 14. Git Requirements
+
+Create exactly **3 meaningful LOCAL commits** for a newly developed calculator.
+
+### Commit 1 — UI
+
+Implement:
+
+- Main expandable section.
+- Five wage fields.
+- Work schedule fields.
+- Answer section.
+- Responsive layout.
+
+### Commit 2 — Calculation and FX
+
+Implement:
+
+- Bidirectional wage conversion.
+- Last-edited wage source behavior.
+- Semi-monthly wage formula.
+- Input validation.
+- Numerical FX.
+- Currency handling.
+
+### Commit 3 — Registry and Integration
+
+Implement:
+
+- Frontend registry.
+- Backend key.
+- Metadata.
+- Sitemap.
+- Guide.
+- Embed.
+- Shared actions.
+- Required authorized catalog integration.
+
+Do not create artificial or empty commits.
+
+Git restrictions:
+
+- No PUSH.
+- No PULL.
+- No FETCH.
+- No SYNC.
+- No destructive reset.
+- No unapproved stash or clean.
+- Do not stage unrelated agent modifications.
+- If task-only commits cannot be made safely, STOP and report the shared-worktree conflict.
+
+---
+
+## 15. Strict Development Restrictions
+
+Unless explicitly authorized:
+
+- Do NOT run Playwright.
+- Do NOT run browser automation.
+- Do NOT run automated tests.
+- Do NOT run lint.
+- Do NOT run typecheck.
+- Do NOT run build.
+- Do NOT install unnecessary packages.
+- Do NOT modify unrelated calculators.
+- Do NOT create unauthorized MongoDB records.
+- Do NOT perform remote Git operations.
+- Do NOT delete colleague-owned files.
+- Do NOT claim validation steps were performed if they were not.
+
+Perform permitted static/manual code inspection and honestly report the verification level.
+
+Clean up only temporary files created by this task.
+
+---
+
+## 16. Final Development Report
+
+After completion, return:
+
+1. Exact calculator title.
+2. MongoDB `_id`, slug, componentKey, and pillar.
+3. Final status: DEVELOPED / ALREADY DEVELOPED / BLOCKED.
+4. All implemented fields and defaults.
+5. Confirmed 52/12/24 pay-period calculation rules.
+6. Bidirectional input behavior.
+7. Working hours/days conversion behavior.
+8. Numerical FX implementation and both FX list integrations.
+9. Example semi-monthly wage calculation.
+10. Frontend/backend registry and sitemap integration.
+11. SEO, guide, embed, and shared actions status.
+12. MongoDB `isActive`, `isDeveloped`, and `indexable` values.
+13. List of changed files.
+14. Exactly three meaningful LOCAL commit hashes if successfully developed.
+15. Task folder movement status.
+16. Tracker update status.
+17. Temporary files cleaned: YES/NO.
+18. Confirmation of no Git push/pull/fetch/sync.
+19. Any outstanding limitations or verification gaps.
+
+**STOP after completing this calculator. Do not automatically begin another task.**

@@ -1,0 +1,318 @@
+# Cursor Prompt — Mileage Reimbursement Calculator
+
+## 1. Mission
+
+Develop **Mileage Reimbursement Calculator** using the attached screenshot as the primary functionality reference.
+
+**Suggested slug:** `mileage-reimbursement-calculator` — verify against MongoDB.
+
+Build a US mileage deduction/reimbursement estimator supporting:
+
+- Business mileage.
+- Medical mileage.
+- Charitable mileage.
+- Tax-year-specific IRS standard mileage rates.
+- Miles/kilometers conversion.
+- Combined estimated mileage deduction.
+
+Use the screenshot for functionality, fields and ordering only. Follow OmegaCalculators' existing design system rather than copying its styling.
+
+## 2. MongoDB & Ownership Verification
+
+Before development:
+
+1. Search MongoDB by calculator title, slug and aliases.
+2. Verify the authorized record, component key, pillar and development status.
+3. Check whether the calculator already exists or is owned by another agent.
+4. Compare existing mileage, travel-cost, tax-deduction and unit-conversion utilities.
+5. Reuse appropriate shared components without modifying completed tools.
+6. If no authorized matching MongoDB record exists, **SKIP/STOP**. Never create one.
+7. If already developed or colleague-owned/in progress, STOP.
+8. Follow ADR-016, ADR-018, ADR-023 and established project architecture.
+
+Implement only this calculator.
+
+## 3. Screenshot UI — Exact Fields
+
+Preserve the following order.
+
+### 1. Tax year
+
+- Dropdown selector.
+- Screenshot default: `2026`.
+- Support only tax years with verified official rates.
+- Changing the year updates the applicable rates and recalculates the result.
+
+### 2. Business
+
+- USD rate per mile.
+- Screenshot displays `$0.725 per mile`.
+- Read-only calculated/reference field.
+- Load the verified business mileage rate for the selected tax year.
+
+### 3. Medical
+
+- USD rate per mile.
+- Screenshot displays `$0.21 per mile`.
+- Read-only reference field.
+- Load the verified medical mileage rate for the selected year.
+
+### 4. Charity
+
+- USD rate per mile.
+- Screenshot displays `$0.14 per mile`.
+- Read-only reference field.
+- Load the verified charitable mileage rate for the selected year.
+
+### 5. Miles driven for business purpose
+
+- Nonnegative numeric input.
+- Default: `0`.
+- Distance unit selector, default `mi`.
+- Support `mi` and `km` using existing unit-conversion conventions.
+
+### 6. Miles driven for medical purpose
+
+- Nonnegative numeric input.
+- Default: `0`.
+- Independent distance unit selector.
+- Default: `mi`.
+
+### 7. Miles driven for charity purpose
+
+- Nonnegative numeric input.
+- Default: `0`.
+- Independent distance unit selector.
+- Default: `mi`.
+
+### 8. Mileage deduction
+
+- Calculated USD monetary output.
+- Default: `$0.00`.
+- Read-only.
+- Recalculate automatically when the year, distances or units change.
+
+### Shared Actions
+
+Reuse:
+
+- Share Result.
+- Reload Calculator.
+- Clear All Changes.
+- Yes/No feedback.
+
+Preserve project-standard responsive styling and accessibility.
+
+Do not add unsupported fuel, vehicle depreciation, toll, parking or maintenance inputs.
+
+## 4. Official IRS Mileage Rate Verification
+
+Use authoritative IRS publications and notices.
+
+Primary source:
+
+`https://www.irs.gov/tax-professionals/standard-mileage-rates`
+
+Also inspect official IRS notices establishing the applicable year's rates.
+
+For every supported year, verify:
+
+- Business rate.
+- Medical rate.
+- Charitable rate.
+- Effective dates.
+- Any midyear rate changes.
+- Tax-specific limitations and eligibility.
+
+**Important:** The screenshot's displayed rates are references, not independent proof of official 2026 rates.
+
+Do not invent or extrapolate rates from previous years.
+
+Store verified rates in year-specific configuration with source URLs and effective dates.
+
+If a rate is unavailable or unverified, show a meaningful unavailable state rather than calculating with fabricated data.
+
+If a tax year has different rates across effective periods and no travel-date input exists, do not silently apply one rate to the entire year. Follow the verified calculator specification or clearly identify that additional date information would be required.
+
+## 5. Accurate Mileage Calculations
+
+Let:
+
+- `B` = business distance in miles.
+- `M` = medical distance in miles.
+- `C` = charitable distance in miles.
+- `Rb` = verified business rate per mile.
+- `Rm` = verified medical rate per mile.
+- `Rc` = verified charitable rate per mile.
+
+Calculate:
+
+`Business Amount = B × Rb`
+
+`Medical Amount = M × Rm`
+
+`Charitable Amount = C × Rc`
+
+`Total Mileage Deduction = Business Amount + Medical Amount + Charitable Amount`
+
+All rates must be expressed in USD per mile.
+
+### Kilometer Conversion
+
+For kilometer inputs:
+
+`Miles = Kilometers / 1.609344`
+
+Use the precise international conversion factor.
+
+Maintain the same underlying physical distance when the user changes a unit selector.
+
+Do not reinterpret 100 kilometers as 100 miles.
+
+## 6. Tax Deduction vs Reimbursement
+
+The calculator title includes "Reimbursement," while the screenshot labels the output "Mileage deduction."
+
+These concepts must be distinguished.
+
+- IRS standard mileage rates may be used for eligible mileage deduction calculations.
+- Employer reimbursement policies may differ from IRS standard rates.
+- Medical and charitable mileage deductions depend on applicable tax rules and eligibility.
+- Adding all three calculated amounts provides a **nominal combined mileage amount**, not necessarily the amount deductible on a federal tax return.
+
+Clearly disclose these distinctions in supporting text.
+
+Do not claim every business, medical or charitable trip is automatically deductible.
+
+Business mileage eligibility may depend on employment/self-employment circumstances and applicable law.
+
+Medical and charitable deductions may be subject to additional federal tax rules.
+
+Do not calculate tax savings by multiplying the mileage amount by an invented income tax bracket.
+
+## 7. Validation & Edge Cases
+
+- Nonnegative finite distances.
+- Support decimals.
+- Handle zero mileage.
+- Reject invalid or unsupported units.
+- Reject unsupported tax years.
+- Prevent NaN and Infinity.
+- Preserve precision internally.
+- Round only for display.
+- Use appropriate USD currency formatting.
+- Ensure all displayed category amounts reconcile with the total at the selected presentation precision.
+- Handle missing official rate information safely.
+
+## 8. Currency Handling
+
+Screenshot uses fixed USD and no currency dropdowns.
+
+Therefore:
+
+- Fixed USD only.
+- Do not add currency selectors.
+- No numeric FX provider required.
+- Do not register the slug in `CURRENCY_CONVERSION_SLUGS`.
+- Convert distance units only, not currency.
+
+## 9. Calculation Architecture
+
+Separate:
+
+- Official year-specific mileage rates.
+- Distance normalization.
+- Mileage calculations.
+- Input validation.
+- Results presentation.
+
+Reuse existing unit conversion and monetary formatting utilities.
+
+Avoid unnecessary packages and unrelated architectural changes.
+
+Keep the tax-rate configuration transparent and maintainable.
+
+## 10. Project Registration
+
+After functional implementation, integrate:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also integrate existing:
+
+- Tool routing.
+- Embed support.
+- SEO metadata.
+- Guides.
+- Ads.
+- Shared actions.
+- Correct pillar/category mapping.
+
+Activate only the authorized matching MongoDB record.
+
+Respect admin-controlled settings, including `indexable`.
+
+## 11. Mandatory Three Local Git Commits
+
+Create exactly **three meaningful LOCAL commits**:
+
+1. `feat(mileage-reimbursement): create calculator UI`
+2. `feat(mileage-reimbursement): implement verified mileage rates and calculations`
+3. `feat(mileage-reimbursement): complete registration and integration`
+
+Requirements:
+
+- Every commit must contain genuine task-specific changes.
+- Never create empty/artificial commits.
+- Stage only authorized files.
+- Preserve unrelated and colleague-owned work.
+- Never rewrite Git history.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+
+## 12. Temporary File Cleanup
+
+Before completion:
+
+1. Remove only temporary files created during this task.
+2. Preserve pre-existing and colleague-owned files.
+3. Avoid destructive Git cleanup.
+4. Never use `git clean -fd`.
+5. Inspect `git status --short`.
+6. Report `Temporary files cleaned: YES/NO`.
+
+## 13. Restrictions
+
+- Develop only Mileage Reimbursement Calculator.
+- No unrelated calculator modifications.
+- No unsupported vehicle expense fields.
+- No invented IRS mileage rates.
+- No Playwright or browser automation.
+- No automated tests, lint, typecheck or build unless explicitly authorized.
+- No duplicate MongoDB records.
+- No Git push, pull, fetch or sync.
+
+## 14. Final Report
+
+Provide:
+
+1. Confirmed calculator title, slug and MongoDB ID.
+2. Implemented screenshot fields.
+3. Verified IRS mileage rates and official source URLs.
+4. Supported tax years and effective dates.
+5. Business, medical and charitable mileage formulas.
+6. Mile/kilometer conversion behavior.
+7. Tax deduction versus reimbursement disclosure.
+8. Input validation and unavailable-rate handling.
+9. Fixed USD handling.
+10. Frontend/backend registrations.
+11. MongoDB activation.
+12. Changed files.
+13. Three local Git commit hashes.
+14. Temporary files cleaned: YES/NO.
+15. Final status: DEVELOPED / ALREADY DEVELOPED / BLOCKED.
+
+**STOP after completing Mileage Reimbursement Calculator. Do not start another calculator.**

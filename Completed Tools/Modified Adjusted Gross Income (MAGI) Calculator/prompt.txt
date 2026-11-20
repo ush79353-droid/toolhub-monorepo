@@ -1,0 +1,448 @@
+# Cursor Prompt — Modified Adjusted Gross Income (MAGI) Calculator
+
+## 1. Mission
+
+Develop **Modified Adjusted Gross Income (MAGI) Calculator** using the attached screenshot as the primary functionality reference.
+
+**Suggested slug:** `modified-adjusted-gross-income-calculator` — verify against MongoDB.
+
+Build a US tax-related MAGI calculator that accepts Adjusted Gross Income (AGI), relevant income adjustments and other deductions, then calculates an estimated Modified Adjusted Gross Income.
+
+The screenshot defines the input fields, sections and result structure.
+
+Follow OmegaCalculators' existing design system instead of copying the reference screenshot's visual styling.
+
+**Critical requirement:** MAGI is purpose-specific. Do not represent one calculation as universally applicable to every IRS program.
+
+## 2. MongoDB Verification & Ownership
+
+Before writing code:
+
+1. Search MongoDB by calculator title, slug and aliases.
+2. Verify the exact authorized MongoDB record, component key, pillar and development status.
+3. Check whether the calculator already exists or is assigned to another agent.
+4. Compare existing AGI, Income Tax, IRA, Retirement and tax-deduction calculator utilities.
+5. Reuse verified calculation and formatting utilities where appropriate.
+6. If no matching authorized MongoDB record exists, **SKIP/STOP**. Never create one.
+7. If already developed or colleague-owned/in progress, STOP.
+8. Follow ADR-016, ADR-018, ADR-023 and established architecture.
+
+Implement this calculator only.
+
+---
+
+## 3. Screenshot UI — Exact Sections and Fields
+
+Preserve the screenshot's field order, grouping and expandable sections.
+
+### Section A — Income and Expenses
+
+Expanded by default.
+
+**1. Adjusted gross income (AGI)**
+
+- Monetary input.
+- Independent PKR currency selector.
+- This is the primary starting value.
+- Allow valid signed AGI values where supported by the applicable tax calculation.
+
+**2. Foreign-earned income**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+
+**3. Foreign housing cost**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+
+**4. Non-taxable social benefits**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+
+**5. Self-employment taxes**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+
+**6. IRA contributions**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+
+**7. Passive income or losses**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+- Account for whether a signed value is supported by the applicable formula.
+
+**8. Others**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+- Include a clear explanation that only qualifying, documented adjustments should be entered.
+
+### Section B — Other Income and Expenses
+
+Expanded by default.
+
+**9. Employer-paid adoption benefits**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+
+**10. Savings bond interest**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+
+**11. Student loan interest**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+
+**12. Qualified tuition expenses and fees**
+
+- Monetary input.
+- Default: `0.00`.
+- Independent PKR selector.
+
+### Result
+
+**13. Modified adjusted gross income (MAGI)**
+
+- Calculated monetary output.
+- Independent PKR currency selector.
+- Read-only.
+- Recalculate automatically when applicable inputs change.
+
+### Shared Actions
+
+Reuse existing:
+
+- Share Result.
+- Reload Calculator.
+- Clear All Changes.
+- Yes/No feedback.
+
+Do not add charts, income brackets, tax filing forms or unrelated inputs.
+
+---
+
+## 4. MAGI Definition and Calculation Scope
+
+Before implementing formulas, inspect the authorized calculator specification and existing project tax documentation.
+
+MAGI can differ depending on its use, including:
+
+- Traditional IRA deduction eligibility.
+- Roth IRA contribution eligibility.
+- Education tax benefits.
+- Certain healthcare program calculations.
+- Other federal income-based eligibility provisions.
+
+Different definitions may require different income add-backs and exclusions.
+
+**Do not silently combine rules from unrelated MAGI definitions.**
+
+The screenshot contains one MAGI output and does not show a purpose selector.
+
+Therefore:
+
+1. Determine whether the authorized specification identifies a particular MAGI definition.
+2. If so, implement that verified definition and disclose its scope.
+3. If no definition is established, clearly label the result as a simplified, illustrative MAGI estimate.
+4. Do not claim the simplified estimate establishes legal eligibility for IRA contributions, healthcare subsidies or education credits.
+5. Do not invent additional user-facing modes or selectors.
+
+If the screenshot's fields cannot support a legally accurate definition, document the limitations rather than presenting a universal IRS MAGI formula.
+
+---
+
+## 5. Calculation Methodology
+
+The conceptual starting point is:
+
+`MAGI = AGI + Applicable Add-Backs ± Applicable Adjustments`
+
+However, the exact adjustments depend on the selected or established tax purpose.
+
+### AGI
+
+Treat AGI as an already-calculated value.
+
+Do not automatically reconstruct AGI from other fields.
+
+### Foreign-Earned Income
+
+Determine whether the specific MAGI definition requires adding back excluded foreign-earned income.
+
+Do not automatically add all foreign-earned wages if they were already included in AGI.
+
+### Foreign Housing Cost
+
+Distinguish applicable foreign housing exclusions/deductions from general housing expenses.
+
+Only include relevant amounts according to the verified MAGI definition.
+
+### Non-Taxable Social Benefits
+
+Identify what the field represents.
+
+For relevant definitions, nontaxable Social Security benefits may be included in MAGI.
+
+Do not treat all social benefits as interchangeable.
+
+Clearly state the interpretation used.
+
+### Self-Employment Taxes
+
+Do not automatically add the entire self-employment tax liability.
+
+Determine whether the applicable MAGI calculation adds back the deductible portion of self-employment tax or another specific adjustment.
+
+If the field's meaning is ambiguous, document the interpretation rather than silently assuming the full amount qualifies.
+
+### IRA Contributions
+
+Only include IRA-related deductions or adjustments where required by the verified MAGI definition.
+
+Distinguish deductible traditional IRA contributions from Roth or nondeductible contributions.
+
+Do not automatically add back all retirement savings.
+
+### Passive Income or Losses
+
+Preserve the correct sign and applicable tax treatment.
+
+Do not automatically add back every passive-income amount.
+
+Review applicable restrictions and limitations for passive activity losses.
+
+### Other Adjustments
+
+Treat the Others field as a clearly documented user-supplied adjustment.
+
+Validate its sign and prevent unsupported automatic tax claims.
+
+### Employer-Paid Adoption Benefits
+
+Determine whether excluded employer-provided adoption benefits must be added back under the established MAGI definition.
+
+Do not automatically apply adoption-related rules to unrelated MAGI purposes.
+
+### Savings Bond Interest
+
+Distinguish tax-exempt savings bond interest from taxable interest already included in AGI.
+
+Avoid double-counting.
+
+### Student Loan Interest
+
+Add back a student loan interest deduction only when the established MAGI definition requires it.
+
+Do not assume the entire paid interest amount was deducted.
+
+### Qualified Tuition Expenses and Fees
+
+Check the effective-year legal treatment of tuition-related deductions or exclusions.
+
+Do not treat an expired deduction as currently active.
+
+Do not confuse education tax credits with income deductions.
+
+---
+
+## 6. Simplified Estimate — Only When Authorized
+
+If the existing calculator specification explicitly defines the listed fields as amounts to be added back, the calculator may use a simplified formula:
+
+`Estimated MAGI = AGI + Sum of Applicable Entered Add-Backs`
+
+But implement this only with a visible explanation that:
+
+- Entered adjustment amounts must qualify under the intended MAGI definition.
+- Values already included in AGI must not be counted again.
+- Different US tax programs calculate MAGI differently.
+- The result is an estimate rather than a complete tax-return determination.
+
+Never use this simplified model to assert official IRS program eligibility.
+
+If the authorized requirements demand legally accurate program-specific MAGI but do not supply enough inputs, report the missing requirements instead of fabricating calculations.
+
+---
+
+## 7. Real Numerical Currency Conversion
+
+The screenshot contains independent PKR currency selectors on all monetary fields.
+
+Reuse the existing Phase 2 shared FX infrastructure.
+
+Requirements:
+
+1. Every monetary input and output must support its independent currency selector.
+2. Perform genuine numeric currency conversion.
+3. Normalize monetary adjustments into a canonical calculation currency before adding them.
+4. Preserve the selected display currency for each field.
+5. Preserve full numerical precision internally.
+6. Apply display-only rounding.
+7. Handle unavailable FX rates safely.
+8. Show stale-rate warnings where supported.
+9. Never assume 1:1 currency equivalence.
+10. Prevent duplicate conversion when changing selectors.
+
+Register the confirmed slug in both live `CURRENCY_CONVERSION_SLUGS` lists:
+
+- Frontend tools page FX provider.
+- Embed FX provider.
+
+**Important:** MAGI is a US federal tax concept. The calculated result should explain that actual IRS reporting generally uses USD amounts and applicable tax-year currency conversion conventions. Live FX conversion is a calculator convenience, not a substitute for IRS-required historical exchange-rate treatment.
+
+---
+
+## 8. Validation and Edge Cases
+
+- Validate all monetary inputs.
+- Support zero values.
+- Preserve legitimate signed values where applicable.
+- Prevent NaN and Infinity.
+- Avoid double-counting adjustments.
+- Handle blank values consistently.
+- Validate user-supplied adjustment signs.
+- Recalculate when monetary values or currency selectors change.
+- Prevent circular state updates.
+- Maintain precision across mixed currencies.
+- Clearly display unsupported or ambiguous tax adjustments.
+
+Do not invent IRS limits or tax-year rules.
+
+---
+
+## 9. Architecture
+
+Follow established React, Next.js and TypeScript project conventions.
+
+Separate:
+
+- Input definitions.
+- MAGI calculation logic.
+- Tax-purpose assumptions.
+- Monetary validation.
+- FX normalization.
+- Result formatting.
+- Explanatory content.
+
+Reuse existing calculator form and currency selector components.
+
+Avoid unnecessary libraries and unrelated architectural changes.
+
+---
+
+## 10. Project Registration & Integration
+
+After completing the calculator, register its verified component key and slug in:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also integrate applicable:
+
+- Tool routing.
+- Embed support.
+- SEO metadata.
+- Guides and descriptions.
+- Ads.
+- Shared actions.
+- Correct category/pillar mapping.
+- Both live FX provider lists.
+
+Activate only the authorized matching MongoDB record.
+
+Respect admin-controlled settings, including `indexable`.
+
+Never create or activate a duplicate tool.
+
+---
+
+## 11. Mandatory Three Local Git Commits
+
+Create exactly **three meaningful LOCAL commits**:
+
+1. `feat(magi): create calculator UI`
+2. `feat(magi): implement MAGI calculations and FX`
+3. `feat(magi): complete registration and integration`
+
+Requirements:
+
+- Every commit must contain genuine task-related changes.
+- Never create empty/artificial commits.
+- Stage only authorized files.
+- Preserve unrelated and colleague-owned work.
+- Never rewrite Git history.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+
+---
+
+## 12. Temporary File Cleanup
+
+Before completing:
+
+1. Identify temporary files created specifically for this task.
+2. Delete only those files.
+3. Preserve pre-existing and colleague-owned files.
+4. Never use `git clean -fd`.
+5. Do not perform destructive resets.
+6. Inspect `git status --short`.
+7. Report `Temporary files cleaned: YES/NO`.
+
+---
+
+## 13. Restrictions
+
+- Develop only Modified Adjusted Gross Income (MAGI) Calculator.
+- Do not modify existing AGI or tax calculators.
+- Do not invent universal MAGI eligibility rules.
+- Do not introduce unsupported tax-year or purpose selectors.
+- No unrelated refactoring.
+- No Playwright or browser automation.
+- No automated tests, lint, typecheck or build unless explicitly authorized.
+- No duplicate MongoDB records.
+- No Git push, pull, fetch or sync.
+
+---
+
+## 14. Final Report
+
+Provide:
+
+1. Confirmed calculator title, slug and MongoDB ID.
+2. Exact screenshot fields implemented.
+3. MAGI definition and calculation scope.
+4. Verified tax-rule references where applicable.
+5. Explanation of every supported add-back.
+6. Handling of unsupported or ambiguous adjustments.
+7. Numerical FX integration.
+8. Both FX provider registrations.
+9. Frontend/backend registry integration.
+10. SEO, sitemap and embed integration.
+11. MongoDB activation status.
+12. Changed files.
+13. Three local Git commit hashes.
+14. Temporary files cleaned: YES/NO.
+15. Final status: DEVELOPED / ALREADY DEVELOPED / BLOCKED.
+
+**STOP after completing Modified Adjusted Gross Income (MAGI) Calculator. Do not start another calculator.**

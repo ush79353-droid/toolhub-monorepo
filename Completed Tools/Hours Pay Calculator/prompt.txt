@@ -1,0 +1,306 @@
+# Cursor Prompt — Hours Pay Calculator
+
+## 1. Mission
+
+Develop **Hours Pay Calculator** using the attached screenshot as the functionality reference.
+
+**Suggested slug:** `hours-pay-calculator` — verify against MongoDB.
+
+The calculator must support conversions between daily, weekly, monthly and annual pay, using working hours to determine the hourly wage.
+
+The screenshot defines the UI structure and supported functionality. Follow the existing OmegaCalculators design system rather than copying the reference website's styling.
+
+## 2. MongoDB Verification & Ownership
+
+Before writing any code:
+
+1. Search MongoDB for matching title, slug and aliases.
+2. Verify the authorized record, component key, pillar and development status.
+3. Check whether this calculator already exists or is being developed by another agent.
+4. Compare existing Hourly Wage, Wage to Salary, Salary to Hourly and Annual Salary per Hour calculators.
+5. Reuse suitable calculation and formatting utilities without changing existing tools.
+6. If no matching authorized MongoDB record exists, **SKIP/STOP**. Never create a new record.
+7. If already developed or colleague-owned/in progress, STOP.
+8. Follow ADR-016, ADR-018, ADR-023 and existing project architecture.
+
+## 3. Screenshot UI — Exact Sections and Fields
+
+Preserve the section structure and field order.
+
+### Section A — Pay Information
+
+This section is expanded by default.
+
+Provide four monetary input fields:
+
+1. **Daily pay**
+   - Numeric monetary input.
+   - Independent PKR currency selector.
+
+2. **Weekly pay**
+   - Numeric monetary input.
+   - Independent PKR currency selector.
+
+3. **Monthly pay**
+   - Numeric monetary input.
+   - Independent PKR currency selector.
+
+4. **Annual pay**
+   - Numeric monetary input.
+   - Independent PKR currency selector.
+
+All four are convertible values.
+
+When a user edits any one pay field, automatically recalculate the other three pay values and the hourly wage.
+
+Use the most recently edited pay field as the authoritative input to prevent conflicting values and circular updates.
+
+Do not require the user to fill all four fields.
+
+### Section B — Working Hours
+
+This section is collapsed by default, as shown in the screenshot.
+
+Implement an accessible expandable/collapsible section using existing accordion components.
+
+The screenshot does not show its expanded contents, so inspect the existing project conventions and the original calculator specification before choosing its fields.
+
+Use only the working-time inputs necessary to calculate the supported pay conversions, such as:
+
+- Working hours per day.
+- Working days per week.
+
+If the authorized specification already establishes different working-hour controls, follow that specification instead.
+
+Clearly disclose any defaults used. Reasonable defaults, if not otherwise specified, are:
+
+- 8 working hours per day.
+- 5 working days per week.
+- 52 weeks per year.
+
+Do not introduce overtime calculations, tax deductions or unrelated settings.
+
+### Section C — Result
+
+Display:
+
+**Hourly wage**
+
+- Calculated monetary output.
+- Independent PKR currency selector.
+- Update automatically when pay or working hours change.
+
+Use the project's existing result formatting.
+
+### Standard Controls
+
+Include existing shared:
+
+- Share Result.
+- Reload Calculator.
+- Clear All Changes.
+- Yes/No feedback.
+
+Preserve the screenshot's section hierarchy without copying its visual styling.
+
+## 4. Accurate Pay Calculations
+
+Normalize every pay value into a common annual amount and calculate the remaining periods.
+
+Let:
+
+- `H` = working hours per day.
+- `D` = working days per week.
+- `W` = working weeks per year, default 52.
+- `Weekly Hours = H × D`
+- `Annual Hours = H × D × W`
+
+### From Daily Pay
+
+`Weekly Pay = Daily Pay × D`
+
+`Annual Pay = Daily Pay × D × W`
+
+`Monthly Pay = Annual Pay / 12`
+
+`Hourly Wage = Daily Pay / H`
+
+### From Weekly Pay
+
+`Daily Pay = Weekly Pay / D`
+
+`Annual Pay = Weekly Pay × W`
+
+`Monthly Pay = Annual Pay / 12`
+
+`Hourly Wage = Weekly Pay / (H × D)`
+
+### From Monthly Pay
+
+`Annual Pay = Monthly Pay × 12`
+
+`Weekly Pay = Annual Pay / W`
+
+`Daily Pay = Annual Pay / (W × D)`
+
+`Hourly Wage = Annual Pay / (H × D × W)`
+
+### From Annual Pay
+
+`Monthly Pay = Annual Pay / 12`
+
+`Weekly Pay = Annual Pay / W`
+
+`Daily Pay = Annual Pay / (W × D)`
+
+`Hourly Wage = Annual Pay / (H × D × W)`
+
+These are standard time-based pay conversions, not country-specific statutory payroll calculations.
+
+## 5. Validation & Edge Cases
+
+- All monetary inputs must be finite and nonnegative.
+- Working hours per day must be greater than zero.
+- Working days per week must be greater than zero and within the supported range.
+- Working weeks per year must be greater than zero.
+- Prevent division by zero.
+- Support zero pay.
+- Handle decimal pay and fractional working hours.
+- Prevent NaN and Infinity.
+- Preserve numerical precision internally.
+- Round only for display.
+- Avoid infinite state updates when synchronizing the four pay fields.
+- Recalculate correctly when any working-time parameter changes.
+- Define consistent behavior when the user clears the authoritative input.
+
+## 6. Real Numerical Currency Conversion
+
+The screenshot contains independent PKR currency selectors for all monetary fields.
+
+Use the existing Phase 2 shared FX infrastructure.
+
+Requirements:
+
+1. Every monetary field must have an independent currency selector.
+2. Convert actual numeric amounts between selected currencies.
+3. Normalize the authoritative pay amount before period conversion.
+4. Preserve the selected display currency of each field when recalculating.
+5. Support changing one field's currency without incorrectly changing the other selectors.
+6. Preserve full canonical precision.
+7. Display stale-rate warnings where supported.
+8. Handle missing exchange rates safely.
+9. Never assume 1:1 conversion between currencies.
+10. Never apply FX conversion to hours, days or weeks.
+
+Register the confirmed calculator slug in both live `CURRENCY_CONVERSION_SLUGS` lists:
+
+- Frontend calculator tool-page provider.
+- Embed FX provider.
+
+Reuse existing project utilities and selectors instead of introducing a separate FX implementation.
+
+## 7. Architecture
+
+Follow existing OmegaCalculators React, Next.js and TypeScript patterns.
+
+Separate:
+
+- Calculator form/state.
+- Pay-period conversion functions.
+- Working-time normalization.
+- Currency conversion.
+- Validation.
+- Results.
+
+Use existing UI, accordion, form and currency components.
+
+Avoid introducing unnecessary libraries.
+
+Preserve accessibility, keyboard navigation and responsive behavior.
+
+## 8. Required Project Registration
+
+After the calculator works, register its confirmed slug and component key in:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also integrate existing:
+
+- Tool routing.
+- Embed support.
+- SEO metadata.
+- Calculator guides.
+- Ads.
+- Shared actions.
+- Correct pillar/category mapping.
+
+Use actual live project files, not assumed paths.
+
+Activate only the authorized matching MongoDB record.
+
+Respect admin-controlled settings, including `indexable`.
+
+## 9. Mandatory Three Local Git Commits
+
+Create exactly **three meaningful LOCAL Git commits** for this calculator:
+
+1. `feat(hours-pay): create calculator UI`
+2. `feat(hours-pay): implement pay calculations and FX`
+3. `feat(hours-pay): complete registration and integration`
+
+Requirements:
+
+- Each commit must contain genuine changes.
+- Never create empty or artificial commits.
+- Stage only this calculator's authorized files.
+- Preserve colleague-owned work and unrelated changes.
+- Do not rewrite Git history.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+
+## 10. Temporary File Cleanup
+
+Before completion:
+
+- Remove only temporary files created during this task.
+- Preserve unknown and pre-existing files.
+- Preserve colleague-owned untracked files.
+- Never use `git clean -fd`.
+- Never perform destructive resets.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 11. Restrictions
+
+- Develop only Hours Pay Calculator.
+- Do not modify existing salary/wage calculators.
+- Do not add unsupported overtime or tax functionality.
+- No unrelated refactoring.
+- No Playwright or browser automation.
+- No automated tests, lint, typecheck or build unless explicitly authorized.
+- No duplicate MongoDB records.
+- No unauthorized package installation.
+- No Git push, pull, fetch or sync.
+
+## 12. Final Report
+
+Provide:
+
+1. Confirmed calculator title and slug.
+2. Authorized MongoDB record ID.
+3. Exact screenshot fields and sections implemented.
+4. Working-hours defaults and assumptions.
+5. Daily, weekly, monthly, annual and hourly conversion formulas.
+6. Last-edited-field behavior.
+7. Numeric FX integration and both provider registrations.
+8. Frontend/backend integration.
+9. MongoDB activation.
+10. Changed files.
+11. Three local Git commit hashes.
+12. Temporary files cleaned: YES/NO.
+13. Final status: DEVELOPED / ALREADY DEVELOPED / BLOCKED.
+
+**STOP after completing Hours Pay Calculator. Do not start another calculator.**

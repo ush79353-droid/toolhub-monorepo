@@ -1,0 +1,100 @@
+# Cursor Prompt — Billable Hours Calculator
+
+Develop **Billable Hours Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `billable-hours-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+
+- Search existing MongoDB records by title, slug and aliases.
+- Compare with Bill Rate Calculator and Consulting Fees Calculator.
+- If no authorized matching record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Reuse existing billing and unit-conversion utilities where appropriate.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+Preserve the exact field order:
+
+1. **Billable rate** — monetary input/output with independent PKR currency selector and time-unit selector, default PKR/hour.
+2. **Billable time** — numeric input/output with time-unit selector, default hours.
+3. **Billable value** — monetary input/output with independent PKR currency selector.
+
+Allow users to enter any two fields and calculate the third. Keep the last two edited fields as calculation inputs and avoid circular updates.
+
+Reuse Share Result, Reload Calculator, Clear All Changes and feedback controls.
+
+Do not introduce additional fields, charts or unsupported calculation modes.
+
+## 3. Accurate Billing Calculations
+
+Normalize the rate's time denominator and the billable-time unit before calculation.
+
+Implement:
+
+`Billable Value = Billable Rate × Billable Time`
+
+`Billable Rate = Billable Value / Billable Time`
+
+`Billable Time = Billable Value / Billable Rate`
+
+Requirements:
+- Support time units verified in the existing UI specification, including hours and other selectable units where available.
+- Use accurate unit conversions, e.g. 1 hour = 60 minutes.
+- Validate nonnegative money values and billable time.
+- Require positive denominators for reverse calculations.
+- Handle valid zero billable value.
+- Prevent division by zero, NaN, Infinity and circular updates.
+- Preserve full precision; round only for display.
+- Do not invent taxes, discounts or additional billing fees.
+
+## 4. Real Currency Conversion
+
+Screenshot includes independent PKR monetary selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary amounts numerically, not merely currency symbols.
+- Normalize mixed currencies before calculation.
+- Preserve independent selectors and canonical precision.
+- Register slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale exchange rates safely; never assume 1:1 conversion.
+- Never FX-convert hours, minutes or other time units.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend key and actual live sitemap.
+- Reuse SEO, guides, ads, embeds and shared calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned work.
+
+## 6. Mandatory Three Local Git Commits
+
+Create exactly **3 meaningful LOCAL commits**:
+
+1. `feat(billable-hours): create calculator UI`
+2. `feat(billable-hours): implement billing calculations and FX`
+3. `feat(billable-hours): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated modifications, Playwright, automated tests, lint, typecheck or build.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+- Do not overwrite another agent's in-progress work.
+
+Report confirmed slug, billing formulas, time-unit conversion, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

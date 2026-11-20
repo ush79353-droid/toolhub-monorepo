@@ -1,0 +1,311 @@
+# OMEGACALCULATORS — STATE TAX CALCULATOR
+## Screenshot-Based Cursor Development Prompt
+
+### 1. Mission
+
+Develop **State Tax Calculator** using the attached screenshot as the authoritative functionality reference.
+
+**Suggested slug:** `state-tax-calculator` — verify against MongoDB.
+
+This calculator is primarily a **state-specific tax calculator navigator**, not a standalone tax computation engine.
+
+It must:
+
+- Let users select a US state.
+- Display a dynamic link to that state's corresponding tax calculator.
+- Navigate to an authorized existing state-specific calculator.
+- Handle states without an available calculator safely.
+- Reuse OmegaCalculators' standard layout, shared actions and styling.
+
+**Do not invent additional tax calculation fields.**
+
+Follow ADR-016, ADR-018, ADR-023 and established project architecture.
+
+---
+
+### 2. MongoDB-First Verification & Ownership
+
+Before coding:
+
+1. Search MongoDB by exact title, slug and aliases.
+2. Confirm the authorized MongoDB record, component key, pillar and slug.
+3. Verify current development/activation status.
+4. Check whether the tool is already developed or owned by another active agent.
+5. Inspect existing state-specific tax calculator records.
+6. Reuse established tool routing and registry utilities.
+
+**Mandatory STOP conditions:**
+
+- If no matching authorized MongoDB record exists, SKIP. Never create one.
+- If already developed, STOP and report ALREADY DEVELOPED.
+- If actively colleague-owned/in progress, STOP.
+- If a partial implementation exists, inspect ownership and commits before resuming.
+
+Never create duplicate calculator records.
+
+---
+
+### 3. Exact Screenshot UI
+
+Preserve the screenshot's visible structure.
+
+#### Field 1 — Where Do You Live?
+
+Label:
+
+**Where do you live?**
+
+- Dropdown selector.
+- Default: `Alabama`.
+- Use a consistent list of US states.
+- Include all 50 states if supported by the existing authorized specification.
+- Do not introduce unsupported countries, territories or ZIP-code inputs.
+- Store stable state identifiers rather than comparing arbitrary display strings.
+
+#### Dynamic State Calculator Link
+
+Below the dropdown, display:
+
+**Visit our [Selected State] Tax Calculator.**
+
+Example with Alabama selected:
+
+**Visit our Alabama Tax Calculator.**
+
+Requirements:
+
+1. Update the link immediately when state selection changes.
+2. Resolve its destination from the existing authorized tool catalog or routing configuration.
+3. Only link to an actual matching, active and routable state-specific calculator.
+4. Do not generate assumed URLs by blindly concatenating state names.
+5. Do not link to inactive, undeveloped or missing calculators.
+6. If the selected state has no available calculator, show a clear message such as:
+
+   "A dedicated tax calculator for this state is not available yet."
+
+7. Do not create new state calculators as part of this task.
+8. Avoid broken links or silent fallback to another state.
+9. Do not automatically redirect on dropdown selection—the screenshot shows a user-clicked link.
+
+The text and link should be accessible and keyboard-navigable.
+
+#### Standard Actions
+
+Reuse existing project components:
+
+- Share Result.
+- Reload Calculator.
+- Clear All Changes.
+- Yes/No feedback controls.
+
+**Reload Calculator:** Restore default selection (Alabama).
+
+**Clear All Changes:** Clear the user-selected state or restore the project's established initial state, consistently with existing shared behavior.
+
+**Share Result:** Share the current State Tax Calculator URL and selected state using the existing share mechanism, without fabricating a calculation result.
+
+Use OmegaCalculators styling rather than copying the screenshot's appearance.
+
+---
+
+### 4. State Data and Routing
+
+Build the selector using a verified state list and existing tool metadata.
+
+For each state, maintain:
+
+- State name.
+- Standard state identifier.
+- Resolved calculator slug, if available.
+- Availability status obtained from the authorized catalog.
+
+Never assume all 50 individual state calculators exist.
+
+Use the project's existing routing conventions and active/developed flags.
+
+Ensure the navigator is compatible with:
+
+- Normal calculator pages.
+- Embed pages.
+- Client-side navigation.
+- SEO and canonical routing behavior.
+
+If a destination cannot be verified, do not display it as an active link.
+
+Avoid duplicate state lists or hardcoded route mappings where the project already provides reusable state metadata.
+
+---
+
+### 5. Calculation Requirements
+
+**No tax arithmetic is required for this screenshot.**
+
+This is a navigation tool.
+
+Do not add:
+
+- Income fields.
+- Federal tax brackets.
+- State income tax brackets.
+- Payroll tax calculations.
+- Property tax calculations.
+- Sales tax calculations.
+- Filing statuses.
+- Tax-year selectors.
+- Currency selectors.
+- Currency conversion.
+
+The selected state only determines which existing dedicated calculator the user can open.
+
+Do not fake numerical results merely to satisfy a generic calculator template.
+
+---
+
+### 6. Validation & Edge Cases
+
+Handle:
+
+- Initial Alabama selection.
+- Switching between states.
+- Unsupported state identifiers.
+- States without dedicated calculators.
+- Inactive calculator records.
+- Undeveloped calculator records.
+- Missing routing metadata.
+- Broken or stale tool mappings.
+- Disabled states or unavailable links.
+- Browser refresh and supported navigation behavior.
+- Share/reload/clear interactions.
+
+Do not link to a destination unless it has been verified as available.
+
+---
+
+### 7. Currency Handling
+
+The screenshot has no monetary fields or currency selectors.
+
+Therefore:
+
+- No FX integration.
+- No `CURRENCY_CONVERSION_SLUGS` registration.
+- No currency formatting utilities required.
+
+---
+
+### 8. Architecture
+
+Follow existing React, Next.js and TypeScript patterns.
+
+Separate:
+
+- US state metadata.
+- Dropdown selection state.
+- State-to-calculator resolution.
+- Availability checks.
+- Link presentation.
+
+Reuse existing shared dropdown, routing and calculator action components.
+
+Do not introduce a new routing framework or unnecessary dependencies.
+
+Ensure the component works in the project's existing embed architecture.
+
+---
+
+### 9. Mandatory Project Registration
+
+After implementation, integrate the confirmed slug and component key into:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also integrate:
+
+- Tool page resolution.
+- Embed support.
+- SEO metadata.
+- Guides and explanatory content.
+- Ads.
+- Shared actions.
+- Correct pillar/category mapping.
+
+Activate only the authorized matching MongoDB record.
+
+Respect admin-controlled settings, including `indexable`.
+
+---
+
+### 10. Exactly Three Meaningful LOCAL Git Commits
+
+Create exactly three meaningful local commits:
+
+1. `feat(state-tax): create state selector UI`
+2. `feat(state-tax): implement verified state calculator navigation`
+3. `feat(state-tax): complete registration and integration`
+
+Each commit must contain genuine task-related changes.
+
+Never create artificial or empty commits.
+
+Stage only authorized files.
+
+Preserve colleague-owned work and unrelated changes.
+
+**NO GIT PUSH, PULL, FETCH OR SYNC.**
+
+---
+
+### 11. Temporary File Cleanup
+
+Before completing:
+
+1. Remove only task-created temporary files.
+2. Preserve pre-existing and colleague-owned files.
+3. Never use destructive Git cleanup.
+4. Never run `git clean -fd`.
+5. Inspect `git status --short`.
+6. Report `Temporary files cleaned: YES/NO`.
+
+---
+
+### 12. Strict Restrictions
+
+- Develop only State Tax Calculator.
+- Do not develop the 50 individual state calculators.
+- Do not invent tax rules or rates.
+- Do not create non-existent calculator routes.
+- Do not link to inactive/undeveloped tools.
+- Do not modify existing state calculators.
+- No unrelated refactoring.
+- No Playwright or browser automation.
+- No automated tests, lint, typecheck or build unless explicitly authorized.
+- No duplicate MongoDB records.
+- No unauthorized packages.
+- No Git push, pull, fetch or sync.
+
+---
+
+### 13. Final Development Report
+
+Provide:
+
+1. Confirmed calculator title, slug and MongoDB ID.
+2. Verified state selector options.
+3. Alabama default behavior.
+4. Dynamic link resolution.
+5. Available versus unavailable state handling.
+6. Active/developed route verification.
+7. Share/reload/clear behavior.
+8. Frontend/backend registry integration.
+9. Sitemap, SEO and embed integration.
+10. MongoDB activation.
+11. Changed files.
+12. Three local Git commit hashes.
+13. Temporary files cleaned: YES/NO.
+14. Final status: DEVELOPED / ALREADY DEVELOPED / BLOCKED.
+
+**START NOW. DEVELOP ONLY STATE TAX CALCULATOR USING THE ATTACHED SCREENSHOT. STOP AFTER COMPLETION.**

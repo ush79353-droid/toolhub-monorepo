@@ -1,0 +1,383 @@
+# Cursor Prompt — Lottery Tax Calculator
+
+## 1. Mission
+
+Develop **Lottery Tax Calculator** using the attached screenshot as the primary functionality reference.
+
+**Suggested slug:** `lottery-tax-calculator` — verify against MongoDB.
+
+Implement a US lottery winnings calculator supporting lump-sum payments, annuity payments, tax estimates and a yearly annuity breakdown.
+
+Use the screenshot for functionality, input grouping and result structure only. Follow OmegaCalculators' established design system instead of copying its visual styling.
+
+## 2. MongoDB Verification & Ownership
+
+Before coding:
+
+1. Search MongoDB by title, slug and aliases.
+2. Verify the exact authorized record, slug, pillar and component key.
+3. Check whether this calculator is already developed or assigned to another agent.
+4. Compare existing Lottery, Income Tax, Annuity and Windfall Tax utilities, where available.
+5. Reuse appropriate verified utilities without modifying completed calculators.
+6. If no authorized matching record exists, **SKIP/STOP**. Never create one.
+7. If already developed or colleague-owned/in progress, STOP.
+8. Follow ADR-016, ADR-018, ADR-023 and established project architecture.
+
+## 3. Screenshot UI — Exact Fields and Sections
+
+### Main Calculator
+
+**1. Annuity payout**
+
+- Monetary input.
+- Independent PKR currency selector.
+- Screenshot example: `1,200,000,000`.
+
+**2. Lump sum payout percentage**
+
+- Percentage input.
+- Screenshot example: `52%`.
+
+**3. Lump sum payout**
+
+- Calculated monetary output.
+- Independent PKR currency selector.
+- Screenshot example: `624,000,000`.
+
+**4. Tax treatment**
+
+Radio options:
+
+- **US taxes**
+- **Customized tax rates** — selected by default in the screenshot.
+
+When customized rates are selected, expose:
+
+**5. Tax rate I**
+
+- Percentage input.
+- Screenshot example: `0%`.
+
+**6. Tax rate II**
+
+- Percentage input.
+- Screenshot example: `0%`.
+
+Follow the screenshot's ordering and grouping.
+
+When US taxes are selected, use only verified tax rules and any additional input requirements established by the authorized specification. Do not invent invisible screenshot inputs.
+
+### Annuity Setup
+
+Implement an expandable/collapsible section titled:
+
+**Annuity setup**
+
+The screenshot shows this section collapsed. Its internal fields are not visible.
+
+Inspect the original tool specification, existing calculator utilities and authorized reference material for the supported annuity parameters.
+
+Do not invent unsupported annuity modes. If the specification does not establish an annuity schedule, document that limitation and use only clearly disclosed assumptions necessary for the schedule shown.
+
+### Results
+
+Preserve the screenshot's result structure:
+
+- Lump sum column.
+- Annuity column.
+- Difference column.
+
+Include rows for:
+
+- Payout.
+- Tax I.
+- Tax II.
+- Net payout.
+
+Display monetary results with appropriate currency formatting.
+
+When tax rates are customized, clearly distinguish Tax I and Tax II.
+
+Include a short contextual note explaining the assumptions behind the comparison.
+
+### Annuity Schedule
+
+Implement the section:
+
+**Annuity schedule**
+
+Display a scrollable table containing:
+
+- Year.
+- Gross payment.
+- Tax I.
+- Tax II.
+- Net payment.
+
+Support the full verified annuity duration.
+
+Use responsive table behavior for mobile screens.
+
+Do not truncate underlying schedule data because the visual container is scrollable.
+
+### Standard Actions
+
+Reuse:
+
+- Share Result.
+- Reload Calculator.
+- Clear All Changes.
+- Yes/No feedback.
+
+## 4. Lump-Sum Calculation
+
+For:
+
+- `A` = advertised annuity jackpot amount.
+- `p` = lump-sum payout percentage.
+
+Calculate:
+
+`Lump Sum Payout = A × p / 100`
+
+Example:
+
+`1,200,000,000 × 52 / 100 = 624,000,000`
+
+Validate payout percentage within 0–100%.
+
+Preserve full numerical precision and round only for presentation.
+
+## 5. Customized Tax Calculations
+
+Let:
+
+- `T1` = first tax percentage.
+- `T2` = second tax percentage.
+
+For independent taxes applied to the same gross taxable payout:
+
+`Tax I = Gross Payout × T1 / 100`
+
+`Tax II = Gross Payout × T2 / 100`
+
+`Net Payout = Gross Payout − Tax I − Tax II`
+
+Requirements:
+
+- Do not compound Tax II on a Tax-I-reduced base unless the verified specification explicitly requires it.
+- Validate nonnegative tax rates.
+- Prevent combined deductions from silently producing an impossible negative payout.
+- Clearly indicate when custom rates are illustrative rather than official tax liability.
+- Apply custom rates consistently to each annual annuity payment.
+- Never treat arbitrary tax percentages as official US tax rates.
+
+## 6. US Lottery Tax Treatment
+
+Verify applicable rules using authoritative sources:
+
+- IRS.
+- Relevant US state revenue departments.
+- Official lottery operator payout rules where needed.
+
+Research and implement only the rules justified by the available inputs.
+
+Important distinctions:
+
+- Federal withholding is not necessarily the final federal tax liability.
+- Lottery winnings generally constitute taxable income under applicable federal rules.
+- Actual federal liability may depend on other income, filing status, deductions and tax year.
+- State taxation depends on the applicable jurisdiction and lottery-specific rules.
+- Lottery prizes may involve nonresident withholding considerations.
+- Annuity installments can be taxed in the year received.
+
+**Never apply a federal withholding percentage and label it as exact final tax liability.**
+
+If the US tax mode lacks required details such as state or filing status, use clearly labeled estimates and explain the limitations, or provide an unavailable state where a reliable calculation cannot be performed.
+
+Verify 2026 or the applicable selected-year rules before using them.
+
+Do not invent state-specific rates.
+
+Do not automatically assume the entire lottery award is taxable in one year when paid as an annuity.
+
+## 7. Annuity Calculations
+
+The screenshot includes an annuity setup and annual payment schedule.
+
+Use the verified original calculator specification for:
+
+- Number of payout years.
+- First payment timing.
+- Annual payment growth rate, if any.
+- Equal versus increasing payments.
+- Whether the advertised jackpot represents the sum of nominal annuity payments.
+
+For an equal-payment schedule:
+
+`Annual Gross Payment = Advertised Annuity Amount / Number of Years`
+
+For a growing annuity, if explicitly supported:
+
+`Payment(year) = First Payment × (1 + Growth Rate)^(year − 1)`
+
+Normalize payments so the nominal sum matches the advertised annuity payout under the specified model.
+
+Requirements:
+
+- Ensure annual gross payments sum to the advertised annuity total, within justified rounding tolerance.
+- Calculate taxes and net payment for each year.
+- Show all scheduled years.
+- Handle zero tax rates correctly.
+- Reject invalid annuity durations.
+- Avoid unsupported discount rates, inflation projections or investment assumptions.
+- Make any illustrative schedule defaults visible to users.
+
+## 8. Lump Sum vs Annuity Results
+
+Calculate and display:
+
+- Gross lump-sum payout.
+- Gross total annuity payout.
+- Applicable estimated taxes under each option.
+- Net lump-sum proceeds.
+- Total nominal net annuity proceeds.
+- Difference between the options.
+
+Clearly disclose that comparing nominal annuity totals with an immediate lump sum does not account for the time value of money.
+
+Do not claim one option is financially superior without discount-rate and personal financial assumptions.
+
+## 9. Real Numerical Currency Conversion
+
+The screenshot contains independent PKR selectors for monetary fields.
+
+Reuse the existing Phase 2 currency-conversion infrastructure.
+
+Requirements:
+
+1. Preserve independent monetary currency selectors.
+2. Convert numeric amounts using real FX rates.
+3. Normalize payout amounts to a canonical calculation currency.
+4. Preserve full canonical precision.
+5. Convert displayed results and annuity schedule consistently.
+6. Handle unavailable or stale rates safely.
+7. Never assume 1:1 exchange rates.
+8. Never convert percentages or year counts.
+9. Register the confirmed slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+
+Important:
+
+US tax rules must remain associated with US-dollar tax thresholds where relevant. Convert taxable amounts appropriately before evaluating any USD-denominated thresholds; do not apply USD thresholds directly to PKR amounts.
+
+## 10. Validation & Edge Cases
+
+- Nonnegative finite jackpot amount.
+- Lump-sum percentage between 0 and 100.
+- Valid custom tax rates.
+- Valid tax mode.
+- Valid annuity duration.
+- Avoid negative net winnings from invalid tax configurations.
+- Handle zero jackpot.
+- Prevent NaN and Infinity.
+- Avoid circular form updates.
+- Use consistent rounding and annual-total reconciliation.
+- Handle missing official tax data honestly.
+
+## 11. Architecture & Integration
+
+Separate:
+
+- Payout calculations.
+- Custom tax calculations.
+- Verified US tax configuration.
+- Annuity schedule calculations.
+- FX normalization.
+- Validation.
+- Result presentation.
+
+Use existing Next.js, React and TypeScript conventions.
+
+Complete registration in:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also integrate:
+
+- Tool routing.
+- Embed rendering.
+- SEO metadata.
+- Guides.
+- Ads.
+- Shared actions.
+- Correct pillar mapping.
+- Both live currency-conversion provider lists.
+
+Activate only the authorized matching MongoDB record.
+
+Respect existing admin settings, including `indexable`.
+
+## 12. Three Mandatory Local Git Commits
+
+Create exactly **three meaningful LOCAL commits**:
+
+1. `feat(lottery-tax): create calculator UI`
+2. `feat(lottery-tax): implement payout, tax, annuity and FX calculations`
+3. `feat(lottery-tax): complete registration and integration`
+
+Requirements:
+
+- Each commit contains genuine task-specific changes.
+- Never create empty/artificial commits.
+- Stage only task-related files.
+- Do not disturb colleague-owned changes.
+- Never rewrite history.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+
+## 13. Temporary File Cleanup
+
+Before finishing:
+
+- Delete only temporary files created during this task.
+- Preserve pre-existing files and colleague-owned work.
+- Never use destructive Git cleanup.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 14. Restrictions
+
+- Develop only Lottery Tax Calculator.
+- No unrelated refactoring.
+- No invented official tax rates.
+- No fabricated annuity setup requirements.
+- No Playwright or browser automation.
+- No automated tests, lint, typecheck or build unless explicitly authorized.
+- No duplicate MongoDB records.
+- No unauthorized dependencies.
+- No Git push, pull, fetch or sync.
+
+## 15. Final Report
+
+Provide:
+
+1. Confirmed title, slug and MongoDB ID.
+2. Implemented screenshot fields.
+3. Verified tax modes and sources.
+4. Lump-sum payout formula.
+5. Annuity setup defaults and schedule methodology.
+6. Customized tax formulas.
+7. US tax treatment and limitations.
+8. Lump-sum vs annuity results.
+9. FX integration and both provider registrations.
+10. Registry, sitemap, SEO and embed integration.
+11. MongoDB activation.
+12. Changed files.
+13. Three local Git commit hashes.
+14. Temporary files cleaned: YES/NO.
+15. Final status: DEVELOPED / ALREADY DEVELOPED / BLOCKED.
+
+**STOP after completing Lottery Tax Calculator. Do not start another calculator.**
