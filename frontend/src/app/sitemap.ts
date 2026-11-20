@@ -641,6 +641,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cross-price-elasticity-calculator',
   'current-ratio-calculator',
   'degree-of-operating-leverage-calculator',
+  'dio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
   'college-cost-calculator',

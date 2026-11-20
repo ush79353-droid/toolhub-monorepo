@@ -3388,6 +3388,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DegreeOfOperatingLeverageCalculator,
     })),
   ),
+  DioCalculator: lazyTool(() =>
+    import('@/tools/calculators/dio/DioCalculator').then((mod) => ({
+      default: mod.DioCalculator,
+    })),
+  ),
   CashOnCashReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/cash-on-cash-return/CashOnCashReturnCalculator'

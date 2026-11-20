@@ -472,6 +472,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CustomerRetentionRateCalculator',
   'DaysOffCalculator',
   'DegreeOfOperatingLeverageCalculator',
+  'DioCalculator',
   'DividendDiscountModelCalculator',
   'DividendPayoutRatioCalculator',
   'DividendYieldCalculator',
@@ -1140,6 +1141,7 @@ if (isDirect) {
     !isApprovedComponentKey('CustomerRetentionRateCalculator') ||
     !isApprovedComponentKey('DaysOffCalculator') ||
     !isApprovedComponentKey('DegreeOfOperatingLeverageCalculator') ||
+    !isApprovedComponentKey('DioCalculator') ||
     !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DividendPayoutRatioCalculator') ||
     !isApprovedComponentKey('DividendYieldCalculator') ||

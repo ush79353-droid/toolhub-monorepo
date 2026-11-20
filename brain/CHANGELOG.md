@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add DIO Calculator
+- **Summary:** Shipped DIO (Days Inventory Outstanding) Calculator on existing catalog slug `dio-calculator` (`DioCalculator`, catalog `6af46f10a27d8d1d4e99012a`, preserved `nameKey` `dio calculator`). Screenshot-first (ADR-023): average inventory (starting/ending or direct) + COGS + period days → DIO; inventory turnover supplementary; zero COGS undefined; zero inventory → DIO 0. Denomination-only CurrencySelect (PKR default, no FX). No reverse solve modes. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** start $500,000 · end $750,000 · COGS $6,000,000 · 365 days → avg **$625,000** · DIO ≈ **38.02 days** · turnover **9.60×**.
+- **Important Files:** `frontend/src/tools/calculators/dio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Degree of Operating Leverage Calculator
 - **Summary:** Shipped Degree of Operating Leverage Calculator on existing catalog slug `degree-of-operating-leverage-calculator` (`DegreeOfOperatingLeverageCalculator`, catalog `6af46f10a27d8d1d4e990129`, preserved `nameKey` `degree of operating leverage calculator`). Screenshot-first (ADR-023): period-to-period %Δ sales/EBIT → DOL with reverse modes; optional contribution-margin CVP method; zero sales-change undefined; negative DOL preserved. Denomination-only CurrencySelect for CM mode (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** sales +10% · EBIT +30% → DOL **3.00**; CM path $500k − $300k VC − $100k FC → DOL **2.00**.
