@@ -224,6 +224,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'mirr-calculator',
   'money-market-account-calculator',
   'money-per-hour-calculator',
+  'rate-of-pay-calculator',
   'time-and-a-half-calculator',
   'monthly-income-calculator',
   'monthly-income-hourly-calculator',

@@ -179,7 +179,7 @@ Temporary files cleaned: YES. No push.
 - Still BLOCKED: curl + IDE browser both Incapsula 403; no dor-boundary/dor-jurisdiction files on disk. No commits.
 
 
-| 57 | Quiz: Annual Income Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Only Q1/7 supplied; must not invent Q2–Q7; catalog `6af46f0fa27d8d1d4e99006e` |
+| 57 | Quiz: Annual Income Calculator | DEVELOPED | AUDIT PENDING | f4b4cf1b | 398a7e99 | *(reg hash)* | Completed Tools | `QuizAnnualIncomeCalculator`; slug `quiz-annual-income-calculator`; Mongo `6af46f0fa27d8d1d4e99006e`; 7 Omni-recovered questions; indexable false |
 | 56b | Marriage Tax Calculator | DEVELOPED | AUDIT PENDING | afa772c9 | cfdbb264+3cac2892 | de28b909 | Completed Tools | `MarriageTaxCalculator`; Mongo `6af46f0fa27d8d1d4e990065` |
 
 - 2026-11-20 (Quiz Annual Income): BLOCKED — hidden Q2–Q7 missing. Missouri untouched. Push/Pull/Fetch/Sync: NONE.
@@ -200,7 +200,7 @@ Scanned 5 folders under `In Progress`. **No eligible claimable actionable calcul
 | Missouri Sales Tax Calculator | ON HOLD | Explicit exclusion; not modified |
 | Net to Gross Calculator | ACTIVE — OTHER AGENT | Owner `cursor-agent-20261120-203557-34804` retained claim; engine-only preserved under `calculators/net-to-gross/`; Mongo `…006b` undeveloped |
 | Biden's Tax Plan Calculator | BLOCKED — UNRESOLVED | AFP identity from screenshot; age/dependents/baseline-year gaps remain; Mongo `…0055` |
-| Quiz: Annual Income Calculator | BLOCKED — UNRESOLVED | Only Q1/7 available; Mongo `…006e` |
+| Quiz: Annual Income Calculator | DEVELOPED | Q1–Q7 recovered from Omni `annual-income-quiz`; Mongo `…006e` |
 | Take-Home-Paycheck Calculator | BLOCKED — UNRESOLVED | Anderson @ 1.37% still no authorized state (KS ACS match is circumstantial only); Mongo `…0074`; not Texas Tax |
 
 Remaining In Progress: all 5 above.
@@ -218,7 +218,20 @@ Full report: `OMEGA-50-CALCULATOR-REPAIR-REPORT.md`. Missouri ON HOLD untouched.
 | Disclosures (MAGI/AGI/RMD/AMT/…) | FIXED / ALREADY FIXED | `cb645b38` |
 | Net to Gross Calculator | DEVELOPED | `2c0f976b` / `4535b2ec` / `453c0c5c`; Mongo `…006b` active; folder → Completed Tools |
 | Biden / Quiz / Take-Home | BLOCKED | Still In Progress |
-| Build Back Better / Rate of Pay | SPECIFICATION REQUIRED | Catalog only; no project screenshot/prompt |
+| Build Back Better | SPECIFICATION REQUIRED | Catalog only; no project screenshot/prompt |
+| Rate of Pay Calculator | DEVELOPED | Authorized screenshot supplied 2026-11-21; see register row 64 |
 
 | 62 | Net to Gross Calculator | DEVELOPED | AUDIT PENDING | 2c0f976b | 4535b2ec | 453c0c5c | Completed Tools | `NetToGrossCalculator`; slug `net-to-gross-calculator`; Mongo `6af46f0fa27d8d1d4e99006b`; Phase 2 FX; indexable false; TASKS `TOOL-577` |
+
+### 2026-11-21 — Quiz: Annual Income Calculator DEVELOPED
+
+Q2–Q7 recovered from Omni Calculator reference `https://www.omnicalculator.com/finance/annual-income-quiz` (matches screenshot title/Q1/results). Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
+
+| 57 | Quiz: Annual Income Calculator | DEVELOPED | AUDIT PENDING | f4b4cf1b | 398a7e99 | *(reg hash)* | Completed Tools | `QuizAnnualIncomeCalculator`; Mongo `6af46f0fa27d8d1d4e99006e` active; indexable false; TASKS `TOOL-580` |
+
+### 2026-11-21 — Rate of Pay Calculator DEVELOPED
+
+Prior SPECIFICATION REQUIRED resolved with authorized Rate of Pay screenshot (hours/week + six wage FX fields). RMD misfile left historical. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
+
+| 64 | Rate of Pay Calculator | DEVELOPED | AUDIT PENDING | 3cbdf54f | 831424e8 | *(reg hash)* | Completed Tools | `RateOfPayCalculator`; slug `rate-of-pay-calculator`; Mongo `6af46f0fa27d8d1d4e99006f` active; Phase 2 FX; indexable false; TASKS `TOOL-579` |
 

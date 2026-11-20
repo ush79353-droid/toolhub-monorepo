@@ -3421,6 +3421,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PvifaCalculator,
     })),
   ),
+  RateOfPayCalculator: lazyTool(() =>
+    import('@/tools/calculators/rate-of-pay/RateOfPayCalculator').then((mod) => ({
+      default: mod.RateOfPayCalculator,
+    })),
+  ),
   RateOfReturnCalculator: lazyTool(() =>
     import('@/tools/calculators/rate-of-return/RateOfReturnCalculator').then((mod) => ({
       default: mod.RateOfReturnCalculator,

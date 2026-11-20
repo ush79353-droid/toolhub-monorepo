@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Rate of Pay Calculator
+- **Summary:** Completed Rate of Pay Calculator on existing catalog slug `rate-of-pay-calculator` (`RateOfPayCalculator`, catalog `6af46f0fa27d8d1d4e99006f`). Screenshot-first six-way wage conversion (hourly/daily/weekly/biweekly/monthly/annual) with hours/week default 40 and independent Phase 2 FX on each money field. Reuses verified Wage Calculator period math. Prior SPECIFICATION REQUIRED / RMD misfile resolved via authorized Rate of Pay screenshot. **`indexable` preserved false**. RMD / Wage siblings untouched.
+- **Example:** Hourly **500** · 40h → weekly **20,000** · annual **1,040,000** · monthly ≈ **86,666.67** · biweekly **40,000** · daily **4,000**.
+- **Important Files:** `frontend/src/tools/calculators/rate-of-pay/*`, registry, sitemap, dual FX slug lists, `tool.key.ts`, brain docs, tracker.
+- **Verification:** `tsx` rate-of-pay calculation self-check passed. Mongo `tool:assign --set-active` (`indexable` false). Three ADR-019 local commits. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Add Net to Gross Calculator + audit infrastructure repairs
 - **Summary:** Completed Net to Gross Calculator on existing catalog slug `net-to-gross-calculator` (`NetToGrossCalculator`, catalog `6af46f0fa27d8d1d4e99006b`). Screenshot-first five-field rN/rG model with Phase 2 FX. Also restored Canada GST/QST registration (`CanadaGstQstCalculator`), added `monthly-income-calculator` to both FX slug lists, linked NY/TX in State Tax navigator, added `alabama-tax-calculator` to sitemap, and clarified multiple calculator limitation disclosures (MAGI/AGI/RMD/AMT/etc.).
 - **Example:** Net **100** · rN **20%** → tax **20** · gross **120** · rG ≈ **16.6667%**.

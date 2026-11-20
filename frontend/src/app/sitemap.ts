@@ -809,6 +809,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'hours-pay-calculator',
   'selling-leave-days-calculator',
   'monthly-income-calculator',
+  'rate-of-pay-calculator',
   'wage-calculator',
   'wage-to-salary-calculator',
   'yearly-wage-calculator',

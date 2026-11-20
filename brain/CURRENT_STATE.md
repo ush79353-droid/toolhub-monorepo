@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Residual Income Calculator live at `/tools/residual-income-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Rate of Pay Calculator live at `/tools/rate-of-pay-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Rate of Pay Calculator (`/tools/rate-of-pay-calculator`):** Live client-side six-way wage converter (`componentKey: 'RateOfPayCalculator'`, catalog `6af46f0fa27d8d1d4e99006f`, pillar/subPillar null). Screenshot-first (ADR-023): hours/week (default 40); hourly/daily/weekly/biweekly/monthly/annual FX (last-edited authoritative); instruction “Put in one of the wages to see the rest!”. Reuses Wage Calculator period math; 5 workdays/week · 52 weeks/year · biweekly ≠ semi-monthly. Dual FX slug lists; hours never convert. RMD / Wage siblings untouched. Activated; **`indexable` left false**. Example: 500/hr · 40h → weekly **20,000** · annual **1,040,000** · monthly ≈ **86,666.67**.
 - **Residual Income Calculator (`/tools/residual-income-calculator`):** Live client-side RI tool (`componentKey: 'ResidualIncomeCalculator'`, catalog `6af46f10a27d8d1d4e990169`, `nameKey` `residual income calculator`). Screenshot-first (ADR-023): equity capital + cost of equity % → equity charge; NI − charge → RI; positive/zero/negative interpretation; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: EC **800,000** · r **10%** · NI **140,000** → charge **80,000** · RI **60,000**.
 - **Relative Strength Index Calculator (RSI) (`/tools/relative-strength-index-calculator-rsi`):** Live client-side RSI tool (`componentKey: 'RelativeStrengthIndexCalculator'`, catalog `6af46f10a27d8d1d4e990168`, `nameKey` `relative strength index calculator (rsi)`). Screenshot-first (ADR-023): dynamic closing prices; period n (default 14); Wilder (default) or simple-average; AvgGain/AvgLoss/RS/RSI; zero-gain→100, zero-loss→0, flat→50; SVG sparkline when series ≥2; no CurrencySelect. Activated; **`indexable` left false**. Example: period **5** · 100,102,101,104,103,106 → RSI **80.00**.
 - **Price to Earnings Ratio Calculator (`/tools/price-to-earnings-ratio-calculator`):** Live client-side P/E tool (`componentKey: 'PriceToEarningsRatioCalculator'`, catalog `6af46f10a27d8d1d4e990167`, `nameKey` `price to earnings ratio calculator`). Screenshot-first (ADR-023): price ÷ EPS → P/E; optional EPS from NI−preferred÷shares; zero EPS → Not defined; negative EPS → N/M; interpretation bands; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **120** / **10** → **12.00×**; EPS path NI **1,000,000** − pref **100,000** ÷ **100,000** → EPS **9** · price **135** → P/E **15.00×**.
