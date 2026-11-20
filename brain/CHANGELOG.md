@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Cap Rate Calculator
+- **Summary:** Shipped Cap Rate Calculator on existing catalog slug `cap-rate-calculator` (`CapRateCalculator`, catalog `6af46f10a27d8d1d4e990113`, preserved `nameKey` `cap rate calculator`). Screenshot-first (ADR-023): Property information → NOI and cap rate; independent reverse property value from NOI + rate; independent required NOI; vacancy and OpEx; monthly/annual income conversion preserving annual value. Denomination-only CurrencySelect (USD default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $72,000 rent + $3,000 other − 5% vacancy − $25,000 OpEx → NOI **$46,250**; $600,000 value → cap ≈ **7.71%**; reverse $50,000 @ 8% → **$625,000**.
+- **Important Files:** `frontend/src/tools/calculators/cap-rate/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add ARV Calculator – After Repair Value
 - **Summary:** Shipped ARV Calculator on existing catalog slug `arv-calculator-after-repair-value` (`ArvCalculator`, catalog `6af46f10a27d8d1d4e990112`, preserved `nameKey` `arv calculator – after repair value`). Screenshot-first (ADR-023): Property value accordion (direct value or average price × area with ft²/m² conversion); ARV = PV + renovation value; Property best purchase price (renovation cost + investor rule → maximum bid, negative bids warned); Potential ROI (gross ROI using custom purchase price or assumed max bid; optional target-ROI reverse purchase price kept separate); Additional settings for custom purchase price. Denomination-only CurrencySelect (USD default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** PV $300,000 + VR $50,000 → ARV **$350,000**; 70% rule − $50,000 cost → max bid **$195,000**; ROI ≈ **42.86%**.

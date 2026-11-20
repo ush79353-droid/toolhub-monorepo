@@ -627,6 +627,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '503020-rule-calculator',
   'apc-calculator',
   'bank-reconciliation-calculator',
+  'cap-rate-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
   'college-cost-calculator',

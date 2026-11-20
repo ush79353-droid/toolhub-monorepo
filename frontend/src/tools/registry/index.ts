@@ -3313,6 +3313,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BankReconciliationCalculator,
     })),
   ),
+  CapRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/cap-rate/CapRateCalculator').then((mod) => ({
+      default: mod.CapRateCalculator,
+    })),
+  ),
   CarAffordabilityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/car-affordability/CarAffordabilityCalculator'
