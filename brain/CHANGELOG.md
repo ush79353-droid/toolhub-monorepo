@@ -4,10 +4,11 @@
 
 ---
 
-### 2026-11-20 — Add Texas Tax Calculator
-- **Summary:** Shipped Texas Tax Calculator on existing catalog slug `texas-tax-calculator` (`TexasTaxCalculator`, catalog `6af46f0fa27d8d1d4e990076`, pillar/subPillar null). Screenshot-first: Payroll (AGI/period, pay frequency, year default 2026, filing status, dependents, itemized/post-tax) + Property (home value, 250 TX counties, ACS 2020–2024 effective rate, Anderson default **0.919%**). Federal ordinary tax + Texas state income tax **$0**; FICA omitted (AGI ≠ wages). Fixed USD. Activated; **`indexable` preserved false**.
-- **Example:** Single · TY2026 · AGI $80k · Anderson · $200k home @ 0.919% → state tax **$0** · property ≈ **$1,838**.
-- **Verification:** `calculation.test.ts`. Three ADR-019 commits. Temporary files cleaned: YES.
+### 2026-11-20 — Add RMD Calculator (Required Minimum Distributions)
+- **Summary:** Shipped RMD Calculator on existing catalog slug `rmd-calculator-required-minimum-distributions-calculator` (`RmdCalculator`, catalog `6af46f0fa27d8d1d4e990070`, pillar/subPillar null). Screenshot-first (ADR-023): spouse >10y younger sole beneficiary; owner age (default 72); account balance FX; RMD FX. Uniform Lifetime Table (IRS Pub 590-B 2022+); age 72 factor **27.4** (not screenshot 25.6). Joint-life Yes → unavailable without spouse age. Dual `CURRENCY_CONVERSION_SLUGS`. Misfiled Rate-of-Pay prompt ignored. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Age 72 · $500,000 → factor **27.4** · RMD ≈ **$18,248.18**.
+- **Important Files:** `frontend/src/tools/calculators/rmd/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Modified Adjusted Gross Income (MAGI) Calculator
 - **Summary:** Shipped MAGI Calculator on existing catalog slug `modified-adjusted-gross-income-magi-calculator` (`ModifiedAdjustedGrossIncomeCalculator`, catalog `6af46f0fa27d8d1d4e990067`, pillar/subPillar null). Screenshot-first (ADR-023): two expandable sections; 12 adjustment FX fields + AGI; illustrative MAGI = AGI + sum (FX-normalized). Not program-specific IRS eligibility. Dual `CURRENCY_CONVERSION_SLUGS`. AGI sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
@@ -30,6 +31,17 @@
 - **Example:** Alberta $100 → GST **$5.00** · after **$105.00**; Quebec $100 → GST **$5.00** + QST **$9.975** · after **$114.975**.
 - **Important Files:** `frontend/src/tools/calculators/canada-gst-qst/*`, registry, sitemap, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add New York Tax Calculator
+- **Summary:** Shipped New York Tax Calculator on existing catalog slug `new-york-tax-calculator` (`NewYorkTaxCalculator`, catalog `6af46f0fa27d8d1d4e99006c`, pillar/subPillar null). Screenshot-first (ADR-023): AGI + period; pay frequency; TY **2025**; filing status; NYC resident Yes/No; dependents; itemized; post-tax. Results: federal + NYS + NYC (when resident) income tax estimates and per-period averages. **No FICA** (AGI ≠ wages). Fixed USD (no FX). Sources: Rev. Proc. 2024-40; NYS IT-201 (2025) standard deductions / dependent exemption $1,000; Tax Law §601 / IT-201 rate schedules; NYC IT-201/IT-360.1 resident schedules. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Single · NYC yes · AGI $80,000 · 0 deps → federal ≈ **$9,049** · NY ≈ **$3,795** · NYC ≈ **$2,666**.
+- **Important Files:** `frontend/src/tools/calculators/new-york-tax/*`, registry, sitemap, `tool.key.ts`.
+- **Verification:** `calculation.test.ts` passed. Commits `4abebdfc` / `0f441eca` / `44d12361`. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add GST Calculator
+- **Summary:** Shipped GST Calculator on existing catalog slug `gst-calculator` (`GstCalculator`, catalog `6af46f0fa27d8d1d4e990060`). Screenshot-first: gross (inclusive) / GST % / net (exclusive) / tax amount; last-edited price authoritative; no default GST %. Dual FX. Activated; **`indexable` left false**.
+- **Example:** Net 100 · GST 10% → tax **10** · gross **110**.
+- **Commits:** `5bc57e75` / `dbf21a1d` / `09a15f85`+`9ecaecaa`.
 
 ### 2026-11-20 — Add Biweekly Pay Calculator
 - **Summary:** Shipped Biweekly Pay Calculator on existing catalog slug `biweekly-pay-calculator` (`BiweeklyPayCalculator`, catalog `6af46f0fa27d8d1d4e990058`, pillar/subPillar null). Screenshot-first (ADR-023): annual/monthly/weekly/daily/hourly wage FX (last-edited authoritative) + hours/week (40) + days/week (5); Answer biweekly wage FX. Formulas: annual÷26; monthly×12÷26; weekly×2; daily×days×2; hourly×hours×2 (26 biweekly periods/year, not semi-monthly). Dual `CURRENCY_CONVERSION_SLUGS`; hours/days never convert. Wage / Wage to Salary / Hours Pay siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
@@ -113,9 +125,10 @@
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Texas Tax Calculator
-- **Summary:** Shipped Texas Tax Calculator on existing catalog slug `texas-tax-calculator` (`TexasTaxCalculator`, catalog `6af46f0fa27d8d1d4e990076`). Payroll + property sections; Texas state income tax always $0; federal TY2025/2026; ACS 2020–2024 county effective property rates (250 counties; Anderson default). Fixed USD; no FX. Activated `--set-active` only — **`indexable` preserved false**.
+- **Summary:** Shipped Texas Tax Calculator on existing catalog slug `texas-tax-calculator` (`TexasTaxCalculator`, catalog `6af46f0fa27d8d1d4e990076`, pillar/subPillar null). Screenshot-first: Payroll (AGI/period, pay frequency, year default 2026, filing status, dependents, itemized/post-tax) + Property (home value, 250 TX counties, ACS 2020–2024 effective rate, Anderson default **0.919%**). Federal ordinary tax + Texas state income tax **$0**; FICA omitted (AGI ≠ wages). Fixed USD. Activated; **`indexable` preserved false**.
+- **Example:** Single · TY2026 · AGI $80k · Anderson · $200k home @ 0.919% → state tax **$0** · property ≈ **$1,838**.
 - **Important Files:** `frontend/src/tools/calculators/texas-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
-- **Verification:** Assert self-check. Mongo without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+- **Verification:** `calculation.test.ts`. Commits `c9a412b0` / `aea50cda` / `844c7a3a`. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Tax Bracket Calculator
 - **Summary:** Shipped Tax Bracket Calculator on existing catalog slug `tax-bracket-calculator` (`TaxBracketCalculator`, catalog `6af46f0fa27d8d1d4e990075`, pillar/subPillar null). Screenshot-first (ADR-023): Year 2024 default (+2025/2026); filing statuses; income USD; deductions default $0; progressive tax, marginal/effective rates, bracket breakdown. Sources: Rev. Proc. 2023-34 / 2024-40 / 2025-32. Fixed USD; no FX. Income Tax sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.

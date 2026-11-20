@@ -479,6 +479,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RentOrBuyCalculator,
     })),
   ),
+  RmdCalculator: lazyTool(() =>
+    import('@/tools/calculators/rmd/RmdCalculator').then((mod) => ({
+      default: mod.RmdCalculator,
+    })),
+  ),
   RrefCalculator: lazyTool(() =>
     import('@/tools/calculators/rref/RrefCalculator').then((mod) => ({
       default: mod.RrefCalculator,

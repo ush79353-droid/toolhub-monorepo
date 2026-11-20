@@ -71,6 +71,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PresentValueOfAnnuityCalculator',
   'RentIncreaseCalculator',
   'RentOrBuyCalculator',
+  'RmdCalculator',
   'RrefCalculator',
   'ArmMortgageCalculator',
   'HundredDayCalculator',
@@ -1667,6 +1668,7 @@ if (isDirect) {
     !isApprovedComponentKey('NetEffectiveRentCalculator') ||
     !isApprovedComponentKey('RentIncreaseCalculator') ||
     !isApprovedComponentKey('RentOrBuyCalculator') ||
+    !isApprovedComponentKey('RmdCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');

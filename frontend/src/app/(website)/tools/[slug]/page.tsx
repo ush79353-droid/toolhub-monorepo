@@ -120,6 +120,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'present-value-of-annuity-calculator',
   'rent-increase-calculator',
   'rent-or-buy-calculator',
+  'rmd-calculator-required-minimum-distributions-calculator',
   'revenue-calculator',
   'revenue-growth-calculator',
   'rv-loan-calculator',

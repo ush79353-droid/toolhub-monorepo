@@ -100,7 +100,13 @@ Audit pending: deferred to final audit coordinator
 
 | 58 | Monthly Income Hourly Calculator | DEVELOPED | AUDIT PENDING | 34586c64 | ea82da3e | c3ecceea | Completed Tools | `MonthlyIncomeHourlyCalculator`; Mongo `6af46f0fa27d8d1d4e99006a`; Phase 2 FX; indexable false |
 
+| 60 | New York Tax Calculator | DEVELOPED | AUDIT PENDING | 4abebdfc | 0f441eca | 44d12361 | Completed Tools | `NewYorkTaxCalculator`; slug `new-york-tax-calculator`; Mongo `6af46f0fa27d8d1d4e99006c`; TY2025 federal+NYS+NYC; fixed USD; indexable false |
+
+| 61 | Modified Adjusted Gross Income (MAGI) Calculator | DEVELOPED | AUDIT PENDING | 03c9fe74 | 516e8910 | c1d34d67 | Completed Tools | `ModifiedAdjustedGrossIncomeCalculator`; slug `modified-adjusted-gross-income-magi-calculator`; Mongo `6af46f0fa27d8d1d4e990067`; Phase 2 FX; indexable false; TASKS `TOOL-574` |
+
 ## Session Log
+- 2026-11-20 (MAGI): Modified Adjusted Gross Income (MAGI) Calculator DEVELOPED (`03c9fe74` / `516e8910` / `c1d34d67`). Mongo `6af46f0fa27d8d1d4e990067`; illustrative AGI+add-backs; indexable false; Phase 2 FX. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-20 (NY Tax): New York Tax Calculator DEVELOPED (`4abebdfc` / `0f441eca` / `44d12361`). Mongo activated; indexable false. Missouri ON HOLD untouched. Temp cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (State Tax): State Tax Calculator DEVELOPED (`51f0cb0b` / `bed1f48c` / c3). Mongo `6af46f0fa27d8d1d4e990073` activated; indexable false. Missouri ON HOLD untouched. Tools empty. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (Monthly Income Hourly): DEVELOPED (`34586c64` / `ea82da3e` / `c3ecceea`). Mongo activated; indexable false. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (this agent): Net to Gross Calculator IN_DEVELOPMENT (engine types/calculation/validation started; UI pending). Folder retained in In Progress. Mongo `6af46f0fa27d8d1d4e99006b` not activated yet.
@@ -180,4 +186,5 @@ Temporary files cleaned: YES. No push.
 - 2026-11-20 (Marriage Tax): DEVELOPED afa772c9 / cfdbb264+3cac2892 / de28b909. Missouri untouched.
 - 2026-11-20 (Texas Tax): DEVELOPED — `TexasTaxCalculator`; Mongo `6af46f0fa27d8d1d4e990076`; 250 TX counties ACS; $0 state income tax; indexable false; folder moved to Completed Tools. Missouri untouched.
 
-| 58 | Texas Tax Calculator | DEVELOPED | AUDIT PENDING | (see delivery) | (see delivery) | (see delivery) | Completed Tools | `TexasTaxCalculator`; slug `texas-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990076` active; FICA omitted; indexable false |
+| 58 | Texas Tax Calculator | DEVELOPED | AUDIT PENDING | c9a412b0 | aea50cda | 844c7a3a | Completed Tools | `TexasTaxCalculator`; slug `texas-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990076` active; FICA omitted; indexable false |
+| 59 | RMD Calculator - Required Minimum Distributions Calculator | DEVELOPED | AUDIT PENDING | 8c3fe074 | 49dd5619 | PENDING3 | Completed Tools | `RmdCalculator`; slug `rmd-calculator-required-minimum-distributions-calculator`; Mongo `6af46f0fa27d8d1d4e990070` active; Uniform Lifetime 2022+; Phase 2 FX; indexable false; TASKS `TOOL-576` |
