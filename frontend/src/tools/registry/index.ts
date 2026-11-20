@@ -158,6 +158,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GrossRentMultiplierCalculator,
     })),
   ),
+  GratuityCalculator: lazyTool(() =>
+    import('@/tools/calculators/gratuity/GratuityCalculator').then((mod) => ({
+      default: mod.GratuityCalculator,
+    })),
+  ),
   GrowingAnnuityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/growing-annuity/GrowingAnnuityCalculator'
@@ -298,6 +303,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/alabama-tax/AlabamaTaxCalculator').then(
       (mod) => ({
         default: mod.AlabamaTaxCalculator,
+      }),
+    ),
+  ),
+  CaliforniaTaxCalculator: lazyTool(() =>
+    import('@/tools/calculators/california-tax/CaliforniaTaxCalculator').then(
+      (mod) => ({
+        default: mod.CaliforniaTaxCalculator,
       }),
     ),
   ),

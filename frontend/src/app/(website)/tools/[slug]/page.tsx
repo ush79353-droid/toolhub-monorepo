@@ -90,6 +90,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'bitcoin-etf-calculator',
   'biweekly-mortgage-calculator',
   'bi-weekly-mortgage-payment-calculator',
+  'biweekly-pay-calculator',
   'margin-of-safety-calculator',
   'mortgage-points-calculator',
   'mortgage-refinance-calculator',

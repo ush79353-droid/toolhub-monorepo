@@ -42,6 +42,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gross-margin/detail'),
   GrossRentMultiplierCalculator: () =>
     import('@/tools/calculators/gross-rent-multiplier/detail'),
+  GratuityCalculator: () => import('@/tools/calculators/gratuity/detail'),
   GrowingAnnuityCalculator: () =>
     import('@/tools/calculators/growing-annuity/detail'),
   IllinoisOvertimeCalculator: () =>
@@ -82,6 +83,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/philippines-income-tax/detail'),
   AlabamaTaxCalculator: () =>
     import('@/tools/calculators/alabama-tax/detail'),
+  CaliforniaTaxCalculator: () =>
+    import('@/tools/calculators/california-tax/detail'),
   CaliforniaSalesTaxCalculator: () =>
     import('@/tools/calculators/california-sales-tax/detail'),
   FloridaSalesTaxCalculator: () =>

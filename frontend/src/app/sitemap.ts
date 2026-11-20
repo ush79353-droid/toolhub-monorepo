@@ -56,6 +56,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'income-tax-philippines-calculator',
   'sales-tax-calculator-new-jersey',
   'california-sales-tax-calculator',
+  'california-tax-calculator',
   'florida-sales-tax-calculator',
   'ohio-sales-tax-calculator',
   'new-york-overtime-calculator',

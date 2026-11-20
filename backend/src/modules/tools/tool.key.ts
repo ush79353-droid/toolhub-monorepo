@@ -44,6 +44,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'IncomeTaxCalculatorPhilippines',
   'AdjustedGrossIncomeCalculator',
   'AlabamaTaxCalculator',
+  'CaliforniaTaxCalculator',
   'CaliforniaSalesTaxCalculator',
   'FloridaSalesTaxCalculator',
   'NewJerseySalesTaxCalculator',
@@ -1613,6 +1614,7 @@ if (isDirect) {
     !isApprovedComponentKey('IncomeTaxCalculatorPhilippines') ||
     !isApprovedComponentKey('AdjustedGrossIncomeCalculator') ||
     !isApprovedComponentKey('AlabamaTaxCalculator') ||
+    !isApprovedComponentKey('CaliforniaTaxCalculator') ||
     !isApprovedComponentKey('CaliforniaSalesTaxCalculator') ||
     !isApprovedComponentKey('FloridaSalesTaxCalculator') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
