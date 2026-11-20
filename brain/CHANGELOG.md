@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add DSO Calculator
+- **Summary:** Shipped DSO (Days Sales Outstanding) Calculator on existing catalog slug `dso-calculator` (`DsoCalculator`, catalog `6af46f10a27d8d1d4e99012c`, preserved `nameKey` `dso calculator`). Screenshot-first (ADR-023): Receivables + Sales accordions; avg AR from beg/end or direct; total sales (default) or net credit sales; period days → DSO; AR turnover; zero sales undefined. Denomination-only CurrencySelect (PKR default, no FX). No reverse modes / no returns breakdown. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** AR 20,000/35,000 · sales 500,000 · 365 days → avg **27,500** · DSO **20.08 days**.
+- **Important Files:** `frontend/src/tools/calculators/dso/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add DPO Calculator – Days Payable Outstanding
 - **Summary:** Shipped DPO Calculator on existing catalog slug `dpo-calculator-days-payable-outstanding` (`DpoCalculator`, catalog `6af46f10a27d8d1d4e99012b`, preserved `nameKey` `dpo calculator – days payable outstanding`). Screenshot-first (ADR-023): Average Payables / Purchases / DPO accordions; purchases = COGS + end inv − beg inv (or direct); zero/negative purchases guards; AP turnover supplementary. Denomination-only CurrencySelect (PKR default, no FX). No reverse solve modes. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** AP 150k/200k · inv 500k/400k · COGS 1.5M · 365d → avg AP **175,000** · purchases **1,400,000** · DPO **45.63 days**.

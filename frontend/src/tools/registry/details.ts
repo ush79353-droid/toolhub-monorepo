@@ -882,6 +882,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/degree-of-operating-leverage/detail'),
   DioCalculator: () => import('@/tools/calculators/dio/detail'),
   DpoCalculator: () => import('@/tools/calculators/dpo/detail'),
+  DsoCalculator: () => import('@/tools/calculators/dso/detail'),
   CashOnCashReturnCalculator: () =>
     import('@/tools/calculators/cash-on-cash-return/detail'),
   CarAffordabilityCalculator: () =>
