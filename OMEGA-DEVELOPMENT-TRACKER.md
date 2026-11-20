@@ -1,4 +1,4 @@
-﻿# OmegaCalculators — Automated Development Tracker
+# OmegaCalculators — Automated Development Tracker
 
 ## Summary
 
@@ -187,4 +187,7 @@ Temporary files cleaned: YES. No push.
 - 2026-11-20 (Texas Tax): DEVELOPED — `TexasTaxCalculator`; Mongo `6af46f0fa27d8d1d4e990076`; 250 TX counties ACS; $0 state income tax; indexable false; folder moved to Completed Tools. Missouri untouched.
 
 | 58 | Texas Tax Calculator | DEVELOPED | AUDIT PENDING | c9a412b0 | aea50cda | 844c7a3a | Completed Tools | `TexasTaxCalculator`; slug `texas-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990076` active; FICA omitted; indexable false |
-| 59 | RMD Calculator - Required Minimum Distributions Calculator | DEVELOPED | AUDIT PENDING | 8c3fe074 | 49dd5619 | PENDING3 | Completed Tools | `RmdCalculator`; slug `rmd-calculator-required-minimum-distributions-calculator`; Mongo `6af46f0fa27d8d1d4e990070` active; Uniform Lifetime 2022+; Phase 2 FX; indexable false; TASKS `TOOL-576` |
+| 59 | RMD Calculator - Required Minimum Distributions Calculator | DEVELOPED | AUDIT PENDING | 8c3fe074 | 49dd5619 | 281ad9c1 | Completed Tools | `RmdCalculator`; slug `rmd-calculator-required-minimum-distributions-calculator`; Mongo `6af46f0fa27d8d1d4e990070` active; Uniform Lifetime 2022+; Phase 2 FX; indexable false; TASKS `TOOL-576` |
+
+- 2026-11-20 (RMD): RMD Calculator DEVELOPED (8c3fe074 / 49dd5619 / `281ad9c1`). Mongo 6af46f0fa27d8d1d4e990070 activated; indexable false; Uniform Lifetime 2022+; Phase 2 FX. Registry lines co-landed with concurrent MAGI `b4dc098d`. Moved to Completed Tools. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
