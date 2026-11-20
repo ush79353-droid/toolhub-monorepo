@@ -99,6 +99,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/ohio-sales-tax/detail'),
   SalesTaxCalculator: () => import('@/tools/calculators/sales-tax/detail'),
   GrossToNetCalculator: () => import('@/tools/calculators/gross-to-net/detail'),
+  GstCalculator: () => import('@/tools/calculators/gst/detail'),
   NewYorkOvertimeCalculator: () =>
     import('@/tools/calculators/new-york-overtime/detail'),
   OperatingMarginCalculator: () =>
@@ -871,6 +872,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bi-weekly-mortgage-payment/detail'),
   BiweeklyPayCalculator: () =>
     import('@/tools/calculators/biweekly-pay/detail'),
+  SemiMonthlyPayCalculator: () =>
+    import('@/tools/calculators/semi-monthly-pay/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
   BondCalculator: () => import('@/tools/calculators/bond/detail'),

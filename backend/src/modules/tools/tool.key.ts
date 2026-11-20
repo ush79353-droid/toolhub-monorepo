@@ -53,6 +53,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'OhioSalesTaxCalculator',
   'SalesTaxCalculator',
   'GrossToNetCalculator',
+  'GstCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
   'NetProfitMarginCalculator',
@@ -616,6 +617,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
   'BiweeklyPayCalculator',
+  'SemiMonthlyPayCalculator',
   'BoatLoanCalculator',
   'BondCalculator',
   'BondConvexityCalculator',
@@ -1384,6 +1386,7 @@ if (isDirect) {
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
     !isApprovedComponentKey('BiweeklyPayCalculator') ||
+    !isApprovedComponentKey('SemiMonthlyPayCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
     !isApprovedComponentKey('BondCalculator') ||
     !isApprovedComponentKey('BondConvexityCalculator') ||
@@ -1634,6 +1637,7 @@ if (isDirect) {
     !isApprovedComponentKey('OhioSalesTaxCalculator') ||
     !isApprovedComponentKey('SalesTaxCalculator') ||
     !isApprovedComponentKey('GrossToNetCalculator') ||
+    !isApprovedComponentKey('GstCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||

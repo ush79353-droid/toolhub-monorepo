@@ -20,6 +20,7 @@ import type { ToolMetadata } from '@/types/tool';
 const CURRENCY_CONVERSION_SLUGS = new Set([
   'margin-and-sales-tax-calculator',
   'sales-tax-calculator',
+  'gst-calculator',
   'gross-to-net-calculator',
   'margin-interest-calculator',
   'margin-with-discount-calculator',
@@ -44,6 +45,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'bitcoin-etf-calculator',
   'biweekly-mortgage-calculator',
   'biweekly-pay-calculator',
+  'semi-monthly-pay-calculator',
   'bi-weekly-mortgage-payment-calculator',
   'mortgage-points-calculator',
   'mortgage-refinance-calculator',

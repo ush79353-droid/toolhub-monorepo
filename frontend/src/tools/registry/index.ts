@@ -365,6 +365,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  GstCalculator: lazyTool(() =>
+    import('@/tools/calculators/gst/GstCalculator').then((mod) => ({
+      default: mod.GstCalculator,
+    })),
+  ),
   NewYorkOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/new-york-overtime/NewYorkOvertimeCalculator'
@@ -3369,6 +3374,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/biweekly-pay/BiweeklyPayCalculator'
     ).then((mod) => ({
       default: mod.BiweeklyPayCalculator,
+    })),
+  ),
+  SemiMonthlyPayCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/semi-monthly-pay/SemiMonthlyPayCalculator'
+    ).then((mod) => ({
+      default: mod.SemiMonthlyPayCalculator,
     })),
   ),
   BoatLoanCalculator: lazyTool(() =>
