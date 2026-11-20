@@ -104,6 +104,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/texas-tax/detail'),
   CaliforniaSalesTaxCalculator: () =>
     import('@/tools/calculators/california-sales-tax/detail'),
+  CanadaGstQstCalculator: () =>
+    import('@/tools/calculators/canada-gst-qst/detail'),
   FloridaSalesTaxCalculator: () =>
     import('@/tools/calculators/florida-sales-tax/detail'),
   NewJerseySalesTaxCalculator: () =>

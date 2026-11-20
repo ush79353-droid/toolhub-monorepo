@@ -60,6 +60,8 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'income-tax-philippines-calculator',
   'sales-tax-calculator-new-jersey',
   'california-sales-tax-calculator',
+  'gstqst-calculator-for-canada',
+  'alabama-tax-calculator',
   'california-tax-calculator',
   'illinois-tax-calculator',
   'state-tax-calculator',

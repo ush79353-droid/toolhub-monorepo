@@ -370,6 +370,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CaliforniaSalesTaxCalculator,
     })),
   ),
+  CanadaGstQstCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/canada-gst-qst/CanadaGstQstCalculator'
+    ).then((mod) => ({
+      default: mod.CanadaGstQstCalculator,
+    })),
+  ),
   FloridaSalesTaxCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/florida-sales-tax/FloridaSalesTaxCalculator'

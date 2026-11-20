@@ -19,9 +19,15 @@ import { resolveStateTaxDestination } from './calculation';
 }
 
 {
+  const r = resolveStateTaxDestination('NY');
+  assert.equal(r.available, true);
+  assert.equal(r.href, '/tools/new-york-tax-calculator');
+}
+
+{
   const r = resolveStateTaxDestination('TX');
-  assert.equal(r.available, false);
-  assert.equal(r.href, null);
+  assert.equal(r.available, true);
+  assert.equal(r.href, '/tools/texas-tax-calculator');
 }
 
 {

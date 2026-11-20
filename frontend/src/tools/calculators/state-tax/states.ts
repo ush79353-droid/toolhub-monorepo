@@ -8,13 +8,15 @@ export interface UsStateOption {
 
 /**
  * Verified live destinations (isActive + isDeveloped + registered):
- * Alabama, California (income tax — not sales tax), Illinois.
- * New York / Texas catalog rows exist but are undeveloped — no link.
+ * Alabama, California (income tax — not sales tax), Illinois,
+ * New York, Texas.
  */
 const LIVE_STATE_TAX_SLUGS: Record<string, string> = {
   AL: 'alabama-tax-calculator',
   CA: 'california-tax-calculator',
   IL: 'illinois-tax-calculator',
+  NY: 'new-york-tax-calculator',
+  TX: 'texas-tax-calculator',
 };
 
 const STATE_NAMES: Array<{ code: string; name: string }> = [
