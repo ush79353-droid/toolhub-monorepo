@@ -1,0 +1,87 @@
+# Cursor Prompt — Revenue Calculator
+
+Develop **Revenue Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `revenue-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+- Search existing MongoDB records by title, slug and aliases.
+- If no matching authorized record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Compare with existing Price / Quantity Calculator and business revenue tools; reuse appropriate calculation utilities.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+Preserve exactly three fields:
+
+1. **Price** — monetary input/output with PKR currency selector.
+2. **Quantity** — numeric input/output.
+3. **Total revenue** — monetary input/output with PKR currency selector.
+
+Allow users to enter **any two values and calculate the third**. Use the last edited fields to determine the unknown.
+
+Reuse Share Result, Reload Calculator, Clear All Changes and feedback controls. Follow OmegaCalculators styling, not screenshot styling.
+
+## 3. Accurate Calculations
+
+Implement bidirectional formulas:
+
+- `Total Revenue = Price × Quantity`
+- `Price = Total Revenue / Quantity`
+- `Quantity = Total Revenue / Price`
+
+Requirements:
+- Correctly detect the missing value; zero is valid and not treated as blank.
+- Validate nonnegative price, quantity and revenue.
+- Permit fractional quantity when applicable.
+- Handle division by zero and ambiguous cases safely.
+- Prevent circular updates, NaN and Infinity.
+- Preserve full precision; round only for display.
+- Do not introduce taxes, discounts or unsupported calculation modes.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent PKR selectors.
+
+- Reuse shared Phase 2 numeric FX infrastructure.
+- Convert monetary amounts numerically, not symbols only.
+- Normalize price and total revenue into a common calculation currency.
+- Preserve independent selectors and canonical full precision.
+- Register slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale rates safely; never assume 1:1 exchange rates.
+- Never FX-convert quantity.
+
+## 5. Project Integration
+- Register both frontend component-key lists, lazy registry, details, backend tool key and actual live sitemap.
+- Reuse SEO, guides, ads, embeds and shared calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(revenue): create calculator UI`
+2. `feat(revenue): implement bidirectional revenue calculations and FX`
+3. `feat(revenue): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, formulas, FX integration, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

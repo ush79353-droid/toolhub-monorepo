@@ -1,0 +1,104 @@
+# Cursor Prompt — Lease Mileage Calculator
+
+Develop **Lease Mileage Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `lease-mileage-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+- Search existing MongoDB records by title, slug and aliases.
+- If no authorized matching record exists, SKIP; never create a record.
+- If already developed or colleague-owned, STOP.
+- Compare with Car Lease Calculator and Auto Lease Calculator; reuse relevant shared utilities.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+**Lease Details**
+- Total lease term — years and months.
+- Remaining lease time — years and months.
+- Current miles driven — distance input with km/mi selector.
+- Annual mileage allowance — distance input with km/mi selector.
+- Excess distance fee — monetary input with PKR selector and per-distance unit (PKR/km or PKR/mi).
+
+**Results**
+- Predicted excess miles — calculated distance with km/mi selector.
+- Predicted lease-end charge — calculated monetary output with PKR selector.
+- Monthly savings required — calculated monetary output with currency and per-month units.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls. Preserve functionality, not screenshot styling.
+
+## 3. Accurate Calculations
+
+Use a transparent constant-driving-rate projection.
+
+Let:
+- Total term = T months.
+- Remaining term = R months.
+- Elapsed term = T − R.
+- Current distance = D.
+- Annual allowance = A distance units/year.
+- Excess fee = F per distance unit.
+
+Calculate:
+
+- Estimated annual driving rate = D × 12 / Elapsed Term.
+- Predicted total distance = D × T / Elapsed Term.
+- Total allowed distance = A × T / 12.
+- Predicted excess distance = max(0, Predicted Total Distance − Total Allowed Distance).
+- Predicted lease-end charge = Predicted Excess Distance × F.
+- Monthly savings required = Predicted Lease-end Charge / Remaining Term.
+
+Requirements:
+- Normalize all km/mi inputs and fee distance units before calculating.
+- Validate positive total term and `0 < remaining term < total term` for the projection.
+- If no lease time has elapsed, show an informative unavailable estimate rather than dividing by zero.
+- Handle zero excess mileage, zero fee and valid zero current distance.
+- Preserve full precision and round only for display.
+- Clearly label the projection assumption: future driving continues at the historical average rate.
+- Do not invent lease penalties, taxes or other charges.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent currency selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary amounts numerically, not symbols only.
+- Preserve independent money selectors and canonical precision.
+- Register slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale exchange rates safely.
+- Convert km/mi separately using accurate distance conversion, not FX.
+- Never FX-convert distance quantities or durations.
+
+## 5. Project Integration
+- Register both frontend component-key lists, lazy registry, details, backend key and actual live sitemap.
+- Reuse SEO, guides, ads, embeds and shared actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(lease-mileage): create calculator UI`
+2. `feat(lease-mileage): implement mileage projections and FX`
+3. `feat(lease-mileage): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only files created temporarily during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, projection assumptions, km/mi and FX handling, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

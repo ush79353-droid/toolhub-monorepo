@@ -1,0 +1,112 @@
+# Cursor Prompt — Car Lease Calculator
+
+Develop **Car Lease Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `car-lease-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Duplicate Check
+- Search existing MongoDB records by title, slug and aliases.
+- Compare with Auto Lease Calculator and Lease Calculator.
+- If no separate authorized record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+- Reuse existing lease calculation utilities where appropriate.
+
+## 2. Screenshot Fields
+
+Preserve these three sections and their field order.
+
+**Basic Information**
+- MSRP — monetary input with PKR currency selector.
+- Negotiated selling price — monetary input with PKR selector.
+- Lease term — default 36 months.
+- Sales tax — percentage input.
+- Residual factor — percentage input.
+- Money factor — numeric input, default 0.001.
+
+**Additional Information**
+- Dealer fee — monetary input.
+- Registration fee — monetary input.
+- Down payment — monetary input.
+- Trade-in value — monetary input.
+- Other reductions — monetary input.
+
+**Results**
+- Net capitalized cost.
+- Residual value.
+- Monthly depreciation fee.
+- Monthly lease fee.
+- Monthly base payment (pre-tax).
+- Monthly sales tax.
+- Monthly lease payment (incl. tax).
+
+All monetary fields should use the appropriate independent PKR selectors.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls. Follow OmegaCalculators styling, not the reference styling.
+
+## 3. Accurate Lease Calculations
+
+Use a standard money-factor lease model:
+
+- Residual value = MSRP × Residual Factor / 100.
+- Net capitalized cost = Negotiated Selling Price + Dealer Fee + Registration Fee − Down Payment − Trade-in Value − Other Reductions.
+- Monthly depreciation = (Net Capitalized Cost − Residual Value) / Lease Months.
+- Monthly lease fee = (Net Capitalized Cost + Residual Value) × Money Factor.
+- Monthly base payment = Monthly Depreciation + Monthly Lease Fee.
+- Monthly sales tax = Monthly Base Payment × Sales Tax / 100.
+- Monthly lease payment = Monthly Base Payment + Monthly Sales Tax.
+
+Requirements:
+- Clearly disclose that fees are assumed financed into capitalized cost and sales tax is applied monthly.
+- Avoid counting down payment, trade-in or other reductions twice.
+- Validate positive term, nonnegative fees and valid residual factor.
+- Handle zero money factor, zero tax and zero down payment.
+- Prevent negative or nonfinite payments; report unsupported cases instead of silently clamping results.
+- Preserve full precision and round only for display.
+- Do not invent additional taxes or lease penalties.
+
+## 4. Real Currency Conversion
+
+Screenshot includes independent PKR monetary selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary values numerically, not symbols only.
+- Normalize MSRP, price, fees, reductions and result amounts into a common currency.
+- Preserve independent selectors and canonical precision.
+- Register slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale exchange rates safely.
+- Never FX-convert sales-tax percentages, residual factors, money factors or duration.
+
+## 5. Project Integration
+- Register both frontend key lists, lazy registry, details, backend key and actual live sitemap.
+- Reuse shared SEO, guides, ads, embeds and calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated tools and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(car-lease): create calculator UI`
+2. `feat(car-lease): implement lease calculations and FX`
+3. `feat(car-lease): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, lease formulas, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

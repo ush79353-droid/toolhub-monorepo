@@ -1,15 +1,15 @@
-# OmegaCalculators — Automated Development Tracker
+﻿# OmegaCalculators — Automated Development Tracker
 
 ## Summary
 
-Total discovered: 53
-Newly developed: 36
+Total discovered: 55
+Newly developed: 46
 Already developed: 1
 Development failed: 0
-Skipped / blocked: 3
-Remaining pending: 0 (Tools empty; peer In Progress / BLOCKED only)
+Skipped / blocked: 1
+Remaining pending: 0 (Tools empty; In Progress = Missouri BLOCKED — DOR Incapsula 403)
 Audit completed: 0
-Audit pending: 37
+Audit pending: 47
 
 ## Calculator Register
 
@@ -43,9 +43,9 @@ Audit pending: 37
 | 26 | Dividend Yield Calculator | DEVELOPED | AUDIT 83d9a878 | e225cf05 | 7b809a04 | 7dbe8198 | Completed Tools | `DividendYieldCalculator` |
 | 27 | Hourly to Annual Salary Calculator | DEVELOPED | AUDIT 83d9a878 | 73ed83c0 | 86bdc30d | 0d012594 | Completed Tools | `HourlyToAnnualSalaryCalculator` |
 | 28 | Hourly to Salary - Wage Calculator | DEVELOPED | AUDIT 83d9a878 | db059afb | 579c85fe | 46c7bb6a | Completed Tools | `HourlyToSalaryWageCalculator`; prompt recovered from misfiled sibling |
-| 29 | Hourly to Salary with Overtime Calculator | BLOCKED | AUDIT 83d9a878 | — | — | — | In Progress | prompt.txt conflicts with Overtime screenshot/folder (TOOL-451) |
+| 29 | Hourly to Salary with Overtime Calculator | DEVELOPED | AUDIT PENDING | f991214e | 76ca25c2 | 1b59dcb0 | Completed Tools | `HourlyToSalaryWithOvertimeCalculator`; slug `hourly-to-salary-with-overtime-calculator`; Mongo `6af46f0fa27d8d1d4e990003` active; Phase 2 FX; indexable false; reuses salary-with-overtime math; corrected prompt+screenshot 2026-11-20 |
 | 30 | Quiz Dividend Calculator | DEVELOPED | AUDIT 83d9a878 | 71ed676f | 7ee0deac | b6bac9e4 | Completed Tools | `QuizDividendCalculator` |
-| 31 | California Sales Tax Calculator | BLOCKED | AUDIT 83d9a878 | — | — | — | In Progress | No verified CDTFA/ZIP tax dataset; must not invent rates (TOOL-497) |
+| 31 | California Sales Tax Calculator | DEVELOPED | AUDIT PENDING | b672a9c1 | 019a79e5 | fc12223a | Completed Tools | `CaliforniaSalesTaxCalculator`; CDTFA GetRateByAddress; Mongo `6af46f0fa27d8d1d4e990027` active; indexable false; street+city+ZIP |
 | 32 | Commercial Lease Calculator | DEVELOPED | AUDIT 83d9a878 | 0d994100 | 017cde44 | 2cb8ee80 | Completed Tools | `CommercialLeaseCalculator`; slug `commercial-lease-calculator`; Mongo `6af46f0fa27d8d1d4e990011` active; indexable false |
 | 33 | Auto Lease Calculator | DEVELOPED | AUDIT 83d9a878 | 836bfb95 | d735d570 | (see agent) | Completed Tools | `AutoLeaseCalculator`; sibling of Car Lease |
 | 34 | Car Lease Calculator | DEVELOPED | AUDIT 83d9a878 | c15e6c97 | ebd38b6a | 79a5822e | Completed Tools | `CarLeaseCalculator`; slug `car-lease-calculator`; Mongo `6af46f0fa27d8d1d4e990010`; Phase 2 FX; `indexable` false |
@@ -62,19 +62,33 @@ Audit pending: 37
 
 | 41 | Marginal Revenue Calculator | DEVELOPED | AUDIT PENDING | c1adcd41 | 559980a3 | 300a24de | Completed Tools | `MarginalRevenueCalculator`; slug `marginal-revenue-calculator`; Mongo `6af46f0fa27d8d1d4e99001e`; Phase 2 FX; indexable false |
 
-| 42 | Price to Sales Ratio Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | PROMPT.txt empty (0 bytes); screenshot present — cannot develop without prompt |
+| 42 | Price to Sales Ratio Calculator | DEVELOPED | AUDIT PENDING | d59cc043 | b30d0c11 | 1f231aa4 | Completed Tools | `PriceToSalesRatioCalculator`; slug `price-to-sales-ratio-calculator`; Mongo `6af46f0fa27d8d1d4e990024` active; Phase 2 FX; indexable false; PROMPT restored from screenshot |
 
 | 43 | Ohio Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 3be92376 | af2a603f | af4c7591 | Completed Tools | `OhioSalesTaxCalculator`; unavailable-rate (no OH ZIP tax table); Mongo `6af46f0fa27d8d1d4e99002b`; indexable false |
 | 41 | Margin and Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 42ba884d | a44097dc | f51294bf (reg absorbed into concurrent Ohio reg commit; HEAD has full MST registration) | Completed Tools | `MarginAndSalesTaxCalculator`; slug `margin-and-sales-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990029` active; indexable false; Phase 2 FX |
 | 44 | Return on Sales Calculator | DEVELOPED | AUDIT PENDING | f6ee9195 | 84f312c8 | (pending commit 3) | Completed Tools | `ReturnOnSalesCalculator`; slug `return-on-sales-calculator`; Mongo `6af46f0fa27d8d1d4e990025` active; Phase 2 FX; indexable false |
 
-| 45 | Mortgage Refinance Calculator | DEVELOPED | AUDIT PENDING | 749a9467 | 60a84848 | (registration) | Completed Tools | `MortgageRefinanceCalculator`; slug `mortgage-refinance-calculator`; Mongo `6af46f0fa27d8d1d4e99001b`; Phase 2 FX; indexable false |
+| 45 | Mortgage Refinance Calculator | DEVELOPED | AUDIT PENDING | 749a9467 | 60a84848 | 3c5d6b59 | Completed Tools | `MortgageRefinanceCalculator`; slug `mortgage-refinance-calculator`; Mongo `6af46f0fa27d8d1d4e99001b`; Phase 2 FX; indexable false |
+| 48 | Florida Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 41c7d638 | cdce4997 | 49904891 | Completed Tools | `FloridaSalesTaxCalculator`; slug `florida-sales-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990028` active; indexable false; DR-15DSS 2026 + Census ZCTA→county; correct screenshot restored 2026-11-20 |
+| 49 | Missouri Sales Tax Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Official DOR Q4/Q3 2026 boundary+jurisdiction files HTTP 403 Incapsula WAF from agent; no browser automation allowed; catalog `6af46f0fa27d8d1d4e99002a` undeveloped; TOOL-542 |
 | 46 | Revenue Growth Calculator | DEVELOPED | AUDIT PENDING | 1a5820fc | 1544c996 | 8553d560 | Completed Tools | `RevenueGrowthCalculator`; slug `revenue-growth-calculator`; Mongo `6af46f0fa27d8d1d4e99001f` active; indexable false; Phase 2 FX; reuses `solveCagr` |
+| 47 | Sales Calculator | DEVELOPED | AUDIT PENDING | b93e6d2b | 6ac9750d | b1561c80 | Completed Tools | `SalesCalculator`; slug `sales-calculator`; Mongo `6af46f0fa27d8d1d4e990022` active; Phase 2 FX; indexable false |
+| 50 | Revenue Calculator | DEVELOPED | AUDIT PENDING | 0a88c118 | acb04cee | 27f6d29f | Completed Tools | `RevenueCalculator`; slug `revenue-calculator`; Mongo `6af46f0fa27d8d1d4e99001d` active; Phase 2 FX; indexable false; reg `27f6d29f` (supersedes `d6bb0538`) |
+| 51 | Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 98c4cbd3 | c47b2f53 | 704e6729 | Completed Tools | `SalesTaxCalculator`; slug `sales-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990026` active; Phase 2 FX; indexable false |
+| 52 | SIP Calculator — Systematic Investment Plan | DEVELOPED | AUDIT PENDING | d84a79da | cfdf71a0 | c90e388d | Completed Tools | `SipCalculator`; slug `sip-calculator-systematic-investment-plan`; Mongo `6af46f0fa27d8d1d4e99000d` active; Phase 2 FX; indexable false; TASKS `TOOL-545`; registry/FX/sitemap also in concurrent `b1561c80` |
 
 ## Session Log
+- 2026-11-20 (Florida repair): Florida Sales Tax Calculator DEVELOPED (`41c7d638` / `cdce4997` / `49904891`). Correct screenshot restored; incorrect sidebar preserved. Official data: FL DOR DR-15DSS CY 2026 + Census 2020 ZCTA→county. Mongo `6af46f0fa27d8d1d4e990028` activated; indexable false. Moved to Completed Tools. CA / MO remain BLOCKED. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-20 (final In Progress cleanup): Inspected all 3 remaining folders — California / Florida / Missouri Sales Tax. All remain **BLOCKED**. Mongo undeveloped (`6af46f0fa27d8d1d4e990027` / `…028` / `…02a`); no componentKey; not in registry/sitemap. No CDTFA / FL DOR / MO DOR ZIP tax datasets in repo. Florida screenshot still Finance & Renewals sidebar (identity conflict). Folders kept in `In Progress`; `AGENT_STATUS.md` written/updated for all three. No commits, moves, or Mongo changes. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-20: Hourly to Salary with Overtime Calculator DEVELOPED (`f991214e` / `76ca25c2` / `1b59dcb0`). Unblocked with corrected prompt + `Screenshot 2026-11-20 002229.png`. Mongo `6af46f0fa27d8d1d4e990003` activated; indexable false. Distinct from `salary-calculator-with-overtime`. Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-20 (repair pass): Price to Sales Ratio DEVELOPED (`d59cc043` / `b30d0c11` / `1f231aa4`); Mongo `6af46f0fa27d8d1d4e990024` activated; moved to Completed Tools. Missouri prompt restored from screenshot (empty original kept) — still BLOCKED (no MO rate dataset). Florida BLOCKED (wrong screenshot + no FL surtax dataset). CA BLOCKED (CDTFA data is jurisdiction/GIS, not ZIP table). Hourly Overtime remains BLOCKED (near-duplicate of live `salary-calculator-with-overtime`). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-19 (resume pass): Scanned all 5 `In Progress` folders. None eligible — all remain BLOCKED with unchanged evidence: CA/FL (no ZIP tax datasets; prompts forbid fake rates), MO/Price-to-Sales (empty prompts), Hourly Overtime (`AGENT_STATUS.md` prompt/screenshot mismatch vs catalog). No commits, moves, or Mongo changes. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-19 (this agent): SIP Calculator DEVELOPED (`d84a79da` / `cfdf71a0` / `c90e388d`). Mongo `6af46f0fa27d8d1d4e99000d` active; indexable false. Registry/FX/sitemap also via concurrent `b1561c80`. Moved to Completed Tools. `Tools/` empty — In Progress = BLOCKED only (CA/FL/MO sales tax, Hourly Overtime, Price to Sales). Queue complete. Temporary files cleaned: YES.
+- 2026-11-19 (this agent): Revenue registration finalized `27f6d29f`; SIP verified + moved to Completed Tools (`d84a79da`/`cfdf71a0`/`b1561c80`). `Tools/` empty; In Progress = BLOCKED only (CA/FL/MO sales tax, Hourly Overtime, Price to Sales). Queue idle. Temporary files cleaned: YES.
+- 2026-11-19 (this agent): Lease Mileage Calculator DEVELOPED (`0e609ddd` / `2d65b710`+`b737f067` / `bf5456c6`). Sales Calculator DEVELOPED (`b93e6d2b` / `6ac9750d` / `b1561c80`). Mongo `6af46f0fa27d8d1d4e990022` active; indexable false. Folders moved to Completed Tools. Temporary files cleaned: YES.
 - 2026-11-19 (this agent): Revenue Growth Calculator DEVELOPED (`1a5820fc` / `1544c996` / `8553d560`). Mongo `6af46f0fa27d8d1d4e99001f` active; indexable false. Moved to Completed Tools. `Tools/` empty — no eligible unclaimed folders remain.
 - 2026-11-19 (this agent): Return on Sales Calculator DEVELOPED (`f6ee9195` / `84f312c8` / `e426433d`). Mongo `6af46f0fa27d8d1d4e990025` active; indexable false; Phase 2 FX. Moved to Completed Tools. `Tools/` empty — no eligible unclaimed folders remain.
-- 2026-11-19: Mortgage Refinance Calculator DEVELOPED (`749a9467` / `60a84848` / registration). Mongo `6af46f0fa27d8d1d4e99001b` active; indexable false. Moved to Completed Tools.
+- 2026-11-19: Mortgage Refinance Calculator DEVELOPED (`749a9467` / `60a84848` / `3c5d6b59`). Mongo `6af46f0fa27d8d1d4e99001b` active; indexable false. Moved to Completed Tools. Florida Sales Tax BLOCKED (TOOL-529, no ZIP/surtax dataset). Missouri Sales Tax BLOCKED (TOOL-530, empty prompt). `Tools/` empty.
 
 - 2026-11-19 (this agent): Lease Calculator DEVELOPED (98bab42b / 7f1bd5b0 / 29908c83). Revenue Calculator DEVELOPED ( a88c118 / cb04cee / d6bb0538). Mongo active; indexable false. Folders moved to Completed Tools. Temporary files cleaned: YES.
 - 2026-11-19 (this agent): Marginal Revenue DEVELOPED; Price to Sales BLOCKED (empty prompt); Refinance DEVELOPED (feae7e7/4e439a67/48c5678+766b4339).
@@ -99,7 +113,14 @@ Audit pending: 37
 | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|
 | Lease Calculator | DEVELOPED | AUDIT PENDING | 98bab42b | 7f1bd5b0 | 29908c83 | Completed Tools | `LeaseCalculator`; FX; indexable false |
-| Revenue Calculator | DEVELOPED | AUDIT PENDING | 0a88c118 | acb04cee | d6bb0538 | Completed Tools | `RevenueCalculator`; FX; indexable false |
+| Revenue Calculator | DEVELOPED | AUDIT PENDING | 0a88c118 | acb04cee | 27f6d29f | Completed Tools | `RevenueCalculator`; FX; indexable false; reg `27f6d29f` |
 | Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 98c4cbd3 | c47b2f53 | 704e6729 | Completed Tools | `SalesTaxCalculator`; FX; indexable false |
 
 Temporary files cleaned: YES. No push.
+
+### 2026-11-20 — California Sales Tax unblocked
+- CDTFA GetRateByAddress + street/city/ZIP; commits b672a9c1 / 019a79e5 / fc12223a; Mongo activated; folder moved.
+
+### 2026-11-20 — Missouri Sales Tax still blocked
+- DOR official CSV/XLSX downloads return Incapsula HTTP 403; cannot inspect Record Type Z files or activate. California completed separately.
+

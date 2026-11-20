@@ -1,0 +1,100 @@
+# Cursor Prompt — Ohio Sales Tax Calculator
+
+Develop **Ohio Sales Tax Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `ohio-sales-tax-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+
+- Search existing MongoDB records by title, slug and aliases.
+- Compare with Sales Tax Calculator and other US state sales tax calculators.
+- If no authorized matching record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Follow OmegaCalculators ADR-016, ADR-018, ADR-023 and locked design.
+- Reuse existing tax calculation and location utilities where appropriate.
+
+## 2. Screenshot Fields
+
+Preserve the simple screenshot layout:
+
+1. **Purchase amount** — monetary input in fixed USD ($).
+2. **ZIP code** — five-digit US ZIP code input.
+
+Display calculated results after valid inputs:
+
+- Applicable combined sales tax rate.
+- State sales tax component.
+- County/transit/local sales tax components where applicable.
+- Total sales tax amount.
+- Final purchase amount including tax.
+
+Reuse Share Result, Reload Calculator, Clear All Changes and feedback controls.
+
+Do not add unnecessary visible inputs, charts or modes.
+
+## 3. Accurate Ohio Sales Tax Logic
+
+- Look up the applicable Ohio sales tax rate using verified ZIP/location tax data.
+- Apply the correct Ohio state rate plus applicable county and transit authority taxes.
+- Use the effective rate for the selected jurisdiction and date.
+- Formula:
+
+`Sales Tax = Purchase Amount × Combined Tax Rate / 100`
+
+`Total Amount = Purchase Amount + Sales Tax`
+
+Important:
+- ZIP codes do not always uniquely identify a tax jurisdiction. If a ZIP maps to multiple rates, show an ambiguity warning and require a more precise location rather than guessing.
+- Never invent ZIP-to-tax-rate mappings.
+- Do not hardcode a single combined rate for all of Ohio.
+- Validate purchase amount ≥ 0 and ZIP format.
+- Preserve ZIP leading zeros.
+- Use an existing verified tax-rate source or project dataset where available.
+- If no reliable tax data is available, show a clear unavailable-rate state rather than fabricating results.
+- Explain that taxable-product exemptions and special tax rules are not determined by these two inputs.
+- Preserve numerical precision and apply appropriate monetary rounding.
+
+## 4. Currency Handling
+
+The screenshot uses fixed USD ($), without currency dropdowns.
+
+- Do not invent currency selectors.
+- No FX integration required unless an existing authorized specification explicitly includes it.
+- Never convert ZIP codes or tax percentages.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend tool key and actual live sitemap.
+- Reuse existing SEO, guides, ads, embeds and calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned work.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(ohio-sales-tax): create calculator UI`
+2. `feat(ohio-sales-tax): implement ZIP-based tax calculations`
+3. `feat(ohio-sales-tax): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 7. Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, tax-rate source, ZIP lookup behavior, formulas, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

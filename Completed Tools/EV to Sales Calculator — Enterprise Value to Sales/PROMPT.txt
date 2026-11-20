@@ -1,0 +1,97 @@
+# Cursor Prompt — EV to Sales Calculator
+
+Develop **EV to Sales Calculator — Enterprise Value to Sales** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `ev-to-sales-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+
+- Search existing MongoDB records by title, slug and aliases.
+- Compare with Enterprise Value Calculator and Revenue Calculator.
+- If no authorized matching record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+- Reuse existing financial calculation utilities where appropriate.
+
+## 2. Screenshot Fields
+
+**Enterprise Value Calculation**
+- Cash and cash equivalents — monetary input with PKR selector.
+- Market capitalization — monetary input with PKR selector.
+- Total debt — monetary input with PKR selector.
+- Minority interest — monetary input, default 0 PKR.
+- Preferred shares — monetary input, default 0 PKR.
+- Enterprise value (EV) — calculated monetary output with PKR selector.
+
+**Sales and EV to Sales Ratio**
+- Sales (revenues) — monetary input with PKR selector.
+- EV to sales — calculated dimensionless ratio.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls. Preserve screenshot functionality, not styling.
+
+## 3. Accurate Calculations
+
+Implement:
+
+`Enterprise Value = Market Capitalization + Total Debt + Minority Interest + Preferred Shares − Cash and Cash Equivalents`
+
+`EV to Sales = Enterprise Value / Sales Revenue`
+
+Requirements:
+- Use consistent financial reporting periods and monetary units.
+- Treat debt, minority interest and preferred shares as additions to equity value.
+- Deduct cash and cash equivalents only once.
+- Validate numerical inputs and require positive revenue for the standard EV/Sales ratio.
+- Support negative enterprise value where mathematically applicable.
+- Handle zero revenue as undefined rather than NaN/Infinity.
+- Preserve full precision; round only for display.
+- Do not invent EBITDA, earnings or unsupported valuation modes.
+
+## 4. Real Currency Conversion
+
+Screenshot includes independent PKR currency selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary values numerically, not just symbols.
+- Normalize all financial monetary amounts into a common calculation currency.
+- Preserve independent selectors and canonical precision.
+- Register slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale exchange rates safely; never assume 1:1 conversion.
+- Never FX-convert the dimensionless EV/Sales ratio.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend key and actual live sitemap.
+- Reuse SEO, guides, ads, embeds and shared calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(ev-to-sales): create calculator UI`
+2. `feat(ev-to-sales): implement EV/Sales calculations and FX`
+3. `feat(ev-to-sales): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, EV/Sales formulas, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

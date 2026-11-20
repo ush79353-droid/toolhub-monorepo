@@ -1,0 +1,52 @@
+# Cursor Prompt — Missouri Sales Tax Calculator
+
+Develop **Missouri Sales Tax Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `missouri-sales-tax-calculator` — verify against MongoDB catalog `6af46f0fa27d8d1d4e99002a`.
+
+## Screenshot Fields (authoritative)
+
+Exactly two inputs (fixed USD, no FX selector):
+
+1. **Purchase amount** — monetary input with `$` prefix.
+2. **Purchase location ZIP Code** — five-digit ZIP input.
+
+Reuse Share Result, Reload Calculator, Clear All Changes and feedback controls.
+Use OmegaCalculators styling, not screenshot styling.
+
+## Required Results (when a verified rate exists)
+
+- Applicable Missouri combined sales tax rate for the resolved jurisdiction.
+- Estimated sales tax amount.
+- Total price including tax.
+
+Formulas:
+
+`Sales Tax = Taxable Purchase Amount × Applicable Rate / 100`
+
+`Total = Taxable Purchase Amount + Sales Tax`
+
+## Tax Data Safety (blocking)
+
+- Use authoritative Missouri Department of Revenue sales tax rates and effective dates.
+- Account for applicable local taxes; do not assume one statewide combined rate.
+- ZIP alone may not uniquely identify a jurisdiction — require reliable mapping or report unavailable/ambiguous rate.
+- **Do not invent ZIP-to-rate tables.**
+- If no verified Missouri ZIP/jurisdiction rate dataset exists in the project, remain BLOCKED / PARTIAL — do not claim development complete.
+
+## Currency
+
+Fixed USD. No FX slug registration. Never convert ZIP codes or tax percentages.
+
+## Integration (only after verified rates)
+
+- Register frontend keys, lazy registry, details, backend key, sitemap.
+- Activate only the authorized matching MongoDB record; leave `indexable` false unless authorized.
+
+## Commits (only if fully verified)
+
+1. `feat(missouri-sales-tax): create calculator UI`
+2. `feat(missouri-sales-tax): implement tax lookup and calculations`
+3. `feat(missouri-sales-tax): complete registration and integration`
+
+Restored from screenshot after empty `prompt.txt` (0 bytes). Original empty file preserved as `prompt.txt.empty-original`.

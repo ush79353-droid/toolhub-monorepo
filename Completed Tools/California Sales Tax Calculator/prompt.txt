@@ -1,0 +1,102 @@
+# Cursor Prompt — California Sales Tax Calculator
+
+Develop **California Sales Tax Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `california-sales-tax-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+
+- Search existing MongoDB records by title, slug and aliases.
+- If no authorized matching record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Compare with Sales Tax Calculator and existing state tax tools; reuse shared utilities.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+Preserve the exact two inputs:
+
+1. **Purchase amount** — monetary input, fixed USD ($).
+2. **ZIP code** — five-digit California ZIP code input.
+
+After valid inputs, display:
+
+- Applicable sales tax rate.
+- Estimated sales tax amount.
+- Total price including sales tax.
+- Rate location and data freshness where available.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls. Use OmegaCalculators styling, not screenshot styling.
+
+## 3. Accurate Sales Tax Logic
+
+- Resolve the ZIP code against verified California sales tax jurisdiction data.
+- Use the applicable combined state, county, city and district sales tax rate.
+- Prefer official California Department of Tax and Fee Administration (CDTFA) data or an existing authorized project tax-rate service.
+- **ZIP codes may span multiple tax jurisdictions.** If ZIP alone cannot identify an exact rate, clearly show the ambiguity and request a more precise location instead of inventing a rate.
+- Never assume all California locations have the same tax rate.
+- Never hardcode an unverified statewide or local tax rate.
+
+Calculate:
+
+`Sales Tax = Purchase Amount × Applicable Tax Rate / 100`
+
+`Total Price = Purchase Amount + Sales Tax`
+
+Validate nonnegative purchase amounts and valid ZIP codes. Preserve precision and apply appropriate display rounding.
+
+Treat the result as an estimate for a fully taxable purchase unless verified product-specific exemptions are supported.
+
+## 4. Currency Handling
+
+The screenshot uses fixed USD ($), without a currency selector.
+
+- Preserve USD.
+- Do not invent currency dropdowns.
+- No FX slug registration required.
+- Never FX-convert ZIP codes or percentages.
+
+## 5. Tax Data Safety
+
+- Check whether OmegaCalculators already has a maintained California tax-rate dataset or authorized API.
+- Reuse it when available.
+- If no reliable, maintainable jurisdiction data source exists, **do not fake ZIP-based calculations**.
+- Report the missing data dependency and leave the calculator PARTIAL/BLOCKED rather than displaying unreliable tax rates.
+- Do not introduce a paid API or new dependency without authorization.
+
+## 6. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend key and actual live sitemap where appropriate.
+- Reuse shared SEO, guides, ads, embeds and calculator actions.
+- Activate only the authorized matching MongoDB record after functionality is complete.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 7. Mandatory Three-Commit Rule
+
+For successful development, create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(california-sales-tax): create calculator UI`
+2. `feat(california-sales-tax): implement tax lookup and calculations`
+3. `feat(california-sales-tax): complete registration and integration`
+
+Never create empty/artificial commits. If reliable tax data is unavailable, do not manufacture commits or claim completion.
+
+## 8. Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only task-created temporary files after use.
+- Preserve existing and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 9. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all commits local until explicitly authorized.
+
+Report confirmed slug, California tax data source, ZIP lookup limitations, formulas, MongoDB status, changed files, cleanup status and three local commit hashes if successfully developed.
+
+**STOP after completing this calculator or reporting its blocker.**

@@ -1,0 +1,91 @@
+# Cursor Prompt — Return on Sales Calculator
+
+Develop **Return on Sales Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `return-on-sales-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Duplicate Check
+- Search existing MongoDB records by title, slug and aliases.
+- Compare with Operating Margin Calculator and other profitability tools.
+- If the same authorized tool is already implemented, or colleague-owned, STOP.
+- If no separate authorized record exists, SKIP; never create one.
+- Reuse existing profitability calculation utilities where appropriate.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+Preserve exactly three fields in this order:
+
+1. **Operating profit** — monetary input with PKR currency selector.
+2. **Net sales** — monetary input with PKR currency selector.
+3. **Return on sales (ROS)** — calculated percentage output.
+
+Reuse Share Result, Reload Calculator, Clear All Changes and feedback controls.
+
+Use existing OmegaCalculators styling, not the reference screenshot's styling. Do not add unsupported charts or modes.
+
+## 3. Accurate Calculations
+
+Implement:
+
+`Return on Sales (%) = Operating Profit / Net Sales × 100`
+
+Requirements:
+- Recalculate automatically when inputs change.
+- Normalize monetary amounts to a common currency before division.
+- Allow negative operating profit and negative ROS.
+- Require positive net sales for a conventional ROS calculation.
+- Handle zero net sales as undefined, not 0%.
+- Clearly distinguish operating profit from net profit.
+- Prevent NaN, Infinity and division by zero.
+- Preserve full numerical precision; round only for display.
+- Do not invent additional expenses, taxes or adjustments.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent PKR currency selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary values numerically, not just symbols.
+- Preserve independent operating-profit and net-sales currency selectors.
+- Normalize mixed currencies before calculating ROS.
+- Register slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale exchange rates safely; never assume 1:1 conversion.
+- Never FX-convert percentages.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend tool key and actual live sitemap.
+- Reuse existing SEO, guides, ads, embeds and shared calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve Operating Margin Calculator and unrelated tools.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(return-on-sales): create calculator UI`
+2. `feat(return-on-sales): implement ROS calculations and FX`
+3. `feat(return-on-sales): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, test files and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, ROS formula, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

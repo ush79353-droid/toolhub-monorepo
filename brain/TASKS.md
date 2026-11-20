@@ -1,4 +1,4 @@
-# Shared Task Board (`TASKS.md`)
+﻿# Shared Task Board (`TASKS.md`)
 
 > **Rules:** Keep Task IDs stable (`INFRA-*`, `BE-*`, `FE-*`, `TOOL-*`). Never delete or renumber IDs. Do not invent owners unless assigned.
 
@@ -47,8 +47,8 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `TOOL-497` | California Sales Tax Calculator developed: CDTFA `GetRateByAddress` via `/api/tax/california-rate`; PO-approved street+city+ZIP; Mongo `6af46f0fa27d8d1d4e990027` active; indexable false; commits `b672a9c1` / `019a79e5` / (reg) | Cursor | Done | `Completed Tools/California Sales Tax Calculator` | `TOOL-01` |
-| `TOOL-542` | Missouri Sales Tax Calculator blocked: prompt restored from screenshot (empty original preserved), but no verified Missouri DOR ZIP/jurisdiction rate dataset in repo — must not invent rates (owned in `In Progress`; do not reclaim) | Cursor | Blocked | `In Progress/Missouri Sales Tax Calculator` | `TOOL-01` |
+| `TOOL-497` | California Sales Tax Calculator developed: CDTFA `GetRateByAddress` via `/api/tax/california-rate`; PO-approved street+city+ZIP; Mongo `6af46f0fa27d8d1d4e990027` active; indexable false; commits `b672a9c1` / `019a79e5` / `fc12223a` | Cursor | Done | `Completed Tools/California Sales Tax Calculator` | `TOOL-01` |
+| `TOOL-542` | Missouri Sales Tax Calculator blocked: official DOR boundary/jurisdiction files return HTTP 403 Incapsula WAF from agent environment; browser automation forbidden; cannot invent ZIP rates (owned in `In Progress`) | Cursor | Blocked | `In Progress/Missouri Sales Tax Calculator` | `TOOL-01` |
 | `TOOL-451` | Hourly to Salary with Overtime Calculator — unblocked 2026-11-20 with corrected prompt/screenshot; completed as `TOOL-548` | Cursor | Completed | `frontend/src/tools/calculators/hourly-to-salary-with-overtime/*` | `TOOL-548` |
 
 ---
@@ -670,3 +670,4 @@
 | `STD-11` | Currency conversion Phase 2: shared pure convertCurrency engine, MoneyValue + useConvertibleMoneyField, CurrencyRatesProvider; no calculator module changes | Cursor | Completed | `frontend/src/tools/shared/{convert-currency,money-value,useConvertibleMoney,CurrencyRatesProvider,currency-rates}.*`, `frontend/src/server/currency/rates.ts`, `brain/*` | `STD-10` |
 | `STD-12` | Amend ADR-019 to exactly two commits per calculator (tool files, then Brain); sync AGENTS, playbook, calculator standards, and Cursor/Antigravity git-commits rules. No calculator code changes. | Cursor | Completed | `AGENTS.md`, `brain/{DECISIONS,NEW_TOOL_DEVELOPMENT_PLAYBOOK,CALCULATOR_STANDARDS,README,CURRENT_STATE,TASKS,CHANGELOG}.md`, `.cursor/rules/{git-commits,calculator-standards,mega-tools-brain,screenshot-first-standards}.mdc`, `.agents/rules/{git-commits,calculator-standards,mega-tools-brain,screenshot-first-standards}.md` | `STD-05` |
 | `TOOL-179` | Implement ROI Calculator on existing slug `roi-calculator` with basic + annualized ROI, optional contributions, guide/SEO/embed, and verified activation | Cursor | Completed | `frontend/src/tools/calculators/roi/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-roi-tool.ts`, `brain/*` | `TOOL-178` |
+

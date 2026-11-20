@@ -1,0 +1,95 @@
+# Cursor Prompt — Commercial Lease Calculator
+
+Develop **Commercial Lease Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `commercial-lease-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+- Search existing MongoDB records by title, slug and aliases.
+- If no matching authorized record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Compare with Lease Calculator and rental-related tools; reuse applicable utilities.
+- Follow OmegaCalculators ADR-016, ADR-018, ADR-023 and locked theme.
+
+## 2. Screenshot Fields
+
+Preserve these sections and field order.
+
+**Commercial Rent**
+- Area — numeric input with area-unit selector, default m².
+- Base rental rate — monetary input with currency, area-unit and yearly-period selectors.
+- Operating expenses — monetary input with currency, area-unit and yearly-period selectors.
+- Total rental rate — calculated monetary result per area per year.
+- Rent — calculated monetary result with currency and period selectors, default per year.
+
+**Rental Agent's Fee**
+- The agent takes — percentage input, default 6%.
+- Of the equivalent of — lease duration/rent-period selector, default 2 years of rent.
+- Total fee — calculated monetary output with currency selector.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls. Follow OmegaCalculators styling, not screenshot styling.
+
+## 3. Accurate Calculations
+
+Use consistent commercial leasing formulas:
+
+- Total Rental Rate = Base Rental Rate + Operating Expenses.
+- Annual Rent = Total Rental Rate × Area.
+- Rent for Selected Period = Annual Rent × Period Conversion Factor.
+- Agent Fee = Annual Rent × Equivalent Years × Agent Percentage / 100.
+
+Requirements:
+- Normalize area units (m², ft², etc.) before calculations.
+- Normalize rental rate periods (yearly/monthly) consistently.
+- Validate positive area and nonnegative rental rates.
+- Support zero agent commission and zero operating expenses.
+- Avoid double-counting expenses.
+- Preserve full precision; round only for display.
+- Clearly distinguish annual rent, periodic rent and agent commission.
+- Do not invent additional taxes, lease escalation or maintenance fees.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent PKR currency selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary amounts numerically, not symbols only.
+- Normalize currency, area and period units before calculations.
+- Preserve independent monetary selectors and canonical precision.
+- Register slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale exchange rates safely.
+- Never FX-convert area measurements, periods or commission percentages.
+
+## 5. Project Integration
+- Register both frontend key lists, lazy registry, details, backend key and live sitemap.
+- Reuse SEO, guides, ads, embeds and shared actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(commercial-lease): create calculator UI`
+2. `feat(commercial-lease): implement rent calculations and FX`
+3. `feat(commercial-lease): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, rent/area/period formulas, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

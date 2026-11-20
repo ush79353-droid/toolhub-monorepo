@@ -1,0 +1,112 @@
+# Cursor Prompt — Refinance Calculator
+
+Develop **Refinance Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `refinance-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+
+- Search existing MongoDB records by title, slug and aliases.
+- Compare with Mortgage Refinance Calculator and other loan calculators to prevent duplication.
+- If no authorized matching record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+- Reuse existing amortization utilities where appropriate.
+
+## 2. Screenshot Fields
+
+Preserve two side-by-side sections, responsive on mobile.
+
+**Current Loan**
+- Calculation method — dropdown, default **I know my remaining balance**.
+- Remaining balance — default $250,000.
+- Monthly payment — default $1,800.
+- Interest rate — default 7% annually.
+- Support other calculation methods only when verified in existing specifications.
+
+**New Loan**
+- New loan term — default 20 years.
+- Interest rate — default 6% annually.
+- Points — default 2.
+- Costs and fees — default $1,500.
+- Cash-out amount — default $0.
+
+**Results**
+- Current loan remaining term and total remaining interest.
+- New monthly payment.
+- New loan amount including cash-out.
+- Points cost and closing costs.
+- Monthly payment difference.
+- Total interest comparison.
+- Break-even period where mathematically applicable.
+- Net savings or additional refinancing cost.
+
+Reuse Calculate, Clear and existing shared calculator actions. Follow OmegaCalculators styling, not screenshot styling.
+
+## 3. Accurate Refinancing Calculations
+
+Use standard fixed-rate monthly amortization.
+
+- Current monthly rate = Current APR / 1200.
+- New monthly rate = New APR / 1200.
+- New loan principal = Remaining Balance + Cash-Out Amount + financed costs, if explicitly selected.
+- Points cost = Applicable loan principal × Points / 100.
+- Monthly payment = Principal × Rate / [1 − (1 + Rate)^(-Months)].
+- At 0% APR, monthly payment = Principal / Months.
+
+Requirements:
+- Determine the remaining current-loan term from balance, payment and rate using a stable logarithmic solution or amortization schedule.
+- Calculate new loan interest, monthly payment and total repayment.
+- Distinguish upfront fees from financed fees; never double-count costs.
+- Include cash-out proceeds separately when reporting economic savings.
+- Calculate break-even using an appropriate cumulative cash-flow method; identify when no break-even exists.
+- Distinguish monthly savings from lifetime savings, especially when loan terms differ.
+- Validate insufficient monthly payments, zero rates and invalid inputs.
+- Preserve full precision and round only for display.
+- Do not invent unsupported tax benefits or refinancing products.
+
+## 4. Currency Handling
+
+Screenshot uses fixed USD ($), without currency dropdowns.
+
+- Preserve USD.
+- Do not add unsupported currency selectors.
+- If an authorized existing specification includes selectors, reuse Phase 2 numeric FX infrastructure.
+- Never FX-convert rates, points or loan durations.
+
+## 5. Project Integration
+
+- Register both frontend key lists, lazy registry, details, backend tool key and actual live sitemap.
+- Reuse existing SEO, guides, ads, embeds and shared actions.
+- Activate only the authorized existing MongoDB record.
+- Preserve unrelated code and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(refinance): create calculator UI`
+2. `feat(refinance): implement refinancing calculations`
+3. `feat(refinance): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, refinancing calculations, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

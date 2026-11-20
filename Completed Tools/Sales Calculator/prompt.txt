@@ -1,0 +1,102 @@
+# Cursor Prompt — Sales Calculator
+
+Develop **Sales Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `sales-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+
+- Search existing MongoDB records by title, slug and aliases.
+- Compare with Revenue Calculator, Revenue Per Employee Calculator and existing Sales Commission Calculator.
+- If no authorized matching record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+- Reuse existing sales and revenue utilities where appropriate.
+
+## 2. Screenshot Fields
+
+Preserve field order and sections.
+
+**Sales Details**
+- Product price — monetary input with PKR selector.
+- Number of products sold — numeric input with sales-period selector, default per month.
+- Revenue — calculated monetary output, default PKR/month.
+- Annual revenue — calculated monetary output, default PKR/year.
+
+The screenshot labels both revenue fields **Revenue per Pakistan Rupee**. Verify the intended labels from existing project specifications; avoid misleading currency-unit wording.
+
+**Costs to Be Deducted**
+- Collapsible section.
+- Include only verified cost fields and deductions from existing specifications.
+
+**Net Sales**
+- Net sales — calculated monetary result with currency and period selectors.
+
+Reuse Share Result, Reload Calculator, Clear All Changes and feedback controls. Use OmegaCalculators styling, not screenshot styling.
+
+## 3. Accurate Calculations
+
+Implement:
+
+- Gross Revenue = Product Price × Quantity Sold.
+- Monthly Revenue = Revenue normalized to monthly sales.
+- Annual Revenue = Monthly Revenue × 12.
+- Net Sales = Gross Revenue − Applicable Sales Deductions.
+
+Requirements:
+- Support valid quantity-period selections and convert consistently.
+- If additional cost/deduction settings are supported, distinguish actual sales deductions (returns, allowances, discounts) from operating expenses.
+- Do not subtract ordinary business operating expenses from net sales.
+- Validate nonnegative product price and quantity.
+- Handle zero sales safely.
+- Preserve full precision; round only for display.
+- Do not invent unsupported fees, taxes or charts.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent PKR currency selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary values numerically, not merely symbols.
+- Normalize mixed currencies and monetary periods before calculations.
+- Preserve independent selectors and canonical precision.
+- Register slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale rates safely; never assume 1:1 conversion.
+- Never FX-convert quantities or time periods.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend key and actual live sitemap.
+- Reuse SEO, guides, ads, embeds and shared calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits**:
+
+1. `feat(sales): create calculator UI`
+2. `feat(sales): implement sales calculations and FX`
+3. `feat(sales): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, sales formulas, period conversions, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

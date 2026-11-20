@@ -1,0 +1,95 @@
+# Cursor Prompt — Hourly to Salary - Wage Calculator
+
+Develop **Hourly to Salary - Wage Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `hourly-to-salary-wage-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Duplicate Check
+- Search existing records by title, slug and aliases.
+- Compare with Salary to Hourly Calculator, Annual Salary per Hour Calculator and Hourly to Annual Salary Calculator.
+- If already developed, same-record duplicate or colleague-owned, STOP.
+- If no separate authorized MongoDB record exists, SKIP; never create one.
+- Reuse existing wage conversion utilities where appropriate.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators styling.
+
+## 2. Screenshot Fields
+
+**Main Fields**
+1. Hourly wage — monetary input/output with PKR selector.
+2. Hours per week — numeric input, default 40.
+3. Annual salary — monetary input/output with PKR selector.
+
+**Your Wage As**
+- Daily — monetary output with PKR selector.
+- Monthly — monetary output with PKR selector.
+- Weekly — monetary output with PKR selector.
+- Biweekly — monetary output with PKR selector.
+
+**Other Time Intervals**
+- Collapsible section; implement additional periods only if verified in existing specifications.
+
+Allow users to enter either hourly wage or annual salary. The last edited wage value should determine the other results without circular updates.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls.
+
+## 3. Accurate Calculations
+
+Use consistent assumptions:
+
+- Annual salary = Hourly wage × Hours per week × 52.
+- Hourly wage = Annual salary / (Hours per week × 52).
+- Weekly wage = Annual salary / 52.
+- Biweekly wage = Annual salary / 26.
+- Monthly wage = Annual salary / 12.
+- Daily wage = Weekly wage / 5, assuming five working days per week.
+
+Requirements:
+- Explain the 52-week and five-day assumptions.
+- Validate positive weekly hours and nonnegative wages.
+- Handle zero salary and invalid inputs.
+- Prevent division by zero, NaN and Infinity.
+- Preserve full precision and round only for display.
+- Do not add unsupported taxes, overtime or payroll deductions.
+
+## 4. Real Currency Conversion
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert monetary amounts numerically, not symbols only.
+- Normalize mixed currencies before calculation.
+- Preserve independent selectors and canonical precision.
+- Register slug in both applicable `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle stale/missing rates safely; never assume 1:1 conversion.
+- Never FX-convert working hours.
+
+## 5. Project Integration
+- Register both frontend key lists, lazy registry, details, backend tool key and actual live sitemap.
+- Reuse shared SEO, guides, ads, embeds and calculator actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three-Commit Rule
+
+Create exactly **3 meaningful LOCAL Git commits** for successful development:
+
+1. `feat(hourly-to-salary-wage): create calculator UI`
+2. `feat(hourly-to-salary-wage): implement wage conversions and FX`
+3. `feat(hourly-to-salary-wage): complete registration and integration`
+
+Never create empty or artificial commits. Stage only authorized task changes and report all three hashes.
+
+## 7. Temporary File Cleanup
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO Git PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+
+Report confirmed slug, duplicate check, reused formulas, FX wiring, MongoDB activation, changed files, cleanup status and three commit hashes.
+
+**STOP after completing this calculator.**

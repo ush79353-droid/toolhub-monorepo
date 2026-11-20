@@ -1,0 +1,47 @@
+# Cursor Prompt — Hourly to Salary with Overtime Calculator
+
+Develop **Hourly to Salary with Overtime Calculator** using the attached correct screenshot as the authoritative functionality reference.
+
+**Suggested slug:** `hourly-to-salary-with-overtime-calculator` — verify against MongoDB catalog `6af46f0fa27d8d1d4e990003`.
+
+## Distinct from siblings
+
+- Do **not** overwrite `salary-calculator-with-overtime` (`SalaryWithOvertimeCalculator`).
+- Do **not** use Wage Calculator prompt/content.
+- Reuse overtime math utilities from `salary-with-overtime` where possible.
+- Defaults unique to this tool: regular work time **40 hours / week**.
+
+## Screenshot Fields
+
+### Regular work time
+1. Regular pay — money + currency + period (default / hour)
+2. Regular work time — default 40; unit hours; period week
+3. Total regular pay — calculated; currency + period (default / month)
+
+### Overtime
+4. Overtime pay multiplier — default 1.5
+5. Overtime pay — calculated rate; currency + / hour
+6. Overtime work time — hours / month defaults
+7. Total overtime pay — calculated; currency + / month
+
+### Salary with overtime
+8. Total pay — calculated; currency + / month
+
+Share / Reload / Clear / feedback. OmegaCalculators styling.
+
+## Formulas
+
+`OT Hourly = Regular Hourly × Multiplier`
+`Monthly Regular = Regular Hourly × Weekly Hours × 52/12`
+`Monthly OT = OT Hourly × Monthly OT Hours`
+`Total = Regular + OT`
+
+Phase 2 FX on money only. Multiplier/hours/units never FX-convert.
+
+## Commits
+
+1. `feat(hourly-salary-overtime): create calculator UI`
+2. `feat(hourly-salary-overtime): implement overtime calculations and FX`
+3. `feat(hourly-salary-overtime): complete registration and integration`
+
+Corrected 2026-11-20. Original wage-mismatch prompt preserved as `prompt.txt.wage-mismatch-original`. Correct screenshot: `Screenshot 2026-11-20 002229.png`.
