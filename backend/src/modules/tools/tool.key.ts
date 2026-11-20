@@ -645,6 +645,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NetIncomeCalculator',
   'NetOperatingAssetsCalculator',
   'NetOperatingIncomeCalculator',
+  'NetOperatingWorkingCapitalCalculator',
   'NetWorthCalculator',
   'PmiCalculator',
   'PowerballCalculator',
@@ -1336,6 +1337,7 @@ if (isDirect) {
     !isApprovedComponentKey('NetIncomeCalculator') ||
     !isApprovedComponentKey('NetOperatingAssetsCalculator') ||
     !isApprovedComponentKey('NetOperatingIncomeCalculator') ||
+    !isApprovedComponentKey('NetOperatingWorkingCapitalCalculator') ||
     !isApprovedComponentKey('NetWorthCalculator') ||
     !isApprovedComponentKey('PmiCalculator') ||
     !isApprovedComponentKey('PowerballCalculator') ||

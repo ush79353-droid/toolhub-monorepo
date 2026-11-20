@@ -943,6 +943,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/net-operating-assets/detail'),
   NetOperatingIncomeCalculator: () =>
     import('@/tools/calculators/net-operating-income/detail'),
+  NetOperatingWorkingCapitalCalculator: () =>
+    import('@/tools/calculators/net-operating-working-capital/detail'),
   NetWorthCalculator: () =>
     import('@/tools/calculators/net-worth/detail'),
   PmiCalculator: () => import('@/tools/calculators/pmi/detail'),

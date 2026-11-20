@@ -3622,6 +3622,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetOperatingIncomeCalculator,
     })),
   ),
+  NetOperatingWorkingCapitalCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/net-operating-working-capital/NetOperatingWorkingCapitalCalculator'
+    ).then((mod) => ({
+      default: mod.NetOperatingWorkingCapitalCalculator,
+    })),
+  ),
   NetWorthCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/net-worth/NetWorthCalculator'

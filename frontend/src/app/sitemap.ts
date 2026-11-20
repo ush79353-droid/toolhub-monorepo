@@ -84,6 +84,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'month-over-month-calculator',
   'net-income-calculator',
   'net-operating-assets-calculator',
+  'net-operating-working-capital-calculator',
   'mortgage-calculator-with-taxes-and-insurance',
   'mortgage-comparison-calculator',
   'home-mortgage-calculator',

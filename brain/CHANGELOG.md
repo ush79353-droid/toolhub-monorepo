@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Net Operating Working Capital Calculator
+- **Summary:** Shipped Net Operating Working Capital Calculator on existing catalog slug `net-operating-working-capital-calculator` (`NetOperatingWorkingCapitalCalculator`, catalog `6af46f10a27d8d1d4e99013e`, preserved `nameKey` `net operating working capital calculator`). Screenshot-first (ADR-023): three expanded accordions — COA (cash + AR + inventories), COL (AP + accrued expenses), NOWC = COA − COL; positive/zero/negative NOWC; calculation breakdown. Denomination-only CurrencySelect (PKR default, no FX). No ΔNOWC / NOWC-to-revenue UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Cash **$1,000** + AR **$15,000** + Inventories **$5,000** − AP **$18,000** − Accrued **$2,000** → COA **$21,000** · COL **$20,000** · NOWC **$1,000**.
+- **Important Files:** `frontend/src/tools/calculators/net-operating-working-capital/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` NOWC calculation tests 10/10 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Net Income Calculator
 - **Summary:** Shipped Net Income Calculator on existing catalog slug `net-income-calculator` (`NetIncomeCalculator`, catalog `6af46f10a27d8d1d4e99013c`, preserved `nameKey` `net income calculator`). Screenshot-first (ADR-023): pretax section (revenue/COGS/GP/OpEx/OpInc/interest/EBT) + taxes section (rate/taxes/NI); estimated taxes = max(EBT,0)×rate; net profit margin; income-statement breakdown. Denomination-only CurrencySelect (PKR default, no FX). No manual-tax / other-income UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Rev **$500,000** · COGS **$200,000** · OpEx **$100,000** · Int **$20,000** · tax **25%** → NI **$135,000** · margin **27%**.
