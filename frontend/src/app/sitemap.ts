@@ -651,6 +651,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'eoq-calculator-economic-order-quantity',
   'fcfe-calculator',
   'ffo-calculator',
+  'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
   'college-cost-calculator',

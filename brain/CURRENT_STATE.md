@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (FFO Calculator live at `/tools/ffo-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Financial Leverage Ratio Calculator live at `/tools/financial-leverage-ratio-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Financial Leverage Ratio Calculator (`/tools/financial-leverage-ratio-calculator`):** Live client-side equity multiplier tool (`componentKey: 'FinancialLeverageRatioCalculator'`, catalog `6af46f10a27d8d1d4e990134`, `nameKey` `financial leverage ratio calculator`). Screenshot-first (ADR-023): Total assets (current + non-current) / Financial leverage (total equity → FL). FL = Total Assets ÷ Total Equity; zero equity undefined; negative equity signed with warning; derived liabilities, equity ratio, L/E. Denomination-only CurrencySelect (PKR default, no FX). No reverse-mode UI (ADR-023). Activated; **`indexable` left false**. Example: Current $300k + Non-current $1M · Equity $500k → FL **2.60×**.
 - **FFO Calculator (`/tools/ffo-calculator`):** Live client-side Funds From Operations tool (`componentKey: 'FfoCalculator'`, catalog `6af46f10a27d8d1d4e990133`, `nameKey` `ffo calculator`). Screenshot-first (ADR-023): NI / qualifying D&A / property sale gains / losses / interest income / FFO. Standard FFO = NI + D&A − Gains + Losses (interest not subtracted); optional adjusted convention excludes interest income once. Denomination-only CurrencySelect (PKR default, no FX). No FFO-per-share UI (ADR-023; covered in guide). Activated; **`indexable` left false**. Example: NI $500k + D&A $150k − Gains $125k + Losses $50k → FFO **$575,000**.
 - **FCFE Calculator (`/tools/fcfe-calculator`):** Live client-side Free Cash Flow to Equity tool (`componentKey: 'FcfeCalculator'`, catalog `6af46f10a27d8d1d4e990132`, `nameKey` `fcfe calculator`). Screenshot-first (ADR-023): five methods (NI / EBITDA / EBIT / CFO / FCFF); net borrowing from debt balances or direct; D&A / CapEx / ΔNWC by method; signed FCFE; simplified tax (no refund on pretax losses). Denomination-only CurrencySelect (PKR default, no FX). No FCFE-per-share UI (ADR-023). Activated; **`indexable` left false**. Example: NI $500k + D&A $80k − CapEx $150k − WC $40k + NB $60k → FCFE **$450,000**.
 - **EOQ Calculator (Economic Order Quantity) (`/tools/eoq-calculator-economic-order-quantity`):** Live client-side classical EOQ tool (`componentKey: 'EoqCalculator'`, catalog `6af46f10a27d8d1d4e990131`, `nameKey` `eoq calculator (economic order quantity)`). Screenshot-first (ADR-023): yearly demand (unit label) / order cost / yearly holding cost per unit / EOQ. Formula EOQ = √(2DS/H); derived annual ordering/holding/total variable cost, orders/year, days between orders, average cycle inventory, practical integer EOQ. Denomination-only CurrencySelect (PKR default, no FX). No reorder-point UI (ADR-023). Activated; **`indexable` left false**. Example: D 50,000 · S $10 · H $4 → EOQ **500** units.

@@ -906,6 +906,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EmergencyFundCalculator: () =>
     import('@/tools/calculators/emergency-fund/detail'),
   FinanceCalculator: () => import('@/tools/calculators/finance/detail'),
+  FinancialLeverageRatioCalculator: () =>
+    import('@/tools/calculators/financial-leverage-ratio/detail'),
   FireCalculator: () => import('@/tools/calculators/fire/detail'),
   GiftOfEquityCalculator: () =>
     import('@/tools/calculators/gift-of-equity/detail'),

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Financial Leverage Ratio Calculator
+- **Summary:** Shipped Financial Leverage Ratio Calculator on existing catalog slug `financial-leverage-ratio-calculator` (`FinancialLeverageRatioCalculator`, catalog `6af46f10a27d8d1d4e990134`, preserved `nameKey` `financial leverage ratio calculator`). Screenshot-first (ADR-023): current + non-current → total assets; equity → FL = Assets/Equity (equity multiplier); zero/negative equity handling; derived liabilities, equity ratio, L/E. Denomination-only CurrencySelect (PKR default, no FX). No reverse-mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Current $300,000 + Non-current $1,000,000 · Equity $500,000 → FL **2.60×**.
+- **Important Files:** `frontend/src/tools/calculators/financial-leverage-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add FFO Calculator
 - **Summary:** Shipped FFO Calculator on existing catalog slug `ffo-calculator` (`FfoCalculator`, catalog `6af46f10a27d8d1d4e990133`, preserved `nameKey` `ffo calculator`). Screenshot-first (ADR-023): NI / D&A / gains / losses / interest income / FFO; standard FFO = NI + D&A − Gains + Losses; optional adjusted convention excludes interest income once. Denomination-only CurrencySelect (PKR default, no FX). No FFO-per-share UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** NI $500,000 + D&A $150,000 − Gains $125,000 + Losses $50,000 → FFO **$575,000**.
