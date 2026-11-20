@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Price Elasticity of Demand Calculator
+- **Summary:** Shipped Price Elasticity of Demand Calculator on existing catalog slug `price-elasticity-of-demand-calculator` (`PriceElasticityOfDemandCalculator`, catalog `6af46f10a27d8d1d4e990140`, preserved `nameKey` `price elasticity of demand calculator`). Screenshot-first (ADR-023): midpoint (arc) PED from two observations; signed PED + classification; initial/final revenue; revenue % change with zero-R₁ guard; equal-price / zero-avg-Q undefined PED. Reuses Optimal Price midpoint utility. Denomination-only CurrencySelect (PKR default, no FX). No charts / alternate-method selector. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $50→$60 · 200→150 → PED **−1.5714** (elastic) · revenue **$10,000→$9,000 (−10%)**.
+- **Important Files:** `frontend/src/tools/calculators/price-elasticity-of-demand/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` PED calculation tests 18/18 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Optimal Price Calculator
 - **Summary:** Shipped Optimal Price Calculator on existing catalog slug `optimal-price-calculator` (`OptimalPriceCalculator`, catalog `6af46f10a27d8d1d4e99013f`, preserved `nameKey` `optimal price calculator`). Screenshot-first (ADR-023): MC / optional MR / initial·final price·quantity → constant-elasticity calibration; P* only when MC>0 and ε&lt;−1; Q* from demand curve; profits at three prices (zero FC); midpoint PED descriptive; MR diagnostic; no finite optimum for unit/inelastic/positive ε or MC=0. Denomination-only CurrencySelect (PKR default, no FX). No linear-demand / constraints / chart UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** MC **$40** · 100@$100 → 64@$125 → ε **−2** · P* **$80** · Q* **156.25** · π* **$6,250**.

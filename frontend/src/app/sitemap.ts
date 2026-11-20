@@ -555,6 +555,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'post-judgment-interest-calculator',
   'pre-and-post-money-valuation-calculator',
   'present-value-calculator',
+  'price-elasticity-of-demand-calculator',
   'price-quantity-calculator',
   'private-savings-calculator',
   'savings-plan-calculator',
