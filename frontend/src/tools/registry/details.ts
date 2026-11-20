@@ -71,6 +71,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-of-safety/detail'),
   MarginWithDiscountCalculator: () =>
     import('@/tools/calculators/margin-with-discount/detail'),
+  ModifiedAdjustedGrossIncomeCalculator: () =>
+    import(
+      '@/tools/calculators/modified-adjusted-gross-income/detail'
+    ),
   MarriageTaxCalculator: () =>
     import('@/tools/calculators/marriage-tax/detail'),
   MileageReimbursementCalculator: () =>
@@ -94,6 +98,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/california-tax/detail'),
   IllinoisTaxCalculator: () =>
     import('@/tools/calculators/illinois-tax/detail'),
+  StateTaxCalculator: () =>
+    import('@/tools/calculators/state-tax/detail'),
+  TexasTaxCalculator: () =>
+    import('@/tools/calculators/texas-tax/detail'),
   CaliforniaSalesTaxCalculator: () =>
     import('@/tools/calculators/california-sales-tax/detail'),
   FloridaSalesTaxCalculator: () =>

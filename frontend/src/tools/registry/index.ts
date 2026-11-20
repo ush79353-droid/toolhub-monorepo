@@ -264,6 +264,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginWithDiscountCalculator,
     })),
   ),
+  ModifiedAdjustedGrossIncomeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/modified-adjusted-gross-income/ModifiedAdjustedGrossIncomeCalculator'
+    ).then((mod) => ({
+      default: mod.ModifiedAdjustedGrossIncomeCalculator,
+    })),
+  ),
   MarriageTaxCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/marriage-tax/MarriageTaxCalculator'
@@ -341,6 +348,18 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/illinois-tax/IllinoisTaxCalculator').then(
       (mod) => ({
         default: mod.IllinoisTaxCalculator,
+      }),
+    ),
+  ),
+  StateTaxCalculator: lazyTool(() =>
+    import('@/tools/calculators/state-tax/StateTaxCalculator').then((mod) => ({
+      default: mod.StateTaxCalculator,
+    })),
+  ),
+  TexasTaxCalculator: lazyTool(() =>
+    import('@/tools/calculators/texas-tax/TexasTaxCalculator').then(
+      (mod) => ({
+        default: mod.TexasTaxCalculator,
       }),
     ),
   ),

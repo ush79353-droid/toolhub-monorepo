@@ -36,6 +36,7 @@ export const APPROVED_COMPONENT_KEYS = [
 
   'MarginAndSalesTaxCalculator',
   'MarriageTaxCalculator',
+  'ModifiedAdjustedGrossIncomeCalculator',
   'MarginAndVatCalculator',
   'MarginCalculatorClassic',
   'MarginCallCalculator',
@@ -51,6 +52,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'AlabamaTaxCalculator',
   'CaliforniaTaxCalculator',
   'IllinoisTaxCalculator',
+  'StateTaxCalculator',
+  'TexasTaxCalculator',
   'CaliforniaSalesTaxCalculator',
   'FloridaSalesTaxCalculator',
   'NewJerseySalesTaxCalculator',
@@ -1610,6 +1613,7 @@ if (isDirect) {
     !isApprovedComponentKey('MileageReimbursementCalculator') ||
     !isApprovedComponentKey('MarginAndSalesTaxCalculator') ||
     !isApprovedComponentKey('MarriageTaxCalculator') ||
+    !isApprovedComponentKey('ModifiedAdjustedGrossIncomeCalculator') ||
     !isApprovedComponentKey('MarginAndVatCalculator') ||
     !isApprovedComponentKey('MarginCalculatorClassic') ||
     !isApprovedComponentKey('MarginCallCalculator') ||
@@ -1643,6 +1647,8 @@ if (isDirect) {
     !isApprovedComponentKey('AlabamaTaxCalculator') ||
     !isApprovedComponentKey('CaliforniaTaxCalculator') ||
     !isApprovedComponentKey('IllinoisTaxCalculator') ||
+    !isApprovedComponentKey('StateTaxCalculator') ||
+    !isApprovedComponentKey('TexasTaxCalculator') ||
     !isApprovedComponentKey('CaliforniaSalesTaxCalculator') ||
     !isApprovedComponentKey('FloridaSalesTaxCalculator') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||

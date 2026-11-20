@@ -4,6 +4,17 @@
 
 ---
 
+### 2026-11-20 — Add Texas Tax Calculator
+- **Summary:** Shipped Texas Tax Calculator on existing catalog slug `texas-tax-calculator` (`TexasTaxCalculator`, catalog `6af46f0fa27d8d1d4e990076`, pillar/subPillar null). Screenshot-first: Payroll (AGI/period, pay frequency, year default 2026, filing status, dependents, itemized/post-tax) + Property (home value, 250 TX counties, ACS 2020–2024 effective rate, Anderson default **0.919%**). Federal ordinary tax + Texas state income tax **$0**; FICA omitted (AGI ≠ wages). Fixed USD. Activated; **`indexable` preserved false**.
+- **Example:** Single · TY2026 · AGI $80k · Anderson · $200k home @ 0.919% → state tax **$0** · property ≈ **$1,838**.
+- **Verification:** `calculation.test.ts`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Modified Adjusted Gross Income (MAGI) Calculator
+- **Summary:** Shipped MAGI Calculator on existing catalog slug `modified-adjusted-gross-income-magi-calculator` (`ModifiedAdjustedGrossIncomeCalculator`, catalog `6af46f0fa27d8d1d4e990067`, pillar/subPillar null). Screenshot-first (ADR-023): two expandable sections; 12 adjustment FX fields + AGI; illustrative MAGI = AGI + sum (FX-normalized). Not program-specific IRS eligibility. Dual `CURRENCY_CONVERSION_SLUGS`. AGI sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** AGI 80k · add-backs 14k → MAGI **94,000**.
+- **Important Files:** `frontend/src/tools/calculators/modified-adjusted-gross-income/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Semi-Monthly Pay Calculator
 - **Summary:** Shipped Semi-Monthly Pay Calculator on existing catalog slug `semi-monthly-pay-calculator` (`SemiMonthlyPayCalculator`, catalog `6af46f0fa27d8d1d4e990072`, pillar/subPillar null). Screenshot-first (ADR-023): hourly/daily/weekly/monthly/yearly wage FX (last-edited authoritative); hours/week 40; days/week 5; semi-monthly answer FX. Formulas via 52 weeks / 12 months / **24** semi-monthly periods (not biweekly 26). Dual `CURRENCY_CONVERSION_SLUGS`. Biweekly Pay sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 500/hr · 40h · 5d → yearly **1,040,000** · semi-monthly **43,333.33**.
@@ -42,6 +53,11 @@
 - **Example:** Single · TY2025 · AGI $80,000 · assessed $500,000 · Alameda 1.22% → federal taxable **$64,250** · CA taxable **$74,294** · property **$6,100**.
 - **Important Files:** `frontend/src/tools/calculators/california-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add State Tax Calculator
+- **Summary:** Shipped State Tax Calculator navigator on existing catalog slug `state-tax-calculator` (`StateTaxCalculator`, catalog `6af46f0fa27d8d1d4e990073`, pillar/subPillar null). Screenshot-first (ADR-023): Where do you live? state dropdown (Alabama default); Visit our [State] Tax Calculator link only for verified live destinations (AL/CA/IL). Unavailable message otherwise. No tax math, no FX. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Important Files:** `frontend/src/tools/calculators/state-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Monthly Income Calculator
 - **Summary:** Shipped Monthly Income Calculator on existing catalog slug `monthly-income-calculator` (`MonthlyIncomeCalculator`, catalog `6af46f0fa27d8d1d4e990069`, pillar/subPillar null). Screenshot-first (ADR-023): hourly/daily/weekly/yearly FX (last-edited); optional adjust hours/days (defaults 8/5/52); Result monthly income FX. Dual `CURRENCY_CONVERSION_SLUGS`. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
@@ -95,6 +111,11 @@
 - **Example:** 2026 single employee · $100,000 → employee FICA **$7,650** · employer **$7,650** · combined **$15,300**.
 - **Important Files:** `frontend/src/tools/calculators/fica-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Texas Tax Calculator
+- **Summary:** Shipped Texas Tax Calculator on existing catalog slug `texas-tax-calculator` (`TexasTaxCalculator`, catalog `6af46f0fa27d8d1d4e990076`). Payroll + property sections; Texas state income tax always $0; federal TY2025/2026; ACS 2020–2024 county effective property rates (250 counties; Anderson default). Fixed USD; no FX. Activated `--set-active` only — **`indexable` preserved false**.
+- **Important Files:** `frontend/src/tools/calculators/texas-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check. Mongo without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Tax Bracket Calculator
 - **Summary:** Shipped Tax Bracket Calculator on existing catalog slug `tax-bracket-calculator` (`TaxBracketCalculator`, catalog `6af46f0fa27d8d1d4e990075`, pillar/subPillar null). Screenshot-first (ADR-023): Year 2024 default (+2025/2026); filing statuses; income USD; deductions default $0; progressive tax, marginal/effective rates, bracket breakdown. Sources: Rev. Proc. 2023-34 / 2024-40 / 2025-32. Fixed USD; no FX. Income Tax sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
