@@ -58,6 +58,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sales-tax-calculator-new-jersey',
   'california-sales-tax-calculator',
   'california-tax-calculator',
+  'illinois-tax-calculator',
   'gross-to-net-calculator',
   'gst-calculator',
   'florida-sales-tax-calculator',

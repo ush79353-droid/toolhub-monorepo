@@ -91,7 +91,7 @@ Audit pending: deferred to final audit coordinator
 
 | 57 | Estate Tax Calculator | DEVELOPED | AUDIT PENDING | e0401c2e | b3a71c6e | 5f71e4e7 | Completed Tools | EstateTaxCalculator; slug estate-tax-calculator; Mongo 6af46f0fa27d8d1d4e99005c; fixed USD; indexable false; reg via 5f71e4e7 |
 
-| 60 | Mileage Reimbursement Calculator | DEVELOPED | AUDIT PENDING | dafff61f | 27d5f4d6 | (reg) | Completed Tools | `MileageReimbursementCalculator`; slug `mileage-reimbursement-calculator`; Mongo `6af46f0fa27d8d1d4e990066` active; fixed USD; IRS 2024/2025/2026-H1/H2; TASKS `TOOL-572` |
+| 60 | Mileage Reimbursement Calculator | DEVELOPED | AUDIT PENDING | dafff61f | 27d5f4d6 | 0e3d2a0a | Completed Tools | `MileageReimbursementCalculator`; slug `mileage-reimbursement-calculator`; Mongo `6af46f0fa27d8d1d4e990066` active; fixed USD; IRS 2024/2025/2026-H1/H2; TASKS `TOOL-572` |
 ## Session Log
 - 2026-11-20 (Mileage Reimbursement): Mileage Reimbursement Calculator DEVELOPED (`dafff61f` / `27d5f4d6` / reg). Mongo `6af46f0fa27d8d1d4e990066` activated; indexable false; fixed USD; IRS verified rates. Missouri ON HOLD untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (this agent): Tax Bracket Calculator DEVELOPED (`01b0a564` / `af00a40b` / brain+tracker registration). Mongo `6af46f0fa27d8d1d4e990075` activated; indexable false; fixed USD. Registry/keys/sitemap/tool.key also landed via concurrent commits. Moved to Completed Tools. Missouri ON HOLD untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.

@@ -16,6 +16,11 @@
 - **Important Files:** `frontend/src/tools/calculators/biweekly-pay/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Commits `69a25892` / `0e507dce`+`7b661ed0` / `eed18d1c`. Temporary files cleaned: YES.
 
+### 2026-11-20 — Add Illinois Tax Calculator
+- **Summary:** Shipped Illinois Tax Calculator on existing catalog slug `illinois-tax-calculator` (`IllinoisTaxCalculator`, catalog `6af46f0fa27d8d1d4e990063`, pillar/subPillar null). Screenshot-first: Payroll (AGI/period, pay frequency, year default 2026, filing status, dependents, itemized/post-tax) + Property (home value, all 102 IL counties, ACS effective rate). Federal ordinary tax + IL flat 4.95% with IDOR exemptions; FICA omitted (AGI ≠ wages). Fixed USD. Activated; **`indexable` preserved false**.
+- **Example:** Single · TY2026 · AGI $80k · Adams · $200k home @ 1.582% → IL taxable **$77,075** · property ≈ **$3,164**.
+- **Verification:** `calculation.test.ts`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Gross to Net Calculator
 - **Summary:** Shipped Gross to Net Calculator on existing catalog slug `gross-to-net-calculator` (`GrossToNetCalculator`, catalog `6af46f0fa27d8d1d4e99005f`, pillar/subPillar null). Screenshot-first (ADR-023): gross FX; gross-to-net / net-to-gross radios; tax rate %; net FX; tax amount FX (RO). Formulas: Tax=Gross×r/100; Net=Gross−Tax; reverse Gross=Net/(1−r/100). Dual `CURRENCY_CONVERSION_SLUGS`; % never converts. Distinct from Sales Tax (VAT-added). Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Gross 100 · 10% → tax **10** · net **90**; net 90 · 10% → gross **100**.

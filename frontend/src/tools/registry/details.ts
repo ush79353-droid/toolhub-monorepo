@@ -89,6 +89,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/alabama-tax/detail'),
   CaliforniaTaxCalculator: () =>
     import('@/tools/calculators/california-tax/detail'),
+  IllinoisTaxCalculator: () =>
+    import('@/tools/calculators/illinois-tax/detail'),
   CaliforniaSalesTaxCalculator: () =>
     import('@/tools/calculators/california-sales-tax/detail'),
   FloridaSalesTaxCalculator: () =>
