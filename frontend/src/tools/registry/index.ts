@@ -3377,6 +3377,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FireCalculator,
     })),
   ),
+  GiftOfEquityCalculator: lazyTool(() =>
+    import('@/tools/calculators/gift-of-equity/GiftOfEquityCalculator').then(
+      (mod) => ({
+        default: mod.GiftOfEquityCalculator,
+      })
+    )
+  ),
   GoldMeltCalculator: lazyTool(() =>
     import('@/tools/calculators/gold-melt/GoldMeltCalculator').then((mod) => ({
       default: mod.GoldMeltCalculator,

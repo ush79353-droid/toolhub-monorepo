@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Gift of Equity Calculator
+- **Summary:** Shipped Gift of Equity Calculator on existing catalog slug `gift-of-equity-calculator` (`GiftOfEquityCalculator`, catalog `6af46f10a27d8d1d4e990116`, preserved `nameKey` `gift of equity calculator`). Screenshot-first (ADR-023): three compact fields with explicit modes for gift, sales price, and market value. Negative MV−SP differences preserved with warning. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $600,000 − $500,000 → **$100,000**; $600,000 − $550,000 → **$50,000**; reverse MV $600k · gift $100k → sales **$500,000**.
+- **Important Files:** `frontend/src/tools/calculators/gift-of-equity/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Earnest Money Calculator
 - **Summary:** Shipped Earnest Money Calculator on existing catalog slug `earnest-money-calculator` (`EarnestMoneyCalculator`, catalog `6af46f10a27d8d1d4e990115`, preserved `nameKey` `earnest money calculator`). Screenshot-first (ADR-023): three compact fields with explicit modes for deposit, percentage, and property price. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $300,000 × 3% → **$9,000**; reverse $12,000 / $400,000 → **3%**; $15,000 / 3% → price **$500,000**.
