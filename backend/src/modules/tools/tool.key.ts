@@ -653,6 +653,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PricePerSquareMeterCalculator',
   'ProductivityCalculator',
   'QuizUsIncomePercentileCalculator',
+  'ReceivablesTurnoverRatioCalculator',
   'SabbaticalCalculator',
   'ScrapGoldCalculator',
   'ScrapSilverCalculator',
@@ -1346,6 +1347,7 @@ if (isDirect) {
     !isApprovedComponentKey('PricePerSquareMeterCalculator') ||
     !isApprovedComponentKey('ProductivityCalculator') ||
     !isApprovedComponentKey('QuizUsIncomePercentileCalculator') ||
+    !isApprovedComponentKey('ReceivablesTurnoverRatioCalculator') ||
     !isApprovedComponentKey('SabbaticalCalculator') ||
     !isApprovedComponentKey('ScrapGoldCalculator') ||
     !isApprovedComponentKey('ScrapSilverCalculator') ||

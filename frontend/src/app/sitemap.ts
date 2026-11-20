@@ -687,6 +687,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'productivity-calculator',
   'rental-property-calculator',
   'quiz-us-income-percentile-calculator',
+  'receivables-turnover-ratio-calculator',
   'sabbatical-calculator',
   'scrap-gold-calculator',
   'scrap-silver-calculator',

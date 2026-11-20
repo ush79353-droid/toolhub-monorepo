@@ -3676,6 +3676,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.QuizUsIncomePercentileCalculator,
     })),
   ),
+  ReceivablesTurnoverRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/receivables-turnover-ratio/ReceivablesTurnoverRatioCalculator'
+    ).then((mod) => ({
+      default: mod.ReceivablesTurnoverRatioCalculator,
+    })),
+  ),
   SabbaticalCalculator: lazyTool(() =>
     import('@/tools/calculators/sabbatical/SabbaticalCalculator').then((mod) => ({
       default: mod.SabbaticalCalculator,

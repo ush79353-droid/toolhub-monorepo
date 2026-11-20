@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Receivables Turnover Ratio Calculator
+- **Summary:** Shipped Receivables Turnover Ratio Calculator on existing catalog slug `receivables-turnover-ratio-calculator` (`ReceivablesTurnoverRatioCalculator`, catalog `6af46f10a27d8d1d4e990142`, preserved `nameKey` `receivables turnover ratio calculator`). Screenshot-first (ADR-023): net credit sales / opening AR / closing AR → average AR / turnover (times); independent average when sales missing; zero average AR → undefined; zero sales → 0×; breakdown. Denomination-only CurrencySelect (PKR default, no FX). No DSO field in primary UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Net credit sales **$120,000** · Opening **$20,000** · Closing **$30,000** → Avg AR **$25,000** · RTR **4.8 times**.
+- **Important Files:** `frontend/src/tools/calculators/receivables-turnover-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Receivables Turnover calculation tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Productivity Calculator
 - **Summary:** Shipped Productivity Calculator on existing catalog slug `productivity-calculator` (`ProductivityCalculator`, catalog `6af46f10a27d8d1d4e990141`, preserved `nameKey` `productivity calculator`). Screenshot-first (ADR-023): revenue; productivity per employee (RPE); productivity per hour (RPH) with seconds/minutes/hours conversion to hours; independent calculation branches; breakdown. Denomination-only CurrencySelect (PKR default, no FX). No ambiguous workday/week units; no advanced output/profit metrics UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Revenue **$500,000** · Employees **25** · Hours **4,000** → RPE **$20,000** · RPH **$125/hour**.
