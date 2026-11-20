@@ -543,6 +543,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'operating-asset-turnover-calculator',
   'opportunity-cost-calculator',
   'optimal-hedge-ratio-calculator',
+  'optimal-price-calculator',
   'parking-ratio-calculator',
   'partially-amortized-loan-calculator',
   'payday-loan-calculator',

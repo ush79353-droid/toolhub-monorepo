@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Optimal Price Calculator
+- **Summary:** Shipped Optimal Price Calculator on existing catalog slug `optimal-price-calculator` (`OptimalPriceCalculator`, catalog `6af46f10a27d8d1d4e99013f`, preserved `nameKey` `optimal price calculator`). Screenshot-first (ADR-023): MC / optional MR / initial·final price·quantity → constant-elasticity calibration; P* only when MC>0 and ε&lt;−1; Q* from demand curve; profits at three prices (zero FC); midpoint PED descriptive; MR diagnostic; no finite optimum for unit/inelastic/positive ε or MC=0. Denomination-only CurrencySelect (PKR default, no FX). No linear-demand / constraints / chart UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** MC **$40** · 100@$100 → 64@$125 → ε **−2** · P* **$80** · Q* **156.25** · π* **$6,250**.
+- **Important Files:** `frontend/src/tools/calculators/optimal-price/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Optimal Price calculation tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Net Operating Assets Calculator
 - **Summary:** Shipped Net Operating Assets Calculator on existing catalog slug `net-operating-assets-calculator` (`NetOperatingAssetsCalculator`, catalog `6af46f10a27d8d1d4e99013d`, preserved `nameKey` `net operating assets calculator`). Screenshot-first (ADR-023): Operating assets (cash/AR/inventory/prepaid/fixed) + Operating liabilities (AP/accruals) → OA, OL, NOA; positive/zero/negative NOA; expandable breakdown. Denomination-only CurrencySelect (PKR default, no FX). No RNOA / ΔNOA / detailed BS mode. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** OA **$1,550,000** − OL **$600,000** → NOA **$950,000**.

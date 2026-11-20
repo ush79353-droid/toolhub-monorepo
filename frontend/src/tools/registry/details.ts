@@ -696,6 +696,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/operating-asset-turnover/detail'),
   OptimalHedgeRatioCalculator: () =>
     import('@/tools/calculators/optimal-hedge-ratio/detail'),
+  OptimalPriceCalculator: () =>
+    import('@/tools/calculators/optimal-price/detail'),
   OpportunityCostCalculator: () =>
     import('@/tools/calculators/opportunity-cost/detail'),
   ParkingRatioCalculator: () =>

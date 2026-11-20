@@ -2780,6 +2780,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OptimalHedgeRatioCalculator,
     })),
   ),
+  OptimalPriceCalculator: lazyTool(() =>
+    import('@/tools/calculators/optimal-price/OptimalPriceCalculator').then((mod) => ({
+      default: mod.OptimalPriceCalculator,
+    })),
+  ),
   OpportunityCostCalculator: lazyTool(() =>
     import('@/tools/calculators/opportunity-cost/OpportunityCostCalculator').then((mod) => ({
       default: mod.OpportunityCostCalculator,

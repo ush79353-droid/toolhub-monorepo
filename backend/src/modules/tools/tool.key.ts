@@ -521,6 +521,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'OnlineMarketingConversionCalculator',
   'OperatingAssetTurnoverCalculator',
   'OptimalHedgeRatioCalculator',
+  'OptimalPriceCalculator',
   'OpportunityCostCalculator',
   'ParkingRatioCalculator',
   'PartiallyAmortizedLoanCalculator',
@@ -1207,6 +1208,7 @@ if (isDirect) {
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
     !isApprovedComponentKey('OperatingAssetTurnoverCalculator') ||
     !isApprovedComponentKey('OptimalHedgeRatioCalculator') ||
+    !isApprovedComponentKey('OptimalPriceCalculator') ||
     !isApprovedComponentKey('OpportunityCostCalculator') ||
     !isApprovedComponentKey('ParkingRatioCalculator') ||
     !isApprovedComponentKey('PartiallyAmortizedLoanCalculator') ||
