@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Net Operating Assets Calculator
+- **Summary:** Shipped Net Operating Assets Calculator on existing catalog slug `net-operating-assets-calculator` (`NetOperatingAssetsCalculator`, catalog `6af46f10a27d8d1d4e99013d`, preserved `nameKey` `net operating assets calculator`). Screenshot-first (ADR-023): Operating assets (cash/AR/inventory/prepaid/fixed) + Operating liabilities (AP/accruals) → OA, OL, NOA; positive/zero/negative NOA; expandable breakdown. Denomination-only CurrencySelect (PKR default, no FX). No RNOA / ΔNOA / detailed BS mode. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** OA **$1,550,000** − OL **$600,000** → NOA **$950,000**.
+- **Important Files:** `frontend/src/tools/calculators/net-operating-assets/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` NOA calculation tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Month-Over-Month Calculator
 - **Summary:** Shipped Month-Over-Month Calculator on existing catalog slug `month-over-month-calculator` (`MonthOverMonthCalculator`, catalog `6af46f10a27d8d1d4e99013b`, preserved `nameKey` `month-over-month calculator`). Screenshot-first (ADR-023): MoM + CMGR expanded; QoQ + YoY collapsed; percentage-change MoM/QoQ/YoY; compounded CMGR with months|years duration; zero-baseline / indeterminate / negative-baseline handling; independent sections. No currency selector. No reverse/chart UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** 50,000 → 60,000 MoM **+20%**; CMGR 50,000 → 100,000 / 12 months ≈ **+5.95%**.
