@@ -790,6 +790,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/loan-repayment/detail'),
   QuizLoanBalanceCalculator: () =>
     import('@/tools/calculators/quiz-loan-balance/detail'),
+  QuizAnnualIncomeCalculator: () =>
+    import('@/tools/calculators/quiz-annual-income/detail'),
   QuizCarDepreciationCalculator: () =>
     import('@/tools/calculators/quiz-car-depreciation/detail'),
   QuizDividendCalculator: () =>

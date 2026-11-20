@@ -578,6 +578,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LoanPaymentCalculator',
   'LoanRepaymentCalculator',
   'QuizLoanBalanceCalculator',
+  'QuizAnnualIncomeCalculator',
   'QuizCarDepreciationCalculator',
   'QuizDividendCalculator',
   'ManHoursCalculator',
@@ -1364,6 +1365,7 @@ if (isDirect) {
     !isApprovedComponentKey('LoanPaymentCalculator') ||
     !isApprovedComponentKey('LoanRepaymentCalculator') ||
     !isApprovedComponentKey('QuizLoanBalanceCalculator') ||
+    !isApprovedComponentKey('QuizAnnualIncomeCalculator') ||
     !isApprovedComponentKey('QuizCarDepreciationCalculator') ||
     !isApprovedComponentKey('QuizDividendCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||

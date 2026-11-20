@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Quiz: Annual Income Calculator
+- **Summary:** Completed Quiz: Annual Income Calculator on existing catalog slug `quiz-annual-income-calculator` (`QuizAnnualIncomeCalculator`, catalog `6af46f0fa27d8d1d4e99006e`, preserved `nameKey` `quiz: annual income calculator`). Screenshot-first (ADR-023): progressive 7-question MCQ; score out of 7 after completion; Share/Reload/Clear/feedback. Full question bank recovered from Omni reference page matching the task screenshot (not invented). Fixed USD examples; no FX. Annual Income Calculator sibling untouched. **`indexable` preserved false**.
+- **Example:** Correct answers B/C/A/B/B/A/A → **7 / 7**. Incomplete quiz shows “Please answer all questions to see your score!”
+- **Important Files:** `frontend/src/tools/calculators/quiz-annual-income/*`, registry, sitemap, `tool.key.ts`, brain docs, tracker.
+- **Verification:** `npx tsx` quiz-annual-income calculation self-check passed. Mongo `tool:assign --set-active` (`indexable` false). Three ADR-019 local commits. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Add Rate of Pay Calculator
 - **Summary:** Completed Rate of Pay Calculator on existing catalog slug `rate-of-pay-calculator` (`RateOfPayCalculator`, catalog `6af46f0fa27d8d1d4e99006f`). Screenshot-first six-way wage conversion (hourly/daily/weekly/biweekly/monthly/annual) with hours/week default 40 and independent Phase 2 FX on each money field. Reuses verified Wage Calculator period math. Prior SPECIFICATION REQUIRED / RMD misfile resolved via authorized Rate of Pay screenshot. **`indexable` preserved false**. RMD / Wage siblings untouched.
 - **Example:** Hourly **500** · 40h → weekly **20,000** · annual **1,040,000** · monthly ≈ **86,666.67** · biweekly **40,000** · daily **4,000**.

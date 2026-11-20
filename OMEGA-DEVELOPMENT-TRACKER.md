@@ -179,7 +179,7 @@ Temporary files cleaned: YES. No push.
 - Still BLOCKED: curl + IDE browser both Incapsula 403; no dor-boundary/dor-jurisdiction files on disk. No commits.
 
 
-| 57 | Quiz: Annual Income Calculator | DEVELOPED | AUDIT PENDING | f4b4cf1b | 398a7e99 | *(reg hash)* | Completed Tools | `QuizAnnualIncomeCalculator`; slug `quiz-annual-income-calculator`; Mongo `6af46f0fa27d8d1d4e99006e`; 7 Omni-recovered questions; indexable false |
+| 57 | Quiz: Annual Income Calculator | DEVELOPED | AUDIT PENDING | f4b4cf1b | 398a7e99 | e5083650 | Completed Tools | `QuizAnnualIncomeCalculator`; slug `quiz-annual-income-calculator`; Mongo `6af46f0fa27d8d1d4e99006e`; 7 Omni-recovered questions; indexable false |
 | 56b | Marriage Tax Calculator | DEVELOPED | AUDIT PENDING | afa772c9 | cfdbb264+3cac2892 | de28b909 | Completed Tools | `MarriageTaxCalculator`; Mongo `6af46f0fa27d8d1d4e990065` |
 
 - 2026-11-20 (Quiz Annual Income): BLOCKED — hidden Q2–Q7 missing. Missouri untouched. Push/Pull/Fetch/Sync: NONE.
@@ -227,11 +227,11 @@ Full report: `OMEGA-50-CALCULATOR-REPAIR-REPORT.md`. Missouri ON HOLD untouched.
 
 Q2–Q7 recovered from Omni Calculator reference `https://www.omnicalculator.com/finance/annual-income-quiz` (matches screenshot title/Q1/results). Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
 
-| 57 | Quiz: Annual Income Calculator | DEVELOPED | AUDIT PENDING | f4b4cf1b | 398a7e99 | *(reg hash)* | Completed Tools | `QuizAnnualIncomeCalculator`; Mongo `6af46f0fa27d8d1d4e99006e` active; indexable false; TASKS `TOOL-580` |
+| 57 | Quiz: Annual Income Calculator | DEVELOPED | AUDIT PENDING | f4b4cf1b | 398a7e99 | e5083650 | Completed Tools | `QuizAnnualIncomeCalculator`; Mongo `6af46f0fa27d8d1d4e99006e` active; indexable false; TASKS `TOOL-580` |
 
 ### 2026-11-21 — Rate of Pay Calculator DEVELOPED
 
 Prior SPECIFICATION REQUIRED resolved with authorized Rate of Pay screenshot (hours/week + six wage FX fields). RMD misfile left historical. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
 
-| 64 | Rate of Pay Calculator | DEVELOPED | AUDIT PENDING | 3cbdf54f | 831424e8 | *(reg hash)* | Completed Tools | `RateOfPayCalculator`; slug `rate-of-pay-calculator`; Mongo `6af46f0fa27d8d1d4e99006f` active; Phase 2 FX; indexable false; TASKS `TOOL-579` |
+| 64 | Rate of Pay Calculator | DEVELOPED | AUDIT PENDING | 3cbdf54f | 831424e8 | bf05cd27 | Completed Tools | `RateOfPayCalculator`; slug `rate-of-pay-calculator`; Mongo `6af46f0fa27d8d1d4e99006f` active; Phase 2 FX; indexable false; TASKS `TOOL-579` |
 
