@@ -64,6 +64,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'margin-and-markup-calculator',
   'margin-and-sales-tax-calculator',
   'sales-tax-calculator',
+  'gross-to-net-calculator',
   'margin-and-vat-calculator',
   'margin-calculator-classic',
   'margin-call-calculator',

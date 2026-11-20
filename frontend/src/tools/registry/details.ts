@@ -94,6 +94,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   OhioSalesTaxCalculator: () =>
     import('@/tools/calculators/ohio-sales-tax/detail'),
   SalesTaxCalculator: () => import('@/tools/calculators/sales-tax/detail'),
+  GrossToNetCalculator: () => import('@/tools/calculators/gross-to-net/detail'),
   NewYorkOvertimeCalculator: () =>
     import('@/tools/calculators/new-york-overtime/detail'),
   OperatingMarginCalculator: () =>
@@ -718,6 +719,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EnterpriseValueCalculator: () =>
     import('@/tools/calculators/enterprise-value/detail'),
   EbtCalculator: () => import('@/tools/calculators/ebt/detail'),
+  EstateTaxCalculator: () => import('@/tools/calculators/estate-tax/detail'),
   EquivalentRateCalculator: () =>
     import('@/tools/calculators/equivalent-rate/detail'),
   EffectiveCorporateTaxRateCalculator: () =>

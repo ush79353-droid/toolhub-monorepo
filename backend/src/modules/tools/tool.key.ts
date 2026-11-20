@@ -50,6 +50,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NewJerseySalesTaxCalculator',
   'OhioSalesTaxCalculator',
   'SalesTaxCalculator',
+  'GrossToNetCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
   'NetProfitMarginCalculator',
@@ -539,7 +540,9 @@ export const APPROVED_COMPONENT_KEYS = [
   'EnterpriseValueCalculator',
   'EbtCalculator',
   'EquivalentRateCalculator',
+  'EstateTaxCalculator',
   'EffectiveCorporateTaxRateCalculator',
+
   'EmvCalculator',
   'EvmCalculator',
   'ExitRateCalculator',
@@ -1304,7 +1307,9 @@ if (isDirect) {
     !isApprovedComponentKey('EnterpriseValueCalculator') ||
     !isApprovedComponentKey('EbtCalculator') ||
     !isApprovedComponentKey('EquivalentRateCalculator') ||
+    !isApprovedComponentKey('EstateTaxCalculator') ||
     !isApprovedComponentKey('EffectiveCorporateTaxRateCalculator') ||
+
     !isApprovedComponentKey('EmvCalculator') ||
     !isApprovedComponentKey('EvmCalculator') ||
     !isApprovedComponentKey('ExitRateCalculator') ||
@@ -1620,6 +1625,7 @@ if (isDirect) {
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('OhioSalesTaxCalculator') ||
     !isApprovedComponentKey('SalesTaxCalculator') ||
+    !isApprovedComponentKey('GrossToNetCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||

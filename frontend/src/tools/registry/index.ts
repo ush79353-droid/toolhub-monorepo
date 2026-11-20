@@ -346,6 +346,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SalesTaxCalculator,
     })),
   ),
+  GrossToNetCalculator: lazyTool(() =>
+    import('@/tools/calculators/gross-to-net/GrossToNetCalculator').then(
+      (mod) => ({
+        default: mod.GrossToNetCalculator,
+      }),
+    ),
+  ),
   NewYorkOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/new-york-overtime/NewYorkOvertimeCalculator'
@@ -2933,6 +2940,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   EbtCalculator: lazyTool(() =>
     import('@/tools/calculators/ebt/EbtCalculator').then((mod) => ({
       default: mod.EbtCalculator,
+    })),
+  ),
+  EstateTaxCalculator: lazyTool(() =>
+    import('@/tools/calculators/estate-tax/EstateTaxCalculator').then((mod) => ({
+      default: mod.EstateTaxCalculator,
     })),
   ),
   EquivalentRateCalculator: lazyTool(() =>

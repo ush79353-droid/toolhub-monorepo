@@ -4,6 +4,18 @@
 
 ---
 
+### 2026-11-20 — Add Biweekly Pay Calculator
+- **Summary:** Shipped Biweekly Pay Calculator on existing catalog slug `biweekly-pay-calculator` (`BiweeklyPayCalculator`, catalog `6af46f0fa27d8d1d4e990058`, pillar/subPillar null). Screenshot-first (ADR-023): annual/monthly/weekly/daily/hourly wage FX (last-edited authoritative) + hours/week (40) + days/week (5); Answer biweekly wage FX. Formulas: annual÷26; monthly×12÷26; weekly×2; daily×days×2; hourly×hours×2 (26 biweekly periods/year, not semi-monthly). Dual `CURRENCY_CONVERSION_SLUGS`; hours/days never convert. Wage / Wage to Salary / Hours Pay siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Hourly 500 · 40h → biweekly **40,000**; annual 1,040,000 → biweekly **40,000**.
+- **Important Files:** `frontend/src/tools/calculators/biweekly-pay/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Commits `69a25892` / `0e507dce`+`7b661ed0` / `eed18d1c`. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Gross to Net Calculator
+- **Summary:** Shipped Gross to Net Calculator on existing catalog slug `gross-to-net-calculator` (`GrossToNetCalculator`, catalog `6af46f0fa27d8d1d4e99005f`, pillar/subPillar null). Screenshot-first (ADR-023): gross FX; gross-to-net / net-to-gross radios; tax rate %; net FX; tax amount FX (RO). Formulas: Tax=Gross×r/100; Net=Gross−Tax; reverse Gross=Net/(1−r/100). Dual `CURRENCY_CONVERSION_SLUGS`; % never converts. Distinct from Sales Tax (VAT-added). Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Gross 100 · 10% → tax **10** · net **90**; net 90 · 10% → gross **100**.
+- **Important Files:** `frontend/src/tools/calculators/gross-to-net/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add California Tax Calculator
 - **Summary:** Shipped California Tax Calculator on existing catalog slug `california-tax-calculator` (`CaliforniaTaxCalculator`, catalog `6af46f0fa27d8d1d4e99005a`, pillar/subPillar null). Screenshot-first (ADR-023): Payroll taxes (AGI + period, pay frequency, year 2025/2026, filing status, dependents, itemized/post-tax) + Property tax (assessed value, county, applied rate %). Results: federal income tax, CA income tax, payroll (SS/Medicare/Additional Medicare/SDI), take-home/period, annual property tax (separated). Fixed USD (no FX). Sources: FTB 2025 Form 540 schedules/credits, Rev. Proc. 2024-40/2025-32, SSA wage bases, EDD SDI, BOE 2024–25 county-average statutory rates (Alameda default **1.22%**, not illustrative 0.88%). Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**. Income Tax / Alabama Tax / California Sales Tax siblings untouched.
 - **Example:** Single · TY2025 · AGI $80,000 · assessed $500,000 · Alameda 1.22% → federal taxable **$64,250** · CA taxable **$74,294** · property **$6,100**.
@@ -38,6 +50,12 @@
 - **Summary:** Shipped Pay Raise Calculator on existing catalog slug `pay-raise-calculator` (`PayRaiseCalculator`, catalog `6af46f0fa27d8d1d4e99006d`, pillar/subPillar null). Screenshot-first (ADR-023): hours/week; before-raise periods with independent FX; raise % or monetary periods (last-edited authoritative, not stacked); after-raise read-only FX. Formulas: Annual = Hourly×H×52; Weekly = Annual÷52; Monthly = Annual÷12; raise sync; undefined % when before=0 and raise>0. Dual `CURRENCY_CONVERSION_SLUGS`; hours/% never convert. Future Salary / Wage siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**. UI files landed via concurrent gratuity UI commit; engine + registration are dedicated commits.
 - **Example:** 1,000/hr · 40h · 10% → weekly before **40,000** · annual **2,080,000** · after hourly **1,100**.
 - **Important Files:** `frontend/src/tools/calculators/pay-raise/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Estate Tax Calculator
+- **Summary:** Shipped Estate Tax Calculator on existing catalog slug `estate-tax-calculator` (`EstateTaxCalculator`, catalog `6af46f0fa27d8d1d4e99005c`, pillar/subPillar null). Screenshot-first (ADR-023): seven asset USD fields; four deduction fields; tax-free lifetime gifts informational; Calculate/Clear + Share/Reload/Clear/feedback. 2026 Form 706 BEA **$15,000,000** / credit **$5,945,800**; IRC §2001(c) schedule. Tax-free gifts not modeled as adjusted taxable gifts. Fixed USD (no FX). Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Taxable estate **21,000,000** → estimated federal estate tax **$2,400,000**.
+- **Important Files:** `frontend/src/tools/calculators/estate-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Billable Hours Calculator

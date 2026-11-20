@@ -57,6 +57,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sales-tax-calculator-new-jersey',
   'california-sales-tax-calculator',
   'california-tax-calculator',
+  'gross-to-net-calculator',
   'florida-sales-tax-calculator',
   'ohio-sales-tax-calculator',
   'new-york-overtime-calculator',
@@ -460,7 +461,9 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'accounting-profit-calculator',
   'profit-calculator',
   'economic-profit-calculator',
+  'estate-tax-calculator',
   'ev-to-sales-calculator-enterprise-value-to-sales',
+
   'profitability-index-calculator',
   'revenue-per-employee-calculator',
   'roas-calculator',

@@ -20,6 +20,7 @@ import type { ToolMetadata } from '@/types/tool';
 const CURRENCY_CONVERSION_SLUGS = new Set([
   'margin-and-sales-tax-calculator',
   'sales-tax-calculator',
+  'gross-to-net-calculator',
   'margin-interest-calculator',
   'margin-with-discount-calculator',
   '12-hour-shift-pay-calculator',
