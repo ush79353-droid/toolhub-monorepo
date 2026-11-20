@@ -2337,6 +2337,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnualizedReturnCalculator,
     })),
   ),
+  AprCalculator: lazyTool(() =>
+    import('@/tools/calculators/apr/AprCalculator').then((mod) => ({
+      default: mod.AprCalculator,
+    })),
+  ),
   ApyCalculator: lazyTool(() =>
     import('@/tools/calculators/apy/ApyCalculator').then((mod) => ({
       default: mod.ApyCalculator,

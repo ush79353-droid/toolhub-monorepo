@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add APR Calculator
+- **Summary:** Shipped APR Calculator on existing catalog slug `apr-calculator` (`AprCalculator`, catalog `6af46f10a27d8d1d4e99014a`, preserved `nameKey` `apr calculator`). Screenshot-first (ADR-023): loan amount / term / nominal rate / payment frequency; origination (fixed|%) + other finance charges; fee treatment deducted|financed|paid-upfront; amortizing PMT; bisection APR from PV(payments)=net proceeds; EAR; schedule; estimated (non-regulatory) disclosure. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Principal **$10,000** · Rate **10%** · Term **2 years** monthly · Fee **$200** deducted → PMT ≈ **$461.45** · Proceeds **$9,800** · APR ≈ **12.1%**.
+- **Important Files:** `frontend/src/tools/calculators/apr/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` APR calculation tests 20/20 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add 28/36 Rule Calculator
 - **Summary:** Shipped 28/36 Rule Calculator on existing catalog slug `2836-rule-calculator` (`Rule2836Calculator`, catalog `6af46f10a27d8d1d4e990148`, preserved `nameKey` `28/36 rule calculator`). Screenshot-first (ADR-023): Front-end (28%) — gross income, combined or itemized housing, FER; Back-end (36%) — other debts, total debt, BER; guideline limits + housing capacity; overall pass only when both ≤ limits; zero income → ratios unavailable. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Income **$5,000** · Housing **$1,200** · Other debts **$400** → FER **24.00%** · total debt **$1,600** · BER **32.00%** · max housing **$1,400** · max debt **$1,800**.
