@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Accrual Ratio Calculator
+- **Summary:** Shipped Accrual Ratio Calculator on existing catalog slug `accrual-ratio-calculator` (`AccrualRatioCalculator`, catalog `6af46f10a27d8d1d4e990122`, preserved `nameKey` `accrual ratio calculator`). Screenshot-first (ADR-023): balance-sheet vs cash-flow methods; operating assets/liabilities → beginning/ending NOA; average NOA; zero/negative denominator handling; contextual interpretation without universal thresholds. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Beg assets $5M − liab $2M; end $5.8M − $2.3M → average NOA **$3.25M** · balance-sheet ratio ≈ **15.38%**; NI $800k − OCF $600k → ≈ **6.15%**.
+- **Important Files:** `frontend/src/tools/calculators/accrual-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add What To Offer On A House Calculator
 - **Summary:** Shipped What To Offer On A House Calculator on existing catalog slug `what-to-offer-on-a-house-calculator` (`WhatToOfferOnAHouseCalculator`, catalog `6af46f10a27d8d1d4e990121`, preserved `nameKey` `what to offer on a house calculator`). Screenshot-first (ADR-023): FMV − CoR − DD − DP; discount amount or % of FMV; breakdown + offer-to-value; zero/negative offer warnings without inventing a positive actionable offer. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $300,000 − $20,000 − $10,000 − $30,000 → offer **$240,000**; 5% discount path → **$235,000**.

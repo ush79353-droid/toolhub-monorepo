@@ -3320,6 +3320,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ApcCalculator,
     })),
   ),
+  AccrualRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/accrual-ratio/AccrualRatioCalculator').then(
+      (mod) => ({
+        default: mod.AccrualRatioCalculator,
+      })
+    ),
+  ),
   BankReconciliationCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/bank-reconciliation/BankReconciliationCalculator'

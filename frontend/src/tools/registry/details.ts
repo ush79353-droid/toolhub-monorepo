@@ -861,6 +861,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FiftyThirtyTwentyCalculator: () =>
     import('@/tools/calculators/fifty-thirty-twenty-rule/detail'),
   ApcCalculator: () => import('@/tools/calculators/apc/detail'),
+  AccrualRatioCalculator: () =>
+    import('@/tools/calculators/accrual-ratio/detail'),
   BankReconciliationCalculator: () =>
     import('@/tools/calculators/bank-reconciliation/detail'),
   CapRateCalculator: () => import('@/tools/calculators/cap-rate/detail'),
