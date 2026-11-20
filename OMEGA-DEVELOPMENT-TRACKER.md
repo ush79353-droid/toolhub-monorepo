@@ -124,3 +124,6 @@ Temporary files cleaned: YES. No push.
 ### 2026-11-20 — Missouri Sales Tax still blocked
 - DOR official CSV/XLSX downloads return Incapsula HTTP 403; cannot inspect Record Type Z files or activate. California completed separately.
 
+### 2026-11-20 — Missouri repair re-check
+- Still BLOCKED: curl + IDE browser both Incapsula 403; no dor-boundary/dor-jurisdiction files on disk. No commits.
+
