@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Home Affordability Calculator
+- **Summary:** Shipped Home Affordability Calculator on existing catalog slug `home-affordability-calculator` (`HomeAffordabilityCalculator`, catalog `6af46f10a27d8d1d4e990117`, preserved `nameKey` `home affordability calculator`). Screenshot-first (ADR-023): Loan specification + Additional information accordions; payment vs income/DTI modes; algebraic + binary price solver for tax/MI; down payment amount/percent; closing-cost display. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $2,000 P&I · 6% · 30y → loan ≈ **$333,583**; +$50k down → ≈ **$383,583**; $120k income · $800 debts · 28/36 → budget **$2,800**.
+- **Important Files:** `frontend/src/tools/calculators/home-affordability/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Gift of Equity Calculator
 - **Summary:** Shipped Gift of Equity Calculator on existing catalog slug `gift-of-equity-calculator` (`GiftOfEquityCalculator`, catalog `6af46f10a27d8d1d4e990116`, preserved `nameKey` `gift of equity calculator`). Screenshot-first (ADR-023): three compact fields with explicit modes for gift, sales price, and market value. Negative MV−SP differences preserved with warning. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $600,000 − $500,000 → **$100,000**; $600,000 − $550,000 → **$50,000**; reverse MV $600k · gift $100k → sales **$500,000**.
