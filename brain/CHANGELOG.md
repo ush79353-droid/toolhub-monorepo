@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Hours Pay Calculator
+- **Summary:** Shipped Hours Pay Calculator on existing catalog slug `hours-pay-calculator` (`HoursPayCalculator`, catalog `6af46f0fa27d8d1d4e990062`, pillar/subPillar null). Screenshot-first (ADR-023): daily/weekly/monthly/annual pay FX (last-edited authoritative); Working hours collapsed by default (8h/day · 5d/week · 52w/year); Result hourly wage FX. Dual `CURRENCY_CONVERSION_SLUGS`; hours/days/weeks never convert. Wage / Hourly Wage / Wage to Salary siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Daily 4,000 · 8h · 5d · 52w → hourly **500** · weekly **20,000** · annual **1,040,000**.
+- **Important Files:** `frontend/src/tools/calculators/hours-pay/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Money per Hour Calculator
 - **Summary:** Shipped Money per Hour Calculator on existing catalog slug `money-per-hour-calculator` (`MoneyPerHourCalculator`, catalog `6af46f0fa27d8d1d4e990068`, pillar/subPillar null). Screenshot-first (ADR-023): annual/monthly/biweekly/weekly/daily wage FX inputs + hours/week (default 40); Answer Money per hour FX. Last-edited period authoritative. Formulas: annual hours = hours×52; hourly from annual/monthly/weekly/biweekly/daily; daily = weekly÷5. Dual `CURRENCY_CONVERSION_SLUGS`; hours never convert. Wage / Hourly Wage / Salary to Hourly siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Annual 1,040,000 · 40h → hourly **500**; weekly **20,000**.
@@ -32,6 +38,18 @@
 - **Summary:** Shipped Billable Hours Calculator on existing catalog slug `billable-hours-calculator` (`BillableHoursCalculator`, catalog `6af46f0fa27d8d1d4e990057`, pillar/subPillar null). Screenshot-first (ADR-023): billable rate FX + sec/min/hr; billable time + secs/mins/hrs; billable value FX; bidirectional solve any one field. Formulas: Value = Rate × Time (unit-normalized); Rate = Value/Time; Time = Value/Rate. Dual `CURRENCY_CONVERSION_SLUGS`; time units never convert. Exact 60 s/min and 60 min/hr only. Bill Rate / Consulting Fees siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 500 PKR/hr · 40 hrs → **20,000** PKR; 500/hr · 30 mins → **250**.
 - **Important Files:** `frontend/src/tools/calculators/billable-hours/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Child Tax Credit Calculator
+- **Summary:** Shipped Child Tax Credit Calculator on existing catalog slug `child-tax-credit-calculator` (`ChildTaxCreditCalculator`, catalog `6af46f0fa27d8d1d4e99005b`, pillar/subPillar null). Screenshot-first (ADR-023): filing status Single/Joint/HoH; AGI USD; two child ages; estimated CTC, eligible count, phaseout reduction; ACTC labeled not determinable (no earned income). TY 2025: $2,200/child under 17; phaseout $200k/$400k at $50 per $1,000. Fixed USD; no FX. Income Tax sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Single · AGI 180k · ages 5 & 10 → **$4,400**; AGI 210k → reduction **$500** → **$3,900**.
+- **Important Files:** `frontend/src/tools/calculators/child-tax-credit/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Child Tax Credit Calculator
+- **Summary:** Shipped Child Tax Credit Calculator on existing catalog slug `child-tax-credit-calculator` (`ChildTaxCreditCalculator`, catalog `6af46f0fa27d8d1d4e99005b`, pillar/subPillar null). Screenshot-first (ADR-023): filing status Single/Joint/HoH; AGI USD; two child ages; estimated CTC, eligible count, phaseout reduction; ACTC labeled not determinable (no earned income). TY 2025: $2,200/child under 17; phaseout $200k/$400k at $50 per $1,000. Fixed USD; no FX. Income Tax sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Single · AGI 180k · ages 5 & 10 → **$4,400**; AGI 210k → reduction **$500** → **$3,900**.
+- **Important Files:** `frontend/src/tools/calculators/child-tax-credit/*`, registry, sitemap, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Bill Rate Calculator

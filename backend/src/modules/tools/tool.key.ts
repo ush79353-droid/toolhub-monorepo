@@ -22,6 +22,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GeorgiaOvertimeCalculator',
   'GrossMarginCalculator',
   'GrossRentMultiplierCalculator',
+  'GratuityCalculator',
   'GrowingAnnuityCalculator',
   'IllinoisOvertimeCalculator',
   'ImmediateAnnuityCalculator',
@@ -496,6 +497,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarriedInterestCalculator',
   'CashBackOrLowInterestCalculator',
   'CashFlowToDebtRatioCalculator',
+  'ChildTaxCreditCalculator',
   'CashRatioCalculator',
   'CashConversionCycleCalculator',
   'ChurnRateCalculator',
@@ -607,6 +609,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
+  'BiweeklyPayCalculator',
   'BoatLoanCalculator',
   'BondCalculator',
   'BondConvexityCalculator',
@@ -755,6 +758,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HourlyToSalaryWageCalculator',
   'HourlyToSalaryWithOvertimeCalculator',
   'HourlyWageCalculator',
+  'HoursPayCalculator',
   'WageCalculator',
   'WageToSalaryCalculator',
   'YearlyWageCalculator',
@@ -1258,6 +1262,7 @@ if (isDirect) {
     !isApprovedComponentKey('CarriedInterestCalculator') ||
     !isApprovedComponentKey('CashBackOrLowInterestCalculator') ||
     !isApprovedComponentKey('CashFlowToDebtRatioCalculator') ||
+    !isApprovedComponentKey('ChildTaxCreditCalculator') ||
     !isApprovedComponentKey('CashRatioCalculator') ||
     !isApprovedComponentKey('CashConversionCycleCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
@@ -1368,6 +1373,7 @@ if (isDirect) {
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
+    !isApprovedComponentKey('BiweeklyPayCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
     !isApprovedComponentKey('BondCalculator') ||
     !isApprovedComponentKey('BondConvexityCalculator') ||
