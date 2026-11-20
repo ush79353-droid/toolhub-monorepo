@@ -2625,6 +2625,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EbitdaMultipleCalculator,
     })),
   ),
+  EconomicValueAddedCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/economic-value-added/EconomicValueAddedCalculator'
+    ).then((mod) => ({
+      default: mod.EconomicValueAddedCalculator,
+    })),
+  ),
   EbtCalculator: lazyTool(() =>
     import('@/tools/calculators/ebt/EbtCalculator').then((mod) => ({
       default: mod.EbtCalculator,

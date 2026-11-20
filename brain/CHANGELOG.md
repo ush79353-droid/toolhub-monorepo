@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Economic Value Added Calculator
+- **Summary:** Shipped Economic Value Added Calculator on existing catalog slug `economic-value-added-calculator` (`EconomicValueAddedCalculator`, catalog `6af46f10a27d8d1d4e990159`, preserved `nameKey` `economic value added calculator`). Screenshot-first (ADR-023): NOPAT / IC / WACC% → EVA; OA−OL invested-capital helper with explicit apply. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NOPAT **$750,000** · IC **$1,000,000** · WACC **10%** → charge **$100,000** · EVA **$650,000**.
+- **Important Files:** `frontend/src/tools/calculators/economic-value-added/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` EVA tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add EBITDA Multiple Calculator
 - **Summary:** Shipped EBITDA Multiple Calculator on existing catalog slug `ebitda-multiple-calculator` (`EbitdaMultipleCalculator`, catalog `6af46f10a27d8d1d4e990158`, preserved `nameKey` `ebitda multiple calculator`). Screenshot-first (ADR-023): cash/market cap/MI/preferred/debt → EV; ÷ EBITDA → multiple. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$450M** + **$100M** + **$5M** + **$10M** − **$20M** → EV **$545M** · EBITDA **$50M** → **10.90×**.

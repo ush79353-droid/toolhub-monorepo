@@ -490,6 +490,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EbitCalculator',
   'EbitdaCalculator',
   'EbitdaMultipleCalculator',
+  'EconomicValueAddedCalculator',
   'EbtCalculator',
   'EquivalentRateCalculator',
   'EffectiveCorporateTaxRateCalculator',
@@ -1200,6 +1201,7 @@ if (isDirect) {
     !isApprovedComponentKey('EbitCalculator') ||
     !isApprovedComponentKey('EbitdaCalculator') ||
     !isApprovedComponentKey('EbitdaMultipleCalculator') ||
+    !isApprovedComponentKey('EconomicValueAddedCalculator') ||
     !isApprovedComponentKey('EbtCalculator') ||
     !isApprovedComponentKey('EquivalentRateCalculator') ||
     !isApprovedComponentKey('EffectiveCorporateTaxRateCalculator') ||

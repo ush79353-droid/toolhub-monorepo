@@ -634,6 +634,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EbitdaCalculator: () => import('@/tools/calculators/ebitda/detail'),
   EbitdaMultipleCalculator: () =>
     import('@/tools/calculators/ebitda-multiple/detail'),
+  EconomicValueAddedCalculator: () =>
+    import('@/tools/calculators/economic-value-added/detail'),
   EbtCalculator: () => import('@/tools/calculators/ebt/detail'),
   EquivalentRateCalculator: () =>
     import('@/tools/calculators/equivalent-rate/detail'),

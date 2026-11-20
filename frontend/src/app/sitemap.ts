@@ -667,6 +667,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ebit-calculator',
   'ebitda-calculator',
   'ebitda-multiple-calculator',
+  'economic-value-added-calculator',
   'ebt-calculator-earnings-before-tax',
   'ending-inventory-calculator',
   'eoq-calculator-economic-order-quantity',
