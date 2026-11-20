@@ -663,6 +663,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fixed-asset-turnover-ratio-calculator',
   'gift-of-equity-calculator',
   'gold-melt-calculator',
+  'goodwill-calculator',
   'lifetime-earnings-calculator',
   'long-term-care-calculator',
   'mega-millions-payout-calculator',

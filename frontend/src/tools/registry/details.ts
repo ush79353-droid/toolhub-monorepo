@@ -914,6 +914,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GiftOfEquityCalculator: () =>
     import('@/tools/calculators/gift-of-equity/detail'),
   GoldMeltCalculator: () => import('@/tools/calculators/gold-melt/detail'),
+  GoodwillCalculator: () => import('@/tools/calculators/goodwill/detail'),
   LifetimeEarningsCalculator: () =>
     import('@/tools/calculators/lifetime-earnings/detail'),
   LongTermCareCalculator: () =>

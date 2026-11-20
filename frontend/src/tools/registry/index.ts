@@ -3525,6 +3525,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GoldMeltCalculator,
     })),
   ),
+  GoodwillCalculator: lazyTool(() =>
+    import('@/tools/calculators/goodwill/GoodwillCalculator').then((mod) => ({
+      default: mod.GoodwillCalculator,
+    })),
+  ),
   LifetimeEarningsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/lifetime-earnings/LifetimeEarningsCalculator'

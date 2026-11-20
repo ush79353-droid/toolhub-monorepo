@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Goodwill Calculator
+- **Summary:** Shipped Goodwill Calculator on existing catalog slug `goodwill-calculator` (`GoodwillCalculator`, catalog `6af46f10a27d8d1d4e990136`, preserved `nameKey` `goodwill calculator`). Screenshot-first (ADR-023): purchase price / FV assets / FV liabilities / goodwill = max(0, P−(A−L)); negative residual → potential bargain purchase (not negative goodwill); net identifiable assets in summary. Denomination-only CurrencySelect (PKR default, no FX). No reverse/advanced NCI UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Purchase $1,000,000 · Assets $450,000 · Liabilities $400,000 → goodwill **$950,000**.
+- **Important Files:** `frontend/src/tools/calculators/goodwill/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` **blocked** (Atlas ETIMEDOUT / server selection timeout) — `isDeveloped` left unchanged. Three ADR-019 commits. Temporary files cleaned: YES. Retry assign when Mongo is reachable.
+
 ### 2026-11-20 — Add Fixed Asset Turnover Ratio Calculator
 - **Summary:** Shipped Fixed Asset Turnover Ratio Calculator on existing catalog slug `fixed-asset-turnover-ratio-calculator` (`FixedAssetTurnoverRatioCalculator`, catalog `6af46f10a27d8d1d4e990135`, preserved `nameKey` `fixed asset turnover ratio calculator`). Screenshot-first (ADR-023): starting + final → average fixed assets; revenue → FAT = Revenue/Average; zero-average undefined; zero/negative revenue handling; derived fixed asset intensity. Denomination-only CurrencySelect (PKR default, no FX). No reverse-mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Start $15,000,000 · Final $18,000,000 · Revenue $7,500,000 → avg **$16,500,000** · FAT ≈ **0.45×**.
