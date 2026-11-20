@@ -3524,6 +3524,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  HouseAffordabilityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/house-affordability/HouseAffordabilityCalculator'
+    ).then((mod) => ({
+      default: mod.HouseAffordabilityCalculator,
+    })),
+  ),
   MortgageTaxesInsuranceCalculator: lazyTool(() =>
     import('@/tools/calculators/mortgage-taxes-insurance/MortgageTaxesInsuranceCalculator').then((mod) => ({
       default: mod.MortgageTaxesInsuranceCalculator,

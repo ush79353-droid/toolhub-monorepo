@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add House Affordability Calculator
+- **Summary:** Shipped House Affordability Calculator on existing catalog slug `house-affordability-calculator` (`HouseAffordabilityCalculator`, catalog `6af46f10a27d8d1d4e990119`, preserved `nameKey` `house affordability calculator`). Screenshot-first (ADR-023): dual independent cards — income/DTI (conventional 28/36, FHA-style, VA-style, custom) and fixed monthly budget with include-taxes + maintenance; explicit Calculate/Clear; price-dependent expense solver. Distinct from `home-affordability-calculator`. USD default. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $120k income · 28/36 · 7.3% · 30y · 20% down · 1.5% tax · 0.5% insurance → finite max price with housing ≤ DTI budget; $3,500/mo fixed budget with fees included stays within budget.
+- **Important Files:** `frontend/src/tools/calculators/house-affordability/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Home Value Calculator (US)
 - **Summary:** Shipped Home Value Calculator (US) on existing catalog slug `home-value-calculator-us` (`HomeValueUsCalculator`, catalog `6af46f10a27d8d1d4e990118`, preserved `nameKey` `home value calculator (us)`). Screenshot-first (ADR-023): Your home + Home valuation accordions; 20 Case-Shiller metros from FRED CSV (no fabricated indices); present/past modes; CPI-U NSA real appreciation; Express `/api/v1/home-value` with Mongo cache (7-day TTL). Fixed USD. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Miami (MIXRNSA) · Jan 2005 · $300,000 → Aug 2026 indexed ≈ **$664,036**; real ≈ **+26%** vs CPIAUCNS.
