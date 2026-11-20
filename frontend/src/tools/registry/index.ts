@@ -3367,6 +3367,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ConsumerSurplusCalculator,
     })),
   ),
+  CrossPriceElasticityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cross-price-elasticity/CrossPriceElasticityCalculator'
+    ).then((mod) => ({
+      default: mod.CrossPriceElasticityCalculator,
+    })),
+  ),
   CashOnCashReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/cash-on-cash-return/CashOnCashReturnCalculator'

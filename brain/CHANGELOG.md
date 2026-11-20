@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Cross Price Elasticity Calculator
+- **Summary:** Shipped Cross Price Elasticity Calculator on existing catalog slug `cross-price-elasticity-calculator` (`CrossPriceElasticityCalculator`, catalog `6af46f10a27d8d1d4e990127`, preserved `nameKey` `cross price elasticity calculator`). Screenshot-first (ADR-023): time-point-1 / time-point-2 / elasticity accordions; initial-value (default) and midpoint methods; substitute/complement/zero guidance + magnitude; zero price-change undefined. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** PA $10→$12 · QB 1,000→1,200 → E **+1.00** (substitutes, unit magnitude).
+- **Important Files:** `frontend/src/tools/calculators/cross-price-elasticity/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Consumer Surplus Calculator
 - **Summary:** Shipped Consumer Surplus Calculator on existing catalog slug `consumer-surplus-calculator` (`ConsumerSurplusCalculator`, catalog `6af46f10a27d8d1d4e990126`, preserved `nameKey` `consumer surplus calculator`). Screenshot-first (ADR-023): actual price / willing price / CS with reverse modes; signed difference when price exceeds WTP; savings % vs WTP; Related information accordion. Denomination-only CurrencySelect (PKR default, no FX). No market triangle/graph. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** WTP $150 · P $100 → CS **$50**; P $150 · WTP $100 → difference −$50 (realized surplus N/A).

@@ -874,6 +874,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cash-conversion-cycle/detail'),
   ConsumerSurplusCalculator: () =>
     import('@/tools/calculators/consumer-surplus/detail'),
+  CrossPriceElasticityCalculator: () =>
+    import('@/tools/calculators/cross-price-elasticity/detail'),
   CashOnCashReturnCalculator: () =>
     import('@/tools/calculators/cash-on-cash-return/detail'),
   CarAffordabilityCalculator: () =>

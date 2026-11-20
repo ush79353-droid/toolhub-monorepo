@@ -638,6 +638,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cash-conversion-cycle-calculator',
   'cash-on-cash-return-calculator',
   'consumer-surplus-calculator',
+  'cross-price-elasticity-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
   'college-cost-calculator',
