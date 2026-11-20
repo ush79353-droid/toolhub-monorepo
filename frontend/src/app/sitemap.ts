@@ -651,6 +651,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pmi-calculator',
   'powerball-calculator',
   'price-per-square-foot-calculator',
+  'price-per-square-meter-calculator',
   'quiz-us-income-percentile-calculator',
   'sabbatical-calculator',
   'scrap-gold-calculator',

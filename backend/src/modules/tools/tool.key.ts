@@ -617,6 +617,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PmiCalculator',
   'PowerballCalculator',
   'PricePerSquareFootCalculator',
+  'PricePerSquareMeterCalculator',
   'QuizUsIncomePercentileCalculator',
   'SabbaticalCalculator',
   'ScrapGoldCalculator',
@@ -1275,6 +1276,7 @@ if (isDirect) {
     !isApprovedComponentKey('PmiCalculator') ||
     !isApprovedComponentKey('PowerballCalculator') ||
     !isApprovedComponentKey('PricePerSquareFootCalculator') ||
+    !isApprovedComponentKey('PricePerSquareMeterCalculator') ||
     !isApprovedComponentKey('QuizUsIncomePercentileCalculator') ||
     !isApprovedComponentKey('SabbaticalCalculator') ||
     !isApprovedComponentKey('ScrapGoldCalculator') ||

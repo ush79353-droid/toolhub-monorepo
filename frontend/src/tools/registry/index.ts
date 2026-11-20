@@ -3450,6 +3450,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PricePerSquareFootCalculator,
     })),
   ),
+  PricePerSquareMeterCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/price-per-square-meter/PricePerSqmCalculator'
+    ).then((mod) => ({
+      default: mod.PricePerSquareMeterCalculator,
+    })),
+  ),
   QuizUsIncomePercentileCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/quiz-us-income-percentile/QuizUsIncomePercentileCalculator'

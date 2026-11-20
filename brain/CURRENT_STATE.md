@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Price Per Square Foot Calculator live at `/tools/price-per-square-foot-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Price Per Square Meter Calculator live at `/tools/price-per-square-meter-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Price Per Square Meter Calculator (`/tools/price-per-square-meter-calculator`):** Live client-side unit-price tool (`componentKey: 'PricePerSquareMeterCalculator'`, catalog `6af46f10a27d8d1d4e99011e`, `nameKey` `price per square meter calculator`). Screenshot-first (ADR-023): price/rent + floor space → price per m²|ft² (**m² default**); reverse modes; purchase/rent; optional second-property comparison. Reuses shared `price-per-area` math with PPSF (independent route). Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: $500k / 250 m² → **$2,000/m²**; A $2,000 vs B $2,500 → **+$500** / **+25%**.
 - **Price Per Square Foot Calculator (`/tools/price-per-square-foot-calculator`):** Live client-side unit-price tool (`componentKey: 'PricePerSquareFootCalculator'`, catalog `6af46f10a27d8d1d4e99011d`, `nameKey` `price per square foot calculator`). Screenshot-first (ADR-023): price/rent + area → price per ft²|m²; reverse total-price and area modes; purchase/rent context with period; optional second-property comparison (normalized). Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: $500k / 2,500 ft² → **$200/ft²**; A $200 vs B $250 → **+$50** / **+25%**.
 - **PMI Calculator (`/tools/pmi-calculator`):** Live client-side private mortgage insurance estimator (`componentKey: 'PmiCalculator'`, catalog `6af46f10a27d8d1d4e99011c`, `nameKey` `pmi calculator`). Screenshot-first (ADR-023): Mortgage specification (home price, down payment amount/percent, mortgage amount, LTV) + PMI calculations (annual rate, annual/monthly PMI); simplified conventional applicability (LTV &gt; 80% may require). Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: $400k · 10% down · 0.5% rate → loan **$360,000** · LTV **90%** · monthly PMI **$150**.
 - **Net Operating Income Calculator (`/tools/net-operating-income-calculator`):** Live client-side NOI estimator (`componentKey: 'NetOperatingIncomeCalculator'`, catalog `6af46f10a27d8d1d4e99011a`, `nameKey` `net operating income calculator`). Screenshot-first (ADR-023): Potential gross income (area × rent/area ft²|m², other income); Effective gross income (occupancy → vacancy on rent only); operating expense breakdown or manual total; Result NOI (negative preserved). Debt service excluded. USD default. Activated; **`indexable` left false**. Example: 2,000 ft² · $25/ft² · $5k other · 92% occ · $22k OpEx → NOI **$29,000**.

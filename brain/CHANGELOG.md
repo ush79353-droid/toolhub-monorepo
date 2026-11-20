@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Price Per Square Meter Calculator
+- **Summary:** Shipped Price Per Square Meter Calculator on existing catalog slug `price-per-square-meter-calculator` (`PricePerSquareMeterCalculator`, catalog `6af46f10a27d8d1d4e99011e`, preserved `nameKey` `price per square meter calculator`). Screenshot-first (ADR-023): price/rent + floor space → unit price (**m² default**); reverse modes; purchase/rent; optional second-property comparison. Extracted shared `frontend/src/tools/shared/price-per-area.ts` used by both PPSM and PPSF (independent routes). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $500,000 / 250 m² → **$2,000/m²**; A $2,000 vs B $2,500 → **+$500/m²** / **+25%**.
+- **Important Files:** `frontend/src/tools/calculators/price-per-square-meter/*`, `frontend/src/tools/shared/price-per-area.ts`, PPSF `calculation.ts` re-export, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** PPSM + PPSF assert self-checks passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Price Per Square Foot Calculator
 - **Summary:** Shipped Price Per Square Foot Calculator on existing catalog slug `price-per-square-foot-calculator` (`PricePerSquareFootCalculator`, catalog `6af46f10a27d8d1d4e99011d`, preserved `nameKey` `price per square foot calculator`). Screenshot-first (ADR-023): price/rent + area → unit price; reverse total-price and area modes; ft²|m² conversion; purchase/rent with period; optional second-property comparison with normalized difference/%. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $500,000 / 2,500 ft² → **$200/ft²**; compare A $200 vs B $250 → **+$50/ft²** / **+25%**.
