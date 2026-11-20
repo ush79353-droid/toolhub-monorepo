@@ -82,6 +82,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'inventory-turnover-calculator',
   'lifo-calculator-for-inventory',
   'month-over-month-calculator',
+  'net-income-calculator',
   'net-operating-assets-calculator',
   'mortgage-calculator-with-taxes-and-insurance',
   'mortgage-comparison-calculator',

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Net Income Calculator
+- **Summary:** Shipped Net Income Calculator on existing catalog slug `net-income-calculator` (`NetIncomeCalculator`, catalog `6af46f10a27d8d1d4e99013c`, preserved `nameKey` `net income calculator`). Screenshot-first (ADR-023): pretax section (revenue/COGS/GP/OpEx/OpInc/interest/EBT) + taxes section (rate/taxes/NI); estimated taxes = max(EBT,0)×rate; net profit margin; income-statement breakdown. Denomination-only CurrencySelect (PKR default, no FX). No manual-tax / other-income UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Rev **$500,000** · COGS **$200,000** · OpEx **$100,000** · Int **$20,000** · tax **25%** → NI **$135,000** · margin **27%**.
+- **Important Files:** `frontend/src/tools/calculators/net-income/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Net Income calculation tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Marginal Cost Calculator
 - **Summary:** Shipped Marginal Cost Calculator on existing catalog slug `marginal-cost-calculator` (`MarginalCostCalculator`, catalog `6af46f10a27d8d1d4e99013a`, preserved `nameKey` `marginal cost calculator`). Screenshot-first (ADR-023): three fields ΔTC / ΔQ / MC; signed cost and quantity changes; zero MC when ΔTC=0; undefined when ΔQ=0; indeterminate when both zero; currency-per-unit formatting; quantity unit label (no conversion). Denomination-only CurrencySelect (PKR default, no FX). No reverse / initial-final mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** ΔTC **$15,000** ÷ ΔQ **200** → MC **$75/unit**.

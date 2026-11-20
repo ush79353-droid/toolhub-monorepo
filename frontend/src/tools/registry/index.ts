@@ -3603,6 +3603,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MillionaireCalculator,
     })),
   ),
+  NetIncomeCalculator: lazyTool(() =>
+    import('@/tools/calculators/net-income/NetIncomeCalculator').then((mod) => ({
+      default: mod.NetIncomeCalculator,
+    })),
+  ),
   NetOperatingAssetsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/net-operating-assets/NetOperatingAssetsCalculator'
