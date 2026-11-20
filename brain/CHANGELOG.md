@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Actual Cash Value Calculator
+- **Summary:** Shipped Actual Cash Value Calculator on existing catalog slug `actual-cash-value-calculator` (`ActualCashValueCalculator`, catalog `6af46f10a27d8d1d4e990123`, preserved `nameKey` `actual cash value calculator`). Screenshot-first (ADR-023): purchase price, expected life, current age → ACV with zero-salvage straight-line formula; years/months conversion; depreciation breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $25,000 · 10 years · 3 years → ACV **$17,500** · accumulated depreciation **$7,500** · **30%** depreciated.
+- **Important Files:** `frontend/src/tools/calculators/actual-cash-value/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Accrual Ratio Calculator
 - **Summary:** Shipped Accrual Ratio Calculator on existing catalog slug `accrual-ratio-calculator` (`AccrualRatioCalculator`, catalog `6af46f10a27d8d1d4e990122`, preserved `nameKey` `accrual ratio calculator`). Screenshot-first (ADR-023): balance-sheet vs cash-flow methods; operating assets/liabilities → beginning/ending NOA; average NOA; zero/negative denominator handling; contextual interpretation without universal thresholds. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Beg assets $5M − liab $2M; end $5.8M − $2.3M → average NOA **$3.25M** · balance-sheet ratio ≈ **15.38%**; NI $800k − OCF $600k → ≈ **6.15%**.

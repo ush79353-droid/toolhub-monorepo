@@ -631,6 +631,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '503020-rule-calculator',
   'apc-calculator',
   'accrual-ratio-calculator',
+  'actual-cash-value-calculator',
   'bank-reconciliation-calculator',
   'cap-rate-calculator',
   'cash-on-cash-return-calculator',

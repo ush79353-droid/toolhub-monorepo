@@ -64,6 +64,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FourZeroOneKCalculator',
   'AmortizationCalculator',
   'AccrualRatioCalculator',
+  'ActualCashValueCalculator',
   'AcreageCalculator',
   'FeetToInchesCalculator',
   'AcresToSquareMilesCalculator',
@@ -1260,6 +1261,7 @@ if (isDirect) {
     !isApprovedComponentKey('FiftyThirtyTwentyCalculator') ||
     !isApprovedComponentKey('ApcCalculator') ||
     !isApprovedComponentKey('AccrualRatioCalculator') ||
+    !isApprovedComponentKey('ActualCashValueCalculator') ||
     !isApprovedComponentKey('BankReconciliationCalculator') ||
     !isApprovedComponentKey('CapRateCalculator') ||
     !isApprovedComponentKey('CashOnCashReturnCalculator') ||

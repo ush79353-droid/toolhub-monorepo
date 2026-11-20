@@ -3327,6 +3327,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  ActualCashValueCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/actual-cash-value/ActualCashValueCalculator'
+    ).then((mod) => ({
+      default: mod.ActualCashValueCalculator,
+    })),
+  ),
   BankReconciliationCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/bank-reconciliation/BankReconciliationCalculator'

@@ -863,6 +863,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ApcCalculator: () => import('@/tools/calculators/apc/detail'),
   AccrualRatioCalculator: () =>
     import('@/tools/calculators/accrual-ratio/detail'),
+  ActualCashValueCalculator: () =>
+    import('@/tools/calculators/actual-cash-value/detail'),
   BankReconciliationCalculator: () =>
     import('@/tools/calculators/bank-reconciliation/detail'),
   CapRateCalculator: () => import('@/tools/calculators/cap-rate/detail'),
