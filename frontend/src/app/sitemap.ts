@@ -511,6 +511,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'dividend-payout-ratio-calculator',
   'dividend-yield-calculator',
   'direct-material-price-variance-calculator',
+  'dupont-analysis-calculator',
   'ear-calculator',
   'early-loan-payoff-calculator',
   'loan-repayment-calculator-loan-payoff-calculator',

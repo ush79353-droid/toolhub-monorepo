@@ -2575,6 +2575,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DirectMaterialPriceVarianceCalculator,
     })),
   ),
+  DupontAnalysisCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/dupont-analysis/DupontAnalysisCalculator'
+    ).then((mod) => ({
+      default: mod.DupontAnalysisCalculator,
+    })),
+  ),
   EarCalculator: lazyTool(() =>
     import('@/tools/calculators/ear/EarCalculator').then((mod) => ({
       default: mod.EarCalculator,

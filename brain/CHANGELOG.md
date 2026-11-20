@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add DuPont Analysis Calculator
+- **Summary:** Shipped DuPont Analysis Calculator on existing catalog slug `dupont-analysis-calculator` (`DupontAnalysisCalculator`, catalog `6af46f10a27d8d1d4e990155`, preserved `nameKey` `dupont analysis calculator`). Screenshot-first (ADR-023): sales/NI/assets/equity → NPM, TAT, FL, ROE. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$1,000,000** · **$120,000** · **$800,000** · **$400,000** → NPM **12%** · TAT **1.25×** · FL **2×** · ROE **30%**.
+- **Important Files:** `frontend/src/tools/calculators/dupont-analysis/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` DuPont calculation tests. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Repayment Calculator
 - **Summary:** Shipped Repayment Calculator on existing catalog slug `repayment-calculator` (`RepaymentCalculator`, catalog `6af46f10a27d8d1d4e990151`, preserved `nameKey` `repayment calculator`). Screenshot-first (ADR-023): fixed-term and fixed-installment modes; compounding/payment frequencies; effective periodic rate; amortization schedule; principal/interest chart. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$10,000** @ **10%** · monthly · **5 years** → payment ≈ **$212.47** · total ≈ **$12,748.23** · interest ≈ **$2,748.23**.

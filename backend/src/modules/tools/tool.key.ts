@@ -482,6 +482,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DividendPayoutRatioCalculator',
   'DividendYieldCalculator',
   'DirectMaterialPriceVarianceCalculator',
+  'DupontAnalysisCalculator',
   'EarCalculator',
   'EarlyLoanPayoffCalculator',
   'EbitCalculator',
@@ -1188,6 +1189,7 @@ if (isDirect) {
     !isApprovedComponentKey('DividendPayoutRatioCalculator') ||
     !isApprovedComponentKey('DividendYieldCalculator') ||
     !isApprovedComponentKey('DirectMaterialPriceVarianceCalculator') ||
+    !isApprovedComponentKey('DupontAnalysisCalculator') ||
     !isApprovedComponentKey('EarCalculator') ||
     !isApprovedComponentKey('EarlyLoanPayoffCalculator') ||
     !isApprovedComponentKey('EbitCalculator') ||
