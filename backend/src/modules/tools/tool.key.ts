@@ -512,6 +512,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MirrCalculator',
   'MoneyFactorCalculator',
   'MoneyMarketAccountCalculator',
+  'MonthOverMonthCalculator',
   'MovingAverageCalculator',
   'MutualFundCalculator',
   'MvaCalculator',
@@ -1196,6 +1197,7 @@ if (isDirect) {
     !isApprovedComponentKey('MirrCalculator') ||
     !isApprovedComponentKey('MoneyFactorCalculator') ||
     !isApprovedComponentKey('MoneyMarketAccountCalculator') ||
+    !isApprovedComponentKey('MonthOverMonthCalculator') ||
     !isApprovedComponentKey('MovingAverageCalculator') ||
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||

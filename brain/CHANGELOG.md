@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Month-Over-Month Calculator
+- **Summary:** Shipped Month-Over-Month Calculator on existing catalog slug `month-over-month-calculator` (`MonthOverMonthCalculator`, catalog `6af46f10a27d8d1d4e99013b`, preserved `nameKey` `month-over-month calculator`). Screenshot-first (ADR-023): MoM + CMGR expanded; QoQ + YoY collapsed; percentage-change MoM/QoQ/YoY; compounded CMGR with months|years duration; zero-baseline / indeterminate / negative-baseline handling; independent sections. No currency selector. No reverse/chart UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** 50,000 → 60,000 MoM **+20%**; CMGR 50,000 → 100,000 / 12 months ≈ **+5.95%**.
+- **Important Files:** `frontend/src/tools/calculators/month-over-month/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` MoM calculation tests 25/25 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add LIFO Calculator for Inventory
 - **Summary:** Shipped LIFO Calculator for Inventory on existing catalog slug `lifo-calculator-for-inventory` (`LifoInventoryCalculator`, catalog `6af46f10a27d8d1d4e990139`, preserved `nameKey` `lifo calculator for inventory`). Screenshot-first (ADR-023): Inventories bought (2 batches) / Units sold / Revenue and margin; LIFO newest-first COGS; ending inventory; revenue/GP/margin; expandable layer breakdown; insufficient-inventory guard. Denomination-only CurrencySelect (PKR default, no FX). Two-batch reference only (no dynamic add-batch UI). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** 10 units @ $10 + 15 @ $15 · sell 18 @ $20 → COGS **$255** · ending **$70** · revenue **$360** · GP **$105** · margin ≈ **29.17%**.

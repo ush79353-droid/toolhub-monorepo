@@ -81,6 +81,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'income-elasticity-of-demand-calculator',
   'inventory-turnover-calculator',
   'lifo-calculator-for-inventory',
+  'month-over-month-calculator',
   'mortgage-calculator-with-taxes-and-insurance',
   'mortgage-comparison-calculator',
   'home-mortgage-calculator',

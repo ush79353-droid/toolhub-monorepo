@@ -2733,6 +2733,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  MonthOverMonthCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/month-over-month/MonthOverMonthCalculator'
+    ).then((mod) => ({
+      default: mod.MonthOverMonthCalculator,
+    })),
+  ),
   MovingAverageCalculator: lazyTool(() =>
     import('@/tools/calculators/moving-average/MovingAverageCalculator').then((mod) => ({
       default: mod.MovingAverageCalculator,

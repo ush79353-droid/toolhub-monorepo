@@ -678,6 +678,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/money-factor/detail'),
   MoneyMarketAccountCalculator: () =>
     import('@/tools/calculators/money-market-account/detail'),
+  MonthOverMonthCalculator: () =>
+    import('@/tools/calculators/month-over-month/detail'),
   MovingAverageCalculator: () =>
     import('@/tools/calculators/moving-average/detail'),
   MutualFundCalculator: () =>
