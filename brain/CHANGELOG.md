@@ -4,11 +4,17 @@
 
 ---
 
+### 2026-11-20 — Add Residual Income Calculator
+- **Summary:** Shipped Residual Income Calculator on existing catalog slug `residual-income-calculator` (`ResidualIncomeCalculator`, catalog `6af46f10a27d8d1d4e990169`, preserved `nameKey` `residual income calculator`). Screenshot-first (ADR-023): equity charge = EC × (r%÷100); RI = NI − charge; positive/zero/negative interpretation. Denomination-only CurrencySelect (PKR default, no FX). **`indexable` preserved false**.
+- **Example:** EC **800,000** · r **10%** · NI **140,000** → charge **80,000** · RI **60,000**; Company Alpha EC **500,000,000** · 12% · NI **17,000,000** → RI **−43,000,000**.
+- **Important Files:** `frontend/src/tools/calculators/residual-income/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Residual Income tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Also completed pending RSI `tool:assign` for `6af46f10a27d8d1d4e990168`. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Relative Strength Index Calculator (RSI)
 - **Summary:** Shipped Relative Strength Index Calculator (RSI) on existing catalog slug `relative-strength-index-calculator-rsi` (`RelativeStrengthIndexCalculator`, catalog `6af46f10a27d8d1d4e990168`, preserved `nameKey` `relative strength index calculator (rsi)`). Screenshot-first (ADR-023): dynamic closing prices; period default 14; Wilder smoothing (default) + simple-average mode; AvgGain/AvgLoss/RS/RSI; zero-gain→100, zero-loss→0, flat→50; insufficient-data messaging; minimal SVG RSI sparkline (no new chart dependency). No CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Period **5** · prices **100, 102, 101, 104, 103, 106** → AvgGain **1.60** · AvgLoss **0.40** · RS **4.00** · RSI **80.00**.
 - **Important Files:** `frontend/src/tools/calculators/relative-strength-index/*`, registry, sitemap, `tool.key.ts`, brain docs.
-- **Verification:** `npx tsx --test` RSI tests 21/21 pass. Three ADR-019 commits. **Activation blocker:** Mongo Atlas `tool:assign` failed (ETIMEOUT / IP whitelist) — re-run assign when connectivity returns; `isDeveloped` not yet set via script. Temporary files cleaned: YES.
+- **Verification:** `npx tsx --test` RSI tests 21/21 pass. Three ADR-019 commits. Mongo `tool:assign` completed on retry (2026-11-20) — `isDeveloped: true`, `indexable` false. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Price to Earnings Ratio Calculator
 - **Summary:** Shipped Price to Earnings Ratio Calculator on existing catalog slug `price-to-earnings-ratio-calculator` (`PriceToEarningsRatioCalculator`, catalog `6af46f10a27d8d1d4e990167`, preserved `nameKey` `price to earnings ratio calculator`). Screenshot-first (ADR-023): price ÷ EPS → P/E; optional EPS from net income − preferred ÷ weighted shares; zero EPS → Not defined; negative EPS → N/M; interpretation bands. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.

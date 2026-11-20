@@ -3335,6 +3335,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RelativeStrengthIndexCalculator,
     })),
   ),
+  ResidualIncomeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/residual-income/ResidualIncomeCalculator'
+    ).then((mod) => ({
+      default: mod.ResidualIncomeCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

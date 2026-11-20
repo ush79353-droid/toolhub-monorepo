@@ -732,6 +732,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'price-to-book-ratio-calculator',
   'price-to-earnings-ratio-calculator',
   'relative-strength-index-calculator-rsi',
+  'residual-income-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
