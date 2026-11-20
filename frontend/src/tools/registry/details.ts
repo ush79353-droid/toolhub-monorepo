@@ -619,6 +619,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EarCalculator: () => import('@/tools/calculators/ear/detail'),
   EarlyLoanPayoffCalculator: () =>
     import('@/tools/calculators/early-loan-payoff/detail'),
+  EbitCalculator: () => import('@/tools/calculators/ebit/detail'),
   EquivalentRateCalculator: () =>
     import('@/tools/calculators/equivalent-rate/detail'),
   EffectiveCorporateTaxRateCalculator: () =>

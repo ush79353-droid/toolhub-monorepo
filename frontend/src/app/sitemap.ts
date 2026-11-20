@@ -644,6 +644,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'dio-calculator',
   'dpo-calculator-days-payable-outstanding',
   'dso-calculator',
+  'ebit-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
   'college-cost-calculator',

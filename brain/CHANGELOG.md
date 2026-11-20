@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add EBIT Calculator
+- **Summary:** Shipped EBIT Calculator on existing catalog slug `ebit-calculator` (`EbitCalculator`, catalog `6af46f10a27d8d1d4e99012d`, preserved `nameKey` `ebit calculator`). Screenshot-first (ADR-023): revenue / operating expenses / EBIT with reverse modes; signed EBIT; EBIT margin when revenue &gt; 0. Denomination-only CurrencySelect (PKR default, no FX). No expense-breakdown or EBITDA UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** revenue $50,000 − OE $24,000 → EBIT **$26,000**; OE $100k on $80k revenue → EBIT **−$20,000**.
+- **Important Files:** `frontend/src/tools/calculators/ebit/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add DSO Calculator
 - **Summary:** Shipped DSO (Days Sales Outstanding) Calculator on existing catalog slug `dso-calculator` (`DsoCalculator`, catalog `6af46f10a27d8d1d4e99012c`, preserved `nameKey` `dso calculator`). Screenshot-first (ADR-023): Receivables + Sales accordions; avg AR from beg/end or direct; total sales (default) or net credit sales; period days → DSO; AR turnover; zero sales undefined. Denomination-only CurrencySelect (PKR default, no FX). No reverse modes / no returns breakdown. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** AR 20,000/35,000 · sales 500,000 · 365 days → avg **27,500** · DSO **20.08 days**.
