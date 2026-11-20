@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add California Tax Calculator
+- **Summary:** Shipped California Tax Calculator on existing catalog slug `california-tax-calculator` (`CaliforniaTaxCalculator`, catalog `6af46f0fa27d8d1d4e99005a`, pillar/subPillar null). Screenshot-first (ADR-023): Payroll taxes (AGI + period, pay frequency, year 2025/2026, filing status, dependents, itemized/post-tax) + Property tax (assessed value, county, applied rate %). Results: federal income tax, CA income tax, payroll (SS/Medicare/Additional Medicare/SDI), take-home/period, annual property tax (separated). Fixed USD (no FX). Sources: FTB 2025 Form 540 schedules/credits, Rev. Proc. 2024-40/2025-32, SSA wage bases, EDD SDI, BOE 2024–25 county-average statutory rates (Alameda default **1.22%**, not illustrative 0.88%). Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**. Income Tax / Alabama Tax / California Sales Tax siblings untouched.
+- **Example:** Single · TY2025 · AGI $80,000 · assessed $500,000 · Alameda 1.22% → federal taxable **$64,250** · CA taxable **$74,294** · property **$6,100**.
+- **Important Files:** `frontend/src/tools/calculators/california-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Hours Pay Calculator
 - **Summary:** Shipped Hours Pay Calculator on existing catalog slug `hours-pay-calculator` (`HoursPayCalculator`, catalog `6af46f0fa27d8d1d4e990062`, pillar/subPillar null). Screenshot-first (ADR-023): daily/weekly/monthly/annual pay FX (last-edited authoritative); Working hours collapsed by default (8h/day · 5d/week · 52w/year); Result hourly wage FX. Dual `CURRENCY_CONVERSION_SLUGS`; hours/days/weeks never convert. Wage / Hourly Wage / Wage to Salary siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Daily 4,000 · 8h · 5d · 52w → hourly **500** · weekly **20,000** · annual **1,040,000**.
