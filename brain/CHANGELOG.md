@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Billable Hours Calculator
+- **Summary:** Shipped Billable Hours Calculator on existing catalog slug `billable-hours-calculator` (`BillableHoursCalculator`, catalog `6af46f0fa27d8d1d4e990057`, pillar/subPillar null). Screenshot-first (ADR-023): billable rate FX + sec/min/hr; billable time + secs/mins/hrs; billable value FX; bidirectional solve any one field. Formulas: Value = Rate × Time (unit-normalized); Rate = Value/Time; Time = Value/Rate. Dual `CURRENCY_CONVERSION_SLUGS`; time units never convert. Exact 60 s/min and 60 min/hr only. Bill Rate / Consulting Fees siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 500 PKR/hr · 40 hrs → **20,000** PKR; 500/hr · 30 mins → **250**.
+- **Important Files:** `frontend/src/tools/calculators/billable-hours/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Bill Rate Calculator
 - **Summary:** Shipped Bill Rate Calculator on existing catalog slug `bill-rate-calculator` (`BillRateCalculator`, catalog `6af46f0fa27d8d1d4e990056`, pillar/subPillar null). Screenshot-first (ADR-023): annual salary FX; capacity hrs/yr (default 2,080); multiplier (default 4); bill rate FX /hr. Formulas: Base Hourly Cost = Salary / Capacity; Bill Rate = Base × Multiplier. Dual `CURRENCY_CONVERSION_SLUGS`; capacity/multiplier never convert. Hourly Wage / Salary siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 1,040,000 · 2,080 hrs · ×4 → bill rate **2,000**/hr.

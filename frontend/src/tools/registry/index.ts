@@ -3162,6 +3162,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PaybackPeriodCalculator,
     })),
   ),
+  PayRaiseCalculator: lazyTool(() =>
+    import('@/tools/calculators/pay-raise/PayRaiseCalculator').then((mod) => ({
+      default: mod.PayRaiseCalculator,
+    })),
+  ),
   PercentageDiscountCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/percentage-discount/PercentageDiscountCalculator'
@@ -3607,6 +3612,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/fibonacci-retracement/FibonacciRetracementCalculator'
     ).then((mod) => ({
       default: mod.FibonacciRetracementCalculator,
+    })),
+  ),
+  FicaTaxCalculator: lazyTool(() =>
+    import('@/tools/calculators/fica-tax/FicaTaxCalculator').then((mod) => ({
+      default: mod.FicaTaxCalculator,
     })),
   ),
   LeveredFreeCashFlowCalculator: lazyTool(() =>
@@ -4321,6 +4331,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.YearlyWageCalculator,
     })),
   ),
+  MoneyPerHourCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/money-per-hour/MoneyPerHourCalculator'
+    ).then((mod) => ({
+      default: mod.MoneyPerHourCalculator,
+    })),
+  ),
+  BillableHoursCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/billable-hours/BillableHoursCalculator'
+    ).then((mod) => ({
+      default: mod.BillableHoursCalculator,
+    })),
+  ),
   BillRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/bill-rate/BillRateCalculator'
@@ -4328,6 +4352,7 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BillRateCalculator,
     })),
   ),
+
   ImpermanentLossCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/impermanent-loss/ImpermanentLossCalculator'

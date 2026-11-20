@@ -2,14 +2,14 @@
 
 ## Summary
 
-Total discovered: 55
-Newly developed: 46
+Total discovered: 55+
+Newly developed: 47+
 Already developed: 1
 Development failed: 0
-Skipped / blocked: 1
-Remaining pending: 0 (Tools empty; In Progress = Missouri BLOCKED — DOR Incapsula 403)
+Skipped / blocked: 1 (Missouri ON HOLD)
+Remaining pending: live filesystem count (multi-agent Tools queue active)
 Audit completed: 0
-Audit pending: 47
+Audit pending: deferred to final audit coordinator
 
 ## Calculator Register
 
@@ -76,8 +76,12 @@ Audit pending: 47
 | 50 | Revenue Calculator | DEVELOPED | AUDIT PENDING | 0a88c118 | acb04cee | 27f6d29f | Completed Tools | `RevenueCalculator`; slug `revenue-calculator`; Mongo `6af46f0fa27d8d1d4e99001d` active; Phase 2 FX; indexable false; reg `27f6d29f` (supersedes `d6bb0538`) |
 | 51 | Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 98c4cbd3 | c47b2f53 | 704e6729 | Completed Tools | `SalesTaxCalculator`; slug `sales-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990026` active; Phase 2 FX; indexable false |
 | 52 | SIP Calculator — Systematic Investment Plan | DEVELOPED | AUDIT PENDING | d84a79da | cfdf71a0 | c90e388d | Completed Tools | `SipCalculator`; slug `sip-calculator-systematic-investment-plan`; Mongo `6af46f0fa27d8d1d4e99000d` active; Phase 2 FX; indexable false; TASKS `TOOL-545`; registry/FX/sitemap also in concurrent `b1561c80` |
+| 53 | Bill Rate Calculator | DEVELOPED | AUDIT PENDING | 02c400cf | a08eba0c | 3f52a22f | Completed Tools | `BillRateCalculator`; slug `bill-rate-calculator`; Mongo `6af46f0fa27d8d1d4e990056` active; Phase 2 FX; indexable false; TASKS `TOOL-549` |
+| 54 | Billable Hours Calculator | DEVELOPED | AUDIT PENDING | b84a401e | 58d90060 | (pending commit 3) | Completed Tools | `BillableHoursCalculator`; slug `billable-hours-calculator`; Mongo `6af46f0fa27d8d1d4e990057` active; Phase 2 FX; indexable false; TASKS `TOOL-550` |
 
 ## Session Log
+- 2026-11-20 (Billable Hours): Billable Hours Calculator DEVELOPED (`b84a401e` / `58d90060` / pending). Mongo `6af46f0fa27d8d1d4e990057` activated; indexable false; Phase 2 FX. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-20 (Bill Rate): Bill Rate Calculator DEVELOPED (`02c400cf` / `a08eba0c` / `3f52a22f`). Mongo `6af46f0fa27d8d1d4e990056` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (Florida repair): Florida Sales Tax Calculator DEVELOPED (`41c7d638` / `cdce4997` / `49904891`). Correct screenshot restored; incorrect sidebar preserved. Official data: FL DOR DR-15DSS CY 2026 + Census 2020 ZCTA→county. Mongo `6af46f0fa27d8d1d4e990028` activated; indexable false. Moved to Completed Tools. CA / MO remain BLOCKED. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (final In Progress cleanup): Inspected all 3 remaining folders — California / Florida / Missouri Sales Tax. All remain **BLOCKED**. Mongo undeveloped (`6af46f0fa27d8d1d4e990027` / `…028` / `…02a`); no componentKey; not in registry/sitemap. No CDTFA / FL DOR / MO DOR ZIP tax datasets in repo. Florida screenshot still Finance & Renewals sidebar (identity conflict). Folders kept in `In Progress`; `AGENT_STATUS.md` written/updated for all three. No commits, moves, or Mongo changes. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20: Hourly to Salary with Overtime Calculator DEVELOPED (`f991214e` / `76ca25c2` / `1b59dcb0`). Unblocked with corrected prompt + `Screenshot 2026-11-20 002229.png`. Mongo `6af46f0fa27d8d1d4e990003` activated; indexable false. Distinct from `salary-calculator-with-overtime`. Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.

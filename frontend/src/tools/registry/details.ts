@@ -805,6 +805,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/payment/detail'),
   PaybackPeriodCalculator: () =>
     import('@/tools/calculators/payback-period/detail'),
+  PayRaiseCalculator: () =>
+    import('@/tools/calculators/pay-raise/detail'),
   PercentageDiscountCalculator: () =>
     import('@/tools/calculators/percentage-discount/detail'),
   PercentageReturnCalculator: () =>
@@ -941,6 +943,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FfoCalculator: () => import('@/tools/calculators/ffo/detail'),
   FibonacciRetracementCalculator: () =>
     import('@/tools/calculators/fibonacci-retracement/detail'),
+  FicaTaxCalculator: () => import('@/tools/calculators/fica-tax/detail'),
   LeveredFreeCashFlowCalculator: () =>
     import('@/tools/calculators/levered-free-cash-flow/detail'),
   UnpaidWorkCalculator: () =>
@@ -1137,8 +1140,13 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/wage-to-salary/detail'),
   YearlyWageCalculator: () =>
     import('@/tools/calculators/yearly-wage/detail'),
+  MoneyPerHourCalculator: () =>
+    import('@/tools/calculators/money-per-hour/detail'),
+  BillableHoursCalculator: () =>
+    import('@/tools/calculators/billable-hours/detail'),
   BillRateCalculator: () =>
     import('@/tools/calculators/bill-rate/detail'),
+
   ImpermanentLossCalculator: () =>
     import('@/tools/calculators/impermanent-loss/detail'),
 

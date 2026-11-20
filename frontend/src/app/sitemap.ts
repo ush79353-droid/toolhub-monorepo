@@ -82,6 +82,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'amt-calculator',
   'acreage-calculator',
   'feet-to-inches-calculator',
+  'fica-tax-calculator',
   'fha-loan-calculator',
   'heloc-calculator',
   '2836-rule-calculator',
@@ -601,6 +602,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'payday-loan-calculator',
   'payment-calculator',
   'payback-period-calculator',
+  'pay-raise-calculator',
   'percentage-discount-calculator',
   'percentage-return-calculator',
   'perpetuity-calculator',
@@ -770,8 +772,10 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'wage-calculator',
   'wage-to-salary-calculator',
   'yearly-wage-calculator',
+  'billable-hours-calculator',
   'bill-rate-calculator',
   'impermanent-loss-calculator',
+
 
   'income-tax-calculator',
   'adjusted-gross-income-agi-calculator',

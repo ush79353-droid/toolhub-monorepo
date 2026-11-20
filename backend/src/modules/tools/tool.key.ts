@@ -654,6 +654,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FcffCalculator',
   'FfoCalculator',
   'FibonacciRetracementCalculator',
+  'FicaTaxCalculator',
   'LeveredFreeCashFlowCalculator',
   'UnpaidWorkCalculator',
   'UsIncomePercentileCalculator',
@@ -756,8 +757,11 @@ export const APPROVED_COMPONENT_KEYS = [
   'WageCalculator',
   'WageToSalaryCalculator',
   'YearlyWageCalculator',
+  'MoneyPerHourCalculator',
+  'BillableHoursCalculator',
   'BillRateCalculator',
   'ImpermanentLossCalculator',
+
   'InformationRatioCalculator',
   'InterestCalculator',
   'InterestCoverageRatioCalculator',
@@ -1410,6 +1414,7 @@ if (isDirect) {
     !isApprovedComponentKey('FcffCalculator') ||
     !isApprovedComponentKey('FfoCalculator') ||
     !isApprovedComponentKey('FibonacciRetracementCalculator') ||
+    !isApprovedComponentKey('FicaTaxCalculator') ||
     !isApprovedComponentKey('LeveredFreeCashFlowCalculator') ||
     !isApprovedComponentKey('UnpaidWorkCalculator') ||
     !isApprovedComponentKey('UsIncomePercentileCalculator') ||
@@ -1511,11 +1516,14 @@ if (isDirect) {
     !isApprovedComponentKey('HourlyToSalaryWageCalculator') ||
     !isApprovedComponentKey('HourlyToSalaryWithOvertimeCalculator') ||
     !isApprovedComponentKey('HourlyWageCalculator') ||
+    !isApprovedComponentKey('HoursPayCalculator') ||
     !isApprovedComponentKey('WageCalculator') ||
     !isApprovedComponentKey('WageToSalaryCalculator') ||
     !isApprovedComponentKey('YearlyWageCalculator') ||
+    !isApprovedComponentKey('BillableHoursCalculator') ||
     !isApprovedComponentKey('BillRateCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
+
     !isApprovedComponentKey('InformationRatioCalculator') ||
     !isApprovedComponentKey('InterestCalculator') ||
     !isApprovedComponentKey('InterestCoverageRatioCalculator') ||
