@@ -3333,6 +3333,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BiWeeklyMortgagePaymentCalculator,
     })),
   ),
+  BiweeklyPayCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/biweekly-pay/BiweeklyPayCalculator'
+    ).then((mod) => ({
+      default: mod.BiweeklyPayCalculator,
+    })),
+  ),
   BoatLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/boat-loan/BoatLoanCalculator').then((mod) => ({
       default: mod.BoatLoanCalculator,
