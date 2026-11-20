@@ -3318,6 +3318,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CapRateCalculator,
     })),
   ),
+  CashOnCashReturnCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cash-on-cash-return/CashOnCashReturnCalculator'
+    ).then((mod) => ({
+      default: mod.CashOnCashReturnCalculator,
+    })),
+  ),
   CarAffordabilityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/car-affordability/CarAffordabilityCalculator'

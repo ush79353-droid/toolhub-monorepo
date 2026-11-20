@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Cash On Cash Return Calculator
+- **Summary:** Shipped Cash On Cash Return Calculator on existing catalog slug `cash-on-cash-return-calculator` (`CashOnCashReturnCalculator`, catalog `6af46f10a27d8d1d4e990114`, preserved `nameKey` `cash on cash return calculator`). Screenshot-first (ADR-023): five inputs (cash invested, gross rent, vacancy, OpEx, monthly loan) and four results (CoC %, NOI, annual debt service, annual cash flow). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** 80,000 invest · 60,000 rent · 5% vacancy · 15,000 OpEx · 1,500/mo loan → NOI **42,000** · debt **18,000** · cash flow **24,000** · CoC **30%**.
+- **Important Files:** `frontend/src/tools/calculators/cash-on-cash-return/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Cap Rate Calculator
 - **Summary:** Shipped Cap Rate Calculator on existing catalog slug `cap-rate-calculator` (`CapRateCalculator`, catalog `6af46f10a27d8d1d4e990113`, preserved `nameKey` `cap rate calculator`). Screenshot-first (ADR-023): Property information → NOI and cap rate; independent reverse property value from NOI + rate; independent required NOI; vacancy and OpEx; monthly/annual income conversion preserving annual value. Denomination-only CurrencySelect (USD default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $72,000 rent + $3,000 other − 5% vacancy − $25,000 OpEx → NOI **$46,250**; $600,000 value → cap ≈ **7.71%**; reverse $50,000 @ 8% → **$625,000**.
