@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Net Operating Income Calculator
+- **Summary:** Shipped Net Operating Income Calculator on existing catalog slug `net-operating-income-calculator` (`NetOperatingIncomeCalculator`, catalog `6af46f10a27d8d1d4e99011a`, preserved `nameKey` `net operating income calculator`). Screenshot-first (ADR-023): PGI from area × rent/area (ft²|m²) + other income; occupancy → vacancy on rental income only; manual or breakdown OpEx; NOI = EGI − OpEx (negative preserved); debt service excluded. USD default. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** 2,000 ft² · $25/ft²/yr · $5k other · 92% occupancy · $22k OpEx → PGI **$55,000** · EGI **$51,000** · NOI **$29,000**.
+- **Important Files:** `frontend/src/tools/calculators/net-operating-income/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add House Affordability Calculator
 - **Summary:** Shipped House Affordability Calculator on existing catalog slug `house-affordability-calculator` (`HouseAffordabilityCalculator`, catalog `6af46f10a27d8d1d4e990119`, preserved `nameKey` `house affordability calculator`). Screenshot-first (ADR-023): dual independent cards — income/DTI (conventional 28/36, FHA-style, VA-style, custom) and fixed monthly budget with include-taxes + maintenance; explicit Calculate/Clear; price-dependent expense solver. Distinct from `home-affordability-calculator`. USD default. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $120k income · 28/36 · 7.3% · 30y · 20% down · 1.5% tax · 0.5% insurance → finite max price with housing ≤ DTI budget; $3,500/mo fixed budget with fees included stays within budget.

@@ -646,6 +646,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'long-term-care-calculator',
   'mega-millions-payout-calculator',
   'millionaire-calculator',
+  'net-operating-income-calculator',
   'net-worth-calculator',
   'powerball-calculator',
   'quiz-us-income-percentile-calculator',
