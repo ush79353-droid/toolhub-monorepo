@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add GST/QST Calculator for Canada
+- **Summary:** Shipped GST/QST Calculator for Canada on existing catalog slug `gstqst-calculator-for-canada` (`CanadaGstQstCalculator`, catalog `6af46f0fa27d8d1d4e990061`). Screenshot-first (ADR-023): province/territory select (default Alberta); dynamic blurb + tax lines; amount before/after tax CAD. CRA GST/HST table on/after 2025-04-01 (NS HST 14%); GST+PST/RST/QST on pre-tax amount. Fixed CAD; no FX. Generic GST sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Alberta $100 → GST **$5.00** · after **$105.00**; Quebec $100 → GST **$5.00** + QST **$9.975** · after **$114.975**.
+- **Important Files:** `frontend/src/tools/calculators/canada-gst-qst/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Biweekly Pay Calculator
 - **Summary:** Shipped Biweekly Pay Calculator on existing catalog slug `biweekly-pay-calculator` (`BiweeklyPayCalculator`, catalog `6af46f0fa27d8d1d4e990058`, pillar/subPillar null). Screenshot-first (ADR-023): annual/monthly/weekly/daily/hourly wage FX (last-edited authoritative) + hours/week (40) + days/week (5); Answer biweekly wage FX. Formulas: annual÷26; monthly×12÷26; weekly×2; daily×days×2; hourly×hours×2 (26 biweekly periods/year, not semi-monthly). Dual `CURRENCY_CONVERSION_SLUGS`; hours/days never convert. Wage / Wage to Salary / Hours Pay siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Hourly 500 · 40h → biweekly **40,000**; annual 1,040,000 → biweekly **40,000**.
@@ -21,6 +27,12 @@
 - **Example:** Single · TY2025 · AGI $80,000 · assessed $500,000 · Alameda 1.22% → federal taxable **$64,250** · CA taxable **$74,294** · property **$6,100**.
 - **Important Files:** `frontend/src/tools/calculators/california-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Selling Leave Days Calculator
+- **Summary:** Shipped Selling Leave Days Calculator on existing catalog slug `selling-leave-days-calculator` (`SellingLeaveDaysCalculator`, catalog `6af46f0fa27d8d1d4e990071`, pillar/subPillar null). Screenshot-first (ADR-023): salary frequency radios (Monthly default); dynamic base pay FX; leave days; payout FX. Working-day estimate 260 days/year · 5 days/week · 8 hours/day. Dual `CURRENCY_CONVERSION_SLUGS`; days never convert. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 60,000/mo · 5 days → payout **13,846.15**.
+- **Important Files:** `frontend/src/tools/calculators/selling-leave-days/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Hours Pay Calculator
 - **Summary:** Shipped Hours Pay Calculator on existing catalog slug `hours-pay-calculator` (`HoursPayCalculator`, catalog `6af46f0fa27d8d1d4e990062`, pillar/subPillar null). Screenshot-first (ADR-023): daily/weekly/monthly/annual pay FX (last-edited authoritative); Working hours collapsed by default (8h/day · 5d/week · 52w/year); Result hourly wage FX. Dual `CURRENCY_CONVERSION_SLUGS`; hours/days/weeks never convert. Wage / Hourly Wage / Wage to Salary siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.

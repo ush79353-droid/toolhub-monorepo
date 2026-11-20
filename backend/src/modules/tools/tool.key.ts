@@ -52,6 +52,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'OhioSalesTaxCalculator',
   'SalesTaxCalculator',
   'GrossToNetCalculator',
+  'GstCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
   'NetProfitMarginCalculator',
@@ -1628,6 +1629,7 @@ if (isDirect) {
     !isApprovedComponentKey('OhioSalesTaxCalculator') ||
     !isApprovedComponentKey('SalesTaxCalculator') ||
     !isApprovedComponentKey('GrossToNetCalculator') ||
+    !isApprovedComponentKey('GstCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||

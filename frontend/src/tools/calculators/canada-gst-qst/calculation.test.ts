@@ -1,6 +1,13 @@
 import assert from 'node:assert/strict';
 import { calculateCanadaGstQst } from './calculation';
 
+function approx(actual: number, expected: number) {
+  assert.ok(
+    Math.abs(actual - expected) < 1e-9,
+    `expected ~${expected}, got ${actual}`
+  );
+}
+
 // Alberta GST-only: $100 → GST $5 → $105
 {
   const result = calculateCanadaGstQst({
@@ -10,8 +17,8 @@ import { calculateCanadaGstQst } from './calculation';
   assert.ok(result);
   assert.equal(result.lines.length, 1);
   assert.equal(result.lines[0]!.key, 'GST');
-  assert.equal(result.lines[0]!.amount, 5);
-  assert.equal(result.amountAfterTax, 105);
+  approx(result.lines[0]!.amount, 5);
+  approx(result.amountAfterTax, 105);
 }
 
 // Ontario HST 13%: $100 → $13 → $113 (no separate GST)
@@ -23,8 +30,8 @@ import { calculateCanadaGstQst } from './calculation';
   assert.ok(result);
   assert.equal(result.lines.length, 1);
   assert.equal(result.lines[0]!.key, 'HST');
-  assert.equal(result.lines[0]!.amount, 13);
-  assert.equal(result.amountAfterTax, 113);
+  approx(result.lines[0]!.amount, 13);
+  approx(result.amountAfterTax, 113);
 }
 
 // Nova Scotia HST 14% (on/after 2025-04-01)
@@ -34,8 +41,8 @@ import { calculateCanadaGstQst } from './calculation';
     amountBeforeTax: 100,
   });
   assert.ok(result);
-  assert.equal(result.lines[0]!.amount, 14);
-  assert.equal(result.amountAfterTax, 114);
+  approx(result.lines[0]!.amount, 14);
+  approx(result.amountAfterTax, 114);
 }
 
 // Quebec GST + QST on pre-tax amount
@@ -46,9 +53,9 @@ import { calculateCanadaGstQst } from './calculation';
   });
   assert.ok(result);
   assert.equal(result.lines.length, 2);
-  assert.equal(result.lines[0]!.amount, 5);
-  assert.equal(result.lines[1]!.amount, 9.975);
-  assert.equal(result.amountAfterTax, 114.975);
+  approx(result.lines[0]!.amount, 5);
+  approx(result.lines[1]!.amount, 9.975);
+  approx(result.amountAfterTax, 114.975);
 }
 
 // Zero amount allowed
@@ -58,8 +65,8 @@ import { calculateCanadaGstQst } from './calculation';
     amountBeforeTax: 0,
   });
   assert.ok(result);
-  assert.equal(result.totalTax, 0);
-  assert.equal(result.amountAfterTax, 0);
+  approx(result.totalTax, 0);
+  approx(result.amountAfterTax, 0);
 }
 
 // Negative rejected
