@@ -210,6 +210,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LotteryAnnuityCalculator,
     })),
   ),
+  LotteryTaxCalculator: lazyTool(() =>
+    import('@/tools/calculators/lottery-tax/LotteryTaxCalculator').then((mod) => ({
+      default: mod.LotteryTaxCalculator,
+    })),
+  ),
   MarginAndMarkupCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/margin-and-markup/MarginAndMarkupCalculator'
@@ -257,6 +262,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/margin-with-discount/MarginWithDiscountCalculator'
     ).then((mod) => ({
       default: mod.MarginWithDiscountCalculator,
+    })),
+  ),
+  MarriageTaxCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/marriage-tax/MarriageTaxCalculator'
+    ).then((mod) => ({
+      default: mod.MarriageTaxCalculator,
     })),
   ),
   MileageReimbursementCalculator: lazyTool(() =>

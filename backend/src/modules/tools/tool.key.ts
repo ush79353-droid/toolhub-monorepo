@@ -30,9 +30,12 @@ export const APPROVED_COMPONENT_KEYS = [
   'LoanCalculator',
   'LoanInterestCalculator',
   'LotteryAnnuityCalculator',
+  'LotteryTaxCalculator',
   'MarginAndMarkupCalculator',
   'MileageReimbursementCalculator',
+
   'MarginAndSalesTaxCalculator',
+  'MarriageTaxCalculator',
   'MarginAndVatCalculator',
   'MarginCalculatorClassic',
   'MarginCallCalculator',
@@ -1602,6 +1605,7 @@ if (isDirect) {
     !isApprovedComponentKey('MarginAndMarkupCalculator') ||
     !isApprovedComponentKey('MileageReimbursementCalculator') ||
     !isApprovedComponentKey('MarginAndSalesTaxCalculator') ||
+    !isApprovedComponentKey('MarriageTaxCalculator') ||
     !isApprovedComponentKey('MarginAndVatCalculator') ||
     !isApprovedComponentKey('MarginCalculatorClassic') ||
     !isApprovedComponentKey('MarginCallCalculator') ||
@@ -1618,8 +1622,10 @@ if (isDirect) {
     !isApprovedComponentKey('GrowingAnnuityCalculator') ||
     !isApprovedComponentKey('ImmediateAnnuityCalculator') ||
     !isApprovedComponentKey('LotteryAnnuityCalculator') ||
+    !isApprovedComponentKey('LotteryTaxCalculator') ||
     !isApprovedComponentKey('PresentValueOfAnnuityCalculator') ||
     !isApprovedComponentKey('VariableAnnuityCalculator') ||
+
     !isApprovedComponentKey('OvertimeCalculator') ||
     !isApprovedComponentKey('CaliforniaOvertimeCalculator') ||
     !isApprovedComponentKey('FloridaOvertimeCalculator') ||

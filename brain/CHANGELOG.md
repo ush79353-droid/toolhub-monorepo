@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-20 — Add Marriage Tax Calculator
+- **Summary:** Shipped Marriage Tax Calculator on existing catalog slug `marriage-tax-calculator` (`MarriageTaxCalculator`, catalog `6af46f0fa27d8d1d4e990065`). Screenshot-first (ADR-023): Spouse 1/2 income columns, before-marriage status, dependents, standard deduction toggle, state/city %, SE flag; Calculate compares combined unmarried filings vs MFJ for TY 2026. Reuses Income Tax `YEAR_PARAMS` / preferential stacking. Fixed USD; no FX. Empty prompt.txt — screenshot + IRS params. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Important Files:** `frontend/src/tools/calculators/marriage-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Commits include UI/engine/reg (+ import-path fix). Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add GST/QST Calculator for Canada
 - **Summary:** Shipped GST/QST Calculator for Canada on existing catalog slug `gstqst-calculator-for-canada` (`CanadaGstQstCalculator`, catalog `6af46f0fa27d8d1d4e990061`). Screenshot-first (ADR-023): province/territory select (default Alberta); dynamic blurb + tax lines; amount before/after tax CAD. CRA GST/HST table on/after 2025-04-01 (NS HST 14%); GST+PST/RST/QST on pre-tax amount. Fixed CAD; no FX. Generic GST sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Alberta $100 → GST **$5.00** · after **$105.00**; Quebec $100 → GST **$5.00** + QST **$9.975** · after **$114.975**.
@@ -85,6 +90,12 @@
 - **Summary:** Shipped Pay Raise Calculator on existing catalog slug `pay-raise-calculator` (`PayRaiseCalculator`, catalog `6af46f0fa27d8d1d4e99006d`, pillar/subPillar null). Screenshot-first (ADR-023): hours/week; before-raise periods with independent FX; raise % or monetary periods (last-edited authoritative, not stacked); after-raise read-only FX. Formulas: Annual = Hourly×H×52; Weekly = Annual÷52; Monthly = Annual÷12; raise sync; undefined % when before=0 and raise>0. Dual `CURRENCY_CONVERSION_SLUGS`; hours/% never convert. Future Salary / Wage siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**. UI files landed via concurrent gratuity UI commit; engine + registration are dedicated commits.
 - **Example:** 1,000/hr · 40h · 10% → weekly before **40,000** · annual **2,080,000** · after hourly **1,100**.
 - **Important Files:** `frontend/src/tools/calculators/pay-raise/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Lottery Tax Calculator
+- **Summary:** Shipped Lottery Tax Calculator on existing catalog slug `lottery-tax-calculator` (`LotteryTaxCalculator`, catalog `6af46f0fa27d8d1d4e990064`, pillar/subPillar null). Screenshot-first (ADR-023): annuity FX; lump-sum %; lump FX; US (§3402(q) 24% withholding) or custom Tax I/II; annuity setup 30y/5% nominal growing schedule; results + schedule. Dual `CURRENCY_CONVERSION_SLUGS`. Lottery Annuity sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 1,200,000,000 · 52% → lump **624,000,000**.
+- **Important Files:** `frontend/src/tools/calculators/lottery-tax/*`, registry, sitemap, both FX lists, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Estate Tax Calculator

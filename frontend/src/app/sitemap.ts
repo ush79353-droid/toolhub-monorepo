@@ -41,9 +41,12 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'auto-lease-calculator',
   'loan-interest-calculator',
   'lottery-annuity-calculator',
+  'lottery-tax-calculator',
+
   'margin-and-markup-calculator',
   'mileage-reimbursement-calculator',
   'margin-and-sales-tax-calculator',
+  'marriage-tax-calculator',
   'margin-and-vat-calculator',
   'margin-calculator-classic',
   'margin-call-calculator',

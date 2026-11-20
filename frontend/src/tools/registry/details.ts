@@ -56,6 +56,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/loan-interest/detail'),
   LotteryAnnuityCalculator: () =>
     import('@/tools/calculators/lottery-annuity/detail'),
+  LotteryTaxCalculator: () => import('@/tools/calculators/lottery-tax/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),
   MarginAndSalesTaxCalculator: () =>
@@ -70,6 +71,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-of-safety/detail'),
   MarginWithDiscountCalculator: () =>
     import('@/tools/calculators/margin-with-discount/detail'),
+  MarriageTaxCalculator: () =>
+    import('@/tools/calculators/marriage-tax/detail'),
   MileageReimbursementCalculator: () =>
     import('@/tools/calculators/mileage-reimbursement/detail'),
   NetDebtCalculator: () =>
