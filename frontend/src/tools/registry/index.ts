@@ -3328,6 +3328,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RealtorCommissionVatCalculator,
     })),
   ),
+  RelativeStrengthIndexCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/relative-strength-index/RelativeStrengthIndexCalculator'
+    ).then((mod) => ({
+      default: mod.RelativeStrengthIndexCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

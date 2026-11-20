@@ -731,6 +731,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'portfolio-beta-calculator',
   'price-to-book-ratio-calculator',
   'price-to-earnings-ratio-calculator',
+  'relative-strength-index-calculator-rsi',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

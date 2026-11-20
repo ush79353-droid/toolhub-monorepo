@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Price to Earnings Ratio Calculator live at `/tools/price-to-earnings-ratio-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Relative Strength Index Calculator (RSI) live at `/tools/relative-strength-index-calculator-rsi`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Relative Strength Index Calculator (RSI) (`/tools/relative-strength-index-calculator-rsi`):** Client-side RSI module registered (`componentKey: 'RelativeStrengthIndexCalculator'`, catalog `6af46f10a27d8d1d4e990168`, `nameKey` `relative strength index calculator (rsi)`). Screenshot-first (ADR-023): dynamic closing prices; period n (default 14); Wilder (default) or simple-average; AvgGain/AvgLoss/RS/RSI; zero-gain→100, zero-loss→0, flat→50; SVG sparkline when series ≥2; no CurrencySelect. **`indexable` left false**. Example: period **5** · 100,102,101,104,103,106 → RSI **80.00**. **Activation blocker (2026-11-20):** Mongo Atlas unreachable for `tool:assign` (ETIMEOUT / whitelist) — catalog `componentKey` / `isDeveloped` pending successful assign retry.
 - **Price to Earnings Ratio Calculator (`/tools/price-to-earnings-ratio-calculator`):** Live client-side P/E tool (`componentKey: 'PriceToEarningsRatioCalculator'`, catalog `6af46f10a27d8d1d4e990167`, `nameKey` `price to earnings ratio calculator`). Screenshot-first (ADR-023): price ÷ EPS → P/E; optional EPS from NI−preferred÷shares; zero EPS → Not defined; negative EPS → N/M; interpretation bands; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **120** / **10** → **12.00×**; EPS path NI **1,000,000** − pref **100,000** ÷ **100,000** → EPS **9** · price **135** → P/E **15.00×**.
 - **Price to Book Ratio Calculator (`/tools/price-to-book-ratio-calculator`):** Live client-side P/B tool (`componentKey: 'PriceToBookRatioCalculator'`, catalog `6af46f10a27d8d1d4e990166`, `nameKey` `price to book ratio calculator`). Screenshot-first (ADR-023): equity − preferred → BVPS → P/B; collapsible tangible book; negative BVPS → P/B unavailable; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **500,000** − **50,000** · **10,000** shares · price **90** → BVPS **45** · P/B **2.00×**.
 - **Portfolio Beta Calculator (`/tools/portfolio-beta-calculator`):** Live client-side weighted beta tool (`componentKey: 'PortfolioBetaCalculator'`, catalog `6af46f10a27d8d1d4e990164`, `nameKey` `portfolio beta calculator`). Screenshot-first (ADR-023): dynamic stock beta/weight rows; βp = Σ(w%/100×β); beta only when weights ≈ 100%; add/remove; no CurrencySelect. Activated; **`indexable` left false**. Example: 1.20@50% + 0.80@30% + 1.50@20% → βp **1.14**.

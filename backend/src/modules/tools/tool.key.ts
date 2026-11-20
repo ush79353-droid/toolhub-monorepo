@@ -609,6 +609,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RealEstateCommissionCalculator',
   'RealRateOfReturnCalculator',
   'RealtorCommissionVatCalculator',
+  'RelativeStrengthIndexCalculator',
   'RentSplitCalculator',
   'RentVsBuyCalculator',
   'RevenueCalculator',
@@ -1375,6 +1376,7 @@ if (isDirect) {
     !isApprovedComponentKey('RealEstateCommissionCalculator') ||
     !isApprovedComponentKey('RealRateOfReturnCalculator') ||
     !isApprovedComponentKey('RealtorCommissionVatCalculator') ||
+    !isApprovedComponentKey('RelativeStrengthIndexCalculator') ||
     !isApprovedComponentKey('RentSplitCalculator') ||
     !isApprovedComponentKey('RentVsBuyCalculator') ||
     !isApprovedComponentKey('RevenueCalculator') ||

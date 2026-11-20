@@ -860,6 +860,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/real-rate-of-return/detail'),
   RealtorCommissionVatCalculator: () =>
     import('@/tools/calculators/realtor-commission-vat/detail'),
+  RelativeStrengthIndexCalculator: () =>
+    import('@/tools/calculators/relative-strength-index/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>
