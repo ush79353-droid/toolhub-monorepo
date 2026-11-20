@@ -3353,6 +3353,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DreamComeTrueCalculator,
     })),
   ),
+  EarnestMoneyCalculator: lazyTool(() =>
+    import('@/tools/calculators/earnest-money/EarnestMoneyCalculator').then(
+      (mod) => ({
+        default: mod.EarnestMoneyCalculator,
+      })
+    )
+  ),
   EmergencyFundCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/emergency-fund/EmergencyFundCalculator'

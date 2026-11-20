@@ -870,6 +870,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/college-cost/detail'),
   DreamComeTrueCalculator: () =>
     import('@/tools/calculators/dream-come-true/detail'),
+  EarnestMoneyCalculator: () =>
+    import('@/tools/calculators/earnest-money/detail'),
   EmergencyFundCalculator: () =>
     import('@/tools/calculators/emergency-fund/detail'),
   FinanceCalculator: () => import('@/tools/calculators/finance/detail'),

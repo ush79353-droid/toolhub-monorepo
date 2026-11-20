@@ -633,6 +633,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cell-phone-plan-calculator',
   'college-cost-calculator',
   'dream-come-true-calculator',
+  'earnest-money-calculator',
   'emergency-fund-calculator',
   'finance-calculator',
   'fire-calculator-financial-independence-retire-early',

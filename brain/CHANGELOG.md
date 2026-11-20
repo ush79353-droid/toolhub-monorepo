@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Earnest Money Calculator
+- **Summary:** Shipped Earnest Money Calculator on existing catalog slug `earnest-money-calculator` (`EarnestMoneyCalculator`, catalog `6af46f10a27d8d1d4e990115`, preserved `nameKey` `earnest money calculator`). Screenshot-first (ADR-023): three compact fields with explicit modes for deposit, percentage, and property price. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $300,000 × 3% → **$9,000**; reverse $12,000 / $400,000 → **3%**; $15,000 / 3% → price **$500,000**.
+- **Important Files:** `frontend/src/tools/calculators/earnest-money/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Cash On Cash Return Calculator
 - **Summary:** Shipped Cash On Cash Return Calculator on existing catalog slug `cash-on-cash-return-calculator` (`CashOnCashReturnCalculator`, catalog `6af46f10a27d8d1d4e990114`, preserved `nameKey` `cash on cash return calculator`). Screenshot-first (ADR-023): five inputs (cash invested, gross rent, vacancy, OpEx, monthly loan) and four results (CoC %, NOI, annual debt service, annual cash flow). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** 80,000 invest · 60,000 rent · 5% vacancy · 15,000 OpEx · 1,500/mo loan → NOI **42,000** · debt **18,000** · cash flow **24,000** · CoC **30%**.
