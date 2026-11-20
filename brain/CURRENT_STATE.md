@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Current Ratio Calculator live at `/tools/current-ratio-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Degree of Operating Leverage Calculator live at `/tools/degree-of-operating-leverage-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Degree of Operating Leverage Calculator (`/tools/degree-of-operating-leverage-calculator`):** Live client-side DOL tool (`componentKey: 'DegreeOfOperatingLeverageCalculator'`, catalog `6af46f10a27d8d1d4e990129`, `nameKey` `degree of operating leverage calculator`). Screenshot-first (ADR-023): period-to-period sales/EBIT % changes → DOL; reverse modes; optional contribution-margin CVP method (CM/EBIT); zero sales-change undefined; negative DOL preserved with interpretation. Denomination-only CurrencySelect for CM mode (PKR default, no FX). Activated; **`indexable` left false**. Example: sales +10% · EBIT +30% → DOL **3.00**.
 - **Current Ratio Calculator (`/tools/current-ratio-calculator`):** Live client-side liquidity tool (`componentKey: 'CurrentRatioCalculator'`, catalog `6af46f10a27d8d1d4e990128`, `nameKey` `current ratio calculator`). Screenshot-first (ADR-023): current assets / current liabilities / current ratio with reverse modes; working capital (CA − CL); zero-liabilities undefined; contextual interpretation (no universal ideal). Denomination-only CurrencySelect (PKR default, no FX). No balance-sheet breakdown (ADR-023). Activated; **`indexable` left false**. Example: CA $400k · CL $200k → CR **2.00** · WC **$200k**.
 - **Cross Price Elasticity Calculator (`/tools/cross-price-elasticity-calculator`):** Live client-side CPE tool (`componentKey: 'CrossPriceElasticityCalculator'`, catalog `6af46f10a27d8d1d4e990127`, `nameKey` `cross price elasticity calculator`). Screenshot-first (ADR-023): time-point-1 / time-point-2 / elasticity accordions; initial-value (default) or midpoint method; %ΔPA / %ΔQB; substitute/complement/zero interpretation + magnitude; zero price-change undefined. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: PA $10→$12 · QB 1,000→1,200 → E **+1.00**.
 - **Consumer Surplus Calculator (`/tools/consumer-surplus-calculator`):** Live client-side surplus tool (`componentKey: 'ConsumerSurplusCalculator'`, catalog `6af46f10a27d8d1d4e990126`, `nameKey` `consumer surplus calculator`). Screenshot-first (ADR-023): actual price / willing price / CS with reverse modes; signed difference when price &gt; WTP (realized surplus N/A); savings % vs WTP; Related information accordion. Denomination-only CurrencySelect (PKR default, no FX). No market triangle/graph (ADR-023). Activated; **`indexable` left false**. Example: WTP $150 · P $100 → CS **$50**.

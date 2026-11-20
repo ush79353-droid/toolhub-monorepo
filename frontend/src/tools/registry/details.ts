@@ -878,6 +878,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cross-price-elasticity/detail'),
   CurrentRatioCalculator: () =>
     import('@/tools/calculators/current-ratio/detail'),
+  DegreeOfOperatingLeverageCalculator: () =>
+    import('@/tools/calculators/degree-of-operating-leverage/detail'),
   CashOnCashReturnCalculator: () =>
     import('@/tools/calculators/cash-on-cash-return/detail'),
   CarAffordabilityCalculator: () =>

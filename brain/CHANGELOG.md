@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Degree of Operating Leverage Calculator
+- **Summary:** Shipped Degree of Operating Leverage Calculator on existing catalog slug `degree-of-operating-leverage-calculator` (`DegreeOfOperatingLeverageCalculator`, catalog `6af46f10a27d8d1d4e990129`, preserved `nameKey` `degree of operating leverage calculator`). Screenshot-first (ADR-023): period-to-period %Δ sales/EBIT → DOL with reverse modes; optional contribution-margin CVP method; zero sales-change undefined; negative DOL preserved. Denomination-only CurrencySelect for CM mode (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** sales +10% · EBIT +30% → DOL **3.00**; CM path $500k − $300k VC − $100k FC → DOL **2.00**.
+- **Important Files:** `frontend/src/tools/calculators/degree-of-operating-leverage/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Current Ratio Calculator
 - **Summary:** Shipped Current Ratio Calculator on existing catalog slug `current-ratio-calculator` (`CurrentRatioCalculator`, catalog `6af46f10a27d8d1d4e990128`, preserved `nameKey` `current ratio calculator`). Screenshot-first (ADR-023): current assets / current liabilities / current ratio with reverse modes; working capital; zero liabilities undefined; contextual interpretation without universal ideal. Denomination-only CurrencySelect (PKR default, no FX). No balance-sheet breakdown. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** CA $400,000 · CL $200,000 → CR **2.00** · WC **$200,000**.

@@ -3381,6 +3381,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CurrentRatioCalculator,
     })),
   ),
+  DegreeOfOperatingLeverageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/degree-of-operating-leverage/DegreeOfOperatingLeverageCalculator'
+    ).then((mod) => ({
+      default: mod.DegreeOfOperatingLeverageCalculator,
+    })),
+  ),
   CashOnCashReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/cash-on-cash-return/CashOnCashReturnCalculator'
