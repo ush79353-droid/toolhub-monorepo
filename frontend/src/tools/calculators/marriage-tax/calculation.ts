@@ -1,9 +1,8 @@
 import {
-  taxFromBrackets,
   taxWithPreferentialIncome,
-} from '@/tools/calculators/income-tax/calculation';
-import { YEAR_PARAMS } from '@/tools/calculators/income-tax/tax-parameters';
-import type { FilingStatus } from '@/tools/calculators/income-tax/types';
+} from '../income-tax/calculation';
+import { YEAR_PARAMS } from '../income-tax/tax-parameters';
+import type { FilingStatus } from '../income-tax/types';
 import type { PreMarriageStatus } from './types';
 
 const TAX_YEAR = 2026 as const;
