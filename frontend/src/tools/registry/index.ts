@@ -3393,6 +3393,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DioCalculator,
     })),
   ),
+  DpoCalculator: lazyTool(() =>
+    import('@/tools/calculators/dpo/DpoCalculator').then((mod) => ({
+      default: mod.DpoCalculator,
+    })),
+  ),
   CashOnCashReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/cash-on-cash-return/CashOnCashReturnCalculator'

@@ -473,6 +473,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DaysOffCalculator',
   'DegreeOfOperatingLeverageCalculator',
   'DioCalculator',
+  'DpoCalculator',
   'DividendDiscountModelCalculator',
   'DividendPayoutRatioCalculator',
   'DividendYieldCalculator',
@@ -1142,6 +1143,7 @@ if (isDirect) {
     !isApprovedComponentKey('DaysOffCalculator') ||
     !isApprovedComponentKey('DegreeOfOperatingLeverageCalculator') ||
     !isApprovedComponentKey('DioCalculator') ||
+    !isApprovedComponentKey('DpoCalculator') ||
     !isApprovedComponentKey('DividendDiscountModelCalculator') ||
     !isApprovedComponentKey('DividendPayoutRatioCalculator') ||
     !isApprovedComponentKey('DividendYieldCalculator') ||

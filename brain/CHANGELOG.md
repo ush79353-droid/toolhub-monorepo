@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add DPO Calculator – Days Payable Outstanding
+- **Summary:** Shipped DPO Calculator on existing catalog slug `dpo-calculator-days-payable-outstanding` (`DpoCalculator`, catalog `6af46f10a27d8d1d4e99012b`, preserved `nameKey` `dpo calculator – days payable outstanding`). Screenshot-first (ADR-023): Average Payables / Purchases / DPO accordions; purchases = COGS + end inv − beg inv (or direct); zero/negative purchases guards; AP turnover supplementary. Denomination-only CurrencySelect (PKR default, no FX). No reverse solve modes. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** AP 150k/200k · inv 500k/400k · COGS 1.5M · 365d → avg AP **175,000** · purchases **1,400,000** · DPO **45.63 days**.
+- **Important Files:** `frontend/src/tools/calculators/dpo/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add DIO Calculator
 - **Summary:** Shipped DIO (Days Inventory Outstanding) Calculator on existing catalog slug `dio-calculator` (`DioCalculator`, catalog `6af46f10a27d8d1d4e99012a`, preserved `nameKey` `dio calculator`). Screenshot-first (ADR-023): average inventory (starting/ending or direct) + COGS + period days → DIO; inventory turnover supplementary; zero COGS undefined; zero inventory → DIO 0. Denomination-only CurrencySelect (PKR default, no FX). No reverse solve modes. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** start $500,000 · end $750,000 · COGS $6,000,000 · 365 days → avg **$625,000** · DIO ≈ **38.02 days** · turnover **9.60×**.

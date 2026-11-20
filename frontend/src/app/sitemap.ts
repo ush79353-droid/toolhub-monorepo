@@ -642,6 +642,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'current-ratio-calculator',
   'degree-of-operating-leverage-calculator',
   'dio-calculator',
+  'dpo-calculator-days-payable-outstanding',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
   'college-cost-calculator',
