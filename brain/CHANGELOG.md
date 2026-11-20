@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add NAV Calculator – Net Asset Value
+- **Summary:** Shipped NAV Calculator on existing catalog slug `nav-calculator-net-asset-value` (`NavCalculator`, catalog `6af46f10a27d8d1d4e990161`, preserved `nameKey` `nav calculator – net asset value`). Screenshot-first (ADR-023): fund assets (IV+cash+AR), liabilities (STL+LTL), NAV = FA−FL, NAV/share; blank/zero shares keep NAV. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** FA **$1,800,000** − FL **$70,000** → NAV **$1,730,000** · 100,000 shares → **$17.30**/share.
+- **Important Files:** `frontend/src/tools/calculators/nav/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` NAV tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Maturity Value Calculator
 - **Summary:** Shipped Maturity Value Calculator on existing catalog slug `maturity-value-calculator` (`MaturityValueCalculator`, catalog `6af46f10a27d8d1d4e990160`, preserved `nameKey` `maturity value calculator`). Screenshot-first (ADR-023): principal × (1+r)^t annual compounding; years/months duration; interest earned summary. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$2,000** · **3%** · **2 years** → MV **$2,121.80** · interest **$121.80**.

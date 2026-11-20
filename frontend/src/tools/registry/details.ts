@@ -787,6 +787,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mutual-fund/detail'),
   MvaCalculator: () =>
     import('@/tools/calculators/mva/detail'),
+  NavCalculator: () =>
+    import('@/tools/calculators/nav/detail'),
   NopatCalculator: () =>
     import('@/tools/calculators/nopat/detail'),
   NpvCalculator: () =>
