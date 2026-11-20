@@ -697,6 +697,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'subscription-waste-calculator',
   'total-asset-turnover-calculator',
   'working-capital-calculator',
+  'working-capital-turnover-ratio-calculator',
   'trump-accounts-calculator',
   'unpaid-work-calculator',
   'us-income-percentile-calculator',

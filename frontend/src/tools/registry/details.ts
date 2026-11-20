@@ -976,6 +976,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/total-asset-turnover/detail'),
   WorkingCapitalCalculator: () =>
     import('@/tools/calculators/working-capital/detail'),
+  WorkingCapitalTurnoverRatioCalculator: () =>
+    import('@/tools/calculators/working-capital-turnover-ratio/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),

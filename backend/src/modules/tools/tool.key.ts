@@ -662,6 +662,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SubscriptionWasteCalculator',
   'TotalAssetTurnoverCalculator',
   'WorkingCapitalCalculator',
+  'WorkingCapitalTurnoverRatioCalculator',
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
@@ -1360,6 +1361,7 @@ if (isDirect) {
     !isApprovedComponentKey('SubscriptionWasteCalculator') ||
     !isApprovedComponentKey('TotalAssetTurnoverCalculator') ||
     !isApprovedComponentKey('WorkingCapitalCalculator') ||
+    !isApprovedComponentKey('WorkingCapitalTurnoverRatioCalculator') ||
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||

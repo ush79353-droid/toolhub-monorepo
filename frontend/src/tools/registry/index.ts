@@ -3735,6 +3735,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WorkingCapitalCalculator,
     })),
   ),
+  WorkingCapitalTurnoverRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/working-capital-turnover-ratio/WorkingCapitalTurnoverRatioCalculator'
+    ).then((mod) => ({
+      default: mod.WorkingCapitalTurnoverRatioCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'
