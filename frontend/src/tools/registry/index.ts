@@ -4321,6 +4321,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.YearlyWageCalculator,
     })),
   ),
+  BillRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bill-rate/BillRateCalculator'
+    ).then((mod) => ({
+      default: mod.BillRateCalculator,
+    })),
+  ),
   ImpermanentLossCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/impermanent-loss/ImpermanentLossCalculator'

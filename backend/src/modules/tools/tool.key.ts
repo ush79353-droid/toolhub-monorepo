@@ -756,6 +756,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'WageCalculator',
   'WageToSalaryCalculator',
   'YearlyWageCalculator',
+  'BillRateCalculator',
   'ImpermanentLossCalculator',
   'InformationRatioCalculator',
   'InterestCalculator',
@@ -1513,6 +1514,7 @@ if (isDirect) {
     !isApprovedComponentKey('WageCalculator') ||
     !isApprovedComponentKey('WageToSalaryCalculator') ||
     !isApprovedComponentKey('YearlyWageCalculator') ||
+    !isApprovedComponentKey('BillRateCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
     !isApprovedComponentKey('InformationRatioCalculator') ||
     !isApprovedComponentKey('InterestCalculator') ||

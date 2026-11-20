@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Bill Rate Calculator
+- **Summary:** Shipped Bill Rate Calculator on existing catalog slug `bill-rate-calculator` (`BillRateCalculator`, catalog `6af46f0fa27d8d1d4e990056`, pillar/subPillar null). Screenshot-first (ADR-023): annual salary FX; capacity hrs/yr (default 2,080); multiplier (default 4); bill rate FX /hr. Formulas: Base Hourly Cost = Salary / Capacity; Bill Rate = Base × Multiplier. Dual `CURRENCY_CONVERSION_SLUGS`; capacity/multiplier never convert. Hourly Wage / Salary siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 1,040,000 · 2,080 hrs · ×4 → bill rate **2,000**/hr.
+- **Important Files:** `frontend/src/tools/calculators/bill-rate/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add California Sales Tax Calculator
 - **Summary:** Shipped California Sales Tax Calculator on existing catalog slug `california-sales-tax-calculator` (`CaliforniaSalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e990027`). Screenshot-first + PO-approved Street/City: purchase USD + street + city + ZIP. Server-side CDTFA Tax Rate API `GetRateByAddress` via Next.js `/api/tax/california-rate`; decimal rate applied as fraction; ambiguous/no-match → unavailable (never invents). CDTFA Terms of Use reviewed (acceptance/indemnity); UI links terms and labels estimates. Fixed USD; no FX. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** $100 · 450 N St · Sacramento · 95814 → **8.75%** · tax **$8.75** · total **$108.75**.

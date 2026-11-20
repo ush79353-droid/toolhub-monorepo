@@ -174,6 +174,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'hourly-wage-calculator',
   'wage-to-salary-calculator',
   'yearly-wage-calculator',
+  'bill-rate-calculator',
   'home-improvement-loan-calculator',
   'home-loan-emi-calculator',
   'home-loan-calculator',

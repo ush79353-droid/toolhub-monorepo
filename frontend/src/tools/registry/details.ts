@@ -1137,6 +1137,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/wage-to-salary/detail'),
   YearlyWageCalculator: () =>
     import('@/tools/calculators/yearly-wage/detail'),
+  BillRateCalculator: () =>
+    import('@/tools/calculators/bill-rate/detail'),
   ImpermanentLossCalculator: () =>
     import('@/tools/calculators/impermanent-loss/detail'),
 

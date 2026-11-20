@@ -770,6 +770,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'wage-calculator',
   'wage-to-salary-calculator',
   'yearly-wage-calculator',
+  'bill-rate-calculator',
   'impermanent-loss-calculator',
 
   'income-tax-calculator',
