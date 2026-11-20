@@ -4,11 +4,18 @@
 
 ---
 
+### 2026-11-20 — Add LIFO Calculator for Inventory
+- **Summary:** Shipped LIFO Calculator for Inventory on existing catalog slug `lifo-calculator-for-inventory` (`LifoInventoryCalculator`, catalog `6af46f10a27d8d1d4e990139`, preserved `nameKey` `lifo calculator for inventory`). Screenshot-first (ADR-023): Inventories bought (2 batches) / Units sold / Revenue and margin; LIFO newest-first COGS; ending inventory; revenue/GP/margin; expandable layer breakdown; insufficient-inventory guard. Denomination-only CurrencySelect (PKR default, no FX). Two-batch reference only (no dynamic add-batch UI). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** 10 units @ $10 + 15 @ $15 · sell 18 @ $20 → COGS **$255** · ending **$70** · revenue **$360** · GP **$105** · margin ≈ **29.17%**.
+- **Important Files:** `frontend/src/tools/calculators/lifo-inventory/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` LIFO calculation tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+- **Also:** Confirmed Inventory Turnover `tool:assign` after Atlas recovery — `isDeveloped: true`, `indexable: false`.
+
 ### 2026-11-20 — Add Inventory Turnover Calculator
 - **Summary:** Shipped Inventory Turnover Calculator on existing catalog slug `inventory-turnover-calculator` (`InventoryTurnoverCalculator`, catalog `6af46f10a27d8d1d4e990138`, preserved `nameKey` `inventory turnover calculator`). Screenshot-first (ADR-023): COGS / beginning / ending / days → average inventory, turnover = COGS/Avg, inventory days = (Avg/COGS)×Days; zero-avg and zero-COGS edge handling. Denomination-only CurrencySelect (PKR default, no FX). No reverse-mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** COGS $600,000 · Beginning $100,000 · Ending $140,000 · 365 days → avg **$120,000** · turnover **5.00×** · days **73**.
 - **Important Files:** `frontend/src/tools/calculators/inventory-turnover/*`, registry, sitemap, `tool.key.ts`, brain docs.
-- **Verification:** Assert self-check passed. Mongo `tool:assign` **blocked** (Atlas ETIMEDOUT / IP whitelist) — `isDeveloped` left unchanged. Three ADR-019 commits. Temporary files cleaned: YES. Retry assign when Atlas is reachable.
+- **Verification:** Assert self-check passed. Initial Mongo `tool:assign` blocked (Atlas timeout); retried successfully on 2026-11-20. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Income Elasticity of Demand Calculator
 - **Summary:** Shipped Income Elasticity of Demand Calculator on existing catalog slug `income-elasticity-of-demand-calculator` (`IncomeElasticityOfDemandCalculator`, catalog `6af46f10a27d8d1d4e990137`, preserved `nameKey` `income elasticity of demand calculator`). Screenshot-first (ADR-023): Method Standard/Midpoint; Income Y1/Y2/%ΔY; Demand Q1/Q2/%ΔQ; YED = %ΔQd/%ΔY with inferior/necessity/luxury classification; zero income change undefined. Denomination-only CurrencySelect for income (PKR default, no FX). No direct-% mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.

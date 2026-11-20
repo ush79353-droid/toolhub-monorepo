@@ -634,6 +634,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'IncomeElasticityOfDemandCalculator',
   'InventoryTurnoverCalculator',
   'LifetimeEarningsCalculator',
+  'LifoInventoryCalculator',
   'LongTermCareCalculator',
   'MegaMillionsPayoutCalculator',
   'MillionaireCalculator',
@@ -1318,6 +1319,7 @@ if (isDirect) {
     !isApprovedComponentKey('IncomeElasticityOfDemandCalculator') ||
     !isApprovedComponentKey('InventoryTurnoverCalculator') ||
     !isApprovedComponentKey('LifetimeEarningsCalculator') ||
+    !isApprovedComponentKey('LifoInventoryCalculator') ||
     !isApprovedComponentKey('LongTermCareCalculator') ||
     !isApprovedComponentKey('MegaMillionsPayoutCalculator') ||
     !isApprovedComponentKey('MillionaireCalculator') ||

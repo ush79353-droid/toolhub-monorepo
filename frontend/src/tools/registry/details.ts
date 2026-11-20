@@ -921,6 +921,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/inventory-turnover/detail'),
   LifetimeEarningsCalculator: () =>
     import('@/tools/calculators/lifetime-earnings/detail'),
+  LifoInventoryCalculator: () =>
+    import('@/tools/calculators/lifo-inventory/detail'),
   LongTermCareCalculator: () =>
     import('@/tools/calculators/long-term-care/detail'),
   MegaMillionsPayoutCalculator: () =>

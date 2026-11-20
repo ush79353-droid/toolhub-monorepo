@@ -3551,6 +3551,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LifetimeEarningsCalculator,
     })),
   ),
+  LifoInventoryCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/lifo-inventory/LifoInventoryCalculator'
+    ).then((mod) => ({
+      default: mod.LifoInventoryCalculator,
+    })),
+  ),
   LongTermCareCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/long-term-care/LongTermCareCalculator'
