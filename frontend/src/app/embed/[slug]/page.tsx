@@ -22,6 +22,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'sales-tax-calculator',
   'gst-calculator',
   'gross-to-net-calculator',
+  'net-to-gross-calculator',
   'margin-interest-calculator',
   'margin-with-discount-calculator',
   '12-hour-shift-pay-calculator',

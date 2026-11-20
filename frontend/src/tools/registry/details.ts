@@ -114,6 +114,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/ohio-sales-tax/detail'),
   SalesTaxCalculator: () => import('@/tools/calculators/sales-tax/detail'),
   GrossToNetCalculator: () => import('@/tools/calculators/gross-to-net/detail'),
+  NetToGrossCalculator: () => import('@/tools/calculators/net-to-gross/detail'),
   GstCalculator: () => import('@/tools/calculators/gst/detail'),
   NewYorkTaxCalculator: () =>
     import('@/tools/calculators/new-york-tax/detail'),

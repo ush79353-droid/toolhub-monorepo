@@ -67,6 +67,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'state-tax-calculator',
   'texas-tax-calculator',
   'gross-to-net-calculator',
+  'net-to-gross-calculator',
   'gst-calculator',
   'florida-sales-tax-calculator',
   'ohio-sales-tax-calculator',

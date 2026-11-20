@@ -410,6 +410,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  NetToGrossCalculator: lazyTool(() =>
+    import('@/tools/calculators/net-to-gross/NetToGrossCalculator').then(
+      (mod) => ({
+        default: mod.NetToGrossCalculator,
+      }),
+    ),
+  ),
   GstCalculator: lazyTool(() =>
     import('@/tools/calculators/gst/GstCalculator').then((mod) => ({
       default: mod.GstCalculator,

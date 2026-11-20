@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Net to Gross Calculator + audit infrastructure repairs
+- **Summary:** Completed Net to Gross Calculator on existing catalog slug `net-to-gross-calculator` (`NetToGrossCalculator`, catalog `6af46f0fa27d8d1d4e99006b`). Screenshot-first five-field rN/rG model with Phase 2 FX. Also restored Canada GST/QST registration (`CanadaGstQstCalculator`), added `monthly-income-calculator` to both FX slug lists, linked NY/TX in State Tax navigator, added `alabama-tax-calculator` to sitemap, and clarified multiple calculator limitation disclosures (MAGI/AGI/RMD/AMT/etc.).
+- **Example:** Net **100** · rN **20%** → tax **20** · gross **120** · rG ≈ **16.6667%**.
+- **Important Files:** `frontend/src/tools/calculators/net-to-gross/*`, registry, sitemap, FX lists, `tool.key.ts`, `state-tax/states.ts`, disclosure content across MAGI/AGI/RMD/AMT/GST/etc., brain docs.
+- **Verification:** `tsx` net-to-gross + canada-gst-qst + state-tax calculation checks passed. Mongo `tool:assign --set-active` (`indexable` false). Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Residual Income Calculator
 - **Summary:** Shipped Residual Income Calculator on existing catalog slug `residual-income-calculator` (`ResidualIncomeCalculator`, catalog `6af46f10a27d8d1d4e990169`, preserved `nameKey` `residual income calculator`). Screenshot-first (ADR-023): equity charge = EC × (r%÷100); RI = NI − charge; positive/zero/negative interpretation. Denomination-only CurrencySelect (PKR default, no FX). **`indexable` preserved false**.
 - **Example:** EC **800,000** · r **10%** · NI **140,000** → charge **80,000** · RI **60,000**; Company Alpha EC **500,000,000** · 12% · NI **17,000,000** → RI **−43,000,000**.
