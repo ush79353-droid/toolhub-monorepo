@@ -822,6 +822,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/effective-annual-yield/detail'),
   EffectiveInterestRateCalculator: () =>
     import('@/tools/calculators/effective-interest-rate/detail'),
+  EndingInventoryCalculator: () =>
+    import('@/tools/calculators/ending-inventory/detail'),
   ExpectedUtilityCalculator: () =>
     import('@/tools/calculators/expected-utility/detail'),
   FreeCashFlowCalculator: () =>

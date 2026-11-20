@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Ending Inventory Calculator
+- **Summary:** Shipped Ending Inventory Calculator on existing catalog slug `ending-inventory-calculator` (`EndingInventoryCalculator`, catalog `6af46f10a27d8d1d4e990130`, preserved `nameKey` `ending inventory calculator`). Screenshot-first (ADR-023): COGS known Yes/No; Ending = Starting + Purchases − COGS; turnover = COGS / avg inventory; COGS-unknown uses T(2B+P)/(T+2). Negative ending inventory warned. Denomination-only CurrencySelect (PKR default, no FX). No reverse/purchase-breakdown UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Start $25,000 + Purchases $35,000 − COGS $45,000 → Ending **$15,000**, turnover **2.25**.
+- **Important Files:** `frontend/src/tools/calculators/ending-inventory/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add EBT Calculator – Earnings Before Tax
 - **Summary:** Shipped EBT Calculator on existing catalog slug `ebt-calculator-earnings-before-tax` (`EbtCalculator`, catalog `6af46f10a27d8d1d4e99012f`, preserved `nameKey` `ebt calculator – earnings before tax`). Screenshot-first (ADR-023): Gross profit / Operating expenses / Other / EBT; GP = Rev − COGS; OpEx = SG&A + D&A; EBT = GP − OpEx − Interest + Other income; EBT margin; signed other income & EBT. Denomination-only CurrencySelect (PKR default, no FX). No reverse/tax UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Rev $1,000,000 · COGS $300,000 · SG&A $150,000 · D&A $50,000 · Interest $20,000 · Other $10,000 → EBT **$490,000**.

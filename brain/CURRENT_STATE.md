@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (EBT Calculator live at `/tools/ebt-calculator-earnings-before-tax`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Ending Inventory Calculator live at `/tools/ending-inventory-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Ending Inventory Calculator (`/tools/ending-inventory-calculator`):** Live client-side inventory-flow tool (`componentKey: 'EndingInventoryCalculator'`, catalog `6af46f10a27d8d1d4e990130`, `nameKey` `ending inventory calculator`). Screenshot-first (ADR-023): COGS known Yes/No selector; starting inventory / net purchases / COGS / ending inventory / inventory turnover. Ending = Starting + Purchases − COGS; turnover = COGS / avg inventory; COGS-unknown path uses T(2B+P)/(T+2). Negative ending inventory warned (not valid stock). Denomination-only CurrencySelect (PKR default, no FX). No reverse/purchase-breakdown UI (ADR-023). Activated; **`indexable` left false**. Example: Start $25k + Purchases $35k − COGS $45k → Ending **$15,000**, turnover **2.25**.
 - **EBT Calculator – Earnings Before Tax (`/tools/ebt-calculator-earnings-before-tax`):** Live client-side pretax earnings tool (`componentKey: 'EbtCalculator'`, catalog `6af46f10a27d8d1d4e99012f`, `nameKey` `ebt calculator – earnings before tax`). Screenshot-first (ADR-023): Gross profit / Operating expenses / Other / EBT accordions; GP = Rev − COGS; OpEx = SG&A + D&A; EBT = GP − OpEx − Interest + Other income (signed other income); EBT margin; implied EBIT. Denomination-only CurrencySelect (PKR default, no FX). No reverse/tax UI (ADR-023). Activated; **`indexable` left false**. Example: Rev $1M · COGS $300k · SG&A $150k · D&A $50k · Int $20k · Other $10k → EBT **$490,000**.
 - **EBITDA Calculator (`/tools/ebitda-calculator`):** Live client-side Earnings Before Interest, Taxes, Depreciation, and Amortization tool (`componentKey: 'EbitdaCalculator'`, catalog `6af46f10a27d8d1d4e99012e`, `nameKey` `ebitda calculator`). Screenshot-first (ADR-023): operating profit / amortization / depreciation / EBITDA with reverse modes; signed operating profit and EBITDA; optional revenue → EBITDA margin. Denomination-only CurrencySelect (PKR default, no FX). No EV/EBITDA or net-income UI (ADR-023; covered in guide). Activated; **`indexable` left false**. Example: OP $100k + A $10k + D $20k → EBITDA **$130,000**.
 - **EBIT Calculator (`/tools/ebit-calculator`):** Live client-side Earnings Before Interest and Taxes tool (`componentKey: 'EbitCalculator'`, catalog `6af46f10a27d8d1d4e99012d`, `nameKey` `ebit calculator`). Screenshot-first (ADR-023): revenue / operating expenses / EBIT with reverse modes; positive/zero/negative EBIT preserved; EBIT margin when revenue &gt; 0. Denomination-only CurrencySelect (PKR default, no FX). No expense breakdown / EBITDA inputs (ADR-023; covered in guide). Activated; **`indexable` left false**. Example: revenue $50k − OE $24k → EBIT **$26,000**.

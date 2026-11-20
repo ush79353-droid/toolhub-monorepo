@@ -3173,6 +3173,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EffectiveInterestRateCalculator,
     })),
   ),
+  EndingInventoryCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ending-inventory/EndingInventoryCalculator'
+    ).then((mod) => ({
+      default: mod.EndingInventoryCalculator,
+    })),
+  ),
   ExpectedUtilityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/expected-utility/ExpectedUtilityCalculator'
