@@ -649,6 +649,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ebt-calculator-earnings-before-tax',
   'ending-inventory-calculator',
   'eoq-calculator-economic-order-quantity',
+  'fcfe-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
   'college-cost-calculator',

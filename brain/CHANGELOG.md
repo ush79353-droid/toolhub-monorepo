@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add FCFE Calculator
+- **Summary:** Shipped FCFE Calculator on existing catalog slug `fcfe-calculator` (`FcfeCalculator`, catalog `6af46f10a27d8d1d4e990132`, preserved `nameKey` `fcfe calculator`). Screenshot-first (ADR-023): five methods (NI / EBITDA / EBIT / CFO / FCFF); net borrowing from debt balances or direct; method-specific D&A/CapEx/ΔNWC; signed FCFE; simplified tax without loss refunds. Denomination-only CurrencySelect (PKR default, no FX). No FCFE-per-share UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NI $500,000 + D&A $80,000 − CapEx $150,000 − WC $40,000 + NB $60,000 → FCFE **$450,000**.
+- **Important Files:** `frontend/src/tools/calculators/fcfe/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add EOQ Calculator (Economic Order Quantity)
 - **Summary:** Shipped EOQ Calculator on existing catalog slug `eoq-calculator-economic-order-quantity` (`EoqCalculator`, catalog `6af46f10a27d8d1d4e990131`, preserved `nameKey` `eoq calculator (economic order quantity)`). Screenshot-first (ADR-023): yearly demand / order cost / yearly holding cost / EOQ; EOQ = √(2DS/H); derived ordering/holding/total costs, orders/year, days between orders, practical integer EOQ. Denomination-only CurrencySelect (PKR default, no FX). No reorder-point UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** D 50,000 · S $10 · H $4 → EOQ **500** units; TC **$2,000**.

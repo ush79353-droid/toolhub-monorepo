@@ -3199,6 +3199,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  FcfeCalculator: lazyTool(() =>
+    import('@/tools/calculators/fcfe/FcfeCalculator').then((mod) => ({
+      default: mod.FcfeCalculator,
+    })),
+  ),
   FcffCalculator: lazyTool(() =>
     import('@/tools/calculators/fcff/FcffCalculator').then((mod) => ({
       default: mod.FcffCalculator,

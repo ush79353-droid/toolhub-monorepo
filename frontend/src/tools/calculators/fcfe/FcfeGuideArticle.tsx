@@ -89,7 +89,7 @@ export function FcfeGuideArticle() {
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         See the{' '}
         <a
-          href="/tools/fcff-calculator"
+          href="/tools/fcff-calculator-free-cash-flow-to-firm"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           FCFF Calculator

@@ -67,7 +67,7 @@ export function FcfeResults({ result }: FcfeResultsProps) {
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
         <a
-          href="/tools/fcff-calculator"
+          href="/tools/fcff-calculator-free-cash-flow-to-firm"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           FCFF
