@@ -789,6 +789,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
 
 
   'income-tax-calculator',
+  'tax-bracket-calculator',
   'adjusted-gross-income-agi-calculator',
   'information-ratio-calculator',
   'interest-calculator',

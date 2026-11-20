@@ -75,6 +75,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NetEffectiveRentCalculator: () =>
     import('@/tools/calculators/net-effective-rent/detail'),
   IncomeTaxCalculator: () => import('@/tools/calculators/income-tax/detail'),
+  TaxBracketCalculator: () =>
+    import('@/tools/calculators/tax-bracket/detail'),
   AdjustedGrossIncomeCalculator: () =>
     import('@/tools/calculators/adjusted-gross-income/detail'),
   IncomeTaxCalculatorPakistan: () =>

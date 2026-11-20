@@ -278,6 +278,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.IncomeTaxCalculator,
     })),
   ),
+  TaxBracketCalculator: lazyTool(() =>
+    import('@/tools/calculators/tax-bracket/TaxBracketCalculator').then((mod) => ({
+      default: mod.TaxBracketCalculator,
+    })),
+  ),
   AdjustedGrossIncomeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/adjusted-gross-income/AdjustedGrossIncomeCalculator'
