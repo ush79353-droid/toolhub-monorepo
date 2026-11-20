@@ -36,7 +36,7 @@ export const AMT_PARAMS: Record<AmtTaxYear, Record<AmtFilingStatus, AmtStatusPar
     single: {
       exemption: 75_900,
       phaseoutStart: 539_900,
-      phaseoutComplete: 776_100,
+      phaseoutComplete: 843_500, // Form 6251 (2022) unmarried complete phaseout
       mfsAddonFullAt: 0,
       rate26Ceiling: 206_100,
       rate28Offset: 4_122,

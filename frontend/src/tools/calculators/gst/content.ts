@@ -27,6 +27,6 @@ export const GST_FAQS: readonly FAQItem[] = [
   {
     question: 'Does this apply a country-specific GST rate?',
     answer:
-      'No. Enter the rate yourself. This tool does not invent jurisdiction rates, exemptions, or brackets. Sales Tax and VAT siblings are separate catalog entries.',
+      'No. This is a generic rate tool — enter the percent yourself. It does not invent jurisdiction rates, exemptions, or brackets, and it is not the Canada GST/QST calculator (that is a separate catalog entry). Sales Tax and VAT siblings are also separate.',
   },
 ];

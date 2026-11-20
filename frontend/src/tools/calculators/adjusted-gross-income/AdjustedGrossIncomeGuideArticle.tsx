@@ -14,8 +14,8 @@ export function AdjustedGrossIncomeGuideArticle() {
         Adjusted Gross Income (AGI) is your total income for the year minus certain
         adjustments listed on Schedule 1 (Form 1040). AGI is figured before the
         standard or itemized deduction. Many credits and phaseouts use AGI (or a
-        modified AGI). This tool estimates Schedule 1-style AGI for Tax Year 2025; it
-        is not a complete Form 1040.
+        modified AGI). This tool is an educational simplified Schedule 1–style AGI
+        estimate for Tax Year 2025 — not a complete Form 1040 or IRS filing.
       </p>
 
       <h2

@@ -13,12 +13,12 @@ export const MAGI_FAQS: readonly FAQItem[] = [
   {
     question: 'What does this calculator compute?',
     answer:
-      'An illustrative simplified estimate: MAGI equals your entered AGI plus the sum of the listed adjustment amounts (after converting each into the AGI currency). It is educational math, not a filed tax return or program eligibility test.',
+      'An illustrative general MAGI estimate only: MAGI equals your entered AGI plus the sum of the listed adjustment amounts (after converting each into the AGI currency). It is educational math — not a filed tax return and not Roth, IRA, ACA, Premium Tax Credit, or education program-specific MAGI.',
   },
   {
     question: 'Does this establish IRA, Roth, ACA, or education benefit eligibility?',
     answer:
-      'No. MAGI rules differ by program and tax year. This tool does not apply IRS limits, phaseouts, or program-specific add-back lists. Confirm eligibility with official IRS publications or a tax professional.',
+      'No. Each program uses its own MAGI definition and tax-year rules. This tool is a general illustrative add-back estimate only — it does not apply IRS limits, phaseouts, or program-specific add-back lists. Confirm eligibility with official IRS publications or a tax professional.',
   },
   {
     question: 'Should I enter amounts already included in AGI?',

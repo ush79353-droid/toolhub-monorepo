@@ -15,7 +15,8 @@ export function ModifiedAdjustedGrossIncomeGuideArticle() {
         back certain exclusions, deductions, and adjustments. The exact list
         depends on the tax or benefit program (traditional IRA, Roth IRA,
         Premium Tax Credit, education benefits, and others each use different
-        rules). This calculator does not pick a single IRS program definition.
+        rules). This calculator produces a general illustrative MAGI estimate
+        only — not program-specific IRA, Roth, ACA, or education MAGI.
       </p>
 
       <h2

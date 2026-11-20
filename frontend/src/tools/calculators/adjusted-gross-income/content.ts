@@ -14,7 +14,7 @@ export const AGI_FAQS: readonly FAQItem[] = [
   {
     question: 'What is AGI and how is it different from taxable income?',
     answer:
-      'Adjusted Gross Income (AGI) is total income minus above-the-line adjustments listed on Schedule 1 (Form 1040). Standard or itemized deductions come after AGI and are not included here. This calculator estimates AGI only.',
+      'Adjusted Gross Income (AGI) is total income minus above-the-line adjustments listed on Schedule 1 (Form 1040). Standard or itemized deductions come after AGI and are not included here. This calculator is an educational simplified Form 1040–style AGI estimate only — not a complete IRS filing or tax advice.',
   },
   {
     question: 'Which tax year do these limits use?',

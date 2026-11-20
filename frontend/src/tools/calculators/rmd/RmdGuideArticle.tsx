@@ -9,8 +9,11 @@ export function RmdGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A required minimum distribution is the smallest amount many retirement account owners must
-        withdraw each year after reaching the applicable beginning age. This calculator estimates
-        the common Uniform Lifetime Table RMD for an owner&apos;s lifetime distributions.
+        withdraw each year after reaching the applicable beginning age. Under SECURE 2.0, that age
+        is generally <strong>73</strong> (born 1951–1959) or <strong>75</strong> (born 1960+), with
+        earlier cohorts under prior law. This calculator estimates the common Uniform Lifetime Table
+        RMD amount for an owner&apos;s lifetime distributions; it does not decide whether an RMD is
+        due for your birth year. Joint-life Table II is unsupported without spouse age.
       </p>
       <h2 id="how-to-use" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
         How to Use This Calculator
@@ -28,7 +31,8 @@ export function RmdGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Factors follow IRS Pub. 590-B Appendix B Table III for 2022 and later (age 72 = 27.4). RMD =
-        Balance ÷ Factor. Educational estimate — not tax advice.
+        Balance ÷ Factor. The table supports ages 72–120 even when SECURE 2.0 starting ages are 73 or
+        75 — selecting an age only looks up the factor. Educational estimate — not tax advice.
       </p>
       <h2 id="rmd-faq" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
         Frequently Asked Questions

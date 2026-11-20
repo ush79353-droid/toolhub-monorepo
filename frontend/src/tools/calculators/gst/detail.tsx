@@ -4,7 +4,7 @@ import { GST_FAQS, GST_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Add or remove GST from a price using any rate you enter — gross is GST-inclusive, net is GST-exclusive — with independent FX on money fields.',
+    'Generic GST rate tool: add or remove tax from a price using any rate you enter — distinct from Canada GST/QST calculators — gross is GST-inclusive, net is GST-exclusive, with independent FX on money fields.',
   asideAriaLabel: 'Interactive GST Calculator',
   tocItems: GST_TOC_ITEMS,
   GuideArticle: GstGuideArticle,

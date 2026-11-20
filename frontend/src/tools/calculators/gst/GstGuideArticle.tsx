@@ -11,9 +11,11 @@ export function GstGuideArticle() {
         What Is a GST Calculator?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        This calculator converts between a GST-exclusive net price and a
-        GST-inclusive gross price for any GST percentage you enter. It does not
-        look up country rates or apply exemptions.
+        This is a <strong>generic GST rate tool</strong>: it converts between a
+        GST-exclusive net price and a GST-inclusive gross price for any GST
+        percentage you enter. It does not look up country rates or apply
+        exemptions, and it is distinct from Canada GST/QST (or other
+        jurisdiction-specific) calculators in the catalog.
       </p>
 
       <h2

@@ -24,4 +24,9 @@ export const RMD_FAQS: readonly FAQItem[] = [
     answer:
       'IRS rules then use the Joint Life and Last Survivor Expectancy table, which needs both ages. This form does not collect spouse age, so that path is marked unavailable rather than inventing a factor.',
   },
+  {
+    question: 'Does this enforce SECURE 2.0 RMD starting ages?',
+    answer:
+      'No. SECURE 2.0 generally sets the applicable beginning age at 73 for people born 1951–1959 and 75 for those born 1960 or later (with earlier cohorts under prior law). This calculator only applies the Uniform Lifetime Table factors you select (ages 72–120) and does not decide whether an RMD is due for your birth year.',
+  },
 ];

@@ -133,7 +133,7 @@ export function validateMarriageTaxInput(
     formattedDifference: formatMarriageTaxUsd(Math.abs(difference)),
     verdict,
     assumptionsNote:
-      'Educational TY 2026 estimate using IRS Rev. Proc. 2025-32 brackets and OBBBA standard deductions from the Income Tax Calculator parameters. Itemized deduction amounts are not collected — declining the standard deduction uses $0 itemized. CTC is simplified. Not tax advice.',
+      'Educational TY 2026 estimate using IRS Rev. Proc. 2025-32 brackets and OBBBA standard deductions from the Income Tax Calculator parameters. Itemized amounts are not collected ($0 if standard deduction declined). SE tax omits the SE½ AGI deduction. Dependents use simplified CTC only. Not tax advice.',
   };
 
   return { isValid: true, errors, result };

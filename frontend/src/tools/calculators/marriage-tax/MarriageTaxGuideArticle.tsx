@@ -48,8 +48,10 @@ export function MarriageTaxGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Educational estimate only. State/city tax is a flat percent of ordinary income inputs.
-        Self-employment tax uses a simplified SE base. Itemized deduction dollars are not collected.
-        Not a complete Form 1040 and not tax advice.
+        Self-employment tax uses a simplified SE base and does not deduct the employer-equivalent
+        half of SE tax (SE½) from AGI. Itemized deduction dollars are not collected (declining the
+        standard deduction uses $0 itemized). Dependents use a simplified CTC only. Not a complete
+        Form 1040 and not tax advice.
       </p>
 
       <h2
