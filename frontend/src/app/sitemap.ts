@@ -68,6 +68,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gst-calculator',
   'florida-sales-tax-calculator',
   'ohio-sales-tax-calculator',
+  'new-york-tax-calculator',
   'new-york-overtime-calculator',
   'operating-margin-calculator',
   'overtime-calculator',

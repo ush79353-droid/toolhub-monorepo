@@ -408,6 +408,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GstCalculator,
     })),
   ),
+  NewYorkTaxCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/new-york-tax/NewYorkTaxCalculator'
+    ).then((mod) => ({
+      default: mod.NewYorkTaxCalculator,
+    })),
+  ),
   NewYorkOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/new-york-overtime/NewYorkOvertimeCalculator'

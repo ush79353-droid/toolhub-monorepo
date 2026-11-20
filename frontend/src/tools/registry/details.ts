@@ -113,6 +113,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SalesTaxCalculator: () => import('@/tools/calculators/sales-tax/detail'),
   GrossToNetCalculator: () => import('@/tools/calculators/gross-to-net/detail'),
   GstCalculator: () => import('@/tools/calculators/gst/detail'),
+  NewYorkTaxCalculator: () =>
+    import('@/tools/calculators/new-york-tax/detail'),
   NewYorkOvertimeCalculator: () =>
     import('@/tools/calculators/new-york-overtime/detail'),
   OperatingMarginCalculator: () =>
