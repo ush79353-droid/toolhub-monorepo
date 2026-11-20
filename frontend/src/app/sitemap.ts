@@ -675,6 +675,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'earnest-money-calculator',
   'emergency-fund-calculator',
   'finance-calculator',
+  'finance-charge-calculator',
   'fire-calculator-financial-independence-retire-early',
   'fixed-asset-turnover-ratio-calculator',
   'gift-of-equity-calculator',

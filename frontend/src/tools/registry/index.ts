@@ -3544,6 +3544,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FinanceCalculator,
     })),
   ),
+  FinanceChargeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/finance-charge/FinanceChargeCalculator'
+    ).then((mod) => ({
+      default: mod.FinanceChargeCalculator,
+    })),
+  ),
   FinancialLeverageRatioCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/financial-leverage-ratio/FinancialLeverageRatioCalculator'

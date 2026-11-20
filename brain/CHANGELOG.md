@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Finance Charge Calculator
+- **Summary:** Shipped Finance Charge Calculator on existing catalog slug `finance-charge-calculator` (`FinanceChargeCalculator`, catalog `6af46f10a27d8d1d4e99014e`, preserved `nameKey` `finance charge calculator`). Screenshot-first (ADR-023): balance + APR; Billing cycle or Given term; FC = B×(APR/100)×(Days/365); daily rate/charge; total due; optional daily breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$1,000** @ **18%** × **30** days → finance charge ≈ **$14.79** · total ≈ **$1,014.79**.
+- **Important Files:** `frontend/src/tools/calculators/finance-charge/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Finance Charge calculation tests 22/22 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Credit Utilization Calculator
 - **Summary:** Shipped Credit Utilization Calculator on existing catalog slug `credit-utilization-calculator` (`CreditUtilizationCalculator`, catalog `6af46f10a27d8d1d4e99014d`, preserved `nameKey` `credit utilization calculator`). Screenshot-first (ADR-023): credit lines with money used + limit; add/remove (max 20); CU = ΣU/ΣL×100; available/over-limit; target utilization → reduction + additional limit; per-card breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$500** / **$2,000** → **25%**; **$9,400** / **$25,000** → **37.60%**.
