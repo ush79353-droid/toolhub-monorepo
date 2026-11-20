@@ -166,8 +166,8 @@ export function NoiForm({
   ) => (
     <div>
       <label htmlFor={id} className={labelClass}>
-        {label}
-        <InfoTooltip content={tooltip} />
+        <span>{label}</span>
+        <InfoTooltip label={label} text={tooltip} />
       </label>
       <FieldShell error={error} muted={options?.readOnly}>
         <span className="pl-3 text-sm text-muted-foreground" aria-hidden>
@@ -228,8 +228,11 @@ export function NoiForm({
       >
         <div>
           <label htmlFor="noi-area" className={labelClass}>
-            Area
-            <InfoTooltip content="Rentable floor area used with the rental rate per area. Switching units preserves the physical area and adjusts the rental rate so income stays constant." />
+            <span>Area</span>
+            <InfoTooltip
+              label="Area"
+              text="Rentable floor area used with the rental rate per area. Switching units preserves the physical area and adjusts the rental rate so income stays constant."
+            />
           </label>
           <div className="flex gap-2">
             <FieldShell error={errors.area}>
@@ -260,8 +263,11 @@ export function NoiForm({
 
         <div>
           <label htmlFor="noi-rental-rate" className={labelClass}>
-            Rental per area
-            <InfoTooltip content={`Rent charged per ${areaLabel}. Choose monthly or annually; monthly rates are annualized (×12) before calculating potential gross income.`} />
+            <span>Rental per area</span>
+            <InfoTooltip
+              label="Rental per area"
+              text={`Rent charged per ${areaLabel}. Choose monthly or annually; monthly rates are annualized (×12) before calculating potential gross income.`}
+            />
           </label>
           <div className="flex flex-wrap gap-2">
             <FieldShell error={errors.rentalRatePerArea}>
@@ -327,8 +333,11 @@ export function NoiForm({
       >
         <div>
           <label htmlFor="noi-occupancy" className={labelClass}>
-            Occupancy rate
-            <InfoTooltip content="Percent of potential rental income expected to be collected under normal occupied conditions. Vacancy rate = 100% − occupancy. Vacancy loss applies to rental income only, not other income." />
+            <span>Occupancy rate</span>
+            <InfoTooltip
+              label="Occupancy rate"
+              text="Percent of potential rental income expected to be collected under normal occupied conditions. Vacancy rate = 100% − occupancy. Vacancy loss applies to rental income only, not other income."
+            />
           </label>
           <FieldShell error={errors.occupancyRate}>
             <input
