@@ -20,7 +20,6 @@ import type { ToolMetadata } from '@/types/tool';
 const CURRENCY_CONVERSION_SLUGS = new Set([
   'margin-and-sales-tax-calculator',
   'sales-tax-calculator',
-  'gst-calculator',
   'gross-to-net-calculator',
   'margin-interest-calculator',
   'margin-with-discount-calculator',
@@ -116,6 +115,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'hourly-to-salary-with-overtime-calculator',
   'hourly-wage-calculator',
   'hours-pay-calculator',
+  'selling-leave-days-calculator',
   'wage-to-salary-calculator',
   'yearly-wage-calculator',
   'billable-hours-calculator',
@@ -218,6 +218,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'mirr-calculator',
   'money-market-account-calculator',
   'money-per-hour-calculator',
+  'time-and-a-half-calculator',
   'moving-average-calculator',
   'mutual-fund-calculator',
   'nopat-calculator',

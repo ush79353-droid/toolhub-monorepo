@@ -31,6 +31,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LoanInterestCalculator',
   'LotteryAnnuityCalculator',
   'MarginAndMarkupCalculator',
+  'MileageReimbursementCalculator',
   'MarginAndSalesTaxCalculator',
   'MarginAndVatCalculator',
   'MarginCalculatorClassic',
@@ -47,13 +48,11 @@ export const APPROVED_COMPONENT_KEYS = [
   'AlabamaTaxCalculator',
   'CaliforniaTaxCalculator',
   'CaliforniaSalesTaxCalculator',
-  'CanadaGstQstCalculator',
   'FloridaSalesTaxCalculator',
   'NewJerseySalesTaxCalculator',
   'OhioSalesTaxCalculator',
   'SalesTaxCalculator',
   'GrossToNetCalculator',
-  'GstCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
   'NetProfitMarginCalculator',
@@ -766,10 +765,12 @@ export const APPROVED_COMPONENT_KEYS = [
   'HourlyToSalaryWithOvertimeCalculator',
   'HourlyWageCalculator',
   'HoursPayCalculator',
+  'SellingLeaveDaysCalculator',
   'WageCalculator',
   'WageToSalaryCalculator',
   'YearlyWageCalculator',
   'MoneyPerHourCalculator',
+  'TimeAndAHalfCalculator',
   'BillableHoursCalculator',
   'BillRateCalculator',
   'ImpermanentLossCalculator',
@@ -1534,10 +1535,12 @@ if (isDirect) {
     !isApprovedComponentKey('HourlyToSalaryWithOvertimeCalculator') ||
     !isApprovedComponentKey('HourlyWageCalculator') ||
     !isApprovedComponentKey('HoursPayCalculator') ||
+    !isApprovedComponentKey('SellingLeaveDaysCalculator') ||
     !isApprovedComponentKey('WageCalculator') ||
     !isApprovedComponentKey('WageToSalaryCalculator') ||
     !isApprovedComponentKey('YearlyWageCalculator') ||
     !isApprovedComponentKey('MoneyPerHourCalculator') ||
+    !isApprovedComponentKey('TimeAndAHalfCalculator') ||
     !isApprovedComponentKey('BillableHoursCalculator') ||
     !isApprovedComponentKey('BillRateCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
@@ -1593,6 +1596,7 @@ if (isDirect) {
     !isApprovedComponentKey('EbitdaMarginCalculator') ||
     !isApprovedComponentKey('GrossMarginCalculator') ||
     !isApprovedComponentKey('MarginAndMarkupCalculator') ||
+    !isApprovedComponentKey('MileageReimbursementCalculator') ||
     !isApprovedComponentKey('MarginAndSalesTaxCalculator') ||
     !isApprovedComponentKey('MarginAndVatCalculator') ||
     !isApprovedComponentKey('MarginCalculatorClassic') ||
@@ -1625,13 +1629,11 @@ if (isDirect) {
     !isApprovedComponentKey('AlabamaTaxCalculator') ||
     !isApprovedComponentKey('CaliforniaTaxCalculator') ||
     !isApprovedComponentKey('CaliforniaSalesTaxCalculator') ||
-    !isApprovedComponentKey('CanadaGstQstCalculator') ||
     !isApprovedComponentKey('FloridaSalesTaxCalculator') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('OhioSalesTaxCalculator') ||
     !isApprovedComponentKey('SalesTaxCalculator') ||
     !isApprovedComponentKey('GrossToNetCalculator') ||
-    !isApprovedComponentKey('GstCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||

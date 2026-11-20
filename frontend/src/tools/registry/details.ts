@@ -70,6 +70,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-of-safety/detail'),
   MarginWithDiscountCalculator: () =>
     import('@/tools/calculators/margin-with-discount/detail'),
+  MileageReimbursementCalculator: () =>
+    import('@/tools/calculators/mileage-reimbursement/detail'),
   NetDebtCalculator: () =>
     import('@/tools/calculators/net-debt/detail'),
   NetEffectiveRentCalculator: () =>
@@ -89,8 +91,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/california-tax/detail'),
   CaliforniaSalesTaxCalculator: () =>
     import('@/tools/calculators/california-sales-tax/detail'),
-  CanadaGstQstCalculator: () =>
-    import('@/tools/calculators/canada-gst-qst/detail'),
   FloridaSalesTaxCalculator: () =>
     import('@/tools/calculators/florida-sales-tax/detail'),
   NewJerseySalesTaxCalculator: () =>
@@ -99,7 +99,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/ohio-sales-tax/detail'),
   SalesTaxCalculator: () => import('@/tools/calculators/sales-tax/detail'),
   GrossToNetCalculator: () => import('@/tools/calculators/gross-to-net/detail'),
-  GstCalculator: () => import('@/tools/calculators/gst/detail'),
   NewYorkOvertimeCalculator: () =>
     import('@/tools/calculators/new-york-overtime/detail'),
   OperatingMarginCalculator: () =>
@@ -1151,6 +1150,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/hourly-wage/detail'),
   HoursPayCalculator: () =>
     import('@/tools/calculators/hours-pay/detail'),
+  SellingLeaveDaysCalculator: () =>
+    import('@/tools/calculators/selling-leave-days/detail'),
   WageCalculator: () => import('@/tools/calculators/wage/detail'),
   WageToSalaryCalculator: () =>
     import('@/tools/calculators/wage-to-salary/detail'),
@@ -1158,6 +1159,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/yearly-wage/detail'),
   MoneyPerHourCalculator: () =>
     import('@/tools/calculators/money-per-hour/detail'),
+  TimeAndAHalfCalculator: () =>
+    import('@/tools/calculators/time-and-a-half/detail'),
   BillableHoursCalculator: () =>
     import('@/tools/calculators/billable-hours/detail'),
   BillRateCalculator: () =>

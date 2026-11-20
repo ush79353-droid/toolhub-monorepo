@@ -259,6 +259,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginWithDiscountCalculator,
     })),
   ),
+  MileageReimbursementCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mileage-reimbursement/MileageReimbursementCalculator'
+    ).then((mod) => ({
+      default: mod.MileageReimbursementCalculator,
+    })),
+  ),
   NetDebtCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/net-debt/NetDebtCalculator'
@@ -325,13 +332,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CaliforniaSalesTaxCalculator,
     })),
   ),
-  CanadaGstQstCalculator: lazyTool(() =>
-    import(
-      '@/tools/calculators/canada-gst-qst/CanadaGstQstCalculator'
-    ).then((mod) => ({
-      default: mod.CanadaGstQstCalculator,
-    })),
-  ),
   FloridaSalesTaxCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/florida-sales-tax/FloridaSalesTaxCalculator'
@@ -364,11 +364,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.GrossToNetCalculator,
       }),
     ),
-  ),
-  GstCalculator: lazyTool(() =>
-    import('@/tools/calculators/gst/GstCalculator').then((mod) => ({
-      default: mod.GstCalculator,
-    })),
   ),
   NewYorkOvertimeCalculator: lazyTool(() =>
     import(
@@ -4374,6 +4369,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HoursPayCalculator,
     })),
   ),
+  SellingLeaveDaysCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/selling-leave-days/SellingLeaveDaysCalculator'
+    ).then((mod) => ({
+      default: mod.SellingLeaveDaysCalculator,
+    })),
+  ),
   WageCalculator: lazyTool(() =>
     import('@/tools/calculators/wage/WageCalculator').then((mod) => ({
       default: mod.WageCalculator,
@@ -4398,6 +4400,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/money-per-hour/MoneyPerHourCalculator'
     ).then((mod) => ({
       default: mod.MoneyPerHourCalculator,
+    })),
+  ),
+  TimeAndAHalfCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/time-and-a-half/TimeAndAHalfCalculator'
+    ).then((mod) => ({
+      default: mod.TimeAndAHalfCalculator,
     })),
   ),
   BillableHoursCalculator: lazyTool(() =>
