@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Free Float Calculator live at `/tools/free-float-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Graham Number Calculator live at `/tools/graham-number-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Graham Number Calculator (`/tools/graham-number-calculator`):** Live client-side Graham Number tool (`componentKey: 'GrahamNumberCalculator'`, catalog `6af46f10a27d8d1d4e99015d`, `nameKey` `graham number calculator`). Screenshot-first (ADR-023): BVPS / EPS → GN = √(22.5×EPS×BVPS); optional current price → below/above/at + price difference %; expandable derived EPS/BVPS with Apply; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: EPS **$5** · BVPS **$20** → GN ≈ **$47.43**; price **$40** → below · ≈ **15.67%**.
 - **Free Float Calculator (`/tools/free-float-calculator`):** Live client-side free-float tool (`componentKey: 'FreeFloatCalculator'`, catalog `6af46f10a27d8d1d4e99015c`, `nameKey` `free float calculator`). Screenshot-first (ADR-023): outstanding / restricted / closely held → free float + percentage; whole-share validation; mutually exclusive exclusions; no CurrencySelect. Activated; **`indexable` left false**. Example: **10,000** − **2,000** − **1,000** → **7,000** shares (**70%**).
 - **California Sales Tax Calculator (`/tools/california-sales-tax-calculator`):** Live CDTFA address lookup (`componentKey: 'CaliforniaSalesTaxCalculator'`, catalog `6af46f0fa27d8d1d4e990027`). Screenshot-first + PO-approved Street/City: purchase USD + street + city + ZIP; Next.js `/api/tax/california-rate` → CDTFA `GetRateByAddress`; single rate → tax/total; ambiguous/no-match → unavailable (never invents). Fixed USD. Activated; **`indexable` left false**. Example: $100 · 450 N St · Sacramento · 95814 → rate **8.75%** · tax **$8.75** · total **$108.75**.
 - **Florida Sales Tax Calculator (`/tools/florida-sales-tax-calculator`):** Live client-side FL sales tax estimate (`componentKey: 'FloridaSalesTaxCalculator'`, catalog `6af46f0fa27d8d1d4e990028`). Screenshot-first (ADR-023): purchase amount (fixed USD) + ZIP; county picker when multi-county ZCTA. State 6% + county discretionary surtax (FL DOR DR-15DSS CY 2026); ZIP→county via Census 2020 ZCTA map; surtax base capped at $5,000 (single-item assumption). No FX. NJ / Ohio / generic Sales Tax siblings untouched. Activated; **`indexable` left false**. Example: $100 · 33101 → tax **$7.00** · total **$107.00**.

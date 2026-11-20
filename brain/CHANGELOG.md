@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Graham Number Calculator
+- **Summary:** Shipped Graham Number Calculator on existing catalog slug `graham-number-calculator` (`GrahamNumberCalculator`, catalog `6af46f10a27d8d1d4e99015d`, preserved `nameKey` `graham number calculator`). Screenshot-first (ADR-023): BVPS/EPS → √(22.5×EPS×BVPS); optional price comparison; expandable derived EPS/BVPS with Apply. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** EPS **$5** · BVPS **$20** → GN ≈ **$47.43**; price **$40** → below · ≈ **15.67%**.
+- **Important Files:** `frontend/src/tools/calculators/graham-number/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Graham Number tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Free Float Calculator
 - **Summary:** Shipped Free Float Calculator on existing catalog slug `free-float-calculator` (`FreeFloatCalculator`, catalog `6af46f10a27d8d1d4e99015c`, preserved `nameKey` `free float calculator`). Screenshot-first (ADR-023): outstanding / restricted / closely held → free float + percentage; whole-share validation; no CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **10,000** − **2,000** − **1,000** → free float **7,000** shares (**70%**).

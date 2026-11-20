@@ -2973,6 +2973,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GoogleAdsenseCalculator,
     })),
   ),
+  GrahamNumberCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/graham-number/GrahamNumberCalculator'
+    ).then((mod) => ({
+      default: mod.GrahamNumberCalculator,
+    })),
+  ),
   HedgeRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/hedge-ratio/HedgeRatioCalculator').then((mod) => ({
       default: mod.HedgeRatioCalculator,
