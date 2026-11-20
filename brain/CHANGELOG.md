@@ -28,6 +28,12 @@
 - **Important Files:** `frontend/src/tools/calculators/hours-pay/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
+### 2026-11-20 — Add Time and a Half Calculator
+- **Summary:** Shipped Time and a Half Calculator on existing catalog slug `time-and-a-half-calculator` (`TimeAndAHalfCalculator`, catalog `6af46f0fa27d8d1d4e990077`, pillar/subPillar null). Screenshot-first (ADR-023): standard rate FX; derived 1.5×/2×/3× rates FX; hours per category; category earnings + total FX. Dual `CURRENCY_CONVERSION_SLUGS`; hours/multipliers never convert. Wage / Overtime siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 1,000 · 40h + 5h@1.5 + 2h@2 → total **51,500**.
+- **Important Files:** `frontend/src/tools/calculators/time-and-a-half/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Money per Hour Calculator
 - **Summary:** Shipped Money per Hour Calculator on existing catalog slug `money-per-hour-calculator` (`MoneyPerHourCalculator`, catalog `6af46f0fa27d8d1d4e990068`, pillar/subPillar null). Screenshot-first (ADR-023): annual/monthly/biweekly/weekly/daily wage FX inputs + hours/week (default 40); Answer Money per hour FX. Last-edited period authoritative. Formulas: annual hours = hours×52; hourly from annual/monthly/weekly/biweekly/daily; daily = weekly÷5. Dual `CURRENCY_CONVERSION_SLUGS`; hours never convert. Wage / Hourly Wage / Salary to Hourly siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** Annual 1,040,000 · 40h → hourly **500**; weekly **20,000**.
@@ -45,6 +51,12 @@
 - **Example:** 2026 single employee · $100,000 → employee FICA **$7,650** · employer **$7,650** · combined **$15,300**.
 - **Important Files:** `frontend/src/tools/calculators/fica-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Tax Bracket Calculator
+- **Summary:** Shipped Tax Bracket Calculator on existing catalog slug `tax-bracket-calculator` (`TaxBracketCalculator`, catalog `6af46f0fa27d8d1d4e990075`, pillar/subPillar null). Screenshot-first (ADR-023): Year 2024 default (+2025/2026); filing statuses; income USD; deductions default $0; progressive tax, marginal/effective rates, bracket breakdown. Sources: Rev. Proc. 2023-34 / 2024-40 / 2025-32. Fixed USD; no FX. Income Tax sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 2024 Single · $50,000 · $0 deductions → estimated tax ≈ **$6,274** · marginal **22%**.
+- **Important Files:** `frontend/src/tools/calculators/tax-bracket/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Pay Raise Calculator
 - **Summary:** Shipped Pay Raise Calculator on existing catalog slug `pay-raise-calculator` (`PayRaiseCalculator`, catalog `6af46f0fa27d8d1d4e99006d`, pillar/subPillar null). Screenshot-first (ADR-023): hours/week; before-raise periods with independent FX; raise % or monetary periods (last-edited authoritative, not stacked); after-raise read-only FX. Formulas: Annual = Hourly×H×52; Weekly = Annual÷52; Monthly = Annual÷12; raise sync; undefined % when before=0 and raise>0. Dual `CURRENCY_CONVERSION_SLUGS`; hours/% never convert. Future Salary / Wage siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**. UI files landed via concurrent gratuity UI commit; engine + registration are dedicated commits.

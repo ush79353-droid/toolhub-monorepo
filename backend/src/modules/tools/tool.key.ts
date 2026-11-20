@@ -46,6 +46,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AlabamaTaxCalculator',
   'CaliforniaTaxCalculator',
   'CaliforniaSalesTaxCalculator',
+  'CanadaGstQstCalculator',
   'FloridaSalesTaxCalculator',
   'NewJerseySalesTaxCalculator',
   'OhioSalesTaxCalculator',
@@ -1621,6 +1622,7 @@ if (isDirect) {
     !isApprovedComponentKey('AlabamaTaxCalculator') ||
     !isApprovedComponentKey('CaliforniaTaxCalculator') ||
     !isApprovedComponentKey('CaliforniaSalesTaxCalculator') ||
+    !isApprovedComponentKey('CanadaGstQstCalculator') ||
     !isApprovedComponentKey('FloridaSalesTaxCalculator') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('OhioSalesTaxCalculator') ||
