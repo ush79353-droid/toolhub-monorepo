@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add FFO Calculator
+- **Summary:** Shipped FFO Calculator on existing catalog slug `ffo-calculator` (`FfoCalculator`, catalog `6af46f10a27d8d1d4e990133`, preserved `nameKey` `ffo calculator`). Screenshot-first (ADR-023): NI / D&A / gains / losses / interest income / FFO; standard FFO = NI + D&A − Gains + Losses; optional adjusted convention excludes interest income once. Denomination-only CurrencySelect (PKR default, no FX). No FFO-per-share UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NI $500,000 + D&A $150,000 − Gains $125,000 + Losses $50,000 → FFO **$575,000**.
+- **Important Files:** `frontend/src/tools/calculators/ffo/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add FCFE Calculator
 - **Summary:** Shipped FCFE Calculator on existing catalog slug `fcfe-calculator` (`FcfeCalculator`, catalog `6af46f10a27d8d1d4e990132`, preserved `nameKey` `fcfe calculator`). Screenshot-first (ADR-023): five methods (NI / EBITDA / EBIT / CFO / FCFF); net borrowing from debt balances or direct; method-specific D&A/CapEx/ΔNWC; signed FCFE; simplified tax without loss refunds. Denomination-only CurrencySelect (PKR default, no FX). No FCFE-per-share UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** NI $500,000 + D&A $80,000 − CapEx $150,000 − WC $40,000 + NB $60,000 → FCFE **$450,000**.

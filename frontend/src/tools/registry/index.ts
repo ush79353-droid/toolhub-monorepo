@@ -3209,6 +3209,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FcffCalculator,
     })),
   ),
+  FfoCalculator: lazyTool(() =>
+    import('@/tools/calculators/ffo/FfoCalculator').then((mod) => ({
+      default: mod.FfoCalculator,
+    })),
+  ),
   LeveredFreeCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/levered-free-cash-flow/LeveredFreeCashFlowCalculator'

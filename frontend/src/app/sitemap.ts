@@ -650,6 +650,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ending-inventory-calculator',
   'eoq-calculator-economic-order-quantity',
   'fcfe-calculator',
+  'ffo-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
   'college-cost-calculator',
