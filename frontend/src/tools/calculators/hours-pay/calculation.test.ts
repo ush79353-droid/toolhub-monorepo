@@ -120,6 +120,21 @@ assert.equal(
   null
 );
 
+// Fractional hours/day still produce finite hourly wage
+{
+  const r = calculateHoursPay({
+    sourceField: 'daily',
+    sourceAmount: 450,
+    hoursPerDay: 7.5,
+    daysPerWeek: 5,
+    weeksPerYear: 52,
+  });
+  assert.ok(r);
+  assert.equal(r.hourly, 60);
+  assert.equal(r.weekly, 2_250);
+  assert.equal(r.annual, 117_000);
+}
+
 assert.equal(formatHoursPayMoney(500, 'PKR'), '500.00');
 
 console.log('calculation.test.ts: ok');

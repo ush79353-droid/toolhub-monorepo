@@ -12,6 +12,9 @@ import type {
   HoursPaySourceField,
 } from './types';
 
+/** Supported upper bound for days/week (calendar week). */
+const MAX_DAYS_PER_WEEK = 7;
+
 export interface HoursPayValidation {
   isValid: boolean;
   errors: HoursPayFieldErrors;
@@ -111,8 +114,8 @@ export function validateHoursPayInput(
     errors.daysPerWeek = 'Enter a valid days-per-week value.';
   } else if (days.blank || days.value === null || days.value <= 0) {
     errors.daysPerWeek = 'Days per week must be greater than zero.';
-  } else if (days.value > 7) {
-    errors.daysPerWeek = 'Days per week cannot exceed 7.';
+  } else if (days.value > MAX_DAYS_PER_WEEK) {
+    errors.daysPerWeek = `Days per week cannot exceed ${MAX_DAYS_PER_WEEK}.`;
   }
 
   if (!weeks.blank && (weeks.invalid || weeks.value === null)) {
