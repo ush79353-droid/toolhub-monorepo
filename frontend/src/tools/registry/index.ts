@@ -3301,6 +3301,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  AverageVariableCostCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/average-variable-cost/AverageVariableCostCalculator'
+    ).then((mod) => ({
+      default: mod.AverageVariableCostCalculator,
+    })),
+  ),
   MaximumDrawdownCalculator: lazyTool(() =>
     import('@/tools/calculators/maximum-drawdown/MaximumDrawdownCalculator').then(
       (mod) => ({

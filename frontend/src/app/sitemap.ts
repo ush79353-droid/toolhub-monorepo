@@ -627,6 +627,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'remote-vs-on-location-workers-calculator',
   'trir-calculator',
   'average-return-calculator',
+  'average-variable-cost-calculator',
   'maximum-drawdown-calculator',
   '503020-rule-calculator',
   'apc-calculator',

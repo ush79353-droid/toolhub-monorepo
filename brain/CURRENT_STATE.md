@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Actual Cash Value Calculator live at `/tools/actual-cash-value-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Average Variable Cost Calculator live at `/tools/average-variable-cost-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Average Variable Cost Calculator (`/tools/average-variable-cost-calculator`):** Live client-side AVC tool (`componentKey: 'AverageVariableCostCalculator'`, catalog `6af46f10a27d8d1d4e990124`, `nameKey` `average variable cost calculator`). Screenshot-first (ADR-023): VC / Q / AVC with explicit reverse modes (solve AVC, VC, or Q); zero-output and zero-AVC guards; VC=AVC=0 nonunique; compact summary. Denomination-only CurrencySelect (PKR default, no FX). No optional cost breakdown (ADR-023). Activated; **`indexable` left false**. Example: $60,000 / 240 → AVC **$250/unit**.
 - **Actual Cash Value Calculator (`/tools/actual-cash-value-calculator`):** Live client-side ACV estimator (`componentKey: 'ActualCashValueCalculator'`, catalog `6af46f10a27d8d1d4e990123`, `nameKey` `actual cash value calculator`). Screenshot-first (ADR-023): purchase price + expected life + current age → ACV via zero-salvage straight-line `P × max(0, 1 − A/L)`; years/months conversion; accumulated depreciation / % / remaining life breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: $25,000 · 10y · 3y → ACV **$17,500**.
 - **Accrual Ratio Calculator (`/tools/accrual-ratio-calculator`):** Live client-side earnings-accrual tool (`componentKey: 'AccrualRatioCalculator'`, catalog `6af46f10a27d8d1d4e990122`, `nameKey` `accrual ratio calculator`). Screenshot-first (ADR-023): balance-sheet vs cash-flow methods; beginning/ending operating assets & liabilities → NOA; average NOA denominator; zero/negative average-NOA handling; contextual interpretation (no universal good/bad thresholds). Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: beg NOA $3M · end $3.5M → ratio ≈ **15.38%**; NI $800k − OCF $600k → ≈ **6.15%**.
 - **What To Offer On A House Calculator (`/tools/what-to-offer-on-a-house-calculator`):** Live client-side offer estimator (`componentKey: 'WhatToOfferOnAHouseCalculator'`, catalog `6af46f10a27d8d1d4e990121`, `nameKey` `what to offer on a house calculator`). Screenshot-first (ADR-023): FMV − renovation − desired discount (amount|% of FMV) − desired profit → offer; breakdown + offer-to-value; zero/negative offer warnings (actionable offer unavailable). Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: $300k − $20k − $10k − $30k → offer **$240,000**.

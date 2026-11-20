@@ -856,6 +856,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TrirCalculator: () => import('@/tools/calculators/trir/detail'),
   AverageReturnCalculator: () =>
     import('@/tools/calculators/average-return/detail'),
+  AverageVariableCostCalculator: () =>
+    import('@/tools/calculators/average-variable-cost/detail'),
   MaximumDrawdownCalculator: () =>
     import('@/tools/calculators/maximum-drawdown/detail'),
   FiftyThirtyTwentyCalculator: () =>

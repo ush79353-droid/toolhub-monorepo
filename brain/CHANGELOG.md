@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Average Variable Cost Calculator
+- **Summary:** Shipped Average Variable Cost Calculator on existing catalog slug `average-variable-cost-calculator` (`AverageVariableCostCalculator`, catalog `6af46f10a27d8d1d4e990124`, preserved `nameKey` `average variable cost calculator`). Screenshot-first (ADR-023): three fields VC / Q / AVC with explicit reverse modes; zero-output and zero-AVC undefined; VC=AVC=0 nonunique. Denomination-only CurrencySelect (PKR default, no FX). No optional cost breakdown. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $60,000 / 240 → AVC **$250/unit**; reverse AVC $25 · Q 400 → VC **$10,000**.
+- **Important Files:** `frontend/src/tools/calculators/average-variable-cost/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Actual Cash Value Calculator
 - **Summary:** Shipped Actual Cash Value Calculator on existing catalog slug `actual-cash-value-calculator` (`ActualCashValueCalculator`, catalog `6af46f10a27d8d1d4e990123`, preserved `nameKey` `actual cash value calculator`). Screenshot-first (ADR-023): purchase price, expected life, current age → ACV with zero-salvage straight-line formula; years/months conversion; depreciation breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $25,000 · 10 years · 3 years → ACV **$17,500** · accumulated depreciation **$7,500** · **30%** depreciated.
