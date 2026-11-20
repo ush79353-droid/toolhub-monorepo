@@ -4,6 +4,30 @@
 
 ---
 
+### 2026-11-20 — Add Money per Hour Calculator
+- **Summary:** Shipped Money per Hour Calculator on existing catalog slug `money-per-hour-calculator` (`MoneyPerHourCalculator`, catalog `6af46f0fa27d8d1d4e990068`, pillar/subPillar null). Screenshot-first (ADR-023): annual/monthly/biweekly/weekly/daily wage FX inputs + hours/week (default 40); Answer Money per hour FX. Last-edited period authoritative. Formulas: annual hours = hours×52; hourly from annual/monthly/weekly/biweekly/daily; daily = weekly÷5. Dual `CURRENCY_CONVERSION_SLUGS`; hours never convert. Wage / Hourly Wage / Salary to Hourly siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** Annual 1,040,000 · 40h → hourly **500**; weekly **20,000**.
+- **Important Files:** `frontend/src/tools/calculators/money-per-hour/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Gratuity Calculator
+- **Summary:** Shipped Gratuity Calculator on existing catalog slug `gratuity-calculator` (`GratuityCalculator`, catalog `6af46f0fa27d8d1d4e99005e`, pillar/subPillar null). Screenshot-first (ADR-023): final month’s salary + D.A. FX; how long did you work (years + months, default 5 / 0); total gratuity FX. Formula: (Salary+DA)×15/26×eligible years; leftover months > 6 count as one more year; ordinary 5-year gate (60 months) else 0. Labeled Indian Payment of Gratuity Act, 1972 style educational estimate — not Pakistan/global statutory entitlement; Act ₹10 lakh ceiling not auto-applied across currencies. Dual `CURRENCY_CONVERSION_SLUGS`; years/months never convert. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 50,000 · 10 years → ≈ **288,461.54**.
+- **Important Files:** `frontend/src/tools/calculators/gratuity/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add FICA Tax Calculator
+- **Summary:** Shipped FICA Tax Calculator on existing catalog slug `fica-tax-calculator` (`FicaTaxCalculator`, catalog `6af46f0fa27d8d1d4e99005d`, pillar/subPillar null). Screenshot-first (ADR-023): employment type Employee/Employer (default) or Self-employed; tax year 2026 default / 2025; filing status; income USD. Results: SS, Medicare, Additional Medicare, employee/employer shares or SE components + deductible half, totals, effective rates. Fixed USD (no FX). Sources: SSA 2026 COLA (wage base $184,500 / 2025 $176,100), IRS Topics 751 & 560. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 2026 single employee · $100,000 → employee FICA **$7,650** · employer **$7,650** · combined **$15,300**.
+- **Important Files:** `frontend/src/tools/calculators/fica-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Pay Raise Calculator
+- **Summary:** Shipped Pay Raise Calculator on existing catalog slug `pay-raise-calculator` (`PayRaiseCalculator`, catalog `6af46f0fa27d8d1d4e99006d`, pillar/subPillar null). Screenshot-first (ADR-023): hours/week; before-raise periods with independent FX; raise % or monetary periods (last-edited authoritative, not stacked); after-raise read-only FX. Formulas: Annual = Hourly×H×52; Weekly = Annual÷52; Monthly = Annual÷12; raise sync; undefined % when before=0 and raise>0. Dual `CURRENCY_CONVERSION_SLUGS`; hours/% never convert. Future Salary / Wage siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**. UI files landed via concurrent gratuity UI commit; engine + registration are dedicated commits.
+- **Example:** 1,000/hr · 40h · 10% → weekly before **40,000** · annual **2,080,000** · after hourly **1,100**.
+- **Important Files:** `frontend/src/tools/calculators/pay-raise/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Billable Hours Calculator
 - **Summary:** Shipped Billable Hours Calculator on existing catalog slug `billable-hours-calculator` (`BillableHoursCalculator`, catalog `6af46f0fa27d8d1d4e990057`, pillar/subPillar null). Screenshot-first (ADR-023): billable rate FX + sec/min/hr; billable time + secs/mins/hrs; billable value FX; bidirectional solve any one field. Formulas: Value = Rate × Time (unit-normalized); Rate = Value/Time; Time = Value/Rate. Dual `CURRENCY_CONVERSION_SLUGS`; time units never convert. Exact 60 s/min and 60 min/hr only. Bill Rate / Consulting Fees siblings untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 500 PKR/hr · 40 hrs → **20,000** PKR; 500/hr · 30 mins → **250**.

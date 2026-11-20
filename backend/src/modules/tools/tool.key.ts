@@ -581,6 +581,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PaydayLoanCalculator',
   'PaymentCalculator',
   'PaybackPeriodCalculator',
+  'PayRaiseCalculator',
   'PercentageDiscountCalculator',
   'PercentageReturnCalculator',
   'PerpetuityCalculator',
@@ -1341,6 +1342,7 @@ if (isDirect) {
     !isApprovedComponentKey('PartiallyAmortizedLoanCalculator') ||
     !isApprovedComponentKey('PaydayLoanCalculator') ||
     !isApprovedComponentKey('PaybackPeriodCalculator') ||
+    !isApprovedComponentKey('PayRaiseCalculator') ||
     !isApprovedComponentKey('PercentageDiscountCalculator') ||
     !isApprovedComponentKey('PercentageReturnCalculator') ||
     !isApprovedComponentKey('PerpetuityCalculator') ||
@@ -1520,6 +1522,7 @@ if (isDirect) {
     !isApprovedComponentKey('WageCalculator') ||
     !isApprovedComponentKey('WageToSalaryCalculator') ||
     !isApprovedComponentKey('YearlyWageCalculator') ||
+    !isApprovedComponentKey('MoneyPerHourCalculator') ||
     !isApprovedComponentKey('BillableHoursCalculator') ||
     !isApprovedComponentKey('BillRateCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
@@ -1614,6 +1617,7 @@ if (isDirect) {
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||
     !isApprovedComponentKey('TexasOvertimeCalculator') ||
     !isApprovedComponentKey('GrossRentMultiplierCalculator') ||
+    !isApprovedComponentKey('GratuityCalculator') ||
     !isApprovedComponentKey('NetEffectiveRentCalculator') ||
     !isApprovedComponentKey('RentIncreaseCalculator') ||
     !isApprovedComponentKey('RentOrBuyCalculator') ||

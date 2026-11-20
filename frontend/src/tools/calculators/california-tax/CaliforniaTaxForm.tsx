@@ -392,6 +392,11 @@ export function CaliforniaTaxForm({
             {errors.propertyTaxRate ? (
               <p className="mt-1 text-xs text-rose-600">{errors.propertyTaxRate}</p>
             ) : null}
+            <p className="mt-1 text-xs text-muted-foreground">
+              Pre-filled with the BOE 2024–25 county-average statutory rate of
+              assessed value (not the illustrative 0.88% screenshot placeholder).
+              Edit when you know your tax-rate area rate.
+            </p>
           </div>
         </div>
       </details>
