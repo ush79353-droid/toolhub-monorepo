@@ -2347,6 +2347,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ApyCalculator,
     })),
   ),
+  BalanceTransferCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/balance-transfer/BalanceTransferCalculator'
+    ).then((mod) => ({
+      default: mod.BalanceTransferCalculator,
+    })),
+  ),
   BalloonPaymentCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/balloon-payment/BalloonPaymentCalculator'

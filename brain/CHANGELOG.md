@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Balance Transfer Calculator
+- **Summary:** Shipped Balance Transfer Calculator on existing catalog slug `balance-transfer-calculator` (`BalanceTransferCalculator`, catalog `6af46f10a27d8d1d4e99014b`, preserved `nameKey` `balance transfer calculator`). Screenshot-first (ADR-023): promotional vs long-term; old/new card costs; %|fixed transfer fee; financed|upfront; promo + post-promo APR; fixed payment or pay-during-promo; monthly simulation; savings; break-even; non-amortizing payment warning. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Balance **$10,000** · Old **24%** · Pay **$500** · Fee **3%** financed · Promo **0%** × **18** mo · Regular **22%** → start **$10,300** · after promo ≈ **$1,300**.
+- **Important Files:** `frontend/src/tools/calculators/balance-transfer/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Balance Transfer calculation tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add APR Calculator
 - **Summary:** Shipped APR Calculator on existing catalog slug `apr-calculator` (`AprCalculator`, catalog `6af46f10a27d8d1d4e99014a`, preserved `nameKey` `apr calculator`). Screenshot-first (ADR-023): loan amount / term / nominal rate / payment frequency; origination (fixed|%) + other finance charges; fee treatment deducted|financed|paid-upfront; amortizing PMT; bisection APR from PV(payments)=net proceeds; EAR; schedule; estimated (non-regulatory) disclosure. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Principal **$10,000** · Rate **10%** · Term **2 years** monthly · Fee **$200** deducted → PMT ≈ **$461.45** · Proceeds **$9,800** · APR ≈ **12.1%**.

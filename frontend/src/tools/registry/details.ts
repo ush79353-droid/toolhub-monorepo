@@ -539,6 +539,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/annualized-return/detail'),
   AprCalculator: () => import('@/tools/calculators/apr/detail'),
   ApyCalculator: () => import('@/tools/calculators/apy/detail'),
+  BalanceTransferCalculator: () =>
+    import('@/tools/calculators/balance-transfer/detail'),
   BalloonPaymentCalculator: () =>
     import('@/tools/calculators/balloon-payment/detail'),
   BasisPointCalculator: () =>

@@ -432,6 +432,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AnnualizedReturnCalculator',
   'AprCalculator',
   'ApyCalculator',
+  'BalanceTransferCalculator',
   'BalloonPaymentCalculator',
   'BasisPointCalculator',
   'BetaStockCalculator',
@@ -1132,6 +1133,7 @@ if (isDirect) {
     !isApprovedComponentKey('AnnualizedReturnCalculator') ||
     !isApprovedComponentKey('AprCalculator') ||
     !isApprovedComponentKey('ApyCalculator') ||
+    !isApprovedComponentKey('BalanceTransferCalculator') ||
     !isApprovedComponentKey('BalloonPaymentCalculator') ||
     !isApprovedComponentKey('BasisPointCalculator') ||
     !isApprovedComponentKey('BetaStockCalculator') ||

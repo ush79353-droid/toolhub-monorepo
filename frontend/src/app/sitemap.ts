@@ -468,6 +468,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'annualized-return-calculator',
   'apr-calculator',
   'apy-calculator',
+  'balance-transfer-calculator',
   'balloon-payment-calculator',
   'bond-calculator',
   'basis-point-calculator',
