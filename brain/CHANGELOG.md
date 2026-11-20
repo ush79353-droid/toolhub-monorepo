@@ -329,6 +329,409 @@
 - **Example:** $50,000 · 36 mo · MF 0.00208 · down $10,000 · tax 7% · residual $24,000 → payment ≈ **$617.99**/mo.
 - **Important Files:** `frontend/src/tools/calculators/auto-lease/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
 - **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo activation via `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+### 2026-11-20 — Add Fibonacci Retracement Calculator
+- **Summary:** Shipped Fibonacci Retracement Calculator on existing catalog slug `fibonacci-retracement-calculator` (`FibonacciRetracementCalculator`, catalog `6af46f10a27d8d1d4e99015b`, preserved `nameKey` `fibonacci retracement calculator`). Screenshot-first (ADR-023): uptrend/downtrend × retracement/extension; low/high → difference + levels; no CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Low **100** · High **200** → uptrend 61.8% retrace **138.2** · downtrend 61.8% **161.8** · uptrend 161.8% extension **261.8**.
+- **Important Files:** `frontend/src/tools/calculators/fibonacci-retracement/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Fibonacci tests 9/9 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Enterprise Value Calculator
+- **Summary:** Shipped Enterprise Value Calculator on existing catalog slug `enterprise-value-calculator` (`EnterpriseValueCalculator`, catalog `6af46f10a27d8d1d4e99015a`, preserved `nameKey` `enterprise value calculator`). Screenshot-first (ADR-023): market cap/MI/preferred/debt/cash → EV. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$500M** + **$20M** + **$15M** + **$100M** − **$50M** → EV **$585M**.
+- **Important Files:** `frontend/src/tools/calculators/enterprise-value/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Enterprise Value tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Economic Value Added Calculator
+- **Summary:** Shipped Economic Value Added Calculator on existing catalog slug `economic-value-added-calculator` (`EconomicValueAddedCalculator`, catalog `6af46f10a27d8d1d4e990159`, preserved `nameKey` `economic value added calculator`). Screenshot-first (ADR-023): NOPAT / IC / WACC% → EVA; OA−OL invested-capital helper with explicit apply. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NOPAT **$750,000** · IC **$1,000,000** · WACC **10%** → charge **$100,000** · EVA **$650,000**.
+- **Important Files:** `frontend/src/tools/calculators/economic-value-added/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` EVA tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add EBITDA Multiple Calculator
+- **Summary:** Shipped EBITDA Multiple Calculator on existing catalog slug `ebitda-multiple-calculator` (`EbitdaMultipleCalculator`, catalog `6af46f10a27d8d1d4e990158`, preserved `nameKey` `ebitda multiple calculator`). Screenshot-first (ADR-023): cash/market cap/MI/preferred/debt → EV; ÷ EBITDA → multiple. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$450M** + **$100M** + **$5M** + **$10M** − **$20M** → EV **$545M** · EBITDA **$50M** → **10.90×**.
+- **Important Files:** `frontend/src/tools/calculators/ebitda-multiple/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` EBITDA Multiple tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Earnings Per Share Growth Calculator
+- **Summary:** Shipped Earnings Per Share Growth Calculator on existing catalog slug `earnings-per-share-growth-calculator` (`EarningsPerShareGrowthCalculator`, catalog `6af46f10a27d8d1d4e990157`, preserved `nameKey` `earnings per share growth calculator`). Screenshot-first (ADR-023): initial/final EPS + periods → total growth % and CAGR. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$2.50** → **$4.00** · **3** periods → total **60%** · CAGR ≈ **16.99%**.
+- **Important Files:** `frontend/src/tools/calculators/earnings-per-share-growth/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` EPS Growth tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Earnings per Share Calculator
+- **Summary:** Shipped Earnings per Share Calculator on existing catalog slug `earnings-per-share-calculator` (`EarningsPerShareCalculator`, catalog `6af46f10a27d8d1d4e990156`, preserved `nameKey` `earnings per share calculator`). Screenshot-first (ADR-023): NI / preferred dividends / weighted-average shares → basic EPS. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$13,120,000,000** · pref **$200,000,000** · shares **333,400,000** → EPS ≈ **$38.75**/share.
+- **Important Files:** `frontend/src/tools/calculators/earnings-per-share/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` EPS calculation tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add DuPont Analysis Calculator
+- **Summary:** Shipped DuPont Analysis Calculator on existing catalog slug `dupont-analysis-calculator` (`DupontAnalysisCalculator`, catalog `6af46f10a27d8d1d4e990155`, preserved `nameKey` `dupont analysis calculator`). Screenshot-first (ADR-023): sales/NI/assets/equity → NPM, TAT, FL, ROE. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$1,000,000** · **$120,000** · **$800,000** · **$400,000** → NPM **12%** · TAT **1.25×** · FL **2×** · ROE **30%**.
+- **Important Files:** `frontend/src/tools/calculators/dupont-analysis/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` DuPont calculation tests. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Repayment Calculator
+- **Summary:** Shipped Repayment Calculator on existing catalog slug `repayment-calculator` (`RepaymentCalculator`, catalog `6af46f10a27d8d1d4e990151`, preserved `nameKey` `repayment calculator`). Screenshot-first (ADR-023): fixed-term and fixed-installment modes; compounding/payment frequencies; effective periodic rate; amortization schedule; principal/interest chart. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$10,000** @ **10%** · monthly · **5 years** → payment ≈ **$212.47** · total ≈ **$12,748.23** · interest ≈ **$2,748.23**.
+- **Important Files:** `frontend/src/tools/calculators/repayment/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Repayment calculation tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add PITI Calculator
+- **Summary:** Shipped PITI Calculator on existing catalog slug `piti-calculator` (`PitiCalculator`, catalog `6af46f10a27d8d1d4e990150`, preserved `nameKey` `piti calculator`). Screenshot-first (ADR-023): principal, term years+months, rate, annual tax/insurance; amortizing M + T/12 + I/12; zero-rate P/n; breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$200,000** · **30y** · **7%** · tax **$3,600** · insurance **$1,200** → PITI ≈ **$1,730.60**/month.
+- **Important Files:** `frontend/src/tools/calculators/piti/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` PITI calculation tests 20/20 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Finance Charge Calculator
+- **Summary:** Shipped Finance Charge Calculator on existing catalog slug `finance-charge-calculator` (`FinanceChargeCalculator`, catalog `6af46f10a27d8d1d4e99014e`, preserved `nameKey` `finance charge calculator`). Screenshot-first (ADR-023): balance + APR; Billing cycle or Given term; FC = B×(APR/100)×(Days/365); daily rate/charge; total due; optional daily breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$1,000** @ **18%** × **30** days → finance charge ≈ **$14.79** · total ≈ **$1,014.79**.
+- **Important Files:** `frontend/src/tools/calculators/finance-charge/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Finance Charge calculation tests 22/22 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Credit Utilization Calculator
+- **Summary:** Shipped Credit Utilization Calculator on existing catalog slug `credit-utilization-calculator` (`CreditUtilizationCalculator`, catalog `6af46f10a27d8d1d4e99014d`, preserved `nameKey` `credit utilization calculator`). Screenshot-first (ADR-023): credit lines with money used + limit; add/remove (max 20); CU = ΣU/ΣL×100; available/over-limit; target utilization → reduction + additional limit; per-card breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$500** / **$2,000** → **25%**; **$9,400** / **$25,000** → **37.60%**.
+- **Important Files:** `frontend/src/tools/calculators/credit-utilization/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Credit Utilization calculation tests 18/18 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Blended Rate Calculator
+- **Summary:** Shipped Blended Rate Calculator on existing catalog slug `blended-rate-calculator` (`BlendedRateCalculator`, catalog `6af46f10a27d8d1d4e99014c`, preserved `nameKey` `blended rate calculator`). Screenshot-first (ADR-023): Amortization sections with balance + rate; add/remove loans (max 20); balance-weighted R = Σ(B×R)/Σ(B); total balance; annual/monthly interest estimates; contribution breakdown; partial-entry validation. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$10,000** @ **10%** + **$200** @ **5%** → total **$10,200** · blended ≈ **9.90%** · annual interest **$1,010**.
+- **Important Files:** `frontend/src/tools/calculators/blended-rate/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Blended Rate calculation tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Balance Transfer Calculator
+- **Summary:** Shipped Balance Transfer Calculator on existing catalog slug `balance-transfer-calculator` (`BalanceTransferCalculator`, catalog `6af46f10a27d8d1d4e99014b`, preserved `nameKey` `balance transfer calculator`). Screenshot-first (ADR-023): promotional vs long-term; old/new card costs; %|fixed transfer fee; financed|upfront; promo + post-promo APR; fixed payment or pay-during-promo; monthly simulation; savings; break-even; non-amortizing payment warning. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Balance **$10,000** · Old **24%** · Pay **$500** · Fee **3%** financed · Promo **0%** × **18** mo · Regular **22%** → start **$10,300** · after promo ≈ **$1,300**.
+- **Important Files:** `frontend/src/tools/calculators/balance-transfer/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Balance Transfer calculation tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add APR Calculator
+- **Summary:** Shipped APR Calculator on existing catalog slug `apr-calculator` (`AprCalculator`, catalog `6af46f10a27d8d1d4e99014a`, preserved `nameKey` `apr calculator`). Screenshot-first (ADR-023): loan amount / term / nominal rate / payment frequency; origination (fixed|%) + other finance charges; fee treatment deducted|financed|paid-upfront; amortizing PMT; bisection APR from PV(payments)=net proceeds; EAR; schedule; estimated (non-regulatory) disclosure. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Principal **$10,000** · Rate **10%** · Term **2 years** monthly · Fee **$200** deducted → PMT ≈ **$461.45** · Proceeds **$9,800** · APR ≈ **12.1%**.
+- **Important Files:** `frontend/src/tools/calculators/apr/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` APR calculation tests 20/20 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add 28/36 Rule Calculator
+- **Summary:** Shipped 28/36 Rule Calculator on existing catalog slug `2836-rule-calculator` (`Rule2836Calculator`, catalog `6af46f10a27d8d1d4e990148`, preserved `nameKey` `28/36 rule calculator`). Screenshot-first (ADR-023): Front-end (28%) — gross income, combined or itemized housing, FER; Back-end (36%) — other debts, total debt, BER; guideline limits + housing capacity; overall pass only when both ≤ limits; zero income → ratios unavailable. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Income **$5,000** · Housing **$1,200** · Other debts **$400** → FER **24.00%** · total debt **$1,600** · BER **32.00%** · max housing **$1,400** · max debt **$1,800**.
+- **Important Files:** `frontend/src/tools/calculators/rule-2836/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` 28/36 calculation tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Working Capital Turnover Ratio Calculator
+- **Summary:** Shipped Working Capital Turnover Ratio Calculator on existing catalog slug `working-capital-turnover-ratio-calculator` (`WorkingCapitalTurnoverRatioCalculator`, catalog `6af46f10a27d8d1d4e990146`, preserved `nameKey` `working capital turnover ratio calculator`). Screenshot-first (ADR-023): Average CA + Average CL + WCT (AWC = ACA − ACL; Revenue / AWC); zero AWC unavailable; negative AWC signed with warning; expandable breakdown. Denomination-only CurrencySelect (PKR default, no FX). Reuses WC turnover helper. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Opening/Closing CA **$500k/$700k** · CL **$200k/$300k** · Revenue **$3.5M** → ACA **$600k** · ACL **$250k** · AWC **$350k** · WCT **10.00x**.
+- **Important Files:** `frontend/src/tools/calculators/working-capital-turnover-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` WCT ratio calculation tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Working Capital Calculator
+- **Summary:** Shipped Working Capital Calculator on existing catalog slug `working-capital-calculator` (`WorkingCapitalCalculator`, catalog `6af46f10a27d8d1d4e990145`, preserved `nameKey` `working capital calculator`). Screenshot-first (ADR-023): basic WC (CA − CL) + working capital ratio (current ratio); optional turnover section (beg/end CA·CL → beg/end/avg WC, ΔWC, Revenue/Avg WC); negative WC preserved; zero CL / zero avg WC unavailable. Denomination-only CurrencySelect (PKR default, no FX). Reuses current-ratio WC/ratio helpers. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** CA **$300,000** · CL **$150,000** → WC **$150,000** · ratio **2.00**. Company Alpha: Avg WC **$175,000** · turnover ≈ **8.57x** · ΔWC **+$50,000**.
+- **Important Files:** `frontend/src/tools/calculators/working-capital/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Working Capital calculation tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Total Asset Turnover Calculator
+- **Summary:** Shipped Total Asset Turnover Calculator on existing catalog slug `total-asset-turnover-calculator` (`TotalAssetTurnoverCalculator`, catalog `6af46f10a27d8d1d4e990144`, preserved `nameKey` `total asset turnover calculator`). Screenshot-first (ADR-023): Average asset (beginning / ending → average) + Total asset turnover (revenue → TAT with `x`); empty ≠ zero; zero average unavailable; zero revenue → 0.00x; expandable breakdown. Denomination-only CurrencySelect (PKR default, no FX). No intensity / reverse UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Beginning **$8,000,000** · Ending **$10,000,000** · Revenue **$10,000,000** → Average **$9,000,000** · TAT ≈ **1.11x**.
+- **Important Files:** `frontend/src/tools/calculators/total-asset-turnover/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Total Asset Turnover calculation tests 24/24 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add HELOC Calculator
+- **Summary:** Shipped HELOC Calculator on existing catalog slug `heloc-calculator` (`HelocCalculator`, catalog `6af46f10a27d8d1d4e99014f`, preserved `nameKey` `heloc calculator`). Screenshot-first (ADR-023): HELOC details + interest-rate adjustments; interest-only draw then amortizing repayment with rate-change payment recalculation; full monthly schedule; SVG balance/interest/principal chart; upfront % + fixed + annual fees (not financed into principal). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Balance **50,000** · Draw **10y** · Repay **20y** · Rate **6%** · Fee **1% + 500** · Annual **200** → Draw pay **250**/mo · Repay ≈ **358.22**/mo · Draw interest **30,000** · Upfront **1,000** · Annual fees **6,000**.
+- **Important Files:** `frontend/src/tools/calculators/heloc/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` HELOC calculation tests 10/10 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Retained Earnings Calculator
+- **Summary:** Shipped Retained Earnings Calculator on existing catalog slug `retained-earnings-calculator` (`RetainedEarningsCalculator`, catalog `6af46f10a27d8d1d4e990143`, preserved `nameKey` `retained earnings calculator`). Screenshot-first (ADR-023): two sections — Dividends distributed (earnings / payout % → dividends) and Retained earnings (RE / shares → REPS); payout &gt;100% with warning; zero/negative earnings block payout inference; period RE ≠ cumulative. Denomination-only CurrencySelect (PKR default, no FX). No beginning-RE / direct-dividend UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Earnings **$1,000,000** · Payout **30%** · Shares **50,000** → Dividends **$300,000** · RE **$700,000** · REPS **$14**.
+- **Important Files:** `frontend/src/tools/calculators/retained-earnings/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Retained Earnings calculation tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Receivables Turnover Ratio Calculator
+- **Summary:** Shipped Receivables Turnover Ratio Calculator on existing catalog slug `receivables-turnover-ratio-calculator` (`ReceivablesTurnoverRatioCalculator`, catalog `6af46f10a27d8d1d4e990142`, preserved `nameKey` `receivables turnover ratio calculator`). Screenshot-first (ADR-023): net credit sales / opening AR / closing AR → average AR / turnover (times); independent average when sales missing; zero average AR → undefined; zero sales → 0×; breakdown. Denomination-only CurrencySelect (PKR default, no FX). No DSO field in primary UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Net credit sales **$120,000** · Opening **$20,000** · Closing **$30,000** → Avg AR **$25,000** · RTR **4.8 times**.
+- **Important Files:** `frontend/src/tools/calculators/receivables-turnover-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Receivables Turnover calculation tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Productivity Calculator
+- **Summary:** Shipped Productivity Calculator on existing catalog slug `productivity-calculator` (`ProductivityCalculator`, catalog `6af46f10a27d8d1d4e990141`, preserved `nameKey` `productivity calculator`). Screenshot-first (ADR-023): revenue; productivity per employee (RPE); productivity per hour (RPH) with seconds/minutes/hours conversion to hours; independent calculation branches; breakdown. Denomination-only CurrencySelect (PKR default, no FX). No ambiguous workday/week units; no advanced output/profit metrics UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Revenue **$500,000** · Employees **25** · Hours **4,000** → RPE **$20,000** · RPH **$125/hour**.
+- **Important Files:** `frontend/src/tools/calculators/productivity/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Productivity calculation tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Net Operating Working Capital Calculator
+- **Summary:** Shipped Net Operating Working Capital Calculator on existing catalog slug `net-operating-working-capital-calculator` (`NetOperatingWorkingCapitalCalculator`, catalog `6af46f10a27d8d1d4e99013e`, preserved `nameKey` `net operating working capital calculator`). Screenshot-first (ADR-023): three expanded accordions — COA (cash + AR + inventories), COL (AP + accrued expenses), NOWC = COA − COL; positive/zero/negative NOWC; calculation breakdown. Denomination-only CurrencySelect (PKR default, no FX). No ΔNOWC / NOWC-to-revenue UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Cash **$1,000** + AR **$15,000** + Inventories **$5,000** − AP **$18,000** − Accrued **$2,000** → COA **$21,000** · COL **$20,000** · NOWC **$1,000**.
+- **Important Files:** `frontend/src/tools/calculators/net-operating-working-capital/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` NOWC calculation tests 10/10 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Net Income Calculator
+- **Summary:** Shipped Net Income Calculator on existing catalog slug `net-income-calculator` (`NetIncomeCalculator`, catalog `6af46f10a27d8d1d4e99013c`, preserved `nameKey` `net income calculator`). Screenshot-first (ADR-023): pretax section (revenue/COGS/GP/OpEx/OpInc/interest/EBT) + taxes section (rate/taxes/NI); estimated taxes = max(EBT,0)×rate; net profit margin; income-statement breakdown. Denomination-only CurrencySelect (PKR default, no FX). No manual-tax / other-income UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Rev **$500,000** · COGS **$200,000** · OpEx **$100,000** · Int **$20,000** · tax **25%** → NI **$135,000** · margin **27%**.
+- **Important Files:** `frontend/src/tools/calculators/net-income/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Net Income calculation tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Marginal Cost Calculator
+- **Summary:** Shipped Marginal Cost Calculator on existing catalog slug `marginal-cost-calculator` (`MarginalCostCalculator`, catalog `6af46f10a27d8d1d4e99013a`, preserved `nameKey` `marginal cost calculator`). Screenshot-first (ADR-023): three fields ΔTC / ΔQ / MC; signed cost and quantity changes; zero MC when ΔTC=0; undefined when ΔQ=0; indeterminate when both zero; currency-per-unit formatting; quantity unit label (no conversion). Denomination-only CurrencySelect (PKR default, no FX). No reverse / initial-final mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** ΔTC **$15,000** ÷ ΔQ **200** → MC **$75/unit**.
+- **Important Files:** `frontend/src/tools/calculators/marginal-cost/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Marginal Cost calculation tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Price Elasticity of Demand Calculator
+- **Summary:** Shipped Price Elasticity of Demand Calculator on existing catalog slug `price-elasticity-of-demand-calculator` (`PriceElasticityOfDemandCalculator`, catalog `6af46f10a27d8d1d4e990140`, preserved `nameKey` `price elasticity of demand calculator`). Screenshot-first (ADR-023): midpoint (arc) PED from two observations; signed PED + classification; initial/final revenue; revenue % change with zero-R₁ guard; equal-price / zero-avg-Q undefined PED. Reuses Optimal Price midpoint utility. Denomination-only CurrencySelect (PKR default, no FX). No charts / alternate-method selector. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $50→$60 · 200→150 → PED **−1.5714** (elastic) · revenue **$10,000→$9,000 (−10%)**.
+- **Important Files:** `frontend/src/tools/calculators/price-elasticity-of-demand/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` PED calculation tests 18/18 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Optimal Price Calculator
+- **Summary:** Shipped Optimal Price Calculator on existing catalog slug `optimal-price-calculator` (`OptimalPriceCalculator`, catalog `6af46f10a27d8d1d4e99013f`, preserved `nameKey` `optimal price calculator`). Screenshot-first (ADR-023): MC / optional MR / initial·final price·quantity → constant-elasticity calibration; P* only when MC>0 and ε&lt;−1; Q* from demand curve; profits at three prices (zero FC); midpoint PED descriptive; MR diagnostic; no finite optimum for unit/inelastic/positive ε or MC=0. Denomination-only CurrencySelect (PKR default, no FX). No linear-demand / constraints / chart UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** MC **$40** · 100@$100 → 64@$125 → ε **−2** · P* **$80** · Q* **156.25** · π* **$6,250**.
+- **Important Files:** `frontend/src/tools/calculators/optimal-price/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Optimal Price calculation tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Net Operating Assets Calculator
+- **Summary:** Shipped Net Operating Assets Calculator on existing catalog slug `net-operating-assets-calculator` (`NetOperatingAssetsCalculator`, catalog `6af46f10a27d8d1d4e99013d`, preserved `nameKey` `net operating assets calculator`). Screenshot-first (ADR-023): Operating assets (cash/AR/inventory/prepaid/fixed) + Operating liabilities (AP/accruals) → OA, OL, NOA; positive/zero/negative NOA; expandable breakdown. Denomination-only CurrencySelect (PKR default, no FX). No RNOA / ΔNOA / detailed BS mode. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** OA **$1,550,000** − OL **$600,000** → NOA **$950,000**.
+- **Important Files:** `frontend/src/tools/calculators/net-operating-assets/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` NOA calculation tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Month-Over-Month Calculator
+- **Summary:** Shipped Month-Over-Month Calculator on existing catalog slug `month-over-month-calculator` (`MonthOverMonthCalculator`, catalog `6af46f10a27d8d1d4e99013b`, preserved `nameKey` `month-over-month calculator`). Screenshot-first (ADR-023): MoM + CMGR expanded; QoQ + YoY collapsed; percentage-change MoM/QoQ/YoY; compounded CMGR with months|years duration; zero-baseline / indeterminate / negative-baseline handling; independent sections. No currency selector. No reverse/chart UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** 50,000 → 60,000 MoM **+20%**; CMGR 50,000 → 100,000 / 12 months ≈ **+5.95%**.
+- **Important Files:** `frontend/src/tools/calculators/month-over-month/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` MoM calculation tests 25/25 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add LIFO Calculator for Inventory
+- **Summary:** Shipped LIFO Calculator for Inventory on existing catalog slug `lifo-calculator-for-inventory` (`LifoInventoryCalculator`, catalog `6af46f10a27d8d1d4e990139`, preserved `nameKey` `lifo calculator for inventory`). Screenshot-first (ADR-023): Inventories bought (2 batches) / Units sold / Revenue and margin; LIFO newest-first COGS; ending inventory; revenue/GP/margin; expandable layer breakdown; insufficient-inventory guard. Denomination-only CurrencySelect (PKR default, no FX). Two-batch reference only (no dynamic add-batch UI). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** 10 units @ $10 + 15 @ $15 · sell 18 @ $20 → COGS **$255** · ending **$70** · revenue **$360** · GP **$105** · margin ≈ **29.17%**.
+- **Important Files:** `frontend/src/tools/calculators/lifo-inventory/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` LIFO calculation tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+- **Also:** Confirmed Inventory Turnover `tool:assign` after Atlas recovery — `isDeveloped: true`, `indexable: false`.
+
+### 2026-11-20 — Add Inventory Turnover Calculator
+- **Summary:** Shipped Inventory Turnover Calculator on existing catalog slug `inventory-turnover-calculator` (`InventoryTurnoverCalculator`, catalog `6af46f10a27d8d1d4e990138`, preserved `nameKey` `inventory turnover calculator`). Screenshot-first (ADR-023): COGS / beginning / ending / days → average inventory, turnover = COGS/Avg, inventory days = (Avg/COGS)×Days; zero-avg and zero-COGS edge handling. Denomination-only CurrencySelect (PKR default, no FX). No reverse-mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** COGS $600,000 · Beginning $100,000 · Ending $140,000 · 365 days → avg **$120,000** · turnover **5.00×** · days **73**.
+- **Important Files:** `frontend/src/tools/calculators/inventory-turnover/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Initial Mongo `tool:assign` blocked (Atlas timeout); retried successfully on 2026-11-20. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Income Elasticity of Demand Calculator
+- **Summary:** Shipped Income Elasticity of Demand Calculator on existing catalog slug `income-elasticity-of-demand-calculator` (`IncomeElasticityOfDemandCalculator`, catalog `6af46f10a27d8d1d4e990137`, preserved `nameKey` `income elasticity of demand calculator`). Screenshot-first (ADR-023): Method Standard/Midpoint; Income Y1/Y2/%ΔY; Demand Q1/Q2/%ΔQ; YED = %ΔQd/%ΔY with inferior/necessity/luxury classification; zero income change undefined. Denomination-only CurrencySelect for income (PKR default, no FX). No direct-% mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Income $1,000→$1,200 · Quantity 100→130 → Standard YED **1.50** · Midpoint ≈ **1.43**.
+- **Important Files:** `frontend/src/tools/calculators/income-elasticity-of-demand/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+- **Also:** Retried Goodwill `tool:assign` after Atlas recovery — `isDeveloped: true`, `indexable: false`.
+
+### 2026-11-20 — Add Goodwill Calculator
+- **Summary:** Shipped Goodwill Calculator on existing catalog slug `goodwill-calculator` (`GoodwillCalculator`, catalog `6af46f10a27d8d1d4e990136`, preserved `nameKey` `goodwill calculator`). Screenshot-first (ADR-023): purchase price / FV assets / FV liabilities / goodwill = max(0, P−(A−L)); negative residual → potential bargain purchase (not negative goodwill); net identifiable assets in summary. Denomination-only CurrencySelect (PKR default, no FX). No reverse/advanced NCI UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Purchase $1,000,000 · Assets $450,000 · Liabilities $400,000 → goodwill **$950,000**.
+- **Important Files:** `frontend/src/tools/calculators/goodwill/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Initial Mongo `tool:assign` blocked (Atlas timeout); retried successfully on 2026-11-20. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Fixed Asset Turnover Ratio Calculator
+- **Summary:** Shipped Fixed Asset Turnover Ratio Calculator on existing catalog slug `fixed-asset-turnover-ratio-calculator` (`FixedAssetTurnoverRatioCalculator`, catalog `6af46f10a27d8d1d4e990135`, preserved `nameKey` `fixed asset turnover ratio calculator`). Screenshot-first (ADR-023): starting + final → average fixed assets; revenue → FAT = Revenue/Average; zero-average undefined; zero/negative revenue handling; derived fixed asset intensity. Denomination-only CurrencySelect (PKR default, no FX). No reverse-mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Start $15,000,000 · Final $18,000,000 · Revenue $7,500,000 → avg **$16,500,000** · FAT ≈ **0.45×**.
+- **Important Files:** `frontend/src/tools/calculators/fixed-asset-turnover-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Financial Leverage Ratio Calculator
+- **Summary:** Shipped Financial Leverage Ratio Calculator on existing catalog slug `financial-leverage-ratio-calculator` (`FinancialLeverageRatioCalculator`, catalog `6af46f10a27d8d1d4e990134`, preserved `nameKey` `financial leverage ratio calculator`). Screenshot-first (ADR-023): current + non-current → total assets; equity → FL = Assets/Equity (equity multiplier); zero/negative equity handling; derived liabilities, equity ratio, L/E. Denomination-only CurrencySelect (PKR default, no FX). No reverse-mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Current $300,000 + Non-current $1,000,000 · Equity $500,000 → FL **2.60×**.
+- **Important Files:** `frontend/src/tools/calculators/financial-leverage-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add FFO Calculator
+- **Summary:** Shipped FFO Calculator on existing catalog slug `ffo-calculator` (`FfoCalculator`, catalog `6af46f10a27d8d1d4e990133`, preserved `nameKey` `ffo calculator`). Screenshot-first (ADR-023): NI / D&A / gains / losses / interest income / FFO; standard FFO = NI + D&A − Gains + Losses; optional adjusted convention excludes interest income once. Denomination-only CurrencySelect (PKR default, no FX). No FFO-per-share UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NI $500,000 + D&A $150,000 − Gains $125,000 + Losses $50,000 → FFO **$575,000**.
+- **Important Files:** `frontend/src/tools/calculators/ffo/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add FCFE Calculator
+- **Summary:** Shipped FCFE Calculator on existing catalog slug `fcfe-calculator` (`FcfeCalculator`, catalog `6af46f10a27d8d1d4e990132`, preserved `nameKey` `fcfe calculator`). Screenshot-first (ADR-023): five methods (NI / EBITDA / EBIT / CFO / FCFF); net borrowing from debt balances or direct; method-specific D&A/CapEx/ΔNWC; signed FCFE; simplified tax without loss refunds. Denomination-only CurrencySelect (PKR default, no FX). No FCFE-per-share UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NI $500,000 + D&A $80,000 − CapEx $150,000 − WC $40,000 + NB $60,000 → FCFE **$450,000**.
+- **Important Files:** `frontend/src/tools/calculators/fcfe/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add EOQ Calculator (Economic Order Quantity)
+- **Summary:** Shipped EOQ Calculator on existing catalog slug `eoq-calculator-economic-order-quantity` (`EoqCalculator`, catalog `6af46f10a27d8d1d4e990131`, preserved `nameKey` `eoq calculator (economic order quantity)`). Screenshot-first (ADR-023): yearly demand / order cost / yearly holding cost / EOQ; EOQ = √(2DS/H); derived ordering/holding/total costs, orders/year, days between orders, practical integer EOQ. Denomination-only CurrencySelect (PKR default, no FX). No reorder-point UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** D 50,000 · S $10 · H $4 → EOQ **500** units; TC **$2,000**.
+- **Important Files:** `frontend/src/tools/calculators/eoq/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Ending Inventory Calculator
+- **Summary:** Shipped Ending Inventory Calculator on existing catalog slug `ending-inventory-calculator` (`EndingInventoryCalculator`, catalog `6af46f10a27d8d1d4e990130`, preserved `nameKey` `ending inventory calculator`). Screenshot-first (ADR-023): COGS known Yes/No; Ending = Starting + Purchases − COGS; turnover = COGS / avg inventory; COGS-unknown uses T(2B+P)/(T+2). Negative ending inventory warned. Denomination-only CurrencySelect (PKR default, no FX). No reverse/purchase-breakdown UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Start $25,000 + Purchases $35,000 − COGS $45,000 → Ending **$15,000**, turnover **2.25**.
+- **Important Files:** `frontend/src/tools/calculators/ending-inventory/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add EBT Calculator – Earnings Before Tax
+- **Summary:** Shipped EBT Calculator on existing catalog slug `ebt-calculator-earnings-before-tax` (`EbtCalculator`, catalog `6af46f10a27d8d1d4e99012f`, preserved `nameKey` `ebt calculator – earnings before tax`). Screenshot-first (ADR-023): Gross profit / Operating expenses / Other / EBT; GP = Rev − COGS; OpEx = SG&A + D&A; EBT = GP − OpEx − Interest + Other income; EBT margin; signed other income & EBT. Denomination-only CurrencySelect (PKR default, no FX). No reverse/tax UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Rev $1,000,000 · COGS $300,000 · SG&A $150,000 · D&A $50,000 · Interest $20,000 · Other $10,000 → EBT **$490,000**.
+- **Important Files:** `frontend/src/tools/calculators/ebt/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add EBITDA Calculator
+- **Summary:** Shipped EBITDA Calculator on existing catalog slug `ebitda-calculator` (`EbitdaCalculator`, catalog `6af46f10a27d8d1d4e99012e`, preserved `nameKey` `ebitda calculator`). Screenshot-first (ADR-023): operating profit / amortization / depreciation / EBITDA with reverse modes; signed OP and EBITDA; optional revenue → EBITDA margin. Denomination-only CurrencySelect (PKR default, no FX). No EV/EBITDA or net-income UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** OP $100,000 + A $10,000 + D $20,000 → EBITDA **$130,000**; OP −$20k + A $10k + D $30k → EBITDA **$20,000**.
+- **Important Files:** `frontend/src/tools/calculators/ebitda/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add EBIT Calculator
+- **Summary:** Shipped EBIT Calculator on existing catalog slug `ebit-calculator` (`EbitCalculator`, catalog `6af46f10a27d8d1d4e99012d`, preserved `nameKey` `ebit calculator`). Screenshot-first (ADR-023): revenue / operating expenses / EBIT with reverse modes; signed EBIT; EBIT margin when revenue &gt; 0. Denomination-only CurrencySelect (PKR default, no FX). No expense-breakdown or EBITDA UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** revenue $50,000 − OE $24,000 → EBIT **$26,000**; OE $100k on $80k revenue → EBIT **−$20,000**.
+- **Important Files:** `frontend/src/tools/calculators/ebit/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add DSO Calculator
+- **Summary:** Shipped DSO (Days Sales Outstanding) Calculator on existing catalog slug `dso-calculator` (`DsoCalculator`, catalog `6af46f10a27d8d1d4e99012c`, preserved `nameKey` `dso calculator`). Screenshot-first (ADR-023): Receivables + Sales accordions; avg AR from beg/end or direct; total sales (default) or net credit sales; period days → DSO; AR turnover; zero sales undefined. Denomination-only CurrencySelect (PKR default, no FX). No reverse modes / no returns breakdown. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** AR 20,000/35,000 · sales 500,000 · 365 days → avg **27,500** · DSO **20.08 days**.
+- **Important Files:** `frontend/src/tools/calculators/dso/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add DPO Calculator – Days Payable Outstanding
+- **Summary:** Shipped DPO Calculator on existing catalog slug `dpo-calculator-days-payable-outstanding` (`DpoCalculator`, catalog `6af46f10a27d8d1d4e99012b`, preserved `nameKey` `dpo calculator – days payable outstanding`). Screenshot-first (ADR-023): Average Payables / Purchases / DPO accordions; purchases = COGS + end inv − beg inv (or direct); zero/negative purchases guards; AP turnover supplementary. Denomination-only CurrencySelect (PKR default, no FX). No reverse solve modes. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** AP 150k/200k · inv 500k/400k · COGS 1.5M · 365d → avg AP **175,000** · purchases **1,400,000** · DPO **45.63 days**.
+- **Important Files:** `frontend/src/tools/calculators/dpo/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add DIO Calculator
+- **Summary:** Shipped DIO (Days Inventory Outstanding) Calculator on existing catalog slug `dio-calculator` (`DioCalculator`, catalog `6af46f10a27d8d1d4e99012a`, preserved `nameKey` `dio calculator`). Screenshot-first (ADR-023): average inventory (starting/ending or direct) + COGS + period days → DIO; inventory turnover supplementary; zero COGS undefined; zero inventory → DIO 0. Denomination-only CurrencySelect (PKR default, no FX). No reverse solve modes. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** start $500,000 · end $750,000 · COGS $6,000,000 · 365 days → avg **$625,000** · DIO ≈ **38.02 days** · turnover **9.60×**.
+- **Important Files:** `frontend/src/tools/calculators/dio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Degree of Operating Leverage Calculator
+- **Summary:** Shipped Degree of Operating Leverage Calculator on existing catalog slug `degree-of-operating-leverage-calculator` (`DegreeOfOperatingLeverageCalculator`, catalog `6af46f10a27d8d1d4e990129`, preserved `nameKey` `degree of operating leverage calculator`). Screenshot-first (ADR-023): period-to-period %Δ sales/EBIT → DOL with reverse modes; optional contribution-margin CVP method; zero sales-change undefined; negative DOL preserved. Denomination-only CurrencySelect for CM mode (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** sales +10% · EBIT +30% → DOL **3.00**; CM path $500k − $300k VC − $100k FC → DOL **2.00**.
+- **Important Files:** `frontend/src/tools/calculators/degree-of-operating-leverage/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Current Ratio Calculator
+- **Summary:** Shipped Current Ratio Calculator on existing catalog slug `current-ratio-calculator` (`CurrentRatioCalculator`, catalog `6af46f10a27d8d1d4e990128`, preserved `nameKey` `current ratio calculator`). Screenshot-first (ADR-023): current assets / current liabilities / current ratio with reverse modes; working capital; zero liabilities undefined; contextual interpretation without universal ideal. Denomination-only CurrencySelect (PKR default, no FX). No balance-sheet breakdown. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** CA $400,000 · CL $200,000 → CR **2.00** · WC **$200,000**.
+- **Important Files:** `frontend/src/tools/calculators/current-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Cross Price Elasticity Calculator
+- **Summary:** Shipped Cross Price Elasticity Calculator on existing catalog slug `cross-price-elasticity-calculator` (`CrossPriceElasticityCalculator`, catalog `6af46f10a27d8d1d4e990127`, preserved `nameKey` `cross price elasticity calculator`). Screenshot-first (ADR-023): time-point-1 / time-point-2 / elasticity accordions; initial-value (default) and midpoint methods; substitute/complement/zero guidance + magnitude; zero price-change undefined. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** PA $10→$12 · QB 1,000→1,200 → E **+1.00** (substitutes, unit magnitude).
+- **Important Files:** `frontend/src/tools/calculators/cross-price-elasticity/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Consumer Surplus Calculator
+- **Summary:** Shipped Consumer Surplus Calculator on existing catalog slug `consumer-surplus-calculator` (`ConsumerSurplusCalculator`, catalog `6af46f10a27d8d1d4e990126`, preserved `nameKey` `consumer surplus calculator`). Screenshot-first (ADR-023): actual price / willing price / CS with reverse modes; signed difference when price exceeds WTP; savings % vs WTP; Related information accordion. Denomination-only CurrencySelect (PKR default, no FX). No market triangle/graph. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** WTP $150 · P $100 → CS **$50**; P $150 · WTP $100 → difference −$50 (realized surplus N/A).
+- **Important Files:** `frontend/src/tools/calculators/consumer-surplus/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Cash Conversion Cycle Calculator
+- **Summary:** Shipped Cash Conversion Cycle Calculator on existing catalog slug `cash-conversion-cycle-calculator` (`CashConversionCycleCalculator`, catalog `6af46f10a27d8d1d4e990125`, preserved `nameKey` `cash conversion cycle calculator`). Screenshot-first (ADR-023): period/revenue/COGS/averages → DSO/DIO/DPO/CCC; manual or beginning/ending average modes; operating cycle; zero revenue/COGS undefined; negative CCC preserved. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $1,000,000 revenue · $800,000 COGS · inv $100k · AR $80k · AP $70k → CCC ≈ **42.89 days**.
+- **Important Files:** `frontend/src/tools/calculators/cash-conversion-cycle/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Average Variable Cost Calculator
+- **Summary:** Shipped Average Variable Cost Calculator on existing catalog slug `average-variable-cost-calculator` (`AverageVariableCostCalculator`, catalog `6af46f10a27d8d1d4e990124`, preserved `nameKey` `average variable cost calculator`). Screenshot-first (ADR-023): three fields VC / Q / AVC with explicit reverse modes; zero-output and zero-AVC undefined; VC=AVC=0 nonunique. Denomination-only CurrencySelect (PKR default, no FX). No optional cost breakdown. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $60,000 / 240 → AVC **$250/unit**; reverse AVC $25 · Q 400 → VC **$10,000**.
+- **Important Files:** `frontend/src/tools/calculators/average-variable-cost/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Actual Cash Value Calculator
+- **Summary:** Shipped Actual Cash Value Calculator on existing catalog slug `actual-cash-value-calculator` (`ActualCashValueCalculator`, catalog `6af46f10a27d8d1d4e990123`, preserved `nameKey` `actual cash value calculator`). Screenshot-first (ADR-023): purchase price, expected life, current age → ACV with zero-salvage straight-line formula; years/months conversion; depreciation breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $25,000 · 10 years · 3 years → ACV **$17,500** · accumulated depreciation **$7,500** · **30%** depreciated.
+- **Important Files:** `frontend/src/tools/calculators/actual-cash-value/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Accrual Ratio Calculator
+- **Summary:** Shipped Accrual Ratio Calculator on existing catalog slug `accrual-ratio-calculator` (`AccrualRatioCalculator`, catalog `6af46f10a27d8d1d4e990122`, preserved `nameKey` `accrual ratio calculator`). Screenshot-first (ADR-023): balance-sheet vs cash-flow methods; operating assets/liabilities → beginning/ending NOA; average NOA; zero/negative denominator handling; contextual interpretation without universal thresholds. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Beg assets $5M − liab $2M; end $5.8M − $2.3M → average NOA **$3.25M** · balance-sheet ratio ≈ **15.38%**; NI $800k − OCF $600k → ≈ **6.15%**.
+- **Important Files:** `frontend/src/tools/calculators/accrual-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add What To Offer On A House Calculator
+- **Summary:** Shipped What To Offer On A House Calculator on existing catalog slug `what-to-offer-on-a-house-calculator` (`WhatToOfferOnAHouseCalculator`, catalog `6af46f10a27d8d1d4e990121`, preserved `nameKey` `what to offer on a house calculator`). Screenshot-first (ADR-023): FMV − CoR − DD − DP; discount amount or % of FMV; breakdown + offer-to-value; zero/negative offer warnings without inventing a positive actionable offer. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $300,000 − $20,000 − $10,000 − $30,000 → offer **$240,000**; 5% discount path → **$235,000**.
+- **Important Files:** `frontend/src/tools/calculators/what-to-offer-on-a-house/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Rental Property Calculator
+- **Summary:** Shipped Rental Property Calculator on existing catalog slug `rental-property-calculator` (`RentalPropertyCalculator`, catalog `6af46f10a27d8d1d4e990120`, preserved `nameKey` `rental property calculator`). Screenshot-first (ADR-023): Purchase / Income / Recurring expenses / Selling / Cash flow & ROI; amortizing mortgage + outstanding balance; vacancy/management; NOI; CoC; cap rate; holding-period ROI. Shared `frontend/src/tools/shared/mortgage.ts`; reuses CoC/cap-rate/PMI pure helpers (sibling calculators unchanged). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $300,000 · 20% down · 6% · 30y · $2,500/mo rent · 5% vacancy · 8% management → NOI **$17,820** · payment ≈ **$1,438.92** · annual cash flow ≈ **$553** · cap ≈ **5.94%**.
+- **Important Files:** `frontend/src/tools/calculators/rental-property/*`, `frontend/src/tools/shared/mortgage.ts`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Rental + CoC + cap-rate + PMI + home-affordability assert self-checks passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Price Per Square Meter Calculator
+- **Summary:** Shipped Price Per Square Meter Calculator on existing catalog slug `price-per-square-meter-calculator` (`PricePerSquareMeterCalculator`, catalog `6af46f10a27d8d1d4e99011e`, preserved `nameKey` `price per square meter calculator`). Screenshot-first (ADR-023): price/rent + floor space → unit price (**m² default**); reverse modes; purchase/rent; optional second-property comparison. Extracted shared `frontend/src/tools/shared/price-per-area.ts` used by both PPSM and PPSF (independent routes). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $500,000 / 250 m² → **$2,000/m²**; A $2,000 vs B $2,500 → **+$500/m²** / **+25%**.
+- **Important Files:** `frontend/src/tools/calculators/price-per-square-meter/*`, `frontend/src/tools/shared/price-per-area.ts`, PPSF `calculation.ts` re-export, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** PPSM + PPSF assert self-checks passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Price Per Square Foot Calculator
+- **Summary:** Shipped Price Per Square Foot Calculator on existing catalog slug `price-per-square-foot-calculator` (`PricePerSquareFootCalculator`, catalog `6af46f10a27d8d1d4e99011d`, preserved `nameKey` `price per square foot calculator`). Screenshot-first (ADR-023): price/rent + area → unit price; reverse total-price and area modes; ft²|m² conversion; purchase/rent with period; optional second-property comparison with normalized difference/%. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $500,000 / 2,500 ft² → **$200/ft²**; compare A $200 vs B $250 → **+$50/ft²** / **+25%**.
+- **Important Files:** `frontend/src/tools/calculators/price-per-square-foot/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add PMI Calculator
+- **Summary:** Shipped PMI Calculator on existing catalog slug `pmi-calculator` (`PmiCalculator`, catalog `6af46f10a27d8d1d4e99011c`, preserved `nameKey` `pmi calculator`). Screenshot-first (ADR-023): Mortgage specification (home price, down payment amount/percent, mortgage amount, LTV) + PMI calculations (annual rate → annual/monthly PMI); simplified conventional applicability guidance (LTV &gt; 80%). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $400,000 · 10% down · 0.5% rate → loan **$360,000** · LTV **90%** · annual PMI **$1,800** · monthly PMI **$150**.
+- **Important Files:** `frontend/src/tools/calculators/pmi/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Net Operating Income Calculator
+- **Summary:** Shipped Net Operating Income Calculator on existing catalog slug `net-operating-income-calculator` (`NetOperatingIncomeCalculator`, catalog `6af46f10a27d8d1d4e99011a`, preserved `nameKey` `net operating income calculator`). Screenshot-first (ADR-023): PGI from area × rent/area (ft²|m²) + other income; occupancy → vacancy on rental income only; manual or breakdown OpEx; NOI = EGI − OpEx (negative preserved); debt service excluded. USD default. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** 2,000 ft² · $25/ft²/yr · $5k other · 92% occupancy · $22k OpEx → PGI **$55,000** · EGI **$51,000** · NOI **$29,000**.
+- **Important Files:** `frontend/src/tools/calculators/net-operating-income/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add House Affordability Calculator
+- **Summary:** Shipped House Affordability Calculator on existing catalog slug `house-affordability-calculator` (`HouseAffordabilityCalculator`, catalog `6af46f10a27d8d1d4e990119`, preserved `nameKey` `house affordability calculator`). Screenshot-first (ADR-023): dual independent cards — income/DTI (conventional 28/36, FHA-style, VA-style, custom) and fixed monthly budget with include-taxes + maintenance; explicit Calculate/Clear; price-dependent expense solver. Distinct from `home-affordability-calculator`. USD default. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $120k income · 28/36 · 7.3% · 30y · 20% down · 1.5% tax · 0.5% insurance → finite max price with housing ≤ DTI budget; $3,500/mo fixed budget with fees included stays within budget.
+- **Important Files:** `frontend/src/tools/calculators/house-affordability/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Home Value Calculator (US)
+- **Summary:** Shipped Home Value Calculator (US) on existing catalog slug `home-value-calculator-us` (`HomeValueUsCalculator`, catalog `6af46f10a27d8d1d4e990118`, preserved `nameKey` `home value calculator (us)`). Screenshot-first (ADR-023): Your home + Home valuation accordions; 20 Case-Shiller metros from FRED CSV (no fabricated indices); present/past modes; CPI-U NSA real appreciation; Express `/api/v1/home-value` with Mongo cache (7-day TTL). Fixed USD. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Miami (MIXRNSA) · Jan 2005 · $300,000 → Aug 2026 indexed ≈ **$664,036**; real ≈ **+26%** vs CPIAUCNS.
+- **Important Files:** `frontend/src/tools/calculators/home-value-us/*`, `frontend/src/server/home-value/actions.ts`, `backend/src/modules/home-value/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed; live FRED CSV + Mongo cache verified for Miami/CPI. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Home Affordability Calculator
+- **Summary:** Shipped Home Affordability Calculator on existing catalog slug `home-affordability-calculator` (`HomeAffordabilityCalculator`, catalog `6af46f10a27d8d1d4e990117`, preserved `nameKey` `home affordability calculator`). Screenshot-first (ADR-023): Loan specification + Additional information accordions; payment vs income/DTI modes; algebraic + binary price solver for tax/MI; down payment amount/percent; closing-cost display. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $2,000 P&I · 6% · 30y → loan ≈ **$333,583**; +$50k down → ≈ **$383,583**; $120k income · $800 debts · 28/36 → budget **$2,800**.
+- **Important Files:** `frontend/src/tools/calculators/home-affordability/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Gift of Equity Calculator
+- **Summary:** Shipped Gift of Equity Calculator on existing catalog slug `gift-of-equity-calculator` (`GiftOfEquityCalculator`, catalog `6af46f10a27d8d1d4e990116`, preserved `nameKey` `gift of equity calculator`). Screenshot-first (ADR-023): three compact fields with explicit modes for gift, sales price, and market value. Negative MV−SP differences preserved with warning. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $600,000 − $500,000 → **$100,000**; $600,000 − $550,000 → **$50,000**; reverse MV $600k · gift $100k → sales **$500,000**.
+- **Important Files:** `frontend/src/tools/calculators/gift-of-equity/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Earnest Money Calculator
+- **Summary:** Shipped Earnest Money Calculator on existing catalog slug `earnest-money-calculator` (`EarnestMoneyCalculator`, catalog `6af46f10a27d8d1d4e990115`, preserved `nameKey` `earnest money calculator`). Screenshot-first (ADR-023): three compact fields with explicit modes for deposit, percentage, and property price. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $300,000 × 3% → **$9,000**; reverse $12,000 / $400,000 → **3%**; $15,000 / 3% → price **$500,000**.
+- **Important Files:** `frontend/src/tools/calculators/earnest-money/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Cash On Cash Return Calculator
+- **Summary:** Shipped Cash On Cash Return Calculator on existing catalog slug `cash-on-cash-return-calculator` (`CashOnCashReturnCalculator`, catalog `6af46f10a27d8d1d4e990114`, preserved `nameKey` `cash on cash return calculator`). Screenshot-first (ADR-023): five inputs (cash invested, gross rent, vacancy, OpEx, monthly loan) and four results (CoC %, NOI, annual debt service, annual cash flow). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** 80,000 invest · 60,000 rent · 5% vacancy · 15,000 OpEx · 1,500/mo loan → NOI **42,000** · debt **18,000** · cash flow **24,000** · CoC **30%**.
+- **Important Files:** `frontend/src/tools/calculators/cash-on-cash-return/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Cap Rate Calculator
+- **Summary:** Shipped Cap Rate Calculator on existing catalog slug `cap-rate-calculator` (`CapRateCalculator`, catalog `6af46f10a27d8d1d4e990113`, preserved `nameKey` `cap rate calculator`). Screenshot-first (ADR-023): Property information → NOI and cap rate; independent reverse property value from NOI + rate; independent required NOI; vacancy and OpEx; monthly/annual income conversion preserving annual value. Denomination-only CurrencySelect (USD default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $72,000 rent + $3,000 other − 5% vacancy − $25,000 OpEx → NOI **$46,250**; $600,000 value → cap ≈ **7.71%**; reverse $50,000 @ 8% → **$625,000**.
+- **Important Files:** `frontend/src/tools/calculators/cap-rate/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add ARV Calculator – After Repair Value
+- **Summary:** Shipped ARV Calculator on existing catalog slug `arv-calculator-after-repair-value` (`ArvCalculator`, catalog `6af46f10a27d8d1d4e990112`, preserved `nameKey` `arv calculator – after repair value`). Screenshot-first (ADR-023): Property value accordion (direct value or average price × area with ft²/m² conversion); ARV = PV + renovation value; Property best purchase price (renovation cost + investor rule → maximum bid, negative bids warned); Potential ROI (gross ROI using custom purchase price or assumed max bid; optional target-ROI reverse purchase price kept separate); Additional settings for custom purchase price. Denomination-only CurrencySelect (USD default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** PV $300,000 + VR $50,000 → ARV **$350,000**; 70% rule − $50,000 cost → max bid **$195,000**; ROI ≈ **42.86%**.
+- **Important Files:** `frontend/src/tools/calculators/arv/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-19 — Add Zakat Calculator
 - **Summary:** Shipped Zakat Calculator on existing catalog slug `zakat-calculator` (`ZakatCalculator`, catalog `6af46f10a27d8d1d4e99010f`, preserved `nameKey` `zakat calculator`). Screenshot-first (ADR-023): gold Nisab 87.48 g, silver Nisab 612.36 g, or a custom threshold; cash, investments, metal weight × purity × price, trade assets; immediate liabilities only; 2.5% of net wealth when Nisab is met. Hawl is explained and does not hide the estimate. Metal prices are a dated 19 Nov 2026 USD reference (not a live feed) converted with stored ADR-021 rates, or a manual price per gram. Activated with existing `isActive: true`. **`indexable` preserved false**.
@@ -1514,7 +1917,6 @@
 - **Example:** 50,000 PKR / 5y / 7.5% / application fee 0.4% (200) → monthly ≈ 1,001.90; APR ≈ 7.669%; interest ≈ 10,113.85; fees 200; total ≈ 60,313.85.
 - **Important Files:** `frontend/src/tools/calculators/home-improvement-loan/*`, registries, sitemap, `CURRENCY_CONVERSION_SLUGS`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-home-improvement-loan-tool.ts`, `brain/*`.
 - **Verification:** Formula self-check vs screenshot. MongoDB activated (`isDeveloped`/`isActive`/`indexable` true, `embedEnabled` true). Lint/builds/browser/automated tests omitted per user.
-=======
 ### 2026-11-17 — Add Minutes to Years Conversion
 - **Summary:** Shipped Minutes to Years Conversion on existing catalog slug minutes-to-years-conversion (MinutesToYearsConversion, catalog 6af46f17a27d8d1d4e990bb6). Bidirectional minutes↔average years via Julian 365.25-day year (525,960 min); Other Time Units accordion (mo/wk/d/h/s + HMS); empty default; signed durations; guide/FAQs/table. Pillar/subPillar null preserved. Meta title <=70. indexable left false.
 - **Why:** TOOL-372b delivery for Conversion and Units minutes-to-years converter.
@@ -2018,7 +2420,6 @@
 - **Why:** Per-tool assign scripts were one-time use and cluttered `backend/src/scripts/`; agents must pass content flags instead of inventing new files.
 - **Important Files:** `backend/src/scripts/assign-tool-component.ts`, `.cursor/rules/tool-activation.mdc`, `.agents/rules/tool-activation.md`, `AGENTS.md`, `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`, `brain/BACKEND.md`, `brain/ARCHITECTURE.md`, `brain/DECISIONS.md`.
 - **Verification:** Scripts folder reduced to 9 keepers. CLI help/header documented in script. Full Mongo smoke assign not re-run in this infra change.
->>>>>>> 187e375d1faf04a647ea7f218d044c71b4f0371b
 
 ### 2026-11-17 — Mortgage Rate Calculator (Screenshot-First + FX)
 - **Summary:** Shipped Mortgage Rate Calculator on existing catalog slug `mortgage-rate-calculator` (`MortgageRateCalculator`, catalog `6af46f0fa27d8d1d4e98ff7b`). Main configuration (loan FX, term yrs/mos, rate %, compounding Yearly / Semi-annually Canada / Quarterly / Monthly UK & US, Fixed-rate only) + fees (points %, up-front FX, annual FX). Results: monthly payment, fee-adjusted APR, paid interest, total payments. Independent FX on six money fields; mixed inputs normalized into loan currency. No ARM formulas. Activated.
@@ -2249,10 +2650,7 @@
 - **Example:** 100,000 PKR / 5 yrs / 5% → payment ≈ 1,887.12; interest ≈ 13,227.40.
 - **Important Files:** `frontend/src/tools/calculators/boat-loan/*`, registries, `CURRENCY_CONVERSION_SLUGS`, sitemap, `backend/src/scripts/assign-boat-loan-tool.ts`, `brain/*`.
 - **Verification:** Mongo activation verified; worked-example math inspected via `tsx`. Lint/builds/browser/automated tests omitted per user.
-<<<<<<< HEAD
 
-=======
->>>>>>> 187e375d1faf04a647ea7f218d044c71b4f0371b
 ### 2026-11-16 — Add Days to Years Calculator
 - **Summary:** Shipped Days to Years Calculator on existing catalog slug `days-to-years-calculator` (`DaysToYearsCalculator`, catalog `6af46f17a27d8d1d4e990ba8`). Reuses Day Converter conversion engine; bidirectional days↔years via average Gregorian year 365.2425; common vs leap year guide and FAQs. Null pillar/subPillar preserved. Meta description kept ≤160. `indexable` left false.
 - **Why:** TOOL-290 delivery for Conversion & Units time converter.
