@@ -547,6 +547,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/basis-point/detail'),
   BetaStockCalculator: () =>
     import('@/tools/calculators/beta-stock/detail'),
+  BlendedRateCalculator: () =>
+    import('@/tools/calculators/blended-rate/detail'),
   AverageCollectionPeriodCalculator: () =>
     import('@/tools/calculators/average-collection-period/detail'),
   AverageFixedCostCalculator: () =>

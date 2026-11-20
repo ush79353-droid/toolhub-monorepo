@@ -470,6 +470,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'apy-calculator',
   'balance-transfer-calculator',
   'balloon-payment-calculator',
+  'blended-rate-calculator',
   'bond-calculator',
   'basis-point-calculator',
   'beta-stock-calculator',

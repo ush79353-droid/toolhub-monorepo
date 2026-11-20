@@ -2371,6 +2371,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BetaStockCalculator,
     })),
   ),
+  BlendedRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/blended-rate/BlendedRateCalculator'
+    ).then((mod) => ({
+      default: mod.BlendedRateCalculator,
+    })),
+  ),
   AverageCollectionPeriodCalculator: lazyTool(() =>
     import('@/tools/calculators/average-collection-period/AverageCollectionPeriodCalculator').then((mod) => ({
       default: mod.AverageCollectionPeriodCalculator,

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Blended Rate Calculator
+- **Summary:** Shipped Blended Rate Calculator on existing catalog slug `blended-rate-calculator` (`BlendedRateCalculator`, catalog `6af46f10a27d8d1d4e99014c`, preserved `nameKey` `blended rate calculator`). Screenshot-first (ADR-023): Amortization sections with balance + rate; add/remove loans (max 20); balance-weighted R = Σ(B×R)/Σ(B); total balance; annual/monthly interest estimates; contribution breakdown; partial-entry validation. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$10,000** @ **10%** + **$200** @ **5%** → total **$10,200** · blended ≈ **9.90%** · annual interest **$1,010**.
+- **Important Files:** `frontend/src/tools/calculators/blended-rate/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Blended Rate calculation tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Balance Transfer Calculator
 - **Summary:** Shipped Balance Transfer Calculator on existing catalog slug `balance-transfer-calculator` (`BalanceTransferCalculator`, catalog `6af46f10a27d8d1d4e99014b`, preserved `nameKey` `balance transfer calculator`). Screenshot-first (ADR-023): promotional vs long-term; old/new card costs; %|fixed transfer fee; financed|upfront; promo + post-promo APR; fixed payment or pay-during-promo; monthly simulation; savings; break-even; non-amortizing payment warning. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Balance **$10,000** · Old **24%** · Pay **$500** · Fee **3%** financed · Promo **0%** × **18** mo · Regular **22%** → start **$10,300** · after promo ≈ **$1,300**.

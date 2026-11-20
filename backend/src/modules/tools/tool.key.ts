@@ -436,6 +436,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BalloonPaymentCalculator',
   'BasisPointCalculator',
   'BetaStockCalculator',
+  'BlendedRateCalculator',
   'AverageCollectionPeriodCalculator',
   'AverageFixedCostCalculator',
   'AverageVariableCostCalculator',
@@ -1137,7 +1138,8 @@ if (isDirect) {
     !isApprovedComponentKey('BalloonPaymentCalculator') ||
     !isApprovedComponentKey('BasisPointCalculator') ||
     !isApprovedComponentKey('BetaStockCalculator') ||
-        !isApprovedComponentKey('AverageCollectionPeriodCalculator') ||
+    !isApprovedComponentKey('BlendedRateCalculator') ||
+    !isApprovedComponentKey('AverageCollectionPeriodCalculator') ||
     !isApprovedComponentKey('AverageFixedCostCalculator') ||
     !isApprovedComponentKey('AverageVariableCostCalculator') ||
     !isApprovedComponentKey('BounceRateCalculator') ||
