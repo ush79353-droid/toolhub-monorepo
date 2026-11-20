@@ -564,6 +564,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginInterestCalculator',
   'MarginalCostCalculator',
   'MarketCapitalizationCalculator',
+  'MaturityValueCalculator',
   'MirrCalculator',
   'MoneyFactorCalculator',
   'MoneyMarketAccountCalculator',
@@ -1324,6 +1325,7 @@ if (isDirect) {
     !isApprovedComponentKey('MarginInterestCalculator') ||
     !isApprovedComponentKey('MarginalCostCalculator') ||
     !isApprovedComponentKey('MarketCapitalizationCalculator') ||
+    !isApprovedComponentKey('MaturityValueCalculator') ||
     !isApprovedComponentKey('MirrCalculator') ||
     !isApprovedComponentKey('MoneyFactorCalculator') ||
     !isApprovedComponentKey('MoneyMarketAccountCalculator') ||

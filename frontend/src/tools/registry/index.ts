@@ -3075,6 +3075,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarketCapitalizationCalculator,
     })),
   ),
+  MaturityValueCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/maturity-value/MaturityValueCalculator'
+    ).then((mod) => ({
+      default: mod.MaturityValueCalculator,
+    })),
+  ),
   MirrCalculator: lazyTool(() =>
     import('@/tools/calculators/mirr/MirrCalculator').then((mod) => ({
       default: mod.MirrCalculator,

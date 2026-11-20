@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Market Capitalization Calculator live at `/tools/market-capitalization-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Maturity Value Calculator live at `/tools/maturity-value-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Maturity Value Calculator (`/tools/maturity-value-calculator`):** Live client-side annual compound maturity tool (`componentKey: 'MaturityValueCalculator'`, catalog `6af46f10a27d8d1d4e990160`, `nameKey` `maturity value calculator`). Screenshot-first (ADR-023): principal / annual rate % / duration years|months → MV = P(1+r)^t + interest earned; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$2,000** · **3%** · **2 years** → **$2,121.80** · interest **$121.80**.
 - **Market Capitalization Calculator (`/tools/market-capitalization-calculator`):** Live client-side market-cap tool (`componentKey: 'MarketCapitalizationCalculator'`, catalog `6af46f10a27d8d1d4e99015f`, `nameKey` `market capitalization calculator`). Screenshot-first (ADR-023): share price × outstanding shares → market cap + compact display; whole-share validation; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$100** × **10,000,000** → **$1,000,000,000** (**$1B**).
 - **Intrinsic Value Calculator (`/tools/intrinsic-value-calculator`):** Live client-side Graham-adjusted IV tool (`componentKey: 'IntrinsicValueCalculator'`, catalog `6af46f10a27d8d1d4e99015e`, `nameKey` `intrinsic value calculator`). Screenshot-first (ADR-023): EPS / g% / Y% / optional CMP → V = EPS(8.5+2g)×4.4/Y + MS=(V−CMP)/V×100; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: EPS **$5** · g **6%** · Y **4.4%** · CMP **$80** → V **$102.50** · MS ≈ **21.95%**.
 - **Graham Number Calculator (`/tools/graham-number-calculator`):** Live client-side Graham Number tool (`componentKey: 'GrahamNumberCalculator'`, catalog `6af46f10a27d8d1d4e99015d`, `nameKey` `graham number calculator`). Screenshot-first (ADR-023): BVPS / EPS → GN = √(22.5×EPS×BVPS); optional current price → below/above/at + price difference %; expandable derived EPS/BVPS with Apply; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: EPS **$5** · BVPS **$20** → GN ≈ **$47.43**; price **$40** → below · ≈ **15.67%**.

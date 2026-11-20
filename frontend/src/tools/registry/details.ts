@@ -771,6 +771,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/marginal-cost/detail'),
   MarketCapitalizationCalculator: () =>
     import('@/tools/calculators/market-capitalization/detail'),
+  MaturityValueCalculator: () =>
+    import('@/tools/calculators/maturity-value/detail'),
   MirrCalculator: () =>
     import('@/tools/calculators/mirr/detail'),
   MoneyFactorCalculator: () =>

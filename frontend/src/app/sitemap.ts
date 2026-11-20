@@ -724,6 +724,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'graham-number-calculator',
   'intrinsic-value-calculator',
   'market-capitalization-calculator',
+  'maturity-value-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Maturity Value Calculator
+- **Summary:** Shipped Maturity Value Calculator on existing catalog slug `maturity-value-calculator` (`MaturityValueCalculator`, catalog `6af46f10a27d8d1d4e990160`, preserved `nameKey` `maturity value calculator`). Screenshot-first (ADR-023): principal × (1+r)^t annual compounding; years/months duration; interest earned summary. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$2,000** · **3%** · **2 years** → MV **$2,121.80** · interest **$121.80**.
+- **Important Files:** `frontend/src/tools/calculators/maturity-value/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Maturity Value tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Market Capitalization Calculator
 - **Summary:** Shipped Market Capitalization Calculator on existing catalog slug `market-capitalization-calculator` (`MarketCapitalizationCalculator`, catalog `6af46f10a27d8d1d4e99015f`, preserved `nameKey` `market capitalization calculator`). Screenshot-first (ADR-023): share price × outstanding shares → market cap + compact display. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$100** × **10,000,000** → **$1,000,000,000** (**$1B**).
