@@ -3721,6 +3721,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SubscriptionWasteCalculator,
     })),
   ),
+  TotalAssetTurnoverCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/total-asset-turnover/TotalAssetTurnoverCalculator'
+    ).then((mod) => ({
+      default: mod.TotalAssetTurnoverCalculator,
+    })),
+  ),
   OperatingCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/operating-cash-flow/OperatingCashFlowCalculator'

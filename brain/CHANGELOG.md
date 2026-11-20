@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Total Asset Turnover Calculator
+- **Summary:** Shipped Total Asset Turnover Calculator on existing catalog slug `total-asset-turnover-calculator` (`TotalAssetTurnoverCalculator`, catalog `6af46f10a27d8d1d4e990144`, preserved `nameKey` `total asset turnover calculator`). Screenshot-first (ADR-023): Average asset (beginning / ending → average) + Total asset turnover (revenue → TAT with `x`); empty ≠ zero; zero average unavailable; zero revenue → 0.00x; expandable breakdown. Denomination-only CurrencySelect (PKR default, no FX). No intensity / reverse UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Beginning **$8,000,000** · Ending **$10,000,000** · Revenue **$10,000,000** → Average **$9,000,000** · TAT ≈ **1.11x**.
+- **Important Files:** `frontend/src/tools/calculators/total-asset-turnover/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Total Asset Turnover calculation tests 24/24 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add HELOC Calculator
 - **Summary:** Shipped HELOC Calculator on existing catalog slug `heloc-calculator` (`HelocCalculator`, catalog `6af46f10a27d8d1d4e99014f`, preserved `nameKey` `heloc calculator`). Screenshot-first (ADR-023): HELOC details + interest-rate adjustments; interest-only draw then amortizing repayment with rate-change payment recalculation; full monthly schedule; SVG balance/interest/principal chart; upfront % + fixed + annual fees (not financed into principal). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Balance **50,000** · Draw **10y** · Repay **20y** · Rate **6%** · Fee **1% + 500** · Annual **200** → Draw pay **250**/mo · Repay ≈ **358.22**/mo · Draw interest **30,000** · Upfront **1,000** · Annual fees **6,000**.

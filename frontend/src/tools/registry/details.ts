@@ -972,6 +972,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/silver-melt/detail'),
   SubscriptionWasteCalculator: () =>
     import('@/tools/calculators/subscription-waste/detail'),
+  TotalAssetTurnoverCalculator: () =>
+    import('@/tools/calculators/total-asset-turnover/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
