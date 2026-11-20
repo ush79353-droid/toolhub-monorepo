@@ -584,6 +584,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EffectiveAnnualYieldCalculator',
   'EffectiveInterestRateCalculator',
   'EndingInventoryCalculator',
+  'EoqCalculator',
   'ExpectedUtilityCalculator',
   'FutureValueCalculator',
   'FutureSalaryCalculator',
@@ -1258,6 +1259,7 @@ if (isDirect) {
     !isApprovedComponentKey('EffectiveAnnualYieldCalculator') ||
     !isApprovedComponentKey('EffectiveInterestRateCalculator') ||
     !isApprovedComponentKey('EndingInventoryCalculator') ||
+    !isApprovedComponentKey('EoqCalculator') ||
     !isApprovedComponentKey('ExpectedUtilityCalculator') ||
     !isApprovedComponentKey('FutureValueCalculator') ||
     !isApprovedComponentKey('FutureSalaryCalculator') ||

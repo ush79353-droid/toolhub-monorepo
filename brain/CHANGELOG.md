@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add EOQ Calculator (Economic Order Quantity)
+- **Summary:** Shipped EOQ Calculator on existing catalog slug `eoq-calculator-economic-order-quantity` (`EoqCalculator`, catalog `6af46f10a27d8d1d4e990131`, preserved `nameKey` `eoq calculator (economic order quantity)`). Screenshot-first (ADR-023): yearly demand / order cost / yearly holding cost / EOQ; EOQ = √(2DS/H); derived ordering/holding/total costs, orders/year, days between orders, practical integer EOQ. Denomination-only CurrencySelect (PKR default, no FX). No reorder-point UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** D 50,000 · S $10 · H $4 → EOQ **500** units; TC **$2,000**.
+- **Important Files:** `frontend/src/tools/calculators/eoq/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Ending Inventory Calculator
 - **Summary:** Shipped Ending Inventory Calculator on existing catalog slug `ending-inventory-calculator` (`EndingInventoryCalculator`, catalog `6af46f10a27d8d1d4e990130`, preserved `nameKey` `ending inventory calculator`). Screenshot-first (ADR-023): COGS known Yes/No; Ending = Starting + Purchases − COGS; turnover = COGS / avg inventory; COGS-unknown uses T(2B+P)/(T+2). Negative ending inventory warned. Denomination-only CurrencySelect (PKR default, no FX). No reverse/purchase-breakdown UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Start $25,000 + Purchases $35,000 − COGS $45,000 → Ending **$15,000**, turnover **2.25**.

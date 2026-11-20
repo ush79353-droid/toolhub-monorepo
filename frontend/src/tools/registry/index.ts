@@ -3180,6 +3180,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EndingInventoryCalculator,
     })),
   ),
+  EoqCalculator: lazyTool(() =>
+    import('@/tools/calculators/eoq/EoqCalculator').then((mod) => ({
+      default: mod.EoqCalculator,
+    })),
+  ),
   ExpectedUtilityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/expected-utility/ExpectedUtilityCalculator'

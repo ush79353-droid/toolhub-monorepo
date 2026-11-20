@@ -824,6 +824,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/effective-interest-rate/detail'),
   EndingInventoryCalculator: () =>
     import('@/tools/calculators/ending-inventory/detail'),
+  EoqCalculator: () => import('@/tools/calculators/eoq/detail'),
   ExpectedUtilityCalculator: () =>
     import('@/tools/calculators/expected-utility/detail'),
   FreeCashFlowCalculator: () =>
