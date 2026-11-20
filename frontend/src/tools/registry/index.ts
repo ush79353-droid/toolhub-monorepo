@@ -3360,6 +3360,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CashConversionCycleCalculator,
     })),
   ),
+  ConsumerSurplusCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/consumer-surplus/ConsumerSurplusCalculator'
+    ).then((mod) => ({
+      default: mod.ConsumerSurplusCalculator,
+    })),
+  ),
   CashOnCashReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/cash-on-cash-return/CashOnCashReturnCalculator'

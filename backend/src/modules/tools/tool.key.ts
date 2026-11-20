@@ -455,6 +455,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CashConversionCycleCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
+  'ConsumerSurplusCalculator',
   'ContributionMarginCalculator',
   'ConversionRateCalculator',
   'CostFunctionCalculator',
@@ -1119,6 +1120,7 @@ if (isDirect) {
     !isApprovedComponentKey('CashConversionCycleCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
     !isApprovedComponentKey('ConsultingFeesCalculator') ||
+    !isApprovedComponentKey('ConsumerSurplusCalculator') ||
     !isApprovedComponentKey('ContributionMarginCalculator') ||
     !isApprovedComponentKey('ConversionRateCalculator') ||
     !isApprovedComponentKey('CostFunctionCalculator') ||

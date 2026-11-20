@@ -872,6 +872,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CapRateCalculator: () => import('@/tools/calculators/cap-rate/detail'),
   CashConversionCycleCalculator: () =>
     import('@/tools/calculators/cash-conversion-cycle/detail'),
+  ConsumerSurplusCalculator: () =>
+    import('@/tools/calculators/consumer-surplus/detail'),
   CashOnCashReturnCalculator: () =>
     import('@/tools/calculators/cash-on-cash-return/detail'),
   CarAffordabilityCalculator: () =>

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Consumer Surplus Calculator
+- **Summary:** Shipped Consumer Surplus Calculator on existing catalog slug `consumer-surplus-calculator` (`ConsumerSurplusCalculator`, catalog `6af46f10a27d8d1d4e990126`, preserved `nameKey` `consumer surplus calculator`). Screenshot-first (ADR-023): actual price / willing price / CS with reverse modes; signed difference when price exceeds WTP; savings % vs WTP; Related information accordion. Denomination-only CurrencySelect (PKR default, no FX). No market triangle/graph. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** WTP $150 · P $100 → CS **$50**; P $150 · WTP $100 → difference −$50 (realized surplus N/A).
+- **Important Files:** `frontend/src/tools/calculators/consumer-surplus/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Cash Conversion Cycle Calculator
 - **Summary:** Shipped Cash Conversion Cycle Calculator on existing catalog slug `cash-conversion-cycle-calculator` (`CashConversionCycleCalculator`, catalog `6af46f10a27d8d1d4e990125`, preserved `nameKey` `cash conversion cycle calculator`). Screenshot-first (ADR-023): period/revenue/COGS/averages → DSO/DIO/DPO/CCC; manual or beginning/ending average modes; operating cycle; zero revenue/COGS undefined; negative CCC preserved. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $1,000,000 revenue · $800,000 COGS · inv $100k · AR $80k · AP $70k → CCC ≈ **42.89 days**.
