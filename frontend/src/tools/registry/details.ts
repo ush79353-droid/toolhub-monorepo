@@ -980,6 +980,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/future-value/detail'),
   FutureSalaryCalculator: () =>
     import('@/tools/calculators/future-salary/detail'),
+  HelocCalculator: () => import('@/tools/calculators/heloc/detail'),
   HomeAffordabilityCalculator: () =>
     import('@/tools/calculators/home-affordability/detail'),
   HomeEquityLoanCalculator: () =>

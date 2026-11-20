@@ -663,6 +663,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'OperatingCashFlowCalculator',
   'FdCalculator',
   'FhaLoanCalculator',
+  'HelocCalculator',
   'HomeAffordabilityCalculator',
   'HomeEquityLoanCalculator',
   'HomeImprovementLoanCalculator',
@@ -1358,6 +1359,7 @@ if (isDirect) {
     !isApprovedComponentKey('OperatingCashFlowCalculator') ||
     !isApprovedComponentKey('FdCalculator') ||
     !isApprovedComponentKey('FhaLoanCalculator') ||
+    !isApprovedComponentKey('HelocCalculator') ||
     !isApprovedComponentKey('HomeAffordabilityCalculator') ||
     !isApprovedComponentKey('HomeEquityLoanCalculator') ||
     !isApprovedComponentKey('HomeImprovementLoanCalculator') ||

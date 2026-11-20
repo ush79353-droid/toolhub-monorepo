@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add HELOC Calculator
+- **Summary:** Shipped HELOC Calculator on existing catalog slug `heloc-calculator` (`HelocCalculator`, catalog `6af46f10a27d8d1d4e99014f`, preserved `nameKey` `heloc calculator`). Screenshot-first (ADR-023): HELOC details + interest-rate adjustments; interest-only draw then amortizing repayment with rate-change payment recalculation; full monthly schedule; SVG balance/interest/principal chart; upfront % + fixed + annual fees (not financed into principal). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Balance **50,000** · Draw **10y** · Repay **20y** · Rate **6%** · Fee **1% + 500** · Annual **200** → Draw pay **250**/mo · Repay ≈ **358.22**/mo · Draw interest **30,000** · Upfront **1,000** · Annual fees **6,000**.
+- **Important Files:** `frontend/src/tools/calculators/heloc/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` HELOC calculation tests 10/10 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Retained Earnings Calculator
 - **Summary:** Shipped Retained Earnings Calculator on existing catalog slug `retained-earnings-calculator` (`RetainedEarningsCalculator`, catalog `6af46f10a27d8d1d4e990143`, preserved `nameKey` `retained earnings calculator`). Screenshot-first (ADR-023): two sections — Dividends distributed (earnings / payout % → dividends) and Retained earnings (RE / shares → REPS); payout &gt;100% with warning; zero/negative earnings block payout inference; period RE ≠ cumulative. Denomination-only CurrencySelect (PKR default, no FX). No beginning-RE / direct-dividend UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Earnings **$1,000,000** · Payout **30%** · Shares **50,000** → Dividends **$300,000** · RE **$700,000** · REPS **$14**.
