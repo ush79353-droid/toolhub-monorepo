@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Pivot Point Calculator
+- **Summary:** Shipped Pivot Point Calculator on existing catalog slug `pivot-point-calculator` (`PivotPointCalculator`, catalog `6af46f10a27d8d1d4e990163`, preserved `nameKey` `pivot point calculator`). Screenshot-first (ADR-023): Classic / Woodie / Camarilla / Fibonacci / DeMark; H/L/C (+ open for DeMark); method-specific R/S levels. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Classic H **110** · L **90** · C **100** → PP **100** · R1–R3 **110/120/130** · S1–S3 **90/80/70**.
+- **Important Files:** `frontend/src/tools/calculators/pivot-point/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Pivot Point tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add PEG Ratio Calculator
 - **Summary:** Shipped PEG Ratio Calculator on existing catalog slug `peg-ratio-calculator` (`PegRatioCalculator`, catalog `6af46f10a27d8d1d4e990162`, preserved `nameKey` `peg ratio calculator`). Screenshot-first (ADR-023): P/E from price/EPS (optional EPS from net earnings÷shares); growth = (b%×ROE%)/100; PEG = P/E÷g%; undefined for ≤0 EPS or ≤0 growth. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Price **$250** · EPS **$15.50** · b **60%** · ROE **8%** → P/E ≈ **16.13×** · g **4.80%** · PEG ≈ **3.36**.

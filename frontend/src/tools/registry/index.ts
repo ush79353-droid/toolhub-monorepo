@@ -3215,6 +3215,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PitiCalculator,
     })),
   ),
+  PivotPointCalculator: lazyTool(() =>
+    import('@/tools/calculators/pivot-point/PivotPointCalculator').then((mod) => ({
+      default: mod.PivotPointCalculator,
+    })),
+  ),
   PostJudgmentInterestCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/post-judgment-interest/PostJudgmentInterestCalculator'

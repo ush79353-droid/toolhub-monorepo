@@ -822,6 +822,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PerpetuityCalculator: () =>
     import('@/tools/calculators/perpetuity/detail'),
   PitiCalculator: () => import('@/tools/calculators/piti/detail'),
+  PivotPointCalculator: () =>
+    import('@/tools/calculators/pivot-point/detail'),
   PostJudgmentInterestCalculator: () =>
     import('@/tools/calculators/post-judgment-interest/detail'),
   PreAndPostMoneyValuationCalculator: () =>

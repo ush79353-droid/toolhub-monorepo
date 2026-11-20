@@ -727,6 +727,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'maturity-value-calculator',
   'nav-calculator-net-asset-value',
   'peg-ratio-calculator',
+  'pivot-point-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
