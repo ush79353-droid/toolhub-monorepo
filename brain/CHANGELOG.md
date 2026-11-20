@@ -52,6 +52,12 @@
 - **Important Files:** `frontend/src/tools/calculators/money-per-hour/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 
+### 2026-11-20 — Add Mileage Reimbursement Calculator
+- **Summary:** Shipped Mileage Reimbursement Calculator on existing catalog slug `mileage-reimbursement-calculator` (`MileageReimbursementCalculator`, catalog `6af46f0fa27d8d1d4e990066`, pillar/subPillar null). Screenshot-first (ADR-023): tax year/period selector; read-only Business/Medical/Charity USD-per-mile rates; three distance inputs with independent mi/km; mileage deduction USD. Verified IRS rates for 2024, 2025, 2026 Jan–Jun (IR-2025-128), and 2026 Jul–Dec (IR-2026-29) — 2026 split because rates change mid-year and no travel-date field exists. Formula: miles×rate per category; km→mi via ÷1.609344. Fixed USD (not in `CURRENCY_CONVERSION_SLUGS`). Deduction vs reimbursement disclosure. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 2026-H1 · 100 business + 50 medical + 25 charity mi → **$86.25**.
+- **Important Files:** `frontend/src/tools/calculators/mileage-reimbursement/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Gratuity Calculator
 - **Summary:** Shipped Gratuity Calculator on existing catalog slug `gratuity-calculator` (`GratuityCalculator`, catalog `6af46f0fa27d8d1d4e99005e`, pillar/subPillar null). Screenshot-first (ADR-023): final month’s salary + D.A. FX; how long did you work (years + months, default 5 / 0); total gratuity FX. Formula: (Salary+DA)×15/26×eligible years; leftover months > 6 count as one more year; ordinary 5-year gate (60 months) else 0. Labeled Indian Payment of Gratuity Act, 1972 style educational estimate — not Pakistan/global statutory entitlement; Act ₹10 lakh ceiling not auto-applied across currencies. Dual `CURRENCY_CONVERSION_SLUGS`; years/months never convert. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 50,000 · 10 years → ≈ **288,461.54**.
