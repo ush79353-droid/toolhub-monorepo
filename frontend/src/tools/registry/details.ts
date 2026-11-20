@@ -660,6 +660,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CashFlowToDebtRatioCalculator: () =>
     import('@/tools/calculators/cash-flow-to-debt-ratio/detail'),
   CashRatioCalculator: () => import('@/tools/calculators/cash-ratio/detail'),
+  ChildTaxCreditCalculator: () =>
+    import('@/tools/calculators/child-tax-credit/detail'),
   ChurnRateCalculator: () =>
     import('@/tools/calculators/churn-rate/detail'),
   ConsultingFeesCalculator: () =>
@@ -1140,6 +1142,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/hourly-to-salary-with-overtime/detail'),
   HourlyWageCalculator: () =>
     import('@/tools/calculators/hourly-wage/detail'),
+  HoursPayCalculator: () =>
+    import('@/tools/calculators/hours-pay/detail'),
   WageCalculator: () => import('@/tools/calculators/wage/detail'),
   WageToSalaryCalculator: () =>
     import('@/tools/calculators/wage-to-salary/detail'),

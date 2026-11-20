@@ -2758,6 +2758,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CashRatioCalculator,
     })),
   ),
+  ChildTaxCreditCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/child-tax-credit/ChildTaxCreditCalculator'
+    ).then((mod) => ({
+      default: mod.ChildTaxCreditCalculator,
+    })),
+  ),
   ChurnRateCalculator: lazyTool(() =>
     import('@/tools/calculators/churn-rate/ChurnRateCalculator').then((mod) => ({
       default: mod.ChurnRateCalculator,
@@ -4329,6 +4336,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/hourly-wage/HourlyWageCalculator'
     ).then((mod) => ({
       default: mod.HourlyWageCalculator,
+    })),
+  ),
+  HoursPayCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/hours-pay/HoursPayCalculator'
+    ).then((mod) => ({
+      default: mod.HoursPayCalculator,
     })),
   ),
   WageCalculator: lazyTool(() =>
