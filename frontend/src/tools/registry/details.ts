@@ -632,6 +632,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/early-loan-payoff/detail'),
   EbitCalculator: () => import('@/tools/calculators/ebit/detail'),
   EbitdaCalculator: () => import('@/tools/calculators/ebitda/detail'),
+  EbitdaMultipleCalculator: () =>
+    import('@/tools/calculators/ebitda-multiple/detail'),
   EbtCalculator: () => import('@/tools/calculators/ebt/detail'),
   EquivalentRateCalculator: () =>
     import('@/tools/calculators/equivalent-rate/detail'),

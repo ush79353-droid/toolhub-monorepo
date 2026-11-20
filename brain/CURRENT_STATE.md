@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Earnings Per Share Growth Calculator live at `/tools/earnings-per-share-growth-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (EBITDA Multiple Calculator live at `/tools/ebitda-multiple-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **EBITDA Multiple Calculator (`/tools/ebitda-multiple-calculator`):** Live client-side EV/EBITDA tool (`componentKey: 'EbitdaMultipleCalculator'`, catalog `6af46f10a27d8d1d4e990158`, `nameKey` `ebitda multiple calculator`). Screenshot-first (ADR-023): Cash / Market Cap / Minority Interest / Preferred Equity / Debt → EV; ÷ EBITDA → multiple; zero EBITDA undefined; negative EBITDA warned. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$450M** + **$100M** + **$5M** + **$10M** − **$20M** → EV **$545M** · EBITDA **$50M** → **10.90×**.
 - **Earnings Per Share Growth Calculator (`/tools/earnings-per-share-growth-calculator`):** Live client-side EPS growth / CAGR tool (`componentKey: 'EarningsPerShareGrowthCalculator'`, catalog `6af46f10a27d8d1d4e990157`, `nameKey` `earnings per share growth calculator`). Screenshot-first (ADR-023): Initial EPS / Final EPS / Periods → total % growth + compound growth rate; zero/negative initial EPS → absolute change only; positive→negative CAGR unavailable. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$2.50** → **$4.00** · **3** periods → total **60%** · CAGR ≈ **16.99%**.
 - **Earnings per Share Calculator (`/tools/earnings-per-share-calculator`):** Live client-side basic EPS tool (`componentKey: 'EarningsPerShareCalculator'`, catalog `6af46f10a27d8d1d4e990156`, `nameKey` `earnings per share calculator`). Screenshot-first (ADR-023): Net Income / Preferred Dividends / Weighted-Average Common Shares → EPS = (NI − Pref) ÷ Shares; negative NI & preferred>NI allowed; zero/negative shares rejected; collapsible breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$13.12B** · pref **$200M** · shares **333.4M** → EPS ≈ **$38.75**/share.
 - **DuPont Analysis Calculator (`/tools/dupont-analysis-calculator`):** Live client-side three-factor DuPont ROE tool (`componentKey: 'DupontAnalysisCalculator'`, catalog `6af46f10a27d8d1d4e990155`, `nameKey` `dupont analysis calculator`). Screenshot-first (ADR-023): Sales / Net Income / Total Assets / Total Equity → NPM, TAT, FL, ROE; ROE = NPM×TAT×FL (cross-checked vs NI/Equity); zero sales/assets/equity guards; negative NI & negative-equity caution. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$1M** sales · **$120k** NI · **$800k** assets · **$400k** equity → NPM **12%** · TAT **1.25×** · FL **2×** · ROE **30%**.

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add EBITDA Multiple Calculator
+- **Summary:** Shipped EBITDA Multiple Calculator on existing catalog slug `ebitda-multiple-calculator` (`EbitdaMultipleCalculator`, catalog `6af46f10a27d8d1d4e990158`, preserved `nameKey` `ebitda multiple calculator`). Screenshot-first (ADR-023): cash/market cap/MI/preferred/debt → EV; ÷ EBITDA → multiple. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$450M** + **$100M** + **$5M** + **$10M** − **$20M** → EV **$545M** · EBITDA **$50M** → **10.90×**.
+- **Important Files:** `frontend/src/tools/calculators/ebitda-multiple/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` EBITDA Multiple tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Earnings Per Share Growth Calculator
 - **Summary:** Shipped Earnings Per Share Growth Calculator on existing catalog slug `earnings-per-share-growth-calculator` (`EarningsPerShareGrowthCalculator`, catalog `6af46f10a27d8d1d4e990157`, preserved `nameKey` `earnings per share growth calculator`). Screenshot-first (ADR-023): initial/final EPS + periods → total growth % and CAGR. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$2.50** → **$4.00** · **3** periods → total **60%** · CAGR ≈ **16.99%**.

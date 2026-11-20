@@ -2618,6 +2618,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EbitdaCalculator,
     })),
   ),
+  EbitdaMultipleCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ebitda-multiple/EbitdaMultipleCalculator'
+    ).then((mod) => ({
+      default: mod.EbitdaMultipleCalculator,
+    })),
+  ),
   EbtCalculator: lazyTool(() =>
     import('@/tools/calculators/ebt/EbtCalculator').then((mod) => ({
       default: mod.EbtCalculator,
