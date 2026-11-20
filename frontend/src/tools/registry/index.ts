@@ -3353,6 +3353,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CapRateCalculator,
     })),
   ),
+  CashConversionCycleCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cash-conversion-cycle/CashConversionCycleCalculator'
+    ).then((mod) => ({
+      default: mod.CashConversionCycleCalculator,
+    })),
+  ),
   CashOnCashReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/cash-on-cash-return/CashOnCashReturnCalculator'

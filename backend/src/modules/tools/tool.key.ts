@@ -452,6 +452,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarLoanEmiCalculator',
   'CarriedInterestCalculator',
   'CashBackOrLowInterestCalculator',
+  'CashConversionCycleCalculator',
   'ChurnRateCalculator',
   'ConsultingFeesCalculator',
   'ContributionMarginCalculator',
@@ -1115,6 +1116,7 @@ if (isDirect) {
     !isApprovedComponentKey('CarLoanEmiCalculator') ||
     !isApprovedComponentKey('CarriedInterestCalculator') ||
     !isApprovedComponentKey('CashBackOrLowInterestCalculator') ||
+    !isApprovedComponentKey('CashConversionCycleCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
     !isApprovedComponentKey('ConsultingFeesCalculator') ||
     !isApprovedComponentKey('ContributionMarginCalculator') ||

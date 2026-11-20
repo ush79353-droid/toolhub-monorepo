@@ -635,6 +635,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'actual-cash-value-calculator',
   'bank-reconciliation-calculator',
   'cap-rate-calculator',
+  'cash-conversion-cycle-calculator',
   'cash-on-cash-return-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

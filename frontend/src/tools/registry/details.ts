@@ -870,6 +870,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BankReconciliationCalculator: () =>
     import('@/tools/calculators/bank-reconciliation/detail'),
   CapRateCalculator: () => import('@/tools/calculators/cap-rate/detail'),
+  CashConversionCycleCalculator: () =>
+    import('@/tools/calculators/cash-conversion-cycle/detail'),
   CashOnCashReturnCalculator: () =>
     import('@/tools/calculators/cash-on-cash-return/detail'),
   CarAffordabilityCalculator: () =>

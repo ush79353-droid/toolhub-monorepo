@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Cash Conversion Cycle Calculator
+- **Summary:** Shipped Cash Conversion Cycle Calculator on existing catalog slug `cash-conversion-cycle-calculator` (`CashConversionCycleCalculator`, catalog `6af46f10a27d8d1d4e990125`, preserved `nameKey` `cash conversion cycle calculator`). Screenshot-first (ADR-023): period/revenue/COGS/averages → DSO/DIO/DPO/CCC; manual or beginning/ending average modes; operating cycle; zero revenue/COGS undefined; negative CCC preserved. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $1,000,000 revenue · $800,000 COGS · inv $100k · AR $80k · AP $70k → CCC ≈ **42.89 days**.
+- **Important Files:** `frontend/src/tools/calculators/cash-conversion-cycle/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Average Variable Cost Calculator
 - **Summary:** Shipped Average Variable Cost Calculator on existing catalog slug `average-variable-cost-calculator` (`AverageVariableCostCalculator`, catalog `6af46f10a27d8d1d4e990124`, preserved `nameKey` `average variable cost calculator`). Screenshot-first (ADR-023): three fields VC / Q / AVC with explicit reverse modes; zero-output and zero-AVC undefined; VC=AVC=0 nonunique. Denomination-only CurrencySelect (PKR default, no FX). No optional cost breakdown. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $60,000 / 240 → AVC **$250/unit**; reverse AVC $25 · Q 400 → VC **$10,000**.

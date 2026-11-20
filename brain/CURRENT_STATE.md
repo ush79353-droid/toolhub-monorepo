@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Average Variable Cost Calculator live at `/tools/average-variable-cost-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Cash Conversion Cycle Calculator live at `/tools/cash-conversion-cycle-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Cash Conversion Cycle Calculator (`/tools/cash-conversion-cycle-calculator`):** Live client-side CCC tool (`componentKey: 'CashConversionCycleCalculator'`, catalog `6af46f10a27d8d1d4e990125`, `nameKey` `cash conversion cycle calculator`). Screenshot-first (ADR-023): period + revenue + COGS + avg inventory/AR/AP → DSO/DIO/DPO + CCC; manual or beginning/ending average modes (three collapsed accordions); operating cycle; zero revenue/COGS guards; negative CCC preserved. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: $1M revenue · $800k COGS · inv $100k · AR $80k · AP $70k → CCC ≈ **42.89 days**.
 - **Average Variable Cost Calculator (`/tools/average-variable-cost-calculator`):** Live client-side AVC tool (`componentKey: 'AverageVariableCostCalculator'`, catalog `6af46f10a27d8d1d4e990124`, `nameKey` `average variable cost calculator`). Screenshot-first (ADR-023): VC / Q / AVC with explicit reverse modes (solve AVC, VC, or Q); zero-output and zero-AVC guards; VC=AVC=0 nonunique; compact summary. Denomination-only CurrencySelect (PKR default, no FX). No optional cost breakdown (ADR-023). Activated; **`indexable` left false**. Example: $60,000 / 240 → AVC **$250/unit**.
 - **Actual Cash Value Calculator (`/tools/actual-cash-value-calculator`):** Live client-side ACV estimator (`componentKey: 'ActualCashValueCalculator'`, catalog `6af46f10a27d8d1d4e990123`, `nameKey` `actual cash value calculator`). Screenshot-first (ADR-023): purchase price + expected life + current age → ACV via zero-salvage straight-line `P × max(0, 1 − A/L)`; years/months conversion; accumulated depreciation / % / remaining life breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: $25,000 · 10y · 3y → ACV **$17,500**.
 - **Accrual Ratio Calculator (`/tools/accrual-ratio-calculator`):** Live client-side earnings-accrual tool (`componentKey: 'AccrualRatioCalculator'`, catalog `6af46f10a27d8d1d4e990122`, `nameKey` `accrual ratio calculator`). Screenshot-first (ADR-023): balance-sheet vs cash-flow methods; beginning/ending operating assets & liabilities → NOA; average NOA denominator; zero/negative average-NOA handling; contextual interpretation (no universal good/bad thresholds). Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: beg NOA $3M · end $3.5M → ratio ≈ **15.38%**; NI $800k − OCF $600k → ≈ **6.15%**.
