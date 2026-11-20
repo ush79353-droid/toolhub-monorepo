@@ -3662,6 +3662,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PricePerSquareMeterCalculator,
     })),
   ),
+  ProductivityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/productivity/ProductivityCalculator'
+    ).then((mod) => ({
+      default: mod.ProductivityCalculator,
+    })),
+  ),
   QuizUsIncomePercentileCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/quiz-us-income-percentile/QuizUsIncomePercentileCalculator'

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Productivity Calculator
+- **Summary:** Shipped Productivity Calculator on existing catalog slug `productivity-calculator` (`ProductivityCalculator`, catalog `6af46f10a27d8d1d4e990141`, preserved `nameKey` `productivity calculator`). Screenshot-first (ADR-023): revenue; productivity per employee (RPE); productivity per hour (RPH) with seconds/minutes/hours conversion to hours; independent calculation branches; breakdown. Denomination-only CurrencySelect (PKR default, no FX). No ambiguous workday/week units; no advanced output/profit metrics UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Revenue **$500,000** · Employees **25** · Hours **4,000** → RPE **$20,000** · RPH **$125/hour**.
+- **Important Files:** `frontend/src/tools/calculators/productivity/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Productivity calculation tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Net Operating Working Capital Calculator
 - **Summary:** Shipped Net Operating Working Capital Calculator on existing catalog slug `net-operating-working-capital-calculator` (`NetOperatingWorkingCapitalCalculator`, catalog `6af46f10a27d8d1d4e99013e`, preserved `nameKey` `net operating working capital calculator`). Screenshot-first (ADR-023): three expanded accordions — COA (cash + AR + inventories), COL (AP + accrued expenses), NOWC = COA − COL; positive/zero/negative NOWC; calculation breakdown. Denomination-only CurrencySelect (PKR default, no FX). No ΔNOWC / NOWC-to-revenue UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Cash **$1,000** + AR **$15,000** + Inventories **$5,000** − AP **$18,000** − Accrued **$2,000** → COA **$21,000** · COL **$20,000** · NOWC **$1,000**.
