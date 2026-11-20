@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Enterprise Value Calculator
+- **Summary:** Shipped Enterprise Value Calculator on existing catalog slug `enterprise-value-calculator` (`EnterpriseValueCalculator`, catalog `6af46f10a27d8d1d4e99015a`, preserved `nameKey` `enterprise value calculator`). Screenshot-first (ADR-023): market cap/MI/preferred/debt/cash → EV. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$500M** + **$20M** + **$15M** + **$100M** − **$50M** → EV **$585M**.
+- **Important Files:** `frontend/src/tools/calculators/enterprise-value/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Enterprise Value tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Economic Value Added Calculator
 - **Summary:** Shipped Economic Value Added Calculator on existing catalog slug `economic-value-added-calculator` (`EconomicValueAddedCalculator`, catalog `6af46f10a27d8d1d4e990159`, preserved `nameKey` `economic value added calculator`). Screenshot-first (ADR-023): NOPAT / IC / WACC% → EVA; OA−OL invested-capital helper with explicit apply. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** NOPAT **$750,000** · IC **$1,000,000** · WACC **10%** → charge **$100,000** · EVA **$650,000**.

@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Economic Value Added Calculator live at `/tools/economic-value-added-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Enterprise Value Calculator live at `/tools/enterprise-value-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Enterprise Value Calculator (`/tools/enterprise-value-calculator`):** Live client-side EV tool (`componentKey: 'EnterpriseValueCalculator'`, catalog `6af46f10a27d8d1d4e99015a`, `nameKey` `enterprise value calculator`). Screenshot-first (ADR-023): Market Cap / Minority Interest / Preferred Shares / Debt / Cash → EV; negative EV preserved with caution; total claims + net debt breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$500M** + **$20M** + **$15M** + **$100M** − **$50M** → EV **$585M**.
 - **Economic Value Added Calculator (`/tools/economic-value-added-calculator`):** Live client-side EVA tool (`componentKey: 'EconomicValueAddedCalculator'`, catalog `6af46f10a27d8d1d4e990159`, `nameKey` `economic value added calculator`). Screenshot-first (ADR-023): NOPAT / Invested Capital / WACC% → capital charge + EVA; collapsible OA−OL invested-capital helper with explicit apply (no silent overwrite). Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NOPAT **$750k** · IC **$1M** · WACC **10%** → charge **$100k** · EVA **$650k**.
 - **EBITDA Multiple Calculator (`/tools/ebitda-multiple-calculator`):** Live client-side EV/EBITDA tool (`componentKey: 'EbitdaMultipleCalculator'`, catalog `6af46f10a27d8d1d4e990158`, `nameKey` `ebitda multiple calculator`). Screenshot-first (ADR-023): Cash / Market Cap / Minority Interest / Preferred Equity / Debt → EV; ÷ EBITDA → multiple; zero EBITDA undefined; negative EBITDA warned. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$450M** + **$100M** + **$5M** + **$10M** − **$20M** → EV **$545M** · EBITDA **$50M** → **10.90×**.
 - **Earnings Per Share Growth Calculator (`/tools/earnings-per-share-growth-calculator`):** Live client-side EPS growth / CAGR tool (`componentKey: 'EarningsPerShareGrowthCalculator'`, catalog `6af46f10a27d8d1d4e990157`, `nameKey` `earnings per share growth calculator`). Screenshot-first (ADR-023): Initial EPS / Final EPS / Periods → total % growth + compound growth rate; zero/negative initial EPS → absolute change only; positive→negative CAGR unavailable. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$2.50** → **$4.00** · **3** periods → total **60%** · CAGR ≈ **16.99%**.

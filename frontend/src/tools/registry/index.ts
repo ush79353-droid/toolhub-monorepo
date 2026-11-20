@@ -2632,6 +2632,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EconomicValueAddedCalculator,
     })),
   ),
+  EnterpriseValueCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/enterprise-value/EnterpriseValueCalculator'
+    ).then((mod) => ({
+      default: mod.EnterpriseValueCalculator,
+    })),
+  ),
   EbtCalculator: lazyTool(() =>
     import('@/tools/calculators/ebt/EbtCalculator').then((mod) => ({
       default: mod.EbtCalculator,
