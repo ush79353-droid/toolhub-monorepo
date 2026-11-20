@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add PMI Calculator
+- **Summary:** Shipped PMI Calculator on existing catalog slug `pmi-calculator` (`PmiCalculator`, catalog `6af46f10a27d8d1d4e99011c`, preserved `nameKey` `pmi calculator`). Screenshot-first (ADR-023): Mortgage specification (home price, down payment amount/percent, mortgage amount, LTV) + PMI calculations (annual rate → annual/monthly PMI); simplified conventional applicability guidance (LTV &gt; 80%). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $400,000 · 10% down · 0.5% rate → loan **$360,000** · LTV **90%** · annual PMI **$1,800** · monthly PMI **$150**.
+- **Important Files:** `frontend/src/tools/calculators/pmi/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Net Operating Income Calculator
 - **Summary:** Shipped Net Operating Income Calculator on existing catalog slug `net-operating-income-calculator` (`NetOperatingIncomeCalculator`, catalog `6af46f10a27d8d1d4e99011a`, preserved `nameKey` `net operating income calculator`). Screenshot-first (ADR-023): PGI from area × rent/area (ft²|m²) + other income; occupancy → vacancy on rental income only; manual or breakdown OpEx; NOI = EGI − OpEx (negative preserved); debt service excluded. USD default. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** 2,000 ft² · $25/ft²/yr · $5k other · 92% occupancy · $22k OpEx → PGI **$55,000** · EGI **$51,000** · NOI **$29,000**.

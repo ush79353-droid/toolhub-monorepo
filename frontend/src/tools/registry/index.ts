@@ -3431,6 +3431,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NetWorthCalculator,
     })),
   ),
+  PmiCalculator: lazyTool(() =>
+    import('@/tools/calculators/pmi/PmiCalculator').then((mod) => ({
+      default: mod.PmiCalculator,
+    })),
+  ),
   PowerballCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/powerball/PowerballCalculator'

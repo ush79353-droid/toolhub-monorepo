@@ -891,6 +891,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/net-operating-income/detail'),
   NetWorthCalculator: () =>
     import('@/tools/calculators/net-worth/detail'),
+  PmiCalculator: () => import('@/tools/calculators/pmi/detail'),
   PowerballCalculator: () =>
     import('@/tools/calculators/powerball/detail'),
   QuizUsIncomePercentileCalculator: () =>

@@ -648,6 +648,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'millionaire-calculator',
   'net-operating-income-calculator',
   'net-worth-calculator',
+  'pmi-calculator',
   'powerball-calculator',
   'quiz-us-income-percentile-calculator',
   'sabbatical-calculator',
