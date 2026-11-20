@@ -83,7 +83,7 @@ Audit pending: deferred to final audit coordinator
 | 55 | FICA Tax Calculator | DEVELOPED | AUDIT PENDING | d03d944a | 8f6bc365 | 5ae2acdf | Completed Tools | `FicaTaxCalculator`; slug `fica-tax-calculator`; Mongo `6af46f0fa27d8d1d4e99005d` active; fixed USD; indexable false; TASKS `TOOL-551`; registry/sitemap/tool.key also via concurrent `a332bbcb`/`8b44fd04` |
 | 56 | Hours Pay Calculator | DEVELOPED | AUDIT PENDING | d9b1d456 | 10aa5b8e | 8b44fd04 | Completed Tools | `HoursPayCalculator`; slug `hours-pay-calculator`; Mongo `6af46f0fa27d8d1d4e990062` active; Phase 2 FX; indexable false; TASKS `TOOL-555`; engine body also via concurrent `5602892b` |
 | 57 | Selling Leave Days Calculator | DEVELOPED | AUDIT PENDING | 2577cbdc | 5df99b0f | ed6a4ee7 | Completed Tools | `SellingLeaveDaysCalculator`; slug `selling-leave-days-calculator`; Mongo `6af46f0fa27d8d1d4e990071` active; Phase 2 FX; indexable false; TASKS `TOOL-556` |
-| 58 | Monthly Income Calculator | DEVELOPED | AUDIT PENDING | 29ca128c | 52521270 | (c3) | Completed Tools | `MonthlyIncomeCalculator`; slug `monthly-income-calculator`; Mongo `6af46f0fa27d8d1d4e990069` active; Phase 2 FX; indexable false; TASKS `TOOL-557` |
+| 58 | Monthly Income Calculator | DEVELOPED | AUDIT PENDING | 29ca128c | 52521270 | 3cb5f137 | Completed Tools | `MonthlyIncomeCalculator`; slug `monthly-income-calculator`; Mongo `6af46f0fa27d8d1d4e990069` active; Phase 2 FX; indexable false; TASKS `TOOL-557` |
 | 57 | Pay Raise Calculator | DEVELOPED | AUDIT PENDING | 7139db50 | 66cca6ac | 3df77935 | Completed Tools | `PayRaiseCalculator`; slug `pay-raise-calculator`; Mongo `6af46f0fa27d8d1d4e99006d` active; Phase 2 FX; indexable false; TASKS `TOOL-554`; UI via concurrent gratuity commit; registry/keys/sitemap also via concurrent agent commits; FX lists via concurrent commits + tracker `3df77935` |
 
 | 56 | Money per Hour Calculator | DEVELOPED | AUDIT PENDING | 5602892b | ffcfc44e | f39e62ef | Completed Tools | `MoneyPerHourCalculator`; slug `money-per-hour-calculator`; Mongo `6af46f0fa27d8d1d4e990068` active; Phase 2 FX; indexable false; TASKS `TOOL-571` |
@@ -93,9 +93,16 @@ Audit pending: deferred to final audit coordinator
 | 57 | Estate Tax Calculator | DEVELOPED | AUDIT PENDING | e0401c2e | b3a71c6e | 5f71e4e7 | Completed Tools | EstateTaxCalculator; slug estate-tax-calculator; Mongo 6af46f0fa27d8d1d4e99005c; fixed USD; indexable false; reg via 5f71e4e7 |
 
 | 60 | Mileage Reimbursement Calculator | DEVELOPED | AUDIT PENDING | dafff61f | 27d5f4d6 | 0e3d2a0a | Completed Tools | `MileageReimbursementCalculator`; slug `mileage-reimbursement-calculator`; Mongo `6af46f0fa27d8d1d4e990066` active; fixed USD; IRS 2024/2025/2026-H1/H2; TASKS `TOOL-572` |
-| 56 | Semi-Monthly Pay Calculator | DEVELOPED | AUDIT PENDING | 2b85e519 | 80e378f8 | PENDING3 | Completed Tools | `SemiMonthlyPayCalculator`; slug `semi-monthly-pay-calculator`; Mongo `6af46f0fa27d8d1d4e990072`; Phase 2 FX; indexable false; TOOL-580 |
-- 2026-11-20 (Semi-Monthly): Semi-Monthly Pay DEVELOPED (`2b85e519` / `80e378f8` / PENDING3). Mongo `6af46f0fa27d8d1d4e990072`; indexable false; FX; 24 periods. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+| 56 | Semi-Monthly Pay Calculator | DEVELOPED | AUDIT PENDING | 2b85e519 | 80e378f8 | df46361d | Completed Tools | `SemiMonthlyPayCalculator`; slug `semi-monthly-pay-calculator`; Mongo `6af46f0fa27d8d1d4e990072`; Phase 2 FX; indexable false; TOOL-580 |
+- 2026-11-20 (Semi-Monthly): Semi-Monthly Pay DEVELOPED (`2b85e519` / `80e378f8` / df46361d). Mongo `6af46f0fa27d8d1d4e990072`; indexable false; FX; 24 periods. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+| 58 | Lottery Tax Calculator | DEVELOPED | AUDIT PENDING | 0621f3fa | c96bd248 | 3cb5f137 | Completed Tools | LotteryTaxCalculator; Mongo 6af46f0fa27d8d1d4e990064; Phase 2 FX; indexable false |
+
+| 58 | Monthly Income Hourly Calculator | DEVELOPED | AUDIT PENDING | 34586c64 | ea82da3e | c3ecceea | Completed Tools | `MonthlyIncomeHourlyCalculator`; Mongo `6af46f0fa27d8d1d4e99006a`; Phase 2 FX; indexable false |
+
 ## Session Log
+- 2026-11-20 (Monthly Income Hourly): DEVELOPED (`34586c64` / `ea82da3e` / `c3ecceea`). Mongo activated; indexable false. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-20 (this agent): Net to Gross Calculator IN_DEVELOPMENT (engine types/calculation/validation started; UI pending). Folder retained in In Progress. Mongo `6af46f0fa27d8d1d4e99006b` not activated yet.
+- 2026-11-20 (Lottery Tax): Lottery Tax Calculator DEVELOPED ( 621f3fa / c96bd248 / 3cb5f137). Mongo 6af46f0fa27d8d1d4e990064 activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (Monthly Income): Monthly Income Calculator DEVELOPED (`29ca128c` / `52521270` / c3). Mongo `6af46f0fa27d8d1d4e990069` activated; indexable false. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (Mileage Reimbursement): Mileage Reimbursement Calculator DEVELOPED (`dafff61f` / `27d5f4d6` / reg). Mongo `6af46f0fa27d8d1d4e990066` activated; indexable false; fixed USD; IRS verified rates. Missouri ON HOLD untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (this agent): Tax Bracket Calculator DEVELOPED (`01b0a564` / `af00a40b` / brain+tracker registration). Mongo `6af46f0fa27d8d1d4e990075` activated; indexable false; fixed USD. Registry/keys/sitemap/tool.key also landed via concurrent commits. Moved to Completed Tools. Missouri ON HOLD untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
@@ -162,3 +169,9 @@ Temporary files cleaned: YES. No push.
 ### 2026-11-20 — Missouri repair re-check
 - Still BLOCKED: curl + IDE browser both Incapsula 403; no dor-boundary/dor-jurisdiction files on disk. No commits.
 
+
+| 57 | Quiz: Annual Income Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Only Q1/7 supplied; must not invent Q2–Q7; catalog `6af46f0fa27d8d1d4e99006e` |
+| 56b | Marriage Tax Calculator | DEVELOPED | AUDIT PENDING | afa772c9 | cfdbb264+3cac2892 | de28b909 | Completed Tools | `MarriageTaxCalculator`; Mongo `6af46f0fa27d8d1d4e990065` |
+
+- 2026-11-20 (Quiz Annual Income): BLOCKED — hidden Q2–Q7 missing. Missouri untouched. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-20 (Marriage Tax): DEVELOPED afa772c9 / cfdbb264+3cac2892 / de28b909. Missouri untouched.
