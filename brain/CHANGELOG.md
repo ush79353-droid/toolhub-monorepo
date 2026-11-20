@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add PITI Calculator
+- **Summary:** Shipped PITI Calculator on existing catalog slug `piti-calculator` (`PitiCalculator`, catalog `6af46f10a27d8d1d4e990150`, preserved `nameKey` `piti calculator`). Screenshot-first (ADR-023): principal, term years+months, rate, annual tax/insurance; amortizing M + T/12 + I/12; zero-rate P/n; breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$200,000** · **30y** · **7%** · tax **$3,600** · insurance **$1,200** → PITI ≈ **$1,730.60**/month.
+- **Important Files:** `frontend/src/tools/calculators/piti/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` PITI calculation tests 20/20 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Finance Charge Calculator
 - **Summary:** Shipped Finance Charge Calculator on existing catalog slug `finance-charge-calculator` (`FinanceChargeCalculator`, catalog `6af46f10a27d8d1d4e99014e`, preserved `nameKey` `finance charge calculator`). Screenshot-first (ADR-023): balance + APR; Billing cycle or Given term; FC = B×(APR/100)×(Days/365); daily rate/charge; total due; optional daily breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$1,000** @ **18%** × **30** days → finance charge ≈ **$14.79** · total ≈ **$1,014.79**.

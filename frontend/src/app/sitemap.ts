@@ -560,6 +560,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'percentage-discount-calculator',
   'percentage-return-calculator',
   'perpetuity-calculator',
+  'piti-calculator',
   'post-judgment-interest-calculator',
   'pre-and-post-money-valuation-calculator',
   'present-value-calculator',

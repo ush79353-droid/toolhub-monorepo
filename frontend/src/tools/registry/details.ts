@@ -723,6 +723,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/percentage-return/detail'),
   PerpetuityCalculator: () =>
     import('@/tools/calculators/perpetuity/detail'),
+  PitiCalculator: () => import('@/tools/calculators/piti/detail'),
   PostJudgmentInterestCalculator: () =>
     import('@/tools/calculators/post-judgment-interest/detail'),
   PreAndPostMoneyValuationCalculator: () =>

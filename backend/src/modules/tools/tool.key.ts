@@ -535,6 +535,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PercentageDiscountCalculator',
   'PercentageReturnCalculator',
   'PerpetuityCalculator',
+  'PitiCalculator',
   'PostJudgmentInterestCalculator',
   'PreAndPostMoneyValuationCalculator',
   'PresentValueCalculator',
@@ -1238,6 +1239,7 @@ if (isDirect) {
     !isApprovedComponentKey('PercentageDiscountCalculator') ||
     !isApprovedComponentKey('PercentageReturnCalculator') ||
     !isApprovedComponentKey('PerpetuityCalculator') ||
+    !isApprovedComponentKey('PitiCalculator') ||
     !isApprovedComponentKey('PostJudgmentInterestCalculator') ||
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
     !isApprovedComponentKey('PresentValueCalculator') ||

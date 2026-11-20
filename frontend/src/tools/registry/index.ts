@@ -2858,6 +2858,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PerpetuityCalculator,
     })),
   ),
+  PitiCalculator: lazyTool(() =>
+    import('@/tools/calculators/piti/PitiCalculator').then((mod) => ({
+      default: mod.PitiCalculator,
+    })),
+  ),
   PostJudgmentInterestCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/post-judgment-interest/PostJudgmentInterestCalculator'
