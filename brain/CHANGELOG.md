@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Market Capitalization Calculator
+- **Summary:** Shipped Market Capitalization Calculator on existing catalog slug `market-capitalization-calculator` (`MarketCapitalizationCalculator`, catalog `6af46f10a27d8d1d4e99015f`, preserved `nameKey` `market capitalization calculator`). Screenshot-first (ADR-023): share price × outstanding shares → market cap + compact display. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$100** × **10,000,000** → **$1,000,000,000** (**$1B**).
+- **Important Files:** `frontend/src/tools/calculators/market-capitalization/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Market Cap tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Intrinsic Value Calculator
 - **Summary:** Shipped Intrinsic Value Calculator on existing catalog slug `intrinsic-value-calculator` (`IntrinsicValueCalculator`, catalog `6af46f10a27d8d1d4e99015e`, preserved `nameKey` `intrinsic value calculator`). Screenshot-first (ADR-023): EPS / g / Y / optional CMP → V = EPS(8.5+2g)×4.4/Y + margin of safety. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** EPS **$5** · g **6%** · Y **4.4%** · CMP **$80** → V **$102.50** · MS ≈ **21.95%**.

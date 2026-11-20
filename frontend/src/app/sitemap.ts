@@ -723,6 +723,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'free-float-calculator',
   'graham-number-calculator',
   'intrinsic-value-calculator',
+  'market-capitalization-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

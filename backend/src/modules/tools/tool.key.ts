@@ -563,6 +563,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ManHoursCalculator',
   'MarginInterestCalculator',
   'MarginalCostCalculator',
+  'MarketCapitalizationCalculator',
   'MirrCalculator',
   'MoneyFactorCalculator',
   'MoneyMarketAccountCalculator',
@@ -1322,6 +1323,7 @@ if (isDirect) {
     !isApprovedComponentKey('ManHoursCalculator') ||
     !isApprovedComponentKey('MarginInterestCalculator') ||
     !isApprovedComponentKey('MarginalCostCalculator') ||
+    !isApprovedComponentKey('MarketCapitalizationCalculator') ||
     !isApprovedComponentKey('MirrCalculator') ||
     !isApprovedComponentKey('MoneyFactorCalculator') ||
     !isApprovedComponentKey('MoneyMarketAccountCalculator') ||
