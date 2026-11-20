@@ -836,6 +836,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/price-elasticity-of-demand/detail'),
   PriceQuantityCalculator: () =>
     import('@/tools/calculators/price-quantity/detail'),
+  PriceToBookRatioCalculator: () =>
+    import('@/tools/calculators/price-to-book-ratio/detail'),
   PriceToCashFlowRatioCalculator: () =>
     import('@/tools/calculators/price-to-cash-flow-ratio/detail'),
   PrivateSavingsCalculator: () =>

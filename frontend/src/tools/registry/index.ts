@@ -3254,6 +3254,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PriceQuantityCalculator,
     })),
   ),
+  PriceToBookRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/price-to-book-ratio/PriceToBookRatioCalculator'
+    ).then((mod) => ({
+      default: mod.PriceToBookRatioCalculator,
+    })),
+  ),
   PriceToCashFlowRatioCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/price-to-cash-flow-ratio/PriceToCashFlowRatioCalculator'

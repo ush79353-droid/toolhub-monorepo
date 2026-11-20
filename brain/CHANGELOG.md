@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Price to Book Ratio Calculator
+- **Summary:** Shipped Price to Book Ratio Calculator on existing catalog slug `price-to-book-ratio-calculator` (`PriceToBookRatioCalculator`, catalog `6af46f10a27d8d1d4e990166`, preserved `nameKey` `price to book ratio calculator`). Screenshot-first (ADR-023): equity − preferred → BVPS → P/B; collapsible tangible book (goodwill/intangibles); negative BVPS keeps P/B unavailable. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Equity **500,000** − Pref **50,000** · Shares **10,000** · Price **90** → BVPS **45** · P/B **2.00×**; tangible → TBVPS **35** · P/TBV ≈ **2.57×**.
+- **Important Files:** `frontend/src/tools/calculators/price-to-book-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` P/B tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Portfolio Beta Calculator
 - **Summary:** Shipped Portfolio Beta Calculator on existing catalog slug `portfolio-beta-calculator` (`PortfolioBetaCalculator`, catalog `6af46f10a27d8d1d4e990164`, preserved `nameKey` `portfolio beta calculator`). Screenshot-first (ADR-023): dynamic stock beta × weight rows; βp = Σ(w%/100×β); portfolio beta only when weights ≈ 100%; add/remove stocks; no CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** 1.20@50% + 0.80@30% + 1.50@20% → βp **1.14**.

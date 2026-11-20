@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Portfolio Beta Calculator live at `/tools/portfolio-beta-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Price to Book Ratio Calculator live at `/tools/price-to-book-ratio-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Price to Book Ratio Calculator (`/tools/price-to-book-ratio-calculator`):** Live client-side P/B tool (`componentKey: 'PriceToBookRatioCalculator'`, catalog `6af46f10a27d8d1d4e990166`, `nameKey` `price to book ratio calculator`). Screenshot-first (ADR-023): equity − preferred → BVPS → P/B; collapsible tangible book; negative BVPS → P/B unavailable; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **500,000** − **50,000** · **10,000** shares · price **90** → BVPS **45** · P/B **2.00×**.
 - **Portfolio Beta Calculator (`/tools/portfolio-beta-calculator`):** Live client-side weighted beta tool (`componentKey: 'PortfolioBetaCalculator'`, catalog `6af46f10a27d8d1d4e990164`, `nameKey` `portfolio beta calculator`). Screenshot-first (ADR-023): dynamic stock beta/weight rows; βp = Σ(w%/100×β); beta only when weights ≈ 100%; add/remove; no CurrencySelect. Activated; **`indexable` left false**. Example: 1.20@50% + 0.80@30% + 1.50@20% → βp **1.14**.
 - **Pivot Point Calculator (`/tools/pivot-point-calculator`):** Live client-side trading pivots tool (`componentKey: 'PivotPointCalculator'`, catalog `6af46f10a27d8d1d4e990163`, `nameKey` `pivot point calculator`). Screenshot-first (ADR-023): Classic / Woodie / Camarilla / Fibonacci / DeMark; H/L/C (+ open for DeMark); method-specific R/S; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: Classic H **110** · L **90** · C **100** → PP **100** · R **110/120/130** · S **90/80/70**.
 - **PEG Ratio Calculator (`/tools/peg-ratio-calculator`):** Live client-side PEG tool (`componentKey: 'PegRatioCalculator'`, catalog `6af46f10a27d8d1d4e990162`, `nameKey` `peg ratio calculator`). Screenshot-first (ADR-023): price/EPS (optional EPS from net earnings÷shares) → P/E; retention×ROE → g%; PEG = P/E÷g%; undefined for ≤0 EPS/growth; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: **$250** · EPS **$15.50** · b **60%** · ROE **8%** → P/E ≈ **16.13×** · g **4.80%** · PEG ≈ **3.36**.
