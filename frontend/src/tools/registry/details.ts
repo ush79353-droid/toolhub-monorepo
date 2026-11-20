@@ -625,6 +625,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/dupont-analysis/detail'),
   EarningsPerShareCalculator: () =>
     import('@/tools/calculators/earnings-per-share/detail'),
+  EarningsPerShareGrowthCalculator: () =>
+    import('@/tools/calculators/earnings-per-share-growth/detail'),
   EarCalculator: () => import('@/tools/calculators/ear/detail'),
   EarlyLoanPayoffCalculator: () =>
     import('@/tools/calculators/early-loan-payoff/detail'),

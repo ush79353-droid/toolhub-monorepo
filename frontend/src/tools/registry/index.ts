@@ -2589,6 +2589,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EarningsPerShareCalculator,
     })),
   ),
+  EarningsPerShareGrowthCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/earnings-per-share-growth/EarningsPerShareGrowthCalculator'
+    ).then((mod) => ({
+      default: mod.EarningsPerShareGrowthCalculator,
+    })),
+  ),
   EarCalculator: lazyTool(() =>
     import('@/tools/calculators/ear/EarCalculator').then((mod) => ({
       default: mod.EarCalculator,

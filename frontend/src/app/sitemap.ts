@@ -514,6 +514,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'dupont-analysis-calculator',
   'ear-calculator',
   'earnings-per-share-calculator',
+  'earnings-per-share-growth-calculator',
   'early-loan-payoff-calculator',
   'loan-repayment-calculator-loan-payoff-calculator',
   'equivalent-rate-calculator-aer',

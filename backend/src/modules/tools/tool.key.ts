@@ -485,6 +485,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DupontAnalysisCalculator',
   'EarCalculator',
   'EarningsPerShareCalculator',
+  'EarningsPerShareGrowthCalculator',
   'EarlyLoanPayoffCalculator',
   'EbitCalculator',
   'EbitdaCalculator',
@@ -1193,6 +1194,7 @@ if (isDirect) {
     !isApprovedComponentKey('DupontAnalysisCalculator') ||
     !isApprovedComponentKey('EarCalculator') ||
     !isApprovedComponentKey('EarningsPerShareCalculator') ||
+    !isApprovedComponentKey('EarningsPerShareGrowthCalculator') ||
     !isApprovedComponentKey('EarlyLoanPayoffCalculator') ||
     !isApprovedComponentKey('EbitCalculator') ||
     !isApprovedComponentKey('EbitdaCalculator') ||
