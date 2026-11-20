@@ -1,9 +1,30 @@
 # AGENT_STATUS — Take-Home-Paycheck Calculator
 
-- **Status:** BLOCKED
-- **Owner:** Cursor agent (this session) — released for ownership after blocker
+- **Status:** BLOCKED — UNRESOLVED
+- **Recovery pass:** 2026-11-20 (autonomous In Progress recovery)
+- **Owner:** Released by prior agent; recovery investigated, still blocked
 - **Slug:** `take-home-paycheck-calculator`
-- **Mongo ID:** `6af46f0fa27d8d1d4e990074` (undeveloped, inactive, indexable false)
-- **Blocker:** Screenshot shows Payroll Taxes + Property Tax with county **Anderson** and rate **1.37%**, but does **not** identify the state. MongoDB title/slug/metadata also lack a jurisdiction. Prompt forbids guessing Tennessee/Texas/other schedules. Exact property-tax and state income-tax rules cannot be implemented without an authorized state identity.
-- **Action:** Folder retained in `In Progress`. No commits. No Mongo activation. Not confused with Texas Tax Calculator (separate authorized record).
-- **Date:** 2026-11-20
+- **Mongo ID:** `6af46f0fa27d8d1d4e990074` (undeveloped, inactive, indexable false, componentKey null)
+- **Commits:** none
+
+## Blocker (unchanged)
+
+Screenshot: Payroll Taxes + Property Tax; county **Anderson**; applied rate **1.37%**; year default **2024**. No state label. Mongo title/slug/metadata do not name a state.
+
+Prompt forbids assuming Tennessee or any jurisdiction without authorized evidence.
+
+## Recovery investigation (not authorization)
+
+Third-party ACS-style effective rates list **Anderson County, Kansas** at **1.37%** (2020–2024).  
+This is **circumstantial only** — not Mongo/admin authorization to implement Kansas income tax + full KS county tables.
+
+Also distinct from **Texas Tax Calculator** (`…0076`): TX Anderson ACS default is **0.919%**, not 1.37%.
+
+## Required to unblock
+
+1. Product owner / authorized catalog metadata confirming the state (e.g. Kansas), **or**
+2. Explicit approved jurisdiction in the task package, **and**
+3. Authorized official or project-approved rate/bracket datasets for that state’s income + property tax model.
+
+Until then: no implementation, no Mongo activation, folder stays in `In Progress`.  
+Missouri ON HOLD untouched.

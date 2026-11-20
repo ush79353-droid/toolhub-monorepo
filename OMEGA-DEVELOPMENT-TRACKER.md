@@ -191,3 +191,17 @@ Temporary files cleaned: YES. No push.
 
 - 2026-11-20 (RMD): RMD Calculator DEVELOPED (8c3fe074 / 49dd5619 / `8e57f8c2`). Mongo 6af46f0fa27d8d1d4e990070 activated; indexable false; Uniform Lifetime 2022+; Phase 2 FX. Registry lines co-landed with concurrent MAGI `b4dc098d`. Moved to Completed Tools. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-20 — Autonomous In Progress recovery (no new development)
+
+Scanned 5 folders under `In Progress`. **No eligible claimable actionable calculator could be completed** without violating ownership or inventing missing official/spec data. No folders moved. No Mongo activation. No calculator commits. Final audit: NOT run. Push/Pull/Fetch/Sync: NONE. Temporary files cleaned: YES. Missouri ON HOLD untouched.
+
+| Calculator | Recovery classification | Notes |
+|---|---|---|
+| Missouri Sales Tax Calculator | ON HOLD | Explicit exclusion; not modified |
+| Net to Gross Calculator | ACTIVE — OTHER AGENT | Owner `cursor-agent-20261120-203557-34804` retained claim; engine-only preserved under `calculators/net-to-gross/`; Mongo `…006b` undeveloped |
+| Biden's Tax Plan Calculator | BLOCKED — UNRESOLVED | AFP identity from screenshot; age/dependents/baseline-year gaps remain; Mongo `…0055` |
+| Quiz: Annual Income Calculator | BLOCKED — UNRESOLVED | Only Q1/7 available; Mongo `…006e` |
+| Take-Home-Paycheck Calculator | BLOCKED — UNRESOLVED | Anderson @ 1.37% still no authorized state (KS ACS match is circumstantial only); Mongo `…0074`; not Texas Tax |
+
+Remaining In Progress: all 5 above.
+
