@@ -3530,6 +3530,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GoodwillCalculator,
     })),
   ),
+  IncomeElasticityOfDemandCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/income-elasticity-of-demand/IncomeElasticityOfDemandCalculator'
+    ).then((mod) => ({
+      default: mod.IncomeElasticityOfDemandCalculator,
+    })),
+  ),
   LifetimeEarningsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/lifetime-earnings/LifetimeEarningsCalculator'
