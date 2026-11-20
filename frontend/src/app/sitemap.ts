@@ -617,6 +617,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'zakat-calculator',
   'vat-calculator',
   'weekly-pay-calculator',
+  'what-to-offer-on-a-house-calculator',
   'combined-ratio-calculator',
   'customer-effort-score-calculator',
   'dart-rate-calculator',

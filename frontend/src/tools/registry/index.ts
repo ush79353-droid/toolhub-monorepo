@@ -3241,6 +3241,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WeeklyPayCalculator,
     })),
   ),
+  WhatToOfferOnAHouseCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/what-to-offer-on-a-house/WhatToOfferOnAHouseCalculator'
+    ).then((mod) => ({
+      default: mod.WhatToOfferOnAHouseCalculator,
+    })),
+  ),
   CombinedRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/combined-ratio/CombinedRatioCalculator').then((mod) => ({
       default: mod.CombinedRatioCalculator,

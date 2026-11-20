@@ -841,6 +841,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ZakatCalculator: () => import('@/tools/calculators/zakat/detail'),
   VatCalculator: () => import('@/tools/calculators/vat/detail'),
   WeeklyPayCalculator: () => import('@/tools/calculators/weekly-pay/detail'),
+  WhatToOfferOnAHouseCalculator: () =>
+    import('@/tools/calculators/what-to-offer-on-a-house/detail'),
   CombinedRatioCalculator: () => import('@/tools/calculators/combined-ratio/detail'),
   CustomerEffortScoreCalculator: () =>
     import('@/tools/calculators/customer-effort-score/detail'),

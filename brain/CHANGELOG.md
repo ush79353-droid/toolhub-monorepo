@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add What To Offer On A House Calculator
+- **Summary:** Shipped What To Offer On A House Calculator on existing catalog slug `what-to-offer-on-a-house-calculator` (`WhatToOfferOnAHouseCalculator`, catalog `6af46f10a27d8d1d4e990121`, preserved `nameKey` `what to offer on a house calculator`). Screenshot-first (ADR-023): FMV − CoR − DD − DP; discount amount or % of FMV; breakdown + offer-to-value; zero/negative offer warnings without inventing a positive actionable offer. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $300,000 − $20,000 − $10,000 − $30,000 → offer **$240,000**; 5% discount path → **$235,000**.
+- **Important Files:** `frontend/src/tools/calculators/what-to-offer-on-a-house/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Rental Property Calculator
 - **Summary:** Shipped Rental Property Calculator on existing catalog slug `rental-property-calculator` (`RentalPropertyCalculator`, catalog `6af46f10a27d8d1d4e990120`, preserved `nameKey` `rental property calculator`). Screenshot-first (ADR-023): Purchase / Income / Recurring expenses / Selling / Cash flow & ROI; amortizing mortgage + outstanding balance; vacancy/management; NOI; CoC; cap rate; holding-period ROI. Shared `frontend/src/tools/shared/mortgage.ts`; reuses CoC/cap-rate/PMI pure helpers (sibling calculators unchanged). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $300,000 · 20% down · 6% · 30y · $2,500/mo rent · 5% vacancy · 8% management → NOI **$17,820** · payment ≈ **$1,438.92** · annual cash flow ≈ **$553** · cap ≈ **5.94%**.

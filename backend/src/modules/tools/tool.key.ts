@@ -584,6 +584,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ZakatCalculator',
   'VatCalculator',
   'WeeklyPayCalculator',
+  'WhatToOfferOnAHouseCalculator',
   'CombinedRatioCalculator',
   'CustomerEffortScoreCalculator',
   'DartRateCalculator',
@@ -1244,6 +1245,7 @@ if (isDirect) {
     !isApprovedComponentKey('ZakatCalculator') ||
     !isApprovedComponentKey('VatCalculator') ||
     !isApprovedComponentKey('WeeklyPayCalculator') ||
+    !isApprovedComponentKey('WhatToOfferOnAHouseCalculator') ||
     !isApprovedComponentKey('CombinedRatioCalculator') ||
     !isApprovedComponentKey('CustomerEffortScoreCalculator') ||
     !isApprovedComponentKey('DartRateCalculator') ||
