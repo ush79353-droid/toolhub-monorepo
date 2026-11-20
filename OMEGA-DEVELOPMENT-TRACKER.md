@@ -205,3 +205,20 @@ Scanned 5 folders under `In Progress`. **No eligible claimable actionable calcul
 
 Remaining In Progress: all 5 above.
 
+### 2026-11-21 — 50-Calculator Deep Audit repair mission
+
+Full report: `OMEGA-50-CALCULATOR-REPAIR-REPORT.md`. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
+
+| Item | Result | Commits / Notes |
+|---|---|---|
+| S28-1 Canada GST/QST registry | FIXED | `ba8cd58b` — restored `CanadaGstQstCalculator` |
+| S36-1 Monthly Income FX | FIXED | `ba8cd58b` |
+| S46-1 State Tax NY/TX links | FIXED | `ba8cd58b` |
+| S12-1 Alabama sitemap | FIXED | `ba8cd58b` |
+| Disclosures (MAGI/AGI/RMD/AMT/…) | FIXED / ALREADY FIXED | `cb645b38` |
+| Net to Gross Calculator | DEVELOPED | `2c0f976b` / `4535b2ec` / `453c0c5c`; Mongo `…006b` active; folder → Completed Tools |
+| Biden / Quiz / Take-Home | BLOCKED | Still In Progress |
+| Build Back Better / Rate of Pay | SPECIFICATION REQUIRED | Catalog only; no project screenshot/prompt |
+
+| 62 | Net to Gross Calculator | DEVELOPED | AUDIT PENDING | 2c0f976b | 4535b2ec | 453c0c5c | Completed Tools | `NetToGrossCalculator`; slug `net-to-gross-calculator`; Mongo `6af46f0fa27d8d1d4e99006b`; Phase 2 FX; indexable false; TASKS `TOOL-577` |
+

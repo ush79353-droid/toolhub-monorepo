@@ -19,5 +19,9 @@ Prompt rule: *Do not invent hidden questions* — mark BLOCKED if they cannot be
 - Supply the full 7-question bank (text + options + correct answers) in the task package, **or**
 - Provide an authorized reference source the agent may use without inventing content.
 
+## 2026-11-21 repair mission
+
+Re-searched task package and codebase quiz banks — Q2–Q7 still unavailable. Remains **BLOCKED**. No invention of quiz content. No commits.
+
 **Folder remains:** `In Progress/Quiz Annual Income Calculator`  
 Missouri ON HOLD untouched. Distinct from Annual Income Calculator (`…0053`, already DEVELOPED).

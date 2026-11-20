@@ -27,5 +27,9 @@ Authoritative secondary sources (Tax Foundation May 2021 AFP analysis; CNBC Whit
 
 Prompt: *If the exact historical proposal cannot be verified, report BLOCKED instead of fabricating comparison results.*
 
+## 2026-11-21 repair mission
+
+Revalidated under 50-calculator repair master prompt. Still **BLOCKED** — same gaps (age field, dependents vs child ages, baseline year, refundable CTC presentation). No module built. No Mongo activation. No commits.
+
 **Folder remains:** `In Progress/Biden's Tax Plan Calculator`  
-Missouri ON HOLD untouched. No Mongo activation. No commits.
+Missouri ON HOLD untouched.

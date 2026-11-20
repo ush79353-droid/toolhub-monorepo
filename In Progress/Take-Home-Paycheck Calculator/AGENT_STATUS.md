@@ -26,5 +26,9 @@ Also distinct from **Texas Tax Calculator** (`…0076`): TX Anderson ACS default
 2. Explicit approved jurisdiction in the task package, **and**
 3. Authorized official or project-approved rate/bracket datasets for that state’s income + property tax model.
 
+## 2026-11-21 repair mission
+
+Revalidated — still **BLOCKED**. KS Anderson 1.37% remains circumstantial only; no PO/catalog authorization for Kansas schedules. Distinct from Texas Tax Calculator. No commits.
+
 Until then: no implementation, no Mongo activation, folder stays in `In Progress`.  
 Missouri ON HOLD untouched.
