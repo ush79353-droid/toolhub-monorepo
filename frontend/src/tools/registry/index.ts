@@ -3220,6 +3220,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PivotPointCalculator,
     })),
   ),
+  PortfolioBetaCalculator: lazyTool(() =>
+    import('@/tools/calculators/portfolio-beta/PortfolioBetaCalculator').then((mod) => ({
+      default: mod.PortfolioBetaCalculator,
+    })),
+  ),
   PostJudgmentInterestCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/post-judgment-interest/PostJudgmentInterestCalculator'
