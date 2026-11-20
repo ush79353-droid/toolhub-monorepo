@@ -1160,6 +1160,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/hours-pay/detail'),
   SellingLeaveDaysCalculator: () =>
     import('@/tools/calculators/selling-leave-days/detail'),
+  MonthlyIncomeCalculator: () =>
+    import('@/tools/calculators/monthly-income/detail'),
   WageCalculator: () => import('@/tools/calculators/wage/detail'),
   WageToSalaryCalculator: () =>
     import('@/tools/calculators/wage-to-salary/detail'),
@@ -1169,6 +1171,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/money-per-hour/detail'),
   TimeAndAHalfCalculator: () =>
     import('@/tools/calculators/time-and-a-half/detail'),
+  MonthlyIncomeHourlyCalculator: () =>
+    import('@/tools/calculators/monthly-income-hourly/detail'),
   BillableHoursCalculator: () =>
     import('@/tools/calculators/billable-hours/detail'),
   BillRateCalculator: () =>

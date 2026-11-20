@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-20 — Add Semi-Monthly Pay Calculator
+- **Summary:** Shipped Semi-Monthly Pay Calculator on existing catalog slug `semi-monthly-pay-calculator` (`SemiMonthlyPayCalculator`, catalog `6af46f0fa27d8d1d4e990072`, pillar/subPillar null). Screenshot-first (ADR-023): hourly/daily/weekly/monthly/yearly wage FX (last-edited authoritative); hours/week 40; days/week 5; semi-monthly answer FX. Formulas via 52 weeks / 12 months / **24** semi-monthly periods (not biweekly 26). Dual `CURRENCY_CONVERSION_SLUGS`. Biweekly Pay sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 500/hr · 40h · 5d → yearly **1,040,000** · semi-monthly **43,333.33**.
+- **Important Files:** `frontend/src/tools/calculators/semi-monthly-pay/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 ### 2026-11-20 — Add Marriage Tax Calculator
 - **Summary:** Shipped Marriage Tax Calculator on existing catalog slug `marriage-tax-calculator` (`MarriageTaxCalculator`, catalog `6af46f0fa27d8d1d4e990065`). Screenshot-first (ADR-023): Spouse 1/2 income columns, before-marriage status, dependents, standard deduction toggle, state/city %, SE flag; Calculate compares combined unmarried filings vs MFJ for TY 2026. Reuses Income Tax `YEAR_PARAMS` / preferential stacking. Fixed USD; no FX. Empty prompt.txt — screenshot + IRS params. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Important Files:** `frontend/src/tools/calculators/marriage-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
@@ -37,6 +42,12 @@
 - **Example:** Single · TY2025 · AGI $80,000 · assessed $500,000 · Alameda 1.22% → federal taxable **$64,250** · CA taxable **$74,294** · property **$6,100**.
 - **Important Files:** `frontend/src/tools/calculators/california-tax/*`, registry, sitemap, `tool.key.ts`, brain docs.
 - **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
+### 2026-11-20 — Add Monthly Income Calculator
+- **Summary:** Shipped Monthly Income Calculator on existing catalog slug `monthly-income-calculator` (`MonthlyIncomeCalculator`, catalog `6af46f0fa27d8d1d4e990069`, pillar/subPillar null). Screenshot-first (ADR-023): hourly/daily/weekly/yearly FX (last-edited); optional adjust hours/days (defaults 8/5/52); Result monthly income FX. Dual `CURRENCY_CONVERSION_SLUGS`. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 500/hr · 8h · 5d · 52w → monthly ≈ **86,666.67**.
+- **Important Files:** `frontend/src/tools/calculators/monthly-income/*`, registry, sitemap, FX lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check. Three ADR-019 commits. Temporary files cleaned: YES.
 
 ### 2026-11-20 — Add Selling Leave Days Calculator
 - **Summary:** Shipped Selling Leave Days Calculator on existing catalog slug `selling-leave-days-calculator` (`SellingLeaveDaysCalculator`, catalog `6af46f0fa27d8d1d4e990071`, pillar/subPillar null). Screenshot-first (ADR-023): salary frequency radios (Monthly default); dynamic base pay FX; leave days; payout FX. Working-day estimate 260 days/year · 5 days/week · 8 hours/day. Dual `CURRENCY_CONVERSION_SLUGS`; days never convert. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
@@ -2561,6 +2572,11 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
+### 2026-11-20 — Add Semi-Monthly Pay Calculator
+- **Summary:** Shipped Semi-Monthly Pay Calculator on existing catalog slug `semi-monthly-pay-calculator` (`SemiMonthlyPayCalculator`, catalog `6af46f0fa27d8d1d4e990072`, pillar/subPillar null). Screenshot-first (ADR-023): hourly/daily/weekly/monthly/yearly wage FX (last-edited authoritative); hours/week 40; days/week 5; semi-monthly answer FX. Formulas via 52 weeks / 12 months / **24** semi-monthly periods (not biweekly 26). Dual `CURRENCY_CONVERSION_SLUGS`. Biweekly Pay sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Example:** 500/hr · 40h · 5d → yearly **1,040,000** · semi-monthly **43,333.33**.
+- **Important Files:** `frontend/src/tools/calculators/semi-monthly-pay/*`, registry, sitemap, both FX slug lists, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
 ### 2026-11-19 — Add Sales Tax Calculator
 - **Summary:** Shipped Sales Tax Calculator on existing catalog slug `sales-tax-calculator` (`SalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e990026`, pillar/subPillar sales-tax). Generic rate: net↔gross + tax amount; independent FX; % never converts. Activated `--set-active`; **indexable** preserved false.
 - **Example:** 10% · net 100 → tax **10** · gross **110**.

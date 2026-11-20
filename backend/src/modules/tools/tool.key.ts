@@ -772,11 +772,13 @@ export const APPROVED_COMPONENT_KEYS = [
   'HourlyWageCalculator',
   'HoursPayCalculator',
   'SellingLeaveDaysCalculator',
+  'MonthlyIncomeCalculator',
   'WageCalculator',
   'WageToSalaryCalculator',
   'YearlyWageCalculator',
   'MoneyPerHourCalculator',
   'TimeAndAHalfCalculator',
+  'MonthlyIncomeHourlyCalculator',
   'BillableHoursCalculator',
   'BillRateCalculator',
   'ImpermanentLossCalculator',
@@ -1543,11 +1545,13 @@ if (isDirect) {
     !isApprovedComponentKey('HourlyWageCalculator') ||
     !isApprovedComponentKey('HoursPayCalculator') ||
     !isApprovedComponentKey('SellingLeaveDaysCalculator') ||
+    !isApprovedComponentKey('MonthlyIncomeCalculator') ||
     !isApprovedComponentKey('WageCalculator') ||
     !isApprovedComponentKey('WageToSalaryCalculator') ||
     !isApprovedComponentKey('YearlyWageCalculator') ||
     !isApprovedComponentKey('MoneyPerHourCalculator') ||
     !isApprovedComponentKey('TimeAndAHalfCalculator') ||
+    !isApprovedComponentKey('MonthlyIncomeHourlyCalculator') ||
     !isApprovedComponentKey('BillableHoursCalculator') ||
     !isApprovedComponentKey('BillRateCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||

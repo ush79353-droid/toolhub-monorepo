@@ -4407,6 +4407,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SellingLeaveDaysCalculator,
     })),
   ),
+  MonthlyIncomeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/monthly-income/MonthlyIncomeCalculator'
+    ).then((mod) => ({
+      default: mod.MonthlyIncomeCalculator,
+    })),
+  ),
   WageCalculator: lazyTool(() =>
     import('@/tools/calculators/wage/WageCalculator').then((mod) => ({
       default: mod.WageCalculator,
@@ -4438,6 +4445,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/time-and-a-half/TimeAndAHalfCalculator'
     ).then((mod) => ({
       default: mod.TimeAndAHalfCalculator,
+    })),
+  ),
+  MonthlyIncomeHourlyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/monthly-income-hourly/MonthlyIncomeHourlyCalculator'
+    ).then((mod) => ({
+      default: mod.MonthlyIncomeHourlyCalculator,
     })),
   ),
   BillableHoursCalculator: lazyTool(() =>
