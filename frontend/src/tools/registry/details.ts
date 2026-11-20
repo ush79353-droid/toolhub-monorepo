@@ -909,6 +909,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FinancialLeverageRatioCalculator: () =>
     import('@/tools/calculators/financial-leverage-ratio/detail'),
   FireCalculator: () => import('@/tools/calculators/fire/detail'),
+  FixedAssetTurnoverRatioCalculator: () =>
+    import('@/tools/calculators/fixed-asset-turnover-ratio/detail'),
   GiftOfEquityCalculator: () =>
     import('@/tools/calculators/gift-of-equity/detail'),
   GoldMeltCalculator: () => import('@/tools/calculators/gold-melt/detail'),

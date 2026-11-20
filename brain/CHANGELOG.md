@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Fixed Asset Turnover Ratio Calculator
+- **Summary:** Shipped Fixed Asset Turnover Ratio Calculator on existing catalog slug `fixed-asset-turnover-ratio-calculator` (`FixedAssetTurnoverRatioCalculator`, catalog `6af46f10a27d8d1d4e990135`, preserved `nameKey` `fixed asset turnover ratio calculator`). Screenshot-first (ADR-023): starting + final → average fixed assets; revenue → FAT = Revenue/Average; zero-average undefined; zero/negative revenue handling; derived fixed asset intensity. Denomination-only CurrencySelect (PKR default, no FX). No reverse-mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Start $15,000,000 · Final $18,000,000 · Revenue $7,500,000 → avg **$16,500,000** · FAT ≈ **0.45×**.
+- **Important Files:** `frontend/src/tools/calculators/fixed-asset-turnover-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Financial Leverage Ratio Calculator
 - **Summary:** Shipped Financial Leverage Ratio Calculator on existing catalog slug `financial-leverage-ratio-calculator` (`FinancialLeverageRatioCalculator`, catalog `6af46f10a27d8d1d4e990134`, preserved `nameKey` `financial leverage ratio calculator`). Screenshot-first (ADR-023): current + non-current → total assets; equity → FL = Assets/Equity (equity multiplier); zero/negative equity handling; derived liabilities, equity ratio, L/E. Denomination-only CurrencySelect (PKR default, no FX). No reverse-mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Current $300,000 + Non-current $1,000,000 · Equity $500,000 → FL **2.60×**.

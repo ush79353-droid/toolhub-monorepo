@@ -3506,6 +3506,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FireCalculator,
     })),
   ),
+  FixedAssetTurnoverRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/fixed-asset-turnover-ratio/FixedAssetTurnoverRatioCalculator'
+    ).then((mod) => ({
+      default: mod.FixedAssetTurnoverRatioCalculator,
+    })),
+  ),
   GiftOfEquityCalculator: lazyTool(() =>
     import('@/tools/calculators/gift-of-equity/GiftOfEquityCalculator').then(
       (mod) => ({

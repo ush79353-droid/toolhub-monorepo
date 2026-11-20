@@ -660,6 +660,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'emergency-fund-calculator',
   'finance-calculator',
   'fire-calculator-financial-independence-retire-early',
+  'fixed-asset-turnover-ratio-calculator',
   'gift-of-equity-calculator',
   'gold-melt-calculator',
   'lifetime-earnings-calculator',

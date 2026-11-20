@@ -627,6 +627,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FinanceCalculator',
   'FinancialLeverageRatioCalculator',
   'FireCalculator',
+  'FixedAssetTurnoverRatioCalculator',
   'GiftOfEquityCalculator',
   'GoldMeltCalculator',
   'LifetimeEarningsCalculator',
@@ -1307,6 +1308,7 @@ if (isDirect) {
     !isApprovedComponentKey('FinanceCalculator') ||
     !isApprovedComponentKey('FinancialLeverageRatioCalculator') ||
     !isApprovedComponentKey('FireCalculator') ||
+    !isApprovedComponentKey('FixedAssetTurnoverRatioCalculator') ||
     !isApprovedComponentKey('GiftOfEquityCalculator') ||
     !isApprovedComponentKey('GoldMeltCalculator') ||
     !isApprovedComponentKey('LifetimeEarningsCalculator') ||
