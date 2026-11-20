@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Retained Earnings Calculator
+- **Summary:** Shipped Retained Earnings Calculator on existing catalog slug `retained-earnings-calculator` (`RetainedEarningsCalculator`, catalog `6af46f10a27d8d1d4e990143`, preserved `nameKey` `retained earnings calculator`). Screenshot-first (ADR-023): two sections — Dividends distributed (earnings / payout % → dividends) and Retained earnings (RE / shares → REPS); payout &gt;100% with warning; zero/negative earnings block payout inference; period RE ≠ cumulative. Denomination-only CurrencySelect (PKR default, no FX). No beginning-RE / direct-dividend UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Earnings **$1,000,000** · Payout **30%** · Shares **50,000** → Dividends **$300,000** · RE **$700,000** · REPS **$14**.
+- **Important Files:** `frontend/src/tools/calculators/retained-earnings/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Retained Earnings calculation tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Receivables Turnover Ratio Calculator
 - **Summary:** Shipped Receivables Turnover Ratio Calculator on existing catalog slug `receivables-turnover-ratio-calculator` (`ReceivablesTurnoverRatioCalculator`, catalog `6af46f10a27d8d1d4e990142`, preserved `nameKey` `receivables turnover ratio calculator`). Screenshot-first (ADR-023): net credit sales / opening AR / closing AR → average AR / turnover (times); independent average when sales missing; zero average AR → undefined; zero sales → 0×; breakdown. Denomination-only CurrencySelect (PKR default, no FX). No DSO field in primary UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Net credit sales **$120,000** · Opening **$20,000** · Closing **$30,000** → Avg AR **$25,000** · RTR **4.8 times**.
