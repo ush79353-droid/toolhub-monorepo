@@ -404,6 +404,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CommissionCalculator',
   'SalesCommissionCalculator',
   'RentalCommissionCalculator',
+  'RentalPropertyCalculator',
   'TrueCostOfRealEstateCommissionCalculator',
   'SellThroughRateCalculator',
   'SimpleInterestCalculator',
@@ -1064,6 +1065,7 @@ if (isDirect) {
     !isApprovedComponentKey('CommissionCalculator') ||
     !isApprovedComponentKey('SalesCommissionCalculator') ||
     !isApprovedComponentKey('RentalCommissionCalculator') ||
+    !isApprovedComponentKey('RentalPropertyCalculator') ||
     !isApprovedComponentKey('TrueCostOfRealEstateCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     !isApprovedComponentKey('SimpleInterestCalculator') ||

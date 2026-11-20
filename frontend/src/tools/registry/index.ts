@@ -2889,6 +2889,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RentalCommissionCalculator,
     })),
   ),
+  RentalPropertyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/rental-property/RentalPropertyCalculator'
+    ).then((mod) => ({
+      default: mod.RentalPropertyCalculator,
+    })),
+  ),
   RentSplitCalculator: lazyTool(() =>
     import('@/tools/calculators/rent-split/RentSplitCalculator').then((mod) => ({
       default: mod.RentSplitCalculator,

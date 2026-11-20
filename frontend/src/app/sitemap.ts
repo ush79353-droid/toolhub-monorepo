@@ -652,6 +652,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'powerball-calculator',
   'price-per-square-foot-calculator',
   'price-per-square-meter-calculator',
+  'rental-property-calculator',
   'quiz-us-income-percentile-calculator',
   'sabbatical-calculator',
   'scrap-gold-calculator',

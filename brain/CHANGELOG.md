@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Rental Property Calculator
+- **Summary:** Shipped Rental Property Calculator on existing catalog slug `rental-property-calculator` (`RentalPropertyCalculator`, catalog `6af46f10a27d8d1d4e990120`, preserved `nameKey` `rental property calculator`). Screenshot-first (ADR-023): Purchase / Income / Recurring expenses / Selling / Cash flow & ROI; amortizing mortgage + outstanding balance; vacancy/management; NOI; CoC; cap rate; holding-period ROI. Shared `frontend/src/tools/shared/mortgage.ts`; reuses CoC/cap-rate/PMI pure helpers (sibling calculators unchanged). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $300,000 · 20% down · 6% · 30y · $2,500/mo rent · 5% vacancy · 8% management → NOI **$17,820** · payment ≈ **$1,438.92** · annual cash flow ≈ **$553** · cap ≈ **5.94%**.
+- **Important Files:** `frontend/src/tools/calculators/rental-property/*`, `frontend/src/tools/shared/mortgage.ts`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Rental + CoC + cap-rate + PMI + home-affordability assert self-checks passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Price Per Square Meter Calculator
 - **Summary:** Shipped Price Per Square Meter Calculator on existing catalog slug `price-per-square-meter-calculator` (`PricePerSquareMeterCalculator`, catalog `6af46f10a27d8d1d4e99011e`, preserved `nameKey` `price per square meter calculator`). Screenshot-first (ADR-023): price/rent + floor space → unit price (**m² default**); reverse modes; purchase/rent; optional second-property comparison. Extracted shared `frontend/src/tools/shared/price-per-area.ts` used by both PPSM and PPSF (independent routes). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $500,000 / 250 m² → **$2,000/m²**; A $2,000 vs B $2,500 → **+$500/m²** / **+25%**.
