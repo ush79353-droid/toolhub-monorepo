@@ -894,6 +894,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PmiCalculator: () => import('@/tools/calculators/pmi/detail'),
   PowerballCalculator: () =>
     import('@/tools/calculators/powerball/detail'),
+  PricePerSquareFootCalculator: () =>
+    import('@/tools/calculators/price-per-square-foot/detail'),
   QuizUsIncomePercentileCalculator: () =>
     import('@/tools/calculators/quiz-us-income-percentile/detail'),
   SabbaticalCalculator: () =>

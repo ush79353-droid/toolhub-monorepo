@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Price Per Square Foot Calculator
+- **Summary:** Shipped Price Per Square Foot Calculator on existing catalog slug `price-per-square-foot-calculator` (`PricePerSquareFootCalculator`, catalog `6af46f10a27d8d1d4e99011d`, preserved `nameKey` `price per square foot calculator`). Screenshot-first (ADR-023): price/rent + area → unit price; reverse total-price and area modes; ft²|m² conversion; purchase/rent with period; optional second-property comparison with normalized difference/%. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** $500,000 / 2,500 ft² → **$200/ft²**; compare A $200 vs B $250 → **+$50/ft²** / **+25%**.
+- **Important Files:** `frontend/src/tools/calculators/price-per-square-foot/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed in `calculation.test.ts`. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add PMI Calculator
 - **Summary:** Shipped PMI Calculator on existing catalog slug `pmi-calculator` (`PmiCalculator`, catalog `6af46f10a27d8d1d4e99011c`, preserved `nameKey` `pmi calculator`). Screenshot-first (ADR-023): Mortgage specification (home price, down payment amount/percent, mortgage amount, LTV) + PMI calculations (annual rate → annual/monthly PMI); simplified conventional applicability guidance (LTV &gt; 80%). Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $400,000 · 10% down · 0.5% rate → loan **$360,000** · LTV **90%** · annual PMI **$1,800** · monthly PMI **$150**.
