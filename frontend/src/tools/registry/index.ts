@@ -3171,6 +3171,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CreditCardsPayoffCalculator,
     })),
   ),
+  CreditUtilizationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/credit-utilization/CreditUtilizationCalculator'
+    ).then((mod) => ({
+      default: mod.CreditUtilizationCalculator,
+    })),
+  ),
   DiscountedCashFlowCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/discounted-cash-flow/DiscountedCashFlowCalculator'

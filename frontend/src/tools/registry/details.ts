@@ -821,6 +821,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/credit-card-payoff/detail'),
   CreditCardsPayoffCalculator: () =>
     import('@/tools/calculators/credit-cards-payoff/detail'),
+  CreditUtilizationCalculator: () =>
+    import('@/tools/calculators/credit-utilization/detail'),
   DiscountedCashFlowCalculator: () =>
     import('@/tools/calculators/discounted-cash-flow/detail'),
   DiscountCalculator: () =>

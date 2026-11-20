@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Credit Utilization Calculator
+- **Summary:** Shipped Credit Utilization Calculator on existing catalog slug `credit-utilization-calculator` (`CreditUtilizationCalculator`, catalog `6af46f10a27d8d1d4e99014d`, preserved `nameKey` `credit utilization calculator`). Screenshot-first (ADR-023): credit lines with money used + limit; add/remove (max 20); CU = ΣU/ΣL×100; available/over-limit; target utilization → reduction + additional limit; per-card breakdown. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$500** / **$2,000** → **25%**; **$9,400** / **$25,000** → **37.60%**.
+- **Important Files:** `frontend/src/tools/calculators/credit-utilization/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Credit Utilization calculation tests 18/18 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Blended Rate Calculator
 - **Summary:** Shipped Blended Rate Calculator on existing catalog slug `blended-rate-calculator` (`BlendedRateCalculator`, catalog `6af46f10a27d8d1d4e99014c`, preserved `nameKey` `blended rate calculator`). Screenshot-first (ADR-023): Amortization sections with balance + rate; add/remove loans (max 20); balance-weighted R = Σ(B×R)/Σ(B); total balance; annual/monthly interest estimates; contribution breakdown; partial-entry validation. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$10,000** @ **10%** + **$200** @ **5%** → total **$10,200** · blended ≈ **9.90%** · annual interest **$1,010**.
