@@ -531,6 +531,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'quiz-dividend-calculator',
   'man-hours-calculator',
   'margin-interest-calculator',
+  'marginal-cost-calculator',
   'mirr-calculator',
   'money-factor-calculator',
   'money-market-account-calculator',

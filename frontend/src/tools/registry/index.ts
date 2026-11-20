@@ -2716,6 +2716,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginInterestCalculator,
     })),
   ),
+  MarginalCostCalculator: lazyTool(() =>
+    import('@/tools/calculators/marginal-cost/MarginalCostCalculator').then((mod) => ({
+      default: mod.MarginalCostCalculator,
+    })),
+  ),
   MirrCalculator: lazyTool(() =>
     import('@/tools/calculators/mirr/MirrCalculator').then((mod) => ({
       default: mod.MirrCalculator,

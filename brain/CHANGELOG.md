@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Marginal Cost Calculator
+- **Summary:** Shipped Marginal Cost Calculator on existing catalog slug `marginal-cost-calculator` (`MarginalCostCalculator`, catalog `6af46f10a27d8d1d4e99013a`, preserved `nameKey` `marginal cost calculator`). Screenshot-first (ADR-023): three fields ΔTC / ΔQ / MC; signed cost and quantity changes; zero MC when ΔTC=0; undefined when ΔQ=0; indeterminate when both zero; currency-per-unit formatting; quantity unit label (no conversion). Denomination-only CurrencySelect (PKR default, no FX). No reverse / initial-final mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** ΔTC **$15,000** ÷ ΔQ **200** → MC **$75/unit**.
+- **Important Files:** `frontend/src/tools/calculators/marginal-cost/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Marginal Cost calculation tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Price Elasticity of Demand Calculator
 - **Summary:** Shipped Price Elasticity of Demand Calculator on existing catalog slug `price-elasticity-of-demand-calculator` (`PriceElasticityOfDemandCalculator`, catalog `6af46f10a27d8d1d4e990140`, preserved `nameKey` `price elasticity of demand calculator`). Screenshot-first (ADR-023): midpoint (arc) PED from two observations; signed PED + classification; initial/final revenue; revenue % change with zero-R₁ guard; equal-price / zero-avg-Q undefined PED. Reuses Optimal Price midpoint utility. Denomination-only CurrencySelect (PKR default, no FX). No charts / alternate-method selector. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** $50→$60 · 200→150 → PED **−1.5714** (elastic) · revenue **$10,000→$9,000 (−10%)**.
