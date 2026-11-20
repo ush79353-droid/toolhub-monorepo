@@ -1,4 +1,4 @@
-﻿# Shared Task Board (`TASKS.md`)
+# Shared Task Board (`TASKS.md`)
 
 > **Rules:** Keep Task IDs stable (`INFRA-*`, `BE-*`, `FE-*`, `TOOL-*`). Never delete or renumber IDs. Do not invent owners unless assigned.
 
@@ -57,6 +57,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-561` | Implement Free Float Calculator on existing slug `free-float-calculator` with outstanding/restricted/closely held → free float + percentage, whole-share validation, guide/FAQ, and verified activation (preserve nameKey `free float calculator`, isFeatured false, **indexable false**; no currency selector) | Cursor | Completed | `frontend/src/tools/calculators/free-float/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-550` | Implement Florida Sales Tax Calculator on existing slug `florida-sales-tax-calculator` with purchase amount + ZIP, Census ZCTA→county (county picker when ambiguous), FL DOR DR-15DSS CY 2026 discretionary surtax + 6% state tax, $5k single-item surtax base, fixed USD, guide/FAQ, verified activation (leave NJ / Ohio / Sales Tax / CA / MO untouched; **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/florida-sales-tax/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-549` | Implement Accounting Profit Calculator on existing slug `accounting-profit-calculator` with revenue / operation expenses / interest / depreciation / taxes → total explicit costs / accounting profit (independent Phase 2 FX), formulas Explicit=OpEx+Interest+Dep+Taxes and Profit=Revenue−Explicit, guide/FAQ, dual FX slug lists, and verified activation (leave Profit / Economic Profit untouched; **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/accounting-profit/*`, registry, sitemap, FX slug lists, `backend/src/modules/tools/tool.key.ts`, `brain/*` | — |
 | `TOOL-537` | Implement Sales Tax Calculator on existing slug `sales-tax-calculator` with net/gross FX, tax %, tax amount FX, dual FX slug lists, guide/FAQ, verified activation (leave jurisdiction sales-tax siblings untouched; **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/sales-tax/*`, registry, sitemap, FX lists, `tool.key.ts`, `brain/*` | — |

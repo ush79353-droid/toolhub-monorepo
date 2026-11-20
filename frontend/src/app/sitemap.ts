@@ -720,6 +720,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fcfe-calculator',
   'ffo-calculator',
   'fibonacci-retracement-calculator',
+  'free-float-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

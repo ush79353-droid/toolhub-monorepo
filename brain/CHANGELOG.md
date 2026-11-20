@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Free Float Calculator
+- **Summary:** Shipped Free Float Calculator on existing catalog slug `free-float-calculator` (`FreeFloatCalculator`, catalog `6af46f10a27d8d1d4e99015c`, preserved `nameKey` `free float calculator`). Screenshot-first (ADR-023): outstanding / restricted / closely held → free float + percentage; whole-share validation; no CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **10,000** − **2,000** − **1,000** → free float **7,000** shares (**70%**).
+- **Important Files:** `frontend/src/tools/calculators/free-float/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Free Float tests 18/18 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add California Sales Tax Calculator
 - **Summary:** Shipped California Sales Tax Calculator on existing catalog slug `california-sales-tax-calculator` (`CaliforniaSalesTaxCalculator`, catalog `6af46f0fa27d8d1d4e990027`). Screenshot-first + PO-approved Street/City: purchase USD + street + city + ZIP. Server-side CDTFA Tax Rate API `GetRateByAddress` via Next.js `/api/tax/california-rate`; decimal rate applied as fraction; ambiguous/no-match → unavailable (never invents). CDTFA Terms of Use reviewed (acceptance/indemnity); UI links terms and labels estimates. Fixed USD; no FX. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** $100 · 450 N St · Sacramento · 95814 → **8.75%** · tax **$8.75** · total **$108.75**.

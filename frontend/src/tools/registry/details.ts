@@ -941,6 +941,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FfoCalculator: () => import('@/tools/calculators/ffo/detail'),
   FibonacciRetracementCalculator: () =>
     import('@/tools/calculators/fibonacci-retracement/detail'),
+  FreeFloatCalculator: () => import('@/tools/calculators/free-float/detail'),
   LeveredFreeCashFlowCalculator: () =>
     import('@/tools/calculators/levered-free-cash-flow/detail'),
   UnpaidWorkCalculator: () =>
