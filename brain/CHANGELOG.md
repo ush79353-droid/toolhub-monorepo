@@ -4,6 +4,10 @@
 
 ---
 
+### 2026-11-20 — Export tool content templates by category
+- **Summary:** Added `backend/src/scripts/export-tool-content.ts` (`npm run tools:export-content`). Reads the MongoDB `tools` collection and writes one JSON file per category under `backend/data/tool-content/` using the client content template. Catalog fields (name, slug, category, subcategory, keywords, short description, SEO, robots, dates) are filled. Article, FAQ, formula, and reference copy stay empty. Localhost canonicals are omitted unless `--domain` is passed. Generated files are gitignored.
+- **Verification:** Export wrote 19 category files for 4,351 tools. Zakat sample carries catalog SEO and blank FAQ/formula slots.
+
 ### 2026-11-20 — Add Maturity Value Calculator
 - **Summary:** Shipped Maturity Value Calculator on existing catalog slug `maturity-value-calculator` (`MaturityValueCalculator`, catalog `6af46f10a27d8d1d4e990160`, preserved `nameKey` `maturity value calculator`). Screenshot-first (ADR-023): principal × (1+r)^t annual compounding; years/months duration; interest earned summary. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$2,000** · **3%** · **2 years** → MV **$2,121.80** · interest **$121.80**.

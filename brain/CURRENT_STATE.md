@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Maturity Value Calculator live at `/tools/maturity-value-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Maturity Value Calculator live at `/tools/maturity-value-calculator`; tool-content export writes `backend/data/tool-content/`; Auto Loan remains master Tool Detail Page).
 
 ---
 

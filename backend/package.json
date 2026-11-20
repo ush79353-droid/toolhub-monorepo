@@ -15,6 +15,7 @@
     "tool:assign": "tsx src/scripts/assign-tool-component.ts",
     "tools:embed-defaults": "tsx src/scripts/enable-default-embeds.ts",
     "tools:publish": "tsx src/scripts/publish-browser-tools.ts",
+    "tools:export-content": "tsx src/scripts/export-tool-content.ts",
     "categories:icons": "tsx src/scripts/attach-category-icons.ts",
     "categories:descriptions": "tsx src/scripts/set-category-descriptions.ts",
     "currency:fetch": "tsx src/scripts/fetch-currency-rates.ts",
