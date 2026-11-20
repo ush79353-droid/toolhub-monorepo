@@ -4363,6 +4363,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InterestCoverageRatioCalculator,
     })),
   ),
+  IntrinsicValueCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/intrinsic-value/IntrinsicValueCalculator'
+    ).then((mod) => ({
+      default: mod.IntrinsicValueCalculator,
+    })),
+  ),
   InterestOnlyMortgageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/interest-only-mortgage/InterestOnlyMortgageCalculator'

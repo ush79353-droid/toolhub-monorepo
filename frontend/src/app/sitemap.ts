@@ -722,6 +722,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fibonacci-retracement-calculator',
   'free-float-calculator',
   'graham-number-calculator',
+  'intrinsic-value-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

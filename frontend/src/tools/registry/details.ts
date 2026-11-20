@@ -1148,6 +1148,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   InterestCalculator: () => import('@/tools/calculators/interest/detail'),
   InterestCoverageRatioCalculator: () =>
     import('@/tools/calculators/interest-coverage-ratio/detail'),
+  IntrinsicValueCalculator: () =>
+    import('@/tools/calculators/intrinsic-value/detail'),
   InterestOnlyMortgageCalculator: () =>
     import('@/tools/calculators/interest-only-mortgage/detail'),
   InterestPerDayCalculator: () =>

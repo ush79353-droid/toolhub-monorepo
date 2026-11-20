@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Intrinsic Value Calculator
+- **Summary:** Shipped Intrinsic Value Calculator on existing catalog slug `intrinsic-value-calculator` (`IntrinsicValueCalculator`, catalog `6af46f10a27d8d1d4e99015e`, preserved `nameKey` `intrinsic value calculator`). Screenshot-first (ADR-023): EPS / g / Y / optional CMP → V = EPS(8.5+2g)×4.4/Y + margin of safety. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** EPS **$5** · g **6%** · Y **4.4%** · CMP **$80** → V **$102.50** · MS ≈ **21.95%**.
+- **Important Files:** `frontend/src/tools/calculators/intrinsic-value/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Intrinsic Value tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Graham Number Calculator
 - **Summary:** Shipped Graham Number Calculator on existing catalog slug `graham-number-calculator` (`GrahamNumberCalculator`, catalog `6af46f10a27d8d1d4e99015d`, preserved `nameKey` `graham number calculator`). Screenshot-first (ADR-023): BVPS/EPS → √(22.5×EPS×BVPS); optional price comparison; expandable derived EPS/BVPS with Apply. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** EPS **$5** · BVPS **$20** → GN ≈ **$47.43**; price **$40** → below · ≈ **15.67%**.

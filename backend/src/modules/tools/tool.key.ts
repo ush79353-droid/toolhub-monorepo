@@ -762,6 +762,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InformationRatioCalculator',
   'InterestCalculator',
   'InterestCoverageRatioCalculator',
+  'IntrinsicValueCalculator',
   'InterestOnlyMortgageCalculator',
   'InterestPerDayCalculator',
   'InterestRateCalculator',
@@ -1521,6 +1522,7 @@ if (isDirect) {
     !isApprovedComponentKey('InformationRatioCalculator') ||
     !isApprovedComponentKey('InterestCalculator') ||
     !isApprovedComponentKey('InterestCoverageRatioCalculator') ||
+    !isApprovedComponentKey('IntrinsicValueCalculator') ||
     !isApprovedComponentKey('InterestOnlyMortgageCalculator') ||
     !isApprovedComponentKey('InterestPerDayCalculator') ||
     !isApprovedComponentKey('InterestRateCalculator') ||
