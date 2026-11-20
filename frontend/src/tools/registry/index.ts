@@ -2704,6 +2704,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BetaStockCalculator,
     })),
   ),
+  BidensTaxPlanCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bidens-tax-plan/BidensTaxPlanCalculator'
+    ).then((mod) => ({
+      default: mod.BidensTaxPlanCalculator,
+    })),
+  ),
   BlendedRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/blended-rate/BlendedRateCalculator'

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Biden's Tax Plan Calculator
+- **Summary:** Completed Biden's Tax Plan Calculator on existing catalog slug `bidens-tax-plan-calculator` (`BidensTaxPlanCalculator`, catalog `6af46f0fa27d8d1d4e990055`). Historical TY2022 TCJA baseline vs May 2021 American Families Plan ordinary top-rate and ARP-style CTC comparison. Fixed USD. Age ≥65 uses aged standard deduction; dependents = ODC only. **`indexable` preserved false**.
+- **Example:** Single · AGI **$80,000** · no kids → baseline/AFP tax ≈ **$10,368**; low AGI with two under-6 kids → AFP net tax can be negative (refundable CTC).
+- **Important Files:** `frontend/src/tools/calculators/bidens-tax-plan/*`, registry, sitemap, `tool.key.ts`, brain docs, tracker.
+- **Verification:** Manual ordinary-tax check for $80k single. Mongo `tool:assign --set-active` (`indexable` false). Three ADR-019 local commits. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Add Quiz: Annual Income Calculator
 - **Summary:** Completed Quiz: Annual Income Calculator on existing catalog slug `quiz-annual-income-calculator` (`QuizAnnualIncomeCalculator`, catalog `6af46f0fa27d8d1d4e99006e`, preserved `nameKey` `quiz: annual income calculator`). Screenshot-first (ADR-023): progressive 7-question MCQ; score out of 7 after completion; Share/Reload/Clear/feedback. Full question bank recovered from Omni reference page matching the task screenshot (not invented). Fixed USD examples; no FX. Annual Income Calculator sibling untouched. **`indexable` preserved false**.
 - **Example:** Correct answers B/C/A/B/B/A/A → **7 / 7**. Incomplete quiz shows “Please answer all questions to see your score!”

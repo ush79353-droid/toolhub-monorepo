@@ -820,6 +820,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
 
 
   'income-tax-calculator',
+  'bidens-tax-plan-calculator',
   'tax-bracket-calculator',
   'adjusted-gross-income-agi-calculator',
   'modified-adjusted-gross-income-magi-calculator',

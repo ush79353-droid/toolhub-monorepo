@@ -179,7 +179,7 @@ Temporary files cleaned: YES. No push.
 - Still BLOCKED: curl + IDE browser both Incapsula 403; no dor-boundary/dor-jurisdiction files on disk. No commits.
 
 
-| 57 | Quiz: Annual Income Calculator | DEVELOPED | AUDIT PENDING | f4b4cf1b | 398a7e99 | e5083650 | Completed Tools | `QuizAnnualIncomeCalculator`; slug `quiz-annual-income-calculator`; Mongo `6af46f0fa27d8d1d4e99006e`; 7 Omni-recovered questions; indexable false |
+| 57 | Quiz: Annual Income Calculator | DEVELOPED | AUDIT PENDING | f4b4cf1b | 398a7e99 | a9100dad | Completed Tools | `QuizAnnualIncomeCalculator`; slug `quiz-annual-income-calculator`; Mongo `6af46f0fa27d8d1d4e99006e`; 7 Omni-recovered questions; indexable false |
 | 56b | Marriage Tax Calculator | DEVELOPED | AUDIT PENDING | afa772c9 | cfdbb264+3cac2892 | de28b909 | Completed Tools | `MarriageTaxCalculator`; Mongo `6af46f0fa27d8d1d4e990065` |
 
 - 2026-11-20 (Quiz Annual Income): BLOCKED — hidden Q2–Q7 missing. Missouri untouched. Push/Pull/Fetch/Sync: NONE.
@@ -217,7 +217,8 @@ Full report: `OMEGA-50-CALCULATOR-REPAIR-REPORT.md`. Missouri ON HOLD untouched.
 | S12-1 Alabama sitemap | FIXED | `ba8cd58b` |
 | Disclosures (MAGI/AGI/RMD/AMT/…) | FIXED / ALREADY FIXED | `cb645b38` |
 | Net to Gross Calculator | DEVELOPED | `2c0f976b` / `4535b2ec` / `453c0c5c`; Mongo `…006b` active; folder → Completed Tools |
-| Biden / Quiz / Take-Home | BLOCKED | Still In Progress |
+| Biden's Tax Plan Calculator | DEVELOPED | See register row 63 — TY2022 vs May 2021 AFP |
+| Quiz / Take-Home | Quiz DEVELOPED; Take-Home still BLOCKED | Take-Home remains In Progress |
 | Build Back Better | SPECIFICATION REQUIRED | Catalog only; no project screenshot/prompt |
 | Rate of Pay Calculator | DEVELOPED | Authorized screenshot supplied 2026-11-21; see register row 64 |
 
@@ -227,11 +228,17 @@ Full report: `OMEGA-50-CALCULATOR-REPAIR-REPORT.md`. Missouri ON HOLD untouched.
 
 Q2–Q7 recovered from Omni Calculator reference `https://www.omnicalculator.com/finance/annual-income-quiz` (matches screenshot title/Q1/results). Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
 
-| 57 | Quiz: Annual Income Calculator | DEVELOPED | AUDIT PENDING | f4b4cf1b | 398a7e99 | e5083650 | Completed Tools | `QuizAnnualIncomeCalculator`; Mongo `6af46f0fa27d8d1d4e99006e` active; indexable false; TASKS `TOOL-580` |
+| 57 | Quiz: Annual Income Calculator | DEVELOPED | AUDIT PENDING | f4b4cf1b | 398a7e99 | a9100dad | Completed Tools | `QuizAnnualIncomeCalculator`; Mongo `6af46f0fa27d8d1d4e99006e` active; indexable false; TASKS `TOOL-580` |
 
 ### 2026-11-21 — Rate of Pay Calculator DEVELOPED
 
 Prior SPECIFICATION REQUIRED resolved with authorized Rate of Pay screenshot (hours/week + six wage FX fields). RMD misfile left historical. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
 
 | 64 | Rate of Pay Calculator | DEVELOPED | AUDIT PENDING | 3cbdf54f | 831424e8 | bf05cd27 | Completed Tools | `RateOfPayCalculator`; slug `rate-of-pay-calculator`; Mongo `6af46f0fa27d8d1d4e99006f` active; Phase 2 FX; indexable false; TASKS `TOOL-579` |
+
+### 2026-11-21 — Biden's Tax Plan Calculator DEVELOPED
+
+Prior blockers resolved with locked TY2022 TCJA baseline vs May 2021 AFP (ordinary 39.6% + ARP-style CTC). Age ≥65 → aged std deduction; dependents = ODC only. Capital gains/NIIT excluded (no inputs). Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
+
+| 63 | Biden's Tax Plan Calculator | DEVELOPED | AUDIT PENDING | f3a2a319 | 7ffceb3a | *(reg hash)* | Completed Tools | `BidensTaxPlanCalculator`; slug `bidens-tax-plan-calculator`; Mongo `6af46f0fa27d8d1d4e990055` active; fixed USD; indexable false; TASKS `TOOL-581` |
 

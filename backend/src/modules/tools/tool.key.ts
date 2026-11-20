@@ -488,6 +488,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BalloonPaymentCalculator',
   'BasisPointCalculator',
   'BetaStockCalculator',
+  'BidensTaxPlanCalculator',
   'BlendedRateCalculator',
   'AverageCollectionPeriodCalculator',
   'AverageFixedCostCalculator',
@@ -1300,6 +1301,7 @@ if (isDirect) {
     !isApprovedComponentKey('CarriedInterestCalculator') ||
     !isApprovedComponentKey('CashBackOrLowInterestCalculator') ||
     !isApprovedComponentKey('CashFlowToDebtRatioCalculator') ||
+    !isApprovedComponentKey('BidensTaxPlanCalculator') ||
     !isApprovedComponentKey('ChildTaxCreditCalculator') ||
     !isApprovedComponentKey('CashRatioCalculator') ||
     !isApprovedComponentKey('CashConversionCycleCalculator') ||
