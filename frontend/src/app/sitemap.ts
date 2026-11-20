@@ -513,6 +513,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'direct-material-price-variance-calculator',
   'dupont-analysis-calculator',
   'ear-calculator',
+  'earnings-per-share-calculator',
   'early-loan-payoff-calculator',
   'loan-repayment-calculator-loan-payoff-calculator',
   'equivalent-rate-calculator-aer',

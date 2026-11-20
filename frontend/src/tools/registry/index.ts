@@ -2582,6 +2582,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DupontAnalysisCalculator,
     })),
   ),
+  EarningsPerShareCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/earnings-per-share/EarningsPerShareCalculator'
+    ).then((mod) => ({
+      default: mod.EarningsPerShareCalculator,
+    })),
+  ),
   EarCalculator: lazyTool(() =>
     import('@/tools/calculators/ear/EarCalculator').then((mod) => ({
       default: mod.EarCalculator,
