@@ -79,6 +79,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'home-value-calculator-us',
   'house-affordability-calculator',
   'income-elasticity-of-demand-calculator',
+  'inventory-turnover-calculator',
   'mortgage-calculator-with-taxes-and-insurance',
   'mortgage-comparison-calculator',
   'home-mortgage-calculator',

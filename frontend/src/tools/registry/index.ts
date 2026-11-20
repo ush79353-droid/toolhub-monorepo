@@ -3537,6 +3537,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.IncomeElasticityOfDemandCalculator,
     })),
   ),
+  InventoryTurnoverCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/inventory-turnover/InventoryTurnoverCalculator'
+    ).then((mod) => ({
+      default: mod.InventoryTurnoverCalculator,
+    })),
+  ),
   LifetimeEarningsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/lifetime-earnings/LifetimeEarningsCalculator'

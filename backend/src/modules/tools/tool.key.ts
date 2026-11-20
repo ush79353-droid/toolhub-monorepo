@@ -632,6 +632,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GoldMeltCalculator',
   'GoodwillCalculator',
   'IncomeElasticityOfDemandCalculator',
+  'InventoryTurnoverCalculator',
   'LifetimeEarningsCalculator',
   'LongTermCareCalculator',
   'MegaMillionsPayoutCalculator',
@@ -1315,6 +1316,7 @@ if (isDirect) {
     !isApprovedComponentKey('GoldMeltCalculator') ||
     !isApprovedComponentKey('GoodwillCalculator') ||
     !isApprovedComponentKey('IncomeElasticityOfDemandCalculator') ||
+    !isApprovedComponentKey('InventoryTurnoverCalculator') ||
     !isApprovedComponentKey('LifetimeEarningsCalculator') ||
     !isApprovedComponentKey('LongTermCareCalculator') ||
     !isApprovedComponentKey('MegaMillionsPayoutCalculator') ||

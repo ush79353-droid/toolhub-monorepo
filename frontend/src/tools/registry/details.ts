@@ -917,6 +917,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GoodwillCalculator: () => import('@/tools/calculators/goodwill/detail'),
   IncomeElasticityOfDemandCalculator: () =>
     import('@/tools/calculators/income-elasticity-of-demand/detail'),
+  InventoryTurnoverCalculator: () =>
+    import('@/tools/calculators/inventory-turnover/detail'),
   LifetimeEarningsCalculator: () =>
     import('@/tools/calculators/lifetime-earnings/detail'),
   LongTermCareCalculator: () =>

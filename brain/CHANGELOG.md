@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Inventory Turnover Calculator
+- **Summary:** Shipped Inventory Turnover Calculator on existing catalog slug `inventory-turnover-calculator` (`InventoryTurnoverCalculator`, catalog `6af46f10a27d8d1d4e990138`, preserved `nameKey` `inventory turnover calculator`). Screenshot-first (ADR-023): COGS / beginning / ending / days → average inventory, turnover = COGS/Avg, inventory days = (Avg/COGS)×Days; zero-avg and zero-COGS edge handling. Denomination-only CurrencySelect (PKR default, no FX). No reverse-mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** COGS $600,000 · Beginning $100,000 · Ending $140,000 · 365 days → avg **$120,000** · turnover **5.00×** · days **73**.
+- **Important Files:** `frontend/src/tools/calculators/inventory-turnover/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` **blocked** (Atlas ETIMEDOUT / IP whitelist) — `isDeveloped` left unchanged. Three ADR-019 commits. Temporary files cleaned: YES. Retry assign when Atlas is reachable.
+
 ### 2026-11-20 — Add Income Elasticity of Demand Calculator
 - **Summary:** Shipped Income Elasticity of Demand Calculator on existing catalog slug `income-elasticity-of-demand-calculator` (`IncomeElasticityOfDemandCalculator`, catalog `6af46f10a27d8d1d4e990137`, preserved `nameKey` `income elasticity of demand calculator`). Screenshot-first (ADR-023): Method Standard/Midpoint; Income Y1/Y2/%ΔY; Demand Q1/Q2/%ΔQ; YED = %ΔQd/%ΔY with inferior/necessity/luxury classification; zero income change undefined. Denomination-only CurrencySelect for income (PKR default, no FX). No direct-% mode UI. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Income $1,000→$1,200 · Quantity 100→130 → Standard YED **1.50** · Midpoint ≈ **1.43**.
