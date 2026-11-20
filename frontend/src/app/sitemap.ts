@@ -646,6 +646,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'dso-calculator',
   'ebit-calculator',
   'ebitda-calculator',
+  'ebt-calculator-earnings-before-tax',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
   'college-cost-calculator',

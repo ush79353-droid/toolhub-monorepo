@@ -2578,6 +2578,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EbitdaCalculator,
     })),
   ),
+  EbtCalculator: lazyTool(() =>
+    import('@/tools/calculators/ebt/EbtCalculator').then((mod) => ({
+      default: mod.EbtCalculator,
+    })),
+  ),
   EquivalentRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/equivalent-rate/EquivalentRateCalculator'
