@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Cross Price Elasticity Calculator live at `/tools/cross-price-elasticity-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-20** (Current Ratio Calculator live at `/tools/current-ratio-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Current Ratio Calculator (`/tools/current-ratio-calculator`):** Live client-side liquidity tool (`componentKey: 'CurrentRatioCalculator'`, catalog `6af46f10a27d8d1d4e990128`, `nameKey` `current ratio calculator`). Screenshot-first (ADR-023): current assets / current liabilities / current ratio with reverse modes; working capital (CA − CL); zero-liabilities undefined; contextual interpretation (no universal ideal). Denomination-only CurrencySelect (PKR default, no FX). No balance-sheet breakdown (ADR-023). Activated; **`indexable` left false**. Example: CA $400k · CL $200k → CR **2.00** · WC **$200k**.
 - **Cross Price Elasticity Calculator (`/tools/cross-price-elasticity-calculator`):** Live client-side CPE tool (`componentKey: 'CrossPriceElasticityCalculator'`, catalog `6af46f10a27d8d1d4e990127`, `nameKey` `cross price elasticity calculator`). Screenshot-first (ADR-023): time-point-1 / time-point-2 / elasticity accordions; initial-value (default) or midpoint method; %ΔPA / %ΔQB; substitute/complement/zero interpretation + magnitude; zero price-change undefined. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: PA $10→$12 · QB 1,000→1,200 → E **+1.00**.
 - **Consumer Surplus Calculator (`/tools/consumer-surplus-calculator`):** Live client-side surplus tool (`componentKey: 'ConsumerSurplusCalculator'`, catalog `6af46f10a27d8d1d4e990126`, `nameKey` `consumer surplus calculator`). Screenshot-first (ADR-023): actual price / willing price / CS with reverse modes; signed difference when price &gt; WTP (realized surplus N/A); savings % vs WTP; Related information accordion. Denomination-only CurrencySelect (PKR default, no FX). No market triangle/graph (ADR-023). Activated; **`indexable` left false**. Example: WTP $150 · P $100 → CS **$50**.
 - **Cash Conversion Cycle Calculator (`/tools/cash-conversion-cycle-calculator`):** Live client-side CCC tool (`componentKey: 'CashConversionCycleCalculator'`, catalog `6af46f10a27d8d1d4e990125`, `nameKey` `cash conversion cycle calculator`). Screenshot-first (ADR-023): period + revenue + COGS + avg inventory/AR/AP → DSO/DIO/DPO + CCC; manual or beginning/ending average modes (three collapsed accordions); operating cycle; zero revenue/COGS guards; negative CCC preserved. Denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: $1M revenue · $800k COGS · inv $100k · AR $80k · AP $70k → CCC ≈ **42.89 days**.

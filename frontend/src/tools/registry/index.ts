@@ -3374,6 +3374,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CrossPriceElasticityCalculator,
     })),
   ),
+  CurrentRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/current-ratio/CurrentRatioCalculator'
+    ).then((mod) => ({
+      default: mod.CurrentRatioCalculator,
+    })),
+  ),
   CashOnCashReturnCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/cash-on-cash-return/CashOnCashReturnCalculator'

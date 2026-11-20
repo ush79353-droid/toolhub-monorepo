@@ -467,6 +467,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CpmCalculator',
   'CrossPriceElasticityCalculator',
   'CtrCalculator',
+  'CurrentRatioCalculator',
   'CustomerAcquisitionCostCalculator',
   'CustomerRetentionRateCalculator',
   'DaysOffCalculator',
@@ -1133,6 +1134,7 @@ if (isDirect) {
     !isApprovedComponentKey('CpmCalculator') ||
     !isApprovedComponentKey('CrossPriceElasticityCalculator') ||
     !isApprovedComponentKey('CtrCalculator') ||
+    !isApprovedComponentKey('CurrentRatioCalculator') ||
     !isApprovedComponentKey('CustomerAcquisitionCostCalculator') ||
     !isApprovedComponentKey('CustomerRetentionRateCalculator') ||
     !isApprovedComponentKey('DaysOffCalculator') ||

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add Current Ratio Calculator
+- **Summary:** Shipped Current Ratio Calculator on existing catalog slug `current-ratio-calculator` (`CurrentRatioCalculator`, catalog `6af46f10a27d8d1d4e990128`, preserved `nameKey` `current ratio calculator`). Screenshot-first (ADR-023): current assets / current liabilities / current ratio with reverse modes; working capital; zero liabilities undefined; contextual interpretation without universal ideal. Denomination-only CurrencySelect (PKR default, no FX). No balance-sheet breakdown. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** CA $400,000 · CL $200,000 → CR **2.00** · WC **$200,000**.
+- **Important Files:** `frontend/src/tools/calculators/current-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** Assert self-check passed. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Add Cross Price Elasticity Calculator
 - **Summary:** Shipped Cross Price Elasticity Calculator on existing catalog slug `cross-price-elasticity-calculator` (`CrossPriceElasticityCalculator`, catalog `6af46f10a27d8d1d4e990127`, preserved `nameKey` `cross price elasticity calculator`). Screenshot-first (ADR-023): time-point-1 / time-point-2 / elasticity accordions; initial-value (default) and midpoint methods; substitute/complement/zero guidance + magnitude; zero price-change undefined. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** PA $10→$12 · QB 1,000→1,200 → E **+1.00** (substitutes, unit magnitude).
