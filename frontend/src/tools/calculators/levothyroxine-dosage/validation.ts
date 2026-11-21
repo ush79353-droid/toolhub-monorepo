@@ -1,3 +1,4 @@
+import { calculateLevothyroxineDosage, parseNumber } from './calculation';
 import type {
   LevothyroxineDosageFieldErrors,
   LevothyroxineDosageInput,
@@ -9,9 +10,28 @@ export interface LevothyroxineDosageValidation {
   result: LevothyroxineDosageResult | null;
 }
 
-/** UI-shell stub — replaced by engine commit with clinical gate logic. */
 export function validateLevothyroxineDosageInput(
-  _input: LevothyroxineDosageInput,
+  input: LevothyroxineDosageInput,
 ): LevothyroxineDosageValidation {
-  return { errors: {}, result: null };
+  const errors: LevothyroxineDosageFieldErrors = {};
+
+  const w = parseNumber(input.weightText);
+  if (input.weightText.trim() !== '' && w === null) {
+    errors.weightText = 'Enter a valid weight.';
+  } else if (w !== null && !(w > 0)) {
+    errors.weightText = 'Weight must be positive.';
+  }
+
+  const h = parseNumber(input.heightText);
+  if (input.heightText.trim() !== '' && h === null) {
+    errors.heightText = 'Enter a valid height.';
+  } else if (h !== null && !(h > 0)) {
+    errors.heightText = 'Height must be positive.';
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return { errors, result: null };
+  }
+
+  return { errors: {}, result: calculateLevothyroxineDosage(input) };
 }
