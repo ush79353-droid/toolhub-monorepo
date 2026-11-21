@@ -12,6 +12,7 @@ Audit completed: 0
 Audit pending: deferred to final audit coordinator
 
 ## Calculator Register
+| 102 | Weight Percentile Calculator | DEVELOPED | AUDIT PENDING | 5e815d4a | 01702a90 | (this reg/Brain) | Completed Tools | `WeightPercentileCalculator`; slug `weight-percentile-calculator`; Mongo `6af46f10a27d8d1d4e990207` active; WHO WFA LMS; no FX; indexable false; TASKS `TOOL-701` |
 | 101 | Urine Home Pregnancy Test | DEVELOPED | AUDIT PENDING | 8130bf97 (UI absorb) | 4f353b2d | (this reg/Brain) | Completed Tools | `UrineHomePregnancyTestCalculator`; slug `urine-home-pregnancy-test`; Mongo `6af46f10a27d8d1d4e9901fc` active; dual sensitivity; no FX; indexable false; TASKS `TOOL-700` |
 | 99 | Tylenol Dosage Calculator | DEVELOPED | AUDIT PENDING | 2ee8163f | f2962cf0 | (this reg/Brain) | Completed Tools | `TylenolDosageCalculator`; slug `tylenol-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901dd` active; no FX; indexable false; TASKS `TOOL-699` |
 | 96 | Quiz: Fetal Weight Percentile | DEVELOPED | AUDIT PENDING | 66bb8bae | a04679ff | (this reg/Brain) | Completed Tools | `QuizFetalWeightPercentileCalculator`; slug `quiz-fetal-weight-percentile`; Mongo `6af46f10a27d8d1d4e99020a` active; no FX; indexable false; TASKS `TOOL-696` |

@@ -4,6 +4,12 @@
 - **Example:** LMP **2026-01-01** · cycle **28** → ovulation **2026-01-15** · urine **2026-01-29**; IVF transfer **2026-03-01** day-5 → urine **2026-03-15**.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-22 — Weight Percentile Calculator
+- **Summary:** Shipped Weight Percentile Calculator on existing catalog slug `weight-percentile-calculator` (`WeightPercentileCalculator`, catalog `6af46f10a27d8d1d4e990207`, pillar `6af451c2a27d8d1d4e98f988`, subPillar null). Screenshot-first (ADR-023): blank age mos; Girl default; blank weight kg; Results with WHO attribution. WHO weight-for-age LMS 0–60 months; z=((W/M)^L−1)/(L×S); WHO ±3 SD tails; percentile=100Φ(z); no extrapolation. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-701`.
+- **Commits:** `5e815d4a` (UI) / `01702a90` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** **24** mos girl · median **11.4775** kg → ≈ **50th** percentile.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Tylenol Dosage Calculator
 - **Summary:** Shipped Tylenol Dosage Calculator on existing catalog slug `tylenol-dosage-calculator` (`TylenolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901dd`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): symptom radios + product dropdown; DailyMed Drug Facts for Regular Strength 325, Extra Strength 500 (every 6 hours — not legacy 4–6), Sinus Severe, Cold + Flu Severe, PM; 24-hour unit/mg ceilings; combo acetaminophen warning; symptom/product mismatch; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-699`.
 - **Commits:** `2ee8163f` (UI) / `f2962cf0` (engine) / (registration/Brain/tracker — this commit).
