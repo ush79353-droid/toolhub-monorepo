@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Price Elasticity of Supply Calculator live at `/tools/price-elasticity-of-supply-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Real GDP Calculator live at `/tools/real-gdp-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Real GDP Calculator (`/tools/real-gdp-calculator`):** Live client-side real GDP tool (`componentKey: 'RealGdpCalculator'`, catalog `6af46f10a27d8d1d4e99018d`, `nameKey` `real gdp calculator`). Screenshot-first (ADR-023): modes for Real/Nominal/Deflator; R=(N/D)×100; shared magnitude units→trillions; denomination CurrencySelect (no FX); optional growth helper; nominal-vs-real bar chart; guide/FAQ. Activated; **`indexable` left false**. Example: N **25,000** billion · D **125** → R **20,000** billion.
 - **Price Elasticity of Supply Calculator (`/tools/price-elasticity-of-supply-calculator`):** Live client-side PES tool (`componentKey: 'PriceElasticityOfSupplyCalculator'`, catalog `6af46f10a27d8d1d4e99018c`, `nameKey` `price elasticity of supply calculator`). Screenshot-first (ADR-023): standard + midpoint methods; P₁/P₂/Q₁/Q₂; auto %ΔP/%ΔQs; signed PES; undefined when ΔP=0 (no Infinity); observation chart; CurrencySelect denomination; guide/FAQ. Activated; **`indexable` left false**. Example: P **100→120** · Qs **500→600** → PES **1.00** (unit elastic).
 - **PPP Calculator — Purchasing Power Parity (`/tools/ppp-calculator-purchasing-power-parity`):** Live client-side PPP tool (`componentKey: 'PppCalculator'`, catalog `6af46f10a27d8d1d4e99018b`, `nameKey` `ppp calculator - purchasing power parity`). Screenshot-first (ADR-023): curated World Bank WDI GDP PPP (PA.NUS.PPP) 2023/2024 snapshot + same-year official FX; S_B=S_A×(PPP_B/PPP_A); manual factor mode; monthly/yearly; market-vs-PPP chart; PLI table attributed; no fake live API. Activated; **`indexable` left false**. Example manual: **50,000** · PPP 1→2 → **100,000**; market **1.35** → **67,500**.
 - **Phillips Curve Calculator (`/tools/phillips-curve-calculator`):** Live client-side macro tool (`componentKey: 'PhillipsCurveCalculator'`, catalog `6af46f10a27d8d1d4e99018a`, `nameKey` `phillips curve calculator`). Screenshot-first (ADR-023): Traditional w=w_T−βΔu; New Classical π=πᵉ−α(u−uₙ)+s; simplified NKPC πₜ=βE[πₜ₊₁]+κxₜ+sₜ; inverse targets; SVG charts; guide/FAQ; no currency. Activated; **`indexable` left false**. Example: Traditional w_T **4%** · Δu **1** · β **0.5** → w **3.5%**; NC πᵉ **3%** · u **6%** · uₙ **5%** · α **0.5** → π **2.5%**; NK β **0.99** · E[π] **3%** · x **2%** · κ **0.25** · s **0.5** → πₜ **3.97%**.

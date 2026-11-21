@@ -635,6 +635,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'present-value-calculator',
   'price-elasticity-of-demand-calculator',
   'price-elasticity-of-supply-calculator',
+  'real-gdp-calculator',
   'price-quantity-calculator',
   'private-savings-calculator',
   'savings-plan-calculator',

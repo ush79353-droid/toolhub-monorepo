@@ -3459,6 +3459,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RealEstateCommissionCalculator,
     })),
   ),
+  RealGdpCalculator: lazyTool(() =>
+    import('@/tools/calculators/real-gdp/RealGdpCalculator').then((mod) => ({
+      default: mod.RealGdpCalculator,
+    })),
+  ),
   RealRateOfReturnCalculator: lazyTool(() =>
     import('@/tools/calculators/real-rate-of-return/RealRateOfReturnCalculator').then((mod) => ({
       default: mod.RealRateOfReturnCalculator,

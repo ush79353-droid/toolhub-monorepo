@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Real GDP Calculator
+- **Summary:** Shipped Real GDP Calculator on existing catalog slug `real-gdp-calculator` (`RealGdpCalculator`, catalog `6af46f10a27d8d1d4e99018d`, preserved `nameKey` `real gdp calculator`). Screenshot-first (ADR-023): Calculate Real/Nominal/GDP Deflator modes; R=(N/D)×100; shared magnitude; denomination CurrencySelect (no FX); optional real GDP growth; nominal-vs-real SVG bars; original guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Nominal **25,000** billion · Deflator **125** → Real **20,000** billion; growth 20k→21k → **5%**.
+- **Important Files:** `frontend/src/tools/calculators/real-gdp/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` real-gdp tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Price Elasticity of Supply Calculator
 - **Summary:** Shipped Price Elasticity of Supply Calculator on existing catalog slug `price-elasticity-of-supply-calculator` (`PriceElasticityOfSupplyCalculator`, catalog `6af46f10a27d8d1d4e99018c`, preserved `nameKey` `price elasticity of supply calculator`). Screenshot-first (ADR-023): standard + midpoint PES; auto % changes; elastic/inelastic/unit/perfectly inelastic/negative/undefined classifications; observation SVG; denomination CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** P **100→120** · Qs **500→600** → PES **1.00** (unit elastic); ΔP=0 → undefined (no Infinity).
