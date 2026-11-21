@@ -913,6 +913,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   UnleveredBetaCalculator: () =>
     import('@/tools/calculators/unlevered-beta/detail'),
   WaccCalculator: () => import('@/tools/calculators/wacc/detail'),
+  BuyingPowerCalculator: () =>
+    import('@/tools/calculators/buying-power/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

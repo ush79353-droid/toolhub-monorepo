@@ -767,6 +767,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sustainable-growth-rate-calculator',
   'unlevered-beta-calculator',
   'wacc-calculator-weighted-average-cost-of-capital',
+  'buying-power-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

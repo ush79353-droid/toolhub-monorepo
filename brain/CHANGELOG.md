@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Buying Power Calculator
+- **Summary:** Shipped Buying Power Calculator on existing catalog slug `buying-power-calculator` (`BuyingPowerCalculator`, catalog `6af46f10a27d8d1d4e990171`, preserved `nameKey` `buying power calculator`). Screenshot-first (ADR-023): Amount × (CPI_target/CPI_reference); four fields; year swap; collapsible CPI details; embedded BLS CPI-U CUUR0000SA0 annual averages **1913–2025**; fixed USD (no CurrencySelect / no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$1,000** · **2010** → **2020** (CPI 218.056 → 258.811) → ≈ **$1,186.90**.
+- **Important Files:** `frontend/src/tools/calculators/buying-power/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Buying Power tests 22/22 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add WACC Calculator (Weighted Average Cost of Capital)
 - **Summary:** Shipped WACC Calculator on existing catalog slug `wacc-calculator-weighted-average-cost-of-capital` (`WaccCalculator`, catalog `6af46f10a27d8d1d4e990170`, preserved `nameKey` `wacc calculator (weighted average cost of capital)`). Screenshot-first (ADR-023): WACC = (E/(E+D))×Re + (D/(E+D))×Rd×(1−T); six fields; weights/after-tax debt breakdown; zero total capital blocked. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** E **700,000** · D **500,000** · Re **15%** · Rd **8%** · T **20%** → WACC **11.42%**.
