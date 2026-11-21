@@ -1,8 +1,19 @@
+
+### 2026-11-22 — Pregnancy Conception Calculator
+- **Summary:** Shipped Pregnancy Conception Calculator on existing catalog slug `pregnancy-conception-calculator` (`PregnancyConceptionCalculator`, catalog `6af46f10a27d8d1d4e9901f7`, pillar `6af451c1a27d8d1d4e98f984`). Screenshot-first: Due Date / LMP / Ultrasound; sample EDD Mar 21 2027; conception = EDD−266; approximate intercourse window conception−5…conception; ACOG CO 700 framing; share URL only. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-680`.
+- **Commits:** `40c373d4` (UI) / engine absorbed into concurrent `b5721c3c` / (reg/Brain this commit).
+- **Example:** EDD **2027-03-21** → conception **2026-06-28** · window **2026-06-23–2026-06-28**.
+- **Verification:** Focused calculation.test.ts ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 # Development Changelog (`CHANGELOG.md`)
 
 > **Convention:** Append entries chronologically after verified tasks. Do not rewrite historical entries.
 
 ---
+
+### 2026-11-22 — Pregnancy Weight Gain: Week by Week Breakdown
+- **Summary:** Shipped week-by-week IOM chart on slug `pregnancy-weight-gain-week-by-week-breakdown` (`PregnancyWeightGainWeekByWeekCalculator`, `6af46f10a27d8d1d4e9901f3`). Reuses shared pregnancy-weight-gain engine; chart/table unit radios; **no FX**; indexable false. TASKS `TOOL-688`.
+- **Commits:** `636d88a1` / `4336d3b9` / (this reg).
+- **Verification:** Focused test ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Meal Calorie Calculator
 - **Summary:** Shipped Meal Calorie Calculator on existing catalog slug `meal-calorie-calculator` (`MealCalorieCalculator`, catalog `6af46f10a27d8d1d4e9901ee`, pillar `6af451c1a27d8d1d4e98f982`, subPillar null). Screenshot-first (ADR-023): 2,000 kcal/day; optional Calculate required calories (Mifflin–St Jeor via maintenance engine); meals Three/Four/Five with center+range allocations; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-693`.
@@ -3588,6 +3599,11 @@
 ### 2026-11-17 — Add VA Mortgage Calculator (Screenshot-First, Fixed USD)
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
+
+### 2026-11-22 — Pregnancy Weight Gain: Week by Week Breakdown
+- **Summary:** Shipped week-by-week IOM chart on slug `pregnancy-weight-gain-week-by-week-breakdown` (`PregnancyWeightGainWeekByWeekCalculator`, `6af46f10a27d8d1d4e9901f3`). Reuses shared pregnancy-weight-gain engine; chart/table unit radios; **no FX**; indexable false. TASKS `TOOL-688`.
+- **Commits:** `636d88a1` / `4336d3b9` / (this reg).
+- **Verification:** Focused test ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Meal Calorie Calculator
 - **Summary:** Shipped Meal Calorie Calculator on existing catalog slug `meal-calorie-calculator` (`MealCalorieCalculator`, catalog `6af46f10a27d8d1d4e9901ee`, pillar `6af451c1a27d8d1d4e98f982`, subPillar null). Screenshot-first (ADR-023): 2,000 kcal/day; optional Calculate required calories (Mifflin–St Jeor via maintenance engine); meals Three/Four/Five with center+range allocations; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-693`.
