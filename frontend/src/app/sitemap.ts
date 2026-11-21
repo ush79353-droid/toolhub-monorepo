@@ -701,6 +701,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'blood-donation-due-date-calculator',
   'blood-pregnancy-test-what-do-hcg-results-mean',
   'boat-loan-calculator',
+  'body-fat-calculator',
   'bond-convexity-calculator',
   'bond-current-yield-calculator',
   'bond-equivalent-yield-calculator',

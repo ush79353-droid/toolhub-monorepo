@@ -4162,6 +4162,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BoatLoanCalculator,
     })),
   ),
+  BodyFatCalculator: lazyTool(() =>
+    import('@/tools/calculators/body-fat/BodyFatCalculator').then((mod) => ({
+      default: mod.BodyFatCalculator,
+    })),
+  ),
   BondCalculator: lazyTool(() =>
     import('@/tools/calculators/bond/BondCalculator').then((mod) => ({
       default: mod.BondCalculator,

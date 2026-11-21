@@ -1100,6 +1100,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/blood-pregnancy-hcg/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
+  BodyFatCalculator: () =>
+    import('@/tools/calculators/body-fat/detail'),
   BondCalculator: () => import('@/tools/calculators/bond/detail'),
   BondConvexityCalculator: () =>
     import('@/tools/calculators/bond-convexity/detail'),
