@@ -51,7 +51,7 @@ export function allFromMeters(meters: number): Record<LengthUnit, number> {
 export function shareResultText(meters: number): string {
   const values = allFromMeters(meters);
   return [
-    'Meter Converter — Omega Calculators',
+    'Meter Converter | Omega Calculators',
     '',
     `${formatLength(meters)} meter equals:`,
     '',

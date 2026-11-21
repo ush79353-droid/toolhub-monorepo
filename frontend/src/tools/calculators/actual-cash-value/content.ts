@@ -30,7 +30,7 @@ export const ACV_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the expected life of an item?',
     answer:
-      'Expected useful life is an assumed service duration used for depreciation. It can vary by item type, quality, maintenance, usage, and valuation assumptions — there is no single universal life for all items.',
+      'Expected useful life is an assumed service duration used for depreciation. It can vary by item type, quality, maintenance, usage, and valuation assumptions; there is no single universal life for all items.',
   },
   {
     question: 'What is depreciation?',

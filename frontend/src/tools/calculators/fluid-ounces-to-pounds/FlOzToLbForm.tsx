@@ -175,7 +175,7 @@ export function FlOzToLbForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Fluid ounces measure volume; pounds measure mass. Density is required — there is no universal
+ Fluid ounces measure volume; pounds measure mass. Density is required; there is no universal
         fl oz → lb factor. Water defaults to ≈ 1000 kg/m³ near 4 °C. Presets are illustrative.
         US fluid ounces are not the same as UK imperial fluid ounces or ounces of mass.
       </div>

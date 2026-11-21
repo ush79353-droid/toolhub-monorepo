@@ -13,7 +13,7 @@ export function MoneySupplyGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Money supply measures the stock of monetary assets available under a
-        chosen statistical definition — from currency and checking balances to
+ chosen statistical definition, from currency and checking balances to
         broader deposit and money-market instruments. This calculator lets you
         assemble educational estimates of currency-only M0, the monetary base
         (MB), M1, M2, optional Money Zero Maturity (MZM), and, when the selected
@@ -24,7 +24,7 @@ export function MoneySupplyGuideArticle() {
         emphasizes M1 and M2, discontinued M3 in 2006, and does not publish a
         standard M4. Choose a definition at the top of the tool, enter
         nonoverlapping components on one magnitude scale, and interpret results
-        as model-based teaching calculations — not official central bank
+ as model-based teaching calculations; not official central bank
         statistics.
       </p>
 
@@ -40,8 +40,8 @@ export function MoneySupplyGuideArticle() {
         transferable deposits, savings-type balances (under some definitions),
         and certain money-market instruments appear in different layers of
         liquidity. Central banks publish official series with detailed manuals;
-        textbooks often use simplified sums for classroom clarity. Liquidity —
-        how quickly an asset converts to spending power at stable value —
+ textbooks often use simplified sums for classroom clarity. Liquidity; 
+ how quickly an asset converts to spending power at stable value; 
         organizes the ladder from M0/MB toward broader Ms.
       </p>
 
@@ -55,8 +55,8 @@ export function MoneySupplyGuideArticle() {
         Inputs include Federal Reserve–style notes and coins (for currency-only
         M0), currency in circulation and central-bank reserve balances (for MB),
         demand deposits, traveler’s checks, other checkable deposits, savings
-        deposits, eligible money market funds, eligible time deposits, and — in
-        textbook/custom modes — large time deposits, institutional money market
+ deposits, eligible money market funds, eligible time deposits, and; in
+ textbook/custom modes; large time deposits, institutional money market
         funds, and other liquid instruments. Keeping components nonoverlapping
         prevents double counting when building M1 and M2.
       </p>
@@ -83,7 +83,7 @@ export function MoneySupplyGuideArticle() {
         The monetary base (MB), often called high-powered money in teaching
         models, is currency in circulation plus reserve balances at the central
         bank. Circulation may differ from notes and coins issued if vault cash
-        or other adjustments matter in a national statistical treatment — enter
+ or other adjustments matter in a national statistical treatment; enter
         circulation explicitly rather than assuming it always equals M0.
       </p>
 
@@ -260,7 +260,7 @@ export function MoneySupplyGuideArticle() {
         deposits sit inside the aggregate. Reserve balances, capital rules,
         liquidity requirements, credit demand, and funding markets constrain how
         far deposit creation can go. The traditional mechanical money-multiplier
-        story — fixed reserve ratio, automatic expansion — is a teaching device
+ story (fixed reserve ratio, automatic expansion) is a teaching device
         with restrictive assumptions, not a complete description of modern
         banking.
       </p>
@@ -347,7 +347,7 @@ export function MoneySupplyGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Under idealized assumptions (no excess reserves, no currency drain,
         unlimited willing borrowers), a lower reserve ratio raises the textbook
-        deposit multiplier. Real systems violate those assumptions frequently —
+ deposit multiplier. Real systems violate those assumptions frequently; 
         treat 1/r as theory, not a forecast of national M2.
       </p>
 
@@ -425,7 +425,7 @@ export function MoneySupplyGuideArticle() {
         innovation blurs lines between money and other claims; deposit
         classifications change; liquidity is continuous rather than discrete;
         double counting can distort homemade sums; and stock aggregates are not
-        spending flows. Use this calculator to learn identities — verify official
+ spending flows. Use this calculator to learn identities; verify official
         releases for research or policy work.
       </p>
 

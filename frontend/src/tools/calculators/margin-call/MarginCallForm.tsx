@@ -244,7 +244,7 @@ export function MarginCallForm({
             <span>Current initial margin per contract</span>
             <InfoTooltip
               label="Initial margin"
-              text="Exchange/broker initial margin required to open one contract. Enter the posted requirement — this tool does not invent margin schedules."
+              text="Exchange/broker initial margin required to open one contract. Enter the posted requirement; this tool does not invent margin schedules."
             />
           </label>
           <div className="flex gap-2">
@@ -379,7 +379,7 @@ export function MarginCallForm({
             <span>Select your futures contract</span>
             <InfoTooltip
               label="Futures contract"
-              text="Presets only set ticks-per-point from contract tick-size semantics. Tick value and margins stay user-entered — no live market prices."
+              text="Presets only set ticks-per-point from contract tick-size semantics. Tick value and margins stay user-entered; no live market prices."
             />
           </label>
           <select
@@ -630,7 +630,7 @@ export function MarginCallForm({
             <p>
               Margin call:{' '}
               <strong className={result.isMarginCall ? 'text-rose-600' : 'text-emerald-700'}>
-                {result.isMarginCall ? 'Yes — equity below maintenance' : 'No'}
+                {result.isMarginCall ? 'Yes: equity below maintenance' : 'No'}
               </strong>
             </p>
           </div>

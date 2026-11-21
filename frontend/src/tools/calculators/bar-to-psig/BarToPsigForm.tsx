@@ -185,7 +185,7 @@ export function BarToPsigForm({
         <FieldShell
           label="Atmospheric pressure"
           htmlFor="bar-psig-atm"
-          tip="Default 1.01325 bar is standard atmosphere — not a local weather reading."
+          tip="Default 1.01325 bar is standard atmosphere; not a local weather reading."
           error={errors.atmosphericBar}
         >
           <div className="flex gap-2">

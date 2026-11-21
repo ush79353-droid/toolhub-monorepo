@@ -4,7 +4,7 @@ import { CustomerEffortScoreGuideArticle } from './CustomerEffortScoreGuideArtic
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate Customer Effort Score (CES) from 1–5 or 1–7 survey response counts using a weighted average — lower scores mean less effort in this calculator.',
+    'Calculate Customer Effort Score (CES) from 1–5 or 1–7 survey response counts using a weighted average; lower scores mean less effort in this calculator.',
   asideAriaLabel: 'Customer Effort Score Calculator guide',
   tocItems: CES_TOC_ITEMS,
   GuideArticle: CustomerEffortScoreGuideArticle,

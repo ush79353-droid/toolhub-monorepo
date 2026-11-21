@@ -48,7 +48,7 @@ export function OptimalHedgeRatioCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Spot std. dev.: ${input.spotStdDev}`,
         `Futures std. dev.: ${input.futuresStdDev}`,
         `Correlation: ${input.correlation}`,

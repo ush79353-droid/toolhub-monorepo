@@ -51,8 +51,8 @@ export const LBS_TO_G_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-convert',
     title: 'How Do You Convert Pounds to Grams?',
     paragraphs: [
-      `Multiply pounds by ${GRAMS_PER_POUND}. Example — convert 3 lb: 3 × ${GRAMS_PER_POUND} = ${formatMass(poundsToGrams(3))}. Therefore 3 lb = ${formatMass(poundsToGrams(3))} g.`,
-      `For the reverse conversion, divide grams by ${GRAMS_PER_POUND}. Example — convert 500 g: 500 ÷ ${GRAMS_PER_POUND} ≈ ${formatMass(gramsToPounds(500))} lb.`,
+      `Multiply pounds by ${GRAMS_PER_POUND}. Example; convert 3 lb: 3 × ${GRAMS_PER_POUND} = ${formatMass(poundsToGrams(3))}. Therefore 3 lb = ${formatMass(poundsToGrams(3))} g.`,
+      `For the reverse conversion, divide grams by ${GRAMS_PER_POUND}. Example; convert 500 g: 500 ÷ ${GRAMS_PER_POUND} ≈ ${formatMass(gramsToPounds(500))} lb.`,
     ],
     formula: `g = lb × ${GRAMS_PER_POUND} · lb = g ÷ ${GRAMS_PER_POUND}`,
   },

@@ -177,7 +177,7 @@ export function TrumpAccountsForm({
       <p className="text-xs text-muted-foreground">
         Estimate how a child&apos;s account could grow from a starting balance,
         annual contributions, and a selected return scenario. Contribution limits
-        depend on current official rules — this tool does not enforce unverified
+ depend on current official rules; this tool does not enforce unverified
         caps.
       </p>
 
@@ -279,7 +279,7 @@ export function TrumpAccountsForm({
           <label htmlFor="ta-annual-contribution">Annual contribution</label>
           <InfoTooltip
             label="Annual contribution"
-            text="Amount you plan to contribute each year (end-of-year). Official contribution limits may apply — verify current rules."
+            text="Amount you plan to contribute each year (end-of-year). Official contribution limits may apply; verify current rules."
             align="left"
           />
         </div>
@@ -304,7 +304,7 @@ export function TrumpAccountsForm({
           </p>
         ) : null}
         <p className="mt-1 text-xs text-muted-foreground">
-          Contribution limits, if any, follow current official account rules —
+ Contribution limits, if any, follow current official account rules; 
           not hardcoded here.
         </p>
       </div>

@@ -61,7 +61,7 @@ export function calculatePoundsToOunces(input: PoundsToOuncesInput): PoundsToOun
 
 export function shareResultText(result: PoundsToOuncesResult): string {
   return [
-    'Pounds to Ounces Converter — Omega Calculators',
+    'Pounds to Ounces Converter | Omega Calculators',
     '',
     `${formatMass(result.pounds)} lb = ${formatMass(result.ounces)} oz`,
     '',

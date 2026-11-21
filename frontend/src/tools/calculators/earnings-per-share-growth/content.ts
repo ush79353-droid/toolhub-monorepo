@@ -34,7 +34,7 @@ export const EPS_GROWTH_FAQS: readonly FAQItem[] = [
   {
     question: 'What does negative EPS growth mean?',
     answer:
-      'When initial EPS is positive, negative growth means final EPS is lower than initial EPS — a decline in earnings per share.',
+      'When initial EPS is positive, negative growth means final EPS is lower than initial EPS: a decline in earnings per share.',
   },
   {
     question: 'Can EPS growth be greater than 100%?',

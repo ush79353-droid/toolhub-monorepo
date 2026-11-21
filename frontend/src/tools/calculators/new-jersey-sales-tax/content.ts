@@ -19,7 +19,7 @@ export const NJ_SALES_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'Why do I need a ZIP code if the rate is statewide?',
     answer:
-      'The ZIP confirms the purchase is associated with a New Jersey location (official ZIP range 07001–08989). It does not invent local surtaxes — New Jersey does not layer general local sales tax on top of the state rate for ordinary taxable sales.',
+      'The ZIP confirms the purchase is associated with a New Jersey location (official ZIP range 07001–08989). It does not invent local surtaxes; New Jersey does not layer general local sales tax on top of the state rate for ordinary taxable sales.',
   },
   {
     question: 'Does this calculator apply Urban Enterprise Zone (UEZ) reduced rates?',

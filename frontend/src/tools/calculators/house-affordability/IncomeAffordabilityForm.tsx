@@ -67,7 +67,7 @@ export function IncomeAffordabilityForm({
       </div>
       <p className="text-xs text-muted-foreground">
         Estimate a maximum house price from household income and debt-to-income
-        assumptions. Results are estimates — not mortgage preapproval.
+ assumptions. Results are estimates; not mortgage preapproval.
       </p>
 
       <div>
@@ -152,7 +152,7 @@ export function IncomeAffordabilityForm({
           <span>Monthly debt payback</span>
           <InfoTooltip
             label="Monthly debt"
-            text="Recurring debts such as auto, student, personal loans, and credit-card minimums — not the new mortgage."
+            text="Recurring debts such as auto, student, personal loans, and credit-card minimums; not the new mortgage."
           />
         </label>
         <FieldShell error={errors.monthlyDebtPayments}>
@@ -234,7 +234,7 @@ export function IncomeAffordabilityForm({
           <span>Debt-to-income (DTI) ratio</span>
           <InfoTooltip
             label="DTI profile"
-            text="Illustrative underwriting assumptions — not a loan qualification decision."
+            text="Illustrative underwriting assumptions; not a loan qualification decision."
           />
         </label>
         <select
@@ -312,7 +312,7 @@ export function IncomeAffordabilityForm({
       ) : null}
       {stale ? (
         <p className="text-xs text-amber-800" role="status">
-          Inputs changed — click Calculate to refresh results.
+ Inputs changed; click Calculate to refresh results.
         </p>
       ) : null}
 

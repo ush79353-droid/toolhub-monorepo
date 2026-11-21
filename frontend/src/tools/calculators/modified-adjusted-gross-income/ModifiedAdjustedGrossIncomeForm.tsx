@@ -173,7 +173,7 @@ const INCOME_FIELDS: {
     key: 'foreignEarnedIncome',
     id: 'magi-foreign-earned',
     label: 'Foreign-earned income',
-    tip: 'Enter only qualifying amounts you are adding back per your intended MAGI definition—not wages already included in AGI.',
+    tip: 'Enter only qualifying amounts you are adding back per your intended MAGI definition, not wages already included in AGI.',
   },
   {
     key: 'foreignHousingCost',
@@ -191,7 +191,7 @@ const INCOME_FIELDS: {
     key: 'selfEmploymentTaxes',
     id: 'magi-se-tax',
     label: 'Self-employment taxes',
-    tip: 'User-entered add-back (e.g. deductible half of SE tax)—not the full SE tax unless that is what you intend to add.',
+    tip: 'User-entered add-back (e.g. deductible half of SE tax); not the full SE tax unless that is what you intend to add.',
   },
   {
     key: 'iraContributions',
@@ -209,7 +209,7 @@ const INCOME_FIELDS: {
     key: 'others',
     id: 'magi-others',
     label: 'Others',
-    tip: 'Documented qualifying adjustments only—not a catch-all for unrelated income.',
+    tip: 'Documented qualifying adjustments only, not a catch-all for unrelated income.',
   },
 ];
 
@@ -229,13 +229,13 @@ const OTHER_FIELDS: {
     key: 'savingsBondInterest',
     id: 'magi-savings-bond',
     label: 'Savings bond interest',
-    tip: 'Tax-exempt savings bond interest add-back when required—avoid double-counting taxable bond interest already in AGI.',
+    tip: 'Tax-exempt savings bond interest add-back when required, avoid double-counting taxable bond interest already in AGI.',
   },
   {
     key: 'studentLoanInterest',
     id: 'magi-student-loan',
     label: 'Student loan interest',
-    tip: 'Typically the deductible student loan interest add-back—not total interest paid if none was deducted.',
+    tip: 'Typically the deductible student loan interest add-back, not total interest paid if none was deducted.',
   },
   {
     key: 'qualifiedTuitionExpenses',
@@ -287,7 +287,7 @@ export function ModifiedAdjustedGrossIncomeForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-amber-200/80 bg-amber-50/80 px-3 py-2 text-xs leading-relaxed text-amber-950">
-        Illustrative simplified MAGI estimate only—not IRA, Roth, ACA, or
+ Illustrative simplified MAGI estimate only, not IRA, Roth, ACA, or
         education program eligibility. Enter qualifying add-backs; avoid
         double-counting amounts already in AGI.
       </p>

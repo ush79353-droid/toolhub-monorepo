@@ -39,7 +39,7 @@ export function EmiGuideArticle() {
         What Does EMI Stand For?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        EMI stands for Equated Monthly Installment — commonly used in personal,
+ EMI stands for Equated Monthly Installment; commonly used in personal,
         vehicle, and housing loan marketing.
       </p>
 
@@ -175,7 +175,7 @@ export function EmiGuideArticle() {
         Can EMI Change During the Loan Term?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Yes — floating rates, restructuring, partial prepayment policies, or missed
+ Yes: floating rates, restructuring, partial prepayment policies, or missed
         payments can change what you owe. Always check your loan agreement.
       </p>
 

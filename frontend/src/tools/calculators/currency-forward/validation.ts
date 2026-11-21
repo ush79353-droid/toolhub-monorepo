@@ -217,7 +217,7 @@ export function validateCurrencyForwardInput(
       base,
       quote
     ),
-    explanation: `Theoretical ${pairLabel} forward is ${formatFxRate(math.forwardRate)} ${quote} per ${base} under covered interest parity (${compounding}, Actual/${basis}). Not an executable dealer quote — basis, spreads, and funding can differ.`,
+    explanation: `Theoretical ${pairLabel} forward is ${formatFxRate(math.forwardRate)} ${quote} per ${base} under covered interest parity (${compounding}, Actual/${basis}). Not an executable dealer quote; basis, spreads, and funding can differ.`,
     quoteConventionNote: QUOTE_CONVENTION_NOTE,
     formulaBreakdown: [
       `T = ${days.value}/${basis} ≈ ${formatFxRate(math.yearFraction, 6)}`,

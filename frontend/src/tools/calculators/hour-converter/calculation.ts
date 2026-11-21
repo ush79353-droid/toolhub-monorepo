@@ -140,7 +140,7 @@ export function calculateHour(input: HourInput): HourResult {
 
 export function shareResultText(result: HourResult): string {
   return [
-    'Hour Converter — Omega Calculators',
+    'Hour Converter | Omega Calculators',
     '',
     `${formatDuration(result.hours)} hours = ${formatDuration(result.minutes)} minutes`,
     `${formatDuration(result.hours)} hours = ${formatDuration(result.seconds)} seconds`,

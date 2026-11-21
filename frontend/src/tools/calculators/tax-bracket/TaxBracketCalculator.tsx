@@ -66,7 +66,7 @@ export function TaxBracketCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Tax year: ${result.taxYear}`,
         `Filing status: ${FILING_STATUS_LABELS[result.filingStatus]}`,
         `Income entered: $${result.formattedIncomeEntered}`,
@@ -74,9 +74,9 @@ export function TaxBracketCalculator({
         `Taxable income used: $${result.formattedTaxableIncome}`,
         `Estimated federal tax: $${result.formattedEstimatedTax}`,
         `Marginal rate: ${result.formattedMarginalRate}%`,
-        `Effective rate: ${result.formattedEffectiveRate === '—' ? '—' : `${result.formattedEffectiveRate}%`}`,
+        `Effective rate: ${result.formattedEffectiveRate === '; ' ? '; ':`${result.formattedEffectiveRate}%`}`,
         result.sourceNote,
-        'Educational estimate only — not a complete Form 1040.',
+        'Educational estimate only; not a complete Form 1040.',
       ].join('\n')
     : '';
 

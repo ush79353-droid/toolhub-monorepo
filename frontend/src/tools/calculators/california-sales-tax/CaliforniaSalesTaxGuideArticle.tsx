@@ -13,7 +13,7 @@ export function CaliforniaSalesTaxGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         California sales and use tax combines the statewide base with district
         (county, city, and special district) add-ons. The correct combined rate
-        depends on the exact sale or delivery location—not a single statewide
+ depends on the exact sale or delivery location, not a single statewide
         number and not ZIP alone.
       </p>
 
@@ -29,7 +29,7 @@ export function CaliforniaSalesTaxGuideArticle() {
         <li>Enter the city.</li>
         <li>Enter the five-digit California ZIP code.</li>
         <li>
-          Review the estimated combined rate, tax, and total — or the unavailable
+ Review the estimated combined rate, tax, and total, or the unavailable
           notice when CDTFA cannot resolve a single jurisdiction.
         </li>
       </ol>

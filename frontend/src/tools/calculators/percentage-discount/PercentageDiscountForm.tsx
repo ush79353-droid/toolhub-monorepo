@@ -233,7 +233,7 @@ export function PercentageDiscountForm({
                 })
               }
             >
-              Example 1 — new dress with 20% discount
+ Example 1: new dress with 20% discount
             </button>
           </li>
           <li>
@@ -249,7 +249,7 @@ export function PercentageDiscountForm({
                 })
               }
             >
-              Example 2 — new bed with 15% discount
+ Example 2: new bed with 15% discount
             </button>
           </li>
         </ul>

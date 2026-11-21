@@ -235,7 +235,7 @@ export function AnnualIncomeForm({
               <p className="mt-1 text-xs text-rose-600">{errors.taxPercent}</p>
             ) : (
               <p className="mt-1 text-xs text-muted-foreground">
-                Flat-rate estimate only — not jurisdiction-specific payroll tax.
+ Flat-rate estimate only; not jurisdiction-specific payroll tax.
               </p>
             )}
           </div>

@@ -107,7 +107,7 @@ export function ContinuousCompoundInterestCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial balance: ${input.initialBalance} ${input.currency}`,
         `Interest rate: ${input.interestRate}%`,
         `Term: ${input.termYears || '0'} yrs, ${input.termMonths || '0'} mos`,

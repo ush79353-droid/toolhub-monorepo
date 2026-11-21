@@ -84,7 +84,7 @@ export function calculateLength(input: LengthInput): LengthResult {
 }
 
 export function shareResultText(area: AreaResult | null, length: LengthResult | null): string {
-  const lines = ['Gaj to Square Yard Converter — Omega Calculators', ''];
+  const lines = ['Gaj to Square Yard Converter | Omega Calculators', ''];
   if (area) {
     lines.push(
       `${formatMeasure(area.gaj)} gaj = ${formatMeasure(area.squareYards)} yd²`,

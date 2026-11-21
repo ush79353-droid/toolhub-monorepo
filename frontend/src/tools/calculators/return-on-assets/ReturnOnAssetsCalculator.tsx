@@ -109,7 +109,7 @@ export function ReturnOnAssetsCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Net Income: ${money(input.netIncome)}`,
         input.useAverageAssets

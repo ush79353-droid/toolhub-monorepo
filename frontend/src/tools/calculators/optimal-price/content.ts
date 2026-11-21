@@ -38,7 +38,7 @@ export const OPTIMAL_PRICE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the optimal price?',
     answer:
-      'The selling price that maximizes estimated profit under a stated demand and cost model — here, constant elasticity with constant marginal cost.',
+      'The selling price that maximizes estimated profit under a stated demand and cost model; here, constant elasticity with constant marginal cost.',
   },
   {
     question: 'How do I calculate the optimal price?',
@@ -72,7 +72,7 @@ export const OPTIMAL_PRICE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is price elasticity of demand?',
     answer:
-      'The responsiveness of quantity demanded to price changes — typically negative for ordinary goods.',
+      'The responsiveness of quantity demanded to price changes; typically negative for ordinary goods.',
   },
   {
     question: 'How do I calculate price elasticity?',
@@ -86,15 +86,15 @@ export const OPTIMAL_PRICE_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'What does elastic demand mean?',
-    answer: '|ε| > 1 — quantity changes proportionally more than price.',
+    answer: '|ε| > 1; quantity changes proportionally more than price.',
   },
   {
     question: 'What does inelastic demand mean?',
-    answer: '0 < |ε| < 1 — quantity changes proportionally less than price.',
+    answer: '0 < |ε| < 1; quantity changes proportionally less than price.',
   },
   {
     question: 'What is unit elastic demand?',
-    answer: '|ε| = 1 — percentage quantity and price changes match in magnitude.',
+    answer: '|ε| = 1; percentage quantity and price changes match in magnitude.',
   },
   {
     question: 'Can price elasticity be positive?',
@@ -144,7 +144,7 @@ export const OPTIMAL_PRICE_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Does a higher price always increase profit?',
-    answer: 'No — higher prices can cut quantity enough to reduce profit.',
+    answer: 'No: higher prices can cut quantity enough to reduce profit.',
   },
   {
     question: 'Does a lower price always increase sales?',
@@ -153,7 +153,7 @@ export const OPTIMAL_PRICE_FAQS: readonly FAQItem[] = [
   {
     question: 'Can the optimal price be lower than marginal cost?',
     answer:
-      'Not under the standard positive-MC interior monopoly markup with ε < −1 — P* exceeds MC.',
+      'Not under the standard positive-MC interior monopoly markup with ε < −1; P* exceeds MC.',
   },
   {
     question: 'What happens when elasticity equals -1?',
@@ -186,7 +186,7 @@ export const OPTIMAL_PRICE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the best pricing strategy for a small business?',
     answer:
-      'No universal answer — test demand, track costs, and consider capacity and competition beyond this estimate.',
+      'No universal answer; test demand, track costs, and consider capacity and competition beyond this estimate.',
   },
   {
     question: 'How can a retailer optimize product pricing?',
@@ -196,7 +196,7 @@ export const OPTIMAL_PRICE_FAQS: readonly FAQItem[] = [
   {
     question: 'How can businesses estimate customer demand?',
     answer:
-      'Price tests, historical sales, surveys, and market data — two points alone may not identify a causal curve.',
+      'Price tests, historical sales, surveys, and market data; two points alone may not identify a causal curve.',
   },
   {
     question: 'How accurate is an optimal price calculator?',
@@ -221,7 +221,7 @@ export const OPTIMAL_PRICE_FAQS: readonly FAQItem[] = [
   {
     question: 'Can optimal pricing increase profitability?',
     answer:
-      'Moving toward a better price–quantity trade-off can raise contribution — results depend on real demand and costs.',
+      'Moving toward a better price–quantity trade-off can raise contribution. Results depend on real demand and costs.',
   },
   {
     question: 'What is the optimal price if marginal cost is $40 and elasticity is -2?',
@@ -239,6 +239,6 @@ export const OPTIMAL_PRICE_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when price elasticity equals -1?',
     answer:
-      'No finite positive interior optimum under constant elasticity with positive MC — do not display Infinity.',
+      'No finite positive interior optimum under constant elasticity with positive MC; do not display Infinity.',
   },
 ];

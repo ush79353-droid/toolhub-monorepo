@@ -107,7 +107,7 @@ export function CustomerAcquisitionCostCalculator({
 
   const shareText = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Cost of marketing: ${result.costOfMarketing}`,
         `Cost of sales: ${result.costOfSales}`,
         `New customers: ${result.newCustomers}`,

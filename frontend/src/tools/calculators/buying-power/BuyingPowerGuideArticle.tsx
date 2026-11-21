@@ -36,8 +36,8 @@ export function BuyingPowerGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         When consumer prices rise (inflation), each dollar usually stretches less
         far. When prices fall (deflation), each dollar can stretch further. The
-        nominal face value printed on a bill does not change; the real value —
-        purchasing power — does. Equal nominal amounts in two years therefore need
+ nominal face value printed on a bill does not change; the real value; 
+ purchasing power; does. Equal nominal amounts in two years therefore need
         not represent equal living standards. CPI summarizes a broad statistical
         basket; it is not every household&apos;s exact shopping list.
       </p>
@@ -85,7 +85,7 @@ export function BuyingPowerGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The following uses an <strong>illustrative</strong> CPI pair for teaching
-        only — not verified official BLS values for those years.
+ only; not verified official BLS values for those years.
       </p>
       <div className="my-4 space-y-2 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         <p>Amount $1,000 · Reference CPI 220 · Target CPI 260</p>
@@ -172,8 +172,8 @@ export function BuyingPowerGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Inflation interacts with monetary policy, interest rates, wage growth,
         household budgets, and retirement planning. CPI alone does not explain
-        every economic outcome — productivity, asset prices, and fiscal policy
-        also matter — but price-level comparisons remain a core tool for
+ every economic outcome; productivity, asset prices, and fiscal policy
+ also matter, but price-level comparisons remain a core tool for
         long-horizon financial questions.
       </p>
 
@@ -243,7 +243,7 @@ export function BuyingPowerGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Use CPI-based comparisons for historical salaries and prices, wage-growth
         evaluation, savings and retirement discussions, and educational
-        illustrations of long-term inflation — always with the caveat that the
+ illustrations of long-term inflation; always with the caveat that the
         index is a general measure.
       </p>
 

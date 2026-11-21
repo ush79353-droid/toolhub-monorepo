@@ -171,7 +171,7 @@ export function HourlyWageCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Hourly: ${input.hourlyWage} ${input.hourlyWageCurrency}`,
         `Hours/week: ${input.hoursPerWeek}`,
         `Weekly: ${weeklySymbol}${result.formattedWeekly} ${result.weeklyCurrency}`,

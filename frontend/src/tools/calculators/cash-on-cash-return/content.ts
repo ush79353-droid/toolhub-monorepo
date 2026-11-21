@@ -39,7 +39,7 @@ export const CASH_ON_CASH_FAQS: readonly FAQItem[] = [
   {
     question: 'Can cash-on-cash return be negative?',
     answer:
-      'Yes. If annual cash flow is negative and cash invested is positive, the return is negative — meaning the property is consuming cash after debt service.',
+      'Yes. If annual cash flow is negative and cash invested is positive, the return is negative; meaning the property is consuming cash after debt service.',
   },
   {
     question: 'Does cash-on-cash return include property appreciation?',

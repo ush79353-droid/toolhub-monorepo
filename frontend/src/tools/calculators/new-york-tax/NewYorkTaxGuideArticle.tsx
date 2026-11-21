@@ -13,7 +13,7 @@ export function NewYorkTaxGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This tool estimates federal ordinary income tax, New York State personal
         income tax, and New York City resident income tax from adjusted gross income
-        (AGI). It is an educational estimate—not a substitute for Form 1040, Form
+ (AGI). It is an educational estimate, not a substitute for Form 1040, Form
         IT-201, or NYC Form IT-360.
       </p>
 

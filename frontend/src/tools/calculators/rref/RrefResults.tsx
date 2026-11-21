@@ -187,7 +187,7 @@ export function RrefResults({ result, copied, onCopy }: RrefResultsProps) {
       <div className="flex items-start gap-2 rounded-xl border border-border bg-background/70 px-3.5 py-2.5 text-xs font-normal leading-relaxed text-muted-foreground">
         <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" aria-hidden="true" />
         <p>
-          Pivot columns are highlighted in teal. Calculations use exact fractions — intermediate
+ Pivot columns are highlighted in teal. Calculations use exact fractions; intermediate
           values are not rounded for display convenience.
         </p>
       </div>

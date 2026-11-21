@@ -14,7 +14,7 @@ export function CltvGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This CLTV Calculator estimates how much revenue an average customer may
         generate over their relationship with your business. Enter average
-        purchase value, annual purchase frequency, and lifespan—or derive APV
+ purchase value, annual purchase frequency, and lifespan, or derive APV
         and frequency from total revenue, purchases, and customer counts for a
         reporting period. Optional controls apply gross margin, compare CLTV
         with customer acquisition cost (CAC), estimate lifespan from churn, and
@@ -100,7 +100,7 @@ export function CltvGuideArticle() {
         What Is Average Customer Value?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        ACV = APV × annual APF — estimated annual revenue per customer before
+ ACV = APV × annual APF; estimated annual revenue per customer before
         lifespan scaling. It is not lifetime value until multiplied by L.
       </p>
 
@@ -149,7 +149,7 @@ export function CltvGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Targets vary by industry, margins, growth stage, and capital structure. A
-        frequently cited 3:1 heuristic is not a universal health guarantee—
+ frequently cited 3:1 heuristic is not a universal health guarantee; 
         evaluate your unit economics directly.
       </p>
 
@@ -214,7 +214,7 @@ export function CltvGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Use CLTV to set acquisition bid ceilings, prioritize retention projects,
-        compare channel quality, and stress-test pricing changes—always with
+ compare channel quality, and stress-test pricing changes, always with
         documented assumptions and segment checks.
       </p>
 

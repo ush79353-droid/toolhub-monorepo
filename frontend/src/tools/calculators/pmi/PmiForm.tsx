@@ -113,7 +113,7 @@ export function PmiForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. US-style PMI
+ changes the symbol only; it does not convert values. US-style PMI
           rules are illustrative; they are not tied to the selected currency.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
@@ -302,7 +302,7 @@ export function PmiForm({
             <span>Annual rate</span>
             <InfoTooltip
               label="Annual PMI rate"
-              text="Assumed annual PMI premium percentage applied to the mortgage amount. Actual pricing depends on coverage, LTV, credit, loan structure, and insurer or lender requirements — not a quote."
+              text="Assumed annual PMI premium percentage applied to the mortgage amount. Actual pricing depends on coverage, LTV, credit, loan structure, and insurer or lender requirements; not a quote."
             />
           </label>
           <FieldShell error={errors.annualPmiRate}>

@@ -78,7 +78,7 @@ export function CashOnCashReturnCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.formattedCashOnCashReturn !== null
           ? `Cash-on-cash return: ${result.formattedCashOnCashReturn}%`
           : null,
@@ -86,7 +86,7 @@ export function CashOnCashReturnCalculator({
         `Annual debt service: ${symbol}${result.formattedAnnualDebtService} ${result.currency}`,
         `Annual cash flow: ${symbol}${result.formattedAnnualCashFlow} ${result.currency}`,
         'Formula: CoC = (Annual Cash Flow / Total Cash Investment) × 100',
-        'Simplified pre-tax cash yield — excludes appreciation, taxes, and sale proceeds.',
+        'Simplified pre-tax cash yield; excludes appreciation, taxes, and sale proceeds.',
       ]
         .filter(Boolean)
         .join('\n')

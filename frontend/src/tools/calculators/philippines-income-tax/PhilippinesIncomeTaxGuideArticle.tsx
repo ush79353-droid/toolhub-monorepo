@@ -14,7 +14,7 @@ export function PhilippinesIncomeTaxGuideArticle() {
         Income Tax Philippines Calculator estimates monthly mandatory contributions and income tax
         for private-sector employed or self-employed individuals in Philippine pesos. Enter monthly
         income, then read SSS, PhilHealth, Pag-IBIG, taxable income, tax, and net pay. It is an
-        illustrative payroll/self-employed sketch — not a BIR filing, payslip, or official agency
+ illustrative payroll/self-employed sketch; not a BIR filing, payslip, or official agency
         computation.
       </p>
 
@@ -54,7 +54,7 @@ export function PhilippinesIncomeTaxGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Employed mode deducts only employee shares and applies payroll withholding. Self-employed
         mode uses member-paid SSS (15% of MSC), full PhilHealth premium, and Pag-IBIG employee plus
-        employer counterparts, with estimated graduated tax — never silent employee withholding
+ employer counterparts, with estimated graduated tax; never silent employee withholding
         rules.
       </p>
 

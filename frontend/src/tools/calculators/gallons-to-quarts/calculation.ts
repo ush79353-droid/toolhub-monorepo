@@ -76,7 +76,7 @@ export function calculateGalToQuarts(input: GalToQuartsInput): GalToQuartsResult
 
 export function shareResultText(result: GalToQuartsResult): string {
   return [
-    'Gallons to Quarts Converter — Omega Calculators',
+    'Gallons to Quarts Converter | Omega Calculators',
     '',
     `${formatVolume(result.gallons)} ${GALLON_UNIT_LABEL[result.gallonUnit]} = ${formatVolume(result.quarts)} ${QUART_UNIT_LABEL[result.quartUnit]}`,
     '',

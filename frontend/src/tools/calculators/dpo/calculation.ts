@@ -97,7 +97,7 @@ export function interpretDpo(
     return 'Days payable outstanding could not be determined from the inputs.';
   }
   if (averageAp === 0 && purchases > 0) {
-    return `DPO is ${formatDays(dpo)} days because average accounts payable is zero with positive purchases. That may reflect immediate payment, reporting timing, or other accounting circumstances — not automatically ideal payables management.`;
+    return `DPO is ${formatDays(dpo)} days because average accounts payable is zero with positive purchases. That may reflect immediate payment, reporting timing, or other accounting circumstances; not automatically ideal payables management.`;
   }
   if (dpo < 30) {
     return `A DPO of about ${formatDays(dpo)} days means payables are settled relatively quickly versus purchases in this period. Faster payment can support supplier relationships and discounts, but also increases near-term cash outflows. Agreed credit terms matter more than any universal “good” number.`;

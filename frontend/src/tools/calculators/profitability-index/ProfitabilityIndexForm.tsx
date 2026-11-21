@@ -154,7 +154,7 @@ export function ProfitabilityIndexForm({
           Calculate PI if the PV of future cash flow is unknown
           {input.pvUnknown ? (
             <span className="mt-1 block text-xs font-normal text-muted-foreground">
-              Enter your best estimate of PV above. This simple calculator uses PI = PV ÷ investment —
+ Enter your best estimate of PV above. This simple calculator uses PI = PV ÷ investment; 
               no extra cash-flow schedule.
             </span>
           ) : null}

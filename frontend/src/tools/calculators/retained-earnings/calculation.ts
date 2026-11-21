@@ -106,7 +106,7 @@ export function interpretRetainedEarnings(
     );
   }
   parts.push(
-    'This is the period contribution to retained earnings — not the cumulative balance-sheet RE without beginning RE. It is not EPS or cash on hand.'
+    'This is the period contribution to retained earnings; not the cumulative balance-sheet RE without beginning RE. It is not EPS or cash on hand.'
   );
   return parts.join(' ');
 }

@@ -131,7 +131,7 @@ export function LumpsumCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Lumpsum Inputs — future value, capital, rate, or term.
+ Lumpsum Inputs; future value, capital, rate, or term.
           </p>
         </div>
         {headerActions ? (

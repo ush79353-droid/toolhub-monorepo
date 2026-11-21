@@ -124,7 +124,7 @@ export function LaborCostCalculator({
   const summary =
     result && result.annualPayrollLaborCost !== null
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Gross hours/year: ${result.grossHoursPerYearDisplay}`,
           `Gross pay: ${symbol}${result.grossPayDisplay}`,
           `Net hours worked: ${result.netHoursWorkedDisplay}`,

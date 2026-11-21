@@ -466,7 +466,7 @@ export function FireForm({
           </div>
           {result && result.requiredSavingsRatePercent > 100 ? (
             <p className="mt-1 text-xs text-rose-600">
-              Required savings exceed 100% of income — this target may not be achievable with the
+ Required savings exceed 100% of income; this target may not be achievable with the
               current assumptions.
             </p>
           ) : null}

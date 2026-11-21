@@ -15,7 +15,7 @@ export function PortfolioBetaGuideArticle() {
         movements in a market benchmark. Individual stock betas measure that
         sensitivity for each holding; portfolio weights determine how much each
         beta counts. Diversification can blend betas, but beta captures
-        systematic market sensitivity — not total investment risk, idiosyncratic
+ systematic market sensitivity; not total investment risk, idiosyncratic
         volatility, or guaranteed future returns.
       </p>
 
@@ -58,11 +58,11 @@ export function PortfolioBetaGuideArticle() {
         How to Interpret Portfolio Beta
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <li>β &gt; 1 — higher estimated market sensitivity than the benchmark.</li>
-        <li>β ≈ 1 — similar estimated sensitivity to the benchmark.</li>
-        <li>0 &lt; β &lt; 1 — lower estimated sensitivity.</li>
-        <li>β ≈ 0 — little estimated linear co-movement with the benchmark.</li>
-        <li>β &lt; 0 — historically inverse estimated relationship.</li>
+        <li>β &gt; 1; higher estimated market sensitivity than the benchmark.</li>
+        <li>β ≈ 1; similar estimated sensitivity to the benchmark.</li>
+        <li>0 &lt; β &lt; 1; lower estimated sensitivity.</li>
+        <li>β ≈ 0; little estimated linear co-movement with the benchmark.</li>
+        <li>β &lt; 0; historically inverse estimated relationship.</li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         These interpretations are model-based heuristics, not guarantees of
@@ -91,7 +91,7 @@ export function PortfolioBetaGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Approaches can include raising weights of lower-beta assets, reducing
         high-beta concentrations, rebalancing, reviewing the benchmark, and
-        considering more defensive holdings. This is educational context — not
+ considering more defensive holdings. This is educational context; not
         personalized investment advice.
       </p>
 

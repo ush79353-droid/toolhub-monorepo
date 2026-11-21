@@ -13,7 +13,7 @@ export const CALIFORNIA_OVERTIME_FAQS: readonly FAQItem[] = [
   {
     question: 'Does this enforce California daily overtime or double-time rules?',
     answer:
-      'No. The screenshot inputs are a regular rate, weekly hours, a multiplier (default 1.5×), and overtime hours. California can also require daily overtime, double time, and seventh-day premiums. Without a daily schedule, this tool cannot determine statutory eligibility or compliance — use it as a pay estimate only.',
+      'No. The screenshot inputs are a regular rate, weekly hours, a multiplier (default 1.5×), and overtime hours. California can also require daily overtime, double time, and seventh-day premiums. Without a daily schedule, this tool cannot determine statutory eligibility or compliance. Use it as a pay estimate only.',
   },
   {
     question: 'How is monthly regular pay calculated?',

@@ -186,7 +186,7 @@ export function AdditionalFundsNeededForm({
       <MoneyRow
         id="afn-retained"
         label="Change in retained earnings"
-        tip="Addition to retained earnings for the period — profit kept in the business after dividends. This is internal equity financing."
+        tip="Addition to retained earnings for the period; profit kept in the business after dividends. This is internal equity financing."
         value={draft.changeInRetainedEarnings}
         error={errors.changeInRetainedEarnings}
         symbol={symbol}

@@ -4,7 +4,7 @@ import { MM_TO_KM_FAQS, MM_TO_KM_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert millimeters to kilometers and kilometers to millimeters — 1 km = 1,000,000 mm exactly.',
+    'Convert millimeters to kilometers and kilometers to millimeters; 1 km = 1,000,000 mm exactly.',
   asideAriaLabel: 'Interactive millimeters to kilometers converter',
   tocItems: MM_TO_KM_TOC_ITEMS,
   GuideArticle: MmToKmGuideArticle,

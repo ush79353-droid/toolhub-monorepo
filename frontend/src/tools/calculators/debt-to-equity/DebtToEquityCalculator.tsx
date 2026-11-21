@@ -85,7 +85,7 @@ export function DebtToEquityCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total liabilities (D): ${getCurrencySymbol(input.totalLiabilitiesCurrency)}${input.totalLiabilities}`,
         `Stockholders' equity (E): ${getCurrencySymbol(input.stockholdersEquityCurrency)}${input.stockholdersEquity}`,
         `Debt to equity ratio (D/E): ${result.formattedRatio}`,

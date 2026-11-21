@@ -63,7 +63,7 @@ export function OkunsLawForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
-        Empirical Okun relationships — not a universal law. Output-gap mode uses
+ Empirical Okun relationships; not a universal law. Output-gap mode uses
         positive β in OutputGap = −β(u−u*). Growth modes use positive α in Δu =
         −α(g−g*). Do not mix coefficients across formulations.
       </p>

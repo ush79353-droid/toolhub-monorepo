@@ -52,7 +52,7 @@ export const GRAMS_TO_FL_OZ_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'converting-by-hand',
     title: 'Converting From Grams to fl oz by Hand',
     paragraphs: [
-      'Grams measure mass. Fluid ounces measure volume. You need the substance density before converting — and you must choose US or imperial (UK) fluid ounces, because the two units are not the same size.',
+      'Grams measure mass. Fluid ounces measure volume. You need the substance density before converting, and you must choose US or imperial (UK) fluid ounces, because the two units are not the same size.',
       'Steps: (1) identify the substance, (2) determine density in g/mL, (3) divide mass in grams by density to get milliliters, (4) divide by 29.5735295625 for US fluid ounces, or by 28.4130625 for imperial fluid ounces.',
       `Example: 100 grams of water at ≈ 1 g/mL. Volume = 100 mL. US fl oz = 100 ÷ ${US_FL_OZ_IN_ML} ≈ ${formatMeasure(Number(water100Us.toFixed(4)))}. UK fl oz = 100 ÷ ${UK_FL_OZ_IN_ML} ≈ ${formatMeasure(Number(water100Uk.toFixed(4)))}.`,
       `Honey is denser. At 1.42 g/mL, 100 g ≈ ${formatMeasure(Number(honey100Us.toFixed(4)))} US fl oz.`,
@@ -85,7 +85,7 @@ export const GRAMS_TO_FL_OZ_GUIDE_SECTIONS: readonly GuideSection[] = [
       '1. Select a substance from the dropdown (Water is the default).',
       '2. Check or edit the suggested density; choose Custom density when needed.',
       '3. Enter a mass in grams (or another mass unit).',
-      '4. Read the calculated volume — default unit is US fluid ounces.',
+      '4. Read the calculated volume. default unit is US fluid ounces.',
       '5. Switch the volume unit to UK fl oz (or other volume units) when needed; physical volume is preserved.',
       '6. Or enter volume to calculate mass instead.',
       '7. Do not confuse mass ounces (oz) with fluid ounces (volume).',

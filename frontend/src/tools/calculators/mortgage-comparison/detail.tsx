@@ -4,7 +4,7 @@ import { MORTGAGE_COMPARISON_FAQS, MORTGAGE_COMPARISON_TOC_ITEMS } from './conte
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate a mortgage payment, interest, PMI, and total cost with independent FX on money fields — then compare constructions by changing inputs.',
+    'Estimate a mortgage payment, interest, PMI, and total cost with independent FX on money fields, then compare constructions by changing inputs.',
   asideAriaLabel: 'Interactive Mortgage Comparison Calculator',
   tocItems: MORTGAGE_COMPARISON_TOC_ITEMS,
   GuideArticle: MortgageComparisonGuideArticle,

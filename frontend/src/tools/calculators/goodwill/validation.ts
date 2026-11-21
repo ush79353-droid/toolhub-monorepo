@@ -113,11 +113,11 @@ export function validateGoodwillInput(input: GoodwillInput): GoodwillValidation 
   if (residual < 0) {
     status = 'potentialBargainPurchase';
     warningMessage =
-      'Negative residual indicates a potential bargain purchase. Reassess fair values and consideration before recognizing any bargain purchase gain — this calculator does not record income.';
+      'Negative residual indicates a potential bargain purchase. Reassess fair values and consideration before recognizing any bargain purchase gain; this calculator does not record income.';
   } else if (residual === 0) {
     status = 'zeroGoodwill';
     warningMessage =
-      'Zero residual — consideration equals identifiable net assets under this simplified model.';
+      'Zero residual; consideration equals identifiable net assets under this simplified model.';
   } else if (
     purchase.value === 0 &&
     assets.value === 0 &&

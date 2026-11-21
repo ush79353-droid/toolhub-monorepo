@@ -15,7 +15,7 @@ export function ReturnOnAssetsGuideArticle() {
         Return on assets measures how efficiently a company converts its asset
         base into net income. Investors and analysts use ROA to gauge asset
         utilization and managerial efficiency, always in industry context. ROA
-        is a profitability ratio based on accounting earnings — not a direct
+ is a profitability ratio based on accounting earnings; not a direct
         cash-flow measure.
       </p>
 
@@ -77,11 +77,11 @@ export function ReturnOnAssetsGuideArticle() {
         How to Interpret ROA
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <li>Positive ROA — net income relative to assets is positive.</li>
-        <li>Zero ROA — no net profit relative to the asset base.</li>
-        <li>Negative ROA — a net loss relative to assets.</li>
+        <li>Positive ROA; net income relative to assets is positive.</li>
+        <li>Zero ROA; no net profit relative to the asset base.</li>
+        <li>Negative ROA: a net loss relative to assets.</li>
         <li>
-          Unusually high ROA — verify industry norms and accounting drivers
+ Unusually high ROA; verify industry norms and accounting drivers
           (margins, asset base, one-time items).
         </li>
       </ul>

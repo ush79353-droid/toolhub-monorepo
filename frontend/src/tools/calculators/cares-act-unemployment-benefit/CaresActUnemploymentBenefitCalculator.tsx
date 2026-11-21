@@ -67,7 +67,7 @@ export function CaresActUnemploymentBenefitCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Historical CARES Act notice — not a current benefit estimator.
+ Historical CARES Act notice; not a current benefit estimator.
           </p>
         </div>
         {headerActions ? (

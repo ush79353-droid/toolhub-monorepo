@@ -43,7 +43,7 @@ export const MBPS_CALC_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-are-units',
     title: 'What Are Mbps and MBps?',
     paragraphs: [
-      'Both units measure data transfer rate—how much information moves each second—not how much data is stored on a disk.',
+      'Both units measure data transfer rate, how much information moves each second, not how much data is stored on a disk.',
     ],
     subsections: [
       {

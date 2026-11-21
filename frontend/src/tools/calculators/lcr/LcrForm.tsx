@@ -59,7 +59,7 @@ export function LcrForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         LCR = HQLA ÷ Expected 30-day net cash outflows × 100. Educational
-        estimate only — not a regulatory compliance determination. Fixed USD
+ estimate only; not a regulatory compliance determination. Fixed USD
         formatting.
       </p>
 

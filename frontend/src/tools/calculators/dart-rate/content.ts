@@ -25,7 +25,7 @@ export const DART_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good DART rate?',
     answer:
-      'A lower rate generally means fewer qualifying cases relative to hours worked. There is no universal “good” number — compare with your own history and relevant industry-specific statistics using consistent definitions and periods.',
+      'A lower rate generally means fewer qualifying cases relative to hours worked. There is no universal “good” number. Compare with your own history and relevant industry-specific statistics using consistent definitions and periods.',
   },
   {
     question: 'Is DART rate a percentage?',

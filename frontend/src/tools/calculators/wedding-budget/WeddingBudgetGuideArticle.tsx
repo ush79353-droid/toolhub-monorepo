@@ -11,8 +11,8 @@ export function WeddingBudgetGuideArticle() {
         What Is a Wedding Budget?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        A wedding budget tracks your planned spend against category expenses — attire,
-        subcontractors, venue and catering, ceremony, transport, and any custom costs — then
+ A wedding budget tracks your planned spend against category expenses: attire,
+ subcontractors, venue and catering, ceremony, transport, and any custom costs; then
         shows cost per guest and how much of the planned budget remains.
       </p>
 

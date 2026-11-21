@@ -130,7 +130,7 @@ export function shareResultText(result: GrToMlResult): string {
   const densityLabel =
     DENSITY_UNIT_OPTIONS.find((o) => o.value === result.densityUnit)?.label ?? result.densityUnit;
   return [
-    'gr to ml Converter — Omega Calculators',
+    'gr to ml Converter | Omega Calculators',
     '',
     `Substance: ${result.substanceName}`,
     `Density: ${formatMeasure(result.densityValue)} ${densityLabel}${result.densityApproximate ? ' (approximate)' : ''}`,

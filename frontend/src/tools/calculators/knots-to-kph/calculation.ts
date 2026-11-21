@@ -40,7 +40,7 @@ export function allFromKnotsField(
 
 export function shareResultText(amounts: Record<KnotsKphField, number>): string {
   const lines = [
-    'Knots to kph Converter — Omega Calculators',
+    'Knots to kph Converter | Omega Calculators',
     '',
     `${formatSpeed(amounts.knot)} kn = ${formatSpeed(amounts.kmh)} km/h`,
   ];

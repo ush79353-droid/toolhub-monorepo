@@ -24,7 +24,7 @@ export const DAYS_TO_MONTHS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-convert',
     title: 'How to Convert Days to Months',
     paragraphs: [
-      'Calendar months are not fixed lengths — February has 28 or 29 days, and other months have 30 or 31. For duration planning this calculator uses the average Gregorian month: 365.2425 ÷ 12 = 30.436875 days.',
+      'Calendar months are not fixed lengths; February has 28 or 29 days, and other months have 30 or 31. For duration planning this calculator uses the average Gregorian month: 365.2425 ÷ 12 = 30.436875 days.',
       `Formula: Months = Days ÷ ${DAYS_PER_MONTH}.`,
       `Example: 90 ÷ ${DAYS_PER_MONTH} ≈ ${formatDuration(daysToMonths(90))}. Therefore 90 days ≈ 2.96 average months. Ninety days do not always span the same number of named calendar months.`,
     ],
@@ -54,7 +54,7 @@ export const DAYS_TO_MONTHS_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'How Many Days Are in a Month?',
-    answer: `Named months contain 28, 29, 30, or 31 days (February has 29 in a leap year). This converter uses an average month of ${DAYS_PER_MONTH} days — not the length of a particular calendar month.`,
+    answer: `Named months contain 28, 29, 30, or 31 days (February has 29 in a leap year). This converter uses an average month of ${DAYS_PER_MONTH} days; not the length of a particular calendar month.`,
   },
   {
     question: 'How Do I Convert 180 Days Into Months?',

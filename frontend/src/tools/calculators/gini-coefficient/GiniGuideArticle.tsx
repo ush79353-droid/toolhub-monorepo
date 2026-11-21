@@ -12,15 +12,15 @@ export function GiniGuideArticle() {
         Gini Coefficient Calculator
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        The Gini coefficient summarizes inequality in a distribution — most often
-        income or wealth — as a single number usually between 0 and 1. On a Lorenz
+ The Gini coefficient summarizes inequality in a distribution; most often
+ income or wealth, as a single number usually between 0 and 1. On a Lorenz
         diagram, Area A lies between the line of perfect equality and the Lorenz
         curve; Area B lies beneath the Lorenz curve. This calculator computes{' '}
         <strong className="font-semibold text-accent">G = A / (A + B)</strong>,
         converts the result to a Gini index (G × 100), and shows an educational
         Lorenz illustration. An optional advanced mode estimates Gini from
         nonnegative income observations. Area A and Area B alone do not uniquely
-        determine a measured Lorenz curve — the default chart is a modeled
+ determine a measured Lorenz curve: the default chart is a modeled
         illustration unless you supply income data.
       </p>
 
@@ -76,7 +76,7 @@ export function GiniGuideArticle() {
         <li>Measure Area B beneath the Lorenz curve.</li>
         <li>Compute the combined area A + B (must be &gt; 0).</li>
         <li>Apply G = A / (A + B).</li>
-        <li>Interpret cautiously in context — not as a socioeconomic verdict.</li>
+        <li>Interpret cautiously in context; not as a socioeconomic verdict.</li>
       </ol>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Worked area example: A = 1,200 unit², B = 3,800 unit² → G = 1,200 / 5,000
@@ -153,7 +153,7 @@ export function GiniGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Conversion: Gini Index = Gini Coefficient × 100. Publications sometimes
-        use “Gini” for either scale — check the units before comparing numbers.
+ use “Gini” for either scale; check the units before comparing numbers.
       </p>
 
       <h2
@@ -174,7 +174,7 @@ export function GiniGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Comparing two hypothetical economies with the same average income but
         different Lorenz bows can yield different Gini values even when GDP per
-        capita is identical — another reminder that averages and inequality
+ capita is identical; another reminder that averages and inequality
         answer different questions.
       </p>
 
@@ -229,7 +229,7 @@ export function GiniGuideArticle() {
         Nations statistical databases, and national statistical agencies. This
         page does not hardcode undated high/low country tables to avoid
         presenting invented or stale figures as current. When you cite a table,
-        include Country, Gini index, data year, income definition, and source —
+ include Country, Gini index, data year, income definition, and source; 
         and never mix wealth Gini with income Gini in one ranking without clear
         labels.
       </p>
@@ -245,7 +245,7 @@ export function GiniGuideArticle() {
         CBO measures that incorporate taxes and transfers, OECD disposable-income
         comparisons, and World Bank compilations. Pre-tax market income is
         typically more unequal than after-tax-and-transfer income. Look up a
-        dated official release for any numeric claim — this calculator does not
+ dated official release for any numeric claim; this calculator does not
         invent a current US figure.
       </p>
 
@@ -299,7 +299,7 @@ export function GiniGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         High GDP per capita does not guarantee low inequality. Pair both metrics
-        — see the{' '}
+; see the{' '}
         <Link
           href="/tools/gdp-per-capita-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
@@ -347,7 +347,7 @@ export function GiniGuideArticle() {
         Researchers and policymakers monitor Gini series when evaluating taxation,
         social transfers, education access, public services, and development
         strategies. A changing Gini alone does not prove that a specific policy
-        caused the change — confounding factors and measurement revisions are
+ caused the change; confounding factors and measurement revisions are
         common. Treat the coefficient as one indicator among many.
       </p>
 

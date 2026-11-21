@@ -106,7 +106,7 @@ export function OperatingCashFlowCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Net income: ${getCurrencySymbol(input.netIncomeCurrency)}${input.netIncome} ${input.netIncomeCurrency}`,
         `Depreciation: ${getCurrencySymbol(input.depreciationCurrency)}${input.depreciation} ${input.depreciationCurrency}`,
         `Amortization: ${getCurrencySymbol(input.amortizationCurrency)}${input.amortization} ${input.amortizationCurrency}`,

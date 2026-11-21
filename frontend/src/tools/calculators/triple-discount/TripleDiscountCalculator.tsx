@@ -170,7 +170,7 @@ export function TripleDiscountCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Original price: ${priceSymbol}${input.originalPrice} ${input.originalPriceCurrency}`,
         `1st discount: ${input.firstDiscountPercent}%`,
         `2nd discount: ${input.secondDiscountPercent}%`,

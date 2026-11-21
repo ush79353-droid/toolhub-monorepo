@@ -58,7 +58,7 @@ export function calculateDistance(input: DistanceConverterInput): DistanceConver
 export function shareResultText(result: DistanceConverterResult): string {
   const primary: DistanceSource[] = ['mm', 'cm', 'm', 'km', 'in', 'ft', 'yd', 'mi'];
   const lines = [
-    'Distance Converter — Omega Calculators',
+    'Distance Converter | Omega Calculators',
     '',
     `Source: ${formatLength(result.values[result.source])} ${result.source}`,
     '',

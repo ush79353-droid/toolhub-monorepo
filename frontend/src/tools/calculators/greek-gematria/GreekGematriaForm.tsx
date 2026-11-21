@@ -86,7 +86,7 @@ export function GreekGematriaForm({
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Traditional Greek isopsephy: add letter values (units, tens, hundreds). Accents are
         normalized; Latin lookalikes are not treated as Greek. Totals are historical letter-number
-        sums — not scientific predictions.
+ sums; not scientific predictions.
       </div>
 
       <div className="space-y-1.5">
@@ -126,7 +126,7 @@ export function GreekGematriaForm({
       >
         <p className="text-xs text-muted-foreground">
           Includes stigma/digamma (6), koppa (90), and sampi (900) from the historical numeral
-          system — not the modern 24-letter alphabet alone. Final sigma (ς) = 200.
+ system; not the modern 24-letter alphabet alone. Final sigma (ς) = 200.
         </p>
         <div className="overflow-x-auto rounded-lg border border-border bg-white">
           <table className="w-full min-w-[280px] text-left text-sm">
@@ -177,7 +177,7 @@ export function GreekGematriaForm({
                 className="text-left text-primary underline-offset-2 hover:underline"
                 onClick={() => onApplyExample(id)}
               >
-                Example {id} — {label}
+ Example {id}; {label}
               </button>
             </li>
           ))}

@@ -161,7 +161,7 @@ export function EpfResults({ result }: EpfResultsProps) {
             <span className="font-medium text-accent">
               {fmt(result.comparison.maturityDiff)}
             </span>
-            . Fees, eligibility, and affordability also matter — this is not a
+. Fees, eligibility, and affordability also matter; this is not a
             recommendation.
           </p>
         </div>

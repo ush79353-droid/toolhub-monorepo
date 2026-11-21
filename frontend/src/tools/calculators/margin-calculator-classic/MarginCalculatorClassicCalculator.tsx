@@ -99,7 +99,7 @@ export function MarginCalculatorClassicCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Cost: ${getCurrencySymbol(input.costCurrency)}${input.cost}`,
         `Margin: ${result.formattedMargin}%${input.marginPinned ? ' (pinned)' : ''}`,
         `Revenue: ${getCurrencySymbol(result.revenueCurrency)}${result.formattedRevenue}`,

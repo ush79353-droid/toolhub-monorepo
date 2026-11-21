@@ -23,7 +23,7 @@ export const CALIFORNIA_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'How is property tax estimated?',
     answer:
-      'Estimated property tax = assessed home value × applied rate ÷ 100. County defaults are California BOE 2024–25 county-average statutory rates of assessed value (for example Alameda 1.22%). TRA-specific rates and special assessments vary—edit the rate when you know your bill rate. The illustrative 0.88% screenshot value is not used as a verified Alameda default.',
+      'Estimated property tax = assessed home value × applied rate ÷ 100. County defaults are California BOE 2024–25 county-average statutory rates of assessed value (for example Alameda 1.22%). TRA-specific rates and special assessments vary, edit the rate when you know your bill rate. The illustrative 0.88% screenshot value is not used as a verified Alameda default.',
   },
   {
     question: 'Are post-tax deductions subtracted from taxable income?',

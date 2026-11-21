@@ -36,7 +36,7 @@ export const DSO_FAQS: readonly FAQItem[] = [
   {
     question: 'What does low DSO mean?',
     answer:
-      'A relatively low DSO means receivables are smaller versus sales — often faster collections or shorter credit terms. A low DSO does not automatically guarantee strong overall financial performance.',
+      'A relatively low DSO means receivables are smaller versus sales; often faster collections or shorter credit terms. A low DSO does not automatically guarantee strong overall financial performance.',
   },
   {
     question: 'Is lower DSO always better?',
@@ -56,7 +56,7 @@ export const DSO_FAQS: readonly FAQItem[] = [
   {
     question: 'Can DSO be zero?',
     answer:
-      'Yes, when average AR is zero and sales are positive. Interpret carefully — it is a simplified ratio, not proof that every invoice pays immediately.',
+      'Yes, when average AR is zero and sales are positive. Interpret carefully; it is a simplified ratio, not proof that every invoice pays immediately.',
   },
   {
     question: 'Can DSO be negative?',

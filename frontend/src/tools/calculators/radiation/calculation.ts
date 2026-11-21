@@ -52,7 +52,7 @@ export function shareResultText(opts: {
   gray: number | null;
   sievert: number | null;
 }): string {
-  const lines = ['Radiation Converter — Omega Calculators', ''];
+  const lines = ['Radiation Converter | Omega Calculators', ''];
   if (opts.gray != null) {
     const a = allFromGray(opts.gray);
     lines.push(

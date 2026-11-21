@@ -148,7 +148,7 @@ export function SecondsToHoursForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact: 1 hour = 3,600 seconds. Enter seconds or hours — the other updates instantly. The
+ Exact: 1 hour = 3,600 seconds. Enter seconds or hours: the other updates instantly. The
         Time fields show hours, minutes, and seconds. Negative values are allowed for signed
         durations.
       </div>

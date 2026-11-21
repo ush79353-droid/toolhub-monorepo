@@ -103,7 +103,7 @@ export function InterestRateParityCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Version: ${input.version}`,
         `Contract days: ${input.contractDays} (day basis ${IRP_DAY_BASIS})`,
         `Annualised price rate: ${result.annualisedPriceRatePercent}% → period ${result.priceRatePercent}%`,

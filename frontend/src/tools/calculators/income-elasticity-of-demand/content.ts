@@ -62,7 +62,7 @@ export const INCOME_ELASTICITY_OF_DEMAND_FAQS: readonly FAQItem[] = [
   {
     question: 'What does negative income elasticity mean?',
     answer:
-      'Quantity demanded moved opposite to income — demand fell when income rose, or rose when income fell.',
+      'Quantity demanded moved opposite to income; demand fell when income rose, or rose when income fell.',
   },
   {
     question: 'What is a normal good?',
@@ -77,27 +77,27 @@ export const INCOME_ELASTICITY_OF_DEMAND_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a necessity good?',
     answer:
-      'Often described as a normal good with 0 < YED < 1 — demand rises less than proportionally with income.',
+      'Often described as a normal good with 0 < YED < 1; demand rises less than proportionally with income.',
   },
   {
     question: 'What is a luxury good?',
     answer:
-      'Often described as a normal good with YED > 1 — demand rises more than proportionally with income. Prestige alone does not define luxury in this sense.',
+      'Often described as a normal good with YED > 1; demand rises more than proportionally with income. Prestige alone does not define luxury in this sense.',
   },
   {
     question: 'What does income elasticity greater than 1 mean?',
     answer:
-      'Income-elastic normal demand — quantity responds more than proportionally to the income change.',
+      'Income-elastic normal demand; quantity responds more than proportionally to the income change.',
   },
   {
     question: 'What does income elasticity between 0 and 1 mean?',
     answer:
-      'Positive but income-inelastic demand — necessity-type normal good under these observations.',
+      'Positive but income-inelastic demand; necessity-type normal good under these observations.',
   },
   {
     question: 'What does income elasticity equal to 1 mean?',
     answer:
-      'Unit income elasticity — quantity changes proportionally with income.',
+      'Unit income elasticity; quantity changes proportionally with income.',
   },
   {
     question: 'What does zero income elasticity mean?',
@@ -117,7 +117,7 @@ export const INCOME_ELASTICITY_OF_DEMAND_FAQS: readonly FAQItem[] = [
   {
     question: 'Can quantity demanded decrease as income increases?',
     answer:
-      'Yes — that produces negative YED and is consistent with an inferior good in that context.',
+      'Yes: that produces negative YED and is consistent with an inferior good in that context.',
   },
   {
     question: 'Is income elasticity the same as price elasticity?',
@@ -153,11 +153,11 @@ export const INCOME_ELASTICITY_OF_DEMAND_FAQS: readonly FAQItem[] = [
   {
     question: 'Does income elasticity have units?',
     answer:
-      'No. YED is a dimensionless coefficient — do not display it as a percent or currency amount.',
+      'No. YED is a dimensionless coefficient; do not display it as a percent or currency amount.',
   },
   {
     question:
       'What is income elasticity if income increases by 20% and quantity demanded increases by 10%?',
-    answer: 'YED = 10 / 20 = 0.50 — positive, income-inelastic demand.',
+    answer: 'YED = 10 / 20 = 0.50; positive, income-inelastic demand.',
   },
 ];

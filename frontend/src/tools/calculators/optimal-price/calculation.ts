@@ -151,13 +151,13 @@ export function interpretOptimalPrice(
 ): string {
   if (status === 'noFiniteOptimum') {
     if (marginalCost <= 0) {
-      return 'No positive finite interior optimum — the standard markup formula requires positive marginal cost.';
+      return 'No positive finite interior optimum: the standard markup formula requires positive marginal cost.';
     }
     if (elasticity >= -1 && elasticity < 0) {
       return 'No finite positive interior optimum under constant-elasticity demand with positive MC when |ε| ≤ 1 (unit or inelastic).';
     }
     if (elasticity >= 0) {
-      return 'Unsupported by the default downward-sloping demand model — observed elasticity is not strictly less than −1.';
+      return 'Unsupported by the default downward-sloping demand model; observed elasticity is not strictly less than −1.';
     }
     return 'No valid finite interior optimum under the model assumptions.';
   }
@@ -168,7 +168,7 @@ export function interpretOptimalPrice(
     profitOptimal >= profitInitial && profitOptimal >= profitFinal
       ? 'highest among the three compared prices'
       : 'model optimum (compare carefully with observed points)';
-  return `Under constant elasticity ≈ ${formatElasticity(elasticity)} and constant MC, the interior optimum is ${formatPlain(optimalPrice)} with estimated contribution ${formatPlain(profitOptimal)} — ${best}. Fixed costs are assumed zero.`;
+  return `Under constant elasticity ≈ ${formatElasticity(elasticity)} and constant MC, the interior optimum is ${formatPlain(optimalPrice)} with estimated contribution ${formatPlain(profitOptimal)}; ${best}. Fixed costs are assumed zero.`;
 }
 
 export function formatOpMoney(

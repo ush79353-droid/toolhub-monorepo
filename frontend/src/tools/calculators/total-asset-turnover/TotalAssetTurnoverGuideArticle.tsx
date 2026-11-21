@@ -14,7 +14,7 @@ export function TotalAssetTurnoverGuideArticle() {
         Total asset turnover (TAT) measures how efficiently a company uses its
         asset base to generate revenue. It compares period revenue with average
         total assets employed during that period. Analysts use it to study
-        operational efficiency and asset utilization — not profit margins.
+ operational efficiency and asset utilization; not profit margins.
       </p>
 
       <h2
@@ -94,8 +94,8 @@ export function TotalAssetTurnoverGuideArticle() {
       <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>Select the currency label for monetary fields (denomination only).</li>
         <li>Enter beginning total assets.</li>
-        <li>Enter ending total assets — average updates automatically.</li>
-        <li>Enter period revenue — turnover updates automatically.</li>
+        <li>Enter ending total assets; average updates automatically.</li>
+        <li>Enter period revenue; turnover updates automatically.</li>
         <li>Review the summary, breakdown, and interpretation.</li>
         <li>Use Share, Reload, or Clear as needed.</li>
       </ol>
@@ -147,7 +147,7 @@ export function TotalAssetTurnoverGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Low turnover often appears in capital-intensive businesses; high
         turnover is common in asset-light models. Always interpret against
-        industry norms, business model, and multi-year trends — not a single
+ industry norms, business model, and multi-year trends; not a single
         absolute threshold.
       </p>
 
@@ -212,7 +212,7 @@ export function TotalAssetTurnoverGuideArticle() {
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         Expanded DuPont analysis also includes financial leverage to explain
-        ROE. Margin, turnover, and leverage measure different drivers — keep
+ ROE. Margin, turnover, and leverage measure different drivers; keep
         definitions and periods aligned.
       </p>
 
@@ -226,7 +226,7 @@ export function TotalAssetTurnoverGuideArticle() {
         Raise sales, tighten inventory and receivables, retire idle assets,
         improve production and equipment utilization, and stage capital spending
         to demand. Selling assets can lift the ratio without improving long-term
-        capability — judge changes in context.
+ capability; judge changes in context.
       </p>
 
       <h2

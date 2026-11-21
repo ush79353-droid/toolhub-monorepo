@@ -104,7 +104,7 @@ export function BondEquivalentYieldCalculator({
   const faceSymbol = getCurrencySymbol(input.faceValueCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Bond price: ${bondSymbol}${input.bondPrice}`,
         `Face value: ${faceSymbol}${input.faceValue}`,
         `Days to maturity: ${input.daysToMaturity}`,

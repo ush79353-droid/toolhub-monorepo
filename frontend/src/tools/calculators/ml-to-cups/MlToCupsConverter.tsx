@@ -20,7 +20,7 @@ function summaryText(result: MlToCupsResult): string {
     CUP_STANDARD_OPTIONS.find((o) => o.value === result.cupStandard)?.label ??
     result.cupStandard;
   const lines = [
-    'mL to Cups Converter — Omega Calculators',
+    'mL to Cups Converter | Omega Calculators',
     `Milliliters: ${formatVolume(result.ml)} mL`,
     `Cup standard: ${standard}`,
     `Cups: ${formatVolume(result.cups)}`,

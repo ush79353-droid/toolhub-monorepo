@@ -14,7 +14,7 @@ export function CashBackOrLowInterestGuideArticle() {
         Auto buyers are often asked to choose between a cash rebate financed at a higher APR and
         a promotional low interest rate without the rebate. This calculator builds both loan
         scenarios with the same price, term, down payment, trade-in, sales tax, and fees, then
-        compares total economic cost — not monthly payment alone.
+ compares total economic cost; not monthly payment alone.
       </p>
 
       <h2

@@ -44,7 +44,7 @@ export const M2_TO_FT2_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'A square meter is an area measuring one meter by one meter. A square foot is an area measuring one foot by one foot. Square meters belong to the metric system; square feet are common in US customary and imperial contexts.',
       'Example: a room 5 meters long and 4 meters wide has area 5 × 4 = 20 m². Converting: 20 × 10.7639104167 ≈ 215.2782 ft². Therefore 20 m² ≈ 215.28 ft².',
-      'Converting area differs from converting linear length — area factors are squared length factors.',
+      'Converting area differs from converting linear length; area factors are squared length factors.',
     ],
     formula: `5 m × 4 m = 20 m²\n20 × ${formatArea(SQUARE_FEET_PER_SQUARE_METER)} ≈ ${formatArea(squareMetersToSquareFeet(20))} ft²`,
   },
@@ -58,7 +58,7 @@ export const M2_TO_FT2_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Multiply by the square-meter-to-square-foot conversion factor.',
       '3. Round the result to the desired precision.',
       '4. Express the result in square feet.',
-      `Example — convert 35 m²: 35 × ${formatArea(SQUARE_FEET_PER_SQUARE_METER)} ≈ ${formatArea(squareMetersToSquareFeet(35))}. Therefore 35 m² ≈ ${formatArea(squareMetersToSquareFeet(35))} ft².`,
+      `Example; convert 35 m²: 35 × ${formatArea(SQUARE_FEET_PER_SQUARE_METER)} ≈ ${formatArea(squareMetersToSquareFeet(35))}. Therefore 35 m² ≈ ${formatArea(squareMetersToSquareFeet(35))} ft².`,
     ],
     formula: `ft² = m² ÷ ${SQUARE_METERS_PER_SQUARE_FOOT}\nft² ≈ m² × ${formatArea(SQUARE_FEET_PER_SQUARE_METER)}\n35 × ${formatArea(SQUARE_FEET_PER_SQUARE_METER)} ≈ ${formatArea(squareMetersToSquareFeet(35))}`,
   },
@@ -67,7 +67,7 @@ export const M2_TO_FT2_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Square Feet to Square Meters',
     paragraphs: [
       `Formula: m² = ft² × ${SQUARE_METERS_PER_SQUARE_FOOT}.`,
-      `Example — convert 250 ft²: 250 × ${SQUARE_METERS_PER_SQUARE_FOOT} = ${formatArea(squareFeetToSquareMeters(250))}. Therefore 250 ft² = ${formatArea(squareFeetToSquareMeters(250))} m².`,
+      `Example; convert 250 ft²: 250 × ${SQUARE_METERS_PER_SQUARE_FOOT} = ${formatArea(squareFeetToSquareMeters(250))}. Therefore 250 ft² = ${formatArea(squareFeetToSquareMeters(250))} m².`,
       'Enter a square-foot value in the calculator to perform the reverse conversion instantly.',
     ],
     formula: `m² = ft² × ${SQUARE_METERS_PER_SQUARE_FOOT}\n250 × ${SQUARE_METERS_PER_SQUARE_FOOT} = ${formatArea(squareFeetToSquareMeters(250))}`,

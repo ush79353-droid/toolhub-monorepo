@@ -45,7 +45,7 @@ export const MESH_TO_MICRON_GUIDE_SECTIONS: readonly MeshToMicronGuideSection[] 
     id: 'what-is-mesh-size',
     title: 'What Is Mesh Size?',
     paragraphs: [
-      'For a conventional woven screen, mesh count is the number of openings per linear inch. Higher mesh counts usually mean smaller openings when wire diameter is similar. ASTM E11 sieve numbers are designations that also specify a nominal aperture size—they are not interchangeable with arbitrary manufacturer mesh charts.',
+      'For a conventional woven screen, mesh count is the number of openings per linear inch. Higher mesh counts usually mean smaller openings when wire diameter is similar. ASTM E11 sieve numbers are designations that also specify a nominal aperture size, they are not interchangeable with arbitrary manufacturer mesh charts.',
     ],
   },
   {
@@ -59,7 +59,7 @@ export const MESH_TO_MICRON_GUIDE_SECTIONS: readonly MeshToMicronGuideSection[] 
     id: 'how-to-determine',
     title: 'How to Determine Mesh Size',
     paragraphs: [
-      'Use a standard sieve chart when you have an ASTM E11 designation—look up the nominal opening. Use the woven-mesh formula only when you know both openings per inch and wire diameter. Do not invent openings from mesh count alone.',
+      'Use a standard sieve chart when you have an ASTM E11 designation, look up the nominal opening. Use the woven-mesh formula only when you know both openings per inch and wire diameter. Do not invent openings from mesh count alone.',
     ],
   },
   {

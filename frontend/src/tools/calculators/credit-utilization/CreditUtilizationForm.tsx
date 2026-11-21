@@ -153,7 +153,7 @@ export function CreditUtilizationForm({
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         For each credit card or revolving line, enter the outstanding balance
         (money used) and its credit limit. The calculator reports overall
-        utilization as total used ÷ total limits — not an average of per-card
+ utilization as total used ÷ total limits; not an average of per-card
         percentages.
       </p>
 
@@ -167,7 +167,7 @@ export function CreditUtilizationForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amounts share one currency label (denomination only — no FX).
+ Amounts share one currency label (denomination only; no FX).
       </p>
       <p className="text-xs">
         <a

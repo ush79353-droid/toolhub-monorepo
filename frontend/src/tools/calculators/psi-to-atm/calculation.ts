@@ -50,7 +50,7 @@ export function calculatePsiToAtm(input: PsiToAtmInput): PsiToAtmResult {
 
 export function shareResultText(result: PsiToAtmResult): string {
   return [
-    'PSI to ATM Conversion — Omega Calculators',
+    'PSI to ATM Conversion | Omega Calculators',
     '',
     `Pressure: ${formatPressure(result.psi)} psi`,
     `Equivalent pressure: ${formatPressure(result.atm)} atm`,

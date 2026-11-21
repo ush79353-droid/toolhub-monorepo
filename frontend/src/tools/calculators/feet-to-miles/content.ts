@@ -29,8 +29,8 @@ export const FEET_TO_MILES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Feet to Miles?',
     paragraphs: [
       `One international mile equals exactly ${FEET_PER_MILE} international feet. Divide feet by ${FEET_PER_MILE} to get miles; multiply miles by ${FEET_PER_MILE} to get feet.`,
-      `Example — convert 2,640 feet to miles: 2640 ÷ ${FEET_PER_MILE} = ${formatLength(feetToMiles(2640))}. Therefore 2,640 feet = 0.5 miles.`,
-      `Reverse — convert 2.5 miles to feet: 2.5 × ${FEET_PER_MILE} = ${formatLength(milesToFeet(2.5))}. Therefore 2.5 miles = 13,200 feet.`,
+      `Example; convert 2,640 feet to miles: 2640 ÷ ${FEET_PER_MILE} = ${formatLength(feetToMiles(2640))}. Therefore 2,640 feet = 0.5 miles.`,
+      `Reverse; convert 2.5 miles to feet: 2.5 × ${FEET_PER_MILE} = ${formatLength(milesToFeet(2.5))}. Therefore 2.5 miles = 13,200 feet.`,
       'This converter is useful for road distances, walking and running routes, sports fields, construction layouts, and geographic estimates.',
     ],
     formula: `Miles = Feet ÷ ${FEET_PER_MILE}   ·   Feet = Miles × ${FEET_PER_MILE}`,

@@ -62,7 +62,7 @@ export const G_TO_TSP_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'teaspoons-tablespoons',
     title: 'What Are Teaspoons and Tablespoons?',
     paragraphs: [
-      `A teaspoon is a unit of volume. A US customary teaspoon equals exactly ${US_TEASPOON_ML} mL (1/6 US fluid ounce). A metric teaspoon equals 5 mL — they are not the same.`,
+      `A teaspoon is a unit of volume. A US customary teaspoon equals exactly ${US_TEASPOON_ML} mL (1/6 US fluid ounce). A metric teaspoon equals 5 mL; they are not the same.`,
       'A US tablespoon equals three US teaspoons. Teaspoons are common for cooking ingredients and small liquid amounts.',
       'A teaspoon of honey, flour, sugar, and salt does not have the same mass because those ingredients have different densities.',
     ],

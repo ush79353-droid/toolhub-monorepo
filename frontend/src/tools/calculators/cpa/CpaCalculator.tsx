@@ -25,7 +25,7 @@ const CURRENCY_CONVERSION_NOTE =
 
 function summaryText(metadataTitle: string, result: CpaResult, note: string): string {
   const lines = [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Number of clicks: ${result.numberOfClicks}`,
     `Average CPC: ${formatCurrencyValue(result.averageCpc, result.currency)}`,
     `Total ad spend: ${result.shareAdSpend}`,

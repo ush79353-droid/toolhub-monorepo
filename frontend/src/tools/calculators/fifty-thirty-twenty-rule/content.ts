@@ -23,7 +23,7 @@ export const FIFTY_THIRTY_TWENTY_FAQS: readonly FAQItem[] = [
   {
     question: 'How much of my salary should I spend according to the 50/30/20 rule?',
     answer:
-      'The guideline is 50% needs, 30% wants, and 20% savings — based on take-home (after-tax) income, not gross salary.',
+      'The guideline is 50% needs, 30% wants, and 20% savings; based on take-home (after-tax) income, not gross salary.',
   },
   {
     question: 'What is an ideal budget allocation?',
@@ -48,7 +48,7 @@ export const FIFTY_THIRTY_TWENTY_FAQS: readonly FAQItem[] = [
   {
     question: 'What should I include in the 20% savings category?',
     answer:
-      'Emergency funds, retirement contributions, investments, education savings, future purchases, and extra debt payments beyond minimums — depending on your goals.',
+      'Emergency funds, retirement contributions, investments, education savings, future purchases, and extra debt payments beyond minimums; depending on your goals.',
   },
   {
     question: 'Does the 50/30/20 rule use gross or net income?',

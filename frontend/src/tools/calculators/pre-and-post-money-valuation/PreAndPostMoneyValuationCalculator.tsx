@@ -97,7 +97,7 @@ export function PreAndPostMoneyValuationCalculator({
 
   const summary = hasResult
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         solved.values.investment !== undefined
           ? `Investment: ${formatCurrencyValue(solved.values.investment, draft.currency)}`
           : null,

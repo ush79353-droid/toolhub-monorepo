@@ -30,7 +30,7 @@ export const FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-fahrenheit',
     title: 'What Is the Fahrenheit Scale?',
     paragraphs: [
-      'The Fahrenheit scale was proposed by Daniel Gabriel Fahrenheit in 1724. Under standard atmospheric pressure, water freezes at 32°F and boils at about 212°F — a span of 180 Fahrenheit degrees between those points.',
+      'The Fahrenheit scale was proposed by Daniel Gabriel Fahrenheit in 1724. Under standard atmospheric pressure, water freezes at 32°F and boils at about 212°F: a span of 180 Fahrenheit degrees between those points.',
       'Fahrenheit remains common for everyday weather and household temperatures in the United States. The relationship to Celsius is °F = °C × 9/5 + 32.',
     ],
     formula: '°F = °C × 9/5 + 32   ·   Absolute zero = −459.67°F = −273.15°C = 0 K',
@@ -39,7 +39,7 @@ export const FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'convert-fahrenheit',
     title: 'Convert Fahrenheit to Celsius, Kelvin, and Other Temperature Units',
     paragraphs: [
-      'Temperature scales use different zeros and slopes, so conversions need offsets — not a single multiplicative length-style factor.',
+      'Temperature scales use different zeros and slopes, so conversions need offsets; not a single multiplicative length-style factor.',
       `Example: 32°F = ${formatTemp(convertTemperature(32, 'fahrenheit', 'celsius'))}°C = ${formatTemp(convertTemperature(32, 'fahrenheit', 'kelvin'))} K.`,
       `Example: 212°F = ${formatTemp(convertTemperature(212, 'fahrenheit', 'celsius'))}°C = ${formatTemp(convertTemperature(212, 'fahrenheit', 'kelvin'))} K.`,
       `Example: 0°F ≈ ${formatTemp(convertTemperature(0, 'fahrenheit', 'celsius'))}°C ≈ ${formatTemp(convertTemperature(0, 'fahrenheit', 'kelvin'))} K.`,
@@ -64,7 +64,7 @@ export const FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       '1. Enter the temperature in Fahrenheit.',
       '2. Equivalent values update automatically in every other supported scale.',
-      '3. Or type into any other temperature field — all remaining fields update immediately.',
+      '3. Or type into any other temperature field. all remaining fields update immediately.',
       '4. Use Clear All Changes to reset inputs, or Reload Calculator to restore the initial empty state.',
       `For 32°F: ${formatTemp(0)}°C, ${formatTemp(273.15)} K, ${formatTemp(491.67)}°R, ${formatTemp(150)}°De, ${formatTemp(0)}°N, ${formatTemp(0)}°Ré, ${formatTemp(7.5)}°Rø.`,
     ],
@@ -111,6 +111,6 @@ export const FAHRENHEIT_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Is −40°F the Same as −40°C?',
-    answer: 'Yes. −40°F = −40°C — the intersection of the Fahrenheit and Celsius scales.',
+    answer: 'Yes. −40°F = −40°C: the intersection of the Fahrenheit and Celsius scales.',
   },
 ];

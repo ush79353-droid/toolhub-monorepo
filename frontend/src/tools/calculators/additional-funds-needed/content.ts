@@ -52,7 +52,7 @@ export const AFN_GUIDE_SECTIONS: readonly AfnGuideSection[] = [
     title: 'Change in assets and liabilities',
     paragraphs: [
       'A rise in assets is the financing demand. Inventory, receivables, and fixed assets that grow with sales all consume capital. A fall in assets (a negative change) reduces the need for new funds or can create a surplus on its own.',
-      'The liability change in this simplified model stands for spontaneous financing — accounts payable, accruals, and similar items that tend to rise when operations expand. Long-term debt that management chooses later is usually treated as the plug that fills AFN, not as part of ΔL in this identity.',
+      'The liability change in this simplified model stands for spontaneous financing; accounts payable, accruals, and similar items that tend to rise when operations expand. Long-term debt that management chooses later is usually treated as the plug that fills AFN, not as part of ΔL in this identity.',
     ],
   },
   {
@@ -60,7 +60,7 @@ export const AFN_GUIDE_SECTIONS: readonly AfnGuideSection[] = [
     title: 'Retained earnings and internal financing',
     paragraphs: [
       'Retained earnings are profits kept in the business after dividends. That addition is internal equity financing: it funds part of asset growth without a new share issue or loan.',
-      'If the firm pays out most of its earnings, ΔRE is small and AFN rises. If it retains more, AFN falls. The calculator does not project sales, margins, or payout ratios for you — enter the retained-earnings change you already estimated.',
+      'If the firm pays out most of its earnings, ΔRE is small and AFN rises. If it retains more, AFN falls. The calculator does not project sales, margins, or payout ratios for you. Enter the retained-earnings change you already estimated.',
     ],
   },
   {
@@ -75,9 +75,9 @@ export const AFN_GUIDE_SECTIONS: readonly AfnGuideSection[] = [
     id: 'worked-examples',
     title: 'Worked AFN examples',
     paragraphs: [
-      'Example 1 — funding gap. Assets rise by 100,000, liabilities by 30,000, and retained earnings by 20,000. AFN = 100,000 − 30,000 − 20,000 = 50,000. The firm still needs 50,000 of external funds.',
-      'Example 2 — balanced plan. Assets 50,000, liabilities 30,000, retained earnings 20,000. AFN = 0. Spontaneous and internal financing cover the growth.',
-      'Example 3 — surplus. Assets 40,000, liabilities 30,000, retained earnings 20,000. AFN = −10,000. The model shows more financing than the asset plan needs.',
+      'Example 1: funding gap. Assets rise by 100,000, liabilities by 30,000, and retained earnings by 20,000. AFN = 100,000 − 30,000 − 20,000 = 50,000. The firm still needs 50,000 of external funds.',
+      'Example 2: balanced plan. Assets 50,000, liabilities 30,000, retained earnings 20,000. AFN = 0. Spontaneous and internal financing cover the growth.',
+      'Example 3: surplus. Assets 40,000, liabilities 30,000, retained earnings 20,000. AFN = −10,000. The model shows more financing than the asset plan needs.',
     ],
   },
   {

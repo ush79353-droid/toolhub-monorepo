@@ -120,7 +120,7 @@ export function TrumpTariffForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
-        Educational estimate only — not an official CBP, USITC, or USTR
+ Educational estimate only; not an official CBP, USITC, or USTR
         determination. Rates you enter are a user-defined scenario unless you
         verify them against HTSUS and current trade measures. Currency is
         denomination (not live FX).
@@ -241,7 +241,7 @@ export function TrumpTariffForm({
             Country of origin
             <InfoTooltip
               label="Country of origin"
-              text="Country of origin is where the goods were manufactured or substantially transformed — not necessarily the seller’s location, brand HQ, or shipping country."
+              text="Country of origin is where the goods were manufactured or substantially transformed; not necessarily the seller’s location, brand HQ, or shipping country."
             />
           </label>
           <select
@@ -487,7 +487,7 @@ export function TrumpTariffForm({
                 </p>
               ) : null}
               <p className="mt-1 text-[11px] text-muted-foreground">
-                No live HTSUS lookup in this tool — enter verified rates
+ No live HTSUS lookup in this tool; enter verified rates
                 manually from USITC/CBP/USTR sources.
               </p>
             </div>
@@ -510,7 +510,7 @@ export function TrumpTariffForm({
         {showPassThrough ? (
           <div className="space-y-3 border-t border-border px-3 py-3">
             <p className="text-[11px] text-muted-foreground">
-              Scenario assumption — not a guaranteed retail outcome.
+ Scenario assumption; not a guaranteed retail outcome.
             </p>
             <div>
               <label htmlFor="tt-retail" className={labelClass}>

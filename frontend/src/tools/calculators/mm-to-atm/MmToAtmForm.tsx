@@ -90,7 +90,7 @@ export function MmToAtmForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Despite the catalog name &quot;mm to ATM,&quot; this tool converts millimeters of mercury
-        (mmHg) pressure — not millimeters of length. Conventional: 1 atm = {MMHG_PER_ATM} mmHg.
+ (mmHg) pressure; not millimeters of length. Conventional: 1 atm = {MMHG_PER_ATM} mmHg.
         Signed values are allowed as gauge or differential magnitude; the tool does not switch
         absolute vs gauge reference.
       </div>

@@ -87,7 +87,7 @@ export function CobbDouglasCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Total factor productivity (A): ${input.totalFactorProductivity}`,
         `Labor (L): ${input.labor}`,

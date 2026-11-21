@@ -84,7 +84,7 @@ export function ConsumerSurplusCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Actual price: ${symbol}${result.formattedActualPrice}`,
         `Willing price: ${symbol}${result.formattedWillingPrice}`,
         `Price difference: ${symbol}${result.formattedSignedDifference}`,
@@ -130,7 +130,7 @@ export function ConsumerSurplusCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             Measure the benefit from paying less than maximum willingness to
-            pay — or reverse-solve willing price or actual price.
+ pay, or reverse-solve willing price or actual price.
           </p>
         </div>
         {headerActions ? (

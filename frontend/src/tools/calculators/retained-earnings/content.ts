@@ -59,7 +59,7 @@ export const RETAINED_EARNINGS_FAQS: readonly FAQItem[] = [
   {
     question: 'What is net income?',
     answer:
-      'Profit after expenses, interest, and taxes — not revenue, EBIT, or EBITDA.',
+      'Profit after expenses, interest, and taxes; not revenue, EBIT, or EBITDA.',
   },
   {
     question: 'What are dividends?',
@@ -91,7 +91,7 @@ export const RETAINED_EARNINGS_FAQS: readonly FAQItem[] = [
   {
     question: 'Can retained earnings be negative?',
     answer:
-      'Yes — from losses, or when dividends exceed current-period earnings (payout > 100%).',
+      'Yes: from losses, or when dividends exceed current-period earnings (payout > 100%).',
   },
   {
     question: 'Can retained earnings be zero?',
@@ -105,7 +105,7 @@ export const RETAINED_EARNINGS_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Are retained earnings the same as revenue?',
-    answer: 'No — revenue is sales; retained earnings are after expenses and dividends.',
+    answer: 'No: revenue is sales; retained earnings are after expenses and dividends.',
   },
   {
     question: 'Are retained earnings the same as profit?',
@@ -115,7 +115,7 @@ export const RETAINED_EARNINGS_FAQS: readonly FAQItem[] = [
   {
     question: 'Are retained earnings the same as cash?',
     answer:
-      'No — RE is an equity account, not a bank balance.',
+      'No: RE is an equity account, not a bank balance.',
   },
   {
     question: 'Where are retained earnings reported?',
@@ -136,12 +136,12 @@ export const RETAINED_EARNINGS_FAQS: readonly FAQItem[] = [
   {
     question: 'Can a company pay dividends with negative earnings?',
     answer:
-      'Sometimes, using reserves — but a conventional payout % on a loss is not meaningful. This tool does not infer dividends from losses.',
+      'Sometimes, using reserves, but a conventional payout % on a loss is not meaningful. This tool does not infer dividends from losses.',
   },
   {
     question: 'Can dividend payout exceed 100%?',
     answer:
-      'Yes for positive earnings — dividends can exceed current-period NI, producing negative period RE.',
+      'Yes for positive earnings; dividends can exceed current-period NI, producing negative period RE.',
   },
   {
     question: 'How do retained earnings affect business growth?',
@@ -156,7 +156,7 @@ export const RETAINED_EARNINGS_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good retained earnings balance?',
     answer:
-      'It depends on industry, stage, and dividend policy — no universal target.',
+      'It depends on industry, stage, and dividend policy; no universal target.',
   },
   {
     question: 'What is the difference between retained earnings and net income?',
@@ -195,7 +195,7 @@ export const RETAINED_EARNINGS_FAQS: readonly FAQItem[] = [
   {
     question: 'What are beginning retained earnings?',
     answer:
-      'The accumulated RE balance at the start of the period — not included in this screenshot calculator.',
+      'The accumulated RE balance at the start of the period; not included in this screenshot calculator.',
   },
   {
     question: 'How does a net loss affect retained earnings?',
@@ -209,7 +209,7 @@ export const RETAINED_EARNINGS_FAQS: readonly FAQItem[] = [
   {
     question: 'Can retained earnings be used for expansion?',
     answer:
-      'Economically yes if cash and capital plans allow — RE is not automatically spendable cash.',
+      'Economically yes if cash and capital plans allow; RE is not automatically spendable cash.',
   },
   {
     question: 'Can retained earnings fund dividends?',
@@ -218,7 +218,7 @@ export const RETAINED_EARNINGS_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Does high retained earnings mean a company has a lot of cash?',
-    answer: 'No — assets may be inventory, PP&E, or receivables instead of cash.',
+    answer: 'No: assets may be inventory, PP&E, or receivables instead of cash.',
   },
   {
     question: 'How do retained earnings affect financial statements?',

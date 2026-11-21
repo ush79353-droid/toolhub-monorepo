@@ -75,7 +75,7 @@ export const TSPG_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `For US teaspoons: g = tsp × ${US_TEASPOON_ML} × ρ, where ρ is density in g/mL.`,
       `Reverse: tsp = g ÷ (${US_TEASPOON_ML} × ρ).`,
-      `Worked example — 2 US tsp of granulated sugar at ${GRANULATED_SUGAR_KG_PER_M3} kg/m³: 2 × ${US_TEASPOON_ML} × ${formatMeasure(sugarDensity)} ≈ ${formatKitchen(sugar2g)} g.`,
+      `Worked example; 2 US tsp of granulated sugar at ${GRANULATED_SUGAR_KG_PER_M3} kg/m³: 2 × ${US_TEASPOON_ML} × ${formatMeasure(sugarDensity)} ≈ ${formatKitchen(sugar2g)} g.`,
     ],
     formula: `g = tsp × ${US_TEASPOON_ML} × ρ\ntsp = g ÷ (${US_TEASPOON_ML} × ρ)\n2 × ${US_TEASPOON_ML} × ${formatMeasure(sugarDensity)} ≈ ${formatKitchen(sugar2g)}`,
   },
@@ -85,7 +85,7 @@ export const TSPG_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Materials have different true densities, and powders trap air between particles so bulk density is lower than solid density.',
       'Loose, leveled, packed, sifted, melted, and chopped forms change how much mass fits in one teaspoon.',
-      'Moisture and temperature also shift mass for the same scooped volume. The calculator uses approximate reference densities — not universal constants.',
+      'Moisture and temperature also shift mass for the same scooped volume. The calculator uses approximate reference densities; not universal constants.',
     ],
   },
   {

@@ -80,25 +80,25 @@ export function interpretRetentionRatio(
     return 'Retention ratio is unavailable.';
   }
   if (netIncome < 0) {
-    return `Retention ratio ${formatPercent(retentionPercent)} — with negative net income, a conventional retention-ratio interpretation is difficult and should be treated cautiously.`;
+    return `Retention ratio ${formatPercent(retentionPercent)}, with negative net income, a conventional retention-ratio interpretation is difficult and should be treated cautiously.`;
   }
   if (retentionPercent > 100) {
-    return `Retention ratio ${formatPercent(retentionPercent)} — above 100% can appear when dividends are negative (unusual) or with atypical inputs; verify the figures.`;
+    return `Retention ratio ${formatPercent(retentionPercent)}; above 100% can appear when dividends are negative (unusual) or with atypical inputs; verify the figures.`;
   }
   if (retentionPercent === 100 || Math.abs(retentionPercent - 100) < 1e-9) {
-    return 'Retention ratio 100.00% — the company retained all net income (no dividends paid) for the period.';
+    return 'Retention ratio 100.00%: the company retained all net income (no dividends paid) for the period.';
   }
   if (retentionPercent === 0 || Math.abs(retentionPercent) < 1e-9) {
-    return 'Retention ratio 0.00% — all net income was paid as dividends (payout ≈ 100%).';
+    return 'Retention ratio 0.00%; all net income was paid as dividends (payout ≈ 100%).';
   }
   if (retentionPercent < 0) {
-    return `Retention ratio ${formatPercent(retentionPercent)} — negative when dividends exceed positive net income (dividends funded partly from other capital or prior earnings).`;
+    return `Retention ratio ${formatPercent(retentionPercent)}; negative when dividends exceed positive net income (dividends funded partly from other capital or prior earnings).`;
   }
   if (retentionPercent >= 70) {
-    return `Retention ratio ${formatPercent(retentionPercent)} — relatively high retention; common for growth-oriented firms that reinvest more of earnings. Not automatically “better.”`;
+    return `Retention ratio ${formatPercent(retentionPercent)}; relatively high retention; common for growth-oriented firms that reinvest more of earnings. Not automatically “better.”`;
   }
   if (retentionPercent <= 30) {
-    return `Retention ratio ${formatPercent(retentionPercent)} — relatively low retention / higher payout; common for mature dividend-focused businesses. Context still matters.`;
+    return `Retention ratio ${formatPercent(retentionPercent)}; relatively low retention / higher payout; common for mature dividend-focused businesses. Context still matters.`;
   }
-  return `Retention ratio ${formatPercent(retentionPercent)} — a moderate share of earnings was retained after dividends. Compare with peers, growth plans, and payout policy.`;
+  return `Retention ratio ${formatPercent(retentionPercent)}: a moderate share of earnings was retained after dividends. Compare with peers, growth plans, and payout policy.`;
 }

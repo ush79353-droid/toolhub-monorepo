@@ -110,7 +110,7 @@ export function BitcoinEtfCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `ETF: ${etfLabel}`,
         `Investment: ${symbol}${input.investmentAmount}`,
         `Duration: ${input.durationYears} yrs`,

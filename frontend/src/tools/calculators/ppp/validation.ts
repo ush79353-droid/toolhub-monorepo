@@ -107,7 +107,7 @@ function validateDataset(
     const tFx = target.officialFxPerUsd[year];
     if (sFx == null || tFx == null) {
       errors.form =
-        'Official exchange rates unavailable for this year — use manual market rate.';
+        'Official exchange rates unavailable for this year; use manual market rate.';
     } else {
       marketRate = bilateralMarketFromUsdLegs(sFx, tFx);
       if (marketRate == null) {

@@ -97,8 +97,8 @@ export function OunceToKgForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact: 1 oz = {KG_PER_OUNCE} kg (avoirdupois). Edit ounces, kilograms, or pounds — the
-        others update instantly. Mass ounces only — not fluid ounces.
+ Exact: 1 oz = {KG_PER_OUNCE} kg (avoirdupois). Edit ounces, kilograms, or pounds; the
+ others update instantly. Mass ounces only; not fluid ounces.
       </div>
 
       <FieldShell

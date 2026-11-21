@@ -31,7 +31,7 @@ export const MONEY_SUPPLY_FAQS: readonly FAQItem[] = [
   {
     question: 'What is money supply?',
     answer:
-      'Money supply is a stock measure of monetary assets available in an economy under a chosen definition — typically currency and various deposit and money-market instruments grouped into aggregates such as M1 or M2.',
+      'Money supply is a stock measure of monetary assets available in an economy under a chosen definition; typically currency and various deposit and money-market instruments grouped into aggregates such as M1 or M2.',
   },
   {
     question: 'How do you calculate money supply?',
@@ -46,7 +46,7 @@ export const MONEY_SUPPLY_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the monetary base?',
     answer:
-      'Here, monetary base (MB) equals currency in circulation plus reserve balances at the central bank — sometimes called high-powered money under simplified accounting.',
+      'Here, monetary base (MB) equals currency in circulation plus reserve balances at the central bank; sometimes called high-powered money under simplified accounting.',
   },
   {
     question: 'Is M0 the same as monetary base?',
@@ -71,7 +71,7 @@ export const MONEY_SUPPLY_FAQS: readonly FAQItem[] = [
   {
     question: 'What is M4 money supply?',
     answer:
-      'M4 is jurisdiction-specific (for example historically used in some countries). This tool offers a labeled custom/textbook M4 = M3 + other liquid instruments — unavailable under U.S. Fed-style mode.',
+      'M4 is jurisdiction-specific (for example historically used in some countries). This tool offers a labeled custom/textbook M4 = M3 + other liquid instruments; unavailable under U.S. Fed-style mode.',
   },
   {
     question: 'What is money zero maturity?',
@@ -91,7 +91,7 @@ export const MONEY_SUPPLY_FAQS: readonly FAQItem[] = [
   {
     question: 'What is included in M1?',
     answer:
-      'In this model: currency in circulation, demand deposits, traveler’s checks, other checkable deposits, and savings deposits — each entered once to avoid double counting.',
+      'In this model: currency in circulation, demand deposits, traveler’s checks, other checkable deposits, and savings deposits; each entered once to avoid double counting.',
   },
   {
     question: 'Are savings deposits included in M1?',
@@ -101,7 +101,7 @@ export const MONEY_SUPPLY_FAQS: readonly FAQItem[] = [
   {
     question: 'What are checkable deposits?',
     answer:
-      'Deposits that can generally be withdrawn or transferred on demand by check, card, or electronic payment — including demand deposits and other checkable deposits in this tool.',
+      'Deposits that can generally be withdrawn or transferred on demand by check, card, or electronic payment, including demand deposits and other checkable deposits in this tool.',
   },
   {
     question: 'Are credit cards part of money supply?',
@@ -131,7 +131,7 @@ export const MONEY_SUPPLY_FAQS: readonly FAQItem[] = [
   {
     question: 'How does the Federal Reserve influence money supply?',
     answer:
-      'Through interest-rate policy, reserve remuneration, asset purchases/sales, and lending facilities that affect bank funding and balance sheets — not usually a fixed multiplier dial.',
+      'Through interest-rate policy, reserve remuneration, asset purchases/sales, and lending facilities that affect bank funding and balance sheets; not usually a fixed multiplier dial.',
   },
   {
     question: 'Does the Federal Reserve directly control M2?',

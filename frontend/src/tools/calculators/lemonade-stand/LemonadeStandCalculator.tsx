@@ -38,7 +38,7 @@ const CURRENCY_CONVERSION_NOTE =
 
 function summaryText(metadataTitle: string, result: LemonadeStandResult, currencyNote: string): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Servings: ${result.servings}`,
     `Cup costs: ${result.cupsDisplay}`,
     `Ingredients: ${result.ingredientsDisplay}`,

@@ -192,7 +192,7 @@ export function GstForm({ input, errors, result, onChange }: GstFormProps) {
           <span>GST</span>
           <InfoTooltip
             label="GST"
-            text="GST rate as a percent. Not FX-converted. Enter the rate yourself — no jurisdiction default is applied. Zero is allowed."
+            text="GST rate as a percent. Not FX-converted. Enter the rate yourself; no jurisdiction default is applied. Zero is allowed."
           />
         </label>
         <FieldShell error={errors.gstPercent}>

@@ -68,12 +68,12 @@ export const RESERVE_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What is fractional reserve banking?',
     answer:
-      'In the textbook model, banks hold reserves equal to only a fraction of deposits and expand lending and deposits under simplifying assumptions. Modern banking also depends on capital, liquidity, funding markets, credit demand, and central-bank operations — not a fixed reserve ratio alone.',
+      'In the textbook model, banks hold reserves equal to only a fraction of deposits and expand lending and deposits under simplifying assumptions. Modern banking also depends on capital, liquidity, funding markets, credit demand, and central-bank operations; not a fixed reserve ratio alone.',
   },
   {
     question: 'What is the simple money multiplier?',
     answer:
-      'm = 1/r (or 100/RR%). At a 10% reserve ratio, m = 10. It is a theoretical identity under strong assumptions (fixed ratio, no cash leakage, no excess reserves, sufficient loan demand, no binding capital constraints) — not a forecast of actual monetary expansion.',
+      'm = 1/r (or 100/RR%). At a 10% reserve ratio, m = 10. It is a theoretical identity under strong assumptions (fixed ratio, no cash leakage, no excess reserves, sufficient loan demand, no binding capital constraints); not a forecast of actual monetary expansion.',
   },
   {
     question: 'How does the reserve ratio affect the money supply?',
@@ -93,7 +93,7 @@ export const RESERVE_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'Why do banks hold reserves?',
     answer:
-      'For payment settlement, customer withdrawals, liquidity management, operational needs, and regulatory or supervisory requirements where applicable — even when formal reserve requirement ratios are zero.',
+      'For payment settlement, customer withdrawals, liquidity management, operational needs, and regulatory or supervisory requirements where applicable; even when formal reserve requirement ratios are zero.',
   },
   {
     question: 'What happens if a bank has insufficient reserves?',
@@ -118,7 +118,7 @@ export const RESERVE_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'Does a lower reserve requirement always increase lending?',
     answer:
-      'No. If other constraints bind — capital, liquidity, funding costs, risk appetite, or weak loan demand — cutting a reserve requirement may have little effect on credit. Treat multiplier stories as teaching devices, not automatic predictions.',
+      'No. If other constraints bind (capital, liquidity, funding costs, risk appetite, or weak loan demand) cutting a reserve requirement may have little effect on credit. Treat multiplier stories as teaching devices, not automatic predictions.',
   },
   {
     question: 'How do I calculate reserves from deposits and a reserve ratio?',

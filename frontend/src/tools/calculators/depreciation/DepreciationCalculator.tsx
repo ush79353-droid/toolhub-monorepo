@@ -160,7 +160,7 @@ export function DepreciationCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Method: ${input.method}`,
         `Original cost: ${getCurrencySymbol(input.originalCostCurrency)}${input.originalCost}`,
         `Salvage: ${getCurrencySymbol(input.salvageValueCurrency)}${input.salvageValue}`,

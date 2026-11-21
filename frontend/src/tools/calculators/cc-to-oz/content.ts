@@ -45,11 +45,11 @@ export const CC_TO_OZ_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-convert-cc-to-oz',
     title: 'How to Convert CC to OZ',
     paragraphs: [
-      'Step 1 — Determine the CC value. Example: 100 cc.',
-      'Step 2 — Select the fluid ounce system: US fluid ounces (default) or UK imperial fluid ounces.',
-      `Step 3 — Apply the correct formula. For US fluid ounces: US fl oz = cc / ${CC_PER_US_FL_OZ}. Example: 100 / ${CC_PER_US_FL_OZ} ≈ ${formatVolume(ccToFluidOunces(100, 'us'))} US fl oz.`,
+      'Step 1: Determine the CC value. Example: 100 cc.',
+      'Step 2: Select the fluid ounce system: US fluid ounces (default) or UK imperial fluid ounces.',
+      `Step 3: Apply the correct formula. For US fluid ounces: US fl oz = cc / ${CC_PER_US_FL_OZ}. Example: 100 / ${CC_PER_US_FL_OZ} ≈ ${formatVolume(ccToFluidOunces(100, 'us'))} US fl oz.`,
       `For UK fluid ounces: UK fl oz = cc / ${CC_PER_UK_FL_OZ}. Example: 100 / ${CC_PER_UK_FL_OZ} ≈ ${formatVolume(ccToFluidOunces(100, 'uk'))} UK fl oz.`,
-      `Step 4 — Convert back to cc with cc = fl oz × factor. Example: 5 × ${CC_PER_US_FL_OZ} = ${formatVolume(fluidOuncesToCc(5, 'us'))} cc.`,
+      `Step 4: Convert back to cc with cc = fl oz × factor. Example: 5 × ${CC_PER_US_FL_OZ} = ${formatVolume(fluidOuncesToCc(5, 'us'))} cc.`,
       'The table below uses US fluid ounces. Displayed values may be rounded; the calculator uses the exact constants.',
     ],
     formula: `US fl oz = cc / ${CC_PER_US_FL_OZ} · UK fl oz = cc / ${CC_PER_UK_FL_OZ}`,
@@ -91,7 +91,7 @@ export const CC_TO_OZ_FAQS: readonly FAQItem[] = [
   {
     question: 'What Is OZ?',
     answer:
-      'In this calculator, oz means fluid ounces — a unit of volume. Fluid ounces should not be confused with ounces of weight (avoirdupois ounces).',
+      'In this calculator, oz means fluid ounces: a unit of volume. Fluid ounces should not be confused with ounces of weight (avoirdupois ounces).',
   },
   {
     question: 'How Can I Convert 10 CC to OZ?',

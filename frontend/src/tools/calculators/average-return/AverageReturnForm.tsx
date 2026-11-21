@@ -342,7 +342,7 @@ export function AverageReturnForm({
             className="h-11"
             onClick={onLoadCashFlowExample}
           >
-            Example — 10%
+ Example: 10%
           </Button>
         </div>
       </section>
@@ -509,7 +509,7 @@ export function AverageReturnForm({
             className="h-11"
             onClick={onLoadAverageExample}
           >
-            Example — 24.07% cumulative
+ Example: 24.07% cumulative
           </Button>
         </div>
       </section>

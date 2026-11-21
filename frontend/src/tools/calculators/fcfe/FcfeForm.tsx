@@ -557,7 +557,7 @@ export function FcfeForm({
                 Depreciation and amortization
                 <InfoTooltip
                   label="Depreciation and amortization"
-                  text="Noncash D&A deducted from the income measure — added back in NI/EBIT/EBITDA modes. Not used again in CFO/FCFF modes."
+                  text="Noncash D&A deducted from the income measure; added back in NI/EBIT/EBITDA modes. Not used again in CFO/FCFF modes."
                 />
               </label>
               <FieldShell error={errors.depreciationAmortization}>
@@ -655,7 +655,7 @@ export function FcfeForm({
 
           {input.method === 'fcff' ? (
             <p className="text-xs text-muted-foreground">
-              CapEx and working capital investment are already reflected in FCFF —
+ CapEx and working capital investment are already reflected in FCFF; 
               only interest, tax rate, and net borrowing are applied here.
             </p>
           ) : null}

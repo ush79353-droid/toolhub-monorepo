@@ -192,12 +192,12 @@ export function AnnualPayCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Hours/week: ${input.hoursPerWeek}`,
         `Weeks/year: ${input.weeksPerYear}`,
         `Hourly wage: ${wageSymbol}${input.hourlyWage} ${input.hourlyWageCurrency}`,
         `Annual pay: ${annualSymbol}${result.formattedAnnualPay} ${result.annualPayCurrency}`,
-        `Flat tax: ${input.taxPercent}% (simplified estimate — not jurisdiction-specific)`,
+        `Flat tax: ${input.taxPercent}% (simplified estimate; not jurisdiction-specific)`,
         `Net hourly: ${netHourlySymbol}${result.formattedNetHourly} ${result.netHourlyCurrency}`,
         `Net annual: ${netAnnualSymbol}${result.formattedNetAnnual} ${result.netAnnualCurrency}`,
         `Formulas: Annual = Hourly × Hours × Weeks; Net Hourly = Hourly × (1−Tax/100); Net Annual = Annual × (1−Tax/100)`,

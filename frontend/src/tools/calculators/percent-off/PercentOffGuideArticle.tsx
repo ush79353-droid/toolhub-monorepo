@@ -144,7 +144,7 @@ export function PercentOffGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This calculator taxes the discounted price by default: Total =
         Discounted × (1 + tax%/100). Jurisdictions differ on taxability and
-        rounding — this is arithmetic, not tax advice. Example: $150 after
+ rounding; this is arithmetic, not tax advice. Example: $150 after
         discount + 8% tax → $162.
       </p>
 
@@ -167,7 +167,7 @@ export function PercentOffGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Stores use percent-off tags for promotions, clearance, and seasonal
-        events. Stacked offers (sitewide + coupon) are often sequential —
+ events. Stacked offers (sitewide + coupon) are often sequential; 
         always check the order of application.
       </p>
 
@@ -179,7 +179,7 @@ export function PercentOffGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Holiday promotions frequently advertise large percent-off figures. Compare
-        final prices across retailers — see also the{' '}
+ final prices across retailers; see also the{' '}
         <Link
           href="/tools/black-friday-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"

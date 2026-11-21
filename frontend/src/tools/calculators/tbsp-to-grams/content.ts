@@ -13,7 +13,7 @@ import { US_TEASPOON_ML } from './types';
 export const TBSP_TO_G_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'intro', label: 'tbsp to Grams Converter (with Ingredient Weights)' },
   { id: 'how-to', label: 'Tbsp to Grams Converter' },
-  { id: 'quick-reference', label: 'Quick Reference — 1 tbsp to Grams' },
+  { id: 'quick-reference', label: 'Quick Reference; 1 tbsp to Grams' },
   { id: 'formula', label: 'What Is the Formula to Manually Convert Tablespoons to Grams?' },
   { id: 'why-vary', label: 'Why Do Ingredient Weights Vary?' },
   { id: 'related-tools', label: 'Other Useful Conversion Tools' },
@@ -41,24 +41,24 @@ export const TBSP_TO_G_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'tbsp to Grams Converter (with Ingredient Weights)',
     paragraphs: [
       'Convert tablespoons into grams based on the selected ingredient. Tablespoons measure volume; grams measure mass. Ingredient density determines the relationship, so different foods weigh differently per tablespoon.',
-      'Use it for cooking, baking, recipe conversions, ingredient measurement, kitchen preparation, and international recipes. Enter tablespoons or grams — both directions work for the active ingredient.',
+      'Use it for cooking, baking, recipe conversions, ingredient measurement, kitchen preparation, and international recipes. Enter tablespoons or grams; both directions work for the active ingredient.',
     ],
   },
   {
     id: 'how-to',
     title: 'Tbsp to Grams Converter',
     paragraphs: [
-      'Step 1 — Select an ingredient from the dropdown (Butter is the default).',
-      'Step 2 — Enter the quantity in the Tablespoons field (for example, 2 tbsp).',
-      `Step 3 — Read the grams result. Example: 2 US tbsp of butter ≈ ${formatKitchen(butter2g)} g.`,
-      'Step 4 — Enter grams instead to convert back to tablespoons.',
-      'Step 5 — Check Show ingredient density to see density (g/mL) and grams per US tablespoon.',
+      'Step 1: Select an ingredient from the dropdown (Butter is the default).',
+      'Step 2: Enter the quantity in the Tablespoons field (for example, 2 tbsp).',
+      `Step 3: Read the grams result. Example: 2 US tbsp of butter ≈ ${formatKitchen(butter2g)} g.`,
+      'Step 4: Enter grams instead to convert back to tablespoons.',
+      'Step 5: Check Show ingredient density to see density (g/mL) and grams per US tablespoon.',
       `This calculator uses the US tablespoon (${US_TABLESPOON_ML} mL) as its documented standard.`,
     ],
   },
   {
     id: 'quick-reference',
-    title: 'Quick Reference — 1 tbsp to Grams (Common Ingredients)',
+    title: 'Quick Reference; 1 tbsp to Grams (Common Ingredients)',
     paragraphs: [
       'A tablespoon is a unit of volume, so the mass of one tablespoon varies by ingredient. Honey weighs more than flour for the same volume because honey is denser.',
       'Values below assume one level US tablespoon and the listed approximate densities.',
@@ -78,7 +78,7 @@ export const TBSP_TO_G_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `grams = tbsp × V_tbsp × ρ, where V_tbsp is the tablespoon volume in milliliters and ρ is density in g/mL.`,
       `For a US tablespoon, V_tbsp = ${US_TABLESPOON_ML} mL, so grams = tbsp × ${US_TABLESPOON_ML} × ρ.`,
-      `Example — 2 tablespoons of butter at ≈ ${formatMeasure(butter.densityGPerMl)} g/mL: 2 × ${US_TABLESPOON_ML} × ${formatMeasure(butter.densityGPerMl)} ≈ ${formatKitchen(butter2g)} g.`,
+      `Example; 2 tablespoons of butter at ≈ ${formatMeasure(butter.densityGPerMl)} g/mL: 2 × ${US_TABLESPOON_ML} × ${formatMeasure(butter.densityGPerMl)} ≈ ${formatKitchen(butter2g)} g.`,
       `Reverse: tbsp = grams ÷ (${US_TABLESPOON_ML} × ρ).`,
     ],
     formula: `grams = tbsp × ${US_TABLESPOON_ML} × ρ\ntbsp = grams ÷ (${US_TABLESPOON_ML} × ρ)\n2 × ${US_TABLESPOON_ML} × ${formatMeasure(butter.densityGPerMl)} ≈ ${formatKitchen(butter2g)}`,
@@ -87,12 +87,12 @@ export const TBSP_TO_G_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'why-vary',
     title: 'Why Do Ingredient Weights Vary?',
     paragraphs: [
-      'Density — denser ingredients weigh more for the same spoon volume.',
-      'Packing — packed sugar or flour can hold more mass per tablespoon than a loose fill.',
-      'Moisture — water content changes mass for the same apparent volume.',
-      'Temperature — some ingredients expand or contract as temperature changes.',
-      'Ingredient form — powdered, granulated, melted, or solid forms often have different bulk densities.',
-      'This tool uses approximate reference densities for level US tablespoons — not laboratory certificates.',
+      'Density; denser ingredients weigh more for the same spoon volume.',
+      'Packing; packed sugar or flour can hold more mass per tablespoon than a loose fill.',
+      'Moisture; water content changes mass for the same apparent volume.',
+      'Temperature; some ingredients expand or contract as temperature changes.',
+      'Ingredient form; powdered, granulated, melted, or solid forms often have different bulk densities.',
+      'This tool uses approximate reference densities for level US tablespoons; not laboratory certificates.',
     ],
   },
   {

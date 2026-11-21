@@ -13,7 +13,7 @@ export function AnnualPayGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Annual pay from an hourly wage is the product of that wage, the hours you work
         each week, and the weeks you work each year. This calculator also estimates net
-        hourly and net annual pay after a single flat tax percent you enter — not brackets,
+ hourly and net annual pay after a single flat tax percent you enter; not brackets,
         withholdings, or country-specific payroll rules.
       </p>
 

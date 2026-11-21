@@ -60,12 +60,12 @@ export function interpretGoodwill(
   status: string
 ): string {
   if (status === 'potentialBargainPurchase' || residual < 0) {
-    return `Consideration is ${formatGwMoneyPlain(bargainPurchaseDifference)} below identifiable net assets. Treat this as a potential bargain purchase indication only — reassess fair values, consideration, and recognition criteria before recognizing any gain.`;
+    return `Consideration is ${formatGwMoneyPlain(bargainPurchaseDifference)} below identifiable net assets. Treat this as a potential bargain purchase indication only; reassess fair values, consideration, and recognition criteria before recognizing any gain.`;
   }
   if (goodwill === 0) {
-    return 'Purchase consideration equals the fair value of identifiable net assets under this simplified model — no acquisition residual (zero goodwill).';
+    return 'Purchase consideration equals the fair value of identifiable net assets under this simplified model; no acquisition residual (zero goodwill).';
   }
-  return `Purchase consideration exceeds identifiable net assets by ${formatGwMoneyPlain(goodwill)}. Under the simplified model this residual is goodwill — often reflecting synergies, assembled workforce, or other unidentifiable benefits. Separately identifiable intangibles should be recognized independently when required.`;
+  return `Purchase consideration exceeds identifiable net assets by ${formatGwMoneyPlain(goodwill)}. Under the simplified model this residual is goodwill; often reflecting synergies, assembled workforce, or other unidentifiable benefits. Separately identifiable intangibles should be recognized independently when required.`;
 }
 
 export function formatGwMoney(

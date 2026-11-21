@@ -49,7 +49,7 @@ function summaryText(metadataTitle: string, result: ARDaysResult, note: string):
   }
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   const lines = [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `A/R days: ${daysText(result.arDays)}`,
     `Receivables used: ${money(result.accountsReceivableUsed)}`,
     `Net credit sales: ${money(result.netCreditSales)}`,

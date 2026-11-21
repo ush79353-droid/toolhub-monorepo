@@ -58,7 +58,7 @@ export function calculateMmToKm(input: MmToKmInput): MmToKmResult {
 
 export function shareResultText(result: MmToKmResult): string {
   return [
-    'mm to km Conversion — Omega Calculators',
+    'mm to km Conversion | Omega Calculators',
     '',
     `${formatLength(result.mm)} mm = ${formatLength(result.km)} km`,
     '',

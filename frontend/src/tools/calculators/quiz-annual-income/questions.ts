@@ -19,7 +19,7 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
     ],
     correctAnswer: 'B',
     explanation:
-      'Annual income is the amount of money earned over one year — not a single month’s pay, and not savings after expenses.',
+      'Annual income is the amount of money earned over one year; not a single month’s pay, and not savings after expenses.',
   },
   {
     id: 'q2',
@@ -68,7 +68,7 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
     ],
     correctAnswer: 'B',
     explanation:
-      'Net annual income is what remains after taxes are deducted — take-home pay for the year in simplified teaching terms.',
+      'Net annual income is what remains after taxes are deducted; take-home pay for the year in simplified teaching terms.',
   },
   {
     id: 'q5',
@@ -82,7 +82,7 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
     ],
     correctAnswer: 'B',
     explanation:
-      '15 × 40 × 52 = 31,200. Fixed USD teaching example — not a tax estimate.',
+      '15 × 40 × 52 = 31,200. Fixed USD teaching example; not a tax estimate.',
   },
   {
     id: 'q6',

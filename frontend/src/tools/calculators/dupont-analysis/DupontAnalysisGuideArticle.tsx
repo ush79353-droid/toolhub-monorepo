@@ -85,7 +85,7 @@ export function DupontAnalysisGuideArticle() {
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A higher equity multiplier usually means more assets relative to equity,
-        often financed with liabilities — which can raise ROE and risk.
+ often financed with liabilities; which can raise ROE and risk.
       </p>
       <h3 className="mt-4 text-base font-semibold text-accent">
         Return on equity

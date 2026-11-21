@@ -77,10 +77,10 @@ export function formatRatio(value: number, digits = 2): string {
 
 export function interpretPeRatio(pe: number): string {
   if (pe < 10) {
-    return `P/E ratio ${formatRatio(pe)}× — the market price is about ${formatRatio(pe)} times earnings per share. A relatively low multiple may reflect valuation, risk, or weaker expected growth; it is not automatically a bargain.`;
+    return `P/E ratio ${formatRatio(pe)}×: the market price is about ${formatRatio(pe)} times earnings per share. A relatively low multiple may reflect valuation, risk, or weaker expected growth; it is not automatically a bargain.`;
   }
   if (pe <= 20) {
-    return `P/E ratio ${formatRatio(pe)}× — investors are paying about ${formatRatio(pe)} times the company's earnings per share. Compare with peers, history, and growth expectations.`;
+    return `P/E ratio ${formatRatio(pe)}×; investors are paying about ${formatRatio(pe)} times the company's earnings per share. Compare with peers, history, and growth expectations.`;
   }
-  return `P/E ratio ${formatRatio(pe)}× — the share price is about ${formatRatio(pe)} times earnings per share. A higher multiple may reflect growth expectations or other valuation factors — not an automatic buy or sell signal.`;
+  return `P/E ratio ${formatRatio(pe)}×: the share price is about ${formatRatio(pe)} times earnings per share. A higher multiple may reflect growth expectations or other valuation factors; not an automatic buy or sell signal.`;
 }

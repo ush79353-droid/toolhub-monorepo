@@ -105,7 +105,7 @@ export function ReserveRatioForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Reserve ratio = (Reserves / Deposits) × 100. Currency is denomination
-        only — not live FX. Funds not held as reserves is a simplified
+ only; not live FX. Funds not held as reserves is a simplified
         balance-sheet illustration, not automatic lending capacity. Some
         jurisdictions (e.g. U.S. Fed since March 2020) set reserve requirement
         ratios to zero; other liquidity and capital rules still apply.

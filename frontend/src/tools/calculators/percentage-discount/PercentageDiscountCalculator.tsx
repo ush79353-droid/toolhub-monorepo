@@ -173,7 +173,7 @@ export function PercentageDiscountCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Price before discount: ${beforeSymbol}${input.priceBefore} ${input.priceBeforeCurrency}`,
         `Discount: ${input.discountPercent}%`,
         `Price after discount: ${afterSymbol}${result.formattedPriceAfter} ${result.priceAfterCurrency}`,

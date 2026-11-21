@@ -261,7 +261,7 @@ export function shareResultText(
     .map((row) => `  ${row.score}: ${row.count}`)
     .join('\n');
   return [
-    'Customer Effort Score Calculator — Omega Calculators',
+    'Customer Effort Score Calculator | Omega Calculators',
     '',
     `Scale: 1–${result.scale} (1 = very easy, ${result.scale} = very difficult)`,
     `Your CES: ${result.formattedCes} / ${result.scale}`,

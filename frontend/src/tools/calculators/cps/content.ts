@@ -31,7 +31,7 @@ export const CPS_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. View the equivalent values in all other units instantly.',
       '3. Edit another field to reverse the conversion.',
       '4. Use Share Result to copy the answer, or Reload / Clear to start over.',
-      'Example: 5 cps equals 5 Hz, 300 RPM, 1,800 deg/s, and about 31.416 rad/s — assuming one cycle is one full revolution.',
+      'Example: 5 cps equals 5 Hz, 300 RPM, 1,800 deg/s, and about 31.416 rad/s; assuming one cycle is one full revolution.',
     ],
   },
   {

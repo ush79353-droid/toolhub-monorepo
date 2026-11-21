@@ -103,7 +103,7 @@ export function KnotsToMphForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         1 knot = 1 international nautical mile per hour ≈ 1.15078 mph (exact factor 1852/1609.344). Enter
-        any field — all five units stay synchronized. Negative speeds are not accepted.
+ any field; all five units stay synchronized. Negative speeds are not accepted.
       </div>
 
       {KNOTS_MPH_FIELDS.map((field) => (

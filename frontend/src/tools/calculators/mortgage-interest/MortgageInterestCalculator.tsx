@@ -80,7 +80,7 @@ export function MortgageInterestCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Mortgage principal: ${principalSymbol}${input.principal}`,
         `Mortgage term: ${input.mortgageTerm} ${input.termUnit}`,
         `Interest rate: ${input.interestRatePercent}%`,

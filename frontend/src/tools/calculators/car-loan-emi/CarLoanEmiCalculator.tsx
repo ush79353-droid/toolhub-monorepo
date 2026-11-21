@@ -89,7 +89,7 @@ export function CarLoanEmiCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Price of the car: ${getCurrencySymbol(input.carPriceCurrency)}${input.carPrice || '0'}`,
         `Money you have: ${getCurrencySymbol(input.moneyYouHaveCurrency)}${input.moneyYouHave || '0'}`,
         `Trade-in value: ${getCurrencySymbol(input.tradeInCurrency)}${input.tradeInValue || '0'}`,

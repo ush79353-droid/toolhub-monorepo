@@ -141,7 +141,7 @@ export function DegreeOfOperatingLeverageForm({
         <p className="mt-1.5 text-xs text-muted-foreground">
           {isPeriod
             ? 'Observed DOL from percentage changes in sales and EBIT between two periods (reference default).'
-            : 'Point-in-time DOL = contribution margin ÷ EBIT under a linear CVP cost model — not automatically interchangeable with period-to-period DOL.'}
+            : 'Point-in-time DOL = contribution margin ÷ EBIT under a linear CVP cost model; not automatically interchangeable with period-to-period DOL.'}
         </p>
       </fieldset>
 
@@ -266,7 +266,7 @@ export function DegreeOfOperatingLeverageForm({
                 <span>Degree of operating leverage</span>
                 <InfoTooltip
                   label="Degree of operating leverage"
-                  text="DOL = %ΔEBIT / %ΔSales. Dimensionless — no currency or % sign on the coefficient."
+                  text="DOL = %ΔEBIT / %ΔSales. Dimensionless; no currency or % sign on the coefficient."
                 />
               </label>
               <FieldShell

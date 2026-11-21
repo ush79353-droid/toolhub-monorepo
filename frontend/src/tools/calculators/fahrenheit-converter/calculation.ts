@@ -65,7 +65,7 @@ export function shareResultText(
   amounts: Record<TemperatureUnit, number>,
 ): string {
   return [
-    'Fahrenheit Converter — Omega Calculators',
+    'Fahrenheit Converter | Omega Calculators',
     '',
     `${formatTemp(amounts.fahrenheit)}${TEMP_SYMBOLS.fahrenheit} equals:`,
     '',

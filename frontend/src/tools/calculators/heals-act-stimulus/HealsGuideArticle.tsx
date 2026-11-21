@@ -24,7 +24,7 @@ export function HealsGuideArticle() {
               In late July 2020, Senate Republicans released a COVID-19 relief package commonly
               branded the <strong>HEALS Act</strong> (Health, Economic Assistance, Liability
               Protection and Schools Act). Among its tax titles was a proposed second round of
-              individual recovery rebates — often called a “second stimulus check.”
+ individual recovery rebates; often called a “second stimulus check.”
             </p>
             <p>
               That package was a negotiating position, not enacted law. Congress later passed other
@@ -157,7 +157,7 @@ export function HealsGuideArticle() {
                 determinations and are not payable benefits.
               </li>
               <li>
-                Fixed <strong>USD</strong> only — no currency conversion of thresholds or payments.
+ Fixed <strong>USD</strong> only; no currency conversion of thresholds or payments.
               </li>
               <li>
                 Benefit-recipient auto-pay paths (SSA, SSI, VA, RRB) and mixed ITIN/SSN household

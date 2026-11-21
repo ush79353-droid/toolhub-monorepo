@@ -47,7 +47,7 @@ export function calculateKsiToMpa(input: KsiToMpaInput): KsiToMpaResult {
 
 export function shareResultText(result: KsiToMpaResult): string {
   return [
-    'KSI to MPa Converter — Omega Calculators',
+    'KSI to MPa Converter | Omega Calculators',
     '',
     `${formatPressure(result.ksi)} ksi = ${formatPressure(result.mpa)} MPa`,
     '',

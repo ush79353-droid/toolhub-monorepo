@@ -48,7 +48,7 @@ export const EOQ_FAQS: readonly FAQItem[] = [
   {
     question: 'What is ordering cost?',
     answer:
-      'The fixed cost of placing and processing one replenishment order — not the purchase price of the goods themselves.',
+      'The fixed cost of placing and processing one replenishment order; not the purchase price of the goods themselves.',
   },
   {
     question: 'What is holding cost?',
@@ -58,12 +58,12 @@ export const EOQ_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when ordering costs increase?',
     answer:
-      'All else equal, EOQ rises — larger, less frequent orders become more economical.',
+      'All else equal, EOQ rises; larger, less frequent orders become more economical.',
   },
   {
     question: 'What happens when holding costs increase?',
     answer:
-      'All else equal, EOQ falls — smaller, more frequent orders reduce average inventory.',
+      'All else equal, EOQ falls; smaller, more frequent orders reduce average inventory.',
   },
   {
     question: 'Can EOQ be zero?',

@@ -20,7 +20,7 @@ function formatArea(value: number): string {
 }
 
 function summaryText(result: AcreageResult): string {
-  const lines = ['Acreage Calculator — Omega Calculators'];
+  const lines = ['Acreage Calculator | Omega Calculators'];
   if (
     result.mode === 'dimensions' &&
     result.widthDisplay !== null &&

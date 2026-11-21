@@ -107,7 +107,7 @@ export function ResidualIncomeCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Equity Capital: ${money(input.equityCapital)}`,
         `Cost of Equity: ${input.costOfEquity}%`,

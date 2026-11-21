@@ -78,7 +78,7 @@ export const IMPERIAL_TO_METRIC_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-imperial',
     title: 'What Is the Imperial System of Measurement?',
     paragraphs: [
-      'The British Imperial system is a historical set of units for length, area, volume, and mass. The US customary system is closely related but not identical — especially for liquid volume, where US and Imperial gallons differ.',
+      'The British Imperial system is a historical set of units for length, area, volume, and mass. The US customary system is closely related but not identical; especially for liquid volume, where US and Imperial gallons differ.',
       'This converter focuses on everyday Imperial/US customary units and their metric counterparts for length, area, volume, mass, and temperature.',
     ],
   },
@@ -131,7 +131,7 @@ export const IMPERIAL_TO_METRIC_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'other-conversions',
     title: 'Other Conversions Between Measurement Systems',
     paragraphs: [
-      'Any units that share the same physical dimension can convert through the shared engine — for example feet ↔ meters or pounds ↔ kilograms.',
+      'Any units that share the same physical dimension can convert through the shared engine, for example feet ↔ meters or pounds ↔ kilograms.',
       'Linear feet cannot become cubic meters: length and volume are different dimensions and require three-dimensional information for volume.',
     ],
   },
@@ -184,7 +184,7 @@ export const IMPERIAL_TO_METRIC_FAQS: readonly FAQItem[] = [
   {
     question: 'How Much Is 10 Feet in Cubic Meters?',
     answer:
-      'Linear feet cannot convert directly into cubic meters — they measure different dimensions. Volume needs three length dimensions (or an existing volume unit).',
+      'Linear feet cannot convert directly into cubic meters; they measure different dimensions. Volume needs three length dimensions (or an existing volume unit).',
   },
   {
     question: 'What Is the Difference Between Imperial and Metric Measurements?',

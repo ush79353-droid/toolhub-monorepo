@@ -77,12 +77,12 @@ export function EarnestMoneyCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Property price: ${symbol}${result.formattedPropertyPrice} ${result.currency}`,
         `Earnest money percentage: ${result.formattedEarnestMoneyPercentage}%`,
         `Earnest money needed: ${symbol}${result.formattedEarnestMoneyAmount} ${result.currency}`,
         'Formula: Earnest Money = Property Price × (Percentage / 100)',
-        'Estimate only — deposit terms depend on the purchase agreement and local practice.',
+        'Estimate only; deposit terms depend on the purchase agreement and local practice.',
       ].join('\n')
     : '';
 

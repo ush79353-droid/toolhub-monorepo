@@ -20,7 +20,7 @@ import { validateHeightInInches } from './validation';
 
 function summaryText(result: HeightInInchesResult): string {
   return [
-    'Height in Inches Calculator — Omega Calculators',
+    'Height in Inches Calculator | Omega Calculators',
     `${formatLength(result.feet)} ft ${formatLength(result.inches)} in = ${formatLength(result.totalInches)} in`,
     `${formatLength(result.centimeters)} cm · ${formatLength(result.meters)} m`,
     '1 foot = 12 inches · 1 inch = 2.54 cm',

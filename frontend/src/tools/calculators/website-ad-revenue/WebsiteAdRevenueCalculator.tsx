@@ -113,9 +113,9 @@ export function WebsiteAdRevenueCalculator({
   const summary =
     result && result.revenue !== null
       ? [
-          `${metadata.title} — Omega Calculators`,
-          `Visits: ${Number.isFinite(input.visits) ? input.visits : '—'}`,
-          `Page views per visit: ${Number.isFinite(input.pageViewsPerVisit) ? input.pageViewsPerVisit : '—'}`,
+          `${metadata.title} | Omega Calculators`,
+          `Visits: ${Number.isFinite(input.visits) ? input.visits: '; '}`,
+          `Page views per visit: ${Number.isFinite(input.pageViewsPerVisit) ? input.pageViewsPerVisit: '; '}`,
           `Page views: ${result.pageViewsDisplay}`,
           `Page RPM: ${symbol}${formatMoney(input.pageRpm, input.currency)}`,
           `Revenue: ${symbol}${result.revenueDisplay}`,

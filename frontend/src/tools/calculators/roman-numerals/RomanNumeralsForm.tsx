@@ -93,7 +93,7 @@ export function RomanNumeralsForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Convert between Arabic numbers and standard Roman numerals ({MIN_ARABIC}–{MAX_ARABIC}).
-        Additive and subtractive notation only — no zero, negatives, or overline extensions.
+ Additive and subtractive notation only; no zero, negatives, or overline extensions.
       </div>
 
       <fieldset>
@@ -140,7 +140,7 @@ export function RomanNumeralsForm({
         <p id="roman-input-hint" className="text-xs text-muted-foreground">
           {isArabicMode
             ? `Whole number from ${MIN_ARABIC} to ${MAX_ARABIC}.`
-            : 'Symbols I, V, X, L, C, D, M — uppercase or lowercase.'}
+            : 'Symbols I, V, X, L, C, D, M; uppercase or lowercase.'}
         </p>
         {errors.input ? (
           <p className="text-xs text-red-600" role="alert">
@@ -192,7 +192,7 @@ export function RomanNumeralsForm({
                 className="text-left text-primary underline-offset-2 hover:underline"
                 onClick={() => onApplyExample(id)}
               >
-                Example {id} — {label}
+ Example {id}; {label}
               </button>
             </li>
           ))}

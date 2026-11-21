@@ -39,7 +39,7 @@ export const PHILLIPS_CURVE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the relationship between inflation and unemployment?',
     answer:
-      'In many short-run models, lower unemployment (or a positive output gap) is associated with higher inflation given expectations — but the link can flatten, shift, or break down.',
+      'In many short-run models, lower unemployment (or a positive output gap) is associated with higher inflation given expectations, but the link can flatten, shift, or break down.',
   },
   {
     question: 'What is the traditional Phillips Curve?',
@@ -64,7 +64,7 @@ export const PHILLIPS_CURVE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is NAIRU?',
     answer:
-      'The non-accelerating inflation rate of unemployment — a unemployment rate consistent with stable inflation under a chosen empirical model. It is estimated, not known exactly.',
+      'The non-accelerating inflation rate of unemployment: a unemployment rate consistent with stable inflation under a chosen empirical model. It is estimated, not known exactly.',
   },
   {
     question: 'Is NAIRU the same as the natural unemployment rate?',
@@ -74,7 +74,7 @@ export const PHILLIPS_CURVE_FAQS: readonly FAQItem[] = [
   {
     question: 'Why does the Phillips Curve slope downward?',
     answer:
-      'Under positive slope conventions here, higher unemployment (or a more negative gap) reduces wage growth or inflation for given expectations — reflecting weaker labor/product market pressure.',
+      'Under positive slope conventions here, higher unemployment (or a more negative gap) reduces wage growth or inflation for given expectations; reflecting weaker labor/product market pressure.',
   },
   {
     question: 'Can the Phillips Curve slope upward?',
@@ -104,7 +104,7 @@ export const PHILLIPS_CURVE_FAQS: readonly FAQItem[] = [
   {
     question: 'Is the Phillips Curve still relevant?',
     answer:
-      'Yes as a organizing framework with uncertainty — especially around expectations, slack measures, and time-varying slopes — not as a fixed forecasting law.',
+      'Yes as a organizing framework with uncertainty (especially around expectations, slack measures, and time-varying slopes) not as a fixed forecasting law.',
   },
   {
     question: 'How do central banks use the Phillips Curve?',
@@ -134,12 +134,12 @@ export const PHILLIPS_CURVE_FAQS: readonly FAQItem[] = [
   {
     question: 'Why is the long-run Phillips Curve vertical in standard models?',
     answer:
-      'Once expectations fully adjust, unemployment returns to its natural rate and inflation can settle at any rate consistent with monetary policy — no permanent trade-off.',
+      'Once expectations fully adjust, unemployment returns to its natural rate and inflation can settle at any rate consistent with monetary policy; no permanent trade-off.',
   },
   {
     question: 'Can high inflation and high unemployment occur together?',
     answer:
-      'Yes — especially with adverse supply shocks or rising expectations (stagflation).',
+      'Yes: especially with adverse supply shocks or rising expectations (stagflation).',
   },
   {
     question: 'What are the limitations of the Phillips Curve?',

@@ -14,7 +14,7 @@ export function GoodwillGuideArticle() {
         Goodwill is an intangible asset that may arise when one business
         acquires another. Under a simplified 100% acquisition model, it is the
         excess of purchase consideration over the fair value of identifiable net
-        assets — often reflecting synergies, assembled workforce benefits, or
+ assets; often reflecting synergies, assembled workforce benefits, or
         other unidentifiable economic advantages.
       </p>
 
@@ -69,7 +69,7 @@ export function GoodwillGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Older terminology sometimes called a negative residual “negative
         goodwill.” Modern acquisition accounting treats that indication as a
-        potential bargain purchase after required reassessment — not as a
+ potential bargain purchase after required reassessment; not as a
         negative asset labeled goodwill.
       </p>
 
@@ -145,7 +145,7 @@ export function GoodwillGuideArticle() {
         Goodwill is generally not depreciated like PP&amp;E. It is subject to
         impairment testing under applicable rules. An impairment reduces the
         carrying amount and can reduce earnings. This calculator estimates an
-        initial residual only — not future impairment.
+ initial residual only; not future impairment.
       </p>
 
       <h2
@@ -201,7 +201,7 @@ export function GoodwillGuideArticle() {
         allocation.
       </p>
       <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Educational illustration only — not accounting, audit, valuation, or
+ Educational illustration only; not accounting, audit, valuation, or
         professional advice. Confirm measurements under the applicable framework.
       </p>
 

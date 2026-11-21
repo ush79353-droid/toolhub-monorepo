@@ -16,7 +16,7 @@ export function ModifiedAdjustedGrossIncomeGuideArticle() {
         depends on the tax or benefit program (traditional IRA, Roth IRA,
         Premium Tax Credit, education benefits, and others each use different
         rules). This calculator produces a general illustrative MAGI estimate
-        only — not program-specific IRA, Roth, ACA, or education MAGI.
+ only; not program-specific IRA, Roth, ACA, or education MAGI.
       </p>
 
       <h2
@@ -73,7 +73,7 @@ export function ModifiedAdjustedGrossIncomeGuideArticle() {
         program-specific IRS eligibility. It does not apply income limits,
         phaseouts, or tax-year law changes. Amounts already in AGI should not be
         entered again. Self-employment taxes, IRA amounts, and other fields are
-        user-supplied add-backs—the tool does not compute statutory add-back
+ user-supplied add-backs, the tool does not compute statutory add-back
         formulas for you. For filing or benefit decisions, use official IRS
         guidance or professional advice.
       </p>

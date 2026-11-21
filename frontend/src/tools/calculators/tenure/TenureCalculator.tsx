@@ -14,7 +14,7 @@ import {
 import { validateTenureDraft } from './validation';
 
 function summaryText(metadataTitle: string, draft: TenureDraft, result: TenureResult): string {
-  const lines = [`${metadataTitle} — Omega Calculators`];
+  const lines = [`${metadataTitle} | Omega Calculators`];
   if (result.average) {
     lines.push(
       `Employees: ${draft.employeeCount}`,

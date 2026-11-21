@@ -11,7 +11,7 @@ export function FinanceChargeGuideArticle() {
         What Is a Finance Charge?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        A finance charge is the cost of borrowing for a period—commonly the
+ A finance charge is the cost of borrowing for a period, commonly the
         interest on a credit-card or other revolving balance, and sometimes
         including certain fees under product disclosures. APR expresses the
         annual rate; the monetary finance charge also depends on the balance,
@@ -39,7 +39,7 @@ export function FinanceChargeGuideArticle() {
         </li>
         <li>
           <strong>Two-cycle (double cycle) average:</strong> uncommon methods
-          that may look across more than one cycle—check local rules and card
+ that may look across more than one cycle, check local rules and card
           agreements.
         </li>
         <li>

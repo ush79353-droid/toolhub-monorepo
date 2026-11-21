@@ -246,7 +246,7 @@ export function MarginOfSafetyForm({
             <span>Breakeven sales</span>
             <InfoTooltip
               label="Breakeven sales"
-              text="Sales level at which profit is zero. Entered directly — not derived from unit cost alone."
+              text="Sales level at which profit is zero. Entered directly; not derived from unit cost alone."
             />
           </label>
           <div className="flex gap-2">
@@ -428,7 +428,7 @@ export function MarginOfSafetyForm({
                 <span>Cost price per unit</span>
                 <InfoTooltip
                   label="Cost price per unit"
-                  text="Optional. Not used to invent breakeven sales — fixed costs would also be required."
+                  text="Optional. Not used to invent breakeven sales; fixed costs would also be required."
                 />
               </label>
               <div className="flex gap-2">

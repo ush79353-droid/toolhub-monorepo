@@ -223,7 +223,7 @@ export function SavingsGoalCalculator({
   const goalSymbol = getCurrencySymbol(input.goalCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.summary,
         result.breakdown,
         `Goal currency: ${goalSymbol}`,

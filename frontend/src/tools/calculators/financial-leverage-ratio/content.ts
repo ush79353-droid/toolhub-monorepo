@@ -31,7 +31,7 @@ export const FINANCIAL_LEVERAGE_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the financial leverage ratio?',
     answer:
-      'Here it is Total Assets divided by Total Equity — also called the equity multiplier. Other sources may use the same name for debt-to-equity or debt-to-assets measures.',
+      'Here it is Total Assets divided by Total Equity; also called the equity multiplier. Other sources may use the same name for debt-to-equity or debt-to-assets measures.',
   },
   {
     question: 'What is the formula for financial leverage?',
@@ -45,7 +45,7 @@ export const FINANCIAL_LEVERAGE_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What is an equity multiplier?',
     answer:
-      'The equity multiplier is Total Assets ÷ Total Equity — the same primary ratio this calculator computes.',
+      'The equity multiplier is Total Assets ÷ Total Equity: the same primary ratio this calculator computes.',
   },
   {
     question: 'Is financial leverage the same as debt-to-equity?',
@@ -60,7 +60,7 @@ export const FINANCIAL_LEVERAGE_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What does financial leverage of 2 mean?',
     answer:
-      'About $2 of assets for every $1 of book equity — often consistent with substantial liability financing relative to equity.',
+      'About $2 of assets for every $1 of book equity; often consistent with substantial liability financing relative to equity.',
   },
   {
     question: 'What does financial leverage of 3 mean?',
@@ -80,7 +80,7 @@ export const FINANCIAL_LEVERAGE_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when total equity is zero?',
     answer:
-      'The ratio is undefined. Do not display Infinity — show that leverage is unavailable.',
+      'The ratio is undefined. Do not display Infinity; show that leverage is unavailable.',
   },
   {
     question: 'Can financial leverage be less than 1?',
@@ -95,7 +95,7 @@ export const FINANCIAL_LEVERAGE_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What is total equity?',
     answer:
-      'The residual interest in assets after liabilities — share capital, retained earnings, and other equity components.',
+      'The residual interest in assets after liabilities; share capital, retained earnings, and other equity components.',
   },
   {
     question: 'How do I calculate total equity?',
@@ -129,7 +129,7 @@ export const FINANCIAL_LEVERAGE_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'Does high leverage always indicate poor financial performance?',
     answer:
-      'No. Capital-intensive industries often carry higher multipliers. Evaluate with coverage, liquidity, and profitability — not the ratio alone.',
+      'No. Capital-intensive industries often carry higher multipliers. Evaluate with coverage, liquidity, and profitability; not the ratio alone.',
   },
   {
     question:

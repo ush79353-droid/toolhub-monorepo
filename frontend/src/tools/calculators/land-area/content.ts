@@ -35,8 +35,8 @@ export const LAND_AREA_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Calculate Land Area',
     paragraphs: [
       'For rectangular land, multiply length by width after converting both dimensions to the same base unit (meters).',
-      `Example — length 30 m, width 15 m: 30 × 15 = ${formatMeasure(calculateLandArea(15, 'm', 30, 'm', 'm2'))} m².`,
-      `Mixed units are converted first. Example — width 10 ft and length 20 m: 10 × 0.3048 = 3.048 m, then 3.048 × 20 = ${formatMeasure(calculateLandArea(10, 'ft', 20, 'm', 'm2'))} m².`,
+      `Example; length 30 m, width 15 m: 30 × 15 = ${formatMeasure(calculateLandArea(15, 'm', 30, 'm', 'm2'))} m².`,
+      `Mixed units are converted first. Example; width 10 ft and length 20 m: 10 × 0.3048 = 3.048 m, then 3.048 × 20 = ${formatMeasure(calculateLandArea(10, 'ft', 20, 'm', 'm2'))} m².`,
     ],
     formula: 'Area = Length × Width (compatible physical units)',
   },
@@ -73,7 +73,7 @@ export const LAND_AREA_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Calculate Land Price',
     paragraphs: [
       'Total Price = Land Area × Price per Unit Area, after converting the calculated area into the pricing unit.',
-      'Example — 200 m² at $150 per m² → total $30,000. Example — 2 acres at $25,000 per acre → total $50,000.',
+      'Example (200 m² at $150 per m² → total $30,000. Example) 2 acres at $25,000 per acre → total $50,000.',
       'Currency selection changes the denomination and formatting only. It does not convert prices between currencies.',
     ],
     formula: 'Total Price = Area × Price per Unit Area',
@@ -82,9 +82,9 @@ export const LAND_AREA_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Land Area Calculation Examples',
     paragraphs: [
-      `Example A — residential plot 40 ft × 60 ft: ${formatMeasure(calculateLandArea(40, 'ft', 60, 'ft', 'ft2'))} ft².`,
-      `Example B — agricultural land 100 m × 200 m: ${formatMeasure(calculateLandArea(100, 'm', 200, 'm', 'm2'))} m² = ${formatMeasure(calculateLandArea(100, 'm', 200, 'm', 'hectare'))} ha.`,
-      `Example C — square plot 25 m × 25 m: ${formatMeasure(calculateLandArea(25, 'm', 25, 'm', 'm2'))} m².`,
+      `Example A; residential plot 40 ft × 60 ft: ${formatMeasure(calculateLandArea(40, 'ft', 60, 'ft', 'ft2'))} ft².`,
+      `Example B; agricultural land 100 m × 200 m: ${formatMeasure(calculateLandArea(100, 'm', 200, 'm', 'm2'))} m² = ${formatMeasure(calculateLandArea(100, 'm', 200, 'm', 'hectare'))} ha.`,
+      `Example C; square plot 25 m × 25 m: ${formatMeasure(calculateLandArea(25, 'm', 25, 'm', 'm2'))} m².`,
     ],
   },
   {
@@ -92,7 +92,7 @@ export const LAND_AREA_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Rectangular vs. Irregular Land Area',
     paragraphs: [
       'This calculator uses the rectangular area formula. Multiplying two arbitrary side lengths does not reliably measure an irregular plot.',
-      'For irregular land, divide the parcel into simpler shapes, calculate each section, and add the areas — or use survey measurements for complex boundaries.',
+      'For irregular land, divide the parcel into simpler shapes, calculate each section, and add the areas, or use survey measurements for complex boundaries.',
     ],
   },
   {

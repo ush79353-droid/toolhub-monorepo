@@ -52,7 +52,7 @@ export function VaMortgageCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Home price: $${result.formattedHomePrice}`,
         `Down payment: $${result.formattedDownPayment}`,
         `VA funding fee (${result.formattedFundingFeeRatePercent}%): $${result.formattedFundingFee}`,
@@ -62,7 +62,7 @@ export function VaMortgageCalculator({
         `Monthly pay: $${result.formattedMonthlyPayment}`,
         `Total of ${result.paymentCount} payments: $${result.formattedTotalOfPayments}`,
         `Total interest: $${result.formattedTotalInterest}`,
-        'Currency: fixed USD ($) — no FX selectors in the reference.',
+        'Currency: fixed USD ($); no FX selectors in the reference.',
       ].join('\n')
     : '';
 

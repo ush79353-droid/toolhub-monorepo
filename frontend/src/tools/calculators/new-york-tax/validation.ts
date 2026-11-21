@@ -109,10 +109,10 @@ export function validateNewYorkTaxInput(
 
   const disclosures = [
     'TY2025 only: federal ordinary brackets & standard deduction per Rev. Proc. 2024-40; NY State rate schedules Tax Law §601 (years before 2026); NYC rates per IT-201 / IT-360.1.',
-    'AGI is not wages — we use your AGI entry as both federal and New York AGI. IT-225 subtraction/addition modifiers and federal Schedule B are not modeled.',
+    'AGI is not wages; we use your AGI entry as both federal and New York AGI. IT-225 subtraction/addition modifiers and federal Schedule B are not modeled.',
     'NY taxable income = max(0, AGI − max(NY standard deduction, itemized) − $1,000 × dependents). NYC taxable income uses the same amount in this estimator.',
     'Federal taxable income = max(0, AGI − max(federal standard deduction, itemized)). Federal child/other dependent credits are not applied without eligibility details.',
-    'No FICA, Medicare, SDI, or local taxes outside NYC modeled. Educational estimate only — not a substitute for Form 1040, IT-201, or IT-360.',
+    'No FICA, Medicare, SDI, or local taxes outside NYC modeled. Educational estimate only; not a substitute for Form 1040, IT-201, or IT-360.',
   ] as const;
 
   const nycLabel = input.nycResident ? 'NYC' : 'NYC (non-resident)';

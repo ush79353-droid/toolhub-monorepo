@@ -106,7 +106,7 @@ export function FutureValueCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Present value: ${formatCurrencyValue(result.presentValue, result.currency)}`,
         `Periods: ${result.periods}`,
         `Interest rate: ${result.interestRatePercent}% per period`,

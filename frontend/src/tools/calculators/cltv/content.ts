@@ -27,7 +27,7 @@ export const CLTV_FAQS: readonly FAQItem[] = [
   {
     question: 'What is CLTV?',
     answer:
-      'CLTV (Customer Lifetime Value) estimates the revenue—or sometimes gross profit—attributable to an average customer over the expected length of the relationship.',
+      'CLTV (Customer Lifetime Value) estimates the revenue, or sometimes gross profit, attributable to an average customer over the expected length of the relationship.',
   },
   {
     question: 'What does customer lifetime value mean?',
@@ -57,12 +57,12 @@ export const CLTV_FAQS: readonly FAQItem[] = [
   {
     question: 'What is average customer value?',
     answer:
-      'ACV = APV × annual APF — estimated revenue per customer per year before multiplying by lifespan.',
+      'ACV = APV × annual APF; estimated revenue per customer per year before multiplying by lifespan.',
   },
   {
     question: 'How do you determine average customer lifespan?',
     answer:
-      'Use cohort retention, historical tenure, subscription duration, or—as a rough constant-hazard approximation—1 ÷ annual churn rate. Averages hide segment differences.',
+      'Use cohort retention, historical tenure, subscription duration, or, as a rough constant-hazard approximation, 1 ÷ annual churn rate. Averages hide segment differences.',
   },
   {
     question: 'What is the difference between CLTV and LTV?',
@@ -87,7 +87,7 @@ export const CLTV_FAQS: readonly FAQItem[] = [
   {
     question: 'How can businesses increase CLTV?',
     answer:
-      'Improve retention, raise purchase frequency or order value, upsell/cross-sell thoughtfully, strengthen onboarding and support, and reduce avoidable churn—without inflating CAC unsustainably.',
+      'Improve retention, raise purchase frequency or order value, upsell/cross-sell thoughtfully, strengthen onboarding and support, and reduce avoidable churn, without inflating CAC unsustainably.',
   },
   {
     question: 'Can customer lifetime value be negative?',
@@ -127,7 +127,7 @@ export const CLTV_FAQS: readonly FAQItem[] = [
   {
     question: 'Can small businesses use a CLTV calculator?',
     answer:
-      'Yes. Even approximate CLTV helps compare acquisition offers and retention investments when data is limited—document assumptions clearly.',
+      'Yes. Even approximate CLTV helps compare acquisition offers and retention investments when data is limited, document assumptions clearly.',
   },
   {
     question: 'Why is CLTV important in digital marketing?',

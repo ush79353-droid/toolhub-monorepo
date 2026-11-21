@@ -17,7 +17,7 @@ export function HomeValueUsGuideArticle() {
         property condition change. A metro home price index can estimate how
         broad market prices moved between two dates, but an individual house can
         outperform or underperform that index. This calculator produces an
-        index-based estimate — not a professional appraisal.
+ index-based estimate; not a professional appraisal.
       </p>
 
       <h2
@@ -89,11 +89,11 @@ export function HomeValueUsGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Nominal</strong> — dollar amounts without adjusting for general
+ <strong>Nominal</strong>: dollar amounts without adjusting for general
           inflation
         </li>
         <li>
-          <strong>Real</strong> — compares purchasing power after CPI adjustment
+ <strong>Real</strong>: compares purchasing power after CPI adjustment
         </li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
@@ -110,7 +110,7 @@ export function HomeValueUsGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         CPI-U tracks consumer prices. Inflation-adjusted purchase price =
         purchase price × (valuation CPI / purchase CPI). Real appreciation uses
-        the ratio of the home-price index ratio to the CPI ratio — not simple
+ the ratio of the home-price index ratio to the CPI ratio; not simple
         percentage subtraction.
       </p>
 
@@ -160,7 +160,7 @@ export function HomeValueUsGuideArticle() {
         Index estimates are not appraisals. Results depend on the selected metro,
         can lag live markets, and may diverge from neighborhood or property-level
         outcomes. Methodology revisions and missing months can affect results.
-        Informational use only — not financial, tax, or lending advice.
+ Informational use only; not financial, tax, or lending advice.
       </p>
 
       <h2

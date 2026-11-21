@@ -76,7 +76,7 @@ export function VariableAnnuityCalculator({
   const symbol = result ? getCurrencySymbol(result.currency) : '';
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.summaryText,
         `Opening balance: ${symbol}${result.formattedOpeningBalance}`,
         `Final balance before tax: ${symbol}${result.formattedFinalBalanceBeforeTax}`,

@@ -44,10 +44,10 @@ export function formatRiMoney(
 export function interpretResidualIncome(ri: number): string {
   if (!Number.isFinite(ri)) return 'Residual income is unavailable.';
   if (ri > 0) {
-    return 'Positive residual income — the company earned more than the required return on its equity capital for the selected period. This does not guarantee long-term valuation or performance.';
+    return 'Positive residual income: the company earned more than the required return on its equity capital for the selected period. This does not guarantee long-term valuation or performance.';
   }
   if (ri === 0 || Math.abs(ri) < 1e-12) {
-    return 'Zero residual income — net income exactly covers the required equity charge for the selected period.';
+    return 'Zero residual income; net income exactly covers the required equity charge for the selected period.';
   }
-  return 'Negative residual income — net income is insufficient to cover the required return on equity capital for the selected period. Positive accounting profit can still yield negative residual income.';
+  return 'Negative residual income; net income is insufficient to cover the required return on equity capital for the selected period. Positive accounting profit can still yield negative residual income.';
 }

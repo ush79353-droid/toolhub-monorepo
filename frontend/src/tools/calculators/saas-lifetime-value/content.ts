@@ -47,7 +47,7 @@ export const SAAS_LTV_FAQS: readonly FAQItem[] = [
   {
     question: 'What is ARPA?',
     answer:
-      'Average revenue per account for one period — typically monthly recurring revenue per customer. You can enter it directly or derive it from total recurring revenue and account count.',
+      'Average revenue per account for one period; typically monthly recurring revenue per customer. You can enter it directly or derive it from total recurring revenue and account count.',
   },
   {
     question: 'What does account expansion mean?',

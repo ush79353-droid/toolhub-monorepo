@@ -48,7 +48,7 @@ export const LIGHT_YEAR_GUIDE_SECTIONS: readonly LightYearGuideSection[] = [
     title: 'Introduction',
     paragraphs: [
       'This calculator converts astronomical distances between light-years and common metric, imperial, and astronomical units. Enter a value in light-years, kilometers, miles, or astronomical units (or switch metric, imperial, and astronomical selectors) and the other fields update from one canonical length in meters.',
-      'A light-year measures distance—how far light travels in vacuum during one Julian year—not a duration of time.',
+      'A light-year measures distance, how far light travels in vacuum during one Julian year, not a duration of time.',
     ],
   },
   {

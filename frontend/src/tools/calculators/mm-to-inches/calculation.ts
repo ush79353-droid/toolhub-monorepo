@@ -34,7 +34,7 @@ export function calculateMmToInches(input: MmToInchesInput): MmToInchesResult {
 
 export function shareResultText(result: MmToInchesResult): string {
   return [
-    'mm to Inches Conversion — Omega Calculators',
+    'mm to Inches Conversion | Omega Calculators',
     '',
     `${formatLength(result.mm)} mm ≈ ${formatLength(result.inches)} inches`,
     '',

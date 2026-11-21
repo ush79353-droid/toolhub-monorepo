@@ -4,7 +4,7 @@ import { HELOC_FAQS, HELOC_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate HELOC interest-only draw payments, amortizing repayment installments, fees, schedules, and balances — with optional rate-adjustment projections.',
+    'Estimate HELOC interest-only draw payments, amortizing repayment installments, fees, schedules, and balances, with optional rate-adjustment projections.',
   asideAriaLabel: 'Interactive HELOC Calculator',
   tocItems: HELOC_TOC_ITEMS,
   GuideArticle: HelocGuideArticle,

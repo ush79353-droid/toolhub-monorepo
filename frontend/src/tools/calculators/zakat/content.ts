@@ -30,7 +30,7 @@ export const ZAKAT_FAQS: readonly FAQItem[] = [
   {
     question: 'How much Zakat should I pay on my net worth?',
     answer:
-      'Ordinary personal belongings and a home you live in are not added here. Eligible net wealth — assets minus the immediate liabilities you deduct — is estimated at 2.5% when it meets the selected Nisab. Confirm Hawl before treating that figure as due.',
+      'Ordinary personal belongings and a home you live in are not added here. Eligible net wealth (assets minus the immediate liabilities you deduct) is estimated at 2.5% when it meets the selected Nisab. Confirm Hawl before treating that figure as due.',
   },
   {
     question: 'How much Zakat do I pay on savings of 200,000?',

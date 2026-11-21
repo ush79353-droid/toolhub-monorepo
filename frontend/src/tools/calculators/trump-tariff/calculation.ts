@@ -194,7 +194,7 @@ export function calculateTrumpTariff(
   ].join('\n');
 
   const scenarioLabel =
-    'User-defined tariff scenario (educational — not an official customs determination)';
+    'User-defined tariff scenario (educational; not an official customs determination)';
 
   const interpretation =
     totalCustomsValue === 0
@@ -205,7 +205,7 @@ export function calculateTrumpTariff(
     `Mode: ${input.mode === 'product' ? 'by product' : 'by country'}. Origin: ${country.label}. Product preset: ${preset.label}.`,
     scenarioLabel + '.',
     htsusCode
-      ? `HTSUS entry "${htsusCode}" is format-checked only — it does not confirm the correct classification or legal rate.`
+      ? `HTSUS entry "${htsusCode}" is format-checked only; it does not confirm the correct classification or legal rate.`
       : 'No HTSUS code entered; results use the rates you typed.',
     'Actual U.S. import charges depend on classification, valuation, origin, effective dates, exemptions, and other measures. Check CBP, USITC HTSUS, and USTR for official information.',
   ].join(' ');

@@ -57,7 +57,7 @@ export function InchesToFractionResults({
         </p>
         {result.isApproximate ? (
           <p className="mt-2 text-xs text-amber-800">
-            Approximate — the fractional display is rounded to the selected precision.
+ Approximate: the fractional display is rounded to the selected precision.
           </p>
         ) : null}
       </div>

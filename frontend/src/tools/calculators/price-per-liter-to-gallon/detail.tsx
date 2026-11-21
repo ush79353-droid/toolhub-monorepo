@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert price per liter to price per gallon and reverse — US liquid (3.785411784 L) or Imperial (4.54609 L). Currency is denomination only.',
+    'Convert price per liter to price per gallon and reverse; US liquid (3.785411784 L) or Imperial (4.54609 L). Currency is denomination only.',
   asideAriaLabel: 'Interactive price per liter to price per gallon converter',
   tocItems: PRICE_PER_LITER_TO_GALLON_TOC_ITEMS,
   GuideArticle: PricePerLiterToGallonGuideArticle,

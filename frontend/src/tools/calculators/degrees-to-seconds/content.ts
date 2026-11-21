@@ -41,7 +41,7 @@ export const DEGREES_TO_SECONDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-it-works',
     title: 'How Does the Degrees to Seconds Converter Work?',
     paragraphs: [
-      'Enter a value in degrees or arcseconds. Editing degrees updates arcseconds immediately (×3600). Editing arcseconds updates degrees immediately (÷3600). Expand Other angle units for arcminutes, radians, gradians, and revolutions — each field can also drive the conversion.',
+      'Enter a value in degrees or arcseconds. Editing degrees updates arcseconds immediately (×3600). Editing arcseconds updates degrees immediately (÷3600). Expand Other angle units for arcminutes, radians, gradians, and revolutions; each field can also drive the conversion.',
       'Signed angles and values outside 0–360° are supported. Fields start empty; clear or reload restores that empty state.',
       `Reverse example: 18,000 ÷ 3600 = ${formatAngleValue(arcsecondsToDegrees(18000))}, so 18,000″ = 5°.`,
     ],

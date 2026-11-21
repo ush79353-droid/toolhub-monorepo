@@ -130,6 +130,6 @@ export const INCHES_TO_FRACTION_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Can I enter mixed numbers such as 2 3/8?',
-    answer: 'Yes. Enter the whole number, a space, then the fraction—for example 2 3/8.',
+    answer: 'Yes. Enter the whole number, a space, then the fraction, for example 2 3/8.',
   },
 ];

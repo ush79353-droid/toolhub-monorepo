@@ -395,7 +395,7 @@ export function IllinoisTaxForm({
             <p className="mt-1 text-xs text-muted-foreground">
               Pre-filled with the ACS 2024 county effective rate (median tax ÷
               median home value). Applied to your entered home value as a
-              market-value proxy — Illinois EAV/TRA bills differ. Screenshot
+ market-value proxy; Illinois EAV/TRA bills differ. Screenshot
               1.67% is not used as Adams County’s verified rate.
             </p>
           </div>

@@ -34,7 +34,7 @@ export const PSI_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'PSI Converter',
     paragraphs: [
-      'Convert pounds per square inch (psi) into bar, atmospheres (atm), pascals (Pa), kilopascals (kPa), and other pressure units — or reverse the conversion from any supported field.',
+      'Convert pounds per square inch (psi) into bar, atmospheres (atm), pascals (Pa), kilopascals (kPa), and other pressure units, or reverse the conversion from any supported field.',
       'Common uses include tire inflation, air compressors, hydraulic and pneumatic systems, engineering calculations, industrial equipment, and laboratory comparisons. This calculator converts units only; it does not change gauge vs absolute reference (psig / psia).',
     ],
   },
@@ -42,7 +42,7 @@ export const PSI_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-psi',
     title: 'What Is PSI?',
     paragraphs: [
-      `PSI stands for pounds per square inch — more precisely, pound-force per square inch. Exact international relationship: 1 psi ≈ ${formatPressure(PASCALS_PER_PSI)} Pa.`,
+      `PSI stands for pounds per square inch; more precisely, pound-force per square inch. Exact international relationship: 1 psi ≈ ${formatPressure(PASCALS_PER_PSI)} Pa.`,
       'PSI is widely used in the United States and in industries that work with customary units. Typical applications include car and bicycle tire pressure, pneumatic equipment, hydraulic systems, air compressors, and fluid pressure measurements.',
       'PSI is the unit. PSIG means gauge pressure relative to a reference atmosphere; PSIA means absolute pressure. Numerical unit conversion does not automatically convert gauge pressure into absolute pressure.',
     ],

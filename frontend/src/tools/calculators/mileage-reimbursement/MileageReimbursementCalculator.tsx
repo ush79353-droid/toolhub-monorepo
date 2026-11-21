@@ -81,14 +81,14 @@ export function MileageReimbursementCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `IRS period: ${result.periodLabel}`,
         `Business rate: $${result.formattedBusinessRate}/mi · distance ${input.businessDistance} ${input.businessUnit}`,
         `Medical rate: $${result.formattedMedicalRate}/mi · distance ${input.medicalDistance} ${input.medicalUnit}`,
         `Charity rate: $${result.formattedCharityRate}/mi · distance ${input.charityDistance} ${input.charityUnit}`,
         `Mileage deduction (nominal): $${result.formattedTotal}`,
         result.sourceNote,
-        'Educational IRS standard-mileage estimate — not automatic deductibility or employer reimbursement.',
+        'Educational IRS standard-mileage estimate; not automatic deductibility or employer reimbursement.',
       ].join('\n')
     : '';
 

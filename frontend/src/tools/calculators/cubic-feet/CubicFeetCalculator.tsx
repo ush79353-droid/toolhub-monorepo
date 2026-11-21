@@ -30,7 +30,7 @@ import { validateCubicFeet, validateMissingDimension } from './validation';
 
 function summaryText(result: CubicFeetResult): string {
   const lines = [
-    'Cubic Feet Calculator — Omega Calculators',
+    'Cubic Feet Calculator | Omega Calculators',
     `Length: ${formatMeasure(result.length)} ${result.lengthUnit}`,
     `Width: ${formatMeasure(result.width)} ${result.widthUnit}`,
     `Height: ${formatMeasure(result.height)} ${result.heightUnit}`,

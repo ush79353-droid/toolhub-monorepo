@@ -23,7 +23,7 @@ export const RSI_FAQS: readonly FAQItem[] = [
   {
     question: 'Is RSI above 70 good or bad?',
     answer:
-      'Readings above 70 are commonly labeled overbought, meaning recent gains have been strong relative to losses. That is a momentum description, not a guaranteed sell signal — strong trends can keep RSI elevated.',
+      'Readings above 70 are commonly labeled overbought, meaning recent gains have been strong relative to losses. That is a momentum description, not a guaranteed sell signal; strong trends can keep RSI elevated.',
   },
   {
     question: 'Is RSI below 30 good or bad?',

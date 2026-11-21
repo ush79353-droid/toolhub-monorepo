@@ -16,7 +16,7 @@ export const IV_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the intrinsic value of a stock?',
     answer:
-      'Intrinsic value is an estimate of a stock’s underlying economic worth based on assumptions about earnings, growth, risk, and other fundamentals — not the same as the market price.',
+      'Intrinsic value is an estimate of a stock’s underlying economic worth based on assumptions about earnings, growth, risk, and other fundamentals; not the same as the market price.',
   },
   {
     question: 'How do I find the intrinsic value of a stock?',
@@ -46,7 +46,7 @@ export const IV_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good margin of safety?',
     answer:
-      'It depends on uncertainty, business quality, and investment approach. Larger cushions are often sought when forecasts are less reliable — there is no universal threshold.',
+      'It depends on uncertainty, business quality, and investment approach. Larger cushions are often sought when forecasts are less reliable; there is no universal threshold.',
   },
   {
     question: 'How does growth rate affect intrinsic value?',

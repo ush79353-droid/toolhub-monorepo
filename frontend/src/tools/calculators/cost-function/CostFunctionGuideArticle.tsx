@@ -14,7 +14,7 @@ export function CostFunctionGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A cost function links total cost to output quantity. Managers use the linear form
         TC(Q) = Fixed Cost + Variable Cost per Unit × Q to plan production, quote prices, and
-        estimate break-even volume when fixed and variable costs are known—or when two total-cost
+ estimate break-even volume when fixed and variable costs are known, or when two total-cost
         observations can reveal those parameters.
       </p>
 

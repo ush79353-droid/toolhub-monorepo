@@ -38,9 +38,9 @@ export const METER_TO_MILE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Meters to Miles Conversion',
     paragraphs: [
       `Formula: miles = meters / ${METERS_PER_MILE}.`,
-      `Example 1 — convert 600 meters to miles: 600 ÷ ${METERS_PER_MILE} ≈ ${formatLength(metersToMiles(600))} mi.`,
-      `Example 2 — convert 2.3 miles to meters: 2.3 × ${METERS_PER_MILE} = ${formatLength(milesToMeters(2.3))} m.`,
-      `Example 3 — convert 5 kilometers to miles: 5 km = 5000 m; 5000 ÷ ${METERS_PER_MILE} ≈ ${formatLength(metersToMiles(5000))} mi.`,
+      `Example 1: convert 600 meters to miles: 600 ÷ ${METERS_PER_MILE} ≈ ${formatLength(metersToMiles(600))} mi.`,
+      `Example 2: convert 2.3 miles to meters: 2.3 × ${METERS_PER_MILE} = ${formatLength(milesToMeters(2.3))} m.`,
+      `Example 3: convert 5 kilometers to miles: 5 km = 5000 m; 5000 ÷ ${METERS_PER_MILE} ≈ ${formatLength(metersToMiles(5000))} mi.`,
       'Displayed table values may be rounded; the calculator uses the exact 1609.344 factor.',
     ],
     formula: `mi = m / ${METERS_PER_MILE} · m = mi × ${METERS_PER_MILE}`,

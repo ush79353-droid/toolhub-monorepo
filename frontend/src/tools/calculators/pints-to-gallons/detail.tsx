@@ -4,7 +4,7 @@ import { PINTS_TO_GALLONS_FAQS, PINTS_TO_GALLONS_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert US and UK pints to gallons — and back. Exact: 1 gallon = 8 pints within the same system.',
+    'Convert US and UK pints to gallons, and back. Exact: 1 gallon = 8 pints within the same system.',
   asideAriaLabel: 'Interactive pints to gallons converter',
   tocItems: PINTS_TO_GALLONS_TOC_ITEMS,
   GuideArticle: PintsToGallonsGuideArticle,

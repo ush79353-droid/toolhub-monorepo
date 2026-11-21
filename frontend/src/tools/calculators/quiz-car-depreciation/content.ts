@@ -27,6 +27,6 @@ export const QUIZ_CAR_DEPRECIATION_FAQS: readonly FAQItem[] = [
   {
     question: 'Are the percentages guaranteed for every car?',
     answer:
-      'No. Immediate ~9% loss and ~40% residual after 5 years are teaching assumptions used for this quiz’s options—not universal market guarantees. Brand, mileage, condition, and region all change real outcomes.',
+      'No. Immediate ~9% loss and ~40% residual after 5 years are teaching assumptions used for this quiz’s options, not universal market guarantees. Brand, mileage, condition, and region all change real outcomes.',
   },
 ];

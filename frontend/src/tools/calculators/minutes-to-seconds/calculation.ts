@@ -80,7 +80,7 @@ export function shareResultText(totalSeconds: number): string {
       : `${signPrefix}${absMin} minutes ${formatDecimal(v.combinedSeconds)} seconds`;
 
   return [
-    'Minutes to Seconds Converter — Omega Calculators',
+    'Minutes to Seconds Converter | Omega Calculators',
     '',
     `${formatDecimal(v.minutes)} minutes = ${formatDecimal(v.seconds)} seconds`,
     `Equivalent duration: ${combined}`,

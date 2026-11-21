@@ -81,11 +81,11 @@ export function ActualCashValueGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>ACV</strong> — valuation that accounts for depreciation or
+ <strong>ACV</strong>: valuation that accounts for depreciation or
           other applicable factors.
         </li>
         <li>
-          <strong>Replacement cost</strong> — amount to replace with comparable
+ <strong>Replacement cost</strong>: amount to replace with comparable
           property under applicable policy terms.
         </li>
       </ul>

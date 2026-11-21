@@ -58,7 +58,7 @@ export const GALLON_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Introduction',
     paragraphs: [
       'The Gallon Calculator converts between gallons and common metric, US customary, and Imperial volume units. A separate mode estimates water mass from volume using density.',
-      'Always choose the correct gallon standard—US liquid, Imperial, and US dry gallons are different volumes.',
+      'Always choose the correct gallon standard, US liquid, Imperial, and US dry gallons are different volumes.',
     ],
   },
   {
@@ -139,7 +139,7 @@ export const GALLON_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'cups',
     title: 'Convert Gallons to Cups',
     paragraphs: [
-      'For US customary cups: 1 US gal = 16 cups. Metric and Imperial cups use different milliliter definitions—select the matching cup standard in the calculator.',
+      'For US customary cups: 1 US gal = 16 cups. Metric and Imperial cups use different milliliter definitions, select the matching cup standard in the calculator.',
     ],
   },
   {
@@ -162,7 +162,7 @@ export const GALLON_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'pool-volume',
     title: 'Rectangular Pool Volume Notes',
     paragraphs: [
-      'For a rectangular pool: Volume (ft³) = length × width × average depth (ft). Convert cubic feet to US gallons with the calculator. Irregular shapes need a geometry-specific model—this tool does not invent one.',
+      'For a rectangular pool: Volume (ft³) = length × width × average depth (ft). Convert cubic feet to US gallons with the calculator. Irregular shapes need a geometry-specific model, this tool does not invent one.',
     ],
   },
   {

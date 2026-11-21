@@ -95,7 +95,7 @@ export function FreeCashFlowCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         input.operatingCashFlow.trim()
           ? `Operating cash flow: ${getCurrencySymbol(input.operatingCashFlowCurrency)}${input.operatingCashFlow} ${input.operatingCashFlowCurrency}`
           : null,

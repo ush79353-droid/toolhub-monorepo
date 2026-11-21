@@ -111,7 +111,7 @@ export function PvgoCalculator({
   const summary =
     result && result.pvgo !== null
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Earnings: ${symbol}${formatMoney(input.earnings, input.currency)}`,
           `Shares outstanding: ${input.sharesOutstanding}`,
           `EPS: ${symbol}${result.epsDisplay}`,

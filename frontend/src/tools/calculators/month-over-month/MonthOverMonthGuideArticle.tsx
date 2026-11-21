@@ -12,7 +12,7 @@ export function MonthOverMonthGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Month-over-month (MoM) growth measures the percentage change in a metric
-        between consecutive months — revenue, users, traffic, expenses, and more.
+ between consecutive months; revenue, users, traffic, expenses, and more.
         It highlights short-term momentum, not a full-year story.
       </p>
 
@@ -102,8 +102,8 @@ export function MonthOverMonthGuideArticle() {
         What Is Quarter-over-Quarter Growth?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        QoQ growth compares consecutive quarters — typically three-month
-        reporting periods — using the same percentage-change structure as MoM.
+ QoQ growth compares consecutive quarters; typically three-month
+ reporting periods, using the same percentage-change structure as MoM.
       </p>
 
       <h2
@@ -146,7 +146,7 @@ export function MonthOverMonthGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         MoM tracks short-term shifts; QoQ tracks quarterly performance; YoY
         supports seasonality-aware annual comparisons. A business can show
-        negative MoM and positive YoY in the same month — do not infer one from
+ negative MoM and positive YoY in the same month; do not infer one from
         another without data.
       </p>
 
@@ -180,7 +180,7 @@ export function MonthOverMonthGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Startups often track MoM for customers or active users alongside churn
-        and retention — growth in headcount is not the same as growth in revenue.
+ and retention; growth in headcount is not the same as growth in revenue.
       </p>
 
       <h2
@@ -224,7 +224,7 @@ export function MonthOverMonthGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Holiday peaks followed by quieter months can produce steep negative MoM
-        without a structural decline — pair MoM with YoY when seasonality matters.
+ without a structural decline; pair MoM with YoY when seasonality matters.
       </p>
 
       <h2
@@ -257,7 +257,7 @@ export function MonthOverMonthGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Focus on acquisition, retention, pricing, product, marketing efficiency,
-        and sales execution — then measure MoM on the metric you intend to move.
+ and sales execution, then measure MoM on the metric you intend to move.
       </p>
 
       <h2
@@ -284,9 +284,9 @@ export function MonthOverMonthGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         MoM is sensitive to short-term noise, seasonality, small bases, one-offs,
-        and data quality. CMGR describes an equivalent path between endpoints —
+ and data quality. CMGR describes an equivalent path between endpoints; 
         not the actual sequence of monthly changes. Educational illustration only
-        — not financial advice.
+; not financial advice.
       </p>
 
       <h2

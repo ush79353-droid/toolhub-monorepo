@@ -17,7 +17,7 @@ export function CashBackGuideArticle() {
         and cashback rate, optionally enable a cashback limit, and see the
         uncapped reward, the actual reward after any cap, the effective purchase
         cost, and the effective cashback rate. Currency selection changes how
-        amounts are labeled and formatted—it does not convert between currencies.
+ amounts are labeled and formatted, it does not convert between currencies.
         Use the tool to compare offers before you shop, understand how caps
         dilute advertised rates, and plan break-even spending to reach a reward
         ceiling. Results are educational estimates; issuer, retailer, and tax
@@ -41,7 +41,7 @@ export function CashBackGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Cash back is a financial reward tied to eligible spending. Instead of
         (or in addition to) a lower sticker price, the program returns a portion
-        of what you spend—commonly as a statement credit, bank deposit, check,
+ of what you spend, commonly as a statement credit, bank deposit, check,
         or store credit. The return may be a percentage of the purchase or a
         fixed dollar amount for meeting an offer condition.
       </p>
@@ -133,7 +133,7 @@ export function CashBackGuideArticle() {
         (for pure percentage rewards). With a binding cap, the effective rate
         falls. Example: $2,000 at 5% with a $50 cap → actual $50 → effective
         rate 2.5%. If the purchase amount is zero, the effective rate is not
-        applicable—this tool shows N/A instead of dividing by zero.
+ applicable, this tool shows N/A instead of dividing by zero.
       </p>
 
       <h2
@@ -183,7 +183,7 @@ export function CashBackGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This calculator focuses on percentage and fixed rewards with an optional
         cap and a break-even spend solver. It does not invent bank-specific
-        category rates—enter the rates from your own offer.
+ category rates, enter the rates from your own offer.
       </p>
 
       <h2
@@ -215,7 +215,7 @@ export function CashBackGuideArticle() {
         may cost $100 today with a $10 reward later. Net mathematics can converge
         if the reward is certain and timely, but cash flow, tax base, return
         handling, and eligibility differ. When both apply, follow stacking rules
-        carefully—programs may calculate cashback on the discounted price.
+ carefully, programs may calculate cashback on the discounted price.
       </p>
 
       <h2
@@ -226,7 +226,7 @@ export function CashBackGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Cashback is usually quoted in currency. Points programs credit miles or
-        points whose cash-equivalent value depends on how you redeem—statement
+ points whose cash-equivalent value depends on how you redeem, statement
         credit, travel portals, transfers, or merchandise. A high “points per
         dollar” figure can be less valuable than a lower flat cashback rate if
         redemptions are restrictive. Convert expected points to a cents-per-point
@@ -244,7 +244,7 @@ export function CashBackGuideArticle() {
         Interest, annual fees, late fees, and foreign transaction fees can erase
         cashback quickly. Carrying a revolving balance at a typical purchase APR
         often costs far more than a 1–5% reward returns. Pay statements in full
-        when possible. Do not borrow deliberately to “earn” cashback—the
+ when possible. Do not borrow deliberately to “earn” cashback, the
         calculator’s effective cost assumes you receive the reward without
         financing costs.
       </p>
@@ -257,7 +257,7 @@ export function CashBackGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Caps flatten rewards after a spending threshold. On $2,000 at 5% with a
-        $50 cap, you still spend $2,000 but only receive $50—an effective 2.5%
+ $50 cap, you still spend $2,000 but only receive $50, an effective 2.5%
         rate. The first $1,000 of eligible spend (at 5%) would have earned the
         full $50; the next $1,000 under that capped offer earns nothing
         additional. Knowing the break-even spend helps you decide whether to
@@ -272,7 +272,7 @@ export function CashBackGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Online cashback may stack shopping-portal rates, retailer promotions,
-        promo codes, and card rewards—or conflict when terms forbid combining.
+ promo codes, and card rewards, or conflict when terms forbid combining.
         Tracking cookies, affiliate attribution, and delayed confirmation are
         common friction points. Rewards can take weeks to finalize and may be
         cancelled if you return items. Read portal and card exclusions (gift
@@ -287,7 +287,7 @@ export function CashBackGuideArticle() {
         Is Cash Back Really Free Money?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        No. Cashback is a conditional rebate attached to eligible spending—not
+ No. Cashback is a conditional rebate attached to eligible spending, not
         money you receive without a purchase. Merchants and issuers fund rewards
         as part of marketing and interchange economics. Treat cashback as a
         partial refund of money you already chose to spend, subject to rules that

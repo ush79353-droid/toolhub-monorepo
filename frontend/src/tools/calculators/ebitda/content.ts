@@ -95,12 +95,12 @@ export const EBITDA_FAQS: readonly FAQItem[] = [
   {
     question: 'Is amortization included in EBITDA?',
     answer:
-      'Yes — amortization is added back under the same assumptions as depreciation.',
+      'Yes: amortization is added back under the same assumptions as depreciation.',
   },
   {
     question: 'Why do investors use EBITDA?',
     answer:
-      'It supports operating comparisons and valuation discussions before interest, taxes, and non-cash D&A — always with cash-flow and debt context.',
+      'It supports operating comparisons and valuation discussions before interest, taxes, and non-cash D&A; always with cash-flow and debt context.',
   },
   {
     question: 'What happens when EBITDA is zero in the EV/EBITDA formula?',

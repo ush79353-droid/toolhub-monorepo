@@ -43,7 +43,7 @@ export const CUPS_TO_GAL_GUIDE_SECTIONS: readonly GuideSection[] = [
       'For US customary cups and US liquid gallons: Cups = Gallons × 16.',
       `Example: 2.5 US liquid gallons × 16 = ${formatVolume(gallonsToCups(2.5))} US customary cups.`,
       `Half a US gallon: 0.5 × 16 = ${formatVolume(gallonsToCups(0.5))} US customary cups.`,
-      'Enter gallons directly in the calculator — cups and optional volume units update instantly.',
+      'Enter gallons directly in the calculator; cups and optional volume units update instantly.',
     ],
     formula: 'US cups = US gal × 16  ·  cups = gal × (L/gal) ÷ (L/cup)',
   },

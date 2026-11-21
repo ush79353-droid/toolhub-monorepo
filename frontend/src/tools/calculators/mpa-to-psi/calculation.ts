@@ -49,7 +49,7 @@ export function calculateMpaToPsi(input: MpaToPsiInput): MpaToPsiResult {
 
 export function shareResultText(result: MpaToPsiResult): string {
   return [
-    'MPa to PSI Conversion — Omega Calculators',
+    'MPa to PSI Conversion | Omega Calculators',
     '',
     `${formatPressure(result.MPa)} MPa ≈ ${formatPressure(result.psi)} psi`,
     '',

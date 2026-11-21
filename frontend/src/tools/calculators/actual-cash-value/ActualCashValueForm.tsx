@@ -94,7 +94,7 @@ export function ActualCashValueForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. This uses a
+ changes the symbol only; it does not convert values. This uses a
           simplified zero-salvage straight-line model based on purchase price,
           not current replacement cost.
         </p>
@@ -221,7 +221,7 @@ export function ActualCashValueForm({
           <span>Actual cash value</span>
           <InfoTooltip
             label="Actual cash value"
-            text="ACV = Purchase price × max(0, 1 − age / expected life). Simplified estimate — not an insurer settlement, appraisal, or guaranteed resale value."
+            text="ACV = Purchase price × max(0, 1 − age / expected life). Simplified estimate: not an insurer settlement, appraisal, or guaranteed resale value."
           />
         </label>
         <FieldShell muted>

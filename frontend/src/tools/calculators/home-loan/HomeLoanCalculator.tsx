@@ -97,7 +97,7 @@ export function HomeLoanCalculator({
   const paySymbol = result ? getCurrencySymbol(result.paymentCurrency) : '';
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Payment: ${paySymbol}${result.formattedPeriodicPayment}`,
         `Payoff: ${formatDisplayDate(result.payoffDate)}`,
         `Total payments (${result.paymentCount}): ${paySymbol}${result.formattedTotalPayments}`,

@@ -55,7 +55,7 @@ export function SharpeRatioCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Return: ${input.investmentReturn}%`,
         `Risk-free return: ${input.riskFreeReturn}%`,
         `Risk premium: ${result.formattedRiskPremium}%`,

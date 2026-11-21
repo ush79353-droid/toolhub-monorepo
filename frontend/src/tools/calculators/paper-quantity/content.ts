@@ -28,7 +28,7 @@ export const PAPER_QUANTITY_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Many Sheets of Paper Are in a Ream?',
     paragraphs: [
       'A modern standard ream commonly contains 500 sheets. That is the default used by this converter.',
-      'Other conventions exist. A short ream is often defined as 480 sheets. Historical and specialty packaging can differ by product line or region. These are paper-count conventions — they do not describe paper thickness, basis weight, or sheet size.',
+      'Other conventions exist. A short ream is often defined as 480 sheets. Historical and specialty packaging can differ by product line or region. These are paper-count conventions; they do not describe paper thickness, basis weight, or sheet size.',
     ],
     formula: '1 modern ream = 500 sheets · 1 short ream = 480 sheets (not used as this calculator’s default)',
   },

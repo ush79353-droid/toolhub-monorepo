@@ -73,7 +73,7 @@ export const CU_FT_TO_LB_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Select the material (default: Concrete).',
       '3. Review the automatically populated density (approximate when labeled).',
       '4. Adjust the density if your measured or specified value differs.',
-      '5. Enter cubic feet or pounds — the other field updates instantly.',
+      '5. Enter cubic feet or pounds. the other field updates instantly.',
       '6. Change density units if required; physical density is preserved.',
       '7. Use Share Result to copy or share the calculation.',
       'Changing the material updates density and recalculates from the last edited field.',

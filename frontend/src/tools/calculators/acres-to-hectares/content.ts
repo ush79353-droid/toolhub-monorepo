@@ -58,7 +58,7 @@ export const ACRES_TO_HECTARES_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Acres to Hectares Converter',
     paragraphs: [
-      '1. Enter the land area in acres — hectares update instantly.',
+      '1. Enter the land area in acres. hectares update instantly.',
       '2. Or enter hectares to calculate acres.',
       '3. Use Swap Units to reverse the visual field order without changing the values.',
       '4. Share or copy the result when you need it elsewhere.',
@@ -70,7 +70,7 @@ export const ACRES_TO_HECTARES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Other Surface Area Conversion Tools',
     paragraphs: [
       'Depending on your dataset you may also need square meters, square kilometers, square feet, square yards, or square miles. Use Omega Calculators area tools that already exist in the catalog when you need those conversions.',
-      'Related pages that may help: Area Converter, Ares to Hectares Converter, Yards to Acres Converter, and Square Kilometers to Acres Converter — when those tools are available on this site.',
+      'Related pages that may help: Area Converter, Ares to Hectares Converter, Yards to Acres Converter, and Square Kilometers to Acres Converter when those tools are available on this site.',
     ],
   },
 ];

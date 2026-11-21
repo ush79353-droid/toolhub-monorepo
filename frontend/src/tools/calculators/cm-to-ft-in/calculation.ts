@@ -46,7 +46,7 @@ export function calculateCmToFtIn(input: CmToFtInInput): CmToFtInResult {
 
 export function shareResultText(result: CmToFtInResult): string {
   return [
-    'CM to Ft In Converter — Omega Calculators',
+    'CM to Ft In Converter | Omega Calculators',
     '',
     `${formatLength(result.centimeters)} cm ≈ ${result.mixedLabel}`,
   ].join('\n');

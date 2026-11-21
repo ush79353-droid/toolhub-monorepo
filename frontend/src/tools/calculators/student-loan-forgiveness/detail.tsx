@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Historical / Not Currently Available — capture screenshot fields for the blocked 2022 relief proposal form without inventing current forgiveness amounts.',
+    'Historical / Not Currently Available; capture screenshot fields for the blocked 2022 relief proposal form without inventing current forgiveness amounts.',
   asideAriaLabel: 'Interactive Student Loan Forgiveness Calculator',
   tocItems: STUDENT_LOAN_FORGIVENESS_TOC_ITEMS,
   GuideArticle: StudentLoanForgivenessGuideArticle,

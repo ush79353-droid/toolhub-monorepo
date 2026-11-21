@@ -11,7 +11,7 @@ export function MortgageWithExtraPaymentsGuideArticle() {
         What Are Extra Mortgage Payments?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Extra payments reduce principal sooner—either by paying more often
+ Extra payments reduce principal sooner, either by paying more often
         (accelerated bi-weekly or weekly), adding a recurring amount to each
         installment, or making a one-time lump-sum prepayment. Less principal
         outstanding means less interest over the life of the loan and an earlier

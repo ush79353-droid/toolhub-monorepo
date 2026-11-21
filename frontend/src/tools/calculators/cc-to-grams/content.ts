@@ -59,7 +59,7 @@ export const CC_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
       'Solve density for volume: Volume = Mass / Density.',
       'With mass in grams and density in g/cm³: CC = Grams / Density (g/cm³).',
       `Worked example: mass 284 g, density 1.42 g/cm³ (typical honey). Volume = 284 / 1.42 = ${formatMeasure(massToVolume(284, 1.42))} cc.`,
-      'Division by zero is undefined — density must be greater than zero for this calculator.',
+      'Division by zero is undefined; density must be greater than zero for this calculator.',
     ],
     formula: 'V = m / ρ',
   },
@@ -69,7 +69,7 @@ export const CC_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'In everyday laboratory and culinary use, 1 cc = 1 cm³ = 1 mL. These are volume units.',
       'Grams measure mass. They are not the same physical quantity as cubic centimeters.',
-      'Only with density can you move between volume and mass. For water near 4 °C, 1 cc has approximately 1 g of mass — a convenient approximation, not a universal identity for every liquid or temperature.',
+      'Only with density can you move between volume and mass. For water near 4 °C, 1 cc has approximately 1 g of mass: a convenient approximation, not a universal identity for every liquid or temperature.',
       'This converter also accepts liters, cubic meters, and US liquid units (fluid ounce, cup, pint, quart, gallon). US liquid measures are not Imperial.',
     ],
     formula: '1 cc = 1 cm³ = 1 mL · 1000 cc = 1 L',
@@ -113,7 +113,7 @@ export const CC_TO_GRAMS_FAQS: readonly FAQItem[] = [
   {
     question: 'Does 1 cm³ Equal 1 Gram?',
     answer:
-      'No, not universally. One cm³ equals one mL — a volume. Its mass depends on density. For water near 4 °C, 1 cm³ has approximately 1 gram of mass.',
+      'No, not universally. One cm³ equals one mL: a volume. Its mass depends on density. For water near 4 °C, 1 cm³ has approximately 1 gram of mass.',
   },
   {
     question: 'Are CC and Grams the Same?',

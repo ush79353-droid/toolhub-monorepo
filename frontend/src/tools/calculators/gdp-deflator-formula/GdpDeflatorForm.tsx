@@ -101,7 +101,7 @@ export function GdpDeflatorForm({
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         GDP Deflator = (Nominal GDP / Real GDP) × 100. The result is a
         price-level index (reference 100), not a one-year inflation percentage.
-        Currency is denomination only — both GDP values share the same currency;
+ Currency is denomination only; both GDP values share the same currency;
         magnitudes convert to common base units before the ratio.
       </p>
 

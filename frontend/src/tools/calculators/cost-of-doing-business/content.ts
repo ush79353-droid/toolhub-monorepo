@@ -17,7 +17,7 @@ export const COST_OF_DOING_BUSINESS_FAQS: readonly FAQItem[] = [
   {
     question: 'What counts as billable days?',
     answer:
-      'Days you can charge clients or produce billable work—typically after weekends, holidays, and planned non-billable time.',
+      'Days you can charge clients or produce billable work, typically after weekends, holidays, and planned non-billable time.',
   },
   {
     question: 'Can billable days be zero?',

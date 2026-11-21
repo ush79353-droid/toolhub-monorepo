@@ -176,7 +176,7 @@ export function EvToSalesCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Cash: ${input.cash} ${input.cashCurrency}`,
         `Market cap: ${input.marketCap} ${input.marketCapCurrency}`,
         `Total debt: ${input.totalDebt} ${input.totalDebtCurrency}`,

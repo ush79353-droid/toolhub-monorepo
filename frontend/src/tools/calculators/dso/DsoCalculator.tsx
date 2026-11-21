@@ -78,7 +78,7 @@ export function DsoCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Average AR: ${symbol}${result.formattedAverageAccountsReceivable}`,
         `${result.salesBasis === 'netCreditSales' ? 'Net credit sales' : 'Total sales'}: ${symbol}${result.formattedActiveSales}`,
         `Period: ${result.formattedAccountingPeriodDays} days`,
@@ -121,7 +121,7 @@ export function DsoCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Estimate how many days you take to collect receivables — DSO =
+ Estimate how many days you take to collect receivables; DSO =
             (Average AR / Sales) × days.
           </p>
         </div>

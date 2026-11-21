@@ -6,7 +6,7 @@ import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { AlertCircle, Scale } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — Omega Calculators',
+  title: 'Terms of Service | Omega Calculators',
   description:
     'Review the terms, conditions, and disclaimers governing the use of Omega Calculators calculators and utilities.',
 };

@@ -238,7 +238,7 @@ export function Rule2836Form({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amounts share one currency label (denomination only — no FX). Use gross
+ Amounts share one currency label (denomination only; no FX). Use gross
         monthly income, not take-home pay.
       </p>
       <p className="text-xs">
@@ -270,7 +270,7 @@ export function Rule2836Form({
             Do you want to input individual housing expenses separately?
             <InfoTooltip
               label="Housing expense mode"
-              text="Choose No for one combined housing payment, or Yes to break out mortgage, taxes, insurance, HOA, and other housing costs. Only one mode is used — costs are never double-counted."
+              text="Choose No for one combined housing payment, or Yes to break out mortgage, taxes, insurance, HOA, and other housing costs. Only one mode is used; costs are never double-counted."
             />
           </legend>
           <div
@@ -388,7 +388,7 @@ export function Rule2836Form({
         <MoneyField
           id="r2836-other-debts"
           label="Other debts"
-          tip="Total monthly payments on qualifying debts other than housing already entered — auto loans, student loans, personal loans, minimum credit card payments, and similar. Do not include the housing payment again."
+          tip="Total monthly payments on qualifying debts other than housing already entered; auto loans, student loans, personal loans, minimum credit card payments, and similar. Do not include the housing payment again."
           value={input.otherMonthlyDebts}
           error={errors.otherMonthlyDebts}
           symbol={symbol}

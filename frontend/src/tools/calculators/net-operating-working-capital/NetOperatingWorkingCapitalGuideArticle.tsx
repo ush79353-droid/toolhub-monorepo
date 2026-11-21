@@ -119,7 +119,7 @@ export function NetOperatingWorkingCapitalGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Positive NOWC means COA exceeds COL. Negative NOWC means COL exceeds
-        COA. Neither result alone proves health or distress — industry and cash
+ COA. Neither result alone proves health or distress; industry and cash
         conversion matter.
       </p>
 
@@ -293,7 +293,7 @@ export function NetOperatingWorkingCapitalGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This tool uses a simplified five-input model. It may omit prepaid assets
         or other accruals, and cash classification requires care. A single NOWC
-        figure does not prove liquidity or solvency. Educational use only — not
+ figure does not prove liquidity or solvency. Educational use only; not
         personalized financial advice.
       </p>
 

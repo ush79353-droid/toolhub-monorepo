@@ -40,7 +40,7 @@ function summaryText(title: string, result: CompoundInterestRateResult, note: st
     COMPOUNDING_OPTIONS.find((o) => o.value === result.compounding)?.label ??
     result.compounding;
   return [
-    `${title} — Omega Calculators`,
+    `${title} | Omega Calculators`,
     `Initial balance: ${money(result.initialBalance)}`,
     `Final balance: ${money(result.finalBalance)}`,
     `Surplus: ${money(result.surplus)}`,

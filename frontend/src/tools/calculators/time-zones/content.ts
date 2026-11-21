@@ -36,7 +36,7 @@ export const TIME_ZONES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Why Do We Use Time Zones?',
     paragraphs: [
       'Earth rotates once per day, so local solar noon moves westward. A single civil clock for the whole planet would put sunrise at midnight in some places. Time zones group longitudes so people can keep “morning” near the start of the working day.',
-      'Standardized zones support travel, aviation, shipping, broadcasting, and remote work. A meeting at 12:00 UTC is 17:00 in Karachi and 07:00 in New York on 15 November 2026—same instant, different wall clocks.',
+      'Standardized zones support travel, aviation, shipping, broadcasting, and remote work. A meeting at 12:00 UTC is 17:00 in Karachi and 07:00 in New York on 15 November 2026, same instant, different wall clocks.',
     ],
   },
   {
@@ -55,7 +55,7 @@ export const TIME_ZONES_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'world-time-zones',
     title: 'All World Time Zones Explained',
     paragraphs: [
-      'UTC is the global time scale. A UTC offset is how far a clock sits from UTC at a given instant (for example UTC+05:30). A geographic time zone is a named set of rules—usually an IANA identifier such as America/New_York—that can change offset during the year.',
+      'UTC is the global time scale. A UTC offset is how far a clock sits from UTC at a given instant (for example UTC+05:30). A geographic time zone is a named set of rules, usually an IANA identifier such as America/New_York, that can change offset during the year.',
       'Standard time is the offset used outside daylight saving. Daylight saving (summer) time is a seasonal shift, often one hour. Abbreviations such as EST or IST are ambiguous without a location: IST can mean India or Ireland. This converter labels cities and IANA ids rather than bare abbreviations.',
       'Two cities can share an offset on one date and differ on another because their DST transition dates are not the same.',
     ],
@@ -89,7 +89,7 @@ export const TIME_ZONES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Summer Time Zones',
     paragraphs: [
       'Daylight saving time shifts clocks, usually one hour, so evening light lasts longer. Not every country uses it, and start/end dates differ. The United Kingdom and the United States can be five hours apart or four, depending on whether both have changed clocks.',
-      'This converter applies the IANA rules for the selected instant. It does not guess “summer” from the month name alone—southern-hemisphere summer is not July.',
+      'This converter applies the IANA rules for the selected instant. It does not guess “summer” from the month name alone, southern-hemisphere summer is not July.',
     ],
   },
   {

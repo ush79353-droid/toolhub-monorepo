@@ -42,7 +42,7 @@ export function shareResultText(input: string, output: string): string {
       : output;
   const stats = textStats(input);
   return [
-    'Uppercase to Lowercase Converter — Omega Calculators',
+    'Uppercase to Lowercase Converter | Omega Calculators',
     '',
     `Characters: ${stats.characters} · Words: ${stats.words} · Lines: ${stats.lines}`,
     '',

@@ -12,7 +12,7 @@ export function AutoLeaseGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Estimate an auto lease payment from vehicle price, term, money factor (or APR), down
-        payment, trade-in, residual value, and sales tax—or solve for the auto price that fits a
+ payment, trade-in, residual value, and sales tax, or solve for the auto price that fits a
         target monthly payment. Amounts are shown in USD. This is an educational estimate, not a
         dealer quote.
       </p>

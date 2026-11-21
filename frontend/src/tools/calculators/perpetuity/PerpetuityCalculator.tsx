@@ -102,7 +102,7 @@ export function PerpetuityCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Dividend: ${symbol}${input.dividend}`,
         `Discount rate: ${input.discountRatePercent}%`,
         `Growth rate: ${input.growthRatePercent}%`,

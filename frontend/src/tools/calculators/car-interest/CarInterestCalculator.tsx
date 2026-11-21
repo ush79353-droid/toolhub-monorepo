@@ -88,7 +88,7 @@ export function CarInterestCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Price of the car: ${getCurrencySymbol(input.carPriceCurrency)}${input.carPrice || '0'}`,
         `Down payment: ${getCurrencySymbol(input.downPaymentCurrency)}${input.downPayment || '0'}`,
         `Trade-in value: ${getCurrencySymbol(input.tradeInCurrency)}${input.tradeInValue || '0'}`,

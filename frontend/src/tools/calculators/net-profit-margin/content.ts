@@ -17,7 +17,7 @@ export const NET_PROFIT_MARGIN_FAQS: readonly FAQItem[] = [
   {
     question: 'Can net profit or margin be negative or zero?',
     answer:
-      'Yes. Zero net profit with positive revenues yields 0%. A loss yields a negative margin. Total revenues must be greater than zero — zero and negative revenues are rejected so the calculator never shows NaN or Infinity.',
+      'Yes. Zero net profit with positive revenues yields 0%. A loss yields a negative margin. Total revenues must be greater than zero; zero and negative revenues are rejected so the calculator never shows NaN or Infinity.',
   },
   {
     question: 'Do the currency selectors convert amounts?',

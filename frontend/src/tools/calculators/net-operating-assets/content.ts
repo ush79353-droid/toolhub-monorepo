@@ -34,7 +34,7 @@ export const NET_OPERATING_ASSETS_FAQS: readonly FAQItem[] = [
   {
     question: 'What are net operating assets?',
     answer:
-      'Net operating assets (NOA) are operating assets minus operating liabilities — the net capital tied to ordinary business operations.',
+      'Net operating assets (NOA) are operating assets minus operating liabilities: the net capital tied to ordinary business operations.',
   },
   {
     question: 'What does NOA stand for?',
@@ -52,12 +52,12 @@ export const NET_OPERATING_ASSETS_FAQS: readonly FAQItem[] = [
   {
     question: 'What are operating assets?',
     answer:
-      'Assets used in ordinary operations — such as operating cash, receivables, inventory, prepaid expenses, and fixed assets in this simplified model.',
+      'Assets used in ordinary operations; such as operating cash, receivables, inventory, prepaid expenses, and fixed assets in this simplified model.',
   },
   {
     question: 'What are operating liabilities?',
     answer:
-      'Liabilities arising from operations — commonly accounts payable and accrued operating expenses — not interest-bearing financing debt.',
+      'Liabilities arising from operations (commonly accounts payable and accrued operating expenses) not interest-bearing financing debt.',
   },
   {
     question: 'What is the difference between operating assets and total assets?',
@@ -77,15 +77,15 @@ export const NET_OPERATING_ASSETS_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Is inventory an operating asset?',
-    answer: 'Yes — inventory is typically a core operating asset.',
+    answer: 'Yes: inventory is typically a core operating asset.',
   },
   {
     question: 'Are accounts receivable operating assets?',
-    answer: 'Yes — trade receivables generally arise from operating sales.',
+    answer: 'Yes: trade receivables generally arise from operating sales.',
   },
   {
     question: 'Are prepaid expenses operating assets?',
-    answer: 'Yes — prepaid operating costs are assets until consumed.',
+    answer: 'Yes: prepaid operating costs are assets until consumed.',
   },
   {
     question: 'Are fixed assets included in NOA?',
@@ -94,7 +94,7 @@ export const NET_OPERATING_ASSETS_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Are accounts payable operating liabilities?',
-    answer: 'Yes — trade payables are commonly operating liabilities.',
+    answer: 'Yes: trade payables are commonly operating liabilities.',
   },
   {
     question: 'Are accrued expenses operating liabilities?',
@@ -103,7 +103,7 @@ export const NET_OPERATING_ASSETS_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Are bank loans operating liabilities?',
-    answer: 'No — bank loans are typically financing liabilities, not operating.',
+    answer: 'No: bank loans are typically financing liabilities, not operating.',
   },
   {
     question: 'Can net operating assets be negative?',
@@ -125,7 +125,7 @@ export const NET_OPERATING_ASSETS_FAQS: readonly FAQItem[] = [
   {
     question: 'Is negative NOA bad?',
     answer:
-      'Not always — some models run with negative operating working capital or NOA. Context matters.',
+      'Not always; some models run with negative operating working capital or NOA. Context matters.',
   },
   {
     question: 'Is a higher NOA always better?',
@@ -155,7 +155,7 @@ export const NET_OPERATING_ASSETS_FAQS: readonly FAQItem[] = [
   {
     question: 'What is Return on Net Operating Assets?',
     answer:
-      'RNOA = NOPAT ÷ Average NOA × 100 — a profitability ratio on operating capital. Not computed in this primary calculator.',
+      'RNOA = NOPAT ÷ Average NOA × 100: a profitability ratio on operating capital. Not computed in this primary calculator.',
   },
   {
     question: 'How do I calculate RNOA?',
@@ -183,7 +183,7 @@ export const NET_OPERATING_ASSETS_FAQS: readonly FAQItem[] = [
   {
     question: 'How do accounts payable affect NOA?',
     answer:
-      'Higher operating payables raise operating liabilities and reduce NOA — supplier credit finances operations.',
+      'Higher operating payables raise operating liabilities and reduce NOA; supplier credit finances operations.',
   },
   {
     question: 'What is the relationship between NOA and NOPAT?',

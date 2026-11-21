@@ -18,11 +18,11 @@ export const TEXAS_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'Does this include FICA or a full paycheck?',
     answer:
-      'No. AGI is not treated as FICA wages. Results show federal income tax, $0 Texas state tax, combined income tax, per-pay-period splits, and optional property tax—clearly labeled as excluding FICA/withholding.',
+      'No. AGI is not treated as FICA wages. Results show federal income tax, $0 Texas state tax, combined income tax, per-pay-period splits, and optional property tax, clearly labeled as excluding FICA/withholding.',
   },
   {
     question: 'How is property tax estimated?',
     answer:
-      'Estimated property tax = entered home value × ACS 2020–2024 county effective rate (median tax ÷ median home value) for Texas counties in the dropdown. That rate is a market-value proxy—not your parcel’s combined taxing-unit levy. The rate field is pre-filled from the county and can be edited when you know your bill rate.',
+      'Estimated property tax = entered home value × ACS 2020–2024 county effective rate (median tax ÷ median home value) for Texas counties in the dropdown. That rate is a market-value proxy, not your parcel’s combined taxing-unit levy. The rate field is pre-filled from the county and can be edited when you know your bill rate.',
   },
 ];

@@ -16,7 +16,7 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
     ],
     correctAnswer: 'B',
     explanation:
-      'A dividend is a distribution of company earnings paid to shareholders, usually in cash or additional shares—not a fee investors pay, and not the stock’s market price.',
+      'A dividend is a distribution of company earnings paid to shareholders, usually in cash or additional shares, not a fee investors pay, and not the stock’s market price.',
   },
   {
     id: 'q2',

@@ -36,7 +36,7 @@ export const PMI_FAQS: readonly FAQItem[] = [
   {
     question: 'How much does PMI cost on a $300,000 mortgage?',
     answer:
-      'It depends on the annual rate. At an illustrative 0.5%: annual PMI = $1,500 and monthly PMI = $125. Rates vary with LTV, credit, coverage, and insurer terms — enter your assumed rate for an estimate.',
+      'It depends on the annual rate. At an illustrative 0.5%: annual PMI = $1,500 and monthly PMI = $125. Rates vary with LTV, credit, coverage, and insurer terms. Enter your assumed rate for an estimate.',
   },
   {
     question: 'Does PMI protect the buyer or the lender?',

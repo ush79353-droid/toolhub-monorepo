@@ -18,7 +18,7 @@ export function PppGuideArticle() {
         id="introduction"
         className="text-xl font-bold tracking-tight text-accent sm:text-2xl"
       >
-        PPP Calculator — Purchasing Power Parity
+ PPP Calculator; Purchasing Power Parity
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Comparing salaries across borders with market exchange rates alone can
@@ -27,7 +27,7 @@ export function PppGuideArticle() {
         purchasing-power-equivalent amount in a target currency using GDP PPP
         conversion factors, then optionally compares that result with a
         same-year market exchange-rate conversion. Results are educational
-        estimates — not employer offers or personalized cost-of-living quotes.
+ estimates; not employer offers or personalized cost-of-living quotes.
       </p>
 
       <h2
@@ -87,7 +87,7 @@ export function PppGuideArticle() {
         dollars = 50,000; S_B = 100,000 target currency units. Under those
         factors, 100,000 target units match the purchasing power of 50,000 source
         units. This calculator&apos;s dataset mode uses World Bank WDI GDP PPP
-        (PA.NUS.PPP), not a household-consumption series — so factors stay
+ (PA.NUS.PPP), not a household-consumption series, so factors stay
         consistent across countries.
       </p>
 
@@ -239,7 +239,7 @@ export function PppGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Treat the PPP-adjusted figure as one input beside local wage surveys,
-        taxes, benefits, housing, family costs, and FX exposure — never as a
+ taxes, benefits, housing, family costs, and FX exposure; never as a
         guaranteed equivalent standard of living.
       </p>
 

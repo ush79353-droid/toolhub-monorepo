@@ -75,7 +75,7 @@ export function GoodwillCalculator({
   const shareable = Boolean(result);
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Purchase price: ${symbol}${result!.formattedPurchasePrice}`,
         `Net identifiable assets: ${symbol}${result!.formattedNetIdentifiableAssets}`,
         `Goodwill: ${symbol}${result!.formattedGoodwill}`,

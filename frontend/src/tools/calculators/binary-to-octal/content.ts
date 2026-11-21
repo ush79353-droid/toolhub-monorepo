@@ -25,7 +25,7 @@ export const BINARY_OCTAL_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'binary-octal-systems',
     title: 'Binary and Octal Number Systems',
     paragraphs: [
-      'Binary is base 2 and uses only the digits 0 and 1 — the natural language of digital circuits. Octal is base 8 and uses digits 0–7. Because 8 = 2³, each octal digit maps exactly to three binary bits, so grouping bits in threes is an exact conversion method rather than an approximation.',
+      'Binary is base 2 and uses only the digits 0 and 1: the natural language of digital circuits. Octal is base 8 and uses digits 0–7. Because 8 = 2³, each octal digit maps exactly to three binary bits, so grouping bits in threes is an exact conversion method rather than an approximation.',
       'Computers store information as bits; octal is a compact reading aid for those bits in educational, historical, and some systems contexts (for example Unix permission modes).',
     ],
     formula: '1 octal digit = 3 binary bits',
@@ -59,7 +59,7 @@ export const BINARY_OCTAL_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'how-to-use',
-    title: 'Using the Binary to Octal Converter — An Example',
+    title: 'Using the Binary to Octal Converter; An Example',
     paragraphs: [
       '1) Choose Binary to octal or Octal to binary. 2) Enter a valid integer in the selected base. 3) Read the converted result. 4) Expand conversion steps for the triad table. 5) Switch direction to work the other way. 6) Share or reset as needed.',
       'This tool handles non-negative integers only. Fractional or signed two’s-complement inputs are not silently reinterpreted.',
@@ -94,7 +94,7 @@ export const BINARY_OCTAL_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Why Convert Binary to Octal?',
     paragraphs: [
       'Three-bit grouping helps students and engineers read bit patterns more quickly than long binary strings. Octal appears in computer science education, digital electronics teaching, and Unix-style permission notation where each octal digit stands for a three-bit permission group.',
-      'Modern mainstream computing more often uses hexadecimal (four-bit groups). Octal remains useful where three-bit alignment matches the problem — it is not the universal machine representation.',
+      'Modern mainstream computing more often uses hexadecimal (four-bit groups). Octal remains useful where three-bit alignment matches the problem; it is not the universal machine representation.',
     ],
   },
 ];

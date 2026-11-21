@@ -54,7 +54,7 @@ export function interpretTrir(trir: number): { band: TrirBand; interpretation: s
   if (band === 'low') {
     return {
       band,
-      interpretation: `TRIR ${rate} is in the illustrative “low” range (below 3). Fewer recordable cases relative to hours worked — not a guarantee of a hazard-free workplace. Compare with industry and historical baselines.`,
+      interpretation: `TRIR ${rate} is in the illustrative “low” range (below 3). Fewer recordable cases relative to hours worked; not a guarantee of a hazard-free workplace. Compare with industry and historical baselines.`,
     };
   }
   if (band === 'moderate') {
@@ -65,7 +65,7 @@ export function interpretTrir(trir: number): { band: TrirBand; interpretation: s
   }
   return {
     band,
-    interpretation: `TRIR ${rate} is in the illustrative “high” range (above 8). Consider additional safety assessment and corrective action. Bands are illustrative — not regulatory classifications.`,
+    interpretation: `TRIR ${rate} is in the illustrative “high” range (above 8). Consider additional safety assessment and corrective action. Bands are illustrative; not regulatory classifications.`,
   };
 }
 
@@ -156,7 +156,7 @@ export function shareResultText(
     ? `Estimated recordable cases: ${result.formattedInjuries}`
     : `Recordable injuries/illnesses: ${result.formattedInjuries}`;
   return [
-    'TRIR Calculator — Omega Calculators',
+    'TRIR Calculator | Omega Calculators',
     '',
     `Hours worked: ${result.formattedHoursWorked}`,
     caseLine,

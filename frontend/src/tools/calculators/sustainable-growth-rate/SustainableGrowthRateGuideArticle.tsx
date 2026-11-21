@@ -35,7 +35,7 @@ export function SustainableGrowthRateGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Retained earnings fund internally supported growth. Some models measure
         growth relative to beginning versus ending equity or treat external
-        financing differently — label assumptions clearly when comparing results.
+ financing differently; label assumptions clearly when comparing results.
       </p>
 
       <h2
@@ -178,7 +178,7 @@ export function SustainableGrowthRateGuideArticle() {
         Growing faster than SGR may require additional debt, equity issuance,
         lower dividends, higher profitability, better asset efficiency, working
         capital improvements, or a slower growth target. Exceeding SGR is not
-        automatically bad — it signals a financing or operations gap to close.
+ automatically bad; it signals a financing or operations gap to close.
       </p>
 
       <h2

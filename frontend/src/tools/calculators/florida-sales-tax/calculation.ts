@@ -114,9 +114,9 @@ export function calculateFloridaSalesTax(
       rateLabel:
         'ZIP is in the Florida numeric range but is not present in the Census 2020 ZCTA→county file (PO Box / unique / unmatched ZIP). County surtax cannot be resolved.',
       assumptionNote:
-        'No county assigned — state and surtax amounts are not calculated.',
+        'No county assigned; state and surtax amounts are not calculated.',
       summaryText: [
-        'Florida Sales Tax Calculator — Omega Calculators',
+        'Florida Sales Tax Calculator | Omega Calculators',
         `Purchase amount: $${formatFlUsd(purchaseAmount)}`,
         `ZIP code: ${zipCode}`,
         'County: unavailable (ZIP not in Census ZCTA map)',
@@ -133,11 +133,11 @@ export function calculateFloridaSalesTax(
       countyFips: null,
       candidateCounties: counties.map((c) => ({ fips: c.fips, name: c.name })),
       rateLabel:
-        'This ZIP intersects multiple Florida counties in the Census ZCTA map. Select the purchase county — rates are not guessed.',
+        'This ZIP intersects multiple Florida counties in the Census ZCTA map. Select the purchase county; rates are not guessed.',
       assumptionNote:
         'Waiting for an explicit county selection before applying DR-15DSS surtax.',
       summaryText: [
-        'Florida Sales Tax Calculator — Omega Calculators',
+        'Florida Sales Tax Calculator | Omega Calculators',
         `Purchase amount: $${formatFlUsd(purchaseAmount)}`,
         `ZIP code: ${zipCode}`,
         `Ambiguous counties: ${counties.map((c) => c.name).join(', ')}`,
@@ -161,7 +161,7 @@ export function calculateFloridaSalesTax(
       rateLabel: 'Select a county from the ZIP’s Census intersections.',
       assumptionNote: 'County selection does not match this ZIP’s candidates.',
       summaryText: [
-        'Florida Sales Tax Calculator — Omega Calculators',
+        'Florida Sales Tax Calculator | Omega Calculators',
         `Purchase amount: $${formatFlUsd(purchaseAmount)}`,
         `ZIP code: ${zipCode}`,
         'County: invalid selection for this ZIP',
@@ -223,7 +223,7 @@ export function calculateFloridaSalesTax(
     rateLabel,
     assumptionNote,
     summaryText: [
-      'Florida Sales Tax Calculator — Omega Calculators',
+      'Florida Sales Tax Calculator | Omega Calculators',
       `Purchase amount: $${formatFlUsd(purchaseAmount)}`,
       `ZIP code: ${zipCode}`,
       `County: ${county.name}`,

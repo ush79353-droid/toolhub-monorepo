@@ -226,7 +226,7 @@ export function AlabamaTaxForm({
             <span>Tax jurisdiction</span>
             <InfoTooltip
               label="Tax jurisdiction"
-              text="Local occupational tax applies to wages for work performed in the jurisdiction. Selecting a city does not by itself prove residency or workplace eligibility—this estimate applies the published rate to annualized AGI as an earned-income proxy."
+              text="Local occupational tax applies to wages for work performed in the jurisdiction. Selecting a city does not by itself prove residency or workplace eligibility, this estimate applies the published rate to annualized AGI as an earned-income proxy."
             />
           </legend>
           <div className="mt-1.5 space-y-2">

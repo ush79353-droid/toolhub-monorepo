@@ -92,7 +92,7 @@ export function SecondsToDaysForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact: 1 day = 86,400 seconds (24-hour day). Enter seconds or days — the other updates
+ Exact: 1 day = 86,400 seconds (24-hour day). Enter seconds or days: the other updates
         instantly. Negative values are allowed for signed durations.
       </div>
 

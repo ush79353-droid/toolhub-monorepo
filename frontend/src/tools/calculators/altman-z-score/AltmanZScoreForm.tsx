@@ -159,7 +159,7 @@ export function AltmanZScoreForm({
         Original five-factor Altman Z-Score for publicly traded manufacturing
         firms. Currency is denomination only (not FX). Keep sales and EBIT on
         the same reporting period as the balance-sheet figures. Screening model
-        only — not a bankruptcy probability.
+ only; not a bankruptcy probability.
       </p>
 
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -206,7 +206,7 @@ export function AltmanZScoreForm({
             }
           >
             <option value="balance-sheet">
-              Full balance sheet (CA − CL) — recommended
+ Full balance sheet (CA − CL): recommended
             </option>
             <option value="simplified">
               Simplified (AR + Inventory − AP)
@@ -235,7 +235,7 @@ export function AltmanZScoreForm({
         {input.workingCapitalSource === 'simplified' ? (
           <>
             <p className="text-[11px] text-muted-foreground">
-              Simplified estimate — omits cash, accruals, short-term debt, and
+ Simplified estimate: omits cash, accruals, short-term debt, and
               other CA/CL items.
             </p>
             {moneyField(
@@ -373,7 +373,7 @@ export function AltmanZScoreForm({
               errors.marketValueOfEquity,
               {
                 tooltip:
-                  'Market capitalization — not book equity. Original Altman Z uses market value.',
+                  'Market capitalization; not book equity. Original Altman Z uses market value.',
                 tooltipLabel: 'Market value of equity',
                 placeholder: '3000000',
               }
@@ -508,7 +508,7 @@ export function AltmanZScoreForm({
       >
         {moneyField('az-sales', 'Sales', 'sales', errors.sales, {
           tooltip:
-            'Net revenue for the same reporting period as EBIT — do not mix annual sales with quarterly EBIT.',
+            'Net revenue for the same reporting period as EBIT; do not mix annual sales with quarterly EBIT.',
           tooltipLabel: 'Sales',
           placeholder: '6000000',
         })}

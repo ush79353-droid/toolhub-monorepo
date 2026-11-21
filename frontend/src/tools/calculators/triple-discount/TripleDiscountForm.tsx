@@ -146,7 +146,7 @@ export function TripleDiscountForm({
             <span>2nd discount</span>
             <InfoTooltip
               label="2nd discount"
-              text="Applied after the 1st discount, on the already-reduced price — not added to the first percent. Defaults to 0%."
+              text="Applied after the 1st discount, on the already-reduced price; not added to the first percent. Defaults to 0%."
             />
           </label>
           <FieldShell error={errors.secondDiscountPercent}>
@@ -177,7 +177,7 @@ export function TripleDiscountForm({
             <span>3rd discount</span>
             <InfoTooltip
               label="3rd discount"
-              text="Applied after the 2nd discount, on the twice-reduced price — not added to the prior percents. Defaults to 0%."
+              text="Applied after the 2nd discount, on the twice-reduced price; not added to the prior percents. Defaults to 0%."
             />
           </label>
           <FieldShell error={errors.thirdDiscountPercent}>

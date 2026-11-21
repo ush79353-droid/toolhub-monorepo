@@ -15,7 +15,7 @@ export function MarkdownGuideArticle() {
         This Markdown Calculator finds how much a product’s selling price has
         been reduced from its original ticket price. Enter any two compatible
         values among original price, actual price, markdown amount, and markdown
-        percentage — the other two are derived. It supports retail pricing,
+ percentage: the other two are derived. It supports retail pricing,
         clearance analysis, and promotional planning. It is not a Markdown text
         formatting tool. Currency labels are denomination only.
       </p>
@@ -52,7 +52,7 @@ export function MarkdownGuideArticle() {
         id="example"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        How to Use This Markdown Calculator — An Example
+ How to Use This Markdown Calculator; An Example
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A shoe retailer lists shoes at $50 and applies a 25% markdown. Markdown

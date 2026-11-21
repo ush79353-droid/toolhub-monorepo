@@ -48,7 +48,7 @@ export const MM_TO_INCHES_GUIDE_SECTIONS: readonly GuideSection[] = [
       `2. Divide by ${MM_PER_INCH}.`,
       '3. Read the equivalent value in inches.',
       '4. Round only if your application needs fewer decimals.',
-      `Example — 20 mm: 20 ÷ ${MM_PER_INCH} ≈ ${formatLength(millimetersToInches(20))} in.`,
+      `Example; 20 mm: 20 ÷ ${MM_PER_INCH} ≈ ${formatLength(millimetersToInches(20))} in.`,
     ],
     formula: `1 in = ${MM_PER_INCH} mm\ninches = mm ÷ ${MM_PER_INCH}`,
   },
@@ -70,7 +70,7 @@ export const MM_TO_INCHES_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `inches = mm ÷ ${MM_PER_INCH}`,
       `mm = inches × ${MM_PER_INCH}`,
-      `The factor ${MM_PER_INCH} is exact — do not round it before calculating.`,
+      `The factor ${MM_PER_INCH} is exact; do not round it before calculating.`,
     ],
     formula: `inches = mm ÷ ${MM_PER_INCH}\nmm = inches × ${MM_PER_INCH}`,
   },

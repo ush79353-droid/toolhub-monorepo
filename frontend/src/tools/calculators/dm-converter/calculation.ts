@@ -34,7 +34,7 @@ export function convertDm(value: number, fromUnit: LengthUnit, toUnit: LengthUni
 export function shareResultText(meters: number): string {
   const values = allFromMeters(meters);
   return [
-    'dm Converter — Omega Calculators',
+    'dm Converter | Omega Calculators',
     '',
     `${formatLength(values.dm)} ${UNIT_SYMBOLS.dm} equals:`,
     '',

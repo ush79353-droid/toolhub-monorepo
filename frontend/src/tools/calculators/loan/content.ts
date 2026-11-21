@@ -222,7 +222,7 @@ export const LOAN_GUIDE_SECTIONS: readonly LoanGuideSection[] = [
     title: 'Extra Payments and Interest Savings',
     paragraphs: [
       'Extra principal payments reduce the unpaid balance immediately without increasing future minimum payments, which shrinks interest accrued in every subsequent period and pulls your payoff date forward.',
-      'You can test recurring extra payments applied every scheduled payment, once per calendar month, or once per year—as well as a single one-time lump-sum payment applied at any scheduled installment.',
+      'You can test recurring extra payments applied every scheduled payment, once per calendar month, or once per year, as well as a single one-time lump-sum payment applied at any scheduled installment.',
     ],
     bullets: [
       'Interest Savings Metric: displays exact dollars saved compared against an identical loan without extra payments.',

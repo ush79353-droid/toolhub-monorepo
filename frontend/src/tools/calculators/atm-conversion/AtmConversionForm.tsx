@@ -100,7 +100,7 @@ export function AtmConversionForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Exact: 1 atm = 101,325 Pa = 1.01325 bar. PSI uses the international pound-force definition.
-        Edit any field — the others update from pascals. Negative values are treated as
+ Edit any field: the others update from pascals. Negative values are treated as
         gauge-relative, not absolute pressure.
       </div>
 

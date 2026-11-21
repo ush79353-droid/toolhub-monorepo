@@ -46,7 +46,7 @@ export function allFromPascals(pascals: number): Record<PascalUnit, number> {
 export function shareResultText(pascals: number): string {
   const values = allFromPascals(pascals);
   return [
-    'Pascal Conversion — Omega Calculators',
+    'Pascal Conversion | Omega Calculators',
     '',
     `${formatPressure(values.Pa)} ${UNIT_SYMBOLS.Pa} = ${formatPressure(values.atm)} ${UNIT_SYMBOLS.atm}`,
     `${formatPressure(values.Pa)} ${UNIT_SYMBOLS.Pa} = ${formatPressure(values.bar)} ${UNIT_SYMBOLS.bar}`,

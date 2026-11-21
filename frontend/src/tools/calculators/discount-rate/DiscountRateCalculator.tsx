@@ -113,7 +113,7 @@ export function DiscountRateCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `PV: ${symbol}${input.presentValue}`,
         `FV: ${symbol}${input.futureValue}`,
         `Term: ${input.term} ${input.termUnit}`,

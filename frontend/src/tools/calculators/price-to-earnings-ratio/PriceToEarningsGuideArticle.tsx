@@ -29,8 +29,8 @@ export function PriceToEarningsGuideArticle() {
       </h2>
       <div className="my-4 space-y-2 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         <p>P/E = Price per Share ÷ Earnings per Share (EPS)</p>
-        <p>Price per Share — current market price of one common share</p>
-        <p>EPS — earnings attributable to each common share</p>
+        <p>Price per Share; current market price of one common share</p>
+        <p>EPS; earnings attributable to each common share</p>
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         When EPS is derived rather than entered directly:
@@ -119,7 +119,7 @@ export function PriceToEarningsGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         P/E measures price relative to earnings. PEG divides P/E by an earnings
         growth rate (in percentage points) to relate valuation to growth. PEG
-        should not be used mechanically — growth estimates can be wrong, and
+ should not be used mechanically; growth estimates can be wrong, and
         both metrics ignore many other fundamentals. See the{' '}
         <Link
           href="/tools/peg-ratio-calculator"

@@ -11,7 +11,7 @@ export function FiftyThirtyTwentyGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The 50/30/20 budgeting rule is a simple framework that divides after-tax income into three
         buckets: 50% necessities, 30% wants, and 20% savings. It supports monthly income planning,
-        clear category targets, and consistent tracking. Use it as a starting point — location,
+ clear category targets, and consistent tracking. Use it as a starting point; location,
         household size, debt, and goals may require different splits.
       </p>
 
@@ -38,7 +38,7 @@ export function FiftyThirtyTwentyGuideArticle() {
         Wants are discretionary expenses that improve lifestyle but are not essential: dining out,
         entertainment, vacations, shopping, hobbies, streaming, premium memberships, and
         non-essential electronics. Controlling wants does not mean eliminating every enjoyable
-        purchase — it means keeping lifestyle spending intentional.
+ purchase; it means keeping lifestyle spending intentional.
       </p>
 
       <h2

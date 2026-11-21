@@ -99,7 +99,7 @@ export function WorkingCapitalTurnoverRatioCalculator({
     result.status !== 'zeroAverageWc';
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Average CA: ${symbol}${result!.formattedAverageCurrentAssets}`,
         `Average CL: ${symbol}${result!.formattedAverageCurrentLiabilities}`,
         `Average WC: ${symbol}${result!.formattedAverageWorkingCapital}`,

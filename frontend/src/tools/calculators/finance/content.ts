@@ -34,7 +34,7 @@ export const FINANCE_FAQS: readonly FAQItem[] = [
   {
     question: 'What does PMT mean?',
     answer:
-      'PMT is a recurring payment made or received each period — for example a loan installment, mortgage payment, or regular savings contribution. Timing can be end-of-period (ordinary) or beginning-of-period (annuity due).',
+      'PMT is a recurring payment made or received each period, for example a loan installment, mortgage payment, or regular savings contribution. Timing can be end-of-period (ordinary) or beginning-of-period (annuity due).',
   },
   {
     question: 'What does I/Y mean on a financial calculator?',

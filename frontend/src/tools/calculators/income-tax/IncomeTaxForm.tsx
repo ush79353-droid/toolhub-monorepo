@@ -115,7 +115,7 @@ export function IncomeTaxForm({
       <p className="text-sm leading-relaxed text-foreground/90">
         Modify the values and click Calculate. Amounts are fixed USD. This estimates federal
         income tax for tax years 2025 and 2026 (including OBBBA adjustments). It is an
-        educational estimate — not a complete Form 1040 or tax advice.
+ educational estimate; not a complete Form 1040 or tax advice.
       </p>
 
       <div className="space-y-3.5 rounded-xl border border-border bg-muted/15 p-3.5 sm:p-4">
@@ -290,7 +290,7 @@ export function IncomeTaxForm({
             ))}
           </div>
           <p className="mt-1 text-xs text-muted-foreground">
-            Indicator only — no SE net-profit field on this form, so SE tax is not computed.
+ Indicator only; no SE net-profit field on this form, so SE tax is not computed.
           </p>
         </fieldset>
 
@@ -332,7 +332,7 @@ export function IncomeTaxForm({
         <MoneyField
           id="income-tax-passive"
           label="Passive incomes"
-          tip="Rentals, royalties, and similar passive income (simplified — no passive-loss limitation)."
+          tip="Rentals, royalties, and similar passive income (simplified; no passive-loss limitation)."
           value={input.passiveIncome}
           error={errors.passiveIncome}
           onChange={(v) => set({ passiveIncome: v })}

@@ -17,7 +17,7 @@ export const TENURE_FAQS: readonly FAQItem[] = [
   {
     question: 'How is specific duration calculated?',
     answer:
-      'Specific duration is the calendar difference between the ending date and the starting date, expressed in whole years, months, and days — not a fixed 365-day approximation.',
+      'Specific duration is the calendar difference between the ending date and the starting date, expressed in whole years, months, and days; not a fixed 365-day approximation.',
   },
   {
     question: 'Can the ending date be before the starting date?',

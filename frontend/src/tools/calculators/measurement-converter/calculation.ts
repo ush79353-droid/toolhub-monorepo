@@ -166,7 +166,7 @@ export function shareResultText(result: MeasurementResult): string {
   const from = getUnit(result.dimension, result.fromUnit);
   const to = getUnit(result.dimension, result.toUnit);
   const lines = [
-    'Measurement Converter — Omega Calculators',
+    'Measurement Converter | Omega Calculators',
     '',
     `Category: ${cat.label} ${cat.symbol}`,
     '',

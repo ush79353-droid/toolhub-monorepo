@@ -27,7 +27,7 @@ export const GAL_TO_CUPS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'gallons-to-cups-conversion',
     title: 'Gallons to Cups Conversion',
     paragraphs: [
-      'This converter turns US liquid gallons into US customary cups — and back — instantly. Cooking, baking, beverage prep, and liquid measurement often need both units.',
+      'This converter turns US liquid gallons into US customary cups (and back) instantly. Cooking, baking, beverage prep, and liquid measurement often need both units.',
       `Exact relationship: 1 US liquid gallon = ${CUPS_PER_US_GALLON} US customary cups, so 1 US cup = 1/${CUPS_PER_US_GALLON} US gallon.`,
       `Multiply gallons by ${CUPS_PER_US_GALLON} to get cups. Divide cups by ${CUPS_PER_US_GALLON} to get gallons. The calculator uses US customary cups (236.5882365 mL), not 250 mL metric cups, and US liquid gallons, not UK imperial gallons.`,
     ],

@@ -21,7 +21,7 @@ import { validatePixelsToInches } from './validation';
 
 function summaryText(result: PixelsToInchesResult): string {
   const lines = [
-    'Pixels to Inches Converter — Omega Calculators',
+    'Pixels to Inches Converter | Omega Calculators',
     `Pixels: ${formatMeasure(result.pixels)} px`,
     `PPI: ${formatMeasure(result.ppi)}`,
     `Inches: ${formatMeasure(result.inches)} in`,

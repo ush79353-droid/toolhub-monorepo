@@ -47,7 +47,7 @@ export const LEET_SPEAK_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       '1. Choose the translation direction (normal → leet or leet → normal).',
       '2. Pick Classic or Basic style for forward translation.',
-      '3. Enter or paste text — the result updates instantly.',
+      '3. Enter or paste text. the result updates instantly.',
       '4. Switch direction or style anytime; your input stays in place.',
       '5. Copy the translation, or clear/reload to start over.',
       'Reverse conversion uses a fixed digit→letter table and may not restore the original spelling when symbols are ambiguous.',
@@ -76,7 +76,7 @@ export const LEET_SPEAK_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'common-chars',
     title: 'Common Leet-Speak Characters',
     paragraphs: [
-      'Communities invent many alternatives. The default translator only applies the documented Basic/Classic maps — not every creative variant.',
+      'Communities invent many alternatives. The default translator only applies the documented Basic/Classic maps; not every creative variant.',
     ],
     tableHeaders: ['Letter', 'Common alternatives'],
     table: [
@@ -110,7 +110,7 @@ export const LEET_SPEAK_GUIDE_SECTIONS: readonly GuideSection[] = [
       'No universal standard exists, so two translators may disagree.',
       'One symbol can stand for several letters (especially 1 for I or L), so reverse results are approximate.',
       'Advanced multi-character ASCII art substitutions are not decoded by this tool.',
-      'Context and dictionary guessing are not implemented — the engine applies only the documented character maps.',
+      'Context and dictionary guessing are not implemented: the engine applies only the documented character maps.',
     ],
   },
 ];

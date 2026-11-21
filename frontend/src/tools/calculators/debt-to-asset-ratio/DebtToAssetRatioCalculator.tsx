@@ -91,7 +91,7 @@ export function DebtToAssetRatioCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Long-term debt: ${getCurrencySymbol(input.longTermDebtCurrency)}${input.longTermDebt}`,
         `Short-term debt: ${getCurrencySymbol(input.shortTermDebtCurrency)}${input.shortTermDebt}`,
         `Total debt: ${getCurrencySymbol(result.totalDebtCurrency)}${result.formattedTotalDebt}`,

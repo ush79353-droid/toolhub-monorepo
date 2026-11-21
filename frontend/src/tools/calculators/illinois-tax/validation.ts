@@ -124,9 +124,9 @@ export function validateIllinoisTaxInput(
   const disclosures = [
     `TY${input.taxYear}: federal ordinary brackets (Rev. Proc. 2024-40 / 2025-32); Illinois flat 4.95% (IDOR) with personal exemption $${input.taxYear === 2025 ? '2,850' : '2,925'} (zero above AGI cutoff).`,
     'Illinois base income treated as federal AGI (Schedule M adjustments not modeled).',
-    'FICA/payroll withholding omitted — AGI is not assumed to be FICA wages. After-income-tax is not a full paycheck.',
+    'FICA/payroll withholding omitted; AGI is not assumed to be FICA wages. After-income-tax is not a full paycheck.',
     `Property tax uses ACS 2024 effective rate × entered home value for ${engine.countyLabel} (market-value proxy; Illinois EAV/TRA bills differ). Screenshot 1.67% is not used as Adams County’s verified rate.`,
-    'Educational estimate only — not Form 1040, IL-1040, or a tax bill.',
+    'Educational estimate only; not Form 1040, IL-1040, or a tax bill.',
   ] as const;
 
   const result: IllinoisTaxResult = {

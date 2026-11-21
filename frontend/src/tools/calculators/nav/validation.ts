@@ -179,7 +179,7 @@ export function validateNavInput(input: NavInput): NavValidation {
       navPerShare === null ? null : moneyLabel(navPerShare),
     sharesWarning,
     warningMessage:
-      'NAV = fund assets − fund liabilities. NAV per share divides by outstanding shares. Simplified fund model — not a full fund accounting statement.',
+      'NAV = fund assets − fund liabilities. NAV per share divides by outstanding shares. Simplified fund model; not a full fund accounting statement.',
   };
 
   const sharesBlocking = Boolean(errors.outstandingShares);

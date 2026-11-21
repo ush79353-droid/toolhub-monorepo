@@ -22,7 +22,7 @@ export const DREAM_COME_TRUE_FAQS: readonly FAQItem[] = [
   {
     question: 'What interest rate should I enter?',
     answer:
-      'Use a realistic expected annual return for the account where you will save — for example a savings APY assumption. It is not a guarantee of future performance.',
+      'Use a realistic expected annual return for the account where you will save, for example a savings APY assumption. It is not a guarantee of future performance.',
   },
   {
     question: 'What if I already have enough savings?',

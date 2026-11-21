@@ -91,7 +91,7 @@ export function CmToFtInForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact factors: 1 in = 2.54 cm, 1 ft = 30.48 cm. Edit centimeters or feet/inches — the other
+ Exact factors: 1 in = 2.54 cm, 1 ft = 30.48 cm. Edit centimeters or feet/inches: the other
         side updates instantly. Values such as 5 ft 14 in normalize to 6 ft 2 in in the result.
       </div>
 

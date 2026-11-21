@@ -48,12 +48,12 @@ export const FINANCE_CHARGE_FAQS: readonly FAQItem[] = [
   {
     question: 'Is APR charged daily or monthly?',
     answer:
-      'APR is an annual rate. Issuers often convert it to a daily or monthly periodic rate and apply that rate according to account terms—not necessarily as one lump annual charge.',
+      'APR is an annual rate. Issuers often convert it to a daily or monthly periodic rate and apply that rate according to account terms, not necessarily as one lump annual charge.',
   },
   {
     question: 'Can a finance charge be zero?',
     answer:
-      'Yes—for example with 0% APR, a zero interest-bearing balance, or when a qualifying grace period applies to certain purchases under the card’s rules.',
+      'Yes: for example with 0% APR, a zero interest-bearing balance, or when a qualifying grace period applies to certain purchases under the card’s rules.',
   },
   {
     question: 'Does paying the full statement balance eliminate finance charges?',
@@ -83,7 +83,7 @@ export const FINANCE_CHARGE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between finance charge and minimum payment?',
     answer:
-      'A finance charge is a borrowing cost for the period. A minimum payment is the smallest amount the issuer requires you to pay—often only a portion of balance plus interest.',
+      'A finance charge is a borrowing cost for the period. A minimum payment is the smallest amount the issuer requires you to pay, often only a portion of balance plus interest.',
   },
   {
     question: 'Does a balance transfer have a finance charge?',

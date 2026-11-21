@@ -25,7 +25,7 @@ export const UNIX_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-unix',
     title: 'What Is the Current Unix Timestamp or Unix Epoch?',
     paragraphs: [
-      'Unix time (epoch time) counts elapsed seconds relative to 1970-01-01 00:00:00 UTC—the Unix epoch. Systems store that integer so programs can compare and sort instants without local calendar formatting.',
+      'Unix time (epoch time) counts elapsed seconds relative to 1970-01-01 00:00:00 UTC, the Unix epoch. Systems store that integer so programs can compare and sort instants without local calendar formatting.',
       'Negative timestamps represent times before the epoch. Unix timestamps identify instants independently of time zone; UTC is the usual reference when converting them into calendar dates. POSIX Unix time does not insert leap seconds into the count.',
     ],
     formula: 'Epoch = 1970-01-01 00:00:00 UTC · unix_ms = unix_s × 1000',
@@ -70,7 +70,7 @@ export const UNIX_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Unix Time to Date by Hand',
     paragraphs: [
       'For rough math, divide by 86,400 to get whole UTC days since the epoch, then add that many days to 1970-01-01. Example: 172800 / 86400 = 2 → 1970-01-03 00:00:00 UTC.',
-      'Modern dates need leap-year and calendar rules—prefer a converter for exact results.',
+      'Modern dates need leap-year and calendar rules, prefer a converter for exact results.',
     ],
     formula: '1 day = 86,400 seconds',
   },
@@ -127,6 +127,6 @@ export const UNIX_FAQS: readonly FAQItem[] = [
   {
     question: 'What Is a 13-Digit Unix Timestamp?',
     answer:
-      'Thirteen digits often mean milliseconds, but always confirm the unit—do not infer solely from digit length.',
+      'Thirteen digits often mean milliseconds, but always confirm the unit, do not infer solely from digit length.',
   },
 ];

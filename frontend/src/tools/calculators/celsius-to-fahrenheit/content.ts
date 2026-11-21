@@ -57,8 +57,8 @@ export const CELSIUS_TO_FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Celsius to Fahrenheit Converter',
     paragraphs: [
-      '1. Enter a temperature in the Celsius field — Fahrenheit updates immediately.',
-      '2. Or enter a Fahrenheit value — Celsius updates immediately.',
+      '1. Enter a temperature in the Celsius field. Fahrenheit updates immediately.',
+      '2. Or enter a Fahrenheit value. Celsius updates immediately.',
       '3. Negative temperatures and decimals are supported.',
       '4. Use Share, Reload, or Clear as needed.',
       'Values below absolute zero (−273.15°C / −459.67°F) are rejected.',
@@ -69,7 +69,7 @@ export const CELSIUS_TO_FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Celsius to Fahrenheit',
     paragraphs: [
       'Multiply Celsius by 9/5 (or 1.8) and add 32.',
-      'Example — convert 100°C: 100 × 1.8 = 180; 180 + 32 = 212. Result: 100°C = 212°F.',
+      'Example; convert 100°C: 100 × 1.8 = 180; 180 + 32 = 212. Result: 100°C = 212°F.',
     ],
     formula: '°F = (°C × 9/5) + 32  ·  or  °F = (°C × 1.8) + 32',
   },
@@ -78,7 +78,7 @@ export const CELSIUS_TO_FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Fahrenheit to Celsius',
     paragraphs: [
       'Subtract 32 from Fahrenheit, then multiply by 5/9.',
-      'Example — convert 98.6°F: 98.6 − 32 = 66.6; 66.6 × 5/9 = 37. Result: 98.6°F = 37°C.',
+      'Example; convert 98.6°F: 98.6 − 32 = 66.6; 66.6 × 5/9 = 37. Result: 98.6°F = 37°C.',
     ],
     formula: '°C = (°F − 32) × 5/9',
   },
@@ -86,7 +86,7 @@ export const CELSIUS_TO_FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'conversion-chart',
     title: 'Celsius to Fahrenheit Conversion Chart',
     paragraphs: [
-      'Common reference points include water freezing (0°C / 32°F), typical room temperature near 20–25°C, a commonly cited body-temperature reference near 37°C (≈ 98.6°F — not a universal fixed normal), and water boiling at 100°C / 212°F under standard pressure.',
+      'Common reference points include water freezing (0°C / 32°F), typical room temperature near 20–25°C, a commonly cited body-temperature reference near 37°C (≈ 98.6°F; not a universal fixed normal), and water boiling at 100°C / 212°F under standard pressure.',
     ],
     tableHeaders: ['Celsius (°C)', 'Fahrenheit (°F)'],
     table: CHART_C.map((c) => [formatTemp(c), formatTemp(celsiusToFahrenheit(c))]),
@@ -98,7 +98,7 @@ export const CELSIUS_TO_FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
       `Weather: 20°C = ${formatTemp(celsiusToFahrenheit(20))}°F; 30°C = ${formatTemp(celsiusToFahrenheit(30))}°F; 40°C = ${formatTemp(celsiusToFahrenheit(40))}°F.`,
       `Freezing range: 0°C = 32°F; −10°C = ${formatTemp(celsiusToFahrenheit(-10))}°F; −20°C = ${formatTemp(celsiusToFahrenheit(-20))}°F.`,
       `Heating references: 100°C = 212°F; 180°C = ${formatTemp(celsiusToFahrenheit(180))}°F; 200°C = ${formatTemp(celsiusToFahrenheit(200))}°F.`,
-      'These are scale conversions only — not cooking-time recommendations.',
+      'These are scale conversions only; not cooking-time recommendations.',
     ],
   },
   {

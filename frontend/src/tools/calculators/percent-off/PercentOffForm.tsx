@@ -217,7 +217,7 @@ export function PercentOffForm({
             <span>
               Add another percentage discount
               <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
-                Applied to the price remaining after the first discount — not
+ Applied to the price remaining after the first discount; not
                 added to the first percentage.
               </span>
             </span>

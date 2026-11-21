@@ -303,7 +303,7 @@ function buildResult(args: {
   }
 
   const explanation =
-    'Cashback is a conditional reward on eligible spending — not free money. Issuer rules, category exclusions, annual fees, interest, and redemption timing can change realized value.';
+    'Cashback is a conditional reward on eligible spending; not free money. Issuer rules, category exclusions, annual fees, interest, and redemption timing can change realized value.';
 
   return {
     solveTarget,

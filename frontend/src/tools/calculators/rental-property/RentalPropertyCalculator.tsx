@@ -73,7 +73,7 @@ export function RentalPropertyCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan payment: ${symbol}${result.formattedMonthlyMortgagePayment}/mo`,
         `NOI: ${symbol}${result.formattedNoi}`,
         `Annual cash flow: ${symbol}${result.formattedAnnualCashFlow}`,

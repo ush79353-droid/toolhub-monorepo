@@ -4,7 +4,7 @@ import { EBITDA_FAQS, EBITDA_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate earnings before interest, taxes, depreciation, and amortization — EBITDA = Operating profit + Amortization + Depreciation — with reverse modes and optional EBITDA margin.',
+    'Calculate earnings before interest, taxes, depreciation, and amortization: EBITDA = Operating profit + Amortization + Depreciation; with reverse modes and optional EBITDA margin.',
   asideAriaLabel: 'Interactive EBITDA Calculator',
   tocItems: EBITDA_TOC_ITEMS,
   GuideArticle: EbitdaGuideArticle,

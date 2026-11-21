@@ -65,7 +65,7 @@ export function HomeAffordabilityForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values.
+ changes the symbol only; it does not convert values.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
           <CurrencySelect
@@ -124,7 +124,7 @@ export function HomeAffordabilityForm({
                 <span>Maximum payment</span>
                 <InfoTooltip
                   label="Maximum payment"
-                  text="Total monthly housing budget for principal & interest, taxes, insurance, HOA, and mortgage insurance — not P&I alone."
+                  text="Total monthly housing budget for principal & interest, taxes, insurance, HOA, and mortgage insurance; not P&I alone."
                 />
               </label>
               <div className="flex gap-2">
@@ -298,7 +298,7 @@ export function HomeAffordabilityForm({
               <span>Monthly debt payments</span>
               <InfoTooltip
                 label="Monthly debts"
-                text="Recurring obligations such as auto, student, personal loans, and credit-card minimums — not ordinary living expenses."
+                text="Recurring obligations such as auto, student, personal loans, and credit-card minimums; not ordinary living expenses."
               />
             </label>
             <FieldShell error={errors.monthlyDebtPayments}>

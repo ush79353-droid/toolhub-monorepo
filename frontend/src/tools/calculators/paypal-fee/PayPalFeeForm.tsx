@@ -168,7 +168,7 @@ export function PayPalFeeForm({
 
       {input.presetId === 'custom' && input.region !== 'CUSTOM' ? (
         <p className="text-xs text-muted-foreground">
-          Custom Fee selected — enter your rates below.
+ Custom Fee selected; enter your rates below.
         </p>
       ) : null}
 

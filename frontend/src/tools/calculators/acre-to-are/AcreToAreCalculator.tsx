@@ -15,7 +15,7 @@ import { validateAcreToAre } from './validation';
 
 function summaryText(result: AcreToAreResult): string {
   return [
-    'Acre to Are Conversion — Omega Calculators',
+    'Acre to Are Conversion | Omega Calculators',
     `${formatArea(result.acres)} acres = ${formatArea(result.ares)} ares`,
     result.explanation,
     '1 acre = 40.468564224 ares',

@@ -48,7 +48,7 @@ export function CapmCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Risk-free rate (Rf): ${input.riskFreeRate}%`,
         `Broad market return (Rm): ${input.marketReturn}%`,
         `Beta: ${input.beta}`,

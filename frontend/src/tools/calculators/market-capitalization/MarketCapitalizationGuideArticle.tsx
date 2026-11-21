@@ -54,11 +54,11 @@ export function MarketCapitalizationGuideArticle() {
         and time period. Illustrative ranges often used in discussion:
       </p>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <li>Micro-cap — below about $300 million</li>
-        <li>Small-cap — about $300 million to $2 billion</li>
-        <li>Mid-cap — about $2 billion to $10 billion</li>
-        <li>Large-cap — about $10 billion to $200 billion</li>
-        <li>Mega-cap — above about $200 billion</li>
+        <li>Micro-cap; below about $300 million</li>
+        <li>Small-cap; about $300 million to $2 billion</li>
+        <li>Mid-cap; about $2 billion to $10 billion</li>
+        <li>Large-cap; about $10 billion to $200 billion</li>
+        <li>Mega-cap; above about $200 billion</li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Some systems also use nano-cap for particularly small companies. These

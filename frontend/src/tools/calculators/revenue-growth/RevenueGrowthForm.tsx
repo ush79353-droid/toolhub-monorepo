@@ -337,7 +337,7 @@ export function RevenueGrowthForm({
             </button>
             <span className="text-muted-foreground">
               {' '}
-              — final revenue after 20% of total growth.
+; final revenue after 20% of total growth.
             </span>
           </li>
           <li>
@@ -350,7 +350,7 @@ export function RevenueGrowthForm({
             </button>
             <span className="text-muted-foreground">
               {' '}
-              — final revenue after 5 years.
+; final revenue after 5 years.
             </span>
           </li>
         </ul>

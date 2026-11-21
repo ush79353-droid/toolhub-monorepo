@@ -73,13 +73,13 @@ export function BiweeklyMortgageCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan amount: ${getCurrencySymbol(input.loanCurrency)}${input.loanAmount}`,
         `Mortgage term: ${input.mortgageTerm} ${termLabel}`,
         `Interest rate: ${input.interestRatePercent}%`,
-        `Without acceleration — monthly: ${symbol}${result.withoutAcceleration.formattedPeriodicPayment}; term ${result.withoutAcceleration.formattedTerm}; interest ${symbol}${result.withoutAcceleration.formattedTotalInterest}`,
-        `Bi-weekly — payment: ${symbol}${result.biweekly.formattedPeriodicPayment}; term ${result.biweekly.formattedTerm}; interest ${symbol}${result.biweekly.formattedTotalInterest}`,
-        `Difference — payment ${symbol}${result.formattedPaymentDifference}; term saved ${result.formattedTermSaved}; interest ${symbol}${result.formattedInterestSaved}`,
+        `Without acceleration; monthly: ${symbol}${result.withoutAcceleration.formattedPeriodicPayment}; term ${result.withoutAcceleration.formattedTerm}; interest ${symbol}${result.withoutAcceleration.formattedTotalInterest}`,
+        `Bi-weekly; payment: ${symbol}${result.biweekly.formattedPeriodicPayment}; term ${result.biweekly.formattedTerm}; interest ${symbol}${result.biweekly.formattedTotalInterest}`,
+        `Difference; payment ${symbol}${result.formattedPaymentDifference}; term saved ${result.formattedTermSaved}; interest ${symbol}${result.formattedInterestSaved}`,
         currencyNote,
       ].join('\n')
     : '';

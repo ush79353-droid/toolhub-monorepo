@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Compare monthly vs accelerated bi-weekly (or overpayment) mortgage schedules — payment, term, interest, and payoff with independent FX on money fields.',
+    'Compare monthly vs accelerated bi-weekly (or overpayment) mortgage schedules; payment, term, interest, and payoff with independent FX on money fields.',
   asideAriaLabel: 'Interactive Mortgage Acceleration Calculator',
   tocItems: MORTGAGE_ACCELERATION_TOC_ITEMS,
   GuideArticle: MortgageAccelerationGuideArticle,

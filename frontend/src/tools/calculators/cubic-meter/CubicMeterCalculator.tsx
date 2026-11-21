@@ -31,7 +31,7 @@ import {
 import { validateCubicMeter, validateMissingDimension } from './validation';
 
 function summaryText(result: CubicMeterResult): string {
-  const lines = ['Cubic Meter Calculator — Omega Calculators'];
+  const lines = ['Cubic Meter Calculator | Omega Calculators'];
   if (
     result.source === 'dimensions' &&
     result.length !== null &&

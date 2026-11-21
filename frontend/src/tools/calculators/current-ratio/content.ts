@@ -31,7 +31,7 @@ export const CR_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a current ratio of 2 mean?',
     answer:
-      'Current assets are twice current liabilities — about two units of current assets per unit of current liabilities.',
+      'Current assets are twice current liabilities; about two units of current assets per unit of current liabilities.',
   },
   {
     question: 'What does a current ratio below 1 mean?',

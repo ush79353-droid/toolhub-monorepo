@@ -21,7 +21,7 @@ export function CyberMondayGuideArticle() {
         Use this Cyber Monday Calculator to turn an advertised deal into a clear
         merchandise price, tax estimate, shipping cost, and final checkout total.
         Choose percentage, fixed, stacked, BOGO, Buy X Get Y, or percent-plus-coupon
-        promotions, then compare what you actually pay—not just the headline
+ promotions, then compare what you actually pay, not just the headline
         percentage. Currency labels are denomination only.
       </p>
 
@@ -117,7 +117,7 @@ export function CyberMondayGuideArticle() {
         id="bogo"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        Buy One Get One Free — BOGO Deals
+ Buy One Get One Free; BOGO Deals
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         For identical free BOGO items, paid quantity ≈ ceil(Q / 2). Three items
@@ -158,7 +158,7 @@ export function CyberMondayGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Tax-exclusive default: Tax = Discounted × rate/100. Tax-inclusive:
         PreTax = Inclusive ÷ (1 + t). Shipping taxability and coupon tax bases
-        vary by jurisdiction—treat results as estimates.
+ vary by jurisdiction, treat results as estimates.
       </p>
 
       <h2
@@ -179,7 +179,7 @@ export function CyberMondayGuideArticle() {
         Cyber Monday vs. Black Friday
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Compare entered checkout totals for the same item—neither event is
+ Compare entered checkout totals for the same item, neither event is
         universally cheaper. Use the optional Black Friday comparison field or
         the{' '}
         <Link

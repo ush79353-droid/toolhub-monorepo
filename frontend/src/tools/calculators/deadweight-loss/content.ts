@@ -23,7 +23,7 @@ export const DEADWEIGHT_LOSS_FAQS: readonly FAQItem[] = [
   {
     question: 'What is deadweight loss?',
     answer:
-      'Deadweight loss is the reduction in total economic surplus when market quantity differs from the efficient quantity — the value of mutually beneficial trades that no longer occur.',
+      'Deadweight loss is the reduction in total economic surplus when market quantity differs from the efficient quantity: the value of mutually beneficial trades that no longer occur.',
   },
   {
     question: 'How do you calculate deadweight loss?',
@@ -63,7 +63,7 @@ export const DEADWEIGHT_LOSS_FAQS: readonly FAQItem[] = [
   {
     question: 'How does a subsidy create deadweight loss?',
     answer:
-      'A subsidy can push quantity above the efficient level so that some units have social cost above social benefit — another form of welfare loss.',
+      'A subsidy can push quantity above the efficient level so that some units have social cost above social benefit; another form of welfare loss.',
   },
   {
     question: 'Why does monopoly cause deadweight loss?',
@@ -88,12 +88,12 @@ export const DEADWEIGHT_LOSS_FAQS: readonly FAQItem[] = [
   {
     question: 'How does elasticity affect deadweight loss?',
     answer:
-      'More elastic supply or demand usually implies a larger quantity response to a given wedge, which tends to increase DWL — holding other factors fixed.',
+      'More elastic supply or demand usually implies a larger quantity response to a given wedge, which tends to increase DWL; holding other factors fixed.',
   },
   {
     question: 'What is the difference between deadweight loss and tax revenue?',
     answer:
-      'Tax revenue is a transfer from buyers/sellers to government. Deadweight loss is surplus that disappears entirely — not captured by anyone.',
+      'Tax revenue is a transfer from buyers/sellers to government. Deadweight loss is surplus that disappears entirely; not captured by anyone.',
   },
   {
     question: 'What is consumer surplus?',

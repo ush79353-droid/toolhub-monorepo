@@ -106,7 +106,7 @@ export function OnlineMarketingConversionCalculator({
 
   const shareText = hasResult
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         draft.visits ? `Visits: ${draft.visits}` : '',
         draft.leads ? `Leads: ${draft.leads}` : '',
         draft.customers ? `Customers: ${draft.customers}` : '',

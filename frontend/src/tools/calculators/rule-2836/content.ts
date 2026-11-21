@@ -74,7 +74,7 @@ export const RULE_2836_FAQS: readonly FAQItem[] = [
   {
     question: 'Does the rule use gross or net income?',
     answer:
-      'Gross monthly income — before taxes and most payroll deductions. Using take-home pay understates ratios relative to the classic guideline.',
+      'Gross monthly income before taxes and most payroll deductions. Using take-home pay understates ratios relative to the classic guideline.',
   },
   {
     question: 'Are property taxes included?',
@@ -94,7 +94,7 @@ export const RULE_2836_FAQS: readonly FAQItem[] = [
   {
     question: 'Are credit card payments included?',
     answer:
-      'Minimum monthly credit card payments are typically counted in other debts for the back-end ratio — not as housing.',
+      'Minimum monthly credit card payments are typically counted in other debts for the back-end ratio; not as housing.',
   },
   {
     question: 'Are car loan payments included?',
@@ -119,7 +119,7 @@ export const RULE_2836_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I use household income?',
     answer:
-      'Yes — use combined gross monthly household income that would be considered for the mortgage application, consistent with how you report debts.',
+      'Yes: use combined gross monthly household income that would be considered for the mortgage application, consistent with how you report debts.',
   },
   {
     question: 'How do I calculate my maximum housing payment?',

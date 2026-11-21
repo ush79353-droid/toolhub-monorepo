@@ -86,7 +86,7 @@ export const FFO_FAQS: readonly FAQItem[] = [
   {
     question: 'Are losses from property sales added back?',
     answer:
-      'Yes — qualifying property sale losses already in net income are typically added back in the simplified FFO reconciliation.',
+      'Yes: qualifying property sale losses already in net income are typically added back in the simplified FFO reconciliation.',
   },
   {
     question: 'Is interest income deducted from standard REIT FFO?',

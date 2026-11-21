@@ -32,7 +32,7 @@ export const DIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a high DIO mean?',
     answer:
-      'A relatively high DIO means inventory remains on hand longer versus COGS for the period. Causes can include seasonality, long cycles, weak demand, or overstocking — interpret with industry context.',
+      'A relatively high DIO means inventory remains on hand longer versus COGS for the period. Causes can include seasonality, long cycles, weak demand, or overstocking; interpret with industry context.',
   },
   {
     question: 'What does a low DIO mean?',

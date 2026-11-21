@@ -158,7 +158,7 @@ export function shareCompareText(r: Extract<CompareResult, { ok: true }>): strin
         ? `${formatValue(r.value1)} ${r.unit1.symbol} is greater than ${formatValue(r.value2)} ${r.unit2.symbol}.`
         : `${formatValue(r.value2)} ${r.unit2.symbol} is greater than ${formatValue(r.value1)} ${r.unit1.symbol}.`;
   return [
-    'Dimensional Analysis Calculator — Omega Calculators',
+    'Dimensional Analysis Calculator | Omega Calculators',
     '',
     'Mode: Compare two values',
     `Physical quantity: ${r.quantity.label}`,
@@ -185,7 +185,7 @@ export function shareConvertText(input: {
   result: number;
 }): string {
   return [
-    'Dimensional Analysis Calculator — Omega Calculators',
+    'Dimensional Analysis Calculator | Omega Calculators',
     '',
     'Mode: Convert units',
     `Physical quantity: ${input.quantity.label}`,

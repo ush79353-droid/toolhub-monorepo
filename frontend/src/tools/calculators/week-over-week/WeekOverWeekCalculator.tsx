@@ -46,7 +46,7 @@ export function WeekOverWeekCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Value in initial week: ${input.initialWeek}`,
         `Value in following week: ${input.followingWeek}`,
         `Week over week % change: ${result.formattedWowGrowth}%`,

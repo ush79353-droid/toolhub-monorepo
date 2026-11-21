@@ -120,7 +120,7 @@ export function VaMortgageForm({
             <span>Home Price</span>
             <InfoTooltip
               label="Home Price"
-              text="Purchase price in US dollars. Fixed USD formatting — no currency selectors in the reference."
+              text="Purchase price in US dollars. Fixed USD formatting; no currency selectors in the reference."
             />
           </label>
           <FieldShell error={errors.homePrice}>

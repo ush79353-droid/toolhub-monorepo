@@ -38,7 +38,7 @@ export const MBPS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'abbreviations',
     title: 'What Does Mbps Mean? Abbreviations Explained',
     paragraphs: [
-      'Mbps means megabits per second: 1 Mbps = 1,000,000 bits per second under decimal SI networking conventions. Gbps means gigabits per second: 1 Gbps = 1,000,000,000 bits per second. GB/s means gigabytes per second: 1 GB/s = 1,000,000,000 bytes per second. Because one byte is eight bits, 1 GB/s equals 8 Gbps. Lowercase b is bits; uppercase B is bytes — Mbps and MB/s are not the same unit.',
+      'Mbps means megabits per second: 1 Mbps = 1,000,000 bits per second under decimal SI networking conventions. Gbps means gigabits per second: 1 Gbps = 1,000,000,000 bits per second. GB/s means gigabytes per second: 1 GB/s = 1,000,000,000 bytes per second. Because one byte is eight bits, 1 GB/s equals 8 Gbps. Lowercase b is bits; uppercase B is bytes; Mbps and MB/s are not the same unit.',
     ],
     formula: '1 Mbps = 1,000,000 bit/s · 1 Gbps = 1,000,000,000 bit/s · 1 GB/s = 8 Gbps · 1 B = 8 bits',
   },
@@ -110,7 +110,7 @@ export const MBPS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'mbps-vs-mbps',
     title: 'Mbps vs MBps: What\'s the Difference?',
     paragraphs: [
-      'Mbps is megabits per second; MB/s (sometimes written MBps) is megabytes per second. Because a byte has eight bits, 8 Mbps equals 1 MB/s as a unit conversion (80 Mbps ≈ 10 MB/s; 800 Mbps ≈ 100 MB/s). That conversion is nominal — it does not guarantee download speed after protocol and path overhead.',
+      'Mbps is megabits per second; MB/s (sometimes written MBps) is megabytes per second. Because a byte has eight bits, 8 Mbps equals 1 MB/s as a unit conversion (80 Mbps ≈ 10 MB/s; 800 Mbps ≈ 100 MB/s). That conversion is nominal; it does not guarantee download speed after protocol and path overhead.',
     ],
     formula: '8 Mbps = 1 MB/s · 80 Mbps = 10 MB/s · 800 Mbps = 100 MB/s (nominal)',
   },

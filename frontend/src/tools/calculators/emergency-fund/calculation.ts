@@ -110,7 +110,7 @@ export function formatMoney(amount: number, currency: SupportedCurrency): string
 
 export function shareEmergencyFundText(result: EmergencyFundResult): string {
   const lines = [
-    'Emergency Fund Calculator — Omega Calculators',
+    'Emergency Fund Calculator | Omega Calculators',
     `Average monthly expenses: ${formatMoney(result.monthlyExpenses, result.currency)}`,
     `Months of coverage: ${result.monthsDesired}`,
     `Emergency fund: ${formatMoney(result.emergencyFund, result.currency)}`,

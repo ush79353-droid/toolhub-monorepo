@@ -19,7 +19,7 @@ export function LongTermCareGuideArticle() {
         What is long-term care?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Long-term care is assistance for people who need help with everyday activities over time —
+ Long-term care is assistance for people who need help with everyday activities over time; 
         distinct from short-term medical treatment. Services can include nursing home care,
         transportation, shopping help, meal preparation, medication management, adult day care, and
         assisted living. Needs vary with health, age, and personal circumstances.
@@ -35,7 +35,7 @@ export function LongTermCareGuideArticle() {
         <li>Choose per day or per month.</li>
         <li>Enter the current care cost for that frequency.</li>
         <li>
-          Review or edit cost of present year — the annual baseline (daily×365 or monthly×12). It is
+ Review or edit cost of present year: the annual baseline (daily×365 or monthly×12). It is
           not a second expense added on top of the rate.
         </li>
         <li>Enter the number of years to project.</li>

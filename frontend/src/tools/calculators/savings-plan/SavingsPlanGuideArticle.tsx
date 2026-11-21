@@ -14,7 +14,7 @@ export function SavingsPlanGuideArticle() {
         A savings plan is a schedule of recurring deposits toward a balance goal. You choose how
         often you save (daily, weekly, monthly, and similar), how many periods to plan for, and
         whether each deposit stays fixed or grows by a fixed amount each period. This calculator
-        tracks principal only — it does not apply interest.
+ tracks principal only; it does not apply interest.
       </p>
 
       <h2

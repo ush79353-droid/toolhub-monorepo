@@ -195,7 +195,7 @@ export function DegreesMinutesSecondsForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample('dms')}
             >
-              Example 1 — {EXAMPLE_DMS_TO_DD.label} → decimal degrees
+ Example 1: {EXAMPLE_DMS_TO_DD.label} → decimal degrees
             </button>
           </li>
           <li>
@@ -204,7 +204,7 @@ export function DegreesMinutesSecondsForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample('dd')}
             >
-              Example 2 — {EXAMPLE_DD_TO_DMS.label} → DMS
+ Example 2: {EXAMPLE_DD_TO_DMS.label} → DMS
             </button>
           </li>
         </ul>

@@ -53,7 +53,7 @@ function summaryText(result: ThreeDPrinterResult, note: string): string {
         ? 'Outsourcing is cheaper'
         : 'Costs match';
   return [
-    '3D Printer Buy vs Outsource — Omega Calculators',
+    '3D Printer Buy vs Outsource | Omega Calculators',
     `${choice} by ${money(Math.abs(result.netSavings))}.`,
     `In-house: ${money(result.totalInHouseCost)} (${perPart(result.inHouseCostPerPart)} per successful part)`,
     `Outsource: ${money(result.totalOutsourcingCost)} (${perPart(result.outsourceCostPerPart)} per successful part)`,

@@ -75,7 +75,7 @@ export function AverageVariableCostForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. AVC = VC / Q for
+ changes the symbol only; it does not convert values. AVC = VC / Q for
           the same production period.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
@@ -129,7 +129,7 @@ export function AverageVariableCostForm({
           <span>Variable Costs (VC)</span>
           <InfoTooltip
             label="Variable Costs (VC)"
-            text="Production expenses that change with output for the selected period — e.g. direct materials, piece-rate labor, variable packaging, output-dependent utilities. Classification depends on the business."
+            text="Production expenses that change with output for the selected period; e.g. direct materials, piece-rate labor, variable packaging, output-dependent utilities. Classification depends on the business."
           />
         </label>
         <FieldShell error={errors.variableCosts} muted={vcReadOnly}>
@@ -193,7 +193,7 @@ export function AverageVariableCostForm({
           <span>Average Variable Cost (AVC)</span>
           <InfoTooltip
             label="Average Variable Cost (AVC)"
-            text="AVC = VC / Q. Cost per unit of output for variable production expenses only — distinct from AFC, ATC, and marginal cost."
+            text="AVC = VC / Q. Cost per unit of output for variable production expenses only; distinct from AFC, ATC, and marginal cost."
           />
         </label>
         <FieldShell error={errors.averageVariableCost} muted={avcReadOnly}>

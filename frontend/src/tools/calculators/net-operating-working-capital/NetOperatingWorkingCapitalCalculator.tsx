@@ -85,7 +85,7 @@ export function NetOperatingWorkingCapitalCalculator({
   const shareable = Boolean(result);
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `COA: ${symbol}${result!.formattedCurrentOperatingAssets}`,
         `COL: ${symbol}${result!.formattedCurrentOperatingLiabilities}`,
         `NOWC: ${symbol}${result!.formattedNetOperatingWorkingCapital}`,

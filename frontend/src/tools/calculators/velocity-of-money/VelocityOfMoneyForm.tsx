@@ -116,7 +116,7 @@ export function VelocityOfMoneyForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         V = nominal flow ÷ money stock for a chosen period. Transaction velocity
-        and GDP (income) velocity use different numerators — do not mix them in
+ and GDP (income) velocity use different numerators; do not mix them in
         one result. Currency is denomination only (not FX). A price index is
         dimensionless; converting it to money requires a base basket price.
       </p>
@@ -426,7 +426,7 @@ export function VelocityOfMoneyForm({
             Sum of all transactions (T)
             <InfoTooltip
               label="Transaction total"
-              text="Total nominal monetary value of transactions in the period — distinct from transaction count."
+              text="Total nominal monetary value of transactions in the period; distinct from transaction count."
             />
           </label>
           <FieldShell

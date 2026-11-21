@@ -12,7 +12,7 @@ export function MegaMillionsPayoutGuideArticle() {
         jackpot is usually the annuity total, so the immediate cash amount is
         lower. Federal and state income taxes further reduce what you keep.
         Filing status and state of residence change the estimate. This
-        calculator helps compare estimated payout scenarios — it is not an
+ calculator helps compare estimated payout scenarios; it is not an
         official Mega Millions tool.
       </p>
 
@@ -109,27 +109,27 @@ export function MegaMillionsPayoutGuideArticle() {
       </h2>
       <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Enter how much you won</strong> — the advertised jackpot
+ <strong>Enter how much you won</strong>: the advertised jackpot
           amount.
         </li>
         <li>
-          <strong>Enter the annuity rate</strong> — the graduated-payment growth
+ <strong>Enter the annuity rate</strong>: the graduated-payment growth
           rate (often 5%).
         </li>
         <li>
-          <strong>Select your filing status</strong> — used for federal tax
+ <strong>Select your filing status</strong>: used for federal tax
           brackets and standard deduction.
         </li>
         <li>
-          <strong>Select your state</strong> — used for state income tax
+ <strong>Select your state</strong>: used for state income tax
           estimates, including no-income-tax jurisdictions.
         </li>
         <li>
-          <strong>Enter lump-sum payout percentage</strong> — the cash option as
+ <strong>Enter lump-sum payout percentage</strong>: the cash option as
           a percent of the advertised jackpot.
         </li>
         <li>
-          <strong>Review the results</strong> — payout comparison and yearly
+ <strong>Review the results</strong>: payout comparison and yearly
           annuity schedule.
         </li>
       </ol>

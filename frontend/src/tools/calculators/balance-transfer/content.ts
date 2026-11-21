@@ -44,7 +44,7 @@ export const BALANCE_TRANSFER_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a balance transfer fee?',
     answer:
-      'A charge for moving the balance—commonly a percentage of the transferred amount (for example 3%) or a fixed fee. It can be financed into the new balance or paid upfront.',
+      'A charge for moving the balance, commonly a percentage of the transferred amount (for example 3%) or a fixed fee. It can be financed into the new balance or paid upfront.',
   },
   {
     question: 'How much does a 3% balance transfer fee cost?',
@@ -129,7 +129,7 @@ export const BALANCE_TRANSFER_FAQS: readonly FAQItem[] = [
   {
     question: 'Is a 3% balance transfer fee worth paying?',
     answer:
-      'It can be if you avoid enough interest. On $10,000, 3% costs $300—compare that with old-card interest over the same horizon.',
+      'It can be if you avoid enough interest. On $10,000, 3% costs $300, compare that with old-card interest over the same horizon.',
   },
   {
     question: 'How do I compare balance transfer offers?',
@@ -139,7 +139,7 @@ export const BALANCE_TRANSFER_FAQS: readonly FAQItem[] = [
   {
     question: 'Can a transfer fee be added to the new card balance?',
     answer:
-      'Yes—many issuers finance the fee. This tool’s “Added to balance” treatment models that case.',
+      'Yes: many issuers finance the fee. This tool’s “Added to balance” treatment models that case.',
   },
   {
     question: 'How do I calculate balance transfer savings?',

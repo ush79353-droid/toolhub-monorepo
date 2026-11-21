@@ -70,7 +70,7 @@ export function CgsSystemForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Convert mechanical CGS ↔ SI quantities. Gal is the galileo (acceleration), not gallon.
-        Electromagnetic CGS conventions are explained in the article — they are not mixed into this
+ Electromagnetic CGS conventions are explained in the article; they are not mixed into this
         mechanical converter.
       </div>
 

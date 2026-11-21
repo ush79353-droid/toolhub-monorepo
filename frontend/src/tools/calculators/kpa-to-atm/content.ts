@@ -35,7 +35,7 @@ export const KPA_TO_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'kPa to atm Formula',
     paragraphs: [
       `Convert pressure from kilopascals (kPa) to standard atmospheres (atm) using the exact relationship 1 atm = ${KPA_PER_ATM} kPa (101,325 Pa).`,
-      'Enter a value in kilopascals to obtain atmospheres, or enter atmospheres to convert back to kilopascals. This tool changes numerical pressure units only — it does not add or subtract atmospheric pressure for gauge ↔ absolute conversion.',
+      'Enter a value in kilopascals to obtain atmospheres, or enter atmospheres to convert back to kilopascals. This tool changes numerical pressure units only; it does not add or subtract atmospheric pressure for gauge ↔ absolute conversion.',
       `Define atm as pressure in standard atmospheres and kPa as pressure in kilopascals.`,
     ],
     formula: `atm = kPa ÷ ${KPA_PER_ATM} · kPa = atm × ${KPA_PER_ATM}`,
@@ -47,7 +47,7 @@ export const KPA_TO_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
       '1. Identify the pressure value in kilopascals.',
       `2. Divide that value by ${KPA_PER_ATM}.`,
       '3. The result is the pressure in standard atmospheres.',
-      `Example — convert 300 kPa: 300 ÷ ${KPA_PER_ATM} ≈ ${formatPressure(kPaToAtm(300))}. Therefore 300 kPa ≈ ${formatPressure(kPaToAtm(300))} atm.`,
+      `Example; convert 300 kPa: 300 ÷ ${KPA_PER_ATM} ≈ ${formatPressure(kPaToAtm(300))}. Therefore 300 kPa ≈ ${formatPressure(kPaToAtm(300))} atm.`,
     ],
     formula: `atm = kPa ÷ ${KPA_PER_ATM}`,
   },
@@ -56,7 +56,7 @@ export const KPA_TO_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert atm to kPa',
     paragraphs: [
       `Multiply the atmosphere value by ${KPA_PER_ATM}.`,
-      `Example — convert 2.5 atm: 2.5 × ${KPA_PER_ATM} = ${formatPressure(atmToKPa(2.5))}. Therefore 2.5 atm = ${formatPressure(atmToKPa(2.5))} kPa.`,
+      `Example; convert 2.5 atm: 2.5 × ${KPA_PER_ATM} = ${formatPressure(atmToKPa(2.5))}. Therefore 2.5 atm = ${formatPressure(atmToKPa(2.5))} kPa.`,
     ],
     formula: `kPa = atm × ${KPA_PER_ATM}`,
   },

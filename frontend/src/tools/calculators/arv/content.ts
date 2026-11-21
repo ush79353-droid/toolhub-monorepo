@@ -21,7 +21,7 @@ export const ARV_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between market value and after repair value?',
     answer:
-      'Current market value (or as-is value) reflects the property today, including deferred maintenance. After repair value is the projected market value once the planned improvements are complete. ARV is still a market estimate — it is not a guarantee of a future sale price.',
+      'Current market value (or as-is value) reflects the property today, including deferred maintenance. After repair value is the projected market value once the planned improvements are complete. ARV is still a market estimate; it is not a guarantee of a future sale price.',
   },
   {
     question: 'How do I calculate ARV?',
@@ -36,7 +36,7 @@ export const ARV_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the 70% rule for house flipping?',
     answer:
-      'A common heuristic sets the maximum offer near 70% of ARV minus renovation cost: Maximum bid = (ARV × 0.70) − renovation cost. The percentage is a rule of thumb, not a universal standard — adjust for market heat, risk, and transaction costs.',
+      'A common heuristic sets the maximum offer near 70% of ARV minus renovation cost: Maximum bid = (ARV × 0.70) − renovation cost. The percentage is a rule of thumb, not a universal standard; adjust for market heat, risk, and transaction costs.',
   },
   {
     question: 'Is renovation cost the same as renovation value?',

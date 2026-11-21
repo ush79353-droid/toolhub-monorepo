@@ -44,7 +44,7 @@ const EXPENSE_TIPS: Partial<Record<MoneyFieldKey, string>> = {
   shelter: 'Rent or mortgage principal/interest you treat as shelter cost.',
   utilities: 'Electricity, water, gas, internet, and similar.',
   transportation: 'Fuel, transit fares, or vehicle running costs.',
-  homeMaintenance: 'Repairs and upkeep (not insurance — that is under Annual expenses).',
+  homeMaintenance: 'Repairs and upkeep (not insurance; that is under Annual expenses).',
   entertainment: 'Streaming, hobbies, dining out for leisure, etc.',
 };
 

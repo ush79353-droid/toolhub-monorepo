@@ -28,7 +28,7 @@ export const PTB_FAQS: readonly FAQItem[] = [
   {
     question: 'Is a P/B ratio below 1 good?',
     answer:
-      'It means price is below reported book value per share, which can reflect a discount — but it does not guarantee undervaluation. Asset quality and profitability still matter.',
+      'It means price is below reported book value per share, which can reflect a discount, but it does not guarantee undervaluation. Asset quality and profitability still matter.',
   },
   {
     question: 'What does a P/B ratio of 2 mean?',
@@ -43,7 +43,7 @@ export const PTB_FAQS: readonly FAQItem[] = [
   {
     question: 'What is book value per share?',
     answer:
-      'BVPS is common book equity divided by common shares outstanding — the accounting equity attributable to each common share.',
+      'BVPS is common book equity divided by common shares outstanding: the accounting equity attributable to each common share.',
   },
   {
     question: 'What is tangible book value?',

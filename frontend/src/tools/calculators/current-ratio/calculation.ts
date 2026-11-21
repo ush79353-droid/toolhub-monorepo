@@ -81,13 +81,13 @@ export function interpretCurrentRatio(ratio: number): string {
     return 'Current ratio could not be interpreted from the inputs.';
   }
   if (ratio < 1 - UNIT_TOLERANCE) {
-    return 'Reported current assets are lower than current liabilities. That may warrant closer short-term liquidity review — it does not automatically mean the company cannot meet its obligations.';
+    return 'Reported current assets are lower than current liabilities. That may warrant closer short-term liquidity review; it does not automatically mean the company cannot meet its obligations.';
   }
   if (Math.abs(ratio - 1) < UNIT_TOLERANCE) {
     return 'The company reports approximately one unit of current assets for each unit of current liabilities.';
   }
   if (ratio < 2 - UNIT_TOLERANCE) {
-    return 'Current assets exceed current liabilities. Suitability still depends on industry, operating cycle, asset liquidity, and cash-flow stability — there is no universal ideal ratio.';
+    return 'Current assets exceed current liabilities. Suitability still depends on industry, operating cycle, asset liquidity, and cash-flow stability; there is no universal ideal ratio.';
   }
   return 'Current assets are at least twice current liabilities. A high ratio can indicate coverage capacity, but may also reflect slow inventory, excess working capital, or other factors needing further analysis.';
 }

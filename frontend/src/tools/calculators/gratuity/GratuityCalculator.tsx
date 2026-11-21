@@ -150,16 +150,16 @@ export function GratuityCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         input.salary.trim()
           ? `Final salary + D.A.: ${getCurrencySymbol(input.salaryCurrency)}${input.salary} ${input.salaryCurrency}`
           : null,
         `Service: ${input.years} yrs ${input.months} mos (eligible years ${result.eligibleYears})`,
         result.qualifies
           ? null
-          : 'Under 5-year ordinary service gate — estimate shows 0.',
+          : 'Under 5-year ordinary service gate; estimate shows 0.',
         `Total gratuity: ${getCurrencySymbol(result.gratuityCurrency)}${result.formattedGratuity} ${result.gratuityCurrency}`,
-        'Indian Act 15/26 formula estimate — not a legal entitlement.',
+        'Indian Act 15/26 formula estimate; not a legal entitlement.',
         currencyNote,
       ]
         .filter(Boolean)

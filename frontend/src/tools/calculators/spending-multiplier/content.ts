@@ -43,12 +43,12 @@ export const SPENDING_MULTIPLIER_FAQS: readonly FAQItem[] = [
   {
     question: 'What is marginal propensity to consume?',
     answer:
-      'MPC = ΔC / ΔYd — the fraction of an extra unit of disposable income spent on consumption. Example: $800 of $1,000 additional income consumed → MPC = 0.8.',
+      'MPC = ΔC / ΔYd: the fraction of an extra unit of disposable income spent on consumption. Example: $800 of $1,000 additional income consumed → MPC = 0.8.',
   },
   {
     question: 'What is marginal propensity to save?',
     answer:
-      'MPS = ΔS / ΔYd — the fraction of an extra unit of disposable income saved. In the simple split, MPS = 1 − MPC.',
+      'MPS = ΔS / ΔYd: the fraction of an extra unit of disposable income saved. In the simple split, MPS = 1 − MPC.',
   },
   {
     question: 'What is the relationship between MPC and MPS?',
@@ -66,7 +66,7 @@ export const SPENDING_MULTIPLIER_FAQS: readonly FAQItem[] = [
   {
     question: 'Can the spending multiplier be less than 1?',
     answer:
-      'In the standard 0 ≤ MPC < 1 model, k ≥ 1. Multipliers below 1 appear in richer models with strong leakages or when measuring different fiscal concepts — not in this basic calculator.',
+      'In the standard 0 ≤ MPC < 1 model, k ≥ 1. Multipliers below 1 appear in richer models with strong leakages or when measuring different fiscal concepts; not in this basic calculator.',
   },
   {
     question: 'What happens when MPC equals 1?',
@@ -81,12 +81,12 @@ export const SPENDING_MULTIPLIER_FAQS: readonly FAQItem[] = [
   {
     question: 'How does the spending multiplier affect GDP?',
     answer:
-      'In the model, ΔY = k × ΔA. That is a theoretical equilibrium-output change under the model’s assumptions — not a guaranteed observed GDP print. Distinguish real vs nominal GDP separately.',
+      'In the model, ΔY = k × ΔA. That is a theoretical equilibrium-output change under the model’s assumptions; not a guaranteed observed GDP print. Distinguish real vs nominal GDP separately.',
   },
   {
     question: 'What is autonomous spending?',
     answer:
-      'Autonomous spending is an initial expenditure change not driven by current income — for example a rise in government purchases, investment, or autonomous consumption in textbook setups.',
+      'Autonomous spending is an initial expenditure change not driven by current income, for example a rise in government purchases, investment, or autonomous consumption in textbook setups.',
   },
   {
     question: 'What is the difference between the spending multiplier and money multiplier?',

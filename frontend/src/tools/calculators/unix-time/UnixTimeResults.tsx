@@ -83,7 +83,7 @@ export function UnixTimeResults({
                       </p>
                       {zone.kind === 'iana' ? (
                         <p className="mt-0.5 text-[11px] text-muted-foreground">
-                          IANA zone — DST abbreviation follows the selected instant.
+ IANA zone; DST abbreviation follows the selected instant.
                         </p>
                       ) : (
                         <p className="mt-0.5 text-[11px] text-muted-foreground">
@@ -101,7 +101,7 @@ export function UnixTimeResults({
 
       <p className="rounded-lg border border-border bg-muted/40 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Fixed-offset rows apply a constant shift. Named summer/standard zones use IANA rules for the
-        selected date — winter dates show standard abbreviations, not summer labels.
+ selected date; winter dates show standard abbreviations, not summer labels.
       </p>
 
       <div className="flex flex-wrap gap-2">

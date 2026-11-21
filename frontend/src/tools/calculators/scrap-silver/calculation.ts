@@ -206,7 +206,7 @@ export function calculateScrapSilverResults(input: {
 
 export function shareScrapSilverText(result: ScrapSilverResult): string {
   return [
-    'Scrap Silver Calculator — Omega Calculators',
+    'Scrap Silver Calculator | Omega Calculators',
     `Scrap weight: ${formatQty(result.weight)} ${weightUnitLabel(result.weightUnit)}`,
     `Purity: ${formatQty(result.purityPercent)}% (fineness ${formatQty(result.purityFraction, 4)})`,
     `Pure silver: ${formatQty(result.pureSilverWeight)} ${weightUnitLabel(result.pureSilverUnit)}`,

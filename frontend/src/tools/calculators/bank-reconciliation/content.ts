@@ -43,7 +43,7 @@ export const BANK_RECONCILIATION_FAQS: readonly FAQItem[] = [
   {
     question: 'What are deposits in transit?',
     answer:
-      'Deposits in transit are receipts already entered in the cashbook that have not yet appeared on the bank statement—often because of cutoff timing. They are added to the bank statement balance during reconciliation.',
+      'Deposits in transit are receipts already entered in the cashbook that have not yet appeared on the bank statement, often because of cutoff timing. They are added to the bank statement balance during reconciliation.',
   },
   {
     question: 'What are outstanding checks?',
@@ -63,7 +63,7 @@ export const BANK_RECONCILIATION_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when both adjusted balances match?',
     answer:
-      'The reconciliation is balanced for the figures you entered. That is useful evidence for the period, but it still depends on complete and accurate source records—matching totals do not prove every underlying transaction was authorized.',
+      'The reconciliation is balanced for the figures you entered. That is useful evidence for the period, but it still depends on complete and accurate source records, matching totals do not prove every underlying transaction was authorized.',
   },
   {
     question: 'Are bank charges added or subtracted during reconciliation?',

@@ -12,7 +12,7 @@ export const PVIFA_FAQS: readonly FAQItem[] = [
   {
     question: 'What is PVIFA?',
     answer:
-      'PVIFA is the Present Value Interest Factor of Annuity — a dimensionless factor that converts a series of equal end-of-period payments into a present-value multiple of one payment.',
+      'PVIFA is the Present Value Interest Factor of Annuity: a dimensionless factor that converts a series of equal end-of-period payments into a present-value multiple of one payment.',
   },
   {
     question: 'How is PVIFA calculated?',

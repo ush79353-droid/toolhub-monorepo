@@ -41,7 +41,7 @@ export const SECONDS_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'Seconds Converter',
     paragraphs: [
-      'Convert seconds into minutes, hours, days, weeks, months, and years — and reverse any of those units back into seconds. Useful for scheduling, science, physics, work tracking, programming timers, event durations, and everyday duration math.',
+      'Convert seconds into minutes, hours, days, weeks, months, and years, and reverse any of those units back into seconds. Useful for scheduling, science, physics, work tracking, programming timers, event durations, and everyday duration math.',
       'Edit any field and the rest update from the same duration. Expand Time in other units for longer spans and a combined hours / minutes / seconds breakdown.',
     ],
   },

@@ -63,7 +63,7 @@ export function CashOnCashReturnForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values.
+ changes the symbol only; it does not convert values.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
           <CurrencySelect
@@ -171,7 +171,7 @@ export function CashOnCashReturnForm({
           <span>Annual expenses for this property</span>
           <InfoTooltip
             label="Annual expenses"
-            text="Taxes, insurance, repairs, management, owner-paid utilities, and similar operating costs. Do not include mortgage principal and interest — enter those as monthly loan payment."
+            text="Taxes, insurance, repairs, management, owner-paid utilities, and similar operating costs. Do not include mortgage principal and interest. Enter those as monthly loan payment."
           />
         </label>
         <FieldShell error={errors.annualOperatingExpenses}>

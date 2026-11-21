@@ -220,7 +220,7 @@ export function validateGdpPerCapitaInput(
     formulaBreakdown,
     steps,
     explanation:
-      'GDP per capita is average output per person — not median income, wages, or wealth. Keep GDP measure (real/nominal/PPP), geography, and period consistent.',
+      'GDP per capita is average output per person; not median income, wages, or wealth. Keep GDP measure (real/nominal/PPP), geography, and period consistent.',
   };
 
   return { isValid: true, errors, result };

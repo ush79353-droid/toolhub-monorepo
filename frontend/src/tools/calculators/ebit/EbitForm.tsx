@@ -70,7 +70,7 @@ export function EbitForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. EBIT = Revenue −
+ changes the symbol only; it does not convert values. EBIT = Revenue −
           Operating expenses (include COGS where applicable; exclude interest and
           taxes).
         </p>
@@ -152,7 +152,7 @@ export function EbitForm({
           Operating expenses
           <InfoTooltip
             label="Operating expenses"
-            text="Total operating costs subtracted from revenue for this simplified EBIT — include COGS and other operating costs as applicable. Exclude interest expenses and income taxes. Do not subtract COGS twice."
+            text="Total operating costs subtracted from revenue for this simplified EBIT; include COGS and other operating costs as applicable. Exclude interest expenses and income taxes. Do not subtract COGS twice."
           />
         </label>
         <FieldShell error={errors.operatingExpenses} muted={oeReadOnly}>

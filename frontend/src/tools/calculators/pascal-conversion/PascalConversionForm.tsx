@@ -113,7 +113,7 @@ export function PascalConversionForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Convert pascals (Pa) to bar, atmospheres (atm), psi, Torr, and more. Enter any field —
+ Convert pascals (Pa) to bar, atmospheres (atm), psi, Torr, and more. Enter any field; 
         all stay linked through pascals. Signed gauge or differential values are allowed; absolute
         pressure cannot be physically negative.
       </div>

@@ -65,7 +65,7 @@ export const DEFENSIVE_INTERVAL_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What are defensive assets?',
     answer:
-      'In this calculator, defensive assets are cash and cash equivalents, marketable securities, and collectible accounts receivable — assets expected to convert into cash relatively quickly for operating needs.',
+      'In this calculator, defensive assets are cash and cash equivalents, marketable securities, and collectible accounts receivable; assets expected to convert into cash relatively quickly for operating needs.',
   },
   {
     question: 'Are accounts receivable included in the defensive interval ratio?',

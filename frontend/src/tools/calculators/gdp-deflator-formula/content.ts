@@ -56,7 +56,7 @@ export const GDP_DEFLATOR_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a GDP deflator of 125 mean?',
     answer:
-      'It means the price-level index is 25% above the reference level of 100. That is a cumulative price-level comparison under the chosen methodology — not automatically “25% inflation this year.”',
+      'It means the price-level index is 25% above the reference level of 100. That is a cumulative price-level comparison under the chosen methodology; not automatically “25% inflation this year.”',
   },
   {
     question: 'Is GDP deflator the same as inflation?',

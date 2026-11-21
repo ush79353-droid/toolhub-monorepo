@@ -126,7 +126,7 @@ export function IncomeElasticityOfDemandForm({
       <p className="text-xs text-muted-foreground">
         Income uses one display currency (denomination). Changing currency does
         not convert figures. Quantity has no currency symbol. YED is
-        dimensionless — not a percent.
+ dimensionless; not a percent.
       </p>
 
       <CollapsibleSection
@@ -343,7 +343,7 @@ export function IncomeElasticityOfDemandForm({
             Income elasticity of demand
             <InfoTooltip
               label="Income elasticity of demand"
-              text="YED = %Δ quantity ÷ %Δ income. Dimensionless coefficient — no % or currency symbol."
+              text="YED = %Δ quantity ÷ %Δ income. Dimensionless coefficient; no % or currency symbol."
             />
           </label>
           <FieldShell muted>

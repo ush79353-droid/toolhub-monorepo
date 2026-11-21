@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert hourly pay into regular, overtime, and total salary with independent FX — defaults to 40 hours per week.',
+    'Convert hourly pay into regular, overtime, and total salary with independent FX; defaults to 40 hours per week.',
   asideAriaLabel: 'Interactive Hourly to Salary with Overtime Calculator',
   tocItems: HOURLY_TO_SALARY_WITH_OVERTIME_TOC_ITEMS,
   GuideArticle: HourlyToSalaryWithOvertimeGuideArticle,

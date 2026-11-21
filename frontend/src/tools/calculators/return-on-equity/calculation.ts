@@ -91,13 +91,13 @@ export function interpretROE(
     return "Shareholders' equity is negative, so the standard interpretation of ROE may not apply. Do not compare this result directly with conventional positive-equity ROE ratios.";
   }
   if (roePercentage > 0 && roePercentage < 25) {
-    return 'Positive ROE — the company generated positive profit relative to its shareholders\' equity. Compare with industry peers and multi-period trends.';
+    return 'Positive ROE: the company generated positive profit relative to its shareholders\' equity. Compare with industry peers and multi-period trends.';
   }
   if (roePercentage >= 25) {
     return 'A relatively high ROE can indicate strong profitability, but it may also reflect significant financial leverage or a comparatively small equity base. Context still matters.';
   }
   if (roePercentage === 0 || Math.abs(roePercentage) < 1e-12) {
-    return 'Zero ROE — the company reported no net profit during the measured period relative to its shareholders\' equity.';
+    return 'Zero ROE: the company reported no net profit during the measured period relative to its shareholders\' equity.';
   }
-  return 'Negative ROE — the company incurred a net loss relative to its shareholders\' equity.';
+  return 'Negative ROE: the company incurred a net loss relative to its shareholders\' equity.';
 }

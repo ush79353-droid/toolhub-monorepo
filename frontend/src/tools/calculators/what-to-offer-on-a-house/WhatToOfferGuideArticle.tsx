@@ -14,7 +14,7 @@ export function WhatToOfferGuideArticle() {
         Fair market value (FMV) is the estimated price a property would likely
         bring in an ordinary transaction between informed, willing buyers and
         sellers under normal market conditions. It is usually informed by
-        comparable sales, property condition, and local demand — and it may
+ comparable sales, property condition, and local demand, and it may
         differ from the asking price or the eventual contract price.
       </p>
 
@@ -59,7 +59,7 @@ export function WhatToOfferGuideArticle() {
         When Will the Real Estate Market Become a Buyer’s Market?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        A buyer’s market generally means more supply relative to demand —
+ A buyer’s market generally means more supply relative to demand; 
         higher inventory, longer days on market, and more negotiating room. A
         seller’s market flips those conditions. Markets can also be roughly
         balanced. No calculator can reliably predict when a specific local
@@ -100,11 +100,11 @@ export function WhatToOfferGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Desired discount</strong> — an additional negotiated
+ <strong>Desired discount</strong>: an additional negotiated
           reduction relative to the stated valuation.
         </li>
         <li>
-          <strong>Desired profit</strong> — an investor’s separate profit
+ <strong>Desired profit</strong>: an investor’s separate profit
           allowance in this simplified model. Personal buyers may leave it at
           zero.
         </li>

@@ -17,7 +17,7 @@ export const UNLEVERED_FCF_FAQS: readonly FAQItem[] = [
   {
     question: 'How is this different from levered free cash flow or FCFF?',
     answer:
-      'This UFCF path starts from EBIT and taxes only — no interest or debt principal. Levered FCF on this site uses a simplified EBITDA − CapEx − ΔWC − debt repayments estimate. FCFF supports multiple source formulas with source-specific adjustments. Use each tool for its stated model.',
+      'This UFCF path starts from EBIT and taxes only; no interest or debt principal. Levered FCF on this site uses a simplified EBITDA − CapEx − ΔWC − debt repayments estimate. FCFF supports multiple source formulas with source-specific adjustments. Use each tool for its stated model.',
   },
   {
     question: 'Do the currency selectors convert amounts?',

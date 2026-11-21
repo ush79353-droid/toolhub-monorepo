@@ -60,7 +60,7 @@ export function CanadianMortgageCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Home price: $${result.formattedHomePrice}`,
         `Down payment: ${input.downPaymentPercent}% ($${result.formattedDownPayment})`,
         `Loan amount: $${result.formattedLoanAmount}`,
@@ -72,7 +72,7 @@ export function CanadianMortgageCalculator({
         `Monthly out-of-pocket: $${result.formattedMonthlyOutOfPocket}`,
         `Total out-of-pocket: $${result.formattedTotalOutOfPocket}`,
         `Payoff date: ${result.formattedPayoffDate}`,
-        'Currency: fixed dollar ($) formatting — no FX selectors in the reference.',
+        'Currency: fixed dollar ($) formatting; no FX selectors in the reference.',
       ].join('\n')
     : '';
 

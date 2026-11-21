@@ -32,7 +32,7 @@ const CURRENCY_CONVERSION_NOTE =
   'Changing currency converts fixed cost, variable cost, and total-cost points using stored exchange rates. Quantities and derived slopes stay the same.';
 
 function summaryText(metadataTitle: string, result: CostFunctionResult, note: string): string {
-  const lines = [`${metadataTitle} — Omega Calculators`, describeResult(result)];
+  const lines = [`${metadataTitle} | Omega Calculators`, describeResult(result)];
   if (result.method === 'fixed-variable' && result.quantity !== null) {
     lines.push(`Quantity: ${result.quantity}`);
   }

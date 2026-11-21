@@ -95,5 +95,5 @@ export function interpretSgr(sgrPercent: number): string {
   if (sgrPercent === 0 || Math.abs(sgrPercent) < 1e-12) {
     return 'The company has no positive sustainable growth capacity under the selected assumptions (for example, full payout or zero ROE).';
   }
-  return 'The model produces a negative sustainable growth rate, which may reflect losses, distributions exceeding earnings, or other conditions requiring closer financial analysis — not automatically insolvency.';
+  return 'The model produces a negative sustainable growth rate, which may reflect losses, distributions exceeding earnings, or other conditions requiring closer financial analysis; not automatically insolvency.';
 }

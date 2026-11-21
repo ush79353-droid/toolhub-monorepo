@@ -47,7 +47,7 @@ export function shareResultText(joules: number, sourceUnit: EnergyUnit): string 
     .filter((u) => u !== sourceUnit)
     .map((u) => `${formatEnergy(a[u])} ${ENERGY_UNIT_SYMBOLS[u]}`);
   return [
-    'Energy Conversion Calculator — Omega Calculators',
+    'Energy Conversion Calculator | Omega Calculators',
     '',
     'Input:',
     `${formatEnergy(a[sourceUnit])} ${ENERGY_UNIT_SYMBOLS[sourceUnit]}`,

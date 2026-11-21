@@ -58,7 +58,7 @@ export function calculateMpaToPsig(input: MpaToPsigInput): MpaToPsigResult {
 
 export function shareResultText(result: MpaToPsigResult): string {
   return [
-    'MPa to PSIG Conversion — Omega Calculators',
+    'MPa to PSIG Conversion | Omega Calculators',
     '',
     `${formatPressure(result.MPa)} MPa(g) ≈ ${formatPressure(result.psig)} psig`,
     '',

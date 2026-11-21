@@ -103,7 +103,7 @@ export function PsiToInchesOfWaterForm({
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Convention: inH₂O at 4 °C · 1 inH₂O = {formatPressure(PASCALS_PER_INH2O)} Pa · 1 psi ≈{' '}
         {formatPressure(PASCALS_PER_PSI)} Pa. Factor ≈ {formatPressure(INH2O_PER_PSI)} inH₂O per
-        psi. Converts numerical units only — not gauge ↔ absolute.
+ psi. Converts numerical units only; not gauge ↔ absolute.
       </div>
 
       <FieldShell

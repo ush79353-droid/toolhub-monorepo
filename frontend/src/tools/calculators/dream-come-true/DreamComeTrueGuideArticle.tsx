@@ -9,7 +9,7 @@ export function DreamComeTrueGuideArticle() {
         How long do I have to save to afford my dream?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Everyone has something they want to buy or achieve — a car, trip, device, home down payment,
+ Everyone has something they want to buy or achieve: a car, trip, device, home down payment,
         or business idea. Short-term goals need a different plan than multi-year ones. This
         calculator estimates how long it takes to reach a price tag using money you already have,
         what you can add each month, and an assumed annual interest rate compounded monthly. It
@@ -26,7 +26,7 @@ export function DreamComeTrueGuideArticle() {
       </p>
       <h3 className="mt-4 text-base font-semibold text-accent">Define the goal</h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Be concrete — a car, house down payment, vacation, laptop, or business seed fund — so you
+ Be concrete (a car, house down payment, vacation, laptop, or business seed fund) so you
         know what “done” looks like.
       </p>
       <h3 className="mt-4 text-base font-semibold text-accent">Think about the future</h3>
@@ -45,7 +45,7 @@ export function DreamComeTrueGuideArticle() {
       </h2>
       <h3 className="mt-4 text-base font-semibold text-accent">How much will my dream cost?</h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Include taxes, fees, maintenance, and likely price changes — not only the advertised sticker.
+ Include taxes, fees, maintenance, and likely price changes; not only the advertised sticker.
       </p>
       <h3 className="mt-4 text-base font-semibold text-accent">How much do I already have?</h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
@@ -98,7 +98,7 @@ export function DreamComeTrueGuideArticle() {
         Dream price $30,000 · Initial $5,000 · Monthly $500 · 4% annual. Monthly rate = 0.04/12.
         Solving the formula and rounding up gives <strong className="font-medium">45 months</strong>{' '}
         (3 years, 9 months). Load example in the calculator uses these inputs. At goal you will have
-        deposited $22,500 in contributions plus interest on top of the $5,000 start — enough to clear
+ deposited $22,500 in contributions plus interest on top of the $5,000 start; enough to clear
         the $30,000 target.
       </p>
 

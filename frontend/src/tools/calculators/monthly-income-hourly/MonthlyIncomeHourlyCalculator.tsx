@@ -163,7 +163,7 @@ export function MonthlyIncomeHourlyCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Hours/week: ${input.hoursPerWeek}`,
         `Monthly: ${getCurrencySymbol(result.monthlyCurrency)}${result.formattedMonthly} ${result.monthlyCurrency}`,
         `Hourly: ${getCurrencySymbol(result.hourlyCurrency)}${result.formattedHourly} ${result.hourlyCurrency}`,

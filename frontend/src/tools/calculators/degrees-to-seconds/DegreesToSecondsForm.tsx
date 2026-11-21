@@ -161,7 +161,7 @@ export function DegreesToSecondsForm({
         unit="arcseconds"
         value={draft.arcseconds}
         error={errors.arcseconds}
-        tip="Arcseconds (″) measure angles — 1/3600 of a degree — not seconds of time."
+        tip="Arcseconds (″) measure angles (1/3600 of a degree) not seconds of time."
         placeholder="Enter arcseconds"
         onChange={(text) => setUnit('arcseconds', text)}
       />

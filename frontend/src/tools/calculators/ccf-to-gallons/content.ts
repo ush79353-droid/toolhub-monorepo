@@ -84,7 +84,7 @@ export const CCF_TO_GALLONS_GUIDE_SECTIONS: readonly CcfToGallonsGuideSection[] 
     id: 'how-much-is-1-ccf',
     title: 'How Much Water Is 1 CCF?',
     paragraphs: [
-      `One CCF is 100 cubic feet of water—about ${formatVolume(US_GALLONS_PER_CCF)} US gallons or ${formatVolume(LITERS_PER_CCF)} liters. That is roughly the volume of a small backyard pool’s early fill, or several weeks of household use for a typical single-family home, depending on habits and climate.`,
+      `One CCF is 100 cubic feet of water, about ${formatVolume(US_GALLONS_PER_CCF)} US gallons or ${formatVolume(LITERS_PER_CCF)} liters. That is roughly the volume of a small backyard pool’s early fill, or several weeks of household use for a typical single-family home, depending on habits and climate.`,
     ],
     formula: '1 CCF = 100 ft³ ≈ 748.052 US gal = 2831.6846592 L',
   },

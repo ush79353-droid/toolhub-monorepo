@@ -22,7 +22,7 @@ export function ScrapSilverGuideArticle() {
         of an item is actual silver. Sterling silver is typically 92.5% silver;
         fine silver is near 99.9% or higher. Alloys appear in jewelry, flatware,
         decorative objects, electronics, and industrial parts. Scrap valuation
-        starts from weight and purity before applying a market price — and may
+ starts from weight and purity before applying a market price, and may
         end with recycling or refining.
       </p>
 
@@ -122,7 +122,7 @@ export function ScrapSilverGuideArticle() {
             >
               {source.title}
             </a>
-            {' — '}
+            {';'}
             {source.note}
           </li>
         ))}

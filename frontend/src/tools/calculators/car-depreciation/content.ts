@@ -16,7 +16,7 @@ export const CAR_DEPRECIATION_FAQS: readonly FAQItem[] = [
   {
     question: 'What depreciation rate does this calculator use?',
     answer:
-      'It applies a transparent illustrative constant annual rate of 15% with declining-balance compounding: Value = Initial × (1 − 0.15)^t. Real resale prices vary by make, mileage, condition, and market — this is an educational model, not a dealer appraisal.',
+      'It applies a transparent illustrative constant annual rate of 15% with declining-balance compounding: Value = Initial × (1 − 0.15)^t. Real resale prices vary by make, mileage, condition, and market; this is an educational model, not a dealer appraisal.',
   },
   {
     question: 'What is “Reduced car value” versus “Car value after…”?',

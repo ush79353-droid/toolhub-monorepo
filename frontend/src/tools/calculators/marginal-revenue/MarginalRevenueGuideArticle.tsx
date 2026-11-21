@@ -13,7 +13,7 @@ export function MarginalRevenueGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Marginal revenue is the additional revenue from selling one more unit. This
         calculator uses the discrete approximation ΔTR/ΔQ from an observed change in
-        total revenue and quantity — not a continuous derivative, and not a cost,
+ total revenue and quantity; not a continuous derivative, and not a cost,
         profit, or elasticity model.
       </p>
 
@@ -27,7 +27,7 @@ export function MarginalRevenueGuideArticle() {
         <li>Enter initial and final revenue with their currencies.</li>
         <li>Enter initial and final quantity (units; never FX-converted).</li>
         <li>Read ΔTR, ΔQ, and marginal revenue (revenue per additional unit).</li>
-        <li>If quantity does not change, MR stays undefined — no division by zero.</li>
+        <li>If quantity does not change, MR stays undefined; no division by zero.</li>
       </ol>
 
       <h2

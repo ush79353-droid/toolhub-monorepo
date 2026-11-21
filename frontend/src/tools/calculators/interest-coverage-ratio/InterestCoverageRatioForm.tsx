@@ -265,7 +265,7 @@ export function InterestCoverageRatioForm({
             <span>Interest coverage ratio</span>
             <InfoTooltip
               label="Interest coverage ratio"
-              text="EBIT ÷ interest expense after normalizing both amounts into the EBIT currency. Dimensionless — no currency symbol."
+              text="EBIT ÷ interest expense after normalizing both amounts into the EBIT currency. Dimensionless; no currency symbol."
             />
           </label>
           <FieldShell muted>

@@ -56,7 +56,7 @@ export function BounceRateCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Website visits: ${input.websiteVisits}`,
         `One-page visits: ${input.onePageVisits}`,
         `Bounce rate: ${result.formattedRate}%`,

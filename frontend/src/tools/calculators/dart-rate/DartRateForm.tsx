@@ -58,7 +58,7 @@ export function DartRateForm({
   return (
     <div className="space-y-4">
       <p className="text-xs leading-relaxed text-muted-foreground">
-        OSHA DART incidence rate — Days Away, Restricted, or Transferred. Rate = (cases × 200,000)
+ OSHA DART incidence rate; Days Away, Restricted, or Transferred. Rate = (cases × 200,000)
         ÷ hours worked. Not a percentage.
       </p>
 
@@ -92,7 +92,7 @@ export function DartRateForm({
           ) : null}
           {result?.incidentsEstimated ? (
             <p className="mt-1 text-xs text-muted-foreground">
-              Estimated DART cases (may be fractional — not an observed count).
+ Estimated DART cases (may be fractional; not an observed count).
             </p>
           ) : null}
         </div>

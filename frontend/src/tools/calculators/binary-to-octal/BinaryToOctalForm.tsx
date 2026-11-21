@@ -99,7 +99,7 @@ export function BinaryToOctalForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Convert between base-2 and base-8 using exact three-bit groups (because 8 = 2³). Large
-        integers use direct triad lookup — no floating-point precision loss.
+ integers use direct triad lookup; no floating-point precision loss.
       </div>
 
       <fieldset>
@@ -251,7 +251,7 @@ export function BinaryToOctalForm({
                 className="text-left text-primary underline-offset-2 hover:underline"
                 onClick={() => onApplyExample(id)}
               >
-                Example {id} — {label}
+ Example {id}; {label}
               </button>
             </li>
           ))}

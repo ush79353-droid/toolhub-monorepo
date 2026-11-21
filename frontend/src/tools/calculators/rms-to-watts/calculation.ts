@@ -125,7 +125,7 @@ export function computeAdvanced(
 
 export function shareWaveformText(rms: number, peak: number): string {
   return [
-    'RMS to Watts Converter — Omega Calculators',
+    'RMS to Watts Converter | Omega Calculators',
     '',
     'Mode: sinusoidal power waveform (RMS ↔ peak)',
     `RMS: ${formatWatts(rms)} W`,
@@ -140,7 +140,7 @@ export function shareWaveformText(rms: number, peak: number): string {
 
 export function shareAdvancedText(mode: AdvancedMode, result: AdvancedResult): string {
   return [
-    'RMS to Watts Converter — Omega Calculators',
+    'RMS to Watts Converter | Omega Calculators',
     '',
     `Mode: electrical power (${mode})`,
     ...result.lines,

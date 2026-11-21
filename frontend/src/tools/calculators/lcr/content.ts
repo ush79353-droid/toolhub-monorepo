@@ -2,7 +2,7 @@ import type { FAQItem } from '@/components/shared/FAQAccordion';
 import type { TableOfContentsItem } from '@/tools/calculators/auto-loan/TableOfContents';
 
 export const LCR_TOC_ITEMS: readonly TableOfContentsItem[] = [
-  { id: 'introduction', label: 'LCR Calculator — Liquidity Coverage Ratio' },
+  { id: 'introduction', label: 'LCR Calculator: Liquidity Coverage Ratio' },
   { id: 'what-is', label: 'What Is the Liquidity Coverage Ratio (LCR)?' },
   { id: 'why-important', label: 'Why Is the Liquidity Coverage Ratio Important?' },
   { id: 'formula', label: 'Liquidity Coverage Ratio Formula' },
@@ -64,7 +64,7 @@ export const LCR_FAQS: readonly FAQItem[] = [
   {
     question: 'What does an LCR below 100% mean?',
     answer:
-      'Illustratively, estimated HQLA are below estimated 30-day net outflows. That is not automatically a legal finding — use is educational.',
+      'Illustratively, estimated HQLA are below estimated 30-day net outflows. That is not automatically a legal finding. Use is educational.',
   },
   {
     question: 'What is Basel III?',
@@ -99,7 +99,7 @@ export const LCR_FAQS: readonly FAQItem[] = [
   {
     question: 'Why does LCR use a 30-day period?',
     answer:
-      'It focuses on short-term liquidity resilience — whether liquid assets can cover stressed net outflows for about one month.',
+      'It focuses on short-term liquidity resilience whether liquid assets can cover stressed net outflows for about one month.',
   },
   {
     question: 'What is the difference between LCR and NSFR?',
@@ -114,12 +114,12 @@ export const LCR_FAQS: readonly FAQItem[] = [
   {
     question: 'Can banks use their liquidity buffers during stress?',
     answer:
-      'Basel LCR design contemplates that banks may draw on HQLA in genuine stress, subject to supervisory expectations — not a prohibition on ever falling below 100% during crisis.',
+      'Basel LCR design contemplates that banks may draw on HQLA in genuine stress, subject to supervisory expectations; not a prohibition on ever falling below 100% during crisis.',
   },
   {
     question: 'How can banks improve their liquidity coverage ratio?',
     answer:
-      'Increase eligible HQLA, reduce expected outflows, manage funding concentration, diversify funding, and strengthen liquidity planning — within business and regulatory constraints.',
+      'Increase eligible HQLA, reduce expected outflows, manage funding concentration, diversify funding, and strengthen liquidity planning; within business and regulatory constraints.',
   },
   {
     question: 'Does a higher LCR always mean a safer bank?',
@@ -134,7 +134,7 @@ export const LCR_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when a bank faces a liquidity shortage?',
     answer:
-      'It may sell or pledge liquid assets, seek funding, use central bank facilities where available, and face intensified supervision — outcomes depend on severity and policy frameworks.',
+      'It may sell or pledge liquid assets, seek funding, use central bank facilities where available, and face intensified supervision; outcomes depend on severity and policy frameworks.',
   },
   {
     question: 'Is LCR relevant to nonbank financial institutions?',

@@ -470,7 +470,7 @@ export function SmokersCtcForm({
             Life expectancy cost
             <InfoTooltip
               label="Life expectancy cost"
-              text="Illustrative only: one cigarette per break × (days/week × 52) × 11 minutes ÷ 1,440. A commonly cited heuristic — not medical advice or an individual prediction."
+              text="Illustrative only: one cigarette per break × (days/week × 52) × 11 minutes ÷ 1,440. A commonly cited heuristic; not medical advice or an individual prediction."
             />
           </label>
           <ReadOnlyShell>

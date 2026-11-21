@@ -24,7 +24,7 @@ export const MORTGAGE_REFINANCE_FAQS: readonly FAQItem[] = [
   {
     question: 'What does cash in / out mean?',
     answer:
-      'Positive cash out increases the new principal — you borrow extra cash. Negative cash in reduces the new principal — you pay money toward the balance at refinance. Zero leaves the remaining balance unchanged before the new rate and term.',
+      'Positive cash out increases the new principal (you borrow extra cash. Negative cash in reduces the new principal) you pay money toward the balance at refinance. Zero leaves the remaining balance unchanged before the new rate and term.',
   },
   {
     question: 'How is break-even calculated?',

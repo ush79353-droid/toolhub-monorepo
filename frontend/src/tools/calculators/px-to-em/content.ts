@@ -39,7 +39,7 @@ export const PX_TO_EM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Use Our Px to Em Converter',
     paragraphs: [
       '1. Enter the base font size in pixels (default 16).',
-      '2. Enter an object size in pixels — or type directly into em, pt, or %.',
+      '2. Enter an object size in pixels. or type directly into em, pt, or %.',
       '3. Read the matching values in the other fields.',
       '4. Change the base size to recalculate em and percentage against a different reference while preserving the last edited conversion field.',
       '5. Use Share Result to copy the answer, or Reload / Clear All Changes to restore the default base and empty sizes.',
@@ -51,9 +51,9 @@ export const PX_TO_EM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Example: Converting Pt to Px, Em, and %',
     paragraphs: [
       'Assume a 16px base and an object size of 24pt.',
-      'Step 1 — points to pixels: 24 × 4/3 = 32px.',
-      'Step 2 — pixels to em: 32 / 16 = 2em.',
-      'Step 3 — pixels to percentage: (32 / 16) × 100 = 200%.',
+      'Step 1: points to pixels: 24 × 4/3 = 32px.',
+      'Step 2: pixels to em: 32 / 16 = 2em.',
+      'Step 3: pixels to percentage: (32 / 16) × 100 = 200%.',
       'Final equivalence at a 16px base: 24pt = 32px = 2em = 200%.',
     ],
     formula: '24pt = 32px = 2em = 200% (base 16px)',

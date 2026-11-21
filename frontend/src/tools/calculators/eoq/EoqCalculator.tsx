@@ -79,7 +79,7 @@ export function EoqCalculator({
     'units';
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Yearly demand: ${result.formattedYearlyDemand} ${unit}`,
         `Order cost: ${symbol}${result.formattedOrderCost} per order`,
         `Holding cost: ${symbol}${result.formattedAnnualHoldingCostPerUnit} per unit per year`,
@@ -120,7 +120,7 @@ export function EoqCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Economic order quantity — EOQ = √(2 × Demand × Order cost ÷ Holding
+ Economic order quantity; EOQ = √(2 × Demand × Order cost ÷ Holding
             cost).
           </p>
         </div>

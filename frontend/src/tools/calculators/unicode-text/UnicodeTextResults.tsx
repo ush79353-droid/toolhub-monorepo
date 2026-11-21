@@ -98,7 +98,7 @@ export function UnicodeTextResults({
 
       <p className="rounded-lg border border-border bg-muted/40 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Some Unicode characters may not display correctly on every device, browser, application, or
-        font. Decorative Unicode text is not a font change—it substitutes different characters,
+ font. Decorative Unicode text is not a font change, it substitutes different characters,
         which can affect search, accessibility, and platform filtering. Keep a plain-text original
         for important content.
       </p>

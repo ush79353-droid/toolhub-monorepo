@@ -40,7 +40,7 @@ export function calculateDegreesToMinutes(input: DegreesToMinutesInput): Degrees
 
 export function shareResultText(result: DegreesToMinutesResult): string {
   return [
-    'Degrees to Minutes Converter — Omega Calculators',
+    'Degrees to Minutes Converter | Omega Calculators',
     '',
     `Degrees: ${formatAngleValue(result.degrees)}°`,
     `Arcminutes: ${formatAngleValue(result.arcminutes)}′`,

@@ -20,7 +20,7 @@ export const AVC_FAQS: readonly FAQItem[] = [
   {
     question: 'What is average variable cost?',
     answer:
-      'Average variable cost (AVC) is total variable production cost divided by total output for a period — the variable cost per unit of output.',
+      'Average variable cost (AVC) is total variable production cost divided by total output for a period: the variable cost per unit of output.',
   },
   {
     question: 'How do I calculate average variable cost?',

@@ -380,7 +380,7 @@ export function TimeAndAHalfForm({
       </div>
 
       <p className="text-xs text-muted-foreground">
-        Multipliers and hours are user-entered estimate categories — not an
+ Multipliers and hours are user-entered estimate categories; not an
         automatic legal overtime determination.
       </p>
 

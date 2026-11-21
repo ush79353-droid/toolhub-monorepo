@@ -50,7 +50,7 @@ export const GEMATRIA_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'alphabet-values',
     title: 'Gematria Alphabet Values (Latin)',
     paragraphs: [
-      'Latin-letter mappings used by this calculator. English Jewish Gematria is a convention found in some English-language tools — not the traditional Hebrew alphabet chart.',
+      'Latin-letter mappings used by this calculator. English Jewish Gematria is a convention found in some English-language tools; not the traditional Hebrew alphabet chart.',
     ],
     table: [
       { left: 'A', right: '1', third: '6', fourth: '1' },
@@ -126,9 +126,9 @@ export const GEMATRIA_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Examples of Gematria Calculations',
     paragraphs: [
-      'Example 1 — CAT: Simple 24; English 144; English Jewish 104 (C=3, A=1, T=100).',
-      'Example 2 — HELLO: Simple 52; English 312; English Jewish 103 (H=8, E=5, L=20, L=20, O=50).',
-      'Example 3 — שלום: Hebrew Standard 376 (ש=300, ל=30, ו=6, ם=40). Simple and English totals do not apply to Hebrew letters.',
+      'Example 1: CAT: Simple 24; English 144; English Jewish 104 (C=3, A=1, T=100).',
+      'Example 2: HELLO: Simple 52; English 312; English Jewish 103 (H=8, E=5, L=20, L=20, O=50).',
+      'Example 3: שלום: Hebrew Standard 376 (ש=300, ל=30, ו=6, ם=40). Simple and English totals do not apply to Hebrew letters.',
     ],
   },
 ];

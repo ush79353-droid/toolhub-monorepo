@@ -56,7 +56,7 @@ export function ArvGuideArticle() {
         Many house flippers use a purchase heuristic sometimes called the 70%
         rule: offer no more than about 70% of ARV after subtracting renovation
         cost. The buffer is meant to leave room for profit, carrying costs, and
-        surprises. It is a heuristic, not a law — hot markets, lower risk, or
+ surprises. It is a heuristic, not a law; hot markets, lower risk, or
         different exit strategies may justify a higher or lower percentage.
       </p>
       <div className="my-4 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
@@ -106,28 +106,28 @@ export function ArvGuideArticle() {
       </div>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>PV</strong> — current (as-is) property value
+ <strong>PV</strong>: current (as-is) property value
         </li>
         <li>
-          <strong>VR</strong> — value added by renovations (market uplift)
+ <strong>VR</strong>: value added by renovations (market uplift)
         </li>
         <li>
-          <strong>APP</strong> — average price per unit of area
+ <strong>APP</strong>: average price per unit of area
         </li>
         <li>
-          <strong>PA</strong> — property area
+ <strong>PA</strong>: property area
         </li>
         <li>
-          <strong>MBP</strong> — maximum bid price under the purchase rule
+ <strong>MBP</strong>: maximum bid price under the purchase rule
         </li>
         <li>
-          <strong>P</strong> — investor purchase rule percent
+ <strong>P</strong>: investor purchase rule percent
         </li>
         <li>
-          <strong>RC</strong> — total renovation cost
+ <strong>RC</strong>: total renovation cost
         </li>
         <li>
-          <strong>PP</strong> — purchase price used for ROI
+ <strong>PP</strong>: purchase price used for ROI
         </li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">

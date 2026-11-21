@@ -79,7 +79,7 @@ export const METRIC_TO_SAE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'The Metric to SAE Wrench Size Chart',
     paragraphs: [
       'Metric wrenches are labeled in millimeters; SAE wrenches and sockets are often labeled in fractional inches. Nearby sizes can look interchangeable on a chart but still differ by tenths of a millimeter.',
-      'Convert millimeters to inches (÷ 25.4), then compare with standard fractional sizes. Near matches can round corners or slip under torque — always use the specified tool size.',
+      'Convert millimeters to inches (÷ 25.4), then compare with standard fractional sizes. Near matches can round corners or slip under torque; always use the specified tool size.',
     ],
     tableHeaders: ['Metric (mm)', 'SAE fraction', 'SAE size (mm)', 'Difference'],
     table: WRENCH_CHART.map((row) => [
@@ -99,7 +99,7 @@ export const METRIC_TO_SAE_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Enter a measurement into any of the eight metric or SAE fields.',
       '3. Read the converted measurements automatically in every other field.',
       '4. Expand or collapse the Metric and SAE groups as needed.',
-      '5. Consult the wrench chart when comparing tool sizes — it is a reference, not a substitution guarantee.',
+      '5. Consult the wrench chart when comparing tool sizes. it is a reference, not a substitution guarantee.',
       '6. Share or clear the result when finished.',
     ],
   },
@@ -133,7 +133,7 @@ export const METRIC_TO_SAE_FAQS: readonly FAQItem[] = [
   {
     question: 'What Is 13 mm in SAE?',
     answer:
-      '13 mm is approximately 0.5118 inches. A 1/2-inch wrench is 12.7 mm — close but not exactly equivalent.',
+      '13 mm is approximately 0.5118 inches. A 1/2-inch wrench is 12.7 mm; close but not exactly equivalent.',
   },
   {
     question: 'What Is 10 mm in SAE?',

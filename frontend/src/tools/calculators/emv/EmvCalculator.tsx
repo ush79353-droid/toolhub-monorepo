@@ -25,7 +25,7 @@ const CURRENCY_CONVERSION_NOTE =
 
 function summaryText(metadataTitle: string, result: EmvResult, currencyNote: string): string {
   const lines = [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Risks: ${result.risks.length}`,
   ];
   result.risks.forEach((risk, index) => {

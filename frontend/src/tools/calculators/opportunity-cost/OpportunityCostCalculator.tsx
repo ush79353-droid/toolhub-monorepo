@@ -99,7 +99,7 @@ export function OpportunityCostCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Money to spend: ${formatCurrencyValue(result.moneyToSpend, result.currency)}`,
         `Annual return: ${result.annualReturnPercent}%`,
         `Period: ${result.years || '0'} yrs, ${result.months || '0'} mos`,

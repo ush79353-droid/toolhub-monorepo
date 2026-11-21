@@ -40,7 +40,7 @@ export const PSI_TO_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'PSI to ATM Conversion',
     paragraphs: [
       'Convert pounds per square inch (psi) to standard atmospheres (atm) and reverse the conversion instantly. PSI is common in industrial and customary systems; the standard atmosphere is a defined scientific pressure unit equal to exactly 101,325 Pa.',
-      'Useful for engineering comparisons, scientific calculations, and translating equipment ratings. This calculator converts units only — it does not add or subtract atmospheric pressure to change gauge vs absolute reference.',
+      'Useful for engineering comparisons, scientific calculations, and translating equipment ratings. This calculator converts units only; it does not add or subtract atmospheric pressure to change gauge vs absolute reference.',
     ],
   },
   {
@@ -51,7 +51,7 @@ export const PSI_TO_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. View the equivalent pressure in ATM in the second field.',
       '3. Edit the ATM field to convert in reverse.',
       '4. Use Clear All Changes or Reload Calculator when you want empty fields again.',
-      'Values update automatically — no Convert button is required. Keep both quantities on the same pressure reference (absolute-to-absolute or gauge-to-gauge).',
+      'Values update automatically; no Convert button is required. Keep both quantities on the same pressure reference (absolute-to-absolute or gauge-to-gauge).',
     ],
   },
   {
@@ -60,7 +60,7 @@ export const PSI_TO_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `1 psi ≈ ${formatPressure(ATM_PER_PSI)} atm because 1 psi = ${formatPressure(PASCALS_PER_PSI)} Pa and 1 atm = ${formatPressure(PASCALS_PER_ATM)} Pa.`,
       `Formula: atm = psi × ${formatPressure(ATM_PER_PSI)}.`,
-      `Example — 30 psi: 30 × ${formatPressure(ATM_PER_PSI)} ≈ ${formatPressure(psiToAtm(30))} atm.`,
+      `Example; 30 psi: 30 × ${formatPressure(ATM_PER_PSI)} ≈ ${formatPressure(psiToAtm(30))} atm.`,
     ],
     formula: `atm = (psi × ${formatPressure(PASCALS_PER_PSI)}) ÷ ${formatPressure(PASCALS_PER_ATM)}\natm ≈ psi × ${formatPressure(ATM_PER_PSI)}`,
   },
@@ -69,7 +69,7 @@ export const PSI_TO_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert ATM to PSI',
     paragraphs: [
       `psi = atm × ${formatPressure(PSI_PER_ATM)}.`,
-      `Example — 5 atm: 5 × ${formatPressure(PSI_PER_ATM)} ≈ ${formatPressure(atmToPsi(5))} psi.`,
+      `Example; 5 atm: 5 × ${formatPressure(PSI_PER_ATM)} ≈ ${formatPressure(atmToPsi(5))} psi.`,
       'The calculator handles both directions as you type.',
     ],
     formula: `psi = (atm × ${formatPressure(PASCALS_PER_ATM)}) ÷ ${formatPressure(PASCALS_PER_PSI)}\npsi ≈ atm × ${formatPressure(PSI_PER_ATM)}`,

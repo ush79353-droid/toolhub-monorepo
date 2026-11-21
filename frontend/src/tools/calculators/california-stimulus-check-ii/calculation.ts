@@ -147,7 +147,7 @@ export function assessFilingDeadline(input: {
   if (input.taxFileId === 'itin' && compareIso(iso, ITIN_EXTENDED_FILING_DEADLINE) <= 0) {
     return {
       status: 'ok',
-      note: `Filed after October 15, 2021 but on or before February 15, 2022. The ITIN extension in §8150.2(b)(2) applied only when the filer (or spouse) had applied for but not received an ITIN by October 15, 2021 — this calculator cannot verify that condition.`,
+      note: `Filed after October 15, 2021 but on or before February 15, 2022. The ITIN extension in §8150.2(b)(2) applied only when the filer (or spouse) had applied for but not received an ITIN by October 15, 2021; this calculator cannot verify that condition.`,
     };
   }
 
@@ -217,7 +217,7 @@ export interface CalculateGssIiArgs {
  */
 export function calculateGssIi(args: CalculateGssIiArgs): CaliforniaStimulusCheckIiResult {
   const assumptionsNote =
-    'Assumptions from screenshot-limited inputs: amounts are the non–married-filing-separately figures in §8150.2(c). This form does not collect wages subject to California withholding, whether another taxpayer could claim you as a dependent, California residency on the payment-issue date, or married-filing-separately status — all of which affected real GSS II qualification.';
+    'Assumptions from screenshot-limited inputs: amounts are the non–married-filing-separately figures in §8150.2(c). This form does not collect wages subject to California withholding, whether another taxpayer could claim you as a dependent, California residency on the payment-issue date, or married-filing-separately status; all of which affected real GSS II qualification.';
 
   const filing = assessFilingDeadline({
     taxFileId: args.taxFileId,

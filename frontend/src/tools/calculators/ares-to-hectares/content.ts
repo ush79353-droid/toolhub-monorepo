@@ -32,7 +32,7 @@ export const ARES_TO_HECTARES_GUIDE_SECTIONS: readonly AresToHectaresGuideSectio
     id: 'introduction',
     title: 'Introduction',
     paragraphs: [
-      'This converter switches land area between ares and hectares—two related metric units. Because one hectare is exactly 100 ares, the conversion is a simple scale factor with no approximation.',
+      'This converter switches land area between ares and hectares, two related metric units. Because one hectare is exactly 100 ares, the conversion is a simple scale factor with no approximation.',
       'Enter either unit and read the other instantly. Expand More conversion options for square meters, square kilometers, square feet, square yards, acres, and land cents from the same area.',
     ],
   },

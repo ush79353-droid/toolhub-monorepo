@@ -201,7 +201,7 @@ export function calculateHeight(input: HeightInput): HeightResult {
 
 export function shareResultText(result: HeightResult): string {
   return [
-    'Height Converter — Omega Calculators',
+    'Height Converter | Omega Calculators',
     '',
     `${formatLength(result.centimeters)} cm = ${formatLength(result.meters)} m`,
     `${formatLength(result.centimeters)} cm = ${formatLength(result.inches)} in`,

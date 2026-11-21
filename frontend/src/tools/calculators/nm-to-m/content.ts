@@ -47,7 +47,7 @@ export const NM_TO_M_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Is a Nanometer?',
     paragraphs: [
       `A nanometer is one billionth of a meter: 1 nm = ${formatLength(nanometersToMeters(1))} m = 10⁻⁹ m.`,
-      'Nanometers describe extremely small lengths — thin films, feature sizes on chips, probe tips, and many wavelengths of visible light (often a few hundred nanometers).',
+      'Nanometers describe extremely small lengths; thin films, feature sizes on chips, probe tips, and many wavelengths of visible light (often a few hundred nanometers).',
       'Related metric steps: 1 µm = 1,000 nm, 1 mm = 1,000,000 nm, and 1 m = 1,000,000,000 nm.',
     ],
     formula: `1 nm = 10⁻⁹ m\n1 m = ${billion} nm`,
@@ -57,9 +57,9 @@ export const NM_TO_M_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert nm to m',
     paragraphs: [
       `Divide nanometers by one billion: m = nm ÷ ${billion} (or m = nm × 10⁻⁹).`,
-      `Example — convert 250 nm: 250 ÷ ${billion} = ${formatLength(nanometersToMeters(250))} m.`,
+      `Example; convert 250 nm: 250 ÷ ${billion} = ${formatLength(nanometersToMeters(250))} m.`,
       `Meters to nanometers: multiply by one billion: nm = m × ${billion}.`,
-      `Example — convert 0.002 m: 0.002 × ${billion} = ${formatLength(metersToNanometers(0.002))} nm.`,
+      `Example; convert 0.002 m: 0.002 × ${billion} = ${formatLength(metersToNanometers(0.002))} nm.`,
     ],
     formula: `m = nm ÷ ${billion}\nnm = m × ${billion}\n250 nm = ${formatLength(nanometersToMeters(250))} m`,
   },
@@ -67,10 +67,10 @@ export const NM_TO_M_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Examples of Conversion From Nanometers to Meters',
     paragraphs: [
-      `Example 1 — 14 nm: 14 × 10⁻⁹ = ${formatLength(nanometersToMeters(14))} m.`,
-      `Example 2 — 120 nm: 120 × 10⁻⁹ = ${formatLength(nanometersToMeters(120))} m.`,
-      `Example 3 — 500 nm: 500 × 10⁻⁹ = ${formatLength(nanometersToMeters(500))} m.`,
-      `Example 4 — 1.75 m: 1.75 × ${billion} = ${formatLength(metersToNanometers(1.75))} nm.`,
+      `Example 1: 14 nm: 14 × 10⁻⁹ = ${formatLength(nanometersToMeters(14))} m.`,
+      `Example 2: 120 nm: 120 × 10⁻⁹ = ${formatLength(nanometersToMeters(120))} m.`,
+      `Example 3: 500 nm: 500 × 10⁻⁹ = ${formatLength(nanometersToMeters(500))} m.`,
+      `Example 4: 1.75 m: 1.75 × ${billion} = ${formatLength(metersToNanometers(1.75))} nm.`,
     ],
   },
   {

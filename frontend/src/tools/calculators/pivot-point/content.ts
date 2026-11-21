@@ -20,7 +20,7 @@ export const PP_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a pivot point in stock trading?',
     answer:
-      'A pivot point is a formula-based price reference derived from the prior period’s high, low, and close. Traders use it with related support and resistance levels as potential reaction zones — not guaranteed turning points.',
+      'A pivot point is a formula-based price reference derived from the prior period’s high, low, and close. Traders use it with related support and resistance levels as potential reaction zones; not guaranteed turning points.',
   },
   {
     question: 'How do you calculate pivot points in forex trading?',

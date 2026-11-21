@@ -328,7 +328,7 @@ export function interpretApr(
     }
   }
   parts.push(
-    'This is an estimated cash-flow APR for comparison — not a certified Truth-in-Lending disclosure.'
+    'This is an estimated cash-flow APR for comparison; not a certified Truth-in-Lending disclosure.'
   );
   return parts.join(' ');
 }

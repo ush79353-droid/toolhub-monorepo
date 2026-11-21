@@ -95,7 +95,7 @@ export function WorkingCapitalCalculator({
       result.formattedWorkingCapitalTurnoverRatio != null);
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result!.formattedWorkingCapital != null
           ? `Working capital: ${symbol}${result!.formattedWorkingCapital}`
           : null,

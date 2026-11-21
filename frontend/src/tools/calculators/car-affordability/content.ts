@@ -18,12 +18,12 @@ export const CAR_AFFORDABILITY_FAQS: readonly FAQItem[] = [
   {
     question: 'How much car can I afford?',
     answer:
-      'Your affordable monthly payment, available cash, trade-in contribution, loan interest rate, and loan duration together set a maximum financed principal and a maximum vehicle price. This calculator combines those inputs into an estimate — not a purchase recommendation or loan approval.',
+      'Your affordable monthly payment, available cash, trade-in contribution, loan interest rate, and loan duration together set a maximum financed principal and a maximum vehicle price. This calculator combines those inputs into an estimate; not a purchase recommendation or loan approval.',
   },
   {
     question: 'How much should I spend on a car?',
     answer:
-      'A responsible budget leaves room for insurance, fuel, maintenance, and emergency savings after the payment. Common rules of thumb exist, but household income, debts, and local costs vary — treat guidelines as starting points, not universal limits.',
+      'A responsible budget leaves room for insurance, fuel, maintenance, and emergency savings after the payment. Common rules of thumb exist, but household income, debts, and local costs vary; treat guidelines as starting points, not universal limits.',
   },
   {
     question: 'Should I buy a car based on my monthly payment?',
@@ -33,12 +33,12 @@ export const CAR_AFFORDABILITY_FAQS: readonly FAQItem[] = [
   {
     question: 'How does a down payment affect car affordability?',
     answer:
-      'A larger down payment reduces the amount you need to finance for a given purchase price, or raises the sticker price you can target for a given monthly budget. In this tool, an optional down payment allocates money you already have — it is never added on top of that cash.',
+      'A larger down payment reduces the amount you need to finance for a given purchase price, or raises the sticker price you can target for a given monthly budget. In this tool, an optional down payment allocates money you already have; it is never added on top of that cash.',
   },
   {
     question: 'Does my trade-in value increase my car budget?',
     answer:
-      'Positive trade-in equity can reduce what you finance or raise the price you can afford. If you still owe more than the trade-in is worth (negative equity), subtract that shortfall yourself — this calculator treats the entered trade-in as a positive contribution only.',
+      'Positive trade-in equity can reduce what you finance or raise the price you can afford. If you still owe more than the trade-in is worth (negative equity), subtract that shortfall yourself; this calculator treats the entered trade-in as a positive contribution only.',
   },
   {
     question: 'How does the interest rate affect my maximum car price?',
@@ -68,7 +68,7 @@ export const CAR_AFFORDABILITY_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between car affordability and car loan eligibility?',
     answer:
-      'Affordability is whether the payment and total ownership costs fit your budget. Eligibility is whether a lender will approve you based on credit, income, debt ratios, and collateral rules. You can be eligible for more than you should comfortably spend — or the reverse.',
+      'Affordability is whether the payment and total ownership costs fit your budget. Eligibility is whether a lender will approve you based on credit, income, debt ratios, and collateral rules. You can be eligible for more than you should comfortably spend, or the reverse.',
   },
   {
     question: 'How much interest will I pay on my car loan?',

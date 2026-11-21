@@ -73,7 +73,7 @@ export function HomeLoanEmiCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Principal: ${principalSymbol}${input.principal}`,
         `Loan term: ${input.loanTerm} ${termLabel} (${result.paymentCount} months)`,
         `Interest rate: ${input.interestRatePercent}%`,

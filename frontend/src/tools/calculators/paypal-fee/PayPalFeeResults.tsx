@@ -153,7 +153,7 @@ export function PayPalFeeResults({ result }: PayPalFeeResultsProps) {
             </tbody>
           </table>
           <p className="px-3 py-2 text-[11px] text-muted-foreground">
-            Same schedule and rounding as the main result — not universal for
+ Same schedule and rounding as the main result; not universal for
             every PayPal account.
           </p>
         </div>

@@ -9,13 +9,13 @@ export function LcrGuideArticle() {
         id="introduction"
         className="text-xl font-bold tracking-tight text-accent sm:text-2xl"
       >
-        LCR Calculator — Liquidity Coverage Ratio
+ LCR Calculator; Liquidity Coverage Ratio
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The Liquidity Coverage Ratio (LCR) estimates whether a bank’s stock of
         high-quality liquid assets (HQLA) can cover expected net cash outflows
-        over a 30-calendar-day stress period. Enter HQLA and net outflows — or
-        use the optional helpers — to compute LCR, coverage multiple, and
+ over a 30-calendar-day stress period. Enter HQLA and net outflows; or
+ use the optional helpers, to compute LCR, coverage multiple, and
         surplus or shortfall. This page is an educational estimation tool, not a
         regulatory filing or compliance opinion.
       </p>

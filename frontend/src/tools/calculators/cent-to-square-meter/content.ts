@@ -39,7 +39,7 @@ export const CENT_TO_SQUARE_METER_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Cent to Square Meters?',
     paragraphs: [
       `Formula: m² = cents × ${SQUARE_METERS_PER_CENT}.`,
-      `Example — convert 5 cents: 5 × ${SQUARE_METERS_PER_CENT} = ${formatArea(convertArea(5, 'cent', 'm2'))}. Therefore 5 cents = ${formatArea(convertArea(5, 'cent', 'm2'))} m².`,
+      `Example; convert 5 cents: 5 × ${SQUARE_METERS_PER_CENT} = ${formatArea(convertArea(5, 'cent', 'm2'))}. Therefore 5 cents = ${formatArea(convertArea(5, 'cent', 'm2'))} m².`,
       `Reverse: cents = m² ÷ ${SQUARE_METERS_PER_CENT}. Example: a ${formatArea(100)} m² patio is about ${formatArea(convertArea(100, 'm2', 'cent'))} cents.`,
     ],
     formula: `m² = cent × ${SQUARE_METERS_PER_CENT}  ·  cent = m² ÷ ${SQUARE_METERS_PER_CENT}`,
@@ -49,7 +49,7 @@ export const CENT_TO_SQUARE_METER_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Cent to Square Feet?',
     paragraphs: [
       `Formula: ft² = cents × ${SQUARE_FEET_PER_CENT}.`,
-      `Example — convert 5 cents: 5 × ${SQUARE_FEET_PER_CENT} = ${formatArea(convertArea(5, 'cent', 'ft2'))}. Therefore 5 cents = ${formatArea(convertArea(5, 'cent', 'ft2'))} ft².`,
+      `Example; convert 5 cents: 5 × ${SQUARE_FEET_PER_CENT} = ${formatArea(convertArea(5, 'cent', 'ft2'))}. Therefore 5 cents = ${formatArea(convertArea(5, 'cent', 'ft2'))} ft².`,
       `Reverse: cents = ft² ÷ ${SQUARE_FEET_PER_CENT}. Square feet are often convenient for floor plans and US-style listings; cents remain common for South Asian land parcels.`,
     ],
     formula: `ft² = cent × ${SQUARE_FEET_PER_CENT}  ·  cent = ft² ÷ ${SQUARE_FEET_PER_CENT}`,

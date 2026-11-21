@@ -166,7 +166,7 @@ export function ProratedSalaryCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Month: ${input.month}/${input.year}`,
         `Gross: ${getCurrencySymbol(input.grossSalaryCurrency)}${input.grossSalary} ${input.grossSalaryCurrency} / ${input.payPeriod}`,
         `Days worked: ${input.daysWorked}; holidays: ${input.holidays}; leave: ${input.approvedLeave}`,

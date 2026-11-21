@@ -77,7 +77,7 @@ export function EbtCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Gross profit: ${symbol}${result.formattedGrossProfit}`,
         `Operating expenses: ${symbol}${result.formattedOperatingExpenses}`,
         `Interest: ${symbol}${result.formattedInterestExpenses}`,
@@ -121,7 +121,7 @@ export function EbtCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Calculate pretax earnings — EBT = Gross profit − Operating expenses −
+ Calculate pretax earnings; EBT = Gross profit − Operating expenses −
             Interest + Other income.
           </p>
         </div>

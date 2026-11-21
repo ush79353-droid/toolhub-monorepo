@@ -24,8 +24,8 @@ export function CdGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         In the United States, CDs held at FDIC-insured banks are generally covered by deposit
-        insurance up to applicable limits — commonly described as $250,000 per depositor, per
-        insured bank, per ownership category — including principal and accrued interest, subject to
+ insurance up to applicable limits; commonly described as $250,000 per depositor, per
+ insured bank, per ownership category, including principal and accrued interest, subject to
         current FDIC rules. Credit union share certificates may instead be covered by the NCUA.
         Brokered or structured products can differ. Deposit insurance does not protect against
         inflation or opportunity cost, and not every investment marketed alongside CDs is
@@ -75,7 +75,7 @@ export function CdGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         At maturity you can usually withdraw or renew. Early withdrawals from traditional CDs often
         trigger penalties. Some products offer grace periods after maturity or allow limited partial
-        withdrawals. Automatic renewal can roll the balance into a new term if you take no action —
+ withdrawals. Automatic renewal can roll the balance into a new term if you take no action; 
         check your institution’s policy.
       </p>
 
@@ -83,7 +83,7 @@ export function CdGuideArticle() {
         CD ladder
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        A CD ladder splits money across several CDs with different maturities — for example 1-, 2-,
+ A CD ladder splits money across several CDs with different maturities, for example 1-, 2-,
         3-, 4-, and 5-year terms. As each rung matures, you can spend, hold cash, or reinvest at
         current rates. Ladders can improve liquidity and stagger reinvestment, but they do not
         eliminate interest-rate or liquidity risk.
@@ -160,7 +160,7 @@ export function CdGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Depending on goals, alternatives include paying down high-interest debt, money market
         accounts, bonds, peer-to-peer lending, mutual funds and ETFs, and ordinary savings accounts.
-        Each option has different risk, liquidity, return potential, and insurance characteristics —
+ Each option has different risk, liquidity, return potential, and insurance characteristics; 
         none is automatically “better” than a CD for every investor.
       </p>
 

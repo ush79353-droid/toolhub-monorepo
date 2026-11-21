@@ -24,7 +24,7 @@ export function StimulusCheckGuideArticle() {
               In March 2020, Congress enacted the{' '}
               <strong>Coronavirus Aid, Relief, and Economic Security (CARES) Act</strong>{' '}
               (P.L. 116-136). Section 2201 authorized the 2020 Recovery Rebate Credit and its
-              advance payment — the IRS <strong>first Economic Impact Payment (EIP1)</strong>,
+ advance payment: the IRS <strong>first Economic Impact Payment (EIP1)</strong>,
               commonly called the first stimulus check.
             </p>
             <p>
@@ -126,7 +126,7 @@ export function StimulusCheckGuideArticle() {
             </ul>
             <p>
               Most automatic advances used 2019 tax-return data. Filers who later reconciled on a
-              2020 return could claim a Recovery Rebate Credit for any unpaid EIP1 amount — that
+ 2020 return could claim a Recovery Rebate Credit for any unpaid EIP1 amount; that
               reconciliation workflow is outside this tool’s scope.
             </p>
           </div>
@@ -140,7 +140,7 @@ export function StimulusCheckGuideArticle() {
             <ul className="list-disc space-y-2.5 pl-5 marker:text-muted-foreground">
               <li>
                 Figures are <strong>historical estimates</strong>, not IRS transcripts or payment
-                confirmations — and not an available 2026 payment.
+ confirmations, and not an available 2026 payment.
               </li>
               <li>
                 Currency is fixed <strong>USD</strong>. Kid counts and filing status are never

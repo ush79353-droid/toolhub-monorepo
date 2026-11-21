@@ -64,7 +64,7 @@ export function FhaLoanCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Home price: ${getCurrencySymbol(input.homePriceCurrency)}${input.homePrice}`,
         `Down payment: ${input.downPaymentPercent}%`,
         `Loan term: ${input.loanTermYears} yrs`,

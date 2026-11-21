@@ -56,7 +56,7 @@ export function QuizAnnualIncomeCalculator({
 
   const summary = result.complete
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         'Annual income quiz: How much do you really earn?',
         `Score: ${result.formattedScore}`,
         ...QUIZ_QUESTIONS.map((question) => {
@@ -98,7 +98,7 @@ export function QuizAnnualIncomeCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Quiz</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Educational quiz — not an income calculator. Answer all seven
+ Educational quiz; not an income calculator. Answer all seven
             questions to see your score. Fixed USD examples; no currency
             conversion.
           </p>

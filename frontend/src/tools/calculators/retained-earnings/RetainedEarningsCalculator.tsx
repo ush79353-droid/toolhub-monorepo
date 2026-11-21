@@ -84,7 +84,7 @@ export function RetainedEarningsCalculator({
   const shareable = Boolean(result);
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Earnings: ${symbol}${result!.formattedEarnings}`,
         `Payout: ${result!.formattedPayoutRatio}`,
         `Dividends: ${symbol}${result!.formattedDividends}`,

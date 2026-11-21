@@ -120,7 +120,7 @@ export function TrueCostOfRealEstateCommissionCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Property price: ${propertySymbol}${input.propertyPrice}`,
         `Down payment: ${downSymbol}${input.downPayment}`,
         `Seller’s commission: ${input.sellerCommissionPercent}%`,

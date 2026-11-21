@@ -371,14 +371,14 @@ export function buildMoneySupplyPresentation(
   ].join(' · ');
 
   const interpretation = [
-    `M0 = ${fmt(bundle.m0)} — notes and coins in the selected currency-only M0 definition.`,
-    `Monetary base = ${fmt(bundle.monetaryBase)} — currency in circulation plus reserve balances.`,
-    `M1 = ${fmt(bundle.m1)} — liquid monetary assets in the selected M1 definition.`,
-    `M2 = ${fmt(bundle.m2)} — M1 plus eligible money market and time-deposit components.`,
+    `M0 = ${fmt(bundle.m0)}; notes and coins in the selected currency-only M0 definition.`,
+    `Monetary base = ${fmt(bundle.monetaryBase)}; currency in circulation plus reserve balances.`,
+    `M1 = ${fmt(bundle.m1)}; liquid monetary assets in the selected M1 definition.`,
+    `M2 = ${fmt(bundle.m2)}; M1 plus eligible money market and time-deposit components.`,
   ].join(' ');
 
   const explanation =
-    'Results are model-based educational calculations for the selected monetary aggregate definition — not official central bank statistics. Definitions of M0–M4 differ by jurisdiction and period; savings enter M1 in the post–May 2020 U.S.-style illustration used here so they are not added again in M2.';
+    'Results are model-based educational calculations for the selected monetary aggregate definition; not official central bank statistics. Definitions of M0–M4 differ by jurisdiction and period; savings enter M1 in the post–May 2020 U.S.-style illustration used here so they are not added again in M2.';
 
   return {
     definition: input.definition,

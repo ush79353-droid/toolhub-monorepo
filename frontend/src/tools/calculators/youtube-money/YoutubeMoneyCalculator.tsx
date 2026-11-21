@@ -96,7 +96,7 @@ export function YoutubeMoneyCalculator({
 
   const shareText = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `RPM: ${formatCurrencyValue(result.rpm, result.currency)} per 1,000 views`,
         `Views: ${result.views.toLocaleString('en-US')} ${PERIOD_LABEL[result.viewsPeriod]}`,
         `Gross revenue: ${formatCurrencyValue(result.grossRevenue, result.currency)} ${PERIOD_LABEL[result.grossPeriod]}`,

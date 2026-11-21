@@ -120,7 +120,7 @@ export function GajToSqYdForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Land-area gaj equals one square yard (1 gaj = 1 yd² = 9 ft²). Do not multiply by 9 when
-        converting to square yards — that factor only applies for square feet. Linear gaj (length)
+ converting to square yards; that factor only applies for square feet. Linear gaj (length)
         is a separate 1:1 conversion with yards below.
       </div>
 

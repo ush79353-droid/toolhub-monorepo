@@ -115,8 +115,8 @@ export function interpretOperatingLeverage(
   if (dol < 0) {
     parts.push(
       method === 'contributionMargin'
-        ? 'Negative DOL can arise when EBIT is negative while contribution margin is positive under a linear CVP model — interpret carefully.'
-        : 'Negative observed DOL means sales and EBIT percentage changes moved in opposite directions over the measured interval — not automatically a calculation error.'
+        ? 'Negative DOL can arise when EBIT is negative while contribution margin is positive under a linear CVP model; interpret carefully.'
+        : 'Negative observed DOL means sales and EBIT percentage changes moved in opposite directions over the measured interval; not automatically a calculation error.'
     );
   } else if (Math.abs(dol - 1) < UNIT_TOLERANCE) {
     parts.push(
@@ -138,7 +138,7 @@ export function interpretOperatingLeverage(
 
   if (abs > 5) {
     parts.push(
-      'A large absolute DOL indicates high sensitivity and can also appear when EBIT is near zero — not automatically a healthy or unhealthy condition.'
+      'A large absolute DOL indicates high sensitivity and can also appear when EBIT is near zero; not automatically a healthy or unhealthy condition.'
     );
   }
 

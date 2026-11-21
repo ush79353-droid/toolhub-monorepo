@@ -90,7 +90,7 @@ export function MoneyMultiplierCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        'Money Multiplier Calculator — Omega Calculators',
+        'Money Multiplier Calculator | Omega Calculators',
         '',
         `Checkable Deposits: ${result.formattedDeposits}`,
         `Reserve Ratio: ${result.formattedReserveRatio}`,

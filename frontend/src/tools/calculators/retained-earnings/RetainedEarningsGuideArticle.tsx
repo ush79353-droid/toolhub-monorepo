@@ -25,7 +25,7 @@ export function RetainedEarningsGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         On the balance sheet, retained earnings accumulate over time. On this
-        page, the primary result is period retention — not the full equity
+ page, the primary result is period retention; not the full equity
         account unless beginning RE is known.
       </p>
 
@@ -105,7 +105,7 @@ export function RetainedEarningsGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Example: Beginning $2,000,000 + NI $500,000 − Dividends $150,000 =
         Ending <strong>$2,350,000</strong>. Beginning RE is not a default field
-        here — do not assume it is zero.
+ here; do not assume it is zero.
       </p>
 
       <h2
@@ -184,7 +184,7 @@ export function RetainedEarningsGuideArticle() {
         Retained Earnings vs. Cash
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        High RE does not mean high cash — profits may be invested in other
+ High RE does not mean high cash; profits may be invested in other
         assets.
       </p>
 
@@ -259,7 +259,7 @@ export function RetainedEarningsGuideArticle() {
         What Is a Good Retained Earnings Balance?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        No universal benchmark — compare strategy, industry, and dividend
+ No universal benchmark; compare strategy, industry, and dividend
         policy.
       </p>
 
@@ -345,7 +345,7 @@ export function RetainedEarningsGuideArticle() {
         Retained Earnings and Return on Equity
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Higher RE raises equity and can change ROE — higher RE alone does not
+ Higher RE raises equity and can change ROE; higher RE alone does not
         guarantee better returns.
       </p>
 
@@ -396,7 +396,7 @@ export function RetainedEarningsGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Period RE is not cash, not market value, and not cumulative without
         beginning RE. Payout ratios need positive earnings. Educational use
-        only — not personalized financial advice.
+ only; not personalized financial advice.
       </p>
 
       <h2

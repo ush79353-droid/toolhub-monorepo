@@ -89,7 +89,7 @@ export function allFromCelsius(celsius: number): Record<TemperatureUnit, number>
 
 export function shareResultText(amounts: Record<TemperatureUnit, number>): string {
   return [
-    'Celsius Converter — Omega Calculators',
+    'Celsius Converter | Omega Calculators',
     '',
     `${formatTemp(amounts.celsius)}${TEMP_SYMBOLS.celsius} = ${formatTemp(amounts.fahrenheit)}${TEMP_SYMBOLS.fahrenheit}`,
     `${formatTemp(amounts.celsius)}${TEMP_SYMBOLS.celsius} = ${formatTemp(amounts.kelvin)} ${TEMP_SYMBOLS.kelvin}`,

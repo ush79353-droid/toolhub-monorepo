@@ -101,7 +101,7 @@ export function validateDividendPayoutRatioInput(
   if (mainReady) {
     if (income.value === 0) {
       errors.netIncome =
-        'Net income is zero — dividend payout ratio is undefined (not 0%).';
+        'Net income is zero; dividend payout ratio is undefined (not 0%).';
     } else {
       const dividendsNorm = convertMoney(
         dividends.value!,
@@ -134,7 +134,7 @@ export function validateDividendPayoutRatioInput(
   if (perShareReady && !errors.form) {
     if (eps.value === 0) {
       errors.dilutedEps =
-        'Diluted EPS is zero — per-share payout ratio is undefined (not 0%).';
+        'Diluted EPS is zero; per-share payout ratio is undefined (not 0%).';
     } else {
       const dpsNorm = convertMoney(
         dps.value!,

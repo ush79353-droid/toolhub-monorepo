@@ -95,7 +95,7 @@ export function ReceivablesTurnoverRatioForm({
           Net credit sales
           <InfoTooltip
             label="Net credit sales"
-            text="Credit sales for the period after applicable returns, allowances, and discounts — not total revenue including cash sales."
+            text="Credit sales for the period after applicable returns, allowances, and discounts; not total revenue including cash sales."
           />
         </label>
         <FieldShell error={errors.netCreditSales}>
@@ -187,7 +187,7 @@ export function ReceivablesTurnoverRatioForm({
           Average accounts receivables
           <InfoTooltip
             label="Average accounts receivables"
-            text="(Opening AR + Closing AR) ÷ 2 — a two-point average for the period."
+            text="(Opening AR + Closing AR) ÷ 2: a two-point average for the period."
           />
         </label>
         <FieldShell muted>
@@ -212,7 +212,7 @@ export function ReceivablesTurnoverRatioForm({
           Receivables turnover ratio
           <InfoTooltip
             label="Receivables turnover ratio"
-            text="Net credit sales ÷ average accounts receivable. Reported as times per period — not a currency or percentage."
+            text="Net credit sales ÷ average accounts receivable. Reported as times per period; not a currency or percentage."
           />
         </label>
         <FieldShell muted>

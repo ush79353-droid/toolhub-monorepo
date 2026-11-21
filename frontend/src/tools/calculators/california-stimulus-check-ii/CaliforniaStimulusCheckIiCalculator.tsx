@@ -69,14 +69,14 @@ export function CaliforniaStimulusCheckIiCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
-        `CA AGI: $${input.californiaAgi || '—'} USD`,
+        `${metadata.title} | Omega Calculators`,
+        `CA AGI: $${input.californiaAgi || '; '} USD`,
         `CA resident > half of 2020: ${input.californiaResident2020}`,
         `Tax file: ${input.taxFileId.toUpperCase()}`,
         `Qualified for GSS I: ${input.qualifiedGssI}`,
         `Claimed child dependent: ${input.claimedChildDependent}`,
         `Payment method: ${input.paymentMethod}`,
-        `Tax filing date: ${input.taxFilingDate || '—'}`,
+        `Tax filing date: ${input.taxFilingDate || '; '}`,
         result.formattedPaymentAmount
           ? `Historical estimate: ${result.formattedPaymentAmount}`
           : 'Historical estimate: no GSS II payment under these answers',
@@ -115,7 +115,7 @@ export function CaliforniaStimulusCheckIiCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Historical Golden State Stimulus II estimate — fixed USD, no FX selectors.
+ Historical Golden State Stimulus II estimate; fixed USD, no FX selectors.
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}

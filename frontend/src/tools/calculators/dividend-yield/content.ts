@@ -18,7 +18,7 @@ export const DIVIDEND_YIELD_FAQS: readonly FAQItem[] = [
   {
     question: 'Which dividend frequencies are supported?',
     answer:
-      'Annually (1), Semiannually (2), Quarterly (4), and Monthly (12). You must select a frequency before results appear — an unselected frequency does not invent a payment count.',
+      'Annually (1), Semiannually (2), Quarterly (4), and Monthly (12). You must select a frequency before results appear: an unselected frequency does not invent a payment count.',
   },
   {
     question: 'Can dividends be zero?',

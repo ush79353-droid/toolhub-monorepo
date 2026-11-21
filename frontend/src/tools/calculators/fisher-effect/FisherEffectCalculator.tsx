@@ -84,7 +84,7 @@ export function FisherEffectCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Mode: ${result!.mode}`,
         `Nominal: ${result!.formattedNominal}`,

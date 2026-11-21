@@ -203,7 +203,7 @@ export function SalaryInflationCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         input.referenceSalary.trim()
           ? `Reference salary: ${getCurrencySymbol(input.referenceSalaryCurrency)}${input.referenceSalary} ${input.referenceSalaryCurrency}`
           : null,

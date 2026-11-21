@@ -52,7 +52,7 @@ export function MortgageCalculatorUk({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Home price: £${input.homePrice}`,
         `Deposit: ${input.depositPercent}% (£${result.formattedDepositAmount})`,
         `Loan amount: £${result.formattedLoanAmount}`,

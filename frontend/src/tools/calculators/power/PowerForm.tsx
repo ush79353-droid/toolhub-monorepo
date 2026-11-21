@@ -150,7 +150,7 @@ export function PowerForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Enter a value in any field — all other units update from watts as the base. Mechanical
+ Enter a value in any field; all other units update from watts as the base. Mechanical
         horsepower hp(I) and metric horsepower PS are different. BTU/h uses the international-table
         (IT) definition. Negative values are allowed for signed power flow.
       </div>

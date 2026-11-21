@@ -89,7 +89,7 @@ export function InventoryTurnoverCalculator({
     result.status !== 'undefinedTurnover';
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Average inventory: ${symbol}${result.formattedAverageInventory}`,
         result.formattedInventoryTurnover
           ? `Inventory turnover: ${result.formattedInventoryTurnover}×`

@@ -47,7 +47,7 @@ export const HOURS_TO_YEARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-calculator-works',
     title: 'How Does the Hours to Years Calculator Work?',
     paragraphs: [
-      '1. Enter hours into Time in hours — years update instantly.',
+      '1. Enter hours into Time in hours. years update instantly.',
       '2. Edit Time in years to convert hours in reverse.',
       '3. Expand Other time units for months, weeks, days, minutes, seconds, and compound hours/minutes/seconds.',
       '4. Years and months are labeled as average Gregorian durations (365.2425-day year), not exact calendar spans.',

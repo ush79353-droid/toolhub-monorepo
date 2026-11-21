@@ -12,7 +12,7 @@ export function PriceToBookGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Book value of equity is the accounting residual of assets over
-        liabilities on the balance sheet — shareholders&apos; equity. Preferred
+ liabilities on the balance sheet; shareholders&apos; equity. Preferred
         equity may be deducted so remaining common book equity reflects claims
         of common shareholders.
       </p>
@@ -31,7 +31,7 @@ export function PriceToBookGuideArticle() {
         Tangible common equity starts from common book equity and subtracts
         goodwill and other intangible assets. Analysts use it when intangible
         carrying amounts are hard to verify or may not support liquidation
-        value — with clear limitations of its own.
+ value, with clear limitations of its own.
       </p>
 
       <h2
@@ -93,10 +93,10 @@ export function PriceToBookGuideArticle() {
         How to Interpret Price-to-Book Ratio
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <li>P/B &lt; 1 — price below reported BVPS (discount, not automatic value).</li>
-        <li>P/B ≈ 1 — price near book.</li>
-        <li>P/B &gt; 1 — price above book (premium that may reflect ROE or growth).</li>
-        <li>Negative book equity — conventional P/B is not meaningful.</li>
+        <li>P/B &lt; 1; price below reported BVPS (discount, not automatic value).</li>
+        <li>P/B ≈ 1; price near book.</li>
+        <li>P/B &gt; 1; price above book (premium that may reflect ROE or growth).</li>
+        <li>Negative book equity; conventional P/B is not meaningful.</li>
       </ul>
 
       <h2

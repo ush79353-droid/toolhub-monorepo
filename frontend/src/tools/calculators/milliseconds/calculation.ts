@@ -44,7 +44,7 @@ export function shareResultText(seconds: DecimalValue): string {
   const min = formatTimeValue(fromSeconds(seconds, 'minutes'));
   const h = formatTimeValue(fromSeconds(seconds, 'hours'));
   return [
-    'Milliseconds Converter — Omega Calculators',
+    'Milliseconds Converter | Omega Calculators',
     '',
     `${ms} ms =`,
     `${s} second${s === '1' ? '' : 's'}`,

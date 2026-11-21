@@ -40,7 +40,7 @@ export function CreditCardGuideArticle() {
           New Balance = Balance + Interest − min(Payment, Balance + Interest)
         </p>
         <p className="mt-2 text-xs text-muted-foreground">
-          Educational model — not average-daily-balance statement interest.
+ Educational model; not average-daily-balance statement interest.
         </p>
       </div>
 

@@ -31,7 +31,7 @@ export function ZuluTimeResults({
     return (
       <p className="rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-muted-foreground">
         {conversion?.status === 'nonexistent'
-          ? 'That local clock time does not exist — the clocks sprang forward over this hour. Pick a valid time.'
+          ? 'That local clock time does not exist: the clocks sprang forward over this hour. Pick a valid time.'
           : 'Enter a Zulu or local time and a conversion date.'}
       </p>
     );

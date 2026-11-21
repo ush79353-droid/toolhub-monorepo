@@ -176,7 +176,7 @@ export function RealEstateCommissionCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `House price: ${houseSymbol}${input.housePrice} ${input.housePriceCurrency}`,
         `Commission: ${input.commissionPercent}%`,
         `Commission amount: ${commissionSymbol}${result.formattedCommissionAmount} ${result.commissionAmountCurrency}`,

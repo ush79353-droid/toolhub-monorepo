@@ -41,7 +41,7 @@ export function CreditCardPayoffGuideArticle() {
           30)
         </p>
         <p className="mt-2 text-xs text-muted-foreground">
-          Educational model — not issuer average-daily-balance statement
+ Educational model; not issuer average-daily-balance statement
           interest.
         </p>
       </div>

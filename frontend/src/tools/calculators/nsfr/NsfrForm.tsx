@@ -58,7 +58,7 @@ export function NsfrForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
-        NSFR = ASF ÷ RSF × 100. Educational Basel III–style estimate — not a
+ NSFR = ASF ÷ RSF × 100. Educational Basel III–style estimate; not a
         regulatory filing or compliance determination. Fixed USD formatting.
       </p>
 

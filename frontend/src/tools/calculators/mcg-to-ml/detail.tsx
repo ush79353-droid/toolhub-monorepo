@@ -4,7 +4,7 @@ import { MCG_TO_ML_FAQS, MCG_TO_ML_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert micrograms (mcg) to milliliters (mL) using medication concentration or substance density — never a fixed universal factor.',
+    'Convert micrograms (mcg) to milliliters (mL) using medication concentration or substance density; never a fixed universal factor.',
   asideAriaLabel: 'Interactive mcg to mL conversion calculator',
   tocItems: MCG_TO_ML_TOC_ITEMS,
   GuideArticle: McgToMlGuideArticle,

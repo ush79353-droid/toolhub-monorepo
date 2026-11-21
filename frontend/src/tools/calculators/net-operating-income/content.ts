@@ -51,7 +51,7 @@ export const NOI_FAQS: readonly FAQItem[] = [
   {
     question: 'What is potential gross income?',
     answer:
-      'Potential gross income is the income a property could generate before vacancy and collection adjustments — typically full-occupancy rental income plus other recurring property income.',
+      'Potential gross income is the income a property could generate before vacancy and collection adjustments; typically full-occupancy rental income plus other recurring property income.',
   },
   {
     question: 'What is effective gross income?',

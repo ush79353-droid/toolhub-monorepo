@@ -106,7 +106,7 @@ export function calculateHoursToDays(input: HoursToDaysInput): HoursToDaysResult
 
 export function shareResultText(result: HoursToDaysResult): string {
   return [
-    'Hours to Days Calculator — Omega Calculators',
+    'Hours to Days Calculator | Omega Calculators',
     '',
     `${formatDuration(result.hours)} hours = ${formatDuration(result.days)} days`,
     `${formatDuration(result.hours)} hours = ${formatDuration(result.minutes)} minutes`,

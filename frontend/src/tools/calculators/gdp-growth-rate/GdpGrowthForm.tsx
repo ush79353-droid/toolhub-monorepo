@@ -160,7 +160,7 @@ export function GdpGrowthForm({
           />
           <span>
             Also show annualized quarter-over-quarter growth
-            ((Current/Previous)⁴ − 1) — labeled separately, not a substitute for
+ ((Current/Previous)⁴ − 1); labeled separately, not a substitute for
             the period growth rate.
           </span>
         </label>

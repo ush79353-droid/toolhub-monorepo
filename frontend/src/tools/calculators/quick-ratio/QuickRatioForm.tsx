@@ -238,7 +238,7 @@ export function QuickRatioForm({
               {result?.requiredCash != null && result.requiredCash < 0 ? (
                 <p className="mt-1 text-xs text-muted-foreground">
                   Marketable securities and receivables already exceed the
-                  required quick assets — no additional cash holding is required
+ required quick assets; no additional cash holding is required
                   (negative cash is not shown as a target).
                 </p>
               ) : null}

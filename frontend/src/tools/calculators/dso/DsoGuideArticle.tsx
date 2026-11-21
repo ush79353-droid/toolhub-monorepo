@@ -183,7 +183,7 @@ export function DsoGuideArticle() {
         DSO is an accounting estimate. Sales timing, seasonality, total-sales
         proxies, aging detail, customer credit quality, and accounting policies
         all affect interpretation. Industry benchmarks vary. This tool provides
-        educational estimates only — not accounting, audit, or investment
+ educational estimates only; not accounting, audit, or investment
         advice.
       </p>
 

@@ -11,7 +11,7 @@ export function GrossMarginGuideArticle() {
         What Is Gross Margin?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Gross margin expresses gross profit — revenue minus cost of goods sold — as a percentage of
+ Gross margin expresses gross profit (revenue minus cost of goods sold) as a percentage of
         revenue. It is a core profitability screen for how efficiently a business turns sales into
         gross profit before operating costs.
       </p>

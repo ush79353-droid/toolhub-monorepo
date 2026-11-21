@@ -16,7 +16,7 @@ export function EpfGuideArticle() {
         contributions, the employer split between EPF and EPS, interest
         accumulation under a clear monthly/yearly convention, and a projected
         maturity balance through your chosen retirement age. Results are
-        educational estimates — statutory rates, wage ceilings, and interest
+ educational estimates; statutory rates, wage ceilings, and interest
         rates can change, and your employer or EPFO membership status may differ.
       </p>
 
@@ -128,7 +128,7 @@ export function EpfGuideArticle() {
         the end-of-month EPF balance at annualRate ÷ 12, and credits accrued
         interest every 12 months (and at the end of the horizon). That is an
         explicit educational convention aligned with monthly running balances and
-        annual credits — not a guarantee of EPFO&apos;s exact ledger for every
+ annual credits; not a guarantee of EPFO&apos;s exact ledger for every
         financial year boundary or contribution posting date.
       </p>
 
@@ -154,7 +154,7 @@ export function EpfGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         When you assume annual salary growth, basic and DA are increased once per
         projection year. Higher wages raise monthly contributions, which then earn
-        interest for longer remaining periods — a powerful compounding path for
+ interest for longer remaining periods: a powerful compounding path for
         younger workers.
       </p>
 
@@ -182,7 +182,7 @@ export function EpfGuideArticle() {
         EPF is employment-linked and includes employer money. PPF is a personal
         public provident fund with its own contribution limits and lock-in.
         Comparing them requires matching contribution capacity, liquidity, and tax
-        rules — not just headline interest rates.
+ rules; not just headline interest rates.
       </p>
 
       <h2

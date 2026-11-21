@@ -10,8 +10,8 @@ import {
 export const MMHG_ATM_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'intro', label: 'mmHg to atm Conversion' },
   { id: 'mmhg-to-atm', label: 'What Is the Conversion from mmHg to atm?' },
-  { id: 'atm-to-mmhg', label: 'Reverse Conversion — atm to mmHg' },
-  { id: 'examples', label: 'How to Convert mmHg to atm — Examples' },
+  { id: 'atm-to-mmhg', label: 'Reverse Conversion; atm to mmHg' },
+  { id: 'examples', label: 'How to Convert mmHg to atm; Examples' },
   { id: 'how-to-use', label: 'How to Use the mmHg to atm Calculator' },
   { id: 'conversion-table', label: 'mmHg to atm Conversion Table' },
   { id: 'related-tools', label: 'Other Related Pressure Converters' },
@@ -34,7 +34,7 @@ export const MMHG_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'mmHg to atm Conversion',
     paragraphs: [
-      'Convert pressure between millimeters of mercury (mmHg) and standard atmospheres (atm). The calculator is useful for physics, chemistry, laboratory work, gas-law problems, and atmospheric-pressure calculations. It converts numerical pressure units only — it does not add or subtract atmospheric pressure for gauge ↔ absolute conversion.',
+      'Convert pressure between millimeters of mercury (mmHg) and standard atmospheres (atm). The calculator is useful for physics, chemistry, laboratory work, gas-law problems, and atmospheric-pressure calculations. It converts numerical pressure units only; it does not add or subtract atmospheric pressure for gauge ↔ absolute conversion.',
     ],
   },
   {
@@ -49,7 +49,7 @@ export const MMHG_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'atm-to-mmhg',
-    title: 'Reverse Conversion — atm to mmHg',
+    title: 'Reverse Conversion; atm to mmHg',
     paragraphs: [
       `Multiply atmospheres by ${MMHG_PER_ATM}: mmHg = atm × ${MMHG_PER_ATM}.`,
       `Example: 3 atm × ${MMHG_PER_ATM} = ${formatPressure(atmToMmHg(3))} mmHg.`,
@@ -59,11 +59,11 @@ export const MMHG_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'examples',
-    title: 'How to Convert mmHg to atm — Examples',
+    title: 'How to Convert mmHg to atm; Examples',
     paragraphs: [
-      `Example 1 — 610 mmHg: 610 ÷ ${MMHG_PER_ATM} ≈ ${formatPressure(mmHgToAtm(610))} atm.`,
-      `Example 2 — 475 mmHg: 475 ÷ ${MMHG_PER_ATM} = ${formatPressure(mmHgToAtm(475))} atm.`,
-      `Example 3 — 2 atm: 2 × ${MMHG_PER_ATM} = ${formatPressure(atmToMmHg(2))} mmHg.`,
+      `Example 1: 610 mmHg: 610 ÷ ${MMHG_PER_ATM} ≈ ${formatPressure(mmHgToAtm(610))} atm.`,
+      `Example 2: 475 mmHg: 475 ÷ ${MMHG_PER_ATM} = ${formatPressure(mmHgToAtm(475))} atm.`,
+      `Example 3: 2 atm: 2 × ${MMHG_PER_ATM} = ${formatPressure(atmToMmHg(2))} mmHg.`,
     ],
     formula: `610 ÷ 760 ≈ ${formatPressure(mmHgToAtm(610))} atm\n475 ÷ 760 = 0.625 atm\n2 × 760 = 1520 mmHg`,
   },

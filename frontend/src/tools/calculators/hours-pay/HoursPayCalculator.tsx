@@ -198,7 +198,7 @@ export function HoursPayCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Source: ${result.sourceField} pay`,
         `Daily: ${getCurrencySymbol(result.dailyPayCurrency)}${result.formattedDaily} ${result.dailyPayCurrency}`,
         `Weekly: ${getCurrencySymbol(result.weeklyPayCurrency)}${result.formattedWeekly} ${result.weeklyPayCurrency}`,

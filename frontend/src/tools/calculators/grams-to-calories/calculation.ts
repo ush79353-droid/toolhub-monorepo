@@ -94,7 +94,7 @@ export function shareResultText(
   result: CalorieBreakdown,
 ): string {
   return [
-    'Grams to Calories Calculator — Omega Calculators',
+    'Grams to Calories Calculator | Omega Calculators',
     '',
     `Carbs: ${formatGrams(carbsG)} g → ${formatKcal(result.carbsKcal)} kcal`,
     `Protein: ${formatGrams(proteinG)} g → ${formatKcal(result.proteinKcal)} kcal`,

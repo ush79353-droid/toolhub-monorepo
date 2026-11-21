@@ -24,7 +24,7 @@ export const QUICK_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a quick ratio?',
     answer:
-      'The quick ratio (acid-test ratio) compares a company’s most liquid current assets — typically cash, marketable securities, and net receivables — to its current liabilities.',
+      'The quick ratio (acid-test ratio) compares a company’s most liquid current assets (typically cash, marketable securities, and net receivables) to its current liabilities.',
   },
   {
     question: 'What does acid-test ratio mean?',
@@ -49,7 +49,7 @@ export const QUICK_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'Is a quick ratio of 1 good?',
     answer:
-      'A ratio of 1.00 means quick assets equal current liabilities under the inputs used. That can be adequate for some models and thin for others — context matters.',
+      'A ratio of 1.00 means quick assets equal current liabilities under the inputs used. That can be adequate for some models and thin for others; context matters.',
   },
   {
     question: 'Is a quick ratio below 1 bad?',
@@ -99,7 +99,7 @@ export const QUICK_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What are quick assets?',
     answer:
-      'Quick assets are the liquid current assets used in the acid-test numerator — commonly cash, cash equivalents, marketable securities, and net receivables.',
+      'Quick assets are the liquid current assets used in the acid-test numerator; commonly cash, cash equivalents, marketable securities, and net receivables.',
   },
   {
     question: 'What happens if current liabilities are zero?',
@@ -114,7 +114,7 @@ export const QUICK_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'Why do investors use the quick ratio?',
     answer:
-      'It offers a quick read on short-term liquidity without assuming inventory can be sold immediately — useful alongside cash flow and other ratios.',
+      'It offers a quick read on short-term liquidity without assuming inventory can be sold immediately; useful alongside cash flow and other ratios.',
   },
   {
     question: 'How often should a company calculate its quick ratio?',

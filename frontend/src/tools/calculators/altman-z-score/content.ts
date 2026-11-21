@@ -39,12 +39,12 @@ export const ALTMAN_Z_SCORE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good Altman Z-Score?',
     answer:
-      'Under commonly cited original thresholds, scores above 2.99 are in the safer zone and scores below 1.81 in the distress zone, with 1.81–2.99 grey. “Good” is relative to the model’s sample and industry — not a universal grade.',
+      'Under commonly cited original thresholds, scores above 2.99 are in the safer zone and scores below 1.81 in the distress zone, with 1.81–2.99 grey. “Good” is relative to the model’s sample and industry; not a universal grade.',
   },
   {
     question: 'What does an Altman Z-Score below 1.81 mean?',
     answer:
-      'It falls in the distress zone of the original classification scheme, indicating elevated financial distress risk according to the model — not a certainty of bankruptcy.',
+      'It falls in the distress zone of the original classification scheme, indicating elevated financial distress risk according to the model; not a certainty of bankruptcy.',
   },
   {
     question: 'What does the grey zone mean?',
@@ -59,7 +59,7 @@ export const ALTMAN_Z_SCORE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is EBIT?',
     answer:
-      'Earnings before interest and taxes — a measure of operating earnings used in X3 (EBIT / Total assets). It may be negative.',
+      'Earnings before interest and taxes: a measure of operating earnings used in X3 (EBIT / Total assets). It may be negative.',
   },
   {
     question: 'How is working capital calculated?',
@@ -109,7 +109,7 @@ export const ALTMAN_Z_SCORE_FAQS: readonly FAQItem[] = [
   {
     question: 'How often should a company calculate its Altman Z-Score?',
     answer:
-      'Many users recompute after each reporting period or when capital structure changes materially. Frequency depends on monitoring needs — the model itself does not prescribe a schedule.',
+      'Many users recompute after each reporting period or when capital structure changes materially. Frequency depends on monitoring needs: the model itself does not prescribe a schedule.',
   },
   {
     question: 'What happens when total liabilities equal zero?',

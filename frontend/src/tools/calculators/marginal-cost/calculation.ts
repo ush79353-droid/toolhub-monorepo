@@ -40,7 +40,7 @@ export function interpretMarginalCost(
 ): string {
   if (quantityChange === 0) {
     if (costChange === 0) {
-      return 'Indeterminate — both cost and quantity changes are zero (0 ÷ 0).';
+      return 'Indeterminate; both cost and quantity changes are zero (0 ÷ 0).';
     }
     return 'Marginal cost cannot be calculated because the change in quantity is zero.';
   }
@@ -52,19 +52,19 @@ export function interpretMarginalCost(
   const mcText = formatMcMoneyPlain(marginalCost);
 
   if (marginalCost === 0) {
-    return `Marginal cost is 0 per ${unitShort} — total cost did not change while output changed by ${formatMcQuantity(quantityChange)} ${unitPluralFromShort(unitShort)}.`;
+    return `Marginal cost is 0 per ${unitShort}; total cost did not change while output changed by ${formatMcQuantity(quantityChange)} ${unitPluralFromShort(unitShort)}.`;
   }
 
   if (costChange > 0 && quantityChange > 0) {
     return `Over this interval, each additional ${unitShort} raised total cost by about ${mcText} on average (discrete / incremental MC).`;
   }
   if (costChange < 0 && quantityChange < 0) {
-    return `Both total cost and quantity decreased. The ratio is ${mcText} per ${unitShort} — not the cost of expanding output.`;
+    return `Both total cost and quantity decreased. The ratio is ${mcText} per ${unitShort}; not the cost of expanding output.`;
   }
   if (costChange < 0 && quantityChange > 0) {
-    return `Total cost fell while output rose — calculated MC is ${mcText} per ${unitShort}. Possible efficiency or noncomparable observations; not proof of profitability.`;
+    return `Total cost fell while output rose; calculated MC is ${mcText} per ${unitShort}. Possible efficiency or noncomparable observations; not proof of profitability.`;
   }
-  return `Total cost rose while quantity fell — calculated MC is ${mcText} per ${unitShort}. Review whether the two observations are comparable.`;
+  return `Total cost rose while quantity fell; calculated MC is ${mcText} per ${unitShort}. Review whether the two observations are comparable.`;
 }
 
 function unitPluralFromShort(short: string): string {

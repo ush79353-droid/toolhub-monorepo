@@ -281,7 +281,7 @@ export function SalesForm({
         </summary>
         <div className="space-y-3.5 border-t border-border px-3.5 pb-3.5 pt-3 sm:px-4 sm:pb-4">
           <p className="text-xs text-muted-foreground">
-            Sales returns, allowances, and discounts only — not operating expenses or COGS.
+ Sales returns, allowances, and discounts only; not operating expenses or COGS.
             Amounts apply to the same sales period as quantity sold. Leave blank for zero.
           </p>
 

@@ -57,7 +57,7 @@ export function PxToEmForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Set a base font size (1em = base px). Edit any size field — px, em, pt, and % stay in sync.
+ Set a base font size (1em = base px). Edit any size field; px, em, pt, and % stay in sync.
         Points use the CSS reference 1px = 0.75pt.
       </div>
 

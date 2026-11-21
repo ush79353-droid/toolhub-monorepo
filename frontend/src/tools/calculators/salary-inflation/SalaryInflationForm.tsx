@@ -309,7 +309,7 @@ export function SalaryInflationForm({
                 })
               }
             >
-              Example 1 — Beat inflation
+ Example 1: Beat inflation
             </button>
           </li>
           <li>
@@ -326,7 +326,7 @@ export function SalaryInflationForm({
                 })
               }
             >
-              Example 2 — Purchasing-power loss
+ Example 2: Purchasing-power loss
             </button>
           </li>
         </ul>

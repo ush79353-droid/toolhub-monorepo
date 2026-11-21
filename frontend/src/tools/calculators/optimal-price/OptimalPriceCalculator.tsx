@@ -80,7 +80,7 @@ export function OptimalPriceCalculator({
   const shareable = Boolean(result);
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Elasticity: ${result!.formattedConstantElasticity}`,
         result!.formattedOptimalPrice
           ? `Optimal price: ${symbol}${result!.formattedOptimalPrice}`

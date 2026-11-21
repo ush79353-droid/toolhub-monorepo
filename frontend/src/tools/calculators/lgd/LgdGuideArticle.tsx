@@ -16,7 +16,7 @@ export function LgdGuideArticle() {
         that may not be recovered after borrower default. Enter a recovery rate
         or loss severity, add exposure at default, and see monetary loss given
         default plus estimated recovery. Advanced mode adds reverse solves and
-        optional Probability of Default for Expected Loss — clearly separated
+ optional Probability of Default for Expected Loss; clearly separated
         from LGD amount. Currency labels are denomination only.
       </p>
 
@@ -59,7 +59,7 @@ export function LgdGuideArticle() {
         What Is Recovery Rate?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Recovery rate is the share of exposure recovered after default —
+ Recovery rate is the share of exposure recovered after default; 
         collateral proceeds, repayments, guarantees, or restructuring outcomes.
         Simplified models may omit recovery timing and costs; those frictions
         matter in practice and in fuller credit-risk methodologies.
@@ -100,7 +100,7 @@ export function LgdGuideArticle() {
         Secured loan: EAD $250,000 · net recovery $175,000 · unrecovered
         $75,000. LGD rate = 75,000 / 250,000 = 30%. Collateral can raise
         recoveries, but valuation, liquidation costs, and seniority still shape
-        outcomes — secured does not always mean low LGD.
+ outcomes; secured does not always mean low LGD.
       </p>
 
       <h2

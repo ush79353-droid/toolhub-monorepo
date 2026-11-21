@@ -5,7 +5,7 @@ import { YARDS_PER_MILE } from './types';
 
 export const YARD_TO_MILE_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'yard-to-mile-intro', label: 'Yard to Mile Converter' },
-  { id: 'conversion-diagram', label: 'Conversion Chart — Miles to Yards' },
+  { id: 'conversion-diagram', label: 'Conversion Chart; Miles to Yards' },
   { id: 'yards-to-miles', label: 'How to Convert Yards to Miles' },
   { id: 'miles-to-yards', label: 'How to Convert Miles to Yards' },
   { id: 'conversion-table', label: 'Yard to Mile Conversion Chart' },
@@ -36,7 +36,7 @@ export const YARD_TO_MILE_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'conversion-diagram',
-    title: 'Conversion Chart — Miles to Yards',
+    title: 'Conversion Chart; Miles to Yards',
     paragraphs: [
       `Within US customary / imperial length: 1 mile = ${YARDS_PER_MILE.toLocaleString('en-US')} yards, 1 yard = 3 feet, and 1 foot = 12 inches.`,
       'Multiply when moving toward smaller units; divide when moving toward larger units.',
@@ -55,7 +55,7 @@ export const YARD_TO_MILE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Yards to Miles',
     paragraphs: [
       `Divide yards by ${YARDS_PER_MILE}.`,
-      `Example — convert 500 yards: 500 ÷ ${YARDS_PER_MILE} ≈ ${formatLength(yardsToMiles(500))}. Therefore 500 yards ≈ ${formatLength(yardsToMiles(500))} miles.`,
+      `Example; convert 500 yards: 500 ÷ ${YARDS_PER_MILE} ≈ ${formatLength(yardsToMiles(500))}. Therefore 500 yards ≈ ${formatLength(yardsToMiles(500))} miles.`,
     ],
     formula: `Miles = Yards ÷ ${YARDS_PER_MILE}`,
   },
@@ -64,7 +64,7 @@ export const YARD_TO_MILE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Miles to Yards',
     paragraphs: [
       `Multiply miles by ${YARDS_PER_MILE}.`,
-      `Example — convert 3 miles: 3 × ${YARDS_PER_MILE} = ${formatLength(milesToYards(3))}. Therefore 3 miles = ${formatLength(milesToYards(3))} yards.`,
+      `Example; convert 3 miles: 3 × ${YARDS_PER_MILE} = ${formatLength(milesToYards(3))}. Therefore 3 miles = ${formatLength(milesToYards(3))} yards.`,
     ],
     formula: `Yards = Miles × ${YARDS_PER_MILE}`,
   },

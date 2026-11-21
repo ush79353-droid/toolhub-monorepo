@@ -15,7 +15,7 @@ export function BankReconciliationGuideArticle() {
         A bank reconciliation statement compares an organization’s cashbook balance with the closing
         balance on its bank statement for the same period. The cashbook records receipts and payments
         from the business’s perspective; the bank statement records the same account from the bank’s
-        perspective. Timing differences—such as deposits in transit and outstanding checks—plus
+ perspective. Timing differences, such as deposits in transit and outstanding checks, plus
         unrecorded bank charges, interest earned, NSF checks, automatic payments, and accounting or
         bank errors often leave the two raw balances unequal until each side is adjusted.
       </p>
@@ -45,7 +45,7 @@ export function BankReconciliationGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Cashbook adjustments capture bank activity that has already affected the statement but has
-        not yet been entered in the books—bank charges, NSF/returned checks, automatic payments,
+ not yet been entered in the books, bank charges, NSF/returned checks, automatic payments,
         interest earned, direct deposits or credits, and accounting corrections. Fixed items in this
         calculator follow standard signs: interest is added; charges, NSF checks, and automatic
         payments are subtracted. Extra rows use an explicit Add or Subtract direction so amounts stay
@@ -65,8 +65,8 @@ export function BankReconciliationGuideArticle() {
         Adjustments to bank statements
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Bank statement adjustments cover cashbook items that have not yet cleared the bank—especially
-        deposits in transit (add) and outstanding checks (subtract)—plus bank errors and other
+ Bank statement adjustments cover cashbook items that have not yet cleared the bank, especially
+ deposits in transit (add) and outstanding checks (subtract); plus bank errors and other
         statement-side corrections. Timing differences are normal near period end; they do not
         automatically mean the cashbook is wrong.
       </p>
@@ -98,7 +98,7 @@ export function BankReconciliationGuideArticle() {
         <li>Investigate any remaining difference and prepare the final statement.</li>
       </ol>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        The objective is equal adjusted balances after valid adjustments—not equal original balances.
+ The objective is equal adjusted balances after valid adjustments, not equal original balances.
       </p>
 
       <h2
@@ -112,7 +112,7 @@ export function BankReconciliationGuideArticle() {
         example action.
       </p>
 
-      <h3 className="mt-5 text-base font-semibold text-accent">A — Cashbook reconciliation</h3>
+      <h3 className="mt-5 text-base font-semibold text-accent">A; Cashbook reconciliation</h3>
       <div className="my-3 overflow-x-auto rounded-xl border border-border">
         <table className="w-full min-w-[360px] text-left text-sm">
           <thead className="bg-muted/60 text-xs text-muted-foreground">
@@ -158,7 +158,7 @@ export function BankReconciliationGuideArticle() {
         </table>
       </div>
 
-      <h3 className="mt-5 text-base font-semibold text-accent">B — Bank statement reconciliation</h3>
+      <h3 className="mt-5 text-base font-semibold text-accent">B; Bank statement reconciliation</h3>
       <div className="my-3 overflow-x-auto rounded-xl border border-border">
         <table className="w-full min-w-[360px] text-left text-sm">
           <thead className="bg-muted/60 text-xs text-muted-foreground">
@@ -196,7 +196,7 @@ export function BankReconciliationGuideArticle() {
         </table>
       </div>
 
-      <h3 className="mt-5 text-base font-semibold text-accent">C — Final reconciliation summary</h3>
+      <h3 className="mt-5 text-base font-semibold text-accent">C; Final reconciliation summary</h3>
       <div className="my-3 overflow-x-auto rounded-xl border border-border">
         <table className="w-full min-w-[360px] text-left text-sm">
           <thead className="bg-muted/60 text-xs text-muted-foreground">
@@ -222,7 +222,7 @@ export function BankReconciliationGuideArticle() {
         </table>
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Status: <span className="font-medium text-emerald-800">Reconciled</span> — both adjusted
+ Status: <span className="font-medium text-emerald-800">Reconciled</span>; both adjusted
         balances match.
       </p>
 

@@ -55,7 +55,7 @@ export function CtrCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Ad impressions: ${input.impressions}`,
         `Number of clicks: ${input.clicks}`,
         `CTR: ${result.formattedRate}%`,

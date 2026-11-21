@@ -234,7 +234,7 @@ export function OzToCupsForm({
 
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-xs leading-relaxed text-amber-950/90">
         Fluid ounces (fl oz) measure volume. Avoirdupois ounces measure mass. Eight US
-        fluid ounces equal one US customary cup—not every cup standard or mass ounce.
+ fluid ounces equal one US customary cup, not every cup standard or mass ounce.
       </div>
 
       <div className="rounded-xl border border-border">

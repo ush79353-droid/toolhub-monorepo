@@ -26,7 +26,7 @@
 export const PAKISTAN_SALARY_TAX_YEAR_LABEL = '2027';
 
 export const PAKISTAN_SALARY_TAX_YEAR_NOTE =
-  'Tax Year 2027 salaried rates — Finance Act, 2026 (First Schedule, Part I, Division I, clause (2)); FBR Circular No. 02 of 2026-27. Salaried surcharge under section 4AB withdrawn.';
+  'Tax Year 2027 salaried rates; Finance Act, 2026 (First Schedule, Part I, Division I, clause (2)); FBR Circular No. 02 of 2026-27. Salaried surcharge under section 4AB withdrawn.';
 
 /** Inclusive upper bound of each progressive band; last band uses Infinity. */
 const SALARY_SLABS: ReadonlyArray<{
@@ -128,7 +128,7 @@ export function shareResultText(input: {
 }): string {
   const { title, monthlyIncomeRaw, result } = input;
   return [
-    `${title} — Omega Calculators`,
+    `${title} | Omega Calculators`,
     `Tax year: ${result.taxYearLabel} (FBR salaried / Finance Act 2026)`,
     `Monthly income: Rs. ${monthlyIncomeRaw}`,
     `Monthly tax: Rs. ${result.formattedMonthlyTax}`,

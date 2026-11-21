@@ -47,7 +47,7 @@ export function LotteryTaxGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         US mode applies IRC §3402(q) <strong>24% federal withholding</strong> as Tax I. Withholding
         is not final federal tax liability, which depends on filing status, other income, and the
-        tax year. State lottery tax is not invented — use Customized tax rates for Tax II.
+ tax year. State lottery tax is not invented; use Customized tax rates for Tax II.
       </p>
 
       <h2

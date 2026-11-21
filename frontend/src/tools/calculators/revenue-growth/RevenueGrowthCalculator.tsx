@@ -204,7 +204,7 @@ export function RevenueGrowthCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.formattedTotalGrowth
           ? `Total growth: ${result.formattedTotalGrowth}% (${getCurrencySymbol(input.totalInitialCurrency)}${input.totalInitial} → ${getCurrencySymbol(input.totalFinalCurrency)}${input.totalFinal})`
           : null,

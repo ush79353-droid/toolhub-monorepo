@@ -40,9 +40,9 @@ export const S2D_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'One day contains 24 hours, and each hour contains 3,600 seconds.',
       '24 × 3,600 = 86,400, so days = seconds ÷ 86,400.',
-      `Example 1 — 86,400 seconds: 86,400 ÷ 86,400 = ${formatDuration(secondsToDays(86_400))} day.`,
-      `Example 2 — 1,000,000 seconds: 1,000,000 ÷ 86,400 ≈ ${formatDuration(secondsToDays(1_000_000))} days.`,
-      `Example 3 — 43,200 seconds: 43,200 ÷ 86,400 = ${formatDuration(secondsToDays(43_200))} days.`,
+      `Example 1: 86,400 seconds: 86,400 ÷ 86,400 = ${formatDuration(secondsToDays(86_400))} day.`,
+      `Example 2: 1,000,000 seconds: 1,000,000 ÷ 86,400 ≈ ${formatDuration(secondsToDays(1_000_000))} days.`,
+      `Example 3: 43,200 seconds: 43,200 ÷ 86,400 = ${formatDuration(secondsToDays(43_200))} days.`,
     ],
     formula:
       'Days = Seconds / 86400\n86400 ÷ 86400 = 1 day\n1000000 ÷ 86400 ≈ 11.57407407 days\n43200 ÷ 86400 = 0.5 days',
@@ -56,7 +56,7 @@ export const S2D_GUIDE_SECTIONS: readonly GuideSection[] = [
       '3. The equivalent number of days appears automatically.',
       '4. Edit the days field to perform the reverse calculation.',
       '5. Use the result in planning, research, or other calculations.',
-      'Both fields update in real time — there is no separate Calculate button.',
+      'Both fields update in real time; there is no separate Calculate button.',
     ],
   },
   {

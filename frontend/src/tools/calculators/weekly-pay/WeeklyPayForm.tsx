@@ -138,7 +138,7 @@ export function WeeklyPayForm({
     <div className="space-y-4">
       <p className="text-xs leading-relaxed text-muted-foreground">
         Gross pay conversions before taxes and deductions. Currency changes the display symbol
-        only — amounts are not converted.
+ only; amounts are not converted.
       </p>
 
       <form
@@ -368,10 +368,10 @@ export function WeeklyPayForm({
       >
         <div className="flex flex-wrap gap-2">
           <Button type="button" variant="outline" className="h-10" onClick={onLoadHourlyExample}>
-            Example 1 — Hourly wage ($18)
+ Example 1: Hourly wage ($18)
           </Button>
           <Button type="button" variant="outline" className="h-10" onClick={onLoadMonthlyExample}>
-            Example 2 — Monthly salary ($4,000)
+ Example 2: Monthly salary ($4,000)
           </Button>
         </div>
       </Disclosure>

@@ -11,7 +11,7 @@ export function BounceRateGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Bounce rate measures how often visitors land on your site, view a single page, and leave without
         continuing to another page. Marketers and site owners use it as a quick signal of engagement,
-        content relevance, and landing-page clarity—though it should always be interpreted alongside
+ content relevance, and landing-page clarity, though it should always be interpreted alongside
         goals, traffic sources, and conversion data.
       </p>
 

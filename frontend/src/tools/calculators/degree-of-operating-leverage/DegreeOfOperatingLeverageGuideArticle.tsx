@@ -13,7 +13,7 @@ export function DegreeOfOperatingLeverageGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Operating leverage describes how fixed versus variable operating costs
         affect the sensitivity of EBIT to sales. Firms with more fixed operating
-        costs often see larger percentage EBIT swings when sales change — near
+ costs often see larger percentage EBIT swings when sales change; near
         break-even especially.
       </p>
 
@@ -106,7 +106,7 @@ export function DegreeOfOperatingLeverageGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Rent, depreciation, salaried overhead, and similar fixed operating costs
-        raise operating leverage when they are large relative to variable costs —
+ raise operating leverage when they are large relative to variable costs; 
         classifications depend on the relevant range and period.
       </p>
 

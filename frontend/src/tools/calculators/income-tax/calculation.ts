@@ -75,7 +75,7 @@ export interface FederalTaxComputation {
 }
 
 export const DISCLOSURE_BASE =
-  'Educational federal estimate only — not a complete or legally authoritative tax return. State income tax, AMT, NIIT, SE tax, QBI, Form 8960/8959, and many credits/deductions are out of scope.';
+  'Educational federal estimate only; not a complete or legally authoritative tax return. State income tax, AMT, NIIT, SE tax, QBI, Form 8960/8959, and many credits/deductions are out of scope.';
 
 function roundMoney(n: number): number {
   return Math.round((n + Number.EPSILON) * 100) / 100;
@@ -548,7 +548,7 @@ export function calculateFederalIncomeTax(
 
   if (input.hasSelfEmployment) {
     disclosures.push(
-      'Self-employment was indicated but no net SE income field exists on this form — SE tax, SE health insurance, and QBI are not calculated.'
+      'Self-employment was indicated but no net SE income field exists on this form; SE tax, SE health insurance, and QBI are not calculated.'
     );
   }
   if (input.stateWithheld > 0 || input.localWithheld > 0) {

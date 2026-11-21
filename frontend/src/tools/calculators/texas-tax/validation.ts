@@ -124,9 +124,9 @@ export function validateTexasTaxInput(
   const disclosures = [
     `TY${input.taxYear}: federal ordinary brackets (Rev. Proc. 2024-40 / 2025-32); Texas has no state individual income tax.`,
     'Federal taxable income uses AGI minus max(federal standard deduction, itemized deductions entered). Texas state income tax is always $0.',
-    'FICA/payroll withholding omitted — AGI is not assumed to be FICA wages. After-income-tax is not a full paycheck.',
-    `Property tax uses ACS 2020–2024 county effective rate (median tax ÷ median home value) for ${engine.countyLabel}. Applied to entered home value as a market-value proxy—actual Texas appraisal, exemptions, and taxing-unit bills differ.`,
-    'Educational estimate only — not Form 1040 or a property tax bill.',
+    'FICA/payroll withholding omitted; AGI is not assumed to be FICA wages. After-income-tax is not a full paycheck.',
+    `Property tax uses ACS 2020–2024 county effective rate (median tax ÷ median home value) for ${engine.countyLabel}. Applied to entered home value as a market-value proxy, actual Texas appraisal, exemptions, and taxing-unit bills differ.`,
+    'Educational estimate only; not Form 1040 or a property tax bill.',
   ] as const;
 
   const result: TexasTaxResult = {

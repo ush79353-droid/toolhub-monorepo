@@ -353,7 +353,7 @@ export function SemiMonthlyPayForm({
                 <span>Semi-monthly wage</span>
                 <InfoTooltip
                   label="Semi-monthly wage"
-                  text="Twice per month — 24 periods/year (yearly ÷ 24). Not biweekly (26). Math runs in the last-edited wage currency, then converts for display."
+                  text="Twice per month; 24 periods/year (yearly ÷ 24). Not biweekly (26). Math runs in the last-edited wage currency, then converts for display."
                 />
               </label>
               <div className="flex gap-2">

@@ -4,8 +4,8 @@ import type { TableOfContentsItem } from '@/tools/calculators/auto-loan/TableOfC
 export const TIME_UNIT_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'how-to-use', label: 'How to Use the Time Unit Converter' },
   { id: 'how-it-works', label: 'How the Time Unit Converter Works' },
-  { id: 'convert-larger', label: 'How to Convert Between Units of Time — Larger to Smaller' },
-  { id: 'convert-smaller', label: 'How to Convert Between Units of Time — Smaller to Larger' },
+  { id: 'convert-larger', label: 'How to Convert Between Units of Time; Larger to Smaller' },
+  { id: 'convert-smaller', label: 'How to Convert Between Units of Time; Smaller to Larger' },
   { id: 'conversion-table', label: 'Time Unit Conversion Table' },
   { id: 'applications', label: 'Common Applications of Time Conversion' },
   { id: 'time-unit-faq', label: 'Frequently Asked Questions' },
@@ -44,7 +44,7 @@ export const TIME_UNIT_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'convert-larger',
-    title: 'How to Convert Between Units of Time — From Hours to Minutes, From Years to Seconds',
+    title: 'How to Convert Between Units of Time; From Hours to Minutes, From Years to Seconds',
     paragraphs: [
       'Convert through seconds: target = input × (source seconds) ÷ (target seconds). Hours to minutes: 3 × 60 = 180 minutes. Days to hours: 5 × 24 = 120 hours. Weeks to seconds: 1 × 7 × 24 × 60 × 60 = 604,800 seconds. Average years to seconds: 1 × 365.25 × 24 × 60 × 60 = 31,557,600 seconds.',
     ],
@@ -52,7 +52,7 @@ export const TIME_UNIT_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'convert-smaller',
-    title: 'How to Convert Between Units of Time — From Minutes to Hours, Hours to Days, Milliseconds to Minutes',
+    title: 'How to Convert Between Units of Time; From Minutes to Hours, Hours to Days, Milliseconds to Minutes',
     paragraphs: [
       'Divide when moving to a larger unit. Minutes to hours: 150 / 60 = 2.5 hours. Hours to days: 48 / 24 = 2 days. Seconds to minutes: 180 / 60 = 3 minutes. Milliseconds to seconds: 5,000 / 1,000 = 5 seconds. Milliseconds to minutes: 120,000 / 60,000 = 2 minutes.',
     ],

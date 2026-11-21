@@ -115,7 +115,7 @@ export function SmokersCtcCalculator({
   const summary =
     result && (result.yearlyLaborCost !== null || result.yearlyCigaretteCost !== null)
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Daily smoking time: ${result.dailySmokingDisplay}`,
           result.yearlyLaborCost !== null
             ? `Yearly labor cost while smoking: ${formatCurrencyValue(result.yearlyLaborCost, input.currency)}`

@@ -93,7 +93,7 @@ export function QuizUsIncomePercentileCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Quiz</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Educational quiz — not a personal income percentile lookup. Eight
+ Educational quiz; not a personal income percentile lookup. Eight
             multiple-choice questions about US income distribution.
           </p>
         </div>

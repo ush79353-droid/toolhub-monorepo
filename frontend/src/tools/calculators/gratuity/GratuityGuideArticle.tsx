@@ -14,7 +14,7 @@ export function GratuityGuideArticle() {
         Gratuity is a lump-sum thank-you employers may pay after long service.
         This calculator follows the widely used Indian Payment of Gratuity Act,
         1972 convention: fifteen days of wages per eligible year, with a month
-        treated as 26 working days. It is a formula-based educational estimate —
+ treated as 26 working days. It is a formula-based educational estimate; 
         not a Pakistan labour-code entitlement, not legal advice, and not a
         guaranteed claim under any jurisdiction.
       </p>
@@ -54,7 +54,7 @@ export function GratuityGuideArticle() {
         <p>If total service months &lt; 60 → Gratuity = 0 (ordinary 5-year gate)</p>
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Leftover service must exceed six months to count as another year —
+ Leftover service must exceed six months to count as another year; 
         exactly six months does not round up (Act s.4(2)). Ordinary entitlement
         needs at least five years of continuous service; death/disablement
         exceptions are not modeled. The Indian Act also states a monetary

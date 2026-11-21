@@ -20,7 +20,7 @@ export const CES_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the Customer Effort Score scale?',
     answer:
-      'This tool supports 1–5 and 1–7 scales. Score 1 means very easy and the highest value means very difficult. Some surveys reverse that direction — do not mix directions when comparing results.',
+      'This tool supports 1–5 and 1–7 scales. Score 1 means very easy and the highest value means very difficult. Some surveys reverse that direction; do not mix directions when comparing results.',
   },
   {
     question: 'How is Customer Effort Score different from NPS?',
@@ -40,7 +40,7 @@ export const CES_FAQS: readonly FAQItem[] = [
   {
     question: 'Is 2.5 a good Customer Effort Score?',
     answer:
-      'On a 1–5 scale with lower = easier, 2.5 sits between easy and neutral. Business meaning depends on survey wording, distribution shape, historical baselines, and context — not the mean alone.',
+      'On a 1–5 scale with lower = easier, 2.5 sits between easy and neutral. Business meaning depends on survey wording, distribution shape, historical baselines, and context; not the mean alone.',
   },
   {
     question: 'Can Customer Effort Score be higher than 5?',
@@ -50,7 +50,7 @@ export const CES_FAQS: readonly FAQItem[] = [
   {
     question: 'How often should Customer Effort Score be measured?',
     answer:
-      'Many teams survey after relevant interactions — support contacts, returns, purchases, or issue resolution. Ideal frequency varies by volume, channel, and change cadence; there is no one schedule for every company.',
+      'Many teams survey after relevant interactions; support contacts, returns, purchases, or issue resolution. Ideal frequency varies by volume, channel, and change cadence; there is no one schedule for every company.',
   },
   {
     question: 'Can I compare CES from a 1–5 scale with a 1–7 scale?',

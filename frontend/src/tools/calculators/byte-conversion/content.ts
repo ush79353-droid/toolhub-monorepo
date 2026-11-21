@@ -56,7 +56,7 @@ export const BYTE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'bits-vs-bytes',
     title: 'Bits vs Bytes',
     paragraphs: [
-      'Lowercase b usually means bits; uppercase B means bytes. Network rates are often quoted in megabits per second (Mbps), while file sizes use megabytes (MB). Nominally 8 Mbps = 1 MB/s as a unit conversion — not a guarantee of real-world throughput after protocol overhead.',
+      'Lowercase b usually means bits; uppercase B means bytes. Network rates are often quoted in megabits per second (Mbps), while file sizes use megabytes (MB). Nominally 8 Mbps = 1 MB/s as a unit conversion; not a guarantee of real-world throughput after protocol overhead.',
     ],
     formula: '1 B = 8 bits · 8 Mbps = 1 MB/s (nominal)',
   },

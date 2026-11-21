@@ -52,7 +52,7 @@ export function allFromPascals(pascals: number): Record<PressureUnitField, numbe
 export function shareResultText(pascals: number): string {
   const values = allFromPascals(pascals);
   return [
-    'Pressure Unit Conversion — Omega Calculators',
+    'Pressure Unit Conversion | Omega Calculators',
     '',
     `${formatPressure(values.bar)} ${UNIT_SYMBOLS.bar} =`,
     `${formatPressure(values.Pa)} ${UNIT_SYMBOLS.Pa}`,

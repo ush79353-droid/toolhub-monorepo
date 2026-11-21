@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-21 — Remove em dashes from frontend user-facing copy
+- **Summary:** Replaced share/meta brand titles `… — Omega Calculators` with `… | Omega Calculators` (SEO fallback style). Rewrote em dashes in calculator `detail.tsx` blurbs, `content.ts` FAQ/TOC, guides, forms, results, validation user messages, and related user-facing strings using situational punctuation (`|`, `:`, `;`, `,`, parentheses). Skipped code comments and empty-value glyphs (`'—'` / placeholders).
+- **Important Files:** Broad set under `frontend/src/tools/calculators/**` (titles, `detail.tsx`, `content.ts`, guides/forms/results, validation strings); `brain/CHANGELOG.md`, `brain/TASKS.md`, `brain/CURRENT_STATE.md`.
+- **Verification:** Zero remaining `— Omega Calculators`; `detail.tsx` / guide prose em dashes cleared; leftover `—` limited to comments and intentional glyphs. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Soften unused-vars + unblock frontend `next build`
 - **Summary:** Turned off ESLint `no-unused-vars` / `@typescript-eslint/no-unused-vars` (tsconfig already had `noUnusedLocals`/`noUnusedParameters` false). Converted ~68 calculator guide/results files from raw `<a href="/tools/…">` to `next/link` `Link` (fixes `@next/next/no-html-link-for-pages` Errors). Softened shared props (`FAQAccordion` `faqs` alias, optional `CurrencySelect` `id`, `InfoTooltip` `content` alias) and fixed remaining typecheck blockers so `npx tsc --noEmit` and `npm run build` succeed.
 - **Important Files:** `frontend/eslint.config.mjs`, `frontend/tsconfig.json`, `frontend/src/components/shared/FAQAccordion.tsx`, `frontend/src/tools/shared/CurrencySelect.tsx`, `frontend/src/tools/calculators/auto-loan/InfoTooltip.tsx`, calculator guide/results Link conversions, assorted validation/form type fixes.

@@ -23,7 +23,7 @@ export const STOCK_SPLIT_FAQS: readonly FAQItem[] = [
   {
     question: 'What about fractional shares?',
     answer:
-      'This calculator keeps fractional shares mathematically. Brokers may round or pay cash-in-lieu for fractions — actual treatment can differ from the theoretical result shown here.',
+      'This calculator keeps fractional shares mathematically. Brokers may round or pay cash-in-lieu for fractions; actual treatment can differ from the theoretical result shown here.',
   },
   {
     question: 'Do the currency selectors convert amounts?',

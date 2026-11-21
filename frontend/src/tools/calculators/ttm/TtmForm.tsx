@@ -193,7 +193,7 @@ export function TtmForm({
         <MoneyField
           id="ttm-result"
           label="Trailing twelve month value"
-          tip="Q0 + Q1 + Q2 + Q3 — sum of four consecutive quarters, not averaged or annualized."
+          tip="Q0 + Q1 + Q2 + Q3; sum of four consecutive quarters, not averaged or annualized."
           value={result ? result.formattedTtm : ''}
           symbol={symbol}
           currency={input.currency}

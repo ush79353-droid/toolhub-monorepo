@@ -108,7 +108,7 @@ export function NavCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total Investment Value: ${money(input.totalInvestmentValue)}`,
         `Cash and Cash Equivalents: ${money(input.cashAndCashEquivalents)}`,
         `Accounts Receivable: ${money(input.accountsReceivable)}`,
@@ -121,8 +121,8 @@ export function NavCalculator({
         `Net Asset Value: ${result!.formattedNetAssetValue}`,
         input.outstandingShares.trim()
           ? `Outstanding Shares: ${sharesLabel(input.outstandingShares)}`
-          : 'Outstanding Shares: —',
-        `NAV Per Share: ${result!.formattedNavPerShare ?? '—'}`,
+          : 'Outstanding Shares;',
+        `NAV Per Share: ${result!.formattedNavPerShare ?? '; '}`,
         '',
         `Calculator: ${typeof window !== 'undefined' ? window.location.href : `/tools/${metadata.slug}`}`,
       ].join('\n')

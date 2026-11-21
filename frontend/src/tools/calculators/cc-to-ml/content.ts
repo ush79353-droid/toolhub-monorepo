@@ -37,10 +37,10 @@ export const CC_TO_ML_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-convert-cc-to-ml',
     title: 'How to Convert cc to mL?',
     paragraphs: [
-      'Step 1 — Determine the volume in cubic centimeters. Example: Volume = 100 cc.',
-      'Step 2 — Use the one-to-one relationship: 1 cc = 1 mL.',
-      'Step 3 — Convert: 100 cc = 100 mL.',
-      `Step 4 — If liters are needed, divide by ${ML_PER_LITER.toLocaleString('en-US')}: 100 / ${ML_PER_LITER.toLocaleString('en-US')} = ${formatVolume(ccToLiters(100))} L.`,
+      'Step 1: Determine the volume in cubic centimeters. Example: Volume = 100 cc.',
+      'Step 2: Use the one-to-one relationship: 1 cc = 1 mL.',
+      'Step 3: Convert: 100 cc = 100 mL.',
+      `Step 4: If liters are needed, divide by ${ML_PER_LITER.toLocaleString('en-US')}: 100 / ${ML_PER_LITER.toLocaleString('en-US')} = ${formatVolume(ccToLiters(100))} L.`,
       `Final result: 100 cc = 100 mL = ${formatVolume(ccToLiters(100))} L.`,
     ],
     formula: `mL = cc · L = cc / ${ML_PER_LITER.toLocaleString('en-US')}`,
@@ -78,7 +78,7 @@ export const CC_TO_ML_FAQS: readonly FAQItem[] = [
   {
     question: 'Does Volume Only Apply to Liquids?',
     answer:
-      'No. Volume applies to solids, liquids, and gases — anything that occupies three-dimensional space.',
+      'No. Volume applies to solids, liquids, and gases; anything that occupies three-dimensional space.',
   },
   {
     question: 'Is 1 cc the Same as 1 mL?',

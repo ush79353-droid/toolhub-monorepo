@@ -26,7 +26,7 @@ export const LGD_FAQS: readonly FAQItem[] = [
   {
     question: 'What does LGD mean in banking?',
     answer:
-      'LGD means Loss Given Default — the share or amount of exposure expected to be lost if a borrower defaults, after accounting for recoveries under the model’s assumptions.',
+      'LGD means Loss Given Default: the share or amount of exposure expected to be lost if a borrower defaults, after accounting for recoveries under the model’s assumptions.',
   },
   {
     question: 'What is Loss Given Default?',
@@ -46,7 +46,7 @@ export const LGD_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a recovery rate?',
     answer:
-      'The recovered share of exposure after default — from collateral, repayments, guarantees, or other recoveries — expressed as a percentage of EAD in the simplified model.',
+      'The recovered share of exposure after default (from collateral, repayments, guarantees, or other recoveries) expressed as a percentage of EAD in the simplified model.',
   },
   {
     question: 'How is recovery rate calculated?',
@@ -66,7 +66,7 @@ export const LGD_FAQS: readonly FAQItem[] = [
   {
     question: 'What is Exposure at Default (EAD)?',
     answer:
-      'EAD is the estimated amount outstanding or economically exposed when default occurs — drawn balances plus applicable undrawn exposure assumptions in fuller models.',
+      'EAD is the estimated amount outstanding or economically exposed when default occurs; drawn balances plus applicable undrawn exposure assumptions in fuller models.',
   },
   {
     question: 'What is Probability of Default (PD)?',
@@ -81,7 +81,7 @@ export const LGD_FAQS: readonly FAQItem[] = [
   {
     question: 'How do PD, LGD, and EAD calculate expected loss?',
     answer:
-      'EL = PD × LGD_rate × EAD. Example: 5% × 20% × 100,000 = 1,000 — much smaller than the LGD amount of 20,000 if default occurs.',
+      'EL = PD × LGD_rate × EAD. Example: 5% × 20% × 100,000 = 1,000; much smaller than the LGD amount of 20,000 if default occurs.',
   },
   {
     question: 'Can LGD be zero?',
@@ -106,7 +106,7 @@ export const LGD_FAQS: readonly FAQItem[] = [
   {
     question: 'Why do secured loans often have lower LGD?',
     answer:
-      'Collateral can increase recoveries, lowering loss severity — but not always. Valuation, liquidation costs, legal priority, and market conditions still matter.',
+      'Collateral can increase recoveries, lowering loss severity, but not always. Valuation, liquidation costs, legal priority, and market conditions still matter.',
   },
   {
     question: 'What factors influence recovery rates?',
@@ -122,7 +122,7 @@ export const LGD_FAQS: readonly FAQItem[] = [
     question:
       'What is the difference between expected loss and loss given default?',
     answer:
-      'LGD amount assumes default has occurred. Expected loss multiplies by PD and is the probability-weighted average loss over the horizon — typically much smaller than LGD amount.',
+      'LGD amount assumes default has occurred. Expected loss multiplies by PD and is the probability-weighted average loss over the horizon; typically much smaller than LGD amount.',
   },
   {
     question: 'How is LGD used in Basel credit risk models?',

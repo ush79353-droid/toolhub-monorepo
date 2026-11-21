@@ -201,7 +201,7 @@ export function CreditCardMinimumPaymentCalculator({
   const balanceSymbol = getCurrencySymbol(input.statementBalanceCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.summary,
         result.breakdown,
         `Balance currency: ${balanceSymbol}`,

@@ -77,8 +77,8 @@ export function AmericanRescuePlanStimulusCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
-        'Historical EIP3 estimate (American Rescue Plan, March 11, 2021) — not a current benefit.',
+        `${metadata.title} | Omega Calculators`,
+        'Historical EIP3 estimate (American Rescue Plan, March 11, 2021); not a current benefit.',
         `Filed 2019 or 2020 taxes: ${input.filed2019Or2020Taxes === 'yes' ? 'Yes' : 'No'}`,
         `Filing status: ${FILING_LABEL[input.filingStatus]}`,
         `Dependents (IRC §152, including adult dependents): ${input.dependents}`,

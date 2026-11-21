@@ -36,7 +36,7 @@ const CURRENCY_CONVERSION_NOTE =
 function summaryText(result: TwelveHourShiftPayResult, note: string): string {
   const money = (value: number) => formatShiftPay(value, result.currency);
   return [
-    '12-Hour Shift Pay Calculator — Omega Calculators',
+    '12-Hour Shift Pay Calculator | Omega Calculators',
     `Average wage per hour: ${money(result.averageHourlyPay)}`,
     `Pay per day: ${money(result.payPerDay)}`,
     `Pay per week: ${money(result.payPerWeek)}`,

@@ -95,12 +95,12 @@ export function calculateRecoveryTime(
     status = 'zero_drawdown';
     recoveryYears = 0;
     explanation =
-      'With a 0% drawdown there is nothing to recover — estimated recovery time is 0.';
+      'With a 0% drawdown there is nothing to recover; estimated recovery time is 0.';
   } else if (maximumDrawdownPercent >= 100) {
     status = 'complete_loss';
     recoveryYears = null;
     explanation =
-      'A 100% drawdown leaves no remaining portfolio value. The standard compound-growth recovery formula cannot produce a finite recovery time — new capital or another model would be required.';
+      'A 100% drawdown leaves no remaining portfolio value. The standard compound-growth recovery formula cannot produce a finite recovery time; new capital or another model would be required.';
   } else if (annualGrowthRatePercent === 0) {
     status = 'zero_growth';
     recoveryYears = null;
@@ -189,7 +189,7 @@ export function shareDrawdownText(
   recovery: RecoveryResult | null,
 ): string {
   const lines = [
-    'Maximum Drawdown Calculator — Omega Calculators',
+    'Maximum Drawdown Calculator | Omega Calculators',
     `Peak value: ${formatMoney(drawdown.peakValue, drawdown.currency)} ${drawdown.currency}`,
     `Lowest value after peak: ${formatMoney(drawdown.lowestValueAfterPeak, drawdown.currency)} ${drawdown.currency}`,
     `Absolute loss: ${formatMoney(drawdown.absoluteLoss, drawdown.currency)}`,

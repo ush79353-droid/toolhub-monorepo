@@ -27,7 +27,7 @@ export const ATM_CONVERSION_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-atm-conversion',
     title: 'What Is ATM Conversion? Atmospheric Pressure Converter',
     paragraphs: [
-      'Atmospheric pressure is the force from the weight of air per unit area. The standard atmosphere (atm) is a defined reference pressure used in science and engineering — not the instantaneous outdoor pressure at every location.',
+      'Atmospheric pressure is the force from the weight of air per unit area. The standard atmosphere (atm) is a defined reference pressure used in science and engineering; not the instantaneous outdoor pressure at every location.',
       `By definition, 1 atm = ${PA_PER_ATM.toLocaleString('en-US')} Pa exactly, which equals ${formatPressure(convertPressure(1, 'atm', 'bar'))} bar and about ${formatPressure(convertPressure(1, 'atm', 'psi'))} psi.`,
       'Bar is a convenient near-atmosphere metric unit (1 bar = 100,000 Pa). Pascals are the SI unit. PSI (pound-force per square inch) is common in US customary engineering.',
       'Converting among these units helps compare weather maps, aircraft altimetry references, tank ratings, and laboratory instruments that report different symbols.',
@@ -63,7 +63,7 @@ export const ATM_CONVERSION_GUIDE_SECTIONS: readonly GuideSection[] = [
       '3. Read the automatically calculated equivalents.',
       '4. Change any field to convert in another direction.',
       '5. Reload restores 1 atm; Clear empties all fields.',
-      'Results update instantly — you do not need to look up conversion factors.',
+      'Results update instantly; you do not need to look up conversion factors.',
     ],
   },
   {
@@ -87,7 +87,7 @@ export const ATM_CONVERSION_FAQS: readonly FAQItem[] = [
   {
     question: 'Is the Conversion from ATM to Other Units Linear?',
     answer:
-      'Yes. Between consistent absolute pressure units the conversion is a constant multiplicative factor. Keep gauge and absolute references consistent — do not mix them without stating the reference.',
+      'Yes. Between consistent absolute pressure units the conversion is a constant multiplicative factor. Keep gauge and absolute references consistent; do not mix them without stating the reference.',
   },
   {
     question: 'Does Elevation Affect ATM Conversion?',

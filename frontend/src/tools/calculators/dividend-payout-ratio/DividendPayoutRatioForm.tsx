@@ -188,7 +188,7 @@ export function DividendPayoutRatioForm({
           {result?.payoutRatioPercent !== null && result?.isNegative ? (
             <p className="mt-1 text-xs text-amber-700">
               Negative payout is a diagnostic when dividends and net income have
-              opposite signs — not a conventional sustainable payout target.
+ opposite signs; not a conventional sustainable payout target.
             </p>
           ) : null}
         </div>
@@ -320,7 +320,7 @@ export function DividendPayoutRatioForm({
             {result?.payoutPerSharePercent !== null && result?.isPerShareNegative ? (
               <p className="mt-1 text-xs text-amber-700">
                 Negative per-share payout is a diagnostic when DPS and diluted EPS have
-                opposite signs — not a conventional sustainable payout target.
+ opposite signs; not a conventional sustainable payout target.
               </p>
             ) : null}
           </div>

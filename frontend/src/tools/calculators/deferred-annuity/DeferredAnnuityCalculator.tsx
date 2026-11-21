@@ -71,7 +71,7 @@ export function DeferredAnnuityCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.summaryText,
         `Balance at 1st withdrawal: ${resultSymbol}${result.formattedBalanceAtFirstWithdrawal}`,
         `Monthly withdrawal: ${resultSymbol}${result.formattedMonthlyWithdrawal}`,

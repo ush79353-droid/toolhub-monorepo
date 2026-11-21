@@ -200,7 +200,7 @@ export function DpoGuideArticle() {
         estimates may differ from actual credit purchases. Accounting
         classification influences results. DPO alone cannot determine supplier
         payment performance, and higher DPO does not always mean better cash
-        management. This tool provides educational estimates only — not
+ management. This tool provides educational estimates only; not
         accounting, audit, or investment advice.
       </p>
 

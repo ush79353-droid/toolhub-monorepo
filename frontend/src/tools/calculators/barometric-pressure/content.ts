@@ -27,7 +27,7 @@ export const BAROMETRIC_PRESSURE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-barometric-pressure',
     title: 'What Is Barometric Pressure?',
     paragraphs: [
-      'Barometric pressure is atmospheric pressure — the force from the weight of the air column above a point on Earth. It is measured with a barometer and changes with altitude and weather. Higher altitude generally means lower atmospheric pressure. Meteorology and aviation rely on accurate pressure readings for forecasts and flight levels.',
+      'Barometric pressure is atmospheric pressure: the force from the weight of the air column above a point on Earth. It is measured with a barometer and changes with altitude and weather. Higher altitude generally means lower atmospheric pressure. Meteorology and aviation rely on accurate pressure readings for forecasts and flight levels.',
       `The standard atmosphere is a defined reference, not the pressure at every location: 1 atm = ${PASCALS_PER_ATM.toLocaleString('en-US')} Pa = 1,013.25 hPa. Local weather and elevation still move the reading above or below that reference.`,
     ],
     formula: `1 atm = ${PASCALS_PER_ATM.toLocaleString('en-US')} Pa = 1,013.25 hPa`,
@@ -37,7 +37,7 @@ export const BAROMETRIC_PRESSURE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Barometric Pressure Units Conversion',
     paragraphs: [
       'The pascal (Pa) is the SI unit of pressure: 1 Pa = 1 N/m². Hectopascals (hPa) are common in meteorology (1 hPa = 100 Pa). Millibars match that magnitude (1 mbar = 1 hPa). One bar equals 100,000 Pa.',
-      `The standard atmosphere equals exactly ${PASCALS_PER_ATM.toLocaleString('en-US')} Pa. PSI (pounds-force per square inch) is common in engineering. Torr is defined as 1 atm / 760, while conventional mmHg uses 133.322387415 Pa — they are close but not identical.`,
+      `The standard atmosphere equals exactly ${PASCALS_PER_ATM.toLocaleString('en-US')} Pa. PSI (pounds-force per square inch) is common in engineering. Torr is defined as 1 atm / 760, while conventional mmHg uses 133.322387415 Pa; they are close but not identical.`,
     ],
     formula: `1 bar = ${PASCALS_PER_BAR.toLocaleString('en-US')} Pa  |  1 atm = ${PASCALS_PER_ATM.toLocaleString('en-US')} Pa  |  1 hPa = 1 mbar`,
   },
@@ -69,7 +69,7 @@ export const BAROMETRIC_PRESSURE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use-barometric-converter',
     title: 'How to Use the Barometric Pressure Converter',
     paragraphs: [
-      '1. Select the pressure unit for the field you want to enter. 2. Type the pressure value. 3. View the automatically calculated equivalents. 4. Change another unit selector if needed — the physical pressure stays the same. 5. Edit any displayed field to start a new conversion. 6. Use Share Result to copy the values. 7. Use Reload Calculator or Clear All Changes to reset.',
+      '1. Select the pressure unit for the field you want to enter. 2. Type the pressure value. 3. View the automatically calculated equivalents. 4. Change another unit selector if needed. the physical pressure stays the same. 5. Edit any displayed field to start a new conversion. 6. Use Share Result to copy the values. 7. Use Reload Calculator or Clear All Changes to reset.',
     ],
   },
   {

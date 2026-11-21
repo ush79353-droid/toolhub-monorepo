@@ -75,7 +75,7 @@ export function SavingsPlanResults({ result, hasErrors }: SavingsPlanResultsProp
             {result.periods} {result.periodUnitPlural}
           </span>
         </p>
-        <p>Principal only — no interest applied.</p>
+        <p>Principal only; no interest applied.</p>
       </div>
 
       <SavingsPlanChart balances={result.balances} periodAxisLabel={axisLabel} />

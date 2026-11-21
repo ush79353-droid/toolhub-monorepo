@@ -57,7 +57,7 @@ export const MONTH_OVER_MONTH_FAQS: readonly FAQItem[] = [
   {
     question: 'What does 20% MoM growth mean?',
     answer:
-      'The metric rose 20% versus the prior month — for example, 50,000 → 60,000.',
+      'The metric rose 20% versus the prior month, for example, 50,000 → 60,000.',
   },
   {
     question: 'Can MoM growth be negative?',
@@ -104,7 +104,7 @@ export const MONTH_OVER_MONTH_FAQS: readonly FAQItem[] = [
   {
     question: 'What does negative CMGR mean?',
     answer:
-      'The final value is below the initial value — an equivalent constant monthly decline.',
+      'The final value is below the initial value: an equivalent constant monthly decline.',
   },
   {
     question: 'Can CMGR be calculated with a zero starting value?',
@@ -151,7 +151,7 @@ export const MONTH_OVER_MONTH_FAQS: readonly FAQItem[] = [
   {
     question: 'How do SaaS businesses calculate monthly growth?',
     answer:
-      'Common metrics include MRR, customers, active users, churn, and expansion — each with its own MoM.',
+      'Common metrics include MRR, customers, active users, churn, and expansion; each with its own MoM.',
   },
   {
     question: 'How do I calculate monthly revenue growth?',
@@ -168,7 +168,7 @@ export const MONTH_OVER_MONTH_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I calculate MoM growth using negative numbers?',
     answer:
-      'Yes with the signed formula, but interpret carefully — improving from −100 to −50 yields −50% MoM.',
+      'Yes with the signed formula, but interpret carefully; improving from −100 to −50 yields −50% MoM.',
   },
   {
     question: 'What is the difference between percentage growth and percentage-point change?',
@@ -186,7 +186,7 @@ export const MONTH_OVER_MONTH_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Can YoY growth be positive when MoM growth is negative?',
-    answer: 'Yes — different windows can disagree in the same month.',
+    answer: 'Yes: different windows can disagree in the same month.',
   },
   {
     question: 'Can MoM growth be calculated for expenses?',

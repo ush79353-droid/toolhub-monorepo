@@ -38,7 +38,7 @@ export const OUNCES_TO_MILLILITERS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'Ounces to Milliliters Converter',
     paragraphs: [
-      'Convert fluid ounces (fl oz) to milliliters (mL) and back. Choose US customary or UK imperial fluid ounces — the factors differ.',
+      'Convert fluid ounces (fl oz) to milliliters (mL) and back. Choose US customary or UK imperial fluid ounces: the factors differ.',
       'Useful for cooking and baking, beverage and packaging measurements, laboratory volume checks, international recipes, and everyday customary ↔ metric volume work.',
     ],
   },
@@ -56,8 +56,8 @@ export const OUNCES_TO_MILLILITERS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-convert',
     title: 'How Do You Convert Ounces to Milliliters?',
     paragraphs: [
-      `US: mL = US fl oz × ${ML_PER_US_FL_OZ}. Example — 5 US fl oz = ${formatVolume(fluidOuncesToMilliliters(5, 'us'))} mL.`,
-      `UK: mL = UK fl oz × ${ML_PER_UK_FL_OZ}. Example — 5 UK fl oz = ${formatVolume(fluidOuncesToMilliliters(5, 'uk'))} mL.`,
+      `US: mL = US fl oz × ${ML_PER_US_FL_OZ}. Example; 5 US fl oz = ${formatVolume(fluidOuncesToMilliliters(5, 'us'))} mL.`,
+      `UK: mL = UK fl oz × ${ML_PER_UK_FL_OZ}. Example; 5 UK fl oz = ${formatVolume(fluidOuncesToMilliliters(5, 'uk'))} mL.`,
       'Know which fluid-ounce system you are using before converting.',
     ],
     formula: `mL = US fl oz × ${ML_PER_US_FL_OZ}\nmL = UK fl oz × ${ML_PER_UK_FL_OZ}`,
@@ -107,7 +107,7 @@ export const OUNCES_TO_MILLILITERS_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'How Many Milliliters Are in 8 US Fluid Ounces?',
-    answer: `8 × ${ML_PER_US_FL_OZ} = ${formatVolume(fluidOuncesToMilliliters(8, 'us'))} mL — about 236.59 mL.`,
+    answer: `8 × ${ML_PER_US_FL_OZ} = ${formatVolume(fluidOuncesToMilliliters(8, 'us'))} mL; about 236.59 mL.`,
   },
   {
     question: 'Is 1 US Fluid Ounce the Same as 1 UK Fluid Ounce?',

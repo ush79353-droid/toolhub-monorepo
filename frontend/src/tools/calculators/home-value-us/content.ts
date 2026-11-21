@@ -19,7 +19,7 @@ export const HOME_VALUE_US_FAQS: readonly FAQItem[] = [
   {
     question: 'How accurate is a home value calculator?',
     answer:
-      'Accuracy depends on the index series, observation dates, local conditions, and property-specific traits. Metro indices describe broad market movement — they are not a substitute for a professional appraisal or a listing-based estimate of one address.',
+      'Accuracy depends on the index series, observation dates, local conditions, and property-specific traits. Metro indices describe broad market movement; they are not a substitute for a professional appraisal or a listing-based estimate of one address.',
   },
   {
     question: 'What is the Case-Shiller Home Price Index?',
@@ -39,7 +39,7 @@ export const HOME_VALUE_US_FAQS: readonly FAQItem[] = [
   {
     question: 'Does home value account for inflation?',
     answer:
-      'Nominal results use home price indices only. This calculator also shows real change when matching CPI-U observations are available, using ratio-based inflation adjustment — not by subtracting inflation percentages.',
+      'Nominal results use home price indices only. This calculator also shows real change when matching CPI-U observations are available, using ratio-based inflation adjustment; not by subtracting inflation percentages.',
   },
   {
     question: 'How often is the home price index updated?',

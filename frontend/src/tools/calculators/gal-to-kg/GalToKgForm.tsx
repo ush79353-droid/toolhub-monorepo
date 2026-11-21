@@ -330,7 +330,7 @@ export function GalToKgForm({
 
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-xs leading-relaxed text-amber-950/90">
         We assume the substance is water, but you can change the density below to work with a
-        different substance. Gallons measure volume; kilograms measure mass — density is required.
+ different substance. Gallons measure volume; kilograms measure mass; density is required.
       </div>
 
       <div className="rounded-xl border border-border">

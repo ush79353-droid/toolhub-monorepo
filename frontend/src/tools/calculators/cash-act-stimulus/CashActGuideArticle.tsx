@@ -21,7 +21,7 @@ export function CashActGuideArticle() {
               In late December 2020, Congress enacted a second round of Economic Impact Payments at
               $600 per eligible adult ($1,200 for most married couples) plus $600 per qualifying
               child under 17. After the President publicly called for $2,000 checks, the House
-              passed the <strong>CASH Act of 2020</strong> (H.R.9051 — Caring for Americans with
+ passed the <strong>CASH Act of 2020</strong> (H.R.9051; Caring for Americans with
               Supplemental Help Act) on December 28, 2020 to amend those amounts upward.
             </p>
             <p>
@@ -117,7 +117,7 @@ export function CashActGuideArticle() {
             </ul>
             <p>
               Example: a married couple with two under-17 dependents and AGI at or below $150,000
-              would show an $8,000 CASH Act total versus a $2,400 enacted estimate — $5,600 more.
+ would show an $8,000 CASH Act total versus a $2,400 enacted estimate; $5,600 more.
             </p>
           </div>
         </article>

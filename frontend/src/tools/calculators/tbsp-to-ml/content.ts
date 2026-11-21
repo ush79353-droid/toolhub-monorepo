@@ -20,7 +20,7 @@ export const TBSPML_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'what-is-milliliter', label: 'What Is a Milliliter?' },
   { id: 'conversion', label: 'What Is the Conversion Between Tablespoons and Milliliters?' },
   { id: 'how-to-convert', label: 'How to Convert Tablespoons to Milliliters' },
-  { id: 'reference-table', label: 'Quick Reference — US tbsp to mL' },
+  { id: 'reference-table', label: 'Quick Reference; US tbsp to mL' },
   { id: 'teaspoons', label: 'What About Teaspoons?' },
   { id: 'related-tools', label: 'Other Useful Volume Converters' },
   { id: 'tbspml-faq', label: 'Frequently Asked Questions' },
@@ -78,7 +78,7 @@ export const TBSPML_GUIDE_SECTIONS: readonly GuideSection[] = [
       `US customary: mL = tbsp × ${ML_PER_US_TBSP}.`,
       `Metric: mL = tbsp × ${ML_PER_METRIC_TBSP}.`,
       `Australian: mL = tbsp × ${ML_PER_AU_TBSP}.`,
-      `Example — 3 US tablespoons: 3 × ${ML_PER_US_TBSP} ≈ ${formatVolume(usTablespoonsToMl(3))} mL.`,
+      `Example; 3 US tablespoons: 3 × ${ML_PER_US_TBSP} ≈ ${formatVolume(usTablespoonsToMl(3))} mL.`,
       `The reverse formula is tbsp = mL ÷ (mL per tablespoon). For example, 100 mL ≈ ${formatVolume(mlToUsTablespoons(100))} US tablespoons.`,
     ],
     formula: `US: mL = tbsp × ${ML_PER_US_TBSP}\nMetric: mL = tbsp × ${ML_PER_METRIC_TBSP}\nAustralian: mL = tbsp × ${ML_PER_AU_TBSP}\n3 US tbsp ≈ ${formatVolume(usTablespoonsToMl(3))} mL`,
@@ -96,7 +96,7 @@ export const TBSPML_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'reference-table',
-    title: 'Quick Reference — US tbsp to mL',
+    title: 'Quick Reference; US tbsp to mL',
     paragraphs: [
       'This table uses the exact US customary tablespoon factor from the conversion engine. Rounded display values are for reading convenience only.',
     ],

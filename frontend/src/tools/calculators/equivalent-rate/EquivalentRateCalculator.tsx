@@ -48,7 +48,7 @@ export function EquivalentRateCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Nominal interest rate: ${input.nominalInterestRatePercent}%`,
         `Compounding frequency: ${input.compoundingFrequency}/yr`,
         `New compounding frequency: ${input.newCompoundingFrequency}/yr`,

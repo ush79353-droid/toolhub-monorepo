@@ -86,7 +86,7 @@ export function HomeValueUsResults({ result }: HomeValueUsResultsProps) {
           ? ` · CPI: ${result.cpiSource} (${result.cpiFredId})`
           : ''}
         . This estimate applies metro-level index changes to the entered purchase
-        price — it is not an appraisal of a specific home.
+ price; it is not an appraisal of a specific home.
       </p>
 
       {result.staleData ? (

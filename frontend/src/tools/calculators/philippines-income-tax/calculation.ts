@@ -25,7 +25,7 @@ import type { EmploymentStatus } from './types';
 export const PH_TAX_YEAR_LABEL = '2025';
 
 export const PH_TAX_YEAR_NOTE =
-  'CY 2025 estimates — BIR TRAIN 2023+ withholding/graduated rates; SSS CI 2024-006/008; PhilHealth PA 2025-0002; Pag-IBIG Circular 460. Illustrative payroll/self-employed sketch only.';
+  'CY 2025 estimates; BIR TRAIN 2023+ withholding/graduated rates; SSS CI 2024-006/008; PhilHealth PA 2025-0002; Pag-IBIG Circular 460. Illustrative payroll/self-employed sketch only.';
 
 /** SSS MSC from monthly compensation (CI 2024-006 compensation ranges). */
 export function sssMonthlySalaryCredit(monthlyCompensation: number): number {
@@ -263,7 +263,7 @@ export function shareResultText(input: {
 }): string {
   const { title, monthlyIncomeRaw, result } = input;
   return [
-    `${title} — Omega Calculators`,
+    `${title} | Omega Calculators`,
     `Tax year: CY ${result.taxYearLabel}`,
     `Status: ${result.employmentStatus}`,
     `Monthly income: ₱${monthlyIncomeRaw}`,

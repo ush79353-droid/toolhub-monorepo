@@ -40,8 +40,8 @@ export const FEET_TO_YARDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Converting Feet to Yards',
     paragraphs: [
       `Divide feet by ${FEET_PER_YARD} because each yard contains three feet.`,
-      `Example — convert 24 feet: 24 ÷ ${FEET_PER_YARD} = ${formatLength(feetToYards(24))}. Therefore 24 feet = 8 yards.`,
-      `Example — convert 45 feet: 45 ÷ ${FEET_PER_YARD} = ${formatLength(feetToYards(45))}. Therefore 45 feet = 15 yards.`,
+      `Example; convert 24 feet: 24 ÷ ${FEET_PER_YARD} = ${formatLength(feetToYards(24))}. Therefore 24 feet = 8 yards.`,
+      `Example; convert 45 feet: 45 ÷ ${FEET_PER_YARD} = ${formatLength(feetToYards(45))}. Therefore 45 feet = 15 yards.`,
     ],
     formula: `Yards = Feet ÷ ${FEET_PER_YARD}`,
   },
@@ -50,8 +50,8 @@ export const FEET_TO_YARDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Converting Yards to Feet',
     paragraphs: [
       `Multiply yards by ${FEET_PER_YARD}.`,
-      `Example — convert 22 yards: 22 × ${FEET_PER_YARD} = ${formatLength(yardsToFeet(22))}. Therefore 22 yards = 66 feet.`,
-      `Example — convert 10 yards: 10 × ${FEET_PER_YARD} = ${formatLength(yardsToFeet(10))}. Therefore 10 yards = 30 feet.`,
+      `Example; convert 22 yards: 22 × ${FEET_PER_YARD} = ${formatLength(yardsToFeet(22))}. Therefore 22 yards = 66 feet.`,
+      `Example; convert 10 yards: 10 × ${FEET_PER_YARD} = ${formatLength(yardsToFeet(10))}. Therefore 10 yards = 30 feet.`,
     ],
     formula: `Feet = Yards × ${FEET_PER_YARD}`,
   },

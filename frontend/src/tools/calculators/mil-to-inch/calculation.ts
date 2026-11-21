@@ -34,7 +34,7 @@ export function inchToMil(inches: number): number {
 export function shareResultText(meters: number): string {
   const values = allFromMeters(meters);
   return [
-    'mil to inch Conversion — Omega Calculators',
+    'mil to inch Conversion | Omega Calculators',
     '',
     `${formatLength(values.mil)} mil = ${formatLength(values.in)} inches`,
     '',

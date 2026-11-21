@@ -13,7 +13,7 @@ export const TRIPLE_DISCOUNT_FAQS: readonly FAQItem[] = [
   {
     question: 'Why isn’t 20% + 20% + 20% equal to 60% off?',
     answer:
-      'Discounts stack sequentially. Each percent applies to the already-reduced price, not the original. The combined effective discount is [1 − (1−D1/100)(1−D2/100)(1−D3/100)] × 100 — for three 20% discounts that is 48.8%, not 60%.',
+      'Discounts stack sequentially. Each percent applies to the already-reduced price, not the original. The combined effective discount is [1 − (1−D1/100)(1−D2/100)(1−D3/100)] × 100, for three 20% discounts that is 48.8%, not 60%.',
   },
   {
     question: 'How is the final price calculated?',

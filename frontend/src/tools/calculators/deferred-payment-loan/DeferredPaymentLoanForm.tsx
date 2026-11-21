@@ -587,7 +587,7 @@ export function DeferredPaymentLoanForm({
                       <td className="px-3 py-2 text-muted-foreground">Payoff date</td>
                       <td className="px-3 py-2">{result.without.payoffDate}</td>
                       <td className="px-3 py-2">{result.withDefer.payoffDate}</td>
-                      <td className="px-3 py-2">—</td>
+ <td className="px-3 py-2">; </td>
                     </tr>
                   </tbody>
                 </table>

@@ -27,7 +27,7 @@ export const DM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Is a Decimeter?',
     paragraphs: [
       'A decimeter (dm) is a metric length unit equal to one-tenth of a meter. The prefix deci- means one-tenth, so 1 dm = 0.1 m = 10 cm = 100 mm.',
-      'Decimeters are less common in everyday speech than centimeters or meters, but they clarify metric scaling. Do not confuse linear dm with dm² (area) or dm³ (volume). Notably, 1 dm³ equals exactly 1 liter — that relationship is for cubic decimeters, not for a one-dimensional decimeter length.',
+      'Decimeters are less common in everyday speech than centimeters or meters, but they clarify metric scaling. Do not confuse linear dm with dm² (area) or dm³ (volume). Notably, 1 dm³ equals exactly 1 liter; that relationship is for cubic decimeters, not for a one-dimensional decimeter length.',
     ],
     formula: '1 dm = 0.1 m = 10 cm = 100 mm   ·   1 dm³ = 1 L (volume only)',
   },

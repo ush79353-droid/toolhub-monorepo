@@ -72,7 +72,7 @@ export function calculateMinute(input: MinuteInput): MinuteResult {
 
 export function shareResultText(result: MinuteResult): string {
   return [
-    'Minute Converter — Omega Calculators',
+    'Minute Converter | Omega Calculators',
     '',
     `${formatDuration(result.minutes)} minutes = ${formatDuration(result.hours)} hours`,
     `${formatDuration(result.minutes)} minutes = ${formatDuration(result.seconds)} seconds`,

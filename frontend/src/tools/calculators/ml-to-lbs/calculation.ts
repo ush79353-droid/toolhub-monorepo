@@ -62,7 +62,7 @@ export function shareResultText(
   const massLabel =
     MASS_UNIT_OPTIONS.find((o) => o.value === result.massUnit)?.label ?? result.massUnit;
   return [
-    'mL to lbs Conversion — Omega Calculators',
+    'mL to lbs Conversion | Omega Calculators',
     '',
     `Ingredient: ${name}`,
     `Density: ${formatMeasure(result.densityValue)} ${densityLabel}`,

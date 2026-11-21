@@ -72,8 +72,8 @@ export function HeroesActStimulusCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
-        'Historical / hypothetical HEROES Act (H.R. 6800, 2020) — not a current benefit.',
+        `${metadata.title} | Omega Calculators`,
+        'Historical / hypothetical HEROES Act (H.R. 6800, 2020); not a current benefit.',
         `Filing status: ${FILING_LABEL[input.filingStatus]}`,
         `Dependents: ${input.dependents}`,
         `AGI: $${input.agi}`,

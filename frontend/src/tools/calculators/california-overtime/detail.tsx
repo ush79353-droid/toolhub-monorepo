@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate regular and overtime pay from an hourly-style rate, schedule, and 1.5× multiplier — with real FX. Not a California legal-compliance engine.',
+    'Estimate regular and overtime pay from an hourly-style rate, schedule, and 1.5× multiplier, with real FX. Not a California legal-compliance engine.',
   asideAriaLabel: 'Interactive California Overtime Calculator',
   tocItems: CALIFORNIA_OVERTIME_TOC_ITEMS,
   GuideArticle: CaliforniaOvertimeGuideArticle,

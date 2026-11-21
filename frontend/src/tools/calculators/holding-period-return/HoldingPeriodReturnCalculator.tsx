@@ -105,7 +105,7 @@ export function HoldingPeriodReturnCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Bought price: ${formatCurrencyValue(result.boughtPrice, result.currency)}`,
         `Current price: ${formatCurrencyValue(result.currentPrice, result.currency)}`,
         `Dividend income: ${formatCurrencyValue(result.dividendIncome, result.currency)}`,

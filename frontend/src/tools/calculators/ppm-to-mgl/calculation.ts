@@ -74,7 +74,7 @@ export function shareResultText(input: {
   molarConcUnit: MolarConcUnit;
 }): string {
   const lines = [
-    'PPM to mg/L Converter — Omega Calculators',
+    'PPM to mg/L Converter | Omega Calculators',
     '',
     `PPM (mass-based): ${formatConc(input.ppm)} ppm`,
     `Solution density: ${formatConc(input.densityDisplay)} ${DENSITY_UNIT_SYMBOLS[input.densityUnit]}`,

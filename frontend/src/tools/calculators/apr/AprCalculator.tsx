@@ -92,7 +92,7 @@ export function AprCalculator({
   const shareable = result != null && result.formattedApr != null;
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `APR: ${result!.formattedApr}%`,
         result!.formattedEar != null
           ? `Effective annual rate: ${result!.formattedEar}%`

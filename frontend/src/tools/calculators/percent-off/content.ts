@@ -96,7 +96,7 @@ export const PERCENT_OFF_FAQS: readonly FAQItem[] = [
   {
     question: 'Can a discount be greater than 100%?',
     answer:
-      'In standard retail percent-off mode, no — that would imply a negative sale price. This calculator rejects values above 100%.',
+      'In standard retail percent-off mode, No: that would imply a negative sale price. This calculator rejects values above 100%.',
   },
   {
     question: 'What is the difference between percent off and percentage points?',

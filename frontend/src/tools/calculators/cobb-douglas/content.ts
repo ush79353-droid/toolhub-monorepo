@@ -95,12 +95,12 @@ export const COBB_DOUGLAS_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between marginal productivity and average productivity?',
     answer:
-      'Average product is Y per unit of an input (Y/L or Y/K). Marginal product is the derivative with respect to that input — the incremental output of a small change.',
+      'Average product is Y per unit of an input (Y/L or Y/K). Marginal product is the derivative with respect to that input: the incremental output of a small change.',
   },
   {
     question: 'How is Cobb-Douglas used in economics?',
     answer:
-      'It appears in growth theory, firm production analysis, and empirical work estimating elasticities and productivity — as a tractable, CES=1 special case.',
+      'It appears in growth theory, firm production analysis, and empirical work estimating elasticities and productivity, as a tractable, CES=1 special case.',
   },
   {
     question: 'Is the Cobb-Douglas production function realistic?',

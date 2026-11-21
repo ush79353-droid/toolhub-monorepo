@@ -47,7 +47,7 @@ export const OAT_FAQS: readonly FAQItem[] = [
   {
     question: 'What are operating assets?',
     answer:
-      'In this calculator they are the sum of cash, accounts receivable, inventory, prepaid expenses, and fixed assets — the lines shown in the first section.',
+      'In this calculator they are the sum of cash, accounts receivable, inventory, prepaid expenses, and fixed assets: the lines shown in the first section.',
   },
   {
     question: 'What does the × mean?',

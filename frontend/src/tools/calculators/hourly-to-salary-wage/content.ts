@@ -29,6 +29,6 @@ export const HOURLY_TO_SALARY_WAGE_FAQS: readonly FAQItem[] = [
   {
     question: 'Is this the same as Hourly to Annual Salary or Annual Salary per Hour?',
     answer:
-      'No. Hourly to Annual starts from hourly only (with days/week). Annual Salary per Hour lets any period be authoritative. This Wage Calculator syncs hourly ↔ annual and shows daily, monthly, weekly, and biweekly pay — no overtime, tax, or unpaid leave.',
+      'No. Hourly to Annual starts from hourly only (with days/week). Annual Salary per Hour lets any period be authoritative. This Wage Calculator syncs hourly ↔ annual and shows daily, monthly, weekly, and biweekly pay; no overtime, tax, or unpaid leave.',
   },
 ];

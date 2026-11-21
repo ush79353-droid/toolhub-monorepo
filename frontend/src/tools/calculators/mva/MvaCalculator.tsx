@@ -114,7 +114,7 @@ export function MvaCalculator({
   const summary =
     result && result.mva !== null
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Current share price: ${symbol}${formatMoney(input.currentSharePrice, input.currency)}`,
           `Shares outstanding: ${input.sharesOutstanding}`,
           `Current market value: ${symbol}${result.currentMarketValueDisplay}`,

@@ -117,7 +117,7 @@ export function ParkingRatioForm({
         <FieldLabel
           htmlFor="parking-ratio"
           label="Parking ratio"
-          tip="(Parking spots ÷ rentable area) × 1000 — spaces per 1,000 area units."
+          tip="(Parking spots ÷ rentable area) × 1000; spaces per 1,000 area units."
         />
         <div className="relative">
           <input

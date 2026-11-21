@@ -205,7 +205,7 @@ export function GallonForm({
         <div className="space-y-4">
           <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-xs leading-relaxed text-amber-950/90">
             Gallons measure volume; kilograms and pounds measure mass. Water weight
-            requires density. Default density 1 kg/L is an approximate assumption—not
+ requires density. Default density 1 kg/L is an approximate assumption, not
             exact at every temperature.
           </div>
 

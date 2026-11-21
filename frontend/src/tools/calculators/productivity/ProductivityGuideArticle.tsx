@@ -37,7 +37,7 @@ export function ProductivityGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Managers use productivity indicators for workforce planning, cost
-        awareness, growth capacity, and operational decisions — always alongside
+ awareness, growth capacity, and operational decisions; always alongside
         margins, quality, and demand.
       </p>
 
@@ -296,7 +296,7 @@ export function ProductivityGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Automation can lift output per hour while changing roles and adding
-        implementation cost — measure both sides.
+ implementation cost; measure both sides.
       </p>
 
       <h2
@@ -329,7 +329,7 @@ export function ProductivityGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Company-level revenue productivity should not be used alone to judge
-        individual employees — roles and support systems differ.
+ individual employees; roles and support systems differ.
       </p>
 
       <h2
@@ -356,7 +356,7 @@ export function ProductivityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Revenue productivity is not a complete efficiency or performance score.
         Market demand, pricing, capital, outsourcing, and role mix all matter.
-        Educational use only — not personalized financial advice.
+ Educational use only; not personalized financial advice.
       </p>
 
       <h2

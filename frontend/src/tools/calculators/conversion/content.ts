@@ -33,7 +33,7 @@ export const CONVERSION_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Is a Conversion Calculator?',
     paragraphs: [
       'A conversion calculator transforms a numerical measurement from one unit into another equivalent unit of the same physical quantity. It is useful for metric and imperial everyday tasks, SI scientific work, cooking, travel, engineering, and digital storage estimates.',
-      'This tool converts within a selected category — length, mass, temperature, and so on. It does not convert incompatible quantities (for example, meters into kilograms).',
+      'This tool converts within a selected category; length, mass, temperature, and so on. It does not convert incompatible quantities (for example, meters into kilograms).',
     ],
   },
   {
@@ -41,7 +41,7 @@ export const CONVERSION_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Different Measurement Systems',
     paragraphs: [
       'The International System of Units (SI) is the modern metric standard used in science and most countries. U.S. customary and imperial systems remain common for everyday length, volume, and mass in some regions.',
-      'Some unit names look similar across systems but differ in definition — for example, the U.S. liquid gallon and the imperial gallon. This calculator labels those distinctions explicitly.',
+      'Some unit names look similar across systems but differ in definition, for example, the U.S. liquid gallon and the imperial gallon. This calculator labels those distinctions explicitly.',
     ],
   },
   {
@@ -90,7 +90,7 @@ export const CONVERSION_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'mass',
     title: 'Weight and Mass Conversion',
     paragraphs: [
-      'In everyday speech people often say “weight” when they mean mass. This calculator converts mass units such as kilograms, grams, pounds, and ounces. It does not convert force (newtons) in the mass category — use the Force category for that.',
+      'In everyday speech people often say “weight” when they mean mass. This calculator converts mass units such as kilograms, grams, pounds, and ounces. It does not convert force (newtons) in the mass category. Use the Force category for that.',
     ],
     formula: '1 kg = 1,000 g · 1 lb = 0.45359237 kg',
   },

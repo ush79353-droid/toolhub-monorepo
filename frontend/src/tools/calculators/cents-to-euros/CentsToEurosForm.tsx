@@ -135,7 +135,7 @@ export function CentsToEurosForm({
                 className="text-left text-primary underline-offset-2 hover:underline"
                 onClick={() => onApplyExample(id)}
               >
-                Example {id} — {label}
+ Example {id}; {label}
               </button>
             </li>
           ))}

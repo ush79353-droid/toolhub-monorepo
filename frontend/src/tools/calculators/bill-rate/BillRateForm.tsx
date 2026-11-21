@@ -141,7 +141,7 @@ export function BillRateForm({
             <span>Multiplier</span>
             <InfoTooltip
               label="Multiplier"
-              text="User-defined pricing uplift for overhead, indirect costs, and margin. Default 4 is a common consulting rule of thumb — not a tax rate. Never FX-converted."
+              text="User-defined pricing uplift for overhead, indirect costs, and margin. Default 4 is a common consulting rule of thumb; not a tax rate. Never FX-converted."
             />
           </label>
           <FieldShell error={errors.multiplier}>

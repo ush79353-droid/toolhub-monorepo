@@ -36,7 +36,7 @@ export const KB_MB_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-many-kb',
     title: 'How Many Kilobytes Are in a Megabyte?',
     paragraphs: [
-      'Under SI decimal units, 1 MB = 1000 kB. Under IEC binary units, 1 MiB = 1024 KiB. These are different systems—do not treat them as interchangeable definitions of “mega.”',
+      'Under SI decimal units, 1 MB = 1000 kB. Under IEC binary units, 1 MiB = 1024 KiB. These are different systems, do not treat them as interchangeable definitions of “mega.”',
     ],
     formula: '1 MB = 1000 kB · 1 MiB = 1024 KiB',
   },

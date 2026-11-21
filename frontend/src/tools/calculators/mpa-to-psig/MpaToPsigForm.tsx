@@ -91,7 +91,7 @@ export function MpaToPsigForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Both inputs represent gauge pressure, measured relative to atmospheric pressure. Exact via
-        Pa: 1 MPa(g) ≈ {formatPressure(PSIG_PER_MPA)} psig. No atmospheric offset is applied —
+ Pa: 1 MPa(g) ≈ {formatPressure(PSIG_PER_MPA)} psig. No atmospheric offset is applied; 
         absolute MPa(a) is not converted here. Negative values mean pressure below ambient, not
         negative absolute pressure.
       </div>
@@ -99,7 +99,7 @@ export function MpaToPsigForm({
       <FieldShell
         label="Pressure in megapascals (gauge)"
         htmlFor="mpa-to-psig-mpa"
-        tip="Megapascals gauge MPa(g). Relative to ambient atmosphere — not absolute MPa(a)."
+        tip="Megapascals gauge MPa(g). Relative to ambient atmosphere; not absolute MPa(a)."
         error={errors.MPa}
       >
         <div className="flex gap-2">
@@ -124,7 +124,7 @@ export function MpaToPsigForm({
       <FieldShell
         label="Pressure in pounds per square inch gauge"
         htmlFor="mpa-to-psig-psig"
-        tip="Pounds-force per square inch gauge (psig). Relative to ambient atmosphere — not psia."
+        tip="Pounds-force per square inch gauge (psig). Relative to ambient atmosphere; not psia."
         error={errors.psig}
       >
         <div className="flex gap-2">

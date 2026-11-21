@@ -25,7 +25,7 @@ export const DECIMAL_HEX_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-hex',
     title: 'What Is the Hexadecimal System?',
     paragraphs: [
-      'Hexadecimal is base 16. It uses digits 0–9 and letters A–F for values ten through fifteen. Decimal is base 10; hexadecimal packs more value into fewer digits and maps cleanly onto binary because 16 = 2⁴ — each hex digit is exactly four bits.',
+      'Hexadecimal is base 16. It uses digits 0–9 and letters A–F for values ten through fifteen. Decimal is base 10; hexadecimal packs more value into fewer digits and maps cleanly onto binary because 16 = 2⁴; each hex digit is exactly four bits.',
       'Programmers use hexadecimal for memory addresses, machine dumps, RGB colors (#FF5733), and bit masks. It is a human-friendly shorthand for binary patterns, not a different computer architecture.',
     ],
     table: [
@@ -132,7 +132,7 @@ export const DECIMAL_HEX_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'What is the hexadecimal value of 32767?',
-    answer: '32767₁₀ = 7FFF₁₆ — the maximum positive signed 16-bit integer.',
+    answer: '32767₁₀ = 7FFF₁₆: the maximum positive signed 16-bit integer.',
   },
   {
     question: 'How do negative decimal numbers convert to hexadecimal?',

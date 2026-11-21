@@ -74,7 +74,7 @@ export function BoatLoanCalculator({
   const termLabel = input.termUnit === 'yrs' ? 'yrs' : 'mos';
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan amount: ${loanSymbol}${input.loanAmount || '0'}`,
         `Loan term: ${input.loanTerm} ${termLabel}`,
         `Annual interest rate: ${input.annualInterestRatePercent}%`,

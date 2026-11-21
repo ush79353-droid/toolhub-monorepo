@@ -45,7 +45,7 @@ export const PRODUCTIVITY_FAQS: readonly FAQItem[] = [
   {
     question: 'What is labor productivity?',
     answer:
-      'Labor productivity relates business output to workforce input — here, revenue per employee and revenue per working hour.',
+      'Labor productivity relates business output to workforce input; here, revenue per employee and revenue per working hour.',
   },
   {
     question: 'How do I calculate productivity?',
@@ -68,7 +68,7 @@ export const PRODUCTIVITY_FAQS: readonly FAQItem[] = [
   {
     question: 'What does revenue per employee measure?',
     answer:
-      'Average revenue generated per worker (or FTE) in the reporting period — not profit or individual performance.',
+      'Average revenue generated per worker (or FTE) in the reporting period; not profit or individual performance.',
   },
   {
     question: 'What does revenue per working hour measure?',
@@ -102,7 +102,7 @@ export const PRODUCTIVITY_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good revenue per employee?',
     answer:
-      'It depends on industry, capital intensity, outsourcing, and business model. Compare peers and history — there is no universal ideal.',
+      'It depends on industry, capital intensity, outsourcing, and business model. Compare peers and history; there is no universal ideal.',
   },
   {
     question: 'What is a good revenue per hour?',
@@ -122,12 +122,12 @@ export const PRODUCTIVITY_FAQS: readonly FAQItem[] = [
   {
     question: 'Can productivity be zero?',
     answer:
-      'Yes — zero revenue with positive employees or hours yields zero revenue productivity.',
+      'Yes: zero revenue with positive employees or hours yields zero revenue productivity.',
   },
   {
     question: 'Can revenue per employee be negative?',
     answer:
-      'Not in this tool — negative revenue is rejected. Use profit metrics for losses.',
+      'Not in this tool; negative revenue is rejected. Use profit metrics for losses.',
   },
   {
     question: 'What happens when employee count is zero?',
@@ -157,7 +157,7 @@ export const PRODUCTIVITY_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I calculate total labor hours?',
     answer:
-      'Sum hours worked by all included workers for the period — do not multiply a per-person total by headcount again.',
+      'Sum hours worked by all included workers for the period; do not multiply a per-person total by headcount again.',
   },
   {
     question: 'How do I convert minutes into working hours?',
@@ -171,7 +171,7 @@ export const PRODUCTIVITY_FAQS: readonly FAQItem[] = [
   {
     question: 'Why do productivity results differ by industry?',
     answer:
-      'Pricing, capital intensity, outsourcing, and revenue recognition differ — peer comparisons work best within an industry.',
+      'Pricing, capital intensity, outsourcing, and revenue recognition differ; peer comparisons work best within an industry.',
   },
   {
     question: 'How can a company improve labor productivity?',
@@ -226,7 +226,7 @@ export const PRODUCTIVITY_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I compare productivity across different companies?',
     answer:
-      'Yes with caution — align definitions, periods, and industry context first.',
+      'Yes with caution; align definitions, periods, and industry context first.',
   },
   {
     question: 'What are the limitations of revenue-based productivity?',

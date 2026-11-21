@@ -190,7 +190,7 @@ export function CreditCardPaymentCalculator({
   const balanceSymbol = getCurrencySymbol(input.balanceCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.summary,
         result.breakdown,
         `Balance currency: ${balanceSymbol}`,

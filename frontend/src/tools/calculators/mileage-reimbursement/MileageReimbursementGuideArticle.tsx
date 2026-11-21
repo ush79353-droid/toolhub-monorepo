@@ -17,7 +17,7 @@ export function MileageReimbursementGuideArticle() {
         and maintenance receipt. This tool multiplies your distances by the
         verified rate for the selected period. The title says reimbursement, but
         the result is labeled mileage deduction because the math follows IRS
-        deduction rates — not a specific employer reimbursement policy.
+ deduction rates; not a specific employer reimbursement policy.
       </p>
 
       <h2
@@ -38,7 +38,7 @@ export function MileageReimbursementGuideArticle() {
         </li>
         <li>
           Read the combined mileage deduction in USD. Treat it as a nominal
-          estimate — eligibility and Schedule limitations still apply.
+ estimate; eligibility and Schedule limitations still apply.
         </li>
       </ol>
 

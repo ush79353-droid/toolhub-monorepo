@@ -103,7 +103,7 @@ export function HouseAffordabilityCalculator({
     setFeedback(null);
   };
 
-  const summaryParts: string[] = [`${metadata.title} — Omega Calculators`];
+  const summaryParts: string[] = [`${metadata.title} | Omega Calculators`];
   if (incomeResult) {
     const s = getCurrencySymbol(incomeResult.currency);
     summaryParts.push(
@@ -120,7 +120,7 @@ export function HouseAffordabilityCalculator({
   }
   const summary =
     incomeResult || budgetResult
-      ? [...summaryParts, 'Estimate only — not a mortgage preapproval.'].join(
+      ? [...summaryParts, 'Estimate only; not a mortgage preapproval.'].join(
           '\n'
         )
       : '';

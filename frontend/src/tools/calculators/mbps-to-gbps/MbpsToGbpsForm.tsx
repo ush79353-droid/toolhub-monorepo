@@ -56,7 +56,7 @@ export function MbpsToGbpsForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Lowercase <strong>b</strong> means bits; uppercase <strong>B</strong> means bytes. Edit any
-        field — the others update from the same bit rate. <strong>1 Gbps = 1000 Mbps</strong>;{' '}
+ field: the others update from the same bit rate. <strong>1 Gbps = 1000 Mbps</strong>;{' '}
         <strong>1 GB/s = 8 Gbps = 8000 Mbps</strong>.
       </div>
 

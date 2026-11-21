@@ -15,7 +15,7 @@ export function BlendedRateGuideArticle() {
         rates on multiple loans, mortgages, or other interest-bearing balances.
         Because each rate is weighted by its principal, a large low-rate loan
         pulls the blend down more than a small high-rate loan pulls it up. It
-        is a portfolio summary metric—not a lender quote by itself.
+ is a portfolio summary metric, not a lender quote by itself.
       </p>
 
       <h2
@@ -57,7 +57,7 @@ export function BlendedRateGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The arithmetic mean of 4% and 15% is 9.5%. But $100,000 at 4% and
-        $10,000 at 15% blend to 5%—because most of the money sits at 4%. Using
+ $10,000 at 15% blend to 5%; because most of the money sits at 4%. Using
         a simple average would overstate the portfolio rate.
       </p>
 
@@ -96,7 +96,7 @@ export function BlendedRateGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         It summarizes the average cost of capital across mixed debts, helps
         compare consolidation or refinance ideas against today’s weighted cost,
-        and clarifies how portfolio composition—not just headline rates—drives
+ and clarifies how portfolio composition, not just headline rates, drives
         overall interest expense.
       </p>
 

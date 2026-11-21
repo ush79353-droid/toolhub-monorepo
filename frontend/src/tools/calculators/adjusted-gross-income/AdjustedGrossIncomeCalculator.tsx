@@ -161,7 +161,7 @@ export function AdjustedGrossIncomeCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Tax year: ${TAX_YEAR_LABEL}`,
         `Filing status: ${input.filingStatus}`,
         `Gross income: ${getCurrencySymbol(result.grossIncomeCurrency)}${result.formattedGrossIncome} ${result.grossIncomeCurrency}`,

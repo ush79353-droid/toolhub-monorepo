@@ -13,7 +13,7 @@ export const GEORGIA_OVERTIME_FAQS: readonly FAQItem[] = [
   {
     question: 'Does this enforce Georgia or FLSA overtime eligibility?',
     answer:
-      'No. Inputs are a regular rate, weekly hours, a multiplier (default 1.5×), and overtime hours. Without verified eligibility and a workweek schedule, this tool cannot determine statutory overtime entitlement — use it as a pay estimate only.',
+      'No. Inputs are a regular rate, weekly hours, a multiplier (default 1.5×), and overtime hours. Without verified eligibility and a workweek schedule, this tool cannot determine statutory overtime entitlement. Use it as a pay estimate only.',
   },
   {
     question: 'How is monthly regular pay calculated?',

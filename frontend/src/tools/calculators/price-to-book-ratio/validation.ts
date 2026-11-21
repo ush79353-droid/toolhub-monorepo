@@ -174,7 +174,7 @@ export function validatePriceToBookInput(
   if (math.priceToBookRatio !== null) {
     interpretation = interpretPbRatio(math.priceToBookRatio);
   } else if (math.bookValuePerShare < 0) {
-    interpretation = `Book value per share is ${money(math.bookValuePerShare)}. Common book equity is negative — a conventional price-to-book multiple is not meaningful.`;
+    interpretation = `Book value per share is ${money(math.bookValuePerShare)}. Common book equity is negative: a conventional price-to-book multiple is not meaningful.`;
   }
 
   const result: PriceToBookResult = {

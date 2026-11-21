@@ -110,7 +110,7 @@ export function InvestmentFeeCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Invested amount: ${symbol}${result.formattedInvestedAmount}`,
         `Effective return: ${result.formattedEffectiveReturn}%`,
         `Final fund value: ${symbol}${result.formattedFinalFundValue}`,

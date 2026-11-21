@@ -25,7 +25,7 @@ export const MILLIONAIRE_FAQS: readonly FAQItem[] = [
   {
     question: 'How long does it take to save one million dollars?',
     answer:
-      'Duration depends on initial savings, periodic contributions, investment return, compounding frequency, and deposit timing. With $20,000 saved, $1,000 monthly deposits, and 4% annual interest compounded monthly, this calculator estimates roughly 35 years — change the inputs to see other scenarios.',
+      'Duration depends on initial savings, periodic contributions, investment return, compounding frequency, and deposit timing. With $20,000 saved, $1,000 monthly deposits, and 4% annual interest compounded monthly, this calculator estimates roughly 35 years; change the inputs to see other scenarios.',
   },
   {
     question: 'How much should I save each month to become a millionaire?',
@@ -65,6 +65,6 @@ export const MILLIONAIRE_FAQS: readonly FAQItem[] = [
   {
     question: 'Is one million dollars enough to retire?',
     answer:
-      'Retirement adequacy depends on living expenses, location, inflation, healthcare costs, retirement length, other income, and investment strategy. One million dollars is not universally enough or insufficient — it depends on personal circumstances.',
+      'Retirement adequacy depends on living expenses, location, inflation, healthcare costs, retirement length, other income, and investment strategy. One million dollars is not universally enough or insufficient; it depends on personal circumstances.',
   },
 ];

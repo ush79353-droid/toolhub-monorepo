@@ -40,7 +40,7 @@ export const KPA_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Use the kPa Converter to quickly convert pressure measurements between kilopascals (kPa), bars, pounds per square inch (psi), and standard atmospheres (atm). Enter a pressure value in any field to calculate the equivalent pressure in the other units automatically.',
       `The pascal is the SI unit of pressure. A kilopascal equals ${PASCALS_PER_KPA} pascals. Pressure is force per unit area: 1 Pa = 1 N/m².`,
-      'Kilopascals appear in atmospheric pressure, industrial measurements, and engineering. This converter changes units only — it does not convert gauge pressure into absolute pressure.',
+      'Kilopascals appear in atmospheric pressure, industrial measurements, and engineering. This converter changes units only; it does not convert gauge pressure into absolute pressure.',
     ],
     formula: `1 kPa = ${PASCALS_PER_KPA} Pa\n1 Pa = 1 N/m²`,
   },

@@ -73,7 +73,7 @@ export const LIFO_INVENTORY_FAQS: readonly FAQItem[] = [
   {
     question: 'How does LIFO affect gross profit?',
     answer:
-      'When purchase costs rise, LIFO often raises COGS and lowers gross profit versus FIFO for the same sales — outcomes reverse if costs fall.',
+      'When purchase costs rise, LIFO often raises COGS and lowers gross profit versus FIFO for the same sales; outcomes reverse if costs fall.',
   },
   {
     question: 'How does LIFO affect inventory valuation?',
@@ -143,7 +143,7 @@ export const LIFO_INVENTORY_FAQS: readonly FAQItem[] = [
   {
     question: 'How does LIFO affect taxes?',
     answer:
-      'Where permitted, higher COGS can reduce taxable income in rising-cost periods — subject to jurisdiction-specific rules. Not universal advice.',
+      'Where permitted, higher COGS can reduce taxable income in rising-cost periods, subject to jurisdiction-specific rules. Not universal advice.',
   },
   {
     question: 'Can LIFO be used for perishable inventory?',
@@ -168,7 +168,7 @@ export const LIFO_INVENTORY_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens if units sold exceed units purchased?',
     answer:
-      'The sale is invalid for this model — the calculator blocks insufficient inventory rather than creating negative stock.',
+      'The sale is invalid for this model: the calculator blocks insufficient inventory rather than creating negative stock.',
   },
   {
     question:

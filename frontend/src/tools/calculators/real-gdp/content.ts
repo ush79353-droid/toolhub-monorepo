@@ -72,7 +72,7 @@ export const REAL_GDP_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a GDP deflator of 125 mean?',
     answer:
-      'It means the measured price level is 25% above the base-year level (100). It is a cumulative price-level comparison under the chosen methodology — not automatically “25% inflation in the latest year.”',
+      'It means the measured price level is 25% above the base-year level (100). It is a cumulative price-level comparison under the chosen methodology; not automatically “25% inflation in the latest year.”',
   },
   {
     question: 'How do you calculate real GDP growth?',
@@ -122,6 +122,6 @@ export const REAL_GDP_FAQS: readonly FAQItem[] = [
   {
     question: 'How does monetary policy affect real GDP?',
     answer:
-      'Central banks influence short-term interest rates, credit conditions, and inflation expectations. Those channels can affect spending, investment, and employment, and therefore real GDP over the business cycle — with lags and uncertainty. This calculator does not forecast policy outcomes.',
+      'Central banks influence short-term interest rates, credit conditions, and inflation expectations. Those channels can affect spending, investment, and employment, and therefore real GDP over the business cycle, with lags and uncertainty. This calculator does not forecast policy outcomes.',
   },
 ];

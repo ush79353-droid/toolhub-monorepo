@@ -119,7 +119,7 @@ export function CarAffordabilityForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Estimates the maximum vehicle price from your monthly payment budget, cash, trade-in,
-          rate, and term — not a lender approval.
+ rate, and term; not a lender approval.
         </p>
         <Button type="button" variant="ghost" className="h-8 px-2 text-xs" onClick={onLoadExample}>
           Load example
@@ -144,7 +144,7 @@ export function CarAffordabilityForm({
         <MoneyField
           id="monthly-payment"
           label="Monthly payment you can afford"
-          tip="Maximum comfortable monthly car-loan payment — the primary affordability constraint."
+          tip="Maximum comfortable monthly car-loan payment: the primary affordability constraint."
           symbol={symbol}
           value={input.monthlyPayment}
           error={errors.monthlyPayment}
@@ -287,7 +287,7 @@ export function CarAffordabilityForm({
         <div className="space-y-3.5 border-t border-border px-3.5 pb-3.5 pt-3 sm:px-4 sm:pb-4">
           <p className="text-xs text-muted-foreground">
             Optional tax and fees reduce the maximum sticker price so your budget still covers
-            acquisition costs. Down payment allocates money you have — it is never added on top.
+ acquisition costs. Down payment allocates money you have; it is never added on top.
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             <div>
@@ -345,7 +345,7 @@ export function CarAffordabilityForm({
             <MoneyField
               id="down-payment"
               label="Down payment"
-              tip="Optional: how much of money you have to put down. Replaces the full available-cash contribution — never added twice."
+              tip="Optional: how much of money you have to put down. Replaces the full available-cash contribution; never added twice."
               symbol={symbol}
               value={input.downPayment}
               error={errors.downPayment}

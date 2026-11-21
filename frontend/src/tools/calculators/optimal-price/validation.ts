@@ -197,13 +197,13 @@ export function validateOptimalPriceInput(
   if (mc.value === 0) {
     status = 'noFiniteOptimum';
     warningMessage =
-      'Zero marginal cost — no positive finite interior optimum from the standard markup condition.';
+      'Zero marginal cost; no positive finite interior optimum from the standard markup condition.';
   } else if (constantElasticity >= -1) {
     status = 'noFiniteOptimum';
     warningMessage =
       constantElasticity >= 0
-        ? 'Observed elasticity is not strictly less than −1 — the default downward-sloping markup model does not support a finite interior optimum.'
-        : 'Elasticity is unit or inelastic (|ε| ≤ 1) — no finite positive interior optimum under unrestricted constant-elasticity demand with positive MC.';
+        ? 'Observed elasticity is not strictly less than −1: the default downward-sloping markup model does not support a finite interior optimum.'
+        : 'Elasticity is unit or inelastic (|ε| ≤ 1); no finite positive interior optimum under unrestricted constant-elasticity demand with positive MC.';
   }
 
   const observedMr = mr.blank || mr.value === null ? null : mr.value;
@@ -213,7 +213,7 @@ export function validateOptimalPriceInput(
     Math.abs(observedMr - impliedMr) > MR_TOLERANCE
   ) {
     if (status === 'valid') status = 'mrInconsistent';
-    warningMessage = `Entered marginal revenue (${formatOpMoney(observedMr, currency)}) differs from MR implied at the initial price (${formatOpMoney(impliedMr, currency)}). MR varies along the demand curve — conflicting values are not mixed into the optimum.`;
+    warningMessage = `Entered marginal revenue (${formatOpMoney(observedMr, currency)}) differs from MR implied at the initial price (${formatOpMoney(impliedMr, currency)}). MR varies along the demand curve; conflicting values are not mixed into the optimum.`;
   }
 
   const result: OptimalPriceResult = {

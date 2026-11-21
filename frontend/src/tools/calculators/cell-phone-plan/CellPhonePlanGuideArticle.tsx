@@ -114,7 +114,7 @@ export function CellPhonePlanGuideArticle() {
         is large, or when you value ownership flexibility. Carrier financing can win when the
         effective cost after realistic interest is lower and you will keep the invested cash
         disciplined. Contract locks, promotion fine print, and whether you would actually invest the
-        phone price all matter — the calculator does not claim carrier plans are always cheaper.
+ phone price all matter: the calculator does not claim carrier plans are always cheaper.
       </p>
 
       <h2
@@ -126,7 +126,7 @@ export function CellPhonePlanGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Higher savings rates increase interest earned when the withdrawal plan stays feasible, which
         lowers the carrier plan’s effective cost. Monthly compounding applies the annual rate ÷ 12 to
-        the balance after each withdrawal. Results are estimates for the rate you enter — not a
+ the balance after each withdrawal. Results are estimates for the rate you enter; not a
         guaranteed investment return, and not the carrier’s loan APR.
       </p>
 

@@ -121,7 +121,7 @@ export function validateNetOperatingWorkingCapitalInput(
   } else if (netOperatingWorkingCapital < 0) {
     status = 'negativeNowc';
     warningMessage =
-      'Negative NOWC — operating liabilities exceed current operating assets. Not automatically insolvency; interpret with industry, supplier terms, and cash conversion.';
+      'Negative NOWC; operating liabilities exceed current operating assets. Not automatically insolvency; interpret with industry, supplier terms, and cash conversion.';
   }
 
   const result: NetOperatingWorkingCapitalResult = {

@@ -14,7 +14,7 @@ export const SALES_COMMISSION_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a sales commission?',
     answer:
-      'A sales commission is variable pay tied to a defined base—such as gross sales, profit after selected costs, or sales above a threshold. It is added to base salary for the period modeled here.',
+      'A sales commission is variable pay tied to a defined base, such as gross sales, profit after selected costs, or sales above a threshold. It is added to base salary for the period modeled here.',
   },
   {
     question: 'How is the gross-margin and base-pay threshold calculated?',

@@ -36,7 +36,7 @@ export const MM_TO_KM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'mm to km Conversion',
     paragraphs: [
-      'Convert length between millimeters (mm) and kilometers (km). Both are metric units used at very different scales — millimeters for small dimensions, kilometers for distance.',
+      'Convert length between millimeters (mm) and kilometers (km). Both are metric units used at very different scales; millimeters for small dimensions, kilometers for distance.',
       'Useful for engineering, construction, surveying, scientific calculations, manufacturing specs, and educational assignments.',
     ],
   },
@@ -79,10 +79,10 @@ export const MM_TO_KM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Millimeters to Kilometers Conversion Examples',
     paragraphs: [
-      `Example 1 — 10 mm: 10 ÷ ${MM_PER_KILOMETER} = ${formatLength(millimetersToKilometers(10))} km.`,
-      `Example 2 — 2500 mm: 2500 ÷ ${MM_PER_KILOMETER} = ${formatLength(millimetersToKilometers(2500))} km.`,
-      `Example 3 — 50000 mm: 50000 ÷ ${MM_PER_KILOMETER} = ${formatLength(millimetersToKilometers(50000))} km.`,
-      `Example 4 — 3 km: 3 × ${MM_PER_KILOMETER} = ${formatLength(kilometersToMillimeters(3))} mm.`,
+      `Example 1: 10 mm: 10 ÷ ${MM_PER_KILOMETER} = ${formatLength(millimetersToKilometers(10))} km.`,
+      `Example 2: 2500 mm: 2500 ÷ ${MM_PER_KILOMETER} = ${formatLength(millimetersToKilometers(2500))} km.`,
+      `Example 3: 50000 mm: 50000 ÷ ${MM_PER_KILOMETER} = ${formatLength(millimetersToKilometers(50000))} km.`,
+      `Example 4: 3 km: 3 × ${MM_PER_KILOMETER} = ${formatLength(kilometersToMillimeters(3))} mm.`,
     ],
   },
   {

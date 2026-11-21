@@ -6,7 +6,7 @@ export function FinanceGuideArticle() {
   return (
     <article className="prose prose-slate max-w-none rounded-2xl border border-border bg-white px-5 py-6 sm:px-8 sm:py-8">
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
-        The Finance Calculator solves the five classic time-value-of-money variables — future value
+ The Finance Calculator solves the five classic time-value-of-money variables; future value
         (FV), periodic payment (PMT), interest rate (I/Y), number of periods (N), and present value
         (PV). It works like a BA II Plus or HP 12C for investment planning, loan analysis, savings
         projections, and finance coursework. Enter four known values, choose which variable to solve,
@@ -35,7 +35,7 @@ export function FinanceGuideArticle() {
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         The $21 of growth is interest on the original principal plus interest earned on prior
-        interest — the essence of compounding. Adding periodic payments (PMT) extends the same idea
+ interest: the essence of compounding. Adding periodic payments (PMT) extends the same idea
         to loans and savings plans.
       </p>
 
@@ -49,8 +49,8 @@ export function FinanceGuideArticle() {
         PMT is a cash flow that repeats every period: loan installments, mortgage payments, annuity
         withdrawals, or regular investment deposits. Payments at the end of each period form an
         ordinary annuity; payments at the beginning form an annuity due. Use Settings → Payment
-        timing to switch. Cash-flow signs matter — money received is positive; money paid is
-        negative — so a typical loan draw might use a positive PV and a negative PMT.
+ timing to switch. Cash-flow signs matter; money received is positive; money paid is
+ negative, so a typical loan draw might use a positive PV and a negative PMT.
       </p>
 
       <h2
@@ -73,8 +73,8 @@ export function FinanceGuideArticle() {
         The importance of the Finance Calculator
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Everyday decisions — comparing loan offers, estimating how long savings will last, or
-        finding the rate implied by a payment stream — are TVM problems. This tool keeps the math
+ Everyday decisions; comparing loan offers, estimating how long savings will last, or
+ finding the rate implied by a payment stream; are TVM problems. This tool keeps the math
         consistent across payment frequencies and compounding conventions so you can focus on the
         scenario instead of rearranging equations by hand.
       </p>

@@ -4,7 +4,7 @@ import { PE_FAQS, PE_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate a stock’s price-to-earnings (P/E) ratio from share price and earnings per share — with optional EPS from net income, preferred dividends, and shares.',
+    'Calculate a stock’s price-to-earnings (P/E) ratio from share price and earnings per share, with optional EPS from net income, preferred dividends, and shares.',
   asideAriaLabel: 'Interactive Price to Earnings Ratio Calculator',
   tocItems: PE_TOC_ITEMS,
   GuideArticle: PriceToEarningsGuideArticle,

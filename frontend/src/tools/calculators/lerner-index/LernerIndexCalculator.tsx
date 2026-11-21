@@ -95,7 +95,7 @@ export function LernerIndexCalculator({
 
   const shareText = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Price: ${formatCurrencyValue(result.price, result.currency)}`,
         `Marginal cost: ${formatCurrencyValue(result.marginalCost, result.currency)}`,
         `Lerner index: ${result.formattedIndex}`,

@@ -128,7 +128,7 @@ export function validateNetOperatingAssetsInput(
   } else if (netOperatingAssets < 0) {
     status = 'negativeNoa';
     warningMessage =
-      'Negative NOA — operating liabilities exceed operating assets. This is not automatically insolvency; interpret with industry and financing structure.';
+      'Negative NOA; operating liabilities exceed operating assets. This is not automatically insolvency; interpret with industry and financing structure.';
   }
 
   const result: NetOperatingAssetsResult = {

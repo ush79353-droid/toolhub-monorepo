@@ -203,7 +203,7 @@ export function DividendYieldCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         input.dividendsPerPeriod.trim()
           ? `Dividends per period: ${getCurrencySymbol(input.dividendsPerPeriodCurrency)}${input.dividendsPerPeriod} ${input.dividendsPerPeriodCurrency}`
           : null,

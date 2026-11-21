@@ -29,7 +29,7 @@ export const ENERGY_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Is Energy Conversion?',
     paragraphs: [
       'In physics, energy is the capacity to do work or transfer heat. The SI unit of energy is the joule (J). One joule equals one newton-metre: the work done by a force of one newton acting through one metre in the force’s direction.',
-      'Different industries still use legacy units — kilocalories in nutrition, kilowatt-hours on electricity bills, electronvolts in particle physics, and TNT equivalents for large energy releases. Converting everything through joules keeps results consistent.',
+      'Different industries still use legacy units; kilocalories in nutrition, kilowatt-hours on electricity bills, electronvolts in particle physics, and TNT equivalents for large energy releases. Converting everything through joules keeps results consistent.',
       'Energy measures an amount; power measures how quickly energy is transferred (watts = joules per second). This calculator converts energy quantities, not power.',
     ],
     formula: '1 J = 1 N·m',
@@ -38,7 +38,7 @@ export const ENERGY_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'joules-kcal',
     title: 'Joules to kcal and kcal to Joules Conversion',
     paragraphs: [
-      'A thermochemical calorie (cal) equals 4.184 J. A food Calorie — written with a capital C, or as kilocalorie (kcal) — equals 4184 J. This calculator’s Calories (kcal) field uses the food-kilocalorie definition.',
+      'A thermochemical calorie (cal) equals 4.184 J. A food Calorie (written with a capital C, or as kilocalorie (kcal)) equals 4184 J. This calculator’s Calories (kcal) field uses the food-kilocalorie definition.',
       'Joules to kilocalories: kcal = J ÷ 4184. Example: 4184 J = 1 kcal.',
       'Kilocalories to joules: J = kcal × 4184. Example: 250 kcal = 1,046,000 J.',
     ],
@@ -78,7 +78,7 @@ export const ENERGY_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Mass to Energy Conversion',
     paragraphs: [
       'Einstein’s mass–energy equivalence relates rest mass to energy: E = mc², where c = 299,792,458 m/s.',
-      'For 1 gram (0.001 kg): E = 0.001 × (299792458)² ≈ 8.98755 × 10¹³ J. That is the rest-energy equivalent of the mass — not the energy released by chemically burning one gram of material.',
+      'For 1 gram (0.001 kg): E = 0.001 × (299792458)² ≈ 8.98755 × 10¹³ J. That is the rest-energy equivalent of the mass; not the energy released by chemically burning one gram of material.',
       'This section is educational; the calculator itself converts energy units through joules and does not take mass as an input.',
     ],
     formula: 'E = mc² · c = 299,792,458 m/s',
@@ -97,7 +97,7 @@ export const ENERGY_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Length to Energy Conversion',
     paragraphs: [
       'A photon’s energy relates to its vacuum wavelength by E = hc / λ, where h = 6.62607015 × 10⁻³⁴ J·s and c is the speed of light.',
-      'For green light near λ = 550 nm: E ≈ hc / 5.5×10⁻⁷ ≈ 3.61 × 10⁻¹⁹ J ≈ 2.25 eV. This converts photon wavelength to photon energy — it is not a general conversion from arbitrary length into energy.',
+      'For green light near λ = 550 nm: E ≈ hc / 5.5×10⁻⁷ ≈ 3.61 × 10⁻¹⁹ J ≈ 2.25 eV. This converts photon wavelength to photon energy; it is not a general conversion from arbitrary length into energy.',
     ],
     formula: 'E = hc / λ · h = 6.62607015 × 10⁻³⁴ J·s',
   },

@@ -27,7 +27,7 @@ export const REMOTE_VS_ON_LOCATION_FAQS: readonly FAQItem[] = [
   {
     question: 'What are the main costs of on-site employees?',
     answer:
-      'Typical office-level costs include rent or ownership-related operations, setup and furniture, utilities, internet, stationery, cleaning, security, maintenance, and insurance — entered as workplace totals, not multiplied by headcount in this calculator.',
+      'Typical office-level costs include rent or ownership-related operations, setup and furniture, utilities, internet, stationery, cleaning, security, maintenance, and insurance; entered as workplace totals, not multiplied by headcount in this calculator.',
   },
   {
     question: 'Is owning an office cheaper than leasing one?',

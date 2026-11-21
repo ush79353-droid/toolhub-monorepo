@@ -28,7 +28,7 @@ function defaultDraft(): ColorDraft {
 
 function summaryText(formats: ReturnType<typeof formatsFromCanonical>): string {
   const lines = [
-    'Color Converter — Omega Calculators',
+    'Color Converter | Omega Calculators',
     '',
     `Selected Color: ${formats.hex}`,
     '',

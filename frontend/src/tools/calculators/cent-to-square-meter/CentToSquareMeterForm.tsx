@@ -96,7 +96,7 @@ export function CentToSquareMeterForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        1 cent = 1/100 acre = 40.468564224 m² = 435.6 ft². Edit any field — the others update
+ 1 cent = 1/100 acre = 40.468564224 m² = 435.6 ft². Edit any field: the others update
         instantly. Area cannot be negative.
       </div>
 

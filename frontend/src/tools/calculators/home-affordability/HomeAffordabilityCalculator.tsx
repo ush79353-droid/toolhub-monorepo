@@ -78,13 +78,13 @@ export function HomeAffordabilityCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Affordable home price: ${symbol}${result.formattedHomePrice} ${result.currency}`,
         `Loan amount: ${symbol}${result.formattedLoanAmount}`,
         `Down payment: ${symbol}${result.formattedDownPayment}`,
         `Total monthly housing: ${symbol}${result.formattedTotalHousing}`,
         `Housing budget: ${symbol}${result.formattedBudget}`,
-        'Estimate only — not a mortgage preapproval.',
+        'Estimate only; not a mortgage preapproval.',
       ].join('\n')
     : '';
 

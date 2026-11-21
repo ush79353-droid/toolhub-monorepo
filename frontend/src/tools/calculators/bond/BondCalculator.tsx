@@ -76,7 +76,7 @@ export function BondCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Price: $${result.formattedPrice}`,
         `Face value: $${result.formattedFaceValue}`,
         `Yield: ${result.formattedYieldPercent}%`,

@@ -27,7 +27,7 @@ export const TRUMP_ACCOUNTS_FAQS: readonly FAQItem[] = [
   {
     question: 'Who is eligible for a Trump Account?',
     answer:
-      'Eligibility depends on statutory requirements and current official guidance. This calculator does not determine eligibility — verify through official government or IRS sources for your situation.',
+      'Eligibility depends on statutory requirements and current official guidance. This calculator does not determine eligibility; verify through official government or IRS sources for your situation.',
   },
   {
     question: 'How much can I contribute to a Trump Account?',
@@ -42,7 +42,7 @@ export const TRUMP_ACCOUNTS_FAQS: readonly FAQItem[] = [
   {
     question: "How does compound interest affect a child's account?",
     answer:
-      'Investment returns can generate additional growth over time. Earnings may themselves earn returns, so balances can grow faster than contributions alone — especially over many years. Actual returns are not guaranteed.',
+      'Investment returns can generate additional growth over time. Earnings may themselves earn returns, so balances can grow faster than contributions alone; especially over many years. Actual returns are not guaranteed.',
   },
   {
     question: 'Are Trump Account investment returns guaranteed?',

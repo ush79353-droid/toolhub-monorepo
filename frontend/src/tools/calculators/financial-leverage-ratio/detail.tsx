@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate the equity multiplier — Financial leverage = Total assets ÷ Total equity — from current assets, non-current assets, and total equity.',
+    'Calculate the equity multiplier: Financial leverage = Total assets ÷ Total equity; from current assets, non-current assets, and total equity.',
   asideAriaLabel: 'Interactive Financial Leverage Ratio Calculator',
   tocItems: FINANCIAL_LEVERAGE_RATIO_TOC_ITEMS,
   GuideArticle: FinancialLeverageRatioGuideArticle,

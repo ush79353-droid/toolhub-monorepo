@@ -13,7 +13,7 @@ export function MarginCallGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A margin call calculator estimates futures point value, position profit or loss, required
         margins, account equity, and whether equity has fallen below the maintenance-margin
-        threshold. Tick value and margin requirements are user inputs — the tool does not invent
+ threshold. Tick value and margin requirements are user inputs: the tool does not invent
         live market prices or exchange margin schedules.
       </p>
 

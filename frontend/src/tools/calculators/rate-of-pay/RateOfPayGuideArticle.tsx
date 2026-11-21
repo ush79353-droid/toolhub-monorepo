@@ -27,7 +27,7 @@ export function RateOfPayGuideArticle() {
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>Confirm hours per week (default 40).</li>
         <li>
-          Put in one of the wages to see the rest — choose any period amount and
+ Put in one of the wages to see the rest; choose any period amount and
           its currency.
         </li>
         <li>

@@ -50,9 +50,9 @@ export const GAJ_TO_SQ_YD_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert from Gaj to Square Yards?',
     paragraphs: [
       `For land-area measurements: Square yards = Gaj × ${SQUARE_YARDS_PER_LAND_GAJ}. The reverse is Gaj = Square yards ÷ ${SQUARE_YARDS_PER_LAND_GAJ}.`,
-      `Example 1 — convert 150 gaj: 150 × ${SQUARE_YARDS_PER_LAND_GAJ} = ${formatMeasure(gajToSquareYards(150))} yd².`,
-      `Example 2 — convert 250 gaj: 250 × ${SQUARE_YARDS_PER_LAND_GAJ} = ${formatMeasure(gajToSquareYards(250))} yd².`,
-      `Example 3 — convert 100 gaj to square feet: 100 × ${SQUARE_FEET_PER_SQUARE_YARD} = ${formatMeasure(gajToSquareFeet(100))} ft². Do not multiply by 9 when converting to square yards — that factor is only for square feet.`,
+      `Example 1: convert 150 gaj: 150 × ${SQUARE_YARDS_PER_LAND_GAJ} = ${formatMeasure(gajToSquareYards(150))} yd².`,
+      `Example 2: convert 250 gaj: 250 × ${SQUARE_YARDS_PER_LAND_GAJ} = ${formatMeasure(gajToSquareYards(250))} yd².`,
+      `Example 3: convert 100 gaj to square feet: 100 × ${SQUARE_FEET_PER_SQUARE_YARD} = ${formatMeasure(gajToSquareFeet(100))} ft². Do not multiply by 9 when converting to square yards; that factor is only for square feet.`,
     ],
     formula: `yd² = gaj × ${SQUARE_YARDS_PER_LAND_GAJ} · ft² = gaj × ${SQUARE_FEET_PER_SQUARE_YARD}`,
   },

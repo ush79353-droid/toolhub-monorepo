@@ -46,9 +46,9 @@ export const CM_TO_IN_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert CM to Inches or Inches to CM?',
     paragraphs: [
       `Convert centimeters to inches by dividing by ${CM_PER_INCH}: inches = cm ÷ ${CM_PER_INCH}.`,
-      `Example — 36 cm: 36 ÷ ${CM_PER_INCH} ≈ ${formatLength(centimetersToInches(36))} in.`,
+      `Example; 36 cm: 36 ÷ ${CM_PER_INCH} ≈ ${formatLength(centimetersToInches(36))} in.`,
       `Convert inches to centimeters by multiplying by ${CM_PER_INCH}: cm = inches × ${CM_PER_INCH}.`,
-      `Example — 27 in: 27 × ${CM_PER_INCH} = ${formatLength(inchesToCentimeters(27))} cm.`,
+      `Example; 27 in: 27 × ${CM_PER_INCH} = ${formatLength(inchesToCentimeters(27))} cm.`,
     ],
     formula: `in = cm ÷ ${CM_PER_INCH}  ·  cm = in × ${CM_PER_INCH}`,
   },

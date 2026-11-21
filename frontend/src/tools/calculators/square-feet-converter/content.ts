@@ -30,7 +30,7 @@ export const SQFT_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Square Feet Converter',
     paragraphs: [
       'Square feet (ft²) measure surface area for rooms, houses, apartments, land, floors, walls, construction projects, real estate, interior design, and building materials.',
-      'Use this converter to change square feet into metric or imperial area units — square meters, square inches, square yards, acres, hectares, and more — or reverse the conversion by editing the destination field.',
+      'Use this converter to change square feet into metric or imperial area units (square meters, square inches, square yards, acres, hectares, and more) or reverse the conversion by editing the destination field.',
     ],
   },
   {
@@ -38,7 +38,7 @@ export const SQFT_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Is a Foot?',
     paragraphs: [
       'A foot is a unit of length in the imperial and US customary systems. By international agreement, 1 ft = 12 in and 1 ft = 0.3048 m exactly.',
-      'Linear feet measure distance along one dimension. Square feet measure area — the surface of a square that is one foot on each side: 1 ft² = 1 ft × 1 ft.',
+      'Linear feet measure distance along one dimension. Square feet measure area: the surface of a square that is one foot on each side: 1 ft² = 1 ft × 1 ft.',
     ],
     formula: '1 ft = 12 in\n1 ft = 0.3048 m\n1 ft² = 1 ft × 1 ft',
   },
@@ -49,7 +49,7 @@ export const SQFT_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
       'A square foot measures area, not length. For a rectangular room, area = length × width. A room that is 12 feet by 10 feet has an area of 12 × 10 = 120 ft².',
       'When converting between linear and square units, conversion factors must be squared. Because 1 ft = 0.3048 m:',
       '1 ft² = (0.3048)² m² = 0.09290304 m².',
-      'Using the linear factor alone (0.3048) understates area by a factor of about 0.3048 — accurate flooring, carpet, and land calculations need the squared factor.',
+      'Using the linear factor alone (0.3048) understates area by a factor of about 0.3048; accurate flooring, carpet, and land calculations need the squared factor.',
     ],
     formula:
       'Area = Length × Width\n12 × 10 = 120 ft²\n1 ft = 0.3048 m\n1 ft² = (0.3048)² m² = 0.09290304 m²',
@@ -87,10 +87,10 @@ export const SQFT_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
       '1. Enter the area in square feet.',
       '2. Select the target area unit using the dropdown.',
       '3. Read the converted measurement immediately.',
-      '4. Change the destination unit to compare different area measurements — the square-feet value stays put.',
+      '4. Change the destination unit to compare different area measurements. the square-feet value stays put.',
       '5. Enter a value in the conversion field to calculate the equivalent square feet.',
       '6. Use Clear All Changes or Reload Calculator to start another calculation.',
-      `Example — convert 500 square feet to square meters: 500 × 0.09290304 = ${formatArea(convertArea(500, 'ft2', 'm2'))}. Therefore 500 ft² = ${formatArea(convertArea(500, 'ft2', 'm2'))} m². Edit the meters field to reverse the conversion.`,
+      `Example; convert 500 square feet to square meters: 500 × 0.09290304 = ${formatArea(convertArea(500, 'ft2', 'm2'))}. Therefore 500 ft² = ${formatArea(convertArea(500, 'ft2', 'm2'))} m². Edit the meters field to reverse the conversion.`,
     ],
     formula: `500 × 0.09290304 = ${formatArea(convertArea(500, 'ft2', 'm2'))}\n500 ft² = ${formatArea(convertArea(500, 'ft2', 'm2'))} m²`,
   },

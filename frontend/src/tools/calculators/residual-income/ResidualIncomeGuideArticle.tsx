@@ -17,7 +17,7 @@ export function ResidualIncomeGuideArticle() {
         report positive accounting profit while still posting negative residual
         income if earnings fall short of that required return. This tool focuses
         on the corporate residual-income concept used in performance analysis
-        and equity valuation — not personal disposable income.
+ and equity valuation; not personal disposable income.
       </p>
 
       <h2
@@ -29,7 +29,7 @@ export function ResidualIncomeGuideArticle() {
       <div className="my-4 space-y-2 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         <p>Equity Charge = Equity Capital × (Cost of Equity % ÷ 100)</p>
         <p>Residual Income (RI) = Net Income − Equity Charge</p>
-        <p>NI — net income · EC — equity capital · r% — cost of equity</p>
+        <p>NI (net income · EC) equity capital · r%; cost of equity</p>
       </div>
 
       <h2
@@ -65,7 +65,7 @@ export function ResidualIncomeGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Residual income highlights whether earnings covered the shareholders’
         required return, supports comparisons over time, and feeds residual-
-        income valuation frameworks. It complements — rather than replaces —
+ income valuation frameworks. It complements (rather than replaces) 
         accounting profit analysis.
       </p>
 

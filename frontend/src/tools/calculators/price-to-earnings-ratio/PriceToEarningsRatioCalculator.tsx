@@ -115,13 +115,13 @@ export function PriceToEarningsRatioCalculator({
         ? 'P/E Ratio: Not defined'
         : result?.status === 'not-meaningful'
           ? 'P/E Ratio: N/M'
-          : 'P/E Ratio: —';
+          : 'P/E Ratio;';
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Price per Share: ${money(input.pricePerShare)}`,
-        `Earnings per Share: ${result!.formattedEps ?? '—'}`,
+        `Earnings per Share: ${result!.formattedEps ?? '; '}`,
         '',
         peShareLine,
         result!.peUnavailableReason ? '' : null,

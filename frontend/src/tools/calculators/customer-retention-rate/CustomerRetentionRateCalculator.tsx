@@ -17,7 +17,7 @@ import {
 
 function summaryText(metadataTitle: string, result: CustomerRetentionResult): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Existing customers: ${result.existingCustomers}`,
     `New customers: ${result.newCustomers}`,
     `Total customers: ${result.totalCustomers}`,

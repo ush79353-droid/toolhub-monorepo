@@ -14,7 +14,7 @@ export function RealEstateCommissionGuideArticle() {
         Real estate commission is the fee paid to a brokerage or agent for facilitating a
         property sale. It is usually expressed as a percent of the sale (house) price. This
         calculator estimates that fee and the amount the owner keeps after deducting commission
-        only — not taxes, closing costs, or other fees.
+ only; not taxes, closing costs, or other fees.
       </p>
 
       <h2

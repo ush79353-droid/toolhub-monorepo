@@ -41,19 +41,19 @@ export const PRESSURE_UNIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Pressure Unit Conversion',
     paragraphs: [
       'Pressure is force distributed over an area. Science, engineering, weather, and industry use many pressure units, so converting between them is a frequent task.',
-      'This calculator converts a pressure value into equivalent readings in Pa, kPa, bar, psi, atm, Torr, mmHg, and more. Enter any supported unit and the rest update instantly. It converts units only — it does not change absolute vs gauge reference.',
+      'This calculator converts a pressure value into equivalent readings in Pa, kPa, bar, psi, atm, Torr, mmHg, and more. Enter any supported unit and the rest update instantly. It converts units only; it does not change absolute vs gauge reference.',
     ],
   },
   {
     id: 'understanding',
     title: 'Understanding Pressure Units',
     paragraphs: [
-      `Pascal (Pa): the SI unit of pressure. 1 Pa = 1 N/m² — one newton of force over one square meter.`,
+      `Pascal (Pa): the SI unit of pressure. 1 Pa = 1 N/m²; one newton of force over one square meter.`,
       `Kilopascal (kPa): 1 kPa = ${formatPressure(PASCALS_PER_KPA)} Pa. Common in engineering and meteorology.`,
       `Bar: 1 bar = ${formatPressure(PASCALS_PER_BAR)} Pa. Common in industrial and mechanical applications.`,
       'Pounds per square inch (psi): one pound-force over one square inch. Common for tire pressure and hydraulics.',
-      `Standard atmosphere (atm): 1 atm = ${formatPressure(PASCALS_PER_ATM)} Pa exactly — a standard reference pressure.`,
-      `Torr and mmHg: often used in vacuum work, laboratories, and medical pressure measurements. One Torr is exactly 1/760 atm (≈ ${formatPressure(PASCALS_PER_TORR)} Pa). Conventional mmHg is ${formatPressure(PASCALS_PER_MMHG)} Pa — very close to Torr but not identical by definition.`,
+      `Standard atmosphere (atm): 1 atm = ${formatPressure(PASCALS_PER_ATM)} Pa exactly: a standard reference pressure.`,
+      `Torr and mmHg: often used in vacuum work, laboratories, and medical pressure measurements. One Torr is exactly 1/760 atm (≈ ${formatPressure(PASCALS_PER_TORR)} Pa). Conventional mmHg is ${formatPressure(PASCALS_PER_MMHG)} Pa; very close to Torr but not identical by definition.`,
     ],
     formula: `1 Pa = 1 N/m²\n1 bar = ${formatPressure(PASCALS_PER_BAR)} Pa\n1 atm = ${formatPressure(PASCALS_PER_ATM)} Pa`,
   },
@@ -67,7 +67,7 @@ export const PRESSURE_UNIT_GUIDE_SECTIONS: readonly GuideSection[] = [
       '4. Expand More pressure units for kPa, MPa, hPa, mbar, mmHg, Torr, inHg, and kgf/cm².',
       '5. Enter a value into any other field to change the conversion source.',
       '6. Use Reload Calculator to restore 1 bar, or Clear All Changes to empty every field.',
-      `Example — 0.5 bar: 0.5 × ${formatPressure(PASCALS_PER_BAR)} = ${formatPressure(convertPressure(0.5, 'bar', 'Pa'))} Pa ≈ ${formatPressure(convertPressure(0.5, 'bar', 'psi'))} psi.`,
+      `Example; 0.5 bar: 0.5 × ${formatPressure(PASCALS_PER_BAR)} = ${formatPressure(convertPressure(0.5, 'bar', 'Pa'))} Pa ≈ ${formatPressure(convertPressure(0.5, 'bar', 'psi'))} psi.`,
     ],
   },
   {

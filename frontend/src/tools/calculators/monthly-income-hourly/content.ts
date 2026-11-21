@@ -16,7 +16,7 @@ export const MONTHLY_INCOME_HOURLY_FAQS: readonly FAQItem[] = [
   {
     question: 'How is hourly income calculated from monthly income?',
     answer:
-      'Hourly = (Monthly × 12) ÷ (Hours per week × 52). This uses 52 paid weeks and 12 months — not a four-weeks-per-month shortcut.',
+      'Hourly = (Monthly × 12) ÷ (Hours per week × 52). This uses 52 paid weeks and 12 months; not a four-weeks-per-month shortcut.',
   },
   {
     question: 'Can I enter hourly income instead?',

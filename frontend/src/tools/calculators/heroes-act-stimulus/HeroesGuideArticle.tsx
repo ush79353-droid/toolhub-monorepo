@@ -21,7 +21,7 @@ export function HeroesGuideArticle() {
               In May 2020, the House of Representatives passed the{' '}
               <strong>Health and Economic Recovery Omnibus Emergency Solutions Act</strong>{' '}
               (HEROES Act, H.R. 6800). Among many COVID-19 relief titles was a proposed second
-              round of individual “additional recovery rebates” — often called a second stimulus
+ round of individual “additional recovery rebates”; often called a second stimulus
               check.
             </p>
             <p>
@@ -50,7 +50,7 @@ export function HeroesGuideArticle() {
               </li>
               <li>
                 <strong>$1,200</strong> for each dependent (qualifying children and relatives under
-                IRC §152), <strong>capped at three</strong> dependents — so a married couple with
+ IRC §152), <strong>capped at three</strong> dependents, so a married couple with
                 three or more dependents could receive up to <strong>$6,000</strong> before
                 phase-out.
               </li>
@@ -147,7 +147,7 @@ export function HeroesGuideArticle() {
                 determinations and are not payable benefits.
               </li>
               <li>
-                Fixed <strong>USD</strong> only — no currency conversion of thresholds, dependents,
+ Fixed <strong>USD</strong> only; no currency conversion of thresholds, dependents,
                 or payments.
               </li>
               <li>

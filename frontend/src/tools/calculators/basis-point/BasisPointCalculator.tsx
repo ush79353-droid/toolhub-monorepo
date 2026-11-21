@@ -171,7 +171,7 @@ export function BasisPointCalculator({
   const summary =
     hasConversion || amount
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           hasConversion
             ? [
                 `Decimal: ${input.decimal}`,

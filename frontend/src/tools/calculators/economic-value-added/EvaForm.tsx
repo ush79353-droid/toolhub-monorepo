@@ -79,7 +79,7 @@ export function EvaForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Money fields share one currency label (denomination only — no FX).
+ Money fields share one currency label (denomination only; no FX).
       </p>
       <p className="text-xs">
         <a

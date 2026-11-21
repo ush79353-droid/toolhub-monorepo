@@ -72,7 +72,7 @@ export function MoneyFactorCalculator({
   const hasResult = Boolean(input.interestRate.trim() && input.moneyFactor.trim() && !errors.interestRate && !errors.moneyFactor && !errors.form);
   const summary = hasResult
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Interest rate: ${input.interestRate}%`,
         `Money factor: ${input.moneyFactor}`,
         'Money factor = interest rate (%) ÷ 2400',

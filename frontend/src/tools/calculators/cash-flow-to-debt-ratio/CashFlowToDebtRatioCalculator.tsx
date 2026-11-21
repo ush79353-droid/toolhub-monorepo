@@ -99,7 +99,7 @@ export function CashFlowToDebtRatioCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Operating cash flow: ${getCurrencySymbol(input.ocfCurrency)}${input.operatingCashFlow}`,
         `Total debt: ${getCurrencySymbol(result.calcCurrency)}${result.totalDebtNormalized}`,
         `Cash flow to debt: ${result.formattedCashFlowToDebtPercent}%`,

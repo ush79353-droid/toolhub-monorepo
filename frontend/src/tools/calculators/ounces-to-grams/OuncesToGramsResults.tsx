@@ -29,7 +29,7 @@ export function OuncesToGramsResults({
   if (invalid) {
     return (
       <p className="rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-muted-foreground">
-        Enter a valid nonnegative mass in ounces or grams (avoirdupois mass — not fluid ounces).
+ Enter a valid nonnegative mass in ounces or grams (avoirdupois mass; not fluid ounces).
       </p>
     );
   }

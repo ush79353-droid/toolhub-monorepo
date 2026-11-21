@@ -28,11 +28,11 @@ export const ARP_STIMULUS_FAQS: readonly FAQItem[] = [
   {
     question: 'Do adult dependents count?',
     answer:
-      'Yes for EIP3. Unlike the first and second Economic Impact Payments, the American Rescue Plan added $1,400 for each qualifying dependent within the meaning of IRC §152 — including many qualifying adult dependents — not only children under 17.',
+      'Yes for EIP3. Unlike the first and second Economic Impact Payments, the American Rescue Plan added $1,400 for each qualifying dependent within the meaning of IRC §152 (including many qualifying adult dependents) not only children under 17.',
   },
   {
     question: 'Why does the calculator ask about 2019 or 2020 taxes?',
     answer:
-      'Advance EIP3 amounts generally used 2020 return information when available, otherwise 2019. Entering that historical AGI reconstructs the advance formula; it is not a current eligibility determination. SSI, SSDI, Railroad Retirement, and certain VA beneficiaries could receive automatic payments without filing — those paths are not modeled when you select “No.”',
+      'Advance EIP3 amounts generally used 2020 return information when available, otherwise 2019. Entering that historical AGI reconstructs the advance formula; it is not a current eligibility determination. SSI, SSDI, Railroad Retirement, and certain VA beneficiaries could receive automatic payments without filing; those paths are not modeled when you select “No.”',
   },
 ];

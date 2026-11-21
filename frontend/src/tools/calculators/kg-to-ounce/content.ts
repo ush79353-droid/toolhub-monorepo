@@ -39,7 +39,7 @@ export const KG_TO_OUNCE_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Kilograms (kg) are the SI base unit of mass. Avoirdupois ounces (oz) are a customary mass unit used widely in the United States and in some Imperial contexts. This converter uses the exact international avoirdupois ounce.',
       `One kilogram equals approximately ${formatMass(OZ_PER_KG)} avoirdupois ounces because exactly 1 oz = ${KG_PER_OUNCE} kg.`,
-      `Example — convert 10 kg: 10 × ${OZ_PER_KG} ≈ ${formatMass(kgToOunces(10))} oz.`,
+      `Example; convert 10 kg: 10 × ${OZ_PER_KG} ≈ ${formatMass(kgToOunces(10))} oz.`,
     ],
     formula: `oz = kg × ${OZ_PER_KG}   ·   kg = oz × ${KG_PER_OUNCE}`,
   },

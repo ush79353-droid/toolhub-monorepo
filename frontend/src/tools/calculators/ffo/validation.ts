@@ -129,7 +129,7 @@ export function validateFfoInput(input: FfoInput): FfoValidation {
     : 'Funds from operations (FFO)';
 
   const warningMessage = adjusted
-    ? 'This result subtracts interest income once as a custom adjustment — it is not the standard Nareit FFO definition. Enter only qualifying real estate D&A already deducted in net income.'
+    ? 'This result subtracts interest income once as a custom adjustment; it is not the standard Nareit FFO definition. Enter only qualifying real estate D&A already deducted in net income.'
     : 'Standard REIT FFO = NI + qualifying real estate D&A − property sale gains + property sale losses. Interest income remains in net income and is not subtracted again. This is a simplified educational reconciliation, not a full Nareit filing.';
 
   const result: FfoResult = {

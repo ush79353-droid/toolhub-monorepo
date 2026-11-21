@@ -91,7 +91,7 @@ export function InflationCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        'Inflation Calculator — Omega Calculators',
+        'Inflation Calculator | Omega Calculators',
         '',
         `Original Amount: ${result.formattedOriginal}`,
         result.referenceCPI != null

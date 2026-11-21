@@ -48,7 +48,7 @@ export function shareResultText(units: number, sourceUnit: QuantityUnit): string
     .filter((u) => u !== sourceUnit)
     .map((u) => `${formatQuantity(a[u])} ${QUANTITY_UNIT_SYMBOLS[u]}`);
   return [
-    'Quantity Converter — Omega Calculators',
+    'Quantity Converter | Omega Calculators',
     '',
     'Input:',
     `${formatQuantity(a[sourceUnit])} ${QUANTITY_UNIT_SYMBOLS[sourceUnit]}`,

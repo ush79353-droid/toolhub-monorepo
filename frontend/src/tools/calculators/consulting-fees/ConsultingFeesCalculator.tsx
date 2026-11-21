@@ -120,7 +120,7 @@ export function ConsultingFeesCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Billable days: ${formatDays(result.billableDays)}`,
         `Annual operating costs: ${formatMoney(result.annualOperatingCosts, result.currency)}`,
         `Daily billable rate: ${formatMoney(result.dailyBillableRate, result.currency)}`,

@@ -50,13 +50,13 @@ export function HundredDayCalculator({
   const summary = result
     ? result.mode === 'offset'
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           formatLongDate(result.resultDate),
           `ISO ${result.resultDate}`,
           `${result.counting} count, ${result.direction}`,
         ].join('\n')
       : [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `${result.absoluteCount} calendar days`,
           `Signed ${result.signedCount} (${result.counting})`,
           `${result.fromDate} to ${result.toDate}`,

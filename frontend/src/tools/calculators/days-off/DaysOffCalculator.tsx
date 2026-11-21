@@ -50,7 +50,7 @@ export function DaysOffCalculator({
     CONTRACT_OPTIONS.find((o) => o.value === input.contract)?.label ?? input.contract;
 
   const summary = [
-    `${metadata.title} — Omega Calculators`,
+    `${metadata.title} | Omega Calculators`,
     `Country: ${countryLabel}`,
     `Contract: ${contractLabel}`,
     formatDaysOffPlainText(result),

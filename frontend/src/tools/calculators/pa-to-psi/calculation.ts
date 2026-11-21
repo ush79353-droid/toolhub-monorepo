@@ -47,7 +47,7 @@ export function calculatePaToPsi(input: PaToPsiInput): PaToPsiResult {
 
 export function shareResultText(result: PaToPsiResult): string {
   return [
-    'Pa to PSI Converter — Omega Calculators',
+    'Pa to PSI Converter | Omega Calculators',
     '',
     `Input: ${formatPressure(result.Pa)} Pa`,
     `Result: ${formatPressure(result.psi)} psi`,

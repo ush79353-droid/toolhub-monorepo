@@ -6,7 +6,7 @@ export const MIL_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'what-is-a-mil', label: 'What Is a Mil?' },
   { id: 'mil-to-imperial', label: 'Converting Mil to Other Imperial Units' },
   { id: 'mil-to-metric', label: 'Converting Mil to Metric Units' },
-  { id: 'example-mil-to-um', label: 'Example — Convert Mil to Micrometers' },
+  { id: 'example-mil-to-um', label: 'Example; Convert Mil to Micrometers' },
   { id: 'how-to-use', label: 'How to Use the Mil Conversion Calculator' },
   { id: 'conversion-chart', label: 'Mil Conversion Chart' },
   { id: 'related-tools', label: 'Other Mil Conversion Tools' },
@@ -54,7 +54,7 @@ export const MIL_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'example-mil-to-um',
-    title: 'Example — Convert Mil to Micrometers',
+    title: 'Example; Convert Mil to Micrometers',
     paragraphs: [
       `Convert 10 mil to micrometers: multiply by ${MICRONS_PER_MIL}.`,
       `10 × ${MICRONS_PER_MIL} = ${formatLength(convertLength(10, 'mil', 'um'))} µm.`,

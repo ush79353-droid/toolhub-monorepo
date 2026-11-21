@@ -20,7 +20,7 @@ import { validateFeetToInches } from './validation';
 
 function summaryText(result: FeetToInchesResult): string {
   const lines = [
-    'Feet to Inches Calculator — Omega Calculators',
+    'Feet to Inches Calculator | Omega Calculators',
     `${formatLength(result.feet)} feet = ${formatLength(result.inches)} inches`,
     '1 foot = 12 inches',
   ];

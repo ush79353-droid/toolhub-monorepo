@@ -35,7 +35,7 @@ export const PPM_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Mass-by-mass example: a solution contains 0.005 g of a dissolved substance in a total solution mass of 1,000 g. The mass fraction is 0.005 ÷ 1,000 = 0.000005.',
       'As a percent that is 0.0005%. As ppm it is 5 ppm. As ppb it is 5,000 ppb. As ppt it is 5,000,000 ppt.',
-      'PPM may represent a mass fraction, mole fraction, or volume fraction depending on context. It is a dimensionless proportion unless the measurement basis is stated. In dilute aqueous solutions, 1 mg/L is often approximately 1 ppm by mass when density is near 1 kg/L — that approximation is not universal. This calculator converts proportions and does not convert mass-concentration units without additional density information.',
+      'PPM may represent a mass fraction, mole fraction, or volume fraction depending on context. It is a dimensionless proportion unless the measurement basis is stated. In dilute aqueous solutions, 1 mg/L is often approximately 1 ppm by mass when density is near 1 kg/L; that approximation is not universal. This calculator converts proportions and does not convert mass-concentration units without additional density information.',
     ],
   },
   {
@@ -67,7 +67,7 @@ export const PPM_FAQS: readonly FAQItem[] = [
   {
     question: 'What Are PPMs?',
     answer:
-      'PPM means parts per million — one part of a quantity per one million parts of the whole. It is a dimensionless proportion scaled by 10⁶.',
+      'PPM means parts per million; one part of a quantity per one million parts of the whole. It is a dimensionless proportion scaled by 10⁶.',
   },
   {
     question: 'What Are PPMs of CO₂?',

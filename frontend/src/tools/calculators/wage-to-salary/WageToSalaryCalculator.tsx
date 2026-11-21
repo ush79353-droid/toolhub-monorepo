@@ -239,7 +239,7 @@ export function WageToSalaryCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Source: ${result.sourceField} wage`,
         `Hourly: ${getCurrencySymbol(result.hourlyWageCurrency)}${result.formattedHourly} ${result.hourlyWageCurrency}`,
         `Daily: ${getCurrencySymbol(result.dailyWageCurrency)}${result.formattedDaily} ${result.dailyWageCurrency}`,

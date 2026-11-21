@@ -419,7 +419,7 @@ export function HoursPayForm({
             </div>
           </div>
           <p className="text-xs text-muted-foreground">
-            Time-based conversion only — no taxes, overtime, or unpaid leave.
+ Time-based conversion only; no taxes, overtime, or unpaid leave.
           </p>
         </div>
       </div>

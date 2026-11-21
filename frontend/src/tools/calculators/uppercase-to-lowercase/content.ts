@@ -25,7 +25,7 @@ export const UPPERCASE_TO_LOWERCASE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-uppercase',
     title: 'What Is an Uppercase Letter?',
     paragraphs: [
-      'Uppercase letters (also called capital letters) are the larger forms of an alphabet — A, B, C rather than a, b, c. Lowercase letters are the smaller forms used for most running text.',
+      'Uppercase letters (also called capital letters) are the larger forms of an alphabet; A, B, C rather than a, b, c. Lowercase letters are the smaller forms used for most running text.',
       'Writers typically capitalize the first letter of a sentence, proper names, and many abbreviations (NASA, HTML). Body paragraphs are usually written mostly in lowercase, with capitals reserved for those conventional spots.',
       'Examples of the mapping this tool applies: A → a, B → b, and HELLO → hello. Digits and most punctuation have no case, so they stay the same.',
     ],
@@ -52,7 +52,7 @@ export const UPPERCASE_TO_LOWERCASE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Use the Uppercase to Lowercase Converter',
     paragraphs: [
       '1. Enter or paste text into the input field.',
-      '2. View the lowercase conversion instantly — no Calculate button is required.',
+      '2. View the lowercase conversion instantly. no Calculate button is required.',
       '3. Copy the result with Copy Result.',
       '4. Paste the converted text wherever you need it.',
       '5. Use Clear All Changes or Reload Calculator to start again.',
@@ -69,7 +69,7 @@ export const UPPERCASE_TO_LOWERCASE_GUIDE_SECTIONS: readonly GuideSection[] = [
       'Email and communication: fix messages typed entirely in uppercase.',
       'Content management: format copy for publishing workflows that prefer sentence or lowercase body text.',
       'File naming: create consistent lowercase names where a project standard requires it.',
-      'Changing case alone does not make text safe as an identifier, URL slug, or filename — those contexts may still need escaping, transliteration, or character restrictions.',
+      'Changing case alone does not make text safe as an identifier, URL slug, or filename; those contexts may still need escaping, transliteration, or character restrictions.',
     ],
   },
   {
@@ -112,7 +112,7 @@ export const UPPERCASE_TO_LOWERCASE_FAQS: readonly FAQItem[] = [
   {
     question: 'What Is a Case Converter?',
     answer:
-      'A case converter is a text tool that changes letter capitalization according to a chosen rule — for example all lowercase, all uppercase, or title case.',
+      'A case converter is a text tool that changes letter capitalization according to a chosen rule, for example all lowercase, all uppercase, or title case.',
   },
   {
     question: 'Can a Case Converter Handle Mixed Capitalization?',

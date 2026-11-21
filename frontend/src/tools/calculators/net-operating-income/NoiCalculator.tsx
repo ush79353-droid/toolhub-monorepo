@@ -88,7 +88,7 @@ export function NetOperatingIncomeCalculator({
   const summary =
     result && result.formattedNoi
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Net operating income: ${symbol}${result.formattedNoi} ${result.currency}`,
           `Effective gross income: ${symbol}${result.formattedEffectiveGrossIncome} ${result.currency}`,
           `Operating expenses: ${symbol}${result.formattedOperatingExpenses} ${result.currency}`,
@@ -137,7 +137,7 @@ export function NetOperatingIncomeCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             Estimate annual net operating income from rentable area, occupancy,
-            and operating expenses — debt service excluded.
+ and operating expenses; debt service excluded.
           </p>
         </div>
         {headerActions ? (

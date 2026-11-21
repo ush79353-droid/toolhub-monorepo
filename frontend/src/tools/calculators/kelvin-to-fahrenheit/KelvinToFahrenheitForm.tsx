@@ -89,7 +89,7 @@ export function KelvinToFahrenheitForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact formula: °F = (K − 273.15) × 9/5 + 32. Edit either field — the other updates
+ Exact formula: °F = (K − 273.15) × 9/5 + 32. Edit either field: the other updates
         instantly. Write kelvin as K (not °K). Absolute zero is 0 K / −459.67°F.
       </div>
 

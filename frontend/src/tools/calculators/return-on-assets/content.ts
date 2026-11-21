@@ -63,6 +63,6 @@ export const ROA_FAQS: readonly FAQItem[] = [
   {
     question: 'How can a company improve ROA?',
     answer:
-      'By improving profitability, using assets more efficiently, reducing unproductive investments, or a mix of both — without relying on temporary accounting effects that inflate the ratio.',
+      'By improving profitability, using assets more efficiently, reducing unproductive investments, or a mix of both, without relying on temporary accounting effects that inflate the ratio.',
   },
 ];

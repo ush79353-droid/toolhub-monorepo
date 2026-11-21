@@ -18,7 +18,7 @@ export const TRIR_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good TRIR?',
     answer:
-      'A lower TRIR generally means fewer OSHA-recordable cases relative to hours worked. What counts as “good” depends on industry, work activities, workforce size, and reporting context — not a universal cutoff.',
+      'A lower TRIR generally means fewer OSHA-recordable cases relative to hours worked. What counts as “good” depends on industry, work activities, workforce size, and reporting context; not a universal cutoff.',
   },
   {
     question: 'What is the TRIR formula?',
@@ -48,7 +48,7 @@ export const TRIR_FAQS: readonly FAQItem[] = [
   {
     question: 'Are part-time employee hours included?',
     answer:
-      'Yes — include applicable hours worked by part-time employees when totaling employee hours under the relevant OSHA methodology.',
+      'Yes: include applicable hours worked by part-time employees when totaling employee hours under the relevant OSHA methodology.',
   },
   {
     question: 'Should overtime hours be included?',

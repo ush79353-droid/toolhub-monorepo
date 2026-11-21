@@ -39,7 +39,7 @@ export function calculateGalToCups(input: GalToCupsInput): GalToCupsResult {
 
 export function shareResultText(result: GalToCupsResult): string {
   return [
-    'Gallons to Cups Converter — Omega Calculators',
+    'Gallons to Cups Converter | Omega Calculators',
     '',
     `${formatMeasure(result.gallons)} US gallons = ${formatMeasure(result.cups)} US cups`,
     '',

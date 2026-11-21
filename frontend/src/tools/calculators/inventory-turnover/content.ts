@@ -45,7 +45,7 @@ export const INVENTORY_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'What does inventory turnover of 5 mean?',
     answer:
-      'COGS was about five times average inventory value during the period — not that every physical unit turned exactly five times.',
+      'COGS was about five times average inventory value during the period; not that every physical unit turned exactly five times.',
   },
   {
     question: 'What is a good inventory turnover ratio?',
@@ -60,7 +60,7 @@ export const INVENTORY_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'Can inventory turnover be zero?',
     answer:
-      'Yes, when COGS is zero and average inventory is positive — the business did not recognize cost of sales against that stock base.',
+      'Yes, when COGS is zero and average inventory is positive: the business did not recognize cost of sales against that stock base.',
   },
   {
     question: 'Can inventory turnover be negative?',
@@ -75,7 +75,7 @@ export const INVENTORY_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'What are inventory days?',
     answer:
-      'The average number of days inventory is held: (Average Inventory ÷ COGS) × Days in period — also called DIO or DSI.',
+      'The average number of days inventory is held: (Average Inventory ÷ COGS) × Days in period; also called DIO or DSI.',
   },
   {
     question: 'What is the inventory days formula?',
@@ -111,7 +111,7 @@ export const INVENTORY_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'How does seasonal demand affect inventory turnover?',
     answer:
-      'Seasonal builds can lower turnover in quiet periods and raise it in peak periods — compare like periods and peers.',
+      'Seasonal builds can lower turnover in quiet periods and raise it in peak periods. Compare like periods and peers.',
   },
   {
     question: 'Can inventory turnover be calculated monthly?',

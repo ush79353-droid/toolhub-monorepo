@@ -657,7 +657,7 @@ export function NetEffectiveRentForm({
         <span>Enable area-based calculations?</span>
       </label>
       <p className="text-xs text-muted-foreground">
-        Area-based mode is shown for screenshot parity but is not available — no area
+ Area-based mode is shown for screenshot parity but is not available; no area
         fields or formulas were specified.
       </p>
     </form>

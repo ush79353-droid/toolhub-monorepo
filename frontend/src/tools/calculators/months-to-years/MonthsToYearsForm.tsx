@@ -93,7 +93,7 @@ export function MonthsToYearsForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact calendar convention: 1 year = {MONTHS_PER_YEAR} months. This is duration arithmetic —
+ Exact calendar convention: 1 year = {MONTHS_PER_YEAR} months. This is duration arithmetic; 
         not calendar-date math. Decimal years (e.g. 1.5) differ from years+months notation (1 yr 6
         mo). Signed values are allowed; combined breakdown keeps a single sign on both parts.
       </div>

@@ -109,7 +109,7 @@ export function CrossPriceElasticityForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Prices use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. Elasticity is
+ changes the symbol only; it does not convert values. Elasticity is
           dimensionless: E = %ΔQB / %ΔPA for the same products and units.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
@@ -281,7 +281,7 @@ export function CrossPriceElasticityForm({
             <span>Elasticity</span>
             <InfoTooltip
               label="Cross-price elasticity"
-              text="EBA = %ΔQB / %ΔPA. Dimensionless — no currency or % sign on the coefficient itself."
+              text="EBA = %ΔQB / %ΔPA. Dimensionless; no currency or % sign on the coefficient itself."
             />
           </label>
           <FieldShell muted>

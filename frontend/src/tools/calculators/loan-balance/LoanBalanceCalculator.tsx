@@ -75,7 +75,7 @@ export function LoanBalanceCalculator({
   const resultSymbol = getCurrencySymbol(result?.currency ?? input.resultCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan: ${loanSymbol}${input.loanAmount}`,
         `Interest rate: ${input.interestRatePercent}%`,
         `Loan term: ${input.termYears || '0'} yrs ${input.termMonths || '0'} mos`,

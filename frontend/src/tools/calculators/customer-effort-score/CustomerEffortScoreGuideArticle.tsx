@@ -10,7 +10,7 @@ export function CustomerEffortScoreGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Customer Effort Score (CES) measures how much effort a customer feels is required to complete
-        a task or interaction with a business — for example contacting support, resolving a
+ a task or interaction with a business, for example contacting support, resolving a
         complaint, completing a purchase, returning an item, signing up, using an app, or finding
         information. Reducing unnecessary effort can improve the journey and lower abandonment, but
         CES alone does not diagnose the root cause of friction.
@@ -87,7 +87,7 @@ export function CustomerEffortScoreGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         In this calculator, low averages mean low effort; the midpoint is neutral; high averages
-        mean more friction. The mean can hide polarized distributions — two surveys can share the
+ mean more friction. The mean can hide polarized distributions; two surveys can share the
         same CES with very different low- vs high-effort mixes. Track CES over time with consistent
         methods, and treat descriptive bands as illustrations rather than industry standards.
       </p>

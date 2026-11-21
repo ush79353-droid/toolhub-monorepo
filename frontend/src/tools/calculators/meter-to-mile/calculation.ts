@@ -56,7 +56,7 @@ export function calculateMeterToMile(input: MeterToMileInput): MeterToMileResult
 
 export function shareResultText(result: MeterToMileResult): string {
   return [
-    'Meter to Mile Converter — Omega Calculators',
+    'Meter to Mile Converter | Omega Calculators',
     '',
     `${formatLength(result.meters)} meters = ${formatLength(result.miles)} miles`,
     '',

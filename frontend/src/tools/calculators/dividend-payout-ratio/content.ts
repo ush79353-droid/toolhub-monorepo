@@ -24,7 +24,7 @@ export const DIVIDEND_PAYOUT_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'Can the payout ratio be above 100% or negative?',
     answer:
-      'Yes. Above 100% means dividends exceed earnings for the period. A negative ratio can appear when dividends and earnings have opposite signs (for example negative net income). Those figures are mathematically valid but are not a conventional “sustainable” payout — treat them as diagnostic, not as a target.',
+      'Yes. Above 100% means dividends exceed earnings for the period. A negative ratio can appear when dividends and earnings have opposite signs (for example negative net income). Those figures are mathematically valid but are not a conventional “sustainable” payout; treat them as diagnostic, not as a target.',
   },
   {
     question: 'Do the currency selectors convert amounts?',

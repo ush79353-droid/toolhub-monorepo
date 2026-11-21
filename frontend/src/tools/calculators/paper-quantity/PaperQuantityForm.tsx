@@ -50,7 +50,7 @@ export function PaperQuantityForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Modern paper-count standard: 1 quire = 25 sheets, 1 ream = 500 sheets, 1 bundle = 1,000
-        sheets, 1 bale = 5,000 sheets. Enter any field — the others update immediately.
+ sheets, 1 bale = 5,000 sheets. Enter any field: the others update immediately.
       </div>
 
       {PAPER_UNITS.map((unit) => {

@@ -131,7 +131,7 @@ export function shareResultText(result: GalToKgResult): string {
   const densityLabel =
     DENSITY_UNIT_OPTIONS.find((o) => o.value === result.densityUnit)?.label ?? result.densityUnit;
   return [
-    'Gal to kg Converter — Omega Calculators',
+    'Gal to kg Converter | Omega Calculators',
     '',
     `Material: ${result.materialName}`,
     `Density: ${formatMeasure(result.densityValue)} ${densityLabel}${result.densityApproximate ? ' (approximate)' : ''}`,

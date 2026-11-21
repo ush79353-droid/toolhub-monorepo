@@ -48,7 +48,7 @@ export function QuizLoanBalanceCalculator({
 
   const summary = result.complete
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Quiz: How well do you understand loan balances?`,
         `Score: ${result.formattedScore}`,
         ...QUIZ_QUESTIONS.map((question) => {
@@ -72,7 +72,7 @@ export function QuizLoanBalanceCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Quiz</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Educational quiz — not a loan balance calculator. Answer all five
+ Educational quiz; not a loan balance calculator. Answer all five
             questions to see your score.
           </p>
         </div>

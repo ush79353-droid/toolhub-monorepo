@@ -111,7 +111,7 @@ export function validateOkunsLawInput(
 ): OkunsLawValidation {
   const errors: OkunsLawFieldErrors = {};
   const explanation =
-    "Okun's Law is an empirical regularity, not a universal constant. Coefficients differ by country, period, and formulation — do not reuse an output-gap β as a growth-rate α without an explicit model.";
+    "Okun's Law is an empirical regularity, not a universal constant. Coefficients differ by country, period, and formulation; do not reuse an output-gap β as a growth-rate α without an explicit model.";
 
   if (input.mode === 'output-gap') {
     const u = parseNum(input.unemploymentRate, { min: 0, max: 100 });
@@ -251,7 +251,7 @@ export function validateOkunsLawInput(
       errors.growthCoefficient = 'Enter a valid coefficient.';
     else if (alpha.value <= 0)
       errors.growthCoefficient =
-        'α must be greater than zero — cannot divide by zero.';
+        'α must be greater than zero; cannot divide by zero.';
 
     if (Object.keys(errors).length > 0) {
       return { isValid: false, errors, result: null };
@@ -305,7 +305,7 @@ export function validateOkunsLawInput(
     errors.growthCoefficient = 'Enter a valid coefficient.';
   else if (alpha.value <= 0)
     errors.growthCoefficient =
-      'α must be greater than zero — cannot divide by zero.';
+      'α must be greater than zero; cannot divide by zero.';
 
   if (Object.keys(errors).length > 0) {
     return { isValid: false, errors, result: null };

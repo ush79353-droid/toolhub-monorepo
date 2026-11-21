@@ -38,7 +38,7 @@ export const KELVIN_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-kelvin',
     title: 'What Is the Kelvin Scale?',
     paragraphs: [
-      'Kelvin is the SI base unit of thermodynamic temperature. Its zero point is absolute zero — the theoretical lower limit of temperature.',
+      'Kelvin is the SI base unit of thermodynamic temperature. Its zero point is absolute zero: the theoretical lower limit of temperature.',
       'Absolute zero is exactly 0 K, which equals −273.15°C. A one-kelvin interval has the same magnitude as a one-degree Celsius interval.',
       'Write kelvin values with the symbol K and without a degree sign: 300 K is correct; 300 °K is not.',
     ],

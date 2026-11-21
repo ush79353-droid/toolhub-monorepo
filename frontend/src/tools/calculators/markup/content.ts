@@ -106,6 +106,6 @@ export const MARKUP_FAQS: readonly FAQItem[] = [
   {
     question: 'Why is markup important for business?',
     answer:
-      'Markup links cost recovery to selling price, supports gross-profit planning, and helps compare pricing options — without replacing a full P&L or competitive analysis.',
+      'Markup links cost recovery to selling price, supports gross-profit planning, and helps compare pricing options, without replacing a full P&L or competitive analysis.',
   },
 ];

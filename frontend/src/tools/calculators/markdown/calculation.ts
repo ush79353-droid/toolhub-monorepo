@@ -333,7 +333,7 @@ export function calculateMarkdownFromInput(
   const interpretation = `The selling price has been reduced by ${money(markdownAmount, currency)}, representing a ${formatPercent(markdownPercentage)} markdown from the original price.`;
 
   const explanation =
-    'Markdown percentage uses the original selling price as the denominator. This is a retail price-reduction calculator — not a Markdown text formatter. Profitability still depends on product cost.';
+    'Markdown percentage uses the original selling price as the denominator. This is a retail price-reduction calculator; not a Markdown text formatter. Profitability still depends on product cost.';
 
   return {
     currency,

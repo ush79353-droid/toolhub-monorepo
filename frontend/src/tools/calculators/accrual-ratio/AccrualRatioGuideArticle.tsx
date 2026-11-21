@@ -78,7 +78,7 @@ export function AccrualRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Earnings can diverge from operating cash flow because of working-capital
         changes and noncash items. Accruals may reverse later. One ratio is not
-        enough — review trends, peers, policies, and cash-flow statements
+ enough; review trends, peers, policies, and cash-flow statements
         together.
       </p>
 
@@ -139,7 +139,7 @@ export function AccrualRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Results depend on classifications, nonrecurring items, acquisitions,
         currency translation, policy changes, industry norms, and denominator
-        sign or near-zero values. This tool is educational — not investment or
+ sign or near-zero values. This tool is educational; not investment or
         audit advice.
       </p>
 

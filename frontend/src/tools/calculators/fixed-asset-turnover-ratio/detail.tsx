@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate fixed asset turnover — Revenue ÷ Average net fixed assets — from beginning and ending PP&E balances and period revenue.',
+    'Calculate fixed asset turnover: Revenue ÷ Average net fixed assets; from beginning and ending PP&E balances and period revenue.',
   asideAriaLabel: 'Interactive Fixed Asset Turnover Ratio Calculator',
   tocItems: FIXED_ASSET_TURNOVER_RATIO_TOC_ITEMS,
   GuideArticle: FixedAssetTurnoverRatioGuideArticle,

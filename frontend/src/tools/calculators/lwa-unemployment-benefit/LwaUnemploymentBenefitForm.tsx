@@ -24,7 +24,7 @@ export function LwaUnemploymentBenefitForm({
       <p>
         Lost Wages Assistance (LWA) was a temporary U.S. pandemic unemployment assistance
         program in 2020. It was authorized by a presidential memorandum and administered
-        through FEMA Other Needs Assistance grants to states and territories — not through
+ through FEMA Other Needs Assistance grants to states and territories; not through
         an enacted “LWA Act.”
       </p>
       <p className="mt-3">

@@ -13,7 +13,7 @@ export function TdsInterestGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Indian tax law charges simple interest when Tax Deducted at Source (TDS) is deducted late or
         deposited late (Section 201(1A)), and a daily fee when the quarterly TDS statement is filed
-        late (Section 234E). This calculator estimates those amounts in INR for instructional use —
+ late (Section 234E). This calculator estimates those amounts in INR for instructional use; 
         confirm the latest Income Tax / TRACES guidance and any CBDT due-date extensions before
         filing.
       </p>

@@ -153,7 +153,7 @@ export function GalToPintsForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Within each system, 1 gallon = 8 pints. US liquid and UK imperial gallons (and pints) are
-        different sizes. Edit any field — all others update via exact liter factors.
+ different sizes. Edit any field; all others update via exact liter factors.
       </div>
 
       <div className={sectionClass}>

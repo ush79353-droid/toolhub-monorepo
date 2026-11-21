@@ -97,7 +97,7 @@ export function PercentageReturnCalculator({
   const summary =
     result && (result.percentageReturn !== null || result.annualizedReturn !== null)
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Invested: ${symbol}${input.investedAmount}`,
           `Returned: ${symbol}${input.returnedAmount}`,
           result.gainOrLossDisplay

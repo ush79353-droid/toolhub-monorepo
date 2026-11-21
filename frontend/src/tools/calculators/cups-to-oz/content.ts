@@ -28,7 +28,7 @@ export const CUPS_TO_OZ_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'Cups to Oz Converter',
     paragraphs: [
-      'This converter turns cup volumes into fluid ounces (and the reverse). Cups measure volume; the “oz” results here are fluid ounces of volume — not ounces of weight.',
+      'This converter turns cup volumes into fluid ounces (and the reverse). Cups measure volume; the “oz” results here are fluid ounces of volume; not ounces of weight.',
       'Choose US customary, US legal, metric, or UK imperial cups, and US or UK imperial fluid ounces. Practical uses include cooking, baking, food preparation, beverage measurement, and recipe scaling.',
       '1. Enter a volume in cups. 2. Choose the cup system. 3. Read the fluid-ounce result. 4. Switch fluid-ounce units if needed. 5. Enter fluid ounces to convert back to cups.',
       `Example: 3 US customary cups × 8 = ${formatVolume(cupsToFluidOunces(3))} US fluid ounces.`,

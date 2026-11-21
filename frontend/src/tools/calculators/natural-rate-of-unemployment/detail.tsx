@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate the natural unemployment rate from frictional and structural unemployment relative to the labor force — simplified model, no cyclical component.',
+    'Estimate the natural unemployment rate from frictional and structural unemployment relative to the labor force; simplified model, no cyclical component.',
   asideAriaLabel: 'Interactive Natural Rate of Unemployment Calculator',
   tocItems: NATURAL_UNEMPLOYMENT_TOC_ITEMS,
   GuideArticle: NaturalUnemploymentGuideArticle,

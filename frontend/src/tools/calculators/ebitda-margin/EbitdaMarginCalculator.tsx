@@ -85,7 +85,7 @@ export function EbitdaMarginCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total revenues: ${getCurrencySymbol(input.totalRevenuesCurrency)}${input.totalRevenues}`,
         `EBITDA: ${getCurrencySymbol(input.ebitdaCurrency)}${input.ebitda}`,
         `EBITDA margin: ${result.formattedMarginPercent}%`,

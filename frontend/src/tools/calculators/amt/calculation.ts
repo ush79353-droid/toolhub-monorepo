@@ -170,7 +170,7 @@ function buildSummary(args: {
     parts.push(`MFS line-4 add-on of $${formatUsd(args.mfsAddon)} was included in adjusted AMTI.`);
   }
   parts.push(
-    'This is a tentative AMT estimate — additional AMT versus regular tax is not computed.',
+    'This is a tentative AMT estimate; additional AMT versus regular tax is not computed.',
   );
   return parts.join(' ');
 }

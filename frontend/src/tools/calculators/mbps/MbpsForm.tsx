@@ -161,7 +161,7 @@ export function MbpsForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Lowercase <strong>b</strong> means bits; uppercase <strong>B</strong> means bytes. Edit any
-        field — all others update from the same bit rate. <strong>1 MB/s = 8 Mbit/s</strong>.
+ field; all others update from the same bit rate. <strong>1 MB/s = 8 Mbit/s</strong>.
       </div>
 
       <AccordionSection
@@ -221,7 +221,7 @@ export function MbpsForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample(1)}
             >
-              Example 1 — 100 Mbps to MB/s
+ Example 1: 100 Mbps to MB/s
             </button>
           </li>
           <li>
@@ -230,7 +230,7 @@ export function MbpsForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample(2)}
             >
-              Example 2 — 1 Gbps to Mbps
+ Example 2: 1 Gbps to Mbps
             </button>
           </li>
         </ul>

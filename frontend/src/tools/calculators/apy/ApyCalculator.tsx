@@ -79,7 +79,7 @@ export function ApyCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial deposit: ${formatCurrencyValue(result.initialDeposit, result.currency)}`,
         `APR: ${result.aprPercent}%`,
         `Compound frequency: ${COMPOUND_LABEL[result.compoundFrequency]}`,

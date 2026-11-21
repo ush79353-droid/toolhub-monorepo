@@ -63,12 +63,12 @@ export function interpretNoa(
   operatingLiabilities: number
 ): string {
   if (Math.abs(noa) < 5e-12) {
-    return 'NOA is zero — operating assets equal operating liabilities under this simplified classification.';
+    return 'NOA is zero; operating assets equal operating liabilities under this simplified classification.';
   }
   if (noa > 0) {
     return `Positive NOA: operating assets (${formatPlain(operatingAssets)}) exceed operating liabilities (${formatPlain(operatingLiabilities)}) by ${formatPlain(noa)}. NOA is a balance-sheet measure, not a profitability metric.`;
   }
-  return `Negative NOA: operating liabilities (${formatPlain(operatingLiabilities)}) exceed operating assets (${formatPlain(operatingAssets)}) by ${formatPlain(Math.abs(noa))}. Negative NOA is not automatically insolvency — interpret with the business model.`;
+  return `Negative NOA: operating liabilities (${formatPlain(operatingLiabilities)}) exceed operating assets (${formatPlain(operatingAssets)}) by ${formatPlain(Math.abs(noa))}. Negative NOA is not automatically insolvency; interpret with the business model.`;
 }
 
 export function formatNoaMoney(

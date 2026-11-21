@@ -237,7 +237,7 @@ export function PintToPoundForm({
           {INGREDIENTS.map((item) => (
             <option key={item.id} value={item.id}>
               {item.name}
-              {item.densityGPerMl !== undefined ? ' (approx.)' : ' — enter density'}
+              {item.densityGPerMl !== undefined ? ' (approx.)' : '. Enter density'}
             </option>
           ))}
         </select>

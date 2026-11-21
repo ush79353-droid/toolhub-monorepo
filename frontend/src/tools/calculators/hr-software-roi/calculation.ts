@@ -342,7 +342,7 @@ export function shareResultText(
   path = '/tools/hr-software-roi-calculator',
 ): string {
   const lines = [
-    'HR Software ROI Calculator — Omega Calculators',
+    'HR Software ROI Calculator | Omega Calculators',
     '',
     `Evaluation period: ${result.periodLabel}`,
     `Investment cost: ${result.formattedInvestmentCost} ${result.currency}`,

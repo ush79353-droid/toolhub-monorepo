@@ -70,7 +70,7 @@ export const EMI_FAQS: readonly FAQItem[] = [
   {
     question: 'Does a longer loan tenure reduce EMI?',
     answer:
-      'Usually yes — spreading principal over more months lowers the monthly installment, but total interest typically rises.',
+      'Usually yes: spreading principal over more months lowers the monthly installment, but total interest typically rises.',
   },
   {
     question: 'Does a shorter loan tenure reduce total interest?',

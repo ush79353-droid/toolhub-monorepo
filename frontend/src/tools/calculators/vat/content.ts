@@ -28,7 +28,7 @@ export const VAT_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I remove VAT from a total?',
     answer:
-      'Divide the gross (VAT-inclusive) price by (1 + rate/100). For 20%: net = gross ÷ 1.20. Do not subtract 20% of the gross — that incorrect shortcut would give 96 instead of 100 from a 120 total.',
+      'Divide the gross (VAT-inclusive) price by (1 + rate/100). For 20%: net = gross ÷ 1.20. Do not subtract 20% of the gross; that incorrect shortcut would give 96 instead of 100 from a 120 total.',
   },
   {
     question: 'What is the difference between net and gross prices?',

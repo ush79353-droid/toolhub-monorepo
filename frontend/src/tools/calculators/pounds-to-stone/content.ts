@@ -48,10 +48,10 @@ export const POUNDS_TO_STONE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Weight From Pounds to Stone',
     paragraphs: [
       `One stone contains exactly ${POUNDS_PER_STONE} pounds. Divide pounds by ${POUNDS_PER_STONE} to get decimal stone.`,
-      `Example — convert 168 pounds: 168 ÷ ${POUNDS_PER_STONE} = ${formatMass(poundsToStone(168))}. Therefore 168 pounds = ${formatMass(poundsToStone(168))} stone.`,
+      `Example; convert 168 pounds: 168 ÷ ${POUNDS_PER_STONE} = ${formatMass(poundsToStone(168))}. Therefore 168 pounds = ${formatMass(poundsToStone(168))} stone.`,
       (() => {
         const split = splitPoundsToStoneAndPounds(128);
-        return `Example — convert 128 pounds: 128 ÷ ${POUNDS_PER_STONE} ≈ ${formatMass(poundsToStone(128))} stone. As whole stone plus remaining pounds, that is exactly ${formatMixedStonePounds(split.wholeStones, split.remainingPounds)}.`;
+        return `Example; convert 128 pounds: 128 ÷ ${POUNDS_PER_STONE} ≈ ${formatMass(poundsToStone(128))} stone. As whole stone plus remaining pounds, that is exactly ${formatMixedStonePounds(split.wholeStones, split.remainingPounds)}.`;
       })(),
       'Do not confuse 10.5 st with 10 st 5 lb. Because 0.5 st = 7 lb, 10.5 st = 10 st 7 lb.',
     ],
@@ -67,7 +67,7 @@ export const POUNDS_TO_STONE_GUIDE_SECTIONS: readonly GuideSection[] = [
       '4. To reverse the conversion, enter a weight in stone.',
       `5. The calculator automatically multiplies the value by ${POUNDS_PER_STONE} to display pounds.`,
       '6. Use Reload Calculator to restore the default of 14 lb, or Clear All Changes to empty both fields.',
-      'Results update instantly — no Convert button is required.',
+      'Results update instantly; no Convert button is required.',
     ],
   },
   {

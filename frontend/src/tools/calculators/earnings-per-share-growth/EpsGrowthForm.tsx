@@ -66,7 +66,7 @@ export function EpsGrowthForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        EPS amounts share one currency label (denomination only — no FX).
+ EPS amounts share one currency label (denomination only; no FX).
       </p>
       <p className="text-xs">
         <a

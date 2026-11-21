@@ -151,7 +151,7 @@ export function EbitGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         EBIT supports operating-performance analysis, profitability comparison,
         cost management review, valuation discussions, and earnings sensitivity
-        analysis — always with context.
+ analysis; always with context.
       </p>
 
       <h2
@@ -192,7 +192,7 @@ export function EbitGuideArticle() {
         Depreciation, accounting policies, nonrecurring items, working capital,
         and capital expenditures affect interpretation. Different EBIT
         definitions reduce comparability. This tool provides educational
-        estimates only — not accounting, audit, or investment advice.
+ estimates only; not accounting, audit, or investment advice.
       </p>
 
       <h2

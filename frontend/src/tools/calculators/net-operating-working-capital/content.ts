@@ -35,7 +35,7 @@ export const NET_OPERATING_WORKING_CAPITAL_FAQS: readonly FAQItem[] = [
   {
     question: 'What is net operating working capital?',
     answer:
-      'NOWC is current operating assets minus current operating liabilities — the net short-term capital tied to day-to-day operations under a stated classification.',
+      'NOWC is current operating assets minus current operating liabilities: the net short-term capital tied to day-to-day operations under a stated classification.',
   },
   {
     question: 'What does NOWC stand for?',
@@ -68,19 +68,19 @@ export const NET_OPERATING_WORKING_CAPITAL_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Are accounts receivable operating assets?',
-    answer: 'Yes — trade receivables typically arise from ordinary sales.',
+    answer: 'Yes: trade receivables typically arise from ordinary sales.',
   },
   {
     question: 'Is inventory included in NOWC?',
-    answer: 'Yes — inventories are included in current operating assets here.',
+    answer: 'Yes: inventories are included in current operating assets here.',
   },
   {
     question: 'Are accounts payable operating liabilities?',
-    answer: 'Yes — trade payables typically arise from ordinary purchases.',
+    answer: 'Yes: trade payables typically arise from ordinary purchases.',
   },
   {
     question: 'Are accrued expenses included in NOWC?',
-    answer: 'Yes — operating accruals are included in COL in this model.',
+    answer: 'Yes: operating accruals are included in COL in this model.',
   },
   {
     question: 'Are short-term bank loans included in NOWC?',
@@ -89,7 +89,7 @@ export const NET_OPERATING_WORKING_CAPITAL_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Can net operating working capital be negative?',
-    answer: 'Yes — when COL exceeds COA.',
+    answer: 'Yes: when COL exceeds COA.',
   },
   {
     question: 'What does positive NOWC mean?',
@@ -99,7 +99,7 @@ export const NET_OPERATING_WORKING_CAPITAL_FAQS: readonly FAQItem[] = [
   {
     question: 'What does negative NOWC mean?',
     answer:
-      'Current operating liabilities exceed current operating assets — not automatically insolvency.',
+      'Current operating liabilities exceed current operating assets; not automatically insolvency.',
   },
   {
     question: 'What happens if NOWC equals zero?',
@@ -179,11 +179,11 @@ export const NET_OPERATING_WORKING_CAPITAL_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Does positive NOWC guarantee profitability?',
-    answer: 'No — NOWC is a balance-sheet measure, not an income measure.',
+    answer: 'No: NOWC is a balance-sheet measure, not an income measure.',
   },
   {
     question: 'Can a profitable company have negative NOWC?',
-    answer: 'Yes — especially with rapid turns and favorable payables.',
+    answer: 'Yes: especially with rapid turns and favorable payables.',
   },
   {
     question: 'Is NOWC the same as cash?',

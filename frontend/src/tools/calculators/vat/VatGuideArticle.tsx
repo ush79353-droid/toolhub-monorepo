@@ -29,7 +29,7 @@ export function VatGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         VAT and GST are usually collected at multiple stages with credit for tax paid earlier in the
         chain. Traditional retail sales tax is often charged only at the final sale to the consumer.
-        Terminology and administration vary widely — a system called “sales tax” in one place may
+ Terminology and administration vary widely: a system called “sales tax” in one place may
         behave differently from a GST/VAT system elsewhere.
       </p>
 
@@ -50,7 +50,7 @@ export function VatGuideArticle() {
         VAT sits on top of (or inside) a selling price; it is not the same as margin or markup.
         Margin is usually profit relative to selling price; markup is profit relative to cost. VAT
         collected from customers is generally a liability to the tax authority, not business
-        revenue. Special margin schemes may apply to certain goods — those schemes are jurisdiction
+ revenue. Special margin schemes may apply to certain goods; those schemes are jurisdiction
         specific and outside this calculator’s arithmetic.
       </p>
 
@@ -79,7 +79,7 @@ export function VatGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Businesses often recover input VAT on eligible purchases when registered. Travelers,
         diplomats, or exporters may qualify for refunds or zero-rating under separate programs.
-        Eligibility, documentation, and timelines depend entirely on local regulations — this
+ Eligibility, documentation, and timelines depend entirely on local regulations; this
         calculator does not determine refund rights.
       </p>
 
@@ -89,7 +89,7 @@ export function VatGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Countries set their own standard and reduced rates, exemptions, and zero-rated categories.
         Rates change over time and can depend on the product, service, and place of supply. The
-        default 20% in this calculator is only an example — never treat it as a live country table.
+ default 20% in this calculator is only an example; never treat it as a live country table.
       </p>
 
       <h2

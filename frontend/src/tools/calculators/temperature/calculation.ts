@@ -98,7 +98,7 @@ export function allFromUnit(
 
 export function shareResultText(amounts: Record<TemperatureUnit, number>): string {
   return [
-    'Temperature Conversion — Omega Calculators',
+    'Temperature Conversion | Omega Calculators',
     '',
     `${formatTemp(amounts.celsius)} ${TEMP_SYMBOLS.celsius}`,
     `${formatTemp(amounts.fahrenheit)} ${TEMP_SYMBOLS.fahrenheit}`,

@@ -231,7 +231,7 @@ export function AprForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amounts share one currency label (denomination only — no FX). APR is
+ Amounts share one currency label (denomination only; no FX). APR is
         estimated from borrower cash flows, not a simple interest-plus-fees
         shortcut.
       </p>

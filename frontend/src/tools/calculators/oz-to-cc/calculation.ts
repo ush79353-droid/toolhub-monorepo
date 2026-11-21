@@ -75,7 +75,7 @@ export function calculateOzToCc(input: OzToCcInput): OzToCcResult {
 export function shareResultText(result: OzToCcResult): string {
   const label = systemLabel(result.system);
   return [
-    'oz to cc Converter — Omega Calculators',
+    'oz to cc Converter | Omega Calculators',
     '',
     `${formatVolume(result.oz)} ${label} = ${formatVolume(result.cc)} cc`,
     '',

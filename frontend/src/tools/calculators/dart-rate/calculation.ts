@@ -124,7 +124,7 @@ export function shareResultText(
     ? `Estimated DART cases: ${result.formattedIncidents}`
     : `Total qualifying cases: ${result.formattedIncidents}`;
   return [
-    'DART Rate Calculator — Omega Calculators',
+    'DART Rate Calculator | Omega Calculators',
     '',
     `DART Rate: ${result.formattedDartRate}`,
     caseLine,

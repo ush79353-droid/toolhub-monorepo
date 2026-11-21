@@ -57,7 +57,7 @@ export const PIXELS_TO_INCHES_GUIDE_SECTIONS: readonly PixelsToInchesGuideSectio
     id: 'what-is-a-pixel',
     title: 'What Is a Pixel?',
     paragraphs: [
-      'A pixel is a picture element—one sample in a digital image or one addressable unit on a display. Raster images are usually described as width × height in pixels.',
+      'A pixel is a picture element, one sample in a digital image or one addressable unit on a display. Raster images are usually described as width × height in pixels.',
       'How large those pixels appear on a screen depends on the display’s physical pixel density and scaling. How large they print depends on the pixels-per-inch relationship you choose for output. Pixels are not inherently equal to a fixed number of inches.',
     ],
   },

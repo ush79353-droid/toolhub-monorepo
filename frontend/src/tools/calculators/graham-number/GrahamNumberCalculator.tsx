@@ -133,15 +133,15 @@ export function GrahamNumberCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Book Value per Share: ${money(input.bookValuePerShare)}`,
         `Earnings per Share: ${money(input.earningsPerShare)}`,
         `Graham Number: ${result!.formattedGrahamNumber}`,
         ...(input.currentPrice.trim()
           ? [
               `Current Stock Price: ${money(input.currentPrice)}`,
-              `Valuation: ${result!.valuationLabel ?? '—'}`,
-              `Price Difference: ${result!.formattedPriceDifference ?? '—'}`,
+              `Valuation: ${result!.valuationLabel ?? '; '}`,
+              `Price Difference: ${result!.formattedPriceDifference ?? '; '}`,
             ]
           : []),
         '',

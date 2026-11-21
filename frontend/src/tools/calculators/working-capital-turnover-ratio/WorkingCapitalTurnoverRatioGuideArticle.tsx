@@ -13,7 +13,7 @@ export function WorkingCapitalTurnoverRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The working capital turnover ratio shows how efficiently a company uses
         its average working capital to generate revenue during a reporting
-        period. Higher values generally mean more sales per unit of WC — not
+ period. Higher values generally mean more sales per unit of WC; not
         automatically higher profit.
       </p>
 
@@ -48,7 +48,7 @@ export function WorkingCapitalTurnoverRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Current assets are expected to convert to cash, sell, or be consumed
-        within the operating cycle or about one year — cash, receivables,
+ within the operating cycle or about one year; cash, receivables,
         inventory, short-term investments, and prepaid expenses, among others.
       </p>
 
@@ -60,7 +60,7 @@ export function WorkingCapitalTurnoverRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Current liabilities are obligations due within the operating cycle or
-        about one year — payables, short-term loans, accruals, and the current
+ about one year; payables, short-term loans, accruals, and the current
         portion of long-term debt.
       </p>
 
@@ -162,7 +162,7 @@ export function WorkingCapitalTurnoverRatioGuideArticle() {
         High vs. Low Working Capital Turnover
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        High turnover can mean lean WC — or stretched liquidity. Low turnover
+ High turnover can mean lean WC, or stretched liquidity. Low turnover
         can mean excess WC investment or a naturally WC-heavy model. Pair with
         the current ratio and cash conversion cycle.
       </p>
@@ -259,7 +259,7 @@ export function WorkingCapitalTurnoverRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Industry differences, seasonality, accounting classifications, and
         negative WC models limit single-ratio conclusions. Calculate monthly,
-        quarterly, or annually — but keep definitions consistent.
+ quarterly, or annually, but keep definitions consistent.
       </p>
 
       <h2

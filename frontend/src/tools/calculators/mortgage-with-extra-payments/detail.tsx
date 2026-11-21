@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Compare your original monthly mortgage schedule with accelerated frequencies, recurring extras, and lump-sum prepayments—using real FX on money fields.',
+    'Compare your original monthly mortgage schedule with accelerated frequencies, recurring extras, and lump-sum prepayments, using real FX on money fields.',
   asideAriaLabel: 'Interactive Mortgage with Extra Payments Calculator',
   tocItems: MORTGAGE_WITH_EXTRA_PAYMENTS_TOC_ITEMS,
   GuideArticle: MortgageWithExtraPaymentsGuideArticle,

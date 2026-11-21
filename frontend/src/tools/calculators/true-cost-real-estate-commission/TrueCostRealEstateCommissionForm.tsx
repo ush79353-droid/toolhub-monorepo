@@ -473,7 +473,7 @@ export function TrueCostRealEstateCommissionForm({
           {moneyOutput(
             'tcrc-loan-commission',
             '…of which the commission is',
-            'Commission amount × (loan amount ÷ property price) — the financed share of commission.',
+            'Commission amount × (loan amount ÷ property price): the financed share of commission.',
             result?.formattedLoanCommission,
             input.loanCommissionCurrency,
             'loanCommissionCurrency',
@@ -592,7 +592,7 @@ export function TrueCostRealEstateCommissionForm({
         {moneyOutput(
           'tcrc-apparent-commission',
           'Apparent commission',
-          'Property price × buyer’s commission %. The buyer-side fee alone — not the full embedded cost.',
+          'Property price × buyer’s commission %. The buyer-side fee alone; not the full embedded cost.',
           result?.formattedApparentCommission,
           input.apparentCommissionCurrency,
           'apparentCommissionCurrency',

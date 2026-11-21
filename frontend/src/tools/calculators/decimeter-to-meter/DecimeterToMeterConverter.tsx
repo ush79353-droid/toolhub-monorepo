@@ -21,7 +21,7 @@ import { validateDecimeterToMeter } from './validation';
 
 function summaryText(result: DecimeterToMeterResult): string {
   const lines = [
-    'Decimeter to Meter Converter — Omega Calculators',
+    'Decimeter to Meter Converter | Omega Calculators',
     `${formatLength(result.decimeters)} dm = ${formatLength(result.meters)} m`,
     '1 m = 10 dm',
   ];

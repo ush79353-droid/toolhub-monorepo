@@ -153,7 +153,7 @@ export const RREF_GUIDE_SECTIONS: readonly RrefGuideSection[] = [
     id: 'matrix-rank-from-rref',
     title: 'How to Find Matrix Rank Using RREF',
     paragraphs: [
-      'After reduction, count the nonzero rows (or equivalently the pivot columns). That count is the rank of the matrix — the dimension of its column space and row space.',
+      'After reduction, count the nonzero rows (or equivalently the pivot columns). That count is the rank of the matrix: the dimension of its column space and row space.',
       'Nullity equals the number of columns minus the rank (for a non-augmented matrix). Free columns are exactly the non-pivot columns.',
     ],
   },

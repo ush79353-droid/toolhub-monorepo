@@ -29,12 +29,12 @@ export const DUPONT_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'What is net profit margin?',
-    answer: 'Net income divided by sales — the share of revenue kept as profit.',
+    answer: 'Net income divided by sales: the share of revenue kept as profit.',
   },
   {
     question: 'What is total asset turnover?',
     answer:
-      'Sales divided by total assets — how many dollars of sales are generated per dollar of assets.',
+      'Sales divided by total assets; how many dollars of sales are generated per dollar of assets.',
   },
   {
     question: 'What is financial leverage?',
@@ -49,7 +49,7 @@ export const DUPONT_FAQS: readonly FAQItem[] = [
   {
     question: 'Can ROE be negative?',
     answer:
-      'Yes — from net losses and/or negative equity. The economic meaning differs, so inspect which driver is negative.',
+      'Yes: from net losses and/or negative equity. The economic meaning differs, so inspect which driver is negative.',
   },
   {
     question: 'Is higher ROE always better?',
@@ -69,12 +69,12 @@ export const DUPONT_FAQS: readonly FAQItem[] = [
   {
     question: 'Can DuPont analysis be used across industries?',
     answer:
-      'Yes, but comparisons need industry context — capital intensity and typical leverage differ widely.',
+      'Yes, but comparisons need industry context; capital intensity and typical leverage differ widely.',
   },
   {
     question: 'Why does financial leverage increase ROE?',
     answer:
-      'With positive earnings and equity, financing more assets with less equity raises Assets/Equity and can raise ROE — while increasing financial risk.',
+      'With positive earnings and equity, financing more assets with less equity raises Assets/Equity and can raise ROE while increasing financial risk.',
   },
   {
     question: 'What happens if total equity is zero?',

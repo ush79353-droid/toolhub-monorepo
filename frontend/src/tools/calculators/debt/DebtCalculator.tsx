@@ -70,7 +70,7 @@ export function DebtCalculator({
   const calcSymbol = getCurrencySymbol(result?.calcCurrency ?? 'PKR');
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total debt: ${getCurrencySymbol(result.totalDebtCurrency)}${result.formattedTotalDebt}`,
         `Monthly payment: ${getCurrencySymbol(result.monthlyPaymentCurrency)}${result.formattedMonthlyPayment}`,
         ...result.rows.map((row) => {

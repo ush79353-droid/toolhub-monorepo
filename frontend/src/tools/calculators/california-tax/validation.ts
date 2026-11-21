@@ -129,10 +129,10 @@ export function validateCaliforniaTaxInput(
   const countyLabel = COUNTY_PROPERTY_TAX_RATES[input.county].label;
   const disclosures = [
     `TY${input.taxYear}: federal ordinary brackets/std. deduction (Rev. Proc. 2024-40 / 2025-32); CA Form 540 2025 rate schedules & exemption credits (TY2026 CA uses 2025 FTB schedules pending indexing).`,
-    'Federal AGI used as California AGI — Schedule CA adjustments not modeled.',
+    'Federal AGI used as California AGI; Schedule CA adjustments not modeled.',
     'Employee FICA (SSA wage base) + Additional Medicare + EDD SDI; AGI treated as wage proxy.',
     `Property tax = assessed value × applied rate%; default rates are BOE 2024–25 county averages for ${countyLabel} (TRA rates vary; not the illustrative 0.88% screenshot placeholder).`,
-    'Educational estimate only — not a substitute for Form 1040, Form 540, or a property tax bill.',
+    'Educational estimate only; not a substitute for Form 1040, Form 540, or a property tax bill.',
   ] as const;
 
   const result: CaliforniaTaxResult = {

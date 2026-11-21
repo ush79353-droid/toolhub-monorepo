@@ -34,7 +34,7 @@ export function mmToMil(mm: number): number {
 export function shareResultText(meters: number): string {
   const values = allFromMeters(meters);
   return [
-    'Mil to mm Conversion — Omega Calculators',
+    'Mil to mm Conversion | Omega Calculators',
     '',
     `${formatLength(values.mil)} mil = ${formatLength(values.mm)} mm`,
     '',

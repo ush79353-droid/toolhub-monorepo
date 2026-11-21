@@ -36,7 +36,7 @@ function summaryText(
 ): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Currency: ${result.currency}`,
     `Retail price (per seat / month): ${money(result.retailPrice)}`,
     `Seats: ${result.seats}`,

@@ -14,7 +14,7 @@ export function HouseAffordabilityGuideArticle() {
         Affordability depends on income, existing debts, mortgage rate and term,
         down payment, and ownership costs such as taxes, insurance, and HOA dues.
         A lender&apos;s maximum under a guideline can exceed what feels
-        comfortable month to month — compare income-based DTI estimates with a
+ comfortable month to month; compare income-based DTI estimates with a
         fixed personal housing budget.
       </p>
 
@@ -83,7 +83,7 @@ export function HouseAffordabilityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         VA loan evaluation can involve residual income and other requirements
         beyond DTI. The VA-style option here is a DTI-only illustrative estimate
-        — not official VA underwriting — and does not assume mortgage insurance.
+ (not official VA underwriting) and does not assume mortgage insurance.
       </p>
 
       <h2
@@ -151,7 +151,7 @@ export function HouseAffordabilityGuideArticle() {
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
           In the income-based card, enter income, term, rate, debts, down
-          payment, ownership costs, and a DTI profile — then Calculate.
+ payment, ownership costs, and a DTI profile, then Calculate.
         </li>
         <li>
           Review maximum house price, loan, payment breakdown, and DTI ratios.
@@ -159,7 +159,7 @@ export function HouseAffordabilityGuideArticle() {
         <li>
           In the fixed-budget card, enter a monthly budget, mortgage terms, down
           payment, and ownership costs; choose whether fees count toward the
-          budget — then Calculate.
+ budget, then Calculate.
         </li>
         <li>Clear each card independently, or reload both at once.</li>
       </ol>

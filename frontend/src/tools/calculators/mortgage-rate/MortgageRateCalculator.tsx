@@ -80,7 +80,7 @@ export function MortgageRateCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan balance: ${loanSymbol}${input.loanBalance}`,
         `Mortgage term: ${input.mortgageTerm} ${input.termUnit}`,
         `Mortgage rate: ${input.mortgageRatePercent}%`,

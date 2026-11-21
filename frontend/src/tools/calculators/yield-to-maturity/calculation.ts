@@ -516,7 +516,7 @@ function buildResult(args: {
         : `This bond is priced at par. Under the standard fixed-coupon model, yield to maturity equals the coupon rate (${formatPercent(couponRatePercent)}).`;
 
   const explanation =
-    'YTM is the internal rate of return that equates the bond price with the present value of remaining coupons and principal. It assumes the bond is held to maturity, coupons are paid as scheduled, and interim coupons are reinvested at the YTM — it is not a guaranteed return and ignores taxes, fees, and default.';
+    'YTM is the internal rate of return that equates the bond price with the present value of remaining coupons and principal. It assumes the bond is held to maturity, coupons are paid as scheduled, and interim coupons are reinvested at the YTM; it is not a guaranteed return and ignores taxes, fees, and default.';
 
   const formulaBreakdown = [
     'P = Σ C/(1+y/m)^t + F/(1+y/m)^N',

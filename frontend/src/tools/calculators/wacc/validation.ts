@@ -142,7 +142,7 @@ export function validateWaccInput(input: WaccInput): WaccValidation {
   }
   if (equity.value === 0 && debt.value > 0) {
     warnings.push(
-      'With zero equity, WACC equals the after-tax cost of debt — a simplified all-debt capital structure scenario.'
+      'With zero equity, WACC equals the after-tax cost of debt: a simplified all-debt capital structure scenario.'
     );
   }
   if (re.value < 0 || rd.value < 0) {

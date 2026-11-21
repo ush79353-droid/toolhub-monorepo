@@ -55,12 +55,12 @@ export function interpretNowc(
   col: number
 ): string {
   if (Math.abs(nowc) < 5e-12) {
-    return 'NOWC is zero — current operating assets equal current operating liabilities under this simplified classification.';
+    return 'NOWC is zero; current operating assets equal current operating liabilities under this simplified classification.';
   }
   if (nowc > 0) {
     return `Positive NOWC: current operating assets (${formatPlain(coa)}) exceed current operating liabilities (${formatPlain(col)}) by ${formatPlain(nowc)}. This is a balance-sheet operating-capital measure, not a profitability metric.`;
   }
-  return `Negative NOWC: current operating liabilities (${formatPlain(col)}) exceed current operating assets (${formatPlain(coa)}) by ${formatPlain(Math.abs(nowc))}. Negative NOWC is not automatically insolvency — some models run with supplier credit and fast turnover.`;
+  return `Negative NOWC: current operating liabilities (${formatPlain(col)}) exceed current operating assets (${formatPlain(coa)}) by ${formatPlain(Math.abs(nowc))}. Negative NOWC is not automatically insolvency; some models run with supplier credit and fast turnover.`;
 }
 
 export function formatNowcMoney(

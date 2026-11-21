@@ -96,23 +96,23 @@ export function interpretPed(
   let base: string;
   switch (classification) {
     case 'elastic':
-      base = `PED of ${ped} has absolute value greater than 1 — demand is elastic over this interval.`;
+      base = `PED of ${ped} has absolute value greater than 1; demand is elastic over this interval.`;
       break;
     case 'unitElastic':
-      base = `PED of ${ped} ≈ −1 — unit elastic demand over this interval.`;
+      base = `PED of ${ped} ≈ −1; unit elastic demand over this interval.`;
       break;
     case 'inelastic':
-      base = `PED of ${ped} has absolute value between 0 and 1 — demand is inelastic over this interval.`;
+      base = `PED of ${ped} has absolute value between 0 and 1; demand is inelastic over this interval.`;
       break;
     case 'perfectlyInelastic':
       base =
-        'PED of 0 — quantity did not change while price changed (perfectly inelastic over the observed interval).';
+        'PED of 0; quantity did not change while price changed (perfectly inelastic over the observed interval).';
       break;
     case 'positiveUnit':
-      base = `PED of ${ped} is positive with magnitude ≈ 1 — not ordinary downward-sloping unit-elastic demand.`;
+      base = `PED of ${ped} is positive with magnitude ≈ 1; not ordinary downward-sloping unit-elastic demand.`;
       break;
     case 'positiveRelationship':
-      base = `PED of ${ped} is positive — price and quantity moved in the same direction. Other market factors may dominate.`;
+      base = `PED of ${ped} is positive; price and quantity moved in the same direction. Other market factors may dominate.`;
       break;
     default:
       base = `PED ≈ ${ped}.`;

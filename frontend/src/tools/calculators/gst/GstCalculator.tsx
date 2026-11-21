@@ -73,7 +73,7 @@ export function GstCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `GST: ${result.formattedGstPercent}%`,
         `Gross price: ${getCurrencySymbol(result.grossCurrency)}${result.formattedGrossPrice}`,
         `Net price: ${getCurrencySymbol(result.netCurrency)}${result.formattedNetPrice}`,

@@ -105,7 +105,7 @@ export function RealtorCommissionVatCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `House price: ${houseSymbol}${input.housePrice}`,
         `Commission: ${input.commissionPercent}% (VAT-exclusive)`,
         `VAT rate: ${input.vatRatePercent}%`,

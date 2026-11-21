@@ -97,7 +97,7 @@ export function Rule2836Calculator({
       result.formattedBackEndRatio != null);
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Mode: ${input.housingExpenseMode}`,
         `Currency: ${input.currency}`,
         result!.formattedFrontEndRatio != null

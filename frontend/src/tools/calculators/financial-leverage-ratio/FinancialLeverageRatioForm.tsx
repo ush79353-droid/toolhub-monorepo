@@ -152,7 +152,7 @@ export function FinancialLeverageRatioForm({
             Current assets
             <InfoTooltip
               label="Current assets"
-              text="Assets expected to be converted to cash, sold, or consumed within the operating cycle — cash, receivables, inventory, short-term investments, prepaids. Use the reported balance-sheet total."
+              text="Assets expected to be converted to cash, sold, or consumed within the operating cycle; cash, receivables, inventory, short-term investments, prepaids. Use the reported balance-sheet total."
             />
           </label>
           <FieldShell error={errors.currentAssets}>
@@ -180,7 +180,7 @@ export function FinancialLeverageRatioForm({
             Non-current assets
             <InfoTooltip
               label="Non-current assets"
-              text="Longer-lived assets such as PP&E, long-term investments, intangibles, and investment property — typically at net carrying value. Do not add accumulated depreciation separately if already netted."
+              text="Longer-lived assets such as PP&E, long-term investments, intangibles, and investment property; typically at net carrying value. Do not add accumulated depreciation separately if already netted."
             />
           </label>
           <FieldShell error={errors.nonCurrentAssets}>
@@ -269,7 +269,7 @@ export function FinancialLeverageRatioForm({
             Financial leverage
             <InfoTooltip
               label="Financial leverage"
-              text="Equity multiplier = Total Assets ÷ Total Equity. Dimensionless — no currency or percent symbol. Undefined when equity is zero."
+              text="Equity multiplier = Total Assets ÷ Total Equity. Dimensionless; no currency or percent symbol. Undefined when equity is zero."
             />
           </label>
           <FieldShell muted>

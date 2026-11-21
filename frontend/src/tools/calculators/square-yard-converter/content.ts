@@ -51,7 +51,7 @@ export const YD2_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'Square Yard Converter',
     paragraphs: [
-      'Convert square yards into square feet, square meters, acres, and other area units — or reverse from any supported field. Use it for land measurement, flooring, carpeting, landscaping, construction, property measurements, fabric and material area calculations, and imperial–metric area conversions.',
+      'Convert square yards into square feet, square meters, acres, and other area units, or reverse from any supported field. Use it for land measurement, flooring, carpeting, landscaping, construction, property measurements, fabric and material area calculations, and imperial–metric area conversions.',
       'Enter an area in any field to calculate equivalents across all units. Expand Conversion for other units for inches, centimeters, millimeters, kilometers, miles, and hectares.',
     ],
   },

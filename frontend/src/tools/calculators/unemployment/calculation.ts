@@ -90,9 +90,9 @@ export function interpretUnemployment(input: {
     return 'Enter consistent employed, unemployed, and labor-force counts to calculate the rate.';
   }
   if (unemployedPeople === 0) {
-    return `Unemployment rate is ${formatRatePercent(unemploymentRatePercent)}% — no unemployed people in a positive labor force. Unemployed means people without a job who are actively seeking and available for work.`;
+    return `Unemployment rate is ${formatRatePercent(unemploymentRatePercent)}%; no unemployed people in a positive labor force. Unemployed means people without a job who are actively seeking and available for work.`;
   }
-  return `Unemployment rate is ${formatRatePercent(unemploymentRatePercent)}% of the labor force. Unemployed means people without a job who are actively seeking and available for work under the relevant statistical definition — not everyone without employment.`;
+  return `Unemployment rate is ${formatRatePercent(unemploymentRatePercent)}% of the labor force. Unemployed means people without a job who are actively seeking and available for work under the relevant statistical definition; not everyone without employment.`;
 }
 
 export function toUnemploymentResult(input: {
@@ -138,7 +138,7 @@ export function shareResultText(
   path = '/tools/unemployment-calculator-unemployment-rate'
 ): string {
   const lines = [
-    'Unemployment Calculator (Unemployment Rate) — Omega Calculators',
+    'Unemployment Calculator (Unemployment Rate) | Omega Calculators',
     '',
     `Employed: ${formatPeopleCount(result.employedPeople)} people`,
     `Unemployed: ${formatPeopleCount(result.unemployedPeople)} people`,

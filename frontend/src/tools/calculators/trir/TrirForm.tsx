@@ -65,7 +65,7 @@ export function TrirForm({
   return (
     <div className="space-y-4">
       <p className="text-xs leading-relaxed text-muted-foreground">
-        Total Recordable Incident Rate — TRIR = (recordable cases × 200,000) ÷ hours worked. Not a
+ Total Recordable Incident Rate; TRIR = (recordable cases × 200,000) ÷ hours worked. Not a
         percentage of injured employees.
       </p>
 
@@ -80,7 +80,7 @@ export function TrirForm({
             <span>Hours worked</span>
             <InfoTooltip
               label="Hours worked"
-              text="Enter total employee hours worked in the same reporting period used for recordable cases — including overtime. Do not use headcount alone or calendar hours as a substitute."
+              text="Enter total employee hours worked in the same reporting period used for recordable cases, including overtime. Do not use headcount alone or calendar hours as a substitute."
             />
           </label>
           <FieldShell error={errors.hoursWorked}>
@@ -105,7 +105,7 @@ export function TrirForm({
             <span>Number of injuries</span>
             <InfoTooltip
               label="Number of injuries"
-              text="Enter OSHA-recordable work-related injury and illness cases for the period — not every first-aid or minor incident. Apply official OSHA recordkeeping criteria."
+              text="Enter OSHA-recordable work-related injury and illness cases for the period; not every first-aid or minor incident. Apply official OSHA recordkeeping criteria."
             />
           </label>
           <FieldShell error={errors.injuries}>
@@ -125,7 +125,7 @@ export function TrirForm({
           ) : null}
           {result?.injuriesEstimated ? (
             <p className="mt-1 text-xs text-muted-foreground">
-              Estimated cases (may be fractional — not an observed count).
+ Estimated cases (may be fractional; not an observed count).
             </p>
           ) : null}
         </div>
@@ -178,7 +178,7 @@ export function TrirForm({
         )}
         <p className="text-xs leading-relaxed text-muted-foreground">
           Low (&lt;3) / moderate (3–8) / high (&gt;8) bands are illustrative reference categories from
-          the product guide — not OSHA or BLS official thresholds. A low TRIR alone does not prove a
+ the product guide; not OSHA or BLS official thresholds. A low TRIR alone does not prove a
           workplace is safe.
         </p>
       </div>

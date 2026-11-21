@@ -27,7 +27,7 @@ export function AmtGuideArticle() {
         line 4 when preference items apply. Choose filing status and optional AMT-permitted tax
         credits. The calculator applies that year’s exemption (with phaseout), computes taxable
         excess, applies the 26%/28% AMT rates, then subtracts permitted credits. Results are a
-        tentative AMT estimate — not additional AMT versus regular tax.
+ tentative AMT estimate; not additional AMT versus regular tax.
       </p>
 
       <h2 id="amt-formulas" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
@@ -56,7 +56,7 @@ export function AmtGuideArticle() {
         Exemption amounts, phaseout starts, MFS add-on rules, and 26%/28% ceilings follow the
         Instructions for Form 6251 for the selected year and the related revenue procedures (Rev.
         Proc. 2021-45 for 2022; Rev. Proc. 2022-38 for 2023). Changing the year switches the entire
-        parameter set — current-year inflation figures are never mixed into a historical year.
+ parameter set; current-year inflation figures are never mixed into a historical year.
       </p>
 
       <h2 id="limitations" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
@@ -72,7 +72,7 @@ export function AmtGuideArticle() {
           worksheets are out of scope.
         </li>
         <li>
-          Educational estimate only — not tax advice and not a substitute for Form 6251 or a
+ Educational estimate only; not tax advice and not a substitute for Form 6251 or a
           qualified preparer.
         </li>
       </ul>

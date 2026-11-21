@@ -35,7 +35,7 @@ function summaryText(
   note: string
 ): string {
   const lines = [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `CAGR: ${result.displays.cagrPercent}%`,
     `Periods: ${result.displays.periods}`,
     `Initial value: ${draft.currency} ${result.displays.initialValue}`,

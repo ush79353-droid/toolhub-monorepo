@@ -9,7 +9,7 @@ export function BudgetGuideArticle() {
           The Budget Calculator sketches a personal cash budget: income (gross salary with a tax
           rate, pension, and other income), planned savings allocations, recurring monthly
           expenses, and annual expenses. Summary totals show monthly income, savings, expenses,
-          annual expenses, and monthly/annual budget balance. It is an illustrative worksheet — not
+ annual expenses, and monthly/annual budget balance. It is an illustrative worksheet; not
           tax advice or a bank statement.
         </p>
         <p>
@@ -50,7 +50,7 @@ export function BudgetGuideArticle() {
         <h2 className="text-xl font-semibold text-accent">Tax Rate & Currency</h2>
         <p>
           Salary is gross. Tax rate is a percent applied only to that gross salary after frequency
-          normalization — it does not tax pension or other income, and it is not added again as an
+ normalization; it does not tax pension or other income, and it is not added again as an
           expense. Employer or statutory contribution schedules are not modeled here.
         </p>
         <p>

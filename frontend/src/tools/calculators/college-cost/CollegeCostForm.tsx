@@ -120,7 +120,7 @@ export function CollegeCostForm({
             <label htmlFor="annual-cost">Today&apos;s annual college costs</label>
             <InfoTooltip
               label="Today's annual college costs"
-              text="Current annual tuition, fees, and living costs. Presets are College Board 2025–2026 U.S. averages — not school-specific guarantees."
+              text="Current annual tuition, fees, and living costs. Presets are College Board 2025–2026 U.S. averages; not school-specific guarantees."
               align="left"
             />
           </div>
@@ -301,7 +301,7 @@ export function CollegeCostForm({
             <label htmlFor="tax-rate">Tax rate on interest or investment return</label>
             <InfoTooltip
               label="Tax rate on interest or investment return"
-              text="Estimated tax on investment earnings only — not on principal. Use 0% for eligible 529 plan savings."
+              text="Estimated tax on investment earnings only; not on principal. Use 0% for eligible 529 plan savings."
               align="left"
             />
           </div>

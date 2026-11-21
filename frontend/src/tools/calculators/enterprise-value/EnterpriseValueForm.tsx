@@ -111,7 +111,7 @@ export function EnterpriseValueForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        All money fields share one currency and scale (denomination only — no
+ All money fields share one currency and scale (denomination only; no
         FX).
       </p>
       <p className="text-xs">

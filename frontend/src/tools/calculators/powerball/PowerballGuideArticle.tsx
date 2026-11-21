@@ -18,7 +18,7 @@ export function PowerballGuideArticle() {
         Powerball is a multi-state lottery jackpot game. The advertised jackpot
         is usually the annuity total; the cash option is a lower one-time
         payment. Federal and state taxes further reduce take-home amounts.
-        This calculator estimates lump-sum and graduated annuity scenarios — it
+ This calculator estimates lump-sum and graduated annuity scenarios; it
         is not an official Powerball tool.
       </p>
 
@@ -88,7 +88,7 @@ export function PowerballGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Federal lottery withholding is often 24% on reportable prizes, but your
         final federal liability uses progressive brackets after deductions and
-        depends on filing status and other income. State treatment varies —
+ depends on filing status and other income. State treatment varies; 
         including no-income-tax states and California&apos;s general lottery
         exemption. Do not treat withholding as the final tax bill.
       </p>

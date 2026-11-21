@@ -38,7 +38,7 @@ export const DMS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Introduction',
     paragraphs: [
       'Degrees, minutes, and seconds (DMS) split an angle into whole degrees plus arcminutes and arcseconds. Decimal degrees (DD) express the same angle as a single number.',
-      'This calculator converts either direction for general angles—not only geographic coordinates. Negative values, fractional seconds, and angles larger than 360° are supported.',
+      'This calculator converts either direction for general angles, not only geographic coordinates. Negative values, fractional seconds, and angles larger than 360° are supported.',
     ],
   },
   {

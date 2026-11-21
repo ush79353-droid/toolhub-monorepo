@@ -58,7 +58,7 @@ export function PressureConverterResults({
           Canonical: {formatPressure(result.pascals)} Pa
         </p>
         <p className="mt-1 text-xs text-muted-foreground">
-          Pressure = force / area. Unit conversion only — not gauge↔absolute.
+ Pressure = force / area. Unit conversion only; not gauge↔absolute.
         </p>
       </div>
 

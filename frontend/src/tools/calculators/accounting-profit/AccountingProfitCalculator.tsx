@@ -182,7 +182,7 @@ export function AccountingProfitCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total revenue: ${getCurrencySymbol(input.totalRevenueCurrency)}${input.totalRevenue} ${input.totalRevenueCurrency}`,
         `Operation expenses: ${getCurrencySymbol(input.operationExpensesCurrency)}${input.operationExpenses} ${input.operationExpensesCurrency}`,
         `Interest: ${getCurrencySymbol(input.interestCurrency)}${input.interest} ${input.interestCurrency}`,

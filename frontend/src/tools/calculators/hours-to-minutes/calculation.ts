@@ -68,7 +68,7 @@ export function calculateHoursToMinutes(input: HoursToMinutesInput): HoursToMinu
 
 export function shareResultText(result: HoursToMinutesResult): string {
   return [
-    'Hours to Minutes Converter — Omega Calculators',
+    'Hours to Minutes Converter | Omega Calculators',
     '',
     `${formatDuration(result.hours)} hours = ${formatDuration(result.minutes)} minutes`,
     `${formatDuration(result.hours)} hours = ${formatDuration(result.seconds)} seconds`,

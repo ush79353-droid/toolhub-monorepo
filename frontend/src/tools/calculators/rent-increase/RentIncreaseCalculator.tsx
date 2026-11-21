@@ -74,7 +74,7 @@ export function RentIncreaseCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Current annual rent: ${getCurrencySymbol(input.currentRentCurrency)}${input.currentAnnualRent}`,
         `Average rent change: ${input.averageRentChangePercent}% / year`,
         `Number of years: ${input.numberOfYears}`,

@@ -27,7 +27,7 @@ export const NM_TO_JOULES_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'overview',
     title: 'Newton-Meter (Nm) to Joules Calculator',
     paragraphs: [
-      'A newton (N) is the SI unit of force. A joule (J) is the SI unit of work or energy. A newton-meter (N·m) can express work when force acts through a displacement, and it can also express torque. Although work and torque share the same SI base dimensions, they are different physical quantities — do not treat torque as automatically interchangeable with energy.',
+      'A newton (N) is the SI unit of force. A joule (J) is the SI unit of work or energy. A newton-meter (N·m) can express work when force acts through a displacement, and it can also express torque. Although work and torque share the same SI base dimensions, they are different physical quantities; do not treat torque as automatically interchangeable with energy.',
       'Dimensionally, 1 N = 1 J/m and 1 J = 1 N·m for work. This calculator converts those unit pairs numerically with a factor of 1, and optionally computes work from force, displacement, and angle.',
     ],
     formula: '1 J = 1 N·m · 1 N = 1 J/m',

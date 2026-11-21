@@ -221,7 +221,7 @@ export function EpfForm({
             Annual EPF Interest Rate
             <InfoTooltip
               label="Interest"
-              text="Assumed constant future rate. EPFO announces rates periodically — edit this field."
+              text="Assumed constant future rate. EPFO announces rates periodically; edit this field."
             />
           </label>
           <FieldShell error={errors.annualInterestRate}>
@@ -339,7 +339,7 @@ export function EpfForm({
               EPS Wage Ceiling
               <InfoTooltip
                 label="Ceiling"
-                text="Pensionable wage cap used for 8.33% EPS (commonly ₹15,000 — verify current EPFO rules)."
+                text="Pensionable wage cap used for 8.33% EPS (commonly ₹15,000; verify current EPFO rules)."
               />
             </label>
             <FieldShell error={errors.epsWageCeiling}>

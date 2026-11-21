@@ -14,7 +14,7 @@ export function DepreciationGuideArticle() {
         Depreciation allocates an asset&apos;s depreciable cost (original cost minus salvage) over
         its useful life. This calculator estimates the depreciation expense for a selected year and
         the book value after that many years under straight-line, declining-balance, or
-        sum-of-years&apos; digits methods. It is an accounting estimate — not a tax schedule.
+ sum-of-years&apos; digits methods. It is an accounting estimate; not a tax schedule.
       </p>
 
       <h2 id="how-to-use" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
@@ -38,15 +38,15 @@ export function DepreciationGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong className="font-semibold text-accent">Straight line</strong> — equal annual
+ <strong className="font-semibold text-accent">Straight line</strong>: equal annual
           expense over useful life.
         </li>
         <li>
-          <strong className="font-semibold text-accent">Declining balance</strong> — expense =
+ <strong className="font-semibold text-accent">Declining balance</strong>: expense =
           beginning book × rate, capped so book never falls below salvage.
         </li>
         <li>
-          <strong className="font-semibold text-accent">Sum-of-years&apos; digits</strong> — front-
+ <strong className="font-semibold text-accent">Sum-of-years&apos; digits</strong>: front-
           loaded fractions of depreciable cost using SYD = n(n+1)/2.
         </li>
       </ul>

@@ -28,7 +28,7 @@ export function MlToTspResults({
   if (invalid) {
     return (
       <p className="rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-muted-foreground">
-        Enter a non-negative finite volume. US teaspoons are not exactly 5 mL — check the selected
+ Enter a non-negative finite volume. US teaspoons are not exactly 5 mL; check the selected
         teaspoon standard.
       </p>
     );

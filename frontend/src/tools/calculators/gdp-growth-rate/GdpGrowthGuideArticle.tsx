@@ -190,7 +190,7 @@ export function GdpGrowthGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         If population grows 2% and real GDP grows 3%, per-capita growth is about
-        1% — total growth alone can overstate gains per person.
+ 1%; total growth alone can overstate gains per person.
       </p>
 
       <h2

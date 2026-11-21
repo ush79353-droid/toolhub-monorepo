@@ -30,7 +30,7 @@ export function AverageVariableCostGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         AVC is the variable cost of producing one unit of output. It supports
         cost management, production comparisons across output levels, and
-        contribution analysis — but it alone does not set a profitable price.
+ contribution analysis, but it alone does not set a profitable price.
       </p>
 
       <h2
@@ -102,7 +102,7 @@ export function AverageVariableCostGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Marginal cost is the additional cost of producing one more unit (or an
         incremental quantity), often approximated as ΔTC / ΔQ. AVC averages
-        variable cost across all units — they answer different questions.
+ variable cost across all units; they answer different questions.
       </p>
 
       <h2
@@ -125,7 +125,7 @@ export function AverageVariableCostGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         AVC informs unit variable cost and contribution margin analysis for
         short-run decisions. Over time, prices must also help cover fixed costs
-        and required profit — AVC alone is not enough.
+ and required profit; AVC alone is not enough.
       </p>
 
       <h2

@@ -80,7 +80,7 @@ export function GrossMarginCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Revenue: ${getCurrencySymbol(input.revenueCurrency)}${input.revenue}`,
         `COGS: ${getCurrencySymbol(input.cogsCurrency)}${input.cogs}`,
         `Gross profit: ${getCurrencySymbol(result.profitCurrency)}${result.formattedGrossProfit}`,

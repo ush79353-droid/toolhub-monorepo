@@ -254,7 +254,7 @@ export function McgToMlForm({
                   }}
                 >
                   <option value="vitaminB12Example">
-                    Vitamin B12 — Example concentration (1,000 mcg/mL)
+ Vitamin B12; Example concentration (1,000 mcg/mL)
                   </option>
                   <option value="custom">Custom concentration</option>
                 </select>
@@ -299,7 +299,7 @@ export function McgToMlForm({
               ) : (
                 <p className="text-xs text-muted-foreground">
                   Using example strength 1,000 mcg/mL. Not all Vitamin B12 products use this
-                  concentration — check your label.
+ concentration; check your label.
                 </p>
               )}
             </>

@@ -88,7 +88,7 @@ export const TRUMP_TARIFF_FAQS: readonly FAQItem[] = [
   {
     question: 'Are there exemptions from import tariffs?',
     answer:
-      'Possible relief includes product exclusions, temporary suspensions, free-trade or preference programs, and other special rules — each with eligibility conditions (including origin). Exemptions are not automatic.',
+      'Possible relief includes product exclusions, temporary suspensions, free-trade or preference programs, and other special rules; each with eligibility conditions (including origin). Exemptions are not automatic.',
   },
   {
     question: 'What is a tariff-inclusive price?',
@@ -143,7 +143,7 @@ export const TRUMP_TARIFF_FAQS: readonly FAQItem[] = [
   {
     question: 'Are tariff calculations legally binding?',
     answer:
-      'No. Calculator estimates — including this one — are educational. Official liability depends on the entry, classification, valuation, and CBP assessment under applicable law.',
+      'No. Calculator estimates (including this one) are educational. Official liability depends on the entry, classification, valuation, and CBP assessment under applicable law.',
   },
   {
     question: 'Where can I check official U.S. tariff information?',

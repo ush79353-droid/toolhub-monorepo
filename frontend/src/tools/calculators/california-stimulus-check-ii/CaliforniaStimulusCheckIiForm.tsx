@@ -107,7 +107,7 @@ export function CaliforniaStimulusCheckIiForm({
           </p>
         ) : (
           <p className="mt-3 text-xs leading-relaxed text-amber-900 sm:text-[13px]">
-            Historical program only — GSS II distributions concluded; FTB reports no new Golden State
+ Historical program only; GSS II distributions concluded; FTB reports no new Golden State
             Stimulus payments since July 15, 2022.
           </p>
         )}
@@ -263,7 +263,7 @@ export function CaliforniaStimulusCheckIiForm({
           ) : (
             <p className="mt-1 text-xs text-muted-foreground">
               Historical 2020 California return filing date (MM/DD/YYYY via date picker). Used for
-              deadline and timing guidance only — not a fabricated personal payment date.
+ deadline and timing guidance only; not a fabricated personal payment date.
             </p>
           )}
         </div>

@@ -12,7 +12,7 @@ export function CashConversionCycleGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The cash conversion cycle (CCC) measures how long cash remains tied up in
-        operating working capital — typically inventory and accounts receivable —
+ operating working capital (typically inventory and accounts receivable) 
         after accounting for the time taken to pay suppliers. It is expressed in
         days so managers can compare liquidity timing across periods and peers.
       </p>
@@ -65,7 +65,7 @@ export function CashConversionCycleGuideArticle() {
         A longer CCC usually means cash stays invested in inventory and
         receivables for more days. A shorter CCC often signals faster conversion
         into cash. Zero means inventory and collection days are offset by
-        supplier days. Industry norms differ widely — compare within a business
+ supplier days. Industry norms differ widely; compare within a business
         model rather than against a universal target.
       </p>
 

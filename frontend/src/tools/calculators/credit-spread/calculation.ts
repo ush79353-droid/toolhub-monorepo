@@ -144,9 +144,9 @@ function buildInterpretation(pp: number, bps: number): string {
     return 'The two bonds have identical quoted yields under the selected comparison.';
   }
   if (pp > 0) {
-    return `The corporate bond yields ${formatSpreadBps(bps).replace(/^\+/, '')} more than the government benchmark. This difference can reflect compensation for credit risk, liquidity differences, and other bond-specific factors — not default risk alone.`;
+    return `The corporate bond yields ${formatSpreadBps(bps).replace(/^\+/, '')} more than the government benchmark. This difference can reflect compensation for credit risk, liquidity differences, and other bond-specific factors; not default risk alone.`;
   }
-  return `The corporate bond yields ${formatSpreadBps(Math.abs(bps)).replace(/^\+/, '')} less than the government benchmark. Negative spreads can reflect liquidity, structure, benchmark choice, or market distortions — they are not automatically invalid.`;
+  return `The corporate bond yields ${formatSpreadBps(Math.abs(bps)).replace(/^\+/, '')} less than the government benchmark. Negative spreads can reflect liquidity, structure, benchmark choice, or market distortions; they are not automatically invalid.`;
 }
 
 function buildExplanation(pp: number, bps: number): string {
@@ -154,9 +154,9 @@ function buildExplanation(pp: number, bps: number): string {
     return 'Credit spread is zero: corporate and government yields match for this comparison.';
   }
   if (pp > 0) {
-    return `The corporate bond offers a yield ${formatSpreadBps(bps).replace(/^\+/, '')} above the government benchmark. Wider spreads are often associated with higher perceived credit risk, weaker liquidity, or greater risk aversion — always relative to rating, sector, maturity, and market conditions.`;
+    return `The corporate bond offers a yield ${formatSpreadBps(bps).replace(/^\+/, '')} above the government benchmark. Wider spreads are often associated with higher perceived credit risk, weaker liquidity, or greater risk aversion; always relative to rating, sector, maturity, and market conditions.`;
   }
-  return `The corporate bond yields below the selected government benchmark by ${formatSpreadBps(Math.abs(bps)).replace(/^\+/, '')}. Interpret relative to maturity match, currency, yield convention, and security features — do not treat negative spreads as calculator errors.`;
+  return `The corporate bond yields below the selected government benchmark by ${formatSpreadBps(Math.abs(bps)).replace(/^\+/, '')}. Interpret relative to maturity match, currency, yield convention, and security features; do not treat negative spreads as calculator errors.`;
 }
 
 /**

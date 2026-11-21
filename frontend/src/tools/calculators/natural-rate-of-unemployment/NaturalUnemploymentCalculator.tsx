@@ -107,7 +107,7 @@ export function NaturalUnemploymentCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Natural rate of unemployment: ${result.formattedNaturalRate}%`,
         `Natural unemployed: ${result.naturalUnemployedPeople.toLocaleString('en-US')} people`,
         `Labor force: ${result.laborForcePeople.toLocaleString('en-US')} people`,

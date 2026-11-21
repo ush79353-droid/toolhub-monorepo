@@ -76,7 +76,7 @@ export function GeorgiaOvertimeCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Regular pay: ${getCurrencySymbol(input.regularPayCurrency)}${input.regularPay}/${input.regularPayPeriod}`,
         `Regular work time: ${input.regularWorkTime} ${input.regularWorkDurationUnit}/${input.regularWorkFrequency}`,
         `Overtime multiplier: ${input.overtimeMultiplier}`,

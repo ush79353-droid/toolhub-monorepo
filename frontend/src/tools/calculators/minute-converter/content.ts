@@ -166,6 +166,6 @@ export const MINUTE_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'How Many Minutes Are in a Year?',
-    answer: `A common 365-day year has 525,600 minutes. An average Gregorian year has ${MINUTES_PER_GREGORIAN_YEAR} minutes — the convention this calculator uses.`,
+    answer: `A common 365-day year has 525,600 minutes. An average Gregorian year has ${MINUTES_PER_GREGORIAN_YEAR} minutes: the convention this calculator uses.`,
   },
 ];

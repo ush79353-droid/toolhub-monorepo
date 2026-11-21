@@ -84,18 +84,18 @@ export function CombinedRatioForm({
 
   const statusCopy =
     result?.status === 'profit'
-      ? 'Underwriting profit — losses and underwriting expenses are below premiums (simplified model).'
+      ? 'Underwriting profit; losses and underwriting expenses are below premiums (simplified model).'
       : result?.status === 'breakeven'
-        ? 'Underwriting break-even — premiums equal losses plus underwriting expenses.'
+        ? 'Underwriting break-even; premiums equal losses plus underwriting expenses.'
         : result?.status === 'loss'
-          ? 'Underwriting loss — losses plus underwriting expenses exceed premiums.'
+          ? 'Underwriting loss; losses plus underwriting expenses exceed premiums.'
           : null;
 
   return (
     <div className="space-y-4">
       <p className="text-xs leading-relaxed text-muted-foreground">
         Insurance underwriting combined ratio from claim losses, loss adjustments, premiums, and
-        underwriting expenses. Currency changes the display symbol only — amounts are not converted.
+ underwriting expenses. Currency changes the display symbol only; amounts are not converted.
       </p>
 
       <div>
@@ -338,7 +338,7 @@ export function CombinedRatioForm({
             </>
           ) : (
             <p className="text-sm text-muted-foreground">
-              Enter claim loss, loss adjustments, premiums, and underwriting expense — or edit
+ Enter claim loss, loss adjustments, premiums, and underwriting expense, or edit
               combined ratio with enough known values to reverse-solve.
             </p>
           )}
@@ -362,7 +362,7 @@ export function CombinedRatioForm({
         ) : null}
 
         <p className="text-xs leading-relaxed text-muted-foreground">
-          A combined ratio below 100% is not company-wide profit — investment income, taxes, and
+ A combined ratio below 100% is not company-wide profit; investment income, taxes, and
           other items can change overall results.
         </p>
       </div>
@@ -371,7 +371,7 @@ export function CombinedRatioForm({
 
       <div className="flex flex-wrap gap-2">
         <Button type="button" variant="outline" className="h-11" onClick={onLoadExample}>
-          Example — 70% combined ratio
+ Example: 70% combined ratio
         </Button>
         <Button type="button" variant="outline" className="h-11" onClick={onReset}>
           Reload calculator

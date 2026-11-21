@@ -100,7 +100,7 @@ export function ScrapSilverForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Estimate scrap silver melt value from weight, purity, and a pure-silver
-          market price. Price is manual — not a live quote.
+ market price. Price is manual; not a live quote.
         </p>
         <Button type="button" variant="ghost" className="h-8 px-2 text-xs" onClick={onLoadExample}>
           Load example

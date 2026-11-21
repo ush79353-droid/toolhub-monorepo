@@ -18,7 +18,7 @@ export const FCFF_FAQS: readonly FAQItem[] = [
   {
     question: 'Which source should I choose?',
     answer:
-      'Use Net income when you start from the bottom of the income statement. Use EBITDA or EBIT when you start before interest (and for EBITDA, before D&A). Use CFO when you already have operating cash flow after working-capital changes — then ΔNWC is not deducted again.',
+      'Use Net income when you start from the bottom of the income statement. Use EBITDA or EBIT when you start before interest (and for EBITDA, before D&A). Use CFO when you already have operating cash flow after working-capital changes, then ΔNWC is not deducted again.',
   },
   {
     question: 'How are CapEx and working capital investment treated?',

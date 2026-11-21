@@ -95,7 +95,7 @@ export function validateRetainedEarningsInput(
       errors: {
         form:
           earnings.value === 0
-            ? 'Conventional dividend payout ratio is not meaningful when earnings are zero — enter actual dividends separately in a full statement of retained earnings.'
+            ? 'Conventional dividend payout ratio is not meaningful when earnings are zero; enter actual dividends separately in a full statement of retained earnings.'
             : 'Conventional dividend payout ratio is not meaningful for negative earnings (net loss). Do not infer dividends from a payout percentage.',
       },
       result: null,
@@ -132,7 +132,7 @@ export function validateRetainedEarningsInput(
   if (payout.value > 100) {
     status = 'payoutAbove100';
     warningMessage =
-      'Payout ratio exceeds 100% — dividends exceed current-period earnings, producing negative current-period retained earnings (may use reserves or other funding).';
+      'Payout ratio exceeds 100%; dividends exceed current-period earnings, producing negative current-period retained earnings (may use reserves or other funding).';
   }
 
   const sharesReady =

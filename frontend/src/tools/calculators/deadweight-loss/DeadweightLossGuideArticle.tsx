@@ -17,7 +17,7 @@ export function DeadweightLossGuideArticle() {
         quantities for the simple triangle model, a per-unit tax wedge, or
         explicit linear supply and demand. Deadweight loss arises from taxes,
         subsidies, price controls, monopoly, externalities, quotas, and other
-        distortions. Results are geometric or model-based estimates — not
+ distortions. Results are geometric or model-based estimates; not
         automatic proof that any particular policy is inefficient.
       </p>
 
@@ -31,7 +31,7 @@ export function DeadweightLossGuideArticle() {
         In competitive markets without market failures, equilibrium quantity
         maximizes total surplus (consumer surplus + producer surplus). When
         quantity moves away from that efficient level, some mutually beneficial
-        trades disappear. That lost surplus is deadweight loss — distinct from a
+ trades disappear. That lost surplus is deadweight loss; distinct from a
         transfer of surplus from one party to another.
       </p>
 
@@ -50,7 +50,7 @@ export function DeadweightLossGuideArticle() {
       <h3 className="mt-4 text-base font-semibold text-accent">Subsidies</h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Subsidies may expand output past the efficient point when private
-        incentives already align with social value — creating over-trading.
+ incentives already align with social value; creating over-trading.
       </p>
       <h3 className="mt-4 text-base font-semibold text-accent">Price ceilings</h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
@@ -151,7 +151,7 @@ export function DeadweightLossGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Monopoly markup is not itself DWL. Welfare loss comes from restricting
         output below the competitive quantity. Correct monopoly DWL requires
-        demand and cost curves — not an arbitrary price difference alone. Use
+ demand and cost curves; not an arbitrary price difference alone. Use
         the linear mode when you can specify those relationships.
       </p>
 
@@ -211,7 +211,7 @@ export function DeadweightLossGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         For a given wedge, more elastic curves usually imply a larger quantity
         response and a larger DWL triangle. Elasticity alone does not determine
-        DWL in every model — curve shape and the policy instrument matter.
+ DWL in every model; curve shape and the policy instrument matter.
       </p>
 
       <h2

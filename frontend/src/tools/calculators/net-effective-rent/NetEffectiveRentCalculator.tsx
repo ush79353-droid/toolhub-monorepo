@@ -80,7 +80,7 @@ export function NetEffectiveRentCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Lease term: ${input.leaseYears || '0'} yrs ${input.leaseMonths || '0'} mos (${result.leaseMonths} months)`,
         `Monthly rent: ${getCurrencySymbol(input.monthlyRentCurrency)}${input.monthlyRent}/${input.monthlyRentPeriod}`,
         `Rent-free months: ${input.rentFreeMonths || '0'}`,

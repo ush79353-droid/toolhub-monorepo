@@ -18,7 +18,7 @@ export const GRATUITY_FAQS: readonly FAQItem[] = [
   {
     question: 'When is service too short for a payout?',
     answer:
-      'Ordinary entitlement under the Act requires at least five years of continuous service (60 months). Below that gate this calculator shows ₹0 / 0.00. Death or disablement exceptions are not modeled. This is a formula estimate — not a Pakistan or global statutory payout.',
+      'Ordinary entitlement under the Act requires at least five years of continuous service (60 months). Below that gate this calculator shows ₹0 / 0.00. Death or disablement exceptions are not modeled. This is a formula estimate; not a Pakistan or global statutory payout.',
   },
   {
     question: 'Do the currency selectors convert amounts?',

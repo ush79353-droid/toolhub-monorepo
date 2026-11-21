@@ -116,7 +116,7 @@ export function validateChildTaxCreditInput(
     formattedPhaseoutReduction: formatCtcUsd(computed.phaseoutReduction),
     refundableDeterminable: false,
     refundableNote:
-      'Not determinable — Additional Child Tax Credit (ACTC) requires earned income and tax-liability inputs not collected here (Schedule 8812 Part II).',
+      'Not determinable: Additional Child Tax Credit (ACTC) requires earned income and tax-liability inputs not collected here (Schedule 8812 Part II).',
     assumptionsNote:
       'Educational TY 2025 estimate. Assumes entered children meet §24 / Schedule 8812 dependency, residency, support, relationship, and SSN tests. Ages 0–16 count as under 17; age 17+ do not. Not a guaranteed IRS refund.',
   };

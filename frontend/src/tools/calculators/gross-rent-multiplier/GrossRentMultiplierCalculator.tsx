@@ -89,7 +89,7 @@ export function GrossRentMultiplierCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Property price: ${getCurrencySymbol(input.propertyPriceCurrency)}${input.propertyPrice}`,
         `Gross rental income: ${getCurrencySymbol(input.grossRentalIncomeCurrency)}${input.grossRentalIncome}/${input.rentPeriod}`,
         `Gross rent multiplier: ${result.formattedGrossRentMultiplier}`,

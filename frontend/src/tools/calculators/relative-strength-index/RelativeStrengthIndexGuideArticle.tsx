@@ -15,7 +15,7 @@ export function RelativeStrengthIndexGuideArticle() {
         the magnitude of recent price gains relative to recent price losses. It
         typically ranges from 0 to 100 and is used to gauge bullish or bearish
         momentum, potential overbought or oversold conditions, and momentum
-        shifts. RSI is calculated from one security’s sequential closes — not
+ shifts. RSI is calculated from one security’s sequential closes; not
         by comparing two different securities.
       </p>
 
@@ -26,11 +26,11 @@ export function RelativeStrengthIndexGuideArticle() {
         How Do You Interpret RSI?
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <li>Below 30 — commonly considered oversold (not a guaranteed bounce).</li>
-        <li>30–50 — lower momentum range.</li>
-        <li>50 — neutral reference.</li>
-        <li>50–70 — higher momentum range.</li>
-        <li>Above 70 — commonly considered overbought (not a guaranteed reversal).</li>
+        <li>Below 30; commonly considered oversold (not a guaranteed bounce).</li>
+        <li>30–50; lower momentum range.</li>
+        <li>50; neutral reference.</li>
+        <li>50–70; higher momentum range.</li>
+        <li>Above 70; commonly considered overbought (not a guaranteed reversal).</li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Strong trends can keep RSI in “extreme” zones for extended periods.
@@ -93,7 +93,7 @@ export function RelativeStrengthIndexGuideArticle() {
         Bullish divergence: price makes a lower low while RSI makes a higher
         low. Bearish divergence: price makes a higher high while RSI makes a
         lower high. Divergences can flag momentum disagreement but frequently
-        fail — treat them as context, not certainty.
+ fail; treat them as context, not certainty.
       </p>
 
       <h2

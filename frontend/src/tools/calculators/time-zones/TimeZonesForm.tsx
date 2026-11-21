@@ -250,7 +250,7 @@ export function TimeZonesForm({
           >
             {ZONE_CATALOG.map((zone) => (
               <option key={zone.id} value={zone.id}>
-                {zone.city} — {zone.label}
+ {zone.city}; {zone.label}
               </option>
             ))}
           </select>
@@ -393,7 +393,7 @@ export function TimeZonesForm({
               const zone = ZONE_BY_ID[id];
               return (
                 <option key={id} value={id}>
-                  {zone.city} — {zone.label}
+ {zone.city}; {zone.label}
                 </option>
               );
             })}

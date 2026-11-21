@@ -4,7 +4,7 @@ import { LossRatioGuideArticle } from './LossRatioGuideArticle';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate the insurance loss ratio from earned premiums, claims paid, and loss adjustment expenses — with interpretation, formulas, and examples. Currency changes formatting only.',
+    'Calculate the insurance loss ratio from earned premiums, claims paid, and loss adjustment expenses, with interpretation, formulas, and examples. Currency changes formatting only.',
   asideAriaLabel: 'Loss Ratio Calculator guide',
   tocItems: LOSS_RATIO_TOC_ITEMS,
   GuideArticle: LossRatioGuideArticle,

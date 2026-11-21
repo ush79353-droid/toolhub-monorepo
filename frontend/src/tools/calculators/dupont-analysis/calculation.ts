@@ -99,5 +99,5 @@ export function interpretDupont(
   tat: number,
   fl: number
 ): string {
-  return `ROE is ${formatDupontPercent(roe)}% from net profit margin ${formatDupontPercent(npm)}% × asset turnover ${formatDupontRatio(tat)}× × financial leverage ${formatDupontRatio(fl)}×. High ROE can reflect profitability, efficiency, or leverage — not automatically financial health.`;
+  return `ROE is ${formatDupontPercent(roe)}% from net profit margin ${formatDupontPercent(npm)}% × asset turnover ${formatDupontRatio(tat)}× × financial leverage ${formatDupontRatio(fl)}×. High ROE can reflect profitability, efficiency, or leverage; not automatically financial health.`;
 }

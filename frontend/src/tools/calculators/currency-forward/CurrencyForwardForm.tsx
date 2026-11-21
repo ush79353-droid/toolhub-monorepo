@@ -69,7 +69,7 @@ export function CurrencyForwardForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
-        {QUOTE_CONVENTION_NOTE} Theoretical CIP rate only — not a live dealer
+ {QUOTE_CONVENTION_NOTE} Theoretical CIP rate only; not a live dealer
         quote.
       </p>
       <p className="text-xs">
@@ -385,7 +385,7 @@ export function CurrencyForwardForm({
               </p>
             ) : (
               <p className="mt-1 text-xs text-muted-foreground">
-                Scenario only — not a forecast. Payoff uses long/short base.
+ Scenario only; not a forecast. Payoff uses long/short base.
               </p>
             )}
           </div>

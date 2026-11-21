@@ -25,7 +25,7 @@ export const SCRAP_SILVER_FAQS: readonly FAQItem[] = [
   {
     question: 'Is the price a live silver quote?',
     answer:
-      'No. Enter a current pure-silver spot price from a reliable source. The currency selector only changes formatting — it does not convert between currencies.',
+      'No. Enter a current pure-silver spot price from a reliable source. The currency selector only changes formatting; it does not convert between currencies.',
   },
   {
     question: 'What is the difference between melt value and selling value?',
@@ -35,7 +35,7 @@ export const SCRAP_SILVER_FAQS: readonly FAQItem[] = [
   {
     question: 'Which ounce does this calculator use?',
     answer:
-      'Troy ounces (oz t), the standard for precious metals — about 31.1034768 grams — not avoirdupois ounces.',
+      'Troy ounces (oz t), the standard for precious metals (about 31.1034768 grams) not avoirdupois ounces.',
   },
 ];
 
@@ -49,27 +49,27 @@ export const SCRAP_SILVER_SOURCES: readonly {
   note: string;
 }[] = [
   {
-    title: 'Silver — Wikipedia',
+    title: 'Silver; Wikipedia',
     href: 'https://en.wikipedia.org/wiki/Silver',
     note: 'Overview of properties, history, and uses.',
   },
   {
-    title: 'Sterling silver — Wikipedia',
+    title: 'Sterling silver; Wikipedia',
     href: 'https://en.wikipedia.org/wiki/Sterling_silver',
     note: 'Sterling composition (.925) and hallmarks.',
   },
   {
-    title: 'Britannia silver — Wikipedia',
+    title: 'Britannia silver; Wikipedia',
     href: 'https://en.wikipedia.org/wiki/Britannia_silver',
     note: 'Britannia standard (.958) background.',
   },
   {
-    title: 'USGS Mineral Commodity Summaries — Silver',
+    title: 'USGS Mineral Commodity Summaries; Silver',
     href: 'https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-silver.pdf',
     note: 'U.S. Geological Survey silver commodity summary (2024).',
   },
   {
-    title: 'LBMA — Precious metals market',
+    title: 'LBMA; Precious metals market',
     href: 'https://www.lbma.org.uk/',
     note: 'London Bullion Market Association market standards and information.',
   },

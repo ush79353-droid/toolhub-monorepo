@@ -64,6 +64,6 @@ export const NAV_FAQS: readonly FAQItem[] = [
   {
     question: 'How often is NAV calculated?',
     answer:
-      'Frequency depends on fund type and policy — many mutual funds strike NAV once per business day; other products may use different schedules.',
+      'Frequency depends on fund type and policy; many mutual funds strike NAV once per business day; other products may use different schedules.',
   },
 ];

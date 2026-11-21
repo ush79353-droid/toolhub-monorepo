@@ -114,7 +114,7 @@ export function shareResultText(args: {
   const metric = getUnit(args.category, args.metricUnitId);
   const imperial = getUnit(args.category, args.imperialUnitId);
   return [
-    'Metric to Imperial Converter — Omega Calculators',
+    'Metric to Imperial Converter | Omega Calculators',
     '',
     `Category: ${cat.label}`,
     '',

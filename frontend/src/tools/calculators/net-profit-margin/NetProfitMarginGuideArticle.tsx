@@ -11,7 +11,7 @@ export function NetProfitMarginGuideArticle() {
         What Is Net Profit Margin?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Net profit margin expresses net profit — earnings after all relevant expenses and taxes —
+ Net profit margin expresses net profit (earnings after all relevant expenses and taxes) 
         as a percentage of total revenues. It is a bottom-line profitability screen, distinct from
         gross margin (revenue minus cost of goods sold only) and operating margin (after operating
         expenses but before interest and taxes in many presentations).

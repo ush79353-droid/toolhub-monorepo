@@ -175,7 +175,7 @@ export function RepaymentGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Borrow less, secure a lower rate, shorten the term, or raise
-        installments so principal declines faster — subject to your contract and
+ installments so principal declines faster, subject to your contract and
         cash-flow constraints.
       </p>
 

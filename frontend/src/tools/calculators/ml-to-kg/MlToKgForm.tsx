@@ -197,7 +197,7 @@ export function MlToKgForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Milliliters measure volume; kilograms measure mass. Conversion always uses density — there is
+ Milliliters measure volume; kilograms measure mass. Conversion always uses density; there is
         no universal mL↔kg factor. Water defaults to ≈ 1000 kg/m³ (approximate reference).
       </div>
 
@@ -304,7 +304,7 @@ export function MlToKgForm({
       <FieldShell
         label="Mass"
         htmlFor="ml-kg-mass"
-        tip="Enter a nonnegative mass. Fluid ounces are volume — not the same as mass ounces."
+        tip="Enter a nonnegative mass. Fluid ounces are volume; not the same as mass ounces."
         error={errors.massValue}
       >
         <div className="flex gap-2">

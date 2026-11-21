@@ -111,7 +111,7 @@ export function DirectMaterialPriceVarianceCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Standard rate: ${formatMoney(result.standardRate, result.currency)}`,
         `Actual rate: ${formatMoney(result.actualRate, result.currency)}`,
         `Quantity: ${result.quantity}`,

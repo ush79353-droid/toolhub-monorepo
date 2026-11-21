@@ -66,7 +66,7 @@ export const YARD_TO_METER_GUIDE_SECTIONS: readonly GuideSection[] = [
       `To convert yards to meters, multiply by ${METERS_PER_YARD}. To convert meters to yards, divide by ${METERS_PER_YARD}.`,
       '1. Enter the length in yards.',
       `2. Multiply by ${METERS_PER_YARD}.`,
-      '3. Read the equivalent length in meters — or let this converter do it automatically.',
+      '3. Read the equivalent length in meters. or let this converter do it automatically.',
     ],
     formula: `1 yd = ${METERS_PER_YARD} m\nMeters = Yards × ${METERS_PER_YARD}\nYards = Meters ÷ ${METERS_PER_YARD}`,
   },

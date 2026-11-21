@@ -13,7 +13,7 @@ export function RemoteVsOnLocationGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Remote work is an arrangement where employees perform duties outside a company’s traditional
-        physical workplace — commonly from home, across distributed teams, or in remote-first
+ physical workplace; commonly from home, across distributed teams, or in remote-first
         organizations. Hybrid models mix remote days with on-site presence. Financially, remote
         setups often involve one-time equipment allowances and recurring reimbursements for
         connectivity, stationery, and other home-office support.
@@ -110,24 +110,24 @@ export function RemoteVsOnLocationGuideArticle() {
       </h2>
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Choose the comparison period</strong> — value plus days, weeks, months, or years.
+ <strong>Choose the comparison period</strong>: value plus days, weeks, months, or years.
           Recurring costs accumulate over the normalized months; one-time costs count once.
         </li>
         <li>
-          <strong>Enter remote costs</strong> — employees, one-time allowance per person, stationery,
+ <strong>Enter remote costs</strong>: employees, one-time allowance per person, stationery,
           internet, miscellaneous, optional custom rows, and other recurring per-employee amounts.
         </li>
         <li>
-          <strong>Enter on-location costs</strong> — employees, lease or own, office one-time setup,
+ <strong>Enter on-location costs</strong>: employees, lease or own, office one-time setup,
           lease (if leased), stationery, internet, miscellaneous, custom rows, and other office
           recurring costs.
         </li>
         <li>
-          <strong>Set frequencies</strong> — daily, weekly, monthly, quarterly, or yearly amounts are
+ <strong>Set frequencies</strong>: daily, weekly, monthly, quarterly, or yearly amounts are
           converted to monthly equivalents before multiplying by the period.
         </li>
         <li>
-          <strong>Review totals and per-employee metrics</strong> — especially when headcounts
+ <strong>Review totals and per-employee metrics</strong>: especially when headcounts
           differ. Cost difference and savings percentages use total organizational spend.
         </li>
       </ol>
@@ -144,7 +144,7 @@ export function RemoteVsOnLocationGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Important: recruitment, benefits, taxes, depreciation, training, insurance, and productivity
         differences may not appear unless you add them. This tool compares entered workplace and
-        allowance costs — not overall employment effectiveness.
+ allowance costs; not overall employment effectiveness.
       </p>
 
       <h2

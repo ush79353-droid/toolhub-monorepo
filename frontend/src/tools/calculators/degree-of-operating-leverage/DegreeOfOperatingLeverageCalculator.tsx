@@ -86,7 +86,7 @@ export function DegreeOfOperatingLeverageCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Method: ${result.method === 'contributionMargin' ? 'contribution margin' : 'period-to-period'}`,
         result.formattedSalesChangePercentage !== null
           ? `Sales change: ${result.formattedSalesChangePercentage}%`
@@ -138,8 +138,8 @@ export function DegreeOfOperatingLeverageCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Measure how sensitive EBIT is to sales changes — DOL = %ΔEBIT /
-            %ΔSales — or use contribution margin ÷ EBIT.
+ Measure how sensitive EBIT is to sales changes; DOL = %ΔEBIT /
+ %ΔSales, or use contribution margin ÷ EBIT.
           </p>
         </div>
         {headerActions ? (

@@ -15,7 +15,7 @@ export function HomeAffordabilityGuideArticle() {
         income, existing monthly debts, down payment, mortgage rate, loan term,
         property taxes, homeowners insurance, HOA fees, and other ownership costs
         all shape a realistic purchase budget. A lender may approve a larger loan
-        than a buyer is comfortable carrying month to month — this calculator
+ than a buyer is comfortable carrying month to month; this calculator
         helps compare a payment budget or DTI-based housing limit with those
         ownership expenses.
       </p>
@@ -124,15 +124,15 @@ export function HomeAffordabilityGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Down payment</strong> — equity contribution toward purchase
+ <strong>Down payment</strong>: equity contribution toward purchase
           price
         </li>
         <li>
-          <strong>Closing costs</strong> — fees and prepaid items at settlement;
+ <strong>Closing costs</strong>: fees and prepaid items at settlement;
           separate from down payment
         </li>
         <li>
-          <strong>Recurring housing costs</strong> — P&amp;I, taxes, insurance,
+ <strong>Recurring housing costs</strong>: P&amp;I, taxes, insurance,
           HOA, possible mortgage insurance
         </li>
       </ul>
@@ -145,11 +145,11 @@ export function HomeAffordabilityGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Front-end DTI</strong> — monthly housing expenses ÷ gross
+ <strong>Front-end DTI</strong>: monthly housing expenses ÷ gross
           monthly income
         </li>
         <li>
-          <strong>Back-end DTI</strong> — housing plus other qualifying monthly
+ <strong>Back-end DTI</strong>: housing plus other qualifying monthly
           debts ÷ gross monthly income
         </li>
       </ul>
@@ -194,7 +194,7 @@ export function HomeAffordabilityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The tool cannot predict future rate changes, income changes, tax or
         insurance increases, maintenance needs, or broader economic conditions.
-        Results are for education and planning — not financial, tax, or lending
+ Results are for education and planning; not financial, tax, or lending
         advice.
       </p>
 

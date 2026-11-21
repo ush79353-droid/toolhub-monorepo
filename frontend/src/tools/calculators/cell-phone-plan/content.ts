@@ -16,7 +16,7 @@ export const CELL_PHONE_PLAN_FAQS: readonly FAQItem[] = [
   {
     question: 'Is it cheaper to buy a phone outright or through a carrier?',
     answer:
-      'It depends on the phone price, both monthly bills, contract length, and the savings interest you could earn on the upfront phone price. This calculator compares those cash flows under a shared set of assumptions — it does not guarantee which option is best for every shopper.',
+      'It depends on the phone price, both monthly bills, contract length, and the savings interest you could earn on the upfront phone price. This calculator compares those cash flows under a shared set of assumptions; it does not guarantee which option is best for every shopper.',
   },
   {
     question: 'How do I calculate the total cost of a phone plan?',
@@ -51,7 +51,7 @@ export const CELL_PHONE_PLAN_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between a phone installment and a monthly carrier bill?',
     answer:
-      'A phone installment repays the device; the service portion pays for voice, data, and related features. Many carrier “phone plans” quote one combined monthly amount — enter that combined figure as the carrier monthly bill here.',
+      'A phone installment repays the device; the service portion pays for voice, data, and related features. Many carrier “phone plans” quote one combined monthly amount. Enter that combined figure as the carrier monthly bill here.',
   },
   {
     question: 'Can I change my phone carrier during a contract?',
@@ -66,7 +66,7 @@ export const CELL_PHONE_PLAN_FAQS: readonly FAQItem[] = [
   {
     question: 'What interest rate should I use?',
     answer:
-      'Enter the expected annual rate of the savings account or investment where you would park the phone price — not the carrier’s financing APR.',
+      'Enter the expected annual rate of the savings account or investment where you would park the phone price; not the carrier’s financing APR.',
   },
   {
     question: 'Is the investment interest guaranteed?',

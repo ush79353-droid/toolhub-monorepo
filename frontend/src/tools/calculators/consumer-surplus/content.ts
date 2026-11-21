@@ -40,7 +40,7 @@ export const CS_FAQS: readonly FAQItem[] = [
   {
     question: 'Can consumer surplus be negative?',
     answer:
-      'A signed price difference can be negative when price exceeds WTP. Under a voluntary-purchase model, realized surplus is not applicable — not buying yields zero surplus.',
+      'A signed price difference can be negative when price exceeds WTP. Under a voluntary-purchase model, realized surplus is not applicable; not buying yields zero surplus.',
   },
   {
     question: 'What is willingness to pay?',

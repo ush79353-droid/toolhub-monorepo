@@ -14,7 +14,7 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
       },
     ],
     correctAnswer: 'C',
-    hint: 'Percentiles compare relative position in a group — not tax bills or future growth.',
+    hint: 'Percentiles compare relative position in a group; not tax bills or future growth.',
     explanation:
       'Percentiles show how your income compares to others, not how it changes over time.',
   },
@@ -30,7 +30,7 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
     correctAnswer: 'B',
     hint: 'Focus on one person, not a group or household. Check the definition.',
     explanation:
-      'Individual income is the income earned by a single person — not the combined household total, and not specifically “after tax” by definition.',
+      'Individual income is the income earned by a single person; not the combined household total, and not specifically “after tax” by definition.',
   },
   {
     id: 'q3',
@@ -122,7 +122,7 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
       },
     ],
     correctAnswer: 'D',
-    hint: 'Think about relative position — not a precise leaderboard or a growth forecast.',
+    hint: 'Think about relative position; not a precise leaderboard or a growth forecast.',
     explanation:
       'Percentiles describe relative position within a group, not exact rankings or future income.',
   },
@@ -136,7 +136,7 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
       { id: 'C', label: 'All of the above.' },
     ],
     correctAnswer: 'C',
-    hint: 'Income depends on many factors — education, experience, job type, and the economy.',
+    hint: 'Income depends on many factors; education, experience, job type, and the economy.',
     explanation:
       'Income depends on many things, including education, experience, and economic conditions.',
   },

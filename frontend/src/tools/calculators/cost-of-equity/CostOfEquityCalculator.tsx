@@ -66,7 +66,7 @@ export function CostOfEquityCalculator({
   const summary =
     result && input.mode === 'dividend'
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Dividend per share (D₁): ${dividendSymbol}${input.dividendPerShare}`,
           `Current share price: ${sharePriceSymbol}${input.sharePrice}`,
           `Growth rate of dividend: ${input.growthRatePercent}%`,

@@ -199,7 +199,7 @@ export function PriceToSalesRatioCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         input.sales.trim()
           ? `Sales: ${getCurrencySymbol(input.salesCurrency)}${input.sales} ${input.salesCurrency}`
           : null,

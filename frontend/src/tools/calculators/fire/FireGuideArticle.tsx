@@ -6,7 +6,7 @@ export function FireGuideArticle() {
   return (
     <article className="prose prose-slate max-w-none rounded-2xl border border-border bg-white px-5 py-6 sm:px-8 sm:py-8">
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
-        FIRE — Financial Independence, Retire Early — is about building an investment portfolio that
+ FIRE (Financial Independence, Retire Early) is about building an investment portfolio that
         can cover living expenses so work becomes optional. This calculator estimates your FIRE
         number, how much to save each year, what savings rate that implies, and whether your plan
         reaches independence by a chosen age. Investment returns and inflation are planning
@@ -22,27 +22,27 @@ export function FireGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The movement emphasizes high savings rates, lower lifestyle costs, diversified investing, and
         using portfolio withdrawals to fund living expenses. Financial independence does not always
-        mean never working again — it means choosing how to spend time without relying on a paycheck.
+ mean never working again; it means choosing how to spend time without relying on a paycheck.
       </p>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong className="font-medium text-accent">Lean FIRE</strong> — frugal spending, smaller
+ <strong className="font-medium text-accent">Lean FIRE</strong>: frugal spending, smaller
           portfolio.
         </li>
         <li>
-          <strong className="font-medium text-accent">Traditional FIRE</strong> — mainstream expense
+ <strong className="font-medium text-accent">Traditional FIRE</strong>: mainstream expense
           levels, often illustrated with a 4% withdrawal.
         </li>
         <li>
-          <strong className="font-medium text-accent">Fat FIRE</strong> — higher spending and a larger
+ <strong className="font-medium text-accent">Fat FIRE</strong>: higher spending and a larger
           nest egg.
         </li>
         <li>
-          <strong className="font-medium text-accent">Barista FIRE</strong> — partial independence with
+ <strong className="font-medium text-accent">Barista FIRE</strong>: partial independence with
           some earned income.
         </li>
         <li>
-          <strong className="font-medium text-accent">Coast FIRE</strong> — savings already large enough
+ <strong className="font-medium text-accent">Coast FIRE</strong>: savings already large enough
           that compounding alone may fund a later traditional retirement.
         </li>
       </ul>
@@ -55,7 +55,7 @@ export function FireGuideArticle() {
         id="fire-formula"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        How to calculate your FIRE number — FIRE formula
+ How to calculate your FIRE number; FIRE formula
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The traditional FIRE number divides annual retirement expenses by a safe withdrawal rate. With

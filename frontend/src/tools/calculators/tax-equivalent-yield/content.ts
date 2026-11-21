@@ -43,7 +43,7 @@ export const TAX_EQUIVALENT_YIELD_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a tax-free municipal bond?',
     answer:
-      'A municipal bond issued by a state, local, or related authority whose interest may be exempt from federal income tax and sometimes from state or local tax for residents — subject to the bond’s and investor’s facts.',
+      'A municipal bond issued by a state, local, or related authority whose interest may be exempt from federal income tax and sometimes from state or local tax for residents, subject to the bond’s and investor’s facts.',
   },
   {
     question: 'Why does the marginal tax rate matter?',
@@ -91,7 +91,7 @@ export const TAX_EQUIVALENT_YIELD_FAQS: readonly FAQItem[] = [
   {
     question: 'How can I compare corporate and municipal bonds?',
     answer:
-      'Compute TEY for the municipal yield at your applicable rate, then compare to the corporate’s taxable yield — and still weigh credit, duration, call features, liquidity, and fees.',
+      'Compute TEY for the municipal yield at your applicable rate, then compare to the corporate’s taxable yield, and still weigh credit, duration, call features, liquidity, and fees.',
   },
   {
     question: 'Is taxable equivalent yield the same as yield to maturity?',

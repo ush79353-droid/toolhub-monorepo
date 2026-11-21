@@ -45,7 +45,7 @@ function summaryText(
     return '';
   }
   const lines = [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Average collection period: ${daysText(result.collectionPeriodDays)} days`,
     `Duration: ${daysText(result.durationDays)} days`,
   ];
@@ -154,7 +154,7 @@ export function AverageCollectionPeriodCalculator({
   const handleShare = async () => {
     const text =
       summary ||
-      `${metadata.title} — Calculate average collection period at Omega Calculators`;
+      `${metadata.title}; Calculate average collection period at Omega Calculators`;
     if (await copyTextToClipboard(text)) {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);

@@ -46,14 +46,14 @@ export function CashOnCashReturnGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Annual cash flow</strong> — NOI minus annual debt service
+ <strong>Annual cash flow</strong>: NOI minus annual debt service
         </li>
         <li>
-          <strong>Total cash investment</strong> — out-of-pocket cash, not
+ <strong>Total cash investment</strong>: out-of-pocket cash, not
           necessarily purchase price
         </li>
         <li>
-          <strong>Return %</strong> — cash flow as a percent of that cash
+ <strong>Return %</strong>: cash flow as a percent of that cash
         </li>
       </ul>
 
@@ -100,7 +100,7 @@ export function CashOnCashReturnGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Suitability depends on market, property type, financing, risk, expected
         appreciation, expenses, vacancy, maintenance, and your time horizon.
-        Illustrative percentages in examples are for math only — not universal
+ Illustrative percentages in examples are for math only; not universal
         targets.
       </p>
 
@@ -155,7 +155,7 @@ export function CashOnCashReturnGuideArticle() {
         This simplified calculator does not model appreciation, capital gains,
         depreciation tax effects, income taxes, rent growth, inflation, major
         capital replacements, principal paydown as equity, sale expenses, or exit
-        proceeds. Results are educational pre-tax annual cash-flow estimates —
+ proceeds. Results are educational pre-tax annual cash-flow estimates; 
         not guaranteed returns or investment advice.
       </p>
 

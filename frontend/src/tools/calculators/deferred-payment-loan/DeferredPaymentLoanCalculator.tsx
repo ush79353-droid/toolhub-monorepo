@@ -100,7 +100,7 @@ export function DeferredPaymentLoanCalculator({
   const loanSymbol = getCurrencySymbol(input.loanCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan amount: ${loanSymbol}${input.loanAmount}`,
         `Interest rate: ${input.interestRatePercent}% (${input.compoundingFrequency})`,
         `Deferred: ${input.deferredMonths} months (${input.interestTreatment}, ${input.repaymentType})`,

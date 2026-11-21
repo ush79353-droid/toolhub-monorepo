@@ -22,7 +22,7 @@ export function SecondStimulus900BillionGuideArticle() {
               In December 2020, Congress enacted the{' '}
               <strong>Consolidated Appropriations Act, 2021</strong> (P.L. 116-260), which included
               roughly <strong>$900 billion</strong> in COVID-19 relief. Part of that package
-              authorized a second round of individual recovery rebates — the IRS{' '}
+ authorized a second round of individual recovery rebates: the IRS{' '}
               <strong>second Economic Impact Payment (EIP2)</strong>.
             </p>
             <p>
@@ -124,7 +124,7 @@ export function SecondStimulus900BillionGuideArticle() {
             </ul>
             <p>
               Most automatic advances used 2019 tax-return data. Filers who later reconciled on a
-              2020 return could claim a Recovery Rebate Credit for any unpaid EIP2 amount — that
+ 2020 return could claim a Recovery Rebate Credit for any unpaid EIP2 amount; that
               reconciliation workflow is outside this tool’s scope.
             </p>
           </div>

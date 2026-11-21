@@ -100,7 +100,7 @@ export function InformationRatioCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Beginning: ${symbol}${input.beginningValue}`,
         `Ending: ${symbol}${input.endingValue}`,
         `Portfolio return: ${result.formattedPortfolioReturn}%`,

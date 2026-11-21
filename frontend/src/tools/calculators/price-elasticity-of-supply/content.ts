@@ -37,7 +37,7 @@ export const PES_FAQS: readonly FAQItem[] = [
   {
     question: 'Can price elasticity of supply be zero?',
     answer:
-      'Yes — if quantity supplied does not change while price changes, PES = 0 (perfectly inelastic over that interval).',
+      'Yes: if quantity supplied does not change while price changes, PES = 0 (perfectly inelastic over that interval).',
   },
   {
     question: 'Can price elasticity of supply be negative?',
@@ -67,7 +67,7 @@ export const PES_FAQS: readonly FAQItem[] = [
   {
     question: 'What is perfectly elastic supply?',
     answer:
-      'A theoretical limiting case of infinite responsiveness. Two identical prices do not establish perfect elasticity — that case is undefined, not Infinity.',
+      'A theoretical limiting case of infinite responsiveness. Two identical prices do not establish perfect elasticity; that case is undefined, not Infinity.',
   },
   {
     question: 'What factors determine price elasticity of supply?',
@@ -77,7 +77,7 @@ export const PES_FAQS: readonly FAQItem[] = [
   {
     question: 'Is supply more elastic in the short run or long run?',
     answer:
-      'Often more elastic in the long run as capital and entry adjust — not a universal rule for every market.',
+      'Often more elastic in the long run as capital and entry adjust; not a universal rule for every market.',
   },
   {
     question: 'How does production capacity affect supply elasticity?',
@@ -107,7 +107,7 @@ export const PES_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when price does not change?',
     answer:
-      'The PES denominator is zero — show an undefined result, never Infinity or NaN.',
+      'The PES denominator is zero; show an undefined result, never Infinity or NaN.',
   },
   {
     question: 'How does technology affect supply elasticity?',

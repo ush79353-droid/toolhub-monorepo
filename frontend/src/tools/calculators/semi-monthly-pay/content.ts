@@ -19,7 +19,7 @@ export const SEMI_MONTHLY_PAY_FAQS: readonly FAQItem[] = [
   {
     question: 'Is semi-monthly the same as biweekly?',
     answer:
-      'No. Semi-monthly means twice per month — 24 pay periods in a year. Biweekly means every two weeks — 26 periods. This calculator uses semi-monthly only.',
+      'No. Semi-monthly means twice per month (24 pay periods in a year. Biweekly means every two weeks) 26 periods. This calculator uses semi-monthly only.',
   },
   {
     question: 'How is semi-monthly pay calculated?',

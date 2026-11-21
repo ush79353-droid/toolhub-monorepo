@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Centigrade and Celsius are the same temperature scale. Enter either name — the numerical value is identical.',
+    'Centigrade and Celsius are the same temperature scale. Enter either name: the numerical value is identical.',
   asideAriaLabel: 'Interactive Centigrade to Celsius converter',
   tocItems: CENTIGRADE_TO_CELSIUS_TOC_ITEMS,
   GuideArticle: CentigradeToCelsiusGuideArticle,

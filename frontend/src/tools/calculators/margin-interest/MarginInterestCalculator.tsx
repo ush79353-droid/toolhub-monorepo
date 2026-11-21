@@ -75,7 +75,7 @@ export function MarginInterestCalculator({
   const resultSymbol = getCurrencySymbol(result?.currency ?? input.resultCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Amount borrowed: ${borrowedSymbol}${input.amountBorrowed}`,
         `Interest rate: ${input.interestRatePercent}%`,
         `Number of days: ${input.numberOfDays}`,

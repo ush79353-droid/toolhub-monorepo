@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Compare monthly vs accelerated bi-weekly mortgage payments — payment, term, interest, and payoff with independent FX on money fields.',
+    'Compare monthly vs accelerated bi-weekly mortgage payments; payment, term, interest, and payoff with independent FX on money fields.',
   asideAriaLabel: 'Interactive Bi-Weekly Mortgage Payment Calculator',
   tocItems: BI_WEEKLY_MORTGAGE_PAYMENT_TOC_ITEMS,
   GuideArticle: BiWeeklyMortgagePaymentGuideArticle,

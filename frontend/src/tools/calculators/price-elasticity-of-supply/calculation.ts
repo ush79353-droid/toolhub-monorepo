@@ -159,15 +159,15 @@ export function interpretPes(args: {
 
   switch (args.classification) {
     case 'unitElastic':
-      return `Price changed by ${pctP}% while quantity supplied changed by ${pctQ}%. PES = ${pesStr}${methodNote} — unit-elastic supply over the observed interval.`;
+      return `Price changed by ${pctP}% while quantity supplied changed by ${pctQ}%. PES = ${pesStr}${methodNote}; unit-elastic supply over the observed interval.`;
     case 'elastic':
-      return `Quantity supplied changed by a larger percentage (${pctQ}%) than price (${pctP}%). PES = ${pesStr}${methodNote} — relatively elastic supply.`;
+      return `Quantity supplied changed by a larger percentage (${pctQ}%) than price (${pctP}%). PES = ${pesStr}${methodNote}; relatively elastic supply.`;
     case 'inelastic':
-      return `Quantity supplied changed by a smaller percentage (${pctQ}%) than price (${pctP}%). PES = ${pesStr}${methodNote} — relatively inelastic supply.`;
+      return `Quantity supplied changed by a smaller percentage (${pctQ}%) than price (${pctP}%). PES = ${pesStr}${methodNote}; relatively inelastic supply.`;
     case 'perfectlyInelastic':
-      return `Quantity supplied did not change while price changed (${pctP}%). PES = 0${methodNote} — perfectly inelastic over the observed interval.`;
+      return `Quantity supplied did not change while price changed (${pctP}%). PES = 0${methodNote}; perfectly inelastic over the observed interval.`;
     case 'negative':
-      return `Price and quantity supplied moved in opposite directions (price ${pctP}%, quantity ${pctQ}%). Observed PES = ${pesStr}${methodNote} — not a conventional positive supply response.`;
+      return `Price and quantity supplied moved in opposite directions (price ${pctP}%, quantity ${pctQ}%). Observed PES = ${pesStr}${methodNote}; not a conventional positive supply response.`;
     case 'undefined':
       return 'A finite elasticity coefficient cannot be calculated from these observations.';
     default:

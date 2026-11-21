@@ -64,7 +64,7 @@ export function SellThroughRateCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Number of units sold: ${input.unitsSold}`,
         `Number of units received: ${input.unitsReceived}`,
         `Sell-through rate: ${result.formattedRate}%`,

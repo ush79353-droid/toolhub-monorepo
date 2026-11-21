@@ -114,7 +114,7 @@ export function validateRmdInput(
       rmdCurrency: input.rmdCurrency,
       jointLifeUnavailable: true,
       unavailableNote:
-        'Joint Life and Last Survivor Expectancy (Table II) applies when your spouse is the sole beneficiary and more than 10 years younger, but spouse age is not collected on this form — RMD cannot be estimated for that path without inventing a spouse age.',
+        'Joint Life and Last Survivor Expectancy (Table II) applies when your spouse is the sole beneficiary and more than 10 years younger, but spouse age is not collected on this form; RMD cannot be estimated for that path without inventing a spouse age.',
     };
     return { isValid: true, errors, result };
   }

@@ -46,8 +46,8 @@ export const CM_TO_MM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'The Conversion from CM to MM',
     paragraphs: [
       `Convert centimeters to millimeters by multiplying by ${MM_PER_CM}: mm = cm × ${MM_PER_CM}.`,
-      `Example 1 — 5 cm: 5 × ${MM_PER_CM} = ${formatLength(centimetersToMillimeters(5))} mm.`,
-      `Example 2 — 12.5 cm: 12.5 × ${MM_PER_CM} = ${formatLength(centimetersToMillimeters(12.5))} mm.`,
+      `Example 1: 5 cm: 5 × ${MM_PER_CM} = ${formatLength(centimetersToMillimeters(5))} mm.`,
+      `Example 2: 12.5 cm: 12.5 × ${MM_PER_CM} = ${formatLength(centimetersToMillimeters(12.5))} mm.`,
       `Convert millimeters to centimeters by dividing by ${MM_PER_CM}: cm = mm ÷ ${MM_PER_CM}. Example: 250 ÷ ${MM_PER_CM} = ${formatLength(millimetersToCentimeters(250))} cm.`,
     ],
     formula: `mm = cm × ${MM_PER_CM}  ·  cm = mm ÷ ${MM_PER_CM}`,
@@ -65,7 +65,7 @@ export const CM_TO_MM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use-tool',
     title: 'How to Use the CM to MM Converter',
     paragraphs: [
-      'Enter a length in centimeters — millimeters update automatically. Or enter millimeters to get centimeters.',
+      'Enter a length in centimeters; millimeters update automatically. Or enter millimeters to get centimeters.',
       'Share result copies a summary with the page URL. Reload calculator and Clear all changes reset the fields. No form submit is required.',
     ],
   },

@@ -113,7 +113,7 @@ export function BusinessLoanCalculator({
     if (!result) return;
     const money = (v: number) => formatCurrencyValue(v, result.currency);
     const summary = [
-      `${metadata.title} — Omega Calculators`,
+      `${metadata.title} | Omega Calculators`,
       `Loan amount: ${money(Number(input.loanAmount))}`,
       `Interest rate: ${input.interestRate}% (${input.knownRate})`,
       `Term: ${input.termYears} yrs ${input.termMonths} mos`,

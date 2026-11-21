@@ -64,7 +64,7 @@ export function shareResultText(meters: number, sourceUnit: LengthUnit): string 
   const m = fromMeters(meters, 'm');
   const source = fromMeters(meters, sourceUnit);
   return [
-    'Centimeter Calculator — Omega Calculators',
+    'Centimeter Calculator | Omega Calculators',
     '',
     `${formatLength(source)} ${UNIT_SYMBOLS[sourceUnit]}`,
     `${formatLength(cm)} cm = ${formatLength(m)} m`,

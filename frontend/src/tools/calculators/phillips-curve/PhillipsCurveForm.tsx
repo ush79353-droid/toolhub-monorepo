@@ -79,7 +79,7 @@ export function PhillipsCurveForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Three educational Phillips Curve specifications. Coefficients are
-        explicit — never silently reused across Traditional, New Classical, and
+ explicit; never silently reused across Traditional, New Classical, and
         New Keynesian modes.
       </p>
 
@@ -218,7 +218,7 @@ export function PhillipsCurveForm({
               Sensitivity (β, positive)
               <InfoTooltip
                 label="β"
-                text="Explicit positive sensitivity. Screenshot-style three-field demos often imply a fixed β — here it is editable and required."
+                text="Explicit positive sensitivity. Screenshot-style three-field demos often imply a fixed β; here it is editable and required."
               />
             </label>
             <FieldShell error={errors.traditionalSensitivity}>

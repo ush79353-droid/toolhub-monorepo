@@ -7,7 +7,7 @@ const sections: { id: string; title: string; body: string[] }[] = [
     title: 'What Average Collection Period Means',
     body: [
       'Average collection period estimates how long credit sales remain uncollected. It answers a narrow timing question: the receivables balance you are looking at equals how many days of credit sales?',
-      'It is not a forecast for a single invoice, and it is not a credit score. Two businesses can post the same figure for different reasons—one with 30-day terms paid on time, another with shorter terms paid late.',
+      'It is not a forecast for a single invoice, and it is not a credit score. Two businesses can post the same figure for different reasons, one with 30-day terms paid on time, another with shorter terms paid late.',
     ],
   },
   {

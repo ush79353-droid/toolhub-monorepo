@@ -51,7 +51,7 @@ export const PSI_TO_INCHES_OF_WATER_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Read the equivalent inches of water in the second field.',
       '3. Edit the inches-of-water field to convert in reverse.',
       '4. Use Clear All Changes or Reload Calculator when you want empty fields again.',
-      'Values update automatically — no Convert button is required. Keep both quantities on the same pressure reference (absolute-to-absolute or gauge-to-gauge).',
+      'Values update automatically; no Convert button is required. Keep both quantities on the same pressure reference (absolute-to-absolute or gauge-to-gauge).',
     ],
   },
   {
@@ -88,7 +88,7 @@ export const PSI_TO_INCHES_OF_WATER_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Inches of water is a pressure unit based on the hydrostatic pressure of a water column one inch high under a chosen density and gravity convention.',
       'It is frequently used for low-pressure measurements in HVAC systems, ventilation ducts, differential-pressure instruments, and some gas-pressure applications.',
-      'The numerical conversion factor depends on the adopted reference convention — this calculator documents and uses the 4 °C definition above.',
+      'The numerical conversion factor depends on the adopted reference convention; this calculator documents and uses the 4 °C definition above.',
     ],
   },
   {

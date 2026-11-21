@@ -11,8 +11,8 @@ export function InventoryTurnoverGuideArticle() {
         What Is Inventory?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Inventory includes goods held for sale or production — raw materials,
-        work-in-progress, finished goods, or merchandise — measured under the
+ Inventory includes goods held for sale or production; raw materials,
+ work-in-progress, finished goods, or merchandise; measured under the
         applicable cost basis (for example FIFO or weighted average).
       </p>
 
@@ -37,7 +37,7 @@ export function InventoryTurnoverGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Inventory turnover links period COGS to average inventory investment. It
         helps assess stock management, demand conditions, and operational
-        efficiency — always with industry and seasonality context.
+ efficiency; always with industry and seasonality context.
       </p>
 
       <h2
@@ -107,7 +107,7 @@ export function InventoryTurnoverGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         It can signal working-capital efficiency, demand strength, and inventory
-        investment intensity — but not profitability, stockout risk, or product
+ investment intensity, but not profitability, stockout risk, or product
         mix quality on its own.
       </p>
 
@@ -130,7 +130,7 @@ export function InventoryTurnoverGuideArticle() {
         What Is a Good Inventory Turnover Ratio?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Benchmarks vary widely — groceries turn faster than furniture or luxury
+ Benchmarks vary widely; groceries turn faster than furniture or luxury
         goods. Compare peers, history, shelf life, margins, stockouts, and the
         cash conversion cycle.
       </p>
@@ -166,7 +166,7 @@ export function InventoryTurnoverGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Asset turnover typically uses revenue over average total assets.
-        Inventory turnover uses COGS over average inventory — different
+ Inventory turnover uses COGS over average inventory; different
         numerator and denominator.
       </p>
 
@@ -209,7 +209,7 @@ export function InventoryTurnoverGuideArticle() {
         directly.
       </p>
       <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Educational illustration only — not accounting, audit, or investment
+ Educational illustration only; not accounting, audit, or investment
         advice.
       </p>
 

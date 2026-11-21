@@ -115,7 +115,7 @@ export function resultSentence(options: {
 
 export function shareResultText(sentence: string, note?: string): string {
   return [
-    'Weird Units Converter — Omega Calculators',
+    'Weird Units Converter | Omega Calculators',
     '',
     sentence,
     note ? `Note: ${note}` : '',

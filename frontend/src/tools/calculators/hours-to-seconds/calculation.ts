@@ -63,7 +63,7 @@ export function calculateHoursToSeconds(input: HoursToSecondsInput): HoursToSeco
 
 export function shareResultText(result: HoursToSecondsResult): string {
   return [
-    'Hours to Seconds Converter — Omega Calculators',
+    'Hours to Seconds Converter | Omega Calculators',
     '',
     `${formatDuration(result.hours)} hours = ${formatDuration(result.seconds)} seconds`,
     `${formatDuration(result.hours)} hours = ${formatDuration(result.minutes)} minutes`,

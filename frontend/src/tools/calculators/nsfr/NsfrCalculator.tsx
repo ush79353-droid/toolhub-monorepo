@@ -73,7 +73,7 @@ export function NsfrCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        'NSFR Calculator — Omega Calculators',
+        'NSFR Calculator | Omega Calculators',
         '',
         `Available Stable Funding: ${result.formattedAsf}`,
         `Required Stable Funding: ${result.formattedRsf}`,

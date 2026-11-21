@@ -309,7 +309,7 @@ export function ScaleForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample(1)}
             >
-              Example 1 — Map scale (5 cm → 10 m → 1:200)
+ Example 1: Map scale (5 cm → 10 m → 1:200)
             </button>
           </li>
           <li>
@@ -318,7 +318,7 @@ export function ScaleForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample(2)}
             >
-              Example 2 — Drawing at 1:100 (2.5 cm → 2.5 m)
+ Example 2: Drawing at 1:100 (2.5 cm → 2.5 m)
             </button>
           </li>
           <li>
@@ -327,7 +327,7 @@ export function ScaleForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample(3)}
             >
-              Example 3 — Area at 1:10 (100 m² → 1 m²)
+ Example 3: Area at 1:10 (100 m² → 1 m²)
             </button>
           </li>
         </ul>

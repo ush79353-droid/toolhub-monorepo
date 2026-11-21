@@ -74,7 +74,7 @@ export function shareResultText(result: CcToOzResult): string {
   const label = systemLabel(result.system);
   const factor = ccPerFluidOz(result.system);
   return [
-    'CC to OZ Converter — Omega Calculators',
+    'CC to OZ Converter | Omega Calculators',
     '',
     `${formatVolume(result.cc)} cc = ${formatVolume(result.oz)} ${label}`,
     '',

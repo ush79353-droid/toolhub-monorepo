@@ -77,13 +77,13 @@ export function interpretROA(roaPercentage: number): string {
     return 'Return on assets is unavailable.';
   }
   if (roaPercentage > 0 && roaPercentage < 25) {
-    return 'Positive ROA — the company generated positive net income relative to its asset base. Compare with industry peers and multi-period trends.';
+    return 'Positive ROA: the company generated positive net income relative to its asset base. Compare with industry peers and multi-period trends.';
   }
   if (roaPercentage >= 25) {
-    return 'The calculated ROA is relatively high. Compare it against companies in the same industry and review the underlying accounting figures — ROA varies widely by sector.';
+    return 'The calculated ROA is relatively high. Compare it against companies in the same industry and review the underlying accounting figures; ROA varies widely by sector.';
   }
   if (roaPercentage === 0 || Math.abs(roaPercentage) < 1e-12) {
-    return 'Zero ROA — the company reported no net profit relative to its assets during the selected period.';
+    return 'Zero ROA: the company reported no net profit relative to its assets during the selected period.';
   }
-  return 'Negative ROA — the company reported a net loss relative to its asset base.';
+  return 'Negative ROA: the company reported a net loss relative to its asset base.';
 }

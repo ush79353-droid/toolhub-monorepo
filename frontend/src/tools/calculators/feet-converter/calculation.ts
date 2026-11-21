@@ -38,7 +38,7 @@ export function convertFeet(
 export function shareResultText(meters: number): string {
   const values = allFromMeters(meters);
   return [
-    'Feet Converter — Omega Calculators',
+    'Feet Converter | Omega Calculators',
     '',
     `${formatLength(values.ft)} ${UNIT_SYMBOLS.ft} equals:`,
     '',

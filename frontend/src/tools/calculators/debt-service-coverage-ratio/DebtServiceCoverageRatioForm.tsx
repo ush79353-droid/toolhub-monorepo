@@ -708,7 +708,7 @@ export function DebtServiceCoverageRatioForm({
             <span>DSCR</span>
             <InfoTooltip
               label="DSCR"
-              text="Debt service coverage ratio = monthly NOI ÷ monthly loan payment after converting both amounts into the total-loan currency. Dimensionless — shown with ×."
+              text="Debt service coverage ratio = monthly NOI ÷ monthly loan payment after converting both amounts into the total-loan currency. Dimensionless; shown with ×."
             />
           </label>
           <FieldShell muted>

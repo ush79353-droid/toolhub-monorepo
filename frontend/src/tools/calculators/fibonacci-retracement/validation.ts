@@ -98,7 +98,7 @@ export function validateFibonacciInput(
   const notes: string[] = [];
   if (hasNegativeLevel) {
     notes.push(
-      'One or more extension levels are negative — not valid prices for ordinary stocks, but shown for the math.'
+      'One or more extension levels are negative; not valid prices for ordinary stocks, but shown for the math.'
     );
   }
   notes.push(

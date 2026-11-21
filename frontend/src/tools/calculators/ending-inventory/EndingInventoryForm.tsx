@@ -169,7 +169,7 @@ export function EndingInventoryForm({
           Cost of goods sold
           <InfoTooltip
             label="Cost of goods sold"
-            text="Cost attributed to inventory sold during the period — not sales revenue. When COGS is unknown, it is estimated from inventory turnover."
+            text="Cost attributed to inventory sold during the period; not sales revenue. When COGS is unknown, it is estimated from inventory turnover."
           />
         </label>
         <FieldShell error={errors.costOfGoodsSold} muted={!cogsKnown}>
@@ -242,7 +242,7 @@ export function EndingInventoryForm({
           Inventory turnover
           <InfoTooltip
             label="Inventory turnover"
-            text="COGS ÷ Average inventory, where Average inventory = (Starting + Ending) ÷ 2. Dimensionless — no currency or percent. When COGS is unknown, enter this ratio to estimate COGS."
+            text="COGS ÷ Average inventory, where Average inventory = (Starting + Ending) ÷ 2. Dimensionless; no currency or percent. When COGS is unknown, enter this ratio to estimate COGS."
           />
         </label>
         <FieldShell error={errors.inventoryTurnover} muted={cogsKnown}>

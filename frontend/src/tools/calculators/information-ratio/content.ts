@@ -12,7 +12,7 @@ export const INFORMATION_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What is information ratio?',
     answer:
-      'Information ratio measures active return per unit of tracking error — how much excess return a portfolio earned relative to a benchmark, scaled by the volatility of that excess return.',
+      'Information ratio measures active return per unit of tracking error; how much excess return a portfolio earned relative to a benchmark, scaled by the volatility of that excess return.',
   },
   {
     question: 'How is portfolio return calculated here?',

@@ -20,7 +20,7 @@ import { validateInchesToFraction } from './validation';
 function summaryText(result: InchesToFractionResult): string {
   const eq = result.isApproximate ? '≈' : '=';
   return [
-    'Inches to Fraction Calculator — Omega Calculators',
+    'Inches to Fraction Calculator | Omega Calculators',
     `${formatDecimal(result.inches)} inches ${eq} ${result.fractionLabel} inches`,
     `Precision: 1/${result.precision} inch`,
   ].join('\n');

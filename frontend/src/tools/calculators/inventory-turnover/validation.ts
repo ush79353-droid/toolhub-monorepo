@@ -126,11 +126,11 @@ export function validateInventoryTurnoverInput(
   } else if (averageInventory === 0) {
     status = 'zeroAverageInventory';
     warningMessage =
-      'Average inventory is zero — inventory turnover is unavailable. Inventory days equal 0 under the direct formula when COGS is positive.';
+      'Average inventory is zero; inventory turnover is unavailable. Inventory days equal 0 under the direct formula when COGS is positive.';
   } else if (cogs.value === 0) {
     status = 'zeroCOGS';
     warningMessage =
-      'COGS is zero — turnover is 0.00×; inventory days cannot be calculated through the standard formula.';
+      'COGS is zero; turnover is 0.00×; inventory days cannot be calculated through the standard formula.';
   }
 
   const result: InventoryTurnoverResult = {

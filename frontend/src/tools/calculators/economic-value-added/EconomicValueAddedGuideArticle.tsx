@@ -91,7 +91,7 @@ export function EconomicValueAddedGuideArticle() {
         What Is Invested Capital?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Invested capital is capital committed to operations — often operating
+ Invested capital is capital committed to operations; often operating
         assets less operating liabilities, or net operating working capital plus
         net operating fixed assets. Cash treatment, non-operating investments,
         and financing liabilities need consistent classification with NOPAT.

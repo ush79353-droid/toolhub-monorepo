@@ -92,7 +92,7 @@ export function interpretProductivity(
     return 'Enter revenue plus employees and/or working hours to measure revenue-based labor productivity.';
   }
   parts.push(
-    'These are revenue productivity measures — not profit, efficiency scores, or individual performance ratings.'
+    'These are revenue productivity measures; not profit, efficiency scores, or individual performance ratings.'
   );
   return parts.join(' ');
 }

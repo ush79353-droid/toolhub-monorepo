@@ -8,7 +8,7 @@ import {
 import { LITERS_PER_UK_GALLON, LITERS_PER_US_GALLON } from './types';
 
 export const GAL_TO_KG_TOC_ITEMS: readonly TableOfContentsItem[] = [
-  { id: 'how-it-works', label: 'Gal to kg Converter — How Does It Work?' },
+  { id: 'how-it-works', label: 'Gal to kg Converter; How Does It Work?' },
   { id: 'convert-manually', label: 'How to Convert Gallons to kg Manually' },
   { id: 'si-units', label: 'What Is the International System of Units (SI)?' },
   { id: 'related-tools', label: 'Other Related Conversion Calculators' },
@@ -32,9 +32,9 @@ const reverse10 = kilogramsToGallons(10, 1, 'usGal');
 export const GAL_TO_KG_GUIDE_SECTIONS: readonly GuideSection[] = [
   {
     id: 'how-it-works',
-    title: 'Gal to kg Converter — How Does It Work?',
+    title: 'Gal to kg Converter; How Does It Work?',
     paragraphs: [
-      'This converter turns gallons of volume into kilograms of mass — and the reverse — using substance density. Three quantities matter: volume in gallons, density of the substance, and mass in kilograms.',
+      'This converter turns gallons of volume into kilograms of mass (and the reverse) using substance density. Three quantities matter: volume in gallons, density of the substance, and mass in kilograms.',
       'Water is the default material because its density is approximately 1 kg/L near 4 °C, which makes the US-gallon factor easy to remember.',
       `Worked example: 5 US gallons of water at 1 kg/L. 5 × ${LITERS_PER_US_GALLON} × 1 = ${formatMeasure(water5)} kg.`,
     ],

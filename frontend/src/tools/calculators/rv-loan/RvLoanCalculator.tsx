@@ -74,7 +74,7 @@ export function RvLoanCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `RV price: ${priceSymbol}${input.rvPrice || '0'}`,
         `Down payment: ${downSymbol}${input.downPayment || '0'}`,
         `Term: ${input.termYears || '0'} yrs ${input.termMonths || '0'} mos`,

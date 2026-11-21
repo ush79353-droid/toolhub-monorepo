@@ -132,7 +132,7 @@ export function JumboLoanCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Property price: ${getCurrencySymbol(input.propertyPriceCurrency)}${input.propertyPrice}`,
         `Down payment: ${input.downPaymentPercent}% → ${getCurrencySymbol(input.downPaymentCurrency)}${result.formattedDownPayment}`,
         `Jumbo loan amount: ${getCurrencySymbol(input.jumboLoanAmountCurrency)}${result.formattedJumboLoanAmount}`,

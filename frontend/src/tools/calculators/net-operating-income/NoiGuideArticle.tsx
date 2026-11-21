@@ -15,7 +15,7 @@ export function NoiGuideArticle() {
         income-producing property generates from operations after vacancy losses
         and operating expenses. Investors use NOI to compare properties, underwrite
         acquisitions, and feed valuation tools such as capitalization rate
-        analysis. NOI focuses on property operations — not loan structure, income
+ analysis. NOI focuses on property operations; not loan structure, income
         taxes, or depreciation.
       </p>
       <div className="my-4 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
@@ -176,7 +176,7 @@ export function NoiGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         NOI does not directly include debt service, income taxes, depreciation,
         capital expenditures, purchase price, financing structure, or appreciation.
-        Results are estimates based on your inputs — not an appraisal, tax advice,
+ Results are estimates based on your inputs; not an appraisal, tax advice,
         or investment recommendation.
       </p>
 

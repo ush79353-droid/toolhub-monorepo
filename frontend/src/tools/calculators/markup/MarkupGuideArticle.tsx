@@ -13,7 +13,7 @@ export function MarkupGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This Markup Calculator helps retailers, wholesalers, entrepreneurs, and
-        product managers turn unit cost into a selling price — or reverse the
+ product managers turn unit cost into a selling price, or reverse the
         math when they already know revenue, profit, or a target markup rate.
         Enter any two compatible values among cost, markup percentage, revenue
         (selling price), and profit; the other two update in real time. Currency
@@ -35,7 +35,7 @@ export function MarkupGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Markup is the amount added to product cost to determine selling price.
         When expressed as a percentage, markup uses <em>cost</em> as the
-        denominator — not revenue. Example: a product costs $50 and sells for
+ denominator; not revenue. Example: a product costs $50 and sells for
         $70. Profit is $20, so markup is 20 ÷ 50 × 100 = 40%.
       </p>
 
@@ -47,18 +47,18 @@ export function MarkupGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Cost</strong> — purchase or production cost per unit.
+ <strong>Cost</strong>: purchase or production cost per unit.
         </li>
         <li>
-          <strong>Revenue / selling price</strong> — what the buyer pays per
+ <strong>Revenue / selling price</strong>: what the buyer pays per
           unit.
         </li>
         <li>
-          <strong>Profit</strong> — revenue minus cost for that unit (gross unit
+ <strong>Profit</strong>: revenue minus cost for that unit (gross unit
           contribution before overhead, fees, or taxes not in cost).
         </li>
         <li>
-          <strong>Markup percentage</strong> — profit ÷ cost × 100.
+ <strong>Markup percentage</strong>: profit ÷ cost × 100.
         </li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
@@ -162,7 +162,7 @@ export function MarkupGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         If cost is $80 and you want a 25% markup: revenue = 80 × 1.25 = $100;
         profit = $20. Negative markup rates (above −100%) produce selling prices
-        below cost — useful for clearance or loss-leader analysis, but not a
+ below cost; useful for clearance or loss-leader analysis, but not a
         sustainable default strategy.
       </p>
 
@@ -177,12 +177,12 @@ export function MarkupGuideArticle() {
       </p>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          Cost = Revenue ÷ (1 + Markup%/100) — e.g. $150 revenue at 50% markup →
+ Cost = Revenue ÷ (1 + Markup%/100); e.g. $150 revenue at 50% markup →
           $100 cost.
         </li>
-        <li>Cost = Revenue − Profit — e.g. $120 − $30 = $90.</li>
+        <li>Cost = Revenue − Profit; e.g. $120 − $30 = $90.</li>
         <li>
-          Cost = Profit ÷ (Markup%/100) when markup ≠ 0 — e.g. $40 profit at 20%
+ Cost = Profit ÷ (Markup%/100) when markup ≠ 0; e.g. $40 profit at 20%
           markup → $200 cost and $240 revenue.
         </li>
       </ul>
@@ -215,7 +215,7 @@ export function MarkupGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Retail stores, grocery, apparel, restaurants, manufacturing, wholesale
         distribution, electronics, and professional services all use markup
-        language — but typical rates vary by channel, perishability, brand, and
+ language, but typical rates vary by channel, perishability, brand, and
         competition. This guide does not invent universal industry benchmarks;
         treat published “average markup” figures as starting points for research,
         not guarantees.
@@ -231,7 +231,7 @@ export function MarkupGuideArticle() {
         Markup increases selling price relative to cost. Markdown reduces an
         established list selling price. Example: cost $60 with 50% markup → list
         $90. A later 20% markdown from $90 → actual $72. Different denominators,
-        different decisions — see also the{' '}
+ different decisions; see also the{' '}
         <Link
           href="/tools/markdown-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
@@ -279,7 +279,7 @@ export function MarkupGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Factors include cost structure, contribution targets, competitive set,
         perceived value, channel fees, and inventory risk. The calculator tells
-        you what selling price a markup implies — not whether that price will win
+ you what selling price a markup implies; not whether that price will win
         sales or cover the full business. Combine arithmetic with market research
         and a full cost view.
       </p>

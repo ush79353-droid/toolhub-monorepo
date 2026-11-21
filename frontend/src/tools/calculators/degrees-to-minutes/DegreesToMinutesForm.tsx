@@ -122,7 +122,7 @@ export function DegreesToMinutesForm({
       <FieldShell
         label="Angle in minutes of arc"
         htmlFor="dtm-arcminutes"
-        tip="Arcminutes (′) measure angles — one-sixtieth of a degree — not minutes of time. Edit here to reverse-convert into degrees."
+        tip="Arcminutes (′) measure angles (one-sixtieth of a degree) not minutes of time. Edit here to reverse-convert into degrees."
         error={errors.arcminutes}
       >
         <div className="flex overflow-hidden rounded-lg border border-border bg-white focus-within:ring-2 focus-within:ring-ring">

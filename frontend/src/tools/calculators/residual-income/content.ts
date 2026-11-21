@@ -21,7 +21,7 @@ export const RI_FAQS: readonly FAQItem[] = [
   {
     question: 'Can residual income be negative?',
     answer:
-      'Yes. When net income is below the equity charge, residual income is negative — even if accounting net income is still positive.',
+      'Yes. When net income is below the equity charge, residual income is negative; even if accounting net income is still positive.',
   },
   {
     question: 'What is a good residual income?',

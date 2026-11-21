@@ -78,7 +78,7 @@ export function interpretEps(
 ): string {
   const formatted = `${symbol}${formatEpsPerShare(eps, currency)}`;
   if (eps < 0) {
-    return `Basic EPS is ${formatted} per share — a loss attributable to common shareholders. This calculator reports basic EPS, not diluted EPS.`;
+    return `Basic EPS is ${formatted} per share: a loss attributable to common shareholders. This calculator reports basic EPS, not diluted EPS.`;
   }
   if (eps === 0) {
     return 'Basic EPS is zero for this period after preferred dividends.';

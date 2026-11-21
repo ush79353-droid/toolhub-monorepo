@@ -47,7 +47,7 @@ function convertFifoMoney(
 
 function summaryText(metadataTitle: string, result: FifoInventoryResult, currencyNote: string): string {
   const lines = [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Batch 1: ${result.batch1Qty} @ ${result.batch1Price}`,
     `Batch 2: ${result.batch2Qty} @ ${result.batch2Price}`,
     `Units sold: ${result.unitsSold} @ ${result.sellingPrice}`,

@@ -21,7 +21,7 @@ export const SCV_GUIDE_SECTIONS: readonly ScvGuideSection[] = [
     title: 'What is software contract value?',
     paragraphs: [
       'Software contract value estimates the total discounted cost of a seat-based software agreement over its full term. Retail price here is the monthly list price per seat before discount.',
-      'Use the same currency for every money field. Changing the currency control only updates the symbol and grouping — it does not convert amounts.',
+      'Use the same currency for every money field. Changing the currency control only updates the symbol and grouping; it does not convert amounts.',
     ],
   },
   {

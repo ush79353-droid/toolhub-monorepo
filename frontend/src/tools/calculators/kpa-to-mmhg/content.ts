@@ -35,7 +35,7 @@ export const KPA_TO_MMHG_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Convert kPa to mmHg',
     paragraphs: [
       `Convert pressure from kilopascals (kPa) to millimeters of mercury (mmHg) using the conventional standard relationship 101.325 kPa = 760 mmHg. One kilopascal equals 1,000 pascals; one conventional standard millimeter of mercury equals 101,325/760 pascals.`,
-      `Multiply kilopascals by ${formatPressure(MMHG_PER_KPA)} to obtain mmHg. Example — 7 kPa × ${formatPressure(MMHG_PER_KPA)} ≈ ${formatPressure(kPaToMmHg(7))}. Therefore 7 kPa ≈ ${formatPressure(kPaToMmHg(7))} mmHg.`,
+      `Multiply kilopascals by ${formatPressure(MMHG_PER_KPA)} to obtain mmHg. Example; 7 kPa × ${formatPressure(MMHG_PER_KPA)} ≈ ${formatPressure(kPaToMmHg(7))}. Therefore 7 kPa ≈ ${formatPressure(kPaToMmHg(7))} mmHg.`,
       'This tool changes numerical pressure units only. It does not add or subtract atmospheric pressure for gauge ↔ absolute conversion.',
     ],
     formula: `mmHg = kPa × ${formatPressure(MMHG_PER_KPA)} · kPa = mmHg × ${formatPressure(KPA_PER_MMHG)}`,
@@ -44,9 +44,9 @@ export const KPA_TO_MMHG_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'conversion-examples',
     title: 'kPa to mmHg Conversion Examples',
     paragraphs: [
-      `Example 1 — convert 10 kPa: 10 × ${formatPressure(MMHG_PER_KPA)} ≈ ${formatPressure(kPaToMmHg(10))}. Result: 10 kPa ≈ ${formatPressure(kPaToMmHg(10))} mmHg.`,
-      `Example 2 — convert 20 kPa: 20 × ${formatPressure(MMHG_PER_KPA)} ≈ ${formatPressure(kPaToMmHg(20))}. Result: 20 kPa ≈ ${formatPressure(kPaToMmHg(20))} mmHg.`,
-      `Example 3 — convert 760 mmHg: 760 × ${formatPressure(KPA_PER_MMHG)} = ${formatPressure(mmHgToKPa(760))}. Result: 760 mmHg = ${formatPressure(mmHgToKPa(760))} kPa.`,
+      `Example 1: convert 10 kPa: 10 × ${formatPressure(MMHG_PER_KPA)} ≈ ${formatPressure(kPaToMmHg(10))}. Result: 10 kPa ≈ ${formatPressure(kPaToMmHg(10))} mmHg.`,
+      `Example 2: convert 20 kPa: 20 × ${formatPressure(MMHG_PER_KPA)} ≈ ${formatPressure(kPaToMmHg(20))}. Result: 20 kPa ≈ ${formatPressure(kPaToMmHg(20))} mmHg.`,
+      `Example 3: convert 760 mmHg: 760 × ${formatPressure(KPA_PER_MMHG)} = ${formatPressure(mmHgToKPa(760))}. Result: 760 mmHg = ${formatPressure(mmHgToKPa(760))} kPa.`,
     ],
   },
   {

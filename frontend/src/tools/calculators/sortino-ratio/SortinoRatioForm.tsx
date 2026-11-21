@@ -124,7 +124,7 @@ function AssetSection({
             <FieldLabel
               htmlFor={`sr-result-${n}`}
               label={`Sortino ratio #${n}`}
-              tip="(Ra − Rf) ÷ downside deviation. Unitless — not a percent."
+              tip="(Ra − Rf) ÷ downside deviation. Unitless; not a percent."
             />
             <input
               id={`sr-result-${n}`}

@@ -33,7 +33,7 @@ export const NET_WORTH_FAQS: readonly FAQItem[] = [
   {
     question: 'Should my house be included in my net worth?',
     answer:
-      'Yes — count the current market value as an asset and the outstanding mortgage as a liability. The difference is your home equity.',
+      'Yes: count the current market value as an asset and the outstanding mortgage as a liability. The difference is your home equity.',
   },
   {
     question: 'Should retirement savings be included in net worth?',

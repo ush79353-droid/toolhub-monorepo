@@ -14,8 +14,8 @@ export function NsfrGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The Net Stable Funding Ratio (NSFR) compares Available Stable Funding
         (ASF) to Required Stable Funding (RSF) over a one-year structural
-        horizon. Enter ASF and RSF directly — or use the optional weighted
-        helpers — to compute NSFR, coverage multiple, and funding surplus or
+ horizon. Enter ASF and RSF directly, or use the optional weighted
+ helpers, to compute NSFR, coverage multiple, and funding surplus or
         shortfall. This page is an educational estimate aligned with simplified
         Basel III–style factors, not a regulatory filing or compliance opinion.
       </p>
@@ -24,7 +24,7 @@ export function NsfrGuideArticle() {
         id="what-is"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        What Is NSFR? — Net Stable Funding Ratio Meaning
+ What Is NSFR?; Net Stable Funding Ratio Meaning
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Banks fund long-lived assets with a mix of deposits, wholesale
@@ -40,7 +40,7 @@ export function NsfrGuideArticle() {
         id="formula"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        NSFR Formula — How to Calculate Net Stable Funding Ratio
+ NSFR Formula; How to Calculate Net Stable Funding Ratio
       </h2>
       <div className="my-4 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs text-accent sm:text-sm">
         NSFR = (ASF / RSF) × 100
@@ -131,7 +131,7 @@ export function NsfrGuideArticle() {
         id="worked-example"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        How to Calculate NSFR — Worked Example
+ How to Calculate NSFR; Worked Example
       </h2>
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>ASF = $170,000,000.</li>
@@ -166,7 +166,7 @@ export function NsfrGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The Basel Committee on Banking Supervision introduced NSFR alongside LCR
         to strengthen liquidity standards after the global financial crisis.
-        International standards are implemented locally — legal requirements,
+ International standards are implemented locally; legal requirements,
         scope, and reporting instructions may differ from the Basel text.
       </p>
 
@@ -174,7 +174,7 @@ export function NsfrGuideArticle() {
         id="vs-lcr"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        NSFR vs. LCR — What&apos;s the Difference?
+ NSFR vs. LCR; What&apos;s the Difference?
       </h2>
       <div className="my-4 overflow-x-auto">
         <table className="w-full min-w-[30rem] border-collapse text-left text-sm">
@@ -234,7 +234,7 @@ export function NsfrGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         NSFR encourages less reliance on unstable short-term funding, stronger
         maturity profiles, diversified liabilities, and disciplined
-        asset-liability management — supporting bank and system resilience when
+ asset-liability management; supporting bank and system resilience when
         markets seize up.
       </p>
 
@@ -253,7 +253,7 @@ export function NsfrGuideArticle() {
         <li>Monitor funding concentration and growth pace.</li>
       </ol>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Improvements often raise funding costs or constrain business mix —
+ Improvements often raise funding costs or constrain business mix; 
         trade-offs matter.
       </p>
 

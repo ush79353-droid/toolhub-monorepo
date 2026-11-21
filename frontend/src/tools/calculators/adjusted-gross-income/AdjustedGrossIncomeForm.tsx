@@ -204,7 +204,7 @@ export function AdjustedGrossIncomeForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2 text-xs text-muted-foreground">
-        Educational simplified Form 1040–style AGI estimate for Tax Year 2025 —
+ Educational simplified Form 1040–style AGI estimate for Tax Year 2025; 
         not a complete IRS filing. Enter income and deductions below; AGI appears
         at the bottom. Checkboxes reveal extra fields. IRS limits apply in USD
         after FX conversion.

@@ -29,7 +29,7 @@ const CURRENCY_CONVERSION_NOTE =
 function summaryText(metadataTitle: string, result: LiquidNetWorthResult, currencyNote: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Currency: ${result.currency}`,
     `Total liquid assets: ${money(result.totalLiquidAssets)}`,
     `Total liabilities: ${money(result.totalLiabilities)}`,

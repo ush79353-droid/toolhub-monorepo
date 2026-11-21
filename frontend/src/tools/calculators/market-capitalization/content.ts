@@ -72,6 +72,6 @@ export const MCAP_FAQS: readonly FAQItem[] = [
   {
     question: 'Is market cap the same as company value?',
     answer:
-      'No. Market cap measures equity market value. The broader business value often considers debt, cash, and other claims — as in enterprise value.',
+      'No. Market cap measures equity market value. The broader business value often considers debt, cash, and other claims, as in enterprise value.',
   },
 ];

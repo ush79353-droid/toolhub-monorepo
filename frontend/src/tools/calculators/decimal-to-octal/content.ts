@@ -31,7 +31,7 @@ export const DECIMAL_OCTAL_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-octal',
     title: 'What Is the Octal Number System?',
     paragraphs: [
-      'Octal is base 8. It uses digits 0–7 only — there is no digit 8 or 9. Each place value is a power of eight: …, 512, 64, 8, 1. Decimal is base 10; octal packs values using fewer digits when groups of three binary bits matter.',
+      'Octal is base 8. It uses digits 0–7 only; there is no digit 8 or 9. Each place value is a power of eight: …, 512, 64, 8, 1. Decimal is base 10; octal packs values using fewer digits when groups of three binary bits matter.',
       'Historically, octal appeared on machines whose word sizes were multiples of three bits. Today it still shows up as a compact reading of binary and in Unix-style file permission modes.',
     ],
     formula: '10₈ = 8₁₀ · 100₈ = 64₁₀',
@@ -102,7 +102,7 @@ export const DECIMAL_OCTAL_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'why-octal',
     title: 'Why Is Octal Used in Computing?',
     paragraphs: [
-      'Octal shortens binary by grouping bits in threes. Older systems and some documentation still show octal dumps. On Unix-like systems, file permission modes such as 755 and 644 are octal numbers: each digit encodes a three-bit rwx mask for owner, group, and others — not ordinary decimal place values.',
+      'Octal shortens binary by grouping bits in threes. Older systems and some documentation still show octal dumps. On Unix-like systems, file permission modes such as 755 and 644 are octal numbers: each digit encodes a three-bit rwx mask for owner, group, and others; not ordinary decimal place values.',
     ],
   },
 ];

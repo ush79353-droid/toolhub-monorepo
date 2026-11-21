@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate working capital turnover — Revenue ÷ (Average current assets − Average current liabilities) — from opening and closing balances.',
+    'Calculate working capital turnover: Revenue ÷ (Average current assets − Average current liabilities); from opening and closing balances.',
   asideAriaLabel: 'Interactive Working Capital Turnover Ratio Calculator',
   tocItems: WORKING_CAPITAL_TURNOVER_RATIO_TOC_ITEMS,
   GuideArticle: WorkingCapitalTurnoverRatioGuideArticle,

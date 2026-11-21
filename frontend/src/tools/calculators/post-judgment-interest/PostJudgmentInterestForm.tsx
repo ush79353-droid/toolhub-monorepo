@@ -66,7 +66,7 @@ export function PostJudgmentInterestForm({
             <span>Judgment amount</span>
             <InfoTooltip
               label="Judgment amount"
-              text="Principal judgment amount in USD. Fixed denomination — no currency conversion."
+              text="Principal judgment amount in USD. Fixed denomination; no currency conversion."
             />
           </label>
           <FieldShell error={errors.judgmentAmount}>
@@ -92,7 +92,7 @@ export function PostJudgmentInterestForm({
             <span>Interest rate</span>
             <InfoTooltip
               label="Interest rate"
-              text="Annual simple interest rate (%). Confirm the applicable statutory rate — this tool does not fetch a rate."
+              text="Annual simple interest rate (%). Confirm the applicable statutory rate; this tool does not fetch a rate."
             />
           </label>
           <FieldShell error={errors.interestRatePercent}>

@@ -16,7 +16,7 @@ export function ComparativeAdvantageGuideArticle() {
         across Country X and Country Y. Enter each country’s output of Good A
         and Good B per labor unit, then see who has comparative advantage
         (lower opportunity cost) and absolute advantage (higher productivity).
-        The linear two-good model is a teaching tool — it does not capture every
+ The linear two-good model is a teaching tool; it does not capture every
         real-world trade cost, barrier, or distributional effect.
       </p>
 
@@ -28,7 +28,7 @@ export function ComparativeAdvantageGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Comparative advantage means producing a good at a lower opportunity cost
-        than another producer. Opportunity cost is what you forgo — here, how
+ than another producer. Opportunity cost is what you forgo; here, how
         many units of the other good you sacrifice along a linear production
         possibility frontier. Relative productivity differences across countries
         create room for specialization and trade in the classical model, even
@@ -46,7 +46,7 @@ export function ComparativeAdvantageGuideArticle() {
         idea in international trade: allocate resources where opportunity costs
         are relatively lowest, specialize, and potentially expand feasible
         consumption through exchange. Gains from trade in the stylized model
-        come from exploiting cost differences — not from every producer being
+ come from exploiting cost differences; not from every producer being
         the world’s best at something. The simplified setup does not claim to
         explain tariffs, transport networks, or every industry outcome.
       </p>
@@ -135,7 +135,7 @@ export function ComparativeAdvantageGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Suppose Island North can grow either 40 crates of fruit or 20 bolts of
         cloth per day, while Island South can grow 30 crates or 30 bolts. North
-        has absolute advantage in fruit, South in cloth — but comparative
+ has absolute advantage in fruit, South in cloth, but comparative
         advantage still follows opportunity costs (cloth per fruit crate: 0.5
         vs 1). A producer does not need absolute advantage in a good to benefit
         from specializing where its relative cost is lowest.
@@ -214,7 +214,7 @@ export function ComparativeAdvantageGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         In the worked example, Country X specializes relatively in Good A and
         Country Y in Good B. A mutually beneficial exchange rate for Good A in
-        units of Good B can lie strictly between 0.8 and 1 under the model —
+ units of Good B can lie strictly between 0.8 and 1 under the model; 
         presented as a possible interval, not a guaranteed market price.
         Assumptions include two goods, linear PPFs, comparable labor units, and
         no trade frictions.

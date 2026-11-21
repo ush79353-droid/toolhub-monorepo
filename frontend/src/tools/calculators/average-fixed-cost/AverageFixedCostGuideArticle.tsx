@@ -14,7 +14,7 @@ export function AverageFixedCostGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Average fixed cost (AFC) measures how much of a firm’s fixed overhead is attributed to each
         unit of output. Managers use it when pricing, capacity planning, and comparing production
-        levels—because the same rent or salaried overhead looks smaller per unit when volume rises.
+ levels, because the same rent or salaried overhead looks smaller per unit when volume rises.
       </p>
 
       <h2
@@ -61,7 +61,7 @@ export function AverageFixedCostGuideArticle() {
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Fixed costs do not change with short-run output; variable costs do. Average fixed cost covers
         only the fixed portion. To study full unit cost you would also include average variable cost
-        and average total cost—this tool stays focused on AFC alone.
+ and average total cost, this tool stays focused on AFC alone.
       </p>
 
       <h2 id="afc-faq" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">

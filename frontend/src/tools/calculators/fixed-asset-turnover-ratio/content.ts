@@ -25,7 +25,7 @@ export const FIXED_ASSET_TURNOVER_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What is fixed asset turnover?',
     answer:
-      'Fixed asset turnover (FAT) measures how much revenue a company generates relative to its average net fixed asset base — typically net property, plant, and equipment.',
+      'Fixed asset turnover (FAT) measures how much revenue a company generates relative to its average net fixed asset base; typically net property, plant, and equipment.',
   },
   {
     question: 'What does FAT stand for?',
@@ -63,12 +63,12 @@ export const FIXED_ASSET_TURNOVER_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'Can fixed asset turnover be zero?',
     answer:
-      'Yes, when revenue is zero and average fixed assets are positive — the company generated no sales against its fixed asset base.',
+      'Yes, when revenue is zero and average fixed assets are positive: the company generated no sales against its fixed asset base.',
   },
   {
     question: 'What happens when average fixed assets are zero?',
     answer:
-      'FAT is undefined. Do not display Infinity — show that turnover is unavailable.',
+      'FAT is undefined. Do not display Infinity; show that turnover is unavailable.',
   },
   {
     question: 'What does a fixed asset turnover of 2 mean?',
@@ -78,7 +78,7 @@ export const FIXED_ASSET_TURNOVER_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a fixed asset turnover below 1 mean?',
     answer:
-      'Revenue is less than the average net fixed asset base — common in capital-intensive industries or after major investment.',
+      'Revenue is less than the average net fixed asset base; common in capital-intensive industries or after major investment.',
   },
   {
     question:
@@ -111,7 +111,7 @@ export const FIXED_ASSET_TURNOVER_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'Should I use gross or net fixed assets?',
     answer:
-      'Use net fixed assets (after accumulated depreciation and impairments) consistently — do not mix gross and net.',
+      'Use net fixed assets (after accumulated depreciation and impairments) consistently; do not mix gross and net.',
   },
   {
     question: 'How can a company improve fixed asset turnover?',
@@ -127,7 +127,7 @@ export const FIXED_ASSET_TURNOVER_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'Can fixed asset turnover be used to compare companies?',
     answer:
-      'Yes within the same industry and accounting policies — cross-industry comparisons are often misleading.',
+      'Yes within the same industry and accounting policies; cross-industry comparisons are often misleading.',
   },
   {
     question:

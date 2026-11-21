@@ -26,7 +26,7 @@ export function ReceivablesTurnoverRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Turnover answers: how many times did net credit sales turn over average
-        receivables during the period? It is reported in times — not as a
+ receivables during the period? It is reported in times; not as a
         percentage, currency amount, or interest rate.
       </p>
 
@@ -128,7 +128,7 @@ export function ReceivablesTurnoverRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Interpret turnover with payment terms, credit policy, customer mix,
-        history, and industry norms — not as a standalone grade.
+ history, and industry norms; not as a standalone grade.
       </p>
 
       <h2
@@ -160,7 +160,7 @@ export function ReceivablesTurnoverRatioGuideArticle() {
         Low Receivables Turnover Ratio
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        May indicate slower payments, longer terms, or collection friction —
+ May indicate slower payments, longer terms, or collection friction; 
         unless the industry normally carries longer receivable cycles.
       </p>
 
@@ -225,7 +225,7 @@ export function ReceivablesTurnoverRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Terms, limits, and collection processes shape both sales volume and
-        average AR — and therefore turnover.
+ average AR, and therefore turnover.
       </p>
 
       <h2
@@ -249,7 +249,7 @@ export function ReceivablesTurnoverRatioGuideArticle() {
         Accounts Receivable Aging
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Aging reports show how overdue balances are distributed — useful context
+ Aging reports show how overdue balances are distributed; useful context
         beyond a single turnover figure.
       </p>
 
@@ -283,7 +283,7 @@ export function ReceivablesTurnoverRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Milestone billing and retainers affect recognition timing and AR
-        balances — keep definitions consistent.
+ balances; keep definitions consistent.
       </p>
 
       <h2
@@ -366,7 +366,7 @@ export function ReceivablesTurnoverRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The ratio does not show individual invoice behavior, receivables
         quality, or write-off patterns. Two-point averages can miss seasonality.
-        Educational use only — not personalized financial advice.
+ Educational use only; not personalized financial advice.
       </p>
 
       <h2

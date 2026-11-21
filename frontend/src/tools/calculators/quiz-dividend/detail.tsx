@@ -4,7 +4,7 @@ import { QUIZ_DIVIDEND_FAQS, QUIZ_DIVIDEND_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Educational dividend investing quiz — six questions, score out of six, optional explanations.',
+    'Educational dividend investing quiz; six questions, score out of six, optional explanations.',
   asideAriaLabel: 'Interactive Dividend Quiz',
   tocItems: QUIZ_DIVIDEND_TOC_ITEMS,
   GuideArticle: QuizDividendGuideArticle,

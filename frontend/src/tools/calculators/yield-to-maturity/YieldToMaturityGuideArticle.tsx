@@ -17,7 +17,7 @@ export function YieldToMaturityGuideArticle() {
         coupons and principal. Bond prices and yields move inversely: when price
         falls, YTM rises for the same promised cash flows. This calculator solves
         the full periodic pricing equation with a bounded bisection root finder
-        (closed form for zero-coupon bonds) — not a rough approximate YTM
+ (closed form for zero-coupon bonds); not a rough approximate YTM
         shortcut. Enter face value, price, coupon rate, frequency, and years to
         maturity; optionally reverse-solve for price, face value, or coupon rate.
         Currency labels are denomination only.
@@ -34,7 +34,7 @@ export function YieldToMaturityGuideArticle() {
         and the selected price and timing assumptions. It reflects coupon income
         and principal repayment if the issuer pays as scheduled and you hold to
         maturity. The IRR story also assumes coupons can be reinvested at the
-        YTM. Credit and default risk are outside the formula — a high YTM can
+ YTM. Credit and default risk are outside the formula: a high YTM can
         simply price higher risk.
       </p>
 
@@ -179,7 +179,7 @@ export function YieldToMaturityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The yield curve plots yields against maturity for comparable bonds.
         Upward-sloping (normal), flat, and inverted shapes reflect expectations,
-        term premia, and policy — different maturities can show different yields
+ term premia, and policy; different maturities can show different yields
         even for the same issuer class.
       </p>
 
@@ -219,7 +219,7 @@ export function YieldToMaturityGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Useful for bond investors, analysts, portfolio managers, fixed-income
-        research, financial planning, and comparing debt securities — always
+ research, financial planning, and comparing debt securities; always
         alongside credit, liquidity, and structural review.
       </p>
 

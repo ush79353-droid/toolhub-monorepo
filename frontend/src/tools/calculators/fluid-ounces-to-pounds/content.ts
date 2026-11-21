@@ -35,7 +35,7 @@ export const FL_OZ_TO_LB_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'mass-volume-density',
     title: 'Relation Between Mass, Volume, and Density',
     paragraphs: [
-      'This calculator converts fluid ounces of volume into pounds of mass — and the reverse — using substance density. There is no universal fluid-ounce-to-pound factor, because fluid ounces measure space while pounds measure matter.',
+      'This calculator converts fluid ounces of volume into pounds of mass (and the reverse) using substance density. There is no universal fluid-ounce-to-pound factor, because fluid ounces measure space while pounds measure matter.',
       'Density is mass per unit volume. In symbols: ρ = m / V. Rearrange for mass: m = ρ V. Rearrange for volume: V = m / ρ.',
       'Equal volumes of different substances do not share the same mass. Sixteen US fluid ounces of water and sixteen US fluid ounces of honey occupy the same volume but have different masses because their densities differ.',
       'Choose a listed ingredient to load an approximate density, or enter a custom density when you have a measured or specification value.',
@@ -95,7 +95,7 @@ export const FL_OZ_TO_LB_GUIDE_SECTIONS: readonly GuideSection[] = [
       '3. Enter a custom density if your material is not listed or the preset is only approximate.',
       '4. Enter a value in the Volume field (default unit US fl oz).',
       '5. Read the automatically calculated mass in pounds (or another mass unit).',
-      '6. Change volume or mass units with the dropdowns — physical quantities are preserved.',
+      '6. Change volume or mass units with the dropdowns. physical quantities are preserved.',
       '7. Enter a mass value to calculate volume in reverse.',
       '8. Use Reload Calculator or Clear All Changes, and share or copy results when useful.',
       'Density must be known and greater than zero for accurate results.',

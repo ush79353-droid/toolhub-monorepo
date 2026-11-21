@@ -106,7 +106,7 @@ export function FdCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Type: ${input.depositType}`,
         `Principal: ${input.principal} ${input.currency}`,
         `Interest rate: ${input.interestRate}%`,

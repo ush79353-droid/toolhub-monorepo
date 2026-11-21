@@ -63,7 +63,7 @@ export function AlabamaTaxCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Tax year: ${result.taxYear}`,
         `Annualized AGI: $${result.formattedAnnualAgi}`,
         `Alabama taxable income: $${result.formattedTaxableIncome}`,
@@ -106,7 +106,7 @@ export function AlabamaTaxCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             Alabama state + selected local occupational tax estimate. Fixed USD.
-            Educational only — not a filing substitute.
+ Educational only; not a filing substitute.
           </p>
         </div>
         {headerActions ? (

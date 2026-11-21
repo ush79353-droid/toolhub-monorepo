@@ -92,7 +92,7 @@ export function EbitdaMultipleGuideArticle() {
       <h3 className="mt-4 text-base font-semibold text-accent">Higher multiple</h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
         May reflect stronger growth expectations, business quality, market
-        positioning — or potential overvaluation. Context always matters; there
+ positioning, or potential overvaluation. Context always matters; there
         is no universal good/bad threshold.
       </p>
 

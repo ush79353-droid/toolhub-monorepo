@@ -26,7 +26,7 @@ const CURRENCY_CONVERSION_NOTE =
   'Changing currency converts inventory and gross profit amounts using stored exchange rates. GMROI ratio and percentage stay the same.';
 
 function summaryText(metadataTitle: string, result: GmroiResult, currencyNote: string): string {
-  const lines = [`${metadataTitle} — Omega Calculators`];
+  const lines = [`${metadataTitle} | Omega Calculators`];
   if (result.startingInventory !== null) {
     lines.push(
       `Starting inventory: ${formatCurrencyValue(result.startingInventory, result.currency)}`

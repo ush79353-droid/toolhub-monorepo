@@ -83,7 +83,7 @@ export function TrumpTaxesForm({
       <p className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-950">
         Historical illustration only. The default Trump figure ($750) reflects publicly reported
         federal income tax for <strong>2016 and 2017</strong>, not an established 2019 federal
-        income tax payment. Your amount is an example entry — not a tax estimate for you.
+ income tax payment. Your amount is an example entry; not a tax estimate for you.
       </p>
 
       <form
@@ -123,7 +123,7 @@ export function TrumpTaxesForm({
             <span>Trump’s tax (reported historical)</span>
             <InfoTooltip
               label="Trump’s tax"
-              text="Default $750 follows publicly reported federal income tax for 2016/2017. Editable for scenario exploration — not a verified 2019 liability."
+              text="Default $750 follows publicly reported federal income tax for 2016/2017. Editable for scenario exploration; not a verified 2019 liability."
             />
           </label>
           <FieldShell error={errors.trumpTax}>
@@ -187,12 +187,12 @@ export function TrumpTaxesForm({
       >
         <p className="text-xs leading-relaxed text-muted-foreground">
           Quantities use the positive tax difference (your tax − Trump’s figure) divided by each
-          editable unit price. Prices are illustrative assumptions for education — not verified
+ editable unit price. Prices are illustrative assumptions for education; not verified
           retail quotes.
         </p>
         {result && result.availableForComparisons <= 0 ? (
           <p className="text-xs text-amber-800">
-            No positive difference to allocate — your example tax is not higher than Trump’s
+ No positive difference to allocate; your example tax is not higher than Trump’s
             figure.
           </p>
         ) : null}

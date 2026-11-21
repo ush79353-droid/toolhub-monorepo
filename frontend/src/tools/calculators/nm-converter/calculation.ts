@@ -31,7 +31,7 @@ export function allFromMeters(meters: number): Record<NmUnit, number> {
 export function shareResultText(meters: number): string {
   const values = allFromMeters(meters);
   return [
-    'nm Converter — Omega Calculators',
+    'nm Converter | Omega Calculators',
     '',
     `${formatLength(values.nm)} ${UNIT_SYMBOLS.nm} = ${formatLength(values.um)} ${UNIT_SYMBOLS.um}`,
     `${formatLength(values.nm)} ${UNIT_SYMBOLS.nm} = ${formatLength(values.mm)} ${UNIT_SYMBOLS.mm}`,

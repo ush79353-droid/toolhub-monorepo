@@ -178,7 +178,7 @@ export function MonthlyIncomeCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Source: ${result.sourceField}`,
         `Hourly: ${result.formattedHourly} ${result.hourlyCurrency}`,
         `Daily: ${result.formattedDaily} ${result.dailyCurrency}`,

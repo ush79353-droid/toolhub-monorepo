@@ -89,7 +89,7 @@ export function FutureValueOfAnnuityCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Payment: ${getCurrencySymbol(input.paymentCurrency)}${input.paymentAmount}`,
         `Interest rate: ${input.interestRatePercent}%`,
         `Term: ${input.termLength} ${input.termUnit}`,

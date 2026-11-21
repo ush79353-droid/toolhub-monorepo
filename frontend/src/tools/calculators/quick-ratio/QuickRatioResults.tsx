@@ -103,10 +103,10 @@ export function QuickRatioResults({ result }: QuickRatioResultsProps) {
       <p className="text-xs text-muted-foreground">
         Band:{' '}
         {result.band === 'below'
-          ? 'Below 1.00 — quick assets less than current liabilities'
+          ? 'Below 1.00; quick assets less than current liabilities'
           : result.band === 'equal'
-            ? 'Exactly 1.00 — quick assets equal current liabilities'
-            : 'Above 1.00 — quick assets exceed current liabilities'}
+            ? 'Exactly 1.00; quick assets equal current liabilities'
+            : 'Above 1.00; quick assets exceed current liabilities'}
         . Industry context still matters.
       </p>
 

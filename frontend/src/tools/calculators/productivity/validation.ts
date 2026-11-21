@@ -103,14 +103,14 @@ export function validateProductivityInput(
     );
     if (revenuePerEmployee === null) {
       employeeUnavailableReason =
-        'Employee productivity unavailable — employee count must be greater than zero.';
+        'Employee productivity unavailable; employee count must be greater than zero.';
     }
   } else if (employees.blank) {
     employeeUnavailableReason =
       'Enter number of employees to calculate revenue per employee.';
   } else {
     employeeUnavailableReason =
-      'Employee productivity unavailable — employee count must be greater than zero.';
+      'Employee productivity unavailable; employee count must be greater than zero.';
   }
 
   let workingTimeEntered: number | null = null;
@@ -126,7 +126,7 @@ export function validateProductivityInput(
     );
     if (totalWorkingHours === null || totalWorkingHours <= 0) {
       hourlyUnavailableReason =
-        'Hourly productivity unavailable — working hours must be greater than zero.';
+        'Hourly productivity unavailable; working hours must be greater than zero.';
       totalWorkingHours = null;
     } else {
       revenuePerWorkingHour = calculateRevenuePerWorkingHour(
@@ -143,7 +143,7 @@ export function validateProductivityInput(
       'Enter working hours to calculate revenue per working hour.';
   } else {
     hourlyUnavailableReason =
-      'Hourly productivity unavailable — working hours must be greater than zero.';
+      'Hourly productivity unavailable; working hours must be greater than zero.';
   }
 
   const hasEmployee = revenuePerEmployee !== null;
@@ -157,7 +157,7 @@ export function validateProductivityInput(
     hasEmployee && hasHourly ? 'valid' : 'partial';
 
   const warningMessage =
-    'Revenue productivity uses the same reporting period for revenue, headcount, and labor hours. Currency labels amounts only (no FX). Time units convert to hours (seconds÷3600, minutes÷60). Enter total workforce hours — do not multiply by headcount again.';
+    'Revenue productivity uses the same reporting period for revenue, headcount, and labor hours. Currency labels amounts only (no FX). Time units convert to hours (seconds÷3600, minutes÷60). Enter total workforce hours; do not multiply by headcount again.';
 
   const result: ProductivityResult = {
     revenue: revenue.value,

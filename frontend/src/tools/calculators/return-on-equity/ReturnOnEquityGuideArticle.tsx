@@ -17,7 +17,7 @@ export function ReturnOnEquityGuideArticle() {
         accounting profitability of the equity base, compare peers in the same
         industry, and spot multi-year trends. ROE is not an investor&apos;s
         stock-market return; it is a ratio from financial statements. Pair it
-        with other ratios — such as ROA, margins, and leverage — before drawing
+ with other ratios (such as ROA, margins, and leverage) before drawing
         conclusions.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
@@ -87,7 +87,7 @@ export function ReturnOnEquityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Example: two firms earn the same net profit, but Firm B finances more
         with debt and holds less equity. Firm B can show a higher ROE even if
-        asset profitability is similar — leverage, not only operations, drove
+ asset profitability is similar; leverage, not only operations, drove
         the difference.
       </p>
 
@@ -182,7 +182,7 @@ export function ReturnOnEquityGuideArticle() {
         <p>Firm B: NI 100,000 · Equity 250,000 → ROE 40%</p>
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Same net income, different equity bases — Firm B&apos;s higher ROE may
+ Same net income, different equity bases; Firm B&apos;s higher ROE may
         reflect leverage or a thinner equity cushion, not necessarily stronger
         operations. Related:{' '}
         <Link

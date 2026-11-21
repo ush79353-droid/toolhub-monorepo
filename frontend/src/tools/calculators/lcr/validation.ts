@@ -267,7 +267,7 @@ export function validateLcrInput(input: LcrInput): LcrValidation {
     formattedAdditional: formatMoney(additional),
     interpretation: status.interpretation,
     explanation:
-      'Basel frameworks often reference a 100% LCR minimum for covered banks, but application varies by jurisdiction, phase-in, and supervisory circumstances. This tool is an educational estimate — not a compliance determination. Banks may be permitted to use HQLA buffers in genuine stress under supervisory expectations.',
+      'Basel frameworks often reference a 100% LCR minimum for covered banks, but application varies by jurisdiction, phase-in, and supervisory circumstances. This tool is an educational estimate; not a compliance determination. Banks may be permitted to use HQLA buffers in genuine stress under supervisory expectations.',
     formulaBreakdown: `LCR = ${formatMoney(hqla.value!)} / ${formatMoney(outflows.value!)} × 100 = ${formatPercent(lcr)}`,
     steps,
     hqlaHelper: hqlaHelper.helper,

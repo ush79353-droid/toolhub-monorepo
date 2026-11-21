@@ -46,7 +46,7 @@ export const L_TO_GAL_GUIDE_SECTIONS: readonly GuideSection[] = [
       `Example: 3.8 L ÷ ${LITERS_PER_US_GALLON} ≈ ${formatVolume(litersToUSGallons(3.8))} US gal.`,
       `Reverse example: 2 US gal × ${LITERS_PER_US_GALLON} = ${formatVolume(usGallonsToLiters(2))} L.`,
       `Imperial gallons: imp gal = L ÷ ${LITERS_PER_IMPERIAL_GALLON}, and L = imp gal × ${LITERS_PER_IMPERIAL_GALLON}.`,
-      'Edit liters or gallons in the converter above — values update instantly. Switching US ↔ Imperial keeps the same physical volume while changing only the gallon label.',
+      'Edit liters or gallons in the converter above; values update instantly. Switching US ↔ Imperial keeps the same physical volume while changing only the gallon label.',
     ],
     formula: `US gal = L / ${LITERS_PER_US_GALLON} · L = US gal × ${LITERS_PER_US_GALLON}`,
     tableHeaders: ['Liters (L)', 'US gallons'],

@@ -4,7 +4,7 @@ import { EBIT_FAQS, EBIT_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate earnings before interest and taxes — EBIT = Revenue − Operating expenses — with reverse modes and EBIT margin.',
+    'Calculate earnings before interest and taxes: EBIT = Revenue − Operating expenses; with reverse modes and EBIT margin.',
   asideAriaLabel: 'Interactive EBIT Calculator',
   tocItems: EBIT_TOC_ITEMS,
   GuideArticle: EbitGuideArticle,

@@ -9,7 +9,7 @@ export function LifetimeEarningsGuideArticle() {
         Lifetime earnings estimate the cumulative gross employment income you may earn over the years
         left until retirement. Current salary, expected annual raises, and retirement age drive the
         projection. Use this calculator to explore how career length and salary growth shape total
-        career income — before taxes, deductions, and inflation.
+ career income before taxes, deductions, and inflation.
       </p>
 
       <h2
@@ -36,25 +36,25 @@ export function LifetimeEarningsGuideArticle() {
         How to calculate lifetime earnings
       </h2>
       <h3 className="mt-4 text-base font-semibold text-accent">
-        Step 1 — Years left to work
+ Step 1: Years left to work
       </h3>
       <div className="my-3 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         <p>N = Retirement Age − Current Age</p>
         <p className="mt-2">Example: 65 − 25 = 40 years</p>
       </div>
-      <h3 className="mt-4 text-base font-semibold text-accent">Step 2 — Current annual salary</h3>
+      <h3 className="mt-4 text-base font-semibold text-accent">Step 2: Current annual salary</h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Enter annual gross salary (for example $100,000), not monthly pay. That amount is year 1 of
         the projection.
       </p>
       <h3 className="mt-4 text-base font-semibold text-accent">
-        Step 3 — Expected annual increase
+ Step 3: Expected annual increase
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Raises may come from promotions, experience, role changes, or industry demand. Example: 5%
         per year.
       </p>
-      <h3 className="mt-4 text-base font-semibold text-accent">Step 4 — Lifetime earnings formula</h3>
+      <h3 className="mt-4 text-base font-semibold text-accent">Step 4: Lifetime earnings formula</h3>
       <div className="my-3 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         <p>LE = S₀ × ((1 + g)ᴺ − 1) / g</p>
         <p className="mt-2">If g = 0: LE = S₀ × N</p>
@@ -71,23 +71,23 @@ export function LifetimeEarningsGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong className="font-medium text-accent">Financial planning</strong> — sense the scale
+ <strong className="font-medium text-accent">Financial planning</strong>: sense the scale
           of career income.
         </li>
         <li>
-          <strong className="font-medium text-accent">Career decisions</strong> — compare paths and
+ <strong className="font-medium text-accent">Career decisions</strong>: compare paths and
           long-term pay.
         </li>
         <li>
-          <strong className="font-medium text-accent">Retirement planning</strong> — context for gross
+ <strong className="font-medium text-accent">Retirement planning</strong>: context for gross
           income over a career.
         </li>
         <li>
-          <strong className="font-medium text-accent">Investment planning</strong> — one input when
+ <strong className="font-medium text-accent">Investment planning</strong>: one input when
           setting savings goals.
         </li>
         <li>
-          <strong className="font-medium text-accent">Financial awareness</strong> — see how raises and
+ <strong className="font-medium text-accent">Financial awareness</strong>: see how raises and
           years left change totals.
         </li>
       </ul>

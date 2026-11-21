@@ -165,7 +165,7 @@ export function SalaryCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Pay: ${getCurrencySymbol(input.payCurrency)}${input.payAmount} ${input.payCurrency} (per hour)`,
         `Hours/day: ${input.hoursPerDay}`,
         `Days/week: ${input.daysPerWeek}`,

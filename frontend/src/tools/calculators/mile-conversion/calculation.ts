@@ -69,7 +69,7 @@ export function syncUnitsFromMeters(
 export function shareResultText(meters: number): string {
   const values = allFromMeters(meters);
   return [
-    'Mile Conversion Calculator — Omega Calculators',
+    'Mile Conversion Calculator | Omega Calculators',
     '',
     `${formatLength(values.mi)} miles =`,
     `${formatLength(values.km)} kilometers`,

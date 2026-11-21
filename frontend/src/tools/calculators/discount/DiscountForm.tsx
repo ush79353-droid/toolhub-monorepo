@@ -168,7 +168,7 @@ export function DiscountForm({
             <span>Tax included?</span>
             <InfoTooltip
               label="Tax included"
-              text="Yes means the original price already includes tax; No means it excludes tax. No tax rate is applied — this is a label only."
+              text="Yes means the original price already includes tax; No means it excludes tax. No tax rate is applied; this is a label only."
             />
           </legend>
           <div className="flex flex-wrap gap-4">

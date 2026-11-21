@@ -80,7 +80,7 @@ export function calculateAtmConversion(input: AtmConversionInput): AtmConversion
 
 export function shareResultText(result: AtmConversionResult): string {
   return [
-    'ATM Conversion — Omega Calculators',
+    'ATM Conversion | Omega Calculators',
     '',
     `Atmospheres: ${formatPressure(result.atm)} atm`,
     `Bar: ${formatPressure(result.bar)} bar`,

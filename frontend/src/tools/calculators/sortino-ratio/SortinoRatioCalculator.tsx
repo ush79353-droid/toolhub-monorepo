@@ -47,7 +47,7 @@ export function SortinoRatioCalculator({
   const hasResult = Boolean(result?.asset1 || result?.asset2);
   const summary = hasResult
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Risk-free rate: ${input.riskFreeRate}%`,
         result?.asset1
           ? `Asset #1: Ra ${input.asset1.averageReturn}%, downside ${input.asset1.downsideDeviation}, Sortino ${result.asset1.formattedSortinoRatio}`

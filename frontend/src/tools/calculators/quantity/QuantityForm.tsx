@@ -52,7 +52,7 @@ export function QuantityForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Enter a value in any field — the others update from individual units. 1 dozen = 12, 1
+ Enter a value in any field: the others update from individual units. 1 dozen = 12, 1
         baker&apos;s dozen = 13, 1 gross = 144, 1 great gross = 1,728. Negative counts are not
         accepted.
       </div>

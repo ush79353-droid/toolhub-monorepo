@@ -97,7 +97,7 @@ export function calculateMonthsToYears(input: MonthsToYearsInput): MonthsToYears
 
 export function shareResultText(result: MonthsToYearsResult): string {
   return [
-    'Months to Years Calculator — Omega Calculators',
+    'Months to Years Calculator | Omega Calculators',
     '',
     `${formatDuration(result.months)} months = ${formatDuration(result.years)} years`,
     `= ${formatDuration(result.yearsPart)} years and ${formatDuration(result.monthsPart)} months`,

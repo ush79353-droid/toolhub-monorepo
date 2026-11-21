@@ -79,7 +79,7 @@ export function FourZeroThreeBResults({
         </div>
         <p className="mt-2 text-xs font-normal leading-relaxed text-muted-foreground">
           Inflation-adjusted balance, in today&apos;s purchasing power: {money(result.inflationAdjustedBalance)}. {result.years}{' '}
-          {result.years === 1 ? 'year' : 'years'} from now. {result.accountType === 'roth' ? 'Roth' : 'Traditional'} is a label only — taxes are not subtracted.
+ {result.years === 1 ? 'year': 'years'} from now. {result.accountType === 'roth' ? 'Roth': 'Traditional'} is a label only; taxes are not subtracted.
         </p>
         <SolvedLine result={result} money={money} />
       </div>

@@ -6,7 +6,7 @@ const sections: { id: string; title: string; body: string[]; formula?: string }[
     id: 'what-business-valuation',
     title: 'What Business Valuation Means',
     body: [
-      'A business valuation estimate puts a present-day number on a company using one chosen approach. Different methods answer different questions—cash-flow earning power, net assets, listed equity value, or a multiple of a financial metric.',
+      'A business valuation estimate puts a present-day number on a company using one chosen approach. Different methods answer different questions, cash-flow earning power, net assets, listed equity value, or a multiple of a financial metric.',
       'This calculator runs one method at a time with the minimum inputs for that method. It is a planning sketch, not an appraisal or fairness opinion.',
     ],
   },

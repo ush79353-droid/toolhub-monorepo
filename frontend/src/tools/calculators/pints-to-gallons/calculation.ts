@@ -52,7 +52,7 @@ export function calculatePintsToGallons(input: PintsToGallonsInput): PintsToGall
 
 export function shareResultText(result: PintsToGallonsResult): string {
   return [
-    'Pints to Gallons Converter — Omega Calculators',
+    'Pints to Gallons Converter | Omega Calculators',
     '',
     `${formatVolume(result.usPt)} US pint equals:`,
     `${formatVolume(result.usGal)} US gallon`,

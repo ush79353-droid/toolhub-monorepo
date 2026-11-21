@@ -147,7 +147,7 @@ export function LotteryTaxForm({
           <span>Annuity payout</span>
           <InfoTooltip
             label="Annuity payout"
-            text="Advertised annuity jackpot — treated as the sum of nominal annual payments."
+            text="Advertised annuity jackpot; treated as the sum of nominal annual payments."
           />
         </label>
         <div className="flex gap-2">
@@ -396,7 +396,7 @@ export function LotteryTaxForm({
                 <p className="mt-2 text-xs text-muted-foreground">
                   You may need to scroll the table horizontally on small screens. Currently the
                   gross lump-sum payout percentage is {result.lumpSumPercent}%. Nominal comparison
-                  only — no time-value discount.
+ only; no time-value discount.
                 </p>
                 {result.usTaxNote ? (
                   <p className="mt-2 text-xs text-amber-800">{result.usTaxNote}</p>

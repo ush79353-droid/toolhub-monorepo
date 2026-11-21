@@ -41,7 +41,7 @@ export const MCG_TO_MG_GUIDE_SECTIONS: readonly McgToMgGuideSection[] = [
     title: 'Introduction',
     paragraphs: [
       'This converter turns metric mass between micrograms (mcg / µg) and milligrams (mg). Enter either unit and read the matching value instantly.',
-      'These small units appear in laboratory notes, nutritional labels, and pharmaceutical manufacturing. The tool converts mass units only—it does not recommend a dose or concentration.',
+      'These small units appear in laboratory notes, nutritional labels, and pharmaceutical manufacturing. The tool converts mass units only, it does not recommend a dose or concentration.',
     ],
   },
   {
@@ -107,7 +107,7 @@ export const MCG_TO_MG_GUIDE_SECTIONS: readonly McgToMgGuideSection[] = [
     title: 'Practical Applications',
     paragraphs: [
       'Use the converter for laboratory measurements, chemistry notes, scientific research, nutritional labeling, pharmaceutical manufacturing records, analytical testing, classroom metric drills, and everyday mcg ↔ mg checks.',
-      'Mass cannot be converted into volume without density or concentration. This page never establishes an appropriate medication dose—verify clinical instructions with a qualified healthcare professional.',
+      'Mass cannot be converted into volume without density or concentration. This page never establishes an appropriate medication dose, verify clinical instructions with a qualified healthcare professional.',
     ],
   },
 ];

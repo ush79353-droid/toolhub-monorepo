@@ -230,7 +230,7 @@ export function validatePegRatioInput(
     peUnavailableReason,
     pegUnavailableReason,
     warningMessage:
-      'PEG divides P/E by earnings growth in percentage points (e.g. 4.8 for 4.8%). Growth uses retention × ROE under simplifying assumptions — not a forecast guarantee.',
+      'PEG divides P/E by earnings growth in percentage points (e.g. 4.8 for 4.8%). Growth uses retention × ROE under simplifying assumptions; not a forecast guarantee.',
   };
 
   return {

@@ -57,7 +57,7 @@ export const GDP_GAP_FAQS: readonly FAQItem[] = [
   {
     question: 'What is potential GDP?',
     answer:
-      'An estimate of the output an economy can sustainably produce with normal utilization of labor, capital, and other resources — not an exact physical maximum.',
+      'An estimate of the output an economy can sustainably produce with normal utilization of labor, capital, and other resources; not an exact physical maximum.',
   },
   {
     question: 'How do economists estimate potential GDP?',
@@ -87,7 +87,7 @@ export const GDP_GAP_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a GDP gap of -5% mean?',
     answer:
-      'Actual GDP is about 5% below estimated potential GDP — spare capacity relative to that estimate.',
+      'Actual GDP is about 5% below estimated potential GDP; spare capacity relative to that estimate.',
   },
   {
     question: 'What are the consequences of a negative output gap?',

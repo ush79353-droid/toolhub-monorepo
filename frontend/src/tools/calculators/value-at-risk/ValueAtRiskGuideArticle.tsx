@@ -8,7 +8,7 @@ export function ValueAtRiskGuideArticle() {
         <p>
           Value at Risk (VaR) estimates a loss threshold for a chosen tail probability over a
           holding period. A 5% one-day VaR is the modeled loss amount associated with a 5% chance of
-          a worse outcome under the assumptions—not a guaranteed maximum loss.
+ a worse outcome under the assumptions, not a guaranteed maximum loss.
         </p>
       </section>
 

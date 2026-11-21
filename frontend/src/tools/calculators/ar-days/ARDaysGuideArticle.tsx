@@ -15,7 +15,7 @@ const sections: { id: string; title: string; body: string[] }[] = [
     title: 'A/R Days Formula',
     body: [
       'The standard formula is A/R days = (accounts receivable / net credit sales) × number of days in the period. Net credit sales means credit sales after returns and allowances. Cash sales stay out, because that money never passed through receivables.',
-      'When you use an average balance instead, substitute average accounts receivable — (beginning + ending) ÷ 2 — for the receivables figure. The rest of the formula stays the same.',
+      'When you use an average balance instead, substitute average accounts receivable: (beginning + ending) ÷ 2; for the receivables figure. The rest of the formula stays the same.',
     ],
   },
   {

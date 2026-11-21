@@ -172,7 +172,7 @@ export function CarDepreciationCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial: ${input.initialValue} ${input.initialValueCurrency}`,
         `Age: ${input.carAgeYears} yrs`,
         `Illustrative rate: ${CAR_DEPRECIATION_ANNUAL_RATE * 100}% / year`,

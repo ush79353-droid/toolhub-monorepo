@@ -119,7 +119,7 @@ export function SubscriptionWasteCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Recurring subscriptions by category — monthly &amp; annual totals
+ Recurring subscriptions by category; monthly &amp; annual totals
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}

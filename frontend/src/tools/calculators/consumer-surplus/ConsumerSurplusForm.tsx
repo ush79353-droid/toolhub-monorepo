@@ -85,7 +85,7 @@ export function ConsumerSurplusForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. CS = willing
+ changes the symbol only; it does not convert values. CS = willing
           price − actual price.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
@@ -207,7 +207,7 @@ export function ConsumerSurplusForm({
           <span>Consumer surplus</span>
           <InfoTooltip
             label="Consumer surplus"
-            text="CS = willing price − actual price. When actual price exceeds willingness to pay, the signed difference is shown with a warning — realized surplus from a voluntary purchase is not applicable."
+            text="CS = willing price − actual price. When actual price exceeds willingness to pay, the signed difference is shown with a warning; realized surplus from a voluntary purchase is not applicable."
           />
         </label>
         <FieldShell error={errors.consumerSurplus} muted={surplusReadOnly}>
@@ -268,12 +268,12 @@ export function ConsumerSurplusForm({
             <p>
               When actual price exceeds WTP, the signed difference is negative.
               Under a voluntary-purchase model, realized surplus is not
-              applicable — not buying yields zero surplus.
+ applicable; not buying yields zero surplus.
             </p>
             <p>
               <strong className="text-accent">Producer surplus</strong> is the
               producer-side analogue when market price exceeds the minimum
-              acceptable supply price — distinct from consumer surplus.
+ acceptable supply price; distinct from consumer surplus.
             </p>
             <p>
               Savings % relative to WTP uses (WTP − P) / WTP × 100 when WTP &gt;

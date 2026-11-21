@@ -13,7 +13,7 @@ export function DiscountGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A percent-off discount reduces an original (list) price by a stated percentage. This
         calculator finds the sale price you pay and the amount you save. Only the verified
-        %&nbsp;off mode is available — other discount styles are not invented here.
+ %&nbsp;off mode is available; other discount styles are not invented here.
       </p>
 
       <h2

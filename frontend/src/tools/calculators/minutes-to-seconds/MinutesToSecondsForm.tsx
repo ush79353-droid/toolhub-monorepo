@@ -101,7 +101,7 @@ export function MinutesToSecondsForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Exact: 1 minute = 60 seconds. Minutes and Seconds below normalize so remaining seconds stay
-        in [0, 60). Decimal minutes (e.g. 1.5) equal 1 min 30 sec — not 1 min 50 sec.
+ in [0, 60). Decimal minutes (e.g. 1.5) equal 1 min 30 sec; not 1 min 50 sec.
       </div>
 
       <fieldset className="space-y-3 rounded-xl border border-border bg-muted/15 px-3.5 py-3.5">

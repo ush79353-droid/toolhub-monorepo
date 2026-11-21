@@ -31,7 +31,7 @@ export const POWERBALL_FAQS: readonly FAQItem[] = [
   {
     question: 'How much do I get if I win the Powerball?',
     answer:
-      'Your take-home depends on the advertised jackpot, cash vs annuity choice, federal taxes, state taxes, and filing status. This calculator estimates those scenarios — official lottery cash values control the actual cash option.',
+      'Your take-home depends on the advertised jackpot, cash vs annuity choice, federal taxes, state taxes, and filing status. This calculator estimates those scenarios; official lottery cash values control the actual cash option.',
   },
   {
     question: 'How do I calculate Powerball annuity?',

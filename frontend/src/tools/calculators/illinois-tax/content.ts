@@ -23,6 +23,6 @@ export const ILLINOIS_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'How is property tax estimated?',
     answer:
-      'Estimated property tax = entered home value × ACS 2024 county effective rate (median tax ÷ median home value) for all 102 Illinois counties. That rate is a market-value proxy—not a parcel TRA levy on equalized assessed value. Edit the rate when you know your bill rate. The screenshot 1.67% is not used as Adams County’s verified rate (ACS Adams ≈ 1.582%).',
+      'Estimated property tax = entered home value × ACS 2024 county effective rate (median tax ÷ median home value) for all 102 Illinois counties. That rate is a market-value proxy, not a parcel TRA levy on equalized assessed value. Edit the rate when you know your bill rate. The screenshot 1.67% is not used as Adams County’s verified rate (ACS Adams ≈ 1.582%).',
   },
 ];

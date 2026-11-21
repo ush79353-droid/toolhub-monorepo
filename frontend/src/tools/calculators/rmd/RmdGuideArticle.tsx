@@ -32,7 +32,7 @@ export function RmdGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Factors follow IRS Pub. 590-B Appendix B Table III for 2022 and later (age 72 = 27.4). RMD =
         Balance ÷ Factor. The table supports ages 72–120 even when SECURE 2.0 starting ages are 73 or
-        75 — selecting an age only looks up the factor. Educational estimate — not tax advice.
+ 75 (selecting an age only looks up the factor. Educational estimate) not tax advice.
       </p>
       <h2 id="rmd-faq" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
         Frequently Asked Questions

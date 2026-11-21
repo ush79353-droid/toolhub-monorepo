@@ -284,7 +284,7 @@ export function MarginalRevenueForm({
             <span>Marginal revenue</span>
             <InfoTooltip
               label="Marginal revenue"
-              text="Discrete approximation ΔTR/ΔQ — revenue per additional unit. Undefined when ΔQ is zero."
+              text="Discrete approximation ΔTR/ΔQ; revenue per additional unit. Undefined when ΔQ is zero."
             />
           </label>
           <div className="flex gap-2">
@@ -321,7 +321,7 @@ export function MarginalRevenueForm({
             </p>
           ) : (
             <p className="mt-1 text-xs text-muted-foreground">
-              Discrete approximation ΔTR/ΔQ — not a continuous derivative.
+ Discrete approximation ΔTR/ΔQ; not a continuous derivative.
             </p>
           )}
         </div>

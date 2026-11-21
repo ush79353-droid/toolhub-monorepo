@@ -81,7 +81,7 @@ export function GiniCoefficientCalculator({
 
   const summary = shareable
     ? [
-        `Gini Coefficient Calculator — Omega Calculators`,
+        `Gini Coefficient Calculator | Omega Calculators`,
         '',
         result!.areaA != null
           ? `Area A: ${result!.areaA} unit²`

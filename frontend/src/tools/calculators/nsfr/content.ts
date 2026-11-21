@@ -7,7 +7,7 @@ export const NSFR_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'formula', label: 'NSFR Formula' },
   { id: 'asf', label: 'Available Stable Funding Explained' },
   { id: 'rsf', label: 'Required Stable Funding Explained' },
-  { id: 'worked-example', label: 'How to Calculate NSFR — Worked Example' },
+  { id: 'worked-example', label: 'How to Calculate NSFR; Worked Example' },
   { id: 'interpret', label: 'How to Interpret NSFR' },
   { id: 'basel', label: 'Basel III and the 100% NSFR Requirement' },
   { id: 'vs-lcr', label: 'NSFR vs. LCR' },
@@ -40,7 +40,7 @@ export const NSFR_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good NSFR?',
     answer:
-      'Basel frameworks generally reference a 100% minimum for covered banks. “Good” depends on jurisdiction, business model, and supervisory expectations — higher is not automatically better.',
+      'Basel frameworks generally reference a 100% minimum for covered banks. “Good” depends on jurisdiction, business model, and supervisory expectations; higher is not automatically better.',
   },
   {
     question: 'Why is the minimum NSFR generally 100%?',
@@ -64,7 +64,7 @@ export const NSFR_FAQS: readonly FAQItem[] = [
   {
     question: 'What does an NSFR of 120% mean?',
     answer:
-      'Illustratively, ASF is 1.2× RSF — about a 20% buffer above the standard minimum under the entered amounts.',
+      'Illustratively, ASF is 1.2× RSF; about a 20% buffer above the standard minimum under the entered amounts.',
   },
   {
     question: 'What is Available Stable Funding?',
@@ -104,7 +104,7 @@ export const NSFR_FAQS: readonly FAQItem[] = [
   {
     question: 'How can banks improve NSFR?',
     answer:
-      'Increase eligible stable funding, lengthen maturities, improve deposit stability, adjust asset mix, manage encumbrance, and monitor concentrations — each with cost trade-offs.',
+      'Increase eligible stable funding, lengthen maturities, improve deposit stability, adjust asset mix, manage encumbrance, and monitor concentrations; each with cost trade-offs.',
   },
   {
     question: 'What happens if a bank\'s NSFR falls below 100%?',

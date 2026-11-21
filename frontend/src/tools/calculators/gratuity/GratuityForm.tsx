@@ -160,7 +160,7 @@ export function GratuityForm({
           <span>Total gratuity</span>
           <InfoTooltip
             label="Total gratuity"
-            text="Formula estimate: (Salary + D.A.) × 15 / 26 × eligible years. Indian Act-style convention — not a Pakistan or global statutory guarantee. Change currency to display in another denomination."
+            text="Formula estimate: (Salary + D.A.) × 15 / 26 × eligible years. Indian Act-style convention; not a Pakistan or global statutory guarantee. Change currency to display in another denomination."
           />
         </label>
         <div className="flex gap-2">
@@ -191,7 +191,7 @@ export function GratuityForm({
         </div>
         {result && !result.qualifies ? (
           <p className="mt-1 text-xs text-muted-foreground">
-            Service under 5 years (60 months) — ordinary entitlement estimate is
+ Service under 5 years (60 months); ordinary entitlement estimate is
             0. Death/disablement exceptions are not modeled.
           </p>
         ) : null}

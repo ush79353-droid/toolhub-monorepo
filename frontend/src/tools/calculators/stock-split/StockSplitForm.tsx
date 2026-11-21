@@ -144,7 +144,7 @@ export function StockSplitForm({
         <h3 className={sectionTitleClass}>Stock split ratio</h3>
         <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
           A stock split ratio determines the number of new shares given per existing
-          share — for example, a 2-for-1 split gives two new shares for every one old
+ share, for example, a 2-for-1 split gives two new shares for every one old
           share. Reverse splits such as 1-for-5 are supported the same way.
         </p>
         <div>

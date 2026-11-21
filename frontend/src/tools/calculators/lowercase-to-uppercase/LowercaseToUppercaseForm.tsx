@@ -36,7 +36,7 @@ export function LowercaseToUppercaseForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Conversion runs in your browser with JavaScript&apos;s standard Unicode uppercase mapping.
-        Default mode is Uppercase. Extra modes are optional helpers — title case is a simple
+ Default mode is Uppercase. Extra modes are optional helpers; title case is a simple
         whitespace rule, not a full linguistic style guide.
       </div>
 

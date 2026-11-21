@@ -12,7 +12,7 @@ export function FixedAssetTurnoverRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Fixed asset turnover (FAT) shows how efficiently a company generates
-        revenue from its net fixed asset base — typically net property, plant,
+ revenue from its net fixed asset base; typically net property, plant,
         and equipment. It is an asset-utilization measure, not a profitability
         ratio. Capital-intensive industries often report lower FAT than
         asset-light businesses even when both are healthy.
@@ -46,7 +46,7 @@ export function FixedAssetTurnoverRatioGuideArticle() {
         Use beginning and ending net PP&amp;E (or another consistently defined
         net fixed asset base) for the same entity and currency as revenue. When
         large mid-period acquisitions or disposals occur, a time-weighted
-        average may be more representative — this calculator uses the standard
+ average may be more representative; this calculator uses the standard
         two-point average.
       </p>
 
@@ -88,7 +88,7 @@ export function FixedAssetTurnoverRatioGuideArticle() {
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
           <strong>Higher FAT:</strong> More revenue per dollar of net fixed
-          assets — utilization, volume, asset-light models, or depreciated book
+ assets; utilization, volume, asset-light models, or depreciated book
           values.
         </li>
         <li>
@@ -100,7 +100,7 @@ export function FixedAssetTurnoverRatioGuideArticle() {
           base.
         </li>
         <li>
-          <strong>Undefined:</strong> Zero average fixed assets — do not divide.
+ <strong>Undefined:</strong> Zero average fixed assets; do not divide.
         </li>
       </ul>
 
@@ -125,7 +125,7 @@ export function FixedAssetTurnoverRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         No. A company can have high FAT with thin margins or losses, or low FAT
         with strong margins. FAT measures revenue efficiency relative to fixed
-        assets — pair it with margin and return metrics.
+ assets; pair it with margin and return metrics.
       </p>
 
       <h2
@@ -172,7 +172,7 @@ export function FixedAssetTurnoverRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         New facilities and equipment raise average fixed assets before the
-        related revenue fully appears, which can temporarily lower FAT — often
+ related revenue fully appears, which can temporarily lower FAT; often
         a timing effect rather than permanent inefficiency.
       </p>
 
@@ -218,7 +218,7 @@ export function FixedAssetTurnoverRatioGuideArticle() {
         debt service. Use it with other financial and operational indicators.
       </p>
       <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Educational illustration only — not accounting, investment, or
+ Educational illustration only; not accounting, investment, or
         professional advice. Confirm figures against audited statements and
         applicable frameworks.
       </p>

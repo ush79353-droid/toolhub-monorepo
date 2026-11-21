@@ -37,7 +37,7 @@ export function StateTaxGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Live destinations currently include Alabama, California, and Illinois.
-        Links are only shown for catalog tools that are developed and active —
+ Links are only shown for catalog tools that are developed and active; 
         never invented URLs.
       </p>
       <h2

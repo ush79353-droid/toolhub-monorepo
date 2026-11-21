@@ -13,8 +13,8 @@ export function MarginOfSafetyGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Margin of safety shows how much sales can fall before the business reaches
         breakeven. Enter current (estimated) sales and breakeven sales to get the
-        cushion in money, as a ratio, as a percentage, and — when a selling price per
-        unit is available — in units.
+ cushion in money, as a ratio, as a percentage, and when a selling price per
+ unit is available; in units.
       </p>
 
       <h2

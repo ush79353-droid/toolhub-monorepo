@@ -99,7 +99,7 @@ export function calculateWeddingBudget(
     statusMessage = 'Congratulations! Your budget is perfectly balanced!';
   } else if (budgetBalance > 0) {
     balanceStatus = 'under';
-    statusMessage = 'You are under budget — funds remain after planned expenses.';
+    statusMessage = 'You are under budget; funds remain after planned expenses.';
   } else {
     balanceStatus = 'over';
     statusMessage = 'Your wedding plan is over budget.';

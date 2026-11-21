@@ -77,8 +77,8 @@ export function SecondStimulus900BillionCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
-        'Historical EIP2 estimate ($900 billion Consolidated Appropriations Act, 2021) — not a current benefit.',
+        `${metadata.title} | Omega Calculators`,
+        'Historical EIP2 estimate ($900 billion Consolidated Appropriations Act, 2021); not a current benefit.',
         `Filed 2019 taxes: ${input.filed2019Taxes === 'yes' ? 'Yes' : 'No'}`,
         `Filing status: ${FILING_LABEL[input.filingStatus]}`,
         `Kids (qualifying children under 17): ${input.kids}`,

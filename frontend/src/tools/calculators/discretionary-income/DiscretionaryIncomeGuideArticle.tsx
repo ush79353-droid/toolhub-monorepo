@@ -15,7 +15,7 @@ export function DiscretionaryIncomeGuideArticle() {
         Discretionary income means different things in different contexts. This
         calculator estimates student-loan discretionary income from AGI, family
         size, state (HHS poverty region), and a named repayment calculation
-        standard — or, separately, budgeting discretionary income as take-home
+ standard; or, separately, budgeting discretionary income as take-home
         pay minus necessary expenses. The two results are not interchangeable.
       </p>
 
@@ -75,7 +75,7 @@ export function DiscretionaryIncomeGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Because the inputs differ, the same household can show a large
-        student-loan DI and a small (or negative) budgeting DI — or the reverse.
+ student-loan DI and a small (or negative) budgeting DI, or the reverse.
       </p>
 
       <h2
@@ -129,7 +129,7 @@ export function DiscretionaryIncomeGuideArticle() {
         filing jointly usually combines AGI and includes the spouse in family
         size. Married filing separately may exclude spouse income and spouse
         from family size under some standards, while other standards still count
-        spouse income — this tool follows the selected standard’s coded rules.
+ spouse income; this tool follows the selected standard’s coded rules.
       </p>
 
       <h2
@@ -172,7 +172,7 @@ export function DiscretionaryIncomeGuideArticle() {
         <li>Raise take-home pay or reduce necessary costs (budgeting)</li>
         <li>Review recurring bills and debt minimums</li>
         <li>
-          For student loans, DI follows AGI, family size, and the plan formula —
+ For student loans, DI follows AGI, family size, and the plan formula; 
           not your grocery list
         </li>
       </ul>

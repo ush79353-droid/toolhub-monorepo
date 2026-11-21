@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert US or UK fluid ounces to milliliters. Exact: 1 US fl oz = 29.5735295625 mL; 1 UK fl oz = 28.4130625 mL. Volume only — not weight ounces.',
+    'Convert US or UK fluid ounces to milliliters. Exact: 1 US fl oz = 29.5735295625 mL; 1 UK fl oz = 28.4130625 mL. Volume only; not weight ounces.',
   asideAriaLabel: 'Interactive ounces to milliliters converter',
   tocItems: OUNCES_TO_MILLILITERS_TOC_ITEMS,
   GuideArticle: OuncesToMillilitersGuideArticle,

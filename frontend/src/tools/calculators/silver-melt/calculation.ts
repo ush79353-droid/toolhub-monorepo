@@ -243,7 +243,7 @@ export function calculateSilverMeltResults(input: {
 
 export function shareSilverMeltText(result: SilverMeltResult): string {
   const lines = [
-    'Silver Melt Calculator — Omega Calculators',
+    'Silver Melt Calculator | Omega Calculators',
     `Weight: ${formatQty(result.weight)} ${weightUnitLabel(result.weightUnit)}`,
     `Purity: ${formatQty(result.purityPercent)}%`,
     `Pure silver: ${formatQty(result.pureSilverWeight)} ${weightUnitLabel(result.pureSilverUnit)}`,

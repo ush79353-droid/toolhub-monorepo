@@ -41,7 +41,7 @@ export const YARDS_TO_ACRES_GUIDE_SECTIONS: readonly YardsToAcresGuideSection[] 
     title: 'Introduction',
     paragraphs: [
       'This calculator converts land area between square yards (yd²) and acres (ac). Enter either unit and read the matching value instantly.',
-      'A yard (yd) measures length. A square yard (yd²) measures area. Only square yards convert directly to acres—linear yards need a second dimension first.',
+      'A yard (yd) measures length. A square yard (yd²) measures area. Only square yards convert directly to acres, linear yards need a second dimension first.',
     ],
   },
   {
@@ -112,7 +112,7 @@ export const YARDS_TO_ACRES_GUIDE_SECTIONS: readonly YardsToAcresGuideSection[] 
     id: 'yards-vs-square-yards',
     title: 'Difference Between Yards and Square Yards',
     paragraphs: [
-      'Yard (yd) is one-dimensional length. Square yard (yd²) is two-dimensional area. Acre (ac) is also area. Converting linear yards to acres requires length and width (or another area formula)—for rectangular land, area in yd² = length(yd) × width(yd), then acres = yd² ÷ 4840. Prefer the dedicated Acreage Calculator when you start from length and width.',
+      'Yard (yd) is one-dimensional length. Square yard (yd²) is two-dimensional area. Acre (ac) is also area. Converting linear yards to acres requires length and width (or another area formula); for rectangular land, area in yd² = length(yd) × width(yd), then acres = yd² ÷ 4840. Prefer the dedicated Acreage Calculator when you start from length and width.',
     ],
   },
 ];

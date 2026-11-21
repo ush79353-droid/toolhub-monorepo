@@ -40,7 +40,7 @@ export function calculateKsiToPsi(input: KsiToPsiInput): KsiToPsiResult {
 
 export function shareResultText(result: KsiToPsiResult): string {
   return [
-    'KSI to PSI Conversion — Omega Calculators',
+    'KSI to PSI Conversion | Omega Calculators',
     '',
     `${formatPressure(result.ksi)} ksi = ${formatPressure(result.psi)} psi`,
     '',

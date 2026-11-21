@@ -23,7 +23,7 @@ export const LOTTERY_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'What does US taxes mode do?',
     answer:
-      'US mode sets Tax I to the IRC §3402(q) 24% federal withholding rate commonly applied to lottery proceeds of $5,000 or more. That is withholding, not final federal tax. Tax II stays 0% because this tool does not invent state rates — enter a state rate under Customized tax rates.',
+      'US mode sets Tax I to the IRC §3402(q) 24% federal withholding rate commonly applied to lottery proceeds of $5,000 or more. That is withholding, not final federal tax. Tax II stays 0% because this tool does not invent state rates. Enter a state rate under Customized tax rates.',
   },
   {
     question: 'Does the Difference column include time value of money?',

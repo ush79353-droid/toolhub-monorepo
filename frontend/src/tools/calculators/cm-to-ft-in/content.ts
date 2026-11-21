@@ -55,10 +55,10 @@ export const CM_TO_FT_IN_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-convert-cm',
     title: 'How Do You Convert CM to ft and in?',
     paragraphs: [
-      'Step 1 — convert centimeters to total inches: inches = cm ÷ 2.54.',
-      'Step 2 — complete feet = floor(total inches ÷ 12).',
-      'Step 3 — remaining inches = total inches − 12 × feet.',
-      `Example — 178 cm: 178 ÷ 2.54 ≈ 70.07874 total inches → ${mixedLabel(178)}.`,
+      'Step 1: convert centimeters to total inches: inches = cm ÷ 2.54.',
+      'Step 2: complete feet = floor(total inches ÷ 12).',
+      'Step 3: remaining inches = total inches − 12 × feet.',
+      `Example; 178 cm: 178 ÷ 2.54 ≈ 70.07874 total inches → ${mixedLabel(178)}.`,
     ],
     formula: 'I = cm ÷ 2.54  ·  F = ⌊I ÷ 12⌋  ·  R = I − 12F',
   },
@@ -67,7 +67,7 @@ export const CM_TO_FT_IN_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert ft and in to CM',
     paragraphs: [
       'Formula: cm = (ft × 30.48) + (in × 2.54).',
-      `Example — 5 ft 8 in: 5 × 30.48 = 152.4; 8 × 2.54 = 20.32; total = ${formatLength(feetInchesToCentimeters(5, 8))} cm.`,
+      `Example; 5 ft 8 in: 5 × 30.48 = 152.4; 8 × 2.54 = 20.32; total = ${formatLength(feetInchesToCentimeters(5, 8))} cm.`,
     ],
     formula: 'cm = (ft × 30.48) + (in × 2.54)',
   },
@@ -97,7 +97,7 @@ export const CM_TO_FT_IN_FAQS: readonly FAQItem[] = [
   {
     question: 'What Are Mixed Measurements?',
     answer:
-      'Mixed measurements use two or more units for one quantity — for example 5 ft 8 in for height or everyday dimensions.',
+      'Mixed measurements use two or more units for one quantity, for example 5 ft 8 in for height or everyday dimensions.',
   },
   {
     question: 'How Much Is 170 CM in Feet and Inches?',

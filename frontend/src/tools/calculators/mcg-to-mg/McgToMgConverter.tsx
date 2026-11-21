@@ -16,7 +16,7 @@ import { validateMcgToMg } from './validation';
 
 function summaryText(result: McgToMgResult): string {
   const lines = [
-    'mcg to mg Converter — Omega Calculators',
+    'mcg to mg Converter | Omega Calculators',
     result.source === 'mg'
       ? `${formatMass(result.mg)} mg = ${formatMass(result.mcg)} mcg`
       : `${formatMass(result.mcg)} mcg = ${formatMass(result.mg)} mg`,

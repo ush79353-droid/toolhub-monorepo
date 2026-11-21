@@ -90,7 +90,7 @@ export const BUYING_POWER_FAQS: readonly FAQItem[] = [
   {
     question: 'How accurate are CPI-based calculations?',
     answer:
-      'They accurately apply the published index ratio, but CPI is an average basket. Households, regions, and product mixes differ, so results are illustrative of general price change—not a personalized cost-of-living audit.',
+      'They accurately apply the published index ratio, but CPI is an average basket. Households, regions, and product mixes differ, so results are illustrative of general price change, not a personalized cost-of-living audit.',
   },
   {
     question: 'Is purchasing power the same as currency exchange value?',

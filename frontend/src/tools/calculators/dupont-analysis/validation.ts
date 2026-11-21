@@ -113,7 +113,7 @@ export function validateDupontInput(input: DupontInput): DupontValidation {
   const warnings: string[] = [];
   if (math.negativeEquity) {
     warnings.push(
-      'Total equity is negative. Conventional ROE and leverage interpretation can be misleading — treat results with caution.'
+      'Total equity is negative. Conventional ROE and leverage interpretation can be misleading; treat results with caution.'
     );
   }
   warnings.push(

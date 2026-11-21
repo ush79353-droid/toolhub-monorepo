@@ -78,7 +78,7 @@ export function MortgagePrepaymentCalculator({
   const symbol = getCurrencySymbol(result?.currency ?? input.mortgageCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Mortgage: ${symbol}${input.mortgageAmount} @ ${input.interestRatePercent}%`,
         `Baseline payoff: ${result.baseline.formattedPayoffDate}`,
         `Baseline payment: ${symbol}${result.baseline.formattedPeriodicPayment} ${result.baseline.paymentAdverb}`,

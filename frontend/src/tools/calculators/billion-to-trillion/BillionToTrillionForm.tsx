@@ -171,7 +171,7 @@ export function BillionToTrillionForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample(1)}
             >
-              Example 1 — 1 billion = 0.001 trillion
+ Example 1: 1 billion = 0.001 trillion
             </button>
           </li>
           <li>
@@ -180,7 +180,7 @@ export function BillionToTrillionForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample(2)}
             >
-              Example 2 — 1000 billion = 1 trillion
+ Example 2: 1000 billion = 1 trillion
             </button>
           </li>
           <li>
@@ -189,7 +189,7 @@ export function BillionToTrillionForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample(3)}
             >
-              Example 3 — 500 billion = 0.5 trillion
+ Example 3: 500 billion = 0.5 trillion
             </button>
           </li>
           <li>
@@ -198,7 +198,7 @@ export function BillionToTrillionForm({
               className="text-left text-primary underline-offset-2 hover:underline"
               onClick={() => onApplyExample(4)}
             >
-              Example 4 — 2.5 trillion = 2500 billion
+ Example 4: 2.5 trillion = 2500 billion
             </button>
           </li>
         </ul>

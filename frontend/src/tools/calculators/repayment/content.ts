@@ -43,7 +43,7 @@ export const REPAYMENT_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I calculate how long it will take to repay a loan?',
     answer:
-      'Yes — use fixed-installment mode with your planned payment amount.',
+      'Yes: use fixed-installment mode with your planned payment amount.',
   },
   {
     question: 'Does paying more reduce total interest?',
@@ -63,7 +63,7 @@ export const REPAYMENT_FAQS: readonly FAQItem[] = [
   {
     question: 'Is weekly repayment better than monthly repayment?',
     answer:
-      'It depends on effective rates, total cash paid, and when payments are credited — not automatically better in every case.',
+      'It depends on effective rates, total cash paid, and when payments are credited; not automatically better in every case.',
   },
   {
     question: 'What is the difference between APR and interest rate?',

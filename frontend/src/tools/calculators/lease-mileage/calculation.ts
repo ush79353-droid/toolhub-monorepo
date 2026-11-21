@@ -141,7 +141,7 @@ export function shareLeaseMileageText(input: {
   fxNote: string;
 }): string {
   return [
-    `${input.title} — Omega Calculators`,
+    `${input.title} | Omega Calculators`,
     `Predicted excess: ${input.formattedExcess} ${input.excessUnit}`,
     `Lease-end charge: ${input.chargeCurrency} ${input.formattedCharge}`,
     `Monthly savings: ${input.savingsCurrency} ${input.formattedSavings} / mo`,

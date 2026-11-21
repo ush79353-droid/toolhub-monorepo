@@ -37,7 +37,7 @@ export const S2M_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Seconds to Minutes Converter',
     paragraphs: [
       'Convert time values between seconds and minutes for sports timing, running and sprint performance, cooking, exercise, video and audio durations, scheduling, and everyday time calculations.',
-      `Example — a 100-meter sprint in 9.58 seconds: 9.58 ÷ 60 ≈ ${formatDuration(secondsToMinutes(9.58))} minutes.`,
+      `Example: a 100-meter sprint in 9.58 seconds: 9.58 ÷ 60 ≈ ${formatDuration(secondsToMinutes(9.58))} minutes.`,
     ],
     formula: '9.58 ÷ 60 ≈ 0.159666… minutes',
   },
@@ -61,7 +61,7 @@ export const S2M_GUIDE_SECTIONS: readonly GuideSection[] = [
       '3. Read the equivalent duration in Minutes.',
       '4. To calculate in reverse, enter a value in Minutes.',
       '5. The calculator automatically multiplies by 60 to display seconds.',
-      `Example — 78 seconds: 78 ÷ 60 = ${formatDuration(secondsToMinutes(78))}, so 78 seconds = 1.3 minutes (1 minute and 18 seconds).`,
+      `Example; 78 seconds: 78 ÷ 60 = ${formatDuration(secondsToMinutes(78))}, so 78 seconds = 1.3 minutes (1 minute and 18 seconds).`,
     ],
     formula: '78 ÷ 60 = 1.3\n78 seconds = 1.3 minutes',
   },
@@ -70,7 +70,7 @@ export const S2M_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Seconds to Minutes Manually',
     paragraphs: [
       'Divide the number of seconds by 60.',
-      `Example — 150 seconds: 150 ÷ 60 = ${formatDuration(secondsToMinutes(150))}, so 150 seconds = 2.5 minutes.`,
+      `Example; 150 seconds: 150 ÷ 60 = ${formatDuration(secondsToMinutes(150))}, so 150 seconds = 2.5 minutes.`,
     ],
     formula: 'Minutes = Seconds / 60\n150 ÷ 60 = 2.5 minutes',
   },
@@ -79,7 +79,7 @@ export const S2M_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Minutes to Seconds',
     paragraphs: [
       'Multiply the number of minutes by 60.',
-      `Example — 3.5 minutes: 3.5 × 60 = ${formatDuration(minutesToSeconds(3.5))}, so 3.5 minutes = 210 seconds.`,
+      `Example; 3.5 minutes: 3.5 × 60 = ${formatDuration(minutesToSeconds(3.5))}, so 3.5 minutes = 210 seconds.`,
     ],
     formula: 'Seconds = Minutes × 60\n3.5 × 60 = 210 seconds',
   },

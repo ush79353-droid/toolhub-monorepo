@@ -32,7 +32,7 @@ export const KG_TO_LBS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'This tool converts mass between kilograms and international avoirdupois pounds instantly. Both directions are supported.',
       `Multiply kilograms by ${formatMass(LBS_PER_KG)}, or equivalently divide by ${KG_PER_POUND} (the exact kilogram mass of one pound).`,
-      `Example — convert 50 kg: 50 × ${formatMass(LBS_PER_KG)} ≈ ${formatMass(kgToLbs(50))} lb. One kilogram is approximately ${formatMass(LBS_PER_KG)} pounds.`,
+      `Example; convert 50 kg: 50 × ${formatMass(LBS_PER_KG)} ≈ ${formatMass(kgToLbs(50))} lb. One kilogram is approximately ${formatMass(LBS_PER_KG)} pounds.`,
     ],
     formula: `lb = kg × ${formatMass(LBS_PER_KG)}   ·   lb = kg ÷ ${KG_PER_POUND}`,
   },
@@ -52,7 +52,7 @@ export const KG_TO_LBS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Pounds to Kilograms',
     paragraphs: [
       `Multiply pounds by ${KG_PER_POUND}.`,
-      `Example — convert 100 lb: 100 × ${KG_PER_POUND} = ${formatMass(lbsToKg(100))} kg.`,
+      `Example; convert 100 lb: 100 × ${KG_PER_POUND} = ${formatMass(lbsToKg(100))} kg.`,
     ],
     formula: `kg = lb × ${KG_PER_POUND}`,
   },

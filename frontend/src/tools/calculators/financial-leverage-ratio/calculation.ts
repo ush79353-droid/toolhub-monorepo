@@ -95,22 +95,22 @@ export function interpretFinancialLeverage(
   status: string
 ): string {
   if (status === 'zeroEquity' || totalEquity === 0) {
-    return 'Financial leverage cannot be calculated when total equity is zero — the equity multiplier is undefined.';
+    return 'Financial leverage cannot be calculated when total equity is zero: the equity multiplier is undefined.';
   }
   if (leverage === null || !Number.isFinite(leverage)) {
     return 'Financial leverage could not be determined from the inputs.';
   }
   if (totalEquity < 0) {
-    return `Negative equity produces a signed leverage of ${formatLeverage(leverage)}×. Conventional positive-ratio interpretations (for example “higher leverage means more assets per equity dollar”) are unreliable — review liabilities and financial position.`;
+    return `Negative equity produces a signed leverage of ${formatLeverage(leverage)}×. Conventional positive-ratio interpretations (for example “higher leverage means more assets per equity dollar”) are unreliable; review liabilities and financial position.`;
   }
   if (leverage === 1) {
     return 'Financial leverage of 1.00× indicates total assets equal book equity. Under a standard balance sheet with nonnegative liabilities, that implies no liabilities.';
   }
   if (leverage > 1) {
-    return `Financial leverage of ${formatLeverage(leverage)}× means about ${formatLeverage(leverage)} dollars of assets per dollar of book equity. Higher values indicate more assets relative to the equity base and typically more liability financing — assess with debt structure, coverage, and industry norms.`;
+    return `Financial leverage of ${formatLeverage(leverage)}× means about ${formatLeverage(leverage)} dollars of assets per dollar of book equity. Higher values indicate more assets relative to the equity base and typically more liability financing; assess with debt structure, coverage, and industry norms.`;
   }
   if (leverage > 0 && leverage < 1) {
-    return `Financial leverage of ${formatLeverage(leverage)}× is below 1 with positive equity. That is generally inconsistent with Assets = Liabilities + Equity when liabilities are nonnegative — review the inputs.`;
+    return `Financial leverage of ${formatLeverage(leverage)}× is below 1 with positive equity. That is generally inconsistent with Assets = Liabilities + Equity when liabilities are nonnegative; review the inputs.`;
   }
   return `Financial leverage is ${formatLeverage(leverage)}× under the entered assumptions.`;
 }

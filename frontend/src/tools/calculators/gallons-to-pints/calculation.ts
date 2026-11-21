@@ -62,7 +62,7 @@ export function calculateGalToPints(input: GalToPintsInput): GalToPintsResult {
 
 export function shareResultText(result: GalToPintsResult): string {
   return [
-    'Gallons to Pints Converter — Omega Calculators',
+    'Gallons to Pints Converter | Omega Calculators',
     '',
     `${formatVolume(result.usGal)} US gallons = ${formatVolume(result.usPt)} US pints`,
     `${formatVolume(result.ukGal)} UK gallons = ${formatVolume(result.ukPt)} UK pints`,

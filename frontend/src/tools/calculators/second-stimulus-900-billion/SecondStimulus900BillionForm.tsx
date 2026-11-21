@@ -59,13 +59,13 @@ export function SecondStimulus900BillionForm({
     >
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-[13px] leading-relaxed text-accent sm:text-sm">
         <p className="font-semibold text-amber-950">
-          Historical estimate only — not a current benefit
+ Historical estimate only; not a current benefit
         </p>
         <p className="mt-1.5 text-foreground/85">
           This calculator reconstructs the second Economic Impact Payment (EIP2) from the
           December 2020 $900 billion COVID relief package in the Consolidated Appropriations Act,
           2021. Those payments were issued in late 2020 / early 2021. Estimates here are historical
-          only — you cannot claim a new EIP2 payment today.
+ only; you cannot claim a new EIP2 payment today.
         </p>
         <p className="mt-2 text-foreground/85">
           To qualify for a payout, you have to be a U.S. resident with a social security number.
@@ -85,7 +85,7 @@ export function SecondStimulus900BillionForm({
             <span>Have you filed 2019 taxes?</span>
             <InfoTooltip
               label="Have you filed 2019 taxes?"
-              text="Most EIP2 advances used 2019 return data. SSI, SSDI, RRB, and certain VA beneficiaries could receive automatic payments without a 2019 return — those paths are not modeled when you select No."
+              text="Most EIP2 advances used 2019 return data. SSI, SSDI, RRB, and certain VA beneficiaries could receive automatic payments without a 2019 return; those paths are not modeled when you select No."
             />
           </div>
           <div
@@ -223,12 +223,12 @@ export function SecondStimulus900BillionForm({
           {result?.ineligibleNoFiling ? (
             <p className="mt-1.5 text-xs text-amber-800">
               This estimate shows $0 because “No” was selected for 2019 filing. Historically, SSI,
-              SSDI, RRB, and certain VA beneficiaries could still receive EIP2 automatically — those
+ SSDI, RRB, and certain VA beneficiaries could still receive EIP2 automatically; those
               paths are not modeled here.
             </p>
           ) : result ? (
             <p className="mt-1.5 text-xs text-muted-foreground">
-              Historical EIP2 estimate only — not a currently available benefit.
+ Historical EIP2 estimate only; not a currently available benefit.
             </p>
           ) : null}
         </div>

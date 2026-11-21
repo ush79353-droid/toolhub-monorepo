@@ -62,7 +62,7 @@ export function BetaStockCalculator({
   const summary =
     result !== null
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           ...result.pairs.map(
             (pair, index) =>
               `Day ${index + 1}: asset ${symbol}${pair.asset}, benchmark ${symbol}${pair.benchmark}`

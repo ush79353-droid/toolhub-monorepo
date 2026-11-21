@@ -134,7 +134,7 @@ export function BinaryForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Signed two&apos;s-complement integer conversion. Decimal→binary and binary→decimal are
-        independent — editing one does not overwrite the other.
+ independent; editing one does not overwrite the other.
       </div>
 
       <div className="space-y-1.5">
@@ -216,7 +216,7 @@ export function BinaryForm({
       >
         <p className="text-xs text-muted-foreground">
           Convert a binary number into its signed decimal integer equivalent. Enter a binary number
-          using only the digits 0 and 1 — exactly {draft.bits} digits for this representation.
+ using only the digits 0 and 1; exactly {draft.bits} digits for this representation.
         </p>
         <FieldShell
           label="Binary"
@@ -277,7 +277,7 @@ export function BinaryForm({
                 className="text-left text-primary underline-offset-2 hover:underline"
                 onClick={() => onApplyExample(id)}
               >
-                Example {id} — {label}
+ Example {id}; {label}
               </button>
             </li>
           ))}

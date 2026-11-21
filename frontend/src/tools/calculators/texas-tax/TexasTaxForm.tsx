@@ -326,7 +326,7 @@ export function TexasTaxForm({
               <span>Assessed home value</span>
               <InfoTooltip
                 label="Assessed home value"
-                text="Enter the taxable property value you want to estimate against—not necessarily purchase price. Texas appraisal districts, exemptions, and taxing units can change actual bills."
+                text="Enter the taxable property value you want to estimate against, not necessarily purchase price. Texas appraisal districts, exemptions, and taxing units can change actual bills."
               />
             </label>
             <FieldShell error={errors.assessedHomeValue}>
@@ -395,7 +395,7 @@ export function TexasTaxForm({
             <p className="mt-1 text-xs text-muted-foreground">
               Pre-filled with the ACS 2020–2024 county effective rate (median tax ÷
               median home value). Applied to your entered home value as a
-              market-value proxy—actual Texas appraisal and taxing-unit bills
+ market-value proxy, actual Texas appraisal and taxing-unit bills
               differ.
             </p>
           </div>

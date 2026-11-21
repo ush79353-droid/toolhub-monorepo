@@ -95,7 +95,7 @@ export function KsiToPsiForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Exact: 1 ksi = {PSI_PER_KSI} psi (one kilopound-force per square inch). Converts numerical
-        units only — not gauge ↔ absolute.
+ units only; not gauge ↔ absolute.
       </div>
 
       <FieldShell

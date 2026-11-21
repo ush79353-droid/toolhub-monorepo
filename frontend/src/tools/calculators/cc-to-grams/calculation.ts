@@ -112,7 +112,7 @@ export function calculateCcToGrams(input: CcToGramsInput): CcToGramsResult {
 
 export function shareResultText(result: CcToGramsResult): string {
   return [
-    'CC to Grams Converter — Omega Calculators',
+    'CC to Grams Converter | Omega Calculators',
     '',
     `Ingredient: ${result.substanceName}`,
     `Density: ${formatMeasure(result.densityGPerCm3)} g/cm³${result.densityApproximate ? ' (approximate)' : ''}`,

@@ -53,7 +53,7 @@ function summaryText(metadataTitle: string, result: SeventyTwentyTenResult, note
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   const period = periodNoun(result.frequency);
   const lines = [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `After-tax income /${period}: ${money(result.income)}`,
     ...result.categories.map(
       (category) =>

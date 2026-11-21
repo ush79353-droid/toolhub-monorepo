@@ -27,13 +27,13 @@ export const DAYS_TO_YEARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'A calendar year is one annual cycle of the Gregorian calendar. A common year has 365 days; a leap year has 366 days (February 29).',
       `Over the Gregorian calendar’s 400-year leap cycle, the average length is ${DAYS_PER_GREGORIAN_YEAR} days. That average is what this duration converter uses.`,
-      'This tool does not pick leap years for a date range — that needs a start date. It also does not use the tropical or sidereal year.',
+      'This tool does not pick leap years for a date range; that needs a start date. It also does not use the tropical or sidereal year.',
     ],
     formula: 'Common = 365 d · Leap = 366 d · Average Gregorian = 365.2425 d',
   },
   {
     id: 'days-to-years',
-    title: 'Converting Days to Years — Calculations and Explanation',
+    title: 'Converting Days to Years; Calculations and Explanation',
     paragraphs: [
       `Years = Days ÷ ${DAYS_PER_GREGORIAN_YEAR}.`,
       `Example: 500 ÷ ${DAYS_PER_GREGORIAN_YEAR} ≈ ${formatDuration(daysToYears(500))}. Therefore 500 days ≈ 1.369 average years.`,
@@ -43,7 +43,7 @@ export const DAYS_TO_YEARS_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'years-to-days',
-    title: 'Calculate Years to Days — How Many Days Are in a Given Time?',
+    title: 'Calculate Years to Days; How Many Days Are in a Given Time?',
     paragraphs: [
       `Days = Years × ${DAYS_PER_GREGORIAN_YEAR}.`,
       `Example: 2.5 × ${DAYS_PER_GREGORIAN_YEAR} = ${formatDuration(yearsToDays(2.5))}. Therefore 2.5 average Gregorian years = 913.10625 days.`,
@@ -52,7 +52,7 @@ export const DAYS_TO_YEARS_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'example-10000',
-    title: 'Example — How Many Years Is 10,000 Days?',
+    title: 'Example; How Many Years Is 10,000 Days?',
     paragraphs: [
       `Y = 10,000 ÷ ${DAYS_PER_GREGORIAN_YEAR} ≈ ${formatDuration(daysToYears(10000))}.`,
       'So 10,000 days ≈ 27.379 average Gregorian years. Interpret the decimal as a fraction of an average year, not a calendar date.',

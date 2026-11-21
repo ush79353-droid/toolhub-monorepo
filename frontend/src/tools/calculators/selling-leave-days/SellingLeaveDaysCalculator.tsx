@@ -146,7 +146,7 @@ export function SellingLeaveDaysCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Frequency: ${result.frequency}`,
         `Base pay: ${getCurrencySymbol(input.basePayCurrency)}${input.basePay} ${input.basePayCurrency}`,
         `Leave days: ${input.leaveDays}`,

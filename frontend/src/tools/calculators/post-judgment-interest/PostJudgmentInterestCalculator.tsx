@@ -72,7 +72,7 @@ export function PostJudgmentInterestCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Judgment amount: $${input.judgmentAmount}`,
         `Interest rate: ${input.interestRatePercent}%`,
         `Date of judgment: ${formatDisplayDate(input.judgmentDate)}`,

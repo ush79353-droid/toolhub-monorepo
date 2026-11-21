@@ -115,7 +115,7 @@ export function LifoInventoryForm({
       </div>
       <p className="text-xs text-muted-foreground">
         Amounts are labeled in the selected currency. Changing currency does not
-        convert figures. LIFO assigns newest purchase costs to COGS first —
+ convert figures. LIFO assigns newest purchase costs to COGS first; 
         quantities use whole units.
       </p>
 
@@ -182,7 +182,7 @@ export function LifoInventoryForm({
             2nd unit&apos;s purchased price
             <InfoTooltip
               label="2nd unit's purchased price"
-              text="Unit cost of the second (newest) inventory batch — used first under LIFO."
+              text="Unit cost of the second (newest) inventory batch; used first under LIFO."
             />
           </label>
           <FieldShell error={errors.batch2Price}>
@@ -266,7 +266,7 @@ export function LifoInventoryForm({
             Selling price
             <InfoTooltip
               label="Selling price"
-              text="Price charged per unit sold — used for revenue, not for COGS."
+              text="Price charged per unit sold; used for revenue, not for COGS."
             />
           </label>
           <FieldShell error={errors.sellingPrice}>

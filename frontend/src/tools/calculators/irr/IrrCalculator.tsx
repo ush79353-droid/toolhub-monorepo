@@ -110,7 +110,7 @@ export function IrrCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial investment: ${symbol}${input.initialInvestment}`,
         ...input.cashFlows
           .map((cf, i) => (cf.trim() === '' ? null : `Year ${i + 1}: ${symbol}${cf}`))

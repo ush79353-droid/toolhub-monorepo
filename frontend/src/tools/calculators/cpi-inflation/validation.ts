@@ -229,7 +229,7 @@ export function validateCpiInflationInput(
     sourceSummary:
       input.mode === 'historical'
         ? SOURCE_SUMMARY
-        : 'Custom CPI mode — ensure both index values come from the same compatible series. Unrelated country or base indexes must not be mixed.',
+        : 'Custom CPI mode: ensure both index values come from the same compatible series. Unrelated country or base indexes must not be mixed.',
   };
 
   return { isValid: true, errors, result };

@@ -24,7 +24,7 @@ export function CombinedRatioGuideArticle() {
         The combined ratio is a core underwriting performance metric. It compares insurance losses
         and underwriting operating expenses to the premium base for the same period and accounting
         definition. Analysts and investors use it to judge whether premiums cover claims and the
-        cost of writing business — before investment income and many non-underwriting items.
+ cost of writing business before investment income and many non-underwriting items.
       </p>
       <div className="my-4 space-y-2 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         <p>Combined Ratio = Loss Ratio + Expense Ratio</p>
@@ -35,7 +35,7 @@ export function CombinedRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Below 100% generally means underwriting profit under that definition; above 100% means
         underwriting loss. Definitions of premiums (often net earned), losses, and expenses must
-        stay consistent — mixing bases invalidates the ratio.
+ stay consistent; mixing bases invalidates the ratio.
       </p>
 
       <h2 id="how-to-calculate" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">

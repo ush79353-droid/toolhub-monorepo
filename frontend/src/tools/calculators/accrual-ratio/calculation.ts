@@ -134,7 +134,7 @@ export function interpretAccrualRatio(
     return 'Enter the required inputs for the selected method to calculate the accrual ratio.';
   }
   if (ratio > 0) {
-    return `Positive ${methodLabel}: measured accruals are positive relative to average NOA. This is not automatic evidence of poor earnings quality or manipulation — compare periods, peers, and cash-flow trends.`;
+    return `Positive ${methodLabel}: measured accruals are positive relative to average NOA. This is not automatic evidence of poor earnings quality or manipulation. Compare periods, peers, and cash-flow trends.`;
   }
   if (ratio < 0) {
     return `Negative ${methodLabel}: measured accruals are negative relative to average NOA. Meaning depends on accounting context and the selected formula.`;

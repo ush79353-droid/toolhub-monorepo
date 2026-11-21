@@ -21,7 +21,7 @@ export function UnpaidWorkGuideArticle() {
         Unpaid work is not the same as leisure. Rest and hobbies are chosen free
         time. Unpaid work is the labor someone still has to do for the household to
         function. This calculator estimates what it might cost to hire that labor
-        out — a replacement cost — and, separately, what those hours could represent
+ out (a replacement cost) and, separately, what those hours could represent
         at your professional hourly rate.
       </p>
 

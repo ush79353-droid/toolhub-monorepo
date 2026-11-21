@@ -16,7 +16,7 @@ export function LumpsumGuideArticle() {
         under a nominal annual return, compounding frequency, term, and optional
         inflation rate. Switch modes to solve for initial capital, final balance,
         required return, or investment duration. Results are educational
-        projections—not guaranteed investment outcomes.
+ projections, not guaranteed investment outcomes.
       </p>
 
       <h2

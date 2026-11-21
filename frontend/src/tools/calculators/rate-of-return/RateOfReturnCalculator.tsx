@@ -111,7 +111,7 @@ export function RateOfReturnCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial investment: ${formatCurrencyValue(result.initialInvestment, result.currency)}`,
         `Final amount received: ${formatCurrencyValue(result.finalAmount, result.currency)}`,
         `Investment length: ${input.term} ${input.termUnit}`,

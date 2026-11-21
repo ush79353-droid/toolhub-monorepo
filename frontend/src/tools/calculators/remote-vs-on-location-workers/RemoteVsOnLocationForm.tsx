@@ -641,7 +641,7 @@ export function RemoteVsOnLocationForm({
 
       <div className="flex flex-wrap gap-2">
         <Button type="button" variant="outline" className="h-11" onClick={onLoadExample}>
-          Example — 12 months
+ Example: 12 months
         </Button>
         <Button type="button" variant="outline" className="h-11" onClick={onReset}>
           Reload calculator

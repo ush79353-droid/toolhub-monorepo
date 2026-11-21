@@ -27,7 +27,7 @@ export function InflationGuideArticle() {
         What Is Inflation?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Inflation is a general rise in the price level of goods and services — not
+ Inflation is a general rise in the price level of goods and services; not
         merely a jump in one item. As the broad price level rises, each unit of
         currency buys fewer goods: purchasing power falls. Economists track
         inflation with price indices such as the Consumer Price Index (CPI). A
@@ -43,7 +43,7 @@ export function InflationGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The inflation rate is the percentage change in a price index over a
-        chosen interval — month-over-month, year-over-year, or a longer span
+ chosen interval; month-over-month, year-over-year, or a longer span
         (cumulative). Annualized rates convert multi-year changes into a
         compound yearly pace. Positive rates mean rising prices; negative rates
         mean falling prices (deflation).
@@ -134,7 +134,7 @@ export function InflationGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Inflation interacts with savings yields, fixed-income coupons, mortgage
         rates, wage growth, and retirement planning. Nominal investment gains do
-        not guarantee higher purchasing power — real returns subtract inflation.
+ not guarantee higher purchasing power; real returns subtract inflation.
         Borrowers with fixed-rate debt may benefit when unexpected inflation
         erodes real debt burdens; lenders face the opposite risk.
       </p>
@@ -212,7 +212,7 @@ export function InflationGuideArticle() {
         Hyperinflation means extremely rapid price increases that devastate
         currency usefulness for savings and contracts. Consumers rush to spend;
         savings evaporate in real terms; monetary systems often break down.
-        Precise statistical thresholds and peak monthly rates differ by study —
+ Precise statistical thresholds and peak monthly rates differ by study; 
         verify primary sources before citing exact percentages.
       </p>
 

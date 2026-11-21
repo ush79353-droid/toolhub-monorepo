@@ -77,7 +77,7 @@ export function FfoCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Convention: ${
           result.convention === 'excludeInterestIncome'
             ? 'Adjusted (exclude interest income)'
@@ -123,7 +123,7 @@ export function FfoCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Funds from operations — FFO = NI + D&amp;A − Gains + Losses.
+ Funds from operations; FFO = NI + D&amp;A − Gains + Losses.
           </p>
         </div>
         {headerActions ? (

@@ -48,7 +48,7 @@ export function GiftOfEquityResults({ result }: GiftOfEquityResultsProps) {
           role="status"
         >
           Sales price exceeds market value, so the difference is negative. A
-          negative result is a mathematical difference only — it does not
+ negative result is a mathematical difference only; it does not
           represent a positive gift of equity.
         </p>
       ) : null}

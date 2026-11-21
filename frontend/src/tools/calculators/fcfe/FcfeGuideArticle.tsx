@@ -75,7 +75,7 @@ export function FcfeGuideArticle() {
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         This assumes after-interest CFO. Interest classification differs across
-        frameworks — reconcile if interest sits outside operating cash flow.
+ frameworks; reconcile if interest sits outside operating cash flow.
       </p>
 
       <h2
@@ -130,7 +130,7 @@ export function FcfeGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         FCFE informs equity cash generation, financial flexibility, reinvestment
-        intensity, financing effects, and potential capacity for distributions —
+ intensity, financing effects, and potential capacity for distributions; 
         without guaranteeing dividends.
       </p>
 
@@ -165,7 +165,7 @@ export function FcfeGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Net income is accrual earnings. FCFE adjusts for D&amp;A, CapEx, working
-        capital, and net borrowing — they often differ in the same period.
+ capital, and net borrowing; they often differ in the same period.
       </p>
 
       <h2
@@ -208,7 +208,7 @@ export function FcfeGuideArticle() {
         Can FCFE Be Negative?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Yes — and it can reflect growth investment, large CapEx, working-capital
+ Yes: and it can reflect growth investment, large CapEx, working-capital
         needs, or debt repayment as well as weak operations.
       </p>
 
@@ -248,7 +248,7 @@ export function FcfeGuideArticle() {
         FCFE depends on accounting and forecast assumptions; net borrowing and CapEx
         can be volatile; FCFE does not guarantee dividends; simplified models may omit
         preferred equity, minorities, leases, or complex financing. Educational
-        estimates only — not accounting, valuation, or investment advice.
+ estimates only; not accounting, valuation, or investment advice.
       </p>
 
       <h2

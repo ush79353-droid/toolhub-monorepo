@@ -41,7 +41,7 @@ export const KGCM_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. View the equivalent pressure in PSI.',
       '3. Alternatively, enter PSI to calculate kgf/cm².',
       '4. Edit either input at any time to recalculate.',
-      'The page title uses kg/cm² as conventional industrial shorthand; calculations use the force-based unit kgf/cm². The converter changes numerical units only — it does not switch absolute vs gauge reference.',
+      'The page title uses kg/cm² as conventional industrial shorthand; calculations use the force-based unit kgf/cm². The converter changes numerical units only; it does not switch absolute vs gauge reference.',
     ],
   },
   {
@@ -49,7 +49,7 @@ export const KGCM_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'kg/cm² to PSI Formula',
     paragraphs: [
       `Multiply kilograms-force per square centimeter by ${formatPressure(KGFCM2_TO_PSI)} to obtain psi. The factor comes from 1 kgf/cm² = ${PASCALS_PER_KGFCM2.toLocaleString('en-US')} Pa and 1 psi = ${PASCALS_PER_PSI} Pa.`,
-      `Example — convert 7 kgf/cm²: 7 × ${formatPressure(KGFCM2_TO_PSI)} ≈ ${formatPressure(kgfCm2ToPsi(7))} psi.`,
+      `Example; convert 7 kgf/cm²: 7 × ${formatPressure(KGFCM2_TO_PSI)} ≈ ${formatPressure(kgfCm2ToPsi(7))} psi.`,
     ],
     formula: `psi = kgf/cm² × ${formatPressure(KGFCM2_TO_PSI)}`,
   },
@@ -58,7 +58,7 @@ export const KGCM_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert PSI to kg/cm²',
     paragraphs: [
       `Divide psi by ${formatPressure(KGFCM2_TO_PSI)} (equivalently multiply by ${formatPressure(1 / KGFCM2_TO_PSI)}).`,
-      `Example — convert 100 psi: 100 ÷ ${formatPressure(KGFCM2_TO_PSI)} ≈ ${formatPressure(psiToKgfCm2(100))} kgf/cm².`,
+      `Example; convert 100 psi: 100 ÷ ${formatPressure(KGFCM2_TO_PSI)} ≈ ${formatPressure(psiToKgfCm2(100))} kgf/cm².`,
     ],
     formula: `kgf/cm² = psi ÷ ${formatPressure(KGFCM2_TO_PSI)}`,
   },
@@ -66,7 +66,7 @@ export const KGCM_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-kgcm',
     title: 'What Is kg/cm²?',
     paragraphs: [
-      'In pressure specifications, kg/cm² is commonly used as shorthand for kgf/cm² — kilogram-force per square centimeter. Kilogram is a mass unit; kilogram-force is a force unit equal to the weight of one kilogram under standard gravity (9.80665 m/s²).',
+      'In pressure specifications, kg/cm² is commonly used as shorthand for kgf/cm²; kilogram-force per square centimeter. Kilogram is a mass unit; kilogram-force is a force unit equal to the weight of one kilogram under standard gravity (9.80665 m/s²).',
       `Exactly 1 kgf/cm² = ${PASCALS_PER_KGFCM2.toLocaleString('en-US')} Pa (also equal to one technical atmosphere, at). Use kgf/cm² when precise force-based notation is required.`,
     ],
   },

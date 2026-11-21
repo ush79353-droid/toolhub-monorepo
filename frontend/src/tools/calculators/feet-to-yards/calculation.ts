@@ -40,7 +40,7 @@ export function calculateFeetToYards(input: FeetToYardsInput): FeetToYardsResult
 
 export function shareResultText(result: FeetToYardsResult): string {
   return [
-    'Feet to Yards Conversion — Omega Calculators',
+    'Feet to Yards Conversion | Omega Calculators',
     '',
     `${formatLength(result.feet)} feet = ${formatLength(result.yards)} yards`,
     '',

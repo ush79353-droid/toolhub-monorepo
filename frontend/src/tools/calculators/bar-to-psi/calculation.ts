@@ -100,7 +100,7 @@ export function shareResultText(result: BarToPsiResult): string {
   const pLabel = PRESSURE_UNIT_LABEL[result.primaryUnit];
   const sLabel = PRESSURE_UNIT_LABEL[result.secondaryUnit];
   return [
-    'Bar to PSI Conversion — Omega Calculators',
+    'Bar to PSI Conversion | Omega Calculators',
     '',
     'Input:',
     result.source === 'primary'

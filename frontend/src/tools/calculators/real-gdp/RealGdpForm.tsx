@@ -94,7 +94,7 @@ export function RealGdpForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Real GDP = (Nominal GDP / GDP Deflator) × 100. Currency is denomination
-        only — not live FX conversion. The deflator is a base-year price index
+ only; not live FX conversion. The deflator is a base-year price index
         (100), not a one-year inflation rate.
       </p>
 

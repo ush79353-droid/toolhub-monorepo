@@ -101,7 +101,7 @@ export function CreditUtilizationCalculator({
   const shareable = result != null;
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Credit utilization: ${result!.formattedUtilization}%`,
         `Total used: ${symbol}${result!.formattedTotalUsed}`,
         `Total limit: ${symbol}${result!.formattedTotalLimit}`,

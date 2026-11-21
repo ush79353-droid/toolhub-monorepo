@@ -124,7 +124,7 @@ export function ConsumerSurplusGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Holding WTP fixed, a higher transaction price reduces individual
         surplus. Along a demand curve, higher market prices typically shrink
-        total consumer surplus — responses still vary by buyer.
+ total consumer surplus; responses still vary by buyer.
       </p>
 
       <h2
@@ -135,7 +135,7 @@ export function ConsumerSurplusGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         List price, advertised discount, actual transaction price, and WTP are
-        different concepts. Surplus uses WTP and the price paid — not the
+ different concepts. Surplus uses WTP and the price paid; not the
         retail markdown alone.
       </p>
 

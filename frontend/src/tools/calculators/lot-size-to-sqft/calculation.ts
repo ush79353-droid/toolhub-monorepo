@@ -199,7 +199,7 @@ export function calculateLotSizeToSqft(input: LotSizeToSqftInput): LotSizeToSqft
 
 export function shareResultText(result: LotSizeToSqftResult): string {
   const lines = [
-    'Lot Size to Square Feet Calculator — Omega Calculators',
+    'Lot Size to Square Feet Calculator | Omega Calculators',
     '',
     `Width: ${formatMeasure(result.width)} ${result.widthUnit}`,
     `Length: ${formatMeasure(result.length)} ${result.lengthUnit}`,

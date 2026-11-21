@@ -102,7 +102,7 @@ export function EarningsPerShareCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Net income: ${money(input.netIncome)}`,
         `Preferred dividends: ${money(input.preferredDividends)}`,
         `Common shares: ${sharesLabel(input.commonShares)}`,

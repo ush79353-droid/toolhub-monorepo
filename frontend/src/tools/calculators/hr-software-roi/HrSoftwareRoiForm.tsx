@@ -318,7 +318,7 @@ export function HrSoftwareRoiForm({
             <h3 className="text-sm font-semibold text-accent">HR software financial benefits</h3>
             <p className="text-xs text-muted-foreground">
               Time savings are estimated labor value unless staffing costs actually fall. Count each
-              benefit only once — avoid double-counting overlapping savings.
+ benefit only once; avoid double-counting overlapping savings.
             </p>
             <NumField
               id="b-emp"
@@ -533,7 +533,7 @@ export function HrSoftwareRoiForm({
         )}
         {result ? (
           <p className="text-xs leading-relaxed text-muted-foreground" role="status">
-            {result.interpretation} ROI alone does not prove an investment is good or bad — weigh
+ {result.interpretation} ROI alone does not prove an investment is good or bad; weigh
             assumptions, adoption risk, and nonfinancial value.
           </p>
         ) : null}

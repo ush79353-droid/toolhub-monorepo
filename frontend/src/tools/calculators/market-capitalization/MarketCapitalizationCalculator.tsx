@@ -113,7 +113,7 @@ export function MarketCapitalizationCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Share Price: ${money(input.sharePrice)}`,
         `Outstanding Shares: ${sharesLabel(input.outstandingShares)}`,
         `Market Capitalization: ${result!.formattedMarketCap} (${result!.compactMarketCap})`,

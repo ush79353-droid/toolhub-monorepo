@@ -37,7 +37,7 @@ export const POUNDS_TO_OUNCES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Pounds to Ounces Converter',
     paragraphs: [
       'Convert mass between avoirdupois pounds (lb) and avoirdupois ounces (oz). Each pound contains exactly 16 ounces in the US customary and British imperial avoirdupois systems.',
-      'Enter either pounds or ounces and see the equivalent value instantly. This tool measures mass — not fluid ounces (volume).',
+      'Enter either pounds or ounces and see the equivalent value instantly. This tool measures mass; not fluid ounces (volume).',
     ],
   },
   {
@@ -46,8 +46,8 @@ export const POUNDS_TO_OUNCES_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `One pound equals ${OUNCES_PER_POUND} ounces. Both units belong to the avoirdupois system.`,
       `For context, 1 lb = ${KG_PER_POUND} kg and 1 oz = ${GRAMS_PER_OUNCE} g. Those SI equivalents describe mass but are not required for the primary pounds-to-ounces calculation.`,
-      `Example — convert 15 pounds: 15 × ${OUNCES_PER_POUND} = ${formatMass(poundsToOunces(15))}. Therefore 15 pounds = ${formatMass(poundsToOunces(15))} ounces.`,
-      `Example — convert 48 ounces: 48 ÷ ${OUNCES_PER_POUND} = ${formatMass(ouncesToPounds(48))}. Therefore 48 ounces = ${formatMass(ouncesToPounds(48))} pounds.`,
+      `Example; convert 15 pounds: 15 × ${OUNCES_PER_POUND} = ${formatMass(poundsToOunces(15))}. Therefore 15 pounds = ${formatMass(poundsToOunces(15))} ounces.`,
+      `Example; convert 48 ounces: 48 ÷ ${OUNCES_PER_POUND} = ${formatMass(ouncesToPounds(48))}. Therefore 48 ounces = ${formatMass(ouncesToPounds(48))} pounds.`,
     ],
     formula: `oz = lb × ${OUNCES_PER_POUND}\nlb = oz ÷ ${OUNCES_PER_POUND}`,
   },
@@ -61,7 +61,7 @@ export const POUNDS_TO_OUNCES_GUIDE_SECTIONS: readonly GuideSection[] = [
       '4. Alternatively, enter a value in ounces.',
       `5. The calculator automatically divides by ${OUNCES_PER_POUND} to display pounds.`,
       '6. Use Reload Calculator to restore the default of 1 lb, or Clear All Changes to empty both fields.',
-      'No separate Convert button is required — both directions update as you type.',
+      'No separate Convert button is required; both directions update as you type.',
     ],
   },
   {

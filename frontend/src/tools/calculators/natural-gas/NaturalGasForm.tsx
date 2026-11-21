@@ -99,7 +99,7 @@ export function NaturalGasForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Natural gas volume-to-energy conversion depends on the gas heating value. The default 1038
-        BTU/ft³ is an illustrative assumption — not a universal utility billing rate.
+ BTU/ft³ is an illustrative assumption; not a universal utility billing rate.
       </div>
 
       <div className="space-y-1.5">

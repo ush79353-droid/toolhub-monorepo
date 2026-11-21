@@ -112,7 +112,7 @@ export function SquareMeterConverterForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Convert square meters to square feet, inches, yards, cm², mm², km², acres, hectares, and
-        square miles — or reverse from any field. Exact international foot and acre factors via
+ square miles, or reverse from any field. Exact international foot and acre factors via
         square meters. Area cannot be negative.
       </div>
 

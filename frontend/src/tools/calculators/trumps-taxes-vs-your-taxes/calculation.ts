@@ -51,7 +51,7 @@ export function percentageDifference(userTax: number, trumpTax: number): number 
 
 function comparisonPhrase(ratio: number): string {
   if (ratio > 1) return '× as much as Trump’s reported tax';
-  if (ratio === 1) return '— the same as Trump’s reported tax';
+  if (ratio === 1) return ': the same as Trump’s reported tax';
   return '× Trump’s reported tax (you paid less)';
 }
 
@@ -119,7 +119,7 @@ export function shareResultText(
   path = '/tools/trumps-taxes-vs-your-taxes-calculator',
 ): string {
   const lines = [
-    "Trump's Taxes vs. Your Taxes Calculator — Omega Calculators",
+    "Trump's Taxes vs. Your Taxes Calculator | Omega Calculators",
     '',
     `Your example tax: $${result.formattedUserTax}`,
     `Trump’s reported historical tax (illustrative): $${result.formattedTrumpTax}`,

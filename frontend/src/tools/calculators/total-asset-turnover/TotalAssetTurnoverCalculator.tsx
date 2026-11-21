@@ -99,7 +99,7 @@ export function TotalAssetTurnoverCalculator({
     result.status !== 'zeroAverageAssets';
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Beginning assets: ${symbol}${result!.formattedBeginningAssets}`,
         `Ending assets: ${symbol}${result!.formattedEndingAssets}`,
         `Average assets: ${symbol}${result!.formattedAverageAssets}`,

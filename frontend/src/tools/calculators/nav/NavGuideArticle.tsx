@@ -11,7 +11,7 @@ export function NavGuideArticle() {
         What Is Net Asset Value (NAV)?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Net asset value is a fund’s assets minus its liabilities — a measure of
+ Net asset value is a fund’s assets minus its liabilities: a measure of
         the fund’s net worth under the valuation rules it uses. Mutual funds and
         ETFs both report NAV concepts, but trading behavior differs. Total NAV
         is the fund-level figure; NAV per share divides that amount by shares
@@ -38,7 +38,7 @@ export function NavGuideArticle() {
         What Are Fund Liabilities?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Liabilities are amounts the fund owes — short-term items such as
+ Liabilities are amounts the fund owes; short-term items such as
         payables or accrued fees, and longer-term obligations. Actual fund
         accounting can be more detailed than the short-term plus long-term split
         used here.
@@ -95,8 +95,8 @@ export function NavGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Mutual funds use NAV to value the portfolio and often to price
         subscriptions and redemptions under fund rules. Fees and expenses reduce
-        assets over time. Valuation is typically struck at defined times — not
-        continuously — according to the fund’s prospectus.
+ assets over time. Valuation is typically struck at defined times; not
+ continuously; according to the fund’s prospectus.
       </p>
 
       <h2

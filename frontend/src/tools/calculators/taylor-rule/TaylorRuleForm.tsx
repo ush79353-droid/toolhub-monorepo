@@ -394,7 +394,7 @@ export function TaylorRuleForm({
                 <span className="pr-3 text-xs text-muted-foreground">%</span>
               </FieldShell>
               <p className="mt-1 text-[11px] text-muted-foreground">
-                Comparison only — not auto-imposed. Some central banks have used
+ Comparison only; not auto-imposed. Some central banks have used
                 negative nominal policy rates.
               </p>
               {errors.policyFloor ? (

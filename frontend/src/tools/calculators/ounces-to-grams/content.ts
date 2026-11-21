@@ -49,7 +49,7 @@ export const OUNCES_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
       'Ounces and grams are both units of mass. The ounce is common in US customary measurements; the gram belongs to the metric system.',
       `Exactly 1 international avoirdupois ounce = ${GRAMS_PER_OUNCE} g.`,
       `Ounces to grams: g = oz × ${GRAMS_PER_OUNCE}. Grams to ounces: oz = g ÷ ${GRAMS_PER_OUNCE}.`,
-      `Example — convert 5 ounces: 5 × ${GRAMS_PER_OUNCE} = ${formatMass(ouncesToGrams(5))} g (about 141.75 g).`,
+      `Example; convert 5 ounces: 5 × ${GRAMS_PER_OUNCE} = ${formatMass(ouncesToGrams(5))} g (about 141.75 g).`,
     ],
     formula: `1 oz = ${GRAMS_PER_OUNCE} g\ng = oz × ${GRAMS_PER_OUNCE}\noz = g ÷ ${GRAMS_PER_OUNCE}\n5 oz = ${formatMass(ouncesToGrams(5))} g`,
   },
@@ -80,7 +80,7 @@ export const OUNCES_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Grams to Ounces Conversion',
     paragraphs: [
       `Divide grams by ${GRAMS_PER_OUNCE}: oz = g ÷ ${GRAMS_PER_OUNCE}.`,
-      `Example — convert 250 g: 250 ÷ ${GRAMS_PER_OUNCE} ≈ ${formatMass(gramsToOunces(250))} oz.`,
+      `Example; convert 250 g: 250 ÷ ${GRAMS_PER_OUNCE} ≈ ${formatMass(gramsToOunces(250))} oz.`,
       'Enter grams directly in this calculator to convert in the reverse direction.',
     ],
     formula: `oz = g ÷ ${GRAMS_PER_OUNCE}\n250 g ≈ ${formatMass(gramsToOunces(250))} oz`,
@@ -97,7 +97,7 @@ export const OUNCES_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
 export const OUNCES_TO_GRAMS_FAQS: readonly FAQItem[] = [
   {
     question: 'How Many Grams Is 14 oz?',
-    answer: `14 × ${GRAMS_PER_OUNCE} = ${formatMass(ouncesToGrams(14))} g — about 396.89 grams.`,
+    answer: `14 × ${GRAMS_PER_OUNCE} = ${formatMass(ouncesToGrams(14))} g; about 396.89 grams.`,
   },
   {
     question: 'Which Is More: 1 oz or 1 g?',
@@ -105,7 +105,7 @@ export const OUNCES_TO_GRAMS_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'How Many Grams Are in 8 oz?',
-    answer: `8 × ${GRAMS_PER_OUNCE} = ${formatMass(ouncesToGrams(8))} g — about 226.80 grams.`,
+    answer: `8 × ${GRAMS_PER_OUNCE} = ${formatMass(ouncesToGrams(8))} g; about 226.80 grams.`,
   },
   {
     question: 'How Do I Convert 100 Grams to Ounces?',

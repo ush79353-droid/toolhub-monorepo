@@ -128,7 +128,7 @@ export function PivotPointForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Money fields share one currency and scale (denomination only — no FX).
+ Money fields share one currency and scale (denomination only; no FX).
       </p>
 
       <fieldset className="space-y-3.5 rounded-xl border border-border bg-muted/15 p-3.5 sm:p-4">

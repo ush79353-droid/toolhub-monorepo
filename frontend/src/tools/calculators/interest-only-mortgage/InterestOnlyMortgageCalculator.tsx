@@ -77,7 +77,7 @@ export function InterestOnlyMortgageCalculator({
   const totalSymbol = getCurrencySymbol(result?.totalCurrency ?? input.totalCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan amount: ${loanSymbol}${input.loanAmount}`,
         `Annual interest rate: ${input.annualInterestRatePercent}%`,
         `Payment frequency: ${input.paymentFrequency}`,

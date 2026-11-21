@@ -108,7 +108,7 @@ export function CpcAndCpmCalculator({
 
   const summary = hasResult
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         solved.values.impressions !== undefined
           ? `Impressions: ${formatMetric(solved.values.impressions, 'count', draft.currency)}`
           : null,

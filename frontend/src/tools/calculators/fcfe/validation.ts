@@ -209,7 +209,7 @@ export function validateFcfeInput(input: FcfeInput): FcfeValidation {
     );
     calculatedNetIncome = ni.value!;
     warningMessage =
-      'Net income already reflects interest and taxes — do not subtract them again. Enter CapEx as a positive outflow.';
+      'Net income already reflects interest and taxes; do not subtract them again. Enter CapEx as a positive outflow.';
   } else if (method === 'ebitda') {
     const out = calculateFcfeFromEbitda(
       ebitda.value!,
@@ -245,7 +245,7 @@ export function validateFcfeInput(input: FcfeInput): FcfeValidation {
   } else if (method === 'cfo') {
     fcfe = calculateFcfeFromCfo(cfo.value!, capex.value!, netBorrowing);
     warningMessage =
-      'CFO mode assumes after-interest operating cash flow. D&A and working-capital changes are already in CFO — do not subtract them again.';
+      'CFO mode assumes after-interest operating cash flow. D&A and working-capital changes are already in CFO; do not subtract them again.';
   } else if (method === 'fcff') {
     fcfe = calculateFcfeFromFcff(
       fcff.value!,

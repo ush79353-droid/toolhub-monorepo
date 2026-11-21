@@ -93,7 +93,7 @@ export const GINI_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the Gini Coefficient of the United States?',
     answer:
-      'US figures vary by source, year, pre-tax vs after-tax-and-transfer income, and household vs person unit. Use Census, CBO, OECD, or World Bank dated series — this page does not invent a current number.',
+      'US figures vary by source, year, pre-tax vs after-tax-and-transfer income, and household vs person unit. Use Census, CBO, OECD, or World Bank dated series; this page does not invent a current number.',
   },
   {
     question: 'What country has the highest Gini Coefficient?',
@@ -103,7 +103,7 @@ export const GINI_FAQS: readonly FAQItem[] = [
   {
     question: 'What country has the lowest Gini Coefficient?',
     answer:
-      'Likewise methodology-dependent. Many published low values are for disposable household income in specific years — verify the source before citing.',
+      'Likewise methodology-dependent. Many published low values are for disposable household income in specific years; verify the source before citing.',
   },
   {
     question: 'How does the Gini Coefficient measure income inequality?',
@@ -148,6 +148,6 @@ export const GINI_FAQS: readonly FAQItem[] = [
   {
     question: 'Why is the Gini Coefficient important in economics?',
     answer:
-      'It provides a compact, widely used metric for comparing inequality across places and periods and for informing debates on tax, transfer, and development policy — with clear caveats.',
+      'It provides a compact, widely used metric for comparing inequality across places and periods and for informing debates on tax, transfer, and development policy, with clear caveats.',
   },
 ];

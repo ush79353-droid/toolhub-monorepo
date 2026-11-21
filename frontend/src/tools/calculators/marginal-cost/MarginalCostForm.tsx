@@ -84,7 +84,7 @@ export function MarginalCostForm({
       </div>
       <p className="text-xs text-muted-foreground">
         Costs share one currency label (no FX conversion). Quantity unit is a
-        label for ΔQ and the MC denominator — changing it does not convert
+ label for ΔQ and the MC denominator; changing it does not convert
         values.
       </p>
       <p className="text-xs">

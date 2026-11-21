@@ -16,7 +16,7 @@ export const TIME_AND_A_HALF_FAQS: readonly FAQItem[] = [
   {
     question: 'How are time-and-a-half, double time, and triple time rates calculated?',
     answer:
-      'Enter your standard hourly rate. Time and a half = 1.5× standard, double time = 2×, and triple time = 3×. Enter hours separately for each category — this tool does not auto-classify overtime from a weekly threshold.',
+      'Enter your standard hourly rate. Time and a half = 1.5× standard, double time = 2×, and triple time = 3×. Enter hours separately for each category; this tool does not auto-classify overtime from a weekly threshold.',
   },
   {
     question: 'How is total pay calculated?',

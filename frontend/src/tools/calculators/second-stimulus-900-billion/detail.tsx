@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Historical estimate of the second Economic Impact Payment (EIP2) from the December 2020 $900 billion COVID relief bill — not a currently available benefit.',
+    'Historical estimate of the second Economic Impact Payment (EIP2) from the December 2020 $900 billion COVID relief bill; not a currently available benefit.',
   asideAriaLabel: 'Historical second stimulus ($900 billion) calculator guide',
   tocItems: SECOND_STIMULUS_900B_TOC_ITEMS,
   GuideArticle: SecondStimulus900BillionGuideArticle,

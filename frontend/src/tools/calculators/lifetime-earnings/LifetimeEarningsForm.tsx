@@ -180,7 +180,7 @@ export function LifetimeEarningsForm({
               <label htmlFor="le-salary">Current salary</label>
               <InfoTooltip
                 label="Current salary"
-                text="Annual gross salary for year 1 of the projection — not monthly pay."
+                text="Annual gross salary for year 1 of the projection; not monthly pay."
                 align="left"
               />
             </div>

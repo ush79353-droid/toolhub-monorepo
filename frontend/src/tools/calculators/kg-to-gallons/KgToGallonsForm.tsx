@@ -288,7 +288,7 @@ export function KgToGallonsForm({
           {items.map((item) => (
             <option key={item.id} value={item.id}>
               {item.name}
-              {item.densityKgPerL !== undefined ? ' (approx.)' : ' — enter density'}
+              {item.densityKgPerL !== undefined ? ' (approx.)' : '. Enter density'}
             </option>
           ))}
         </select>

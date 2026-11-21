@@ -89,7 +89,7 @@ export function BuyingPowerCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Amount: ${result!.formattedOriginalAmount}`,
         `Reference Year: ${result!.referenceYear}`,

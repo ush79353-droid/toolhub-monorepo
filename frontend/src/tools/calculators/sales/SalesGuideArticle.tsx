@@ -8,7 +8,7 @@ export function SalesGuideArticle() {
         <p>
           The Sales Calculator turns a product price and units sold into gross revenue, then
           subtracts verified sales deductions (returns, allowances, and discounts) to estimate
-          net sales for a chosen period. It is a top-line sales worksheet — not a tax, payroll,
+ net sales for a chosen period. It is a top-line sales worksheet; not a tax, payroll,
           or full P&amp;L model.
         </p>
         <p>
@@ -46,7 +46,7 @@ export function SalesGuideArticle() {
         <h2 className="text-xl font-semibold text-accent">Sales Deductions</h2>
         <p>
           Returns, allowances, and discounts are contra-revenue items. They reduce reported sales
-          but are not operating expenses or cost of goods sold. Leave them blank when unused —
+ but are not operating expenses or cost of goods sold. Leave them blank when unused; 
           blanks count as zero.
         </p>
       </section>

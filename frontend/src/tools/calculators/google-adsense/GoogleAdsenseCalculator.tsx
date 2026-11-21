@@ -111,7 +111,7 @@ export function GoogleAdsenseCalculator({
   const summary =
     result && result.revenue !== null
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Pageviews: ${input.pageviews}/day`,
           `Ads per page: ${input.adsPerPage}`,
           `Ad impressions: ${result.impressionsDisplay}/day`,

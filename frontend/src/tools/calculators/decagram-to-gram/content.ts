@@ -103,7 +103,7 @@ export const DECAGRAM_TO_GRAM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'dag-vs-dg',
     title: 'Difference Between Decagram and Decigram',
     paragraphs: [
-      'A decagram (dag) equals 10 grams. A decigram (dg) equals 0.1 grams. Therefore 1 decagram = 100 decigrams. The abbreviations look similar—always check whether a recipe or label means dag or dg.',
+      'A decagram (dag) equals 10 grams. A decigram (dg) equals 0.1 grams. Therefore 1 decagram = 100 decigrams. The abbreviations look similar, always check whether a recipe or label means dag or dg.',
     ],
   },
   {

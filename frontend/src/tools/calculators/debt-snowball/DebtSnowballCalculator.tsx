@@ -73,7 +73,7 @@ export function DebtSnowballCalculator({
   const calcSymbol = getCurrencySymbol(result?.calcCurrency ?? 'PKR');
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total debt: ${getCurrencySymbol(result.totalDebtCurrency)}${result.formattedTotalDebt}`,
         `Current monthly: ${getCurrencySymbol(result.totalPaymentCurrency)}${result.formattedTotalCurrentMonthlyPayment}`,
         `New monthly: ${getCurrencySymbol(result.totalPaymentCurrency)}${result.formattedNewMonthlyPayment}`,

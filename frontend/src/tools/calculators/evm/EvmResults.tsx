@@ -50,7 +50,7 @@ export function EvmResults({
         </p>
       ) : incomplete || !result ? (
         <p className="text-sm text-muted-foreground">
-          No task information yet — try adding some values!
+ No task information yet; try adding some values!
         </p>
       ) : (
         <>

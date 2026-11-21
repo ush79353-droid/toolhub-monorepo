@@ -49,7 +49,7 @@ export function AnnualizedRateOfReturnCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Period: ${periodLabel}`,
         `Period rate: ${input.periodRate}%`,
         `Annualized rate of return: ${result.formattedRate}%`,

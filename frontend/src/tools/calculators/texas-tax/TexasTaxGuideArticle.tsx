@@ -12,7 +12,7 @@ export function TexasTaxGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Estimate federal ordinary income tax, Texas state individual income tax
-        ($0—Texas has no personal income tax), and a county-level property tax
+ ($0, Texas has no personal income tax), and a county-level property tax
         projection for Texas counties. FICA is omitted because AGI is not assumed
         to be FICA wages.
       </p>

@@ -204,7 +204,7 @@ export function shareBudgetResultText(input: {
   fxNote: string;
 }): string {
   return [
-    `${input.title} — Omega Calculators`,
+    `${input.title} | Omega Calculators`,
     `Income: ${input.currency} ${input.formattedMonthlyIncome} / mo`,
     `Savings: ${input.currency} ${input.formattedMonthlySavings} / mo`,
     `Monthly expenses: ${input.currency} ${input.formattedMonthlyExpenses} / mo`,

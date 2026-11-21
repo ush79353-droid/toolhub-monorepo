@@ -29,7 +29,7 @@ export function OunceToKgResults({
   if (invalid) {
     return (
       <p className="rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-muted-foreground">
-        Enter a valid nonnegative mass in ounces, kilograms, or pounds (avoirdupois mass — not
+ Enter a valid nonnegative mass in ounces, kilograms, or pounds (avoirdupois mass; not
         fluid ounces).
       </p>
     );

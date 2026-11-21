@@ -28,7 +28,7 @@ export const MILLION_LAKH_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Why Convert Millions to Lakhs?',
     paragraphs: [
       'International reports often use millions, while many South Asian contexts use lakhs and crores. Converting between them keeps financial statements, budgets, and population figures comparable without changing the underlying quantity.',
-      'Because 1 million equals 10 lakh, the conversion is an exact factor of ten—useful when teams share numbers across numbering systems.',
+      'Because 1 million equals 10 lakh, the conversion is an exact factor of ten, useful when teams share numbers across numbering systems.',
     ],
   },
   {

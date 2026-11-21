@@ -183,7 +183,7 @@ function buildResult(args: {
   }
 
   const explanation =
-    'A passing checksum confirms numerical structure only — it does not prove the GTIN is officially assigned, registered, or linked to a specific product.';
+    'A passing checksum confirms numerical structure only; it does not prove the GTIN is officially assigned, registered, or linked to a specific product.';
 
   return {
     mode,

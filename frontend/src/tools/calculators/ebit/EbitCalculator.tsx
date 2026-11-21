@@ -75,7 +75,7 @@ export function EbitCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Revenue: ${symbol}${result.formattedRevenue}`,
         `Operating expenses: ${symbol}${result.formattedOperatingExpenses}`,
         `EBIT: ${symbol}${result.formattedEbit}`,
@@ -117,7 +117,7 @@ export function EbitCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Calculate earnings before interest and taxes — EBIT = Revenue −
+ Calculate earnings before interest and taxes; EBIT = Revenue −
             Operating expenses.
           </p>
         </div>

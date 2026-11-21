@@ -113,7 +113,7 @@ export function EconomicValueAddedCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `NOPAT: ${money(input.nopat)}`,
         `Invested capital: ${money(input.investedCapital)}`,
         `WACC: ${result!.formattedWacc}`,

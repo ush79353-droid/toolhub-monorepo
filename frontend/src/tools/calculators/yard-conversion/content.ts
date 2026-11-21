@@ -72,7 +72,7 @@ export const YARD_GUIDE_SECTIONS: readonly GuideSection[] = [
       '4. Use the Other imperial units selector for a combined feet-and-inches view (or mil, furlong, chain, rod).',
       '5. Use the Other metric units selector for nanometers through kilometers (default kilometers).',
       '6. Edit any standard field to convert in the opposite direction.',
-      '7. Clear all changes or reload the calculator to start again. Conversions update automatically — there is no Calculate button.',
+      '7. Clear all changes or reload the calculator to start again. Conversions update automatically. there is no Calculate button.',
     ],
   },
   {

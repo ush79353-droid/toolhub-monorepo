@@ -14,7 +14,7 @@ export function PriceElasticityOfDemandGuideArticle() {
         Price elasticity of demand (PED) measures how sensitive quantity
         demanded is to a change in the product’s own selling price. Businesses
         use it to anticipate how customers may respond to price tests,
-        promotions, and list-price changes. PED is dimensionless — it is not a
+ promotions, and list-price changes. PED is dimensionless; it is not a
         currency amount and not a percentage unit on the coefficient itself.
       </p>
 
@@ -132,7 +132,7 @@ export function PriceElasticityOfDemandGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         PED = 0 when quantity is unchanged while price changes. That describes
-        the observed interval only — not a claim that demand never responds.
+ the observed interval only; not a claim that demand never responds.
       </p>
 
       <h2
@@ -168,7 +168,7 @@ export function PriceElasticityOfDemandGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         For typical downward-sloping demand, a price increase often reduces
         total revenue when demand is elastic and raises it when demand is
-        inelastic over the interval. These are revenue effects — not profit
+ inelastic over the interval. These are revenue effects; not profit
         effects.
       </p>
 
@@ -245,7 +245,7 @@ export function PriceElasticityOfDemandGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         That relationship uses point elasticity on a differentiable demand
-        curve. Midpoint PED is an interval estimate — do not treat it as an
+ curve. Midpoint PED is an interval estimate; do not treat it as an
         exact point ε without stating the approximation.
       </p>
 
@@ -342,7 +342,7 @@ export function PriceElasticityOfDemandGuideArticle() {
         Point elasticity uses a local slope. Arc (midpoint) elasticity measures
         responsiveness between two finite points. This tool’s primary output is
         midpoint PED. Initial-base percentages and log constant-elasticity
-        calibrations are different estimators — do not mix them silently.
+ calibrations are different estimators; do not mix them silently.
       </p>
 
       <h2
@@ -384,7 +384,7 @@ export function PriceElasticityOfDemandGuideArticle() {
         Two observations provide limited demand information. External factors,
         competition, advertising, seasonality, and product changes can dominate.
         Midpoint PED is an interval estimate, not a causal law and not a full
-        demand curve. Educational use only — not personalized financial advice.
+ demand curve. Educational use only; not personalized financial advice.
       </p>
 
       <h2

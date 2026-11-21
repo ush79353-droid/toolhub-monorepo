@@ -130,7 +130,7 @@ export function MlToTspForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Defaults to US customary teaspoons ({ML_PER_US_TSP} mL) — not exactly 5 mL. Metric tsp ={' '}
+ Defaults to US customary teaspoons ({ML_PER_US_TSP} mL); not exactly 5 mL. Metric tsp ={' '}
         {ML_PER_METRIC_TSP} mL exactly. Traditional Imperial tsp ≈ {ML_PER_IMPERIAL_TSP} mL.
       </div>
 

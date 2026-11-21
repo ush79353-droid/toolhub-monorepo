@@ -145,7 +145,7 @@ export function calculateMsToSeconds(input: MsToSecondsInput): MsToSecondsResult
 
 export function shareResultText(result: MsToSecondsResult): string {
   return [
-    'ms to Seconds Converter — Omega Calculators',
+    'ms to Seconds Converter | Omega Calculators',
     '',
     `${formatDuration(result.milliseconds)} ms = ${formatDuration(result.seconds)} seconds`,
     result.combined.label,

@@ -47,7 +47,7 @@ export const WEEKLY_PAY_FAQS: readonly FAQItem[] = [
   {
     question: 'Is weekly pay calculated before or after tax?',
     answer:
-      'This calculator shows gross pay — earnings before income tax, social contributions, insurance, pensions, and other deductions. Take-home (net) pay needs a separate tax calculation for your jurisdiction.',
+      'This calculator shows gross pay; earnings before income tax, social contributions, insurance, pensions, and other deductions. Take-home (net) pay needs a separate tax calculation for your jurisdiction.',
   },
   {
     question: 'How many weeks are in a month?',

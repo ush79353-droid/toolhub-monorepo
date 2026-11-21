@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate net operating assets as operating assets minus operating liabilities — cash, receivables, inventory, prepaid expenses, fixed assets, payables, and accruals.',
+    'Calculate net operating assets as operating assets minus operating liabilities; cash, receivables, inventory, prepaid expenses, fixed assets, payables, and accruals.',
   asideAriaLabel: 'Interactive Net Operating Assets Calculator',
   tocItems: NET_OPERATING_ASSETS_TOC_ITEMS,
   GuideArticle: NetOperatingAssetsGuideArticle,

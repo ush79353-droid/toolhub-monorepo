@@ -108,7 +108,7 @@ export function MortgageWithExtraPaymentsCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Original: ${result.original.formattedPayment} · ${result.original.freqLabel} · ${result.original.formattedTerm} · interest ${result.original.formattedInterest}`,
         `With extra: ${result.withExtra.formattedPayment} · ${result.withExtra.freqLabel} · ${result.withExtra.formattedTerm} · interest ${result.withExtra.formattedInterest}`,
         `Saved term: ${result.difference.formattedTerm}`,

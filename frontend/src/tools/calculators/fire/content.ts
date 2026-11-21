@@ -25,7 +25,7 @@ export const FIRE_FAQS: readonly FAQItem[] = [
   {
     question: 'Is $800,000 enough for FIRE?',
     answer:
-      'It depends on annual expenses, withdrawal rate, inflation, returns, and personal circumstances. Under a traditional 4% illustration, $800,000 × 0.04 ≈ $32,000 of initial annual withdrawal — not a guarantee the portfolio lasts forever.',
+      'It depends on annual expenses, withdrawal rate, inflation, returns, and personal circumstances. Under a traditional 4% illustration, $800,000 × 0.04 ≈ $32,000 of initial annual withdrawal; not a guarantee the portfolio lasts forever.',
   },
   {
     question: "Can I retire early if I don't have a high income?",
@@ -40,7 +40,7 @@ export const FIRE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the 4% rule in FIRE?',
     answer:
-      'A historical planning guideline suggesting an initial 4% withdrawal (adjusted for inflation) may sustain a diversified portfolio for a long retirement. It is a rule of thumb with real limitations — market conditions, fees, taxes, and spending flexibility matter.',
+      'A historical planning guideline suggesting an initial 4% withdrawal (adjusted for inflation) may sustain a diversified portfolio for a long retirement. It is a rule of thumb with real limitations; market conditions, fees, taxes, and spending flexibility matter.',
   },
   {
     question: 'What is a good savings rate for FIRE?',

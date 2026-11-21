@@ -104,16 +104,16 @@ export function PegRatioCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Price per Share: ${money(input.pricePerShare)}`,
-        `Earnings per Share: ${result!.formattedEps ?? '—'}`,
-        `P/E Ratio: ${result!.formattedPeRatio ?? '—'}`,
+        `Earnings per Share: ${result!.formattedEps ?? '; '}`,
+        `P/E Ratio: ${result!.formattedPeRatio ?? '; '}`,
         '',
         `Retention Rate: ${input.retentionRate}%`,
         `Return on Equity: ${input.returnOnEquity}%`,
-        `Earnings Growth: ${result!.formattedGrowth ?? '—'}`,
+        `Earnings Growth: ${result!.formattedGrowth ?? '; '}`,
         '',
-        `PEG Ratio: ${result!.formattedPeg ?? '—'}`,
+        `PEG Ratio: ${result!.formattedPeg ?? '; '}`,
         '',
         `Calculator: ${typeof window !== 'undefined' ? window.location.href : `/tools/${metadata.slug}`}`,
       ].join('\n')

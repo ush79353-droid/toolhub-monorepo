@@ -126,7 +126,7 @@ export function calculateLotteryTax(
     rateI = US_FEDERAL_WITHHOLDING_RATE;
     rateII = 0;
     usTaxNote =
-      'US mode applies IRC §3402(q) 24% federal withholding on the gross payout as Tax I (withholding, not final federal tax). Tax II is left at 0% — enter a state rate under Customized tax rates; this tool does not invent state lottery tax rates.';
+      'US mode applies IRC §3402(q) 24% federal withholding on the gross payout as Tax I (withholding, not final federal tax). Tax II is left at 0%. Enter a state rate under Customized tax rates; this tool does not invent state lottery tax rates.';
   }
 
   const lumpGross = lumpSumFromAnnuity(annuityAmount, lumpSumPercent);
@@ -222,6 +222,6 @@ export function calculateLotteryTax(
     lumpSumCurrency,
     annuityCurrency,
     usTaxNote,
-    summaryText: `Lump ${formatLotteryTaxMoney(lumpSum.net, calcCurrency)} net vs annuity ${formatLotteryTaxMoney(annuity.net, calcCurrency)} net (${years} yrs · ${growthPercent}% growth). Nominal comparison — no time-value discount.`,
+    summaryText: `Lump ${formatLotteryTaxMoney(lumpSum.net, calcCurrency)} net vs annuity ${formatLotteryTaxMoney(annuity.net, calcCurrency)} net (${years} yrs · ${growthPercent}% growth). Nominal comparison; no time-value discount.`,
   };
 }

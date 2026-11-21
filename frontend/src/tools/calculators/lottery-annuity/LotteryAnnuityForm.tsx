@@ -360,7 +360,7 @@ export function LotteryAnnuityForm({
                 (input.taxTreatment === 'without'
                   ? 'Lottery annuity table without taxes.'
                   : input.taxTreatment === 'us'
-                    ? 'US tax schedule unavailable — no brackets configured.'
+                    ? 'US tax schedule unavailable; no brackets configured.'
                     : 'Lottery annuity table with customized tax rate.')}
             </p>
           </div>

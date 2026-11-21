@@ -96,7 +96,7 @@ export function CarryTradeCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Initial exchange rate (S₀): ${input.initialExchangeRate}`,
         `Settlement exchange rate (S₁): ${input.settlementExchangeRate}`,

@@ -434,7 +434,7 @@ export function buildAmortizationCsv(
 export function buildResultsSummaryText(input: AutoLoanInput, result: AutoLoanResult): string {
   const fmt = (val: number) => formatCurrencyValue(val, result.currency);
   return [
-    'Auto Loan Estimate — Omega Calculators',
+    'Auto Loan Estimate | Omega Calculators',
     `Auto Price: ${fmt(result.autoPrice)}`,
     `Down Payment: ${fmt(result.downPaymentAmount)} (${result.downPaymentPercentOfPrice}%)`,
     `Net Trade-in Equity: ${fmt(result.netTradeInEquity)} (${result.tradeInEquityStatus})`,

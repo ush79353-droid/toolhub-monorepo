@@ -9,9 +9,9 @@ export function buildAustraliaTaxCutsNoticeSummary(title: string): string {
     title.trim() ||
     'Income Tax Cuts Calculator - Australia Federal Budget 2020/21';
   return [
-    `${toolTitle} — Omega Calculators`,
+    `${toolTitle} | Omega Calculators`,
     'This calculator is unavailable at this time.',
-    'Historical notice only — does not calculate current Australian income tax and does not invent 2020/21 brackets, refunds, or eligibility rules.',
+    'Historical notice only; does not calculate current Australian income tax and does not invent 2020/21 brackets, refunds, or eligibility rules.',
     'Australia Federal Budget 2020/21 announced personal income tax measures; Budget proposals are distinct from enacted legislation administered by the ATO.',
     `Alternatively, see the GST Calculator: ${GST_CALCULATOR_HREF}`,
   ].join('\n');

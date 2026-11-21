@@ -272,7 +272,7 @@ export function BankReconciliationForm({
             <MoneyField
               id="bank-charges"
               label="Bank charges"
-              tip="Unrecorded bank fees — subtracted from the cashbook."
+              tip="Unrecorded bank fees; subtracted from the cashbook."
               symbol={symbol}
               value={input.bankCharges}
               error={errors.bankCharges}
@@ -281,7 +281,7 @@ export function BankReconciliationForm({
             <MoneyField
               id="nsf-checks"
               label="NSF / returned checks"
-              tip="Returned deposited checks — subtracted from the cashbook."
+              tip="Returned deposited checks; subtracted from the cashbook."
               symbol={symbol}
               value={input.nsfChecks}
               error={errors.nsfChecks}
@@ -290,7 +290,7 @@ export function BankReconciliationForm({
             <MoneyField
               id="auto-payments"
               label="Automatic payments"
-              tip="Unrecorded direct debits — subtracted from the cashbook."
+              tip="Unrecorded direct debits; subtracted from the cashbook."
               symbol={symbol}
               value={input.automaticPayments}
               error={errors.automaticPayments}
@@ -299,7 +299,7 @@ export function BankReconciliationForm({
             <MoneyField
               id="interest-earned"
               label="Interest earned"
-              tip="Unrecorded bank interest — added to the cashbook."
+              tip="Unrecorded bank interest; added to the cashbook."
               symbol={symbol}
               value={input.interestEarned}
               error={errors.interestEarned}
@@ -349,7 +349,7 @@ export function BankReconciliationForm({
             <MoneyField
               id="deposits-in-transit"
               label="Deposits in transit"
-              tip="Deposits in the cashbook not yet on the statement — added to the bank balance."
+              tip="Deposits in the cashbook not yet on the statement; added to the bank balance."
               symbol={symbol}
               value={input.depositsInTransit}
               error={errors.depositsInTransit}
@@ -358,7 +358,7 @@ export function BankReconciliationForm({
             <MoneyField
               id="outstanding-checks"
               label="Outstanding checks"
-              tip="Checks issued but not yet cleared — subtracted from the bank balance."
+              tip="Checks issued but not yet cleared; subtracted from the bank balance."
               symbol={symbol}
               value={input.outstandingChecks}
               error={errors.outstandingChecks}

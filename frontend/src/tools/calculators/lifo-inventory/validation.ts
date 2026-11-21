@@ -188,12 +188,12 @@ export function validateLifoInventoryInput(
 
   let status: LifoInventoryStatus = 'valid';
   let warningMessage: string | null =
-    'LIFO assigns newest purchase costs to COGS first. Amounts share one currency label (no FX conversion). Educational costing model — not a tax or GAAP/IFRS determination.';
+    'LIFO assigns newest purchase costs to COGS first. Amounts share one currency label (no FX conversion). Educational costing model; not a tax or GAAP/IFRS determination.';
 
   if (revenue === 0) {
     status = 'zeroRevenue';
     warningMessage =
-      'Revenue is zero — gross profit margin is unavailable. COGS and ending inventory still follow LIFO when units sold are valid.';
+      'Revenue is zero; gross profit margin is unavailable. COGS and ending inventory still follow LIFO when units sold are valid.';
   }
 
   // Invariant check (defensive)

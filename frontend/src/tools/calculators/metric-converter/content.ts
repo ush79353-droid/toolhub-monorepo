@@ -59,7 +59,7 @@ export const METRIC_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Is the Metric System?',
     paragraphs: [
       'The metric system is the decimal measurement framework that underpins the International System of Units (SI). Quantities are expressed with coherent base units and powers of ten, which makes scaling between sizes predictable.',
-      'SI base units include the meter (length), kilogram (mass), second (time), and kelvin (thermodynamic temperature). Many everyday quantities — area, volume, speed, energy, power, and pressure — are derived from these bases.',
+      'SI base units include the meter (length), kilogram (mass), second (time), and kelvin (thermodynamic temperature). Many everyday quantities (area, volume, speed, energy, power, and pressure) are derived from these bases.',
       'Metric prefixes such as milli, centi, kilo, and mega attach to unit names to form larger or smaller versions of the same quantity. The kilogram is the SI base unit of mass; the gram remains common when prefixes are applied.',
       'Imperial and US customary systems use different unit relationships (for example, 12 inches in a foot and 5280 feet in a statute mile). This converter bridges metric and customary units within each physical dimension without mixing incompatible quantities.',
     ],
@@ -69,9 +69,9 @@ export const METRIC_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Metric Units',
     paragraphs: [
       'Within a single dimension, convert by expressing the source value in a base unit, then dividing by the target unit’s base factor.',
-      'Example 1 — meters to centimeters: 1 m = 100 cm.',
-      'Example 2 — kilometers to meters: 1 km = 1000 m.',
-      'Example 3 — millimeters to meters: 1000 mm = 1 m.',
+      'Example 1: meters to centimeters: 1 m = 100 cm.',
+      'Example 2: kilometers to meters: 1 km = 1000 m.',
+      'Example 3: millimeters to meters: 1000 mm = 1 m.',
       'Generic linear formula: target = source × (source factor / target factor), where each factor is base units per unit. Temperature conversions use affine formulas with offsets and are not pure multiplications.',
     ],
     formula: 'target = source × (source factor / target factor)  ·  temperature uses affine scales',

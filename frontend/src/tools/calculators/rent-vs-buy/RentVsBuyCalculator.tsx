@@ -74,7 +74,7 @@ export function RentVsBuyCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Staying period: ${input.stayingPeriod} ${input.stayingUnit}`,
         `Money you have: ${getCurrencySymbol(input.moneyCurrency)}${input.moneyYouHave}`,
         `Rent cost: ${getCurrencySymbol(input.rentCostCurrency)}${result.formattedRentCost} / ${input.rentCostFrequency}`,

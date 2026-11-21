@@ -4,7 +4,7 @@ import { HOURS_TO_DAYS_FAQS, HOURS_TO_DAYS_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert hours to days instantly — and days back to hours — with accurate formulas, examples, and a conversion table.',
+    'Convert hours to days instantly (and days back to hours) with accurate formulas, examples, and a conversion table.',
   asideAriaLabel: 'Interactive hours to days calculator',
   tocItems: HOURS_TO_DAYS_TOC_ITEMS,
   GuideArticle: HoursToDaysGuideArticle,

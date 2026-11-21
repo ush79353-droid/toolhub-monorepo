@@ -58,7 +58,7 @@ export const DECIMETER_TO_METER_GUIDE_SECTIONS: readonly DecimeterToMeterGuideSe
     id: 'how-to-use',
     title: 'How to Use the Converter',
     paragraphs: [
-      'Type a length in decimeters to fill meters, or type meters to fill decimeters. The field you are editing keeps your raw text—including a trailing decimal—until the number is complete.',
+      'Type a length in decimeters to fill meters, or type meters to fill decimeters. The field you are editing keeps your raw text, including a trailing decimal, until the number is complete.',
       'Expand More conversion options for additional units. Copy result places a short summary on the clipboard. Reset clears both fields.',
     ],
   },

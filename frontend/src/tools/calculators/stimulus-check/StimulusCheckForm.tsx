@@ -58,11 +58,11 @@ export function StimulusCheckForm({
     >
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-[13px] leading-relaxed text-accent sm:text-sm">
         <p className="font-semibold text-amber-950">
-          Historical estimate only — not a current benefit
+ Historical estimate only; not a current benefit
         </p>
         <p className="mt-1.5 text-foreground/85">
           This calculator reconstructs the first Economic Impact Payment (EIP1) from the March 2020
-          CARES Act. Those payments were issued in 2020. Estimates here are historical only — you
+ CARES Act. Those payments were issued in 2020. Estimates here are historical only; you
           cannot claim a new EIP1 payment in 2026.
         </p>
         <p className="mt-2 text-foreground/85">
@@ -82,7 +82,7 @@ export function StimulusCheckForm({
             <span>Have you filed 2019 taxes?</span>
             <InfoTooltip
               label="Have you filed 2019 taxes?"
-              text="Most EIP1 advances used 2019 return data. SSI, SSDI, RRB, and certain VA beneficiaries could receive automatic payments without a 2019 return — those paths are not modeled when you select No."
+              text="Most EIP1 advances used 2019 return data. SSI, SSDI, RRB, and certain VA beneficiaries could receive automatic payments without a 2019 return; those paths are not modeled when you select No."
             />
           </div>
           <div
@@ -220,12 +220,12 @@ export function StimulusCheckForm({
           {result?.ineligibleNoFiling ? (
             <p className="mt-1.5 text-xs text-amber-800">
               This estimate shows $0 because “No” was selected for 2019 filing. Historically, SSI,
-              SSDI, RRB, and certain VA beneficiaries could still receive EIP1 automatically — those
+ SSDI, RRB, and certain VA beneficiaries could still receive EIP1 automatically; those
               paths are not modeled here.
             </p>
           ) : result ? (
             <p className="mt-1.5 text-xs text-muted-foreground">
-              Historical EIP1 estimate only — not a currently available 2026 benefit.
+ Historical EIP1 estimate only; not a currently available 2026 benefit.
             </p>
           ) : null}
         </div>

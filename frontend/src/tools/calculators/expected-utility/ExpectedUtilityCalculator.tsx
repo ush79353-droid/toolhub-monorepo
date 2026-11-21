@@ -106,7 +106,7 @@ export function ExpectedUtilityCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Event 1: ${input.probability1}% · ${input.value1} ${input.currency}`,
         `Event 2: ${input.probability2}% · ${input.value2} ${input.currency}`,
         describeResult(result),

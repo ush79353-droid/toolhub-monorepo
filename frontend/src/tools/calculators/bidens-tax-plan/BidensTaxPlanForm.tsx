@@ -57,7 +57,7 @@ export function BidensTaxPlanForm({
     >
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-[13px] leading-relaxed text-accent sm:text-sm">
         <p className="font-semibold text-amber-950">
-          Historical Biden Tax Plan Comparison — not current-year filing advice
+ Historical Biden Tax Plan Comparison; not current-year filing advice
         </p>
         <p className="mt-1.5 text-foreground/85">
           President Biden proposed a tax plan to help fund the American Families Plan. This
@@ -203,7 +203,7 @@ export function BidensTaxPlanForm({
             <span>Number of dependents</span>
             <InfoTooltip
               label="Number of dependents"
-              text="Additional dependents eligible for the $500 Credit for Other Dependents only. Do not re-enter children already counted in the age buckets above — that would double-count."
+              text="Additional dependents eligible for the $500 Credit for Other Dependents only. Do not re-enter children already counted in the age buckets above; that would double-count."
             />
           </label>
           <FieldShell error={errors.dependents}>

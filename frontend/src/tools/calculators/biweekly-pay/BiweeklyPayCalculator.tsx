@@ -223,7 +223,7 @@ export function BiweeklyPayCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Source: ${result.sourceField} wage`,
         `Biweekly: ${getCurrencySymbol(result.biweeklyCurrency)}${result.formattedBiweekly} ${result.biweeklyCurrency}`,
         `Hours/week: ${input.hoursPerWeek}`,

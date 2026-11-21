@@ -44,7 +44,7 @@ export const KM_TO_M_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Kilometers to Meters',
     paragraphs: [
       `Multiply the distance in kilometers by ${METERS_PER_KM}.`,
-      `Example — convert 3.5 km: 3.5 × ${METERS_PER_KM} = ${formatLength(kilometersToMeters(3.5))} m. Therefore 3.5 km = 3,500 m.`,
+      `Example; convert 3.5 km: 3.5 × ${METERS_PER_KM} = ${formatLength(kilometersToMeters(3.5))} m. Therefore 3.5 km = 3,500 m.`,
     ],
     formula: `m = km × ${METERS_PER_KM}`,
   },
@@ -53,7 +53,7 @@ export const KM_TO_M_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Meters to Kilometers',
     paragraphs: [
       `Divide the distance in meters by ${METERS_PER_KM}.`,
-      `Example — convert 4,500 m: 4500 ÷ ${METERS_PER_KM} = ${formatLength(metersToKilometers(4500))} km. Therefore 4,500 m = 4.5 km.`,
+      `Example; convert 4,500 m: 4500 ÷ ${METERS_PER_KM} = ${formatLength(metersToKilometers(4500))} km. Therefore 4,500 m = 4.5 km.`,
     ],
     formula: `km = m ÷ ${METERS_PER_KM}`,
   },
@@ -61,9 +61,9 @@ export const KM_TO_M_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Kilometer to Meter Conversion Examples',
     paragraphs: [
-      `Example 1 — a 5-kilometer run: 5 × ${METERS_PER_KM} = ${formatLength(kilometersToMeters(5))} m.`,
-      `Example 2 — a 2.535-kilometer distance: 2.535 × ${METERS_PER_KM} = ${formatLength(kilometersToMeters(2.535))} m.`,
-      `Example 3 — a 250-meter walk: 250 ÷ ${METERS_PER_KM} = ${formatLength(metersToKilometers(250))} km.`,
+      `Example 1: a 5-kilometer run: 5 × ${METERS_PER_KM} = ${formatLength(kilometersToMeters(5))} m.`,
+      `Example 2: a 2.535-kilometer distance: 2.535 × ${METERS_PER_KM} = ${formatLength(kilometersToMeters(2.535))} m.`,
+      `Example 3: a 250-meter walk: 250 ÷ ${METERS_PER_KM} = ${formatLength(metersToKilometers(250))} km.`,
     ],
   },
   {

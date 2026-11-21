@@ -51,7 +51,7 @@ export const LITER_TO_CC_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Liter to cc Converter',
     paragraphs: [
-      '1. Enter the volume in liters — cubic centimeters update instantly.',
+      '1. Enter the volume in liters. cubic centimeters update instantly.',
       '2. Or enter cubic centimeters (cc) to calculate liters.',
       '3. Use Swap Units to reverse the visual field order.',
       '4. Share or copy the result when needed.',

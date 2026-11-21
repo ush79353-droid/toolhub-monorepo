@@ -77,18 +77,18 @@ export function interpretPortfolioBeta(beta: number): string {
     return 'Portfolio beta is unavailable.';
   }
   if (beta > 1) {
-    return `Portfolio beta ${formatBeta(beta)} is above 1 — higher estimated systematic market sensitivity than the benchmark. A 1% benchmark move is associated with roughly a ${formatBeta(beta)}% portfolio move under the beta model (not a guarantee).`;
+    return `Portfolio beta ${formatBeta(beta)} is above 1; higher estimated systematic market sensitivity than the benchmark. A 1% benchmark move is associated with roughly a ${formatBeta(beta)}% portfolio move under the beta model (not a guarantee).`;
   }
   if (beta === 1 || Math.abs(beta - 1) < 1e-9) {
-    return 'Portfolio beta is approximately 1.00 — about the same systematic market sensitivity as the benchmark.';
+    return 'Portfolio beta is approximately 1.00; about the same systematic market sensitivity as the benchmark.';
   }
   if (beta > 0 && beta < 1) {
-    return `Portfolio beta ${formatBeta(beta)} is between 0 and 1 — lower estimated systematic market sensitivity than the benchmark.`;
+    return `Portfolio beta ${formatBeta(beta)} is between 0 and 1; lower estimated systematic market sensitivity than the benchmark.`;
   }
   if (beta === 0 || Math.abs(beta) < 1e-12) {
-    return 'Portfolio beta is approximately 0.00 — roughly zero estimated linear sensitivity to benchmark movements.';
+    return 'Portfolio beta is approximately 0.00; roughly zero estimated linear sensitivity to benchmark movements.';
   }
-  return `Portfolio beta ${formatBeta(beta)} is negative — historically an inverse relationship with the benchmark within the estimated beta model (not a guarantee of future returns).`;
+  return `Portfolio beta ${formatBeta(beta)} is negative; historically an inverse relationship with the benchmark within the estimated beta model (not a guarantee of future returns).`;
 }
 
 export function formatBeta(value: number, digits = 2): string {
@@ -114,5 +114,5 @@ export function weightStatusMessage(totalWeightPercent: number): string | null {
     const remaining = 100 - totalWeightPercent;
     return `Total portfolio weight: ${formatWeightPercent(totalWeightPercent)}. Allocate the remaining ${formatWeightPercent(remaining)} to complete a fully invested long-only portfolio.`;
   }
-  return `Total portfolio weight: ${formatWeightPercent(totalWeightPercent)}. Weights exceed 100% — review the investment allocations.`;
+  return `Total portfolio weight: ${formatWeightPercent(totalWeightPercent)}. Weights exceed 100%; review the investment allocations.`;
 }

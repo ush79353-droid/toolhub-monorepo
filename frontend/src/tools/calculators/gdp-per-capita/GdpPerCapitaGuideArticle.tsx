@@ -15,7 +15,7 @@ export function GdpPerCapitaGuideArticle() {
         GDP per capita divides gross domestic product by population to summarize
         average economic output per person. Use it to compare scale-adjusted
         output, explore reverse calculations, and read real, nominal, or
-        PPP-labeled figures — remembering it is not personal income, median
+ PPP-labeled figures; remembering it is not personal income, median
         wages, or wealth.
       </p>
 
@@ -100,7 +100,7 @@ export function GdpPerCapitaGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         PPP adjusts for different price levels across countries, often using
         international dollars. PPP and market-exchange-rate rankings can differ
-        substantially. This calculator labels PPP inputs — it does not invent
+ substantially. This calculator labels PPP inputs; it does not invent
         conversion factors.
       </p>
 

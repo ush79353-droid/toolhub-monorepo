@@ -146,7 +146,7 @@ export function DoubleDiscountForm({
             <span>2nd discount</span>
             <InfoTooltip
               label="2nd discount"
-              text="Applied after the 1st discount, on the already-reduced price — not added to the first percent."
+              text="Applied after the 1st discount, on the already-reduced price; not added to the first percent."
             />
           </label>
           <FieldShell error={errors.secondDiscountPercent}>

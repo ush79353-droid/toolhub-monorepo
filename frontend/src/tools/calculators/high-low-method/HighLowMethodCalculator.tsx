@@ -47,7 +47,7 @@ function convertHighLowMoney(
 
 function summaryText(metadataTitle: string, result: HighLowMethodResult, currencyNote: string): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `High cost: ${result.highCost} at ${result.highVolume} units`,
     `Low cost: ${result.lowCost} at ${result.lowVolume} units`,
     `Units (x): ${result.unitsX}`,

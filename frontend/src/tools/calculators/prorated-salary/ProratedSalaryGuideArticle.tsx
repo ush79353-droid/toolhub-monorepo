@@ -13,7 +13,7 @@ export function ProratedSalaryGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Prorated salary estimates pay for a partial month from your monthly (or
         normalized monthly) gross, the month’s scheduled working days, and the
-        payable days you enter. This tool uses a civil calendar workweek model —
+ payable days you enter. This tool uses a civil calendar workweek model; 
         it does not invent jurisdiction-specific payroll statutes beyond the
         explicit paid-holiday and paid-leave convention documented below.
       </p>
@@ -32,7 +32,7 @@ export function ProratedSalaryGuideArticle() {
         </li>
         <li>
           Enter days worked, paid holidays, and approved leave as separate
-          counts — do not list the same day in more than one field.
+ counts; do not list the same day in more than one field.
         </li>
         <li>
           Set days worked per week and pick distinct days off. The calculator
@@ -56,7 +56,7 @@ export function ProratedSalaryGuideArticle() {
           Scheduled Working Days = calendar days in month − selected days off
         </p>
         <p>
-          Monthly Salary = normalize(gross, pay period) — month as-is; year ÷
+ Monthly Salary = normalize(gross, pay period); month as-is; year ÷
           12; week × 52/12; day × scheduled working days
         </p>
         <p>

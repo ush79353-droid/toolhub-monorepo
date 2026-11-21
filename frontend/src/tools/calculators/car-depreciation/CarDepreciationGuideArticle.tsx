@@ -19,7 +19,7 @@ export function CarDepreciationGuideArticle() {
         Car depreciation is the decline in a vehicle’s estimated value over time.
         Actual resale prices depend on age, mileage, condition, brand demand, and
         local market conditions. This calculator uses a simple, disclosed declining-balance
-        model so you can explore how value changes with age — not a guaranteed market
+ model so you can explore how value changes with age; not a guaranteed market
         forecast or appraisal.
       </p>
 

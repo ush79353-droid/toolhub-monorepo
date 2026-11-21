@@ -343,7 +343,7 @@ export function DepreciationForm({
             <span>Depreciation expense</span>
             <InfoTooltip
               label="Depreciation expense"
-              text="Expense for the selected year only — not cumulative depreciation."
+              text="Expense for the selected year only; not cumulative depreciation."
             />
           </label>
           <div className="flex gap-2">

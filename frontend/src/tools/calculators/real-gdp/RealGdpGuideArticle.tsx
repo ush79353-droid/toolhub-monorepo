@@ -131,7 +131,7 @@ export function RealGdpGuideArticle() {
         <li>Multiply by 100: 200 × 100 = 20,000.</li>
         <li>
           Interpret: real GDP is $20,000 billion ($20 trillion) in base-year
-          prices. A deflator of 125 means prices are 25% above the base year —
+ prices. A deflator of 125 means prices are 25% above the base year; 
           not necessarily that inflation was 25% in the latest year alone.
         </li>
       </ol>
@@ -148,7 +148,7 @@ export function RealGdpGuideArticle() {
         is typically expressed relative to a base year of 100. Unlike the
         Consumer Price Index (CPI), which tracks a household consumption basket
         (often including imports), the GDP deflator covers the composition of
-        GDP — consumption, investment, government purchases, and net exports —
+ GDP (consumption, investment, government purchases, and net exports) 
         and focuses on domestic production. Import prices that raise CPI may not
         move the GDP deflator the same way.
       </p>
@@ -273,7 +273,7 @@ export function RealGdpGuideArticle() {
         Policymakers and analysts watch real GDP for economic growth, recessions,
         and expansions; fiscal planning; monetary-policy context; productivity
         research; and international comparisons of output volumes. Businesses use
-        real-growth trends when forecasting demand, capacity, and investment —
+ real-growth trends when forecasting demand, capacity, and investment; 
         always alongside industry data, not as a standalone market-timing signal.
       </p>
 
@@ -319,7 +319,7 @@ export function RealGdpGuideArticle() {
         (PPP) conversions attempt to compare living costs and output volumes more
         fairly than market FX alone. GDP per capita further adjusts for
         population. This basic Real GDP Calculator does not perform PPP
-        conversion — use the{' '}
+ conversion; use the{' '}
         <Link
           href="/tools/ppp-calculator-purchasing-power-parity"
           className="font-medium text-primary underline-offset-2 hover:underline"
@@ -356,7 +356,7 @@ export function RealGdpGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Firms use real GDP trends for demand forecasting, industry growth
         context, capital budgeting, and assessing macroeconomic risk. Investors
-        watch real growth alongside inflation, policy rates, and earnings —
+ watch real growth alongside inflation, policy rates, and earnings; 
         never as a reliable stand-alone stock-market timing indicator. Policy
         expectations and sector rotation often matter more than a single GDP
         print. Treat calculator results as educational identities, not forecasts.

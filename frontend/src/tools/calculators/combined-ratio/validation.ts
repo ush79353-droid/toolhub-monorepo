@@ -114,7 +114,7 @@ export function validateCombinedRatioInput(input: CombinedRatioInput): {
         return {
           isValid: false,
           errors: {
-            form: 'Unable to solve underwriting expense — check that (CR% × premiums) ≥ loss expense.',
+            form: 'Unable to solve underwriting expense. Check that (CR% × premiums) ≥ loss expense.',
           },
           result: null,
         };
@@ -226,7 +226,7 @@ export function validateCombinedRatioInput(input: CombinedRatioInput): {
       return {
         isValid: false,
         errors: {
-          form: 'Unable to solve loss expense — check that (CR% × premiums) ≥ underwriting expense and the fixed loss component fits.',
+          form: 'Unable to solve loss expense. Check that (CR% × premiums) ≥ underwriting expense and the fixed loss component fits.',
         },
         result: null,
       };

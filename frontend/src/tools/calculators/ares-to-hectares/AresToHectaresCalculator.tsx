@@ -15,7 +15,7 @@ import { validateAresToHectares } from './validation';
 
 function summaryText(result: AresToHectaresResult): string {
   return [
-    'Ares to Hectares Converter — Omega Calculators',
+    'Ares to Hectares Converter | Omega Calculators',
     `${formatArea(result.ares)} ares = ${formatArea(result.hectares)} hectares`,
     result.explanation,
     '1 hectare = 100 ares',

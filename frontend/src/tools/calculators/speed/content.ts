@@ -38,7 +38,7 @@ export const SPEED_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Units of Speed',
     paragraphs: [
       'Meters per second (m/s) is the SI base for this converter. Kilometers per hour (km/h) and miles per hour (mph) dominate road traffic. Feet per second (ft/s) appears in engineering and ballistics. Knots (kn) equal one nautical mile per hour. The speed of light in vacuum (c) is an exact SI defining constant: 299,792,458 m/s.',
-      'Running pace (min/km, min/mi, …) is not a linear speed unit — it is the time required to cover a fixed distance, so faster running yields smaller pace numbers.',
+      'Running pace (min/km, min/mi, …) is not a linear speed unit; it is the time required to cover a fixed distance, so faster running yields smaller pace numbers.',
     ],
   },
   {

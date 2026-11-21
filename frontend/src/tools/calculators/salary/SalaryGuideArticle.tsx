@@ -27,7 +27,7 @@ export function SalaryGuideArticle() {
         <li>Enter pay per hour and choose its currency.</li>
         <li>Set hours per day (default 8) and days per week (default 5).</li>
         <li>
-          Optionally note holidays and paid vacation days — they are not deducted
+ Optionally note holidays and paid vacation days; they are not deducted
           from annual paid salary.
         </li>
         <li>

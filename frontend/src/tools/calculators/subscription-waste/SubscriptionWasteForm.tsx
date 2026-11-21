@@ -111,7 +111,7 @@ export function SubscriptionWasteForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           List recurring subscriptions by category to see monthly and annual
-          totals — and optional savings if you cancel unused plans.
+ totals, and optional savings if you cancel unused plans.
         </p>
         <Button type="button" variant="ghost" className="h-8 px-2 text-xs" onClick={onLoadExample}>
           Load example
@@ -141,7 +141,7 @@ export function SubscriptionWasteForm({
             <li>Enter the name of each subscription service.</li>
             <li>Enter its recurring cost and billing frequency.</li>
             <li>Organize subscriptions by category.</li>
-            <li>Leave unused slots empty — they are ignored.</li>
+            <li>Leave unused slots empty; they are ignored.</li>
             <li>Review total monthly and annual spending.</li>
             <li>
               Mark services to cancel to estimate potential savings without

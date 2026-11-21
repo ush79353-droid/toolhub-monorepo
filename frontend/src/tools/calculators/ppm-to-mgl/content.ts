@@ -24,7 +24,7 @@ export const PPM_MGL_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Are PPM and mg/L?',
     paragraphs: [
       'Mass-based parts per million (ppm) describes a ratio of solute mass to solution mass: 1 ppm = 1 mg of solute per kilogram of solution (mg/kg).',
-      'Milligrams per liter (mg/L) is a mass concentration — solute mass per unit volume of solution. Density is required to convert a mass fraction into a mass-per-volume concentration.',
+      'Milligrams per liter (mg/L) is a mass concentration; solute mass per unit volume of solution. Density is required to convert a mass fraction into a mass-per-volume concentration.',
     ],
   },
   {
@@ -41,7 +41,7 @@ export const PPM_MGL_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Special Case: Water',
     paragraphs: [
       'For dilute aqueous solutions, density is often approximated as 1000 kg/m³ (≈ 1 kg/L). Then mg/L ≈ ppm numerically.',
-      'That 1:1 shortcut depends on density and on the mass-based ppm definition. Real water density varies with temperature, pressure, and dissolved solids — this converter uses the density you enter.',
+      'That 1:1 shortcut depends on density and on the mass-based ppm definition. Real water density varies with temperature, pressure, and dissolved solids; this converter uses the density you enter.',
     ],
     formula: 'ρ ≈ 1000 kg/m³ → mg/L ≈ ppm',
   },

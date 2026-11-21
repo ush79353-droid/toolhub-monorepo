@@ -62,7 +62,7 @@ export function calculateHectaresToAcres(input: HectaresToAcresInput): HectaresT
 
 export function shareResultText(result: HectaresToAcresResult): string {
   return [
-    'Hectares to Acres Converter — Omega Calculators',
+    'Hectares to Acres Converter | Omega Calculators',
     '',
     `${formatArea(result.hectares)} ha = ${formatArea(result.acres)} acres`,
     '',

@@ -89,7 +89,7 @@ export function PortfolioBetaCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         ...result!.contributions.flatMap((c, i) => [
           `Stock ${i + 1}`,

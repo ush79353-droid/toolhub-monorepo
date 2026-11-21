@@ -11,8 +11,8 @@ export function OvertimePaycheckGuideArticle() {
         What Is Overtime Pay?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Overtime is work beyond regular scheduled hours. Many workplaces pay a premium —
-        often time-and-a-half (1.5×) — for those extra hours. This calculator estimates
+ Overtime is work beyond regular scheduled hours. Many workplaces pay a premium; 
+ often time-and-a-half (1.5×), for those extra hours. This calculator estimates
         regular pay, overtime pay, and combined total pay from your rate, schedule, and
         overtime hours.
       </p>

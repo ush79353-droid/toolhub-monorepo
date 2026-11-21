@@ -37,7 +37,7 @@ export const LBS_TO_STONE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Formula Used to Convert Lbs to Stone',
     paragraphs: [
       `The standard relationship is 1 stone = ${POUNDS_PER_STONE} pounds. To convert pounds into stones, divide by ${POUNDS_PER_STONE}.`,
-      `Example: 15 ÷ ${POUNDS_PER_STONE} ≈ ${formatWeight(poundsToStone(15))} st — about 1.0714 stones, so the result is a decimal when the pound count is not a multiple of 14.`,
+      `Example: 15 ÷ ${POUNDS_PER_STONE} ≈ ${formatWeight(poundsToStone(15))} st; about 1.0714 stones, so the result is a decimal when the pound count is not a multiple of 14.`,
       `Example: 140 ÷ ${POUNDS_PER_STONE} = ${formatWeight(poundsToStone(140))} st exactly.`,
       `Reverse: pounds = stones × ${POUNDS_PER_STONE}. Example: 12 × ${POUNDS_PER_STONE} = ${formatWeight(stoneToPounds(12))} lb.`,
     ],
@@ -93,7 +93,7 @@ export const LBS_TO_STONE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Use the Lbs to Stone Converter',
     paragraphs: [
       '1. Open the Lbs to Stone Converter.',
-      '2. Enter the weight in pounds — stones update instantly.',
+      '2. Enter the weight in pounds. stones update instantly.',
       '3. Or enter stones to calculate pounds.',
       '4. Change either value for another conversion; no Calculate button is required.',
       '5. Use Share Result or Copy Result when you need the pair elsewhere.',

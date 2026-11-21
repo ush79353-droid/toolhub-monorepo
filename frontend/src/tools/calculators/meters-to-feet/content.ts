@@ -28,8 +28,8 @@ export const METERS_TO_FEET_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `The international foot is defined exactly as ${METERS_PER_FOOT} meters. Therefore 1 m = 1 / ${METERS_PER_FOOT} ft ≈ ${formatLength(metersToFeet(1))} ft.`,
       `To convert meters to feet, divide by ${METERS_PER_FOOT}. To convert feet to meters, multiply by ${METERS_PER_FOOT}.`,
-      `Example 1 — convert 5 meters to feet: Feet = 5 / ${METERS_PER_FOOT} ≈ ${formatLength(metersToFeet(5))} ft.`,
-      `Example 2 — convert 10 feet to meters: Meters = 10 × ${METERS_PER_FOOT} = ${formatLength(feetToMeters(10))} m.`,
+      `Example 1: convert 5 meters to feet: Feet = 5 / ${METERS_PER_FOOT} ≈ ${formatLength(metersToFeet(5))} ft.`,
+      `Example 2: convert 10 feet to meters: Meters = 10 × ${METERS_PER_FOOT} = ${formatLength(feetToMeters(10))} m.`,
       'Table values below are rounded for display; the calculator uses the exact 0.3048 m per foot factor.',
     ],
     formula: `ft = m / ${METERS_PER_FOOT} · m = ft × ${METERS_PER_FOOT}`,

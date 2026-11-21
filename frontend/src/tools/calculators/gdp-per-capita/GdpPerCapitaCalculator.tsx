@@ -91,7 +91,7 @@ export function GdpPerCapitaCalculator({
 
   const summary = shareable
     ? [
-        `GDP per Capita Calculator — Omega Calculators`,
+        `GDP per Capita Calculator | Omega Calculators`,
         '',
         `GDP: ${result!.formattedGdp}`,
         `Population: ${result!.formattedPopulation}`,

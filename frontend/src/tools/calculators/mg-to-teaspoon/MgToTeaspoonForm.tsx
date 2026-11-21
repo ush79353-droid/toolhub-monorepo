@@ -164,7 +164,7 @@ export function MgToTeaspoonForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Milligrams measure mass; teaspoons measure volume. Density is required — there is no
+ Milligrams measure mass; teaspoons measure volume. Density is required; there is no
         universal mg-to-tsp factor. Default teaspoon standard is US customary (
         4.92892159375 mL). Metric teaspoons are 5 mL. Ingredient presets are approximate bulk
         densities.

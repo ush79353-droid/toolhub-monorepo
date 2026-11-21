@@ -18,7 +18,7 @@ export const STOCK_AVERAGE_FAQS: readonly FAQItem[] = [
   {
     question: 'How many purchases do I need to enter?',
     answer:
-      'Enter at least the first two buys — both share quantities and per-share prices. The optional current stock price unlocks market value and unrealized profit/loss.',
+      'Enter at least the first two buys; both share quantities and per-share prices. The optional current stock price unlocks market value and unrealized profit/loss.',
   },
   {
     question: 'Do the currency selectors convert amounts?',

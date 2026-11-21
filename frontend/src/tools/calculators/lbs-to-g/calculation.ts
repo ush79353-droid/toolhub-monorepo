@@ -57,7 +57,7 @@ export function calculateLbsToG(input: LbsToGInput): LbsToGResult {
 
 export function shareResultText(result: LbsToGResult): string {
   return [
-    'lbs to g Converter — Omega Calculators',
+    'lbs to g Converter | Omega Calculators',
     '',
     `Pounds: ${formatMass(result.pounds)} lb`,
     `Grams: ${formatMass(result.grams)} g`,

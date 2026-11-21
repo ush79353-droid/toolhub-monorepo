@@ -137,7 +137,7 @@ export function calculateCmHeight(input: CmHeightInput): CmHeightResult {
 
 export function shareResultText(result: CmHeightResult): string {
   return [
-    'CM Height Conversion Calculator — Omega Calculators',
+    'CM Height Conversion Calculator | Omega Calculators',
     '',
     `${formatLength(result.centimeters)} cm ≈ ${result.mixedLabel}`,
     `${formatLength(result.centimeters)} cm = ${formatLength(result.meters)} m`,

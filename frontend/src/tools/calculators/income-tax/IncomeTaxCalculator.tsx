@@ -65,7 +65,7 @@ export function IncomeTaxCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.summaryText,
         `Filing status: ${formatFilingStatusLabel(result.filingStatus)}`,
         `Tax year: ${result.taxYear}`,

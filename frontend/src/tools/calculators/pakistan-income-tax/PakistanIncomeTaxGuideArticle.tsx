@@ -27,7 +27,7 @@ export function PakistanIncomeTaxGuideArticle() {
         <li>Enter your monthly gross taxable salary in Rs. (default 0).</li>
         <li>Read Monthly tax, Monthly income after tax, Yearly income, and Yearly tax.</li>
         <li>
-          Treat figures as estimates only — deductions, credits, exemptions, and withholding
+ Treat figures as estimates only; deductions, credits, exemptions, and withholding
           timing are not included.
         </li>
       </ol>
@@ -39,7 +39,7 @@ export function PakistanIncomeTaxGuideArticle() {
         FBR Salaried Tax Slabs (Tax Year 2027)
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Source: Finance Act, 2026 — substitution of the Table in clause (2) of Division I of Part
+ Source: Finance Act, 2026; substitution of the Table in clause (2) of Division I of Part
         I of the First Schedule (Gazette of Pakistan, Extra., 26 June 2026); summarized in FBR
         Circular No. 02 of 2026-27 (8 September 2026). Salaried surcharge under section 4AB was
         withdrawn for Tax Year 2027.

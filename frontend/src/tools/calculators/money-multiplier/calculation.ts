@@ -193,5 +193,5 @@ export function interpretMultiplier(
   if (m == null) {
     return 'The money multiplier is unavailable because the monetary base is zero under the simplified definitions used here.';
   }
-  return `Under the simplified monetary aggregate definitions used here, the calculated money supply (${formatMoneyAmount(moneySupply, currency)}) is ${formatMultiplier(m)} the monetary base (${formatMoneyAmount(monetaryBase, currency)}). A higher multiplier means a larger measured money supply relative to the base — not automatically “better” growth or inflation.`;
+  return `Under the simplified monetary aggregate definitions used here, the calculated money supply (${formatMoneyAmount(moneySupply, currency)}) is ${formatMultiplier(m)} the monetary base (${formatMoneyAmount(monetaryBase, currency)}). A higher multiplier means a larger measured money supply relative to the base; not automatically “better” growth or inflation.`;
 }

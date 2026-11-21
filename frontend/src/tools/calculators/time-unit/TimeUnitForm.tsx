@@ -88,7 +88,7 @@ export function TimeUnitForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Edit any field — the others update from the same duration in seconds. Years and months use
+ Edit any field: the others update from the same duration in seconds. Years and months use
         average lengths (365.25-day year, 12 months), not a calendar start date.
       </div>
 

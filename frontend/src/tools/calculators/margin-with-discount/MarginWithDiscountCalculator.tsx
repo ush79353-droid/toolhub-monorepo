@@ -230,7 +230,7 @@ export function MarginWithDiscountCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Cost: ${costSymbol}${input.cost} ${input.costCurrency}`,
         `Base margin: ${result.formattedBaseMargin}%`,
         `Base markup: ${result.formattedBaseMarkup}%`,

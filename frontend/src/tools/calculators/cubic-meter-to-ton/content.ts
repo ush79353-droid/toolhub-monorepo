@@ -89,7 +89,7 @@ export const CU_M_TO_TON_GUIDE_SECTIONS: readonly GuideSection[] = [
 export const CU_M_TO_TON_FAQS: readonly FAQItem[] = [
   {
     question: 'How Many Cubic Meters Are in One Ton?',
-    answer: `There is no universal answer — it depends on density and which ton definition you use. For fresh water near 4 °C at ${WATER_DENSITY_KG_PER_M3} kg/m³, one metric tonne occupies about 1 m³.`,
+    answer: `There is no universal answer; it depends on density and which ton definition you use. For fresh water near 4 °C at ${WATER_DENSITY_KG_PER_M3} kg/m³, one metric tonne occupies about 1 m³.`,
   },
   {
     question: 'How Much Does One Cubic Meter of Water Weigh?',

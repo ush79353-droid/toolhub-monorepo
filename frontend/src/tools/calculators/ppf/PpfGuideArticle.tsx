@@ -19,7 +19,7 @@ export function PpfGuideArticle() {
         interest, and inflation-adjusted purchasing power using Indian
         financial-year rules, the fifth-day eligible-balance convention, and
         annual interest crediting. Amounts are in INR. Rates and limits are
-        configurable educational defaults — verify official notifications before
+ configurable educational defaults; verify official notifications before
         investing.
       </p>
 
@@ -153,7 +153,7 @@ export function PpfGuideArticle() {
         Eligible contributions may qualify under Section 80C within overall
         limits when your chosen tax regime allows such deductions. Interest and
         maturity proceeds are often discussed as tax-exempt for eligible
-        accounts, but outcomes depend on current law — this is not tax advice.
+ accounts, but outcomes depend on current law; this is not tax advice.
       </p>
 
       <h2

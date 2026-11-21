@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Historical notice comparing the 2020 HEALS and HEROES unemployment proposals. Not a current benefit calculator — use the Annual Salary Calculator for yearly and hourly wage conversion.',
+    'Historical notice comparing the 2020 HEALS and HEROES unemployment proposals. Not a current benefit calculator. Use the Annual Salary Calculator for yearly and hourly wage conversion.',
   asideAriaLabel: 'HEALS Act vs HEROES Act unemployment benefit historical notice',
   tocItems: HEALS_HEROES_UNEMPLOYMENT_TOC_ITEMS,
   GuideArticle: HealsHeroesUnemploymentBenefitGuideArticle,

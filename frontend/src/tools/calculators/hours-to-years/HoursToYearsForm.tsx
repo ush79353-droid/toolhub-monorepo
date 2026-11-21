@@ -161,7 +161,7 @@ export function HoursToYearsForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Average Gregorian year = 365.2425 days = 8,765.82 hours. Enter hours or years — the other
+ Average Gregorian year = 365.2425 days = 8,765.82 hours. Enter hours or years: the other
         updates instantly. Months also use the average Gregorian month (year ÷ 12), not calendar
         dates.
       </div>

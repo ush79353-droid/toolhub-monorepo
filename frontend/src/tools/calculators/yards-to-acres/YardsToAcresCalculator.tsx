@@ -21,7 +21,7 @@ import { validateYardsToAcres } from './validation';
 
 function summaryText(result: YardsToAcresResult): string {
   const lines = [
-    'Yards to Acres Calculator — Omega Calculators',
+    'Yards to Acres Calculator | Omega Calculators',
     result.source === 'acres'
       ? `${formatArea(result.acres)} acres = ${formatArea(result.squareYards)} yd²`
       : `${formatArea(result.squareYards)} yd² = ${formatArea(result.acres)} acres`,

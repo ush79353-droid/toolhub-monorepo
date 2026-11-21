@@ -30,7 +30,7 @@ function unitLabel(
 
 function summaryText(result: CubicYardsToTonsResult): string {
   return [
-    'Cubic Yards to Tons Calculator — Omega Calculators',
+    'Cubic Yards to Tons Calculator | Omega Calculators',
     `Material: ${result.materialName}`,
     `Density: ${formatMeasure(result.densityKgPerM3)} kg/m³${
       result.densityApproximate ? ' (approx.)' : ''

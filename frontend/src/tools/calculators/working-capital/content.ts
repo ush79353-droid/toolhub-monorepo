@@ -44,7 +44,7 @@ export const WORKING_CAPITAL_FAQS: readonly FAQItem[] = [
   {
     question: 'Is the working capital ratio the same as the current ratio?',
     answer:
-      'Yes — many texts use the names interchangeably for CA ÷ CL. Working capital itself remains the absolute monetary difference.',
+      'Yes: many texts use the names interchangeably for CA ÷ CL. Working capital itself remains the absolute monetary difference.',
   },
   {
     question: 'What is a good working capital ratio?',
@@ -54,7 +54,7 @@ export const WORKING_CAPITAL_FAQS: readonly FAQItem[] = [
   {
     question: 'What does negative working capital mean?',
     answer:
-      'Current liabilities exceed current assets. That can signal liquidity pressure — or a deliberate model with fast turnover and supplier credit. Context matters.',
+      'Current liabilities exceed current assets. That can signal liquidity pressure, or a deliberate model with fast turnover and supplier credit. Context matters.',
   },
   {
     question: 'Can working capital be zero?',
@@ -68,7 +68,7 @@ export const WORKING_CAPITAL_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when current liabilities equal zero?',
     answer:
-      'The working capital amount can still be computed, but the ratio is undefined. The calculator shows unavailable — never Infinity.',
+      'The working capital amount can still be computed, but the ratio is undefined. The calculator shows unavailable; never Infinity.',
   },
   {
     question: 'What is net working capital?',
@@ -88,7 +88,7 @@ export const WORKING_CAPITAL_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens if average working capital equals zero?',
     answer:
-      'Turnover is undefined. Do not divide by zero — this tool shows unavailable.',
+      'Turnover is undefined. Do not divide by zero; this tool shows unavailable.',
   },
   {
     question: 'Can working capital turnover be negative?',

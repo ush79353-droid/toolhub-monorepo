@@ -82,7 +82,7 @@ export function ProductivityCalculator({
   );
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Revenue: ${symbol}${result!.formattedRevenue}`,
         result!.formattedRevenuePerEmployee
           ? `Per employee: ${symbol}${result!.formattedRevenuePerEmployee}`

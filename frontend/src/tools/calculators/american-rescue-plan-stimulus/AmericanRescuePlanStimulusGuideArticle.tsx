@@ -20,8 +20,8 @@ export function AmericanRescuePlanStimulusGuideArticle() {
             <p>
               On <strong>March 11, 2021</strong>, the{' '}
               <strong>American Rescue Plan Act of 2021</strong> (P.L. 117-2) became law. Among its
-              provisions was a third round of individual recovery rebates — the IRS{' '}
-              <strong>third Economic Impact Payment (EIP3)</strong> — as an advance of the 2021
+ provisions was a third round of individual recovery rebates: the IRS{' '}
+ <strong>third Economic Impact Payment (EIP3)</strong>: as an advance of the 2021
               Recovery Rebate Credit under <strong>I.R.C. §6428B</strong>.
             </p>
             <p>
@@ -125,7 +125,7 @@ export function AmericanRescuePlanStimulusGuideArticle() {
             <p>
               Most automatic advances used 2020 tax-return data when available, otherwise 2019.
               Filers who later reconciled on a 2021 return could claim a Recovery Rebate Credit for
-              any unpaid EIP3 amount — that reconciliation workflow is outside this tool’s scope.
+ any unpaid EIP3 amount; that reconciliation workflow is outside this tool’s scope.
             </p>
           </div>
         </article>

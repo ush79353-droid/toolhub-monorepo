@@ -122,10 +122,10 @@ export function interpretIntrinsicValue(
   }
   const ms = `${formatIvPercent(marginOfSafety)}%`;
   if (status === 'below') {
-    return `Estimated intrinsic value is ${v}. Margin of safety is ${ms} — the market price is below this estimate (not a guaranteed return).`;
+    return `Estimated intrinsic value is ${v}. Margin of safety is ${ms}: the market price is below this estimate (not a guaranteed return).`;
   }
   if (status === 'above') {
-    return `Estimated intrinsic value is ${v}. Margin of safety is ${ms} — the market price exceeds this estimate.`;
+    return `Estimated intrinsic value is ${v}. Margin of safety is ${ms}: the market price exceeds this estimate.`;
   }
-  return `Estimated intrinsic value is ${v}. Margin of safety is ${ms} — price approximately equals the estimate.`;
+  return `Estimated intrinsic value is ${v}. Margin of safety is ${ms}; price approximately equals the estimate.`;
 }

@@ -25,7 +25,7 @@ export const BINARY_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-binary',
     title: 'What Is the Binary System?',
     paragraphs: [
-      'Binary is the base-2 numeral system. It uses only two digits — 0 and 1 — and each position corresponds to a power of two. Computers, memory chips, processors, and digital electronics rely on binary patterns to store and process information.',
+      'Binary is the base-2 numeral system. It uses only two digits (0 and 1) and each position corresponds to a power of two. Computers, memory chips, processors, and digital electronics rely on binary patterns to store and process information.',
       'Example: binary 1011 means 1×2³ + 0×2² + 1×2¹ + 1×2⁰ = 8 + 0 + 2 + 1 = 11, so 1011₂ = 11₁₀.',
     ],
     table: [
@@ -70,7 +70,7 @@ export const BINARY_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Binary Converter',
     paragraphs: [
-      '1) Choose 8-bit, 16-bit, 32-bit, or 64-bit. 2) Enter an integer in Decimal to get fixed-width binary. 3) Or enter exactly that many 0/1 digits in Binary to get the signed decimal. 4) Read the result in the same section. 5) Change width to compare encodings — values that no longer fit show a clear range error. 6) Copy or share with the action buttons.',
+      '1) Choose 8-bit, 16-bit, 32-bit, or 64-bit. 2) Enter an integer in Decimal to get fixed-width binary. 3) Or enter exactly that many 0/1 digits in Binary to get the signed decimal. 4) Read the result in the same section. 5) Change width to compare encodings; values that no longer fit show a clear range error. 6) Copy or share with the action buttons.',
       'Examples: decimal 42 → 8-bit 00101010; binary 11111110 → signed 8-bit decimal −2. The two conversion sections stay independent so one input does not overwrite the other.',
     ],
   },
@@ -129,7 +129,7 @@ export const BINARY_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'What is −1 in 8-bit binary?',
-    answer: '11111111 — the signed 8-bit two’s-complement representation of −1.',
+    answer: '11111111: the signed 8-bit two’s-complement representation of −1.',
   },
   {
     question: 'How many values can 8 bits represent?',
@@ -149,6 +149,6 @@ export const BINARY_FAQS: readonly FAQItem[] = [
   {
     question: 'Can binary numbers contain decimals?',
     answer:
-      'Yes — binary fractions exist (for example 0.1₂ = 0.5₁₀). This calculator is specifically for fixed-width integer conversion and does not support binary fractions.',
+      'Yes: binary fractions exist (for example 0.1₂ = 0.5₁₀). This calculator is specifically for fixed-width integer conversion and does not support binary fractions.',
   },
 ];

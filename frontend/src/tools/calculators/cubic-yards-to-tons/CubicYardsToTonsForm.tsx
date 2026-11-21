@@ -392,7 +392,7 @@ export function CubicYardsToTonsForm({
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-xs leading-relaxed text-amber-950/90">
         Cubic yards measure volume; tons measure mass. Results depend on the density you
         supply. Preset densities are approximate. For loading, purchase, or structural
-        decisions, use verified material data—not this estimate alone.
+ decisions, use verified material data, not this estimate alone.
       </div>
 
       <div className="rounded-xl border border-border">

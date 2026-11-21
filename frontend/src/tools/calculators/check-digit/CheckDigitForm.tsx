@@ -65,7 +65,7 @@ export function CheckDigitForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         GS1 Modulo 10 check digits for GTIN-8, GTIN-12 (UPC-A), GTIN-13
-        (EAN-13), and GTIN-14. Leading zeros are part of the identifier —
+ (EAN-13), and GTIN-14. Leading zeros are part of the identifier; 
         treated as digits, never dropped. A valid checksum does not prove
         registration.
       </p>

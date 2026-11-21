@@ -61,7 +61,7 @@ export function CapacitanceForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Edit any field — the others update from the same farad quantity. Adjacent SI prefixes differ
+ Edit any field: the others update from the same farad quantity. Adjacent SI prefixes differ
         by a factor of <strong>1000</strong> (1 µF = 1000 nF = 1,000,000 pF).
       </div>
 

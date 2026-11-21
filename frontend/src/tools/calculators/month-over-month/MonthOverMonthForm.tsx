@@ -151,7 +151,7 @@ export function MonthOverMonthForm({
     >
       <p className="text-xs text-muted-foreground">
         Enter comparable metric values (revenue, users, sessions, etc.). Sections
-        are independent — monthly inputs do not overwrite quarterly or yearly
+ are independent; monthly inputs do not overwrite quarterly or yearly
         figures. No currency conversion is applied.
       </p>
 
@@ -311,7 +311,7 @@ export function MonthOverMonthForm({
             CMGR
             <InfoTooltip
               label="CMGR"
-              text="((Final ÷ Initial)^(1 ÷ months) − 1) × 100 — compounded, not a simple average."
+              text="((Final ÷ Initial)^(1 ÷ months) − 1) × 100; compounded, not a simple average."
             />
           </label>
           <FieldShell muted>

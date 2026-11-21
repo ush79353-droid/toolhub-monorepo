@@ -60,7 +60,7 @@ export function EstateTaxResults({ result }: EstateTaxResultsProps) {
         Many states impose their own estate or inheritance taxes. This tool estimates{' '}
         <strong className="font-medium text-accent">federal</strong> estate tax only and
         does not determine individual eligibility, marital deductions, DSUE/portability,
-        special-use valuation, or a complete Form 706. Educational estimate — not tax
+ special-use valuation, or a complete Form 706. Educational estimate; not tax
         advice.
       </p>
     </div>

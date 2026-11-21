@@ -167,7 +167,7 @@ export function StockSplitCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Before: ${input.sharesBefore} shares @ ${getCurrencySymbol(input.sharePriceBeforeCurrency)}${input.sharePriceBefore} ${input.sharePriceBeforeCurrency}`,
         `Ratio: ${input.ratioA}-for-${input.ratioB}${result.isReverseSplit ? ' (reverse)' : result.isForwardSplit ? ' (forward)' : ''}`,
         `After: ${result.formattedSharesAfter} shares @ ${afterSymbol}${result.formattedSharePriceAfter} ${result.sharePriceAfterCurrency}`,

@@ -106,7 +106,7 @@ export function validateAlabamaTaxInput(
 
   const disclosures = [
     `TY${input.taxYear}: ADOR Form 40 brackets/exemptions and 2025 standard-deduction chart (enacted schedules; educational estimate).`,
-    'Federal income tax deduction (Form 40 line 12) omitted — federal tax is not an input.',
+    'Federal income tax deduction (Form 40 line 12) omitted; federal tax is not an input.',
     'Local occupational tax uses annualized AGI as an earned-income proxy for work performed in the selected jurisdiction.',
     'FICA and other payroll taxes are not included.',
   ] as const;

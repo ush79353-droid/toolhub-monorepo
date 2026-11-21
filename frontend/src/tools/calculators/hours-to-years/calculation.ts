@@ -73,7 +73,7 @@ export function calculateHoursToYears(input: HoursToYearsInput): HoursToYearsRes
 
 export function shareResultText(result: HoursToYearsResult): string {
   return [
-    'Hours to Years Converter — Omega Calculators',
+    'Hours to Years Converter | Omega Calculators',
     '',
     `${formatDuration(result.hours)} hours ≈ ${formatDuration(result.years)} average Gregorian years`,
     `${formatDuration(result.hours)} hours = ${formatDuration(result.days)} days`,

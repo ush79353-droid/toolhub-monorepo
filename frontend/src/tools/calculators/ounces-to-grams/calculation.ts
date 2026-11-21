@@ -53,7 +53,7 @@ export function calculateOuncesToGrams(input: OuncesToGramsInput): OuncesToGrams
 
 export function shareResultText(result: OuncesToGramsResult): string {
   return [
-    'Ounces to Grams Converter — Omega Calculators',
+    'Ounces to Grams Converter | Omega Calculators',
     '',
     `${formatMass(result.oz)} oz = ${formatMass(result.g)} g`,
     '',

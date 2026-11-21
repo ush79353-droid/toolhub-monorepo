@@ -317,12 +317,12 @@ export function calculateVelocityOfMoney(
 
   const interpretation =
     mode === 'gdp'
-      ? `A GDP-based velocity of ${fmtV(velocity)} means annual (or period) nominal GDP equals ${fmtV(velocity)} times the selected ${input.moneyAggregate} money stock — an aggregate ratio, not how many times each banknote changed hands.`
+      ? `A GDP-based velocity of ${fmtV(velocity)} means annual (or period) nominal GDP equals ${fmtV(velocity)} times the selected ${input.moneyAggregate} money stock: an aggregate ratio, not how many times each banknote changed hands.`
       : `A transaction velocity of ${fmtV(velocity)} means the nominal value of transactions during the selected period was ${fmtV(velocity)} times the money stock used in the calculation.`;
 
   const explanation = [
     `Mode: ${mode === 'gdp' ? 'GDP-based income velocity' : 'transaction-based velocity'}.`,
-    `Money aggregate label: ${input.moneyAggregate} (informational — aggregates are not interchangeable).`,
+    `Money aggregate label: ${input.moneyAggregate} (informational; aggregates are not interchangeable).`,
     `Period: ${unit}.`,
     `Solved for: ${solveTarget}.`,
     'Currency is denomination only (not FX). Magnitude scales money and flow inputs together.',

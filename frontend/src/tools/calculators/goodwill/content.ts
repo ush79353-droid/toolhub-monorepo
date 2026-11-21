@@ -42,7 +42,7 @@ export const GOODWILL_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Is goodwill a tangible asset?',
-    answer: 'No. Goodwill is an intangible asset — it has no physical form.',
+    answer: 'No. Goodwill is an intangible asset; it has no physical form.',
   },
   {
     question: 'Is goodwill an intangible asset?',
@@ -67,7 +67,7 @@ export const GOODWILL_FAQS: readonly FAQItem[] = [
   {
     question: 'Why do companies recognize goodwill?',
     answer:
-      'Because acquisition accounting requires recognizing the residual after measuring consideration and identifiable net assets — often reflecting synergies or unidentifiable benefits.',
+      'Because acquisition accounting requires recognizing the residual after measuring consideration and identifiable net assets; often reflecting synergies or unidentifiable benefits.',
   },
   {
     question: 'What is the difference between goodwill and book value?',
@@ -102,7 +102,7 @@ export const GOODWILL_FAQS: readonly FAQItem[] = [
   {
     question: 'Can internally generated goodwill be recognized?',
     answer:
-      'Generally no under IFRS and standard US GAAP — only acquired goodwill from qualifying business combinations is recognized.',
+      'Generally no under IFRS and standard US GAAP; only acquired goodwill from qualifying business combinations is recognized.',
   },
   {
     question: 'Is goodwill the same as purchase premium?',
@@ -112,7 +112,7 @@ export const GOODWILL_FAQS: readonly FAQItem[] = [
   {
     question: 'What assets are included when calculating goodwill?',
     answer:
-      'Identifiable assets at fair value — excluding the goodwill residual itself and typically excluding the acquiree’s previously recorded goodwill in a fresh allocation.',
+      'Identifiable assets at fair value; excluding the goodwill residual itself and typically excluding the acquiree’s previously recorded goodwill in a fresh allocation.',
   },
   {
     question: 'Are liabilities included in goodwill calculations?',
@@ -143,7 +143,7 @@ export const GOODWILL_FAQS: readonly FAQItem[] = [
   {
     question: 'Can goodwill be sold separately?',
     answer:
-      'Generally no — goodwill is not separable like an individual asset and is typically transferred only with a business.',
+      'Generally No: goodwill is not separable like an individual asset and is typically transferred only with a business.',
   },
   {
     question: 'Why might goodwill decrease after an acquisition?',

@@ -11,7 +11,7 @@ export function NetOperatingAssetsGuideArticle() {
         What Does NOA Stand For?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        NOA means Net Operating Assets — the net capital invested in a company’s
+ NOA means Net Operating Assets: the net capital invested in a company’s
         operating activities after subtracting operating liabilities from
         operating assets.
       </p>
@@ -114,7 +114,7 @@ export function NetOperatingAssetsGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Positive NOA means OA &gt; OL. Zero means equality. Negative means OL &gt;
-        OA — not automatically bankruptcy.
+ OA; not automatically bankruptcy.
       </p>
 
       <h2
@@ -227,7 +227,7 @@ export function NetOperatingAssetsGuideArticle() {
         How Inventory Affects NOA
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Inventory builds raise operating assets and NOA — more capital tied in
+ Inventory builds raise operating assets and NOA; more capital tied in
         stock until sold.
       </p>
 
@@ -249,7 +249,7 @@ export function NetOperatingAssetsGuideArticle() {
         How Accounts Payable Affects NOA
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Supplier credit raises operating liabilities and reduces NOA — operations
+ Supplier credit raises operating liabilities and reduces NOA; operations
         are partly vendor-financed.
       </p>
 
@@ -261,7 +261,7 @@ export function NetOperatingAssetsGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Faster collections, leaner inventory, better asset utilization, and
-        thoughtful payables — without starving growth or supplier relationships.
+ thoughtful payables, without starving growth or supplier relationships.
         Raising or cutting NOA is not universally good.
       </p>
 
@@ -289,7 +289,7 @@ export function NetOperatingAssetsGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Simplified five-asset / two-liability model; cash classification requires
         judgment; not a profitability measure; industry structures differ.
-        Educational illustration only — not accounting advice.
+ Educational illustration only; not accounting advice.
       </p>
 
       <h2

@@ -64,7 +64,7 @@ export function CanadaGstQstCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Province/territory: ${result.provinceName}`,
         `Amount before tax: $${result.formattedBefore} CAD`,
         ...result.taxLines.map(

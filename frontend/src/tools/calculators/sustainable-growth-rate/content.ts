@@ -21,7 +21,7 @@ export const SGR_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the sustainable growth rate?',
     answer:
-      'The sustainable growth rate (SGR) estimates how fast a company can grow sales or assets while keeping its current profitability, payout policy, and capital structure — without issuing new equity. It is a planning benchmark, not a forecast of actual growth.',
+      'The sustainable growth rate (SGR) estimates how fast a company can grow sales or assets while keeping its current profitability, payout policy, and capital structure, without issuing new equity. It is a planning benchmark, not a forecast of actual growth.',
   },
   {
     question: 'How do you calculate sustainable growth rate?',
@@ -41,7 +41,7 @@ export const SGR_FAQS: readonly FAQItem[] = [
   {
     question: 'Can sustainable growth rate be negative?',
     answer:
-      'Yes. Negative ROE, negative retention (dividends exceeding earnings), or both can produce a negative SGR. That signals the simplified model does not support positive internal growth under those inputs — not automatic insolvency.',
+      'Yes. Negative ROE, negative retention (dividends exceeding earnings), or both can produce a negative SGR. That signals the simplified model does not support positive internal growth under those inputs; not automatic insolvency.',
   },
   {
     question: 'What does a 10% sustainable growth rate mean?',
@@ -66,7 +66,7 @@ export const SGR_FAQS: readonly FAQItem[] = [
   {
     question: 'Does paying dividends reduce sustainable growth?',
     answer:
-      'Yes in the simple model: higher dividends lower retention and therefore SGR. That does not mean dividends are “bad” — payout policy balances growth funding against shareholder cash returns.',
+      'Yes in the simple model: higher dividends lower retention and therefore SGR. That does not mean dividends are “bad”; payout policy balances growth funding against shareholder cash returns.',
   },
   {
     question: 'What happens if actual growth exceeds sustainable growth rate?',

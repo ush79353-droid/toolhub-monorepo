@@ -19,7 +19,7 @@ export function EidlCalculator({
 
   const handleShare = async () => {
     const summary = [
-      `${metadata.title} — Omega Calculators`,
+      `${metadata.title} | Omega Calculators`,
       'The U.S. Small Business Administration (SBA) Economic Injury Disaster Loan Emergency Advance (EIDL) program was a COVID-19 relief measure that has officially concluded.',
       'This program is no longer accepting new applications or providing emergency advances.',
       'For active commercial and personal borrowing, explore our Loan Calculator: /tools/loan-calculator',

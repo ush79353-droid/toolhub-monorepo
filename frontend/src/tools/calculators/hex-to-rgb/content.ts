@@ -97,7 +97,7 @@ export const HEX_RGB_FAQS: readonly FAQItem[] = [
   {
     question: 'What Is #F000 as a HEX Color?',
     answer:
-      '#F000 is a four-digit CSS HEX color that includes alpha. It expands toward #FF000000 — red with zero opacity. This converter focuses on three-channel RGB and 3/6-digit HEX; alpha formats need separate handling (see the Color Converter).',
+      '#F000 is a four-digit CSS HEX color that includes alpha. It expands toward #FF000000; red with zero opacity. This converter focuses on three-channel RGB and 3/6-digit HEX; alpha formats need separate handling (see the Color Converter).',
   },
   {
     question: 'What Is the Ugliest HEX Color?',

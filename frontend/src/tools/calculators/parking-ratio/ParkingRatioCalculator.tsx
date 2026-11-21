@@ -78,7 +78,7 @@ export function ParkingRatioCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Rentable area: ${input.rentableArea} ${unitLabel}`,
         `Parking spots: ${input.parkingSpots}`,
         `Parking ratio: ${result.formattedRatio} : 1000`,

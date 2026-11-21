@@ -13,7 +13,7 @@ import {
 export const MPA_TO_PSI_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'intro', label: 'MPa to PSI Conversion' },
   { id: 'units', label: 'Megapascals and Pounds per Square Inch' },
-  { id: 'examples', label: 'Example Calculation — MPa to PSI' },
+  { id: 'examples', label: 'Example Calculation; MPa to PSI' },
   { id: 'how-to-use', label: 'Using the MPa to PSI Conversion Tool' },
   { id: 'conversion-table', label: 'MPa to PSI Conversion Chart' },
   { id: 'related-tools', label: 'Similar Pressure Conversion Tools' },
@@ -37,7 +37,7 @@ export const MPA_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'MPa to PSI Conversion',
     paragraphs: [
       'Convert pressure between megapascals (MPa) and pounds-force per square inch (psi). Useful for hydraulic systems, automotive applications, industrial equipment, and engineering pressure specifications.',
-      'Both fields update each other instantly. The calculator converts numerical pressure units only — it does not add or subtract atmospheric pressure for gauge ↔ absolute conversion.',
+      'Both fields update each other instantly. The calculator converts numerical pressure units only; it does not add or subtract atmospheric pressure for gauge ↔ absolute conversion.',
     ],
   },
   {
@@ -52,7 +52,7 @@ export const MPA_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'examples',
-    title: 'Example Calculation — MPa to PSI',
+    title: 'Example Calculation; MPa to PSI',
     paragraphs: [
       `Convert 22 MPa to psi: psi = MPa × ${formatPressure(PSI_PER_MPA)}. 22 × ${formatPressure(PSI_PER_MPA)} ≈ ${formatPressure(mpaToPsi(22))} psi.`,
       `Convert 150 psi to MPa: MPa = psi × ${formatPressure(MPA_PER_PSI)}. 150 × ${formatPressure(MPA_PER_PSI)} ≈ ${formatPressure(psiToMpa(150))} MPa.`,

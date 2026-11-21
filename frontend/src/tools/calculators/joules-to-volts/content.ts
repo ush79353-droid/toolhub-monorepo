@@ -42,7 +42,7 @@ export const JOULES_TO_VOLTS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-voltage',
     title: 'What Is Voltage?',
     paragraphs: [
-      'Voltage is electric potential difference — energy transferred per unit charge between two points. The SI unit is the volt (V): 1 V = 1 J/C.',
+      'Voltage is electric potential difference; energy transferred per unit charge between two points. The SI unit is the volt (V): 1 V = 1 J/C.',
       'Voltage is not the same as energy. A large energy can correspond to a small voltage if a large charge is involved, and vice versa. Therefore joules alone cannot determine volts; charge must also be known.',
     ],
     formula: '1 V = 1 J/C',

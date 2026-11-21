@@ -113,7 +113,7 @@ export function PsiConverterForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Convert pounds per square inch (psi) to bar, atm, Pa, and more. Enter any field — all stay
+ Convert pounds per square inch (psi) to bar, atm, Pa, and more. Enter any field; all stay
         linked through pascals. Signed gauge values are allowed; this tool converts units only, not
         gauge vs absolute reference (psig / psia).
       </div>

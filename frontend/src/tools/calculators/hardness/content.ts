@@ -26,7 +26,7 @@ export const HARDNESS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Different Hardness Scales',
     paragraphs: [
       'Metal hardness is measured with several indentation methods. Each method uses a different indenter, load, and readout, so hardness numbers are not universal physical units like meters or kilograms.',
-      'Brinell hardness (HBW) uses a ball indenter under a specified force and reports hardness from the indentation diameter. Rockwell B (HRB) and Rockwell C (HRC) measure indentation depth under prescribed preliminary and major loads — HRB suits softer metals; HRC suits harder heat-treated steels. Vickers hardness (HV) uses a diamond pyramid and is widely used across a broad hardness range.',
+      'Brinell hardness (HBW) uses a ball indenter under a specified force and reports hardness from the indentation diameter. Rockwell B (HRB) and Rockwell C (HRC) measure indentation depth under prescribed preliminary and major loads; HRB suits softer metals; HRC suits harder heat-treated steels. Vickers hardness (HV) uses a diamond pyramid and is widely used across a broad hardness range.',
       'Typical applications differ: HBW for large, relatively homogeneous sections; HRB for annealed or soft alloys; HRC for hardened steels; HV for laboratory and multi-range work. Specifying the exact test method and conditions always matters more than a converted estimate.',
     ],
   },
@@ -58,7 +58,7 @@ export const HARDNESS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Brinell vs. Rockwell Hardness',
     paragraphs: [
       'Brinell hardness is based on the projected area of a ball indentation. Rockwell hardness is based on the permanent increase in indentation depth after a major load is applied and then reduced to a minor load.',
-      'Because geometry, load, and measured quantity differ, Brinell and Rockwell numbers are related only through empirical material-specific charts — never by a single universal equation for all metals.',
+      'Because geometry, load, and measured quantity differ, Brinell and Rockwell numbers are related only through empirical material-specific charts; never by a single universal equation for all metals.',
     ],
   },
   {
@@ -121,6 +121,6 @@ export const HARDNESS_FAQS: readonly FAQItem[] = [
   {
     question: 'Are hardness conversions exact?',
     answer:
-      'No. They are empirical approximations for a stated material family and range — not exact physical unit conversions like meters to millimeters.',
+      'No. They are empirical approximations for a stated material family and range; not exact physical unit conversions like meters to millimeters.',
   },
 ];

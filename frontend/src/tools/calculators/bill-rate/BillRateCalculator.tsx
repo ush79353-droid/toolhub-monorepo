@@ -153,7 +153,7 @@ export function BillRateCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Annual salary: ${salarySymbol}${input.annualSalary} ${input.annualSalaryCurrency}`,
         `Capacity: ${input.capacity} hrs/yr`,
         `Multiplier: ${input.multiplier}`,

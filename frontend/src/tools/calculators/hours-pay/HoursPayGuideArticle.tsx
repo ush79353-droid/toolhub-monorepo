@@ -29,7 +29,7 @@ export function HoursPayGuideArticle() {
           authoritative) and choose its currency.
         </li>
         <li>
-          Expand Working hours if needed — defaults are 8 hours/day, 5 days/week,
+ Expand Working hours if needed; defaults are 8 hours/day, 5 days/week,
           and 52 weeks/year.
         </li>
         <li>

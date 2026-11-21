@@ -83,7 +83,7 @@ export function UnemploymentForm({
       <p className="text-xs leading-relaxed text-muted-foreground">
         Enter employed and unemployed people (or any two of employed, unemployed, and labor force).
         Population selectors convert people / thousand / million before calculating. Unemployed means
-        people without a job who are actively seeking and available for work — not everyone without
+ people without a job who are actively seeking and available for work; not everyone without
         employment.
       </p>
 
@@ -233,7 +233,7 @@ export function UnemploymentForm({
             <span>Unemployment rate</span>
             <InfoTooltip
               label="Unemployment rate"
-              text="Unemployed ÷ labor force × 100. Undefined when labor force is zero. Display only — not unit-converted."
+              text="Unemployed ÷ labor force × 100. Undefined when labor force is zero. Display only; not unit-converted."
             />
           </label>
           <FieldShell muted>
@@ -349,7 +349,7 @@ export function UnemploymentForm({
 
         <div className="flex flex-wrap gap-2 pt-1">
           <Button type="button" variant="outline" className="h-11" onClick={onLoadExample}>
-            Example — 6.25%
+ Example: 6.25%
           </Button>
           <Button type="button" variant="outline" className="h-11" onClick={onReset}>
             Reload calculator

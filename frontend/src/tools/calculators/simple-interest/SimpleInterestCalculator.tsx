@@ -89,7 +89,7 @@ export function SimpleInterestCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Principal: ${symbol}${input.principal}`,
         `Interest rate: ${input.interestRate}%/yr`,
         `Term: ${input.termYears || '0'} yrs, ${input.termMonths || '0'} mos`,

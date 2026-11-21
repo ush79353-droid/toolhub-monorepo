@@ -200,7 +200,7 @@ export function MlToLbsForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Milliliters measure volume; pounds measure mass. Conversion always uses density — there is no
+ Milliliters measure volume; pounds measure mass. Conversion always uses density; there is no
         universal mL↔lb factor. Water defaults to ≈ 1000 kg/m³ (approximate reference). Exact
         definition: 1 lb = 0.45359237 kg.
       </div>
@@ -331,7 +331,7 @@ export function MlToLbsForm({
         <FieldShell
           label="Pounds"
           htmlFor="ml-lbs-mass"
-          tip="Enter a nonnegative mass. Fluid ounces are volume — not the same as mass ounces."
+          tip="Enter a nonnegative mass. Fluid ounces are volume; not the same as mass ounces."
           error={errors.massValue}
         >
           <div className="flex gap-2">

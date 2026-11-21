@@ -80,7 +80,7 @@ export function EoqForm({
       </div>
       <p className="text-xs text-muted-foreground">
         Order cost and holding cost share the selected currency (no FX
-        conversion). Demand and EOQ use the inventory unit label — changing the
+ conversion). Demand and EOQ use the inventory unit label; changing the
         unit does not convert quantities.
       </p>
 
@@ -130,7 +130,7 @@ export function EoqForm({
           Order cost
           <InfoTooltip
             label="Order cost"
-            text="Fixed cost of placing and processing one replenishment order (processing, admin, fixed delivery/setup) — not the purchase price of the goods."
+            text="Fixed cost of placing and processing one replenishment order (processing, admin, fixed delivery/setup); not the purchase price of the goods."
           />
         </label>
         <FieldShell error={errors.orderCost}>
@@ -194,7 +194,7 @@ export function EoqForm({
           Economic order quantity (EOQ)
           <InfoTooltip
             label="Economic order quantity"
-            text="EOQ = √(2 × Demand × Order cost ÷ Holding cost per unit). Result is in inventory units per order — not currency."
+            text="EOQ = √(2 × Demand × Order cost ÷ Holding cost per unit). Result is in inventory units per order; not currency."
           />
         </label>
         <FieldShell muted>

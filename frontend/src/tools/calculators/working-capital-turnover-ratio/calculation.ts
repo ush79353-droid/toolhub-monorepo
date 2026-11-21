@@ -66,7 +66,7 @@ export function interpretWctr(
     return 'Working capital turnover could not be determined from the inputs.';
   }
   if (averageWorkingCapital < 0) {
-    return `Signed turnover of ${formatWcTurnover(turnover)}x uses a negative average working capital — mathematically valid, but standard efficiency comparisons may be misleading.`;
+    return `Signed turnover of ${formatWcTurnover(turnover)}x uses a negative average working capital; mathematically valid, but standard efficiency comparisons may be misleading.`;
   }
   if (turnover === 0) {
     return 'Working capital turnover of 0.00x means no revenue was generated against a nonzero average working capital base.';

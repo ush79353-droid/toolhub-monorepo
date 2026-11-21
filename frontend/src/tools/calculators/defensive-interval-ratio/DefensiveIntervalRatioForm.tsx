@@ -116,7 +116,7 @@ export function DefensiveIntervalRatioForm({
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         DIR = defensive assets ÷ average daily cash expenditure (365-day year).
         Defensive assets = cash + marketable securities + collectible receivables
-        — not inventory or all balance-sheet current assets. Currency is
+; not inventory or all balance-sheet current assets. Currency is
         denomination only (not FX).
       </p>
 

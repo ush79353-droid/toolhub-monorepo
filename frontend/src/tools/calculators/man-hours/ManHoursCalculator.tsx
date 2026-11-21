@@ -27,7 +27,7 @@ const CURRENCY_CONVERSION_NOTE =
 
 function buildShareText(metadataTitle: string, result: ManHoursResult, currencyNote: string): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `People: ${result.people}`,
     `Hours per person: ${result.hoursPerPerson}`,
     `Man-hours: ${result.shareManHours}`,

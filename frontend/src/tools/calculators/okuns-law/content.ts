@@ -20,7 +20,7 @@ export const OKUNS_LAW_FAQS: readonly FAQItem[] = [
   {
     question: "What is Okun's Law?",
     answer:
-      "Okun's Law is an empirical relationship linking unemployment and real economic activity — typically that stronger growth relative to trend is associated with falling unemployment.",
+      "Okun's Law is an empirical relationship linking unemployment and real economic activity; typically that stronger growth relative to trend is associated with falling unemployment.",
   },
   {
     question: "What does Okun's Law measure?",
@@ -84,7 +84,7 @@ export const OKUNS_LAW_FAQS: readonly FAQItem[] = [
   {
     question: 'What is potential GDP?',
     answer:
-      'An estimate of sustainable real output given resources and technology — not directly observed.',
+      'An estimate of sustainable real output given resources and technology; not directly observed.',
   },
   {
     question: 'What happens when GDP grows faster than trend?',
@@ -99,7 +99,7 @@ export const OKUNS_LAW_FAQS: readonly FAQItem[] = [
   {
     question: 'Can unemployment rise while GDP is growing?',
     answer:
-      'Yes — if growth is below the unemployment-stabilizing trend, or if productivity/participation shifts dominate.',
+      'Yes: if growth is below the unemployment-stabilizing trend, or if productivity/participation shifts dominate.',
   },
   {
     question: "How can Okun's Law predict unemployment?",

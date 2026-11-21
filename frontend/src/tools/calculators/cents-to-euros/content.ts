@@ -26,7 +26,7 @@ export const CENTS_EUROS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Are Euro Cents and the Euro Currency?',
     paragraphs: [
       'The euro (€) is the official currency of the euro area. It is subdivided into 100 euro cents. The euro began as an accounting currency in 1999, and euro banknotes and coins entered circulation in 2002.',
-      'A euro cent is a denomination of the same currency, not a separate foreign currency. This calculator converts between those denominations with a fixed factor of 100—no exchange rate is involved.',
+      'A euro cent is a denomination of the same currency, not a separate foreign currency. This calculator converts between those denominations with a fixed factor of 100, no exchange rate is involved.',
     ],
     formula: '1 euro = 100 cents · 1 cent = €0.01 · 10 cents = €0.10 · 50 cents = €0.50',
   },

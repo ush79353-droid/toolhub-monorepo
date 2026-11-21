@@ -85,7 +85,7 @@ export function PricePerSquareMeterCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Unit price: ${result.formattedPricePerArea} ${result.pricePerAreaUnitLabel}`,
         `Price/rent: ${symbol}${result.formattedPrice} ${result.currency}`,
         `Area: ${result.formattedArea}`,

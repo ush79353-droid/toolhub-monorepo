@@ -103,7 +103,7 @@ export function IntrinsicValueCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Earnings per Share: ${money(input.earningsPerShare)}`,
         `Expected Growth Rate: ${input.expectedGrowthRate}%`,
         `Corporate Bond Yield: ${input.corporateBondYield}%`,
@@ -111,7 +111,7 @@ export function IntrinsicValueCalculator({
         ...(input.currentMarketPrice.trim()
           ? [
               `Current Market Price: ${money(input.currentMarketPrice)}`,
-              `Margin of Safety: ${result!.formattedMarginOfSafety ?? '—'}`,
+              `Margin of Safety: ${result!.formattedMarginOfSafety ?? '; '}`,
             ]
           : []),
         '',

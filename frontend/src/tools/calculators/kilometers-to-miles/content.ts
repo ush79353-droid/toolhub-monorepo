@@ -44,7 +44,7 @@ export const KM_TO_MI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Kilometers to Miles?',
     paragraphs: [
       `Divide kilometers by ${KM_PER_MILE}.`,
-      `Example — convert 10 km: 10 ÷ ${KM_PER_MILE} ≈ ${formatLength(kilometersToMiles(10))} mi. Therefore 10 km ≈ ${formatLength(kilometersToMiles(10))} mi.`,
+      `Example; convert 10 km: 10 ÷ ${KM_PER_MILE} ≈ ${formatLength(kilometersToMiles(10))} mi. Therefore 10 km ≈ ${formatLength(kilometersToMiles(10))} mi.`,
       'Rounding to two or three decimal places is often suitable for road signs and everyday travel; keep more digits for precise navigation or race distances.',
     ],
     formula: `mi = km ÷ ${KM_PER_MILE}`,
@@ -54,7 +54,7 @@ export const KM_TO_MI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Miles to Kilometers',
     paragraphs: [
       `Multiply miles by ${KM_PER_MILE}.`,
-      `Example — convert 8 mi: 8 × ${KM_PER_MILE} = ${formatLength(milesToKilometers(8))} km. Therefore 8 mi = ${formatLength(milesToKilometers(8))} km.`,
+      `Example; convert 8 mi: 8 × ${KM_PER_MILE} = ${formatLength(milesToKilometers(8))} km. Therefore 8 mi = ${formatLength(milesToKilometers(8))} km.`,
     ],
     formula: `km = mi × ${KM_PER_MILE}`,
   },
@@ -62,9 +62,9 @@ export const KM_TO_MI_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Examples of Kilometers to Miles Conversion',
     paragraphs: [
-      `Example 1 — a 5 km run: 5 ÷ ${KM_PER_MILE} ≈ ${formatLength(kilometersToMiles(5))} mi.`,
-      `Example 2 — a 42.195 km marathon: 42.195 ÷ ${KM_PER_MILE} ≈ ${formatLength(kilometersToMiles(42.195))} mi.`,
-      `Example 3 — a 100 km road trip: 100 ÷ ${KM_PER_MILE} ≈ ${formatLength(kilometersToMiles(100))} mi.`,
+      `Example 1: a 5 km run: 5 ÷ ${KM_PER_MILE} ≈ ${formatLength(kilometersToMiles(5))} mi.`,
+      `Example 2: a 42.195 km marathon: 42.195 ÷ ${KM_PER_MILE} ≈ ${formatLength(kilometersToMiles(42.195))} mi.`,
+      `Example 3: a 100 km road trip: 100 ÷ ${KM_PER_MILE} ≈ ${formatLength(kilometersToMiles(100))} mi.`,
       'This converter is useful when switching between metric and imperial distance measurements for travel, fitness, and mapping.',
     ],
   },

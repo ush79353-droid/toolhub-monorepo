@@ -122,7 +122,7 @@ export function NopatCalculator({
     result && result.nopat !== null
       ? input.mode === 'simple'
         ? [
-            `${metadata.title} — Omega Calculators`,
+            `${metadata.title} | Omega Calculators`,
             'Mode: Simple NOPAT formula',
             `Operating profit: ${symbol}${formatMoney(input.operatingProfit, input.currency)}`,
             `Tax rate: ${input.taxRatePercent}%`,
@@ -130,7 +130,7 @@ export function NopatCalculator({
             currencyNote,
           ].join('\n')
         : [
-            `${metadata.title} — Omega Calculators`,
+            `${metadata.title} | Omega Calculators`,
             'Mode: Precise NOPAT formula',
             `Net income: ${symbol}${formatMoney(input.netIncome, input.currency)}`,
             `Non-operating income loss: ${symbol}${formatMoney(input.nonOperatingIncomeLoss, input.currency)}`,

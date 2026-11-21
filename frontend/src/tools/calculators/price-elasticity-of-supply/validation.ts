@@ -168,7 +168,7 @@ export function validatePriceElasticityOfSupplyInput(
         'Neither price nor quantity supplied changed, so these observations provide no measurable elasticity estimate.';
     } else {
       undefinedReason =
-        'Price did not change, so a finite elasticity coefficient cannot be calculated from these observations. Quantity supplied changed despite an unchanged price — the finite-difference ratio is undefined (not Infinity).';
+        'Price did not change, so a finite elasticity coefficient cannot be calculated from these observations. Quantity supplied changed despite an unchanged price: the finite-difference ratio is undefined (not Infinity).';
     }
     return {
       isValid: false,

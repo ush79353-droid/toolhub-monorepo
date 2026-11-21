@@ -84,7 +84,7 @@ export function RetentionRatioForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Money fields share one currency and scale (denomination only — no FX).
+ Money fields share one currency and scale (denomination only; no FX).
       </p>
       <p className="text-xs">
         <a

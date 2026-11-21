@@ -49,7 +49,7 @@ export const AVERAGE_RETURN_FAQS: readonly FAQItem[] = [
   {
     question: 'What is time-weighted return?',
     answer:
-      'Time-weighted return links subperiod returns to reduce the impact of external cash-flow timing — often used to compare managers. It differs from the money-weighted cash-flow section in this tool.',
+      'Time-weighted return links subperiod returns to reduce the impact of external cash-flow timing; often used to compare managers. It differs from the money-weighted cash-flow section in this tool.',
   },
   {
     question: 'Why is cumulative return different from average return?',

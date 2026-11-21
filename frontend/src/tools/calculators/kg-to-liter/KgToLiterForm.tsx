@@ -156,7 +156,7 @@ export function KgToLiterForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Kilograms measure mass; liters measure volume. Density is required — 1 kg is not always 1 L.
+ Kilograms measure mass; liters measure volume. Density is required; 1 kg is not always 1 L.
         Fresh water defaults to a simplifying ≈ 1 kg/L reference. Presets are approximate and vary
         with temperature and composition.
       </div>
@@ -224,7 +224,7 @@ export function KgToLiterForm({
 
       {selected?.conditions ? (
         <p className="text-xs text-muted-foreground">
-          ≈ {formatMeasure(selected.densityKgPerL)} kg/L — {selected.conditions}
+ ≈ {formatMeasure(selected.densityKgPerL)} kg/L; {selected.conditions}
         </p>
       ) : isCustom ? (
         <p className="text-xs text-muted-foreground">

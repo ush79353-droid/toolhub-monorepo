@@ -42,7 +42,7 @@ export const HOUSE_AFFORDABILITY_FAQS: readonly FAQItem[] = [
   {
     question: 'How does down payment change affordability?',
     answer:
-      'A larger down payment reduces loan size and usually monthly principal and interest for a given price, which can support a higher purchase price within the same housing budget — while using more cash up front.',
+      'A larger down payment reduces loan size and usually monthly principal and interest for a given price, which can support a higher purchase price within the same housing budget while using more cash up front.',
   },
   {
     question:
@@ -59,7 +59,7 @@ export const HOUSE_AFFORDABILITY_FAQS: readonly FAQItem[] = [
     question:
       'What is the difference between conventional, FHA, and VA mortgages?',
     answer:
-      'Programs differ in insurance, down payment norms, eligibility, and underwriting. This calculator offers illustrative DTI scenarios for comparison — it does not perform official program underwriting.',
+      'Programs differ in insurance, down payment norms, eligibility, and underwriting. This calculator offers illustrative DTI scenarios for comparison; it does not perform official program underwriting.',
   },
   {
     question:

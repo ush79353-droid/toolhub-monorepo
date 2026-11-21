@@ -27,9 +27,9 @@ export const FAHRENHEIT_TO_CELSIUS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'fahrenheit-celsius-scales',
     title: 'Fahrenheit and Celsius Temperature Scales',
     paragraphs: [
-      'This converter translates temperatures between Fahrenheit and Celsius in either direction — useful for weather, travel, science labs, cooking notes, and everyday measurements.',
-      'Celsius: under standard atmospheric pressure, water freezes near 0°C and boils near 100°C — a 100-degree Celsius interval between those reference points.',
-      'Fahrenheit: water freezes near 32°F and boils near 212°F under standard pressure — a 180-degree Fahrenheit interval between the same physical points.',
+      'This converter translates temperatures between Fahrenheit and Celsius in either direction; useful for weather, travel, science labs, cooking notes, and everyday measurements.',
+      'Celsius: under standard atmospheric pressure, water freezes near 0°C and boils near 100°C: a 100-degree Celsius interval between those reference points.',
+      'Fahrenheit: water freezes near 32°F and boils near 212°F under standard pressure: a 180-degree Fahrenheit interval between the same physical points.',
       'The proportional relationship C/100 = (F − 32)/180 simplifies to C = 5(F − 32)/9.',
     ],
     formula: 'C/100 = (F − 32)/180   ·   C = 5(F − 32)/9',
@@ -39,7 +39,7 @@ export const FAHRENHEIT_TO_CELSIUS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Formula for Conversion from Fahrenheit to Celsius',
     paragraphs: [
       'Subtract 32 from the Fahrenheit temperature, multiply by 5, then divide by 9 (equivalently multiply by 5/9).',
-      'Example — convert 212°F: (212 − 32) × 5/9 = 180 × 5/9 = 100. Therefore 212°F = 100°C.',
+      'Example; convert 212°F: (212 − 32) × 5/9 = 180 × 5/9 = 100. Therefore 212°F = 100°C.',
       'Reverse conversion: °F = °C × 9/5 + 32. Example: 25 × 1.8 + 32 = 77, so 25°C = 77°F.',
     ],
     formula: '°C = (°F − 32) × 5/9   ·   °F = °C × 9/5 + 32',

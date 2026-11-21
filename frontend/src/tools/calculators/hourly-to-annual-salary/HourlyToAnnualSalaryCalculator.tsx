@@ -171,7 +171,7 @@ export function HourlyToAnnualSalaryCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Hourly wage: ${getCurrencySymbol(input.hourlyWageCurrency)}${input.hourlyWage} ${input.hourlyWageCurrency}`,
         `Hours/week: ${input.hoursPerWeek}`,
         `Days/week: ${input.daysPerWeek}`,

@@ -28,7 +28,7 @@ export function OkunsLawGuideArticle() {
         Those numbers are not interchangeable without an explicit model. A
         screenshot that shows a coefficient near −0.45 is using a signed slope;
         here you enter the positive magnitude and the formulas supply the minus
-        signs. Results are teaching estimates for scenario analysis — not
+ signs. Results are teaching estimates for scenario analysis; not
         forecasts you should treat as guaranteed policy truth.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
@@ -69,7 +69,7 @@ export function OkunsLawGuideArticle() {
         hours flexibility, productivity shocks, participation shifts, and
         measurement practices all change how tightly unemployment tracks output.
         Treat Okun&apos;s Law as a useful regularity with a time- and
-        country-specific coefficient — not a universal constant.
+ country-specific coefficient; not a universal constant.
       </p>
 
       <h2
@@ -140,7 +140,7 @@ export function OkunsLawGuideArticle() {
         Example: suppose unemployment is expected to fall by 0.8 percentage
         points (Δu = −0.8) and α = 0.4. Then GDPGrowthGap = −(−0.8) / 0.4 = 2%.
         If trend growth is 2.5%, that corresponds to actual growth near 4.5%.
-        Always keep α strictly positive when dividing — a zero coefficient makes
+ Always keep α strictly positive when dividing: a zero coefficient makes
         the inverse undefined.
       </p>
 
@@ -187,8 +187,8 @@ export function OkunsLawGuideArticle() {
         Unemployment falls by 0.8 percentage points. That is not the same as a
         0.8% reduction of the initial unemployment rate. Percentage points measure
         absolute rate changes; percent of the old rate would scale by the starting
-        unemployment level. If growth instead runs below trend — say g = 1% and
-        g* = 3% with α = 0.5 — then Δu = −0.5 × (1 − 3) = +1 percentage point.
+ unemployment level. If growth instead runs below trend; say g = 1% and
+ g* = 3% with α = 0.5, then Δu = −0.5 × (1 − 3) = +1 percentage point.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Negative GDP growth is valid input. If actual growth is −2% and trend is
@@ -230,7 +230,7 @@ export function OkunsLawGuideArticle() {
         market monitoring and GDP analysis benefit from a transparent bridge
         between the two. Policy shops, central bank research, and government
         planning teams sometimes use Okun equations in scenario books for
-        recessions and recoveries — always with uncertainty bands around the
+ recessions and recoveries; always with uncertainty bands around the
         coefficient.
       </p>
 
@@ -264,7 +264,7 @@ export function OkunsLawGuideArticle() {
         weaken a fixed rule. Country-specific coefficients and sample periods
         produce different estimates. Observed outcomes can diverge from any
         single Okun projection. This calculator does not claim guaranteed
-        predictions — it shows transparent arithmetic under assumptions you
+ predictions; it shows transparent arithmetic under assumptions you
         control.
       </p>
 

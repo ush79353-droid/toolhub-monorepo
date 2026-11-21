@@ -86,7 +86,7 @@ export function FinancialLeverageRatioCalculator({
     result.status !== 'zeroEquity';
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total assets: ${symbol}${result.formattedTotalAssets}`,
         `Total equity: ${symbol}${result.formattedTotalEquity}`,
         `Financial leverage: ${result.formattedFinancialLeverage}×`,
@@ -128,7 +128,7 @@ export function FinancialLeverageRatioCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Equity multiplier — Financial leverage = Total assets ÷ Total equity.
+ Equity multiplier; Financial leverage = Total assets ÷ Total equity.
           </p>
         </div>
         {headerActions ? (

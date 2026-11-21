@@ -59,7 +59,7 @@ export function calculateCentigradeToCelsius(
 
 export function shareResultText(result: CentigradeToCelsiusResult): string {
   return [
-    'Centigrade to Celsius Converter — Omega Calculators',
+    'Centigrade to Celsius Converter | Omega Calculators',
     '',
     `${formatTemp(result.centigrade)} °centigrade = ${formatTemp(result.celsius)} °C`,
     '',

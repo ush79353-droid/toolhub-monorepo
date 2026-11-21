@@ -242,7 +242,7 @@ export function calculateSabbaticalResults(input: {
       : formatDurationMonths(affordableRaw);
 
   const explanation = isAffordable
-    ? `After ${input.yearsToSave} year${input.yearsToSave === 1 ? '' : 's'} of saving ${formatMoney(monthlySavings, currency)}/mo plus ${formatMoney(currentSavings, currency)} already saved, you would have ${formatMoney(totalAvailableFund, currency)} — enough for about ${affordableLabel} away (including a ${input.bufferPercentage}% buffer).`
+    ? `After ${input.yearsToSave} year${input.yearsToSave === 1 ? '': 's'} of saving ${formatMoney(monthlySavings, currency)}/mo plus ${formatMoney(currentSavings, currency)} already saved, you would have ${formatMoney(totalAvailableFund, currency)}; enough for about ${affordableLabel} away (including a ${input.bufferPercentage}% buffer).`
     : `You would have ${formatMoney(totalAvailableFund, currency)} available but need ${formatMoney(totalRequired, currency)} for a ${formatDesiredDuration(input.desiredDurationValue, input.durationUnit)} sabbatical with a ${input.bufferPercentage}% buffer. Shortfall: ${formatMoney(Math.abs(savingsSurplus), currency)}.`;
 
   return {
@@ -276,7 +276,7 @@ export function shareSabbaticalText(result: SabbaticalResult): string {
       ? 'n/a'
       : formatDurationMonths(result.affordableMonths);
   return [
-    'Sabbatical Calculator — Omega Calculators',
+    'Sabbatical Calculator | Omega Calculators',
     `Monthly income: ${formatMoney(result.monthlyIncome, result.currency)}`,
     `Savings rate: ${result.savingsPercentage}%`,
     `Monthly savings: ${formatMoney(result.monthlySavings, result.currency)}`,

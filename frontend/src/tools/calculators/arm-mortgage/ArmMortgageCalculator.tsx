@@ -139,7 +139,7 @@ export function ArmMortgageCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Monthly Payment Range: ${formatCurrencyValue(result.minPaymentCents / 100, result.currency)} – ${formatCurrencyValue(result.maxPaymentCents / 100, result.currency)} / mo`,
         `Estimated APR: ${result.averageRate.toFixed(3)}% (Actuarial: ${result.actuarialApr.toFixed(3)}%)`,
         `Mortgage Term: ${result.termYears} years (${result.paymentCount} payments)`,

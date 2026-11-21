@@ -64,17 +64,17 @@ export const PRICE_ELASTICITY_OF_DEMAND_FAQS: readonly FAQItem[] = [
   {
     question: 'What does negative price elasticity mean?',
     answer:
-      'Price and quantity moved in opposite directions — the usual pattern for ordinary downward-sloping demand.',
+      'Price and quantity moved in opposite directions: the usual pattern for ordinary downward-sloping demand.',
   },
   {
     question: 'What does positive price elasticity mean?',
     answer:
-      'Price and quantity moved in the same direction. That can reflect unusual goods, confounding market changes, or measurement issues — treat with caution.',
+      'Price and quantity moved in the same direction. That can reflect unusual goods, confounding market changes, or measurement issues; treat with caution.',
   },
   {
     question: 'What does PED equal to zero mean?',
     answer:
-      'Quantity did not change while price changed — perfectly inelastic over the observed interval.',
+      'Quantity did not change while price changed; perfectly inelastic over the observed interval.',
   },
   {
     question: 'What does PED equal to −1 mean?',
@@ -92,12 +92,12 @@ export const PRICE_ELASTICITY_OF_DEMAND_FAQS: readonly FAQItem[] = [
   {
     question: 'What is elastic demand?',
     answer:
-      'Demand where |PED| > 1 — quantity responds proportionally more than price.',
+      'Demand where |PED| > 1; quantity responds proportionally more than price.',
   },
   {
     question: 'What is inelastic demand?',
     answer:
-      'Demand where 0 < |PED| < 1 — quantity responds proportionally less than price.',
+      'Demand where 0 < |PED| < 1; quantity responds proportionally less than price.',
   },
   {
     question: 'What is unit elastic demand?',
@@ -136,12 +136,12 @@ export const PRICE_ELASTICITY_OF_DEMAND_FAQS: readonly FAQItem[] = [
   {
     question: 'Why are necessities often relatively inelastic?',
     answer:
-      'Buyers may have fewer alternatives in the short run, so quantity may fall less than proportionally when price rises — but not always perfectly inelastic.',
+      'Buyers may have fewer alternatives in the short run, so quantity may fall less than proportionally when price rises, but not always perfectly inelastic.',
   },
   {
     question: 'Why might luxury goods have elastic demand?',
     answer:
-      'Purchases can be deferred or substituted, so quantity may respond strongly to price — depending on income and market.',
+      'Purchases can be deferred or substituted, so quantity may respond strongly to price; depending on income and market.',
   },
   {
     question: 'What is the difference between point elasticity and arc elasticity?',
@@ -200,7 +200,7 @@ export const PRICE_ELASTICITY_OF_DEMAND_FAQS: readonly FAQItem[] = [
   {
     question: 'Can PED be positive?',
     answer:
-      'Yes in the arithmetic sense. Interpret carefully — it may not describe ordinary own-price demand.',
+      'Yes in the arithmetic sense. Interpret carefully; it may not describe ordinary own-price demand.',
   },
   {
     question: 'Can elasticity be calculated from two observations?',
@@ -231,7 +231,7 @@ export const PRICE_ELASTICITY_OF_DEMAND_FAQS: readonly FAQItem[] = [
   {
     question: 'How can businesses use price elasticity in pricing strategies?',
     answer:
-      'To anticipate revenue effects of price tests, compare segments, and inform promotions — alongside cost and competitive analysis.',
+      'To anticipate revenue effects of price tests, compare segments, and inform promotions, alongside cost and competitive analysis.',
   },
   {
     question:

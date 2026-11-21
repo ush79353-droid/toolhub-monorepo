@@ -186,7 +186,7 @@ export function GramsToCaloriesForm({
               onChange={(value) => setField('abv', value)}
             />
             <p className="text-xs text-muted-foreground">
-              Ethanol mass ≈ volume (mL) × ABV/100 × 0.789 g/mL. Estimates ethanol only — not
+ Ethanol mass ≈ volume (mL) × ABV/100 × 0.789 g/mL. Estimates ethanol only; not
               sugars or mixers.
             </p>
           </div>

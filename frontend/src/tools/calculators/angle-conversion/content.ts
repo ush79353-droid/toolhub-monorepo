@@ -64,7 +64,7 @@ export const ANGLE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'dms',
     title: 'How to Convert Degrees, Minutes, and Seconds to Decimal Degrees',
     paragraphs: [
-      'Sexagesimal DMS divides each degree into 60 arcminutes and each arcminute into 60 arcseconds, so 1° = 60′ = 3,600″. For nonnegative component magnitudes: D_decimal = D + M/60 + S/3600. Apply the overall sign to the complete expression — −0° 30′ is −0.5°, not −29.75° from a broken sign on whole degrees alone.',
+      'Sexagesimal DMS divides each degree into 60 arcminutes and each arcminute into 60 arcseconds, so 1° = 60′ = 3,600″. For nonnegative component magnitudes: D_decimal = D + M/60 + S/3600. Apply the overall sign to the complete expression; −0° 30′ is −0.5°, not −29.75° from a broken sign on whole degrees alone.',
       'Example: 40° 25′ 30″ → 25/60 = 0.4166667, 30/3600 = 0.0083333, total 40.425°.',
     ],
     formula: '1° = 60′ = 3,600″ · D_decimal = sign × (|D| + M/60 + S/3600)',
@@ -73,7 +73,7 @@ export const ANGLE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'other-units',
     title: 'Other Angle Units',
     paragraphs: [
-      'Gradians (gons) divide a full circle into 400 parts (100 gon = 90°). Turns measure whole revolutions (0.25 turn = 90°). π-radian fields store a multiple of π (0.5 π rad = π/2 rad = 90°). Arcminutes and arcseconds refine degrees. Microradians are 10⁻⁶ rad. Angular mils depend on convention: NATO 6,400 per turn, Soviet 6,000, Swedish 6,300 — they are not interchangeable.',
+      'Gradians (gons) divide a full circle into 400 parts (100 gon = 90°). Turns measure whole revolutions (0.25 turn = 90°). π-radian fields store a multiple of π (0.5 π rad = π/2 rad = 90°). Arcminutes and arcseconds refine degrees. Microradians are 10⁻⁶ rad. Angular mils depend on convention: NATO 6,400 per turn, Soviet 6,000, Swedish 6,300; they are not interchangeable.',
     ],
     formula: '360° = 2π rad = 400 gon = 1 turn',
   },

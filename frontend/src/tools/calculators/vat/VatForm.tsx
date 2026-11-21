@@ -127,7 +127,7 @@ export function VatForm({
             <span>VAT rate</span>
             <InfoTooltip
               label="VAT rate"
-              text="Enter any VAT percentage for your jurisdiction. The default 20% is only an example — it is not universal."
+              text="Enter any VAT percentage for your jurisdiction. The default 20% is only an example; it is not universal."
             />
           </label>
           <FieldShell error={errors.vatRate}>

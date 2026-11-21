@@ -151,7 +151,7 @@ export function validateDsoInput(input: DsoInput): DsoValidation {
       ? 'Zero average receivables with positive sales yields DSO of 0 days. AR turnover is unavailable (division by zero).'
       : input.salesBasis === 'totalSales'
         ? 'Total sales is the reference default denominator. If cash sales are material, DSO may be understated versus a net-credit-sales basis.'
-        : 'Net credit sales is used as the DSO denominator — generally preferable when receivables arise from credit sales.';
+        : 'Net credit sales is used as the DSO denominator; generally preferable when receivables arise from credit sales.';
 
   const result: DsoResult = {
     averageAccountsReceivable: averageAr,

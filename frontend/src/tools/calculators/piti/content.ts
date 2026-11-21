@@ -19,7 +19,7 @@ export const PITI_FAQS: readonly FAQItem[] = [
   {
     question: 'What does PITI stand for?',
     answer:
-      'Principal, Interest, Taxes, and Insurance — the four parts of a common monthly housing payment estimate.',
+      'Principal, Interest, Taxes, and Insurance: the four parts of a common monthly housing payment estimate.',
   },
   {
     question: 'Is PITI the same as a mortgage payment?',
@@ -47,7 +47,7 @@ export const PITI_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good PITI-to-income ratio?',
     answer:
-      'Affordability guidelines vary by lender, loan program, and borrower circumstances. PITI is one input to budgeting — not a universal cutoff.',
+      'Affordability guidelines vary by lender, loan program, and borrower circumstances. PITI is one input to budgeting; not a universal cutoff.',
   },
   {
     question: 'Can my PITI change over time?',
@@ -76,7 +76,7 @@ export const PITI_FAQS: readonly FAQItem[] = [
   {
     question: 'Can PITI decrease?',
     answer:
-      'Yes — for example after refinancing to a lower rate, paying down principal via a shorter remaining term recalculation, or if taxes/insurance fall.',
+      'Yes: for example after refinancing to a lower rate, paying down principal via a shorter remaining term recalculation, or if taxes/insurance fall.',
   },
   {
     question: 'Why is PITI important when buying a home?',

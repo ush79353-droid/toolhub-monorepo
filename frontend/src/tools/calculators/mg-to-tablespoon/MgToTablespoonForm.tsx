@@ -164,7 +164,7 @@ export function MgToTablespoonForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Milligrams measure mass; tablespoons measure volume. Density is required — there is no
+ Milligrams measure mass; tablespoons measure volume. Density is required; there is no
         universal mg-to-tbsp factor. Default tablespoon standard is US customary (
         14.78676478125 mL). Ingredient presets are approximate bulk densities.
       </div>

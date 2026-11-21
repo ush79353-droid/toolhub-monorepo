@@ -52,7 +52,7 @@ export const GDP_GROWTH_FAQS: readonly FAQItem[] = [
   {
     question: 'What does zero GDP growth mean?',
     answer:
-      'Current GDP equals previous GDP under the chosen measure — no percentage change between those two observations.',
+      'Current GDP equals previous GDP under the chosen measure; no percentage change between those two observations.',
   },
   {
     question: 'Can GDP growth exceed 100%?',
@@ -77,7 +77,7 @@ export const GDP_GROWTH_FAQS: readonly FAQItem[] = [
   {
     question: 'What is quarterly GDP growth?',
     answer:
-      'Growth between quarterly GDP observations — often quarter-over-quarter or year-over-year. Those rates are not interchangeable without converting periods.',
+      'Growth between quarterly GDP observations; often quarter-over-quarter or year-over-year. Those rates are not interchangeable without converting periods.',
   },
   {
     question: 'What is annual GDP growth?',
@@ -87,7 +87,7 @@ export const GDP_GROWTH_FAQS: readonly FAQItem[] = [
   {
     question: 'How do you annualize quarterly GDP growth?',
     answer:
-      'For consecutive quarterly levels: ((Current/Previous)^4 − 1) × 100. Label it annualized QoQ — it is not the same as the raw quarterly percent change.',
+      'For consecutive quarterly levels: ((Current/Previous)^4 − 1) × 100. Label it annualized QoQ; it is not the same as the raw quarterly percent change.',
   },
   {
     question: 'How does GDP growth affect employment?',
@@ -137,7 +137,7 @@ export const GDP_GROWTH_FAQS: readonly FAQItem[] = [
   {
     question: 'Why do countries have different GDP growth rates?',
     answer:
-      'Differences in productivity, investment, demographics, institutions, trade, and cyclical position all matter — plus measurement methods.',
+      'Differences in productivity, investment, demographics, institutions, trade, and cyclical position all matter, plus measurement methods.',
   },
   {
     question: 'How often is GDP growth reported?',

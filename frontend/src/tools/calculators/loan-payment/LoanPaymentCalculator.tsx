@@ -102,7 +102,7 @@ export function LoanPaymentCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan amount: ${loanSymbol}${input.loanAmount}`,
         `Annual rate: ${input.annualRatePercent}%`,
         `Loan term: ${input.termYears} yrs ${input.termMonths} mos`,

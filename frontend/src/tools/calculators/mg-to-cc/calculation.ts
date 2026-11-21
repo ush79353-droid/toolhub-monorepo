@@ -140,7 +140,7 @@ export function calculateMgToCc(input: MgToCcInput): MgToCcResult {
 
 export function shareResultText(result: MgToCcResult): string {
   return [
-    'mg to cc Conversion — Omega Calculators',
+    'mg to cc Conversion | Omega Calculators',
     '',
     `Mode: ${result.mode === 'medication' ? 'Medication' : 'Substance'}`,
     result.substanceLabel,

@@ -20,7 +20,7 @@ export const MARGIN_AND_MARKUP_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I compare two markups and margins?',
     answer:
-      'Check “Compare two markups and margins” to open a second scenario that shares the same cost. Enter a second margin or markup to see the matching revenue, profit, and related percentage — the Omni reference uses two sets with one shared cost.',
+      'Check “Compare two markups and margins” to open a second scenario that shares the same cost. Enter a second margin or markup to see the matching revenue, profit, and related percentage: the Omni reference uses two sets with one shared cost.',
   },
   {
     question: 'Why can’t margin be 100% or higher when deriving revenue?',

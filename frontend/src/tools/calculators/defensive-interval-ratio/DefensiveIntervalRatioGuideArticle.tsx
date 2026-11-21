@@ -34,7 +34,7 @@ export function DefensiveIntervalRatioGuideArticle() {
         could liquid defensive assets cover? Expressing the answer in days makes
         short-term resilience easier to discuss than an abstract coverage
         multiple. Companies use DIR alongside other working-capital and cash-flow
-        tools for planning, stress discussion, and liquidity monitoring — not as
+ tools for planning, stress discussion, and liquidity monitoring; not as
         a standalone proof of solvency.
       </p>
 
@@ -85,7 +85,7 @@ export function DefensiveIntervalRatioGuideArticle() {
         total. Subtract annual non-cash charges to approximate annual cash
         operating expenditure, then divide by 365. Non-cash charges must not
         exceed operating expenses in the standard mode. If cash expenditure is
-        zero, DIR is undefined — the calculator reports that clearly instead of
+ zero, DIR is undefined: the calculator reports that clearly instead of
         returning Infinity.
       </p>
 
@@ -93,7 +93,7 @@ export function DefensiveIntervalRatioGuideArticle() {
         id="example"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        How to Calculate Defensive Interval Ratio — Step by Step
+ How to Calculate Defensive Interval Ratio; Step by Step
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Company Alpha example:
@@ -191,8 +191,8 @@ export function DefensiveIntervalRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         DIR supports liquidity planning, cash-runway style discussion, working-
         capital analysis, operational resilience reviews, financial risk
-        management, and short-term budgeting conversations. It complements — and
-        does not replace — cash-flow forecasts, covenant analysis, and liability
+ management, and short-term budgeting conversations. It complements; and
+ does not replace; cash-flow forecasts, covenant analysis, and liability
         maturity schedules.
       </p>
 
@@ -261,7 +261,7 @@ export function DefensiveIntervalRatioGuideArticle() {
         Practical levers include faster collections, stronger receivable
         quality, larger usable cash buffers, careful use of short-term liquid
         investments, and disciplined cash operating costs. Raising DIR is not
-        always identical to maximizing long-term business value — excess idle
+ always identical to maximizing long-term business value; excess idle
         cash can carry opportunity costs.
       </p>
 

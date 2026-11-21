@@ -94,7 +94,7 @@ export function shareResultText(result: PricePerLiterToGallonResult): string {
     `Price per gallon = Price per liter × ${result.litersPerGallon}`,
     result.explanation,
     '',
-    `Currency: ${result.currency} (${symbol}) — denomination only, no FX`,
+    `Currency: ${result.currency} (${symbol}); denomination only, no FX`,
     '',
     '/tools/price-per-liter-to-price-per-gallon-converter',
   ].join('\n');

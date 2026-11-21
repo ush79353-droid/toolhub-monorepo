@@ -41,7 +41,7 @@ const CURRENCY_CONVERSION_NOTE =
 function summaryText(title: string, result: SalesCommissionResult, currencyNote: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   return [
-    `${title} — Omega Calculators`,
+    `${title} | Omega Calculators`,
     `Method: ${methodLabel(result.commissionBase)}`,
     `Gross sales: ${money(result.revenue)}`,
     `Gross profit: ${money(result.grossProfit)}`,

@@ -127,7 +127,7 @@ export function SquareMilesToSquareKmForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Exact international mile: 1 mi = 1.609344 km, so 1 mi² = {SQUARE_KILOMETERS_PER_SQUARE_MILE}{' '}
-        km². Enter either field — the other updates instantly. Expand Other Area Conversion Units
+ km². Enter either field: the other updates instantly. Expand Other Area Conversion Units
         for more units. Area cannot be negative.
       </div>
 

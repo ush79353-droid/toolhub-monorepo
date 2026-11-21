@@ -41,7 +41,7 @@ export const CD_FAQS: readonly FAQItem[] = [
   {
     question: 'Are CD earnings taxable?',
     answer:
-      'Often yes, depending on country, jurisdiction, and account type. In the U.S., CD interest is generally ordinary income and may face federal and state taxes. This calculator’s tax estimate is simplified — not tax advice.',
+      'Often yes, depending on country, jurisdiction, and account type. In the U.S., CD interest is generally ordinary income and may face federal and state taxes. This calculator’s tax estimate is simplified; not tax advice.',
   },
   {
     question: 'What happens when a CD matures?',

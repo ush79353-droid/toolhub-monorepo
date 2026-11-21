@@ -22,6 +22,6 @@ export const STATE_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'Why is there no tax form here?',
     answer:
-      'The screenshot defines a state selector and destination link only — no income fields, brackets, or FX. Tax math lives in each state’s dedicated calculator.',
+      'The screenshot defines a state selector and destination link only; no income fields, brackets, or FX. Tax math lives in each state’s dedicated calculator.',
   },
 ];

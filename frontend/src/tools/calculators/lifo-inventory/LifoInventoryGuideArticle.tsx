@@ -24,7 +24,7 @@ export function LifoInventoryGuideArticle() {
         How Does the LIFO Method Work?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        With two batches — 10 units at $10, then 15 at $15 — selling 18 units
+ With two batches (10 units at $10, then 15 at $15) selling 18 units
         costs 15 from the second batch and 3 from the first under LIFO.
       </p>
 
@@ -143,7 +143,7 @@ export function LifoInventoryGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Where permitted, higher COGS can reduce taxable income in rising-cost
-        periods. Tax outcomes depend on jurisdiction — this tool is educational,
+ periods. Tax outcomes depend on jurisdiction; this tool is educational,
         not tax advice.
       </p>
 
@@ -188,7 +188,7 @@ export function LifoInventoryGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Inventory declines that pull older layers into COGS can temporarily
-        change reported margins — sometimes called LIFO liquidation.
+ change reported margins; sometimes called LIFO liquidation.
       </p>
 
       <h2
@@ -199,7 +199,7 @@ export function LifoInventoryGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         May better match recent acquisition costs with current sales where
-        allowed — useful for analysis in rising-cost environments.
+ allowed; useful for analysis in rising-cost environments.
       </p>
 
       <h2
@@ -237,11 +237,11 @@ export function LifoInventoryGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Two comparable purchase batches; purchase costs only (no freight/duties
-        automation); no returns or write-downs; educational costing model — not a
+ automation); no returns or write-downs; educational costing model; not a
         substitute for professional accounting judgment or jurisdiction rules.
       </p>
       <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Educational illustration only — not accounting, tax, or audit advice.
+ Educational illustration only; not accounting, tax, or audit advice.
       </p>
 
       <h2

@@ -112,7 +112,7 @@ export function shareResultText(
   });
 
   return [
-    'Metric Converter — Omega Calculators',
+    'Metric Converter | Omega Calculators',
     '',
     `Conversion type: ${cat.label}`,
     source

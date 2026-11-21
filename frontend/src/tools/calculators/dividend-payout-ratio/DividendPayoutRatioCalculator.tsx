@@ -162,7 +162,7 @@ export function DividendPayoutRatioCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         input.totalDividends.trim()
           ? `Total dividends: ${getCurrencySymbol(input.totalDividendsCurrency)}${input.totalDividends} ${input.totalDividendsCurrency}`
           : null,

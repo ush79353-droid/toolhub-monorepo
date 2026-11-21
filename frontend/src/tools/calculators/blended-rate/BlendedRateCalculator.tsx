@@ -93,7 +93,7 @@ export function BlendedRateCalculator({
   const shareable = result != null;
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Blended rate: ${result!.formattedBlendedRate}%`,
         `Total balance: ${symbol}${result!.formattedTotalBalance}`,
         `Loans: ${result!.includedLoans}`,

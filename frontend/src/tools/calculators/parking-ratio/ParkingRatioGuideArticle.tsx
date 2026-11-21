@@ -11,7 +11,7 @@ export function ParkingRatioGuideArticle() {
         What Is Parking Ratio?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Parking ratio measures parking supply relative to rentable area—how many spaces are available
+ Parking ratio measures parking supply relative to rentable area, how many spaces are available
         per 1,000 square meters (or other selected area unit).
       </p>
 

@@ -17,7 +17,7 @@ import { parseHexField, parseRgbFields } from './validation';
 
 function summaryText(rgb: RGB, hex: string): string {
   const lines = [
-    'RGB to HEX Converter — Omega Calculators',
+    'RGB to HEX Converter | Omega Calculators',
     '',
     `RGB: ${formatRgbCss(rgb)}`,
     `HEX: ${hex}`,

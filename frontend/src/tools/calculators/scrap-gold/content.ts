@@ -22,7 +22,7 @@ export const SCRAP_GOLD_FAQS: readonly FAQItem[] = [
   {
     question: 'Is the price a live gold quote?',
     answer:
-      'No. Enter the current pure-gold market price yourself from a reliable source. The currency selector only changes formatting — it does not convert between currencies.',
+      'No. Enter the current pure-gold market price yourself from a reliable source. The currency selector only changes formatting; it does not convert between currencies.',
   },
   {
     question: 'Does the total value include dealer fees?',
@@ -32,7 +32,7 @@ export const SCRAP_GOLD_FAQS: readonly FAQItem[] = [
   {
     question: 'Which ounce does this calculator use?',
     answer:
-      'Troy ounces (oz t), the standard for precious metals — about 31.1034768 grams — not avoirdupois ounces.',
+      'Troy ounces (oz t), the standard for precious metals (about 31.1034768 grams) not avoirdupois ounces.',
   },
 ];
 

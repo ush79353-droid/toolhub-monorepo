@@ -39,7 +39,7 @@ export function calculateLbsToKg(input: LbsToKgInput): LbsToKgResult {
 
 export function shareResultText(result: LbsToKgResult): string {
   return [
-    'lbs to kg Converter — Omega Calculators',
+    'lbs to kg Converter | Omega Calculators',
     '',
     `Pounds: ${formatMass(result.pounds)} lb`,
     `Kilograms: ${formatMass(result.kilograms)} kg`,

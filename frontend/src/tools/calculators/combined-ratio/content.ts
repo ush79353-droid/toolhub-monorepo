@@ -16,7 +16,7 @@ export const COMBINED_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good combined ratio for an insurance company?',
     answer:
-      'A combined ratio below 100% generally indicates a positive underwriting result under the chosen accounting definition. What counts as “good” still depends on line of business, competitive pricing, reinsurance, and reporting conventions — there is no universal target that fits every insurer.',
+      'A combined ratio below 100% generally indicates a positive underwriting result under the chosen accounting definition. What counts as “good” still depends on line of business, competitive pricing, reinsurance, and reporting conventions; there is no universal target that fits every insurer.',
   },
   {
     question: 'Can a combined ratio be above 100%?',
@@ -46,7 +46,7 @@ export const COMBINED_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'Why is the combined ratio important?',
     answer:
-      'It summarizes underwriting performance, supports peer comparison, highlights cost and pricing pressure, and helps spot adverse loss or expense trends — when definitions are comparable.',
+      'It summarizes underwriting performance, supports peer comparison, highlights cost and pricing pressure, and helps spot adverse loss or expense trends when definitions are comparable.',
   },
   {
     question: 'How can an insurance company improve its combined ratio?',

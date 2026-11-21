@@ -130,7 +130,7 @@ export function shareResultText(result: GramToLiterResult): string {
   const densityLabel =
     DENSITY_UNIT_OPTIONS.find((o) => o.value === result.densityUnit)?.label ?? result.densityUnit;
   return [
-    'Gram to Liter Conversion — Omega Calculators',
+    'Gram to Liter Conversion | Omega Calculators',
     '',
     `Substance: ${result.substanceName}`,
     `Density: ${formatMeasure(result.densityValue)} ${densityLabel}${result.densityApproximate ? ' (approximate)' : ''}`,

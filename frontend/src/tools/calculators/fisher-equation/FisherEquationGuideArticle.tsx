@@ -16,8 +16,8 @@ export function FisherEquationGuideArticle() {
         inflation, and the real interest rate in gross-return form. This
         calculator solves any one of the three with the exact identity
         (1+i)=(1+r)(1+πᵉ) and shows the approximate additive form side by side.
-        It focuses on mathematical transparency — derivation, rearrangement, and
-        exact-versus-approximate differences — distinct from the companion{' '}
+ It focuses on mathematical transparency; derivation, rearrangement, and
+ exact-versus-approximate differences; distinct from the companion{' '}
         <Link
           href="/tools/fisher-effect-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
@@ -78,7 +78,7 @@ export function FisherEquationGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Expanding the exact form gives i = r + πᵉ + r·πᵉ. Dropping the product
         term yields i≈r+πᵉ. The omitted term is small when both rates are low
-        and grows as rates rise — so the approximation must stay labeled
+ and grows as rates rise, so the approximation must stay labeled
         approximate.
       </p>
 
@@ -163,7 +163,7 @@ export function FisherEquationGuideArticle() {
         Can the Real Interest Rate Be Negative?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Yes — even with a positive nominal rate. A negative real rate means
+ Yes: even with a positive nominal rate. A negative real rate means
         expected inflation outpaces the stated return under the Fisher mapping.
         Implications for savers and borrowers depend on contracts, taxes, and
         risk, not the equation alone.
@@ -198,7 +198,7 @@ export function FisherEquationGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The International Fisher Effect links cross-country nominal interest
         differentials to expected exchange-rate changes under additional
-        assumptions. It is a separate theory — not a rename of the Fisher
+ assumptions. It is a separate theory; not a rename of the Fisher
         equation.
       </p>
 

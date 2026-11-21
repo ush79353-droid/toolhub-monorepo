@@ -106,7 +106,7 @@ export function EnterpriseValueCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Market capitalization: ${money(input.marketCap)}`,
         `Minority interest: ${money(input.minorityInterest)}`,
         `Preferred shares: ${money(input.preferredShares)}`,

@@ -41,7 +41,7 @@ export function calculateFeetToMiles(input: FeetToMilesInput): FeetToMilesResult
 
 export function shareResultText(result: FeetToMilesResult): string {
   return [
-    'Feet to Miles Converter — Omega Calculators',
+    'Feet to Miles Converter | Omega Calculators',
     '',
     `${formatLength(result.feet)} feet = ${formatLength(result.miles)} miles`,
     '',

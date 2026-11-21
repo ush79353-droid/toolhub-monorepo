@@ -14,7 +14,7 @@ export function CaliforniaTaxGuideArticle() {
         This tool estimates California personal income tax, federal ordinary income
         tax, employee payroll taxes (Social Security, Medicare, Additional Medicare,
         and California SDI), and an assessed-value property tax projection for
-        selected counties. It is an educational estimate—not a substitute for Form
+ selected counties. It is an educational estimate, not a substitute for Form
         1040, Form 540, EDD withholding, or a county tax bill.
       </p>
 

@@ -59,7 +59,7 @@ export function DividendPayoutRatioGuideArticle() {
         A ratio above 100% means dividends exceed earnings for the period. A negative
         ratio can appear when the numerator and denominator have opposite signs (for
         example negative net income with positive dividends). Those results are
-        mathematically valid diagnostics — they are not equated with a conventional
+ mathematically valid diagnostics; they are not equated with a conventional
         sustainable payout target.
       </p>
 

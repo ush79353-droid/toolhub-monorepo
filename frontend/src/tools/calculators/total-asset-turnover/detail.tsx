@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate total asset turnover — Revenue ÷ Average total assets — from beginning and ending asset balances and period revenue.',
+    'Calculate total asset turnover: Revenue ÷ Average total assets; from beginning and ending asset balances and period revenue.',
   asideAriaLabel: 'Interactive Total Asset Turnover Calculator',
   tocItems: TOTAL_ASSET_TURNOVER_TOC_ITEMS,
   GuideArticle: TotalAssetTurnoverGuideArticle,

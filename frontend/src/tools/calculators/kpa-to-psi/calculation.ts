@@ -49,7 +49,7 @@ export function calculateKpaToPsi(input: KpaToPsiInput): KpaToPsiResult {
 
 export function shareResultText(result: KpaToPsiResult): string {
   return [
-    'kPa to psi Conversion — Omega Calculators',
+    'kPa to psi Conversion | Omega Calculators',
     '',
     `${formatPressure(result.kPa)} kPa = ${formatPressure(result.psi)} psi`,
     '',

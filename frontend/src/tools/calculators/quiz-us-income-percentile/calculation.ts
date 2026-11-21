@@ -110,7 +110,7 @@ export function shareQuizText(
   result: QuizUsIncomePercentileResult,
 ): string {
   return [
-    `${title} — Omega Calculators`,
+    `${title} | Omega Calculators`,
     `Score: ${result.formattedScore} (${result.formattedPercent})`,
     `Answered: ${result.answeredCount}/${result.maxScore}`,
     result.resultMessage,

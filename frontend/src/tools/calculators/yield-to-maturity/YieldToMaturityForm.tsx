@@ -238,7 +238,7 @@ export function YieldToMaturityForm({
           Coupon Frequency
           <InfoTooltip
             label="Coupon Frequency"
-            text="How many coupon payments occur per year. Treated as a mathematical cash-flow convention — not every real bond supports every frequency."
+            text="How many coupon payments occur per year. Treated as a mathematical cash-flow convention; not every real bond supports every frequency."
           />
         </label>
         <select

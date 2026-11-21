@@ -60,7 +60,7 @@ export function calculateAtmToPascals(input: AtmToPascalsInput): AtmToPascalsRes
 
 export function shareResultText(result: AtmToPascalsResult): string {
   return [
-    'ATM to Pascals Conversion — Omega Calculators',
+    'ATM to Pascals Conversion | Omega Calculators',
     '',
     `Atmospheres: ${formatPressure(result.atm)} atm`,
     `Pascals: ${formatPressure(result.pascals)} Pa`,

@@ -28,7 +28,7 @@ const CURRENCY_CONVERSION_NOTE =
 function summaryText(result: AdrResult, note: string): string {
   const money = (value: number) => formatAdrMoney(value, result.currency);
   const lines = [
-    'ADR Calculator — Omega Calculators',
+    'ADR Calculator | Omega Calculators',
     `Average daily rate: ${money(result.adr)}`,
     `Room revenue: ${money(result.roomRevenue)}`,
     `Room-nights sold: ${result.roomsSold}`,

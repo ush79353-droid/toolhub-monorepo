@@ -40,7 +40,7 @@ export const PASCAL_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Pascal Conversion Calculator',
     paragraphs: [
       'Convert pascals (Pa) into bar, standard atmospheres (atm), pounds per square inch (psi), Torr, kilopascals (kPa), megapascals (MPa), millibars (mbar), and conventional millimeters of mercury (mmHg). Useful for physics, engineering, meteorology, hydraulics, pneumatics, industrial gauges, and laboratory work.',
-      'Enter any supported unit — the calculator converts through pascals and updates every field. Signed gauge or differential readings are allowed; absolute pressure cannot be physically negative, and this tool does not add or subtract atmospheric pressure automatically.',
+      'Enter any supported unit: the calculator converts through pascals and updates every field. Signed gauge or differential readings are allowed; absolute pressure cannot be physically negative, and this tool does not add or subtract atmospheric pressure automatically.',
     ],
   },
   {

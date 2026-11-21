@@ -132,7 +132,7 @@ export function calculateLandAreaResult(input: LandAreaInput): LandAreaResult {
 
 export function shareResultText(result: LandAreaResult): string {
   const lines = [
-    'Land Area Calculator — Omega Calculators',
+    'Land Area Calculator | Omega Calculators',
     '',
     `Width: ${formatMeasure(result.width)} ${result.widthUnit}`,
     `Length: ${formatMeasure(result.length)} ${result.lengthUnit}`,

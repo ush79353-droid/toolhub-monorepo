@@ -13,7 +13,7 @@ export function FutureSalaryGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Future salary estimates how today’s pay compounds if it grows (or shrinks)
         at a steady annual rate. Real future salary then strips out inflation so
-        you can compare purchasing power in today’s terms — not just the nominal
+ you can compare purchasing power in today’s terms; not just the nominal
         paycheck figure years from now.
       </p>
 

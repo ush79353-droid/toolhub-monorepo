@@ -15,7 +15,7 @@ export function TrumpsTaxesGuideArticle() {
         amount next to a Trump comparison figure that defaults to the widely reported{' '}
         <strong>$750</strong> federal income tax payment for <strong>2016 and 2017</strong>. The
         screenshot-style label “Your tax in 2019” is an example entry for the user side of the
-        comparison — it does not claim that $750 was Trump’s established 2019 federal income tax
+ comparison; it does not claim that $750 was Trump’s established 2019 federal income tax
         payment, and it does not compute anyone’s current liability.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
@@ -46,7 +46,7 @@ export function TrumpsTaxesGuideArticle() {
           positive tax difference.
         </li>
         <li>
-          Optionally open comparison unit prices and change assumptions — quantities update
+ Optionally open comparison unit prices and change assumptions; quantities update
           immediately.
         </li>
         <li>Use Share/Copy for a text summary, or Clear/Reload defaults to restore the example.</li>
@@ -89,7 +89,7 @@ export function TrumpsTaxesGuideArticle() {
           benefit amounts.
         </li>
         <li>
-          Where a real market price is unavailable, this tool does not invent a “verified” price —
+ Where a real market price is unavailable, this tool does not invent a “verified” price; 
           it keeps an explicit assumption you can change.
         </li>
       </ul>

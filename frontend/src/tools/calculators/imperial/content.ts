@@ -115,7 +115,7 @@ export const IMPERIAL_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       '1. Choose Length, Area, Volume, Mass / Weight, or Temperature.',
       '2. Expand the Imperial/US or Metric group you need.',
-      '3. Enter a value in any field — compatible units update instantly.',
+      '3. Enter a value in any field. compatible units update instantly.',
       '4. Edit another field to convert in reverse. Switching category clears values so dimensions never mix.',
     ],
   },
@@ -183,7 +183,7 @@ export const IMPERIAL_FAQS: readonly FAQItem[] = [
   {
     question: 'What Is the Imperial Measurement System?',
     answer:
-      'The British Imperial system is a historical measurement system used in the United Kingdom and related contexts. The US customary system is related but not identical — especially for liquid volume, where US and Imperial gallons differ.',
+      'The British Imperial system is a historical measurement system used in the United Kingdom and related contexts. The US customary system is related but not identical; especially for liquid volume, where US and Imperial gallons differ.',
   },
   {
     question: 'How Many Inches Are in One Foot?',
@@ -220,6 +220,6 @@ export const IMPERIAL_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I Convert Different Types of Measurements?',
     answer:
-      'Yes, when the units share the same physical dimension — feet to meters, pounds to kilograms, or Fahrenheit to Celsius. Feet cannot convert directly to kilograms.',
+      'Yes, when the units share the same physical dimension; feet to meters, pounds to kilograms, or Fahrenheit to Celsius. Feet cannot convert directly to kilograms.',
   },
 ];

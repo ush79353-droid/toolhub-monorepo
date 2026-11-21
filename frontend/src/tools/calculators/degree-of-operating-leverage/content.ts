@@ -85,7 +85,7 @@ export const DOL_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between high and low operating leverage?',
     answer:
-      'Higher DOL typically reflects greater fixed operating costs relative to variable costs and stronger EBIT sensitivity to sales; lower DOL reflects the opposite — context still matters.',
+      'Higher DOL typically reflects greater fixed operating costs relative to variable costs and stronger EBIT sensitivity to sales; lower DOL reflects the opposite; context still matters.',
   },
   {
     question: 'Can two businesses with the same revenue have different DOL values?',

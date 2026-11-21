@@ -92,7 +92,7 @@ export function MarginOfSafetyCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Current sales: ${getCurrencySymbol(input.currentSalesCurrency)}${input.currentSales}`,
         `Breakeven sales: ${getCurrencySymbol(input.breakevenSalesCurrency)}${input.breakevenSales}`,
         `Margin of safety: ${getCurrencySymbol(result.resultCurrency)}${result.formattedMarginOfSafety}`,

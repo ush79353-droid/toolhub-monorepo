@@ -19,7 +19,7 @@ function summaryText(draft: FeetAndInchesDraft, result: FeetAndInchesResult): st
     OPERATION_OPTIONS.find((option) => option.value === result.operation)?.label ??
     result.operation;
   const lines = [
-    'Feet and Inches Calculator — Omega Calculators',
+    'Feet and Inches Calculator | Omega Calculators',
     `Operation: ${opLabel}`,
     `First Measurement: ${draft.firstFeet || '0'} ft ${draft.firstInches || '0'} in`,
   ];

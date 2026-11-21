@@ -53,7 +53,7 @@ export const CENTS_TO_DOLLARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       '1. Enter an amount in the Cents field.',
       '2. The Dollars field updates automatically.',
-      '3. Or enter an amount in Dollars — cents update immediately.',
+      '3. Or enter an amount in Dollars. cents update immediately.',
       '4. Copy or share the result.',
       '5. Use Reload or Clear when you need a reset.',
       'Results update as you type; no form submission is required for the conversion.',

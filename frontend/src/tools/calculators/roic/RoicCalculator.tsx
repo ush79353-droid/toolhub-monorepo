@@ -104,7 +104,7 @@ export function RoicCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `EBIT: ${money(input.ebit)}`,
         `Tax Rate: ${input.taxRate}%`,

@@ -40,7 +40,7 @@ export const MONTHS_TO_YEARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Months to Years Calculator',
     paragraphs: [
       'Convert durations between months and years using the exact calendar convention of 12 months per year. Useful for age, work experience, subscriptions, project timelines, education periods, contracts, and loan terms.',
-      'This tool performs duration arithmetic — it does not convert calendar dates or use average days per month.',
+      'This tool performs duration arithmetic; it does not convert calendar dates or use average days per month.',
     ],
   },
   {
@@ -49,9 +49,9 @@ export const MONTHS_TO_YEARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `Exactly 1 year = ${MONTHS_PER_YEAR} months, so 1 month = 1/${MONTHS_PER_YEAR} year.`,
       `Years = months ÷ ${MONTHS_PER_YEAR}. Months = years × ${MONTHS_PER_YEAR}.`,
-      `Example 1 — 18 months: 18 ÷ ${MONTHS_PER_YEAR} = ${formatDuration(monthsToYears(18))} years (${mixedLabel(18)}).`,
-      `Example 2 — 48 months: 48 ÷ ${MONTHS_PER_YEAR} = ${formatDuration(monthsToYears(48))} years.`,
-      `Example 3 — 120 months: 120 ÷ ${MONTHS_PER_YEAR} = ${formatDuration(monthsToYears(120))} years.`,
+      `Example 1: 18 months: 18 ÷ ${MONTHS_PER_YEAR} = ${formatDuration(monthsToYears(18))} years (${mixedLabel(18)}).`,
+      `Example 2: 48 months: 48 ÷ ${MONTHS_PER_YEAR} = ${formatDuration(monthsToYears(48))} years.`,
+      `Example 3: 120 months: 120 ÷ ${MONTHS_PER_YEAR} = ${formatDuration(monthsToYears(120))} years.`,
     ],
     formula: `1 year = ${MONTHS_PER_YEAR} months\nyears = months ÷ ${MONTHS_PER_YEAR}\nmonths = years × ${MONTHS_PER_YEAR}`,
   },

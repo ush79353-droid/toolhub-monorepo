@@ -13,7 +13,7 @@ export function AlabamaTaxGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This tool estimates Alabama individual income tax and the four local
         occupational taxes shown in the form (Bessemer, Birmingham, Gadsden, Macon
-        County). It is an educational estimate—not a filing substitute—and does not
+ County). It is an educational estimate, not a filing substitute, and does not
         model FICA, federal tax, or Alabama credits.
       </p>
 

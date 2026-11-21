@@ -97,7 +97,7 @@ export function EarningsPerShareGrowthCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial EPS: ${money(input.initialEps)}/share`,
         `Final EPS: ${money(input.finalEps)}/share`,
         `Number of periods: ${input.numberOfPeriods}`,

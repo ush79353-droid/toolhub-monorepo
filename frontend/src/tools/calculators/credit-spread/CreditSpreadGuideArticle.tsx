@@ -18,7 +18,7 @@ export function CreditSpreadGuideArticle() {
         reverse-solve for corporate or government yields, and read a clear
         interpretation of positive, zero, or negative spreads. The tool is
         designed for students, analysts, and investors who need a transparent
-        CS = Y<sub>c</sub> − Y<sub>g</sub> comparison — not a substitute for
+ CS = Y<sub>c</sub> − Y<sub>g</sub> comparison; not a substitute for
         full credit research, curve models, or option-adjusted analytics.
       </p>
 
@@ -35,14 +35,14 @@ export function CreditSpreadGuideArticle() {
         about coupons, price, maturity, and creditworthiness. Government bonds
         typically serve as the reference benchmark because sovereign issuers in
         their own currency are often treated as the lowest-credit-risk curve in
-        that market — though that does not make every government yield
+ that market, though that does not make every government yield
         universally risk-free. Liquidity, taxes, and market conditions also
         influence quoted yields, so the observed spread compensates for more
         than pure default risk alone.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Prefer the same yield measure on both sides of the comparison — commonly
-        yield to maturity — and align maturity, currency, and quoting
+ Prefer the same yield measure on both sides of the comparison; commonly
+ yield to maturity, and align maturity, currency, and quoting
         conventions. Confusing coupon rate, current yield, YTM, and yield
         spread produces misleading differences even when the arithmetic looks
         tidy.
@@ -65,7 +65,7 @@ export function CreditSpreadGuideArticle() {
         corporate bond yield in percent, and Y<sub>g</sub> is the government
         bond yield in percent. The spread is an absolute difference in yield
         levels. A result of 3.50 percentage points is not a 3.50% relative
-        increase of one yield over the other — it is 3.50 points on the yield
+ increase of one yield over the other; it is 3.50 points on the yield
         scale, equal to 350 basis points.
       </p>
 
@@ -97,7 +97,7 @@ export function CreditSpreadGuideArticle() {
         Interpretation: the corporate bond yields 3.50 percentage points (350
         bps) more than the selected government benchmark. That gap may reflect
         compensation for credit risk, liquidity differences, and other
-        bond-specific factors — not default risk in isolation.
+ bond-specific factors; not default risk in isolation.
       </p>
 
       <h2
@@ -180,7 +180,7 @@ export function CreditSpreadGuideArticle() {
         Positive spreads (corporate above government) are the usual case when
         the comparison is fair. Zero spreads mean identical quoted yields under
         the selected comparison. Negative spreads mean the corporate yield is
-        below the government yield — possible with benchmark mismatch,
+ below the government yield; possible with benchmark mismatch,
         liquidity, structure, or demand effects, and not treated as calculator
         errors here.
       </p>
@@ -268,7 +268,7 @@ export function CreditSpreadGuideArticle() {
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
           <strong>G-spread:</strong> yield difference versus a comparable
-          government yield or interpolated government curve point — closest in
+ government yield or interpolated government curve point; closest in
           spirit to this calculator&apos;s simple CS = Y<sub>c</sub> − Y<sub>g</sub>.
         </li>
         <li>
@@ -304,7 +304,7 @@ export function CreditSpreadGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Investment-grade issuers typically trade at narrower average spreads
         than high-yield (speculative-grade) issuers because markets assign lower
-        expected credit risk — all else equal. Within each bucket, sector,
+ expected credit risk; all else equal. Within each bucket, sector,
         seniority, covenant quality, maturity, and liquidity still create wide
         dispersion. Avoid quoting unverified “current market” average spreads as
         universal facts; use live market data for trading decisions.
@@ -322,7 +322,7 @@ export function CreditSpreadGuideArticle() {
         inform financing discussions when spreads affect funding costs, and
         monitor economic stress when spreads widen broadly. Spreads are
         decision inputs alongside ratings, fundamentals, covenants, and
-        liquidity — not a complete credit scorecard by themselves.
+ liquidity; not a complete credit scorecard by themselves.
       </p>
 
       <h2

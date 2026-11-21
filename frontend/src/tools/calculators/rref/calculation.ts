@@ -213,7 +213,7 @@ export function computeRref(matrixInput: Matrix, augmented = false): Omit<
     ? analyzeAugmented(matrix, pivotColumns, variableCols)
     : {
         kind: 'not_augmented',
-        message: 'Augmented mode is off — solution analysis applies only to linear systems.',
+        message: 'Augmented mode is off; solution analysis applies only to linear systems.',
         freeVariables: [],
         uniqueSolution: null,
       };

@@ -73,7 +73,7 @@ export function interpretDio(
     return 'Days inventory outstanding could not be determined from the inputs.';
   }
   if (averageInventory === 0 && cogs > 0) {
-    return `DIO is ${formatDays(dio)} days because average inventory is zero with positive COGS. That may reflect a special business model, measurement timing, or a data issue — not automatically perfect inventory management.`;
+    return `DIO is ${formatDays(dio)} days because average inventory is zero with positive COGS. That may reflect a special business model, measurement timing, or a data issue; not automatically perfect inventory management.`;
   }
   if (dio < 30) {
     return `A DIO of about ${formatDays(dio)} days means inventory is relatively low versus COGS over this period. Faster turns can free cash, but very low DIO may also signal thin safety stock or stockout risk. Industry context matters.`;
@@ -81,7 +81,7 @@ export function interpretDio(
   if (dio <= 90) {
     return `A DIO of about ${formatDays(dio)} days is a mid-range holding period under these inputs. Compare with peers and prior periods rather than treating any single number as universally good or bad.`;
   }
-  return `A DIO of about ${formatDays(dio)} days means inventory remains on hand longer relative to COGS in this period. Causes can include seasonality, long production cycles, weak demand, or overstocking — not automatically poor performance without industry context.`;
+  return `A DIO of about ${formatDays(dio)} days means inventory remains on hand longer relative to COGS in this period. Causes can include seasonality, long production cycles, weak demand, or overstocking; not automatically poor performance without industry context.`;
 }
 
 export function formatDioMoney(

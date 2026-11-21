@@ -361,7 +361,7 @@ export function FutureSalaryForm({
                 })
               }
             >
-              Example 1 — Career growth
+ Example 1: Career growth
             </button>
           </li>
           <li>
@@ -377,7 +377,7 @@ export function FutureSalaryForm({
                 })
               }
             >
-              Example 2 — Inflation check
+ Example 2: Inflation check
             </button>
           </li>
         </ul>

@@ -33,7 +33,7 @@ export const BAR_TO_PSIG_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-convert-bar-to-psig',
     title: 'How to Convert Bar to PSIG',
     paragraphs: [
-      'A bar is a metric pressure unit equal to 100,000 pascals (100 kPa). PSI means pounds per square inch. PSIG is pounds per square inch gauge — pressure relative to the surrounding atmosphere, not to a perfect vacuum.',
+      'A bar is a metric pressure unit equal to 100,000 pascals (100 kPa). PSI means pounds per square inch. PSIG is pounds per square inch gauge; pressure relative to the surrounding atmosphere, not to a perfect vacuum.',
       `When the bar reading is absolute (bar(a)), subtract atmospheric pressure in bar, then multiply by ${PSI_PER_BAR}. When the bar reading is already gauge (bar(g)), multiply by ${PSI_PER_BAR} with no atmospheric offset.`,
       `At standard atmosphere (${STANDARD_ATMOSPHERIC_BAR} bar ≈ ${formatPressure(STANDARD_ATMOSPHERIC_PSI)} psi), absolute pressure equal to atmosphere reads 0 PSIG.`,
     ],

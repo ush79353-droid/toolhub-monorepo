@@ -108,7 +108,7 @@ export function BondPriceCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Face value: ${faceSymbol}${input.faceValue}`,
         `Annual coupon rate: ${input.annualCouponRatePercent}%`,
         `Coupon frequency: ${frequencyLabel}`,

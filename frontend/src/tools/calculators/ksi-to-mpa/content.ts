@@ -9,7 +9,7 @@ import {
 
 export const KSI_TO_MPA_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'how-conversion-works', label: 'How Does the KSI to MPa Conversion Work?' },
-  { id: 'worked-examples', label: 'Convert KSI to MPa — Worked Examples' },
+  { id: 'worked-examples', label: 'Convert KSI to MPa; Worked Examples' },
   { id: 'mpa-to-ksi', label: 'How to Convert MPa to KSI' },
   { id: 'conversion-table', label: 'KSI to MPa Conversion Table' },
   { id: 'where-used', label: 'Where Are KSI and MPa Used?' },
@@ -43,11 +43,11 @@ export const KSI_TO_MPA_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'worked-examples',
-    title: 'Convert KSI to MPa — Worked Examples',
+    title: 'Convert KSI to MPa; Worked Examples',
     paragraphs: [
-      `Example 1 — convert 5 ksi: 5 × ${formatPressure(MPA_PER_KSI)} ≈ ${formatPressure(ksiToMPa(5))}. Therefore 5 ksi ≈ ${formatPressure(ksiToMPa(5))} MPa.`,
-      `Example 2 — convert 10 ksi: 10 × ${formatPressure(MPA_PER_KSI)} ≈ ${formatPressure(ksiToMPa(10))}. Therefore 10 ksi ≈ ${formatPressure(ksiToMPa(10))} MPa.`,
-      `Example 3 — convert 150 ksi: 150 × ${formatPressure(MPA_PER_KSI)} ≈ ${formatPressure(ksiToMPa(150))}. Therefore 150 ksi ≈ ${formatPressure(ksiToMPa(150))} MPa.`,
+      `Example 1: convert 5 ksi: 5 × ${formatPressure(MPA_PER_KSI)} ≈ ${formatPressure(ksiToMPa(5))}. Therefore 5 ksi ≈ ${formatPressure(ksiToMPa(5))} MPa.`,
+      `Example 2: convert 10 ksi: 10 × ${formatPressure(MPA_PER_KSI)} ≈ ${formatPressure(ksiToMPa(10))}. Therefore 10 ksi ≈ ${formatPressure(ksiToMPa(10))} MPa.`,
+      `Example 3: convert 150 ksi: 150 × ${formatPressure(MPA_PER_KSI)} ≈ ${formatPressure(ksiToMPa(150))}. Therefore 150 ksi ≈ ${formatPressure(ksiToMPa(150))} MPa.`,
     ],
   },
   {
@@ -55,7 +55,7 @@ export const KSI_TO_MPA_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert MPa to KSI',
     paragraphs: [
       `Divide the megapascal value by ${formatPressure(MPA_PER_KSI)}.`,
-      `Example — convert 100 MPa: 100 ÷ ${formatPressure(MPA_PER_KSI)} ≈ ${formatPressure(mPaToKsi(100))}. Therefore 100 MPa ≈ ${formatPressure(mPaToKsi(100))} ksi.`,
+      `Example; convert 100 MPa: 100 ÷ ${formatPressure(MPA_PER_KSI)} ≈ ${formatPressure(mPaToKsi(100))}. Therefore 100 MPa ≈ ${formatPressure(mPaToKsi(100))} ksi.`,
     ],
     formula: `ksi = MPa ÷ ${formatPressure(MPA_PER_KSI)}`,
   },

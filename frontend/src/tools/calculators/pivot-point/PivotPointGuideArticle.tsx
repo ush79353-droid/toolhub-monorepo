@@ -25,11 +25,11 @@ export function PivotPointGuideArticle() {
         Types of Pivot Points
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <li>Classic (floor) pivots — equal weight on H, L, and C.</li>
-        <li>Woodie — weights the close more heavily in the pivot.</li>
-        <li>Camarilla — short-range levels from close ± fractions of 1.1× range.</li>
-        <li>Fibonacci — pivot plus Fibonacci fractions of the prior range.</li>
-        <li>DeMark — conditional X from open vs close, then P, R1, and S1.</li>
+        <li>Classic (floor) pivots; equal weight on H, L, and C.</li>
+        <li>Woodie; weights the close more heavily in the pivot.</li>
+        <li>Camarilla; short-range levels from close ± fractions of 1.1× range.</li>
+        <li>Fibonacci; pivot plus Fibonacci fractions of the prior range.</li>
+        <li>DeMark; conditional X from open vs close, then P, R1, and S1.</li>
       </ul>
 
       <h2

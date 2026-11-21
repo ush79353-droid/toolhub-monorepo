@@ -250,7 +250,7 @@ export function WorkingCapitalTurnoverRatioForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amounts share one currency label (denomination only — no FX). Use the
+ Amounts share one currency label (denomination only; no FX). Use the
         same reporting period for balances and revenue.
       </p>
       <p className="text-xs">
@@ -270,7 +270,7 @@ export function WorkingCapitalTurnoverRatioForm({
         <MoneyField
           id="wctr-oca"
           label="Opening current assets"
-          tip="Current assets at the beginning of the accounting period — cash, receivables, inventory, and other short-term assets."
+          tip="Current assets at the beginning of the accounting period; cash, receivables, inventory, and other short-term assets."
           value={input.openingCurrentAssets}
           error={errors.openingCurrentAssets}
           symbol={symbol}
@@ -341,7 +341,7 @@ export function WorkingCapitalTurnoverRatioForm({
         <MoneyField
           id="wctr-rev"
           label="Revenue"
-          tip="Net sales or comparable operating revenue for the same period — not net income or cash flow."
+          tip="Net sales or comparable operating revenue for the same period; not net income or cash flow."
           value={input.revenue}
           error={errors.revenue}
           symbol={symbol}
@@ -352,7 +352,7 @@ export function WorkingCapitalTurnoverRatioForm({
             Working capital turnover
             <InfoTooltip
               label="Working capital turnover"
-              text="Revenue ÷ average working capital. Shown with x — no currency symbol. Unavailable when average WC is zero."
+              text="Revenue ÷ average working capital. Shown with x; no currency symbol. Unavailable when average WC is zero."
             />
           </label>
           <FieldShell muted>

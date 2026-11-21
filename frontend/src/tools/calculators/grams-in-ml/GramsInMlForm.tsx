@@ -190,7 +190,7 @@ export function GramsInMlForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Grams measure mass; milliliters measure volume. Density is required — 1 g is not always 1 mL.
+ Grams measure mass; milliliters measure volume. Density is required; 1 g is not always 1 mL.
         Water defaults to ≈ 1000 kg/m³ (1 g/mL). Ingredient presets are approximate and vary with
         temperature, packing, and composition.
       </div>

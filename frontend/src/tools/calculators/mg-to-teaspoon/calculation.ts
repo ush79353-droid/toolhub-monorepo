@@ -109,7 +109,7 @@ export function shareResultText(result: MgToTeaspoonResult): string {
     DENSITY_UNIT_OPTIONS.find((o) => o.value === result.densityUnit)?.label ?? result.densityUnit;
   const tspLabel = TEASPOON_STANDARD_LABEL[result.teaspoonStandard];
   return [
-    'mg to Teaspoon Converter — Omega Calculators',
+    'mg to Teaspoon Converter | Omega Calculators',
     '',
     `Ingredient: ${result.substanceName}`,
     `Density: ${formatMeasure(result.densityValue)} ${densityLabel}${result.densityApproximate ? ' (approximate)' : ''}`,

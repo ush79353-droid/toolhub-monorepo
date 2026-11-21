@@ -93,7 +93,7 @@ export function InchToMeterForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact relationship: 1 inch = 0.0254 meters. Edit inches, meters, or feet and inches — the
+ Exact relationship: 1 inch = 0.0254 meters. Edit inches, meters, or feet and inches; the
         other fields update instantly. Signed values are supported for mathematical differences.
       </div>
 
@@ -152,7 +152,7 @@ export function InchToMeterForm({
           Other related units
           <InfoTooltip
             label="Other related units"
-            text="Enter feet and leftover inches. 5 ft 8 in means 68 inches total — not 5.8 decimal feet."
+            text="Enter feet and leftover inches. 5 ft 8 in means 68 inches total; not 5.8 decimal feet."
           />
         </p>
         <div className="grid grid-cols-2 gap-2">

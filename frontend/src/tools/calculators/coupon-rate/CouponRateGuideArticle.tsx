@@ -28,7 +28,7 @@ export function CouponRateGuideArticle() {
         The coupon rate is the annual contractual interest on a bond expressed
         as a percentage of face (par / nominal) value. Investors receive coupon
         cash flows on a stated schedule for traditional fixed-rate bonds. Face
-        value is the principal amount typically repaid at maturity — not
+ value is the principal amount typically repaid at maturity; not
         necessarily the market price. Coupon rates matter because they set the
         bond’s cash interest before considering market price, taxes, or default
         risk.
@@ -95,7 +95,7 @@ export function CouponRateGuideArticle() {
         <p>r = (50 / 1000) × 100 = 5%</p>
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        The bond pays 5% of face annually — $25 every six months, $50 per year —
+ The bond pays 5% of face annually ($25 every six months, $50 per year) 
         excluding taxes, fees, default, and reinvestment effects.
       </p>
 
@@ -139,7 +139,7 @@ export function CouponRateGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         YTM is the discount rate that equates the present value of remaining
         coupons and principal to the current market price (under stated
-        assumptions). It embeds price, maturity, coupons, and redemption — so it
+ assumptions). It embeds price, maturity, coupons, and redemption, so it
         is not the coupon rate. Discount bonds often show YTM above coupon rate;
         premium bonds often show YTM below coupon rate, all else equal.
       </p>
@@ -155,7 +155,7 @@ export function CouponRateGuideArticle() {
         fixed-rate bond, coupons generally stay fixed. When market yields rise,
         existing fixed-rate prices generally fall (and vice versa), all else
         equal. Sensitivity depends on maturity, duration, credit risk, and other
-        factors — the fixed coupon itself does not automatically reset.
+ factors: the fixed coupon itself does not automatically reset.
       </p>
 
       <h2

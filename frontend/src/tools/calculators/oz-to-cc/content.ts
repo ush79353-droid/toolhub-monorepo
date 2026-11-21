@@ -39,8 +39,8 @@ export const OZ_TO_CC_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'oz to cc Converter',
     paragraphs: [
-      'Convert fluid ounces (fl oz) to cubic centimeters (cc) and back. Choose US customary or UK imperial fluid ounces — the factors differ.',
-      'Useful for cooking and recipes, liquid packaging, laboratory volume checks, and customary ↔ metric volume work. This tool converts volume only — not mass ounces.',
+      'Convert fluid ounces (fl oz) to cubic centimeters (cc) and back. Choose US customary or UK imperial fluid ounces: the factors differ.',
+      'Useful for cooking and recipes, liquid packaging, laboratory volume checks, and customary ↔ metric volume work. This tool converts volume only; not mass ounces.',
     ],
   },
   {
@@ -56,8 +56,8 @@ export const OZ_TO_CC_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'cc-to-oz',
     title: 'How to Convert cc to oz',
     paragraphs: [
-      `US: US fl oz = cc ÷ ${CC_PER_US_FL_OZ}. Example — 100 cc ≈ ${formatVolume(ccToFluidOunces(100, 'us'))} US fl oz.`,
-      `UK: UK fl oz = cc ÷ ${CC_PER_UK_FL_OZ}. Example — 100 cc ≈ ${formatVolume(ccToFluidOunces(100, 'uk'))} UK fl oz.`,
+      `US: US fl oz = cc ÷ ${CC_PER_US_FL_OZ}. Example; 100 cc ≈ ${formatVolume(ccToFluidOunces(100, 'us'))} US fl oz.`,
+      `UK: UK fl oz = cc ÷ ${CC_PER_UK_FL_OZ}. Example; 100 cc ≈ ${formatVolume(ccToFluidOunces(100, 'uk'))} UK fl oz.`,
       'A US fluid ounce is slightly larger than a UK imperial fluid ounce.',
     ],
     formula: `US fl oz = cc ÷ ${CC_PER_US_FL_OZ}\nUK fl oz = cc ÷ ${CC_PER_UK_FL_OZ}`,
@@ -66,8 +66,8 @@ export const OZ_TO_CC_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'oz-to-cc',
     title: 'How to Convert oz to cc',
     paragraphs: [
-      `US: cc = US fl oz × ${CC_PER_US_FL_OZ}. Example — 5 US fl oz = ${formatVolume(fluidOuncesToCc(5, 'us'))} cc.`,
-      `UK: cc = UK fl oz × ${CC_PER_UK_FL_OZ}. Example — 5 UK fl oz = ${formatVolume(fluidOuncesToCc(5, 'uk'))} cc.`,
+      `US: cc = US fl oz × ${CC_PER_US_FL_OZ}. Example; 5 US fl oz = ${formatVolume(fluidOuncesToCc(5, 'us'))} cc.`,
+      `UK: cc = UK fl oz × ${CC_PER_UK_FL_OZ}. Example; 5 UK fl oz = ${formatVolume(fluidOuncesToCc(5, 'uk'))} cc.`,
     ],
     formula: `cc = US fl oz × ${CC_PER_US_FL_OZ}\ncc = UK fl oz × ${CC_PER_UK_FL_OZ}`,
   },

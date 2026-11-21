@@ -56,10 +56,10 @@ export function CaliforniaStimulusCheckIiGuideArticle() {
               Non–married-filing-separately amounts under §8150.2(c) / FTB guidance were:
             </p>
             <ul className="list-disc space-y-2.5 pl-5 marker:text-muted-foreground">
-              <li>$500 — SSN, qualified for GSS I, claimed one or more dependent exemption credits.</li>
-              <li>$600 — did not qualify for GSS I, did not claim a dependent exemption credit.</li>
-              <li>$1,000 — ITIN, qualified for GSS I, claimed one or more dependent exemption credits.</li>
-              <li>$1,100 — did not qualify for GSS I, claimed one or more dependent exemption credits.</li>
+              <li>$500; SSN, qualified for GSS I, claimed one or more dependent exemption credits.</li>
+              <li>$600; did not qualify for GSS I, did not claim a dependent exemption credit.</li>
+              <li>$1,000; ITIN, qualified for GSS I, claimed one or more dependent exemption credits.</li>
+              <li>$1,100; did not qualify for GSS I, claimed one or more dependent exemption credits.</li>
             </ul>
             <p>
               FTB explicitly noted that people who qualified for GSS I and did not claim a dependent

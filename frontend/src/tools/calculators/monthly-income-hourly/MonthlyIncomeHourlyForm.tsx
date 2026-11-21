@@ -149,7 +149,7 @@ export function MonthlyIncomeHourlyForm({
             <p className="mt-1 text-xs text-rose-600">{errors.hoursPerWeek}</p>
           ) : (
             <p className="mt-1 text-xs text-muted-foreground">
-              Uses 52 weeks/year and 12 months — not four weeks per month.
+ Uses 52 weeks/year and 12 months; not four weeks per month.
             </p>
           )}
         </div>

@@ -28,7 +28,7 @@ export function DioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         DIO describes an average holding period for the inventory stock as a
         whole. It is not a barcode-level tracker for each SKU. Interpretation
-        depends on industry, product mix, demand, and operating conditions —
+ depends on industry, product mix, demand, and operating conditions; 
         there is no universal ideal number of days.
       </p>
 
@@ -111,7 +111,7 @@ export function DioGuideArticle() {
         What Is a Good DIO?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Appropriate DIO varies widely — grocery retailers often turn faster than
+ Appropriate DIO varies widely; grocery retailers often turn faster than
         heavy equipment or pharmaceutical manufacturers. Compare with relevant
         peers and prior periods rather than inventing universal good/bad
         thresholds.
@@ -195,7 +195,7 @@ export function DioGuideArticle() {
         write-downs affect reported balances. DIO does not measure profitability
         or identify which SKUs are slow-moving. Short periods can be volatile.
         Cross-company comparisons require consistent accounting policies. This
-        tool provides educational estimates only — not accounting, audit, or
+ tool provides educational estimates only; not accounting, audit, or
         investment advice.
       </p>
 

@@ -86,7 +86,7 @@ export const PRESSURE_CONVERSION_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Pressure Converter',
     paragraphs: [
-      'Enter a pressure in any of the four primary fields (bar, psi, atmospheres, or pascals) and optionally change that field’s unit—the physical pressure stays the same when you switch units. Expand More conversion options for kPa, Torr, mmHg, inHg, and related units. Copy or reset when finished.',
+      'Enter a pressure in any of the four primary fields (bar, psi, atmospheres, or pascals) and optionally change that field’s unit, the physical pressure stays the same when you switch units. Expand More conversion options for kPa, Torr, mmHg, inHg, and related units. Copy or reset when finished.',
     ],
   },
   {

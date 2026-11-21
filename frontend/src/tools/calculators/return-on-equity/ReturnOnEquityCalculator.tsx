@@ -109,7 +109,7 @@ export function ReturnOnEquityCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Net Profit: ${money(input.netProfit)}`,
         input.useAverageEquity

@@ -41,7 +41,7 @@ export function StimulusCheck40kGuideArticle() {
                 <strong>$0</strong> when AGI is above it.
               </li>
               <li>
-                Does not invent a gradual phase-out for the $40k idea — contemporaneous commentary
+ Does not invent a gradual phase-out for the $40k idea; contemporaneous commentary
                 noted that McConnell had not specified replacement phase-out rules.
               </li>
             </ul>
@@ -70,7 +70,7 @@ export function StimulusCheck40kGuideArticle() {
                 rel="noopener noreferrer"
                 className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
               >
-                H.R. 6800 — HEROES Act
+ H.R. 6800; HEROES Act
               </a>
               .
             </p>
@@ -85,7 +85,7 @@ export function StimulusCheck40kGuideArticle() {
             <p>
               This is not tax advice, an IRS tool, or a claim portal. It does not model later enacted
               rounds (for example the December 2020 $600 payments or the American Rescue Plan $1,400
-              payments). Fixed USD denomination only — no foreign-exchange conversion.
+ payments). Fixed USD denomination only; no foreign-exchange conversion.
             </p>
           </div>
         </article>

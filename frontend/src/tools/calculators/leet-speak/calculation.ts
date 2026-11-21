@@ -87,7 +87,7 @@ export function shareResultText(
       ? `${output.slice(0, SHARE_PREVIEW_MAX)}\n… [truncated for share]`
       : output;
   return [
-    'Leet-Speak Translator — Omega Calculators',
+    'Leet-Speak Translator | Omega Calculators',
     '',
     `Direction: ${direction === 'text-to-leet' ? 'text → leet' : 'leet → text'}`,
     `Profile: ${profile}`,

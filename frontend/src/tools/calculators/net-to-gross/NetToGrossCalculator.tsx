@@ -77,7 +77,7 @@ export function NetToGrossCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Net: ${getCurrencySymbol(result.netCurrency)}${result.formattedNetAmount}`,
         `Tax from net: ${result.formattedRateFromNet}%`,
         `Tax from gross: ${result.formattedRateFromGross}%`,

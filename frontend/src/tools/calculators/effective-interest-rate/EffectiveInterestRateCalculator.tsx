@@ -55,7 +55,7 @@ export function EffectiveInterestRateCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Annual interest rate: ${input.annualInterestRate}%`,
         `Compounding frequency: ${input.compounding}`,
         describeResult(result),

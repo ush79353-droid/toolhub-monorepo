@@ -98,7 +98,7 @@ export function DiscretionaryIncomeForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Amounts are USD. Student-loan discretionary income uses HHS poverty
-        guidelines and a named calculation standard — it is not the same as
+ guidelines and a named calculation standard; it is not the same as
         budgeting discretionary income or disposable income after taxes.
       </p>
 
@@ -213,7 +213,7 @@ export function DiscretionaryIncomeForm({
                 Annual adjusted gross income (AGI)
                 <InfoTooltip
                   label="AGI"
-                  text="Adjusted gross income is generally your total income minus certain adjustments on your federal income tax return — not take-home pay."
+                  text="Adjusted gross income is generally your total income minus certain adjustments on your federal income tax return; not take-home pay."
                 />
               </label>
               <FieldShell error={errors.annualAgi}>

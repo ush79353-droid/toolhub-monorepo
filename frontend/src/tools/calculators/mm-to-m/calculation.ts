@@ -58,7 +58,7 @@ export function calculateMmToM(input: MmToMInput): MmToMResult {
 
 export function shareResultText(result: MmToMResult): string {
   return [
-    'mm to m Conversion — Omega Calculators',
+    'mm to m Conversion | Omega Calculators',
     '',
     `${formatLength(result.mm)} mm = ${formatLength(result.m)} m`,
     '',

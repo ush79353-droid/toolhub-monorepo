@@ -187,7 +187,7 @@ export function RateOfPayCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Hours/week: ${input.hoursPerWeek}`,
         `Authoritative: ${result.sourceField}`,
         `Hourly: ${getCurrencySymbol(result.hourlyCurrency)}${result.formattedHourly} ${result.hourlyCurrency}`,

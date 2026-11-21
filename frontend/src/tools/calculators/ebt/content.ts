@@ -101,7 +101,7 @@ export const EBT_FAQS: readonly FAQItem[] = [
   {
     question: 'What does negative EBT indicate?',
     answer:
-      'A pretax loss for the period under the entered assumptions — not automatically insolvency.',
+      'A pretax loss for the period under the entered assumptions; not automatically insolvency.',
   },
   {
     question: 'How is other income treated when calculating EBT?',

@@ -49,7 +49,7 @@ export const S2H_GUIDE_SECTIONS: readonly GuideSection[] = [
       '3. The equivalent number of hours appears automatically.',
       '4. The Hours, Minutes, and Seconds breakdown is also calculated.',
       '5. Enter hours or edit the combined Time fields to calculate in reverse.',
-      `Example — 7,260 seconds: 7,260 ÷ 3,600 ≈ ${formatDuration(secondsToHours(7_260))} hours. Breakdown: ${secondsToTimeParts(7_260).label} (7,260 = 2×3,600 + 1×60).`,
+      `Example; 7,260 seconds: 7,260 ÷ 3,600 ≈ ${formatDuration(secondsToHours(7_260))} hours. Breakdown: ${secondsToTimeParts(7_260).label} (7,260 = 2×3,600 + 1×60).`,
     ],
     formula:
       '7260 ÷ 3600 = 2.016666… hours\n7260 = 2(3600) + 1(60)\n7260 seconds = 2 hours and 1 minute',
@@ -60,7 +60,7 @@ export const S2H_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'An hour has 60 minutes and each minute contains 60 seconds, so 60 × 60 = 3,600.',
       'Therefore hours = seconds ÷ 3,600.',
-      `Example — 1,920 seconds: 1,920 ÷ 3,600 ≈ ${formatDuration(secondsToHours(1_920))} hours, which is 32 minutes.`,
+      `Example; 1,920 seconds: 1,920 ÷ 3,600 ≈ ${formatDuration(secondsToHours(1_920))} hours, which is 32 minutes.`,
     ],
     formula: 'Hours = Seconds / 3600\n1920 ÷ 3600 ≈ 0.533333… hours (= 32 minutes)',
   },

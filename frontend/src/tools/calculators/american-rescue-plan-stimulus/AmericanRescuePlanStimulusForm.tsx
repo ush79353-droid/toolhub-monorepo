@@ -59,12 +59,12 @@ export function AmericanRescuePlanStimulusForm({
     >
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-[13px] leading-relaxed text-accent sm:text-sm">
         <p className="font-semibold text-amber-950">
-          Historical estimate only — not a current benefit
+ Historical estimate only; not a current benefit
         </p>
         <p className="mt-1.5 text-foreground/85">
           This calculator estimates the payment you are likely to have received according to the
           American Rescue Plan, which was passed into law on March 11, 2021. Those third Economic
-          Impact Payments (EIP3) were issued in 2021. Estimates here are historical only — you
+ Impact Payments (EIP3) were issued in 2021. Estimates here are historical only; you
           cannot claim a new EIP3 payment today.
         </p>
         <p className="mt-2 text-foreground/85">
@@ -85,7 +85,7 @@ export function AmericanRescuePlanStimulusForm({
             <span>Have you filed 2019 or 2020 taxes?</span>
             <InfoTooltip
               label="Have you filed 2019 or 2020 taxes?"
-              text="Most EIP3 advances used 2020 return data when available, otherwise 2019. SSI, SSDI, RRB, and certain VA beneficiaries could receive automatic payments without filing — those paths are not modeled when you select No."
+              text="Most EIP3 advances used 2020 return data when available, otherwise 2019. SSI, SSDI, RRB, and certain VA beneficiaries could receive automatic payments without filing; those paths are not modeled when you select No."
             />
           </div>
           <div
@@ -225,12 +225,12 @@ export function AmericanRescuePlanStimulusForm({
           {result?.ineligibleNoFiling ? (
             <p className="mt-1.5 text-xs text-amber-800">
               This estimate shows $0 because “No” was selected for 2019/2020 filing. Historically,
-              SSI, SSDI, RRB, and certain VA beneficiaries could still receive EIP3 automatically —
+ SSI, SSDI, RRB, and certain VA beneficiaries could still receive EIP3 automatically; 
               those paths are not modeled here.
             </p>
           ) : result ? (
             <p className="mt-1.5 text-xs text-muted-foreground">
-              Historical EIP3 estimate only — not a currently available government payment.
+ Historical EIP3 estimate only; not a currently available government payment.
             </p>
           ) : null}
         </div>

@@ -30,14 +30,14 @@ export function WeeklyPayGuideArticle() {
       </h2>
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>Enter an hourly wage to project daily, weekly, monthly, and annual gross pay from your schedule.</li>
-        <li>Or enter daily pay — the tool derives hourly wage and the other periods from hours per day and days per week.</li>
-        <li>Or enter monthly pay — weekly pay uses Monthly × 12 ÷ paid weeks per year (not ÷4).</li>
-        <li>Or enter annual salary — weekly pay = annual ÷ paid weeks per year.</li>
+        <li>Or enter daily pay: the tool derives hourly wage and the other periods from hours per day and days per week.</li>
+        <li>Or enter monthly pay; weekly pay uses Monthly × 12 ÷ paid weeks per year (not ÷4).</li>
+        <li>Or enter annual salary; weekly pay = annual ÷ paid weeks per year.</li>
         <li>Open Hours and days you work to set hours/day, days/week, hours/week, paid weeks, and unpaid weeks off.</li>
         <li>Results update as you type. The last edited income field is the source of truth; other fields sync from it.</li>
       </ol>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Figures are gross pay before taxes and deductions. Currency selection changes the symbol and grouping only —
+ Figures are gross pay before taxes and deductions. Currency selection changes the symbol and grouping only; 
         it does not convert amounts between currencies.
       </p>
 
@@ -70,7 +70,7 @@ export function WeeklyPayGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This uses your straight-time rate and scheduled hours. Overtime at premium rates needs a separate overtime
-        calculation — this tool does not apply time-and-a-half or double time automatically.
+ calculation; this tool does not apply time-and-a-half or double time automatically.
       </p>
 
       <h2
@@ -145,7 +145,7 @@ export function WeeklyPayGuideArticle() {
         <li>Payroll frequency (weekly, biweekly, semimonthly, monthly)</li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Employers and countries do not share one payroll policy — treat results as schedule-based estimates.
+ Employers and countries do not share one payroll policy; treat results as schedule-based estimates.
       </p>
 
       <h2
@@ -165,7 +165,7 @@ export function WeeklyPayGuideArticle() {
             className="text-primary underline-offset-2 hover:underline"
             href="/tools/hourly-to-salary-wage-calculator"
           >
-            Hourly to Salary — Wage Calculator
+ Hourly to Salary; Wage Calculator
           </Link>
         </li>
         <li>

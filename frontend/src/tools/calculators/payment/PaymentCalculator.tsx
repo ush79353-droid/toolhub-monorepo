@@ -71,7 +71,7 @@ export function PaymentCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Mode: ${input.mode === 'fixed-term' ? 'Fixed Term' : 'Fixed Payments'}`,
         `Loan amount: $${input.loanAmount}`,
         input.mode === 'fixed-term'

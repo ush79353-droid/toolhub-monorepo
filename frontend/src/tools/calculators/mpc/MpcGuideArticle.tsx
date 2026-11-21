@@ -17,7 +17,7 @@ export function MpcGuideArticle() {
         MPC from ΔC and ΔYd (or accepts MPC directly), then builds the linear
         consumption function C = a + MPC × Yd, plots the consumption line, and
         reports MPS, a simplified Keynesian spending multiplier, and break-even
-        disposable income. Use it to learn macro relationships — not as a
+ disposable income. Use it to learn macro relationships; not as a
         forecast of any household’s next paycheck.
       </p>
 
@@ -33,7 +33,7 @@ export function MpcGuideArticle() {
         extra dollar of disposable income, how many cents show up as extra
         consumption over the measured interval? If spending rises by $600 when
         disposable income rises by $1,000, MPC = 0.6. Households may save the
-        rest, repay debt, or hold cash — the simple model summarizes the
+ rest, repay debt, or hold cash: the simple model summarizes the
         residual as saving via MPS = 1 − MPC.
       </p>
 
@@ -57,7 +57,7 @@ export function MpcGuideArticle() {
         id="mpc-formula"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        Marginal Propensity to Consume Formula — How to Calculate MPC
+ Marginal Propensity to Consume Formula; How to Calculate MPC
       </h2>
       <div className="my-4 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs text-accent sm:text-sm">
         MPC = ΔC / ΔYd
@@ -99,7 +99,7 @@ export function MpcGuideArticle() {
         id="mpc-vs-apc"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        MPC vs. APC — What&apos;s the Difference?
+ MPC vs. APC; What&apos;s the Difference?
       </h2>
       <div className="my-4 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs text-accent sm:text-sm">
         APC = C / Yd
@@ -119,7 +119,7 @@ export function MpcGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Marginal propensity to save uses MPS = 1 − MPC when income changes are
         partitioned only into consumption and saving. Real households also repay
-        debt, buy assets, or face timing mismatches — treat MPS as a simplified
+ debt, buy assets, or face timing mismatches; treat MPS as a simplified
         residual.
       </p>
 
@@ -176,7 +176,7 @@ export function MpcGuideArticle() {
         consumption amplifies autonomous spending by k. Saving is the leakage
         that caps the geometric series. Real multipliers are reduced by taxes,
         imports, capacity constraints, and monetary offsets. At MPC = 1 the
-        simplified k is undefined — this tool never shows Infinity.
+ simplified k is undefined; this tool never shows Infinity.
       </p>
 
       <h2
@@ -214,7 +214,7 @@ export function MpcGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Forecasters use consumption–income links to gauge demand, growth, fiscal
-        impulse, and recession risk. Estimated MPCs inform scenario analysis —
+ impulse, and recession risk. Estimated MPCs inform scenario analysis; 
         always with uncertainty bands and competing models.
       </p>
 

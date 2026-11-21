@@ -114,7 +114,7 @@ export function KmToFeetForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact: 1 ft = {METERS_PER_FOOT} m, so 1 km ≈ {FEET_PER_KM} ft. Edit kilometers or feet —
+ Exact: 1 ft = {METERS_PER_FOOT} m, so 1 km ≈ {FEET_PER_KM} ft. Edit kilometers or feet; 
         the other updates instantly. Expand Other length units for more. Distances cannot be
         negative.
       </div>

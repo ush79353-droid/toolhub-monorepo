@@ -199,7 +199,7 @@ export function PriceToCashFlowRatioCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         input.cashFlow.trim()
           ? `Cash flow: ${getCurrencySymbol(input.cashFlowCurrency)}${input.cashFlow} ${input.cashFlowCurrency}`
           : null,

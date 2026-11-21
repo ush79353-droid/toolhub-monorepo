@@ -150,7 +150,7 @@ export function SipCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Monthly SIP: ${getCurrencySymbol(input.monthlyAmountCurrency)}${input.monthlyAmount} ${input.monthlyAmountCurrency}`,
         `Years: ${input.years} · Return: ${input.annualReturnPercent}%`,
         `Total investment: ${result.formattedTotalInvestment} ${result.totalInvestmentCurrency}`,

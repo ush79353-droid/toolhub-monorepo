@@ -8,7 +8,7 @@ export function LeaseMileageGuideArticle() {
         <p>
           The Lease Mileage Calculator projects whether you will exceed a lease mileage
           allowance by lease end, estimates the excess-distance charge, and shows how much to
-          save each remaining month. It uses a transparent constant-driving-rate assumption —
+ save each remaining month. It uses a transparent constant-driving-rate assumption; 
           not a dealer contract, insurance product, or tax estimate.
         </p>
         <p>

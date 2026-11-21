@@ -66,7 +66,7 @@ export function validateCarAffordabilityInput(input: CarAffordabilityInput): {
 
   if (!input.loanTermEnabled) {
     errors.loanTermEnabled =
-      'Select Yes for loan term and enter a duration — a loan term is required for this affordability calculation.';
+      'Select Yes for loan term and enter a duration; a loan term is required for this affordability calculation.';
   }
 
   const years = parseNonNegInt(input.loanTermYears);

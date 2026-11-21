@@ -16,7 +16,7 @@ export function PriceElasticityOfSupplyGuideArticle() {
         responds when price changes. This calculator compares two observations
         with either the standard percentage-change method or the midpoint (arc)
         method, reports PES as a dimensionless coefficient, and classifies the
-        response — including negative or undefined cases when data warrant them.
+ response, including negative or undefined cases when data warrant them.
       </p>
 
       <h2
@@ -56,7 +56,7 @@ export function PriceElasticityOfSupplyGuideArticle() {
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>P₁ = 100, P₂ = 120 → %ΔP = 20%.</li>
         <li>Q₁ = 500, Q₂ = 600 → %ΔQs = 20%.</li>
-        <li>PES = 20% / 20% = 1.00 — unit elastic supply.</li>
+        <li>PES = 20% / 20% = 1.00; unit elastic supply.</li>
       </ol>
 
       <h2
@@ -86,7 +86,7 @@ export function PriceElasticityOfSupplyGuideArticle() {
         <li>PES = 1: unit elastic.</li>
         <li>PES &gt; 1: relatively elastic.</li>
         <li>
-          Perfectly elastic: idealized limit — not created by identical prices
+ Perfectly elastic: idealized limit; not created by identical prices
           (that case is undefined).
         </li>
         <li>Negative PES: opposite moves of price and quantity supplied.</li>
@@ -112,7 +112,7 @@ export function PriceElasticityOfSupplyGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Short-run responses are often constrained by fixed capital. Over longer
-        horizons, firms can expand capacity and new entrants may appear —
+ horizons, firms can expand capacity and new entrants may appear; 
         elasticity frequently rises, but not in every industry.
       </p>
 

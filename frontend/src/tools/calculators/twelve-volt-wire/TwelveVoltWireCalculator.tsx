@@ -33,7 +33,7 @@ export function TwelveVoltWireCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Voltage-drop minimum ${result.minimumAreaMm2.toFixed(3)} mm²`,
         `Permitted drop ${result.maxDropVolts.toFixed(3)} V`,
         `Loop resistance ${result.minimumLoopResistanceOhm.toFixed(4)} Ω`,

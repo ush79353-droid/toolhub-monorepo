@@ -163,7 +163,7 @@ export function MortgageRefinanceCalculator({
         : '';
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Original: ${getCurrencySymbol(input.originalAmountCurrency)}${input.originalAmount} ${input.originalAmountCurrency}`,
         `Current rate: ${input.currentInterestRatePercent}% · new rate: ${input.newInterestRatePercent}%`,
         `Remaining principal: ${symbol}${result.formattedCurrentPrincipal}`,

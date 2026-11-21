@@ -85,14 +85,14 @@ export function ActualCashValueCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Purchase price: ${symbol}${result.formattedPurchasePrice}`,
         `Actual cash value: ${symbol}${result.formattedActualCashValue}`,
         `Accumulated depreciation: ${symbol}${result.formattedAccumulatedDepreciation}`,
         `Depreciation: ${result.formattedDepreciationPercentage}%`,
         `Remaining life: ${result.formattedRemainingUsefulLife}`,
         'Formula: ACV = P × max(0, 1 − age / expected life)',
-        'Simplified estimate — not an insurance settlement.',
+        'Simplified estimate: not an insurance settlement.',
       ].join('\n')
     : '';
 

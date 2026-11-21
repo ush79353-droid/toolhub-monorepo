@@ -80,7 +80,7 @@ export function calculateOunceToKg(input: OunceToKgInput): OunceToKgResult {
 
 export function shareResultText(result: OunceToKgResult): string {
   return [
-    'Ounce to kg Converter — Omega Calculators',
+    'Ounce to kg Converter | Omega Calculators',
     '',
     `${formatMass(result.oz)} oz = ${formatMass(result.kg)} kg = ${formatMass(result.lb)} lb`,
     '',

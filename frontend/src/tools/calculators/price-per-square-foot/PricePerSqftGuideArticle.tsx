@@ -30,7 +30,7 @@ export function PricePerSqftGuideArticle() {
         How Much Is a Square Foot?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        A square foot is an area equal to a square one foot on each side — not a
+ A square foot is an area equal to a square one foot on each side; not a
         linear foot. Square meters are the metric counterpart. Use one consistent
         measurement definition when comparing listings.
       </p>
@@ -47,7 +47,7 @@ export function PricePerSqftGuideArticle() {
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>Choose whether you are calculating purchase price or rent.</li>
         <li>Enter price (or rent) and area, or use a reverse mode.</li>
-        <li>Select ft² or m² — conversions preserve total value.</li>
+        <li>Select ft² or m²; conversions preserve total value.</li>
         <li>Review the unit price result.</li>
         <li>Optionally enable a second property and compare unit prices.</li>
       </ol>
@@ -76,7 +76,7 @@ export function PricePerSqftGuideArticle() {
         <li>Property C: $400,000 / 2,400 ft² ≈ $166.67/ft²</li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Property C has the highest total price but the lowest unit-area price —
+ Property C has the highest total price but the lowest unit-area price; 
         illustrating why total price alone can mislead.
       </p>
 
@@ -89,7 +89,7 @@ export function PricePerSqftGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The cheapest listing by total price is not always the cheapest per square
         foot. Unit pricing scales for size so you can compare differently sized
-        assets more fairly — still subject to location and quality differences.
+ assets more fairly; still subject to location and quality differences.
       </p>
 
       <h2

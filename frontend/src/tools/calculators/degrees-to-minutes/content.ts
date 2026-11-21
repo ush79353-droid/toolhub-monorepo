@@ -32,7 +32,7 @@ export const DEGREES_TO_MINUTES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Degrees to Minutes of Arc?',
     paragraphs: [
       'An arcminute (symbol ′) is an angular unit equal to one-sixtieth of a degree. It is used in geometry, astronomy, navigation, geographic coordinates, surveying, mapping, and engineering whenever a finer subdivision of a degree is helpful.',
-      'This converter works with angular measurements only — not clock time. One time-minute is sixty seconds of duration; one arcminute is 1/60 of one angular degree.',
+      'This converter works with angular measurements only; not clock time. One time-minute is sixty seconds of duration; one arcminute is 1/60 of one angular degree.',
       `To convert degrees to arcminutes, multiply by 60. Example: 180 × 60 = ${formatAngleValue(degreesToArcminutes(180))}, so 180° = 10,800′. Fractional example: 2.5 × 60 = ${formatAngleValue(degreesToArcminutes(2.5))}, so 2.5° = 150′.`,
     ],
     formula: 'M = D × 60   ·   D = M ÷ 60',

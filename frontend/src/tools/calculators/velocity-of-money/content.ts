@@ -33,7 +33,7 @@ export const VELOCITY_OF_MONEY_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a velocity of money of 3 mean?',
     answer:
-      'It means the nominal flow during the period was three times the money stock used in the calculation — for example, $1.5 million of transactions against a $500,000 money stock implies V = 3 turnovers per that period.',
+      'It means the nominal flow during the period was three times the money stock used in the calculation, for example, $1.5 million of transactions against a $500,000 money stock implies V = 3 turnovers per that period.',
   },
   {
     question: 'What is the formula for velocity of money?',
@@ -58,7 +58,7 @@ export const VELOCITY_OF_MONEY_FAQS: readonly FAQItem[] = [
   {
     question: 'What causes the velocity of money to increase?',
     answer:
-      'Measured V rises when nominal flows grow faster than the selected money stock, or when the money stock falls relative to flows. Causes can include stronger spending, lower money demand, or definitional changes — context matters.',
+      'Measured V rises when nominal flows grow faster than the selected money stock, or when the money stock falls relative to flows. Causes can include stronger spending, lower money demand, or definitional changes; context matters.',
   },
   {
     question: 'Why does the velocity of money decrease?',
@@ -103,11 +103,11 @@ export const VELOCITY_OF_MONEY_FAQS: readonly FAQItem[] = [
   {
     question: 'Can the velocity of money be zero?',
     answer:
-      'Yes, if the nominal flow is zero while the money stock is positive. If the money stock is zero, velocity is undefined — division by zero is not allowed.',
+      'Yes, if the nominal flow is zero while the money stock is positive. If the money stock is zero, velocity is undefined; division by zero is not allowed.',
   },
   {
     question: 'Why is velocity important in macroeconomics?',
     answer:
-      'It summarizes how intensively a money stock supports nominal spending. Analysts use it alongside money growth, inflation, interest rates, and GDP to interpret monetary conditions — with careful attention to measurement.',
+      'It summarizes how intensively a money stock supports nominal spending. Analysts use it alongside money growth, inflation, interest rates, and GDP to interpret monetary conditions, with careful attention to measurement.',
   },
 ];

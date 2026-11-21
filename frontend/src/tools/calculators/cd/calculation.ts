@@ -297,7 +297,7 @@ export function shareCdText(result: CdResult): string {
     CD_COMPOUNDING_OPTIONS.find((o) => o.value === result.compounding)?.label ??
     result.compounding;
   return [
-    'CD Calculator — Omega Calculators',
+    'CD Calculator | Omega Calculators',
     `Initial deposit: ${formatMoney(result.initialDeposit, result.currency)} ${result.currency}`,
     `Interest rate: ${formatPercent(result.interestRatePercent)}% (${result.rateConvention === 'apy' ? 'APY' : 'nominal APR'})`,
     `Compounding: ${compoundingLabel}`,

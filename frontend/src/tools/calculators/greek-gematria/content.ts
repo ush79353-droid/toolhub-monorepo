@@ -30,7 +30,7 @@ export const GREEK_GEMATRIA_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Is Greek Gematria? Isopsephy Meaning',
     paragraphs: [
       'Greek gematria is commonly called isopsephy: a letter–number system that assigns traditional numerical values to Greek letters and adds those values for a word or phrase. It is related to historical Greek numeral practices and appears in literary and interpretive contexts.',
-      'The calculator reports exact totals under the stated mapping. Matching numbers do not by themselves prove hidden meanings, predictions, or causal claims — calculation and symbolic interpretation are separate.',
+      'The calculator reports exact totals under the stated mapping. Matching numbers do not by themselves prove hidden meanings, predictions, or causal claims; calculation and symbolic interpretation are separate.',
     ],
   },
   {
@@ -83,7 +83,7 @@ export const GREEK_GEMATRIA_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Greek Gematria Calculator',
     paragraphs: [
-      'Enter Greek text, read the total and letter count, expand the breakdown, open the mapping table, then share or reset. Spaces and punctuation do not add value. Latin characters are ignored with a notice — they are never silently treated as Greek.',
+      'Enter Greek text, read the total and letter count, expand the breakdown, open the mapping table, then share or reset. Spaces and punctuation do not add value. Latin characters are ignored with a notice; they are never silently treated as Greek.',
     ],
   },
   {
@@ -113,7 +113,7 @@ export const GREEK_GEMATRIA_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'uses-limitations',
     title: 'Uses and Limitations of Greek Gematria',
     paragraphs: [
-      'Useful for historical numeral study, literary comparison, and educational exercises. Gematria totals do not independently establish factual claims, future events, or hidden meanings — treat them as letter-sum calculations under an explicit convention.',
+      'Useful for historical numeral study, literary comparison, and educational exercises. Gematria totals do not independently establish factual claims, future events, or hidden meanings; treat them as letter-sum calculations under an explicit convention.',
     ],
   },
 ];

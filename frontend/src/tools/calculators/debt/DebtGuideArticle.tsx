@@ -25,18 +25,18 @@ export function DebtGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Minimum payment</strong> — pay each debt’s scheduled installment only.
+ <strong>Minimum payment</strong>: pay each debt’s scheduled installment only.
         </li>
         <li>
-          <strong>Snowball</strong> — keep the combined budget fixed and roll freed payments into
+ <strong>Snowball</strong>: keep the combined budget fixed and roll freed payments into
           the smallest remaining balance.
         </li>
         <li>
-          <strong>Avalanche</strong> — keep the combined budget fixed and roll freed payments into
+ <strong>Avalanche</strong>: keep the combined budget fixed and roll freed payments into
           the highest-rate balance.
         </li>
         <li>
-          <strong>Consolidation</strong> — replace the debts with one loan at the consolidation
+ <strong>Consolidation</strong>: replace the debts with one loan at the consolidation
           rate, same combined payment, with the prepaid fee reflected in APR only once.
         </li>
       </ul>

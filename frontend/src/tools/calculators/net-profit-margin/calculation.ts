@@ -34,7 +34,7 @@ export function shareResultText(params: {
   currencyNote: string;
 }): string {
   return [
-    `${params.title} — Omega Calculators`,
+    `${params.title} | Omega Calculators`,
     `Net profit: ${params.netProfitLabel}`,
     `Total revenues: ${params.totalRevenuesLabel}`,
     `Net profit margin: ${params.marginPercent}%`,

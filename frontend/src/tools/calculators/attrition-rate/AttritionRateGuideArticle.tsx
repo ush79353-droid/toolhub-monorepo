@@ -9,7 +9,7 @@ export function AttritionRateGuideArticle() {
         What Is Attrition Rate?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Employee attrition rate is an essential workforce metric that tracks the proportion of individuals leaving an organization over a given period—typically a month, quarter, or year. High attrition can signal underlying cultural friction, uncompetitive compensation, or management challenges, while unusually low attrition might suggest workforce stagnation or limited upward mobility.
+ Employee attrition rate is an essential workforce metric that tracks the proportion of individuals leaving an organization over a given period, typically a month, quarter, or year. High attrition can signal underlying cultural friction, uncompetitive compensation, or management challenges, while unusually low attrition might suggest workforce stagnation or limited upward mobility.
       </p>
 
       <h2 id="formula-and-calculation" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
@@ -23,7 +23,7 @@ export function AttritionRateGuideArticle() {
         <p className="mt-2">Attrition Rate (%) = (Employees that left / Average employees) × 100</p>
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Using the average of beginning and ending headcounts ensures that workforce fluctuations—such as ongoing recruiting or phased downsizing—do not skew the retention rate calculation.
+ Using the average of beginning and ending headcounts ensures that workforce fluctuations, such as ongoing recruiting or phased downsizing, do not skew the retention rate calculation.
       </p>
 
       <h2 id="step-by-step-example" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">

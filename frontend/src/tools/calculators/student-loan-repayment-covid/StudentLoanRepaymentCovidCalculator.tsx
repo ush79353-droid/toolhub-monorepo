@@ -19,7 +19,7 @@ export function StudentLoanRepaymentCovidCalculator({
 
   const handleShare = async () => {
     const summary = [
-      `${metadata.title} — Omega Calculators`,
+      `${metadata.title} | Omega Calculators`,
       'Historical notice: COVID-era federal student loan payment suspension with temporary 0% interest referenced through December 31, 2020 (historical date).',
       'COVID-era calculations are no longer valid. This is not a claim that current federal student loans are paused or interest-free.',
       'Consult your loan servicer for current repayment rules.',
@@ -48,7 +48,7 @@ export function StudentLoanRepaymentCovidCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">{metadata.title}</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Historical COVID-era notice — no active repayment calculation
+ Historical COVID-era notice; no active repayment calculation
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}

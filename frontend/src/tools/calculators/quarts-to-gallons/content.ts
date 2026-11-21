@@ -57,9 +57,9 @@ export const QUARTS_TO_GALLONS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Converting Quarts to Gallons',
     paragraphs: [
       `When quarts and gallons use the same liquid system: gallons = quarts ÷ ${US_QUARTS_PER_GALLON}.`,
-      `Example — 12 US qt: 12 ÷ ${US_QUARTS_PER_GALLON} = ${formatVolume(quartsToGallons(12))} US gal.`,
-      `Reverse: quarts = gallons × ${US_QUARTS_PER_GALLON}. Example — 2.5 US gal × ${US_QUARTS_PER_GALLON} = ${formatVolume(2.5 * US_QUARTS_PER_GALLON)} US qt.`,
-      'Mixing US and Imperial units (or liquid vs dry quarts) requires liter-based conversion — the calculator handles that when you change the unit selectors.',
+      `Example; 12 US qt: 12 ÷ ${US_QUARTS_PER_GALLON} = ${formatVolume(quartsToGallons(12))} US gal.`,
+      `Reverse: quarts = gallons × ${US_QUARTS_PER_GALLON}. Example; 2.5 US gal × ${US_QUARTS_PER_GALLON} = ${formatVolume(2.5 * US_QUARTS_PER_GALLON)} US qt.`,
+      'Mixing US and Imperial units (or liquid vs dry quarts) requires liter-based conversion: the calculator handles that when you change the unit selectors.',
     ],
     formula: `gallons = quarts ÷ ${US_QUARTS_PER_GALLON}\nquarts = gallons × ${US_QUARTS_PER_GALLON}`,
   },

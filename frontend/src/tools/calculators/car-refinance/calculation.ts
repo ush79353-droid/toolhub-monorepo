@@ -385,7 +385,7 @@ function buildExplanation(input: {
 
   if (currentTermMonths !== newTermMonths) {
     parts.push(
-      'Loan terms differ, so compare total interest and total payments — not only the monthly payment.'
+      'Loan terms differ, so compare total interest and total payments; not only the monthly payment.'
     );
   }
 

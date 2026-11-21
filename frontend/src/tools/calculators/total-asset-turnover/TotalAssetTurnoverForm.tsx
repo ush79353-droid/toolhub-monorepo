@@ -138,7 +138,7 @@ export function TotalAssetTurnoverForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amounts share one currency label (denomination only — no FX). Use total
+ Amounts share one currency label (denomination only; no FX). Use total
         assets and revenue from the same reporting period.
       </p>
       <p className="text-xs">
@@ -160,7 +160,7 @@ export function TotalAssetTurnoverForm({
             Beginning asset
             <InfoTooltip
               label="Beginning asset"
-              text="Total assets reported at the beginning of the selected accounting period — not current assets alone, equity, or net assets."
+              text="Total assets reported at the beginning of the selected accounting period; not current assets alone, equity, or net assets."
             />
           </label>
           <FieldShell error={errors.beginningAssets}>
@@ -247,7 +247,7 @@ export function TotalAssetTurnoverForm({
             Revenue
             <InfoTooltip
               label="Revenue"
-              text="Net sales or comparable operating revenue for the same period — not net income, gross profit, EBITDA, or cash flow."
+              text="Net sales or comparable operating revenue for the same period; not net income, gross profit, EBITDA, or cash flow."
             />
           </label>
           <FieldShell error={errors.revenue}>
@@ -275,7 +275,7 @@ export function TotalAssetTurnoverForm({
             Total asset turnover
             <InfoTooltip
               label="Total asset turnover"
-              text="Revenue ÷ Average Total Assets. Displayed as a multiplier with x — no currency symbol. Unavailable when average assets are zero."
+              text="Revenue ÷ Average Total Assets. Displayed as a multiplier with x; no currency symbol. Unavailable when average assets are zero."
             />
           </label>
           <FieldShell muted>

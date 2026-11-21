@@ -64,7 +64,7 @@ export function mlFromField(value: number, unit: MlCcUnit): number {
 export function shareResultText(ml: number): string {
   const v = valuesFromMl(ml);
   return [
-    'mL to cc Converter — Omega Calculators',
+    'mL to cc Converter | Omega Calculators',
     '',
     `${formatVolume(v.ml)} mL = ${formatVolume(v.cc)} cc`,
     `${formatVolume(v.ml)} mL = ${formatVolume(v.liters)} L`,

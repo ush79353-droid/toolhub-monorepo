@@ -135,12 +135,12 @@ export function interpretLifo(
   grossProfit: number
 ): string {
   if (unitsSold === 0) {
-    return 'No units sold — LIFO COGS is $0 and ending inventory equals total purchase cost. Gross margin is unavailable because revenue is zero.';
+    return 'No units sold; LIFO COGS is $0 and ending inventory equals total purchase cost. Gross margin is unavailable because revenue is zero.';
   }
   if (endingInventory === 0) {
     return `All purchased units were sold under LIFO. COGS equals total purchase cost. Revenue ${formatLifoMoneyPlain(revenue)}; gross profit ${formatLifoMoneyPlain(grossProfit)}.`;
   }
-  return `Under LIFO, the newest purchase costs enter COGS first. COGS ${formatLifoMoneyPlain(cogs)}; ending inventory ${formatLifoMoneyPlain(endingInventory)} retains older cost layers. Gross profit ${formatLifoMoneyPlain(grossProfit)}. LIFO is a cost-flow assumption — not a requirement that the newest physical units ship first.`;
+  return `Under LIFO, the newest purchase costs enter COGS first. COGS ${formatLifoMoneyPlain(cogs)}; ending inventory ${formatLifoMoneyPlain(endingInventory)} retains older cost layers. Gross profit ${formatLifoMoneyPlain(grossProfit)}. LIFO is a cost-flow assumption; not a requirement that the newest physical units ship first.`;
 }
 
 export function formatLifoMoney(

@@ -34,7 +34,7 @@ export function allFromField(
 }
 
 export function shareResultText(amounts: Record<KnotsMphField, number>): string {
-  const lines = ['Knots to MPH Converter — Omega Calculators', ''];
+  const lines = ['Knots to MPH Converter | Omega Calculators', ''];
   for (const field of KNOTS_MPH_FIELDS) {
     lines.push(`${formatSpeed(amounts[field])} ${FIELD_SYMBOLS[field]}`);
   }

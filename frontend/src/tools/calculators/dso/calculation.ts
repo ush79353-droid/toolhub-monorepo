@@ -73,7 +73,7 @@ export function interpretDso(
     return 'Days sales outstanding could not be determined from the inputs.';
   }
   if (averageAr === 0 && sales > 0) {
-    return `DSO is ${formatDays(dso)} days because average accounts receivable is zero with positive sales. That may reflect cash sales, reporting timing, or other accounting circumstances — not automatically proof that every customer pays immediately.`;
+    return `DSO is ${formatDays(dso)} days because average accounts receivable is zero with positive sales. That may reflect cash sales, reporting timing, or other accounting circumstances; not automatically proof that every customer pays immediately.`;
   }
   if (dso < 30) {
     return `A DSO of about ${formatDays(dso)} days means receivables are relatively low versus sales over this period. Faster collections can free cash, but very short credit terms may also affect customer relationships. Industry and payment terms matter.`;
@@ -81,7 +81,7 @@ export function interpretDso(
   if (dso <= 60) {
     return `A DSO of about ${formatDays(dso)} days is a mid-range collection period under these inputs. Compare with negotiated customer terms, peers, and prior periods rather than treating any single number as universally good or bad.`;
   }
-  return `A DSO of about ${formatDays(dso)} days means receivables remain outstanding longer relative to sales. Causes can include longer credit terms, slow collections, seasonal sales, or large recent credit sales — not automatically poor performance without context.`;
+  return `A DSO of about ${formatDays(dso)} days means receivables remain outstanding longer relative to sales. Causes can include longer credit terms, slow collections, seasonal sales, or large recent credit sales; not automatically poor performance without context.`;
 }
 
 export function formatDsoMoney(

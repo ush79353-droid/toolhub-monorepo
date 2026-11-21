@@ -31,7 +31,7 @@ export function PayRaiseGuideArticle() {
           and its currency.
         </li>
         <li>
-          Enter either a raise percentage or one monetary raise amount — not both
+ Enter either a raise percentage or one monetary raise amount; not both
           as separate stacked raises.
         </li>
         <li>

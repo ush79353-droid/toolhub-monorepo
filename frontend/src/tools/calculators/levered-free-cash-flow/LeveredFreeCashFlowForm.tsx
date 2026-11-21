@@ -402,7 +402,7 @@ export function LeveredFreeCashFlowForm({
           </p>
         ) : null}
         <p className="mt-1 text-xs text-muted-foreground">
-          Simplified cash-flow estimate — not a complete FCFE calculation.
+ Simplified cash-flow estimate; not a complete FCFE calculation.
           EBITDA excludes cash interest and taxes.
         </p>
       </div>

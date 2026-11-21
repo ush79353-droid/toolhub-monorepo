@@ -166,7 +166,7 @@ export function convertHardness(opts: {
 
 export function shareResultText(result: HardnessConversionResult): string {
   const lines = [
-    'Hardness Conversion Calculator — Omega Calculators',
+    'Hardness Conversion Calculator | Omega Calculators',
     '',
     `Input: ${result.sourceValue} ${result.sourceScale}`,
     'Material: Non-austenitic steel',

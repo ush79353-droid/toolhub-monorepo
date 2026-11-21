@@ -11,8 +11,8 @@ export function CarAffordabilityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Vehicle affordability depends on more than the sticker price. Your comfortable monthly
         payment, income and existing expenses, savings for a down payment, trade-in equity, loan
-        interest rate, and loan term all shape how much you can finance. Ownership costs — insurance,
-        fuel, maintenance, registration, and taxes — also matter after you drive away. Qualifying for
+ interest rate, and loan term all shape how much you can finance. Ownership costs; insurance,
+ fuel, maintenance, registration, and taxes; also matter after you drive away. Qualifying for
         a loan is not the same as comfortably affording a car: lenders measure credit risk, while
         your budget must leave room for life after the payment clears. The maximum car value from
         this calculator is a financing estimate, not a guarantee that the purchase is right for you.
@@ -23,27 +23,27 @@ export function CarAffordabilityGuideArticle() {
       </h2>
       <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong className="font-medium text-accent">Monthly payment you can afford</strong> — the
+ <strong className="font-medium text-accent">Monthly payment you can afford</strong>: the
           primary constraint used to solve for maximum loan principal.
         </li>
         <li>
-          <strong className="font-medium text-accent">Money you have</strong> — cash that can go
+ <strong className="font-medium text-accent">Money you have</strong>: cash that can go
           toward the purchase (or a specified down-payment allocation in Additional options).
         </li>
         <li>
-          <strong className="font-medium text-accent">Current car trade-in value</strong> — positive
+ <strong className="font-medium text-accent">Current car trade-in value</strong>: positive
           trade-in contribution; subtract remaining loan balance yourself if equity is negative.
         </li>
         <li>
-          <strong className="font-medium text-accent">Interest rate</strong> — annual APR on the
+ <strong className="font-medium text-accent">Interest rate</strong>: annual APR on the
           auto loan.
         </li>
         <li>
-          <strong className="font-medium text-accent">Loan term</strong> — select Yes and enter years
+ <strong className="font-medium text-accent">Loan term</strong>: select Yes and enter years
           and months (default 5 years). Selecting No blocks calculation because a term is required.
         </li>
         <li>
-          <strong className="font-medium text-accent">Additional options</strong> — optional sales
+ <strong className="font-medium text-accent">Additional options</strong>: optional sales
           tax %, dealer fees, registration/title fees, other upfront costs, and down-payment
           allocation.
         </li>
@@ -73,7 +73,7 @@ export function CarAffordabilityGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Sensible vehicle budgeting looks at monthly cash flow, household income, existing debts,
-        emergency savings, down payment size, loan length, and the full cost of ownership — not only
+ emergency savings, down payment size, loan length, and the full cost of ownership; not only
         the installment. Popular rules (for example, capping transportation as a share of income)
         can be useful prompts, but they are not universal. Prefer a payment you can sustain while
         still funding savings and unexpected repairs.
@@ -102,7 +102,7 @@ export function CarAffordabilityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         For a fixed monthly payment and term, a higher APR lowers the principal that payment can
         support. Example: $500/mo for 60 months finances about $27,150 at 4% APR versus about
-        $24,660 at 8% APR — several thousand dollars less car for the same payment when rates rise.
+ $24,660 at 8% APR; several thousand dollars less car for the same payment when rates rise.
         Higher rates also increase total interest for a given principal.
       </p>
 
@@ -115,7 +115,7 @@ export function CarAffordabilityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Longer terms raise the loan principal supported by a given payment (and can lower the payment
         for a given loan), which can increase the maximum car value. They also usually increase total
-        interest and extend the period you remain in debt — sometimes past the point where the car’s
+ interest and extend the period you remain in debt; sometimes past the point where the car’s
         value has fallen sharply. Shorter terms cost more each month but typically save interest.
       </p>
 
@@ -128,7 +128,7 @@ export function CarAffordabilityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A trade-in can reduce the amount financed or raise the purchase price you can target. Positive
         equity helps; negative equity (owing more than the trade-in is worth) effectively adds debt
-        to the new deal. Enter only the trade-in amount that truly reduces what you must pay — if you
+ to the new deal. Enter only the trade-in amount that truly reduces what you must pay if you
         still owe on the old loan, net that balance out before treating the trade-in as available
         contribution.
       </p>
@@ -142,7 +142,7 @@ export function CarAffordabilityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Before signing, compare insurance quotes, keep an emergency cushion for repairs, understand
         depreciation on the model you want, read dealer fee line items, and confirm financing terms
-        in writing. Stretching for a higher payment can crowd out savings goals — a slightly less
+ in writing. Stretching for a higher payment can crowd out savings goals: a slightly less
         expensive car that you own sooner is often the stronger financial choice.
       </p>
 

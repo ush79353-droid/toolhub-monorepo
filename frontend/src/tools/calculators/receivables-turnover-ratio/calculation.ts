@@ -67,7 +67,7 @@ export function interpretReceivablesTurnover(
 ): string {
   if (averageAR === 0) {
     if (netCreditSales === 0) {
-      return 'Average accounts receivable is zero and net credit sales are zero — the turnover ratio is undefined under the standard formula.';
+      return 'Average accounts receivable is zero and net credit sales are zero: the turnover ratio is undefined under the standard formula.';
     }
     return 'Receivables turnover is undefined because average accounts receivable is zero (division by zero).';
   }
@@ -75,7 +75,7 @@ export function interpretReceivablesTurnover(
     return 'Enter net credit sales to calculate the receivables turnover ratio.';
   }
   if (Math.abs(turnover) < 5e-12) {
-    return 'Turnover is 0 times — net credit sales are zero while average receivables are positive.';
+    return 'Turnover is 0 times; net credit sales are zero while average receivables are positive.';
   }
-  return `Receivables turnover is ${formatRtrRatio(turnover)} times for the reporting period — net credit sales are about ${formatRtrRatio(turnover)}× average accounts receivable. Compare with payment terms, history, and industry peers; this is not a profit or percentage metric.`;
+  return `Receivables turnover is ${formatRtrRatio(turnover)} times for the reporting period; net credit sales are about ${formatRtrRatio(turnover)}× average accounts receivable. Compare with payment terms, history, and industry peers; this is not a profit or percentage metric.`;
 }

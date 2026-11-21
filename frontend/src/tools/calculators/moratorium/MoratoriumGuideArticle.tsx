@@ -16,7 +16,7 @@ export function MoratoriumGuideArticle() {
         principal payments affects outstanding balance, accrued interest,
         revised installments, maturity date, and lifetime interest cost. It
         supports capitalized interest and interest-only moratoriums plus three
-        common restructuring plans. Results are educational models—not lender
+ common restructuring plans. Results are educational models, not lender
         quotes.
       </p>
 
@@ -53,7 +53,7 @@ export function MoratoriumGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Payments (or principal portions) stop or shrink for m months. Interest
         typically continues. Afterward, the lender may raise EMI, extend tenure,
-        or both. Forgiveness would cancel debt—this tool models deferment, not
+ or both. Forgiveness would cancel debt, this tool models deferment, not
         write-off.
       </p>
 
@@ -166,7 +166,7 @@ export function MoratoriumGuideArticle() {
         ₹300,000 at 8% for 10 years with a 12-month capitalized moratorium
         starting at the balance date: balance grows by about one year of compound
         interest, then EMI is recalculated over the remaining months to the
-        original maturity under the same-term plan—typically raising the monthly
+ original maturity under the same-term plan, typically raising the monthly
         payment and total interest versus no deferment.
       </p>
 

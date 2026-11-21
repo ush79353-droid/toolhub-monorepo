@@ -12,8 +12,8 @@ export function AnnualSalaryPerHourGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Salary-per-hour conversion turns one known wage period into the others using your
-        weekly hours. Enter hourly, daily, weekly, monthly, or annual pay — whichever you
-        know — and the rest fill in from consistent week and year assumptions.
+ weekly hours. Enter hourly, daily, weekly, monthly, or annual pay, whichever you
+ know, and the rest fill in from consistent week and year assumptions.
       </p>
 
       <h2

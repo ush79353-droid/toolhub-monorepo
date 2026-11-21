@@ -346,7 +346,7 @@ export function CarDepreciationForm({
         <p className="mt-1.5 text-sm leading-relaxed text-foreground/90">
           Resale value depends on age, mileage, condition, brand demand, and local
           market conditions. This tool applies a disclosed illustrative {ratePercent}%
-          annual declining-balance model for education — not a dealer quote or market
+ annual declining-balance model for education; not a dealer quote or market
           guarantee.
         </p>
       </div>

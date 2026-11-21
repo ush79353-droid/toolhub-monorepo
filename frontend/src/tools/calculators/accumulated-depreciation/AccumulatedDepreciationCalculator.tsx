@@ -37,7 +37,7 @@ const CURRENCY_CONVERSION_NOTE =
 function summaryText(metadataTitle: string, result: AccumulatedDepreciationResult, note: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   const lines = [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Method: ${methodLabel(result.method)}`,
     `Asset cost: ${money(result.assetCost)}`,
     `Salvage value: ${money(result.salvageValue)}`,

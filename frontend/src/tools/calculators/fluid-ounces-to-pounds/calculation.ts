@@ -151,7 +151,7 @@ export function shareResultText(result: FlOzToLbResult): string {
         ? 'UK fl oz'
         : result.volumeUnit;
   return [
-    'Fluid Ounces to Pounds Conversion — Omega Calculators',
+    'Fluid Ounces to Pounds Conversion | Omega Calculators',
     '',
     `Ingredient: ${result.substanceName}`,
     `Density: ${formatMeasure(result.densityKgPerM3)} kg/m³${result.densityApproximate ? ' (approximate)' : ''}`,

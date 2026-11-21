@@ -267,9 +267,9 @@ export function OpportunityCostForm({
 
         <div>
           <label className={labelClass} htmlFor="oc-opportunity-cost">
-            <span>Opportunity cost — inflation adjusted</span>
+            <span>Opportunity cost; inflation adjusted</span>
             <InfoTooltip
-              label="Opportunity cost — inflation adjusted"
+              label="Opportunity cost; inflation adjusted"
               text="Real future value minus money spent today. Measures the inflation-adjusted investment gain forgone by spending instead of investing."
             />
           </label>

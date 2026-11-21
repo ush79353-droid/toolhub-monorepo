@@ -115,7 +115,7 @@ export function calculateCreditCardPayoff(
       currency,
       neverPaysOff: false,
       summary: `With a monthly payment of ${money(monthlyPayment)}, you would pay off the credit card in ${duration.years} year(s), ${duration.months} month(s), and ${days} day(s).`,
-      breakdown: `The total amount paid is ${money(startBalance)} (0% APR — no interest).`,
+      breakdown: `The total amount paid is ${money(startBalance)} (0% APR; no interest).`,
     };
   }
 

@@ -53,7 +53,7 @@ export const GRAMS_IN_ML_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Water near 4 °C has a convenient approximate density of 1 g/mL (1000 kg/m³). Under that approximation, grams and milliliters match numerically.',
       'These values are approximate and based on water at about 1 g/mL. Real density varies slightly with temperature and purity.',
-      `For milk near 1.03 g/mL, 200 g occupies about ${formatMeasure(Number(milk200.toFixed(2)))} mL — not 200 mL — because milk is denser than the water reference.`,
+      `For milk near 1.03 g/mL, 200 g occupies about ${formatMeasure(Number(milk200.toFixed(2)))} mL (not 200 mL) because milk is denser than the water reference.`,
     ],
     formula: 'For water ≈ 1 g/mL: mL ≈ g',
     table: WATER_GRAMS_ML_TABLE,
@@ -63,13 +63,13 @@ export const GRAMS_IN_ML_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Use This Gram to Milliliter Converter',
     paragraphs: [
       '1. Select an ingredient from the dropdown (Water is the default).',
-      '2. Check the suggested density — presets are approximate.',
+      '2. Check the suggested density. presets are approximate.',
       '3. Enter a custom density if your substance or conditions differ.',
       '4. Enter a mass (default unit: grams).',
       '5. Read the automatically calculated volume (default unit: milliliters).',
       '6. Or enter volume to calculate mass instead.',
       '7. Change density, mass, or volume units with the selectors; physical quantities are preserved when units change.',
-      'Compare ingredients by keeping mass fixed and switching the preset — different densities produce different volumes for the same mass.',
+      'Compare ingredients by keeping mass fixed and switching the preset; different densities produce different volumes for the same mass.',
     ],
   },
   {

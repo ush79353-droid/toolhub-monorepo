@@ -104,7 +104,7 @@ export function KathaToSqftForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Katha size depends on region. Selected factor: 1 katha = {formatArea(region.squareFeetPerKatha)}{' '}
-        ft². Edit any area field — the others update instantly. Area cannot be negative.
+ ft². Edit any area field: the others update instantly. Area cannot be negative.
       </div>
 
       <FieldShell

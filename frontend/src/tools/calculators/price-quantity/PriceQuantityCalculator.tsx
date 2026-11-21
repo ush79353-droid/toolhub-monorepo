@@ -29,7 +29,7 @@ const CURRENCY_CONVERSION_NOTE =
 function summaryText(metadataTitle: string, result: PriceQuantityResult, note: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Currency: ${result.currency}`,
     `Smaller: ${result.smallerQuantity} units for ${money(result.smallerPrice)} (${money(result.smallerPricePerUnit)} / unit)`,
     `Larger: ${result.largerQuantity} units for ${money(result.largerPrice)} (${money(result.largerPricePerUnit)} / unit)`,

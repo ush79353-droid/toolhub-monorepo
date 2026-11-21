@@ -21,7 +21,7 @@ export function TrirGuideArticle() {
         Total Recordable Incident Rate (TRIR) measures how often OSHA-recordable work-related
         injuries and illnesses occur relative to total hours worked. Organizations use it to monitor
         safety performance, compare periods, and communicate rates on a normalized scale. Related
-        terms such as TRIFR appear in other jurisdictions with formulas that may differ — always
+ terms such as TRIFR appear in other jurisdictions with formulas that may differ; always
         confirm the methodology before comparing results.
       </p>
       <div className="my-4 space-y-2 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
@@ -37,7 +37,7 @@ export function TrirGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         TRIR helps evaluate safety trends, program effectiveness, and period-to-period performance.
-        Clients and contractors often request it. Use it with other indicators — a low TRIR does not
+ Clients and contractors often request it. Use it with other indicators: a low TRIR does not
         prove that significant hazards are absent, and a higher TRIR alone does not establish
         regulatory noncompliance.
       </p>
@@ -47,20 +47,20 @@ export function TrirGuideArticle() {
       </h2>
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Estimate total hours worked</strong> — include full-time, part-time, and overtime
+ <strong>Estimate total hours worked</strong>: include full-time, part-time, and overtime
           hours for the reporting period. Prefer recorded hours; estimates are less reliable. Example:
           100 employees × 2,000 hours ≈ 200,000 hours.
         </li>
         <li>
-          <strong>Count recordable injuries and illnesses</strong> — apply OSHA recordkeeping rules
+ <strong>Count recordable injuries and illnesses</strong>: apply OSHA recordkeeping rules
           for the same period. First-aid-only cases are generally excluded unless another criterion
           applies.
         </li>
         <li>
-          <strong>Enter both values</strong> — hours worked and recordable case count.
+ <strong>Enter both values</strong>: hours worked and recordable case count.
         </li>
         <li>
-          <strong>Review TRIR</strong> — the calculator applies the 200,000-hour factor and shows an
+ <strong>Review TRIR</strong>: the calculator applies the 200,000-hour factor and shows an
           illustrative interpretation band with a clear disclaimer.
         </li>
       </ol>
@@ -72,35 +72,35 @@ export function TrirGuideArticle() {
         List of recordable incidents
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Not every workplace accident is OSHA-recordable. The summaries below are educational —
+ Not every workplace accident is OSHA-recordable. The summaries below are educational; 
         consult current official OSHA criteria for case decisions.
       </p>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Medical treatment beyond first aid</strong> — treatment beyond OSHA’s first-aid
+ <strong>Medical treatment beyond first aid</strong>: treatment beyond OSHA’s first-aid
           list (for example certain wound closures or prescription therapies) may make a case
           recordable.
         </li>
         <li>
-          <strong>Significant diagnosed injury or illness</strong> — certain diagnoses (such as
+ <strong>Significant diagnosed injury or illness</strong>: certain diagnoses (such as
           cancer, chronic irreversible disease, fractured bones, or punctured eardrums) can be
           recordable even without days away or restriction.
         </li>
         <li>
-          <strong>Days away from work</strong> — work-related cases involving days away are
+ <strong>Days away from work</strong>: work-related cases involving days away are
           generally recordable; apply OSHA day-counting rules (excluding the day of injury/onset
           where required).
         </li>
         <li>
-          <strong>Restricted work or job transfer</strong> — when an employee cannot perform routine
+ <strong>Restricted work or job transfer</strong>: when an employee cannot perform routine
           job functions or is transferred because of a work-related injury or illness.
         </li>
         <li>
-          <strong>Loss of consciousness</strong> — work-related loss of consciousness is recordable
+ <strong>Loss of consciousness</strong>: work-related loss of consciousness is recordable
           regardless of duration.
         </li>
         <li>
-          <strong>Death</strong> — work-related fatalities must be recorded; separate severe injury
+ <strong>Death</strong>: work-related fatalities must be recorded; separate severe injury
           and fatality reporting deadlines may also apply.
         </li>
       </ul>
@@ -122,7 +122,7 @@ export function TrirGuideArticle() {
         <li>400,000 ÷ 2,000,000 = 0.20</li>
       </ol>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <strong>TRIR = 0.20</strong> — about 0.20 recordable cases per 100 full-time-equivalent
+ <strong>TRIR = 0.20</strong>: about 0.20 recordable cases per 100 full-time-equivalent
         workers under the standard 200,000-hour factor. Do not treat this as a percent of employees
         injured.
       </p>
@@ -152,7 +152,7 @@ export function TrirGuideArticle() {
         </table>
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        These bands are simplified illustrative categories from the reference product — not official
+ These bands are simplified illustrative categories from the reference product; not official
         OSHA thresholds. Compare against industry statistics, operations, severity, exposure, and
         your own history.
       </p>
@@ -172,7 +172,7 @@ export function TrirGuideArticle() {
         <li>Trend monitoring with accurate recordkeeping</li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        The goal is preventing injuries and illnesses — not suppressing legitimate reporting.
+ The goal is preventing injuries and illnesses; not suppressing legitimate reporting.
       </p>
 
       <h2
@@ -183,17 +183,17 @@ export function TrirGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>TRIR</strong> — all OSHA-recordable cases relative to hours worked.
+ <strong>TRIR</strong>: all OSHA-recordable cases relative to hours worked.
         </li>
         <li>
-          <strong>DART</strong> — days away, restricted, or transferred cases relative to hours
+ <strong>DART</strong>: days away, restricted, or transferred cases relative to hours
           worked.
         </li>
         <li>
-          <strong>LTIR / LTIFR</strong> — lost-time injury frequency; definitions vary by framework.
+ <strong>LTIR / LTIFR</strong>: lost-time injury frequency; definitions vary by framework.
         </li>
         <li>
-          <strong>Severity rate</strong> — focuses on impact (for example lost days) under a defined
+ <strong>Severity rate</strong>: focuses on impact (for example lost days) under a defined
           methodology.
         </li>
       </ul>

@@ -103,7 +103,7 @@ export const PAYPAL_FEE_FAQS: readonly FAQItem[] = [
   {
     question: 'Are PayPal fees tax deductible?',
     answer:
-      'In many jurisdictions business payment-processing fees may be deductible as expenses, but tax treatment varies. This is not tax advice — confirm with a qualified advisor.',
+      'In many jurisdictions business payment-processing fees may be deductible as expenses, but tax treatment varies. This is not tax advice; confirm with a qualified advisor.',
   },
   {
     question: 'Can businesses pass PayPal fees on to customers?',

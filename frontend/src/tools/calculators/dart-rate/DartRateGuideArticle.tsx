@@ -56,7 +56,7 @@ export function DartRateGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Higher rates may prompt investigation into conditions, ergonomics, equipment, procedures,
-        training, and injury patterns. DART is a <strong>lagging</strong> indicator — it reflects
+ training, and injury patterns. DART is a <strong>lagging</strong> indicator; it reflects
         recorded outcomes, not every hazard. A low rate alone does not guarantee a safe workplace.
       </p>
 
@@ -69,7 +69,7 @@ export function DartRateGuideArticle() {
           columns H and I). Count each case once.
         </li>
         <li>
-          Gather actual hours worked for the same period — include overtime; exclude vacation, sick
+ Gather actual hours worked for the same period; include overtime; exclude vacation, sick
           leave, and holidays not worked.
         </li>
         <li>Enter total DART incidents and total hours worked.</li>
@@ -129,7 +129,7 @@ export function DartRateGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         TRIR = Total Recordable Cases × 200,000 ÷ Total Hours Worked. DART is a subset of recordable
-        cases under consistent classification — do not confuse the two metrics.
+ cases under consistent classification; do not confuse the two metrics.
       </p>
 
       <h2 id="reduce-dart" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
@@ -148,7 +148,7 @@ export function DartRateGuideArticle() {
         <li>Monitor both leading and lagging safety indicators.</li>
       </ol>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        The goal is fewer real injuries and illnesses — not manipulated classifications or
+ The goal is fewer real injuries and illnesses; not manipulated classifications or
         discouraged reporting.{' '}
         <strong>
           Never attempt to improve DART statistics by suppressing reports or improperly classifying

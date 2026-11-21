@@ -90,7 +90,7 @@ export function TimesInterestEarnedCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `EBIT: ${getCurrencySymbol(input.ebitCurrency)}${input.ebit}`,
         `Total interest: ${getCurrencySymbol(input.totalInterestCurrency)}${input.totalInterest}`,
         `Times interest earned (TIE) ratio: ${result.formattedTieRatio}`,

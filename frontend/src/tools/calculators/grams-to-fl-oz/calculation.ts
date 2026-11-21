@@ -136,7 +136,7 @@ export function shareResultText(result: GramsToFlOzResult): string {
   const densityLabel =
     DENSITY_UNIT_OPTIONS.find((o) => o.value === result.densityUnit)?.label ?? result.densityUnit;
   return [
-    'Grams to fl oz Converter — Omega Calculators',
+    'Grams to fl oz Converter | Omega Calculators',
     '',
     `Substance: ${result.substanceName}`,
     `Density: ${formatMeasure(result.densityValue)} ${densityLabel}${result.densityApproximate ? ' (approximate)' : ''}`,

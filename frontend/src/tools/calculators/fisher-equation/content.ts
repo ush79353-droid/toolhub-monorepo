@@ -64,7 +64,7 @@ export const FISHER_EQUATION_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens if expected inflation exceeds the nominal interest rate?',
     answer:
-      'The exact real rate is typically negative — purchasing power of the return falls even if the nominal balance grows.',
+      'The exact real rate is typically negative; purchasing power of the return falls even if the nominal balance grows.',
   },
   {
     question: 'What is the difference between the Fisher equation and Fisher effect?',
@@ -99,12 +99,12 @@ export const FISHER_EQUATION_FAQS: readonly FAQItem[] = [
   {
     question: 'Is the Fisher equation always accurate?',
     answer:
-      'As algebra among three defined rates, yes. As a description of market pricing, not always — expectations and premiums intervene.',
+      'As algebra among three defined rates, yes. As a description of market pricing, not always; expectations and premiums intervene.',
   },
   {
     question: 'What is Fisher debt deflation?',
     answer:
-      'A separate concept about debt burdens rising in real terms when prices fall — not another name for the Fisher equation.',
+      'A separate concept about debt burdens rising in real terms when prices fall; not another name for the Fisher equation.',
   },
   {
     question: 'How do I calculate the real interest rate when expected inflation is 5%?',

@@ -19,7 +19,7 @@ export const CREDIT_CARD_MINIMUM_PAYMENT_FAQS: readonly FAQItem[] = [
   {
     question: 'How is the minimum payment calculated?',
     answer:
-      'Flat percentage uses max(fixed minimum, balance × minimum %). Percentage + interest adds that month’s interest to the percentage portion before applying the floor. An optional monthly fixed payment is added on top of the minimum — it does not replace it.',
+      'Flat percentage uses max(fixed minimum, balance × minimum %). Percentage + interest adds that month’s interest to the percentage portion before applying the floor. An optional monthly fixed payment is added on top of the minimum; it does not replace it.',
   },
   {
     question: 'What does capitalization frequency mean?',

@@ -14,7 +14,7 @@ import { validateChurnRateDraft } from './validation';
 
 function summaryText(metadataTitle: string, result: ChurnRateResult): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Customers at start: ${result.startingCustomers}`,
     `Customers lost: ${result.customersLost}`,
     `Churn rate: ${result.churnRateDisplay}%`,

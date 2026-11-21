@@ -69,7 +69,7 @@ export function syncUnitsFromMeters(
 export function shareResultText(meters: number): string {
   const values = allFromMeters(meters);
   return [
-    'Mil Conversion Calculator — Omega Calculators',
+    'Mil Conversion Calculator | Omega Calculators',
     '',
     `${formatLength(values.mil)} mil =`,
     `${formatLength(values.um)} microns`,

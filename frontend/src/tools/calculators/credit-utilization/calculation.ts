@@ -142,5 +142,5 @@ export function interpretCreditUtilization(
   band: string,
   creditLineCount: number
 ): string {
-  return `Overall credit utilization is ${formatCuPercent(overallUtilization)}% across ${creditLineCount} credit line${creditLineCount === 1 ? '' : 's'} (${band}). This is total revolving balances divided by total revolving limits — not an average of per-card percentages, and not a credit score.`;
+  return `Overall credit utilization is ${formatCuPercent(overallUtilization)}% across ${creditLineCount} credit line${creditLineCount === 1 ? '': 's'} (${band}). This is total revolving balances divided by total revolving limits; not an average of per-card percentages, and not a credit score.`;
 }

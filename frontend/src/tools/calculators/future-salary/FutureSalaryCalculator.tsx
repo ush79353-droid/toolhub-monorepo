@@ -165,7 +165,7 @@ export function FutureSalaryCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         input.currentSalary.trim()
           ? `Current salary: ${getCurrencySymbol(input.currentSalaryCurrency)}${input.currentSalary} ${input.currentSalaryCurrency}`
           : null,

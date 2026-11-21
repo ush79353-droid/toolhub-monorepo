@@ -67,7 +67,7 @@ export const HR_SOFTWARE_ROI_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I calculate ROI for a multi-year software subscription?',
     answer:
-      'Yes — convert recurring costs and benefits to the same multi-year (or custom-month) period and apply the same ROI formula.',
+      'Yes: convert recurring costs and benefits to the same multi-year (or custom-month) period and apply the same ROI formula.',
   },
   {
     question: 'Does a higher ROI always mean better software?',

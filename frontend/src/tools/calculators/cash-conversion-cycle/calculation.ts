@@ -161,7 +161,7 @@ export function interpretCashConversionCycle(ccc: number): string {
     return `A positive CCC of about ${formatDays(ccc)} means cash stays tied up in inventory and receivables longer than the supplier payment period under these assumptions. Shorter is often desirable, but delaying payables or starving inventory can create operational risk.`;
   }
   if (ccc === 0) {
-    return 'A CCC of 0 days means measured inventory and collection periods are fully offset by the supplier payment period — a mathematical description, not a guarantee of perfect liquidity.';
+    return 'A CCC of 0 days means measured inventory and collection periods are fully offset by the supplier payment period: a mathematical description, not a guarantee of perfect liquidity.';
   }
   return `A negative CCC of about ${formatDays(ccc)} can occur when supplier terms exceed combined inventory and receivable days. That is common in some fast-turnover models and is not automatically an error or a strength.`;
 }

@@ -111,7 +111,7 @@ export function HelocForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amounts share one currency label (denomination only — no FX conversion).
+ Amounts share one currency label (denomination only; no FX conversion).
         Fees are modeled as cash costs paid separately from principal.
       </p>
       <p className="text-xs">
@@ -133,7 +133,7 @@ export function HelocForm({
             Current HELOC balance
             <InfoTooltip
               label="Current HELOC balance"
-              text="Outstanding balance currently borrowed on the line of credit — not the full credit limit."
+              text="Outstanding balance currently borrowed on the line of credit; not the full credit limit."
             />
           </label>
           <FieldShell error={errors.currentBalance}>
@@ -341,7 +341,7 @@ export function HelocForm({
             Adjustment type
             <InfoTooltip
               label="Adjustment type"
-              text="No adjustment keeps the initial rate. Scheduled mode applies a simplified percentage-point change at each boundary — an assumption, not a market forecast."
+              text="No adjustment keeps the initial rate. Scheduled mode applies a simplified percentage-point change at each boundary: an assumption, not a market forecast."
             />
           </label>
           <select

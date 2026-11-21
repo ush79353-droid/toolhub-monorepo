@@ -135,7 +135,7 @@ export function GramsToOuncesForm({
       <FieldShell
         label="Ounces (oz)"
         htmlFor="g-oz-oz"
-        tip="Avoirdupois mass ounces — not fluid ounces (fl oz) and not troy ounces."
+        tip="Avoirdupois mass ounces; not fluid ounces (fl oz) and not troy ounces."
         error={errors.oz}
       >
         <div className="flex gap-2">

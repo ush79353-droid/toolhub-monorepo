@@ -86,7 +86,7 @@ export const INFLATION_FAQS: readonly FAQItem[] = [
   {
     question: 'What is disinflation?',
     answer:
-      'Disinflation is a slowdown in the inflation rate while prices may still be rising — not the same as deflation.',
+      'Disinflation is a slowdown in the inflation rate while prices may still be rising; not the same as deflation.',
   },
   {
     question: 'What causes inflation?',
@@ -131,7 +131,7 @@ export const INFLATION_FAQS: readonly FAQItem[] = [
   {
     question: 'Can inflation be negative?',
     answer:
-      'Yes — that is deflation, when the general price level falls between the compared periods.',
+      'Yes: that is deflation, when the general price level falls between the compared periods.',
   },
   {
     question: 'Can the inflation rate exceed 100%?',

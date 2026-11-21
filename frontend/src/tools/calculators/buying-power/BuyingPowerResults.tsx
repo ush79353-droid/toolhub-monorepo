@@ -120,7 +120,7 @@ export function BuyingPowerResults({ result }: BuyingPowerResultsProps) {
         >
           BLS CPI
         </a>
-        . Values are final published annual averages in this dataset — not
+. Values are final published annual averages in this dataset; not
         partial year-to-date indexes.
       </p>
 

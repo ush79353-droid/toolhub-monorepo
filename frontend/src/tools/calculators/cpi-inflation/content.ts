@@ -32,7 +32,7 @@ export const CPI_INFLATION_FAQS: readonly FAQItem[] = [
   {
     question: 'What does CPI measure?',
     answer:
-      'CPI tracks price change for a defined consumer basket for a stated population and geography — not every price in the economy and not every household’s exact spending.',
+      'CPI tracks price change for a defined consumer basket for a stated population and geography; not every price in the economy and not every household’s exact spending.',
   },
   {
     question: 'How do you calculate CPI?',
@@ -72,7 +72,7 @@ export const CPI_INFLATION_FAQS: readonly FAQItem[] = [
   {
     question: 'What is average annual inflation?',
     answer:
-      'In this calculator, the compound annual growth rate of CPI between two different years — not a simple arithmetic mean of yearly rates.',
+      'In this calculator, the compound annual growth rate of CPI between two different years; not a simple arithmetic mean of yearly rates.',
   },
   {
     question: 'What is purchasing power?',
@@ -97,7 +97,7 @@ export const CPI_INFLATION_FAQS: readonly FAQItem[] = [
   {
     question: 'What is disinflation?',
     answer:
-      'A slowdown in the inflation rate while prices may still be rising — inflation that is positive but smaller than before.',
+      'A slowdown in the inflation rate while prices may still be rising; inflation that is positive but smaller than before.',
   },
   {
     question: 'What is the difference between CPI and the GDP deflator?',

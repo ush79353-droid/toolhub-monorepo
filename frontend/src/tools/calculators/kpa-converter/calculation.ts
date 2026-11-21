@@ -36,7 +36,7 @@ export function allFromPascals(pascals: number): Record<KpaUnit, number> {
 export function shareResultText(pascals: number): string {
   const values = allFromPascals(pascals);
   return [
-    'kPa Converter — Omega Calculators',
+    'kPa Converter | Omega Calculators',
     '',
     `${formatPressure(values.kPa)} ${UNIT_SYMBOLS.kPa}`,
     `= ${formatPressure(values.bar)} ${UNIT_SYMBOLS.bar}`,

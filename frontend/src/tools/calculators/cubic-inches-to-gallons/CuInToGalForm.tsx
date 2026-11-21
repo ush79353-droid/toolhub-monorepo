@@ -114,7 +114,7 @@ export function CuInToGalForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact: 1 US gal = 231 in³ · 1 UK gal = 4.54609 L · 1 in³ = 0.016387064 L. Edit any field —
+ Exact: 1 US gal = 231 in³ · 1 UK gal = 4.54609 L · 1 in³ = 0.016387064 L. Edit any field; 
         the others update from the same physical volume. US and UK gallons are not the same size.
       </div>
 

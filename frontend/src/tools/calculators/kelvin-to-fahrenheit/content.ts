@@ -30,9 +30,9 @@ export const KELVIN_TO_FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-k-to-f',
     title: 'How to Convert Kelvin to Fahrenheit',
     paragraphs: [
-      'This calculator converts temperatures between Kelvin and Fahrenheit in real time. Edit either field — both directions are supported.',
+      'This calculator converts temperatures between Kelvin and Fahrenheit in real time. Edit either field; both directions are supported.',
       'Use °F = (K − 273.15) × 9/5 + 32. Subtract 273.15 to reach Celsius, scale by 9/5, then add 32 for Fahrenheit.',
-      `Example — convert 300 K: 300 − 273.15 = 26.85; 26.85 × 1.8 = 48.33; 48.33 + 32 = ${formatTemp(kelvinToFahrenheit(300))}°F. Therefore 300 K = ${formatTemp(kelvinToFahrenheit(300))} °F.`,
+      `Example; convert 300 K: 300 − 273.15 = 26.85; 26.85 × 1.8 = 48.33; 48.33 + 32 = ${formatTemp(kelvinToFahrenheit(300))}°F. Therefore 300 K = ${formatTemp(kelvinToFahrenheit(300))} °F.`,
       'Temperatures below absolute zero (0 K / −459.67 °F) are rejected. Ordinary negative Fahrenheit values above absolute zero remain valid.',
     ],
     formula: '°F = (K − 273.15) × 9/5 + 32',
@@ -42,7 +42,7 @@ export const KELVIN_TO_FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Fahrenheit to Kelvin',
     paragraphs: [
       'Use K = (°F − 32) × 5/9 + 273.15. Subtract 32, scale by 5/9 to Celsius, then add 273.15 for kelvin.',
-      `Example — convert 212 °F: (212 − 32) × 5/9 + 273.15 = ${formatTemp(fahrenheitToKelvin(212))} K. Therefore 212 °F = ${formatTemp(fahrenheitToKelvin(212))} K.`,
+      `Example; convert 212 °F: (212 − 32) × 5/9 + 273.15 = ${formatTemp(fahrenheitToKelvin(212))} K. Therefore 212 °F = ${formatTemp(fahrenheitToKelvin(212))} K.`,
     ],
     formula: 'K = (°F − 32) × 5/9 + 273.15',
   },
@@ -59,7 +59,7 @@ export const KELVIN_TO_FAHRENHEIT_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-kelvin',
     title: 'What Is the Kelvin Scale?',
     paragraphs: [
-      'Kelvin is the SI base unit of thermodynamic temperature. Its symbol is K — write 300 K, not 300 °K.',
+      'Kelvin is the SI base unit of thermodynamic temperature. Its symbol is K; write 300 K, not 300 °K.',
       'The scale starts at absolute zero (0 K). A change of 1 K equals a change of 1 °C; only the zero points differ (0 °C ≈ 273.15 K under standard pressure).',
       'Scientists use kelvin for thermodynamics, cryogenics, and any work that needs an absolute temperature reference.',
     ],

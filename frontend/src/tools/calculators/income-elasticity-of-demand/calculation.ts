@@ -102,15 +102,15 @@ export function interpretIncomeElasticity(
 ): string {
   switch (classification) {
     case 'inferior':
-      return `YED of ${formatYed(yed)} is negative — consistent with an inferior good over this income range (quantity demanded fell as income rose, or rose as income fell). Inferior does not mean low quality.`;
+      return `YED of ${formatYed(yed)} is negative; consistent with an inferior good over this income range (quantity demanded fell as income rose, or rose as income fell). Inferior does not mean low quality.`;
     case 'zeroElasticity':
-      return 'YED of 0.00 — quantity demanded showed no measured response to the observed income change.';
+      return 'YED of 0.00; quantity demanded showed no measured response to the observed income change.';
     case 'normalNecessity':
-      return `YED of ${formatYed(yed)} is positive but less than 1 — demand rises less than proportionally with income (necessity-type normal good under these observations).`;
+      return `YED of ${formatYed(yed)} is positive but less than 1; demand rises less than proportionally with income (necessity-type normal good under these observations).`;
     case 'unitIncomeElasticity':
-      return `YED of ${formatYed(yed)} ≈ 1 — quantity demanded changes proportionally with income (unit income elasticity).`;
+      return `YED of ${formatYed(yed)} ≈ 1; quantity demanded changes proportionally with income (unit income elasticity).`;
     case 'incomeElasticNormal':
-      return `YED of ${formatYed(yed)} is greater than 1 — demand rises more than proportionally with income (income-elastic / luxury-type normal good under these observations). Classifications can vary by income range and market.`;
+      return `YED of ${formatYed(yed)} is greater than 1; demand rises more than proportionally with income (income-elastic / luxury-type normal good under these observations). Classifications can vary by income range and market.`;
     default:
       return `Income elasticity of demand ≈ ${formatYed(yed)}.`;
   }

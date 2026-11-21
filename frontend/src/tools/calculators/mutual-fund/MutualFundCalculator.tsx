@@ -102,7 +102,7 @@ export function MutualFundCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Investment form: ${modeLabel}`,
         `${result.mode === 'sip' ? 'Monthly investment' : 'One-time investment'}: ${formatCurrencyValue(result.investmentAmount, result.currency)}`,
         `Expected annual return: ${result.expectedAnnualReturnPercent}%`,

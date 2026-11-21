@@ -59,7 +59,7 @@ export function MarriageTaxCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Tax year: ${result.taxYear}`,
         `${result.beforeMarriage.label}: $${result.beforeMarriage.formattedTotalTax}`,
         `${result.afterMarriage.label}: $${result.afterMarriage.formattedTotalTax}`,

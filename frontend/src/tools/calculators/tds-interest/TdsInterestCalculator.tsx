@@ -71,11 +71,11 @@ export function TdsInterestCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Mode: ${input.mode}`,
         `Tax amount: ₹${input.taxAmount}`,
         result.message,
-        'Fixed INR. India TDS estimate only — confirm due dates and any CBDT extensions before filing.',
+        'Fixed INR. India TDS estimate only; confirm due dates and any CBDT extensions before filing.',
       ].join('\n')
     : '';
 
@@ -90,7 +90,7 @@ export function TdsInterestCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            India TDS — Sections 201(1A) and 234E · amounts in ₹ (INR)
+ India TDS; Sections 201(1A) and 234E · amounts in ₹ (INR)
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}

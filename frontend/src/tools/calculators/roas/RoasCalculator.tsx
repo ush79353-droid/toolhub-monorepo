@@ -95,7 +95,7 @@ export function RoasCalculator({
 
   const shareText = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Ad spend: ${formatCurrencyValue(result.adSpend, result.currency)}`,
         `Ad revenue: ${formatCurrencyValue(result.adRevenue, result.currency)}`,
         `ROAS: ${result.formattedRoasPercent}% (${result.formattedRoasRatio})`,

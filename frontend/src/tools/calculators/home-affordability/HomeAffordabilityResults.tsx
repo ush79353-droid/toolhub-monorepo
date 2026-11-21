@@ -120,7 +120,7 @@ export function HomeAffordabilityResults({
       ) : null}
 
       <p className="mt-3 text-xs text-muted-foreground">
-        Estimate only — not a mortgage preapproval or lending decision. Mortgage
+ Estimate only; not a mortgage preapproval or lending decision. Mortgage
         insurance is a simplified loan-balance rate estimate.
       </p>
     </div>

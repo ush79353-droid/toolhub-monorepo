@@ -166,7 +166,7 @@ export function HomeValueUsCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Metro: ${result.metroLabel}`,
         `Purchase: ${periodLabel(result.purchasePeriod)} · ${result.formattedPurchasePrice}`,
         `Valuation: ${periodLabel(result.valuationPeriod)} · ${result.formattedEstimatedValue}`,
@@ -179,7 +179,7 @@ export function HomeValueUsCalculator({
           ? `Real change: ${result.formattedRealDollar} (${result.formattedRealPercent})`
           : 'Real change: unavailable',
         `Source: ${result.homeIndexSource} (${result.homeIndexFredId})`,
-        'Index-based estimate — not an appraisal.',
+        'Index-based estimate; not an appraisal.',
       ].join('\n')
     : '';
 

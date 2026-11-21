@@ -15,7 +15,7 @@ import { validateConversionRateDraft } from './validation';
 function summaryText(metadataTitle: string, result: ConversionRateResult): string {
   const denom = result.mode === 'websites' ? 'Website visits' : 'Number of clicks';
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Mode: ${result.mode === 'websites' ? 'Websites' : 'Ads, posts or links'}`,
     `Total conversions: ${result.totalConversions}`,
     `${denom}: ${result.totalClicksOrVisits}`,

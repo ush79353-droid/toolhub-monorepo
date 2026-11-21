@@ -101,7 +101,7 @@ export function RoceCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Method: ${result.method === 'assets' ? 'Total assets' : 'Equity'}`,
         `Capital employed: ${symbol}${result.formattedCapitalEmployed}`,
         `ROCE: ${result.formattedRoce}%`,

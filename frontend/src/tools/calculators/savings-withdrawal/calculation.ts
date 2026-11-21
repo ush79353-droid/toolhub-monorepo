@@ -136,7 +136,7 @@ export function calculateSavingsWithdrawal(
       lastWithdrawalDate: firstWithdrawalDate,
       neverDepletes: true,
       timelineSummary:
-        'Your savings are not projected to run out — monthly interest covers the withdrawal.',
+        'Your savings are not projected to run out; monthly interest covers the withdrawal.',
     };
   }
 

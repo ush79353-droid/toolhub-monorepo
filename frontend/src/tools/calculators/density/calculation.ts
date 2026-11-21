@@ -43,7 +43,7 @@ export function shareResultText(kgPerM3: number, sourceUnit: DensityUnit): strin
     (u) => `${formatDensity(a[u])} ${DENSITY_UNIT_SYMBOLS[u]}`,
   );
   return [
-    'Density Conversion — Omega Calculators',
+    'Density Conversion | Omega Calculators',
     '',
     'Input:',
     `${formatDensity(a[sourceUnit])} ${DENSITY_UNIT_SYMBOLS[sourceUnit]}`,

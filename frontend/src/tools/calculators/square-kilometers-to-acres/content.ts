@@ -39,14 +39,14 @@ export const SQUARE_KILOMETERS_TO_ACRES_GUIDE_SECTIONS: readonly SquareKilometer
       title: 'Introduction',
       paragraphs: [
         'This converter switches land and surface-area measurements between square kilometers (km²) and international acres (ac). Enter either unit and read the matching value instantly.',
-        'It helps compare large geographic areas expressed in metric units with acre-based property and agricultural figures. Calculations use exact square-meter definitions—not rounded shortcuts.',
+        'It helps compare large geographic areas expressed in metric units with acre-based property and agricultural figures. Calculations use exact square-meter definitions, not rounded shortcuts.',
       ],
     },
     {
       id: 'what-is-km2',
       title: 'What Is a Square Kilometer?',
       paragraphs: [
-        'A square kilometer is a metric area unit with symbol km². One square kilometer equals exactly 1,000,000 square meters—the area of a square one kilometer on each side. Square kilometers are commonly used for cities, regions, parks, and other large geographic extents.',
+        'A square kilometer is a metric area unit with symbol km². One square kilometer equals exactly 1,000,000 square meters, the area of a square one kilometer on each side. Square kilometers are commonly used for cities, regions, parks, and other large geographic extents.',
       ],
     },
     {
@@ -103,7 +103,7 @@ export const SQUARE_KILOMETERS_TO_ACRES_GUIDE_SECTIONS: readonly SquareKilometer
       id: 'difference',
       title: 'Difference Between Square Kilometers and Acres',
       paragraphs: [
-        `Both units measure area. Square kilometers are metric and suited to large geographic regions; acres are often used for property and farmland. One square kilometer is about ${formatArea(ACRES_PER_KM2)} acres—much larger than a single acre.`,
+        `Both units measure area. Square kilometers are metric and suited to large geographic regions; acres are often used for property and farmland. One square kilometer is about ${formatArea(ACRES_PER_KM2)} acres, much larger than a single acre.`,
       ],
     },
   ];
@@ -144,7 +144,7 @@ export const SQUARE_KILOMETERS_TO_ACRES_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between acres and square kilometers?',
     answer:
-      'Both measure area, but a square kilometer is much larger than an acre—about 247.105 acres per km².',
+      'Both measure area, but a square kilometer is much larger than an acre, about 247.105 acres per km².',
   },
   {
     question: 'Is one square kilometer larger than 100 acres?',

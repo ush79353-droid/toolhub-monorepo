@@ -96,7 +96,7 @@ export function CurrencyForwardCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Pair: ${input.baseCurrency}/${input.quoteCurrency}`,
         `Spot: ${result!.formattedSpotRate}`,

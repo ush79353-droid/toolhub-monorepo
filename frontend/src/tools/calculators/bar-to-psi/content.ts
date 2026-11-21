@@ -29,7 +29,7 @@ export const BAR_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Pressure Units: PSI and Bar',
     paragraphs: [
       'Pressure measures force per unit area. Engineers, tire shops, pneumatic systems, hydraulic equipment, and pressure gauges often need the same reading in more than one unit.',
-      `A bar is a metric-derived pressure unit equal to exactly ${PASCALS_PER_BAR.toLocaleString('en-US')} pascals. PSI (pounds per square inch) is an imperial unit based on the pound-force and the international inch — about ${formatPressure(PASCALS_PER_PSI)} Pa per psi.`,
+      `A bar is a metric-derived pressure unit equal to exactly ${PASCALS_PER_BAR.toLocaleString('en-US')} pascals. PSI (pounds per square inch) is an imperial unit based on the pound-force and the international inch; about ${formatPressure(PASCALS_PER_PSI)} Pa per psi.`,
       `Therefore 1 bar ≈ ${formatPressure(barToPsi(1))} psi, and 1 psi ≈ ${formatPressure(psiToBar(1))} bar. Tire pressures, compressor ratings, and process gauges commonly mix these systems, so accurate conversion matters.`,
     ],
     formula: `1 bar = ${PASCALS_PER_BAR.toLocaleString('en-US')} Pa · 1 bar ≈ ${formatPressure(barToPsi(1))} psi · 1 psi ≈ ${formatPressure(psiToBar(1))} bar`,
@@ -50,7 +50,7 @@ export const BAR_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use-bar-to-psi',
     title: 'How to Use This Bar to PSI Converter',
     paragraphs: [
-      '1. Enter the pressure in bar (or change the left unit). 2. The equivalent PSI (or right-hand unit) updates automatically. 3. Enter a PSI value to calculate bar instead. 4. Change supported pressure units when needed — the physical pressure is preserved. 5. Use Reload Calculator to restore defaults (1 bar). 6. Use Clear All Changes to empty both fields. Results update without a Calculate button.',
+      '1. Enter the pressure in bar (or change the left unit). 2. The equivalent PSI (or right-hand unit) updates automatically. 3. Enter a PSI value to calculate bar instead. 4. Change supported pressure units when needed. the physical pressure is preserved. 5. Use Reload Calculator to restore defaults (1 bar). 6. Use Clear All Changes to empty both fields. Results update without a Calculate button.',
     ],
   },
   {
@@ -83,7 +83,7 @@ export const BAR_TO_PSI_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Is Bar the Same as PSI?',
-    answer: `No. Both measure pressure, but one bar equals about ${formatPressure(barToPsi(1))} psi — roughly 14.5 times larger than one psi.`,
+    answer: `No. Both measure pressure, but one bar equals about ${formatPressure(barToPsi(1))} psi; roughly 14.5 times larger than one psi.`,
   },
   {
     question: 'How Do I Convert PSI Back to Bar?',

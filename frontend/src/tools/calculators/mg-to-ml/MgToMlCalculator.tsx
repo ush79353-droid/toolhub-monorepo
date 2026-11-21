@@ -21,7 +21,7 @@ import { validateMgToMl } from './validation';
 
 function summaryText(result: MgToMlResult): string {
   const lines = [
-    'mg to mL Calculator — Omega Calculators',
+    'mg to mL Calculator | Omega Calculators',
     result.mode === 'medication'
       ? 'Mode: Medication Concentration'
       : 'Mode: Density-Based Conversion',

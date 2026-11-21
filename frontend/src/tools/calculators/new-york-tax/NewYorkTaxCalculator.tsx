@@ -63,7 +63,7 @@ export function NewYorkTaxCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Tax year: ${result.taxYear}`,
         `NYC resident: ${result.nycResident ? 'Yes' : 'No'}`,
         `Annualized AGI: $${result.formattedAnnualAgi}`,
@@ -109,7 +109,7 @@ export function NewYorkTaxCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             New York federal, State, and NYC income tax estimate from AGI. Fixed USD.
-            Educational only — not a filing substitute. No FICA.
+ Educational only; not a filing substitute. No FICA.
           </p>
         </div>
         {headerActions ? (

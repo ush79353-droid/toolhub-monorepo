@@ -88,7 +88,7 @@ export function GdpGapCalculator({
 
   const summary = shareable
     ? [
-        `GDP Gap Calculator — Omega Calculators`,
+        `GDP Gap Calculator | Omega Calculators`,
         '',
         `Actual GDP: ${result!.formattedActual}`,
         `Potential GDP: ${result!.formattedPotential}`,

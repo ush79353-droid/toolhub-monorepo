@@ -34,7 +34,7 @@ export const KG_TO_ML_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'formula',
     title: 'kg to mL Conversion Formula',
     paragraphs: [
-      'This calculator converts kilograms of a substance into milliliters using density. Kilograms measure mass; milliliters measure volume — density connects them.',
+      'This calculator converts kilograms of a substance into milliliters using density. Kilograms measure mass; milliliters measure volume; density connects them.',
       'With density ρ in kg/m³: V(mL) = m(kg) × 1,000,000 / ρ(kg/m³). Variables: m = mass in kilograms, ρ = density in kilograms per cubic meter, V = volume in milliliters.',
     ],
     formula: 'V(mL) = m(kg) × 1,000,000 / ρ(kg/m³)',
@@ -44,7 +44,7 @@ export const KG_TO_ML_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'kg to mL Conversion Example',
     paragraphs: [
       `Milk example: mass 1 kg, approximate density ${MILK} kg/m³.`,
-      `Step 1: Divide mass by density — 1 ÷ ${MILK}.`,
+      `Step 1: Divide mass by density; 1 ÷ ${MILK}.`,
       'Step 2: Multiply by 1,000,000 to express the volume in milliliters.',
       `Result: 1 kg of milk ≈ ${formatMeasure(kgToMl(1, MILK))} mL.`,
       `Olive oil: 2 kg at ≈ ${OLIVE} kg/m³ ≈ ${formatMeasure(kgToMl(2, OLIVE))} mL. Honey: 1 kg at ≈ ${HONEY} kg/m³ ≈ ${formatMeasure(kgToMl(1, HONEY))} mL.`,
@@ -74,7 +74,7 @@ export const KG_TO_ML_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'water-table',
     title: 'kg to mL Conversion Table for Water',
     paragraphs: [
-      `Based on the assumed density of ${WATER_DENSITY_KG_PER_M3} kg/m³. A convenient reference — not exact at every temperature.`,
+      `Based on the assumed density of ${WATER_DENSITY_KG_PER_M3} kg/m³. A convenient reference; not exact at every temperature.`,
     ],
     tableHeaders: ['Kilograms', 'Milliliters'],
     table: WATER_KG.map((kg) => [

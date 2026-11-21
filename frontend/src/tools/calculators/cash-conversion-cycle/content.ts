@@ -67,7 +67,7 @@ export const CCC_FAQS: readonly FAQItem[] = [
   {
     question: 'How can a business improve its cash conversion cycle?',
     answer:
-      'Typical levers include faster inventory turns, quicker receivable collection, and responsibly negotiated supplier terms — each with operational trade-offs.',
+      'Typical levers include faster inventory turns, quicker receivable collection, and responsibly negotiated supplier terms; each with operational trade-offs.',
   },
   {
     question: 'What happens when revenue or COGS equals zero?',

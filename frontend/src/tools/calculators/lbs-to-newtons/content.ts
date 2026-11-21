@@ -174,6 +174,6 @@ export const LBS_TO_NEWTONS_FAQS: readonly FAQItem[] = [
   },
   {
     question: "What is Newton's second law?",
-    answer: 'F = m × a — force equals mass multiplied by acceleration.',
+    answer: 'F = m × a; force equals mass multiplied by acceleration.',
   },
 ];

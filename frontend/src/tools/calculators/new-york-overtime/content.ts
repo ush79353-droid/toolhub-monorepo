@@ -12,7 +12,7 @@ export const NEW_YORK_OVERTIME_FAQS: readonly FAQItem[] = [
   {
     question: 'Does this calculator enforce New York overtime law?',
     answer:
-      'No. It estimates pay from the rates, hours, and multiplier you enter. New York and FLSA overtime can depend on weekly thresholds, industry rules, exemptions, and other eligibility factors. Without verified eligibility and a qualifying schedule, this tool cannot claim statutory compliance — use it as a pay estimate only.',
+      'No. It estimates pay from the rates, hours, and multiplier you enter. New York and FLSA overtime can depend on weekly thresholds, industry rules, exemptions, and other eligibility factors. Without verified eligibility and a qualifying schedule, this tool cannot claim statutory compliance. Use it as a pay estimate only.',
   },
   {
     question: 'How is monthly regular pay calculated?',

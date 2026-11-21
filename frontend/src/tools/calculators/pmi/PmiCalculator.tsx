@@ -76,7 +76,7 @@ export function PmiCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Monthly PMI: ${symbol}${result.formattedMonthlyPmi} ${result.currency}`,
         `Annual PMI: ${symbol}${result.formattedAnnualPmi} ${result.currency}`,
         `Mortgage amount: ${symbol}${result.formattedMortgageAmount} ${result.currency}`,
@@ -84,7 +84,7 @@ export function PmiCalculator({
         `Annual rate (assumed): ${result.formattedAnnualPmiRate}%`,
         result.applicabilityMessage,
         'Formula: Annual PMI = Loan × Rate/100; Monthly PMI = Annual/12',
-        'Estimate only — not a lender quote or FHA MIP calculation.',
+        'Estimate only; not a lender quote or FHA MIP calculation.',
       ].join('\n')
     : '';
 

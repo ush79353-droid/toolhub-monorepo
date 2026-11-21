@@ -56,7 +56,7 @@ export function MortgageAmortizationCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Home price: $${result.formattedHomePrice}`,
         `Down payment: $${result.formattedDownPayment} (${input.downPaymentPercent}%)`,
         `Loan amount: $${result.formattedLoanAmount}`,
@@ -67,7 +67,7 @@ export function MortgageAmortizationCalculator({
         `Total interest: $${result.formattedTotalInterest}`,
         `Total out-of-pocket: $${result.formattedTotalOutOfPocket}`,
         `Payoff: ${result.payoffLabel}`,
-        'Currency: fixed USD ($) — no FX selectors in the reference.',
+        'Currency: fixed USD ($); no FX selectors in the reference.',
       ].join('\n')
     : '';
 

@@ -177,7 +177,7 @@ export function MoneySupplyForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
-        Educational monetary aggregates — not official central bank series.
+ Educational monetary aggregates; not official central bank series.
         Definitions of M0–M4 vary by country. Currency labels denomination only;
         one magnitude applies to all money inputs (no silent unit mixing).
       </p>

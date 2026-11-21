@@ -52,7 +52,7 @@ export const TORQUE_TO_HP_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'introduction',
     title: 'Introduction',
     paragraphs: [
-      'The Torque to HP Calculator finds mechanical shaft power from torque and rotational speed, then expresses that power in watts, kilowatts, or horsepower. Torque alone cannot become horsepower — angular velocity is required.',
+      'The Torque to HP Calculator finds mechanical shaft power from torque and rotational speed, then expresses that power in watts, kilowatts, or horsepower. Torque alone cannot become horsepower; angular velocity is required.',
       'Canonical relationship: P = τ × ω with torque in N·m, angular speed in rad/s, and power in watts.',
     ],
   },
@@ -133,7 +133,7 @@ export const TORQUE_TO_HP_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'applications',
     title: 'Practical Applications',
     paragraphs: [
-      'Engine and motor shaft power, pumps, generators, industrial drives, and power-transmission estimates all use P = τω. Shaft mechanical power is not the same as electrical input or useful output when efficiency losses matter — account for those separately.',
+      'Engine and motor shaft power, pumps, generators, industrial drives, and power-transmission estimates all use P = τω. Shaft mechanical power is not the same as electrical input or useful output when efficiency losses matter; account for those separately.',
     ],
   },
   {
@@ -179,7 +179,7 @@ export const TORQUE_TO_HP_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'What does RPM mean?',
-    answer: 'Revolutions per minute — a measure of rotational speed.',
+    answer: 'Revolutions per minute: a measure of rotational speed.',
   },
   {
     question: 'What does torque measure?',

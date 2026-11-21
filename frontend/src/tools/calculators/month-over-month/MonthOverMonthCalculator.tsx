@@ -81,7 +81,7 @@ export function MonthOverMonthCalculator({
   );
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result?.mom?.formatted
           ? `MoM: ${result.mom.formatted}%`
           : result?.mom
@@ -124,7 +124,7 @@ export function MonthOverMonthCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            MoM, CMGR, QoQ, and YoY growth — independent sections.
+ MoM, CMGR, QoQ, and YoY growth; independent sections.
           </p>
         </div>
         {headerActions ? (

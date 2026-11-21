@@ -27,6 +27,6 @@ export const EXPENSE_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What is net future value?',
     answer:
-      'Net future value is the ending balance after applying return, deducting the expense ratio, and adding the yearly contribution each year — including the compounding effect of fees.',
+      'Net future value is the ending balance after applying return, deducting the expense ratio, and adding the yearly contribution each year, including the compounding effect of fees.',
   },
 ];

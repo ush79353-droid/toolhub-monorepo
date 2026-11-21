@@ -106,7 +106,7 @@ export const FORCE_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Force Converter',
     paragraphs: [
-      'Enter a force in any of the seven fields and optionally change that field’s unit—the physical force stays the same when you switch units. Expand More force units for µN, MN, kip, poundal, and ton-force equivalents. Copy or reset when finished.',
+      'Enter a force in any of the seven fields and optionally change that field’s unit, the physical force stays the same when you switch units. Expand More force units for µN, MN, kip, poundal, and ton-force equivalents. Copy or reset when finished.',
     ],
   },
   {

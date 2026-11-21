@@ -67,7 +67,7 @@ export function BiWeeklyMortgagePaymentCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Monthly: ${result.monthly.formattedPayment} · ${result.monthly.formattedTerm} · interest ${result.monthly.formattedTotalInterest}`,
         `Bi-weekly: ${result.biweekly.formattedPayment} · ${result.biweekly.formattedTerm} · interest ${result.biweekly.formattedTotalInterest}`,
         currencyNote,

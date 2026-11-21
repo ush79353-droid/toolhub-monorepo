@@ -21,7 +21,7 @@ import { validateCcfToGallons } from './validation';
 
 function summaryText(result: CcfToGallonsResult): string {
   const lines = [
-    'CCF to Gallons Conversion — Omega Calculators',
+    'CCF to Gallons Conversion | Omega Calculators',
     result.source === 'usGallons'
       ? `${formatVolume(result.usGallons)} US gal = ${formatVolume(result.ccf)} CCF`
       : `${formatVolume(result.ccf)} CCF = ${formatVolume(result.usGallons)} US gal`,

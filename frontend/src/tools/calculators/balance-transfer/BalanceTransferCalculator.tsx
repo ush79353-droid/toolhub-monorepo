@@ -103,7 +103,7 @@ export function BalanceTransferCalculator({
   const shareable = result != null && result.formattedSavings != null;
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Mode: ${input.mode}`,
         result!.formattedSavings != null
           ? `Savings / cost difference: ${symbol}${result!.formattedSavings}`
@@ -117,7 +117,7 @@ export function BalanceTransferCalculator({
         result!.formattedEffectivePayment != null
           ? `Monthly payment: ${symbol}${result!.formattedEffectivePayment}`
           : null,
-        'Monthly interest estimate — not issuer advice.',
+        'Monthly interest estimate; not issuer advice.',
       ]
         .filter(Boolean)
         .join('\n')

@@ -91,7 +91,7 @@ export function PitiCalculator({
   const shareable = result != null;
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Principal: ${symbol}${input.principal}`,
         `Term: ${input.termYears} years ${input.termMonths || '0'} months`,
         `Interest rate: ${input.annualInterestRate}%`,
@@ -133,7 +133,7 @@ export function PitiCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Principal, interest, taxes, and insurance — monthly total.
+ Principal, interest, taxes, and insurance; monthly total.
           </p>
         </div>
         {headerActions ? (

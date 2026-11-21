@@ -27,7 +27,7 @@ const CURRENCY_CONVERSION_NOTE =
 
 function summaryText(metadataTitle: string, result: BurnRateResult, note: string): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Burn rate: ${result.burnRateDisplay} / mo`,
     `Cash runway: ${result.cashRunwayDisplay}${result.cashRunwayMonths === null ? '' : ` (${result.runwayUnit})`}`,
     note,

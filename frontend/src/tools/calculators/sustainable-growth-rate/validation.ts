@@ -206,7 +206,7 @@ export function validateSustainableGrowthRateInput(
   }
 
   const warnings: string[] = [
-    'Sustainable growth is a theoretical planning measure under assumed stable ROE, payout policy, and capital structure — not a guaranteed growth forecast.',
+    'Sustainable growth is a theoretical planning measure under assumed stable ROE, payout policy, and capital structure; not a guaranteed growth forecast.',
   ];
   if (ni.value < 0) {
     warnings.push(

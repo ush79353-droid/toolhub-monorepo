@@ -152,7 +152,7 @@ export function EvmForm({
             <span>Budget</span>
             <InfoTooltip
               label="Budget"
-              text="Budget at Completion (BAC) for the task — the total authorized budget for the work."
+              text="Budget at Completion (BAC) for the task: the total authorized budget for the work."
             />
           </label>
           <div className="flex items-center gap-2">
@@ -191,7 +191,7 @@ export function EvmForm({
             <span>Costs</span>
             <InfoTooltip
               label="Costs"
-              text="Actual Cost (AC) — money spent on the task to date."
+              text="Actual Cost (AC); money spent on the task to date."
             />
           </label>
           <div className="flex items-center gap-2">

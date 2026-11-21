@@ -29,7 +29,7 @@ export const MCG_TO_ML_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Use This mcg to mL Conversion Calculator',
     paragraphs: [
       'This calculator supports two modes. Medication concentration conversion uses a labeled strength such as mcg/mL. Other substance density conversion uses mass per volume for the whole material.',
-      'For medication: 1) Select Medication. 2) Confirm an example preset or enter a custom concentration from the product label. 3) Enter the medication amount in mcg (or mg/g). 4) Read the calculated liquid volume in mL. 5) Or enter volume to calculate the corresponding mass. Conversion always depends on the concentration you supply — never on a fixed mcg-to-mL factor.',
+      'For medication: 1) Select Medication. 2) Confirm an example preset or enter a custom concentration from the product label. 3) Enter the medication amount in mcg (or mg/g). 4) Read the calculated liquid volume in mL. 5) Or enter volume to calculate the corresponding mass. Conversion always depends on the concentration you supply; never on a fixed mcg-to-mL factor.',
     ],
   },
   {
@@ -83,7 +83,7 @@ export const MCG_TO_ML_FAQS: readonly FAQItem[] = [
   {
     question: 'How Many mcg Does 1 mL of Vitamin B12 Contain?',
     answer:
-      'Vitamin B12 concentrations depend on the specific product. For a hypothetical solution labeled 1,000 mcg/mL, 1 mL contains 1,000 mcg. Check the label — not all Vitamin B12 products use that strength.',
+      'Vitamin B12 concentrations depend on the specific product. For a hypothetical solution labeled 1,000 mcg/mL, 1 mL contains 1,000 mcg. Check the label; not all Vitamin B12 products use that strength.',
   },
   {
     question: 'Can I Convert mcg to mL Without Concentration?',

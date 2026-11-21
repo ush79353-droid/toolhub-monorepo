@@ -21,7 +21,7 @@ import { validateDecagramToGram } from './validation';
 
 function summaryText(result: DecagramToGramResult): string {
   return [
-    'Decagram to Gram Converter — Omega Calculators',
+    'Decagram to Gram Converter | Omega Calculators',
     result.source === 'g'
       ? `${formatMass(result.g)} g = ${formatMass(result.dag)} dag`
       : `${formatMass(result.dag)} dag = ${formatMass(result.g)} g`,

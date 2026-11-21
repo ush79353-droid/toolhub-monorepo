@@ -44,7 +44,7 @@ export function calculateFahrenheitToCelsius(
 
 export function shareResultText(result: FahrenheitToCelsiusResult): string {
   return [
-    'Fahrenheit to Celsius Converter — Omega Calculators',
+    'Fahrenheit to Celsius Converter | Omega Calculators',
     '',
     `${formatTemp(result.fahrenheit)}°F = ${formatTemp(result.celsius)}°C`,
     '',

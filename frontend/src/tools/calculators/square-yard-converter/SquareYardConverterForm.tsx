@@ -115,7 +115,7 @@ export function SquareYardConverterForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Convert square yards to square feet, square meters, acres, and more — or reverse from any
+ Convert square yards to square feet, square meters, acres, and more, or reverse from any
         field. Exact international yard: 1 yd² = {SQUARE_METERS_PER_SQUARE_YARD} m² = 9 ft². Area
         cannot be negative.
       </div>

@@ -107,7 +107,7 @@ export function InvestmentCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Final balance: ${result.formattedFinalBalance}`,
         `Investment return: ${result.formattedReturn}`,
         result.formattedInflationAdjusted

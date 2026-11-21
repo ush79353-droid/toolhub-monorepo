@@ -43,7 +43,7 @@ export const TEMP_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'formulas',
     title: 'Temperature Conversion Formulas',
     paragraphs: [
-      'Convert through Kelvin (or use the direct formulas below). Offsets matter — temperature conversion is not a simple multiply-only unit change like meters to kilometers.',
+      'Convert through Kelvin (or use the direct formulas below). Offsets matter; temperature conversion is not a simple multiply-only unit change like meters to kilometers.',
     ],
     tableHeaders: ['Conversion', 'Formula'],
     table: [
@@ -67,7 +67,7 @@ export const TEMP_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'absolute-zero',
     title: 'Absolute Zero',
     paragraphs: [
-      'Absolute zero is 0 K — equivalent to −273.15°C or −459.67°F. It is the lower bound of the thermodynamic temperature scale for ordinary systems. This converter rejects inputs that map below 0 K (with a small floating-point tolerance at the boundary).',
+      'Absolute zero is 0 K; equivalent to −273.15°C or −459.67°F. It is the lower bound of the thermodynamic temperature scale for ordinary systems. This converter rejects inputs that map below 0 K (with a small floating-point tolerance at the boundary).',
       'Delisle runs “backwards,” so large Delisle values can correspond to temperatures below absolute zero and are rejected. Negative Celsius or Fahrenheit values remain valid when they are still above absolute zero.',
     ],
     formula: '0 K = −273.15°C = −459.67°F = 0°R',

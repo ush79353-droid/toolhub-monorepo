@@ -109,7 +109,7 @@ export function MarginAndMarkupCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Cost: ${getCurrencySymbol(input.costCurrency)}${input.cost}`,
         `Margin: ${result.scenario1.formattedMargin}%`,
         `Markup: ${result.scenario1.formattedMarkup}%`,

@@ -92,7 +92,7 @@ export function FloridaSalesTaxForm({
           <span>Purchase location ZIP Code</span>
           <InfoTooltip
             label="Purchase location ZIP Code"
-            text="Enter a five-digit Florida ZIP. Mapping uses Census 2020 ZCTA→county intersections. Multi-county ZIPs require an explicit county selection — rates are never guessed."
+            text="Enter a five-digit Florida ZIP. Mapping uses Census 2020 ZCTA→county intersections. Multi-county ZIPs require an explicit county selection; rates are never guessed."
           />
         </label>
         <FieldShell error={errors.zipCode}>

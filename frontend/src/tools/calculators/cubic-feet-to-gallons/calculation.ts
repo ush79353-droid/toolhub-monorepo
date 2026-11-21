@@ -57,7 +57,7 @@ export function calculateCuFtToGal(input: CuFtToGalInput): CuFtToGalResult {
 
 export function shareResultText(result: CuFtToGalResult): string {
   return [
-    'Cubic Feet to Gallons Converter — Omega Calculators',
+    'Cubic Feet to Gallons Converter | Omega Calculators',
     '',
     `${formatMeasure(result.cubicFeet)} ft³ = ${formatMeasure(result.gallons)} ${gallonLabel(result.gallonUnit)}`,
   ].join('\n');

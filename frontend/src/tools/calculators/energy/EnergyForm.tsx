@@ -146,7 +146,7 @@ export function EnergyForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Enter a value in any field — all other units update from joules. Calories (kcal) are food
+ Enter a value in any field; all other units update from joules. Calories (kcal) are food
         kilocalories (1 kcal = 4184 J). Therm uses the US definition. Hartree and Rydberg use CODATA
         2018 values. Signed values are allowed.
       </div>

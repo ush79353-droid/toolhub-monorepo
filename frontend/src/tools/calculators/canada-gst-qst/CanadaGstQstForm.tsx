@@ -108,7 +108,7 @@ export function CanadaGstQstForm({
             <span>Amount before tax</span>
             <InfoTooltip
               label="Amount before tax"
-              text="Enter the taxable purchase amount in Canadian dollars before GST/HST/PST/QST. Fixed CAD — no FX conversion."
+              text="Enter the taxable purchase amount in Canadian dollars before GST/HST/PST/QST. Fixed CAD; no FX conversion."
             />
           </label>
           <FieldShell error={errors.amountBeforeTax}>

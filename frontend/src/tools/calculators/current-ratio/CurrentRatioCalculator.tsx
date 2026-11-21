@@ -77,7 +77,7 @@ export function CurrentRatioCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Current assets: ${symbol}${result.formattedCurrentAssets}`,
         `Current liabilities: ${symbol}${result.formattedCurrentLiabilities}`,
         `Current ratio: ${result.formattedCurrentRatio} (${result.formattedCurrentRatioColon})`,
@@ -115,8 +115,8 @@ export function CurrentRatioCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Measure short-term liquidity coverage — current assets ÷ current
-            liabilities — with working capital and optional reverse modes.
+ Measure short-term liquidity coverage; current assets ÷ current
+ liabilities, with working capital and optional reverse modes.
           </p>
         </div>
         {headerActions ? (

@@ -53,7 +53,7 @@ export const HOURS_TO_MINUTES_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Hours to Minutes Converter',
     paragraphs: [
-      '1. Enter a value in the Hours field — minutes and seconds update instantly.',
+      '1. Enter a value in the Hours field. minutes and seconds update instantly.',
       '2. Or enter minutes to calculate hours and seconds.',
       '3. Or enter seconds to calculate hours and minutes.',
       '4. Use the compound Time field for hours, minutes, and seconds together.',

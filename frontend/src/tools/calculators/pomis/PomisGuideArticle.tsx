@@ -20,7 +20,7 @@ export function PomisGuideArticle() {
         the scheme tenure, and total cash received (principal plus cumulative
         interest) for India&apos;s Post Office Monthly Income Scheme. Amounts are
         in INR. Interest rates and investment limits are configurable
-        educational settings — always verify the official notification that
+ educational settings; always verify the official notification that
         applies to your account.
       </p>
 
@@ -48,7 +48,7 @@ export function PomisGuideArticle() {
         After you deposit an eligible amount, interest accrues under the
         applicable annual rate and is distributed monthly. The principal
         typically stays invested until maturity (or permitted premature
-        closure). Monthly interest is payout income — this calculator does not
+ closure). Monthly interest is payout income; this calculator does not
         compound those monthly payments back into the POMIS balance.
       </p>
 
@@ -100,8 +100,8 @@ export function PomisGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         POMIS rates are revised from time to time (often with other small
-        savings rates). This site stores a configurable default — currently an
-        example of {R}% — with an explicit source note. Do not treat the default
+ savings rates). This site stores a configurable default; currently an
+ example of {R}%, with an explicit source note. Do not treat the default
         as a live official quote. When the government publishes a new rate, update
         the configured default for new illustrations; existing deposits usually
         continue under the rate locked at opening, subject to scheme terms.
@@ -135,7 +135,7 @@ export function PomisGuideArticle() {
         {DEFAULT_POMIS_SCHEME.minimumInvestment.toLocaleString('en-IN')} in
         multiples of ₹
         {DEFAULT_POMIS_SCHEME.investmentIncrement.toLocaleString('en-IN')}. These
-        are not permanent universal constants — confirm with India Post before
+ are not permanent universal constants; confirm with India Post before
         depositing.
       </p>
 
@@ -217,7 +217,7 @@ export function PomisGuideArticle() {
         often have different tenures, premature-closure charges, and deposit
         insurance frameworks. POMIS emphasizes monthly income payouts with a
         National Savings ceiling structure. Compare rates, tax, and liquidity
-        using verified current figures — this article avoids quoting unverified
+ using verified current figures; this article avoids quoting unverified
         live FD rates.
       </p>
 

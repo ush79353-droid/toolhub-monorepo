@@ -72,7 +72,7 @@ export function LandLoanCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Land value: ${getCurrencySymbol(input.landValueCurrency)}${input.landValue}`,
         `Down payment: ${input.downPaymentPercent}% → ${getCurrencySymbol(input.downPaymentCurrency)}${result.formattedDownPayment}`,
         `Loan value: ${getCurrencySymbol(input.loanValueCurrency)}${result.formattedLoanValue}`,

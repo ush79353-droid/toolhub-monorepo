@@ -239,7 +239,7 @@ export function SilverMeltForm({
           <label htmlFor="sm-price">Price per unit mass</label>
           <InfoTooltip
             label="Price per unit mass"
-            text="Pure-silver spot price for the selected unit — not the price of the finished mixed-metal item."
+            text="Pure-silver spot price for the selected unit; not the price of the finished mixed-metal item."
             align="left"
           />
         </div>

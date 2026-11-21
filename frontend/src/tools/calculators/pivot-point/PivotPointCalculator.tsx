@@ -108,7 +108,7 @@ export function PivotPointCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Method: ${PIVOT_METHOD_LABELS[result!.method]}`,
         '',
         `High Price: ${money(input.high)}`,

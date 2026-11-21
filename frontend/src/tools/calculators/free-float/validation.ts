@@ -244,7 +244,7 @@ export function validateFreeFloatInput(
       math.freeFloatPercentage
     ),
     warningMessage:
-      'Count restricted and closely held shares as mutually exclusive categories — do not double-count the same share in both.',
+      'Count restricted and closely held shares as mutually exclusive categories; do not double-count the same share in both.',
   };
 
   return { isValid: true, errors, result };

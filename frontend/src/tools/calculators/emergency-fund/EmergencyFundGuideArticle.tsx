@@ -13,7 +13,7 @@ export function EmergencyFundGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         An emergency fund is money set aside to cover essential living costs when something
-        unexpected happens — job loss, medical bills, urgent repairs, temporary income gaps, or
+ unexpected happens; job loss, medical bills, urgent repairs, temporary income gaps, or
         family emergencies. Keeping that cash accessible and relatively low risk reduces pressure to
         rely only on high-interest credit. Size the fund from essential monthly expenses, not gross
         income.
@@ -64,19 +64,19 @@ export function EmergencyFundGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A widely used starting range is three to six months of essentials. None of these bands is
-        mandatory — match coverage to your situation.
+ mandatory; match coverage to your situation.
       </p>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong className="font-medium text-accent">About three months</strong> — more stable
+ <strong className="font-medium text-accent">About three months</strong>: more stable
           employment, predictable income, lower obligations, or strong backup support.
         </li>
         <li>
-          <strong className="font-medium text-accent">About six months</strong> — dependents, higher
+ <strong className="font-medium text-accent">About six months</strong>: dependents, higher
           fixed costs, variable income, or industry uncertainty.
         </li>
         <li>
-          <strong className="font-medium text-accent">Nine to twelve+ months</strong> — freelancers,
+ <strong className="font-medium text-accent">Nine to twelve+ months</strong>: freelancers,
           self-employed or commission workers, business owners, or households with larger
           responsibilities.
         </li>

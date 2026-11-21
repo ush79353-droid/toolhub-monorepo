@@ -215,7 +215,7 @@ export function CarLeaseCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `MSRP: ${getCurrencySymbol(input.msrpCurrency)}${input.msrp} ${input.msrpCurrency}`,
         `Negotiated: ${negotiatedSymbol}${input.negotiatedPrice} ${input.negotiatedPriceCurrency}`,
         `Term: ${input.leaseTermMonths} months`,

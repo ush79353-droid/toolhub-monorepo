@@ -30,7 +30,7 @@ export function BondConvexityGuideArticle() {
           Bond Price = Σ Coupons / (1 + y/m)^k + Face / (1 + y/m)^n
         </p>
         <p className="mt-2">
-          Convexity = (P₋ + P₊ − 2P₀) / (P₀ (Δy)²) — finite-difference, annual-yield units
+ Convexity = (P₋ + P₊ − 2P₀) / (P₀ (Δy)²); finite-difference, annual-yield units
         </p>
       </div>
 

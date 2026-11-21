@@ -29,6 +29,6 @@ export const HOURLY_TO_ANNUAL_SALARY_FAQS: readonly FAQItem[] = [
   {
     question: 'Is this the same as Annual Salary or Annual to Monthly Salary?',
     answer:
-      'No. Annual Salary converts hourly to annual with weeks/year and a simplified flat-tax net. Annual to Monthly starts from annual salary. This tool starts from hourly wage and uses hours/week and days/week only — no tax, overtime, or unpaid leave.',
+      'No. Annual Salary converts hourly to annual with weeks/year and a simplified flat-tax net. Annual to Monthly starts from annual salary. This tool starts from hourly wage and uses hours/week and days/week only; no tax, overtime, or unpaid leave.',
   },
 ];

@@ -72,7 +72,7 @@ export function CltvForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         CLTV = APV × annual purchase frequency × lifespan. Default result is
-        revenue-based and undiscounted — not net profit. Currency is
+ revenue-based and undiscounted; not net profit. Currency is
         denomination only (not FX).
       </p>
 

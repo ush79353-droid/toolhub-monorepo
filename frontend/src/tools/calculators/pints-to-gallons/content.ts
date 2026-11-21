@@ -11,7 +11,7 @@ import { PINTS_PER_GALLON } from './types';
 
 export const PINTS_TO_GALLONS_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'intro', label: 'Pints to Gallons Converter' },
-  { id: 'how-many', label: 'Pints to Gallons Conversion — How Many Pints Are in a Gallon?' },
+  { id: 'how-many', label: 'Pints to Gallons Conversion; How Many Pints Are in a Gallon?' },
   { id: 'half-pints', label: 'How Many Half-Pints Are in a Gallon?' },
   { id: 'us-vs-uk', label: 'US vs UK Pints and Gallons' },
   { id: 'conversion-table', label: 'Pints to Gallons Conversion Table' },
@@ -37,18 +37,18 @@ export const PINTS_TO_GALLONS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Pints to Gallons Converter',
     paragraphs: [
       'Convert volume between US and UK pints and gallons instantly. Useful for cooking, liquid storage, fuel quantities, beverage measurements, recipe conversions, and comparing US customary with Imperial units.',
-      'Enter any one of the four fields — US pints, UK pints, US gallons, or UK gallons — and the other three update automatically from exact milliliter definitions.',
+      'Enter any one of the four fields (US pints, UK pints, US gallons, or UK gallons) and the other three update automatically from exact milliliter definitions.',
     ],
   },
   {
     id: 'how-many',
-    title: 'Pints to Gallons Conversion — How Many Pints Are in a Gallon?',
+    title: 'Pints to Gallons Conversion; How Many Pints Are in a Gallon?',
     paragraphs: [
       `Within the US customary system: 1 US gallon = ${PINTS_PER_GALLON} US pints, so US gallons = US pints ÷ ${PINTS_PER_GALLON}.`,
       `Within the UK imperial system: 1 UK gallon = ${PINTS_PER_GALLON} UK pints, so UK gallons = UK pints ÷ ${PINTS_PER_GALLON}.`,
       'The same numerical 8× relationship exists inside both systems, but absolute volumes differ because US and UK units are not identical.',
-      `Example — convert 12 US pints: 12 ÷ ${PINTS_PER_GALLON} = ${formatVolume(convertPintGallon(12, 'usPt', 'usGal'))} US gallons.`,
-      `Example — convert 20 UK pints: 20 ÷ ${PINTS_PER_GALLON} = ${formatVolume(convertPintGallon(20, 'ukPt', 'ukGal'))} UK gallons.`,
+      `Example; convert 12 US pints: 12 ÷ ${PINTS_PER_GALLON} = ${formatVolume(convertPintGallon(12, 'usPt', 'usGal'))} US gallons.`,
+      `Example; convert 20 UK pints: 20 ÷ ${PINTS_PER_GALLON} = ${formatVolume(convertPintGallon(20, 'ukPt', 'ukGal'))} UK gallons.`,
     ],
     formula: `US gal = US pt ÷ ${PINTS_PER_GALLON} · UK gal = UK pt ÷ ${PINTS_PER_GALLON}`,
   },

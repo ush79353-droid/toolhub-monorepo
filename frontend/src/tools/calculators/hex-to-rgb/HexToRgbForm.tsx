@@ -142,9 +142,9 @@ export function HexToRgbForm({
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {(
             [
-              { key: 'r' as const, label: 'R — Red' },
-              { key: 'g' as const, label: 'G — Green' },
-              { key: 'b' as const, label: 'B — Blue' },
+              { key: 'r' as const, label: 'R; Red' },
+              { key: 'g' as const, label: 'G; Green' },
+              { key: 'b' as const, label: 'B; Blue' },
             ] as const
           ).map((field) => {
             const id = `hex-rgb-${field.key}`;

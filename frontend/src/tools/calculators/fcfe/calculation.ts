@@ -202,7 +202,7 @@ export function interpretFcfe(fcfe: number): string {
   if (fcfe === 0) {
     return 'Calculated free cash flow to equity is zero for the selected period under the entered assumptions.';
   }
-  return `Negative FCFE of ${formatPlain(fcfe)} means reinvestment and other cash requirements exceed residual equity cash under the selected financing assumptions. That is not automatically a failure or bankruptcy signal — growth CapEx, working-capital buildup, or debt repayments can drive negative FCFE.`;
+  return `Negative FCFE of ${formatPlain(fcfe)} means reinvestment and other cash requirements exceed residual equity cash under the selected financing assumptions. That is not automatically a failure or bankruptcy signal; growth CapEx, working-capital buildup, or debt repayments can drive negative FCFE.`;
 }
 
 function formatPlain(amount: number): string {

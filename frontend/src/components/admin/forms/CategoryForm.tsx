@@ -202,7 +202,7 @@ export function CategoryForm({ mode, category, parents }: CategoryFormProps) {
                 ))}
               </Select>
             ) : (
-              <Input value="Top level — no parent" disabled />
+              <Input value="Top level; no parent" disabled />
             )}
             {errors.parentId && <p className="mt-1 text-[11px] text-rose-600">{errors.parentId}</p>}
           </div>

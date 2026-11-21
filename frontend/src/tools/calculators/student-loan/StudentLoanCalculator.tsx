@@ -74,7 +74,7 @@ export function StudentLoanCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan balance: ${loanSymbol}${input.loanBalance || '0'}`,
         `Remaining term: ${input.termYears || '0'} yrs ${input.termMonths || '0'} mos`,
         `Interest rate: ${input.annualInterestRatePercent}%`,

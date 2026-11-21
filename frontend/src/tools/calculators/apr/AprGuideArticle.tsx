@@ -15,7 +15,7 @@ export function AprGuideArticle() {
         percentage terms. Unlike a quoted interest rate alone, a useful APR
         estimate incorporates how much cash you actually receive and the
         scheduled repayments you must make. This calculator produces an{' '}
-        <strong>estimated</strong> cash-flow APR for education and comparison —
+ <strong>estimated</strong> cash-flow APR for education and comparison; 
         not a certified regulatory disclosure.
       </p>
 
@@ -189,7 +189,7 @@ export function AprGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Example: $10,000 at 10% for 2 years, monthly, with a $200 fee deducted
         from proceeds. Payment is about $461.45 on $10,000, but you receive
-        $9,800 — estimated APR rises to roughly 12.1%.
+ $9,800; estimated APR rises to roughly 12.1%.
       </p>
 
       <h2
@@ -224,7 +224,7 @@ export function AprGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         “Good” depends on creditworthiness, loan type, collateral, and market
-        conditions. Use peer offers and total cost — not a single universal
+ conditions. Use peer offers and total cost; not a single universal
         cutoff.
       </p>
 

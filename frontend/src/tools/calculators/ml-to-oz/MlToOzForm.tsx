@@ -130,7 +130,7 @@ export function MlToOzForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Fluid ounces measure volume — not mass ounces. Exact: 1 US fl oz = {ML_PER_US_FL_OZ} mL · 1
+ Fluid ounces measure volume; not mass ounces. Exact: 1 US fl oz = {ML_PER_US_FL_OZ} mL · 1
         UK fl oz = {ML_PER_UK_FL_OZ} mL. US and UK fluid ounces are different sizes.
       </div>
 

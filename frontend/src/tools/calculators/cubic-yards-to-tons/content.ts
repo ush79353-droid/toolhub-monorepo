@@ -150,7 +150,7 @@ export const CUBIC_YARDS_TO_TONS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'applications',
     title: 'Practical Applications',
     paragraphs: [
-      'Typical uses include landscaping estimates, construction takeoffs, gravel purchasing, soil haul planning, aggregate quantities, excavation spoil estimates, bulk storage planning, and rough load planning—always with density uncertainty in mind.',
+      'Typical uses include landscaping estimates, construction takeoffs, gravel purchasing, soil haul planning, aggregate quantities, excavation spoil estimates, bulk storage planning, and rough load planning, always with density uncertainty in mind.',
     ],
   },
   {

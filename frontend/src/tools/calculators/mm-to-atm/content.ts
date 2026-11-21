@@ -30,7 +30,7 @@ export const MM_TO_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'mm to ATM Converter',
     paragraphs: [
-      'Convert pressure from millimeters of mercury (mmHg) to standard atmospheres (atm), and the reverse. Despite the catalog name “mm to ATM,” this tool uses mmHg — a pressure unit — not millimeters of length.',
+      'Convert pressure from millimeters of mercury (mmHg) to standard atmospheres (atm), and the reverse. Despite the catalog name “mm to ATM,” this tool uses mmHg (a pressure unit) not millimeters of length.',
       'It is useful for laboratory readings, gas-law problems, atmospheric comparisons, and educational calculations. It converts numerical pressure units only and does not diagnose medical conditions or switch absolute vs gauge reference.',
     ],
   },
@@ -50,9 +50,9 @@ export const MM_TO_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'mmHg to atm Conversion Formula',
     paragraphs: [
       `atm = mmHg ÷ ${MMHG_PER_ATM}. Divide the mmHg reading by ${MMHG_PER_ATM} to obtain atmospheres.`,
-      `Example — 150 mmHg: 150 ÷ ${MMHG_PER_ATM} ≈ ${formatPressure(mmHgToAtm(150))} atm.`,
-      `Example — 475 mmHg: 475 ÷ ${MMHG_PER_ATM} = ${formatPressure(mmHgToAtm(475))} atm.`,
-      `Example — 760 mmHg: 760 ÷ ${MMHG_PER_ATM} = ${formatPressure(mmHgToAtm(760))} atm.`,
+      `Example; 150 mmHg: 150 ÷ ${MMHG_PER_ATM} ≈ ${formatPressure(mmHgToAtm(150))} atm.`,
+      `Example; 475 mmHg: 475 ÷ ${MMHG_PER_ATM} = ${formatPressure(mmHgToAtm(475))} atm.`,
+      `Example; 760 mmHg: 760 ÷ ${MMHG_PER_ATM} = ${formatPressure(mmHgToAtm(760))} atm.`,
     ],
     formula: `atm = mmHg ÷ ${MMHG_PER_ATM}\n150 mmHg ≈ ${formatPressure(mmHgToAtm(150))} atm\n760 mmHg = 1 atm`,
   },

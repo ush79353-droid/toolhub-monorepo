@@ -124,7 +124,7 @@ export const KNOTS_MPH_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Wind Speed and the Beaufort Scale',
     paragraphs: [
       'Marine and aviation weather often report wind in knots so forecasts match nautical charts and instrument conventions. Wind speed shapes sea state: higher forces build steeper waves and more spray.',
-      'The Beaufort wind force scale ranks observed conditions from calm (force 0) to hurricane (force 12). It is a descriptive force scale, not a separate linear speed unit — each force maps to an approximate wind-speed range rather than a single exact value.',
+      'The Beaufort wind force scale ranks observed conditions from calm (force 0) to hurricane (force 12). It is a descriptive force scale, not a separate linear speed unit; each force maps to an approximate wind-speed range rather than a single exact value.',
       'Ranges below follow a widely used educational Beaufort reference. Knot bounds are authoritative for this table; mph and km/h are converted with the same exact factors as the calculator and rounded to whole numbers for readability.',
     ],
     tableHeaders: ['Force', 'Description', 'Knots', 'MPH (approx.)', 'KM/H (approx.)'],

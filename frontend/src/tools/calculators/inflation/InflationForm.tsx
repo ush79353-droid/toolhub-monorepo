@@ -92,7 +92,7 @@ export function InflationForm({
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Historical mode uses {US_CPI_SOURCE_NAME} {US_CPI_SERIES_ID} annual
         averages ({US_CPI_MIN_YEAR}–{US_CPI_MAX_YEAR}). Custom mode compounds a
-        user-supplied annual rate — an estimate, not a forecast. Fixed USD.
+ user-supplied annual rate: an estimate, not a forecast. Fixed USD.
       </p>
 
       <div>

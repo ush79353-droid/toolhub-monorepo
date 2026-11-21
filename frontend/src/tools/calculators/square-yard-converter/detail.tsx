@@ -4,7 +4,7 @@ import { YD2_CONVERTER_FAQS, YD2_CONVERTER_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert square yards to square feet, square meters, acres, and more — edit any unit, all stay linked.',
+    'Convert square yards to square feet, square meters, acres, and more; edit any unit, all stay linked.',
   asideAriaLabel: 'Interactive square yard area converter',
   tocItems: YD2_CONVERTER_TOC_ITEMS,
   GuideArticle: SquareYardConverterGuideArticle,

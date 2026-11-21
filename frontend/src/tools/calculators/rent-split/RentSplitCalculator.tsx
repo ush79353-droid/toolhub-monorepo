@@ -77,7 +77,7 @@ export function RentSplitCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total rent: ${symbol}${input.totalRent} ${input.currency}`,
         `Bedrooms: ${input.bedroomCount}`,
         ...result.bedrooms.map(

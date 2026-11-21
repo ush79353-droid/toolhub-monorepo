@@ -109,15 +109,15 @@ export function RetentionRatioCalculator({
       ? `Retention Ratio: ${result.formattedRetentionRatio}`
       : result?.status === 'undefined'
         ? 'Retention Ratio: Undefined'
-        : 'Retention Ratio: —';
+        : 'Retention Ratio;';
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Net Income: ${money(input.netIncome)}`,
         `Dividends Paid: ${money(input.dividendsPaid)}`,
-        `Retained Earnings (period): ${result!.formattedRetainedEarnings ?? '—'}`,
+        `Retained Earnings (period): ${result!.formattedRetainedEarnings ?? '; '}`,
         '',
         ratioLine,
         result!.interpretation

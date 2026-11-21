@@ -12,14 +12,14 @@ export function LossRatioGuideArticle() {
         What is the loss ratio?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        The loss ratio — also called the insurance loss ratio or underwriting loss ratio — measures
+ The loss ratio (also called the insurance loss ratio or underwriting loss ratio) measures
         how claim-related costs relate to earned premiums for a reporting period. It shows what
         portion of premiums was spent on claims and loss adjustment expenses.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Insurers, underwriters, and analysts use it to assess claims experience, pricing pressure,
         underwriting performance, claims-management effectiveness, portfolio results, and early
-        signs of profitability stress — always with consistent accounting definitions.
+ signs of profitability stress; always with consistent accounting definitions.
       </p>
       <div className="my-4 space-y-2 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         <p>Loss Ratio = (Claims Paid + Loss Adjustment Expenses) / Earned Premiums × 100</p>
@@ -40,14 +40,14 @@ export function LossRatioGuideArticle() {
       </h2>
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Determine earned premiums</strong> — premiums recognized as revenue for the period
+ <strong>Determine earned premiums</strong>: premiums recognized as revenue for the period
           (not necessarily total written premiums).
         </li>
         <li>
-          <strong>Determine insurance claims paid</strong> — actual claim payments in that period.
+ <strong>Determine insurance claims paid</strong>: actual claim payments in that period.
         </li>
         <li>
-          <strong>Determine loss adjustment expenses</strong> — costs to investigate, handle,
+ <strong>Determine loss adjustment expenses</strong>: costs to investigate, handle,
           evaluate, and settle claims (adjuster fees, related legal costs, settlement administration,
           and similar items under your reporting rules).
         </li>
@@ -72,7 +72,7 @@ export function LossRatioGuideArticle() {
       </ol>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Interpretation: the company incurred $53 of claim payments and loss adjustment expenses for
-        every $100 of earned premiums. The remaining $47 per $100 is not automatically net profit —
+ every $100 of earned premiums. The remaining $47 per $100 is not automatically net profit; 
         underwriting expenses, commissions, administration, taxes, and other obligations may still
         apply.
       </p>
@@ -109,7 +109,7 @@ export function LossRatioGuideArticle() {
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A higher loss ratio means more of the premium base is absorbed by claim-related costs. Above
-        100%, those costs exceed earned premiums for the period under this definition — an
+ 100%, those costs exceed earned premiums for the period under this definition; an
         underwriting loss from loss-related costs alone, before other expenses.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
@@ -144,19 +144,19 @@ export function LossRatioGuideArticle() {
           <Link href="/tools/combined-ratio-calculator" className="text-primary hover:underline">
             Combined Ratio Calculator
           </Link>{' '}
-          — loss ratio plus expense ratio for underwriting performance
+; loss ratio plus expense ratio for underwriting performance
         </li>
         <li>
           <Link href="/tools/expense-ratio-calculator" className="text-primary hover:underline">
             Expense Ratio Calculator
           </Link>{' '}
-          — underwriting expenses relative to premiums
+; underwriting expenses relative to premiums
         </li>
         <li>
           <Link href="/tools/operating-margin-calculator" className="text-primary hover:underline">
             Operating Margin Calculator
           </Link>{' '}
-          — broader operating profitability context
+; broader operating profitability context
         </li>
       </ul>
 

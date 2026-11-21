@@ -40,7 +40,7 @@ export function interpretLossRatio(lossRatio: number): string {
     return `Claims and loss adjustment expenses represent ${formatPercent(lossRatio)}% of earned premiums for the selected period. A lower ratio may reflect favorable claims experience, but suitability depends on line of business, pricing, and underwriting strategy.`;
   }
   if (lossRatio < 70) {
-    return `Claims and loss adjustment expenses represent ${formatPercent(lossRatio)}% of earned premiums. Do not automatically treat this range as ideal — context matters.`;
+    return `Claims and loss adjustment expenses represent ${formatPercent(lossRatio)}% of earned premiums. Do not automatically treat this range as ideal; context matters.`;
   }
   if (lossRatio < 100) {
     return `A substantial share of earned premiums (${formatPercent(lossRatio)}%) was used for claims and loss adjustment expenses.`;
@@ -126,7 +126,7 @@ export function shareResultText(
   path = '/tools/loss-ratio-calculator',
 ): string {
   return [
-    'Loss Ratio Calculator — Omega Calculators',
+    'Loss Ratio Calculator | Omega Calculators',
     '',
     `Total Premiums Earned: ${result.formattedPremiumsEarned} ${result.currency}`,
     `Insurance Claims Paid: ${result.formattedClaimsPaid} ${result.currency}`,

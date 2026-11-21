@@ -78,7 +78,7 @@ export function WhatToOfferOnAHouseCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `FMV: ${symbol}${result.formattedFairMarketValue}`,
         `Renovation: ${symbol}${result.formattedRenovationCost}`,
         `Discount: ${symbol}${result.formattedDiscountAmount}`,
@@ -87,7 +87,7 @@ export function WhatToOfferOnAHouseCalculator({
           ? `Offer: ${symbol}${result.formattedActionableOfferAmount}`
           : `Mathematical offer: ${symbol}${result.formattedRawOfferAmount} (${result.status})`,
         'Formula: O = FMV − CoR − DD − DP',
-        'Simplified negotiation model — not an appraisal or guaranteed accepted offer.',
+        'Simplified negotiation model; not an appraisal or guaranteed accepted offer.',
       ].join('\n')
     : '';
 

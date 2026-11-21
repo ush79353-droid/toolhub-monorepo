@@ -72,8 +72,8 @@ export function CashActStimulusCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
-        'Historical / hypothetical CASH Act (H.R.9051, Dec 2020) — not a current benefit.',
+        `${metadata.title} | Omega Calculators`,
+        'Historical / hypothetical CASH Act (H.R.9051, Dec 2020); not a current benefit.',
         `Filed 2019 taxes: ${input.filed2019Taxes === 'yes' ? 'Yes' : 'No'}`,
         `Filing status: ${FILING_LABEL[input.filingStatus]}`,
         `Dependents: ${input.dependents}`,

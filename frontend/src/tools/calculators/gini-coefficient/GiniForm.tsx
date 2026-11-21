@@ -68,7 +68,7 @@ export function GiniForm({
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Gini coefficient G = A / (A + B). Area A is between the equality line
         and Lorenz curve; Area B is below the Lorenz curve. Gini index = G ×
-        100. Distinguishes dispersion from prosperity — income ≠ wealth
+ 100. Distinguishes dispersion from prosperity; income ≠ wealth
         inequality.
       </p>
 
@@ -195,7 +195,7 @@ export function GiniForm({
             Incomes (comma or space separated)
             <InfoTooltip
               label="Incomes"
-              text="Enter nonnegative individual income observations. Values are sorted ascending. Unweighted individual mode — not frequency-weighted grouped data."
+              text="Enter nonnegative individual income observations. Values are sorted ascending. Unweighted individual mode; not frequency-weighted grouped data."
             />
           </label>
           <textarea

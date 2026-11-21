@@ -47,7 +47,7 @@ export const PQ_FAQS: readonly FAQItem[] = [
   {
     question: 'What does “Would have cost” mean?',
     answer:
-      'It is the cost of buying the larger quantity at the smaller product’s price per unit — a baseline for comparing the larger pack’s deal.',
+      'It is the cost of buying the larger quantity at the smaller product’s price per unit: a baseline for comparing the larger pack’s deal.',
   },
   {
     question: 'Can savings be negative?',

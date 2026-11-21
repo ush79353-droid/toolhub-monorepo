@@ -79,7 +79,7 @@ export function WhatToOfferForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. Blank
+ changes the symbol only; it does not convert values. Blank
           renovation, discount, and profit fields default to zero.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
@@ -97,7 +97,7 @@ export function WhatToOfferForm({
           <span>Fair market value (FMV)</span>
           <InfoTooltip
             label="Fair market value (FMV)"
-            text="Estimated price a property could command in an ordinary market transaction between informed, willing buyers and sellers. Use comps or another appropriate estimate — not necessarily the asking price or after-repair value."
+            text="Estimated price a property could command in an ordinary market transaction between informed, willing buyers and sellers. Use comps or another appropriate estimate; not necessarily the asking price or after-repair value."
           />
         </label>
         <FieldShell error={errors.fairMarketValue}>
@@ -213,7 +213,7 @@ export function WhatToOfferForm({
           <span>Desired profit (DP)</span>
           <InfoTooltip
             label="Desired profit (DP)"
-            text="Investor profit allowance reserved in this simplified offer model — not guaranteed profit. For a personal home purchase, this may appropriately be zero. Actual returns depend on financing, holding costs, taxes, and resale."
+            text="Investor profit allowance reserved in this simplified offer model; not guaranteed profit. For a personal home purchase, this may appropriately be zero. Actual returns depend on financing, holding costs, taxes, and resale."
           />
         </label>
         <FieldShell error={errors.desiredProfit}>
@@ -241,7 +241,7 @@ export function WhatToOfferForm({
           <span>Offer amount (O)</span>
           <InfoTooltip
             label="Offer amount (O)"
-            text="O = FMV − CoR − DD − DP. Simplified negotiation/investment model — not an appraisal, legal valuation, or guaranteed acceptable offer."
+            text="O = FMV − CoR − DD − DP. Simplified negotiation/investment model; not an appraisal, legal valuation, or guaranteed acceptable offer."
           />
         </label>
         <FieldShell muted>

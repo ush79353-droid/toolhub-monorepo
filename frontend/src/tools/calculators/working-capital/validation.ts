@@ -183,7 +183,7 @@ export function validateWorkingCapitalInput(
         if (averageWorkingCapital < 0) {
           status = 'negativeAverageWc';
           warningMessage =
-            'Average working capital is negative, so turnover is a signed mathematical result — efficiency interpretation may not apply.';
+            'Average working capital is negative, so turnover is a signed mathematical result; efficiency interpretation may not apply.';
         } else if (status !== 'zeroLiabilities') {
           status = 'valid';
         }

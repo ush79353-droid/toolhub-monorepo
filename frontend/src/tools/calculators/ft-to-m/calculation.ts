@@ -40,7 +40,7 @@ export function calculateFtToM(input: FtToMInput): FtToMResult {
 
 export function shareResultText(result: FtToMResult): string {
   return [
-    'ft to m Converter — Omega Calculators',
+    'ft to m Converter | Omega Calculators',
     '',
     `${formatLength(result.feet)} ft = ${formatLength(result.meters)} m`,
     '',

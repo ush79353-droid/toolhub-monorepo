@@ -36,7 +36,7 @@ export const QUARTERS_TO_DOLLARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'quarters-to-dollars',
     title: 'How to Convert Quarters to Dollars',
     paragraphs: [
-      'A U.S. quarter is worth 25 cents — one-fourth of a dollar. Divide the number of quarters by 4, or multiply by 0.25, to get the dollar value.',
+      'A U.S. quarter is worth 25 cents; one-fourth of a dollar. Divide the number of quarters by 4, or multiply by 0.25, to get the dollar value.',
       'Examples: 4 quarters = $1, 12 quarters = $3, 20 quarters = $5, 40 quarters = $10, 100 quarters = $25.',
     ],
     formula: 'Dollars = Quarters ÷ 4   ·   Dollars = Quarters × 0.25',

@@ -293,7 +293,7 @@ export function validateBalanceTransferInput(
 
   let status: BalanceTransferStatus = 'valid';
   const warnings: string[] = [
-    'Monthly interest estimate (APR÷12). Issuers often use daily balances — statements may differ. No new purchases, late fees, or penalty APRs modeled.',
+    'Monthly interest estimate (APR÷12). Issuers often use daily balances; statements may differ. No new purchases, late fees, or penalty APRs modeled.',
   ];
 
   if (oldSim.neverPaysOff) {

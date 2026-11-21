@@ -55,7 +55,7 @@ export const MPC_FAQS: readonly FAQItem[] = [
   {
     question: 'What is autonomous consumption?',
     answer:
-      'The intercept a in C = a + bYd — predicted consumption when disposable income is zero in the model. It is theoretical, not a literal household budget at zero income.',
+      'The intercept a in C = a + bYd; predicted consumption when disposable income is zero in the model. It is theoretical, not a literal household budget at zero income.',
   },
   {
     question: 'How do you calculate consumer spending?',
@@ -100,7 +100,7 @@ export const MPC_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good MPC?',
     answer:
-      'There is no universal ideal. “Good” depends on income, credit, confidence, and the policy question — higher MPC can amplify stimulus but also imply less saving.',
+      'There is no universal ideal. “Good” depends on income, credit, confidence, and the policy question; higher MPC can amplify stimulus but also imply less saving.',
   },
   {
     question: 'Does a higher MPC mean more spending?',
@@ -125,7 +125,7 @@ export const MPC_FAQS: readonly FAQItem[] = [
   {
     question: 'How do tax cuts affect consumption?',
     answer:
-      'If disposable income rises, consumption may rise by roughly MPC × ΔYd in the linear model — subject to expectations, credit, and timing.',
+      'If disposable income rises, consumption may rise by roughly MPC × ΔYd in the linear model, subject to expectations, credit, and timing.',
   },
   {
     question: 'Why do households have different MPC values?',

@@ -50,7 +50,7 @@ export function ExpectedReturnCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         ...input.scenarios
           .map((s, i) => {
             if (

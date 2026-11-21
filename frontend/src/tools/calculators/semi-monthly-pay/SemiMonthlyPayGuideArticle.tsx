@@ -11,7 +11,7 @@ export function SemiMonthlyPayGuideArticle() {
         What Is Semi-Monthly Pay?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Semi-monthly pay is compensation paid twice per month — 24 periods in a
+ Semi-monthly pay is compensation paid twice per month; 24 periods in a
         year. It is not the same as biweekly pay (every two weeks, 26 periods).
         Enter the one wage period you know; this calculator converts it to an
         equivalent semi-monthly amount and fills the other wage periods.

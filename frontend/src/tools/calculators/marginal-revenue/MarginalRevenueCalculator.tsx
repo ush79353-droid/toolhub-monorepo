@@ -202,7 +202,7 @@ export function MarginalRevenueCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `ΔTR: ${changeSymbol}${result.formattedChangeRevenue} ${result.changeRevenueCurrency}`,
         `ΔQ: ${result.formattedChangeQuantity}`,
         result.undefinedMarginalRevenue

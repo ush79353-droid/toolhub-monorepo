@@ -13,7 +13,7 @@ export function SellingLeaveDaysGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Selling leave days (leave encashment) converts unused paid time off into
         a cash estimate. This calculator multiplies a working-day daily rate by
-        the leave days you choose to sell. It is an educational estimate — not a
+ the leave days you choose to sell. It is an educational estimate; not a
         guarantee of employer policy or statutory entitlement.
       </p>
 

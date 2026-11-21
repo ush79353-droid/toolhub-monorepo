@@ -54,12 +54,12 @@ export const EVA_FAQS: readonly FAQItem[] = [
   {
     question: 'What is NOPAT?',
     answer:
-      'Net operating profit after taxes — after-tax operating profit before financing costs, often approximated as EBIT × (1 − tax rate).',
+      'Net operating profit after taxes; after-tax operating profit before financing costs, often approximated as EBIT × (1 − tax rate).',
   },
   {
     question: 'What is WACC?',
     answer:
-      'The weighted average cost of capital — the blended required return on the firm’s capital sources, expressed as a percentage.',
+      'The weighted average cost of capital: the blended required return on the firm’s capital sources, expressed as a percentage.',
   },
   {
     question: 'How do you calculate invested capital?',

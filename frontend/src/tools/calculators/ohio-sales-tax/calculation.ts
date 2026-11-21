@@ -71,7 +71,7 @@ export function lookupOhioSalesTax(
     zipCode,
     formattedPurchaseAmount,
     summaryText: [
-      'Ohio Sales Tax Calculator — Omega Calculators',
+      'Ohio Sales Tax Calculator | Omega Calculators',
       `Purchase amount: $${formattedPurchaseAmount}`,
       `ZIP code: ${zipCode}`,
       'Combined sales tax rate: unavailable (no verified ZIP rate table)',

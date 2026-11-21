@@ -78,7 +78,7 @@ export function getAPCInterpretation(apcRatio: number): string {
   if (apcRatio === 1) {
     return `APC is 1.00 (100%). Total consumption equals disposable income, so implied saving is zero in this simplified calculation.`;
   }
-  return `APC is ${formatRatio(apcRatio)} (${pct}%). Consumption exceeds current disposable income. This can occur when households use existing savings, borrow, or draw on other resources — the calculator does not assume which of those applies.`;
+  return `APC is ${formatRatio(apcRatio)} (${pct}%). Consumption exceeds current disposable income. This can occur when households use existing savings, borrow, or draw on other resources: the calculator does not assume which of those applies.`;
 }
 
 export function formatRatio(value: number, digits = 4): string {
@@ -103,7 +103,7 @@ export function formatMoney(amount: number, currency: SupportedCurrency): string
 
 export function shareApcText(result: ApcResult): string {
   return [
-    'APC Calculator — Omega Calculators',
+    'APC Calculator | Omega Calculators',
     `Total consumption: ${formatMoney(result.totalConsumption, result.currency)} ${result.currency}`,
     `Total disposable income: ${formatMoney(result.totalDisposableIncome, result.currency)} ${result.currency}`,
     `APC ratio: ${formatRatio(result.apcRatio)}`,

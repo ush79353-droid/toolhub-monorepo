@@ -91,7 +91,7 @@ export function BalloonPaymentCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan amount: ${result.currency} ${input.loanAmount}`,
         `Amortization: ${input.amortYears || '0'} yrs ${input.amortMonths || '0'} mos`,
         `Balloon after: ${input.balloonAfter} ${input.balloonAfterUnit}`,

@@ -104,7 +104,7 @@ export function MilToInchForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact: 1 mil = {INCHES_PER_MIL} in (a mil is a thousandth of an inch — not a millimeter,
+ Exact: 1 mil = {INCHES_PER_MIL} in (a mil is a thousandth of an inch; not a millimeter,
         mile, or milliradian). 1 in = {MILS_PER_INCH} mil. Edit either field; the other updates
         instantly.
       </div>

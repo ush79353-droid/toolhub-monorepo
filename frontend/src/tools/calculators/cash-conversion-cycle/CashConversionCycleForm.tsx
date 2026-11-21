@@ -200,7 +200,7 @@ export function CashConversionCycleForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. DSO uses total
+ changes the symbol only; it does not convert values. DSO uses total
           revenue (simplified); DIO/DPO use COGS. CCC = DIO + DSO − DPO.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">

@@ -12,7 +12,7 @@ export const CARRIED_INTEREST_FAQS: readonly FAQItem[] = [
   {
     question: 'What is carried interest?',
     answer:
-      'Carried interest (carry) is the general partner’s performance fee — typically a share of fund profits above a preferred return (hurdle), not a fee on the entire fund value.',
+      'Carried interest (carry) is the general partner’s performance fee; typically a share of fund profits above a preferred return (hurdle), not a fee on the entire fund value.',
   },
   {
     question: 'How is the hurdle amount calculated?',
@@ -27,6 +27,6 @@ export const CARRIED_INTEREST_FAQS: readonly FAQItem[] = [
   {
     question: 'Can fund return be negative?',
     answer:
-      'Yes. If the final fund value is below the initial value, fund return is negative and carried interest is zero — losses do not create a GP payout.',
+      'Yes. If the final fund value is below the initial value, fund return is negative and carried interest is zero; losses do not create a GP payout.',
   },
 ];

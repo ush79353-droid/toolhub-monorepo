@@ -40,7 +40,7 @@ export const LBS_TO_POUNDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert lbs to Pounds',
     paragraphs: [
       'lb is the standard unit symbol for the pound, while lbs is a common informal plural abbreviation. The numerical conversion is one-to-one.',
-      `Example — convert 22 lbs: 22 × ${LBS_TO_POUNDS_FACTOR} = ${formatMass(lbsToPounds(22))}. Therefore 22 lbs = ${formatMass(lbsToPounds(22))} pounds.`,
+      `Example; convert 22 lbs: 22 × ${LBS_TO_POUNDS_FACTOR} = ${formatMass(lbsToPounds(22))}. Therefore 22 lbs = ${formatMass(lbsToPounds(22))} pounds.`,
       'The value remains unchanged because both names describe the same avoirdupois mass unit. This calculator is not pounds-to-kilograms, pounds-to-ounces, or pounds-force.',
     ],
     formula: `Pounds = lbs × ${LBS_TO_POUNDS_FACTOR} · lbs = Pounds × ${LBS_TO_POUNDS_FACTOR}`,

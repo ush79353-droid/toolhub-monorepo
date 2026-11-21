@@ -29,7 +29,7 @@ export const APR_FAQS: readonly FAQItem[] = [
   {
     question: 'What does APR stand for?',
     answer:
-      'APR stands for annual percentage rate — a standardized way to express the yearly cost of borrowing, typically including interest and certain finance charges.',
+      'APR stands for annual percentage rate: a standardized way to express the yearly cost of borrowing, typically including interest and certain finance charges.',
   },
   {
     question: 'What is APR on a loan?',
@@ -49,7 +49,7 @@ export const APR_FAQS: readonly FAQItem[] = [
   {
     question: 'Why is APR higher than the interest rate?',
     answer:
-      'Upfront or financed fees mean you repay a payment stream sized for a larger (or full) principal while receiving less cash — which raises the implied annualized cost.',
+      'Upfront or financed fees mean you repay a payment stream sized for a larger (or full) principal while receiving less cash; which raises the implied annualized cost.',
   },
   {
     question: 'Can APR be lower than the interest rate?',
@@ -104,7 +104,7 @@ export const APR_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I compare loans using APR?',
     answer:
-      'Compare loans with similar amounts, terms, and payment frequencies. Also check total payments and cash due at closing — APR alone does not capture every difference.',
+      'Compare loans with similar amounts, terms, and payment frequencies. Also check total payments and cash due at closing; APR alone does not capture every difference.',
   },
   {
     question: 'Does APR include all closing costs?',

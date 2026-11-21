@@ -176,7 +176,7 @@ export function MarginAndSalesTaxCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Cost: ${getCurrencySymbol(result.costCurrency)}${result.formattedCost} ${result.costCurrency}`,
         `Markup: ${input.markupPercent}%`,
         `Net price: ${getCurrencySymbol(result.netPriceCurrency)}${result.formattedNetPrice} ${result.netPriceCurrency}`,

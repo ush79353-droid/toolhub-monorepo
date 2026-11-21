@@ -98,7 +98,7 @@ export function shareResultText(result: MlToKgResult): string {
     MASS_UNIT_OPTIONS.find((o) => o.value === result.massUnit)?.label ?? result.massUnit;
 
   return [
-    'mL to kg Converter — Omega Calculators',
+    'mL to kg Converter | Omega Calculators',
     '',
     `Substance: ${result.substanceName}`,
     `Density: ${formatMeasure(result.densityValue)} ${densityLabel}`,

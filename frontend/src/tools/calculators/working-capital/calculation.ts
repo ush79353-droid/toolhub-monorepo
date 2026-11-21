@@ -90,14 +90,14 @@ export function interpretWorkingCapital(
 
   if (workingCapital !== null) {
     if (Math.abs(workingCapital) < 5e-12) {
-      parts.push('Working capital is zero — current assets equal current liabilities.');
+      parts.push('Working capital is zero; current assets equal current liabilities.');
     } else if (workingCapital > 0) {
       parts.push(
         `Positive working capital of ${formatPlain(workingCapital)} means current assets exceed current liabilities.`
       );
     } else {
       parts.push(
-        `Negative working capital of ${formatPlain(workingCapital)} means current liabilities exceed current assets — not automatically insolvency.`
+        `Negative working capital of ${formatPlain(workingCapital)} means current liabilities exceed current assets; not automatically insolvency.`
       );
     }
   }
@@ -111,7 +111,7 @@ export function interpretWorkingCapital(
   if (turnover !== null && averageWorkingCapital !== null) {
     if (averageWorkingCapital < 0) {
       parts.push(
-        `Signed turnover of ${formatWcTurnover(turnover)}x uses a negative average WC — interpret with caution; efficiency comparisons may not apply.`
+        `Signed turnover of ${formatWcTurnover(turnover)}x uses a negative average WC; interpret with caution; efficiency comparisons may not apply.`
       );
     } else {
       parts.push(

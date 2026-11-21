@@ -96,7 +96,7 @@ export function RevenuePerEmployeeCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Revenue: ${formatCurrencyValue(result.revenue, result.currency)}`,
         `Number of employee: ${input.employeeCount}`,
         `Revenue per employee: ${formatCurrencyValue(result.revenuePerEmployee, result.currency)}`,

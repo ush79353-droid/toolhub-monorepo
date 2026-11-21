@@ -148,7 +148,7 @@ export function GematriaResults({
                     {jewishEngRows[index]?.value ?? '—'}
                   </td>
                   {bundle.hasHebrewLetters ? (
-                    <td className="px-3 py-2 tabular-nums text-accent">—</td>
+ <td className="px-3 py-2 tabular-nums text-accent">; </td>
                   ) : null}
                 </tr>
               ))}
@@ -157,9 +157,9 @@ export function GematriaResults({
                   <td className="px-3 py-2 font-mono text-accent">{row.letter}</td>
                   {bundle.hasLatinLetters ? (
                     <>
-                      <td className="px-3 py-2 tabular-nums text-accent">—</td>
-                      <td className="px-3 py-2 tabular-nums text-accent">—</td>
-                      <td className="px-3 py-2 tabular-nums text-accent">—</td>
+ <td className="px-3 py-2 tabular-nums text-accent">; </td>
+ <td className="px-3 py-2 tabular-nums text-accent">; </td>
+ <td className="px-3 py-2 tabular-nums text-accent">; </td>
                     </>
                   ) : null}
                   <td className="px-3 py-2 tabular-nums text-accent">{row.value}</td>

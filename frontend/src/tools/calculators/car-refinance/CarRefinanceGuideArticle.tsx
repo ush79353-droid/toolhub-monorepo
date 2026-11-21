@@ -11,7 +11,7 @@ export function CarRefinanceGuideArticle() {
         What Is Car Loan Refinancing?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Refinancing a car loan replaces your remaining auto balance with a new loan —
+ Refinancing a car loan replaces your remaining auto balance with a new loan; 
         often at a different rate or term. This calculator compares the remaining
         amortization on your current loan with a proposed refinance so you can see
         monthly payment, total interest, and total payments side by side.

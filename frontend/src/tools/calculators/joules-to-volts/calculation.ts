@@ -135,14 +135,14 @@ export function shareResultText(opts: {
         ? 'E = V × Q'
         : 'Q = E / V';
   return [
-    'Joules to Volts Calculator — Omega Calculators',
+    'Joules to Volts Calculator | Omega Calculators',
     '',
     `Direction: ${opts.solveFor} (${formula})`,
     `Energy: ${opts.energyDisplay} ${ENERGY_UNIT_SYMBOLS[opts.energyUnit]}`,
     `Charge: ${opts.chargeDisplay} ${CHARGE_UNIT_SYMBOLS[opts.chargeUnit]}`,
     `Voltage: ${opts.voltageDisplay} ${VOLTAGE_UNIT_SYMBOLS[opts.voltageUnit]}`,
     '',
-    'Note: joules alone cannot determine volts — charge is required.',
+    'Note: joules alone cannot determine volts; charge is required.',
     '',
     'Calculated with Omega Calculators',
   ].join('\n');

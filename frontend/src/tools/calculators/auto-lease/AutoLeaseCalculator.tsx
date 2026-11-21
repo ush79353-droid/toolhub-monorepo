@@ -78,7 +78,7 @@ export function AutoLeaseCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.summaryText,
         `Capitalized cost: $${result.formattedCapitalizedCost}`,
         `Monthly depreciation: $${result.formattedMonthlyDepreciation}`,

@@ -36,7 +36,7 @@ export const INCH_TO_METER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'Inch to Meter Calculator',
     paragraphs: [
-      'Convert inches to meters—and meters back to inches—instantly with this free Omega Calculators tool. Both primary fields stay editable, and a feet-and-inches row keeps mixed imperial measurements in sync.',
+      'Convert inches to meters, and meters back to inches, instantly with this free Omega Calculators tool. Both primary fields stay editable, and a feet-and-inches row keeps mixed imperial measurements in sync.',
       'Use it for furniture dimensions, construction take-offs, height conversions, product specifications, and engineering checks where customary and SI lengths must match.',
       'The international inch is the source of truth: every meter result comes from multiplying inches by exactly 0.0254.',
     ],
@@ -44,11 +44,11 @@ export const INCH_TO_METER_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'definition',
-    title: 'Inch to Meter Conversion — How Many Meters Are in an Inch?',
+    title: 'Inch to Meter Conversion; How Many Meters Are in an Inch?',
     paragraphs: [
       `One international inch equals exactly ${METERS_PER_INCH} meters.`,
       `One meter equals approximately ${formatLength(metersToInches(1))} inches (1 ÷ 0.0254).`,
-      'Because the inch definition is exact, reverse conversion simply divides meters by 0.0254—no approximate factor is required in the engine.',
+      'Because the inch definition is exact, reverse conversion simply divides meters by 0.0254, no approximate factor is required in the engine.',
     ],
     formula: `1 in = ${METERS_PER_INCH} m\n1 m ≈ ${formatLength(metersToInches(1))} in`,
   },
@@ -57,7 +57,7 @@ export const INCH_TO_METER_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Inches to Meters',
     paragraphs: [
       `Multiply the length in inches by ${METERS_PER_INCH}.`,
-      `Example — convert 75 inches: 75 × ${METERS_PER_INCH} = ${formatLength(inchesToMeters(75))}. Therefore 75 inches = 1.905 meters.`,
+      `Example; convert 75 inches: 75 × ${METERS_PER_INCH} = ${formatLength(inchesToMeters(75))}. Therefore 75 inches = 1.905 meters.`,
     ],
     formula: `m = in × ${METERS_PER_INCH}`,
   },
@@ -65,9 +65,9 @@ export const INCH_TO_METER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Examples of Inch to Meter Conversion',
     paragraphs: [
-      `Example 1 — convert 36 inches: 36 × ${METERS_PER_INCH} = ${formatLength(inchesToMeters(36))}. Therefore 36 inches = 0.9144 meters (exactly 1 yard).`,
-      `Example 2 — convert 72 inches: 72 × ${METERS_PER_INCH} = ${formatLength(inchesToMeters(72))}. Therefore 72 inches = 1.8288 meters.`,
-      `Example 3 — convert 100 inches: 100 × ${METERS_PER_INCH} = ${formatLength(inchesToMeters(100))}. Therefore 100 inches = 2.54 meters.`,
+      `Example 1: convert 36 inches: 36 × ${METERS_PER_INCH} = ${formatLength(inchesToMeters(36))}. Therefore 36 inches = 0.9144 meters (exactly 1 yard).`,
+      `Example 2: convert 72 inches: 72 × ${METERS_PER_INCH} = ${formatLength(inchesToMeters(72))}. Therefore 72 inches = 1.8288 meters.`,
+      `Example 3: convert 100 inches: 100 × ${METERS_PER_INCH} = ${formatLength(inchesToMeters(100))}. Therefore 100 inches = 2.54 meters.`,
     ],
   },
   {
@@ -75,7 +75,7 @@ export const INCH_TO_METER_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Meters to Inches',
     paragraphs: [
       `Divide meters by ${METERS_PER_INCH}.`,
-      `Example — convert 2 meters: 2 ÷ ${METERS_PER_INCH} ≈ ${formatLength(metersToInches(2))}. Therefore 2 meters ≈ ${formatLength(metersToInches(2))} inches.`,
+      `Example; convert 2 meters: 2 ÷ ${METERS_PER_INCH} ≈ ${formatLength(metersToInches(2))}. Therefore 2 meters ≈ ${formatLength(metersToInches(2))} inches.`,
       'Use the meters field for reverse conversion; inches and feet-and-inches update automatically.',
     ],
     formula: `in = m ÷ ${METERS_PER_INCH}`,

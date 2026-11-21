@@ -54,7 +54,7 @@ export const ML_TO_CUPS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'introduction',
     title: 'Introduction',
     paragraphs: [
-      'This converter turns liquid volume between milliliters (mL) and cups for cooking, baking, and general kitchen measurements. Cup size is not universal—US customary, US legal, metric, and imperial cups each use a different milliliter definition.',
+      'This converter turns liquid volume between milliliters (mL) and cups for cooking, baking, and general kitchen measurements. Cup size is not universal, US customary, US legal, metric, and imperial cups each use a different milliliter definition.',
       'Select the cup standard that matches your recipe or measuring tools, then enter milliliters or cups. The other field updates instantly.',
     ],
   },
@@ -63,7 +63,7 @@ export const ML_TO_CUPS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Many Milliliters Are in One Cup?',
     paragraphs: [
       `US customary cup: exactly ${ML_PER_CUP.usCustomary} mL (8 × 29.5735295625 US fluid ounces). US legal cup: exactly ${ML_PER_CUP.usLegal} mL (nutrition-label convention). Metric cup: exactly ${ML_PER_CUP.metric} mL. Imperial cup: exactly ${ML_PER_CUP.imperial} mL (½ imperial pint).`,
-      'Rounded cooking references often say “about 237 mL” for a US cup. That is a useful approximation, but this converter uses the exact US customary factor for calculations—not 237.',
+      'Rounded cooking references often say “about 237 mL” for a US cup. That is a useful approximation, but this converter uses the exact US customary factor for calculations, not 237.',
     ],
   },
   {
@@ -117,7 +117,7 @@ export const ML_TO_CUPS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'us-vs-metric',
     title: 'Difference Between US and Metric Cups',
     paragraphs: [
-      `One metric cup is exactly ${ML_PER_CUP.metric} mL. One US customary cup is ${ML_PER_CUP.usCustomary} mL—about 5.4% smaller. Using the wrong standard changes every ingredient volume in a recipe.`,
+      `One metric cup is exactly ${ML_PER_CUP.metric} mL. One US customary cup is ${ML_PER_CUP.usCustomary} mL, about 5.4% smaller. Using the wrong standard changes every ingredient volume in a recipe.`,
     ],
   },
   {
@@ -131,7 +131,7 @@ export const ML_TO_CUPS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'ml-vs-grams',
     title: 'Is mL the Same as Grams?',
     paragraphs: [
-      'No. Milliliters measure volume; grams measure mass. Equal milliliters of water and oil do not weigh the same. Converting mL to grams requires the ingredient’s density—this converter does not assume 1 mL = 1 g for every food.',
+      'No. Milliliters measure volume; grams measure mass. Equal milliliters of water and oil do not weigh the same. Converting mL to grams requires the ingredient’s density, this converter does not assume 1 mL = 1 g for every food.',
     ],
   },
   {

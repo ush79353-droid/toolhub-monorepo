@@ -299,7 +299,7 @@ export function BiweeklyMortgageForm({
             <span>Compounding frequency</span>
             <InfoTooltip
               label="Compounding frequency"
-              text="Monthly (UK & US) uses APR÷12. Semi-annually (Canada) compounds twice a year. Biweekly rates are converted from that convention — not ordinary twice-monthly payments."
+              text="Monthly (UK & US) uses APR÷12. Semi-annually (Canada) compounds twice a year. Biweekly rates are converted from that convention; not ordinary twice-monthly payments."
             />
           </label>
           <select

@@ -81,7 +81,7 @@ export function calculateCcToMl(input: CcToMlInput): CcToMlResult {
 
 export function shareResultText(result: CcToMlResult): string {
   return [
-    'cc to mL Converter — Omega Calculators',
+    'cc to mL Converter | Omega Calculators',
     '',
     `${formatVolume(result.cc)} cc = ${formatVolume(result.ml)} mL = ${formatVolume(result.liters)} L`,
     '',

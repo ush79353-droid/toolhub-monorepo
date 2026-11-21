@@ -113,7 +113,7 @@ export function MicronToMilForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact: 1 mil = 0.001 in = {MICRONS_PER_MIL} µm (a mil is a thousandth of an inch — not a
+ Exact: 1 mil = 0.001 in = {MICRONS_PER_MIL} µm (a mil is a thousandth of an inch; not a
         millimeter). Edit microns or mils; the other updates instantly. Expand More conversion
         options for mm, cm, m, in, and nm.
       </div>

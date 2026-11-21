@@ -44,7 +44,7 @@ export function calculateKpaToAtm(input: KpaToAtmInput): KpaToAtmResult {
 
 export function shareResultText(result: KpaToAtmResult): string {
   return [
-    'kPa to atm Conversion — Omega Calculators',
+    'kPa to atm Conversion | Omega Calculators',
     '',
     `${formatPressure(result.kPa)} kPa = ${formatPressure(result.atm)} atm`,
     '',

@@ -153,7 +153,7 @@ export function InventoryTurnoverForm({
           Cost of Goods Sold
           <InfoTooltip
             label="Cost of Goods Sold"
-            text="Direct costs of goods sold in the accounting period — materials, labor, and related production or merchandise costs recognized when sold. Do not substitute revenue."
+            text="Direct costs of goods sold in the accounting period; materials, labor, and related production or merchandise costs recognized when sold. Do not substitute revenue."
           />
         </label>
         <FieldShell error={errors.costOfGoodsSold}>
@@ -272,7 +272,7 @@ export function InventoryTurnoverForm({
             Inventory days
             <InfoTooltip
               label="Inventory days"
-              text="(Average Inventory ÷ COGS) × Days — also called DIO / DSI. Unavailable when COGS is zero."
+              text="(Average Inventory ÷ COGS) × Days; also called DIO / DSI. Unavailable when COGS is zero."
             />
           </label>
           <FieldShell muted>
@@ -294,7 +294,7 @@ export function InventoryTurnoverForm({
             Inventory turnover
             <InfoTooltip
               label="Inventory turnover"
-              text="COGS ÷ Average Inventory. Dimensionless multiplier — no currency or percent. Undefined when average inventory is zero."
+              text="COGS ÷ Average Inventory. Dimensionless multiplier; no currency or percent. Undefined when average inventory is zero."
             />
           </label>
           <FieldShell muted>

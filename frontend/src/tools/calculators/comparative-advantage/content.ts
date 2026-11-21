@@ -42,7 +42,7 @@ export const COMPARATIVE_ADVANTAGE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is opportunity cost?',
     answer:
-      'What you forgo to get one more unit of a good — here, how many units of the other good you sacrifice along a linear PPF.',
+      'What you forgo to get one more unit of a good; here, how many units of the other good you sacrifice along a linear PPF.',
   },
   {
     question: 'How do you calculate the opportunity cost of Good A?',
@@ -62,7 +62,7 @@ export const COMPARATIVE_ADVANTAGE_FAQS: readonly FAQItem[] = [
   {
     question: 'Can a country have a comparative advantage in both goods?',
     answer:
-      'Not as a unique strict advantage in both when there are two goods and two producers with differing relative costs — each good’s lower OC goes to one side (or both tie).',
+      'Not as a unique strict advantage in both when there are two goods and two producers with differing relative costs; each good’s lower OC goes to one side (or both tie).',
   },
   {
     question: 'What happens when opportunity costs are equal?',
@@ -72,7 +72,7 @@ export const COMPARATIVE_ADVANTAGE_FAQS: readonly FAQItem[] = [
   {
     question: 'Why does comparative advantage matter?',
     answer:
-      'It explains how specialization based on relative costs — not only absolute productivity — can expand feasible consumption through trade under model assumptions.',
+      'It explains how specialization based on relative costs (not only absolute productivity) can expand feasible consumption through trade under model assumptions.',
   },
   {
     question: 'How does comparative advantage encourage international trade?',
@@ -82,7 +82,7 @@ export const COMPARATIVE_ADVANTAGE_FAQS: readonly FAQItem[] = [
   {
     question: 'What are the benefits of specialization?',
     answer:
-      'Under the two-good linear model, specializing in the comparative-advantage good and trading can raise feasible consumption sets — gains need not be equal for all people.',
+      'Under the two-good linear model, specializing in the comparative-advantage good and trading can raise feasible consumption sets; gains need not be equal for all people.',
   },
   {
     question: 'What are the limitations of comparative advantage?',
@@ -117,6 +117,6 @@ export const COMPARATIVE_ADVANTAGE_FAQS: readonly FAQItem[] = [
   {
     question: 'Can comparative advantage change over time?',
     answer:
-      'Yes. Technology, skills, resources, and institutions can shift opportunity costs — comparative advantage is dynamic.',
+      'Yes. Technology, skills, resources, and institutions can shift opportunity costs; comparative advantage is dynamic.',
   },
 ];

@@ -23,7 +23,7 @@ export function HealsHeroesUnemploymentBenefitForm({
     >
       <p>
         The <em>HEALS Act</em> package included the{' '}
-        <em>American Workers, Families, and Employers Assistance Act</em> — a 2020 Republican
+ <em>American Workers, Families, and Employers Assistance Act</em>: a 2020 Republican
         Senate legislative proposal that sat between the enacted Coronavirus Aid, Relief, and
         Economic Security (CARES) Act and the House Democratic{' '}
         <em>Health and Economic Recovery Omnibus Emergency Solutions (HEROES) Act</em> proposal.

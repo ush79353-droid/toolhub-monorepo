@@ -205,7 +205,7 @@ export function SemiMonthlyPayCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Source: ${result.sourceField} wage`,
         `Semi-monthly: ${getCurrencySymbol(result.semiMonthlyCurrency)}${result.formattedSemiMonthly} ${result.semiMonthlyCurrency}`,
         `Hours/week: ${input.hoursPerWeek}`,

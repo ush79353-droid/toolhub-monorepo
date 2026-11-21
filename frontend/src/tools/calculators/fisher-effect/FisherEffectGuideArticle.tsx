@@ -13,7 +13,7 @@ export function FisherEffectGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The Fisher effect connects nominal interest rates, expected inflation,
-        and real interest rates — the purchasing-power view of a stated return.
+ and real interest rates: the purchasing-power view of a stated return.
         This calculator solves any one of the three using the exact Fisher
         equation by default and shows the common additive approximation for
         comparison. Nominal and real rates here are accounting identities under
@@ -24,13 +24,13 @@ export function FisherEffectGuideArticle() {
         id="what-is"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        What Is the Fisher Effect? — Definition
+ What Is the Fisher Effect?; Definition
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Irving Fisher described how the nominal rate embeds compensation for
         expected inflation so that the real rate reflects purchasing power.
         Observed markets may deviate because of risk, taxes, liquidity, and
-        policy — so treat the equation as a theoretical relationship, not an
+ policy, so treat the equation as a theoretical relationship, not an
         automatic market law.
       </p>
 
@@ -138,7 +138,7 @@ export function FisherEffectGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Example: i = 12%, πᵉ = 8%. Approximate r ≈ 4%. Exact r =
-        ((1.12/1.08)−1)×100 ≈ 3.70%. The gap grows as rates rise — do not label
+ ((1.12/1.08)−1)×100 ≈ 3.70%. The gap grows as rates rise; do not label
         the approximation as exact.
       </p>
 
@@ -177,7 +177,7 @@ export function FisherEffectGuideArticle() {
         Loans, mortgages, deposits, and bonds are often quoted in nominal terms.
         Real rates help interpret purchasing-power outcomes for borrowers and
         savers. Loan pricing also reflects credit risk, funding costs, and
-        regulation — not the Fisher equation alone.
+ regulation; not the Fisher equation alone.
       </p>
 
       <h2

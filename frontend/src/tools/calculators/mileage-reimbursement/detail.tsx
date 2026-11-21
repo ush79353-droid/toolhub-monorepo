@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate a nominal combined IRS standard-mileage amount for business, medical, and charitable driving — with verified year/period rates and mi/km conversion. Fixed USD.',
+    'Estimate a nominal combined IRS standard-mileage amount for business, medical, and charitable driving, with verified year/period rates and mi/km conversion. Fixed USD.',
   asideAriaLabel: 'Interactive Mileage Reimbursement Calculator',
   tocItems: MILEAGE_REIMBURSEMENT_TOC_ITEMS,
   GuideArticle: MileageReimbursementGuideArticle,

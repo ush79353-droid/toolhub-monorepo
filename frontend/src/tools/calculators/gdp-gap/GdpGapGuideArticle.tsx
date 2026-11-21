@@ -17,7 +17,7 @@ export function GdpGapGuideArticle() {
         above estimated sustainable capacity; negative values suggest spare
         capacity. This calculator computes Gap% = ((Y − Y*) / Y*) × 100,
         rearranges for actual or potential GDP, and shows the absolute gap in
-        monetary units. Potential GDP is an estimate — not an exact ceiling.
+ monetary units. Potential GDP is an estimate; not an exact ceiling.
       </p>
 
       <h2
@@ -37,7 +37,7 @@ export function GdpGapGuideArticle() {
         id="formula"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        GDP Gap Formula — How to Calculate the Output Gap
+ GDP Gap Formula; How to Calculate the Output Gap
       </h2>
       <div className="my-4 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         GDP Gap (%) = ((Y − Y*) / Y*) × 100
@@ -59,7 +59,7 @@ export function GdpGapGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Actual output exceeds estimated potential. That can coincide with high
         resource utilization and stronger demand, and may add inflationary
-        pressure — without guaranteeing inflation or lasting overheating.
+ pressure, without guaranteeing inflation or lasting overheating.
       </p>
 
       <h2
@@ -133,7 +133,7 @@ export function GdpGapGuideArticle() {
         id="examples"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        How to Calculate GDP Gap — Worked Examples
+ How to Calculate GDP Gap; Worked Examples
       </h2>
       <div className="my-4 space-y-2 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         <p>Positive: (22−20)/20×100 = +10%</p>
@@ -170,7 +170,7 @@ export function GdpGapGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         It informs business-cycle monitoring, inflation analysis, monetary and
-        fiscal discussions, employment conditions, and forecasting — always as
+ fiscal discussions, employment conditions, and forecasting; always as
         an estimate, not a definitive prediction.
       </p>
 
@@ -182,7 +182,7 @@ export function GdpGapGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Positive gaps may add demand-side pressure; negative gaps may ease it.
-        Supply shocks, expectations, and policy still matter — inflation is not
+ Supply shocks, expectations, and policy still matter; inflation is not
         determined by the gap alone.
       </p>
 

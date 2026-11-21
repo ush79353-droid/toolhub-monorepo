@@ -104,7 +104,7 @@ export function BreakEvenCalculator({
   const handleShare = async () => {
     const summary = result
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Revenue per unit: ${formatCurrencyValue(result.revenuePerUnit, result.currency)}`,
           `Cost per unit: ${formatCurrencyValue(result.costPerUnit, result.currency)}`,
           `Fixed costs: ${formatCurrencyValue(result.fixedCosts, result.currency)}`,
@@ -118,7 +118,7 @@ export function BreakEvenCalculator({
         ]
           .filter(Boolean)
           .join('\n')
-      : `${metadata.title} — Calculate break-even units and revenue at Omega Calculators`;
+      : `${metadata.title}; Calculate break-even units and revenue at Omega Calculators`;
 
     if (await copyTextToClipboard(summary)) {
       setCopied(true);

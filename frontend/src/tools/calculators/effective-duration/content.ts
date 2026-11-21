@@ -46,7 +46,7 @@ export const EFFECTIVE_DURATION_FAQS: readonly FAQItem[] = [
   {
     question: 'Is a higher effective duration better?',
     answer:
-      'Not inherently. Higher duration means greater interest-rate sensitivity — useful for some views and risky for others. Suitability depends on portfolio objectives, horizons, and risk limits.',
+      'Not inherently. Higher duration means greater interest-rate sensitivity; useful for some views and risky for others. Suitability depends on portfolio objectives, horizons, and risk limits.',
   },
   {
     question: 'Can effective duration be negative?',
@@ -108,7 +108,7 @@ export const EFFECTIVE_DURATION_FAQS: readonly FAQItem[] = [
   {
     question: 'How do embedded options affect effective duration?',
     answer:
-      'Options can change expected cash flows when yields move. True effective duration therefore needs scenario prices from models that allow those cash-flow changes — not a fixed coupon schedule alone.',
+      'Options can change expected cash flows when yields move. True effective duration therefore needs scenario prices from models that allow those cash-flow changes; not a fixed coupon schedule alone.',
   },
   {
     question: 'How does convexity affect duration estimates?',

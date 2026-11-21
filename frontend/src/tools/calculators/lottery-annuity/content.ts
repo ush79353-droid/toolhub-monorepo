@@ -17,7 +17,7 @@ export const LOTTERY_ANNUITY_FAQS: readonly FAQItem[] = [
   {
     question: 'What do the tax treatment options do?',
     answer:
-      'Without tax shows gross payouts. Customized tax rate applies one user-entered rate to every yearly payout (net = gross × (1 − tax)). US taxes are not estimated here — federal brackets and state withholding are not invented; choose Without tax or Customized instead.',
+      'Without tax shows gross payouts. Customized tax rate applies one user-entered rate to every yearly payout (net = gross × (1 − tax)). US taxes are not estimated here; federal brackets and state withholding are not invented; choose Without tax or Customized instead.',
   },
   {
     question: 'Does the currency selector convert the prize?',

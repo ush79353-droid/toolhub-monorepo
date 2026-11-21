@@ -102,7 +102,7 @@ export function RelativeStrengthIndexCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `RSI Period: ${input.period}`,
         `Calculation Method: ${methodLabel}`,
@@ -110,11 +110,11 @@ export function RelativeStrengthIndexCalculator({
         `Closing Prices:`,
         pricesLine,
         '',
-        `Average Gain: ${result!.formattedAvgGain ?? '—'}`,
-        `Average Loss: ${result!.formattedAvgLoss ?? '—'}`,
-        `Relative Strength: ${result!.formattedRs ?? '—'}`,
+        `Average Gain: ${result!.formattedAvgGain ?? '; '}`,
+        `Average Loss: ${result!.formattedAvgLoss ?? '; '}`,
+        `Relative Strength: ${result!.formattedRs ?? '; '}`,
         '',
-        `RSI: ${result!.formattedRsi ?? '—'}`,
+        `RSI: ${result!.formattedRsi ?? '; '}`,
         result!.interpretation
           ? `Interpretation: ${result!.interpretation}`
           : null,

@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert between hourly wage and annual salary from hours per week, then see daily, weekly, biweekly, and monthly pay — with independent FX on every money field.',
+    'Convert between hourly wage and annual salary from hours per week, then see daily, weekly, biweekly, and monthly pay, with independent FX on every money field.',
   asideAriaLabel: 'Interactive Hourly to Salary - Wage Calculator',
   tocItems: HOURLY_TO_SALARY_WAGE_TOC_ITEMS,
   GuideArticle: HourlyToSalaryWageGuideArticle,

@@ -179,7 +179,7 @@ export function buildMpcPresentation(input: MpcBundleInput) {
     multiplierUndefinedReason =
       multiplier == null
         ? null
-        : 'Multiplier formula applied outside the usual 0≤MPC<1 teaching range — interpret cautiously.';
+        : 'Multiplier formula applied outside the usual 0≤MPC<1 teaching range; interpret cautiously.';
   }
 
   let breakEvenUndefinedReason: string | null = null;
@@ -194,7 +194,7 @@ export function buildMpcPresentation(input: MpcBundleInput) {
     `An MPC of ${formatDecimal(mpc)} means that consumer spending changes by approximately ${formatMoneyAmount(mpc, cur)} for each ${formatMoneyAmount(1, cur)} change in disposable income over the interval measured.`;
 
   const explanation =
-    'Linear consumption function C = a + b·Yd is a teaching model. Autonomous consumption is the intercept when Yd = 0 — not a claim that every household spends that amount with zero income. The Keynesian multiplier k = 1/(1−MPC) ignores taxes, imports, crowding out, and other leakages.';
+    'Linear consumption function C = a + b·Yd is a teaching model. Autonomous consumption is the intercept when Yd = 0; not a claim that every household spends that amount with zero income. The Keynesian multiplier k = 1/(1−MPC) ignores taxes, imports, crowding out, and other leakages.';
 
   const steps: string[] = [];
   if (

@@ -47,7 +47,7 @@ function formatTurnover(value: number | null): string {
 function summaryText(metadataTitle: string, result: OperatingAssetTurnoverResult, currencyNote: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Currency: ${result.currency}`,
     `Cash: ${money(result.cash)}`,
     `Accounts receivable: ${money(result.accountsReceivable)}`,

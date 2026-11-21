@@ -34,7 +34,7 @@ export const EBITDA_MULTIPLE_FAQS: readonly FAQItem[] = [
   {
     question: 'Is a high EBITDA multiple good?',
     answer:
-      'Not necessarily. A high multiple can reflect strong growth expectations or quality — or potential overvaluation versus peers.',
+      'Not necessarily. A high multiple can reflect strong growth expectations or quality, or potential overvaluation versus peers.',
   },
   {
     question: 'Is a low EBITDA multiple better?',
@@ -74,7 +74,7 @@ export const EBITDA_MULTIPLE_FAQS: readonly FAQItem[] = [
   {
     question: 'Can EV/EBITDA be used to compare companies?',
     answer:
-      'Yes, when assumptions, accounting adjustments, and peer sets are consistent — and when industry context is considered.',
+      'Yes, when assumptions, accounting adjustments, and peer sets are consistent, and when industry context is considered.',
   },
   {
     question: 'What is the difference between EBITDA and EBIT?',

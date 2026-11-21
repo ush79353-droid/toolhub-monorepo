@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Build a multi-card debt avalanche payoff schedule from monthly budget, balances, minimums, and APRs — with optimal order, total interest, and month-by-month payments.',
+    'Build a multi-card debt avalanche payoff schedule from monthly budget, balances, minimums, and APRs, with optimal order, total interest, and month-by-month payments.',
   asideAriaLabel: 'Interactive Credit Cards Payoff Calculator',
   tocItems: CREDIT_CARDS_PAYOFF_TOC_ITEMS,
   GuideArticle: CreditCardsPayoffGuideArticle,

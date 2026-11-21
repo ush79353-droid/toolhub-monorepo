@@ -91,5 +91,5 @@ export function formatPercent(value: number, digits = 2): string {
 }
 
 export function interpretLfpr(lfpr: number, outsideShare: number): string {
-  return `A labor force participation rate of ${formatPercent(lfpr)} means that approximately ${Math.round(lfpr)} out of every 100 people in the specified population are either employed or unemployed under the applicable statistical definition. The remaining ${formatPercent(outsideShare)} are classified as outside the labor force (for example students, retirees, caregivers, or others who are not employed and do not meet unemployment criteria) — not as unemployed.`;
+  return `A labor force participation rate of ${formatPercent(lfpr)} means that approximately ${Math.round(lfpr)} out of every 100 people in the specified population are either employed or unemployed under the applicable statistical definition. The remaining ${formatPercent(outsideShare)} are classified as outside the labor force (for example students, retirees, caregivers, or others who are not employed and do not meet unemployment criteria); not as unemployed.`;
 }

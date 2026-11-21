@@ -4,7 +4,7 @@ import { PRORATED_SALARY_FAQS, PRORATED_SALARY_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Prorate monthly salary for a partial month from calendar working days, paid holidays, and approved leave — with independent currency conversion on gross and result amounts.',
+    'Prorate monthly salary for a partial month from calendar working days, paid holidays, and approved leave, with independent currency conversion on gross and result amounts.',
   asideAriaLabel: 'Interactive Prorated Salary Calculator',
   tocItems: PRORATED_SALARY_TOC_ITEMS,
   GuideArticle: ProratedSalaryGuideArticle,

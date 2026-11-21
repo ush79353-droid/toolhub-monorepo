@@ -85,7 +85,7 @@ export function CpiInflationCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Mode: ${input.mode}`,
         `Amount: ${input.amount}`,

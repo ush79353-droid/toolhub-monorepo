@@ -167,7 +167,7 @@ export function BlendedRateForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amounts share one currency label (denomination only — no FX). The
+ Amounts share one currency label (denomination only; no FX). The
         blended percentage depends on balances and rates, not the currency
         symbol.
       </p>

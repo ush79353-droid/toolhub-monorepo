@@ -87,7 +87,7 @@ export function ProratedRentCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Status: ${input.moveStatus === 'moving-in' ? 'Moving in' : 'Moving out'}`,
         `Moving date: ${input.movingDate}`,
         `Basic monthly rent: ${getCurrencySymbol(input.monthlyRentCurrency)}${input.monthlyRent}`,

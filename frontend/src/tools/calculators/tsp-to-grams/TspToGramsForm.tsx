@@ -216,7 +216,7 @@ export function TspToGramsForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Teaspoons measure volume; grams measure mass. Density is required — there is no universal
+ Teaspoons measure volume; grams measure mass. Density is required; there is no universal
         tsp↔g factor. Defaults to granulated sugar at 845 kg/m³ (0.845 g/mL). US tsp ={' '}
         {US_TEASPOON_ML} mL. Ingredient weights are approximate and depend on density, packing, and
         measurement technique.

@@ -46,7 +46,7 @@ export function YearOverYearGrowthCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial year: ${input.initialYearValue}`,
         `Final year: ${input.finalYearValue}`,
         `YoY change: ${result.formattedYoyGrowth}%`,

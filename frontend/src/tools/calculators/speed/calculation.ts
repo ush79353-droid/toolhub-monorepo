@@ -72,7 +72,7 @@ export function allFromMps(mps: number): {
 export function shareResultText(mps: number): string {
   const { speeds, paces } = allFromMps(mps);
   const lines = [
-    'Speed Conversion — Omega Calculators',
+    'Speed Conversion | Omega Calculators',
     '',
     `${formatSpeed(speeds.mph)} mph`,
     `${formatSpeed(speeds.kmh)} km/h`,

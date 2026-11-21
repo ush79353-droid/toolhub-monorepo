@@ -40,6 +40,6 @@ export const MORTGAGE_WITH_EXTRA_PAYMENTS_FAQS: readonly FAQItem[] = [
   {
     question: 'What does the Original column show?',
     answer:
-      'Original is always the standard monthly amortization for your mortgage amount, rate, term, and interest calculation method—without frequency changes or extra payments. With extra compares that baseline to the revised schedule.',
+      'Original is always the standard monthly amortization for your mortgage amount, rate, term, and interest calculation method, without frequency changes or extra payments. With extra compares that baseline to the revised schedule.',
   },
 ];

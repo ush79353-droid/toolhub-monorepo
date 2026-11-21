@@ -68,18 +68,18 @@ export function BidensTaxPlanCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
-        'Historical Biden Tax Plan Comparison (TY2022 TCJA baseline vs May 2021 American Families Plan) — not current-year filing advice.',
+        `${metadata.title} | Omega Calculators`,
+        'Historical Biden Tax Plan Comparison (TY2022 TCJA baseline vs May 2021 American Families Plan); not current-year filing advice.',
         `Age: ${input.age.trim() === '' ? 'not provided' : input.age}`,
         `Annual AGI: $${input.agi}`,
         `Filing status: ${FILING_LABEL[input.filingStatus]}`,
         `Children under 6: ${input.childrenUnder6}`,
         `Children ages 6–17: ${input.children6to17}`,
         `Other dependents (ODC): ${input.dependents}`,
-        `Income tax — TY2022 baseline: $${result.formattedBaselineTax}`,
-        `Income tax — AFP proposal: $${result.formattedBidenTax}`,
-        `Effective rate — baseline: ${result.formattedBaselineRate}%`,
-        `Effective rate — AFP: ${result.formattedBidenRate}%`,
+        `Income tax; TY2022 baseline: $${result.formattedBaselineTax}`,
+        `Income tax; AFP proposal: $${result.formattedBidenTax}`,
+        `Effective rate; baseline: ${result.formattedBaselineRate}%`,
+        `Effective rate; AFP: ${result.formattedBidenRate}%`,
         'Simplified historical estimate only; excludes capital gains, NIIT, QBI, AMT, EITC, and itemized deductions.',
       ].join('\n')
     : '';

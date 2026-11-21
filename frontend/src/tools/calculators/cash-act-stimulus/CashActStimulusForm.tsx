@@ -58,14 +58,14 @@ export function CashActStimulusForm({
     >
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-[13px] leading-relaxed text-accent sm:text-sm">
         <p className="font-semibold text-amber-950">
-          Historical proposal only — not a current benefit
+ Historical proposal only; not a current benefit
         </p>
         <p className="mt-1.5 text-foreground/85">
           This calculator reconstructs the House-passed December 2020{' '}
           <strong>CASH Act</strong> (Caring for Americans with Supplemental Help Act / H.R.9051),
           which would have raised the second-round Economic Impact Payment from $600 to $2,000 per
           eligible adult and dependent. The Senate did not enact that amendment. Estimates below
-          are historical and hypothetical — you cannot claim these proposed amounts today.
+ are historical and hypothetical; you cannot claim these proposed amounts today.
         </p>
         <p className="mt-2 text-foreground/85">
           To qualify for a payout under the proposal, you had to be a U.S. resident with a Social
@@ -85,7 +85,7 @@ export function CashActStimulusForm({
             <span>Have you filed 2019 taxes?</span>
             <InfoTooltip
               label="Have you filed 2019 taxes?"
-              text="Under the proposal, eligibility generally required filing 2019 tax paperwork, even if no tax was owed. Social Security, SSI, RRB, or VA benefit recipients could also qualify without a return — those paths are not modeled here."
+              text="Under the proposal, eligibility generally required filing 2019 tax paperwork, even if no tax was owed. Social Security, SSI, RRB, or VA benefit recipients could also qualify without a return; those paths are not modeled here."
             />
           </div>
           <div

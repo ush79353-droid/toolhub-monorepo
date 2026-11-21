@@ -249,7 +249,7 @@ export function WorkingCapitalForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amounts share one currency label (denomination only — no FX). Basic and
+ Amounts share one currency label (denomination only; no FX). Basic and
         turnover sections use separate inputs.
       </p>
       <p className="text-xs">
@@ -296,7 +296,7 @@ export function WorkingCapitalForm({
             Working capital ratio
             <InfoTooltip
               label="Working capital ratio"
-              text="Current assets ÷ current liabilities (the current ratio). Dimensionless — no currency symbol. Unavailable when liabilities are zero."
+              text="Current assets ÷ current liabilities (the current ratio). Dimensionless; no currency symbol. Unavailable when liabilities are zero."
             />
           </label>
           <FieldShell muted>

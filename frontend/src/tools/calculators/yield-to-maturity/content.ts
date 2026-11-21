@@ -89,7 +89,7 @@ export const YIELD_TO_MATURITY_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between YTM and yield to call?',
     answer:
-      'YTM assumes cash flows through maturity. Yield to call discounts cash flows to an assumed call date and call price — often more relevant for callable bonds.',
+      'YTM assumes cash flows through maturity. Yield to call discounts cash flows to an assumed call date and call price; often more relevant for callable bonds.',
   },
   {
     question: 'How do I calculate YTM on a zero-coupon bond?',
@@ -109,7 +109,7 @@ export const YIELD_TO_MATURITY_FAQS: readonly FAQItem[] = [
   {
     question: 'What causes an inverted yield curve?',
     answer:
-      'Short-term yields above longer-term yields. Drivers include expected rate cuts, policy, and risk premia — not a single mechanical rule.',
+      'Short-term yields above longer-term yields. Drivers include expected rate cuts, policy, and risk premia; not a single mechanical rule.',
   },
   {
     question: 'Can YTM change before the bond matures?',
@@ -134,7 +134,7 @@ export const YIELD_TO_MATURITY_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I calculate the price of a bond using YTM?',
     answer:
-      'Discount each coupon and the face value at y/m for the remaining periods and sum the PVs — available as the Bond price solve mode.',
+      'Discount each coupon and the face value at y/m for the remaining periods and sum the PVs; available as the Bond price solve mode.',
   },
   {
     question: 'What is the relationship between bond duration and YTM?',
@@ -144,6 +144,6 @@ export const YIELD_TO_MATURITY_FAQS: readonly FAQItem[] = [
   {
     question: 'Why is yield to maturity important for bond investors?',
     answer:
-      'It summarizes price, coupons, and maturity into one comparable IRR-style yield — useful for screening, still incomplete without credit and structural analysis.',
+      'It summarizes price, coupons, and maturity into one comparable IRR-style yield; useful for screening, still incomplete without credit and structural analysis.',
   },
 ];

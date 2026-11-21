@@ -69,7 +69,7 @@ export const TAYLOR_RULE_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when inflation rises above target?',
     answer:
-      'The inflation gap becomes positive. With a = 0.5, each percentage point of excess inflation adds 0.5 points to i beyond the direct π term — and under the Taylor principle the overall response of i to π exceeds one-for-one.',
+      'The inflation gap becomes positive. With a = 0.5, each percentage point of excess inflation adds 0.5 points to i beyond the direct π term, and under the Taylor principle the overall response of i to π exceeds one-for-one.',
   },
   {
     question: 'What happens when inflation falls below target?',

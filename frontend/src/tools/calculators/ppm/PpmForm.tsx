@@ -58,7 +58,7 @@ export function PpmForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Enter a value in any field — the others update from the same dimensionless ratio. 1% =
+ Enter a value in any field: the others update from the same dimensionless ratio. 1% =
         10,000 ppm; 1 ppm = 1,000 ppb = 1,000,000 ppt. Negative values are not accepted.
       </div>
 

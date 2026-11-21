@@ -21,7 +21,7 @@ export const UNEMPLOYMENT_FAQS: readonly FAQItem[] = [
   {
     question: 'Who counts as unemployed?',
     answer:
-      'Under standard labor-market definitions (for example, BLS / ILO-style concepts), unemployed people are those without a job who are available for work and actively seeking employment. Not everyone without a job is unemployed — retirees, full-time students not seeking work, and other non-participants are outside the labor force.',
+      'Under standard labor-market definitions (for example, BLS / ILO-style concepts), unemployed people are those without a job who are available for work and actively seeking employment. Not everyone without a job is unemployed; retirees, full-time students not seeking work, and other non-participants are outside the labor force.',
   },
   {
     question: 'How do population units work?',

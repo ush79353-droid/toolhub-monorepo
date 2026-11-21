@@ -38,7 +38,7 @@ export function convertInches(
 export function shareResultText(meters: number): string {
   const values = allFromMeters(meters);
   return [
-    'Inch Converter — Omega Calculators',
+    'Inch Converter | Omega Calculators',
     '',
     `Input: ${formatLength(values.in)} inches`,
     '',

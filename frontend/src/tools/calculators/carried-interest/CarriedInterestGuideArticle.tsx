@@ -13,7 +13,7 @@ export function CarriedInterestGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Carried interest is the share of a private fund&apos;s profits paid to the general
         partner as a performance fee. It is usually taken only after limited partners earn a
-        preferred return (the hurdle), and it applies to eligible profits — not to the entire
+ preferred return (the hurdle), and it applies to eligible profits; not to the entire
         fund value.
       </p>
 

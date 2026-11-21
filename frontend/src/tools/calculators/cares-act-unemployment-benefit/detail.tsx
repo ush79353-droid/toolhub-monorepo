@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Historical notice about CARES Act pandemic unemployment relief. Not a current benefit calculator — use the Unemployment Calculator for unemployment-rate math.',
+    'Historical notice about CARES Act pandemic unemployment relief. Not a current benefit calculator. Use the Unemployment Calculator for unemployment-rate math.',
   asideAriaLabel: 'CARES Act unemployment benefit historical notice',
   tocItems: CARES_ACT_UNEMPLOYMENT_TOC_ITEMS,
   GuideArticle: CaresActUnemploymentBenefitGuideArticle,

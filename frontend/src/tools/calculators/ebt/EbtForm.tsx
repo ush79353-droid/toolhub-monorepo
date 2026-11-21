@@ -246,7 +246,7 @@ export function EbtForm({
             SG&amp;A
             <InfoTooltip
               label="SG&A"
-              text="Selling, General, and Administrative expenses — marketing, admin salaries, office rent, and similar overhead."
+              text="Selling, General, and Administrative expenses; marketing, admin salaries, office rent, and similar overhead."
             />
           </label>
           <FieldShell error={errors.sellingGeneralAdministrative}>

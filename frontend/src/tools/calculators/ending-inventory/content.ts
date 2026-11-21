@@ -43,7 +43,7 @@ export const ENDING_INVENTORY_FAQS: readonly FAQItem[] = [
   {
     question: 'Can ending inventory be zero?',
     answer:
-      'Yes. A zero ending balance means the inventory-flow equation indicates no remaining stock — it does not by itself prove efficient operations.',
+      'Yes. A zero ending balance means the inventory-flow equation indicates no remaining stock; it does not by itself prove efficient operations.',
   },
   {
     question: 'Can ending inventory be negative?',
@@ -78,7 +78,7 @@ export const ENDING_INVENTORY_FAQS: readonly FAQItem[] = [
   {
     question: 'What does low inventory turnover mean?',
     answer:
-      'Inventory moves more slowly relative to its average value. Seasonal and industry factors matter — avoid universal thresholds.',
+      'Inventory moves more slowly relative to its average value. Seasonal and industry factors matter; avoid universal thresholds.',
   },
   {
     question: 'How does FIFO affect ending inventory?',
@@ -108,7 +108,7 @@ export const ENDING_INVENTORY_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when average inventory is zero?',
     answer:
-      'Inventory turnover is undefined. Do not display Infinity — the ratio is unavailable.',
+      'Inventory turnover is undefined. Do not display Infinity: the ratio is unavailable.',
   },
   {
     question:

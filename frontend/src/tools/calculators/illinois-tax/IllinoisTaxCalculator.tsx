@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import * as React from 'react';
 import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
@@ -63,7 +63,7 @@ export function IllinoisTaxCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Tax year: ${result.taxYear}`,
         `Annualized AGI: $${result.formattedAnnualAgi}`,
         `Federal income tax: $${result.formattedFederalIncomeTax}`,
@@ -107,7 +107,7 @@ export function IllinoisTaxCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             Illinois + federal income tax and county property estimate. Fixed
-            USD. FICA omitted. Educational only — not a filing substitute.
+ USD. FICA omitted. Educational only; not a filing substitute.
           </p>
         </div>
         {headerActions ? (

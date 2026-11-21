@@ -36,7 +36,7 @@ function summaryText(result: AfnResult, note: string): string {
         ? 'Financing surplus (negative AFN)'
         : 'No additional external financing indicated';
   return [
-    'Additional Funds Needed Calculator — Omega Calculators',
+    'Additional Funds Needed Calculator | Omega Calculators',
     `Currency: ${result.currency}`,
     `Change in assets: ${money(result.changeInAssets)}`,
     `Change in liabilities: ${money(result.changeInLiabilities)}`,

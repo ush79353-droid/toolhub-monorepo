@@ -42,7 +42,7 @@ export const PSI_TO_GPM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Introduction',
     paragraphs: [
       'PSI (pounds-force per square inch) measures pressure. GPM (US gallons per minute) measures volumetric flow rate. Those quantities describe different physical properties, so there is no universal constant that converts PSI into GPM by itself.',
-      'This calculator estimates liquid flow from a pressure difference, the internal pipe diameter (or flow area), fluid density, and an optional discharge coefficient. The default model is an idealized Bernoulli discharge for steady, incompressible liquid flow — useful for order-of-magnitude estimates, not a complete pipe-network design tool.',
+      'This calculator estimates liquid flow from a pressure difference, the internal pipe diameter (or flow area), fluid density, and an optional discharge coefficient. The default model is an idealized Bernoulli discharge for steady, incompressible liquid flow; useful for order-of-magnitude estimates, not a complete pipe-network design tool.',
     ],
   },
   {
@@ -51,7 +51,7 @@ export const PSI_TO_GPM_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'PSI is a pressure unit: force per unit area. Absolute pressure (psia) is measured from vacuum; gauge pressure (psig) is measured relative to a local atmospheric reference. Always keep inlet and exit pressures on the same reference before subtracting them.',
       'GPM is a volumetric flow unit. This tool defaults to US liquid gallons per minute (1 US gallon = 0.003785411784 m³). Imperial gallons are larger and are offered as a separate unit option.',
-      'Typical contexts include water supply, irrigation, pumps, hydraulics, and industrial piping — always with the model assumptions stated on the calculator.',
+      'Typical contexts include water supply, irrigation, pumps, hydraulics, and industrial piping; always with the model assumptions stated on the calculator.',
     ],
   },
   {
@@ -96,7 +96,7 @@ export const PSI_TO_GPM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'diameter-and-flow',
     title: 'Pipe Diameter and Flow Rate',
     paragraphs: [
-      'For a circular section, A = πd²/4, so area grows with the square of diameter. Under a fixed ideal velocity, volumetric flow therefore also scales with d² — doubling diameter multiplies ideal area (and ideal Q) by four.',
+      'For a circular section, A = πd²/4, so area grows with the square of diameter. Under a fixed ideal velocity, volumetric flow therefore also scales with d²; doubling diameter multiplies ideal area (and ideal Q) by four.',
       'In real piping, friction and other losses also change with diameter and length, so the simple d² scaling is only a statement about the ideal model, not a guarantee for every network.',
     ],
     formula: 'A = πd² / 4   ·   Q ∝ d² (ideal velocity held fixed)',
@@ -115,7 +115,7 @@ export const PSI_TO_GPM_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I convert PSI directly to GPM?',
     answer:
-      'No. PSI measures pressure and GPM measures volumetric flow rate. You need a pressure difference, flow area, fluid density, and a flow model — there is no universal PSI→GPM constant.',
+      'No. PSI measures pressure and GPM measures volumetric flow rate. You need a pressure difference, flow area, fluid density, and a flow model; there is no universal PSI→GPM constant.',
   },
   {
     question: 'What information is needed to calculate GPM from PSI?',

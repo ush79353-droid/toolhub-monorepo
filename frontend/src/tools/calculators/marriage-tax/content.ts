@@ -28,6 +28,6 @@ export const MARRIAGE_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'How are self-employment tax and dependents simplified?',
     answer:
-      'Self-employment tax uses a simplified SE base (Social Security + Medicare on SE income); the deductible employer-equivalent half of SE tax (SE½) is not subtracted from AGI here. Dependents feed a simplified Child Tax Credit only — not a full dependent-exemption or Schedule 8812 ACTC model.',
+      'Self-employment tax uses a simplified SE base (Social Security + Medicare on SE income); the deductible employer-equivalent half of SE tax (SE½) is not subtracted from AGI here. Dependents feed a simplified Child Tax Credit only; not a full dependent-exemption or Schedule 8812 ACTC model.',
   },
 ];

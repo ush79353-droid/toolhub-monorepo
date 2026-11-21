@@ -89,7 +89,7 @@ export function FreeFloatCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Outstanding Shares: ${displayShares(input.outstandingShares)}`,
         `Restricted Shares: ${displayShares(input.restrictedShares)}`,
         `Closely Held Shares: ${displayShares(input.closelyHeldShares)}`,

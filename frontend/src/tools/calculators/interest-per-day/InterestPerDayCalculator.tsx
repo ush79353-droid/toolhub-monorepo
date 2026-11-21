@@ -94,7 +94,7 @@ export function InterestPerDayCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan balance: ${loanSymbol}${input.loanBalance}`,
         `Annual interest rate: ${input.annualInterestRatePercent}%`,
         `Interest per day: ${resultSymbol}${result.formattedInterestPerDay}`,

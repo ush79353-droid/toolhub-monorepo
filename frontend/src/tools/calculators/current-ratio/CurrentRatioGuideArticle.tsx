@@ -13,7 +13,7 @@ export function CurrentRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The current ratio (also called the working capital ratio) compares
         current assets to current liabilities. Analysts use it as a short-term
-        liquidity coverage indicator from the balance sheet — not a complete
+ liquidity coverage indicator from the balance sheet; not a complete
         measure of cash generation or solvency.
       </p>
 
@@ -74,7 +74,7 @@ export function CurrentRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Current liabilities exceed current assets on the reported balance sheet.
-        Investigate further — do not treat it as automatic failure.
+ Investigate further; do not treat it as automatic failure.
       </p>
 
       <h2
@@ -109,7 +109,7 @@ export function CurrentRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Cash ratio typically focuses on cash and cash equivalents (sometimes
-        eligible marketable securities) over current liabilities — a stricter
+ eligible marketable securities) over current liabilities: a stricter
         liquidity lens than the current ratio.
       </p>
 

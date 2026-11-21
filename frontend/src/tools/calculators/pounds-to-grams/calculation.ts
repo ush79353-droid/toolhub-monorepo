@@ -61,7 +61,7 @@ export function calculatePoundsToGrams(input: PoundsToGramsInput): PoundsToGrams
 
 export function shareResultText(result: PoundsToGramsResult): string {
   return [
-    'Pounds to Grams Converter — Omega Calculators',
+    'Pounds to Grams Converter | Omega Calculators',
     '',
     `${formatMass(result.pounds)} pound${result.pounds === 1 ? '' : 's'} = ${formatMass(result.grams)} grams`,
     '',

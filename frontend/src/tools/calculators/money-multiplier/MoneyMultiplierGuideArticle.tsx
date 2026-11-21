@@ -24,13 +24,13 @@ export function MoneyMultiplierGuideArticle() {
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The monetary base matters because it summarizes currency outside banks
-        plus reserves inside the banking system — the “outside” money stock that
+ plus reserves inside the banking system: the “outside” money stock that
         often anchors classroom models of money creation. Deposits and reserves
         are linked through the reserve ratio: reserves equal deposits times the
         ratio when you treat the ratio as the source of truth, or the ratio
         equals reserves divided by deposits when you enter reserves directly.
         Interpreting the result means reading m as how large measured money
-        supply is relative to that base under these definitions — useful for
+ supply is relative to that base under these definitions; useful for
         learning macroeconomics, not as a forecast of inflation or a claim that
         every modern banking system expands deposits by a fixed multiple of new
         reserves.
@@ -57,7 +57,7 @@ export function MoneyMultiplierGuideArticle() {
         (1 + c) and B = deposits × (r + c), so m = (1 + c)/(r + c) whenever
         deposits are positive. That identity is algebraically equivalent to M/B
         under these definitions. It does not by itself describe bank capital,
-        loan demand, or central-bank interest-rate corridors — it organizes the
+ loan demand, or central-bank interest-rate corridors; it organizes the
         accounting links among currency, reserves, deposits, base, and supply.
       </p>
 
@@ -95,7 +95,7 @@ export function MoneyMultiplierGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Fractional reserve banking describes systems in which commercial banks
-        hold reserves — vault cash and balances at the central bank — that are
+ hold reserves (vault cash and balances at the central bank) that are
         only a fraction of deposit liabilities. Depositors can still withdraw or
         transfer funds in the ordinary course of business because only a portion
         of deposits is demanded as cash at once, while banks earn returns by
@@ -108,7 +108,7 @@ export function MoneyMultiplierGuideArticle() {
         reserve requirements; banks still hold reserves for settlement,
         liquidity, and policy reasons. Excess reserves are holdings above any
         required minimum. Central-bank balances are a core part of modern
-        reserve stocks. This calculator’s reserve ratio is a modeling input —
+ reserve stocks. This calculator’s reserve ratio is a modeling input; 
         the default 10% is an example for arithmetic, not a statement that every
         country currently mandates a 10% requirement.
       </p>
@@ -130,7 +130,7 @@ export function MoneyMultiplierGuideArticle() {
         monetary base. When B is zero, the ratio is undefined; the calculator
         shows an unavailable state instead of Infinity or NaN. Official national
         aggregates labeled M1 or M2 may include additional instruments or exclude
-        some items used here — treat M as a pedagogical definition aligned with
+ some items used here; treat M as a pedagogical definition aligned with
         the inputs on this page.
       </p>
 
@@ -227,7 +227,7 @@ export function MoneyMultiplierGuideArticle() {
         show monetary base, money supply, money multiplier, c, r, and the
         separate simple deposit multiplier. Use Clear to blank editable fields,
         Reload to restore defaults, and Share/Copy to export a text summary.
-        Currency selection changes denomination labels only — amounts are not
+ Currency selection changes denomination labels only; amounts are not
         converted across exchange rates.
       </p>
 
@@ -296,7 +296,7 @@ export function MoneyMultiplierGuideArticle() {
         banks influence reserves and the base through open-market operations,
         lending facilities, and large-scale asset purchases. Commercial bank
         lending responds to policy rates, credit standards, borrower demand, and
-        capital rules — not only to a fixed r.
+ capital rules; not only to a fixed r.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Quantitative easing can inflate bank reserves and the base while deposit
@@ -321,14 +321,14 @@ export function MoneyMultiplierGuideArticle() {
         inflation rate. Velocity of money, fiscal conditions, supply constraints,
         and policy reaction functions all matter. Use the multiplier to
         understand stock relationships among M and B; pair it with broader
-        macro analysis — and tools such as an{' '}
+ macro analysis, and tools such as an{' '}
         <Link
           href="/tools/inflation-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           inflation calculator
         </Link>{' '}
-        — when studying price-level questions.
+ when studying price-level questions.
       </p>
 
       <h2
@@ -400,7 +400,7 @@ export function MoneyMultiplierGuideArticle() {
         reserves. Capital requirements, liquidity coverage rules, and funding
         markets can bind before a textbook reserve ratio does. Money demand and
         velocity shift with technology and confidence. Central-bank operating
-        frameworks — scarce versus abundant reserves — change what “more base”
+ frameworks (scarce versus abundant reserves) change what “more base”
         means for rates and credit. Official monetary aggregates differ from the
         simplified M used here. Treat results as educational accounting, not a
         complete description of modern money creation.
@@ -434,7 +434,7 @@ export function MoneyMultiplierGuideArticle() {
         reading official aggregate tables. Classroom exercises vary r and c to
         show sensitivity. Comparing m with 1/r highlights the role of currency
         holdings. Pair this tool with growth and price-level calculators when
-        framing broader macroeconomic scenarios — always noting that this page
+ framing broader macroeconomic scenarios; always noting that this page
         does not estimate national statistics or policy outcomes.
       </p>
 

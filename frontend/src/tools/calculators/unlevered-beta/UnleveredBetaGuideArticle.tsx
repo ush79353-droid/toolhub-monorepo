@@ -17,7 +17,7 @@ export function UnleveredBetaGuideArticle() {
         financial leverage. Investors and analysts separate business risk from
         financing risk so they can compare peers with different debt levels and
         build valuation models under target capital structures. Unlevered beta
-        is model-dependent — not a guaranteed measure of every investment risk.
+ is model-dependent; not a guaranteed measure of every investment risk.
       </p>
 
       <h2
@@ -73,7 +73,7 @@ export function UnleveredBetaGuideArticle() {
         βL is levered equity beta, T is the corporate tax rate as a decimal, and
         D/E is the debt-to-equity ratio. The (1 − T) term reflects a simplified
         interest tax-shield assumption in the Hamada relationship. Debt beta is
-        assumed near zero — other models relax that assumption.
+ assumed near zero; other models relax that assumption.
       </p>
 
       <h2
@@ -159,11 +159,11 @@ export function UnleveredBetaGuideArticle() {
         How to Interpret Unlevered Beta
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <li>Below 1 — lower estimated positive market sensitivity.</li>
-        <li>Near 1 — market-like estimated business sensitivity.</li>
-        <li>Above 1 — higher estimated positive sensitivity.</li>
-        <li>Negative — inverse estimated linear sensitivity.</li>
-        <li>Near zero — little estimated linear market sensitivity.</li>
+        <li>Below 1; lower estimated positive market sensitivity.</li>
+        <li>Near 1; market-like estimated business sensitivity.</li>
+        <li>Above 1; higher estimated positive sensitivity.</li>
+        <li>Negative; inverse estimated linear sensitivity.</li>
+        <li>Near zero; little estimated linear market sensitivity.</li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Beta does not capture liquidity risk, idiosyncratic risk, or all paths to
@@ -249,7 +249,7 @@ export function UnleveredBetaGuideArticle() {
       <div className="my-4 space-y-2 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         <p>
           A: Firm A βL 1.4 · T 25% · D/E 1 → βU ≈ 0.8000; Firm B βL 1.1 · T 25% ·
-          D/E 0.2 → βU ≈ 0.9565 — compare operating risk carefully.
+ D/E 0.2 → βU ≈ 0.9565; compare operating risk carefully.
         </p>
         <p>
           B: Peer βU ≈ 0.70 · private target D/E 0.5 · T 25% → βL ≈ 0.9625 for

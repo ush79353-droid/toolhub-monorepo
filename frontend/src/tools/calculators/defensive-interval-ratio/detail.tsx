@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    "Calculate how many days a company can continue covering its average daily cash operating expenditures using available defensive assets — cash, marketable securities, and collectible receivables — without relying on additional operating cash inflows or external financing.",
+    "Calculate how many days a company can continue covering its average daily cash operating expenditures using available defensive assets (cash, marketable securities, and collectible receivables) without relying on additional operating cash inflows or external financing.",
   asideAriaLabel: 'Interactive Defensive Interval Ratio Calculator',
   tocItems: DEFENSIVE_INTERVAL_RATIO_TOC_ITEMS,
   GuideArticle: DefensiveIntervalRatioGuideArticle,

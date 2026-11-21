@@ -287,7 +287,7 @@ export function CashBackOrLowInterestForm({
                 <span>Your State</span>
                 <InfoTooltip
                   label="Your State"
-                  text="Lists verified US states and DC for reference. Sales tax is entered manually — this project does not store unverified per-state rates, so selecting a state never overwrites Sales Tax %."
+                  text="Lists verified US states and DC for reference. Sales tax is entered manually; this project does not store unverified per-state rates, so selecting a state never overwrites Sales Tax %."
                 />
               </label>
               <select

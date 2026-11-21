@@ -472,7 +472,7 @@ export function solveAffordableHomePrice(
   let warning: string | null = null;
   if (loanAmount === 0 && homePrice > 0) {
     warning =
-      'This estimate is an all-cash (or fully covered) purchase under the current down-payment assumption — no mortgage principal is required.';
+      'This estimate is an all-cash (or fully covered) purchase under the current down-payment assumption; no mortgage principal is required.';
   }
 
   const result: HomeAffordabilityResult = {

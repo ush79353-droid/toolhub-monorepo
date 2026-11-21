@@ -34,7 +34,7 @@ export function calculateMmToAtm(input: MmToAtmInput): MmToAtmResult {
 
 export function shareResultText(result: MmToAtmResult): string {
   return [
-    'mm to ATM Converter — Omega Calculators',
+    'mm to ATM Converter | Omega Calculators',
     '',
     `${formatPressure(result.mmHg)} mmHg ≈ ${formatPressure(result.atm)} atm`,
     '',

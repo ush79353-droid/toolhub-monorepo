@@ -36,7 +36,7 @@ export const KM_TO_FEET_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Use the km to Feet Conversion calculator to convert distances between kilometers and feet instantly. Enter a value in kilometers to calculate the equivalent number of feet, or enter a value in feet to convert it back into kilometers.',
       `Kilometers belong to the metric system while feet are commonly used in the imperial and US customary systems. Exactly 1 km = 1,000 m and 1 ft = ${METERS_PER_FOOT} m, so 1 km ≈ ${formatLength(FEET_PER_KM)} ft.`,
-      `Example — convert 8.5 km: first 8.5 × 1000 = 8500 m, then 8500 ÷ ${METERS_PER_FOOT} ≈ ${formatLength(kilometersToFeet(8.5))} ft. Therefore 8.5 kilometers ≈ ${formatLength(kilometersToFeet(8.5))} feet.`,
+      `Example; convert 8.5 km: first 8.5 × 1000 = 8500 m, then 8500 ÷ ${METERS_PER_FOOT} ≈ ${formatLength(kilometersToFeet(8.5))} ft. Therefore 8.5 kilometers ≈ ${formatLength(kilometersToFeet(8.5))} feet.`,
     ],
     formula: `ft = (km × 1000) ÷ ${METERS_PER_FOOT}\nft ≈ km × ${formatLength(FEET_PER_KM)}`,
   },
@@ -58,7 +58,7 @@ export const KM_TO_FEET_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Feet to Kilometers Conversion',
     paragraphs: [
       `Multiply feet by ${METERS_PER_FOOT / 1000} (exactly ${METERS_PER_FOOT} m per foot ÷ 1000).`,
-      `Example — convert 5,000 feet: 5000 × ${METERS_PER_FOOT / 1000} = ${formatLength(feetToKilometers(5000))} km. Therefore 5,000 feet = ${formatLength(feetToKilometers(5000))} kilometers.`,
+      `Example; convert 5,000 feet: 5000 × ${METERS_PER_FOOT / 1000} = ${formatLength(feetToKilometers(5000))} km. Therefore 5,000 feet = ${formatLength(feetToKilometers(5000))} kilometers.`,
     ],
     formula: `km = ft × ${METERS_PER_FOOT / 1000}`,
   },
@@ -76,7 +76,7 @@ export const KM_TO_FEET_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Where Is km to Feet Conversion Useful?',
     paragraphs: [
       'People convert kilometers to feet for road and travel distances, engineering calculations, land and geographical measurements, mapping and surveying, hiking and outdoor activities, and moving measurements between metric and imperial systems.',
-      'Both kilometers and feet measure length or distance — not area or volume.',
+      'Both kilometers and feet measure length or distance; not area or volume.',
     ],
   },
   {

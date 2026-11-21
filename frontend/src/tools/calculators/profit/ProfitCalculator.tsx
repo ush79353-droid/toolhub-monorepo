@@ -189,7 +189,7 @@ export function ProfitCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Cost: ${costSymbol}${input.cost} ${input.costCurrency} per ${input.costPer}`,
         `Price: ${getCurrencySymbol(input.priceCurrency)}${input.price} ${input.priceCurrency} per ${input.pricePer}`,
         `Quantity: ${input.quantity} · Discount: ${input.discountPercent}%`,

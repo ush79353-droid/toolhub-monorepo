@@ -15,7 +15,7 @@ export const ATTRITION_RATE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is employee attrition rate?',
     answer:
-      'Employee attrition rate measures the percentage of staff members who leave a company over a specific timeframe—such as a month, quarter, or year—relative to the average number of employees during that period.',
+      'Employee attrition rate measures the percentage of staff members who leave a company over a specific timeframe, such as a month, quarter, or year, relative to the average number of employees during that period.',
   },
   {
     question: 'What is the difference between attrition and turnover?',

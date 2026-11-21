@@ -81,7 +81,7 @@ export function shareResultText(
   const source = values[sourceUnit];
   const inches = values.in;
   return [
-    'Metric to SAE Calculator — Omega Calculators',
+    'Metric to SAE Calculator | Omega Calculators',
     '',
     `${formatLength(source)} ${UNIT_SYMBOLS[sourceUnit]} = ${formatLength(inches)} in`,
     '',

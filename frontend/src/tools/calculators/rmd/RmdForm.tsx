@@ -72,7 +72,7 @@ export function RmdForm({
             <span>Is spouse more than 10 years younger and the sole beneficiary of IRA?</span>
             <InfoTooltip
               label="Spouse beneficiary rule"
-              text="If Yes, IRS Joint Life Table II applies and requires spouse age — not collected here, so RMD is unavailable for that path."
+              text="If Yes, IRS Joint Life Table II applies and requires spouse age; not collected here, so RMD is unavailable for that path."
             />
           </div>
           <div className="flex flex-wrap gap-4" role="radiogroup">

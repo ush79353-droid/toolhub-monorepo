@@ -98,7 +98,7 @@ export function SabbaticalGuideArticle() {
       <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
           Decide whether to keep savings in a savings account or invest them before
-          leave — match risk to when you will need the cash.
+ leave; match risk to when you will need the cash.
         </li>
         <li>Create a clear plan for sabbatical goals so the time stays purposeful.</li>
         <li>Consider career plans and professional development during and after leave.</li>

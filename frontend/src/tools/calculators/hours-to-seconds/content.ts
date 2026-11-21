@@ -54,7 +54,7 @@ export const HOURS_TO_SECONDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Hours to Seconds Converter',
     paragraphs: [
-      '1. Enter the number of hours — seconds update instantly.',
+      '1. Enter the number of hours. seconds update instantly.',
       '2. Edit the seconds field to convert in reverse.',
       '3. Use the compound time field to enter hours, minutes, and seconds together.',
       '4. All related fields update automatically; reload or clear to start again.',

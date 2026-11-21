@@ -90,7 +90,7 @@ export const MS_TO_SECONDS_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Read the seconds result.',
       '3. Alternatively, enter seconds and read milliseconds.',
       '4. Expand Other Units for years, months, weeks, days, hours, minutes, and mixed HMS.',
-      '5. Conversion updates automatically — no Calculate button is required.',
+      '5. Conversion updates automatically. no Calculate button is required.',
     ],
   },
   {

@@ -58,7 +58,7 @@ export const ROIC_FAQS: readonly FAQItem[] = [
   {
     question: 'Why is ROIC important to investors?',
     answer:
-      'ROIC helps evaluate how efficiently a business converts invested capital into after-tax operating earnings — a core signal of capital efficiency and potential value creation when compared with financing costs.',
+      'ROIC helps evaluate how efficiently a business converts invested capital into after-tax operating earnings: a core signal of capital efficiency and potential value creation when compared with financing costs.',
   },
   {
     question: 'Should ROIC be higher than WACC?',
@@ -78,6 +78,6 @@ export const ROIC_FAQS: readonly FAQItem[] = [
   {
     question: 'How can a company increase ROIC?',
     answer:
-      'By improving operating margins, raising asset and working-capital productivity, allocating capital carefully, and avoiding investments that persistently earn below the cost of capital — not by indiscriminate cost-cutting alone.',
+      'By improving operating margins, raising asset and working-capital productivity, allocating capital carefully, and avoiding investments that persistently earn below the cost of capital; not by indiscriminate cost-cutting alone.',
   },
 ];

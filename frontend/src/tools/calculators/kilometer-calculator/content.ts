@@ -52,7 +52,7 @@ export const KM_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `1 km = ${formatLength(convertLength(1, 'km', 'm'))} m = ${formatLength(convertLength(1, 'km', 'cm'))} cm = ${formatLength(convertLength(1, 'km', 'mm'))} mm.`,
       `1 km ≈ ${formatLength(convertLength(1, 'km', 'ft'))} ft ≈ ${formatLength(convertLength(1, 'km', 'in'))} in ≈ ${formatLength(convertLength(1, 'km', 'yd'))} yd ≈ ${formatLength(convertLength(1, 'km', 'mi'))} mi.`,
-      `Example — 5 km = ${formatLength(convertLength(5, 'km', 'm'))} m ≈ ${formatLength(convertLength(5, 'km', 'mi'))} mi.`,
+      `Example; 5 km = ${formatLength(convertLength(5, 'km', 'm'))} m ≈ ${formatLength(convertLength(5, 'km', 'mi'))} mi.`,
     ],
   },
   {
@@ -60,7 +60,7 @@ export const KM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Kilometers to Miles',
     paragraphs: [
       'Divide kilometers by 1.609344 (or multiply by approximately 0.621371).',
-      `Example — 10 km ≈ ${formatLength(convertLength(10, 'km', 'mi'))} mi.`,
+      `Example; 10 km ≈ ${formatLength(convertLength(10, 'km', 'mi'))} mi.`,
     ],
     formula: 'miles = kilometers / 1.609344',
   },
@@ -69,7 +69,7 @@ export const KM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Miles to Kilometers',
     paragraphs: [
       'Multiply miles by exactly 1.609344.',
-      `Example — 5 mi = ${formatLength(convertLength(5, 'mi', 'km'))} km.`,
+      `Example; 5 mi = ${formatLength(convertLength(5, 'mi', 'km'))} km.`,
     ],
     formula: 'kilometers = miles × 1.609344',
   },

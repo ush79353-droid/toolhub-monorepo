@@ -31,7 +31,7 @@ function unitLabel(
 
 function summaryText(result: GallonsToPoundsResult): string {
   return [
-    'Gallons to Pounds Converter — Omega Calculators',
+    'Gallons to Pounds Converter | Omega Calculators',
     `Liquid: ${result.liquidName}`,
     `Density: ${formatMeasure(result.densityGPerMl)} kg/L${
       result.densityApproximate ? ' (approximate)' : ''

@@ -47,7 +47,7 @@ export function CaresActUnemploymentBenefitGuideArticle() {
           Unemployment calculator
         </Link>
         . For current unemployment insurance amounts or eligibility, contact your state workforce
-        agency — this site does not replace official benefit determinations.
+ agency; this site does not replace official benefit determinations.
       </p>
 
       <h2

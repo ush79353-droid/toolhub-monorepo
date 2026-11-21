@@ -44,7 +44,7 @@ export function shareResultText(meters: number): string {
   const mm = fromMeters(meters, 'mm');
   const ft = fromMeters(meters, 'ft');
   return [
-    'mm to Foot Converter — Omega Calculators',
+    'mm to Foot Converter | Omega Calculators',
     '',
     `${formatLength(mm)} mm ≈ ${formatLength(ft)} ${UNIT_SYMBOLS.ft}`,
     '',

@@ -157,7 +157,7 @@ export function calculateScrapGoldResults(input: {
 
 export function shareScrapGoldText(result: ScrapGoldResult): string {
   return [
-    'Scrap Gold Calculator — Omega Calculators',
+    'Scrap Gold Calculator | Omega Calculators',
     `Scrap weight: ${formatQty(result.weight)} ${weightUnitLabel(result.weightUnit)}`,
     `Karat: ${formatQty(result.karat)}K`,
     `Purity: ${formatQty(result.purityPercent)}%`,

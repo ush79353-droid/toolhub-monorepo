@@ -41,7 +41,7 @@ export const FEET_GUIDE_SECTIONS: readonly GuideSection[] = [
         id: 'imperial-us-units',
         title: 'Imperial/US Units',
         paragraphs: [
-          'Inches, feet, yards, and miles are linked by exact integer ratios. Convert by multiplying or dividing — no approximate factors.',
+          'Inches, feet, yards, and miles are linked by exact integer ratios. Convert by multiplying or dividing; no approximate factors.',
         ],
         tableHeaders: ['Conversion', 'Formula'],
         table: [

@@ -75,7 +75,7 @@ export function LoanInterestCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Interest to be paid: ${interestSymbol}${result.formattedInterest}`,
         `Total payment: ${totalSymbol}${result.formattedTotalPayment}`,
         `${result.paymentLabel}: ${paymentSymbol}${result.formattedPeriodicPayment}`,

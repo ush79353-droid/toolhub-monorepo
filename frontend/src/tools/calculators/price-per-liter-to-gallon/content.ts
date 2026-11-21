@@ -35,7 +35,7 @@ export const PRICE_PER_LITER_TO_GALLON_GUIDE_SECTIONS: readonly GuideSection[] =
     id: 'intro',
     title: 'Price Per Liter to Price Per Gallon Converter',
     paragraphs: [
-      'Compare liquid prices expressed per liter and per gallon instantly. Enter either price and choose US liquid or Imperial gallons — the other price updates in real time.',
+      'Compare liquid prices expressed per liter and per gallon instantly. Enter either price and choose US liquid or Imperial gallons: the other price updates in real time.',
       'Currency selection changes the displayed symbol only. Both prices stay in the same denomination; this tool does not apply foreign-exchange rates.',
     ],
   },
@@ -45,7 +45,7 @@ export const PRICE_PER_LITER_TO_GALLON_GUIDE_SECTIONS: readonly GuideSection[] =
     paragraphs: [
       'A gallon contains more than one liter, so the price per gallon is proportionally higher for the same liquid and currency.',
       `For a US liquid gallon: multiply the price per liter by ${LITERS_PER_GALLON.us}.`,
-      `Example — $1.25 per liter: 1.25 × ${LITERS_PER_GALLON.us} = ${formatPrice(pricePerLiterToGallon(1.25, 'us'))}. Therefore about ${money2(pricePerLiterToGallon(1.25, 'us'))} per US gallon.`,
+      `Example; $1.25 per liter: 1.25 × ${LITERS_PER_GALLON.us} = ${formatPrice(pricePerLiterToGallon(1.25, 'us'))}. Therefore about ${money2(pricePerLiterToGallon(1.25, 'us'))} per US gallon.`,
     ],
     formula: `Price per US gallon = Price per liter × ${LITERS_PER_GALLON.us}`,
   },
@@ -54,7 +54,7 @@ export const PRICE_PER_LITER_TO_GALLON_GUIDE_SECTIONS: readonly GuideSection[] =
     title: 'How to Convert Price per Gallon to Price per Liter',
     paragraphs: [
       `Divide the price per gallon by the liters in that gallon system.`,
-      `Example — $5.00 per US gallon: 5 ÷ ${LITERS_PER_GALLON.us} ≈ ${formatPrice(pricePerGallonToLiter(5, 'us'))}. Therefore about ${money2(pricePerGallonToLiter(5, 'us'))} per liter.`,
+      `Example; $5.00 per US gallon: 5 ÷ ${LITERS_PER_GALLON.us} ≈ ${formatPrice(pricePerGallonToLiter(5, 'us'))}. Therefore about ${money2(pricePerGallonToLiter(5, 'us'))} per liter.`,
     ],
     formula: `Price per liter = Price per US gallon ÷ ${LITERS_PER_GALLON.us}`,
   },
@@ -108,7 +108,7 @@ export const PRICE_PER_LITER_TO_GALLON_GUIDE_SECTIONS: readonly GuideSection[] =
     title: 'When Is This Converter Useful?',
     paragraphs: [
       'Use it when comparing fuel prices between countries that post prices per liter versus per gallon, reviewing bulk liquid purchase quotes, evaluating beverage or cooking-oil costs, or comparing industrial liquid costs in mixed unit systems.',
-      'This page does not provide current market fuel prices — only unit conversion of the prices you enter.',
+      'This page does not provide current market fuel prices; only unit conversion of the prices you enter.',
     ],
   },
   {

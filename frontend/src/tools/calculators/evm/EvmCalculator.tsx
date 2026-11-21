@@ -32,7 +32,7 @@ function formatIndex(value: number | null): string {
 function summaryText(metadataTitle: string, result: EvmResult, currencyNote: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Currency: ${result.currency}`,
     `Scheduled progress: ${result.scheduledProgressPercent}%`,
     `Actual progress: ${result.actualProgressPercent}%`,

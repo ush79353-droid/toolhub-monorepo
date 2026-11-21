@@ -25,7 +25,7 @@ export const CRORE_LAKH_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'overview',
     title: 'Crore to Lakh Converter',
     paragraphs: [
-      'This calculator converts between crores and lakhs—Indian numbering units used for budgets, population figures, property values, and business reports. Enter either field and the other updates instantly.',
+      'This calculator converts between crores and lakhs, Indian numbering units used for budgets, population figures, property values, and business reports. Enter either field and the other updates instantly.',
       'The fixed relationship is 1 crore = 100 lakh. Examples: 2 crore = 200 lakh; 3.5 crore = 350 lakh.',
     ],
     formula: '1 crore = 100 lakh = 10,000,000',

@@ -8,7 +8,7 @@ function HardnessChart() {
     <div className="mt-5 space-y-5">
       <div>
         <p className="mb-2 text-sm font-medium text-accent">
-          Soft regime (Rockwell B) — non-austenitic steel
+ Soft regime (Rockwell B); non-austenitic steel
         </p>
         <div className="overflow-x-auto rounded-xl border border-border">
           <table className="w-full min-w-[360px] text-left text-sm">
@@ -55,7 +55,7 @@ function HardnessChart() {
 
       <div>
         <p className="mb-2 text-sm font-medium text-accent">
-          Hard regime (Rockwell C) — non-austenitic steel
+ Hard regime (Rockwell C); non-austenitic steel
         </p>
         <div className="overflow-x-auto rounded-xl border border-border">
           <table className="w-full min-w-[360px] text-left text-sm">
@@ -102,8 +102,8 @@ function HardnessChart() {
 
       <p className="text-xs leading-relaxed text-muted-foreground">
         Reference: approximate educational chart aligned with ASTM E140 relationships for
-        non-austenitic steels. Em dash (—) means that scale is unsupported at that row. Sparse
-        sampling — interpolate only between adjacent verified rows; do not extrapolate.
+ non-austenitic steels. Em dash (;) means that scale is unsupported at that row. Sparse
+ sampling; interpolate only between adjacent verified rows; do not extrapolate.
       </p>
     </div>
   );

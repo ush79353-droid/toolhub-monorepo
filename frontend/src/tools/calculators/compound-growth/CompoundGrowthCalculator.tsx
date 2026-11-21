@@ -109,7 +109,7 @@ export function CompoundGrowthCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial deposit: ${symbol}${input.initialDeposit}`,
         `Interest rate: ${input.interestRate}%`,
         `Term: ${input.termYears} yrs ${input.termMonths} mos`,

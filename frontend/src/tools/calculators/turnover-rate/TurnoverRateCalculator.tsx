@@ -76,7 +76,7 @@ export function TurnoverRateCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         input.calculateAverage === 'yes'
           ? `Employees at start: ${input.employeesAtStart}`
           : null,

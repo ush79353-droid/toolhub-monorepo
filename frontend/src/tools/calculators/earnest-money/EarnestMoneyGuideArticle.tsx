@@ -15,7 +15,7 @@ export function EarnestMoneyGuideArticle() {
         purchase a property. It is usually held according to the purchase
         agreement and local transaction procedures. Deposit size and handling
         vary by market. Earnest money is not an extra purchase charge on top of
-        the price — it is typically applied toward the buyer&apos;s closing funds
+ the price; it is typically applied toward the buyer&apos;s closing funds
         when the sale completes.
       </p>
 
@@ -64,11 +64,11 @@ export function EarnestMoneyGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Earnest money</strong> — usually paid early; shows commitment;
+ <strong>Earnest money</strong>: usually paid early; shows commitment;
           held per contract; governed by contingencies and deadlines
         </li>
         <li>
-          <strong>Down payment</strong> — buyer&apos;s contribution toward the
+ <strong>Down payment</strong>: buyer&apos;s contribution toward the
           purchase price; typically settled at closing; affects loan size
         </li>
       </ul>
@@ -82,7 +82,7 @@ export function EarnestMoneyGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Amounts vary with local market practices, property price, buyer
         competition, financing, seller requirements, and regional rules.
-        Illustrative percentages in examples are for math only — they are not
+ Illustrative percentages in examples are for math only; they are not
         universal requirements.
       </p>
 

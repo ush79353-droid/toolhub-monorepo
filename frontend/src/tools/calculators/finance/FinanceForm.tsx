@@ -87,10 +87,10 @@ export function FinanceForm({
 
   const primaryResultLabel =
     input.mode === 'IY'
-      ? `I/Y = ${result ? `${formatFinancePercent(result.calculatedValue)}%` : '—'}`
+      ? `I/Y = ${result ? `${formatFinancePercent(result.calculatedValue)}%`: '; '}`
       : input.mode === 'N'
-        ? `N = ${result ? formatFinancePeriods(result.calculatedValue) : '—'}`
-        : `${input.mode} = ${result ? money(result.calculatedValue) : '—'}`;
+        ? `N = ${result ? formatFinancePeriods(result.calculatedValue): '; '}`
+        : `${input.mode} = ${result ? money(result.calculatedValue): '; '}`;
 
   return (
     <div className="space-y-4">

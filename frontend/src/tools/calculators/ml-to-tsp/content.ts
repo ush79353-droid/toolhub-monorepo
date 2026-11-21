@@ -37,7 +37,7 @@ export const MLTSP_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'mL to tsp Converter',
     paragraphs: [
-      'Convert milliliters into teaspoons and teaspoons back into milliliters. US customary teaspoons are not exactly 5 mL — that exact relationship belongs to the metric teaspoon. This tool defaults to the US customary teaspoon and also supports metric and traditional Imperial teaspoons.',
+      'Convert milliliters into teaspoons and teaspoons back into milliliters. US customary teaspoons are not exactly 5 mL; that exact relationship belongs to the metric teaspoon. This tool defaults to the US customary teaspoon and also supports metric and traditional Imperial teaspoons.',
     ],
   },
   {

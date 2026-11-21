@@ -37,7 +37,7 @@ export const WORKING_CAPITAL_TURNOVER_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What does the working capital turnover ratio measure?',
     answer:
-      'It measures working capital efficiency — sales generated per unit of average WC — not profitability or short-term liquidity by itself.',
+      'It measures working capital efficiency (sales generated per unit of average WC) not profitability or short-term liquidity by itself.',
   },
   {
     question: 'What is the working capital turnover formula?',
@@ -72,7 +72,7 @@ export const WORKING_CAPITAL_TURNOVER_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a low turnover ratio mean?',
     answer:
-      'It can indicate excess investment in working capital relative to sales — for example slow inventory or receivables — or a capital-heavy operating model.',
+      'It can indicate excess investment in working capital relative to sales (for example slow inventory or receivables) or a capital-heavy operating model.',
   },
   {
     question: 'Can working capital turnover be negative?',
@@ -82,18 +82,18 @@ export const WORKING_CAPITAL_TURNOVER_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when average working capital is zero?',
     answer:
-      'Turnover is undefined. This calculator shows unavailable — never Infinity.',
+      'Turnover is undefined. This calculator shows unavailable; never Infinity.',
   },
   {
     question: 'Can working capital turnover equal zero?',
     answer:
-      'Yes — when revenue is zero and average WC is nonzero, turnover = 0.00x.',
+      'Yes: when revenue is zero and average WC is nonzero, turnover = 0.00x.',
   },
   {
     question:
       'What is the difference between working capital ratio and working capital turnover?',
     answer:
-      'Working capital ratio (current ratio) is CA ÷ CL at a point in time. Turnover is Revenue ÷ average WC over a period — efficiency, not liquidity coverage.',
+      'Working capital ratio (current ratio) is CA ÷ CL at a point in time. Turnover is Revenue ÷ average WC over a period; efficiency, not liquidity coverage.',
   },
   {
     question: 'Why is average working capital used instead of ending working capital?',

@@ -39,7 +39,7 @@ export const FISHER_EFFECT_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the nominal interest rate?',
     answer:
-      'The stated interest rate before adjusting for inflation — for example a quoted deposit or loan rate.',
+      'The stated interest rate before adjusting for inflation, for example a quoted deposit or loan rate.',
   },
   {
     question: 'What is the real interest rate?',
@@ -49,7 +49,7 @@ export const FISHER_EFFECT_FAQS: readonly FAQItem[] = [
   {
     question: 'What is expected inflation?',
     answer:
-      'The anticipated change in the general price level over the same period as the interest rate — not necessarily the inflation that later realizes.',
+      'The anticipated change in the general price level over the same period as the interest rate; not necessarily the inflation that later realizes.',
   },
   {
     question: 'Why does inflation affect real interest rates?',
@@ -99,7 +99,7 @@ export const FISHER_EFFECT_FAQS: readonly FAQItem[] = [
   {
     question: 'How does the Fisher effect affect borrowing?',
     answer:
-      'Borrowers may benefit when inflation exceeds the contracted nominal rate in real terms — but contracts, taxes, and risk also matter.',
+      'Borrowers may benefit when inflation exceeds the contracted nominal rate in real terms, but contracts, taxes, and risk also matter.',
   },
   {
     question: 'How is the Fisher effect related to monetary policy?',
@@ -109,7 +109,7 @@ export const FISHER_EFFECT_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between the Fisher effect and the International Fisher Effect?',
     answer:
-      'The Fisher effect links i, r, and πᵉ. The International Fisher Effect relates cross-country nominal interest differentials to expected exchange-rate changes under its own assumptions — a separate theory.',
+      'The Fisher effect links i, r, and πᵉ. The International Fisher Effect relates cross-country nominal interest differentials to expected exchange-rate changes under its own assumptions: a separate theory.',
   },
   {
     question: 'What are the limitations of the Fisher effect?',

@@ -28,7 +28,7 @@ export const EMERGENCY_FUND_FAQS: readonly FAQItem[] = [
   {
     question: 'What is emergency funding used for?',
     answer:
-      'Genuine surprises that threaten essentials — job loss, medical bills, urgent repairs, or temporary income gaps — not routine discretionary spending.',
+      'Genuine surprises that threaten essentials (job loss, medical bills, urgent repairs, or temporary income gaps) not routine discretionary spending.',
   },
   {
     question: 'How much emergency fund should I have with $2,500 monthly expenses?',

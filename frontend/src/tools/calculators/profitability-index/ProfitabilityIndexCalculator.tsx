@@ -31,7 +31,7 @@ function buildShareText(
   note: string
 ): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Initial investment: ${formatCurrencyValue(result.initialInvestment, result.currency)}`,
     `PV of future cash flow: ${formatCurrencyValue(result.pvFutureCashFlow, result.currency)}`,
     `Profitability index (PI): ${result.piDisplay}`,

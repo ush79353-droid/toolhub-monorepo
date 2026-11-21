@@ -91,10 +91,10 @@ export function interpretWacc(waccPercent: number): string {
     return 'WACC is unavailable.';
   }
   if (waccPercent < 0) {
-    return 'A negative WACC is unusual and typically reflects atypical financing-rate inputs. Review assumptions carefully — it is not a typical hurdle-rate outcome.';
+    return 'A negative WACC is unusual and typically reflects atypical financing-rate inputs. Review assumptions carefully; it is not a typical hurdle-rate outcome.';
   }
   if (Math.abs(waccPercent) < 1e-12) {
-    return 'WACC is 0.00% under the selected financing rates and capital structure — verify that zero costs of capital are intentional.';
+    return 'WACC is 0.00% under the selected financing rates and capital structure; verify that zero costs of capital are intentional.';
   }
   return 'Under the selected assumptions, WACC is the blended required return of debt and equity capital providers. Use it as a hurdle or discount rate only when project risk and financing assumptions are sufficiently comparable.';
 }

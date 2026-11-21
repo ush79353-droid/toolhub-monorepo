@@ -140,7 +140,7 @@ export function shareSalesText(input: {
   fxNote: string;
 }): string {
   return [
-    `${input.title} — Omega Calculators`,
+    `${input.title} | Omega Calculators`,
     `Revenue: ${input.revenueCurrency} ${input.formattedRevenue} ${periodLabel(input.revenuePeriod)}`,
     `Annual revenue: ${input.annualRevenueCurrency} ${input.formattedAnnualRevenue} ${periodLabel(input.annualRevenuePeriod)}`,
     `Net sales: ${input.netSalesCurrency} ${input.formattedNetSales} ${periodLabel(input.netSalesPeriod)}`,

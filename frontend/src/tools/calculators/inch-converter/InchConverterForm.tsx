@@ -144,7 +144,7 @@ export function InchConverterForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Convert inches (1 in = 0.0254 m exactly) to metric, Imperial/US, and specialized length
-        units. Enter any field — all stay linked through meters. Signed values are allowed. Solar
+ units. Enter any field; all stay linked through meters. Signed values are allowed. Solar
         radius uses the IAU nominal reference (695,700 km).
       </div>
 

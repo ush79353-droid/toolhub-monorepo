@@ -137,7 +137,7 @@ export function shareResultText(result: MlToTbspResult): string {
   const other = result.values.other;
   const otherSym = unitSymbol(result.units.other);
   return [
-    'mL to tbsp Converter — Omega Calculators',
+    'mL to tbsp Converter | Omega Calculators',
     '',
     `${formatVolume(ml)} mL = ${formatVolume(tbsp)} ${tbspSym}`,
     `${formatVolume(ml)} mL = ${formatVolume(other)} ${otherSym}`,

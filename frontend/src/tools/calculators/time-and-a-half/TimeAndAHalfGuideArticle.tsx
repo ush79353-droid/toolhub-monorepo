@@ -12,7 +12,7 @@ export function TimeAndAHalfGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A time and a half calculator estimates pay when some hours are paid at
-        premium multipliers of your standard hourly rate — commonly 1.5×
+ premium multipliers of your standard hourly rate; commonly 1.5×
         (time-and-a-half), 2× (double time), and 3× (triple time). You enter hours
         for each category yourself; the tool does not decide overtime eligibility.
       </p>

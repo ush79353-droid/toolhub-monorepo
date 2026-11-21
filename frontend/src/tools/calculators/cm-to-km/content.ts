@@ -46,9 +46,9 @@ export const CM_TO_KM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert CM to KM?',
     paragraphs: [
       `Enter the measurement in centimeters, divide by ${CM_PER_KM}, and read the result in kilometers.`,
-      `Example 1 — 50,000 cm: 50000 ÷ ${CM_PER_KM} = ${formatLength(centimetersToKilometers(50_000))} km.`,
-      `Example 2 — 250,000 cm: 250000 ÷ ${CM_PER_KM} = ${formatLength(centimetersToKilometers(250_000))} km.`,
-      `Example 3 — 1,000 cm: 1000 ÷ ${CM_PER_KM} = ${formatLength(centimetersToKilometers(1000))} km.`,
+      `Example 1: 50,000 cm: 50000 ÷ ${CM_PER_KM} = ${formatLength(centimetersToKilometers(50_000))} km.`,
+      `Example 2: 250,000 cm: 250000 ÷ ${CM_PER_KM} = ${formatLength(centimetersToKilometers(250_000))} km.`,
+      `Example 3: 1,000 cm: 1000 ÷ ${CM_PER_KM} = ${formatLength(centimetersToKilometers(1000))} km.`,
       `To convert kilometers back to centimeters, multiply by ${CM_PER_KM}.`,
     ],
     formula: `km = cm ÷ ${CM_PER_KM}  ·  cm = km × ${CM_PER_KM}`,
@@ -57,7 +57,7 @@ export const CM_TO_KM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use-tool',
     title: 'How to Use This CM to KM Conversion Tool?',
     paragraphs: [
-      'Enter a length in centimeters or kilometers. The matching field updates automatically — no Calculate button and no form submit.',
+      'Enter a length in centimeters or kilometers. The matching field updates automatically; no Calculate button and no form submit.',
       'Edit either primary field for the reverse conversion. Expand Other metric/imperial length units to see millimeters, meters, inches, feet, and more.',
       'Use Share result, Reload calculator, or Clear all changes when you want a shareable summary or a fresh start.',
     ],

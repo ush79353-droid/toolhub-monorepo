@@ -50,7 +50,7 @@ export const CREDIT_SPREAD_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a 200-basis-point credit spread mean?',
     answer:
-      'Two hundred basis points equals two percentage points of yield difference. Whether that is “wide” or “tight” depends on rating, sector, maturity, liquidity, and market conditions — there is no universal risk cutoff.',
+      'Two hundred basis points equals two percentage points of yield difference. Whether that is “wide” or “tight” depends on rating, sector, maturity, liquidity, and market conditions; there is no universal risk cutoff.',
   },
   {
     question: 'What is a good credit spread?',
@@ -60,7 +60,7 @@ export const CREDIT_SPREAD_FAQS: readonly FAQItem[] = [
   {
     question: 'What causes credit spreads to widen?',
     answer:
-      'Widening can reflect higher perceived default risk, weaker issuer fundamentals, lower liquidity, rising risk aversion, stress in funding markets, or a less favorable recovery outlook — often several factors at once.',
+      'Widening can reflect higher perceived default risk, weaker issuer fundamentals, lower liquidity, rising risk aversion, stress in funding markets, or a less favorable recovery outlook; often several factors at once.',
   },
   {
     question: 'What causes credit spreads to narrow?',
@@ -80,7 +80,7 @@ export const CREDIT_SPREAD_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between credit spread and credit risk?',
     answer:
-      'Credit risk is the economic exposure to default or rating deterioration. A credit spread is a market yield difference that may compensate for credit risk plus liquidity, structure, and other factors — it is not a pure default-probability measure.',
+      'Credit risk is the economic exposure to default or rating deterioration. A credit spread is a market yield difference that may compensate for credit risk plus liquidity, structure, and other factors; it is not a pure default-probability measure.',
   },
   {
     question: 'How does credit rating affect credit spreads?',

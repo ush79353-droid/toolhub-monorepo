@@ -212,7 +212,7 @@ export function MlToCupsForm({
           <div className="border-t border-border px-3.5 pb-3.5 pt-2">
             <p className="mb-2 text-xs text-muted-foreground">
               US tablespoon, teaspoon, and fluid ounce values use exact US customary
-              definitions—not rounded metric cooking shortcuts (5 mL / 15 mL).
+ definitions, not rounded metric cooking shortcuts (5 mL / 15 mL).
             </p>
             {otherUnits && otherUnits.length > 0 ? (
               <ul className="divide-y divide-border">

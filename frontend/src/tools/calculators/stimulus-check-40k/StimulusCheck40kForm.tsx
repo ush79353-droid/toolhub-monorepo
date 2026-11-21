@@ -75,7 +75,7 @@ export function StimulusCheck40kForm({
           <strong className="font-semibold text-accent">$40,000</strong> as the cut-off point.
         </p>
         <p className="mt-2.5 font-medium text-amber-950/90">
-          Historical / hypothetical only — this proposal was not enacted as a $40k program, and
+ Historical / hypothetical only; this proposal was not enacted as a $40k program, and
           you cannot claim these payments today.
         </p>
       </div>
@@ -139,7 +139,7 @@ export function StimulusCheck40kForm({
           <span>Your income (AGI)</span>
           <InfoTooltip
             label="Your income (AGI)"
-            text="Adjusted gross income in USD. Amounts are denomination-only dollars — this tool does not convert currencies."
+            text="Adjusted gross income in USD. Amounts are denomination-only dollars; this tool does not convert currencies."
           />
         </label>
         <FieldShell error={errors.incomeAgi}>

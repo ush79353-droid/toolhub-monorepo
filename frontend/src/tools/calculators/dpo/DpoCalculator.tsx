@@ -81,7 +81,7 @@ export function DpoCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Average AP: ${symbol}${result.formattedAverageAccountsPayable}`,
         `Purchases: ${symbol}${result.formattedPurchases}`,
         `Period: ${result.formattedAccountingPeriodDays} days`,
@@ -124,7 +124,7 @@ export function DpoCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Estimate how many days you take to pay suppliers — DPO = (Average AP
+ Estimate how many days you take to pay suppliers; DPO = (Average AP
             / Purchases) × days.
           </p>
         </div>

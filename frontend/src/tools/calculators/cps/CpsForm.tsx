@@ -59,7 +59,7 @@ export function CpsForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        1 cps = 1 Hz = 60 RPM = 360°/s = 2π rad/s (one cycle = one revolution). Enter any field —
+ 1 cps = 1 Hz = 60 RPM = 360°/s = 2π rad/s (one cycle = one revolution). Enter any field; 
         the others update immediately. Negative frequencies are not accepted.
       </div>
 

@@ -45,7 +45,7 @@ export function DimesToDollarsForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        1 U.S. dime = 10¢ = $0.10 · 10 dimes = $1. Edit either field — the other updates
+ 1 U.S. dime = 10¢ = $0.10 · 10 dimes = $1. Edit either field: the other updates
         immediately. Physical dime counts are whole numbers.
       </div>
 

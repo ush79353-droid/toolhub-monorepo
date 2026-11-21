@@ -15,7 +15,7 @@ export function PayPalFeeGuideArticle() {
         This PayPal Fee Calculator helps freelancers, online sellers, and small
         businesses estimate transaction processing fees, net amounts received,
         and the gross payment needed to keep a target amount after fees. Choose
-        a verified United States or United Kingdom merchant schedule — or enter
+ a verified United States or United Kingdom merchant schedule, or enter
         custom rates when your region is not listed. Currency labels are
         denomination only; currency conversion markups are excluded.
       </p>
@@ -132,7 +132,7 @@ export function PayPalFeeGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Start with the gross the buyer pays, subtract the total estimated fee,
         and you have unit net before other costs. Fixed fees weigh more heavily
-        on small payments — compare effective fee % on $10 vs $1,000 using the
+ on small payments; compare effective fee % on $10 vs $1,000 using the
         comparison table in the results panel.
       </p>
 
@@ -159,7 +159,7 @@ export function PayPalFeeGuideArticle() {
         Build processing fees into product or service pricing, invoices, and
         contribution-margin targets so net revenue covers cost of goods and
         overhead. Passing fees through as a line-item surcharge may be
-        restricted by card-scheme rules or local law — check what is allowed
+ restricted by card-scheme rules or local law; check what is allowed
         before adding a “PayPal fee” charge to customers.
       </p>
 

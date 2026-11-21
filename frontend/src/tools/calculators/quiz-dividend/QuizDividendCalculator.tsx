@@ -27,7 +27,7 @@ function formatAnswerSummary(input: QuizDividendInput): string[] {
       question.id === 'q4' ? input.answers.q4.trim() : input.answers.q6.trim();
     const suffix = question.kind === 'percent' ? '%' : '';
     const prefix = question.kind === 'money' ? '$' : '';
-    return `Q${question.number}: ${raw ? `${prefix}${raw}${suffix}` : '—'}`;
+    return `Q${question.number}: ${raw ? `${prefix}${raw}${suffix}`: '; '}`;
   });
 }
 
@@ -70,7 +70,7 @@ export function QuizDividendCalculator({
 
   const summary = result.complete
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         'Dividend quiz: Test your investing basics',
         `Score: ${result.formattedScore} (${result.formattedPercent})`,
         ...formatAnswerSummary(input),
@@ -106,7 +106,7 @@ export function QuizDividendCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Quiz</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Educational quiz — not a dividend yield calculator. Answer all six
+ Educational quiz; not a dividend yield calculator. Answer all six
             questions to see your score. Fixed USD examples; no currency
             conversion.
           </p>

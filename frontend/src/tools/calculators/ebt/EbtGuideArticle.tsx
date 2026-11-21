@@ -48,7 +48,7 @@ export function EbtGuideArticle() {
         Operating Expenses = SG&amp;A + D&amp;A
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Enter D&amp;A only when it is not already included in COGS or SG&amp;A —
+ Enter D&amp;A only when it is not already included in COGS or SG&amp;A; 
         do not subtract the same costs twice.
       </p>
 
@@ -198,7 +198,7 @@ export function EbtGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         EBT is not cash flow, excludes income taxes, can be affected by
         nonrecurring items and interest structure, and does not alone explain
-        liquidity or solvency. This tool provides educational estimates only —
+ liquidity or solvency. This tool provides educational estimates only; 
         not accounting, tax, audit, or investment advice.
       </p>
 

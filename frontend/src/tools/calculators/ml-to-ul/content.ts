@@ -58,7 +58,7 @@ export const MLUL_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'where-used',
     title: 'Where Are Microliters Used?',
     paragraphs: [
-      'Microliters appear in laboratory pipetting, small-volume chemical samples, microfluidics, biological research, analytical testing, and pharmaceutical research. The information here is educational — it does not replace laboratory protocols or clinical dosing guidance.',
+      'Microliters appear in laboratory pipetting, small-volume chemical samples, microfluidics, biological research, analytical testing, and pharmaceutical research. The information here is educational; it does not replace laboratory protocols or clinical dosing guidance.',
     ],
   },
   {

@@ -160,7 +160,7 @@ export function shareResultText(
   path = '/tools/weekly-pay-calculator',
 ): string {
   return [
-    'Weekly Pay Calculator — Omega Calculators',
+    'Weekly Pay Calculator | Omega Calculators',
     '',
     `Hourly wage: ${result.formattedHourly} ${result.currency}`,
     `Daily pay: ${result.formattedDaily} ${result.currency}`,

@@ -104,7 +104,7 @@ export function KnotsToKphForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        1 knot = 1 international nautical mile per hour = exactly 1.852 km/h. Enter knots or km/h —
+ 1 knot = 1 international nautical mile per hour = exactly 1.852 km/h. Enter knots or km/h; 
         both update instantly. Negative speeds are not accepted.
       </div>
 

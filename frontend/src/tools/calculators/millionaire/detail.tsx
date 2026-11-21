@@ -4,7 +4,7 @@ import { MillionaireGuideArticle } from './MillionaireGuideArticle';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate how long it takes to reach a million-dollar — or any — savings goal with compound interest, periodic deposits, and inflation-adjusted purchasing power. Currency changes formatting only.',
+    'Estimate how long it takes to reach a million-dollar (or any) savings goal with compound interest, periodic deposits, and inflation-adjusted purchasing power. Currency changes formatting only.',
   asideAriaLabel: 'Millionaire Calculator guide',
   tocItems: MILLIONAIRE_TOC_ITEMS,
   GuideArticle: MillionaireGuideArticle,

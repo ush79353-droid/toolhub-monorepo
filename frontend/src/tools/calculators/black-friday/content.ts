@@ -31,7 +31,7 @@ export const BLACK_FRIDAY_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'When is Black Friday in 2026?',
-    answer: `Black Friday 2026 falls on ${bf2026.isoDate} (November ${bf2026.day}, 2026) — the Friday after U.S. Thanksgiving.`,
+    answer: `Black Friday 2026 falls on ${bf2026.isoDate} (November ${bf2026.day}, 2026): the Friday after U.S. Thanksgiving.`,
   },
   {
     question: 'How do I calculate a Black Friday discount?',
@@ -90,7 +90,7 @@ export const BLACK_FRIDAY_FAQS: readonly FAQItem[] = [
   {
     question: 'Are Black Friday deals always cheaper?',
     answer:
-      'No. Compare the final price with recent prices, shipping, taxes, and return terms — a large % off a raised list price can still be mediocre.',
+      'No. Compare the final price with recent prices, shipping, taxes, and return terms: a large % off a raised list price can still be mediocre.',
   },
   {
     question: 'How can I compare discounts between stores?',
@@ -145,6 +145,6 @@ export const BLACK_FRIDAY_FAQS: readonly FAQItem[] = [
   {
     question: 'Does free shipping make a deal better?',
     answer:
-      'Often yes versus a slightly lower sticker price plus shipping — compare total landed cost, not just the sale price.',
+      'Often yes versus a slightly lower sticker price plus shipping. Compare total landed cost, not just the sale price.',
   },
 ];

@@ -4,7 +4,7 @@ import { GramsToOuncesGuideArticle } from './GramsToOuncesGuideArticle';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert grams to avoirdupois ounces and ounces to grams using the exact factor 1 oz = 28.349523125 g. Mass only — not fluid ounces.',
+    'Convert grams to avoirdupois ounces and ounces to grams using the exact factor 1 oz = 28.349523125 g. Mass only; not fluid ounces.',
   asideAriaLabel: 'Interactive grams to ounces calculator',
   tocItems: GRAMS_TO_OUNCES_TOC_ITEMS,
   GuideArticle: GramsToOuncesGuideArticle,

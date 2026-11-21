@@ -67,7 +67,7 @@ export const MLKG_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Suppose a liquid has volume 2,500 mL and density 880 kg/m³.',
       'm = (2500 × 880) ÷ 1,000,000 = 2.2 kg.',
-      'A different density for the same volume would produce a different mass — for example 1000 kg/m³ would give 2.5 kg.',
+      'A different density for the same volume would produce a different mass, for example 1000 kg/m³ would give 2.5 kg.',
     ],
     formula: 'm = (2500 × 880) / 1,000,000 = 2.2 kg',
   },
@@ -82,7 +82,7 @@ export const MLKG_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-it-works',
     title: 'How Does the mL to kg Calculator Work?',
     paragraphs: [
-      'You choose a substance (or custom density), enter volume or mass, and optionally switch units. The calculator normalizes volume to milliliters and mass to kilograms, converts density to kg/m³, then applies m = ρV (or the reverse). Results update as you type. Preset densities are approximate reference values — not certifications or clinical dose guidance.',
+      'You choose a substance (or custom density), enter volume or mass, and optionally switch units. The calculator normalizes volume to milliliters and mass to kilograms, converts density to kg/m³, then applies m = ρV (or the reverse). Results update as you type. Preset densities are approximate reference values; not certifications or clinical dose guidance.',
     ],
     tableHeaders: ['Substance', 'Approx. density (kg/m³)'],
     table: SUBSTANCES.map((s) => [s.name, formatMeasure(s.densityKgPerM3)]),

@@ -50,7 +50,7 @@ export const G_TO_LBS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       '1. Enter a mass in grams.',
       '2. The equivalent mass in pounds appears immediately.',
-      '3. Or enter a value in pounds — grams update automatically.',
+      '3. Or enter a value in pounds. grams update automatically.',
       '4. Use Reload calculator or Clear all changes to reset both fields.',
       'Both fields measure mass. Density is not required for this conversion.',
     ],

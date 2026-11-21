@@ -17,7 +17,7 @@ export function StudentLoanRepaymentCovidGuideArticle() {
               student loan payments and applied a zero percent interest rate under the Coronavirus Aid,
               Relief, and Economic Security (CARES) Act and related extensions. An earlier public notice
               referenced an automatic suspension lasting through{' '}
-              <strong>December 31, 2020</strong> — that date is historical context only.
+ <strong>December 31, 2020</strong>: that date is historical context only.
             </p>
             <p>
               This page preserves that historical information. It does not run repayment math and does

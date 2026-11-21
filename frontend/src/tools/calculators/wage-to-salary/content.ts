@@ -29,6 +29,6 @@ export const WAGE_TO_SALARY_FAQS: readonly FAQItem[] = [
   {
     question: 'Is this the same as Hourly to Annual Salary or Salary to Hourly?',
     answer:
-      'No. Those tools focus on hourly↔annual (and related period) conversions. This calculator accepts hourly, daily, or weekly wage and returns monthly and yearly salary only — no taxes, overtime, or bonuses.',
+      'No. Those tools focus on hourly↔annual (and related period) conversions. This calculator accepts hourly, daily, or weekly wage and returns monthly and yearly salary only; no taxes, overtime, or bonuses.',
   },
 ];

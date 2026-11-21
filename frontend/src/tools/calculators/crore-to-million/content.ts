@@ -24,7 +24,7 @@ export const CRORE_MILLION_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'overview',
     title: 'Crore to Million Converter',
     paragraphs: [
-      'Crore is widely used in the Indian numbering system across South Asia, while million is the international short-scale unit. Both name the same kind of quantity—only the scale label changes—so converting between them helps when reading finance, population, budgets, and business reports.',
+      'Crore is widely used in the Indian numbering system across South Asia, while million is the international short-scale unit. Both name the same kind of quantity, only the scale label changes, so converting between them helps when reading finance, population, budgets, and business reports.',
       'Enter either crores or millions and the other field updates instantly. Useful anchors: 10 million = 1 crore; 25 million = 2.5 crore; 100 million = 10 crore; 500 million = 50 crore.',
     ],
     formula: '1 crore = 10 million = 10,000,000',

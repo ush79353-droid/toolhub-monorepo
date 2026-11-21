@@ -78,7 +78,7 @@ export function MoneySupplyCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        'Money Supply Calculator — Omega Calculators',
+        'Money Supply Calculator | Omega Calculators',
         '',
         `Definition: ${result.definitionLabel}`,
         '',

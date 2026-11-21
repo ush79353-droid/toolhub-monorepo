@@ -34,7 +34,7 @@ export const FEET_AND_INCHES_GUIDE_SECTIONS: readonly FeetAndInchesGuideSection[
     id: 'introduction',
     title: 'Introduction',
     paragraphs: [
-      'The Feet and Inches Calculator performs arithmetic on mixed imperial lengths—feet, inches, and fractions of an inch. Add or subtract two lengths, or multiply and divide a length by a dimensionless number, then read a normalized feet-and-inches result with decimal and metric equivalents.',
+      'The Feet and Inches Calculator performs arithmetic on mixed imperial lengths, feet, inches, and fractions of an inch. Add or subtract two lengths, or multiply and divide a length by a dimensionless number, then read a normalized feet-and-inches result with decimal and metric equivalents.',
     ],
   },
   {
@@ -63,7 +63,7 @@ export const FEET_AND_INCHES_GUIDE_SECTIONS: readonly FeetAndInchesGuideSection[
     id: 'multiply',
     title: 'How to Multiply Feet and Inches',
     paragraphs: [
-      'Multiply a length by a dimensionless scalar—not by another length (that would be area). Example: 4 ft 3 in × 3 = 51 in × 3 = 153 in = 12 ft 9 in.',
+      'Multiply a length by a dimensionless scalar, not by another length (that would be area). Example: 4 ft 3 in × 3 = 51 in × 3 = 153 in = 12 ft 9 in.',
     ],
   },
   {
@@ -116,7 +116,7 @@ export const FEET_AND_INCHES_GUIDE_SECTIONS: readonly FeetAndInchesGuideSection[
 export const FEET_AND_INCHES_FAQS: readonly FAQItem[] = [
   {
     question: 'How should I write feet and inches?',
-    answer: 'Common notation uses ft and in, or the prime and double-prime symbols—for example 5 ft 8 in or 5′ 8″.',
+    answer: 'Common notation uses ft and in, or the prime and double-prime symbols, for example 5 ft 8 in or 5′ 8″.',
   },
   {
     question: 'How many feet are in 12 inches?',

@@ -35,7 +35,7 @@ export const CYBER_MONDAY_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'When is Cyber Monday in 2026?',
-    answer: `Cyber Monday 2026 falls on ${cm2026.isoDate} (November ${cm2026.day}, 2026) — the Monday after Thanksgiving.`,
+    answer: `Cyber Monday 2026 falls on ${cm2026.isoDate} (November ${cm2026.day}, 2026): the Monday after Thanksgiving.`,
   },
   {
     question: 'How does a Cyber Monday calculator work?',
@@ -74,7 +74,7 @@ export const CYBER_MONDAY_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a BOGO offer?',
     answer:
-      'Buy One Get One — typically the second item free or discounted. For identical free BOGO, paid items ≈ ceil(quantity / 2).',
+      'Buy One Get One; typically the second item free or discounted. For identical free BOGO, paid items ≈ ceil(quantity / 2).',
   },
   {
     question: 'How does Buy 2 Get 1 Free work?',
@@ -133,7 +133,7 @@ export const CYBER_MONDAY_FAQS: readonly FAQItem[] = [
   {
     question: 'Can a 50% discount be applied twice?',
     answer:
-      'Only if the offer stacks. Two sequential 50% discounts leave 25% of the original — not free.',
+      'Only if the offer stacks. Two sequential 50% discounts leave 25% of the original; not free.',
   },
   {
     question: 'What is a free-shipping threshold?',
@@ -148,6 +148,6 @@ export const CYBER_MONDAY_FAQS: readonly FAQItem[] = [
   {
     question: 'Can a Cyber Monday calculator help me plan a shopping budget?',
     answer:
-      'Yes — estimate checkout totals per item, sum them, and stay under your budget before impulse adds.',
+      'Yes: estimate checkout totals per item, sum them, and stay under your budget before impulse adds.',
   },
 ];

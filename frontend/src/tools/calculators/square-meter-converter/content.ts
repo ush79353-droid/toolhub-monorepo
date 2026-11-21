@@ -28,7 +28,7 @@ export const M2_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Square Meter Converter',
     paragraphs: [
       'Convert area measurements between metric, imperial, and US customary units with square meters (m²) as the reference. Use it for rooms, construction, flooring, land measurement, property calculations, architecture, interior design, and agriculture.',
-      'Enter a value in square meters, square feet, or any other supported unit — equivalents update automatically across all fields.',
+      'Enter a value in square meters, square feet, or any other supported unit; equivalents update automatically across all fields.',
     ],
   },
   {
@@ -61,7 +61,7 @@ export const M2_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
       'A conversion from m² to m³ requires a third dimension such as height, thickness, or depth.',
       'Formula: V = A × h, where V is volume in cubic meters, A is area in square meters, and h is height or depth in meters.',
       'Example: a concrete slab with area 20 m² and thickness 0.15 m has volume 20 × 0.15 = 3 m³.',
-      'This section is educational only — the main calculator remains an area converter and does not treat m² and m³ as interchangeable.',
+      'This section is educational only: the main calculator remains an area converter and does not treat m² and m³ as interchangeable.',
     ],
     formula: 'V = A × h\n20 m² × 0.15 m = 3 m³',
   },
@@ -82,7 +82,7 @@ export const M2_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `Exact relationship from the international foot: 1 m² = ${formatArea(convertArea(1, 'm2', 'ft2'))} ft².`,
       `Formula: ft² = m² × ${formatArea(convertArea(1, 'm2', 'ft2'))}.`,
-      `Example — convert 25 m²: 25 × ${formatArea(convertArea(1, 'm2', 'ft2'))} ≈ ${formatArea(convertArea(25, 'm2', 'ft2'))}. Therefore 25 m² ≈ ${formatArea(convertArea(25, 'm2', 'ft2'))} ft².`,
+      `Example; convert 25 m²: 25 × ${formatArea(convertArea(1, 'm2', 'ft2'))} ≈ ${formatArea(convertArea(25, 'm2', 'ft2'))}. Therefore 25 m² ≈ ${formatArea(convertArea(25, 'm2', 'ft2'))} ft².`,
       `Reverse: m² = ft² × 0.09290304. Example: 100 × 0.09290304 = ${formatArea(convertArea(100, 'ft2', 'm2'))}. Therefore 100 ft² = ${formatArea(convertArea(100, 'ft2', 'm2'))} m².`,
     ],
     formula: `1 m² = ${formatArea(convertArea(1, 'm2', 'ft2'))} ft²\nft² = m² × ${formatArea(convertArea(1, 'm2', 'ft2'))}\nm² = ft² × 0.09290304`,

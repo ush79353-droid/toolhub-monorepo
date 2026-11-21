@@ -67,7 +67,7 @@ export function QuizCarDepreciationCalculator({
 
   const summary = result.complete
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         'Quiz: The Downward Drive',
         `Score: ${result.formattedScore}`,
         ...QUIZ_QUESTIONS.map((question) => {
@@ -109,7 +109,7 @@ export function QuizCarDepreciationCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Quiz</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Educational quiz — not a depreciation calculator. Answer all five
+ Educational quiz; not a depreciation calculator. Answer all five
             questions to see your score. Fixed USD examples; no currency
             conversion.
           </p>

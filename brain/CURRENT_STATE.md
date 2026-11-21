@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (PPF Calculator live at `/tools/ppf-calculator`; tool-content export writes `backend/data/tool-content/`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (frontend user-facing em dashes scrubbed to `\|` / situational punctuation; PPF Calculator live at `/tools/ppf-calculator`; tool-content export writes `backend/data/tool-content/`; Auto Loan remains master Tool Detail Page).
 
 ---
 

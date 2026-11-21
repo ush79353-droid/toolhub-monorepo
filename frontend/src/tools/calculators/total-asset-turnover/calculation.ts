@@ -62,7 +62,7 @@ export function interpretTotalAssetTurnover(
   if (tat === 0) {
     return 'Total asset turnover of 0.00× means no revenue was generated against a positive average asset base during the period.';
   }
-  return `Total asset turnover of ${formatTat(tat)}× means about ${formatTat(tat)} of revenue per 1 of average total assets. This measures asset utilization, not profitability — compare with industry peers and the same reporting period.`;
+  return `Total asset turnover of ${formatTat(tat)}× means about ${formatTat(tat)} of revenue per 1 of average total assets. This measures asset utilization, not profitability. Compare with industry peers and the same reporting period.`;
 }
 
 export function formatTatMoney(

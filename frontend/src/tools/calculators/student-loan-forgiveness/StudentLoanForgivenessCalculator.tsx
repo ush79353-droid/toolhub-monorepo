@@ -56,13 +56,13 @@ export function StudentLoanForgivenessCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Filing status: ${input.filingStatus === 'single' ? 'Single' : 'Married'}`,
-        `Annual income: $${input.annualIncome || '—'}`,
+        `Annual income: $${input.annualIncome || '; '}`,
         `Pell Grants: ${input.receivedPellGrants ? 'Yes' : 'No'}`,
-        `Outstanding student debt: $${input.outstandingStudentDebt || '—'}`,
+        `Outstanding student debt: $${input.outstandingStudentDebt || '; '}`,
         result.historicalNotice,
-        'Currency: fixed USD ($) — no FX selectors in the reference.',
+        'Currency: fixed USD ($); no FX selectors in the reference.',
       ].join('\n')
     : '';
 
@@ -77,7 +77,7 @@ export function StudentLoanForgivenessCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Historical / Not Currently Available — screenshot fields only. No forgiveness amount
+ Historical / Not Currently Available; screenshot fields only. No forgiveness amount
             is estimated without verified program rules.
           </p>
         </div>

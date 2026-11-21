@@ -37,7 +37,7 @@ export const KSI_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert KSI to PSI',
     paragraphs: [
       'KSI and PSI use the same area denominator (square inch) but different force magnitudes. One kilopound-force equals 1,000 pounds-force, so the conversion factor is exactly 1,000.',
-      `Example — convert 5 ksi: 5 × ${PSI_PER_KSI} = ${formatPressure(ksiToPsi(5))}. Therefore 5 ksi = ${formatPressure(ksiToPsi(5))} psi.`,
+      `Example; convert 5 ksi: 5 × ${PSI_PER_KSI} = ${formatPressure(ksiToPsi(5))}. Therefore 5 ksi = ${formatPressure(ksiToPsi(5))} psi.`,
       'This tool changes numerical units only. It does not add or subtract atmospheric pressure for gauge ↔ absolute conversion.',
     ],
     formula: `psi = ksi × ${PSI_PER_KSI}`,
@@ -47,7 +47,7 @@ export const KSI_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert PSI to KSI',
     paragraphs: [
       `Divide the psi value by ${PSI_PER_KSI}.`,
-      `Example — convert 25,000 psi: 25,000 ÷ ${PSI_PER_KSI} = ${formatPressure(psiToKsi(25_000))}. Therefore 25,000 psi = ${formatPressure(psiToKsi(25_000))} ksi.`,
+      `Example; convert 25,000 psi: 25,000 ÷ ${PSI_PER_KSI} = ${formatPressure(psiToKsi(25_000))}. Therefore 25,000 psi = ${formatPressure(psiToKsi(25_000))} ksi.`,
     ],
     formula: `ksi = psi ÷ ${PSI_PER_KSI}`,
   },
@@ -66,7 +66,7 @@ export const KSI_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'conversion-table',
     title: 'KSI to PSI Conversion Table',
     paragraphs: [
-      `Values generated with the same conversion engine as the calculator. The factor of ${PSI_PER_KSI} is exact — no approximation is required.`,
+      `Values generated with the same conversion engine as the calculator. The factor of ${PSI_PER_KSI} is exact; no approximation is required.`,
     ],
     tableHeaders: ['ksi', 'psi'],
     table: TABLE_KSI.map((v) => [formatPressure(v), formatPressure(ksiToPsi(v))]),

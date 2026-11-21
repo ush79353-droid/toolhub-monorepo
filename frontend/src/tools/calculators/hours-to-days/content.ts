@@ -48,7 +48,7 @@ export const HOURS_TO_DAYS_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'standard-vs-workdays',
-    title: 'Examples — Standard Days vs. 8-Hour Workdays',
+    title: 'Examples; Standard Days vs. 8-Hour Workdays',
     paragraphs: [
       'Elapsed calendar days use 24 hours. An 8-hour workday counts only working hours and is a different concept.',
       'Example: 48 elapsed hours = 2 standard days, but 48 working hours = 6 eight-hour workdays. This calculator uses 24-hour days only and does not mix workday math into the synced fields.',

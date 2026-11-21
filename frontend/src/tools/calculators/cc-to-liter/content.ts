@@ -56,7 +56,7 @@ export const CC_TO_LITER_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Enter a value in cubic centimeters.',
       '3. View the automatically calculated value in liters.',
       '4. Alternatively, enter a value in liters to calculate cubic centimeters.',
-      '5. Optionally switch the cubic-centimeter label among cm³, cc, and mL — the number is the same volume.',
+      '5. Optionally switch the cubic-centimeter label among cm³, cc, and mL. the number is the same volume.',
       '6. Use Share Result, Reload, or Clear as needed.',
       'No manual Calculate step is required for valid numbers.',
     ],

@@ -101,7 +101,7 @@ export function NsfrResults({ result }: NsfrResultsProps) {
             ))}
           </ul>
           <p className="text-muted-foreground">
-            Scenarios are mathematical only — not forecasts.
+ Scenarios are mathematical only; not forecasts.
           </p>
         </div>
       ) : null}

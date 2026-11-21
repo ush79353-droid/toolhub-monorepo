@@ -60,7 +60,7 @@ export function HelocGuideArticle() {
         to principal-and-interest often raises the monthly payment (payment
         shock), even when the rate is unchanged. Rate adjustments during
         repayment typically recalculate the installment using remaining balance
-        and remaining months — not a brand-new term.
+ and remaining months; not a brand-new term.
       </p>
 
       <h2
@@ -124,7 +124,7 @@ export function HelocGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Fixed rates keep the same APR for the modeled term. Variable rates can
         move with an index, often with caps, floors, and a margin. This tool’s
-        adjustment schedule is a planning assumption — it does not predict future
+ adjustment schedule is a planning assumption; it does not predict future
         market rates or reproduce every lender’s contractual rules.
       </p>
 
@@ -217,7 +217,7 @@ export function HelocGuideArticle() {
         twelve, a simplified rate-adjustment schedule, and annual fees charged on
         anniversary months. It does not implement daily accrual, lender-specific
         index/margin contracts, or every fee waiver. Real statements and payment
-        obligations can differ. Educational estimates only — not financial, tax,
+ obligations can differ. Educational estimates only; not financial, tax,
         or legal advice.
       </p>
 

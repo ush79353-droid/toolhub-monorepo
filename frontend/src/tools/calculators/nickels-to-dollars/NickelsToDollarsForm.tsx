@@ -45,7 +45,7 @@ export function NickelsToDollarsForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        1 U.S. nickel = 5¢ = $0.05 · 20 nickels = $1. Edit either field — the other updates
+ 1 U.S. nickel = 5¢ = $0.05 · 20 nickels = $1. Edit either field: the other updates
         immediately. Physical nickel counts are whole numbers.
       </div>
 

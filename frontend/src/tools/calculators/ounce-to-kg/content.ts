@@ -37,7 +37,7 @@ export const OUNCE_TO_KG_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Ounce to kg Converter',
     paragraphs: [
       'Convert ounces (oz) to kilograms (kg) and kilograms back to ounces instantly, with a linked pounds (lb) field for avoirdupois mass.',
-      'Useful for cooking and packaging, shipping weights, scientific measurements, and everyday US customary ↔ SI comparisons. This tool uses mass ounces — not fluid ounces.',
+      'Useful for cooking and packaging, shipping weights, scientific measurements, and everyday US customary ↔ SI comparisons. This tool uses mass ounces; not fluid ounces.',
     ],
   },
   {
@@ -47,9 +47,9 @@ export const OUNCE_TO_KG_GUIDE_SECTIONS: readonly GuideSection[] = [
       'An ounce is a mass unit in the US customary and imperial systems. A kilogram is the SI base unit of mass.',
       `Exactly 1 avoirdupois ounce = ${KG_PER_OUNCE} kg.`,
       `Formula: kg = oz × ${KG_PER_OUNCE}.`,
-      `Example — 8 oz: 8 × ${KG_PER_OUNCE} = ${formatMass(ouncesToKilograms(8))} kg.`,
-      `Example — 16 oz: 16 × ${KG_PER_OUNCE} = ${formatMass(ouncesToKilograms(16))} kg.`,
-      `Example — 18 oz: 18 × ${KG_PER_OUNCE} = ${formatMass(ouncesToKilograms(18))} kg.`,
+      `Example; 8 oz: 8 × ${KG_PER_OUNCE} = ${formatMass(ouncesToKilograms(8))} kg.`,
+      `Example; 16 oz: 16 × ${KG_PER_OUNCE} = ${formatMass(ouncesToKilograms(16))} kg.`,
+      `Example; 18 oz: 18 × ${KG_PER_OUNCE} = ${formatMass(ouncesToKilograms(18))} kg.`,
     ],
     formula: `1 oz = ${KG_PER_OUNCE} kg\nkg = oz × ${KG_PER_OUNCE}\n8 oz = ${formatMass(ouncesToKilograms(8))} kg`,
   },
@@ -79,8 +79,8 @@ export const OUNCE_TO_KG_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Kilograms to Ounces',
     paragraphs: [
       `Divide kilograms by ${KG_PER_OUNCE}: oz = kg ÷ ${KG_PER_OUNCE}.`,
-      `Example — 1 kg ≈ ${formatMass(kilogramsToOunces(1))} oz.`,
-      `Example — 2 kg ≈ ${formatMass(kilogramsToOunces(2))} oz.`,
+      `Example; 1 kg ≈ ${formatMass(kilogramsToOunces(1))} oz.`,
+      `Example; 2 kg ≈ ${formatMass(kilogramsToOunces(2))} oz.`,
     ],
     formula: `oz = kg ÷ ${KG_PER_OUNCE}\n1 kg ≈ ${formatMass(kilogramsToOunces(1))} oz`,
   },
@@ -88,9 +88,9 @@ export const OUNCE_TO_KG_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'methods',
     title: 'How Do I Convert oz to kg?',
     paragraphs: [
-      `Method 1 — direct: multiply ounces by ${KG_PER_OUNCE}.`,
-      `Method 2 — through pounds: lb = oz ÷ ${OUNCES_PER_POUND}, then kg = lb × 0.45359237.`,
-      `Both methods agree. Example — 16 oz → ${formatMass(ouncesToPounds(16))} lb → ${formatMass(ouncesToKilograms(16))} kg.`,
+      `Method 1; direct: multiply ounces by ${KG_PER_OUNCE}.`,
+      `Method 2; through pounds: lb = oz ÷ ${OUNCES_PER_POUND}, then kg = lb × 0.45359237.`,
+      `Both methods agree. Example; 16 oz → ${formatMass(ouncesToPounds(16))} lb → ${formatMass(ouncesToKilograms(16))} kg.`,
     ],
   },
   {

@@ -166,7 +166,7 @@ export function interpretForward(
   quote: string
 ): string {
   if (Math.abs(premiumPercent) < 1e-12) {
-    return `Under the selected assumptions, the theoretical forward equals the spot — no forward premium or discount for ${base} in ${quote} terms.`;
+    return `Under the selected assumptions, the theoretical forward equals the spot; no forward premium or discount for ${base} in ${quote} terms.`;
   }
   if (premiumPercent > 0) {
     return `Under covered interest parity, ${base} trades at a theoretical forward premium in ${quote} terms (F > S). This is a model result, not an executable quote.`;

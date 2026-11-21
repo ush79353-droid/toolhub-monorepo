@@ -59,7 +59,7 @@ const CURRENCY_CONVERSION_NOTE =
 
 function summaryText(metadataTitle: string, result: BusinessBudgetResult, note: string): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Initial investment: ${result.initialInvestmentDisplay}`,
     `Total income: ${result.totalIncomeDisplay} / mo`,
     `Total expenses: ${result.totalExpensesDisplay} / mo`,

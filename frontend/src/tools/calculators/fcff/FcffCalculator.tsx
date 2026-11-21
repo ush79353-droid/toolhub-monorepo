@@ -94,7 +94,7 @@ export function FcffCalculator({
   const sourceOpt = FCFF_SOURCE_OPTIONS.find((o) => o.value === input.source);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Source: ${sourceOpt?.label ?? input.source}`,
         `${sourceValueLabel(input.source)}: ${getCurrencySymbol(input.sourceValueCurrency)}${input.sourceValue} ${input.sourceValueCurrency}`,
         `FCFF: ${getCurrencySymbol(result.currency)}${result.formattedFcff} ${result.currency}`,

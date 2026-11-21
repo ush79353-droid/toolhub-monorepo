@@ -75,7 +75,7 @@ export function LeaseCalculator({
   const termLabel = input.termUnit === 'yrs' ? 'yrs' : 'mos';
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Product value: ${productSymbol}${input.productValue || '0'}`,
         `Residual: ${input.residualAmount || '0'} ${input.residualCurrency} (${input.residualPercent || '0'}%)`,
         `Lease term: ${input.leaseTerm} ${termLabel}`,

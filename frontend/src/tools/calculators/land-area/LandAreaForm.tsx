@@ -325,7 +325,7 @@ export function LandAreaForm({
               </div>
             </FieldShell>
             <p className="text-xs text-muted-foreground">
-              Currency changes the symbol only — it does not convert the entered price.
+ Currency changes the symbol only; it does not convert the entered price.
             </p>
           </div>
         ) : null}

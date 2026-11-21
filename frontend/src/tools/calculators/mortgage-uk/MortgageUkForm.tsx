@@ -69,7 +69,7 @@ export function MortgageUkForm({
             <span>Home price</span>
             <InfoTooltip
               label="Home price"
-              text="Purchase price in pounds sterling (£). Fixed GBP denomination — no currency selector."
+              text="Purchase price in pounds sterling (£). Fixed GBP denomination; no currency selector."
             />
           </label>
           <FieldShell error={errors.homePrice}>

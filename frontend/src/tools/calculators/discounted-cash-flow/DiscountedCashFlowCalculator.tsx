@@ -115,7 +115,7 @@ export function DiscountedCashFlowCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Method: ${result.method === 'fcff' ? 'FCFF' : 'EPS'}`,
         result.enterpriseValue !== null
           ? `Enterprise value: ${formatCurrencyValue(result.enterpriseValue, result.currency)}`

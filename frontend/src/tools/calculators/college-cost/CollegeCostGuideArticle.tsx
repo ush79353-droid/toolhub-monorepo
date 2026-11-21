@@ -12,7 +12,7 @@ export function CollegeCostGuideArticle() {
         How much does college cost?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        College expenses rise over time and include more than tuition — fees, housing, meals, books,
+ College expenses rise over time and include more than tuition; fees, housing, meals, books,
         transportation, and personal costs all add up. Families use planners like this calculator to
         project future sticker costs, decide how much to cover with savings, and see whether today’s
         balance is on track. Figures are estimates, often anchored to U.S. reference averages; actual
@@ -42,8 +42,8 @@ export function CollegeCostGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         U.S. higher education includes two-year community colleges and four-year colleges and
         universities, public and private. Public schools often charge lower in-state tuition than
-        out-of-state rates. A degree can expand career options, but financing choices — cash,
-        savings plans, aid, and loans — shape long-term household budgets. Plan early and revisit
+ out-of-state rates. A degree can expand career options, but financing choices; cash,
+ savings plans, aid, and loans; shape long-term household budgets. Plan early and revisit
         assumptions as applications and award letters arrive.
       </p>
 
@@ -78,20 +78,20 @@ export function CollegeCostGuideArticle() {
       </p>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong className="font-medium text-accent">Loans</strong> — generally repaid with
+ <strong className="font-medium text-accent">Loans</strong>: generally repaid with
           interest; may be federal, state, institutional, or private; subsidized vs unsubsidized
           terms differ.
         </li>
         <li>
-          <strong className="font-medium text-accent">Grants</strong> — typically need- or
+ <strong className="font-medium text-accent">Grants</strong>: typically need- or
           merit-based awards that do not require repayment when conditions are met.
         </li>
         <li>
-          <strong className="font-medium text-accent">Scholarships</strong> — awards for academics,
+ <strong className="font-medium text-accent">Scholarships</strong>: awards for academics,
           athletics, arts, need, or other criteria.
         </li>
         <li>
-          <strong className="font-medium text-accent">Work-study</strong> — campus employment that
+ <strong className="font-medium text-accent">Work-study</strong>: campus employment that
           helps eligible students earn toward expenses.
         </li>
       </ul>
@@ -106,7 +106,7 @@ export function CollegeCostGuideArticle() {
         Aid offices compare cost of attendance with a measure of family ability to pay. Historical
         materials often referred to an Expected Family Contribution (EFC); current U.S. federal aid
         uses updated Student Aid Index terminology under Federal Student Aid rules. Packages are
-        personalized and this calculator does not determine eligibility — it only helps you plan the
+ personalized and this calculator does not determine eligibility; it only helps you plan the
         savings share of projected costs.
       </p>
 
@@ -117,7 +117,7 @@ export function CollegeCostGuideArticle() {
         A 529 plan is a U.S. education savings vehicle, often state-sponsored, that can offer tax
         advantages on qualified withdrawals when rules are met. Starting early and contributing
         consistently can help investments grow, but market-linked accounts carry risk. Withdrawal and
-        tax rules matter — confirm details with the plan and a tax professional. For this calculator,
+ tax rules matter; confirm details with the plan and a tax professional. For this calculator,
         enter 0% tax on investment return when modeling eligible tax-advantaged growth.
       </p>
       <h3 className="mt-4 text-base font-semibold text-accent">Qualified expenses</h3>
@@ -134,7 +134,7 @@ export function CollegeCostGuideArticle() {
         Prepaid tuition plans generally let families purchase tuition credits or contract for future
         tuition at participating institutions, sometimes locking in today’s eligible rates via
         lump-sum or installment payments. Portability and coverage of fees or room and board vary.
-        Availability and terms change by state — verify current offerings rather than assuming a
+ Availability and terms change by state; verify current offerings rather than assuming a
         plan remains open forever. Prepaid structures differ from investment-based 529 savings
         plans.
       </p>

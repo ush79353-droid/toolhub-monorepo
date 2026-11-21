@@ -21,7 +21,7 @@ import { validateLitersToCentiliters } from './validation';
 
 function summaryText(result: LitersToCentilitersResult): string {
   const lines = [
-    'Liters to Centiliters Converter — Omega Calculators',
+    'Liters to Centiliters Converter | Omega Calculators',
     result.source === 'centiliters'
       ? `${formatVolume(result.centiliters)} cL = ${formatVolume(result.liters)} L`
       : `${formatVolume(result.liters)} L = ${formatVolume(result.centiliters)} cL`,

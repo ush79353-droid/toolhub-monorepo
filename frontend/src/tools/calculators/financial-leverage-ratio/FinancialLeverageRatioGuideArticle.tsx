@@ -16,7 +16,7 @@ export function FinancialLeverageRatioGuideArticle() {
         <strong>equity multiplier</strong>: Total Assets ÷ Total Equity. It shows
         how many dollars of assets are supported by each dollar of book equity.
         Other sources may use “financial leverage” for debt-to-equity or
-        debt-to-assets — those are different metrics.
+ debt-to-assets; those are different metrics.
       </p>
 
       <h2
@@ -74,7 +74,7 @@ export function FinancialLeverageRatioGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>1.00×:</strong> Assets equal equity — typically no liabilities
+ <strong>1.00×:</strong> Assets equal equity; typically no liabilities
           under a standard nonnegative-liability balance sheet.
         </li>
         <li>
@@ -82,7 +82,7 @@ export function FinancialLeverageRatioGuideArticle() {
           is present.
         </li>
         <li>
-          <strong>Very high:</strong> Small equity base relative to assets —
+ <strong>Very high:</strong> Small equity base relative to assets; 
           greater financial risk potential.
         </li>
         <li>
@@ -90,7 +90,7 @@ export function FinancialLeverageRatioGuideArticle() {
           thresholds do not apply.
         </li>
         <li>
-          <strong>Undefined:</strong> Zero equity — do not divide.
+ <strong>Undefined:</strong> Zero equity; do not divide.
         </li>
       </ul>
 
@@ -161,7 +161,7 @@ export function FinancialLeverageRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Liability financing can support larger asset bases and amplify equity
-        returns when returns exceed financing costs — with corresponding risk.
+ returns when returns exceed financing costs, with corresponding risk.
       </p>
 
       <h2
@@ -215,7 +215,7 @@ export function FinancialLeverageRatioGuideArticle() {
         >
           Degree of Operating Leverage
         </Link>
-        . Educational estimates only — not accounting or investment advice.
+. Educational estimates only; not accounting or investment advice.
       </p>
 
       <h2

@@ -23,7 +23,7 @@ export const BIDENS_TAX_PLAN_FAQS: readonly FAQItem[] = [
   {
     question: 'What does “Number of dependents” mean here?',
     answer:
-      'Additional dependents eligible for the $500 Credit for Other Dependents only. Children already entered in the under-6 or ages 6–17 fields must not be entered again — that would double-count credits.',
+      'Additional dependents eligible for the $500 Credit for Other Dependents only. Children already entered in the under-6 or ages 6–17 fields must not be entered again; that would double-count credits.',
   },
   {
     question: 'How is the effective tax rate calculated?',
@@ -33,6 +33,6 @@ export const BIDENS_TAX_PLAN_FAQS: readonly FAQItem[] = [
   {
     question: 'Why might Biden-plan tax be negative?',
     answer:
-      'The AFP would make the Child Tax Credit fully refundable. When refundable CTC exceeds ordinary tax after the nonrefundable ODC, the estimate shows a negative “income tax paid,” illustrating a net refund — matching the historical product copy about additional tax refunds.',
+      'The AFP would make the Child Tax Credit fully refundable. When refundable CTC exceeds ordinary tax after the nonrefundable ODC, the estimate shows a negative “income tax paid,” illustrating a net refund; matching the historical product copy about additional tax refunds.',
   },
 ];

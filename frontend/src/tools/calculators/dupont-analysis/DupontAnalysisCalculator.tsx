@@ -98,7 +98,7 @@ export function DupontAnalysisCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Sales: ${money(input.sales)}`,
         `Net income: ${money(input.netIncome)}`,
         `Total assets: ${money(input.totalAssets)}`,

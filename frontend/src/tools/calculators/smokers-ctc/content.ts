@@ -60,7 +60,7 @@ export const SMOKERS_CTC_FAQS: readonly FAQItem[] = [
   {
     question: 'What does CTC mean here?',
     answer:
-      'Cost to company — the estimated wage value of paid smoke-break time, plus optional cigarette spend during workdays. It is not a Child Tax Credit tool.',
+      'Cost to company: the estimated wage value of paid smoke-break time, plus optional cigarette spend during workdays. It is not a Child Tax Credit tool.',
   },
   {
     question: 'How many cigarettes are assumed per break?',

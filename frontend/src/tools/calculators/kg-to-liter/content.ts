@@ -36,7 +36,7 @@ export const KG_TO_LITER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-convert',
     title: 'How to Convert kg to Liters',
     paragraphs: [
-      'This calculator converts kilograms to liters and liters to kilograms using substance density. Mass and volume are different physical quantities — density connects them.',
+      'This calculator converts kilograms to liters and liters to kilograms using substance density. Mass and volume are different physical quantities; density connects them.',
       'When density is in kg/L: Liters = Kilograms ÷ Density.',
       `Water example (reference ≈ ${WATER_DENSITY_KG_PER_L} kg/L): 5 kg ÷ ${WATER_DENSITY_KG_PER_L} = ${formatMeasure(kgToLiters(5, WATER_DENSITY_KG_PER_L))} L.`,
     ],

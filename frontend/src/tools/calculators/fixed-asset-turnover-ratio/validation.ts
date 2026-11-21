@@ -110,7 +110,7 @@ export function validateFixedAssetTurnoverRatioInput(
     if (revenue.value < 0) {
       status = 'negativeRevenue';
       warningMessage =
-        'Negative revenue produces a signed fixed asset turnover. Conventional efficiency interpretation may not apply — review returns, allowances, or corrections.';
+        'Negative revenue produces a signed fixed asset turnover. Conventional efficiency interpretation may not apply; review returns, allowances, or corrections.';
     }
   }
 

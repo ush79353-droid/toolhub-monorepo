@@ -89,7 +89,7 @@ export function SpendingMultiplierForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
-        k = 1/(1−MPC) = 1/MPS. Currency is denomination only — not live FX.
+ k = 1/(1−MPC) = 1/MPS. Currency is denomination only; not live FX.
         Theoretical ΔY = k×ΔA under simplified Keynesian assumptions; not a
         guaranteed real-world GDP forecast.
       </p>

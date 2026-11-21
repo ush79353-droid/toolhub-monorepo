@@ -40,7 +40,7 @@ export function EndingInventoryGuideArticle() {
         <li>Identify COGS (not sales revenue).</li>
         <li>Add starting inventory and purchases; subtract COGS.</li>
         <li>Optionally compute average inventory and inventory turnover.</li>
-        <li>Interpret the balance in context — avoid universal “good/bad” labels.</li>
+        <li>Interpret the balance in context; avoid universal “good/bad” labels.</li>
       </ol>
 
       <h2
@@ -66,7 +66,7 @@ export function EndingInventoryGuideArticle() {
         Inventory Turnover = COGS / Average Inventory
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
-        The ratio is dimensionless — do not attach currency or percent symbols.
+ The ratio is dimensionless; do not attach currency or percent symbols.
       </p>
 
       <h2
@@ -188,7 +188,7 @@ export function EndingInventoryGuideArticle() {
         This tool uses a simplified inventory-flow equation. Valuation policies,
         physical counts, shrinkage, obsolescence, and manufacturing WIP may
         require adjustments. Turnover is an average ratio, not item-level
-        movement. Educational estimates only — not accounting, audit, or
+ movement. Educational estimates only; not accounting, audit, or
         investment advice.
       </p>
 

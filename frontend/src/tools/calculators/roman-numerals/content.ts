@@ -114,7 +114,7 @@ export const ROMAN_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'roman-rules',
     title: 'Rules of Roman Numerals',
     paragraphs: [
-      'I, X, C, and M may repeat up to three times in a row (III, XXX, CCC, MMM). V, L, and D never repeat. Smaller-before-larger is allowed only for the six subtractive pairs listed above — IC, IL, XM, and VX are invalid.',
+      'I, X, C, and M may repeat up to three times in a row (III, XXX, CCC, MMM). V, L, and D never repeat. Smaller-before-larger is allowed only for the six subtractive pairs listed above; IC, IL, XM, and VX are invalid.',
       'Correct: IV, XLIX, MCMXCIX. Incorrect: IIII, VV, IIV, MMMM. Without overline notation this converter supports 1 through 3999 (MMMCMXCIX).',
     ],
   },

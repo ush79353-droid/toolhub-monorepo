@@ -81,7 +81,7 @@ export function ArvCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `ARV: ${symbol}${result.formattedArv} ${result.currency}`,
         result.formattedMaximumBid
           ? `Maximum bid: ${symbol}${result.formattedMaximumBid} ${result.currency}`
@@ -91,7 +91,7 @@ export function ArvCalculator({
           ? `Target-ROI purchase price: ${symbol}${result.formattedTargetPurchasePrice} ${result.currency}`
           : null,
         'Formulas: ARV = PV + VR; MBP = ARV × P/100 − RC; ROI = (ARV − PP − RC)/(PP + RC) × 100',
-        'Simplified estimate — excludes financing, holding, closing, selling costs, and taxes.',
+        'Simplified estimate: excludes financing, holding, closing, selling costs, and taxes.',
       ]
         .filter(Boolean)
         .join('\n')

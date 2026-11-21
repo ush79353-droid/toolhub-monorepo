@@ -185,7 +185,7 @@ export function validateSavingsPlanInput(
   // Chart / table final balance must match closed-form total.
   const last = computed.balances[computed.balances.length - 1];
   if (!last || Math.abs(last.balance - computed.finalBalance) > 1e-9) {
-    errors.form = 'Internal balance mismatch — please reload the calculator.';
+    errors.form = 'Internal balance mismatch; please reload the calculator.';
     return { isValid: false, errors, result: null };
   }
 

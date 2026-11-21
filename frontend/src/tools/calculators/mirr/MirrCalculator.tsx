@@ -105,7 +105,7 @@ export function MirrCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Financing rate: ${input.financingRatePercent}%`,
         `Reinvestment rate: ${input.reinvestmentRatePercent}%`,
         `Initial investment: ${symbol}${input.initialInvestment}`,

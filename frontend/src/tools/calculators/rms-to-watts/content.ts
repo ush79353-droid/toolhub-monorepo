@@ -4,7 +4,7 @@ import type { TableOfContentsItem } from '@/tools/calculators/auto-loan/TableOfC
 export const RMS_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'what-are-rms-watts', label: 'What Are RMS Watts?' },
   { id: 'what-can-i-use', label: 'What Can I Use the Converter For?' },
-  { id: 'formula', label: 'Watts RMS vs. Peak Watts — The Formula' },
+  { id: 'formula', label: 'Watts RMS vs. Peak Watts; The Formula' },
   { id: 'rms-vs-continuous', label: 'Difference Between RMS Watts and Continuous Power' },
   { id: 'how-to-use', label: 'How to Use the RMS to Watts Converter' },
   { id: 'examples', label: 'Examples of RMS and Peak Calculations' },
@@ -24,7 +24,7 @@ export const RMS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Are RMS Watts?',
     paragraphs: [
       'Root mean square (RMS) is a statistical measure of a time-varying waveform. For a quantity x(t), RMS is the square root of the mean of x(t)² over a period. For voltage, V_RMS relates to the equivalent heating effect in a resistor compared with a DC voltage of the same magnitude.',
-      'When people say “RMS watts,” they may mean different things: the RMS value of a sinusoidal power waveform, continuous average electrical power into a load, or marketing language around audio amplifiers. Only the first case uses P_peak = P_RMS × √2 as a waveform identity — and only when power itself is the sinusoidal quantity.',
+      'When people say “RMS watts,” they may mean different things: the RMS value of a sinusoidal power waveform, continuous average electrical power into a load, or marketing language around audio amplifiers. Only the first case uses P_peak = P_RMS × √2 as a waveform identity, and only when power itself is the sinusoidal quantity.',
       'Continuous amplifier output power, peak instantaneous power, and “RMS watt” marketing claims are not universally interchangeable. Standardized continuous ratings, load impedance, distortion limits, and test conditions matter for fair comparisons.',
     ],
   },
@@ -33,12 +33,12 @@ export const RMS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Can I Use the RMS to Watts Converter For?',
     paragraphs: [
       'Use the primary converter for sinusoidal power-waveform RMS↔peak analysis in education and signal work. Use the optional electrical-power section for AC resistive or power-factor calculations from V_RMS, I_RMS, and R.',
-      'Reliable amplifier comparisons require standardized continuous output-power ratings, stated load impedance, distortion limits, and documented test conditions — not a √2 multiplier alone.',
+      'Reliable amplifier comparisons require standardized continuous output-power ratings, stated load impedance, distortion limits, and documented test conditions; not a √2 multiplier alone.',
     ],
   },
   {
     id: 'formula',
-    title: 'Watts RMS vs. Peak Watts — The Formula',
+    title: 'Watts RMS vs. Peak Watts; The Formula',
     paragraphs: [
       'For a sinusoidal power waveform (the quantity whose RMS is taken is itself a sinusoid of power):',
     ],

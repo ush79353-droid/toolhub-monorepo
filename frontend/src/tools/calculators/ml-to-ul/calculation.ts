@@ -93,7 +93,7 @@ export function shareResultText(result: MlToUlResult): string {
   const ml = result.milliliters;
   const ul = mlToMicroliters(ml);
   return [
-    'mL to µL Conversion — Omega Calculators',
+    'mL to µL Conversion | Omega Calculators',
     '',
     `${formatVolume(ml)} mL = ${formatVolume(ul)} µL`,
     '',

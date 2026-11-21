@@ -17,7 +17,7 @@ export function VelocityOfMoneyGuideArticle() {
         index and transaction volume (with a base basket price), a direct
         nominal transaction total, or nominal GDP, together with a money stock,
         to compute velocity for a chosen period. You can also reverse-solve for
-        money supply or the nominal flow. Results are educational ratios — not
+ money supply or the nominal flow. Results are educational ratios; not
         forecasts of inflation or growth.
       </p>
 
@@ -241,7 +241,7 @@ export function VelocityOfMoneyGuideArticle() {
         <li>Nominal versus real concepts must not be confused.</li>
         <li>Transaction statistics are often incomplete.</li>
         <li>Payment behavior and definitions evolve.</li>
-        <li>Velocity is a ratio — causation is not automatic.</li>
+        <li>Velocity is a ratio; causation is not automatic.</li>
         <li>Stocks and flows must be defined consistently.</li>
       </ul>
 

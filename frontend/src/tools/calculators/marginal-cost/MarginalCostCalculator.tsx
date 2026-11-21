@@ -82,7 +82,7 @@ export function MarginalCostCalculator({
   );
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `ΔTC: ${symbol}${result!.formattedChangeInTotalCost}`,
         `ΔQ: ${result!.formattedChangeInQuantity}`,
         result!.formattedMarginalCostPerUnit

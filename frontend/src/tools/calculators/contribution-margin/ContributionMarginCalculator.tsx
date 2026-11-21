@@ -33,7 +33,7 @@ function summaryText(metadataTitle: string, result: ContributionMarginResult, no
       ? 'n/a (selling price is zero)'
       : `${result.contributionMarginRatioPercent}%`;
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Currency: ${result.currency}`,
     `Selling price per unit: ${money(result.sellingPricePerUnit)}`,
     `Variable cost per unit: ${money(result.variableCostPerUnit)}`,

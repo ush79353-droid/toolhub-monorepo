@@ -81,7 +81,7 @@ function requireFinite(
 }
 
 const explanation =
-  'Phillips Curve relationships are model-dependent and empirical. Coefficients, expectations, and shocks are assumptions — not guaranteed forecasts.';
+  'Phillips Curve relationships are model-dependent and empirical. Coefficients, expectations, and shocks are assumptions; not guaranteed forecasts.';
 
 export function validatePhillipsCurveInput(
   input: PhillipsCurveInput

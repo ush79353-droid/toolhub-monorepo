@@ -137,7 +137,7 @@ export function SubscriptionWasteGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Keep plans that deliver real value; cancel unused ones; avoid duplicates;
         compare monthly vs yearly billing; watch free-trial end dates; and set a
-        monthly subscription budget. The goal is informed spending — not
+ monthly subscription budget. The goal is informed spending; not
         eliminating every service.
       </p>
 

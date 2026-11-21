@@ -4,7 +4,7 @@ import { ILLINOIS_TAX_FAQS, ILLINOIS_TAX_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate Illinois and federal income tax plus county property tax from AGI and home value—fixed USD educational estimate (FICA omitted).',
+    'Estimate Illinois and federal income tax plus county property tax from AGI and home value, fixed USD educational estimate (FICA omitted).',
   asideAriaLabel: 'Interactive Illinois Tax Calculator',
   tocItems: ILLINOIS_TAX_TOC_ITEMS,
   GuideArticle: IllinoisTaxGuideArticle,

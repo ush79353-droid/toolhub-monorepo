@@ -72,8 +72,8 @@ export function StimulusCheck40kCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
-        'Historical / hypothetical 2020 proposal estimate only — not an active benefit.',
+        `${metadata.title} | Omega Calculators`,
+        'Historical / hypothetical 2020 proposal estimate only; not an active benefit.',
         `Filing status: ${filingLabel(input.filingStatus)}`,
         `Dependents: ${input.dependents}`,
         `AGI: $${input.incomeAgi}`,

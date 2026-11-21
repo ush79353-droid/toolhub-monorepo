@@ -45,7 +45,7 @@ export const LAT_LONG_TO_UTM_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Latitude and longitude locate a point on Earth as angular geographic coordinates. UTM (Universal Transverse Mercator) expresses that same position as projected meters within a numbered zone.',
       'This converter takes WGS84 GPS coordinates in Decimal Degrees or Degrees, Minutes, Seconds and computes the matching UTM zone, hemisphere, easting, and northing. It does not reverse-edit UTM into latitude and longitude in the main form.',
-      'WGS84 is the global geodetic datum commonly used with GPS. The projection uses an ellipsoidal Transverse Mercator definition for the selected zone—not a simple degrees-to-meters approximation.',
+      'WGS84 is the global geodetic datum commonly used with GPS. The projection uses an ellipsoidal Transverse Mercator definition for the selected zone, not a simple degrees-to-meters approximation.',
     ],
   },
   {

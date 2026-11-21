@@ -90,7 +90,7 @@ export function InterestCoverageRatioCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `EBIT: ${getCurrencySymbol(input.ebitCurrency)}${input.ebit}`,
         `Interest expense: ${getCurrencySymbol(input.interestExpenseCurrency)}${input.interestExpense}`,
         `Interest coverage ratio: ${result.formattedCoverageRatio}`,

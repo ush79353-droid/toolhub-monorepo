@@ -75,7 +75,7 @@ export function PppCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        'PPP Calculator — Purchasing Power Parity — Omega Calculators',
+        'PPP Calculator: Purchasing Power Parity | Omega Calculators',
         '',
         `Mode: ${result.mode}`,
         result.year != null ? `Reference year: ${result.year}` : null,

@@ -29,7 +29,7 @@ export function QuizUsIncomePercentileGuideArticle() {
         A percentile describes relative position within a comparison dataset. If
         your income is at the 75th percentile, roughly 75% of observations in that
         dataset earn less than you, and about 25% earn more. Percentiles describe
-        position — not exact rankings, tax bills, or future income growth.
+ position; not exact rankings, tax bills, or future income growth.
       </p>
 
       <h2
@@ -66,7 +66,7 @@ export function QuizUsIncomePercentileGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Percentile comparisons help people understand financial position relative
-        to a chosen group — for example, all US individuals or households. They are
+ to a chosen group, for example, all US individuals or households. They are
         a starting point for discussion, not a complete picture of wealth, cost of
         living, or tax situation.
       </p>

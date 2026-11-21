@@ -254,7 +254,7 @@ export function CdForm({
             <label htmlFor="cd-tax">Marginal tax rate</label>
             <InfoTooltip
               label="Marginal tax rate"
-              text="Simplified estimate applied to gross interest at maturity. Actual tax timing and liability vary by jurisdiction and account type — not tax advice."
+              text="Simplified estimate applied to gross interest at maturity. Actual tax timing and liability vary by jurisdiction and account type; not tax advice."
               align="left"
             />
           </div>

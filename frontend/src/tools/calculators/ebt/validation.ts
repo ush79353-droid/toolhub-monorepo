@@ -129,7 +129,7 @@ export function validateEbtInput(input: EbtInput): EbtValidation {
   const warningMessage =
     rev.value === 0
       ? 'EBT margin is unavailable when revenue is zero. Enter D&A only if it is not already included in COGS or SG&A.'
-      : 'Enter D&A only for amounts not already included in COGS or SG&A — do not subtract depreciation twice. EBT excludes income tax expense.';
+      : 'Enter D&A only for amounts not already included in COGS or SG&A; do not subtract depreciation twice. EBT excludes income tax expense.';
 
   const result: EbtResult = {
     revenue: rev.value,

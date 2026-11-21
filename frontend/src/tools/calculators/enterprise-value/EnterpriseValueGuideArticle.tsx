@@ -48,11 +48,11 @@ export function EnterpriseValueGuideArticle() {
         Components of Enterprise Value
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <li>Market capitalization — market value of common equity</li>
-        <li>Debt — interest-bearing financial borrowings included in EV</li>
-        <li>Minority interest — non-controlling equity interests</li>
-        <li>Preferred shares — preferred equity claims</li>
-        <li>Cash — qualifying cash and cash equivalents deducted</li>
+        <li>Market capitalization; market value of common equity</li>
+        <li>Debt; interest-bearing financial borrowings included in EV</li>
+        <li>Minority interest: non-controlling equity interests</li>
+        <li>Preferred shares; preferred equity claims</li>
+        <li>Cash; qualifying cash and cash equivalents deducted</li>
       </ul>
 
       <h2

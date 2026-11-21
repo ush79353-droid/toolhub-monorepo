@@ -54,7 +54,7 @@ export const RECEIVABLES_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'What are net credit sales?',
     answer:
-      'Credit sales after applicable returns, allowances, and discounts — excluding cash sales.',
+      'Credit sales after applicable returns, allowances, and discounts; excluding cash sales.',
   },
   {
     question: 'How do I calculate net credit sales?',
@@ -81,7 +81,7 @@ export const RECEIVABLES_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'What does receivables turnover measure?',
     answer:
-      'How many times net credit sales turn over average receivables during the period — a collection-activity indicator, not a profit measure.',
+      'How many times net credit sales turn over average receivables during the period: a collection-activity indicator, not a profit measure.',
   },
   {
     question: 'What does a turnover ratio of 5 mean?',
@@ -91,12 +91,12 @@ export const RECEIVABLES_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a turnover ratio of 10 mean?',
     answer:
-      'Net credit sales were about ten times average AR — often faster collections or lower average balances, all else equal.',
+      'Net credit sales were about ten times average AR; often faster collections or lower average balances, all else equal.',
   },
   {
     question: 'What is a good receivables turnover ratio?',
     answer:
-      'It depends on industry terms, credit policy, and seasonality. Compare history and peers — there is no universal ideal.',
+      'It depends on industry terms, credit policy, and seasonality. Compare history and peers; there is no universal ideal.',
   },
   {
     question: 'Is a high receivables turnover ratio good?',
@@ -111,12 +111,12 @@ export const RECEIVABLES_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'Can receivables turnover be zero?',
     answer:
-      'Yes — when net credit sales are zero and average AR is positive.',
+      'Yes: when net credit sales are zero and average AR is positive.',
   },
   {
     question: 'Can receivables turnover be negative?',
     answer:
-      'Not in this calculator — negative sales or AR balances are rejected.',
+      'Not in this calculator; negative sales or AR balances are rejected.',
   },
   {
     question: 'What happens if average accounts receivable is zero?',
@@ -165,7 +165,7 @@ export const RECEIVABLES_TURNOVER_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Should cash sales be included?',
-    answer: 'No — use net credit sales only.',
+    answer: 'No: use net credit sales only.',
   },
   {
     question: 'Should sales returns be deducted?',
@@ -174,26 +174,26 @@ export const RECEIVABLES_TURNOVER_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Is receivables turnover the same as revenue?',
-    answer: 'No — turnover is a ratio; revenue is a currency amount.',
+    answer: 'No: turnover is a ratio; revenue is a currency amount.',
   },
   {
     question: 'Is receivables turnover the same as profitability?',
-    answer: 'No — it does not measure profit or margins.',
+    answer: 'No: it does not measure profit or margins.',
   },
   {
     question: 'How often should receivables turnover be calculated?',
     answer:
-      'As often as you review collections — monthly, quarterly, or annually with consistent periods.',
+      'As often as you review collections; monthly, quarterly, or annually with consistent periods.',
   },
   {
     question: 'Can I calculate monthly receivables turnover?',
     answer:
-      'Yes — use monthly net credit sales and opening/closing AR for that month.',
+      'Yes: use monthly net credit sales and opening/closing AR for that month.',
   },
   {
     question: 'Can I calculate quarterly receivables turnover?',
     answer:
-      'Yes — use quarterly net credit sales with quarter-start and quarter-end AR.',
+      'Yes: use quarterly net credit sales with quarter-start and quarter-end AR.',
   },
   {
     question: 'How do seasonal sales affect turnover?',
@@ -220,7 +220,7 @@ export const RECEIVABLES_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'Can high turnover indicate restrictive credit policies?',
     answer:
-      'Yes — very tight credit can raise turnover while limiting sales growth.',
+      'Yes: very tight credit can raise turnover while limiting sales growth.',
   },
   {
     question: 'Why do turnover ratios differ between industries?',
@@ -255,6 +255,6 @@ export const RECEIVABLES_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when average accounts receivable is zero?',
     answer:
-      'The turnover ratio is undefined — do not display Infinity or a false zero.',
+      'The turnover ratio is undefined; do not display Infinity or a false zero.',
   },
 ];

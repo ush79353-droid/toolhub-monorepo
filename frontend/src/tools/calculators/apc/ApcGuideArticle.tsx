@@ -40,7 +40,7 @@ export function ApcGuideArticle() {
         What is disposable income?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Disposable income is income available after direct taxes — roughly take-home income that can
+ Disposable income is income available after direct taxes: roughly take-home income that can
         be consumed or saved. A simplified definition is Yd = Y − T, where Y is personal income and
         T is direct taxes. Definitions can differ across statistical frameworks and datasets.
       </p>
@@ -52,7 +52,7 @@ export function ApcGuideArticle() {
         What is total consumption?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Total consumption is expenditure on goods and services over a period — durables,
+ Total consumption is expenditure on goods and services over a period; durables,
         non-durables, and services that make up household or personal consumption demand. Use the
         same accounting period for consumption and disposable income when calculating APC.
       </p>

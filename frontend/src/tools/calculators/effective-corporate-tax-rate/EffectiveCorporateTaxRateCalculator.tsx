@@ -101,7 +101,7 @@ export function EffectiveCorporateTaxRateCalculator({
   };
 
   const summary = result
-    ? [`${metadata.title} — Omega Calculators`, describeResult(result), currencyNote].join('\n')
+    ? [`${metadata.title} | Omega Calculators`, describeResult(result), currencyNote].join('\n')
     : '';
 
   return (

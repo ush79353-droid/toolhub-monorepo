@@ -17,7 +17,7 @@ import { validateRrefInput } from './validation';
 
 function buildSummaryText(result: RrefResult): string {
   const lines = [
-    'RREF (Reduced Row Echelon Form) Calculator — Omega Calculators',
+    'RREF (Reduced Row Echelon Form) Calculator | Omega Calculators',
     '',
     'Original:',
     ...result.original.map((row) => `[ ${row.join('  ')} ]`),

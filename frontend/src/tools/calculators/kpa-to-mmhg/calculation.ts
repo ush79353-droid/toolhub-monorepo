@@ -44,7 +44,7 @@ export function calculateKpaToMmhg(input: KpaToMmhgInput): KpaToMmhgResult {
 
 export function shareResultText(result: KpaToMmhgResult): string {
   return [
-    'kPa to mmHg Conversion — Omega Calculators',
+    'kPa to mmHg Conversion | Omega Calculators',
     '',
     `${formatPressure(result.kPa)} kPa = ${formatPressure(result.mmHg)} mmHg`,
     '',

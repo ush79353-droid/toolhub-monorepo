@@ -62,7 +62,7 @@ export function PomisForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Educational POMIS estimator in <strong className="text-accent">INR</strong>{' '}
-        only. Default rate {scheme.annualInterestRate}% is an editable example —
+ only. Default rate {scheme.annualInterestRate}% is an editable example; 
         not a verified current India Post rate. Limits shown:{' '}
         Individual ₹{scheme.individualInvestmentLimit.toLocaleString('en-IN')} / Joint
         ₹{scheme.jointInvestmentLimit.toLocaleString('en-IN')} ({scheme.rulesSource.split('.')[0]}
@@ -82,7 +82,7 @@ export function PomisForm({
           Investment Account
           <InfoTooltip
             label="Investment Account"
-            text="Individual accounts use the individual investment ceiling. Joint accounts use the higher joint ceiling — not a per-holder full duplicate of the joint limit."
+            text="Individual accounts use the individual investment ceiling. Joint accounts use the higher joint ceiling; not a per-holder full duplicate of the joint limit."
           />
         </legend>
         <div className="flex flex-wrap gap-2">

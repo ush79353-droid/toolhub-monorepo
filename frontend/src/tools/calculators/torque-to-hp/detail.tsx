@@ -4,7 +4,7 @@ import { TORQUE_TO_HP_FAQS, TORQUE_TO_HP_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate shaft power and horsepower from torque and RPM — or solve reverse when speed is known.',
+    'Calculate shaft power and horsepower from torque and RPM, or solve reverse when speed is known.',
   asideAriaLabel: 'Interactive torque to HP calculator',
   tocItems: TORQUE_TO_HP_TOC_ITEMS,
   GuideArticle: TorqueToHpGuideArticle,

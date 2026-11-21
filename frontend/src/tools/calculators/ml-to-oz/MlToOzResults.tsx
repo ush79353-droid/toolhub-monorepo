@@ -28,7 +28,7 @@ export function MlToOzResults({
   if (invalid) {
     return (
       <p className="rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-muted-foreground">
-        Enter a non-negative finite volume in any field. Fluid ounces (fl oz) are volume — not mass
+ Enter a non-negative finite volume in any field. Fluid ounces (fl oz) are volume; not mass
         ounces.
       </p>
     );
@@ -61,7 +61,7 @@ export function MlToOzResults({
           ))}
         </ul>
         <p className="mt-2 text-xs text-muted-foreground">
-          US and UK fluid ounces differ — labels show which system is selected.
+ US and UK fluid ounces differ; labels show which system is selected.
         </p>
       </div>
 

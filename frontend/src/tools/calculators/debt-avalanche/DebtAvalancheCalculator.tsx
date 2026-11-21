@@ -104,7 +104,7 @@ export function DebtAvalancheCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Debts: ${input.debtCount}`,
         `Total debt: ${symbol}${result.formattedTotalDebt}`,
         `Interest savings: ${symbol}${result.formattedInterestSavings}`,

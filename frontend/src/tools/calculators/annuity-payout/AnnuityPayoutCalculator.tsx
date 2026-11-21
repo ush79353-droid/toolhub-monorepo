@@ -96,7 +96,7 @@ export function AnnuityPayoutCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Mode: ${input.mode === 'fixedLength' ? 'Fixed length' : 'Fixed payment'}`,
         `Initial balance: ${getCurrencySymbol(input.initialBalanceCurrency)}${input.initialBalance}`,
         `Payout frequency: ${input.payoutFrequency}`,

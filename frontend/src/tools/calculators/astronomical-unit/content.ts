@@ -47,14 +47,14 @@ export const AU_GUIDE_SECTIONS: readonly AuGuideSection[] = [
     title: 'Introduction',
     paragraphs: [
       'This calculator converts astronomical distances among astronomical units (au), meters, kilometers, miles, light-years, parsecs, and light-travel distance units. Enter a value in any field and the others update from one canonical length in meters.',
-      'An astronomical unit measures distance—not time—though light-travel time across a given distance can be reported as a derived convenience.',
+      'An astronomical unit measures distance, not time, though light-travel time across a given distance can be reported as a derived convenience.',
     ],
   },
   {
     id: 'what-is-an-au',
     title: 'What Is an Astronomical Unit?',
     paragraphs: [
-      'An astronomical unit is a standardized length used mainly for solar-system scales. Its official symbol is au. One au equals exactly 149,597,870,700 meters—about the average Earth–Sun distance. Earth’s actual heliocentric distance varies over the year and is not always exactly one au.',
+      'An astronomical unit is a standardized length used mainly for solar-system scales. Its official symbol is au. One au equals exactly 149,597,870,700 meters, about the average Earth–Sun distance. Earth’s actual heliocentric distance varies over the year and is not always exactly one au.',
     ],
   },
   {

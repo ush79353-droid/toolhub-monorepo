@@ -112,7 +112,7 @@ export function CarriedInterestCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial fund value: ${symbol}${input.initialFundValue}`,
         `Final fund value: ${symbol}${input.finalFundValue}`,
         `Fund return: ${result.formattedFundReturnPercent}%`,

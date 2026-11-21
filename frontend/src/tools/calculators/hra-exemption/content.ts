@@ -111,7 +111,7 @@ export const HRA_FAQS: readonly FAQItem[] = [
   {
     question: 'What documents are required for HRA exemption?',
     answer:
-      'Employers and tax authorities commonly expect rent receipts/agreements and, above certain rent thresholds, landlord PAN details. Requirements can change — verify for your year.',
+      'Employers and tax authorities commonly expect rent receipts/agreements and, above certain rent thresholds, landlord PAN details. Requirements can change; verify for your year.',
   },
   {
     question: 'What is the difference between HRA and Section 80GG?',

@@ -58,7 +58,7 @@ export function CcToOzResults({
           {formatVolume(result.cc)} cc = {formatVolume(result.oz)} {label}
         </p>
         <p className="mt-2 text-sm text-accent">
-          Fluid ounces measure volume — not weight ounces.
+ Fluid ounces measure volume; not weight ounces.
         </p>
         <p className="mt-2 font-mono text-xs text-muted-foreground">{result.explanation}</p>
       </div>

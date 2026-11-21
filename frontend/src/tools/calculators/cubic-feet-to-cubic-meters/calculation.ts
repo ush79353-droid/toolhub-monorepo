@@ -115,7 +115,7 @@ export function calculateCuFtToCuM(input: CuFtToCuMInput): CuFtToCuMResult {
 
 export function shareResultText(result: CuFtToCuMResult): string {
   return [
-    'Cubic Feet to Cubic Meters Converter — Omega Calculators',
+    'Cubic Feet to Cubic Meters Converter | Omega Calculators',
     '',
     `${formatMeasure(result.cubicFeet)} ft³ = ${formatMeasure(result.cubicMeters)} m³`,
   ].join('\n');

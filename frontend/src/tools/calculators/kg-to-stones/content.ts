@@ -51,7 +51,7 @@ export const KG_TO_STONES_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'This converter changes mass between kilograms and British imperial stones. Both directions are supported.',
       `One stone equals exactly ${KG_PER_STONE} kilograms (14 international avoirdupois pounds). To convert kilograms into stones, divide by ${KG_PER_STONE} (about ${formatMass(STONES_PER_KG)} st per kg).`,
-      `Example — convert 70 kg: 70 ÷ ${KG_PER_STONE} ≈ ${formatMass(kilogramsToStones(70))} st.`,
+      `Example; convert 70 kg: 70 ÷ ${KG_PER_STONE} ≈ ${formatMass(kilogramsToStones(70))} st.`,
     ],
     formula: `st = kg ÷ ${KG_PER_STONE}   ·   kg = st × ${KG_PER_STONE}`,
   },
@@ -89,7 +89,7 @@ export const KG_TO_STONES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Stones to Kilograms',
     paragraphs: [
       `Multiply the mass in stones by ${KG_PER_STONE}.`,
-      `Example — convert 12 st: 12 × ${KG_PER_STONE} = ${formatMass(stonesToKilograms(12))} kg.`,
+      `Example; convert 12 st: 12 × ${KG_PER_STONE} = ${formatMass(stonesToKilograms(12))} kg.`,
     ],
     formula: `kg = st × ${KG_PER_STONE}`,
   },

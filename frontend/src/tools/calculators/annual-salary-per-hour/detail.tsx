@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert between hourly, daily, weekly, monthly, and annual wages from hours per week — enter any one amount with independent FX on each field.',
+    'Convert between hourly, daily, weekly, monthly, and annual wages from hours per week. Enter any one amount with independent FX on each field.',
   asideAriaLabel: 'Interactive Annual Salary per Hour Calculator',
   tocItems: ANNUAL_SALARY_PER_HOUR_TOC_ITEMS,
   GuideArticle: AnnualSalaryPerHourGuideArticle,

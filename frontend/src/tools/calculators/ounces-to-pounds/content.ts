@@ -38,7 +38,7 @@ export const OUNCES_TO_POUNDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Ounces to Pounds Converter',
     paragraphs: [
       'Convert ounces (oz) to pounds (lb) and pounds back to ounces instantly, with a linked kilograms (kg) field for SI mass.',
-      'Useful for shipping labels, recipes and packaging, product weights, and everyday avoirdupois mass checks. This tool uses mass ounces — not fluid ounces.',
+      'Useful for shipping labels, recipes and packaging, product weights, and everyday avoirdupois mass checks. This tool uses mass ounces; not fluid ounces.',
     ],
   },
   {
@@ -47,9 +47,9 @@ export const OUNCES_TO_POUNDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `Exactly 1 lb = ${OUNCES_PER_POUND} oz, so 1 oz = ${formatMass(ouncesToPounds(1))} lb.`,
       `Formula: lb = oz ÷ ${OUNCES_PER_POUND} (or lb = oz × ${formatMass(1 / OUNCES_PER_POUND)}).`,
-      `Example — 24 oz: 24 ÷ ${OUNCES_PER_POUND} = ${formatMass(ouncesToPounds(24))} lb.`,
-      `Example — 8 oz: 8 ÷ ${OUNCES_PER_POUND} = ${formatMass(ouncesToPounds(8))} lb.`,
-      `Example — 48 oz: 48 ÷ ${OUNCES_PER_POUND} = ${formatMass(ouncesToPounds(48))} lb.`,
+      `Example; 24 oz: 24 ÷ ${OUNCES_PER_POUND} = ${formatMass(ouncesToPounds(24))} lb.`,
+      `Example; 8 oz: 8 ÷ ${OUNCES_PER_POUND} = ${formatMass(ouncesToPounds(8))} lb.`,
+      `Example; 48 oz: 48 ÷ ${OUNCES_PER_POUND} = ${formatMass(ouncesToPounds(48))} lb.`,
     ],
     formula: `1 lb = ${OUNCES_PER_POUND} oz\nlb = oz ÷ ${OUNCES_PER_POUND}\n24 oz = ${formatMass(ouncesToPounds(24))} lb`,
   },
@@ -80,7 +80,7 @@ export const OUNCES_TO_POUNDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Pounds to Ounces',
     paragraphs: [
       `Multiply pounds by ${OUNCES_PER_POUND}: oz = lb × ${OUNCES_PER_POUND}.`,
-      `Example — 2.5 lb: 2.5 × ${OUNCES_PER_POUND} = ${formatMass(poundsToOunces(2.5))} oz.`,
+      `Example; 2.5 lb: 2.5 × ${OUNCES_PER_POUND} = ${formatMass(poundsToOunces(2.5))} oz.`,
     ],
     formula: `oz = lb × ${OUNCES_PER_POUND}\n2.5 lb = ${formatMass(poundsToOunces(2.5))} oz`,
   },
@@ -89,8 +89,8 @@ export const OUNCES_TO_POUNDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Converting Ounces to Kilograms',
     paragraphs: [
       `The third field links SI mass: kg = oz × ${KG_PER_OUNCE}.`,
-      `Example — 16 oz: 16 × ${KG_PER_OUNCE} = ${formatMass(ouncesToKilograms(16))} kg (exactly one international pound).`,
-      `Reverse: oz = kg ÷ ${KG_PER_OUNCE}. Example — 1 kg ≈ ${formatMass(kilogramsToOunces(1))} oz.`,
+      `Example; 16 oz: 16 × ${KG_PER_OUNCE} = ${formatMass(ouncesToKilograms(16))} kg (exactly one international pound).`,
+      `Reverse: oz = kg ÷ ${KG_PER_OUNCE}. Example; 1 kg ≈ ${formatMass(kilogramsToOunces(1))} oz.`,
     ],
     formula: `kg = oz × ${KG_PER_OUNCE}\n16 oz = ${formatMass(ouncesToKilograms(16))} kg`,
   },

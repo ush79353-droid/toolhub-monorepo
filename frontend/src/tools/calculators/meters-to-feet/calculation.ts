@@ -56,7 +56,7 @@ export function calculateMetersToFeet(input: MetersToFeetInput): MetersToFeetRes
 
 export function shareResultText(result: MetersToFeetResult): string {
   return [
-    'Meters to Feet Converter — Omega Calculators',
+    'Meters to Feet Converter | Omega Calculators',
     '',
     `${formatLength(result.meters)} meters = ${formatLength(result.feet)} feet`,
     '',

@@ -122,7 +122,7 @@ export function resolveDtiLimits(
     return {
       front: customFront,
       back: customBack,
-      note: 'Custom DTI limits entered by the user — illustrative only.',
+      note: 'Custom DTI limits entered by the user; illustrative only.',
     };
   }
   return DTI_PROFILE_RATIOS[profile];
@@ -543,7 +543,7 @@ export function solveFixedBudgetAffordability(
     return {
       ok: false,
       reason:
-        'With 100% down payment and fees excluded from the budget constraint, principal-and-interest is zero for any price — no finite maximum house price exists without a purchase-funds limit.',
+        'With 100% down payment and fees excluded from the budget constraint, principal-and-interest is zero for any price; no finite maximum house price exists without a purchase-funds limit.',
     };
   }
 

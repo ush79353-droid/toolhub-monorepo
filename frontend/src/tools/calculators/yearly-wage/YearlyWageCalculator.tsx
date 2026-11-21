@@ -181,12 +181,12 @@ export function YearlyWageCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Hours/week: ${input.hoursPerWeek}`,
         `Weeks/year: ${input.weeksPerYear}`,
         `Hourly wage: ${wageSymbol}${input.hourlyWage} ${input.hourlyWageCurrency}`,
         `Yearly wage: ${yearlySymbol}${result.formattedYearlyWage} ${result.yearlyWageCurrency}`,
-        `Flat tax: ${input.taxPercent}% (simplified estimate — not jurisdiction-specific)`,
+        `Flat tax: ${input.taxPercent}% (simplified estimate; not jurisdiction-specific)`,
         `Net hourly: ${netHourlySymbol}${result.formattedNetHourly} ${result.netHourlyCurrency}`,
         `Net yearly: ${netYearlySymbol}${result.formattedNetYearly} ${result.netYearlyCurrency}`,
         `Formulas: Yearly = Hourly × Hours × Weeks; Net Hourly = Hourly × (1−Tax/100); Net Yearly = Yearly × (1−Tax/100)`,

@@ -13,7 +13,7 @@ export const SALARY_INFLATION_FAQS: readonly FAQItem[] = [
   {
     question: 'How is inflation-adjusted salary calculated?',
     answer:
-      'This tool uses a single-period adjustment: Inflation-Adjusted Salary = Reference Salary × (1 + Inflation Rate / 100). There is no multi-year compounding here — only one inflation rate for one period.',
+      'This tool uses a single-period adjustment: Inflation-Adjusted Salary = Reference Salary × (1 + Inflation Rate / 100). There is no multi-year compounding here; only one inflation rate for one period.',
   },
   {
     question: 'What does gain or loss mean?',

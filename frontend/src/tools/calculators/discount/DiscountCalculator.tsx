@@ -29,7 +29,7 @@ import {
 import { validateDiscountInput } from './validation';
 
 const FX_NOTE =
-  'Original price, you pay, and you\'re saving each have their own currency. Discount math runs in the original-price currency; results convert for display. The discount percent and tax Yes/No choice are never converted. Tax included is a price label only — no tax rate is applied. Missing rates block conversion; stale rates warn but still convert.';
+  'Original price, you pay, and you\'re saving each have their own currency. Discount math runs in the original-price currency; results convert for display. The discount percent and tax Yes/No choice are never converted. Tax included is a price label only; no tax rate is applied. Missing rates block conversion; stale rates warn but still convert.';
 
 function inputsEqual(a: DiscountInput, b: DiscountInput): boolean {
   return (
@@ -167,10 +167,10 @@ export function DiscountCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Original price: ${priceSymbol}${input.originalPrice} ${input.originalPriceCurrency}`,
         `Discount: ${input.discountPercent}% off`,
-        `Tax included?: ${input.taxIncluded === 'yes' ? 'Yes' : 'No'} (label only — no tax rate applied)`,
+        `Tax included?: ${input.taxIncluded === 'yes' ? 'Yes': 'No'} (label only; no tax rate applied)`,
         `You pay: ${paySymbol}${result.formattedYouPay} ${result.youPayCurrency}`,
         `You're saving: ${saveSymbol}${result.formattedYouSave} ${result.youSaveCurrency}`,
         `Formulas: Discount = Price × Rate / 100; Final = Price − Discount; Savings = Discount`,

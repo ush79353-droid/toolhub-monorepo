@@ -52,7 +52,7 @@ function buildInterpretation(
     return {
       warningMessage: null,
       interpretation:
-        'Consumer surplus is zero — the actual price equals maximum willingness to pay.',
+        'Consumer surplus is zero: the actual price equals maximum willingness to pay.',
     };
   }
   return {

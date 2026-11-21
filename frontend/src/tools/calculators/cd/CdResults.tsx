@@ -294,7 +294,7 @@ export function CdResults({ input, result, onScheduleViewChange }: CdResultsProp
               </div>
             </dl>
             <p className="text-xs text-muted-foreground">
-              Tax estimate applies the marginal rate to gross interest at maturity only — not tax
+ Tax estimate applies the marginal rate to gross interest at maturity only; not tax
               advice. Bank day-count and contractual compounding may differ from this mathematical
               model.
             </p>

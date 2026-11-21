@@ -29,7 +29,7 @@ export const UNICODE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-unicode-font',
     title: 'What Is a Unicode Font Generator?',
     paragraphs: [
-      'A Unicode text generator transforms ordinary letters and digits into alternative Unicode characters that look decorative—circled, squared, upside-down, or monospaced. In most cases this is not a font change applied to the same letters. The converter substitutes different code points from other Unicode blocks.',
+      'A Unicode text generator transforms ordinary letters and digits into alternative Unicode characters that look decorative, circled, squared, upside-down, or monospaced. In most cases this is not a font change applied to the same letters. The converter substitutes different code points from other Unicode blocks.',
       'People use these styles for social bios, usernames, messaging, captions, and creative headings. Because the result is made of special characters, appearance, search behavior, and accessibility depend on the destination app and font support.',
     ],
   },
@@ -89,7 +89,7 @@ export const UNICODE_GUIDE_SECTIONS: readonly GuideSection[] = [
         id: 'monospaced',
         title: 'Monospaced Text',
         paragraphs: [
-          'Mathematical monospace letters and digits live in a supplementary Unicode plane. They look fixed-width but remain distinct characters—not CSS font-family: monospace.',
+          'Mathematical monospace letters and digits live in a supplementary Unicode plane. They look fixed-width but remain distinct characters, not CSS font-family: monospace.',
         ],
         formula: 'hello → 𝚑𝚎𝚕𝚕𝚘',
       },
@@ -119,7 +119,7 @@ export const UNICODE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'where-to-use',
     title: 'Where Can You Use Unicode Text?',
     paragraphs: [
-      'Decorative Unicode often appears in social bios, chat, gaming profiles, creative usernames, and informal titles. Compatibility is not guaranteed—some platforms normalize, filter, or poorly render certain blocks.',
+      'Decorative Unicode often appears in social bios, chat, gaming profiles, creative usernames, and informal titles. Compatibility is not guaranteed, some platforms normalize, filter, or poorly render certain blocks.',
       'Always keep a plain-text version for anything important, legal, or accessibility-sensitive.',
     ],
   },
@@ -142,7 +142,7 @@ export const UNICODE_FAQS: readonly FAQItem[] = [
   {
     question: 'What Is a Circled Font?',
     answer:
-      'Circled text uses Unicode enclosed alphanumeric characters—distinct code points that look like letters inside circles—not a font applied to plain letters.',
+      'Circled text uses Unicode enclosed alphanumeric characters, distinct code points that look like letters inside circles, not a font applied to plain letters.',
   },
   {
     question: 'How Do I Invert Text?',
@@ -167,7 +167,7 @@ export const UNICODE_FAQS: readonly FAQItem[] = [
   {
     question: 'Can Unicode Text Be Converted Back to Normal Text?',
     answer:
-      'Some mappings can be reversed, but not all are one-to-one. Case and punctuation distinctions may be lost—especially with negative circled styles.',
+      'Some mappings can be reversed, but not all are one-to-one. Case and punctuation distinctions may be lost, especially with negative circled styles.',
   },
   {
     question: 'Does Unicode Support Every Fancy Text Style?',

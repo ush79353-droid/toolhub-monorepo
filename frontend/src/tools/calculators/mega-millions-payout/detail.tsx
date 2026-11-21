@@ -7,7 +7,7 @@ import { MegaMillionsPayoutGuideArticle } from './MegaMillionsPayoutGuideArticle
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Compare Mega Millions lump-sum and graduated annuity payouts with estimated federal and state taxes. Estimates only—not official lottery results.',
+    'Compare Mega Millions lump-sum and graduated annuity payouts with estimated federal and state taxes. Estimates only, not official lottery results.',
   asideAriaLabel: 'Mega Millions Payout Calculator guide',
   tocItems: MEGA_MILLIONS_PAYOUT_TOC_ITEMS,
   GuideArticle: MegaMillionsPayoutGuideArticle,

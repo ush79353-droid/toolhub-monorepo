@@ -13,7 +13,7 @@ export function BitcoinEtfGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This tool estimates how a lump-sum Bitcoin ETF investment might grow after an annual expense
         ratio and upfront other costs, using annual compounding. Figures are illustrative estimates
-        only — not forecasts, guarantees, or advice.
+ only; not forecasts, guarantees, or advice.
       </p>
 
       <h2

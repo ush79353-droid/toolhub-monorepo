@@ -34,7 +34,7 @@ export const TOTAL_ASSET_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'What does total asset turnover measure?',
     answer:
-      'It measures asset utilization — revenue per unit of average assets — not profitability, margins, or cash flow.',
+      'It measures asset utilization (revenue per unit of average assets) not profitability, margins, or cash flow.',
   },
   {
     question: 'How do I calculate total asset turnover?',
@@ -69,7 +69,7 @@ export const TOTAL_ASSET_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'Can asset turnover equal zero?',
     answer:
-      'Yes — when revenue is zero and average assets are positive, TAT = 0.00x.',
+      'Yes: when revenue is zero and average assets are positive, TAT = 0.00x.',
   },
   {
     question: 'What does an asset turnover of 1 mean?',
@@ -84,7 +84,7 @@ export const TOTAL_ASSET_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'What does an asset turnover below 1 mean?',
     answer:
-      'Revenue was less than average assets — common in asset-heavy industries or after large investments before sales catch up.',
+      'Revenue was less than average assets; common in asset-heavy industries or after large investments before sales catch up.',
   },
   {
     question: 'What is the difference between total asset turnover and fixed asset turnover?',
@@ -119,7 +119,7 @@ export const TOTAL_ASSET_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when average assets equal zero?',
     answer:
-      'Turnover is undefined. This calculator shows unavailable — never Infinity.',
+      'Turnover is undefined. This calculator shows unavailable; never Infinity.',
   },
   {
     question: 'How does depreciation affect asset turnover?',
@@ -154,7 +154,7 @@ export const TOTAL_ASSET_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'Can asset turnover increase when assets decline?',
     answer:
-      'Yes — selling assets can raise the ratio even if sales are flat. That is not automatically an operational improvement.',
+      'Yes: selling assets can raise the ratio even if sales are flat. That is not automatically an operational improvement.',
   },
   {
     question: 'What does an asset turnover of 0.5 mean?',
@@ -170,6 +170,6 @@ export const TOTAL_ASSET_TURNOVER_FAQS: readonly FAQItem[] = [
   {
     question: 'Why can two companies with similar revenue have different turnover ratios?',
     answer:
-      'Different average asset bases — capital intensity, leasing vs owning, depreciation age, and growth investments — change the denominator.',
+      'Different average asset bases (capital intensity, leasing vs owning, depreciation age, and growth investments) change the denominator.',
   },
 ];

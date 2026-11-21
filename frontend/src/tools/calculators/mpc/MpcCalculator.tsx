@@ -84,7 +84,7 @@ export function MpcCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        'MPC Calculator — Omega Calculators',
+        'MPC Calculator | Omega Calculators',
         '',
         `Increase in Disposable Income: ${result.formattedDeltaYd}`,
         `Increase in Consumer Spending: ${result.formattedDeltaC}`,

@@ -52,7 +52,7 @@ export const MM_TO_FOOT_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'formula',
     title: 'mm to Foot Conversion Formula',
     paragraphs: [
-      'Use the exact international foot definition — do not approximate 304.8 before dividing or multiplying.',
+      'Use the exact international foot definition; do not approximate 304.8 before dividing or multiplying.',
       `ft = mm ÷ ${MM_PER_FOOT}`,
       `mm = ft × ${MM_PER_FOOT}`,
     ],

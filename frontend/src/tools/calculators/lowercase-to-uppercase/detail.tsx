@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert lowercase and mixed-case text to uppercase instantly. Paste words, sentences, or paragraphs — then copy the result. Optional title, sentence, and toggle modes included.',
+    'Convert lowercase and mixed-case text to uppercase instantly. Paste words, sentences, or paragraphs, then copy the result. Optional title, sentence, and toggle modes included.',
   asideAriaLabel: 'Interactive lowercase to uppercase converter',
   tocItems: LOWERCASE_TO_UPPERCASE_TOC_ITEMS,
   GuideArticle: LowercaseToUppercaseGuideArticle,

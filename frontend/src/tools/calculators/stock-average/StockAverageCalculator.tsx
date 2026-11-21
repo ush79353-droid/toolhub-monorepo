@@ -185,7 +185,7 @@ export function StockAverageCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `1st buy: ${input.firstBuyShares} @ ${input.firstBuyPrice} ${input.firstBuyPriceCurrency}`,
         `2nd buy: ${input.secondBuyShares} @ ${input.secondBuyPrice} ${input.secondBuyPriceCurrency}`,
         input.currentPrice.trim()

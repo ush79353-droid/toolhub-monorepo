@@ -99,7 +99,7 @@ export function SinkingFundCalculator({
   const summary =
     result !== null
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Money to accumulate: ${symbol}${input.moneyToAccumulate}`,
           `Annual interest rate: ${input.annualInterestRatePercent}%`,
           `Compounding: ${compoundingLabel}`,

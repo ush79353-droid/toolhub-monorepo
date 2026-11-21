@@ -12,7 +12,7 @@ export const SIMPLE_INTEREST_FAQS: readonly FAQItem[] = [
   {
     question: 'What is simple interest?',
     answer:
-      'Simple interest is calculated only on the original principal for the full term. It does not compound — interest is never added to the principal during the term.',
+      'Simple interest is calculated only on the original principal for the full term. It does not compound; interest is never added to the principal during the term.',
   },
   {
     question: 'How is simple interest calculated?',

@@ -82,7 +82,7 @@ export function calculateMinutesToDays(input: MinutesToDaysInput): MinutesToDays
 
 export function shareResultText(result: MinutesToDaysResult): string {
   return [
-    'Minutes to Days Calculator — Omega Calculators',
+    'Minutes to Days Calculator | Omega Calculators',
     '',
     `${formatDuration(result.minutes)} minutes = ${formatDuration(result.days)} days`,
     '',

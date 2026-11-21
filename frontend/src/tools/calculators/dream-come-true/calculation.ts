@@ -346,7 +346,7 @@ export function formatMoney(amount: number, currency: SupportedCurrency): string
 
 export function shareDreamComeTrueText(result: DreamComeTrueResult): string {
   return [
-    'Dream Come True Calculator — Omega Calculators',
+    'Dream Come True Calculator | Omega Calculators',
     `Dream price: ${formatMoney(result.dreamPrice, result.currency)}`,
     `Initial savings: ${formatMoney(result.totalInitialSavings, result.currency)}`,
     `Monthly savings contributions (total): ${formatMoney(result.totalMonthlyContributions, result.currency)}`,

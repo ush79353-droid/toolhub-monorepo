@@ -95,7 +95,7 @@ export function GrowingAnnuityCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.summaryText,
         `Opening balance: ${getCurrencySymbol(result.calcCurrency)}${result.formattedOpeningBalance}`,
         `Final balance: ${getCurrencySymbol(result.calcCurrency)}${result.formattedFinalBalance}`,

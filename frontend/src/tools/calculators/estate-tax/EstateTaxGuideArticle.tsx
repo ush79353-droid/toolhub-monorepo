@@ -48,7 +48,7 @@ export function EstateTaxGuideArticle() {
           proceeds are excluded.
         </li>
         <li>
-          Tax-free lifetime gifts are informational only — not adjusted taxable gifts and not
+ Tax-free lifetime gifts are informational only; not adjusted taxable gifts and not
           subtracted from the taxable estate.
         </li>
         <li>

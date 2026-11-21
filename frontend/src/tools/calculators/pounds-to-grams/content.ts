@@ -14,7 +14,7 @@ export const POUNDS_TO_GRAMS_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'how-to-use', label: 'How Do I Use This Pounds to Grams Converter?' },
   { id: 'conversion-table', label: 'Pounds to Grams Conversion Table' },
   { id: 'grams-to-pounds', label: 'How to Convert Grams to Pounds' },
-  { id: 'pounds-vs-grams', label: 'Pounds vs Grams — What\'s the Difference?' },
+  { id: 'pounds-vs-grams', label: 'Pounds vs Grams; What\'s the Difference?' },
   { id: 'related-converters', label: 'Other Weight Converters' },
   { id: 'pounds-to-grams-faq', label: 'Frequently Asked Questions' },
 ];
@@ -44,9 +44,9 @@ export const POUNDS_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Pounds to Grams?',
     paragraphs: [
       `Multiply pounds by ${GRAMS_PER_POUND}: grams = pounds × ${GRAMS_PER_POUND}.`,
-      `Example 1 — convert 2 pounds: 2 × ${GRAMS_PER_POUND} = ${formatMass(poundsToGrams(2))} g.`,
-      `Example 2 — convert 5 pounds: 5 × ${GRAMS_PER_POUND} = ${formatMass(poundsToGrams(5))} g.`,
-      `Example 3 — convert 0.5 pounds: 0.5 × ${GRAMS_PER_POUND} = ${formatMass(poundsToGrams(0.5))} g.`,
+      `Example 1: convert 2 pounds: 2 × ${GRAMS_PER_POUND} = ${formatMass(poundsToGrams(2))} g.`,
+      `Example 2: convert 5 pounds: 5 × ${GRAMS_PER_POUND} = ${formatMass(poundsToGrams(5))} g.`,
+      `Example 3: convert 0.5 pounds: 0.5 × ${GRAMS_PER_POUND} = ${formatMass(poundsToGrams(0.5))} g.`,
     ],
     formula: `g = lb × ${GRAMS_PER_POUND}`,
   },
@@ -59,7 +59,7 @@ export const POUNDS_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
       '3. Alternatively, enter a weight in grams.',
       '4. The calculator automatically converts grams to pounds.',
       '5. Use Reload Calculator to restore the default 1 lb, or Clear All Changes to empty both fields.',
-      'No separate Convert button is required — both directions update as you type.',
+      'No separate Convert button is required; both directions update as you type.',
     ],
   },
   {
@@ -83,7 +83,7 @@ export const POUNDS_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'pounds-vs-grams',
-    title: "Pounds vs Grams — What's the Difference?",
+    title: "Pounds vs Grams; What's the Difference?",
     paragraphs: [
       `Pound (lb): a customary unit of mass commonly used in the United States. The internationally defined avoirdupois pound equals exactly ${KG_PER_POUND} kilograms.`,
       'Gram (g): a metric unit of mass equal to one-thousandth of a kilogram.',

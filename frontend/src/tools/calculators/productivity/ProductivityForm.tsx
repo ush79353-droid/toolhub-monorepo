@@ -225,7 +225,7 @@ export function ProductivityForm({
             Number of working hours
             <InfoTooltip
               label="Number of working hours"
-              text="Total workforce labor hours in the same period — not per-employee hours multiplied again."
+              text="Total workforce labor hours in the same period; not per-employee hours multiplied again."
             />
           </label>
           <div className="flex gap-2">

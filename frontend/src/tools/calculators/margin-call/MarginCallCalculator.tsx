@@ -100,16 +100,16 @@ export function MarginCallCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Direction: ${input.tradingDirection}`,
         `Contract: ${contractLabel}`,
         `Tick value: ${getCurrencySymbol(input.tickValueCurrency)}${input.tickValue}`,
         `Ticks per point: ${input.ticksPerPoint}`,
         `Point value: ${getCurrencySymbol(input.pointValueCurrency)}${result.formattedPointValue}`,
-        `Buy / sell: ${input.buyingPrice || '—'} / ${input.sellingPrice || '—'} points`,
-        `Points: ${result.formattedNumberOfPoints || '—'}`,
-        `P/L: ${getCurrencySymbol(input.profitLossCurrency)}${result.formattedProfitLoss || '—'}`,
-        `Contracts: ${input.numberOfContracts || '—'}`,
+        `Buy / sell: ${input.buyingPrice || '; '} / ${input.sellingPrice || '; '} points`,
+        `Points: ${result.formattedNumberOfPoints || '; '}`,
+        `P/L: ${getCurrencySymbol(input.profitLossCurrency)}${result.formattedProfitLoss || '; '}`,
+        `Contracts: ${input.numberOfContracts || '; '}`,
         result.formattedAccountEquity
           ? `Equity: ${getCurrencySymbol(result.accountCurrency)}${result.formattedAccountEquity}`
           : null,

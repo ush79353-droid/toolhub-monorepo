@@ -56,9 +56,9 @@ export const ZULU_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Zulu Time Converter',
     paragraphs: [
-      'Method 1 — Select by Country: choose Country, pick a country, pick one of its time zones, set the conversion date, enter Zulu time, and read local time (or the reverse).',
-      'Method 2 — Select by Time Zone: choose Time zone, pick an IANA identifier, set the date, enter Zulu or local time, and read the counterpart plus UTC offset and DST status.',
-      'When local clocks fall back, the same hour occurs twice — choose the earlier or later occurrence. When clocks spring forward, some local times do not exist.',
+      'Method 1; Select by Country: choose Country, pick a country, pick one of its time zones, set the conversion date, enter Zulu time, and read local time (or the reverse).',
+      'Method 2; Select by Time Zone: choose Time zone, pick an IANA identifier, set the date, enter Zulu or local time, and read the counterpart plus UTC offset and DST status.',
+      'When local clocks fall back, the same hour occurs twice; choose the earlier or later occurrence. When clocks spring forward, some local times do not exist.',
     ],
   },
   {

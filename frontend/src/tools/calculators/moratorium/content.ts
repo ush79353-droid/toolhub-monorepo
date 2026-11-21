@@ -28,7 +28,7 @@ export const MORATORIUM_FAQS: readonly FAQItem[] = [
   {
     question: 'What is an EMI moratorium?',
     answer:
-      'A moratorium applied to equated monthly installments—typically deferring principal repayments for a set number of months while the loan remains outstanding.',
+      'A moratorium applied to equated monthly installments, typically deferring principal repayments for a set number of months while the loan remains outstanding.',
   },
   {
     question: 'Does interest accrue during a moratorium?',
@@ -108,7 +108,7 @@ export const MORATORIUM_FAQS: readonly FAQItem[] = [
   {
     question: 'Can a moratorium increase the monthly payment?',
     answer:
-      'Yes—especially when keeping the original maturity after capitalization.',
+      'Yes: especially when keeping the original maturity after capitalization.',
   },
   {
     question: 'What is the difference between capitalized and non-capitalized interest?',

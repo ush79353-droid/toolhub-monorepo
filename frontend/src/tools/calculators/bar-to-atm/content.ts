@@ -28,7 +28,7 @@ export const BAR_TO_ATM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'bar-to-atm-conversion',
     title: 'Bar to ATM Conversion',
     paragraphs: [
-      `The bar is a metric-derived pressure unit equal to ${PA_PER_BAR.toLocaleString('en-US')} Pa. It is convenient for engineering but is not an SI unit. The standard atmosphere (atm) is a defined reference equal to exactly ${PA_PER_ATM.toLocaleString('en-US')} Pa — close to typical sea-level air pressure, not a guarantee that every location always measures 1 atm.`,
+      `The bar is a metric-derived pressure unit equal to ${PA_PER_BAR.toLocaleString('en-US')} Pa. It is convenient for engineering but is not an SI unit. The standard atmosphere (atm) is a defined reference equal to exactly ${PA_PER_ATM.toLocaleString('en-US')} Pa; close to typical sea-level air pressure, not a guarantee that every location always measures 1 atm.`,
       `Because ${PA_PER_BAR.toLocaleString('en-US')} Pa is slightly less than ${PA_PER_ATM.toLocaleString('en-US')} Pa, 1 bar ≈ ${formatPressure(barToAtm(1))} atm, and 1 atm = ${BAR_PER_ATM} bar.`,
     ],
     formula: `1 bar = ${PA_PER_BAR.toLocaleString('en-US')} Pa  |  1 atm = ${PA_PER_ATM.toLocaleString('en-US')} Pa  |  1 bar ≈ ${formatPressure(barToAtm(1))} atm`,

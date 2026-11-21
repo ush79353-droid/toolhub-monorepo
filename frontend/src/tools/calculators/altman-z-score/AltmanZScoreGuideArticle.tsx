@@ -17,7 +17,7 @@ export function AltmanZScoreGuideArticle() {
         retained earnings, EBIT, market value of equity, total assets, total
         liabilities, and sales to compute the original Altman Z-Score and see
         whether the result falls in the distress, grey, or safer zone. The
-        score is a screening aid — not a guaranteed bankruptcy prediction.
+ score is a screening aid; not a guaranteed bankruptcy prediction.
       </p>
 
       <h2
@@ -130,7 +130,7 @@ export function AltmanZScoreGuideArticle() {
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
         X4 uses market capitalization over total liabilities. If liabilities are
-        zero, X4 is undefined — this tool does not invent a substitute or show
+ zero, X4 is undefined; this tool does not invent a substitute or show
         Infinity.
       </p>
       <h3 className="mt-4 text-base font-semibold text-accent">

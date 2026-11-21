@@ -59,7 +59,7 @@ export function calculateCmToKm(input: CmToKmInput): CmToKmResult {
 
 export function shareResultText(result: CmToKmResult): string {
   return [
-    'CM to KM Conversion — Omega Calculators',
+    'CM to KM Conversion | Omega Calculators',
     '',
     `${formatShared(result.centimeters)} cm = ${formatShared(result.kilometers)} km`,
   ].join('\n');

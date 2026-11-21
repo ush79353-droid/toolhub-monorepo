@@ -18,7 +18,7 @@ function summaryText(
   draft: AnnualizedReturnDraft,
   result: AnnualizedReturnResult
 ): string {
-  const lines = [`${metadataTitle} — Omega Calculators`];
+  const lines = [`${metadataTitle} | Omega Calculators`];
   if (draft.mode === 'total-return') {
     lines.push(
       `Method: Total return (%)`,

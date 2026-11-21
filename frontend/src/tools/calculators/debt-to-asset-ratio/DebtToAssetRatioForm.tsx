@@ -347,7 +347,7 @@ export function DebtToAssetRatioForm({
             <span>Total assets</span>
             <InfoTooltip
               label="Total assets"
-              text="Must be greater than zero. Calculation currency for the ratio — debts normalize into this currency."
+              text="Must be greater than zero. Calculation currency for the ratio; debts normalize into this currency."
             />
           </label>
           <div className="flex gap-2">

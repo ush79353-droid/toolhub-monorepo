@@ -265,7 +265,7 @@ export function EvToSalesForm({
               <span>EV to sales</span>
               <InfoTooltip
                 label="EV to sales"
-                text="Enterprise value ÷ sales. Dimensionless — no currency selector. Undefined when sales is zero."
+                text="Enterprise value ÷ sales. Dimensionless; no currency selector. Undefined when sales is zero."
               />
             </label>
             <FieldShell muted>

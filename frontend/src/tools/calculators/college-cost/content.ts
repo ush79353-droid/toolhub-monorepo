@@ -33,7 +33,7 @@ export const COLLEGE_COST_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the average cost of a four-year college?',
     answer:
-      'Averages differ for private colleges, public in-state, and public out-of-state students. The 2025–2026 College Board reference figures used here are planning averages — individual schools can be much higher or lower.',
+      'Averages differ for private colleges, public in-state, and public out-of-state students. The 2025–2026 College Board reference figures used here are planning averages; individual schools can be much higher or lower.',
   },
   {
     question: 'How does college inflation affect education costs?',
@@ -43,7 +43,7 @@ export const COLLEGE_COST_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between a 529 savings plan and a prepaid plan?',
     answer:
-      'A 529 savings plan invests contributions for qualified education expenses with tax advantages that depend on plan and tax rules. A prepaid plan typically locks in eligible tuition credits at participating schools. Structures, portability, and risks differ — compare your state’s options.',
+      'A 529 savings plan invests contributions for qualified education expenses with tax advantages that depend on plan and tax rules. A prepaid plan typically locks in eligible tuition credits at participating schools. Structures, portability, and risks differ. Compare your state’s options.',
   },
   {
     question: 'What is a college net price calculator?',
@@ -68,7 +68,7 @@ export const COLLEGE_COST_FAQS: readonly FAQItem[] = [
   {
     question: 'Does the calculator include taxes?',
     answer:
-      'The tax-rate field estimates tax only on investment earnings (a simplified constant rate). Actual tax treatment depends on the account type and law — use 0% for eligible tax-advantaged 529 growth when that matches your situation.',
+      'The tax-rate field estimates tax only on investment earnings (a simplified constant rate). Actual tax treatment depends on the account type and law. Use 0% for eligible tax-advantaged 529 growth when that matches your situation.',
   },
   {
     question: 'When should I start saving for college?',

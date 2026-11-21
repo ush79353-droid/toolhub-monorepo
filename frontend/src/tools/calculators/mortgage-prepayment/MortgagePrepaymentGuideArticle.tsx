@@ -11,8 +11,8 @@ export function MortgagePrepaymentGuideArticle() {
         What Is Mortgage Prepayment?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Mortgage prepayment means sending extra money toward principal—on a regular schedule,
-        as a lump sum, or both—while keeping the contractual installment. That shortens the
+ Mortgage prepayment means sending extra money toward principal, on a regular schedule,
+ as a lump sum, or both, while keeping the contractual installment. That shortens the
         amortization and reduces total interest.
       </p>
 

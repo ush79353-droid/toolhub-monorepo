@@ -13,8 +13,8 @@ export function WaccGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Weighted average cost of capital (WACC) estimates the blended required
-        return of a company&apos;s capital providers — typically equity and
-        interest-bearing debt — under a specified capital structure. It reflects
+ return of a company&apos;s capital providers; typically equity and
+ interest-bearing debt; under a specified capital structure. It reflects
         opportunity cost of capital and is expressed as a percentage. Companies
         use WACC in investment appraisal and firm valuation when financing and
         risk assumptions are sufficiently comparable.
@@ -125,7 +125,7 @@ export function WaccGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Market equity (e.g., market cap) and market debt better reflect current
         opportunity costs than historical book values. Book figures remain a
-        common approximation when market debt is unavailable — disclose the
+ common approximation when market debt is unavailable; disclose the
         limitation.
       </p>
 
@@ -150,7 +150,7 @@ export function WaccGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         WACC supports capital budgeting, DCF valuation, hurdle rates, and capital
-        structure analysis. Match the discount rate to project risk — a riskier
+ structure analysis. Match the discount rate to project risk: a riskier
         project may need a rate above firm WACC.
       </p>
 
@@ -251,7 +251,7 @@ export function WaccGuideArticle() {
         Estimated costs of capital, changing structure, uncertain equity cost,
         market-value estimation, tax-shield assumptions, hybrids, distress,
         project-specific risk, currency consistency, and nominal/real or tax
-        cash-flow mismatches all limit WACC. It is a model estimate — not a
+ cash-flow mismatches all limit WACC. It is a model estimate; not a
         guaranteed investment return.
       </p>
 

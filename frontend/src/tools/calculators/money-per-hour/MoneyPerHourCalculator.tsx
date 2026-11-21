@@ -193,7 +193,7 @@ export function MoneyPerHourCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Hours/week: ${input.hoursPerWeek}`,
         `Authoritative: ${result.sourceField}`,
         `Money per hour: ${getCurrencySymbol(result.hourlyCurrency)}${result.formattedHourly} ${result.hourlyCurrency} per hour`,

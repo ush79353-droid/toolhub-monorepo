@@ -12,7 +12,7 @@ export function MortgageAccelerationGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Mortgage acceleration compares a standard monthly repayment schedule with a
-        faster option — typically accelerated bi-weekly payments, ordinary bi-weekly
+ faster option; typically accelerated bi-weekly payments, ordinary bi-weekly
         payments, or monthly payments with overpayment. Paying more frequently or
         adding extra principal shortens the term and cuts total interest.
       </p>

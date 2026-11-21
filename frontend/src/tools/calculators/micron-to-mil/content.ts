@@ -55,7 +55,7 @@ export const MICRON_TO_MIL_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Microns to Mils',
     paragraphs: [
       `Divide the micron value by ${MICRONS_PER_MIL}.`,
-      `Example — convert 100 microns: 100 ÷ ${MICRONS_PER_MIL} ≈ ${formatLength(micronsToMils(100))} mil.`,
+      `Example; convert 100 microns: 100 ÷ ${MICRONS_PER_MIL} ≈ ${formatLength(micronsToMils(100))} mil.`,
     ],
     formula: `mil = µm / ${MICRONS_PER_MIL}`,
   },
@@ -64,7 +64,7 @@ export const MICRON_TO_MIL_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Mils to Microns',
     paragraphs: [
       `Multiply the mil value by ${MICRONS_PER_MIL}.`,
-      `Example — convert 40 mils: 40 × ${MICRONS_PER_MIL} = ${formatLength(milsToMicrons(40))} µm.`,
+      `Example; convert 40 mils: 40 × ${MICRONS_PER_MIL} = ${formatLength(milsToMicrons(40))} µm.`,
     ],
     formula: `µm = mil × ${MICRONS_PER_MIL}`,
   },

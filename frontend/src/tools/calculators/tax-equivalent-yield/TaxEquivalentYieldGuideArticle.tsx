@@ -14,7 +14,7 @@ export function TaxEquivalentYieldGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Use this Tax Equivalent Yield Calculator (taxable equivalent yield) to
         find the before-tax yield a fully taxable investment must earn to match
-        a tax-exempt investment — such as a qualifying municipal bond — at your
+ a tax-exempt investment (such as a qualifying municipal bond) at your
         applicable marginal tax rate. Investors compare taxable and tax-exempt
         quotes because headline yields are not directly comparable when taxes
         differ. Enter the tax-exempt bond yield and marginal tax rate to compute
@@ -142,7 +142,7 @@ export function TaxEquivalentYieldGuideArticle() {
         The marginal rate is the tax on an additional dollar of taxable income
         in the relevant bracket. The effective rate is total tax divided by
         total income and is usually lower. TEY uses the marginal rate that would
-        apply to the taxable interest being compared — which may differ from
+ apply to the taxable interest being compared; which may differ from
         ordinary wage brackets if special rules apply. Use the rate applicable
         to the investment income, not a vague average.
       </p>
@@ -188,7 +188,7 @@ export function TaxEquivalentYieldGuideArticle() {
         After-tax taxable yield ≈ Y_taxable × (1 − t). Example: taxable 7.5% at
         30% tax → 7.5% × 0.70 = 5.25%. Against a 6% tax-exempt yield, the
         tax-exempt quote is 0.75 percentage points higher after tax under these
-        inputs — still not automatically the better bond once credit, duration,
+ inputs; still not automatically the better bond once credit, duration,
         call risk, fees, and other taxes are considered.
       </p>
 
@@ -201,7 +201,7 @@ export function TaxEquivalentYieldGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Qualifying municipal interest is often exempt from federal income tax,
         and may be exempt from state or local tax for residents of the issuing
-        state — but not always. Out-of-state munis can be state-taxable.
+ state, but not always. Out-of-state munis can be state-taxable.
         Tax-deferred accounts differ from tax-exempt bonds. Alternative Minimum
         Tax can affect some private-activity bonds. Combined federal-plus-state
         rates are not a simple sum when deductibility or caps apply; this
@@ -234,7 +234,7 @@ export function TaxEquivalentYieldGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Useful for individual investors, retirement planners, bond investors,
         portfolio analysts, and advisors who need a quick tax-aware comparison
-        between tax-exempt and taxable fixed income — always alongside full
+ between tax-exempt and taxable fixed income; always alongside full
         credit and structural analysis.
       </p>
 

@@ -15,7 +15,7 @@ import { validateAresToCent } from './validation';
 
 function summaryText(result: AresToCentResult): string {
   return [
-    'Ares to Cent Converter — Omega Calculators',
+    'Ares to Cent Converter | Omega Calculators',
     `${formatArea(result.ares)} ares ≈ ${formatArea(result.cents)} cents`,
     result.explanation,
     '1 are ≈ 2.47105381467 cents · 1 cent = 0.40468564224 ares',

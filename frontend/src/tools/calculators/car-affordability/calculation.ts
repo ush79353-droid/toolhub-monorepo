@@ -170,7 +170,7 @@ export function formatMoney(amount: number, currency: SupportedCurrency): string
 
 export function shareCarAffordabilityText(result: CarAffordabilityResult): string {
   const lines = [
-    'Car Affordability Calculator — Omega Calculators',
+    'Car Affordability Calculator | Omega Calculators',
     `Monthly payment: ${formatMoney(result.monthlyPayment, result.currency)}`,
     `Cash toward purchase: ${formatMoney(result.cashContribution, result.currency)}`,
     `Trade-in: ${formatMoney(result.tradeInValue, result.currency)}`,

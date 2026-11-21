@@ -48,7 +48,7 @@ export function HhiCalculator({
 
   const shareText = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         ...result.shares.map((share, i) => `Firm ${i + 1}: ${share}%`),
         `Share total: ${result.formattedShareTotal}%`,
         `HHI: ${result.formattedHhi}`,

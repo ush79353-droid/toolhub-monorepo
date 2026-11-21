@@ -13,7 +13,7 @@ export function MortgageRefinanceGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Refinancing a mortgage replaces the remaining balance with a new loan, usually at
         a different rate or term. This calculator estimates how much of the original loan
-        is still owed, then compares that remaining loan with the refinance — including
+ is still owed, then compares that remaining loan with the refinance; including
         points, closing costs, and cash taken out or paid in.
       </p>
 

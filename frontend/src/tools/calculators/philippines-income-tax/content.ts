@@ -27,6 +27,6 @@ export const PH_INCOME_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'How is self-employed tax estimated?',
     answer:
-      'Self-employed users are not given payroll withholding. Contributions use self-employed SSS (15% of MSC), full PhilHealth premium, and Pag-IBIG employee+employer shares. Tax is an estimated monthly amount from the annual graduated rates on annualized taxable income ÷ 12 — not the 8% optional flat rate and not a substitute for filing.',
+      'Self-employed users are not given payroll withholding. Contributions use self-employed SSS (15% of MSC), full PhilHealth premium, and Pag-IBIG employee+employer shares. Tax is an estimated monthly amount from the annual graduated rates on annualized taxable income ÷ 12; not the 8% optional flat rate and not a substitute for filing.',
   },
 ];

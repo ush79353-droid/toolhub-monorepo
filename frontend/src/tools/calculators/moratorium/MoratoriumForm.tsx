@@ -71,7 +71,7 @@ export function MoratoriumForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Educational EMI moratorium model for monthly amortizing loans. Interest
-        usually still accrues — deferment is not forgiveness. Currency is
+ usually still accrues; deferment is not forgiveness. Currency is
         denomination only (not FX).
       </p>
 

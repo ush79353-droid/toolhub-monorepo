@@ -111,7 +111,7 @@ export function calculateBarToPsig(input: BarToPsigInput): BarToPsigResult {
 export function shareResultText(result: BarToPsigResult): string {
   const barLabel = result.reference === 'absolute' ? 'bar(a)' : 'bar(g)';
   return [
-    'Bar to PSIG Converter — Omega Calculators',
+    'Bar to PSIG Converter | Omega Calculators',
     '',
     'Pressure reference:',
     result.reference === 'absolute' ? 'Absolute pressure' : 'Gauge pressure',

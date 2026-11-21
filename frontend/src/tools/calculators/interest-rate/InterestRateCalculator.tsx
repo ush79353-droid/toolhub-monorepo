@@ -115,7 +115,7 @@ export function InterestRateCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Mode: ${result.mode === 'loan' ? 'Interest rate on loan' : 'Interest rate on deposit'}`,
         `Annual nominal interest rate: ${result.formattedAnnualNominal}%`,
         result.formattedPeriodicRate

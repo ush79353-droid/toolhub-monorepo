@@ -267,7 +267,7 @@ export function DebtToEquityForm({
             <span>Debt to equity ratio (D/E)</span>
             <InfoTooltip
               label="Debt to equity ratio (D/E)"
-              text="Total liabilities ÷ stockholders' equity after normalizing both amounts into the liabilities currency. Dimensionless — no currency symbol."
+              text="Total liabilities ÷ stockholders' equity after normalizing both amounts into the liabilities currency. Dimensionless; no currency symbol."
             />
           </label>
           <FieldShell muted>

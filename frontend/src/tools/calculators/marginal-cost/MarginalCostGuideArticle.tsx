@@ -14,7 +14,7 @@ export function MarginalCostGuideArticle() {
         Marginal cost measures the additional total cost associated with a
         change in production. Businesses use it to estimate how expensive it is
         to expand (or contract) output over a measured interval. This calculator
-        reports discrete incremental cost — an average over ΔQ — not necessarily
+ reports discrete incremental cost (an average over ΔQ) not necessarily
         the exact continuous derivative at one point.
       </p>
 
@@ -78,7 +78,7 @@ export function MarginalCostGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Average total cost is TC ÷ Q. Marginal cost is ΔTC ÷ ΔQ. Example: ATC
-        might be $50/unit while the next 200 units cost $60 each on average —
+ might be $50/unit while the next 200 units cost $60 each on average; 
         those figures answer different questions.
       </p>
 
@@ -116,7 +116,7 @@ export function MarginalCostGuideArticle() {
         Economies of Scale
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Economies of scale describe declining average cost as volume expands —
+ Economies of scale describe declining average cost as volume expands; 
         from specialization, bulk buying, or spreading fixed costs. Do not
         define economies of scale solely as declining marginal cost.
       </p>
@@ -128,7 +128,7 @@ export function MarginalCostGuideArticle() {
         Diseconomies of Scale
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Diseconomies appear when average costs rise with scale — coordination
+ Diseconomies appear when average costs rise with scale; coordination
         friction, bottlenecks, or logistics strain. Positive MC alone does not
         prove diseconomies of scale.
       </p>
@@ -201,8 +201,8 @@ export function MarginalCostGuideArticle() {
         Marginal Cost in Business Pricing
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Incremental cost is a pricing input — especially for short-run
-        decisions — but demand elasticity, competition, and fixed-cost recovery
+ Incremental cost is a pricing input; especially for short-run
+ decisions, but demand elasticity, competition, and fixed-cost recovery
         still matter. See Optimal Price for elasticity-based markup models.
       </p>
 
@@ -233,7 +233,7 @@ export function MarginalCostGuideArticle() {
         Results are averages over the selected output change. Cost may vary
         within the interval; fixed-cost changes may be embedded in ΔTC; quality
         and mix may differ. The calculator does not determine optimal output or
-        profitability by itself. Educational use only — not personalized
+ profitability by itself. Educational use only; not personalized
         financial advice.
       </p>
 

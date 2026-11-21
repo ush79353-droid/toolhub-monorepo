@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate regular and overtime pay from an hourly-style rate, schedule, and 1.5× multiplier — with real FX. Not a Georgia legal-compliance engine.',
+    'Estimate regular and overtime pay from an hourly-style rate, schedule, and 1.5× multiplier, with real FX. Not a Georgia legal-compliance engine.',
   asideAriaLabel: 'Interactive Georgia Overtime Calculator',
   tocItems: GEORGIA_OVERTIME_TOC_ITEMS,
   GuideArticle: GeorgiaOvertimeGuideArticle,

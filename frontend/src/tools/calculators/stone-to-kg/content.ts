@@ -11,7 +11,7 @@ export const ST_TO_KG_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'intro', label: 'Stone to kg Converter' },
   { id: 'units', label: 'Stone and Kilogram' },
   { id: 'how-to-convert', label: 'How to Convert Stone to kg' },
-  { id: 'example', label: 'Stones to Kilograms Conversion — An Example' },
+  { id: 'example', label: 'Stones to Kilograms Conversion; An Example' },
   { id: 'conversion-table', label: 'Stone to Kilograms Conversion Table' },
   { id: 'related-tools', label: 'Other Weight/Mass Converters' },
   { id: 'st-to-kg-faq', label: 'Frequently Asked Questions' },
@@ -41,7 +41,7 @@ export const ST_TO_KG_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Stone to kg Converter',
     paragraphs: [
       'Convert measurements between stones and kilograms instantly. Use it for body weight conversions, medical and fitness measurements, comparing UK and international weight units, everyday mass calculations, and converting imperial units into metric units.',
-      'Type a value in either field to obtain the corresponding result immediately. Both directions — stone → kilograms and kilograms → stone — are supported.',
+      'Type a value in either field to obtain the corresponding result immediately. Both directions (stone → kilograms and kilograms → stone) are supported.',
     ],
   },
   {
@@ -59,14 +59,14 @@ export const ST_TO_KG_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Stone to kg',
     paragraphs: [
       `Formula: kg = st × ${KG_PER_STONE}. Multiply the number of stones by that factor.`,
-      `Example — convert 15 stone: 15 × ${KG_PER_STONE} = ${formatMass(stoneToKg(15))}. Therefore 15 stone equals approximately 95.25 kilograms.`,
-      `Reverse conversion: st = kg ÷ ${KG_PER_STONE}. Example — 70 ÷ ${KG_PER_STONE} ≈ ${formatMass(kgToStone(70))}, so 70 kg ≈ 11.02 stone.`,
+      `Example; convert 15 stone: 15 × ${KG_PER_STONE} = ${formatMass(stoneToKg(15))}. Therefore 15 stone equals approximately 95.25 kilograms.`,
+      `Reverse conversion: st = kg ÷ ${KG_PER_STONE}. Example; 70 ÷ ${KG_PER_STONE} ≈ ${formatMass(kgToStone(70))}, so 70 kg ≈ 11.02 stone.`,
     ],
     formula: `kg = st × ${KG_PER_STONE}\nst = kg ÷ ${KG_PER_STONE}\n15 × ${KG_PER_STONE} = ${formatMass(stoneToKg(15))}`,
   },
   {
     id: 'example',
-    title: 'Stones to Kilograms Conversion — An Example',
+    title: 'Stones to Kilograms Conversion; An Example',
     paragraphs: [
       '1. Find the Weight in stones field.',
       '2. Enter the weight, for example, 15.',

@@ -14,7 +14,7 @@ import { validateAffo } from './validation';
 function summaryText(result: AffoResult): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
   const lines = [
-    'AFFO Calculator — Omega Calculators',
+    'AFFO Calculator | Omega Calculators',
     `Period: ${result.periodLabel}`,
     `Currency: ${result.currency}`,
     `Net income: ${money(result.netIncome)}`,

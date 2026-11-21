@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate income elasticity of demand (YED) with Standard or Midpoint methods — how quantity demanded responds to changes in consumer income.',
+    'Calculate income elasticity of demand (YED) with Standard or Midpoint methods; how quantity demanded responds to changes in consumer income.',
   asideAriaLabel: 'Interactive Income Elasticity of Demand Calculator',
   tocItems: INCOME_ELASTICITY_OF_DEMAND_TOC_ITEMS,
   GuideArticle: IncomeElasticityOfDemandGuideArticle,

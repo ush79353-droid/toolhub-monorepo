@@ -68,7 +68,7 @@ export function CarLeaseGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Dealer and registration fees are assumed financed into the capitalized cost. Down
-        payment, trade-in, and other reductions are subtracted once when building net cap cost —
+ payment, trade-in, and other reductions are subtracted once when building net cap cost; 
         they are not deducted again from the monthly payment. Sales tax is applied monthly to the
         base payment only; no extra lease penalties are invented.
       </p>

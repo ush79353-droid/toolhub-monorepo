@@ -32,7 +32,7 @@ export const NM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'nm Converter',
     paragraphs: [
       'Convert nanometers (nm) into metric, imperial, and scientific length units such as micrometers, millimeters, meters, inches, feet, and ångströms. Useful for nanotechnology, semiconductor manufacturing, optics, materials science, microscopy, molecular measurements, and research.',
-      'Exact SI definition: 1 nm = 10⁻⁹ m. Edit any field — all values stay linked through meters.',
+      'Exact SI definition: 1 nm = 10⁻⁹ m. Edit any field; all values stay linked through meters.',
     ],
   },
   {
@@ -76,7 +76,7 @@ export const NM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Converting Nanometers to Millimeters',
     paragraphs: [
       'Divide nanometers by 1,000,000.',
-      `Example — 500,000 nm: 500000 ÷ 1000000 = ${formatLength(convertLength(500_000, 'nm', 'mm'))} mm.`,
+      `Example; 500,000 nm: 500000 ÷ 1000000 = ${formatLength(convertLength(500_000, 'nm', 'mm'))} mm.`,
       `Result: 500,000 nm = ${formatLength(convertLength(500_000, 'nm', 'mm'))} mm.`,
     ],
   },

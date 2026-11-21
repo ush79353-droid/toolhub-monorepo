@@ -56,7 +56,7 @@ export function calculateCcToLiter(input: CcToLiterInput): CcToLiterResult {
 
 export function shareResultText(result: CcToLiterResult): string {
   return [
-    'cc to Liter Converter — Omega Calculators',
+    'cc to Liter Converter | Omega Calculators',
     '',
     `${formatVolume(result.cc)} cc = ${formatVolume(result.liters)} L`,
     '',

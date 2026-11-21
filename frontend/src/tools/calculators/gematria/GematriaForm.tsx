@@ -57,7 +57,7 @@ export function GematriaForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Assign numerical values to letters with Simple, English (×6), and Jewish/Hebrew systems.
-        Results are cultural/symbolic mappings — not scientific predictions. Latin and Hebrew scripts
+ Results are cultural/symbolic mappings; not scientific predictions. Latin and Hebrew scripts
         are never silently transliterated.
       </div>
 
@@ -139,7 +139,7 @@ export function GematriaForm({
                 className="text-left text-primary underline-offset-2 hover:underline"
                 onClick={() => onApplyExample(id)}
               >
-                Example {id} — {label}
+ Example {id}; {label}
               </button>
             </li>
           ))}

@@ -182,7 +182,7 @@ export function validatePivotPointInput(
     warningMessage:
       input.method === 'camarilla'
         ? 'Camarilla levels use 1.1× range multipliers. The central pivot shown is (H+L+C)/3 for reference and is not part of the Camarilla R/S formulas.'
-        : 'Pivot levels are technical reference points from the prior period — not guarantees of future support or resistance.',
+        : 'Pivot levels are technical reference points from the prior period; not guarantees of future support or resistance.',
   };
 
   return { isValid: true, errors, result };

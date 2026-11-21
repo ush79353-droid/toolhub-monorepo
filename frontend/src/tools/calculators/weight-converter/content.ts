@@ -61,7 +61,7 @@ export const WEIGHT_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'mass-versus-weight',
     title: 'Mass Versus Weight',
     paragraphs: [
-      'Mass is the quantity of matter and does not change with location. Weight as force depends on local gravity—the same mass weighs slightly differently on Earth than on the Moon. Kitchen and bathroom scales display mass units even when people call the reading “weight.”',
+      'Mass is the quantity of matter and does not change with location. Weight as force depends on local gravity, the same mass weighs slightly differently on Earth than on the Moon. Kitchen and bathroom scales display mass units even when people call the reading “weight.”',
     ],
   },
   {
@@ -122,7 +122,7 @@ export const WEIGHT_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'metric-vs-imperial',
     title: 'Metric vs Imperial Weight Units',
     paragraphs: [
-      'Metric mass is decimal: 1,000 g = 1 kg and 1,000 kg = 1 metric tonne. Avoirdupois relationships are fixed but not decimal: 16 oz = 1 lb, 14 lb = 1 stone, 2,000 lb = 1 US short ton, and 2,240 lb = 1 Imperial long ton. Never treat “ton” as ambiguous—metric tonne, short ton, and long ton differ.',
+      'Metric mass is decimal: 1,000 g = 1 kg and 1,000 kg = 1 metric tonne. Avoirdupois relationships are fixed but not decimal: 16 oz = 1 lb, 14 lb = 1 stone, 2,000 lb = 1 US short ton, and 2,240 lb = 1 Imperial long ton. Never treat “ton” as ambiguous, metric tonne, short ton, and long ton differ.',
     ],
   },
   {
@@ -150,7 +150,7 @@ export const WEIGHT_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Weight Converter',
     paragraphs: [
-      'Open a unit group, enter a mass in any field, and optionally change that field’s unit—the physical mass stays the same when you switch units. Expand More conversion options for grains, carats, tons, and atomic mass units. Copy or reset when finished.',
+      'Open a unit group, enter a mass in any field, and optionally change that field’s unit, the physical mass stays the same when you switch units. Expand More conversion options for grains, carats, tons, and atomic mass units. Copy or reset when finished.',
     ],
   },
   {

@@ -47,7 +47,7 @@ export const EBIT_FAQS: readonly FAQItem[] = [
   {
     question: 'Can EBIT be negative?',
     answer:
-      'Yes. When operating expenses exceed revenue, EBIT is negative — a valid operating loss at the EBIT level.',
+      'Yes. When operating expenses exceed revenue, EBIT is negative: a valid operating loss at the EBIT level.',
   },
   {
     question: 'Can EBIT equal zero?',

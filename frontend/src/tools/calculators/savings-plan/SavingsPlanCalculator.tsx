@@ -100,12 +100,12 @@ export function SavingsPlanCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Plan: ${input.frequency}`,
         `Periods: ${result.periods} ${result.periodUnitPlural}`,
         `Starting deposit: ${symbol}${result.formattedStartingDeposit} ${result.currency}`,
         `Final balance: ${symbol}${result.formattedFinalBalance} ${result.currency}`,
-        'Principal only — no interest.',
+        'Principal only; no interest.',
         currencyNote,
       ].join('\n')
     : '';

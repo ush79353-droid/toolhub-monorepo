@@ -14,7 +14,7 @@ export function PhillipsCurveGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The Phillips Curve is a family of ideas connecting inflation (or wage
         growth) to labor-market slack, expectations, and sometimes supply shocks.
-        Policymakers and students use it to organize short-run trade-offs — and to
+ Policymakers and students use it to organize short-run trade-offs, and to
         remember why those trade-offs can vanish once expectations adjust. This
         calculator supports three educational specifications: a simplified
         Traditional wage-change model, an expectations-augmented New Classical
@@ -39,8 +39,8 @@ export function PhillipsCurveGuideArticle() {
         A. W. Phillips (1958) documented an inverse association between
         unemployment and money-wage growth in U.K. data. Later writers restated
         the idea in price-inflation terms and asked whether policymakers could
-        permanently buy lower unemployment with higher inflation. Experience —
-        especially stagflation — and theory emphasizing expectations showed that a
+ permanently buy lower unemployment with higher inflation. Experience; 
+ especially stagflation, and theory emphasizing expectations showed that a
         stable, exploitable long-run trade-off is not a reliable feature of modern
         economies. Short-run relationships can still appear while expectations,
         shocks, and institutions evolve.
@@ -56,7 +56,7 @@ export function PhillipsCurveGuideArticle() {
         Traditional presentations often relate wage growth to the unemployment
         level (w = a − bu): tighter labor markets raise bargaining power and wage
         pressure. Demand for labor, hours, and unemployment all matter. A change
-        relationship is different from a level relationship — Δu is not the same
+ relationship is different from a level relationship; Δu is not the same
         object as u. This calculator&apos;s Traditional mode uses a simplified
         wage-change specification for teaching clarity; it is not the only
         historical form.
@@ -94,7 +94,7 @@ export function PhillipsCurveGuideArticle() {
         6%, uₙ = 5%, α = 0.5, s = 0 → π = 2.5%. Unemployment above natural is
         associated with inflation below expectations. Raising πᵉ shifts the
         short-run curve. This simplified equation does not capture every
-        rational-expectations DSGE feature — it teaches the expectations-augmented
+ rational-expectations DSGE feature; it teaches the expectations-augmented
         logic.
       </p>
 
@@ -166,7 +166,7 @@ export function PhillipsCurveGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Holding expectations fixed, a short-run curve can look downward-sloping.
         When expectations catch up, standard models place unemployment at its
-        natural rate and make the long-run curve vertical — inflation can settle
+ natural rate and make the long-run curve vertical; inflation can settle
         wherever policy anchors it. Textbook diagrams simplify a richer reality.
       </p>
 
@@ -180,7 +180,7 @@ export function PhillipsCurveGuideArticle() {
         NAIRU is an empirical unemployment rate associated with stable inflation
         in a chosen regression. It is related to, but not identical with, the
         theoretical natural rate. Estimates drift with demographics, institutions,
-        and measurement — they cannot be known precisely.
+ and measurement; they cannot be known precisely.
       </p>
 
       <h2

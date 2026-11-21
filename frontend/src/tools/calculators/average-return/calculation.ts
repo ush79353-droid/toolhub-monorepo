@@ -325,7 +325,7 @@ export function shareCashFlowText(
   path = '/tools/average-return-calculator',
 ): string {
   return [
-    'Average Return Calculator — Cash Flow (XIRR) — Omega Calculators',
+    'Average Return Calculator: Cash Flow (XIRR) | Omega Calculators',
     '',
     `Starting balance: ${result.formattedStartingBalance} ${result.currency}`,
     `Ending balance: ${result.formattedEndingBalance} ${result.currency}`,
@@ -345,7 +345,7 @@ export function shareAverageText(
   path = '/tools/average-return-calculator',
 ): string {
   return [
-    'Average Return Calculator — Average & Cumulative — Omega Calculators',
+    'Average Return Calculator: Average & Cumulative | Omega Calculators',
     '',
     `Valid periods: ${result.validEntryCount}`,
     `Arithmetic average of annualized returns: ${result.formattedAverageAnnualizedReturn}%`,

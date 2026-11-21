@@ -9,8 +9,8 @@ export function BreakEvenGuideArticle() {
         What Is Break-even?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Break-even analysis finds how many units you must sell—and the revenue that volume
-        produces—before fixed costs are covered by contribution margin. It is a planning check, not
+ Break-even analysis finds how many units you must sell, and the revenue that volume
+ produces, before fixed costs are covered by contribution margin. It is a planning check, not
         a full profit-and-loss statement.
       </p>
 

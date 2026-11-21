@@ -155,5 +155,5 @@ export function explainCobbDouglas(
   labor: number,
   capital: number
 ): string {
-  return `Estimated total production is ${formatOutput(totalProduction)} output units under Y = A L^α K^β with A = ${formatElasticity(a)}, L = ${formatElasticity(labor)}, and K = ${formatElasticity(capital)}. Units follow the model's calibrated productivity coefficient — not currency by default.`;
+  return `Estimated total production is ${formatOutput(totalProduction)} output units under Y = A L^α K^β with A = ${formatElasticity(a)}, L = ${formatElasticity(labor)}, and K = ${formatElasticity(capital)}. Units follow the model's calibrated productivity coefficient; not currency by default.`;
 }

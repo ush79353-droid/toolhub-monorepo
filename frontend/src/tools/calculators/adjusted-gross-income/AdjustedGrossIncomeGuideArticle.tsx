@@ -15,7 +15,7 @@ export function AdjustedGrossIncomeGuideArticle() {
         adjustments listed on Schedule 1 (Form 1040). AGI is figured before the
         standard or itemized deduction. Many credits and phaseouts use AGI (or a
         modified AGI). This tool is an educational simplified Schedule 1–style AGI
-        estimate for Tax Year 2025 — not a complete Form 1040 or IRS filing.
+ estimate for Tax Year 2025; not a complete Form 1040 or IRS filing.
       </p>
 
       <h2
@@ -62,28 +62,28 @@ export function AdjustedGrossIncomeGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          Educator expenses — up to $300 (IRS Schedule 1 / educator expense rules).
+ Educator expenses: up to $300 (IRS Schedule 1 / educator expense rules).
         </li>
         <li>
-          HSA deduction — up to $4,300 self-only or $8,550 family, plus $1,000 if age
+ HSA deduction: up to $4,300 self-only or $8,550 family, plus $1,000 if age
           55+ (Pub. 969 / Form 8889).
         </li>
         <li>
-          Traditional IRA — up to $7,000 ($8,000 if age 50+), with workplace-plan MAGI
+ Traditional IRA: up to $7,000 ($8,000 if age 50+), with workplace-plan MAGI
           phaseouts (Pub. 590-A).
         </li>
         <li>
-          Student loan interest — up to $2,500; MAGI phaseout $85,000–$100,000 (single /
+ Student loan interest: up to $2,500; MAGI phaseout $85,000–$100,000 (single /
           HoH / QSS) or $170,000–$200,000 (joint); not allowed if married filing
           separately (Pub. 970).
         </li>
         <li>
-          Self-employed health insurance — only when marked eligible; capped by net
+ Self-employed health insurance: only when marked eligible; capped by net
           business profit (Schedule 1). Ordinary employee premiums are not deducted
           here.
         </li>
         <li>
-          Deductible half of self-employment tax — estimated from business income when
+ Deductible half of self-employment tax: estimated from business income when
           “show more deductions” is used (Schedule SE simplified).
         </li>
       </ul>

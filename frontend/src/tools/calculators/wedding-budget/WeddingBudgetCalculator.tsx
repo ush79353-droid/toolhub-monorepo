@@ -79,7 +79,7 @@ export function WeddingBudgetCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Guests: ${input.guestCount}`,
         `Planned budget: ${input.plannedBudget.amount} ${input.plannedBudget.currency}`,
         `Total wedding cost: ${result.formattedTotalWeddingCost}`,

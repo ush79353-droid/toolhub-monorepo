@@ -4,7 +4,7 @@ import { NewJerseySalesTaxGuideArticle } from './NewJerseySalesTaxGuideArticle';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate New Jersey sales tax on a purchase using the statewide 6.625% rate and a valid NJ ZIP code — fixed USD, with clear limits on UEZ and product exemptions.',
+    'Estimate New Jersey sales tax on a purchase using the statewide 6.625% rate and a valid NJ ZIP code; fixed USD, with clear limits on UEZ and product exemptions.',
   asideAriaLabel: 'Sales Tax Calculator New Jersey guide',
   tocItems: NJ_SALES_TAX_TOC_ITEMS,
   GuideArticle: NewJerseySalesTaxGuideArticle,

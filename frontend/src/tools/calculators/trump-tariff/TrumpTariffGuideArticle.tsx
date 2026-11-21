@@ -23,7 +23,7 @@ export function TrumpTariffGuideArticle() {
         not replace a licensed customs broker or trade counsel.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Currency selection here is denomination only — amounts are treated as
+ Currency selection here is denomination only; amounts are treated as
         already denominated in the selected currency. For U.S. entry estimates,
         many users work in USD. Results never invent “official” country-wide
         rates; if you have not verified a rate against HTSUS and current
@@ -39,9 +39,9 @@ export function TrumpTariffGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Import tariffs are duties assessed on merchandise when it enters a
         customs territory. In everyday language, “Trump tariffs” often refers
-        to trade actions associated with the Trump administrations — for
+ to trade actions associated with the Trump administrations; for
         example, Section 301 actions affecting certain goods from China, and
-        Section 232 measures affecting certain steel and aluminum products —
+ Section 232 measures affecting certain steel and aluminum products; 
         alongside ordinary customs duties already listed in the Harmonized
         Tariff Schedule of the United States (HTSUS). The label is informal and
         imprecise: each action has its own legal authority, product coverage,
@@ -66,8 +66,8 @@ export function TrumpTariffGuideArticle() {
         Imported goods are declared to customs with a classification, origin,
         and valuation. The importer of record (or responsible party under the
         applicable rules) files entry documentation and is generally liable for
-        duties, taxes, and fees that CBP assesses. Customs value — often based
-        on transaction value with adjustments under U.S. law — is the usual base
+ duties, taxes, and fees that CBP assesses. Customs value; often based
+ on transaction value with adjustments under U.S. law; is the usual base
         for ad valorem duties. Specific duties charge a fixed amount per unit;
         compound duties combine percentage and specific elements. After duties
         are determined, businesses may adjust wholesale and retail prices, but
@@ -125,7 +125,7 @@ export function TrumpTariffGuideArticle() {
         Suppose a U.S. importer buys 10 units at an $800 customs value each,
         with a 5% base duty and a 20% additional duty assumed additive on the
         same base, plus $250 shipping and $50 insurance. These rates are
-        hypothetical for teaching — not an official country or product rate.
+ hypothetical for teaching; not an official country or product rate.
       </p>
       <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>Total customs value: 800 × 10 = $8,000.</li>
@@ -174,7 +174,7 @@ export function TrumpTariffGuideArticle() {
         programs, exclusions, and the date of entry. Two products from the same
         country can face entirely different ordinary and additional duties. A
         category label such as “electronics” or “apparel” is only a navigation
-        aid in this calculator — it does not legally fix a rate.
+ aid in this calculator; it does not legally fix a rate.
       </p>
 
       <h2
@@ -189,7 +189,7 @@ export function TrumpTariffGuideArticle() {
         national subdivisions. Classification drives which ordinary rates and
         many additional measures apply. Misclassification can lead to incorrect
         duty payments and compliance risk. Optional HTSUS entry in this tool
-        checks format only — a valid-looking code is not proof of the correct
+ checks format only: a valid-looking code is not proof of the correct
         line. There is no live scraping or fabricated official lookup here;
         enter rates you have verified from USITC, CBP, USTR, or counsel.
       </p>
@@ -202,8 +202,8 @@ export function TrumpTariffGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Ordinary customs duties appear in the HTSUS columns for the
-        classification. Additional trade measures — such as certain Section 301
-        or Section 232 actions — may impose further duties on listed products
+ classification. Additional trade measures; such as certain Section 301
+ or Section 232 actions; may impose further duties on listed products
         from specified origins, subject to exclusions and later changes. Whether
         measures stack, how valuation interacts, and whether specific or
         compound duties apply are legal questions. This calculator adds two
@@ -312,7 +312,7 @@ export function TrumpTariffGuideArticle() {
         countervailing duties, quota mechanisms, specific/compound rates, fees,
         and rapidly changing legal status. Calculators cannot replace entry
         review. Prefer primary sources: CBP, USITC HTSUS, USTR, Federal Register,
-        and Congressional Research Service summaries for context — always with
+ and Congressional Research Service summaries for context; always with
         dates.
       </p>
 

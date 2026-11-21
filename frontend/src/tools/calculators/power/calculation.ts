@@ -43,7 +43,7 @@ export function shareResultText(watts: number, sourceUnit: PowerUnit): string {
     (u) => `${formatPower(a[u])} ${POWER_UNIT_SYMBOLS[u]}`,
   );
   return [
-    'Power Converter — Omega Calculators',
+    'Power Converter | Omega Calculators',
     '',
     'Input:',
     `${formatPower(a[sourceUnit])} ${POWER_UNIT_SYMBOLS[sourceUnit]}`,

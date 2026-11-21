@@ -184,7 +184,7 @@ export function validateMoneyMultiplierInput(
       input.currency
     ),
     explanation:
-      'Simplified aggregates: M ≈ currency + checkable deposits; B = currency + bank reserves. The simple deposit multiplier 1/r is a textbook idealization and is not interchangeable with m = M/B when the public holds currency. Currency denomination labels amounts only — it does not convert values.',
+      'Simplified aggregates: M ≈ currency + checkable deposits; B = currency + bank reserves. The simple deposit multiplier 1/r is a textbook idealization and is not interchangeable with m = M/B when the public holds currency. Currency denomination labels amounts only; it does not convert values.',
     formulaBreakdown:
       moneyMultiplier == null
         ? 'm = M / B is undefined when B = 0'

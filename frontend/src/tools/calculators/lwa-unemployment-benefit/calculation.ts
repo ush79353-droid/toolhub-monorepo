@@ -14,9 +14,9 @@ export function buildLwaUnemploymentNoticeSummary(title: string): string {
     title.trim() ||
     'Unemployment Benefit Calculator - Lost Wages Assistance (LWA)';
   return [
-    `${toolTitle} — Omega Calculators`,
-    'Historical notice only — Lost Wages Assistance (LWA) is not available for current claims (2026).',
-    'LWA was a temporary 2020 FEMA Other Needs Assistance program authorized by presidential memorandum under the Stafford Act — not an enacted “LWA Act.”',
+    `${toolTitle} | Omega Calculators`,
+    'Historical notice only; Lost Wages Assistance (LWA) is not available for current claims (2026).',
+    'LWA was a temporary 2020 FEMA Other Needs Assistance program authorized by presidential memorandum under the Stafford Act; not an enacted “LWA Act.”',
     'It followed CARES Act Federal Pandemic Unemployment Compensation as a short-term supplemental bridge. FEMA guidance: lost-wages supplemental payments ended December 27, 2020.',
     'This page does not estimate weekly benefits, eligibility, or application deadlines.',
     `For monthly loan installment and total-interest estimates, use the Loan Calculator: ${LOAN_CALCULATOR_HREF}`,

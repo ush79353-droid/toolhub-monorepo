@@ -28,7 +28,7 @@ export const LOT_SIZE_TO_SQFT_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Lot size is the area of a piece of land. For a rectangular lot, multiply length by width after both sides use compatible units.',
       'Example in feet: Length = 100 ft, Width = 50 ft → Area = 100 × 50 = 5,000 ft². If sides use different units, convert them first (this calculator converts both sides to meters internally).',
-      'Irregular plots need additional measurement methods — surveying, geometric subdivision, or GIS — because a single length × width product assumes a rectangle.',
+      'Irregular plots need additional measurement methods (surveying, geometric subdivision, or GIS) because a single length × width product assumes a rectangle.',
     ],
     formula: 'Area = Length × Width',
   },

@@ -73,7 +73,7 @@ export function interpretEbit(ebit: number, revenue: number): string {
     return 'EBIT could not be determined from the inputs.';
   }
   if (ebit > 0) {
-    return `Positive EBIT of ${formatEbitMoneyPlain(ebit)} means revenue exceeds the included operating expenses for the period. This is earnings before interest and income taxes — not automatically profit after all expenses.`;
+    return `Positive EBIT of ${formatEbitMoneyPlain(ebit)} means revenue exceeds the included operating expenses for the period. This is earnings before interest and income taxes; not automatically profit after all expenses.`;
   }
   if (ebit === 0) {
     return 'EBIT is zero: the included operating expenses equal revenue. The business breaks even at the EBIT level under these assumptions.';

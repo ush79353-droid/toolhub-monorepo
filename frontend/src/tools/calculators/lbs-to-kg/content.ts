@@ -33,8 +33,8 @@ export const LBS_TO_KG_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert lbs to kg',
     paragraphs: [
       `One international avoirdupois pound equals exactly ${KILOGRAMS_PER_POUND} kilograms.`,
-      `Multiply pounds by ${KILOGRAMS_PER_POUND}. Example — convert 25 lb: 25 × ${KILOGRAMS_PER_POUND} = ${formatMass(poundsToKilograms(25))}. Therefore 25 lb = ${formatMass(poundsToKilograms(25))} kg.`,
-      `For the reverse conversion, divide kilograms by ${KILOGRAMS_PER_POUND}. Example — convert 50 kg: 50 ÷ ${KILOGRAMS_PER_POUND} ≈ ${formatMass(kilogramsToPounds(50))} lb.`,
+      `Multiply pounds by ${KILOGRAMS_PER_POUND}. Example; convert 25 lb: 25 × ${KILOGRAMS_PER_POUND} = ${formatMass(poundsToKilograms(25))}. Therefore 25 lb = ${formatMass(poundsToKilograms(25))} kg.`,
+      `For the reverse conversion, divide kilograms by ${KILOGRAMS_PER_POUND}. Example; convert 50 kg: 50 ÷ ${KILOGRAMS_PER_POUND} ≈ ${formatMass(kilogramsToPounds(50))} lb.`,
     ],
     formula: `kg = lb × ${KILOGRAMS_PER_POUND} · lb = kg ÷ ${KILOGRAMS_PER_POUND}`,
   },

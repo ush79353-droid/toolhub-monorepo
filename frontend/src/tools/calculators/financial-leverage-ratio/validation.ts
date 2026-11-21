@@ -101,7 +101,7 @@ export function validateFinancialLeverageRatioInput(
 
   let status: FinancialLeverageStatus = 'valid';
   let warningMessage: string | null =
-    'Financial leverage here means the equity multiplier: Total Assets ÷ Total Equity — not debt-to-equity. Amounts share one currency label (no FX conversion).';
+    'Financial leverage here means the equity multiplier: Total Assets ÷ Total Equity; not debt-to-equity. Amounts share one currency label (no FX conversion).';
   let leverage: number | null = null;
   let isValid = true;
 
@@ -123,11 +123,11 @@ export function validateFinancialLeverageRatioInput(
     } else if (totalLiabilities !== null && totalLiabilities < 0) {
       status = 'inconsistentBalanceSheet';
       warningMessage =
-        'Calculated liabilities are negative (equity exceeds assets). That is inconsistent with a standard balance sheet where liabilities are nonnegative — review the inputs.';
+        'Calculated liabilities are negative (equity exceeds assets). That is inconsistent with a standard balance sheet where liabilities are nonnegative; review the inputs.';
     } else if (totalAssets === 0 && equity.value > 0) {
       status = 'inconsistentBalanceSheet';
       warningMessage =
-        'Zero assets with positive equity is inconsistent with the ordinary balance-sheet identity for nonnegative liabilities — review the inputs.';
+        'Zero assets with positive equity is inconsistent with the ordinary balance-sheet identity for nonnegative liabilities; review the inputs.';
     } else if (leverage > 0 && leverage < 1) {
       status = 'inconsistentBalanceSheet';
       warningMessage =

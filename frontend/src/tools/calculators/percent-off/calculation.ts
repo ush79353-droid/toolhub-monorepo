@@ -333,7 +333,7 @@ export function calculatePercentOffFromInput(
       : `With a ${formatPercent(discountPercent)} discount on an original price of ${money(rounded.originalPrice, currency)}, you save ${money(rounded.totalSavings, currency)} and pay ${money(rounded.discountedPrice, currency)} before any applicable tax.`;
 
   const explanation =
-    'Sequential percent-off discounts multiply remaining factors — they do not add. Optional sales tax is applied to the discounted price by default; tax rules vary by jurisdiction.';
+    'Sequential percent-off discounts multiply remaining factors; they do not add. Optional sales tax is applied to the discounted price by default; tax rules vary by jurisdiction.';
 
   return {
     currency,

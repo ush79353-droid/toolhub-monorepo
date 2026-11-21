@@ -160,7 +160,7 @@ export function MgToMlForm({
       <FieldShell
         label="Conversion mode"
         htmlFor="mg-ml-mode"
-        tip="Density converts substance mass and volume. Medication concentration converts active ingredient mass using a labeled mg/mL strength—not density."
+        tip="Density converts substance mass and volume. Medication concentration converts active ingredient mass using a labeled mg/mL strength, not density."
       >
         <select
           id="mg-ml-mode"

@@ -73,7 +73,7 @@ export function SalesTaxCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Sales tax: ${result.formattedSalesTaxPercent}%`,
         `Net price: ${getCurrencySymbol(result.netCurrency)}${result.formattedNetPrice}`,
         `Gross price: ${getCurrencySymbol(result.grossCurrency)}${result.formattedGrossPrice}`,

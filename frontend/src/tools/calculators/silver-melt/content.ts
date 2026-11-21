@@ -30,7 +30,7 @@ export const SILVER_MELT_FAQS: readonly FAQItem[] = [
       'It estimates a second metal (for example copper) separately, then adds that to the silver melt value. Combined totals are raw metal estimates, not jewelry resale prices.',
   },
   {
-    question: 'Troy ounce vs ounce — which does this use?',
+    question: 'Troy ounce vs ounce; which does this use?',
     answer:
       'Both are available. Troy ounces (oz t ≈ 31.1034768 g) are the precious-metal standard. Standard ounces (oz ≈ 28.349523125 g) are avoirdupois. Do not mix them when entering price and weight.',
   },

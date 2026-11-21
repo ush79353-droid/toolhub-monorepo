@@ -102,7 +102,7 @@ export function applyCaliforniaSalesTaxRate(
     formattedSalesTax,
     formattedTotalAmount,
     summaryText: [
-      'California Sales Tax Calculator — Omega Calculators',
+      'California Sales Tax Calculator | Omega Calculators',
       `Purchase amount: $${formattedPurchaseAmount}`,
       `Location: ${meta.streetAddress}, ${meta.city}, CA ${meta.zipCode}`,
       `Jurisdiction: ${meta.jurisdiction}${meta.county ? ` (${meta.county} County)` : ''}`,
@@ -134,7 +134,7 @@ export function buildCaliforniaUnavailableResult(
     candidates,
     formattedPurchaseAmount,
     summaryText: [
-      'California Sales Tax Calculator — Omega Calculators',
+      'California Sales Tax Calculator | Omega Calculators',
       `Purchase amount: $${formattedPurchaseAmount}`,
       `Location: ${streetAddress}, ${city}, CA ${zipCode}`,
       'Combined sales tax rate: unavailable',

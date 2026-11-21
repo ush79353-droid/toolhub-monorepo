@@ -189,7 +189,7 @@ export function calculateTaxEquivalentYieldFromInput(
     ];
     interpretation = `Matching a ${formatPercentDisplay(y)} tax-exempt yield to a ${formatPercentDisplay(tey)} taxable equivalent yield implies a marginal tax rate of approximately ${formatPercentDisplay(t)}.`;
     explanation =
-      'The implied rate is a mathematical breakeven under the standard TEY formula — not a forecast of your actual tax liability or filing status.';
+      'The implied rate is a mathematical breakeven under the standard TEY formula; not a forecast of your actual tax liability or filing status.';
   }
 
   let comparison: TaxEquivalentYieldResult['comparison'] = null;
@@ -218,7 +218,7 @@ export function calculateTaxEquivalentYieldFromInput(
             differencePp === 0
               ? 'Under the specified assumptions, the tax-exempt yield matches the after-tax taxable yield. Default risk, liquidity, duration, call risk, fees, and other tax considerations still affect the decision.'
               : differencePp > 0
-                ? `Under the specified assumptions, the tax-exempt investment offers an after-tax yield ${Math.abs(differencePp).toLocaleString('en-US', { maximumFractionDigits: 2 })} percentage points higher than the taxable alternative. That does not automatically make it the better investment — credit, liquidity, duration, call risk, fees, and tax nuances also matter.`
+                ? `Under the specified assumptions, the tax-exempt investment offers an after-tax yield ${Math.abs(differencePp).toLocaleString('en-US', { maximumFractionDigits: 2 })} percentage points higher than the taxable alternative. That does not automatically make it the better investment; credit, liquidity, duration, call risk, fees, and tax nuances also matter.`
                 : `Under the specified assumptions, the taxable alternative's after-tax yield is ${Math.abs(differencePp).toLocaleString('en-US', { maximumFractionDigits: 2 })} percentage points higher than the tax-exempt yield. Still weigh credit risk, liquidity, duration, fees, and applicable taxes before deciding.`,
         };
       }

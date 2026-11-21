@@ -16,7 +16,7 @@ export function TaylorRuleGuideArticle() {
         gap into a recommended nominal policy interest rate, given a neutral
         real rate and response coefficients. This calculator computes the
         inflation gap, the output gap, the classic 0.5/0.5 prescription, and
-        optional custom coefficients. Results are educational benchmarks — not
+ optional custom coefficients. Results are educational benchmarks; not
         official Federal Reserve decisions or live forecasts. GDP currency
         selection is denomination only (not FX conversion).
       </p>
@@ -65,7 +65,7 @@ export function TaylorRuleGuideArticle() {
         Higher inflation or a positive output gap raises the recommended rate;
         lower inflation or slack lowers it. The direct π term plus a×(π − π*)
         means that, under the standard coefficients, the nominal rate rises more
-        than one-for-one with inflation when other terms are held fixed —
+ than one-for-one with inflation when other terms are held fixed; 
         consistent with the Taylor principle.
       </p>
 
@@ -106,7 +106,7 @@ export function TaylorRuleGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The output gap compares actual GDP with potential GDP. Positive gaps
         suggest above-normal utilization; negative gaps suggest slack. Use
-        consistent currency, price basis, and period — ideally real GDP. See
+ consistent currency, price basis, and period; ideally real GDP. See
         also the{' '}
         <Link
           href="/tools/gdp-gap-calculator"
@@ -191,7 +191,7 @@ export function TaylorRuleGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         It helps students, analysts, and policy discussants structure debates
-        about stance — provided everyone treats inputs as assumptions and the
+ about stance; provided everyone treats inputs as assumptions and the
         output as a guideline, not a crystal ball.
       </p>
 

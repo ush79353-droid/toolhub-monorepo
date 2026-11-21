@@ -57,7 +57,7 @@ export function ExitRateCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Number of pageviews: ${input.pageviews}`,
         `Number of exits: ${input.exits}`,
         `Exit rate: ${result.formattedRate}%`,

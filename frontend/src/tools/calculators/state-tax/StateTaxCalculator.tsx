@@ -36,7 +36,7 @@ export function StateTaxCalculator({
   const dirty = !inputsEqual(input, baseline);
 
   const summary = [
-    `${metadata.title} — Omega Calculators`,
+    `${metadata.title} | Omega Calculators`,
     `Selected state: ${validation.destination?.state?.name ?? input.stateCode}`,
     validation.destination?.available && validation.destination.href
       ? `Destination: ${validation.destination.href}`
@@ -80,7 +80,7 @@ export function StateTaxCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            State tax navigator — links only to verified live state calculators.
+ State tax navigator; links only to verified live state calculators.
           </p>
         </div>
         {headerActions ? (

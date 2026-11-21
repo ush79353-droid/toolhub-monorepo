@@ -35,7 +35,7 @@ export const KPA_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the kPa to psi Conversion Tool',
     paragraphs: [
-      'Convert pressure between kilopascals and pounds per square inch instantly. Both directions update in real time — no separate Calculate button is required.',
+      'Convert pressure between kilopascals and pounds per square inch instantly. Both directions update in real time; no separate Calculate button is required.',
       '1. Enter the pressure in kilopascals.',
       '2. The calculator immediately converts the value to psi.',
       '3. To perform the reverse conversion, enter a value in the psi field.',
@@ -57,8 +57,8 @@ export const KPA_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'conversion',
     title: 'kPa to psi Pressure Conversion',
     paragraphs: [
-      `Multiply kilopascals by approximately ${formatPressure(PSI_PER_KPA)} to obtain psi. Example — convert 40 kPa: 40 × ${formatPressure(PSI_PER_KPA)} ≈ ${formatPressure(kPaToPsi(40))}. Therefore 40 kPa ≈ ${formatPressure(kPaToPsi(40))} psi.`,
-      `For the reverse conversion, multiply psi by approximately ${formatPressure(KPA_PER_PSI)}. Example — convert 15 psi: 15 × ${formatPressure(KPA_PER_PSI)} ≈ ${formatPressure(psiToKPa(15))}. Therefore 15 psi ≈ ${formatPressure(psiToKPa(15))} kPa.`,
+      `Multiply kilopascals by approximately ${formatPressure(PSI_PER_KPA)} to obtain psi. Example; convert 40 kPa: 40 × ${formatPressure(PSI_PER_KPA)} ≈ ${formatPressure(kPaToPsi(40))}. Therefore 40 kPa ≈ ${formatPressure(kPaToPsi(40))} psi.`,
+      `For the reverse conversion, multiply psi by approximately ${formatPressure(KPA_PER_PSI)}. Example; convert 15 psi: 15 × ${formatPressure(KPA_PER_PSI)} ≈ ${formatPressure(psiToKPa(15))}. Therefore 15 psi ≈ ${formatPressure(psiToKPa(15))} kPa.`,
     ],
     formula: `psi = kPa × ${formatPressure(PSI_PER_KPA)} · kPa = psi × ${formatPressure(KPA_PER_PSI)}`,
   },

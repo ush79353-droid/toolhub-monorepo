@@ -98,7 +98,7 @@ export function FinanceCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Time value of money — solve for FV, PMT, I/Y, N, or PV
+ Time value of money; solve for FV, PMT, I/Y, N, or PV
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}

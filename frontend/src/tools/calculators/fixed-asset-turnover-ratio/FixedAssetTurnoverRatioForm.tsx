@@ -155,7 +155,7 @@ export function FixedAssetTurnoverRatioForm({
             Starting fixed assets
             <InfoTooltip
               label="Starting fixed assets"
-              text="Net book value of fixed assets (PP&E) at the beginning of the revenue period — buildings, machinery, equipment, vehicles, and similar assets after accumulated depreciation."
+              text="Net book value of fixed assets (PP&E) at the beginning of the revenue period; buildings, machinery, equipment, vehicles, and similar assets after accumulated depreciation."
             />
           </label>
           <FieldShell error={errors.startingFixedAssets}>
@@ -246,7 +246,7 @@ export function FixedAssetTurnoverRatioForm({
             Revenue
             <InfoTooltip
               label="Revenue"
-              text="Net sales or operating revenue for the same period as the fixed asset balances — not net income, gross profit, or cash flow."
+              text="Net sales or operating revenue for the same period as the fixed asset balances; not net income, gross profit, or cash flow."
             />
           </label>
           <FieldShell error={errors.revenue}>
@@ -274,7 +274,7 @@ export function FixedAssetTurnoverRatioForm({
             Fixed asset turnover (FAT)
             <InfoTooltip
               label="Fixed asset turnover (FAT)"
-              text="Revenue ÷ Average Fixed Assets. Dimensionless multiplier — no currency or percent symbol. Undefined when average fixed assets are zero."
+              text="Revenue ÷ Average Fixed Assets. Dimensionless multiplier; no currency or percent symbol. Undefined when average fixed assets are zero."
             />
           </label>
           <FieldShell muted>

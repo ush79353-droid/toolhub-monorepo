@@ -11,8 +11,8 @@ export function MoneyPerHourGuideArticle() {
         What Is a Money per Hour Calculator?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        A money per hour calculator turns one known pay period — annual salary,
-        monthly, biweekly, weekly, or daily wage — into an equivalent hourly rate
+ A money per hour calculator turns one known pay period; annual salary,
+ monthly, biweekly, weekly, or daily wage; into an equivalent hourly rate
         using your hours per week. Taxes, overtime, bonuses, and unpaid leave are
         not included.
       </p>

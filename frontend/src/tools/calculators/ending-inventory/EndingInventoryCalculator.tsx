@@ -89,7 +89,7 @@ export function EndingInventoryCalculator({
     (result.status === 'valid' || result.status === 'zeroAverageInventory');
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `COGS known: ${input.cogsKnown === 'yes' ? 'Yes' : 'No'}`,
         `Starting inventory: ${symbol}${result.formattedStartingInventory}`,
         `Net purchases: ${symbol}${result.formattedNetPurchases}`,

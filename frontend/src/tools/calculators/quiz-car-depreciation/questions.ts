@@ -18,7 +18,7 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
     ],
     correctAnswer: 'C',
     explanation:
-      'A common illustrative rule of thumb is an immediate ~9% drop once a new car becomes a used car. Exact first-day loss varies by brand, demand, and market—this quiz uses 9% as the model assumption among the given choices.',
+      'A common illustrative rule of thumb is an immediate ~9% drop once a new car becomes a used car. Exact first-day loss varies by brand, demand, and market, this quiz uses 9% as the model assumption among the given choices.',
   },
   {
     id: 'q2',
@@ -59,7 +59,7 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
     ],
     correctAnswer: 'C',
     explanation:
-      'Depreciation—the loss of market value over time—is usually the largest single piece of total ownership cost for a new or late-model car, often outweighing fuel or routine maintenance.',
+      'Depreciation, the loss of market value over time, is usually the largest single piece of total ownership cost for a new or late-model car, often outweighing fuel or routine maintenance.',
   },
   {
     id: 'q5',

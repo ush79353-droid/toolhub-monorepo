@@ -75,7 +75,7 @@ export function WaccForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Equity and debt share one currency and scale (denomination only — no
+ Equity and debt share one currency and scale (denomination only; no
         FX).
       </p>
       <p className="text-xs">

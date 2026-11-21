@@ -9,7 +9,7 @@ import {
 
 export const IN2_FT2_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'intro', label: 'Square Inch to Square Foot Converter' },
-  { id: 'definitions', label: 'Square Inches and Square Feet — Imperial Units of Area' },
+  { id: 'definitions', label: 'Square Inches and Square Feet; Imperial Units of Area' },
   { id: 'how-to-in2', label: 'How to Convert Square Inches to Square Feet' },
   { id: 'how-to-ft2', label: 'How to Convert Square Feet to Square Inches' },
   { id: 'how-to-use', label: 'How to Use the Square Inch to Square Foot Converter' },
@@ -42,12 +42,12 @@ export const IN2_FT2_GUIDE_SECTIONS: readonly GuideSection[] = [
   },
   {
     id: 'definitions',
-    title: 'Square Inches and Square Feet — Imperial Units of Area',
+    title: 'Square Inches and Square Feet; Imperial Units of Area',
     paragraphs: [
       'Square inches and square feet are common area units in the US customary and imperial systems.',
       'What is a square inch? A square inch is the area of a square with sides measuring one inch each: 1 in² = 1 in × 1 in. It is useful for small objects, materials, panels, and tiles.',
       'What is a square foot? A square foot is the area of a square measuring one foot on each side. Since 1 ft = 12 in: 1 ft² = 12 in × 12 in = 144 in².',
-      'Why is the conversion factor 144? Linear length uses 1 ft = 12 in. Area uses the squared factor: 1 ft² = 12² in² = 144 in². Area conversions always use squared length factors — never divide by 12 alone.',
+      'Why is the conversion factor 144? Linear length uses 1 ft = 12 in. Area uses the squared factor: 1 ft² = 12² in² = 144 in². Area conversions always use squared length factors; never divide by 12 alone.',
     ],
     formula: `1 in² = 1 in × 1 in\n1 ft = 12 in\n1 ft² = 12 × 12 = ${SQUARE_INCHES_PER_SQUARE_FOOT} in²`,
   },
@@ -59,8 +59,8 @@ export const IN2_FT2_GUIDE_SECTIONS: readonly GuideSection[] = [
       '1. Determine the measurement in square inches.',
       `2. Divide by ${SQUARE_INCHES_PER_SQUARE_FOOT}.`,
       '3. The result is the equivalent area in square feet.',
-      `Example — convert 400 square inches: 400 ÷ ${SQUARE_INCHES_PER_SQUARE_FOOT} ≈ ${formatArea(squareInchesToSquareFeet(400))}. Therefore 400 in² ≈ ${formatArea(squareInchesToSquareFeet(400))} ft².`,
-      `Example — convert 576 square inches: 576 ÷ ${SQUARE_INCHES_PER_SQUARE_FOOT} = ${formatArea(squareInchesToSquareFeet(576))}. Therefore 576 in² = ${formatArea(squareInchesToSquareFeet(576))} ft².`,
+      `Example; convert 400 square inches: 400 ÷ ${SQUARE_INCHES_PER_SQUARE_FOOT} ≈ ${formatArea(squareInchesToSquareFeet(400))}. Therefore 400 in² ≈ ${formatArea(squareInchesToSquareFeet(400))} ft².`,
+      `Example; convert 576 square inches: 576 ÷ ${SQUARE_INCHES_PER_SQUARE_FOOT} = ${formatArea(squareInchesToSquareFeet(576))}. Therefore 576 in² = ${formatArea(squareInchesToSquareFeet(576))} ft².`,
     ],
     formula: `ft² = in² ÷ ${SQUARE_INCHES_PER_SQUARE_FOOT}\n400 ÷ ${SQUARE_INCHES_PER_SQUARE_FOOT} ≈ ${formatArea(squareInchesToSquareFeet(400))}\n576 ÷ ${SQUARE_INCHES_PER_SQUARE_FOOT} = ${formatArea(squareInchesToSquareFeet(576))}`,
   },
@@ -69,8 +69,8 @@ export const IN2_FT2_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Square Feet to Square Inches',
     paragraphs: [
       `Formula: in² = ft² × ${SQUARE_INCHES_PER_SQUARE_FOOT}.`,
-      `Example — convert 3 square feet: 3 × ${SQUARE_INCHES_PER_SQUARE_FOOT} = ${formatArea(squareFeetToSquareInches(3))}. Therefore 3 ft² = ${formatArea(squareFeetToSquareInches(3))} in².`,
-      `Example — convert 2.5 square feet: 2.5 × ${SQUARE_INCHES_PER_SQUARE_FOOT} = ${formatArea(squareFeetToSquareInches(2.5))}. Therefore 2.5 ft² = ${formatArea(squareFeetToSquareInches(2.5))} in².`,
+      `Example; convert 3 square feet: 3 × ${SQUARE_INCHES_PER_SQUARE_FOOT} = ${formatArea(squareFeetToSquareInches(3))}. Therefore 3 ft² = ${formatArea(squareFeetToSquareInches(3))} in².`,
+      `Example; convert 2.5 square feet: 2.5 × ${SQUARE_INCHES_PER_SQUARE_FOOT} = ${formatArea(squareFeetToSquareInches(2.5))}. Therefore 2.5 ft² = ${formatArea(squareFeetToSquareInches(2.5))} in².`,
     ],
     formula: `in² = ft² × ${SQUARE_INCHES_PER_SQUARE_FOOT}\n3 × ${SQUARE_INCHES_PER_SQUARE_FOOT} = ${formatArea(squareFeetToSquareInches(3))}\n2.5 × ${SQUARE_INCHES_PER_SQUARE_FOOT} = ${formatArea(squareFeetToSquareInches(2.5))}`,
   },
@@ -85,7 +85,7 @@ export const IN2_FT2_GUIDE_SECTIONS: readonly GuideSection[] = [
       '5. The square inches field updates automatically.',
       '6. Use Share Result to copy or share the conversion.',
       '7. Use Reload Calculator or Clear All Changes to start a new calculation.',
-      'No manual conversion is required — both fields update in real time.',
+      'No manual conversion is required; both fields update in real time.',
     ],
   },
   {

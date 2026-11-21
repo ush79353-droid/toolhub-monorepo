@@ -244,7 +244,7 @@ export function MarginCalculatorClassicForm({
               }
               title={
                 input.marginPinned
-                  ? 'Margin pinned — held constant when solving'
+                  ? 'Margin pinned; held constant when solving'
                   : 'Pin margin to hold it constant'
               }
             >

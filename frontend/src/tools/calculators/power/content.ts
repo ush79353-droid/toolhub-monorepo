@@ -90,7 +90,7 @@ export const POWER_GUIDE_SECTIONS: readonly GuideSection[] = [
       '1. Open the Power Converter on this page.',
       '2. Expand the SI Units, Horsepower, or Other Power Units group you need.',
       '3. Choose any input field (mW, W, kW, hp(I), PS, ft·lbf rates, or BTU/h).',
-      '4. Enter a numeric value — decimals, negatives, and scientific notation are supported.',
+      '4. Enter a numeric value. decimals, negatives, and scientific notation are supported.',
       '5. Read the synchronized values across all supported units.',
       '6. Use Share Result to copy the conversion, Reload Calculator to restore defaults, or Clear All Changes to empty the fields while keeping accordion state.',
     ],

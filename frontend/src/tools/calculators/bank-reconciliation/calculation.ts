@@ -200,7 +200,7 @@ export function formatMoney(amount: number, currency: SupportedCurrency): string
 
 export function shareReconciliationText(result: BankReconciliationResult): string {
   return [
-    'Bank Reconciliation Calculator — Omega Calculators',
+    'Bank Reconciliation Calculator | Omega Calculators',
     `Cashbook balance: ${formatMoney(result.cashbookBalance, result.currency)}`,
     `Adjusted cashbook: ${formatMoney(result.adjustedCashbookBalance, result.currency)}`,
     `Bank statement balance: ${formatMoney(result.bankStatementBalance, result.currency)}`,

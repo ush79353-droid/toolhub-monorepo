@@ -37,7 +37,7 @@ function formatMultiple(value: number): string {
 
 function summaryText(result: ThreeXRentResult, note: string): string {
   const money = (value: number) => formatCurrencyValue(value, result.currency);
-  const lines = ['3x Rent Calculator — Omega Calculators'];
+  const lines = ['3x Rent Calculator | Omega Calculators'];
   if (result.mode === 'required-income' && result.requiredMonthlyIncome !== null && result.requiredAnnualIncome !== null) {
     lines.push(`Required gross monthly income: ${money(result.requiredMonthlyIncome)}`);
     lines.push(`Required gross annual income: ${money(result.requiredAnnualIncome)}`);

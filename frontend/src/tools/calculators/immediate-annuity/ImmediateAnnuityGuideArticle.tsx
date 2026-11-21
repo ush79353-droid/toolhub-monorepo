@@ -13,7 +13,7 @@ export function ImmediateAnnuityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         An immediate annuity turns a lump-sum investment into periodic withdrawals
         that can start right away. Use this calculator to solve for withdrawal size,
-        required investment, duration, needed return, or remaining balance — then
+ required investment, duration, needed return, or remaining balance; then
         review the yearly schedule.
       </p>
 

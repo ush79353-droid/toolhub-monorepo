@@ -96,7 +96,7 @@ export function PricePerSqmGuideArticle() {
         Why Property Area Matters
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Consistent measurement standards — net usable vs gross floor area —
+ Consistent measurement standards (net usable vs gross floor area) 
         matter. Mixing definitions can make unit prices look more different than
         they really are.
       </p>

@@ -271,5 +271,5 @@ export function interpretRepayment(
   freqLabel: string,
   currency: SupportedCurrency
 ): string {
-  return `Pay ${formatRepMoney(payment, currency)} ${freqLabel.toLowerCase()} for ${count} payment${count === 1 ? '' : 's'}. Total interest ≈ ${formatRepMoney(totalInterest, currency)}. Constant-rate amortizing estimate — not a lender quote.`;
+  return `Pay ${formatRepMoney(payment, currency)} ${freqLabel.toLowerCase()} for ${count} payment${count === 1 ? '': 's'}. Total interest ≈ ${formatRepMoney(totalInterest, currency)}. Constant-rate amortizing estimate; not a lender quote.`;
 }

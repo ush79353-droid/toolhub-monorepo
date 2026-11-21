@@ -22,7 +22,7 @@ export function HealsHeroesUnemploymentBenefitGuideArticle() {
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Contemporaneous public summaries (for example from CRS, CRFB, and major news outlets)
-        described the proposals as competing legislative packages — not as permanent benefit
+ described the proposals as competing legislative packages; not as permanent benefit
         programs. This page therefore treats them as historical proposals only.
       </p>
 
@@ -54,7 +54,7 @@ export function HealsHeroesUnemploymentBenefitGuideArticle() {
           Annual Salary Calculator
         </Link>
         . For current unemployment insurance amounts or eligibility, contact your state workforce
-        agency — this site does not replace official benefit determinations.
+ agency; this site does not replace official benefit determinations.
       </p>
 
       <h2

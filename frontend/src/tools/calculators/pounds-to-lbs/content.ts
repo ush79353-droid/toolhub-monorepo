@@ -31,7 +31,7 @@ export const POUNDS_TO_LBS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Pounds to lbs Converter',
     paragraphs: [
       'Pound and lb name the same unit of mass. This converter maps the full English name to its standard abbreviation so you can confirm that the numerical value never changes.',
-      'There is no change in weight or mass when you switch between these labels — only the wording changes.',
+      'There is no change in weight or mass when you switch between these labels; only the wording changes.',
     ],
   },
   {
@@ -54,7 +54,7 @@ export const POUNDS_TO_LBS_GUIDE_SECTIONS: readonly GuideSection[] = [
       '4. You can also enter a value in the lbs field.',
       '5. The Pounds field updates automatically.',
       '6. Use Reload Calculator to restore the default of 1, or Clear All Changes to empty both fields.',
-      'No separate Convert button is required — both directions update as you type.',
+      'No separate Convert button is required; both directions update as you type.',
     ],
   },
   {

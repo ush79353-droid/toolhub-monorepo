@@ -25,7 +25,7 @@ function summaryText(args: {
   decimalFromBinary: string | null;
 }): string {
   const lines = [
-    'Binary Converter — Omega Calculators',
+    'Binary Converter | Omega Calculators',
     '',
     `Representation: Signed ${args.bits}-bit`,
     '',

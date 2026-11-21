@@ -86,7 +86,7 @@ export function FfoForm({
           Calculation convention
           <InfoTooltip
             label="Calculation convention"
-            text="Standard REIT FFO does not subtract interest income again. The optional adjusted convention deducts interest income once as a custom reference-style adjustment — not a Nareit requirement."
+            text="Standard REIT FFO does not subtract interest income again. The optional adjusted convention deducts interest income once as a custom reference-style adjustment; not a Nareit requirement."
           />
         </label>
         <select
@@ -167,7 +167,7 @@ export function FfoForm({
           Gains from property sales
           <InfoTooltip
             label="Gains from property sales"
-            text="Qualifying accounting gains already in net income from selling real estate — not total sale proceeds. Subtracted in FFO."
+            text="Qualifying accounting gains already in net income from selling real estate; not total sale proceeds. Subtracted in FFO."
           />
         </label>
         <FieldShell error={errors.gainsFromPropertySales}>
@@ -197,7 +197,7 @@ export function FfoForm({
           Losses from property sales
           <InfoTooltip
             label="Losses from property sales"
-            text="Qualifying accounting losses already in net income from selling real estate — not total cost or proceeds. Added back in FFO."
+            text="Qualifying accounting losses already in net income from selling real estate; not total cost or proceeds. Added back in FFO."
           />
         </label>
         <FieldShell error={errors.lossesFromPropertySales}>
@@ -250,7 +250,7 @@ export function FfoForm({
         ) : null}
         {!adjusted ? (
           <p className="mt-1 text-xs text-muted-foreground">
-            Optional in standard mode — does not change standard FFO.
+ Optional in standard mode; does not change standard FFO.
           </p>
         ) : (
           <p className="mt-1 text-xs text-muted-foreground">

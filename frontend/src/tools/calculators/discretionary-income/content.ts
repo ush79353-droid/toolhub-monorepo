@@ -33,7 +33,7 @@ export const DISCRETIONARY_INCOME_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between disposable and discretionary income?',
     answer:
-      'Disposable income is generally income after taxes. Budgeting discretionary income subtracts necessary living costs. Student-loan DI uses a statutory threshold formula — not your grocery budget.',
+      'Disposable income is generally income after taxes. Budgeting discretionary income subtracts necessary living costs. Student-loan DI uses a statutory threshold formula; not your grocery budget.',
   },
   {
     question: 'How is discretionary income calculated for student loans?',
@@ -58,7 +58,7 @@ export const DISCRETIONARY_INCOME_FAQS: readonly FAQItem[] = [
   {
     question: 'Does marital status affect discretionary income?',
     answer:
-      'Yes. Filing status can change whether spouse AGI is included and how family size is counted — rules are standard-specific.',
+      'Yes. Filing status can change whether spouse AGI is included and how family size is counted; rules are standard-specific.',
   },
   {
     question: 'Does filing jointly affect student-loan payments?',
@@ -113,11 +113,11 @@ export const DISCRETIONARY_INCOME_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I use this calculator for personal budgeting?',
     answer:
-      'Yes — switch to general discretionary income mode. That path does not apply poverty guidelines.',
+      'Yes: switch to general discretionary income mode. That path does not apply poverty guidelines.',
   },
   {
     question: 'How accurate is the estimated student-loan payment?',
     answer:
-      'It applies the selected standard’s published rate to DI only. Caps, eligibility, loan type, and servicer calculations can differ — treat it as informational.',
+      'It applies the selected standard’s published rate to DI only. Caps, eligibility, loan type, and servicer calculations can differ; treat it as informational.',
   },
 ];

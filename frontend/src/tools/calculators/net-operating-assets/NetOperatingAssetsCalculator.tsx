@@ -90,7 +90,7 @@ export function NetOperatingAssetsCalculator({
   const shareable = Boolean(result);
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Operating assets: ${symbol}${result!.formattedOperatingAssets}`,
         `Operating liabilities: ${symbol}${result!.formattedOperatingLiabilities}`,
         `NOA: ${symbol}${result!.formattedNetOperatingAssets}`,

@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Educational annual-income quiz — seven questions, progressive reveal, score out of seven.',
+    'Educational annual-income quiz; seven questions, progressive reveal, score out of seven.',
   asideAriaLabel: 'Interactive Annual Income Quiz',
   tocItems: QUIZ_ANNUAL_INCOME_TOC_ITEMS,
   GuideArticle: QuizAnnualIncomeGuideArticle,

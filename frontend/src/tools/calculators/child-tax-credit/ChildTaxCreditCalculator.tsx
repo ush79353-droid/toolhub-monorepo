@@ -75,11 +75,11 @@ export function ChildTaxCreditCalculator({
         : 'Single';
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Tax year: ${result.taxYear}`,
         `Filing status: ${statusLabel}`,
         `AGI: $${input.agi}`,
-        `Child ages: ${input.child1Age || '—'} / ${input.child2Age || '—'}`,
+        `Child ages: ${input.child1Age || '; '} / ${input.child2Age || '; '}`,
         `Eligible children: ${result.eligibleChildren}`,
         `Estimated CTC: $${result.formattedEstimatedCredit}`,
         `Income-related reduction: $${result.formattedPhaseoutReduction}`,

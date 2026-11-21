@@ -46,7 +46,7 @@ export const MM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert mm to m',
     paragraphs: [
       'Because 1 m = 1000 mm, divide millimeters by 1000 to get meters.',
-      `Example — 1430 mm = ${formatLength(convertLength(1430, 'mm', 'm'))} m.`,
+      `Example; 1430 mm = ${formatLength(convertLength(1430, 'mm', 'm'))} m.`,
       'Metric ladder: 1 km = 1000 m, 1 m = 100 cm, 1 cm = 10 mm.',
     ],
     formula: 'm = mm ÷ 1000\n1430 mm = 1.43 m\nkm → m → cm → mm',
@@ -56,7 +56,7 @@ export const MM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert mm to Inches',
     paragraphs: [
       'One international inch is defined as exactly 25.4 millimeters.',
-      `Therefore inches = mm ÷ 25.4. Example — 178 mm ≈ ${formatLength(convertLength(178, 'mm', 'in'))} in.`,
+      `Therefore inches = mm ÷ 25.4. Example; 178 mm ≈ ${formatLength(convertLength(178, 'mm', 'in'))} in.`,
       'Displayed values may use fewer decimals; internal conversion keeps full precision.',
     ],
     formula: '1 in = 25.4 mm\nin = mm ÷ 25.4',

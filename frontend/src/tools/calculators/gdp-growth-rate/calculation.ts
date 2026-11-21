@@ -135,7 +135,7 @@ export function growthStatus(
     measure === 'real'
       ? ' If both figures are real GDP, this reflects a change in inflation-adjusted output.'
       : measure === 'nominal'
-        ? ' Nominal growth includes both output and price changes — it is not the same as real growth.'
+        ? 'Nominal growth includes both output and price changes; it is not the same as real growth.'
         : ' Confirm whether the figures are real or nominal before interpreting economic volume.';
 
   if (Math.abs(growthPercent) < 1e-9) {

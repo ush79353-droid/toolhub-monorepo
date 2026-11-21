@@ -49,7 +49,7 @@ function summaryText(result: FiveTwentyNineResult, note: string): string {
       ? 'Required monthly contribution: not reachable in this saving period.'
       : `Required monthly contribution: ${money(result.requiredMonthlyContribution)}.`;
   return [
-    '529 College Savings Plan Calculator — Omega Calculators',
+    '529 College Savings Plan Calculator | Omega Calculators',
     `Balance at college start: ${money(result.balanceAtCollegeStart)}.`,
     `First-year cost: ${money(result.firstYearCost)}. Total education cost: ${money(result.totalEducationCost)}.`,
     `Contributions: ${money(result.totalContributions)}. Growth: ${money(result.investmentGrowth)}. Fees: ${money(result.investmentFees)}.`,

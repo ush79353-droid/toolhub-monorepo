@@ -71,7 +71,7 @@ export function SustainableGrowthRateForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         SGR = ROE × retention ratio. Build from net income, dividends, and
-        equity — or enter ROE and retention directly.
+ equity, or enter ROE and retention directly.
       </p>
 
       <div className="flex flex-wrap gap-2">
@@ -111,7 +111,7 @@ export function SustainableGrowthRateForm({
             />
           </div>
           <p className="text-xs text-muted-foreground">
-            Money fields share one currency and scale (denomination only — no
+ Money fields share one currency and scale (denomination only; no
             FX).
           </p>
         </>

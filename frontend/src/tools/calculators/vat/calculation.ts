@@ -114,7 +114,7 @@ export function shareResultText(
   path = '/tools/vat-calculator',
 ): string {
   return [
-    'VAT Calculator — Omega Calculators',
+    'VAT Calculator | Omega Calculators',
     '',
     `Mode: ${result.mode === 'excluded' ? 'VAT excluded (add VAT)' : 'VAT included (remove VAT)'}`,
     `VAT rate: ${result.formattedVatRate}%`,
@@ -122,7 +122,7 @@ export function shareResultText(
     `VAT amount: ${result.formattedVatAmount} ${result.currency}`,
     `Gross price: ${result.formattedGrossPrice} ${result.currency}`,
     '',
-    'Currency changes the display symbol only — amounts are not converted.',
+    'Currency changes the display symbol only; amounts are not converted.',
     path,
   ].join('\n');
 }

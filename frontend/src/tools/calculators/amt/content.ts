@@ -20,7 +20,7 @@ export const AMT_FAQS: readonly FAQItem[] = [
   {
     question: 'Does this calculator show the additional AMT I owe on Form 6251?',
     answer:
-      'No. Additional AMT is generally max(0, tentative minimum tax − regular tax liability). Regular tax is not an input on this screenshot-scoped form, so results are labeled as a tentative AMT estimate after permitted credits — not a final additional tax due.',
+      'No. Additional AMT is generally max(0, tentative minimum tax − regular tax liability). Regular tax is not an input on this screenshot-scoped form, so results are labeled as a tentative AMT estimate after permitted credits; not a final additional tax due.',
   },
   {
     question: 'Which tax years are supported?',

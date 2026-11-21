@@ -121,7 +121,7 @@ export function calculateEstateTax(
 
 export function shareEstateTaxResult(result: EstateTaxResult): string {
   return [
-    'Estate Tax Calculator — Omega Calculators',
+    'Estate Tax Calculator | Omega Calculators',
     `Tax year (year of death): ${result.taxYear}`,
     `Gross estate: $${result.formattedGrossEstate}`,
     `Allowable deductions: $${result.formattedAllowableDeductions}`,
@@ -130,7 +130,7 @@ export function shareEstateTaxResult(result: EstateTaxResult): string {
     `Estimated federal estate tax: $${result.formattedFederalEstateTax}`,
     `Tax-free lifetime gifts (informational): $${formatEstateUsd(result.taxFreeLifetimeGifts)}`,
     result.summaryText,
-    'Educational estimate — not a Form 706 filing. Fixed USD.',
+    'Educational estimate; not a Form 706 filing. Fixed USD.',
   ].join('\n');
 }
 

@@ -24,11 +24,11 @@ function buildZeroToSixtySummaryText(
   result: ZeroToSixtyResult
 ): string {
   if (!result.reachable) {
-    return `0–60 Acceleration Calculator — Omega Calculators\nResult: Target speed unreachable (${result.reason})`;
+    return `0–60 Acceleration Calculator | Omega Calculators\nResult: Target speed unreachable (${result.reason})`;
   }
 
   return [
-    '0–60 Acceleration Calculator — Omega Calculators',
+    '0–60 Acceleration Calculator | Omega Calculators',
     'https://omegacalculators.com/tools/0-60-calculator',
     '',
     `Estimated 0–60 mph Time: ${result.timeTo60Mph.toFixed(2)} seconds`,

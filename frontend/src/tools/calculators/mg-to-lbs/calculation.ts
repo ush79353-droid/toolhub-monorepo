@@ -57,7 +57,7 @@ export function calculateMgToLbs(input: MgToLbsInput): MgToLbsResult {
 
 export function shareResultText(result: MgToLbsResult): string {
   return [
-    'mg to lbs Converter — Omega Calculators',
+    'mg to lbs Converter | Omega Calculators',
     '',
     `Milligrams: ${formatMass(result.milligrams)} mg`,
     `Pounds: ${formatMass(result.pounds)} lb`,

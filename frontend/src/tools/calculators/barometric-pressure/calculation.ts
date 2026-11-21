@@ -112,7 +112,7 @@ export function shareResultText(result: BarometricPressureResult): string {
   const sourceUnit = PRESSURE_UNIT_BY_ID[result.units[result.sourceField]];
   const sourceValue = result.values[result.sourceField];
   const lines = [
-    'Barometric Pressure Conversion — Omega Calculators',
+    'Barometric Pressure Conversion | Omega Calculators',
     '',
     'Input:',
     `${formatPressure(sourceValue)} ${sourceUnit.symbol}`,

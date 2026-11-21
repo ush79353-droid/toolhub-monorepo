@@ -24,7 +24,7 @@ export function MonthlyIncomeHourlyGuideArticle() {
       </h2>
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>Confirm hours per week (default 40).</li>
-        <li>Enter monthly income — or hourly income — and choose currencies.</li>
+        <li>Enter monthly income (or hourly income) and choose currencies.</li>
         <li>Read the derived counterpart field under Your income.</li>
       </ol>
 

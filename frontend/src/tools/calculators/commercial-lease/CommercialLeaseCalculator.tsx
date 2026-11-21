@@ -156,7 +156,7 @@ export function CommercialLeaseCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total rental rate: ${getCurrencySymbol(result.totalRateCurrency)}${result.formattedTotalRate} / ${result.totalRateAreaUnit === 'm2' ? 'm²' : 'ft²'} / ${result.totalRatePeriod}`,
         `Rent (${result.rentPeriod}): ${getCurrencySymbol(result.rentCurrency)}${result.formattedRent}`,
         `Agent fee (${result.agentPercent}% × ${result.agentYears} yrs): ${getCurrencySymbol(result.feeCurrency)}${result.formattedFee}`,

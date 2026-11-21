@@ -29,7 +29,7 @@ export const CM2_MM2_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Square Centimeters to Square Millimeters Converter',
     paragraphs: [
       'Convert area measurements from square centimeters (cm²) to square millimeters (mm²) and back. Use it for geometry, engineering, construction, technical drawings, manufacturing, surface measurements, and scientific calculations.',
-      `Exact relationship: 1 cm² = ${SQUARE_MM_PER_SQUARE_CM} mm². Converting square units is different from converting linear units — squaring the 10 mm per centimeter factor gives 100.`,
+      `Exact relationship: 1 cm² = ${SQUARE_MM_PER_SQUARE_CM} mm². Converting square units is different from converting linear units; squaring the 10 mm per centimeter factor gives 100.`,
     ],
   },
   {
@@ -38,9 +38,9 @@ export const CM2_MM2_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Since 1 centimeter equals 10 millimeters, the area conversion factor is the square of 10: 10² = 100.',
       'Therefore: area in mm² = area in cm² × 100.',
-      `Example — 8 cm²: 8 × 100 = ${formatArea(squareCmToSquareMm(8))}, so 8 cm² = 800 mm².`,
+      `Example; 8 cm²: 8 × 100 = ${formatArea(squareCmToSquareMm(8))}, so 8 cm² = 800 mm².`,
       'Reverse: area in cm² = area in mm² ÷ 100.',
-      `Example — 750 mm²: 750 ÷ 100 = ${formatArea(squareMmToSquareCm(750))}, so 750 mm² = 7.5 cm².`,
+      `Example; 750 mm²: 750 ÷ 100 = ${formatArea(squareMmToSquareCm(750))}, so 750 mm² = 7.5 cm².`,
     ],
     formula:
       '1 cm = 10 mm\n1 cm² = 10² mm² = 100 mm²\nmm² = cm² × 100\ncm² = mm² ÷ 100\n8 × 100 = 800 mm²\n750 ÷ 100 = 7.5 cm²',
@@ -52,7 +52,7 @@ export const CM2_MM2_GUIDE_SECTIONS: readonly GuideSection[] = [
       'Start from 1 cm² = 100 mm².',
       'Multiply 500 by 100: 500 × 100 = 50,000.',
       'Therefore 500 cm² = 50,000 mm².',
-      'The factor is 100 rather than 10 because area has two dimensions — both length and width scale by 10 millimeters per centimeter.',
+      'The factor is 100 rather than 10 because area has two dimensions; both length and width scale by 10 millimeters per centimeter.',
     ],
     formula: '1 cm² = 100 mm²\n500 × 100 = 50,000\n500 cm² = 50,000 mm²',
   },

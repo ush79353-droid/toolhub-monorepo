@@ -83,7 +83,7 @@ export function calculateOuncesToMilliliters(
 export function shareResultText(result: OuncesToMillilitersResult): string {
   const label = systemLabel(result.system);
   return [
-    'Ounces to Milliliters Converter — Omega Calculators',
+    'Ounces to Milliliters Converter | Omega Calculators',
     '',
     `${formatVolume(result.oz)} ${label} = ${formatVolume(result.ml)} mL`,
     '',

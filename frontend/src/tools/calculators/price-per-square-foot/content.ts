@@ -24,7 +24,7 @@ export const PPSF_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I compare two properties with different square footage?',
     answer:
-      'Calculate each property’s price per unit area (price ÷ area), normalize to the same area unit and pricing context, then compare the unit prices — not only the total prices.',
+      'Calculate each property’s price per unit area (price ÷ area), normalize to the same area unit and pricing context, then compare the unit prices; not only the total prices.',
   },
   {
     question: 'How do I calculate price per square foot?',

@@ -60,7 +60,7 @@ export const METER_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'US customary and imperial length units use internationally fixed relationships to the meter. One inch is exactly 0.0254 m, so the foot (12 in) is exactly 0.3048 m and the yard (3 ft) is exactly 0.9144 m. One statute mile is exactly 1,609.344 m.',
       `Therefore 1 m ≈ ${formatLength(fromMeters(1, 'ft'))} ft, ${formatLength(fromMeters(1, 'in'))} in, and ${formatLength(fromMeters(1, 'yd'))} yd.`,
-      `Worked example — convert 5 meters to feet: Feet = 5 × ${formatLength(fromMeters(1, 'ft'))} ≈ ${formatLength(convertLength(5, 'm', 'ft'))} ft.`,
+      `Worked example; convert 5 meters to feet: Feet = 5 × ${formatLength(fromMeters(1, 'ft'))} ≈ ${formatLength(convertLength(5, 'm', 'ft'))} ft.`,
       'Additional imperial options include thou/mil, furlong, chain, rod, and the league defined as three statute miles.',
     ],
     formula: '1 m = 3.280839895013123 ft = 39.37007874015748 in',
@@ -72,7 +72,7 @@ export const METER_CONVERTER_GUIDE_SECTIONS: readonly GuideSection[] = [
       'Any length conversion is the same ratio of meters: convert the source into meters, then divide by the meters-per-unit of the target.',
       `Statute miles: 1 m ≈ ${formatLength(fromMeters(1, 'mi'))} mi. Nautical miles use the exact definition 1 nmi = 1,852 m.`,
       'Astronomical unit, light-year (Julian year × speed of light), IAU nominal solar radius, ångström, and parsec cover specialized science and navigation contexts.',
-      'Use specialized units when the magnitude would otherwise be awkward in meters — for example, interplanetary distances in AU or atomic spacings in ångströms.',
+      'Use specialized units when the magnitude would otherwise be awkward in meters, for example, interplanetary distances in AU or atomic spacings in ångströms.',
     ],
     formula: 'converted = input × meters_per_source / meters_per_target',
   },

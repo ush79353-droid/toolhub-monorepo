@@ -89,7 +89,7 @@ export function TtmCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Mode: Original TTM`,
         `Q0: ${symbol}${input.quarter0}`,
         `Q1: ${symbol}${input.quarter1}`,

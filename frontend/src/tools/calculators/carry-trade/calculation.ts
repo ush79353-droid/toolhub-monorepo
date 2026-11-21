@@ -144,12 +144,12 @@ export function interpretCarryTrade(
     return 'Carry trade result is unavailable.';
   }
   if (Math.abs(profit) < 1e-9) {
-    return 'Under the selected assumptions, estimated carry trade profit is zero — investment proceeds equal the borrowing repayment.';
+    return 'Under the selected assumptions, estimated carry trade profit is zero; investment proceeds equal the borrowing repayment.';
   }
   if (profit > 0) {
     return 'Under the selected assumptions, the estimated carry trade is profitable after interest differentials and exchange-rate movement. This is an estimate, not a guaranteed trading return.';
   }
-  return 'Under the selected assumptions, the estimated carry trade produces a loss — exchange-rate and/or interest effects outweigh the interest advantage. This is an estimate, not a guaranteed trading return.';
+  return 'Under the selected assumptions, the estimated carry trade produces a loss; exchange-rate and/or interest effects outweigh the interest advantage. This is an estimate, not a guaranteed trading return.';
 }
 
 export function explainCarryTrade(
@@ -162,4 +162,4 @@ export function explainCarryTrade(
 }
 
 export const QUOTE_CONVENTION_NOTE =
-  'Exchange rates are units of investment currency per one unit of funding currency (S). Spot differential d% = (S₀/S₁ − 1) × 100. Manual rates only — not live market quotes.';
+  'Exchange rates are units of investment currency per one unit of funding currency (S). Spot differential d% = (S₀/S₁ − 1) × 100. Manual rates only; not live market quotes.';

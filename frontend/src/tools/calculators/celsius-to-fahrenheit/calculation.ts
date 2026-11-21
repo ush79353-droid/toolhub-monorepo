@@ -63,7 +63,7 @@ export function calculateCelsiusToFahrenheit(
 
 export function shareResultText(result: CelsiusToFahrenheitResult): string {
   return [
-    'Celsius to Fahrenheit Converter — Omega Calculators',
+    'Celsius to Fahrenheit Converter | Omega Calculators',
     '',
     `${formatTemp(result.celsius)}°C = ${formatTemp(result.fahrenheit)}°F`,
     '',

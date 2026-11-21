@@ -128,7 +128,7 @@ export function validateGrahamNumberInput(
         errors.derivedEps = 'Unable to derive EPS from these inputs.';
       } else if (derivedEps <= 0) {
         errors.derivedEps =
-          'Derived EPS is not positive — the Graham Number formula does not apply.';
+          'Derived EPS is not positive: the Graham Number formula does not apply.';
       }
     }
   }
@@ -173,7 +173,7 @@ export function validateGrahamNumberInput(
         errors.derivedBvps = 'Unable to derive BVPS from these inputs.';
       } else if (derivedBvps <= 0) {
         errors.derivedBvps =
-          'Derived BVPS is not positive — the Graham Number formula does not apply.';
+          'Derived BVPS is not positive: the Graham Number formula does not apply.';
       }
     }
   }

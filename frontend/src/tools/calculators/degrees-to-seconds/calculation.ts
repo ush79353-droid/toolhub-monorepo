@@ -67,7 +67,7 @@ export function calculateDegreesToSeconds(input: DegreesToSecondsInput): Degrees
 
 export function shareResultText(result: DegreesToSecondsResult): string {
   return [
-    'Degrees to Seconds Converter — Omega Calculators',
+    'Degrees to Seconds Converter | Omega Calculators',
     '',
     `Degrees: ${formatAngleValue(result.degrees)}°`,
     `Arcseconds: ${formatAngleValue(result.arcseconds)}″`,

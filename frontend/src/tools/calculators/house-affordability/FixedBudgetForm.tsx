@@ -227,7 +227,7 @@ export function FixedBudgetForm({
       <MoneyOrPercentField
         id="ha-b-maint"
         label="Maintenance cost (repair, utility, etc.)"
-        tip="Ownership-expense allowance — not always a lender qualifying debt."
+        tip="Ownership-expense allowance; not always a lender qualifying debt."
         currency={input.currency}
         mode={input.maintenanceMode}
         value={input.maintenance}
@@ -244,7 +244,7 @@ export function FixedBudgetForm({
       ) : null}
       {stale ? (
         <p className="text-xs text-amber-800" role="status">
-          Inputs changed — click Calculate to refresh results.
+ Inputs changed; click Calculate to refresh results.
         </p>
       ) : null}
 

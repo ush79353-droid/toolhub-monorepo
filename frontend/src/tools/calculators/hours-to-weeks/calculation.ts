@@ -106,7 +106,7 @@ export function calculateHoursToWeeks(input: HoursToWeeksInput): HoursToWeeksRes
 
 export function shareResultText(result: HoursToWeeksResult): string {
   return [
-    'Hours to Week Conversion — Omega Calculators',
+    'Hours to Week Conversion | Omega Calculators',
     '',
     `${formatDuration(result.hours)} hours = ${formatDuration(result.weeks)} weeks`,
     `${formatDuration(result.hours)} hours = ${formatDuration(result.days)} days`,

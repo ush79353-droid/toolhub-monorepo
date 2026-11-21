@@ -13,7 +13,7 @@ export const PAKISTAN_INCOME_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'Which Pakistan tax year does this calculator use?',
     answer:
-      'Tax Year 2027 (1 July 2026 – 30 June 2027) salaried-individual rates from Finance Act, 2026 — Clause (2) of Division I of Part I of the First Schedule to the Income Tax Ordinance, 2001 — as explained in FBR Circular No. 02 of 2026-27. It does not mix rates from earlier Finance Acts.',
+      'Tax Year 2027 (1 July 2026 – 30 June 2027) salaried-individual rates from Finance Act, 2026; Clause (2) of Division I of Part I of the First Schedule to the Income Tax Ordinance, 2001, as explained in FBR Circular No. 02 of 2026-27. It does not mix rates from earlier Finance Acts.',
   },
   {
     question: 'Is the salaried surcharge included?',

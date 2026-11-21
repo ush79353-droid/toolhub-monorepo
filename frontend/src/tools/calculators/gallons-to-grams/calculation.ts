@@ -83,7 +83,7 @@ export function calculateGalToGrams(input: GalToGramsInput): GalToGramsResult {
 
 export function shareResultText(result: GalToGramsResult): string {
   return [
-    'Gallons to Grams Conversion — Omega Calculators',
+    'Gallons to Grams Conversion | Omega Calculators',
     '',
     `Substance: ${result.substanceName}`,
     `Density: ${formatVolume(result.densityKgPerM3)} kg/m³${result.densityApproximate ? ' (approximate)' : ''}`,

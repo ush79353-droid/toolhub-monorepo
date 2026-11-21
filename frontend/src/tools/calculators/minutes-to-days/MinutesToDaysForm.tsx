@@ -169,7 +169,7 @@ export function MinutesToDaysForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact: 1 day = {MINUTES_PER_DAY} minutes (24 × 60). Enter minutes or days — the other
+ Exact: 1 day = {MINUTES_PER_DAY} minutes (24 × 60). Enter minutes or days: the other
         updates instantly. Other equivalent amounts stay optional.
       </div>
 
@@ -207,7 +207,7 @@ export function MinutesToDaysForm({
               className="h-10 justify-start text-left text-sm"
               onClick={() => applyExample(1440)}
             >
-              Example 1 — Minutes in a day (1440 min = 1 day)
+ Example 1: Minutes in a day (1440 min = 1 day)
             </Button>
             <Button
               type="button"
@@ -215,7 +215,7 @@ export function MinutesToDaysForm({
               className="h-10 justify-start text-left text-sm"
               onClick={() => applyExample(180)}
             >
-              Example 2 — Marathon training (180 min = 0.125 days)
+ Example 2: Marathon training (180 min = 0.125 days)
             </Button>
           </div>
         </div>

@@ -43,7 +43,7 @@ export function EoqGuideArticle() {
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         D = annual demand (units/year), S = order cost (currency/order), H =
-        holding cost (currency/unit/year). EOQ is in units per order — not
+ holding cost (currency/unit/year). EOQ is in units per order; not
         currency or percent.
       </p>
 
@@ -212,7 +212,7 @@ export function EoqGuideArticle() {
         >
           DIO
         </Link>
-        . Educational estimates only — not operational, accounting, or investment
+. Educational estimates only; not operational, accounting, or investment
         advice.
       </p>
 

@@ -84,7 +84,7 @@ export function FibonacciRetracementCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Trend: ${input.trend}`,
         `Type: ${input.levelType}`,
         `Low price: ${input.lowPrice}`,

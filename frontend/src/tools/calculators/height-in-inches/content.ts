@@ -43,7 +43,7 @@ export const HEIGHT_IN_INCHES_GUIDE_SECTIONS: readonly HeightGuideSection[] = [
     title: 'How to Measure Height in Inches',
     paragraphs: [
       'Stand against a flat wall without shoes. Mark the top of the head, then measure from the floor to that mark with a tape marked in inches, or in centimeters and convert afterward.',
-      'Record whole feet plus leftover inches, or the total inches alone. Small rounding in a home tape is normal; this calculator does not invent measurement error—it only converts the numbers you enter.',
+      'Record whole feet plus leftover inches, or the total inches alone. Small rounding in a home tape is normal; this calculator does not invent measurement error, it only converts the numbers you enter.',
     ],
   },
   {
@@ -127,7 +127,7 @@ export const HEIGHT_IN_INCHES_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I write height in feet and inches?',
     answer:
-      'Write whole feet, then the leftover inches under 12—for example 5′10″ or 5 ft 10 in. If inches reach 12 or more, carry them into the next foot.',
+      'Write whole feet, then the leftover inches under 12, for example 5′10″ or 5 ft 10 in. If inches reach 12 or more, carry them into the next foot.',
   },
   {
     question: 'How many centimeters are in one inch?',
@@ -136,6 +136,6 @@ export const HEIGHT_IN_INCHES_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I enter inches greater than 12?',
     answer:
-      'Yes. The total uses the sum as entered, and the feet-and-inches display normalizes—for example 5 ft 14 in becomes 6 ft 2 in.',
+      'Yes. The total uses the sum as entered, and the feet-and-inches display normalizes, for example 5 ft 14 in becomes 6 ft 2 in.',
   },
 ];

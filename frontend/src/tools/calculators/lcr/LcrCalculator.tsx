@@ -83,7 +83,7 @@ export function LcrCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        'LCR Calculator — Omega Calculators',
+        'LCR Calculator | Omega Calculators',
         '',
         `High-Quality Liquid Assets: ${result.formattedHqla}`,
         `Expected 30-Day Net Cash Outflows: ${result.formattedOutflows}`,

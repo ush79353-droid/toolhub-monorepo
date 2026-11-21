@@ -62,7 +62,7 @@ export function syncUnitsFromMeters(
 export function shareResultText(meters: number): string {
   const values = allFromMeters(meters);
   return [
-    'Millimeter Calculator — Omega Calculators',
+    'Millimeter Calculator | Omega Calculators',
     '',
     `${formatLength(values.mm)} mm =`,
     `${formatLength(values.in)} inch${Math.abs(values.in) === 1 ? '' : 'es'}`,

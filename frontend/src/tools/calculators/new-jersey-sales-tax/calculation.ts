@@ -81,7 +81,7 @@ export function calculateNewJerseySalesTax(
   const rateLabel = `Standard New Jersey statewide sales tax (${formattedTaxRatePercent}%). UEZ reduced rates are not applied from ZIP alone.`;
 
   const summaryText = [
-    'Sales Tax Calculator New Jersey — Omega Calculators',
+    'Sales Tax Calculator New Jersey | Omega Calculators',
     `Purchase amount: $${formattedPurchaseAmount}`,
     `ZIP code: ${zipCode}`,
     `Applicable rate: ${formattedTaxRatePercent}% (standard taxable purchase)`,

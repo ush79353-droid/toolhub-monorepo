@@ -89,7 +89,7 @@ export function GoodwillForm({
           Purchase price
           <InfoTooltip
             label="Purchase price"
-            text="Acquisition consideration in the simplified model. Do not add assumed liabilities here — they are already reflected in net identifiable assets."
+            text="Acquisition consideration in the simplified model. Do not add assumed liabilities here; they are already reflected in net identifiable assets."
           />
         </label>
         <FieldShell error={errors.purchasePrice}>
@@ -117,7 +117,7 @@ export function GoodwillForm({
           Fair value of the assets
           <InfoTooltip
             label="Fair value of the assets"
-            text="Fair value of identifiable assets acquired — cash, receivables, inventory, PP&E, identifiable intangibles. Exclude the goodwill being calculated."
+            text="Fair value of identifiable assets acquired; cash, receivables, inventory, PP&E, identifiable intangibles. Exclude the goodwill being calculated."
           />
         </label>
         <FieldShell error={errors.fairValueOfAssets}>
@@ -147,7 +147,7 @@ export function GoodwillForm({
           Fair value of the liabilities
           <InfoTooltip
             label="Fair value of the liabilities"
-            text="Fair value of identifiable liabilities assumed — borrowings, payables, accruals, provisions, lease liabilities, and similar obligations."
+            text="Fair value of identifiable liabilities assumed; borrowings, payables, accruals, provisions, lease liabilities, and similar obligations."
           />
         </label>
         <FieldShell error={errors.fairValueOfLiabilities}>
@@ -177,7 +177,7 @@ export function GoodwillForm({
           Goodwill
           <InfoTooltip
             label="Goodwill"
-            text="Purchase price minus net identifiable assets (assets − liabilities). Negative residuals are shown as potential bargain purchases — not negative goodwill assets."
+            text="Purchase price minus net identifiable assets (assets − liabilities). Negative residuals are shown as potential bargain purchases; not negative goodwill assets."
           />
         </label>
         <FieldShell muted>

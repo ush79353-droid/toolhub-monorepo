@@ -102,7 +102,7 @@ export function SquareCmToSquareMmForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact: 1 cm² = 100 mm² (because 1 cm = 10 mm, and 10² = 100). Enter either field — the other
+ Exact: 1 cm² = 100 mm² (because 1 cm = 10 mm, and 10² = 100). Enter either field: the other
         updates instantly. Area cannot be negative.
       </div>
 

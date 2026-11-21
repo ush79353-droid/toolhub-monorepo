@@ -188,7 +188,7 @@ export function LemonadeStandForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate autoComplete="off">
       <p className="text-sm text-muted-foreground">
         Predict profit or loss from a lemonade stand: servings, cups, permits, ingredients, and
-        selling price. Enter your own costs—nothing is invented for you.
+ selling price. Enter your own costs, nothing is invented for you.
       </p>
 
       <Section

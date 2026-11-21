@@ -369,7 +369,7 @@ function build(args: {
       'Required Cash = (Target QR × CL) − MS − AR',
       `= (${quickRatio} × ${formatCurrencyValue(currentLiabilities, currency)}) − ${formatCurrencyValue(ms, currency)} − ${formatCurrencyValue(ar, currency)}`,
       requiredCash != null && requiredCash < 0
-        ? `= ${formatCurrencyValue(requiredCash, currency)} (negative means MS+AR already exceed the target quick-asset need — no additional cash required)`
+        ? `= ${formatCurrencyValue(requiredCash, currency)} (negative means MS+AR already exceed the target quick-asset need; no additional cash required)`
         : `= ${formatCurrencyValue(Math.max(0, requiredCash ?? 0), currency)}`,
     ].join('\n');
     steps = [
@@ -443,6 +443,6 @@ function build(args: {
     steps,
     interpretation,
     explanation:
-      'The acid-test (quick) ratio excludes inventory and prepaid expenses from liquidity coverage. It is a point-in-time measure — not a guarantee of solvency — and suitable levels vary by industry and cash-conversion cycle.',
+      'The acid-test (quick) ratio excludes inventory and prepaid expenses from liquidity coverage. It is a point-in-time measure (not a guarantee of solvency) and suitable levels vary by industry and cash-conversion cycle.',
   };
 }

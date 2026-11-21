@@ -27,7 +27,7 @@ export const GDP_PER_CAPITA_FAQS: readonly FAQItem[] = [
   {
     question: 'What is GDP per capita?',
     answer:
-      'GDP per capita is total GDP divided by population — average economic output per person, not each person’s income or wealth.',
+      'GDP per capita is total GDP divided by population; average economic output per person, not each person’s income or wealth.',
   },
   {
     question: 'How do you calculate GDP per capita?',
@@ -41,7 +41,7 @@ export const GDP_PER_CAPITA_FAQS: readonly FAQItem[] = [
   {
     question: 'What is real GDP per capita?',
     answer:
-      'Inflation-adjusted GDP divided by population — useful for tracking volume of output per person over time.',
+      'Inflation-adjusted GDP divided by population; useful for tracking volume of output per person over time.',
   },
   {
     question: 'What is nominal GDP per capita?',
@@ -56,7 +56,7 @@ export const GDP_PER_CAPITA_FAQS: readonly FAQItem[] = [
   {
     question: 'Why is GDP per capita important?',
     answer:
-      'It summarizes average output per person for development comparisons, productivity discussions, and long-run performance — with important caveats.',
+      'It summarizes average output per person for development comparisons, productivity discussions, and long-run performance, with important caveats.',
   },
   {
     question: 'Is GDP per capita the same as average income?',
@@ -76,7 +76,7 @@ export const GDP_PER_CAPITA_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the GDP per Capita of the United States?',
     answer:
-      'It changes with GDP and population revisions. Look up the latest BEA/Census or international database figures for a dated value — this tool does not invent a current number.',
+      'It changes with GDP and population revisions. Look up the latest BEA/Census or international database figures for a dated value; this tool does not invent a current number.',
   },
   {
     question: 'How does population affect GDP per Capita?',
@@ -91,7 +91,7 @@ export const GDP_PER_CAPITA_FAQS: readonly FAQItem[] = [
   {
     question: 'What causes GDP per Capita to increase?',
     answer:
-      'Faster GDP growth than population growth — often via productivity, capital deepening, or technology — raises GDPpc.',
+      'Faster GDP growth than population growth (often via productivity, capital deepening, or technology) raises GDPpc.',
   },
   {
     question: 'What causes GDP per Capita to decrease?',

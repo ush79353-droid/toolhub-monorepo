@@ -13,7 +13,7 @@ export function TimeValueOfMoneyGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This calculator converts between present value and future value using compound interest.
         Enter an interest rate, term (years and months), compounding frequency, and either present
-        or future value — the other money field updates automatically from the most recently edited
+ or future value: the other money field updates automatically from the most recently edited
         amount.
       </p>
 

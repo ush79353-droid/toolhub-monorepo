@@ -4,7 +4,7 @@ import { OUNCES_TO_POUNDS_FAQS, OUNCES_TO_POUNDS_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert ounces to pounds and pounds to ounces — exact avoirdupois: 1 lb = 16 oz, with linked kilograms.',
+    'Convert ounces to pounds and pounds to ounces; exact avoirdupois: 1 lb = 16 oz, with linked kilograms.',
   asideAriaLabel: 'Interactive ounces to pounds converter',
   tocItems: OUNCES_TO_POUNDS_TOC_ITEMS,
   GuideArticle: OuncesToPoundsGuideArticle,

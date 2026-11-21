@@ -133,7 +133,7 @@ export function shareResultText(result: GToTspResult): string {
   const densityLabel =
     DENSITY_UNIT_OPTIONS.find((o) => o.value === result.densityUnit)?.label ?? result.densityUnit;
   return [
-    'g to tsp Converter — Omega Calculators',
+    'g to tsp Converter | Omega Calculators',
     '',
     `Ingredient: ${result.substanceName}`,
     `Density: ${formatMeasure(result.densityValue)} ${densityLabel}${result.densityApproximate ? ' (approximate)' : ''}`,

@@ -24,7 +24,7 @@ export const WHAT_TO_OFFER_FAQS: readonly FAQItem[] = [
   {
     question: 'What are the advantages of buying a home in a buyer’s market?',
     answer:
-      'Buyer’s markets often feature more inventory, longer days on market, and more room to negotiate price or repairs. Advantages still depend on financing, property condition, and local demand — they are not automatic.',
+      'Buyer’s markets often feature more inventory, longer days on market, and more room to negotiate price or repairs. Advantages still depend on financing, property condition, and local demand; they are not automatic.',
   },
   {
     question:
@@ -50,7 +50,7 @@ export const WHAT_TO_OFFER_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the difference between fair market value and after-repair value?',
     answer:
-      'FMV here usually means the property’s current estimated market value. After-repair value (ARV) estimates value after planned renovations. This calculator does not silently treat FMV as ARV — use an ARV-based workflow when that is your investment model.',
+      'FMV here usually means the property’s current estimated market value. After-repair value (ARV) estimates value after planned renovations. This calculator does not silently treat FMV as ARV. Use an ARV-based workflow when that is your investment model.',
   },
   {
     question: 'What happens if renovation costs exceed the property’s value?',
@@ -60,7 +60,7 @@ export const WHAT_TO_OFFER_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I offer below fair market value?',
     answer:
-      'Yes — buyers often submit offers below estimated market value. Whether a seller accepts depends on competition, motivation, inspection, appraisal, and local conditions.',
+      'Yes: buyers often submit offers below estimated market value. Whether a seller accepts depends on competition, motivation, inspection, appraisal, and local conditions.',
   },
   {
     question: 'Does this calculator guarantee the seller will accept my offer?',

@@ -14,7 +14,7 @@ export function CrossPriceElasticityGuideArticle() {
         Cross-price elasticity measures how quantity demanded of one good
         (Product B) responds to a change in the price of another good (Product
         A). Businesses use it when studying substitutes, complements, and related
-        demand — always remembering that two observations alone do not prove
+ demand; always remembering that two observations alone do not prove
         causation.
       </p>
 
@@ -63,7 +63,7 @@ export function CrossPriceElasticityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         When Product A becomes more expensive, buyers may shift toward Product B
         if the goods compete. Different brands of similar items are common
-        illustrations — not automatic proof for any pair.
+ illustrations; not automatic proof for any pair.
       </p>
 
       <h2
@@ -125,7 +125,7 @@ export function CrossPriceElasticityGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         It informs pricing, competition, bundling, and demand forecasting for
-        related products — alongside other market evidence.
+ related products, alongside other market evidence.
       </p>
 
       <h2

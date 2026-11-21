@@ -75,10 +75,10 @@ export function interpretInventoryTurnover(
   cogs: number
 ): string {
   if (averageInventory === 0 && cogs === 0) {
-    return 'Both COGS and average inventory are zero — inventory turnover and inventory days are undefined under the standard formulas.';
+    return 'Both COGS and average inventory are zero; inventory turnover and inventory days are undefined under the standard formulas.';
   }
   if (averageInventory === 0 && cogs > 0) {
-    return 'Average inventory is zero with positive COGS. Inventory turnover is undefined (do not show Infinity). Inventory days equal 0 under the direct formula, which may reflect timing, a special model, or a data issue — not automatically perfect efficiency.';
+    return 'Average inventory is zero with positive COGS. Inventory turnover is undefined (do not show Infinity). Inventory days equal 0 under the direct formula, which may reflect timing, a special model, or a data issue; not automatically perfect efficiency.';
   }
   if (cogs === 0 && averageInventory > 0) {
     return 'COGS is zero with positive average inventory. Turnover is 0.00×; inventory days cannot be calculated (division by zero COGS).';
@@ -91,12 +91,12 @@ export function interpretInventoryTurnover(
       ? ` Average holding period ≈ ${formatInvDays(inventoryDays)} days.`
       : '';
   if (turnover >= 8) {
-    return `Inventory turnover of ${formatInvTurnover(turnover)}× indicates relatively fast inventory movement versus average stock under these inputs.${daysPart} Very high turnover can free cash but may raise stockout risk — judge with industry context.`;
+    return `Inventory turnover of ${formatInvTurnover(turnover)}× indicates relatively fast inventory movement versus average stock under these inputs.${daysPart} Very high turnover can free cash but may raise stockout risk; judge with industry context.`;
   }
   if (turnover >= 3) {
     return `Inventory turnover of ${formatInvTurnover(turnover)}× means COGS was about ${formatInvTurnover(turnover)} times average inventory in the period.${daysPart} Compare with peers, seasonality, and prior periods.`;
   }
-  return `Inventory turnover of ${formatInvTurnover(turnover)}× indicates slower inventory movement relative to average stock under these inputs.${daysPart} Causes can include seasonality, weak demand, or intentional stock builds — not automatically poor performance.`;
+  return `Inventory turnover of ${formatInvTurnover(turnover)}× indicates slower inventory movement relative to average stock under these inputs.${daysPart} Causes can include seasonality, weak demand, or intentional stock builds; not automatically poor performance.`;
 }
 
 export function formatInvMoney(

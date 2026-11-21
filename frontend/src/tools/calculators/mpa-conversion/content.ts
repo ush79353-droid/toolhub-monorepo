@@ -45,7 +45,7 @@ export const MPA_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'MPa Conversion',
     paragraphs: [
       'Convert megapascals (MPa) into bar, pounds per square inch (psi), standard atmospheres (atm), and Torr. Useful for mechanical engineering, hydraulic systems, material testing, industrial equipment, pressure gauges, fluid mechanics, and manufacturing.',
-      'One megapascal equals one million pascals. Enter any supported unit — the calculator converts through pascals and updates every field. Signed gauge readings are allowed; absolute-versus-gauge adjustments are not applied automatically.',
+      'One megapascal equals one million pascals. Enter any supported unit: the calculator converts through pascals and updates every field. Signed gauge readings are allowed; absolute-versus-gauge adjustments are not applied automatically.',
     ],
   },
   {
@@ -74,10 +74,10 @@ export const MPA_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'MPa Conversion Examples',
     paragraphs: [
-      `Example 1 — 5 MPa to bar: 5 × ${BAR_PER_MPA} = ${formatPressure(convertPressure(5, 'MPa', 'bar'))} bar.`,
-      `Example 2 — 5 MPa to psi: 5 × ${formatPressure(PSI_PER_MPA)} ≈ ${formatPressure(convertPressure(5, 'MPa', 'psi'))} psi.`,
-      `Example 3 — 2 MPa to atm: 2 ÷ ${formatPressure(MPA_PER_ATM)} ≈ ${formatPressure(convertPressure(2, 'MPa', 'atm'))} atm.`,
-      `Example 4 — 100 bar to MPa: 100 ÷ ${BAR_PER_MPA} = ${formatPressure(convertPressure(100, 'bar', 'MPa'))} MPa.`,
+      `Example 1: 5 MPa to bar: 5 × ${BAR_PER_MPA} = ${formatPressure(convertPressure(5, 'MPa', 'bar'))} bar.`,
+      `Example 2: 5 MPa to psi: 5 × ${formatPressure(PSI_PER_MPA)} ≈ ${formatPressure(convertPressure(5, 'MPa', 'psi'))} psi.`,
+      `Example 3: 2 MPa to atm: 2 ÷ ${formatPressure(MPA_PER_ATM)} ≈ ${formatPressure(convertPressure(2, 'MPa', 'atm'))} atm.`,
+      `Example 4: 100 bar to MPa: 100 ÷ ${BAR_PER_MPA} = ${formatPressure(convertPressure(100, 'bar', 'MPa'))} MPa.`,
     ],
   },
   {

@@ -77,14 +77,14 @@ export function GiftOfEquityCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Market value: ${symbol}${result.formattedMarketValue} ${result.currency}`,
         `Sales price: ${symbol}${result.formattedSalesPrice} ${result.currency}`,
         `Gift of equity: ${symbol}${result.formattedGiftOfEquity} ${result.currency}`,
         'Formula: Gift of Equity = Market Value − Sales Price',
         result.isNegativeDifference
           ? 'Note: negative difference is not a positive gift of equity.'
-          : 'Mathematical estimate only — lender, tax, and legal eligibility may differ.',
+          : 'Mathematical estimate only; lender, tax, and legal eligibility may differ.',
       ].join('\n')
     : '';
 

@@ -171,7 +171,7 @@ export function AnnualToMonthlySalaryCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Annual salary: ${getCurrencySymbol(input.annualSalaryCurrency)}${input.annualSalary} ${input.annualSalaryCurrency}`,
         `Hours/week: ${input.hoursPerWeek}`,
         `Monthly: ${getCurrencySymbol(result.monthlyCurrency)}${result.formattedMonthly} ${result.monthlyCurrency}`,

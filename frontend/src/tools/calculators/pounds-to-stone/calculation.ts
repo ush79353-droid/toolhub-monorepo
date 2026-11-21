@@ -84,7 +84,7 @@ export function calculatePoundsToStone(input: PoundsToStoneInput): PoundsToStone
 
 export function shareResultText(result: PoundsToStoneResult): string {
   return [
-    'Pounds to Stone Converter — Omega Calculators',
+    'Pounds to Stone Converter | Omega Calculators',
     '',
     `${formatMass(result.pounds)} lb = ${formatMass(result.stone)} st`,
     '',

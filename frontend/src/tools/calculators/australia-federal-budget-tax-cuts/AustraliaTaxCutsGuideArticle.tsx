@@ -45,7 +45,7 @@ export function AustraliaTaxCutsGuideArticle() {
         >
           GST Calculator
         </Link>{' '}
-        (catalog slug <code>gst-calculator</code>) as the screenshot alternative — not as a
+ (catalog slug <code>gst-calculator</code>) as the screenshot alternative; not as a
         substitute for ATO income tax advice. That GST catalog row may still be undeveloped until it
         is registered and activated separately.
       </p>
@@ -64,7 +64,7 @@ export function AustraliaTaxCutsGuideArticle() {
           >
             Income Tax Calculator Pakistan
           </Link>{' '}
-          — live FBR salaried estimate (separate jurisdiction; not Australian tax).
+; live FBR salaried estimate (separate jurisdiction; not Australian tax).
         </li>
         <li>
           <Link
@@ -73,7 +73,7 @@ export function AustraliaTaxCutsGuideArticle() {
           >
             GST Calculator
           </Link>{' '}
-          — verified catalog alternative named in the unavailable notice.
+; verified catalog alternative named in the unavailable notice.
         </li>
       </ul>
 

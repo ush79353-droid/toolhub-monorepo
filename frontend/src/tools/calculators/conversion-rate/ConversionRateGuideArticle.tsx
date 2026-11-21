@@ -6,7 +6,7 @@ const sections: { id: string; title: string; body: string[]; formula?: string }[
     id: 'what-conversion-rate',
     title: 'What Conversion Rate Means',
     body: [
-      'Conversion rate measures how often a click or visit turns into a goal—a signup, purchase, lead, or other defined action. Marketers use it to compare ads, posts, links, and website funnels on a common percentage scale.',
+      'Conversion rate measures how often a click or visit turns into a goal, a signup, purchase, lead, or other defined action. Marketers use it to compare ads, posts, links, and website funnels on a common percentage scale.',
     ],
   },
   {

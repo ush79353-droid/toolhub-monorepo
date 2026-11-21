@@ -67,7 +67,7 @@ export function compareNetWorth(
     percentVsMean,
     dataYear: SCF_DATA_YEAR,
     source: SCF_SOURCE,
-    note: 'SCF figures are US household (family) net worth in 2022 USD — not individual finances and not converted from other currencies.',
+    note: 'SCF figures are US household (family) net worth in 2022 USD; not individual finances and not converted from other currencies.',
   };
 }
 

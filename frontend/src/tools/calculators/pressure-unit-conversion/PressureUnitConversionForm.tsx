@@ -111,7 +111,7 @@ export function PressureUnitConversionForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Convert between pressure units using Pascal (Pa) as the internal base. Enter any field —
+ Convert between pressure units using Pascal (Pa) as the internal base. Enter any field; 
         all stay linked. Signed gauge or differential values are allowed; this tool converts units
         only, not absolute vs gauge reference.
       </div>

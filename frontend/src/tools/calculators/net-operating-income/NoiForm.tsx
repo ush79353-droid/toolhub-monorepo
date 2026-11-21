@@ -208,7 +208,7 @@ export function NoiForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. Mortgage
+ changes the symbol only; it does not convert values. Mortgage
           payments are excluded from NOI.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">

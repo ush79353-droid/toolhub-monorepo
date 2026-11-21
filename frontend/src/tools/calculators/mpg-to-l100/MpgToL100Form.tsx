@@ -50,7 +50,7 @@ export function MpgToL100Form({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Enter a value in any field — the others update from kilometers per liter. Higher MPG (or
+ Enter a value in any field: the others update from kilometers per liter. Higher MPG (or
         km/L) means better economy; lower L/100 km means better economy. US and UK gallons differ.
         Values must be greater than zero.
       </div>

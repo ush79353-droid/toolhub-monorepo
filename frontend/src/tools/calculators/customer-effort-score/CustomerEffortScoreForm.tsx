@@ -107,7 +107,7 @@ export function CustomerEffortScoreForm({
             <div key={score}>
               <label className={labelClass} htmlFor={`ces-${score}`}>
                 <span>
-                  {score} — {label}
+ {score}; {label}
                 </span>
               </label>
               <FieldShell error={error}>

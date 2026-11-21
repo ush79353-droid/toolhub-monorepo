@@ -273,7 +273,7 @@ export function NpsForm({
 
       <div className="flex flex-wrap gap-2">
         <Button type="button" variant="outline" className="h-11" onClick={onLoadExample}>
-          Example — NPS +25
+ Example: NPS +25
         </Button>
         <Button type="button" variant="outline" className="h-11" onClick={onReset}>
           Reload calculator

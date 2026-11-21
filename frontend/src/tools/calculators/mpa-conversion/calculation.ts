@@ -38,7 +38,7 @@ export function allFromPascals(pascals: number): Record<MpaUnit, number> {
 export function shareResultText(pascals: number): string {
   const values = allFromPascals(pascals);
   return [
-    'MPa Conversion — Omega Calculators',
+    'MPa Conversion | Omega Calculators',
     '',
     `${formatPressure(values.MPa)} ${UNIT_SYMBOLS.MPa} = ${formatPressure(values.bar)} ${UNIT_SYMBOLS.bar}`,
     `${formatPressure(values.MPa)} ${UNIT_SYMBOLS.MPa} ≈ ${formatPressure(values.psi)} ${UNIT_SYMBOLS.psi}`,

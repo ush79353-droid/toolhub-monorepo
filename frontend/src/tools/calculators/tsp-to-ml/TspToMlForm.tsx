@@ -132,7 +132,7 @@ export function TspToMlForm({
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Defaults to the metric teaspoon ({ML_PER_METRIC_TSP} mL), matching common cooking charts and
         the US nutrition-label teaspoon. US customary teaspoon = {ML_PER_US_TSP} mL. Volume-to-volume
-        only — no ingredient density.
+ only; no ingredient density.
       </div>
 
       <FieldRow

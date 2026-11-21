@@ -76,7 +76,7 @@ export function HomeImprovementLoanCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan amount: ${loanSymbol}${input.loanAmount}`,
         `Loan term: ${input.termYears || '0'} yrs ${input.termMonths || '0'} mos`,
         `Interest rate: ${input.interestRatePercent}%`,

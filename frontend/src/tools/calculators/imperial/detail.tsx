@@ -4,7 +4,7 @@ import { IMPERIAL_FAQS, IMPERIAL_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert Imperial and US customary units to metric — length, area, volume, mass, and temperature — with exact shared conversion factors.',
+    'Convert Imperial and US customary units to metric (length, area, volume, mass, and temperature) with exact shared conversion factors.',
   asideAriaLabel: 'Interactive imperial calculator',
   tocItems: IMPERIAL_TOC_ITEMS,
   GuideArticle: ImperialGuideArticle,

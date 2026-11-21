@@ -139,7 +139,7 @@ export function CapRateForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values.
+ changes the symbol only; it does not convert values.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
           <CurrencySelect
@@ -367,7 +367,7 @@ export function CapRateForm({
         <div className="rounded-lg border border-border bg-brand-softTeal/35 px-3 py-2.5 text-sm text-accent">
           Cap rate compares annual NOI with property value. A higher rate means
           more income relative to price, but it is not a full investment
-          verdict — risk, location, and growth still matter.
+ verdict; risk, location, and growth still matter.
         </div>
       </CollapsibleSection>
 

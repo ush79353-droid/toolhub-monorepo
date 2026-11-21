@@ -26,7 +26,7 @@ export const UNPAID_WORK_FAQS: readonly FAQItem[] = [
   {
     question: 'Are the hourly outsourcing rates official prices?',
     answer:
-      'No. Default rates are labeled illustrative assumptions so the calculator can run. Edit them to match quotes in your area. Changing country changes currency formatting only — it does not convert amounts.',
+      'No. Default rates are labeled illustrative assumptions so the calculator can run. Edit them to match quotes in your area. Changing country changes currency formatting only; it does not convert amounts.',
   },
   {
     question: 'How is monthly value calculated from weekly hours?',

@@ -37,12 +37,12 @@ export const CENTIMETER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use Our Centimeter Calculator',
     paragraphs: [
-      '1. Enter a centimeter measurement in the primary field — or type into any imperial or metric field.',
+      '1. Enter a centimeter measurement in the primary field. or type into any imperial or metric field.',
       '2. Read inches, feet, yards, and miles in the Imperial/US section.',
       '3. Review millimeters, meters, and kilometers in the Metric section.',
       '4. Use the other-unit selectors for thou, fathom, nautical mile, micrometer, and similar units.',
       '5. Share, reload, or clear when finished.',
-      `Example — convert 50 cm to inches: inches = 50 ÷ 2.54 ≈ ${formatLength(convertLength(50, 'cm', 'in'))} in. The same engine handles reverse conversion when you edit inches.`,
+      `Example; convert 50 cm to inches: inches = 50 ÷ 2.54 ≈ ${formatLength(convertLength(50, 'cm', 'in'))} in. The same engine handles reverse conversion when you edit inches.`,
     ],
   },
   {

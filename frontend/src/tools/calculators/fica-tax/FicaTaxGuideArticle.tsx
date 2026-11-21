@@ -79,8 +79,8 @@ export function FicaTaxGuideArticle() {
         Official Parameters by Year
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Social Security wage base: {y2025.taxYear} — $
-        {y2025.socialSecurityWageBase.toLocaleString('en-US')}; {y2026.taxYear} — $
+ Social Security wage base: {y2025.taxYear}; $
+ {y2025.socialSecurityWageBase.toLocaleString('en-US')}; {y2026.taxYear}; $
         {y2026.socialSecurityWageBase.toLocaleString('en-US')} (SSA COLA / IRS Topic 751). Additional
         Medicare thresholds remain $250,000 (MFJ), $125,000 (MFS), and $200,000 (all other statuses)
         per IRS Topic 560. Rates shown do not invent federal income tax brackets.

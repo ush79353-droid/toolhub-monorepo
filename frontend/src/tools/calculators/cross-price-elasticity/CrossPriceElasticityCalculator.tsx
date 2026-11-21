@@ -86,7 +86,7 @@ export function CrossPriceElasticityCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Method: ${result.method === 'midpoint' ? 'midpoint' : 'initial-value'}`,
         `PA1: ${symbol}${input.initialPriceA} · PA2: ${symbol}${input.finalPriceA}`,
         `QB1: ${input.initialDemandB} · QB2: ${input.finalDemandB} ${result.quantityUnit}`,
@@ -127,7 +127,7 @@ export function CrossPriceElasticityCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             Measure how a change in Product A&apos;s price relates to demand for
-            Product B — E = %ΔQB / %ΔPA.
+ Product B; E = %ΔQB / %ΔPA.
           </p>
         </div>
         {headerActions ? (

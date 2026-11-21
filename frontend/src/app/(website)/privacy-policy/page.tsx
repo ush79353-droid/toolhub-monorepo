@@ -6,7 +6,7 @@ import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { Shield, AlertCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Omega Calculators',
+  title: 'Privacy Policy | Omega Calculators',
   description:
     'Learn how Omega Calculators handles privacy, in-browser data processing, cookies, and local execution in this draft privacy policy.',
 };

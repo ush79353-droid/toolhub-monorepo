@@ -60,7 +60,7 @@ export function FullTimeEquivalentCalculator({
 
   const shareText = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Full-time: ${result.fullTimeEmployees} people @ ${result.fullTimeHours} hrs/week`,
         `Part-time: ${result.partTimeEmployees} people @ ${result.partTimeHours} hrs/week`,
         `FTE: ${result.formattedFte}`,

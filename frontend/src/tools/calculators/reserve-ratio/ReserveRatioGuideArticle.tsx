@@ -13,7 +13,7 @@ export function ReserveRatioGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Banks fund themselves in part with deposits and hold reserve assets for
-        settlement, withdrawals, and — where rules apply — regulatory coverage
+ settlement, withdrawals, and (where rules apply) regulatory coverage
         of those deposits. The reserve ratio summarizes reserves relative to
         deposits. This calculator computes the actual ratio, required reserves
         from a stated required ratio, excess reserves or shortfalls, reverse
@@ -33,8 +33,8 @@ export function ReserveRatioGuideArticle() {
         The reserve ratio expresses bank reserves as a percentage of the
         deposit base used in the calculation. If a bank holds $100 million of
         reserves against $1,000 million of deposits, the ratio is 10%. The
-        ratio answers a coverage question — how large are reserves relative to
-        deposits — not a full description of liquidity, capital, or credit
+ ratio answers a coverage question; how large are reserves relative to
+ deposits; not a full description of liquidity, capital, or credit
         risk. Definitions of eligible reserves and deposits follow the
         jurisdiction and reporting framework you have in mind.
       </p>
@@ -92,7 +92,7 @@ export function ReserveRatioGuideArticle() {
         <li>Multiply by 100: reserve ratio = 10%.</li>
         <li>
           Optionally compute L = 1,000 − 100 = $900 million as funds not held as
-          reserves — a balance-sheet illustration, not unrestricted lending
+ reserves: a balance-sheet illustration, not unrestricted lending
           capacity.
         </li>
       </ol>
@@ -197,7 +197,7 @@ export function ReserveRatioGuideArticle() {
         m = 1 / r = 100 / RR
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        At RR = 10%, m = 10. At RR = 0%, the simple multiplier is undefined —
+ At RR = 10%, m = 10. At RR = 0%, the simple multiplier is undefined; 
         this calculator never displays Infinity. For richer monetary-aggregate
         math (base, supply, currency drain), see the{' '}
         <Link
@@ -219,7 +219,7 @@ export function ReserveRatioGuideArticle() {
         The liquidity coverage ratio (LCR) compares high-quality liquid assets
         with projected net cash outflows over a short stress horizon. A reserve
         ratio compares reserves with deposits. HQLA baskets, outflow weights,
-        and stress assumptions make LCR a different metric — use the{' '}
+ and stress assumptions make LCR a different metric; use the{' '}
         <Link
           href="/tools/lcr-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"

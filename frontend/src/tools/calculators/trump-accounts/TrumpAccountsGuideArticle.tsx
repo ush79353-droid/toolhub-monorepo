@@ -27,7 +27,7 @@ export function TrumpAccountsGuideArticle() {
         Account rules, eligibility, any government contributions, contribution
         limits, investment restrictions, and withdrawal provisions depend on
         applicable legislation and official guidance. This page uses illustrative
-        math only — it does not establish legal eligibility or tax treatment.
+ math only; it does not establish legal eligibility or tax treatment.
       </p>
       <div className="mt-4 rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-sm leading-relaxed text-sky-950/90">
         Withdrawals before the applicable eligibility age may be restricted or
@@ -53,7 +53,7 @@ export function TrumpAccountsGuideArticle() {
       </ol>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The calculator compounds the starting balance annually and treats contributions
-        as end-of-year deposits (ordinary annuity). Results are estimates — actual
+ as end-of-year deposits (ordinary annuity). Results are estimates; actual
         returns may differ. Explore related tools like the{' '}
         <Link
           href={COMPOUND_INTEREST_HREF}
@@ -120,7 +120,7 @@ export function TrumpAccountsGuideArticle() {
         </li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        This is a mathematical projection only — not a guaranteed account benefit or
+ This is a mathematical projection only; not a guaranteed account benefit or
         investment return.
       </p>
 
@@ -151,7 +151,7 @@ export function TrumpAccountsGuideArticle() {
             <tr className="border-b border-border">
               <td className="px-3 py-2 font-medium">Trump Account</td>
               <td className="px-3 py-2">Child-focused long-term savings (as defined by statute)</td>
-              <td className="px-3 py-2">Depends on enacted rules — confirm officially</td>
+              <td className="px-3 py-2">Depends on enacted rules; confirm officially</td>
               <td className="px-3 py-2">Limits and eligible contributors per current guidance</td>
               <td className="px-3 py-2">May restrict early withdrawals; check penalties/tax</td>
               <td className="px-3 py-2">May be limited to approved investments</td>

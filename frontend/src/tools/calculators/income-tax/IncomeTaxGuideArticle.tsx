@@ -15,7 +15,7 @@ export function IncomeTaxGuideArticle() {
         from wages, other income, withholdings, dependents, and common deductions and credits.
         It applies progressive ordinary brackets, preferential rates for qualified dividends and
         long-term capital gains, the larger of the standard or itemized deduction, and selected
-        credits. Results are educational estimates in fixed USD — not a filed return.
+ credits. Results are educational estimates in fixed USD; not a filed return.
       </p>
 
       <h2

@@ -61,7 +61,7 @@ export function OuncesToMillilitersResults({
           {formatVolume(result.oz)} {label} = {formatVolume(result.ml)} mL
         </p>
         <p className="mt-2 text-sm text-accent">
-          Fluid ounces measure volume — not weight ounces. 1 mL = 1 cc.
+ Fluid ounces measure volume; not weight ounces. 1 mL = 1 cc.
         </p>
         <p className="mt-2 font-mono text-xs text-muted-foreground">{result.explanation}</p>
       </div>

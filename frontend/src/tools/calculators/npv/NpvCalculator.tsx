@@ -114,7 +114,7 @@ export function NpvCalculator({
   const summary =
     result
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Discount rate: ${input.discountRatePercent}%`,
           `Initial costs: ${symbol}${input.initialCosts}`,
           ...input.cashFlows.map((cf, i) => `Year ${i + 1}: ${symbol}${cf}`),

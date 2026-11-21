@@ -59,7 +59,7 @@ export function calculateEpsGrowth(
       'EPS growth percentage cannot be calculated when the starting EPS is zero.';
   } else {
     warning =
-      'EPS started negative. Conventional percentage growth and CAGR are not meaningful with a negative starting EPS — use the absolute EPS change instead.';
+      'EPS started negative. Conventional percentage growth and CAGR are not meaningful with a negative starting EPS. Use the absolute EPS change instead.';
   }
 
   if (

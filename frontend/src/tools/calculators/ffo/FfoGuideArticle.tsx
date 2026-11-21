@@ -81,7 +81,7 @@ export function FfoGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         FFO supports REIT operating analysis, peer comparison, trend review, and
-        portfolio performance discussion — alongside cash flow and balance-sheet
+ portfolio performance discussion, alongside cash flow and balance-sheet
         metrics.
       </p>
 
@@ -93,7 +93,7 @@ export function FfoGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Net income includes depreciation charges and sale gains/losses. FFO
-        adjusts selected items. FFO supplements — it does not replace — GAAP net
+ adjusts selected items. FFO supplements (it does not replace) GAAP net
         income.
       </p>
 
@@ -217,7 +217,7 @@ export function FfoGuideArticle() {
         >
           FCFE Calculator
         </Link>
-        . Educational estimates only — not accounting, audit, or investment advice.
+. Educational estimates only; not accounting, audit, or investment advice.
       </p>
 
       <h2

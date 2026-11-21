@@ -74,7 +74,7 @@ export const WACC_FAQS: readonly FAQItem[] = [
   {
     question: 'How does increasing debt affect WACC?',
     answer:
-      'More debt raises the debt weight and can lower WACC if after-tax debt is cheaper than equity — but higher leverage may also raise both Re and Rd, so the net effect is not automatic.',
+      'More debt raises the debt weight and can lower WACC if after-tax debt is cheaper than equity, but higher leverage may also raise both Re and Rd, so the net effect is not automatic.',
   },
   {
     question: 'Should WACC use book values or market values?',
@@ -99,7 +99,7 @@ export const WACC_FAQS: readonly FAQItem[] = [
   {
     question: 'Why does WACC differ between industries?',
     answer:
-      'Industries differ in operating risk, typical leverage, asset intensity, and credit spreads — all of which feed into Re, Rd, and capital structure weights.',
+      'Industries differ in operating risk, typical leverage, asset intensity, and credit spreads; all of which feed into Re, Rd, and capital structure weights.',
   },
   {
     question: 'What happens to WACC when interest rates rise?',
@@ -119,6 +119,6 @@ export const WACC_FAQS: readonly FAQItem[] = [
   {
     question: 'How often should a company recalculate WACC?',
     answer:
-      'Recalculate when market rates, credit spreads, equity risk premiums, capital structure, or tax rules change materially — and whenever a major investment decision needs an updated hurdle rate.',
+      'Recalculate when market rates, credit spreads, equity risk premiums, capital structure, or tax rules change materially, and whenever a major investment decision needs an updated hurdle rate.',
   },
 ];

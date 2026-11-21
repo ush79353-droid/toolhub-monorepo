@@ -123,7 +123,7 @@ export function KgToOunceForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact: 1 avoirdupois ounce = {KG_PER_OUNCE} kg. Edit kilograms or ounces — the other
+ Exact: 1 avoirdupois ounce = {KG_PER_OUNCE} kg. Edit kilograms or ounces: the other
         updates instantly. Mass ounces only (not fluid ounces).
       </div>
 
@@ -155,7 +155,7 @@ export function KgToOunceForm({
       <FieldShell
         label="Ounces"
         htmlFor="kg-oz-oz"
-        tip="Avoirdupois mass ounces — not fluid ounces (fl oz) and not troy ounces."
+        tip="Avoirdupois mass ounces; not fluid ounces (fl oz) and not troy ounces."
         error={errors.oz}
       >
         <div className="flex gap-2">

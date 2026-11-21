@@ -72,7 +72,7 @@ export function OkunsLawCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        "Okun's Law Calculator — Omega Calculators",
+        "Okun's Law Calculator | Omega Calculators",
         '',
         `Calculation Mode: ${result.modeLabel}`,
         '',

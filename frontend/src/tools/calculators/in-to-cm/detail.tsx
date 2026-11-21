@@ -4,7 +4,7 @@ import { IN_TO_CM_FAQS, IN_TO_CM_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert inches to centimeters and centimeters to inches instantly — 1 inch equals exactly 2.54 centimeters.',
+    'Convert inches to centimeters and centimeters to inches instantly; 1 inch equals exactly 2.54 centimeters.',
   asideAriaLabel: 'Interactive inches to centimeters converter',
   tocItems: IN_TO_CM_TOC_ITEMS,
   GuideArticle: InToCmGuideArticle,

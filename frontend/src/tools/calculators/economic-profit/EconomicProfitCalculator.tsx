@@ -208,7 +208,7 @@ export function EconomicProfitCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total revenue: ${getCurrencySymbol(input.totalRevenueCurrency)}${input.totalRevenue} ${input.totalRevenueCurrency}`,
         `Explicit costs: ${getCurrencySymbol(input.explicitCostsCurrency)}${input.explicitCosts} ${input.explicitCostsCurrency}`,
         `Implicit costs: ${getCurrencySymbol(input.implicitCostsCurrency)}${input.implicitCosts} ${input.implicitCostsCurrency}`,

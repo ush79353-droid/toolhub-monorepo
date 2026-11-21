@@ -53,14 +53,14 @@ export function AttritionRateCalculator({
   const handleShare = async () => {
     const summary = result
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Employees at start: ${input.startEmployees}`,
           `Employees at end: ${input.endEmployees}`,
           `Employees that left: ${input.leftEmployees}`,
           `Average headcount: ${result.averageEmployees}`,
           `Attrition rate: ${result.formattedRate}%`,
         ].join('\n')
-      : `${metadata.title} — Calculate employee attrition rate accurately at Omega Calculators`;
+      : `${metadata.title}; Calculate employee attrition rate accurately at Omega Calculators`;
 
     if (await copyTextToClipboard(summary)) {
       setCopied(true);

@@ -15,7 +15,7 @@ export function IncomeElasticityOfDemandGuideArticle() {
         a good or service responds to a change in consumer income. Positive YED
         is consistent with a normal good; negative YED with an inferior good.
         Businesses and economists use YED for forecasting, assortment planning,
-        and research — always with matching observation periods for income and
+ and research; always with matching observation periods for income and
         quantity.
       </p>
 
@@ -125,7 +125,7 @@ export function IncomeElasticityOfDemandGuideArticle() {
         Necessity Goods and Income Elasticity
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Necessity-type goods often show 0 &lt; YED &lt; 1 — demand rises with
+ Necessity-type goods often show 0 &lt; YED &lt; 1; demand rises with
         income but less than proportionally.
       </p>
 
@@ -148,7 +148,7 @@ export function IncomeElasticityOfDemandGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         When income changes but quantity does not, YED = 0. When income does not
-        change, YED is undefined — never display Infinity.
+ change, YED is undefined; never display Infinity.
       </p>
 
       <h2
@@ -239,7 +239,7 @@ export function IncomeElasticityOfDemandGuideArticle() {
         causation.
       </p>
       <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Educational illustration only — not professional economic, investment, or
+ Educational illustration only; not professional economic, investment, or
         business advice.
       </p>
 

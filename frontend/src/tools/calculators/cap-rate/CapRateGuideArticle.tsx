@@ -16,7 +16,7 @@ export function CapRateGuideArticle() {
         or purchase price. Investors use it to screen income-producing assets
         and compare yields without embedding a specific loan structure. Cap rate
         is useful for comparison, but it is not a complete investment-return
-        model — it does not by itself capture financing, appreciation, capital
+ model; it does not by itself capture financing, appreciation, capital
         expenditures, or exit timing.
       </p>
       <div className="my-4 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
@@ -114,7 +114,7 @@ export function CapRateGuideArticle() {
         Interpretation depends on property location and type, local market
         conditions, tenant and lease risk, property age and condition, investment
         strategy, interest rates, and comparable transactions. Illustrative
-        percentages in examples demonstrate math only — they are not universal
+ percentages in examples demonstrate math only; they are not universal
         buy/sell rules.
       </p>
 

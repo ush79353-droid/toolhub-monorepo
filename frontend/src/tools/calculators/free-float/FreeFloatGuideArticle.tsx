@@ -38,7 +38,7 @@ export function FreeFloatGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Outstanding shares cover all issued shares currently held by investors.
-        Free float is a subset of those shares — the portion considered freely
+ Free float is a subset of those shares: the portion considered freely
         available to the public market after exclusions.
       </p>
 
@@ -65,7 +65,7 @@ export function FreeFloatGuideArticle() {
         controlling shareholders, or strategic investors. Even when legally
         transferable, they are often excluded from public float estimates.
         Restricted and closely held categories must not overlap in this
-        calculator — count each share only once.
+ calculator; count each share only once.
       </p>
 
       <h2
@@ -142,7 +142,7 @@ export function FreeFloatGuideArticle() {
         More freely tradable shares can support liquidity, but actual liquidity
         also depends on volume, investor demand, market makers, and market
         conditions. Low float can coincide with limited supply, wider spreads,
-        or sharper moves around large orders — none of which are guaranteed.
+ or sharper moves around large orders; none of which are guaranteed.
       </p>
 
       <h2
@@ -185,7 +185,7 @@ export function FreeFloatGuideArticle() {
         <li>Ownership disclosures can lag</li>
         <li>Issuance, buybacks, and lockup expirations change float</li>
         <li>Excluded categories can overlap if misclassified</li>
-        <li>This tool estimates math only — it does not verify ownership data</li>
+        <li>This tool estimates math only; it does not verify ownership data</li>
       </ul>
 
       <h2

@@ -122,7 +122,7 @@ export function CcfToThermsForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         CCF measures volume; therms measure energy. The default factor 1.038 therms/CCF assumes an
-        illustrative heating value of 1038 BTU/ft³ — not a universal utility billing rate. Use your
+ illustrative heating value of 1038 BTU/ft³; not a universal utility billing rate. Use your
         bill&apos;s factor when available.
       </div>
 

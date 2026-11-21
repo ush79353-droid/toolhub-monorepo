@@ -165,14 +165,14 @@ export function RentalPropertyGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Cap rate</strong> — NOI relative to property value (unlevered).
+ <strong>Cap rate</strong>: NOI relative to property value (unlevered).
         </li>
         <li>
-          <strong>Cash-on-cash</strong> — annual cash flow after debt relative to
+ <strong>Cash-on-cash</strong>: annual cash flow after debt relative to
           cash invested (levered annual yield).
         </li>
         <li>
-          <strong>Total ROI</strong> — overall profit versus investment over a
+ <strong>Total ROI</strong>: overall profit versus investment over a
           stated holding period, often including sale proceeds.
         </li>
       </ul>

@@ -7,7 +7,7 @@ import { RemoteVsOnLocationGuideArticle } from './RemoteVsOnLocationGuideArticle
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Compare remote per-employee allowances with on-location office costs over a chosen period — including lease vs own, recurring frequencies, custom expenses, and cost per employee. Currency changes formatting only.',
+    'Compare remote per-employee allowances with on-location office costs over a chosen period, including lease vs own, recurring frequencies, custom expenses, and cost per employee. Currency changes formatting only.',
   asideAriaLabel: 'Remote vs. On-Location Workers Calculator guide',
   tocItems: REMOTE_VS_ON_LOCATION_TOC_ITEMS,
   GuideArticle: RemoteVsOnLocationGuideArticle,

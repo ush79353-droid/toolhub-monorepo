@@ -93,7 +93,7 @@ export function UnemploymentGuideArticle() {
           >
             Natural Rate of Unemployment Calculator
           </Link>{' '}
-          — frictional + structural unemployment relative to the labor force (no cyclical component).
+; frictional + structural unemployment relative to the labor force (no cyclical component).
         </li>
         <li>
           <Link
@@ -102,7 +102,7 @@ export function UnemploymentGuideArticle() {
           >
             Labor Force Participation Rate Calculator
           </Link>{' '}
-          — dedicated participation-rate tool page (separate catalog record).
+; dedicated participation-rate tool page (separate catalog record).
         </li>
       </ul>
 

@@ -44,7 +44,7 @@ export function shareResultText(ratio: number, sourceUnit: PpmUnit): string {
     return s ? ` ${s}` : '';
   };
   return [
-    'PPM Calculator — Omega Calculators',
+    'PPM Calculator | Omega Calculators',
     '',
     'Input:',
     `${formatPpm(a[sourceUnit])}${symbol(sourceUnit)}`.trim(),

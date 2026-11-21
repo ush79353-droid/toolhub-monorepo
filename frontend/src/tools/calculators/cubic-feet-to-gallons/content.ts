@@ -59,7 +59,7 @@ export const CU_FT_TO_GAL_GUIDE_SECTIONS: readonly GuideSection[] = [
       `Convert 15 ft³ to US gallons: 15 × ${formatVolume(cubicFeetToGallons(1, 'us'))} ≈ ${formatVolume(cubicFeetToGallons(15, 'us'))} US gal.`,
       `Convert 15 ft³ to UK gallons: 15 × ${formatVolume(cubicFeetToGallons(1, 'uk'))} ≈ ${formatVolume(cubicFeetToGallons(15, 'uk'))} UK gal.`,
       `Reverse example: 10 US gal ≈ ${formatVolume(gallonsToCubicFeet(10, 'us'))} ft³.`,
-      'Enter either cubic feet or gallons — the other field updates instantly. Switch the gallon dropdown to recalculate with the selected system.',
+      'Enter either cubic feet or gallons: the other field updates instantly. Switch the gallon dropdown to recalculate with the selected system.',
     ],
     formula: 'US/UK gal = ft³ × (0.028316846592 ÷ gallon_m³)  ·  ft³ = gal × (gallon_m³ ÷ 0.028316846592)',
     tableHeaders: ['Cubic feet (ft³)', 'US gallons (approx.)'],

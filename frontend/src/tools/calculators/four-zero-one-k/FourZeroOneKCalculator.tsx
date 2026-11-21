@@ -48,7 +48,7 @@ function summaryText(
 ): string {
   const money = (value: number) => formatCurrencyValue(value, currency);
   const lines = [
-    '401(k) Calculator — Omega Calculators',
+    '401(k) Calculator | Omega Calculators',
     `Projected balance: ${money(result.finalBalance)}`,
     `Inflation-adjusted balance: ${money(result.inflationAdjustedBalance)}`,
     `Employee contributions: ${money(result.employeeContributions)}`,

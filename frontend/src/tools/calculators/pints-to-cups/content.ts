@@ -46,7 +46,7 @@ export const PINTS_TO_CUPS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'What Are Pints and Cups?',
     paragraphs: [
       `A US liquid pint equals exactly ${ML_PER_US_PINT} mL, which is also ${CUPS_PER_US_PINT} US customary cups.`,
-      `A US customary cup equals exactly ${ML_PER_US_CUP} mL — half a US liquid pint.`,
+      `A US customary cup equals exactly ${ML_PER_US_CUP} mL; half a US liquid pint.`,
       `An Imperial (UK) pint is about ${ML_PER_IMP_PINT} mL, and an Imperial cup is about ${ML_PER_IMP_CUP} mL. Matching UK cups with imperial pints also gives 2 cups per pint, but those volumes are larger than US liquid units.`,
       'US liquid, US dry, and UK imperial pints are different volumes. Always choose the measurement system that matches your recipe or equipment.',
     ],
@@ -57,8 +57,8 @@ export const PINTS_TO_CUPS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Pints to Cups',
     paragraphs: [
       `For matching US customary cups and US liquid pints: cups = pints × ${CUPS_PER_US_PINT}.`,
-      `Example 1 — convert 3 pints: 3 × ${CUPS_PER_US_PINT} = ${formatVolume(pintsToCups(3))} cups.`,
-      `Example 2 — convert 1.5 pints: 1.5 × ${CUPS_PER_US_PINT} = ${formatVolume(pintsToCups(1.5))} cups.`,
+      `Example 1: convert 3 pints: 3 × ${CUPS_PER_US_PINT} = ${formatVolume(pintsToCups(3))} cups.`,
+      `Example 2: convert 1.5 pints: 1.5 × ${CUPS_PER_US_PINT} = ${formatVolume(pintsToCups(1.5))} cups.`,
       `Reverse: pints = cups ÷ ${CUPS_PER_US_PINT}. Example: 5 ÷ ${CUPS_PER_US_PINT} = ${formatVolume(cupsToPints(5))} pints.`,
       'When systems differ, convert through liters: cups = pints × (liters per pint) ÷ (liters per cup). Do not use ×2 across mismatched units.',
     ],
@@ -83,7 +83,7 @@ export const PINTS_TO_CUPS_GUIDE_SECTIONS: readonly GuideSection[] = [
       '4. Read the equivalent number of pints.',
       '5. Use the unit selectors when US customary is not the correct system.',
       '6. Use Share, Reload, or Clear as needed.',
-      'Both conversion directions update automatically — no separate Calculate button is required.',
+      'Both conversion directions update automatically; no separate Calculate button is required.',
     ],
   },
   {

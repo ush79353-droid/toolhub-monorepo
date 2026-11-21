@@ -19,9 +19,9 @@ export function formatPi(value: number): string {
 
 export function interpretPi(pi: number): string {
   if (!Number.isFinite(pi)) return '';
-  if (pi > 1) return 'PI > 1 — the investment may be attractive.';
+  if (pi > 1) return 'PI > 1: the investment may be attractive.';
   if (pi === 1 || Math.abs(pi - 1) < 1e-9) {
-    return 'PI = 1 — break-even type scenario.';
+    return 'PI = 1; break-even type scenario.';
   }
-  return 'PI < 1 — the investment may be unattractive.';
+  return 'PI < 1: the investment may be unattractive.';
 }

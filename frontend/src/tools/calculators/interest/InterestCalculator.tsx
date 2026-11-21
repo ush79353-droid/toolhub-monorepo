@@ -58,7 +58,7 @@ export function InterestCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial investment: $${input.initialInvestment}`,
         `Annual contribution: $${input.annualContribution}`,
         `Monthly contribution: $${input.monthlyContribution}`,
@@ -73,7 +73,7 @@ export function InterestCalculator({
         `Interest on initial: $${result.formattedInterestOnInitial}`,
         `Interest on contributions: $${result.formattedInterestOnContributions}`,
         `Inflation-adjusted: $${result.formattedInflationAdjustedBalance}`,
-        'Currency: fixed USD ($) — no FX selectors in the reference.',
+        'Currency: fixed USD ($); no FX selectors in the reference.',
       ].join('\n')
     : '';
 

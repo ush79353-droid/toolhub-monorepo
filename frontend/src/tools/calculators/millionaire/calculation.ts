@@ -350,7 +350,7 @@ export function calculateMillionaireGoal(input: {
       durationLabel: '0 months',
       summaryText: [
         `Millionaire Calculator`,
-        `Goal: ${money(targetAmount)} — already reached with ${money(initialSavings)}.`,
+        `Goal: ${money(targetAmount)}; already reached with ${money(initialSavings)}.`,
       ].join('\n'),
       projection: [
         {
@@ -401,7 +401,7 @@ export function calculateMillionaireGoal(input: {
       durationLabel: '—',
       summaryText: [
         `Millionaire Calculator`,
-        `Goal: ${money(targetAmount)} — unreachable with current inputs.`,
+        `Goal: ${money(targetAmount)}; unreachable with current inputs.`,
       ].join('\n'),
       projection: [],
       currency,

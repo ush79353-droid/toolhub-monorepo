@@ -85,7 +85,7 @@ export function AverageVariableCostCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Variable costs: ${symbol}${result.formattedVariableCosts}`,
         `Total output: ${result.formattedTotalOutput} ${result.outputUnit}`,
         `Average variable cost: ${symbol}${result.formattedAverageVariableCost}/${result.outputUnit}`,
@@ -123,7 +123,7 @@ export function AverageVariableCostCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             Calculate average variable cost per unit from total variable costs
-            and output — or reverse-solve VC or Q.
+ and output, or reverse-solve VC or Q.
           </p>
         </div>
         {headerActions ? (

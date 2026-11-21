@@ -135,7 +135,7 @@ export function MeshToMicronForm({
             >
               {ASTM_E11_SIEVES.map((sieve) => (
                 <option key={sieve.designation} value={sieve.designation}>
-                  {sieve.label} — {sieve.openingUm} µm
+ {sieve.label}; {sieve.openingUm} µm
                 </option>
               ))}
             </select>

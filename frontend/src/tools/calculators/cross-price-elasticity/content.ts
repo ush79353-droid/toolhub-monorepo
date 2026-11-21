@@ -30,12 +30,12 @@ export const CPE_FAQS: readonly FAQItem[] = [
   {
     question: 'What does positive cross-price elasticity mean?',
     answer:
-      'A positive coefficient is consistent with substitute goods — demand for B moves in the same direction as A\'s price change, under the stated assumptions.',
+      'A positive coefficient is consistent with substitute goods; demand for B moves in the same direction as A\'s price change, under the stated assumptions.',
   },
   {
     question: 'What does negative cross-price elasticity mean?',
     answer:
-      'A negative coefficient is consistent with complementary goods — demand for B moves opposite A\'s price change.',
+      'A negative coefficient is consistent with complementary goods; demand for B moves opposite A\'s price change.',
   },
   {
     question: 'What does zero cross-price elasticity mean?',
@@ -70,19 +70,19 @@ export const CPE_FAQS: readonly FAQItem[] = [
   {
     question: 'How do businesses use cross-price elasticity?',
     answer:
-      'It informs pricing, competitive positioning, bundling, and demand analysis for related products — always with caveats about other market changes.',
+      'It informs pricing, competitive positioning, bundling, and demand analysis for related products; always with caveats about other market changes.',
   },
   {
     question:
       'What is the cross-price elasticity when price increases by 10% and demand for another product increases by 20%?',
     answer:
-      'E = 20% / 10% = +2.00 — a positive coefficient consistent with a relatively strong substitute response under those assumptions.',
+      'E = 20% / 10% = +2.00: a positive coefficient consistent with a relatively strong substitute response under those assumptions.',
   },
   {
     question:
       'What is the cross-price elasticity when price rises by 20% and demand for another product falls by 10%?',
     answer:
-      'E = −10% / 20% = −0.50 — complement-consistent and relatively inelastic in magnitude.',
+      'E = −10% / 20% = −0.50; complement-consistent and relatively inelastic in magnitude.',
   },
   {
     question: 'Does cross-price elasticity prove that two products are substitutes?',

@@ -62,7 +62,7 @@ export const HOURS_TO_WEEKS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Hours to Week Calculator',
     paragraphs: [
-      '1. Enter the number of hours in Time in hours — weeks update instantly.',
+      '1. Enter the number of hours in Time in hours. weeks update instantly.',
       '2. Edit Time in weeks to convert hours in reverse.',
       '3. Expand Other time units for years, months, days, minutes, seconds, and compound hours/minutes/seconds.',
       '4. Years and months are labeled as average Gregorian durations (365.2425-day year), not calendar-date spans.',

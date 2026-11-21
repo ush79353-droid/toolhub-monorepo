@@ -4,7 +4,7 @@ import { LEMONADE_STAND_FAQS, LEMONADE_STAND_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate lemonade stand profit from servings, cup and ingredient costs, optional permit and other costs, and selling price. Enter your own costs—currency changes the denomination only.',
+    'Estimate lemonade stand profit from servings, cup and ingredient costs, optional permit and other costs, and selling price. Enter your own costs, currency changes the denomination only.',
   asideAriaLabel: 'Interactive lemonade stand calculator',
   tocItems: LEMONADE_STAND_TOC_ITEMS,
   GuideArticle: LemonadeStandGuideArticle,

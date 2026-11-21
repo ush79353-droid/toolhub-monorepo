@@ -63,7 +63,7 @@ export function LfprForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         LFPR = (Employed + Unemployed) / Working-age population × 100.
-        Unemployment rate = Unemployed / Labor force × 100 — different
+ Unemployment rate = Unemployed / Labor force × 100; different
         denominators. Hypothetical teaching numbers are not national statistics.
       </p>
 
@@ -187,7 +187,7 @@ export function LfprForm({
             Population definition
             <InfoTooltip
               label="Population definition"
-              text="Labels the coverage used for the working-age / participation denominator. Different agencies use different age cutoffs — this does not change the arithmetic of your entered counts."
+              text="Labels the coverage used for the working-age / participation denominator. Different agencies use different age cutoffs; this does not change the arithmetic of your entered counts."
             />
           </label>
           <FieldShell>

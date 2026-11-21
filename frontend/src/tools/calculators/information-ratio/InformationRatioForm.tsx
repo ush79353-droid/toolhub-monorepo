@@ -181,7 +181,7 @@ export function InformationRatioForm({
           <FieldLabel
             htmlFor="ir-tracking"
             label="Tracking error"
-            tip="Standard deviation of active returns (%). Must be greater than zero. Entered directly — not derived here."
+            tip="Standard deviation of active returns (%). Must be greater than zero. Entered directly; not derived here."
           />
           <div className="relative">
             <input

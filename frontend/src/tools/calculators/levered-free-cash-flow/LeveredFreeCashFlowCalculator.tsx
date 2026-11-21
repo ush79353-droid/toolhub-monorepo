@@ -102,14 +102,14 @@ export function LeveredFreeCashFlowCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `EBITDA: ${ebitdaSymbol}${input.ebitda} ${input.ebitdaCurrency}`,
         `CapEx: ${capexSymbol}${input.capex} ${input.capexCurrency}`,
         `ΔWC: ${wcSymbol}${input.changeInWc} ${input.changeInWcCurrency}`,
         `Debt repayments: ${debtSymbol}${input.debtRepayments} ${input.debtRepaymentsCurrency}`,
         `Levered FCF: ${fcfSymbol}${result.formattedLeveredFcf} ${result.currency}`,
         `Formula: Levered FCF = EBITDA − CapEx − ΔWC − Debt repayments`,
-        `Simplified estimate — not a full FCFE calculation.`,
+        `Simplified estimate: not a full FCFE calculation.`,
         currencyNote,
       ].join('\n')
     : '';

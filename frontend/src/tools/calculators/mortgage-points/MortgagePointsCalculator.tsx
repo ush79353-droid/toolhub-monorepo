@@ -72,11 +72,11 @@ export function MortgagePointsCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Original loan: ${getCurrencySymbol(input.loanCurrency)}${input.loanAmount}`,
         `Term: ${input.mortgageTerm} ${input.termUnit} · Initial rate: ${input.initialRatePercent}%`,
-        `Option I — payment ${symbol}${result.optionI.formattedMonthlyPayment}; savings ${symbol}${result.optionI.formattedMonthlySavings}; break-even ${result.optionI.formattedBreakEven}`,
-        `Option II — payment ${symbol}${result.optionII.formattedMonthlyPayment}; savings ${symbol}${result.optionII.formattedMonthlySavings}; break-even ${result.optionII.formattedBreakEven}`,
+        `Option I; payment ${symbol}${result.optionI.formattedMonthlyPayment}; savings ${symbol}${result.optionI.formattedMonthlySavings}; break-even ${result.optionI.formattedBreakEven}`,
+        `Option II; payment ${symbol}${result.optionII.formattedMonthlyPayment}; savings ${symbol}${result.optionII.formattedMonthlySavings}; break-even ${result.optionII.formattedBreakEven}`,
         currencyNote,
       ].join('\n')
     : '';

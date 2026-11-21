@@ -83,7 +83,7 @@ export function CashRatioCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Cash and cash equivalents: ${getCurrencySymbol(input.cashCurrency)}${input.cashAndEquivalents}`,
         `Current liabilities: ${getCurrencySymbol(input.liabilitiesCurrency)}${input.currentLiabilities}`,
         `Cash ratio: ${result.formattedCashRatio}x`,

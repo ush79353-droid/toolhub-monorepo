@@ -103,7 +103,7 @@ export function UnleveredFreeCashFlowCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `EBIT: ${ebitSymbol}${input.ebit} ${input.ebitCurrency}`,
         `ETR: ${input.etr}%`,
         `D&A: ${daSymbol}${input.da} ${input.daCurrency}`,

@@ -73,7 +73,7 @@ export function PppForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
-        GDP PPP conversion factors (World Bank WDI) — annual statistical
+ GDP PPP conversion factors (World Bank WDI); annual statistical
         estimates, not live FX. Prefer same-year official market rates for
         PPP-vs-market comparisons. Manual mode accepts user-supplied factors.
       </p>
@@ -157,7 +157,7 @@ export function PppForm({
             >
               {PPP_COUNTRIES.map((c) => (
                 <option key={c.iso2} value={c.iso2}>
-                  {c.name} — {c.currency} ({c.iso2})
+ {c.name}; {c.currency} ({c.iso2})
                 </option>
               ))}
             </select>
@@ -229,7 +229,7 @@ export function PppForm({
             >
               {PPP_COUNTRIES.map((c) => (
                 <option key={c.iso2} value={c.iso2}>
-                  {c.name} — {c.currency} ({c.iso2})
+ {c.name}; {c.currency} ({c.iso2})
                 </option>
               ))}
             </select>

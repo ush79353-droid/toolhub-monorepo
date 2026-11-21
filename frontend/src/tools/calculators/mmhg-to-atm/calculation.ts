@@ -67,7 +67,7 @@ export function calculateMmhgToAtm(input: MmhgToAtmInput): MmhgToAtmResult {
 
 export function shareResultText(result: MmhgToAtmResult): string {
   return [
-    'mmHg to atm Conversion — Omega Calculators',
+    'mmHg to atm Conversion | Omega Calculators',
     '',
     `${formatPressure(result.mmHg)} mmHg = ${formatPressure(result.atm)} atm`,
     '',

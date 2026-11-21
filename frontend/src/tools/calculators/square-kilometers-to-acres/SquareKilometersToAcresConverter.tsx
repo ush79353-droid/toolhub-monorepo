@@ -21,7 +21,7 @@ import { validateSquareKilometersToAcres } from './validation';
 
 function summaryText(result: SquareKilometersToAcresResult): string {
   const lines = [
-    'Square Kilometers to Acres Conversion — Omega Calculators',
+    'Square Kilometers to Acres Conversion | Omega Calculators',
     result.source === 'acres'
       ? `${formatArea(result.acres)} acres ≈ ${formatArea(result.squareKilometers)} km²`
       : `${formatArea(result.squareKilometers)} km² ≈ ${formatArea(result.acres)} acres`,

@@ -29,7 +29,7 @@ export const LFPR_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the labor force participation rate?',
     answer:
-      'LFPR is the share of a defined population (often working-age or civilian noninstitutional) that is in the labor force — employed or unemployed under the applicable definition.',
+      'LFPR is the share of a defined population (often working-age or civilian noninstitutional) that is in the labor force; employed or unemployed under the applicable definition.',
   },
   {
     question: 'How do I calculate the labor force participation rate?',
@@ -59,7 +59,7 @@ export const LFPR_FAQS: readonly FAQItem[] = [
   {
     question: 'What does unemployed population mean?',
     answer:
-      'People without a job who meet the agency’s criteria for seeking work and being available — not everyone who is jobless.',
+      'People without a job who meet the agency’s criteria for seeking work and being available; not everyone who is jobless.',
   },
   {
     question: 'What is the difference between labor force and employment?',
@@ -79,7 +79,7 @@ export const LFPR_FAQS: readonly FAQItem[] = [
   {
     question: 'Can labor force participation be 0%?',
     answer:
-      'Yes, if nobody in the defined population is employed or unemployed under the survey rules — rare for large national populations but possible in a constructed example.',
+      'Yes, if nobody in the defined population is employed or unemployed under the survey rules; rare for large national populations but possible in a constructed example.',
   },
   {
     question: 'What is a good labor force participation rate?',
@@ -149,7 +149,7 @@ export const LFPR_FAQS: readonly FAQItem[] = [
   {
     question: 'How does labor force participation relate to GDP?',
     answer:
-      'More participants can raise potential GDP through greater labor input, holding productivity and hours fixed — see also GDP growth and productivity tools.',
+      'More participants can raise potential GDP through greater labor input, holding productivity and hours fixed; see also GDP growth and productivity tools.',
   },
   {
     question: 'Why can unemployment fall while participation also falls?',
@@ -174,6 +174,6 @@ export const LFPR_FAQS: readonly FAQItem[] = [
   {
     question: 'How can labor force participation improve?',
     answer:
-      'Policies and conditions that support childcare, health, education-to-work transitions, inclusive hiring, and later-life work can raise participation — effects vary by context.',
+      'Policies and conditions that support childcare, health, education-to-work transitions, inclusive hiring, and later-life work can raise participation; effects vary by context.',
   },
 ];

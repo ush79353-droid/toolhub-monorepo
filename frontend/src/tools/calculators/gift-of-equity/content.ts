@@ -25,7 +25,7 @@ export const GIFT_OF_EQUITY_FAQS: readonly FAQItem[] = [
   {
     question: 'Can the gift of equity be negative?',
     answer:
-      'Yes, mathematically. If sales price exceeds market value, Market Value − Sales Price is negative. That signed difference is not a positive gift of equity — it means the buyer is paying above the stated market value figure.',
+      'Yes, mathematically. If sales price exceeds market value, Market Value − Sales Price is negative. That signed difference is not a positive gift of equity; it means the buyer is paying above the stated market value figure.',
   },
   {
     question: 'How do I calculate my gift of equity?',
@@ -41,7 +41,7 @@ export const GIFT_OF_EQUITY_FAQS: readonly FAQItem[] = [
   {
     question: 'Can gift of equity be used for a down payment?',
     answer:
-      'Some mortgage programs may allow a qualifying gift of equity toward purchase funding requirements, subject to lender policy, documentation, valuation, and relationship rules. Acceptance is not universal — confirm with the lender and program guidelines.',
+      'Some mortgage programs may allow a qualifying gift of equity toward purchase funding requirements, subject to lender policy, documentation, valuation, and relationship rules. Acceptance is not universal; confirm with the lender and program guidelines.',
   },
   {
     question: 'Is a gift of equity taxable?',

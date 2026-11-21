@@ -130,7 +130,7 @@ function tryAsfHelper(input: NsfrInput): {
       weightedTotal: calc.weightedTotal,
       formattedUnweighted: formatMoney(calc.unweightedTotal),
       formattedWeighted: formatMoney(calc.weightedTotal),
-      note: 'Illustrative ASF weights for education. Eligibility, maturity, and jurisdictional rules are simplified — not a regulatory filing.',
+      note: 'Illustrative ASF weights for education. Eligibility, maturity, and jurisdictional rules are simplified; not a regulatory filing.',
     };
     return {
       helper,
@@ -199,7 +199,7 @@ function tryRsfHelper(input: NsfrInput): {
       weightedTotal: calc.weightedTotal,
       formattedUnweighted: formatMoney(calc.unweightedTotal),
       formattedWeighted: formatMoney(calc.weightedTotal),
-      note: 'Illustrative RSF factors only. Asset type, maturity, encumbrance, and local rules omitted — educational estimate.',
+      note: 'Illustrative RSF factors only. Asset type, maturity, encumbrance, and local rules omitted; educational estimate.',
     };
     return {
       helper,

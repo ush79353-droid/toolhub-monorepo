@@ -62,7 +62,7 @@ export function HeroesStimulusForm({
     >
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-[13px] leading-relaxed text-accent sm:text-sm">
         <p className="font-semibold text-amber-950">
-          Historical proposal only — not a current benefit
+ Historical proposal only; not a current benefit
         </p>
         <p className="mt-1.5 text-foreground/85">
           This calculator is based on the HEROES Act, which is a proposed second round of
@@ -71,7 +71,7 @@ export function HeroesStimulusForm({
         <p className="mt-2 text-foreground/85">
           On May 29, the Senate Majority Leader Mitch McConnell informed that the Senate needs
           &quot;about a month&quot; to reach the final decision. The bill was not enacted as
-          proposed — estimates below are historical and hypothetical, and you cannot claim these
+ proposed; estimates below are historical and hypothetical, and you cannot claim these
           payments today.
         </p>
       </div>
@@ -146,7 +146,7 @@ export function HeroesStimulusForm({
             <span>Your income (AGI)</span>
             <InfoTooltip
               label="Your income (AGI)"
-              text="Adjusted gross income in USD. Full payment below the status threshold; reduced by 5% of income above the threshold. Fixed USD — no currency conversion."
+              text="Adjusted gross income in USD. Full payment below the status threshold; reduced by 5% of income above the threshold. Fixed USD; no currency conversion."
             />
           </label>
           <FieldShell error={errors.agi}>

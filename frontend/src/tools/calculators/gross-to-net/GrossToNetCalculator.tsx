@@ -77,7 +77,7 @@ export function GrossToNetCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Mode: ${result.mode}`,
         `Tax rate: ${result.formattedTaxRatePercent}%`,
         `Gross: ${getCurrencySymbol(result.grossCurrency)}${result.formattedGrossAmount}`,

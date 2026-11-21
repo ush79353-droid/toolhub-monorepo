@@ -96,7 +96,7 @@ export function CashConversionCycleCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Period: ${result.formattedPeriodDays} days`,
         `DSO: ${result.formattedAccountsReceivableDays} days`,
         `DIO: ${result.formattedInventoryDays} days`,
@@ -140,7 +140,7 @@ export function CashConversionCycleCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             Measure how long cash stays tied up in inventory and receivables
-            after supplier payment days — CCC = DIO + DSO − DPO.
+ after supplier payment days; CCC = DIO + DSO − DPO.
           </p>
         </div>
         {headerActions ? (

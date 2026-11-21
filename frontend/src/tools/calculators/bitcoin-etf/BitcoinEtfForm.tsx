@@ -64,7 +64,7 @@ export function BitcoinEtfForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
-        Returns are estimates only — not guarantees. No live Bitcoin or ETF prices are used.
+ Returns are estimates only; not guarantees. No live Bitcoin or ETF prices are used.
         Verified issuer expense ratios are not bundled yet; choose Custom and enter the ratio
         yourself.
       </p>

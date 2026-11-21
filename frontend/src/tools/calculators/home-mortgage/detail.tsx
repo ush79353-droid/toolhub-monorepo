@@ -4,7 +4,7 @@ import { HOME_MORTGAGE_FAQS, HOME_MORTGAGE_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate home-mortgage payments, interest, PMI, payoff date, and a principal-versus-interest breakdown — with independent FX on money fields.',
+    'Estimate home-mortgage payments, interest, PMI, payoff date, and a principal-versus-interest breakdown, with independent FX on money fields.',
   asideAriaLabel: 'Interactive Home Mortgage Calculator',
   tocItems: HOME_MORTGAGE_TOC_ITEMS,
   GuideArticle: HomeMortgageGuideArticle,

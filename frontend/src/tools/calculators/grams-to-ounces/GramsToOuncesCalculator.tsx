@@ -22,7 +22,7 @@ import { validateGramsToOunces } from './validation';
 
 function summaryText(result: GramsToOuncesResult): string {
   return [
-    'Grams To Ounces Calculator — Omega Calculators',
+    'Grams To Ounces Calculator | Omega Calculators',
     `Grams: ${formatMass(result.g)} g`,
     `Ounces: ≈ ${formatMass(result.oz)} oz`,
     `Conversion: 1 oz = ${GRAMS_PER_AVOIRDUPOIS_OUNCE} g`,

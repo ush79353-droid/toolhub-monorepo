@@ -24,7 +24,7 @@ export const QUANTITY_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: "How Much Is a Dozen and a Baker's Dozen?",
     paragraphs: [
       'A dozen is a group of 12 items. Eggs, rolls, cookies, and many packaged goods are still sold by the dozen because twelve divides evenly into halves, thirds, and quarters.',
-      "A baker's dozen is 13 items. Historical explanations often point to bakers adding an extra piece to avoid short-weight penalties or to keep customers satisfied — whatever the origin, the modern counting meaning is fixed at thirteen.",
+      "A baker's dozen is 13 items. Historical explanations often point to bakers adding an extra piece to avoid short-weight penalties or to keep customers satisfied; whatever the origin, the modern counting meaning is fixed at thirteen.",
       'Standardized groups speed counting in kitchens, shops, and warehouses: three dozens are 36 units; two baker’s dozens are 26 units.',
     ],
     formula: "1 dozen = 12 units · 1 baker's dozen = 13 units · 3 dozens = 36 units",
@@ -43,7 +43,7 @@ export const QUANTITY_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'A Dozen, a Gross, and a Score',
     paragraphs: [
       'Common counting groups relate through individual units. A pair (or couple/brace) is 2; a half-dozen is 6; a decade of items is 10; a dozen is 12; a baker’s dozen is 13; a score is 20; a gross is 144 (twelve dozens); a great gross is 1,728 (twelve grosses).',
-      'In this converter, “decade” means a group of ten items — not a ten-year time period.',
+      'In this converter, “decade” means a group of ten items; not a ten-year time period.',
     ],
     formula: '1 gross = 12 dozens · 1 great gross = 12 grosses · 1 score = 20 units',
     tableHeaders: ['Number of Units', 'Quantity'],

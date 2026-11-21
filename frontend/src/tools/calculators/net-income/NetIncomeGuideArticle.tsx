@@ -11,7 +11,7 @@ export function NetIncomeGuideArticle() {
         What Is Net Income?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Net income — also called net profit, net earnings, or the bottom line —
+ Net income (also called net profit, net earnings, or the bottom line) 
         is what remains after a business deducts cost of sales, operating
         expenses, interest, and income taxes from revenue under a stated
         reporting model. It is a core profitability measure, but it is not the
@@ -198,7 +198,7 @@ export function NetIncomeGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Investors, lenders, and managers use net income to assess performance,
-        plan distributions, and compare periods — always alongside cash flow and
+ plan distributions, and compare periods; always alongside cash flow and
         balance-sheet strength.
       </p>
 
@@ -223,7 +223,7 @@ export function NetIncomeGuideArticle() {
         What Causes Negative Net Income?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Losses arise when costs and taxes exceed revenue — from weak sales, high
+ Losses arise when costs and taxes exceed revenue, from weak sales, high
         COGS, heavy overhead, interest burden, or investment/expansion phases.
       </p>
 
@@ -317,7 +317,7 @@ export function NetIncomeGuideArticle() {
         This tool uses a simplified income-statement model and an estimated
         effective tax rate. It does not apply jurisdiction-specific tax law,
         deferred taxes, or every non-operating adjustment. Educational use only
-        — not personalized financial, tax, or accounting advice.
+; not personalized financial, tax, or accounting advice.
       </p>
 
       <h2

@@ -82,7 +82,7 @@ export function PriceElasticityOfSupplyCalculator({
   const summary =
     result && result.status === 'valid'
       ? [
-          'Price Elasticity of Supply Calculator — Omega Calculators',
+          'Price Elasticity of Supply Calculator | Omega Calculators',
           '',
           `Method: ${result.methodLabel}`,
           `PES: ${result.formattedPes}`,
@@ -98,7 +98,7 @@ export function PriceElasticityOfSupplyCalculator({
         ].join('\n')
       : result
         ? [
-            'Price Elasticity of Supply Calculator — Omega Calculators',
+            'Price Elasticity of Supply Calculator | Omega Calculators',
             '',
             result.interpretation,
             '',
@@ -137,7 +137,7 @@ export function PriceElasticityOfSupplyCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Supply response to price — standard or midpoint PES.
+ Supply response to price; standard or midpoint PES.
           </p>
         </div>
         {headerActions ? (

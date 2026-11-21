@@ -84,7 +84,7 @@ export function ReceivablesTurnoverRatioCalculator({
   const shareable = Boolean(result);
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Avg AR: ${symbol}${result!.formattedAverageAR}`,
         result!.status === 'undefinedTurnover'
           ? 'Turnover: undefined'

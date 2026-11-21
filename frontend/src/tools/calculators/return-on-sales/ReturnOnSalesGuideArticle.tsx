@@ -11,7 +11,7 @@ export function ReturnOnSalesGuideArticle() {
         What Is Return on Sales?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Return on sales (ROS) expresses operating profit — earnings after operating expenses —
+ Return on sales (ROS) expresses operating profit (earnings after operating expenses) 
         as a percentage of net sales. It is an operating profitability screen, distinct from
         net profit margin (after interest and taxes) and gross margin (after cost of goods sold
         only).

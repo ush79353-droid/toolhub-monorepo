@@ -13,7 +13,7 @@ export function OhioSalesTaxGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Ohio sales tax is a combined rate: the statewide base plus county and, in many
         places, transit authority add-ons. The correct rate depends on the taxing
-        jurisdiction for the delivery or sale location—not a single number for every ZIP.
+ jurisdiction for the delivery or sale location, not a single number for every ZIP.
       </p>
 
       <h2

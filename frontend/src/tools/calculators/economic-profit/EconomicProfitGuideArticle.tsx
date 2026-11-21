@@ -14,7 +14,7 @@ export function EconomicProfitGuideArticle() {
         Economic profit measures whether a business earns more than its next-best alternative. It
         starts with total revenue, subtracts explicit cash costs, then also subtracts implicit
         opportunity costs such as forgone salary or capital returns. Unlike accounting profit, a
-        zero economic profit still means a normal return was earned—just not above the opportunity
+ zero economic profit still means a normal return was earned, just not above the opportunity
         cost of the resources used.
       </p>
 

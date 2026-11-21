@@ -35,8 +35,8 @@ export const CM_TO_M_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert CM to M?',
     paragraphs: [
       `Exactly ${CM_PER_METER} centimeters equal 1 meter. To convert centimeters to meters, divide by ${CM_PER_METER}.`,
-      `Example 1 — 350 cm: 350 ÷ ${CM_PER_METER} = ${formatLength(centimetersToMeters(350))} m.`,
-      `Example 2 — 50 cm: 50 ÷ ${CM_PER_METER} = ${formatLength(centimetersToMeters(50))} m.`,
+      `Example 1: 350 cm: 350 ÷ ${CM_PER_METER} = ${formatLength(centimetersToMeters(350))} m.`,
+      `Example 2: 50 cm: 50 ÷ ${CM_PER_METER} = ${formatLength(centimetersToMeters(50))} m.`,
       `To convert meters to centimeters, multiply by ${CM_PER_METER}. Example: 2.5 × ${CM_PER_METER} = ${formatLength(metersToCentimeters(2.5))} cm.`,
     ],
     formula: `m = cm ÷ ${CM_PER_METER}  ·  cm = m × ${CM_PER_METER}`,
@@ -55,7 +55,7 @@ export const CM_TO_M_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use-tool',
     title: 'How to Use the CM to M Converter',
     paragraphs: [
-      'Enter a value in centimeters — meters update automatically. Or enter meters to get centimeters.',
+      'Enter a value in centimeters; meters update automatically. Or enter meters to get centimeters.',
       'Use Other units to view an equivalent measurement such as inches (default), feet, millimeters, or kilometers.',
       'Share result copies a summary with the page URL. Reload calculator and Clear all changes reset the fields. No form submit is required.',
     ],

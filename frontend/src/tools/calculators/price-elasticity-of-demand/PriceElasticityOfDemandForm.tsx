@@ -245,7 +245,7 @@ export function PriceElasticityOfDemandForm({
       </div>
       <p className="text-xs text-muted-foreground">
         Amounts share one currency label (no FX conversion). PED is
-        dimensionless — not a percent or a currency amount.
+ dimensionless; not a percent or a currency amount.
       </p>
       <p className="text-xs">
         <a

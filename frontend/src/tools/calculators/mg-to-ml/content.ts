@@ -86,7 +86,7 @@ export const MG_TO_ML_GUIDE_SECTIONS: readonly MgToMlGuideSection[] = [
     id: 'medication-concentration',
     title: 'Medication Concentration – How Many Milligrams Are in a Milliliter?',
     paragraphs: [
-      'Medication concentration states how much of a specified active ingredient is present in each milliliter of a liquid preparation. A label of 20 mg/mL means 20 mg of that ingredient per milliliter of liquid—not the density of the whole liquid.',
+      'Medication concentration states how much of a specified active ingredient is present in each milliliter of a liquid preparation. A label of 20 mg/mL means 20 mg of that ingredient per milliliter of liquid, not the density of the whole liquid.',
       'Some labels use milligrams per 5 mL (or another volume). Convert those to mg/mL by dividing labeled milligrams by the labeled milliliters. Example: 100 mg per 5 mL → 20 mg/mL. Different products with the same drug name can have different strengths; always read the package in front of you.',
     ],
     formula: 'Concentration (mg/mL) = Labeled ingredient mass (mg) / Labeled liquid volume (mL)',

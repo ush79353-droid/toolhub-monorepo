@@ -25,7 +25,7 @@ export function BidensTaxPlanGuideArticle() {
               In 2021 the Biden Administration proposed the{' '}
               <strong>American Families Plan (AFP)</strong> to fund family and education
               priorities partly through individual income-tax changes. The original calculator copy
-              on this product framed the tool around that proposal and the American Families Plan —
+ on this product framed the tool around that proposal and the American Families Plan; 
               not as a generic “any year” campaign quiz.
             </p>
             <p>
@@ -66,9 +66,9 @@ export function BidensTaxPlanGuideArticle() {
               Dependents, with the TCJA phaseout ($50 per $1,000 over $200,000 / $400,000).
             </p>
             <p>
-              <strong>Biden plan:</strong> May 2021 AFP ordinary top-rate change —{' '}
+ <strong>Biden plan:</strong> May 2021 AFP ordinary top-rate change; {' '}
               <strong>39.6%</strong> above <strong>$452,700</strong> (single / head of household) or{' '}
-              <strong>$509,300</strong> (joint) in 2022 dollars — plus extension of the ARP-style
+ <strong>$509,300</strong> (joint) in 2022 dollars, plus extension of the ARP-style
               CTC (<strong>$3,600</strong> under 6 / <strong>$3,000</strong> ages 6–17) with the
               documented two-step phaseout and full refundability (
               <a
@@ -130,7 +130,7 @@ export function BidensTaxPlanGuideArticle() {
                 100 (em dash when AGI is $0).
               </li>
               <li>
-                <strong>Number of dependents</strong> = other dependents for the $500 ODC only —
+ <strong>Number of dependents</strong> = other dependents for the $500 ODC only; 
                 never re-enter children from the age buckets.
               </li>
             </ul>
@@ -148,7 +148,7 @@ export function BidensTaxPlanGuideArticle() {
               <li>Net Investment Income Tax (NIIT) expansions</li>
               <li>Itemized deductions, QBI (§199A), AMT, EITC, or state income tax</li>
               <li>
-                Baseline Additional Child Tax Credit (ACTC) — earned income is not an input, so
+ Baseline Additional Child Tax Credit (ACTC); earned income is not an input, so
                 refundable ACTC is omitted and baseline tax after credits is floored at $0
               </li>
               <li>

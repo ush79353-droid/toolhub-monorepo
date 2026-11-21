@@ -110,7 +110,7 @@ export function interpretNetIncome(netIncome: number): string {
   if (netIncome === 0) {
     return 'Net income after taxes is zero under the entered assumptions.';
   }
-  return `Net loss of ${formatPlain(Math.abs(netIncome))} — expenses and estimated taxes exceed revenue under this simplified model. That is not by itself insolvency.`;
+  return `Net loss of ${formatPlain(Math.abs(netIncome))}; expenses and estimated taxes exceed revenue under this simplified model. That is not by itself insolvency.`;
 }
 
 function formatPlain(amount: number): string {

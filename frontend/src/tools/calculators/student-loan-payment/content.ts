@@ -17,7 +17,7 @@ export const STUDENT_LOAN_PAYMENT_FAQS: readonly FAQItem[] = [
   {
     question: 'How do prepaid, loaned, and origination fees interact?',
     answer:
-      'Prepaid fees are paid upfront and are not financed. Loaned fees are added to principal. Origination can be deducted from proceeds, rolled into the balance, or paid out of pocket — never double-counted across those modes.',
+      'Prepaid fees are paid upfront and are not financed. Loaned fees are added to principal. Origination can be deducted from proceeds, rolled into the balance, or paid out of pocket; never double-counted across those modes.',
   },
   {
     question: 'How are APR and effective APR calculated?',

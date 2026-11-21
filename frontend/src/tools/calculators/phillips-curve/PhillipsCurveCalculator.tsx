@@ -74,7 +74,7 @@ export function PhillipsCurveCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        'Phillips Curve Calculator — Omega Calculators',
+        'Phillips Curve Calculator | Omega Calculators',
         '',
         `Model: ${result.versionLabel}`,
         `Target: ${result.targetLabel}`,

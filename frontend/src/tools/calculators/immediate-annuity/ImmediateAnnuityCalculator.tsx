@@ -72,7 +72,7 @@ export function ImmediateAnnuityCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.summaryText,
         `Opening ${symbol}${result.formattedOpeningBalance}`,
         `Periodic withdrawal ${symbol}${result.formattedPeriodicWithdrawal}`,

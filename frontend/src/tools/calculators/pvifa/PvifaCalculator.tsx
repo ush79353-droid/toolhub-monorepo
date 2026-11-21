@@ -46,7 +46,7 @@ export function PvifaCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Interest rate per period (r): ${input.interestRatePercent}%`,
         `Number of periods (n): ${input.periods}`,
         `PVIFA: ${result.formattedPvifa}`,

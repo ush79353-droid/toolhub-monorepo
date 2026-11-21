@@ -66,7 +66,7 @@ export function calculateCmToM(input: CmToMInput): CmToMResult {
 
 export function shareResultText(result: CmToMResult): string {
   return [
-    'CM to M Converter — Omega Calculators',
+    'CM to M Converter | Omega Calculators',
     '',
     `${formatShared(result.centimeters)} cm = ${formatShared(result.meters)} m`,
     `${formatShared(result.other)} ${UNIT_SYMBOLS[result.otherUnit]}`,

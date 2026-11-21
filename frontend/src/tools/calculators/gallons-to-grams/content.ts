@@ -30,7 +30,7 @@ export const GAL_TO_GRAMS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'converting-by-hand',
     title: 'Converting from Gallons to Grams by Hand',
     paragraphs: [
-      'Gallons measure volume. Grams measure mass. You cannot convert one into the other without density — mass per unit volume of the substance you are measuring.',
+      'Gallons measure volume. Grams measure mass. You cannot convert one into the other without density; mass per unit volume of the substance you are measuring.',
       'The basic relationship is Mass = Density × Volume. Units must be compatible before you multiply.',
       `Exact US liquid gallon definition: 1 US gallon = ${LITERS_PER_US_GALLON} liters = 0.003785411784 m³.`,
       'Steps: (1) identify the substance, (2) determine its density, (3) convert gallons into a compatible volume unit, (4) multiply volume by density, (5) express the result in grams.',

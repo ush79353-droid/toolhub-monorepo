@@ -29,7 +29,7 @@ export const SUBSCRIPTION_WASTE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is subscription fatigue?',
     answer:
-      'Subscription fatigue happens when you accumulate so many recurring services that the total monthly cost becomes hard to track or justify — especially when free trials convert to paid plans and charges renew automatically.',
+      'Subscription fatigue happens when you accumulate so many recurring services that the total monthly cost becomes hard to track or justify; especially when free trials convert to paid plans and charges renew automatically.',
   },
   {
     question: 'Are digital goods and streaming services taxed in all US states?',

@@ -91,7 +91,7 @@ export function AfterTaxCostOfDebtCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Net income: ${netSymbol}${input.netIncome}`,
         `Pre-tax income: ${pretaxSymbol}${input.pretaxIncome}`,
         `Marginal corporate tax rate: ${result.formattedTaxRate}%`,

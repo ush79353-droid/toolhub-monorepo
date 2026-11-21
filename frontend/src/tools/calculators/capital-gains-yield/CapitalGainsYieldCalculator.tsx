@@ -104,7 +104,7 @@ export function CapitalGainsYieldCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Bought price: ${formatCurrencyValue(result.boughtPrice, result.currency)}`,
         `Current price: ${formatCurrencyValue(result.currentPrice, result.currency)}`,
         `Capital gains: ${formatCurrencyValue(result.capitalGains, result.currency)}`,

@@ -130,7 +130,7 @@ export function shareResultText(result: MgToTablespoonResult): string {
     DENSITY_UNIT_OPTIONS.find((o) => o.value === result.densityUnit)?.label ?? result.densityUnit;
   const tbspLabel = TABLESPOON_STANDARD_LABEL[result.tablespoonStandard];
   return [
-    'mg to tablespoon Converter — Omega Calculators',
+    'mg to tablespoon Converter | Omega Calculators',
     '',
     `Ingredient: ${result.substanceName}`,
     `Density: ${formatMeasure(result.densityValue)} ${densityLabel}${result.densityApproximate ? ' (approximate)' : ''}`,

@@ -145,7 +145,7 @@ export function PhilippinesIncomeTaxForm({
             <span>Employment status</span>
             <InfoTooltip
               label="Employment status"
-              text="Employed uses employee contribution shares and BIR monthly withholding. Self-employed uses member-paid contribution rules and estimated graduated tax — not payroll withholding."
+              text="Employed uses employee contribution shares and BIR monthly withholding. Self-employed uses member-paid contribution rules and estimated graduated tax; not payroll withholding."
             />
           </legend>
           <div className="mt-1 space-y-2">
@@ -179,7 +179,7 @@ export function PhilippinesIncomeTaxForm({
             <span>Monthly income</span>
             <InfoTooltip
               label="Monthly income"
-              text="Monthly gross basic pay (employed) or declared monthly income (self-employed) in Philippine pesos. Fixed ₱ — no currency conversion."
+              text="Monthly gross basic pay (employed) or declared monthly income (self-employed) in Philippine pesos. Fixed ₱; no currency conversion."
             />
           </label>
           <FieldShell error={errors.monthlyIncome}>

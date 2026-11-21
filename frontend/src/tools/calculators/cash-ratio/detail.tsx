@@ -4,7 +4,7 @@ import { CASH_RATIO_FAQS, CASH_RATIO_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Compute the cash ratio from cash and cash equivalents and current liabilities, with real FX on money fields—result as a multiple (x).',
+    'Compute the cash ratio from cash and cash equivalents and current liabilities, with real FX on money fields, result as a multiple (x).',
   asideAriaLabel: 'Interactive Cash Ratio Calculator',
   tocItems: CASH_RATIO_TOC_ITEMS,
   GuideArticle: CashRatioGuideArticle,

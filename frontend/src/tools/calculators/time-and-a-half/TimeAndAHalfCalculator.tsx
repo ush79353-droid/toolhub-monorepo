@@ -176,7 +176,7 @@ export function TimeAndAHalfCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Standard rate: ${getCurrencySymbol(result.standardRateCurrency)}${result.formattedStandardRate} ${result.standardRateCurrency}`,
         `Time-and-a-half rate: ${getCurrencySymbol(result.timeAndHalfRateCurrency)}${result.formattedTimeAndHalfRate}`,
         `Double-time rate: ${getCurrencySymbol(result.doubleTimeRateCurrency)}${result.formattedDoubleTimeRate}`,

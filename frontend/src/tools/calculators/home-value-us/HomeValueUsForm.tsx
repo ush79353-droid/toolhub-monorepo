@@ -103,7 +103,7 @@ export function HomeValueUsForm({
     >
       <p className="text-xs text-muted-foreground">
         USD-only estimate using verified S&P CoreLogic Case-Shiller metro
-        indices and CPI-U (NSA) from FRED. Index points are not dollar amounts —
+ indices and CPI-U (NSA) from FRED. Index points are not dollar amounts; 
         their ratio scales your purchase price.
       </p>
 
@@ -227,7 +227,7 @@ export function HomeValueUsForm({
               <span>Your home purchase price</span>
               <InfoTooltip
                 label="Purchase price"
-                text="Original US dollar purchase price. No FX conversion — this calculator is USD-only."
+                text="Original US dollar purchase price. No FX conversion; this calculator is USD-only."
               />
             </label>
             <FieldShell error={errors.purchasePrice}>

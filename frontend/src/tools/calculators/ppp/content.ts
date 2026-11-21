@@ -2,7 +2,7 @@ import type { FAQItem } from '@/components/shared/FAQAccordion';
 import type { TableOfContentsItem } from '@/tools/calculators/auto-loan/TableOfContents';
 
 export const PPP_TOC_ITEMS: readonly TableOfContentsItem[] = [
-  { id: 'introduction', label: 'PPP Calculator — Purchasing Power Parity' },
+  { id: 'introduction', label: 'PPP Calculator: Purchasing Power Parity' },
   { id: 'what-stands-for', label: 'What Does PPP Stand For?' },
   { id: 'what-is', label: 'What Is Purchasing Power Parity?' },
   { id: 'how-works', label: 'How Does the PPP Calculator Work?' },
@@ -38,7 +38,7 @@ export const PPP_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a PPP exchange rate?',
     answer:
-      'An implied rate E_PPP = PPP_B / PPP_A (target currency per source currency) from conversion factors — not a tradable market quote.',
+      'An implied rate E_PPP = PPP_B / PPP_A (target currency per source currency) from conversion factors; not a tradable market quote.',
   },
   {
     question: 'How do I compare salaries between two countries?',
@@ -58,7 +58,7 @@ export const PPP_FAQS: readonly FAQItem[] = [
   {
     question: 'What is an international dollar?',
     answer:
-      'A hypothetical unit with the purchasing power of one U.S. dollar over a comparable basket — used to express PPP-adjusted amounts.',
+      'A hypothetical unit with the purchasing power of one U.S. dollar over a comparable basket; used to express PPP-adjusted amounts.',
   },
   {
     question: 'How do PPP conversion factors work?',
@@ -98,7 +98,7 @@ export const PPP_FAQS: readonly FAQItem[] = [
   {
     question: 'What is absolute purchasing power parity?',
     answer:
-      'The idea that identical baskets should cost the same when converted at the exchange rate — a strong, often violated, long-run benchmark.',
+      'The idea that identical baskets should cost the same when converted at the exchange rate: a strong, often violated, long-run benchmark.',
   },
   {
     question: 'What is relative purchasing power parity?',
@@ -113,7 +113,7 @@ export const PPP_FAQS: readonly FAQItem[] = [
   {
     question: 'Is PPP useful for salary negotiations?',
     answer:
-      'As one input among many — alongside local wages, taxes, benefits, and personal costs — not as a binding offer number.',
+      'As one input among many (alongside local wages, taxes, benefits, and personal costs) not as a binding offer number.',
   },
   {
     question: 'Why is purchasing power different across countries?',
@@ -143,6 +143,6 @@ export const PPP_FAQS: readonly FAQItem[] = [
   {
     question: 'Is a higher PPP-adjusted salary always better?',
     answer:
-      'Not necessarily — taxes, amenities, risk, career options, and personal preferences also matter.',
+      'Not necessarily: taxes, amenities, risk, career options, and personal preferences also matter.',
   },
 ];

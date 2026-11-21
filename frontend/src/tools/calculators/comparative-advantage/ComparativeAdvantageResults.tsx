@@ -83,7 +83,7 @@ export function ComparativeAdvantageResults({
           <p className="text-muted-foreground">
             Comparative winner Good A: {producerLabel(result.comparativeA)}; Good
             B: {producerLabel(result.comparativeB)}. Specialization and trade
-            benefits depend on feasible terms of trade and model assumptions —
+ benefits depend on feasible terms of trade and model assumptions; 
             not guaranteed equal gains for everyone.
           </p>
         </div>

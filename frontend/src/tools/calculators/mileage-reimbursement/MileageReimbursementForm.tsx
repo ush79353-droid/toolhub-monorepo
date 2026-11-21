@@ -297,7 +297,7 @@ export function MileageReimbursementForm({
 
       {result ? (
         <p className="text-xs text-muted-foreground">
-          Rates: {result.sourceNote}. Fixed USD. Educational estimate only —
+ Rates: {result.sourceNote}. Fixed USD. Educational estimate only; 
           eligibility and itemized-deduction limits still apply.
         </p>
       ) : null}

@@ -117,7 +117,7 @@ export function interpretUnleveredBeta(beta: number): string {
     return 'Unlevered beta is unavailable.';
   }
   if (beta < 0) {
-    return 'Negative unlevered beta suggests estimated inverse linear sensitivity to market moves under the model assumptions. Context and estimation method still matter — beta does not measure every risk.';
+    return 'Negative unlevered beta suggests estimated inverse linear sensitivity to market moves under the model assumptions. Context and estimation method still matter; beta does not measure every risk.';
   }
   if (Math.abs(beta) < 1e-12) {
     return 'Unlevered beta near zero suggests little estimated linear market sensitivity for the business risk measure under the selected assumptions.';

@@ -292,7 +292,7 @@ export function BalanceTransferForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amounts share one currency label (denomination only — no FX).
+ Amounts share one currency label (denomination only; no FX).
       </p>
       <p className="text-xs">
         <a

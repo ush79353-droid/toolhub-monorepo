@@ -145,7 +145,7 @@ export const VOLUME_CONVERSION_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'volume-vs-mass',
     title: 'Difference Between Volume and Mass',
     paragraphs: [
-      'Volume measures space; mass measures quantity of matter. Density is required for volume-to-mass conversion and belongs in a dedicated density-based calculator—not this general volume converter.',
+      'Volume measures space; mass measures quantity of matter. Density is required for volume-to-mass conversion and belongs in a dedicated density-based calculator, not this general volume converter.',
     ],
   },
   {

@@ -4,7 +4,7 @@ import { TBSP_TO_G_FAQS, TBSP_TO_G_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert US tablespoons to grams using ingredient density — butter, flour, sugar, honey, and more.',
+    'Convert US tablespoons to grams using ingredient density; butter, flour, sugar, honey, and more.',
   asideAriaLabel: 'Interactive tablespoons to grams ingredient converter',
   tocItems: TBSP_TO_G_TOC_ITEMS,
   GuideArticle: TbspToGramsGuideArticle,

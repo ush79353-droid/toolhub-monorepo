@@ -12,7 +12,7 @@ export function QuickRatioGuideArticle() {
         Quick Ratio Calculator
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        The quick ratio — also called the acid-test ratio — measures whether a
+ The quick ratio (also called the acid-test ratio) measures whether a
         company&apos;s most liquid current assets can cover its current
         liabilities without depending on inventory sales. Liquidity matters
         because short-term obligations come due regardless of how slowly stock
@@ -53,7 +53,7 @@ export function QuickRatioGuideArticle() {
         Strong receivables on paper can still collect slowly; marketable
         securities can be restricted or illiquid; and upcoming debt maturities
         may cluster just after the reporting date. Interpret the acid-test with
-        aging schedules, cash budgets, and industry context — not as a solitary
+ aging schedules, cash budgets, and industry context; not as a solitary
         pass/fail grade.
       </p>
 
@@ -110,7 +110,7 @@ export function QuickRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Adjusted-method check: if current assets are 500,000, inventory 150,000,
         prepaid 50,000, and other non-quick 0, then quick assets = 500,000 −
-        150,000 − 50,000 − 0 = 300,000 and QR = 300,000 ÷ 200,000 = 1.50x —
+ 150,000 − 50,000 − 0 = 300,000 and QR = 300,000 ÷ 200,000 = 1.50x; 
         matching the direct build when classifications are consistent.
       </p>
 
@@ -128,7 +128,7 @@ export function QuickRatioGuideArticle() {
         </li>
         <li>
           Enter cash and cash equivalents, marketable securities, and net
-          accounts receivable — or the adjusted current-asset components.
+ accounts receivable, or the adjusted current-asset components.
         </li>
         <li>Enter current liabilities (must be greater than zero).</li>
         <li>
@@ -186,7 +186,7 @@ export function QuickRatioGuideArticle() {
         inventory may run near or above 1.00 more comfortably than inventory-heavy
         retailers whose current ratio looks fine while the quick ratio is thinner.
         Cash-flow timing, unused credit lines, and receivable quality can make a
-        sub-1 ratio manageable — or an above-1 ratio fragile. Do not label every
+ sub-1 ratio manageable, or an above-1 ratio fragile. Do not label every
         ratio below 1 as financial distress, and do not treat every ratio above 1
         as proof of safety.
       </p>
@@ -225,7 +225,7 @@ export function QuickRatioGuideArticle() {
         Current ratio = CA ÷ CL. Quick ratio removes inventory, prepaid expenses,
         and other non-quick items from the numerator. A business can post a high
         current ratio and a much lower quick ratio when inventory or prepaid
-        balances dominate current assets — a common pattern in wholesale and
+ balances dominate current assets: a common pattern in wholesale and
         manufacturing. Compare both ratios before concluding that working capital
         is comfortably liquid.
       </p>
@@ -260,17 +260,17 @@ export function QuickRatioGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Cash and cash equivalents</strong> — cash on hand, demand
+ <strong>Cash and cash equivalents</strong>: cash on hand, demand
           deposits, and short-term instruments readily convertible to known cash
           amounts with insignificant risk of value change.
         </li>
         <li>
-          <strong>Marketable securities</strong> — liquid investments that can
+ <strong>Marketable securities</strong>: liquid investments that can
           generally be converted quickly, subject to market conditions and any
           restrictions. Not every security automatically qualifies.
         </li>
         <li>
-          <strong>Net accounts receivable</strong> — amounts owed by customers,
+ <strong>Net accounts receivable</strong>: amounts owed by customers,
           preferably after allowances for expected credit losses. Slow or
           doubtful collections can overstate liquidity.
         </li>
@@ -304,8 +304,8 @@ export function QuickRatioGuideArticle() {
         and working-capital changes all move the ratio. Drawing a revolver
         increases cash and current liabilities together; collecting AR raises cash
         while lowering receivables; paying suppliers reduces both cash and
-        payables. Classification changes — for example, re-labeling a deposit as
-        restricted — can alter the measured ratio without any operating change.
+ payables. Classification changes, for example, re-labeling a deposit as
+ restricted; can alter the measured ratio without any operating change.
       </p>
 
       <h2
@@ -355,7 +355,7 @@ export function QuickRatioGuideArticle() {
         liabilities, improving cash forecasting, and reducing unnecessary
         working-capital pressure. Selling excess inventory can help the current
         ratio more than the quick ratio until cash is realized. Maximizing the
-        quick ratio is not always optimal — idle cash has an opportunity cost,
+ quick ratio is not always optimal; idle cash has an opportunity cost,
         and some industries operate efficiently with thinner liquid cushions when
         cash conversion is predictable.
       </p>

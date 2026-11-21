@@ -192,7 +192,7 @@ export function StockCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Shares: ${input.numberOfShares}`,
         `Buying price/share: ${buySymbol}${input.buyingPrice} ${input.buyingPriceCurrency}`,
         `Buying commission: ${input.buyingCommissionPercent}%`,

@@ -204,7 +204,7 @@ function buildResult(args: {
   const dyPp = yieldDifferentialDecimal * 100;
   const modeLabel =
     mode === 'standard'
-      ? 'Effective Duration Estimate — Fixed Cash Flows'
+      ? 'Effective Duration Estimate: Fixed Cash Flows'
       : 'Scenario-Based Effective Duration';
 
   const formulaBreakdown =

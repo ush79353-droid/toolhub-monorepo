@@ -53,7 +53,7 @@ export function SavingsInterestRateCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Required interest rate: ${result.formattedRequiredRate}%`,
         `Total deposited: ${result.formattedTotalDeposited}`,
         `Final balance: ${result.formattedFinalBalance}`,

@@ -109,7 +109,7 @@ export function CostOfGoodsSoldCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Beginning inventory: ${formatMoney(result.beginningInventory, result.currency)}`,
         `Purchases: ${formatMoney(result.purchases, result.currency)}`,
         `Ending inventory: ${formatMoney(result.endingInventory, result.currency)}`,

@@ -167,7 +167,7 @@ export function LiquidNetWorthForm({
       <MoneyRow
         id="lnw-assets"
         label="Total liquid assets"
-        tip="Cash and near-cash holdings you can convert quickly — checking, savings, money market, and similar liquid accounts."
+        tip="Cash and near-cash holdings you can convert quickly; checking, savings, money market, and similar liquid accounts."
         value={draft.totalLiquidAssets}
         error={errors.totalLiquidAssets}
         symbol={symbol}
@@ -178,7 +178,7 @@ export function LiquidNetWorthForm({
       <MoneyRow
         id="lnw-liabilities"
         label="Total liabilities"
-        tip="Debts and obligations you still owe — credit cards, loans, bills due, and similar liabilities."
+        tip="Debts and obligations you still owe; credit cards, loans, bills due, and similar liabilities."
         value={draft.totalLiabilities}
         error={errors.totalLiabilities}
         symbol={symbol}

@@ -95,7 +95,7 @@ export function CouponPaymentCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Face value: ${faceSymbol}${input.faceValue}`,
         `Annual coupon rate: ${input.annualCouponRatePercent}%`,
         `Payments per annum: ${input.paymentsPerAnnum}`,

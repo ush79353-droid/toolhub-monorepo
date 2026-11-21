@@ -88,7 +88,7 @@ export function PriceElasticityOfDemandCalculator({
   );
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result!.formattedPriceElasticity
           ? `PED: ${result!.formattedPriceElasticity}`
           : 'PED: unavailable',

@@ -69,7 +69,7 @@ export function AppreciationCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Starting value: ${formatCurrencyValue(result.startingValue, result.currency)}`,
         `Appreciation rate: ${result.appreciationRatePercent}% (${PERIOD_LABEL[result.ratePeriod]})`,
         `Period: ${result.years} yrs ${result.months} mos`,

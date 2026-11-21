@@ -15,7 +15,7 @@ export const FICA_FAQS: readonly FAQItem[] = [
   {
     question: 'What wages are subject to Social Security vs Medicare?',
     answer:
-      'Social Security (OASDI) tax applies only up to that year’s Social Security wage base ($176,100 for 2025; $184,500 for 2026). Medicare (HI) tax has no wage base — all covered wages are taxed at 1.45% each for employee and employer. Self-employed people pay the combined rates on 92.35% of net SE earnings, still capped for the Social Security portion.',
+      'Social Security (OASDI) tax applies only up to that year’s Social Security wage base ($176,100 for 2025; $184,500 for 2026). Medicare (HI) tax has no wage base; all covered wages are taxed at 1.45% each for employee and employer. Self-employed people pay the combined rates on 92.35% of net SE earnings, still capped for the Social Security portion.',
   },
   {
     question: 'When does the 0.9% Additional Medicare Tax apply?',

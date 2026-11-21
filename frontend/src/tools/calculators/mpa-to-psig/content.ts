@@ -51,7 +51,7 @@ export const MPA_TO_PSIG_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Read the converted psig value.',
       '3. Alternatively, enter a psig measurement.',
       '4. Read the equivalent MPa(g) result.',
-      '5. Convert in either direction — no separate Calculate button is required.',
+      '5. Convert in either direction. no separate Calculate button is required.',
       '6. Use Reload Calculator or Clear All Changes to start over, or share the result.',
     ],
   },
@@ -61,7 +61,7 @@ export const MPA_TO_PSIG_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `Exactly 1 MPa = ${PASCALS_PER_MPA.toLocaleString('en-US')} Pa and 1 psi = ${formatPressure(PASCALS_PER_PSI)} Pa (international pound-force and inch).`,
       `For gauge-to-gauge conversion, 1 MPa(g) ≈ ${formatPressure(PSIG_PER_MPA)} psig, and 1 psig ≈ ${formatPressure(MPA_PER_PSIG)} MPa(g).`,
-      'The factor ≈145.0377 is the physically correct MPa↔psi relationship. Approximate factors near 130.34 apply only when converting absolute pressure with an atmospheric offset — not for MPa(g) ↔ psig.',
+      'The factor ≈145.0377 is the physically correct MPa↔psi relationship. Approximate factors near 130.34 apply only when converting absolute pressure with an atmospheric offset; not for MPa(g) ↔ psig.',
     ],
     formula: `1 MPa = ${PASCALS_PER_MPA.toLocaleString('en-US')} Pa\n1 psi = ${formatPressure(PASCALS_PER_PSI)} Pa\npsig = MPa(g) × ${formatPressure(PSIG_PER_MPA)}`,
   },
@@ -106,7 +106,7 @@ export const MPA_TO_PSIG_GUIDE_SECTIONS: readonly GuideSection[] = [
 export const MPA_TO_PSIG_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I Convert Megapascals to PSIG?',
-    answer: `Yes, when the input is gauge pressure. Multiply MPa(g) by approximately ${formatPressure(PSIG_PER_MPA)}. For absolute pressure, atmospheric pressure must also be accounted for separately — this calculator does not do that automatically.`,
+    answer: `Yes, when the input is gauge pressure. Multiply MPa(g) by approximately ${formatPressure(PSIG_PER_MPA)}. For absolute pressure, atmospheric pressure must also be accounted for separately; this calculator does not do that automatically.`,
   },
   {
     question: 'How Much Is 300 PSIG in MPa?',

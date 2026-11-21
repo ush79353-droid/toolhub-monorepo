@@ -27,7 +27,7 @@ export const GRAMS_TO_CALORIES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Grams to Calories Conversion',
     paragraphs: [
       'Dietary energy from food is often estimated from the grams of each macronutrient. General-purpose Atwater factors convert nutrient mass into kilocalories (kcal): carbohydrates ≈ 4 kcal/g, protein ≈ 4 kcal/g, fat ≈ 9 kcal/g, and ethanol ≈ 7 kcal/g.',
-      'These factors are nutritional approximations. Actual labels can differ because of fiber, digestibility, food composition, and rounding. Do not treat an arbitrary number of grams of total food as a fixed calorie amount — composition matters.',
+      'These factors are nutritional approximations. Actual labels can differ because of fiber, digestibility, food composition, and rounding. Do not treat an arbitrary number of grams of total food as a fixed calorie amount; composition matters.',
     ],
     tableHeaders: ['Macronutrient', '1 gram', '10 grams', '100 grams'],
     table: [
@@ -67,7 +67,7 @@ export const GRAMS_TO_CALORIES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Calculate Calories from Alcohol',
     paragraphs: [
       'Ethanol is approximated at 7 kcal per gram. If you know the grams of alcohol, multiply by 7.',
-      'If you only know beverage volume and ABV, estimate alcohol mass as volume (mL) × (ABV/100) × 0.789 g/mL, then multiply by 7. That estimates ethanol only — not sugars, mixers, or other ingredients.',
+      'If you only know beverage volume and ABV, estimate alcohol mass as volume (mL) × (ABV/100) × 0.789 g/mL, then multiply by 7. That estimates ethanol only; not sugars, mixers, or other ingredients.',
     ],
     formula: '1 g alcohol ≈ 7 kcal · Alcohol(g) ≈ mL × ABV/100 × 0.789',
   },

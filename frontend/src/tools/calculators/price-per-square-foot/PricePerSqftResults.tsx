@@ -85,7 +85,7 @@ export function PricePerSqftResults({ result }: PricePerSqftResultsProps) {
               <p className="text-xs text-muted-foreground">{result.cheaperLabel}</p>
             ) : null}
             <p className="text-xs text-muted-foreground">
-              Comparison is price-per-area only — not a full investment
+ Comparison is price-per-area only; not a full investment
               recommendation.
             </p>
           </>

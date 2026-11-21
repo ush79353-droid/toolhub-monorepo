@@ -86,7 +86,7 @@ export function FixedAssetTurnoverRatioCalculator({
     result.status !== 'zeroAverageFixedAssets';
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Average fixed assets: ${symbol}${result.formattedAverageFixedAssets}`,
         `Revenue: ${symbol}${result.formattedRevenue}`,
         `Fixed asset turnover: ${result.formattedFixedAssetTurnover}×`,

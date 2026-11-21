@@ -65,7 +65,7 @@ export function BarometricPressureResults({
           Canonical: {formatPressure(result.pascals)} Pa
         </p>
         <p className="mt-1 text-xs text-muted-foreground">
-          1 atm = 101,325 Pa = 1.01325 bar. Unit conversion only — not gauge↔absolute.
+ 1 atm = 101,325 Pa = 1.01325 bar. Unit conversion only; not gauge↔absolute.
         </p>
       </div>
 

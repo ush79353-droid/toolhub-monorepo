@@ -58,7 +58,7 @@ export const M2S_GUIDE_SECTIONS: readonly GuideSection[] = [
       'First convert the whole minutes: 2 × 60 = 120 seconds.',
       'Then add the remaining seconds: 120 + 52 = 172.',
       'Therefore 2 minutes 52 seconds = 172 seconds.',
-      'In the reverse direction, 172 ÷ 60 ≈ 2.8667 decimal minutes. That decimal value is not the same notation as 2 minutes with 86.67 leftover seconds — remaining seconds in clock form stay below 60.',
+      'In the reverse direction, 172 ÷ 60 ≈ 2.8667 decimal minutes. That decimal value is not the same notation as 2 minutes with 86.67 leftover seconds; remaining seconds in clock form stay below 60.',
     ],
     formula:
       '2 × 60 = 120\n120 + 52 = 172 seconds\n172 ÷ 60 ≈ 2.8667 minutes',

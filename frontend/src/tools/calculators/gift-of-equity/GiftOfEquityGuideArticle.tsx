@@ -12,8 +12,8 @@ export function GiftOfEquityGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A gift of equity is the difference between a property&apos;s market value
-        and a lower agreed sales price. Sellers — often in qualifying family
-        transactions — may intentionally sell below market value so the buyer
+ and a lower agreed sales price. Sellers; often in qualifying family
+ transactions; may intentionally sell below market value so the buyer
         receives that equity gap as part of the deal. Accurate valuation matters
         because the mathematical discount is only as reliable as the market value
         figure behind it. A calculated difference is not automatically an eligible
@@ -86,11 +86,11 @@ export function GiftOfEquityGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Down payment</strong> — buyer cash (or other qualifying funds)
+ <strong>Down payment</strong>: buyer cash (or other qualifying funds)
           contributed toward the purchase price, usually settled at closing
         </li>
         <li>
-          <strong>Gift of equity</strong> — below-market discount measured as
+ <strong>Gift of equity</strong>: below-market discount measured as
           market value minus sales price in a qualifying sale
         </li>
       </ul>
@@ -122,12 +122,12 @@ export function GiftOfEquityGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Home equity</strong> — difference between property value and
+ <strong>Home equity</strong>: difference between property value and
           outstanding debt secured against it (for example, $600,000 value with a
           $400,000 mortgage → about $200,000 home equity)
         </li>
         <li>
-          <strong>Gift of equity</strong> — difference between market value and an
+ <strong>Gift of equity</strong>: difference between market value and an
           agreed below-market sales price in a qualifying transaction (for
           example, $600,000 market value sold for $500,000 → $100,000 gift of
           equity)

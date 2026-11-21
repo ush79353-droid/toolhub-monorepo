@@ -63,7 +63,7 @@ export function CaliforniaTaxCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Tax year: ${result.taxYear}`,
         `Annualized AGI: $${result.formattedAnnualAgi}`,
         `Federal income tax: $${result.formattedFederalIncomeTax}`,
@@ -107,7 +107,7 @@ export function CaliforniaTaxCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             California income, federal, payroll, and property tax estimate. Fixed
-            USD. Educational only — not a filing substitute.
+ USD. Educational only; not a filing substitute.
           </p>
         </div>
         {headerActions ? (

@@ -94,7 +94,7 @@ export function FinanceChargeCalculator({
   const shareable = result != null;
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Current balance: ${symbol}${result!.formattedBalance}`,
         `APR: ${input.apr}%`,
         `Method: ${result!.method === 'billing-cycle' ? 'Billing cycle' : 'Given term'}`,

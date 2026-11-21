@@ -24,7 +24,7 @@ export const LOWERCASE_TO_UPPERCASE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'upper-lower-letters',
     title: 'Uppercase and Lowercase Letters',
     paragraphs: [
-      'Lowercase letters are the smaller forms of an alphabet (a, b, c). Uppercase letters — also called capital letters — are the larger forms (A, B, C).',
+      'Lowercase letters are the smaller forms of an alphabet (a, b, c). Uppercase letters (also called capital letters) are the larger forms (A, B, C).',
       'Capitalization helps readers spot sentence starts, names, headings, and abbreviations. Writing long paragraphs entirely in uppercase can make text harder to scan, so most body copy stays mostly lowercase with capitals used for structure and emphasis.',
     ],
     formula: 'Lowercase: hello world · Uppercase: HELLO WORLD',

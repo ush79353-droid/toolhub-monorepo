@@ -33,7 +33,7 @@ export const RADIANS_TO_DEGREES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Radians to Degrees Converter',
     paragraphs: [
       'Convert angular measurements between radians and degrees for geometry, trigonometry, physics, engineering, mathematics, computer graphics, and rotational work.',
-      'The calculator uses Math.PI for the exact π relationship — not a low-precision stand-in such as 3.14. Expand Other angle units for gradians, turns, arcminutes, arcseconds, and milliradians.',
+      'The calculator uses Math.PI for the exact π relationship; not a low-precision stand-in such as 3.14. Expand Other angle units for gradians, turns, arcminutes, arcseconds, and milliradians.',
     ],
   },
   {
@@ -41,8 +41,8 @@ export const RADIANS_TO_DEGREES_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Radians to Degrees?',
     paragraphs: [
       'Because π radians equal 180°, multiply radians by 180/π to get degrees. Reverse the conversion by multiplying degrees by π/180.',
-      `Example — π rad: π × 180 / π = 180°. Example — 2 rad: 2 × 180 / π ≈ ${formatAngleValue(radiansToDegrees(2))}°.`,
-      `Example — 90° back to radians: 90 × π / 180 = π/2 ≈ ${formatAngleValue(degreesToRadians(90))} rad.`,
+      `Example: π rad: π × 180 / π = 180°. Example; 2 rad: 2 × 180 / π ≈ ${formatAngleValue(radiansToDegrees(2))}°.`,
+      `Example; 90° back to radians: 90 × π / 180 = π/2 ≈ ${formatAngleValue(degreesToRadians(90))} rad.`,
     ],
     formula: 'degrees = radians × 180 / π   ·   radians = degrees × π / 180',
   },
@@ -124,7 +124,7 @@ export const RADIANS_TO_DEGREES_FAQS: readonly FAQItem[] = [
   {
     question: 'Are Radians and Degrees the Same?',
     answer:
-      'No. They measure the same physical quantity—angle—but use different scales. π rad = 180° and 2π rad = 360°.',
+      'No. They measure the same physical quantity, angle, but use different scales. π rad = 180° and 2π rad = 360°.',
   },
   {
     question: 'Can Angles Be Negative?',

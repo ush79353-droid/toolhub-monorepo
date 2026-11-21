@@ -43,7 +43,7 @@ export const UB_FAQS: readonly FAQItem[] = [
   {
     question: 'Is unlevered beta the same as asset beta?',
     answer:
-      'In common usage, yes — asset beta and unlevered beta refer to the same concept of business systematic risk stripped of (or adjusted for) financial leverage, though formula conventions can differ.',
+      'In common usage, Yes: asset beta and unlevered beta refer to the same concept of business systematic risk stripped of (or adjusted for) financial leverage, though formula conventions can differ.',
   },
   {
     question: 'Why is unlevered beta important?',
@@ -63,7 +63,7 @@ export const UB_FAQS: readonly FAQItem[] = [
   {
     question: 'What does an unlevered beta of 0.5 mean?',
     answer:
-      'Roughly, the estimated asset systematic return moves about half as much as the market in the linear CAPM sense under the selected assumptions — not a guarantee of low total risk.',
+      'Roughly, the estimated asset systematic return moves about half as much as the market in the linear CAPM sense under the selected assumptions; not a guarantee of low total risk.',
   },
   {
     question: 'How does debt affect beta?',
@@ -93,7 +93,7 @@ export const UB_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a good unlevered beta?',
     answer:
-      'There is no universal good value. Compare peers in the same industry, check estimation windows, and judge whether the beta fits the business’s operating risk — not a single “safe” cutoff.',
+      'There is no universal good value. Compare peers in the same industry, check estimation windows, and judge whether the beta fits the business’s operating risk; not a single “safe” cutoff.',
   },
   {
     question: 'Can unlevered beta be used for private companies?',

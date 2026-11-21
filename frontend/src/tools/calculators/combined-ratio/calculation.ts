@@ -245,7 +245,7 @@ export function shareResultText(
   path = '/tools/combined-ratio-calculator',
 ): string {
   return [
-    'Combined Ratio Calculator — Omega Calculators',
+    'Combined Ratio Calculator | Omega Calculators',
     '',
     `Claim loss: ${result.formattedClaimLoss} ${result.currency}`,
     `Loss adjustments: ${result.formattedLossAdjustments} ${result.currency}`,
@@ -259,7 +259,7 @@ export function shareResultText(
     `Underwriting result: ${result.formattedUnderwritingResult} ${result.currency}`,
     `Underwriting margin: ${result.formattedUnderwritingMargin}%`,
     '',
-    'Currency changes formatting only — amounts are not converted.',
+    'Currency changes formatting only; amounts are not converted.',
     'Combined ratio is an underwriting metric; overall profit may include investment income and other items.',
     path,
   ].join('\n');

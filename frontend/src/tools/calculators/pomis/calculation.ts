@@ -234,7 +234,7 @@ export function calculatePomisFromInput(
     rateNote: scheme.interestRateSource,
     rulesNote: scheme.rulesSource,
     schedule,
-    interpretation: `${accountLabel} POMIS: ${formatINR(monthlyIncome)}/mo at ${rate}% for ${termYears} years. Principal ${formatINR(principal)} returned at maturity. Rate and limits are configurable educational defaults — verify with India Post.`,
+    interpretation: `${accountLabel} POMIS: ${formatINR(monthlyIncome)}/mo at ${rate}% for ${termYears} years. Principal ${formatINR(principal)} returned at maturity. Rate and limits are configurable educational defaults; verify with India Post.`,
     formattedMonthlyIncome: formatINR(monthlyIncome),
     formattedAnnualIncome: formatINR(annualIncome),
     formattedTotalInterest: formatINR(totalInterest),

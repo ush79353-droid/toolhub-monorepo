@@ -39,7 +39,7 @@ export const CHECK_DIGIT_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the GS1 Modulo 10 algorithm?',
     answer:
-      'A checksum that assigns weights of 3 and 1 from the rightmost payload digit, sums weighted digits, and chooses a check digit so the total is divisible by 10 when the check digit is included with weight 1 in verification contexts—or equivalently uses CheckDigit = (10 − (S mod 10)) mod 10 on the payload alone.',
+      'A checksum that assigns weights of 3 and 1 from the rightmost payload digit, sums weighted digits, and chooses a check digit so the total is divisible by 10 when the check digit is included with weight 1 in verification contexts, or equivalently uses CheckDigit = (10 − (S mod 10)) mod 10 on the payload alone.',
   },
   {
     question: 'How do you calculate an EAN-13 check digit?',
@@ -63,7 +63,7 @@ export const CHECK_DIGIT_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'What does GTIN stand for?',
-    answer: 'Global Trade Item Number — a family of GS1 identifiers for trade items.',
+    answer: 'Global Trade Item Number: a family of GS1 identifiers for trade items.',
   },
   {
     question: 'Why do barcodes have check digits?',
@@ -73,7 +73,7 @@ export const CHECK_DIGIT_FAQS: readonly FAQItem[] = [
   {
     question: 'Can a check digit be zero?',
     answer:
-      'Yes. When the weighted sum is divisible by 10, the formula yields 0 — never 10.',
+      'Yes. When the weighted sum is divisible by 10, the formula yields 0; never 10.',
   },
   {
     question: 'Can a barcode contain leading zeros?',
@@ -83,7 +83,7 @@ export const CHECK_DIGIT_FAQS: readonly FAQItem[] = [
   {
     question: 'Is the final digit of a GTIN always the check digit?',
     answer:
-      'For standard GTIN-8/12/13/14 identifiers, yes — the rightmost digit is the Modulo 10 check digit.',
+      'For standard GTIN-8/12/13/14 identifiers, Yes: the rightmost digit is the Modulo 10 check digit.',
   },
   {
     question: 'How do I check whether a GTIN checksum is valid?',

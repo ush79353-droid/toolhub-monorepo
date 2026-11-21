@@ -4,7 +4,7 @@ import { MARKDOWN_FAQS, MARKDOWN_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate retail markdown amounts and percentages from original and actual selling prices — or work the formulas in reverse.',
+    'Calculate retail markdown amounts and percentages from original and actual selling prices, or work the formulas in reverse.',
   asideAriaLabel: 'Interactive Markdown Calculator',
   tocItems: MARKDOWN_TOC_ITEMS,
   GuideArticle: MarkdownGuideArticle,

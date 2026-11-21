@@ -72,7 +72,7 @@ export function valuesFromMinutes(minutes: number): {
 export function shareResultText(minutes: number): string {
   const v = valuesFromMinutes(minutes);
   return [
-    'Minutes to Decimal Calculator — Omega Calculators',
+    'Minutes to Decimal Calculator | Omega Calculators',
     '',
     `${formatDecimal(v.clockMinutes)} minutes = ${formatDecimal(v.hours)} decimal hours`,
     `${formatDecimal(v.clockMinutes)} minutes = ${formatDecimal(v.seconds)} seconds`,

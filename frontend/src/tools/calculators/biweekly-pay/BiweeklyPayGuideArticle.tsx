@@ -11,7 +11,7 @@ export function BiweeklyPayGuideArticle() {
         What Is Biweekly Pay?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Biweekly pay is compensation paid every two weeks — 26 periods in a
+ Biweekly pay is compensation paid every two weeks; 26 periods in a
         52-week year. It is not the same as semi-monthly pay (twice per month,
         24 periods). Enter the one wage period you know; this calculator
         converts it to an equivalent biweekly amount.

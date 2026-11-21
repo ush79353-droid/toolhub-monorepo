@@ -62,7 +62,7 @@ export function CashBackOrLowInterestCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Cash back: $${input.cashBackAmount} at ${input.highInterestRatePercent}%`,
         `Low interest: ${input.lowInterestRatePercent}%`,
         `Auto price: $${input.autoPrice} · Term: ${input.loanTermMonths} months`,
@@ -75,7 +75,7 @@ export function CashBackOrLowInterestCalculator({
         `Cash back total cost: $${result.cashBackOffer.formattedTotalCost}`,
         `Low rate monthly: $${result.lowInterestOffer.formattedMonthlyPayment}`,
         `Low rate total cost: $${result.lowInterestOffer.formattedTotalCost}`,
-        'Currency: fixed USD ($) — no FX selectors in the reference.',
+        'Currency: fixed USD ($); no FX selectors in the reference.',
       ].join('\n')
     : '';
 

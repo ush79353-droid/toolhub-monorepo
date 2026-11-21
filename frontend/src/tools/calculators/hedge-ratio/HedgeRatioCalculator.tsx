@@ -100,7 +100,7 @@ export function HedgeRatioCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total exposure: ${symbol}${input.totalExposure}`,
         `Hedge position: ${symbol}${input.hedgePosition}`,
         `Hedge ratio: ${result.formattedHedgeRatio}%`,

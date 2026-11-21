@@ -398,7 +398,7 @@ function buildFromParts(args: {
     : `After the discount, you pay ${money(finalPrice, currency)} and save ${money(savingsBeforeTax, currency)} (${formatPercent(savingsPercentage)} off). Sales tax is not applied.`;
 
   const explanation =
-    'Discounts are applied before sales tax in this standard model. Tax rules vary by jurisdiction. A percentage off does not prove a deal is historically cheap — compare final prices, shipping, and return terms.';
+    'Discounts are applied before sales tax in this standard model. Tax rules vary by jurisdiction. A percentage off does not prove a deal is historically cheap. Compare final prices, shipping, and return terms.';
 
   return {
     solveTarget,

@@ -149,7 +149,7 @@ export function TdsInterestForm({
                 <span>Date of transaction</span>
                 <InfoTooltip
                   label="Date of transaction"
-                  text="Date tax was deductible — payment or credit date, whichever is earlier."
+                  text="Date tax was deductible; payment or credit date, whichever is earlier."
                 />
               </label>
               <FieldShell error={errors.transactionDate}>
@@ -265,7 +265,7 @@ export function TdsInterestForm({
                 <span>Year of return filing</span>
                 <InfoTooltip
                   label="Year of return filing"
-                  text="Financial-year start year (April). Example: 2027 means FY 2027-28 — Q1 due 31 Jul 2027."
+                  text="Financial-year start year (April). Example: 2027 means FY 2027-28; Q1 due 31 Jul 2027."
                 />
               </label>
               <div className="relative">

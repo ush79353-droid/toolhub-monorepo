@@ -68,7 +68,7 @@ export const DPO_FAQS: readonly FAQItem[] = [
   {
     question: 'Can DPO equal zero?',
     answer:
-      'Yes, when average AP is zero and purchases are positive. Interpret carefully — it may reflect immediate payment or reporting timing.',
+      'Yes, when average AP is zero and purchases are positive. Interpret carefully; it may reflect immediate payment or reporting timing.',
   },
   {
     question: 'Can DPO be negative?',

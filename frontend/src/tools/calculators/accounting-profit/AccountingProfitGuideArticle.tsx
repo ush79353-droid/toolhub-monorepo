@@ -12,7 +12,7 @@ export function AccountingProfitGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Accounting profit is total revenue minus explicit costs recorded in the
-        books—operation expenses, interest, depreciation, and taxes in this
+ books, operation expenses, interest, depreciation, and taxes in this
         calculator. It does not subtract opportunity or implicit costs, so it
         differs from economic profit.
       </p>

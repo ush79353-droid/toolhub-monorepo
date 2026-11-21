@@ -79,7 +79,7 @@ export function validateMarginalCostInput(
     if (dtc.value === 0) {
       status = 'indeterminate';
       warningMessage =
-        'Indeterminate — both the change in total cost and the change in quantity are zero.';
+        'Indeterminate; both the change in total cost and the change in quantity are zero.';
     } else {
       status = 'zeroQuantityChange';
       warningMessage =

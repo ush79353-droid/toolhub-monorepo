@@ -25,7 +25,7 @@ const CURRENCY_CONVERSION_NOTE =
 
 function summaryText(metadataTitle: string, result: CostOfDoingBusinessResult, note: string): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Total annual cost: ${formatCurrencyValue(result.totalAnnualCost, result.currency)}`,
     `Billable days: ${result.billableDays}`,
     `Cost of doing business: ${result.shareCost} per billable day`,

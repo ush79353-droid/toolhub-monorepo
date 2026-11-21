@@ -13,8 +13,8 @@ export function Rule2836GuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The 28/36 rule is a long-standing mortgage affordability guideline. It
         suggests that monthly housing costs generally stay at or below 28% of
-        gross monthly income, and that total monthly debt obligations —
-        including housing — generally stay at or below 36% of that same income.
+ gross monthly income, and that total monthly debt obligations; 
+ including housing; generally stay at or below 36% of that same income.
         Lenders may use similar ideas when reviewing debt-to-income (DTI), but
         the rule itself is a planning benchmark, not a universal approval
         requirement.
@@ -71,7 +71,7 @@ export function Rule2836GuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Other debts are recurring monthly obligations that are not already in
-        the housing total — for example auto loans, student loans, personal
+ the housing total, for example auto loans, student loans, personal
         loans, and minimum credit card payments. Do not add the housing payment
         a second time. Everyday living costs such as groceries and utilities are
         usually outside classic DTI, though they still matter for your real
@@ -135,7 +135,7 @@ export function Rule2836GuideArticle() {
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         Both ratios fall within the traditional limits. That is a planning
-        signal only — actual eligibility depends on the lender, loan program,
+ signal only; actual eligibility depends on the lender, loan program,
         credit, reserves, and documentation.
       </p>
 
@@ -273,7 +273,7 @@ export function Rule2836GuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This calculator checks whether an entered payment and debt load fit the
         28% and 36% guidelines. A home or mortgage affordability calculator goes
-        further — solving for loan size or price given rate, term, taxes, and
+ further; solving for loan size or price given rate, term, taxes, and
         insurance. Use both: ratios for guideline checks, affordability tools for
         price exploration.
       </p>
@@ -288,7 +288,7 @@ export function Rule2836GuideArticle() {
         Regional housing costs, tax brackets, childcare, medical expenses, and
         savings goals are outside the ratios. Lender overlays differ. Gross
         income ignores take-home differences. The housing capacity figure is a
-        payment budget estimate — never treat it as an approved loan amount or
+ payment budget estimate; never treat it as an approved loan amount or
         guaranteed purchase price.
       </p>
 

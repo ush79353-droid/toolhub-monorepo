@@ -18,7 +18,7 @@ export const APC_FAQS: readonly FAQItem[] = [
   {
     question: 'Will disposable income decrease if average propensity to consume increases?',
     answer:
-      'Not necessarily. APC measures the share of disposable income spent on consumption. APC can rise because consumption rises, income falls, or both — the ratio alone does not tell you which changed.',
+      'Not necessarily. APC measures the share of disposable income spent on consumption. APC can rise because consumption rises, income falls, or both: the ratio alone does not tell you which changed.',
   },
   {
     question: 'What is the use of APC in economics?',

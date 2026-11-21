@@ -150,7 +150,7 @@ export function RmdCalculator({
   const summary =
     result && result.rmd !== null
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Age: ${result.age}`,
           `Life expectancy factor: ${result.formattedFactor} (IRS Uniform Lifetime Table 2022+)`,
           `Account balance: ${balanceSymbol}${input.accountBalance} ${input.accountBalanceCurrency}`,

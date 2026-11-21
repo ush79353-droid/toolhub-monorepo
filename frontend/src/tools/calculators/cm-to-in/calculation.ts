@@ -39,7 +39,7 @@ export function calculateCmToIn(input: CmToInInput): CmToInResult {
 
 export function shareResultText(result: CmToInResult): string {
   return [
-    'CM to IN Converter — Omega Calculators',
+    'CM to IN Converter | Omega Calculators',
     '',
     `${formatLength(result.centimeters)} cm ≈ ${formatLength(result.inches)} in`,
   ].join('\n');

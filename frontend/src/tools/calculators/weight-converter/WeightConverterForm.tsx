@@ -99,7 +99,7 @@ export function WeightConverterForm({
           {FIELD_LABELS[field]}
           <InfoTooltip
             label={FIELD_LABELS[field]!}
-            text="Enter a mass in this field or change its unit. Other fields update from the same physical mass in kilograms. Mass units only — not newtons or fluid ounces."
+            text="Enter a mass in this field or change its unit. Other fields update from the same physical mass in kilograms. Mass units only; not newtons or fluid ounces."
           />
         </label>
         <div className="flex gap-2">

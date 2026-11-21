@@ -77,7 +77,7 @@ export function SimpleMortgageCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan amount: ${loanSymbol}${input.loanAmount || '0'}`,
         `Yearly interest rate: ${input.annualInterestRatePercent}%`,
         `Loan term: ${input.loanTerm} ${termLabel}`,

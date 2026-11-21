@@ -41,7 +41,7 @@ export const CGS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'mechanics',
     title: 'CGS Units in Mechanics',
     paragraphs: [
-      'Common mechanical mappings include: 1 m = 100 cm; 1 kg = 1,000 g; 1 N = 100,000 dyn; 1 J = 10⁷ erg; 1 Pa = 10 Ba; 1 m/s² = 100 Gal; 1 Pa·s = 10 P; 1 m²/s = 10,000 St. The galileo (Gal) is an acceleration unit — not the gallon (gal).',
+      'Common mechanical mappings include: 1 m = 100 cm; 1 kg = 1,000 g; 1 N = 100,000 dyn; 1 J = 10⁷ erg; 1 Pa = 10 Ba; 1 m/s² = 100 Gal; 1 Pa·s = 10 P; 1 m²/s = 10,000 St. The galileo (Gal) is an acceleration unit; not the gallon (gal).',
     ],
     tableHeaders: ['Quantity', 'SI', 'CGS', 'Factor (SI → CGS)'],
     table: [

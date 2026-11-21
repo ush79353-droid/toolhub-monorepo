@@ -96,7 +96,7 @@ export function BillableHoursCalculator({
   const dirty = !draftsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Billable rate: ${getCurrencySymbol(result.calcCurrency)}${result.formattedRate}/${unitLabel(RATE_TIME_UNITS, result.rateUnit)}`,
         `Billable time: ${result.formattedTime} ${unitLabel(BILLABLE_TIME_UNITS, result.timeUnit)}`,
         `Billable value: ${getCurrencySymbol(result.valueCurrency)}${result.formattedValue}`,

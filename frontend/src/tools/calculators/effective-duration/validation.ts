@@ -107,7 +107,7 @@ export function collectFieldErrors(
     const periods = years.value * m;
     if (Math.abs(periods - Math.round(periods)) > 1e-9) {
       errors.yearsToMaturity =
-        `Maturity × frequency must be a whole number of coupon periods (got ${periods}). Do not round silently — adjust maturity or frequency.`;
+        `Maturity × frequency must be a whole number of coupon periods (got ${periods}). Do not round silently; adjust maturity or frequency.`;
     }
   }
 

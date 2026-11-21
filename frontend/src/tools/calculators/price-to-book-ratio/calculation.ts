@@ -120,10 +120,10 @@ export function formatRatio(value: number, digits = 2): string {
 
 export function interpretPbRatio(pb: number): string {
   if (pb < 1) {
-    return `P/B ratio ${formatRatio(pb)}× — the market price is below reported book value per common share. That may indicate a valuation discount, but it does not automatically mean the stock is undervalued.`;
+    return `P/B ratio ${formatRatio(pb)}×: the market price is below reported book value per common share. That may indicate a valuation discount, but it does not automatically mean the stock is undervalued.`;
   }
   if (Math.abs(pb - 1) < 1e-9) {
-    return 'P/B ratio 1.00× — the market price is approximately equal to reported book value per common share.';
+    return 'P/B ratio 1.00×: the market price is approximately equal to reported book value per common share.';
   }
-  return `P/B ratio ${formatRatio(pb)}× — the market values common shares at about ${formatRatio(pb)} times reported book value. Interpretation depends on industry, profitability, and asset quality.`;
+  return `P/B ratio ${formatRatio(pb)}×: the market values common shares at about ${formatRatio(pb)} times reported book value. Interpretation depends on industry, profitability, and asset quality.`;
 }

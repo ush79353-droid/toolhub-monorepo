@@ -638,7 +638,7 @@ export function buildLoanSummaryText(input: LoanInput, result: LoanResult): stri
   const suffix = getFrequencyUnitSuffix(result.paymentFrequency);
 
   const lines = [
-    'Loan Estimate — Omega Calculators',
+    'Loan Estimate | Omega Calculators',
     `Loan Type: ${result.loanMode === 'interest-only' ? 'Interest-Only' : 'Amortized'}`,
     `Original Loan Amount: ${fmt(result.originalLoanAmount)}`,
     `APR & Schedule: ${result.annualInterestRate}% APR, ${result.actualPaymentsCount} ${freqLabel.toLowerCase()} payments`,

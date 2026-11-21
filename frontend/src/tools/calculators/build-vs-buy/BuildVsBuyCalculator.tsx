@@ -27,7 +27,7 @@ const CURRENCY_CONVERSION_NOTE =
 
 function summaryText(metadataTitle: string, result: BuildVsBuyResult, note: string): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Effective cost per employee: ${result.effectiveMonthlyDisplay} / mo`,
     `Cost to build: ${result.costToBuildDisplay}`,
     `Annual maintenance: ${result.annualMaintenanceDisplay} / yr`,

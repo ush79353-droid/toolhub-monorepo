@@ -45,7 +45,7 @@ export const CUBIC_FEET_GUIDE_SECTIONS: readonly CubicFeetGuideSection[] = [
     title: 'Introduction',
     paragraphs: [
       'This calculator finds the volume of a rectangular object or space from length, width, and height, reporting the result in cubic feet (ft³). Each edge can use its own length unit.',
-      'Cubic feet measure volume—three-dimensional space—not area. Square feet alone cannot produce cubic feet without a third dimension such as height or depth.',
+      'Cubic feet measure volume, three-dimensional space, not area. Square feet alone cannot produce cubic feet without a third dimension such as height or depth.',
     ],
   },
   {

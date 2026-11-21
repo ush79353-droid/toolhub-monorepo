@@ -25,7 +25,7 @@ export function WorkingCapitalGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Current assets are expected to be realized, sold, or consumed within the
-        normal operating cycle or about one year — for example cash, receivables,
+ normal operating cycle or about one year, for example cash, receivables,
         inventory, short-term investments, and prepaid expenses. Do not confuse
         them with total assets.
       </p>
@@ -38,7 +38,7 @@ export function WorkingCapitalGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Current liabilities are obligations due within the operating cycle or
-        about one year — accounts payable, short-term loans, accruals, taxes
+ about one year; accounts payable, short-term loans, accruals, taxes
         payable, and the current portion of long-term debt, among others.
       </p>
 
@@ -64,7 +64,7 @@ export function WorkingCapitalGuideArticle() {
         <p>Example: 300,000 / 150,000 = 2.00</p>
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
-        This ratio is the current ratio — a dimensionless liquidity measure. It
+ This ratio is the current ratio: a dimensionless liquidity measure. It
         is not the same as the monetary working capital balance.
       </p>
 
@@ -151,7 +151,7 @@ export function WorkingCapitalGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Change in WC = Ending WC − Beginning WC. Rising WC can absorb cash
-        (growth in inventory or receivables). Falling WC can free cash — or
+ (growth in inventory or receivables). Falling WC can free cash; or
         signal stretched payables. Interpret alongside the cash flow statement.
       </p>
 
@@ -164,7 +164,7 @@ export function WorkingCapitalGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Liquidity balances and cash movements are related but not identical. The
         cash conversion cycle (inventory, receivables, payables) helps explain
-        how WC drives operating cash needs — especially for retail,
+ how WC drives operating cash needs; especially for retail,
         manufacturing, and high-growth firms.
       </p>
 

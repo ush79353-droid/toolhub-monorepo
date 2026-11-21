@@ -46,7 +46,7 @@ export const ROE_FAQS: readonly FAQItem[] = [
   {
     question: 'Can ROE exceed 100%?',
     answer:
-      'Yes, when net profit exceeds the equity base. That can reflect high profitability, a small equity base, leverage, or accounting timing — always inspect the context before treating it as a quality signal.',
+      'Yes, when net profit exceeds the equity base. That can reflect high profitability, a small equity base, leverage, or accounting timing; always inspect the context before treating it as a quality signal.',
   },
   {
     question: 'What is the difference between ROE and ROA?',
@@ -66,6 +66,6 @@ export const ROE_FAQS: readonly FAQItem[] = [
   {
     question: 'How can a company improve ROE?',
     answer:
-      'Sustainable paths include raising net profit, improving asset efficiency (DuPont), and thoughtful capital structure — not simply borrowing more to shrink equity and inflate the ratio.',
+      'Sustainable paths include raising net profit, improving asset efficiency (DuPont), and thoughtful capital structure; not simply borrowing more to shrink equity and inflate the ratio.',
   },
 ];

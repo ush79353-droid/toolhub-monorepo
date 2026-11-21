@@ -199,7 +199,7 @@ export function CarRefinanceCalculator({
   const symbol = getCurrencySymbol(result?.currency ?? input.balanceCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Balance: ${getCurrencySymbol(input.balanceCurrency)}${input.balance} ${input.balanceCurrency}`,
         `Current rate: ${input.currentInterestRatePercent}%`,
         `New rate: ${input.newInterestRatePercent}% · term ${input.newLoanTerm} ${input.newLoanTermUnit}`,

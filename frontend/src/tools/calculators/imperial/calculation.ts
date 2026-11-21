@@ -135,7 +135,7 @@ export function shareResultText(
     );
 
   return [
-    `${brand} — Omega Calculators`,
+    `${brand} | Omega Calculators`,
     '',
     `Measurement: ${labelForCategory(result.category)}`,
     '',

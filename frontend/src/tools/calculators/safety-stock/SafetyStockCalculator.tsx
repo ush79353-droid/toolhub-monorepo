@@ -53,7 +53,7 @@ export function SafetyStockCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Max daily usage: ${result.maxDailyUsage} units`,
         `Max lead time: ${result.maxLeadTime} days`,
         `Average daily usage: ${result.averageDailyUsage} units`,

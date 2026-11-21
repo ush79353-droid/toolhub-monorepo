@@ -105,7 +105,7 @@ export function shareResultText(input: string, output: string, mode: CaseMode): 
       : output;
   const stats = textStats(input);
   return [
-    'Lowercase to Uppercase Converter — Omega Calculators',
+    'Lowercase to Uppercase Converter | Omega Calculators',
     '',
     `Mode: ${mode}`,
     `Characters: ${stats.characters} · Words: ${stats.words} · Lines: ${stats.lines}`,

@@ -225,7 +225,7 @@ export function DeferredAnnuityForm({
         {input.showAdvanced ? (
           <p className="text-xs text-muted-foreground">
             Advanced timing, contribution growth, and compounding options are not
-            enabled on this page — calculations use ordinary end-of-month deposits
+ enabled on this page; calculations use ordinary end-of-month deposits
             and withdrawals with nominal monthly rates.
           </p>
         ) : null}

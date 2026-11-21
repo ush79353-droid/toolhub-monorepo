@@ -260,7 +260,7 @@ export function calculateHraFromInput(input: HraInput): HraResult | null {
     `City limit (${(cityInfo.percent * 100).toFixed(0)}%) = ${money(cityLimit, currency)}`,
     claimable
       ? `Exempt HRA = min(HRA, rent−10%S, city limit) = ${money(exemption.exempt, currency)} / month`
-      : 'Exempt HRA = ₹0 (new tax regime — HRA exemption not claimable)',
+      : 'Exempt HRA = ₹0 (new tax regime; HRA exemption not claimable)',
     `Taxable HRA = HRA − exempt = ${money(taxable, currency)} / month`,
     `Eligible months = ${eligibleMonths} → annual exempt ${money(annualExempt, currency)}, annual taxable ${money(annualTaxable, currency)}`,
   ];
@@ -278,7 +278,7 @@ export function calculateHraFromInput(input: HraInput): HraResult | null {
     : `Under the new tax regime for ${rules.label}, HRA exemption is not claimable. The full HRA of ${money(annualHra, currency)} over ${eligibleMonths} month(s) remains non-exempt for this HRA computation.`;
 
   const explanation =
-    'Educational estimate under Indian HRA rules for the selected tax year. City lists and regime availability are versioned assumptions — confirm official Income-tax Rules and your payroll. Does not compute total income tax liability.';
+    'Educational estimate under Indian HRA rules for the selected tax year. City lists and regime availability are versioned assumptions; confirm official Income-tax Rules and your payroll. Does not compute total income tax liability.';
 
   return {
     currency,

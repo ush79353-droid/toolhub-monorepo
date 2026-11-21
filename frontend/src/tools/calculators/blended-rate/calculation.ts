@@ -108,5 +108,5 @@ export function interpretBlendedRate(
   totalBalance: number,
   currency: SupportedCurrency
 ): string {
-  return `Your blended interest rate is ${formatBrPercent(blendedRate)}% across ${includedLoans} loan${includedLoans === 1 ? '' : 's'} totaling ${formatBrMoney(totalBalance, currency)}. It is the balance-weighted average of the rates you entered — larger balances influence the result more. This is not a refinancing quote or amortized payment.`;
+  return `Your blended interest rate is ${formatBrPercent(blendedRate)}% across ${includedLoans} loan${includedLoans === 1 ? '': 's'} totaling ${formatBrMoney(totalBalance, currency)}. It is the balance-weighted average of the rates you entered; larger balances influence the result more. This is not a refinancing quote or amortized payment.`;
 }

@@ -85,7 +85,7 @@ export function validateInflationInput(
   if (input.dataMode === 'historical') {
     if (input.frequency === 'quarterly') {
       errors.frequency =
-        'Quarterly CPI averages require monthly BLS CUUR0000SA0 observations. This build embeds annual averages only — switch Frequency to Yearly or use Custom data.';
+        'Quarterly CPI averages require monthly BLS CUUR0000SA0 observations. This build embeds annual averages only; switch Frequency to Yearly or use Custom data.';
       return { isValid: false, errors, result: null };
     }
 
@@ -280,7 +280,7 @@ export function validateInflationInput(
     formulaBreakdown: `FV = ${formatUsd(amount.value!)} × (1 + ${rate.value! / 100})^${formatFactor(years)} = ${formatUsd(custom.adjustedAmount)}`,
     steps,
     sourceSummary:
-      'Custom annual inflation assumption — not a historical BLS CPI observation.',
+      'Custom annual inflation assumption; not a historical BLS CPI observation.',
     chart: {
       kind: 'custom-projection',
       points: buildCustomProjectionPoints(
@@ -288,7 +288,7 @@ export function validateInflationInput(
         rate.value!,
         years
       ),
-      note: 'Model-based projection using the supplied constant annual inflation rate — not historical CPI data.',
+      note: 'Model-based projection using the supplied constant annual inflation rate; not historical CPI data.',
     },
   };
 

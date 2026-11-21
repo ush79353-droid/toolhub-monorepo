@@ -207,18 +207,18 @@ export function calculateRSI(inputs: RsiMathInputs): RsiMathResult {
 export function interpretRsi(rsi: number): string {
   if (!Number.isFinite(rsi)) return 'RSI is unavailable.';
   if (rsi < 30) {
-    return `RSI ${formatRsi(rsi)} — commonly considered oversold. Recent losses have been relatively strong compared with gains. This does not guarantee an imminent price increase.`;
+    return `RSI ${formatRsi(rsi)}; commonly considered oversold. Recent losses have been relatively strong compared with gains. This does not guarantee an imminent price increase.`;
   }
   if (rsi < 50) {
-    return `RSI ${formatRsi(rsi)} — lower momentum range (below the neutral 50 level). Recent average losses outweigh gains somewhat.`;
+    return `RSI ${formatRsi(rsi)}; lower momentum range (below the neutral 50 level). Recent average losses outweigh gains somewhat.`;
   }
   if (rsi === 50 || Math.abs(rsi - 50) < 1e-9) {
-    return `RSI ${formatRsi(rsi)} — neutral momentum. Recent average gains and losses are approximately balanced (or flat prices used the calculator’s RSI=50 convention).`;
+    return `RSI ${formatRsi(rsi)}; neutral momentum. Recent average gains and losses are approximately balanced (or flat prices used the calculator’s RSI=50 convention).`;
   }
   if (rsi <= 70) {
-    return `RSI ${formatRsi(rsi)} — higher momentum range (above the neutral 50 level). Recent average gains outweigh losses somewhat.`;
+    return `RSI ${formatRsi(rsi)}; higher momentum range (above the neutral 50 level). Recent average gains outweigh losses somewhat.`;
   }
-  return `RSI ${formatRsi(rsi)} — commonly considered overbought. Recent upward momentum has been strong. An overbought RSI does not guarantee an immediate price decline.`;
+  return `RSI ${formatRsi(rsi)}; commonly considered overbought. Recent upward momentum has been strong. An overbought RSI does not guarantee an immediate price decline.`;
 }
 
 export function formatRsi(value: number, digits = 2): string {

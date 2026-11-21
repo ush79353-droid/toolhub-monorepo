@@ -84,7 +84,7 @@ export function shareResultText(input: {
 }): string {
   const meta = MODE_META[input.mode];
   return [
-    'dBm to Watts Calculator — Omega Calculators',
+    'dBm to Watts Calculator | Omega Calculators',
     '',
     `Conversion: ${MODE_LABELS[input.mode]}`,
     '',

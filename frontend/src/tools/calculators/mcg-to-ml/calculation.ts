@@ -166,7 +166,7 @@ export function calculateMcgToMl(input: McgToMlInput): McgToMlResult {
 
 export function shareResultText(result: McgToMlResult): string {
   const lines = [
-    'mcg to mL Conversion — Omega Calculators',
+    'mcg to mL Conversion | Omega Calculators',
     '',
     'Mode:',
     result.mode === 'medication' ? 'Medication concentration' : 'Other substance (density)',
@@ -185,7 +185,7 @@ export function shareResultText(result: McgToMlResult): string {
       : 'Volume = Mass / (Density × 1,000,000)',
     result.explanation,
     '',
-    'Mathematical conversion only — not a dosing recommendation.',
+    'Mathematical conversion only; not a dosing recommendation.',
   ];
   return lines.join('\n');
 }

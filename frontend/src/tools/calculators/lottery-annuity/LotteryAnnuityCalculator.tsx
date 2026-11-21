@@ -90,7 +90,7 @@ export function LotteryAnnuityCalculator({
   const lastRow = result?.schedule[result.schedule.length - 1];
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Prize: ${getCurrencySymbol(input.prizeCurrency)}${input.prizeAmount}`,
         `Years: ${input.years}`,
         `Payout growth: ${input.payoutGrowthPercent}%`,

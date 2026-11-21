@@ -65,7 +65,7 @@ function buildSummary(
     formatted ? `${label}: ${symbol}${formatted}${unit}` : null;
 
   return [
-    `${title} — Omega Calculators`,
+    `${title} | Omega Calculators`,
     result.formattedVatPercent ? `VAT: ${result.formattedVatPercent}%` : null,
     line(
       'Net cost',

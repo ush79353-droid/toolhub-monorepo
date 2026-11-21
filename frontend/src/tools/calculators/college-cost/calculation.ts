@@ -346,7 +346,7 @@ function buildExplanation(args: {
   const pct = args.percentFromSavings;
 
   if (args.financialStatus === 'savings-surplus') {
-    return `Your estimated college expenses are ${total}. Based on your selected ${pct}% savings target, you should have approximately ${target} available for college savings. Your current savings are projected to grow to ${projected} by the time college begins — about ${formatMoney(args.savingsSurplus, args.currency)} above the target.`;
+    return `Your estimated college expenses are ${total}. Based on your selected ${pct}% savings target, you should have approximately ${target} available for college savings. Your current savings are projected to grow to ${projected} by the time college begins; about ${formatMoney(args.savingsSurplus, args.currency)} above the target.`;
   }
   if (args.financialStatus === 'fully-funded') {
     return `Your estimated college expenses are ${total}. Based on your selected ${pct}% savings target, you should have approximately ${target} available for college savings. Your current savings are projected to cover that target by the time college begins.`;
@@ -363,7 +363,7 @@ export function formatMoney(amount: number, currency: SupportedCurrency): string
 
 export function shareCollegeCostText(result: CollegeCostResult): string {
   return [
-    'College Cost Calculator — Omega Calculators',
+    'College Cost Calculator | Omega Calculators',
     `Total projected college cost: ${formatMoney(result.totalProjectedCollegeCost, result.currency)}`,
     `First-year cost: ${formatMoney(result.firstYearFutureCost, result.currency)}`,
     `Savings target (${result.percentFromSavings}%): ${formatMoney(result.savingsFundedTarget, result.currency)}`,

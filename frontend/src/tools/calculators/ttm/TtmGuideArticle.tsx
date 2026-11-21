@@ -18,7 +18,7 @@ export function TtmGuideArticle() {
       </h2>
       <div className="my-4 space-y-2 rounded-xl border border-border bg-brand-softTeal/40 p-4 font-mono text-xs leading-relaxed text-accent sm:text-sm">
         <p>TTM = Q0 + Q1 + Q2 + Q3</p>
-        <p>Sum four consecutive quarterly values — do not average or ×4 annualize</p>
+        <p>Sum four consecutive quarterly values; do not average or ×4 annualize</p>
       </div>
 
       <h2

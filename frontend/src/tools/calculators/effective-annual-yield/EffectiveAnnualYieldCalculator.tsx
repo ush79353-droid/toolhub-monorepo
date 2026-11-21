@@ -110,7 +110,7 @@ export function EffectiveAnnualYieldCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Face value: ${formatCurrencyValue(result.faceValue, result.currency)}`,
         `Annual coupon payment: ${formatCurrencyValue(result.annualCouponPayment, result.currency)}`,
         `Coupon rate: ${result.formattedCouponRatePercent}%`,

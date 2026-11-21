@@ -99,7 +99,7 @@ export function HelocCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `HELOC Balance: ${symbol}${result.formattedInitialPrincipal}`,
         `Draw Period: ${input.drawPeriodYears} years`,
         `Repayment Term: ${input.repaymentTermYears} years`,
@@ -148,7 +148,7 @@ export function HelocCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Interest-only draw period, then amortizing repayment — with optional
+ Interest-only draw period, then amortizing repayment, with optional
             rate-adjustment projections and fees.
           </p>
         </div>

@@ -60,7 +60,7 @@ function convertBusinessValuationMoney(
 
 function summaryText(metadataTitle: string, result: BusinessValuationResult, note: string): string {
   return [
-    `${metadataTitle} — Omega Calculators`,
+    `${metadataTitle} | Omega Calculators`,
     `Method: ${METHOD_LABEL[result.method]}`,
     `Estimated value: ${result.valueDisplay}`,
     note,

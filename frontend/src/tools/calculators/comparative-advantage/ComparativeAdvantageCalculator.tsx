@@ -96,7 +96,7 @@ export function ComparativeAdvantageCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Summary: ${result!.summary}`,
         `OC X: A=${result!.formattedOcXA}, B=${result!.formattedOcXB}`,

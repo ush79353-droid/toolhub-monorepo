@@ -146,7 +146,7 @@ export function ArvForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values.
+ changes the symbol only; it does not convert values.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
           <CurrencySelect
@@ -287,7 +287,7 @@ export function ArvForm({
             <span>Value of renovations</span>
             <InfoTooltip
               label="Value of renovations"
-              text="Expected increase in market value from repairs — not necessarily the same as renovation cost."
+              text="Expected increase in market value from repairs; not necessarily the same as renovation cost."
             />
           </label>
           <FieldShell error={errors.renovationValue}>
@@ -336,7 +336,7 @@ export function ArvForm({
         <div className="rounded-lg border border-border bg-brand-softTeal/35 px-3 py-2.5 text-sm text-accent">
           This tool estimates after-repair value from your inputs. Accuracy
           depends on comparable sales, renovation scope, and local market
-          conditions — treat results as planning estimates, not appraisals.
+ conditions; treat results as planning estimates, not appraisals.
         </div>
       </CollapsibleSection>
 

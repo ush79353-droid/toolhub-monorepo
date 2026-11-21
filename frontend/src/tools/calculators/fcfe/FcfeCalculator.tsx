@@ -90,7 +90,7 @@ export function FcfeCalculator({
     input.method;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Method: ${methodLabel}`,
         `Net borrowing: ${symbol}${result.formattedNetBorrowing}`,
         result.formattedCalculatedNetIncome

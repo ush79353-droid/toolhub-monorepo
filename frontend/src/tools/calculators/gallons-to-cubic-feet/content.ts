@@ -35,7 +35,7 @@ export const GAL_TO_CU_FT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'US and UK Gallons',
     paragraphs: [
       'Gallons and cubic feet both measure volume. People convert between them for tanks, containers, water storage, engineering, and everyday liquid-volume calculations.',
-      `A US liquid gallon equals exactly ${LITERS_PER_US_GALLON} liters (231 cubic inches). It is the gallon used for liquid volume in the United States. This calculator uses US liquid gallons — not US dry gallons.`,
+      `A US liquid gallon equals exactly ${LITERS_PER_US_GALLON} liters (231 cubic inches). It is the gallon used for liquid volume in the United States. This calculator uses US liquid gallons; not US dry gallons.`,
       `A UK imperial gallon equals exactly ${LITERS_PER_UK_GALLON} liters. It is larger than a US liquid gallon by about 20%. Never treat US and UK gallons as interchangeable.`,
     ],
     formula: `1 US gal = ${LITERS_PER_US_GALLON} L · 1 UK gal = ${LITERS_PER_UK_GALLON} L`,
@@ -55,8 +55,8 @@ export const GAL_TO_CU_FT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Gallons to Cubic Feet?',
     paragraphs: [
       'Convert through liters (or any shared volume base): ft³ = gallons × (liters per gallon) ÷ (liters per cubic foot).',
-      `US gallons to cubic feet: ft³ = US gal × (${LITERS_PER_US_GALLON} / ${LITERS_PER_CUBIC_FOOT}). Example — 20 US gal: 20 × ${formatVolume(US_TO_FT3)} ≈ ${formatVolume(convertVolume(20, 'us_gal', 'ft3'))} ft³.`,
-      `UK gallons to cubic feet: ft³ = UK gal × (${LITERS_PER_UK_GALLON} / ${LITERS_PER_CUBIC_FOOT}). Example — 20 UK gal ≈ ${formatVolume(convertVolume(20, 'uk_gal', 'ft3'))} ft³.`,
+      `US gallons to cubic feet: ft³ = US gal × (${LITERS_PER_US_GALLON} / ${LITERS_PER_CUBIC_FOOT}). Example; 20 US gal: 20 × ${formatVolume(US_TO_FT3)} ≈ ${formatVolume(convertVolume(20, 'us_gal', 'ft3'))} ft³.`,
+      `UK gallons to cubic feet: ft³ = UK gal × (${LITERS_PER_UK_GALLON} / ${LITERS_PER_CUBIC_FOOT}). Example; 20 UK gal ≈ ${formatVolume(convertVolume(20, 'uk_gal', 'ft3'))} ft³.`,
       `Reverse: multiply cubic feet by ≈ ${formatVolume(FT3_TO_US)} for US gallons or ≈ ${formatVolume(FT3_TO_UK)} for UK gallons.`,
     ],
     formula: `ft³ = gal × L_per_gal / ${LITERS_PER_CUBIC_FOOT}`,

@@ -64,7 +64,7 @@ export function ChildTaxCreditForm({
         <p className="text-foreground/90">
           The <strong>Child Tax Credit</strong> helps families with qualifying dependent children
           under age 17. This estimate uses tax year 2025 rules ($2,200 per qualifying child) and
-          income phaseouts. It is educational — not a guaranteed IRS refund.
+ income phaseouts. It is educational; not a guaranteed IRS refund.
         </p>
       </div>
 

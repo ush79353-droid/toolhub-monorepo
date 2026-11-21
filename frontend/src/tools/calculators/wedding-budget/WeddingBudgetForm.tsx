@@ -204,7 +204,7 @@ export function WeddingBudgetForm({
             <span>Number of guests</span>
             <InfoTooltip
               label="Number of guests"
-              text="Must be greater than zero. Used only for cost per guest — never FX-converted."
+              text="Must be greater than zero. Used only for cost per guest; never FX-converted."
             />
           </label>
           <FieldShell error={errors.guestCount}>

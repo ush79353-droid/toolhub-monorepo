@@ -96,7 +96,7 @@ export function validateTdsInterestInput(
       months: computed.months,
       message:
         computed.months === 0
-          ? 'No late-deduction interest — TDS was deducted on the transaction date.'
+          ? 'No late-deduction interest; TDS was deducted on the transaction date.'
           : `Interest on late deduction (s.201(1A)): ₹${formatInrAmount(computed.interest)} for ${computed.months} month${computed.months === 1 ? '' : 's'} at 1% per month or part thereof.`,
     };
     return { isValid: true, errors: {}, result };
@@ -141,7 +141,7 @@ export function validateTdsInterestInput(
         months: 0,
         dueDate: computed.dueDate,
         formattedDueDate: dueLabel,
-        message: `No late-payment interest — deposit is on or before the due date (${dueLabel}). Non-government Rule 30 due dates are used (March → 30 April).`,
+        message: `No late-payment interest; deposit is on or before the due date (${dueLabel}). Non-government Rule 30 due dates are used (March → 30 April).`,
       };
       return { isValid: true, errors: {}, result };
     }

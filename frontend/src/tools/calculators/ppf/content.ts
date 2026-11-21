@@ -65,7 +65,7 @@ export const PPF_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the PPF maturity period?',
     answer:
-      'Accounts generally mature 15 years from the end of the financial year in which they were opened — for example, an account opened in FY 2026–27 matures on 31 March 2042 under this model.',
+      'Accounts generally mature 15 years from the end of the financial year in which they were opened, for example, an account opened in FY 2026–27 matures on 31 March 2042 under this model.',
   },
   {
     question: 'Can I deposit monthly in PPF?',
@@ -90,7 +90,7 @@ export const PPF_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I withdraw PPF money before maturity?',
     answer:
-      'Partial withdrawals may be allowed after a lock-in under specified conditions and limits. This calculator models contributions and interest only — not withdrawals.',
+      'Partial withdrawals may be allowed after a lock-in under specified conditions and limits. This calculator models contributions and interest only; not withdrawals.',
   },
   {
     question: 'Can I extend PPF after 15 years?',
@@ -105,7 +105,7 @@ export const PPF_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I claim Section 80C benefits for PPF?',
     answer:
-      'Eligible contributions may qualify for deduction under Section 80C within overall 80C limits when you opt for a regime that allows it. New-regime eligibility differs — check current tax law.',
+      'Eligible contributions may qualify for deduction under Section 80C within overall 80C limits when you opt for a regime that allows it. New-regime eligibility differs. Check current tax law.',
   },
   {
     question: 'Can an NRI open a PPF account?',
@@ -155,7 +155,7 @@ export const PPF_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the best month to invest in PPF?',
     answer:
-      'Deposits on or before the 5th earn that month’s interest eligibility. Many investors prefer early-month deposits, especially early in the financial year, to maximize compounding months — subject to cash-flow needs.',
+      'Deposits on or before the 5th earn that month’s interest eligibility. Many investors prefer early-month deposits, especially early in the financial year, to maximize compounding months, subject to cash-flow needs.',
   },
   {
     question: 'What happens if I invest more than the annual limit?',

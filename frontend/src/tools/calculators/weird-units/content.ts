@@ -42,7 +42,7 @@ export const WEIRD_UNITS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Change the Unit of Measurement',
     paragraphs: [
       'A measurement is a number multiplied by a unit size. Changing the unit changes the number while leaving the physical quantity the same.',
-      'Length, mass, time, area, and volume each need their own base unit. This converter never mixes incompatible dimensions — meters cannot become kilograms without an extra physical model such as density.',
+      'Length, mass, time, area, and volume each need their own base unit. This converter never mixes incompatible dimensions; meters cannot become kilograms without an extra physical model such as density.',
     ],
     formula: 'Measurement = Number × Unit size',
   },
@@ -98,7 +98,7 @@ export const WEIRD_UNITS_FAQS: readonly FAQItem[] = [
   {
     question: 'What Is a Weird Unit of Measurement?',
     answer:
-      'A weird unit is an unconventional reference — an object, landmark, or event — used to describe a quantity in familiar terms.',
+      'A weird unit is an unconventional reference (an object, landmark, or event) used to describe a quantity in familiar terms.',
   },
   {
     question: 'How Do You Convert Meters Into LEGO Bricks?',

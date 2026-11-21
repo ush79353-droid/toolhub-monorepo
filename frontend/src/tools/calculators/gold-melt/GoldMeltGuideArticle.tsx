@@ -7,7 +7,7 @@ export function GoldMeltGuideArticle() {
     <article className="prose prose-slate max-w-none rounded-2xl border border-border bg-white px-5 py-6 sm:px-8 sm:py-8">
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         Gold melt value is an estimate of what the metal content in a piece is worth at a pure-gold
-        reference price — after adjusting for karat or purity. Weight, purity, and spot price drive
+ reference price after adjusting for karat or purity. Weight, purity, and spot price drive
         the result; dealer spreads explain why offers can sit below that intrinsic estimate. Enter a
         market price manually; this calculator does not fetch live quotes.
       </p>
@@ -68,21 +68,21 @@ export function GoldMeltGuideArticle() {
       </h2>
       <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong className="font-medium text-accent">Quality</strong> — choose a karat or custom
+ <strong className="font-medium text-accent">Quality</strong>: choose a karat or custom
           purity percentage.
         </li>
         <li>
-          <strong className="font-medium text-accent">Value</strong> — enter weight and unit, then the
+ <strong className="font-medium text-accent">Value</strong>: enter weight and unit, then the
           pure-gold market price and its unit. Review possession (melt) value.
         </li>
         <li>
-          <strong className="font-medium text-accent">Trade / Exchange</strong> — set the dealer
+ <strong className="font-medium text-accent">Trade / Exchange</strong>: set the dealer
           spread, then compare bid and ask prices and values against spot melt value. Override bid or
           ask manually when you have a real quote.
         </li>
       </ol>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        The calculator values the pure-gold content only — it does not treat every gram of jewelry as
+ The calculator values the pure-gold content only; it does not treat every gram of jewelry as
         100% gold.
       </p>
 

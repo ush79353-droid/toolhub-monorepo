@@ -147,7 +147,7 @@ export function interpretCrossPriceElasticity(
     );
   } else if (relationship === 'approximatelyUnrelated') {
     parts.push(
-      'Observed elasticity is about zero — Product B\'s demand did not respond to the measured change in Product A\'s price over this interval. That does not prove the goods are permanently unrelated.'
+      'Observed elasticity is about zero; Product B\'s demand did not respond to the measured change in Product A\'s price over this interval. That does not prove the goods are permanently unrelated.'
     );
   }
 

@@ -170,7 +170,7 @@ export function DayConverterForm({
             error={errors[unit]}
             tip={
               unit === 'years' || unit === 'months'
-                ? 'Average approximation — not an exact calendar span.'
+                ? 'Average approximation; not an exact calendar span.'
                 : undefined
             }
             placeholder="—"

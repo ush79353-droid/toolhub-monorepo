@@ -41,7 +41,7 @@ export function SilverMeltGuideArticle() {
         <p className="font-semibold text-accent">Does silver melt?</p>
         <p className="mt-1.5">
           Silver melts at approximately 961.8°C under standard pressure. Ordinary
-          melt-value estimates do not require physically melting the item — they
+ melt-value estimates do not require physically melting the item; they
           value the pure silver content at a market price.
         </p>
       </div>
@@ -56,7 +56,7 @@ export function SilverMeltGuideArticle() {
         Many pre-1965 US quarters contain about 90% silver. A common reference
         weight is about 6.25&nbsp;g total, so pure silver content is about
         5.625&nbsp;g. Melt value ≈ 5.625 × current silver price per gram. Modern
-        circulating quarters generally do not share that composition — treat them
+ circulating quarters generally do not share that composition; treat them
         separately from historical silver coinage.
       </p>
 

@@ -26,7 +26,7 @@ export const PENNIES_TO_DOLLARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'A US penny is a one-cent coin. One penny has a face value of $0.01. The US dollar is a decimal currency with 100 cents in each dollar, so 100 pennies equal exactly one dollar.',
       'Converting pennies to dollars helps when counting coin jars, teaching money math, reconciling cash drawers, and turning a pile of coins into a bankable dollar amount.',
-      'The penny has been part of American coinage for centuries as the smallest circulating denomination by face value. This calculator converts face values only — it does not estimate metal melt value or collector premiums.',
+      'The penny has been part of American coinage for centuries as the smallest circulating denomination by face value. This calculator converts face values only; it does not estimate metal melt value or collector premiums.',
     ],
     formula: '1 penny = $0.01 · 100 pennies = $1.00',
   },

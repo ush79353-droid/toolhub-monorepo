@@ -121,7 +121,7 @@ export const FCFE_FAQS: readonly FAQItem[] = [
   {
     question: 'What discount rate should be used for FCFE?',
     answer:
-      'A cost of equity appropriate to the equity cash-flow risk — not WACC used for FCFF enterprise valuation.',
+      'A cost of equity appropriate to the equity cash-flow risk; not WACC used for FCFF enterprise valuation.',
   },
   {
     question: 'How is FCFE different from operating cash flow?',

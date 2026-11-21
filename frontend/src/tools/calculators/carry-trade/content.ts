@@ -65,7 +65,7 @@ export const CARRY_TRADE_FAQS: readonly FAQItem[] = [
   {
     question: 'Can a carry trade lose money?',
     answer:
-      'Yes. Depreciation of the investment currency, rising funding costs, falling investment yields, leverage, and costs can produce losses — sometimes larger than posted collateral when leveraged.',
+      'Yes. Depreciation of the investment currency, rising funding costs, falling investment yields, leverage, and costs can produce losses; sometimes larger than posted collateral when leveraged.',
   },
   {
     question: 'What is currency risk?',
@@ -110,7 +110,7 @@ export const CARRY_TRADE_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens when a carry trade unwinds?',
     answer:
-      'Investors sell the investment currency and buy back the funding currency, which can amplify depreciation and losses during stress — especially when many positions unwind together.',
+      'Investors sell the investment currency and buy back the funding currency, which can amplify depreciation and losses during stress; especially when many positions unwind together.',
   },
   {
     question: 'How does a carry trade differ from forex trading?',
@@ -135,7 +135,7 @@ export const CARRY_TRADE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the carry trade profit on a $5,000 investment?',
     answer:
-      'Using the illustrative example (S₀ 0.85, S₁ 0.83, 6%/2%, 180 days, 365 basis), cash-flow profit is about +222.68 funding units (~+4.45% total return). Hypothetical only — not live quotes.',
+      'Using the illustrative example (S₀ 0.85, S₁ 0.83, 6%/2%, 180 days, 365 basis), cash-flow profit is about +222.68 funding units (~+4.45% total return). Hypothetical only; not live quotes.',
   },
   {
     question: 'What happens when the investment currency depreciates?',

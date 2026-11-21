@@ -13,7 +13,7 @@ export function LfprGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The labor force participation rate (LFPR) shows what share of a defined
-        population is economically active in the labor market — either employed
+ population is economically active in the labor market; either employed
         or unemployed under official criteria. Enter employed, unemployed, and
         working-age (coverage) population counts to compute labor force size,
         unemployment rate, LFPR, people outside the labor force, and the
@@ -30,7 +30,7 @@ export function LfprGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         LFPR measures labor market participation, not employment alone. A person
         can be unemployed and still raise participation. People outside the labor
-        force — such as many retirees or full-time students not seeking work —
+ force (such as many retirees or full-time students not seeking work) 
         lower participation without counting as unemployed.
       </p>
 
@@ -162,7 +162,7 @@ export function LfprGuideArticle() {
         Common nonparticipant groups include many retirees, full-time students
         not working or seeking work, unpaid caregivers who do not meet labor
         force criteria, and people who have stopped seeking employment. Labels
-        alone do not determine status — employment and job-search behavior do.
+ alone do not determine status; employment and job-search behavior do.
       </p>
 
       <h2
@@ -256,7 +256,7 @@ export function LfprGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Cross-country gaps reflect definitions, age structure, education,
         retirement rules, development, institutions, and labor market conditions.
-        This page does not invent rankings — use ILO, OECD, or national releases
+ This page does not invent rankings; use ILO, OECD, or national releases
         with matching years and definitions.
       </p>
 

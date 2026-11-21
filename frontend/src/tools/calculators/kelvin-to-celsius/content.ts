@@ -29,7 +29,7 @@ export const KELVIN_TO_CELSIUS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Kelvin to Celsius Converter',
     paragraphs: [
-      'This calculator converts temperature values between Kelvin and Celsius instantly. Both conversion directions are supported — edit either field and the other updates in real time.',
+      'This calculator converts temperature values between Kelvin and Celsius instantly. Both conversion directions are supported; edit either field and the other updates in real time.',
       '1. Enter a temperature in Kelvin.',
       '2. The equivalent Celsius temperature appears automatically.',
       '3. To convert Celsius to Kelvin, enter a value in the Celsius field.',
@@ -45,9 +45,9 @@ export const KELVIN_TO_CELSIUS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'Kelvin (K) is an absolute thermodynamic temperature. Celsius (°C) shares the same degree size but places zero at the freezing point of water under standard pressure.',
       'Subtract 273.15 from the kelvin value to obtain Celsius. The relationship is an offset, not a scale factor: a change of 1 K equals a change of 1 °C.',
-      `Example 1 — convert 300 K: 300 − 273.15 = ${formatTemp(kelvinToCelsius(300))} °C.`,
-      `Example 2 — convert 100 K: 100 − 273.15 = ${formatTemp(kelvinToCelsius(100))} °C.`,
-      `Example 3 — convert 0 K: 0 − 273.15 = ${formatTemp(kelvinToCelsius(0))} °C (absolute zero).`,
+      `Example 1: convert 300 K: 300 − 273.15 = ${formatTemp(kelvinToCelsius(300))} °C.`,
+      `Example 2: convert 100 K: 100 − 273.15 = ${formatTemp(kelvinToCelsius(100))} °C.`,
+      `Example 3: convert 0 K: 0 − 273.15 = ${formatTemp(kelvinToCelsius(0))} °C (absolute zero).`,
     ],
     formula: '°C = K − 273.15',
   },
@@ -56,9 +56,9 @@ export const KELVIN_TO_CELSIUS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Celsius to Kelvin Conversion Formula',
     paragraphs: [
       'Add 273.15 to the Celsius temperature to obtain kelvin.',
-      `Example 1 — convert 0 °C: 0 + 273.15 = ${formatTemp(celsiusToKelvin(0))} K.`,
-      `Example 2 — convert 100 °C: 100 + 273.15 = ${formatTemp(celsiusToKelvin(100))} K.`,
-      `Example 3 — convert −40 °C: −40 + 273.15 = ${formatTemp(celsiusToKelvin(-40))} K.`,
+      `Example 1: convert 0 °C: 0 + 273.15 = ${formatTemp(celsiusToKelvin(0))} K.`,
+      `Example 2: convert 100 °C: 100 + 273.15 = ${formatTemp(celsiusToKelvin(100))} K.`,
+      `Example 3: convert −40 °C: −40 + 273.15 = ${formatTemp(celsiusToKelvin(-40))} K.`,
     ],
     formula: 'K = °C + 273.15',
   },
@@ -66,7 +66,7 @@ export const KELVIN_TO_CELSIUS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-kelvin',
     title: 'What Is the Kelvin Scale?',
     paragraphs: [
-      'Kelvin is the SI base unit of thermodynamic temperature. Its symbol is K — not °K — because kelvin is a base unit, not a derived “degree” unit in modern SI usage.',
+      'Kelvin is the SI base unit of thermodynamic temperature. Its symbol is K (not °K) because kelvin is a base unit, not a derived “degree” unit in modern SI usage.',
       'The scale begins at absolute zero: 0 K is the lowest thermodynamic temperature in the conventional sense used by this converter.',
       'A change of 1 K equals a change of 1 °C. Only the zero points differ: Celsius places 0 °C at water’s freezing point (approximately 273.15 K under standard pressure).',
     ],

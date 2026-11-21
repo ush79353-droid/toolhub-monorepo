@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Compare keeping a credit card balance with transferring it to a promotional offer—fees, intro APR, post-promo APR, monthly payments, and estimated savings.',
+    'Compare keeping a credit card balance with transferring it to a promotional offer, fees, intro APR, post-promo APR, monthly payments, and estimated savings.',
   asideAriaLabel: 'Interactive Balance Transfer Calculator',
   tocItems: BALANCE_TRANSFER_TOC_ITEMS,
   GuideArticle: BalanceTransferGuideArticle,

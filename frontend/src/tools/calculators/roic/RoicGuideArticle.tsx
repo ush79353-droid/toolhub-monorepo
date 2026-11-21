@@ -15,7 +15,7 @@ export function RoicGuideArticle() {
         Return on invested capital (ROIC) measures how efficiently a company
         generates after-tax operating profit from the capital invested in the
         business. Investors, owners, and analysts use ROIC to judge capital
-        efficiency — not just accounting profit margins. Profits alone do not
+ efficiency; not just accounting profit margins. Profits alone do not
         show how much debt and equity capital were required to earn them.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
@@ -74,7 +74,7 @@ export function RoicGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Industry, capital intensity, business model, economic conditions, and
         sustainability all matter. A “good” ROIC is typically one that exceeds
-        the company’s cost of capital over time — not a universal percentage
+ the company’s cost of capital over time; not a universal percentage
         threshold. Compare peers with similar capital structures and accounting
         definitions.
       </p>
@@ -175,7 +175,7 @@ export function RoicGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A positive spread suggests after-tax operating returns exceed the
         estimated financing cost under the assumptions used; a negative spread
-        suggests the opposite. This calculator does not assume a WACC — supply
+ suggests the opposite. This calculator does not assume a WACC; supply
         your own estimate when comparing. Related value-creation tools include
         the{' '}
         <Link

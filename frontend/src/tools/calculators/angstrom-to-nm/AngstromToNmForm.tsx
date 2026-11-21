@@ -96,7 +96,7 @@ export function AngstromToNmForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
-        Exact factors: 1 Å = 0.1 nm (10 Å = 1 nm); 1 mil = 25,400 nm. Edit any field — the others
+ Exact factors: 1 Å = 0.1 nm (10 Å = 1 nm); 1 mil = 25,400 nm. Edit any field: the others
         update from nanometers. Length cannot be negative. Scientific notation (e.g. 1e-10) is
         allowed.
       </div>

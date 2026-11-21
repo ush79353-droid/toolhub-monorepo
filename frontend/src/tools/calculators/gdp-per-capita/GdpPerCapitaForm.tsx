@@ -98,7 +98,7 @@ export function GdpPerCapitaForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         GDP per Capita = GDP / Population. This is average economic output per
-        person — not every resident’s income. The measure selector only labels
+ person; not every resident’s income. The measure selector only labels
         your inputs; it does not convert real ↔ nominal ↔ PPP.
       </p>
 

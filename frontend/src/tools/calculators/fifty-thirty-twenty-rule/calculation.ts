@@ -101,7 +101,7 @@ export function formatMoney(amount: number, currency: SupportedCurrency): string
 
 export function shareBudgetText(result: FiftyThirtyTwentyResult): string {
   return [
-    '50/30/20 Rule Calculator — Omega Calculators',
+    '50/30/20 Rule Calculator | Omega Calculators',
     `Monthly after-tax income: ${formatMoney(result.monthlyIncome, result.currency)} ${result.currency}`,
     `Necessities (50%): ${formatMoney(result.necessities.monthlyAmount, result.currency)}`,
     `Wants (30%): ${formatMoney(result.wants.monthlyAmount, result.currency)}`,

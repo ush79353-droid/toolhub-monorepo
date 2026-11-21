@@ -57,7 +57,7 @@ export function calculateGToLbs(input: GToLbsInput): GToLbsResult {
 
 export function shareResultText(result: GToLbsResult): string {
   return [
-    'g to lbs Converter — Omega Calculators',
+    'g to lbs Converter | Omega Calculators',
     '',
     `${formatMass(result.grams)} g = ${formatMass(result.pounds)} lb`,
     '',

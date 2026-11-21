@@ -23,7 +23,7 @@ export const DIMES_TO_DOLLARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'dimes-to-dollars',
     title: 'Dimes to Dollars',
     paragraphs: [
-      'A dime is a United States coin with a face value of ten cents — one-tenth of a dollar. Among circulating U.S. coins, the modern dime is the smallest by physical diameter. Circulating dimes use a copper-nickel clad construction around a copper core.',
+      'A dime is a United States coin with a face value of ten cents; one-tenth of a dollar. Among circulating U.S. coins, the modern dime is the smallest by physical diameter. Circulating dimes use a copper-nickel clad construction around a copper core.',
       'Because ten dimes equal one dollar, converting between dime counts and dollar amounts is useful for counting change, savings jars, classroom money math, cash drawers, and everyday cash calculations.',
       'This calculator converts between a count of dimes and U.S. dollars. It does not convert foreign currencies or other coin denominations.',
     ],
@@ -34,7 +34,7 @@ export const DIMES_TO_DOLLARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'One Dime to Dollars',
     paragraphs: [
       'One dime equals 10 cents, written as $0.10. That single-coin value scales cleanly for larger piles: multiply the number of dimes by 0.10, or divide by 10.',
-      'For example, 200 dimes equal $20.00, and 2,000 dimes equal $200.00. Large collections convert the same way — keep the count exact and apply the fixed 10¢ face value rather than estimating by weight alone.',
+      'For example, 200 dimes equal $20.00, and 2,000 dimes equal $200.00. Large collections convert the same way; keep the count exact and apply the fixed 10¢ face value rather than estimating by weight alone.',
     ],
     formula: '1 dime = 10¢ = $0.10   ·   75 dimes ÷ 10 = $7.50',
   },
@@ -102,6 +102,6 @@ export const DIMES_TO_DOLLARS_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I Convert Dollars Back to Dimes?',
     answer:
-      'Yes. Multiply the dollar value by 10 to obtain the number of dime-equivalents. If the amount is not a multiple of $0.10, the result may be fractional — that is a mathematical equivalent, not a count of whole physical dimes. The calculator also shows whole dimes and remaining cents.',
+      'Yes. Multiply the dollar value by 10 to obtain the number of dime-equivalents. If the amount is not a multiple of $0.10, the result may be fractional; that is a mathematical equivalent, not a count of whole physical dimes. The calculator also shows whole dimes and remaining cents.',
   },
 ];

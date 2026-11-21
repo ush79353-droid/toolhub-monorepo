@@ -77,7 +77,7 @@ export function EbitdaCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Operating profit: ${symbol}${result.formattedOperatingProfit}`,
         `Amortization: ${symbol}${result.formattedAmortizationExpense}`,
         `Depreciation: ${symbol}${result.formattedDepreciationExpense}`,
@@ -121,7 +121,7 @@ export function EbitdaCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             Calculate earnings before interest, taxes, depreciation, and
-            amortization — EBITDA = Operating profit + A + D.
+ amortization; EBITDA = Operating profit + A + D.
           </p>
         </div>
         {headerActions ? (

@@ -100,7 +100,7 @@ export function ExpenseRatioCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Initial: ${symbol}${input.initialInvestment}`,
         `Yearly: ${symbol}${input.yearlyInvestment}`,
         `Duration: ${input.durationYears} yrs`,

@@ -77,7 +77,7 @@ export function DioCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Average inventory: ${symbol}${result.formattedAverageInventory}`,
         `COGS: ${symbol}${result.formattedCostOfGoodsSold}`,
         `Period: ${result.formattedAccountingPeriodDays} days`,
@@ -120,7 +120,7 @@ export function DioCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Estimate how many days inventory stays on hand — DIO = (Average
+ Estimate how many days inventory stays on hand; DIO = (Average
             inventory / COGS) × days.
           </p>
         </div>

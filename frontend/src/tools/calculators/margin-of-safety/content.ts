@@ -12,7 +12,7 @@ export const MARGIN_OF_SAFETY_FAQS: readonly FAQItem[] = [
   {
     question: 'What does margin of safety measure?',
     answer:
-      'It is how far current (or expected) sales sit above breakeven sales — in money, as a ratio or percent of current sales, and optionally in units when a selling price per unit is provided.',
+      'It is how far current (or expected) sales sit above breakeven sales; in money, as a ratio or percent of current sales, and optionally in units when a selling price per unit is provided.',
   },
   {
     question: 'Does cost price per unit set breakeven sales?',

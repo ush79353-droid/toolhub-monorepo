@@ -13,7 +13,7 @@ export function LoanBalanceGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Remaining loan balance is the outstanding principal on a fixed-rate amortizing loan after
         a given number of scheduled monthly payments. This calculator estimates that balance from
-        the original loan amount, annual interest rate, full term, and elapsed period — without
+ the original loan amount, annual interest rate, full term, and elapsed period; without
         extra payments or fees.
       </p>
 

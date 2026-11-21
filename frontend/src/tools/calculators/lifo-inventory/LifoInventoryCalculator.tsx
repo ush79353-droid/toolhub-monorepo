@@ -80,7 +80,7 @@ export function LifoInventoryCalculator({
   const shareable = Boolean(result);
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `LIFO COGS: ${symbol}${result!.formattedLifoCogs}`,
         `Ending inventory: ${symbol}${result!.formattedEndingInventory}`,
         `Revenue: ${symbol}${result!.formattedRevenue}`,
@@ -123,7 +123,7 @@ export function LifoInventoryCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Last In, First Out — newest purchase costs enter COGS first.
+ Last In, First Out; newest purchase costs enter COGS first.
           </p>
         </div>
         {headerActions ? (

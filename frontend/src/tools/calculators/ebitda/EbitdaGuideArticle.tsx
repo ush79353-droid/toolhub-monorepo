@@ -14,7 +14,7 @@ export function EbitdaGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         EBITDA means Earnings Before Interest, Taxes, Depreciation, and
         Amortization. Analysts use it to compare operating earnings before
-        financing, tax, and non-cash D&amp;A effects — with clear accounting
+ financing, tax, and non-cash D&amp;A effects, with clear accounting
         assumptions.
       </p>
 
@@ -168,7 +168,7 @@ export function EbitdaGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         It supports financial analysis, valuation discussions, operating
-        comparisons, and trend monitoring — always alongside cash flow and debt
+ comparisons, and trend monitoring; always alongside cash flow and debt
         context.
       </p>
 
@@ -209,7 +209,7 @@ export function EbitdaGuideArticle() {
         EBITDA excludes interest and taxes, adds back D&amp;A, does not deduct
         capital expenditures or working-capital cash needs, and may not reflect
         debt-servicing capacity. Adjusted EBITDA can differ from standard
-        EBITDA. This tool provides educational estimates only — not accounting,
+ EBITDA. This tool provides educational estimates only; not accounting,
         audit, or investment advice.
       </p>
 

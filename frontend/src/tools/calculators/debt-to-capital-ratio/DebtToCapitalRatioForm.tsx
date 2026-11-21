@@ -275,7 +275,7 @@ export function DebtToCapitalRatioForm({
             <span>Debt to capital ratio</span>
             <InfoTooltip
               label="Debt to capital ratio"
-              text="Debt ÷ (Debt + Equity) after normalizing both amounts into the debt currency. Dimensionless — no currency symbol."
+              text="Debt ÷ (Debt + Equity) after normalizing both amounts into the debt currency. Dimensionless; no currency symbol."
             />
           </label>
           <FieldShell muted>

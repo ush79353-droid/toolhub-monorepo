@@ -70,7 +70,7 @@ export function calculateBarToAtm(input: BarToAtmInput): BarToAtmResult {
 
 export function shareResultText(result: BarToAtmResult): string {
   return [
-    'Bar to ATM Conversion — Omega Calculators',
+    'Bar to ATM Conversion | Omega Calculators',
     '',
     'Input:',
     result.source === 'bar'

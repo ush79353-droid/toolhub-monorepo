@@ -138,7 +138,7 @@ export function validateBlendedRateInput(
       currency
     ),
     warningMessage:
-      'Blended rate is a balance-weighted average of annual rates. Estimated interest assumes unchanged balances for one year — not an amortized payment schedule. Amounts share one currency label (no FX).',
+      'Blended rate is a balance-weighted average of annual rates. Estimated interest assumes unchanged balances for one year; not an amortized payment schedule. Amounts share one currency label (no FX).',
     currency,
     formattedTotalBalance: formatBrMoney(math.totalBalance, currency),
     formattedBlendedRate: formatBrPercent(math.blendedRate),

@@ -78,7 +78,7 @@ export function IntrinsicValueForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        All money fields share one currency and scale (denomination only — no
+ All money fields share one currency and scale (denomination only; no
         FX). Bond yield is your input, not a live market rate.
       </p>
       <p className="text-xs">

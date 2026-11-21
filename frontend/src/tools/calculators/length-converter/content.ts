@@ -34,7 +34,7 @@ export const LENGTH_CONVERTER_GUIDE_SECTIONS: readonly LengthConverterGuideSecti
     id: 'what-is-length-converter',
     title: 'What Is a Length Converter?',
     paragraphs: [
-      'A length converter expresses the same physical distance in different units—meters, feet, miles, nautical miles, or even light-years. Omega Calculators stores one canonical length in meters and derives every other unit from exact conversion factors.',
+      'A length converter expresses the same physical distance in different units, meters, feet, miles, nautical miles, or even light-years. Omega Calculators stores one canonical length in meters and derives every other unit from exact conversion factors.',
       'It does not replace surveying or navigation instruments; it only scales a known length between unit systems.',
     ],
   },
@@ -86,7 +86,7 @@ export const LENGTH_CONVERTER_GUIDE_SECTIONS: readonly LengthConverterGuideSecti
     id: 'scientific-astronomical',
     title: 'Scientific and Astronomical Distances',
     paragraphs: [
-      'Nanometers, micrometers, picometers, and ångströms describe tiny lengths. Astronomical unit (AU), light-year, and parsec describe solar-system and interstellar distances. A light-year is a distance—how far light travels in a Julian year of 365.25 days at 299,792,458 m/s—not a duration.',
+      'Nanometers, micrometers, picometers, and ångströms describe tiny lengths. Astronomical unit (AU), light-year, and parsec describe solar-system and interstellar distances. A light-year is a distance, how far light travels in a Julian year of 365.25 days at 299,792,458 m/s, not a duration.',
       'One AU is exactly 149,597,870,700 meters. One parsec is (648,000/π) AU by definition.',
     ],
   },

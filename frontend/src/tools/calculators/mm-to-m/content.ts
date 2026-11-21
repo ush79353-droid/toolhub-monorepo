@@ -52,11 +52,11 @@ export const MM_TO_M_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Millimeter to Meter Conversion Examples',
     paragraphs: [
-      `Example 1 — 100 mm: 100 ÷ ${MM_PER_METER} = ${formatLength(millimetersToMeters(100))} m.`,
-      `Example 2 — 250 mm: 250 ÷ ${MM_PER_METER} = ${formatLength(millimetersToMeters(250))} m.`,
-      `Example 3 — 1500 mm: 1500 ÷ ${MM_PER_METER} = ${formatLength(millimetersToMeters(1500))} m.`,
-      `Example 4 — 3200 mm: 3200 ÷ ${MM_PER_METER} = ${formatLength(millimetersToMeters(3200))} m.`,
-      `Example 5 — 4.5 m: 4.5 × ${MM_PER_METER} = ${formatLength(metersToMillimeters(4.5))} mm.`,
+      `Example 1: 100 mm: 100 ÷ ${MM_PER_METER} = ${formatLength(millimetersToMeters(100))} m.`,
+      `Example 2: 250 mm: 250 ÷ ${MM_PER_METER} = ${formatLength(millimetersToMeters(250))} m.`,
+      `Example 3: 1500 mm: 1500 ÷ ${MM_PER_METER} = ${formatLength(millimetersToMeters(1500))} m.`,
+      `Example 4: 3200 mm: 3200 ÷ ${MM_PER_METER} = ${formatLength(millimetersToMeters(3200))} m.`,
+      `Example 5: 4.5 m: 4.5 × ${MM_PER_METER} = ${formatLength(metersToMillimeters(4.5))} mm.`,
     ],
   },
   {

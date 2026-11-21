@@ -24,7 +24,7 @@ export const PAY_RAISE_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens if original pay is zero?',
     answer:
-      'A zero before-raise with a zero raise shows a zero-change result (0%). A positive monetary raise on zero original pay leaves the percentage undefined — the calculator does not show Infinity or invent 0%.',
+      'A zero before-raise with a zero raise shows a zero-change result (0%). A positive monetary raise on zero original pay leaves the percentage undefined: the calculator does not show Infinity or invent 0%.',
   },
   {
     question: 'Do the currency selectors convert amounts?',

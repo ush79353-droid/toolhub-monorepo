@@ -39,17 +39,17 @@ export function DeferredPaymentLoanGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Capitalized</strong> — unpaid interest compounds into principal during the pause.
+ <strong>Capitalized</strong>: unpaid interest compounds into principal during the pause.
         </li>
         <li>
-          <strong>Paid monthly</strong> — interest is paid in cash each month; principal stays flat.
+ <strong>Paid monthly</strong>: interest is paid in cash each month; principal stays flat.
         </li>
         <li>
-          <strong>Paid in equal parts</strong> — interest accrues separately and is repaid in equal
+ <strong>Paid in equal parts</strong>: interest accrues separately and is repaid in equal
           installments alongside the re-amortized principal payment.
         </li>
         <li>
-          <strong>Interest-free</strong> — balance is unchanged and no deferment interest is charged.
+ <strong>Interest-free</strong>: balance is unchanged and no deferment interest is charged.
         </li>
       </ul>
 
@@ -61,15 +61,15 @@ export function DeferredPaymentLoanGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Increased payment - original term</strong> — keep the original payoff date; raise
+ <strong>Increased payment - original term</strong>: keep the original payoff date; raise
           the payment over the shorter remaining term.
         </li>
         <li>
-          <strong>Increased payment - extended term</strong> — extend the term by the deferment
+ <strong>Increased payment - extended term</strong>: extend the term by the deferment
           length and re-amortize the post-deferment balance.
         </li>
         <li>
-          <strong>Original payment - extended term</strong> — keep the original payment and solve for
+ <strong>Original payment - extended term</strong>: keep the original payment and solve for
           how many months are needed to clear the post-deferment balance.
         </li>
       </ul>

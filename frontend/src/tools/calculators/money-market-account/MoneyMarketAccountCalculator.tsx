@@ -97,7 +97,7 @@ export function MoneyMarketAccountCalculator({
   const summary =
     result
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Mode: ${input.mode === 'sip' ? 'Systematic Investment Plan' : 'One-time investment'}`,
           `Starting balance: ${symbol}${formatMoney(Number(input.startingBalance), input.currency)}`,
           input.mode === 'sip'

@@ -75,7 +75,7 @@ export function CurrentRatioForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. Current ratio =
+ changes the symbol only; it does not convert values. Current ratio =
           current assets ÷ current liabilities (dimensionless).
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
@@ -129,7 +129,7 @@ export function CurrentRatioForm({
           <span>Current assets</span>
           <InfoTooltip
             label="Current assets"
-            text="Assets expected to be realized, sold, consumed, or converted into cash within the normal operating cycle or short-term reporting period — e.g. cash, receivables, inventory, short-term investments, prepaid expenses."
+            text="Assets expected to be realized, sold, consumed, or converted into cash within the normal operating cycle or short-term reporting period; e.g. cash, receivables, inventory, short-term investments, prepaid expenses."
           />
         </label>
         <FieldShell error={errors.currentAssets} muted={assetsReadOnly}>
@@ -163,7 +163,7 @@ export function CurrentRatioForm({
           <span>Current liabilities</span>
           <InfoTooltip
             label="Current liabilities"
-            text="Obligations expected to be settled within the operating cycle or short-term reporting period — e.g. accounts payable, short-term debt, accruals, current portion of long-term debt, taxes payable."
+            text="Obligations expected to be settled within the operating cycle or short-term reporting period; e.g. accounts payable, short-term debt, accruals, current portion of long-term debt, taxes payable."
           />
         </label>
         <FieldShell
@@ -202,7 +202,7 @@ export function CurrentRatioForm({
           <span>Current ratio</span>
           <InfoTooltip
             label="Current ratio"
-            text="Current assets ÷ current liabilities. Dimensionless — not a currency amount or percentage. Also called the working capital ratio."
+            text="Current assets ÷ current liabilities. Dimensionless; not a currency amount or percentage. Also called the working capital ratio."
           />
         </label>
         <FieldShell error={errors.currentRatio} muted={ratioReadOnly}>

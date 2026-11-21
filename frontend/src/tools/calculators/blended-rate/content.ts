@@ -73,7 +73,7 @@ export const BLENDED_RATE_FAQS: readonly FAQItem[] = [
   {
     question: 'How is a blended rate used in mortgage calculations?',
     answer:
-      'It summarizes the overall interest rate across multiple mortgage balances with different rates—useful for portfolio context, not a replacement for amortization schedules.',
+      'It summarizes the overall interest rate across multiple mortgage balances with different rates, useful for portfolio context, not a replacement for amortization schedules.',
   },
   {
     question: 'What is a blended mortgage rate?',
@@ -93,7 +93,7 @@ export const BLENDED_RATE_FAQS: readonly FAQItem[] = [
   {
     question: 'Does a blended rate calculate monthly payments?',
     answer:
-      'No. It averages rates. Payment estimates need term, amortization method, and fees—use a loan or amortization calculator for that.',
+      'No. It averages rates. Payment estimates need term, amortization method, and fees, use a loan or amortization calculator for that.',
   },
   {
     question: 'Can a blended rate change over time?',
@@ -108,7 +108,7 @@ export const BLENDED_RATE_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I use a blended rate to compare refinancing offers?',
     answer:
-      'As a rough baseline for your current weighted cost, yes—but also compare fees, term, cash flow, and APR of the new loan.',
+      'As a rough baseline for your current weighted cost, Yes: but also compare fees, term, cash flow, and APR of the new loan.',
   },
   {
     question: 'How do I calculate annual interest from a blended rate?',

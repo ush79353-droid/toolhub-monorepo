@@ -275,7 +275,7 @@ export function calculateLgdFromInput(
   ];
   if (expectedLoss != null) {
     steps.push(
-      `Expected loss (PD-weighted) = ${formatCurrencyValue(expectedLoss, currency)} — not the same as LGD amount`,
+      `Expected loss (PD-weighted) = ${formatCurrencyValue(expectedLoss, currency)}; not the same as LGD amount`,
     );
   }
 

@@ -13,8 +13,8 @@ export function HrSoftwareRoiGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Software ROI measures the financial return from a software investment relative to its cost.
-        For HR technology — HRIS, payroll, ATS, time and attendance, onboarding, benefits,
-        performance, or workforce management — it asks whether measurable savings and benefits
+ For HR technology; HRIS, payroll, ATS, time and attendance, onboarding, benefits,
+ performance, or workforce management; it asks whether measurable savings and benefits
         justify purchase, implementation, and operating spend. ROI is one part of a broader
         assessment that also includes risk, compliance, and nonfinancial outcomes.
       </p>
@@ -44,7 +44,7 @@ export function HrSoftwareRoiGuideArticle() {
         <li>Track whether projected benefits actually appear after go-live.</li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Projected savings are estimates — not guaranteed outcomes.
+ Projected savings are estimates; not guaranteed outcomes.
       </p>
 
       <h2
@@ -83,7 +83,7 @@ export function HrSoftwareRoiGuideArticle() {
         Sum attributable costs for the period (one-time once; subscriptions/maintenance scaled by
         billing frequency). Sum distinct benefits (admin time, payroll, recruitment, retention,
         errors, documents, third-party, other). Then apply the same ROI formula. Do not discount
-        cash flows in this standard calculator — NPV would need separate, labeled assumptions.
+ cash flows in this standard calculator; NPV would need separate, labeled assumptions.
       </p>
 
       <h2 id="examples" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">

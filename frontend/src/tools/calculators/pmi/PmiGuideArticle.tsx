@@ -102,7 +102,7 @@ export function PmiGuideArticle() {
         purchase loans avoid borrower-paid PMI at or below that threshold.
         Requirements still vary by lender and product. The calculator’s guidance
         treats LTV above 80% as “may be required” and LTV at or below 80% as
-        “generally not required” under that simplified conventional assumption —
+ “generally not required” under that simplified conventional assumption; 
         while still computing premiums from any rate you enter.
       </p>
 
@@ -163,7 +163,7 @@ export function PmiGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Actual premiums may differ from a constant original-loan-balance model.
         Cancellation and termination follow specific rules. Mortgage product
-        matters. Currency selection only changes display denomination — it does
+ matters. Currency selection only changes display denomination; it does
         not imply that U.S. PMI products exist for every market. This tool is not
         a lender approval, insurance quote, or legal advice.
       </p>

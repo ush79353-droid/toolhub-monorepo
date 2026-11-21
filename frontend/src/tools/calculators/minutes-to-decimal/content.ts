@@ -55,7 +55,7 @@ export const M2DEC_GUIDE_SECTIONS: readonly GuideSection[] = [
       '1. Enter the number of minutes into the Minutes (mm) field under Clock time in minutes.',
       '2. The calculator instantly shows the same duration as decimal hours, equivalent minutes, and equivalent seconds.',
       '3. Edit Hours, Minutes, or Seconds under Decimal time to convert in the other direction.',
-      '4. Hours, Minutes, and Seconds are three equivalent expressions of one duration — not separate parts to add together.',
+      '4. Hours, Minutes, and Seconds are three equivalent expressions of one duration. not separate parts to add together.',
       '5. Use Reload calculator or Clear all changes to reset every field.',
       'Conversions update immediately; there is no separate Calculate button.',
     ],
@@ -87,7 +87,7 @@ export const M2DEC_GUIDE_SECTIONS: readonly GuideSection[] = [
       'Timesheet systems and payroll math often store worked time as decimal hours so rates multiply cleanly: 7.5 hours × hourly rate needs no clock arithmetic.',
       'Project managers can sum task durations in a spreadsheet without converting each 1:20 entry by hand.',
       'Billing and invoicing tools usually expect decimal hours for line items and totals.',
-      'Example: three study blocks of 45 minutes each total 135 minutes, or 2.25 decimal hours — easier to compare against a 3-hour weekly goal.',
+      'Example: three study blocks of 45 minutes each total 135 minutes, or 2.25 decimal hours; easier to compare against a 3-hour weekly goal.',
     ],
   },
   {

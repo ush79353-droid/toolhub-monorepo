@@ -21,7 +21,7 @@ export const LNW_GUIDE_SECTIONS: readonly LnwGuideSection[] = [
     title: 'What is liquid net worth?',
     paragraphs: [
       'Liquid net worth is how much cash-like wealth you have after subtracting what you owe. It focuses on assets you can access quickly, not illiquid holdings such as a primary home or private business equity.',
-      'A positive figure means liquid assets exceed liabilities. A negative figure means debts and near-term obligations exceed ready cash — that result is shown as a signed number, not forced to zero.',
+      'A positive figure means liquid assets exceed liabilities. A negative figure means debts and near-term obligations exceed ready cash; that result is shown as a signed number, not forced to zero.',
     ],
   },
   {
@@ -45,7 +45,7 @@ export const LNW_FAQS: readonly FAQItem[] = [
   {
     question: 'What counts as liquid assets?',
     answer:
-      'Cash and near-cash balances you can convert quickly — checking, savings, money market accounts, and similar holdings. This calculator does not invent a list; enter the total you already measured.',
+      'Cash and near-cash balances you can convert quickly; checking, savings, money market accounts, and similar holdings. This calculator does not invent a list; enter the total you already measured.',
   },
   {
     question: 'Can liquid net worth be negative?',

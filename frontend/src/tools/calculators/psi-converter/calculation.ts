@@ -52,7 +52,7 @@ export function allFromPascals(pascals: number): Record<PsiUnit, number> {
 export function shareResultText(pascals: number): string {
   const values = allFromPascals(pascals);
   return [
-    'PSI Converter — Omega Calculators',
+    'PSI Converter | Omega Calculators',
     '',
     `${formatPressure(values.psi)} ${UNIT_SYMBOLS.psi} =`,
     `${formatPressure(values.bar)} ${UNIT_SYMBOLS.bar}`,

@@ -105,7 +105,7 @@ export function TimeValueOfMoneyCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Interest rate: ${result.interestRatePercent}%`,
         `Term: ${result.years || '0'} yrs, ${result.months || '0'} mos`,
         `Compound frequency: ${compoundingLabel}`,

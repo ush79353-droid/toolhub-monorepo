@@ -36,7 +36,7 @@ export function calculateGalToCuFt(input: GalToCuFtInput): GalToCuFtResult {
 
 export function shareResultText(result: GalToCuFtResult): string {
   return [
-    'Gallons to Cubic Feet Converter — Omega Calculators',
+    'Gallons to Cubic Feet Converter | Omega Calculators',
     '',
     `${formatMeasure(result.usGal)} US gallons`,
     `= ${formatMeasure(result.ukGal)} UK gallons`,

@@ -159,7 +159,7 @@ export function ModifiedAdjustedGrossIncomeCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `AGI: ${getCurrencySymbol(input.agiCurrency)}${input.agi} ${input.agiCurrency}`,
         ...MAGI_MONEY_FIELDS.filter((f) => f.key !== 'agi').map((f) => {
           const cur = input[

@@ -6,7 +6,7 @@ import type {
 } from './types';
 
 const DISCLAIMER =
-  'Educational summary only — not legal advice. Rules vary by contract wording, worker status, and local law; check official guidance or a qualified adviser.';
+  'Educational summary only; not legal advice. Rules vary by contract wording, worker status, and local law; check official guidance or a qualified adviser.';
 
 function result(segments: DaysOffSegment[]): DaysOffResult {
   return { segments, disclaimer: DISCLAIMER };
@@ -65,7 +65,7 @@ const MATRIX: Record<DaysOffCountry, Record<DaysOffContract, DaysOffSegment[]>> 
       },
       { text: 'not usually entitled to statutory paid holiday', emphasis: true },
       {
-        text: '. Freelancers or contractors working through an agency may have “worker” status and then share the 5.6-week entitlement — employment status, not the job title, decides this.',
+        text: '. Freelancers or contractors working through an agency may have “worker” status and then share the 5.6-week entitlement; employment status, not the job title, decides this.',
       },
     ],
   },

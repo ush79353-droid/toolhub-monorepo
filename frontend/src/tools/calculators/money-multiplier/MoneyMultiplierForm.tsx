@@ -67,7 +67,7 @@ export function MoneyMultiplierForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Simplified model: M = currency + checkable deposits; B = currency + bank
-        reserves; m = M/B. Currency labels denomination only — no FX conversion.
+ reserves; m = M/B. Currency labels denomination only; no FX conversion.
         Default 10% reserve ratio is a teaching example, not a universal legal
         requirement.
       </p>

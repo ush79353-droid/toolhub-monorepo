@@ -31,7 +31,7 @@ function unitLabel(
 
 function summaryText(result: PintToPoundResult): string {
   return [
-    'Pint to Pound Conversion — Omega Calculators',
+    'Pint to Pound Conversion | Omega Calculators',
     `Ingredient: ${result.ingredientName}`,
     `Density: ${formatMeasure(result.densityGPerMl)} g/mL${
       result.densityApproximate ? ' (approx.)' : ''

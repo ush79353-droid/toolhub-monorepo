@@ -37,7 +37,7 @@ function summaryText(
   note: string
 ): string {
   return [
-    `${title} — Omega Calculators`,
+    `${title} | Omega Calculators`,
     `Initial balance: ${draft.initialBalance} ${draft.currency}`,
     `Interest rate: ${draft.interestRate}%`,
     `Term: ${draft.termYears} yrs, ${draft.termMonths} mos`,

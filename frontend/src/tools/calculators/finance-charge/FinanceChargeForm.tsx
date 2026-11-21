@@ -108,7 +108,7 @@ export function FinanceChargeForm({
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Enter the outstanding balance, APR, and either a billing-cycle length
         or a given term. The estimate uses simple interest on a constant
-        balance and a 365-day year — not an issuer-specific statement method.
+ balance and a 365-day year; not an issuer-specific statement method.
       </p>
 
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -121,7 +121,7 @@ export function FinanceChargeForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amounts share one currency label (denomination only — no FX).
+ Amounts share one currency label (denomination only; no FX).
       </p>
       <p className="text-xs">
         <a

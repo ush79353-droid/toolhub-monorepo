@@ -201,7 +201,7 @@ export function validateDeadweightLossInput(
       formattedEquilibriumQuantity: formatQuantity(qe.value),
       formattedEquilibriumPrice: null,
       formulaBreakdown: `DWL = 0.5 × ${t.value} × ${math.quantityDifference} = ${math.deadweightLoss}; Tax revenue = ${t.value} × ${qt.value} = ${math.taxRevenue}`,
-      explanation: `Per-unit tax DWL is ${formatMoney(math.deadweightLoss, input.currency)}. Tax revenue ${formatMoney(math.taxRevenue, input.currency)} is a transfer — not deadweight loss.`,
+      explanation: `Per-unit tax DWL is ${formatMoney(math.deadweightLoss, input.currency)}. Tax revenue ${formatMoney(math.taxRevenue, input.currency)} is a transfer; not deadweight loss.`,
       assumptionNote:
         assumptionNote +
         ' Tax mode assumes a constant per-unit wedge and linear geometry for the loss triangle.',

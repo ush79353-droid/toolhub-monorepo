@@ -28,6 +28,6 @@ export const ESTATE_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'Is life insurance always in the gross estate?',
     answer:
-      'This estimate assumes the life insurance benefit you enter is includible (for example under IRC §2042 when the decedent retained incidents of ownership or the estate is the beneficiary). Proceeds payable to others with no retained incidents may be excluded — adjust the input accordingly.',
+      'This estimate assumes the life insurance benefit you enter is includible (for example under IRC §2042 when the decedent retained incidents of ownership or the estate is the beneficiary). Proceeds payable to others with no retained incidents may be excluded; adjust the input accordingly.',
   },
 ];

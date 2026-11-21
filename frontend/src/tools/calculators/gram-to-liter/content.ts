@@ -52,7 +52,7 @@ export const GRAM_TO_LITER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'gram-to-liter-conversion',
     title: 'Gram to Liter Conversion',
     paragraphs: [
-      'Grams measure mass. Liters measure volume. You cannot convert one into the other without density — mass per unit volume of the substance you are measuring.',
+      'Grams measure mass. Liters measure volume. You cannot convert one into the other without density; mass per unit volume of the substance you are measuring.',
       'When mass is in grams and density is in kg/m³ (which equals g/L numerically), volume in liters is mass divided by density.',
       'Example: convert 500 g of water at 1000 kg/m³. Volume = 500 ÷ 1000 = 0.5 L.',
       `Equal masses of different substances occupy different volumes. At ≈ 1030 kg/m³, 200 g of whole milk is about ${formatMeasure(Number(milk200.toFixed(4)))} L, not 0.2 L.`,
@@ -83,7 +83,7 @@ export const GRAM_TO_LITER_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Confirm or customize the suggested density (default 1000 kg/m³ for water).',
       '3. Enter the mass in grams (or another mass unit).',
       '4. Read the resulting volume in liters (or switch volume units).',
-      '5. Change density, mass, or volume units as needed — physical quantities are preserved.',
+      '5. Change density, mass, or volume units as needed. physical quantities are preserved.',
       '6. Enter volume instead to calculate mass.',
     ],
   },

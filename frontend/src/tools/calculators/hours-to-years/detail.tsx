@@ -4,7 +4,7 @@ import { HOURS_TO_YEARS_FAQS, HOURS_TO_YEARS_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert hours to years instantly — and years back to hours — using the average Gregorian year, with months, weeks, days, minutes, and seconds.',
+    'Convert hours to years instantly (and years back to hours) using the average Gregorian year, with months, weeks, days, minutes, and seconds.',
   asideAriaLabel: 'Interactive hours to years converter',
   tocItems: HOURS_TO_YEARS_TOC_ITEMS,
   GuideArticle: HoursToYearsGuideArticle,

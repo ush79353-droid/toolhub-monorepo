@@ -92,7 +92,7 @@ export function PrivateSavingsCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total income: ${incomeSymbol}${input.totalIncome} ${input.totalIncomeCurrency}`,
         `Taxes: ${taxesSymbol}${input.taxes} ${input.taxesCurrency}`,
         `Consumption: ${consumptionSymbol}${input.consumption} ${input.consumptionCurrency}`,

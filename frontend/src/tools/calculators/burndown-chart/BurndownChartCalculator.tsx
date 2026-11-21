@@ -51,7 +51,7 @@ export function BurndownChartCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Sprint duration: ${draft.sprintDuration} working days`,
         `Total story points: ${draft.totalStoryPoints}`,
         `Progress through day: ${result.actualThroughDay}`,

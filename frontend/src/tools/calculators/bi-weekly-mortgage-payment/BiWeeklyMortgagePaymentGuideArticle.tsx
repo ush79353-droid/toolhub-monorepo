@@ -12,7 +12,7 @@ export function BiWeeklyMortgagePaymentGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A bi-weekly mortgage payment plan compares a standard monthly repayment
-        schedule with accelerated bi-weekly payments — half the monthly installment
+ schedule with accelerated bi-weekly payments; half the monthly installment
         every 14 days (26 payments per year). The extra half-payment each year goes
         straight to principal, shortening the term and cutting total interest. This
         is not the same as twice-monthly (24/year) payments.

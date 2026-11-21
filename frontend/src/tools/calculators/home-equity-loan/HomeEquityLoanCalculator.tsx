@@ -56,14 +56,14 @@ export function HomeEquityLoanCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan amount: $${result.formattedPrincipal}`,
         `Interest rate: ${input.annualInterestRatePercent}%`,
         `Loan term: ${input.loanTermYears} years`,
         `Monthly pay: $${result.formattedMonthlyPayment}`,
         `Total of ${result.paymentCount} loan payments: $${result.formattedTotalOfPayments}`,
         `Total interest: $${result.formattedTotalInterest}`,
-        'Currency: fixed USD ($) — no FX selectors in the reference.',
+        'Currency: fixed USD ($); no FX selectors in the reference.',
       ].join('\n')
     : '';
 

@@ -76,15 +76,15 @@ export function interpretFixedAssetTurnover(
     return 'Fixed asset turnover could not be determined from the inputs.';
   }
   if (revenue < 0) {
-    return `Negative revenue produces a signed FAT of ${formatFat(fat)}×. Conventional asset-efficiency interpretation does not apply — review returns, corrections, or period restatements.`;
+    return `Negative revenue produces a signed FAT of ${formatFat(fat)}×. Conventional asset-efficiency interpretation does not apply; review returns, corrections, or period restatements.`;
   }
   if (fat === 0) {
     return 'Fixed asset turnover of 0.00× means no revenue was generated against a positive average net fixed asset base during the period.';
   }
   if (fat < 1) {
-    return `FAT of ${formatFat(fat)}× means about ${formatFat(fat)} dollars of revenue per dollar of average net fixed assets — often seen in capital-intensive businesses or after large asset investments. Compare with industry peers and asset age.`;
+    return `FAT of ${formatFat(fat)}× means about ${formatFat(fat)} dollars of revenue per dollar of average net fixed assets; often seen in capital-intensive businesses or after large asset investments. Compare with industry peers and asset age.`;
   }
-  return `FAT of ${formatFat(fat)}× means about ${formatFat(fat)} dollars of revenue per dollar of average net fixed assets. Higher values can reflect strong utilization or a heavily depreciated asset base — evaluate with profitability and CapEx plans.`;
+  return `FAT of ${formatFat(fat)}× means about ${formatFat(fat)} dollars of revenue per dollar of average net fixed assets. Higher values can reflect strong utilization or a heavily depreciated asset base; evaluate with profitability and CapEx plans.`;
 }
 
 export function formatFatMoney(

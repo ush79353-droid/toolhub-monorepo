@@ -17,7 +17,7 @@ export const FLORIDA_SALES_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'How does ZIP code map to a county?',
     answer:
-      'ZIP→county uses the U.S. Census Bureau 2020 ZCTA-to-county relationship file filtered to Florida. ZCTA codes approximate USPS ZIPs. If a ZIP intersects multiple counties, you must choose the purchase county — the tool never guesses.',
+      'ZIP→county uses the U.S. Census Bureau 2020 ZCTA-to-county relationship file filtered to Florida. ZCTA codes approximate USPS ZIPs. If a ZIP intersects multiple counties, you must choose the purchase county: the tool never guesses.',
   },
   {
     question: 'Why is discretionary surtax sometimes capped at $5,000?',
@@ -27,6 +27,6 @@ export const FLORIDA_SALES_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'Is this the same as Florida DOR PointMatch?',
     answer:
-      'No. PointMatch resolves street-address jurisdictions. This tool uses Census ZCTA intersections plus DR-15DSS county totals — suitable for estimates, not address-level filing.',
+      'No. PointMatch resolves street-address jurisdictions. This tool uses Census ZCTA intersections plus DR-15DSS county totals; suitable for estimates, not address-level filing.',
   },
 ];

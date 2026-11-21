@@ -192,7 +192,7 @@ function SpouseColumn({
         </div>
         <p className="mt-1 text-[11px] leading-snug text-muted-foreground">
           Itemized categories (mortgage interest, charity, student loan ≤$2,500, child care ≤$3,000,
-          education ≤$4,000) are noted for reference. Dollar itemized inputs are not collected —
+ education ≤$4,000) are noted for reference. Dollar itemized inputs are not collected; 
           choosing No uses $0 itemized.
         </p>
       </fieldset>
@@ -264,7 +264,7 @@ export function MarriageTaxForm({
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-[13px] leading-relaxed text-foreground/90">
         Compares estimated <strong>2026</strong> U.S. tax if each person files under their
         before-marriage status versus married filing jointly. Marital status for the year is
-        generally determined on the last day of the tax year. Educational estimate — not tax advice.
+ generally determined on the last day of the tax year. Educational estimate; not tax advice.
       </div>
 
       <div className="grid gap-3 lg:grid-cols-2">

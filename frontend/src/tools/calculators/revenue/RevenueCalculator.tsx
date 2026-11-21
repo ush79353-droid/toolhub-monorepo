@@ -82,7 +82,7 @@ export function RevenueCalculator({
   const dirty = !draftsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Price: ${getCurrencySymbol(result.calcCurrency)}${result.formattedPrice}`,
         `Quantity: ${result.formattedQuantity}`,
         `Total revenue: ${getCurrencySymbol(result.totalRevenueCurrency)}${result.formattedTotalRevenue}`,

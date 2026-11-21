@@ -42,7 +42,7 @@ export const KNOTS_KPH_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Use the Knots to kph Converter',
     paragraphs: [
       '1. Enter a speed in knots to calculate km/h, or enter km/h to calculate knots.',
-      '2. Results update as you type — no Calculate button required.',
+      '2. Results update as you type. no Calculate button required.',
       '3. Expand More conversion options for mph, m/s, and ft/s.',
       '4. Editing any expanded field updates all other speed fields.',
       '5. Use Share Result, Reload Calculator, or Clear All Changes as needed.',
@@ -52,7 +52,7 @@ export const KNOTS_KPH_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'knots-vs-kph',
     title: 'Knots vs. Kilometers per Hour',
     paragraphs: [
-      'Both knots and kilometers per hour measure the same physical quantity — speed — with different unit sizes. One knot is larger than one km/h because it is based on the nautical mile (1852 m) rather than the kilometer (1000 m).',
+      'Both knots and kilometers per hour measure the same physical quantity (speed) with different unit sizes. One knot is larger than one km/h because it is based on the nautical mile (1852 m) rather than the kilometer (1000 m).',
       'Nautical miles remain convenient at sea and in the air because they relate to Earth’s angular geometry. Kilometers per hour remain the everyday metric unit for road traffic and many engineering contexts.',
     ],
     tableHeaders: ['Unit', 'Definition', 'Equals'],

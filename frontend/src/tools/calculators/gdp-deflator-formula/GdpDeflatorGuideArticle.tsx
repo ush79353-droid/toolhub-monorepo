@@ -74,7 +74,7 @@ export function GdpDeflatorGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Nominal GDP = $25 trillion · Real GDP = $20 trillion → D = (25/20)×100 =
-        125. The measured price level is 25% above the index reference — not
+ 125. The measured price level is 25% above the index reference; not
         automatically “25% inflation in the current year.”
       </p>
 
@@ -219,7 +219,7 @@ export function GdpDeflatorGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Yes. A falling deflator indicates a lower measured price level versus the
         prior period (deflation in that index). That differs from a slowing but
-        still positive inflation rate, where the index still rises — just more
+ still positive inflation rate, where the index still rises; just more
         slowly.
       </p>
 
@@ -245,7 +245,7 @@ export function GdpDeflatorGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Analysts use the index to deflate nominal series, cross-check inflation
         stories against CPI/PCE, and frame growth debates. Businesses and
-        researchers may use published deflators for scenario work — always with
+ researchers may use published deflators for scenario work; always with
         the published methodology and revision history in mind.
       </p>
 

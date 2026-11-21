@@ -260,7 +260,7 @@ export function SabbaticalForm({
           <p className="mt-1 text-xs text-muted-foreground">
             {input.monthlySavingsMode === 'auto'
               ? 'Auto from income × savings %.'
-              : 'Manual override — change income or savings % to recalculate automatically.'}
+              : 'Manual override; change income or savings % to recalculate automatically.'}
           </p>
           {errors.monthlySavings ? (
             <p className="mt-1 text-xs text-rose-600">{errors.monthlySavings}</p>

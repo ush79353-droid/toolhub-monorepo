@@ -153,7 +153,7 @@ export function TaxEquivalentYieldForm({
           Marginal Tax Rate
           <InfoTooltip
             label="Marginal Tax Rate"
-            text="The marginal income tax rate applicable to the taxable investment's interest income. This is the rate used to estimate the tax reduction in the investment's return — not necessarily your average or effective tax rate."
+            text="The marginal income tax rate applicable to the taxable investment's interest income. This is the rate used to estimate the tax reduction in the investment's return; not necessarily your average or effective tax rate."
           />
         </label>
         <FieldShell

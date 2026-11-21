@@ -101,7 +101,7 @@ export function SavingsWithdrawalCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Balance: ${balanceSymbol}${input.balance} ${input.balanceCurrency}`,
         `Withdrawal: ${withdrawalSymbol}${input.withdrawalAmount} ${input.withdrawalCurrency}`,
         `Annual interest rate: ${input.annualInterestRatePercent}%`,

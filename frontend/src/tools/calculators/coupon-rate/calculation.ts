@@ -173,7 +173,7 @@ export function calculateCouponRate(
     steps,
     interpretation,
     explanation:
-      'Coupon rate is contractual interest relative to face (par) value — not current yield or YTM. Currency is denomination only (not FX). Fixed-rate coupons generally do not change when market yields move; prices do.',
+      'Coupon rate is contractual interest relative to face (par) value; not current yield or YTM. Currency is denomination only (not FX). Fixed-rate coupons generally do not change when market yields move; prices do.',
   };
 }
 

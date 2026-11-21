@@ -155,7 +155,7 @@ export function interpretGraham(
 ): string {
   const gn = `${symbol}${formatGrahamMoney(grahamNumber, currency)}`;
   if (status === 'below') {
-    return `Graham Number is ${gn} per share. The market price is below this screening level (potentially undervalued according to the Graham Number — not a guarantee).`;
+    return `Graham Number is ${gn} per share. The market price is below this screening level (potentially undervalued according to the Graham Number; not a guarantee).`;
   }
   if (status === 'above') {
     return `Graham Number is ${gn} per share. The market price is trading above its Graham Number.`;

@@ -12,7 +12,7 @@ export function BalanceTransferGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A balance transfer moves revolving credit card debt from one card to
-        another. Issuers often advertise a promotional APR—sometimes 0%—for a
+ another. Issuers often advertise a promotional APR, sometimes 0%; for a
         limited number of months. The goal is usually to reduce interest while
         you repay the balance, not to create free money. Offers vary, and a
         transfer fee is common even when the intro rate is zero.
@@ -117,7 +117,7 @@ export function BalanceTransferGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Savings ≈ OldTotalCost − NewTotalCost, where costs include interest and
         the transfer fee once for the same principal assumptions. A negative
-        result means the transfer costs more under the model—not “savings.”
+ result means the transfer costs more under the model, not “savings.”
       </p>
 
       <h2
@@ -204,7 +204,7 @@ export function BalanceTransferGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Remaining transferred balances typically start accruing the regular APR.
-        Plan payments so leftovers are small—or zero—before that date.
+ Plan payments so leftovers are small, or zero, before that date.
       </p>
 
       <h2
@@ -247,7 +247,7 @@ export function BalanceTransferGuideArticle() {
           interest rises quickly
         </p>
         <p>
-          High regular APR with small payments: fee may not be recovered —
+ High regular APR with small payments: fee may not be recovered; 
           transfer can cost more
         </p>
       </div>

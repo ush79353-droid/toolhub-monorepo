@@ -80,7 +80,7 @@ export function AccrualRatioCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Method: ${
           result.method === 'balanceSheet'
             ? 'Balance sheet accrual ratio'
@@ -92,7 +92,7 @@ export function AccrualRatioCalculator({
         result.formattedAccrualRatioPercent !== null
           ? `Accrual ratio: ${result.formattedAccrualRatioPercent}%`
           : 'Accrual ratio: unavailable',
-        'Contextual analysis tool — not automatic proof of earnings quality.',
+        'Contextual analysis tool; not automatic proof of earnings quality.',
       ].join('\n')
     : '';
 

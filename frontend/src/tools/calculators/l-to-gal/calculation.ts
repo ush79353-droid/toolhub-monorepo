@@ -107,7 +107,7 @@ export function shareResultText(result: LToGalResult): string {
   const galLabel = GALLON_KIND_LABEL[result.gallonKind];
   const factor = LITERS_PER_GALLON_KIND[result.gallonKind];
   return [
-    'L to gal Converter — Omega Calculators',
+    'L to gal Converter | Omega Calculators',
     '',
     'Input:',
     result.source === 'gallons'

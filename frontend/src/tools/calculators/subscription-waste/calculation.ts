@@ -148,7 +148,7 @@ export function shareSubscriptionWasteText(
   result: SubscriptionWasteResult,
 ): string {
   const lines = [
-    'Subscription Waste Calculator — Omega Calculators',
+    'Subscription Waste Calculator | Omega Calculators',
     `Total monthly: ${formatMoney(result.totalMonthlySpending, result.currency)}`,
     `Total annual: ${formatMoney(result.totalAnnualSpending, result.currency)}`,
     `Potential monthly savings: ${formatMoney(result.potentialMonthlySavings, result.currency)}`,

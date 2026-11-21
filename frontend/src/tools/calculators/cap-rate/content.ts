@@ -60,7 +60,7 @@ export const CAP_RATE_FAQS: readonly FAQItem[] = [
   {
     question: 'Can a cap rate be negative?',
     answer:
-      'Mathematically yes, if NOI is negative and property value is positive. That means operating costs exceed effective income — a warning sign that needs underwriting, not a typical target yield.',
+      'Mathematically yes, if NOI is negative and property value is positive. That means operating costs exceed effective income: a warning sign that needs underwriting, not a typical target yield.',
   },
   {
     question: 'What is the difference between cap rate and ROI?',

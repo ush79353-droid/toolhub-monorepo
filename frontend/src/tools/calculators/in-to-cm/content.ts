@@ -32,7 +32,7 @@ export const IN_TO_CM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'in to cm Converter',
     paragraphs: [
-      'Convert inches to centimeters—and centimeters back to inches—instantly with this free Omega Calculators tool. Both fields stay editable so you can start from whichever unit you measured.',
+      'Convert inches to centimeters, and centimeters back to inches, instantly with this free Omega Calculators tool. Both fields stay editable so you can start from whichever unit you measured.',
       'Use it for furniture dimensions, construction take-offs, height conversion, product specifications, engineering checks, clothing sizes, and screen measurements.',
       'The international inch is the source of truth: every centimeter result comes from multiplying inches by exactly 2.54.',
     ],
@@ -53,7 +53,7 @@ export const IN_TO_CM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert in to cm?',
     paragraphs: [
       `Multiply the length in inches by ${CENTIMETERS_PER_INCH}.`,
-      `Example — convert 22 inches: 22 × ${CENTIMETERS_PER_INCH} = ${formatLength(inchesToCentimeters(22))}. Therefore 22 inches = 55.88 centimeters.`,
+      `Example; convert 22 inches: 22 × ${CENTIMETERS_PER_INCH} = ${formatLength(inchesToCentimeters(22))}. Therefore 22 inches = 55.88 centimeters.`,
     ],
     formula: `cm = in × ${CENTIMETERS_PER_INCH}`,
   },
@@ -61,9 +61,9 @@ export const IN_TO_CM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Examples of in to cm Conversion',
     paragraphs: [
-      `Example 1 — convert 29 inches: 29 × ${CENTIMETERS_PER_INCH} = ${formatLength(inchesToCentimeters(29))}. Therefore 29 inches = 73.66 centimeters.`,
-      `Example 2 — convert 50 inches: 50 × ${CENTIMETERS_PER_INCH} = ${formatLength(inchesToCentimeters(50))}. Therefore 50 inches = 127 centimeters.`,
-      `Example 3 — convert 72 inches: 72 × ${CENTIMETERS_PER_INCH} = ${formatLength(inchesToCentimeters(72))}. Therefore 72 inches = 182.88 centimeters.`,
+      `Example 1: convert 29 inches: 29 × ${CENTIMETERS_PER_INCH} = ${formatLength(inchesToCentimeters(29))}. Therefore 29 inches = 73.66 centimeters.`,
+      `Example 2: convert 50 inches: 50 × ${CENTIMETERS_PER_INCH} = ${formatLength(inchesToCentimeters(50))}. Therefore 50 inches = 127 centimeters.`,
+      `Example 3: convert 72 inches: 72 × ${CENTIMETERS_PER_INCH} = ${formatLength(inchesToCentimeters(72))}. Therefore 72 inches = 182.88 centimeters.`,
     ],
   },
   {
@@ -71,7 +71,7 @@ export const IN_TO_CM_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Centimeters to Inches',
     paragraphs: [
       `Divide centimeters by ${CENTIMETERS_PER_INCH}.`,
-      `Example — convert 100 centimeters: 100 ÷ ${CENTIMETERS_PER_INCH} ≈ ${formatLength(centimetersToInches(100))}. Therefore 100 centimeters ≈ ${formatLength(centimetersToInches(100))} inches.`,
+      `Example; convert 100 centimeters: 100 ÷ ${CENTIMETERS_PER_INCH} ≈ ${formatLength(centimetersToInches(100))}. Therefore 100 centimeters ≈ ${formatLength(centimetersToInches(100))} inches.`,
       'Use the centimeters field for reverse conversion; the inches field updates automatically.',
     ],
     formula: `in = cm ÷ ${CENTIMETERS_PER_INCH}`,

@@ -105,7 +105,7 @@ export function DebtServiceCoverageRatioCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Interest rate: ${input.interestRatePercent}%/yr`,
         `Term: ${input.term} ${input.termUnit}`,
         `Total loan: ${getCurrencySymbol(input.totalLoanCurrency)}${input.totalLoan}`,

@@ -18,7 +18,7 @@ export const MARGINAL_REVENUE_FAQS: readonly FAQItem[] = [
   {
     question: 'What if quantity does not change?',
     answer:
-      'If ΔQ is zero, marginal revenue is undefined — the calculator shows no MR value instead of dividing by zero. Change in total revenue and change in quantity still display.',
+      'If ΔQ is zero, marginal revenue is undefined: the calculator shows no MR value instead of dividing by zero. Change in total revenue and change in quantity still display.',
   },
   {
     question: 'Can changes or marginal revenue be negative?',

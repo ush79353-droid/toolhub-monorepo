@@ -183,7 +183,7 @@ export function calculateLotSizeToAcres(input: LotSizeToAcresInput): LotSizeToAc
 
 export function shareResultText(result: LotSizeToAcresResult): string {
   const lines = [
-    'Lot Size to Acres Calculator — Omega Calculators',
+    'Lot Size to Acres Calculator | Omega Calculators',
     '',
     `Width: ${formatMeasure(result.width)} ${result.widthUnit}`,
     `Length: ${formatMeasure(result.length)} ${result.lengthUnit}`,

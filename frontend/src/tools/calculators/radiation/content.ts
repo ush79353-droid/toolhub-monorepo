@@ -72,7 +72,7 @@ export const RADIATION_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'effective-dose',
     title: 'Effective Dose and Tissue Weighting',
     paragraphs: [
-      'Effective dose combines tissue equivalent doses with tissue weighting factors: E = Σ_T w_T H_T. It is a radiation-protection quantity for comparing stochastic risk across different exposure patterns — not a direct prediction of an individual’s clinical outcome.',
+      'Effective dose combines tissue equivalent doses with tissue weighting factors: E = Σ_T w_T H_T. It is a radiation-protection quantity for comparing stochastic risk across different exposure patterns; not a direct prediction of an individual’s clinical outcome.',
       'Calculating effective dose from a single absorbed-dose number without tissue information is not valid. This page does not invent a whole-body effective dose from unit conversion alone.',
     ],
     formula: 'E = Σ_T w_T H_T',

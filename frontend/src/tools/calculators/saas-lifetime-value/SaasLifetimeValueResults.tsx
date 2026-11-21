@@ -47,7 +47,7 @@ export function SaasLifetimeValueResults({
     <div className="space-y-2">
       <p className="text-xs leading-relaxed text-muted-foreground">
         {result.customerLifetimeValue === null
-          ? 'No finite LTV estimate when churn is zero — lifetime would be unbounded in this simple model.'
+          ? 'No finite LTV estimate when churn is zero; lifetime would be unbounded in this simple model.'
           : 'LTV uses the same period for ARPA, expansion, and churn. Expansion is added to ARPA before applying margin and churn.'}{' '}
         {CURRENCY_DENOMINATION_NOTE}
       </p>

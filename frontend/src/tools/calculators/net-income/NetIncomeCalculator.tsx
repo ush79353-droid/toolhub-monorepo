@@ -79,7 +79,7 @@ export function NetIncomeCalculator({
   const shareable = Boolean(result);
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Revenue: ${symbol}${result!.formattedRevenue}`,
         `EBT: ${symbol}${result!.formattedEarningsBeforeTax}`,
         `Taxes: ${symbol}${result!.formattedTotalTaxes}`,

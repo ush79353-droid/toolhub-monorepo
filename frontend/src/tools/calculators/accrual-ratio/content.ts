@@ -19,7 +19,7 @@ export const ACCRUAL_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What are operating assets?',
     answer:
-      'Operating assets are assets used in the company’s core operating activities under the classification you apply — often including items such as operating receivables, inventory, and operating fixed assets, while excluding financing assets when that is the chosen methodology.',
+      'Operating assets are assets used in the company’s core operating activities under the classification you apply; often including items such as operating receivables, inventory, and operating fixed assets, while excluding financing assets when that is the chosen methodology.',
   },
   {
     question: 'What are operating liabilities?',
@@ -34,7 +34,7 @@ export const ACCRUAL_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What are accruals?',
     answer:
-      'Accruals are accounting adjustments and timing differences that make reported earnings differ from cash flows — for example revenue recognized before cash is collected, or expenses recognized before cash is paid.',
+      'Accruals are accounting adjustments and timing differences that make reported earnings differ from cash flows, for example revenue recognized before cash is collected, or expenses recognized before cash is paid.',
   },
   {
     question: 'What is the net operating asset if operating assets are $300,000?',

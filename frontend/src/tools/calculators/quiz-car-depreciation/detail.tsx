@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Educational car-depreciation quiz — five questions, score out of five, optional progressive explanations.',
+    'Educational car-depreciation quiz; five questions, score out of five, optional progressive explanations.',
   asideAriaLabel: 'Interactive Car Depreciation Quiz',
   tocItems: QUIZ_CAR_DEPRECIATION_TOC_ITEMS,
   GuideArticle: QuizCarDepreciationGuideArticle,

@@ -192,7 +192,7 @@ export function RentalPropertyForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values.
+ changes the symbol only; it does not convert values.
         </p>
         <div className="w-[110px] shrink-0 sm:w-[120px]">
           <CurrencySelect
@@ -530,7 +530,7 @@ export function RentalPropertyForm({
             <span>Management fee</span>
             <InfoTooltip
               label="Management fee"
-              text="Percent of effective (post-vacancy) rental income. Included once in operating expenses — do not also list it under Other costs."
+              text="Percent of effective (post-vacancy) rental income. Included once in operating expenses; do not also list it under Other costs."
             />
           </label>
           <FieldShell error={errors.managementFeeRate}>
@@ -663,7 +663,7 @@ export function RentalPropertyForm({
               <span>Value appreciation</span>
               <InfoTooltip
                 label="Value appreciation"
-                text="Constant annual geometric appreciation assumption (% per year). Projection only — not a guaranteed sale price. Must be greater than −100%."
+                text="Constant annual geometric appreciation assumption (% per year). Projection only; not a guaranteed sale price. Must be greater than −100%."
               />
             </label>
             <FieldShell error={errors.appreciationRate}>
@@ -914,7 +914,7 @@ export function RentalPropertyForm({
             </p>
             <p className="mt-1">
               This is a simplified pre-tax model. Location, condition, taxes, and
-              market risk still matter — unit yield alone does not define a good
+ market risk still matter; unit yield alone does not define a good
               investment.
             </p>
           </div>

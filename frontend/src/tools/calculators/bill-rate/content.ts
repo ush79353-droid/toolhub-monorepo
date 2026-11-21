@@ -19,7 +19,7 @@ export const BILL_RATE_FAQS: readonly FAQItem[] = [
   {
     question: 'What does the multiplier mean?',
     answer:
-      'The multiplier is a user-defined pricing uplift for overhead, indirect costs, and target margin. It is not a tax or utilization model. The default of 4 is a common consulting rule of thumb — change it to match your pricing policy.',
+      'The multiplier is a user-defined pricing uplift for overhead, indirect costs, and target margin. It is not a tax or utilization model. The default of 4 is a common consulting rule of thumb; change it to match your pricing policy.',
   },
   {
     question: 'Do the currency selectors convert amounts?',

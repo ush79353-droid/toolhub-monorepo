@@ -27,7 +27,7 @@ export const DBM_TO_WATTS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       'dBm means decibel-milliwatt. It expresses absolute radio-frequency (RF) or signal power on a logarithmic scale referenced to 1 milliwatt (1 mW). Zero dBm equals exactly 1 mW.',
       'Because the scale is logarithmic, each +10 dBm multiplies linear power by 10, and each −10 dBm divides linear power by 10. That makes large dynamic ranges easier to compare in telecommunications, Wi-Fi, cellular, and other RF work.',
-      'Watts and milliwatts are linear power units. dBm is not a linear unit — it is a power level relative to 1 mW. A negative dBm value still represents a positive power that is less than 1 mW.',
+      'Watts and milliwatts are linear power units. dBm is not a linear unit; it is a power level relative to 1 mW. A negative dBm value still represents a positive power that is less than 1 mW.',
       'dB (decibel) alone is a relative ratio between two quantities and has no absolute reference. dBm always means “dB relative to 1 mW,” so it names an absolute power level.',
     ],
     formula: 'P(dBm) = 10 × log10(P / 1 mW)   (requires P > 0)',
@@ -54,9 +54,9 @@ export const DBM_TO_WATTS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'conversion-examples',
     title: 'dBm to Watts Conversion Examples',
     paragraphs: [
-      'Example 1 — 30 dBm to watts: 10^((30 − 30) / 10) = 10^0 = 1 W.',
-      'Example 2 — 20 dBm to watts: 10^((20 − 30) / 10) = 10^(−1) = 0.1 W.',
-      'Example 3 — 50 dBm to watts: 10^((50 − 30) / 10) = 10^2 = 100 W.',
+      'Example 1: 30 dBm to watts: 10^((30 − 30) / 10) = 10^0 = 1 W.',
+      'Example 2: 20 dBm to watts: 10^((20 − 30) / 10) = 10^(−1) = 0.1 W.',
+      'Example 3: 50 dBm to watts: 10^((50 − 30) / 10) = 10^2 = 100 W.',
     ],
   },
   {
@@ -83,7 +83,7 @@ export const DBM_TO_WATTS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       '1. Select a conversion type (dBm to watts, dBm to milliwatts, watts to dBm, or milliwatts to dBm).',
       '2. Enter the power value in the input field. Negative dBm values are allowed.',
-      '3. Read the converted result in the output field — it updates as you type.',
+      '3. Read the converted result in the output field. it updates as you type.',
       '4. Switch modes when needed; input and output clear so values are not reinterpreted as a different unit.',
       '5. Use Share Result to copy the answer, Reload Calculator to restore defaults, or Clear All Changes to empty the fields.',
     ],

@@ -98,7 +98,7 @@ export function BondYtmCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Face value: ${faceSymbol}${input.faceValue}`,
         `Bond price: ${bondSymbol}${input.bondPrice}`,
         `Annual coupon rate: ${input.annualCouponRatePercent}%`,

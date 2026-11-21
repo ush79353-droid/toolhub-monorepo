@@ -30,7 +30,7 @@ export const LBS_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-psi',
     title: 'What Is PSI?',
     paragraphs: [
-      'PSI stands for pounds-force per square inch (lbf/in²). It is a unit of pressure — force distributed over area — not a unit of force by itself.',
+      'PSI stands for pounds-force per square inch (lbf/in²). It is a unit of pressure (force distributed over area) not a unit of force by itself.',
       'PSI appears in tire inflation, hydraulic systems, compressed air, and many industrial specifications. Absolute and gauge readings may both be reported in psi depending on the instrument.',
     ],
     formula: '1 psi = 1 lbf/in²',
@@ -66,7 +66,7 @@ export const LBS_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
       '1. Enter the pressure in pounds-force per square foot (psf).',
       '2. Read the automatically calculated PSI value.',
       '3. Or enter PSI to calculate PSF.',
-      '4. Edit either field for additional conversions — updates are instant.',
+      '4. Edit either field for additional conversions. updates are instant.',
       '5. Share or copy the result when needed.',
       '6. Reload restores 144 psf = 1 psi; Clear empties both fields.',
     ],
@@ -84,7 +84,7 @@ export const LBS_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Other Related Pressure Converters',
     paragraphs: [
       'Related pressure units include the pascal (Pa), kilopascal (kPa), bar, atmosphere (atm), torr, and millimeters of mercury (mmHg).',
-      'Use Omega Calculators pressure tools that already exist in the catalog — for example Pressure Conversion or Torr to atm — when you need those units. Related links appear in the page sidebar when available.',
+      'Use Omega Calculators pressure tools that already exist in the catalog (for example Pressure Conversion or Torr to atm) when you need those units. Related links appear in the page sidebar when available.',
     ],
   },
 ];

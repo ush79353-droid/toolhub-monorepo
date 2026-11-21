@@ -255,7 +255,7 @@ export function buildTriangleGraph(
     newPrice,
     originalQuantity,
     newQuantity,
-    'Illustrative geometry from |ΔP| and |ΔQ| only — not fitted supply/demand curves.'
+    'Illustrative geometry from |ΔP| and |ΔQ| only; not fitted supply/demand curves.'
   );
 }
 

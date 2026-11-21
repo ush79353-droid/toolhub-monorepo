@@ -166,7 +166,7 @@ export function calculateTrumpAccounts(
   const growthSharePercent =
     pieTotal > 0 ? (Math.max(0, investmentGrowth) / pieTotal) * 100 : 0;
 
-  const explanation = `From the initial balance and your annual contributions, your account could grow significantly over ${years} year${years === 1 ? '' : 's'} at a ${annualReturnPercent}% annual return. The final value depends on the selected investment return and contribution assumptions — results are illustrative estimates, not guarantees.`;
+  const explanation = `From the initial balance and your annual contributions, your account could grow significantly over ${years} year${years === 1 ? '': 's'} at a ${annualReturnPercent}% annual return. The final value depends on the selected investment return and contribution assumptions. Results are illustrative estimates, not guarantees.`;
 
   return {
     startingAge,

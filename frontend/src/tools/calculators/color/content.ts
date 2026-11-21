@@ -68,7 +68,7 @@ export const COLOR_GUIDE_SECTIONS: readonly GuideSection[] = [
         id: 'hsv-format',
         title: 'HSV: Hue, Saturation, Value',
         paragraphs: [
-          'HSV (also called HSB) shares hue with HSL but uses value—how bright the color is relative to the strongest channel. Many native color pickers use HSV because dragging “brightness” maps cleanly to value.',
+          'HSV (also called HSB) shares hue with HSL but uses value, how bright the color is relative to the strongest channel. Many native color pickers use HSV because dragging “brightness” maps cleanly to value.',
         ],
       },
       {
@@ -88,7 +88,7 @@ export const COLOR_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Enter the channel values, HEX string, or use the native color picker.',
       '3. Review the live preview and the automatically generated formats.',
       '4. Copy any individual code with its Copy button.',
-      '5. Switch encodings to edit the same color from another model—alpha is preserved internally when the selected model omits it.',
+      '5. Switch encodings to edit the same color from another model. alpha is preserved internally when the selected model omits it.',
       '6. Share a summary, reload the default sample, or clear all fields when you are done.',
     ],
   },
@@ -105,7 +105,7 @@ export const COLOR_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert RGB to CMYK',
     paragraphs: [
       'Normalize each RGB channel by dividing by 255. Black (K) is 1 minus the largest normalized channel. For non-black colors, cyan, magenta, and yellow are (1 − channel − K) / (1 − K). Multiply by 100 for percentages. Pure black is C=M=Y=0, K=100%.',
-      'Example: RGB (224, 224, 224) → K ≈ 12.16%, with C=M=Y=0. Treat these values as an approximation—send print jobs through a color-managed pipeline with the correct ICC profile when accuracy matters.',
+      'Example: RGB (224, 224, 224) → K ≈ 12.16%, with C=M=Y=0. Treat these values as an approximation, send print jobs through a color-managed pipeline with the correct ICC profile when accuracy matters.',
     ],
     formula:
       "K = 1 − max(R', G', B') · C = (1 − R' − K)/(1 − K) · M = (1 − G' − K)/(1 − K) · Y = (1 − B' − K)/(1 − K)",
@@ -115,7 +115,7 @@ export const COLOR_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Understanding Color Transparency',
     paragraphs: [
       'Alpha describes opacity from 0 (fully transparent) to 1 (fully opaque). RGBA and HSLA expose alpha directly. CSS also allows four- and eight-digit HEX codes where the last digit or pair encodes alpha.',
-      'When you switch to a model without alpha (RGB, HSL, HSV, CMYK), this converter keeps the previous alpha for the preview and for alpha-capable outputs. Exported CMYK and opaque HEX/RGB strings intentionally omit transparency—use RGBA, HSLA, or HEX+alpha when you need it.',
+      'When you switch to a model without alpha (RGB, HSL, HSV, CMYK), this converter keeps the previous alpha for the preview and for alpha-capable outputs. Exported CMYK and opaque HEX/RGB strings intentionally omit transparency, use RGBA, HSLA, or HEX+alpha when you need it.',
       'The preview draws a checkerboard behind the swatch so transparent colors remain visible.',
     ],
   },

@@ -80,7 +80,7 @@ export function FicaTaxForm({
     <div className="space-y-4">
       <p className="text-xs leading-relaxed text-muted-foreground">
         US FICA and self-employment tax estimate for tax years 2025 and 2026. Amounts are fixed USD.
-        Filing status affects Additional Medicare Tax liability only — not Social Security or base
+ Filing status affects Additional Medicare Tax liability only; not Social Security or base
         Medicare rates.
       </p>
 
@@ -159,7 +159,7 @@ export function FicaTaxForm({
             text={
               isEmployee
                 ? 'FICA wages subject to Social Security and Medicare for the year (covered wages). Fixed USD.'
-                : 'Net profit from self-employment before the 92.35% Schedule SE adjustment — not gross revenue unless they are the same. Fixed USD.'
+                : 'Net profit from self-employment before the 92.35% Schedule SE adjustment; not gross revenue unless they are the same. Fixed USD.'
             }
           />
         </label>
@@ -273,7 +273,7 @@ export function FicaTaxForm({
 
       <div className="flex flex-wrap gap-2">
         <Button type="button" variant="outline" className="h-11" onClick={onLoadExample}>
-          Example — $100k wages
+ Example: $100k wages
         </Button>
         <Button type="button" variant="outline" className="h-11" onClick={onReset}>
           Reload calculator

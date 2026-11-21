@@ -106,7 +106,7 @@ export function interpretEndingInventory(
     return `${base} Inventory turnover is unavailable (average inventory is zero or undefined).`;
   }
   if (turnover === 0) {
-    return `${base} Inventory turnover is 0 — no COGS relative to average inventory for the period.`;
+    return `${base} Inventory turnover is 0; no COGS relative to average inventory for the period.`;
   }
   return `${base} Inventory turned over ${formatTurnover(turnover)} times relative to average inventory. Higher turnover means goods moved more often; very high turnover can also signal stockout risk.`;
 }

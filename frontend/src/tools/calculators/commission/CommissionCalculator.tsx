@@ -71,7 +71,7 @@ export function CommissionCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Sales price: $${result.formattedSalesPrice}`,
         `Commission rate: ${result.formattedCommissionRate}%`,
         `Commission: $${result.formattedCommission}`,

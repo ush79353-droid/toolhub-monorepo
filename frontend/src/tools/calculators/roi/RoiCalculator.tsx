@@ -99,7 +99,7 @@ export function RoiCalculator({
   const symbol = getCurrencySymbol(input.currency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Investment period: ${input.periodValue} ${input.periodUnit}`,
         `Initial invested amount: ${symbol}${input.initialInvestment}`,
         `Periodic contribution: ${input.contributionFrequency}`,

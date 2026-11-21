@@ -73,7 +73,7 @@ export function PartiallyAmortizedLoanCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Full loan: ${getCurrencySymbol(input.loanCurrency)}${input.fullLoan}`,
         `Annual interest rate: ${input.annualInterestRatePercent}%/yr`,
         `Amortization time: ${input.amortYears || '0'} yrs ${input.amortMonths || '0'} mos`,

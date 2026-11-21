@@ -102,7 +102,7 @@ export function EbitdaMultipleCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Cash: ${money(input.cash)}`,
         `Market capitalization: ${money(input.marketCap)}`,
         `Minority interest: ${money(input.minorityInterest)}`,

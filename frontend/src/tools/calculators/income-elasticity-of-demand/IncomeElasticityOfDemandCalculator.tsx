@@ -87,7 +87,7 @@ export function IncomeElasticityOfDemandCalculator({
     result.status === 'valid';
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Method: ${result.method === 'midpoint' ? 'Midpoint' : 'Standard'}`,
         `Change in income: ${result.formattedIncomePercentageChange}%`,
         `Change in quantity: ${result.formattedQuantityPercentageChange}%`,

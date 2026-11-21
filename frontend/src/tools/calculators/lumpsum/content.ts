@@ -23,7 +23,7 @@ export const LUMPSUM_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a lumpsum investment?',
     answer:
-      'A lumpsum investment is a one-time deposit of capital that then grows (or shrinks) under a compound-return assumption for a chosen term—unlike SIP, which adds money periodically.',
+      'A lumpsum investment is a one-time deposit of capital that then grows (or shrinks) under a compound-return assumption for a chosen term, unlike SIP, which adds money periodically.',
   },
   {
     question: 'What is a lumpsum calculator?',
@@ -63,7 +63,7 @@ export const LUMPSUM_FAQS: readonly FAQItem[] = [
   {
     question: 'Is lumpsum investment better than SIP?',
     answer:
-      'Neither is universally better. Market path, cash-flow needs, and risk tolerance matter. This tool models a single deposit only—compare with the SIP calculator for recurring plans.',
+      'Neither is universally better. Market path, cash-flow needs, and risk tolerance matter. This tool models a single deposit only, compare with the SIP calculator for recurring plans.',
   },
   {
     question: 'Does compounding frequency matter?',
@@ -118,7 +118,7 @@ export const LUMPSUM_FAQS: readonly FAQItem[] = [
   {
     question: 'How can I estimate a future investment goal?',
     answer:
-      'Use Final balance mode with your PV, assumed return, term, and compounding—or reverse-solve capital/rate/term if the goal is known.',
+      'Use Final balance mode with your PV, assumed return, term, and compounding, or reverse-solve capital/rate/term if the goal is known.',
   },
   {
     question: 'Is the lumpsum calculator suitable for mutual funds?',

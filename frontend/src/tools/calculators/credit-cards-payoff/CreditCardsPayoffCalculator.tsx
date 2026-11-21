@@ -98,7 +98,7 @@ export function CreditCardsPayoffCalculator({
   const dirty = !inputsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Duration: ${result.formattedDuration}`,
         `Total interest: $${result.formattedTotalInterest}`,
         `Total paid: $${result.formattedTotalPaid}`,

@@ -12,8 +12,8 @@ export function WageGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A wage calculator turns one known pay rate into salary for other time
-        frames using your hours per week. Enter hourly pay — or any other period
-        amount — and see per-second through annual values under consistent week
+ frames using your hours per week. Enter hourly pay, or any other period
+ amount, and see per-second through annual values under consistent week
         and year assumptions. Taxes, overtime, bonuses, and unpaid leave are not
         included.
       </p>

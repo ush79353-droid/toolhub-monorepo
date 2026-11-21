@@ -61,21 +61,21 @@ export function RetentionRatioGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>High retention</strong> — more earnings reinvested; common in
+ <strong>High retention</strong>: more earnings reinvested; common in
           growth companies.
         </li>
         <li>
-          <strong>Low retention</strong> — larger dividend share; common in
+ <strong>Low retention</strong>: larger dividend share; common in
           mature cash-generative firms.
         </li>
         <li>
-          <strong>100%</strong> — no dividends; all earnings retained.
+ <strong>100%</strong>: no dividends; all earnings retained.
         </li>
         <li>
-          <strong>0%</strong> — all earnings paid as dividends.
+ <strong>0%</strong>: all earnings paid as dividends.
         </li>
         <li>
-          <strong>Negative</strong> — dividends exceed positive net income.
+ <strong>Negative</strong>: dividends exceed positive net income.
         </li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">

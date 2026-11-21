@@ -148,7 +148,7 @@ export function validateComparativeAdvantageInput(
 
   let termsNote: string | null = null;
   if (math.termsOfTrade) {
-    termsNote = `A mutually beneficial terms-of-trade interval for ${goodA} (in units of ${goodB} per ${goodA}) can lie strictly between ${formatNumber(math.termsOfTrade.low)} and ${formatNumber(math.termsOfTrade.high)}, under the linear two-good model — not a guaranteed market price.`;
+    termsNote = `A mutually beneficial terms-of-trade interval for ${goodA} (in units of ${goodB} per ${goodA}) can lie strictly between ${formatNumber(math.termsOfTrade.low)} and ${formatNumber(math.termsOfTrade.high)}, under the linear two-good model; not a guaranteed market price.`;
   }
 
   const result: ComparativeAdvantageResult = {
@@ -179,7 +179,7 @@ export function validateComparativeAdvantageInput(
     summary: summaryParts.join(' · '),
     explanation:
       math.comparativeA !== 'tie' && math.comparativeB !== 'tie'
-        ? `${producerLabel(math.comparativeA)} has the lower opportunity cost of ${goodA}, while ${producerLabel(math.comparativeB)} has the lower opportunity cost of ${goodB}. Under the model's assumptions, specialization and trade can allow both countries to benefit — but gains need not be equal for all individuals.`
+        ? `${producerLabel(math.comparativeA)} has the lower opportunity cost of ${goodA}, while ${producerLabel(math.comparativeB)} has the lower opportunity cost of ${goodB}. Under the model's assumptions, specialization and trade can allow both countries to benefit, but gains need not be equal for all individuals.`
         : 'When opportunity costs are equal for a good, neither country has a unique comparative advantage in that good.',
     absoluteSummary: `${goodA}: ${producerLabel(math.absoluteA)} · ${goodB}: ${producerLabel(math.absoluteB)}`,
     termsOfTradeNote: termsNote,

@@ -110,7 +110,7 @@ export function shareResultText(result: MlToOzResult): string {
   const us = mlToUsFluidOunces(ml);
   const uk = mlToUkFluidOunces(ml);
   return [
-    'mL to oz Converter — Omega Calculators',
+    'mL to oz Converter | Omega Calculators',
     '',
     `${formatVolume(ml)} mL = ${formatVolume(us)} US fl oz`,
     `${formatVolume(ml)} mL = ${formatVolume(uk)} UK fl oz`,

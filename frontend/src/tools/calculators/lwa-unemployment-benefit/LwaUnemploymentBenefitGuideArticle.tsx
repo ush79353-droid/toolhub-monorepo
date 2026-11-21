@@ -17,7 +17,7 @@ export function LwaUnemploymentBenefitGuideArticle() {
         lost-wages payments to eligible unemployment claimants during the COVID-19 pandemic.
         It was authorized by the August 8, 2020 Presidential Memorandum on Other Needs
         Assistance for COVID-19 major disaster declarations and administered through FEMA
-        grants under the Stafford Act — not as a separately enacted “LWA Act.” States and
+ grants under the Stafford Act; not as a separately enacted “LWA Act.” States and
         territories paid claimants through their unemployment systems; FEMA did not pay
         individuals directly.
       </p>
@@ -57,7 +57,7 @@ export function LwaUnemploymentBenefitGuideArticle() {
           Loan Calculator
         </Link>
         . For current unemployment insurance amounts or eligibility, contact your state
-        workforce agency — this site does not replace official benefit determinations.
+ workforce agency; this site does not replace official benefit determinations.
       </p>
 
       <h2

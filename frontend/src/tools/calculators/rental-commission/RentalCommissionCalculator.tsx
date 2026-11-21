@@ -208,7 +208,7 @@ export function RentalCommissionCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Annual rent: ${getCurrencySymbol(result.annualCurrency)}${result.formattedAnnualRent}`,
         `Monthly rent: ${getCurrencySymbol(result.monthlyCurrency)}${result.formattedMonthlyRent}`,
         `½ month: ${getCurrencySymbol(result.halfMonthCurrency)}${result.formattedHalfMonth}`,

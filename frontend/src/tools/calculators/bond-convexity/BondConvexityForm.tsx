@@ -523,7 +523,7 @@ export function BondConvexityForm({
               <span>Bond convexity</span>
               <InfoTooltip
                 label="Bond convexity"
-                text="Finite-difference convexity (P₋ + P₊ − 2P₀) / (P₀ (Δy)²) in annual-yield units. Dimensionless — not FX-converted. Not analytic Macaulay convexity."
+                text="Finite-difference convexity (P₋ + P₊ − 2P₀) / (P₀ (Δy)²) in annual-yield units. Dimensionless; not FX-converted. Not analytic Macaulay convexity."
               />
             </label>
             <FieldShell muted>

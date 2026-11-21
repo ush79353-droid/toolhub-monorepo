@@ -102,7 +102,7 @@ export function WaccCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         `Cost of Equity: ${input.costOfEquity}%`,
         `Equity: ${money(input.equity)}`,

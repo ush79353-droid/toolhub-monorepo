@@ -41,7 +41,7 @@ export const PB_FAQS: readonly FAQItem[] = [
   {
     question: 'Can portfolio beta be zero?',
     answer:
-      'Approximately, if weighted betas cancel or holdings have near-zero betas. That means little estimated linear market sensitivity — not zero total risk.',
+      'Approximately, if weighted betas cancel or holdings have near-zero betas. That means little estimated linear market sensitivity; not zero total risk.',
   },
   {
     question: 'How do portfolio weights affect beta?',

@@ -106,7 +106,7 @@ export function UnleveredBetaCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         '',
         ...(input.taxRateMode === 'calculated'
           ? [

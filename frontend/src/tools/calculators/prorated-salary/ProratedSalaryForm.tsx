@@ -321,7 +321,7 @@ export function ProratedSalaryForm({
               <span>Number of approved leave</span>
               <InfoTooltip
                 label="Number of approved leave"
-                text="Approved leave days treated as paid/compensated (payable). Entered separately from days worked and holidays — do not double-count the same calendar day."
+                text="Approved leave days treated as paid/compensated (payable). Entered separately from days worked and holidays; do not double-count the same calendar day."
               />
             </label>
             <FieldShell error={errors.approvedLeave}>

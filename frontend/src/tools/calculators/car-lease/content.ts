@@ -19,7 +19,7 @@ export const CAR_LEASE_FAQS: readonly FAQItem[] = [
   {
     question: 'Are dealer and registration fees financed into the lease?',
     answer:
-      'Yes. This calculator assumes dealer fee and registration fee are added into the net capitalized cost. Down payment, trade-in, and other reductions are subtracted once — they are not applied again as upfront credits outside the payment.',
+      'Yes. This calculator assumes dealer fee and registration fee are added into the net capitalized cost. Down payment, trade-in, and other reductions are subtracted once; they are not applied again as upfront credits outside the payment.',
   },
   {
     question: 'How is sales tax applied?',

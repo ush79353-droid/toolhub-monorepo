@@ -306,7 +306,7 @@ export function PrivateSavingsForm({
         <label htmlFor="ps-additional" className="text-[13px] text-accent">
           Include additional parameters
           <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
-            No extra fields are unlocked — only the verified Sp = Y − T − C
+ No extra fields are unlocked; only the verified Sp = Y − T − C
             identity is used.
           </span>
         </label>

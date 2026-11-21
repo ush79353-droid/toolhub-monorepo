@@ -11,8 +11,8 @@ export function AnnuityGuideArticle() {
         What Is an Annuity?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        An annuity is a series of equal-interval payments — deposits into savings or
-        withdrawals from a balance — that earn a stated rate of return. Ordinary annuities
+ An annuity is a series of equal-interval payments: deposits into savings or
+ withdrawals from a balance; that earn a stated rate of return. Ordinary annuities
         pay at the end of each period; annuity due pays at the beginning. This calculator
         models fixed immediate annuities with optional payment growth.
       </p>

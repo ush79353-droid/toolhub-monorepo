@@ -147,7 +147,7 @@ export function TaxBracketForm({
             <span>Deductions</span>
             <InfoTooltip
               label="Deductions"
-              text="Subtracted from the income field before brackets. Default $0. Not a second standard deduction — if income is already taxable, keep this at 0."
+              text="Subtracted from the income field before brackets. Default $0. Not a second standard deduction if income is already taxable, keep this at 0."
             />
           </label>
           <FieldShell error={errors.deductions}>
@@ -170,7 +170,7 @@ export function TaxBracketForm({
             <p className="mt-1 text-xs text-rose-600">{errors.deductions}</p>
           ) : (
             <p className="mt-1 text-xs text-muted-foreground">
-              Default $0. Fixed USD — no currency conversion.
+ Default $0. Fixed USD; no currency conversion.
             </p>
           )}
         </div>
@@ -245,7 +245,7 @@ export function TaxBracketForm({
           ) : null}
 
           <p className="text-[11px] leading-relaxed text-muted-foreground">
-            {result.sourceNote}. Educational ordinary-income estimate only — not
+ {result.sourceNote}. Educational ordinary-income estimate only; not
             a complete Form 1040 liability (no credits, AMT, NIIT, or payroll).
           </p>
         </div>

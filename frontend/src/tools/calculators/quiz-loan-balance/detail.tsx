@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Educational quiz on loan balances — five questions, score out of five, optional explanations.',
+    'Educational quiz on loan balances; five questions, score out of five, optional explanations.',
   asideAriaLabel: 'Interactive Loan Balance Quiz',
   tocItems: QUIZ_LOAN_BALANCE_TOC_ITEMS,
   GuideArticle: QuizLoanBalanceGuideArticle,

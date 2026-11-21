@@ -35,7 +35,7 @@ export function SavingsWithdrawalResults({ result }: SavingsWithdrawalResultsPro
 
       {result.neverDepletes ? (
         <p className="mt-2 text-sm leading-relaxed text-accent">
-          At this withdrawal amount and interest rate, your savings are not projected to run out —
+ At this withdrawal amount and interest rate, your savings are not projected to run out; 
           monthly interest covers (or exceeds) the withdrawal.
         </p>
       ) : (

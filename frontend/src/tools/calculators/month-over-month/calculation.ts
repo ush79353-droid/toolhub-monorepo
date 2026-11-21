@@ -66,7 +66,7 @@ export function buildPeriodChangeResult(
       formatted: '',
       status: 'zeroBaseline',
       warning: `Percentage change cannot be calculated because the previous ${label.toLowerCase()} value is zero.`,
-      interpretation: `${label} unavailable — division by zero.`,
+      interpretation: `${label} unavailable; division by zero.`,
     };
   }
 
@@ -152,10 +152,10 @@ export function interpretCmgr(
   finalValue: number
 ): string {
   if (finalValue === 0) {
-    return `CMGR is −100% — the metric declined to zero over ${formatMonths(months)}.`;
+    return `CMGR is −100%: the metric declined to zero over ${formatMonths(months)}.`;
   }
   if (Math.abs(cmgrPercent) < 5e-13) {
-    return `CMGR is 0% — the metric was unchanged across ${formatMonths(months)}.`;
+    return `CMGR is 0%: the metric was unchanged across ${formatMonths(months)}.`;
   }
   const rate = formatGrowthPercent(cmgrPercent);
   return `An equivalent constant monthly rate of ${rate}% would grow ${formatPlain(initialValue)} to ${formatPlain(finalValue)} over ${formatMonths(months)}. Actual month-to-month changes may differ.`;

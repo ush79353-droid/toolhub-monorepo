@@ -109,7 +109,7 @@ export function SilverMeltCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Weight × purity × pure-silver price — optional alloy metal add-on
+ Weight × purity × pure-silver price; optional alloy metal add-on
           </p>
         </div>
         {headerActions ? <div className="flex items-center gap-2">{headerActions}</div> : null}

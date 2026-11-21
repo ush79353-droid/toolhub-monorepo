@@ -62,7 +62,7 @@ export function PpfForm({
         Educational PPF projection in <strong className="text-accent">INR</strong>.
         Uses FY Apr–Mar, 5th-day eligible balance, and FY-end interest credit.
         Default rate {scheme.defaultAnnualInterestRate}% is an editable
-        illustrative constant — not a guaranteed official rate.
+ illustrative constant; not a guaranteed official rate.
       </p>
 
       <button

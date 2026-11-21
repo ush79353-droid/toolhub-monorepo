@@ -26,7 +26,7 @@ export const DA_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-da',
     title: 'What Is Dimensional Analysis?',
     paragraphs: [
-      'Dimensional analysis studies how physical quantities combine through their dimensions — mass, length, time, and the other SI base dimensions. It is used to check equations, convert units, and reason about relationships in physics and engineering.',
+      'Dimensional analysis studies how physical quantities combine through their dimensions; mass, length, time, and the other SI base dimensions. It is used to check equations, convert units, and reason about relationships in physics and engineering.',
       'A physically valid equation must be dimensionally consistent: both sides must reduce to the same combination of base dimensions. Matching dimensions are necessary, but they do not by themselves prove an equation is correct.',
     ],
     formula: 'Distance = Speed × Time → [L] = [LT⁻¹] × [T] = [L]',
@@ -65,7 +65,7 @@ export const DA_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Write each quantity’s dimensional formula.',
       '3. Add exponents for multiplication and subtract for division.',
       '4. Simplify.',
-      '5. Compare both sides — they must match for dimensional consistency.',
+      '5. Compare both sides. they must match for dimensional consistency.',
       'Newton’s second law: F = ma → [F] = [M][LT⁻²] = MLT⁻².',
     ],
   },

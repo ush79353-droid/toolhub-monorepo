@@ -92,7 +92,7 @@ export function KgCmToPsiForm({
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Exact via Pa: 1 kgf/cm² = 98,066.5 Pa; 1 psi = 6,894.757293168 Pa → factor ≈{' '}
         {formatPressure(KGFCM2_TO_PSI)}. Page title uses kg/cm² as conventional shorthand for
-        kgf/cm². Converts numerical pressure values only — not absolute vs gauge basis.
+ kgf/cm². Converts numerical pressure values only; not absolute vs gauge basis.
       </div>
 
       <FieldShell

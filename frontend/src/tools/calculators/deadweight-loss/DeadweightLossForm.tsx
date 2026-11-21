@@ -76,7 +76,7 @@ export function DeadweightLossForm({
     >
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="max-w-prose text-xs leading-relaxed text-muted-foreground">
-          Currency changes the display symbol only — values are not converted.
+ Currency changes the display symbol only; values are not converted.
           For taxes and wedges, the vertical height should be the economic
           wedge (e.g. Pc − Pp), not necessarily one observed transaction price.
         </p>

@@ -98,7 +98,7 @@ export function MovingAverageCalculator({
   const summary =
     result !== null
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Length: ${input.length}`,
           ...result.usedPrices.map(
             (price, index) =>

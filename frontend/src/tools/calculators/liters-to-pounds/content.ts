@@ -75,7 +75,7 @@ export const LITERS_TO_POUNDS_GUIDE_SECTIONS: readonly GuideSection[] = [
       '2. Select an ingredient or material.',
       '3. Review the automatically populated density (approximate when labeled).',
       '4. Adjust the density or unit if your measured value differs.',
-      '5. Enter the volume in liters — pounds update instantly.',
+      '5. Enter the volume in liters. pounds update instantly.',
       '6. Or enter pounds to calculate liters.',
       '7. Change the substance or density to run another scenario.',
       '8. Share or copy the current substance, density, volume, and weight.',

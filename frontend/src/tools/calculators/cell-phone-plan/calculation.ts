@@ -168,7 +168,7 @@ export function calculateCellPhonePlan(input: {
       absoluteCostDifference: 0,
       recommendedOption: 'infeasible',
       recommendationText:
-        'The savings strategy is not feasible for these inputs — monthly withdrawals would exhaust the invested phone price before the contract ends.',
+        'The savings strategy is not feasible for these inputs; monthly withdrawals would exhaust the invested phone price before the contract ends.',
       savingsSimulation: {
         ...simulation,
         finalBalance: 0,
@@ -242,7 +242,7 @@ export function formatMoney(amount: number, currency: SupportedCurrency): string
 
 export function shareCellPhonePlanText(result: CellPhonePlanResult): string {
   return [
-    'Cell Phone Plan Calculator — Omega Calculators',
+    'Cell Phone Plan Calculator | Omega Calculators',
     `Contract: ${result.contractDuration} months`,
     `Savings interest rate: ${result.annualInterestRate}%`,
     `Phone price: ${formatMoney(result.phonePrice, result.currency)}`,

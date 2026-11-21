@@ -13,7 +13,7 @@ export const SAVINGS_PLAN_FAQS: readonly FAQItem[] = [
   {
     question: 'How is the final balance calculated?',
     answer:
-      'With a starting deposit A, an arithmetic increase G each period, and n periods, the total is n × A + G × n × (n − 1) / 2. There is no interest in this calculator — only principal from deposits.',
+      'With a starting deposit A, an arithmetic increase G each period, and n periods, the total is n × A + G × n × (n − 1) / 2. There is no interest in this calculator; only principal from deposits.',
   },
   {
     question: 'What does “repeatedly increased by” mean?',

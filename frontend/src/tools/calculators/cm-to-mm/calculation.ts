@@ -36,7 +36,7 @@ export function calculateCmToMm(input: CmToMmInput): CmToMmResult {
 
 export function shareResultText(result: CmToMmResult): string {
   return [
-    'CM to MM Converter — Omega Calculators',
+    'CM to MM Converter | Omega Calculators',
     '',
     `${formatShared(result.centimeters)} cm = ${formatShared(result.millimeters)} mm`,
   ].join('\n');

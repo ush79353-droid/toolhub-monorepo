@@ -19,7 +19,7 @@ export const AVERAGE_FIXED_COST_FAQS: readonly FAQItem[] = [
   {
     question: 'What counts as a fixed cost?',
     answer:
-      'Fixed costs stay the same in the short run regardless of output—examples include rent, salaried staff, insurance premiums, and equipment leases. Variable costs such as materials are not included in this calculator.',
+      'Fixed costs stay the same in the short run regardless of output, examples include rent, salaried staff, insurance premiums, and equipment leases. Variable costs such as materials are not included in this calculator.',
   },
   {
     question: 'Why does average fixed cost fall as output rises?',

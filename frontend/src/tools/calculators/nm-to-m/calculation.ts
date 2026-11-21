@@ -40,7 +40,7 @@ export function calculateNmToM(input: NmToMInput): NmToMResult {
 
 export function shareResultText(result: NmToMResult): string {
   return [
-    'nm to m Converter — Omega Calculators',
+    'nm to m Converter | Omega Calculators',
     '',
     `${formatLength(result.nm)} nm = ${formatLength(result.m)} m`,
     '',

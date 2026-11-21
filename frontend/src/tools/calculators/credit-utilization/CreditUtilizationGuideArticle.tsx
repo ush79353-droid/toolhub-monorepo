@@ -12,8 +12,8 @@ export function CreditUtilizationGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Credit utilization measures how much of your available revolving credit
-        you are currently using. Revolving accounts—credit cards and similar
-        lines—have balances that can rise and fall and limits that define the
+ you are currently using. Revolving accounts, credit cards and similar
+ lines, have balances that can rise and fall and limits that define the
         credit ceiling. Utilization expresses that relationship as a percentage:
         total outstanding revolving balances divided by total revolving credit
         limits.
@@ -47,7 +47,7 @@ export function CreditUtilizationGuideArticle() {
       </div>
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         Uᵢ is money used on line i; Lᵢ is that line’s credit limit. Overall
-        utilization always aggregates first—never averages the individual card
+ utilization always aggregates first, never averages the individual card
         percentages.
       </p>
 
@@ -115,7 +115,7 @@ export function CreditUtilizationGuideArticle() {
         Paying down revolving balances, timing payments before balances are
         reported, avoiding unnecessary new charges, and staying within limits
         can lower utilization. Requesting a higher limit can also change the
-        math if balances stay the same—subject to lender approval.
+ math if balances stay the same, subject to lender approval.
       </p>
 
       <h2
@@ -162,7 +162,7 @@ export function CreditUtilizationGuideArticle() {
         Does a Credit Limit Increase Reduce Utilization?
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Mathematically, yes—if balances are unchanged, a larger denominator
+ Mathematically, Yes: if balances are unchanged, a larger denominator
         lowers the ratio. In practice, limit increases depend on underwriting
         and may not be the preferred strategy for every borrower.
       </p>

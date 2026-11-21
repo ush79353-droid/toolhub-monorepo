@@ -170,7 +170,7 @@ export const COORDINATES_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'What is DD coordinate format?',
-    answer: 'DD means Decimal Degrees — each axis is a single decimal number of degrees.',
+    answer: 'DD means Decimal Degrees; each axis is a single decimal number of degrees.',
   },
   {
     question: 'What is DDM coordinate format?',

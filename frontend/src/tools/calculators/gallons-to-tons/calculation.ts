@@ -139,7 +139,7 @@ export function shareResultText(result: GalToTonsResult): string {
   const densityLabel =
     DENSITY_UNIT_OPTIONS.find((o) => o.value === result.densityUnit)?.label ?? result.densityUnit;
   return [
-    'Gallons to Tons Converter — Omega Calculators',
+    'Gallons to Tons Converter | Omega Calculators',
     '',
     `Material: ${result.materialName}`,
     `Density: ${formatMeasure(result.densityValue)} ${densityLabel}${result.densityApproximate ? ' (approximate)' : ''}`,

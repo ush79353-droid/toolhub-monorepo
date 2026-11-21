@@ -106,7 +106,7 @@ export function PriceToBookRatioCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Total Stockholder Equity: ${money(input.totalStockholderEquity)}`,
         `Preferred Equity: ${money(input.preferredEquity)}`,
         `Common Book Equity: ${result!.formattedCommonBookEquity}`,
@@ -115,15 +115,15 @@ export function PriceToBookRatioCalculator({
         `Share Price: ${money(input.sharePrice)}`,
         '',
         `Book Value per Share: ${result!.formattedBvps}`,
-        `Price to Book Ratio: ${result!.formattedPb ?? '—'}`,
+        `Price to Book Ratio: ${result!.formattedPb ?? '; '}`,
         ...(input.showTangible && result!.formattedTangibleEquity
           ? [
               '',
               `Goodwill: ${money(input.goodwill)}`,
               `Other Intangible Assets: ${money(input.otherIntangibleAssets)}`,
               `Tangible Common Equity: ${result!.formattedTangibleEquity}`,
-              `Tangible Book Value per Share: ${result!.formattedTbvps ?? '—'}`,
-              `Price to Tangible Book Ratio: ${result!.formattedPtb ?? '—'}`,
+              `Tangible Book Value per Share: ${result!.formattedTbvps ?? '; '}`,
+              `Price to Tangible Book Ratio: ${result!.formattedPtb ?? '; '}`,
             ]
           : []),
         '',

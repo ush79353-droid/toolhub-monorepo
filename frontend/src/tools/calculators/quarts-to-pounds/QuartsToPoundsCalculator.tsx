@@ -31,7 +31,7 @@ function unitLabel(
 
 function summaryText(result: QuartsToPoundsResult): string {
   return [
-    'Quarts to Pounds Conversion — Omega Calculators',
+    'Quarts to Pounds Conversion | Omega Calculators',
     `Ingredient: ${result.ingredientName}`,
     `Density: ${formatMeasure(result.densityGPerMl)} kg/L${
       result.densityApproximate ? ' (approximate assumption)' : ''

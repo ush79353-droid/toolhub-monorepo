@@ -94,7 +94,7 @@ export function PoundsToLbsForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Pound and lb are the same mass unit. Editing either field copies the same number to the
-        other — no multiplication or division.
+ other; no multiplication or division.
       </div>
 
       <FieldShell

@@ -86,7 +86,7 @@ export function OperatingMarginCalculator({
   const currencyNote = ratesStatus.available ? FX_NOTE : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Revenue: ${getCurrencySymbol(input.revenueCurrency)}${input.revenue}`,
         `COGS: ${getCurrencySymbol(input.cogsCurrency)}${input.cogs}`,
         `Operating expenses: ${getCurrencySymbol(input.operatingExpensesCurrency)}${input.operatingExpenses}`,

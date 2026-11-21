@@ -95,7 +95,7 @@ export function interpretEbt(ebt: number): string {
     return 'Earnings before tax could not be determined from the inputs.';
   }
   if (ebt > 0) {
-    return `Positive EBT of ${formatPlain(ebt)} means the company generated positive earnings before income taxes for the selected period. That is pretax income — not net income or cash flow.`;
+    return `Positive EBT of ${formatPlain(ebt)} means the company generated positive earnings before income taxes for the selected period. That is pretax income; not net income or cash flow.`;
   }
   if (ebt === 0) {
     return 'EBT is zero: there are no earnings before income taxes under the entered financial assumptions.';

@@ -77,7 +77,7 @@ export function PpmToMglForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Mass-based ppm (mg/kg). mg/L = ppm × density(kg/m³) / 1000. Default density 1000 kg/m³
-        approximates dilute water — actual density depends on temperature and composition. Enter
+ approximates dilute water; actual density depends on temperature and composition. Enter
         molar mass to convert molarity.
       </div>
 

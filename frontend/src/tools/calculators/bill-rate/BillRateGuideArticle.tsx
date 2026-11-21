@@ -55,7 +55,7 @@ export function BillRateGuideArticle() {
         Capacity and Multiplier
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Capacity is the annual billable-hours assumption under your model — not automatically
+ Capacity is the annual billable-hours assumption under your model; not automatically
         adjusted for vacations or utilization. The multiplier is user-defined overhead and margin
         uplift; change it to match your firm&apos;s pricing policy rather than treating the default
         as a legal or tax rate.

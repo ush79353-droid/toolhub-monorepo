@@ -72,7 +72,7 @@ export function PakistanIncomeTaxForm({
             <span>Monthly income</span>
             <InfoTooltip
               label="Monthly income"
-              text="Gross taxable employment salary for the month in Pakistani Rupees. Annualized as monthly × 12 before FBR progressive slabs. Fixed PKR — no currency conversion."
+              text="Gross taxable employment salary for the month in Pakistani Rupees. Annualized as monthly × 12 before FBR progressive slabs. Fixed PKR; no currency conversion."
             />
           </label>
           <FieldShell error={errors.monthlyIncome}>

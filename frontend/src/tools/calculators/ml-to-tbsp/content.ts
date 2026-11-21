@@ -41,7 +41,7 @@ export const MLTBSP_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'mL to tbsp Converter',
     paragraphs: [
-      'Convert milliliters into tablespoons and cups in either direction. Recipe books may use US customary, metric, Australian, or traditional Imperial tablespoons — each size is different. This tool defaults to the US tablespoon and lets you switch standards explicitly.',
+      'Convert milliliters into tablespoons and cups in either direction. Recipe books may use US customary, metric, Australian, or traditional Imperial tablespoons; each size is different. This tool defaults to the US tablespoon and lets you switch standards explicitly.',
     ],
   },
   {

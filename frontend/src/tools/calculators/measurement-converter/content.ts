@@ -34,7 +34,7 @@ export const MEASUREMENT_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'units-of-measurement',
     title: 'Units of Measurement: The Scale of Reality',
     paragraphs: [
-      'A measurement pairs a number with a unit. Without the unit, the number has no physical meaning. The International System of Units (SI) provides a coherent set of base units — meter, kilogram, second, ampere, kelvin, mole, and candela — plus derived units built from them.',
+      'A measurement pairs a number with a unit. Without the unit, the number has no physical meaning. The International System of Units (SI) provides a coherent set of base units (meter, kilogram, second, ampere, kelvin, mole, and candela) plus derived units built from them.',
       'Metric prefixes (nano, micro, milli, kilo, mega, …) scale SI units by powers of ten. Scientific notation keeps very large or very small values readable. Every measured value also carries uncertainty; a converter can preserve arithmetic precision, but it cannot invent the uncertainty of an instrument reading.',
     ],
   },
@@ -43,9 +43,9 @@ export const MEASUREMENT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Measurement Units: Technique and Examples',
     paragraphs: [
       'Choose a measurement category so both units share the same dimension. Identify the source and target units, apply the conversion factor (or temperature’s affine formulas), and check that dimensions cancel correctly.',
-      `Example 1 — length: 1,500 m → ${kmFromM.ok ? formatWithPrecision(kmFromM.value, 'auto') : '1.5'} km because 1 m = 0.001 km.`,
-      `Example 2 — speed: 100 km/h → ${mpsFromKmh.ok ? formatWithPrecision(mpsFromKmh.value, 'auto') : '27.777…'} m/s using (1000 m / 1 km) × (1 h / 3600 s).`,
-      `Example 3 — temperature: 0 °C = ${fFromC.ok ? formatWithPrecision(fFromC.value, 'auto') : '32'} °F. Temperature needs an offset as well as a scale.`,
+      `Example 1: length: 1,500 m → ${kmFromM.ok ? formatWithPrecision(kmFromM.value, 'auto'): '1.5'} km because 1 m = 0.001 km.`,
+      `Example 2: speed: 100 km/h → ${mpsFromKmh.ok ? formatWithPrecision(mpsFromKmh.value, 'auto'): '27.777…'} m/s using (1000 m / 1 km) × (1 h / 3600 s).`,
+      `Example 3: temperature: 0 °C = ${fFromC.ok ? formatWithPrecision(fFromC.value, 'auto'): '32'} °F. Temperature needs an offset as well as a scale.`,
     ],
     formula: 'Converted = Original × (Source factor / Target factor)',
   },
@@ -64,7 +64,7 @@ export const MEASUREMENT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Understanding Significant Figures',
     paragraphs: [
       'Mathematical precision is not the same as measurement uncertainty. Displayed decimal places and significant-figure settings only control formatting. The converter keeps full internal precision and rounds only for display.',
-      'Choosing “3 significant figures” does not mean the original measurement was known to three figures — you must still interpret instrument limits yourself.',
+      'Choosing “3 significant figures” does not mean the original measurement was known to three figures; you must still interpret instrument limits yourself.',
     ],
   },
   {

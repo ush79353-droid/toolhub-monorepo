@@ -29,7 +29,7 @@ export const INCHES_TO_YARDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'Inches to Yard Conversion',
     paragraphs: [
-      'Use this converter to change inches into yards—or yards back into inches—without flipping between formulas. Both fields stay editable so you can work in whichever unit you measured first.',
+      'Use this converter to change inches into yards, or yards back into inches, without flipping between formulas. Both fields stay editable so you can work in whichever unit you measured first.',
       'The relationship is fixed: one yard equals exactly 36 inches. That makes fabric cuts, garden beds, lumber lists, and sports-field markings easy to translate between inch tape readings and yard-based plans.',
       'Enter a value in either field and the other updates immediately using the exact 36:1 factor. Signed values are allowed when you are tracking differences rather than absolute lengths.',
     ],
@@ -40,7 +40,7 @@ export const INCHES_TO_YARDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Inches Into Yards?',
     paragraphs: [
       `One yard is defined as exactly ${INCHES_PER_YARD} inches. To convert inches to yards, divide the inch measurement by ${INCHES_PER_YARD}.`,
-      `Example — convert 144 inches into yards: 144 ÷ ${INCHES_PER_YARD} = ${formatLength(inchesToYards(144))}. Therefore 144 inches = 4 yards.`,
+      `Example; convert 144 inches into yards: 144 ÷ ${INCHES_PER_YARD} = ${formatLength(inchesToYards(144))}. Therefore 144 inches = 4 yards.`,
       'Dividing by 36 yields the equivalent length in yards with no intermediate rounding in the calculator engine.',
     ],
     formula: `yd = in ÷ ${INCHES_PER_YARD}`,
@@ -49,9 +49,9 @@ export const INCHES_TO_YARDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Inches to Yard Conversion Examples',
     paragraphs: [
-      `Example 1 — convert 90 inches into yards: 90 ÷ ${INCHES_PER_YARD} = ${formatLength(inchesToYards(90))}. Therefore 90 inches = 2.5 yards.`,
-      `Example 2 — convert 180 inches into yards: 180 ÷ ${INCHES_PER_YARD} = ${formatLength(inchesToYards(180))}. Therefore 180 inches = 5 yards.`,
-      `Example 3 — convert 250 inches into yards: 250 ÷ ${INCHES_PER_YARD} ≈ ${formatLength(inchesToYards(250))}. Therefore 250 inches ≈ ${formatLength(inchesToYards(250))} yards.`,
+      `Example 1: convert 90 inches into yards: 90 ÷ ${INCHES_PER_YARD} = ${formatLength(inchesToYards(90))}. Therefore 90 inches = 2.5 yards.`,
+      `Example 2: convert 180 inches into yards: 180 ÷ ${INCHES_PER_YARD} = ${formatLength(inchesToYards(180))}. Therefore 180 inches = 5 yards.`,
+      `Example 3: convert 250 inches into yards: 250 ÷ ${INCHES_PER_YARD} ≈ ${formatLength(inchesToYards(250))}. Therefore 250 inches ≈ ${formatLength(inchesToYards(250))} yards.`,
     ],
   },
   {
@@ -59,7 +59,7 @@ export const INCHES_TO_YARDS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Yards Back to Inches',
     paragraphs: [
       `Multiply yards by ${INCHES_PER_YARD} to recover inches.`,
-      `Example — convert 7 yards: 7 × ${INCHES_PER_YARD} = ${formatLength(yardsToInches(7))}. Therefore 7 yards = 252 inches.`,
+      `Example; convert 7 yards: 7 × ${INCHES_PER_YARD} = ${formatLength(yardsToInches(7))}. Therefore 7 yards = 252 inches.`,
       'Use the yards field in this tool for reverse conversion; the inches field updates automatically.',
     ],
     formula: `in = yd × ${INCHES_PER_YARD}`,

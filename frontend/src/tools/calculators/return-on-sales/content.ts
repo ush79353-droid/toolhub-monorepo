@@ -17,7 +17,7 @@ export const RETURN_ON_SALES_FAQS: readonly FAQItem[] = [
   {
     question: 'Can operating profit or ROS be negative or zero?',
     answer:
-      'Yes. Zero operating profit with positive net sales yields 0%. An operating loss yields a negative ROS. Net sales must be greater than zero — zero and negative sales are rejected so the calculator never shows NaN or Infinity.',
+      'Yes. Zero operating profit with positive net sales yields 0%. An operating loss yields a negative ROS. Net sales must be greater than zero; zero and negative sales are rejected so the calculator never shows NaN or Infinity.',
   },
   {
     question: 'Do the currency selectors convert amounts?',

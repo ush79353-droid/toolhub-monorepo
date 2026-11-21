@@ -226,7 +226,7 @@ export function MpcForm({
           Autonomous Consumer Spending
           <InfoTooltip
             label="Autonomous consumption"
-            text="Theoretical intercept when disposable income is zero in the linear consumption model — not literal household spending at zero income."
+            text="Theoretical intercept when disposable income is zero in the linear consumption model; not literal household spending at zero income."
           />
         </label>
         <FieldShell error={errors.autonomousConsumption}>

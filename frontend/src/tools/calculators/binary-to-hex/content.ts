@@ -85,7 +85,7 @@ export const BINARY_HEX_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Binary to Hexadecimal Conversion Examples',
     paragraphs: [
-      'Selected verified conversions. Padded binary forms such as 00001010 still equal hexadecimal A — padding is not a different number.',
+      'Selected verified conversions. Padded binary forms such as 00001010 still equal hexadecimal A; padding is not a different number.',
     ],
     table: [
       { left: '0', right: '0' },

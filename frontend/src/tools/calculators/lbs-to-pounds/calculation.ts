@@ -38,7 +38,7 @@ export function calculateLbsToPounds(input: LbsToPoundsInput): LbsToPoundsResult
 
 export function shareResultText(result: LbsToPoundsResult): string {
   return [
-    'lbs to Pounds Converter — Omega Calculators',
+    'lbs to Pounds Converter | Omega Calculators',
     '',
     `Weight in lbs: ${formatMass(result.lbs)}`,
     `Weight in pounds: ${formatMass(result.pounds)}`,

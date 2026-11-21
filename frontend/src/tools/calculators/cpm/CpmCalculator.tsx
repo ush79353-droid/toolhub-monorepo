@@ -174,7 +174,7 @@ export function CpmCalculator({
     (draft.secondOpen && Object.keys(secondaryErrors).length > 0);
 
   const summaryLines = [
-    `${metadata.title} — Omega Calculators`,
+    `${metadata.title} | Omega Calculators`,
     ...campaignSummary('Main campaign', draft.primary, primarySolved.values),
     ...(draft.secondOpen
       ? campaignSummary('Second campaign', draft.secondary, secondarySolved.values)

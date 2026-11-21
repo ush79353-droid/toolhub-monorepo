@@ -55,7 +55,7 @@ export const NET_INCOME_FAQS: readonly FAQItem[] = [
   {
     question: 'What is net income before taxes?',
     answer:
-      'Earnings before tax (EBT / pretax income) — here operating income minus interest.',
+      'Earnings before tax (EBT / pretax income); here operating income minus interest.',
   },
   {
     question: 'What is the difference between net income and revenue?',
@@ -85,7 +85,7 @@ export const NET_INCOME_FAQS: readonly FAQItem[] = [
   {
     question: 'Is net income the same as profit?',
     answer:
-      'Often yes in everyday language — specifically profit after the costs and taxes included in the model.',
+      'Often yes in everyday language; specifically profit after the costs and taxes included in the model.',
   },
   {
     question: 'Is net income the same as cash flow?',
@@ -108,11 +108,11 @@ export const NET_INCOME_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Does net income include taxes?',
-    answer: 'Yes — this calculator’s net income is after estimated income taxes.',
+    answer: 'Yes: this calculator’s net income is after estimated income taxes.',
   },
   {
     question: 'Does net income include interest expenses?',
-    answer: 'Yes — interest is deducted before taxes in the pretax income step.',
+    answer: 'Yes: interest is deducted before taxes in the pretax income step.',
   },
   {
     question: 'How do I calculate gross profit?',
@@ -152,7 +152,7 @@ export const NET_INCOME_FAQS: readonly FAQItem[] = [
   {
     question: 'Why is net income important?',
     answer:
-      'It summarizes period profitability for owners, lenders, and analysts — alongside cash flow and balance-sheet health.',
+      'It summarizes period profitability for owners, lenders, and analysts, alongside cash flow and balance-sheet health.',
   },
   {
     question: 'How can a business improve net income?',
@@ -186,12 +186,12 @@ export const NET_INCOME_FAQS: readonly FAQItem[] = [
   },
   {
     question: 'Can a business have positive revenue but negative net income?',
-    answer: 'Yes — costs and taxes can exceed sales.',
+    answer: 'Yes: costs and taxes can exceed sales.',
   },
   {
     question: 'Can a company have positive net income but negative cash flow?',
     answer:
-      'Yes — for example when receivables grow, inventory builds, or debt is repaid.',
+      'Yes: for example when receivables grow, inventory builds, or debt is repaid.',
   },
   {
     question: 'How do operating expenses affect net income?',

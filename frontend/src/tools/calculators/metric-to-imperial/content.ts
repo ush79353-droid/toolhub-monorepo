@@ -37,7 +37,7 @@ export const METRIC_TO_IMPERIAL_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Metric vs. Imperial Measurement Systems',
     paragraphs: [
       'Measurement systems assign numbers to physical quantities so people can communicate sizes, masses, volumes, temperatures, and speeds consistently. Converting between metric and imperial units is common in travel, engineering collaboration, cooking, and international trade.',
-      'This converter maps metric units to imperial or US customary units within one physical dimension at a time — length, area, volume, mass, temperature, or speed.',
+      'This converter maps metric units to imperial or US customary units within one physical dimension at a time; length, area, volume, mass, temperature, or speed.',
     ],
     subsections: [
       {
@@ -51,7 +51,7 @@ export const METRIC_TO_IMPERIAL_GUIDE_SECTIONS: readonly GuideSection[] = [
         id: 'the-imperial-system',
         title: 'The Imperial System',
         paragraphs: [
-          'Imperial and US customary systems use inches, feet, yards, and miles for length; ounces and pounds for mass; and gallons, quarts, and pints for volume. US liquid volume units differ from British imperial volumes — a US gallon is not the same as an imperial gallon.',
+          'Imperial and US customary systems use inches, feet, yards, and miles for length; ounces and pounds for mass; and gallons, quarts, and pints for volume. US liquid volume units differ from British imperial volumes: a US gallon is not the same as an imperial gallon.',
         ],
       },
     ],

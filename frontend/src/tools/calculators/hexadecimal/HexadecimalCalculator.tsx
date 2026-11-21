@@ -24,7 +24,7 @@ function summaryText(args: {
   binaryResult: BinaryToHexResult | null;
   hexResult: HexToBothResult | null;
 }): string {
-  const lines = ['Hexadecimal Converter — Omega Calculators', ''];
+  const lines = ['Hexadecimal Converter | Omega Calculators', ''];
   if (args.decimalResult) {
     lines.push('Conversion: Decimal to Hexadecimal');
     lines.push(`Decimal: ${args.decimalResult.decimal}`);

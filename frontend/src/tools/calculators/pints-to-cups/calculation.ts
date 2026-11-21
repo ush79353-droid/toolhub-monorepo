@@ -94,7 +94,7 @@ export function calculatePintsToCups(input: PintsToCupsInput): PintsToCupsResult
 
 export function shareResultText(result: PintsToCupsResult): string {
   return [
-    'Pints to Cups Converter — Omega Calculators',
+    'Pints to Cups Converter | Omega Calculators',
     '',
     `Input: ${formatVolume(result.pints)} ${PINT_UNIT_LABEL[result.pintUnit]}`,
     `Result: ${formatVolume(result.cups)} ${CUP_UNIT_LABEL[result.cupUnit]}`,

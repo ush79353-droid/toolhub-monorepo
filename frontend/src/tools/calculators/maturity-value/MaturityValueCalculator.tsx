@@ -112,7 +112,7 @@ export function MaturityValueCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Principal: ${money(input.principal)}`,
         `Annual Interest Rate: ${input.interestRate}%`,
         `Investment Duration: ${input.duration} ${unitLabel}`,

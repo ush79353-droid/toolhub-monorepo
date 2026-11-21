@@ -4,7 +4,7 @@ import { EOQ_FAQS, EOQ_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate economic order quantity — EOQ = √(2 × Annual demand × Order cost ÷ Holding cost per unit) — with annual ordering and holding cost estimates.',
+    'Calculate economic order quantity: EOQ = √(2 × Annual demand × Order cost ÷ Holding cost per unit); with annual ordering and holding cost estimates.',
   asideAriaLabel: 'Interactive EOQ Calculator',
   tocItems: EOQ_TOC_ITEMS,
   GuideArticle: EoqGuideArticle,

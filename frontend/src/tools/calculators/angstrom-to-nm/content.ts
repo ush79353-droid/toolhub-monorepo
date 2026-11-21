@@ -72,7 +72,7 @@ export const ANGSTROM_TO_NM_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-use',
     title: 'How to Use the Angstrom to nm Converter',
     paragraphs: [
-      '1. Enter a length in angstroms — nanometers and mils update instantly.',
+      '1. Enter a length in angstroms. nanometers and mils update instantly.',
       '2. Or enter nanometers to calculate angstroms and mils.',
       '3. Or enter mils (thousandths of an inch) to update the metric fields.',
       '4. Change any field for another conversion; no Calculate button is required.',

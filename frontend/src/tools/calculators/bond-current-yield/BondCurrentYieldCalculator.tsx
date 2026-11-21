@@ -106,7 +106,7 @@ export function BondCurrentYieldCalculator({
   );
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Face value: ${faceSymbol}${input.faceValue}`,
         `Frequency: ${input.frequency}`,
         `Coupon rate: ${input.couponRatePercent}%`,

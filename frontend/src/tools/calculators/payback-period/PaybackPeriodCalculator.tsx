@@ -113,7 +113,7 @@ export function PaybackPeriodCalculator({
 
   const shareText = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Steady payback: ${result.steadyPaybackDisplay}`,
         `Steady discounted: ${result.steadyDiscountedDisplay}`,
         `Irregular payback: ${result.irregularPaybackDisplay}`,

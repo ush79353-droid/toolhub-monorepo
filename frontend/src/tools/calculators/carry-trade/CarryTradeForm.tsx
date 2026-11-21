@@ -86,7 +86,7 @@ export function CarryTradeForm({
         />
       </div>
       <p className="text-xs text-muted-foreground">
-        Amount and profit share one funding-currency denomination (labels only —
+ Amount and profit share one funding-currency denomination (labels only; 
         no live FX conversion). Exchange rates are entered manually.
       </p>
       <p className="text-xs">

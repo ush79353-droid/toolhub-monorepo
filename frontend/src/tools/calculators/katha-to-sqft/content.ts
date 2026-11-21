@@ -61,7 +61,7 @@ export const KATHA_TO_SQFT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Katha to Square Feet?',
     paragraphs: [
       'Multiply katha by the selected region’s square-feet-per-katha factor.',
-      `Nepal example — convert 2 katha: 2 × ${formatArea(NEPAL_R)} = ${formatArea(kathaToSquareFeet(2, NEPAL_R))} ft². This example uses the Nepal Terai Survey Department definition and does not apply to other regions.`,
+      `Nepal example; convert 2 katha: 2 × ${formatArea(NEPAL_R)} = ${formatArea(kathaToSquareFeet(2, NEPAL_R))} ft². This example uses the Nepal Terai Survey Department definition and does not apply to other regions.`,
     ],
     formula: `Square feet = Katha × Regional factor\nNepal: ft² = katha × ${formatArea(NEPAL_R)}`,
   },
@@ -70,7 +70,7 @@ export const KATHA_TO_SQFT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How Do I Convert Square Feet to Katha?',
     paragraphs: [
       'Divide square feet by the selected region’s factor.',
-      `Nepal example — convert ${formatArea(kathaToSquareFeet(2, NEPAL_R))} ft²: ${formatArea(kathaToSquareFeet(2, NEPAL_R))} ÷ ${formatArea(NEPAL_R)} = ${formatArea(squareFeetToKatha(kathaToSquareFeet(2, NEPAL_R), NEPAL_R))} katha.`,
+      `Nepal example; convert ${formatArea(kathaToSquareFeet(2, NEPAL_R))} ft²: ${formatArea(kathaToSquareFeet(2, NEPAL_R))} ÷ ${formatArea(NEPAL_R)} = ${formatArea(squareFeetToKatha(kathaToSquareFeet(2, NEPAL_R), NEPAL_R))} katha.`,
     ],
     formula: `Katha = Square feet ÷ Regional factor`,
   },
@@ -79,7 +79,7 @@ export const KATHA_TO_SQFT_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Convert Katha to Square Meters',
     paragraphs: [
       `Convert katha to square feet with the regional factor, then multiply by the exact international constant ${SQUARE_METERS_PER_SQUARE_FOOT}.`,
-      `Nepal example — 1 katha: ${formatArea(NEPAL_R)} × ${SQUARE_METERS_PER_SQUARE_FOOT} = ${formatArea(kathaToSquareMeters(1, NEPAL_R))} m².`,
+      `Nepal example; 1 katha: ${formatArea(NEPAL_R)} × ${SQUARE_METERS_PER_SQUARE_FOOT} = ${formatArea(kathaToSquareMeters(1, NEPAL_R))} m².`,
     ],
     formula: `m² = katha × regional ft²/katha × ${SQUARE_METERS_PER_SQUARE_FOOT}`,
   },
@@ -87,7 +87,7 @@ export const KATHA_TO_SQFT_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'by-region',
     title: 'Katha Conversion by Region',
     paragraphs: [
-      'The table below is generated from the same verified registry the calculator uses. Local land records may still differ—confirm the applicable definition before official use.',
+      'The table below is generated from the same verified registry the calculator uses. Local land records may still differ, confirm the applicable definition before official use.',
       `Pending / not exposed as calculator options: ${PENDING_REGION_NOTES.join(' ')}`,
     ],
     tableHeaders: ['Region', 'Square Feet per Katha', 'Square Meters per Katha'],

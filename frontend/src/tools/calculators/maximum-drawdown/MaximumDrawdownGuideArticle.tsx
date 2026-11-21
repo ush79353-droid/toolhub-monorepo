@@ -13,7 +13,7 @@ export function MaximumDrawdownGuideArticle() {
         peak to a subsequent trough. It connects a peak portfolio value, the lowest later value,
         the percentage decline, and the absolute monetary loss. Investors use it to understand
         downside risk and historical volatility of path-dependent losses. MDD is a historical
-        measure — it does not predict future losses.
+ measure; it does not predict future losses.
       </p>
 
       <h2
@@ -38,7 +38,7 @@ export function MaximumDrawdownGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         MDD helps evaluate portfolio risk, strategy downside, risk tolerance, and capital
         preservation. Two investments with similar average returns can have very different drawdown
-        profiles — one may be smoother while the other experiences deeper peak-to-trough declines.
+ profiles; one may be smoother while the other experiences deeper peak-to-trough declines.
       </p>
 
       <h2
@@ -132,7 +132,7 @@ export function MaximumDrawdownGuideArticle() {
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         Example: a 20% drawdown (D = 0.20) with 10% assumed annual growth (g = 0.10) yields t ≈ 2.34
         years. Assumptions include constant compounding, no fees/taxes/withdrawals, and that growth
-        actually materializes — none of which is guaranteed.
+ actually materializes; none of which is guaranteed.
       </p>
 
       <h2 id="mdd-markets" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">
@@ -141,7 +141,7 @@ export function MaximumDrawdownGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Stocks, cryptocurrencies, mutual funds, ETFs, bonds, and blended portfolios can show very
         different historical drawdowns because of volatility, liquidity, leverage, and
-        diversification. Asset-class history is context — not a forecast of future market paths.
+ diversification. Asset-class history is context; not a forecast of future market paths.
       </p>
 
       <h2 id="limitations" className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl">

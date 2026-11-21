@@ -71,7 +71,7 @@ export function EarlyLoanPayoffCalculator({
   const symbol = getCurrencySymbol(result?.currency ?? input.loanCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan balance: ${getCurrencySymbol(input.loanCurrency)}${input.loanBalance}`,
         `Term: ${input.termYears} yrs ${input.termMonths} mos`,
         `Interest rate: ${input.interestRatePercent}% (${input.compoundingFrequency})`,

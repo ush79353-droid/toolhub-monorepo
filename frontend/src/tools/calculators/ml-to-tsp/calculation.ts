@@ -112,7 +112,7 @@ export function shareResultText(result: MlToTspResult): string {
   const tsp = result.values.teaspoons;
   const tspSym = unitSymbol(result.units.teaspoons);
   return [
-    'mL to tsp Converter — Omega Calculators',
+    'mL to tsp Converter | Omega Calculators',
     '',
     `${formatVolume(ml)} mL = ${formatVolume(tsp)} ${tspSym}`,
     '',

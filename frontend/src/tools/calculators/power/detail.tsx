@@ -4,7 +4,7 @@ import { POWER_FAQS, POWER_TOC_ITEMS } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert watts, kilowatts, milliwatts, mechanical and metric horsepower, foot-pound force rates, and BTU/h — synchronized through watts.',
+    'Convert watts, kilowatts, milliwatts, mechanical and metric horsepower, foot-pound force rates, and BTU/h; synchronized through watts.',
   asideAriaLabel: 'Interactive power converter',
   tocItems: POWER_TOC_ITEMS,
   GuideArticle: PowerGuideArticle,

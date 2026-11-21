@@ -42,7 +42,7 @@ export function validateBarToPsi(input: BarToPsiInput): {
     else if (state === 'bad') errors.primary = 'Enter a valid pressure.';
     else if (state === 'negative') {
       errors.primary =
-        'Absolute pressure cannot be negative. Negative values are gauge differentials — use a dedicated gauge workflow.';
+        'Absolute pressure cannot be negative. Negative values are gauge differentials; use a dedicated gauge workflow.';
     } else if (state === 'large') errors.primary = 'Enter a smaller value.';
   } else {
     const state = pressureProblem(input.secondary);
@@ -50,7 +50,7 @@ export function validateBarToPsi(input: BarToPsiInput): {
     else if (state === 'bad') errors.secondary = 'Enter a valid pressure.';
     else if (state === 'negative') {
       errors.secondary =
-        'Absolute pressure cannot be negative. Negative values are gauge differentials — use a dedicated gauge workflow.';
+        'Absolute pressure cannot be negative. Negative values are gauge differentials; use a dedicated gauge workflow.';
     } else if (state === 'large') errors.secondary = 'Enter a smaller value.';
   }
 

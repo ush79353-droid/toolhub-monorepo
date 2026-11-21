@@ -17,7 +17,7 @@ export const CALIFORNIA_SALES_TAX_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens if multiple rates are returned?',
     answer:
-      'Near tax-area boundaries CDTFA may return more than one jurisdiction. This calculator does not pick one automatically — it shows an unavailable result and lists the candidates.',
+      'Near tax-area boundaries CDTFA may return more than one jurisdiction. This calculator does not pick one automatically; it shows an unavailable result and lists the candidates.',
   },
   {
     question: 'Are exemptions included?',

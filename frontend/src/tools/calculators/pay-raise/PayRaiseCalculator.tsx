@@ -278,7 +278,7 @@ export function PayRaiseCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Hours/week: ${input.hoursPerWeek}`,
         `Before (annual): ${getCurrencySymbol(result.beforeCurrency)}${formatCanon(result.beforeAnnualCanonical)} ${result.beforeCurrency}`,
         result.percentageUndefined

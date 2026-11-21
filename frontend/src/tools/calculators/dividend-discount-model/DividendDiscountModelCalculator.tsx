@@ -75,7 +75,7 @@ export function DividendDiscountModelCalculator({
   const p0Symbol = getCurrencySymbol(result?.stockValueCurrency ?? input.stockValueCurrency);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Dividend payout ratio: ${input.dividendPayoutRatioPercent}%`,
         `Return on equity: ${input.returnOnEquityPercent}%`,
         `Expected growth rate: ${result.formattedGrowthRatePercent}%`,

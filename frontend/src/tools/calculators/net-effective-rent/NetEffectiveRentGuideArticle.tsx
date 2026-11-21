@@ -7,7 +7,7 @@ export function NetEffectiveRentGuideArticle() {
           Net effective rent is the average rent after tenant concessions and landlord
           operating costs are spread across the lease term. This calculator estimates
           monthly and annual net effective rent from lease length, rent, rent-free months,
-          cash allowance, and operating costs — with real FX conversion on money fields.
+ cash allowance, and operating costs, with real FX conversion on money fields.
         </p>
       </section>
 

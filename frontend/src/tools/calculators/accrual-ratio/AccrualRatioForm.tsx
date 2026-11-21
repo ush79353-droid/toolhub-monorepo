@@ -114,7 +114,7 @@ export function AccrualRatioForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. The accrual
+ changes the symbol only; it does not convert values. The accrual
           ratio is dimensionless when numerator and denominator share that
           currency.
         </p>
@@ -195,7 +195,7 @@ export function AccrualRatioForm({
             <span>Beginning operating liabilities</span>
             <InfoTooltip
               label="Beginning operating liabilities"
-              text="Operating obligations at period start — not financing liabilities — under your reporting classification."
+              text="Operating obligations at period start (not financing liabilities) under your reporting classification."
             />
           </label>
           <FieldShell error={errors.beginningOperatingLiabilities}>

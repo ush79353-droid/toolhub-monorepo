@@ -52,7 +52,7 @@ export const MONEY_MULTIPLIER_FAQS: readonly FAQItem[] = [
   {
     question: 'What does a money multiplier of 4 mean?',
     answer:
-      'Under these definitions, measured money supply is four times the monetary base. It is an accounting ratio in the model — not automatically proof of stronger growth or higher inflation.',
+      'Under these definitions, measured money supply is four times the monetary base. It is an accounting ratio in the model; not automatically proof of stronger growth or higher inflation.',
   },
   {
     question: 'What is the difference between the monetary base and money supply?',
@@ -127,7 +127,7 @@ export const MONEY_MULTIPLIER_FAQS: readonly FAQItem[] = [
   {
     question: 'How does the central bank influence the money supply?',
     answer:
-      'Through interest-rate policy, reserve remuneration, asset purchases or sales, lending facilities, and regulatory settings that affect banks’ funding and balance sheets — not usually a fixed mechanical multiplier dial.',
+      'Through interest-rate policy, reserve remuneration, asset purchases or sales, lending facilities, and regulatory settings that affect banks’ funding and balance sheets; not usually a fixed mechanical multiplier dial.',
   },
   {
     question: 'What is the difference between M1 and M2?',

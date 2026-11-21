@@ -70,7 +70,7 @@ export function StudentLoanPaymentCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         ...result.summaryParagraphs,
         currencyNote,
       ].join('\n')

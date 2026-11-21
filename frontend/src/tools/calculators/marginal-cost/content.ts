@@ -27,7 +27,7 @@ export const MARGINAL_COST_FAQS: readonly FAQItem[] = [
   {
     question: 'What is marginal cost?',
     answer:
-      'Marginal cost is the additional total cost associated with a change in output — here estimated as ΔTC ÷ ΔQ over a finite production interval.',
+      'Marginal cost is the additional total cost associated with a change in output; here estimated as ΔTC ÷ ΔQ over a finite production interval.',
   },
   {
     question: 'What is the marginal cost formula?',
@@ -66,12 +66,12 @@ export const MARGINAL_COST_FAQS: readonly FAQItem[] = [
   {
     question: 'Can marginal cost be negative?',
     answer:
-      'Yes mathematically when cost and quantity change in opposite directions. Interpret carefully — it is not automatic proof of profit.',
+      'Yes mathematically when cost and quantity change in opposite directions. Interpret carefully; it is not automatic proof of profit.',
   },
   {
     question: 'Can marginal cost be zero?',
     answer:
-      'Yes when ΔTC = 0 and ΔQ ≠ 0 — total cost did not change over the measured output change.',
+      'Yes when ΔTC = 0 and ΔQ ≠ 0; total cost did not change over the measured output change.',
   },
   {
     question: 'What happens if the change in quantity is zero?',
@@ -81,7 +81,7 @@ export const MARGINAL_COST_FAQS: readonly FAQItem[] = [
   {
     question: 'Is marginal cost measured per unit?',
     answer:
-      'Yes — it is a monetary amount per unit of the selected output measure (unit, kg, liter, etc.).',
+      'Yes: it is a monetary amount per unit of the selected output measure (unit, kg, liter, etc.).',
   },
   {
     question: 'How do I calculate marginal cost from total cost?',
@@ -101,7 +101,7 @@ export const MARGINAL_COST_FAQS: readonly FAQItem[] = [
   {
     question: 'Can marginal cost increase as production rises?',
     answer:
-      'Yes — overtime, bottlenecks, scarce inputs, and capacity limits can raise incremental cost.',
+      'Yes: overtime, bottlenecks, scarce inputs, and capacity limits can raise incremental cost.',
   },
   {
     question: 'Why does marginal cost decrease?',
@@ -111,7 +111,7 @@ export const MARGINAL_COST_FAQS: readonly FAQItem[] = [
   {
     question: 'What are economies of scale?',
     answer:
-      'Falling average cost as scale expands over a relevant range — not the same as declining marginal cost alone.',
+      'Falling average cost as scale expands over a relevant range; not the same as declining marginal cost alone.',
   },
   {
     question: 'What are diseconomies of scale?',
@@ -131,7 +131,7 @@ export const MARGINAL_COST_FAQS: readonly FAQItem[] = [
   {
     question: 'How can businesses reduce marginal cost?',
     answer:
-      'Improve processes, cut waste, train workers, automate where justified, and optimize supply chains — while monitoring quality.',
+      'Improve processes, cut waste, train workers, automate where justified, and optimize supply chains while monitoring quality.',
   },
   {
     question: 'What is marginal cost in microeconomics?',
@@ -172,6 +172,6 @@ export const MARGINAL_COST_FAQS: readonly FAQItem[] = [
     question:
       'What is marginal cost if total cost decreases by $1,000 while production increases by 100 units?',
     answer:
-      'MC = −1,000 ÷ 100 = −$10 per unit — total cost fell as output rose over that interval.',
+      'MC = −1,000 ÷ 100 = −$10 per unit; total cost fell as output rose over that interval.',
   },
 ];

@@ -24,7 +24,7 @@ export const NICKELS_TO_DOLLARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'nickels-to-dollars',
     title: 'Nickels to Dollars',
     paragraphs: [
-      'A U.S. nickel is a five-cent coin — one-twentieth of a dollar. The name comes from the copper-nickel alloy used in the coin for much of its history. Each nickel has a face value of 5¢, written $0.05.',
+      'A U.S. nickel is a five-cent coin; one-twentieth of a dollar. The name comes from the copper-nickel alloy used in the coin for much of its history. Each nickel has a face value of 5¢, written $0.05.',
       'Because 100 cents make one dollar and each nickel is worth five cents, twenty nickels equal exactly one dollar. Converting nickels to dollars helps when counting change, managing coin collections, teaching classroom money math, cash drawers, and simple budgeting.',
       'This calculator converts between a count of nickels and U.S. dollars. It does not convert foreign currencies or other coin denominations.',
     ],
@@ -35,7 +35,7 @@ export const NICKELS_TO_DOLLARS_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: '2,000 Nickels to Dollars',
     paragraphs: [
       'Suppose you have 2,000 nickels. Each nickel is worth $0.05. Multiply the count by the face value: 2,000 × 0.05 = 100. Therefore, 2,000 nickels equal $100.00.',
-      'Another check: 200 nickels × $0.05 = $10.00. The same rule scales to larger counts — for example, one billion nickels equal $50,000,000.',
+      'Another check: 200 nickels × $0.05 = $10.00. The same rule scales to larger counts, for example, one billion nickels equal $50,000,000.',
     ],
     formula: '2,000 × $0.05 = $100.00',
   },

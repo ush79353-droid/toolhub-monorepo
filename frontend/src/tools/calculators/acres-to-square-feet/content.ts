@@ -85,7 +85,7 @@ export const ACRES_TO_SQUARE_FEET_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Use the Acres to Square Feet Converter',
     paragraphs: [
       '1. Open the Acres to Square Feet Converter.',
-      '2. Enter the area in acres — square feet update instantly.',
+      '2. Enter the area in acres. square feet update instantly.',
       '3. Or enter square feet to calculate acres.',
       '4. Change either value for another conversion; no Calculate button is required.',
       '5. Use Share Result or Copy Result when you need the pair elsewhere.',

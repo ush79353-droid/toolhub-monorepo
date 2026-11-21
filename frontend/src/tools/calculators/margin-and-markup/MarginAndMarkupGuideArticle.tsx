@@ -25,7 +25,7 @@ export function MarginAndMarkupGuideArticle() {
       </h2>
       <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>Enter cost (optional currency). Leave blank only if you want margin ↔ markup sync.</li>
-        <li>Edit margin, markup, revenue, or profit — the other fields update from that driver.</li>
+        <li>Edit margin, markup, revenue, or profit: the other fields update from that driver.</li>
         <li>
           Optionally check “Compare two markups and margins” for a second shared-cost scenario
           (for example 35% vs 40% margin).

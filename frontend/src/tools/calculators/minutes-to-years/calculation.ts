@@ -167,7 +167,7 @@ export function calculateMinutesToYears(input: MinutesToYearsInput): MinutesToYe
 
 export function shareResultText(result: MinutesToYearsResult): string {
   return [
-    'Minutes to Years Conversion — Omega Calculators',
+    'Minutes to Years Conversion | Omega Calculators',
     '',
     `${formatDuration(result.minutes)} minutes = ${formatDuration(result.years)} average year(s)`,
     '',

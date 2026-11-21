@@ -64,7 +64,7 @@ export function ComparativeAdvantageForm({
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Enter output per labor unit for each good (same resource assumption per
-        country). Comparative advantage uses opportunity cost — not who produces
+ country). Comparative advantage uses opportunity cost; not who produces
         more. Absolute advantage is shown separately.
       </p>
       <button
@@ -97,7 +97,7 @@ export function ComparativeAdvantageForm({
           <div className="space-y-3 p-3 sm:p-4">
             <div>
               <label htmlFor="ca-xa" className={labelClass}>
-                Output per labor unit — Good A
+ Output per labor unit; Good A
                 <InfoTooltip
                   label="Good A productivity X"
                   text="Maximum Good A Country X can produce per unit of labor under the linear PPF assumption."
@@ -123,7 +123,7 @@ export function ComparativeAdvantageForm({
             </div>
             <div>
               <label htmlFor="ca-xb" className={labelClass}>
-                Output per labor unit — Good B
+ Output per labor unit; Good B
               </label>
               <FieldShell error={errors.countryXGoodB}>
                 <input
@@ -145,7 +145,7 @@ export function ComparativeAdvantageForm({
             </div>
             <div>
               <label htmlFor="ca-cxa" className={labelClass}>
-                Comparative advantage — Good A
+ Comparative advantage; Good A
               </label>
               <FieldShell muted>
                 <input
@@ -161,7 +161,7 @@ export function ComparativeAdvantageForm({
             </div>
             <div>
               <label htmlFor="ca-cxb" className={labelClass}>
-                Comparative advantage — Good B
+ Comparative advantage; Good B
               </label>
               <FieldShell muted>
                 <input
@@ -195,7 +195,7 @@ export function ComparativeAdvantageForm({
           <div className="space-y-3 p-3 sm:p-4">
             <div>
               <label htmlFor="ca-ya" className={labelClass}>
-                Output per labor unit — Good A
+ Output per labor unit; Good A
               </label>
               <FieldShell error={errors.countryYGoodA}>
                 <input
@@ -217,7 +217,7 @@ export function ComparativeAdvantageForm({
             </div>
             <div>
               <label htmlFor="ca-yb" className={labelClass}>
-                Output per labor unit — Good B
+ Output per labor unit; Good B
               </label>
               <FieldShell error={errors.countryYGoodB}>
                 <input
@@ -239,7 +239,7 @@ export function ComparativeAdvantageForm({
             </div>
             <div>
               <label htmlFor="ca-cya" className={labelClass}>
-                Comparative advantage — Good A
+ Comparative advantage; Good A
               </label>
               <FieldShell muted>
                 <input
@@ -255,7 +255,7 @@ export function ComparativeAdvantageForm({
             </div>
             <div>
               <label htmlFor="ca-cyb" className={labelClass}>
-                Comparative advantage — Good B
+ Comparative advantage; Good B
               </label>
               <FieldShell muted>
                 <input

@@ -15,7 +15,7 @@ export function CurrencyForwardGuideArticle() {
         A currency forward is an agreement to exchange one currency for another
         at a predetermined rate on a future date. This calculator estimates a
         theoretical forward exchange rate from the spot rate, interest rates on
-        both currencies, contract duration, and a compounding convention —
+ both currencies, contract duration, and a compounding convention; 
         using covered interest rate parity (CIP). Businesses and investors use
         forwards to hedge FX exposure or to price interest-rate differentials.
         Results are parity-based estimates, not executable dealer quotations.
@@ -191,7 +191,7 @@ export function CurrencyForwardGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A forward is an obligation to exchange at F. An option is a right (not
-        obligation) purchased for a premium — it can protect downside while
+ obligation) purchased for a premium; it can protect downside while
         allowing participation in favorable moves, at the cost of the premium.
       </p>
 
@@ -227,7 +227,7 @@ export function CurrencyForwardGuideArticle() {
       <h3 className="mt-4 text-base font-semibold text-accent">Currency Arbitrage</h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Covered interest arbitrage seeks risk-free profit from CIP gaps after
-        funding, access, and transaction-cost constraints — often unavailable
+ funding, access, and transaction-cost constraints; often unavailable
         once frictions are included.
       </p>
 
@@ -263,11 +263,11 @@ export function CurrencyForwardGuideArticle() {
         Limitations of the Currency Forward Calculator
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <li>Theoretical CIP pricing — may not match dealer quotes</li>
+        <li>Theoretical CIP pricing; may not match dealer quotes</li>
         <li>Assumes entered rates suit the chosen maturity</li>
         <li>No automatic spreads, basis, or transaction costs</li>
         <li>Does not predict future spot exchange rates</li>
-        <li>Manual inputs only — no fabricated live FX or policy rates</li>
+        <li>Manual inputs only; no fabricated live FX or policy rates</li>
       </ul>
 
       <h2

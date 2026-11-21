@@ -6,7 +6,7 @@ export function NetToGrossGuideArticle() {
         <p className="text-sm leading-relaxed text-muted-foreground">
           This tool relates a net (before-tax) amount, a gross (after-tax) amount, the tax
           amount, and two equivalent tax-rate views: percent of net and percent of gross.
-          It is a bidirectional money-and-rate converter — not a jurisdiction-specific
+ It is a bidirectional money-and-rate converter; not a jurisdiction-specific
           income-tax or sales-tax schedule.
         </p>
       </section>

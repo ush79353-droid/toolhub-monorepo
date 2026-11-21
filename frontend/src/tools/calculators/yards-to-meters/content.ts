@@ -38,8 +38,8 @@ export const YARDS_TO_METERS_GUIDE_SECTIONS: readonly GuideSection[] = [
     paragraphs: [
       `The international yard is defined exactly as ${METERS_PER_YARD} meters. One meter is therefore about ${formatLength(metersToYards(1))} yards.`,
       `To convert yards to meters, multiply by ${METERS_PER_YARD}. To convert meters to yards, divide by ${METERS_PER_YARD}.`,
-      `Example — 10 yards: 10 × ${METERS_PER_YARD} = ${formatLength(yardsToMeters(10))} m.`,
-      `Example — 50 meters: 50 ÷ ${METERS_PER_YARD} ≈ ${formatLength(metersToYards(50))} yd.`,
+      `Example; 10 yards: 10 × ${METERS_PER_YARD} = ${formatLength(yardsToMeters(10))} m.`,
+      `Example; 50 meters: 50 ÷ ${METERS_PER_YARD} ≈ ${formatLength(metersToYards(50))} yd.`,
     ],
     formula: `1 yd = ${METERS_PER_YARD} m\n1 m ≈ ${formatLength(metersToYards(1))} yd\nm = yd × ${METERS_PER_YARD}\nyd = m ÷ ${METERS_PER_YARD}`,
   },
@@ -47,17 +47,17 @@ export const YARDS_TO_METERS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'examples',
     title: 'Yards to Meters Conversion Examples',
     paragraphs: [
-      `Example 1 — Convert 10 yards to meters: 10 × ${METERS_PER_YARD} = ${formatLength(yardsToMeters(10))}. Result: 10 yards = ${formatLength(yardsToMeters(10))} meters.`,
-      `Example 2 — Convert 25 yards to meters: 25 × ${METERS_PER_YARD} = ${formatLength(yardsToMeters(25))}. Result: 25 yards = ${formatLength(yardsToMeters(25))} meters.`,
-      `Example 3 — Convert 120 yards to meters: 120 × ${METERS_PER_YARD} = ${formatLength(yardsToMeters(120))}. Result: 120 yards = ${formatLength(yardsToMeters(120))} meters.`,
-      `Example 4 — Convert 50 meters to yards: 50 ÷ ${METERS_PER_YARD} ≈ ${formatLength(metersToYards(50))}. Result: 50 meters ≈ ${formatLength(metersToYards(50))} yards.`,
+      `Example 1: Convert 10 yards to meters: 10 × ${METERS_PER_YARD} = ${formatLength(yardsToMeters(10))}. Result: 10 yards = ${formatLength(yardsToMeters(10))} meters.`,
+      `Example 2: Convert 25 yards to meters: 25 × ${METERS_PER_YARD} = ${formatLength(yardsToMeters(25))}. Result: 25 yards = ${formatLength(yardsToMeters(25))} meters.`,
+      `Example 3: Convert 120 yards to meters: 120 × ${METERS_PER_YARD} = ${formatLength(yardsToMeters(120))}. Result: 120 yards = ${formatLength(yardsToMeters(120))} meters.`,
+      `Example 4: Convert 50 meters to yards: 50 ÷ ${METERS_PER_YARD} ≈ ${formatLength(metersToYards(50))}. Result: 50 meters ≈ ${formatLength(metersToYards(50))} yards.`,
     ],
   },
   {
     id: 'conversion-table',
     title: 'Yards to Meters Reference Table',
     paragraphs: [
-      `Values below are generated with the exact factor 1 yd = ${METERS_PER_YARD} m — the same engine used by the calculator.`,
+      `Values below are generated with the exact factor 1 yd = ${METERS_PER_YARD} m: the same engine used by the calculator.`,
     ],
     tableHeaders: ['Yards (yd)', 'Meters (m)'],
     table: TABLE_YARDS.map((yd) => [formatLength(yd), formatLength(yardsToMeters(yd))]),

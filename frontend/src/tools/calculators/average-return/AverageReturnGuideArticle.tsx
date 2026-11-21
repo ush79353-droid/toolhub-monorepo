@@ -13,7 +13,7 @@ export function AverageReturnGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Average return summarizes how an investment performed over time. Holding periods, cash-flow
-        timing, and the chosen methodology all matter — different averages can describe the same
+ timing, and the chosen methodology all matter; different averages can describe the same
         history differently. Gains and losses must be interpreted with risk, fees, taxes, and
         inflation in mind.
       </p>
@@ -107,7 +107,7 @@ export function AverageReturnGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Money-weighted return embeds starting value, ending value, and the size/timing of deposits
-        and withdrawals. XIRR is the usual dated-cash-flow implementation — the method used in
+ and withdrawals. XIRR is the usual dated-cash-flow implementation: the method used in
         Section One of this tool.
       </p>
 

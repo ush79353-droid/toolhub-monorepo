@@ -16,7 +16,7 @@ export function CarryTradeGuideArticle() {
         carry trade by combining the interest-rate differential with exchange-rate
         changes over the holding period. Investors use carry strategies to earn
         yield gaps between currencies, but foreign-exchange moves can dominate the
-        outcome — so both must be evaluated together. Results are estimates under
+ outcome, so both must be evaluated together. Results are estimates under
         manual inputs, not guaranteed trading profits.
       </p>
 
@@ -97,7 +97,7 @@ export function CarryTradeGuideArticle() {
         closing rates. Under this convention d% = (S₀/S₁ − 1)×100. A falling S₁
         (investment currency stronger in these units) raises d and tends to help
         profit; a rising S₁ hurts. Direct vs indirect quotes reverse formulas if
-        the convention is flipped — never leave direction ambiguous.
+ the convention is flipped; never leave direction ambiguous.
       </p>
 
       <h2
@@ -134,7 +134,7 @@ export function CarryTradeGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A positive interest differential does not guarantee profit. If the
         investment currency depreciates enough, S₀/S₁ falls and can erase the
-        interest advantage — the calculator will show a loss even when Rl &gt; Rb.
+ interest advantage: the calculator will show a loss even when Rl &gt; Rb.
       </p>
 
       <h2
@@ -211,9 +211,9 @@ export function CarryTradeGuideArticle() {
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>No commissions, spreads, slippage, or taxes</li>
         <li>No broker financing markups or margin requirements</li>
-        <li>Single fixed rates — no daily resets or path-dependent FX</li>
+        <li>Single fixed rates; no daily resets or path-dependent FX</li>
         <li>No forward premiums, hedges, or country settlement rules</li>
-        <li>Manual exchange rates only — not live market feeds</li>
+        <li>Manual exchange rates only; not live market feeds</li>
       </ul>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Outputs are estimates for education and scenario analysis, not guaranteed

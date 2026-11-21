@@ -71,7 +71,7 @@ export function EbitdaForm({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
           Amounts use one display currency (denomination). Switching currency
-          changes the symbol only — it does not convert values. EBITDA =
+ changes the symbol only; it does not convert values. EBITDA =
           Operating profit + Amortization + Depreciation (add back D&amp;A
           already deducted in operating profit).
         </p>

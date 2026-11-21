@@ -128,7 +128,7 @@ export function SquareMetersToSquareFeetForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Exact international foot: 1 ft² = 0.09290304 m², so 1 m² ≈ 10.7639104167 ft². Enter either
-        field — the other updates instantly. Expand Other Conversion Options for more units. Area
+ field: the other updates instantly. Expand Other Conversion Options for more units. Area
         cannot be negative.
       </div>
 

@@ -18,7 +18,7 @@ export function CheckDigitGuideArticle() {
         The tool returns the check digit, the completed GTIN, the weighted sum,
         and a step-by-step breakdown. It supports GTIN-8 / EAN-8, GTIN-12 /
         UPC-A, GTIN-13 / EAN-13, and GTIN-14. Leading zeros are preserved as
-        characters — identifiers are never converted to floating-point numbers.
+ characters; identifiers are never converted to floating-point numbers.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A check digit helps systems catch many data-entry and scanning mistakes.
@@ -55,7 +55,7 @@ export function CheckDigitGuideArticle() {
         often encoded as EAN-13), and GTIN-14 (14 digits, often used for
         packaging and logistics trade items). In each case the rightmost digit is
         the Modulo 10 check digit. Do not confuse the numeric GTIN with barcode
-        symbology — the same GTIN can be drawn with different bar patterns.
+ symbology: the same GTIN can be drawn with different bar patterns.
       </p>
 
       <h2
@@ -68,7 +68,7 @@ export function CheckDigitGuideArticle() {
         GS1 structures typically combine an indicator digit (for some formats), a
         company prefix, an item reference, and a check digit. Exact field widths
         depend on the allocated prefix. The first digits of a GTIN are not a
-        reliable “country of manufacture” map — prefixes identify GS1 member
+ reliable “country of manufacture” map; prefixes identify GS1 member
         organizations and company assignments, not necessarily where a product
         was made. Always consult current GS1 documentation for allocation rules.
       </p>
@@ -88,7 +88,7 @@ export function CheckDigitGuideArticle() {
         <p>CheckDigit = (10 − (S mod 10)) mod 10</p>
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        If S is divisible by 10, the check digit is 0 — never 10. Verification
+ If S is divisible by 10, the check digit is 0; never 10. Verification
         recalculates the expected digit from the payload and compares it to the
         supplied final digit.
       </p>

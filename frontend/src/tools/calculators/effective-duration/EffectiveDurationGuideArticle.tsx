@@ -15,7 +15,7 @@ export function EffectiveDurationGuideArticle() {
         Use this Effective Duration Calculator to estimate how sensitive a
         bond&apos;s price is to parallel changes in market yields. Standard Bond
         mode prices fixed contractual coupons and principal at base, up, and down
-        yields — a useful central-difference duration estimate for option-free
+ yields: a useful central-difference duration estimate for option-free
         cash flows. Scenario-Based mode accepts externally modeled prices so you
         can compute true effective duration when embedded options change expected
         cash flows. Currency labels are denomination only.
@@ -31,8 +31,8 @@ export function EffectiveDurationGuideArticle() {
         Duration measures bond price sensitivity to interest rates. Effective
         duration specifically uses scenario repricing: compare prices when yields
         fall and rise by a chosen differential. Results are expressed in years by
-        convention. When expected cash flows can change with yields — calls,
-        puts, prepayments — effective duration requires valuation models that
+ convention. When expected cash flows can change with yields; calls,
+ puts, prepayments; effective duration requires valuation models that
         allow those cash-flow changes. A fixed coupon schedule alone does not
         capture option exercise.
       </p>
@@ -219,7 +219,7 @@ export function EffectiveDurationGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Portfolio managers use it for interest-rate risk, fixed-income
-        allocation, risk budgeting, hedging, and asset-liability management —
+ allocation, risk budgeting, hedging, and asset-liability management; 
         especially when comparing securities whose cash flows may respond to
         rates differently.
       </p>

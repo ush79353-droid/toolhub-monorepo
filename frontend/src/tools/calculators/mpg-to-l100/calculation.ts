@@ -68,7 +68,7 @@ export function shareResultText(
 ): string {
   const a = allFromKmPerLiter(kmPerLiter);
   return [
-    'MPG to L/100 km Converter — Omega Calculators',
+    'MPG to L/100 km Converter | Omega Calculators',
     '',
     'Input:',
     `${formatFuel(a[sourceUnit])} ${FUEL_UNIT_SYMBOLS[sourceUnit]}`,

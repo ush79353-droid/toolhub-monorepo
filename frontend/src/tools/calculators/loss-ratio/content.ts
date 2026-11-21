@@ -15,7 +15,7 @@ export const LOSS_RATIO_FAQS: readonly FAQItem[] = [
     question:
       'Can the loss ratio be used to analyze companies other than insurance companies?',
     answer:
-      'The insurance loss ratio is specifically associated with insurance operations — claim-related costs relative to earned premiums. Other industries may track losses, cost of goods, or operating margins with different definitions. Applying an insurance loss-ratio formula outside insurance usually produces a number that is not comparable to insurer benchmarks.',
+      'The insurance loss ratio is specifically associated with insurance operations; claim-related costs relative to earned premiums. Other industries may track losses, cost of goods, or operating margins with different definitions. Applying an insurance loss-ratio formula outside insurance usually produces a number that is not comparable to insurer benchmarks.',
   },
   {
     question: 'What is an acceptable loss ratio?',
@@ -35,12 +35,12 @@ export const LOSS_RATIO_FAQS: readonly FAQItem[] = [
   {
     question: 'What is the formula for loss ratio?',
     answer:
-      'Loss Ratio (%) = ((Insurance Claims Paid + Loss Adjustment Expenses) / Total Premiums Earned) × 100. This tool uses a paid-claims basis matching the reference interface — not an incurred-loss / reserve-adjusted definition.',
+      'Loss Ratio (%) = ((Insurance Claims Paid + Loss Adjustment Expenses) / Total Premiums Earned) × 100. This tool uses a paid-claims basis matching the reference interface; not an incurred-loss / reserve-adjusted definition.',
   },
   {
     question: 'What is a 70% loss ratio?',
     answer:
-      'A 70% loss ratio means claim payments and loss adjustment expenses equal 70% of earned premiums for the selected period. The remaining 30% of premiums is not automatically profit — underwriting expenses, commissions, taxes, and other items may still apply.',
+      'A 70% loss ratio means claim payments and loss adjustment expenses equal 70% of earned premiums for the selected period. The remaining 30% of premiums is not automatically profit; underwriting expenses, commissions, taxes, and other items may still apply.',
   },
   {
     question: 'Can loss ratio exceed 100%?',

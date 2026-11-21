@@ -75,7 +75,7 @@ export function calculateCentToSquareMeter(
 
 export function shareResultText(result: CentToSquareMeterResult): string {
   return [
-    'Cent to Square Meter Converter — Omega Calculators',
+    'Cent to Square Meter Converter | Omega Calculators',
     '',
     `${formatArea(result.cent)} cents = ${formatArea(result.m2)} m²`,
     `${formatArea(result.cent)} cents = ${formatArea(result.ft2)} ft²`,

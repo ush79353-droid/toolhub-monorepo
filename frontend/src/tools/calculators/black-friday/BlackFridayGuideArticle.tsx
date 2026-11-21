@@ -20,7 +20,7 @@ export function BlackFridayGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Use this Black Friday Calculator to turn an original price and a discount
         into a clear sale price, savings amount, and optional sales-tax total.
-        Comparing final prices matters more than headline percentages — two
+ Comparing final prices matters more than headline percentages; two
         stores can advertise the same “% off” with different list prices, shipping,
         and tax. Enter the original price, choose a percentage or fixed discount,
         optionally stack a second percentage discount, and toggle sales tax on
@@ -52,7 +52,7 @@ export function BlackFridayGuideArticle() {
         <strong>{bf2026.isoDate}</strong> (November {bf2026.day}, 2026). This
         year ({year}): <strong>{thisYear.isoDate}</strong>. Next year:{' '}
         <strong>{nextYear.isoDate}</strong>. Dates are computed from the calendar
-        rule — not hard-coded forever as 2026.
+ rule; not hard-coded forever as 2026.
       </p>
 
       <h2
@@ -65,7 +65,7 @@ export function BlackFridayGuideArticle() {
         Common promotions include percentage discounts, fixed-amount coupons,
         limited-time offers, doorbusters, bundles, free shipping, loyalty
         rewards, cashback, and BOGO. Eligibility, stacking rules, and exclusions
-        vary by retailer — always read the offer terms.
+ vary by retailer; always read the offer terms.
       </p>
 
       <h2
@@ -89,7 +89,7 @@ export function BlackFridayGuideArticle() {
         How to Calculate the Final Sale Price
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Start with original price, subtract the discount, then — if tax applies —
+ Start with original price, subtract the discount, then (if tax applies) 
         add tax on the discounted price: Final = Discounted × (1 + TaxRate/100).
         Example: $130 after discount with 8% tax → tax $10.40 → final $140.40.
         Local exemptions and tax-inclusive pricing can differ.
@@ -125,7 +125,7 @@ export function BlackFridayGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Cyber Monday traditionally highlights online deals on the Monday after
-        Thanksgiving. Today both events blur into multi-day online promotions —
+ Thanksgiving. Today both events blur into multi-day online promotions; 
         use the same discount math for either.
       </p>
 

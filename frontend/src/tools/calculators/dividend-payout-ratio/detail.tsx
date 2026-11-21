@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Find company and per-share dividend payout ratios from total dividends, net income, DPS, and diluted EPS — with independent FX on each money field.',
+    'Find company and per-share dividend payout ratios from total dividends, net income, DPS, and diluted EPS, with independent FX on each money field.',
   asideAriaLabel: 'Interactive Dividend Payout Ratio Calculator',
   tocItems: DIVIDEND_PAYOUT_RATIO_TOC_ITEMS,
   GuideArticle: DividendPayoutRatioGuideArticle,

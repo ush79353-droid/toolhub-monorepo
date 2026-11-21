@@ -64,13 +64,13 @@ export function HealsStimulusForm({
     >
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-[13px] leading-relaxed text-accent sm:text-sm">
         <p className="font-semibold text-amber-950">
-          Historical proposal only — not a current benefit
+ Historical proposal only; not a current benefit
         </p>
         <p className="mt-1.5 text-foreground/85">
           This calculator is based on the GOP Coronavirus Bill, which is a second round of
           stimulus checks proposed by congressional Republicans on Monday, July 27th 2020. The
           HEALS Act was never enacted as proposed. Estimates below are historical and
-          hypothetical — you cannot claim these proposed payments today.
+ hypothetical; you cannot claim these proposed payments today.
         </p>
         <p className="mt-2 text-foreground/85">
           To qualify for a payout under the proposal, you had to be a U.S. resident with a Social
@@ -89,7 +89,7 @@ export function HealsStimulusForm({
             <span>Have you filed 2019 taxes?</span>
             <InfoTooltip
               label="Have you filed 2019 taxes?"
-              text="Under the proposal, eligibility generally required filing 2019 (or 2018) tax paperwork, even if no tax was owed. Social Security, SSI, RRB, or VA benefit recipients could also qualify without a return — those paths are not modeled here."
+              text="Under the proposal, eligibility generally required filing 2019 (or 2018) tax paperwork, even if no tax was owed. Social Security, SSI, RRB, or VA benefit recipients could also qualify without a return; those paths are not modeled here."
             />
           </div>
           <div

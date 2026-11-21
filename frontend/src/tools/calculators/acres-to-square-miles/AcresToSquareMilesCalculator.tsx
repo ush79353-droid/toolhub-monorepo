@@ -20,7 +20,7 @@ import { validateAcresToSquareMiles } from './validation';
 
 function summaryText(result: AcresToSquareMilesResult): string {
   return [
-    'Acres to Square Miles Calculator — Omega Calculators',
+    'Acres to Square Miles Calculator | Omega Calculators',
     `${formatArea(result.acres)} acres = ${formatArea(result.squareMiles)} square miles`,
     result.explanation,
     '1 square mile = 640 acres',

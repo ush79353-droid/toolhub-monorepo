@@ -50,9 +50,9 @@ export function interpretNps(nps: number): string {
     return 'Promoters and detractors are equal as a share of total responses (NPS = 0). Passives are included in the denominator only.';
   }
   if (nps > 0) {
-    return `More promoters than detractors — NPS is ${formatNps(nps)}. A positive score is not automatically “excellent”; compare against your industry and historical baselines.`;
+    return `More promoters than detractors; NPS is ${formatNps(nps)}. A positive score is not automatically “excellent”; compare against your industry and historical baselines.`;
   }
-  return `More detractors than promoters — NPS is ${formatNps(nps)}. A negative score is not automatically “poor” without industry and sample context.`;
+  return `More detractors than promoters; NPS is ${formatNps(nps)}. A negative score is not automatically “poor” without industry and sample context.`;
 }
 
 /**
@@ -159,7 +159,7 @@ export function shareResultText(
     .join('\n');
 
   return [
-    'NPS Calculator — Omega Calculators',
+    'NPS Calculator | Omega Calculators',
     '',
     scores,
     '',

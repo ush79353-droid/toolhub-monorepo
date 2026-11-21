@@ -90,7 +90,7 @@ export function ValueAtRiskCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `VaR (${result.tailProbabilityPercent}%): ${result.formattedVar}`,
         `Z-score: ${result.zScore.toFixed(5)}`,
         `Horizon: ${result.timeframeDays} day(s)`,

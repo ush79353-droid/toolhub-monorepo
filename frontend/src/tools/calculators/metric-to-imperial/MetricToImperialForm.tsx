@@ -68,7 +68,7 @@ export function MetricToImperialForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Convert between metric and imperial / US customary units within one category. Edit either
-        field — the other updates instantly. Temperature uses affine formulas; other quantities use
+ field: the other updates instantly. Temperature uses affine formulas; other quantities use
         exact scale factors. US and UK volume units are distinct.
       </div>
 

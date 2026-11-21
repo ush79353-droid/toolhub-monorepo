@@ -47,7 +47,7 @@ export function LeetSpeakForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Classic leet maps A B E G I L O S T Z to 4 8 3 6 1 1 0 5 7 2. Reverse decoding treats{' '}
-        <span className="font-mono">1</span> as <span className="font-mono">I</span> (not L) — results
+ <span className="font-mono">1</span> as <span className="font-mono">I</span> (not L); results
         are approximate, not encryption.
       </div>
 

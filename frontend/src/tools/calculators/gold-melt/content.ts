@@ -56,6 +56,6 @@ export const GOLD_MELT_FAQS: readonly FAQItem[] = [
   {
     question: 'Can gold jewelry be worth more than its melt value?',
     answer:
-      'Yes — craftsmanship, brand, design, antique status, and gemstones can push resale above scrap/melt estimates. Melt value is a floor estimate for the metal content only.',
+      'Yes: craftsmanship, brand, design, antique status, and gemstones can push resale above scrap/melt estimates. Melt value is a floor estimate for the metal content only.',
   },
 ];

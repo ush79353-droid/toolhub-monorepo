@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Convert monthly income to an equivalent hourly rate from hours per week — or reverse from hourly — with independent FX on money fields.',
+    'Convert monthly income to an equivalent hourly rate from hours per week (or reverse from hourly) with independent FX on money fields.',
   asideAriaLabel: 'Interactive Monthly Income Hourly Calculator',
   tocItems: MONTHLY_INCOME_HOURLY_TOC_ITEMS,
   GuideArticle: MonthlyIncomeHourlyGuideArticle,

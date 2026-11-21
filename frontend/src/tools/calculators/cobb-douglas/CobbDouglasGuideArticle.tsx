@@ -15,7 +15,7 @@ export function CobbDouglasGuideArticle() {
         The Cobb-Douglas production function is a standard economics model that
         links total output to labor, capital, and a productivity factor. It is
         widely used in microeconomics and macroeconomics for teaching, planning
-        illustrations, and empirical work. It is a simplification — not a complete
+ illustrations, and empirical work. It is a simplification; not a complete
         description of every real production process.
       </p>
 
@@ -29,12 +29,12 @@ export function CobbDouglasGuideArticle() {
         <p>Y = A × L^α × K^β</p>
       </div>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        <li>Y — total production (output units)</li>
-        <li>A — total factor productivity</li>
-        <li>L — labor input</li>
-        <li>K — capital input</li>
-        <li>α — output elasticity of labor</li>
-        <li>β — output elasticity of capital</li>
+        <li>Y; total production (output units)</li>
+        <li>A; total factor productivity</li>
+        <li>L; labor input</li>
+        <li>K; capital input</li>
+        <li>α; output elasticity of labor</li>
+        <li>β; output elasticity of capital</li>
       </ul>
 
       <h2
@@ -49,7 +49,7 @@ export function CobbDouglasGuideArticle() {
         <p>Y = 2 × 15.8489 × 4.7818 ≈ 151.57</p>
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Units follow the model&apos;s calibrated A — physical or index units, not
+ Units follow the model&apos;s calibrated A; physical or index units, not
         currency by default.
       </p>
 
@@ -62,7 +62,7 @@ export function CobbDouglasGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         With positive A, L, K, α, and β, output rises in each input. The function
         is homogeneous of degree α+β. When 0&lt;α&lt;1, labor shows diminishing
-        marginal returns — distinct from decreasing returns to scale (α+β&lt;1).
+ marginal returns; distinct from decreasing returns to scale (α+β&lt;1).
         Labor and capital are substitutes; the standard two-input form has
         elasticity of substitution equal to 1.
       </p>
@@ -143,7 +143,7 @@ export function CobbDouglasGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         A small manufacturer measures L as production-worker hours and K as
         machine-hour capacity. With A = 2, L = 100, K = 50, α = 0.6, β = 0.4,
-        estimated output is about 151.57 units — illustrating how both workforce
+ estimated output is about 151.57 units; illustrating how both workforce
         and machinery contribute under constant returns (α+β = 1).
       </p>
 

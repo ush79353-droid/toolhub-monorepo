@@ -162,7 +162,7 @@ export function MileConversionForm({
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3.5 py-3 text-xs leading-relaxed text-sky-950/90">
         Input the number of statute miles (1 mi = {METERS_PER_MILE} m = {KM_PER_MILE} km exactly).
-        You can also select the nautical mile under Others — it is not the same as a statute mile.
+ You can also select the nautical mile under Others; it is not the same as a statute mile.
         Enter any field; all stay linked through meters.
       </div>
 

@@ -27,7 +27,7 @@ export const HEX_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'what-is-hex',
     title: 'What Is the Hexadecimal System?',
     paragraphs: [
-      'Hexadecimal is a base-16 number system. It uses sixteen symbols: digits 0–9 and letters A–F (for values 10–15). Binary is base 2, decimal is base 10, and hexadecimal is a compact bridge between them because 16 = 2⁴ — each hex digit maps exactly to four binary bits.',
+      'Hexadecimal is a base-16 number system. It uses sixteen symbols: digits 0–9 and letters A–F (for values 10–15). Binary is base 2, decimal is base 10, and hexadecimal is a compact bridge between them because 16 = 2⁴; each hex digit maps exactly to four binary bits.',
       'Programmers use hexadecimal for memory addresses, machine code dumps, RGB color codes (#FF5733), bit masks, and protocol fields. It shortens long binary strings without losing exact bit meaning.',
     ],
     table: [
@@ -55,7 +55,7 @@ export const HEX_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Use the Hexadecimal Converter',
     paragraphs: [
       '1) Open Decimal to hexadecimal, enter a non-negative integer, and read the uppercase hex result. 2) Open Binary to hexadecimal, enter 0/1 digits, and read the hex grouping result. 3) Open Hexadecimal to decimal/binary, enter 0–9/A–F (case-insensitive), and read both decimal and binary. 4) Expand conversion steps for division remainders, nibble tables, or positional sums. 5) Share or clear with the action buttons.',
-      'Each section keeps its own input. Results update as soon as a value is valid. Fractional and negative values are rejected with a clear message — this tool does not invent two’s-complement or fractional hex.',
+      'Each section keeps its own input. Results update as soon as a value is valid. Fractional and negative values are rejected with a clear message; this tool does not invent two’s-complement or fractional hex.',
     ],
   },
   {

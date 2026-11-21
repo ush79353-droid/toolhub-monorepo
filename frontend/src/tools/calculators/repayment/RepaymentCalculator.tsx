@@ -98,7 +98,7 @@ export function RepaymentCalculator({
 
   const summary = shareable
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan balance: ${symbol}${input.loanBalance}`,
         `Annual interest rate: ${input.annualInterestRate}%`,
         `Compounding: ${compoundLabel}`,

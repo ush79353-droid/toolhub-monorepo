@@ -63,8 +63,8 @@ export function PagIbigHousingLoanCalculator({
   const pricing = getFixedPricingOption(input.fixedPricingOptionId);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
-        `Estimated property value: ₱${input.estimatedPropertyValue || '—'}`,
+        `${metadata.title} | Omega Calculators`,
+        `Estimated property value: ₱${input.estimatedPropertyValue || '; '}`,
         `Loanable amount: unavailable (${LOANABLE_AMOUNT_UNAVAILABLE_REASON})`,
         `Loan amount: ₱${input.loanAmount}`,
         `Repayment period: ${input.repaymentPeriodYears} years`,
@@ -72,9 +72,9 @@ export function PagIbigHousingLoanCalculator({
         `Monthly principal and interest: ₱${result.formattedMonthlyPrincipalAndInterest}`,
         `Monthly insurance premium: unavailable (${INSURANCE_UNAVAILABLE_REASON})`,
         `Total monthly amortization: unavailable (${TOTAL_AMORTIZATION_UNAVAILABLE_REASON})`,
-        `Gross annual income: ₱${input.grossAnnualIncome || '—'}`,
-        `Gross monthly income: ₱${input.grossMonthlyIncome || '—'}`,
-        'Currency: Philippine peso (₱) only — no FX selectors in the reference.',
+        `Gross annual income: ₱${input.grossAnnualIncome || '; '}`,
+        `Gross monthly income: ₱${input.grossMonthlyIncome || '; '}`,
+        'Currency: Philippine peso (₱) only; no FX selectors in the reference.',
       ].join('\n')
     : '';
 
@@ -90,7 +90,7 @@ export function PagIbigHousingLoanCalculator({
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
             Philippines Pag-IBIG housing loan sketch in ₱. Loanable amount and insurance use only
-            verified rules — unavailable until official formulas are sourced. Screenshot pricing
+ verified rules; unavailable until official formulas are sourced. Screenshot pricing
             9.750% / 30 years is an example rate for P&amp;I math, not a claimed current circular.
           </p>
         </div>

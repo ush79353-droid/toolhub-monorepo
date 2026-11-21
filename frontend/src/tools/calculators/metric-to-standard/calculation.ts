@@ -108,7 +108,7 @@ export function shareResultText(
   });
 
   return [
-    'Metric to Standard Converter — Omega Calculators',
+    'Metric to Standard Converter | Omega Calculators',
     '',
     `Conversion type: ${cat.label}`,
     '',

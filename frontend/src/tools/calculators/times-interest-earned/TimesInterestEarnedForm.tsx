@@ -265,7 +265,7 @@ export function TimesInterestEarnedForm({
             <span>Times interest earned (TIE) ratio</span>
             <InfoTooltip
               label="Times interest earned (TIE) ratio"
-              text="EBIT ÷ total interest after normalizing both amounts into the EBIT currency. Dimensionless — no currency symbol."
+              text="EBIT ÷ total interest after normalizing both amounts into the EBIT currency. Dimensionless; no currency symbol."
             />
           </label>
           <FieldShell muted>

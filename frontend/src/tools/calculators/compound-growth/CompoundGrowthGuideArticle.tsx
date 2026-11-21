@@ -38,7 +38,7 @@ export function CompoundGrowthGuideArticle() {
         <p>Additional = 50 monthly at beginning of period</p>
         <p>Total additional deposits = 12,000</p>
         <p>Final balance ≈ 34,574.16; compounded growth ≈ 21,574.16</p>
-        <p>(Uses nominal period rate r/n — standard compound-interest convention.)</p>
+        <p>(Uses nominal period rate r/n; standard compound-interest convention.)</p>
       </div>
 
       <h2

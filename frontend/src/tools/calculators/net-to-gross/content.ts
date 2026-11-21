@@ -12,7 +12,7 @@ export const NET_TO_GROSS_FAQS: readonly FAQItem[] = [
   {
     question: 'How is this different from the Gross to Net Calculator?',
     answer:
-      'Gross to Net uses a single tax rate applied as a percent of gross (Tax = Gross × rate/100). This Net to Gross tool exposes two equivalent views of the same tax — percent of net (rN) and percent of gross (rG) — and synchronizes net, gross, tax, and both rates from any valid pair of inputs.',
+      'Gross to Net uses a single tax rate applied as a percent of gross (Tax = Gross × rate/100). This Net to Gross tool exposes two equivalent views of the same tax (percent of net (rN) and percent of gross (rG)) and synchronizes net, gross, tax, and both rates from any valid pair of inputs.',
   },
   {
     question: 'Are the two percentage fields two different taxes?',

@@ -59,7 +59,7 @@ export function RefinanceCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Remaining term: ${result.currentRemainingTermLabel}`,
         `Current remaining interest: $${result.formatted.currentInterest}`,
         `New payment: $${result.formatted.newPayment}`,
@@ -68,7 +68,7 @@ export function RefinanceCalculator({
         `Monthly diff: $${result.formatted.monthlyDiff}`,
         `Break-even: ${result.breakEvenLabel}`,
         `Net savings: $${result.formatted.netSavings}`,
-        'Fixed USD — no FX.',
+        'Fixed USD; no FX.',
       ].join('\n')
     : '';
 

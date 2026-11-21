@@ -64,7 +64,7 @@ export function calculateFootToCm(input: FootToCmInput): FootToCmResult {
 
 export function shareResultText(result: FootToCmResult): string {
   return [
-    'Foot to Centimeter Converter — Omega Calculators',
+    'Foot to Centimeter Converter | Omega Calculators',
     '',
     `${formatLength(result.feet)} ft = ${formatLength(result.centimeters)} cm`,
     '',

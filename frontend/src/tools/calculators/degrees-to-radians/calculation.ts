@@ -62,7 +62,7 @@ export function calculateDegreesToRadians(input: DegreesToRadiansInput): Degrees
 
 export function shareResultText(result: DegreesToRadiansResult): string {
   const lines = [
-    'Degrees to Radians Converter — Omega Calculators',
+    'Degrees to Radians Converter | Omega Calculators',
     '',
     `Degrees: ${formatAngleValue(result.degrees)}°`,
     `Radians: ${formatAngleValue(result.radians)} rad`,

@@ -29,7 +29,7 @@ export function PagIbigHousingLoanGuideArticle() {
         <p className="mt-2">M = P × r / (1 − (1 + r)^(−n))</p>
         <p className="mt-2">When r = 0: M = P / n</p>
         <p className="mt-2">
-          Total monthly amortization = M + insurance — only when insurance is verified
+ Total monthly amortization = M + insurance; only when insurance is verified
         </p>
       </div>
 

@@ -80,7 +80,7 @@ export function calculateOuncesToPounds(input: OuncesToPoundsInput): OuncesToPou
 
 export function shareResultText(result: OuncesToPoundsResult): string {
   return [
-    'Ounces to Pounds Converter — Omega Calculators',
+    'Ounces to Pounds Converter | Omega Calculators',
     '',
     `${formatMass(result.oz)} oz = ${formatMass(result.lb)} lb = ${formatMass(result.kg)} kg`,
     '',

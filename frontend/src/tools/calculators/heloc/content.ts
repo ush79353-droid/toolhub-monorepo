@@ -24,7 +24,7 @@ export const HELOC_FAQS: readonly FAQItem[] = [
   {
     question: 'Is HELOC interest tax deductible?',
     answer:
-      'Tax treatment depends on your jurisdiction, how you use the borrowed funds, and current tax rules. Interest on funds used for certain home improvements may qualify in some places, while other uses may not. This calculator does not provide tax advice — confirm deductibility with a qualified tax professional.',
+      'Tax treatment depends on your jurisdiction, how you use the borrowed funds, and current tax rules. Interest on funds used for certain home improvements may qualify in some places, while other uses may not. This calculator does not provide tax advice; confirm deductibility with a qualified tax professional.',
   },
   {
     question: 'How do I get a HELOC?',
@@ -44,7 +44,7 @@ export const HELOC_FAQS: readonly FAQItem[] = [
   {
     question: 'How are HELOC interest rates calculated?',
     answer:
-      'Variable HELOCs often use an index (such as a prime rate) plus a lender margin, subject to caps and floors. This calculator models a simplified percentage-point adjustment schedule with an optional lifetime ceiling — not a full index-and-margin contract.',
+      'Variable HELOCs often use an index (such as a prime rate) plus a lender margin, subject to caps and floors. This calculator models a simplified percentage-point adjustment schedule with an optional lifetime ceiling; not a full index-and-margin contract.',
   },
   {
     question: 'What is a HELOC draw period?',
@@ -79,7 +79,7 @@ export const HELOC_FAQS: readonly FAQItem[] = [
   {
     question: 'How much HELOC can I qualify for?',
     answer:
-      'Available credit often depends on home value, mortgage balance, CLTV limits, income, creditworthiness, and lender policy. A common illustration is Potential credit ≈ (Home value × CLTV limit) − existing mortgage debt — actual approval may be lower.',
+      'Available credit often depends on home value, mortgage balance, CLTV limits, income, creditworthiness, and lender policy. A common illustration is Potential credit ≈ (Home value × CLTV limit) − existing mortgage debt; actual approval may be lower.',
   },
   {
     question: 'Does a HELOC affect my credit score?',
@@ -114,11 +114,11 @@ export const HELOC_FAQS: readonly FAQItem[] = [
   {
     question: 'What happens if I cannot repay my HELOC?',
     answer:
-      'Missed payments can trigger late fees, collections, damage to credit, and — because the home is collateral — foreclosure risk under the credit agreement and local law.',
+      'Missed payments can trigger late fees, collections, damage to credit, and (because the home is collateral) foreclosure risk under the credit agreement and local law.',
   },
   {
     question: 'How much is the monthly payment on a 50,000 HELOC?',
     answer:
-      'At 6% during an interest-only draw period: 50,000 × 0.06 / 12 = 250 per month. Amortizing repayment payments differ — for example, about 358.22 per month for a 20-year repayment at 6% on the same balance.',
+      'At 6% during an interest-only draw period: 50,000 × 0.06 / 12 = 250 per month. Amortizing repayment payments differ, for example, about 358.22 per month for a 20-year repayment at 6% on the same balance.',
   },
 ];

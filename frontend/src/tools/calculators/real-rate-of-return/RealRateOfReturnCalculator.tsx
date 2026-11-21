@@ -48,7 +48,7 @@ export function RealRateOfReturnCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Nominal rate of return: ${input.nominalRatePercent}%`,
         `Inflation rate: ${input.inflationRatePercent}%`,
         `Real rate of return: ${result.formattedRealRate}%`,

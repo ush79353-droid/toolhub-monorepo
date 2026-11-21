@@ -105,13 +105,13 @@ export function AverageFixedCostCalculator({
   const handleShare = async () => {
     const summary = result
       ? [
-          `${metadata.title} — Omega Calculators`,
+          `${metadata.title} | Omega Calculators`,
           `Total fixed cost: ${formatCurrencyValue(result.totalFixedCost, result.currency)}`,
           `Number of units: ${result.numberOfUnits}`,
           `Average fixed cost: ${result.shareAverage} per unit`,
           currencyNote,
         ].join('\n')
-      : `${metadata.title} — Calculate average fixed cost per unit at Omega Calculators`;
+      : `${metadata.title}; Calculate average fixed cost per unit at Omega Calculators`;
 
     if (await copyTextToClipboard(summary)) {
       setCopied(true);

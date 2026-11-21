@@ -124,7 +124,7 @@ export function OptimalPriceGuideArticle() {
         How to Calculate Profit at the Initial Price
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        π₁ = (P₁ − MC) × Q₁ — contribution before fixed costs.
+ π₁ = (P₁ − MC) × Q₁; contribution before fixed costs.
       </p>
 
       <h2
@@ -166,7 +166,7 @@ export function OptimalPriceGuideArticle() {
         Understanding Elastic Demand
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        |ε| &gt; 1 — quantity moves proportionally more than price; markups tend
+ |ε| &gt; 1; quantity moves proportionally more than price; markups tend
         to be smaller.
       </p>
 
@@ -177,7 +177,7 @@ export function OptimalPriceGuideArticle() {
         Understanding Inelastic Demand
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        0 &lt; |ε| &lt; 1 — this unrestricted constant-elasticity model has no
+ 0 &lt; |ε| &lt; 1; this unrestricted constant-elasticity model has no
         finite positive interior optimum with positive MC.
       </p>
 
@@ -188,7 +188,7 @@ export function OptimalPriceGuideArticle() {
         Unit Elastic Demand
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        ε = −1 makes the markup formula undefined — no Infinity price is shown.
+ ε = −1 makes the markup formula undefined; no Infinity price is shown.
       </p>
 
       <h2
@@ -239,7 +239,7 @@ export function OptimalPriceGuideArticle() {
         Optimal Pricing for Retail Businesses
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Retailers weigh inventory, promotions, and competition — this estimate is
+ Retailers weigh inventory, promotions, and competition; this estimate is
         a starting point, not a shelf-ready policy.
       </p>
 
@@ -261,7 +261,7 @@ export function OptimalPriceGuideArticle() {
         Optimal Pricing for Online Businesses
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        A/B tests and conversion data can supply price–quantity pairs — still
+ A/B tests and conversion data can supply price–quantity pairs; still
         treat ε as an estimate.
       </p>
 
@@ -283,7 +283,7 @@ export function OptimalPriceGuideArticle() {
         How Customer Behavior Affects Pricing
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Willingness to pay and switching costs shape ε — two historical points
+ Willingness to pay and switching costs shape ε; two historical points
         may not isolate a causal demand curve.
       </p>
 
@@ -322,7 +322,7 @@ export function OptimalPriceGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Assumes constant ε and MC; two observations may not identify causal
         demand; capacity, taxes, discounts, and rivals are omitted. Educational
-        estimate only — not financial advice.
+ estimate only; not financial advice.
       </p>
 
       <h2

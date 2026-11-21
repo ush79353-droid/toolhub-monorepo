@@ -80,7 +80,7 @@ export function calculateEbitdaMultiple(
   }
   if (enterpriseValue < 0) {
     warnings.push(
-      'Enterprise value is negative — review cash, debt, and equity components or valuation methodology.'
+      'Enterprise value is negative; review cash, debt, and equity components or valuation methodology.'
     );
   }
 
@@ -147,5 +147,5 @@ export function interpretMultiple(
   if (multiple == null) {
     return `Enterprise value is ${evLabel}. EV/EBITDA is unavailable for these inputs.`;
   }
-  return `Enterprise value is ${evLabel}. EV/EBITDA is ${formatMultiple(multiple)}× — enterprise value is ${formatMultiple(multiple)} times the selected EBITDA figure.`;
+  return `Enterprise value is ${evLabel}. EV/EBITDA is ${formatMultiple(multiple)}×; enterprise value is ${formatMultiple(multiple)} times the selected EBITDA figure.`;
 }

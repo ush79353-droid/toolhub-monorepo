@@ -54,7 +54,7 @@ export function NetWorthGuideArticle() {
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Future salary and other unearned future income are not current assets.
-        Treat personal possessions and debts consistently — if you count an
+ Treat personal possessions and debts consistently if you count an
         item&apos;s value, also count any loan tied to it.
       </p>
 

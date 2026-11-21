@@ -154,7 +154,7 @@ export function CaliforniaSalesTaxForm({
       </div>
 
       <p className="text-xs text-muted-foreground">
-        State: California (fixed). Fixed USD — no currency conversion.
+ State: California (fixed). Fixed USD; no currency conversion.
       </p>
 
       {errors.form ? (

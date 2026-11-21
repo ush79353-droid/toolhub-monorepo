@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Calculate ending inventory and inventory turnover from starting inventory, net purchases, and COGS — or estimate COGS from turnover when COGS is unknown.',
+    'Calculate ending inventory and inventory turnover from starting inventory, net purchases, and COGS, or estimate COGS from turnover when COGS is unknown.',
   asideAriaLabel: 'Interactive Ending Inventory Calculator',
   tocItems: ENDING_INVENTORY_TOC_ITEMS,
   GuideArticle: EndingInventoryGuideArticle,

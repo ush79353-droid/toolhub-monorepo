@@ -19,7 +19,7 @@ export const LONG_TERM_CARE_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a long-term care facility?',
     answer:
-      'A long-term care facility provides residential support and ongoing assistance — for example assisted living, nursing homes, residential care, or specialized care facilities.',
+      'A long-term care facility provides residential support and ongoing assistance, for example assisted living, nursing homes, residential care, or specialized care facilities.',
   },
   {
     question: 'What is a long-term acute care hospital?',

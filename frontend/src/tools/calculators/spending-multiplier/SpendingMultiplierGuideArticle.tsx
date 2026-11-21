@@ -18,7 +18,7 @@ export function SpendingMultiplierGuideArticle() {
         impulse. This calculator derives k = 1/(1−MPC) = 1/MPS, estimates
         theoretical ΔY = k×ΔA, solves for required autonomous spending, and
         visualizes a finite number of spending rounds. Results are educational
-        model outputs — not guaranteed GDP forecasts. Currency selection is
+ model outputs; not guaranteed GDP forecasts. Currency selection is
         denomination only (not FX conversion).
       </p>
 
@@ -32,7 +32,7 @@ export function SpendingMultiplierGuideArticle() {
         An initial rise in autonomous spending raises incomes for the recipients
         of that spending. Those recipients consume a fraction MPC of the extra
         income, generating further rounds of demand. The sum of the infinite
-        geometric series of rounds is the multiplier times the initial impulse —
+ geometric series of rounds is the multiplier times the initial impulse; 
         provided MPC is below 1 so the series converges.
       </p>
 
@@ -51,7 +51,7 @@ export function SpendingMultiplierGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         The two expressions for k are equivalent when MPC + MPS = 1. If MPC = 1
-        (MPS = 0), the simple multiplier is undefined/unbounded — this tool never
+ (MPS = 0), the simple multiplier is undefined/unbounded; this tool never
         displays Infinity.
       </p>
 
@@ -137,7 +137,7 @@ export function SpendingMultiplierGuideArticle() {
         With MPC = 0.6 and initial spending $1,000: Round 0 adds $1,000; Round 1
         adds $600; Round 2 adds $360; and so on. The infinite sum equals $2,500 =
         ΔA/(1−MPC). The calculator shows a finite number of rounds and compares
-        the partial total with the theoretical limit — without an unbounded loop.
+ the partial total with the theoretical limit, without an unbounded loop.
       </p>
 
       <h2
@@ -210,7 +210,7 @@ export function SpendingMultiplierGuideArticle() {
         Government purchases can serve as the autonomous impulse ΔA. The
         textbook purchases multiplier equals 1/(1−MPC) in the simplest setting.
         Empirical fiscal multipliers vary with monetary accommodation, openness,
-        and spare capacity — do not equate textbook k with every stimulus
+ and spare capacity; do not equate textbook k with every stimulus
         estimate.
       </p>
 
@@ -277,7 +277,7 @@ export function SpendingMultiplierGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         It remains valuable for economics education, introductory macro
-        scenarios, and structured discussion of fiscal or investment impulses —
+ scenarios, and structured discussion of fiscal or investment impulses; 
         provided users separate classroom arithmetic from forecasts.
       </p>
 

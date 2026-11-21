@@ -162,7 +162,7 @@ export function AmtForm({
     <div className="space-y-4">
       <p className="text-xs leading-relaxed text-muted-foreground">
         Historical US federal alternative minimum tax (AMT) estimate for tax years 2022 and 2023.
-        Amounts are fixed USD. AMTI is the Form 6251-style base — AGI plus non-deductible taxes is
+ Amounts are fixed USD. AMTI is the Form 6251-style base; AGI plus non-deductible taxes is
         only a starting suggestion when preference items or other adjustments apply.
       </p>
 
@@ -176,7 +176,7 @@ export function AmtForm({
             <span>Year</span>
             <InfoTooltip
               label="Year"
-              text="Select the historical tax year. Exemption amounts, phaseouts, and 26%/28% AMT brackets follow that year’s IRS Form 6251 instructions — current-year figures are never applied."
+              text="Select the historical tax year. Exemption amounts, phaseouts, and 26%/28% AMT brackets follow that year’s IRS Form 6251 instructions; current-year figures are never applied."
             />
           </legend>
           <div className="flex flex-wrap gap-3 sm:gap-4">
@@ -215,7 +215,7 @@ export function AmtForm({
         <MoneyField
           id="amt-amti"
           label="AMTI"
-          tip="Alternative Minimum Taxable Income — the authoritative base for this calculator (Form 6251 line 4 style). Edit directly when you have AMT adjustments or preference items beyond AGI + non-deductible taxes. Editing AMTI stops auto-suggest from AGI fields."
+          tip="Alternative Minimum Taxable Income: the authoritative base for this calculator (Form 6251 line 4 style). Edit directly when you have AMT adjustments or preference items beyond AGI + non-deductible taxes. Editing AMTI stops auto-suggest from AGI fields."
           value={input.amti}
           error={errors.amti}
           onChange={setAmti}
@@ -313,7 +313,7 @@ export function AmtForm({
 
       <div className="flex flex-wrap gap-2">
         <Button type="button" variant="outline" className="h-11" onClick={onLoadExample}>
-          Example — $200k AMTI
+ Example: $200k AMTI
         </Button>
         <Button type="button" variant="outline" className="h-11" onClick={onReset}>
           Reload calculator

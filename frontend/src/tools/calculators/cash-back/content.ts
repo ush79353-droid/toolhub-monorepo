@@ -26,7 +26,7 @@ export const CASH_BACK_FAQS: readonly FAQItem[] = [
   {
     question: 'What is cash back?',
     answer:
-      'Cash back is a reward that returns a percentage or fixed amount of eligible spending to you—often as a statement credit, deposit, or gift card—subject to the program’s rules.',
+      'Cash back is a reward that returns a percentage or fixed amount of eligible spending to you, often as a statement credit, deposit, or gift card, subject to the program’s rules.',
   },
   {
     question: 'How does cashback work?',
@@ -54,7 +54,7 @@ export const CASH_BACK_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a cashback limit?',
     answer:
-      'A cashback limit (cap) is the maximum reward you can earn under an offer for a period, category, or promotion—even if the percentage formula would produce more.',
+      'A cashback limit (cap) is the maximum reward you can earn under an offer for a period, category, or promotion, even if the percentage formula would produce more.',
   },
   {
     question: 'How do cashback caps work?',
@@ -64,7 +64,7 @@ export const CASH_BACK_FAQS: readonly FAQItem[] = [
   {
     question: 'Can cashback exceed the purchase amount?',
     answer:
-      'In standard percentage mode (0–100%), cashback cannot exceed the purchase amount. Fixed or promotional bonuses can exceed a single purchase in rare offers—always check terms. This calculator’s percentage mode caps the rate at 100%.',
+      'In standard percentage mode (0–100%), cashback cannot exceed the purchase amount. Fixed or promotional bonuses can exceed a single purchase in rare offers, always check terms. This calculator’s percentage mode caps the rate at 100%.',
   },
   {
     question: 'What is an effective cashback rate?',
@@ -104,12 +104,12 @@ export const CASH_BACK_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I calculate annual cashback?',
     answer:
-      'Project monthly cashback (with monthly caps if any), then multiply by months—or sum statement periods. Subtract annual fees when comparing net value.',
+      'Project monthly cashback (with monthly caps if any), then multiply by months, or sum statement periods. Subtract annual fees when comparing net value.',
   },
   {
     question: 'Does cashback expire?',
     answer:
-      'It depends on the program. Some rewards expire after inactivity or a set date; others do not. Check your issuer or retailer policy—this calculator does not model expiration.',
+      'It depends on the program. Some rewards expire after inactivity or a set date; others do not. Check your issuer or retailer policy, this calculator does not model expiration.',
   },
   {
     question: 'Can cashback rewards be reversed?',
@@ -129,7 +129,7 @@ export const CASH_BACK_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I combine cashback and discount offers?',
     answer:
-      'Sometimes—when retailer and card rules allow stacking. Math-wise, apply the checkout discount first, then cashback on the eligible amount the program defines (pre- or post-tax per terms).',
+      'Sometimes, when retailer and card rules allow stacking. Math-wise, apply the checkout discount first, then cashback on the eligible amount the program defines (pre- or post-tax per terms).',
   },
   {
     question: 'How do I compare two cashback credit cards?',
@@ -144,6 +144,6 @@ export const CASH_BACK_FAQS: readonly FAQItem[] = [
   {
     question: 'Is cashback calculated before or after tax?',
     answer:
-      'Issuer and retailer rules differ. Some base rewards on the pre-tax merchandise total; others include tax. This calculator uses the purchase amount you enter—use the eligible base from your program’s terms.',
+      'Issuer and retailer rules differ. Some base rewards on the pre-tax merchandise total; others include tax. This calculator uses the purchase amount you enter, use the eligible base from your program’s terms.',
   },
 ];

@@ -360,7 +360,7 @@ export function calculateCltvFromInput(input: CltvInput): CltvResult | null {
   const interpretation = `Under simplified assumptions of steady annual spending, revenue CLTV is about ${money(revenueCLTV, currency)} per customer over ${lifespan.toLocaleString('en-US', { maximumFractionDigits: 2 })} years. This is not a net-profit forecast.`;
 
   const explanation =
-    'This model assumes constant average annual customer spending over the lifespan and does not discount cash flows unless the discounted mode is enabled. Gross-profit CLTV applies margin only — it still excludes CAC, overhead, and financing costs unless you compare them separately.';
+    'This model assumes constant average annual customer spending over the lifespan and does not discount cash flows unless the discounted mode is enabled. Gross-profit CLTV applies margin only; it still excludes CAC, overhead, and financing costs unless you compare them separately.';
 
   return {
     currency,

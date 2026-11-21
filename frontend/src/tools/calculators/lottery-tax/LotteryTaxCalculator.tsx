@@ -87,7 +87,7 @@ export function LotteryTaxCalculator({
   const dirty = !draftsEqual(input, baseline);
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         result.summaryText,
         `Tax mode: ${result.taxMode}`,
         `Tax I ${result.effectiveTaxRateI}% · Tax II ${result.effectiveTaxRateII}%`,

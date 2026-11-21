@@ -34,7 +34,7 @@ export const ABSENCE_PERCENTAGE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-to-calculate',
     title: 'How to Calculate Absence Percentage',
     paragraphs: [
-      'Enter three whole-number inputs: the headcount of employees in the group, the number of scheduled workdays per employee in the period, and the total days absent across that group. Days absent are employee-days—if two people each miss one day, that counts as two days absent.',
+      'Enter three whole-number inputs: the headcount of employees in the group, the number of scheduled workdays per employee in the period, and the total days absent across that group. Days absent are employee-days, if two people each miss one day, that counts as two days absent.',
       'Multiply employees by workdays to get available employee-workdays. Divide total days absent by that product, then multiply by 100 to express the result as a percentage. The calculator updates the absenteeism rate automatically once all three inputs are valid.',
     ],
   },
@@ -51,9 +51,9 @@ export const ABSENCE_PERCENTAGE_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'calculation-examples',
     title: 'Calculation Examples',
     paragraphs: [
-      'Example 1 — small team: 10 employees scheduled for 20 workdays each have 200 available employee-workdays. If the team records 8 days absent, the rate is (8 ÷ 200) × 100 = 4%.',
-      'Example 2 — zero absences: the same 200 available days with 0 days absent yields 0%.',
-      'Example 3 — full absence of scheduled capacity: 10 × 20 = 200 available days with 200 days absent yields 100%. Values above available capacity are rejected because they are not mathematically meaningful for this definition.',
+      'Example 1: small team: 10 employees scheduled for 20 workdays each have 200 available employee-workdays. If the team records 8 days absent, the rate is (8 ÷ 200) × 100 = 4%.',
+      'Example 2: zero absences: the same 200 available days with 0 days absent yields 0%.',
+      'Example 3: full absence of scheduled capacity: 10 × 20 = 200 available days with 200 days absent yields 100%. Values above available capacity are rejected because they are not mathematically meaningful for this definition.',
     ],
     table: [
       { left: '10 × 20, 8 absent', right: '4%' },
@@ -69,7 +69,7 @@ export const ABSENCE_PERCENTAGE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Consequences of Employee Absenteeism',
     paragraphs: [
       'High absence levels can increase overtime cost, delay projects, strain remaining staff, and reduce service quality. In manufacturing and healthcare, coverage gaps can also raise safety and compliance risk.',
-      'Measuring the rate does not explain root causes—illness, caregiving, burnout, scheduling conflicts, and workplace culture all matter—but it gives a consistent baseline for comparing periods, teams, or locations.',
+      'Measuring the rate does not explain root causes, illness, caregiving, burnout, scheduling conflicts, and workplace culture all matter, but it gives a consistent baseline for comparing periods, teams, or locations.',
     ],
   },
   {
@@ -85,7 +85,7 @@ export const ABSENCE_PERCENTAGE_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'How to Interpret Absenteeism Rates',
     paragraphs: [
       'Interpretation depends on industry, seasonality, and local leave norms. A rate that looks high in one sector may be typical in another. Compare like-for-like periods and similar job groups rather than chasing a universal “good” number.',
-      'Sudden spikes deserve investigation; gradual rises may signal workload, engagement, or health issues. Always treat individual absences privately and in line with applicable employment law—this tool only computes a workforce percentage.',
+      'Sudden spikes deserve investigation; gradual rises may signal workload, engagement, or health issues. Always treat individual absences privately and in line with applicable employment law, this tool only computes a workforce percentage.',
     ],
   },
 ];
@@ -104,7 +104,7 @@ export const ABSENCE_PERCENTAGE_FAQS: readonly FAQItem[] = [
   {
     question: 'What does “total workdays” mean?',
     answer:
-      'It is the number of scheduled working days per employee during the period—not the sum across the whole workforce.',
+      'It is the number of scheduled working days per employee during the period, not the sum across the whole workforce.',
   },
   {
     question: 'What does “total days absent” include?',

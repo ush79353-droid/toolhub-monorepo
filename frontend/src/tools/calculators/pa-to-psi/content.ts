@@ -47,7 +47,7 @@ export const PA_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
       '3. Alternatively, enter pressure in psi.',
       '4. The calculator automatically converts psi back to pascals.',
       '5. Use Share, Reload Calculator, or Clear All Changes when needed.',
-      'No separate Calculate button is required — conversions update as you type.',
+      'No separate Calculate button is required; conversions update as you type.',
     ],
   },
   {
@@ -55,7 +55,7 @@ export const PA_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Pascals and Pounds per Square Inch',
     paragraphs: [
       'The pascal is the SI unit of pressure: 1 Pa = 1 N/m². It is widely used in scientific and engineering measurements.',
-      'PSI is pounds-force per square inch — one pound-force applied over one square inch. It is common for tire pressure, compressors, and industrial systems. PSI is not the same as pounds of mass.',
+      'PSI is pounds-force per square inch; one pound-force applied over one square inch. It is common for tire pressure, compressors, and industrial systems. PSI is not the same as pounds of mass.',
       'Both units measure force per unit area; one psi is much larger than one pascal.',
     ],
   },
@@ -64,8 +64,8 @@ export const PA_TO_PSI_GUIDE_SECTIONS: readonly GuideSection[] = [
     title: 'Pa to PSI Conversion',
     paragraphs: [
       `psi = Pa × ${formatPressure(PSI_PER_PA)}, which is the same as psi = Pa ÷ ${formatPressure(PASCALS_PER_PSI)}.`,
-      `Example — convert 240 Pa: 240 × ${formatPressure(PSI_PER_PA)} ≈ ${formatPressure(pascalToPsi(240))} psi.`,
-      `Example — convert 122 psi: 122 × ${formatPressure(PASCALS_PER_PSI)} ≈ ${formatPressure(psiToPascal(122))} Pa.`,
+      `Example; convert 240 Pa: 240 × ${formatPressure(PSI_PER_PA)} ≈ ${formatPressure(pascalToPsi(240))} psi.`,
+      `Example; convert 122 psi: 122 × ${formatPressure(PASCALS_PER_PSI)} ≈ ${formatPressure(psiToPascal(122))} Pa.`,
       'Converting psi to pascals multiplies by the pascals-per-psi factor; converting pascals to psi divides by the same factor.',
     ],
     formula: `psi = Pa / ${formatPressure(PASCALS_PER_PSI)}\nPa = psi × ${formatPressure(PASCALS_PER_PSI)}`,

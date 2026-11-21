@@ -90,7 +90,7 @@ export function DebtToCapitalRatioCalculator({
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Interest bearing debt: ${getCurrencySymbol(input.interestBearingDebtCurrency)}${input.interestBearingDebt}`,
         `Shareholder’s equity: ${getCurrencySymbol(input.shareholdersEquityCurrency)}${input.shareholdersEquity}`,
         `Debt to capital ratio: ${result.formattedDebtToCapitalRatio}`,

@@ -302,7 +302,7 @@ export function MaximumDrawdownForm({
               <label htmlFor="mdd-growth">Expected annual growth rate</label>
               <InfoTooltip
                 label="Expected annual growth rate"
-                text="Assumed annual compound growth rate used only to estimate recovery time — not a promised return."
+                text="Assumed annual compound growth rate used only to estimate recovery time; not a promised return."
                 align="left"
               />
             </div>

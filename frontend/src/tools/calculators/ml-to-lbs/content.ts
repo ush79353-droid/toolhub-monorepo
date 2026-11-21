@@ -31,7 +31,7 @@ export const MLLBS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'intro',
     title: 'mL to lbs Conversion',
     paragraphs: [
-      'Milliliters measure volume and pounds measure mass. Two liquids can share the same volume yet have different masses because their densities differ. Converting mL to pounds therefore always requires density — there is no fixed mL-to-lb factor that works for every substance.',
+      'Milliliters measure volume and pounds measure mass. Two liquids can share the same volume yet have different masses because their densities differ. Converting mL to pounds therefore always requires density; there is no fixed mL-to-lb factor that works for every substance.',
       'This converter lets you pick a reference substance, confirm or enter density, then convert volume to mass or mass to volume in either direction.',
     ],
   },
@@ -90,7 +90,7 @@ export const MLLBS_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'how-it-works',
     title: 'How Does the Calculator Work?',
     paragraphs: [
-      'You choose a substance (or custom density), enter volume or mass, and optionally switch units. The calculator normalizes volume to milliliters and mass to kilograms, converts density to kg/m³, applies m = ρV (or the reverse), then displays mass in your selected unit (default pounds). Preset densities are approximate reference values — not certifications.',
+      'You choose a substance (or custom density), enter volume or mass, and optionally switch units. The calculator normalizes volume to milliliters and mass to kilograms, converts density to kg/m³, applies m = ρV (or the reverse), then displays mass in your selected unit (default pounds). Preset densities are approximate reference values; not certifications.',
     ],
     tableHeaders: ['Substance', 'Approx. density (kg/m³)'],
     table: SUBSTANCES.map((s) => [s.name, formatMeasure(s.densityKgPerM3)]),

@@ -34,7 +34,7 @@ export function BetaStockGuideArticle() {
         Step-by-Step Example
       </h2>
       <div className="my-3 space-y-1 rounded-lg border border-border bg-muted/20 p-3 text-xs leading-relaxed text-accent sm:text-sm">
-        <p>Days: asset 50, 55, 50, 60 — benchmark 100, 110, 100, 120</p>
+        <p>Days: asset 50, 55, 50, 60; benchmark 100, 110, 100, 120</p>
         <p>Returns match: +10%, ≈ −9.09%, +20% for both series</p>
         <p>Stock beta = 1.00</p>
       </div>

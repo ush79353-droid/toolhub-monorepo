@@ -70,7 +70,7 @@ export function LossRatioForm({
     <div className="space-y-4">
       <p className="text-xs leading-relaxed text-muted-foreground">
         Insurance loss ratio from earned premiums, claims paid, and loss adjustment expenses.
-        Currency changes the display symbol only — amounts are not converted.
+ Currency changes the display symbol only; amounts are not converted.
       </p>
 
       <div>
@@ -259,7 +259,7 @@ export function LossRatioForm({
 
       <div className="flex flex-wrap gap-2">
         <Button type="button" variant="outline" className="h-11" onClick={onLoadExample}>
-          Example — 53% loss ratio
+ Example: 53% loss ratio
         </Button>
         <Button type="button" variant="outline" className="h-11" onClick={onReset}>
           Reload calculator

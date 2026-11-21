@@ -82,7 +82,7 @@ export function PaydayLoanCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Loan amount: ${loanSymbol}${input.loanAmount}`,
         `Finance charge: ${chargeSymbol}${input.financeCharge}`,
         `Loan term: ${result.loanTermDays} days`,

@@ -144,7 +144,7 @@ export function interpretComparison(
 ): string {
   const staffingNote =
     remoteEmployees !== onLocationEmployees
-      ? ' Employee counts differ — compare per-employee costs as well as totals.'
+      ? 'Employee counts differ. Compare per-employee costs as well as totals.'
       : '';
 
   if (cheaper === 'equal') {
@@ -313,7 +313,7 @@ export function shareResultText(
   path = '/tools/remote-vs-on-location-workers-calculator',
 ): string {
   return [
-    'Remote vs. On-Location Workers Calculator — Omega Calculators',
+    'Remote vs. On-Location Workers Calculator | Omega Calculators',
     '',
     `Period: ${result.periodLabel}`,
     `Currency: ${result.currency} (formatting only)`,

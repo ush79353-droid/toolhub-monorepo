@@ -173,7 +173,7 @@ export function CpiInflationGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Headline (all-items) CPI includes food and energy. Core CPI often excludes
-        them to highlight underlying trends — not because core is inherently a
+ them to highlight underlying trends; not because core is inherently a
         better personal cost-of-living measure.
       </p>
 
@@ -185,7 +185,7 @@ export function CpiInflationGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         When the index rises, a fixed nominal paycheck or cash balance typically
-        buys less of the measured basket — groceries, rent, transport, and
+ buys less of the measured basket; groceries, rent, transport, and
         household goods in the statistical sense, not necessarily your exact cart.
       </p>
 
@@ -210,7 +210,7 @@ export function CpiInflationGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Annual CPI inflation fluctuates with economic conditions. Long spans can
         show large cumulative change even when average annual rates look modest.
-        Use verified BLS annual averages for historical claims — this tool embeds
+ Use verified BLS annual averages for historical claims; this tool embeds
         those observations rather than inventing them.
       </p>
 

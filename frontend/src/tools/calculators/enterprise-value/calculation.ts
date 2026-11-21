@@ -75,7 +75,7 @@ export function interpretEv(
 ): string {
   const label = `${symbol}${formatEvMoney(ev, currency)}`;
   if (ev < 0) {
-    return `Enterprise value is ${label}. Cash exceeds combined financing claims under this simplified formula — interpret carefully.`;
+    return `Enterprise value is ${label}. Cash exceeds combined financing claims under this simplified formula; interpret carefully.`;
   }
   if (ev === 0) {
     return 'Enterprise value is zero under these inputs.';

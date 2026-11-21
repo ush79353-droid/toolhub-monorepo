@@ -25,7 +25,7 @@ export const CURRENCY_FORWARD_FAQS: readonly FAQItem[] = [
   {
     question: 'What is a currency forward?',
     answer:
-      'A currency forward is an agreement to exchange one currency for another at a predetermined rate on a future date. This calculator estimates a theoretical forward rate via covered interest parity — not a dealer quote.',
+      'A currency forward is an agreement to exchange one currency for another at a predetermined rate on a future date. This calculator estimates a theoretical forward rate via covered interest parity; not a dealer quote.',
   },
   {
     question: 'How does a currency forward contract work?',
@@ -50,7 +50,7 @@ export const CURRENCY_FORWARD_FAQS: readonly FAQItem[] = [
   {
     question: 'Why are currency forward rates different from spot rates?',
     answer:
-      'Interest-rate differentials (and market frictions) make holding one currency until maturity not equivalent to holding the other without adjustment — so F generally differs from S.',
+      'Interest-rate differentials (and market frictions) make holding one currency until maturity not equivalent to holding the other without adjustment, so F generally differs from S.',
   },
   {
     question: 'What is a forward premium?',
@@ -85,7 +85,7 @@ export const CURRENCY_FORWARD_FAQS: readonly FAQItem[] = [
   {
     question: 'What is foreign currency exposure?',
     answer:
-      'Exposure is sensitivity of cash flows, assets, or liabilities to exchange-rate changes — for example a USD payable for a EUR-based firm.',
+      'Exposure is sensitivity of cash flows, assets, or liabilities to exchange-rate changes, for example a USD payable for a EUR-based firm.',
   },
   {
     question: 'What is currency hedging?',
@@ -95,12 +95,12 @@ export const CURRENCY_FORWARD_FAQS: readonly FAQItem[] = [
   {
     question: 'What is currency speculation?',
     answer:
-      'Taking a directional FX position via forwards or other instruments to profit from expected rate moves — with risk of loss.',
+      'Taking a directional FX position via forwards or other instruments to profit from expected rate moves, with risk of loss.',
   },
   {
     question: 'What is currency arbitrage?',
     answer:
-      'Covered interest arbitrage seeks risk-free profit from CIP deviations after funding, spreads, and access constraints — often unavailable in practice.',
+      'Covered interest arbitrage seeks risk-free profit from CIP deviations after funding, spreads, and access constraints; often unavailable in practice.',
   },
   {
     question: 'What happens when a currency forward matures?',

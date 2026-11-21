@@ -16,7 +16,7 @@ import { normalizeGematriaInput } from './validation';
 
 function summaryText(bundle: GematriaBundle): string {
   const lines = [
-    'Gematria Calculator — Omega Calculators',
+    'Gematria Calculator | Omega Calculators',
     '',
     `Text: ${bundle.inputDisplay}`,
     '',

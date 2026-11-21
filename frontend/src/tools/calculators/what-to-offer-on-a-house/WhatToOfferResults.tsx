@@ -77,7 +77,7 @@ export function WhatToOfferResults({ result }: WhatToOfferResultsProps) {
         ) : null}
       </dl>
       <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Total reduction includes renovation, discount, and profit allowance —
+ Total reduction includes renovation, discount, and profit allowance; 
         it is broader than the Desired Discount field alone. Do not confuse
         current FMV with after-repair value (ARV).
       </p>

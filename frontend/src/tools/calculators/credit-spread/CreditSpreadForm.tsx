@@ -86,7 +86,7 @@ export function CreditSpreadForm({
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Credit spread = corporate yield − government yield (percentage points).
         One percentage point = 100 basis points. Prefer comparable yield-to-maturity
-        figures with similar maturity and the same currency — this is not OAS,
+ figures with similar maturity and the same currency; this is not OAS,
         Z-spread, or CDS spread.
       </p>
 

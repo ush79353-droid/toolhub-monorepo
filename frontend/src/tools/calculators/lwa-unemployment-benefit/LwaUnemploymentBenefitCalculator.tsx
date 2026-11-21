@@ -67,7 +67,7 @@ export function LwaUnemploymentBenefitCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Historical LWA notice — not a current benefit estimator.
+ Historical LWA notice; not a current benefit estimator.
           </p>
         </div>
         {headerActions ? (

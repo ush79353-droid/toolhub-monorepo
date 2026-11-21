@@ -51,7 +51,7 @@ export function EarCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Annual interest rate: ${input.annualInterestRate}%`,
         `Compounding: ${compoundLabel}`,
         `Periodic rate: ${result.formattedPeriodicRate}%`,

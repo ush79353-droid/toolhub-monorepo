@@ -23,7 +23,7 @@ export function MillionaireGuideArticle() {
     <article className="prose prose-slate max-w-none rounded-2xl border border-border bg-white px-5 py-6 sm:px-8 sm:py-8">
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         A millionaire calculator estimates how long it may take to accumulate
-        one million dollars — or any savings target — given your starting
+ one million dollars (or any savings target) given your starting
         balance, periodic deposits, and assumed investment return. Compound
         interest can accelerate growth; consistent contributions matter just as
         much. Inflation then shows what that future balance may be worth in
@@ -41,7 +41,7 @@ export function MillionaireGuideArticle() {
         Setting a clear financial goal anchors a plan. Initial savings give you
         a head start; periodic deposits build principal; compound interest adds
         growth on both. Starting earlier usually shortens the path because more
-        periods can compound. Discipline — keeping deposits consistent — often
+ periods can compound. Discipline (keeping deposits consistent) often
         matters more than chasing a slightly higher assumed return. Money you
         contribute and interest you earn are different: contributions are what
         you put in; interest is what the balance earns over time.
@@ -62,22 +62,22 @@ export function MillionaireGuideArticle() {
       </div>
       <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>FV</strong> — future value of savings
+ <strong>FV</strong>: future value of savings
         </li>
         <li>
-          <strong>PV</strong> — initial savings
+ <strong>PV</strong>: initial savings
         </li>
         <li>
-          <strong>PMT</strong> — periodic contribution
+ <strong>PMT</strong>: periodic contribution
         </li>
         <li>
-          <strong>i</strong> — interest rate per period
+ <strong>i</strong>: interest rate per period
         </li>
         <li>
-          <strong>n</strong> — number of periods
+ <strong>n</strong>: number of periods
         </li>
         <li>
-          <strong>r</strong> — annual nominal rate · <strong>m</strong> —
+ <strong>r</strong>; annual nominal rate ·<strong>m</strong>: 
           periods per year
         </li>
       </ul>
@@ -138,33 +138,33 @@ export function MillionaireGuideArticle() {
       </h2>
       <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <strong>Enter your financial goal</strong> — the amount you want to
+ <strong>Enter your financial goal</strong>: the amount you want to
           accumulate.
         </li>
         <li>
-          <strong>Enter initial savings</strong> — money already saved.
+ <strong>Enter initial savings</strong>: money already saved.
         </li>
         <li>
-          <strong>Enter annual interest rate</strong> — your estimated annual
+ <strong>Enter annual interest rate</strong>: your estimated annual
           return.
         </li>
         <li>
-          <strong>Select compounding frequency</strong> — how often interest
+ <strong>Select compounding frequency</strong>: how often interest
           compounds (deposits apply once per period).
         </li>
         <li>
-          <strong>Enter additional deposits</strong> — contribution per period.
+ <strong>Enter additional deposits</strong>: contribution per period.
         </li>
         <li>
-          <strong>Select deposit timing</strong> — beginning or end of each
+ <strong>Select deposit timing</strong>: beginning or end of each
           period.
         </li>
         <li>
-          <strong>Review the estimated duration</strong> — years, months, and
+ <strong>Review the estimated duration</strong>: years, months, and
           totals.
         </li>
         <li>
-          <strong>Review inflation impact</strong> — purchasing power in
+ <strong>Review inflation impact</strong>: purchasing power in
           today&apos;s dollars.
         </li>
       </ol>

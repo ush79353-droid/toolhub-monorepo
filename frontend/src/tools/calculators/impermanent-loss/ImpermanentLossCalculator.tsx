@@ -115,7 +115,7 @@ export function ImpermanentLossCalculator({
 
   const summary = result
     ? [
-        `${metadata.title} — Omega Calculators`,
+        `${metadata.title} | Omega Calculators`,
         `Asset weights: ${input.weights}`,
         `Initial deposit: ${input.initialDeposit} ${input.currency}`,
         `Token A: ${input.initialPriceA} → ${input.futurePriceA}`,

@@ -93,7 +93,7 @@ export function GdpGrowthRateCalculator({
 
   const summary = shareable
     ? [
-        `GDP Growth Rate Calculator — Omega Calculators`,
+        `GDP Growth Rate Calculator | Omega Calculators`,
         '',
         `Previous GDP: ${result!.formattedPrevious}`,
         `Current GDP: ${result!.formattedCurrent}`,
