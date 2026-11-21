@@ -4,6 +4,24 @@
 
 ---
 
+### 2026-11-22 — BMI Calculator for Teens
+- **Summary:** Shipped BMI Calculator for Teens on existing catalog slug `bmi-calculator-for-teens` (`BmiCalculatorForTeens`, catalog `6af46f10a27d8d1d4e9901e2`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): blank height/weight (cm/kg); BMI + BMI Prime; expanded “How healthy is your BMI?” with unselected Female/Male + age 10–20 → CDC 2000 BMI-for-age LMS percentiles; teen categories never derived from Prime; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-681`.
+- **Commits:** `f7f52249` (UI absorbed into concurrent Calorie engine commit) / `02851545` (engine) / (registration/Brain/tracker — this commit; registry/sitemap/`tool.key` also absorbed into concurrent `8ae8d44b`).
+- **Example:** **15**y male · **170** cm · **60** kg → BMI ≈ **20.76** · Prime ≈ **0.83**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — BMI Calculator for Teens
+- **Summary:** Shipped BMI Calculator for Teens on existing catalog slug `bmi-calculator-for-teens` (`BmiCalculatorForTeens`, catalog `6af46f10a27d8d1d4e9901e2`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): blank height/weight (cm/kg); BMI + BMI Prime; expanded “How healthy is your BMI?” with unselected Female/Male + age 10–20 → CDC 2000 BMI-for-age LMS percentiles; teen categories never derived from Prime; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-681`.
+- **Commits:** `f7f52249` (UI absorbed into concurrent Calorie engine commit) / `02851545` (engine) / (registration/Brain/tracker — this commit; registry/sitemap/`tool.key` also absorbed into concurrent `8ae8d44b`).
+- **Example:** **15**y male · **170** cm · **60** kg → BMI ≈ **20.76** · Prime ≈ **0.83**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — BMI Calculator for Women
+- **Summary:** Shipped BMI Calculator for Women on existing catalog slug `bmi-calculator-for-women` (`BmiForWomenCalculator`, catalog `6af46f10a27d8d1d4e9901e3`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): height/weight units, BMI, BMI Prime, age yrs, no sex switch; WHO adult categories with under-20 guard; pregnancy caution against adult weight-status labels; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-678`.
+- **Commits:** `696d0c0d` (UI) / `f4e01c2e` (engine absorbed into concurrent BMI Kids engine commit) / (registration/Brain/tracker — this commit).
+- **Example:** **80** kg · **2** m → BMI **20.00** · Prime **0.80** (normal).
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Dosage Calculator
 - **Summary:** Shipped Dosage Calculator on existing catalog slug `dosage-calculator` (`DosageCalculator`, catalog `6af46f10a27d8d1d4e9901d0`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): weight; dosage mg|mcg|g per kg; per-day vs per-administration basis; frequency; dose; expanded liquid concentration → mL; educational conversion only (no drug recommendations); share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-680`.
 - **Commits:** `3c99c424` (UI) / `c51c49e6` (engine; also absorbed concurrent staged `bmi-weight-loss` engine files) / (registration/Brain/tracker — this commit).
@@ -5468,11 +5486,4 @@
 
 ### 2026-11-14 — Add Business Loan Calculator (Screenshot-First)
 - **Summary:** Shipped a screenshot-first commercial business loan calculator on existing catalog slug `business-loan-calculator` (`BusinessLoanCalculator`, catalog `6af46f0fa27d8d1d4e98ff4f`). Three clean sections matching reference screenshot: (1) Main specifications (nominal/effective known rate, interest rate, compound frequency, loan amount with PKR currency selector, loan term in years and months, payment frequency); (2) Additional fees (prepaid fee, loaned fee, origination fee %, repayment options: from loan, rolling into loan, out of pocket); (3) Results (callout message, net loan received, periodic payment, total interest, total payment, total finance charge, APR, and effective APR). Standard amortizing annuity formulas, frequency conversion via EAR, and exact root-finding APR under Truth in Lending. Reuses OmegaCalculators visual design, share/reset controls, guide article, SEO, and embed.
-- **Example:** Loan 100,000 PKR, 5% nominal, 10 years monthly, 500 prepaid fee, 1,000 loaned fee, 8% origination deducted from loan → Net loan 92,000 PKR, periodic payment 1,071.26 PKR, total interest 27,551.40 PKR, total payment 129,051.40 PKR, total finance charge 37,051.40 PKR, APR 7.15%, effective APR 7.39%.
-- **Important Files:** `frontend/src/tools/calculators/business-loan/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-business-loan-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
-- **Verification:** Unit tests in `calculation.test.ts` pass for all modes and edge cases. MongoDB record `6af46f0fa27d8d1d4e98ff4f` activated via `assign-business-loan-tool.ts` (`isDeveloped: true`, `isActive: true`, `indexable: true`, `embedEnabled: true`). Lint/builds/browser tests omitted per user credit-saving instructions.
-
-## 2026-11-21 � Rule of 72 Calculator
-- Added bidirectional Rule of 72 calculator (`RuleOf72Calculator` / `rule-of-72-calculator`).
-- Approximation `T � 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
-- Catalog `6af46f10a27d8d1d4e9901bc` activated; `indexable` left false.
+- **Example:** Loan 100,000 PKR
