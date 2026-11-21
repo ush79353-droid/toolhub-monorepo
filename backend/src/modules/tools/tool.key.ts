@@ -77,6 +77,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RentIncreaseCalculator',
   'RentOrBuyCalculator',
   'RmdCalculator',
+  'RothIraCalculator',
   'RrefCalculator',
   'ArmMortgageCalculator',
   'HundredDayCalculator',

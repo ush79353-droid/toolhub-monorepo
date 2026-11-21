@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Roth IRA Calculator
+- **Summary:** Shipped Roth IRA Calculator on existing catalog slug `roth-ira-calculator` (`RothIraCalculator`, catalog `6af46f10a27d8d1d4e9901bb`, pillar/subPillar null). Screenshot-first (ADR-023): MAGI, ages, filing status, tax rate, return → max/eligible/after-tax contribution and retirement FV; denomination CurrencySelect (MXN default, **no FX**). IRS Notice 2025-67 / Pub 590-A 2026 limits and phase-outs. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-656`.
+- **Commits:** `1231a89a` (UI) / `ff01c080` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** MAGI **195,000** MFJ · **32→60** · tax **24%** · return **7%** → eligible **7,500** · FV ≈ **605,233**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Retirement Withdrawal Calculator
 - **Summary:** Shipped Retirement Withdrawal Calculator on existing catalog slug `retirement-withdrawal-calculator` (`RetirementWithdrawalCalculator`, catalog `6af46f10a27d8d1d4e9901b9`, pillar/subPillar null). Screenshot-first (ADR-023): solve for withdrawal or duration; balance/ages/years; interest; inflation before/after; advanced frequency/compounding/timing/end balance; yearly principal chart+table; denomination CurrencySelect (PKR default, **no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-655`.
 - **Commits:** `94f217f1` (UI) / `865ce259` (engine) / (registration/Brain/tracker — this commit).

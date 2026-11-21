@@ -3693,6 +3693,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RoicCalculator,
     })),
   ),
+  RothIraCalculator: lazyTool(() =>
+    import('@/tools/calculators/roth-ira/RothIraCalculator').then((mod) => ({
+      default: mod.RothIraCalculator,
+    })),
+  ),
   SustainableGrowthRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/sustainable-growth-rate/SustainableGrowthRateCalculator'

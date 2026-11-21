@@ -810,6 +810,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'return-on-assets-calculator',
   'return-on-equity-calculator',
   'roic-calculator-return-on-invested-capital',
+  'roth-ira-calculator',
   'sustainable-growth-rate-calculator',
   'unlevered-beta-calculator',
   'wacc-calculator-weighted-average-cost-of-capital',

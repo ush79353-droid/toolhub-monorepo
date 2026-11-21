@@ -967,6 +967,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ReturnOnEquityCalculator: () =>
     import('@/tools/calculators/return-on-equity/detail'),
   RoicCalculator: () => import('@/tools/calculators/roic/detail'),
+  RothIraCalculator: () =>
+    import('@/tools/calculators/roth-ira/detail'),
   SustainableGrowthRateCalculator: () =>
     import('@/tools/calculators/sustainable-growth-rate/detail'),
   UnleveredBetaCalculator: () =>

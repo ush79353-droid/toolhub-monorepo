@@ -119,10 +119,13 @@ Audit pending: deferred to final audit coordinator
 | 72 | Put-Call Parity Calculator | DEVELOPED | AUDIT PENDING | 3e142c72 | 5cecb015 | 65e1c766 | Completed Tools | `PutCallParityCalculator`; slug `put-call-parity-calculator`; Mongo `6af46f10a27d8d1d4e9901c4` active; Phase 2 FX; indexable false; TASKS `TOOL-651`; keys/index/details/sitemap via concurrent HEAD |
 
 ## Session Log
-| 74 | RMD Calculator | ALREADY DEVELOPED | AUDIT PENDING | — | — | (reconcile sitemap) | Completed Tools | Existing `RmdCalculator` reused; short slug `rmd-calculator` Mongo `6af46f10a27d8d1d4e9901ba` activated; long slug sibling already live; indexable false |
+| 75 | Roth IRA Calculator | DEVELOPED | AUDIT PENDING | 1231a89a | ff01c080 | (this reg commit) | Completed Tools | `RothIraCalculator`; slug `roth-ira-calculator`; Mongo `6af46f10a27d8d1d4e9901bb` active; IRS 2026; denomination MXN no FX; indexable false; TASKS `TOOL-656` |
+| 74 | RMD Calculator | ALREADY DEVELOPED | AUDIT PENDING | — | — | ecdd74e1 | Completed Tools | Existing `RmdCalculator` reused; short slug `rmd-calculator` Mongo `6af46f10a27d8d1d4e9901ba` activated; long slug sibling already live; indexable false |
 | 73 | Retirement Withdrawal Calculator | DEVELOPED | AUDIT PENDING | 94f217f1 | 865ce259 | 3dde35ca | Completed Tools | `RetirementWithdrawalCalculator`; slug `retirement-withdrawal-calculator`; Mongo `6af46f10a27d8d1d4e9901b9` active; denomination PKR no FX; indexable false; TASKS `TOOL-655` |
 
 | 70 | RD Calculator - Recurring Deposit | DEVELOPED | AUDIT PENDING | c0468d02 | fa82f263 | 66ef9598 | Completed Tools | `RdCalculator`; slug `rd-calculator-recurring-deposit`; Mongo `6af46f10a27d8d1d4e9901b0` active; Phase 2 FX; indexable false; TASKS `TOOL-653` |
+
+- 2026-11-21 (Roth IRA): Roth IRA Calculator DEVELOPED (`1231a89a` / `ff01c080` / reg+Brain+tracker). Mongo `6af46f10a27d8d1d4e9901bb` activated; indexable false; IRS 2026; denomination-only (no FX). Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 - 2026-11-21 (RMD Calculator): RMD Calculator **ALREADY DEVELOPED** — existing `RmdCalculator` module + long slug live. Claimed queue folder for short slug `rmd-calculator` (`6af46f10a27d8d1d4e9901ba`); assigned same component + `--set-active`; sitemap include; no duplicate rebuild commits. Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
