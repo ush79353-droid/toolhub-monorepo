@@ -1,3 +1,14 @@
+### 2026-11-22 — Quiz: Fetal Weight Percentile
+- **Summary:** Shipped Quiz: Fetal Weight Percentile on existing catalog slug `quiz-fetal-weight-percentile` (`QuizFetalWeightPercentileCalculator`, catalog `6af46f10a27d8d1d4e99020a`, pillar `6af451c2a27d8d1d4e98f988`). Five MCQs; score /5 only when complete; explanations checkbox; Hadlock/centile educational copy; share URL only. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-696`.
+- **Commits:** `66bb8bae` (UI) / `a04679ff` (engine) / (registration/Brain/tracker — this commit). Note: `a4e210df` mislabeled quiz engine but contained reverse-due-date files from concurrent staging.
+- **Example:** All correct → **5/5**; incomplete → blank score.
+- **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — Skinfold Body Fat Calculator
+- **Summary:** Shipped Skinfold Body Fat Calculator on existing catalog slug `skinfold-body-fat-calculator` (`SkinfoldBodyFatCalculator`, catalog `6af46f10a27d8d1d4e990202`, pillar `6af451c2a27d8d1d4e98f986`, subPillar null). Screenshot-first (ADR-023): sex; age band including gated `<17`; four skinfolds (biceps/subscapular/suprailiac/triceps) mm|in; body fat % via Durnin–Womersley density + Siri; male/female examples; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-695`.
+- **Commits:** `10a22b42` (UI; absorbed concurrent twin/VTE staging) / `5d939b5b` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** Male · 20–29 · Σ **38** mm → density ≈ **1.063** · Siri ≈ **15.5%**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Reverse Due Date Calculator
 - **Summary:** Shipped Reverse Due Date Calculator on existing catalog slug `reverse-due-date-calculator` (`ReverseDueDateCalculator`, catalog `6af46f10a27d8d1d4e990206`, pillar `6af451c2a27d8d1d4e98f987`). Screenshot-first (ADR-023): blank due/conception/intercourse dates; pregnancy length default **40** weeks; bidirectional last-edited authority; conception = EDD − (L − 14); intercourse window start = conception − 7; share URL only. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-694`.
