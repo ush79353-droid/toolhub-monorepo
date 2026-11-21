@@ -721,6 +721,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'bmi-calculator-for-kids',
   'bmi-calculator-for-men',
   'bmi-calculator-for-teens',
+  'bmi-percentile-calculator',
   'bmi-weight-loss-calculator',
   'blood-donation-due-date-calculator',
   'blood-pregnancy-test-what-do-hcg-results-mean',

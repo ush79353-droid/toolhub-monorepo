@@ -1,3 +1,9 @@
+### 2026-11-22 — BMI Percentile Calculator
+- **Summary:** Shipped BMI Percentile Calculator on existing catalog slug `bmi-percentile-calculator` (`BmiPercentileCalculator`, catalog `6af46f10a27d8d1d4e9901e5`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): blank age mos; Boy default; know-BMI checked; height/weight when unchecked; WHO BMI-for-age LMS 0–60 months; z=((BMI/M)^L−1)/(L×S); WHO ±3 SD tails; percentile=100Φ(z); no extrapolation; share URL only. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-702`.
+- **Commits:** `8b3f5dc0` (UI prior) / `d13b1baf` (engine) / (reg/Brain this commit).
+- **Example:** **24** mos boy · median BMI **15.7356** → ≈ **50th** percentile.
+- **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Weight Gain Calculator
 - **Summary:** Shipped Weight Gain Calculator on existing catalog slug `weight-gain-calculator` (`WeightGainCalculator`, catalog `6af46f10a27d8d1d4e9901ef`, pillar `6af451c1a27d8d1d4e98f983`, subPillar null). Screenshot-first (ADR-023): Female/Male; height/weight/age; Light exercise default PAL 1.4; optional target; Normal 0.5 kg/week (+500 kcal) / Strict 1 kg/week (+1000 kcal); Mifflin–St Jeor maintenance; surplus + weeks only when target > current; share URL only. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-698`.
 - **Commits:** `e3244794` (UI) / `dd12cb7d` (engine absorb) + `14a4d82f` (strict-pace fixture) / `8130bf97` (registry absorb) + this Brain/tracker.

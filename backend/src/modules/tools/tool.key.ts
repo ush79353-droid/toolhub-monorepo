@@ -525,6 +525,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BmiCalculatorForKids',
   'BmiCalculatorForTeens',
   'BmiForMenCalculator',
+  'BmiPercentileCalculator',
   'BmiWeightLossCalculator',
   'AverageCollectionPeriodCalculator',
   'AverageFixedCostCalculator',

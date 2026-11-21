@@ -2953,6 +2953,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BmiForMenCalculator,
     })),
   ),
+  BmiPercentileCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bmi-percentile/BmiPercentileCalculator'
+    ).then((mod) => ({
+      default: mod.BmiPercentileCalculator,
+    })),
+  ),
   BmiWeightLossCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/bmi-weight-loss/BmiWeightLossCalculator'

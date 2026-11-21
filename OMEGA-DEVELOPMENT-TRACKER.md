@@ -19,6 +19,7 @@ Audit pending: deferred to final audit coordinator
 
 | # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
+| 102 | BMI Percentile Calculator | DEVELOPED | AUDIT PENDING | 8b3f5dc0 | d13b1baf | (this reg/Brain) | Completed Tools | `BmiPercentileCalculator`; slug `bmi-percentile-calculator`; Mongo `6af46f10a27d8d1d4e9901e5` active; WHO LMS 0–60 mo; no FX; indexable false; TASKS `TOOL-702` |
 | 98 | Weight Gain Calculator | DEVELOPED | AUDIT PENDING | e3244794 | dd12cb7d+14a4d82f | 8130bf97 (reg absorb) | Completed Tools | `WeightGainCalculator`; slug `weight-gain-calculator`; Mongo `6af46f10a27d8d1d4e9901ef`; Mifflin×PAL; no FX; indexable false; TASKS `TOOL-698` |
 | 101 | Urine Home Pregnancy Test | DEVELOPED | AUDIT PENDING | 8130bf97 (UI absorb) | 4f353b2d | (this reg/Brain) | Completed Tools | `UrineHomePregnancyTestCalculator`; slug `urine-home-pregnancy-test`; Mongo `6af46f10a27d8d1d4e9901fc` active; dual sensitivity; no FX; indexable false; TASKS `TOOL-700` |
 | 100 | VTE Risk Score Calculator in Pregnancy | DEVELOPED | AUDIT PENDING | 10a22b42 (UI absorb) | b235a214 | (this reg/Brain) | Completed Tools | `VteRiskScorePregnancyCalculator`; slug `vte-risk-score-calculator-in-pregnancy`; Mongo `6af46f10a27d8d1d4e9901f8` active; RCOG GTG 37a; no FX; indexable false; TASKS `TOOL-698` |
