@@ -782,6 +782,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'sustainable-growth-rate-calculator',
   'unlevered-beta-calculator',
   'wacc-calculator-weighted-average-cost-of-capital',
+  'yield-to-maturity-calculator',
   'buying-power-calculator',
   'carry-trade-calculator',
   'cobb-douglas-production-function-calculator',

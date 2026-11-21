@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Yield to Maturity Calculator
+- **Summary:** Shipped Yield to Maturity Calculator on existing catalog slug `yield-to-maturity-calculator` (`YieldToMaturityCalculator`, catalog `6af46f10a27d8d1d4e99019b`, preserved `nameKey` `yield to maturity calculator`). Screenshot-first (ADR-023): full PV equation with bounded bisection; annual/semi/quarterly/monthly; zero-coupon closed form; negative YTM where valid; reverse price/face/coupon; whole coupon periods required; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Face **$1,000** · price **$950** · coupon **5%** · annual · **10**y → YTM ≈ **5.67%**.
+- **Important Files:** `frontend/src/tools/calculators/yield-to-maturity/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` yield-to-maturity tests 11/11 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Tax Equivalent Yield Calculator
 - **Summary:** Shipped Tax Equivalent Yield Calculator on existing catalog slug `tax-equivalent-yield-calculator` (`TaxEquivalentYieldCalculator`, catalog `6af46f10a27d8d1d4e99019a`, preserved `nameKey` `tax equivalent yield calculator`). Screenshot-first (ADR-023): TEY=Y/(1−t); reverse tax-exempt yield and implied tax rate; optional taxable after-tax comparison; 100% tax rate blocked; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Tax-exempt **6%** · marginal tax **30%** → TEY **8.57%**.

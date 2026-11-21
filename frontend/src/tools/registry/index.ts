@@ -3598,6 +3598,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WaccCalculator,
     })),
   ),
+  YieldToMaturityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/yield-to-maturity/YieldToMaturityCalculator'
+    ).then((mod) => ({
+      default: mod.YieldToMaturityCalculator,
+    })),
+  ),
   BuyingPowerCalculator: lazyTool(() =>
     import('@/tools/calculators/buying-power/BuyingPowerCalculator').then(
       (mod) => ({

@@ -936,6 +936,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   UnleveredBetaCalculator: () =>
     import('@/tools/calculators/unlevered-beta/detail'),
   WaccCalculator: () => import('@/tools/calculators/wacc/detail'),
+  YieldToMaturityCalculator: () =>
+    import('@/tools/calculators/yield-to-maturity/detail'),
   BuyingPowerCalculator: () =>
     import('@/tools/calculators/buying-power/detail'),
   CarryTradeCalculator: () =>

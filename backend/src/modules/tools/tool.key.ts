@@ -656,6 +656,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SustainableGrowthRateCalculator',
   'UnleveredBetaCalculator',
   'WaccCalculator',
+  'YieldToMaturityCalculator',
   'BuyingPowerCalculator',
   'CarryTradeCalculator',
   'CobbDouglasCalculator',
@@ -1489,6 +1490,7 @@ if (isDirect) {
     !isApprovedComponentKey('SustainableGrowthRateCalculator') ||
     !isApprovedComponentKey('UnleveredBetaCalculator') ||
     !isApprovedComponentKey('WaccCalculator') ||
+    !isApprovedComponentKey('YieldToMaturityCalculator') ||
     !isApprovedComponentKey('BuyingPowerCalculator') ||
     !isApprovedComponentKey('CarryTradeCalculator') ||
     !isApprovedComponentKey('CobbDouglasCalculator') ||
