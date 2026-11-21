@@ -4,6 +4,8 @@ import { isRegisteredComponentKey, type RegisteredComponentKey } from './keys';
 const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: ToolPageDetail }>> = {
   AfterTaxCostOfDebtCalculator: () =>
     import('@/tools/calculators/after-tax-cost-of-debt/detail'),
+  AltmanZScoreCalculator: () =>
+    import('@/tools/calculators/altman-z-score/detail'),
   AnnuityCalculator: () =>
     import('@/tools/calculators/annuity/detail'),
   AnnuityPayoutCalculator: () =>

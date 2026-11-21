@@ -13,6 +13,7 @@ import { isRegisteredComponentKey } from '@/tools/registry/keys';
 /** Known implemented public tool slugs (registry-backed). Extend when new calculators ship. */
 const IMPLEMENTED_TOOL_SLUGS = [
   'after-tax-cost-of-debt-calculator',
+  'altman-z-score-calculator',
   'annuity-calculator',
   'annuity-payout-calculator',
   'california-overtime-calculator',

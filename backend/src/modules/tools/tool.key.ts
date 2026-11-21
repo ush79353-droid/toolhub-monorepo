@@ -96,6 +96,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FourZeroOneKCalculator',
   'AmortizationCalculator',
   'AmtCalculator',
+  'AltmanZScoreCalculator',
   'AccrualRatioCalculator',
   'ActualCashValueCalculator',
   'AcreageCalculator',
@@ -925,6 +926,7 @@ if (isDirect) {
     !isApprovedComponentKey('FourZeroOneKCalculator') ||
     !isApprovedComponentKey('AmortizationCalculator') ||
     !isApprovedComponentKey('AmtCalculator') ||
+    !isApprovedComponentKey('AltmanZScoreCalculator') ||
     !isApprovedComponentKey('AcreageCalculator') ||
     !isApprovedComponentKey('FeetToInchesCalculator') ||
     !isApprovedComponentKey('AcresToSquareMilesCalculator') ||

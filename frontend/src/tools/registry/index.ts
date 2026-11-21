@@ -644,6 +644,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AmtCalculator,
     })),
   ),
+  AltmanZScoreCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/altman-z-score/AltmanZScoreCalculator'
+    ).then((mod) => ({
+      default: mod.AltmanZScoreCalculator,
+    })),
+  ),
   AcreageCalculator: lazyTool(() =>
     import('@/tools/calculators/acreage/AcreageCalculator').then((mod) => ({
       default: mod.AcreageCalculator,

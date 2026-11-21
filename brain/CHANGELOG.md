@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Altman Z-Score Calculator
+- **Summary:** Shipped Altman Z-Score Calculator on existing catalog slug `altman-z-score-calculator` (`AltmanZScoreCalculator`, catalog `6af46f10a27d8d1d4e990193`, preserved `nameKey` `altman z-score calculator`). Screenshot-first (ADR-023): original five-factor model only; NWC/MVE/RE helpers; distress/grey/safer zones; zone scale; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NWC **$800,000** · RE **$1,000,000** · EBIT **$500,000** · MVE **$3,000,000** · TA **$5,000,000** · TL **$2,000,000** · Sales **$6,000,000** → Z **2.902** (grey).
+- **Important Files:** `frontend/src/tools/calculators/altman-z-score/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` altman-z-score tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Velocity of Money Calculator
 - **Summary:** Shipped Velocity of Money Calculator on existing catalog slug `velocity-of-money-calculator` (`VelocityOfMoneyCalculator`, catalog `6af46f10a27d8d1d4e990192`, preserved `nameKey` `velocity of money calculator`). Screenshot-first (ADR-023): transaction/GDP modes; reverse solves; derived PT requires base basket price (index not treated as currency); period units; magnitude; chart; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** T **$1,500,000** / M **$500,000** → V **3**/year; GDP **$25T** / M **$20T** → V **1.25**.

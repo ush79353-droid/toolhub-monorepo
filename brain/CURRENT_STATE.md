@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Velocity of Money Calculator live at `/tools/velocity-of-money-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Altman Z-Score Calculator live at `/tools/altman-z-score-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Altman Z-Score Calculator (`/tools/altman-z-score-calculator`):** Live client-side financial distress screen (`componentKey: 'AltmanZScoreCalculator'`, catalog `6af46f10a27d8d1d4e990193`, `nameKey` `altman z-score calculator`). Screenshot-first (ADR-023): original five-factor Z only (public manufacturing scope); NWC via CA−CL / simplified AR+I−AP / direct; MVE shares×price or direct; RE rollforward or direct; Z=1.2X1+1.4X2+3.3X3+0.6X4+X5; distress/grey/safer scale; no Infinity on TL=0. Activated; **`indexable` left false**. Example: NWC **$800k** · RE **$1M** · EBIT **$500k** · MVE **$3M** · TA **$5M** · TL **$2M** · Sales **$6M** → Z **2.902** (grey).
 - **Velocity of Money Calculator (`/tools/velocity-of-money-calculator`):** Live client-side monetary-velocity tool (`componentKey: 'VelocityOfMoneyCalculator'`, catalog `6af46f10a27d8d1d4e990192`, `nameKey` `velocity of money calculator`). Screenshot-first (ADR-023): transaction (MV=PT) and GDP (MV=PY) modes; solve for V/M/flow (and P/N when derived); direct T or derived via base basket price×index; period units; magnitude + denomination CurrencySelect; flow-vs-M chart; no Infinity on M=0. Activated; **`indexable` left false**. Example: T **$1.5M** / M **$500k** → V **3**/year; GDP **$25T** / M **$20T** → V **1.25**.
 - **Trump Tariff Calculator (`/tools/trump-tariff-calculator`):** Live client-side educational U.S. import-duty estimator (`componentKey: 'TrumpTariffCalculator'`, catalog `6af46f10a27d8d1d4e990191`, `nameKey` `trump tariff calculator`). Screenshot-first (ADR-023): product/country modes; categories + illustrative presets (not official HTSUS); origin dropdown; customs value × qty; base + additional ad valorem with guarded additive stacking; landed cost (S/I/O); optional HTSUS format + pass-through; cost-breakdown chart; no invented official rates / no live scrape. Activated; **`indexable` left false**. Example: **$800** × **10** · **5%** + **20%** · ship **$250** · insure **$50** → duties **$2,000** · landed **$10,300**.
 - **Taylor Rule Calculator (`/tools/taylor-rule-calculator`):** Live client-side monetary-policy rule tool (`componentKey: 'TaylorRuleCalculator'`, catalog `6af46f10a27d8d1d4e990190`, `nameKey` `taylor rule calculator`). Screenshot-first (ADR-023): inflation gap π−π*; GDP output gap; i=r*+π+a(π−π*)+by (default a=b=0.5); custom coefficients; optional πᵉ ex-ante real and floor comparison; component chart; negative rates allowed; denomination CurrencySelect for GDP; guide/FAQ. Activated; **`indexable` left false**. Example: π **4%** · π* **2%** · Y **21T** · Y* **20T** · r* **2%** → i **9.5%**.
