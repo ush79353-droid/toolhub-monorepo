@@ -5349,3 +5349,8 @@
 - **Example:** Loan 100,000 PKR, 5% nominal, 10 years monthly, 500 prepaid fee, 1,000 loaned fee, 8% origination deducted from loan â†’ Net loan 92,000 PKR, periodic payment 1,071.26 PKR, total interest 27,551.40 PKR, total payment 129,051.40 PKR, total finance charge 37,051.40 PKR, APR 7.15%, effective APR 7.39%.
 - **Important Files:** `frontend/src/tools/calculators/business-loan/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-business-loan-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** Unit tests in `calculation.test.ts` pass for all modes and edge cases. MongoDB record `6af46f0fa27d8d1d4e98ff4f` activated via `assign-business-loan-tool.ts` (`isDeveloped: true`, `isActive: true`, `indexable: true`, `embedEnabled: true`). Lint/builds/browser tests omitted per user credit-saving instructions.
+
+## 2026-11-21 — Rule of 72 Calculator
+- Added bidirectional Rule of 72 calculator (`RuleOf72Calculator` / `rule-of-72-calculator`).
+- Approximation `T ˜ 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
+- Catalog `6af46f10a27d8d1d4e9901bc` activated; `indexable` left false.

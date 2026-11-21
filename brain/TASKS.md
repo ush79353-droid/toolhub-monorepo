@@ -881,3 +881,10 @@
 | `STD-12` | Amend ADR-019 to exactly two commits per calculator (tool files, then Brain); sync AGENTS, playbook, calculator standards, and Cursor/Antigravity git-commits rules. No calculator code changes. | Cursor | Completed | `AGENTS.md`, `brain/{DECISIONS,NEW_TOOL_DEVELOPMENT_PLAYBOOK,CALCULATOR_STANDARDS,README,CURRENT_STATE,TASKS,CHANGELOG}.md`, `.cursor/rules/{git-commits,calculator-standards,mega-tools-brain,screenshot-first-standards}.mdc`, `.agents/rules/{git-commits,calculator-standards,mega-tools-brain,screenshot-first-standards}.md` | `STD-05` |
 | `TOOL-179` | Implement ROI Calculator on existing slug `roi-calculator` with basic + annualized ROI, optional contributions, guide/SEO/embed, and verified activation | Cursor | Completed | `frontend/src/tools/calculators/roi/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-roi-tool.ts`, `brain/*` | `TOOL-178` |
 
+
+### TOOL-551 — Rule of 72 Calculator (2026-11-21)
+- Status: DONE
+- Slug: `rule-of-72-calculator`
+- componentKey: `RuleOf72Calculator`
+- Mongo: `6af46f10a27d8d1d4e9901bc` (isDeveloped/isActive true; indexable false)
+- Commits: UI `05cd36a8`, engine `fe742ea5`, reg (this commit)
