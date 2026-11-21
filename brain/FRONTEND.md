@@ -35,7 +35,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 
 - Homepage (`/`) renders live categories and featured tools from MongoDB (`/catalog/*`) and links to `/categories/${category.slug}` and `/tools/${tool.slug}`.
 - `/tools/[slug]` loads an active MongoDB tool and calls `notFound()` when its component is not registered. There is no sample-tool fallback.
-- Footer, the homepage, the category index, the category detail page, the tools directory, and the About totals all read the public catalog. The category index and the homepage show each category's `iconUrl` when it is set. The footer shows the first seven. The site header is logo plus Share and Explore Tools; non-home pages also show a tool search.
+- Footer, the homepage, the category index, the category detail page, the tools directory, and the About totals all read the public catalog. The category index, homepage, and footer show each category's `iconUrl` when it is set. The footer lists every active root category in three columns, then website pages. Privacy and Terms sit on the bottom left; the copyright line sits on the bottom right. The site header is logo plus Share and Explore Tools; non-home pages also show a tool search.
 
 ---
 
@@ -75,7 +75,7 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 ## 4. Reusable Components Inventory
 
 - **UI Primitives (`src/components/ui/`):** `badge.tsx`, `button.tsx`, `card.tsx`, `input.tsx` (uses `block` instead of `flex` for `date`/`time`/`datetime-local` inputs so native picker icons stay right-aligned), `select.tsx`, `switch.tsx`, `tabs.tsx`, `textarea.tsx` (using `cn()` from `src/lib/utils.ts` and `class-variance-authority`).
-- **Website Layout (`src/components/layout/`):** `Container.tsx`, client `Header.tsx` (home: logo, Share, Explore Tools; other pages add a centered debounced tool search), `HeaderSearch.tsx` (up to 10 suggestions via `/api/catalog/tools/suggest`), `Footer.tsx` (live categories from `getPublicCategories()`), `MobileNavigation.tsx` (unused by the current header).
+- **Website Layout (`src/components/layout/`):** `Container.tsx`, client `Header.tsx` (home: logo, Share, Explore Tools; other pages add a centered debounced tool search), `HeaderSearch.tsx` (up to 10 suggestions via `/api/catalog/tools/suggest`), `Footer.tsx` (live categories with icons in three columns, website pages, social icons from `siteConfig.social`; Privacy/Terms left, copyright right), `MobileNavigation.tsx` (unused by the current header).
 - **Public Shared (`src/components/shared/`):** `Breadcrumbs.tsx`, `CategoryCard.tsx`, `CategoryIcon.tsx` (Lucide icon map), `EmptyState.tsx`, `FAQAccordion.tsx` (medium/semibold question hierarchy and relaxed `1.7` answer line-height), `RelatedCatalogTools.tsx` (plain two-column `list-disc` links; `Open` / `Preview` linked items vs non-link `Catalog only`, no nested cards), `ToolDetailSidebar.tsx` (two-column right rail: More tools list, other-topic links, dark country-rules pills), `SearchBar.tsx`, `SectionHeading.tsx`, `ToolWorkspace.tsx` (renders a registered calculator, or nothing when the key is missing).
 - **Admin Components (`src/components/admin/`):**
   - `auth/AuthSplit.tsx`

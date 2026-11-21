@@ -16,6 +16,15 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/mega-tools/platform',
   },
+  /** Footer social icons. Change hrefs here; empty href hides that icon. */
+  social: [
+    { id: 'facebook', label: 'Facebook', href: 'https://facebook.com/' },
+    { id: 'x', label: 'X', href: 'https://x.com/' },
+    { id: 'instagram', label: 'Instagram', href: 'https://instagram.com/' },
+    { id: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/' },
+    { id: 'youtube', label: 'YouTube', href: 'https://youtube.com/' },
+    { id: 'github', label: 'GitHub', href: 'https://github.com/' },
+  ],
 } as const;
 
 export type SiteConfig = typeof siteConfig;

@@ -4,6 +4,21 @@
 
 ---
 
+### 2026-11-21 — Footer social icons from site config
+- **Summary:** Added social icon row under the footer brand description. Links come from `siteConfig.social` in `frontend/src/config/site.ts` (temp placeholder URLs). Empty `href` hides that icon.
+- **Important Files:** `frontend/src/config/site.ts`, `frontend/src/components/layout/Footer.tsx`.
+- **Verification:** Icons render under the footer description. Temporary files cleaned: YES.
+
+### 2026-11-21 — Footer categories in three columns
+- **Summary:** Removed the Quick Tools column. Active categories now fill three columns with icons. Website pages, Privacy/Terms, and the copyright line stay as they were.
+- **Important Files:** `frontend/src/components/layout/Footer.tsx`.
+- **Verification:** Footer checked on the local site. Temporary files cleaned: YES.
+
+### 2026-11-21 — Redesign public footer
+- **Summary:** Footer categories render in two columns with each category icon. Quick Tools stays its own column. Website pages (Home, All Tools, All Categories, About, Contact) are the last column. Privacy Policy and Terms of Service sit on the bottom left. The copyright line sits on the bottom right.
+- **Important Files:** `frontend/src/components/layout/Footer.tsx`, `brain/FRONTEND.md`.
+- **Verification:** Layout checked on the local site footer. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Header search on non-home pages
 - **Summary:** Home header is logo, Share, and Explore Tools. Every other public page keeps those and adds a centered tool search: 300ms debounce, up to 10 suggestions, keyboard selection. Browser calls Next `GET /api/catalog/tools/suggest`, which proxies Express `GET /api/v1/catalog/tools/suggest` (active tools only; name prefix first).
 - **Important Files:** `frontend/src/components/layout/Header.tsx`, `frontend/src/components/layout/HeaderSearch.tsx`, `frontend/src/app/api/catalog/tools/suggest/route.ts`, `backend/src/modules/catalog/catalog.service.ts`, `backend/src/modules/catalog/catalog.router.ts`, `brain/*`.
