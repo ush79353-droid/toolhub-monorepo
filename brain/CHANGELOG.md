@@ -5,6 +5,12 @@
 ---
 
 
+### 2026-11-22 — Melatonin Dosage Calculator
+- **Summary:** Shipped Melatonin Dosage Calculator on existing catalog slug `melatonin-dosage-calculator` (`MelatoninDosageCalculator`, catalog `6af46f10a27d8d1d4e9901da`, pillar `6af451c1a27d8d1d4e98f980`). Screenshot-first (ADR-023): Indication (default trouble falling asleep), Medication type (default tablets/capsules), blank therapy duration days/weeks. EMA Circadin 2 mg prolonged-release SmPC when that product type is selected; US dietary-supplement forms get label-info only (no invented mg). Share URL only. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-691`.
+- **Commits:** `f0f15948` (UI) / `297c47cb` (engine) / (registration/Brain — this commit).
+- **Example:** Prolonged-release 2 mg · poor sleep quality · **10** weeks → within 13-week SmPC · **70** tablets educational supply math.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (master prompt §12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Pregnancy Calculator
 - **Summary:** Shipped Pregnancy Calculator on existing catalog slug `pregnancy-calculator` (`PregnancyCalculator`, catalog `6af46f10a27d8d1d4e9901f5`, pillar `6af451c1a27d8d1d4e98f984`). Screenshot-first five methods (due date/LMP/ultrasound/conception/IVF); ACOG CO 700 calendar dating; milestones; share URL only. **No FX**. Activated; **indexable** false. TASKS `TOOL-678`.
 - **Commits:** `4b6b3ce0` (UI) / `6eb651f2` (engine) / (this reg/Brain).
