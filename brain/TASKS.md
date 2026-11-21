@@ -89,6 +89,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `INFRA-03` | Lock `tool.key.ts` allowlist self-check as a `for` loop (ADR-026); forbid mega `||` chains that crash `tsc` | Cursor | Completed | `backend/src/modules/tools/tool.key.ts`, `.cursor/rules/tool-key-allowlist.mdc`, `.agents/rules/tool-key-allowlist.md`, tool-activation rules, `brain/DECISIONS.md` | — |
 | `TOOL-639` | Export MongoDB tools into the client content template, one JSON file per category (`npm run tools:export-content`) | Cursor | Completed | `backend/src/scripts/export-tool-content.ts`, `backend/data/tool-content/` | — |
 | `TOOL-638` | Implement PPF Calculator on existing slug `ppf-calculator` with fixed/custom deposits, FY maturity, 5th-day interest, annual credit, extension/inflation, chart/schedule, guide/FAQ, and verified activation (preserve nameKey `ppf calculator`, isFeatured false, **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/ppf/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-637` | Implement Post Office Monthly Income Scheme (POMIS) Calculator on existing slug `post-office-monthly-income-scheme-calculator` with Individual/Joint limits, configurable rate, monthly/annual/total interest, maturity/schedule, guide/FAQ, and verified activation (preserve nameKey `post office monthly income scheme calculator`, isFeatured false, **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/pomis/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
