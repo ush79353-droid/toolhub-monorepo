@@ -36,6 +36,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnuityPayoutCalculator,
     })),
   ),
+  AnorexicBmiCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/anorexic-bmi/AnorexicBmiCalculator'
+    ).then((mod) => ({
+      default: mod.AnorexicBmiCalculator,
+    })),
+  ),
   ArmyBodyFatCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/army-body-fat/ArmyBodyFatCalculator'
@@ -59,13 +66,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     ).then((mod) => ({
       default: mod.CaliforniaOvertimeCalculator,
     })),
+  ),
   CalorieDeficitCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/calorie-deficit/CalorieDeficitCalculator'
     ).then((mod) => ({
       default: mod.CalorieDeficitCalculator,
     })),
-  ),
   ),
   DebtAvalancheCalculator: lazyTool(() =>
     import(
@@ -1049,6 +1056,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   WeightConverter: lazyTool(() =>
     import('@/tools/calculators/weight-converter/WeightConverterCalculator').then((mod) => ({
       default: mod.WeightConverter,
+    })),
+  ),
+  WeightGainCalculator: lazyTool(() =>
+    import('@/tools/calculators/weight-gain/WeightGainCalculator').then((mod) => ({
+      default: mod.WeightGainCalculator,
     })),
   ),
   KgToGallonsConverter: lazyTool(() =>
@@ -3592,6 +3604,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NavyBodyFatCalculator,
     })),
   ),
+  SkinfoldBodyFatCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/skinfold-body-fat/SkinfoldBodyFatCalculator'
+    ).then((mod) => ({
+      default: mod.SkinfoldBodyFatCalculator,
+    })),
+  ),
   NopatCalculator: lazyTool(() =>
     import('@/tools/calculators/nopat/NopatCalculator').then((mod) => ({
       default: mod.NopatCalculator,
@@ -4703,6 +4722,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TrumpsTaxesVsYourTaxesCalculator,
     })),
   ),
+  TwinPregnancyWeightGainCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/twin-pregnancy-weight-gain/TwinPregnancyWeightGainCalculator'
+    ).then((mod) => ({
+      default: mod.TwinPregnancyWeightGainCalculator,
+    })),
+  ),
+  TylenolDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/tylenol-dosage/TylenolDosageCalculator'
+    ).then((mod) => ({
+      default: mod.TylenolDosageCalculator,
+    })),
+  ),
   VaDisabilityCalculator: lazyTool(() =>
     import('@/tools/calculators/va-disability/VaDisabilityCalculator').then(
       (mod) => ({
@@ -5659,6 +5692,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/value-at-risk/ValueAtRiskCalculator'
     ).then((mod) => ({
       default: mod.ValueAtRiskCalculator,
+    })),
+  ),
+  VteRiskScorePregnancyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/vte-risk-pregnancy/VteRiskPregnancyCalculator'
+    ).then((mod) => ({
+      default: mod.VteRiskPregnancyCalculator,
     })),
   ),
   EidlCalculator: lazyTool(() =>

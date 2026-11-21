@@ -10,6 +10,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/annuity/detail'),
   AnnuityPayoutCalculator: () =>
     import('@/tools/calculators/annuity-payout/detail'),
+  AnorexicBmiCalculator: () =>
+    import('@/tools/calculators/anorexic-bmi/detail'),
   ArmyBodyFatCalculator: () =>
     import('@/tools/calculators/army-body-fat/detail'),
   AutoLeaseCalculator: () => import('@/tools/calculators/auto-lease/detail'),
@@ -258,6 +260,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   VolumeConversion: () => import('@/tools/calculators/volume-conversion/detail'),
   GramsToOuncesCalculator: () => import('@/tools/calculators/grams-to-ounces/detail'),
   WeightConverter: () => import('@/tools/calculators/weight-converter/detail'),
+  WeightGainCalculator: () => import('@/tools/calculators/weight-gain/detail'),
   KgToGallonsConverter: () => import('@/tools/calculators/kg-to-gallons/detail'),
   ForceConverter: () => import('@/tools/calculators/force-converter/detail'),
   NmToInLbsConverter: () => import('@/tools/calculators/nm-to-in-lbs/detail'),
@@ -925,6 +928,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/nav/detail'),
   NavyBodyFatCalculator: () =>
     import('@/tools/calculators/navy-body-fat/detail'),
+  SkinfoldBodyFatCalculator: () =>
+    import('@/tools/calculators/skinfold-body-fat/detail'),
   NopatCalculator: () =>
     import('@/tools/calculators/nopat/detail'),
   NpvCalculator: () =>
@@ -1257,6 +1262,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/trump-accounts/detail'),
   TrumpsTaxesVsYourTaxesCalculator: () =>
     import('@/tools/calculators/trumps-taxes-vs-your-taxes/detail'),
+  TwinPregnancyWeightGainCalculator: () =>
+    import('@/tools/calculators/twin-pregnancy-weight-gain/detail'),
+  TylenolDosageCalculator: () =>
+    import('@/tools/calculators/tylenol-dosage/detail'),
   VaDisabilityCalculator: () =>
     import('@/tools/calculators/va-disability/detail'),
   ZakatCalculator: () => import('@/tools/calculators/zakat/detail'),
@@ -1522,6 +1531,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),
   VaMortgageCalculator: () => import('@/tools/calculators/va-mortgage/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
+  VteRiskScorePregnancyCalculator: () =>
+    import('@/tools/calculators/vte-risk-pregnancy/detail'),
   EidlCalculator: () => import('@/tools/calculators/eidl/detail'),
   HealsActStimulusCalculator: () =>
     import('@/tools/calculators/heals-act-stimulus/detail'),

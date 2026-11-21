@@ -4,8 +4,14 @@
 - **Example:** All correct → **5/5**; incomplete → blank score.
 - **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-22 — VTE Risk Score Calculator in Pregnancy
+- **Summary:** Shipped VTE Risk Score Calculator in Pregnancy on existing catalog slug `vte-risk-score-calculator-in-pregnancy` (`VteRiskScorePregnancyCalculator`, catalog `6af46f10a27d8d1d4e9901f8`, pillar `6af451c1a27d8d1d4e98f984`, subPillar null). Screenshot-first (ADR-023): pregnant/postpartum radios; optional height/weight→BMI; RCOG GTG 37a Appendix III pre-existing/obstetric/transient points; mutual exclusion prior VTE categories; ART/OHSS antenatal-only; educational bands only — no prophylaxis orders; share score URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-697`.
+- **Commits:** `10a22b42` (UI absorb via concurrent skinfold) / `b235a214` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** Age >35 + smoker → score **2**; prior VTE + surgery-provoked both ticked → scores **4** only.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Skinfold Body Fat Calculator
-- **Summary:** Shipped Skinfold Body Fat Calculator on existing catalog slug `skinfold-body-fat-calculator` (`SkinfoldBodyFatCalculator`, catalog `6af46f10a27d8d1d4e990202`, pillar `6af451c2a27d8d1d4e98f986`, subPillar null). Screenshot-first (ADR-023): sex; age band including gated `<17`; four skinfolds (biceps/subscapular/suprailiac/triceps) mm|in; body fat % via Durnin–Womersley density + Siri; male/female examples; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-695`.
+- **Summary:** Shipped Skinfold Body Fat Calculator on existing catalog slug `skinfold-body-fat-calculator` (`SkinfoldBodyFatCalculator`, catalog `6af46f10a27d8d1d4e990202`, pillar `6af451c2a27d8d1d4e98f986`, subPillar null). Screenshot-first (ADR-023): sex; age band including gated `<17`; four skinfolds (biceps/subscapular/suprailiac/triceps) mm|in; body fat % via Durnin–Womersley density + Siri; male/female examples; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-697`.
 - **Commits:** `10a22b42` (UI; absorbed concurrent twin/VTE staging) / `5d939b5b` (engine) / (registration/Brain/tracker — this commit).
 - **Example:** Male · 20–29 · Σ **38** mm → density ≈ **1.063** · Siri ≈ **15.5%**.
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
