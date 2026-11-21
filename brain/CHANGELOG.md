@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Tax Equivalent Yield Calculator
+- **Summary:** Shipped Tax Equivalent Yield Calculator on existing catalog slug `tax-equivalent-yield-calculator` (`TaxEquivalentYieldCalculator`, catalog `6af46f10a27d8d1d4e99019a`, preserved `nameKey` `tax equivalent yield calculator`). Screenshot-first (ADR-023): TEY=Y/(1−t); reverse tax-exempt yield and implied tax rate; optional taxable after-tax comparison; 100% tax rate blocked; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Tax-exempt **6%** · marginal tax **30%** → TEY **8.57%**.
+- **Important Files:** `frontend/src/tools/calculators/tax-equivalent-yield/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` tax-equivalent-yield tests 10/10 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Quick Ratio Calculator (Acid-Test Ratio)
 - **Summary:** Shipped Quick Ratio Calculator on existing catalog slug `quick-ratio-calculator` (`QuickRatioCalculator`, catalog `6af46f10a27d8d1d4e990199`, preserved `nameKey` `quick ratio calculator`). Screenshot-first (ADR-023): direct QR=(C+MS+AR)/CL; adjusted (CA−I−PE−O)/CL; reverse required QA/CL/cash; CL=0 undefined; denomination CurrencySelect; QA vs CL bars; guide/FAQ distinguishing quick vs current vs cash ratio. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Cash **PKR 150,000** · securities **50,000** · AR **100,000** · CL **200,000** → QR **1.50x**.

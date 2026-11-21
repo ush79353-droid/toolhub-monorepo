@@ -527,6 +527,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SalaryWithOvertimeCalculator,
     })),
   ),
+  TaxEquivalentYieldCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/tax-equivalent-yield/TaxEquivalentYieldCalculator'
+    ).then((mod) => ({
+      default: mod.TaxEquivalentYieldCalculator,
+    })),
+  ),
   TaylorRuleCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/taylor-rule/TaylorRuleCalculator'

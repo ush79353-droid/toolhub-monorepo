@@ -640,6 +640,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'real-gdp-calculator',
   'reserve-ratio-calculator',
   'spending-multiplier-calculator',
+  'tax-equivalent-yield-calculator',
   'taylor-rule-calculator',
   'trump-tariff-calculator',
   'velocity-of-money-calculator',
