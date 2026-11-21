@@ -2926,6 +2926,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ChurnRateCalculator,
     })),
   ),
+  CltvCalculator: lazyTool(() =>
+    import('@/tools/calculators/cltv/CltvCalculator').then((mod) => ({
+      default: mod.CltvCalculator,
+    })),
+  ),
   ConsultingFeesCalculator: lazyTool(() =>
     import('@/tools/calculators/consulting-fees/ConsultingFeesCalculator').then((mod) => ({
       default: mod.ConsultingFeesCalculator,

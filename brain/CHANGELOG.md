@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add CLTV Calculator – Customer Lifetime Value
+- **Summary:** Shipped CLTV Calculator on existing catalog slug `cltv-calculator-customer-lifetime-value` (`CltvCalculator`, catalog `6af46f10a27d8d1d4e99019f`, preserved `nameKey` `cltv calculator – customer lifetime value`). Screenshot-first (ADR-023): APV×APF×L; business-data mode with annualization; optional gross margin, CAC ratio, discounted CLTV, churn lifespan; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** APV **$50** · APF **5** · L **3** → revenue CLTV **$750**; margin **40%** → gross-profit CLTV **$300**; CAC **$100** → **3:1**.
+- **Important Files:** `frontend/src/tools/calculators/cltv/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` cltv tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Check Digit Calculator
 - **Summary:** Shipped Check Digit Calculator on existing catalog slug `check-digit-calculator` (`CheckDigitCalculator`, catalog `6af46f10a27d8d1d4e99019e`, preserved `nameKey` `check digit calculator`). Screenshot-first (ADR-023): GS1 Modulo 10 for GTIN-8/12/13/14; leading-zero padding; generate + validate; step breakdown; string-safe digit handling. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Payload **400638133393** → check digit **1** → GTIN **4006381333931**; UPC-A **03600029145** → **2**.

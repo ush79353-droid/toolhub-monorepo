@@ -709,6 +709,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/child-tax-credit/detail'),
   ChurnRateCalculator: () =>
     import('@/tools/calculators/churn-rate/detail'),
+  CltvCalculator: () => import('@/tools/calculators/cltv/detail'),
   ConsultingFeesCalculator: () =>
     import('@/tools/calculators/consulting-fees/detail'),
   ContributionMarginCalculator: () =>

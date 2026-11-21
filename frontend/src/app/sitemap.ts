@@ -556,6 +556,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'price-to-cash-flow-ratio-calculator',
   'price-to-sales-ratio-calculator',
   'churn-rate-calculator',
+  'cltv-calculator-customer-lifetime-value',
   'consulting-fees-calculator',
   'contribution-margin-calculator',
   'conversion-rate-calculator',
