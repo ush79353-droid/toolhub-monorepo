@@ -318,6 +318,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MelatoninDosageCalculator,
     })),
   ),
+  MealCalorieCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/meal-calorie/MealCalorieCalculator'
+    ).then((mod) => ({
+      default: mod.MealCalorieCalculator,
+    })),
+  ),
   MarkdownCalculator: lazyTool(() =>
     import('@/tools/calculators/markdown/MarkdownCalculator').then((mod) => ({
       default: mod.MarkdownCalculator,
@@ -3747,6 +3754,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/pregnancy-weight-gain/PregnancyWeightGainCalculator'
     ).then((mod) => ({
       default: mod.PregnancyWeightGainCalculator,
+    })),
+  ),
+  PregnancyWeightGainWeekByWeekCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/pregnancy-weight-gain-week-by-week/PregnancyWeightGainWeekByWeekCalculator'
+    ).then((mod) => ({
+      default: mod.PregnancyWeightGainWeekByWeekCalculator,
     })),
   ),
   PresentValueCalculator: lazyTool(() =>

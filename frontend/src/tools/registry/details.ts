@@ -87,6 +87,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-with-discount/detail'),
   MaintainPregnancyWeightCalculator: () =>
     import('@/tools/calculators/maintain-pregnancy-weight/detail'),
+  MealCalorieCalculator: () =>
+    import('@/tools/calculators/meal-calorie/detail'),
   MaintenanceCalorieCalculator: () =>
     import('@/tools/calculators/maintenance-calorie/detail'),
   MelatoninDosageCalculator: () =>
@@ -976,10 +978,14 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pre-and-post-money-valuation/detail'),
   PregnancyCalculator: () =>
     import('@/tools/calculators/pregnancy/detail'),
+  PregnancyConceptionCalculator: () =>
+    import('@/tools/calculators/pregnancy-conception/detail'),
   PregnancyTestCalculator: () =>
     import('@/tools/calculators/pregnancy-test/detail'),
   PregnancyWeightGainCalculator: () =>
     import('@/tools/calculators/pregnancy-weight-gain/detail'),
+  PregnancyWeightGainWeekByWeekCalculator: () =>
+    import('@/tools/calculators/pregnancy-weight-gain-week-by-week/detail'),
   PresentValueCalculator: () =>
     import('@/tools/calculators/present-value/detail'),
   PriceElasticityOfDemandCalculator: () =>

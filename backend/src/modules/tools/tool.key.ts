@@ -678,6 +678,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PregnancyConceptionCalculator',
   'PregnancyTestCalculator',
   'PregnancyWeightGainCalculator',
+  'PregnancyWeightGainWeekByWeekCalculator',
   'PresentValueCalculator',
   'PriceElasticityOfDemandCalculator',
   'PriceElasticityOfSupplyCalculator',
