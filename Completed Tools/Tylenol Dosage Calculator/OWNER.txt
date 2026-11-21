@@ -1,0 +1,7 @@
+﻿owner=cursor-composer-BilalAjmery-24356-20261122020400
+claimedAt=2026-11-22T02:04:00.3448413+05:00
+completedAt=2026-11-22T02:50:00+05:00
+status=COMPLETED
+calculator=Tylenol Dosage Calculator
+commits=2ee8163f,f2962cf0,8130bf97(absorb)
+mongo=6af46f10a27d8d1d4e9901dd

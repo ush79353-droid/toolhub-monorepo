@@ -103,6 +103,7 @@ export function calculateCaloriesBurned(
     distanceMiles: params.distanceMiles,
     formattedCalories,
     formattedCaloriesPerHour,
+    formattedDuration,
     formulaLine: `${params.met} × 3.5 × ${params.weightKg.toFixed(2)} kg × ${params.durationMinutes} min ÷ 200 ≈ ${formattedCalories} kcal`,
     explanation: params.usedDistanceMode
       ? `About ${formattedCalories} kcal for ${params.activityLabel} at ${formattedDuration} inferred from ${params.distanceMiles?.toFixed(2)} mi at the selected pace (MET ${params.met}).`

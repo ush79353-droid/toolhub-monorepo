@@ -1,0 +1,11 @@
+﻿# AGENT_STATUS
+- status: COMPLETED
+- owner: cursor-agent-20261122-014927-20036
+- calculator: Twin Pregnancy Weight Gain Calculator
+- mongoId: 6af46f10a27d8d1d4e9901f4
+- slug: twin-pregnancy-weight-gain-calculator
+- componentKey: TwinPregnancyWeightGainCalculator
+- commits: 10a22b42 (module absorb) / 8130bf97 (registration)
+- mongo: isActive true, isDeveloped true, indexable false
+- FX: none
+- Temporary files cleaned: YES

@@ -1,0 +1,4 @@
+owner=cursor-composer-BilalAjmery-24356-20261122025400
+claimedAt=2026-11-22T02:54:00+05:00
+status=IN_PROGRESS
+calculator=Levothyroxine Dosage Calculator
