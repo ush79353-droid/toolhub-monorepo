@@ -3411,6 +3411,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PaybackPeriodCalculator,
     })),
   ),
+  PayPalFeeCalculator: lazyTool(() =>
+    import('@/tools/calculators/paypal-fee/PayPalFeeCalculator').then((mod) => ({
+      default: mod.PayPalFeeCalculator,
+    })),
+  ),
   PayRaiseCalculator: lazyTool(() =>
     import('@/tools/calculators/pay-raise/PayRaiseCalculator').then((mod) => ({
       default: mod.PayRaiseCalculator,

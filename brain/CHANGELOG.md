@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add PayPal Fee Calculator
+- **Summary:** Shipped PayPal Fee Calculator on existing catalog slug `paypal-fee-calculator` (`PayPalFeeCalculator`, catalog `6af46f10a27d8d1d4e9901a4`, preserved `nameKey` `paypal fee calculator`). Screenshot-first (ADR-023): maintainable US/UK presets with sources/effective dates + custom mode; domestic/international; forward/reverse; fee breakdown; FX excluded. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Gross **$100** · US Checkout **3.49% + $0.49** → fee **$3.98** · net **$96.02**; reverse net **$100** → gross ≈ **$104.12**.
+- **Important Files:** `frontend/src/tools/calculators/paypal-fee/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` paypal-fee tests 19/19 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Markup Calculator
 - **Summary:** Shipped Markup Calculator on existing catalog slug `markup-calculator` (`MarkupCalculator`, catalog `6af46f10a27d8d1d4e9901a2`, preserved `nameKey` `markup calculator`). Screenshot-first (ADR-023): bidirectional cost/markup%/revenue/profit with last-two-edited priority (prefer cost anchor); denomination CurrencySelect; markup vs margin education; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Cost **$50** · markup **40%** → revenue **$70** · profit **$20**; cost **$100** · markup **25%** → revenue **$125**.

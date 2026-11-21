@@ -633,6 +633,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'payday-loan-calculator',
   'payment-calculator',
   'payback-period-calculator',
+  'paypal-fee-calculator',
   'pay-raise-calculator',
   'percentage-discount-calculator',
   'percentage-return-calculator',

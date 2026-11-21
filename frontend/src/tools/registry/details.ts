@@ -877,6 +877,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/payment/detail'),
   PaybackPeriodCalculator: () =>
     import('@/tools/calculators/payback-period/detail'),
+  PayPalFeeCalculator: () =>
+    import('@/tools/calculators/paypal-fee/detail'),
   PayRaiseCalculator: () =>
     import('@/tools/calculators/pay-raise/detail'),
   PegRatioCalculator: () =>
