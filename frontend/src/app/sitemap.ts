@@ -780,6 +780,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gdp-deflator-formula-calculator',
   'gdp-gap-calculator',
   'gdp-growth-rate-calculator',
+  'gdp-per-capita-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

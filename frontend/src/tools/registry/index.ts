@@ -3605,6 +3605,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GdpGrowthRateCalculator,
     })),
   ),
+  GdpPerCapitaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gdp-per-capita/GdpPerCapitaCalculator'
+    ).then((mod) => ({
+      default: mod.GdpPerCapitaCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

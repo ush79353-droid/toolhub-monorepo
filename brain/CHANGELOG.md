@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add GDP per Capita Calculator
+- **Summary:** Shipped GDP per Capita Calculator on existing catalog slug `gdp-per-capita-calculator` (`GdpPerCapitaCalculator`, catalog `6af46f10a27d8d1d4e99017f`, preserved `nameKey` `gdp per capita calculator`). Screenshot-first (ADR-023): GDPpc=GDP/Population with modes for per-capita/GDP/population; real/nominal/PPP labels (no auto-conversion); shared CurrencySelect denomination (PKR default); GDP and population magnitudes; guide/FAQ without invented country rankings. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** GDP **$2** trillion · Population **50** million → **$40,000** per person.
+- **Important Files:** `frontend/src/tools/calculators/gdp-per-capita/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` gdp-per-capita tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add GDP Growth Rate Calculator
 - **Summary:** Shipped GDP Growth Rate Calculator on existing catalog slug `gdp-growth-rate-calculator` (`GdpGrowthRateCalculator`, catalog `6af46f10a27d8d1d4e99017e`, preserved `nameKey` `gdp growth rate calculator`). Screenshot-first (ADR-023): g=((Current−Previous)/Previous)×100 with modes for growth/current/previous; absolute change; real/nominal measure; period selector; optional labeled annualized QoQ; shared CurrencySelect denomination (PKR default); magnitudes; g &gt; −100% reverse guards; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Current **21** trillion · Previous **20** trillion → Growth **+5%** · change **+1** trillion.
