@@ -4809,6 +4809,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HouseAffordabilityCalculator,
     })),
   ),
+  HraExemptionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/hra-exemption/HraExemptionCalculator'
+    ).then((mod) => ({
+      default: mod.HraExemptionCalculator,
+    })),
+  ),
   MortgageTaxesInsuranceCalculator: lazyTool(() =>
     import('@/tools/calculators/mortgage-taxes-insurance/MortgageTaxesInsuranceCalculator').then((mod) => ({
       default: mod.MortgageTaxesInsuranceCalculator,

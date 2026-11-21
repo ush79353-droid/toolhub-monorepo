@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (EPF Calculator live at `/tools/epf-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (HRA Exemption Calculator live at `/tools/hra-exemption-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **HRA Exemption Calculator (`/tools/hra-exemption-calculator`):** Live client-side Indian House Rent Allowance tool (`componentKey: 'HraExemptionCalculator'`, catalog `6af46f10a27d8d1d4e9901aa`, `nameKey` `hra exemption calculator`). Screenshot-first (ADR-023): basic + eligible DA / HRA / rent / city / tax year / old|new regime / monthly|annual; Exempt=min(HRA, R−0.10S, pS); versioned 40%/50% city rules (classic metros; FY 2026–27+ educational expansion); new regime → ₹0 exempt; partial-year months; donut + breakdown; denomination CurrencySelect (INR). Activated; **`indexable` left false**. Example: **₹50k** + **₹5k** · HRA **₹20k** · rent **₹18k** · Delhi · old → exempt **₹12,500**/mo · annual **₹150,000**.
 - **EPF Calculator (`/tools/epf-calculator`):** Live client-side Indian Employees' Provident Fund tool (`componentKey: 'EpfCalculator'`, catalog `6af46f10a27d8d1d4e9901a9`, `nameKey` `epf calculator`). Screenshot-first (ADR-023): age / basic+DA / growth / employee & employer rates / retirement age / interest assumption / opening balance; EPS eligibility + wage ceiling (8.33% of min(wage, ceiling)); monthly simulation with yearly interest credits; growth chart + yearly CSV; optional VPF + scenario compare; denomination CurrencySelect (INR default). Activated; **`indexable` left false**. Example first month: **₹15,000** · **12%/12%** → employee **₹1,800** · EPS ≈ **₹1,249.50** · employer EPF ≈ **₹550.50**.
 - **EMI Calculator – Equated Monthly Installment (`/tools/emi-calculator-equated-monthly-installment`):** Live client-side fixed-rate EMI tool (`componentKey: 'EmiCalculator'`, catalog `6af46f10a27d8d1d4e9901a8`, `nameKey` `emi calculator - equated monthly installment`). Screenshot-first (ADR-023): principal / term years|months / nominal annual rate; EMI + total payable + interest; principal-vs-interest donut; amortization (+ CSV); optional balance lookup, extra payment, Loan A/B compare; denomination CurrencySelect (PKR default). Activated; **`indexable` left false**. Example: **PKR 500,000** · **10%** · **5y** → EMI ≈ **10,623.52**.
 - **Percent Off Calculator (`/tools/percent-off-calculator`):** Live client-side discount tool (`componentKey: 'PercentOffCalculator'`, catalog `6af46f10a27d8d1d4e9901a5`, `nameKey` `percent off calculator`). Screenshot-first (ADR-023): original + % off; optional sequential second %; effective %; optional sales tax on discounted price; modes for final / original / discount %; savings bar; denomination CurrencySelect. Activated; **`indexable` left false**. Example: **$200** · **25%** → save **$50** · final **$150**.

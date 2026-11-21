@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add HRA Exemption Calculator
+- **Summary:** Shipped HRA Exemption Calculator on existing catalog slug `hra-exemption-calculator` (`HraExemptionCalculator`, catalog `6af46f10a27d8d1d4e9901aa`, preserved `nameKey` `hra exemption calculator`). Screenshot-first (ADR-023): three-limb HRA exemption with versioned tax-year city rules; old/new regime; monthly/annual inputs; partial-year months; donut + breakdown; denomination CurrencySelect (INR). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Basic **₹50,000** + DA **₹5,000** · HRA **₹20,000** · rent **₹18,000** · Delhi · old regime → exempt **₹12,500**/mo · annual **₹150,000** · taxable annual **₹90,000**.
+- **Important Files:** `frontend/src/tools/calculators/hra-exemption/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` hra-exemption tests 20/20 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add EPF Calculator
 - **Summary:** Shipped EPF Calculator on existing catalog slug `epf-calculator` (`EpfCalculator`, catalog `6af46f10a27d8d1d4e9901a9`, preserved `nameKey` `epf calculator`). Screenshot-first (ADR-023): Indian EPF/EPS educational projection; employee/employer split with EPS wage ceiling; monthly running-balance interest credited yearly; growth chart + yearly CSV; optional VPF + scenario compare; denomination CurrencySelect (INR). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Basic **₹15,000** · **12%/12%** · EPS-eligible · ceiling **₹15,000** → employee **₹1,800** · EPS ≈ **₹1,249.50** · employer EPF ≈ **₹550.50** · monthly EPF ≈ **₹2,350.50**.
