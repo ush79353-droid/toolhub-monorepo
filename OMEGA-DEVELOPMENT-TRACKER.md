@@ -114,6 +114,9 @@ Audit pending: deferred to final audit coordinator
 | 68 | Futures Contracts Calculator | DEVELOPED | AUDIT PENDING | 5d42bb55 | 7c06d250 | (this reg commit) | Completed Tools | `FuturesContractsCalculator`; slug `futures-contracts-calculator`; Mongo `6af46f10a27d8d1d4e9901c2` active; Phase 2 FX; indexable false; TASKS `TOOL-645` |
 
 ## Session Log
+| 69 | Pence to Pounds Converter | DEVELOPED | AUDIT PENDING | 270bbd2c | 93fc88de | 7f4d8b82 | Completed Tools | `PenceToPoundsConverter`; slug `pence-to-pounds-converter`; Mongo `6af46f10a27d8d1d4e9901ca` active; fixed 100p=£1; no FX; indexable false; TASKS `TOOL-647` |
+
+- 2026-11-21 (Pence to Pounds): Pence to Pounds Converter DEVELOPED (`270bbd2c` / `93fc88de` / `7f4d8b82`). Mongo `6af46f10a27d8d1d4e9901ca` activated; indexable false; fixed sterling subdivision (not FX). Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Futures Contracts): Futures Contracts Calculator DEVELOPED (`5d42bb55` / `7c06d250` / reg). Mongo `6af46f10a27d8d1d4e9901c2` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Forward Rate): Forward Rate Calculator DEVELOPED (`9f6caafb` / `84e792b4` / `11c3eb5c`). Mongo `6af46f10a27d8d1d4e9901c1` activated; indexable false; annual compounding; no FX. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Brexit): Brexit Calculator DEVELOPED (`19e671b9` / `22e78f69` / `630b1966`). Mongo `6af46f10a27d8d1d4e9901c6` activated; indexable false; fixed GBP dual-rate illustrative model. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.

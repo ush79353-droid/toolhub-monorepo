@@ -4,6 +4,18 @@
 
 ---
 
+### 2026-11-21 — Money Counter Calculator
+- **Summary:** Shipped Money Counter Calculator on existing catalog slug `money-counter-calculator` (`MoneyCounterCalculator`, catalog `6af46f10a27d8d1d4e9901c9`, preserved `nameKey` `money counter calculator`, pillar/subPillar null). Screenshot-first (ADR-023): currency denomination sets + include-coins + banknote/coin counts → total; **no FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-646`.
+- **Commits:** `e6af2f2b` (UI) / `ae1b9c1b` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** Candy USD drawer → **$2,640**.
+- **Verification:** Focused `calculation.test.ts` self-check executed (`ok`). Full tsc/lint/build not run (Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-21 — Pence to Pounds Converter
+- **Summary:** Shipped Pence to Pounds Converter on existing catalog slug `pence-to-pounds-converter` (`PenceToPoundsConverter`, catalog `6af46f10a27d8d1d4e9901ca`, preserved `nameKey` `pence to pounds converter`, pillar/subPillar null). Screenshot-first (ADR-023): bidirectional GBX↔GBP at fixed 100 pence = 1 pound; last-edited field authoritative; no live FX. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**.
+- **Commits:** `270bbd2c` (UI) / `93fc88de` (engine) / `7f4d8b82` (registration).
+- **Example:** **250**p → **£2.50**; **£3.75** → **375**p.
+- **Verification:** Static formula review + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Futures Contracts Calculator
 - **Summary:** Shipped Futures Contracts Calculator on existing catalog slug `futures-contracts-calculator` (`FuturesContractsCalculator`, catalog `6af46f10a27d8d1d4e9901c2`, preserved `nameKey` `futures contracts calculator`, pillar/subPillar null). Screenshot-first (ADR-023): long/short; shared CME-style contract presets; tick/point/P/L Phase 2 FX; buy/sell points → P/L. Reuses margin-call point/P/L helpers. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**.
 - **Commits:** `5d42bb55` (UI) / `7c06d250` (engine+FX) / (registration/Brain/tracker — this commit).
