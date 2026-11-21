@@ -1,9 +1,21 @@
-﻿# Development Changelog (`CHANGELOG.md`)
+# Development Changelog (`CHANGELOG.md`)
 
 > **Convention:** Append entries chronologically after verified tasks. Do not rewrite historical entries.
 
 ---
 
+### 2026-11-22 — Meal Calorie Calculator
+- **Summary:** Shipped Meal Calorie Calculator on existing catalog slug `meal-calorie-calculator` (`MealCalorieCalculator`, catalog `6af46f10a27d8d1d4e9901ee`, pillar `6af451c1a27d8d1d4e98f982`, subPillar null). Screenshot-first (ADR-023): 2,000 kcal/day; optional Calculate required calories (Mifflin–St Jeor via maintenance engine); meals Three/Four/Five with center+range allocations; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-693`.
+- **Commits:** `2e0c5380` (UI) / `a49ed20b` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** **2,000** kcal · Three → Breakfast **650** (600–700) · Lunch **750** (700–800) · Dinner **600** (500–700).
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+
+### 2026-11-22 — Pregnancy Test Calculator
+- **Summary:** Shipped Pregnancy Test Calculator on existing catalog slug `pregnancy-test-calculator` (`PregnancyTestCalculator`, catalog `6af46f10a27d8d1d4e9901f9`, pillar `6af451c1a27d8d1d4e98f984`, subPillar `6af451c2a27d8d1d4e98f985`). Screenshot-first natural/IVF timing; reuses blood-pregnancy-hcg engine (identity). Share URL only. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-692`.
+- **Commits:** `3decf657` (UI) / `56a8b6ad` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** LMP **2026-01-01** · cycle **28** → ovulation **2026-01-15**.
+- **Verification:** Focused identity test ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Navy Body Fat Calculator
 - **Summary:** Shipped Navy Body Fat Calculator on existing catalog slug `navy-body-fat-calculator` (`NavyBodyFatCalculator`, catalog `6af46f10a27d8d1d4e990201`, pillar `6af451c2a27d8d1d4e98f986`, subPillar null). Screenshot-first (ADR-023): blank age; Male default; height/neck/waist cm; Female reveals hip; body fat %. Hodgdon/NHRC Navy equations reused from Body Fat module; educational vs official BCA; privacy-safe share URL. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-690`.
@@ -3576,6 +3588,12 @@
 ### 2026-11-17 — Add VA Mortgage Calculator (Screenshot-First, Fixed USD)
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
+
+### 2026-11-22 — Meal Calorie Calculator
+- **Summary:** Shipped Meal Calorie Calculator on existing catalog slug `meal-calorie-calculator` (`MealCalorieCalculator`, catalog `6af46f10a27d8d1d4e9901ee`, pillar `6af451c1a27d8d1d4e98f982`, subPillar null). Screenshot-first (ADR-023): 2,000 kcal/day; optional Calculate required calories (Mifflin–St Jeor via maintenance engine); meals Three/Four/Five with center+range allocations; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-693`.
+- **Commits:** `2e0c5380` (UI) / `a49ed20b` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** **2,000** kcal · Three → Breakfast **650** (600–700) · Lunch **750** (700–800) · Dinner **600** (500–700).
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 
 ### 2026-11-22 — Pregnancy Calculator

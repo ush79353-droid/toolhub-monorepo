@@ -1,4 +1,4 @@
-﻿# Current Project State (`CURRENT_STATE.md`)
+# Current Project State (`CURRENT_STATE.md`)
 
 > **Primary Agent Starting Point.** Last verified: **2026-11-21** (homepage shows category cards and up to three last-opened tools from local storage under the hero, then featured tools; `/tools` uses the same mint hero, lists every root category, and shows 48 popular-style cards per page; `/about` and `/contact` use the same mint hero plus one article; `/contact` also has a themed form that opens the visitor’s email app and is not stored on the site; operator name, city, country, and email, plus the contact business email and address, stay in `siteConfig` and stay hidden while empty; site header: home is logo + Share + Explore Tools; other pages add debounced tool search; Retirement Calculator live at `/tools/retirement-calculator`; Auto Loan remains master Tool Detail Page).
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Meal Calorie Calculator (`/tools/meal-calorie-calculator`):** Live client-side meal split tool (`componentKey: 'MealCalorieCalculator'`, catalog `6af46f10a27d8d1d4e9901ee`, pillar `6af451c1a27d8d1d4e98f982`). Screenshot-first (ADR-023): daily kcal; Three/Four/Five meals; optional maintenance; **no FX**. Activated; **`indexable` left false**. Example: **2,000** · Three → **650** / **750** / **600**.
 - **Pregnancy Test Calculator (/tools/pregnancy-test-calculator):** Live client-side timing tool (componentKey: 'PregnancyTestCalculator', catalog `6af46f10a27d8d1d4e9901f9`). Natural+IVF educational test dates; reuses blood-pregnancy-hcg engine; **no FX**. Activated; **`indexable` left false**. Example: LMP **2026-01-01** · **28**d → ovulation **2026-01-15**.
 - **Melatonin Dosage Calculator (`/tools/melatonin-dosage-calculator`):** Live client-side educational label/SmPC lookup (`componentKey: 'MelatoninDosageCalculator'`, catalog `6af46f10a27d8d1d4e9901da`, pillar `6af451c1a27d8d1d4e98f980`). Screenshot-first (ADR-023): Indication + medication type + optional duration; Circadin EMA 2 mg PR for adults ≥55; US supplements refuse invented mg; share URL only. **No FX**. Activated; **`indexable` left false**. Example: Circadin path · **10** weeks → **70** × 2 mg tablets (educational).
 - **Pregnancy Calculator (`/tools/pregnancy-calculator`):** Live client-side ACOG-style dating tool (`componentKey: 'PregnancyCalculator'`, catalog `6af46f10a27d8d1d4e9901f5`). Five methods; milestones; **no FX**; `indexable` false. Example due **2027-03-21** → LMP-eq **2026-06-14**.
