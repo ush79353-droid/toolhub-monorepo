@@ -16,6 +16,12 @@
 - **Example:** LMP **2024-01-01** · cycle **28** → **2024-10-07**; conception **2024-01-15** → **2024-10-07**.
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-22 — Calories Burned Calculator
+- **Summary:** Shipped Calories Burned Calculator on existing catalog slug `calories-burned-calculator` (`CaloriesBurnedCalculator`, catalog `6af46f10a27d8d1d4e9901ec`, pillar `6af451c1a27d8d1d4e98f982`, subPillar null). Screenshot-first (ADR-023): activity select; duration hours+minutes (default 45 min); body weight 70 kg (35–160 kg / 80–350 lb); Calculate/Clear; distance mode for walk/run/cycle only. Gross kcal = MET × 3.5 × kg × min / 200 (2011 Adult Compendium). **No FX**. Share = page URL only. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-684`.
+- **Commits:** `cce30d93` (UI) / `c92ef836` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** MET **9.5** · **90** kg · **7** h → **6284.25** kcal.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — BMI Calculator for Teens
 - **Summary:** Shipped BMI Calculator for Teens on existing catalog slug `bmi-calculator-for-teens` (`BmiCalculatorForTeens`, catalog `6af46f10a27d8d1d4e9901e2`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): blank height/weight (cm/kg); BMI + BMI Prime; expanded “How healthy is your BMI?” with unselected Female/Male + age 10–20 → CDC 2000 BMI-for-age LMS percentiles; teen categories never derived from Prime; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-681`.
 - **Commits:** `f7f52249` (UI absorbed into concurrent Calorie engine commit) / `02851545` (engine) / (registration/Brain/tracker — this commit; registry/sitemap/`tool.key` also absorbed into concurrent `8ae8d44b`).
