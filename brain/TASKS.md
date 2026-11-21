@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-641` | Implement Cross Exchange Rate Calculator on existing slug `cross-exchange-rate-calculator` with A/C|C/A and B/C|C/B pairs, A/B=(A/C)÷(B/C), no live FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/cross-exchange-rate/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-610` | Implement Early Retirement Calculator on existing slug `early-retirement-calculator` with income/expenses→monthly deposit, withdrawal-rate nest egg, end-of-month FI timeline, denomination CurrencySelect (no FX), verified activation (**indexable false**; leave FIRE Calculator untouched) | Cursor | Completed | `frontend/src/tools/calculators/early-retirement/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `FE-FOOTER-01` | Redesign public footer: two category columns with icons, Quick Tools, website pages; Privacy/Terms bottom-left; copyright bottom-right | Cursor | Completed | `frontend/src/components/layout/Footer.tsx`, `brain/FRONTEND.md` | — |
 | `FE-HEADER-01` | Site header: home is logo + Share + Explore Tools; other pages add a centered debounced tool search (10 suggestions) via Next proxy to `GET /catalog/tools/suggest` | Cursor | Completed | `frontend/src/components/layout/Header.tsx`, `HeaderSearch.tsx`, `frontend/src/app/api/catalog/tools/suggest/route.ts`, `backend/src/modules/catalog/*`, `brain/*` | — |
