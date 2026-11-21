@@ -1063,6 +1063,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WeightGainCalculator,
     })),
   ),
+  WeightPercentileCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/weight-percentile/WeightPercentileCalculator'
+    ).then((mod) => ({
+      default: mod.WeightPercentileCalculator,
+    })),
+  ),
   KgToGallonsConverter: lazyTool(() =>
     import('@/tools/calculators/kg-to-gallons/KgToGallonsCalculator').then((mod) => ({
       default: mod.KgToGallonsConverter,

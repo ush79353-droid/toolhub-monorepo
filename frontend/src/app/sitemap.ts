@@ -201,6 +201,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'grams-to-ounces-calculator',
   'weight-converter',
   'weight-gain-calculator',
+  'weight-percentile-calculator',
   'kg-to-gallons-converter',
   'force-converter',
   'nm-to-in-lbs-converter',

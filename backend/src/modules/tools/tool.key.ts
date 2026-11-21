@@ -172,6 +172,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GramsToOuncesCalculator',
   'WeightConverter',
   'WeightGainCalculator',
+  'WeightPercentileCalculator',
   'KgToGallonsConverter',
   'ForceConverter',
   'NmToInLbsConverter',

@@ -261,6 +261,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GramsToOuncesCalculator: () => import('@/tools/calculators/grams-to-ounces/detail'),
   WeightConverter: () => import('@/tools/calculators/weight-converter/detail'),
   WeightGainCalculator: () => import('@/tools/calculators/weight-gain/detail'),
+  WeightPercentileCalculator: () =>
+    import('@/tools/calculators/weight-percentile/detail'),
   KgToGallonsConverter: () => import('@/tools/calculators/kg-to-gallons/detail'),
   ForceConverter: () => import('@/tools/calculators/force-converter/detail'),
   NmToInLbsConverter: () => import('@/tools/calculators/nm-to-in-lbs/detail'),

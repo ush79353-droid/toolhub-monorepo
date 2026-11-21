@@ -17,6 +17,7 @@ Audit pending: deferred to final audit coordinator
 
 | # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
+| 100 | VTE Risk Score Calculator in Pregnancy | DEVELOPED | AUDIT PENDING | 10a22b42 (UI absorb) | b235a214 | (this reg/Brain) | Completed Tools | `VteRiskScorePregnancyCalculator`; slug `vte-risk-score-calculator-in-pregnancy`; Mongo `6af46f10a27d8d1d4e9901f8` active; RCOG GTG 37a; no FX; indexable false; TASKS `TOOL-698` |
 | 99 | Tylenol Dosage Calculator | DEVELOPED | AUDIT PENDING | 2ee8163f | f2962cf0 | (this reg/Brain) | Completed Tools | `TylenolDosageCalculator`; slug `tylenol-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901dd` active; DailyMed OTC; Extra Strength q6h; no FX; indexable false; TASKS `TOOL-699` |
 | 97 | Skinfold Body Fat Calculator | DEVELOPED | AUDIT PENDING | 10a22b42 | 5d939b5b | (this reg/Brain) | Completed Tools | `SkinfoldBodyFatCalculator`; slug `skinfold-body-fat-calculator`; Mongo `6af46f10a27d8d1d4e990202` active; no FX; indexable false; TASKS `TOOL-697`; UI commit absorbed concurrent twin/VTE staging |
 | 84 | Pregnancy Calculator | DEVELOPED | AUDIT PENDING | 4b6b3ce0 | 6eb651f2 | (reg) | Completed Tools | `PregnancyCalculator`; slug `pregnancy-calculator`; Mongo `6af46f10a27d8d1d4e9901f5` active; no FX; indexable false; TASKS `TOOL-678` |
