@@ -986,6 +986,9 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/forward-premium/detail'),
   ForwardRateCalculator: () =>
     import('@/tools/calculators/forward-rate/detail'),
+  FuturesContractsCalculator: () =>
+    import('@/tools/calculators/futures-contracts/detail'),
+
   ComparativeAdvantageCalculator: () =>
     import('@/tools/calculators/comparative-advantage/detail'),
   GdpDeflatorFormulaCalculator: () =>

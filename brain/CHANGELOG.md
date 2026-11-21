@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Futures Contracts Calculator
+- **Summary:** Shipped Futures Contracts Calculator on existing catalog slug `futures-contracts-calculator` (`FuturesContractsCalculator`, catalog `6af46f10a27d8d1d4e9901c2`, preserved `nameKey` `futures contracts calculator`, pillar/subPillar null). Screenshot-first (ADR-023): long/short; shared CME-style contract presets; tick/point/P/L Phase 2 FX; buy/sell points → P/L. Reuses margin-call point/P/L helpers. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**.
+- **Commits:** `5d42bb55` (UI) / `7c06d250` (engine+FX) / (registration/Brain/tracker — this commit).
+- **Example:** tick **1.25** · **4** ticks/pt · buy **4500** · sell **4510** · **2** contracts → long P/L **100**.
+- **Verification:** Static formula review + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Forward Rate Calculator
 - **Summary:** Screenshot-first annually compounded implied forward rate from spots S₁/S₂ and times n₁/n₂ (yrs/mo). Registered `ForwardRateCalculator`; Mongo `6af46f10a27d8d1d4e9901c1` activated; **indexable** preserved false. No FX.
 - **Important Files:** `frontend/src/tools/calculators/forward-rate/*`, registry keys/index/details, `tool.key.ts`, `sitemap.ts`, `brain/*`, `OMEGA-DEVELOPMENT-TRACKER.md`.

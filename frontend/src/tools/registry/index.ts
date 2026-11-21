@@ -3760,6 +3760,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  FuturesContractsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/futures-contracts/FuturesContractsCalculator'
+    ).then((mod) => ({
+      default: mod.FuturesContractsCalculator,
+    })),
+  ),
   ForwardRateCalculator: lazyTool(() =>
     import('@/tools/calculators/forward-rate/ForwardRateCalculator').then(
       (mod) => ({

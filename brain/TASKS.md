@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-645` | Implement Futures Contracts Calculator on existing slug `futures-contracts-calculator` with long/short P/L, contract presets, tick/point FX, dual FX slug lists, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/futures-contracts/*`, registry, sitemap, FX lists, `tool.key.ts`, `brain/*` | — |
 | `TOOL-644` | Implement Black Scholes Calculator on existing slug `black-scholes-calculator` with BSM European call/put, independent FX on stock/strike/call/put, dual FX slug lists, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/black-scholes/*`, registry, sitemap, FX lists, `tool.key.ts`, `brain/*` | — |
 | `TOOL-643` | Implement Brexit Calculator on existing slug `brexit-calculator` with dual-rate illustrative GDP-loss + government add-on + opportunity counts, fixed GBP, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/brexit/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-642` | Implement Currency Calculator on existing slug `currency-calculator` with Amount/From/To, popular-currency toggle, Calculate/Clear, live stored FX conversion, dual FX slug lists, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/currency/*`, `CurrencySelect` allowedCodes, registry, sitemap, FX lists, `tool.key.ts`, `brain/*` | — |
