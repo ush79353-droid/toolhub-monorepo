@@ -207,7 +207,10 @@ export function TrumpTariffForm({
         <div>
           <label htmlFor="tt-product" className={labelClass}>
             Choose product
-            <InfoTooltip text="Presets are illustrative hypothetical scenarios, not official HTSUS classifications or verified duty rates." />
+            <InfoTooltip
+              label="Product preset"
+              text="Presets are illustrative hypothetical scenarios, not official HTSUS classifications or verified duty rates."
+            />
           </label>
           <select
             id="tt-product"
@@ -236,7 +239,10 @@ export function TrumpTariffForm({
         <div>
           <label htmlFor="tt-country" className={labelClass}>
             Country of origin
-            <InfoTooltip text="Country of origin is where the goods were manufactured or substantially transformed — not necessarily the seller’s location, brand HQ, or shipping country." />
+            <InfoTooltip
+              label="Country of origin"
+              text="Country of origin is where the goods were manufactured or substantially transformed — not necessarily the seller’s location, brand HQ, or shipping country."
+            />
           </label>
           <select
             id="tt-country"
@@ -263,7 +269,10 @@ export function TrumpTariffForm({
         <div>
           <label htmlFor="tt-value" className={labelClass}>
             Customs value of product
-            <InfoTooltip text="Use the applicable customs value (often transaction value), which may differ from retail price or invoice total." />
+            <InfoTooltip
+              label="Customs value"
+              text="Use the applicable customs value (often transaction value), which may differ from retail price or invoice total."
+            />
           </label>
           <FieldShell error={errors.unitCustomsValue}>
             <span className="pl-3 text-sm text-muted-foreground" aria-hidden>
@@ -336,7 +345,10 @@ export function TrumpTariffForm({
         <div>
           <label htmlFor="tt-add" className={labelClass}>
             Additional applicable tariff rate
-            <InfoTooltip text="Additional measures (e.g. Section 301 or 232) may apply depending on classification, origin, and date. They do not always stack automatically." />
+            <InfoTooltip
+              label="Additional tariff"
+              text="Additional measures (e.g. Section 301 or 232) may apply depending on classification, origin, and date. They do not always stack automatically."
+            />
           </label>
           <FieldShell error={errors.additionalTariffRate}>
             <input
@@ -455,7 +467,10 @@ export function TrumpTariffForm({
             <div>
               <label htmlFor="tt-hts" className={labelClass}>
                 Harmonized Tariff Schedule code
-                <InfoTooltip text="Format validation only. A matching pattern does not confirm the correct legal classification or duty." />
+                <InfoTooltip
+                  label="HTSUS code"
+                  text="Format validation only. A matching pattern does not confirm the correct legal classification or duty."
+                />
               </label>
               <FieldShell error={errors.htsusCode}>
                 <input
