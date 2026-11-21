@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-666` | Implement Blood Donation Due Date Calculator on existing slug `blood-donation-due-date-calculator` with Male/Female/Custom waits (NHS-style 12/16 weeks), date-only next date, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/blood-donation-due-date/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-664` | Implement Benadryl Dosage Calculator on existing slug `benadryl-dosage-calculator` with age yrs, ULTRATAB/Extra Strength/Children's liquid Drug Facts bands, max 6 doses/24h, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/benadryl-dosage/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-663` | Implement Amoxicillin Pediatric Dosage Calculator on existing slug `amoxicillin-pediatric-dosage-calculator` with age/weight/strength/indication/route, mg/kg↔mg/mL conversion, WHO/CDC/IDSA/AHA-labeled regimens, no FX, privacy-safe share, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/amoxicillin-pediatric-dosage/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-665` | Implement BBT Calculator on existing slug `bbt-calculator-basal-body-temperature` with usual/actual hrs·min, measured °C/°F, 0.05 °C/30 min timing adjustment, overnight wrap, ±6h window, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/bbt/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
@@ -116,6 +117,10 @@
 ---
 
 ## Completed
+
+| `TOOL-671` | Implement Army Body Fat Calculator on existing slug `army-body-fat-calculator` with active-duty one-site abdomen equations (ALARACT 032/2025), legacy multi-site DoDI 1308.3 option, Table B–2 maxima, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/army-body-fat/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
+
+| `TOOL-670` | Implement BMI Calculator – Body Mass Index on existing slug `bmi-calculator-body-mass-index` with BMI, BMI Prime, WHO adult categories, age/athlete panel (CDC LMS childhood percentile gated), guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/bmi-body-mass-index/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 
 | `TOOL-658` | Implement Stamp Duty Land Tax Calculator UK on existing slug `stamp-duty-land-tax-calculator-uk` with buyer scenario, residency, HMRC marginal bands (FTB / higher rates / non-resident surcharge from 1 Apr 2025), band breakdown, fixed GBP, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/stamp-duty-land-tax-uk/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 

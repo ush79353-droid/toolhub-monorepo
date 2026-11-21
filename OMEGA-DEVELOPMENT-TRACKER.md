@@ -15,6 +15,7 @@ Audit pending: deferred to final audit coordinator
 
 | # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
+| 74 | Army Body Fat Calculator | DEVELOPED | AUDIT PENDING | 320e8b2a | 3bcb9dbb (engine absorbed; race) | (reg/Brain this session) | Completed Tools | `ArmyBodyFatCalculator`; slug `army-body-fat-calculator`; Mongo `6af46f10a27d8d1d4e990200` active; no FX; indexable false; TASKS `TOOL-671` |
 | 78 | BMI Calculator – Body Mass Index | DEVELOPED | AUDIT PENDING | 83374631 | 4b381324 | (this reg/Brain) | Completed Tools | `BmiBodyMassIndexCalculator`; slug `bmi-calculator-body-mass-index`; Mongo `6af46f10a27d8d1d4e9901e4` active; WHO adult + BMI Prime; no FX; indexable false; TASKS `TOOL-666` |
 | 77 | Benadryl Dosage Calculator | DEVELOPED | AUDIT PENDING | 62b94d07 (UI absorbed) | 9e6771a4 (engine absorbed) | f8540224 | Completed Tools | `BenadrylDosageCalculator`; slug `benadryl-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d4` active; DailyMed bands; no FX; indexable false; TASKS `TOOL-664` |
 | 76 | Amoxicillin Pediatric Dosage Calculator | DEVELOPED | AUDIT PENDING | 32b59b94 (UI absorbed concurrent) | e445278b | (this reg/Brain) | Completed Tools | `AmoxicillinPediatricDosageCalculator`; slug `amoxicillin-pediatric-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d3` active; no FX; indexable false; TASKS `TOOL-663` |

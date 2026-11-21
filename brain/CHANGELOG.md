@@ -4,8 +4,14 @@
 
 ---
 
+### 2026-11-22 — Army Body Fat Calculator
+- **Summary:** Shipped Army Body Fat Calculator on existing catalog slug `army-body-fat-calculator` (`ArmyBodyFatCalculator`, catalog `6af46f10a27d8d1d4e990200`, pillar `6af451c2a27d8d1d4e98f986`, subPillar null). Screenshot-first (ADR-023): active-duty toggle (default on) uses authorized one-site abdomen + weight equations (ALARACT 032/2025 / AD 2023-11, effective 9 June 2023); unchecked uses labeled legacy DoDI 1308.3 / AR 600-9 multi-site log10 math with hip only for females; optional age vs Table B–2 maxima; cm/in and lb/kg; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-671`.
+- **Commits:** `320e8b2a` (UI) / engine absorbed into concurrent `3bcb9dbb` (plus mislabeled sibling `9e6771a4` from multi-agent race) / (registration/Brain/tracker — this commit).
+- **Example:** Female · **165** lb · abdomen **30** in → **26%**; Male · **210** lb · **35** in → **17%**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — BMI Calculator – Body Mass Index
-- **Summary:** Shipped BMI Calculator – Body Mass Index on existing catalog slug `bmi-calculator-body-mass-index` (`BmiBodyMassIndexCalculator`, catalog `6af46f10a27d8d1d4e9901e4`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): Female/Male; height (cm/m/in/ft) + weight (kg/lb/st); BMI + BMI Prime; WHO adult categories; collapsed “BMI percentile and athletes” (age path notes; CDC LMS not bundled so childhood numeric percentile gated; athlete caution); proprietary promo omitted; share/copy = public page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-666`.
+- **Summary:** Shipped BMI Calculator – Body Mass Index on existing catalog slug `bmi-calculator-body-mass-index` (`BmiBodyMassIndexCalculator`, catalog `6af46f10a27d8d1d4e9901e4`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): Female/Male; height (cm/m/in/ft) + weight (kg/lb/st); BMI + BMI Prime; WHO adult categories; collapsed “BMI percentile and athletes” (age path notes; CDC LMS not bundled so childhood numeric percentile gated; athlete caution); proprietary promo omitted; share/copy = public page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-670`.
 - **Commits:** `83374631` (UI) / `4b381324` (engine) / (registration/Brain/tracker — this commit).
 - **Example:** **80** kg · **2** m → BMI **20.00** · Prime **0.80** (normal).
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
