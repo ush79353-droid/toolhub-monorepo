@@ -923,6 +923,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cpi-inflation/detail'),
   CurrencyForwardCalculator: () =>
     import('@/tools/calculators/currency-forward/detail'),
+  DeadweightLossCalculator: () =>
+    import('@/tools/calculators/deadweight-loss/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

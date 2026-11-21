@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Currency Forward Calculator live at `/tools/currency-forward-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Deadweight Loss Calculator live at `/tools/deadweight-loss-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Deadweight Loss Calculator (`/tools/deadweight-loss-calculator`):** Live client-side welfare-loss tool (`componentKey: 'DeadweightLossCalculator'`, catalog `6af46f10a27d8d1d4e990177`, `nameKey` `deadweight loss calculator`). Screenshot-first (ADR-023): triangle DWL = ½|ΔP||ΔQ|; tax mode ½ t |Qe−Qt| + revenue; linear S&D DWL = ½(b+d)(Qe−Qd)²; denomination CurrencySelect; SVG illustrative/model graph; no monopoly/externality modes. Activated; **`indexable` left false**. Example: P **10→14** · Q **1000→800** → DWL **$400**.
 - **Currency Forward Calculator (`/tools/currency-forward-calculator`):** Live client-side CIP forward tool (`componentKey: 'CurrencyForwardCalculator'`, catalog `6af46f10a27d8d1d4e990176`, `nameKey` `currency forward calculator`). Screenshot-first (ADR-023): BASE/QUOTE = quote per 1 base; F = S × Aq/Ab with simple/annual/continuous compounding; Actual/360|365; period rates; forward points/premium/annualized premium; optional notional + settlement scenario; CurrencySelect for pair codes (manual spot/rates, no live FX); no charts. Activated; **`indexable` left false**. Example: EUR/USD · S **1.1000** · rq **5%** · rb **3%** · **90**/365 · simple → F ≈ **1.1054**.
 - **CPI Inflation Calculator – Consumer Price Index (`/tools/cpi-inflation-calculator-consumer-price-index`):** Live client-side CPI tool (`componentKey: 'CpiInflationCalculator'`, catalog `6af46f10a27d8d1d4e990175`, `nameKey` `cpi inflation calculator - consumer price index`). Screenshot-first (ADR-023): Amount × (CPI_target/CPI_base); cumulative + compound annualized inflation; purchasing-power change; historical BLS CUUR0000SA0 annual averages **1913–2025** (shared with Buying Power); custom CPI mode; fixed USD; no charts. Activated; **`indexable` left false**. Illustrative: **$1,000** · CPI 220→260 · 10y → ≈ **$1,181.82** · **+18.18%** · ≈ **+1.68%**/yr.
 - **Cobb-Douglas Production Function Calculator (`/tools/cobb-douglas-production-function-calculator`):** Live client-side production tool (`componentKey: 'CobbDouglasCalculator'`, catalog `6af46f10a27d8d1d4e990173`, `nameKey` `cobb-douglas production function calculator`). Screenshot-first (ADR-023): Y = A L^α K^β; A/L/α/K/β → Y; RTS constant/increasing/decreasing; expandable MPL/MPK/APL/APK; output in model units (no currency); α|β>1 warns. Activated; **`indexable` left false**. Example: A **2** · L **100** · K **50** · α **0.6** · β **0.4** → Y ≈ **151.57**.

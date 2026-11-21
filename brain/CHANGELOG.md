@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Deadweight Loss Calculator
+- **Summary:** Shipped Deadweight Loss Calculator on existing catalog slug `deadweight-loss-calculator` (`DeadweightLossCalculator`, catalog `6af46f10a27d8d1d4e990177`, preserved `nameKey` `deadweight loss calculator`). Screenshot-first (ADR-023): triangle DWL = ½|ΔP||ΔQ|; per-unit tax and linear S&D modes; denomination CurrencySelect; SVG DWL graph (illustrative triangle or model curves); guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**. Monopoly/externality modes not shipped (insufficient unique curve inputs without inventing assumptions).
+- **Example:** P **$10→$14** · Q **1,000→800** → DWL **$400**; tax t**=4** · Qt**=800** → revenue **$3,200**.
+- **Important Files:** `frontend/src/tools/calculators/deadweight-loss/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Deadweight Loss tests 19/19 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Currency Forward Calculator
 - **Summary:** Shipped Currency Forward Calculator on existing catalog slug `currency-forward-calculator` (`CurrencyForwardCalculator`, catalog `6af46f10a27d8d1d4e990176`, preserved `nameKey` `currency forward calculator`). Screenshot-first (ADR-023): covered interest parity F = S × Aq/Ab; simple/annual/continuous; Actual/360|365; period rates; forward points/premium; optional notional + settlement; CurrencySelect for ISO pair codes (manual inputs, no live FX); no charts. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** EUR/USD · S **1.1000** · USD **5%** · EUR **3%** · **90**/365 · simple → F ≈ **1.1054** USD per EUR.

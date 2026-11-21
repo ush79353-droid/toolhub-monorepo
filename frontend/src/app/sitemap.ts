@@ -772,6 +772,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cobb-douglas-production-function-calculator',
   'cpi-inflation-calculator-consumer-price-index',
   'currency-forward-calculator',
+  'deadweight-loss-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

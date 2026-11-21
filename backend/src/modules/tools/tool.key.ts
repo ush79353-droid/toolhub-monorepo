@@ -649,6 +649,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CobbDouglasCalculator',
   'CpiInflationCalculator',
   'CurrencyForwardCalculator',
+  'DeadweightLossCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
@@ -1448,6 +1449,7 @@ if (isDirect) {
     !isApprovedComponentKey('CobbDouglasCalculator') ||
     !isApprovedComponentKey('CpiInflationCalculator') ||
     !isApprovedComponentKey('CurrencyForwardCalculator') ||
+    !isApprovedComponentKey('DeadweightLossCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
