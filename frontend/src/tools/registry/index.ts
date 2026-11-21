@@ -2969,6 +2969,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CalorieCalculator,
     })),
   ),
+  CalorieIntakeSimpleCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/calorie-intake-simple/CalorieIntakeSimpleCalculator'
+    ).then((mod) => ({
+      default: mod.CalorieIntakeSimpleCalculator,
+    })),
+  ),
   CaloriesBurnedCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/calories-burned/CaloriesBurnedCalculator'

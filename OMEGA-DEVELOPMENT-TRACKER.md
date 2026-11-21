@@ -15,6 +15,8 @@ Audit pending: deferred to final audit coordinator
 
 | # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
+| 81 | Geriatric BMI Calculator | DEVELOPED | AUDIT PENDING | b8d8b57e | 80185cec | 8bc7a71c | Completed Tools | `GeriatricBmiCalculator`; slug `geriatric-bmi-calculator`; Mongo `6af46f10a27d8d1d4e9901e7` active; older-adult bands; no FX; indexable false |
+| 80 | Calorie Calculator | DEVELOPED | AUDIT PENDING | c187f256 | f7f52249 | eac18b1f | Completed Tools | `CalorieCalculator`; slug `calorie-calculator`; Mongo `6af46f10a27d8d1d4e9901e8` active; Mifflin-St Jeor; no FX; indexable false |
 | 88 | BMI Weight Loss Calculator | DEVELOPED | AUDIT PENDING | f8c829dd | c51c49e6 (absorbed) + 00fc6967 | a2c6ebdb + restore | Completed Tools | `BmiWeightLossCalculator`; slug `bmi-weight-loss-calculator`; Mongo `6af46f10a27d8d1d4e9901e6` active; no FX; indexable false; TASKS `TOOL-685`; registry briefly dropped by concurrent Geriatric BMI commit — restored |
 | 87 | Breastfeeding Calorie Calculator | DEVELOPED | AUDIT PENDING | a9a107df (UI absorb) | dfe61271 | (this reg/Brain) | Completed Tools | `BreastfeedingCalorieCalculator`; slug `breastfeeding-calorie-calculator`; Mongo `6af46f10a27d8d1d4e9901e9` active; IOM DRI EER; no FX; indexable false; TASKS `TOOL-682`; UI absorbed into concurrent calorie-intake-simple `a9a107df`; index/details absorbed into concurrent registry commits |
 | 86 | Calories Burned Calculator | DEVELOPED | AUDIT PENDING | cce30d93 | c92ef836 | (this reg/Brain) | Completed Tools | `CaloriesBurnedCalculator`; slug `calories-burned-calculator`; Mongo `6af46f10a27d8d1d4e9901ec` active; Compendium MET; no FX; indexable false; TASKS `TOOL-684` |

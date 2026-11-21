@@ -719,6 +719,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CagrCalculator: () => import('@/tools/calculators/cagr/detail'),
   CalorieCalculator: () =>
     import('@/tools/calculators/calorie/detail'),
+  CalorieIntakeSimpleCalculator: () =>
+    import('@/tools/calculators/calorie-intake-simple/detail'),
   CaloriesBurnedCalculator: () =>
     import('@/tools/calculators/calories-burned/detail'),
   CallOptionCalculator: () => import('@/tools/calculators/call-option/detail'),
