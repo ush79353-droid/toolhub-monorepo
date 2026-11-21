@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Unlevered Beta Calculator live at `/tools/unlevered-beta-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (WACC Calculator live at `/tools/wacc-calculator-weighted-average-cost-of-capital`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **WACC Calculator (Weighted Average Cost of Capital) (`/tools/wacc-calculator-weighted-average-cost-of-capital`):** Live client-side WACC tool (`componentKey: 'WaccCalculator'`, catalog `6af46f10a27d8d1d4e990170`, `nameKey` `wacc calculator (weighted average cost of capital)`). Screenshot-first (ADR-023): WACC = We×Re + Wd×Rd×(1−T); six fields; capital-mix breakdown; all-equity/all-debt paths; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: E **700,000** · D **500,000** · Re **15%** · Rd **8%** · T **20%** → WACC **11.42%**.
 - **Unlevered Beta Calculator (`/tools/unlevered-beta-calculator`):** Live client-side asset-beta tool (`componentKey: 'UnleveredBetaCalculator'`, catalog `6af46f10a27d8d1d4e99016f`, `nameKey` `unlevered beta calculator`). Screenshot-first (ADR-023): Hamada βU = βL/[1+(1−T)(D/E)]; effective or manual tax; D/E from debt/equity; zero-debt → βU=βL; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: βL **1.20** · T **20%** · D/E **2.00×** → βU **0.4615**.
 - **Sustainable Growth Rate Calculator (`/tools/sustainable-growth-rate-calculator`):** Live client-side SGR tool (`componentKey: 'SustainableGrowthRateCalculator'`, catalog `6af46f10a27d8d1d4e99016e`, `nameKey` `sustainable growth rate calculator`). Screenshot-first (ADR-023): retention = (NI−D)/NI; ROE = NI/E; SGR = ROE×b; optional average equity; direct ROE×retention mode; zero NI/equity blocked; excess-dividend warning; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NI **2,000,000** · Div **1,000,000** · Equity **10,000,000** → SGR **10.00%**.
 - **ROIC Calculator – Return on Invested Capital (`/tools/roic-calculator-return-on-invested-capital`):** Live client-side ROIC tool (`componentKey: 'RoicCalculator'`, catalog `6af46f10a27d8d1d4e99016d`, `nameKey` `roic calculator - return on invested capital`). Screenshot-first (ADR-023): NOPAT = EBIT×(1−t); invested capital = equity+debt; ROIC = NOPAT/IC×100; optional average capital; IC must be > 0; negative EBIT warning; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: EBIT **500,000** · tax **25%** · equity **1,200,000** · debt **800,000** → ROIC **18.75%**.

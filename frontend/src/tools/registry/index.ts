@@ -3511,6 +3511,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.UnleveredBetaCalculator,
     })),
   ),
+  WaccCalculator: lazyTool(() =>
+    import('@/tools/calculators/wacc/WaccCalculator').then((mod) => ({
+      default: mod.WaccCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

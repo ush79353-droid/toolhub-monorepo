@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add WACC Calculator (Weighted Average Cost of Capital)
+- **Summary:** Shipped WACC Calculator on existing catalog slug `wacc-calculator-weighted-average-cost-of-capital` (`WaccCalculator`, catalog `6af46f10a27d8d1d4e990170`, preserved `nameKey` `wacc calculator (weighted average cost of capital)`). Screenshot-first (ADR-023): WACC = (E/(E+D))×Re + (D/(E+D))×Rd×(1−T); six fields; weights/after-tax debt breakdown; zero total capital blocked. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** E **700,000** · D **500,000** · Re **15%** · Rd **8%** · T **20%** → WACC **11.42%**.
+- **Important Files:** `frontend/src/tools/calculators/wacc/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` WACC tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Unlevered Beta Calculator
 - **Summary:** Shipped Unlevered Beta Calculator on existing catalog slug `unlevered-beta-calculator` (`UnleveredBetaCalculator`, catalog `6af46f10a27d8d1d4e99016f`, preserved `nameKey` `unlevered beta calculator`). Screenshot-first (ADR-023): Hamada βU = βL/[1+(1−T)(D/E)]; effective tax from NI/pre-tax or manual T; D/E; zero-debt identity; negative beta allowed. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** NI **80,000** · Pre-tax **100,000** · Debt **2,000,000** · Equity **1,000,000** · βL **1.20** → βU **0.4615**.

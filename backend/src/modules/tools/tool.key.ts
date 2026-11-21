@@ -643,6 +643,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RoicCalculator',
   'SustainableGrowthRateCalculator',
   'UnleveredBetaCalculator',
+  'WaccCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
@@ -1436,6 +1437,7 @@ if (isDirect) {
     !isApprovedComponentKey('RoicCalculator') ||
     !isApprovedComponentKey('SustainableGrowthRateCalculator') ||
     !isApprovedComponentKey('UnleveredBetaCalculator') ||
+    !isApprovedComponentKey('WaccCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||

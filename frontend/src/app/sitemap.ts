@@ -766,6 +766,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'roic-calculator-return-on-invested-capital',
   'sustainable-growth-rate-calculator',
   'unlevered-beta-calculator',
+  'wacc-calculator-weighted-average-cost-of-capital',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

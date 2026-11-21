@@ -912,6 +912,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/sustainable-growth-rate/detail'),
   UnleveredBetaCalculator: () =>
     import('@/tools/calculators/unlevered-beta/detail'),
+  WaccCalculator: () => import('@/tools/calculators/wacc/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>
