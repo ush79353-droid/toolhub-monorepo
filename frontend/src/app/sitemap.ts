@@ -775,6 +775,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'deadweight-loss-calculator',
   'discretionary-income-calculator',
   'fisher-effect-calculator',
+  'fisher-equation-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

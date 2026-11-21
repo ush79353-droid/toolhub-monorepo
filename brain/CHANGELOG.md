@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Fisher Equation Calculator
+- **Summary:** Shipped Fisher Equation Calculator on existing catalog slug `fisher-equation-calculator` (`FisherEquationCalculator`, catalog `6af46f10a27d8d1d4e99017b`, preserved `nameKey` `fisher equation calculator`). Screenshot-first (ADR-023): four-field exact/approximate layout; bidirectional modes; equation-focused guide distinguishing Fisher Effect. Extracted shared math to `frontend/src/tools/shared/fisher-equation.ts` and rewired Fisher Effect to import it. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** i **8%** · πᵉ **3%** → exact r ≈ **4.8544%** (display **4.85%**) · approx **5.00%** · Δ ≈ **0.15** pp.
+- **Important Files:** `frontend/src/tools/calculators/fisher-equation/*`, `frontend/src/tools/shared/fisher-equation.ts`, `fisher-effect/calculation.ts` re-export, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Fisher Equation + Effect tests 31/31 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Fisher Effect Calculator
 - **Summary:** Shipped Fisher Effect Calculator on existing catalog slug `fisher-effect-calculator` (`FisherEffectCalculator`, catalog `6af46f10a27d8d1d4e99017a`, preserved `nameKey` `fisher effect calculator`). Screenshot-first (ADR-023): bidirectional modes for real/nominal/expected inflation; exact Fisher equation default with approximate comparison; domain guards for −100%; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** i **5%** · πᵉ **2%** → exact r ≈ **2.9412%** (display **2.94%**) · approx **3.00%**.

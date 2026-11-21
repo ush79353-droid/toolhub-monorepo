@@ -652,6 +652,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DeadweightLossCalculator',
   'DiscretionaryIncomeCalculator',
   'FisherEffectCalculator',
+  'FisherEquationCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
@@ -1454,6 +1455,7 @@ if (isDirect) {
     !isApprovedComponentKey('DeadweightLossCalculator') ||
     !isApprovedComponentKey('DiscretionaryIncomeCalculator') ||
     !isApprovedComponentKey('FisherEffectCalculator') ||
+    !isApprovedComponentKey('FisherEquationCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
