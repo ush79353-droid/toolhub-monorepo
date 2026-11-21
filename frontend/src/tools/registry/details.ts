@@ -10,8 +10,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/annuity/detail'),
   AnnuityPayoutCalculator: () =>
     import('@/tools/calculators/annuity-payout/detail'),
-  AnorexicBmiCalculator: () =>
-    import('@/tools/calculators/anorexic-bmi/detail'),
   ArmyBodyFatCalculator: () =>
     import('@/tools/calculators/army-body-fat/detail'),
   AutoLeaseCalculator: () => import('@/tools/calculators/auto-lease/detail'),
@@ -668,16 +666,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BasisPointCalculator: () =>
     import('@/tools/calculators/basis-point/detail'),
   BbtCalculator: () => import('@/tools/calculators/bbt/detail'),
-  AleveDosageCalculator: () =>
-    import('@/tools/calculators/aleve-dosage/detail'),
   BenadrylDosageCalculator: () =>
     import('@/tools/calculators/benadryl-dosage/detail'),
   BetaStockCalculator: () =>
     import('@/tools/calculators/beta-stock/detail'),
   BidensTaxPlanCalculator: () =>
     import('@/tools/calculators/bidens-tax-plan/detail'),
-  BirthWeightPercentileCalculator: () =>
-    import('@/tools/calculators/birth-weight-percentile/detail'),
   BlendedRateCalculator: () =>
     import('@/tools/calculators/blended-rate/detail'),
   BmiBodyMassIndexCalculator: () =>

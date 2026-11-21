@@ -10,6 +10,12 @@
 - **Example:** Pill · **20** PKR / 28-day cycle · **1** year · no condoms → **260.89** PKR.
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-22 — Birth Weight Percentile Calculator
+- **Summary:** Shipped Birth Weight Percentile Calculator on existing catalog slug `birth-weight-percentile-calculator` (`BirthWeightPercentileCalculator`, catalog `6af46f10a27d8d1d4e990208`, pillar `6af451c2a27d8d1d4e98f988`, subPillar null). Screenshot-first (ADR-023): gestational age weeks+days; weight g/kg/lb; FMF Nicolaides 2018 Table 1 **birth-weight** centiles (unisex; not EFW columns); band headline + 5/10/50/75/95 chart; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-674`.
+- **Commits:** `ac69d310` (UI) / `b2255feb` (engine) / (registration/Brain/tracker — this commit). Note: concurrent `f166eeaf` absorbed unrelated staged registry lines under a mislabeled engine message during multi-agent index race.
+- **Example:** **35**w **4**d · **2360** g → between **10th** and **25th** percentile (FMF BW).
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Blood Donation Due Date Calculator
 - **Summary:** Shipped Blood Donation Due Date Calculator on existing catalog slug `blood-donation-due-date-calculator` (`BloodDonationDueDateCalculator`, catalog `6af46f10a27d8d1d4e990204`, pillar `6af451c2a27d8d1d4e98f987`, subPillar null). Screenshot-first (ADR-023): Sex Male/Female/Custom period; locked NHS/WHO-style 12-week male / 16-week female waits; custom editable days/weeks/months; last donation → next donation via date-only math; share copies page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-672`.
 - **Commits:** `3bcb9dbb` (UI; multi-agent race also absorbed army-body-fat engine files) / `52916887` (engine) / `bf4ca7a5` (registry).

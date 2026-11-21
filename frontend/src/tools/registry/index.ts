@@ -36,13 +36,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnuityPayoutCalculator,
     })),
   ),
-  AnorexicBmiCalculator: lazyTool(() =>
-    import(
-      '@/tools/calculators/anorexic-bmi/AnorexicBmiCalculator'
-    ).then((mod) => ({
-      default: mod.AnorexicBmiCalculator,
-    })),
-  ),
   ArmyBodyFatCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/army-body-fat/ArmyBodyFatCalculator'
@@ -2812,13 +2805,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BbtCalculator,
     })),
   ),
-  AleveDosageCalculator: lazyTool(() =>
-    import(
-      '@/tools/calculators/aleve-dosage/AleveDosageCalculator'
-    ).then((mod) => ({
-      default: mod.AleveDosageCalculator,
-    })),
-  ),
   BenadrylDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/benadryl-dosage/BenadrylDosageCalculator'
@@ -2836,13 +2822,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/bidens-tax-plan/BidensTaxPlanCalculator'
     ).then((mod) => ({
       default: mod.BidensTaxPlanCalculator,
-    })),
-  ),
-  BirthWeightPercentileCalculator: lazyTool(() =>
-    import(
-      '@/tools/calculators/birth-weight-percentile/BirthWeightPercentileCalculator'
-    ).then((mod) => ({
-      default: mod.BirthWeightPercentileCalculator,
     })),
   ),
   BlendedRateCalculator: lazyTool(() =>
