@@ -4034,6 +4034,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  FalseNegativePregnancyTestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/false-negative-pregnancy-test/FalseNegativePregnancyTestCalculator'
+    ).then((mod) => ({
+      default: mod.FalseNegativePregnancyTestCalculator,
+    })),
+  ),
   FisherEquationCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/fisher-equation/FisherEquationCalculator'
@@ -4060,6 +4067,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/futures-contracts/FuturesContractsCalculator'
     ).then((mod) => ({
       default: mod.FuturesContractsCalculator,
+    })),
+  ),
+  GabapentinDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gabapentin-dosage/GabapentinDosageCalculator'
+    ).then((mod) => ({
+      default: mod.GabapentinDosageCalculator,
     })),
   ),
   ForwardRateCalculator: lazyTool(() =>
@@ -4536,6 +4550,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/double-discount/DoubleDiscountCalculator'
     ).then((mod) => ({
       default: mod.DoubleDiscountCalculator,
+    })),
+  ),
+  TramadolDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/tramadol-dosage/TramadolDosageCalculator'
+    ).then((mod) => ({
+      default: mod.TramadolDosageCalculator,
     })),
   ),
   TripleDiscountCalculator: lazyTool(() =>
@@ -5097,6 +5118,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/retention-ratio/RetentionRatioCalculator'
     ).then((mod) => ({
       default: mod.RetentionRatioCalculator,
+    })),
+  ),
+  ReverseDueDateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/reverse-due-date/ReverseDueDateCalculator'
+    ).then((mod) => ({
+      default: mod.ReverseDueDateCalculator,
     })),
   ),
   RetirementCalculator: lazyTool(() =>

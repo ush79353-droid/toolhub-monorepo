@@ -10,6 +10,11 @@
 
 ---
 
+### 2026-11-22 — What is a False Negative Pregnancy Test?
+- **Summary:** Article embed of canonical pregnancy-test timing (FalseNegativePregnancyTestCalculator, catalog `6af46f10a27d8d1d4e9901fd`). No false-negative probability. **No FX**. Activated; indexable false. TASKS `TOOL-693`.
+- **Commits:** `8a4a88b2` / `3e17159c` / (this).
+- **Verification:** identity test ok. Temporary files cleaned: YES.
+
 ### 2026-11-22 — Pregnancy Weight Gain: Week by Week Breakdown
 - **Summary:** Shipped week-by-week IOM chart on slug `pregnancy-weight-gain-week-by-week-breakdown` (`PregnancyWeightGainWeekByWeekCalculator`, `6af46f10a27d8d1d4e9901f3`). Reuses shared pregnancy-weight-gain engine; chart/table unit radios; **no FX**; indexable false. TASKS `TOOL-688`.
 - **Commits:** `636d88a1` / `4336d3b9` / (this reg).
@@ -36,7 +41,7 @@
 
 ### 2026-11-22 — Melatonin Dosage Calculator
 - **Summary:** Shipped Melatonin Dosage Calculator on existing catalog slug `melatonin-dosage-calculator` (`MelatoninDosageCalculator`, catalog `6af46f10a27d8d1d4e9901da`, pillar `6af451c1a27d8d1d4e98f980`). Screenshot-first (ADR-023): Indication (default trouble falling asleep), Medication type (default tablets/capsules), blank therapy duration days/weeks. EMA Circadin 2 mg prolonged-release SmPC when that product type is selected; US dietary-supplement forms get label-info only (no invented mg). Share URL only. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-691`.
-- **Commits:** `f0f15948` (UI) / `297c47cb` (engine) / (registration/Brain — this commit).
+- **Commits:** `f0f15948` (UI) / `297c47cb` (engine) / `2494b596` (registration absorbed into concurrent Meal Calorie catalog commit; Brain/tracker follow-up).
 - **Example:** Prolonged-release 2 mg · poor sleep quality · **10** weeks → within 13-week SmPC · **70** tablets educational supply math.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (master prompt §12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
@@ -3599,6 +3604,11 @@
 ### 2026-11-17 — Add VA Mortgage Calculator (Screenshot-First, Fixed USD)
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
+
+### 2026-11-22 — What is a False Negative Pregnancy Test?
+- **Summary:** Article embed of canonical pregnancy-test timing (FalseNegativePregnancyTestCalculator, catalog `6af46f10a27d8d1d4e9901fd`). No false-negative probability. **No FX**. Activated; indexable false. TASKS `TOOL-693`.
+- **Commits:** `8a4a88b2` / `3e17159c` / (this).
+- **Verification:** identity test ok. Temporary files cleaned: YES.
 
 ### 2026-11-22 — Pregnancy Weight Gain: Week by Week Breakdown
 - **Summary:** Shipped week-by-week IOM chart on slug `pregnancy-weight-gain-week-by-week-breakdown` (`PregnancyWeightGainWeekByWeekCalculator`, `6af46f10a27d8d1d4e9901f3`). Reuses shared pregnancy-weight-gain engine; chart/table unit radios; **no FX**; indexable false. TASKS `TOOL-688`.

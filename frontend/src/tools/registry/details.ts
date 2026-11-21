@@ -1068,6 +1068,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/discretionary-income/detail'),
   FisherEffectCalculator: () =>
     import('@/tools/calculators/fisher-effect/detail'),
+  FalseNegativePregnancyTestCalculator: () =>
+    import('@/tools/calculators/false-negative-pregnancy-test/detail'),
   FisherEquationCalculator: () =>
     import('@/tools/calculators/fisher-equation/detail'),
   ForwardPremiumCalculator: () =>
@@ -1076,6 +1078,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/forward-rate/detail'),
   FuturesContractsCalculator: () =>
     import('@/tools/calculators/futures-contracts/detail'),
+  GabapentinDosageCalculator: () =>
+    import('@/tools/calculators/gabapentin-dosage/detail'),
 
   ComparativeAdvantageCalculator: () =>
     import('@/tools/calculators/comparative-advantage/detail'),
@@ -1213,6 +1217,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/discount-rate/detail'),
   DoubleDiscountCalculator: () =>
     import('@/tools/calculators/double-discount/detail'),
+  TramadolDosageCalculator: () =>
+    import('@/tools/calculators/tramadol-dosage/detail'),
   TripleDiscountCalculator: () =>
     import('@/tools/calculators/triple-discount/detail'),
   EffectiveAnnualYieldCalculator: () =>
@@ -1363,6 +1369,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/retained-earnings/detail'),
   RetentionRatioCalculator: () =>
     import('@/tools/calculators/retention-ratio/detail'),
+  ReverseDueDateCalculator: () =>
+    import('@/tools/calculators/reverse-due-date/detail'),
   RetirementCalculator: () =>
     import('@/tools/calculators/retirement/detail'),
   Rule2836Calculator: () =>
