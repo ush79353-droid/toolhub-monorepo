@@ -935,6 +935,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/comparative-advantage/detail'),
   GdpDeflatorFormulaCalculator: () =>
     import('@/tools/calculators/gdp-deflator-formula/detail'),
+  GdpGapCalculator: () => import('@/tools/calculators/gdp-gap/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

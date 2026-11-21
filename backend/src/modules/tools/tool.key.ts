@@ -655,6 +655,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FisherEffectCalculator',
   'FisherEquationCalculator',
   'GdpDeflatorFormulaCalculator',
+  'GdpGapCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
@@ -1460,6 +1461,7 @@ if (isDirect) {
     !isApprovedComponentKey('FisherEffectCalculator') ||
     !isApprovedComponentKey('FisherEquationCalculator') ||
     !isApprovedComponentKey('GdpDeflatorFormulaCalculator') ||
+    !isApprovedComponentKey('GdpGapCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||

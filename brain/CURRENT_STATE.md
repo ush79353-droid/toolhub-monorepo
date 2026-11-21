@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (GDP Deflator Formula Calculator live at `/tools/gdp-deflator-formula-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (GDP Gap Calculator live at `/tools/gdp-gap-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **GDP Gap Calculator (`/tools/gdp-gap-calculator`):** Live client-side output-gap tool (`componentKey: 'GdpGapCalculator'`, catalog `6af46f10a27d8d1d4e99017d`, `nameKey` `gdp gap calculator`). Screenshot-first (ADR-023): Gap%=((Y−Y*)/Y*)×100 with modes for gap/actual/potential; absolute gap; shared CurrencySelect denomination (PKR default); magnitudes units→trillions; gap &gt; −100% reverse guards; positive/negative/zero interpretation; empty defaults + load example. Activated; **`indexable` left false**. Example: Y **18T** · Y* **20T** → Gap **−10%**.
 - **GDP Deflator Formula Calculator (`/tools/gdp-deflator-formula-calculator`):** Live client-side price-index tool (`componentKey: 'GdpDeflatorFormulaCalculator'`, catalog `6af46f10a27d8d1d4e99017c`, `nameKey` `gdp deflator formula calculator`). Screenshot-first (ADR-023): D=(N/R)×100 with modes for deflator/nominal/real; shared CurrencySelect denomination (PKR default); per-field magnitudes (units→trillions); optional two-period deflator inflation; index interpretation (not one-year inflation); empty defaults + load example. Activated; **`indexable` left false**. Example: N **25T** · R **20T** → D **125**.
 - **Comparative Advantage Calculator (`/tools/comparative-advantage-calculator`):** Live client-side trade tool (`componentKey: 'ComparativeAdvantageCalculator'`, catalog `6af46f10a27d8d1d4e990174`, `nameKey` `comparative advantage calculator`). Screenshot-first (ADR-023): Country X/Y productivity for Good A/B; OC_A=B/A, OC_B=A/B; comparative = lower OC; absolute = higher productivity; ties; specialization + terms-of-trade interval; optional linear PPF (H×productivity); empty defaults + load example; no currency. Activated; **`indexable` left false**. Example: X **100/80** · Y **90/90** → X CA Good A · Y CA Good B.
 - **Fisher Equation Calculator (`/tools/fisher-equation-calculator`):** Live client-side equation tool (`componentKey: 'FisherEquationCalculator'`, catalog `6af46f10a27d8d1d4e99017b`, `nameKey` `fisher equation calculator`). Screenshot-first (ADR-023): four fields (nominal, expected inflation, exact real, approximated real); bidirectional modes; shared math in `tools/shared/fisher-equation.ts` (also used by Fisher Effect); step-by-step details. Activated; **`indexable` left false**. Example: i **8%** · πᵉ **3%** → exact r ≈ **4.85%** · approx **5.00%**.

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add GDP Gap Calculator
+- **Summary:** Shipped GDP Gap Calculator on existing catalog slug `gdp-gap-calculator` (`GdpGapCalculator`, catalog `6af46f10a27d8d1d4e99017d`, preserved `nameKey` `gdp gap calculator`). Screenshot-first (ADR-023): Gap%=((Y−Y*)/Y*)×100 with modes for gap/actual/potential; absolute monetary gap; shared CurrencySelect denomination (PKR default); magnitudes; gap &gt; −100% reverse guards; interpretation card; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Y **18** trillion · Y* **20** trillion → Gap **−10%** · absolute **−2** trillion.
+- **Important Files:** `frontend/src/tools/calculators/gdp-gap/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` gdp-gap tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add GDP Deflator Formula Calculator
 - **Summary:** Shipped GDP Deflator Formula Calculator on existing catalog slug `gdp-deflator-formula-calculator` (`GdpDeflatorFormulaCalculator`, catalog `6af46f10a27d8d1d4e99017c`, preserved `nameKey` `gdp deflator formula calculator`). Screenshot-first (ADR-023): D=(N/R)×100 with bidirectional modes; shared CurrencySelect denomination (PKR default); magnitude units→trillions; optional two-period inflation; index interpretation; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** N **25** trillion · R **20** trillion → D **125**; inflation 120→126 → **5%**.
