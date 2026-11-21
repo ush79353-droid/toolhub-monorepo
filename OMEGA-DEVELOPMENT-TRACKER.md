@@ -15,7 +15,7 @@ Audit pending: deferred to final audit coordinator
 
 | # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
-| 83 | Infant Tylenol Dosage Calculator | DEVELOPED | AUDIT PENDING | c7ce7a51 | c8fb7a80 | (reg/Brain) | Completed Tools | `InfantTylenolDosageCalculator`; slug `infant-tylenol-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d7` active; DailyMed/Tylenol.com weight bands; no FX; indexable false; TASKS `TOOL-677` |
+| 83 | Infant Tylenol Dosage Calculator | DEVELOPED | AUDIT PENDING | c7ce7a51 | c8fb7a80 | 22305ff3 | Completed Tools | `InfantTylenolDosageCalculator`; slug `infant-tylenol-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d7` active; DailyMed/Tylenol.com weight bands; no FX; indexable false; TASKS `TOOL-677` |
 | 75 | Calorie Deficit Calculator | DEVELOPED | AUDIT PENDING | 26683baa | 26683baa | (this Brain) | Completed Tools | `CalorieDeficitCalculator`; slug `calorie-deficit-calculator`; Mongo `6af46f10a27d8d1d4e9901ea` active; registry via `c9c44e05`; no FX; indexable false; TASKS `TOOL-662` |
 | 81 | Geriatric BMI Calculator | DEVELOPED | AUDIT PENDING | b8d8b57e | 80185cec | 8bc7a71c | Completed Tools | `GeriatricBmiCalculator`; slug `geriatric-bmi-calculator`; Mongo `6af46f10a27d8d1d4e9901e7` active; older-adult bands; no FX; indexable false |
 | 80 | Calorie Calculator | DEVELOPED | AUDIT PENDING | c187f256 | f7f52249 | eac18b1f | Completed Tools | `CalorieCalculator`; slug `calorie-calculator`; Mongo `6af46f10a27d8d1d4e9901e8` active; Mifflin-St Jeor; no FX; indexable false |
