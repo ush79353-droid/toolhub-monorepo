@@ -103,7 +103,7 @@ Audit pending: deferred to final audit coordinator
 | 60 | New York Tax Calculator | DEVELOPED | AUDIT PENDING | 4abebdfc | 0f441eca | 44d12361 | Completed Tools | `NewYorkTaxCalculator`; slug `new-york-tax-calculator`; Mongo `6af46f0fa27d8d1d4e99006c`; TY2025 federal+NYS+NYC; fixed USD; indexable false |
 
 | 61 | Modified Adjusted Gross Income (MAGI) Calculator | DEVELOPED | AUDIT PENDING | 03c9fe74 | 516e8910 | c1d34d67 | Completed Tools | `ModifiedAdjustedGrossIncomeCalculator`; slug `modified-adjusted-gross-income-magi-calculator`; Mongo `6af46f0fa27d8d1d4e990067`; Phase 2 FX; indexable false; TASKS `TOOL-574` |
-| 62 | Capital Gains Tax UK Calculator | DEVELOPED | AUDIT PENDING | d6b444ca | d41583b8 | (reg this commit) | Completed Tools | `CapitalGainsTaxUkCalculator`; slug `capital-gains-tax-uk-calculator`; Mongo `6af46f10a27d8d1d4e9901cb` active; HMRC 2025/26–2026/27; fixed GBP; indexable false; TASKS `TOOL-651` |
+| 62 | Capital Gains Tax UK Calculator | DEVELOPED | AUDIT PENDING | d6b444ca | d41583b8 | 1b853375 | Completed Tools | `CapitalGainsTaxUkCalculator`; slug `capital-gains-tax-uk-calculator`; Mongo `6af46f10a27d8d1d4e9901cb` active; HMRC 2025/26–2026/27; fixed GBP; indexable false; TASKS `TOOL-651`; keys/sitemap/tool.key/index/details also via concurrent `22336b5c` |
 
 
 | 63 | Call Option Calculator | DEVELOPED | AUDIT PENDING | 5eecfbf6 | db64a460 | (docs c3) | Completed Tools | CallOptionCalculator; slug call-option-calculator; Mongo 6af46f10a27d8d1d4e9901bf active; indexable false; denomination no FX; TASKS TOOL-611; folder Completed Tools |
@@ -115,20 +115,20 @@ Audit pending: deferred to final audit coordinator
 
 | 70 | Options Spread Calculator | DEVELOPED | AUDIT PENDING | 2716e398 | 2e7a6766 (engine absorbed) / 99bdee62 (pension race) | (this reg/Brain/tracker) | Completed Tools | `OptionsSpreadCalculator`; slug `options-spread-calculator`; Mongo `6af46f10a27d8d1d4e9901c3` active; Phase 2 FX; ×100; indexable false; TASKS `TOOL-649` |
 
-| 71 | Pension Calculator | DEVELOPED | AUDIT PENDING | 99bdee62 (UI absorb) + 8e422be1 | 42f4e549 | (reg) | Completed Tools | `PensionCalculator`; slug `pension-calculator`; Mongo `6af46f10a27d8d1d4e9901b7` active; denomination USD no FX; indexable false; TASKS `TOOL-650` |
+| 71 | Pension Calculator | DEVELOPED | AUDIT PENDING | 99bdee62 (UI absorb) + 8e422be1 | 42f4e549 | 5a2b0c38 | Completed Tools | `PensionCalculator`; slug `pension-calculator`; Mongo `6af46f10a27d8d1d4e9901b7` active; denomination USD no FX; indexable false; TASKS `TOOL-650` |
 
 ## Session Log
-- 2026-11-21 (Pension): Pension Calculator DEVELOPED (UI via `99bdee62` absorb + `8e422be1` / `42f4e549` / reg). Mongo `6af46f10a27d8d1d4e9901b7` activated; indexable false; denomination-only CurrencySelect (no FX). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (Pension): Pension Calculator DEVELOPED (UI via `99bdee62` absorb + `8e422be1` / `42f4e549` / `5a2b0c38`). Mongo `6af46f10a27d8d1d4e9901b7` activated; indexable false; denomination-only CurrencySelect (no FX). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Options Spread): Options Spread Calculator DEVELOPED (`2716e398` / engine via `2e7a6766` absorbed + `99bdee62` pension staging race / reg+Brain). Mongo `6af46f10a27d8d1d4e9901c3` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
-- 2026-11-21 (Capital Gains Tax UK): Capital Gains Tax UK Calculator DEVELOPED (`d6b444ca` / `d41583b8` / reg). Mongo `6af46f10a27d8d1d4e9901cb` activated; indexable false; fixed GBP; HMRC 18%/24%. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (Capital Gains Tax UK): Capital Gains Tax UK Calculator DEVELOPED (`d6b444ca` / `d41583b8` / `1b853375`). Mongo `6af46f10a27d8d1d4e9901cb` activated; indexable false; fixed GBP; HMRC 18%/24%. Registry keys also via concurrent `22336b5c`. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 | 69 | Pence to Pounds Converter | DEVELOPED | AUDIT PENDING | 270bbd2c | 93fc88de | 7f4d8b82 | Completed Tools | `PenceToPoundsConverter`; slug `pence-to-pounds-converter`; Mongo `6af46f10a27d8d1d4e9901ca` active; fixed 100p=£1; no FX; indexable false; TASKS `TOOL-647` |
 
 | 69 | Money Counter Calculator | DEVELOPED | AUDIT PENDING | e6af2f2b | ae1b9c1b | (this reg commit) | Completed Tools | `MoneyCounterCalculator`; slug `money-counter-calculator`; Mongo `6af46f10a27d8d1d4e9901c9` active; denomination-only (no FX); indexable false; TASKS `TOOL-646` |
 
-- 2026-11-21 (Money Counter): Money Counter Calculator DEVELOPED (`e6af2f2b` / `ae1b9c1b` / reg). Mongo `6af46f10a27d8d1d4e9901c9` activated; indexable false; denomination sets only (no FX). Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (Money Counter): Money Counter Calculator DEVELOPED (`e6af2f2b` / `ae1b9c1b` / `5a2b0c38`). Mongo `6af46f10a27d8d1d4e9901c9` activated; indexable false; denomination sets only (no FX). Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Pence to Pounds): Pence to Pounds Converter DEVELOPED (`270bbd2c` / `93fc88de` / `7f4d8b82`). Mongo `6af46f10a27d8d1d4e9901ca` activated; indexable false; fixed sterling subdivision (not FX). Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
-- 2026-11-21 (Futures Contracts): Futures Contracts Calculator DEVELOPED (`5d42bb55` / `7c06d250` / reg). Mongo `6af46f10a27d8d1d4e9901c2` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (Futures Contracts): Futures Contracts Calculator DEVELOPED (`5d42bb55` / `7c06d250` / `5a2b0c38`). Mongo `6af46f10a27d8d1d4e9901c2` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Forward Rate): Forward Rate Calculator DEVELOPED (`9f6caafb` / `84e792b4` / `11c3eb5c`). Mongo `6af46f10a27d8d1d4e9901c1` activated; indexable false; annual compounding; no FX. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Brexit): Brexit Calculator DEVELOPED (`19e671b9` / `22e78f69` / `630b1966`). Mongo `6af46f10a27d8d1d4e9901c6` activated; indexable false; fixed GBP dual-rate illustrative model. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Black Scholes): Black Scholes Calculator DEVELOPED (57409d05 / ed35667f / reg+Brain+tracker). Mongo 6af46f10a27d8d1d4e9901be activated; indexable false; Phase 2 FX. Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
@@ -151,7 +151,7 @@ Audit pending: deferred to final audit coordinator
 - 2026-11-20 (this agent): Net to Gross Calculator IN_DEVELOPMENT (engine types/calculation/validation started; UI pending). Folder retained in In Progress. Mongo `6af46f0fa27d8d1d4e99006b` not activated yet.
 - 2026-11-20 (Lottery Tax): Lottery Tax Calculator DEVELOPED ( 621f3fa / c96bd248 / 3cb5f137). Mongo 6af46f0fa27d8d1d4e990064 activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (Monthly Income): Monthly Income Calculator DEVELOPED (`29ca128c` / `52521270` / c3). Mongo `6af46f0fa27d8d1d4e990069` activated; indexable false. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
-- 2026-11-20 (Mileage Reimbursement): Mileage Reimbursement Calculator DEVELOPED (`dafff61f` / `27d5f4d6` / reg). Mongo `6af46f0fa27d8d1d4e990066` activated; indexable false; fixed USD; IRS verified rates. Missouri ON HOLD untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-20 (Mileage Reimbursement): Mileage Reimbursement Calculator DEVELOPED (`dafff61f` / `27d5f4d6` / `5a2b0c38`). Mongo `6af46f0fa27d8d1d4e990066` activated; indexable false; fixed USD; IRS verified rates. Missouri ON HOLD untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (this agent): Take-Home-Paycheck Calculator **BLOCKED** — Anderson county + 1.37% without identifiable state; Mongo `6af46f0fa27d8d1d4e990074` undeveloped; prompt forbids guessing jurisdiction. Kept in In Progress. No commits. Missouri ON HOLD untouched.
 - 2026-11-20 (this agent): Tax Bracket Calculator DEVELOPED (`01b0a564` / `af00a40b` / `9988c4ab`). Mongo `6af46f0fa27d8d1d4e990075` activated; indexable false; fixed USD. Moved to Completed Tools. Missouri ON HOLD untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (this agent): Pay Raise Calculator DEVELOPED (`7139db50` / `66cca6ac` / `3df77935`). Mongo `6af46f0fa27d8d1d4e99006d` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri ON HOLD untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
@@ -291,7 +291,7 @@ Screenshot-first spot/forward premium + 365-day annualization. No FX selectors. 
 
 Screenshot-first UK NI (Class 1 cat A + Class 4 separate bases; tax years 2024/25–2026/27; fixed GBP). Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
 
-| 67 | National Insurance Calculator | DEVELOPED | AUDIT PENDING | e1e53272 | dbd8f2ef | (integration commit) | Completed Tools | `NationalInsuranceCalculator`; slug `national-insurance-calculator`; Mongo `6af46f10a27d8d1d4e9901cc` active; fixed GBP; indexable false; TASKS `TOOL-648` |
+| 67 | National Insurance Calculator | DEVELOPED | AUDIT PENDING | e1e53272 | dbd8f2ef | 5a2b0c38 (guide/detail/Brain absorbed into concurrent pension reg) | Completed Tools | `NationalInsuranceCalculator`; slug `national-insurance-calculator`; Mongo `6af46f10a27d8d1d4e9901cc` active; fixed GBP; indexable false; TASKS `TOOL-648` |
 
 ### 2026-11-21 — IRA Calculator DEVELOPED
 
