@@ -2802,6 +2802,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BreakEvenCalculator,
     })),
   ),
+  BrexitCalculator: lazyTool(() =>
+    import('@/tools/calculators/brexit/BrexitCalculator').then((mod) => ({
+      default: mod.BrexitCalculator,
+    })),
+  ),
   BuildVsBuyCalculator: lazyTool(() =>
     import('@/tools/calculators/build-vs-buy/BuildVsBuyCalculator').then((mod) => ({
       default: mod.BuildVsBuyCalculator,
@@ -3944,6 +3949,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/black-friday/BlackFridayCalculator'
     ).then((mod) => ({
       default: mod.BlackFridayCalculator,
+    })),
+  ),
+  BlackScholesCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/black-scholes/BlackScholesCalculator'
+    ).then((mod) => ({
+      default: mod.BlackScholesCalculator,
     })),
   ),
   BoatLoanCalculator: lazyTool(() =>

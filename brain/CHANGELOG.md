@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Black Scholes Calculator
+- **Summary:** Shipped Black Scholes Calculator on existing catalog slug `black-scholes-calculator` (`BlackScholesCalculator`, catalog `6af46f10a27d8d1d4e9901be`, preserved `nameKey` `black scholes calculator`, pillar/subPillar null). Screenshot-first (ADR-023): stock/strike/call/put independent Phase 2 FX; maturity yrs/mos/days; dividend yield/vol/risk-free % → European BSM call/put. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Keys/sitemap/tool.key/FX slugs already on HEAD via concurrent registry traffic; this commit completes `registry/index.ts` + `details.ts` + Brain/tracker.
+- **Commits:** `57409d05` (UI; also absorbed concurrent Cross Exchange Rate UI files) / `ed35667f` (engine+FX validation) / (registration/Brain/tracker — this commit).
+- **Example:** S=K **100** · T **1**y · q **0%** · σ **20%** · r **5%** → call ≈ **10.45** · put ≈ **5.57**.
+- **Verification:** Static formula/parity review + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Currency Calculator
 - **Summary:** Shipped Currency Calculator on existing catalog slug `currency-calculator` (`CurrencyCalculator`, catalog `6af46f10a27d8d1d4e9901c8`, preserved `nameKey` `currency calculator`, pillar/subPillar null). Screenshot-first (ADR-023): Amount/From/To; popular-only toggle; Calculate/Clear; timestamped result with both quote directions. Real FX via ADR-021 `convertCurrency` + dual `CURRENCY_CONVERSION_SLUGS`; ExchangeRate-API upstream attribution via stored snapshot `fetchedAt`. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Extended `CurrencySelect` with `allowedCodes` + `showDenominationNote`.
 - **Commits:** `49a238a3` (UI) / `81492c88` (engine; also absorbed concurrent call-option guide files + briefly emptied `registry/index.ts`, later restored by concurrent agents) / (registration/Brain/tracker — this commit).
@@ -12,7 +18,7 @@
 
 ### 2026-11-21 — Brexit Calculator
 - **Summary:** Shipped Brexit Calculator on existing catalog slug `brexit-calculator` (`BrexitCalculator`, catalog `6af46f10a27d8d1d4e9901c6`, preserved `nameKey` `brexit calculator`, pillar/subPillar null). Screenshot-first (ADR-023): dual-rate illustrative GDP-loss running total + government add-on + opportunity-cost counts; fixed GBP; share/reload/clear/feedback. Prompt narrative (alive-2064 / personal assets / solar-stadiums) mismatched screenshot — screenshot authority applied. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Keys/sitemap/tool.key lines also landed via concurrent early-retirement registration `0445e0dc`; this commit restores lazy `registry/index.ts` + `details.ts` + Brain/tracker.
-- **Commits:** `19e671b9` (UI) / `22e78f69` (engine) / (registration/Brain/tracker — this commit).
+- **Commits:** `19e671b9` (UI) / `22e78f69` (engine) / (registration/Brain/tracker — this commit). TASKS `TOOL-643`.
 - **Verification:** Focused `calculation.test.ts` self-check executed (`ok`). Full frontend tsc/lint/build not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-21 — Yield to Call Calculator
