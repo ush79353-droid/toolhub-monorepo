@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Social Security Calculator
+- **Summary:** Shipped Social Security Calculator on existing catalog slug `social-security-calculator` (`SocialSecurityCalculator`, catalog `6af46f10a27d8d1d4e9901bd`, pillar/subPillar null). Screenshot-first (ADR-023): birth year, life expectancy, investment return, COLA, required FRA monthly benefit (PIA); Calculate/Clear; ideal claim age 62–70 via invested terminal value; optional comparison table; nominal break-even vs 62. Versioned SSA FRA / early reduction / DRC. **Fixed USD** (**no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-660`.
+- **Commits:** `4ff935ec` (UI) / `500247db` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** birth **1970** · LE **83** · return **5%** · COLA **3%** · PIA **$1,922**/mo → ideal age among 62–70 by invested FV.
+- **Verification:** Focused `calculation.test.ts` asserts executed (FRA/early/DRC factors). Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — SIP Calculator + Lumpsum
 - **Summary:** Shipped SIP Calculator + Lumpsum on existing catalog slug `sip-calculator-lumpsum` (`SipLumpsumCalculator`, catalog `6af46f10a27d8d1d4e9901b1`, pillar/subPillar null). Screenshot-first (ADR-023): solve-for final balance/deposit/lumpsum/return/term; initial lumpsum; expected return; term; start date; inflation; compounding; SIP deposit/frequency/begin-end timing; opening/final/total deposits/return/transactions/end date + optional schedule. Denomination CurrencySelect (PKR default, **no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-659`.
 - **Commits:** `b2f35dd5` (UI) / `647d0dc5` (engine) / (registration/Brain/tracker — this commit; registry/sitemap/tool.key lines also absorbed into concurrent `997b7f1c`).

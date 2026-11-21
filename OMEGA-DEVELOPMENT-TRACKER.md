@@ -15,6 +15,7 @@ Audit pending: deferred to final audit coordinator
 
 | # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
+| 73 | Social Security Calculator | DEVELOPED | AUDIT PENDING | 4ff935ec | 500247db | (this reg/Brain) | Completed Tools | `SocialSecurityCalculator`; slug `social-security-calculator`; Mongo `6af46f10a27d8d1d4e9901bd` active; fixed USD; indexable false; TASKS `TOOL-660` |
 | 70 | SIP Calculator + Lumpsum | DEVELOPED | AUDIT PENDING | b2f35dd5 | 647d0dc5 | (this reg/Brain; registry also via concurrent 997b7f1c) | Completed Tools | `SipLumpsumCalculator`; slug `sip-calculator-lumpsum`; Mongo `6af46f10a27d8d1d4e9901b1` active; denomination PKR no FX; indexable false; TASKS `TOOL-659` |
 | 1 | Credit Card Interest Calculator | DEVELOPED | AUDIT 83d9a878 | ad1db269 | 6c22d90a | a8c12719 | Completed Tools | `CreditCardInterestCalculator` |
 | 2 | Credit Card Minimum Payment Calculator | DEVELOPED | AUDIT 83d9a878 | a58000dc | 4f016493 | fd92b7b0 | Completed Tools | `CreditCardMinimumPaymentCalculator` |
