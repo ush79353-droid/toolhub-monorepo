@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Unlevered Beta Calculator
+- **Summary:** Shipped Unlevered Beta Calculator on existing catalog slug `unlevered-beta-calculator` (`UnleveredBetaCalculator`, catalog `6af46f10a27d8d1d4e99016f`, preserved `nameKey` `unlevered beta calculator`). Screenshot-first (ADR-023): Hamada βU = βL/[1+(1−T)(D/E)]; effective tax from NI/pre-tax or manual T; D/E; zero-debt identity; negative beta allowed. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NI **80,000** · Pre-tax **100,000** · Debt **2,000,000** · Equity **1,000,000** · βL **1.20** → βU **0.4615**.
+- **Important Files:** `frontend/src/tools/calculators/unlevered-beta/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Unlevered Beta tests 21/21 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Sustainable Growth Rate Calculator
 - **Summary:** Shipped Sustainable Growth Rate Calculator on existing catalog slug `sustainable-growth-rate-calculator` (`SustainableGrowthRateCalculator`, catalog `6af46f10a27d8d1d4e99016e`, preserved `nameKey` `sustainable growth rate calculator`). Screenshot-first (ADR-023): SGR = ROE × retention; build from NI/dividends/equity; optional average equity; direct ROE×retention mode; zero-NI undefined; equity ≤0 blocked. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** NI **2,000,000** · Div **1,000,000** · Equity **10,000,000** → retention **50%** · ROE **20%** → SGR **10.00%**.

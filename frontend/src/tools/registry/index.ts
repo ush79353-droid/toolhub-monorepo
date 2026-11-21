@@ -3504,6 +3504,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SustainableGrowthRateCalculator,
     })),
   ),
+  UnleveredBetaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/unlevered-beta/UnleveredBetaCalculator'
+    ).then((mod) => ({
+      default: mod.UnleveredBetaCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'
