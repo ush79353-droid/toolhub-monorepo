@@ -459,6 +459,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SpendingMultiplierCalculator',
   'TaylorRuleCalculator',
   'TrumpTariffCalculator',
+  'VelocityOfMoneyCalculator',
   'TdsInterestCalculator',
   'SinkingFundCalculator',
   'SipCalculator',
@@ -1285,6 +1286,7 @@ if (isDirect) {
     !isApprovedComponentKey('SpendingMultiplierCalculator') ||
     !isApprovedComponentKey('TaylorRuleCalculator') ||
     !isApprovedComponentKey('TrumpTariffCalculator') ||
+    !isApprovedComponentKey('VelocityOfMoneyCalculator') ||
     !isApprovedComponentKey('TdsInterestCalculator') ||
     !isApprovedComponentKey('SinkingFundCalculator') ||
     !isApprovedComponentKey('SipCalculator') ||

@@ -586,6 +586,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/taylor-rule/detail'),
   TrumpTariffCalculator: () =>
     import('@/tools/calculators/trump-tariff/detail'),
+  VelocityOfMoneyCalculator: () =>
+    import('@/tools/calculators/velocity-of-money/detail'),
   TdsInterestCalculator: () =>
     import('@/tools/calculators/tds-interest/detail'),
   SinkingFundCalculator: () =>

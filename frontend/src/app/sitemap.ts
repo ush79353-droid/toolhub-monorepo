@@ -640,6 +640,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'spending-multiplier-calculator',
   'taylor-rule-calculator',
   'trump-tariff-calculator',
+  'velocity-of-money-calculator',
   'price-quantity-calculator',
   'private-savings-calculator',
   'savings-plan-calculator',

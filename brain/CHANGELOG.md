@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Velocity of Money Calculator
+- **Summary:** Shipped Velocity of Money Calculator on existing catalog slug `velocity-of-money-calculator` (`VelocityOfMoneyCalculator`, catalog `6af46f10a27d8d1d4e990192`, preserved `nameKey` `velocity of money calculator`). Screenshot-first (ADR-023): transaction/GDP modes; reverse solves; derived PT requires base basket price (index not treated as currency); period units; magnitude; chart; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** T **$1,500,000** / M **$500,000** → V **3**/year; GDP **$25T** / M **$20T** → V **1.25**.
+- **Important Files:** `frontend/src/tools/calculators/velocity-of-money/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` velocity-of-money tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Trump Tariff Calculator
 - **Summary:** Shipped Trump Tariff Calculator on existing catalog slug `trump-tariff-calculator` (`TrumpTariffCalculator`, catalog `6af46f10a27d8d1d4e990191`, preserved `nameKey` `trump tariff calculator`). Screenshot-first (ADR-023): product/country modes; illustrative product presets; origin; customs value × quantity; base + additional ad valorem with additive-stacking guard; landed cost; optional HTSUS format + pass-through; breakdown chart; educational guide/FAQ; no fabricated official rates. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$800** × **10** · **5%** + **20%** · ship **$250** · insure **$50** → duties **$2,000** · landed **$10,300**.

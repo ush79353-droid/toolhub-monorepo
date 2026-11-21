@@ -534,6 +534,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TrumpTariffCalculator,
     })),
   ),
+  VelocityOfMoneyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/velocity-of-money/VelocityOfMoneyCalculator'
+    ).then((mod) => ({
+      default: mod.VelocityOfMoneyCalculator,
+    })),
+  ),
   TdsInterestCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tds-interest/TdsInterestCalculator'
