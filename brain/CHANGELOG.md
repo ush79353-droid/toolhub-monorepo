@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Taylor Rule Calculator
+- **Summary:** Shipped Taylor Rule Calculator on existing catalog slug `taylor-rule-calculator` (`TaylorRuleCalculator`, catalog `6af46f10a27d8d1d4e990190`, preserved `nameKey` `taylor rule calculator`). Screenshot-first (ADR-023): inflation gap; GDP output gap; i=r*+π+a(π−π*)+by; custom a/b; optional πᵉ and floor comparison; component chart; negative rates allowed. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** π **4%** · π* **2%** · Y **21T** · Y* **20T** · r* **2%** → i **9.5%**.
+- **Important Files:** `frontend/src/tools/calculators/taylor-rule/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` taylor-rule tests 14/14 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Spending Multiplier Calculator
 - **Summary:** Shipped Spending Multiplier Calculator on existing catalog slug `spending-multiplier-calculator` (`SpendingMultiplierCalculator`, catalog `6af46f10a27d8d1d4e99018f`, preserved `nameKey` `spending multiplier calculator`). Screenshot-first (ADR-023): From MPC/MPS/k; ΔY=k×ΔA and required ΔA; optional observed GDP comparison; finite spending rounds + chart; undefined at MPC=1 (no Infinity); denomination CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** MPC **0.6** → k **2.5×** · ΔA **$1,000,000** → ΔY **$2,500,000**.

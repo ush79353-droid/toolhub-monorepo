@@ -520,6 +520,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SalaryWithOvertimeCalculator,
     })),
   ),
+  TaylorRuleCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/taylor-rule/TaylorRuleCalculator'
+    ).then((mod) => ({
+      default: mod.TaylorRuleCalculator,
+    })),
+  ),
   TdsInterestCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tds-interest/TdsInterestCalculator'

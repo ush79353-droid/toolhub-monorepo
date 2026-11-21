@@ -582,6 +582,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/simple-interest/detail'),
   SpendingMultiplierCalculator: () =>
     import('@/tools/calculators/spending-multiplier/detail'),
+  TaylorRuleCalculator: () =>
+    import('@/tools/calculators/taylor-rule/detail'),
   TdsInterestCalculator: () =>
     import('@/tools/calculators/tds-interest/detail'),
   SinkingFundCalculator: () =>

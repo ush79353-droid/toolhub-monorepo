@@ -638,6 +638,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'real-gdp-calculator',
   'reserve-ratio-calculator',
   'spending-multiplier-calculator',
+  'taylor-rule-calculator',
   'price-quantity-calculator',
   'private-savings-calculator',
   'savings-plan-calculator',
