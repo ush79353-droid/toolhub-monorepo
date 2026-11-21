@@ -769,6 +769,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/economic-value-added/detail'),
   EffectiveDurationCalculator: () =>
     import('@/tools/calculators/effective-duration/detail'),
+  EmiCalculator: () =>
+    import('@/tools/calculators/emi/detail'),
   EnterpriseValueCalculator: () =>
     import('@/tools/calculators/enterprise-value/detail'),
   EbtCalculator: () => import('@/tools/calculators/ebt/detail'),

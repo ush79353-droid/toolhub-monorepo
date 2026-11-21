@@ -3108,6 +3108,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EffectiveDurationCalculator,
     })),
   ),
+  EmiCalculator: lazyTool(() =>
+    import('@/tools/calculators/emi/EmiCalculator').then((mod) => ({
+      default: mod.EmiCalculator,
+    })),
+  ),
   EnterpriseValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/enterprise-value/EnterpriseValueCalculator'

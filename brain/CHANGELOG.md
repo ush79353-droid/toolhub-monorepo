@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add EMI Calculator – Equated Monthly Installment
+- **Summary:** Shipped EMI Calculator on existing catalog slug `emi-calculator-equated-monthly-installment` (`EmiCalculator`, catalog `6af46f10a27d8d1d4e9901a8`, preserved `nameKey` `emi calculator - equated monthly installment`). Screenshot-first (ADR-023): fixed-rate reducing-balance EMI; years/months term; principal-vs-interest chart; amortization + yearly + CSV; optional outstanding balance, extra payments, loan compare; denomination CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Principal **PKR 500,000** · **10%** · **5 years** → EMI ≈ **PKR 10,623.52** · total interest ≈ **PKR 137,411**.
+- **Important Files:** `frontend/src/tools/calculators/emi/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` emi tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Percent Off Calculator
 - **Summary:** Shipped Percent Off Calculator on existing catalog slug `percent-off-calculator` (`PercentOffCalculator`, catalog `6af46f10a27d8d1d4e9901a5`, preserved `nameKey` `percent off calculator`). Screenshot-first (ADR-023): final/original/discount% modes; optional sequential second discount; effective %; optional sales tax on discounted price; savings bar; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$200** · **25%** → save **$50** · final **$150**; **$100** · **20%** then **10%** → **$72** (effective **28%**); tax example **$150** + **8%** → **$162**.
