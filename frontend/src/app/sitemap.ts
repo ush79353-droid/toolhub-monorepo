@@ -769,6 +769,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'wacc-calculator-weighted-average-cost-of-capital',
   'buying-power-calculator',
   'carry-trade-calculator',
+  'cobb-douglas-production-function-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

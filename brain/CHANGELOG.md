@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Cobb-Douglas Production Function Calculator
+- **Summary:** Shipped Cobb-Douglas Production Function Calculator on existing catalog slug `cobb-douglas-production-function-calculator` (`CobbDouglasCalculator`, catalog `6af46f10a27d8d1d4e990173`, preserved `nameKey` `cobb-douglas production function calculator`). Screenshot-first (ADR-023): Y = A L^α K^β; six fields; RTS classification; expandable MPL/MPK/APL/APK; no currency; no charts. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** A **2** · L **100** · K **50** · α **0.6** · β **0.4** → Y ≈ **151.57** · constant RTS.
+- **Important Files:** `frontend/src/tools/calculators/cobb-douglas/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Cobb-Douglas tests 20/20 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Carry Trade Calculator
 - **Summary:** Shipped Carry Trade Calculator on existing catalog slug `carry-trade-calculator` (`CarryTradeCalculator`, catalog `6af46f10a27d8d1d4e990172`, preserved `nameKey` `carry trade calculator`). Screenshot-first (ADR-023): Profit = P×[(S₀/S₁)(1+Rl)−(1+Rb)]; spot differential; 360/365 simple interest; three sections; approximate return labeled separately; denomination-only CurrencySelect (PKR default, manual FX rates, no live FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** P **5,000** · S₀ **0.85** · S₁ **0.83** · rl **6%** · rb **2%** · **180**/365 → profit ≈ **+222.68** · total return ≈ **+4.45%**.

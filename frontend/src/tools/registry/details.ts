@@ -917,6 +917,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/buying-power/detail'),
   CarryTradeCalculator: () =>
     import('@/tools/calculators/carry-trade/detail'),
+  CobbDouglasCalculator: () =>
+    import('@/tools/calculators/cobb-douglas/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

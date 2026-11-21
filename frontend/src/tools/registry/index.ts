@@ -3530,6 +3530,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  CobbDouglasCalculator: lazyTool(() =>
+    import('@/tools/calculators/cobb-douglas/CobbDouglasCalculator').then(
+      (mod) => ({
+        default: mod.CobbDouglasCalculator,
+      }),
+    ),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'
