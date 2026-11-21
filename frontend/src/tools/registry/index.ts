@@ -3121,6 +3121,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MvaCalculator,
     })),
   ),
+  NavCalculator: lazyTool(() =>
+    import('@/tools/calculators/nav/NavCalculator').then((mod) => ({
+      default: mod.NavCalculator,
+    })),
+  ),
   NopatCalculator: lazyTool(() =>
     import('@/tools/calculators/nopat/NopatCalculator').then((mod) => ({
       default: mod.NopatCalculator,

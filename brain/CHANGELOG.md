@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-20 — Add NAV Calculator – Net Asset Value
+- **Summary:** Shipped NAV Calculator on existing catalog slug `nav-calculator-net-asset-value` (`NavCalculator`, catalog `6af46f10a27d8d1d4e990161`, preserved `nameKey` `nav calculator – net asset value`). Screenshot-first (ADR-023): fund assets (IV+cash+AR), liabilities (STL+LTL), NAV = FA−FL, NAV/share; blank/zero shares keep NAV. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** FA **$1,800,000** − FL **$70,000** → NAV **$1,730,000** · 100,000 shares → **$17.30**/share.
+- **Important Files:** `frontend/src/tools/calculators/nav/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` NAV tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-20 — Export tool content templates by category
 - **Summary:** Added `backend/src/scripts/export-tool-content.ts` (`npm run tools:export-content`). Reads the MongoDB `tools` collection and writes one JSON file per category under `backend/data/tool-content/` using the client content template. Catalog fields (name, slug, category, subcategory, keywords, short description, SEO, robots, dates) are filled. Article, FAQ, formula, and reference copy stay empty. Localhost canonicals are omitted unless `--domain` is passed. Generated files are gitignored.
 - **Verification:** Export wrote 19 category files for 4,351 tools. Zakat sample carries catalog SEO and blank FAQ/formula slots.

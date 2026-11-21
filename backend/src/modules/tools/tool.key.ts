@@ -572,6 +572,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MovingAverageCalculator',
   'MutualFundCalculator',
   'MvaCalculator',
+  'NavCalculator',
   'NopatCalculator',
   'NpvCalculator',
   'OnlineMarketingConversionCalculator',
@@ -1333,6 +1334,7 @@ if (isDirect) {
     !isApprovedComponentKey('MovingAverageCalculator') ||
     !isApprovedComponentKey('MutualFundCalculator') ||
     !isApprovedComponentKey('MvaCalculator') ||
+    !isApprovedComponentKey('NavCalculator') ||
     !isApprovedComponentKey('NopatCalculator') ||
     !isApprovedComponentKey('NpvCalculator') ||
     !isApprovedComponentKey('OnlineMarketingConversionCalculator') ||
