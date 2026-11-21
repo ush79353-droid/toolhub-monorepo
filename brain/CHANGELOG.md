@@ -64,8 +64,8 @@
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Insulin Dosage Calculator
-- **Summary:** Shipped Insulin Dosage Calculator on existing catalog slug `insulin-dosage-calculator` (`InsulinDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d8`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): educational carb coverage + correction + total; sample ICR 15 / target 100 / ISF 50; TDD checkbox shows Rule of 500/1800 labels only (never auto-fills); mg/dL↔mmol/L; below-target correction clamped to 0; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-678`.
-- **Commits:** `b59eb4fb` (UI; multi-agent race also absorbed unrelated is-bmi-pregnancy engine files) / `db5e0416` (engine) / (registration/Brain/tracker — this commit).
+- **Summary:** Shipped Insulin Dosage Calculator on existing catalog slug `insulin-dosage-calculator` (`InsulinDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d8`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): educational carb coverage + correction + total; sample ICR 15 / target 100 / ISF 50; TDD checkbox shows Rule of 500/1800 labels only (never auto-fills); mg/dL↔mmol/L; below-target correction clamped to 0; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-679`.
+- **Commits:** `b59eb4fb` (UI; multi-agent race also absorbed unrelated is-bmi-pregnancy engine files) / `db5e0416` (engine) / (registration absorbed into concurrent HEAD; Brain finalize this commit).
 - **Example:** **60** g · ICR **15** · glucose **200**→**100** / ISF **50** → **4** + **2** = **6** units.
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
