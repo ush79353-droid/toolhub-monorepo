@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add PPP Calculator — Purchasing Power Parity
+- **Summary:** Shipped PPP Calculator on existing catalog slug `ppp-calculator-purchasing-power-parity` (`PppCalculator`, catalog `6af46f10a27d8d1d4e99018b`, preserved `nameKey` `ppp calculator - purchasing power parity`). Screenshot-first (ADR-023): curated World Bank WDI table 4.16 GDP PPP (PA.NUS.PPP) for 2023/2024 + same-year official FX; S_B=S_A×(PPP_B/PPP_A); manual mode; period toggle; market-vs-PPP chart; attributed PLI table; no fabricated live API. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Manual PPP 1→2 · salary **50,000** → **100,000**; market **1.35** → **67,500**; R for 2/2.5 = **80%**.
+- **Important Files:** `frontend/src/tools/calculators/ppp/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` ppp tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Phillips Curve Calculator
 - **Summary:** Shipped Phillips Curve Calculator on existing catalog slug `phillips-curve-calculator` (`PhillipsCurveCalculator`, catalog `6af46f10a27d8d1d4e99018a`, preserved `nameKey` `phillips curve calculator`). Screenshot-first (ADR-023): Traditional w=w_T−βΔu; New Classical π=πᵉ−α(u−uₙ)+s; simplified NKPC πₜ=βE[πₜ₊₁]+κxₜ+sₜ; inverse solves; SVG charts; original guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** w_T **4%** · Δu **1** · β **0.5** → w **3.5%**; πᵉ **3%** · u **6%** · uₙ **5%** · α **0.5** → π **2.5%**; NK → πₜ **3.97%**.
