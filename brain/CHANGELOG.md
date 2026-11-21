@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add LCR Calculator (Liquidity Coverage Ratio)
+- **Summary:** Shipped LCR Calculator on existing catalog slug `lcr-calculator` (`LcrCalculator`, catalog `6af46f10a27d8d1d4e990183`, preserved `nameKey` `lcr calculator`). Screenshot-first (ADR-023): HQLA ÷ 30-day net outflows × 100; expandable simplified HQLA helper (L1/L2A/L2B25/L2B50 + illustrative caps); optional 75% inflow-cap net outflows helper; surplus/shortfall; bar+gauge SVG; educational disclaimer (not regulatory compliance). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** HQLA **$1,750,000** · Outflows **$1,500,000** → LCR ≈ **116.67%**.
+- **Important Files:** `frontend/src/tools/calculators/lcr/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` LCR tests 11/11 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Labor Force Participation Rate Calculator
 - **Summary:** Shipped Labor Force Participation Rate Calculator on existing catalog slug `labor-force-participation-rate-calculator` (`LaborForceParticipationRateCalculator`, catalog `6af46f10a27d8d1d4e990182`, preserved `nameKey` `labor force participation rate calculator`). Screenshot-first (ADR-023): employed + unemployed → labor force & unemployment rate; working-age → LFPR, not-in-LF, EPR; population definition label; donut composition SVG; guide/FAQ without invented country ranks. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Employed **5,500,000** · Unemployed **700,000** · Working-age **7,200,000** → LF **6,200,000** · UR ≈ **11.29%** · LFPR ≈ **86.11%**.

@@ -946,6 +946,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/inflation/detail'),
   LaborForceParticipationRateCalculator: () =>
     import('@/tools/calculators/labor-force-participation/detail'),
+  LcrCalculator: () => import('@/tools/calculators/lcr/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

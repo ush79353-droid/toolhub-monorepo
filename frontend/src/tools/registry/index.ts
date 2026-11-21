@@ -3633,6 +3633,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LaborForceParticipationRateCalculator,
     })),
   ),
+  LcrCalculator: lazyTool(() =>
+    import('@/tools/calculators/lcr/LcrCalculator').then((mod) => ({
+      default: mod.LcrCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

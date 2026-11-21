@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Labor Force Participation Rate Calculator live at `/tools/labor-force-participation-rate-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (LCR Calculator live at `/tools/lcr-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **LCR Calculator (`/tools/lcr-calculator`):** Live client-side bank liquidity tool (`componentKey: 'LcrCalculator'`, catalog `6af46f10a27d8d1d4e990183`, `nameKey` `lcr calculator`). Screenshot-first (ADR-023): LCR=HQLA/30-day net outflows×100; expandable simplified HQLA helper (L1/L2A/L2B25/L2B50 + illustrative 15%/40% caps); optional 75% inflow-cap net outflows; surplus/shortfall/additional HQLA; bar+gauge SVG; educational disclaimer (not compliance). Activated; **`indexable` left false**. Example: HQLA **$1.75M** · Outflows **$1.5M** → LCR ≈ **116.67%**.
 - **Labor Force Participation Rate Calculator (`/tools/labor-force-participation-rate-calculator`):** Live client-side labor-market tool (`componentKey: 'LaborForceParticipationRateCalculator'`, catalog `6af46f10a27d8d1d4e990182`, `nameKey` `labor force participation rate calculator`). Screenshot-first (ADR-023): employed + unemployed → labor force & unemployment rate; working-age → LFPR / not-in-LF / EPR; population definition label; donut composition SVG; guide/FAQ without invented country ranks. Activated; **`indexable` left false**. Example: **5.5M** / **700k** / **7.2M** → LFPR ≈ **86.11%** · UR ≈ **11.29%**.
 - **Inflation Calculator (`/tools/inflation-calculator`):** Live client-side inflation tool (`componentKey: 'InflationCalculator'`, catalog `6af46f10a27d8d1d4e990181`, `nameKey` `inflation calculator`). Screenshot-first (ADR-023): US historical CPI-U annual averages (reuse Buying Power `CUUR0000SA0`) with Adjusted=A×(CPI_t/CPI_r); custom FV=PV(1+r)^t + purchasing-power factor; yearly frequency; quarterly explicitly unavailable without monthly CPI; SVG charts; guide/FAQ. Activated; **`indexable` left false**. Example: **$1,000** · **3%** · **5**y → ≈ **$1,159.27**.
 - **Gini Coefficient Calculator (`/tools/gini-coefficient-calculator`):** Live client-side inequality tool (`componentKey: 'GiniCoefficientCalculator'`, catalog `6af46f10a27d8d1d4e990180`, `nameKey` `gini coefficient calculator`). Screenshot-first (ADR-023): default Areas A & B with G=A/(A+B); Gini index=G×100; optional unweighted income mode; illustrative/modeled Lorenz SVG (not unique reconstruction from A/B alone); step-by-step; guide/FAQ without invented country ranks. Activated; **`indexable` left false**. Example: A **1,200** · B **3,800** → G **0.24** · index **24**.

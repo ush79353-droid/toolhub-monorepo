@@ -784,6 +784,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gini-coefficient-calculator',
   'inflation-calculator',
   'labor-force-participation-rate-calculator',
+  'lcr-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
