@@ -1,92 +1,121 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
+import { Search, SearchX, X } from 'lucide-react';
 import { Container } from '@/components/layout/Container';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
-import { CategoryCard } from '@/components/shared/CategoryCard';
-import { EmptyState } from '@/components/shared/EmptyState';
-import { Search, X } from 'lucide-react';
 import type { PublicCategory } from '@/server/catalog/categories';
 
 export function CategoriesClient({ categories }: { categories: PublicCategory[] }) {
   const [query, setQuery] = React.useState('');
-  const allCategories = categories;
-
-  const filteredCategories = React.useMemo(() => {
-    const q = query.toLowerCase().trim();
-    if (!q) return allCategories;
-    return allCategories.filter(
-      (cat) =>
-        cat.name.toLowerCase().includes(q) ||
-        cat.description.toLowerCase().includes(q) ||
-        cat.slug.toLowerCase().includes(q)
-    );
-  }, [query, allCategories]);
+  const trimmed = query.trim().toLowerCase();
+  const visible = trimmed
+    ? categories.filter(
+        (category) =>
+          category.name.toLowerCase().includes(trimmed) ||
+          category.description.toLowerCase().includes(trimmed) ||
+          category.slug.toLowerCase().includes(trimmed)
+      )
+    : categories;
 
   return (
-    <div className="py-8 sm:py-12">
-      <Container>
-        {/* Breadcrumb */}
-        <Breadcrumbs items={[{ label: 'Categories' }]} className="mb-6" />
-
-        {/* Heading */}
-        <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Tool Categories
-          </span>
-          <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
-            Browse Tools by Category
-          </h1>
-          <p className="mt-2 text-sm text-muted-foreground sm:text-base leading-relaxed">
-            Find exactly what you need by exploring our specialized utility groups. Each category
-            houses tailored tools designed for accuracy, speed, and privacy.
-          </p>
+    <div>
+      <section className="relative border-b border-border bg-gradient-to-br from-[#cfeeed] via-[#e7f6f4] to-[#f4f7f2]">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_32%_32%,#ffffff,hsl(177,42%,78%))]" />
+          <div className="absolute -right-20 top-6 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_35%_30%,#ffffff,hsl(175,35%,84%))]" />
+          <div className="absolute bottom-10 right-[18%] h-40 w-40 rounded-full bg-[radial-gradient(circle_at_40%_40%,#ffffff,hsl(186,35%,86%))]" />
         </div>
-
-        {/* Filter Input */}
-        <div className="mt-8 max-w-md">
-          <div className="relative flex items-center">
-            <Search className="pointer-events-none absolute left-3.5 h-4 w-4 text-muted-foreground" />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Filter categories (e.g., PDF, Calculator, Developer)..."
-              className="h-11 w-full rounded-xl border border-border bg-white pl-10 pr-10 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-xs"
-            />
-            {query && (
-              <button
-                onClick={() => setQuery('')}
-                className="absolute right-3.5 text-muted-foreground hover:text-foreground"
-                aria-label="Clear filter query"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            )}
+        <Container className="relative z-10 py-10 sm:py-14">
+          <Breadcrumbs items={[{ label: 'All Categories' }]} />
+          <div className="mx-auto mt-8 max-w-3xl text-center">
+            <h1 className="text-4xl font-semibold tracking-tight text-accent sm:text-5xl">All categories</h1>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              Search the groups, or open one to see its calculators.
+            </p>
           </div>
-        </div>
+          <div className="mx-auto mt-8 w-full max-w-2xl">
+            <label className="sr-only" htmlFor="category-search">
+              Search categories
+            </label>
+            <div className="relative">
+              <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-primary" aria-hidden="true" />
+              <input
+                id="category-search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="Search categories"
+                className="h-14 w-full rounded-2xl border border-border bg-white pl-14 pr-12 text-base text-foreground shadow-[0_18px_40px_-24px_rgba(22,60,67,0.55)] placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              />
+              {query ? (
+                <button
+                  type="button"
+                  onClick={() => setQuery('')}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  aria-label="Clear search"
+                >
+                  <X className="h-4 w-4" aria-hidden="true" />
+                </button>
+              ) : null}
+            </div>
+          </div>
+        </Container>
+      </section>
 
-        {/* Categories Grid */}
-        <div className="mt-8">
-          {allCategories.length === 0 ? (
-            <p className="text-sm text-muted-foreground">Categories are not available right now.</p>
-          ) : filteredCategories.length > 0 ? (
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {filteredCategories.map((cat) => (
-                <CategoryCard key={cat.id} category={cat} />
-              ))}
+      <section className="bg-muted/30 py-10 sm:py-14">
+        <Container>
+          {categories.length === 0 ? (
+            <div className="mx-auto flex max-w-lg flex-col items-center px-4 py-16 text-center sm:py-24">
+              <SearchX className="h-10 w-10 text-primary" aria-hidden="true" />
+              <h2 className="mt-6 font-display text-3xl font-semibold tracking-tight text-accent sm:text-4xl">
+                Categories unavailable
+              </h2>
+              <p className="mt-3 max-w-sm text-base leading-relaxed text-muted-foreground">
+                The category list could not be loaded. Refresh the page in a moment.
+              </p>
+            </div>
+          ) : visible.length === 0 ? (
+            <div className="mx-auto flex max-w-lg flex-col items-center px-4 py-16 text-center sm:py-24">
+              <SearchX className="h-10 w-10 text-primary" aria-hidden="true" />
+              <h2 className="mt-6 font-display text-3xl font-semibold tracking-tight text-accent sm:text-4xl">
+                No categories found
+              </h2>
+              <p className="mt-3 max-w-sm text-base leading-relaxed text-muted-foreground">
+                Nothing matches "{query.trim()}". Try another name.
+              </p>
+              <button
+                type="button"
+                onClick={() => setQuery('')}
+                className="mt-8 inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary"
+              >
+                Clear search
+              </button>
             </div>
           ) : (
-            <EmptyState
-              title="No categories match your search"
-              description="Try typing a broader term like 'calc', 'converter', or 'image'."
-              actionLabel="Show All Categories"
-              onAction={() => setQuery('')}
-            />
+            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+              {visible.map((category) => (
+                <li key={category.id}>
+                  <Link
+                    href={`/categories/${category.slug}`}
+                    className="flex h-full flex-col items-center rounded-2xl border border-border bg-white px-3 py-7 text-center shadow-xs transition-colors hover:border-primary/40 hover:bg-muted/50"
+                  >
+                    {category.iconUrl ? (
+                      <img src={category.iconUrl} alt="" className="h-8 w-8 object-contain" />
+                    ) : (
+                      <span className="h-8 w-8 rounded-lg bg-muted" aria-hidden="true" />
+                    )}
+                    <span className="mt-4 line-clamp-2 text-sm font-semibold text-accent">{category.name}</span>
+                    <span className="mt-1 text-xs tabular-nums text-muted-foreground">
+                      {category.toolCount.toLocaleString()} {category.toolCount === 1 ? 'calculator' : 'calculators'}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           )}
-        </div>
-      </Container>
+        </Container>
+      </section>
     </div>
   );
 }

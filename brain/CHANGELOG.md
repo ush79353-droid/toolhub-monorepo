@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-21 — Categories page hero and cards
+- **Summary:** `/categories` uses the All Tools mint hero. Search filters the loaded categories in the browser. The grid matches the homepage category cards.
+- **Important Files:** `frontend/src/components/categories/CategoriesClient.tsx`.
+- **Verification:** `/categories` shows the mint hero and homepage-style cards. Typing `pdf` keeps the URL and leaves PDF Tools. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Right-aligned tool pagination
 - **Summary:** The All Tools page controls sit on the right as rounded Previous, page, and Next buttons.
 - **Important Files:** `frontend/src/app/(website)/tools/page.tsx`.
