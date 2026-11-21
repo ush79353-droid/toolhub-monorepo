@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Buying Power Calculator live at `/tools/buying-power-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Carry Trade Calculator live at `/tools/carry-trade-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Carry Trade Calculator (`/tools/carry-trade-calculator`):** Live client-side currency carry tool (`componentKey: 'CarryTradeCalculator'`, catalog `6af46f10a27d8d1d4e990172`, `nameKey` `carry trade calculator`). Screenshot-first (ADR-023): Profit = P×[(S₀/S₁)(1+Rl)−(1+Rb)]; spot differential d%=(S₀/S₁−1)×100; simple interest 360/365; three sections; approximate d+Rl−Rb labeled separately; denomination-only CurrencySelect (PKR default; manual exchange rates, no live FX). Activated; **`indexable` left false**. Example: P **5,000** · S₀ **0.85** · S₁ **0.83** · 6%/2% · 180/365 → ≈ **+222.68** · **+4.45%**.
 - **Buying Power Calculator (`/tools/buying-power-calculator`):** Live client-side CPI purchasing-power tool (`componentKey: 'BuyingPowerCalculator'`, catalog `6af46f10a27d8d1d4e990171`, `nameKey` `buying power calculator`). Screenshot-first (ADR-023): Amount × (CPI_target/CPI_reference); amount + reference/target year + dollar value; year swap; collapsible details (CPI ratio, cumulative inflation, purchasing-power change); embedded BLS CPI-U CUUR0000SA0 annual averages **1913–2025**; fixed USD (no CurrencySelect / no FX). Activated; **`indexable` left false**. Example: **$1,000** · **2010** → **2020** → ≈ **$1,186.90**.
 - **WACC Calculator (Weighted Average Cost of Capital) (`/tools/wacc-calculator-weighted-average-cost-of-capital`):** Live client-side WACC tool (`componentKey: 'WaccCalculator'`, catalog `6af46f10a27d8d1d4e990170`, `nameKey` `wacc calculator (weighted average cost of capital)`). Screenshot-first (ADR-023): WACC = We×Re + Wd×Rd×(1−T); six fields; capital-mix breakdown; all-equity/all-debt paths; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: E **700,000** · D **500,000** · Re **15%** · Rd **8%** · T **20%** → WACC **11.42%**.
 - **Unlevered Beta Calculator (`/tools/unlevered-beta-calculator`):** Live client-side asset-beta tool (`componentKey: 'UnleveredBetaCalculator'`, catalog `6af46f10a27d8d1d4e99016f`, `nameKey` `unlevered beta calculator`). Screenshot-first (ADR-023): Hamada βU = βL/[1+(1−T)(D/E)]; effective or manual tax; D/E from debt/equity; zero-debt → βU=βL; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: βL **1.20** · T **20%** · D/E **2.00×** → βU **0.4615**.

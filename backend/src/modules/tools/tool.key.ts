@@ -645,6 +645,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'UnleveredBetaCalculator',
   'WaccCalculator',
   'BuyingPowerCalculator',
+  'CarryTradeCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
@@ -1440,6 +1441,7 @@ if (isDirect) {
     !isApprovedComponentKey('UnleveredBetaCalculator') ||
     !isApprovedComponentKey('WaccCalculator') ||
     !isApprovedComponentKey('BuyingPowerCalculator') ||
+    !isApprovedComponentKey('CarryTradeCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||

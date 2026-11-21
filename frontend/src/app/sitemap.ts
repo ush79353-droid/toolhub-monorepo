@@ -768,6 +768,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'unlevered-beta-calculator',
   'wacc-calculator-weighted-average-cost-of-capital',
   'buying-power-calculator',
+  'carry-trade-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

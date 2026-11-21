@@ -915,6 +915,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   WaccCalculator: () => import('@/tools/calculators/wacc/detail'),
   BuyingPowerCalculator: () =>
     import('@/tools/calculators/buying-power/detail'),
+  CarryTradeCalculator: () =>
+    import('@/tools/calculators/carry-trade/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

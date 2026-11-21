@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Carry Trade Calculator
+- **Summary:** Shipped Carry Trade Calculator on existing catalog slug `carry-trade-calculator` (`CarryTradeCalculator`, catalog `6af46f10a27d8d1d4e990172`, preserved `nameKey` `carry trade calculator`). Screenshot-first (ADR-023): Profit = P×[(S₀/S₁)(1+Rl)−(1+Rb)]; spot differential; 360/365 simple interest; three sections; approximate return labeled separately; denomination-only CurrencySelect (PKR default, manual FX rates, no live FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** P **5,000** · S₀ **0.85** · S₁ **0.83** · rl **6%** · rb **2%** · **180**/365 → profit ≈ **+222.68** · total return ≈ **+4.45%**.
+- **Important Files:** `frontend/src/tools/calculators/carry-trade/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Carry Trade tests 19/19 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Buying Power Calculator
 - **Summary:** Shipped Buying Power Calculator on existing catalog slug `buying-power-calculator` (`BuyingPowerCalculator`, catalog `6af46f10a27d8d1d4e990171`, preserved `nameKey` `buying power calculator`). Screenshot-first (ADR-023): Amount × (CPI_target/CPI_reference); four fields; year swap; collapsible CPI details; embedded BLS CPI-U CUUR0000SA0 annual averages **1913–2025**; fixed USD (no CurrencySelect / no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$1,000** · **2010** → **2020** (CPI 218.056 → 258.811) → ≈ **$1,186.90**.

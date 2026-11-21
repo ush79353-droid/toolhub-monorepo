@@ -3523,6 +3523,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  CarryTradeCalculator: lazyTool(() =>
+    import('@/tools/calculators/carry-trade/CarryTradeCalculator').then(
+      (mod) => ({
+        default: mod.CarryTradeCalculator,
+      }),
+    ),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'
