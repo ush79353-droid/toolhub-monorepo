@@ -89,4 +89,20 @@ import { validateBmiWeightLossInput } from './validation';
   assert.deepEqual(createEmptyInput(), createDefaultInput());
 }
 
+// Target weight edit derives BMI when height known
+{
+  const meters = heightToMeters(175, 'cm');
+  const derived = deriveTargetFields(meters, {
+    ...createDefaultInput(),
+    height: '175',
+    heightUnit: 'cm',
+    lastTargetEdit: 'weight',
+    targetWeight: '67.375',
+    targetWeightUnit: 'kg',
+  });
+  assert.ok(derived.targetBmi != null);
+  assert.equal(Number(derived.targetBmi!.toFixed(2)), 22);
+  assert.equal(Number(derived.targetPrime!.toFixed(2)), 0.88);
+}
+
 console.log('bmi-weight-loss calculation.test.ts: ok');
