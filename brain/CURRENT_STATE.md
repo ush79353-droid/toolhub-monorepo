@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (homepage hero is a centered tool search on the mint blob panel; site header: home is logo + Share + Explore Tools; other pages add debounced tool search; PPF Calculator live at `/tools/ppf-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (homepage shows category cards and up to three last-opened tools from local storage under the hero, then featured tools; site header: home is logo + Share + Explore Tools; other pages add debounced tool search; PPF Calculator live at `/tools/ppf-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 

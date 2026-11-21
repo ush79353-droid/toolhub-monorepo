@@ -4,6 +4,26 @@
 
 ---
 
+### 2026-11-21 — Most Popular Tools grid
+- **Summary:** The homepage featured list is now a card grid titled Most Popular Tools. Each card shows the name, a short description, the category, and an arrow.
+- **Important Files:** `frontend/src/app/(website)/page.tsx`.
+- **Verification:** The section renders after About us. Temporary files cleaned: YES.
+
+### 2026-11-21 — Homepage about section
+- **Summary:** After the category grid, the homepage shows a centered About us block that links to `/about`. The About page now carries the longer Omega Calculators copy. The unpublished source line, last-updated claim, and placeholder email were left out.
+- **Important Files:** `frontend/src/app/(website)/page.tsx`, `frontend/src/app/(website)/about/page.tsx`.
+- **Verification:** The block sits between categories and featured tools. Temporary files cleaned: YES.
+
+### 2026-11-21 — All-tools card on the homepage grid
+- **Summary:** The category grid ends with a card two columns wide that links to `/tools`.
+- **Important Files:** `frontend/src/app/(website)/page.tsx`.
+- **Verification:** The card sits after the last category and opens the tools directory. Temporary files cleaned: YES.
+
+### 2026-11-21 — Homepage categories and last-used tools
+- **Summary:** After the hero, categories render as icon cards with calculator counts. The last three opened tools are stored in `localStorage` and shown above the cards. That row stays hidden until a tool has been opened. Featured tools follow the category grid.
+- **Important Files:** `frontend/src/app/(website)/page.tsx`, `frontend/src/lib/recent-tools.ts`, `frontend/src/components/home/LastUsedTools.tsx`, `frontend/src/components/home/RememberRecentTool.tsx`, `frontend/src/app/(website)/tools/[slug]/page.tsx`.
+- **Verification:** A first visit shows cards only. Opening tools writes `omega-recent-tools` and keeps three, newest first. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Homepage search dropdown no longer clipped
 - **Summary:** The hero kept `overflow-hidden` on the whole section, which cut off the suggestion list. The clip now applies only to the decorative background.
 - **Important Files:** `frontend/src/app/(website)/page.tsx`.

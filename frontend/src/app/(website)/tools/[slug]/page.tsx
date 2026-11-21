@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Container } from '@/components/layout/Container';
+import { RememberRecentTool } from '@/components/home/RememberRecentTool';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { ToolWorkspace } from '@/components/shared/ToolWorkspace';
 import { ToolDetailSidebar } from '@/components/shared/ToolDetailSidebar';
@@ -487,6 +488,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
 
     return (
       <div className="py-6 sm:py-9">
+        <RememberRecentTool name={toolMetadata.title} slug={toolMetadata.slug} />
         {jsonLd ? (
           <script
             type="application/ld+json"

@@ -1,7 +1,9 @@
 import * as React from 'react';
 import Link from 'next/link';
+import { ArrowRight, Heart } from 'lucide-react';
 import { Container } from '@/components/layout/Container';
 import { HeaderSearch } from '@/components/layout/HeaderSearch';
+import { LastUsedTools } from '@/components/home/LastUsedTools';
 import { serverApi } from '@/server/api/client';
 import { getPublicCategories } from '@/server/catalog/categories';
 
@@ -60,71 +62,102 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="py-12 sm:py-16">
+      <section className="bg-muted/30 py-10 sm:py-14">
         <Container>
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold text-accent">Featured</h2>
-            <Link href="/tools" className="text-sm font-medium text-primary hover:underline">
-              All tools
-            </Link>
-          </div>
-          {featured.length === 0 ? (
-            <p className="mt-6 border-t border-border pt-6 text-sm text-muted-foreground">
-              No tools are marked featured yet.
-            </p>
+          <LastUsedTools />
+          {categories.length === 0 ? (
+            <p className="text-sm text-muted-foreground">Categories are not available right now.</p>
           ) : (
-            <ul className="mt-6 divide-y divide-border border-y border-border">
-              {featured.map((tool) => (
-                <li key={tool.id}>
-                  <Link href={`/tools/${tool.slug}`} className="flex items-start gap-4 py-4 hover:bg-muted/40">
-                    {tool.iconUrl ? (
-                      <img src={tool.iconUrl} alt="" className="mt-0.5 h-10 w-10 rounded-md border border-border object-contain" />
-                    ) : null}
-                    <span className="min-w-0">
-                      <span className="block font-medium text-accent">{tool.name}</span>
-                      {tool.categoryName ? (
-                        <span className="mt-0.5 block text-xs text-primary">{tool.categoryName}</span>
-                      ) : null}
-                      {tool.shortDescription ? (
-                        <span className="mt-1 block line-clamp-2 text-sm leading-relaxed text-muted-foreground">
-                          {tool.shortDescription}
-                        </span>
-                      ) : null}
+            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+              {categories.map((category) => (
+                <li key={category.id}>
+                  <Link
+                    href={`/categories/${category.slug}`}
+                    className="flex h-full flex-col items-center rounded-2xl border border-border bg-white px-3 py-7 text-center shadow-xs transition-colors hover:border-primary/40 hover:bg-muted/50"
+                  >
+                    {category.iconUrl ? (
+                      <img src={category.iconUrl} alt="" className="h-8 w-8 object-contain" />
+                    ) : (
+                      <span className="h-8 w-8 rounded-lg bg-muted" aria-hidden="true" />
+                    )}
+                    <span className="mt-4 line-clamp-2 text-sm font-semibold text-accent">{category.name}</span>
+                    <span className="mt-1 text-xs tabular-nums text-muted-foreground">
+                      {category.toolCount.toLocaleString()} {category.toolCount === 1 ? 'calculator' : 'calculators'}
                     </span>
                   </Link>
                 </li>
               ))}
+              <li className="col-span-2">
+                <Link
+                  href="/tools"
+                  className="flex h-full flex-col justify-center rounded-2xl border border-primary/25 bg-white px-6 py-7 shadow-xs transition-colors hover:border-primary hover:bg-secondary"
+                >
+                  <span className="text-sm font-semibold text-accent">Browse all tools</span>
+                  <span className="mt-1.5 max-w-xs text-xs leading-relaxed text-muted-foreground">
+                    {toolTotal > 0
+                      ? `${toolTotal.toLocaleString()} calculators in one directory. Search by name, or open the full list.`
+                      : 'Search by name, or open the full list of calculators.'}
+                  </span>
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary">
+                    Open the directory
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
+                </Link>
+              </li>
             </ul>
           )}
         </Container>
       </section>
 
-      <section className="border-t border-border bg-white py-12 sm:py-16">
+      <section className="border-t border-border bg-white py-16 sm:py-24">
         <Container>
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold text-accent">Categories</h2>
-            <Link href="/categories" className="text-sm font-medium text-primary hover:underline">
-              Category index
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-base font-semibold text-accent">About us</h2>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Omega Calculators is a free collection of online calculators and converters. We built it for
+              people who want a clear answer without hunting through ads, sign-ups, or confusing pages.
+            </p>
+            <p className="mt-8 text-2xl font-semibold leading-snug tracking-tight text-accent sm:text-4xl">
+              A clear answer, with the formula and a worked example on the same page.
+            </p>
+            <Link
+              href="/about"
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary"
+            >
+              Read more about us
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
-          {categories.length === 0 ? (
-            <p className="mt-6 text-sm text-muted-foreground">Categories are not available right now.</p>
+        </Container>
+      </section>
+
+      <section className="border-t border-border bg-muted/30 py-14 sm:py-16">
+        <Container>
+          <div className="text-center">
+            <Heart className="mx-auto h-6 w-6 fill-primary text-primary" aria-hidden="true" />
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-accent sm:text-3xl">Most Popular Tools</h2>
+          </div>
+          {featured.length === 0 ? (
+            <p className="mt-8 text-center text-sm text-muted-foreground">No tools are marked popular yet.</p>
           ) : (
-            <ul className="mt-6 grid grid-cols-1 border-t border-border sm:grid-cols-2 lg:grid-cols-3">
-              {categories.map((category) => (
-                <li key={category.id} className="border-b border-border sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0">
-                  <Link href={`/categories/${category.slug}`} className="block h-full px-1 py-5 pr-4 hover:bg-muted/30 sm:px-4">
-                    <span className="flex items-baseline justify-between gap-3">
-                      <span className="flex items-center gap-2.5">
-                        {category.iconUrl ? <img src={category.iconUrl} alt="" className="h-4 w-4 shrink-0" /> : null}
-                        <span className="font-medium text-accent">{category.name}</span>
-                      </span>
-                      <span className="shrink-0 text-sm tabular-nums text-muted-foreground">{category.toolCount}</span>
+            <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {featured.map((tool) => (
+                <li key={tool.id}>
+                  <Link
+                    href={`/tools/${tool.slug}`}
+                    className="flex h-full flex-col rounded-2xl border border-border bg-white p-4 shadow-xs transition-colors hover:border-primary/40"
+                  >
+                    <span className="flex items-start justify-between gap-3">
+                      <span className="font-semibold leading-snug text-accent">{tool.name}</span>
+                      <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
                     </span>
-                    {category.description ? (
-                      <span className="mt-1.5 block line-clamp-2 text-sm leading-relaxed text-muted-foreground">
-                        {category.description}
+                    {tool.shortDescription ? (
+                      <span className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                        {tool.shortDescription}
                       </span>
+                    ) : null}
+                    {tool.categoryName ? (
+                      <span className="mt-auto pt-4 text-xs text-muted-foreground">{tool.categoryName}</span>
                     ) : null}
                   </Link>
                 </li>

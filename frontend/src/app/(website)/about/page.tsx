@@ -117,6 +117,78 @@ export default async function AboutPage() {
         </Container>
       </section>
 
+      <section className="border-b border-border bg-white py-16 sm:py-20">
+        <Container>
+          <div className="mx-auto max-w-3xl space-y-10 text-base leading-relaxed text-foreground">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">About Omega Calculators</h2>
+              <p className="mt-4 text-muted-foreground">
+                Omega Calculators is a free collection of online calculators and converters. We built it for
+                people who want a clear answer without hunting through ads, sign-ups, or confusing pages.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">What you will find here</h2>
+              <p className="mt-4 text-muted-foreground">
+                Our tools cover everyday money questions, health and fitness, math, unit conversions, cooking,
+                construction, and more. Each tool sits on its own page with the calculator at the top, then a
+                plain-language explanation of how it works, the formula it uses, a worked example, and answers
+                to common questions.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">How we build our tools</h2>
+              <ul className="mt-4 list-disc space-y-3 pl-5 text-muted-foreground">
+                <li>
+                  <span className="font-medium text-accent">Clear formulas.</span> Every calculator shows the
+                  formula behind its result, so you can check it yourself.
+                </li>
+                <li>
+                  <span className="font-medium text-accent">Worked examples.</span> We show a real example with
+                  real numbers, so you can see how the answer is reached.
+                </li>
+                <li>
+                  <span className="font-medium text-accent">Testing.</span> We test each published calculator
+                  against known results before it goes live.
+                </li>
+                <li>
+                  <span className="font-medium text-accent">Fixes.</span> If you find a mistake, tell us. We
+                  correct errors.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">Free to use</h2>
+              <p className="mt-4 text-muted-foreground">
+                Omega Calculators is free. The site is supported by advertising, which lets us keep the tools
+                open to everyone without asking you to create an account.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">Important to know</h2>
+              <p className="mt-4 text-muted-foreground">
+                Our calculators give estimates for information and education. They are not financial, medical,
+                legal, or professional advice. Please read our{' '}
+                <Link href="/terms-of-service#disclaimers" className="font-medium text-primary hover:underline">
+                  disclaimer
+                </Link>{' '}
+                before relying on any result.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">Contact</h2>
+              <p className="mt-4 text-muted-foreground">
+                Questions, ideas for new tools, or a mistake to report? Use our{' '}
+                <Link href="/contact" className="font-medium text-primary hover:underline">
+                  contact page
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-white py-16 sm:py-24">
         <Container>
           <p className="max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-accent sm:text-5xl">
