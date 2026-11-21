@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add PPF Calculator
+- **Summary:** Shipped PPF Calculator on existing catalog slug `ppf-calculator` (`PpfCalculator`, catalog `6af46f10a27d8d1d4e9901af`, preserved `nameKey` `ppf calculator`). Screenshot-first (ADR-023): fixed/custom deposits; FY Apr–Mar maturity; 5th-day eligible balance; FY-end interest credit; optional +5y extension; inflation-adjusted value; growth chart + FY CSV; INR fixed. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Open **2026-04-05** · **₹50,000**/yr · **7.1%** illustrative → maturity **2042-03-31**; Final Balance ≈ Total Contributions + Credited Interest.
+- **Important Files:** `frontend/src/tools/calculators/ppf/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` ppf tests 23/23 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Post Office Monthly Income Scheme (POMIS) Calculator
 - **Summary:** Shipped POMIS Calculator on existing catalog slug `post-office-monthly-income-scheme-calculator` (`PomisCalculator`, catalog `6af46f10a27d8d1d4e9901ae`, preserved `nameKey` `post office monthly income scheme calculator`). Screenshot-first (ADR-023): Individual/Joint limits; editable illustrative rate (default 6.6% example); monthly=P×R/1200; maturity + schedule; INR fixed. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **₹4,50,000** · **6.6%** · **5y** → **₹2,475**/mo · total interest **₹1,48,500** · total cash **₹5,98,500**.

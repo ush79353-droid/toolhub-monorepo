@@ -3839,6 +3839,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PomisCalculator,
     })),
   ),
+  PpfCalculator: lazyTool(() =>
+    import('@/tools/calculators/ppf/PpfCalculator').then((mod) => ({
+      default: mod.PpfCalculator,
+    })),
+  ),
   PppCalculator: lazyTool(() =>
     import('@/tools/calculators/ppp/PppCalculator').then((mod) => ({
       default: mod.PppCalculator,

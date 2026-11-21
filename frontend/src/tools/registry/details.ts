@@ -1006,6 +1006,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PhillipsCurveCalculator: () =>
     import('@/tools/calculators/phillips-curve/detail'),
   PomisCalculator: () => import('@/tools/calculators/pomis/detail'),
+  PpfCalculator: () => import('@/tools/calculators/ppf/detail'),
   PppCalculator: () => import('@/tools/calculators/ppp/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
