@@ -689,6 +689,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BasisPointCalculator: () =>
     import('@/tools/calculators/basis-point/detail'),
   BbtCalculator: () => import('@/tools/calculators/bbt/detail'),
+  AleveDosageCalculator: () =>
+    import('@/tools/calculators/aleve-dosage/detail'),
   BenadrylDosageCalculator: () =>
     import('@/tools/calculators/benadryl-dosage/detail'),
   IbuprofenDosageCalculator: () =>
@@ -711,10 +713,14 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bmi-teens/detail'),
   BmiForMenCalculator: () =>
     import('@/tools/calculators/bmi-for-men/detail'),
+  BmiForWomenCalculator: () =>
+    import('@/tools/calculators/bmi-for-women/detail'),
   BmiPercentileCalculator: () =>
     import('@/tools/calculators/bmi-percentile/detail'),
   BmiWeightLossCalculator: () =>
     import('@/tools/calculators/bmi-weight-loss/detail'),
+  DueDateCalculator: () =>
+    import('@/tools/calculators/due-date/detail'),
   AverageCollectionPeriodCalculator: () =>
     import('@/tools/calculators/average-collection-period/detail'),
   AverageFixedCostCalculator: () =>

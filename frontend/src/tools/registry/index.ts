@@ -332,6 +332,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MealCalorieCalculator,
     })),
   ),
+  MaintenanceCalorieCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/maintenance-calorie/MaintenanceCalorieCalculator'
+    ).then((mod) => ({
+      default: mod.MaintenanceCalorieCalculator,
+    })),
+  ),
   MarkdownCalculator: lazyTool(() =>
     import('@/tools/calculators/markdown/MarkdownCalculator').then((mod) => ({
       default: mod.MarkdownCalculator,
@@ -2878,6 +2885,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BbtCalculator,
     })),
   ),
+  AleveDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/aleve-dosage/AleveDosageCalculator'
+    ).then((mod) => ({
+      default: mod.AleveDosageCalculator,
+    })),
+  ),
   BenadrylDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/benadryl-dosage/BenadrylDosageCalculator'
@@ -2951,6 +2965,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/bmi-for-men/BmiForMenCalculator'
     ).then((mod) => ({
       default: mod.BmiForMenCalculator,
+    })),
+  ),
+  BmiForWomenCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bmi-for-women/BmiForWomenCalculator'
+    ).then((mod) => ({
+      default: mod.BmiForWomenCalculator,
     })),
   ),
   BmiPercentileCalculator: lazyTool(() =>
@@ -4349,11 +4370,25 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BlackScholesCalculator,
     })),
   ),
+  DueDateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/due-date/DueDateCalculator'
+    ).then((mod) => ({
+      default: mod.DueDateCalculator,
+    })),
+  ),
   BloodDonationDueDateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/blood-donation-due-date/BloodDonationDueDateCalculator'
     ).then((mod) => ({
       default: mod.BloodDonationDueDateCalculator,
+    })),
+  ),
+  IsBmiPregnancyWeightIndicatorCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/is-bmi-pregnancy-weight-indicator/IsBmiPregnancyWeightIndicatorCalculator'
+    ).then((mod) => ({
+      default: mod.IsBmiPregnancyWeightIndicatorCalculator,
     })),
   ),
   BloodPregnancyHcgCalculator: lazyTool(() =>

@@ -1,3 +1,7 @@
+### 2026-11-22 — Health & Medical 60-tool audit registry repair
+- **Summary:** Baseline audit of the assigned 60 Health & Medical tools found modules + Mongo developed for 58/60, but concurrent registry drift had dropped several keys from frontend/backend allowlists and sitemap. Restored `AleveDosageCalculator`, `AmoxicillinPediatricDosageCalculator`, `BmiForWomenCalculator`, `DueDateCalculator`, `IsBmiPregnancyWeightIndicatorCalculator`, `MaintenanceCalorieCalculator` (index), and `ArmyBodyFatCalculator` (backend). **Blocked unchanged:** Adderall + Levothyroxine (clinical-review gates). No formula rewrites; no Mongo create; no push/pull/fetch.
+- **Verification:** Static registry cross-check + module path presence. Temporary files cleaned: YES.
+
 ### 2026-11-22 — Positive Pregnancy Test at 3 Weeks Pregnant: Possible or Not?
 - **Summary:** Shipped article-context timing widget on existing catalog slug `positive-pregnancy-test-at-3-weeks-pregnant-possible-or-not` (`PositivePregnancyTestAt3WeeksCalculator`, catalog `6af46f10a27d8d1d4e9901fb`, pillar `6af451c1a27d8d1d4e98f984`, subPillar `6af451c2a27d8d1d4e98f985`). Screenshot-first (ADR-023): Natural + IVF; cycle 28; blank dates; embryo radios 3/5/6 (default 5); always-visible urine sensitivity (shared 10–25 mIU bands); reuses urine-home calendar; **no yes/no pregnancy inference**; share URL only. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-703`.
 - **Commits:** `1e7ba42f` (UI) / `2a9826e2` (engine) / (reg/Brain this commit).
