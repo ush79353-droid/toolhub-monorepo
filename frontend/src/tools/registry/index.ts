@@ -2885,6 +2885,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BmiForMenCalculator,
     })),
   ),
+  BmiWeightLossCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bmi-weight-loss/BmiWeightLossCalculator'
+    ).then((mod) => ({
+      default: mod.BmiWeightLossCalculator,
+    })),
+  ),
   AverageCollectionPeriodCalculator: lazyTool(() =>
     import('@/tools/calculators/average-collection-period/AverageCollectionPeriodCalculator').then((mod) => ({
       default: mod.AverageCollectionPeriodCalculator,

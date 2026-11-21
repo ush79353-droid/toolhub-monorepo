@@ -690,6 +690,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bmi-teens/detail'),
   BmiForMenCalculator: () =>
     import('@/tools/calculators/bmi-for-men/detail'),
+  BmiWeightLossCalculator: () =>
+    import('@/tools/calculators/bmi-weight-loss/detail'),
   AverageCollectionPeriodCalculator: () =>
     import('@/tools/calculators/average-collection-period/detail'),
   AverageFixedCostCalculator: () =>

@@ -4,6 +4,18 @@
 
 ---
 
+### 2026-11-22 — Breastfeeding Calorie Calculator
+- **Summary:** Shipped Breastfeeding Calorie Calculator on existing catalog slug `breastfeeding-calorie-calculator` (`BreastfeedingCalorieCalculator`, catalog `6af46f10a27d8d1d4e9901e9`, pillar `6af451c1a27d8d1d4e98f982`, subPillar null). Screenshot-first (ADR-023): lactation 0–6 / >6 + pregnancy T1–T3 radios; blank age/height/weight (cm/kg); activity default Little/no exercise; daily energy needs kcal. IOM/NAS DRI 2002/2005 female EER + pregnancy/lactation additions; privacy-safe share URL. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-682`.
+- **Commits:** `a9a107df` (UI absorbed into concurrent calorie-intake-simple commit) / `dfe61271` (engine) / (registration/Brain/tracker — this commit; index/details also absorbed into concurrent registry commits).
+- **Example:** **30**y · **165** cm · **65** kg · sedentary · lactation 0–6 → ≈ **2,283** kcal/day.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — BMI Weight Loss Calculator
+- **Summary:** Shipped BMI Weight Loss Calculator on existing catalog slug `bmi-weight-loss-calculator` (`BmiWeightLossCalculator`, catalog `6af46f10a27d8d1d4e9901e6`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): Current BMI (height/weight → BMI + Prime); Target BMI / Prime / weight bidirectional; weight to lose or gain; collapsed CDC BMI-for-age percentile panel (reuses bmi-kids LMS); reject target BMI &lt; 16; privacy-safe share URL. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-685`.
+- **Commits:** `f8c829dd` (UI) / `c51c49e6` (engine body absorbed) + `00fc6967` (target-weight sync coverage) / `a2c6ebdb` + registry restore (this commit).
+- **Example:** **175** cm · **85** kg · target BMI **22** → target ≈ **67.38** kg · ≈ **17.62** kg to lose.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Body Fat Calculator
 - **Summary:** Shipped Body Fat Calculator on existing catalog slug `body-fat-calculator` (`BodyFatCalculator`, catalog `6af46f10a27d8d1d4e9901ff`, pillar `6af451c2a27d8d1d4e98f986`, subPillar null). Screenshot-first (ADR-023): Female/Male; ADA CUN-BAE (default) / U.S. Navy / Deurenberg BMI; blank age/height/weight; Navy neck/waist/(hip); body fat % + fat mass; collapsed BMI + lean mass; privacy-safe share. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-683`.
 - **Commits:** `3d318c4a` (UI) / `4dbb2ea9` (engine) / (registration/Brain/tracker — this commit).
