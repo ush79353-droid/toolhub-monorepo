@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-21 — Forward Rate Calculator
+- **Summary:** Screenshot-first annually compounded implied forward rate from spots S₁/S₂ and times n₁/n₂ (yrs/mo). Registered `ForwardRateCalculator`; Mongo `6af46f10a27d8d1d4e9901c1` activated; **indexable** preserved false. No FX.
+- **Important Files:** `frontend/src/tools/calculators/forward-rate/*`, registry keys/index/details, `tool.key.ts`, `sitemap.ts`, `brain/*`, `OMEGA-DEVELOPMENT-TRACKER.md`.
+- **Verification:** Static formula check 1y 5% / 2y 6% → ≈7.01%; registry ForwardRate-only commit; `tool:assign --set-active`. Automated lint/typecheck/build/Playwright not run (master prompt). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Black Scholes Calculator
 - **Summary:** Shipped Black Scholes Calculator on existing catalog slug `black-scholes-calculator` (`BlackScholesCalculator`, catalog `6af46f10a27d8d1d4e9901be`, preserved `nameKey` `black scholes calculator`, pillar/subPillar null). Screenshot-first (ADR-023): stock/strike/call/put independent Phase 2 FX; maturity yrs/mos/days; dividend yield/vol/risk-free % → European BSM call/put. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Keys/sitemap/tool.key/FX slugs already on HEAD via concurrent registry traffic; this commit completes `registry/index.ts` + `details.ts` + Brain/tracker.
 - **Commits:** `57409d05` (UI; also absorbed concurrent Cross Exchange Rate UI files) / `ed35667f` (engine+FX validation) / (registration/Brain/tracker — this commit).

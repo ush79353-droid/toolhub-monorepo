@@ -682,6 +682,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FisherEffectCalculator',
   'FisherEquationCalculator',
   'ForwardPremiumCalculator',
+  'ForwardRateCalculator',
   'GdpDeflatorFormulaCalculator',
   'GdpGapCalculator',
   'GdpGrowthRateCalculator',

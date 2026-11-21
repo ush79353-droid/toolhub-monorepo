@@ -3760,6 +3760,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  ForwardRateCalculator: lazyTool(() =>
+    import('@/tools/calculators/forward-rate/ForwardRateCalculator').then(
+      (mod) => ({
+        default: mod.ForwardRateCalculator,
+      }),
+    ),
+  ),
   ComparativeAdvantageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/comparative-advantage/ComparativeAdvantageCalculator'

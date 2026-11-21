@@ -984,6 +984,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/fisher-equation/detail'),
   ForwardPremiumCalculator: () =>
     import('@/tools/calculators/forward-premium/detail'),
+  ForwardRateCalculator: () =>
+    import('@/tools/calculators/forward-rate/detail'),
   ComparativeAdvantageCalculator: () =>
     import('@/tools/calculators/comparative-advantage/detail'),
   GdpDeflatorFormulaCalculator: () =>

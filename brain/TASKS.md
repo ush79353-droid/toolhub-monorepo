@@ -97,6 +97,8 @@
 
 ## Completed
 
+| `TOOL-590` | Implement Forward Rate Calculator on existing slug `forward-rate-calculator` with annual-compounding implied forward from n₁/S₁ and n₂/S₂, yrs/mo units, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/forward-rate/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
+
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `TOOL-640` | Implement Yield to Call Calculator on existing slug `yield-to-call-calculator` with annual interest / call / market / years → YTC (full pricing equation), guide/FAQ, and verified activation (preserve nameKey `yield to call calculator`, isFeatured false, **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/yield-to-call/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |

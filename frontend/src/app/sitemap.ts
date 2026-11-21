@@ -817,6 +817,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fisher-effect-calculator',
   'fisher-equation-calculator',
   'forward-premium-calculator',
+  'forward-rate-calculator',
   'gdp-deflator-formula-calculator',
   'gdp-gap-calculator',
   'gdp-growth-rate-calculator',
