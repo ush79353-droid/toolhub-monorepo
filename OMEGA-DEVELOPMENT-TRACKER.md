@@ -258,5 +258,5 @@ Prior blockers resolved with locked TY2022 TCJA baseline vs May 2021 AFP (ordina
 
 Screenshot-first spot/forward premium + 365-day annualization. No FX selectors. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE. UI files first landed in concurrent Early Retirement commit `0c2fd00e` (multi-agent staging collision); engine `407e9aa3`; integration commit listed below.
 
-| 65 | Forward Premium Calculator | DEVELOPED | AUDIT PENDING | 0c2fd00e | 407e9aa3 | 106c6326+66203a99 | Completed Tools | `ForwardPremiumCalculator`; slug `forward-premium-calculator`; Mongo `6af46f10a27d8d1d4e9901c0` active; indexable false; TASKS `TOOL-600`; no FX; UI via concurrent `0c2fd00e`; registry finalized via concurrent index restore `66203a99` |
+| 65 | Forward Premium Calculator | DEVELOPED | AUDIT PENDING | 0c2fd00e | 407e9aa3 | da2db7f2 | Completed Tools | `ForwardPremiumCalculator`; slug `forward-premium-calculator`; Mongo `6af46f10a27d8d1d4e9901c0` active; indexable false; TASKS `TOOL-601`; no FX; UI via concurrent `0c2fd00e`; registry also via `106c6326`/`66203a99`; docs `da2db7f2`/`b2daffea` |
 
