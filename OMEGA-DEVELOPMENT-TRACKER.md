@@ -103,7 +103,7 @@ Audit pending: deferred to final audit coordinator
 | 60 | New York Tax Calculator | DEVELOPED | AUDIT PENDING | 4abebdfc | 0f441eca | 44d12361 | Completed Tools | `NewYorkTaxCalculator`; slug `new-york-tax-calculator`; Mongo `6af46f0fa27d8d1d4e99006c`; TY2025 federal+NYS+NYC; fixed USD; indexable false |
 
 | 61 | Modified Adjusted Gross Income (MAGI) Calculator | DEVELOPED | AUDIT PENDING | 03c9fe74 | 516e8910 | c1d34d67 | Completed Tools | `ModifiedAdjustedGrossIncomeCalculator`; slug `modified-adjusted-gross-income-magi-calculator`; Mongo `6af46f0fa27d8d1d4e990067`; Phase 2 FX; indexable false; TASKS `TOOL-574` |
-| 62 | Capital Gains Tax UK Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Atlas Mongo unreachable (server selection timeout / shard TCP fail); local `mega_tools.tools` empty; catalog name exists in `tools-catalog.json` but live `_id`/slug/flags unverifiable; no commits; no activation |
+| 62 | Capital Gains Tax UK Calculator | DEVELOPED | AUDIT PENDING | d6b444ca | d41583b8 | (reg this commit) | Completed Tools | `CapitalGainsTaxUkCalculator`; slug `capital-gains-tax-uk-calculator`; Mongo `6af46f10a27d8d1d4e9901cb` active; HMRC 2025/26–2026/27; fixed GBP; indexable false; TASKS `TOOL-651` |
 
 
 | 63 | Call Option Calculator | DEVELOPED | AUDIT PENDING | 5eecfbf6 | db64a460 | (docs c3) | Completed Tools | CallOptionCalculator; slug call-option-calculator; Mongo 6af46f10a27d8d1d4e9901bf active; indexable false; denomination no FX; TASKS TOOL-611; folder Completed Tools |
@@ -114,6 +114,8 @@ Audit pending: deferred to final audit coordinator
 | 68 | Futures Contracts Calculator | DEVELOPED | AUDIT PENDING | 5d42bb55 | 7c06d250 | c2748981 | Completed Tools | `FuturesContractsCalculator`; slug `futures-contracts-calculator`; Mongo `6af46f10a27d8d1d4e9901c2` active; Phase 2 FX; indexable false; TASKS `TOOL-645` |
 
 ## Session Log
+- 2026-11-21 (Capital Gains Tax UK): Capital Gains Tax UK Calculator DEVELOPED (`d6b444ca` / `d41583b8` / reg). Mongo `6af46f10a27d8d1d4e9901cb` activated; indexable false; fixed GBP; HMRC 18%/24%. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 | 69 | Pence to Pounds Converter | DEVELOPED | AUDIT PENDING | 270bbd2c | 93fc88de | 7f4d8b82 | Completed Tools | `PenceToPoundsConverter`; slug `pence-to-pounds-converter`; Mongo `6af46f10a27d8d1d4e9901ca` active; fixed 100p=£1; no FX; indexable false; TASKS `TOOL-647` |
 
 | 69 | Money Counter Calculator | DEVELOPED | AUDIT PENDING | e6af2f2b | ae1b9c1b | (this reg commit) | Completed Tools | `MoneyCounterCalculator`; slug `money-counter-calculator`; Mongo `6af46f10a27d8d1d4e9901c9` active; denomination-only (no FX); indexable false; TASKS `TOOL-646` |
@@ -278,6 +280,12 @@ Prior blockers resolved with locked TY2022 TCJA baseline vs May 2021 AFP (ordina
 Screenshot-first spot/forward premium + 365-day annualization. No FX selectors. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE. UI files first landed in concurrent Early Retirement commit `0c2fd00e` (multi-agent staging collision); engine `407e9aa3`; integration commit listed below.
 
 | 65 | Forward Premium Calculator | DEVELOPED | AUDIT PENDING | 0c2fd00e | 407e9aa3 | da2db7f2 | Completed Tools | `ForwardPremiumCalculator`; slug `forward-premium-calculator`; Mongo `6af46f10a27d8d1d4e9901c0` active; indexable false; TASKS `TOOL-601`; no FX; UI via concurrent `0c2fd00e`; registry also via `106c6326`/`66203a99`; docs `da2db7f2`/`b2daffea` |
+
+### 2026-11-21 — National Insurance Calculator DEVELOPED
+
+Screenshot-first UK NI (Class 1 cat A + Class 4 separate bases; tax years 2024/25–2026/27; fixed GBP). Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
+
+| 67 | National Insurance Calculator | DEVELOPED | AUDIT PENDING | e1e53272 | dbd8f2ef | (integration commit) | Completed Tools | `NationalInsuranceCalculator`; slug `national-insurance-calculator`; Mongo `6af46f10a27d8d1d4e9901cc` active; fixed GBP; indexable false; TASKS `TOOL-648` |
 
 ### 2026-11-21 — IRA Calculator DEVELOPED
 

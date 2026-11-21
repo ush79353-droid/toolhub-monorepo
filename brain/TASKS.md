@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-648` | Implement National Insurance Calculator on existing slug `national-insurance-calculator` with HMRC Class 1 (cat A) + Class 4 separate bases, tax years 2024/25–2026/27, fixed GBP, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/national-insurance/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-647` | Implement Pence to Pounds Converter on existing slug `pence-to-pounds-converter` with bidirectional GBX↔GBP at 100p=£1, last-edited authority, no live FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/pence-to-pounds/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-646` | Implement Money Counter Calculator on existing slug `money-counter-calculator` with currency denomination sets, include-coins toggle, banknote/coin counts, exact minor-unit totals, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/money-counter/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-645` | Implement Futures Contracts Calculator on existing slug `futures-contracts-calculator` with long/short P/L, contract presets, tick/point FX, dual FX slug lists, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/futures-contracts/*`, registry, sitemap, FX lists, `tool.key.ts`, `brain/*` | — |

@@ -3695,6 +3695,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.YieldToMaturityCalculator,
     })),
   ),
+  UkCoinWeightCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/uk-coin-weight/UkCoinWeightCalculator'
+    ).then((mod) => ({
+      default: mod.UkCoinWeightCalculator,
+    })),
+  ),
   BuyingPowerCalculator: lazyTool(() =>
     import('@/tools/calculators/buying-power/BuyingPowerCalculator').then(
       (mod) => ({
@@ -4105,6 +4112,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/capital-gains-yield/CapitalGainsYieldCalculator'
     ).then((mod) => ({
       default: mod.CapitalGainsYieldCalculator,
+    })),
+  ),
+  CapitalGainsTaxUkCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/capital-gains-tax-uk/CapitalGainsTaxUkCalculator'
+    ).then((mod) => ({
+      default: mod.CapitalGainsTaxUkCalculator,
     })),
   ),
   CompoundInterestCalculator: lazyTool(() =>
@@ -4853,6 +4867,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     ).then((mod) => ({
       default: mod.OperatingCashFlowCalculator,
     })),
+  ),
+  OptionsSpreadCalculator: lazyTool(() =>
+    import('@/tools/calculators/options-spread/OptionsSpreadCalculator').then(
+      (mod) => ({
+        default: mod.OptionsSpreadCalculator,
+      }),
+    ),
   ),
   FdCalculator: lazyTool(() =>
     import('@/tools/calculators/fd/FdCalculator').then((mod) => ({

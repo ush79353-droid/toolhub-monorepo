@@ -4,6 +4,18 @@
 
 ---
 
+### 2026-11-21 — National Insurance Calculator
+- **Summary:** Shipped UK National Insurance Calculator on existing catalog slug `national-insurance-calculator` (`NationalInsuranceCalculator`, catalog `6af46f10a27d8d1d4e9901cc`, pillar/subPillar null). Screenshot-first (ADR-023): employment + self-employment incomes; tax years 2024/25–2026/27; employee Class 1 (cat A) and Class 4 on separate bases then totalled; Class 2 £0; **fixed GBP** (no FX). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-648`.
+- **Commits:** `e1e53272` (UI) / `dbd8f2ef` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** employment **£40,000** · 2026/27 → Class 1 **£2,194.40**.
+- **Verification:** Static HMRC threshold/rate review + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-21 — Capital Gains Tax UK Calculator
+- **Summary:** Shipped Capital Gains Tax UK Calculator on existing catalog slug `capital-gains-tax-uk-calculator` (`CapitalGainsTaxUkCalculator`, catalog `6af46f10a27d8d1d4e9901cb`, preserved `nameKey` `capital gains tax uk calculator`, pillar/subPillar null). Screenshot-first (ADR-023): tax year 2025/26|2026/27; gains £; Shares/Property/Crypto/Other; trust Yes/No; taxable annual + other income → total; CGT. HMRC 18%/24% band method; trustees 24% + half AEA; fixed GBP (no FX). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-651`.
+- **Commits:** `d6b444ca` (UI) / `d41583b8` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** GOV.UK 2026/27 · gains **£12,600** · taxable income **£20,000** → CGT **£1,728**.
+- **Verification:** Focused `calculation.test.ts` self-check executed (`ok`). Full tsc/lint/build/Playwright not run (Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — IRA Calculator
 - **Summary:** Screenshot-first IRA Traditional/SEP/SIMPLE vs Roth comparison with end-of-year annuity growth, amortized withdrawals, IRS TY2026 USD limits, Phase 2 FX money fields; catalog activated (`indexable` false).
 - **Important Files:** `frontend/src/tools/calculators/ira/*`, registry, sitemap, dual `CURRENCY_CONVERSION_SLUGS`, `tool.key.ts`, `brain/*`, tracker.

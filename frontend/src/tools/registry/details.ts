@@ -969,6 +969,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/yield-to-maturity/detail'),
   YieldToCallCalculator: () =>
     import('@/tools/calculators/yield-to-call/detail'),
+  UkCoinWeightCalculator: () =>
+    import('@/tools/calculators/uk-coin-weight/detail'),
   BuyingPowerCalculator: () =>
     import('@/tools/calculators/buying-power/detail'),
   CarryTradeCalculator: () =>
@@ -1085,6 +1087,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
     import('@/tools/calculators/capital-gains-yield/detail'),
+  CapitalGainsTaxUkCalculator: () =>
+    import('@/tools/calculators/capital-gains-tax-uk/detail'),
   CompoundInterestCalculator: () =>
     import('@/tools/calculators/compound-interest/detail'),
   CompoundInterestRateCalculator: () =>
@@ -1291,6 +1295,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/working-capital-turnover-ratio/detail'),
   OperatingCashFlowCalculator: () =>
     import('@/tools/calculators/operating-cash-flow/detail'),
+  OptionsSpreadCalculator: () =>
+    import('@/tools/calculators/options-spread/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
   FhaLoanCalculator: () => import('@/tools/calculators/fha-loan/detail'),
   FutureValueCalculator: () =>
