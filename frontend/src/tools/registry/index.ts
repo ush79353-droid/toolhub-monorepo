@@ -3941,6 +3941,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CouponPaymentCalculator,
     })),
   ),
+  CouponRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/coupon-rate/CouponRateCalculator'
+    ).then((mod) => ({
+      default: mod.CouponRateCalculator,
+    })),
+  ),
   CreditCardCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/credit-card/CreditCardCalculator'

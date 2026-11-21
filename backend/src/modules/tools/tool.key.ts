@@ -711,6 +711,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CompoundInterestRateCalculator',
   'ContinuousCompoundInterestCalculator',
   'CouponPaymentCalculator',
+  'CouponRateCalculator',
   'CreditCardCalculator',
   'CreditCardInterestCalculator',
   'CreditCardMinimumPaymentCalculator',
@@ -1538,6 +1539,7 @@ if (isDirect) {
     !isApprovedComponentKey('CompoundInterestRateCalculator') ||
     !isApprovedComponentKey('ContinuousCompoundInterestCalculator') ||
     !isApprovedComponentKey('CouponPaymentCalculator') ||
+    !isApprovedComponentKey('CouponRateCalculator') ||
     !isApprovedComponentKey('CreditCardCalculator') ||
     !isApprovedComponentKey('CreditCardInterestCalculator') ||
     !isApprovedComponentKey('CreditCardMinimumPaymentCalculator') ||
