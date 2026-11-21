@@ -55,6 +55,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'margin-call-calculator',
   'margin-of-safety-calculator',
   'margin-with-discount-calculator',
+  'how-to-maintain-or-lose-weight-during-pregnancy',
   'markdown-calculator',
   'markup-calculator',
   'net-debt-calculator',

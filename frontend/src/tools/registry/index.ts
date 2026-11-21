@@ -297,6 +297,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginWithDiscountCalculator,
     })),
   ),
+  MaintainPregnancyWeightCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/maintain-pregnancy-weight/MaintainPregnancyWeightCalculator'
+    ).then((mod) => ({
+      default: mod.MaintainPregnancyWeightCalculator,
+    })),
+  ),
   MarkdownCalculator: lazyTool(() =>
     import('@/tools/calculators/markdown/MarkdownCalculator').then((mod) => ({
       default: mod.MarkdownCalculator,

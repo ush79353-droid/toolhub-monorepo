@@ -47,6 +47,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginCallCalculator',
   'MarginOfSafetyCalculator',
   'MarginWithDiscountCalculator',
+  'MaintainPregnancyWeightCalculator',
   'MarkdownCalculator',
   'MarkupCalculator',
   'NetDebtCalculator',
