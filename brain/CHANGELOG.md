@@ -21,6 +21,12 @@
 - **Catalog:** `6af46f10a27d8d1d4e9901b5` · slug `early-retirement-calculator` · `EarlyRetirementCalculator` · activated · `indexable` false.
 - **Verification:** Static formula review + assert self-check authored (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-21 — Cross Exchange Rate Calculator
+- **Summary:** Shipped Cross Exchange Rate Calculator on existing catalog slug `cross-exchange-rate-calculator` (`CrossExchangeRateCalculator`, catalog `6af46f10a27d8d1d4e9901c7`, preserved `nameKey` `cross exchange rate calculator`, pillar/subPillar null). Screenshot-first (ADR-023): A/C|C/A and B/C|C/B reciprocal pairs → A/B and B/A; A/B=(A/C)÷(B/C); entered rates only (no FX). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Also restored `frontend/src/tools/registry/index.ts` after a concurrent commit emptied it.
+- **Commits:** `57409d05` (UI via concurrent black-scholes commit) / `f86ab4e1` (engine) / `66203a99` (registration + registry restore).
+- **Example:** A/C **1.10** · B/C **1.25** → A/B **0.88**.
+- **Verification:** Static formula review + focused `calculation.test.ts` (8 asserts). Full frontend tsc / lint / build not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Call Option Calculator
 - **Summary:** Shipped Call Option Calculator on existing catalog slug `call-option-calculator` (`CallOptionCalculator`, catalog `6af46f10a27d8d1d4e9901bf`, preserved `nameKey` `call option calculator`, pillar/subPillar null). Screenshot-first (ADR-023): call/put radios; asset/target; strike; premium per share; whole contracts; total premium = quote × 100 × contracts; break-even, intrinsic, time value, P/L at asset/target; denomination CurrencySelect (no FX / not in `CURRENCY_CONVERSION_SLUGS`). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Commits:** `5eecfbf6` (UI) / `db64a460` (engine) / (this Brain/tracker commit; registry/sitemap/tool.key/guide also present on HEAD via concurrent registration commits including `81492c88`).
