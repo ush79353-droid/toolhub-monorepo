@@ -4,6 +4,16 @@
 
 ---
 
+### 2026-11-21 — Homepage search dropdown no longer clipped
+- **Summary:** The hero kept `overflow-hidden` on the whole section, which cut off the suggestion list. The clip now applies only to the decorative background.
+- **Important Files:** `frontend/src/app/(website)/page.tsx`.
+- **Verification:** Searching `meter` shows the full suggestion panel, including See all results, over the featured section. Temporary files cleaned: YES.
+
+### 2026-11-21 — Homepage hero search
+- **Summary:** Homepage hero is a centered tool search on the mint blob panel used by the admin auth screen. Typing shows the same debounced suggestions as the header search.
+- **Important Files:** `frontend/src/app/(website)/page.tsx`, `frontend/src/components/layout/HeaderSearch.tsx`.
+- **Verification:** Homepage at `/` shows the panel and search. Query `loan` returned tool suggestions. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Footer social icons from site config
 - **Summary:** Added social icon row under the footer brand description. Links come from `siteConfig.social` in `frontend/src/config/site.ts` (temp placeholder URLs). Empty `href` hides that icon.
 - **Important Files:** `frontend/src/config/site.ts`, `frontend/src/components/layout/Footer.tsx`.

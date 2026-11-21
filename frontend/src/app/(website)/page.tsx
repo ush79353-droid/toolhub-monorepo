@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
-import { SearchBar } from '@/components/shared/SearchBar';
+import { HeaderSearch } from '@/components/layout/HeaderSearch';
 import { serverApi } from '@/server/api/client';
 import { getPublicCategories } from '@/server/catalog/categories';
 
@@ -36,22 +36,25 @@ export default async function HomePage() {
 
   return (
     <div>
-      <section className="border-b border-border">
-        <Container className="grid gap-10 py-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.9fr)] lg:items-end lg:py-20">
-          <div>
-            <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-accent sm:text-5xl">
-              Calculators, grouped the way the work is actually done.
-            </h1>
-            <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
-              {toolTotal > 0
-                ? `${toolTotal.toLocaleString()} tools across ${categories.length} categories. Pick a subject, or search for the one you need.`
-                : 'Search the directory, or start from a category.'}
-            </p>
-            <div className="mt-8 max-w-xl">
-              <SearchBar autoNavigate size="large" placeholder="Search calculators" />
-            </div>
+      <section className="relative border-b border-border bg-gradient-to-br from-[#cfeeed] via-[#e7f6f4] to-[#f4f7f2]">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_32%_32%,#ffffff,hsl(177,42%,78%))]" />
+          <div className="absolute -right-20 top-6 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_35%_30%,#ffffff,hsl(175,35%,84%))]" />
+          <div className="absolute bottom-16 right-[18%] h-40 w-40 rounded-full bg-[radial-gradient(circle_at_40%_40%,#ffffff,hsl(186,35%,86%))]" />
+        </div>
+        <Container className="relative z-10 flex flex-col items-center py-16 text-center sm:py-20 lg:py-24">
+          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-accent sm:text-5xl">
+            Calculators, grouped the way the work is actually done.
+          </h1>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+            {toolTotal > 0
+              ? `${toolTotal.toLocaleString()} tools across ${categories.length} categories. Search for the one you need.`
+              : 'Search the directory, or start from a category.'}
+          </p>
+          <div className="mt-8 w-full max-w-2xl text-left">
+            <HeaderSearch size="large" inputId="home-tool-search" />
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground lg:justify-self-end lg:pb-2">
+          <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
             Each calculator stays in the browser. No account, and nothing is uploaded to run a calculation.
           </p>
         </Container>

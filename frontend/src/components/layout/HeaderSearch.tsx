@@ -30,9 +30,11 @@ function highlight(name: string, query: string): React.ReactNode {
 export function HeaderSearch({
   className = '',
   inputId = 'header-tool-search',
+  size = 'default',
 }: {
   className?: string;
   inputId?: string;
+  size?: 'default' | 'large';
 }) {
   const router = useRouter();
   const rootRef = React.useRef<HTMLDivElement>(null);
@@ -127,13 +129,18 @@ export function HeaderSearch({
   }
 
   const showPanel = open && query.trim().length > 0;
+  const large = size === 'large';
 
   return (
     <div ref={rootRef} className={`relative ${className}`}>
       <label htmlFor={inputId} className="sr-only">
         Search tools
       </label>
-      <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+      <Search
+        className={`pointer-events-none absolute top-1/2 -translate-y-1/2 ${
+          large ? 'left-5 h-5 w-5 text-primary' : 'left-3 h-4 w-4 text-muted-foreground'
+        }`}
+      />
       <input
         id={inputId}
         role="combobox"
@@ -142,7 +149,7 @@ export function HeaderSearch({
         aria-autocomplete="list"
         autoComplete="off"
         value={query}
-        placeholder="Search tools"
+        placeholder={large ? 'Search calculators, converters, and tools' : 'Search tools'}
         onChange={(event) => {
           setQuery(event.target.value);
           setOpen(true);
@@ -151,10 +158,18 @@ export function HeaderSearch({
           if (query.trim()) setOpen(true);
         }}
         onKeyDown={onKeyDown}
-        className="h-10 w-full rounded-xl border border-border bg-white pl-9 pr-9 text-sm text-foreground shadow-xs placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+        className={`w-full border border-border bg-white text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 ${
+          large
+            ? 'h-14 rounded-2xl pl-14 pr-12 text-base shadow-[0_18px_40px_-24px_rgba(22,60,67,0.55)]'
+            : 'h-10 rounded-xl pl-9 pr-9 text-sm shadow-xs'
+        }`}
       />
       {loading ? (
-        <Loader2 className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 animate-spin text-muted-foreground" />
+        <Loader2
+          className={`absolute top-1/2 -translate-y-1/2 animate-spin text-muted-foreground ${
+            large ? 'right-5 h-5 w-5' : 'right-3 h-4 w-4'
+          }`}
+        />
       ) : null}
 
       {showPanel ? (
