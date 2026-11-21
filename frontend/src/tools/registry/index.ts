@@ -3638,6 +3638,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LcrCalculator,
     })),
   ),
+  MoneyMultiplierCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/money-multiplier/MoneyMultiplierCalculator'
+    ).then((mod) => ({
+      default: mod.MoneyMultiplierCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

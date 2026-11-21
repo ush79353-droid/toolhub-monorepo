@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Money Multiplier Calculator
+- **Summary:** Shipped Money Multiplier Calculator on existing catalog slug `money-multiplier-calculator` (`MoneyMultiplierCalculator`, catalog `6af46f10a27d8d1d4e990184`, preserved `nameKey` `money multiplier calculator`). Screenshot-first (ADR-023): checkable deposits + reserve ratio or bank reserves + currency → bank reserves, monetary base, money supply, m=M/B; separate simple deposit multiplier 1/r and c/r; dual reserveSource avoids circular edits; SVG charts; educational guide/FAQ on fractional reserves and model limits. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Deposits **$1,000,000** · Reserve ratio **10%** · Currency **$200,000** → Reserves **$100,000** · B **$300,000** · M **$1,200,000** · m **4.00×** · m_d **10×**.
+- **Important Files:** `frontend/src/tools/calculators/money-multiplier/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` money-multiplier tests 8/8 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add LCR Calculator (Liquidity Coverage Ratio)
 - **Summary:** Shipped LCR Calculator on existing catalog slug `lcr-calculator` (`LcrCalculator`, catalog `6af46f10a27d8d1d4e990183`, preserved `nameKey` `lcr calculator`). Screenshot-first (ADR-023): HQLA ÷ 30-day net outflows × 100; expandable simplified HQLA helper (L1/L2A/L2B25/L2B50 + illustrative caps); optional 75% inflow-cap net outflows helper; surplus/shortfall; bar+gauge SVG; educational disclaimer (not regulatory compliance). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** HQLA **$1,750,000** · Outflows **$1,500,000** → LCR ≈ **116.67%**.

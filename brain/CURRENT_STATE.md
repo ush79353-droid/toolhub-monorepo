@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (LCR Calculator live at `/tools/lcr-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Money Multiplier Calculator live at `/tools/money-multiplier-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Money Multiplier Calculator (`/tools/money-multiplier-calculator`):** Live client-side monetary-aggregates tool (`componentKey: 'MoneyMultiplierCalculator'`, catalog `6af46f10a27d8d1d4e990184`, `nameKey` `money multiplier calculator`). Screenshot-first (ADR-023): dual reserveSource modes (ratio↔reserves); B=currency+reserves; M=currency+deposits; m=M/B; separate simple deposit multiplier 1/r and c/r ratios; SVG supply-vs-base + base doughnut; zero-base → unavailable (no Infinity); denomination-only CurrencySelect (USD default). Activated; **`indexable` left false**. Example: Deposits **$1M** · r **10%** · Currency **$200k** → m **4.00×** · m_d **10×**.
 - **LCR Calculator (`/tools/lcr-calculator`):** Live client-side bank liquidity tool (`componentKey: 'LcrCalculator'`, catalog `6af46f10a27d8d1d4e990183`, `nameKey` `lcr calculator`). Screenshot-first (ADR-023): LCR=HQLA/30-day net outflows×100; expandable simplified HQLA helper (L1/L2A/L2B25/L2B50 + illustrative 15%/40% caps); optional 75% inflow-cap net outflows; surplus/shortfall/additional HQLA; bar+gauge SVG; educational disclaimer (not compliance). Activated; **`indexable` left false**. Example: HQLA **$1.75M** · Outflows **$1.5M** → LCR ≈ **116.67%**.
 - **Labor Force Participation Rate Calculator (`/tools/labor-force-participation-rate-calculator`):** Live client-side labor-market tool (`componentKey: 'LaborForceParticipationRateCalculator'`, catalog `6af46f10a27d8d1d4e990182`, `nameKey` `labor force participation rate calculator`). Screenshot-first (ADR-023): employed + unemployed → labor force & unemployment rate; working-age → LFPR / not-in-LF / EPR; population definition label; donut composition SVG; guide/FAQ without invented country ranks. Activated; **`indexable` left false**. Example: **5.5M** / **700k** / **7.2M** → LFPR ≈ **86.11%** · UR ≈ **11.29%**.
 - **Inflation Calculator (`/tools/inflation-calculator`):** Live client-side inflation tool (`componentKey: 'InflationCalculator'`, catalog `6af46f10a27d8d1d4e990181`, `nameKey` `inflation calculator`). Screenshot-first (ADR-023): US historical CPI-U annual averages (reuse Buying Power `CUUR0000SA0`) with Adjusted=A×(CPI_t/CPI_r); custom FV=PV(1+r)^t + purchasing-power factor; yearly frequency; quarterly explicitly unavailable without monthly CPI; SVG charts; guide/FAQ. Activated; **`indexable` left false**. Example: **$1,000** · **3%** · **5**y → ≈ **$1,159.27**.
