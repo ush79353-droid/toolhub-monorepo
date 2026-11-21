@@ -57,9 +57,15 @@
 - **Example:** **10** kg · **15** mg/kg/day · once · **25** mg/mL → **150** mg · **6** mL.
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-22 — Insulin Dosage Calculator
+- **Summary:** Shipped Insulin Dosage Calculator on existing catalog slug `insulin-dosage-calculator` (`InsulinDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d8`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): educational carb coverage + correction + total; sample ICR 15 / target 100 / ISF 50; TDD checkbox shows Rule of 500/1800 labels only (never auto-fills); mg/dL↔mmol/L; below-target correction clamped to 0; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-678`.
+- **Commits:** `b59eb4fb` (UI; multi-agent race also absorbed unrelated is-bmi-pregnancy engine files) / `db5e0416` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** **60** g · ICR **15** · glucose **200**→**100** / ISF **50** → **4** + **2** = **6** units.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — BMI Calculator for Kids
 - **Summary:** Shipped BMI Calculator for Kids on existing catalog slug `bmi-calculator-for-kids` (`BmiCalculatorForKids`, catalog `6af46f10a27d8d1d4e9901e0`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): blank height/weight (cm/kg); BMI + BMI Prime; collapsed “How healthy is this BMI?” with exact age + sex → CDC 2000 BMI-for-age LMS percentiles; child categories never derived from Prime; ages &lt;2 / ≥20 gated (no adult WHO path). Share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-677`.
-- **Commits:** `bc66e8f2` (UI) / `f4e01c2e` (engine; multi-agent race also absorbed concurrent `bmi-for-women` engine files already staged) / (registration/Brain/tracker — this commit).
+- **Commits:** `bc66e8f2` (UI) / `f4e01c2e` (engine; multi-agent race also absorbed concurrent `bmi-for-women` engine files already staged) / `27ae7116` (Brain/tracker; registry already on HEAD via concurrent commits).
 - **Example:** **10**y male · **140** cm · **32.7** kg → BMI ≈ **16.68** · ~50th percentile (healthy weight).
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
