@@ -44,6 +44,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/florida-overtime/detail'),
   FutureValueOfAnnuityCalculator: () =>
     import('@/tools/calculators/future-value-of-annuity/detail'),
+  GeriatricBmiCalculator: () =>
+    import('@/tools/calculators/geriatric-bmi/detail'),
   GeorgiaOvertimeCalculator: () =>
     import('@/tools/calculators/georgia-overtime/detail'),
   GrossMarginCalculator: () =>
@@ -698,6 +700,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bradford-factor/detail'),
   BreakEvenCalculator: () =>
     import('@/tools/calculators/break-even/detail'),
+  BreastfeedingCalorieCalculator: () =>
+    import('@/tools/calculators/breastfeeding-calorie/detail'),
   BrexitCalculator: () => import('@/tools/calculators/brexit/detail'),
   BuildVsBuyCalculator: () =>
     import('@/tools/calculators/build-vs-buy/detail'),
@@ -713,6 +717,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CagrCalculator: () => import('@/tools/calculators/cagr/detail'),
   CalorieCalculator: () =>
     import('@/tools/calculators/calorie/detail'),
+  CaloriesBurnedCalculator: () =>
+    import('@/tools/calculators/calories-burned/detail'),
   CallOptionCalculator: () => import('@/tools/calculators/call-option/detail'),
   CapmCalculator: () => import('@/tools/calculators/capm/detail'),
   CanadianMortgageCalculator: () =>

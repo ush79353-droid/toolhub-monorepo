@@ -158,6 +158,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FutureValueOfAnnuityCalculator,
     })),
   ),
+  GeriatricBmiCalculator: lazyTool(() =>
+    import('@/tools/calculators/geriatric-bmi/GeriatricBmiCalculator').then((mod) => ({
+      default: mod.GeriatricBmiCalculator,
+    })),
+  ),
   GeorgiaOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/georgia-overtime/GeorgiaOvertimeCalculator'
@@ -2905,6 +2910,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BreakEvenCalculator,
     })),
   ),
+  BreastfeedingCalorieCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/breastfeeding-calorie/BreastfeedingCalorieCalculator'
+    ).then((mod) => ({
+      default: mod.BreastfeedingCalorieCalculator,
+    })),
+  ),
   BrexitCalculator: lazyTool(() =>
     import('@/tools/calculators/brexit/BrexitCalculator').then((mod) => ({
       default: mod.BrexitCalculator,
@@ -2948,6 +2960,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   CalorieCalculator: lazyTool(() =>
     import('@/tools/calculators/calorie/CalorieCalculator').then((mod) => ({
       default: mod.CalorieCalculator,
+    })),
+  ),
+  CaloriesBurnedCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/calories-burned/CaloriesBurnedCalculator'
+    ).then((mod) => ({
+      default: mod.CaloriesBurnedCalculator,
     })),
   ),
   CallOptionCalculator: lazyTool(() =>
