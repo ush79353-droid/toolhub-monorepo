@@ -698,6 +698,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'credit-spread-calculator',
   'defensive-interval-ratio-calculator',
   'effective-duration-calculator',
+  'lgd-calculator-loss-given-default',
   'credit-card-calculator',
   'credit-card-interest-calculator',
   'credit-card-minimum-payment-calculator',

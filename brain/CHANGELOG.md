@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add LGD Calculator – Loss Given Default
+- **Summary:** Shipped LGD Calculator on existing catalog slug `lgd-calculator-loss-given-default` (`LgdCalculator`, catalog `6af46f10a27d8d1d4e990198`, preserved `nameKey` `lgd calculator - loss given default`). Screenshot-first (ADR-023): recovery rate ↔ loss severity; LGD=EAD×(1−RR); recovery amount; advanced reverse EAD / rates-from-amounts + optional EL=PD×LGD×EAD (distinct from LGD); denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** EAD **PKR 100,000** · RR **80%** → severity **20%** · LGD **PKR 20,000** · recovery **PKR 80,000**; PD **5%** → EL **PKR 1,000**.
+- **Important Files:** `frontend/src/tools/calculators/lgd/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` lgd tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Effective Duration Calculator
 - **Summary:** Shipped Effective Duration Calculator on existing catalog slug `effective-duration-calculator` (`EffectiveDurationCalculator`, catalog `6af46f10a27d8d1d4e990197`, preserved `nameKey` `effective duration calculator`). Screenshot-first (ADR-023): Standard Bond fixed-cash-flow central-difference duration + Scenario mode for option-aware prices; whole coupon periods required; DV01/convexity secondary; clear option-limitation copy; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Face **$10,000** · coupon **8%** · 3y · YTM **8%** · Δy **1 pp** → D ≈ **2.58 years** (P0 **$10,000**, P+ ≈ **$9,746.87**, P− ≈ **$10,262.43**).

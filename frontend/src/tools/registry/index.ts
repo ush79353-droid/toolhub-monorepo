@@ -3706,6 +3706,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LcrCalculator,
     })),
   ),
+  LgdCalculator: lazyTool(() =>
+    import('@/tools/calculators/lgd/LgdCalculator').then((mod) => ({
+      default: mod.LgdCalculator,
+    })),
+  ),
   MoneyMultiplierCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/money-multiplier/MoneyMultiplierCalculator'
