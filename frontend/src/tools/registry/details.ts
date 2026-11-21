@@ -980,6 +980,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/fisher-effect/detail'),
   FisherEquationCalculator: () =>
     import('@/tools/calculators/fisher-equation/detail'),
+  ForwardPremiumCalculator: () =>
+    import('@/tools/calculators/forward-premium/detail'),
   ComparativeAdvantageCalculator: () =>
     import('@/tools/calculators/comparative-advantage/detail'),
   GdpDeflatorFormulaCalculator: () =>
@@ -1096,6 +1098,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/credit-cards-payoff/detail'),
   CreditUtilizationCalculator: () =>
     import('@/tools/calculators/credit-utilization/detail'),
+  CrossExchangeRateCalculator: () =>
+    import('@/tools/calculators/cross-exchange-rate/detail'),
   DiscountedCashFlowCalculator: () =>
     import('@/tools/calculators/discounted-cash-flow/detail'),
   DiscountCalculator: () =>
