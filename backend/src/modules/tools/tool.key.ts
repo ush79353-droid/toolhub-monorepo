@@ -673,6 +673,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PostJudgmentInterestCalculator',
   'PreAndPostMoneyValuationCalculator',
   'PregnancyCalculator',
+  'PregnancyTestCalculator',
   'PregnancyWeightGainCalculator',
   'PresentValueCalculator',
   'PriceElasticityOfDemandCalculator',

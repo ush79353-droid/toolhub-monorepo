@@ -3721,6 +3721,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PregnancyCalculator,
     })),
   ),
+  PregnancyTestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/pregnancy-test/PregnancyTestCalculator'
+    ).then((mod) => ({
+      default: mod.PregnancyTestCalculator,
+    })),
+  ),
   PregnancyWeightGainCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/pregnancy-weight-gain/PregnancyWeightGainCalculator'
