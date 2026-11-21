@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-21 — Put-Call Parity Calculator
+- **Summary:** Screenshot-first European put–call parity (3-of-4 solve) with continuous PV(K) helper and Phase 2 FX. Mongo `6af46f10a27d8d1d4e9901c4` activated; **indexable** preserved false. Registry keys/index/details/sitemap already on HEAD via concurrent traffic; this commit adds dual FX slug lists + Brain/tracker.
+- **Important Files:** `frontend/src/tools/calculators/put-call-parity/*`, FX slug lists, `brain/*`, `OMEGA-DEVELOPMENT-TRACKER.md`.
+- **Verification:** Static example C=10, PV=95, S=100 → P=5; `tool:assign --set-active`. Lint/typecheck/build/Playwright not run (master prompt). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Pension Calculator
 - **Summary:** Lump-sum vs COLA-adjusted monthly pension comparison with monthly compounding, end-of-month matching withdrawals, annual COLA step-ups, yearly projection table, and depletion break-even. Denomination CurrencySelect only (no FX). Informational disclaimer included.
 - **Important Files:** `frontend/src/tools/calculators/pension/*`, registry keys/index/details, `tool.key.ts`, `sitemap.ts`, `brain/*`, tracker.
@@ -25,7 +30,7 @@
 
 ### 2026-11-21 — National Insurance Calculator
 - **Summary:** Shipped UK National Insurance Calculator on existing catalog slug `national-insurance-calculator` (`NationalInsuranceCalculator`, catalog `6af46f10a27d8d1d4e9901cc`, pillar/subPillar null). Screenshot-first (ADR-023): employment + self-employment incomes; tax years 2024/25–2026/27; employee Class 1 (cat A) and Class 4 on separate bases then totalled; Class 2 £0; **fixed GBP** (no FX). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-648`.
-- **Commits:** `e1e53272` (UI) / `dbd8f2ef` (engine) / (registration/Brain/tracker — this commit).
+- **Commits:** `e1e53272` (UI) / `dbd8f2ef` (engine) / `5a2b0c38` (guide/detail/registry/Brain absorbed into concurrent pension registration) + docs finalize (this commit).
 - **Example:** employment **£40,000** · 2026/27 → Class 1 **£2,194.40**.
 - **Verification:** Static HMRC threshold/rate review + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
