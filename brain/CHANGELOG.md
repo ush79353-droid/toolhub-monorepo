@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Fisher Effect Calculator
+- **Summary:** Shipped Fisher Effect Calculator on existing catalog slug `fisher-effect-calculator` (`FisherEffectCalculator`, catalog `6af46f10a27d8d1d4e99017a`, preserved `nameKey` `fisher effect calculator`). Screenshot-first (ADR-023): bidirectional modes for real/nominal/expected inflation; exact Fisher equation default with approximate comparison; domain guards for −100%; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** i **5%** · πᵉ **2%** → exact r ≈ **2.9412%** (display **2.94%**) · approx **3.00%**.
+- **Important Files:** `frontend/src/tools/calculators/fisher-effect/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Fisher Effect tests 17/17 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Discretionary Income Calculator
 - **Summary:** Shipped Discretionary Income Calculator on existing catalog slug `discretionary-income-calculator` (`DiscretionaryIncomeCalculator`, catalog `6af46f10a27d8d1d4e990178`, preserved `nameKey` `discretionary income calculator`). Screenshot-first (ADR-023): student-loan DI = max(0, AGI−kP) with marital status, searchable state, dependents, named repayment standards, verified HHS 2024–2025 poverty guidelines (contiguous/Alaska/Hawaii); budgeting mode take-home − necessary (negative allowed); fixed USD; IDR payment estimate with servicer disclaimer. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Sources:** HHS Federal Register poverty guidelines 2024 & 2025.

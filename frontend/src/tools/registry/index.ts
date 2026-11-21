@@ -3565,6 +3565,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DiscretionaryIncomeCalculator,
     })),
   ),
+  FisherEffectCalculator: lazyTool(() =>
+    import('@/tools/calculators/fisher-effect/FisherEffectCalculator').then(
+      (mod) => ({
+        default: mod.FisherEffectCalculator,
+      }),
+    ),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'
