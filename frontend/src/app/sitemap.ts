@@ -658,6 +658,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'piti-calculator',
   'post-judgment-interest-calculator',
   'pre-and-post-money-valuation-calculator',
+  'pregnancy-weight-gain-calculator',
   'present-value-calculator',
   'price-elasticity-of-demand-calculator',
   'price-elasticity-of-supply-calculator',

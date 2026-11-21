@@ -966,6 +966,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/post-judgment-interest/detail'),
   PreAndPostMoneyValuationCalculator: () =>
     import('@/tools/calculators/pre-and-post-money-valuation/detail'),
+  PregnancyWeightGainCalculator: () =>
+    import('@/tools/calculators/pregnancy-weight-gain/detail'),
   PresentValueCalculator: () =>
     import('@/tools/calculators/present-value/detail'),
   PriceElasticityOfDemandCalculator: () =>

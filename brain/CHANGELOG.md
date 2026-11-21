@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-22 — Ibuprofen Dosage Calculator
+- **Summary:** Shipped Ibuprofen Dosage Calculator on existing catalog slug `ibuprofen-dosage-calculator` (`IbuprofenDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d6`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): 6+ months checkbox; blank kg/lb weight; safety note; examples 9.6/31.8 kg; Infants’ MOTRIN drops + Children’s suspension FDA/DailyMed weight bands; checkbox alone never doses; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-687`.
+- **Commits:** `d2d04130` (UI; absorbed unrelated calorie-intake-simple staging) / `546e5d65` (engine absorbed into concurrent pregnancy-weight-gain commit) / (registration/Brain/tracker — this commit).
+- **Example:** **9.6** kg → Infants’ **1.875 mL (75 mg)**; **31.8** kg → Children’s **12.5 mL (250 mg)**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Is BMI a Weight Gain Indicator in Pregnancy?
 - **Summary:** Shipped article-context widget on existing catalog slug `is-bmi-body-mass-index-a-weight-gain-indicator-in-pregnancy` (`IsBmiPregnancyWeightIndicatorCalculator`, catalog `6af46f10a27d8d1d4e9901f1`, pillar `6af451c1a27d8d1d4e98f983`). Screenshot-first (ADR-023): pre-pregnancy height/weight → BMI; week 40; twins No/Yes; min/max weight and gain via shared IOM engine (numerical identity with Pregnancy Weight Gain). Explains BMI selects guideline bands and does not measure gestational gain. Share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-686`.
 - **Commits:** `6837feba` (UI) / `b59eb4fb` (engine absorb) + `6510f141` (shared pregnancy-weight-gain IOM engine) / (registration/Brain/tracker — this commit).

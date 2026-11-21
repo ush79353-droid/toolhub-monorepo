@@ -3693,6 +3693,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PreAndPostMoneyValuationCalculator,
     })),
   ),
+  PregnancyWeightGainCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/pregnancy-weight-gain/PregnancyWeightGainCalculator'
+    ).then((mod) => ({
+      default: mod.PregnancyWeightGainCalculator,
+    })),
+  ),
   PresentValueCalculator: lazyTool(() =>
     import('@/tools/calculators/present-value/PresentValueCalculator').then((mod) => ({
       default: mod.PresentValueCalculator,
