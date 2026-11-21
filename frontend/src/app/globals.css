@@ -62,6 +62,10 @@
       'rlig' 1,
       'calt' 1;
   }
+  h1,
+  h2 {
+    font-family: var(--font-display), Georgia, serif;
+  }
 }
 
 /* Dark admin sidebar scrollbar. Native arrows stay hidden. */
@@ -115,4 +119,15 @@
   display: none;
   width: 0;
   height: 0;
+}
+
+/* Wins over Tailwind's default stacks when the config has not replaced them. */
+.font-sans {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
 }

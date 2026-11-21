@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-21 — Site typefaces
+- **Summary:** Replaced the system font with three faces. Source Sans 3 is the interface and body text. Fraunces is used for page and section titles. JetBrains Mono is used for code and figures.
+- **Important Files:** `frontend/src/app/layout.tsx`, `frontend/src/app/globals.css`, `frontend/tailwind.config.ts`, `brain/DESIGN_SYSTEM.md`.
+- **Verification:** Homepage titles render in Fraunces and body text in Source Sans 3. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Most Popular Tools grid
 - **Summary:** The homepage featured list is now a card grid titled Most Popular Tools. Each card shows the name, a short description, the category, and an arrow.
 - **Important Files:** `frontend/src/app/(website)/page.tsx`.

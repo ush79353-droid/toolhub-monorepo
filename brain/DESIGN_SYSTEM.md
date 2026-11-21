@@ -30,7 +30,7 @@ Verified in `StatusBadge.tsx`, `PendingNotice.tsx`, forms, and alerts:
 
 ## 2. Typography & Scale
 
-- **Fonts:** Uses Tailwind defaults (`font-sans`, `font-mono`) with `antialiased` and `font-feature-settings: 'rlig' 1, 'calt' 1` on `body`. No custom `next/font` loader is currently configured.
+- **Fonts:** Loaded in `frontend/src/app/layout.tsx` with `next/font`. **Source Sans 3** is the UI and body face (`font-sans`). **Fraunces** is the title face on `h1` and `h2` (`font-display`). **JetBrains Mono** is `font-mono` for code and figures. Small label headings, such as the footer columns, stay on Source Sans with `font-sans`.
 - **Public Hero / Section Headings:** `text-4xl font-semibold tracking-tight text-accent sm:text-5xl` (home), `text-3xl font-extrabold tracking-tight text-accent sm:text-4xl` (directories), `text-xl font-semibold` / `text-2xl font-bold`.
 - **Interactive Calculator & Editorial Pages (master: Auto Loan Calculator — see `TOOL_DETAIL_PAGE_STANDARDS.md`):**
   - Page H1: `text-[30px] font-bold … sm:text-[34px] lg:text-[36px]` on accent; article H2 `text-[21px] font-semibold … sm:text-2xl`; in-card section H2 `text-lg … sm:text-xl`.

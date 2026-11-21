@@ -191,7 +191,7 @@ export default async function AboutPage() {
 
       <section className="bg-white py-16 sm:py-24">
         <Container>
-          <p className="max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-accent sm:text-5xl">
+          <p className="max-w-4xl font-display text-3xl font-semibold leading-tight tracking-tight text-accent sm:text-5xl">
             A simple question should not require a crowded page.
           </p>
           <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-8">
@@ -312,7 +312,7 @@ export default async function AboutPage() {
 
       <section className="bg-muted py-16 sm:py-24">
         <Container>
-          <h2 className="max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight text-accent sm:text-6xl">
+          <h2 className="max-w-3xl font-display text-4xl font-semibold leading-[1.1] tracking-tight text-accent sm:text-6xl">
             You should not need a new website for every small job.
           </h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-3 sm:gap-0">

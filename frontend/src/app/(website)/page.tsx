@@ -117,7 +117,7 @@ export default async function HomePage() {
               Omega Calculators is a free collection of online calculators and converters. We built it for
               people who want a clear answer without hunting through ads, sign-ups, or confusing pages.
             </p>
-            <p className="mt-8 text-2xl font-semibold leading-snug tracking-tight text-accent sm:text-4xl">
+            <p className="mt-8 font-display text-2xl font-semibold leading-snug tracking-tight text-accent sm:text-4xl">
               A clear answer, with the formula and a worked example on the same page.
             </p>
             <Link

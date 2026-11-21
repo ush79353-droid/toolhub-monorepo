@@ -104,7 +104,7 @@ export async function Footer() {
           </div>
 
           <div className="sm:col-span-2 lg:col-span-7">
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-accent">Tools Categories</h2>
+            <h2 className="font-sans text-xs font-semibold uppercase tracking-wider text-accent">Tools Categories</h2>
             {categories.length === 0 ? (
               <p className="mt-4 text-sm text-muted-foreground">Categories are not available right now.</p>
             ) : (
@@ -133,7 +133,7 @@ export async function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-accent">Meet Omega</h2>
+            <h2 className="font-sans text-xs font-semibold uppercase tracking-wider text-accent">Meet Omega</h2>
             <ul className="mt-4 space-y-2.5 text-sm">
               {SITE_PAGES.map((page) => (
                 <li key={page.href}>

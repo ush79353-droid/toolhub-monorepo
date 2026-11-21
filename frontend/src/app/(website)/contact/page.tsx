@@ -73,7 +73,7 @@ export default function ContactPage() {
         <Container className="grid gap-10 py-12 sm:py-16 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-5">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Feature requests</p>
-            <p className="mt-3 text-2xl font-semibold leading-snug tracking-tight text-accent sm:text-3xl">
+            <p className="mt-3 font-display text-2xl font-semibold leading-snug tracking-tight text-accent sm:text-3xl">
               Name the job the directory does not cover yet.
             </p>
           </div>
