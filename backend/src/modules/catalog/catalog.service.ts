@@ -371,7 +371,7 @@ export interface PublicToolList {
   categories: PublicToolListCategory[];
 }
 
-const PUBLIC_TOOL_PAGE_SIZE = 24;
+const PUBLIC_TOOL_PAGE_SIZE = 48;
 
 interface PublicToolListRow {
   _id: { toString(): string };
@@ -404,14 +404,12 @@ export async function listPublicTools(query: {
     ]),
   ]);
   const countByCategory = new Map(counts.map((row) => [String(row._id), row.count]));
-  const categories = activeCategories
-    .map((category) => ({
-      id: category.id,
-      name: category.name,
-      slug: category.slug,
-      toolCount: countByCategory.get(category.id) ?? 0,
-    }))
-    .filter((category) => category.toolCount > 0);
+  const categories = activeCategories.map((category) => ({
+    id: category.id,
+    name: category.name,
+    slug: category.slug,
+    toolCount: countByCategory.get(category.id) ?? 0,
+  }));
 
   if (categorySlug) {
     const category = activeCategories.find((item) => item.slug === categorySlug);

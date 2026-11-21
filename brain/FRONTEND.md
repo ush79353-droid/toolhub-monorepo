@@ -18,7 +18,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 | Route | File | Rendering / Data Source | Implementation Status |
 | :--- | :--- | :--- | :--- |
 | `/` | `(website)/page.tsx` | Server Component (`cache: 'no-store'`) fetching `/catalog/categories` and `/catalog/featured` via `serverApi` | **Implemented** (falls back to empty arrays if backend unreachable) |
-| `/tools` | `(website)/tools/page.tsx` | Server Component. `GET /catalog/tools` with `q`, `category`, and `page`. 24 active tools per page. | **Implemented** |
+| `/tools` | `(website)/tools/page.tsx` | Server Component. Mint hero with breadcrumbs, a name search, and a category menu of every active root category (no counts). Results are the same cards as Most Popular Tools, 48 per page. An empty search is a centered message, not a card. | **Implemented** |
 | `/tools/[slug]` | `(website)/tools/[slug]/page.tsx` | Server Component. Active tool from `getPublicToolBySlug`. Guide and FAQs load from that tool's `detail.tsx`. The calculator loads with `import()`. Unregistered keys call `notFound()`. | **Implemented** for the registered calculators, including the 401(k) and 403(b) calculators |
 | `/embed/[slug]` | `embed/[slug]/page.tsx` (+ `embed/layout.tsx`) | Minimal no-header/footer calculator iframe surface; eligibility = active + allowlisted `componentKey` + embed not explicitly disabled (missing → enabled); `presentation="embed"`; noindex; optional ResizeObserver → postMessage; **no ad slots** | **Implemented** (shared for all registered calculators) |
 | `/robots.txt` | `app/robots.ts` | Allow `/`; disallow `/admin/`, `/api/`, `/embed/`; sitemap URL from public origin | **Implemented** |

@@ -91,9 +91,9 @@ Mounted at `/api/v1/catalog` (`backend/src/modules/catalog/catalog.router.ts`).
 ### `GET /api/v1/catalog/tools`
 - **Auth:** Public
 - **Query:** `q` (optional, trimmed, max 120), `category` (optional root-category slug), `page` (default 1)
-- **Response (`200`):** Active tools only, 24 per page, sorted by name. Search matches name, short description, and slug.
+- **Response (`200`):** Active tools only, 48 per page, sorted by name. Search matches name, short description, and slug.
   `{ items: { id, name, slug, shortDescription, categoryName, categorySlug }[], page, limit, total, totalPages, categories }`
-  `categories` lists active root categories that have at least one active tool, with that active count. An unknown category slug returns an empty page rather than 404.
+  `categories` lists every active root category, including those with no active tools, plus that active count. An unknown category slug returns an empty page rather than 404.
 
 ### `GET /api/v1/catalog/tools/:slug`
 - **Auth:** Public

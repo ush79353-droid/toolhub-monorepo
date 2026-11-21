@@ -4,6 +4,31 @@
 
 ---
 
+### 2026-11-21 — Right-aligned tool pagination
+- **Summary:** The All Tools page controls sit on the right as rounded Previous, page, and Next buttons.
+- **Important Files:** `frontend/src/app/(website)/tools/page.tsx`.
+- **Verification:** Page 1 shows Previous, the current page, and Next as rounded controls on the right. Temporary files cleaned: YES.
+
+### 2026-11-21 — Open empty state on All Tools
+- **Summary:** A search with no matches sits centered on the page, without a card.
+- **Important Files:** `frontend/src/app/(website)/tools/page.tsx`.
+- **Verification:** Chemistry with no tools shows a centered message and Clear filters, with no card. Temporary files cleaned: YES.
+
+### 2026-11-21 — All-tools cards, page size, and full category menu
+- **Summary:** `/tools` lists tools as the same cards used for Most Popular Tools, 48 per page. The category menu includes every active root category, including empty ones. A search with no matches is a centered card.
+- **Important Files:** `frontend/src/app/(website)/tools/page.tsx`, `backend/src/modules/catalog/catalog.service.ts`.
+- **Verification:** The directory shows 48 cards per page and every root category in the menu, including empty ones. A search with no matches shows a centered card with Clear filters. Temporary files cleaned: YES.
+
+### 2026-11-21 — Custom category menu on All Tools
+- **Summary:** The All Tools category control is a site menu. The browser select and its edge-hugging arrow are gone.
+- **Important Files:** `frontend/src/components/tools/DirectoryCategoryMenu.tsx`, `frontend/src/app/(website)/tools/page.tsx`.
+- **Verification:** The menu opens under the search bar with a check on the current row. Choosing Physics and searching filters the list. Temporary files cleaned: YES.
+
+### 2026-11-21 — All-tools directory hero
+- **Summary:** `/tools` now opens with the same mint hero as the homepage. Breadcrumbs stay. Search and a category menu sit in one bar. The category pills and per-category counts are gone.
+- **Important Files:** `frontend/src/app/(website)/tools/page.tsx`.
+- **Verification:** `/tools` shows the mint hero, breadcrumbs, and one search bar with a category menu. Searching `wire` in Physics returns the 12 Volt Wire Size Calculator. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Site typefaces
 - **Summary:** Replaced the system font with three faces. Source Sans 3 is the interface and body text. Fraunces is used for page and section titles. JetBrains Mono is used for code and figures.
 - **Important Files:** `frontend/src/app/layout.tsx`, `frontend/src/app/globals.css`, `frontend/tailwind.config.ts`, `brain/DESIGN_SYSTEM.md`.

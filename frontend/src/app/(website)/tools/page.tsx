@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowRight, ChevronLeft, ChevronRight, Search, SearchX } from 'lucide-react';
 import { Container } from '@/components/layout/Container';
+import { DirectoryCategoryMenu } from '@/components/tools/DirectoryCategoryMenu';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { getPublicTools } from '@/server/catalog/tools';
 
@@ -44,94 +46,123 @@ export default async function ToolsPage({ searchParams }: ToolsPageProps) {
   const page = Math.max(1, Math.trunc(Number(params.page)) || 1);
   const directory = await getPublicTools({ q, category, page });
   const selected = directory?.categories.find((item) => item.slug === category) ?? null;
-  const activeTotal = directory?.categories.reduce((sum, item) => sum + item.toolCount, 0) ?? 0;
   const start = directory && directory.total > 0 ? (directory.page - 1) * directory.limit + 1 : 0;
   const end = directory ? Math.min(directory.page * directory.limit, directory.total) : 0;
 
   return (
-    <div className="py-8 sm:py-12">
-      <Container>
-        <Breadcrumbs items={[{ label: 'All Tools' }]} className="mb-6" />
-        <div className="max-w-3xl">
-          <h1 className="text-3xl font-semibold tracking-tight text-accent sm:text-4xl">All tools</h1>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Search the active directory by name, or narrow it to one category.
-          </p>
+    <div>
+      <section className="relative border-b border-border bg-gradient-to-br from-[#cfeeed] via-[#e7f6f4] to-[#f4f7f2]">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_32%_32%,#ffffff,hsl(177,42%,78%))]" />
+          <div className="absolute -right-20 top-6 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_35%_30%,#ffffff,hsl(175,35%,84%))]" />
+          <div className="absolute bottom-10 right-[18%] h-40 w-40 rounded-full bg-[radial-gradient(circle_at_40%_40%,#ffffff,hsl(186,35%,86%))]" />
         </div>
-
-        <form action="/tools" method="get" className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <label className="sr-only" htmlFor="tool-search">
-            Search tools
-          </label>
-          <input
-            id="tool-search"
-            name="q"
-            defaultValue={q}
-            placeholder="Search by name"
-            className="h-11 w-full rounded-xl border border-border bg-white px-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-          />
-          {category ? <input type="hidden" name="category" value={category} /> : null}
-          <button type="submit" className="h-11 shrink-0 rounded-xl bg-primary px-5 text-sm font-medium text-white hover:bg-[hsl(var(--primary-hover))]">
-            Search
-          </button>
-        </form>
-
-        {directory ? (
-          <div className="mt-5 flex flex-wrap gap-1.5">
-            <Link
-              href={toolsHref({ q })}
-              className={`rounded-lg px-3 py-1.5 text-xs font-semibold ${
-                selected ? 'border border-border bg-white text-foreground hover:bg-muted' : 'bg-primary text-white'
-              }`}
-            >
-              All tools ({activeTotal})
-            </Link>
-            {directory.categories.map((item) => (
-              <Link
-                key={item.id}
-                href={toolsHref({ q, category: item.slug })}
-                className={`rounded-lg px-3 py-1.5 text-xs font-semibold ${
-                  item.slug === category
-                    ? 'bg-primary text-white'
-                    : 'border border-border bg-white text-foreground hover:bg-muted'
-                }`}
-              >
-                {item.name} ({item.toolCount})
-              </Link>
-            ))}
+        <Container className="relative z-10 py-10 sm:py-14">
+          <Breadcrumbs items={[{ label: 'All Tools' }]} />
+          <div className="mx-auto mt-8 max-w-3xl text-center">
+            <h1 className="text-4xl font-semibold tracking-tight text-accent sm:text-5xl">All tools</h1>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              Search the directory by name, or narrow it to one category.
+            </p>
           </div>
-        ) : (
-          <p className="mt-8 text-sm text-muted-foreground">Tools are not available right now.</p>
-        )}
+
+          <form action="/tools" method="get" className="mx-auto mt-8 flex w-full max-w-3xl flex-col gap-3 sm:flex-row">
+            <div className="flex min-w-0 flex-1 flex-col rounded-2xl border border-border bg-white shadow-[0_18px_40px_-24px_rgba(22,60,67,0.55)] focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 sm:flex-row sm:items-center">
+              <label className="sr-only" htmlFor="tool-search">
+                Search tools
+              </label>
+              <div className="relative min-w-0 flex-1">
+                <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-primary" aria-hidden="true" />
+                <input
+                  id="tool-search"
+                  name="q"
+                  defaultValue={q}
+                  placeholder="Search calculators, converters, and tools"
+                  className="h-14 w-full bg-transparent pl-14 pr-4 text-base text-foreground placeholder:text-muted-foreground focus:outline-none"
+                />
+              </div>
+              <DirectoryCategoryMenu
+                categories={directory?.categories.map((item) => ({ id: item.id, name: item.name, slug: item.slug })) ?? []}
+                value={selected ? category : ''}
+              />
+            </div>
+            <button
+              type="submit"
+              className="h-14 shrink-0 rounded-2xl bg-primary px-6 text-sm font-medium text-white hover:bg-[hsl(var(--primary-hover))]"
+            >
+              Search
+            </button>
+          </form>
+
+        </Container>
+      </section>
+
+      <section className="bg-muted/30 py-10 sm:py-14">
+        <Container>
+        {!directory ? (
+          <div className="mx-auto flex max-w-lg flex-col items-center px-4 py-16 text-center sm:py-24">
+            <SearchX className="h-10 w-10 text-primary" aria-hidden="true" />
+            <h2 className="mt-6 font-display text-3xl font-semibold tracking-tight text-accent sm:text-4xl">
+              Directory unavailable
+            </h2>
+            <p className="mt-3 max-w-sm text-base leading-relaxed text-muted-foreground">
+              The tool list could not be loaded. Refresh the page in a moment.
+            </p>
+          </div>
+        ) : null}
 
         {directory && directory.total === 0 ? (
-          <p className="mt-10 text-sm text-muted-foreground">
-            No active tools match this search.{' '}
-            <Link href="/tools" className="font-medium text-primary hover:underline">
-              Clear filters
-            </Link>
-          </p>
+          <div className="mx-auto flex max-w-lg flex-col items-center px-4 py-16 text-center sm:py-24">
+            <SearchX className="h-10 w-10 text-primary" aria-hidden="true" />
+            <h2 className="mt-6 font-display text-3xl font-semibold tracking-tight text-accent sm:text-4xl">
+              No tools found
+            </h2>
+            <p className="mt-3 max-w-sm text-base leading-relaxed text-muted-foreground">
+              {q && selected
+                ? `Nothing in ${selected.name} matches "${q}". Try another name, or look across every category.`
+                : q
+                  ? `Nothing matches "${q}". Check the spelling, or browse the full directory.`
+                  : selected
+                    ? `${selected.name} does not have any active tools yet.`
+                    : 'The directory does not have any active tools yet.'}
+            </p>
+            {q || selected ? (
+              <Link
+                href="/tools"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary"
+              >
+                Clear filters
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            ) : null}
+          </div>
         ) : null}
 
         {directory && directory.items.length > 0 ? (
           <>
-            <p className="mt-8 text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Showing {start}-{end} of {directory.total}
               {q ? ` for "${q}"` : ''}
               {selected ? ` in ${selected.name}` : ''}
             </p>
-            <ul className="mt-3 divide-y divide-border border-y border-border">
+            <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {directory.items.map((tool) => (
                 <li key={tool.id}>
-                  <Link href={`/tools/${tool.slug}`} className="flex items-baseline justify-between gap-4 px-1 py-3 hover:bg-muted/40 sm:px-3">
-                    <span className="min-w-0">
-                      <span className="block text-sm font-medium text-accent">{tool.name}</span>
-                      {tool.shortDescription ? (
-                        <span className="mt-0.5 block line-clamp-1 text-xs text-muted-foreground">{tool.shortDescription}</span>
-                      ) : null}
+                  <Link
+                    href={`/tools/${tool.slug}`}
+                    className="flex h-full flex-col rounded-2xl border border-border bg-white p-4 shadow-xs transition-colors hover:border-primary/40"
+                  >
+                    <span className="flex items-start justify-between gap-3">
+                      <span className="font-semibold leading-snug text-accent">{tool.name}</span>
+                      <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
                     </span>
-                    {tool.categorySlug ? (
-                      <span className="shrink-0 text-xs text-muted-foreground">{tool.categoryName}</span>
+                    {tool.shortDescription ? (
+                      <span className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                        {tool.shortDescription}
+                      </span>
+                    ) : null}
+                    {tool.categoryName ? (
+                      <span className="mt-auto pt-4 text-xs text-muted-foreground">{tool.categoryName}</span>
                     ) : null}
                   </Link>
                 </li>
@@ -139,46 +170,63 @@ export default async function ToolsPage({ searchParams }: ToolsPageProps) {
             </ul>
 
             {directory.totalPages > 1 ? (
-              <nav className="mt-6 flex flex-wrap items-center gap-1.5" aria-label="Tool pages">
-                {directory.page > 1 ? (
-                  <Link
-                    href={toolsHref({ q, category, page: directory.page - 1 })}
-                    className="rounded-lg border border-border px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted"
-                  >
-                    Previous
-                  </Link>
-                ) : null}
-                {pageItems(directory.page, directory.totalPages).map((item, index) =>
-                  item === 'gap' ? (
-                    <span key={`gap-${index}`} className="px-1 text-sm text-muted-foreground">
-                      …
-                    </span>
-                  ) : (
+              <nav className="mt-8 flex justify-end" aria-label="Tool pages">
+                <div className="flex flex-wrap items-center justify-end gap-2">
+                  {directory.page > 1 ? (
                     <Link
-                      key={item}
-                      href={toolsHref({ q, category, page: item })}
-                      aria-current={item === directory.page ? 'page' : undefined}
-                      className={`rounded-lg px-3 py-1.5 text-xs font-semibold ${
-                        item === directory.page ? 'bg-primary text-white' : 'border border-border text-foreground hover:bg-muted'
-                      }`}
+                      href={toolsHref({ q, category, page: directory.page - 1 })}
+                      className="inline-flex h-10 items-center gap-1 rounded-full border border-border bg-white px-3.5 text-sm font-medium text-accent shadow-xs transition-colors hover:border-primary/40"
                     >
-                      {item}
+                      <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+                      Previous
                     </Link>
-                  )
-                )}
-                {directory.page < directory.totalPages ? (
-                  <Link
-                    href={toolsHref({ q, category, page: directory.page + 1 })}
-                    className="rounded-lg border border-border px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted"
-                  >
-                    Next
-                  </Link>
-                ) : null}
+                  ) : (
+                    <span className="inline-flex h-10 items-center gap-1 rounded-full border border-border bg-white px-3.5 text-sm font-medium text-muted-foreground opacity-50">
+                      <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+                      Previous
+                    </span>
+                  )}
+                  {pageItems(directory.page, directory.totalPages).map((item, index) =>
+                    item === 'gap' ? (
+                      <span key={`gap-${index}`} className="px-1 text-sm text-muted-foreground">
+                        …
+                      </span>
+                    ) : (
+                      <Link
+                        key={item}
+                        href={toolsHref({ q, category, page: item })}
+                        aria-current={item === directory.page ? 'page' : undefined}
+                        className={`inline-flex h-10 min-w-10 items-center justify-center rounded-full px-3 text-sm font-medium ${
+                          item === directory.page
+                            ? 'bg-primary text-white shadow-xs'
+                            : 'border border-border bg-white text-accent shadow-xs hover:border-primary/40'
+                        }`}
+                      >
+                        {item}
+                      </Link>
+                    )
+                  )}
+                  {directory.page < directory.totalPages ? (
+                    <Link
+                      href={toolsHref({ q, category, page: directory.page + 1 })}
+                      className="inline-flex h-10 items-center gap-1 rounded-full border border-border bg-white px-3.5 text-sm font-medium text-accent shadow-xs transition-colors hover:border-primary/40"
+                    >
+                      Next
+                      <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  ) : (
+                    <span className="inline-flex h-10 items-center gap-1 rounded-full border border-border bg-white px-3.5 text-sm font-medium text-muted-foreground opacity-50">
+                      Next
+                      <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                  )}
+                </div>
               </nav>
             ) : null}
           </>
         ) : null}
-      </Container>
+        </Container>
+      </section>
     </div>
   );
 }
