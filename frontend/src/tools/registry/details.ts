@@ -908,6 +908,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ReturnOnEquityCalculator: () =>
     import('@/tools/calculators/return-on-equity/detail'),
   RoicCalculator: () => import('@/tools/calculators/roic/detail'),
+  SustainableGrowthRateCalculator: () =>
+    import('@/tools/calculators/sustainable-growth-rate/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

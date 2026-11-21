@@ -3497,6 +3497,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RoicCalculator,
     })),
   ),
+  SustainableGrowthRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/sustainable-growth-rate/SustainableGrowthRateCalculator'
+    ).then((mod) => ({
+      default: mod.SustainableGrowthRateCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

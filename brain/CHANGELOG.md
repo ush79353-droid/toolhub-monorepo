@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Sustainable Growth Rate Calculator
+- **Summary:** Shipped Sustainable Growth Rate Calculator on existing catalog slug `sustainable-growth-rate-calculator` (`SustainableGrowthRateCalculator`, catalog `6af46f10a27d8d1d4e99016e`, preserved `nameKey` `sustainable growth rate calculator`). Screenshot-first (ADR-023): SGR = ROE × retention; build from NI/dividends/equity; optional average equity; direct ROE×retention mode; zero-NI undefined; equity ≤0 blocked. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NI **2,000,000** · Div **1,000,000** · Equity **10,000,000** → retention **50%** · ROE **20%** → SGR **10.00%**.
+- **Important Files:** `frontend/src/tools/calculators/sustainable-growth-rate/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` SGR tests 19/19 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add ROIC Calculator – Return on Invested Capital
 - **Summary:** Shipped ROIC Calculator on existing catalog slug `roic-calculator-return-on-invested-capital` (`RoicCalculator`, catalog `6af46f10a27d8d1d4e99016d`, preserved `nameKey` `roic calculator - return on invested capital`). Screenshot-first (ADR-023): NOPAT = EBIT×(1−t); invested capital = equity+debt; ROIC %; optional average capital; zero/negative capital blocked; negative-EBIT tax-shield note. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** EBIT **500,000** · tax **25%** · equity **1,200,000** · debt **800,000** → NOPAT **375,000** · IC **2,000,000** → ROIC **18.75%**.
