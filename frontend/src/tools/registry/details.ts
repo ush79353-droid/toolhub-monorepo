@@ -1134,6 +1134,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/repayment/detail'),
   RetainedEarningsCalculator: () =>
     import('@/tools/calculators/retained-earnings/detail'),
+  RetentionRatioCalculator: () =>
+    import('@/tools/calculators/retention-ratio/detail'),
   Rule2836Calculator: () =>
     import('@/tools/calculators/rule-2836/detail'),
   SabbaticalCalculator: () =>

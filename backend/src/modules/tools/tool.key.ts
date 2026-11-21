@@ -754,6 +754,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ReceivablesTurnoverRatioCalculator',
   'RepaymentCalculator',
   'RetainedEarningsCalculator',
+  'RetentionRatioCalculator',
   'Rule2836Calculator',
   'SabbaticalCalculator',
   'ScrapGoldCalculator',
@@ -1543,6 +1544,7 @@ if (isDirect) {
     !isApprovedComponentKey('ReceivablesTurnoverRatioCalculator') ||
     !isApprovedComponentKey('RepaymentCalculator') ||
     !isApprovedComponentKey('RetainedEarningsCalculator') ||
+    !isApprovedComponentKey('RetentionRatioCalculator') ||
     !isApprovedComponentKey('Rule2836Calculator') ||
     !isApprovedComponentKey('SabbaticalCalculator') ||
     !isApprovedComponentKey('ScrapGoldCalculator') ||

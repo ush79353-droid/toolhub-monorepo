@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Retention Ratio Calculator
+- **Summary:** Shipped Retention Ratio Calculator on existing catalog slug `retention-ratio-calculator` (`RetentionRatioCalculator`, catalog `6af46f10a27d8d1d4e99016a`, preserved `nameKey` `retention ratio calculator`). Screenshot-first (ADR-023): NI − dividends → period retained earnings; retention % = RE/NI×100 (also 1 − payout); zero NI → undefined; negative retention allowed when dividends exceed NI. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NI **1,000,000** · Div **350,000** → RE **650,000** · retention **65.00%**.
+- **Important Files:** `frontend/src/tools/calculators/retention-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Retention Ratio tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Biden's Tax Plan Calculator
 - **Summary:** Completed Biden's Tax Plan Calculator on existing catalog slug `bidens-tax-plan-calculator` (`BidensTaxPlanCalculator`, catalog `6af46f0fa27d8d1d4e990055`). Historical TY2022 TCJA baseline vs May 2021 American Families Plan ordinary top-rate and ARP-style CTC comparison. Fixed USD. Age ≥65 uses aged standard deduction; dependents = ODC only. **`indexable` preserved false**.
 - **Example:** Single · AGI **$80,000** · no kids → baseline/AFP tax ≈ **$10,368**; low AGI with two under-6 kids → AFP net tax can be negative (refundable CTC).
