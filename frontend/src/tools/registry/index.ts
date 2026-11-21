@@ -311,6 +311,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MaintainPregnancyWeightCalculator,
     })),
   ),
+  MelatoninDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/melatonin-dosage/MelatoninDosageCalculator'
+    ).then((mod) => ({
+      default: mod.MelatoninDosageCalculator,
+    })),
+  ),
+  MealCalorieCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/meal-calorie/MealCalorieCalculator'
+    ).then((mod) => ({
+      default: mod.MealCalorieCalculator,
+    })),
+  ),
   MarkdownCalculator: lazyTool(() =>
     import('@/tools/calculators/markdown/MarkdownCalculator').then((mod) => ({
       default: mod.MarkdownCalculator,

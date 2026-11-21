@@ -5,6 +5,12 @@
 ---
 
 
+### 2026-11-22 — Navy Body Fat Calculator
+- **Summary:** Shipped Navy Body Fat Calculator on existing catalog slug `navy-body-fat-calculator` (`NavyBodyFatCalculator`, catalog `6af46f10a27d8d1d4e990201`, pillar `6af451c2a27d8d1d4e98f986`, subPillar null). Screenshot-first (ADR-023): blank age; Male default; height/neck/waist cm; Female reveals hip; body fat %. Hodgdon/NHRC Navy equations reused from Body Fat module; educational vs official BCA; privacy-safe share URL. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-690`.
+- **Commits:** `9c4c4a7f` (UI) / `2c8824a9` (engine absorbed into concurrent maintenance-calorie commit) / (registration/Brain/tracker — this commit).
+- **Example:** Male · **180** cm · waist **85** · neck **38** → Navy male %BF from shared equation.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Melatonin Dosage Calculator
 - **Summary:** Shipped Melatonin Dosage Calculator on existing catalog slug `melatonin-dosage-calculator` (`MelatoninDosageCalculator`, catalog `6af46f10a27d8d1d4e9901da`, pillar `6af451c1a27d8d1d4e98f980`). Screenshot-first (ADR-023): Indication (default trouble falling asleep), Medication type (default tablets/capsules), blank therapy duration days/weeks. EMA Circadin 2 mg prolonged-release SmPC when that product type is selected; US dietary-supplement forms get label-info only (no invented mg). Share URL only. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-691`.
 - **Commits:** `f0f15948` (UI) / `297c47cb` (engine) / (registration/Brain — this commit).
