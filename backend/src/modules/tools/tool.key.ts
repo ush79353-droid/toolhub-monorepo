@@ -647,6 +647,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BuyingPowerCalculator',
   'CarryTradeCalculator',
   'CobbDouglasCalculator',
+  'ComparativeAdvantageCalculator',
   'CpiInflationCalculator',
   'CurrencyForwardCalculator',
   'DeadweightLossCalculator',
@@ -1450,6 +1451,7 @@ if (isDirect) {
     !isApprovedComponentKey('BuyingPowerCalculator') ||
     !isApprovedComponentKey('CarryTradeCalculator') ||
     !isApprovedComponentKey('CobbDouglasCalculator') ||
+    !isApprovedComponentKey('ComparativeAdvantageCalculator') ||
     !isApprovedComponentKey('CpiInflationCalculator') ||
     !isApprovedComponentKey('CurrencyForwardCalculator') ||
     !isApprovedComponentKey('DeadweightLossCalculator') ||

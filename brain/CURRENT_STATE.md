@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Fisher Equation Calculator live at `/tools/fisher-equation-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Comparative Advantage Calculator live at `/tools/comparative-advantage-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Comparative Advantage Calculator (`/tools/comparative-advantage-calculator`):** Live client-side trade tool (`componentKey: 'ComparativeAdvantageCalculator'`, catalog `6af46f10a27d8d1d4e990174`, `nameKey` `comparative advantage calculator`). Screenshot-first (ADR-023): Country X/Y productivity for Good A/B; OC_A=B/A, OC_B=A/B; comparative = lower OC; absolute = higher productivity; ties; specialization + terms-of-trade interval; optional linear PPF (H×productivity); empty defaults + load example; no currency. Activated; **`indexable` left false**. Example: X **100/80** · Y **90/90** → X CA Good A · Y CA Good B.
 - **Fisher Equation Calculator (`/tools/fisher-equation-calculator`):** Live client-side equation tool (`componentKey: 'FisherEquationCalculator'`, catalog `6af46f10a27d8d1d4e99017b`, `nameKey` `fisher equation calculator`). Screenshot-first (ADR-023): four fields (nominal, expected inflation, exact real, approximated real); bidirectional modes; shared math in `tools/shared/fisher-equation.ts` (also used by Fisher Effect); step-by-step details. Activated; **`indexable` left false**. Example: i **8%** · πᵉ **3%** → exact r ≈ **4.85%** · approx **5.00%**.
 - **Fisher Effect Calculator (`/tools/fisher-effect-calculator`):** Live client-side Fisher tool (`componentKey: 'FisherEffectCalculator'`, catalog `6af46f10a27d8d1d4e99017a`, `nameKey` `fisher effect calculator`). Screenshot-first (ADR-023): three modes (real/nominal/expected inflation); exact `(1+i)=(1+r)(1+πᵉ)` default with approximate `i≈r+πᵉ` comparison; deflation and negative rates supported within domain; no currency. Activated; **`indexable` left false**. Example: i **5%** · πᵉ **2%** → exact r ≈ **2.94%** · approx **3.00%**. Shared math via `tools/shared/fisher-equation.ts`.
 - **Discretionary Income Calculator (`/tools/discretionary-income-calculator`):** Live client-side DI tool (`componentKey: 'DiscretionaryIncomeCalculator'`, catalog `6af46f10a27d8d1d4e990178`, `nameKey` `discretionary income calculator`). Screenshot-first (ADR-023): student-loan DI = max(0, AGI−kP) with marital status, state→HHS region, dependents/family size, labeled repayment standards (IBR/PAYE/ICR/SAVE-style), verified **2024–2025** HHS poverty tables (contiguous/AK/HI); optional budgeting DI = take-home − necessary (may be negative); fixed USD; optional IDR payment estimate. Activated; **`indexable` left false**. Fixture: AGI **60k** · P **20k** · k **1.5** → DI **$30,000** / **$2,500**/mo.

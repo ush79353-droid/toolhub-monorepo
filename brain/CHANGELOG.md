@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Comparative Advantage Calculator
+- **Summary:** Shipped Comparative Advantage Calculator on existing catalog slug `comparative-advantage-calculator` (`ComparativeAdvantageCalculator`, catalog `6af46f10a27d8d1d4e990174`, preserved `nameKey` `comparative advantage calculator`). Screenshot-first (ADR-023): Country X/Y output per labor for Good A/B; OC_A=B/A, OC_B=A/B; comparative = lower OC; absolute = higher productivity; ties; specialization + terms-of-trade interval; optional linear PPF with disclosed labor H; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** X **100/80** · Y **90/90** → OC_X,A **0.8** · OC_Y,A **1** → X CA Good A · Y CA Good B.
+- **Important Files:** `frontend/src/tools/calculators/comparative-advantage/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` comparative-advantage tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Fisher Equation Calculator
 - **Summary:** Shipped Fisher Equation Calculator on existing catalog slug `fisher-equation-calculator` (`FisherEquationCalculator`, catalog `6af46f10a27d8d1d4e99017b`, preserved `nameKey` `fisher equation calculator`). Screenshot-first (ADR-023): four-field exact/approximate layout; bidirectional modes; equation-focused guide distinguishing Fisher Effect. Extracted shared math to `frontend/src/tools/shared/fisher-equation.ts` and rewired Fisher Effect to import it. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** i **8%** · πᵉ **3%** → exact r ≈ **4.8544%** (display **4.85%**) · approx **5.00%** · Δ ≈ **0.15** pp.

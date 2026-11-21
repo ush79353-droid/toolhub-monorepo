@@ -3579,6 +3579,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FisherEquationCalculator,
     })),
   ),
+  ComparativeAdvantageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/comparative-advantage/ComparativeAdvantageCalculator'
+    ).then((mod) => ({
+      default: mod.ComparativeAdvantageCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'
