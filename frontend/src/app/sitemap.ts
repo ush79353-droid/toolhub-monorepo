@@ -667,6 +667,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'biweekly-pay-calculator',
   'semi-monthly-pay-calculator',
   'mortgage-points-calculator',
+  'black-friday-calculator',
   'boat-loan-calculator',
   'bond-convexity-calculator',
   'bond-current-yield-calculator',

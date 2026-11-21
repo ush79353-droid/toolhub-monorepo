@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Black Friday Calculator
+- **Summary:** Shipped Black Friday Calculator on existing catalog slug `black-friday-calculator` (`BlackFridayCalculator`, catalog `6af46f10a27d8d1d4e99019c`, preserved `nameKey` `black friday calculator`). Screenshot-first (ADR-023): original price + %/fixed discount; Yes/No sales tax on discounted price; optional successive second %; reverse original/rate/savings; denomination CurrencySelect; dynamic Black Friday date helper; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$200** · **35%** off · **8%** tax → final **$140.40** · save **$70** before tax.
+- **Important Files:** `frontend/src/tools/calculators/black-friday/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` black-friday tests 11/11 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Yield to Maturity Calculator
 - **Summary:** Shipped Yield to Maturity Calculator on existing catalog slug `yield-to-maturity-calculator` (`YieldToMaturityCalculator`, catalog `6af46f10a27d8d1d4e99019b`, preserved `nameKey` `yield to maturity calculator`). Screenshot-first (ADR-023): full PV equation with bounded bisection; annual/semi/quarterly/monthly; zero-coupon closed form; negative YTM where valid; reverse price/face/coupon; whole coupon periods required; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Face **$1,000** · price **$950** · coupon **5%** · annual · **10**y → YTM ≈ **5.67%**.

@@ -1001,6 +1001,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/biweekly-pay/detail'),
   SemiMonthlyPayCalculator: () =>
     import('@/tools/calculators/semi-monthly-pay/detail'),
+  BlackFridayCalculator: () =>
+    import('@/tools/calculators/black-friday/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
   BondCalculator: () => import('@/tools/calculators/bond/detail'),

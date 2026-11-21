@@ -3830,6 +3830,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SemiMonthlyPayCalculator,
     })),
   ),
+  BlackFridayCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/black-friday/BlackFridayCalculator'
+    ).then((mod) => ({
+      default: mod.BlackFridayCalculator,
+    })),
+  ),
   BoatLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/boat-loan/BoatLoanCalculator').then((mod) => ({
       default: mod.BoatLoanCalculator,
