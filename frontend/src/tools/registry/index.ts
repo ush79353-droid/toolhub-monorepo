@@ -276,6 +276,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarkdownCalculator,
     })),
   ),
+  MarkupCalculator: lazyTool(() =>
+    import('@/tools/calculators/markup/MarkupCalculator').then((mod) => ({
+      default: mod.MarkupCalculator,
+    })),
+  ),
   ModifiedAdjustedGrossIncomeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/modified-adjusted-gross-income/ModifiedAdjustedGrossIncomeCalculator'

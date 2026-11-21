@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Markdown Calculator live at `/tools/markdown-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Markup Calculator live at `/tools/markup-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Markup Calculator (`/tools/markup-calculator`):** Live client-side unit pricing tool (`componentKey: 'MarkupCalculator'`, catalog `6af46f10a27d8d1d4e9901a2`, `nameKey` `markup calculator`). Screenshot-first (ADR-023): cost / markup % / revenue / profit; six bidirectional pairs; last-two-edited priority preferring cost anchor; Markup%=Profit/Cost×100; margin shown for education; denomination CurrencySelect; distinct from MarginAndMarkup and Markdown. Activated; **`indexable` left false**. Example: cost **$50** · markup **40%** → revenue **$70** · profit **$20**.
 - **Markdown Calculator (`/tools/markdown-calculator`):** Live client-side retail price-reduction tool (`componentKey: 'MarkdownCalculator'`, catalog `6af46f10a27d8d1d4e9901a1`, `nameKey` `markdown calculator`). Screenshot-first (ADR-023): four linked fields (original, actual, markdown $, markdown %); six bidirectional pairs; last-two-edited priority preferring original price anchor; denomination CurrencySelect; not Markdown text. Activated; **`indexable` left false**. Example: **$100** → **$75** · markdown **$25** · **25%**.
 - **Cyber Monday Calculator (`/tools/cyber-monday-calculator`):** Live client-side shopping deal tool (`componentKey: 'CyberMondayCalculator'`, catalog `6af46f10a27d8d1d4e9901a0`, `nameKey` `cyber monday calculator`). Screenshot-first (ADR-023): percentage/fixed/double/triple/BOGO/Buy X Get Y/percent+coupon; tax exclusive or included; shipping + free-ship threshold; optional BF checkout compare; dynamic Cyber Monday date; denomination CurrencySelect; guide/FAQ. Activated; **`indexable` left false**. Example: **$200** · **25%** · tax **8%** · ship **$10** → **$172**.
 - **CLTV Calculator – Customer Lifetime Value (`/tools/cltv-calculator-customer-lifetime-value`):** Live client-side CLTV tool (`componentKey: 'CltvCalculator'`, catalog `6af46f10a27d8d1d4e99019f`, `nameKey` `cltv calculator – customer lifetime value`). Screenshot-first (ADR-023): APV×APF×L; optional business-data derivation with period annualization; optional gross-profit CLTV, CAC ratio, discounted CLTV, churn lifespan helper; denomination CurrencySelect; guide/FAQ. Activated; **`indexable` left false**. Example: **$50** · **5**/yr · **3**y → **$750**.

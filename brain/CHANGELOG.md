@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Markup Calculator
+- **Summary:** Shipped Markup Calculator on existing catalog slug `markup-calculator` (`MarkupCalculator`, catalog `6af46f10a27d8d1d4e9901a2`, preserved `nameKey` `markup calculator`). Screenshot-first (ADR-023): bidirectional cost/markup%/revenue/profit with last-two-edited priority (prefer cost anchor); denomination CurrencySelect; markup vs margin education; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Cost **$50** · markup **40%** → revenue **$70** · profit **$20**; cost **$100** · markup **25%** → revenue **$125**.
+- **Important Files:** `frontend/src/tools/calculators/markup/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` markup tests 19/19 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Markdown Calculator
 - **Summary:** Shipped Markdown Calculator on existing catalog slug `markdown-calculator` (`MarkdownCalculator`, catalog `6af46f10a27d8d1d4e9901a1`, preserved `nameKey` `markdown calculator`). Screenshot-first (ADR-023): bidirectional original/actual/markdown amount/% with last-two-edited priority (prefer original anchor); denomination CurrencySelect; retail markdown only (not text Markdown); guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Original **$100** · actual **$75** → markdown **$25** · **25%**; original **$200** · **30%** → actual **$140**.
