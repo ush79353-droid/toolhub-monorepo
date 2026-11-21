@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 import {
   CURRENCY_DENOMINATION_NOTE,
   CURRENCY_DEFINITIONS,
-  filterCurrencies,
   getCurrencyShortLabel,
   isSupportedCurrency,
   type SupportedCurrency,
@@ -19,6 +18,13 @@ export interface CurrencySelectProps {
   onChange: (currency: SupportedCurrency) => void;
   className?: string;
   'aria-label'?: string;
+  /** Limit the searchable list to these ISO codes (still searchable). */
+  allowedCodes?: readonly SupportedCurrency[];
+  /**
+   * Denomination-only note (default). Conversion tools should set
+   * `showDenominationNote={false}` so the selector does not claim FX is unused.
+   */
+  showDenominationNote?: boolean;
 }
 
 export function CurrencySelect({
@@ -27,6 +33,8 @@ export function CurrencySelect({
   onChange,
   className,
   'aria-label': ariaLabel = 'Display currency',
+  allowedCodes,
+  showDenominationNote = true,
 }: CurrencySelectProps) {
   const rootRef = React.useRef<HTMLDivElement>(null);
   const listRef = React.useRef<HTMLUListElement>(null);
@@ -35,7 +43,20 @@ export function CurrencySelect({
   const [query, setQuery] = React.useState('');
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  const options = React.useMemo(() => filterCurrencies(query), [query]);
+  const catalog = React.useMemo(() => {
+    if (!allowedCodes || allowedCodes.length === 0) return CURRENCY_DEFINITIONS;
+    const allow = new Set(allowedCodes);
+    return CURRENCY_DEFINITIONS.filter((def) => allow.has(def.code));
+  }, [allowedCodes]);
+
+  const options = React.useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return catalog;
+    return catalog.filter((def) => {
+      const haystack = `${def.code} ${def.name} ${def.symbol}`.toLowerCase();
+      return haystack.includes(q);
+    });
+  }, [catalog, query]);
   const listboxId = `${id}-listbox`;
   const activeOptionId =
     options.length > 0 ? `${id}-option-${options[Math.min(activeIndex, options.length - 1)]!.code}` : undefined;
@@ -43,11 +64,11 @@ export function CurrencySelect({
   React.useEffect(() => {
     if (!open) return;
     setQuery('');
-    const selectedIndex = CURRENCY_DEFINITIONS.findIndex((opt) => opt.code === value);
+    const selectedIndex = catalog.findIndex((opt) => opt.code === value);
     setActiveIndex(Math.max(0, selectedIndex));
     const frame = window.requestAnimationFrame(() => searchRef.current?.focus());
     return () => window.cancelAnimationFrame(frame);
-  }, [open, value]);
+  }, [catalog, open, value]);
 
   React.useEffect(() => {
     if (!open) return;
@@ -132,7 +153,7 @@ export function CurrencySelect({
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={listboxId}
-        title={CURRENCY_DENOMINATION_NOTE}
+        title={showDenominationNote ? CURRENCY_DENOMINATION_NOTE : undefined}
         onClick={() => setOpen((current) => !current)}
         onKeyDown={onTriggerKeyDown}
         className="flex h-9 w-full items-center justify-between gap-1.5 rounded-lg border border-border bg-white px-2.5 text-left text-xs font-medium text-foreground transition-colors hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"
@@ -173,9 +194,11 @@ export function CurrencySelect({
                 className="h-9 w-full rounded-lg border border-border bg-background pl-8 pr-2.5 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
             </div>
-            <p className="mt-1.5 px-0.5 text-[11px] leading-snug text-muted-foreground">
-              {CURRENCY_DENOMINATION_NOTE}
-            </p>
+            {showDenominationNote ? (
+              <p className="mt-1.5 px-0.5 text-[11px] leading-snug text-muted-foreground">
+                {CURRENCY_DENOMINATION_NOTE}
+              </p>
+            ) : null}
           </div>
 
           <ul
@@ -223,7 +246,7 @@ export function CurrencySelect({
             )}
           </ul>
 
-          {options.length === CURRENCY_DEFINITIONS.length ? null : (
+          {options.length === catalog.length ? null : (
             <p className="border-t border-border px-3 py-1.5 text-[11px] text-muted-foreground">
               {options.length} match{options.length === 1 ? '' : 'es'}
             </p>
