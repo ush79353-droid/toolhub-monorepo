@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Return on Assets Calculator live at `/tools/return-on-assets-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Return on Equity Calculator live at `/tools/return-on-equity-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Return on Equity Calculator (`/tools/return-on-equity-calculator`):** Live client-side ROE tool (`componentKey: 'ReturnOnEquityCalculator'`, catalog `6af46f10a27d8d1d4e99016c`, `nameKey` `return on equity calculator`). Screenshot-first (ADR-023): net profit ÷ equity × 100; optional average equity; zero equity rejected; negative equity allowed with warning; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NP **35,000** · Equity **450,000** → ROE **7.78%**.
 - **Return on Assets Calculator (`/tools/return-on-assets-calculator`):** Live client-side ROA tool (`componentKey: 'ReturnOnAssetsCalculator'`, catalog `6af46f10a27d8d1d4e99016b`, `nameKey` `return on assets calculator`). Screenshot-first (ADR-023): NI ÷ assets × 100; optional average assets; zero assets rejected; negative ROA supported; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NI **150,000** · Assets **1,000,000** → ROA **15.00%**.
 - **Retention Ratio Calculator (`/tools/retention-ratio-calculator`):** Live client-side plowback tool (`componentKey: 'RetentionRatioCalculator'`, catalog `6af46f10a27d8d1d4e99016a`, `nameKey` `retention ratio calculator`). Screenshot-first (ADR-023): NI − dividends → period RE; retention % = RE/NI×100; zero NI → undefined; negative retention allowed; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NI **1,000,000** · Div **350,000** → RE **650,000** · retention **65%**.
 - **Biden's Tax Plan Calculator (`/tools/bidens-tax-plan-calculator`):** Live client-side Historical Biden Tax Plan Comparison (`componentKey: 'BidensTaxPlanCalculator'`, catalog `6af46f0fa27d8d1d4e990055`). Screenshot-first (ADR-023): age; AGI USD; filing status Single/Married/HoH; children under 6; children ages 6–17; other dependents (ODC only); baseline vs AFP income tax + effective rates. Baseline TY2022 TCJA (Rev. Proc. 2021-45); AFP May 2021 top rate 39.6% + ARP-style CTC. Fixed USD (no FX). Activated; **`indexable` left false**. Example: single · AGI $80,000 · no kids → both plans ≈ **$10,368**.

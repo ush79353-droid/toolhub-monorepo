@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Return on Equity Calculator
+- **Summary:** Shipped Return on Equity Calculator on existing catalog slug `return-on-equity-calculator` (`ReturnOnEquityCalculator`, catalog `6af46f10a27d8d1d4e99016c`, preserved `nameKey` `return on equity calculator`). Screenshot-first (ADR-023): ROE = net profit/equity×100; optional average equity; zero-denominator protection; negative equity with warning; negative ROE supported. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NP **35,000** · Equity **450,000** → ROE **7.78%**; average path beginning **400,000** + ending **500,000** · NP **90,000** → **20.00%**.
+- **Important Files:** `frontend/src/tools/calculators/return-on-equity/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` ROE tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Return on Assets Calculator
 - **Summary:** Shipped Return on Assets Calculator on existing catalog slug `return-on-assets-calculator` (`ReturnOnAssetsCalculator`, catalog `6af46f10a27d8d1d4e99016b`, preserved `nameKey` `return on assets calculator`). Screenshot-first (ADR-023): ROA = NI/assets×100; optional average assets; zero-denominator protection; negative ROA supported. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** NI **150,000** · Assets **1,000,000** → ROA **15.00%**; average path beginning **900,000** + ending **1,100,000** → same **15%**.

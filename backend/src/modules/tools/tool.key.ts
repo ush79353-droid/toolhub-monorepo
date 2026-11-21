@@ -638,6 +638,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RentSplitCalculator',
   'RentVsBuyCalculator',
   'ReturnOnAssetsCalculator',
+  'ReturnOnEquityCalculator',
   'RevenueCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
@@ -1427,6 +1428,7 @@ if (isDirect) {
     !isApprovedComponentKey('RentSplitCalculator') ||
     !isApprovedComponentKey('RentVsBuyCalculator') ||
     !isApprovedComponentKey('ReturnOnAssetsCalculator') ||
+    !isApprovedComponentKey('ReturnOnEquityCalculator') ||
     !isApprovedComponentKey('RevenueCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||

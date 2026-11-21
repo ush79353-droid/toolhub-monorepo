@@ -3485,6 +3485,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ReturnOnAssetsCalculator,
     })),
   ),
+  ReturnOnEquityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/return-on-equity/ReturnOnEquityCalculator'
+    ).then((mod) => ({
+      default: mod.ReturnOnEquityCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'
