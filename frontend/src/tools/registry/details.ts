@@ -921,6 +921,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cobb-douglas/detail'),
   CpiInflationCalculator: () =>
     import('@/tools/calculators/cpi-inflation/detail'),
+  CurrencyForwardCalculator: () =>
+    import('@/tools/calculators/currency-forward/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

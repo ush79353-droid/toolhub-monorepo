@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Currency Forward Calculator
+- **Summary:** Shipped Currency Forward Calculator on existing catalog slug `currency-forward-calculator` (`CurrencyForwardCalculator`, catalog `6af46f10a27d8d1d4e990176`, preserved `nameKey` `currency forward calculator`). Screenshot-first (ADR-023): covered interest parity F = S × Aq/Ab; simple/annual/continuous; Actual/360|365; period rates; forward points/premium; optional notional + settlement; CurrencySelect for ISO pair codes (manual inputs, no live FX); no charts. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** EUR/USD · S **1.1000** · USD **5%** · EUR **3%** · **90**/365 · simple → F ≈ **1.1054** USD per EUR.
+- **Important Files:** `frontend/src/tools/calculators/currency-forward/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Currency Forward tests 19/19 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add CPI Inflation Calculator – Consumer Price Index
 - **Summary:** Shipped CPI Inflation Calculator on existing catalog slug `cpi-inflation-calculator-consumer-price-index` (`CpiInflationCalculator`, catalog `6af46f10a27d8d1d4e990175`, preserved `nameKey` `cpi inflation calculator - consumer price index`). Screenshot-first (ADR-023): Amount × (CPI_target/CPI_base); cumulative + compound annualized inflation; purchasing-power change; historical BLS CUUR0000SA0 years via shared buying-power dataset; custom CPI mode; fixed USD; no charts. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example (illustrative CPI 220→260):** **$1,000** · 10y → ≈ **$1,181.82** · cumulative **+18.18%** · annualized ≈ **+1.68%** · PP ≈ **−15.38%**.
