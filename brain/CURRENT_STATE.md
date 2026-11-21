@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (GDP per Capita Calculator live at `/tools/gdp-per-capita-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Gini Coefficient Calculator live at `/tools/gini-coefficient-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Gini Coefficient Calculator (`/tools/gini-coefficient-calculator`):** Live client-side inequality tool (`componentKey: 'GiniCoefficientCalculator'`, catalog `6af46f10a27d8d1d4e990180`, `nameKey` `gini coefficient calculator`). Screenshot-first (ADR-023): default Areas A & B with G=A/(A+B); Gini index=G×100; optional unweighted income mode; illustrative/modeled Lorenz SVG (not unique reconstruction from A/B alone); step-by-step; guide/FAQ without invented country ranks. Activated; **`indexable` left false**. Example: A **1,200** · B **3,800** → G **0.24** · index **24**.
 - **GDP per Capita Calculator (`/tools/gdp-per-capita-calculator`):** Live client-side output-per-person tool (`componentKey: 'GdpPerCapitaCalculator'`, catalog `6af46f10a27d8d1d4e99017f`, `nameKey` `gdp per capita calculator`). Screenshot-first (ADR-023): GDPpc=GDP/Population with modes for per-capita/GDP/population; real/nominal/PPP labels (no auto-conversion); shared CurrencySelect denomination (PKR default); GDP magnitudes units→trillions; population people→billions; empty defaults + load example; no invented country ranks. Activated; **`indexable` left false**. Example: GDP **$2T** · Pop **50M** → **$40,000**/person.
 - **GDP Growth Rate Calculator (`/tools/gdp-growth-rate-calculator`):** Live client-side growth tool (`componentKey: 'GdpGrowthRateCalculator'`, catalog `6af46f10a27d8d1d4e99017e`, `nameKey` `gdp growth rate calculator`). Screenshot-first (ADR-023): g=((Current−Previous)/Previous)×100 with modes for growth/current/previous; absolute change; real/nominal measure label; period selector; optional labeled annualized QoQ; shared CurrencySelect denomination (PKR default); magnitudes; g &gt; −100% reverse guards; empty defaults + load example. Activated; **`indexable` left false**. Example: Current **21T** · Previous **20T** → **+5%**.
 - **GDP Gap Calculator (`/tools/gdp-gap-calculator`):** Live client-side output-gap tool (`componentKey: 'GdpGapCalculator'`, catalog `6af46f10a27d8d1d4e99017d`, `nameKey` `gdp gap calculator`). Screenshot-first (ADR-023): Gap%=((Y−Y*)/Y*)×100 with modes for gap/actual/potential; absolute gap; shared CurrencySelect denomination (PKR default); magnitudes units→trillions; gap &gt; −100% reverse guards; positive/negative/zero interpretation; empty defaults + load example. Activated; **`indexable` left false**. Example: Y **18T** · Y* **20T** → Gap **−10%**.

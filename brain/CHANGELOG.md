@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Gini Coefficient Calculator
+- **Summary:** Shipped Gini Coefficient Calculator on existing catalog slug `gini-coefficient-calculator` (`GiniCoefficientCalculator`, catalog `6af46f10a27d8d1d4e990180`, preserved `nameKey` `gini coefficient calculator`). Screenshot-first (ADR-023): default Areas A & B with G = A/(A+B); Gini index = G×100; optional unweighted income mode; illustrative/modeled Lorenz SVG (not unique reconstruction from A/B); step-by-step; guide/FAQ without invented country ranks. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Area A **1,200** · Area B **3,800** → G **0.24** · index **24**.
+- **Important Files:** `frontend/src/tools/calculators/gini-coefficient/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` gini-coefficient tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add GDP per Capita Calculator
 - **Summary:** Shipped GDP per Capita Calculator on existing catalog slug `gdp-per-capita-calculator` (`GdpPerCapitaCalculator`, catalog `6af46f10a27d8d1d4e99017f`, preserved `nameKey` `gdp per capita calculator`). Screenshot-first (ADR-023): GDPpc=GDP/Population with modes for per-capita/GDP/population; real/nominal/PPP labels (no auto-conversion); shared CurrencySelect denomination (PKR default); GDP and population magnitudes; guide/FAQ without invented country rankings. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** GDP **$2** trillion · Population **50** million → **$40,000** per person.

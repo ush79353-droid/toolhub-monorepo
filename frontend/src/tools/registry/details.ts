@@ -940,6 +940,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gdp-growth-rate/detail'),
   GdpPerCapitaCalculator: () =>
     import('@/tools/calculators/gdp-per-capita/detail'),
+  GiniCoefficientCalculator: () =>
+    import('@/tools/calculators/gini-coefficient/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>
