@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Check Digit Calculator
+- **Summary:** Shipped Check Digit Calculator on existing catalog slug `check-digit-calculator` (`CheckDigitCalculator`, catalog `6af46f10a27d8d1d4e99019e`, preserved `nameKey` `check digit calculator`). Screenshot-first (ADR-023): GS1 Modulo 10 for GTIN-8/12/13/14; leading-zero padding; generate + validate; step breakdown; string-safe digit handling. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Payload **400638133393** → check digit **1** → GTIN **4006381333931**; UPC-A **03600029145** → **2**.
+- **Important Files:** `frontend/src/tools/calculators/check-digit/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` check-digit tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Cash Back Calculator
 - **Summary:** Shipped Cash Back Calculator on existing catalog slug `cash-back-calculator` (`CashBackCalculator`, catalog `6af46f10a27d8d1d4e99019d`, preserved `nameKey` `cash back calculator`). Screenshot-first (ADR-023): percentage/fixed cashback; optional limit checkbox; break-even spend to reach cap; effective purchase cost and effective rate; denomination CurrencySelect; guide/FAQ. Distinct from `CashBackOrLowInterestCalculator`. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$500** · **5%** → cashback **$25** · effective cost **$475**; capped **$1,500** · **5%** · limit **$50** → actual **$50**.

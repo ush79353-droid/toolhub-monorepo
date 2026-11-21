@@ -703,6 +703,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CashFlowToDebtRatioCalculator: () =>
     import('@/tools/calculators/cash-flow-to-debt-ratio/detail'),
   CashRatioCalculator: () => import('@/tools/calculators/cash-ratio/detail'),
+  CheckDigitCalculator: () =>
+    import('@/tools/calculators/check-digit/detail'),
   ChildTaxCreditCalculator: () =>
     import('@/tools/calculators/child-tax-credit/detail'),
   ChurnRateCalculator: () =>

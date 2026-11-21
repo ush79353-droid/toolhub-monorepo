@@ -2907,6 +2907,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CashRatioCalculator,
     })),
   ),
+  CheckDigitCalculator: lazyTool(() =>
+    import('@/tools/calculators/check-digit/CheckDigitCalculator').then(
+      (mod) => ({
+        default: mod.CheckDigitCalculator,
+      }),
+    ),
+  ),
   ChildTaxCreditCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/child-tax-credit/ChildTaxCreditCalculator'

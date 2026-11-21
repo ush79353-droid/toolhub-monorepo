@@ -552,6 +552,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cash-flow-to-debt-ratio-calculator',
   'child-tax-credit-calculator',
   'cash-ratio-calculator',
+  'check-digit-calculator',
   'price-to-cash-flow-ratio-calculator',
   'price-to-sales-ratio-calculator',
   'churn-rate-calculator',
