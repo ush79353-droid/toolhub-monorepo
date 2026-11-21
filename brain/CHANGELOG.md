@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Yield to Call Calculator
+- **Summary:** Shipped Yield to Call Calculator on existing catalog slug `yield-to-call-calculator` (`YieldToCallCalculator`, catalog `6af46f10a27d8d1d4e9901c5`, preserved `nameKey` `yield to call calculator`, pillar/subPillar null). Screenshot-first (ADR-023): annual interest, call price, market price, whole years until call → YTC; P=ΣC/(1+y)^t+Call/(1+y)^N via bisection (closed form when C=0); not approximate YTC; denomination CurrencySelect (no FX / not in `CURRENCY_CONVERSION_SLUGS`). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Registry/sitemap/tool.key lines also present via concurrent forward-premium registration commit `106c6326`.
+- **Commits:** `0506bc0d` (UI) / `fdcffc4b` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** C **80** · Call **1,000** · P **950** · **5**y → YTC ≈ **9.30%**.
+- **Verification:** Static formula review + focused `calculation.test.ts` asserts (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Forward Premium Calculator
 - **Summary:** Screenshot-first Forward Premium Calculator: ((F-S)/S)x100 period premium and 365-day annualization; collapsible sections; linked reverse edits; share/reload/clear/feedback; catalog activated (indexable false).
 - **Important Files:** `frontend/src/tools/calculators/forward-premium/*`, registry, `tool.key.ts`, sitemap, `brain/*`, tracker.

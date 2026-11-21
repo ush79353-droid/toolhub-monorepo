@@ -107,8 +107,11 @@ Audit pending: deferred to final audit coordinator
 | 63 | Call Option Calculator | DEVELOPED | AUDIT PENDING | 5eecfbf6 | db64a460 | (pending c3) | Completed Tools | `CallOptionCalculator`; slug `call-option-calculator`; Mongo `6af46f10a27d8d1d4e9901bf`; denomination CurrencySelect (no FX); ×100 equity multiplier; indexable false |
 
 ## Session Log
+| 64 | Yield to Call Calculator | DEVELOPED | AUDIT PENDING | 0506bc0d | fdcffc4b | (this reg/Brain commit; registry/sitemap/tool.key also via concurrent `106c6326`) | Completed Tools | `YieldToCallCalculator`; slug `yield-to-call-calculator`; Mongo `6af46f10a27d8d1d4e9901c5` active; denomination PKR no FX; indexable false; TASKS `TOOL-640` |
+
 | 62 | Early Retirement Calculator | DEVELOPED | AUDIT PENDING | 0c2fd00e | 81d96b65 | (reg commit) | Completed Tools | `EarlyRetirementCalculator`; slug `early-retirement-calculator`; Mongo `6af46f10a27d8d1d4e9901b5` active; denomination PKR no FX; indexable false; TASKS `TOOL-610`; note: UI commit also carried concurrent Forward Premium UI files |
 
+- 2026-11-21 (Yield to Call): Yield to Call Calculator DEVELOPED (`0506bc0d` / `fdcffc4b` / reg+Brain). Mongo `6af46f10a27d8d1d4e9901c5` activated; indexable false; denomination-only CurrencySelect (no FX). Registry lines also via concurrent `106c6326`. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Early Retirement): Early Retirement Calculator DEVELOPED (`0c2fd00e` / `81d96b65` / reg). Mongo `6af46f10a27d8d1d4e9901b5` activated; indexable false; denomination-only CurrencySelect (no FX). Moved to Completed Tools. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Call Option): Call Option Calculator DEVELOPED (`5eecfbf6` / `db64a460` / c3 pending). Mongo `6af46f10a27d8d1d4e9901bf`; indexable false; denomination only. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (this agent): Capital Gains Tax UK Calculator **BLOCKED** — Phase 5 Mongo authorization failed (Atlas timeout; local DB empty). Claimed via atomic `Directory.Move` from `Tools/` → `In Progress/`. Spec/prompt/screenshot read; no implementation commits; Mongo not activated. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
@@ -253,5 +256,5 @@ Prior blockers resolved with locked TY2022 TCJA baseline vs May 2021 AFP (ordina
 
 Screenshot-first spot/forward premium + 365-day annualization. No FX selectors. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE. UI files first landed in concurrent Early Retirement commit `0c2fd00e` (multi-agent staging collision); engine `407e9aa3`; integration commit listed below.
 
-| 65 | Forward Premium Calculator | DEVELOPED | AUDIT PENDING | 0c2fd00e | 407e9aa3 | (integration pending) | Completed Tools | `ForwardPremiumCalculator`; slug `forward-premium-calculator`; Mongo `6af46f10a27d8d1d4e9901c0` active; indexable false; TASKS `TOOL-582`; no FX |
+| 65 | Forward Premium Calculator | DEVELOPED | AUDIT PENDING | 0c2fd00e | 407e9aa3 | PENDING_HASH | Completed Tools | `ForwardPremiumCalculator`; slug `forward-premium-calculator`; Mongo `6af46f10a27d8d1d4e9901c0` active; indexable false; TASKS `TOOL-582`; no FX |
 
