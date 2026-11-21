@@ -1,6 +1,11 @@
-### 2026-11-22 — Adderall Dosage Calculator recovery (still BLOCKED)
-- **Summary:** Revalidated catalog `6af46f10a27d8d1d4e9901d1` / slug `adderall-dosage-calculator` (unique; `componentKey` null; `isDeveloped`/`isActive`/`indexable` false). Screenshot inputs documented; DailyMed IR tablet SPL (setid `f22635fe-821d-4cde-aa12-419f8b53db81`, updated **May 29, 2024**) + FDA `011522s044lbl.pdf` consulted for strengths 5–30 mg and ADHD/narcolepsy sections. **No module, registry, assign, or activation.** Prescribing outputs remain gated pending clinical review; custom-dose field/result UX still unspecified. TASKS `TOOL-704`. Folder stays `In Progress`.
-- **Verification:** Read-only Mongo lookup; registry/module absence grep; labeling sources fetched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE. Commits: none (blocked).
+### 2026-11-22 — Adderall + Levothyroxine verified-reference recovery
+- **Adderall:** Shipped educational IR explorer + prescribed-dose tablet arithmetic on slug `adderall-dosage-calculator` (`AdderallDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d1`). Omni + DailyMed IR (setid `f22635fe-821d-4cde-aa12-419f8b53db81`, May 29, 2024). ADHD/Narcolepsy educational charts; custom `tablets = dose/strength`; XR out of scope. Activated; **`indexable` false**. TASKS `TOOL-704`.
+- **Levothyroxine:** Extended existing UI (`3426381f`) / gate engine (`f3a6bb63`) with Devine IBW + typed outcomes; educational mcg/day only for healthy-adult overt teaching branch (15–50, FT4 Low, no heart disease) via `1.6 × min(actual, IBW)`. Cardiac/older/SCH/short remain gated. Catalog `6af46f10a27d8d1d4e9901d9` activated; **`indexable` false**. TASKS `TOOL-705`.
+- **Commits:** Adderall `a84b82ee` / `12dc814d` / (reg this commit). Levo `3426381f` / `f3a6bb63` / `9c515926` (Devine extension) / (reg this commit).
+- **Verification:** Focused `calculation.test.ts` for both ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — Adderall Dosage Calculator recovery (still BLOCKED) [superseded]
+- **Summary:** Earlier pass left Adderall blocked before Omni URL + authorized educational/custom scope. Superseded by verified-reference recovery entry above.
 
 ### 2026-11-22 — Health & Medical 60-tool audit registry repair
 - **Summary:** Baseline audit of the assigned 60 Health & Medical tools found modules + Mongo developed for 58/60, but concurrent registry drift had dropped several keys from frontend/backend allowlists and sitemap. Restored `AleveDosageCalculator`, `AmoxicillinPediatricDosageCalculator`, `BmiForWomenCalculator`, `DueDateCalculator`, `IsBmiPregnancyWeightIndicatorCalculator`, `MaintenanceCalorieCalculator` (index), and `ArmyBodyFatCalculator` (backend). **Blocked unchanged:** Adderall + Levothyroxine (clinical-review gates). No formula rewrites; no Mongo create; no push/pull/fetch.

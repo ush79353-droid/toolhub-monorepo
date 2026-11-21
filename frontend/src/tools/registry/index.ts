@@ -2885,6 +2885,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BbtCalculator,
     })),
   ),
+  AdderallDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/adderall-dosage/AdderallDosageCalculator'
+    ).then((mod) => ({
+      default: mod.AdderallDosageCalculator,
+    })),
+  ),
   AleveDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/aleve-dosage/AleveDosageCalculator'
@@ -3495,6 +3502,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   LernerIndexCalculator: lazyTool(() =>
     import('@/tools/calculators/lerner-index/LernerIndexCalculator').then((mod) => ({
       default: mod.LernerIndexCalculator,
+    })),
+  ),
+  LevothyroxineDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/levothyroxine-dosage/LevothyroxineDosageCalculator'
+    ).then((mod) => ({
+      default: mod.LevothyroxineDosageCalculator,
     })),
   ),
   LiquidNetWorthCalculator: lazyTool(() =>

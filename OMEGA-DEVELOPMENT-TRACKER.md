@@ -7,14 +7,15 @@ Newly developed: 47+
 Already developed: 1
 Development failed: 0
 Skipped / blocked: 2 (Missouri Sales Tax + Take-Home-Paycheck — both BLOCKED, remain In Progress)
-Remaining pending: live filesystem count (`In Progress` = 2 blocked folders as of 2026-11-21 recovery)
+Remaining pending: live filesystem count (`In Progress` = blocked non-health folders as applicable)
 Audit completed: 60 Health & Medical tools (2026-11-22)
-Audit pending: clinical re-review for high-risk dosing; Adderall + Levothyroxine remain BLOCKED
-Skipped / blocked (health set): 2 (Adderall Dosage + Levothyroxine Dosage)
-Adderall recovery (2026-11-22): Mongo + DailyMed IR labeling revalidated; still BLOCKED (TOOL-704); no module/activation
+Audit pending: none for Adderall/Levothyroxine approved educational scopes (2026-11-22 verified-reference recovery)
+Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under approved educational scopes)
+Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
-| 105 | Adderall Dosage Calculator | BLOCKED | CLINICAL_REVIEW | — | — | — | In Progress | Mongo `6af46f10a27d8d1d4e9901d1`; slug `adderall-dosage-calculator`; DailyMed IR tablets verified; no componentKey; TASKS `TOOL-704` |
+| 106 | Levothyroxine Dosage Calculator | DEVELOPED | AUDIT PENDING | 3426381f | f3a6bb63 + 9c515926 | (this reg/Brain) | Completed Tools | `LevothyroxineDosageCalculator`; slug `levothyroxine-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d9` active; Devine IBW + 1.6 mcg/kg teaching for healthy-adult branch; cardiac/SCH gated; no FX; indexable false; TASKS `TOOL-705` |
+| 105 | Adderall Dosage Calculator | DEVELOPED | AUDIT PENDING | a84b82ee | 12dc814d | (this reg/Brain) | Completed Tools | `AdderallDosageCalculator`; slug `adderall-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d1` active; IR educational + custom tablet math; XR out of scope; no FX; indexable false; TASKS `TOOL-704` |
 | 104 | Health-60 registry repair batch | REPAIRED | PASS_STATIC | — | — | (this repair) | n/a | Restored registry/sitemap/backend keys for Aleve, Amoxicillin, BMI Women, Due Date, Is-BMI pregnancy indicator, Maintenance Calorie index, Army Body Fat backend |
 | 102 | Weight Percentile Calculator | DEVELOPED | AUDIT PENDING | 5e815d4a | 01702a90 | (this reg/Brain) | Completed Tools | `WeightPercentileCalculator`; slug `weight-percentile-calculator`; Mongo `6af46f10a27d8d1d4e990207` active; WHO WFA LMS; no FX; indexable false; TASKS `TOOL-701` |
 | 101 | Urine Home Pregnancy Test | DEVELOPED | AUDIT PENDING | 8130bf97 (UI absorb) | 4f353b2d | (this reg/Brain) | Completed Tools | `UrineHomePregnancyTestCalculator`; slug `urine-home-pregnancy-test`; Mongo `6af46f10a27d8d1d4e9901fc` active; dual sensitivity; no FX; indexable false; TASKS `TOOL-700` |

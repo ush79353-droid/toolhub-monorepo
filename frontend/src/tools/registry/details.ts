@@ -689,6 +689,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BasisPointCalculator: () =>
     import('@/tools/calculators/basis-point/detail'),
   BbtCalculator: () => import('@/tools/calculators/bbt/detail'),
+  AdderallDosageCalculator: () =>
+    import('@/tools/calculators/adderall-dosage/detail'),
   AleveDosageCalculator: () =>
     import('@/tools/calculators/aleve-dosage/detail'),
   BenadrylDosageCalculator: () =>
@@ -890,6 +892,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lemonade-stand/detail'),
   LernerIndexCalculator: () =>
     import('@/tools/calculators/lerner-index/detail'),
+  LevothyroxineDosageCalculator: () =>
+    import('@/tools/calculators/levothyroxine-dosage/detail'),
   LiquidNetWorthCalculator: () =>
     import('@/tools/calculators/liquid-net-worth/detail'),
   LoanBalanceCalculator: () =>

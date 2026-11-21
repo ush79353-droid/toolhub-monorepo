@@ -1,7 +1,0 @@
-﻿owner=cursor-composer-20261122034000-adderall
-status=IN_PROGRESS
-calculator=Adderall Dosage Calculator
-mongoId=6af46f10a27d8d1d4e9901d1
-slug=adderall-dosage-calculator
-claimedAt=2026-11-22T03:40:00+05:00
-note=Verified Omni + DailyMed IR; implementing educational label + prescribed tablet arithmetic
