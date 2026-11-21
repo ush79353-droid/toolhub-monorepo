@@ -103,8 +103,15 @@ Audit pending: deferred to final audit coordinator
 | 60 | New York Tax Calculator | DEVELOPED | AUDIT PENDING | 4abebdfc | 0f441eca | 44d12361 | Completed Tools | `NewYorkTaxCalculator`; slug `new-york-tax-calculator`; Mongo `6af46f0fa27d8d1d4e99006c`; TY2025 federal+NYS+NYC; fixed USD; indexable false |
 
 | 61 | Modified Adjusted Gross Income (MAGI) Calculator | DEVELOPED | AUDIT PENDING | 03c9fe74 | 516e8910 | c1d34d67 | Completed Tools | `ModifiedAdjustedGrossIncomeCalculator`; slug `modified-adjusted-gross-income-magi-calculator`; Mongo `6af46f0fa27d8d1d4e990067`; Phase 2 FX; indexable false; TASKS `TOOL-574` |
+| 62 | Capital Gains Tax UK Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Atlas Mongo unreachable (server selection timeout / shard TCP fail); local `mega_tools.tools` empty; catalog name exists in `tools-catalog.json` but live `_id`/slug/flags unverifiable; no commits; no activation |
+| 63 | Call Option Calculator | DEVELOPED | AUDIT PENDING | 5eecfbf6 | db64a460 | (pending c3) | Completed Tools | `CallOptionCalculator`; slug `call-option-calculator`; Mongo `6af46f10a27d8d1d4e9901bf`; denomination CurrencySelect (no FX); ×100 equity multiplier; indexable false |
 
 ## Session Log
+| 62 | Early Retirement Calculator | DEVELOPED | AUDIT PENDING | 0c2fd00e | 81d96b65 | (reg commit) | Completed Tools | `EarlyRetirementCalculator`; slug `early-retirement-calculator`; Mongo `6af46f10a27d8d1d4e9901b5` active; denomination PKR no FX; indexable false; TASKS `TOOL-610`; note: UI commit also carried concurrent Forward Premium UI files |
+
+- 2026-11-21 (Early Retirement): Early Retirement Calculator DEVELOPED (`0c2fd00e` / `81d96b65` / reg). Mongo `6af46f10a27d8d1d4e9901b5` activated; indexable false; denomination-only CurrencySelect (no FX). Moved to Completed Tools. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (Call Option): Call Option Calculator DEVELOPED (`5eecfbf6` / `db64a460` / c3 pending). Mongo `6af46f10a27d8d1d4e9901bf`; indexable false; denomination only. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (this agent): Capital Gains Tax UK Calculator **BLOCKED** — Phase 5 Mongo authorization failed (Atlas timeout; local DB empty). Claimed via atomic `Directory.Move` from `Tools/` → `In Progress/`. Spec/prompt/screenshot read; no implementation commits; Mongo not activated. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (MAGI): Modified Adjusted Gross Income (MAGI) Calculator DEVELOPED (`03c9fe74` / `516e8910` / `c1d34d67`). Mongo `6af46f0fa27d8d1d4e990067`; illustrative AGI+add-backs; indexable false; Phase 2 FX. Missouri untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (NY Tax): New York Tax Calculator DEVELOPED (`4abebdfc` / `0f441eca` / `44d12361`). Mongo activated; indexable false. Missouri ON HOLD untouched. Temp cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-20 (State Tax): State Tax Calculator DEVELOPED (`51f0cb0b` / `bed1f48c` / c3). Mongo `6af46f0fa27d8d1d4e990073` activated; indexable false. Missouri ON HOLD untouched. Tools empty. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
@@ -241,4 +248,10 @@ Prior SPECIFICATION REQUIRED resolved with authorized Rate of Pay screenshot (ho
 Prior blockers resolved with locked TY2022 TCJA baseline vs May 2021 AFP (ordinary 39.6% + ARP-style CTC). Age ≥65 → aged std deduction; dependents = ODC only. Capital gains/NIIT excluded (no inputs). Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE.
 
 | 63 | Biden's Tax Plan Calculator | DEVELOPED | AUDIT PENDING | f3a2a319 | 7ffceb3a | a186efe8 | Completed Tools | `BidensTaxPlanCalculator`; slug `bidens-tax-plan-calculator`; Mongo `6af46f0fa27d8d1d4e990055` active; fixed USD; indexable false; TASKS `TOOL-581` |
+
+### 2026-11-21 — Forward Premium Calculator DEVELOPED
+
+Screenshot-first spot/forward premium + 365-day annualization. No FX selectors. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE. UI files first landed in concurrent Early Retirement commit `0c2fd00e` (multi-agent staging collision); engine `407e9aa3`; integration commit listed below.
+
+| 65 | Forward Premium Calculator | DEVELOPED | AUDIT PENDING | 0c2fd00e | 407e9aa3 | (integration pending) | Completed Tools | `ForwardPremiumCalculator`; slug `forward-premium-calculator`; Mongo `6af46f10a27d8d1d4e9901c0` active; indexable false; TASKS `TOOL-582`; no FX |
 

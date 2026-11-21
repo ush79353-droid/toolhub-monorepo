@@ -46,6 +46,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'bitcoin-etf-calculator',
   'biweekly-mortgage-calculator',
   'biweekly-pay-calculator',
+  'black-scholes-calculator',
   'semi-monthly-pay-calculator',
   'bi-weekly-mortgage-payment-calculator',
   'mortgage-points-calculator',

@@ -3659,6 +3659,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.YieldToMaturityCalculator,
     })),
   ),
+  YieldToCallCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/yield-to-call/YieldToCallCalculator'
+    ).then((mod) => ({
+      default: mod.YieldToCallCalculator,
+    })),
+  ),
   BuyingPowerCalculator: lazyTool(() =>
     import('@/tools/calculators/buying-power/BuyingPowerCalculator').then(
       (mod) => ({
@@ -3686,6 +3693,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.CpiInflationCalculator,
       }),
     ),
+  ),
+  CurrencyCalculator: lazyTool(() =>
+    import('@/tools/calculators/currency/CurrencyCalculator').then((mod) => ({
+      default: mod.CurrencyCalculator,
+    })),
   ),
   CurrencyForwardCalculator: lazyTool(() =>
     import(

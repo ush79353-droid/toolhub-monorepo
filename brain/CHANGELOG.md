@@ -4,6 +4,23 @@
 
 ---
 
+### 2026-11-21 — Forward Premium Calculator
+- **Summary:** Screenshot-first Forward Premium Calculator: ((F-S)/S)x100 period premium and 365-day annualization; collapsible sections; linked reverse edits; share/reload/clear/feedback; catalog activated (indexable false).
+- **Important Files:** `frontend/src/tools/calculators/forward-premium/*`, registry, `tool.key.ts`, sitemap, `brain/*`, tracker.
+- **Verification:** Static S=1.25 F=1.28 90d -> 2.4% / ~9.7333% ann.; Mongo `6af46f10a27d8d1d4e9901c0` developed+active. Temporary files cleaned: YES.
+### 2026-11-21 — Early Retirement Calculator
+- **Summary:** Screenshot-first FI planner: monthly deposit from net income − expenses, required balance from withdrawal rate, end-of-month accumulation with monthly effective return, duration/contribution/interest results. Denomination CurrencySelect only (no FX). Distinct from FIRE Calculator.
+- **Important Files:** `frontend/src/tools/calculators/early-retirement/*`, `frontend/src/tools/registry/{keys,index,details}.ts`, `backend/src/modules/tools/tool.key.ts`, `frontend/src/app/sitemap.ts`, `brain/*`, `OMEGA-DEVELOPMENT-TRACKER.md`.
+- **Commits:** `0c2fd00e` (UI) / `81d96b65` (engine) / (registration — this commit).
+- **Catalog:** `6af46f10a27d8d1d4e9901b5` · slug `early-retirement-calculator` · `EarlyRetirementCalculator` · activated · `indexable` false.
+- **Verification:** Static formula review + assert self-check authored (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-21 — Call Option Calculator
+- **Summary:** Shipped Call Option Calculator on existing catalog slug `call-option-calculator` (`CallOptionCalculator`, catalog `6af46f10a27d8d1d4e9901bf`, preserved `nameKey` `call option calculator`, pillar/subPillar null). Screenshot-first (ADR-023): call/put radios; asset/target; strike; premium per share; whole contracts; total premium = quote × 100 × contracts; break-even, intrinsic, time value, P/L at asset/target; denomination CurrencySelect (no FX / not in `CURRENCY_CONVERSION_SLUGS`). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
+- **Commits:** `5eecfbf6` (UI) / `db64a460` (engine) / (registration).
+- **Example:** call · S/K **100** · premium **5** · **1** contract → total **500** · BE **105**.
+- **Verification:** Static formula review + focused `calculation.test.ts` asserts (call/put/zero/fractional contracts). Full frontend tsc / lint / build not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Category detail page
 - **Summary:** A category page uses the mint hero. Its tools are cards grouped by pillar and sub-pillar. Other categories use the homepage cards. An empty category is a centered message.
 - **Important Files:** `frontend/src/app/(website)/categories/[slug]/page.tsx`.
@@ -3206,6 +3223,10 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
+### 2026-11-21 — Forward Premium Calculator
+- **Summary:** Screenshot-first Forward Premium Calculator: ((F-S)/S)x100 period premium and 365-day annualization; collapsible sections; linked reverse edits; share/reload/clear/feedback; catalog activated (indexable false).
+- **Important Files:** `frontend/src/tools/calculators/forward-premium/*`, registry, `tool.key.ts`, sitemap, `brain/*`, tracker.
+- **Verification:** Static S=1.25 F=1.28 90d -> 2.4% / ~9.7333% ann.; Mongo `6af46f10a27d8d1d4e9901c0` developed+active. Temporary files cleaned: YES.
 ### 2026-11-20 — Add Semi-Monthly Pay Calculator
 - **Summary:** Shipped Semi-Monthly Pay Calculator on existing catalog slug `semi-monthly-pay-calculator` (`SemiMonthlyPayCalculator`, catalog `6af46f0fa27d8d1d4e990072`, pillar/subPillar null). Screenshot-first (ADR-023): hourly/daily/weekly/monthly/yearly wage FX (last-edited authoritative); hours/week 40; days/week 5; semi-monthly answer FX. Formulas via 52 weeks / 12 months / **24** semi-monthly periods (not biweekly 26). Dual `CURRENCY_CONVERSION_SLUGS`. Biweekly Pay sibling untouched. Activated via `tool:assign` with `--set-active` only — **`indexable` preserved false**.
 - **Example:** 500/hr · 40h · 5d → yearly **1,040,000** · semi-monthly **43,333.33**.

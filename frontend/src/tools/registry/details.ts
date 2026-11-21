@@ -957,6 +957,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   WaccCalculator: () => import('@/tools/calculators/wacc/detail'),
   YieldToMaturityCalculator: () =>
     import('@/tools/calculators/yield-to-maturity/detail'),
+  YieldToCallCalculator: () =>
+    import('@/tools/calculators/yield-to-call/detail'),
   BuyingPowerCalculator: () =>
     import('@/tools/calculators/buying-power/detail'),
   CarryTradeCalculator: () =>
