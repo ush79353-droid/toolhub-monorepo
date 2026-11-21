@@ -16,6 +16,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AutoLoanCalculator: () => import('@/tools/calculators/auto-loan/detail'),
   CaliforniaOvertimeCalculator: () =>
     import('@/tools/calculators/california-overtime/detail'),
+  CalorieDeficitCalculator: () =>
+    import('@/tools/calculators/calorie-deficit/detail'),
   DebtAvalancheCalculator: () =>
     import('@/tools/calculators/debt-avalanche/detail'),
   DebtCalculator: () =>

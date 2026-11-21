@@ -17,6 +17,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'annuity-calculator',
   'annuity-payout-calculator',
   'california-overtime-calculator',
+  'calorie-deficit-calculator',
   'debt-avalanche-calculator',
   'debt-calculator',
   'debt-service-coverage-ratio-calculator-dscr',

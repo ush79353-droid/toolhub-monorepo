@@ -59,6 +59,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     ).then((mod) => ({
       default: mod.CaliforniaOvertimeCalculator,
     })),
+  CalorieDeficitCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/calorie-deficit/CalorieDeficitCalculator'
+    ).then((mod) => ({
+      default: mod.CalorieDeficitCalculator,
+    })),
+  ),
   ),
   DebtAvalancheCalculator: lazyTool(() =>
     import(
