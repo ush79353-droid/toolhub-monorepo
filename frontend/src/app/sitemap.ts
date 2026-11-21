@@ -790,6 +790,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mpc-calculator',
   'nsfr-calculator',
   'okuns-law-calculator',
+  'phillips-curve-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

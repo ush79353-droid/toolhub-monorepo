@@ -3667,6 +3667,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OkunsLawCalculator,
     })),
   ),
+  PhillipsCurveCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/phillips-curve/PhillipsCurveCalculator'
+    ).then((mod) => ({
+      default: mod.PhillipsCurveCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Okun's Law Calculator live at `/tools/okuns-law-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Phillips Curve Calculator live at `/tools/phillips-curve-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Phillips Curve Calculator (`/tools/phillips-curve-calculator`):** Live client-side macro tool (`componentKey: 'PhillipsCurveCalculator'`, catalog `6af46f10a27d8d1d4e99018a`, `nameKey` `phillips curve calculator`). Screenshot-first (ADR-023): Traditional w=w_T−βΔu; New Classical π=πᵉ−α(u−uₙ)+s; simplified NKPC πₜ=βE[πₜ₊₁]+κxₜ+sₜ; inverse targets; SVG charts; guide/FAQ; no currency. Activated; **`indexable` left false**. Example: Traditional w_T **4%** · Δu **1** · β **0.5** → w **3.5%**; NC πᵉ **3%** · u **6%** · uₙ **5%** · α **0.5** → π **2.5%**; NK β **0.99** · E[π] **3%** · x **2%** · κ **0.25** · s **0.5** → πₜ **3.97%**.
 - **Okun's Law Calculator (`/tools/okuns-law-calculator`):** Live client-side macro tool (`componentKey: 'OkunsLawCalculator'`, catalog `6af46f10a27d8d1d4e990189`, `nameKey` `okun's law calculator`). Screenshot-first (ADR-023): modes for output gap OutputGap=−β(u−u*), Δu=−α(g−g*), required g=g*−Δu/α, growth gap=−Δu/α; separate positive β/α; SVG relationship charts; guide/FAQ; no currency. Activated; **`indexable` left false**. Example: u **7%** · u* **5%** · β **2** → output gap **−4%**; g **4.5%** · g* **2.5%** · α **0.4** → Δu **−0.8 pp**.
 - **NSFR Calculator (`/tools/nsfr-calculator`):** Live client-side bank structural funding tool (`componentKey: 'NsfrCalculator'`, catalog `6af46f10a27d8d1d4e990188`, `nameKey` `nsfr calculator`). Screenshot-first (ADR-023): NSFR=ASF/RSF×100; expandable illustrative ASF helper (100/95/90/50/0%); optional RSF helper; funding gap/surplus/shortfall; ±5% sensitivity; bar+gauge SVG; educational disclaimer (not compliance). Activated; **`indexable` left false**. Example: ASF **$170M** · RSF **$150M** → NSFR ≈ **113.33%**.
 - **MPC Calculator (`/tools/mpc-calculator`):** Live client-side Keynesian consumption tool (`componentKey: 'MpcCalculator'`, catalog `6af46f10a27d8d1d4e990186`, `nameKey` `mpc calculator`). Screenshot-first (ADR-023): modes from ΔC/ΔYd or direct MPC; C=a+bYd; MPS; k=1/(1−MPC) (no Infinity at MPC=1); break-even Yd=a/(1−b); SVG consumption function + optional 45° line; MPC outside 0–1 warned not clamped; denomination CurrencySelect (USD). Activated; **`indexable` left false**. Example: ΔC **$600** · ΔYd **$1,000** → MPC **0.60** · C **$42,000** · k **2.50**.

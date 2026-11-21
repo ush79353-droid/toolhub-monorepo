@@ -667,6 +667,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MpcCalculator',
   'NsfrCalculator',
   'OkunsLawCalculator',
+  'PhillipsCurveCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
@@ -1484,6 +1485,7 @@ if (isDirect) {
     !isApprovedComponentKey('MpcCalculator') ||
     !isApprovedComponentKey('NsfrCalculator') ||
     !isApprovedComponentKey('OkunsLawCalculator') ||
+    !isApprovedComponentKey('PhillipsCurveCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||

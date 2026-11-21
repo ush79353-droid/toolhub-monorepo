@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Phillips Curve Calculator
+- **Summary:** Shipped Phillips Curve Calculator on existing catalog slug `phillips-curve-calculator` (`PhillipsCurveCalculator`, catalog `6af46f10a27d8d1d4e99018a`, preserved `nameKey` `phillips curve calculator`). Screenshot-first (ADR-023): Traditional w=w_T−βΔu; New Classical π=πᵉ−α(u−uₙ)+s; simplified NKPC πₜ=βE[πₜ₊₁]+κxₜ+sₜ; inverse solves; SVG charts; original guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** w_T **4%** · Δu **1** · β **0.5** → w **3.5%**; πᵉ **3%** · u **6%** · uₙ **5%** · α **0.5** → π **2.5%**; NK → πₜ **3.97%**.
+- **Important Files:** `frontend/src/tools/calculators/phillips-curve/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` phillips-curve tests 15/15 pass. Mongo `tool:assign` without `--set-indexable` (meta title shortened to ≤70 chars). Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Okun's Law Calculator
 - **Summary:** Shipped Okun's Law Calculator on existing catalog slug `okuns-law-calculator` (`OkunsLawCalculator`, catalog `6af46f10a27d8d1d4e990189`, preserved `nameKey` `okun's law calculator`). Screenshot-first (ADR-023): four modes — output gap OutputGap=−β(u−u*), unemployment change Δu=−α(g−g*), required GDP growth g=g*−Δu/α, GDP growth gap=−Δu/α; positive β/α with explicit minus signs; SVG modeled relationship charts; original guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** u **7%** · u* **5%** · β **2** → output gap **−4%**; g **4.5%** · g* **2.5%** · α **0.4** → Δu **−0.8 pp**.
