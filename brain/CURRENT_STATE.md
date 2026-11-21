@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Cobb-Douglas Production Function Calculator live at `/tools/cobb-douglas-production-function-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (CPI Inflation Calculator live at `/tools/cpi-inflation-calculator-consumer-price-index`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **CPI Inflation Calculator – Consumer Price Index (`/tools/cpi-inflation-calculator-consumer-price-index`):** Live client-side CPI tool (`componentKey: 'CpiInflationCalculator'`, catalog `6af46f10a27d8d1d4e990175`, `nameKey` `cpi inflation calculator - consumer price index`). Screenshot-first (ADR-023): Amount × (CPI_target/CPI_base); cumulative + compound annualized inflation; purchasing-power change; historical BLS CUUR0000SA0 annual averages **1913–2025** (shared with Buying Power); custom CPI mode; fixed USD; no charts. Activated; **`indexable` left false**. Illustrative: **$1,000** · CPI 220→260 · 10y → ≈ **$1,181.82** · **+18.18%** · ≈ **+1.68%**/yr.
 - **Cobb-Douglas Production Function Calculator (`/tools/cobb-douglas-production-function-calculator`):** Live client-side production tool (`componentKey: 'CobbDouglasCalculator'`, catalog `6af46f10a27d8d1d4e990173`, `nameKey` `cobb-douglas production function calculator`). Screenshot-first (ADR-023): Y = A L^α K^β; A/L/α/K/β → Y; RTS constant/increasing/decreasing; expandable MPL/MPK/APL/APK; output in model units (no currency); α|β>1 warns. Activated; **`indexable` left false**. Example: A **2** · L **100** · K **50** · α **0.6** · β **0.4** → Y ≈ **151.57**.
 - **Carry Trade Calculator (`/tools/carry-trade-calculator`):** Live client-side currency carry tool (`componentKey: 'CarryTradeCalculator'`, catalog `6af46f10a27d8d1d4e990172`, `nameKey` `carry trade calculator`). Screenshot-first (ADR-023): Profit = P×[(S₀/S₁)(1+Rl)−(1+Rb)]; spot differential d%=(S₀/S₁−1)×100; simple interest 360/365; three sections; approximate d+Rl−Rb labeled separately; denomination-only CurrencySelect (PKR default; manual exchange rates, no live FX). Activated; **`indexable` left false**. Example: P **5,000** · S₀ **0.85** · S₁ **0.83** · 6%/2% · 180/365 → ≈ **+222.68** · **+4.45%**.
 - **Buying Power Calculator (`/tools/buying-power-calculator`):** Live client-side CPI purchasing-power tool (`componentKey: 'BuyingPowerCalculator'`, catalog `6af46f10a27d8d1d4e990171`, `nameKey` `buying power calculator`). Screenshot-first (ADR-023): Amount × (CPI_target/CPI_reference); amount + reference/target year + dollar value; year swap; collapsible details (CPI ratio, cumulative inflation, purchasing-power change); embedded BLS CPI-U CUUR0000SA0 annual averages **1913–2025**; fixed USD (no CurrencySelect / no FX). Activated; **`indexable` left false**. Example: **$1,000** · **2010** → **2020** → ≈ **$1,186.90**.

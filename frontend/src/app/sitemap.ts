@@ -770,6 +770,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'buying-power-calculator',
   'carry-trade-calculator',
   'cobb-douglas-production-function-calculator',
+  'cpi-inflation-calculator-consumer-price-index',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

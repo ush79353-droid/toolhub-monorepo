@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add CPI Inflation Calculator – Consumer Price Index
+- **Summary:** Shipped CPI Inflation Calculator on existing catalog slug `cpi-inflation-calculator-consumer-price-index` (`CpiInflationCalculator`, catalog `6af46f10a27d8d1d4e990175`, preserved `nameKey` `cpi inflation calculator - consumer price index`). Screenshot-first (ADR-023): Amount × (CPI_target/CPI_base); cumulative + compound annualized inflation; purchasing-power change; historical BLS CUUR0000SA0 years via shared buying-power dataset; custom CPI mode; fixed USD; no charts. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example (illustrative CPI 220→260):** **$1,000** · 10y → ≈ **$1,181.82** · cumulative **+18.18%** · annualized ≈ **+1.68%** · PP ≈ **−15.38%**.
+- **Important Files:** `frontend/src/tools/calculators/cpi-inflation/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` CPI Inflation tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Cobb-Douglas Production Function Calculator
 - **Summary:** Shipped Cobb-Douglas Production Function Calculator on existing catalog slug `cobb-douglas-production-function-calculator` (`CobbDouglasCalculator`, catalog `6af46f10a27d8d1d4e990173`, preserved `nameKey` `cobb-douglas production function calculator`). Screenshot-first (ADR-023): Y = A L^α K^β; six fields; RTS classification; expandable MPL/MPK/APL/APK; no currency; no charts. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** A **2** · L **100** · K **50** · α **0.6** · β **0.4** → Y ≈ **151.57** · constant RTS.

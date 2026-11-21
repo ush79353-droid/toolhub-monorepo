@@ -3537,6 +3537,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  CpiInflationCalculator: lazyTool(() =>
+    import('@/tools/calculators/cpi-inflation/CpiInflationCalculator').then(
+      (mod) => ({
+        default: mod.CpiInflationCalculator,
+      }),
+    ),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'
