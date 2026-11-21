@@ -944,6 +944,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gini-coefficient/detail'),
   InflationCalculator: () =>
     import('@/tools/calculators/inflation/detail'),
+  LaborForceParticipationRateCalculator: () =>
+    import('@/tools/calculators/labor-force-participation/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Labor Force Participation Rate Calculator
+- **Summary:** Shipped Labor Force Participation Rate Calculator on existing catalog slug `labor-force-participation-rate-calculator` (`LaborForceParticipationRateCalculator`, catalog `6af46f10a27d8d1d4e990182`, preserved `nameKey` `labor force participation rate calculator`). Screenshot-first (ADR-023): employed + unemployed → labor force & unemployment rate; working-age → LFPR, not-in-LF, EPR; population definition label; donut composition SVG; guide/FAQ without invented country ranks. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Employed **5,500,000** · Unemployed **700,000** · Working-age **7,200,000** → LF **6,200,000** · UR ≈ **11.29%** · LFPR ≈ **86.11%**.
+- **Important Files:** `frontend/src/tools/calculators/labor-force-participation/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` LFPR tests 10/10 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Inflation Calculator
 - **Summary:** Shipped Inflation Calculator on existing catalog slug `inflation-calculator` (`InflationCalculator`, catalog `6af46f10a27d8d1d4e990181`, preserved `nameKey` `inflation calculator`). Screenshot-first (ADR-023): US historical CPI-U annual (reuse Buying Power `CUUR0000SA0`) + custom compound FV=PV(1+r)^t; yearly frequency active; quarterly blocked with explicit no-monthly-data message (no invented CPI); purchasing-power factor; SVG charts; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Custom **$1,000** · **3%** · **5** years → ≈ **$1,159.27**.

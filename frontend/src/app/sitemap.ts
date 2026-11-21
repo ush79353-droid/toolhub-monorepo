@@ -783,6 +783,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gdp-per-capita-calculator',
   'gini-coefficient-calculator',
   'inflation-calculator',
+  'labor-force-participation-rate-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
