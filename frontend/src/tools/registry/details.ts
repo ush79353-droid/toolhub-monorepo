@@ -891,6 +891,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pay-raise/detail'),
   PegRatioCalculator: () =>
     import('@/tools/calculators/peg-ratio/detail'),
+  PenceToPoundsConverter: () =>
+    import('@/tools/calculators/pence-to-pounds/detail'),
   PercentOffCalculator: () =>
     import('@/tools/calculators/percent-off/detail'),
   PercentageDiscountCalculator: () =>

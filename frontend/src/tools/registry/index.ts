@@ -3455,6 +3455,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PegRatioCalculator,
     })),
   ),
+  PenceToPoundsConverter: lazyTool(() =>
+    import('@/tools/calculators/pence-to-pounds/PenceToPoundsConverter').then((mod) => ({
+      default: mod.PenceToPoundsConverter,
+    })),
+  ),
   PercentOffCalculator: lazyTool(() =>
     import('@/tools/calculators/percent-off/PercentOffCalculator').then((mod) => ({
       default: mod.PercentOffCalculator,

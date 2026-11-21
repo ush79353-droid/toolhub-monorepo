@@ -629,6 +629,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PayPalFeeCalculator',
   'PayRaiseCalculator',
   'PegRatioCalculator',
+  'PenceToPoundsConverter',
   'PercentOffCalculator',
   'PercentageDiscountCalculator',
   'PercentageReturnCalculator',
