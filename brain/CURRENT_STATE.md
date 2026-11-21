@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Return on Equity Calculator live at `/tools/return-on-equity-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (ROIC Calculator live at `/tools/roic-calculator-return-on-invested-capital`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **ROIC Calculator – Return on Invested Capital (`/tools/roic-calculator-return-on-invested-capital`):** Live client-side ROIC tool (`componentKey: 'RoicCalculator'`, catalog `6af46f10a27d8d1d4e99016d`, `nameKey` `roic calculator - return on invested capital`). Screenshot-first (ADR-023): NOPAT = EBIT×(1−t); invested capital = equity+debt; ROIC = NOPAT/IC×100; optional average capital; IC must be > 0; negative EBIT warning; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: EBIT **500,000** · tax **25%** · equity **1,200,000** · debt **800,000** → ROIC **18.75%**.
 - **Return on Equity Calculator (`/tools/return-on-equity-calculator`):** Live client-side ROE tool (`componentKey: 'ReturnOnEquityCalculator'`, catalog `6af46f10a27d8d1d4e99016c`, `nameKey` `return on equity calculator`). Screenshot-first (ADR-023): net profit ÷ equity × 100; optional average equity; zero equity rejected; negative equity allowed with warning; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NP **35,000** · Equity **450,000** → ROE **7.78%**.
 - **Return on Assets Calculator (`/tools/return-on-assets-calculator`):** Live client-side ROA tool (`componentKey: 'ReturnOnAssetsCalculator'`, catalog `6af46f10a27d8d1d4e99016b`, `nameKey` `return on assets calculator`). Screenshot-first (ADR-023): NI ÷ assets × 100; optional average assets; zero assets rejected; negative ROA supported; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NI **150,000** · Assets **1,000,000** → ROA **15.00%**.
 - **Retention Ratio Calculator (`/tools/retention-ratio-calculator`):** Live client-side plowback tool (`componentKey: 'RetentionRatioCalculator'`, catalog `6af46f10a27d8d1d4e99016a`, `nameKey` `retention ratio calculator`). Screenshot-first (ADR-023): NI − dividends → period RE; retention % = RE/NI×100; zero NI → undefined; negative retention allowed; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NI **1,000,000** · Div **350,000** → RE **650,000** · retention **65%**.

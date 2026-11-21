@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add ROIC Calculator – Return on Invested Capital
+- **Summary:** Shipped ROIC Calculator on existing catalog slug `roic-calculator-return-on-invested-capital` (`RoicCalculator`, catalog `6af46f10a27d8d1d4e99016d`, preserved `nameKey` `roic calculator - return on invested capital`). Screenshot-first (ADR-023): NOPAT = EBIT×(1−t); invested capital = equity+debt; ROIC %; optional average capital; zero/negative capital blocked; negative-EBIT tax-shield note. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** EBIT **500,000** · tax **25%** · equity **1,200,000** · debt **800,000** → NOPAT **375,000** · IC **2,000,000** → ROIC **18.75%**.
+- **Important Files:** `frontend/src/tools/calculators/roic/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` ROIC tests 18/18 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Return on Equity Calculator
 - **Summary:** Shipped Return on Equity Calculator on existing catalog slug `return-on-equity-calculator` (`ReturnOnEquityCalculator`, catalog `6af46f10a27d8d1d4e99016c`, preserved `nameKey` `return on equity calculator`). Screenshot-first (ADR-023): ROE = net profit/equity×100; optional average equity; zero-denominator protection; negative equity with warning; negative ROE supported. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** NP **35,000** · Equity **450,000** → ROE **7.78%**; average path beginning **400,000** + ending **500,000** · NP **90,000** → **20.00%**.

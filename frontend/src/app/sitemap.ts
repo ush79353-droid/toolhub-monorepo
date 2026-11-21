@@ -763,6 +763,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'retention-ratio-calculator',
   'return-on-assets-calculator',
   'return-on-equity-calculator',
+  'roic-calculator-return-on-invested-capital',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
