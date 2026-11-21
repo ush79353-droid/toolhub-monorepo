@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add NSFR Calculator (Net Stable Funding Ratio)
+- **Summary:** Shipped NSFR Calculator on existing catalog slug `nsfr-calculator` (`NsfrCalculator`, catalog `6af46f10a27d8d1d4e990188`, preserved `nameKey` `nsfr calculator`). Screenshot-first (ADR-023): ASF ÷ RSF × 100; expandable illustrative ASF helper (100/95/90/50/0%); optional RSF helper; funding gap/surplus/shortfall; ±5% sensitivity; bar+gauge SVG; educational disclaimer (not regulatory compliance). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** ASF **$170,000,000** · RSF **$150,000,000** → NSFR ≈ **113.33%**.
+- **Important Files:** `frontend/src/tools/calculators/nsfr/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` nsfr tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add MPC Calculator (Marginal Propensity to Consume)
 - **Summary:** Shipped MPC Calculator on existing catalog slug `mpc-calculator` (`MpcCalculator`, catalog `6af46f10a27d8d1d4e990186`, preserved `nameKey` `mpc calculator`). Screenshot-first (ADR-023): MPC=ΔC/ΔYd (or direct MPC); C=a+MPC×Yd; MPS; simplified k=1/(1−MPC) without Infinity at MPC=1; break-even Yd=a/(1−MPC); SVG consumption function + optional C=Yd line; out-of-range MPC warned not clamped. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** ΔC **$600** · ΔYd **$1,000** → MPC **0.60**; a **$18,000** · Yd **$40,000** → C **$42,000** · MPS **0.40** · k **2.50** · break-even **$45,000**.

@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (MPC Calculator live at `/tools/mpc-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (NSFR Calculator live at `/tools/nsfr-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **NSFR Calculator (`/tools/nsfr-calculator`):** Live client-side bank structural funding tool (`componentKey: 'NsfrCalculator'`, catalog `6af46f10a27d8d1d4e990188`, `nameKey` `nsfr calculator`). Screenshot-first (ADR-023): NSFR=ASF/RSF×100; expandable illustrative ASF helper (100/95/90/50/0%); optional RSF helper; funding gap/surplus/shortfall; ±5% sensitivity; bar+gauge SVG; educational disclaimer (not compliance). Activated; **`indexable` left false**. Example: ASF **$170M** · RSF **$150M** → NSFR ≈ **113.33%**.
 - **MPC Calculator (`/tools/mpc-calculator`):** Live client-side Keynesian consumption tool (`componentKey: 'MpcCalculator'`, catalog `6af46f10a27d8d1d4e990186`, `nameKey` `mpc calculator`). Screenshot-first (ADR-023): modes from ΔC/ΔYd or direct MPC; C=a+bYd; MPS; k=1/(1−MPC) (no Infinity at MPC=1); break-even Yd=a/(1−b); SVG consumption function + optional 45° line; MPC outside 0–1 warned not clamped; denomination CurrencySelect (USD). Activated; **`indexable` left false**. Example: ΔC **$600** · ΔYd **$1,000** → MPC **0.60** · C **$42,000** · k **2.50**.
 - **Money Supply Calculator (`/tools/money-supply-calculator`):** Live client-side monetary-aggregates tool (`componentKey: 'MoneySupplyCalculator'`, catalog `6af46f10a27d8d1d4e990185`, `nameKey` `money supply calculator`). Screenshot-first (ADR-023): definition selector (U.S. Fed-style / textbook / custom); collapsible M0, MB, M1, M2, MZM, M3, M4; nonoverlapping M1 (savings in M1, not re-added in M2); M3/M4 unavailable under Fed-style; shared magnitude scale; denomination CurrencySelect (USD); SVG aggregate bars + M1/MB composition. Activated; **`indexable` left false**. Example: M0 **$2.1M** · MB **$6.15M** · M1 **$21.501M** · M2 **$22.641M**.
 - **Money Multiplier Calculator (`/tools/money-multiplier-calculator`):** Live client-side monetary-aggregates tool (`componentKey: 'MoneyMultiplierCalculator'`, catalog `6af46f10a27d8d1d4e990184`, `nameKey` `money multiplier calculator`). Screenshot-first (ADR-023): dual reserveSource modes (ratio↔reserves); B=currency+reserves; M=currency+deposits; m=M/B; separate simple deposit multiplier 1/r and c/r ratios; SVG supply-vs-base + base doughnut; zero-base → unavailable (no Infinity); denomination-only CurrencySelect (USD default). Activated; **`indexable` left false**. Example: Deposits **$1M** · r **10%** · Currency **$200k** → m **4.00×** · m_d **10×**.

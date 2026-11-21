@@ -3657,6 +3657,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MpcCalculator,
     })),
   ),
+  NsfrCalculator: lazyTool(() =>
+    import('@/tools/calculators/nsfr/NsfrCalculator').then((mod) => ({
+      default: mod.NsfrCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'
