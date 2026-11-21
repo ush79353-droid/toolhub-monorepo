@@ -233,6 +233,10 @@ export function PensionForm({
           {errors.cola ? (
             <p className="mt-1 text-xs text-rose-600">{errors.cola}</p>
           ) : null}
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+            ¹ Cost-of-living adjustment raises the monthly pension once per year
+            after every 12 payments in this model.
+          </p>
         </div>
       </fieldset>
 

@@ -5,10 +5,7 @@ import { Play, Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import {
-  getCurrencySymbol,
-  type SupportedCurrency,
-} from '@/tools/shared/currency';
+import type { SupportedCurrency } from '@/tools/shared/currency';
 import { PensionForm } from './PensionForm';
 import { PensionResults } from './PensionResults';
 import {
@@ -100,7 +97,6 @@ export function PensionCalculator({
   };
 
   const dirty = !inputsEqual(input, baseline);
-  const symbol = getCurrencySymbol(input.currency);
   const shareable = result != null;
 
   const summary = shareable
@@ -250,7 +246,6 @@ export function PensionCalculator({
             </button>
           </div>
         </div>
-        <p className="sr-only">{symbol}</p>
       </div>
     </section>
   );
