@@ -4471,6 +4471,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FcffCalculator,
     })),
   ),
+  FetalWeightPercentileCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/fetal-weight-percentile/FetalWeightPercentileCalculator'
+    ).then((mod) => ({
+      default: mod.FetalWeightPercentileCalculator,
+    })),
+  ),
   FfoCalculator: lazyTool(() =>
     import('@/tools/calculators/ffo/FfoCalculator').then((mod) => ({
       default: mod.FfoCalculator,

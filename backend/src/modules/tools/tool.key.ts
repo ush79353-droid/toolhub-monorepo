@@ -790,6 +790,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FreeCashFlowCalculator',
   'FcfeCalculator',
   'FcffCalculator',
+  'FetalWeightPercentileCalculator',
   'FfoCalculator',
   'FibonacciRetracementCalculator',
   'FicaTaxCalculator',

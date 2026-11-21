@@ -930,6 +930,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'income-tax-calculator',
   'bidens-tax-plan-calculator',
   'birth-weight-percentile-calculator',
+  'fetal-weight-percentile-calculator',
   'take-home-pay-calculator-uk',
   'tax-bracket-calculator',
   'adjusted-gross-income-agi-calculator',
