@@ -193,18 +193,17 @@ export function validatePriceElasticityOfDemandInput(
         'PED undefined – average quantity is zero when both quantities are zero.';
       errors.form = warningMessage;
     } else {
+      const p1Val = p1.value!;
+      const q1Val = q1.value!;
+      const p2Val = p2.value!;
+      const q2Val = q2.value!;
       priceElasticity = calculateMidpointElasticity(
-        p1.value,
-        q1.value,
-        p2.value,
-        q2.value
+        p1Val,
+        q1Val,
+        p2Val,
+        q2Val
       );
-      breakdown = midpointBreakdown(
-        p1.value,
-        q1.value,
-        p2.value,
-        q2.value
-      );
+      breakdown = midpointBreakdown(p1Val, q1Val, p2Val, q2Val);
 
       if (priceElasticity === null) {
         status = 'undefinedElasticity';

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { FFO_FAQS } from './content';
 
@@ -117,12 +118,12 @@ export function FfoGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         EBITDA adds back D&amp;A before interest and taxes. FFO starts from net
         income with REIT-specific sale adjustments. See the{' '}
-        <a
+        <Link
           href="/tools/ebitda-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           EBITDA Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -210,12 +211,12 @@ export function FfoGuideArticle() {
         FFO is non-GAAP, not cash flow, and does not automatically deduct
         recurring CapEx. Official Nareit reconciliations may include additional
         adjustments. Related:{' '}
-        <a
+        <Link
           href="/tools/fcfe-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           FCFE Calculator
-        </a>
+        </Link>
         . Educational estimates only — not accounting, audit, or investment advice.
       </p>
 

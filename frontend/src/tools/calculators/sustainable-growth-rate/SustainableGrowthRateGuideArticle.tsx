@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { SGR_FAQS } from './content';
 
@@ -67,19 +68,19 @@ export function SustainableGrowthRateGuideArticle() {
         Retention shows the share of earnings kept for reinvestment after
         dividends. Higher retention supports higher SGR for a given ROE, with
         trade-offs for cash distributions. See the{' '}
-        <a
+        <Link
           href="/tools/retention-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Retention Ratio Calculator
-        </a>{' '}
+        </Link>{' '}
         and{' '}
-        <a
+        <Link
           href="/tools/dividend-payout-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Dividend Payout Ratio Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -94,12 +95,12 @@ export function SustainableGrowthRateGuideArticle() {
         margins, and asset use all affect ROE. Average equity can better match
         period income when the balance sheet changes. Unusually high ROE warrants
         checking leverage and one-time items. Related:{' '}
-        <a
+        <Link
           href="/tools/return-on-equity-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Return on Equity Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -145,12 +146,12 @@ export function SustainableGrowthRateGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Do not treat internal growth rate and SGR as identical. Related asset
         profitability:{' '}
-        <a
+        <Link
           href="/tools/return-on-assets-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Return on Assets Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -237,68 +238,68 @@ export function SustainableGrowthRateGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/retention-ratio-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Retention Ratio Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/return-on-equity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Return on Equity Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/return-on-assets-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Return on Assets Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/roic-calculator-return-on-invested-capital"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             ROIC Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/dupont-analysis-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             DuPont Analysis Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/earnings-per-share-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Earnings per Share Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/dividend-payout-ratio-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Dividend Payout Ratio Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/financial-leverage-ratio-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Financial Leverage Ratio Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

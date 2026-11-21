@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { FISHER_EQUATION_FAQS } from './content';
 
@@ -17,12 +18,12 @@ export function FisherEquationGuideArticle() {
         (1+i)=(1+r)(1+πᵉ) and shows the approximate additive form side by side.
         It focuses on mathematical transparency — derivation, rearrangement, and
         exact-versus-approximate differences — distinct from the companion{' '}
-        <a
+        <Link
           href="/tools/fisher-effect-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Fisher Effect Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -179,12 +180,12 @@ export function FisherEquationGuideArticle() {
         theoretical idea that nominal rates move with expected inflation when
         the real rate is held constant. Practice differs with risk premiums and
         monetary conditions. Use the{' '}
-        <a
+        <Link
           href="/tools/fisher-effect-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Fisher Effect Calculator
-        </a>{' '}
+        </Link>{' '}
         for that framing.
       </p>
 
@@ -235,52 +236,52 @@ export function FisherEquationGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/fisher-effect-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Fisher Effect Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/cpi-inflation-calculator-consumer-price-index"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             CPI Inflation Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/buying-power-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Buying Power Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/compound-interest-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Compound Interest Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/simple-interest-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Simple Interest Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/apr-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             APR Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

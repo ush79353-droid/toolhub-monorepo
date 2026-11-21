@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import type { MonthOverMonthResult } from './types';
 
 interface MonthOverMonthResultsProps {
@@ -97,19 +99,19 @@ export function MonthOverMonthResults({ result }: MonthOverMonthResultsProps) {
       ) : null}
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/year-over-year-growth-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Year-over-Year Growth
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/cagr-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           CAGR Calculator
-        </a>
+        </Link>
         .
       </p>
     </div>

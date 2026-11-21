@@ -174,11 +174,17 @@ export function validateCommercialLeaseInput(
   );
   const feeDisplay = convertMoney(calc.fee, input.baseCurrency, input.feeCurrency, rates);
 
-  for (const part of [totalDisplay, rentDisplay, feeDisplay]) {
-    if (!part.ok) {
-      errors.form = part.message;
-      return { isValid: false, errors, result: null };
-    }
+  if (!totalDisplay.ok) {
+    errors.form = totalDisplay.message;
+    return { isValid: false, errors, result: null };
+  }
+  if (!rentDisplay.ok) {
+    errors.form = rentDisplay.message;
+    return { isValid: false, errors, result: null };
+  }
+  if (!feeDisplay.ok) {
+    errors.form = feeDisplay.message;
+    return { isValid: false, errors, result: null };
   }
 
   const result: CommercialLeaseResult = {

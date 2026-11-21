@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import type { EbtResult } from './types';
 
@@ -84,19 +86,19 @@ export function EbtResults({ result }: EbtResultsProps) {
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/ebit-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           EBIT
-        </a>
+        </Link>
         ,{' '}
-        <a
+        <Link
           href="/tools/ebitda-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           EBITDA
-        </a>
+        </Link>
         .
       </p>
     </div>

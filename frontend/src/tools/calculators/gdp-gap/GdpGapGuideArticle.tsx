@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { GDP_GAP_FAQS } from './content';
 
@@ -242,44 +243,44 @@ export function GdpGapGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/gdp-deflator-formula-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             GDP Deflator Formula Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/cpi-inflation-calculator-consumer-price-index"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             CPI Inflation Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/buying-power-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Buying Power Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/fisher-equation-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Fisher Equation Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/productivity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Productivity Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

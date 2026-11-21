@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { DPO_FAQS } from './content';
 
@@ -151,12 +152,12 @@ export function DpoGuideArticle() {
         Increasing DPO reduces measured CCC when other components are unchanged,
         but extending payments beyond agreed terms can create operational risk.
         Use the{' '}
-        <a
+        <Link
           href="/tools/cash-conversion-cycle-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Cash Conversion Cycle Calculator
-        </a>{' '}
+        </Link>{' '}
         for the full cycle.
       </p>
 

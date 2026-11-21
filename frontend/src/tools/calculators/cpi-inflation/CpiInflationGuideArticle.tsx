@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { CPI_INFLATION_FAQS } from './content';
 import {
@@ -247,36 +248,36 @@ export function CpiInflationGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/buying-power-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Buying Power Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/present-value-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Present Value Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/future-value-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Future Value Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/compound-interest-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Compound Interest Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import type { ReactNode } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { CurrencySelect } from '@/tools/shared/CurrencySelect';
@@ -328,12 +330,12 @@ export function CarDepreciationForm({
 
           <div className="rounded-lg border border-border bg-brand-softTeal/35 px-3 py-2.5 text-sm text-accent">
             Scared of depreciation? Check out our{' '}
-            <a
+            <Link
               href="/tools/car-lease-calculator"
               className="font-semibold text-primary underline underline-offset-2"
             >
               car lease calculator
-            </a>
+            </Link>
             !
           </div>
         </div>

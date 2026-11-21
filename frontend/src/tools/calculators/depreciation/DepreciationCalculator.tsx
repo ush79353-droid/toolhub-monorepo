@@ -156,7 +156,7 @@ export function DepreciationCalculator({
     ? FX_NOTE
     : CURRENCY_CONVERSION_UNAVAILABLE_NOTE;
   const ratesWarning =
-    ratesStatus.available && ratesStatus.stale ? ratesStatus.message : null;
+    ratesStatus.available && ratesStatus.isStale ? ratesStatus.warning : null;
 
   const summary = result
     ? [

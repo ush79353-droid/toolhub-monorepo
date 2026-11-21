@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { ROA_FAQS } from './content';
 
@@ -140,19 +141,19 @@ export function ReturnOnAssetsGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         This DuPont-style identity links profitability and asset use. Keep
         denominators and periods consistent when combining ratios. See the{' '}
-        <a
+        <Link
           href="/tools/dupont-analysis-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           DuPont Analysis Calculator
-        </a>{' '}
+        </Link>{' '}
         and{' '}
-        <a
+        <Link
           href="/tools/total-asset-turnover-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Total Asset Turnover Calculator
-        </a>
+        </Link>
         .
       </p>
 

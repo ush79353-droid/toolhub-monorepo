@@ -58,6 +58,15 @@ export function validateUnemploymentInput(input: UnemploymentInput): {
     return { isValid: false, errors, result: null, syncedInput };
   }
 
+  if (
+    !employedParsed.ok ||
+    !unemployedParsed.ok ||
+    !laborParsed.ok ||
+    !workingAgeParsed.ok
+  ) {
+    return { isValid: false, errors, result: null, syncedInput };
+  }
+
   const employedAmount = employedParsed.value;
   const unemployedAmount = unemployedParsed.value;
   const laborAmount = laborParsed.value;

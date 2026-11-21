@@ -156,13 +156,16 @@ export function validateMonthOverMonthInput(
     cd.value !== null;
 
   if (cmgrReady) {
-    const months = convertDurationToMonths(cd.value, input.cmgrDurationUnit);
+    const initial = ci.value!;
+    const final = cf.value!;
+    const duration = cd.value!;
+    const months = convertDurationToMonths(duration, input.cmgrDurationUnit);
     if (months === null) {
       errors.cmgrDuration = 'Duration must normalize to a positive number of months.';
     } else {
       const cmgrPercent = calculateCompoundingMonthlyGrowthRate(
-        ci.value,
-        cf.value,
+        initial,
+        final,
         months
       );
       if (cmgrPercent === null) {
@@ -175,8 +178,8 @@ export function validateMonthOverMonthInput(
           interpretation: interpretCmgr(
             cmgrPercent,
             months,
-            ci.value,
-            cf.value
+            initial,
+            final
           ),
           warning: null,
         };

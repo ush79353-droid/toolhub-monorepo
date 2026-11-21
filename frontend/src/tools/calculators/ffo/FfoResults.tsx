@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import type { FfoResult } from './types';
 
@@ -60,19 +62,19 @@ export function FfoResults({ result }: FfoResultsProps) {
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/fcfe-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           FCFE
-        </a>
+        </Link>
         ,{' '}
-        <a
+        <Link
           href="/tools/ebitda-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           EBITDA
-        </a>
+        </Link>
         .
       </p>
     </div>

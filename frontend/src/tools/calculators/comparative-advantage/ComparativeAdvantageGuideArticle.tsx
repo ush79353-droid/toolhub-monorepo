@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { COMPARATIVE_ADVANTAGE_FAQS } from './content';
 
@@ -255,52 +256,52 @@ export function ComparativeAdvantageGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/opportunity-cost-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Opportunity Cost Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/productivity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Productivity Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/cobb-douglas-production-function-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Cobb-Douglas Production Function Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/marginal-cost-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Marginal Cost Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/economic-profit-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Economic Profit Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/buying-power-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Buying Power Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

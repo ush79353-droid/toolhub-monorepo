@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { UB_FAQS } from './content';
 
@@ -103,12 +104,12 @@ export function UnleveredBetaGuideArticle() {
         Levered beta measures equity return sensitivity to market moves and
         embeds financial leverage. Estimates vary with lookback windows,
         frequency, and market indexes. Related:{' '}
-        <a
+        <Link
           href="/tools/portfolio-beta-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Portfolio Beta Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -122,12 +123,12 @@ export function UnleveredBetaGuideArticle() {
         D/E compares interest-bearing debt to equity. Valuation often prefers
         market-value weights; accounting book equity is common on statements.
         Keep debt and equity definitions consistent. See the{' '}
-        <a
+        <Link
           href="/tools/debt-to-equity-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Debt-to-Equity Ratio Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -142,12 +143,12 @@ export function UnleveredBetaGuideArticle() {
         normalized rates used in valuation. Interest tax deductibility motivates
         the (1 − T) term in the Hamada formula. Choose the rate that matches your
         model. Related:{' '}
-        <a
+        <Link
           href="/tools/effective-corporate-tax-rate-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Effective Corporate Tax Rate Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -209,19 +210,19 @@ export function UnleveredBetaGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         CAPM uses levered equity beta. Analysts may unlever peer betas, average
         them, relever to the subject firm, then plug βL into CAPM. See the{' '}
-        <a
+        <Link
           href="/tools/capm-calculator-capital-asset-pricing-model"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           CAPM Calculator
-        </a>{' '}
+        </Link>{' '}
         and{' '}
-        <a
+        <Link
           href="/tools/cost-of-equity-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Cost of Equity Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -268,68 +269,68 @@ export function UnleveredBetaGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/portfolio-beta-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Portfolio Beta Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/capm-calculator-capital-asset-pricing-model"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             CAPM Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/debt-to-equity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Debt-to-Equity Ratio Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/cost-of-equity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Cost of Equity Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/financial-leverage-ratio-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Financial Leverage Ratio Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/return-on-equity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Return on Equity Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/dupont-analysis-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             DuPont Analysis Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/enterprise-value-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Enterprise Value Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

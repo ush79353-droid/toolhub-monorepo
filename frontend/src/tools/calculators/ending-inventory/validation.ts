@@ -93,7 +93,7 @@ export function validateEndingInventoryInput(
   }
 
   let resolvedCogs: number;
-  let resolvedTurnover: number | null;
+  let resolvedTurnover: number | null = null;
 
   if (cogsKnown) {
     if (cogs.blank || cogs.value === null) {

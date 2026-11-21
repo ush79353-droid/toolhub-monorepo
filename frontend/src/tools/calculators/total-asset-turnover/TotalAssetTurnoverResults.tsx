@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { useState } from 'react';
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import type { TotalAssetTurnoverResult } from './types';
@@ -136,33 +138,33 @@ export function TotalAssetTurnoverResults({
 
       <p className="text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/fixed-asset-turnover-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Fixed Asset Turnover
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/inventory-turnover-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Inventory Turnover
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/receivables-turnover-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Receivables Turnover
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/financial-leverage-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Financial Leverage
-        </a>
+        </Link>
         .
       </p>
     </div>

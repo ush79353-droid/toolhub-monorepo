@@ -204,11 +204,29 @@ export function validateRentalCommissionInput(
   const annualDisplay = toDisplay(annualCanonical, input.annualCurrency);
   const monthlyDisplay = toDisplay(monthlyCanonical, input.monthlyCurrency);
 
-  for (const part of [half, one, oneHalf, custom, annualDisplay, monthlyDisplay]) {
-    if (!part.ok) {
-      errors.form = part.message;
-      return { isValid: false, errors, result: null };
-    }
+  if (!half.ok) {
+    errors.form = half.message;
+    return { isValid: false, errors, result: null };
+  }
+  if (!one.ok) {
+    errors.form = one.message;
+    return { isValid: false, errors, result: null };
+  }
+  if (!oneHalf.ok) {
+    errors.form = oneHalf.message;
+    return { isValid: false, errors, result: null };
+  }
+  if (!custom.ok) {
+    errors.form = custom.message;
+    return { isValid: false, errors, result: null };
+  }
+  if (!annualDisplay.ok) {
+    errors.form = annualDisplay.message;
+    return { isValid: false, errors, result: null };
+  }
+  if (!monthlyDisplay.ok) {
+    errors.form = monthlyDisplay.message;
+    return { isValid: false, errors, result: null };
   }
 
   const result: RentalCommissionResult = {

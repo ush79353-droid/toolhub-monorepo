@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import type { DioResult } from './types';
 
@@ -69,12 +71,12 @@ export function DioResults({ result }: DioResultsProps) {
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         DIO is one component of the cash conversion cycle: CCC = DIO + DSO − DPO.
         See the{' '}
-        <a
+        <Link
           href="/tools/cash-conversion-cycle-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Cash Conversion Cycle Calculator
-        </a>{' '}
+        </Link>{' '}
         for the full working-capital cycle.
       </p>
     </div>

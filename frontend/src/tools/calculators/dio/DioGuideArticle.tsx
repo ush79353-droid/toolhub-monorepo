@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { DIO_FAQS } from './content';
 
@@ -158,12 +159,12 @@ export function DioGuideArticle() {
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         Inventory holding days are one component of the operating cash cycle.
         Use the{' '}
-        <a
+        <Link
           href="/tools/cash-conversion-cycle-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Cash Conversion Cycle Calculator
-        </a>{' '}
+        </Link>{' '}
         when you also have receivable and payable day measures.
       </p>
 

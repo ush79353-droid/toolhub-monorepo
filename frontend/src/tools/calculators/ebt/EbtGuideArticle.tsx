@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { EBT_FAQS } from './content';
 
@@ -101,12 +102,12 @@ export function EbtGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Under this structure, EBIT ≈ Gross profit − Operating expenses. EBT then
         subtracts interest and adds other income. See the{' '}
-        <a
+        <Link
           href="/tools/ebit-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           EBIT Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -119,12 +120,12 @@ export function EbtGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         EBITDA adds back D&amp;A to an EBIT measure. EBT is pretax earnings after
         interest and other income. See the{' '}
-        <a
+        <Link
           href="/tools/ebitda-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           EBITDA Calculator
-        </a>
+        </Link>
         .
       </p>
 

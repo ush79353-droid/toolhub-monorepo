@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { CARRY_TRADE_FAQS } from './content';
 
@@ -227,44 +228,44 @@ export function CarryTradeGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/interest-rate-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Interest Rate Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/simple-interest-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Simple Interest Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/compound-interest-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Compound Interest Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/roi-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             ROI Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/apr-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             APR Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

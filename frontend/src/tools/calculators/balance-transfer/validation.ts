@@ -384,7 +384,7 @@ export function validateBalanceTransferInput(
   };
 
   return {
-    isValid: status !== 'neverPaysOff' && status !== 'invalid',
+    isValid: status !== 'neverPaysOff',
     errors,
     result,
   };

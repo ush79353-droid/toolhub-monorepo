@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { FINANCIAL_LEVERAGE_RATIO_FAQS } from './content';
 
@@ -208,12 +209,12 @@ export function FinancialLeverageRatioGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Book values, maturity structure, interest coverage, liquidity, and
         off-balance-sheet items are not fully captured. Related:{' '}
-        <a
+        <Link
           href="/tools/degree-of-operating-leverage-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Degree of Operating Leverage
-        </a>
+        </Link>
         . Educational estimates only — not accounting or investment advice.
       </p>
 

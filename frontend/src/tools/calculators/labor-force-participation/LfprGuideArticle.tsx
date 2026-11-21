@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { LFPR_FAQS } from './content';
 
@@ -211,26 +212,26 @@ export function LfprGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Labor input is a building block of GDP. Pair LFPR with{' '}
-        <a
+        <Link
           href="/tools/gdp-growth-rate-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           GDP Growth Rate
-        </a>
+        </Link>
         ,{' '}
-        <a
+        <Link
           href="/tools/gdp-per-capita-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           GDP per Capita
-        </a>
+        </Link>
         , and{' '}
-        <a
+        <Link
           href="/tools/productivity-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Productivity
-        </a>{' '}
+        </Link>{' '}
         for a fuller growth picture.
       </p>
 
@@ -305,76 +306,76 @@ export function LfprGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/unemployment-calculator-unemployment-rate"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Unemployment Rate Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/gdp-growth-rate-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             GDP Growth Rate Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/gdp-per-capita-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             GDP per Capita Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/productivity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Productivity Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/annual-income-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Annual Income Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/wage-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Wage Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/hourly-wage-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Hourly Wage Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/inflation-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Inflation Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/discretionary-income-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Discretionary Income Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

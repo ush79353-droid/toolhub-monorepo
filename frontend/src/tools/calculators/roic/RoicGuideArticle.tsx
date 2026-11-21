@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { ROIC_FAQS } from './content';
 
@@ -119,12 +120,12 @@ export function RoicGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         See the{' '}
-        <a
+        <Link
           href="/tools/return-on-equity-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Return on Equity Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -139,12 +140,12 @@ export function RoicGuideArticle() {
         capital employed, while ROIC typically uses NOPAT over invested capital.
         Definitions of both denominators vary by analyst. Use consistent
         definitions when comparing firms. Related:{' '}
-        <a
+        <Link
           href="/tools/return-on-capital-employed-calculator-roce"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           ROCE Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -177,12 +178,12 @@ export function RoicGuideArticle() {
         suggests the opposite. This calculator does not assume a WACC — supply
         your own estimate when comparing. Related value-creation tools include
         the{' '}
-        <a
+        <Link
           href="/tools/economic-value-added-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Economic Value Added Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -198,12 +199,12 @@ export function RoicGuideArticle() {
         keeps financing costs out of the numerator so ROIC focuses on operating
         performance. NOPAT differs from net income, which subtracts interest and
         may include non-operating items. For EBIT inputs see the{' '}
-        <a
+        <Link
           href="/tools/ebit-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           EBIT Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -286,84 +287,84 @@ export function RoicGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/return-on-equity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Return on Equity Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/return-on-assets-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Return on Assets Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/dupont-analysis-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             DuPont Analysis Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/ebit-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             EBIT Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/ebitda-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             EBITDA Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/economic-value-added-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Economic Value Added Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/enterprise-value-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Enterprise Value Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/financial-leverage-ratio-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Financial Leverage Ratio Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/net-operating-working-capital-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Net Operating Working Capital Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/return-on-capital-employed-calculator-roce"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Return on Capital Employed Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

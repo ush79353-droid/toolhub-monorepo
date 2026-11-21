@@ -12,6 +12,7 @@
     "strictPropertyInitialization": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
+    // Soft during mass calculator delivery (mirrors ESLint unused-vars off).
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitReturns": true,

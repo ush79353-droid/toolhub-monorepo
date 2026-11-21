@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { getCurrencySymbol } from '@/tools/shared/currency';
@@ -140,19 +142,19 @@ export function LifoInventoryResults({ result }: LifoInventoryResultsProps) {
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/fifo-calculator-for-inventory"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           FIFO Calculator
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/inventory-turnover-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Inventory Turnover
-        </a>
+        </Link>
         .
       </p>
     </div>

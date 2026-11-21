@@ -135,8 +135,9 @@ export function validateMpcInput(input: MpcInput): MpcValidation {
     currency: input.currency,
     changeInDisposableIncome,
     changeInConsumption,
-    mpc,
     mpcUndefinedReason: null,
+    autonomousConsumption: auto.value,
+    disposableIncome: yd.value,
     ...presentation,
   };
 

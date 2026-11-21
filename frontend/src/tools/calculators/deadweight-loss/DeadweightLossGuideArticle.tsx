@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { DEADWEIGHT_LOSS_FAQS } from './content';
 
@@ -247,36 +248,36 @@ export function DeadweightLossGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/consumer-surplus-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Consumer Surplus Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/price-elasticity-of-demand-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Price Elasticity of Demand Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/marginal-cost-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Marginal Cost Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/cobb-douglas-production-function-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Cobb-Douglas Production Function Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

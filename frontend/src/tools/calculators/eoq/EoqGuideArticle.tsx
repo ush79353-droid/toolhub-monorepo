@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { EOQ_FAQS } from './content';
 
@@ -198,19 +199,19 @@ export function EoqGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         EOQ is a simplified cost-optimization model, not a complete inventory
         system. Related tools:{' '}
-        <a
+        <Link
           href="/tools/ending-inventory-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Ending Inventory
-        </a>{' '}
+        </Link>{' '}
         and{' '}
-        <a
+        <Link
           href="/tools/dio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           DIO
-        </a>
+        </Link>
         . Educational estimates only — not operational, accounting, or investment
         advice.
       </p>

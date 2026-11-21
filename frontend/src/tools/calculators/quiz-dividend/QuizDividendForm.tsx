@@ -168,7 +168,10 @@ export function QuizDividendForm({
                   aria-labelledby={`quiz-div-${question.id}-label`}
                   placeholder={question.kind === 'percent' ? '0' : '0.00'}
                   onChange={(event) =>
-                    setNumeric(question.id, event.target.value)
+                    setNumeric(
+                      question.id === 'q4' ? 'q4' : 'q6',
+                      event.target.value
+                    )
                   }
                 />
                 {question.kind === 'percent' ? (

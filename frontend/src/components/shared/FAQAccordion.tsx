@@ -9,12 +9,20 @@ export interface FAQItem {
   answer: string;
 }
 
-export interface FAQAccordionProps {
-  items: readonly FAQItem[];
+export type FAQAccordionProps = {
   className?: string;
-}
+} & (
+  | { items: readonly FAQItem[]; faqs?: never }
+  | { faqs: readonly FAQItem[]; items?: never }
+);
 
-export function FAQAccordion({ items, className = '' }: FAQAccordionProps) {
+/** Accepts `items` (canonical) or legacy `faqs` alias used by many guide articles. */
+export function FAQAccordion({
+  items,
+  faqs,
+  className = '',
+}: FAQAccordionProps) {
+  const list = items ?? faqs;
   const [openIndex, setOpenIndex] = React.useState<number | null>(0);
 
   const toggle = (index: number) => {
@@ -23,7 +31,7 @@ export function FAQAccordion({ items, className = '' }: FAQAccordionProps) {
 
   return (
     <div className={cn('space-y-3', className)}>
-      {items.map((item, index) => {
+      {list.map((item, index) => {
         const isOpen = openIndex === index;
         return (
           <div
