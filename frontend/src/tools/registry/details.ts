@@ -87,8 +87,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-with-discount/detail'),
   MaintainPregnancyWeightCalculator: () =>
     import('@/tools/calculators/maintain-pregnancy-weight/detail'),
-  MealCalorieCalculator: () =>
-    import('@/tools/calculators/meal-calorie/detail'),
   MaintenanceCalorieCalculator: () =>
     import('@/tools/calculators/maintenance-calorie/detail'),
   MelatoninDosageCalculator: () =>
