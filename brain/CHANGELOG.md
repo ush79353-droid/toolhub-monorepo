@@ -1,8 +1,19 @@
-﻿# Development Changelog (`CHANGELOG.md`)
+# Development Changelog (`CHANGELOG.md`)
 
 > **Convention:** Append entries chronologically after verified tasks. Do not rewrite historical entries.
 
 ---
+
+### 2026-11-22 — IVF Due Date Calculator
+- **Summary:** Shipped IVF Due Date Calculator on existing catalog slug `ivf-due-date-calculator` (`IvfDueDateCalculator`, catalog `6af46f10a27d8d1d4e990205`). Screenshot-first ACOG CO 700 Day-3/Day-5/own/donor dating; plurality does not change EDD; share URL only. **No FX**. Activated `--set-active`; **`indexable` false**. TASKS `TOOL-687`.
+- **Commits:** `d4ea7618` (UI) / `8598c9c1` (engine) / (registration/Brain — this commit).
+- **Example:** Day-3 **2026-01-01** → **2026-09-21**.
+- **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+### 2026-11-22 — Pregnancy Weight Gain Calculator
+- **Summary:** Shipped Pregnancy Weight Gain Calculator on existing catalog slug `pregnancy-weight-gain-calculator` (`PregnancyWeightGainCalculator`, catalog `6af46f10a27d8d1d4e9901f2`, pillar `6af451c1a27d8d1d4e98f983`, subPillar null). Screenshot-first (ADR-023): Before pregnancy (blank cm/kg → BMI) + Weight during pregnancy (week 40, Twins checkbox, min/max weight & gain with kg/lb); share = page URL only. IOM 2009 singleton totals/rates + first-trimester 0.5–2.0 kg model; twin provisional totals only week ≥37; underweight twins unavailable. Exports `computeGestationalGainBounds` for Excessive Weight Gain. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-688`.
+- **Commits:** `c7ce7a51` (UI absorbed into concurrent Infant Tylenol commit) / `6510f141` (engine absorbed as shared IOM for Is-BMI sibling) / (registration/Brain/tracker — this commit).
+- **Example:** **165** cm · **60** kg · week **40** singleton → BMI ≈ **22.04** · gain **11.5–16** kg · weight **71.5–76** kg.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Ibuprofen Dosage Calculator
 - **Summary:** Shipped Ibuprofen Dosage Calculator on existing catalog slug `ibuprofen-dosage-calculator` (`IbuprofenDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d6`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): 6+ months checkbox; blank kg/lb weight; safety note; examples 9.6/31.8 kg; Infants’ MOTRIN drops + Children’s suspension FDA/DailyMed weight bands; checkbox alone never doses; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-687`.
@@ -3538,6 +3549,11 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
+### 2026-11-22 — IVF Due Date Calculator
+- **Summary:** Shipped IVF Due Date Calculator on existing catalog slug `ivf-due-date-calculator` (`IvfDueDateCalculator`, catalog `6af46f10a27d8d1d4e990205`). Screenshot-first ACOG CO 700 Day-3/Day-5/own/donor dating; plurality does not change EDD; share URL only. **No FX**. Activated `--set-active`; **`indexable` false**. TASKS `TOOL-687`.
+- **Commits:** `d4ea7618` (UI) / `8598c9c1` (engine) / (registration/Brain — this commit).
+- **Example:** Day-3 **2026-01-01** → **2026-09-21**.
+- **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Infant Tylenol Dosage Calculator
 - **Summary:** Shipped Infant Tylenol Dosage Calculator on existing catalog slug `infant-tylenol-dosage-calculator` (`InfantTylenolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d7`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): blank age/weight; unselected radios for Infant/Children's suspension 160 mg/5 mL, chewable 160 mg, dissolve pack 160 mg; weight-first DailyMed/Tylenol.com bands; acetaminophen duplicate warning; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-677`.
