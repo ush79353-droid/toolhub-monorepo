@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Markdown Calculator
+- **Summary:** Shipped Markdown Calculator on existing catalog slug `markdown-calculator` (`MarkdownCalculator`, catalog `6af46f10a27d8d1d4e9901a1`, preserved `nameKey` `markdown calculator`). Screenshot-first (ADR-023): bidirectional original/actual/markdown amount/% with last-two-edited priority (prefer original anchor); denomination CurrencySelect; retail markdown only (not text Markdown); guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Original **$100** · actual **$75** → markdown **$25** · **25%**; original **$200** · **30%** → actual **$140**.
+- **Important Files:** `frontend/src/tools/calculators/markdown/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` markdown tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Cyber Monday Calculator
 - **Summary:** Shipped Cyber Monday Calculator on existing catalog slug `cyber-monday-calculator` (`CyberMondayCalculator`, catalog `6af46f10a27d8d1d4e9901a0`, preserved `nameKey` `cyber monday calculator`). Screenshot-first (ADR-023): percentage/fixed/double/triple discounts, BOGO, Buy X Get Y, percent+coupon; sales tax exclusive/included; shipping + free-ship threshold; optional Black Friday total compare; dynamic Cyber Monday date; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$200** · **25%** · tax **8%** · ship **$10** → merchandise **$150** · final **$172**.

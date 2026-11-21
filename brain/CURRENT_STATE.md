@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Cyber Monday Calculator live at `/tools/cyber-monday-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Markdown Calculator live at `/tools/markdown-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Markdown Calculator (`/tools/markdown-calculator`):** Live client-side retail price-reduction tool (`componentKey: 'MarkdownCalculator'`, catalog `6af46f10a27d8d1d4e9901a1`, `nameKey` `markdown calculator`). Screenshot-first (ADR-023): four linked fields (original, actual, markdown $, markdown %); six bidirectional pairs; last-two-edited priority preferring original price anchor; denomination CurrencySelect; not Markdown text. Activated; **`indexable` left false**. Example: **$100** → **$75** · markdown **$25** · **25%**.
 - **Cyber Monday Calculator (`/tools/cyber-monday-calculator`):** Live client-side shopping deal tool (`componentKey: 'CyberMondayCalculator'`, catalog `6af46f10a27d8d1d4e9901a0`, `nameKey` `cyber monday calculator`). Screenshot-first (ADR-023): percentage/fixed/double/triple/BOGO/Buy X Get Y/percent+coupon; tax exclusive or included; shipping + free-ship threshold; optional BF checkout compare; dynamic Cyber Monday date; denomination CurrencySelect; guide/FAQ. Activated; **`indexable` left false**. Example: **$200** · **25%** · tax **8%** · ship **$10** → **$172**.
 - **CLTV Calculator – Customer Lifetime Value (`/tools/cltv-calculator-customer-lifetime-value`):** Live client-side CLTV tool (`componentKey: 'CltvCalculator'`, catalog `6af46f10a27d8d1d4e99019f`, `nameKey` `cltv calculator – customer lifetime value`). Screenshot-first (ADR-023): APV×APF×L; optional business-data derivation with period annualization; optional gross-profit CLTV, CAC ratio, discounted CLTV, churn lifespan helper; denomination CurrencySelect; guide/FAQ. Activated; **`indexable` left false**. Example: **$50** · **5**/yr · **3**y → **$750**.
 - **Check Digit Calculator (`/tools/check-digit-calculator`):** Live client-side GS1 Modulo 10 tool (`componentKey: 'CheckDigitCalculator'`, catalog `6af46f10a27d8d1d4e99019e`, `nameKey` `check digit calculator`). Screenshot-first (ADR-023): leading-zeros dropdown + digit-string payload; GTIN-8/12/13/14 (EAN-8, UPC-A, EAN-13); generate + validate modes; weights 3/1 from the right; CheckDigit=(10−(S mod 10)) mod 10; step table; no batch UI. Activated; **`indexable` left false**. Example: **400638133393** → check **1** → **4006381333931**.

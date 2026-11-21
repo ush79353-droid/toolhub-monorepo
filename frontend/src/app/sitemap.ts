@@ -53,6 +53,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'margin-call-calculator',
   'margin-of-safety-calculator',
   'margin-with-discount-calculator',
+  'markdown-calculator',
   'net-debt-calculator',
   'net-effective-rent-calculator',
   'net-profit-margin-calculator',

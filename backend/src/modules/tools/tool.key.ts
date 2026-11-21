@@ -43,6 +43,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarginCallCalculator',
   'MarginOfSafetyCalculator',
   'MarginWithDiscountCalculator',
+  'MarkdownCalculator',
   'NetDebtCalculator',
   'NetEffectiveRentCalculator',
   'IncomeTaxCalculator',
@@ -1761,6 +1762,7 @@ if (isDirect) {
     !isApprovedComponentKey('MarginCallCalculator') ||
     !isApprovedComponentKey('MarginOfSafetyCalculator') ||
     !isApprovedComponentKey('MarginWithDiscountCalculator') ||
+    !isApprovedComponentKey('MarkdownCalculator') ||
     !isApprovedComponentKey('OperatingMarginCalculator') ||
     !isApprovedComponentKey('NetProfitMarginCalculator') ||
     !isApprovedComponentKey('ReturnOnSalesCalculator') ||

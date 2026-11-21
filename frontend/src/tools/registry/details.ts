@@ -75,6 +75,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-of-safety/detail'),
   MarginWithDiscountCalculator: () =>
     import('@/tools/calculators/margin-with-discount/detail'),
+  MarkdownCalculator: () =>
+    import('@/tools/calculators/markdown/detail'),
   ModifiedAdjustedGrossIncomeCalculator: () =>
     import(
       '@/tools/calculators/modified-adjusted-gross-income/detail'
