@@ -6,8 +6,8 @@ Total discovered: 55+
 Newly developed: 47+
 Already developed: 1
 Development failed: 0
-Skipped / blocked: 1 (Missouri ON HOLD)
-Remaining pending: live filesystem count (multi-agent Tools queue active)
+Skipped / blocked: 2 (Missouri Sales Tax + Take-Home-Paycheck — both BLOCKED, remain In Progress)
+Remaining pending: live filesystem count (`In Progress` = 2 blocked folders as of 2026-11-21 recovery)
 Audit completed: 0
 Audit pending: deferred to final audit coordinator
 
@@ -72,7 +72,8 @@ Audit pending: deferred to final audit coordinator
 
 | 45 | Mortgage Refinance Calculator | DEVELOPED | AUDIT PENDING | 749a9467 | 60a84848 | 3c5d6b59 | Completed Tools | `MortgageRefinanceCalculator`; slug `mortgage-refinance-calculator`; Mongo `6af46f0fa27d8d1d4e99001b`; Phase 2 FX; indexable false |
 | 48 | Florida Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 41c7d638 | cdce4997 | 49904891 | Completed Tools | `FloridaSalesTaxCalculator`; slug `florida-sales-tax-calculator`; Mongo `6af46f0fa27d8d1d4e990028` active; indexable false; DR-15DSS 2026 + Census ZCTA→county; correct screenshot restored 2026-11-20 |
-| 49 | Missouri Sales Tax Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Official DOR Q4/Q3 2026 boundary+jurisdiction files HTTP 403 Incapsula WAF from agent; no browser automation allowed; catalog `6af46f0fa27d8d1d4e99002a` undeveloped; TOOL-542 |
+| 49 | Missouri Sales Tax Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Revalidated 2026-11-21: DOR Q4/Q3 2026 boundary+jurisdiction still HTTP 403; Wayback no CSV; no module/registry; Mongo `6af46f0fa27d8d1d4e99002a` undeveloped/inactive/indexable false; TOOL-542 |
+| 47b | Take-Home-Paycheck Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Revalidated 2026-11-21: Anderson @ 1.37% still no authorized state; not Texas Tax (`…0076`); Mongo `6af46f0fa27d8d1d4e990074` undeveloped/inactive/indexable false; no module |
 | 46 | Revenue Growth Calculator | DEVELOPED | AUDIT PENDING | 1a5820fc | 1544c996 | 8553d560 | Completed Tools | `RevenueGrowthCalculator`; slug `revenue-growth-calculator`; Mongo `6af46f0fa27d8d1d4e99001f` active; indexable false; Phase 2 FX; reuses `solveCagr` |
 | 47 | Sales Calculator | DEVELOPED | AUDIT PENDING | b93e6d2b | 6ac9750d | b1561c80 | Completed Tools | `SalesCalculator`; slug `sales-calculator`; Mongo `6af46f0fa27d8d1d4e990022` active; Phase 2 FX; indexable false |
 | 50 | Revenue Calculator | DEVELOPED | AUDIT PENDING | 0a88c118 | acb04cee | 27f6d29f | Completed Tools | `RevenueCalculator`; slug `revenue-calculator`; Mongo `6af46f0fa27d8d1d4e99001d` active; Phase 2 FX; indexable false; reg `27f6d29f` (supersedes `d6bb0538`) |
@@ -335,6 +336,15 @@ Screenshot-first 1p–£2 counts × Royal Mint standard masses; g/kg display. No
 | 72 | UK Coin Weight Calculator | DEVELOPED | AUDIT PENDING | 9efd2eb2 | c2748981 | (tracker this commit) | Completed Tools | `UkCoinWeightCalculator`; slug `uk-coin-weight-calculator`; Mongo `6af46f10a27d8d1d4e9901cf` active; indexable false; TASKS `TOOL-652` |
 
 - 2026-11-21 (UK Coin Weight): DEVELOPED (`9efd2eb2` / `c2748981` / tracker). Mongo activated; indexable false. Moved to Completed Tools. Temporary files cleaned: YES.
+
+### 2026-11-21 — Dual In-Progress recovery (Missouri + Take-Home)
+
+Inspected both folders under `In Progress`. Ownership safe (Missouri prior Auto claim released via documented blocker; Take-Home released). Mongo verified live. **Neither calculator can be completed** without violating official-data / jurisdiction rules. No implementation, no commits, no Mongo activation, no folder moves. Push/Pull/Fetch/Sync: NONE. Temporary files cleaned: YES.
+
+| Calculator | Classification | Blocker |
+|---|---|---|
+| Missouri Sales Tax Calculator | BLOCKED | Official DOR Boundary + Jurisdiction Total Rate files still HTTP 403 (Incapsula); no local dataset; prompt forbids inventing ZIP→rate tables |
+| Take-Home-Paycheck Calculator | BLOCKED | County Anderson + 1.37% with no authorized state; Texas Tax already owns TX sibling; KS ACS match circumstantial only |
 
 ### 2026-11-21 — Retirement Calculator DEVELOPED
 
