@@ -681,6 +681,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BusinessValuationCalculator: () =>
     import('@/tools/calculators/business-valuation/detail'),
   CagrCalculator: () => import('@/tools/calculators/cagr/detail'),
+  CallOptionCalculator: () => import('@/tools/calculators/call-option/detail'),
   CapmCalculator: () => import('@/tools/calculators/capm/detail'),
   CanadianMortgageCalculator: () =>
     import('@/tools/calculators/canadian-mortgage/detail'),
@@ -761,6 +762,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EarCalculator: () => import('@/tools/calculators/ear/detail'),
   EarlyLoanPayoffCalculator: () =>
     import('@/tools/calculators/early-loan-payoff/detail'),
+  EarlyRetirementCalculator: () =>
+    import('@/tools/calculators/early-retirement/detail'),
   EbitCalculator: () => import('@/tools/calculators/ebit/detail'),
   EbitdaCalculator: () => import('@/tools/calculators/ebitda/detail'),
   EbitdaMultipleCalculator: () =>
