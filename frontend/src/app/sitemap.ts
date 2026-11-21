@@ -663,6 +663,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'perpetuity-calculator',
   'piti-calculator',
   'post-judgment-interest-calculator',
+  'what-to-do-after-you-get-a-positive-pregnancy-test',
   'pre-and-post-money-valuation-calculator',
   'pregnancy-calculator',
   'pregnancy-conception-calculator',

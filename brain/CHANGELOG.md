@@ -16,6 +16,12 @@
 
 ---
 
+
+### 2026-11-22 — Gabapentin Dosage Calculator
+- **Summary:** Shipped Gabapentin Dosage Calculator on existing catalog slug `gabapentin-dosage-calculator` (`GabapentinDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d5`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): unselected indication radios + blank age; FDA NEURONTIN epilepsy/PHN; RLS→Horizant gate; neuropathy/anxiety informational; renal Table 1 disclaimer; share URL only. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-694`.
+- **Commits:** `d50c4670` (UI) / `9d103f5a` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** Epilepsy · age **30** → start **300 mg TID**; RLS · no IR dose.
+- **Verification:** Focused calculation.test.ts ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-22 — What is a False Negative Pregnancy Test?
 - **Summary:** Article embed of canonical pregnancy-test timing (FalseNegativePregnancyTestCalculator, catalog `6af46f10a27d8d1d4e9901fd`). No false-negative probability. **No FX**. Activated; indexable false. TASKS `TOOL-693`.
 - **Commits:** `8a4a88b2` / `3e17159c` / (this).
@@ -3611,6 +3617,12 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
+
+### 2026-11-22 — Gabapentin Dosage Calculator
+- **Summary:** Shipped Gabapentin Dosage Calculator on existing catalog slug `gabapentin-dosage-calculator` (`GabapentinDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d5`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): unselected indication radios + blank age; FDA NEURONTIN epilepsy/PHN; RLS→Horizant gate; neuropathy/anxiety informational; renal Table 1 disclaimer; share URL only. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-694`.
+- **Commits:** `d50c4670` (UI) / `9d103f5a` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** Epilepsy · age **30** → start **300 mg TID**; RLS · no IR dose.
+- **Verification:** Focused calculation.test.ts ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-22 — What is a False Negative Pregnancy Test?
 - **Summary:** Article embed of canonical pregnancy-test timing (FalseNegativePregnancyTestCalculator, catalog `6af46f10a27d8d1d4e9901fd`). No false-negative probability. **No FX**. Activated; indexable false. TASKS `TOOL-693`.
 - **Commits:** `8a4a88b2` / `3e17159c` / (this).

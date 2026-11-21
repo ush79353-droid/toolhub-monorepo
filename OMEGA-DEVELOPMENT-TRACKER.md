@@ -16,6 +16,7 @@ Audit pending: deferred to final audit coordinator
 | # | Calculator |
 | 84 | Pregnancy Calculator | DEVELOPED | AUDIT PENDING | 4b6b3ce0 | 6eb651f2 | (reg) | Completed Tools | `PregnancyCalculator`; slug `pregnancy-calculator`; Mongo `6af46f10a27d8d1d4e9901f5` active; no FX; indexable false; TASKS `TOOL-678` | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
+| 96 | Gabapentin Dosage Calculator | DEVELOPED | AUDIT PENDING | d50c4670 | 9d103f5a | (reg) | Completed Tools | `GabapentinDosageCalculator`; slug `gabapentin-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d5` active; no FX; indexable false; TASKS `TOOL-694` |
 | 91 | Pregnancy Weight Gain Week by Week Breakdown | DEVELOPED | AUDIT PENDING | 636d88a1 | 4336d3b9 | (reg) | Completed Tools | `PregnancyWeightGainWeekByWeekCalculator`; `6af46f10a27d8d1d4e9901f3`; TOOL-688 |
 | 95 | Meal Calorie Calculator | DEVELOPED | AUDIT PENDING | 2e0c5380 | a49ed20b | (this reg/Brain) | Completed Tools | `MealCalorieCalculator`; slug `meal-calorie-calculator`; Mongo `6af46f10a27d8d1d4e9901ee` active; no FX; indexable false; TASKS `TOOL-693` |
 | 94 | Pregnancy Test Calculator | DEVELOPED | AUDIT PENDING | 3decf657 | 56a8b6ad | (reg/Brain) | Completed Tools | `PregnancyTestCalculator`; slug `pregnancy-test-calculator`; Mongo `6af46f10a27d8d1d4e9901f9` active; no FX; indexable false; TASKS `TOOL-692` |
@@ -268,6 +269,7 @@ Audit pending: deferred to final audit coordinator
 
 | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|
+| 96 | Gabapentin Dosage Calculator | DEVELOPED | AUDIT PENDING | d50c4670 | 9d103f5a | (reg) | Completed Tools | `GabapentinDosageCalculator`; slug `gabapentin-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d5` active; no FX; indexable false; TASKS `TOOL-694` |
 | Lease Calculator | DEVELOPED | AUDIT PENDING | 98bab42b | 7f1bd5b0 | 29908c83 | Completed Tools | `LeaseCalculator`; FX; indexable false |
 | Revenue Calculator | DEVELOPED | AUDIT PENDING | 0a88c118 | acb04cee | 27f6d29f | Completed Tools | `RevenueCalculator`; FX; indexable false; reg `27f6d29f` |
 | Sales Tax Calculator | DEVELOPED | AUDIT PENDING | 98c4cbd3 | c47b2f53 | 704e6729 | Completed Tools | `SalesTaxCalculator`; FX; indexable false |

@@ -974,6 +974,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pivot-point/detail'),
   PortfolioBetaCalculator: () =>
     import('@/tools/calculators/portfolio-beta/detail'),
+  PositivePregnancyFollowUpCalculator: () =>
+    import('@/tools/calculators/positive-pregnancy-follow-up/detail'),
   PostJudgmentInterestCalculator: () =>
     import('@/tools/calculators/post-judgment-interest/detail'),
   PreAndPostMoneyValuationCalculator: () =>

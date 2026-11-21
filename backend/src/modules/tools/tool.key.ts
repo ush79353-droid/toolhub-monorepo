@@ -1004,4 +1004,7 @@ if (isDirect) {
     }
   }
   if (isApprovedComponentKey('EvilEval')) {
-    throw new Error('component key allowlist')
+    throw new Error('component key allowlist');
+  }
+  console.log('tool.key ok');
+}

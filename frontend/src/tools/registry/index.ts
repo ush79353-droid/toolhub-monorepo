@@ -3723,6 +3723,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PortfolioBetaCalculator,
     })),
   ),
+  PositivePregnancyFollowUpCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/positive-pregnancy-follow-up/PositivePregnancyFollowUpCalculator'
+    ).then((mod) => ({
+      default: mod.PositivePregnancyFollowUpCalculator,
+    })),
+  ),
   PostJudgmentInterestCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/post-judgment-interest/PostJudgmentInterestCalculator'
