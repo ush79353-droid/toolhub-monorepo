@@ -786,6 +786,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'labor-force-participation-rate-calculator',
   'lcr-calculator',
   'money-multiplier-calculator',
+  'money-supply-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

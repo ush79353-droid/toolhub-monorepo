@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Money Supply Calculator
+- **Summary:** Shipped Money Supply Calculator on existing catalog slug `money-supply-calculator` (`MoneySupplyCalculator`, catalog `6af46f10a27d8d1d4e990185`, preserved `nameKey` `money supply calculator`). Screenshot-first (ADR-023): monetary definition selector (U.S. Fed-style / textbook / custom); collapsible M0, MB, M1, M2, MZM, M3, M4; nonoverlapping components (savings in M1 only); M3/M4 unavailable under Fed-style; shared magnitude; SVG charts; educational guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Notes **$2,050,000** · Coins **$50,000** → M0 **$2,100,000**; Circulation **$2,100,000** · Reserves **$4,050,000** → MB **$6,150,000**; M1 **$21,501,000**; M2 **$22,641,000**.
+- **Important Files:** `frontend/src/tools/calculators/money-supply/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` money-supply tests 11/11 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Money Multiplier Calculator
 - **Summary:** Shipped Money Multiplier Calculator on existing catalog slug `money-multiplier-calculator` (`MoneyMultiplierCalculator`, catalog `6af46f10a27d8d1d4e990184`, preserved `nameKey` `money multiplier calculator`). Screenshot-first (ADR-023): checkable deposits + reserve ratio or bank reserves + currency → bank reserves, monetary base, money supply, m=M/B; separate simple deposit multiplier 1/r and c/r; dual reserveSource avoids circular edits; SVG charts; educational guide/FAQ on fractional reserves and model limits. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Deposits **$1,000,000** · Reserve ratio **10%** · Currency **$200,000** → Reserves **$100,000** · B **$300,000** · M **$1,200,000** · m **4.00×** · m_d **10×**.
