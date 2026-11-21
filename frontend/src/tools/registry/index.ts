@@ -3380,6 +3380,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PriceElasticityOfDemandCalculator,
     })),
   ),
+  PriceElasticityOfSupplyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/price-elasticity-of-supply/PriceElasticityOfSupplyCalculator'
+    ).then((mod) => ({
+      default: mod.PriceElasticityOfSupplyCalculator,
+    })),
+  ),
   PriceQuantityCalculator: lazyTool(() =>
     import('@/tools/calculators/price-quantity/PriceQuantityCalculator').then((mod) => ({
       default: mod.PriceQuantityCalculator,

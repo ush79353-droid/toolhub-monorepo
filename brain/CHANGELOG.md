@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Price Elasticity of Supply Calculator
+- **Summary:** Shipped Price Elasticity of Supply Calculator on existing catalog slug `price-elasticity-of-supply-calculator` (`PriceElasticityOfSupplyCalculator`, catalog `6af46f10a27d8d1d4e99018c`, preserved `nameKey` `price elasticity of supply calculator`). Screenshot-first (ADR-023): standard + midpoint PES; auto % changes; elastic/inelastic/unit/perfectly inelastic/negative/undefined classifications; observation SVG; denomination CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** P **100→120** · Qs **500→600** → PES **1.00** (unit elastic); ΔP=0 → undefined (no Infinity).
+- **Important Files:** `frontend/src/tools/calculators/price-elasticity-of-supply/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` PES tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add PPP Calculator — Purchasing Power Parity
 - **Summary:** Shipped PPP Calculator on existing catalog slug `ppp-calculator-purchasing-power-parity` (`PppCalculator`, catalog `6af46f10a27d8d1d4e99018b`, preserved `nameKey` `ppp calculator - purchasing power parity`). Screenshot-first (ADR-023): curated World Bank WDI table 4.16 GDP PPP (PA.NUS.PPP) for 2023/2024 + same-year official FX; S_B=S_A×(PPP_B/PPP_A); manual mode; period toggle; market-vs-PPP chart; attributed PLI table; no fabricated live API. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Manual PPP 1→2 · salary **50,000** → **100,000**; market **1.35** → **67,500**; R for 2/2.5 = **80%**.
