@@ -22,8 +22,8 @@
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Excessive Weight Gain in Pregnancy
-- **Summary:** Shipped Excessive Weight Gain in Pregnancy on existing catalog slug `excessive-weight-gain-in-pregnancy` (`ExcessiveWeightGainInPregnancyCalculator`, catalog `6af46f10a27d8d1d4e9901f0`, pillar `6af451c1a27d8d1d4e98f983`, subPillar null). Screenshot-first (ADR-023): blank pre-pregnancy height/weight → BMI; week 40; twins **No/Yes radios**; min/max weight and gain; no current-weight input or excess classification; reuses shared `pregnancy-weight-gain` IOM engine; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-701`.
-- **Commits:** `fd6907a2` (UI absorb into concurrent Tylenol) / `6f60ab3c` (engine) / (registration/Brain/tracker — this commit).
+- **Summary:** Shipped Excessive Weight Gain in Pregnancy on existing catalog slug `excessive-weight-gain-in-pregnancy` (`ExcessiveWeightGainInPregnancyCalculator`, catalog `6af46f10a27d8d1d4e9901f0`, pillar `6af451c1a27d8d1d4e98f983`, subPillar null). Screenshot-first (ADR-023): blank pre-pregnancy height/weight → BMI; week 40; twins **No/Yes radios**; min/max weight and gain; no current-weight input or excess classification; reuses shared `pregnancy-weight-gain` IOM engine; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-702`.
+- **Commits:** `fd6907a2` (UI absorb into concurrent Tylenol) / `6f60ab3c` (engine) / (registration/Brain/tracker — this commit). Note: guide CDC link polish landed as `26b846be`.
 - **Example:** **165** cm · **60** kg · week **40** singleton → BMI ≈ **22.04** · gain **11.5–16** kg · weight **71.5–76** kg.
 - **Verification:** Focused `calculation.test.ts` + pregnancy-weight-gain identity ok. Mongo read-back: `isActive` true, `isDeveloped` true, `indexable` false. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
