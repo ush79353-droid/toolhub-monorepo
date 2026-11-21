@@ -686,6 +686,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LaborForceParticipationRateCalculator',
   'LcrCalculator',
   'LgdCalculator',
+  'LumpsumCalculator',
   'MoneyMultiplierCalculator',
   'MoneySupplyCalculator',
   'MpcCalculator',
@@ -1530,6 +1531,7 @@ if (isDirect) {
     !isApprovedComponentKey('LaborForceParticipationRateCalculator') ||
     !isApprovedComponentKey('LcrCalculator') ||
     !isApprovedComponentKey('LgdCalculator') ||
+    !isApprovedComponentKey('LumpsumCalculator') ||
     !isApprovedComponentKey('MoneyMultiplierCalculator') ||
     !isApprovedComponentKey('MoneySupplyCalculator') ||
     !isApprovedComponentKey('MpcCalculator') ||

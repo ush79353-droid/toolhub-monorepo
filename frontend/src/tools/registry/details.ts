@@ -992,6 +992,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/labor-force-participation/detail'),
   LcrCalculator: () => import('@/tools/calculators/lcr/detail'),
   LgdCalculator: () => import('@/tools/calculators/lgd/detail'),
+  LumpsumCalculator: () =>
+    import('@/tools/calculators/lumpsum/detail'),
   MoneyMultiplierCalculator: () =>
     import('@/tools/calculators/money-multiplier/detail'),
   MoneySupplyCalculator: () =>

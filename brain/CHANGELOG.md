@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Lumpsum Calculator
+- **Summary:** Shipped Lumpsum Calculator on existing catalog slug `lumpsum-calculator` (`LumpsumCalculator`, catalog `6af46f10a27d8d1d4e9901ab`, preserved `nameKey` `lumpsum calculator`). Screenshot-first (ADR-023): four modes (PV/FV/rate/term); periodic + continuous compounding; inflation-adjusted FV; EAR; growth chart/schedule; denomination CurrencySelect (INR). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Goal **₹100,000** · **10%** · **10y** · monthly → required PV ≈ **₹36,940.70**; **₹100,000** · **10%** · **10y** · annually → FV ≈ **₹259,374.25**.
+- **Important Files:** `frontend/src/tools/calculators/lumpsum/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` lumpsum tests 20/20 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add HRA Exemption Calculator
 - **Summary:** Shipped HRA Exemption Calculator on existing catalog slug `hra-exemption-calculator` (`HraExemptionCalculator`, catalog `6af46f10a27d8d1d4e9901aa`, preserved `nameKey` `hra exemption calculator`). Screenshot-first (ADR-023): three-limb HRA exemption with versioned tax-year city rules; old/new regime; monthly/annual inputs; partial-year months; donut + breakdown; denomination CurrencySelect (INR). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Basic **₹50,000** + DA **₹5,000** · HRA **₹20,000** · rent **₹18,000** · Delhi · old regime → exempt **₹12,500**/mo · annual **₹150,000** · taxable annual **₹90,000**.

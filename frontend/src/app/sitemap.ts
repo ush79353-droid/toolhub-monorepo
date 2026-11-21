@@ -712,6 +712,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'emi-calculator-equated-monthly-installment',
   'epf-calculator',
   'hra-exemption-calculator',
+  'lumpsum-calculator',
   'lgd-calculator-loss-given-default',
   'credit-card-calculator',
   'credit-card-interest-calculator',
