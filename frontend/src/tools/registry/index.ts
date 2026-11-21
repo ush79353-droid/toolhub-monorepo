@@ -36,6 +36,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnuityPayoutCalculator,
     })),
   ),
+  ArmyBodyFatCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/army-body-fat/ArmyBodyFatCalculator'
+    ).then((mod) => ({
+      default: mod.ArmyBodyFatCalculator,
+    })),
+  ),
   AutoLeaseCalculator: lazyTool(() =>
     import('@/tools/calculators/auto-lease/AutoLeaseCalculator').then((mod) => ({
       default: mod.AutoLeaseCalculator,
@@ -663,6 +670,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   FourZeroOneKCalculator: lazyTool(() =>
     import('@/tools/calculators/four-zero-one-k/FourZeroOneKCalculator').then((mod) => ({
       default: mod.FourZeroOneKCalculator,
+    })),
+  ),
+  AmoxicillinPediatricDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/amoxicillin-pediatric-dosage/AmoxicillinPediatricDosageCalculator'
+    ).then((mod) => ({
+      default: mod.AmoxicillinPediatricDosageCalculator,
     })),
   ),
   AmortizationCalculator: lazyTool(() =>
@@ -2784,6 +2798,18 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   BasisPointCalculator: lazyTool(() =>
     import('@/tools/calculators/basis-point/BasisPointCalculator').then((mod) => ({
       default: mod.BasisPointCalculator,
+    })),
+  ),
+  BbtCalculator: lazyTool(() =>
+    import('@/tools/calculators/bbt/BbtCalculator').then((mod) => ({
+      default: mod.BbtCalculator,
+    })),
+  ),
+  BenadrylDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/benadryl-dosage/BenadrylDosageCalculator'
+    ).then((mod) => ({
+      default: mod.BenadrylDosageCalculator,
     })),
   ),
   BetaStockCalculator: lazyTool(() =>

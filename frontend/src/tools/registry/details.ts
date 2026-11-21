@@ -10,6 +10,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/annuity/detail'),
   AnnuityPayoutCalculator: () =>
     import('@/tools/calculators/annuity-payout/detail'),
+  ArmyBodyFatCalculator: () =>
+    import('@/tools/calculators/army-body-fat/detail'),
   AutoLeaseCalculator: () => import('@/tools/calculators/auto-lease/detail'),
   AutoLoanCalculator: () => import('@/tools/calculators/auto-loan/detail'),
   CaliforniaOvertimeCalculator: () =>
@@ -172,6 +174,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FiveTwentyNineCalculator: () => import('@/tools/calculators/five-twenty-nine/detail'),
   SeventyTwentyTenCalculator: () => import('@/tools/calculators/seventy-twenty-ten-rule/detail'),
   FourZeroOneKCalculator: () => import('@/tools/calculators/four-zero-one-k/detail'),
+  AmoxicillinPediatricDosageCalculator: () =>
+    import('@/tools/calculators/amoxicillin-pediatric-dosage/detail'),
   AmortizationCalculator: () => import('@/tools/calculators/amortization/detail'),
   AmtCalculator: () => import('@/tools/calculators/amt/detail'),
   AcreageCalculator: () => import('@/tools/calculators/acreage/detail'),
@@ -661,6 +665,9 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/balloon-payment/detail'),
   BasisPointCalculator: () =>
     import('@/tools/calculators/basis-point/detail'),
+  BbtCalculator: () => import('@/tools/calculators/bbt/detail'),
+  BenadrylDosageCalculator: () =>
+    import('@/tools/calculators/benadryl-dosage/detail'),
   BetaStockCalculator: () =>
     import('@/tools/calculators/beta-stock/detail'),
   BidensTaxPlanCalculator: () =>
