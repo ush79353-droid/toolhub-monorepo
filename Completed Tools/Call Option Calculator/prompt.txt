@@ -1,0 +1,24 @@
+CURSOR DEVELOPMENT PROMPT - Call Option Calculator
+
+Build a two-mode Call/Put Option Calculator. Visible inputs are calculator mode (call or put), current asset/target price, strike price, option price (premium), and number of option contracts; output the total option cost/premium. Calculate total premium as quoted option premium Ã— contract multiplier Ã— number of contracts (use the market-standard 100 multiplier only if that is the product's established convention, and disclose it in helper text). Validate nonnegative monetary inputs and whole, nonnegative contract counts; preserve currency selectors only if supported by the existing system and do not fetch FX because no conversion is required.
+Use the supplied screenshot(s) in this folder only as a functionality and information-architecture reference. Do not reproduce third-party branding, ornamental styling, wording, or layout pixel-for-pixel. Implement the tool in Omega Calculators' existing design system and established calculator architecture.
+
+MANDATORY WORKFLOW BEFORE DEVELOPMENT
+1. Inspect the repository instructions and existing calculator patterns first. Locate the canonical calculator registry, routes/pages, shared UI components, calculation helpers, backend/API conventions, tests, metadata/SEO system, and sitemap generation. Do not create a parallel architecture.
+2. Query the project's existing MongoDB calculator record by slug/name before changing code. Record its ID, slug, status, route, category, and current ownership/assignment fields. Verify that the current agent is the assigned owner and that the record is available for development. If the record is missing, assigned to another agent, locked, or ownership is ambiguous, STOP and report the blocker; do not claim/reassign it and do not start implementation.
+3. Treat the screenshot values, currencies, dates, and selected options as examples, not guaranteed business rules. Research authoritative primary sources where rules or market conventions matter. Put volatile tax thresholds/rates or instrument metadata into the repository's established maintainable configuration/data path.
+
+IMPLEMENTATION REQUIREMENTS
+- Build a production-quality, responsive, accessible calculator using existing Omega components and conventions. Include labels, units, helper text where useful, keyboard operation, clear validation, loading/error/empty states where applicable, deterministic reset/clear behavior, and mobile/desktop coverage.
+- Implement mathematically correct formulas with explicit unit/percentage conversion, boundary handling, rounding, and precision. Keep calculation logic testable and separate from presentation. Add focused tests for normal cases, zero/boundary cases, invalid input, and at least one independently verified worked example.
+- Only use real foreign-exchange data when the screenshot/functionality actually includes currency selectors that imply conversion. Route live FX through the existing secure backend/provider integration, with attribution, caching, timestamps, and failure handling. Never fabricate rates, scrape an unsupported source, expose secrets, or add FX calls for mere currency formatting/unit labels.
+- Complete every existing integration point: calculator registry/catalog, MongoDB record fields/status using the approved workflow, backend/API when genuinely required, route/page, navigation/category discovery, metadata/structured data, and sitemap. Ensure the canonical slug and URL are consistent everywhere and avoid duplicate records/routes.
+- Preserve unrelated files and existing behavior. Make no opportunistic refactors, dependency upgrades, formatting sweeps, or changes outside this calculator's necessary scope.
+
+GIT AND DELIVERY RULES
+- Work only on the assigned development branch/worktree. Make exactly three meaningful local commits during development, each leaving the project coherent: (1) core calculation/domain logic and tests, (2) UI and interaction, (3) registry/backend/SEO/sitemap integration plus final verification. If repository constraints require a slightly different grouping, keep three substantive commits and explain the grouping.
+- Do not run any remote Git operation: no fetch, pull, push, remote branch manipulation, PR creation, or force operation. Do not amend/squash/reset other people's work. Never commit secrets or unrelated changes.
+- Run the repository's relevant lint, typecheck, tests, and build checks. Fix only failures caused by this task; report pre-existing failures separately.
+
+FINAL HANDOFF
+Report the MongoDB record/ownership verification (without secrets), formula and authoritative sources used, files/integrations changed, tests/checks run and results, the three local commit hashes/messages, and any assumptions or remaining blockers. Do not mark the calculator complete if ownership verification or required integration is unresolved.
