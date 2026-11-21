@@ -873,6 +873,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'receivables-turnover-ratio-calculator',
   'repayment-calculator',
   'retained-earnings-calculator',
+  'retirement-calculator',
   'sabbatical-calculator',
   'scrap-gold-calculator',
   'scrap-silver-calculator',

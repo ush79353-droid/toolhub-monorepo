@@ -4,9 +4,15 @@
 
 ---
 
+### 2026-11-21 — Retirement Calculator
+- **Summary:** Shipped Retirement Calculator on existing catalog slug `retirement-calculator` (`RetirementCalculator`, catalog `6af46f10a27d8d1d4e9901b8`, pillar/subPillar null). Screenshot-first (ADR-023): About you / Your savings / Your retirement money collapsible sections; sex + country LE defaults (UN WPP 2024 e0); US government-pension default from SSA Dec 2024 average retired-worker benefit; end-of-year accumulation; amortized withdrawals through life expectancy with continued returns; budget coverage and money left; denomination CurrencySelect (**no FX** — prompt forbids FX for display currency). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-654`.
+- **Commits:** `0e5eae7d` (UI) / `08b8a92c` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** age **40** · retire **67** · LE **81.4** · **$500**/mo + **$50,000** · **7%** · SS **$1,922**/mo · COL **$4,000**/mo.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — RD Calculator - Recurring Deposit
 - **Summary:** Shipped RD Calculator - Recurring Deposit on existing catalog slug `rd-calculator-recurring-deposit` (`RdCalculator`, catalog `6af46f10a27d8d1d4e9901b0`, preserved `nameKey` `rd calculator - recurring deposit`, pillar/subPillar null). Screenshot-first (ADR-023): monthly deposit; term yrs|mos; annual rate %; total deposits / interest / maturity; independent FX on money fields (PKR default). Bank-style quarterly compounding `i=r/400`. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. Dual `CURRENCY_CONVERSION_SLUGS`. TASKS `TOOL-653`.
-- **Commits:** `c0468d02` (UI) / `fa82f263` (engine) / (registration/Brain/tracker — this commit).
+- **Commits:** `c0468d02` (UI) / `fa82f263` (engine) / `66ef9598` (registration/Brain/tracker).
 - **Example:** **5,000**/mo · **5**y · **6%** → deposits **300,000** · maturity ≈ **350,318**.
 - **Verification:** Static formula review + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 

@@ -119,9 +119,9 @@ Audit pending: deferred to final audit coordinator
 | 72 | Put-Call Parity Calculator | DEVELOPED | AUDIT PENDING | 3e142c72 | 5cecb015 | 65e1c766 | Completed Tools | `PutCallParityCalculator`; slug `put-call-parity-calculator`; Mongo `6af46f10a27d8d1d4e9901c4` active; Phase 2 FX; indexable false; TASKS `TOOL-651`; keys/index/details/sitemap via concurrent HEAD |
 
 ## Session Log
-| 70 | RD Calculator - Recurring Deposit | DEVELOPED | AUDIT PENDING | c0468d02 | fa82f263 | (reg commit) | Completed Tools | `RdCalculator`; slug `rd-calculator-recurring-deposit`; Mongo `6af46f10a27d8d1d4e9901b0` active; Phase 2 FX; indexable false; TASKS `TOOL-653` |
+| 70 | RD Calculator - Recurring Deposit | DEVELOPED | AUDIT PENDING | c0468d02 | fa82f263 | 66ef9598 | Completed Tools | `RdCalculator`; slug `rd-calculator-recurring-deposit`; Mongo `6af46f10a27d8d1d4e9901b0` active; Phase 2 FX; indexable false; TASKS `TOOL-653` |
 
-- 2026-11-21 (RD Calculator): RD Calculator - Recurring Deposit DEVELOPED (`c0468d02` / `fa82f263` / reg+Brain+tracker). Mongo `6af46f10a27d8d1d4e9901b0` activated; indexable false; Phase 2 FX (screenshot currency selectors). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (RD Calculator): RD Calculator - Recurring Deposit DEVELOPED (`c0468d02` / `fa82f263` / `66ef9598`). Mongo `6af46f10a27d8d1d4e9901b0` activated; indexable false; Phase 2 FX (screenshot currency selectors). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 - 2026-11-21 (Put-Call Parity): Put-Call Parity Calculator DEVELOPED (`3e142c72` / `5cecb015` / `65e1c766`). Mongo `6af46f10a27d8d1d4e9901c4` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
@@ -314,3 +314,11 @@ Screenshot-first 1p–£2 counts × Royal Mint standard masses; g/kg display. No
 | 72 | UK Coin Weight Calculator | DEVELOPED | AUDIT PENDING | 9efd2eb2 | c2748981 | (tracker this commit) | Completed Tools | `UkCoinWeightCalculator`; slug `uk-coin-weight-calculator`; Mongo `6af46f10a27d8d1d4e9901cf` active; indexable false; TASKS `TOOL-652` |
 
 - 2026-11-21 (UK Coin Weight): DEVELOPED (`9efd2eb2` / `c2748981` / tracker). Mongo activated; indexable false. Moved to Completed Tools. Temporary files cleaned: YES.
+
+### 2026-11-21 — Retirement Calculator DEVELOPED
+
+Screenshot-first About you / savings / retirement money; end-of-year accumulation; amortized draws through LE; denomination CurrencySelect (no FX). Missouri / Take-Home untouched. Push/Pull/Fetch/Sync: NONE.
+
+| 71 | Retirement Calculator | DEVELOPED | AUDIT PENDING | 0e5eae7d | 08b8a92c | (reg commit) | Completed Tools | `RetirementCalculator`; slug `retirement-calculator`; Mongo `6af46f10a27d8d1d4e9901b8` active; indexable false; TASKS `TOOL-654` |
+
+- 2026-11-21 (Retirement): DEVELOPED (`0e5eae7d` / `08b8a92c` / reg+Brain+tracker). Mongo activated; indexable false; no FX. Moved to Completed Tools. Temporary files cleaned: YES.

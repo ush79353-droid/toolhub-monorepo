@@ -834,6 +834,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RepaymentCalculator',
   'RetainedEarningsCalculator',
   'RetentionRatioCalculator',
+  'RetirementCalculator',
   'Rule2836Calculator',
   'SabbaticalCalculator',
   'ScrapGoldCalculator',

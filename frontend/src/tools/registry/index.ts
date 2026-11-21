@@ -4819,6 +4819,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RetentionRatioCalculator,
     })),
   ),
+  RetirementCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/retirement/RetirementCalculator'
+    ).then((mod) => ({
+      default: mod.RetirementCalculator,
+    })),
+  ),
   Rule2836Calculator: lazyTool(() =>
     import(
       '@/tools/calculators/rule-2836/Rule2836Calculator'
