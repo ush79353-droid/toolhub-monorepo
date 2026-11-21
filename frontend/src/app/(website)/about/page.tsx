@@ -1,354 +1,138 @@
-import * as React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
-import { buttonVariants } from '@/components/ui/button';
-import { getPublicCategories } from '@/server/catalog/categories';
-import { ArrowRight } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'About Omega Calculators',
   description:
-    'What Omega Calculators is for: a directory of calculators, converters, file tools, and small utilities, with plain pages and no account required to browse.',
+    'Omega Calculators is a free collection of online calculators and converters, with the formula and a worked example on the same page.',
 };
 
-const keys = ['7', '8', '9', '4', '5', '6', '1', '2', '3'] as const;
-
-const principles = [
-  {
-    title: 'Privacy, said plainly',
-    text: 'When a tool runs in the browser, the numbers you type stay on your device. If a tool needs a server, the page should say so.',
-  },
-  {
-    title: 'Fast enough for the question',
-    text: 'You should still be looking at the problem when the result appears. We do not promise a stopwatch time.',
-  },
-  {
-    title: 'Readable on the first visit',
-    text: 'The label, the input, and the result should be obvious. A tool should not need a manual.',
-  },
-  {
-    title: 'Usable on a phone',
-    text: 'The same page has to work on a narrow screen and on a desk. Layout follows the width you have.',
-  },
-  {
-    title: 'Only what the tool does',
-    text: 'A description matches the function. A simple calculator is not dressed up as something else.',
-  },
-] as const;
-
-async function loadDirectorySize() {
-  const categories = await getPublicCategories();
-  if (categories.length === 0) return null;
-  return {
-    categoryCount: categories.length,
-    toolTotal: categories.reduce((sum, category) => sum + category.toolCount, 0),
-  };
+function operatorSentence(): string | null {
+  const { name, city, country } = siteConfig.operator;
+  const place = [city, country].filter(Boolean).join(', ');
+  if (name && place) return `${siteConfig.name} is run by ${name}, based in ${place}.`;
+  if (name) return `${siteConfig.name} is run by ${name}.`;
+  if (place) return `${siteConfig.name} is based in ${place}.`;
+  return null;
 }
 
-function ProductBoard() {
-  return (
-    <div className="overflow-hidden rounded-[28px] border border-border bg-white shadow-sm" aria-hidden>
-      <div className="flex items-center justify-between border-b border-border bg-muted px-4 py-3">
-        <p className="text-xs font-medium text-accent">invoice.pdf</p>
-        <p className="text-xs text-muted-foreground">2 pages</p>
-      </div>
-      <div className="p-5 sm:p-6">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">Loan</p>
-        <p className="mt-2 font-mono text-4xl tracking-tight text-accent">248,000</p>
-        <div className="mt-5 grid grid-cols-3 gap-2">
-          {keys.map((key) => (
-            <span key={key} className="flex h-11 items-center justify-center rounded-lg bg-muted text-sm font-medium text-accent">
-              {key}
-            </span>
-          ))}
-        </div>
-        <div className="mt-4 flex justify-between text-xs text-muted-foreground">
-          <span>6.5% rate</span>
-          <span>30 years</span>
-        </div>
-      </div>
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 border-t border-border bg-secondary px-4 py-3 text-sm text-accent">
-        <span className="font-mono">12 km</span>
-        <span className="text-xs font-semibold uppercase tracking-wider text-primary">to</span>
-        <span className="text-right font-mono">7.46 mi</span>
-      </div>
-    </div>
-  );
-}
-
-export default async function AboutPage() {
-  const directory = await loadDirectorySize();
+export default function AboutPage() {
+  const operator = operatorSentence();
+  const email = siteConfig.operator.email.trim();
 
   return (
     <div>
-      <section className="border-b border-border">
-        <Container className="py-8 sm:py-12 lg:py-16">
+      <section className="relative border-b border-border bg-gradient-to-br from-[#cfeeed] via-[#e7f6f4] to-[#f4f7f2]">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_32%_32%,#ffffff,hsl(177,42%,78%))]" />
+          <div className="absolute -right-20 top-6 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_35%_30%,#ffffff,hsl(175,35%,84%))]" />
+          <div className="absolute bottom-10 right-[18%] h-40 w-40 rounded-full bg-[radial-gradient(circle_at_40%_40%,#ffffff,hsl(186,35%,86%))]" />
+        </div>
+        <Container className="relative z-10 py-10 sm:py-14">
           <Breadcrumbs items={[{ label: 'About' }]} />
-          <div className="mt-8 grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(280px,0.85fr)] lg:gap-16">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">About Omega Calculators</p>
-              <h1 className="mt-4 max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight text-accent sm:text-6xl">
-                One directory for the small jobs.
-              </h1>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Calculators, conversions, files, and text tools live here. Open one, enter what you have, and take the result with you.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link href="/tools" className={buttonVariants({ size: 'lg', className: 'bg-primary text-white hover:bg-primary-hover' })}>
-                  Explore all tools
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-                <Link href="/contact" className="inline-flex h-11 items-center px-2 text-sm font-medium text-accent underline-offset-4 hover:underline">
-                  Contact us
-                </Link>
-              </div>
-              {directory ? (
-                <p className="mt-8 text-sm tabular-nums text-muted-foreground">
-                  {directory.categoryCount} categories
-                  <span className="mx-2 text-border">/</span>
-                  {directory.toolTotal.toLocaleString()} tools in the catalog
-                </p>
-              ) : null}
-            </div>
-            <ProductBoard />
+          <div className="mx-auto mt-8 max-w-3xl text-center">
+            <h1 className="text-4xl font-semibold tracking-tight text-accent sm:text-5xl">About us</h1>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              A free collection of calculators and converters, with the formula and a worked example on the same page.
+            </p>
           </div>
         </Container>
       </section>
 
-      <section className="border-b border-border bg-white py-16 sm:py-20">
+      <section className="bg-white py-14 sm:py-20">
         <Container>
-          <div className="mx-auto max-w-3xl space-y-10 text-base leading-relaxed text-foreground">
+          <div className="mx-auto max-w-3xl space-y-12 text-base leading-relaxed">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-accent">About Omega Calculators</h2>
               <p className="mt-4 text-muted-foreground">
-                Omega Calculators is a free collection of online calculators and converters. We built it for
-                people who want a clear answer without hunting through ads, sign-ups, or confusing pages.
+                Omega Calculators is a free collection of online calculators and converters. We built it for people
+                who want a clear answer without hunting through ads, sign-ups, or confusing pages.
               </p>
+              {operator ? <p className="mt-4 text-muted-foreground">{operator}</p> : null}
             </div>
+
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-accent">What you will find here</h2>
               <p className="mt-4 text-muted-foreground">
                 Our tools cover everyday money questions, health and fitness, math, unit conversions, cooking,
                 construction, and more. Each tool sits on its own page with the calculator at the top, then a
-                plain-language explanation of how it works, the formula it uses, a worked example, and answers
-                to common questions.
+                plain-language explanation of how it works, the formula it uses, a worked example, and answers to
+                common questions.
               </p>
             </div>
+
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-accent">How we build our tools</h2>
               <ul className="mt-4 list-disc space-y-3 pl-5 text-muted-foreground">
                 <li>
-                  <span className="font-medium text-accent">Clear formulas.</span> Every calculator shows the
-                  formula behind its result, so you can check it yourself.
+                  <span className="font-medium text-accent">Clear formulas.</span> Every calculator shows the formula
+                  behind its result, so you can check it yourself.
                 </li>
                 <li>
-                  <span className="font-medium text-accent">Worked examples.</span> We show a real example with
-                  real numbers, so you can see how the answer is reached.
+                  <span className="font-medium text-accent">Worked examples.</span> We show a real example with real
+                  numbers, so you can see how the answer is reached.
                 </li>
                 <li>
-                  <span className="font-medium text-accent">Testing.</span> We test each published calculator
-                  against known results before it goes live.
+                  <span className="font-medium text-accent">Testing.</span> We test each published calculator against
+                  known results before it goes live.
                 </li>
                 <li>
-                  <span className="font-medium text-accent">Fixes.</span> If you find a mistake, tell us. We
-                  correct errors.
+                  <span className="font-medium text-accent">Fixes.</span> If you find a mistake, tell us. We correct
+                  errors.
                 </li>
               </ul>
             </div>
+
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-accent">Free to use</h2>
               <p className="mt-4 text-muted-foreground">
-                Omega Calculators is free. The site is supported by advertising, which lets us keep the tools
-                open to everyone without asking you to create an account.
+                Omega Calculators is free. The site is supported by advertising, which lets us keep the tools open
+                to everyone without asking you to create an account.
               </p>
             </div>
+
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-accent">Important to know</h2>
               <p className="mt-4 text-muted-foreground">
-                Our calculators give estimates for information and education. They are not financial, medical,
-                legal, or professional advice. Please read our{' '}
+                Our calculators give estimates for information and education. They are not financial, medical, legal,
+                or professional advice. Please read the{' '}
                 <Link href="/terms-of-service#disclaimers" className="font-medium text-primary hover:underline">
                   disclaimer
                 </Link>{' '}
-                before relying on any result.
+                before relying on any result. The full terms are on the{' '}
+                <Link href="/terms-of-service" className="font-medium text-primary hover:underline">
+                  terms of service
+                </Link>{' '}
+                page, and how we handle information is on the{' '}
+                <Link href="/privacy-policy" className="font-medium text-primary hover:underline">
+                  privacy policy
+                </Link>.
               </p>
             </div>
+
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-accent">Contact</h2>
               <p className="mt-4 text-muted-foreground">
-                Questions, ideas for new tools, or a mistake to report? Use our{' '}
+                Questions, ideas for new tools, or a mistake to report?{' '}
+                {email ? (
+                  <>
+                    Write to us at{' '}
+                    <a href={`mailto:${email}`} className="font-medium text-primary hover:underline">
+                      {email}
+                    </a>{' '}
+                    or use our{' '}
+                  </>
+                ) : (
+                  'Use our '
+                )}
                 <Link href="/contact" className="font-medium text-primary hover:underline">
                   contact page
-                </Link>
-                .
+                </Link>.
               </p>
             </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-white py-16 sm:py-24">
-        <Container>
-          <p className="max-w-4xl font-display text-3xl font-semibold leading-tight tracking-tight text-accent sm:text-5xl">
-            A simple question should not require a crowded page.
-          </p>
-          <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-8">
-            <ol className="lg:col-span-5">
-              {[
-                ['01', 'Finance', 'Loans, tax, pay'],
-                ['02', 'Health', 'Body, age, fitness'],
-                ['03', 'Files', 'PDF, image, audio'],
-                ['04', 'Text', 'Counts, cleanup, code'],
-              ].map(([index, name, detail]) => (
-                <li key={name} className="grid grid-cols-[3rem_1fr] items-baseline gap-4 border-t border-accent/15 py-4">
-                  <span className="font-mono text-xs text-primary">{index}</span>
-                  <span>
-                    <span className="block text-2xl font-semibold text-accent">{name}</span>
-                    <span className="mt-1 block text-sm text-muted-foreground">{detail}</span>
-                  </span>
-                </li>
-              ))}
-            </ol>
-            <div className="max-w-xl space-y-5 text-base leading-relaxed text-foreground lg:col-span-6 lg:col-start-7 lg:pt-4">
-              <p>
-                Calculator sites often bury the form. The page is loud, the labels are unclear, or the result sits under things that have nothing to do with the question.
-              </p>
-              <p>
-                Omega Calculators keeps the directory in subject order. Finance, health, math, files, text, and developer utilities each have a category. A tool can also sit under a pillar when it belongs to a family, such as loans.
-              </p>
-              <p className="text-muted-foreground">
-                The directory is what you can browse today. A calculator page is added when that tool is actually ready. Until then it stays a catalog entry, not a promise.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-y border-border py-16 sm:py-24">
-        <Container>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="text-3xl font-semibold tracking-tight text-accent sm:text-4xl">The platform</h2>
-            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Eight kinds of work. Not every catalog entry has a finished page yet.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-4 lg:grid-cols-12">
-            <article className="overflow-hidden rounded-[28px] bg-accent text-white lg:col-span-7">
-              <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-secondary">Calculators</p>
-                  <h3 className="mt-3 text-3xl font-semibold leading-tight">The number you came for.</h3>
-                  <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/75">
-                    Loans, health, math, and the smaller sums that show up in a normal day.
-                  </p>
-                </div>
-                <p className="font-mono text-4xl tracking-tight text-secondary sm:text-5xl">6.5%</p>
-              </div>
-              <p className="border-t border-white/10 px-6 py-4 font-mono text-xs text-white/70 sm:px-8">
-                Age · BMI · Percentage · Mortgage · Salary
-              </p>
-            </article>
-
-            <div className="grid gap-4 lg:col-span-5">
-              <article className="rounded-[28px] bg-secondary p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Unit converters</p>
-                <p className="mt-4 flex items-baseline justify-between gap-4 font-mono text-2xl text-accent">
-                  <span>12 km</span>
-                  <span className="text-sm font-sans font-semibold uppercase tracking-wider text-primary">to</span>
-                  <span>7.46 mi</span>
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-accent/80">Length, weight, temperature, and the rest of the measurement swaps.</p>
-              </article>
-              <article className="rounded-[28px] border border-border bg-white p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Writing, text, and AI</p>
-                <p className="mt-3 text-lg font-medium leading-snug text-accent">Counts, cleanup, and text that needs another shape.</p>
-              </article>
-            </div>
-          </div>
-
-          <div className="mt-4 overflow-hidden rounded-[28px] border border-border bg-white">
-            <div className="flex items-center justify-between gap-4 border-b border-border px-6 py-4 sm:px-8">
-              <h3 className="text-lg font-semibold text-accent">Developer utilities</h3>
-              <p className="hidden text-sm text-muted-foreground sm:block">Formatters and small checks for code and data.</p>
-            </div>
-            <pre className="overflow-x-auto px-6 py-5 font-mono text-sm leading-relaxed text-accent sm:px-8">
-              {`{\n  "ok": true,\n  "tool": "json-formatter"\n}`}
-            </pre>
-          </div>
-
-          <dl className="mt-10 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              ['Image tools', 'Resize and convert a picture without a design app.'],
-              ['PDF and documents', 'Combine, split, and read file details.'],
-              ['Video and audio', 'Light media changes, not a full editor.'],
-              ['SEO and websites', 'Titles, links, and the small pieces of a public page.'],
-            ].map(([title, text]) => (
-              <div key={title} className="border-t-2 border-primary pt-4">
-                <dt className="text-base font-semibold text-accent">{title}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</dd>
-              </div>
-            ))}
-          </dl>
-        </Container>
-      </section>
-
-      <section className="bg-white py-16 sm:py-24">
-        <Container>
-          <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-accent sm:text-4xl">How a tool on this site should behave.</h2>
-          <ol className="mt-12">
-            {principles.map((item, index) => (
-              <li key={item.title} className="grid gap-3 border-t border-border py-7 sm:grid-cols-12 sm:items-baseline sm:gap-6">
-                <span className="font-mono text-sm text-primary sm:col-span-2">{String(index + 1).padStart(2, '0')}</span>
-                <h3 className="text-xl font-semibold text-accent sm:col-span-4">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground sm:col-span-6 sm:text-base">{item.text}</p>
-              </li>
-            ))}
-          </ol>
-        </Container>
-      </section>
-
-      <section className="bg-muted py-16 sm:py-24">
-        <Container>
-          <h2 className="max-w-3xl font-display text-4xl font-semibold leading-[1.1] tracking-tight text-accent sm:text-6xl">
-            You should not need a new website for every small job.
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-3 sm:gap-0">
-            {[
-              ['Look once', 'Search this directory instead of opening another tab for the next task.'],
-              ['Start immediately', 'Browsing does not ask you to create an account.'],
-              ['Stay on one site', 'Calculators, files, and text tools share the same place.'],
-            ].map(([title, text], index) => (
-              <div key={title} className={index === 0 ? 'sm:pr-8' : 'sm:border-l sm:border-accent/15 sm:px-8'}>
-                <h3 className="text-lg font-semibold text-accent">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-accent text-white">
-        <Container className="flex flex-col gap-8 py-16 sm:py-20 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-xl">
-            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">Open the directory.</h2>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">
-              Find a tool, or write to us if a page is unclear.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/tools" className={buttonVariants({ size: 'lg', className: 'bg-primary text-white hover:bg-primary-hover' })}>
-              Explore all tools
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex h-11 items-center justify-center rounded-md border border-white/30 px-4 text-sm font-medium text-white hover:bg-white/10"
-            >
-              Contact us
-            </Link>
           </div>
         </Container>
       </section>

@@ -1,124 +1,144 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ContactForm } from '@/components/contact/ContactForm';
 import { Container } from '@/components/layout/Container';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
-import { ContactFormClient } from '@/components/contact/ContactFormClient';
-import { buttonVariants } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'Contact Omega Calculators',
   description:
-    'Write to Omega Calculators about a missing tool, a result that looks wrong, or a question about the site. The form is checked in the browser and is not delivered yet.',
+    'Write to Omega Calculators with a question, a calculator mistake, a tool idea, or a business note. The form opens your email app.',
 };
 
-const steps = [
-  { title: 'You write it here', text: 'Name the tool, the numbers, or the question.' },
-  { title: 'Someone reads it', text: 'That starts only after messages can leave this page.' },
-  { title: 'We decide what changes', text: 'A note can shape a tool. It does not guarantee one.' },
-] as const;
+function mailHref(email: string, subject?: string): string {
+  if (!subject) return `mailto:${email}`;
+  return `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+}
 
-function NoteSheet() {
+function MailLine({ email, subject }: { email: string; subject?: string }) {
+  if (!email) return null;
   return (
-    <div className="border border-border bg-white" aria-hidden>
-      <div className="flex items-center justify-between border-b border-border px-4 py-2.5">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">Note</p>
-        <p className="text-[11px] uppercase tracking-wider text-muted-foreground">Not sent</p>
-      </div>
-      <div className="px-4 py-4">
-        <p className="text-[11px] uppercase tracking-wider text-muted-foreground">To</p>
-        <p className="mt-1 text-sm font-medium text-accent">Omega Calculators</p>
-        <div className="my-3 h-px bg-border" />
-        <p className="text-sm leading-relaxed text-accent">
-          A unit the converter does not list, and the value I needed.
-        </p>
-        <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-accent">
-          <span className="border border-border px-2 py-1">Feature</span>
-          <span className="border border-border px-2 py-1">Bug</span>
-          <span className="border border-border px-2 py-1">Question</span>
-        </div>
-      </div>
-    </div>
+    <p className="mt-4 text-muted-foreground">
+      Email:{' '}
+      <a href={mailHref(email, subject)} className="font-medium text-primary hover:underline">
+        {email}
+      </a>
+    </p>
   );
 }
 
+function postalAddress(): string | null {
+  const line = [
+    siteConfig.contact.company,
+    siteConfig.contact.street,
+    siteConfig.operator.city,
+    siteConfig.operator.country,
+  ]
+    .map((part) => part.trim())
+    .filter(Boolean);
+  return line.length > 0 ? line.join(', ') : null;
+}
+
 export default function ContactPage() {
+  const email = siteConfig.operator.email.trim();
+  const businessEmail = siteConfig.contact.businessEmail.trim();
+  const responseTime = siteConfig.contact.responseTime.trim();
+  const address = postalAddress();
+
   return (
     <div>
-      <section className="border-b border-border">
-        <Container className="py-8 sm:py-10">
+      <section className="relative border-b border-border bg-gradient-to-br from-[#cfeeed] via-[#e7f6f4] to-[#f4f7f2]">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_32%_32%,#ffffff,hsl(177,42%,78%))]" />
+          <div className="absolute -right-20 top-6 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_35%_30%,#ffffff,hsl(175,35%,84%))]" />
+          <div className="absolute bottom-10 right-[18%] h-40 w-40 rounded-full bg-[radial-gradient(circle_at_40%_40%,#ffffff,hsl(186,35%,86%))]" />
+        </div>
+        <Container className="relative z-10 py-10 sm:py-14">
           <Breadcrumbs items={[{ label: 'Contact' }]} />
-          <div className="mt-6 grid items-end gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(240px,0.7fr)] lg:gap-16">
+          <div className="mx-auto mt-8 max-w-3xl text-center">
+            <h1 className="text-4xl font-semibold tracking-tight text-accent sm:text-5xl">Contact</h1>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              We read every message. Here is the best way to reach us for each kind of question.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-border bg-muted/30 py-14 sm:py-16">
+        <Container>
+          <div className="mx-auto max-w-2xl">
+            <ContactForm email={email} businessEmail={businessEmail} />
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-14 sm:py-20">
+        <Container>
+          <div className="mx-auto max-w-3xl space-y-12 text-base leading-relaxed">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Get in touch</p>
-              <h1 className="mt-3 max-w-xl text-4xl font-semibold leading-[1.05] tracking-tight text-accent sm:text-5xl">
-                Tell us what the next tool should do.
-              </h1>
-              <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
-                A calculator you cannot find, a result that looks wrong, or a question about the site. The form is just below.
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">General questions and feedback</h2>
+              <p className="mt-4 text-muted-foreground">
+                Questions about the site, or a note about how a tool could be clearer, belong here.
+              </p>
+              <MailLine email={email} />
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">Report a mistake in a calculator</h2>
+              <p className="mt-4 text-muted-foreground">
+                Please include the name of the tool, the numbers you entered, the result you got, and the result you
+                expected. A source helps us check it. That is enough to find and fix the problem quickly. Use the
+                subject “Error report:” followed by the tool name.
+              </p>
+              <MailLine email={email} subject="Error report:" />
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">Suggest a new tool</h2>
+              <p className="mt-4 text-muted-foreground">
+                Tell us what you need to calculate, and which inputs and result you would like. We use these ideas to
+                decide which tools to build next.
+              </p>
+              <MailLine email={email} subject="Tool suggestion" />
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">
+                Advertising, partnerships and press
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Advertising, partnership, and press notes belong here.
+              </p>
+              <MailLine email={businessEmail} />
+            </div>
+
+            {responseTime ? (
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-accent">Response time</h2>
+                <p className="mt-4 text-muted-foreground">We aim to reply within {responseTime}.</p>
+              </div>
+            ) : null}
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">Please note</h2>
+              <p className="mt-4 text-muted-foreground">
+                We cannot give personal financial, medical, or legal advice by email. For those questions, please
+                speak to a qualified professional. Read the{' '}
+                <Link href="/terms-of-service#disclaimers" className="font-medium text-primary hover:underline">
+                  disclaimer
+                </Link>{' '}
+                before relying on a calculator result.
               </p>
             </div>
-            <NoteSheet />
-          </div>
-        </Container>
-      </section>
 
-      <section className="bg-muted/50">
-        <Container className="py-10 sm:py-14">
-          <ContactFormClient />
-        </Container>
-      </section>
-
-      <section className="border-b border-border">
-        <Container className="grid gap-10 py-12 sm:py-16 md:grid-cols-12 md:gap-8">
-          <div className="md:col-span-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Feature requests</p>
-            <p className="mt-3 font-display text-2xl font-semibold leading-snug tracking-tight text-accent sm:text-3xl">
-              Name the job the directory does not cover yet.
-            </p>
+            {address ? (
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-accent">Address</h2>
+                <p className="mt-4 text-muted-foreground">{address}</p>
+              </div>
+            ) : null}
           </div>
-          <div className="border-t border-border pt-6 md:col-span-3 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Bug reports</p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Include the numbers you typed and the result you saw, so the same case can be tried again.
-            </p>
-          </div>
-          <div className="border-t border-border pt-6 md:col-span-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">General inquiries</p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Questions about the site, a partnership note, or anything that is not a tool request belong here too.
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      <section>
-        <Container className="py-12 sm:py-16">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">When a message can be delivered</h2>
-          <ol className="mt-8 grid gap-8 sm:grid-cols-3">
-            {steps.map((step, index) => (
-              <li key={step.title}>
-                <p className="font-mono text-sm text-primary">{String(index + 1).padStart(2, '0')}</p>
-                <p className="mt-2 text-lg font-semibold text-accent">{step.title}</p>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{step.text}</p>
-              </li>
-            ))}
-          </ol>
-        </Container>
-      </section>
-
-      <section className="border-t border-border bg-muted/50">
-        <Container className="flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-lg text-lg font-medium text-accent">
-            If you need an answer right now, the directory is already open.
-          </p>
-          <Link
-            href="/tools"
-            className={buttonVariants({ size: 'lg', className: 'bg-primary text-white hover:bg-primary-hover' })}
-          >
-            Explore all tools
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
         </Container>
       </section>
     </div>
