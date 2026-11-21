@@ -12,7 +12,7 @@
 
 ### 2026-11-21 — SIP Calculator + Lumpsum
 - **Summary:** Shipped SIP Calculator + Lumpsum on existing catalog slug `sip-calculator-lumpsum` (`SipLumpsumCalculator`, catalog `6af46f10a27d8d1d4e9901b1`, pillar/subPillar null). Screenshot-first (ADR-023): solve-for final balance/deposit/lumpsum/return/term; initial lumpsum; expected return; term; start date; inflation; compounding; SIP deposit/frequency/begin-end timing; opening/final/total deposits/return/transactions/end date + optional schedule. Denomination CurrencySelect (PKR default, **no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-659`.
-- **Commits:** `b2f35dd5` (UI) / `647d0dc5` (engine) / (registration/Brain/tracker — this commit; registry/sitemap/tool.key lines also absorbed into concurrent `997b7f1c`).
+- **Commits:** `b2f35dd5` (UI) / `647d0dc5` (engine) / `6773e05d` (Brain/tracker; registry/sitemap/tool.key also via concurrent `997b7f1c`).
 - **Example:** lumpsum **1,000** · **10%** · **10**y · monthly compound · PMT **0** → final ≈ **2,707.04**.
 - **Verification:** Static screenshot FV check + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-21 — Stamp Duty Land Tax Calculator UK
