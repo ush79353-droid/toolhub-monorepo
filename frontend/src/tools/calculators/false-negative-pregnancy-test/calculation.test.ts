@@ -15,7 +15,9 @@ const a = calculateFalseNegativePregnancyTest(input);
 const b = calculateBloodPregnancyHcg(input);
 assert(a != null && b != null, 'both');
 assert(a!.naturalUrineIso === b!.naturalUrineIso, 'urine identity');
+assert(a!.naturalBloodIso === b!.naturalBloodIso, 'blood identity');
 assert(ARTICLE_THESIS.toLowerCase().includes('false-negative'), 'thesis');
+assert(!ARTICLE_THESIS.toLowerCase().includes('probability %'), 'no fake pct');
 const share = shareFalseNegativePregnancyTestText(
   'https://example.com/tools/what-is-a-false-negative-pregnancy-test',
 );

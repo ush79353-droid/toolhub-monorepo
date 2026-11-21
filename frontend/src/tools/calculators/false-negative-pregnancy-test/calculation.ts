@@ -4,11 +4,13 @@
  */
 
 export {
+  bloodDaysAfterOvulation,
   calculateBloodPregnancyHcg as calculateFalseNegativePregnancyTest,
   formatDisplayDate,
   isValidIsoDate,
   parseCycleLength,
   suggestOvulationIso,
+  urineDaysAfterOvulation,
 } from '../blood-pregnancy-hcg/calculation';
 
 export const ARTICLE_THESIS =
