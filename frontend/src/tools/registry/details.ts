@@ -1085,6 +1085,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/black-scholes/detail'),
   BloodDonationDueDateCalculator: () =>
     import('@/tools/calculators/blood-donation-due-date/detail'),
+  BloodPregnancyHcgCalculator: () =>
+    import('@/tools/calculators/blood-pregnancy-hcg/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
   BondCalculator: () => import('@/tools/calculators/bond/detail'),

@@ -94,6 +94,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'balloon-payment-calculator',
   'basis-point-calculator',
   'bitcoin-etf-calculator',
+  'birth-control-calculator',
   'biweekly-mortgage-calculator',
   'bi-weekly-mortgage-payment-calculator',
   'biweekly-pay-calculator',

@@ -694,6 +694,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'black-scholes-calculator',
   'bmi-calculator-body-mass-index',
   'blood-donation-due-date-calculator',
+  'blood-pregnancy-test-what-do-hcg-results-mean',
   'boat-loan-calculator',
   'bond-convexity-calculator',
   'bond-current-yield-calculator',

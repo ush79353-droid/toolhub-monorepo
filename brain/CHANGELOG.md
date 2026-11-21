@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-22 — Blood Pregnancy Test: What Do HCG Results Mean?
+- **Summary:** Shipped Blood Pregnancy Test: What Do HCG Results Mean? on existing catalog slug `blood-pregnancy-test-what-do-hcg-results-mean` (`BloodPregnancyHcgCalculator`, catalog `6af46f10a27d8d1d4e9901fa`, pillar `6af451c1a27d8d1d4e98f984`, subPillar `6af451c2a27d8d1d4e98f985`). Screenshot-first (ADR-023): Natural Conception (cycle 28 default, blank LMP/ovulation/urine/blood) + IVF (blank transfer, embryo age default 5-day blastocyst, blank urine/blood, Select test sensitivity unchecked); educational timing only — **no lab hCG interpretation or viability judgment**; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-675`.
+- **Commits:** `b0664dfb` (UI) / `1769e550` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** LMP **2026-01-01** · cycle **28** → ovulation **2026-01-15** · blood **2026-01-25** · urine **2026-01-29**; IVF transfer **2026-03-01** day-5 → blood **2026-03-10** · urine **2026-03-15**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Birth Control Calculator
 - **Summary:** Shipped Birth Control Calculator on existing catalog slug `birth-control-calculator` (`BirthControlCalculator`, catalog `6af46f10a27d8d1d4e99020c`, pillar/subPillar null). Screenshot-first (ADR-023): Females/Males method menus; pill/patch/ring 28-day cycle costs; IUD/injection/implant price÷longevity; sterilization/vasectomy one-time procedure; optional condom packs; horizon days/wks/mos/yrs; independent input/result currencies via Phase 2 FX; share = page URL only. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-673`.
 - **Commits:** `0ed3d01d` (UI; multi-agent race also absorbed unrelated Birth Weight / BMI registry staging) / `82b68724` (engine) / (registration/Brain/tracker — this commit).

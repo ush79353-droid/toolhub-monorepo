@@ -733,6 +733,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BlackFridayCalculator',
   'BlackScholesCalculator',
   'BloodDonationDueDateCalculator',
+  'BloodPregnancyHcgCalculator',
   'BoatLoanCalculator',
   'BondCalculator',
   'BondConvexityCalculator',

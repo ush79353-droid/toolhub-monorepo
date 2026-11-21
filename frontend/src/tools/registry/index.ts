@@ -4112,6 +4112,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BloodDonationDueDateCalculator,
     })),
   ),
+  BloodPregnancyHcgCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/blood-pregnancy-hcg/BloodPregnancyHcgCalculator'
+    ).then((mod) => ({
+      default: mod.BloodPregnancyHcgCalculator,
+    })),
+  ),
   BoatLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/boat-loan/BoatLoanCalculator').then((mod) => ({
       default: mod.BoatLoanCalculator,
