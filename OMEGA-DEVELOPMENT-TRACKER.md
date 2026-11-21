@@ -335,4 +335,4 @@ Screenshot-first About you / savings / retirement money; end-of-year accumulatio
 | 71 | Retirement Calculator | DEVELOPED | AUDIT PENDING | 0e5eae7d | 08b8a92c | (reg commit) | Completed Tools | `RetirementCalculator`; slug `retirement-calculator`; Mongo `6af46f10a27d8d1d4e9901b8` active; indexable false; TASKS `TOOL-654` |
 
 - 2026-11-21 (Retirement): DEVELOPED (`0e5eae7d` / `08b8a92c` / reg+Brain+tracker). Mongo activated; indexable false; no FX. Moved to Completed Tools. Temporary files cleaned: YES.
-| 55 | Rule of 72 Calculator | DEVELOPED | AUDIT PENDING | 05cd36a8 | fe742ea5 | (pending c3) | Completed Tools | `RuleOf72Calculator`; slug `rule-of-72-calculator`; Mongo `6af46f10a27d8d1d4e9901bc` active; indexable false; no FX |
+| 55 | Rule of 72 Calculator | DEVELOPED | AUDIT PENDING | 05cd36a8 | fe742ea5 | 26ed1d71 | Completed Tools | `RuleOf72Calculator`; slug `rule-of-72-calculator`; Mongo `6af46f10a27d8d1d4e9901bc` active; indexable false; no FX |
