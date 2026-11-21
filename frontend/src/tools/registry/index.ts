@@ -3705,6 +3705,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SustainableGrowthRateCalculator,
     })),
   ),
+  SwpCalculator: lazyTool(() =>
+    import('@/tools/calculators/swp/SwpCalculator').then((mod) => ({
+      default: mod.SwpCalculator,
+    })),
+  ),
   UnleveredBetaCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/unlevered-beta/UnleveredBetaCalculator'
@@ -4843,6 +4848,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/rule-2836/Rule2836Calculator'
     ).then((mod) => ({
       default: mod.Rule2836Calculator,
+    })),
+  ),
+  RuleOf72Calculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/rule-of-72/RuleOf72Calculator'
+    ).then((mod) => ({
+      default: mod.RuleOf72Calculator,
     })),
   ),
   SabbaticalCalculator: lazyTool(() =>

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — SWP Calculator — Systematic Withdrawal Plan
+- **Summary:** Shipped SWP Calculator on existing catalog slug `swp-calculator-systematic-withdrawal-plan` (`SwpCalculator`, catalog `6af46f10a27d8d1d4e9901b3`, pillar/subPillar null). Screenshot-first (ADR-023): five solve modes; nominal period rates; beginning withdrawals; inflation growing annuity; denomination CurrencySelect (PKR default, **no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-657`.
+- **Commits:** `47c125d0` (UI) / `1baf1073` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** **1,000**/mo · **10**y · **5%** · first **2026-11-21** → PV ≈ **94,674.19** · last **Oct 21, 2036**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Roth IRA Calculator
 - **Summary:** Shipped Roth IRA Calculator on existing catalog slug `roth-ira-calculator` (`RothIraCalculator`, catalog `6af46f10a27d8d1d4e9901bb`, pillar/subPillar null). Screenshot-first (ADR-023): MAGI, ages, filing status, tax rate, return → max/eligible/after-tax contribution and retirement FV; denomination CurrencySelect (MXN default, **no FX**). IRS Notice 2025-67 / Pub 590-A 2026 limits and phase-outs. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-656`.
 - **Commits:** `1231a89a` (UI) / `ff01c080` (engine) / (registration/Brain/tracker — this commit).

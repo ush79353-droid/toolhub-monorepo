@@ -971,6 +971,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/roth-ira/detail'),
   SustainableGrowthRateCalculator: () =>
     import('@/tools/calculators/sustainable-growth-rate/detail'),
+  SwpCalculator: () => import('@/tools/calculators/swp/detail'),
   UnleveredBetaCalculator: () =>
     import('@/tools/calculators/unlevered-beta/detail'),
   WaccCalculator: () => import('@/tools/calculators/wacc/detail'),
@@ -1288,6 +1289,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/retirement/detail'),
   Rule2836Calculator: () =>
     import('@/tools/calculators/rule-2836/detail'),
+  RuleOf72Calculator: () =>
+    import('@/tools/calculators/rule-of-72/detail'),
   SabbaticalCalculator: () =>
     import('@/tools/calculators/sabbatical/detail'),
   ScrapGoldCalculator: () =>
