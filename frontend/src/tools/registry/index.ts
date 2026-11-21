@@ -527,6 +527,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TaylorRuleCalculator,
     })),
   ),
+  TrumpTariffCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/trump-tariff/TrumpTariffCalculator'
+    ).then((mod) => ({
+      default: mod.TrumpTariffCalculator,
+    })),
+  ),
   TdsInterestCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/tds-interest/TdsInterestCalculator'

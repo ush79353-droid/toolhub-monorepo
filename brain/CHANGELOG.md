@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Trump Tariff Calculator
+- **Summary:** Shipped Trump Tariff Calculator on existing catalog slug `trump-tariff-calculator` (`TrumpTariffCalculator`, catalog `6af46f10a27d8d1d4e990191`, preserved `nameKey` `trump tariff calculator`). Screenshot-first (ADR-023): product/country modes; illustrative product presets; origin; customs value × quantity; base + additional ad valorem with additive-stacking guard; landed cost; optional HTSUS format + pass-through; breakdown chart; educational guide/FAQ; no fabricated official rates. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$800** × **10** · **5%** + **20%** · ship **$250** · insure **$50** → duties **$2,000** · landed **$10,300**.
+- **Important Files:** `frontend/src/tools/calculators/trump-tariff/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` trump-tariff tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Taylor Rule Calculator
 - **Summary:** Shipped Taylor Rule Calculator on existing catalog slug `taylor-rule-calculator` (`TaylorRuleCalculator`, catalog `6af46f10a27d8d1d4e990190`, preserved `nameKey` `taylor rule calculator`). Screenshot-first (ADR-023): inflation gap; GDP output gap; i=r*+π+a(π−π*)+by; custom a/b; optional πᵉ and floor comparison; component chart; negative rates allowed. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** π **4%** · π* **2%** · Y **21T** · Y* **20T** · r* **2%** → i **9.5%**.

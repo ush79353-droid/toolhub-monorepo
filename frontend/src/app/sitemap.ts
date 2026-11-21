@@ -639,6 +639,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'reserve-ratio-calculator',
   'spending-multiplier-calculator',
   'taylor-rule-calculator',
+  'trump-tariff-calculator',
   'price-quantity-calculator',
   'private-savings-calculator',
   'savings-plan-calculator',

@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Taylor Rule Calculator live at `/tools/taylor-rule-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Trump Tariff Calculator live at `/tools/trump-tariff-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Trump Tariff Calculator (`/tools/trump-tariff-calculator`):** Live client-side educational U.S. import-duty estimator (`componentKey: 'TrumpTariffCalculator'`, catalog `6af46f10a27d8d1d4e990191`, `nameKey` `trump tariff calculator`). Screenshot-first (ADR-023): product/country modes; categories + illustrative presets (not official HTSUS); origin dropdown; customs value × qty; base + additional ad valorem with guarded additive stacking; landed cost (S/I/O); optional HTSUS format + pass-through; cost-breakdown chart; no invented official rates / no live scrape. Activated; **`indexable` left false**. Example: **$800** × **10** · **5%** + **20%** · ship **$250** · insure **$50** → duties **$2,000** · landed **$10,300**.
 - **Taylor Rule Calculator (`/tools/taylor-rule-calculator`):** Live client-side monetary-policy rule tool (`componentKey: 'TaylorRuleCalculator'`, catalog `6af46f10a27d8d1d4e990190`, `nameKey` `taylor rule calculator`). Screenshot-first (ADR-023): inflation gap π−π*; GDP output gap; i=r*+π+a(π−π*)+by (default a=b=0.5); custom coefficients; optional πᵉ ex-ante real and floor comparison; component chart; negative rates allowed; denomination CurrencySelect for GDP; guide/FAQ. Activated; **`indexable` left false**. Example: π **4%** · π* **2%** · Y **21T** · Y* **20T** · r* **2%** → i **9.5%**.
 - **Spending Multiplier Calculator (`/tools/spending-multiplier-calculator`):** Live client-side Keynesian multiplier tool (`componentKey: 'SpendingMultiplierCalculator'`, catalog `6af46f10a27d8d1d4e99018f`, `nameKey` `spending multiplier calculator`). Screenshot-first (ADR-023): From MPC/MPS/k; ΔY=k×ΔA and required ΔA; optional observed GDP comparison; finite spending rounds table+chart; undefined at MPC=1 (no Infinity); denomination CurrencySelect + magnitude; guide/FAQ. Activated; **`indexable` left false**. Example: MPC **0.6** → k **2.5×** · ΔA **$1,000,000** → ΔY **$2,500,000**.
 - **Reserve Ratio Calculator (`/tools/reserve-ratio-calculator`):** Live client-side banking reserves tool (`componentKey: 'ReserveRatioCalculator'`, catalog `6af46f10a27d8d1d4e99018e`, `nameKey` `reserve ratio calculator`). Screenshot-first (ADR-023): modes for ratio/required/excess/deposits/reserves; RR=(R/D)×100; unreserved L=D−R when R≤D; surplus vs shortfall; simple m=100/RR (undefined at 0, no Infinity); shared magnitude; denomination CurrencySelect; composition bar; guide/FAQ (Fed zero RR since Mar 2020 noted). Activated; **`indexable` left false**. Example: D **1,000** million · R **100** million → RR **10%** · L **900** · m **10**.

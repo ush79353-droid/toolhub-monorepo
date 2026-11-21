@@ -380,7 +380,7 @@ export function TrumpTariffGuideArticle() {
         Frequently Asked Questions
       </h2>
       <div className="mt-4">
-        <FAQAccordion faqs={[...TRUMP_TARIFF_FAQS]} />
+        <FAQAccordion items={[...TRUMP_TARIFF_FAQS]} />
       </div>
     </article>
   );
