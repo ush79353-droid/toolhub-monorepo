@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Okun's Law Calculator
+- **Summary:** Shipped Okun's Law Calculator on existing catalog slug `okuns-law-calculator` (`OkunsLawCalculator`, catalog `6af46f10a27d8d1d4e990189`, preserved `nameKey` `okun's law calculator`). Screenshot-first (ADR-023): four modes — output gap OutputGap=−β(u−u*), unemployment change Δu=−α(g−g*), required GDP growth g=g*−Δu/α, GDP growth gap=−Δu/α; positive β/α with explicit minus signs; SVG modeled relationship charts; original guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** u **7%** · u* **5%** · β **2** → output gap **−4%**; g **4.5%** · g* **2.5%** · α **0.4** → Δu **−0.8 pp**.
+- **Important Files:** `frontend/src/tools/calculators/okuns-law/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` okuns-law tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add NSFR Calculator (Net Stable Funding Ratio)
 - **Summary:** Shipped NSFR Calculator on existing catalog slug `nsfr-calculator` (`NsfrCalculator`, catalog `6af46f10a27d8d1d4e990188`, preserved `nameKey` `nsfr calculator`). Screenshot-first (ADR-023): ASF ÷ RSF × 100; expandable illustrative ASF helper (100/95/90/50/0%); optional RSF helper; funding gap/surplus/shortfall; ±5% sensitivity; bar+gauge SVG; educational disclaimer (not regulatory compliance). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** ASF **$170,000,000** · RSF **$150,000,000** → NSFR ≈ **113.33%**.

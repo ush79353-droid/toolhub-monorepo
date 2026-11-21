@@ -953,6 +953,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/money-supply/detail'),
   MpcCalculator: () => import('@/tools/calculators/mpc/detail'),
   NsfrCalculator: () => import('@/tools/calculators/nsfr/detail'),
+  OkunsLawCalculator: () => import('@/tools/calculators/okuns-law/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

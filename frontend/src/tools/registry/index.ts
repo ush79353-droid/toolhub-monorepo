@@ -3662,6 +3662,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NsfrCalculator,
     })),
   ),
+  OkunsLawCalculator: lazyTool(() =>
+    import('@/tools/calculators/okuns-law/OkunsLawCalculator').then((mod) => ({
+      default: mod.OkunsLawCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'
