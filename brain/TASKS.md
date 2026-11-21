@@ -104,6 +104,8 @@
 
 ## Completed
 
+| `TOOL-651` | Implement Put-Call Parity Calculator on existing slug `put-call-parity-calculator` with 3-of-4 solve C+PV(K)=P+S, continuous PV helper, Phase 2 FX, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/put-call-parity/*`, registry, FX lists, sitemap, `tool.key.ts`, `brain/*` | — |
+
 | `TOOL-651` | Implement Capital Gains Tax UK Calculator on existing slug `capital-gains-tax-uk-calculator` with HMRC 2025/26–2026/27 rates, AEA, basic-band interaction, trust path, fixed GBP, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/capital-gains-tax-uk/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 
 | `TOOL-590` | Implement Forward Rate Calculator on existing slug `forward-rate-calculator` with annual-compounding implied forward from n₁/S₁ and n₂/S₂, yrs/mo units, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/forward-rate/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |

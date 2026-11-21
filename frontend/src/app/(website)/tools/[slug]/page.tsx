@@ -98,6 +98,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'bi-weekly-mortgage-payment-calculator',
   'biweekly-pay-calculator',
   'black-scholes-calculator',
+  'put-call-parity-calculator',
   'semi-monthly-pay-calculator',
   'margin-of-safety-calculator',
   'mortgage-points-calculator',
