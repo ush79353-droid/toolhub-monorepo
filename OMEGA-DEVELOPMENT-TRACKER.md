@@ -283,5 +283,5 @@ Screenshot-first spot/forward premium + 365-day annualization. No FX selectors. 
 
 Screenshot-first Traditional/SEP/SIMPLE vs Roth comparison; IRS TY2026 limits; Phase 2 FX. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE. Roth IRA Calculator catalog row untouched.
 
-| 66 | IRA Calculator | DEVELOPED | AUDIT PENDING | 70713de9 | 215cc323 | (pending) | Completed Tools | `IraCalculator`; slug `ira-calculator`; Mongo `6af46f10a27d8d1d4e9901b6` active; Phase 2 FX; indexable false; TASKS `TOOL-647` |
+| 66 | IRA Calculator | DEVELOPED | AUDIT PENDING | 70713de9 | 215cc323 | 692c562c | Completed Tools | `IraCalculator`; slug `ira-calculator`; Mongo `6af46f10a27d8d1d4e9901b6` active; Phase 2 FX; indexable false; TASKS `TOOL-647` |
 
