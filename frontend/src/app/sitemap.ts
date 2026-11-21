@@ -627,6 +627,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'quiz-annual-income-calculator',
   'quiz-car-depreciation-calculator',
   'quiz-dividend-calculator',
+  'quiz-fetal-weight-percentile',
   'man-hours-calculator',
   'margin-interest-calculator',
   'marginal-cost-calculator',

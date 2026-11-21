@@ -891,6 +891,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/quiz-car-depreciation/detail'),
   QuizDividendCalculator: () =>
     import('@/tools/calculators/quiz-dividend/detail'),
+  QuizFetalWeightPercentileCalculator: () =>
+    import('@/tools/calculators/quiz-fetal-weight-percentile/detail'),
   ManHoursCalculator: () =>
     import('@/tools/calculators/man-hours/detail'),
   MarginInterestCalculator: () =>

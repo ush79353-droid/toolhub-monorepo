@@ -3493,6 +3493,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  QuizFetalWeightPercentileCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/quiz-fetal-weight-percentile/QuizFetalWeightPercentileCalculator'
+    ).then((mod) => ({
+      default: mod.QuizFetalWeightPercentileCalculator,
+    })),
+  ),
   ManHoursCalculator: lazyTool(() =>
     import('@/tools/calculators/man-hours/ManHoursCalculator').then((mod) => ({
       default: mod.ManHoursCalculator,

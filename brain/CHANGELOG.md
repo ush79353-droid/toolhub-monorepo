@@ -1,4 +1,10 @@
 
+### 2026-11-22 — Reverse Due Date Calculator
+- **Summary:** Shipped Reverse Due Date Calculator on existing catalog slug `reverse-due-date-calculator` (`ReverseDueDateCalculator`, catalog `6af46f10a27d8d1d4e990206`, pillar `6af451c2a27d8d1d4e98f987`). Screenshot-first (ADR-023): blank due/conception/intercourse dates; pregnancy length default **40** weeks; bidirectional last-edited authority; conception = EDD − (L − 14); intercourse window start = conception − 7; share URL only. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-694`.
+- **Commits:** `39da285d` (UI) / `a4e210df` (engine absorb) / (reg/Brain this commit).
+- **Example:** EDD **2023-08-01** · **40** wks → conception **2022-11-08** · intercourse from **2022-11-01**.
+- **Verification:** Static ACOG offset check + authored `calculation.test.ts`. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Pregnancy Conception Calculator
 - **Summary:** Shipped Pregnancy Conception Calculator on existing catalog slug `pregnancy-conception-calculator` (`PregnancyConceptionCalculator`, catalog `6af46f10a27d8d1d4e9901f7`, pillar `6af451c1a27d8d1d4e98f984`). Screenshot-first: Due Date / LMP / Ultrasound; sample EDD Mar 21 2027; conception = EDD−266; approximate intercourse window conception−5…conception; ACOG CO 700 framing; share URL only. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-680`.
 - **Commits:** `40c373d4` (UI) / engine absorbed into concurrent `b5721c3c` / (reg/Brain this commit).

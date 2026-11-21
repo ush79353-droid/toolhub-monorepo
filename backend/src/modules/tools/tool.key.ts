@@ -631,6 +631,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'QuizAnnualIncomeCalculator',
   'QuizCarDepreciationCalculator',
   'QuizDividendCalculator',
+  'QuizFetalWeightPercentileCalculator',
   'ManHoursCalculator',
   'MarginInterestCalculator',
   'MarginalCostCalculator',
@@ -672,6 +673,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PitiCalculator',
   'PivotPointCalculator',
   'PortfolioBetaCalculator',
+  'PositivePregnancyFollowUpCalculator',
   'PostJudgmentInterestCalculator',
   'PreAndPostMoneyValuationCalculator',
   'PregnancyCalculator',
@@ -1002,7 +1004,4 @@ if (isDirect) {
     }
   }
   if (isApprovedComponentKey('EvilEval')) {
-    throw new Error('component key allowlist');
-  }
-  console.log('tool.key ok');
-}
+    throw new Error('component key allowlist')
