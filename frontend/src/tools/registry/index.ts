@@ -3805,6 +3805,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MoneySupplyCalculator,
     })),
   ),
+  MoratoriumCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/moratorium/MoratoriumCalculator'
+    ).then((mod) => ({
+      default: mod.MoratoriumCalculator,
+    })),
+  ),
   MpcCalculator: lazyTool(() =>
     import('@/tools/calculators/mpc/MpcCalculator').then((mod) => ({
       default: mod.MpcCalculator,

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Moratorium Calculator
+- **Summary:** Shipped Moratorium Calculator on existing catalog slug `moratorium-calculator` (`MoratoriumCalculator`, catalog `6af46f10a27d8d1d4e9901ac`, preserved `nameKey` `moratorium calculator`). Screenshot-first (ADR-023): loan-term vs EMI modes; capitalized vs interest-only moratorium; three repayment plans; optional compounding; balance chart + schedule; denomination CurrencySelect (INR). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **₹300,000** · **8%** · **10y** · **12mo** capitalized same-term → accrued ≈ **₹24,900**; revised EMI above original.
+- **Important Files:** `frontend/src/tools/calculators/moratorium/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` moratorium tests 18/18 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Lumpsum Calculator
 - **Summary:** Shipped Lumpsum Calculator on existing catalog slug `lumpsum-calculator` (`LumpsumCalculator`, catalog `6af46f10a27d8d1d4e9901ab`, preserved `nameKey` `lumpsum calculator`). Screenshot-first (ADR-023): four modes (PV/FV/rate/term); periodic + continuous compounding; inflation-adjusted FV; EAR; growth chart/schedule; denomination CurrencySelect (INR). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Goal **₹100,000** · **10%** · **10y** · monthly → required PV ≈ **₹36,940.70**; **₹100,000** · **10%** · **10y** · annually → FV ≈ **₹259,374.25**.

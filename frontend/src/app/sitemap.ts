@@ -713,6 +713,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'epf-calculator',
   'hra-exemption-calculator',
   'lumpsum-calculator',
+  'moratorium-calculator',
   'lgd-calculator-loss-given-default',
   'credit-card-calculator',
   'credit-card-interest-calculator',

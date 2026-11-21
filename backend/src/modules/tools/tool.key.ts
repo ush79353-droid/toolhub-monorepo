@@ -689,6 +689,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LumpsumCalculator',
   'MoneyMultiplierCalculator',
   'MoneySupplyCalculator',
+  'MoratoriumCalculator',
   'MpcCalculator',
   'NsfrCalculator',
   'OkunsLawCalculator',
@@ -1534,6 +1535,7 @@ if (isDirect) {
     !isApprovedComponentKey('LumpsumCalculator') ||
     !isApprovedComponentKey('MoneyMultiplierCalculator') ||
     !isApprovedComponentKey('MoneySupplyCalculator') ||
+    !isApprovedComponentKey('MoratoriumCalculator') ||
     !isApprovedComponentKey('MpcCalculator') ||
     !isApprovedComponentKey('NsfrCalculator') ||
     !isApprovedComponentKey('OkunsLawCalculator') ||

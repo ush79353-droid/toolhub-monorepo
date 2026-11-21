@@ -998,6 +998,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/money-multiplier/detail'),
   MoneySupplyCalculator: () =>
     import('@/tools/calculators/money-supply/detail'),
+  MoratoriumCalculator: () =>
+    import('@/tools/calculators/moratorium/detail'),
   MpcCalculator: () => import('@/tools/calculators/mpc/detail'),
   NsfrCalculator: () => import('@/tools/calculators/nsfr/detail'),
   OkunsLawCalculator: () => import('@/tools/calculators/okuns-law/detail'),

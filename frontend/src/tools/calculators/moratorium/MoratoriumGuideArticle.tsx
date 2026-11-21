@@ -207,7 +207,7 @@ export function MoratoriumGuideArticle() {
         Frequently Asked Questions
       </h2>
       <div className="mt-4">
-        <FAQAccordion faqs={[...MORATORIUM_FAQS]} />
+        <FAQAccordion items={[...MORATORIUM_FAQS]} />
       </div>
     </article>
   );
