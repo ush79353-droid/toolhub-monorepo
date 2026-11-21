@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Reserve Ratio Calculator live at `/tools/reserve-ratio-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Spending Multiplier Calculator live at `/tools/spending-multiplier-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Spending Multiplier Calculator (`/tools/spending-multiplier-calculator`):** Live client-side Keynesian multiplier tool (`componentKey: 'SpendingMultiplierCalculator'`, catalog `6af46f10a27d8d1d4e99018f`, `nameKey` `spending multiplier calculator`). Screenshot-first (ADR-023): From MPC/MPS/k; ΔY=k×ΔA and required ΔA; optional observed GDP comparison; finite spending rounds table+chart; undefined at MPC=1 (no Infinity); denomination CurrencySelect + magnitude; guide/FAQ. Activated; **`indexable` left false**. Example: MPC **0.6** → k **2.5×** · ΔA **$1,000,000** → ΔY **$2,500,000**.
 - **Reserve Ratio Calculator (`/tools/reserve-ratio-calculator`):** Live client-side banking reserves tool (`componentKey: 'ReserveRatioCalculator'`, catalog `6af46f10a27d8d1d4e99018e`, `nameKey` `reserve ratio calculator`). Screenshot-first (ADR-023): modes for ratio/required/excess/deposits/reserves; RR=(R/D)×100; unreserved L=D−R when R≤D; surplus vs shortfall; simple m=100/RR (undefined at 0, no Infinity); shared magnitude; denomination CurrencySelect; composition bar; guide/FAQ (Fed zero RR since Mar 2020 noted). Activated; **`indexable` left false**. Example: D **1,000** million · R **100** million → RR **10%** · L **900** · m **10**.
 - **Real GDP Calculator (`/tools/real-gdp-calculator`):** Live client-side real GDP tool (`componentKey: 'RealGdpCalculator'`, catalog `6af46f10a27d8d1d4e99018d`, `nameKey` `real gdp calculator`). Screenshot-first (ADR-023): modes for Real/Nominal/Deflator; R=(N/D)×100; shared magnitude units→trillions; denomination CurrencySelect (no FX); optional growth helper; nominal-vs-real bar chart; guide/FAQ. Activated; **`indexable` left false**. Example: N **25,000** billion · D **125** → R **20,000** billion.
 - **Price Elasticity of Supply Calculator (`/tools/price-elasticity-of-supply-calculator`):** Live client-side PES tool (`componentKey: 'PriceElasticityOfSupplyCalculator'`, catalog `6af46f10a27d8d1d4e99018c`, `nameKey` `price elasticity of supply calculator`). Screenshot-first (ADR-023): standard + midpoint methods; P₁/P₂/Q₁/Q₂; auto %ΔP/%ΔQs; signed PES; undefined when ΔP=0 (no Infinity); observation chart; CurrencySelect denomination; guide/FAQ. Activated; **`indexable` left false**. Example: P **100→120** · Qs **500→600** → PES **1.00** (unit elastic).

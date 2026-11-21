@@ -2518,6 +2518,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SimpleInterestCalculator,
     })),
   ),
+  SpendingMultiplierCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/spending-multiplier/SpendingMultiplierCalculator'
+    ).then((mod) => ({
+      default: mod.SpendingMultiplierCalculator,
+    })),
+  ),
   SinkingFundCalculator: lazyTool(() =>
     import('@/tools/calculators/sinking-fund/SinkingFundCalculator').then((mod) => ({
       default: mod.SinkingFundCalculator,

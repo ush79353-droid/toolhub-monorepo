@@ -637,6 +637,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'price-elasticity-of-supply-calculator',
   'real-gdp-calculator',
   'reserve-ratio-calculator',
+  'spending-multiplier-calculator',
   'price-quantity-calculator',
   'private-savings-calculator',
   'savings-plan-calculator',

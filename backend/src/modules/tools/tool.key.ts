@@ -456,6 +456,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TrueCostOfRealEstateCommissionCalculator',
   'SellThroughRateCalculator',
   'SimpleInterestCalculator',
+  'SpendingMultiplierCalculator',
   'TdsInterestCalculator',
   'SinkingFundCalculator',
   'SipCalculator',
@@ -1279,6 +1280,7 @@ if (isDirect) {
     !isApprovedComponentKey('TrueCostOfRealEstateCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     !isApprovedComponentKey('SimpleInterestCalculator') ||
+    !isApprovedComponentKey('SpendingMultiplierCalculator') ||
     !isApprovedComponentKey('TdsInterestCalculator') ||
     !isApprovedComponentKey('SinkingFundCalculator') ||
     !isApprovedComponentKey('SipCalculator') ||

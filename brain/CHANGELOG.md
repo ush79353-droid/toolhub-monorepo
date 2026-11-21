@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Spending Multiplier Calculator
+- **Summary:** Shipped Spending Multiplier Calculator on existing catalog slug `spending-multiplier-calculator` (`SpendingMultiplierCalculator`, catalog `6af46f10a27d8d1d4e99018f`, preserved `nameKey` `spending multiplier calculator`). Screenshot-first (ADR-023): From MPC/MPS/k; ΔY=k×ΔA and required ΔA; optional observed GDP comparison; finite spending rounds + chart; undefined at MPC=1 (no Infinity); denomination CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** MPC **0.6** → k **2.5×** · ΔA **$1,000,000** → ΔY **$2,500,000**.
+- **Important Files:** `frontend/src/tools/calculators/spending-multiplier/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` spending-multiplier tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Reserve Ratio Calculator
 - **Summary:** Shipped Reserve Ratio Calculator on existing catalog slug `reserve-ratio-calculator` (`ReserveRatioCalculator`, catalog `6af46f10a27d8d1d4e99018e`, preserved `nameKey` `reserve ratio calculator`). Screenshot-first (ADR-023): ratio/required/excess/deposits/reserves modes; RR=(R/D)×100; L=D−R when applicable; surplus vs shortfall; simple m=100/RR without Infinity; magnitude + denomination CurrencySelect; composition bar; original guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Deposits **1,000** million · Reserves **100** million → RR **10%** · unreserved **900** · m **10**.
