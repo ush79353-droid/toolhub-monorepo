@@ -885,6 +885,8 @@
 - **Admin Profile 2FA Switch (`AdminProfileClient.tsx`):** UI toggle state only; no TOTP backend exists.
 
 ### Pending / Planned
+- **Adderall Dosage Calculator (`adderall-dosage-calculator`, Mongo `6af46f10a27d8d1d4e9901d1`):** **BLOCKED** (TOOL-704). DailyMed IR tablet labeling verified; clinical-review approval and custom-dose/result UX still missing. No module / `componentKey` / activation. Folder: `In Progress/Adderall Dosage Calculator`.
+- **Levothyroxine Dosage Calculator:** remains clinical-review blocked (partial local shell only; not activated).
 - **Auto Loan Calculator financial calculation accuracy testing** (dedicated QA phase before marking math formulas sign-off complete).
 - Wiring is done for public `/tools`, `/categories`, and `/categories/[slug]`. `listFeaturedTools` still does not require `isActive: true`.
 - Building remaining client-side/server-side tool components under `frontend/src/tools/` (`TOOL-01`) and registering them.

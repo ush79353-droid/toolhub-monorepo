@@ -4,7 +4,7 @@ import { LEVO_FAQS, LEVO_TOC } from './content';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Explore levothyroxine eligibility fields from the approved screenshot — educational only. No patient-specific mcg/day dose is published without clinical approval.',
+    'Educational levothyroxine teaching estimate for the verified healthy-adult overt-hypothyroidism branch (FDA 1.6 mcg/kg × Devine dosing weight). Not a prescription — other populations stay clinician-gated.',
   asideAriaLabel: 'Levothyroxine Dosage Calculator panel',
   tocItems: LEVO_TOC,
   GuideArticle: LevothyroxineDosageGuideArticle,

@@ -37,6 +37,25 @@ export function LevothyroxineDosageResults({ result }: Props) {
           <p className="leading-relaxed text-muted-foreground">
             {result.statusDetail}
           </p>
+          {result.weightKg != null || result.idealBodyWeightKg != null ? (
+            <ul className="list-disc space-y-1 pl-5 text-[13px] text-muted-foreground">
+              {result.weightKg != null ? (
+                <li>Actual weight: {result.weightKg.toFixed(1)} kg</li>
+              ) : null}
+              {result.idealBodyWeightKg != null ? (
+                <li>
+                  Devine ideal body weight: {result.idealBodyWeightKg.toFixed(1)}{' '}
+                  kg
+                </li>
+              ) : null}
+              {result.dosingWeightKg != null ? (
+                <li>
+                  Dosing weight (lesser of actual and IBW):{' '}
+                  {result.dosingWeightKg.toFixed(1)} kg
+                </li>
+              ) : null}
+            </ul>
+          ) : null}
           {result.educationalLines.length > 0 ? (
             <ul className="list-disc space-y-1.5 pl-5 text-[13px] text-foreground/85">
               {result.educationalLines.map((line) => (

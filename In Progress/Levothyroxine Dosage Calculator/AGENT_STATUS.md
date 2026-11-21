@@ -1,29 +1,29 @@
 # Levothyroxine Dosage Calculator — AGENT STATUS
 
-**Status:** BLOCKED  
-**Agent:** cursor-composer-continuous-20261122-014915-25180  
-**Claimed:** 2026-11-22 via atomic `Directory.Move` `Tools/` → `In Progress/`  
-**MongoDB:** pending reconfirm on unblock (catalog name present; assign not run)  
-**Slug (expected):** `levothyroxine-dosage-calculator`  
-**componentKey:** (none)  
-**isDeveloped:** false · **isActive:** false · **indexable:** false  
+**Status:** PARTIALLY_IMPLEMENTED — CLINICAL_REVIEW_BLOCKED  
+**Agent:** cursor-composer-20261122020244-24028  
+**MongoDB _id:** `6af46f10a27d8d1d4e9901d9`  
+**Slug:** `levothyroxine-dosage-calculator`  
+**componentKey:** (none — not registered/activated)  
+**isDeveloped:** false · **isActive:** false · **indexable:** false (preserved)
 
-## Blocker
+## What shipped locally
 
-Task `prompt.txt` explicitly requires:
+- Screenshot UI shell (Personal information + Health conditions + empty mcg/day field + share/reload/clear/feedback).
+- Engine returns only gated outcomes; **`doseMcgPerDay` always `null`**.
+- FDA DailyMed SYNTHROID (2024-02-20) cited for educational label context only.
 
-> No personalized prescription engine from these inputs. Require approved indication, lab definitions, source guideline, specialist review and documented population exclusions before exposing a dose. Keep unsupported or incomplete cases educational and never infer clinical data.
+## Commits
 
-Screenshot shows a **Levothyroxine dose (mcg per day)** result driven by sex, age band, weight, height, FT4 low/normal, and heart disease. Shipping that output without documented specialist review / approved indication+lab package would violate the task gate and medical-safety guidance.
+1. UI: `3426381f`
+2. Engine: `f3a6bb63`
+3. Integration/activation: **not created** (clinical gate)
 
-ATA/AACE-style mcg/kg educational heuristics are insufficient to satisfy the prompt’s **specialist review** requirement.
+## Still blocked for activation
 
-## Actions taken
+Specialist / clinical-approval package for individualized mcg/day prescribing is not present. No `tool:assign`, no registry wiring, no `isDeveloped`/`isActive` flip.
 
-- Spec + screenshot read.
-- No calculator module, registry, commits, or `tool:assign`.
-- Folder retained in `In Progress`.
+## References consulted
 
-## Next step when unblocked
-
-Obtain documented clinical review approval (or authorized educational-only scope change without mcg/day prescription output), then develop under ADR-018/019/022/023.
+- DailyMed SYNTHROID setid `1e11ad30-1041-4520-10b0-8f9d30d30fcc` (updated 2024-02-20) — adult 1.6 mcg/kg/day full replacement; lower start if cardiac/geriatric; titrate on TSH or free-T4.
+- FDA label 021402s038 Table 1 (same teaching).

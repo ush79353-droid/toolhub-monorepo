@@ -1,9 +1,10 @@
 /**
- * Levothyroxine Dosage Calculator — screenshot UI + clinical eligibility gate.
+ * Levothyroxine Dosage Calculator — screenshot UI + typed eligibility engine.
  *
  * Screenshot defaults: Female, 15–50, blank kg/cm, FT4 Low, heart disease No.
- * Numeric mcg/day prescribing is NOT authorized without specialist review.
- * Engine returns unavailable / clinician-review states only (ADR-023 + medical gate).
+ * Educational mcg/day teaching estimate is emitted only for the verified
+ * healthy-adult overt-hypothyroidism teaching branch (FDA 1.6 mcg/kg ×
+ * min(actual, Devine IBW)). All other branches stay gated.
  */
 
 export type Sex = 'female' | 'male';
@@ -20,8 +21,10 @@ export type HeightUnit = 'cm' | 'in';
 
 export type LevothyroxineOutcome =
   | 'awaiting_inputs'
-  | 'cannot_determine'
-  | 'clinician_review_required';
+  | 'unsupported_population'
+  | 'insufficient_clinical_information'
+  | 'clinician_review_required'
+  | 'approved_estimate_available';
 
 export interface LevothyroxineDosageInput {
   sex: Sex;
@@ -36,11 +39,17 @@ export interface LevothyroxineDosageInput {
 
 export interface LevothyroxineDosageResult {
   outcome: LevothyroxineOutcome;
-  /** Always null — no patient-specific mcg/day until clinical approval. */
+  /**
+   * Educational teaching mcg/day for the approved healthy-adult overt branch only.
+   * Null for all gated outcomes — never a personal prescription.
+   */
   doseMcgPerDay: number | null;
   statusHeadline: string;
   statusDetail: string;
   educationalLines: string[];
+  weightKg: number | null;
+  idealBodyWeightKg: number | null;
+  dosingWeightKg: number | null;
   sourceNote: string;
   disclaimer: string;
 }

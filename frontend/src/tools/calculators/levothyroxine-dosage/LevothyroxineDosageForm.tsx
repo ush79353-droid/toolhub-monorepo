@@ -71,12 +71,13 @@ export function LevothyroxineDosageForm({
     >
       <div className="rounded-xl border border-amber-200/80 bg-amber-50/80 px-3.5 py-3 text-[13px] leading-relaxed text-accent">
         <p className="font-semibold text-amber-950">
-          Educational eligibility explorer — not a prescription
+          Educational teaching estimate — not a prescription
         </p>
         <p className="mt-1.5 text-foreground/85">
-          FDA labeling requires individualized levothyroxine dosing with lab
-          follow-up. This tool does not publish a patient-specific mcg/day dose
-          from these fields alone.
+          For healthy adults (15–50, FT4 Low, no heart disease) with Devine-eligible
+          height, an educational 1.6 mcg/kg × min(actual, IBW) teaching figure may
+          appear. Older adults, cardiac disease, Normal FT4, and incomplete inputs
+          stay gated for clinician review.
         </p>
       </div>
 

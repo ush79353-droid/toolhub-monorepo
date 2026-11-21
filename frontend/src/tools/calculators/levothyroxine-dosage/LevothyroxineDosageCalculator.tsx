@@ -17,13 +17,20 @@ import {
 } from './types';
 import { validateLevothyroxineDosageInput } from './validation';
 
-function shareText(pageUrl: string): string {
-  return [
+function shareText(
+  pageUrl: string,
+  doseMcgPerDay: number | null | undefined,
+): string {
+  const lines = [
     'Levothyroxine Dosage Calculator | Omega Calculators',
     '',
-    'Educational eligibility explorer — not a prescription. mcg/day is not published without clinical approval.',
-    pageUrl,
-  ].join('\n');
+    'Educational teaching estimate or eligibility status — not a prescription.',
+  ];
+  if (doseMcgPerDay != null) {
+    lines.push(`Educational teaching estimate: ${doseMcgPerDay} mcg/day`);
+  }
+  lines.push(pageUrl);
+  return lines.join('\n');
 }
 
 export function LevothyroxineDosageCalculator({
@@ -88,7 +95,7 @@ export function LevothyroxineDosageCalculator({
     typeof window !== 'undefined'
       ? `${window.location.origin}/tools/${metadata.slug}`
       : `/tools/${metadata.slug}`;
-  const summary = shareText(pageUrl);
+  const summary = shareText(pageUrl, result?.doseMcgPerDay);
 
   const handleCopy = async () => {
     if (await copyTextToClipboard(summary)) {
@@ -128,7 +135,7 @@ export function LevothyroxineDosageCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Screenshot fields + clinical gate — no unapproved mcg/day dose.
+            Devine IBW + FDA 1.6 mcg/kg teaching — gated outside healthy-adult branch.
           </p>
         </div>
         {headerActions ? (
