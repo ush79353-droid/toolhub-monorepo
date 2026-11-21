@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Retirement Withdrawal Calculator
+- **Summary:** Shipped Retirement Withdrawal Calculator on existing catalog slug `retirement-withdrawal-calculator` (`RetirementWithdrawalCalculator`, catalog `6af46f10a27d8d1d4e9901b9`, pillar/subPillar null). Screenshot-first (ADR-023): solve for withdrawal or duration; balance/ages/years; interest; inflation before/after; advanced frequency/compounding/timing/end balance; yearly principal chart+table; denomination CurrencySelect (PKR default, **no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-655`.
+- **Commits:** `94f217f1` (UI) / `865ce259` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** **100,000** · **4%** yearly compound · monthly begin · **20**y · end **0** → ≈ **600.25**/period.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Retirement Calculator
 - **Summary:** Shipped Retirement Calculator on existing catalog slug `retirement-calculator` (`RetirementCalculator`, catalog `6af46f10a27d8d1d4e9901b8`, pillar/subPillar null). Screenshot-first (ADR-023): About you / Your savings / Your retirement money collapsible sections; sex + country LE defaults (UN WPP 2024 e0); US government-pension default from SSA Dec 2024 average retired-worker benefit; end-of-year accumulation; amortized withdrawals through life expectancy with continued returns; budget coverage and money left; denomination CurrencySelect (**no FX** — prompt forbids FX for display currency). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-654`.
 - **Commits:** `0e5eae7d` (UI) / `08b8a92c` (engine) / (registration/Brain/tracker — this commit).

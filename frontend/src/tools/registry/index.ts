@@ -3667,6 +3667,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ResidualIncomeCalculator,
     })),
   ),
+  RetirementWithdrawalCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/retirement-withdrawal/RetirementWithdrawalCalculator'
+    ).then((mod) => ({
+      default: mod.RetirementWithdrawalCalculator,
+    })),
+  ),
   ReturnOnAssetsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/return-on-assets/ReturnOnAssetsCalculator'

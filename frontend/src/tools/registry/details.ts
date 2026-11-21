@@ -960,6 +960,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/reserve-ratio/detail'),
   ResidualIncomeCalculator: () =>
     import('@/tools/calculators/residual-income/detail'),
+  RetirementWithdrawalCalculator: () =>
+    import('@/tools/calculators/retirement-withdrawal/detail'),
   ReturnOnAssetsCalculator: () =>
     import('@/tools/calculators/return-on-assets/detail'),
   ReturnOnEquityCalculator: () =>

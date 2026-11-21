@@ -804,6 +804,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'price-to-earnings-ratio-calculator',
   'relative-strength-index-calculator-rsi',
   'residual-income-calculator',
+  'retirement-withdrawal-calculator',
   'retention-ratio-calculator',
   'return-on-assets-calculator',
   'return-on-equity-calculator',

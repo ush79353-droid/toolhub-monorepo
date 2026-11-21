@@ -666,6 +666,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RelativeStrengthIndexCalculator',
   'ReserveRatioCalculator',
   'ResidualIncomeCalculator',
+  'RetirementWithdrawalCalculator',
   'RentSplitCalculator',
   'RentVsBuyCalculator',
   'ReturnOnAssetsCalculator',
