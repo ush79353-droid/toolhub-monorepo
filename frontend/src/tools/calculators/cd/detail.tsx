@@ -1,11 +1,11 @@
 import type { ToolPageDetail } from '@/tools/page-detail';
-import { CdGuideArticle } from './CdGuideArticle';
 import { CD_FAQS, CD_TOC_ITEMS } from './content';
+import { CdGuideArticle } from './CdGuideArticle';
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Estimate certificate of deposit final balance and interest earned with compound interest.',
-  asideAriaLabel: 'Interactive CD calculator',
+    'Estimate Certificate of Deposit maturity value, compound interest, effective APY, and a simplified after-tax interest estimate. Currency changes formatting only.',
+  asideAriaLabel: 'CD Calculator guide',
   tocItems: CD_TOC_ITEMS,
   GuideArticle: CdGuideArticle,
   faqs: CD_FAQS,

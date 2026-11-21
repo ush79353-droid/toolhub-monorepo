@@ -134,6 +134,7 @@ Status values: `Pending` / `Complete` / `Blocked`. Manual verification: `Pending
 | 103 | Treynor Ratio | `treynor-ratio-calculator` | 21 | Complete | ae81dbb | Pending | Synced selectors (×2); beginning and ending convert; return %, beta, Treynor % FX-invariant |
 | 104 | TTM | `ttm-calculator-trailing-twelve-months` | 21 | Complete | ae81dbb | Pending | Synced selector; four quarterly flows convert; TTM sum scales; mode/order unchanged |
 | 105 | Value at Risk (VaR) | `value-at-risk-calculator-var` | 21 | Complete | ae81dbb | Pending | Synced selectors (×2); portfolio value converts; σ, μ, probabilities, horizon unchanged |
+| 106 | Real Estate Commission | `real-estate-commission-calculator` | — | Complete | (ADR-019 integration commit) | Pending | Independent selectors (×3); house price converts on change; commission/owner results convert for display; commission % never converted |
 
 ## Batch 1 notes
 

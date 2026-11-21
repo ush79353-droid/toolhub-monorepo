@@ -14,6 +14,7 @@ import { mediaRouter } from './modules/media/media.router';
 import { toolRouter } from './modules/tools/tool.router';
 import { catalogRouter } from './modules/catalog/catalog.router';
 import { currencyRouter } from './modules/currency/currency.router';
+import { homeValueRouter } from './modules/home-value/home-value.router';
 
 export function createApp(): Application {
   const app = express();
@@ -55,6 +56,7 @@ export function createApp(): Application {
   v1Router.use('/admin/tools', toolRouter);
   v1Router.use('/catalog', catalogRouter);
   v1Router.use('/currency', currencyRouter);
+  v1Router.use('/home-value', homeValueRouter);
 
   // Mount versioned API
   app.use(env.API_PREFIX, v1Router);

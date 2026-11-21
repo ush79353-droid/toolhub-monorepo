@@ -39,9 +39,16 @@ Thumbs.db
 *.tmp
 *.temp
 
+# Regenerated catalog content export (npm run tools:export-content)
+backend/data/tool-content/
+
 # Sensitive files
 *.pem
 *.key
 *.p12
 *.pfx
 *.zip
+/Tools/
+/Tools/**
+/Completed-Tools/
+/Completed-Tools/**

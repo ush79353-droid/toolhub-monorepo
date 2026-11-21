@@ -1,0 +1,485 @@
+# OMEGACALCULATORS — MONTHLY INCOME CALCULATOR
+## Corrected Screenshot-Based Development Prompt
+
+### 1. Mission
+
+Develop **Monthly Income Calculator** using the newly attached screenshot as the authoritative functionality reference.
+
+**Suggested slug:** `monthly-income-calculator` — verify against MongoDB.
+
+This prompt replaces the previous generic Monthly Income Calculator prompt, which was prepared before the screenshot became available.
+
+The calculator must:
+
+- Accept Hourly, Daily, Weekly or Yearly earnings.
+- Automatically calculate Monthly Income.
+- Support bidirectional synchronization between the four earnings inputs.
+- Allow users to customize working hours and working days through the screenshot's checkbox.
+- Support independent currency selectors with real numeric FX conversion.
+- Preserve OmegaCalculators' existing design system and architecture.
+
+The screenshot is a **functionality reference only**, not a styling reference.
+
+Follow ADR-016, ADR-018 and ADR-023.
+
+---
+
+### 2. MongoDB-First Verification
+
+Before writing code:
+
+1. Search existing MongoDB tool records by title, slug and aliases.
+2. Confirm the matching authorized calculator record.
+3. Verify MongoDB ID, component key, pillar, slug and development status.
+4. Check whether this calculator was already developed from the previous prompt.
+5. Check existing ownership, active agents and development tracker status.
+6. Compare existing implementations of:
+   - Hours Pay Calculator.
+   - Money per Hour Calculator.
+   - Annual to Monthly Salary Calculator.
+   - Salary to Hourly Calculator.
+   - Hourly Wage Calculator.
+7. Reuse established pay-period conversion and FX utilities where appropriate.
+
+**STOP CONDITIONS:**
+
+- If no matching authorized MongoDB record exists, SKIP. Never create one.
+- If the calculator is already fully developed, STOP and report ALREADY DEVELOPED.
+- If another agent actively owns it, STOP.
+- If a partially developed implementation exists, inspect its existing commits and ownership before deciding whether it can safely be completed.
+
+Never overwrite completed salary calculators or duplicate their MongoDB records.
+
+---
+
+### 3. Screenshot UI — Exact Structure
+
+Preserve the following field order and grouping.
+
+#### Section A — How Much You Earn...
+
+The section is expanded by default.
+
+Display the heading:
+
+**How much you earn....**
+
+Provide four independently editable monetary inputs.
+
+**Field 1 — Hourly**
+
+- Numeric monetary input.
+- Independent PKR currency selector.
+- Initially blank.
+
+**Field 2 — Daily**
+
+- Numeric monetary input.
+- Independent PKR currency selector.
+- Initially blank.
+
+**Field 3 — Weekly**
+
+- Numeric monetary input.
+- Independent PKR currency selector.
+- Initially blank.
+
+**Field 4 — Yearly**
+
+- Numeric monetary input.
+- Independent PKR currency selector.
+- Initially blank.
+
+Do not add a Biweekly or Monthly input to this section.
+
+All four monetary fields must be editable.
+
+When the user enters or edits one field, treat it as the authoritative source and recalculate the remaining fields.
+
+#### Field 5 — Adjust Number of Hours and Days
+
+Below the Yearly field, implement a checkbox:
+
+**Adjust number of hours and days**
+
+Default: unchecked.
+
+When unchecked, display the screenshot's helper message:
+
+"Select the checkbox to adjust the numbers of hours and days you work."
+
+When checked, reveal the working-time configuration.
+
+The screenshot does not show the checkbox's expanded state.
+
+Use the original authorized specification, existing project conventions or available reference implementation to establish the exact expanded fields.
+
+At minimum, the conversion model requires:
+
+- Working hours per day.
+- Working days per week.
+
+Where the authorized specification supports it, allow customization of working weeks per year.
+
+Do not invent unrelated scheduling, overtime, tax or benefit inputs.
+
+Use clearly disclosed defaults when the checkbox is unchecked:
+
+- 8 working hours per day.
+- 5 working days per week.
+- 52 working weeks per year.
+
+The defaults must be applied consistently across all calculations.
+
+#### Section B — Result
+
+Display the heading:
+
+**Result**
+
+Output field:
+
+**Monthly income**
+
+- Calculated monetary output.
+- Independent PKR currency selector.
+- Read-only.
+- Automatically updated when earnings, currencies or working-time settings change.
+
+Preserve the screenshot's clear separation between inputs and results.
+
+#### Shared Calculator Actions
+
+Reuse the project's existing:
+
+- Share Result.
+- Reload Calculator.
+- Clear All Changes.
+- Yes/No feedback controls.
+
+Use OmegaCalculators' established responsive styling, typography, input components and accessibility patterns.
+
+Do not reproduce the reference website's visual styling.
+
+---
+
+### 4. Accurate Calculation Model
+
+Normalize calculations using:
+
+- `H` = working hours per day.
+- `D` = working days per week.
+- `W` = working weeks per year.
+
+Default values:
+
+`H = 8`
+
+`D = 5`
+
+`W = 52`
+
+Derived values:
+
+`Weekly Working Hours = H × D`
+
+`Annual Working Hours = H × D × W`
+
+`Annual Working Days = D × W`
+
+`Average Working Weeks Per Month = W / 12`
+
+These are working-time assumptions used to convert income periods.
+
+#### From Hourly Earnings
+
+If Hourly Pay is the authoritative input:
+
+`Daily Pay = Hourly Pay × H`
+
+`Weekly Pay = Hourly Pay × H × D`
+
+`Yearly Pay = Hourly Pay × H × D × W`
+
+`Monthly Income = Yearly Pay / 12`
+
+#### From Daily Earnings
+
+If Daily Pay is authoritative:
+
+`Hourly Pay = Daily Pay / H`
+
+`Weekly Pay = Daily Pay × D`
+
+`Yearly Pay = Daily Pay × D × W`
+
+`Monthly Income = Yearly Pay / 12`
+
+#### From Weekly Earnings
+
+If Weekly Pay is authoritative:
+
+`Hourly Pay = Weekly Pay / (H × D)`
+
+`Daily Pay = Weekly Pay / D`
+
+`Yearly Pay = Weekly Pay × W`
+
+`Monthly Income = Yearly Pay / 12`
+
+#### From Yearly Earnings
+
+If Yearly Pay is authoritative:
+
+`Hourly Pay = Yearly Pay / (H × D × W)`
+
+`Daily Pay = Yearly Pay / (D × W)`
+
+`Weekly Pay = Yearly Pay / W`
+
+`Monthly Income = Yearly Pay / 12`
+
+Do not use approximate four-weeks-per-month conversion.
+
+Use annual normalization to avoid inconsistent monthly earnings.
+
+---
+
+### 5. Last-Edited-Field Behavior
+
+Implement a reliable authoritative-input model.
+
+Requirements:
+
+1. Track which monetary field was most recently edited.
+2. Use that field as the sole source of the earnings calculation.
+3. Convert its value into a canonical currency.
+4. Normalize it to annual earnings.
+5. Calculate the other three earnings fields.
+6. Derive monthly income.
+7. Convert each displayed monetary value into its independently selected currency.
+8. Prevent circular React state updates.
+9. Preserve editing behavior while typing.
+10. Recalculate when working-time settings change.
+
+Changing a currency selector must not accidentally alter the underlying income.
+
+If the authoritative input is cleared, show a consistent blank result state.
+
+Do not silently treat a previously auto-calculated field as a new source.
+
+---
+
+### 6. Working-Time Customization
+
+When the adjustment checkbox is enabled:
+
+- Reveal the verified working-time inputs.
+- Validate each field.
+- Recalculate derived earnings and monthly income immediately.
+- Preserve the original earnings source value.
+- Preserve the source currency.
+
+For example, if the user enters hourly earnings and changes hours per day, daily, weekly, yearly and monthly amounts should update.
+
+If the user enters annual earnings, changing working hours should change hourly and daily equivalents without changing the entered annual earnings.
+
+When the checkbox is disabled again, restore the standard working-time assumptions without changing the authoritative pay amount.
+
+Validation:
+
+- Hours per day must be greater than zero and no more than 24.
+- Working days per week must be greater than zero and no more than 7.
+- Working weeks per year must be greater than zero and no more than the project's supported annual maximum, if such a field exists.
+- Reject invalid, nonfinite or zero denominators.
+
+Do not imply these assumptions establish an employee's actual paid or unpaid leave entitlement.
+
+---
+
+### 7. Real Numerical Currency Conversion
+
+The screenshot includes independent PKR currency selectors for:
+
+1. Hourly.
+2. Daily.
+3. Weekly.
+4. Yearly.
+5. Monthly income.
+
+Use the existing **Phase 2 shared numeric FX infrastructure**.
+
+Requirements:
+
+- Perform genuine currency conversions, not symbol replacement.
+- Preserve independent currency selectors.
+- Normalize amounts into the established canonical calculation currency.
+- Apply currency conversion before or after period normalization consistently.
+- Avoid multiple conversion passes that introduce drift.
+- Maintain full numerical precision.
+- Round only for display.
+- Handle unavailable exchange rates safely.
+- Display stale-rate warnings where supported.
+- Never assume 1:1 exchange rates.
+- Never FX-convert hours, days or weeks.
+
+Register the confirmed slug in both live `CURRENCY_CONVERSION_SLUGS` lists:
+
+- Frontend tools-page FX provider.
+- Embed FX provider.
+
+Use the project's existing implementations, not a new FX service.
+
+---
+
+### 8. Input Validation and Edge Cases
+
+Handle:
+
+- Zero income.
+- Decimal monetary amounts.
+- Empty source inputs.
+- Invalid numeric strings.
+- Extremely large but finite earnings.
+- Fractional working hours.
+- Changes in source pay period.
+- Changes in selected currencies.
+- Changes in working-time defaults.
+- Missing or stale FX data.
+- Division by zero.
+- NaN and Infinity.
+- Display-only rounding.
+
+Monetary values must be finite and nonnegative.
+
+Avoid circular synchronization between the four editable monetary inputs.
+
+Do not calculate payroll taxes, deductions, overtime or take-home salary because the screenshot does not provide those inputs.
+
+Clearly label the monthly result as estimated **gross monthly income** under the selected working schedule.
+
+---
+
+### 9. Calculator Architecture
+
+Follow the existing React, Next.js and TypeScript patterns.
+
+Separate:
+
+- Form state.
+- Authoritative income tracking.
+- Pay-period normalization.
+- Working-time configuration.
+- Currency normalization.
+- Validation.
+- Result presentation.
+
+Reuse existing shared components for monetary inputs, accordions, checkboxes, FX selectors and calculator actions.
+
+Avoid unnecessary dependencies and unrelated refactoring.
+
+Preserve mobile usability and keyboard accessibility.
+
+---
+
+### 10. Complete Project Registration
+
+Register the confirmed component key and slug in:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also integrate existing:
+
+- Tool routing.
+- Embed support.
+- SEO metadata.
+- Guides.
+- Ads.
+- Shared actions.
+- Correct pillar/category association.
+- Both currency-conversion provider lists.
+
+Activate only the authorized matching MongoDB record.
+
+Preserve admin-controlled settings, including `indexable`.
+
+Never create a duplicate tool record.
+
+---
+
+### 11. Mandatory Three Local Git Commits
+
+For a newly developed calculator, create exactly **three meaningful LOCAL commits**:
+
+1. `feat(monthly-income): create calculator UI`
+2. `feat(monthly-income): implement income calculations and FX`
+3. `feat(monthly-income): complete registration and integration`
+
+Requirements:
+
+- Every commit must contain genuine task-specific changes.
+- Never create empty/artificial commits.
+- Stage only authorized task files.
+- Preserve unrelated and colleague-owned work.
+- If previous partial development commits exist, inspect them and avoid duplicating valid work.
+- Never rewrite Git history.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+
+---
+
+### 12. Temporary File Cleanup
+
+Before completion:
+
+1. Identify task-created temporary files.
+2. Remove only those files.
+3. Preserve pre-existing and colleague-owned files.
+4. Do not use `git clean -fd`.
+5. Do not perform destructive resets.
+6. Inspect `git status --short`.
+7. Report `Temporary files cleaned: YES/NO`.
+
+---
+
+### 13. Strict Restrictions
+
+- Develop only Monthly Income Calculator.
+- Do not modify existing salary/wage calculators.
+- Do not introduce unsupported income fields.
+- Do not add tax, benefits or overtime calculators.
+- No unrelated refactoring.
+- No Playwright or browser automation.
+- No automated tests, lint, typecheck or build unless explicitly authorized.
+- No duplicate MongoDB records.
+- No unauthorized packages.
+- No Git push, pull, fetch or sync.
+
+---
+
+### 14. Final Development Report
+
+Provide:
+
+1. Confirmed calculator title.
+2. Confirmed slug and MongoDB ID.
+3. Screenshot fields implemented.
+4. Working-hours/day defaults.
+5. Expanded checkbox controls.
+6. Hourly, daily, weekly and yearly conversion formulas.
+7. Monthly income calculation.
+8. Last-edited-field behavior.
+9. Real numeric FX integration.
+10. Both live FX provider registrations.
+11. Frontend/backend registration.
+12. Sitemap, SEO and embed integration.
+13. MongoDB activation.
+14. Changed files.
+15. Three meaningful local commit hashes.
+16. Temporary files cleaned: YES/NO.
+17. Final status: DEVELOPED / ALREADY DEVELOPED / BLOCKED.
+
+**START NOW. DEVELOP ONLY MONTHLY INCOME CALCULATOR USING THE CORRECT SCREENSHOT. STOP AFTER COMPLETION.**

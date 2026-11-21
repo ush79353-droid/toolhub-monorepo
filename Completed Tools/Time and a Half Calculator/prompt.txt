@@ -1,0 +1,272 @@
+# OMEGACALCULATORS — TIME AND A HALF CALCULATOR
+## Detailed Screenshot-Based Cursor Development Prompt
+
+### 1. Mission
+
+Develop **Time and a Half Calculator** using the attached screenshot as the authoritative functionality reference.
+
+**Suggested slug:** `time-and-a-half-calculator` — verify against MongoDB.
+
+Implement a calculator supporting:
+
+- Standard hourly pay.
+- Time-and-a-half pay (1.5×).
+- Double-time pay (2×).
+- Triple-time pay (3×).
+- Hours worked in each category.
+- Individual earnings for each category.
+- Total earnings.
+- Independent currency selectors with real numerical FX conversion.
+
+Follow the project's established UI system (ADR-016, ADR-018, ADR-023). The screenshot is a functionality reference only, not a styling reference.
+
+### 2. MongoDB-First Verification & Ownership
+
+Before coding:
+
+1. Search authorized MongoDB tool records by title, slug and aliases.
+2. Verify the record ID, slug, component key, pillar and current status.
+3. Inspect existing task ownership and development tracker.
+4. Compare Hourly Wage, Overtime, Hourly to Salary with Overtime and other related calculators.
+5. Reuse existing wage normalization, currency and validation utilities.
+6. If no matching authorized MongoDB record exists, **SKIP/STOP**; never create a record.
+7. If already developed or actively colleague-owned, STOP.
+8. Do not overwrite or duplicate any completed calculator.
+
+### 3. Screenshot UI — Exact Sections
+
+Preserve the three sections and their field order.
+
+#### A. Hourly Pay Rates
+
+Expanded by default.
+
+Four monetary fields, each with an independent PKR selector:
+
+1. **Standard pay rate** — editable; primary authoritative hourly rate.
+2. **Time and a half rate** — calculated as 1.5× standard hourly rate.
+3. **Double time pay rate** — calculated as 2× standard hourly rate.
+4. **Triple time pay rate** — calculated as 3× standard hourly rate.
+
+Use the standard rate as the source and keep the three premium-rate fields read-only unless the authorized original specification explicitly establishes bidirectional editing.
+
+#### B. Number of Hours Worked
+
+Expanded by default.
+
+Four numerical inputs, each displaying the unit `hours`:
+
+1. **Standard hours worked**
+2. **Hours worked at time and a half**
+3. **Hours worked for double time**
+4. **Hours worked for triple time**
+
+Default to blank or zero consistently with the project's standard calculator behavior.
+
+Allow fractional hours.
+
+Do not silently classify overtime by weekly thresholds because the screenshot asks users to provide the hours for each rate category.
+
+#### C. Amount of Money Earned
+
+Display five monetary output fields, each with an independent PKR currency selector:
+
+1. **Total pay for standard hours**
+2. **Total time and a half pay**
+3. **Total double time pay**
+4. **Total triple time pay**
+5. **Total amount of money earned**
+
+These are calculated outputs.
+
+Use the project's standard read-only monetary result styling.
+
+#### Shared Actions
+
+Reuse:
+
+- Share Result.
+- Reload Calculator.
+- Clear All Changes.
+- Yes/No feedback.
+
+Do not add tax brackets, deductions, employee benefits, pay-frequency selectors or unsupported inputs.
+
+### 4. Accurate Calculation Formulas
+
+Let:
+
+- `R` = standard hourly rate.
+- `Hs` = standard hours.
+- `H15` = time-and-a-half hours.
+- `H2` = double-time hours.
+- `H3` = triple-time hours.
+
+**Hourly Rates**
+
+`Time-and-Half Rate = R × 1.5`
+
+`Double-Time Rate = R × 2`
+
+`Triple-Time Rate = R × 3`
+
+**Category Earnings**
+
+`Standard Pay = R × Hs`
+
+`Time-and-Half Pay = (R × 1.5) × H15`
+
+`Double-Time Pay = (R × 2) × H2`
+
+`Triple-Time Pay = (R × 3) × H3`
+
+**Total Earnings**
+
+`Total Pay = Standard Pay + Time-and-Half Pay + Double-Time Pay + Triple-Time Pay`
+
+Example:
+
+- Standard hourly rate = 1,000 PKR.
+- Standard hours = 40.
+- Time-and-a-half hours = 5.
+- Double-time hours = 2.
+- Triple-time hours = 0.
+
+Results:
+
+- Standard pay = 40,000 PKR.
+- Time-and-a-half pay = 7,500 PKR.
+- Double-time pay = 4,000 PKR.
+- Triple-time pay = 0 PKR.
+- **Total pay = 51,500 PKR.**
+
+Do not count premium hours again under standard hours.
+
+### 5. Input and Rate Behavior
+
+- Changing the standard pay rate recalculates all three premium rates and all monetary results.
+- Changing any hours input recalculates only the affected category earnings and total.
+- An empty standard rate must not generate fabricated positive earnings.
+- Show zero earnings when valid zero rates or zero hours are entered.
+- If the specification confirms editable premium rates, apply clear last-edited-field rules and avoid circular updates. Otherwise keep them derived.
+- Preserve full numerical precision and round only for display.
+
+The multipliers are fixed by the screenshot's category labels. Do not add unsupported custom multiplier controls.
+
+### 6. Real Numerical Currency Conversion
+
+The screenshot contains independent PKR selectors on all monetary rate and result fields.
+
+Reuse the existing **Phase 2 shared FX infrastructure**.
+
+Requirements:
+
+1. Independent currency selector for each monetary field.
+2. Actual numerical exchange-rate conversion, not currency symbol switching.
+3. Normalize the standard hourly rate into a canonical calculation currency.
+4. Calculate all premium rates and earnings in that canonical currency.
+5. Convert each field's displayed value to its individually selected currency.
+6. Preserve canonical precision.
+7. Handle missing or stale FX rates.
+8. Never assume 1:1 exchange rates.
+9. Never FX-convert hours or the fixed overtime multipliers.
+10. Prevent cumulative conversion drift.
+
+Add the confirmed slug to both live `CURRENCY_CONVERSION_SLUGS` lists:
+
+- Frontend tools-page FX provider.
+- Embed FX provider.
+
+Do not introduce a separate FX implementation.
+
+### 7. Validation & Edge Cases
+
+- Standard hourly rate must be finite and nonnegative.
+- All hours must be finite and nonnegative.
+- Support fractional hours.
+- Handle zero hours and zero rates.
+- Prevent NaN and Infinity.
+- Reject invalid numeric input.
+- Avoid negative earnings.
+- Preserve blank input behavior.
+- Recalculate safely when currencies change.
+- Avoid double-counting hours.
+- Apply appropriate monetary rounding for display.
+
+Clearly state that these are user-entered pay categories, not an automatic legal determination of overtime eligibility or mandatory multiplier rates.
+
+### 8. Project Architecture & Integration
+
+Follow existing React, Next.js and TypeScript conventions.
+
+Separate:
+
+- Hourly rate calculations.
+- Hours input validation.
+- Category earnings calculations.
+- Total pay calculation.
+- FX normalization.
+- Form state and UI.
+
+Complete authorized registration in:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also integrate existing routing, embed, SEO, guides, ads, shared actions and correct pillar/category mapping.
+
+Activate only the authorized matching MongoDB record. Preserve `indexable` and other admin-controlled settings.
+
+### 9. Exactly Three Meaningful LOCAL Git Commits
+
+Create exactly three genuine local commits:
+
+1. `feat(time-and-a-half): create calculator UI`
+2. `feat(time-and-a-half): implement overtime calculations and FX`
+3. `feat(time-and-a-half): complete registration and integration`
+
+Never create empty/artificial commits. Stage only task-related files. Preserve other agents' changes and never rewrite history.
+
+**NO GIT PUSH, PULL, FETCH OR SYNC.**
+
+### 10. Temporary File Cleanup
+
+- Delete only task-created temporary files.
+- Preserve pre-existing, unknown and colleague-owned files.
+- Never use `git clean -fd` or destructive resets.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+### 11. Restrictions
+
+- Develop this calculator only.
+- Do not modify existing overtime/wage calculators.
+- Do not add unsupported fields or modes.
+- No unrelated refactoring.
+- No Playwright or browser automation.
+- No automated tests, lint, typecheck or build unless explicitly authorized.
+- No duplicate MongoDB records.
+- No unauthorized package installations.
+- No Git push, pull, fetch or sync.
+
+### 12. Final Report
+
+Provide:
+
+1. Confirmed title, slug and MongoDB ID.
+2. Exact screenshot fields.
+3. Hourly rate multipliers.
+4. Earnings calculations.
+5. Input validation and edge-case handling.
+6. Real FX conversion and both provider registrations.
+7. Registry, sitemap, SEO and embed integration.
+8. MongoDB activation.
+9. Changed files.
+10. Three local commit hashes.
+11. Temporary files cleaned: YES/NO.
+12. Final status: DEVELOPED / ALREADY DEVELOPED / BLOCKED.
+
+**START NOW. DEVELOP ONLY TIME AND A HALF CALCULATOR USING THE ATTACHED SCREENSHOT. STOP AFTER COMPLETION.**

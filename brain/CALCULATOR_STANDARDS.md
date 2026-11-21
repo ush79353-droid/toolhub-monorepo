@@ -133,14 +133,14 @@ Reuse `StickyCalculatorAside` and `TableOfContents` from `calculators/auto-loan/
 
 Intentional deviations require a Brain note / ADR and Git review.
 
-## 9. Two-commit delivery (ADR-019)
+## 9. Three-commit delivery (ADR-019)
 
 Does not change ADR-016 or ADR-018.
 
-- Exactly two commits per new calculator: (1) all tool files, (2) Brain docs last.
-- Do not split into engine / tests / UI / registry commits. Empty or padded commits are not allowed.
-- Do not register a key before `detail.tsx` and the calculator component exist in the tool commit.
-- The Brain commit updates `CURRENT_STATE.md`, `TASKS.md`, and `CHANGELOG.md`. Push both commits together to `origin/development`.
-- The delivery report names both commits and the checks run.
+- Exactly three meaningful commits per successfully developed calculator: (1) UI/components/fields/layout, (2) formulas/validation/results and Phase 2 FX where applicable, (3) registration/sitemap/Mongo/SEO/Brain/cleanup last.
+- Empty, duplicate, padded, or artificial commits are not allowed. If development is skipped or blocked, create no unnecessary commits.
+- Do not register a key or activate Mongo before the UI and engine commits exist.
+- Brain docs (`CURRENT_STATE.md`, `TASKS.md`, `CHANGELOG.md`) land in commit 3. Push all three commits together to `origin/development`.
+- The delivery report names all three commit hashes separately and the checks run.
 
 The sequence and the safety rules are in `NEW_TOOL_DEVELOPMENT_PLAYBOOK.md` Step 19 and `AGENTS.md`.

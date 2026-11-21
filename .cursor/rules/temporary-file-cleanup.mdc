@@ -1,0 +1,23 @@
+---
+description: Mandatory safe cleanup of task-created temporary files (calculators, audits, repairs, debugging).
+alwaysApply: true
+---
+
+# Temporary file cleanup (Cursor)
+
+ADR-025. Applies to calculator development, audits, repairs, and debugging.
+
+1. Prefer existing project utilities and read-only commands over creating temporary scripts.
+2. If temporary files are necessary, create them in a dedicated temporary directory **outside the project** whenever possible.
+3. Track every temporary file created during the task.
+4. After using a temporary file, delete it immediately when no longer needed.
+5. Before finishing, run `git status --short` and inspect any remaining untracked files.
+6. Remove **ONLY** temporary files created by the current task.
+7. **NEVER** delete pre-existing files, colleague files, unknown untracked files, or existing project scripts.
+8. Never use broad destructive cleanup (`git clean -fd`, `rm -rf` on project directories, Git reset).
+9. Preserve legitimate source, config, and required project artifacts.
+10. Do not create unnecessary test files, reports, scripts, logs, or backup copies inside the repository.
+11. If a temporary file cannot safely be deleted, report its path and reason.
+12. Include `Temporary files cleaned: YES/NO` in the final report.
+
+**MANDATORY: Every task must finish with safe cleanup of its own temporary artifacts.**
