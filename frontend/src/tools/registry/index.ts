@@ -3948,6 +3948,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CouponRateCalculator,
     })),
   ),
+  CreditSpreadCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/credit-spread/CreditSpreadCalculator'
+    ).then((mod) => ({
+      default: mod.CreditSpreadCalculator,
+    })),
+  ),
   CreditCardCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/credit-card/CreditCardCalculator'

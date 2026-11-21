@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Credit Spread Calculator
+- **Summary:** Shipped Credit Spread Calculator on existing catalog slug `credit-spread-calculator` (`CreditSpreadCalculator`, catalog `6af46f10a27d8d1d4e990195`, preserved `nameKey` `credit spread calculator`). Screenshot-first (ADR-023): CS=Yc−Yg; percentage points ↔ basis points; reverse solves for corporate/government yields; positive/zero/negative spreads; not labeled OAS/Z-spread/CDS; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Corporate **5.30%** · government **1.80%** → **3.50 percentage points** / **350 bps**.
+- **Important Files:** `frontend/src/tools/calculators/credit-spread/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` credit-spread tests 10/10 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Coupon Rate Calculator
 - **Summary:** Shipped Coupon Rate Calculator on existing catalog slug `coupon-rate-calculator` (`CouponRateCalculator`, catalog `6af46f10a27d8d1d4e990194`, preserved `nameKey` `coupon rate calculator`). Screenshot-first (ADR-023): face/period/frequency; annual coupon; coupon rate; reverse modes; zero-coupon; guide/FAQ distinguishing current yield and YTM. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Face **$1,000** · coupon/period **$25** · semiannual → annual **$50** · rate **5%**.
