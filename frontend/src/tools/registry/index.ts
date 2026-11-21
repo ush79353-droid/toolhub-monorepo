@@ -2838,11 +2838,25 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BidensTaxPlanCalculator,
     })),
   ),
+  BirthWeightPercentileCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/birth-weight-percentile/BirthWeightPercentileCalculator'
+    ).then((mod) => ({
+      default: mod.BirthWeightPercentileCalculator,
+    })),
+  ),
   BlendedRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/blended-rate/BlendedRateCalculator'
     ).then((mod) => ({
       default: mod.BlendedRateCalculator,
+    })),
+  ),
+  BmiBodyMassIndexCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bmi-body-mass-index/BmiBodyMassIndexCalculator'
+    ).then((mod) => ({
+      default: mod.BmiBodyMassIndexCalculator,
     })),
   ),
   AverageCollectionPeriodCalculator: lazyTool(() =>

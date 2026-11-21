@@ -16,6 +16,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'altman-z-score-calculator',
   'annuity-calculator',
   'annuity-payout-calculator',
+  'anorexic-bmi-calculator',
   'california-overtime-calculator',
   'debt-avalanche-calculator',
   'debt-calculator',

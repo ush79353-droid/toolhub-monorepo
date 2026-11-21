@@ -509,6 +509,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BenadrylDosageCalculator',
   'BetaStockCalculator',
   'BidensTaxPlanCalculator',
+  'BirthWeightPercentileCalculator',
   'BlendedRateCalculator',
   'BmiBodyMassIndexCalculator',
   'AverageCollectionPeriodCalculator',
