@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Effective Duration Calculator
+- **Summary:** Shipped Effective Duration Calculator on existing catalog slug `effective-duration-calculator` (`EffectiveDurationCalculator`, catalog `6af46f10a27d8d1d4e990197`, preserved `nameKey` `effective duration calculator`). Screenshot-first (ADR-023): Standard Bond fixed-cash-flow central-difference duration + Scenario mode for option-aware prices; whole coupon periods required; DV01/convexity secondary; clear option-limitation copy; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Face **$10,000** · coupon **8%** · 3y · YTM **8%** · Δy **1 pp** → D ≈ **2.58 years** (P0 **$10,000**, P+ ≈ **$9,746.87**, P− ≈ **$10,262.43**).
+- **Important Files:** `frontend/src/tools/calculators/effective-duration/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` effective-duration tests 11/11 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Defensive Interval Ratio Calculator
 - **Summary:** Shipped Defensive Interval Ratio Calculator on existing catalog slug `defensive-interval-ratio-calculator` (`DefensiveIntervalRatioCalculator`, catalog `6af46f10a27d8d1d4e990196`, preserved `nameKey` `defensive interval ratio calculator`). Screenshot-first (ADR-023): DA=C+MS+AR; DCE=(OE−NCE)/365; DIR=DA/DCE; reverse required assets / max daily; zero DCE blocked; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Cash **$10M** · securities **$5M** · AR **$17M** · OE **$110M** · NCE **$37M** → DIR **160 days**.

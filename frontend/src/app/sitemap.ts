@@ -697,6 +697,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'coupon-rate-calculator',
   'credit-spread-calculator',
   'defensive-interval-ratio-calculator',
+  'effective-duration-calculator',
   'credit-card-calculator',
   'credit-card-interest-calculator',
   'credit-card-minimum-payment-calculator',

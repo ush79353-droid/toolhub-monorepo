@@ -3060,6 +3060,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EconomicValueAddedCalculator,
     })),
   ),
+  EffectiveDurationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/effective-duration/EffectiveDurationCalculator'
+    ).then((mod) => ({
+      default: mod.EffectiveDurationCalculator,
+    })),
+  ),
   EnterpriseValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/enterprise-value/EnterpriseValueCalculator'

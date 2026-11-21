@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Defensive Interval Ratio Calculator live at `/tools/defensive-interval-ratio-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Effective Duration Calculator live at `/tools/effective-duration-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Effective Duration Calculator (`/tools/effective-duration-calculator`):** Live client-side bond duration tool (`componentKey: 'EffectiveDurationCalculator'`, catalog `6af46f10a27d8d1d4e990197`, `nameKey` `effective duration calculator`). Screenshot-first (ADR-023): Standard Bond fixed-cash-flow D_eff=(P−−P+)/(2P0Δy) + Scenario mode for option-aware prices; coupon/price groups; whole coupon periods required (no silent rounding); DV01/convexity secondary; denomination CurrencySelect; guide/FAQ. Activated; **`indexable` left false**. Example: Face **$10,000** · 8%/3y/YTM 8%/Δy 1 pp → D ≈ **2.58 years**.
 - **Defensive Interval Ratio Calculator (`/tools/defensive-interval-ratio-calculator`):** Live client-side liquidity-days tool (`componentKey: 'DefensiveIntervalRatioCalculator'`, catalog `6af46f10a27d8d1d4e990196`, `nameKey` `defensive interval ratio calculator`). Screenshot-first (ADR-023): DA=C+MS+AR; DCE=(OE−NCE)/365; DIR=DA/DCE; reverse required assets / max daily spend; zero DCE blocked (no Infinity); denomination CurrencySelect; guide/FAQ. Activated; **`indexable` left false**. Example: DA **$32M** · DCE **$200k** → **160 days**.
 - **Credit Spread Calculator (`/tools/credit-spread-calculator`):** Live client-side bond credit-spread tool (`componentKey: 'CreditSpreadCalculator'`, catalog `6af46f10a27d8d1d4e990195`, `nameKey` `credit spread calculator`). Screenshot-first (ADR-023): CS=Yc−Yg; pp↔bps; solve for spread/corporate/government yield; positive/zero/negative spreads; not OAS/Z-spread/CDS; guide/FAQ. Activated; **`indexable` left false**. Example: Yc **5.30%** · Yg **1.80%** → **3.50 pp** / **350 bps**.
 - **Coupon Rate Calculator (`/tools/coupon-rate-calculator`):** Live client-side bond coupon tool (`componentKey: 'CouponRateCalculator'`, catalog `6af46f10a27d8d1d4e990194`, `nameKey` `coupon rate calculator`). Screenshot-first (ADR-023): face value, coupon/period, frequency (annual→weekly); r%=(C×f)/F×100; reverse solves for period/annual/face; zero-coupon OK; denomination CurrencySelect; not yield/YTM. Activated; **`indexable` left false**. Example: Face **$1,000** · **$25** semi → annual **$50** · rate **5%**.
