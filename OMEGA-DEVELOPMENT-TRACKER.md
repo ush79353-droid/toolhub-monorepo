@@ -113,7 +113,13 @@ Audit pending: deferred to final audit coordinator
 
 | 68 | Futures Contracts Calculator | DEVELOPED | AUDIT PENDING | 5d42bb55 | 7c06d250 | c2748981 | Completed Tools | `FuturesContractsCalculator`; slug `futures-contracts-calculator`; Mongo `6af46f10a27d8d1d4e9901c2` active; Phase 2 FX; indexable false; TASKS `TOOL-645` |
 
+| 70 | Options Spread Calculator | DEVELOPED | AUDIT PENDING | 2716e398 | 2e7a6766 (engine absorbed) / 99bdee62 (pension race) | (this reg/Brain/tracker) | Completed Tools | `OptionsSpreadCalculator`; slug `options-spread-calculator`; Mongo `6af46f10a27d8d1d4e9901c3` active; Phase 2 FX; ×100; indexable false; TASKS `TOOL-649` |
+
+| 71 | Pension Calculator | DEVELOPED | AUDIT PENDING | 99bdee62 (UI absorb) + 8e422be1 | 42f4e549 | (reg) | Completed Tools | `PensionCalculator`; slug `pension-calculator`; Mongo `6af46f10a27d8d1d4e9901b7` active; denomination USD no FX; indexable false; TASKS `TOOL-650` |
+
 ## Session Log
+- 2026-11-21 (Pension): Pension Calculator DEVELOPED (UI via `99bdee62` absorb + `8e422be1` / `42f4e549` / reg). Mongo `6af46f10a27d8d1d4e9901b7` activated; indexable false; denomination-only CurrencySelect (no FX). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (Options Spread): Options Spread Calculator DEVELOPED (`2716e398` / engine via `2e7a6766` absorbed + `99bdee62` pension staging race / reg+Brain). Mongo `6af46f10a27d8d1d4e9901c3` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Capital Gains Tax UK): Capital Gains Tax UK Calculator DEVELOPED (`d6b444ca` / `d41583b8` / reg). Mongo `6af46f10a27d8d1d4e9901cb` activated; indexable false; fixed GBP; HMRC 18%/24%. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 | 69 | Pence to Pounds Converter | DEVELOPED | AUDIT PENDING | 270bbd2c | 93fc88de | 7f4d8b82 | Completed Tools | `PenceToPoundsConverter`; slug `pence-to-pounds-converter`; Mongo `6af46f10a27d8d1d4e9901ca` active; fixed 100p=£1; no FX; indexable false; TASKS `TOOL-647` |

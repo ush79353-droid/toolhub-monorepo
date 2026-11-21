@@ -3472,6 +3472,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PenceToPoundsConverter,
     })),
   ),
+  PensionCalculator: lazyTool(() =>
+    import('@/tools/calculators/pension/PensionCalculator').then((mod) => ({
+      default: mod.PensionCalculator,
+    })),
+  ),
   PercentOffCalculator: lazyTool(() =>
     import('@/tools/calculators/percent-off/PercentOffCalculator').then((mod) => ({
       default: mod.PercentOffCalculator,
@@ -3583,6 +3588,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   ProratedRentCalculator: lazyTool(() =>
     import('@/tools/calculators/prorated-rent/ProratedRentCalculator').then((mod) => ({
       default: mod.ProratedRentCalculator,
+    })),
+  ),
+  PutCallParityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/put-call-parity/PutCallParityCalculator'
+    ).then((mod) => ({
+      default: mod.PutCallParityCalculator,
     })),
   ),
   PvgoCalculator: lazyTool(() =>

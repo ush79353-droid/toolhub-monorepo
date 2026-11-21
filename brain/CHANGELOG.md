@@ -4,6 +4,25 @@
 
 ---
 
+### 2026-11-21 — Pension Calculator
+- **Summary:** Lump-sum vs COLA-adjusted monthly pension comparison with monthly compounding, end-of-month matching withdrawals, annual COLA step-ups, yearly projection table, and depletion break-even. Denomination CurrencySelect only (no FX). Informational disclaimer included.
+- **Important Files:** `frontend/src/tools/calculators/pension/*`, registry keys/index/details, `tool.key.ts`, `sitemap.ts`, `brain/*`, tracker.
+- **Commits:** UI shell via concurrent `99bdee62` + footnote `8e422be1` / engine `42f4e549` / registration (this commit).
+- **Catalog:** `6af46f10a27d8d1d4e9901b7` · `pension-calculator` · `PensionCalculator` · activated · `indexable` false · TASKS `TOOL-650`.
+- **Verification:** Static formula review + authored assert self-check (not executed per Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-21 — Options Spread Calculator
+- **Summary:** Shipped Options Spread Calculator on existing catalog slug `options-spread-calculator` (`OptionsSpreadCalculator`, catalog `6af46f10a27d8d1d4e9901c3`, preserved `nameKey` `options spread calculator`, pillar/subPillar null). Screenshot-first (ADR-023): bull/bear call & put; long/short legs; net debit/credit, max loss/profit, breakeven, potential P/L at target; dynamic buy/sell labels; Phase 2 FX on money fields; equity ×100. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-649`.
+- **Commits:** `2716e398` (UI) / engine via `2e7a6766` (absorbed concurrent) + contaminated staging `99bdee62` (pension UI race) / (registration/Brain/tracker — this commit).
+- **Example:** bull call buy **100**@**5** · sell **110**@**2** · S**108** → max loss **300** · max profit **700** · BE **103** · P/L **500**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build not run (Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-21 — UK Coin Weight Calculator
+- **Summary:** Shipped UK Coin Weight Calculator on existing catalog slug `uk-coin-weight-calculator` (`UkCoinWeightCalculator`, catalog `6af46f10a27d8d1d4e9901cf`, preserved `nameKey` `uk coin weight calculator`, pillar/subPillar null). Screenshot-first (ADR-023): 1p–£2 counts; total weight g/kg (display conversion only); Royal Mint circulating standard masses; share/reload/clear/feedback. No FX. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-652`.
+- **Commits:** `9efd2eb2` (UI) / `c2748981` (engine; note: that commit also absorbed concurrent Futures Contracts registry/Brain staging) / (registration/Brain/tracker — this commit).
+- **Example:** **100** of each denomination → **5,418 g**.
+- **Verification:** Static Royal Mint mass review + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — National Insurance Calculator
 - **Summary:** Shipped UK National Insurance Calculator on existing catalog slug `national-insurance-calculator` (`NationalInsuranceCalculator`, catalog `6af46f10a27d8d1d4e9901cc`, pillar/subPillar null). Screenshot-first (ADR-023): employment + self-employment incomes; tax years 2024/25–2026/27; employee Class 1 (cat A) and Class 4 on separate bases then totalled; Class 2 £0; **fixed GBP** (no FX). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-648`.
 - **Commits:** `e1e53272` (UI) / `dbd8f2ef` (engine) / (registration/Brain/tracker — this commit).

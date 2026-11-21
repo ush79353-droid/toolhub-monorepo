@@ -897,6 +897,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/peg-ratio/detail'),
   PenceToPoundsConverter: () =>
     import('@/tools/calculators/pence-to-pounds/detail'),
+  PensionCalculator: () =>
+    import('@/tools/calculators/pension/detail'),
   PercentOffCalculator: () =>
     import('@/tools/calculators/percent-off/detail'),
   PercentageDiscountCalculator: () =>
@@ -934,6 +936,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/prorated-salary/detail'),
   ProratedRentCalculator: () =>
     import('@/tools/calculators/prorated-rent/detail'),
+  PutCallParityCalculator: () =>
+    import('@/tools/calculators/put-call-parity/detail'),
   PvgoCalculator: () =>
     import('@/tools/calculators/pvgo/detail'),
   PvifaCalculator: () =>
