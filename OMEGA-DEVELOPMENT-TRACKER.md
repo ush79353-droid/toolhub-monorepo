@@ -107,8 +107,11 @@ Audit pending: deferred to final audit coordinator
 
 
 | 63 | Call Option Calculator | DEVELOPED | AUDIT PENDING | 5eecfbf6 | db64a460 | (docs c3) | Completed Tools | CallOptionCalculator; slug call-option-calculator; Mongo 6af46f10a27d8d1d4e9901bf active; indexable false; denomination no FX; TASKS TOOL-611; folder Completed Tools |
+| 67 | Black Scholes Calculator | DEVELOPED | AUDIT PENDING | 57409d05 | ed35667f | (reg/Brain via concurrent + this commit) | Completed Tools | `BlackScholesCalculator`; slug `black-scholes-calculator`; Mongo `6af46f10a27d8d1d4e9901be` active; Phase 2 FX; indexable false; TASKS `TOOL-644` |
 
 ## Session Log
+- 2026-11-21 (Black Scholes): Black Scholes Calculator DEVELOPED (57409d05 / ed35667f / reg+Brain+tracker). Mongo 6af46f10a27d8d1d4e9901be activated; indexable false; Phase 2 FX. Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 | 65 | Cross Exchange Rate Calculator | DEVELOPED | AUDIT PENDING | 57409d05 (UI via concurrent black-scholes commit) | f86ab4e1 | 66203a99 | Completed Tools | `CrossExchangeRateCalculator`; slug `cross-exchange-rate-calculator`; Mongo `6af46f10a27d8d1d4e9901c7` active; no FX; indexable false; TASKS `TOOL-641`; restored emptied `registry/index.ts` |
 | 64 | Yield to Call Calculator | DEVELOPED | AUDIT PENDING | 0506bc0d | fdcffc4b | (this reg/Brain commit; registry/sitemap/tool.key also via concurrent `106c6326`) | Completed Tools | `YieldToCallCalculator`; slug `yield-to-call-calculator`; Mongo `6af46f10a27d8d1d4e9901c5` active; denomination PKR no FX; indexable false; TASKS `TOOL-640` |
 
