@@ -139,6 +139,11 @@ export default function PrivacyPolicyPage() {
                 We do not require account registration, email addresses, or payment card details to
                 access public utilities.
               </p>
+              <p className="mt-3">
+                The contact form asks for your name, email address, a subject, and a message.
+                Sending it opens your own email program so you can deliver the note. Omega
+                Calculators does not store that form on this website.
+              </p>
             </section>
 
             <section

@@ -4,6 +4,21 @@
 
 ---
 
+### 2026-11-21 — Contact form restored
+- **Summary:** `/contact` has the form again, in the site card style. Subjects are General, Report a mistake, Suggest a tool, and Business. Submit opens the visitor’s email app. The privacy policy says the form is not stored on the site.
+- **Important Files:** `frontend/src/components/contact/ContactForm.tsx`, `frontend/src/components/contact/contact-message.ts`, `frontend/src/app/(website)/contact/page.tsx`, `frontend/src/app/(website)/privacy-policy/page.tsx`.
+- **Verification:** `/contact` shows the mint hero and the card form. An empty submit shows field errors. A complete submit, with no address in config, says the message was not sent. The mailto builder self-check passed. Temporary files cleaned: YES.
+
+### 2026-11-21 — Simpler Contact page
+- **Summary:** `/contact` uses the shared mint hero and one article. General email stays on `siteConfig.operator.email`. Business email, response time, company, and street are `siteConfig.contact`. Empty fields stay off the page. The old form never sent a message, so it is gone. A real form would also need a privacy-policy line.
+- **Important Files:** `frontend/src/app/(website)/contact/page.tsx`, `frontend/src/config/site.ts`. Removed `frontend/src/components/contact/ContactFormClient.tsx`.
+- **Verification:** `/contact` shows the mint hero and the article. Empty email and address lines stay off the page. Response time reads “3 to 5 business days.” The disclaimer link is present. Temporary files cleaned: YES.
+
+### 2026-11-21 — Simpler About page
+- **Summary:** `/about` uses the shared mint hero and one article. Operator name, city, country, and email live in `siteConfig` and stay hidden until they are filled in. The article links to the disclaimer, terms, privacy policy, and contact page.
+- **Important Files:** `frontend/src/app/(website)/about/page.tsx`, `frontend/src/config/site.ts`.
+- **Verification:** `/about` shows the mint hero and the article. Empty operator fields stay off the page. Disclaimer opens `/terms-of-service#disclaimers`.
+
 ### 2026-11-21 — Category detail page
 - **Summary:** A category page uses the mint hero. Its tools are cards grouped by pillar and sub-pillar. Other categories use the homepage cards. An empty category is a centered message.
 - **Important Files:** `frontend/src/app/(website)/categories/[slug]/page.tsx`.

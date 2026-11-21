@@ -16,6 +16,28 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/mega-tools/platform',
   },
+  /**
+   * Who runs the site. Change these here.
+   * Empty fields stay off the public pages.
+   * `email` is the general address on About and Contact.
+   */
+  operator: {
+    name: '',
+    city: '',
+    country: '',
+    email: '',
+  },
+  /**
+   * Contact page. Empty business email and address lines stay off the page.
+   * Set `responseTime` to a window you can keep. Leave it blank to hide that line.
+   * City and country for a postal address come from `operator`.
+   */
+  contact: {
+    businessEmail: '',
+    responseTime: '3 to 5 business days',
+    company: '',
+    street: '',
+  },
   /** Footer social icons. Change hrefs here; empty href hides that icon. */
   social: [
     { id: 'facebook', label: 'Facebook', href: 'https://facebook.com/' },

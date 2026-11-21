@@ -25,8 +25,8 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 | `/sitemap.xml` | `app/sitemap.ts` | Static pages + categories + implemented sitemap-eligible tools only (skips localhost origin) | **Implemented** |
 | `/categories` | `(website)/categories/page.tsx` | Server Component loads `getPublicCategories()`. The mint hero search filters that list in the browser. Cards match the homepage category grid. | **Implemented** |
 | `/categories/[slug]` | `(website)/categories/[slug]/page.tsx` | Server Component fetching `GET /catalog/categories/:slug`. Mint hero, then active tools as cards under their pillar and sub-pillar. Other categories use the homepage card grid. | **Implemented** |
-| `/about` | `(website)/about/page.tsx` | Server Component. Static editorial copy with a custom product board, mixed platform layout, and numbered principles. Category and tool totals come from `GET /catalog/categories` when reachable | **Implemented** |
-| `/contact` | `(website)/contact/page.tsx` | Server page with a client form. Fields are name, email, subject, and message. Validation is client-side only, and a successful check says the message was not delivered | **Partially Implemented** (no backend submission endpoint) |
+| `/about` | `(website)/about/page.tsx` | Server Component. Mint hero, then the About article. Operator name, city, country, and email come from `siteConfig.operator` and stay off the page while empty. Disclaimer links to `/terms-of-service#disclaimers`. | **Implemented** |
+| `/contact` | `(website)/contact/page.tsx` | Server page. Mint hero, themed contact form, then one article. The form opens the visitor’s email app (`mailto`) to `operator.email`, or `contact.businessEmail` for a business subject. It does not store the message. Empty address lines stay off the article. | **Implemented** |
 | `/privacy-policy` | `(website)/privacy-policy/page.tsx` | Static legal draft template (marked draft pending legal review) | **Partially Implemented** (draft copy) |
 | `/terms-of-service` | `(website)/terms-of-service/page.tsx` | Static legal draft template (marked draft pending legal review) | **Partially Implemented** (draft copy) |
 | `*` (404) | `src/app/not-found.tsx` | Custom 404 page with `Header` & `Footer` | **Implemented** |
@@ -255,7 +255,7 @@ Protected by `admin/(dashboard)/layout.tsx` (`export const dynamic = 'force-dyna
 ## 7. Server vs. Client Components & Styling Conventions
 
 - **Server Components (default):** Layouts (`RootLayout`, `WebsiteLayout`, `AdminDashboardLayout`), homepage (`(website)/page.tsx`), detail pages (`categories/[slug]/page.tsx`, `tools/[slug]/page.tsx`), `admin/profile/page.tsx`, informational pages.
-- **Client Components (`'use client'`):** Interactive directory search/filters, admin login/reset forms, all interactive admin CRUD views/forms/tables, sidebar/header state, `FAQAccordion`, `SearchBar`, `ToolWorkspace`, `ContactFormClient`.
+- **Client Components (`'use client'`):** Interactive directory search/filters, admin login/reset forms, all interactive admin CRUD views/forms/tables, sidebar/header state, `FAQAccordion`, `SearchBar`, `ToolWorkspace`, `ContactForm`.
 - **Styling:** Tailwind utility classes backed by semantic HSL CSS variables in `src/app/globals.css` plus explicit `brand.*` tokens in `tailwind.config.ts`. Prettier enforces `singleQuote: true`, `semi: true`, `printWidth: 100`, `tabWidth: 2`.
 - **Note on `<img>` tags:** Several components use native `<img>` rather than `next/image` (including dynamic S3 URLs and logos), producing `@next/next/no-img-element` warnings during `npm run lint`.
 
