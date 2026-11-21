@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (PayPal Fee Calculator live at `/tools/paypal-fee-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Percent Off Calculator live at `/tools/percent-off-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Percent Off Calculator (`/tools/percent-off-calculator`):** Live client-side discount tool (`componentKey: 'PercentOffCalculator'`, catalog `6af46f10a27d8d1d4e9901a5`, `nameKey` `percent off calculator`). Screenshot-first (ADR-023): original + % off; optional sequential second %; effective %; optional sales tax on discounted price; modes for final / original / discount %; savings bar; denomination CurrencySelect. Activated; **`indexable` left false**. Example: **$200** · **25%** → save **$50** · final **$150**.
 - **PayPal Fee Calculator (`/tools/paypal-fee-calculator`):** Live client-side payment-fee tool (`componentKey: 'PayPalFeeCalculator'`, catalog `6af46f10a27d8d1d4e9901a4`, `nameKey` `paypal fee calculator`). Screenshot-first (ADR-023): US/UK verified presets + custom rates; domestic/international; forward + reverse gross/net; fee breakdown/steps/comparison; FX conversion excluded; denomination CurrencySelect. Activated; **`indexable` left false**. Example: **$100** · US Checkout **3.49%+$0.49** → fee **$3.98** · net **$96.02**.
 - **Markup Calculator (`/tools/markup-calculator`):** Live client-side unit pricing tool (`componentKey: 'MarkupCalculator'`, catalog `6af46f10a27d8d1d4e9901a2`, `nameKey` `markup calculator`). Screenshot-first (ADR-023): cost / markup % / revenue / profit; six bidirectional pairs; last-two-edited priority preferring cost anchor; Markup%=Profit/Cost×100; margin shown for education; denomination CurrencySelect; distinct from MarginAndMarkup and Markdown. Activated; **`indexable` left false**. Example: cost **$50** · markup **40%** → revenue **$70** · profit **$20**.
 - **Markdown Calculator (`/tools/markdown-calculator`):** Live client-side retail price-reduction tool (`componentKey: 'MarkdownCalculator'`, catalog `6af46f10a27d8d1d4e9901a1`, `nameKey` `markdown calculator`). Screenshot-first (ADR-023): four linked fields (original, actual, markdown $, markdown %); six bidirectional pairs; last-two-edited priority preferring original price anchor; denomination CurrencySelect; not Markdown text. Activated; **`indexable` left false**. Example: **$100** → **$75** · markdown **$25** · **25%**.

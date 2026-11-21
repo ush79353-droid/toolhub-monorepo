@@ -3426,6 +3426,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PegRatioCalculator,
     })),
   ),
+  PercentOffCalculator: lazyTool(() =>
+    import('@/tools/calculators/percent-off/PercentOffCalculator').then((mod) => ({
+      default: mod.PercentOffCalculator,
+    })),
+  ),
   PercentageDiscountCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/percentage-discount/PercentageDiscountCalculator'

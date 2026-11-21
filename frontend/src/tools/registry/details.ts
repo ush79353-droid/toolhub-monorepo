@@ -883,6 +883,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pay-raise/detail'),
   PegRatioCalculator: () =>
     import('@/tools/calculators/peg-ratio/detail'),
+  PercentOffCalculator: () =>
+    import('@/tools/calculators/percent-off/detail'),
   PercentageDiscountCalculator: () =>
     import('@/tools/calculators/percentage-discount/detail'),
   PercentageReturnCalculator: () =>

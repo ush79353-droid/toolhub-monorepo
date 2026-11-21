@@ -635,6 +635,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'payback-period-calculator',
   'paypal-fee-calculator',
   'pay-raise-calculator',
+  'percent-off-calculator',
   'percentage-discount-calculator',
   'percentage-return-calculator',
   'perpetuity-calculator',

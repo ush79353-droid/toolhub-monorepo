@@ -625,6 +625,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PayPalFeeCalculator',
   'PayRaiseCalculator',
   'PegRatioCalculator',
+  'PercentOffCalculator',
   'PercentageDiscountCalculator',
   'PercentageReturnCalculator',
   'PerpetuityCalculator',
@@ -1465,6 +1466,7 @@ if (isDirect) {
     !isApprovedComponentKey('PayPalFeeCalculator') ||
     !isApprovedComponentKey('PayRaiseCalculator') ||
     !isApprovedComponentKey('PegRatioCalculator') ||
+    !isApprovedComponentKey('PercentOffCalculator') ||
     !isApprovedComponentKey('PercentageDiscountCalculator') ||
     !isApprovedComponentKey('PercentageReturnCalculator') ||
     !isApprovedComponentKey('PerpetuityCalculator') ||
