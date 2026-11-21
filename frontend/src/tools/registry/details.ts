@@ -1447,6 +1447,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   IntrinsicValueCalculator: () =>
     import('@/tools/calculators/intrinsic-value/detail'),
   IraCalculator: () => import('@/tools/calculators/ira/detail'),
+  IsBmiPregnancyWeightIndicatorCalculator: () =>
+    import('@/tools/calculators/is-bmi-pregnancy-weight-indicator/detail'),
   InterestOnlyMortgageCalculator: () =>
     import('@/tools/calculators/interest-only-mortgage/detail'),
   InterestPerDayCalculator: () =>
