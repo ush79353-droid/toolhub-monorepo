@@ -598,6 +598,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'liquid-net-worth-calculator',
   'loan-balance-calculator',
   'loan-payment-calculator',
+  'quick-ratio-calculator',
   'quiz-loan-balance-calculator',
   'quiz-annual-income-calculator',
   'quiz-car-depreciation-calculator',

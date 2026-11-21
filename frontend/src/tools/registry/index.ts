@@ -3200,6 +3200,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  QuickRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/quick-ratio/QuickRatioCalculator').then(
+      (mod) => ({
+        default: mod.QuickRatioCalculator,
+      })
+    )
+  ),
   QuizLoanBalanceCalculator: lazyTool(() =>
     import('@/tools/calculators/quiz-loan-balance/QuizLoanBalanceCalculator').then(
       (mod) => ({

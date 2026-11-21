@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Quick Ratio Calculator (Acid-Test Ratio)
+- **Summary:** Shipped Quick Ratio Calculator on existing catalog slug `quick-ratio-calculator` (`QuickRatioCalculator`, catalog `6af46f10a27d8d1d4e990199`, preserved `nameKey` `quick ratio calculator`). Screenshot-first (ADR-023): direct QR=(C+MS+AR)/CL; adjusted (CA−I−PE−O)/CL; reverse required QA/CL/cash; CL=0 undefined; denomination CurrencySelect; QA vs CL bars; guide/FAQ distinguishing quick vs current vs cash ratio. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Cash **PKR 150,000** · securities **50,000** · AR **100,000** · CL **200,000** → QR **1.50x**.
+- **Important Files:** `frontend/src/tools/calculators/quick-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` quick-ratio tests 10/10 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add LGD Calculator – Loss Given Default
 - **Summary:** Shipped LGD Calculator on existing catalog slug `lgd-calculator-loss-given-default` (`LgdCalculator`, catalog `6af46f10a27d8d1d4e990198`, preserved `nameKey` `lgd calculator - loss given default`). Screenshot-first (ADR-023): recovery rate ↔ loss severity; LGD=EAD×(1−RR); recovery amount; advanced reverse EAD / rates-from-amounts + optional EL=PD×LGD×EAD (distinct from LGD); denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** EAD **PKR 100,000** · RR **80%** → severity **20%** · LGD **PKR 20,000** · recovery **PKR 80,000**; PD **5%** → EL **PKR 1,000**.

@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (LGD Calculator live at `/tools/lgd-calculator-loss-given-default`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Quick Ratio Calculator live at `/tools/quick-ratio-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Quick Ratio Calculator (`/tools/quick-ratio-calculator`):** Live client-side acid-test liquidity tool (`componentKey: 'QuickRatioCalculator'`, catalog `6af46f10a27d8d1d4e990199`, `nameKey` `quick ratio calculator`). Screenshot-first (ADR-023): direct QR=(C+MS+AR)/CL; adjusted (CA−I−PE−O)/CL; reverse required QA/CL/cash; CL=0 undefined (no Infinity); denomination CurrencySelect (PKR default); QA vs CL bars; guide/FAQ vs current/cash ratio. Activated; **`indexable` left false**. Example: Cash **PKR 150,000** · MS **50,000** · AR **100,000** · CL **200,000** → **1.50x**.
 - **LGD Calculator – Loss Given Default (`/tools/lgd-calculator-loss-given-default`):** Live client-side credit-loss tool (`componentKey: 'LgdCalculator'`, catalog `6af46f10a27d8d1d4e990198`, `nameKey` `lgd calculator - loss given default`). Screenshot-first (ADR-023): RR↔severity sync; LGD=EAD×(1−RR); recovery amount; advanced reverse EAD / rates-from-amounts + optional EL=PD×LGD×EAD (distinct from LGD amount); denomination CurrencySelect (PKR default); guide/FAQ. Activated; **`indexable` left false**. Example: EAD **PKR 100,000** · RR **80%** → LGD **PKR 20,000**.
 - **Effective Duration Calculator (`/tools/effective-duration-calculator`):** Live client-side bond duration tool (`componentKey: 'EffectiveDurationCalculator'`, catalog `6af46f10a27d8d1d4e990197`, `nameKey` `effective duration calculator`). Screenshot-first (ADR-023): Standard Bond fixed-cash-flow D_eff=(P−−P+)/(2P0Δy) + Scenario mode for option-aware prices; coupon/price groups; whole coupon periods required (no silent rounding); DV01/convexity secondary; denomination CurrencySelect; guide/FAQ. Activated; **`indexable` left false**. Example: Face **$10,000** · 8%/3y/YTM 8%/Δy 1 pp → D ≈ **2.58 years**.
 - **Defensive Interval Ratio Calculator (`/tools/defensive-interval-ratio-calculator`):** Live client-side liquidity-days tool (`componentKey: 'DefensiveIntervalRatioCalculator'`, catalog `6af46f10a27d8d1d4e990196`, `nameKey` `defensive interval ratio calculator`). Screenshot-first (ADR-023): DA=C+MS+AR; DCE=(OE−NCE)/365; DIR=DA/DCE; reverse required assets / max daily spend; zero DCE blocked (no Infinity); denomination CurrencySelect; guide/FAQ. Activated; **`indexable` left false**. Example: DA **$32M** · DCE **$200k** → **160 days**.
