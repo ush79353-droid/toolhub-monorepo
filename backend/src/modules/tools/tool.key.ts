@@ -567,6 +567,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EconomicValueAddedCalculator',
   'EffectiveDurationCalculator',
   'EmiCalculator',
+  'EpfCalculator',
   'EnterpriseValueCalculator',
   'EbtCalculator',
   'EquivalentRateCalculator',
@@ -1410,6 +1411,7 @@ if (isDirect) {
     !isApprovedComponentKey('EconomicValueAddedCalculator') ||
     !isApprovedComponentKey('EffectiveDurationCalculator') ||
     !isApprovedComponentKey('EmiCalculator') ||
+    !isApprovedComponentKey('EpfCalculator') ||
     !isApprovedComponentKey('EnterpriseValueCalculator') ||
     !isApprovedComponentKey('EbtCalculator') ||
     !isApprovedComponentKey('EquivalentRateCalculator') ||

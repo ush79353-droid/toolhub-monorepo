@@ -3113,6 +3113,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EmiCalculator,
     })),
   ),
+  EpfCalculator: lazyTool(() =>
+    import('@/tools/calculators/epf/EpfCalculator').then((mod) => ({
+      default: mod.EpfCalculator,
+    })),
+  ),
   EnterpriseValueCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/enterprise-value/EnterpriseValueCalculator'

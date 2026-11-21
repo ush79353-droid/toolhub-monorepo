@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add EPF Calculator
+- **Summary:** Shipped EPF Calculator on existing catalog slug `epf-calculator` (`EpfCalculator`, catalog `6af46f10a27d8d1d4e9901a9`, preserved `nameKey` `epf calculator`). Screenshot-first (ADR-023): Indian EPF/EPS educational projection; employee/employer split with EPS wage ceiling; monthly running-balance interest credited yearly; growth chart + yearly CSV; optional VPF + scenario compare; denomination CurrencySelect (INR). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Basic **₹15,000** · **12%/12%** · EPS-eligible · ceiling **₹15,000** → employee **₹1,800** · EPS ≈ **₹1,249.50** · employer EPF ≈ **₹550.50** · monthly EPF ≈ **₹2,350.50**.
+- **Important Files:** `frontend/src/tools/calculators/epf/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` epf tests 20/20 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add EMI Calculator – Equated Monthly Installment
 - **Summary:** Shipped EMI Calculator on existing catalog slug `emi-calculator-equated-monthly-installment` (`EmiCalculator`, catalog `6af46f10a27d8d1d4e9901a8`, preserved `nameKey` `emi calculator - equated monthly installment`). Screenshot-first (ADR-023): fixed-rate reducing-balance EMI; years/months term; principal-vs-interest chart; amortization + yearly + CSV; optional outstanding balance, extra payments, loan compare; denomination CurrencySelect. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Principal **PKR 500,000** · **10%** · **5 years** → EMI ≈ **PKR 10,623.52** · total interest ≈ **PKR 137,411**.

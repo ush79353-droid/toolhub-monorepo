@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (EMI Calculator live at `/tools/emi-calculator-equated-monthly-installment`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (EPF Calculator live at `/tools/epf-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **EPF Calculator (`/tools/epf-calculator`):** Live client-side Indian Employees' Provident Fund tool (`componentKey: 'EpfCalculator'`, catalog `6af46f10a27d8d1d4e9901a9`, `nameKey` `epf calculator`). Screenshot-first (ADR-023): age / basic+DA / growth / employee & employer rates / retirement age / interest assumption / opening balance; EPS eligibility + wage ceiling (8.33% of min(wage, ceiling)); monthly simulation with yearly interest credits; growth chart + yearly CSV; optional VPF + scenario compare; denomination CurrencySelect (INR default). Activated; **`indexable` left false**. Example first month: **₹15,000** · **12%/12%** → employee **₹1,800** · EPS ≈ **₹1,249.50** · employer EPF ≈ **₹550.50**.
 - **EMI Calculator – Equated Monthly Installment (`/tools/emi-calculator-equated-monthly-installment`):** Live client-side fixed-rate EMI tool (`componentKey: 'EmiCalculator'`, catalog `6af46f10a27d8d1d4e9901a8`, `nameKey` `emi calculator - equated monthly installment`). Screenshot-first (ADR-023): principal / term years|months / nominal annual rate; EMI + total payable + interest; principal-vs-interest donut; amortization (+ CSV); optional balance lookup, extra payment, Loan A/B compare; denomination CurrencySelect (PKR default). Activated; **`indexable` left false**. Example: **PKR 500,000** · **10%** · **5y** → EMI ≈ **10,623.52**.
 - **Percent Off Calculator (`/tools/percent-off-calculator`):** Live client-side discount tool (`componentKey: 'PercentOffCalculator'`, catalog `6af46f10a27d8d1d4e9901a5`, `nameKey` `percent off calculator`). Screenshot-first (ADR-023): original + % off; optional sequential second %; effective %; optional sales tax on discounted price; modes for final / original / discount %; savings bar; denomination CurrencySelect. Activated; **`indexable` left false**. Example: **$200** · **25%** → save **$50** · final **$150**.
 - **PayPal Fee Calculator (`/tools/paypal-fee-calculator`):** Live client-side payment-fee tool (`componentKey: 'PayPalFeeCalculator'`, catalog `6af46f10a27d8d1d4e9901a4`, `nameKey` `paypal fee calculator`). Screenshot-first (ADR-023): US/UK verified presets + custom rates; domestic/international; forward + reverse gross/net; fee breakdown/steps/comparison; FX conversion excluded; denomination CurrencySelect. Activated; **`indexable` left false**. Example: **$100** · US Checkout **3.49%+$0.49** → fee **$3.98** · net **$96.02**.

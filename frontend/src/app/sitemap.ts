@@ -710,6 +710,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'defensive-interval-ratio-calculator',
   'effective-duration-calculator',
   'emi-calculator-equated-monthly-installment',
+  'epf-calculator',
   'lgd-calculator-loss-given-default',
   'credit-card-calculator',
   'credit-card-interest-calculator',
