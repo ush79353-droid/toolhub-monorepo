@@ -672,6 +672,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/beta-stock/detail'),
   BidensTaxPlanCalculator: () =>
     import('@/tools/calculators/bidens-tax-plan/detail'),
+  BirthControlCalculator: () =>
+    import('@/tools/calculators/birth-control/detail'),
+  BirthWeightPercentileCalculator: () =>
+    import('@/tools/calculators/birth-weight-percentile/detail'),
   BlendedRateCalculator: () =>
     import('@/tools/calculators/blended-rate/detail'),
   BmiBodyMassIndexCalculator: () =>

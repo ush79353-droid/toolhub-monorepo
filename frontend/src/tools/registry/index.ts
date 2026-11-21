@@ -2824,6 +2824,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BidensTaxPlanCalculator,
     })),
   ),
+  BirthControlCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/birth-control/BirthControlCalculator'
+    ).then((mod) => ({
+      default: mod.BirthControlCalculator,
+    })),
+  ),
+  BirthWeightPercentileCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/birth-weight-percentile/BirthWeightPercentileCalculator'
+    ).then((mod) => ({
+      default: mod.BirthWeightPercentileCalculator,
+    })),
+  ),
   BlendedRateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/blended-rate/BlendedRateCalculator'

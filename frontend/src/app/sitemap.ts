@@ -689,6 +689,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mortgage-points-calculator',
   'benadryl-dosage-calculator',
   'bbt-calculator-basal-body-temperature',
+  'birth-control-calculator',
   'black-friday-calculator',
   'black-scholes-calculator',
   'bmi-calculator-body-mass-index',
@@ -920,6 +921,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
 
   'income-tax-calculator',
   'bidens-tax-plan-calculator',
+  'birth-weight-percentile-calculator',
   'take-home-pay-calculator-uk',
   'tax-bracket-calculator',
   'adjusted-gross-income-agi-calculator',
