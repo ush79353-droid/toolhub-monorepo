@@ -9,7 +9,7 @@ import {
   metersToHeight,
   parseNumber,
   weightToKg,
-} from '../pregnancy-weight-gain/calculation';
+} from './calculation';
 import type {
   HeightUnit,
   PregnancyWeightGainFieldErrors,

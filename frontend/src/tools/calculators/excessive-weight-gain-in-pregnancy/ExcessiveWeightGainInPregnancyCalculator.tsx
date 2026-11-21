@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { ExcessiveWeightGainForm } from './ExcessiveWeightGainForm';
+import { shareExcessiveWeightGainText } from './calculation';
 import {
   createDefaultInput,
   inputsEqual,
@@ -13,6 +14,7 @@ import {
   type PregnancyWeightGainInput,
   type PregnancyWeightGainResult,
 } from './types';
+import { validateExcessiveWeightGainInput } from './validation';
 
 export function ExcessiveWeightGainInPregnancyCalculator({
   metadata,
@@ -42,11 +44,11 @@ export function ExcessiveWeightGainInPregnancyCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  // Engine wiring lands in the ADR-019 engine commit (validation + results).
   const apply = (next: PregnancyWeightGainInput) => {
+    const validation = validateExcessiveWeightGainInput(next);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
   };
 
   const handleReload = () => {
@@ -75,13 +77,7 @@ export function ExcessiveWeightGainInPregnancyCalculator({
       ? `${window.location.origin}/tools/${metadata.slug}`
       : `/tools/${metadata.slug}`;
 
-  // Reproductive privacy: share/copy carry only the public page URL.
-  const summary = [
-    metadata.title,
-    '',
-    'Recommended pregnancy weight-gain ranges on Omega Calculators.',
-    pageUrl,
-  ].join('\n');
+  const summary = shareExcessiveWeightGainText(pageUrl);
 
   const handleCopy = async () => {
     if (await copyTextToClipboard(summary)) {
