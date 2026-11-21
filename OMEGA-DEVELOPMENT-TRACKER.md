@@ -15,6 +15,7 @@ Audit pending: deferred to final audit coordinator
 
 | # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
+| 89 | Is BMI a Weight Gain Indicator in Pregnancy? | DEVELOPED | AUDIT PENDING | 6837feba | b59eb4fb (engine absorb) + 6510f141 (shared IOM) | (reg/Brain) | Completed Tools | `IsBmiPregnancyWeightIndicatorCalculator`; slug `is-bmi-body-mass-index-a-weight-gain-indicator-in-pregnancy`; Mongo `6af46f10a27d8d1d4e9901f1` active; no FX; indexable false; TASKS `TOOL-686` |
 | 83 | Infant Tylenol Dosage Calculator | DEVELOPED | AUDIT PENDING | c7ce7a51 | c8fb7a80 | 22305ff3 | Completed Tools | `InfantTylenolDosageCalculator`; slug `infant-tylenol-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d7` active; DailyMed/Tylenol.com weight bands; no FX; indexable false; TASKS `TOOL-677` |
 | 75 | Calorie Deficit Calculator | DEVELOPED | AUDIT PENDING | 26683baa | 26683baa | (this Brain) | Completed Tools | `CalorieDeficitCalculator`; slug `calorie-deficit-calculator`; Mongo `6af46f10a27d8d1d4e9901ea` active; registry via `c9c44e05`; no FX; indexable false; TASKS `TOOL-662` |
 | 81 | Geriatric BMI Calculator | DEVELOPED | AUDIT PENDING | b8d8b57e | 80185cec | 8bc7a71c | Completed Tools | `GeriatricBmiCalculator`; slug `geriatric-bmi-calculator`; Mongo `6af46f10a27d8d1d4e9901e7` active; older-adult bands; no FX; indexable false |

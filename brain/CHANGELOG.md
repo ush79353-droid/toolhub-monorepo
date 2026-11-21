@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-22 — Is BMI a Weight Gain Indicator in Pregnancy?
+- **Summary:** Shipped article-context widget on existing catalog slug `is-bmi-body-mass-index-a-weight-gain-indicator-in-pregnancy` (`IsBmiPregnancyWeightIndicatorCalculator`, catalog `6af46f10a27d8d1d4e9901f1`, pillar `6af451c1a27d8d1d4e98f983`). Screenshot-first (ADR-023): pre-pregnancy height/weight → BMI; week 40; twins No/Yes; min/max weight and gain via shared IOM engine (numerical identity with Pregnancy Weight Gain). Explains BMI selects guideline bands and does not measure gestational gain. Share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-686`.
+- **Commits:** `6837feba` (UI) / `b59eb4fb` (engine absorb) + `6510f141` (shared pregnancy-weight-gain IOM engine) / (registration/Brain/tracker — this commit).
+- **Example:** **165** cm · **60** kg · week **40** singleton → normal BMI ≈ **22.04** · gain **11.5–16** kg.
+- **Verification:** Focused identity `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Infant Tylenol Dosage Calculator
 - **Summary:** Shipped Infant Tylenol Dosage Calculator on existing catalog slug `infant-tylenol-dosage-calculator` (`InfantTylenolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d7`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): blank age/weight; unselected radios for Infant/Children's suspension 160 mg/5 mL, chewable 160 mg, dissolve pack 160 mg; weight-first DailyMed/Tylenol.com bands; acetaminophen duplicate warning; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-677`.
