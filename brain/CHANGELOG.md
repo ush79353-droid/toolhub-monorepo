@@ -4,6 +4,18 @@
 
 ---
 
+### 2026-11-22 — Body Fat Calculator
+- **Summary:** Shipped Body Fat Calculator on existing catalog slug `body-fat-calculator` (`BodyFatCalculator`, catalog `6af46f10a27d8d1d4e9901ff`, pillar `6af451c2a27d8d1d4e98f986`, subPillar null). Screenshot-first (ADR-023): Female/Male; ADA CUN-BAE (default) / U.S. Navy / Deurenberg BMI; blank age/height/weight; Navy neck/waist/(hip); body fat % + fat mass; collapsed BMI + lean mass; privacy-safe share. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-683`.
+- **Commits:** `3d318c4a` (UI) / `4dbb2ea9` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** Female · ADA · **30**y · **180** cm · **60** kg → BF% ≈ **23.30** · fat ≈ **13.98** kg.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — Due Date Calculator
+- **Summary:** Shipped Due Date Calculator on existing catalog slug `due-date-calculator` (`DueDateCalculator`, catalog `6af46f10a27d8d1d4e990203`, pillar `6af451c2a27d8d1d4e98f987`, subPillar null). Screenshot-first (ADR-023): LMP (default) vs conception; cycle default 28 days (21–45); EDD = LMP+280+(cycle−28) or conception+266; date-only UTC; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-682`.
+- **Commits:** module absorbed into concurrent `9b27eee7` / registration `f255440d`.
+- **Example:** LMP **2024-01-01** · cycle **28** → **2024-10-07**; conception **2024-01-15** → **2024-10-07**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — BMI Calculator for Teens
 - **Summary:** Shipped BMI Calculator for Teens on existing catalog slug `bmi-calculator-for-teens` (`BmiCalculatorForTeens`, catalog `6af46f10a27d8d1d4e9901e2`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): blank height/weight (cm/kg); BMI + BMI Prime; expanded “How healthy is your BMI?” with unselected Female/Male + age 10–20 → CDC 2000 BMI-for-age LMS percentiles; teen categories never derived from Prime; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-681`.
 - **Commits:** `f7f52249` (UI absorbed into concurrent Calorie engine commit) / `02851545` (engine) / (registration/Brain/tracker — this commit; registry/sitemap/`tool.key` also absorbed into concurrent `8ae8d44b`).
