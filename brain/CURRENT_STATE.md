@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Retention Ratio Calculator live at `/tools/retention-ratio-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Return on Assets Calculator live at `/tools/return-on-assets-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Return on Assets Calculator (`/tools/return-on-assets-calculator`):** Live client-side ROA tool (`componentKey: 'ReturnOnAssetsCalculator'`, catalog `6af46f10a27d8d1d4e99016b`, `nameKey` `return on assets calculator`). Screenshot-first (ADR-023): NI ÷ assets × 100; optional average assets; zero assets rejected; negative ROA supported; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NI **150,000** · Assets **1,000,000** → ROA **15.00%**.
 - **Retention Ratio Calculator (`/tools/retention-ratio-calculator`):** Live client-side plowback tool (`componentKey: 'RetentionRatioCalculator'`, catalog `6af46f10a27d8d1d4e99016a`, `nameKey` `retention ratio calculator`). Screenshot-first (ADR-023): NI − dividends → period RE; retention % = RE/NI×100; zero NI → undefined; negative retention allowed; denomination-only CurrencySelect (PKR default, no FX). Activated; **`indexable` left false**. Example: NI **1,000,000** · Div **350,000** → RE **650,000** · retention **65%**.
 - **Biden's Tax Plan Calculator (`/tools/bidens-tax-plan-calculator`):** Live client-side Historical Biden Tax Plan Comparison (`componentKey: 'BidensTaxPlanCalculator'`, catalog `6af46f0fa27d8d1d4e990055`). Screenshot-first (ADR-023): age; AGI USD; filing status Single/Married/HoH; children under 6; children ages 6–17; other dependents (ODC only); baseline vs AFP income tax + effective rates. Baseline TY2022 TCJA (Rev. Proc. 2021-45); AFP May 2021 top rate 39.6% + ARP-style CTC. Fixed USD (no FX). Activated; **`indexable` left false**. Example: single · AGI $80,000 · no kids → both plans ≈ **$10,368**.
 - **Quiz: Annual Income Calculator (`/tools/quiz-annual-income-calculator`):** Live educational seven-question MCQ (`componentKey: 'QuizAnnualIncomeCalculator'`, catalog `6af46f0fa27d8d1d4e99006e`, `nameKey` `quiz: annual income calculator`, pillar/subPillar null). Screenshot-first (ADR-023): progressive reveal; score `/7` only when complete; Q1–Q7 recovered from Omni reference `annual-income-quiz` (not invented). Fixed USD teaching examples; no FX. Activated; **`indexable` left false**. Perfect score **7 / 7**.

@@ -903,6 +903,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/relative-strength-index/detail'),
   ResidualIncomeCalculator: () =>
     import('@/tools/calculators/residual-income/detail'),
+  ReturnOnAssetsCalculator: () =>
+    import('@/tools/calculators/return-on-assets/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>

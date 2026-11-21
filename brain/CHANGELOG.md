@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Return on Assets Calculator
+- **Summary:** Shipped Return on Assets Calculator on existing catalog slug `return-on-assets-calculator` (`ReturnOnAssetsCalculator`, catalog `6af46f10a27d8d1d4e99016b`, preserved `nameKey` `return on assets calculator`). Screenshot-first (ADR-023): ROA = NI/assets×100; optional average assets; zero-denominator protection; negative ROA supported. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** NI **150,000** · Assets **1,000,000** → ROA **15.00%**; average path beginning **900,000** + ending **1,100,000** → same **15%**.
+- **Important Files:** `frontend/src/tools/calculators/return-on-assets/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` ROA tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Retention Ratio Calculator
 - **Summary:** Shipped Retention Ratio Calculator on existing catalog slug `retention-ratio-calculator` (`RetentionRatioCalculator`, catalog `6af46f10a27d8d1d4e99016a`, preserved `nameKey` `retention ratio calculator`). Screenshot-first (ADR-023): NI − dividends → period retained earnings; retention % = RE/NI×100 (also 1 − payout); zero NI → undefined; negative retention allowed when dividends exceed NI. Denomination-only CurrencySelect (PKR default, no FX). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** NI **1,000,000** · Div **350,000** → RE **650,000** · retention **65.00%**.
