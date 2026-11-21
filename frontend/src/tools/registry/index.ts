@@ -2845,6 +2845,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BenadrylDosageCalculator,
     })),
   ),
+  IbuprofenDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ibuprofen-dosage/IbuprofenDosageCalculator'
+    ).then((mod) => ({
+      default: mod.IbuprofenDosageCalculator,
+    })),
+  ),
   BetaStockCalculator: lazyTool(() =>
     import('@/tools/calculators/beta-stock/BetaStockCalculator').then((mod) => ({
       default: mod.BetaStockCalculator,
@@ -3617,6 +3624,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   PaybackPeriodCalculator: lazyTool(() =>
     import('@/tools/calculators/payback-period/PaybackPeriodCalculator').then((mod) => ({
       default: mod.PaybackPeriodCalculator,
+    })),
+  ),
+  ParacetamolDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/paracetamol-dosage/ParacetamolDosageCalculator'
+    ).then((mod) => ({
+      default: mod.ParacetamolDosageCalculator,
     })),
   ),
   PayPalFeeCalculator: lazyTool(() =>
@@ -5405,6 +5419,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   IraCalculator: lazyTool(() =>
     import('@/tools/calculators/ira/IraCalculator').then((mod) => ({
       default: mod.IraCalculator,
+    })),
+  ),
+  IvfDueDateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ivf-due-date/IvfDueDateCalculator'
+    ).then((mod) => ({
+      default: mod.IvfDueDateCalculator,
     })),
   ),
   InterestOnlyMortgageCalculator: lazyTool(() =>

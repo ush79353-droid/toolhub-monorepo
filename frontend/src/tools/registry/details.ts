@@ -939,6 +939,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/payment/detail'),
   PaybackPeriodCalculator: () =>
     import('@/tools/calculators/payback-period/detail'),
+  ParacetamolDosageCalculator: () =>
+    import('@/tools/calculators/paracetamol-dosage/detail'),
   PayPalFeeCalculator: () =>
     import('@/tools/calculators/paypal-fee/detail'),
   PayRaiseCalculator: () =>
@@ -1451,6 +1453,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   IntrinsicValueCalculator: () =>
     import('@/tools/calculators/intrinsic-value/detail'),
   IraCalculator: () => import('@/tools/calculators/ira/detail'),
+  IvfDueDateCalculator: () =>
+    import('@/tools/calculators/ivf-due-date/detail'),
   IsBmiPregnancyWeightIndicatorCalculator: () =>
     import('@/tools/calculators/is-bmi-pregnancy-weight-indicator/detail'),
   InterestOnlyMortgageCalculator: () =>

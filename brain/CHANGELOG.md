@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-22 — Paracetamol Dosage Calculator
+- **Summary:** Shipped Paracetamol Dosage Calculator on existing catalog slug `paracetamol-dosage-calculator` (`ParacetamolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901db`, pillar `6af451c1a27d8d1d4e98f980`). Screenshot-first (ADR-023): age yrs/mos + weight kg/lb; educational 15 mg/kg single / 60 mg/kg daily ceilings; under-3-month gate; adult caps; Infant Tylenol link; privacy-safe share. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-686`.
+- **Commits:** `bbe666d9` (UI) / `a3cda40f` (engine; also absorbed concurrent maintenance-calorie UI staging) / (registration/Brain — this commit).
+- **Example:** **8**y · **21** kg → single **315** mg · daily **1,260** mg.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-22 — IVF Due Date Calculator
 - **Summary:** Shipped IVF Due Date Calculator on existing catalog slug `ivf-due-date-calculator` (`IvfDueDateCalculator`, catalog `6af46f10a27d8d1d4e990205`). Screenshot-first ACOG CO 700 Day-3/Day-5/own/donor dating; plurality does not change EDD; share URL only. **No FX**. Activated `--set-active`; **`indexable` false**. TASKS `TOOL-687`.
 - **Commits:** `d4ea7618` (UI) / `8598c9c1` (engine) / (registration/Brain — this commit).
@@ -3549,6 +3554,11 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
+### 2026-11-22 — Paracetamol Dosage Calculator
+- **Summary:** Shipped Paracetamol Dosage Calculator on existing catalog slug `paracetamol-dosage-calculator` (`ParacetamolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901db`, pillar `6af451c1a27d8d1d4e98f980`). Screenshot-first (ADR-023): age yrs/mos + weight kg/lb; educational 15 mg/kg single / 60 mg/kg daily ceilings; under-3-month gate; adult caps; Infant Tylenol link; privacy-safe share. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-686`.
+- **Commits:** `bbe666d9` (UI) / `a3cda40f` (engine; also absorbed concurrent maintenance-calorie UI staging) / (registration/Brain — this commit).
+- **Example:** **8**y · **21** kg → single **315** mg · daily **1,260** mg.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-22 — IVF Due Date Calculator
 - **Summary:** Shipped IVF Due Date Calculator on existing catalog slug `ivf-due-date-calculator` (`IvfDueDateCalculator`, catalog `6af46f10a27d8d1d4e990205`). Screenshot-first ACOG CO 700 Day-3/Day-5/own/donor dating; plurality does not change EDD; share URL only. **No FX**. Activated `--set-active`; **`indexable` false**. TASKS `TOOL-687`.
 - **Commits:** `d4ea7618` (UI) / `8598c9c1` (engine) / (registration/Brain — this commit).
