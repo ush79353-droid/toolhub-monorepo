@@ -113,7 +113,7 @@ Audit pending: deferred to final audit coordinator
 
 | 68 | Futures Contracts Calculator | DEVELOPED | AUDIT PENDING | 5d42bb55 | 7c06d250 | c2748981 | Completed Tools | `FuturesContractsCalculator`; slug `futures-contracts-calculator`; Mongo `6af46f10a27d8d1d4e9901c2` active; Phase 2 FX; indexable false; TASKS `TOOL-645` |
 
-| 70 | Options Spread Calculator | DEVELOPED | AUDIT PENDING | 2716e398 | 2e7a6766 (engine absorbed) / 99bdee62 (pension race) | (this reg/Brain/tracker) | Completed Tools | `OptionsSpreadCalculator`; slug `options-spread-calculator`; Mongo `6af46f10a27d8d1d4e9901c3` active; Phase 2 FX; ×100; indexable false; TASKS `TOOL-649` |
+| 70 | Options Spread Calculator | DEVELOPED | AUDIT PENDING | 2716e398 | 2e7a6766 (engine absorbed) / 99bdee62 (pension race) | 898d2fae | Completed Tools | `OptionsSpreadCalculator`; slug `options-spread-calculator`; Mongo `6af46f10a27d8d1d4e9901c3` active; Phase 2 FX; ×100; indexable false; TASKS `TOOL-649` |
 
 | 71 | Pension Calculator | DEVELOPED | AUDIT PENDING | 99bdee62 (UI absorb) + 8e422be1 | 42f4e549 | 5a2b0c38 | Completed Tools | `PensionCalculator`; slug `pension-calculator`; Mongo `6af46f10a27d8d1d4e9901b7` active; denomination USD no FX; indexable false; TASKS `TOOL-650` |
 | 72 | Put-Call Parity Calculator | DEVELOPED | AUDIT PENDING | 3e142c72 | 5cecb015 | (c3 pending) | Completed Tools | `PutCallParityCalculator`; slug `put-call-parity-calculator`; Mongo `6af46f10a27d8d1d4e9901c4` active; Phase 2 FX; indexable false; TASKS `TOOL-651`; keys/index/details/sitemap via concurrent HEAD |
@@ -122,7 +122,7 @@ Audit pending: deferred to final audit coordinator
 - 2026-11-21 (Put-Call Parity): Put-Call Parity Calculator DEVELOPED (`3e142c72` / `5cecb015` / c3). Mongo `6af46f10a27d8d1d4e9901c4` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 - 2026-11-21 (Pension): Pension Calculator DEVELOPED (UI via `99bdee62` absorb + `8e422be1` / `42f4e549` / `5a2b0c38`). Mongo `6af46f10a27d8d1d4e9901b7` activated; indexable false; denomination-only CurrencySelect (no FX). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
-- 2026-11-21 (Options Spread): Options Spread Calculator DEVELOPED (`2716e398` / engine via `2e7a6766` absorbed + `99bdee62` pension staging race / reg+Brain). Mongo `6af46f10a27d8d1d4e9901c3` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (Options Spread): Options Spread Calculator DEVELOPED (`2716e398` / engine via `2e7a6766` absorbed + `99bdee62` pension staging race / `898d2fae`). Mongo `6af46f10a27d8d1d4e9901c3` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Capital Gains Tax UK): Capital Gains Tax UK Calculator DEVELOPED (`d6b444ca` / `d41583b8` / `1b853375`). Mongo `6af46f10a27d8d1d4e9901cb` activated; indexable false; fixed GBP; HMRC 18%/24%. Registry keys also via concurrent `22336b5c`. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 | 69 | Pence to Pounds Converter | DEVELOPED | AUDIT PENDING | 270bbd2c | 93fc88de | 7f4d8b82 | Completed Tools | `PenceToPoundsConverter`; slug `pence-to-pounds-converter`; Mongo `6af46f10a27d8d1d4e9901ca` active; fixed 100p=£1; no FX; indexable false; TASKS `TOOL-647` |
@@ -302,3 +302,11 @@ Screenshot-first Traditional/SEP/SIMPLE vs Roth comparison; IRS TY2026 limits; P
 
 | 66 | IRA Calculator | DEVELOPED | AUDIT PENDING | 70713de9 | 215cc323 | 692c562c | Completed Tools | `IraCalculator`; slug `ira-calculator`; Mongo `6af46f10a27d8d1d4e9901b6` active; Phase 2 FX; indexable false; TASKS `TOOL-647` |
 
+
+### 2026-11-21 — UK Coin Weight Calculator DEVELOPED
+
+Screenshot-first 1p–£2 counts × Royal Mint standard masses; g/kg display. No FX. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE. Registry/Brain absorbed via concurrent HEAD commits; engine commit `c2748981` also absorbed Futures Contracts staging.
+
+| 72 | UK Coin Weight Calculator | DEVELOPED | AUDIT PENDING | 9efd2eb2 | c2748981 | (tracker this commit) | Completed Tools | `UkCoinWeightCalculator`; slug `uk-coin-weight-calculator`; Mongo `6af46f10a27d8d1d4e9901cf` active; indexable false; TASKS `TOOL-652` |
+
+- 2026-11-21 (UK Coin Weight): DEVELOPED (`9efd2eb2` / `c2748981` / tracker). Mongo activated; indexable false. Moved to Completed Tools. Temporary files cleaned: YES.
