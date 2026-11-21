@@ -1,0 +1,116 @@
+# Cursor Prompt — Child Tax Credit Calculator
+
+Develop **Child Tax Credit Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `child-tax-credit-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+
+- Search existing MongoDB records by title, slug and aliases.
+- If no authorized matching record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Compare with Income Tax Calculator and existing US tax calculators; reuse verified tax utilities.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+Preserve the screenshot's visible structure.
+
+**Introduction**
+- Brief explanation of the Child Tax Credit and its purpose.
+
+**Your Filing Status**
+- Single (default).
+- Joint.
+- Head of household.
+
+**Income (AGI)**
+- Annual income, fixed USD monetary input.
+
+**Children's Ages**
+- Explain that qualifying children must meet the applicable tax-year age and dependency requirements.
+- 1st child — age in years.
+- 2nd child — age in years.
+
+Keep the first two child inputs visible. Do not invent additional child-entry controls unless verified in the existing specification.
+
+**Results**
+- Estimated Child Tax Credit.
+- Eligible children count.
+- Income-related credit reduction, where applicable.
+- Refundable portion only if determinable from verified inputs.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls.
+
+## 3. Accurate Child Tax Credit Logic
+
+Implement tax-year-specific US Child Tax Credit rules.
+
+Required checks:
+
+- Verify the applicable tax year using authorized project specifications.
+- Use official IRS guidance and enacted legislation for that year.
+- Apply the correct maximum credit per qualifying child.
+- Apply age eligibility and dependent requirements.
+- Apply filing-status-specific income phaseout thresholds.
+- Calculate any applicable phaseout reduction.
+- Distinguish the nonrefundable Child Tax Credit from the refundable Additional Child Tax Credit.
+- Do not assume refundable credit eligibility solely from AGI and children's ages.
+- Do not invent earned income, tax liability, residency, Social Security number eligibility or other missing facts.
+- Clearly label any result based on simplified eligibility assumptions.
+- If required tax-year or eligibility information cannot be verified, report BLOCKED rather than fabricate amounts.
+
+Requirements:
+- Validate nonnegative AGI.
+- Validate child ages within realistic bounds.
+- Handle zero qualifying children and zero income.
+- Prevent NaN, Infinity and negative invalid credit amounts.
+- Preserve numerical precision and applicable tax rounding.
+- Do not present estimates as guaranteed IRS refunds.
+
+## 4. Currency Handling
+
+Screenshot uses fixed USD ($), without currency selectors.
+
+- Preserve USD.
+- Do not introduce FX dropdowns.
+- No `CURRENCY_CONVERSION_SLUGS` registration required.
+- Never FX-convert ages, filing statuses or dependent counts.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend key and actual live sitemap.
+- Reuse SEO, guides, ads, embeds and shared calculator actions.
+- Activate only the authorized matching MongoDB record when sufficiently verified.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three Local Git Commits
+
+Create exactly **3 meaningful LOCAL commits**:
+
+1. `feat(child-tax-credit): create calculator UI`
+2. `feat(child-tax-credit): implement verified IRS credit calculations`
+3. `feat(child-tax-credit): complete registration and integration`
+
+Never create empty or artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only task-created temporary files.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+- Do not overwrite another agent's in-progress work.
+
+Report confirmed slug, supported tax year, official IRS sources, eligibility assumptions, credit calculation coverage, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

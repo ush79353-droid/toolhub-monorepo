@@ -1,0 +1,102 @@
+# Cursor Prompt — GST Calculator
+
+Develop **GST Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `gst-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+
+- Search existing MongoDB records by title, slug and aliases.
+- Compare with VAT Calculator, Sales Tax Calculator and Gross to Net Calculator.
+- If no separate authorized matching MongoDB record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Reuse existing percentage and monetary calculation utilities.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+
+## 2. Screenshot Fields
+
+Preserve the exact field order:
+
+1. **Gross price** — monetary input/output with independent PKR currency selector.
+2. **GST** — percentage input, with the screenshot's existing pin control where supported by project components.
+3. **Net price** — monetary input/output with independent PKR selector.
+4. **Tax amount** — calculated monetary output with independent PKR selector.
+
+Allow entering either gross or net price and automatically calculate the remaining values. Use the last edited price field as the authoritative input.
+
+Reuse Share Result, Reload Calculator, Clear All Changes and feedback controls. Follow OmegaCalculators styling, not screenshot styling.
+
+## 3. Accurate GST Calculations
+
+Treat **gross price as GST-inclusive** and **net price as GST-exclusive**.
+
+For GST rate `r`:
+
+**From Net Price**
+- `Gross = Net × (1 + r/100)`
+- `Tax Amount = Gross − Net`
+
+**From Gross Price**
+- `Net = Gross / (1 + r/100)`
+- `Tax Amount = Gross − Net`
+
+Requirements:
+- Clearly distinguish tax-inclusive and tax-exclusive prices.
+- Support zero GST with Gross = Net and Tax = 0.
+- Validate nonnegative monetary values.
+- Validate GST rate ≥ 0 and a sensible project-supported upper bound.
+- Prevent circular calculations when switching the authoritative field.
+- Prevent NaN, Infinity and division by zero.
+- Preserve full numerical precision; round only for display.
+- Do not invent country-specific GST rates, exemptions or tax brackets.
+- Do not automatically apply an unverified default GST percentage.
+
+## 4. Real Currency Conversion
+
+Screenshot contains independent PKR currency selectors.
+
+- Reuse existing Phase 2 numeric FX infrastructure.
+- Convert money values numerically, not merely symbols.
+- Normalize mixed-currency gross/net values before calculating.
+- Preserve independent currency selectors and canonical precision.
+- Register slug in both live `CURRENCY_CONVERSION_SLUGS` lists.
+- Handle missing/stale exchange rates safely; never assume 1:1 conversion.
+- Never FX-convert GST percentages.
+
+## 5. Project Integration
+
+- Register both frontend component-key lists, lazy registry, details, backend tool key and actual live sitemap.
+- Reuse SEO, guides, ads, embeds and shared actions.
+- Activate only the authorized matching MongoDB record.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 6. Mandatory Three Local Git Commits
+
+Create exactly **3 meaningful LOCAL commits**:
+
+1. `feat(gst): create calculator UI`
+2. `feat(gst): implement GST calculations and FX`
+3. `feat(gst): complete registration and integration`
+
+Never create empty/artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 7. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only temporary files created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 8. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+- Do not overwrite another agent's in-progress work.
+
+Report confirmed slug, GST calculation modes, formulas, FX wiring, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

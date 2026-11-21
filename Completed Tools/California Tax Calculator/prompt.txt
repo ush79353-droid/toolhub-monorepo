@@ -1,0 +1,130 @@
+# Cursor Prompt — California Tax Calculator
+
+Develop **California Tax Calculator** using the attached screenshot as a functionality reference only.
+
+**Suggested slug:** `california-tax-calculator` — verify against MongoDB.
+
+## 1. MongoDB & Ownership
+
+- Search existing MongoDB records by title, slug and aliases.
+- Compare with Income Tax Calculator, Alabama Tax Calculator and California Sales Tax Calculator.
+- If no separate authorized MongoDB record exists, SKIP; never create one.
+- If already developed or colleague-owned, STOP.
+- Follow ADR-016, ADR-018, ADR-023 and locked OmegaCalculators design.
+- Reuse existing tax and payroll calculation utilities where appropriate.
+
+## 2. Screenshot Fields
+
+Preserve the exact sections and field order.
+
+**Payroll Taxes**
+- Adjusted Gross Income (AGI) — fixed USD monetary input with period selector, default per year.
+- Pay frequency — dropdown, default Weekly.
+- Year of income — dropdown, default 2025.
+- Filing status — dropdown, default Single.
+- Number of additional dependents — numeric input, default 0.
+- Itemized deductions — fixed USD input, default $0.
+- Post-tax deductions — fixed USD input, default $0.
+
+**Property Tax**
+- Assessed home value — fixed USD monetary input, default $0.
+- Location — dropdown, default Alameda County.
+- Applied property tax rate — percentage input/output, screenshot default 0.88%.
+
+Preserve the reference's verified location options without inventing unsupported counties or rates.
+
+Reuse Share Result, Reload Calculator, Clear Changes and feedback controls. Follow OmegaCalculators styling, not screenshot styling.
+
+## 3. Accurate California Tax Calculations
+
+Implement a tax-year-specific estimation engine.
+
+**Payroll and Income Tax**
+- Normalize income periods into annual values.
+- Apply verified federal income tax brackets and deductions for the selected year.
+- Apply California personal income tax brackets, deductions, exemptions and applicable credits.
+- Distinguish federal AGI from California taxable income and account for state adjustments.
+- Calculate applicable Social Security, Medicare and California payroll withholding components where the input assumptions support them.
+- Apply filing-status and dependent rules correctly.
+- Treat post-tax deductions as take-home-pay deductions, not taxable-income reductions.
+- Translate annual results into the chosen pay frequency.
+
+**Property Tax**
+- Calculate estimated annual property tax using:
+
+`Estimated Property Tax = Assessed Home Value × Applicable Rate / 100`
+
+- Verify property tax rates using authoritative county assessor or tax collector sources.
+- Clearly distinguish assessed value from purchase price.
+- Account for California assessment limitations and special assessments only where adequate data is available.
+- Do not present an illustrative 0.88% default as a verified universal Alameda County rate.
+- If the selected county's rate cannot be verified, report the affected property tax estimate as unavailable rather than inventing data.
+
+Requirements:
+- Verify year-specific rules against IRS, California Franchise Tax Board, EDD and applicable county sources.
+- Do not invent tax rates, income thresholds, exemptions or local assessments.
+- Clearly distinguish estimates from actual withholding or assessed tax bills.
+- Handle zero income, zero property value and valid deductions.
+- Prevent NaN, Infinity and invalid negative tax results.
+- Preserve precision and apply appropriate tax rounding.
+
+## 4. Results
+
+Show a clear breakdown where supported by the verified calculation rules:
+
+- Gross/adjusted annual income.
+- Estimated federal income tax.
+- Estimated California income tax.
+- Applicable payroll taxes.
+- Estimated after-tax pay per selected pay period.
+- Estimated annual property tax.
+- Total estimated taxes, clearly separated by tax type.
+
+Do not silently combine property tax with payroll withholding.
+
+## 5. Currency Handling
+
+Screenshot uses fixed USD ($), without currency dropdowns.
+
+- Preserve USD.
+- Do not add FX selectors.
+- No `CURRENCY_CONVERSION_SLUGS` registration required.
+- Never FX-convert tax rates, tax years or dependent counts.
+
+## 6. Project Integration
+
+- Register both frontend key lists, lazy registry, details, backend tool key and actual live sitemap.
+- Reuse SEO, guides, ads, embeds and shared actions.
+- Activate only the authorized matching MongoDB record when the implementation is complete.
+- Preserve unrelated calculators and colleague-owned changes.
+
+## 7. Mandatory Three Local Git Commits
+
+Create exactly **3 meaningful LOCAL commits**:
+
+1. `feat(california-tax): create payroll and property tax UI`
+2. `feat(california-tax): implement verified tax calculations`
+3. `feat(california-tax): complete registration and integration`
+
+Never create empty or artificial commits. Stage only authorized task-related changes and report all three hashes.
+
+## 8. Mandatory Temporary File Cleanup
+
+- Avoid unnecessary temporary scripts, tests and logs.
+- Delete only files temporarily created during this task.
+- Preserve existing, unknown and colleague-owned files.
+- Never use `git clean -fd`, destructive resets or broad deletion.
+- Inspect `git status --short`.
+- Report `Temporary files cleaned: YES/NO`.
+
+## 9. Restrictions
+
+- ONE calculator only.
+- No unrelated edits, Playwright, automated tests, lint, typecheck or build.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+- Keep all three commits local until explicitly authorized.
+- Do not overwrite another agent's in-progress work.
+
+Report confirmed slug, supported tax year, verified IRS/FTB/EDD/property tax sources, formulas, MongoDB activation, changed files, cleanup status and three local commit hashes.
+
+**STOP after completing this calculator.**

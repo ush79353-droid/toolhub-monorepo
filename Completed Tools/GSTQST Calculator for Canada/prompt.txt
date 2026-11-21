@@ -1,0 +1,336 @@
+# Cursor Prompt — GST/QST Calculator for Canada
+
+## 1. Mission
+
+Develop **GST/QST Calculator for Canada** using the attached screenshot as the primary functionality reference.
+
+**Suggested slug:** `gst-qst-calculator-for-canada` — verify against MongoDB.
+
+This is a Canada-specific sales tax calculator. Do not confuse it with the existing generic GST Calculator or create duplicate functionality under an existing calculator's identity.
+
+Use the screenshot for fields, input order, conditional tax information and result behavior only. Follow OmegaCalculators' established design system.
+
+## 2. MongoDB Verification & Ownership
+
+Before writing code:
+
+1. Search existing MongoDB records by title, slug and aliases.
+2. Verify the exact authorized MongoDB ID, slug, pillar and component key.
+3. Inspect whether this tool is already implemented, assigned to another agent or currently in progress.
+4. Compare existing GST, VAT and sales tax calculator utilities.
+5. If the authorized MongoDB record does not exist, **SKIP/STOP**. Never create it.
+6. If already developed or colleague-owned, STOP without modifying it.
+7. Follow ADR-016, ADR-018 and ADR-023.
+
+Implement only this calculator.
+
+## 3. Screenshot Fields & UI
+
+Preserve the original structure and logical field order.
+
+### Province or Territory Selector
+
+**Select your province or territory**
+
+- Dropdown containing all 10 Canadian provinces and 3 territories.
+- Default: **Alberta**, as shown in the screenshot.
+- Province selection dynamically updates the applicable tax fields, labels, rates and explanatory message.
+
+Include:
+
+- Alberta
+- British Columbia
+- Manitoba
+- New Brunswick
+- Newfoundland and Labrador
+- Northwest Territories
+- Nova Scotia
+- Nunavut
+- Ontario
+- Prince Edward Island
+- Quebec
+- Saskatchewan
+- Yukon
+
+Use existing project dropdown components and state-management conventions.
+
+### Dynamic Provincial Information
+
+Below the province selector, display a short contextual explanation.
+
+For example, when Alberta is selected:
+
+"Alberta applies only the Goods and Services Tax (GST)."
+
+When Quebec is selected, explain that GST and QST generally apply.
+
+For HST provinces, explain that the harmonized sales tax combines the federal and provincial components.
+
+Do not hardcode an Alberta-specific explanation for every province.
+
+### Amount Before Tax
+
+- Editable monetary input.
+- Fixed Canadian dollars (CAD).
+- Display `$` using Canadian currency formatting.
+- Do not introduce unsupported currency selectors.
+
+### Dynamic Tax Fields
+
+For Alberta, the screenshot displays:
+
+**GST (5%)**
+
+This field is calculated and read-only.
+
+For other provinces, dynamically display only applicable tax components.
+
+Examples:
+
+- GST-only provinces: GST.
+- HST provinces: HST.
+- Quebec: GST and QST.
+- Provinces with separate PST/RST: GST and relevant provincial sales tax.
+
+Do not display irrelevant components for the selected province.
+
+### Amount After Tax
+
+- Calculated monetary output.
+- Fixed CAD.
+- Update immediately when amount or province changes.
+
+### Shared Actions
+
+Reuse existing project controls:
+
+- Share Result.
+- Reload Calculator.
+- Clear All Changes.
+- Yes/No feedback.
+
+Preserve the same general grouping as the screenshot without copying the reference website's styling.
+
+## 4. Canadian Tax Rates — Official Verification Required
+
+Use authoritative current tax information from:
+
+- Canada Revenue Agency (CRA).
+- Revenu Québec.
+- Relevant provincial government finance/taxation departments.
+
+**Do not blindly use historical tax-rate tables.**
+
+Verify the currently effective rate for every province/territory before implementation.
+
+At minimum, investigate:
+
+- Federal GST.
+- HST rates by participating province.
+- Quebec QST.
+- British Columbia PST.
+- Saskatchewan PST.
+- Manitoba RST.
+- Any applicable recent HST rate changes.
+- Effective dates for each rate.
+
+Pay particular attention to provincial changes that occurred during 2025–2026.
+
+Do not assume all Atlantic provinces have identical HST rates.
+
+Do not assume that all provinces charge GST plus a separate provincial tax.
+
+Use a clearly structured rate configuration with official source references and effective dates.
+
+If any current rate cannot be verified, do not fabricate that rate.
+
+## 5. Accurate Tax Calculations
+
+### GST-only Provinces and Territories
+
+`GST Amount = Amount Before Tax × GST Rate`
+
+`Amount After Tax = Amount Before Tax + GST Amount`
+
+### HST Provinces
+
+`HST Amount = Amount Before Tax × Applicable HST Rate`
+
+`Amount After Tax = Amount Before Tax + HST Amount`
+
+HST is a combined tax; do not add GST again on top of an HST rate.
+
+### GST + Provincial Sales Tax
+
+Where applicable:
+
+`GST Amount = Amount Before Tax × GST Rate`
+
+`PST Amount = Amount Before Tax × Provincial Rate`
+
+`Amount After Tax = Amount Before Tax + GST Amount + PST Amount`
+
+Verify the correct provincial tax base and any relevant tax-on-tax exceptions before calculating.
+
+### Quebec GST + QST
+
+For ordinary taxable supplies under the general current rules:
+
+`GST Amount = Amount Before Tax × GST Rate`
+
+`QST Amount = Amount Before Tax × QST Rate`
+
+`Amount After Tax = Amount Before Tax + GST Amount + QST Amount`
+
+Do not incorrectly calculate QST on a GST-inclusive amount unless authoritative rules for the specified transaction require that method.
+
+### General Requirements
+
+- Use province-specific verified rates.
+- Do not double-count GST/HST.
+- Support decimal amounts.
+- Validate nonnegative monetary input.
+- Handle zero amount correctly.
+- Prevent NaN, Infinity and invalid results.
+- Keep full calculation precision internally.
+- Apply appropriate CAD currency rounding for display.
+- Ensure the displayed tax components reconcile with the displayed total under the selected rounding policy.
+- Clearly identify calculations as general taxable-purchase estimates, not tax filing or legal advice.
+
+## 6. Product Assumptions & Limitations
+
+The screenshot does not include:
+
+- Product type.
+- Exemption category.
+- Customer residency.
+- Seller location.
+- Transaction date.
+- Import status.
+- Shipping information.
+
+Therefore:
+
+- Treat the entered amount as a generally taxable purchase before tax.
+- Do not invent additional user-facing fields.
+- Do not claim universal applicability to every product or service.
+- Acknowledge that exemptions, zero-rated supplies and special provincial rules may change actual tax treatment.
+- Do not invent historical calculations or automatic retroactive tax-rate selection.
+
+## 7. Currency Behavior
+
+The screenshot displays fixed `$` amounts without independent currency selectors.
+
+Therefore:
+
+- Use CAD exclusively.
+- Format appropriately as Canadian dollars.
+- Do not add FX dropdowns.
+- Do not register this slug in `CURRENCY_CONVERSION_SLUGS`.
+- Do not convert percentage values.
+
+## 8. Calculation Architecture
+
+Follow the project's established calculator architecture.
+
+Separate:
+
+- Province/territory identifiers.
+- Verified tax-rate configuration.
+- Tax calculation utilities.
+- Form state and validation.
+- Results presentation.
+- Province-specific explanatory content.
+
+Avoid duplicating calculations across components.
+
+Use reusable utilities only when they correctly preserve Canadian tax rules.
+
+Avoid unnecessary packages or major architectural changes.
+
+Use the project's established precision and rounding conventions.
+
+## 9. Project Registration & Integration
+
+Complete all required registration points after the calculator is functional:
+
+- `frontend/src/tools/registry/keys.ts`
+- `frontend/src/tools/registry/index.ts`
+- `frontend/src/tools/registry/details.ts`
+- `backend/src/modules/tools/tool.key.ts`
+- `frontend/src/app/sitemap.ts`
+
+Also integrate applicable existing:
+
+- Calculator page routing.
+- Embed support.
+- SEO metadata.
+- Guides and descriptions.
+- Ads.
+- Shared actions.
+- Relevant category/pillar relationships.
+
+Activate only the verified authorized MongoDB record.
+
+Respect admin-controlled settings, including `indexable`.
+
+Do not create an unrelated tool record or modify existing completed calculators.
+
+## 10. Three Mandatory Local Git Commits
+
+Create exactly **three meaningful LOCAL commits**:
+
+1. `feat(canada-gst-qst): create calculator UI`
+2. `feat(canada-gst-qst): implement verified provincial tax calculations`
+3. `feat(canada-gst-qst): complete registration and integration`
+
+Rules:
+
+- Each commit must contain genuine task-related changes.
+- Never create empty or artificial commits.
+- Stage only authorized files.
+- Preserve colleague-owned and unrelated work.
+- Do not rewrite Git history.
+- **NO GIT PUSH, PULL, FETCH OR SYNC.**
+
+## 11. Temporary File Cleanup
+
+Before finishing:
+
+1. Identify temporary files created specifically for this task.
+2. Delete only those task-created temporary files.
+3. Preserve pre-existing and colleague-owned files.
+4. Do not use destructive Git cleanup.
+5. Inspect `git status --short`.
+6. Report `Temporary files cleaned: YES/NO`.
+
+## 12. Restrictions
+
+- Develop this calculator only.
+- No unrelated changes.
+- No Playwright or browser automation.
+- No automated tests, lint, typecheck or build unless explicitly authorized.
+- No invented rates or unsupported tax logic.
+- No duplicate MongoDB records.
+- No unauthorized activation.
+- No Git push, pull, fetch or sync.
+
+## 13. Final Report
+
+Report:
+
+1. Confirmed MongoDB ID, slug and component key.
+2. Verified Canadian tax sources and effective dates.
+3. Province-by-province applicable tax configuration.
+4. Implemented screenshot fields.
+5. GST, HST, PST/RST and QST formulas.
+6. Validation and rounding behavior.
+7. Fixed CAD handling.
+8. Frontend/backend registration.
+9. MongoDB activation status.
+10. Changed files.
+11. Three local Git commit hashes.
+12. Temporary files cleaned: YES/NO.
+13. Final status: DEVELOPED / ALREADY DEVELOPED / BLOCKED.
+
+**STOP after completing GST/QST Calculator for Canada. Do not start another calculator.**

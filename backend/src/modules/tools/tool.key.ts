@@ -14,6 +14,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DebtToAssetRatioCalculator',
   'DebtToCapitalRatioCalculator',
   'DebtToEquityCalculator',
+  'DefensiveIntervalRatioCalculator',
   'DeferredAnnuityCalculator',
   'DepreciationCalculator',
   'EbitdaMarginCalculator',
@@ -22,6 +23,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GeorgiaOvertimeCalculator',
   'GrossMarginCalculator',
   'GrossRentMultiplierCalculator',
+  'GratuityCalculator',
   'GrowingAnnuityCalculator',
   'IllinoisOvertimeCalculator',
   'ImmediateAnnuityCalculator',
@@ -29,25 +31,42 @@ export const APPROVED_COMPONENT_KEYS = [
   'LoanCalculator',
   'LoanInterestCalculator',
   'LotteryAnnuityCalculator',
+  'LotteryTaxCalculator',
   'MarginAndMarkupCalculator',
+  'MileageReimbursementCalculator',
+
   'MarginAndSalesTaxCalculator',
+  'MarriageTaxCalculator',
+  'ModifiedAdjustedGrossIncomeCalculator',
   'MarginAndVatCalculator',
   'MarginCalculatorClassic',
   'MarginCallCalculator',
   'MarginOfSafetyCalculator',
   'MarginWithDiscountCalculator',
+  'MarkdownCalculator',
+  'MarkupCalculator',
   'NetDebtCalculator',
   'NetEffectiveRentCalculator',
   'IncomeTaxCalculator',
   'IncomeTaxCalculatorPakistan',
   'IncomeTaxCalculatorPhilippines',
+  'TaxBracketCalculator',
   'AdjustedGrossIncomeCalculator',
   'AlabamaTaxCalculator',
+  'CaliforniaTaxCalculator',
+  'IllinoisTaxCalculator',
+  'StateTaxCalculator',
+  'TexasTaxCalculator',
   'CaliforniaSalesTaxCalculator',
+  'CanadaGstQstCalculator',
   'FloridaSalesTaxCalculator',
   'NewJerseySalesTaxCalculator',
   'OhioSalesTaxCalculator',
   'SalesTaxCalculator',
+  'GrossToNetCalculator',
+  'NetToGrossCalculator',
+  'GstCalculator',
+  'NewYorkTaxCalculator',
   'NewYorkOvertimeCalculator',
   'OperatingMarginCalculator',
   'NetProfitMarginCalculator',
@@ -57,6 +76,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PresentValueOfAnnuityCalculator',
   'RentIncreaseCalculator',
   'RentOrBuyCalculator',
+  'RmdCalculator',
   'RrefCalculator',
   'ArmMortgageCalculator',
   'HundredDayCalculator',
@@ -79,6 +99,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FourZeroOneKCalculator',
   'AmortizationCalculator',
   'AmtCalculator',
+  'AltmanZScoreCalculator',
   'AccrualRatioCalculator',
   'ActualCashValueCalculator',
   'AcreageCalculator',
@@ -439,6 +460,11 @@ export const APPROVED_COMPONENT_KEYS = [
   'TrueCostOfRealEstateCommissionCalculator',
   'SellThroughRateCalculator',
   'SimpleInterestCalculator',
+  'SpendingMultiplierCalculator',
+  'TaxEquivalentYieldCalculator',
+  'TaylorRuleCalculator',
+  'TrumpTariffCalculator',
+  'VelocityOfMoneyCalculator',
   'TdsInterestCalculator',
   'SinkingFundCalculator',
   'SipCalculator',
@@ -471,6 +497,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BalloonPaymentCalculator',
   'BasisPointCalculator',
   'BetaStockCalculator',
+  'BidensTaxPlanCalculator',
   'BlendedRateCalculator',
   'AverageCollectionPeriodCalculator',
   'AverageFixedCostCalculator',
@@ -494,11 +521,15 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarRefinanceCalculator',
   'RefinanceCalculator',
   'CarriedInterestCalculator',
+  'CashBackCalculator',
   'CashBackOrLowInterestCalculator',
   'CashFlowToDebtRatioCalculator',
+  'ChildTaxCreditCalculator',
   'CashRatioCalculator',
   'CashConversionCycleCalculator',
+  'CheckDigitCalculator',
   'ChurnRateCalculator',
+  'CltvCalculator',
   'ConsultingFeesCalculator',
   'ConsumerSurplusCalculator',
   'ContributionMarginCalculator',
@@ -515,6 +546,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CurrentRatioCalculator',
   'CustomerAcquisitionCostCalculator',
   'CustomerRetentionRateCalculator',
+  'CyberMondayCalculator',
   'DaysOffCalculator',
   'DegreeOfOperatingLeverageCalculator',
   'DioCalculator',
@@ -533,10 +565,15 @@ export const APPROVED_COMPONENT_KEYS = [
   'EbitdaCalculator',
   'EbitdaMultipleCalculator',
   'EconomicValueAddedCalculator',
+  'EffectiveDurationCalculator',
+  'EmiCalculator',
+  'EpfCalculator',
   'EnterpriseValueCalculator',
   'EbtCalculator',
   'EquivalentRateCalculator',
+  'EstateTaxCalculator',
   'EffectiveCorporateTaxRateCalculator',
+
   'EmvCalculator',
   'EvmCalculator',
   'ExitRateCalculator',
@@ -557,7 +594,9 @@ export const APPROVED_COMPONENT_KEYS = [
   'LoanBalanceCalculator',
   'LoanPaymentCalculator',
   'LoanRepaymentCalculator',
+  'QuickRatioCalculator',
   'QuizLoanBalanceCalculator',
+  'QuizAnnualIncomeCalculator',
   'QuizCarDepreciationCalculator',
   'QuizDividendCalculator',
   'ManHoursCalculator',
@@ -585,31 +624,85 @@ export const APPROVED_COMPONENT_KEYS = [
   'PaydayLoanCalculator',
   'PaymentCalculator',
   'PaybackPeriodCalculator',
+  'PayPalFeeCalculator',
+  'PayRaiseCalculator',
+  'PegRatioCalculator',
+  'PercentOffCalculator',
   'PercentageDiscountCalculator',
   'PercentageReturnCalculator',
   'PerpetuityCalculator',
   'PitiCalculator',
+  'PivotPointCalculator',
+  'PortfolioBetaCalculator',
   'PostJudgmentInterestCalculator',
   'PreAndPostMoneyValuationCalculator',
   'PresentValueCalculator',
   'PriceElasticityOfDemandCalculator',
+  'PriceElasticityOfSupplyCalculator',
   'PriceQuantityCalculator',
+  'PriceToBookRatioCalculator',
   'PriceToCashFlowRatioCalculator',
+  'PriceToEarningsRatioCalculator',
   'PrivateSavingsCalculator',
   'ProratedSalaryCalculator',
   'ProratedRentCalculator',
   'PvgoCalculator',
   'PvifaCalculator',
+  'RateOfPayCalculator',
   'RateOfReturnCalculator',
   'RealEstateCommissionCalculator',
+  'RealGdpCalculator',
   'RealRateOfReturnCalculator',
   'RealtorCommissionVatCalculator',
+  'RelativeStrengthIndexCalculator',
+  'ReserveRatioCalculator',
+  'ResidualIncomeCalculator',
   'RentSplitCalculator',
   'RentVsBuyCalculator',
+  'ReturnOnAssetsCalculator',
+  'ReturnOnEquityCalculator',
   'RevenueCalculator',
+  'RoicCalculator',
+  'SustainableGrowthRateCalculator',
+  'UnleveredBetaCalculator',
+  'WaccCalculator',
+  'YieldToMaturityCalculator',
+  'BuyingPowerCalculator',
+  'CarryTradeCalculator',
+  'CobbDouglasCalculator',
+  'ComparativeAdvantageCalculator',
+  'CpiInflationCalculator',
+  'CurrencyForwardCalculator',
+  'DeadweightLossCalculator',
+  'DiscretionaryIncomeCalculator',
+  'FisherEffectCalculator',
+  'FisherEquationCalculator',
+  'GdpDeflatorFormulaCalculator',
+  'GdpGapCalculator',
+  'GdpGrowthRateCalculator',
+  'GdpPerCapitaCalculator',
+  'GiniCoefficientCalculator',
+  'InflationCalculator',
+  'LaborForceParticipationRateCalculator',
+  'LcrCalculator',
+  'LgdCalculator',
+  'LumpsumCalculator',
+  'MoneyMultiplierCalculator',
+  'MoneySupplyCalculator',
+  'MoratoriumCalculator',
+  'MpcCalculator',
+  'NsfrCalculator',
+  'OkunsLawCalculator',
+  'PhillipsCurveCalculator',
+  'PomisCalculator',
+  'PpfCalculator',
+  'PppCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
+  'BiweeklyPayCalculator',
+  'SemiMonthlyPayCalculator',
+  'BlackFridayCalculator',
   'BoatLoanCalculator',
   'BondCalculator',
   'BondConvexityCalculator',
@@ -639,6 +732,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'CompoundInterestRateCalculator',
   'ContinuousCompoundInterestCalculator',
   'CouponPaymentCalculator',
+  'CouponRateCalculator',
+  'CreditSpreadCalculator',
   'CreditCardCalculator',
   'CreditCardInterestCalculator',
   'CreditCardMinimumPaymentCalculator',
@@ -658,6 +753,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'FcffCalculator',
   'FfoCalculator',
   'FibonacciRetracementCalculator',
+  'FicaTaxCalculator',
   'FreeFloatCalculator',
   'LeveredFreeCashFlowCalculator',
   'UnpaidWorkCalculator',
@@ -720,6 +816,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'ReceivablesTurnoverRatioCalculator',
   'RepaymentCalculator',
   'RetainedEarningsCalculator',
+  'RetentionRatioCalculator',
   'Rule2836Calculator',
   'SabbaticalCalculator',
   'ScrapGoldCalculator',
@@ -740,6 +837,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HomeLoanCalculator',
   'HomeValueUsCalculator',
   'HouseAffordabilityCalculator',
+  'HraExemptionCalculator',
   'MortgageTaxesInsuranceCalculator',
   'MortgageComparisonCalculator',
   'HomeMortgageCalculator',
@@ -758,10 +856,19 @@ export const APPROVED_COMPONENT_KEYS = [
   'HourlyToSalaryWageCalculator',
   'HourlyToSalaryWithOvertimeCalculator',
   'HourlyWageCalculator',
+  'HoursPayCalculator',
+  'SellingLeaveDaysCalculator',
+  'MonthlyIncomeCalculator',
   'WageCalculator',
   'WageToSalaryCalculator',
   'YearlyWageCalculator',
+  'MoneyPerHourCalculator',
+  'TimeAndAHalfCalculator',
+  'MonthlyIncomeHourlyCalculator',
+  'BillableHoursCalculator',
+  'BillRateCalculator',
   'ImpermanentLossCalculator',
+
   'InformationRatioCalculator',
   'InterestCalculator',
   'InterestCoverageRatioCalculator',
@@ -843,6 +950,7 @@ if (isDirect) {
     !isApprovedComponentKey('FourZeroOneKCalculator') ||
     !isApprovedComponentKey('AmortizationCalculator') ||
     !isApprovedComponentKey('AmtCalculator') ||
+    !isApprovedComponentKey('AltmanZScoreCalculator') ||
     !isApprovedComponentKey('AcreageCalculator') ||
     !isApprovedComponentKey('FeetToInchesCalculator') ||
     !isApprovedComponentKey('AcresToSquareMilesCalculator') ||
@@ -1201,6 +1309,11 @@ if (isDirect) {
     !isApprovedComponentKey('TrueCostOfRealEstateCommissionCalculator') ||
     !isApprovedComponentKey('SellThroughRateCalculator') ||
     !isApprovedComponentKey('SimpleInterestCalculator') ||
+    !isApprovedComponentKey('SpendingMultiplierCalculator') ||
+    !isApprovedComponentKey('TaxEquivalentYieldCalculator') ||
+    !isApprovedComponentKey('TaylorRuleCalculator') ||
+    !isApprovedComponentKey('TrumpTariffCalculator') ||
+    !isApprovedComponentKey('VelocityOfMoneyCalculator') ||
     !isApprovedComponentKey('TdsInterestCalculator') ||
     !isApprovedComponentKey('SinkingFundCalculator') ||
     !isApprovedComponentKey('SipCalculator') ||
@@ -1256,11 +1369,16 @@ if (isDirect) {
     !isApprovedComponentKey('RefinanceCalculator') ||
 
     !isApprovedComponentKey('CarriedInterestCalculator') ||
+    !isApprovedComponentKey('CashBackCalculator') ||
     !isApprovedComponentKey('CashBackOrLowInterestCalculator') ||
     !isApprovedComponentKey('CashFlowToDebtRatioCalculator') ||
+    !isApprovedComponentKey('BidensTaxPlanCalculator') ||
+    !isApprovedComponentKey('ChildTaxCreditCalculator') ||
     !isApprovedComponentKey('CashRatioCalculator') ||
     !isApprovedComponentKey('CashConversionCycleCalculator') ||
+    !isApprovedComponentKey('CheckDigitCalculator') ||
     !isApprovedComponentKey('ChurnRateCalculator') ||
+    !isApprovedComponentKey('CltvCalculator') ||
     !isApprovedComponentKey('ConsultingFeesCalculator') ||
     !isApprovedComponentKey('ConsumerSurplusCalculator') ||
     !isApprovedComponentKey('ContributionMarginCalculator') ||
@@ -1277,6 +1395,7 @@ if (isDirect) {
     !isApprovedComponentKey('CurrentRatioCalculator') ||
     !isApprovedComponentKey('CustomerAcquisitionCostCalculator') ||
     !isApprovedComponentKey('CustomerRetentionRateCalculator') ||
+    !isApprovedComponentKey('CyberMondayCalculator') ||
     !isApprovedComponentKey('DaysOffCalculator') ||
     !isApprovedComponentKey('DegreeOfOperatingLeverageCalculator') ||
     !isApprovedComponentKey('DioCalculator') ||
@@ -1295,10 +1414,15 @@ if (isDirect) {
     !isApprovedComponentKey('EbitdaCalculator') ||
     !isApprovedComponentKey('EbitdaMultipleCalculator') ||
     !isApprovedComponentKey('EconomicValueAddedCalculator') ||
+    !isApprovedComponentKey('EffectiveDurationCalculator') ||
+    !isApprovedComponentKey('EmiCalculator') ||
+    !isApprovedComponentKey('EpfCalculator') ||
     !isApprovedComponentKey('EnterpriseValueCalculator') ||
     !isApprovedComponentKey('EbtCalculator') ||
     !isApprovedComponentKey('EquivalentRateCalculator') ||
+    !isApprovedComponentKey('EstateTaxCalculator') ||
     !isApprovedComponentKey('EffectiveCorporateTaxRateCalculator') ||
+
     !isApprovedComponentKey('EmvCalculator') ||
     !isApprovedComponentKey('EvmCalculator') ||
     !isApprovedComponentKey('ExitRateCalculator') ||
@@ -1319,7 +1443,9 @@ if (isDirect) {
     !isApprovedComponentKey('LoanBalanceCalculator') ||
     !isApprovedComponentKey('LoanPaymentCalculator') ||
     !isApprovedComponentKey('LoanRepaymentCalculator') ||
+    !isApprovedComponentKey('QuickRatioCalculator') ||
     !isApprovedComponentKey('QuizLoanBalanceCalculator') ||
+    !isApprovedComponentKey('QuizAnnualIncomeCalculator') ||
     !isApprovedComponentKey('QuizCarDepreciationCalculator') ||
     !isApprovedComponentKey('QuizDividendCalculator') ||
     !isApprovedComponentKey('ManHoursCalculator') ||
@@ -1346,31 +1472,85 @@ if (isDirect) {
     !isApprovedComponentKey('PartiallyAmortizedLoanCalculator') ||
     !isApprovedComponentKey('PaydayLoanCalculator') ||
     !isApprovedComponentKey('PaybackPeriodCalculator') ||
+    !isApprovedComponentKey('PayPalFeeCalculator') ||
+    !isApprovedComponentKey('PayRaiseCalculator') ||
+    !isApprovedComponentKey('PegRatioCalculator') ||
+    !isApprovedComponentKey('PercentOffCalculator') ||
     !isApprovedComponentKey('PercentageDiscountCalculator') ||
     !isApprovedComponentKey('PercentageReturnCalculator') ||
     !isApprovedComponentKey('PerpetuityCalculator') ||
     !isApprovedComponentKey('PitiCalculator') ||
+    !isApprovedComponentKey('PivotPointCalculator') ||
+    !isApprovedComponentKey('PortfolioBetaCalculator') ||
     !isApprovedComponentKey('PostJudgmentInterestCalculator') ||
     !isApprovedComponentKey('PreAndPostMoneyValuationCalculator') ||
     !isApprovedComponentKey('PresentValueCalculator') ||
     !isApprovedComponentKey('PriceElasticityOfDemandCalculator') ||
+    !isApprovedComponentKey('PriceElasticityOfSupplyCalculator') ||
     !isApprovedComponentKey('PriceQuantityCalculator') ||
+    !isApprovedComponentKey('PriceToBookRatioCalculator') ||
     !isApprovedComponentKey('PriceToCashFlowRatioCalculator') ||
+    !isApprovedComponentKey('PriceToEarningsRatioCalculator') ||
     !isApprovedComponentKey('PrivateSavingsCalculator') ||
     !isApprovedComponentKey('ProratedSalaryCalculator') ||
     !isApprovedComponentKey('ProratedRentCalculator') ||
     !isApprovedComponentKey('PvgoCalculator') ||
     !isApprovedComponentKey('PvifaCalculator') ||
+    !isApprovedComponentKey('RateOfPayCalculator') ||
     !isApprovedComponentKey('RateOfReturnCalculator') ||
     !isApprovedComponentKey('RealEstateCommissionCalculator') ||
+    !isApprovedComponentKey('RealGdpCalculator') ||
     !isApprovedComponentKey('RealRateOfReturnCalculator') ||
     !isApprovedComponentKey('RealtorCommissionVatCalculator') ||
+    !isApprovedComponentKey('RelativeStrengthIndexCalculator') ||
+    !isApprovedComponentKey('ReserveRatioCalculator') ||
+    !isApprovedComponentKey('ResidualIncomeCalculator') ||
     !isApprovedComponentKey('RentSplitCalculator') ||
     !isApprovedComponentKey('RentVsBuyCalculator') ||
+    !isApprovedComponentKey('ReturnOnAssetsCalculator') ||
+    !isApprovedComponentKey('ReturnOnEquityCalculator') ||
     !isApprovedComponentKey('RevenueCalculator') ||
+    !isApprovedComponentKey('RoicCalculator') ||
+    !isApprovedComponentKey('SustainableGrowthRateCalculator') ||
+    !isApprovedComponentKey('UnleveredBetaCalculator') ||
+    !isApprovedComponentKey('WaccCalculator') ||
+    !isApprovedComponentKey('YieldToMaturityCalculator') ||
+    !isApprovedComponentKey('BuyingPowerCalculator') ||
+    !isApprovedComponentKey('CarryTradeCalculator') ||
+    !isApprovedComponentKey('CobbDouglasCalculator') ||
+    !isApprovedComponentKey('ComparativeAdvantageCalculator') ||
+    !isApprovedComponentKey('CpiInflationCalculator') ||
+    !isApprovedComponentKey('CurrencyForwardCalculator') ||
+    !isApprovedComponentKey('DeadweightLossCalculator') ||
+    !isApprovedComponentKey('DiscretionaryIncomeCalculator') ||
+    !isApprovedComponentKey('FisherEffectCalculator') ||
+    !isApprovedComponentKey('FisherEquationCalculator') ||
+    !isApprovedComponentKey('GdpDeflatorFormulaCalculator') ||
+    !isApprovedComponentKey('GdpGapCalculator') ||
+    !isApprovedComponentKey('GdpGrowthRateCalculator') ||
+    !isApprovedComponentKey('GdpPerCapitaCalculator') ||
+    !isApprovedComponentKey('GiniCoefficientCalculator') ||
+    !isApprovedComponentKey('InflationCalculator') ||
+    !isApprovedComponentKey('LaborForceParticipationRateCalculator') ||
+    !isApprovedComponentKey('LcrCalculator') ||
+    !isApprovedComponentKey('LgdCalculator') ||
+    !isApprovedComponentKey('LumpsumCalculator') ||
+    !isApprovedComponentKey('MoneyMultiplierCalculator') ||
+    !isApprovedComponentKey('MoneySupplyCalculator') ||
+    !isApprovedComponentKey('MoratoriumCalculator') ||
+    !isApprovedComponentKey('MpcCalculator') ||
+    !isApprovedComponentKey('NsfrCalculator') ||
+    !isApprovedComponentKey('OkunsLawCalculator') ||
+    !isApprovedComponentKey('PhillipsCurveCalculator') ||
+    !isApprovedComponentKey('PomisCalculator') ||
+    !isApprovedComponentKey('PpfCalculator') ||
+    !isApprovedComponentKey('PppCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||
+    !isApprovedComponentKey('BiweeklyPayCalculator') ||
+    !isApprovedComponentKey('SemiMonthlyPayCalculator') ||
+    !isApprovedComponentKey('BlackFridayCalculator') ||
     !isApprovedComponentKey('BoatLoanCalculator') ||
     !isApprovedComponentKey('BondCalculator') ||
     !isApprovedComponentKey('BondConvexityCalculator') ||
@@ -1400,6 +1580,8 @@ if (isDirect) {
     !isApprovedComponentKey('CompoundInterestRateCalculator') ||
     !isApprovedComponentKey('ContinuousCompoundInterestCalculator') ||
     !isApprovedComponentKey('CouponPaymentCalculator') ||
+    !isApprovedComponentKey('CouponRateCalculator') ||
+    !isApprovedComponentKey('CreditSpreadCalculator') ||
     !isApprovedComponentKey('CreditCardCalculator') ||
     !isApprovedComponentKey('CreditCardInterestCalculator') ||
     !isApprovedComponentKey('CreditCardMinimumPaymentCalculator') ||
@@ -1419,6 +1601,7 @@ if (isDirect) {
     !isApprovedComponentKey('FcffCalculator') ||
     !isApprovedComponentKey('FfoCalculator') ||
     !isApprovedComponentKey('FibonacciRetracementCalculator') ||
+    !isApprovedComponentKey('FicaTaxCalculator') ||
     !isApprovedComponentKey('FreeFloatCalculator') ||
     !isApprovedComponentKey('LeveredFreeCashFlowCalculator') ||
     !isApprovedComponentKey('UnpaidWorkCalculator') ||
@@ -1483,6 +1666,7 @@ if (isDirect) {
     !isApprovedComponentKey('ReceivablesTurnoverRatioCalculator') ||
     !isApprovedComponentKey('RepaymentCalculator') ||
     !isApprovedComponentKey('RetainedEarningsCalculator') ||
+    !isApprovedComponentKey('RetentionRatioCalculator') ||
     !isApprovedComponentKey('Rule2836Calculator') ||
     !isApprovedComponentKey('SabbaticalCalculator') ||
     !isApprovedComponentKey('ScrapGoldCalculator') ||
@@ -1503,6 +1687,7 @@ if (isDirect) {
     !isApprovedComponentKey('HomeLoanCalculator') ||
     !isApprovedComponentKey('HomeValueUsCalculator') ||
     !isApprovedComponentKey('HouseAffordabilityCalculator') ||
+    !isApprovedComponentKey('HraExemptionCalculator') ||
     !isApprovedComponentKey('MortgageTaxesInsuranceCalculator') ||
     !isApprovedComponentKey('MortgageComparisonCalculator') ||
     !isApprovedComponentKey('HomeMortgageCalculator') ||
@@ -1521,10 +1706,19 @@ if (isDirect) {
     !isApprovedComponentKey('HourlyToSalaryWageCalculator') ||
     !isApprovedComponentKey('HourlyToSalaryWithOvertimeCalculator') ||
     !isApprovedComponentKey('HourlyWageCalculator') ||
+    !isApprovedComponentKey('HoursPayCalculator') ||
+    !isApprovedComponentKey('SellingLeaveDaysCalculator') ||
+    !isApprovedComponentKey('MonthlyIncomeCalculator') ||
     !isApprovedComponentKey('WageCalculator') ||
     !isApprovedComponentKey('WageToSalaryCalculator') ||
     !isApprovedComponentKey('YearlyWageCalculator') ||
+    !isApprovedComponentKey('MoneyPerHourCalculator') ||
+    !isApprovedComponentKey('TimeAndAHalfCalculator') ||
+    !isApprovedComponentKey('MonthlyIncomeHourlyCalculator') ||
+    !isApprovedComponentKey('BillableHoursCalculator') ||
+    !isApprovedComponentKey('BillRateCalculator') ||
     !isApprovedComponentKey('ImpermanentLossCalculator') ||
+
     !isApprovedComponentKey('InformationRatioCalculator') ||
     !isApprovedComponentKey('InterestCalculator') ||
     !isApprovedComponentKey('InterestCoverageRatioCalculator') ||
@@ -1572,17 +1766,23 @@ if (isDirect) {
     !isApprovedComponentKey('DebtSnowballCalculator') ||
     !isApprovedComponentKey('DebtToAssetRatioCalculator') ||
     !isApprovedComponentKey('DebtToEquityCalculator') ||
+    !isApprovedComponentKey('DefensiveIntervalRatioCalculator') ||
     !isApprovedComponentKey('DebtToCapitalRatioCalculator') ||
     !isApprovedComponentKey('NetDebtCalculator') ||
     !isApprovedComponentKey('EbitdaMarginCalculator') ||
     !isApprovedComponentKey('GrossMarginCalculator') ||
     !isApprovedComponentKey('MarginAndMarkupCalculator') ||
+    !isApprovedComponentKey('MileageReimbursementCalculator') ||
     !isApprovedComponentKey('MarginAndSalesTaxCalculator') ||
+    !isApprovedComponentKey('MarriageTaxCalculator') ||
+    !isApprovedComponentKey('ModifiedAdjustedGrossIncomeCalculator') ||
     !isApprovedComponentKey('MarginAndVatCalculator') ||
     !isApprovedComponentKey('MarginCalculatorClassic') ||
     !isApprovedComponentKey('MarginCallCalculator') ||
     !isApprovedComponentKey('MarginOfSafetyCalculator') ||
     !isApprovedComponentKey('MarginWithDiscountCalculator') ||
+    !isApprovedComponentKey('MarkdownCalculator') ||
+    !isApprovedComponentKey('MarkupCalculator') ||
     !isApprovedComponentKey('OperatingMarginCalculator') ||
     !isApprovedComponentKey('NetProfitMarginCalculator') ||
     !isApprovedComponentKey('ReturnOnSalesCalculator') ||
@@ -1594,8 +1794,10 @@ if (isDirect) {
     !isApprovedComponentKey('GrowingAnnuityCalculator') ||
     !isApprovedComponentKey('ImmediateAnnuityCalculator') ||
     !isApprovedComponentKey('LotteryAnnuityCalculator') ||
+    !isApprovedComponentKey('LotteryTaxCalculator') ||
     !isApprovedComponentKey('PresentValueOfAnnuityCalculator') ||
     !isApprovedComponentKey('VariableAnnuityCalculator') ||
+
     !isApprovedComponentKey('OvertimeCalculator') ||
     !isApprovedComponentKey('CaliforniaOvertimeCalculator') ||
     !isApprovedComponentKey('FloridaOvertimeCalculator') ||
@@ -1604,21 +1806,33 @@ if (isDirect) {
     !isApprovedComponentKey('IncomeTaxCalculator') ||
     !isApprovedComponentKey('IncomeTaxCalculatorPakistan') ||
     !isApprovedComponentKey('IncomeTaxCalculatorPhilippines') ||
+    !isApprovedComponentKey('TaxBracketCalculator') ||
     !isApprovedComponentKey('AdjustedGrossIncomeCalculator') ||
     !isApprovedComponentKey('AlabamaTaxCalculator') ||
+    !isApprovedComponentKey('CaliforniaTaxCalculator') ||
+    !isApprovedComponentKey('IllinoisTaxCalculator') ||
+    !isApprovedComponentKey('StateTaxCalculator') ||
+    !isApprovedComponentKey('TexasTaxCalculator') ||
     !isApprovedComponentKey('CaliforniaSalesTaxCalculator') ||
+    !isApprovedComponentKey('CanadaGstQstCalculator') ||
     !isApprovedComponentKey('FloridaSalesTaxCalculator') ||
     !isApprovedComponentKey('NewJerseySalesTaxCalculator') ||
     !isApprovedComponentKey('OhioSalesTaxCalculator') ||
     !isApprovedComponentKey('SalesTaxCalculator') ||
+    !isApprovedComponentKey('GrossToNetCalculator') ||
+    !isApprovedComponentKey('NetToGrossCalculator') ||
+    !isApprovedComponentKey('GstCalculator') ||
+    !isApprovedComponentKey('NewYorkTaxCalculator') ||
     !isApprovedComponentKey('NewYorkOvertimeCalculator') ||
     !isApprovedComponentKey('OvertimePaycheckCalculator') ||
     !isApprovedComponentKey('SalaryWithOvertimeCalculator') ||
     !isApprovedComponentKey('TexasOvertimeCalculator') ||
     !isApprovedComponentKey('GrossRentMultiplierCalculator') ||
+    !isApprovedComponentKey('GratuityCalculator') ||
     !isApprovedComponentKey('NetEffectiveRentCalculator') ||
     !isApprovedComponentKey('RentIncreaseCalculator') ||
     !isApprovedComponentKey('RentOrBuyCalculator') ||
+    !isApprovedComponentKey('RmdCalculator') ||
     isApprovedComponentKey('EvilEval')
   ) {
     throw new Error('component key allowlist');
