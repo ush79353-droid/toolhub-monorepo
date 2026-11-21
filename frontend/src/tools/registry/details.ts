@@ -338,6 +338,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NaturalRateOfUnemploymentCalculator: () =>
     import('@/tools/calculators/natural-rate-of-unemployment/detail'),
   UnemploymentCalculator: () => import('@/tools/calculators/unemployment/detail'),
+  UrineHomePregnancyTestCalculator: () =>
+    import('@/tools/calculators/urine-home-pregnancy-test/detail'),
   CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
   NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
   CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),
@@ -842,6 +844,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/enterprise-value/detail'),
   EbtCalculator: () => import('@/tools/calculators/ebt/detail'),
   EstateTaxCalculator: () => import('@/tools/calculators/estate-tax/detail'),
+  ExcessiveWeightGainInPregnancyCalculator: () =>
+    import('@/tools/calculators/excessive-weight-gain-in-pregnancy/detail'),
   EquivalentRateCalculator: () =>
     import('@/tools/calculators/equivalent-rate/detail'),
   EffectiveCorporateTaxRateCalculator: () =>

@@ -1411,6 +1411,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.UnemploymentCalculator,
     })),
   ),
+  UrineHomePregnancyTestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/urine-home-pregnancy-test/UrineHomePregnancyTestCalculator'
+    ).then((mod) => ({
+      default: mod.UrineHomePregnancyTestCalculator,
+    })),
+  ),
   CentsToDollarsCalculator: lazyTool(() =>
     import('@/tools/calculators/cents-to-dollars/CentsToDollarsCalculator').then((mod) => ({
       default: mod.CentsToDollarsCalculator,
@@ -3359,6 +3366,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   EstateTaxCalculator: lazyTool(() =>
     import('@/tools/calculators/estate-tax/EstateTaxCalculator').then((mod) => ({
       default: mod.EstateTaxCalculator,
+    })),
+  ),
+  ExcessiveWeightGainInPregnancyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/excessive-weight-gain-in-pregnancy/ExcessiveWeightGainInPregnancyCalculator'
+    ).then((mod) => ({
+      default: mod.ExcessiveWeightGainInPregnancyCalculator,
     })),
   ),
   EquivalentRateCalculator: lazyTool(() =>

@@ -1,3 +1,9 @@
+### 2026-11-22 — Urine Home Pregnancy Test
+- **Summary:** Shipped Urine Home Pregnancy Test on existing catalog slug `urine-home-pregnancy-test` (`UrineHomePregnancyTestCalculator`, catalog `6af46f10a27d8d1d4e9901fc`, pillar `6af451c1a27d8d1d4e98f984`, subPillar `6af451c2a27d8d1d4e98f985`). Screenshot-first (ADR-023): Natural + IVF; cycle 28; blank dates; independent “Show the urine test sensitivity threshold” toggles; reuses blood-pregnancy-hcg calendar helpers; no strip/lab interpretation; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-700`.
+- **Commits:** `8130bf97` (UI absorb concurrent twin-weight-gain) / `4f353b2d` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** LMP **2026-01-01** · cycle **28** → ovulation **2026-01-15** · urine **2026-01-29**; IVF transfer **2026-03-01** day-5 → urine **2026-03-15**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Tylenol Dosage Calculator
 - **Summary:** Shipped Tylenol Dosage Calculator on existing catalog slug `tylenol-dosage-calculator` (`TylenolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901dd`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): symptom radios + product dropdown; DailyMed Drug Facts for Regular Strength 325, Extra Strength 500 (every 6 hours — not legacy 4–6), Sinus Severe, Cold + Flu Severe, PM; 24-hour unit/mg ceilings; combo acetaminophen warning; symptom/product mismatch; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-699`.
 - **Commits:** `2ee8163f` (UI) / `f2962cf0` (engine) / (registration/Brain/tracker — this commit).
