@@ -2996,6 +2996,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CustomerRetentionRateCalculator,
     })),
   ),
+  CyberMondayCalculator: lazyTool(() =>
+    import('@/tools/calculators/cyber-monday/CyberMondayCalculator').then(
+      (mod) => ({
+        default: mod.CyberMondayCalculator,
+      }),
+    ),
+  ),
   DaysOffCalculator: lazyTool(() =>
     import('@/tools/calculators/days-off/DaysOffCalculator').then((mod) => ({
       default: mod.DaysOffCalculator,

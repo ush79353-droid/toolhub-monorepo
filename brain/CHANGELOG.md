@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Cyber Monday Calculator
+- **Summary:** Shipped Cyber Monday Calculator on existing catalog slug `cyber-monday-calculator` (`CyberMondayCalculator`, catalog `6af46f10a27d8d1d4e9901a0`, preserved `nameKey` `cyber monday calculator`). Screenshot-first (ADR-023): percentage/fixed/double/triple discounts, BOGO, Buy X Get Y, percent+coupon; sales tax exclusive/included; shipping + free-ship threshold; optional Black Friday total compare; dynamic Cyber Monday date; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$200** · **25%** · tax **8%** · ship **$10** → merchandise **$150** · final **$172**.
+- **Important Files:** `frontend/src/tools/calculators/cyber-monday/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` cyber-monday tests 16/16 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add CLTV Calculator – Customer Lifetime Value
 - **Summary:** Shipped CLTV Calculator on existing catalog slug `cltv-calculator-customer-lifetime-value` (`CltvCalculator`, catalog `6af46f10a27d8d1d4e99019f`, preserved `nameKey` `cltv calculator – customer lifetime value`). Screenshot-first (ADR-023): APV×APF×L; business-data mode with annualization; optional gross margin, CAC ratio, discounted CLTV, churn lifespan; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** APV **$50** · APF **5** · L **3** → revenue CLTV **$750**; margin **40%** → gross-profit CLTV **$300**; CAC **$100** → **3:1**.

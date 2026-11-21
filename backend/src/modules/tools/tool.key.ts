@@ -544,6 +544,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CurrentRatioCalculator',
   'CustomerAcquisitionCostCalculator',
   'CustomerRetentionRateCalculator',
+  'CyberMondayCalculator',
   'DaysOffCalculator',
   'DegreeOfOperatingLeverageCalculator',
   'DioCalculator',
@@ -1383,6 +1384,7 @@ if (isDirect) {
     !isApprovedComponentKey('CurrentRatioCalculator') ||
     !isApprovedComponentKey('CustomerAcquisitionCostCalculator') ||
     !isApprovedComponentKey('CustomerRetentionRateCalculator') ||
+    !isApprovedComponentKey('CyberMondayCalculator') ||
     !isApprovedComponentKey('DaysOffCalculator') ||
     !isApprovedComponentKey('DegreeOfOperatingLeverageCalculator') ||
     !isApprovedComponentKey('DioCalculator') ||

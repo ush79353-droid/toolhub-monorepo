@@ -570,6 +570,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ctr-calculator',
   'customer-acquisition-cost-calculator',
   'customer-retention-rate-calculator',
+  'cyber-monday-calculator',
   'days-off-calculator',
   'dividend-discount-model-calculator',
   'dividend-payout-ratio-calculator',

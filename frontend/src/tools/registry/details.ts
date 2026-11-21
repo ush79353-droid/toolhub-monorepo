@@ -736,6 +736,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/customer-acquisition-cost/detail'),
   CustomerRetentionRateCalculator: () =>
     import('@/tools/calculators/customer-retention-rate/detail'),
+  CyberMondayCalculator: () =>
+    import('@/tools/calculators/cyber-monday/detail'),
   DaysOffCalculator: () =>
     import('@/tools/calculators/days-off/detail'),
   DividendDiscountModelCalculator: () =>
