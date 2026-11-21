@@ -210,6 +210,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ImmediateAnnuityCalculator,
     })),
   ),
+  InfantTylenolDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/infant-tylenol-dosage/InfantTylenolDosageCalculator'
+    ).then((mod) => ({
+      default: mod.InfantTylenolDosageCalculator,
+    })),
+  ),
   InsulinDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/insulin-dosage/InsulinDosageCalculator'

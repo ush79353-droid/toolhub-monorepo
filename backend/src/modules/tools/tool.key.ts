@@ -30,6 +30,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GrowingAnnuityCalculator',
   'IllinoisOvertimeCalculator',
   'ImmediateAnnuityCalculator',
+  'InfantTylenolDosageCalculator',
   'InsulinDosageCalculator',
   'InterestRateParityCalculator',
   'LoanCalculator',
