@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-662` | Implement Calorie Deficit Calculator on existing slug `calorie-deficit-calculator` with 7700 kcal/kg calendar deficit, Mifflin sedentary intake plan, safety guards, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/calorie-deficit/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-682` | Implement Breastfeeding Calorie Calculator on existing slug `breastfeeding-calorie-calculator` with lactation/pregnancy state radios, age/height/weight, DRI EER + state additions, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/breastfeeding-calorie/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-685` | Implement BMI Weight Loss Calculator on existing slug `bmi-weight-loss-calculator` with current BMI/Prime, bidirectional target BMI/Prime/weight, weight change loss/gain, CDC percentile panel (bmi-kids LMS), reject unsafe targets &lt;16, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/bmi-weight-loss/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-684` | Implement Calories Burned Calculator on existing slug `calories-burned-calculator` with Compendium MET activities, duration or walk/run/cycle distance, weight kg/lb ranges, Calculate/Clear, no FX, privacy-safe share, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/calories-burned/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
@@ -121,6 +122,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-662` | Implement Calorie Deficit Calculator on existing slug `calorie-deficit-calculator` with 7700 kcal/kg calendar deficit, Mifflin sedentary intake plan, safety guards, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/calorie-deficit/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-497` | California Sales Tax Calculator developed: CDTFA `GetRateByAddress` via `/api/tax/california-rate`; PO-approved street+city+ZIP; Mongo `6af46f0fa27d8d1d4e990027` active; indexable false; commits `b672a9c1` / `019a79e5` / `fc12223a` | Cursor | Done | `Completed Tools/California Sales Tax Calculator` | `TOOL-01` |
 | `TOOL-542` | Missouri Sales Tax Calculator blocked: official DOR boundary/jurisdiction files return HTTP 403 Incapsula WAF from agent environment; browser automation forbidden; cannot invent ZIP rates (owned in `In Progress`) | Cursor | Blocked | `In Progress/Missouri Sales Tax Calculator` | `TOOL-01` |
 | `TOOL-451` | Hourly to Salary with Overtime Calculator — unblocked 2026-11-20 with corrected prompt/screenshot; completed as `TOOL-548` | Cursor | Completed | `frontend/src/tools/calculators/hourly-to-salary-with-overtime/*` | `TOOL-548` |
@@ -145,6 +147,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-662` | Implement Calorie Deficit Calculator on existing slug `calorie-deficit-calculator` with 7700 kcal/kg calendar deficit, Mifflin sedentary intake plan, safety guards, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/calorie-deficit/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-652` | Implement UK Coin Weight Calculator on existing slug `uk-coin-weight-calculator` with 1p–£2 counts, Royal Mint masses, g/kg display, guide/FAQ, and verified activation (preserve nameKey `uk coin weight calculator`, isFeatured false, **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/uk-coin-weight/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-640` | Implement Yield to Call Calculator on existing slug `yield-to-call-calculator` with annual interest / call / market / years → YTC (full pricing equation), guide/FAQ, and verified activation (preserve nameKey `yield to call calculator`, isFeatured false, **indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/yield-to-call/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `INFRA-03` | Lock `tool.key.ts` allowlist self-check as a `for` loop (ADR-026); forbid mega `||` chains that crash `tsc` | Cursor | Completed | `backend/src/modules/tools/tool.key.ts`, `.cursor/rules/tool-key-allowlist.mdc`, `.agents/rules/tool-key-allowlist.md`, tool-activation rules, `brain/DECISIONS.md` | — |

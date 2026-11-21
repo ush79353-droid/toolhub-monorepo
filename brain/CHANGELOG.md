@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-22 — Calorie Deficit Calculator
+- **Summary:** Shipped Calorie Deficit Calculator on existing catalog slug `calorie-deficit-calculator` (`CalorieDeficitCalculator`, catalog `6af46f10a27d8d1d4e9901ea`, pillar `6af451c1a27d8d1d4e98f982`, subPillar null). Screenshot-first (ADR-023): sex/age/height/weights/target date; live daily deficit; sedentary Mifflin intake plan; blocks unsafe timelines. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. Registry absorbed via concurrent `c9c44e05`. TASKS `TOOL-662`.
+- **Commits:** `26683baa` (UI+engine combined under git lock race) / registry absorbed `c9c44e05` / (Brain/tracker — this commit).
+- **Example:** 1 kg in 7 days → ≈1,100 kcal/day deficit.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-22 — Breastfeeding Calorie Calculator
 - **Summary:** Shipped Breastfeeding Calorie Calculator on existing catalog slug `breastfeeding-calorie-calculator` (`BreastfeedingCalorieCalculator`, catalog `6af46f10a27d8d1d4e9901e9`, pillar `6af451c1a27d8d1d4e98f982`, subPillar null). Screenshot-first (ADR-023): lactation 0–6 / >6 + pregnancy T1–T3 radios; blank age/height/weight (cm/kg); activity default Little/no exercise; daily energy needs kcal. IOM/NAS DRI 2002/2005 female EER + pregnancy/lactation additions; privacy-safe share URL. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-682`.
 - **Commits:** `a9a107df` (UI absorbed into concurrent calorie-intake-simple commit) / `dfe61271` (engine) / (registration/Brain/tracker — this commit; index/details also absorbed into concurrent registry commits).
@@ -3510,6 +3515,11 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
+### 2026-11-22 — Calorie Deficit Calculator
+- **Summary:** Shipped Calorie Deficit Calculator on existing catalog slug `calorie-deficit-calculator` (`CalorieDeficitCalculator`, catalog `6af46f10a27d8d1d4e9901ea`, pillar `6af451c1a27d8d1d4e98f982`, subPillar null). Screenshot-first (ADR-023): sex/age/height/weights/target date; live daily deficit; sedentary Mifflin intake plan; blocks unsafe timelines. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. Registry absorbed via concurrent `c9c44e05`. TASKS `TOOL-662`.
+- **Commits:** `26683baa` (UI+engine combined under git lock race) / registry absorbed `c9c44e05` / (Brain/tracker — this commit).
+- **Example:** 1 kg in 7 days → ≈1,100 kcal/day deficit.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-21 — Forward Premium Calculator
 - **Summary:** Screenshot-first Forward Premium Calculator: ((F-S)/S)x100 period premium and 365-day annualization; collapsible sections; linked reverse edits; share/reload/clear/feedback; catalog activated (indexable false).
 - **Important Files:** `frontend/src/tools/calculators/forward-premium/*`, registry, `tool.key.ts`, sitemap, `brain/*`, tracker.

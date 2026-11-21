@@ -862,6 +862,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gdp-per-capita-calculator',
   'gini-coefficient-calculator',
   'inflation-calculator',
+  'insulin-dosage-calculator',
   'labor-force-participation-rate-calculator',
   'lcr-calculator',
   'money-multiplier-calculator',

@@ -59,6 +59,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/illinois-overtime/detail'),
   ImmediateAnnuityCalculator: () =>
     import('@/tools/calculators/immediate-annuity/detail'),
+  InsulinDosageCalculator: () =>
+    import('@/tools/calculators/insulin-dosage/detail'),
   InterestRateParityCalculator: () =>
     import('@/tools/calculators/interest-rate-parity/detail'),
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),
