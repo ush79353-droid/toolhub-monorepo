@@ -4,6 +4,24 @@
 
 ---
 
+### 2026-11-22 — Dosage Calculator
+- **Summary:** Shipped Dosage Calculator on existing catalog slug `dosage-calculator` (`DosageCalculator`, catalog `6af46f10a27d8d1d4e9901d0`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): weight; dosage mg|mcg|g per kg; per-day vs per-administration basis; frequency; dose; expanded liquid concentration → mL; educational conversion only (no drug recommendations); share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-671`.
+- **Commits:** `3c99c424` (UI) / `c51c49e6` (engine; also absorbed concurrent staged `bmi-weight-loss` engine files) / (registration/Brain/tracker — this commit).
+- **Example:** **10** kg · **15** mg/kg/day · once · **25** mg/mL → **150** mg · **6** mL.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — BMI Calculator for Kids
+- **Summary:** Shipped BMI Calculator for Kids on existing catalog slug `bmi-calculator-for-kids` (`BmiCalculatorForKids`, catalog `6af46f10a27d8d1d4e9901e0`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): blank height/weight (cm/kg); BMI + BMI Prime; collapsed “How healthy is this BMI?” with exact age + sex → CDC 2000 BMI-for-age LMS percentiles; child categories never derived from Prime; ages &lt;2 / ≥20 gated (no adult WHO path). Share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-677`.
+- **Commits:** `bc66e8f2` (UI) / `f4e01c2e` (engine; multi-agent race also absorbed concurrent `bmi-for-women` engine files already staged) / (registration/Brain/tracker — this commit).
+- **Example:** **10**y male · **140** cm · **32.7** kg → BMI ≈ **16.68** · ~50th percentile (healthy weight).
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — BMI Calculator for Men
+- **Summary:** Shipped BMI Calculator for Men on existing catalog slug `bmi-calculator-for-men` (`BmiForMenCalculator`, catalog `6af46f10a27d8d1d4e9901e1`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): height/weight units, BMI, BMI Prime, age yrs, no sex switch; WHO adult categories with under-20 guard; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-676`.
+- **Commits:** `42124581` (UI; also absorbed concurrent tracker staging) / `fc0c8178` (engine; multi-agent race also absorbed Birth Control/Birth Weight registry staging) / (registration/Brain/tracker — this commit).
+- **Example:** **80** kg · **2** m → BMI **20.00** · Prime **0.80** (normal).
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Blood Pregnancy Test: What Do HCG Results Mean?
 - **Summary:** Shipped Blood Pregnancy Test: What Do HCG Results Mean? on existing catalog slug `blood-pregnancy-test-what-do-hcg-results-mean` (`BloodPregnancyHcgCalculator`, catalog `6af46f10a27d8d1d4e9901fa`, pillar `6af451c1a27d8d1d4e98f984`, subPillar `6af451c2a27d8d1d4e98f985`). Screenshot-first (ADR-023): Natural Conception (cycle 28 default, blank LMP/ovulation/urine/blood) + IVF (blank transfer, embryo age default 5-day blastocyst, blank urine/blood, Select test sensitivity unchecked); educational timing only — **no lab hCG interpretation or viability judgment**; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-675`.
 - **Commits:** `b0664dfb` (UI) / `1769e550` (engine) / (registration/Brain/tracker — this commit).

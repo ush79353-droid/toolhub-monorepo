@@ -682,6 +682,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bmi-body-mass-index/detail'),
   BmiCalculatorForKids: () =>
     import('@/tools/calculators/bmi-kids/detail'),
+  BmiCalculatorForTeens: () =>
+    import('@/tools/calculators/bmi-teens/detail'),
   BmiForMenCalculator: () =>
     import('@/tools/calculators/bmi-for-men/detail'),
   AverageCollectionPeriodCalculator: () =>
@@ -779,6 +781,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/dividend-payout-ratio/detail'),
   DividendYieldCalculator: () =>
     import('@/tools/calculators/dividend-yield/detail'),
+  DosageCalculator: () => import('@/tools/calculators/dosage/detail'),
   DirectMaterialPriceVarianceCalculator: () =>
     import('@/tools/calculators/direct-material-price-variance/detail'),
   DupontAnalysisCalculator: () =>

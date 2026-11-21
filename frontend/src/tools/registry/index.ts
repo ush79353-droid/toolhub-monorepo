@@ -2859,6 +2859,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BmiKidsCalculator,
     })),
   ),
+  BmiCalculatorForTeens: lazyTool(() =>
+    import(
+      '@/tools/calculators/bmi-teens/BmiTeensCalculator'
+    ).then((mod) => ({
+      default: mod.BmiTeensCalculator,
+    })),
+  ),
   BmiForMenCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/bmi-for-men/BmiForMenCalculator'
@@ -3144,6 +3151,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.DividendYieldCalculator,
       })
     )
+  ),
+  DosageCalculator: lazyTool(() =>
+    import('@/tools/calculators/dosage/DosageCalculator').then((mod) => ({
+      default: mod.DosageCalculator,
+    })),
   ),
   DirectMaterialPriceVarianceCalculator: lazyTool(() =>
     import('@/tools/calculators/direct-material-price-variance/DirectMaterialPriceVarianceCalculator').then((mod) => ({
