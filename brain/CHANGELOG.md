@@ -1,3 +1,8 @@
+### 2026-11-22 — Weight Gain Calculator
+- **Summary:** Shipped Weight Gain Calculator on existing catalog slug `weight-gain-calculator` (`WeightGainCalculator`, catalog `6af46f10a27d8d1d4e9901ef`, pillar `6af451c1a27d8d1d4e98f983`, subPillar null). Screenshot-first (ADR-023): Female/Male; height/weight/age; Light exercise default PAL 1.4; optional target; Normal 0.5 kg/week (+500 kcal) / Strict 1 kg/week (+1000 kcal); Mifflin–St Jeor maintenance; surplus + weeks only when target > current; share URL only. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-698`.
+- **Commits:** `e3244794` (UI) / `dd12cb7d` (engine absorb) + `14a4d82f` (strict-pace fixture) / `8130bf97` (registry absorb) + this Brain/tracker.
+- **Example:** F · **28** · **170** cm · **60** kg · light → maintenance ≈ **1,906** kcal; target **65** kg Normal → **10** weeks · +500 surplus.
+- **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-22 — Urine Home Pregnancy Test
 - **Summary:** Shipped Urine Home Pregnancy Test on existing catalog slug `urine-home-pregnancy-test` (`UrineHomePregnancyTestCalculator`, catalog `6af46f10a27d8d1d4e9901fc`, pillar `6af451c1a27d8d1d4e98f984`, subPillar `6af451c2a27d8d1d4e98f985`). Screenshot-first (ADR-023): Natural + IVF; cycle 28; blank dates; independent “Show the urine test sensitivity threshold” toggles; reuses blood-pregnancy-hcg calendar helpers; no strip/lab interpretation; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-700`.
 - **Commits:** `8130bf97` (UI absorb concurrent twin-weight-gain) / `4f353b2d` (engine) / (registration/Brain/tracker — this commit).
