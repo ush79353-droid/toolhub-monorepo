@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add GDP Deflator Formula Calculator
+- **Summary:** Shipped GDP Deflator Formula Calculator on existing catalog slug `gdp-deflator-formula-calculator` (`GdpDeflatorFormulaCalculator`, catalog `6af46f10a27d8d1d4e99017c`, preserved `nameKey` `gdp deflator formula calculator`). Screenshot-first (ADR-023): D=(N/R)×100 with bidirectional modes; shared CurrencySelect denomination (PKR default); magnitude units→trillions; optional two-period inflation; index interpretation; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** N **25** trillion · R **20** trillion → D **125**; inflation 120→126 → **5%**.
+- **Important Files:** `frontend/src/tools/calculators/gdp-deflator-formula/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` gdp-deflator-formula tests 18/18 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Comparative Advantage Calculator
 - **Summary:** Shipped Comparative Advantage Calculator on existing catalog slug `comparative-advantage-calculator` (`ComparativeAdvantageCalculator`, catalog `6af46f10a27d8d1d4e990174`, preserved `nameKey` `comparative advantage calculator`). Screenshot-first (ADR-023): Country X/Y output per labor for Good A/B; OC_A=B/A, OC_B=A/B; comparative = lower OC; absolute = higher productivity; ties; specialization + terms-of-trade interval; optional linear PPF with disclosed labor H; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** X **100/80** · Y **90/90** → OC_X,A **0.8** · OC_Y,A **1** → X CA Good A · Y CA Good B.

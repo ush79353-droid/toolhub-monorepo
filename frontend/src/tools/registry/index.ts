@@ -3586,6 +3586,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ComparativeAdvantageCalculator,
     })),
   ),
+  GdpDeflatorFormulaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gdp-deflator-formula/GdpDeflatorCalculator'
+    ).then((mod) => ({
+      default: mod.GdpDeflatorFormulaCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

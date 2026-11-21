@@ -777,6 +777,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'discretionary-income-calculator',
   'fisher-effect-calculator',
   'fisher-equation-calculator',
+  'gdp-deflator-formula-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',
