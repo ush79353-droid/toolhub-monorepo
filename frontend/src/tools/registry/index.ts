@@ -3619,6 +3619,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GiniCoefficientCalculator,
     })),
   ),
+  InflationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/inflation/InflationCalculator'
+    ).then((mod) => ({
+      default: mod.InflationCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

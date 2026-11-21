@@ -782,6 +782,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gdp-growth-rate-calculator',
   'gdp-per-capita-calculator',
   'gini-coefficient-calculator',
+  'inflation-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

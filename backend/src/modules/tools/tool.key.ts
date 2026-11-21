@@ -659,6 +659,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GdpGrowthRateCalculator',
   'GdpPerCapitaCalculator',
   'GiniCoefficientCalculator',
+  'InflationCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
@@ -1468,6 +1469,7 @@ if (isDirect) {
     !isApprovedComponentKey('GdpGrowthRateCalculator') ||
     !isApprovedComponentKey('GdpPerCapitaCalculator') ||
     !isApprovedComponentKey('GiniCoefficientCalculator') ||
+    !isApprovedComponentKey('InflationCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||

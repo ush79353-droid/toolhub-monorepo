@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Inflation Calculator
+- **Summary:** Shipped Inflation Calculator on existing catalog slug `inflation-calculator` (`InflationCalculator`, catalog `6af46f10a27d8d1d4e990181`, preserved `nameKey` `inflation calculator`). Screenshot-first (ADR-023): US historical CPI-U annual (reuse Buying Power `CUUR0000SA0`) + custom compound FV=PV(1+r)^t; yearly frequency active; quarterly blocked with explicit no-monthly-data message (no invented CPI); purchasing-power factor; SVG charts; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Custom **$1,000** · **3%** · **5** years → ≈ **$1,159.27**.
+- **Important Files:** `frontend/src/tools/calculators/inflation/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` inflation tests 18/18 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Gini Coefficient Calculator
 - **Summary:** Shipped Gini Coefficient Calculator on existing catalog slug `gini-coefficient-calculator` (`GiniCoefficientCalculator`, catalog `6af46f10a27d8d1d4e990180`, preserved `nameKey` `gini coefficient calculator`). Screenshot-first (ADR-023): default Areas A & B with G = A/(A+B); Gini index = G×100; optional unweighted income mode; illustrative/modeled Lorenz SVG (not unique reconstruction from A/B); step-by-step; guide/FAQ without invented country ranks. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Area A **1,200** · Area B **3,800** → G **0.24** · index **24**.
