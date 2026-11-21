@@ -2852,6 +2852,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BmiBodyMassIndexCalculator,
     })),
   ),
+  BmiCalculatorForKids: lazyTool(() =>
+    import(
+      '@/tools/calculators/bmi-kids/BmiKidsCalculator'
+    ).then((mod) => ({
+      default: mod.BmiKidsCalculator,
+    })),
+  ),
+  BmiForMenCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bmi-for-men/BmiForMenCalculator'
+    ).then((mod) => ({
+      default: mod.BmiForMenCalculator,
+    })),
+  ),
   AverageCollectionPeriodCalculator: lazyTool(() =>
     import('@/tools/calculators/average-collection-period/AverageCollectionPeriodCalculator').then((mod) => ({
       default: mod.AverageCollectionPeriodCalculator,
@@ -2915,6 +2929,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   CagrCalculator: lazyTool(() =>
     import('@/tools/calculators/cagr/CagrCalculator').then((mod) => ({
       default: mod.CagrCalculator,
+    })),
+  ),
+  CalorieCalculator: lazyTool(() =>
+    import('@/tools/calculators/calorie/CalorieCalculator').then((mod) => ({
+      default: mod.CalorieCalculator,
     })),
   ),
   CallOptionCalculator: lazyTool(() =>

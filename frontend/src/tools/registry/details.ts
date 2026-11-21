@@ -680,6 +680,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/blended-rate/detail'),
   BmiBodyMassIndexCalculator: () =>
     import('@/tools/calculators/bmi-body-mass-index/detail'),
+  BmiCalculatorForKids: () =>
+    import('@/tools/calculators/bmi-kids/detail'),
+  BmiForMenCalculator: () =>
+    import('@/tools/calculators/bmi-for-men/detail'),
   AverageCollectionPeriodCalculator: () =>
     import('@/tools/calculators/average-collection-period/detail'),
   AverageFixedCostCalculator: () =>
@@ -703,6 +707,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BusinessValuationCalculator: () =>
     import('@/tools/calculators/business-valuation/detail'),
   CagrCalculator: () => import('@/tools/calculators/cagr/detail'),
+  CalorieCalculator: () =>
+    import('@/tools/calculators/calorie/detail'),
   CallOptionCalculator: () => import('@/tools/calculators/call-option/detail'),
   CapmCalculator: () => import('@/tools/calculators/capm/detail'),
   CanadianMortgageCalculator: () =>
