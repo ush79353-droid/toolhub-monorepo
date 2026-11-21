@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `FE-HEADER-01` | Site header: home is logo + Share + Explore Tools; other pages add a centered debounced tool search (10 suggestions) via Next proxy to `GET /catalog/tools/suggest` | Cursor | Completed | `frontend/src/components/layout/Header.tsx`, `HeaderSearch.tsx`, `frontend/src/app/api/catalog/tools/suggest/route.ts`, `backend/src/modules/catalog/*`, `brain/*` | — |
 | `FE-EMDASH-01` | Remove/replace em dashes in frontend user-facing calculator copy (brand titles → `\|`, detail/content/guides/forms/results/validation; skip comments + empty glyphs) | Cursor | Completed | `frontend/src/tools/calculators/**`, `brain/*` | — |
 | `TOOL-581` | Implement Biden's Tax Plan Calculator on existing slug `bidens-tax-plan-calculator` with TY2022 TCJA vs May 2021 AFP historical comparison, fixed USD, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/bidens-tax-plan/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-580` | Implement Quiz: Annual Income Calculator on existing slug `quiz-annual-income-calculator` with seven recovered Omni-authorized MCQ questions, progressive reveal, score /7, guide/FAQ, verified activation (**indexable false**; leave Annual Income Calculator untouched) | Cursor | Completed | `frontend/src/tools/calculators/quiz-annual-income/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |

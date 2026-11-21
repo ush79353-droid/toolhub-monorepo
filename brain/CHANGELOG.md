@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-21 — Header search on non-home pages
+- **Summary:** Home header is logo, Share, and Explore Tools. Every other public page keeps those and adds a centered tool search: 300ms debounce, up to 10 suggestions, keyboard selection. Browser calls Next `GET /api/catalog/tools/suggest`, which proxies Express `GET /api/v1/catalog/tools/suggest` (active tools only; name prefix first).
+- **Important Files:** `frontend/src/components/layout/Header.tsx`, `frontend/src/components/layout/HeaderSearch.tsx`, `frontend/src/app/api/catalog/tools/suggest/route.ts`, `backend/src/modules/catalog/catalog.service.ts`, `backend/src/modules/catalog/catalog.router.ts`, `brain/*`.
+- **Verification:** Route is registered before `/tools/:slug`. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Remove em dashes from frontend user-facing copy
 - **Summary:** Replaced share/meta brand titles `… — Omega Calculators` with `… | Omega Calculators` (SEO fallback style). Rewrote em dashes in calculator `detail.tsx` blurbs, `content.ts` FAQ/TOC, guides, forms, results, validation user messages, and related user-facing strings using situational punctuation (`|`, `:`, `;`, `,`, parentheses). Skipped code comments and empty-value glyphs (`'—'` / placeholders).
 - **Important Files:** Broad set under `frontend/src/tools/calculators/**` (titles, `detail.tsx`, `content.ts`, guides/forms/results, validation strings); `brain/CHANGELOG.md`, `brain/TASKS.md`, `brain/CURRENT_STATE.md`.

@@ -31,7 +31,7 @@
 | `categories` | `modules/categories/` | 3-level taxonomy (`category`, `pillar`, `sub_pillar`) CRUD, tree assembly, search, cascade delete | `/api/v1/admin/categories` |
 | `media` | `modules/media/` | Storage driver (`local` disk or S3), `MediaAsset` persistence, list/filter, file + DB delete | `/api/v1/admin/media` |
 | `tools` | `modules/tools/` | Admin tool catalog CRUD, placement options, media icon validation, allowlisted `componentKey` & `executionType`, unique name/slug enforcement, optional SEO fields, embed gates, and the development audit (`isDeveloped`, `ToolAudit`) | `/api/v1/admin/tools` |
-| `catalog` | `modules/catalog/` | Public read endpoints for active root categories (with tool counts via aggregation), featured tools, and active single tool detail by slug | `/api/v1/catalog` |
+| `catalog` | `modules/catalog/` | Public read endpoints for active root categories (with tool counts via aggregation), featured tools, active tool directory, typeahead (`GET /tools/suggest`, 10 items), and active single tool detail by slug | `/api/v1/catalog` |
 
 ### Planned / Placeholder Modules (`.gitkeep` only)
 

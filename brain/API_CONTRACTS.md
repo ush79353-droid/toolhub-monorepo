@@ -81,6 +81,13 @@ Mounted at `/api/v1/catalog` (`backend/src/modules/catalog/catalog.router.ts`).
 - **Response (`200`):** `PublicFeaturedTool[]` — Up to 12 tools with `isFeatured: true`, sorted by `name` asc (note: currently filters only on `isFeatured: true`, not `isActive`):
   `{ id, name, slug, shortDescription, iconUrl, categoryName, categorySlug }[]`
 
+### `GET /api/v1/catalog/tools/suggest`
+- **Auth:** Public
+- **Query:** `q` (trimmed, max 80). Empty `q` returns `{ items: [] }`.
+- **Response (`200`):** Up to 10 active tools. Name-prefix matches come first, then name/slug/short-description contains matches, each group sorted by name.
+  `{ items: { id, name, slug, shortDescription, categoryName }[] }`
+- **Browser path:** `GET /api/catalog/tools/suggest` on Next.js proxies this route. The header search does not call Express directly.
+
 ### `GET /api/v1/catalog/tools`
 - **Auth:** Public
 - **Query:** `q` (optional, trimmed, max 120), `category` (optional root-category slug), `page` (default 1)

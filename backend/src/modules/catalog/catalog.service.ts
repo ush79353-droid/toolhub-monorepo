@@ -288,6 +288,64 @@ function escapeRegex(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+export interface PublicToolSuggestion {
+  id: string;
+  name: string;
+  slug: string;
+  shortDescription: string;
+  categoryName: string;
+}
+
+const SUGGEST_LIMIT = 10;
+
+/** Active-tool typeahead. Prefix name matches sort first. Empty query returns nothing. */
+export async function suggestPublicTools(rawQuery: unknown): Promise<{ items: PublicToolSuggestion[] }> {
+  const q = typeof rawQuery === 'string' ? rawQuery.trim().slice(0, 80) : '';
+  if (!q) return { items: [] };
+
+  const escaped = escapeRegex(q);
+  const contains = new RegExp(escaped, 'i');
+  const prefix = new RegExp(`^${escaped}`, 'i');
+  const select = 'name slug shortDescription category';
+  const [prefixRows, containsRows] = await Promise.all([
+    Tool.find({ isActive: true, name: prefix })
+      .select(select)
+      .sort({ name: 1 })
+      .limit(SUGGEST_LIMIT)
+      .populate('category', 'name')
+      .lean<PublicToolListRow[]>(),
+    Tool.find({
+      isActive: true,
+      $or: [{ name: contains }, { slug: contains }, { shortDescription: contains }],
+    })
+      .select(select)
+      .sort({ name: 1 })
+      .limit(SUGGEST_LIMIT)
+      .populate('category', 'name')
+      .lean<PublicToolListRow[]>(),
+  ]);
+
+  const seen = new Set<string>();
+  const rows: PublicToolListRow[] = [];
+  for (const row of [...prefixRows, ...containsRows]) {
+    const id = row._id.toString();
+    if (seen.has(id)) continue;
+    seen.add(id);
+    rows.push(row);
+    if (rows.length === SUGGEST_LIMIT) break;
+  }
+
+  return {
+    items: rows.map((row) => ({
+      id: row._id.toString(),
+      name: row.name,
+      slug: row.slug,
+      shortDescription: row.shortDescription ?? '',
+      categoryName: row.category?.name ?? '',
+    })),
+  };
+}
+
 export interface PublicToolListItem {
   id: string;
   name: string;
