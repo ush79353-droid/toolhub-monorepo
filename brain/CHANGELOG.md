@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-21 — Category detail page
+- **Summary:** A category page uses the mint hero. Its tools are cards grouped by pillar and sub-pillar. Other categories use the homepage cards. An empty category is a centered message.
+- **Important Files:** `frontend/src/app/(website)/categories/[slug]/page.tsx`.
+- **Verification:** Physics shows the mint hero, one tool card under its pillar, and the homepage-style category grid. Chemistry with no active tools shows the centered empty message. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Categories page hero and cards
 - **Summary:** `/categories` uses the All Tools mint hero. Search filters the loaded categories in the browser. The grid matches the homepage category cards.
 - **Important Files:** `frontend/src/components/categories/CategoriesClient.tsx`.
