@@ -92,6 +92,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NetEffectiveRentCalculator: () =>
     import('@/tools/calculators/net-effective-rent/detail'),
   IncomeTaxCalculator: () => import('@/tools/calculators/income-tax/detail'),
+  TakeHomePayUkCalculator: () =>
+    import('@/tools/calculators/take-home-pay-uk/detail'),
   TaxBracketCalculator: () =>
     import('@/tools/calculators/tax-bracket/detail'),
   AdjustedGrossIncomeCalculator: () =>
@@ -605,6 +607,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SipCalculator: () => import('@/tools/calculators/sip/detail'),
   SipLumpsumCalculator: () =>
     import('@/tools/calculators/sip-lumpsum/detail'),
+  SocialSecurityCalculator: () =>
+    import('@/tools/calculators/social-security/detail'),
   StampDutyLandTaxUkCalculator: () =>
     import('@/tools/calculators/stamp-duty-land-tax-uk/detail'),
   SmokersCtcCalculator: () =>

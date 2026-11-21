@@ -814,6 +814,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'roic-calculator-return-on-invested-capital',
   'roth-ira-calculator',
   'rule-of-72-calculator',
+  'social-security-calculator',
   'sustainable-growth-rate-calculator',
   'swp-calculator-systematic-withdrawal-plan',
   'unlevered-beta-calculator',
@@ -913,6 +914,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
 
   'income-tax-calculator',
   'bidens-tax-plan-calculator',
+  'take-home-pay-calculator-uk',
   'tax-bracket-calculator',
   'adjusted-gross-income-agi-calculator',
   'modified-adjusted-gross-income-magi-calculator',

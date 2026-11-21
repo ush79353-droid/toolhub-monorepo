@@ -15,6 +15,7 @@ Audit pending: deferred to final audit coordinator
 
 | # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
+| 70 | SIP Calculator + Lumpsum | DEVELOPED | AUDIT PENDING | b2f35dd5 | 647d0dc5 | (this reg/Brain; registry also via concurrent 997b7f1c) | Completed Tools | `SipLumpsumCalculator`; slug `sip-calculator-lumpsum`; Mongo `6af46f10a27d8d1d4e9901b1` active; denomination PKR no FX; indexable false; TASKS `TOOL-659` |
 | 1 | Credit Card Interest Calculator | DEVELOPED | AUDIT 83d9a878 | ad1db269 | 6c22d90a | a8c12719 | Completed Tools | `CreditCardInterestCalculator` |
 | 2 | Credit Card Minimum Payment Calculator | DEVELOPED | AUDIT 83d9a878 | a58000dc | 4f016493 | fd92b7b0 | Completed Tools | `CreditCardMinimumPaymentCalculator` |
 | 3 | Credit Card Payment Calculator | DEVELOPED | AUDIT 83d9a878 | e5b2eaa4 | 9be82cda | 7a50e80e | Completed Tools | `CreditCardPaymentCalculator` |
@@ -120,14 +121,18 @@ Audit pending: deferred to final audit coordinator
 | 72 | Put-Call Parity Calculator | DEVELOPED | AUDIT PENDING | 3e142c72 | 5cecb015 | 65e1c766 | Completed Tools | `PutCallParityCalculator`; slug `put-call-parity-calculator`; Mongo `6af46f10a27d8d1d4e9901c4` active; Phase 2 FX; indexable false; TASKS `TOOL-651`; keys/index/details/sitemap via concurrent HEAD |
 
 ## Session Log
-| 76 | SWP Calculator — Systematic Withdrawal Plan | DEVELOPED | AUDIT PENDING | 47c125d0 | 1baf1073 | (this reg commit) | Completed Tools | `SwpCalculator`; slug `swp-calculator-systematic-withdrawal-plan`; Mongo `6af46f10a27d8d1d4e9901b3` active; denomination PKR no FX; indexable false; TASKS `TOOL-657` |
+- 2026-11-21 (SIP + Lumpsum): SIP Calculator + Lumpsum DEVELOPED (`b2f35dd5` / `647d0dc5` / reg+Brain). Mongo `6af46f10a27d8d1d4e9901b1` activated; indexable false; denomination-only CurrencySelect (no FX). Registry/sitemap/tool.key also via concurrent `997b7f1c`. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+| 77 | Take Home Pay Calculator UK | DEVELOPED | AUDIT PENDING | e4f36ebd | b8aa325b | (this reg commit) | Completed Tools | `TakeHomePayUkCalculator`; slug `take-home-pay-calculator-uk`; Mongo `6af46f10a27d8d1d4e9901ce` active; fixed GBP; HMRC 2024/25–2026/27; TASKS `TOOL-658` |
+| 76 | SWP Calculator — Systematic Withdrawal Plan | DEVELOPED | AUDIT PENDING | 47c125d0 | 1baf1073 | c6599b22 | Completed Tools | `SwpCalculator`; slug `swp-calculator-systematic-withdrawal-plan`; Mongo `6af46f10a27d8d1d4e9901b3` active; denomination PKR no FX; indexable false; TASKS `TOOL-657` |
 | 75 | Roth IRA Calculator | DEVELOPED | AUDIT PENDING | 1231a89a | ff01c080 | 2aeee6ab | Completed Tools | `RothIraCalculator`; slug `roth-ira-calculator`; Mongo `6af46f10a27d8d1d4e9901bb` active; IRS 2026; denomination MXN no FX; indexable false; TASKS `TOOL-656` |
 | 74 | RMD Calculator | ALREADY DEVELOPED | AUDIT PENDING | — | — | ecdd74e1 | Completed Tools | Existing `RmdCalculator` reused; short slug `rmd-calculator` Mongo `6af46f10a27d8d1d4e9901ba` activated; long slug sibling already live; indexable false |
 | 73 | Retirement Withdrawal Calculator | DEVELOPED | AUDIT PENDING | 94f217f1 | 865ce259 | 3dde35ca | Completed Tools | `RetirementWithdrawalCalculator`; slug `retirement-withdrawal-calculator`; Mongo `6af46f10a27d8d1d4e9901b9` active; denomination PKR no FX; indexable false; TASKS `TOOL-655` |
 
 | 70 | RD Calculator - Recurring Deposit | DEVELOPED | AUDIT PENDING | c0468d02 | fa82f263 | 66ef9598 | Completed Tools | `RdCalculator`; slug `rd-calculator-recurring-deposit`; Mongo `6af46f10a27d8d1d4e9901b0` active; Phase 2 FX; indexable false; TASKS `TOOL-653` |
 
-- 2026-11-21 (SWP): SWP Calculator — Systematic Withdrawal Plan DEVELOPED (`47c125d0` / `1baf1073` / reg+Brain+tracker). Mongo `6af46f10a27d8d1d4e9901b3` activated; indexable false; denomination-only (no FX). Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (Take Home Pay UK): Take Home Pay Calculator UK DEVELOPED (`e4f36ebd` / `b8aa325b` / reg+Brain+tracker). Mongo `6af46f10a27d8d1d4e9901ce` activated; indexable false; fixed GBP; HMRC 2024/25–2026/27. Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+- 2026-11-21 (SWP): SWP Calculator — Systematic Withdrawal Plan DEVELOPED (`47c125d0` / `1baf1073` / `c6599b22`). Mongo `6af46f10a27d8d1d4e9901b3` activated; indexable false; denomination-only (no FX). Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 - 2026-11-21 (Roth IRA): Roth IRA Calculator DEVELOPED (`1231a89a` / `ff01c080` / `2aeee6ab`). Mongo `6af46f10a27d8d1d4e9901bb` activated; indexable false; IRS 2026; denomination-only (no FX). Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 

@@ -1,14 +1,25 @@
-# Development Changelog (`CHANGELOG.md`)
+﻿# Development Changelog (`CHANGELOG.md`)
 
 > **Convention:** Append entries chronologically after verified tasks. Do not rewrite historical entries.
 
 ---
 
+### 2026-11-21 — SIP Calculator + Lumpsum
+- **Summary:** Shipped SIP Calculator + Lumpsum on existing catalog slug `sip-calculator-lumpsum` (`SipLumpsumCalculator`, catalog `6af46f10a27d8d1d4e9901b1`, pillar/subPillar null). Screenshot-first (ADR-023): solve-for final balance/deposit/lumpsum/return/term; initial lumpsum; expected return; term; start date; inflation; compounding; SIP deposit/frequency/begin-end timing; opening/final/total deposits/return/transactions/end date + optional schedule. Denomination CurrencySelect (PKR default, **no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-659`.
+- **Commits:** `b2f35dd5` (UI) / `647d0dc5` (engine) / (registration/Brain/tracker — this commit; registry/sitemap/tool.key lines also absorbed into concurrent `997b7f1c`).
+- **Example:** lumpsum **1,000** · **10%** · **10**y · monthly compound · PMT **0** → final ≈ **2,707.04**.
+- **Verification:** Static screenshot FV check + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-21 — Stamp Duty Land Tax Calculator UK
 - **Summary:** Shipped Stamp Duty Land Tax Calculator UK on existing catalog slug `stamp-duty-land-tax-calculator-uk` (`StampDutyLandTaxUkCalculator`, catalog `6af46f10a27d8d1d4e9901cd`, pillar/subPillar null). Screenshot-first (ADR-023): buyer scenario (FTB / moving home / additional / let-or-flip); UK vs non-UK residency; property price → stamp duty; collapsible band breakdown. GOV.UK residential rates from 1 April 2025; FTB relief; +5 pp higher rates; +2 pp non-resident surcharge. Fixed GBP (**no FX**). England & NI only. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-658`.
 - **Commits:** `e459127d` (UI) / `9acbf115` (engine) / (registration/Brain/tracker — this commit).
 - **Example:** FTB · UK · **£500,000** → **£10,000**; moving home · **£295,000** → **£4,750**.
 - **Verification:** Static GOV.UK example review + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-21 — Take Home Pay Calculator UK
+- **Summary:** Shipped Take Home Pay Calculator UK on existing catalog slug `take-home-pay-calculator-uk` (`TakeHomePayUkCalculator`, catalog `6af46f10a27d8d1d4e9901ce`, pillar/subPillar null). Screenshot-first (ADR-023): UK nations; HMRC-supported tax years 2024/25–2026/27; employment/SE/rental; PA taper; RUK/Scottish Income Tax; Class 1/4 NI via existing NI module; **fixed GBP**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-658`.
+- **Commits:** `e4f36ebd` (UI) / `b8aa325b` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** England **2026/27** · **£40,000** employment → tax **£5,486** · NI **£2,194.40** · take-home **£32,319.60**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-21 — SWP Calculator — Systematic Withdrawal Plan
 - **Summary:** Shipped SWP Calculator on existing catalog slug `swp-calculator-systematic-withdrawal-plan` (`SwpCalculator`, catalog `6af46f10a27d8d1d4e9901b3`, pillar/subPillar null). Screenshot-first (ADR-023): five solve modes; nominal period rates; beginning withdrawals; inflation growing annuity; denomination CurrencySelect (PKR default, **no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-657`.
@@ -5356,7 +5367,7 @@
 - **Important Files:** `frontend/src/tools/calculators/business-loan/*`, registry, `sitemap.ts`, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-business-loan-tool.ts`, `brain/{CURRENT_STATE,FRONTEND,TASKS,CHANGELOG}.md`.
 - **Verification:** Unit tests in `calculation.test.ts` pass for all modes and edge cases. MongoDB record `6af46f0fa27d8d1d4e98ff4f` activated via `assign-business-loan-tool.ts` (`isDeveloped: true`, `isActive: true`, `indexable: true`, `embedEnabled: true`). Lint/builds/browser tests omitted per user credit-saving instructions.
 
-## 2026-11-21 � Rule of 72 Calculator
+## 2026-11-21 � Rule of 72 Calculator
 - Added bidirectional Rule of 72 calculator (`RuleOf72Calculator` / `rule-of-72-calculator`).
-- Approximation `T � 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
+- Approximation `T � 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
 - Catalog `6af46f10a27d8d1d4e9901bc` activated; `indexable` left false.

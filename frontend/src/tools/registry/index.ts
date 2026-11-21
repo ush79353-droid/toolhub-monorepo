@@ -321,6 +321,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.IncomeTaxCalculator,
     })),
   ),
+  TakeHomePayUkCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/take-home-pay-uk/TakeHomePayUkCalculator'
+    ).then((mod) => ({
+      default: mod.TakeHomePayUkCalculator,
+    })),
+  ),
   TaxBracketCalculator: lazyTool(() =>
     import('@/tools/calculators/tax-bracket/TaxBracketCalculator').then((mod) => ({
       default: mod.TaxBracketCalculator,
@@ -2593,6 +2600,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.SipLumpsumCalculator,
       }),
     ),
+  ),
+  SocialSecurityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/social-security/SocialSecurityCalculator'
+    ).then((mod) => ({
+      default: mod.SocialSecurityCalculator,
+    })),
   ),
   StampDutyLandTaxUkCalculator: lazyTool(() =>
     import(

@@ -1,4 +1,4 @@
-# Shared Task Board (`TASKS.md`)
+﻿# Shared Task Board (`TASKS.md`)
 
 > **Rules:** Keep Task IDs stable (`INFRA-*`, `BE-*`, `FE-*`, `TOOL-*`). Never delete or renumber IDs. Do not invent owners unless assigned.
 
@@ -8,6 +8,8 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-659` | Implement SIP Calculator + Lumpsum on existing slug `sip-calculator-lumpsum` with solve-for modes, begin/end SIP annuity + lumpsum compound growth, optional inflation, denomination CurrencySelect (no FX), verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/sip-lumpsum/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
+| `TOOL-658` | Implement Take Home Pay Calculator UK on existing slug `take-home-pay-calculator-uk` with location + tax years 2024/25–2026/27, employment/SE/rental, PA taper, RUK/Scottish IT, Class 1/4 NI, fixed GBP, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/take-home-pay-uk/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-657` | Implement SWP Calculator — Systematic Withdrawal Plan on existing slug `swp-calculator-systematic-withdrawal-plan` with five solve modes, inflation growing annuity-due, denomination CurrencySelect (no FX), verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/swp/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-656` | Implement Roth IRA Calculator on existing slug `roth-ira-calculator` with MAGI phase-outs (IRS 2026), filing status, tax rate, return, eligible/after-tax contribution, retirement FV, denomination CurrencySelect (no FX), verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/roth-ira/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-655` | Implement Retirement Withdrawal Calculator on existing slug `retirement-withdrawal-calculator` with solve-for withdrawal or duration, compounding/timing/inflation, yearly balance projection, denomination CurrencySelect (no FX), verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/retirement-withdrawal/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
@@ -884,7 +886,7 @@
 | `TOOL-179` | Implement ROI Calculator on existing slug `roi-calculator` with basic + annualized ROI, optional contributions, guide/SEO/embed, and verified activation | Cursor | Completed | `frontend/src/tools/calculators/roi/*`, registry, sitemap, `backend/src/modules/tools/tool.key.ts`, `backend/src/scripts/assign-roi-tool.ts`, `brain/*` | `TOOL-178` |
 
 
-### TOOL-551 � Rule of 72 Calculator (2026-11-21)
+### TOOL-551 � Rule of 72 Calculator (2026-11-21)
 - Status: DONE
 - Slug: `rule-of-72-calculator`
 - componentKey: `RuleOf72Calculator`
