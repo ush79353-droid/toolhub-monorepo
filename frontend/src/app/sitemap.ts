@@ -779,6 +779,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fisher-equation-calculator',
   'gdp-deflator-formula-calculator',
   'gdp-gap-calculator',
+  'gdp-growth-rate-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

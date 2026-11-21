@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (GDP Gap Calculator live at `/tools/gdp-gap-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (GDP Growth Rate Calculator live at `/tools/gdp-growth-rate-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **GDP Growth Rate Calculator (`/tools/gdp-growth-rate-calculator`):** Live client-side growth tool (`componentKey: 'GdpGrowthRateCalculator'`, catalog `6af46f10a27d8d1d4e99017e`, `nameKey` `gdp growth rate calculator`). Screenshot-first (ADR-023): g=((Current−Previous)/Previous)×100 with modes for growth/current/previous; absolute change; real/nominal measure label; period selector; optional labeled annualized QoQ; shared CurrencySelect denomination (PKR default); magnitudes; g &gt; −100% reverse guards; empty defaults + load example. Activated; **`indexable` left false**. Example: Current **21T** · Previous **20T** → **+5%**.
 - **GDP Gap Calculator (`/tools/gdp-gap-calculator`):** Live client-side output-gap tool (`componentKey: 'GdpGapCalculator'`, catalog `6af46f10a27d8d1d4e99017d`, `nameKey` `gdp gap calculator`). Screenshot-first (ADR-023): Gap%=((Y−Y*)/Y*)×100 with modes for gap/actual/potential; absolute gap; shared CurrencySelect denomination (PKR default); magnitudes units→trillions; gap &gt; −100% reverse guards; positive/negative/zero interpretation; empty defaults + load example. Activated; **`indexable` left false**. Example: Y **18T** · Y* **20T** → Gap **−10%**.
 - **GDP Deflator Formula Calculator (`/tools/gdp-deflator-formula-calculator`):** Live client-side price-index tool (`componentKey: 'GdpDeflatorFormulaCalculator'`, catalog `6af46f10a27d8d1d4e99017c`, `nameKey` `gdp deflator formula calculator`). Screenshot-first (ADR-023): D=(N/R)×100 with modes for deflator/nominal/real; shared CurrencySelect denomination (PKR default); per-field magnitudes (units→trillions); optional two-period deflator inflation; index interpretation (not one-year inflation); empty defaults + load example. Activated; **`indexable` left false**. Example: N **25T** · R **20T** → D **125**.
 - **Comparative Advantage Calculator (`/tools/comparative-advantage-calculator`):** Live client-side trade tool (`componentKey: 'ComparativeAdvantageCalculator'`, catalog `6af46f10a27d8d1d4e990174`, `nameKey` `comparative advantage calculator`). Screenshot-first (ADR-023): Country X/Y productivity for Good A/B; OC_A=B/A, OC_B=A/B; comparative = lower OC; absolute = higher productivity; ties; specialization + terms-of-trade interval; optional linear PPF (H×productivity); empty defaults + load example; no currency. Activated; **`indexable` left false**. Example: X **100/80** · Y **90/90** → X CA Good A · Y CA Good B.

@@ -3598,6 +3598,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GdpGapCalculator,
     })),
   ),
+  GdpGrowthRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gdp-growth-rate/GdpGrowthCalculator'
+    ).then((mod) => ({
+      default: mod.GdpGrowthRateCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

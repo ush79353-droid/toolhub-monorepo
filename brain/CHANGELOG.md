@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add GDP Growth Rate Calculator
+- **Summary:** Shipped GDP Growth Rate Calculator on existing catalog slug `gdp-growth-rate-calculator` (`GdpGrowthRateCalculator`, catalog `6af46f10a27d8d1d4e99017e`, preserved `nameKey` `gdp growth rate calculator`). Screenshot-first (ADR-023): g=((Current−Previous)/Previous)×100 with modes for growth/current/previous; absolute change; real/nominal measure; period selector; optional labeled annualized QoQ; shared CurrencySelect denomination (PKR default); magnitudes; g &gt; −100% reverse guards; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Current **21** trillion · Previous **20** trillion → Growth **+5%** · change **+1** trillion.
+- **Important Files:** `frontend/src/tools/calculators/gdp-growth-rate/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` gdp-growth-rate tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add GDP Gap Calculator
 - **Summary:** Shipped GDP Gap Calculator on existing catalog slug `gdp-gap-calculator` (`GdpGapCalculator`, catalog `6af46f10a27d8d1d4e99017d`, preserved `nameKey` `gdp gap calculator`). Screenshot-first (ADR-023): Gap%=((Y−Y*)/Y*)×100 with modes for gap/actual/potential; absolute monetary gap; shared CurrencySelect denomination (PKR default); magnitudes; gap &gt; −100% reverse guards; interpretation card; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Y **18** trillion · Y* **20** trillion → Gap **−10%** · absolute **−2** trillion.
