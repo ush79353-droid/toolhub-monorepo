@@ -12,7 +12,7 @@
 
 ### 2026-11-22 — Birth Control Calculator
 - **Summary:** Shipped Birth Control Calculator on existing catalog slug `birth-control-calculator` (`BirthControlCalculator`, catalog `6af46f10a27d8d1d4e99020c`, pillar/subPillar null). Screenshot-first (ADR-023): Females/Males method menus; pill/patch/ring 28-day cycle costs; IUD/injection/implant price÷longevity; sterilization/vasectomy one-time procedure; optional condom packs; horizon days/wks/mos/yrs; independent input/result currencies via Phase 2 FX; share = page URL only. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-673`.
-- **Commits:** `0ed3d01d` (UI; multi-agent race also absorbed unrelated Birth Weight / BMI registry staging) / `82b68724` (engine) / (registration/Brain/tracker — this commit).
+- **Commits:** `0ed3d01d` (UI; multi-agent race also absorbed unrelated Birth Weight / BMI registry staging) / `82b68724` (engine) / `48b792fd` (registration/Brain/tracker).
 - **Example:** Pill · **20** PKR / 28-day cycle · **1** year · no condoms → **260.89** PKR.
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
