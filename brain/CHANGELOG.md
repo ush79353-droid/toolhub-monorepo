@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Stamp Duty Land Tax Calculator UK
+- **Summary:** Shipped Stamp Duty Land Tax Calculator UK on existing catalog slug `stamp-duty-land-tax-calculator-uk` (`StampDutyLandTaxUkCalculator`, catalog `6af46f10a27d8d1d4e9901cd`, pillar/subPillar null). Screenshot-first (ADR-023): buyer scenario (FTB / moving home / additional / let-or-flip); UK vs non-UK residency; property price → stamp duty; collapsible band breakdown. GOV.UK residential rates from 1 April 2025; FTB relief; +5 pp higher rates; +2 pp non-resident surcharge. Fixed GBP (**no FX**). England & NI only. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-658`.
+- **Commits:** `e459127d` (UI) / `9acbf115` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** FTB · UK · **£500,000** → **£10,000**; moving home · **£295,000** → **£4,750**.
+- **Verification:** Static GOV.UK example review + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — SWP Calculator — Systematic Withdrawal Plan
 - **Summary:** Shipped SWP Calculator on existing catalog slug `swp-calculator-systematic-withdrawal-plan` (`SwpCalculator`, catalog `6af46f10a27d8d1d4e9901b3`, pillar/subPillar null). Screenshot-first (ADR-023): five solve modes; nominal period rates; beginning withdrawals; inflation growing annuity; denomination CurrencySelect (PKR default, **no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-657`.
 - **Commits:** `47c125d0` (UI) / `1baf1073` (engine) / (registration/Brain/tracker — this commit).

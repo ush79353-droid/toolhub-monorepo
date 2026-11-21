@@ -109,6 +109,8 @@
 
 ## Completed
 
+| `TOOL-658` | Implement Stamp Duty Land Tax Calculator UK on existing slug `stamp-duty-land-tax-calculator-uk` with buyer scenario, residency, HMRC marginal bands (FTB / higher rates / non-resident surcharge from 1 Apr 2025), band breakdown, fixed GBP, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/stamp-duty-land-tax-uk/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
+
 | `TOOL-651` | Implement Put-Call Parity Calculator on existing slug `put-call-parity-calculator` with 3-of-4 solve C+PV(K)=P+S, continuous PV helper, Phase 2 FX, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/put-call-parity/*`, registry, FX lists, sitemap, `tool.key.ts`, `brain/*` | — |
 
 | `TOOL-651` | Implement Capital Gains Tax UK Calculator on existing slug `capital-gains-tax-uk-calculator` with HMRC 2025/26–2026/27 rates, AEA, basic-band interaction, trust path, fixed GBP, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/capital-gains-tax-uk/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |

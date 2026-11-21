@@ -2587,6 +2587,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SipCalculator,
     })),
   ),
+  SipLumpsumCalculator: lazyTool(() =>
+    import('@/tools/calculators/sip-lumpsum/SipLumpsumCalculator').then(
+      (mod) => ({
+        default: mod.SipLumpsumCalculator,
+      }),
+    ),
+  ),
+  StampDutyLandTaxUkCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/stamp-duty-land-tax-uk/StampDutyLandTaxUkCalculator'
+    ).then((mod) => ({
+      default: mod.StampDutyLandTaxUkCalculator,
+    })),
+  ),
   SmokersCtcCalculator: lazyTool(() =>
     import('@/tools/calculators/smokers-ctc/SmokersCtcCalculator').then((mod) => ({
       default: mod.SmokersCtcCalculator,

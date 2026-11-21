@@ -603,6 +603,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SinkingFundCalculator: () =>
     import('@/tools/calculators/sinking-fund/detail'),
   SipCalculator: () => import('@/tools/calculators/sip/detail'),
+  SipLumpsumCalculator: () =>
+    import('@/tools/calculators/sip-lumpsum/detail'),
+  StampDutyLandTaxUkCalculator: () =>
+    import('@/tools/calculators/stamp-duty-land-tax-uk/detail'),
   SmokersCtcCalculator: () =>
     import('@/tools/calculators/smokers-ctc/detail'),
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),

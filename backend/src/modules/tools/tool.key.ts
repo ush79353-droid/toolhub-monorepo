@@ -469,6 +469,8 @@ export const APPROVED_COMPONENT_KEYS = [
   'TdsInterestCalculator',
   'SinkingFundCalculator',
   'SipCalculator',
+  'SipLumpsumCalculator',
+  'StampDutyLandTaxUkCalculator',
   'SmokersCtcCalculator',
   'TenureCalculator',
   'TimeValueOfMoneyCalculator',

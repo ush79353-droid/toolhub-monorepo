@@ -1,4 +1,4 @@
-# OmegaCalculators — Automated Development Tracker
+﻿# OmegaCalculators — Automated Development Tracker
 
 ## Summary
 
@@ -78,6 +78,7 @@ Audit pending: deferred to final audit coordinator
 | 52 | SIP Calculator — Systematic Investment Plan | DEVELOPED | AUDIT PENDING | d84a79da | cfdf71a0 | c90e388d | Completed Tools | `SipCalculator`; slug `sip-calculator-systematic-investment-plan`; Mongo `6af46f0fa27d8d1d4e99000d` active; Phase 2 FX; indexable false; TASKS `TOOL-545`; registry/FX/sitemap also in concurrent `b1561c80` |
 | 53 | Bill Rate Calculator | DEVELOPED | AUDIT PENDING | 02c400cf | a08eba0c | 3f52a22f | Completed Tools | `BillRateCalculator`; slug `bill-rate-calculator`; Mongo `6af46f0fa27d8d1d4e990056` active; Phase 2 FX; indexable false; TASKS `TOOL-549` |
 | 54 | Child Tax Credit Calculator | DEVELOPED | AUDIT PENDING | b9716596 | 373da82c | 38762869 (+63692e4e registry fix) | Completed Tools | `ChildTaxCreditCalculator`; slug `child-tax-credit-calculator`; Mongo `6af46f0fa27d8d1d4e99005b` active; TY 2025 CTC; fixed USD; indexable false; TASKS `TOOL-550` |
+| 70 | Stamp Duty Land Tax Calculator UK | DEVELOPED | AUDIT PENDING | e459127d | 9acbf115 | (this reg commit) | Completed Tools | `StampDutyLandTaxUkCalculator`; slug `stamp-duty-land-tax-calculator-uk`; Mongo `6af46f10a27d8d1d4e9901cd` active; fixed GBP; GOV.UK from 1 Apr 2025; indexable false; TASKS `TOOL-658` |
 | 55 | GST/QST Calculator for Canada | DEVELOPED | AUDIT PENDING | 377fa344 | 844ff882 | 4a3500ea | Completed Tools | `CanadaGstQstCalculator`; slug `gstqst-calculator-for-canada`; Mongo `6af46f0fa27d8d1d4e990061` active; CRA rates on/after 2025-04-01; fixed CAD; indexable false; TASKS `TOOL-571` |
 | 54 | Billable Hours Calculator | DEVELOPED | AUDIT PENDING | b84a401e | 58d90060 | a332bbcb | Completed Tools | `BillableHoursCalculator`; slug `billable-hours-calculator`; Mongo `6af46f0fa27d8d1d4e990057` active; Phase 2 FX; indexable false; TASKS `TOOL-550` |
 | 55 | FICA Tax Calculator | DEVELOPED | AUDIT PENDING | d03d944a | 8f6bc365 | 5ae2acdf | Completed Tools | `FicaTaxCalculator`; slug `fica-tax-calculator`; Mongo `6af46f0fa27d8d1d4e99005d` active; fixed USD; indexable false; TASKS `TOOL-551`; registry/sitemap/tool.key also via concurrent `a332bbcb`/`8b44fd04` |
@@ -146,6 +147,7 @@ Audit pending: deferred to final audit coordinator
 
 | 69 | Money Counter Calculator | DEVELOPED | AUDIT PENDING | e6af2f2b | ae1b9c1b | (this reg commit) | Completed Tools | `MoneyCounterCalculator`; slug `money-counter-calculator`; Mongo `6af46f10a27d8d1d4e9901c9` active; denomination-only (no FX); indexable false; TASKS `TOOL-646` |
 
+- 2026-11-21 (SDLT UK): Stamp Duty Land Tax Calculator UK DEVELOPED (`e459127d` / `9acbf115` / reg+Brain+tracker). Mongo `6af46f10a27d8d1d4e9901cd` activated; indexable false; fixed GBP; England & NI residential bands from 1 Apr 2025. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Money Counter): Money Counter Calculator DEVELOPED (`e6af2f2b` / `ae1b9c1b` / `5a2b0c38`). Mongo `6af46f10a27d8d1d4e9901c9` activated; indexable false; denomination sets only (no FX). Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Pence to Pounds): Pence to Pounds Converter DEVELOPED (`270bbd2c` / `93fc88de` / `7f4d8b82`). Mongo `6af46f10a27d8d1d4e9901ca` activated; indexable false; fixed sterling subdivision (not FX). Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Futures Contracts): Futures Contracts Calculator DEVELOPED (`5d42bb55` / `7c06d250` / `5a2b0c38`). Mongo `6af46f10a27d8d1d4e9901c2` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
@@ -336,3 +338,4 @@ Screenshot-first About you / savings / retirement money; end-of-year accumulatio
 
 - 2026-11-21 (Retirement): DEVELOPED (`0e5eae7d` / `08b8a92c` / reg+Brain+tracker). Mongo activated; indexable false; no FX. Moved to Completed Tools. Temporary files cleaned: YES.
 | 55 | Rule of 72 Calculator | DEVELOPED | AUDIT PENDING | 05cd36a8 | fe742ea5 | 26ed1d71 | Completed Tools | `RuleOf72Calculator`; slug `rule-of-72-calculator`; Mongo `6af46f10a27d8d1d4e9901bc` active; indexable false; no FX |
+
