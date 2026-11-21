@@ -664,6 +664,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pre-and-post-money-valuation-calculator',
   'pregnancy-calculator',
   'pregnancy-conception-calculator',
+  'pregnancy-test-calculator',
   'pregnancy-weight-gain-calculator',
   'present-value-calculator',
   'price-elasticity-of-demand-calculator',
