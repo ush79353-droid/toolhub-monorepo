@@ -4,6 +4,17 @@
 
 ---
 
+### 2026-11-21 — Currency Calculator
+- **Summary:** Shipped Currency Calculator on existing catalog slug `currency-calculator` (`CurrencyCalculator`, catalog `6af46f10a27d8d1d4e9901c8`, preserved `nameKey` `currency calculator`, pillar/subPillar null). Screenshot-first (ADR-023): Amount/From/To; popular-only toggle; Calculate/Clear; timestamped result with both quote directions. Real FX via ADR-021 `convertCurrency` + dual `CURRENCY_CONVERSION_SLUGS`; ExchangeRate-API upstream attribution via stored snapshot `fetchedAt`. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Extended `CurrencySelect` with `allowedCodes` + `showDenominationNote`.
+- **Commits:** `49a238a3` (UI) / `81492c88` (engine; also absorbed concurrent call-option guide files + briefly emptied `registry/index.ts`, later restored by concurrent agents) / (registration/Brain/tracker — this commit).
+- **Example:** **100** USD · EUR **0.85** → **85** EUR · 1 EUR ≈ **1.176471** USD.
+- **Verification:** Static formula review + focused `calculation.test.ts` asserts executed. Full frontend tsc/lint/build not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-21 — Brexit Calculator
+- **Summary:** Shipped Brexit Calculator on existing catalog slug `brexit-calculator` (`BrexitCalculator`, catalog `6af46f10a27d8d1d4e9901c6`, preserved `nameKey` `brexit calculator`, pillar/subPillar null). Screenshot-first (ADR-023): dual-rate illustrative GDP-loss running total + government add-on + opportunity-cost counts; fixed GBP; share/reload/clear/feedback. Prompt narrative (alive-2064 / personal assets / solar-stadiums) mismatched screenshot — screenshot authority applied. Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Keys/sitemap/tool.key lines also landed via concurrent early-retirement registration `0445e0dc`; this commit restores lazy `registry/index.ts` + `details.ts` + Brain/tracker.
+- **Commits:** `19e671b9` (UI) / `22e78f69` (engine) / (registration/Brain/tracker — this commit).
+- **Verification:** Focused `calculation.test.ts` self-check executed (`ok`). Full frontend tsc/lint/build not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Yield to Call Calculator
 - **Summary:** Shipped Yield to Call Calculator on existing catalog slug `yield-to-call-calculator` (`YieldToCallCalculator`, catalog `6af46f10a27d8d1d4e9901c5`, preserved `nameKey` `yield to call calculator`, pillar/subPillar null). Screenshot-first (ADR-023): annual interest, call price, market price, whole years until call → YTC; P=ΣC/(1+y)^t+Call/(1+y)^N via bisection (closed form when C=0); not approximate YTC; denomination CurrencySelect (no FX / not in `CURRENCY_CONVERSION_SLUGS`). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**. Registry/sitemap/tool.key lines also present via concurrent forward-premium registration commit `106c6326`.
 - **Commits:** `0506bc0d` (UI) / `fdcffc4b` (engine) / (registration/Brain/tracker — this commit).

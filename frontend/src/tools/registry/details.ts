@@ -669,6 +669,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bradford-factor/detail'),
   BreakEvenCalculator: () =>
     import('@/tools/calculators/break-even/detail'),
+  BrexitCalculator: () => import('@/tools/calculators/brexit/detail'),
   BuildVsBuyCalculator: () =>
     import('@/tools/calculators/build-vs-buy/detail'),
   BurnRateCalculator: () =>
@@ -970,6 +971,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cobb-douglas/detail'),
   CpiInflationCalculator: () =>
     import('@/tools/calculators/cpi-inflation/detail'),
+  CurrencyCalculator: () => import('@/tools/calculators/currency/detail'),
   CurrencyForwardCalculator: () =>
     import('@/tools/calculators/currency-forward/detail'),
   DeadweightLossCalculator: () =>
@@ -1035,6 +1037,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/semi-monthly-pay/detail'),
   BlackFridayCalculator: () =>
     import('@/tools/calculators/black-friday/detail'),
+  BlackScholesCalculator: () =>
+    import('@/tools/calculators/black-scholes/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
   BondCalculator: () => import('@/tools/calculators/bond/detail'),
