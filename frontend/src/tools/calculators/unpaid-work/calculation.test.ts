@@ -117,7 +117,10 @@ const tooMany = validateUnpaidWorkInput({
     index === 0 ? { ...row, hoursPerWeek: '200' } : row,
   ),
 });
-assert(!tooMany.isValid && tooMany.errors.hours, 'over 168 rejected');
+assert(
+  !tooMany.isValid && Boolean(tooMany.errors.hours),
+  'over 168 rejected'
+);
 
 const familyTooHigh = validateUnpaidWorkInput({
   ...createExampleInput(),

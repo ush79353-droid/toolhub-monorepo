@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import type { MarginalCostResult } from './types';
 
@@ -65,19 +67,19 @@ export function MarginalCostResults({ result }: MarginalCostResultsProps) {
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/average-variable-cost-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Average Variable Cost
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/optimal-price-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Optimal Price
-        </a>
+        </Link>
         .
       </p>
     </div>

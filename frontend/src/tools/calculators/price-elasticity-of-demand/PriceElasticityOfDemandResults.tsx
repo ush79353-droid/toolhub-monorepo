@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { getCurrencySymbol } from '@/tools/shared/currency';
@@ -192,26 +194,26 @@ export function PriceElasticityOfDemandResults({
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/optimal-price-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Optimal Price
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/income-elasticity-of-demand-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Income Elasticity
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/cross-price-elasticity-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Cross Price Elasticity
-        </a>
+        </Link>
         .
       </p>
     </div>

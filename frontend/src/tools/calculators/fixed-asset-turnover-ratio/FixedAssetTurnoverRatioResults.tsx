@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import type { FixedAssetTurnoverRatioResult } from './types';
 
@@ -77,12 +79,12 @@ export function FixedAssetTurnoverRatioResults({
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/operating-asset-turnover-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Operating Asset Turnover
-        </a>
+        </Link>
         .
       </p>
     </div>

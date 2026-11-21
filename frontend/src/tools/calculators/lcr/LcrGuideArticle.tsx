@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { LCR_FAQS } from './content';
 
@@ -201,19 +202,19 @@ export function LcrGuideArticle() {
         Loan-to-deposit, cash ratio, and current ratio serve different
         accounting or management purposes. They are not substitutes for the
         Basel LCR’s stress-based HQLA framework. See also{' '}
-        <a
+        <Link
           href="/tools/cash-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Cash Ratio
-        </a>{' '}
+        </Link>{' '}
         and{' '}
-        <a
+        <Link
           href="/tools/current-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Current Ratio
-        </a>
+        </Link>
         .
       </p>
 
@@ -252,60 +253,60 @@ export function LcrGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/current-ratio-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Current Ratio Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/cash-ratio-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Cash Ratio Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/working-capital-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Working Capital Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/financial-leverage-ratio-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Financial Leverage Ratio Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/debt-to-equity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Debt-to-Equity Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/operating-cash-flow-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Operating Cash Flow Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/free-cash-flow-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Free Cash Flow Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

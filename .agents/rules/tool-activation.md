@@ -55,4 +55,4 @@ Optional: `--set-active`, `--set-indexable` / `--unset-indexable`, `--no-develop
 - Keepers in `backend/src/scripts/`: `assign-tool-component.ts`, seeds, publish, admin, currency, category helpers only.
 - Default preserve `isActive` / `indexable` / `isFeatured` / pillar / subPillar. Use `--set-active` / `--set-indexable` only when the task explicitly allows it.
 - `--id` and `--expected-pillar` / `--expected-subpillar` (use `null` when empty) must match the live row or refuse.
-- Register `componentKey` in `tool.key.ts` before running assign.
+- Register `componentKey` in `tool.key.ts` before running assign: append once to `APPROVED_COMPONENT_KEYS` only. Never grow a giant `||` self-check (see `.agents/rules/tool-key-allowlist.md`).

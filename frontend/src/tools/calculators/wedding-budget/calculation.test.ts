@@ -2,6 +2,7 @@
  * Run: npx --yes tsx src/tools/calculators/wedding-budget/calculation.test.ts
  */
 import assert from 'node:assert/strict';
+import type { CurrencyRatesSnapshot } from '@/tools/shared/currency-rates';
 import { calculateWeddingBudget, sectionTotal } from './calculation';
 import { createDefaultInput } from './types';
 import { validateWeddingBudgetInput } from './validation';
@@ -76,12 +77,17 @@ assert.equal(
   null
 );
 
-const defaults = validateWeddingBudgetInput(createDefaultInput(), {
+const ratesOk: CurrencyRatesSnapshot = {
   available: true,
+  baseCurrency: 'USD',
   rates: { USD: 1, PKR: 280 },
   fetchedAt: new Date().toISOString(),
-  stale: false,
-});
+  isStale: false,
+  staleThresholdHours: 48,
+  supportedCurrencies: ['USD', 'PKR'],
+};
+
+const defaults = validateWeddingBudgetInput(createDefaultInput(), ratesOk);
 assert.equal(defaults.isValid, true);
 assert.ok(defaults.result);
 assert.equal(defaults.result.totalWeddingCost, 0);
@@ -93,13 +99,7 @@ assert.equal(defaults.result.balanceStatus, 'balanced');
 const mixed = createDefaultInput();
 mixed.plannedBudget = { amount: '100000', currency: 'PKR' };
 mixed.bridesDress = { amount: '100', currency: 'USD' };
-const mixedRates = {
-  available: true as const,
-  rates: { USD: 1, PKR: 280 },
-  fetchedAt: new Date().toISOString(),
-  stale: false,
-};
-const mixedResult = validateWeddingBudgetInput(mixed, mixedRates);
+const mixedResult = validateWeddingBudgetInput(mixed, ratesOk);
 assert.equal(mixedResult.isValid, true);
 assert.ok(mixedResult.result);
 assert.equal(mixedResult.result.calcCurrency, 'PKR');

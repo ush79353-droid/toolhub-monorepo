@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import type { InventoryTurnoverResult } from './types';
 
@@ -74,19 +76,19 @@ export function InventoryTurnoverResults({
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/dio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           DIO Calculator
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/cash-conversion-cycle-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Cash Conversion Cycle
-        </a>
+        </Link>
         .
       </p>
     </div>

@@ -340,7 +340,7 @@ export function SavingsWithdrawalForm({
       {conversionError ? (
         <p className="text-xs text-rose-600">{conversionError}</p>
       ) : null}
-      {ratesStatus.stale ? (
+      {ratesStatus.isStale ? (
         <p className="text-xs text-amber-700">
           Exchange rates are older than 48 hours. Conversion still uses the stored rates.
         </p>

@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { getCurrencySymbol } from '@/tools/shared/currency';
@@ -206,19 +208,19 @@ export function OptimalPriceResults({ result }: OptimalPriceResultsProps) {
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/cross-price-elasticity-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Cross Price Elasticity
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/lerner-index-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Lerner Index
-        </a>
+        </Link>
         .
       </p>
     </div>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { RECEIVABLES_TURNOVER_FAQS } from './content';
 
@@ -174,12 +175,12 @@ export function ReceivablesTurnoverRatioGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Example: turnover 8 over 365 days → DSO ≈ 45.63 days. Use the{' '}
-        <a
+        <Link
           href="/tools/dso-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           DSO Calculator
-        </a>{' '}
+        </Link>{' '}
         when you need an explicit days measure.
       </p>
 

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { BUYING_POWER_FAQS } from './content';
 import {
@@ -254,44 +255,44 @@ export function BuyingPowerGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/salary-inflation-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Salary Inflation Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/present-value-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Present Value Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/future-value-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Future Value Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/annual-income-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Annual Income Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/savings-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Savings Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

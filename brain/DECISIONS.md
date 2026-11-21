@@ -187,3 +187,10 @@
 - **Consequences:** Does not supersede ADR-016–024. Complements ADR-024 (no per-tool assign scripts) and Ponytail minimalism. Cursor (`.cursor/rules/temporary-file-cleanup.mdc`) and Antigravity (`.agents/rules/temporary-file-cleanup.md`) both always apply. `AGENTS.md` After Every Task and the New Tool playbook DoD require the cleanup report line.
 - **Status:** Accepted
 
+## ADR-026: `tool.key.ts` allowlist self-check must use a loop
+- **Date:** 2026-11-21
+- **Decision:** When registering a calculator, append the new key once to `APPROVED_COMPONENT_KEYS` in `backend/src/modules/tools/tool.key.ts`. The direct-run self-check must iterate that array with a `for` loop (plus a separate negative `EvilEval` check). Rebuilding or extending a mega `||` / `&&` chain of `!isApprovedComponentKey(...)` calls is forbidden.
+- **Reason:** TypeScript binds nested logical expressions recursively. A chain of hundreds of keys caused `RangeError: Maximum call stack size exceeded` during `backend` `tsc` / `npm run build`.
+- **Consequences:** Does not change the allowlist semantics for `tool:assign` or admin validation. Extends ADR-009 / ADR-022 / ADR-024 registration. Enforced by `.cursor/rules/tool-key-allowlist.mdc`, `.agents/rules/tool-key-allowlist.md`, and the tool-activation rules.
+- **Status:** Accepted
+

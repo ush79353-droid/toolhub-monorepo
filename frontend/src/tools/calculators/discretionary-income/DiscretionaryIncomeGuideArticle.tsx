@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { DISCRETIONARY_INCOME_FAQS } from './content';
 
@@ -211,52 +212,52 @@ export function DiscretionaryIncomeGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/adjusted-gross-income-agi-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Adjusted Gross Income (AGI) Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/student-loan-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Student Loan Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/student-loan-payment-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Student Loan Payment Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/budget-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Budget Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/annual-income-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Annual Income Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/wage-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Wage Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

@@ -190,7 +190,7 @@ export function QuickRatioForm({
               </label>
               <FieldShell
                 error={errors.cashAndCashEquivalents}
-                muted={solving === 'requiredCash'}
+                muted={false}
               >
                 <span className="pl-3 text-sm text-muted-foreground" aria-hidden>
                   {symbol}
@@ -199,12 +199,8 @@ export function QuickRatioForm({
                   id="qr-cash"
                   className={inputClass}
                   inputMode="decimal"
-                  value={
-                    solving === 'requiredCash' && result?.requiredCash != null
-                      ? String(Math.max(0, result.requiredCash))
-                      : input.cashAndCashEquivalents
-                  }
-                  readOnly={solving === 'requiredCash'}
+                  value={input.cashAndCashEquivalents}
+                  readOnly={false}
                   onChange={(e) =>
                     set({ cashAndCashEquivalents: e.target.value })
                   }
@@ -416,10 +412,7 @@ export function QuickRatioForm({
               text="Obligations generally due within one year or the normal operating cycle, including qualifying short-term debt, accounts payable, and accrued expenses."
             />
           </label>
-          <FieldShell
-            error={errors.currentLiabilities}
-            muted={solving === 'currentLiabilities'}
-          >
+          <FieldShell error={errors.currentLiabilities} muted={false}>
             <span className="pl-3 text-sm text-muted-foreground" aria-hidden>
               {symbol}
             </span>
@@ -427,12 +420,8 @@ export function QuickRatioForm({
               id="qr-cl"
               className={inputClass}
               inputMode="decimal"
-              readOnly={solving === 'currentLiabilities'}
-              value={
-                solving === 'currentLiabilities' && result
-                  ? String(result.currentLiabilities)
-                  : input.currentLiabilities
-              }
+              readOnly={false}
+              value={input.currentLiabilities}
               onChange={(e) => set({ currentLiabilities: e.target.value })}
               placeholder="200000"
             />

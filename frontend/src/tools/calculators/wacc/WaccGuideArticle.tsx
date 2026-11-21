@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { WACC_FAQS } from './content';
 
@@ -66,19 +67,19 @@ export function WaccGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Cost of equity is the return shareholders require for equity risk. CAPM
         is a common estimate; inputs vary. See the{' '}
-        <a
+        <Link
           href="/tools/cost-of-equity-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Cost of Equity Calculator
-        </a>{' '}
+        </Link>{' '}
         and{' '}
-        <a
+        <Link
           href="/tools/capm-calculator-capital-asset-pricing-model"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           CAPM Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -92,12 +93,12 @@ export function WaccGuideArticle() {
         Cost of debt is the pre-tax borrowing cost, preferably from current
         market yields rather than outdated coupons. After-tax cost is Rd×(1−T)
         when interest is deductible. Related:{' '}
-        <a
+        <Link
           href="/tools/after-tax-cost-of-debt-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           After-Tax Cost of Debt Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -165,12 +166,12 @@ export function WaccGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         WACC commonly discounts free cash flow to the firm when financing and
         risk assumptions are consistent. Related:{' '}
-        <a
+        <Link
           href="/tools/npv-calculator-net-present-value"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           NPV Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -219,12 +220,12 @@ export function WaccGuideArticle() {
         IRR is a project return metric; WACC is a financing cost / hurdle
         estimate. Comparing them requires aligned risk and cash-flow definitions.
         See the{' '}
-        <a
+        <Link
           href="/tools/irr-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           IRR Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -262,76 +263,76 @@ export function WaccGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/cost-of-equity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Cost of Equity Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/after-tax-cost-of-debt-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             After-Tax Cost of Debt Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/capm-calculator-capital-asset-pricing-model"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             CAPM Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/unlevered-beta-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Unlevered Beta Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/debt-to-equity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Debt-to-Equity Ratio Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/roic-calculator-return-on-invested-capital"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             ROIC Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/economic-value-added-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Economic Value Added Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/irr-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             IRR Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/npv-calculator-net-present-value"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             NPV Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

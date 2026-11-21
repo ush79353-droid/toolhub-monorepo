@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { EBITDA_FAQS } from './content';
 
@@ -78,12 +79,12 @@ export function EbitdaGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         EBIT includes D&amp;A when those expenses have been deducted. EBITDA adds
         them back. See the{' '}
-        <a
+        <Link
           href="/tools/ebit-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           EBIT Calculator
-        </a>
+        </Link>
         .
       </p>
 

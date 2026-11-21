@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { INFLATION_FAQS } from './content';
 
@@ -161,19 +162,19 @@ export function InflationGuideArticle() {
         out. The Fisher relationship links nominal rates, real rates, and
         expected inflation. Central banks often respond to inflation when setting
         policy rates. See the{' '}
-        <a
+        <Link
           href="/tools/fisher-effect-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Fisher Effect Calculator
-        </a>{' '}
+        </Link>{' '}
         and{' '}
-        <a
+        <Link
           href="/tools/fisher-equation-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Fisher Equation Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -338,84 +339,84 @@ export function InflationGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/cpi-inflation-calculator-consumer-price-index"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             CPI Inflation Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/buying-power-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Buying Power Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/gdp-deflator-formula-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             GDP Deflator Formula Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/fisher-effect-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Fisher Effect Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/fisher-equation-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Fisher Equation Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/gdp-growth-rate-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             GDP Growth Rate Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/gdp-per-capita-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             GDP per Capita Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/maturity-value-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Maturity Value Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/currency-forward-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Currency Forward Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/discretionary-income-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Discretionary Income Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

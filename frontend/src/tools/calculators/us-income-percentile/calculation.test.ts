@@ -106,7 +106,10 @@ const negative = validateUsIncomePercentileInput({
   ...defaults,
   annualIncome: '-5',
 });
-assert(!negative.isValid && negative.errors.annualIncome, 'negative rejected');
+assert(
+  !negative.isValid && Boolean(negative.errors.annualIncome),
+  'negative rejected'
+);
 
 const switched = validateUsIncomePercentileInput({
   incomeType: 'household',

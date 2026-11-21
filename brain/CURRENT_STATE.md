@@ -832,18 +832,18 @@
 
 - Auto Loan Calculator is the locked master Tool Detail Page. New calculators also follow the module in `ARCHITECTURE.md` §7 and the playbook checklist (ADR-018). Next priorities: formal financial QA on Auto Loan Calculator, `listFeaturedTools` active filter (`BE-02`), and subsequent tools via the playbook (`TOOL-01`).
 - **Backend production emit (2026-11-15):** `backend/tsconfig.json` uses CommonJS/`node` so `npm run build` + `npm start` works on the server. Local day-to-day remains `npm run dev` (`tsx`).
-- **Frontend build hygiene (2026-11-19):** `eslint.config.mjs` softens unused/`prefer-const` to **warn** so mass-calculator noise does not fail `next build`. `tsconfig.json` sets `noUnusedLocals` / `noUnusedParameters` to `false` (strict null/any rules unchanged). `ToolPageDetail.countryRules` is optional. Structural TS fixes (missing type re-exports, FAQAccordion `items`, CurrencySelect `id`, mortgage FX narrowing, etc.) landed so production build exits 0.
+- **Frontend build hygiene (2026-11-21):** ESLint unused-vars fully **off** (`no-unused-vars` + `@typescript-eslint/no-unused-vars`); `prefer-const` remains warn. `tsconfig.json` keeps `noUnusedLocals` / `noUnusedParameters` **false**. Internal `/tools/` anchors use `next/link` (no raw `<a>`). Shared soft aliases: `FAQAccordion` `faqs`|`items`, optional `CurrencySelect` `id`, `InfoTooltip` `content`|`text`. `npm run build` + `tsc --noEmit` exit 0 (verified 2026-11-21).
 - **Finance & Business developed audit (2026-11-19):** Category `_id` `6af451bba27d8d1d4e98f959` (`finance-business`). Dual evidence = Mongo `isDeveloped` + frontend `IMPLEMENTED_TOOL_SLUGS`. Snapshot: **644** tools in category tree, **299** `isDeveloped=true`, **298** in sitemap, **298** both. Temp export script lives outside the repo (`%TEMP%/omni-finance-audit/`); Desktop xlsx is local-only (not committed).
 
 ---
 
-## 5. Last Verified Checks (Observed 2026-11-19 — frontend production build + Finance category audit)
+## 5. Last Verified Checks (Observed 2026-11-21 — frontend production build after unused-vars soft + Link/TS fixes)
 
 | App / Check | Command | Result |
 | :--- | :--- | :--- |
-| Frontend Production Build | `cd frontend && npm run build` | **Passed** (exit 0; Next.js 15.5.29; ESLint warnings only; `/tools/[slug]`, `/embed/[slug]`, sitemap/robots) |
+| Frontend Production Build | `cd frontend && npm run build` | **Passed** (exit 0; ESLint Errors cleared; unused-vars off; `/tools/[slug]`, `/embed/[slug]`, sitemap/robots) |
+| Frontend Type-Check | `cd frontend && npx tsc --noEmit` | **Passed** (exit 0) |
 | Finance category dual evidence | Temp Mongo + sitemap export for `6af451bba27d8d1d4e98f959` | **644** tools · **299** `isDeveloped` · **298** sitemap · **298** both |
-| Frontend Type-Check (historical) | `cd frontend && npx tsc --noEmit` | **Passed** historically; re-run after large registry batches |
 | Auto Loan Calculation Tests | `tsx frontend/src/tools/calculators/auto-loan/calculation.test.ts` | **Passed** (15 suites; last observed with Auto Loan master work) |
 | Live browser (historical) | `/tools/auto-loan-calculator` + `/embed/auto-loan-calculator` | **Passed** (master shell; ads public-only; embed `noindex`) |
 - **AFFO Calculator (`/tools/affo-calculator`):** Live simplified REIT bridge (`AFFOCalculator`, catalog `6af46f10a27d8d1d4e990111`). FFO adds eligible real-estate depreciation and property-sale losses and subtracts eligible property-sale gains. Interest income is not applied again. Simplified AFFO subtracts straight-line rent, recurring maintenance capex, and incremental maintenance not already in FFO. Optional lines cover noncash compensation, debt-issuance amortization, and signed lease amortization. Not Nareit FFO. Example: FFO 1,370,000 and AFFO 1,245,000.

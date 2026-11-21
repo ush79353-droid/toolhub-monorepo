@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { GINI_FAQS } from './content';
 
@@ -299,12 +300,12 @@ export function GiniGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         High GDP per capita does not guarantee low inequality. Pair both metrics
         — see the{' '}
-        <a
+        <Link
           href="/tools/gdp-per-capita-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           GDP per Capita Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -373,84 +374,84 @@ export function GiniGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/gdp-per-capita-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             GDP per Capita Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/gdp-growth-rate-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             GDP Growth Rate Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/gdp-gap-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             GDP Gap Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/gdp-deflator-formula-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             GDP Deflator Formula Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/discretionary-income-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Discretionary Income Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/buying-power-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Buying Power Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/cpi-inflation-calculator-consumer-price-index"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             CPI Inflation Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/comparative-advantage-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Comparative Advantage Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/productivity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Productivity Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/economic-value-added-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Economic Value Added Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import type { ReactNode } from 'react';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import type {
@@ -88,12 +90,12 @@ export function FisherEquationForm({
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
         Exact equation (1+i)=(1+r)(1+πᵉ) is the default. The approximated
         output uses i≈r+πᵉ and is labeled separately. Related:{' '}
-        <a
+        <Link
           href="/tools/fisher-effect-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Fisher Effect Calculator
-        </a>
+        </Link>
         .
       </p>
 

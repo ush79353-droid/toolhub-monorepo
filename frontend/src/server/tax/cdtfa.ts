@@ -162,9 +162,8 @@ export async function lookupCdtfaRateByAddress(
     };
   }
 
-  if (outcome.status !== 'error') {
-    cache.set(key, { expiresAt: Date.now() + CACHE_TTL_MS, outcome });
-  }
+  // Error paths return above; only cache successful / empty / ambiguous outcomes.
+  cache.set(key, { expiresAt: Date.now() + CACHE_TTL_MS, outcome });
 
   return outcome;
 }

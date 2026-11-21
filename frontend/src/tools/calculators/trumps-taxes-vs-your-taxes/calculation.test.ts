@@ -13,7 +13,7 @@ import {
   taxDifference,
   taxRatio,
 } from './calculation';
-import { createDefaultInput } from './types';
+import { createDefaultInput, type ComparisonLineResult } from './types';
 import { validateTrumpsTaxesInput } from './validation';
 
 assert.equal(DEFAULT_USER_TAX_USD, 3202);
@@ -52,7 +52,10 @@ assert.equal(itemQuantity(100, -5), 0);
   assert.equal(formatUsd(result!.trumpTax), '750.00');
 
   for (const item of COMPARISON_ITEMS) {
-    const line = [...result!.luxuryLines, ...result!.essentialLines].find((l) => l.id === item.id);
+    const line: ComparisonLineResult | undefined = [
+      ...result!.luxuryLines,
+      ...result!.essentialLines,
+    ].find((l) => l.id === item.id);
     assert.ok(line, item.id);
     assert.equal(
       line!.quantity,

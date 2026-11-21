@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { NATURAL_UNEMPLOYMENT_FAQS } from './content';
 
@@ -16,12 +17,12 @@ export function NaturalUnemploymentGuideArticle() {
         unemployment, not cyclical joblessness from recessions. This calculator uses that simplified
         textbook model only. For the overall unemployment rate from employed and unemployed counts,
         use the{' '}
-        <a
+        <Link
           href="/tools/unemployment-calculator-unemployment-rate"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Unemployment Calculator (Unemployment Rate)
-        </a>
+        </Link>
         .
       </p>
 

@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { getCurrencySymbol } from '@/tools/shared/currency';
 import type { GoodwillResult } from './types';
 
@@ -74,12 +76,12 @@ export function GoodwillResults({ result }: GoodwillResultsProps) {
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/financial-leverage-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Financial Leverage Ratio
-        </a>
+        </Link>
         .
       </p>
     </div>

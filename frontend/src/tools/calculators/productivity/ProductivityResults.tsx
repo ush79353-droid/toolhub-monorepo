@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { getCurrencySymbol } from '@/tools/shared/currency';
@@ -145,19 +147,19 @@ export function ProductivityResults({ result }: ProductivityResultsProps) {
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         Related:{' '}
-        <a
+        <Link
           href="/tools/net-income-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Net Income
-        </a>
+        </Link>
         {' · '}
-        <a
+        <Link
           href="/tools/marginal-cost-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Marginal Cost
-        </a>
+        </Link>
         .
       </p>
     </div>

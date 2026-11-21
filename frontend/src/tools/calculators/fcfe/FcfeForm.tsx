@@ -653,13 +653,13 @@ export function FcfeForm({
             </div>
           ) : null}
 
-          {method === 'fcff' ? (
+          {input.method === 'fcff' ? (
             <p className="text-xs text-muted-foreground">
               CapEx and working capital investment are already reflected in FCFF —
               only interest, tax rate, and net borrowing are applied here.
             </p>
           ) : null}
-          {method === 'cfo' ? (
+          {input.method === 'cfo' ? (
             <p className="text-xs text-muted-foreground">
               D&amp;A and working capital changes are already in CFO. Only CapEx and
               net borrowing are applied.

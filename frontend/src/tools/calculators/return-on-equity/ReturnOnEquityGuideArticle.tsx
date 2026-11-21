@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { ROE_FAQS } from './content';
 
@@ -131,12 +132,12 @@ export function ReturnOnEquityGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         ROCE definitions vary with how capital employed is calculated. See the{' '}
-        <a
+        <Link
           href="/tools/return-on-capital-employed-calculator-roce"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Return on Capital Employed Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -154,12 +155,12 @@ export function ReturnOnEquityGuideArticle() {
         ROA uses the full asset base; ROE uses equity only. Leverage can push
         ROE above ROA when debt finances assets that earn more than their
         financing cost. Compare both with the{' '}
-        <a
+        <Link
           href="/tools/return-on-assets-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Return on Assets Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -184,19 +185,19 @@ export function ReturnOnEquityGuideArticle() {
         Same net income, different equity bases — Firm B&apos;s higher ROE may
         reflect leverage or a thinner equity cushion, not necessarily stronger
         operations. Related:{' '}
-        <a
+        <Link
           href="/tools/financial-leverage-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Financial Leverage Ratio
-        </a>{' '}
+        </Link>{' '}
         and{' '}
-        <a
+        <Link
           href="/tools/debt-to-equity-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Debt-to-Equity
-        </a>
+        </Link>
         .
       </p>
 
@@ -217,19 +218,19 @@ export function ReturnOnEquityGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         DuPont separates profitability, asset efficiency, and leverage. Keep
         periods and definitions consistent. Explore the{' '}
-        <a
+        <Link
           href="/tools/dupont-analysis-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           DuPont Analysis Calculator
-        </a>{' '}
+        </Link>{' '}
         and{' '}
-        <a
+        <Link
           href="/tools/total-asset-turnover-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Total Asset Turnover Calculator
-        </a>
+        </Link>
         .
       </p>
 
@@ -295,68 +296,68 @@ export function ReturnOnEquityGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a
+          <Link
             href="/tools/return-on-assets-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Return on Assets Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/dupont-analysis-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             DuPont Analysis Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/net-profit-margin-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Net Profit Margin Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/financial-leverage-ratio-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Financial Leverage Ratio Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/return-on-capital-employed-calculator-roce"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Return on Capital Employed Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/earnings-per-share-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Earnings per Share Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/total-asset-turnover-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Total Asset Turnover Calculator
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/tools/debt-to-equity-calculator"
             className="font-medium text-primary underline-offset-2 hover:underline"
           >
             Debt-to-Equity Ratio Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

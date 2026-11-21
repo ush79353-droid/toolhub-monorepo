@@ -183,20 +183,29 @@ const ageBad = validateTrumpAccountsInput({
   ...defaults,
   startingAge: '18',
 });
-assert(!ageBad.isValid && ageBad.errors.startingAge, 'age 18 rejected');
+assert(
+  !ageBad.isValid && Boolean(ageBad.errors.startingAge),
+  'age 18 rejected'
+);
 
 const targetBad = validateTrumpAccountsInput({
   ...defaults,
   startingAge: '10',
   targetAge: '10',
 });
-assert(!targetBad.isValid && targetBad.errors.targetAge, 'target <= start');
+assert(
+  !targetBad.isValid && Boolean(targetBad.errors.targetAge),
+  'target <= start'
+);
 
 const negBal = validateTrumpAccountsInput({
   ...defaults,
   startingBalance: '-1',
 });
-assert(!negBal.isValid && negBal.errors.startingBalance, 'neg balance');
+assert(
+  !negBal.isValid && Boolean(negBal.errors.startingBalance),
+  'neg balance'
+);
 
 const incomplete = validateTrumpAccountsInput(createBlankInput());
 assert(incomplete.incomplete && !incomplete.isValid, 'blank incomplete');

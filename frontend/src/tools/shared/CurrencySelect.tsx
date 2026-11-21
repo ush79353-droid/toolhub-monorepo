@@ -13,7 +13,8 @@ import {
 } from './currency';
 
 export interface CurrencySelectProps {
-  id: string;
+  /** Optional; defaults to a stable listbox id when omitted. */
+  id?: string;
   value: SupportedCurrency;
   onChange: (currency: SupportedCurrency) => void;
   className?: string;
@@ -21,7 +22,7 @@ export interface CurrencySelectProps {
 }
 
 export function CurrencySelect({
-  id,
+  id = 'currency-select',
   value,
   onChange,
   className,

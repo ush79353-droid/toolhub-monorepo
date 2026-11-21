@@ -104,7 +104,7 @@ const bilateral = calculateVaDisability({
   conditions: [cond('a', 40, 'left-leg'), cond('b', 30, 'right-leg')],
   dependents: defaults.dependents,
 });
-assert(bilateral?.bilateralApplied, 'both legs qualify');
+assert(Boolean(bilateral?.bilateralApplied), 'both legs qualify');
 assert(Math.abs((bilateral?.bilateralCombined ?? 0) - 63.8) < 0.001, '40/30 plus 10%');
 assert(bilateral?.combinedRating === 60, '63.8 rounds to 60');
 

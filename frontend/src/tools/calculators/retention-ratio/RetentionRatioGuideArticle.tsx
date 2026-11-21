@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { RR_FAQS } from './content';
 
@@ -118,12 +119,12 @@ export function RetentionRatioGuideArticle() {
       </div>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Example: payout 35% → retention about 65%. See also the{' '}
-        <a
+        <Link
           href="/tools/dividend-payout-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Dividend Payout Ratio Calculator
-        </a>
+        </Link>
         .
       </p>
 

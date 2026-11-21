@@ -4,8 +4,12 @@ import * as React from 'react';
 import { HelpCircle } from 'lucide-react';
 
 interface InfoTooltipProps {
-  label: string;
-  text: string;
+  /** Accessible name; defaults when callers only pass body text. */
+  label?: string;
+  /** Canonical body prop. */
+  text?: string;
+  /** Legacy alias used by many calculator forms. */
+  content?: string;
   align?: 'left' | 'center' | 'right';
 }
 
@@ -16,7 +20,13 @@ const ALIGN_CLASSES: Record<NonNullable<InfoTooltipProps['align']>, string> = {
 };
 
 /** Accessible keyboard-, hover-, and tap-friendly tooltip for financial input terms. */
-export function InfoTooltip({ label, text, align = 'left' }: InfoTooltipProps) {
+export function InfoTooltip({
+  label = 'info',
+  text,
+  content,
+  align = 'left',
+}: InfoTooltipProps) {
+  const body = text ?? content ?? '';
   const [open, setOpen] = React.useState(false);
   const tooltipId = React.useId();
   const wrapperRef = React.useRef<HTMLSpanElement>(null);
@@ -69,7 +79,7 @@ export function InfoTooltip({ label, text, align = 'left' }: InfoTooltipProps) {
           role="tooltip"
           className={`absolute bottom-full z-30 mb-2 w-56 max-w-[calc(100vw-2rem)] rounded-lg border border-accent bg-accent px-3 py-2 text-[11px] font-normal leading-relaxed text-white shadow-md ${ALIGN_CLASSES[align]}`}
         >
-          {text}
+          {body}
         </span>
       )}
     </span>

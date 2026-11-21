@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { DSO_FAQS } from './content';
 
@@ -133,26 +134,26 @@ export function DsoGuideArticle() {
       <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
         Reducing DSO lowers measured CCC when other components are unchanged.
         Use the{' '}
-        <a
+        <Link
           href="/tools/cash-conversion-cycle-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Cash Conversion Cycle Calculator
-        </a>{' '}
+        </Link>{' '}
         with{' '}
-        <a
+        <Link
           href="/tools/dio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           DIO
-        </a>{' '}
+        </Link>{' '}
         and{' '}
-        <a
+        <Link
           href="/tools/dpo-calculator-days-payable-outstanding"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           DPO
-        </a>
+        </Link>
         .
       </p>
 

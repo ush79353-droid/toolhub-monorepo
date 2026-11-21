@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { PE_FAQS } from './content';
 
@@ -120,12 +121,12 @@ export function PriceToEarningsGuideArticle() {
         growth rate (in percentage points) to relate valuation to growth. PEG
         should not be used mechanically — growth estimates can be wrong, and
         both metrics ignore many other fundamentals. See the{' '}
-        <a
+        <Link
           href="/tools/peg-ratio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           PEG Ratio Calculator
-        </a>{' '}
+        </Link>{' '}
         for the growth-adjusted workflow.
       </p>
 

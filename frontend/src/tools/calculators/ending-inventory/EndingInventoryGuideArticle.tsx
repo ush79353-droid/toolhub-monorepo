@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { ENDING_INVENTORY_FAQS } from './content';
 
@@ -131,12 +132,12 @@ export function EndingInventoryGuideArticle() {
         Ending inventory affects balance-sheet valuation, profit via COGS,
         working capital, purchasing decisions, and cash-flow planning. See also
         the{' '}
-        <a
+        <Link
           href="/tools/dio-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           DIO Calculator
-        </a>
+        </Link>
         .
       </p>
 
