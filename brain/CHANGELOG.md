@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Reserve Ratio Calculator
+- **Summary:** Shipped Reserve Ratio Calculator on existing catalog slug `reserve-ratio-calculator` (`ReserveRatioCalculator`, catalog `6af46f10a27d8d1d4e99018e`, preserved `nameKey` `reserve ratio calculator`). Screenshot-first (ADR-023): ratio/required/excess/deposits/reserves modes; RR=(R/D)×100; L=D−R when applicable; surplus vs shortfall; simple m=100/RR without Infinity; magnitude + denomination CurrencySelect; composition bar; original guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Deposits **1,000** million · Reserves **100** million → RR **10%** · unreserved **900** · m **10**.
+- **Important Files:** `frontend/src/tools/calculators/reserve-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` reserve-ratio tests 15/15 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Real GDP Calculator
 - **Summary:** Shipped Real GDP Calculator on existing catalog slug `real-gdp-calculator` (`RealGdpCalculator`, catalog `6af46f10a27d8d1d4e99018d`, preserved `nameKey` `real gdp calculator`). Screenshot-first (ADR-023): Calculate Real/Nominal/GDP Deflator modes; R=(N/D)×100; shared magnitude; denomination CurrencySelect (no FX); optional real GDP growth; nominal-vs-real SVG bars; original guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Nominal **25,000** billion · Deflator **125** → Real **20,000** billion; growth 20k→21k → **5%**.

@@ -3483,6 +3483,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RelativeStrengthIndexCalculator,
     })),
   ),
+  ReserveRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/reserve-ratio/ReserveRatioCalculator'
+    ).then((mod) => ({
+      default: mod.ReserveRatioCalculator,
+    })),
+  ),
   ResidualIncomeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/residual-income/ResidualIncomeCalculator'
