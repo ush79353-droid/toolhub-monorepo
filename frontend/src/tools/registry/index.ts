@@ -36,6 +36,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnnuityPayoutCalculator,
     })),
   ),
+  AnorexicBmiCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/anorexic-bmi/AnorexicBmiCalculator'
+    ).then((mod) => ({
+      default: mod.AnorexicBmiCalculator,
+    })),
+  ),
   ArmyBodyFatCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/army-body-fat/ArmyBodyFatCalculator'
@@ -2803,6 +2810,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   BbtCalculator: lazyTool(() =>
     import('@/tools/calculators/bbt/BbtCalculator').then((mod) => ({
       default: mod.BbtCalculator,
+    })),
+  ),
+  AleveDosageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/aleve-dosage/AleveDosageCalculator'
+    ).then((mod) => ({
+      default: mod.AleveDosageCalculator,
     })),
   ),
   BenadrylDosageCalculator: lazyTool(() =>

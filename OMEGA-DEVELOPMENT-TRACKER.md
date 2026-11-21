@@ -15,7 +15,7 @@ Audit pending: deferred to final audit coordinator
 
 | # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
-| 77 | Benadryl Dosage Calculator | DEVELOPED | AUDIT PENDING | 62b94d07 (UI absorbed) | 9e6771a4 (engine absorbed) | (reg/Brain) | Completed Tools | `BenadrylDosageCalculator`; slug `benadryl-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d4` active; DailyMed bands; no FX; indexable false; TASKS `TOOL-664` |
+| 77 | Benadryl Dosage Calculator | DEVELOPED | AUDIT PENDING | 62b94d07 (UI absorbed) | 9e6771a4 (engine absorbed) | f8540224 | Completed Tools | `BenadrylDosageCalculator`; slug `benadryl-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d4` active; DailyMed bands; no FX; indexable false; TASKS `TOOL-664` |
 | 76 | Amoxicillin Pediatric Dosage Calculator | DEVELOPED | AUDIT PENDING | 32b59b94 (UI absorbed concurrent) | e445278b | (this reg/Brain) | Completed Tools | `AmoxicillinPediatricDosageCalculator`; slug `amoxicillin-pediatric-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d3` active; no FX; indexable false; TASKS `TOOL-663` |
 | 75 | BBT Calculator (Basal Body Temperature) | DEVELOPED | AUDIT PENDING | 11bc303f | f6fd6840 | (this reg/Brain) | Completed Tools | `BbtCalculator`; slug `bbt-calculator-basal-body-temperature`; Mongo `6af46f10a27d8d1d4e99020b` active; no FX; indexable false; TASKS `TOOL-665` |
 | 75 | Aleve Dosage Calculator | DEVELOPED | AUDIT PENDING | a810aef8 | 62b94d07 | (this reg/Brain) | Completed Tools | `AleveDosageCalculator`; slug `aleve-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d2` active; no FX; indexable false; TASKS `TOOL-665`; engine commit absorbed concurrent Benadryl UI staging |

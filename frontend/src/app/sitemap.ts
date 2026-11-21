@@ -687,6 +687,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'biweekly-pay-calculator',
   'semi-monthly-pay-calculator',
   'mortgage-points-calculator',
+  'aleve-dosage-calculator',
   'benadryl-dosage-calculator',
   'bbt-calculator-basal-body-temperature',
   'black-friday-calculator',
