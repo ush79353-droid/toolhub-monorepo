@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Deadweight Loss Calculator live at `/tools/deadweight-loss-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Discretionary Income Calculator live at `/tools/discretionary-income-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Discretionary Income Calculator (`/tools/discretionary-income-calculator`):** Live client-side DI tool (`componentKey: 'DiscretionaryIncomeCalculator'`, catalog `6af46f10a27d8d1d4e990178`, `nameKey` `discretionary income calculator`). Screenshot-first (ADR-023): student-loan DI = max(0, AGI−kP) with marital status, state→HHS region, dependents/family size, labeled repayment standards (IBR/PAYE/ICR/SAVE-style), verified **2024–2025** HHS poverty tables (contiguous/AK/HI); optional budgeting DI = take-home − necessary (may be negative); fixed USD; optional IDR payment estimate. Activated; **`indexable` left false**. Fixture: AGI **60k** · P **20k** · k **1.5** → DI **$30,000** / **$2,500**/mo.
 - **Deadweight Loss Calculator (`/tools/deadweight-loss-calculator`):** Live client-side welfare-loss tool (`componentKey: 'DeadweightLossCalculator'`, catalog `6af46f10a27d8d1d4e990177`, `nameKey` `deadweight loss calculator`). Screenshot-first (ADR-023): triangle DWL = ½|ΔP||ΔQ|; tax mode ½ t |Qe−Qt| + revenue; linear S&D DWL = ½(b+d)(Qe−Qd)²; denomination CurrencySelect; SVG illustrative/model graph; no monopoly/externality modes. Activated; **`indexable` left false**. Example: P **10→14** · Q **1000→800** → DWL **$400**.
 - **Currency Forward Calculator (`/tools/currency-forward-calculator`):** Live client-side CIP forward tool (`componentKey: 'CurrencyForwardCalculator'`, catalog `6af46f10a27d8d1d4e990176`, `nameKey` `currency forward calculator`). Screenshot-first (ADR-023): BASE/QUOTE = quote per 1 base; F = S × Aq/Ab with simple/annual/continuous compounding; Actual/360|365; period rates; forward points/premium/annualized premium; optional notional + settlement scenario; CurrencySelect for pair codes (manual spot/rates, no live FX); no charts. Activated; **`indexable` left false**. Example: EUR/USD · S **1.1000** · rq **5%** · rb **3%** · **90**/365 · simple → F ≈ **1.1054**.
 - **CPI Inflation Calculator – Consumer Price Index (`/tools/cpi-inflation-calculator-consumer-price-index`):** Live client-side CPI tool (`componentKey: 'CpiInflationCalculator'`, catalog `6af46f10a27d8d1d4e990175`, `nameKey` `cpi inflation calculator - consumer price index`). Screenshot-first (ADR-023): Amount × (CPI_target/CPI_base); cumulative + compound annualized inflation; purchasing-power change; historical BLS CUUR0000SA0 annual averages **1913–2025** (shared with Buying Power); custom CPI mode; fixed USD; no charts. Activated; **`indexable` left false**. Illustrative: **$1,000** · CPI 220→260 · 10y → ≈ **$1,181.82** · **+18.18%** · ≈ **+1.68%**/yr.

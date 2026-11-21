@@ -3558,6 +3558,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DeadweightLossCalculator,
     })),
   ),
+  DiscretionaryIncomeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/discretionary-income/DiscretionaryIncomeCalculator'
+    ).then((mod) => ({
+      default: mod.DiscretionaryIncomeCalculator,
+    })),
+  ),
   RentalCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/rental-commission/RentalCommissionCalculator'

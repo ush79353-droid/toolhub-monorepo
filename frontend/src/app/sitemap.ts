@@ -773,6 +773,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cpi-inflation-calculator-consumer-price-index',
   'currency-forward-calculator',
   'deadweight-loss-calculator',
+  'discretionary-income-calculator',
   'financial-leverage-ratio-calculator',
   'car-affordability-calculator',
   'cell-phone-plan-calculator',

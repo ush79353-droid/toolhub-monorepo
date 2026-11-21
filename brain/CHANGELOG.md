@@ -4,6 +4,13 @@
 
 ---
 
+### 2026-11-21 — Add Discretionary Income Calculator
+- **Summary:** Shipped Discretionary Income Calculator on existing catalog slug `discretionary-income-calculator` (`DiscretionaryIncomeCalculator`, catalog `6af46f10a27d8d1d4e990178`, preserved `nameKey` `discretionary income calculator`). Screenshot-first (ADR-023): student-loan DI = max(0, AGI−kP) with marital status, searchable state, dependents, named repayment standards, verified HHS 2024–2025 poverty guidelines (contiguous/Alaska/Hawaii); budgeting mode take-home − necessary (negative allowed); fixed USD; IDR payment estimate with servicer disclaimer. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Sources:** HHS Federal Register poverty guidelines 2024 & 2025.
+- **Example (fixture):** AGI **$60,000** · P **$20,000** · k **1.5** → DI **$30,000** · monthly **$2,500** · 10% est. payment **$250**.
+- **Important Files:** `frontend/src/tools/calculators/discretionary-income/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` Discretionary Income tests 24/24 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Deadweight Loss Calculator
 - **Summary:** Shipped Deadweight Loss Calculator on existing catalog slug `deadweight-loss-calculator` (`DeadweightLossCalculator`, catalog `6af46f10a27d8d1d4e990177`, preserved `nameKey` `deadweight loss calculator`). Screenshot-first (ADR-023): triangle DWL = ½|ΔP||ΔQ|; per-unit tax and linear S&D modes; denomination CurrencySelect; SVG DWL graph (illustrative triangle or model curves); guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**. Monopoly/externality modes not shipped (insufficient unique curve inputs without inventing assumptions).
 - **Example:** P **$10→$14** · Q **1,000→800** → DWL **$400**; tax t**=4** · Qt**=800** → revenue **$3,200**.

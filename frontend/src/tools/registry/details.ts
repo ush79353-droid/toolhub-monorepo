@@ -925,6 +925,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/currency-forward/detail'),
   DeadweightLossCalculator: () =>
     import('@/tools/calculators/deadweight-loss/detail'),
+  DiscretionaryIncomeCalculator: () =>
+    import('@/tools/calculators/discretionary-income/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>
