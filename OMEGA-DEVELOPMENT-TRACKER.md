@@ -116,6 +116,9 @@ Audit pending: deferred to final audit coordinator
 ## Session Log
 | 69 | Pence to Pounds Converter | DEVELOPED | AUDIT PENDING | 270bbd2c | 93fc88de | 7f4d8b82 | Completed Tools | `PenceToPoundsConverter`; slug `pence-to-pounds-converter`; Mongo `6af46f10a27d8d1d4e9901ca` active; fixed 100p=£1; no FX; indexable false; TASKS `TOOL-647` |
 
+| 69 | Money Counter Calculator | DEVELOPED | AUDIT PENDING | e6af2f2b | ae1b9c1b | (this reg commit) | Completed Tools | `MoneyCounterCalculator`; slug `money-counter-calculator`; Mongo `6af46f10a27d8d1d4e9901c9` active; denomination-only (no FX); indexable false; TASKS `TOOL-646` |
+
+- 2026-11-21 (Money Counter): Money Counter Calculator DEVELOPED (`e6af2f2b` / `ae1b9c1b` / reg). Mongo `6af46f10a27d8d1d4e9901c9` activated; indexable false; denomination sets only (no FX). Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Pence to Pounds): Pence to Pounds Converter DEVELOPED (`270bbd2c` / `93fc88de` / `7f4d8b82`). Mongo `6af46f10a27d8d1d4e9901ca` activated; indexable false; fixed sterling subdivision (not FX). Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Futures Contracts): Futures Contracts Calculator DEVELOPED (`5d42bb55` / `7c06d250` / reg). Mongo `6af46f10a27d8d1d4e9901c2` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Forward Rate): Forward Rate Calculator DEVELOPED (`9f6caafb` / `84e792b4` / `11c3eb5c`). Mongo `6af46f10a27d8d1d4e9901c1` activated; indexable false; annual compounding; no FX. Moved to Completed Tools. Missouri / Take-Home / Capital Gains UK untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
@@ -275,4 +278,10 @@ Prior blockers resolved with locked TY2022 TCJA baseline vs May 2021 AFP (ordina
 Screenshot-first spot/forward premium + 365-day annualization. No FX selectors. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE. UI files first landed in concurrent Early Retirement commit `0c2fd00e` (multi-agent staging collision); engine `407e9aa3`; integration commit listed below.
 
 | 65 | Forward Premium Calculator | DEVELOPED | AUDIT PENDING | 0c2fd00e | 407e9aa3 | da2db7f2 | Completed Tools | `ForwardPremiumCalculator`; slug `forward-premium-calculator`; Mongo `6af46f10a27d8d1d4e9901c0` active; indexable false; TASKS `TOOL-601`; no FX; UI via concurrent `0c2fd00e`; registry also via `106c6326`/`66203a99`; docs `da2db7f2`/`b2daffea` |
+
+### 2026-11-21 — IRA Calculator DEVELOPED
+
+Screenshot-first Traditional/SEP/SIMPLE vs Roth comparison; IRS TY2026 limits; Phase 2 FX. Missouri ON HOLD untouched. Push/Pull/Fetch/Sync: NONE. Roth IRA Calculator catalog row untouched.
+
+| 66 | IRA Calculator | DEVELOPED | AUDIT PENDING | 70713de9 | 215cc323 | (pending) | Completed Tools | `IraCalculator`; slug `ira-calculator`; Mongo `6af46f10a27d8d1d4e9901b6` active; Phase 2 FX; indexable false; TASKS `TOOL-647` |
 

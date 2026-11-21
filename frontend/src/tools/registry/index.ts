@@ -3339,6 +3339,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MirrCalculator,
     })),
   ),
+  MoneyCounterCalculator: lazyTool(() =>
+    import('@/tools/calculators/money-counter/MoneyCounterCalculator').then((mod) => ({
+      default: mod.MoneyCounterCalculator,
+    })),
+  ),
   MoneyFactorCalculator: lazyTool(() =>
     import('@/tools/calculators/money-factor/MoneyFactorCalculator').then((mod) => ({
       default: mod.MoneyFactorCalculator,
@@ -3372,6 +3377,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/mva/MvaCalculator').then((mod) => ({
       default: mod.MvaCalculator,
     })),
+  ),
+  NationalInsuranceCalculator: lazyTool(() =>
+    import('@/tools/calculators/national-insurance/NationalInsuranceCalculator').then(
+      (mod) => ({
+        default: mod.NationalInsuranceCalculator,
+      }),
+    ),
   ),
   NavCalculator: lazyTool(() =>
     import('@/tools/calculators/nav/NavCalculator').then((mod) => ({
@@ -5119,6 +5131,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/intrinsic-value/IntrinsicValueCalculator'
     ).then((mod) => ({
       default: mod.IntrinsicValueCalculator,
+    })),
+  ),
+  IraCalculator: lazyTool(() =>
+    import('@/tools/calculators/ira/IraCalculator').then((mod) => ({
+      default: mod.IraCalculator,
     })),
   ),
   InterestOnlyMortgageCalculator: lazyTool(() =>

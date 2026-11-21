@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-21 — IRA Calculator
+- **Summary:** Screenshot-first IRA Traditional/SEP/SIMPLE vs Roth comparison with end-of-year annuity growth, amortized withdrawals, IRS TY2026 USD limits, Phase 2 FX money fields; catalog activated (`indexable` false).
+- **Important Files:** `frontend/src/tools/calculators/ira/*`, registry, sitemap, dual `CURRENCY_CONVERSION_SLUGS`, `tool.key.ts`, `brain/*`, tracker.
+- **Verification:** Static formula checks; Mongo `6af46f10a27d8d1d4e9901b6` developed+active. No lint/typecheck/build/Playwright per master prompt. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Money Counter Calculator
 - **Summary:** Shipped Money Counter Calculator on existing catalog slug `money-counter-calculator` (`MoneyCounterCalculator`, catalog `6af46f10a27d8d1d4e9901c9`, preserved `nameKey` `money counter calculator`, pillar/subPillar null). Screenshot-first (ADR-023): currency denomination sets + include-coins + banknote/coin counts → total; **no FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-646`.
 - **Commits:** `e6af2f2b` (UI) / `ae1b9c1b` (engine) / (registration/Brain/tracker — this commit).

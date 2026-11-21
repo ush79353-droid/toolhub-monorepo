@@ -21,6 +21,7 @@
 | `FE-EMDASH-01` | Remove/replace em dashes in frontend user-facing calculator copy (brand titles → `\|`, detail/content/guides/forms/results/validation; skip comments + empty glyphs) | Cursor | Completed | `frontend/src/tools/calculators/**`, `brain/*` | — |
 | `TOOL-611` | Implement Call Option Calculator on existing slug `call-option-calculator` with call/put mode, asset/strike/premium/contracts, total premium ×100 equity multiplier, break-even/intrinsic/P/L, denomination CurrencySelect (no FX), verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/call-option/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-601` | Implement Forward Premium Calculator on existing slug `forward-premium-calculator` with spot/forward → period premium %, 365-day annualization, linked reverse fields, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/forward-premium/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
+| `TOOL-647` | Implement IRA Calculator on existing slug `ira-calculator` with Traditional/SEP/SIMPLE vs Roth comparison, end-of-year FV + amortized withdrawals, IRS TY2026 limits, Phase 2 FX, verified activation (**indexable false**; leave Roth IRA Calculator untouched) | Cursor | Completed | `frontend/src/tools/calculators/ira/*`, registry, sitemap, FX lists, `tool.key.ts`, `brain/*` | — |
 | `TOOL-581` | Implement Biden's Tax Plan Calculator on existing slug `bidens-tax-plan-calculator` with TY2022 TCJA vs May 2021 AFP historical comparison, fixed USD, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/bidens-tax-plan/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-580` | Implement Quiz: Annual Income Calculator on existing slug `quiz-annual-income-calculator` with seven recovered Omni-authorized MCQ questions, progressive reveal, score /7, guide/FAQ, verified activation (**indexable false**; leave Annual Income Calculator untouched) | Cursor | Completed | `frontend/src/tools/calculators/quiz-annual-income/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-579` | Implement Rate of Pay Calculator on existing slug `rate-of-pay-calculator` with hours/week + six wage fields (hourly→annual) last-edited authoritative, independent FX, dual FX slug lists, reuse Wage period math, verified activation (**indexable false**; leave RMD / Wage siblings untouched) | Cursor | Completed | `frontend/src/tools/calculators/rate-of-pay/*`, registry, sitemap, FX lists, `tool.key.ts`, `brain/*` | — |
@@ -99,6 +100,8 @@
 ---
 
 ## Completed
+
+| `TOOL-651` | Implement Capital Gains Tax UK Calculator on existing slug `capital-gains-tax-uk-calculator` with HMRC 2025/26–2026/27 rates, AEA, basic-band interaction, trust path, fixed GBP, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/capital-gains-tax-uk/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 
 | `TOOL-590` | Implement Forward Rate Calculator on existing slug `forward-rate-calculator` with annual-compounding implied forward from n₁/S₁ and n₂/S₂, yrs/mo units, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/forward-rate/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 

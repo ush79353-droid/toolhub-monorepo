@@ -847,6 +847,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/maturity-value/detail'),
   MirrCalculator: () =>
     import('@/tools/calculators/mirr/detail'),
+  MoneyCounterCalculator: () =>
+    import('@/tools/calculators/money-counter/detail'),
   MoneyFactorCalculator: () =>
     import('@/tools/calculators/money-factor/detail'),
   MoneyMarketAccountCalculator: () =>
@@ -859,6 +861,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/mutual-fund/detail'),
   MvaCalculator: () =>
     import('@/tools/calculators/mva/detail'),
+  NationalInsuranceCalculator: () =>
+    import('@/tools/calculators/national-insurance/detail'),
   NavCalculator: () =>
     import('@/tools/calculators/nav/detail'),
   NopatCalculator: () =>
@@ -1366,6 +1370,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/interest-coverage-ratio/detail'),
   IntrinsicValueCalculator: () =>
     import('@/tools/calculators/intrinsic-value/detail'),
+  IraCalculator: () => import('@/tools/calculators/ira/detail'),
   InterestOnlyMortgageCalculator: () =>
     import('@/tools/calculators/interest-only-mortgage/detail'),
   InterestPerDayCalculator: () =>
