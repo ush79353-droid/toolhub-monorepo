@@ -119,11 +119,14 @@ Audit pending: deferred to final audit coordinator
 | 72 | Put-Call Parity Calculator | DEVELOPED | AUDIT PENDING | 3e142c72 | 5cecb015 | 65e1c766 | Completed Tools | `PutCallParityCalculator`; slug `put-call-parity-calculator`; Mongo `6af46f10a27d8d1d4e9901c4` active; Phase 2 FX; indexable false; TASKS `TOOL-651`; keys/index/details/sitemap via concurrent HEAD |
 
 ## Session Log
-| 73 | Retirement Withdrawal Calculator | DEVELOPED | AUDIT PENDING | 94f217f1 | 865ce259 | (this reg commit) | Completed Tools | `RetirementWithdrawalCalculator`; slug `retirement-withdrawal-calculator`; Mongo `6af46f10a27d8d1d4e9901b9` active; denomination PKR no FX; indexable false; TASKS `TOOL-655` |
+| 74 | RMD Calculator | ALREADY DEVELOPED | AUDIT PENDING | — | — | (reconcile sitemap) | Completed Tools | Existing `RmdCalculator` reused; short slug `rmd-calculator` Mongo `6af46f10a27d8d1d4e9901ba` activated; long slug sibling already live; indexable false |
+| 73 | Retirement Withdrawal Calculator | DEVELOPED | AUDIT PENDING | 94f217f1 | 865ce259 | 3dde35ca | Completed Tools | `RetirementWithdrawalCalculator`; slug `retirement-withdrawal-calculator`; Mongo `6af46f10a27d8d1d4e9901b9` active; denomination PKR no FX; indexable false; TASKS `TOOL-655` |
 
 | 70 | RD Calculator - Recurring Deposit | DEVELOPED | AUDIT PENDING | c0468d02 | fa82f263 | 66ef9598 | Completed Tools | `RdCalculator`; slug `rd-calculator-recurring-deposit`; Mongo `6af46f10a27d8d1d4e9901b0` active; Phase 2 FX; indexable false; TASKS `TOOL-653` |
 
-- 2026-11-21 (Retirement Withdrawal): Retirement Withdrawal Calculator DEVELOPED (`94f217f1` / `865ce259` / reg+Brain+tracker). Mongo `6af46f10a27d8d1d4e9901b9` activated; indexable false; denomination-only CurrencySelect (no FX). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- 2026-11-21 (RMD Calculator): RMD Calculator **ALREADY DEVELOPED** — existing `RmdCalculator` module + long slug live. Claimed queue folder for short slug `rmd-calculator` (`6af46f10a27d8d1d4e9901ba`); assigned same component + `--set-active`; sitemap include; no duplicate rebuild commits. Moved to Completed Tools. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+- 2026-11-21 (Retirement Withdrawal): Retirement Withdrawal Calculator DEVELOPED (`94f217f1` / `865ce259` / `3dde35ca`). Mongo `6af46f10a27d8d1d4e9901b9` activated; indexable false; denomination-only CurrencySelect (no FX). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 - 2026-11-21 (RD Calculator): RD Calculator - Recurring Deposit DEVELOPED (`c0468d02` / `fa82f263` / `66ef9598`). Mongo `6af46f10a27d8d1d4e9901b0` activated; indexable false; Phase 2 FX (screenshot currency selectors). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 

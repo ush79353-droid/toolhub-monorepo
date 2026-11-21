@@ -141,6 +141,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'deferred-payment-loan-calculator',
   'rent-increase-calculator',
   'rent-or-buy-calculator',
+  'rmd-calculator',
   'rmd-calculator-required-minimum-distributions-calculator',
   'salary-calculator',
   'salary-calculator-with-overtime',
