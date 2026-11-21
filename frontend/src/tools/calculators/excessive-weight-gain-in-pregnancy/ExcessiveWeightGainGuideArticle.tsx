@@ -46,9 +46,18 @@ export function ExcessiveWeightGainGuideArticle() {
       <section id="sources" className="scroll-mt-24">
         <h2>Sources</h2>
         <p>
-          CDC maternal-infant health pregnancy-weight overview and IOM /
-          National Academies 2009 gestational weight-gain guidelines.
-          Educational only—not medical advice.
+          Primary reference:{' '}
+          <a
+            href="https://www.cdc.gov/maternal-infant-health/pregnancy-weight/"
+            className="text-primary underline-offset-2 hover:underline"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            CDC pregnancy weight overview
+          </a>
+          , with IOM / National Academies 2009 gestational weight-gain
+          guidelines for the numeric bands. Educational only—not medical
+          advice.
         </p>
       </section>
     </article>
