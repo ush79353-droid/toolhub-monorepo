@@ -658,6 +658,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PvifaCalculator',
   'RateOfPayCalculator',
   'RateOfReturnCalculator',
+  'RdCalculator',
   'RealEstateCommissionCalculator',
   'RealGdpCalculator',
   'RealRateOfReturnCalculator',

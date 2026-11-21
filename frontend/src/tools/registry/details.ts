@@ -946,6 +946,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/rate-of-pay/detail'),
   RateOfReturnCalculator: () =>
     import('@/tools/calculators/rate-of-return/detail'),
+  RdCalculator: () => import('@/tools/calculators/rd/detail'),
   RealEstateCommissionCalculator: () =>
     import('@/tools/calculators/real-estate-commission/detail'),
   RealGdpCalculator: () => import('@/tools/calculators/real-gdp/detail'),

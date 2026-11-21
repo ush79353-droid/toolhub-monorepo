@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — RD Calculator - Recurring Deposit
+- **Summary:** Shipped RD Calculator - Recurring Deposit on existing catalog slug `rd-calculator-recurring-deposit` (`RdCalculator`, catalog `6af46f10a27d8d1d4e9901b0`, preserved `nameKey` `rd calculator - recurring deposit`, pillar/subPillar null). Screenshot-first (ADR-023): monthly deposit; term yrs|mos; annual rate %; total deposits / interest / maturity; independent FX on money fields (PKR default). Bank-style quarterly compounding `i=r/400`. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. Dual `CURRENCY_CONVERSION_SLUGS`. TASKS `TOOL-653`.
+- **Commits:** `c0468d02` (UI) / `fa82f263` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** **5,000**/mo · **5**y · **6%** → deposits **300,000** · maturity ≈ **350,318**.
+- **Verification:** Static formula review + authored `calculation.test.ts` (not executed per queue Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Put-Call Parity Calculator
 - **Summary:** Screenshot-first European put–call parity (3-of-4 solve) with continuous PV(K) helper and Phase 2 FX. Mongo `6af46f10a27d8d1d4e9901c4` activated; **indexable** preserved false. Registry keys/index/details/sitemap already on HEAD via concurrent traffic; this commit adds dual FX slug lists + Brain/tracker.
 - **Important Files:** `frontend/src/tools/calculators/put-call-parity/*`, FX slug lists, `brain/*`, `OMEGA-DEVELOPMENT-TRACKER.md`.

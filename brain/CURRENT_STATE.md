@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Put-Call Parity Calculator live at `/tools/put-call-parity-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (RD Calculator - Recurring Deposit live at `/tools/rd-calculator-recurring-deposit`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **RD Calculator - Recurring Deposit (`/tools/rd-calculator-recurring-deposit`):** Live client-side bank RD maturity tool (`componentKey: 'RdCalculator'`, catalog `6af46f10a27d8d1d4e9901b0`, `nameKey` `rd calculator - recurring deposit`, pillar/subPillar null). Screenshot-first (ADR-023): monthly deposit; RD term yrs|mos; annual interest %; total deposits / total interest / maturity; independent CurrencySelect on money fields (PKR default); **Phase 2 FX**. Quarterly compounding `i=r/400`, `M=R×[(1+i)^n−1]/[1−(1+i)^(−1/3)]`. Dual `CURRENCY_CONVERSION_SLUGS`. Activated; **`indexable` left false**. Example: **5,000**/mo · **5**y · **6%** → deposits **300,000** · maturity ≈ **350,318**.
 - **Put-Call Parity Calculator (`/tools/put-call-parity-calculator`):** Live client-side European parity solver (`componentKey: 'PutCallParityCalculator'`, catalog `6af46f10a27d8d1d4e9901c4`, `nameKey` `put-call parity calculator`, pillar/subPillar null). Screenshot-first (ADR-023): enter any 3 of C / P / PV(K) / S; solve the 4th via C+PV(K)=P+S; expandable continuous PV(K)=K e^(−rT) helper; **Phase 2 FX** (independent currencies, default PKR). Activated; **`indexable` left false**. Example: C **10** · PV(K) **95** · S **100** → P **5**.
 - **Pension Calculator (`/tools/pension-calculator`):** Live client-side lump-sum vs COLA pension comparison (`componentKey: 'PensionCalculator'`, catalog `6af46f10a27d8d1d4e9901b7`, `nameKey` `pension calculator`). Screenshot-first (ADR-023): retirement age; lump sum; investment return %/yr; monthly pension; annual COLA; yearly projection table; depletion break-even age; denomination CurrencySelect (USD default, **no FX**). Activated; **`indexable` left false**. Example: age **65** · **$800,000** · **5%** · **$5,000**/mo · COLA **3.5%** → depletes ≈ **age 80**.
 - **Options Spread Calculator (`/tools/options-spread-calculator`):** Live client-side vertical options spread tool (`componentKey: 'OptionsSpreadCalculator'`, catalog `6af46f10a27d8d1d4e9901c3`, `nameKey` `options spread calculator`, pillar/subPillar null). Screenshot-first (ADR-023): bull/bear call & put; target price; contracts; long/short strike+premium; net debit/credit, max loss/profit, breakeven, potential P/L; dynamic buy/sell labels; **Phase 2 FX** (normalize to target currency); equity multiplier **100**. Activated; **`indexable` left false**. Example bull call: buy **100**@**5** · sell **110**@**2** · S**108** · 1 ct → max loss **300** · max profit **700** · BE **103** · P/L **500**.

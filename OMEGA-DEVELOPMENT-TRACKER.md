@@ -116,10 +116,14 @@ Audit pending: deferred to final audit coordinator
 | 70 | Options Spread Calculator | DEVELOPED | AUDIT PENDING | 2716e398 | 2e7a6766 (engine absorbed) / 99bdee62 (pension race) | 898d2fae | Completed Tools | `OptionsSpreadCalculator`; slug `options-spread-calculator`; Mongo `6af46f10a27d8d1d4e9901c3` active; Phase 2 FX; ×100; indexable false; TASKS `TOOL-649` |
 
 | 71 | Pension Calculator | DEVELOPED | AUDIT PENDING | 99bdee62 (UI absorb) + 8e422be1 | 42f4e549 | 5a2b0c38 | Completed Tools | `PensionCalculator`; slug `pension-calculator`; Mongo `6af46f10a27d8d1d4e9901b7` active; denomination USD no FX; indexable false; TASKS `TOOL-650` |
-| 72 | Put-Call Parity Calculator | DEVELOPED | AUDIT PENDING | 3e142c72 | 5cecb015 | (c3 pending) | Completed Tools | `PutCallParityCalculator`; slug `put-call-parity-calculator`; Mongo `6af46f10a27d8d1d4e9901c4` active; Phase 2 FX; indexable false; TASKS `TOOL-651`; keys/index/details/sitemap via concurrent HEAD |
+| 72 | Put-Call Parity Calculator | DEVELOPED | AUDIT PENDING | 3e142c72 | 5cecb015 | 65e1c766 | Completed Tools | `PutCallParityCalculator`; slug `put-call-parity-calculator`; Mongo `6af46f10a27d8d1d4e9901c4` active; Phase 2 FX; indexable false; TASKS `TOOL-651`; keys/index/details/sitemap via concurrent HEAD |
 
 ## Session Log
-- 2026-11-21 (Put-Call Parity): Put-Call Parity Calculator DEVELOPED (`3e142c72` / `5cecb015` / c3). Mongo `6af46f10a27d8d1d4e9901c4` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+| 70 | RD Calculator - Recurring Deposit | DEVELOPED | AUDIT PENDING | c0468d02 | fa82f263 | (reg commit) | Completed Tools | `RdCalculator`; slug `rd-calculator-recurring-deposit`; Mongo `6af46f10a27d8d1d4e9901b0` active; Phase 2 FX; indexable false; TASKS `TOOL-653` |
+
+- 2026-11-21 (RD Calculator): RD Calculator - Recurring Deposit DEVELOPED (`c0468d02` / `fa82f263` / reg+Brain+tracker). Mongo `6af46f10a27d8d1d4e9901b0` activated; indexable false; Phase 2 FX (screenshot currency selectors). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+- 2026-11-21 (Put-Call Parity): Put-Call Parity Calculator DEVELOPED (`3e142c72` / `5cecb015` / `65e1c766`). Mongo `6af46f10a27d8d1d4e9901c4` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 - 2026-11-21 (Pension): Pension Calculator DEVELOPED (UI via `99bdee62` absorb + `8e422be1` / `42f4e549` / `5a2b0c38`). Mongo `6af46f10a27d8d1d4e9901b7` activated; indexable false; denomination-only CurrencySelect (no FX). Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 - 2026-11-21 (Options Spread): Options Spread Calculator DEVELOPED (`2716e398` / engine via `2e7a6766` absorbed + `99bdee62` pension staging race / `898d2fae`). Mongo `6af46f10a27d8d1d4e9901c3` activated; indexable false; Phase 2 FX. Moved to Completed Tools. Missouri / Take-Home untouched. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.

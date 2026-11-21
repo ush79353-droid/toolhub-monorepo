@@ -3617,6 +3617,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RateOfReturnCalculator,
     })),
   ),
+  RdCalculator: lazyTool(() =>
+    import('@/tools/calculators/rd/RdCalculator').then((mod) => ({
+      default: mod.RdCalculator,
+    })),
+  ),
   RealEstateCommissionCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/real-estate-commission/RealEstateCommissionCalculator'

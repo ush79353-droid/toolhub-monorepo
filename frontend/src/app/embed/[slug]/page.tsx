@@ -264,6 +264,7 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'stock-average-calculator',
   'stock-split-calculator',
   'rate-of-return-calculator',
+  'rd-calculator-recurring-deposit',
   'rmd-calculator-required-minimum-distributions-calculator',
   'real-estate-commission-calculator',
   'return-on-capital-employed-calculator-roce',

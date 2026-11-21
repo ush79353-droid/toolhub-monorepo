@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-653` | Implement RD Calculator - Recurring Deposit on existing slug `rd-calculator-recurring-deposit` with monthly deposit, term yrs/mos, quarterly bank RD formula, Phase 2 FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/rd/*`, registry, sitemap, FX lists, `tool.key.ts`, `brain/*` | — |
 | `TOOL-649` | Implement Options Spread Calculator on existing slug `options-spread-calculator` with bull/bear call & put verticals, debit/credit metrics, Phase 2 FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/options-spread/*`, registry, sitemap, FX lists, `tool.key.ts`, `brain/*` | — |
 | `TOOL-648` | Implement National Insurance Calculator on existing slug `national-insurance-calculator` with HMRC Class 1 (cat A) + Class 4 separate bases, tax years 2024/25–2026/27, fixed GBP, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/national-insurance/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-647` | Implement Pence to Pounds Converter on existing slug `pence-to-pounds-converter` with bidirectional GBX↔GBP at 100p=£1, last-edited authority, no live FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/pence-to-pounds/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |

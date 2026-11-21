@@ -499,6 +499,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'simple-interest-calculator',
   'sinking-fund-calculator',
   'sip-calculator-systematic-investment-plan',
+  'rd-calculator-recurring-deposit',
   'smokers-ctc-calculator',
   'tenure-calculator',
   'time-value-of-money-calculator',
