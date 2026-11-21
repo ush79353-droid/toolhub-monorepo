@@ -4,6 +4,36 @@
 
 ---
 
+### 2026-11-22 — Benadryl Dosage Calculator
+- **Summary:** Shipped Benadryl Dosage Calculator on existing catalog slug `benadryl-dosage-calculator` (`BenadrylDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d4`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): blank age (yrs); medication type default Benadryl® Allergy ULTRATAB; product indication + max 6 doses/24h callout; age-gated DailyMed/Drug Facts bands for ULTRATAB, Extra Strength 50 mg, Children's Allergy Liquid, Dye-Free Liquid; under-6 / doctor-directed / not-labeled gates; share copies page URL only (no age/dose payload). **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-664`.
+- **Commits:** UI absorbed into concurrent `62b94d07` / engine absorbed into concurrent `9e6771a4` / (registration/Brain/tracker — this commit).
+- **Example:** ULTRATAB · age **30** → **1 to 2 tablets** every 4–6 hours · max **6**/24 h; age **4** → do not use.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — BBT Calculator | Basal Body Temperature
+- **Summary:** Shipped BBT Calculator on existing catalog slug `bbt-calculator-basal-body-temperature` (`BbtCalculator`, catalog `6af46f10a27d8d1d4e99020b`, pillar/subPillar null). Screenshot-first (ADR-023): blank usual/actual hrs·min; measured temperature with °C/°F; read-only adjusted temperature and temperature difference; 0.05 °C per 30 minutes (0.1 °C/h); overnight-wrapped signed minutes; ±6 hour validation window; absolute °F uses +32 while deltas scale by 9/5 only; share copies page URL only (no measured values). **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-662`.
+- **Commits:** `11bc303f` (UI) / `f6fd6840` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** usual **6:30** · actual **7:00** · **36.60 °C** → adjusted **36.55 °C** (Δ **−0.05 °C**).
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — Amoxicillin Pediatric Dosage Calculator
+- **Summary:** Shipped Amoxicillin Pediatric Dosage Calculator on existing catalog slug `amoxicillin-pediatric-dosage-calculator` (`AmoxicillinPediatricDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d3`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): Recommended dosage (age mos/yrs, weight kg/lb, strengths 125/200/250/400 mg/5 mL, General/Strep A/Endocarditis, Oral/IV) + Check your dosage (mg/kg/dose ↔ mg/mL); WHO-style general ranges; CDC/IDSA strep oral; AHA IE oral 50 mg/kg max 2 g; IV blocked for strep/IE (AHA uses ampicillin). **No FX**. Share copies page URL only (no clinical payload). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-663`.
+- **Commits:** UI absorbed into concurrent `32b59b94` / engine `e445278b` / (registration/Brain/tracker — this commit).
+- **Example:** **10** kg · **125** mg/5 mL · general oral **15** mg/kg/dose → **150** mg · **6** mL.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE. TASKS `TOOL-663`.
+
+### 2026-11-22 — Aleve Dosage Calculator
+- **Summary:** Shipped Aleve Dosage Calculator on existing catalog slug `aleve-dosage-calculator` (`AleveDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d2`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first layout (ADR-023) with Indication + Drug type; clinical text follows FDA OTC Aleve Drug Facts and prescription naproxen labels (rejects specimen “500 mg/day” / “2.3 tablets”). Whole-unit tablet counts only; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-662`.
+- **Commits:** `a810aef8` (UI) / `62b94d07` (engine; also absorbed concurrent Benadryl UI staging) / (registration/Brain/tracker — this commit).
+- **Example:** Pain · Tablet 220 mg OTC → 1 tablet every 8–12 h; max 3 tablets/24 h (660 mg naproxen sodium).
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — Anorexic BMI Calculator
+- **Summary:** Shipped Anorexic BMI Calculator on existing catalog slug `anorexic-bmi-calculator` (`AnorexicBmiCalculator`, catalog `6af46f10a27d8d1d4e9901df`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): US/Metric/Other unit tabs; age; female/male; height/weight; Calculate/Clear; BMI kg/m²; WHO adult healthy range 18.5–24.9 for ages 20–120; omits diagnostic reassurance and anorexia severity labels per prompt. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-661`.
+- **Commits:** `6e4f2d09` (UI) / `2097348d` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** age **20** · female · **180** cm · **60** kg → BMI **18.52** kg/m².
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-21 — Social Security Calculator
 - **Summary:** Shipped Social Security Calculator on existing catalog slug `social-security-calculator` (`SocialSecurityCalculator`, catalog `6af46f10a27d8d1d4e9901bd`, pillar/subPillar null). Screenshot-first (ADR-023): birth year, life expectancy, investment return, COLA, required FRA monthly benefit (PIA); Calculate/Clear; ideal claim age 62–70 via invested terminal value; optional comparison table; nominal break-even vs 62. Versioned SSA FRA / early reduction / DRC. **Fixed USD** (**no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-660`.
 - **Commits:** `4ff935ec` (UI) / `500247db` (engine) / (registration/Brain/tracker — this commit).
