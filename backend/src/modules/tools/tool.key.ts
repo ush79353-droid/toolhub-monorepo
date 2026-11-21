@@ -664,6 +664,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LcrCalculator',
   'MoneyMultiplierCalculator',
   'MoneySupplyCalculator',
+  'MpcCalculator',
   'BitcoinEtfCalculator',
   'BiweeklyMortgageCalculator',
   'BiWeeklyMortgagePaymentCalculator',
@@ -1478,6 +1479,7 @@ if (isDirect) {
     !isApprovedComponentKey('LcrCalculator') ||
     !isApprovedComponentKey('MoneyMultiplierCalculator') ||
     !isApprovedComponentKey('MoneySupplyCalculator') ||
+    !isApprovedComponentKey('MpcCalculator') ||
     !isApprovedComponentKey('BitcoinEtfCalculator') ||
     !isApprovedComponentKey('BiweeklyMortgageCalculator') ||
     !isApprovedComponentKey('BiWeeklyMortgagePaymentCalculator') ||

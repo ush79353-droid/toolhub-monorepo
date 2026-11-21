@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add MPC Calculator (Marginal Propensity to Consume)
+- **Summary:** Shipped MPC Calculator on existing catalog slug `mpc-calculator` (`MpcCalculator`, catalog `6af46f10a27d8d1d4e990186`, preserved `nameKey` `mpc calculator`). Screenshot-first (ADR-023): MPC=ΔC/ΔYd (or direct MPC); C=a+MPC×Yd; MPS; simplified k=1/(1−MPC) without Infinity at MPC=1; break-even Yd=a/(1−MPC); SVG consumption function + optional C=Yd line; out-of-range MPC warned not clamped. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** ΔC **$600** · ΔYd **$1,000** → MPC **0.60**; a **$18,000** · Yd **$40,000** → C **$42,000** · MPS **0.40** · k **2.50** · break-even **$45,000**.
+- **Important Files:** `frontend/src/tools/calculators/mpc/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` mpc tests 13/13 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Money Supply Calculator
 - **Summary:** Shipped Money Supply Calculator on existing catalog slug `money-supply-calculator` (`MoneySupplyCalculator`, catalog `6af46f10a27d8d1d4e990185`, preserved `nameKey` `money supply calculator`). Screenshot-first (ADR-023): monetary definition selector (U.S. Fed-style / textbook / custom); collapsible M0, MB, M1, M2, MZM, M3, M4; nonoverlapping components (savings in M1 only); M3/M4 unavailable under Fed-style; shared magnitude; SVG charts; educational guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Notes **$2,050,000** · Coins **$50,000** → M0 **$2,100,000**; Circulation **$2,100,000** · Reserves **$4,050,000** → MB **$6,150,000**; M1 **$21,501,000**; M2 **$22,641,000**.

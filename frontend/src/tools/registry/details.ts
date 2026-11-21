@@ -951,6 +951,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/money-multiplier/detail'),
   MoneySupplyCalculator: () =>
     import('@/tools/calculators/money-supply/detail'),
+  MpcCalculator: () => import('@/tools/calculators/mpc/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),
   RentalPropertyCalculator: () =>
