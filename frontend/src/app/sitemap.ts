@@ -692,6 +692,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'bbt-calculator-basal-body-temperature',
   'black-friday-calculator',
   'black-scholes-calculator',
+  'blood-donation-due-date-calculator',
   'boat-loan-calculator',
   'bond-convexity-calculator',
   'bond-current-yield-calculator',

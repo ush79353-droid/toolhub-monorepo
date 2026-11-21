@@ -4098,6 +4098,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BlackScholesCalculator,
     })),
   ),
+  BloodDonationDueDateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/blood-donation-due-date/BloodDonationDueDateCalculator'
+    ).then((mod) => ({
+      default: mod.BloodDonationDueDateCalculator,
+    })),
+  ),
   BoatLoanCalculator: lazyTool(() =>
     import('@/tools/calculators/boat-loan/BoatLoanCalculator').then((mod) => ({
       default: mod.BoatLoanCalculator,
