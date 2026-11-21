@@ -123,6 +123,8 @@
 
 ## Completed
 
+| `TOOL-680` | Implement Dosage Calculator on existing slug `dosage-calculator` with mg/kg conversion, frequency basis, liquid mL, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/dosage/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
+
 | `TOOL-671` | Implement Army Body Fat Calculator on existing slug `army-body-fat-calculator` with active-duty one-site abdomen equations (ALARACT 032/2025), legacy multi-site DoDI 1308.3 option, Table B–2 maxima, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/army-body-fat/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 
 | `TOOL-670` | Implement BMI Calculator – Body Mass Index on existing slug `bmi-calculator-body-mass-index` with BMI, BMI Prime, WHO adult categories, age/athlete panel (CDC LMS childhood percentile gated), guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/bmi-body-mass-index/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |

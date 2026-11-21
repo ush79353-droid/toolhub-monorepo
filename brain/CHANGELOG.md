@@ -5,7 +5,7 @@
 ---
 
 ### 2026-11-22 — Dosage Calculator
-- **Summary:** Shipped Dosage Calculator on existing catalog slug `dosage-calculator` (`DosageCalculator`, catalog `6af46f10a27d8d1d4e9901d0`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): weight; dosage mg|mcg|g per kg; per-day vs per-administration basis; frequency; dose; expanded liquid concentration → mL; educational conversion only (no drug recommendations); share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-671`.
+- **Summary:** Shipped Dosage Calculator on existing catalog slug `dosage-calculator` (`DosageCalculator`, catalog `6af46f10a27d8d1d4e9901d0`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): weight; dosage mg|mcg|g per kg; per-day vs per-administration basis; frequency; dose; expanded liquid concentration → mL; educational conversion only (no drug recommendations); share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-680`.
 - **Commits:** `3c99c424` (UI) / `c51c49e6` (engine; also absorbed concurrent staged `bmi-weight-loss` engine files) / (registration/Brain/tracker — this commit).
 - **Example:** **10** kg · **15** mg/kg/day · once · **25** mg/mL → **150** mg · **6** mL.
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
