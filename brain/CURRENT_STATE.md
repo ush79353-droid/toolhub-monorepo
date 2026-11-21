@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Black Friday Calculator live at `/tools/black-friday-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Cash Back Calculator live at `/tools/cash-back-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Cash Back Calculator (`/tools/cash-back-calculator`):** Live client-side rewards tool (`componentKey: 'CashBackCalculator'`, catalog `6af46f10a27d8d1d4e99019d`, `nameKey` `cash back calculator`). Screenshot-first (ADR-023): purchase × rate/100; optional checkbox-gated cashback limit (Actual = min(calc, limit)); fixed reward mode; break-even spend to reach cap; effective cost and effective rate (N/A when P=0); denomination CurrencySelect; guide/FAQ. Distinct from Cash Back or Low Interest. Activated; **`indexable` left false**. Example: **$500** · **5%** → **$25** cashback · **$475** effective cost.
 - **Black Friday Calculator (`/tools/black-friday-calculator`):** Live client-side shopping discount tool (`componentKey: 'BlackFridayCalculator'`, catalog `6af46f10a27d8d1d4e99019c`, `nameKey` `black friday calculator`). Screenshot-first (ADR-023): original + %/fixed discount; Yes/No sales tax on discounted price (rate cleared when No); optional successive second %; reverse original/rate/savings; denomination CurrencySelect; dynamic Black Friday date; guide/FAQ. Activated; **`indexable` left false**. Example: **$200** · **35%** · tax **8%** → **$140.40**.
 - **Yield to Maturity Calculator (`/tools/yield-to-maturity-calculator`):** Live client-side bond YTM tool (`componentKey: 'YieldToMaturityCalculator'`, catalog `6af46f10a27d8d1d4e99019b`, `nameKey` `yield to maturity calculator`). Screenshot-first (ADR-023): P=ΣC/(1+y/m)^t+F/(1+y/m)^N via bounded bisection; annual/semi/quarterly/monthly; zero-coupon closed form; negative YTM where y&gt;−m; reverse price/face/coupon; whole periods required (no silent rounding); denomination CurrencySelect; EAY/current yield/discount-premium copy; guide/FAQ. Activated; **`indexable` left false**. Example: F **$1,000** · P **$950** · c **5%** · annual · **10**y → ≈ **5.67%**.
 - **Tax Equivalent Yield Calculator (`/tools/tax-equivalent-yield-calculator`):** Live client-side bond tax-comparison tool (`componentKey: 'TaxEquivalentYieldCalculator'`, catalog `6af46f10a27d8d1d4e99019a`, `nameKey` `tax equivalent yield calculator`). Screenshot-first (ADR-023): TEY=Y/(1−t); reverse tax-exempt yield and implied marginal rate; optional taxable after-tax comparison; tax rate 100% blocked (no Infinity); guide/FAQ. Activated; **`indexable` left false**. Example: Y **6%** · t **30%** → TEY **8.57%**.

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Cash Back Calculator
+- **Summary:** Shipped Cash Back Calculator on existing catalog slug `cash-back-calculator` (`CashBackCalculator`, catalog `6af46f10a27d8d1d4e99019d`, preserved `nameKey` `cash back calculator`). Screenshot-first (ADR-023): percentage/fixed cashback; optional limit checkbox; break-even spend to reach cap; effective purchase cost and effective rate; denomination CurrencySelect; guide/FAQ. Distinct from `CashBackOrLowInterestCalculator`. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **$500** · **5%** → cashback **$25** · effective cost **$475**; capped **$1,500** · **5%** · limit **$50** → actual **$50**.
+- **Important Files:** `frontend/src/tools/calculators/cash-back/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` cash-back tests 12/12 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Black Friday Calculator
 - **Summary:** Shipped Black Friday Calculator on existing catalog slug `black-friday-calculator` (`BlackFridayCalculator`, catalog `6af46f10a27d8d1d4e99019c`, preserved `nameKey` `black friday calculator`). Screenshot-first (ADR-023): original price + %/fixed discount; Yes/No sales tax on discounted price; optional successive second %; reverse original/rate/savings; denomination CurrencySelect; dynamic Black Friday date helper; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **$200** · **35%** off · **8%** tax → final **$140.40** · save **$70** before tax.

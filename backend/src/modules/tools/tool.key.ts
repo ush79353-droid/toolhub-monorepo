@@ -519,6 +519,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarRefinanceCalculator',
   'RefinanceCalculator',
   'CarriedInterestCalculator',
+  'CashBackCalculator',
   'CashBackOrLowInterestCalculator',
   'CashFlowToDebtRatioCalculator',
   'ChildTaxCreditCalculator',
@@ -1354,6 +1355,7 @@ if (isDirect) {
     !isApprovedComponentKey('RefinanceCalculator') ||
 
     !isApprovedComponentKey('CarriedInterestCalculator') ||
+    !isApprovedComponentKey('CashBackCalculator') ||
     !isApprovedComponentKey('CashBackOrLowInterestCalculator') ||
     !isApprovedComponentKey('CashFlowToDebtRatioCalculator') ||
     !isApprovedComponentKey('BidensTaxPlanCalculator') ||

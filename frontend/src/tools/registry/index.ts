@@ -2883,6 +2883,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     ),
   ),
+  CashBackCalculator: lazyTool(() =>
+    import('@/tools/calculators/cash-back/CashBackCalculator').then((mod) => ({
+      default: mod.CashBackCalculator,
+    })),
+  ),
   CashBackOrLowInterestCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/cash-back-or-low-interest/CashBackOrLowInterestCalculator'

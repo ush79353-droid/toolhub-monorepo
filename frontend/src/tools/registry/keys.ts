@@ -517,6 +517,7 @@ export const APPROVED_COMPONENT_KEYS = [
 
   'LoanRepaymentCalculator',
   'CarriedInterestCalculator',
+  'CashBackCalculator',
   'CashBackOrLowInterestCalculator',
   'CashFlowToDebtRatioCalculator',
   'CashRatioCalculator',
@@ -1413,6 +1414,7 @@ export const REGISTERED_COMPONENT_KEYS = [
 
   'LoanRepaymentCalculator',
   'CarriedInterestCalculator',
+  'CashBackCalculator',
   'CashBackOrLowInterestCalculator',
   'CashFlowToDebtRatioCalculator',
   'CashRatioCalculator',

@@ -696,6 +696,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/refinance/detail'),
   CarriedInterestCalculator: () =>
     import('@/tools/calculators/carried-interest/detail'),
+  CashBackCalculator: () =>
+    import('@/tools/calculators/cash-back/detail'),
   CashBackOrLowInterestCalculator: () =>
     import('@/tools/calculators/cash-back-or-low-interest/detail'),
   CashFlowToDebtRatioCalculator: () =>
