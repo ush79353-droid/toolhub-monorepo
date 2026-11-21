@@ -714,6 +714,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'hra-exemption-calculator',
   'lumpsum-calculator',
   'moratorium-calculator',
+  'post-office-monthly-income-scheme-calculator',
   'lgd-calculator-loss-given-default',
   'credit-card-calculator',
   'credit-card-interest-calculator',

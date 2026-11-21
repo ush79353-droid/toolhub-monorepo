@@ -1005,6 +1005,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   OkunsLawCalculator: () => import('@/tools/calculators/okuns-law/detail'),
   PhillipsCurveCalculator: () =>
     import('@/tools/calculators/phillips-curve/detail'),
+  PomisCalculator: () => import('@/tools/calculators/pomis/detail'),
   PppCalculator: () => import('@/tools/calculators/ppp/detail'),
   RentalCommissionCalculator: () =>
     import('@/tools/calculators/rental-commission/detail'),

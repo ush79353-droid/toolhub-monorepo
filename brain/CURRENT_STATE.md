@@ -1,6 +1,6 @@
 # Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (Moratorium Calculator live at `/tools/moratorium-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-21** (POMIS Calculator live at `/tools/post-office-monthly-income-scheme-calculator`; Auto Loan remains master Tool Detail Page).
 
 ---
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Post Office Monthly Income Scheme Calculator (`/tools/post-office-monthly-income-scheme-calculator`):** Live client-side POMIS tool (`componentKey: 'PomisCalculator'`, catalog `6af46f10a27d8d1d4e9901ae`, `nameKey` `post office monthly income scheme calculator`). Screenshot-first (ADR-023): Individual/Joint limits; editable illustrative rate (default **6.6%** example, not claimed as live official); monthly = P×R/1200; annual/total interest; maturity date; schedule CSV; **INR fixed** (no FX). Activated; **`indexable` left false**. Example: **₹4,50,000** · **6.6%** · **5y** → **₹2,475**/mo · total interest **₹1,48,500** · total cash **₹5,98,500**.
 - **Moratorium Calculator (`/tools/moratorium-calculator`):** Live client-side EMI deferment tool (`componentKey: 'MoratoriumCalculator'`, catalog `6af46f10a27d8d1d4e9901ac`, `nameKey` `moratorium calculator`). Screenshot-first (ADR-023): loan-term vs EMI estimation; capitalized vs interest-only moratorium; three repayment plans (same-term EMI↑, extended-term EMI, same-EMI tenure); optional compounding frequency; balance chart + amortization schedule; denomination CurrencySelect (INR). Activated; **`indexable` left false**. Example: **₹300,000** · **8%** · **10y** · **12mo** capitalized same-term → accrued interest ≈ **₹24,900**; revised EMI above original.
 - **Lumpsum Calculator (`/tools/lumpsum-calculator`):** Live client-side one-time investment tool (`componentKey: 'LumpsumCalculator'`, catalog `6af46f10a27d8d1d4e9901ab`, `nameKey` `lumpsum calculator`). Screenshot-first (ADR-023): modes for initial PV / final FV / required return / term; compounding annually→daily + continuous; inflation RealFV; EAR; start/end dates; growth chart + yearly schedule; denomination CurrencySelect (INR). Activated; **`indexable` left false**. Example: goal **₹100,000** · **10%** · **10y** · monthly → PV ≈ **₹36,940.70**; FV annual **₹100,000** · **10%** · **10y** → ≈ **₹259,374.25**.
 - **HRA Exemption Calculator (`/tools/hra-exemption-calculator`):** Live client-side Indian House Rent Allowance tool (`componentKey: 'HraExemptionCalculator'`, catalog `6af46f10a27d8d1d4e9901aa`, `nameKey` `hra exemption calculator`). Screenshot-first (ADR-023): basic + eligible DA / HRA / rent / city / tax year / old|new regime / monthly|annual; Exempt=min(HRA, R−0.10S, pS); versioned 40%/50% city rules (classic metros; FY 2026–27+ educational expansion); new regime → ₹0 exempt; partial-year months; donut + breakdown; denomination CurrencySelect (INR). Activated; **`indexable` left false**. Example: **₹50k** + **₹5k** · HRA **₹20k** · rent **₹18k** · Delhi · old → exempt **₹12,500**/mo · annual **₹150,000**.

@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Post Office Monthly Income Scheme (POMIS) Calculator
+- **Summary:** Shipped POMIS Calculator on existing catalog slug `post-office-monthly-income-scheme-calculator` (`PomisCalculator`, catalog `6af46f10a27d8d1d4e9901ae`, preserved `nameKey` `post office monthly income scheme calculator`). Screenshot-first (ADR-023): Individual/Joint limits; editable illustrative rate (default 6.6% example); monthly=P×R/1200; maturity + schedule; INR fixed. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** **₹4,50,000** · **6.6%** · **5y** → **₹2,475**/mo · total interest **₹1,48,500** · total cash **₹5,98,500**.
+- **Important Files:** `frontend/src/tools/calculators/pomis/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` pomis tests 19/19 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Moratorium Calculator
 - **Summary:** Shipped Moratorium Calculator on existing catalog slug `moratorium-calculator` (`MoratoriumCalculator`, catalog `6af46f10a27d8d1d4e9901ac`, preserved `nameKey` `moratorium calculator`). Screenshot-first (ADR-023): loan-term vs EMI modes; capitalized vs interest-only moratorium; three repayment plans; optional compounding; balance chart + schedule; denomination CurrencySelect (INR). Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** **₹300,000** · **8%** · **10y** · **12mo** capitalized same-term → accrued ≈ **₹24,900**; revised EMI above original.
