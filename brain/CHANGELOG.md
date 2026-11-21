@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-22 — Blood Donation Due Date Calculator
+- **Summary:** Shipped Blood Donation Due Date Calculator on existing catalog slug `blood-donation-due-date-calculator` (`BloodDonationDueDateCalculator`, catalog `6af46f10a27d8d1d4e990204`, pillar `6af451c2a27d8d1d4e98f987`, subPillar null). Screenshot-first (ADR-023): Sex Male/Female/Custom period; locked NHS/WHO-style 12-week male / 16-week female waits; custom editable days/weeks/months; last donation → next donation via date-only math; share copies page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-672`.
+- **Commits:** `3bcb9dbb` (UI; multi-agent race also absorbed army-body-fat engine files) / `52916887` (engine) / `bf4ca7a5` (registry).
+- **Example:** Male · **12** weeks · last **2026-11-21** → next **2027-02-13**.
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Army Body Fat Calculator
 - **Summary:** Shipped Army Body Fat Calculator on existing catalog slug `army-body-fat-calculator` (`ArmyBodyFatCalculator`, catalog `6af46f10a27d8d1d4e990200`, pillar `6af451c2a27d8d1d4e98f986`, subPillar null). Screenshot-first (ADR-023): active-duty toggle (default on) uses authorized one-site abdomen + weight equations (ALARACT 032/2025 / AD 2023-11, effective 9 June 2023); unchecked uses labeled legacy DoDI 1308.3 / AR 600-9 multi-site log10 math with hip only for females; optional age vs Table B–2 maxima; cm/in and lb/kg; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-671`.
 - **Commits:** `320e8b2a` (UI) / engine absorbed into concurrent `3bcb9dbb` (plus mislabeled sibling `9e6771a4` from multi-agent race) / (registration/Brain/tracker — this commit).
