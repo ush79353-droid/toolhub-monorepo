@@ -23,7 +23,7 @@
 
 ### 2026-11-21 — Call Option Calculator
 - **Summary:** Shipped Call Option Calculator on existing catalog slug `call-option-calculator` (`CallOptionCalculator`, catalog `6af46f10a27d8d1d4e9901bf`, preserved `nameKey` `call option calculator`, pillar/subPillar null). Screenshot-first (ADR-023): call/put radios; asset/target; strike; premium per share; whole contracts; total premium = quote × 100 × contracts; break-even, intrinsic, time value, P/L at asset/target; denomination CurrencySelect (no FX / not in `CURRENCY_CONVERSION_SLUGS`). Activated via `npm run tool:assign` with `--set-active` only — **`indexable` preserved false**.
-- **Commits:** `5eecfbf6` (UI) / `db64a460` (engine) / (registration).
+- **Commits:** `5eecfbf6` (UI) / `db64a460` (engine) / (this Brain/tracker commit; registry/sitemap/tool.key/guide also present on HEAD via concurrent registration commits including `81492c88`).
 - **Example:** call · S/K **100** · premium **5** · **1** contract → total **500** · BE **105**.
 - **Verification:** Static formula review + focused `calculation.test.ts` asserts (call/put/zero/fractional contracts). Full frontend tsc / lint / build not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
