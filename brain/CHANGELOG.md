@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-22 — BMI Calculator – Body Mass Index
+- **Summary:** Shipped BMI Calculator – Body Mass Index on existing catalog slug `bmi-calculator-body-mass-index` (`BmiBodyMassIndexCalculator`, catalog `6af46f10a27d8d1d4e9901e4`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): Female/Male; height (cm/m/in/ft) + weight (kg/lb/st); BMI + BMI Prime; WHO adult categories; collapsed “BMI percentile and athletes” (age path notes; CDC LMS not bundled so childhood numeric percentile gated; athlete caution); proprietary promo omitted; share/copy = public page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-666`.
+- **Commits:** `83374631` (UI) / `4b381324` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** **80** kg · **2** m → BMI **20.00** · Prime **0.80** (normal).
+- **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Benadryl Dosage Calculator
 - **Summary:** Shipped Benadryl Dosage Calculator on existing catalog slug `benadryl-dosage-calculator` (`BenadrylDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d4`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): blank age (yrs); medication type default Benadryl® Allergy ULTRATAB; product indication + max 6 doses/24h callout; age-gated DailyMed/Drug Facts bands for ULTRATAB, Extra Strength 50 mg, Children's Allergy Liquid, Dye-Free Liquid; under-6 / doctor-directed / not-labeled gates; share copies page URL only (no age/dose payload). **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-664`.
 - **Commits:** UI absorbed into concurrent `62b94d07` / engine absorbed into concurrent `9e6771a4` / (registration/Brain/tracker — this commit).
@@ -24,7 +30,7 @@
 
 ### 2026-11-22 — Aleve Dosage Calculator
 - **Summary:** Shipped Aleve Dosage Calculator on existing catalog slug `aleve-dosage-calculator` (`AleveDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d2`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first layout (ADR-023) with Indication + Drug type; clinical text follows FDA OTC Aleve Drug Facts and prescription naproxen labels (rejects specimen “500 mg/day” / “2.3 tablets”). Whole-unit tablet counts only; share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-666`.
-- **Commits:** `a810aef8` (UI) / `62b94d07` (engine; also absorbed concurrent Benadryl UI staging) / (registration/Brain/tracker — this commit).
+- **Commits:** `a810aef8` (UI) / `62b94d07` (engine; also absorbed concurrent Benadryl UI staging) / `bf4ca7a5` (registration absorbed with Blood Donation Due Date registry commit).
 - **Example:** Pain · Tablet 220 mg OTC → 1 tablet every 8–12 h; max 3 tablets/24 h (660 mg naproxen sodium).
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
