@@ -1,6 +1,12 @@
+### 2026-11-22 — Positive Pregnancy Test at 3 Weeks Pregnant: Possible or Not?
+- **Summary:** Shipped article-context timing widget on existing catalog slug `positive-pregnancy-test-at-3-weeks-pregnant-possible-or-not` (`PositivePregnancyTestAt3WeeksCalculator`, catalog `6af46f10a27d8d1d4e9901fb`, pillar `6af451c1a27d8d1d4e98f984`, subPillar `6af451c2a27d8d1d4e98f985`). Screenshot-first (ADR-023): Natural + IVF; cycle 28; blank dates; embryo radios 3/5/6 (default 5); always-visible urine sensitivity (shared 10–25 mIU bands); reuses urine-home calendar; **no yes/no pregnancy inference**; share URL only. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-703`.
+- **Commits:** `1e7ba42f` (UI) / `2a9826e2` (engine) / (reg/Brain this commit).
+- **Example:** LMP **2026-01-01** · **28**d · 25 mIU → urine **2026-01-29**; IVF transfer **2026-03-01** day-5 → urine **2026-03-15**.
+- **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — BMI Percentile Calculator
 - **Summary:** Shipped BMI Percentile Calculator on existing catalog slug `bmi-percentile-calculator` (`BmiPercentileCalculator`, catalog `6af46f10a27d8d1d4e9901e5`, pillar `6af451c1a27d8d1d4e98f981`, subPillar null). Screenshot-first (ADR-023): blank age mos; Boy default; know-BMI checked; height/weight when unchecked; WHO BMI-for-age LMS 0–60 months; z=((BMI/M)^L−1)/(L×S); WHO ±3 SD tails; percentile=100Φ(z); no extrapolation; share URL only. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-702`.
-- **Commits:** `8b3f5dc0` (UI prior) / `d13b1baf` (engine) / (reg/Brain this commit).
+- **Commits:** `8b3f5dc0` (UI prior) / `d13b1baf` (engine) / `a95bd8a6` (reg/Brain).
 - **Example:** **24** mos boy · median BMI **15.7356** → ≈ **50th** percentile.
 - **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 

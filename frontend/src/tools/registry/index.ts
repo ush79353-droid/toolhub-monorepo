@@ -3777,6 +3777,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PositivePregnancyFollowUpCalculator,
     })),
   ),
+  PositivePregnancyTestAt3WeeksCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/positive-pregnancy-test-3-weeks/PositivePregnancyTestAt3WeeksCalculator'
+    ).then((mod) => ({
+      default: mod.PositivePregnancyTestAt3WeeksCalculator,
+    })),
+  ),
   PostJudgmentInterestCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/post-judgment-interest/PostJudgmentInterestCalculator'

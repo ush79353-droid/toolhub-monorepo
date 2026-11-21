@@ -680,6 +680,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PivotPointCalculator',
   'PortfolioBetaCalculator',
   'PositivePregnancyFollowUpCalculator',
+  'PositivePregnancyTestAt3WeeksCalculator',
   'PostJudgmentInterestCalculator',
   'PreAndPostMoneyValuationCalculator',
   'PregnancyCalculator',

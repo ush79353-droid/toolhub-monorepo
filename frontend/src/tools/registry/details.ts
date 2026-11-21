@@ -989,6 +989,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/portfolio-beta/detail'),
   PositivePregnancyFollowUpCalculator: () =>
     import('@/tools/calculators/positive-pregnancy-follow-up/detail'),
+  PositivePregnancyTestAt3WeeksCalculator: () =>
+    import('@/tools/calculators/positive-pregnancy-test-3-weeks/detail'),
   PostJudgmentInterestCalculator: () =>
     import('@/tools/calculators/post-judgment-interest/detail'),
   PreAndPostMoneyValuationCalculator: () =>

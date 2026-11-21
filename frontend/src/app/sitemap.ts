@@ -673,6 +673,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pregnancy-calculator',
   'pregnancy-conception-calculator',
   'pregnancy-test-calculator',
+  'positive-pregnancy-test-at-3-weeks-pregnant-possible-or-not',
   'pregnancy-weight-gain-calculator',
   'excessive-weight-gain-in-pregnancy',
   'pregnancy-weight-gain-week-by-week-breakdown',
