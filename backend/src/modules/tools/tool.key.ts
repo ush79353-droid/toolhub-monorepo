@@ -14,6 +14,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DebtToAssetRatioCalculator',
   'DebtToCapitalRatioCalculator',
   'DebtToEquityCalculator',
+  'DefensiveIntervalRatioCalculator',
   'DeferredAnnuityCalculator',
   'DepreciationCalculator',
   'EbitdaMarginCalculator',
@@ -1725,6 +1726,7 @@ if (isDirect) {
     !isApprovedComponentKey('DebtSnowballCalculator') ||
     !isApprovedComponentKey('DebtToAssetRatioCalculator') ||
     !isApprovedComponentKey('DebtToEquityCalculator') ||
+    !isApprovedComponentKey('DefensiveIntervalRatioCalculator') ||
     !isApprovedComponentKey('DebtToCapitalRatioCalculator') ||
     !isApprovedComponentKey('NetDebtCalculator') ||
     !isApprovedComponentKey('EbitdaMarginCalculator') ||

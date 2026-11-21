@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-11-21 — Add Defensive Interval Ratio Calculator
+- **Summary:** Shipped Defensive Interval Ratio Calculator on existing catalog slug `defensive-interval-ratio-calculator` (`DefensiveIntervalRatioCalculator`, catalog `6af46f10a27d8d1d4e990196`, preserved `nameKey` `defensive interval ratio calculator`). Screenshot-first (ADR-023): DA=C+MS+AR; DCE=(OE−NCE)/365; DIR=DA/DCE; reverse required assets / max daily; zero DCE blocked; denomination CurrencySelect; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
+- **Example:** Cash **$10M** · securities **$5M** · AR **$17M** · OE **$110M** · NCE **$37M** → DIR **160 days**.
+- **Important Files:** `frontend/src/tools/calculators/defensive-interval-ratio/*`, registry, sitemap, `tool.key.ts`, brain docs.
+- **Verification:** `npx tsx --test` defensive-interval-ratio tests 8/8 pass. Mongo `tool:assign` without `--set-indexable`. Three ADR-019 commits. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Add Credit Spread Calculator
 - **Summary:** Shipped Credit Spread Calculator on existing catalog slug `credit-spread-calculator` (`CreditSpreadCalculator`, catalog `6af46f10a27d8d1d4e990195`, preserved `nameKey` `credit spread calculator`). Screenshot-first (ADR-023): CS=Yc−Yg; percentage points ↔ basis points; reverse solves for corporate/government yields; positive/zero/negative spreads; not labeled OAS/Z-spread/CDS; guide/FAQ. Activated with existing `isActive: true`. **`indexable` preserved false**.
 - **Example:** Corporate **5.30%** · government **1.80%** → **3.50 percentage points** / **350 bps**.

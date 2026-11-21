@@ -28,6 +28,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/debt-to-capital-ratio/detail'),
   DebtToEquityCalculator: () =>
     import('@/tools/calculators/debt-to-equity/detail'),
+  DefensiveIntervalRatioCalculator: () =>
+    import('@/tools/calculators/defensive-interval-ratio/detail'),
   DeferredAnnuityCalculator: () =>
     import('@/tools/calculators/deferred-annuity/detail'),
   DepreciationCalculator: () =>

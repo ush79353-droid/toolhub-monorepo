@@ -102,6 +102,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DebtToEquityCalculator,
     })),
   ),
+  DefensiveIntervalRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/defensive-interval-ratio/DefensiveIntervalRatioCalculator'
+    ).then((mod) => ({
+      default: mod.DefensiveIntervalRatioCalculator,
+    })),
+  ),
   DeferredAnnuityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/deferred-annuity/DeferredAnnuityCalculator'
