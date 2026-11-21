@@ -1,11 +1,22 @@
-# Development Changelog (`CHANGELOG.md`)
+﻿# Development Changelog (`CHANGELOG.md`)
 
 > **Convention:** Append entries chronologically after verified tasks. Do not rewrite historical entries.
 
 ---
 
+
+### 2026-11-22 — Pregnancy Calculator
+- **Summary:** Shipped Pregnancy Calculator on existing catalog slug `pregnancy-calculator` (`PregnancyCalculator`, catalog `6af46f10a27d8d1d4e9901f5`, pillar `6af451c1a27d8d1d4e98f984`). Screenshot-first five methods (due date/LMP/ultrasound/conception/IVF); ACOG CO 700 calendar dating; milestones; share URL only. **No FX**. Activated; **indexable** false. TASKS `TOOL-678`.
+- **Commits:** `4b6b3ce0` (UI) / `6eb651f2` (engine) / (this reg/Brain).
+- **Example:** Due date **2027-03-21** → LMP-equivalent **2026-06-14**.
+- **Verification:** Focused calculation.test.ts ok. Temporary files cleaned: YES. Push: NONE.
+### 2026-11-22 — Maintenance Calorie Calculator
+- **Summary:** Shipped Maintenance Calorie Calculator on existing catalog slug `maintenance-calorie-calculator` (`MaintenanceCalorieCalculator`, catalog `6af46f10a27d8d1d4e9901ed`, pillar `6af451c1a27d8d1d4e98f982`). Screenshot-first (ADR-023): Male default; blank height/weight/age; four PAL radios (1.2/1.55/2.0/2.4); optional macro %/kcal, Devine IBW, guarded weight-change; kcal|kJ; privacy-safe share. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-689`.
+- **Commits:** UI absorbed into concurrent `a3cda40f` / `2c8824a9` (engine; also absorbed concurrent navy-body-fat engine staging) / (registration/Brain — this commit).
+- **Example:** Female · **168** cm · **62** kg · **25**y · regular → BMR ≈ **1,384** · TDEE ≈ **2,145** kcal/day.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-22 — Paracetamol Dosage Calculator
-- **Summary:** Shipped Paracetamol Dosage Calculator on existing catalog slug `paracetamol-dosage-calculator` (`ParacetamolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901db`, pillar `6af451c1a27d8d1d4e98f980`). Screenshot-first (ADR-023): age yrs/mos + weight kg/lb; educational 15 mg/kg single / 60 mg/kg daily ceilings; under-3-month gate; adult caps; Infant Tylenol link; privacy-safe share. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-686`.
+- **Summary:** Shipped Paracetamol Dosage Calculator on existing catalog slug `paracetamol-dosage-calculator` (`ParacetamolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901db`, pillar `6af451c1a27d8d1d4e98f980`). Screenshot-first (ADR-023): age yrs/mos + weight kg/lb; educational 15 mg/kg single / 60 mg/kg daily ceilings; under-3-month gate; adult caps; Infant Tylenol link; privacy-safe share. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-687`.
 - **Commits:** `bbe666d9` (UI) / `a3cda40f` (engine; also absorbed concurrent maintenance-calorie UI staging) / (registration/Brain — this commit).
 - **Example:** **8**y · **21** kg → single **315** mg · daily **1,260** mg.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
@@ -27,7 +38,7 @@
 - **Verification:** Focused `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Is BMI a Weight Gain Indicator in Pregnancy?
-- **Summary:** Shipped article-context widget on existing catalog slug `is-bmi-body-mass-index-a-weight-gain-indicator-in-pregnancy` (`IsBmiPregnancyWeightIndicatorCalculator`, catalog `6af46f10a27d8d1d4e9901f1`, pillar `6af451c1a27d8d1d4e98f983`). Screenshot-first (ADR-023): pre-pregnancy height/weight → BMI; week 40; twins No/Yes; min/max weight and gain via shared IOM engine (numerical identity with Pregnancy Weight Gain). Explains BMI selects guideline bands and does not measure gestational gain. Share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-686`.
+- **Summary:** Shipped article-context widget on existing catalog slug `is-bmi-body-mass-index-a-weight-gain-indicator-in-pregnancy` (`IsBmiPregnancyWeightIndicatorCalculator`, catalog `6af46f10a27d8d1d4e9901f1`, pillar `6af451c1a27d8d1d4e98f983`). Screenshot-first (ADR-023): pre-pregnancy height/weight → BMI; week 40; twins No/Yes; min/max weight and gain via shared IOM engine (numerical identity with Pregnancy Weight Gain). Explains BMI selects guideline bands and does not measure gestational gain. Share = page URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-687`.
 - **Commits:** `6837feba` (UI) / `b59eb4fb` (engine absorb) + `6510f141` (shared pregnancy-weight-gain IOM engine) / (registration/Brain/tracker — this commit).
 - **Example:** **165** cm · **60** kg · week **40** singleton → normal BMI ≈ **22.04** · gain **11.5–16** kg.
 - **Verification:** Focused identity `calculation.test.ts` asserts executed. Full tsc/lint/build/Playwright not run. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
@@ -3554,8 +3565,19 @@
 - **Summary:** Shipped VA Mortgage Calculator on existing catalog slug `va-mortgage-calculator` (`VaMortgageCalculator`, catalog `6af46f0fa27d8d1d4e98ff7d`). Inputs: home price, down payment %/$, term years, rate, VA eligibility, prior use, disability 10+%, funding fee financed/upfront. Results: monthly pay, house price, funding fee+%, down payment, loan amount, total payments, total interest, principal-vs-interest doughnut. Funding fees from published VA purchase table (va.gov); disability and surviving-spouse exempt. Fixed USD — no FX selectors. Activated.
 - **Example:** $500,000 / 0% down / 30y / 7.319% first use → fee 2.15% = ---
 
+
+### 2026-11-22 — Pregnancy Calculator
+- **Summary:** Shipped Pregnancy Calculator on existing catalog slug `pregnancy-calculator` (`PregnancyCalculator`, catalog `6af46f10a27d8d1d4e9901f5`, pillar `6af451c1a27d8d1d4e98f984`). Screenshot-first five methods (due date/LMP/ultrasound/conception/IVF); ACOG CO 700 calendar dating; milestones; share URL only. **No FX**. Activated; **indexable** false. TASKS `TOOL-678`.
+- **Commits:** `4b6b3ce0` (UI) / `6eb651f2` (engine) / (this reg/Brain).
+- **Example:** Due date **2027-03-21** → LMP-equivalent **2026-06-14**.
+- **Verification:** Focused calculation.test.ts ok. Temporary files cleaned: YES. Push: NONE.
+### 2026-11-22 — Maintenance Calorie Calculator
+- **Summary:** Shipped Maintenance Calorie Calculator on existing catalog slug `maintenance-calorie-calculator` (`MaintenanceCalorieCalculator`, catalog `6af46f10a27d8d1d4e9901ed`, pillar `6af451c1a27d8d1d4e98f982`). Screenshot-first (ADR-023): Male default; blank height/weight/age; four PAL radios (1.2/1.55/2.0/2.4); optional macro %/kcal, Devine IBW, guarded weight-change; kcal|kJ; privacy-safe share. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-689`.
+- **Commits:** UI absorbed into concurrent `a3cda40f` / `2c8824a9` (engine; also absorbed concurrent navy-body-fat engine staging) / (registration/Brain — this commit).
+- **Example:** Female · **168** cm · **62** kg · **25**y · regular → BMR ≈ **1,384** · TDEE ≈ **2,145** kcal/day.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-22 — Paracetamol Dosage Calculator
-- **Summary:** Shipped Paracetamol Dosage Calculator on existing catalog slug `paracetamol-dosage-calculator` (`ParacetamolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901db`, pillar `6af451c1a27d8d1d4e98f980`). Screenshot-first (ADR-023): age yrs/mos + weight kg/lb; educational 15 mg/kg single / 60 mg/kg daily ceilings; under-3-month gate; adult caps; Infant Tylenol link; privacy-safe share. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-686`.
+- **Summary:** Shipped Paracetamol Dosage Calculator on existing catalog slug `paracetamol-dosage-calculator` (`ParacetamolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901db`, pillar `6af451c1a27d8d1d4e98f980`). Screenshot-first (ADR-023): age yrs/mos + weight kg/lb; educational 15 mg/kg single / 60 mg/kg daily ceilings; under-3-month gate; adult caps; Infant Tylenol link; privacy-safe share. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-687`.
 - **Commits:** `bbe666d9` (UI) / `a3cda40f` (engine; also absorbed concurrent maintenance-calorie UI staging) / (registration/Brain — this commit).
 - **Example:** **8**y · **21** kg → single **315** mg · daily **1,260** mg.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.

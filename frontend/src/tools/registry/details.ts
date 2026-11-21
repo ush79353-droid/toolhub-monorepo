@@ -87,6 +87,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-with-discount/detail'),
   MaintainPregnancyWeightCalculator: () =>
     import('@/tools/calculators/maintain-pregnancy-weight/detail'),
+  MaintenanceCalorieCalculator: () =>
+    import('@/tools/calculators/maintenance-calorie/detail'),
   MarkdownCalculator: () =>
     import('@/tools/calculators/markdown/detail'),
   MarkupCalculator: () =>
@@ -915,6 +917,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/national-insurance/detail'),
   NavCalculator: () =>
     import('@/tools/calculators/nav/detail'),
+  NavyBodyFatCalculator: () =>
+    import('@/tools/calculators/navy-body-fat/detail'),
   NopatCalculator: () =>
     import('@/tools/calculators/nopat/detail'),
   NpvCalculator: () =>
@@ -968,6 +972,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/post-judgment-interest/detail'),
   PreAndPostMoneyValuationCalculator: () =>
     import('@/tools/calculators/pre-and-post-money-valuation/detail'),
+  PregnancyCalculator: () =>
+    import('@/tools/calculators/pregnancy/detail'),
   PregnancyWeightGainCalculator: () =>
     import('@/tools/calculators/pregnancy-weight-gain/detail'),
   PresentValueCalculator: () =>

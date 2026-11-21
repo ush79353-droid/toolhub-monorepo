@@ -1,4 +1,4 @@
-# OmegaCalculators — Automated Development Tracker
+﻿# OmegaCalculators — Automated Development Tracker
 
 ## Summary
 
@@ -13,11 +13,14 @@ Audit pending: deferred to final audit coordinator
 
 ## Calculator Register
 
-| # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
+| # | Calculator |
+| 84 | Pregnancy Calculator | DEVELOPED | AUDIT PENDING | 4b6b3ce0 | 6eb651f2 | (reg) | Completed Tools | `PregnancyCalculator`; slug `pregnancy-calculator`; Mongo `6af46f10a27d8d1d4e9901f5` active; no FX; indexable false; TASKS `TOOL-678` | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
+| 92 | Maintenance Calorie Calculator | DEVELOPED | AUDIT PENDING | a3cda40f (UI absorb) | 2c8824a9 | (reg/Brain this commit) | Completed Tools | `MaintenanceCalorieCalculator`; slug `maintenance-calorie-calculator`; Mongo `6af46f10a27d8d1d4e9901ed` active; Mifflin×PAL; no FX; indexable false; TASKS `TOOL-689` |
+| 89 | Paracetamol Dosage Calculator | DEVELOPED | AUDIT PENDING | bbe666d9 | a3cda40f | (this reg) | Completed Tools | `ParacetamolDosageCalculator`; slug `paracetamol-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901db` active; no FX; indexable false; TASKS `TOOL-687`; engine commit absorbed concurrent maintenance-calorie UI |
 | 91 | Pregnancy Weight Gain Calculator | DEVELOPED | AUDIT PENDING | c7ce7a51 (UI absorb) | 6510f141 (engine absorb/shared IOM) | (reg/Brain this commit) | Completed Tools | `PregnancyWeightGainCalculator`; slug `pregnancy-weight-gain-calculator`; Mongo `6af46f10a27d8d1d4e9901f2` active; IOM 2009; no FX; indexable false; TASKS `TOOL-688`; Excessive thin UI still pending |
 | 90 | Ibuprofen Dosage Calculator | DEVELOPED | AUDIT PENDING | d2d04130 | 546e5d65 (engine absorbed) | (this reg/Brain) | Completed Tools | `IbuprofenDosageCalculator`; slug `ibuprofen-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d6` active; Motirin Infants’/Children’s DailyMed bands; no FX; indexable false; TASKS `TOOL-687` |
-| 89 | Is BMI a Weight Gain Indicator in Pregnancy? | DEVELOPED | AUDIT PENDING | 6837feba | b59eb4fb (engine absorb) + 6510f141 (shared IOM) | (reg/Brain) | Completed Tools | `IsBmiPregnancyWeightIndicatorCalculator`; slug `is-bmi-body-mass-index-a-weight-gain-indicator-in-pregnancy`; Mongo `6af46f10a27d8d1d4e9901f1` active; no FX; indexable false; TASKS `TOOL-686` |
+| 89 | Is BMI a Weight Gain Indicator in Pregnancy? | DEVELOPED | AUDIT PENDING | 6837feba | b59eb4fb (engine absorb) + 6510f141 (shared IOM) | (reg/Brain) | Completed Tools | `IsBmiPregnancyWeightIndicatorCalculator`; slug `is-bmi-body-mass-index-a-weight-gain-indicator-in-pregnancy`; Mongo `6af46f10a27d8d1d4e9901f1` active; no FX; indexable false; TASKS `TOOL-687` |
 | 83 | Infant Tylenol Dosage Calculator | DEVELOPED | AUDIT PENDING | c7ce7a51 | c8fb7a80 | 22305ff3 | Completed Tools | `InfantTylenolDosageCalculator`; slug `infant-tylenol-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d7` active; DailyMed/Tylenol.com weight bands; no FX; indexable false; TASKS `TOOL-677` |
 | 75 | Calorie Deficit Calculator | DEVELOPED | AUDIT PENDING | 26683baa | 26683baa | (this Brain) | Completed Tools | `CalorieDeficitCalculator`; slug `calorie-deficit-calculator`; Mongo `6af46f10a27d8d1d4e9901ea` active; registry via `c9c44e05`; no FX; indexable false; TASKS `TOOL-662` |
 | 81 | Geriatric BMI Calculator | DEVELOPED | AUDIT PENDING | b8d8b57e | 80185cec | 8bc7a71c | Completed Tools | `GeriatricBmiCalculator`; slug `geriatric-bmi-calculator`; Mongo `6af46f10a27d8d1d4e9901e7` active; older-adult bands; no FX; indexable false |

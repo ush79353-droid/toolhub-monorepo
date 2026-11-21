@@ -3564,6 +3564,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NavCalculator,
     })),
   ),
+  NavyBodyFatCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/navy-body-fat/NavyBodyFatCalculator'
+    ).then((mod) => ({
+      default: mod.NavyBodyFatCalculator,
+    })),
+  ),
   NopatCalculator: lazyTool(() =>
     import('@/tools/calculators/nopat/NopatCalculator').then((mod) => ({
       default: mod.NopatCalculator,
@@ -3705,6 +3712,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   PreAndPostMoneyValuationCalculator: lazyTool(() =>
     import('@/tools/calculators/pre-and-post-money-valuation/PreAndPostMoneyValuationCalculator').then((mod) => ({
       default: mod.PreAndPostMoneyValuationCalculator,
+    })),
+  ),
+  PregnancyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/pregnancy/PregnancyCalculator'
+    ).then((mod) => ({
+      default: mod.PregnancyCalculator,
     })),
   ),
   PregnancyWeightGainCalculator: lazyTool(() =>
