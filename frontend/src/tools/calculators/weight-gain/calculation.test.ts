@@ -46,6 +46,13 @@ assert.ok(plan!.gainCaloriesKcal != null);
 assert.ok(Math.abs(plan!.gainCaloriesKcal! - (maint + 500)) < 0.5);
 assert.equal(plan!.goalFeasible, true);
 
+const strictGoal: WeightGainInput = { ...withGoal, gainPace: 'strict' };
+const strict = calculateWeightGain(strictGoal);
+assert.ok(strict);
+assert.equal(strict!.weeksToGoal, 5);
+assert.equal(strict!.surplusKcal, 1000);
+assert.ok(Math.abs(strict!.gainCaloriesKcal! - (maint + 1000)) < 0.5);
+
 assert.equal(weeksToGoal(60, 60, 0.5).feasible, false);
 assert.equal(weeksToGoal(60, 55, 0.5).feasible, false);
 assert.equal(weeksToGoal(60, 65, 1).weeks, 5);

@@ -1,3 +1,9 @@
+### 2026-11-22 — Tylenol Dosage Calculator
+- **Summary:** Shipped Tylenol Dosage Calculator on existing catalog slug `tylenol-dosage-calculator` (`TylenolDosageCalculator`, catalog `6af46f10a27d8d1d4e9901dd`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): symptom radios + product dropdown; DailyMed Drug Facts for Regular Strength 325, Extra Strength 500 (every 6 hours — not legacy 4–6), Sinus Severe, Cold + Flu Severe, PM; 24-hour unit/mg ceilings; combo acetaminophen warning; symptom/product mismatch; share URL only. **No FX**. Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-699`.
+- **Commits:** `2ee8163f` (UI) / `f2962cf0` (engine) / (registration/Brain/tracker — this commit).
+- **Example:** Headache · Regular Strength → **2 tablets** every 4 to 6 hours · max **10**/24 h (**3,250** mg APAP).
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Quiz: Fetal Weight Percentile
 - **Summary:** Shipped Quiz: Fetal Weight Percentile on existing catalog slug `quiz-fetal-weight-percentile` (`QuizFetalWeightPercentileCalculator`, catalog `6af46f10a27d8d1d4e99020a`, pillar `6af451c2a27d8d1d4e98f988`). Five MCQs; score /5 only when complete; explanations checkbox; Hadlock/centile educational copy; share URL only. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-696`.
 - **Commits:** `66bb8bae` (UI) / `a04679ff` (engine) / (registration/Brain/tracker — this commit). Note: `a4e210df` mislabeled quiz engine but contained reverse-due-date files from concurrent staging.
@@ -18,7 +24,7 @@
 
 ### 2026-11-22 — Reverse Due Date Calculator
 - **Summary:** Shipped Reverse Due Date Calculator on existing catalog slug `reverse-due-date-calculator` (`ReverseDueDateCalculator`, catalog `6af46f10a27d8d1d4e990206`, pillar `6af451c2a27d8d1d4e98f987`). Screenshot-first (ADR-023): blank due/conception/intercourse dates; pregnancy length default **40** weeks; bidirectional last-edited authority; conception = EDD − (L − 14); intercourse window start = conception − 7; share URL only. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-694`.
-- **Commits:** `39da285d` (UI) / `a4e210df` (engine absorb) / (reg/Brain this commit).
+- **Commits:** `39da285d` (UI) / `a4e210df` (engine absorb) / `2d3aa69e` (reg absorb w/ Tramadol).
 - **Example:** EDD **2023-08-01** · **40** wks → conception **2022-11-08** · intercourse from **2022-11-01**.
 - **Verification:** Static ACOG offset check + authored `calculation.test.ts`. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 

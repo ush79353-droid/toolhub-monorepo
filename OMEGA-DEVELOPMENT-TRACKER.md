@@ -12,10 +12,12 @@ Audit completed: 0
 Audit pending: deferred to final audit coordinator
 
 ## Calculator Register
+| 99 | Tylenol Dosage Calculator | DEVELOPED | AUDIT PENDING | 2ee8163f | f2962cf0 | (this reg/Brain) | Completed Tools | `TylenolDosageCalculator`; slug `tylenol-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901dd` active; no FX; indexable false; TASKS `TOOL-699` |
 | 96 | Quiz: Fetal Weight Percentile | DEVELOPED | AUDIT PENDING | 66bb8bae | a04679ff | (this reg/Brain) | Completed Tools | `QuizFetalWeightPercentileCalculator`; slug `quiz-fetal-weight-percentile`; Mongo `6af46f10a27d8d1d4e99020a` active; no FX; indexable false; TASKS `TOOL-696` |
 
 | # | Calculator | Development Status | Audit Status | Commit 1 | Commit 2 | Commit 3 | Folder | Notes |
 |---|---|---|---|---|---|---|---|---|
+| 99 | Tylenol Dosage Calculator | DEVELOPED | AUDIT PENDING | 2ee8163f | f2962cf0 | (this reg/Brain) | Completed Tools | `TylenolDosageCalculator`; slug `tylenol-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901dd` active; DailyMed OTC; Extra Strength q6h; no FX; indexable false; TASKS `TOOL-699` |
 | 97 | Skinfold Body Fat Calculator | DEVELOPED | AUDIT PENDING | 10a22b42 | 5d939b5b | (this reg/Brain) | Completed Tools | `SkinfoldBodyFatCalculator`; slug `skinfold-body-fat-calculator`; Mongo `6af46f10a27d8d1d4e990202` active; no FX; indexable false; TASKS `TOOL-697`; UI commit absorbed concurrent twin/VTE staging |
 | 84 | Pregnancy Calculator | DEVELOPED | AUDIT PENDING | 4b6b3ce0 | 6eb651f2 | (reg) | Completed Tools | `PregnancyCalculator`; slug `pregnancy-calculator`; Mongo `6af46f10a27d8d1d4e9901f5` active; no FX; indexable false; TASKS `TOOL-678` |
 | 96 | Gabapentin Dosage Calculator | DEVELOPED | AUDIT PENDING | d50c4670 | 9d103f5a | (reg) | Completed Tools | `GabapentinDosageCalculator`; slug `gabapentin-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d5` active; no FX; indexable false; TASKS `TOOL-694` |
