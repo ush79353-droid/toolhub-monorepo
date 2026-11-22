@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-22 — Simpler privacy policy
+- **Summary:** `/privacy-policy` uses the mint hero and one article. The date and email-retention period live in `siteConfig.privacy`. The article names the California sales-tax lookup, says the contact form is not stored on the site, and links the Google and aboutads.info opt-out pages. It does not claim that Google Analytics is already installed.
+- **Important Files:** `frontend/src/app/(website)/privacy-policy/page.tsx`, `frontend/src/config/site.ts`.
+- **Verification:** `/privacy-policy` shows the mint hero, the 15 sections, the four external opt-out links, and the contact email. Temporary files cleaned: YES.
+
 ### 2026-11-22 — Contact page split layout
 - **Summary:** `/contact` puts email, phone, and location in a quarter-width column and the form in the remaining space. The longer notes sit below as four short blocks. Empty detail fields stay hidden. Phone is `siteConfig.contact.phone`.
 - **Important Files:** `frontend/src/app/(website)/contact/page.tsx`, `frontend/src/config/site.ts`, `frontend/src/components/contact/ContactForm.tsx`.

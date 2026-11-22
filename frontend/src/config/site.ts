@@ -39,6 +39,13 @@ export const siteConfig = {
     company: 'Uzair Software House',
     street: '',
   },
+  /**
+   * Privacy policy. Change the date and the email-keeping period here.
+   */
+  privacy: {
+    updated: 'November 14, 2026',
+    emailRetention: '12 months',
+  },
   /** Footer social icons. Change hrefs here; empty href hides that icon. */
   social: [
     { id: 'facebook', label: 'Facebook', href: 'https://facebook.com/' },

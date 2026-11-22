@@ -27,7 +27,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 | `/categories/[slug]` | `(website)/categories/[slug]/page.tsx` | Server Component fetching `GET /catalog/categories/:slug`. Mint hero, then active tools as cards under their pillar and sub-pillar. Other categories use the homepage card grid. | **Implemented** |
 | `/about` | `(website)/about/page.tsx` | Server Component. Mint hero, then the About article. Operator name, city, country, and email come from `siteConfig.operator` and stay off the page while empty. Disclaimer links to `/terms-of-service#disclaimers`. | **Implemented** |
 | `/contact` | `(website)/contact/page.tsx` | Server page. Mint hero, then a 1/4 details column (email, phone, business email, city, country) and a 3/4 form. The form opens the visitor’s email app. Empty detail fields stay off the column. Phone is `siteConfig.contact.phone`. | **Implemented** |
-| `/privacy-policy` | `(website)/privacy-policy/page.tsx` | Static legal draft template (marked draft pending legal review) | **Partially Implemented** (draft copy) |
+| `/privacy-policy` | `(website)/privacy-policy/page.tsx` | Mint hero and one article. Last updated date and email-retention period come from `siteConfig.privacy`. Contact email and the operator line reuse `operator` and `contact`. External opt-out links: Google Analytics add-on, Google Ads Settings, aboutads.info, and Google’s partner-sites policy. | **Implemented** |
 | `/terms-of-service` | `(website)/terms-of-service/page.tsx` | Static legal draft template (marked draft pending legal review) | **Partially Implemented** (draft copy) |
 | `*` (404) | `src/app/not-found.tsx` | Custom 404 page with `Header` & `Footer` | **Implemented** |
 
