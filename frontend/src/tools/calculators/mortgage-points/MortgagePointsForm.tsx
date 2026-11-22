@@ -224,7 +224,7 @@ export function MortgagePointsForm({
     const loan = parseMoneyInput(raw);
     const pointsI = parseMoneyInput(input.optionIPoints);
     const pointsII = parseMoneyInput(input.optionIIPoints);
-    let next: MortgagePointsInput = { ...input, loanAmount: raw };
+    const next: MortgagePointsInput = { ...input, loanAmount: raw };
     if (Number.isFinite(loan) && loan > 0) {
       if (Number.isFinite(pointsI) && pointsI >= 0) {
         const c = costInCurrency(

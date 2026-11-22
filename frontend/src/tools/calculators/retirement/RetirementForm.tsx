@@ -150,7 +150,7 @@ export function RetirementForm({
     next: RetirementInput,
     opts: { updateLife: boolean; updatePension: boolean }
   ): RetirementInput => {
-    let patched = { ...next };
+    const patched = { ...next };
     if (opts.updateLife) {
       patched.lifeExpectancy = formatLifeExpectancyDefault(
         suggestedLifeExpectancy(patched.country, patched.sex)

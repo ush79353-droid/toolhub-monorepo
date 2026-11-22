@@ -88,7 +88,7 @@ export function calculatePensionComparison(
   if (monthlyPension === 0) {
     let bal = lumpSum;
     for (let y = 0; y < Math.min(10, maxYears); y++) {
-      let annual = 0;
+      const annual = 0;
       for (let m = 0; m < 12; m++) {
         bal = bal * (1 + rm);
       }

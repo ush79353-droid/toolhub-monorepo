@@ -177,7 +177,7 @@ export function calculateCashBackFromInput(
 
   if (!Number.isFinite(calculated) || calculated < 0) return null;
 
-  let hasLimit = input.hasCashbackLimit;
+  const hasLimit = input.hasCashbackLimit;
   let limit: number | null = null;
   let actual = calculated;
   let applied = false;

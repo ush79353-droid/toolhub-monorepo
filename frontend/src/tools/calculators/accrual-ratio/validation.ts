@@ -164,7 +164,7 @@ export function validateAccrualRatioInput(
   let cashFlowAccruals: number | null = null;
   let accrualRatio: number | null = null;
   let status: AccrualRatioStatus = denom.status;
-  let warningMessage = denom.warningMessage;
+  const warningMessage = denom.warningMessage;
 
   if (denom.status === 'zeroDenominator') {
     accrualRatio = null;

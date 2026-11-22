@@ -381,7 +381,7 @@ export function calculateCyberMondayFromInput(
   const deal = merchandiseAfterDeal(input, unitPrice, quantity);
   if (!deal) return null;
 
-  let discountedSubtotal = deal.discountedSubtotal;
+  const discountedSubtotal = deal.discountedSubtotal;
   if (!Number.isFinite(discountedSubtotal) || discountedSubtotal < 0) {
     return null;
   }

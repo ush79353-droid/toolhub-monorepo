@@ -186,7 +186,7 @@ export function OptionsSpreadForm({
       <div>
         <label htmlFor={id} className={labelClass}>
           {label}
-          {tip ? <InfoTooltip label={label}>{tip}</InfoTooltip> : null}
+          {tip ? <InfoTooltip label={label} text={tip} /> : null}
         </label>
         <div className="flex gap-2">
           <FieldShell error={error}>
@@ -232,7 +232,7 @@ export function OptionsSpreadForm({
       <div>
         <label htmlFor={id} className={labelClass}>
           {label}
-          {tip ? <InfoTooltip label={label}>{tip}</InfoTooltip> : null}
+          {tip ? <InfoTooltip label={label} text={tip} /> : null}
         </label>
         <div className="flex gap-2">
           <FieldShell muted>
@@ -315,10 +315,10 @@ export function OptionsSpreadForm({
       <div>
         <label htmlFor="os-contracts" className={labelClass}>
           Amount of options you will trade
-          <InfoTooltip label="Contracts">
-            Whole number of contracts. Each standard equity contract covers{' '}
-            {EQUITY_OPTION_CONTRACT_MULTIPLIER} shares.
-          </InfoTooltip>
+          <InfoTooltip
+            label="Contracts"
+            text={`Whole number of contracts. Each standard equity contract covers ${EQUITY_OPTION_CONTRACT_MULTIPLIER} shares.`}
+          />
         </label>
         <FieldShell error={errors.contracts}>
           <input

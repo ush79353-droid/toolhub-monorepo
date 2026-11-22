@@ -177,7 +177,7 @@ export function DebtServiceCoverageRatioForm({
     if (noiInGi === null) return next;
 
     // Convert GI-period NOI into the NOI field currency/frequency.
-    let monthlyNoi =
+    const monthlyNoi =
       next.grossIncomeFrequency === 'yr' ? noiInGi / 12 : noiInGi;
     let displayNoi = monthlyNoi;
     if (next.noiFrequency === 'yr') displayNoi = monthlyNoi * 12;

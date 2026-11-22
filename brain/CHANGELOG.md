@@ -167,6 +167,11 @@
 - **Example:** call · S/K **100** · premium **5** · **1** contract → total **500** · BE **105**.
 - **Verification:** Static formula review + focused `calculation.test.ts` asserts (call/put/zero/fractional contracts). Full frontend tsc / lint / build not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-22 — Frontend production build green
+- **Summary:** Cleared ESLint and TypeScript blockers that stopped `next build`: retirement related links use `Link`, categories empty copy escapes quotes, `prefer-const` cleanups, Options Spread tooltips use `text`, Put–call parity rates status object, registry adds `YieldToCallCalculator` and drops a duplicate `ForwardRateCalculator`, CurrencySelect allow-set typing.
+- **Important Files:** `frontend/src/tools/calculators/retirement/RetirementGuideArticle.tsx`, `frontend/src/tools/registry/index.ts`, `frontend/src/tools/shared/CurrencySelect.tsx`, and related lint/type fix files.
+- **Verification:** `npm run type-check` and `npm run build` in `frontend/` both succeed. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Contact form restored
 - **Summary:** `/contact` has the form again, in the site card style. Subjects are General, Report a mistake, Suggest a tool, and Business. Submit opens the visitor’s email app. The privacy policy says the form is not stored on the site.
 - **Important Files:** `frontend/src/components/contact/ContactForm.tsx`, `frontend/src/components/contact/contact-message.ts`, `frontend/src/app/(website)/contact/page.tsx`, `frontend/src/app/(website)/privacy-policy/page.tsx`.

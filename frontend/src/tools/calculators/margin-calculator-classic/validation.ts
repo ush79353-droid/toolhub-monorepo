@@ -99,7 +99,7 @@ export function validateMarginCalculatorClassicInput(
 
   const calcCurrency = input.costCurrency;
 
-  let costInCalc = cost.blank ? null : cost.value;
+  const costInCalc = cost.blank ? null : cost.value;
   let revenueInCalc: number | null = null;
   let profitInCalc: number | null = null;
 
