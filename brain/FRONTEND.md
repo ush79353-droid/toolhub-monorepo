@@ -30,6 +30,7 @@ Wrapped by `src/app/(website)/layout.tsx` (`Header` + `<main className="flex-1">
 | `/privacy-policy` | `(website)/privacy-policy/page.tsx` | Mint hero and one article. Last updated date and email-retention period come from `siteConfig.privacy`. Contact email and the operator line reuse `operator` and `contact`. External opt-out links: Google Analytics add-on, Google Ads Settings, aboutads.info, and Google’s partner-sites policy. | **Implemented** |
 | `/terms-of-service` | `(website)/terms-of-service/page.tsx` | Mint hero and one article. The date is `siteConfig.terms.updated`. Owner, city, and country come from `contact.company` and `operator`. The disclaimer link goes to `/disclaimer`. | **Implemented** |
 | `/disclaimer` | `(website)/disclaimer/page.tsx` | Mint hero and one article. The date is `siteConfig.disclaimer.updated`. Contact email is `operator.email`. Linked from the footer, About, Contact, and Terms. | **Implemented** |
+| `/dmca-policy` | `(website)/dmca-policy/page.tsx` | Mint hero and one article. The date is `siteConfig.dmca.updated`. Notices go to `operator.email`. Linked from the footer, the sitemap, and the Terms intellectual-property section. | **Implemented** |
 | `*` (404) | `src/app/not-found.tsx` | Custom 404 page with `Header` & `Footer` | **Implemented** |
 
 ### Known Data-Source Mismatch (Important)

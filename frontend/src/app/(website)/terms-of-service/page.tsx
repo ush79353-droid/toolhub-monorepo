@@ -113,7 +113,11 @@ export default function TermsOfServicePage() {
               <p className="mt-4">
                 Where a tool offers an embed, you may place that embed on your own site only as we provide it. Do not
                 change the embed to hide its source, and do not present it as your own calculator or as our endorsement
-                of your site.
+                of your site. Copyright complaints are handled under our{' '}
+                <Link href="/dmca-policy" className={linkClass}>
+                  DMCA policy
+                </Link>
+                .
               </p>
             </div>
 

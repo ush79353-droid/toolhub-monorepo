@@ -54,6 +54,10 @@ export const siteConfig = {
   disclaimer: {
     updated: 'November 14, 2026',
   },
+  /** DMCA policy. Change the date here. */
+  dmca: {
+    updated: 'November 22, 2026',
+  },
   /** Footer social icons. Change hrefs here; empty href hides that icon. */
   social: [
     { id: 'facebook', label: 'Facebook', href: 'https://facebook.com/' },

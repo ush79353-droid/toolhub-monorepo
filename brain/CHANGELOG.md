@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-22 — DMCA policy page
+- **Summary:** `/dmca-policy` explains how to send a copyright notice and a counter-notice. The date is `siteConfig.dmca.updated`. The footer, sitemap, and Terms page link to it.
+- **Important Files:** `frontend/src/app/(website)/dmca-policy/page.tsx`, `frontend/src/components/layout/Footer.tsx`, `frontend/src/app/sitemap.ts`, `frontend/src/config/site.ts`.
+- **Verification:** `/dmca-policy` shows the mint hero, the notice and counter-notice sections, and `info@omegacalculators.com`. The footer includes a DMCA Policy link. Temporary files cleaned: YES.
+
 ### 2026-11-22 — Disclaimer page
 - **Summary:** `/disclaimer` is a mint hero and one article. The date is `siteConfig.disclaimer.updated`. The footer, About, Contact, and Terms link to it. It is on the sitemap.
 - **Important Files:** `frontend/src/app/(website)/disclaimer/page.tsx`, `frontend/src/components/layout/Footer.tsx`, `frontend/src/app/sitemap.ts`, `frontend/src/config/site.ts`.
