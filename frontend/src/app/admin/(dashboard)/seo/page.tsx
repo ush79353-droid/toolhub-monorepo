@@ -13,7 +13,7 @@ import { Save, Search, Globe, ShieldCheck } from 'lucide-react';
 
 export default function AdminSeoPage() {
   const [siteTitle, setSiteTitle] = React.useState(
-    'Omega Calculators — Every Tool You Need, All in One Place'
+    'Omega Calculators | Every Tool You Need, All in One Place'
   );
   const [titleTemplate, setTitleTemplate] = React.useState('%s | Omega Calculators');
   const [metaDescription, setMetaDescription] = React.useState(

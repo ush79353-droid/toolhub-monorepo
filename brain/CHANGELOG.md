@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-22 — Contact page split layout
+- **Summary:** `/contact` puts email, phone, and location in a quarter-width column and the form in the remaining space. The longer notes sit below as four short blocks. Empty detail fields stay hidden. Phone is `siteConfig.contact.phone`.
+- **Important Files:** `frontend/src/app/(website)/contact/page.tsx`, `frontend/src/config/site.ts`, `frontend/src/components/contact/ContactForm.tsx`.
+- **Verification:** `/contact` shows the mint hero, a details column beside the form on a wide screen, and four short notes below. Empty email, phone, and location stay off the column. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Social Security Calculator
 - **Summary:** Shipped Social Security Calculator on existing catalog slug `social-security-calculator` (`SocialSecurityCalculator`, catalog `6af46f10a27d8d1d4e9901bd`, pillar/subPillar null). Screenshot-first (ADR-023): birth year, life expectancy, investment return, COLA, required FRA monthly benefit (PIA); Calculate/Clear; ideal claim age 62–70 via invested terminal value; optional comparison table; nominal break-even vs 62. Versioned SSA FRA / early reduction / DRC. **Fixed USD** (**no FX**). Activated via `npm run tool:assign` with `--set-active` — **`indexable` preserved false**. TASKS `TOOL-660`.
 - **Commits:** `4ff935ec` (UI) / `500247db` (engine) / (registration/Brain/tracker — this commit).

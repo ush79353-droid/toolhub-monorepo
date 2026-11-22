@@ -7,7 +7,7 @@ import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { getPublicTools } from '@/server/catalog/tools';
 
 export const metadata: Metadata = {
-  title: 'All Online Tools — Complete Utilities Directory',
+  title: 'All Online Tools | Complete Utilities Directory',
   description: 'Search and filter the active tools on Omega Calculators.',
 };
 

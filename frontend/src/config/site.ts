@@ -23,9 +23,9 @@ export const siteConfig = {
    */
   operator: {
     name: '',
-    city: '',
-    country: '',
-    email: '',
+    city: 'Karachi',
+    country: 'Pakistan',
+    email: 'info@omegacalculators.com',
   },
   /**
    * Contact page. Empty business email and address lines stay off the page.
@@ -33,9 +33,10 @@ export const siteConfig = {
    * City and country for a postal address come from `operator`.
    */
   contact: {
-    businessEmail: '',
+    businessEmail: 'contact@omegacalculators.com',
+    phone: '+923123456789',
     responseTime: '3 to 5 business days',
-    company: '',
+    company: 'Uzair Software House',
     street: '',
   },
   /** Footer social icons. Change hrefs here; empty href hides that icon. */
