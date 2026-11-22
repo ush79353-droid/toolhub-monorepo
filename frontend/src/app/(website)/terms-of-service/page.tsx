@@ -1,184 +1,204 @@
-import * as React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
-import { AlertCircle, Scale } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Omega Calculators',
+  title: 'Terms of Service',
   description:
-    'Review the terms, conditions, and disclaimers governing the use of Omega Calculators calculators and utilities.',
+    'The terms for using Omega Calculators, including estimates, acceptable use, and the disclaimer.',
 };
 
+const linkClass = 'font-medium text-primary hover:underline';
+
+function publicHost(): string {
+  try {
+    const host = new URL(siteConfig.url).host;
+    if (host && !host.includes('localhost')) return host;
+  } catch {
+    // Fall through to the public name.
+  }
+  return 'omegacalculators.com';
+}
+
 export default function TermsOfServicePage() {
+  const email = siteConfig.operator.email.trim();
+  const owner = siteConfig.contact.company.trim() || siteConfig.operator.name.trim();
+  const country = siteConfig.operator.country.trim();
+  const court = [siteConfig.operator.city, siteConfig.operator.country]
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .join(', ');
+
   return (
-    <div className="py-8 sm:py-16">
-      <Container className="max-w-4xl">
-        {/* Breadcrumb */}
-        <Breadcrumbs items={[{ label: 'Terms of Service' }]} className="mb-6" />
-
-        {/* Heading */}
-        <div className="border-b border-border pb-8">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent">
-            <Scale className="h-3.5 w-3.5 text-primary" />
-            <span>Terms & Conditions</span>
+    <div>
+      <section className="relative border-b border-border bg-gradient-to-br from-[#cfeeed] via-[#e7f6f4] to-[#f4f7f2]">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_32%_32%,#ffffff,hsl(177,42%,78%))]" />
+          <div className="absolute -right-20 top-6 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_35%_30%,#ffffff,hsl(175,35%,84%))]" />
+          <div className="absolute bottom-10 right-[18%] h-40 w-40 rounded-full bg-[radial-gradient(circle_at_40%_40%,#ffffff,hsl(186,35%,86%))]" />
+        </div>
+        <Container className="relative z-10 py-10 sm:py-14">
+          <Breadcrumbs items={[{ label: 'Terms of Service' }]} />
+          <div className="mx-auto mt-8 max-w-3xl text-center">
+            <h1 className="text-4xl font-semibold tracking-tight text-accent sm:text-5xl">Terms of service</h1>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              Last updated: {siteConfig.terms.updated}
+            </p>
           </div>
-          <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
-            Terms of Service
-          </h1>
-          <p className="mt-2 text-xs text-muted-foreground sm:text-sm">
-            Last Updated: November 11, 2026 •{' '}
-            <em>Draft template pending formal legal counsel review</em>
-          </p>
-        </div>
+        </Container>
+      </section>
 
-        {/* Legal Disclaimer Banner */}
-        <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 p-4 text-xs text-amber-900 flex items-start gap-3">
-          <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
-          <p className="leading-relaxed">
-            <strong>Draft Notice:</strong> This document is a development template outlining usage
-            conditions for the Omega Calculators website. It must undergo formal legal audit before
-            production deployment.
-          </p>
-        </div>
+      <section className="bg-white py-14 sm:py-20">
+        <Container>
+          <div className="mx-auto max-w-3xl space-y-12 text-base leading-relaxed text-muted-foreground">
+            <p>
+              Welcome to {siteConfig.name}. By using {publicHost()} (the “Site”), you agree to these Terms. If you do
+              not agree, please do not use the Site.
+            </p>
 
-        <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-12">
-          {/* Table of Contents */}
-          <aside className="lg:col-span-4">
-            <div className="sticky top-24 rounded-2xl border border-border bg-white p-5 shadow-xs">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-accent mb-3">
-                Table of Contents
-              </h3>
-              <nav className="space-y-2 text-xs text-muted-foreground">
-                <a href="#acceptance" className="block hover:text-primary transition-colors">
-                  1. Acceptance of Terms
-                </a>
-                <a href="#nature-of-tools" className="block hover:text-primary transition-colors">
-                  2. Nature of Utilities
-                </a>
-                <a href="#user-conduct" className="block hover:text-primary transition-colors">
-                  3. Permitted Use
-                </a>
-                <a
-                  href="#intellectual-property"
-                  className="block hover:text-primary transition-colors"
-                >
-                  4. Intellectual Property
-                </a>
-                <a href="#disclaimers" className="block hover:text-primary transition-colors">
-                  5. Disclaimer of Warranties
-                </a>
-                <a href="#liability" className="block hover:text-primary transition-colors">
-                  6. Limitation of Liability
-                </a>
-                <a href="#contact" className="block hover:text-primary transition-colors">
-                  7. Inquiries
-                </a>
-              </nav>
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">1. What the Site offers</h2>
+              <p className="mt-4">
+                The Site provides free online calculators, converters, and related information. Tools are provided for
+                general information and education only.
+              </p>
             </div>
-          </aside>
 
-          {/* Terms Content */}
-          <div className="lg:col-span-8 prose prose-slate max-w-none text-sm leading-relaxed text-muted-foreground space-y-8">
-            <section
-              id="acceptance"
-              className="rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-xs"
-            >
-              <h2 className="text-lg font-bold text-accent">1. Acceptance of Terms</h2>
-              <p className="mt-3">
-                By accessing or using the Omega Calculators website, you acknowledge that you have read,
-                understood, and agree to be bound by these Terms of Service. If you disagree with
-                any portion of these terms, you should discontinue use of the platform immediately.
-              </p>
-            </section>
-
-            <section
-              id="nature-of-tools"
-              className="rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-xs"
-            >
-              <h2 className="text-lg font-bold text-accent">
-                2. Nature of Utilities & No Professional Advice
-              </h2>
-              <p className="mt-3">
-                All calculations, unit conversions, financial estimations, and health figures (such
-                as BMI, loan amortizations, or percentage calculations) provided on Omega Calculators are
-                offered solely for general informational and educational purposes.
-              </p>
-              <p className="mt-2 text-xs sm:text-sm text-accent font-semibold">
-                None of the outputs generated by our tools constitute certified financial, legal,
-                medical, or engineering advice. You should always consult with qualified
-                professionals prior to making binding financial commitments or health decisions.
-              </p>
-            </section>
-
-            <section
-              id="user-conduct"
-              className="rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-xs"
-            >
-              <h2 className="text-lg font-bold text-accent">3. Permitted Use</h2>
-              <p className="mt-3">
-                You agree to use Omega Calculators only for lawful purposes. You must not attempt to
-                disrupt the operation of the website, reverse engineer uncompiled code, probe system
-                vulnerabilities, or execute automated scraping that degrades server performance for
-                other visitors.
-              </p>
-            </section>
-
-            <section
-              id="intellectual-property"
-              className="rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-xs"
-            >
-              <h2 className="text-lg font-bold text-accent">4. Intellectual Property</h2>
-              <p className="mt-3">
-                All branding, interface designs, icons, typography systems, and original software
-                algorithms comprising Omega Calculators are the property of Omega Calculators or its licensors and
-                are protected under applicable copyright and intellectual property legislation.
-              </p>
-            </section>
-
-            <section
-              id="disclaimers"
-              className="rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-xs"
-            >
-              <h2 className="text-lg font-bold text-accent">5. Disclaimer of Warranties</h2>
-              <p className="mt-3">
-                The tools and services on this site are provided on an &quot;AS IS&quot; and
-                &quot;AS AVAILABLE&quot; basis without warranties of any kind, either express or
-                implied, including but not limited to the implied warranties of merchantability,
-                fitness for a particular purpose, or error-free computation.
-              </p>
-            </section>
-
-            <section
-              id="liability"
-              className="rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-xs"
-            >
-              <h2 className="text-lg font-bold text-accent">6. Limitation of Liability</h2>
-              <p className="mt-3">
-                Under no circumstances shall Omega Calculators, its contributors, or its operators be held
-                liable for any direct, indirect, incidental, special, or consequential damages
-                resulting from the use of, or the inability to use, any tool or computation provided
-                on this platform.
-              </p>
-            </section>
-
-            <section
-              id="contact"
-              className="rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-xs"
-            >
-              <h2 className="text-lg font-bold text-accent">7. Inquiries</h2>
-              <p className="mt-3">
-                For questions regarding these terms, please contact us via our{' '}
-                <Link href="/contact" className="font-semibold text-primary underline">
-                  Contact Form
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">2. No professional advice</h2>
+              <p className="mt-4">
+                Nothing on the Site is financial, medical, legal, tax, engineering, or other professional advice.
+                Results are estimates based on the numbers you enter and on general formulas. See our{' '}
+                <Link href="#disclaimers" className={linkClass}>
+                  disclaimer
                 </Link>
-                .
+                . Always check important results and consult a qualified professional before making decisions.
               </p>
-            </section>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">3. Accuracy</h2>
+              <p className="mt-4">
+                We work to keep our tools and content accurate and up to date, but we do not guarantee that they are
+                free from errors, complete, or current. Rates, rules, and standards change. You are responsible for
+                checking results before relying on them.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">4. Acceptable use</h2>
+              <p className="mt-4">You agree not to:</p>
+              <ul className="mt-3 list-disc space-y-2 pl-5">
+                <li>Use the Site for anything unlawful or harmful</li>
+                <li>Try to hack, overload, disrupt, or reverse-engineer the Site, or bypass its security</li>
+                <li>
+                  Use bots, scrapers, or automated tools to copy large parts of the Site or its tools without our
+                  written permission
+                </li>
+                <li>Copy, republish, or sell our content or calculators without permission</li>
+                <li>Use the Site in a way that interferes with others’ use of it</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">5. Intellectual property</h2>
+              <p className="mt-4">
+                The Site, including its text, design, logo, code, and calculators, is owned by{' '}
+                {owner || siteConfig.name} or its licensors and is protected by copyright and other laws. You may use
+                the Site for your own personal, non-commercial use. You may link to our pages freely. You may quote
+                short extracts with a link back to the source page. Any other use needs our written permission.
+              </p>
+              <p className="mt-4">
+                Where a tool offers an embed, you may place that embed on your own site only as we provide it. Do not
+                change the embed to hide its source, and do not present it as your own calculator or as our endorsement
+                of your site.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">
+                6. Third-party content, ads and links
+              </h2>
+              <p className="mt-4">
+                The Site contains advertising and links to other websites. We do not control and are not responsible
+                for third-party content, products, or services, and a link or ad is not an endorsement.
+              </p>
+            </div>
+
+            <div id="disclaimers">
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">7. Disclaimer of warranties</h2>
+              <p className="mt-4">
+                The Site and its tools are provided “as is” and “as available”, without warranties of any kind, whether
+                express or implied, including fitness for a particular purpose, accuracy, or uninterrupted or error-free
+                operation.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">8. Limitation of liability</h2>
+              <p className="mt-4">
+                To the fullest extent allowed by law, {siteConfig.name} and its owners will not be liable for any
+                indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, data, or
+                goodwill, arising from your use of, or inability to use, the Site or from reliance on any result. Where
+                the law does not allow some of these limits, our liability is limited to the smallest amount the law
+                permits.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">9. Changes to the Site and the Terms</h2>
+              <p className="mt-4">
+                We may change, suspend, or remove any part of the Site at any time, and we may update these Terms. The
+                “Last updated” date shows when. Continued use after changes means you accept the new Terms.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">10. Governing law</h2>
+              <p className="mt-4">
+                {country ? (
+                  <>These Terms are governed by the laws of {country}, without regard to conflict-of-law rules.</>
+                ) : (
+                  <>These Terms are governed without regard to conflict-of-law rules.</>
+                )}{' '}
+                {court ? (
+                  <>
+                    Disputes will be handled in the courts of {court}, unless the law of your country gives you other
+                    rights.
+                  </>
+                ) : (
+                  <>The law of your country may give you other rights.</>
+                )}
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-accent">11. Contact</h2>
+              <p className="mt-4">
+                {email ? (
+                  <>
+                    Questions about these Terms:{' '}
+                    <a href={`mailto:${email}`} className={linkClass}>
+                      {email}
+                    </a>
+                    .
+                  </>
+                ) : (
+                  <>
+                    Questions about these Terms can be sent through our{' '}
+                    <Link href="/contact" className={linkClass}>
+                      contact page
+                    </Link>
+                    .
+                  </>
+                )}
+              </p>
+            </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </section>
     </div>
   );
 }

@@ -46,6 +46,10 @@ export const siteConfig = {
     updated: 'November 14, 2026',
     emailRetention: '12 months',
   },
+  /** Terms of service. Change the date here. */
+  terms: {
+    updated: 'November 14, 2026',
+  },
   /** Footer social icons. Change hrefs here; empty href hides that icon. */
   social: [
     { id: 'facebook', label: 'Facebook', href: 'https://facebook.com/' },

@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-22 — Simpler terms of service
+- **Summary:** `/terms-of-service` uses the mint hero and one article. The date is `siteConfig.terms.updated`. The owner, governing law, and courts use the company, city, and country already in config. Section 7 stays `#disclaimers`. Embed use has a short rule because tools can be embedded.
+- **Important Files:** `frontend/src/app/(website)/terms-of-service/page.tsx`, `frontend/src/config/site.ts`.
+- **Verification:** `/terms-of-service` shows the mint hero and the 11 sections. `#disclaimers` is section 7. The owner line reads Uzair Software House, and the courts line reads Karachi, Pakistan. Temporary files cleaned: YES.
+
 ### 2026-11-22 — Simpler privacy policy
 - **Summary:** `/privacy-policy` uses the mint hero and one article. The date and email-retention period live in `siteConfig.privacy`. The article names the California sales-tax lookup, says the contact form is not stored on the site, and links the Google and aboutads.info opt-out pages. It does not claim that Google Analytics is already installed.
 - **Important Files:** `frontend/src/app/(website)/privacy-policy/page.tsx`, `frontend/src/config/site.ts`.
