@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-22 — Disclaimer page
+- **Summary:** `/disclaimer` is a mint hero and one article. The date is `siteConfig.disclaimer.updated`. The footer, About, Contact, and Terms link to it. It is on the sitemap.
+- **Important Files:** `frontend/src/app/(website)/disclaimer/page.tsx`, `frontend/src/components/layout/Footer.tsx`, `frontend/src/app/sitemap.ts`, `frontend/src/config/site.ts`.
+- **Verification:** `/disclaimer` shows the mint hero, the advice sections, and `info@omegacalculators.com`. The footer includes a Disclaimer link. Temporary files cleaned: YES.
+
 ### 2026-11-22 — Simpler terms of service
 - **Summary:** `/terms-of-service` uses the mint hero and one article. The date is `siteConfig.terms.updated`. The owner, governing law, and courts use the company, city, and country already in config. Section 7 stays `#disclaimers`. Embed use has a short rule because tools can be embedded.
 - **Important Files:** `frontend/src/app/(website)/terms-of-service/page.tsx`, `frontend/src/config/site.ts`.

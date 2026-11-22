@@ -71,7 +71,7 @@ export default function TermsOfServicePage() {
               <p className="mt-4">
                 Nothing on the Site is financial, medical, legal, tax, engineering, or other professional advice.
                 Results are estimates based on the numbers you enter and on general formulas. See our{' '}
-                <Link href="#disclaimers" className={linkClass}>
+                <Link href="/disclaimer" className={linkClass}>
                   disclaimer
                 </Link>
                 . Always check important results and consult a qualified professional before making decisions.

@@ -152,7 +152,7 @@ export default function ContactPage() {
           <p className="mt-10 max-w-3xl text-sm leading-relaxed text-muted-foreground">
             We cannot give personal financial, medical, or legal advice. For those questions, speak to a qualified
             professional. Read the{' '}
-            <Link href="/terms-of-service#disclaimers" className="font-medium text-primary hover:underline">
+            <Link href="/disclaimer" className="font-medium text-primary hover:underline">
               disclaimer
             </Link>{' '}
             before relying on a calculator result.

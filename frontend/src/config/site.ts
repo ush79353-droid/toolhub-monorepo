@@ -50,6 +50,10 @@ export const siteConfig = {
   terms: {
     updated: 'November 14, 2026',
   },
+  /** Disclaimer page. Change the date here. */
+  disclaimer: {
+    updated: 'November 14, 2026',
+  },
   /** Footer social icons. Change hrefs here; empty href hides that icon. */
   social: [
     { id: 'facebook', label: 'Facebook', href: 'https://facebook.com/' },
