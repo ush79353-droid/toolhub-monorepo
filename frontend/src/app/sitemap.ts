@@ -989,6 +989,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'productivity-calculator',
   'rental-property-calculator',
   'quiz-us-income-percentile-calculator',
+  'rcri-calculator',
   'receivables-turnover-ratio-calculator',
   'repayment-calculator',
   'retained-earnings-calculator',

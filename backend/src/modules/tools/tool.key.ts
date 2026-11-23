@@ -946,6 +946,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PricePerSquareMeterCalculator',
   'ProductivityCalculator',
   'QuizUsIncomePercentileCalculator',
+  'RcriCalculator',
   'ReceivablesTurnoverRatioCalculator',
   'RepaymentCalculator',
   'RetainedEarningsCalculator',
