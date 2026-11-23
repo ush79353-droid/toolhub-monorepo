@@ -3114,6 +3114,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.Cha2ds2VascCalculator,
     })),
   ),
+  CvdRiskCalculator: lazyTool(() =>
+    import('@/tools/calculators/cvd-risk/CvdRiskCalculator').then((mod) => ({
+      default: mod.CvdRiskCalculator,
+    })),
+  ),
   CalorieCalculator: lazyTool(() =>
     import('@/tools/calculators/calorie/CalorieCalculator').then((mod) => ({
       default: mod.CalorieCalculator,

@@ -1,4 +1,4 @@
-﻿# OmegaCalculators — Automated Development Tracker
+# OmegaCalculators — Automated Development Tracker
 
 ## Summary
 
@@ -14,11 +14,12 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 114 | CVD Risk Calculator (10-year) | DEVELOPED (activation blocked) | AUDIT PENDING | 3a95447b | 80d54f1d | (reg) | In Progress | CvdRiskCalculator; Atlas assign blocked; TASKS TOOL-712 |
 | 118 | ECG Boxes to Seconds Calculator | DEVELOPED (activation retry) | AUDIT PENDING | 97fa589c | 24f83f80 | (this reg/Brain) | In Progress until assign | `EcgBoxesToSecondsCalculator`; slug `ecg-boxes-to-seconds-calculator`; Mongo `6af46f10a27d8d1d4e990235`; 1/5 mm × speed; sec|ms|min; no FX; indexable false; TASKS `TOOL-717` |
 | 117 | 6 Minute Walk Test Calculator | DEVELOPED (activation retry) | AUDIT PENDING | e2e977be | a4312bce | (this reg/Brain) | In Progress until assign | `SixMinuteWalkTestCalculator`; slug `6-minute-walk-test-calculator`; Mongo `6af46f10a27d8d1d4e990228`; Enright–Sherrill 40–80; no FX; indexable false; TASKS `TOOL-716` |
 | 117 | Cardiac Index Calculator | DEVELOPED (activation blocked) | AUDIT PENDING | 90eca006 | 2d9696d7 (absorbed) | (this reg/Brain) | In Progress | `CardiacIndexCalculator`; slug `cardiac-index-calculator`; Mongo `6af46f10a27d8d1d4e99022d` assign failed Atlas whitelist; registry wired; no FX; indexable false; TASKS `TOOL-717` |
 | 116 | Cerebral Perfusion Pressure Calculator | DEVELOPED | AUDIT PENDING | ff1576ac | 8e5637ab | (this reg/Brain) | Completed Tools | `CerebralPerfusionPressureCalculator`; slug `cerebral-perfusion-pressure-calculator`; Mongo `6af46f10a27d8d1d4e99022f` active; CPP=MAP−ICP; optional MAP from SBP/DBP; age bands not targets; no FX; indexable false; TASKS `TOOL-715` |
-| 115 | Arterial Age Calculator | DEVELOPED | AUDIT PENDING | d0d96e3c | 2d9696d7 (absorbed cardiac-index engine) | (this reg/Brain) | Completed Tools | `ArterialAgeCalculator`; slug `arterial-age-calculator`; Mongo `6af46f10a27d8d1d4e99022b` active; MESA McClelland ln(CAC+1); no FX; indexable false; TASKS `TOOL-714` |
+| 115 | Arterial Age Calculator | DEVELOPED (activation blocked) | AUDIT PENDING | d0d96e3c | 2d9696d7 (absorbed cardiac-index engine) | b8ad6256 | In Progress | `ArterialAgeCalculator`; slug `arterial-age-calculator`; Mongo `6af46f10a27d8d1d4e99022b` assign ETIMEDOUT; registry wired; MESA ln(CAC+1); no FX; TASKS `TOOL-714`; AGENT_STATUS.md |
 | 114 | Cardiac Output Calculator | DEVELOPED | AUDIT PENDING | d0535c5a | 42b1606b | (this reg/Brain) | Completed Tools | `CardiacOutputCalculator`; slug `cardiac-output-calculator`; Mongo `6af46f10a27d8d1d4e99022e` active (assign retried); Fick Mosteller+125 VO₂ index; no FX; indexable false; TASKS `TOOL-713` |
 | 113 | Blood Pressure Calculator | DEVELOPED | AUDIT PENDING | e5dcb8df | a9d8d5ac | (this reg/Brain) | Completed Tools | `BloodPressureCalculator`; slug `blood-pressure-calculator`; Mongo `6af46f10a27d8d1d4e99022c` active; ACC/AHA + ESC/ESH 2018; no FX; indexable false; TASKS `TOOL-712` |
 | 112 | Aortic Valve Area Calculator | DEVELOPED (activation blocked) | AUDIT PENDING | 9e6a8d1d | 46e04765 | (this reg/Brain) | In Progress | `AorticValveAreaCalculator`; slug `aortic-valve-area-calculator`; Mongo `6af46f10a27d8d1d4e99022a` assign failed Atlas timeout; registry wired; no FX; TASKS `TOOL-710` |

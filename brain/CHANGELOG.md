@@ -40,6 +40,11 @@
 - **Example:** **118/76** ACC/AHA → Normal; **150/85** ESC/ESH → ISH Grade 1; **181/80** → Severe.
 - **Verification:** Focused `calculation.test.ts` ok (boundary + mixed + ISH fixtures). Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-23 — CVD Risk Calculator (Framingham) — activation blocked
+- **Summary:** Shipped educational Framingham general CVD 10-year lipid equation UI/engine/registry (`CvdRiskCalculator`, expected slug `cvd-risk-calculator-cardiovascular-disease-10-year-risk`). Screenshot-first (ADR-023): sex radios unselected; blank age/HDL/TC/SBP; cholesterol unit selects; HTN treatment/smoking/diabetes checkboxes; risk %. D'Agostino 2008 coefficients + S₀/means from FHS tables; mmol/L→mg/dL via ÷0.02586; ages 30–74 gated. **No FX**. **Mongo lookup/assign blocked** (Atlas ETIMEDOUT / IP whitelist). TASKS `TOOL-712`.
+- **Commits:** `3a95447b` (UI) / `80d54f1d` (engine) / (reg/Brain this commit).
+- **Verification:** Source-level coefficient fixtures + mmol equivalence; focused `calculation.test.ts` written (not executed per §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — CHA2DS2-Vasc Calculator
 - **Summary:** Shipped educational CHA₂DS₂-VASc on existing catalog slug `cha2ds2-vasc-calculator` (`Cha2ds2VascCalculator`, catalog `6af46f10a27d8d1d4e990230`, pillar/subPillar null). Screenshot-first (ADR-023): Yes/No factors default No; age bands; score 0–9; Friberg 2012 unadjusted annual stroke/composite rates; **no anticoagulation recommendation text**; female-sex-only educational note; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-711`.
 - **Commits:** `9c456dc0` (UI) / `9bad1a2f` (engine) / (reg/Brain this commit).

@@ -153,6 +153,7 @@
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `TOOL-710` | Aortic Valve Area Calculator: continuity-equation AVA (`AorticValveAreaCalculator`); registry done; Mongo `6af46f10a27d8d1d4e99022a` assign blocked (Atlas timeout); indexable false; educational severity table | Cursor | Blocked (activation) | `In Progress/Aortic Valve Area Calculator` | Retry `tool:assign --set-active` when Atlas reachable |
+| `TOOL-712` | CVD Risk Calculator (Framingham general CVD lipid): D'Agostino 2008 10-year % (`CvdRiskCalculator`); registry wired; Mongo assign BLOCKED (Atlas); indexable false | Cursor | In Progress | `In Progress/CVD Risk Calculator - Cardiovascular Disease 10-year Risk` | — |
 | `TOOL-711` | CHA2DS2-Vasc Calculator: educational AF score + Friberg 2012 rates (`Cha2ds2VascCalculator`); Mongo `6af46f10a27d8d1d4e990230` activated; indexable false; no anticoagulation orders | Cursor | Done | `Completed Tools/CHA2DS2-Vasc Calculator` | — |
 | `TOOL-708` | ABI Calculator (Ankle-Brachial Index): educational foot÷arm ABI per leg (`AbiCalculator`); Mongo `6af46f10a27d8d1d4e990229` activated; indexable false | Cursor | Done | `Completed Tools/ABI Calculator (Ankle-Brachial Index)` | — |
 | `TOOL-707` | Breast Cancer Recurrence Risk Calculator: O'Rourke 1994 local-recurrence index (`BreastCancerRecurrenceRiskCalculator`); Mongo `6af46f10a27d8d1d4e99020e` activated; indexable false; no therapy recommendation | Cursor | Done | `Completed Tools/Breast Cancer Recurrence Risk Calculator` | — |
