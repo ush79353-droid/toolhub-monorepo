@@ -662,6 +662,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SmokersCtcCalculator: () =>
     import('@/tools/calculators/smokers-ctc/detail'),
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),
+  TestosteroneEstradiolRatioCalculator: () =>
+    import('@/tools/calculators/testosterone-estradiol-ratio/detail'),
   TimeValueOfMoneyCalculator: () =>
     import('@/tools/calculators/time-value-of-money/detail'),
   TtmCalculator: () => import('@/tools/calculators/ttm/detail'),

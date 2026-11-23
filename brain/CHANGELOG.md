@@ -1,3 +1,9 @@
+### 2026-11-23 — Testosterone to Estradiol Ratio Calculator
+- **Summary:** Shipped educational mixed-unit T/E2 index on existing catalog slug `testosterone-to-estradiol-ratio-calculator` (`TestosteroneEstradiolRatioCalculator`, catalog `6af46f10a27d8d1d4e990226`, pillar/subPillar null). Screenshot-first (ADR-023): blank testosterone (ng/dL default) + estradiol (pg/mL default); ratio = T(ng/dL)÷E2(pg/mL); fixture **500**/**25** → **20** (contrasts same-mass **200**); nmol/L|pmol/L; privacy-safe share URL only. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-751`.
+- **Commits:** `db490218` (UI) / `eed8e529` (engine) / (reg/Brain this commit).
+- **Example:** **500** ng/dL · **25** pg/mL → **20**.
+- **Verification:** `testosterone-estradiol-ratio/calculation.test.ts` ok; `backend` build ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — RCRI Calculator
 - **Summary:** Shipped educational Revised Cardiac Risk Index on existing catalog slug `rcri-calculator` (`RcriCalculator`, catalog `6af46f10a27d8d1d4e99024a`, pillar/subPillar null). Screenshot-first (ADR-023): six Lee Yes/No factors (default No); 1 point each; class I–IV; CCS 2017 pooled death/MI/arrest rates 3.9/6.0/10.1/15.0%; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. Registry/sitemap/`tool.key` absorbed into concurrent peer registration commits. TASKS `TOOL-748`.
 - **Commits:** `53ec161f` (UI) / `de86e9d8` (engine) / (reg/Brain this commit).

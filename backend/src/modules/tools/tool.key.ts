@@ -500,6 +500,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'StampDutyLandTaxUkCalculator',
   'SmokersCtcCalculator',
   'TenureCalculator',
+  'TestosteroneEstradiolRatioCalculator',
   'TimeValueOfMoneyCalculator',
   'TtmCalculator',
   'TreynorRatioCalculator',

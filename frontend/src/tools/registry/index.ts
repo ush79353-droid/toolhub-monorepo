@@ -2793,6 +2793,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TenureCalculator,
     })),
   ),
+  TestosteroneEstradiolRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/testosterone-estradiol-ratio/TestosteroneEstradiolRatioCalculator'
+    ).then((mod) => ({
+      default: mod.TestosteroneEstradiolRatioCalculator,
+    })),
+  ),
   TimeValueOfMoneyCalculator: lazyTool(() =>
     import('@/tools/calculators/time-value-of-money/TimeValueOfMoneyCalculator').then((mod) => ({
       default: mod.TimeValueOfMoneyCalculator,

@@ -529,6 +529,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'rd-calculator-recurring-deposit',
   'smokers-ctc-calculator',
   'tenure-calculator',
+  'testosterone-to-estradiol-ratio-calculator',
   'time-value-of-money-calculator',
   'ttm-calculator-trailing-twelve-months',
   'treynor-ratio-calculator',
