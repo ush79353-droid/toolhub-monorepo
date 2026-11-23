@@ -1,4 +1,4 @@
-﻿# OmegaCalculators — Automated Development Tracker
+# OmegaCalculators — Automated Development Tracker
 
 ## Summary
 
@@ -14,6 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 124 | HAS-BLED Calculator | DEVELOPED | AUDIT PENDING | 9a4cf37f | 040277c6 | (this reg/Brain) | Completed Tools | `HasBledCalculator`; slug `has-bled-calculator`; Mongo `6af46f10a27d8d1d4e99023d` active; Pisters 2010; no FX; indexable false; TASKS `TOOL-724` |
 | 128 | Framingham Risk Calculator | DEVELOPED | AUDIT PENDING | 2879119b | 58068203 | (this reg/Brain) | Completed Tools | `FraminghamRiskCalculator`; slug `framingham-risk-calculator`; Mongo `6af46f10a27d8d1d4e990239` active; ATP III hard CHD pts; no FX; indexable false; TASKS `TOOL-728` |
 | 127 | Gestational Age Calculator | DEVELOPED | AUDIT PENDING | (UI) | (engine) | (reg/Brain) | Completed Tools | `GestationalAgeCalculator`; slug `gestational-age-calculator`; Mongo `6af46f10a27d8d1d4e990219` active; 280-day EDD GA; no FX; indexable false; TASKS `TOOL-727` |
 | 126 | Gorlin Formula Calculator | DEVELOPED | AUDIT PENDING | cbd9d808 | dfc8e916 | d3d992ea | Completed Tools | `GorlinFormulaCalculator`; slug `gorlin-formula-calculator`; Mongo `6af46f10a27d8d1d4e99023a` active; K 44.3/37.7; no FX; indexable false; TASKS `TOOL-726` |

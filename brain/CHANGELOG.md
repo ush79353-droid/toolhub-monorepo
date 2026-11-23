@@ -1,3 +1,8 @@
+### 2026-11-23 — HAS-BLED Calculator
+- **Summary:** Shipped educational HAS-BLED (0–9) on existing catalog slug `has-bled-calculator` (`HasBledCalculator`, catalog `6af46f10a27d8d1d4e99023d`, pillar/subPillar null). Screenshot-first (ADR-023): nine No/Yes factors default No; renal/liver and drugs/alcohol independent; age >65 strict; Pisters 2010 OAC rates; no anticoagulation orders; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-724`.
+- **Commits:** `9a4cf37f` (UI) / `040277c6` (engine) / (reg/Brain this commit).
+- **Example:** defaults → **0** · **1.1**/100 pt-yr; HTN+age+drugs → **3** · **3.7**/100 pt-yr.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-23 — Gestational Age Calculator
 - **Summary:** Shipped educational gestational age on existing catalog slug `gestational-age-calculator` (`GestationalAgeCalculator`, catalog `6af46f10a27d8d1d4e990219`, pillar/subPillar null). Screenshot-first (ADR-023): blank EDD; editable current date (default local today); read-only GA with wks+days or total-days display; 280-day ACOG-style calendar math; negative-age clamp with note; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-727`.
 - **Commits:** (UI) / (engine) / (reg/Brain this commit).
