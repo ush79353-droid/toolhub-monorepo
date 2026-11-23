@@ -1,3 +1,9 @@
+### 2026-11-23 — Gestational Age Calculator
+- **Summary:** Shipped educational gestational age on existing catalog slug `gestational-age-calculator` (`GestationalAgeCalculator`, catalog `6af46f10a27d8d1d4e990219`, pillar/subPillar null). Screenshot-first (ADR-023): blank EDD; editable current date (default local today); read-only GA with wks+days or total-days display; 280-day ACOG-style calendar math; negative-age clamp with note; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-727`.
+- **Commits:** (UI) / (engine) / (reg/Brain this commit).
+- **Example:** EDD **2026-07-01** · current **2026-06-24** → **39w0d**; EDD = today → **40w0d**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Fertility by Age Calculator
 - **Summary:** Shipped educational per-cycle fecundability lookup on existing catalog slug `fertility-by-age-calculator` (`FertilityByAgeCalculator`, catalog `6af46f10a27d8d1d4e990216`, pillar/subPillar null). Screenshot-first (ADR-023): Age dropdown starts Select; ages 20–44 yrs; read-only % chance to conceive each cycle; ASRM/ACOG-style bands 24/20/17/12/6; no extrapolation; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-725`.
 - **Commits:** `a0a48ad9` (UI) / `5a0be566` (engine) / (reg/Brain this commit).
@@ -39,6 +45,12 @@
 - **Commits:** `a724c1a8` (UI) / `ebf16c01` (engine) / (Brain this commit; registry via `48489e78`).
 - **Example:** defaults → **0**; age ≥75 → **−2**; diabetes + smoking → **2**.
 - **Verification:** Source-level point arithmetic; focused `calculation.test.ts` written (full tsc/lint/build/Playwright not run per continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — Framingham Risk Calculator
+- **Summary:** Shipped educational ATP III Framingham hard CHD point score on existing catalog slug `framingham-risk-calculator` (`FraminghamRiskCalculator`, catalog `6af46f10a27d8d1d4e990239`, pillar/subPillar null). Screenshot-first (ADR-023): blank age; Male default; BP treatment No; blank SBP/TC/HDL; smoker No; risk score in pts; educational 10-year % in explanation only; mmol/L×38.67; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-726`.
+- **Commits:** `2879119b` (UI) / `58068203` (engine) / (reg/Brain this commit).
+- **Example:** man **45** · SBP **130** · TC **180** · HDL **50** → **7** pts.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-23 — ECG Heart Rate Calculator
 - **Summary:** Shipped educational R–R → BPM on existing catalog slug `ecg-heart-rate-calculator` (`EcgHeartRateCalculator`, catalog `6af46f10a27d8d1d4e990236`, pillar/subPillar null). Screenshot-first (ADR-023): blank R–R with mm|s|ms; Small/Big box radios; synced box count; 25/50 mm/s; BPM = 60/(distance_mm÷speed); reuses 1/5 mm box widths from ecg-boxes-to-seconds; privacy-safe share URL. **No FX**. Frontend/backend registry wired. **Mongo `tool:assign` blocked** (Atlas IP whitelist); activation retry pending. **`indexable` left false**. TASKS `TOOL-722`.

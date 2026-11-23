@@ -14,6 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 127 | Gestational Age Calculator | DEVELOPED | AUDIT PENDING | (UI) | (engine) | (reg/Brain) | Completed Tools | `GestationalAgeCalculator`; slug `gestational-age-calculator`; Mongo `6af46f10a27d8d1d4e990219` active; 280-day EDD GA; no FX; indexable false; TASKS `TOOL-727` |
 | 126 | Gorlin Formula Calculator | DEVELOPED | AUDIT PENDING | cbd9d808 | dfc8e916 | d3d992ea | Completed Tools | `GorlinFormulaCalculator`; slug `gorlin-formula-calculator`; Mongo `6af46f10a27d8d1d4e99023a` active; K 44.3/37.7; no FX; indexable false; TASKS `TOOL-726` |
 | 125 | Fertility by Age Calculator | DEVELOPED | AUDIT PENDING | a0a48ad9 | 5a0be566 | (this reg/Brain) | Completed Tools | `FertilityByAgeCalculator`; slug `fertility-by-age-calculator`; Mongo `6af46f10a27d8d1d4e990216` active; ASRM/ACOG bands 24/20/17/12/6; no FX; indexable false; TASKS `TOOL-725` |
 | 124 | Egg Freezing Calculator | DEVELOPED | AUDIT PENDING | dacf8c0d | 4b6441ea | (reg absorb 0c1eca8a) | Completed Tools | `EggFreezingCalculator`; slug `egg-freezing-calculator`; Mongo `6af46f10a27d8d1d4e990215` active; Goldman 2017; no FX; indexable false; TASKS `TOOL-724` |
