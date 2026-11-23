@@ -1,3 +1,9 @@
+### 2026-11-23 — Fertility by Age Calculator
+- **Summary:** Shipped educational per-cycle fecundability lookup on existing catalog slug `fertility-by-age-calculator` (`FertilityByAgeCalculator`, catalog `6af46f10a27d8d1d4e990216`, pillar/subPillar null). Screenshot-first (ADR-023): Age dropdown starts Select; ages 20–44 yrs; read-only % chance to conceive each cycle; ASRM/ACOG-style bands 24/20/17/12/6; no extrapolation; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-725`.
+- **Commits:** `a0a48ad9` (UI) / `5a0be566` (engine) / (reg/Brain this commit).
+- **Example:** age **30** → **17%**; **20** → **24%**; **44** → **6%**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Flange Size Calculator
 - **Summary:** Shipped educational Spectra Baby USA flange sizing on existing catalog slug `flange-size-calculator` (`FlangeSizeCalculator`, catalog `6af46f10a27d8d1d4e990217`, pillar/subPillar null). Screenshot-first (ADR-023): blank nipple diameter mm|in; original fit/measure SVGs; discrete published bands (≤12→16, ≤16→20, ≤20→24, ≤24→28, ≤28→32); out-of-range neutral; no universal additive clearance; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-723`.
 - **Commits:** `ca0a8a10` (UI) / `ddd27a5e` (engine) / `f2b7678f` (registry) + Brain.
@@ -21,6 +27,12 @@
 - **Commits:** `f2c35c69` (UI) / `fd2bc30f` (engine) / (reg/Brain this commit).
 - **Example:** **20** mm · VTI **20** cm · HR **80** → SV **≈62.83** mL · CO **≈5.03** L/min.
 - **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — Gorlin Formula Calculator
+- **Summary:** Shipped educational Gorlin aortic/mitral areas on slug `gorlin-formula-calculator` (`GorlinFormulaCalculator`, catalog `6af46f10a27d8d1d4e99023a`). Shared CO/HR; aortic K=44.3; mitral K=37.7; independent panels; privacy-safe share. **No FX**. Activated; **`indexable` false**. TASKS `TOOL-726`.
+- **Commits:** `cbd9d808` (UI) / `dfc8e916` (engine) / `d3d992ea` (reg).
+- **Example:** CO **5** · HR **75** · SEP **0.30** · ΔP **40** → ≈ **0.79** cm².
+- **Verification:** Source-level fixture; full tsc/lint/build/Playwright not run (§11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-23 — DAPT calculator
 - **Summary:** Shipped educational Yeh 2016 DAPT score on existing catalog slug `dapt-calculator` (`DaptCalculator`, catalog `6af46f10a27d8d1d4e990232`, pillar/subPillar null). Screenshot-first (ADR-023): age radios + eight unchecked clinical factors; defaults score 0; ≥75 (−2) / 65–74 (−1); +2 vein graft & CHF/LVEF&lt;30%; +1 for remaining six; stent exactly 3 mm adds 0; smoking label clarified vs past-year window; no start/stop orders; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. Registry keys absorbed into concurrent `48489e78`. TASKS `TOOL-721`.
