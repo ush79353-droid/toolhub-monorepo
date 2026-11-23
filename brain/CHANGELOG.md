@@ -1,3 +1,15 @@
+### 2026-11-23 — Doppler Echo Cardiac Output Calculator
+- **Summary:** Shipped educational LVOT Doppler CO/CI on existing catalog slug `doppler-echo-cardiac-output-calculator` (`DopplerEchoCardiacOutputCalculator`, catalog `6af46f10a27d8d1d4e990233`, pillar/subPillar null). Screenshot-first (ADR-023): blank height/weight cm/kg, HR bpm, LVOT VTI cm, LVOT diameter mm; area=π(d/2)²; SV=area×VTI; CO=SV×HR/1000; CI=CO/Mosteller BSA (same as Cardiac Index); partial derived outputs; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-721`.
+- **Commits:** `f2c35c69` (UI) / `fd2bc30f` (engine) / (reg/Brain this commit).
+- **Example:** **20** mm · VTI **20** cm · HR **80** → SV **≈62.83** mL · CO **≈5.03** L/min.
+- **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — DAPT calculator
+- **Summary:** Shipped educational Yeh 2016 DAPT score on existing catalog slug `dapt-calculator` (`DaptCalculator`, catalog `6af46f10a27d8d1d4e990232`, pillar/subPillar null). Screenshot-first (ADR-023): age radios + eight unchecked clinical factors; defaults score 0; ≥75 (−2) / 65–74 (−1); +2 vein graft & CHF/LVEF&lt;30%; +1 for remaining six; stent exactly 3 mm adds 0; smoking label clarified vs past-year window; no start/stop orders; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. Registry keys absorbed into concurrent `48489e78`. TASKS `TOOL-721`.
+- **Commits:** `a724c1a8` (UI) / `ebf16c01` (engine) / (Brain this commit; registry via `48489e78`).
+- **Example:** defaults → **0**; age ≥75 → **−2**; diabetes + smoking → **2**.
+- **Verification:** Source-level point arithmetic; focused `calculation.test.ts` written (full tsc/lint/build/Playwright not run per continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Ejection Fraction Calculator
 - **Summary:** Shipped educational EF% on existing catalog slug `ejection-fraction-calculator` (`EjectionFractionCalculator`, catalog `6af46f10a27d8d1d4e990237`, pillar/subPillar null). Screenshot-first (ADR-023): I know SV / ESV / CO&HR; blank EDV; EF = 100×SV/EDV; SV from ESV or 1000×CO/HR; preserve EDV on mode switch; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-720`.
 - **Commits:** `8a059322` (UI) / `761accae` (engine) / (reg/Brain this commit).
