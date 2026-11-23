@@ -3,7 +3,6 @@
 import * as React from 'react';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { AncCalculatorWithoutBandsCalculator as _unused } from '../anc-calculator-without-bands/AncCalculatorWithoutBandsCalculator';
 import { BeeCalculatorForm } from './BeeCalculatorForm';
 import {
   createDefaultInput,
@@ -14,9 +13,6 @@ import {
   type BeeCalculatorResult,
 } from './types';
 import { validateBeeCalculatorInput } from './validation';
-
-// ponytail: chrome copied from hematology calculators — extract if a third duplicate appears
-void _unused;
 
 export function BeeCalculator({
   metadata,
@@ -67,45 +63,31 @@ export function BeeCalculator({
         isEmbed ? 'shadow-sm' : 'shadow-[0_12px_40px_-16px_rgba(22,60,67,0.28)]'
       } ${className}`}
     >
-      <div className="border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
+      <div className="flex items-center justify-between border-b border-border bg-muted/45 px-4 py-3 sm:px-5">
         <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
         {headerActions}
       </div>
       <div className="space-y-4 p-4 sm:p-5">
         <BeeCalculatorForm input={input} errors={errors} result={result} onChange={apply} />
-        <motionFooter dirty={dirty} onReload={reload} onClear={clear} onCopy={() => void copyTextToClipboard(pageUrl)} />
+        <button
+          type="button"
+          onClick={() => void copyTextToClipboard(pageUrl)}
+          className="rounded-xl border px-4 py-2 text-xs font-semibold"
+        >
+          Share result
+        </button>
+        <button type="button" onClick={reload} className="ml-2 rounded-xl border px-4 py-2 text-xs font-semibold">
+          Reload calculator
+        </button>
+        <button
+          type="button"
+          disabled={!dirty}
+          onClick={clear}
+          className="ml-2 rounded-xl border px-4 py-2 text-xs font-semibold disabled:opacity-40"
+        >
+          Clear all changes
+        </button>
       </div>
     </section>
-  );
-}
-
-function motionFooter({
-  dirty,
-  onReload,
-  onClear,
-  onCopy,
-}: {
-  dirty: boolean;
-  onReload: () => void;
-  onClear: () => void;
-  onCopy: () => void;
-}) {
-  return (
-    <div className="flex flex-wrap gap-2 border-t border-border pt-4">
-      <button type="button" onClick={onCopy} className="rounded-xl border px-4 py-2 text-xs font-semibold">
-        Share result
-      </button>
-      <button type="button" onClick={onReload} className="rounded-xl border px-4 py-2 text-xs font-semibold">
-        Reload calculator
-      </button>
-      <button
-        type="button"
-        disabled={!dirty}
-        onClick={onClear}
-        className="rounded-xl border px-4 py-2 text-xs font-semibold disabled:opacity-40"
-      >
-        Clear all changes
-      </button>
-    </div>
   );
 }

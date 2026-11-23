@@ -20,6 +20,7 @@ export function BloodDonorCalculator({
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
   const initial = createDefaultInput();
+  const [baseline, setBaseline] = React.useState(initial);
   const [input, setInput] = React.useState(initial);
   const [errors, setErrors] = React.useState<BloodDonorFieldErrors>({});
   const [result, setResult] = React.useState<BloodDonorResult | null>(() =>
@@ -32,6 +33,8 @@ export function BloodDonorCalculator({
     setErrors(v.errors);
     setResult(v.result);
   };
+
+  const dirty = !inputsEqual(input, baseline);
 
   return (
     <section
@@ -52,15 +55,20 @@ export function BloodDonorCalculator({
           <button
             type="button"
             className="text-xs font-semibold text-accent underline"
-            onClick={() => apply(createDefaultInput())}
+            onClick={() => {
+              const fresh = createDefaultInput();
+              setInput(fresh);
+              setBaseline(fresh);
+              setResult(validateBloodDonorInput(fresh).result);
+            }}
           >
             Reload calculator
           </button>
           <button
             type="button"
-            className="text-xs font-semibold text-muted-foreground underline"
+            className="text-xs font-semibold text-muted-foreground underline disabled:opacity-40"
+            disabled={!dirty}
             onClick={() => apply(createEmptyInput())}
-            disabled={inputsEqual(input, createEmptyInput())}
           >
             Clear all changes
           </button>

@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Approximate benzodiazepine and barbiturate dose equivalencies — educational comparison only.',
+    'Educational benzodiazepine and barbiturate mg equivalents by duration—approximate comparisons, not prescribing guidance.',
   asideAriaLabel: 'Interactive Benzodiazepine Conversion Calculator',
   tocItems: BENZODIAZEPINE_CONVERSION_TOC_ITEMS,
   GuideArticle: BenzodiazepineConversionGuideArticle,

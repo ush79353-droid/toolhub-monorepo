@@ -1,9 +1,9 @@
 export function BenzodiazepineConversionGuideArticle() {
   return (
-    <article className="prose prose-sm max-w-none text-muted-foreground">
+    <article className="prose prose-neutral max-w-none">
       <p>
-        Doses are normalized through approximate oral diazepam (10 mg) equivalents.
-        IV midazolam and other route mismatches are flagged as approximate only.
+        Enter one dose in milligrams to populate approximate equivalents across short,
+        intermediate, and long-acting agents, including separate IV and oral midazolam rows.
       </p>
     </article>
   );
