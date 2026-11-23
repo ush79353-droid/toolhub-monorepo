@@ -1,6 +1,6 @@
 ### 2026-11-23 — ECG Boxes to Seconds Calculator
-- **Summary:** Shipped educational ECG grid→time tool on existing catalog slug `ecg-boxes-to-seconds-calculator` (`EcgBoxesToSecondsCalculator`, catalog `6af46f10a27d8d1d4e990235`, pillar/subPillar null). Screenshot-first (ADR-023): blank box count; Small (1 mm) / Big (5 mm); 25/50 mm/s; read-only duration with sec|ms|min preserving the interval; duration = count×width÷speed; privacy-safe share URL. **No FX**. Frontend/backend registry wired. **Mongo `tool:assign` blocked** (Atlas IP whitelist on retries); activation retry pending. **`indexable` left false**. TASKS `TOOL-717`.
-- **Commits:** `97fa589c` (UI) / `24f83f80` (engine) / (reg/Brain this commit).
+- **Summary:** Shipped educational ECG grid→time tool on existing catalog slug `ecg-boxes-to-seconds-calculator` (`EcgBoxesToSecondsCalculator`, catalog `6af46f10a27d8d1d4e990235`, pillar/subPillar null). Screenshot-first (ADR-023): blank box count; Small (1 mm) / Big (5 mm); 25/50 mm/s; read-only duration with sec|ms|min preserving the interval; duration = count×width÷speed; privacy-safe share URL. **No FX**. Frontend/backend registry wired (keys absorbed into concurrent `36d26bc3`). **Mongo `tool:assign` blocked** (Atlas IP whitelist on retries); activation retry pending. **`indexable` left false**. TASKS `TOOL-718`.
+- **Commits:** `97fa589c` (UI) / `24f83f80` (engine) / (Brain this commit; registry via `36d26bc3`).
 - **Example:** **1** small · **25** mm/s → **0.04** s; **1** big · **50** mm/s → **0.10** s; **5** small = **1** big.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
@@ -8,6 +8,12 @@
 - **Summary:** Shipped educational CPP = MAP − ICP on existing catalog slug `cerebral-perfusion-pressure-calculator` (`CerebralPerfusionPressureCalculator`, catalog `6af46f10a27d8d1d4e99022f`, pillar/subPillar null). Screenshot-first (ADR-023): age 18+ default; optional MAP from (SBP+2×DBP)/3; measured vs calculated MAP labeling; age-band literature ranges only (Allen et al. teaching summary — not treatment targets); privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-715`.
 - **Commits:** `ff1576ac` (UI) / `8e5637ab` (engine) / (reg/Brain this commit).
 - **Example:** MAP **90** · ICP **15** → CPP **75**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — Duke Treadmill Score Calculator
+- **Summary:** Shipped educational Mark Duke treadmill score on existing catalog slug `duke-treadmill-score-calculator` (`DukeTreadmillScoreCalculator`, catalog `6af46f10a27d8d1d4e990234`, pillar/subPillar null). Screenshot-first (ADR-023): blank Bruce minutes + ST mm; angina radios none/non-limiting/limiting (0/1/2); DTS = min − 5×ST − 4×AI; blank until both numerics; privacy-safe share URL. **No FX**. Registry wired; **Mongo assign may be blocked by Atlas**; **`indexable` left false**. TASKS `TOOL-719`.
+- **Commits:** `6a668628` (UI) / `1c06cb2b` (engine) / (reg/Brain this commit).
+- **Example:** **10** min · **1** mm → **5** / **1** / **−3**.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-23 — Cardiac Index Calculator
