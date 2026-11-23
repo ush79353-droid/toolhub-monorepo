@@ -1,3 +1,8 @@
+### 2026-11-23 — HEART Score Calculator
+- **Summary:** Shipped educational HEART score (0–10) on existing catalog slug `heart-score-calculator` (`HeartScoreCalculator`, catalog `6af46f10a27d8d1d4e99023f`, pillar/subPillar null). Screenshot-first (ADR-023): blank age; ECG/History/Troponin/Risk screenshot defaults; age &lt;45/45–64/≥65; troponin tiers vs assay URL; total blank until age; no disposition text; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-735`.
+- **Commits:** `6e791af7` (UI) / `c81530e5` (engine) / `e8a7af45` (reg/Brain).
+- **Verification:** `heart-score/calculation.test.ts` ok; `backend` build + `tool.key` ok. Temporary files cleaned: YES. Push/Pull/Fetch: NONE.
+
 ### 2026-11-23 — LV Calculator
 - **Summary:** Shipped educational ASE cube-formula LV mass on existing catalog slug `lv-calculator` (`LvCalculator`, catalog `6af46f10a27d8d1d4e990241`, pillar/subPillar null). Screenshot-first (ADR-023): Female; know BSA Yes; blank BSA + LVEDD/IVSd/PWd mm|cm; No→Mosteller; LVM/LVMI/RWT; sex for ASE reference labels only; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-734`.
 - **Commits:** `2b1833f6` (UI) / `ae4c8b54` (engine) / (reg/Brain this commit).

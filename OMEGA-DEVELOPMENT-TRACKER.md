@@ -14,7 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
-| 135 | HEART Score Calculator | DEVELOPED | AUDIT PENDING | (UI) | (engine) | (reg/Brain) | Completed Tools | `HeartScoreCalculator`; slug `heart-score-calculator`; Mongo `6af46f10a27d8d1d4e99023f` active; Six/Backus HEART 0–10; no FX; indexable false; TASKS `TOOL-735` |
+| 135 | HEART Score Calculator | DEVELOPED | AUDIT PENDING | 6e791af7 | c81530e5 | e8a7af45 | Completed Tools | `HeartScoreCalculator`; slug `heart-score-calculator`; Mongo `6af46f10a27d8d1d4e99023f` active; Six/Backus HEART 0–10; no FX; indexable false; TASKS `TOOL-735` |
 | 134 | LV Calculator | DEVELOPED | AUDIT PENDING | 2b1833f6 | ae4c8b54 | (this reg/Brain) | Completed Tools | `LvCalculator`; slug `lv-calculator`; Mongo `6af46f10a27d8d1d4e990241` active; ASE cube LVM/LVMI/RWT; Mosteller BSA option; no FX; indexable false; TASKS `TOOL-734` |
 | 133 | Luteal Phase Calculator | DEVELOPED | AUDIT PENDING | 55a18d6c | 031422c8 | 28938cb5 | Completed Tools | `LutealPhaseCalculator`; slug `luteal-phase-calculator`; Mongo `6af46f10a27d8d1d4e99021c` active; period − ovulation calendar days; no FX; indexable false; TASKS `TOOL-732` |
 | 132 | Implantation Calculator | DEVELOPED | AUDIT PENDING | 6e07d947 | 81ab4e81 | (this reg/Brain) | Completed Tools | `ImplantationCalculator`; slug `implantation-calculator`; Mongo `6af46f10a27d8d1d4e99021b` active; Wilcox 6–12 DPO; no FX; indexable false; TASKS `TOOL-733` |
