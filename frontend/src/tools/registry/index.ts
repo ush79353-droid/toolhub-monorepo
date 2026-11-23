@@ -3745,6 +3745,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  QtcCalculator: lazyTool(() =>
+    import('@/tools/calculators/qtc/QtcCalculator').then((mod) => ({
+      default: mod.QtcCalculator,
+    })),
+  ),
   QuizLoanBalanceCalculator: lazyTool(() =>
     import('@/tools/calculators/quiz-loan-balance/QuizLoanBalanceCalculator').then(
       (mod) => ({

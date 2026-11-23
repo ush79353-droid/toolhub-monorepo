@@ -1,3 +1,8 @@
+### 2026-11-23 — QTc Calculator
+- **Summary:** Shipped educational Bazett QTc on existing catalog slug `qtc-calculator` (`QtcCalculator`, catalog `6af46f10a27d8d1d4e990248`, pillar/subPillar null). Screenshot-first (ADR-023): blank QT/HR/RR with ms|s units; Bazett primary; collapsed Fridericia/Framingham/Hodges; HR↔RR sync; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-743`.
+- **Commits:** `ca1b9d5f` (UI; also absorbed concurrent PVR UI staging) / `af4730d9` (engine) / (reg/Brain this commit).
+- **Example:** QT **400** ms · HR **60** → QTc **400** ms; HR **120** → RR **500** ms.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-23 — PVR Calculator - Pulmonary Vascular Resistance
 - **Summary:** Shipped educational PVR on existing catalog slug `pvr-calculator-pulmonary-vascular-resistance` (`PvrCalculator`, catalog `6af46f10a27d8d1d4e990247`, pillar/subPillar null). Screenshot-first (ADR-023): blank mPAP/LAP/CO; mmHg|kPa; Wood=(mPAP−LAP)/CO; dyn·s·cm⁻⁵=Wood×80; PCWP/PAWP surrogate note; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-743`.
 - **Commits:** UI absorbed into concurrent `ca1b9d5f` / `cba552ec` (engine) / (reg/Brain this commit).
@@ -9,6 +14,12 @@
 - **Commits:** UI absorbed into concurrent `b812e883` / `30042397` (engine) / (reg/Brain this commit).
 - **Example:** d **2** · VTI **20**/**40** → ≈ **1.571** cm²; PHT **220** → **1** cm².
 - **Verification:** `mitral-valve-area/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+### 2026-11-23 — Rate Pressure Product Calculator
+- **Summary:** Shipped educational rate-pressure product (double product) on existing catalog slug `rate-pressure-product-calculator` (`RatePressureProductCalculator`, catalog `6af46f10a27d8d1d4e990249`, pillar/subPillar null). Screenshot-first (ADR-023): blank max HR (beats/min) + max SBP (mmHg); RPP = HR×SBP raw bpm·mmHg with thousands formatting; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-744`.
+- **Commits:** `75d7a8e9` (UI) / `01b74543` (engine) / (reg/Brain this commit).
+- **Example:** **150** × **160** → **24,000** bpm·mmHg.
+- **Verification:** `rate-pressure-product/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Period Calculator
 - **Summary:** Shipped educational period/fertile/ovulation forecast on existing catalog slug `period-calculator` (`PeriodCalculator`, catalog `6af46f10a27d8d1d4e990222`, pillar/subPillar null). Screenshot-first (ADR-023): cycle 28 / period 6 defaults; blank LMP; next 3 periods; ASRM ovulation = start+(length−15); 6-day fertile window ending on ovulation; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-739`.
 - **Commits:** `b812e883` (UI) / `9b7582ed` (engine) / (reg/Brain this commit).
