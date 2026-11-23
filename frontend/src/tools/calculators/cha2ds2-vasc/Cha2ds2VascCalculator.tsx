@@ -1,0 +1,158 @@
+'use client';
+
+import * as React from 'react';
+import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import type { ToolComponentProps } from '@/tools/types';
+import { copyTextToClipboard } from '@/tools/shared/clipboard';
+import { Cha2ds2VascForm } from './Cha2ds2VascForm';
+import {
+  createDefaultInput,
+  createEmptyInput,
+  inputsEqual,
+  type Cha2ds2VascInput,
+} from './types';
+import { validateCha2ds2VascInput } from './validation';
+
+export function Cha2ds2VascCalculator({
+  metadata,
+  className = '',
+  presentation = 'default',
+  headerActions,
+}: ToolComponentProps) {
+  const isEmbed = presentation === 'embed';
+  const initial = createDefaultInput();
+  const [baseline, setBaseline] = React.useState<Cha2ds2VascInput>(() => initial);
+  const [input, setInput] = React.useState<Cha2ds2VascInput>(() => initial);
+  const [result, setResult] = React.useState(
+    () => validateCha2ds2VascInput(initial).result
+  );
+  const [copied, setCopied] = React.useState(false);
+  const [shared, setShared] = React.useState(false);
+  const [canShare, setCanShare] = React.useState(false);
+  const [feedback, setFeedback] = React.useState<'yes' | 'no' | null>(null);
+
+  React.useEffect(() => {
+    setCanShare(typeof navigator.share === 'function');
+  }, []);
+
+  const apply = (next: Cha2ds2VascInput) => {
+    const validation = validateCha2ds2VascInput(next);
+    setInput(next);
+    setResult(validation.result);
+  };
+
+  const handleReload = () => {
+    const fresh = createDefaultInput();
+    const validation = validateCha2ds2VascInput(fresh);
+    setInput(fresh);
+    setBaseline(fresh);
+    setResult(validation.result);
+    setCopied(false);
+    setShared(false);
+    setFeedback(null);
+  };
+
+  const handleClear = () => {
+    const empty = createEmptyInput();
+    const validation = validateCha2ds2VascInput(empty);
+    setInput(empty);
+    setResult(validation.result);
+    setCopied(false);
+    setShared(false);
+    setFeedback(null);
+  };
+
+  const dirty = !inputsEqual(input, baseline);
+
+  const pageUrl =
+    typeof window !== 'undefined'
+      ? window.location.href.split('?')[0]
+      : `/tools/${metadata.slug}`;
+
+  const summary = [
+    `${metadata.title} | Omega Calculators`,
+    'Educational CHA₂DS₂-VASc score — not a treatment decision.',
+    pageUrl,
+  ].join('\n');
+
+  const handleShare = async () => {
+    try {
+      if (canShare && navigator.share) {
+        await navigator.share({
+          title: metadata.title,
+          text: summary,
+          url: pageUrl,
+        });
+        setShared(true);
+        return;
+      }
+      const ok = await copyTextToClipboard(summary);
+      if (ok) {
+        setCopied(true);
+        setShared(true);
+        window.setTimeout(() => setCopied(false), 2000);
+      }
+    } catch {
+      /* cancelled */
+    }
+  };
+
+  return (
+    <div className={`space-y-4 ${className}`}>
+      {!isEmbed && headerActions ? (
+        <div className="flex justify-end">{headerActions}</div>
+      ) : null}
+
+      <Cha2ds2VascForm input={input} result={result} onChange={apply} />
+
+      <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+        <Button type="button" className="w-full sm:w-auto" onClick={handleShare}>
+          <Share2 className="mr-2 h-4 w-4" aria-hidden />
+          {shared ? (copied ? 'Copied' : 'Shared') : 'Share result'}
+        </Button>
+        <Button
+          type="button"
+          variant="outline"
+          className="w-full sm:w-auto"
+          onClick={handleReload}
+        >
+          Reload calculator
+        </Button>
+        <Button
+          type="button"
+          variant="outline"
+          className="w-full sm:w-auto"
+          onClick={handleClear}
+          disabled={!dirty}
+        >
+          Clear all changes
+        </Button>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+        <span>Did we solve your problem today?</span>
+        <Button
+          type="button"
+          size="sm"
+          variant={feedback === 'yes' ? 'default' : 'outline'}
+          onClick={() => setFeedback('yes')}
+          aria-pressed={feedback === 'yes'}
+        >
+          <ThumbsUp className="mr-1 h-3.5 w-3.5" aria-hidden />
+          Yes
+        </Button>
+        <Button
+          type="button"
+          size="sm"
+          variant={feedback === 'no' ? 'default' : 'outline'}
+          onClick={() => setFeedback('no')}
+          aria-pressed={feedback === 'no'}
+        >
+          <ThumbsDown className="mr-1 h-3.5 w-3.5" aria-hidden />
+          No
+        </Button>
+      </div>
+    </div>
+  );
+}
