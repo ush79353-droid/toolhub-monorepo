@@ -57,6 +57,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ArmyBodyFatCalculator,
     })),
   ),
+  ArterialAgeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/arterial-age/ArterialAgeCalculator'
+    ).then((mod) => ({
+      default: mod.ArterialAgeCalculator,
+    })),
+  ),
   AutoLeaseCalculator: lazyTool(() =>
     import('@/tools/calculators/auto-lease/AutoLeaseCalculator').then((mod) => ({
       default: mod.AutoLeaseCalculator,
@@ -2702,6 +2709,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  SixMinuteWalkTestCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/six-minute-walk-test/SixMinuteWalkTestCalculator'
+    ).then((mod) => ({
+      default: mod.SixMinuteWalkTestCalculator,
+    })),
+  ),
   SocialSecurityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/social-security/SocialSecurityCalculator'
@@ -3131,6 +3145,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CapmCalculator,
     })),
   ),
+  CardiacOutputCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cardiac-output/CardiacOutputCalculator'
+    ).then((mod) => ({
+      default: mod.CardiacOutputCalculator,
+    })),
+  ),
+  CardiacIndexCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cardiac-index/CardiacIndexCalculator'
+    ).then((mod) => ({
+      default: mod.CardiacIndexCalculator,
+    })),
+  ),
   CanadianMortgageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/canadian-mortgage/CanadianMortgageCalculator'
@@ -3204,6 +3232,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   CashRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/cash-ratio/CashRatioCalculator').then((mod) => ({
       default: mod.CashRatioCalculator,
+    })),
+  ),
+  CerebralPerfusionPressureCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cerebral-perfusion-pressure/CerebralPerfusionPressureCalculator'
+    ).then((mod) => ({
+      default: mod.CerebralPerfusionPressureCalculator,
     })),
   ),
   CheckDigitCalculator: lazyTool(() =>
@@ -4455,6 +4490,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/blood-pregnancy-hcg/BloodPregnancyHcgCalculator'
     ).then((mod) => ({
       default: mod.BloodPregnancyHcgCalculator,
+    })),
+  ),
+  BloodPressureCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/blood-pressure/BloodPressureCalculator'
+    ).then((mod) => ({
+      default: mod.BloodPressureCalculator,
     })),
   ),
   BoatLoanCalculator: lazyTool(() =>

@@ -1,3 +1,27 @@
+### 2026-11-23 — Cerebral Perfusion Pressure Calculator
+- **Summary:** Shipped educational CPP = MAP − ICP on existing catalog slug `cerebral-perfusion-pressure-calculator` (`CerebralPerfusionPressureCalculator`, catalog `6af46f10a27d8d1d4e99022f`, pillar/subPillar null). Screenshot-first (ADR-023): age 18+ default; optional MAP from (SBP+2×DBP)/3; measured vs calculated MAP labeling; age-band literature ranges only (Allen et al. teaching summary — not treatment targets); privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-715`.
+- **Commits:** `ff1576ac` (UI) / `8e5637ab` (engine) / (reg/Brain this commit).
+- **Example:** MAP **90** · ICP **15** → CPP **75**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — Cardiac Output Calculator
+- **Summary:** Shipped educational Fick cardiac output on existing catalog slug `cardiac-output-calculator` (`CardiacOutputCalculator`, catalog `6af46f10a27d8d1d4e99022e`, pillar/subPillar null). Screenshot-first (ADR-023): blank height/weight → Mosteller BSA; estimated VO₂ 125 mL/min/m² × BSA (labeled estimated); Hb + arterial/venous sat/tension → content 1.34×Hb×Sat + 0.0031×PO₂ (mL/dL→mL/L); CO = VO₂/(Ca−Cv); CI = CO/BSA; reject nonpositive AV difference; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-713`.
+- **Commits:** `d0535c5a` (UI) / `42b1606b` (engine) / (reg/Brain this commit).
+- **Example:** VO₂ **250** · AV **50** mL/L → CO **5.00** L/min.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — Arterial Age Calculator
+- **Summary:** Shipped educational MESA arterial age on existing catalog slug `arterial-age-calculator` (`ArterialAgeCalculator`, catalog `6af46f10a27d8d1d4e99022b`, pillar/subPillar null). Screenshot-first (ADR-023): blank Agatston CAC + optional chronologic age (yrs); Â = 39.1 + 7.25 × ln(CAC+1); age comparison-only; Table 1 95% CI only for exact published CAC rows; CAC 0 → ≈39 y; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-714`.
+- **Commits:** `d0d96e3c` (UI) / `2d9696d7` (engine; absorbed concurrent cardiac-index engine files) / (reg/Brain this commit).
+- **Example:** CAC **0** → **39** y (CI 32–46); CAC **100** → **73** y (CI 71–74); CAC **400** → **83** y.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — Blood Pressure Calculator
+- **Summary:** Shipped educational office BP category lookup on existing catalog slug `blood-pressure-calculator` (`BloodPressureCalculator`, catalog `6af46f10a27d8d1d4e99022c`, pillar/subPillar null). Screenshot-first (ADR-023): ACC/AHA vs 2018 joint ESC/ESH radios; blank systolic/diastolic; higher-category precedence; ESC graded ISH; ACC/AHA severe band; measurement-context (not diagnosis); privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-712`.
+- **Commits:** `e5dcb8df` (UI) / `a9d8d5ac` (engine) / (reg/Brain this commit).
+- **Example:** **118/76** ACC/AHA → Normal; **150/85** ESC/ESH → ISH Grade 1; **181/80** → Severe.
+- **Verification:** Focused `calculation.test.ts` ok (boundary + mixed + ISH fixtures). Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — CHA2DS2-Vasc Calculator
 - **Summary:** Shipped educational CHA₂DS₂-VASc on existing catalog slug `cha2ds2-vasc-calculator` (`Cha2ds2VascCalculator`, catalog `6af46f10a27d8d1d4e990230`, pillar/subPillar null). Screenshot-first (ADR-023): Yes/No factors default No; age bands; score 0–9; Friberg 2012 unadjusted annual stroke/composite rates; **no anticoagulation recommendation text**; female-sex-only educational note; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-711`.
 - **Commits:** `9c456dc0` (UI) / `9bad1a2f` (engine) / (reg/Brain this commit).

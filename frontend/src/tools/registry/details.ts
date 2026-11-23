@@ -16,6 +16,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/aortic-valve-area/detail'),
   ArmyBodyFatCalculator: () =>
     import('@/tools/calculators/army-body-fat/detail'),
+  ArterialAgeCalculator: () =>
+    import('@/tools/calculators/arterial-age/detail'),
   AutoLeaseCalculator: () => import('@/tools/calculators/auto-lease/detail'),
   AutoLoanCalculator: () => import('@/tools/calculators/auto-loan/detail'),
   CaliforniaOvertimeCalculator: () =>
@@ -636,6 +638,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SipCalculator: () => import('@/tools/calculators/sip/detail'),
   SipLumpsumCalculator: () =>
     import('@/tools/calculators/sip-lumpsum/detail'),
+  SixMinuteWalkTestCalculator: () =>
+    import('@/tools/calculators/six-minute-walk-test/detail'),
   SocialSecurityCalculator: () =>
     import('@/tools/calculators/social-security/detail'),
   StampDutyLandTaxUkCalculator: () =>
@@ -765,6 +769,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/calories-burned/detail'),
   CallOptionCalculator: () => import('@/tools/calculators/call-option/detail'),
   CapmCalculator: () => import('@/tools/calculators/capm/detail'),
+  CardiacOutputCalculator: () =>
+    import('@/tools/calculators/cardiac-output/detail'),
+  CardiacIndexCalculator: () =>
+    import('@/tools/calculators/cardiac-index/detail'),
   CanadianMortgageCalculator: () =>
     import('@/tools/calculators/canadian-mortgage/detail'),
   MortgageCalculatorUk: () =>
@@ -790,6 +798,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CashFlowToDebtRatioCalculator: () =>
     import('@/tools/calculators/cash-flow-to-debt-ratio/detail'),
   CashRatioCalculator: () => import('@/tools/calculators/cash-ratio/detail'),
+  CerebralPerfusionPressureCalculator: () =>
+    import('@/tools/calculators/cerebral-perfusion-pressure/detail'),
   CheckDigitCalculator: () =>
     import('@/tools/calculators/check-digit/detail'),
   ChildTaxCreditCalculator: () =>
@@ -1182,6 +1192,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/blood-donation-due-date/detail'),
   BloodPregnancyHcgCalculator: () =>
     import('@/tools/calculators/blood-pregnancy-hcg/detail'),
+  BloodPressureCalculator: () =>
+    import('@/tools/calculators/blood-pressure/detail'),
   BoatLoanCalculator: () =>
     import('@/tools/calculators/boat-loan/detail'),
   BodyFatCalculator: () =>
