@@ -3624,6 +3624,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HasBledCalculator,
     })),
   ),
+  HeartFailureLifeExpectancyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/heart-failure-life-expectancy/HeartFailureLifeExpectancyCalculator'
+    ).then((mod) => ({
+      default: mod.HeartFailureLifeExpectancyCalculator,
+    })),
+  ),
   HcgLevelsCalculator: lazyTool(() =>
     import('@/tools/calculators/hcg-levels/HcgLevelsCalculator').then((mod) => ({
       default: mod.HcgLevelsCalculator,
@@ -3665,6 +3672,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     ).then((mod) => ({
       default: mod.LevothyroxineDosageCalculator,
     })),
+  ),
+  LutealPhaseCalculator: lazyTool(() =>
+    import('@/tools/calculators/luteal-phase/LutealPhaseCalculator').then(
+      (mod) => ({
+        default: mod.LutealPhaseCalculator,
+      }),
+    ),
   ),
   LiquidNetWorthCalculator: lazyTool(() =>
     import('@/tools/calculators/liquid-net-worth/LiquidNetWorthCalculator').then((mod) => ({

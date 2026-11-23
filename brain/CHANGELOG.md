@@ -1,3 +1,7 @@
+### 2026-11-23 — Heart Failure Life Expectancy Calculator
+- **Summary:** Shipped educational MAGGIC survival tool on `heart-failure-life-expectancy-calculator` (`HeartFailureLifeExpectancyCalculator`, catalog `6af46f10a27d8d1d4e99023e`). Pocock 2013 Figure 2 integer chart + Table 4; survival = 100% − mortality; no years remaining; screenshot accordions; **No FX**. `tool:assign` `--set-active`; **`indexable` false**. TASKS `TOOL-731`.
+- **Verification:** `heart-failure-life-expectancy/calculation.test.ts` ok; `backend` build ok. Temporary files cleaned: YES.
+
 ### 2026-11-23 — Gupta Risk Calculator
 - **Summary:** Shipped educational Gupta MICA on `gupta-risk-calculator` (`GuptaRiskCalculator`, catalog `6af46f10a27d8d1d4e99023c`). Gupta Circulation 2011 Table 2; creatinine mg/dL|µmol/L or not measured; MICA blank until valid age+creatinine; privacy-safe share URL. **No FX**. `tool:assign` `--set-active`; **`indexable` false**.
 - **Commits:** `8af335f2` (UI) / `8f392313` (engine) / (reg this commit).

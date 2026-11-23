@@ -928,6 +928,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/graham-number/detail'),
   HasBledCalculator: () =>
     import('@/tools/calculators/has-bled/detail'),
+  HeartFailureLifeExpectancyCalculator: () =>
+    import('@/tools/calculators/heart-failure-life-expectancy/detail'),
   HcgLevelsCalculator: () =>
     import('@/tools/calculators/hcg-levels/detail'),
   HedgeRatioCalculator: () =>
@@ -944,6 +946,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lerner-index/detail'),
   LevothyroxineDosageCalculator: () =>
     import('@/tools/calculators/levothyroxine-dosage/detail'),
+  LutealPhaseCalculator: () =>
+    import('@/tools/calculators/luteal-phase/detail'),
   LiquidNetWorthCalculator: () =>
     import('@/tools/calculators/liquid-net-worth/detail'),
   LoanBalanceCalculator: () =>
