@@ -3442,6 +3442,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EbitdaMultipleCalculator,
     })),
   ),
+  EcgBoxesToSecondsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ecg-boxes-to-seconds/EcgBoxesToSecondsCalculator'
+    ).then((mod) => ({
+      default: mod.EcgBoxesToSecondsCalculator,
+    })),
+  ),
   EconomicValueAddedCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/economic-value-added/EconomicValueAddedCalculator'
@@ -4730,6 +4737,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/cross-exchange-rate/CrossExchangeRateCalculator'
     ).then((mod) => ({
       default: mod.CrossExchangeRateCalculator,
+    })),
+  ),
+  CrownRumpLengthCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/crown-rump-length/CrownRumpLengthCalculator'
+    ).then((mod) => ({
+      default: mod.CrownRumpLengthCalculator,
     })),
   ),
   DiscountedCashFlowCalculator: lazyTool(() =>

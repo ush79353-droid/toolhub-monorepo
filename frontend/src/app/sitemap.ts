@@ -849,6 +849,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ebit-calculator',
   'ebitda-calculator',
   'ebitda-multiple-calculator',
+  'ecg-boxes-to-seconds-calculator',
   'economic-value-added-calculator',
   'enterprise-value-calculator',
   'ebt-calculator-earnings-before-tax',

@@ -865,6 +865,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EbitdaCalculator: () => import('@/tools/calculators/ebitda/detail'),
   EbitdaMultipleCalculator: () =>
     import('@/tools/calculators/ebitda-multiple/detail'),
+  EcgBoxesToSecondsCalculator: () =>
+    import('@/tools/calculators/ecg-boxes-to-seconds/detail'),
   EconomicValueAddedCalculator: () =>
     import('@/tools/calculators/economic-value-added/detail'),
   EffectiveDurationCalculator: () =>
@@ -1253,6 +1255,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/credit-card-interest/detail'),
   CreditCardMinimumPaymentCalculator: () =>
     import('@/tools/calculators/credit-card-minimum-payment/detail'),
+  CrownRumpLengthCalculator: () =>
+    import('@/tools/calculators/crown-rump-length/detail'),
   CreditCardPaymentCalculator: () =>
     import('@/tools/calculators/credit-card-payment/detail'),
   CreditCardPayoffCalculator: () =>

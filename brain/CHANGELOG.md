@@ -1,11 +1,29 @@
+### 2026-11-23 — ECG Boxes to Seconds Calculator
+- **Summary:** Shipped educational ECG grid→time tool on existing catalog slug `ecg-boxes-to-seconds-calculator` (`EcgBoxesToSecondsCalculator`, catalog `6af46f10a27d8d1d4e990235`, pillar/subPillar null). Screenshot-first (ADR-023): blank box count; Small (1 mm) / Big (5 mm); 25/50 mm/s; read-only duration with sec|ms|min preserving the interval; duration = count×width÷speed; privacy-safe share URL. **No FX**. Frontend/backend registry wired. **Mongo `tool:assign` blocked** (Atlas IP whitelist on retries); activation retry pending. **`indexable` left false**. TASKS `TOOL-717`.
+- **Commits:** `97fa589c` (UI) / `24f83f80` (engine) / (reg/Brain this commit).
+- **Example:** **1** small · **25** mm/s → **0.04** s; **1** big · **50** mm/s → **0.10** s; **5** small = **1** big.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Cerebral Perfusion Pressure Calculator
 - **Summary:** Shipped educational CPP = MAP − ICP on existing catalog slug `cerebral-perfusion-pressure-calculator` (`CerebralPerfusionPressureCalculator`, catalog `6af46f10a27d8d1d4e99022f`, pillar/subPillar null). Screenshot-first (ADR-023): age 18+ default; optional MAP from (SBP+2×DBP)/3; measured vs calculated MAP labeling; age-band literature ranges only (Allen et al. teaching summary — not treatment targets); privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-715`.
 - **Commits:** `ff1576ac` (UI) / `8e5637ab` (engine) / (reg/Brain this commit).
 - **Example:** MAP **90** · ICP **15** → CPP **75**.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-23 — Cardiac Index Calculator
+- **Summary:** Shipped educational cardiac index on existing catalog slug `cardiac-index-calculator` (`CardiacIndexCalculator`, catalog `6af46f10a27d8d1d4e99022d`, pillar/subPillar null). Screenshot-first (ADR-023): Yes/No known-CO radios; Yes → CO L/min + height/weight → CI = CO/Mosteller BSA (unrounded BSA in division); No → Fick panels (Hb, arterial/venous sat/tension, estimated VO₂ 125×BSA); branch switch clears obsolete fields; privacy-safe share URL. **No FX**. Frontend/backend registry wired. **Mongo `tool:assign` blocked** on first attempts (Atlas IP whitelist / selection error); retry pending. **`indexable` left false**. TASKS `TOOL-717`.
+- **Commits:** `90eca006` (UI) / engine absorbed into concurrent `2d9696d7` / (reg/Brain this commit).
+- **Example:** CO **5** · BSA **2** → CI **2.5** L/min/m².
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — 6 Minute Walk Test Calculator
+- **Summary:** Shipped educational Enright–Sherrill 6MWD on existing catalog slug `6-minute-walk-test-calculator` (`SixMinuteWalkTestCalculator`, catalog `6af46f10a27d8d1d4e990228`, pillar/subPillar null). Screenshot-first (ADR-023): Male/Female; blank age/height/weight; predicted healthy 6MWD; expandable observed → percent of expected; ages 40–80 gate; unit conversions; privacy-safe share URL. **No FX**. Frontend/backend registry + sitemap wired. Mongo `tool:assign --set-active` retried on Atlas whitelist timeout — activate when reachable; **`indexable` preserved false**. TASKS `TOOL-716`.
+- **Commits:** `e2e977be` (UI) / `a4312bce` (engine; race-repaired in reg) / (reg/Brain this commit).
+- **Example:** Male **60**y · **175** cm · **80** kg → **573.75** m; observed equal → **100%**; age **30** suppressed.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Cardiac Output Calculator
-- **Summary:** Shipped educational Fick cardiac output on existing catalog slug `cardiac-output-calculator` (`CardiacOutputCalculator`, catalog `6af46f10a27d8d1d4e99022e`, pillar/subPillar null). Screenshot-first (ADR-023): blank height/weight → Mosteller BSA; estimated VO₂ 125 mL/min/m² × BSA (labeled estimated); Hb + arterial/venous sat/tension → content 1.34×Hb×Sat + 0.0031×PO₂ (mL/dL→mL/L); CO = VO₂/(Ca−Cv); CI = CO/BSA; reject nonpositive AV difference; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-713`.
+- **Summary:** Shipped educational Fick cardiac output on existing catalog slug `cardiac-output-calculator` (`CardiacOutputCalculator`, catalog `6af46f10a27d8d1d4e99022e`, pillar/subPillar null). Screenshot-first (ADR-023): blank height/weight → Mosteller BSA; estimated VO₂ 125 mL/min/m² × BSA (labeled estimated); Hb + arterial/venous sat/tension → content 1.34×Hb×Sat + 0.0031×PO₂ (mL/dL→mL/L); CO = VO₂/(Ca−Cv); CI = CO/BSA; reject nonpositive AV difference; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active` (retry after Atlas outage); **`indexable` preserved false**. TASKS `TOOL-713`.
 - **Commits:** `d0535c5a` (UI) / `42b1606b` (engine) / (reg/Brain this commit).
 - **Example:** VO₂ **250** · AV **50** mL/L → CO **5.00** L/min.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.

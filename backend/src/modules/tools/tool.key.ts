@@ -620,6 +620,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EbitCalculator',
   'EbitdaCalculator',
   'EbitdaMultipleCalculator',
+  'EcgBoxesToSecondsCalculator',
   'EconomicValueAddedCalculator',
   'EffectiveDurationCalculator',
   'EmiCalculator',
