@@ -2733,6 +2733,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SimpleInterestCalculator,
     })),
   ),
+  SpermAnalysisCalculator: lazyTool(() =>
+    import('@/tools/calculators/sperm-analysis/SpermAnalysisCalculator').then((mod) => ({
+      default: mod.SpermAnalysisCalculator,
+    })),
+  ),
   SpendingMultiplierCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/spending-multiplier/SpendingMultiplierCalculator'
@@ -6121,6 +6126,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/value-at-risk/ValueAtRiskCalculator'
     ).then((mod) => ({
       default: mod.ValueAtRiskCalculator,
+    })),
+  ),
+  VbacCalculator: lazyTool(() =>
+    import('@/tools/calculators/vbac/VbacCalculator').then((mod) => ({
+      default: mod.VbacCalculator,
     })),
   ),
   VteRiskScorePregnancyCalculator: lazyTool(() =>

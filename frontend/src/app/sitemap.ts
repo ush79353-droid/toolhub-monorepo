@@ -713,6 +713,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'price-elasticity-of-supply-calculator',
   'real-gdp-calculator',
   'reserve-ratio-calculator',
+  'sperm-analysis-calculator',
   'spending-multiplier-calculator',
   'tax-equivalent-yield-calculator',
   'taylor-rule-calculator',

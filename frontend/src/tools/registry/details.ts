@@ -634,6 +634,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/sell-through-rate/detail'),
   SimpleInterestCalculator: () =>
     import('@/tools/calculators/simple-interest/detail'),
+  SpermAnalysisCalculator: () =>
+    import('@/tools/calculators/sperm-analysis/detail'),
   SpendingMultiplierCalculator: () =>
     import('@/tools/calculators/spending-multiplier/detail'),
   TaxEquivalentYieldCalculator: () =>
@@ -1643,6 +1645,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SharpeRatioCalculator: () => import('@/tools/calculators/sharpe-ratio/detail'),
   VaMortgageCalculator: () => import('@/tools/calculators/va-mortgage/detail'),
   ValueAtRiskCalculator: () => import('@/tools/calculators/value-at-risk/detail'),
+  VbacCalculator: () => import('@/tools/calculators/vbac/detail'),
   VteRiskScorePregnancyCalculator: () =>
     import('@/tools/calculators/vte-risk-pregnancy/detail'),
   EidlCalculator: () => import('@/tools/calculators/eidl/detail'),

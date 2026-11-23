@@ -1,3 +1,9 @@
+### 2026-11-23 — Progesterone to Estrogen Ratio Calculator
+- **Summary:** Shipped educational Pg/E2 mass ratio on existing catalog slug `progesterone-to-estrogen-ratio-calculator` (`ProgesteroneToEstrogenRatioCalculator`, catalog `6af46f10a27d8d1d4e990223`, pillar/subPillar null). Screenshot-first (ADR-023): blank progesterone (ng/mL default) + estradiol (pg/mL); ratio = P(pg/mL)/E2(pg/mL) ≡ 1000×P(ng/mL)/E2(pg/mL); nmol/L and pmol/L conversions; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-745`.
+- **Commits:** `ea396d68` (UI) / `b789768d` (engine) / (reg/Brain this commit).
+- **Example:** **10** ng/mL · **100** pg/mL → **100**.
+- **Verification:** `progesterone-to-estrogen-ratio/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — QTc Calculator
 - **Summary:** Shipped educational Bazett QTc on existing catalog slug `qtc-calculator` (`QtcCalculator`, catalog `6af46f10a27d8d1d4e990248`, pillar/subPillar null). Screenshot-first (ADR-023): blank QT/HR/RR with ms|s units; Bazett primary; collapsed Fridericia/Framingham/Hodges; HR↔RR sync; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-743`.
 - **Commits:** `ca1b9d5f` (UI; also absorbed concurrent PVR UI staging) / `af4730d9` (engine) / (reg/Brain this commit).
