@@ -12,6 +12,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/annuity-payout/detail'),
   AnorexicBmiCalculator: () =>
     import('@/tools/calculators/anorexic-bmi/detail'),
+  AorticValveAreaCalculator: () =>
+    import('@/tools/calculators/aortic-valve-area/detail'),
   ArmyBodyFatCalculator: () =>
     import('@/tools/calculators/army-body-fat/detail'),
   AutoLeaseCalculator: () => import('@/tools/calculators/auto-lease/detail'),
@@ -753,6 +755,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BusinessValuationCalculator: () =>
     import('@/tools/calculators/business-valuation/detail'),
   CagrCalculator: () => import('@/tools/calculators/cagr/detail'),
+  Cha2ds2VascCalculator: () =>
+    import('@/tools/calculators/cha2ds2-vasc/detail'),
   CalorieCalculator: () =>
     import('@/tools/calculators/calorie/detail'),
   CalorieIntakeSimpleCalculator: () =>

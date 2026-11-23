@@ -1,8 +1,20 @@
+### 2026-11-23 — CHA2DS2-Vasc Calculator
+- **Summary:** Shipped educational CHA₂DS₂-VASc on existing catalog slug `cha2ds2-vasc-calculator` (`Cha2ds2VascCalculator`, catalog `6af46f10a27d8d1d4e990230`, pillar/subPillar null). Screenshot-first (ADR-023): Yes/No factors default No; age bands; score 0–9; Friberg 2012 unadjusted annual stroke/composite rates; **no anticoagulation recommendation text**; female-sex-only educational note; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-711`.
+- **Commits:** `9c456dc0` (UI) / `9bad1a2f` (engine) / (reg/Brain this commit).
+- **Example:** defaults → **0** · **0.2%** / **0.3%**; max factors → **9** · **12.2%** / **17.4%**.
+- **Verification:** Source-level Friberg table + scoring fixtures; focused `calculation.test.ts` written (not executed per continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — Aortic Valve Area Calculator
+- **Summary:** Shipped educational continuity-equation AVA on existing catalog slug `aortic-valve-area-calculator` (`AorticValveAreaCalculator`, catalog `6af46f10a27d8d1d4e99022a`, pillar/subPillar null). Screenshot-first (ADR-023): blank LVOT + VTI₁ (LVOT) + VTI₂ (transaortic); AVA = π(d/2)²×VTI₁/VTI₂; educational severity table with resolved boundaries and ACC/AHA 2020 discordant-study caveat; privacy-safe share URL. **No FX**. Frontend/backend registry wired. **Mongo `tool:assign` blocked** (Atlas ETIMEDOUT / IP whitelist on retries). **`indexable` left false**. TASKS `TOOL-710`.
+- **Commits:** `9e6a8d1d` (UI) / `46e04765` (engine) / (reg/Brain this commit).
+- **Example:** LVOT **20** mm · VTI₁ **20** cm · VTI₂ **80** cm → AVA ≈ **0.7854** cm² (severe band &lt;1).
+- **Verification:** Source-level fixture math (π/4); focused `calculation.test.ts` written (full tsc/lint/build/Playwright not run per continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Conception Calculator
-- **Summary:** Shipped educational conception dating module on existing catalog slug `conception-calculator` (`ConceptionCalculator`, catalog `6af46f10a27d8d1d4e990212`). Screenshot-first (ADR-023): blank due/LMP; cycle 21–45 (default 28); read-only GA + conception; reuses due-date ACOG helpers; last-edited conflict handling; privacy-safe share URL. **No FX**. Frontend/backend registry wired. **Mongo activation blocked** (Atlas ETIMEDOUT / IP whitelist on `tool:assign` retries). Distinct from `pregnancy-conception-calculator`. TASKS `TOOL-709`.
-- **Commits:** `6ae8268c` (UI) / `258b3f59` (engine) / (reg/Brain this commit).
+- **Summary:** Shipped educational conception dating on existing catalog slug `conception-calculator` (`ConceptionCalculator`, catalog `6af46f10a27d8d1d4e990212`). Screenshot-first (ADR-023): blank due/LMP; cycle 21–45 (default 28); read-only GA + conception; reuses due-date ACOG helpers; last-edited conflict handling; privacy-safe share URL. **No FX**. Activated on assign retry after Atlas outage; **`indexable` preserved false**. Distinct from `pregnancy-conception-calculator`. TASKS `TOOL-709`.
+- **Commits:** `6ae8268c` (UI) / `258b3f59` (engine) / `f9f3d112` (reg/Brain).
 - **Example:** LMP **2026-01-01** · **28**d → EDD **2026-10-08** → conception **2026-01-15**.
-- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- **Verification:** Focused `calculation.test.ts` ok; Mongo read-back `isActive`/`isDeveloped` true. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-23 — ABI Calculator (Ankle-Brachial Index)
 - **Summary:** Shipped educational ABI ratio on existing catalog slug `abi-calculator-ankle-brachial-index` (`AbiCalculator`, catalog `6af46f10a27d8d1d4e990229`, pillar/subPillar null). Screenshot-first (ADR-023): blank higher arm mmHg; expandable right/left highest foot mmHg → Right/Left ABI; ABI = foot÷arm; independent legs; zero/missing arm guarded; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-708`.

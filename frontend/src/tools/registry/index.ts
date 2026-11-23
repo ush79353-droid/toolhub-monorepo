@@ -43,6 +43,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnorexicBmiCalculator,
     })),
   ),
+  AorticValveAreaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/aortic-valve-area/AorticValveAreaCalculator'
+    ).then((mod) => ({
+      default: mod.AorticValveAreaCalculator,
+    })),
+  ),
   ArmyBodyFatCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/army-body-fat/ArmyBodyFatCalculator'
@@ -3084,6 +3091,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   CagrCalculator: lazyTool(() =>
     import('@/tools/calculators/cagr/CagrCalculator').then((mod) => ({
       default: mod.CagrCalculator,
+    })),
+  ),
+  Cha2ds2VascCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cha2ds2-vasc/Cha2ds2VascCalculator'
+    ).then((mod) => ({
+      default: mod.Cha2ds2VascCalculator,
     })),
   ),
   CalorieCalculator: lazyTool(() =>
