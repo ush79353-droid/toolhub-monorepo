@@ -1192,6 +1192,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/forward-premium/detail'),
   ForwardRateCalculator: () =>
     import('@/tools/calculators/forward-rate/detail'),
+  FourTScoreCalculator: () =>
+    import('@/tools/calculators/four-t-score/detail'),
   FraminghamRiskCalculator: () =>
     import('@/tools/calculators/framingham-risk/detail'),
   FuturesContractsCalculator: () =>

@@ -4461,6 +4461,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  FourTScoreCalculator: lazyTool(() =>
+    import('@/tools/calculators/four-t-score/FourTScoreCalculator').then(
+      (mod) => ({
+        default: mod.FourTScoreCalculator,
+      }),
+    ),
+  ),
   FraminghamRiskCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/framingham-risk/FraminghamRiskCalculator'

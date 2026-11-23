@@ -943,6 +943,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fertility-by-age-calculator',
   'forward-premium-calculator',
   'forward-rate-calculator',
+  '4t-score-calculator-hit',
   'framingham-risk-calculator',
   'futures-contracts-calculator',
   'gabapentin-dosage-calculator',

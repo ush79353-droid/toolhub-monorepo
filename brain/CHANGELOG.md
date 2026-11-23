@@ -1,4 +1,18 @@
+### 2026-11-24 — 4T Score Calculator | HIT
+
+- **Summary:** Shipped educational 4Ts HIT pretest score (`FourTScoreCalculator`, slug `4t-score-calculator-hit`). Screenshot-first (ADR-023): fall + nadir jointly score thrombocytopenia; timing/thrombosis dropdowns; other-causes radios; total 0–8; Cuker 2012 teaching PPV bands low ~5% / intermediate ~14% / high ~64%; privacy-safe share URL. **No FX**. Registry/sitemap/`tool.key` wired. **Mongo `tool:assign` blocked** (Atlas `querySrv EBADRESP`) — catalog left unchanged; activation pending retry. TASKS `TOOL-752`.
+- **Commits:** `233a58f8` (UI) / `cf6a7201` (engine) / (reg/Brain this commit).
+- **Example:** screenshot defaults → **0** pts · low (~5%).
+- **Verification:** `four-t-score/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §13). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Testosterone to Estradiol Ratio Calculator
+
+## 2026-11-24 — Ultimate continuous mission (Phases 1–3)
+
+- Coordinator `cursor-agent-fa668728a5c6`: pending `Tools/` empty (Phase 1 no-op); In Progress incomplete report (3 BLOCKED); Completed Tools final static audit 119/119.
+- Artifacts under `brain/reports/`: `OMEGA-IN-PROGRESS-INCOMPLETE-REPORT.md`, `OMEGA-COMPLETED-TOOLS-FINAL-AUDIT.md`, `OMEGA-COMPLETED-TOOLS-AUDIT-ISSUES.md`, `OMEGA-COMPLETED-TOOLS-MASTER-INVENTORY.csv`, `OMEGA-ULTIMATE-DEVELOPMENT-AND-AUDIT-SUMMARY.md`.
+- Confirmed HIGH issue: `LutealPhaseCalculator` absent from backend `tool.key.ts` (read-only; not repaired in audit).
+- No git push/fetch/pull; no calculator source mutations in Phase 3.
 - **Summary:** Shipped educational mixed-unit T/E2 index on existing catalog slug `testosterone-to-estradiol-ratio-calculator` (`TestosteroneEstradiolRatioCalculator`, catalog `6af46f10a27d8d1d4e990226`, pillar/subPillar null). Screenshot-first (ADR-023): blank testosterone (ng/dL default) + estradiol (pg/mL default); ratio = T(ng/dL)÷E2(pg/mL); fixture **500**/**25** → **20** (contrasts same-mass **200**); nmol/L|pmol/L; privacy-safe share URL only. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-751`.
 - **Commits:** `db490218` (UI) / `eed8e529` (engine) / (reg/Brain this commit).
 - **Example:** **500** ng/dL · **25** pg/mL → **20**.
