@@ -82,7 +82,7 @@ export function CategoriesClient({ categories }: { categories: PublicCategory[] 
                 No categories found
               </h2>
               <p className="mt-3 max-w-sm text-base leading-relaxed text-muted-foreground">
-                Nothing matches "{query.trim()}". Try another name.
+                {`Nothing matches "${query.trim()}". Try another name.`}
               </p>
               <button
                 type="button"

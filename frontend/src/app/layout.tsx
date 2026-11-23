@@ -28,7 +28,7 @@ const allowIndexing = process.env.SITE_ALLOW_INDEXING === 'true';
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Every Tool You Need, All in One Place`,
+    default: `${siteConfig.name} | Every Tool You Need, All in One Place`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

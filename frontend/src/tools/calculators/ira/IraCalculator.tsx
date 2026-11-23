@@ -94,7 +94,7 @@ export function IraCalculator({
   };
 
   const handleCurrencyChange = (next: IraInput) => {
-    let patched = { ...next };
+    const patched = { ...next };
     if (
       next.traditionalContributionCurrency !==
       input.traditionalContributionCurrency

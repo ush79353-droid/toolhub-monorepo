@@ -87,6 +87,50 @@
 
 ---
 
+### 2026-11-23 — Contributor block on every stored tool
+- **Summary:** The Creators and Reviewers block is no longer limited to Auto Loan. Any public tool with a stored creator shows the same card. Tools with no creator stay unchanged.
+- **Important Files:** `frontend/src/app/(website)/tools/[slug]/page.tsx`.
+- **Verification:** `/tools/loan-calculator` shows Nick Mileo, Safdar Sowleheen, and Shayne B. `/tools/0-60-calculator` has no stored creator, so the title card stays without the block. Temporary files cleaned: YES.
+
+### 2026-11-23 — Auto Loan reads stored contributors
+- **Summary:** Auto Loan no longer shows the sample names. The shared credit block reads the catalog creator and reviewers for that slug only. The card also shows the person’s designation.
+- **Important Files:** `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/components/shared/ToolContributors.tsx`, `frontend/src/tools/calculators/auto-loan/detail.tsx`.
+- **Verification:** `/tools/auto-loan-calculator` shows Brianna Cervantes, Candice Wall, and Hasan Ali Khan. Opening Brianna shows Mortgage Loan Officer, her LinkedIn link, and her about text. `/tools/loan-calculator` does not show the block. Temporary files cleaned: YES.
+
+### 2026-11-23 — Finance contributor seed
+- **Summary:** Each Finance & Business tool now stores one creator and one or two reviewers. The fields are `name`, `linkedInUrl`, `designation`, and `about`. `npm run tools:seed-contributors` reads `Finance & Business Linkedin Profile.ods` and matches people to tools by designation. The public tool detail includes `creator` and `reviewers`.
+- **Important Files:** `backend/src/modules/tools/tool.model.ts`, `backend/src/scripts/seed-finance-contributors.ts`, `backend/src/modules/catalog/catalog.service.ts`.
+- **Verification:** Self-check passed. The seed updated 644 Finance & Business tools (335 with one reviewer, 309 with two). Auto Loan’s creator is Brianna Cervantes, a mortgage loan officer. Income Tax’s creator is Larosh Khan, a tax consultant. Temporary files cleaned: YES.
+
+### 2026-11-23 — Auto Loan creator and reviewer card
+- **Summary:** The tool page can show a Creators and Reviewers block with a photo, name, LinkedIn, bio, full profile, and editorial-policy link. Only Auto Loan passes sample credits, so other tools stay unchanged. The block is UI only. No contributor API yet.
+- **Important Files:** `frontend/src/components/shared/ToolContributors.tsx`, `frontend/src/tools/page-detail.ts`, `frontend/src/tools/calculators/auto-loan/detail.tsx`, `frontend/src/app/(website)/tools/[slug]/page.tsx`.
+- **Verification:** `/tools/auto-loan-calculator` shows the block on the right of the intro card, beside the description. Opening a name shows the card. Temporary files cleaned: YES.
+
+### 2026-11-22 — DMCA policy page
+- **Summary:** `/dmca-policy` explains how to send a copyright notice and a counter-notice. The date is `siteConfig.dmca.updated`. The footer, sitemap, and Terms page link to it.
+- **Important Files:** `frontend/src/app/(website)/dmca-policy/page.tsx`, `frontend/src/components/layout/Footer.tsx`, `frontend/src/app/sitemap.ts`, `frontend/src/config/site.ts`.
+- **Verification:** `/dmca-policy` shows the mint hero, the notice and counter-notice sections, and `info@omegacalculators.com`. The footer includes a DMCA Policy link. Temporary files cleaned: YES.
+
+### 2026-11-22 — Disclaimer page
+- **Summary:** `/disclaimer` is a mint hero and one article. The date is `siteConfig.disclaimer.updated`. The footer, About, Contact, and Terms link to it. It is on the sitemap.
+- **Important Files:** `frontend/src/app/(website)/disclaimer/page.tsx`, `frontend/src/components/layout/Footer.tsx`, `frontend/src/app/sitemap.ts`, `frontend/src/config/site.ts`.
+- **Verification:** `/disclaimer` shows the mint hero, the advice sections, and `info@omegacalculators.com`. The footer includes a Disclaimer link. Temporary files cleaned: YES.
+
+### 2026-11-22 — Simpler terms of service
+- **Summary:** `/terms-of-service` uses the mint hero and one article. The date is `siteConfig.terms.updated`. The owner, governing law, and courts use the company, city, and country already in config. Section 7 stays `#disclaimers`. Embed use has a short rule because tools can be embedded.
+- **Important Files:** `frontend/src/app/(website)/terms-of-service/page.tsx`, `frontend/src/config/site.ts`.
+- **Verification:** `/terms-of-service` shows the mint hero and the 11 sections. `#disclaimers` is section 7. The owner line reads Uzair Software House, and the courts line reads Karachi, Pakistan. Temporary files cleaned: YES.
+
+### 2026-11-22 — Simpler privacy policy
+- **Summary:** `/privacy-policy` uses the mint hero and one article. The date and email-retention period live in `siteConfig.privacy`. The article names the California sales-tax lookup, says the contact form is not stored on the site, and links the Google and aboutads.info opt-out pages. It does not claim that Google Analytics is already installed.
+- **Important Files:** `frontend/src/app/(website)/privacy-policy/page.tsx`, `frontend/src/config/site.ts`.
+- **Verification:** `/privacy-policy` shows the mint hero, the 15 sections, the four external opt-out links, and the contact email. Temporary files cleaned: YES.
+
+### 2026-11-22 — Contact page split layout
+- **Summary:** `/contact` puts email, phone, and location in a quarter-width column and the form in the remaining space. The longer notes sit below as four short blocks. Empty detail fields stay hidden. Phone is `siteConfig.contact.phone`.
+- **Important Files:** `frontend/src/app/(website)/contact/page.tsx`, `frontend/src/config/site.ts`, `frontend/src/components/contact/ContactForm.tsx`.
+- **Verification:** `/contact` shows the mint hero, a details column beside the form on a wide screen, and four short notes below. Empty email, phone, and location stay off the column. Temporary files cleaned: YES.
 
 ### 2026-11-22 — Gabapentin Dosage Calculator
 - **Summary:** Shipped Gabapentin Dosage Calculator on existing catalog slug `gabapentin-dosage-calculator` (`GabapentinDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d5`, pillar `6af451c1a27d8d1d4e98f980`, subPillar null). Screenshot-first (ADR-023): unselected indication radios + blank age; FDA NEURONTIN epilepsy/PHN; RLS→Horizant gate; neuropathy/anxiety informational; renal Table 1 disclaimer; share URL only. **No FX**. Activated; **indexable** preserved false. TASKS `TOOL-694`.
@@ -470,6 +514,11 @@
 - **Commits:** `5eecfbf6` (UI) / `db64a460` (engine) / (this Brain/tracker commit; registry/sitemap/tool.key/guide also present on HEAD via concurrent registration commits including `81492c88`).
 - **Example:** call · S/K **100** · premium **5** · **1** contract → total **500** · BE **105**.
 - **Verification:** Static formula review + focused `calculation.test.ts` asserts (call/put/zero/fractional contracts). Full frontend tsc / lint / build not run (master prompt Phase 12). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-22 — Frontend production build green
+- **Summary:** Cleared ESLint and TypeScript blockers that stopped `next build`: retirement related links use `Link`, categories empty copy escapes quotes, `prefer-const` cleanups, Options Spread tooltips use `text`, Put–call parity rates status object, registry adds `YieldToCallCalculator` and drops a duplicate `ForwardRateCalculator`, CurrencySelect allow-set typing.
+- **Important Files:** `frontend/src/tools/calculators/retirement/RetirementGuideArticle.tsx`, `frontend/src/tools/registry/index.ts`, `frontend/src/tools/shared/CurrencySelect.tsx`, and related lint/type fix files.
+- **Verification:** `npm run type-check` and `npm run build` in `frontend/` both succeed. Temporary files cleaned: YES.
 
 ### 2026-11-21 — Contact form restored
 - **Summary:** `/contact` has the form again, in the site card style. Subjects are General, Report a mistake, Suggest a tool, and Business. Submit opens the visitor’s email app. The privacy policy says the form is not stored on the site.

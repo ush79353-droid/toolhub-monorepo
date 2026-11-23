@@ -106,7 +106,7 @@ export function iraDeductionLimit(input: {
   age50OrOver: boolean;
 }): { deduction: number; note?: string } {
   const max = IRA_LIMIT + (input.age50OrOver ? IRA_CATCH_UP : 0);
-  let allowed = Math.min(clampNonNeg(input.contribution), max);
+  const allowed = Math.min(clampNonNeg(input.contribution), max);
   if (!(allowed > 0)) return { deduction: 0 };
 
   if (!input.coveredByWorkplacePlan) {

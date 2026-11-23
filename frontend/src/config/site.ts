@@ -23,9 +23,9 @@ export const siteConfig = {
    */
   operator: {
     name: '',
-    city: '',
-    country: '',
-    email: '',
+    city: 'Karachi',
+    country: 'Pakistan',
+    email: 'info@omegacalculators.com',
   },
   /**
    * Contact page. Empty business email and address lines stay off the page.
@@ -33,10 +33,30 @@ export const siteConfig = {
    * City and country for a postal address come from `operator`.
    */
   contact: {
-    businessEmail: '',
+    businessEmail: 'contact@omegacalculators.com',
+    phone: '+923123456789',
     responseTime: '3 to 5 business days',
-    company: '',
+    company: 'Uzair Software House',
     street: '',
+  },
+  /**
+   * Privacy policy. Change the date and the email-keeping period here.
+   */
+  privacy: {
+    updated: 'November 14, 2026',
+    emailRetention: '12 months',
+  },
+  /** Terms of service. Change the date here. */
+  terms: {
+    updated: 'November 14, 2026',
+  },
+  /** Disclaimer page. Change the date here. */
+  disclaimer: {
+    updated: 'November 14, 2026',
+  },
+  /** DMCA policy. Change the date here. */
+  dmca: {
+    updated: 'November 22, 2026',
   },
   /** Footer social icons. Change hrefs here; empty href hides that icon. */
   social: [

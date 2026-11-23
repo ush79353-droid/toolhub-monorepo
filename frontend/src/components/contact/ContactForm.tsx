@@ -67,9 +67,9 @@ export function ContactForm({ email, businessEmail }: { email: string; businessE
 
   return (
     <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-border bg-white p-6 shadow-xs sm:p-8">
-      <h2 className="text-2xl font-semibold tracking-tight text-accent">Send a message</h2>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-        The form opens your email app with the note filled in. We do not keep a copy on this site.
+      <h2 className="font-sans text-xl font-semibold tracking-tight text-accent">Send a message</h2>
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+        This opens your email app with the note filled in. We do not keep a copy on the site.
       </p>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <div>

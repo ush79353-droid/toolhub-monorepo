@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import {
   LONGEVITY_SOURCE,
@@ -119,18 +120,18 @@ export function RetirementGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <a href="/tools/early-retirement-calculator">Early Retirement Calculator</a>
+          <Link href="/tools/early-retirement-calculator">Early Retirement Calculator</Link>
         </li>
         <li>
-          <a href="/tools/ira-calculator">IRA Calculator</a>
+          <Link href="/tools/ira-calculator">IRA Calculator</Link>
         </li>
         <li>
-          <a href="/tools/pension-calculator">Pension Calculator</a>
+          <Link href="/tools/pension-calculator">Pension Calculator</Link>
         </li>
         <li>
-          <a href="/tools/rmd-calculator-required-minimum-distributions-calculator">
+          <Link href="/tools/rmd-calculator-required-minimum-distributions-calculator">
             RMD Calculator
-          </a>
+          </Link>
         </li>
       </ul>
 

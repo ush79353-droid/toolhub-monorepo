@@ -45,7 +45,7 @@ export function CurrencySelect({
 
   const catalog = React.useMemo(() => {
     if (!allowedCodes || allowedCodes.length === 0) return CURRENCY_DEFINITIONS;
-    const allow = new Set(allowedCodes);
+    const allow = new Set<string>(allowedCodes);
     return CURRENCY_DEFINITIONS.filter((def) => allow.has(def.code));
   }, [allowedCodes]);
 

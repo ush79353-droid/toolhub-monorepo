@@ -376,7 +376,7 @@ export function solveAffordableHomePrice(
   let low = 0;
   let high = Math.max(priceRaw * 1.5, priceRaw + 1, 1);
   let best = 0;
-  let probe = housingPaymentAtPrice(0, input, factor);
+  const probe = housingPaymentAtPrice(0, input, factor);
   if (probe && probe.total <= budget + PRICE_TOLERANCE) best = 0;
 
   // Expand upper bound until payment exceeds budget or cap.

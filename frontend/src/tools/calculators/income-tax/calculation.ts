@@ -248,7 +248,7 @@ function childTaxCredits(input: {
 
   const nonrefundableLimit = clampNonNeg(input.taxBeforeCredits);
   const odcNonref = Math.min(odc, nonrefundableLimit);
-  let room = nonrefundableLimit - odcNonref;
+  const room = nonrefundableLimit - odcNonref;
   const ctcNonref = Math.min(ctc, room);
   const ctcUnused = ctc - ctcNonref;
   // Additional CTC: lesser of unused CTC and $1,700/child (simplified; ignores earned-income floor detail beyond wages).

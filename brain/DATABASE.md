@@ -161,6 +161,8 @@ Only the Mongoose models documented below exist. No other collections (`analytic
 | `embedAllowedDomains` | `String` | Advisory comma-separated host list (`maxlength: 1000`) | `''` |
 | `isActive` | `Boolean` | Public catalog visibility. A registered calculator is set true only after its module and registry exist (ADR-022). An explicit false stays off. | `true` |
 | `isFeatured` | `Boolean` | Homepage featured promotion flag | `false` |
+| `creator` | `{ name, linkedInUrl, designation, about } \| null` | One person credited with the tool. Same shape as each reviewer. | `null` |
+| `reviewers` | `Array` of the creator shape | One or two reviewers. Finance tools are filled by `tools:seed-contributors`. | `[]` |
 | `isDeveloped` | `Boolean` | Initial default `true` for new tools and for reseed inserts (`$setOnInsert` only). A missing value is that initial default, not proof a component exists. The tools audit writes an explicit `true` or `false` without bumping `updatedAt`. | `true` |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |
 

@@ -195,7 +195,7 @@ export function validatePayRaiseCalculatorInput(
   }
 
   const raiseKey = raiseErrorKey(raiseSource);
-  let raiseParsed =
+  const raiseParsed =
     raiseSource === 'percentage'
       ? parseNumber(input.raisePercentage)
       : parseNumber(raiseRaw(input, raiseSource));

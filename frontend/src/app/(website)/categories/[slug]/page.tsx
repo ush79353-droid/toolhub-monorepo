@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const category = await getPublicCategoryDetail(slug);
   if (!category) return { title: 'Category Not Found' };
   return {
-    title: `${category.name} — Free Online Tools`,
+    title: `${category.name} | Free Online Tools`,
     description: category.description || `Tools in ${category.name}.`,
   };
 }

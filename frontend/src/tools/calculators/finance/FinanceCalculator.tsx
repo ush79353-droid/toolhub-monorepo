@@ -16,6 +16,20 @@ import {
 } from './types';
 import { validateFinanceInput } from './validation';
 
+function createInitialFinanceState(): {
+  input: FinanceInput;
+  errors: FinanceFieldErrors;
+  result: FinanceResult | null;
+} {
+  const input = createDefaultInput();
+  const validation = validateFinanceInput(input);
+  return {
+    input,
+    errors: validation.incomplete ? {} : validation.errors,
+    result: validation.isValid ? validation.result : null,
+  };
+}
+
 export function FinanceCalculator({
   metadata,
   className = '',
@@ -23,9 +37,10 @@ export function FinanceCalculator({
   headerActions,
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
-  const [input, setInput] = React.useState<FinanceInput>(() => createDefaultInput());
-  const [errors, setErrors] = React.useState<FinanceFieldErrors>({});
-  const [result, setResult] = React.useState<FinanceResult | null>(null);
+  const [boot] = React.useState(createInitialFinanceState);
+  const [input, setInput] = React.useState(boot.input);
+  const [errors, setErrors] = React.useState(boot.errors);
+  const [result, setResult] = React.useState(boot.result);
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -33,12 +48,6 @@ export function FinanceCalculator({
 
   React.useEffect(() => {
     setCanShare(typeof navigator.share === 'function');
-  }, []);
-
-  React.useEffect(() => {
-    const validation = validateFinanceInput(input);
-    setErrors(validation.incomplete ? {} : validation.errors);
-    setResult(validation.isValid ? validation.result : null);
   }, []);
 
   const handleCalculate = () => {

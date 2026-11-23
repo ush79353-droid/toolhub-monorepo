@@ -247,7 +247,7 @@ export function calculateAutoLease(input: {
   if (aprPercent === null) return null;
 
   let autoPrice = input.autoPrice;
-  let monthlyTarget = input.monthlyPayment;
+  const monthlyTarget = input.monthlyPayment;
 
   if (input.mode === 'monthly-payment') {
     if (monthlyTarget === null) return null;

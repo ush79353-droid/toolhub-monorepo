@@ -4069,6 +4069,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.YieldToMaturityCalculator,
     })),
   ),
+  YieldToCallCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/yield-to-call/YieldToCallCalculator'
+    ).then((mod) => ({
+      default: mod.YieldToCallCalculator,
+    })),
+  ),
   UkCoinWeightCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/uk-coin-weight/UkCoinWeightCalculator'
@@ -4178,13 +4185,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     ).then((mod) => ({
       default: mod.GabapentinDosageCalculator,
     })),
-  ),
-  ForwardRateCalculator: lazyTool(() =>
-    import('@/tools/calculators/forward-rate/ForwardRateCalculator').then(
-      (mod) => ({
-        default: mod.ForwardRateCalculator,
-      }),
-    ),
   ),
   ComparativeAdvantageCalculator: lazyTool(() =>
     import(

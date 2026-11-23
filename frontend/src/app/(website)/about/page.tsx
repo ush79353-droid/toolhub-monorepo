@@ -99,7 +99,7 @@ export default function AboutPage() {
               <p className="mt-4 text-muted-foreground">
                 Our calculators give estimates for information and education. They are not financial, medical, legal,
                 or professional advice. Please read the{' '}
-                <Link href="/terms-of-service#disclaimers" className="font-medium text-primary hover:underline">
+                <Link href="/disclaimer" className="font-medium text-primary hover:underline">
                   disclaimer
                 </Link>{' '}
                 before relying on any result. The full terms are on the{' '}

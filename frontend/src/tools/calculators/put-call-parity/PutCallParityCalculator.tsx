@@ -249,12 +249,12 @@ export function PutCallParityCalculator({
       </div>
 
       <div className="space-y-4 p-4 sm:p-5">
-        {ratesStatus === 'unavailable' ? (
+        {!ratesStatus.available ? (
           <p className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900">
             {CURRENCY_CONVERSION_UNAVAILABLE_NOTE}
           </p>
         ) : null}
-        {ratesStatus === 'stale' ? (
+        {ratesStatus.available && ratesStatus.isStale ? (
           <p className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900">
             Stored FX rates are older than 48 hours; conversion still uses the
             last saved rates.

@@ -154,6 +154,12 @@ export async function Footer() {
             <Link href="/terms-of-service" className="transition-colors hover:text-primary">
               Terms of Service
             </Link>
+            <Link href="/disclaimer" className="transition-colors hover:text-primary">
+              Disclaimer
+            </Link>
+            <Link href="/dmca-policy" className="transition-colors hover:text-primary">
+              DMCA Policy
+            </Link>
           </nav>
           <p className="text-center sm:text-right">© {currentYear} Omega Calculators. All rights reserved.</p>
         </div>

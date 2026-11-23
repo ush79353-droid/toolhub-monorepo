@@ -44,7 +44,7 @@ export function reconcileSchedule(input: WeeklyPayInput): {
 } {
   const errors: WeeklyPayFieldErrors = {};
   let hoursPerDay = parseNumber(input.hoursPerDay);
-  let daysPerWeek = parseNumber(input.daysPerWeek);
+  const daysPerWeek = parseNumber(input.daysPerWeek);
   let hoursPerWeek = parseNumber(input.hoursPerWeek);
   const driver: ScheduleDriver = input.scheduleDriver;
 

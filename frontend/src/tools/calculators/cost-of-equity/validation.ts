@@ -90,7 +90,7 @@ export function validateCostOfEquityInput(
   }
 
   let dividendNormalized = dividend.value;
-  let sharePriceNormalized = price.value;
+  const sharePriceNormalized = price.value;
 
   if (input.dividendCurrency !== input.sharePriceCurrency) {
     if (!rates?.available) {

@@ -1017,6 +1017,8 @@ const STATIC_PATHS = [
   '/contact',
   '/privacy-policy',
   '/terms-of-service',
+  '/disclaimer',
+  '/dmca-policy',
 ] as const;
 
 function toSeoSource(dbTool: PublicToolDetail): ToolSeoSource {
