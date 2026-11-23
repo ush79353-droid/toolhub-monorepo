@@ -1,4 +1,10 @@
-﻿### 2026-11-24 — Absolute Lymphocyte Count Calculator
+﻿### 2026-11-24 — Absolute Reticulocyte Count Calculator
+
+- **Summary:** Shipped educational ARC worksheet (`AbsoluteReticulocyteCountCalculator`, slug `absolute-reticulocyte-count-calculator`). Screenshot Hct/ref Hct/retic %; ARC estimated via RBC = 5e6 × (Hct/ref) then × retic fraction; assumption labeled. **No FX**. Mongo assign blocked. TASKS `TOOL-755`.
+- **Commits:** `55305bc4` (UI) / `d8d2ac66` (engine) / (reg this).
+- **Example:** Hct **45** · ref **45** · retic **1%** → **50,000** cells/µL.
+- **Verification:** `absolute-reticulocyte-count/calculation.test.ts` ok.
+### 2026-11-24 — Absolute Lymphocyte Count Calculator
 
 - **Summary:** Shipped educational ALC worksheet (`AbsoluteLymphocyteCountCalculator`, slug `absolute-lymphocyte-count-calculator`). ALC = WBC × (lymph%/100) ×10³/µL; share URL only. **No FX**. Registry wired. **Mongo assign blocked**. TASKS `TOOL-754`.
 - **Commits:** `5cf95c38` (UI) / `5a8820d8` (engine) / (reg/Brain this commit).
@@ -6159,4 +6165,5 @@
 - Added bidirectional Rule of 72 calculator (`RuleOf72Calculator` / `rule-of-72-calculator`).
 - Approximation `T � 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
 - Catalog `6af46f10a27d8d1d4e9901bc` activated; `indexable` left false.
+
 

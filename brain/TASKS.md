@@ -1,4 +1,4 @@
-# Shared Task Board (`TASKS.md`)
+﻿# Shared Task Board (`TASKS.md`)
 
 > **Rules:** Keep Task IDs stable (`INFRA-*`, `BE-*`, `FE-*`, `TOOL-*`). Never delete or renumber IDs. Do not invent owners unless assigned.
 
@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-755` | Absolute Reticulocyte Count Calculator slug `absolute-reticulocyte-count-calculator`; Hct-anchored ARC estimate labeled; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/absolute-reticulocyte-count/*` | Mongo Atlas DNS |
 | `TOOL-754` | Implement Absolute Lymphocyte Count Calculator on slug `absolute-lymphocyte-count-calculator` with ALC=WBC×(lymph%/100) in ×10³/µL, fixture 6×25%=1.5, privacy-safe share URL, no FX; Mongo assign blocked (Atlas DNS) | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/absolute-lymphocyte-count/*`, registry, sitemap, `tool.key.ts`, `brain/*` | Mongo Atlas DNS |
 | `TOOL-753` | Implement Absolute Eosinophil Count Calculator on slug `absolute-eosinophil-count-calculator` with AEC=WBC×(eos%/100) in ×10³/µL (≡×10⁹/L), 0–100% eos validation, privacy-safe share URL, no FX; Mongo assign blocked (Atlas DNS) | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/absolute-eosinophil-count/*`, registry, sitemap, `tool.key.ts`, `brain/*` | Mongo Atlas DNS |
 | `TOOL-752` | Implement 4T Score Calculator HIT on slug `4t-score-calculator-hit` with joint fall/nadir thrombocytopenia component, timing/thrombosis/other-causes 0–2 each, Cuker PPV bands (~5/~14/~64%), privacy-safe share URL, no FX; Mongo `tool:assign` blocked (Atlas querySrv EBADRESP) — preserve indexable | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/four-t-score/*`, registry, sitemap, `tool.key.ts`, `brain/*` | Mongo Atlas DNS |
@@ -1014,3 +1015,4 @@
 - componentKey: `RuleOf72Calculator`
 - Mongo: `6af46f10a27d8d1d4e9901bc` (isDeveloped/isActive true; indexable false)
 - Commits: UI `05cd36a8`, engine `fe742ea5`, reg (this commit)
+

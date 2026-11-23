@@ -113,6 +113,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'abi-calculator-ankle-brachial-index',
   'absolute-eosinophil-count-calculator',
   'absolute-lymphocyte-count-calculator',
+  'absolute-reticulocyte-count-calculator',
   'adderall-dosage-calculator',
   'aleve-dosage-calculator',
   'amoxicillin-pediatric-dosage-calculator',

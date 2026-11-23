@@ -1,4 +1,4 @@
-# Current Project State (`CURRENT_STATE.md`)
+﻿# Current Project State (`CURRENT_STATE.md`)
 
 > **Primary Agent Starting Point.** Last verified: **2026-11-21** (homepage shows category cards and up to three last-opened tools from local storage under the hero, then featured tools; `/tools` uses the same mint hero, lists every root category, and shows 48 popular-style cards per page; `/about` uses the mint hero plus one article; `/contact` uses the mint hero, a quarter-width details column, and a three-quarter form that opens the visitor’s email app and is not stored on the site; operator name, city, country, and email, plus the contact business email and address, stay in `siteConfig` and stay hidden while empty; site header: home is logo + Share + Explore Tools; other pages add debounced tool search; Retirement Calculator live at `/tools/retirement-calculator`; Auto Loan remains master Tool Detail Page).
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Absolute Reticulocyte Count Calculator (/tools/absolute-reticulocyte-count-calculator):** Educational ARC (AbsoluteReticulocyteCountCalculator). Hct/ref/retic → labeled RBC-anchored estimate; share URL only. **No FX**. Mongo blocked. Example: **45**/**45**/**1%** → **50,000** cells/µL.
 - **Absolute Lymphocyte Count Calculator (`/tools/absolute-lymphocyte-count-calculator`):** Educational ALC (`componentKey: 'AbsoluteLymphocyteCountCalculator'`). ALC = WBC × (lymph%/100) ×10³/µL; share URL only. **No FX**. Registry wired. **Mongo assign blocked**. Example: **6** @ **25%** → **1.5**.
 - **Absolute Eosinophil Count Calculator (`/tools/absolute-eosinophil-count-calculator`):** Educational AEC (`componentKey: 'AbsoluteEosinophilCountCalculator'`). AEC = WBC × (eos%/100) ×10³/µL (≡×10⁹/L); share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS). Example: **8** @ **5%** → **0.4**.
 - **4T Score Calculator | HIT (`/tools/4t-score-calculator-hit`):** Educational 4Ts HIT pretest (`componentKey: 'FourTScoreCalculator'`). Screenshot-first (ADR-023): joint fall/nadir thrombocytopenia points; timing/thrombosis/other causes; 0–8; Cuker PPV bands; share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS). **`indexable` left false** when assign retries. Example: defaults → **0** · low (~5%).
@@ -986,3 +987,4 @@
 - **Profitability Index Calculator (`/tools/profitability-index-calculator`):** Live client-side PI calculator (`componentKey: 'ProfitabilityIndexCalculator'`, catalog `6af46f0fa27d8d1d4e9900b2`). Initial investment + PV of future cash flow → PI = PV ÷ investment; compact interpretation (PI >, =, < 1). Optional “PV unknown” tip (no invented cash-flow schedule). Denomination currency (PKR). Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on.
 
 - **Rule of 72 Calculator (/tools/rule-of-72-calculator):** Live client-side doubling estimator (componentKey: 'RuleOf72Calculator', catalog 6af46f10a27d8d1d4e9901bc). Bidirectional Increase %/period ? Doubling time periods via Rule of 72; exact compound comparison; no FX. Activated; **`indexable` left false**. Example: **8%** ? **9** periods.
+
