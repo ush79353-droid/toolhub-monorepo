@@ -36,7 +36,7 @@
 
 ### 2026-11-23 — Blood Pressure Calculator
 - **Summary:** Shipped educational office BP category lookup on existing catalog slug `blood-pressure-calculator` (`BloodPressureCalculator`, catalog `6af46f10a27d8d1d4e99022c`, pillar/subPillar null). Screenshot-first (ADR-023): ACC/AHA vs 2018 joint ESC/ESH radios; blank systolic/diastolic; higher-category precedence; ESC graded ISH; ACC/AHA severe band; measurement-context (not diagnosis); privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-712`.
-- **Commits:** `e5dcb8df` (UI) / `a9d8d5ac` (engine) / (reg/Brain this commit).
+- **Commits:** `e5dcb8df` (UI) / `a9d8d5ac` (engine) / `b8ad6256` (registry absorb via arterial-age) + this Brain finalize.
 - **Example:** **118/76** ACC/AHA → Normal; **150/85** ESC/ESH → ISH Grade 1; **181/80** → Severe.
 - **Verification:** Focused `calculation.test.ts` ok (boundary + mixed + ISH fixtures). Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
