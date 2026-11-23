@@ -57,6 +57,12 @@
 - **Example:** LVOT **20** mm · VTI₁ **20** cm · VTI₂ **80** cm → AVA ≈ **0.7854** cm² (severe band &lt;1).
 - **Verification:** Source-level fixture math (π/4); focused `calculation.test.ts` written (full tsc/lint/build/Playwright not run per continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-23 — Crown-rump Length Calculator
+- **Summary:** Shipped educational Robinson–Fleming CRL dating module (`CrownRumpLengthCalculator`, slug `crown-rump-length-calculator`). Screenshot-first (ADR-023): blank CRL with mm|cm|in; read-only GA; Early/Mid/Late examples; fetal-weight link; privacy-safe share URL. **No FX**. Frontend/backend registry + sitemap wired. **Mongo catalog verify/assign blocked** (Atlas ETIMEDOUT / IP whitelist) — no activation. TASKS `TOOL-710`.
+- **Commits:** `30e2867a` (UI) / `574b4bb2` (engine) / (reg/Brain this commit).
+- **Example:** **20** mm → **60** days (**8w 4d**); **30** mm → **68** days.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Conception Calculator
 - **Summary:** Shipped educational conception dating on existing catalog slug `conception-calculator` (`ConceptionCalculator`, catalog `6af46f10a27d8d1d4e990212`). Screenshot-first (ADR-023): blank due/LMP; cycle 21–45 (default 28); read-only GA + conception; reuses due-date ACOG helpers; last-edited conflict handling; privacy-safe share URL. **No FX**. Activated on assign retry after Atlas outage; **`indexable` preserved false**. Distinct from `pregnancy-conception-calculator`. TASKS `TOOL-709`.
 - **Commits:** `6ae8268c` (UI) / `258b3f59` (engine) / `f9f3d112` (reg/Brain).
