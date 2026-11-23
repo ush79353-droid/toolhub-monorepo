@@ -2885,6 +2885,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BbtCalculator,
     })),
   ),
+  AbiCalculator: lazyTool(() =>
+    import('@/tools/calculators/abi/AbiCalculator').then((mod) => ({
+      default: mod.AbiCalculator,
+    })),
+  ),
   AdderallDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/adderall-dosage/AdderallDosageCalculator'
@@ -3216,6 +3221,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   CltvCalculator: lazyTool(() =>
     import('@/tools/calculators/cltv/CltvCalculator').then((mod) => ({
       default: mod.CltvCalculator,
+    })),
+  ),
+  ConceptionCalculator: lazyTool(() =>
+    import('@/tools/calculators/conception/ConceptionCalculator').then((mod) => ({
+      default: mod.ConceptionCalculator,
     })),
   ),
   ConsultingFeesCalculator: lazyTool(() =>

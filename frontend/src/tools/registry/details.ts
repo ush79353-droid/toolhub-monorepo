@@ -689,6 +689,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BasisPointCalculator: () =>
     import('@/tools/calculators/basis-point/detail'),
   BbtCalculator: () => import('@/tools/calculators/bbt/detail'),
+  AbiCalculator: () => import('@/tools/calculators/abi/detail'),
   AdderallDosageCalculator: () =>
     import('@/tools/calculators/adderall-dosage/detail'),
   AleveDosageCalculator: () =>
@@ -794,6 +795,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ChurnRateCalculator: () =>
     import('@/tools/calculators/churn-rate/detail'),
   CltvCalculator: () => import('@/tools/calculators/cltv/detail'),
+  ConceptionCalculator: () =>
+    import('@/tools/calculators/conception/detail'),
   ConsultingFeesCalculator: () =>
     import('@/tools/calculators/consulting-fees/detail'),
   ContributionMarginCalculator: () =>

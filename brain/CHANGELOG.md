@@ -1,3 +1,15 @@
+### 2026-11-23 — Conception Calculator
+- **Summary:** Shipped educational conception dating on existing catalog slug `conception-calculator` (`ConceptionCalculator`, catalog `6af46f10a27d8d1d4e990212`). Screenshot-first (ADR-023): blank due/LMP; cycle 21–45 (default 28); read-only GA + conception; reuses due-date ACOG helpers; last-edited conflict handling; privacy-safe share URL. **No FX**. Activated; **`indexable` preserved false**. Distinct from `pregnancy-conception-calculator`. TASKS `TOOL-709`.
+- **Commits:** `6ae8268c` (UI) / `258b3f59` (engine) / (reg/Brain this commit).
+- **Example:** LMP **2026-01-01** · **28**d → EDD **2026-10-08** → conception **2026-01-15**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — ABI Calculator (Ankle-Brachial Index)
+- **Summary:** Shipped educational ABI ratio on existing catalog slug `abi-calculator-ankle-brachial-index` (`AbiCalculator`, catalog `6af46f10a27d8d1d4e990229`, pillar/subPillar null). Screenshot-first (ADR-023): blank higher arm mmHg; expandable right/left highest foot mmHg → Right/Left ABI; ABI = foot÷arm; independent legs; zero/missing arm guarded; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-708`.
+- **Commits:** `6c6c2e0a` (UI) / `40707920` (engine) / (reg/Brain this commit).
+- **Example:** arm **120** · right **108** → **0.90**; left **132** → **1.10**.
+- **Verification:** Source-level fixture check; focused `calculation.test.ts` written (not executed per continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Breast Cancer Recurrence Risk Calculator
 - **Summary:** Shipped educational O'Rourke 1994 local-recurrence index on existing catalog slug `breast-cancer-recurrence-risk-calculator` (`BreastCancerRecurrenceRiskCalculator`, catalog `6af46f10a27d8d1d4e99020e`, pillar/subPillar null). Screenshot-first (ADR-023): unselected grade/nodes/LVI; blank score + incomplete risk sentence until complete; additive weights + published % table; local flap recurrence only; no therapy advice; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. Also repaired missing `BishopScoreCalculator` registry wiring that a concurrent reg commit had omitted while absorbing this tool's keys. TASKS `TOOL-707`.
 - **Commits:** `2989feee` (UI) / `f27e80d6` (engine) / (reg/Brain this commit).
