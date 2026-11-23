@@ -824,6 +824,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'free-cash-flow-calculator',
   'fundal-height-calculator',
   'gestational-age-calculator',
+  'gupta-risk-calculator',
   'levered-free-cash-flow-calculator',
   'unlevered-free-cash-flow-calculator',
   'trumps-taxes-vs-your-taxes-calculator',

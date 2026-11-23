@@ -66,6 +66,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   GratuityCalculator: () => import('@/tools/calculators/gratuity/detail'),
   GrowingAnnuityCalculator: () =>
     import('@/tools/calculators/growing-annuity/detail'),
+  GuptaRiskCalculator: () =>
+    import('@/tools/calculators/gupta-risk/detail'),
   IllinoisOvertimeCalculator: () =>
     import('@/tools/calculators/illinois-overtime/detail'),
   ImmediateAnnuityCalculator: () =>

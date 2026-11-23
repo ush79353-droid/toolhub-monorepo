@@ -1,3 +1,8 @@
+### 2026-11-23 — Gupta Risk Calculator
+- **Summary:** Shipped educational Gupta MICA on `gupta-risk-calculator` (`GuptaRiskCalculator`, catalog `6af46f10a27d8d1d4e99023c`). Gupta Circulation 2011 Table 2; creatinine mg/dL|µmol/L or not measured; MICA blank until valid age+creatinine; privacy-safe share URL. **No FX**. `tool:assign` `--set-active`; **`indexable` false**.
+- **Commits:** `8af335f2` (UI) / `8f392313` (engine) / (reg this commit).
+- **Verification:** `gupta-risk/calculation.test.ts` ok. Temporary files cleaned: YES.
+
 ### 2026-11-23 — hCG Levels Calculator
 - **Summary:** Shipped educational serial β-hCG kinetics on existing catalog slug `hcg-levels-calculator` (`HcgLevelsCalculator`, catalog `6af46f10a27d8d1d4e99021a`, pillar/subPillar null). Screenshot-first (ADR-023): blank first/second mIU/ml + elapsed days|hours; difference, % change, doubling time when rising, standardized 1-/2-day increases; no positive doubling time when falling/unchanged; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-729`.
 - **Commits:** `aa969298` (UI) / `dbd38d82` (engine) / registry absorbed concurrent Framingham reg + Brain.
@@ -14,7 +19,7 @@
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-23 — Gestational Age Calculator
 - **Summary:** Shipped educational gestational age on existing catalog slug `gestational-age-calculator` (`GestationalAgeCalculator`, catalog `6af46f10a27d8d1d4e990219`, pillar/subPillar null). Screenshot-first (ADR-023): blank EDD; editable current date (default local today); read-only GA with wks+days or total-days display; 280-day ACOG-style calendar math; negative-age clamp with note; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-727`.
-- **Commits:** (UI) / (engine) / (reg/Brain this commit).
+- **Commits:** `bd1cc09d` (UI + guide) / `06841c6d` (engine) / `0e97a679` (registry spliced with framingham; Brain finalize this commit).
 - **Example:** EDD **2026-07-01** · current **2026-06-24** → **39w0d**; EDD = today → **40w0d**.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 

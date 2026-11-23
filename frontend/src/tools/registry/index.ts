@@ -236,6 +236,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GrowingAnnuityCalculator,
     })),
   ),
+  GuptaRiskCalculator: lazyTool(() =>
+    import('@/tools/calculators/gupta-risk/GuptaRiskCalculator').then((mod) => ({
+      default: mod.GuptaRiskCalculator,
+    })),
+  ),
   IllinoisOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/illinois-overtime/IllinoisOvertimeCalculator'

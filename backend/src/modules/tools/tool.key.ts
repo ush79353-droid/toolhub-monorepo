@@ -1025,6 +1025,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CashActStimulusCalculator',
   'SecondStimulus900BillionCalculator',
   'AmericanRescuePlanStimulusCalculator',
+  'GuptaRiskCalculator',
 ] as const;
 
 export type ApprovedComponentKey = (typeof APPROVED_COMPONENT_KEYS)[number];
