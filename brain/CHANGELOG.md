@@ -74,7 +74,7 @@
 
 ### 2026-11-23 — PERC Calculator
 - **Summary:** Shipped educational PERC rule on existing catalog slug `perc-calculator-pulmonary-embolism-rule-out-criteria` (`PercCalculator`, catalog `6af46f10a27d8d1d4e990245`, pillar/subPillar null). Screenshot-first (ADR-023): eight tick-if-present criteria; prominent low pretest probability (&lt;15%) prerequisite; rule-out copy only after low-risk and full-assessment attestation; unanswered unchecked items do not silently rule out; positive count 0–8; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-743`.
-- **Commits:** `f978fcbb` (UI) / `2a913c01` (engine) / `21980a03` (reg/Brain; keys/sitemap/index in concurrent commits).
+- **Commits:** `f978fcbb` (UI) / `2a913c01` (engine) / `433d398c` (reg/Brain; keys/sitemap/index in concurrent commits).
 - **Example:** None ticked + both attestations → **0** · rule-out educational text; any tick → insufficient to exclude PE.
 - **Verification:** `perc/calculation.test.ts` ok; `backend` build ok. Temporary files cleaned: YES. Push/Pull/Fetch: NONE (local commits only).
 
