@@ -1,3 +1,9 @@
+### 2026-11-23 — RCRI Calculator
+- **Summary:** Shipped educational Revised Cardiac Risk Index on existing catalog slug `rcri-calculator` (`RcriCalculator`, catalog `6af46f10a27d8d1d4e99024a`, pillar/subPillar null). Screenshot-first (ADR-023): six Lee Yes/No factors (default No); 1 point each; class I–IV; CCS 2017 pooled death/MI/arrest rates 3.9/6.0/10.1/15.0%; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. Registry/sitemap/`tool.key` absorbed into concurrent peer registration commits. TASKS `TOOL-748`.
+- **Commits:** `53ec161f` (UI) / `de86e9d8` (engine) / (reg/Brain this commit).
+- **Example:** all No → **0** · class **I** · **3.9%**.
+- **Verification:** `rcri/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — VBAC Calculator (Vaginal Birth After Cesarean Section)
 - **Summary:** Shipped educational Grobman 2021 MFMU race-neutral VBAC probability on slug `vbac-calculator-vaginal-birth-after-cesarean-section` (`VbacCalculator`, catalog `6af46f10a27d8d1d4e990227`, pillar/subPillar null). Omits legacy ethnicity; pre-pregnancy weight + height; prior VBAC vs vaginal-before-CS; arrest indication; treated chronic HTN; Table 3 fixtures; probability + log-odds w; share URL only. **No FX**. `tool:assign` `--set-active`; **`indexable` false**. TASKS `TOOL-750`.
 - **Commits:** `a88ab20a` (UI) / `c6da0bb2` (engine) / `e51faf67` (reg/Brain).

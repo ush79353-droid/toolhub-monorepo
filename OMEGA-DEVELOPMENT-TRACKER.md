@@ -6,14 +6,16 @@ Total discovered: 55+
 Newly developed: 47+
 Already developed: 1
 Development failed: 0
-Skipped / blocked: 2 (Missouri Sales Tax + Take-Home-Paycheck — both BLOCKED, remain In Progress)
-Remaining pending: live filesystem count (`In Progress` = blocked non-health folders as applicable)
+Skipped / blocked: 3+ (Missouri Sales Tax + Take-Home-Paycheck + Stillbirth Risk — BLOCKED, remain In Progress)
+Remaining pending: `Tools/` empty (2026-11-23 continuous pass); Stillbirth Risk BLOCKED (unverified calibrated model vs Omni OR×baseline ban)
 Audit completed: 60 Health & Medical tools (2026-11-22)
 Audit pending: none for Adderall/Levothyroxine approved educational scopes (2026-11-22 verified-reference recovery)
 Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under approved educational scopes)
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 149 | Stillbirth Risk Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Screenshot Omni-style baseline 0.2197 + US ethnicity; prompt forbids OR×baseline and requires validated intercept/coefficients; FMF/Yerke models mismatch field set; Mongo `6af46f10a27d8d1d4e990225` undeveloped/inactive/indexable false unchanged |
+| 151 | RCRI Calculator | DEVELOPED | AUDIT PENDING | 53ec161f | de86e9d8 | (this reg/Brain) | Completed Tools | `RcriCalculator`; slug `rcri-calculator`; Mongo `6af46f10a27d8d1d4e99024a` active; Lee six factors + CCS 2017 rates; no FX; indexable false; TASKS `TOOL-748` |
 | 148 | Nuchal Translucency Calculator | DEVELOPED | AUDIT PENDING | c6a28881 | 77fdafe0 | (this reg/Brain) | Completed Tools | `NuchalTranslucencyCalculator`; slug `nuchal-translucency-calculator`; Mongo `6af46f10a27d8d1d4e99021f` active; Chung+CRL centiles; no FX; indexable false; TASKS `TOOL-749` |
 | 147 | Revised Geneva Score Calculator for Pulmonary Embolism | DEVELOPED | AUDIT PENDING | 93a3ec71 | 1004684f | (this reg/Brain) | Completed Tools | `RevisedGenevaScoreCalculator`; slug `revised-geneva-score-calculator-for-pulmonary-embolism`; Mongo `6af46f10a27d8d1d4e99024b` active; Le Gal weights; no FX; indexable false; TASKS `TOOL-747` |
 | 146 | Sperm Analysis Calculator | DEVELOPED | AUDIT PENDING | b064edde | 46d45b40 | (this reg/Brain) | Completed Tools | `SpermAnalysisCalculator`; slug `sperm-analysis-calculator`; Mongo `6af46f10a27d8d1d4e990224` active; V×C total + product functional; no FX; indexable false; TASKS `TOOL-746` |
