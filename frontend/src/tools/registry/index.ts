@@ -3879,6 +3879,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.NavyBodyFatCalculator,
     })),
   ),
+  NuchalTranslucencyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/nuchal-translucency/NuchalTranslucencyCalculator'
+    ).then((mod) => ({
+      default: mod.NuchalTranslucencyCalculator,
+    })),
+  ),
   SkinfoldBodyFatCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/skinfold-body-fat/SkinfoldBodyFatCalculator'
@@ -3992,6 +3999,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PensionCalculator,
     })),
   ),
+  PercCalculator: lazyTool(() =>
+    import('@/tools/calculators/perc/PercCalculator').then((mod) => ({
+      default: mod.PercCalculator,
+    })),
+  ),
   PercentOffCalculator: lazyTool(() =>
     import('@/tools/calculators/percent-off/PercentOffCalculator').then((mod) => ({
       default: mod.PercentOffCalculator,
@@ -4017,6 +4029,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   PerpetuityCalculator: lazyTool(() =>
     import('@/tools/calculators/perpetuity/PerpetuityCalculator').then((mod) => ({
       default: mod.PerpetuityCalculator,
+    })),
+  ),
+  PisaCalculator: lazyTool(() =>
+    import('@/tools/calculators/pisa/PisaCalculator').then((mod) => ({
+      default: mod.PisaCalculator,
     })),
   ),
   PitiCalculator: lazyTool(() =>
@@ -4147,6 +4164,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PrivateSavingsCalculator,
     })),
   ),
+  ProgesteroneToEstrogenRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/progesterone-to-estrogen-ratio/ProgesteroneToEstrogenRatioCalculator'
+    ).then((mod) => ({
+      default: mod.ProgesteroneToEstrogenRatioCalculator,
+    })),
+  ),
   ProratedSalaryCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/prorated-salary/ProratedSalaryCalculator'
@@ -4176,6 +4200,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PvifaCalculator,
     })),
   ),
+  PvrCalculator: lazyTool(() =>
+    import('@/tools/calculators/pvr/PvrCalculator').then((mod) => ({
+      default: mod.PvrCalculator,
+    })),
+  ),
   RateOfPayCalculator: lazyTool(() =>
     import('@/tools/calculators/rate-of-pay/RateOfPayCalculator').then((mod) => ({
       default: mod.RateOfPayCalculator,
@@ -4184,6 +4213,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   RateOfReturnCalculator: lazyTool(() =>
     import('@/tools/calculators/rate-of-return/RateOfReturnCalculator').then((mod) => ({
       default: mod.RateOfReturnCalculator,
+    })),
+  ),
+  RatePressureProductCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/rate-pressure-product/RatePressureProductCalculator'
+    ).then((mod) => ({
+      default: mod.RatePressureProductCalculator,
     })),
   ),
   RdCalculator: lazyTool(() =>
@@ -5548,6 +5584,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/reverse-due-date/ReverseDueDateCalculator'
     ).then((mod) => ({
       default: mod.ReverseDueDateCalculator,
+    })),
+  ),
+  RevisedGenevaScoreCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/revised-geneva-score/RevisedGenevaScoreCalculator'
+    ).then((mod) => ({
+      default: mod.RevisedGenevaScoreCalculator,
     })),
   ),
   RetirementCalculator: lazyTool(() =>

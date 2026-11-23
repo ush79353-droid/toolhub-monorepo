@@ -1,3 +1,9 @@
+### 2026-11-23 — PVR Calculator - Pulmonary Vascular Resistance
+- **Summary:** Shipped educational PVR on existing catalog slug `pvr-calculator-pulmonary-vascular-resistance` (`PvrCalculator`, catalog `6af46f10a27d8d1d4e990247`, pillar/subPillar null). Screenshot-first (ADR-023): blank mPAP/LAP/CO; mmHg|kPa; Wood=(mPAP−LAP)/CO; dyn·s·cm⁻⁵=Wood×80; PCWP/PAWP surrogate note; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-743`.
+- **Commits:** UI absorbed into concurrent `ca1b9d5f` / `cba552ec` (engine) / (reg/Brain this commit).
+- **Example:** mPAP **30** · LAP **10** · CO **5** → **320** dyn·s·cm⁻⁵.
+- **Verification:** Focused `pvr/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Mitral Valve Area Calculator
 - **Summary:** Shipped educational Doppler mitral valve area on existing catalog slug `mitral-valve-area-calculator` (`MitralValveAreaCalculator`, catalog `6af46f10a27d8d1d4e990243`, pillar/subPillar null). Screenshot-first (ADR-023): Continuity / Pressure half-time / Deceleration; CSA=π(d/2)²; MVA=CSA×LVOT VTI/MV VTI; Hatle 220/PHT; PHT≈0.29×DT; clear on method switch; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-741`.
 - **Commits:** UI absorbed into concurrent `b812e883` / `30042397` (engine) / (reg/Brain this commit).
@@ -30,6 +36,11 @@
 - **Summary:** Shipped educational MAP = (SBP + 2×DBP)/3 on existing catalog slug `map-calculator-mean-arterial-pressure` (`MapCalculator`, catalog `6af46f10a27d8d1d4e990242`, pillar/subPillar null). Screenshot-first (ADR-023): SBP/DBP mmHg; optional pulse pressure; formula visible in blank state; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-738`.
 - **Commits:** `8a032174` (UI) / `2f11c670` (engine) / (reg/Brain this commit; registry/sitemap/tool.key via concurrent `053e81a2`).
 - **Verification:** `map-mean-arterial-pressure/calculation.test.ts` ok; `backend` build + `tool.key` ok. Temporary files cleaned: YES. Push/Pull/Fetch: NONE.
+
+### 2026-11-23 — PERC Calculator
+- **Summary:** Shipped educational PERC rule on existing catalog slug `perc-calculator-pulmonary-embolism-rule-out-criteria` (`PercCalculator`, catalog `6af46f10a27d8d1d4e990245`, pillar/subPillar null). Screenshot-first (ADR-023): eight tick-if-present criteria; prominent low pretest probability (&lt;15%) prerequisite; rule-out copy only after low-risk and full-assessment attestation; unanswered unchecked items do not silently rule out; positive count 0–8; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-742`.
+- **Example:** None ticked + both attestations → **0** · rule-out educational text; any tick → insufficient to exclude PE.
+- **Verification:** `perc/calculation.test.ts` ok; `backend` build ok. Temporary files cleaned: YES. Push/Pull/Fetch: NONE (local commits only).
 
 ### 2026-11-23 — HEART Score Calculator
 - **Summary:** Shipped educational HEART score (0–10) on existing catalog slug `heart-score-calculator` (`HeartScoreCalculator`, catalog `6af46f10a27d8d1d4e99023f`, pillar/subPillar null). Screenshot-first (ADR-023): blank age; ECG/History/Troponin/Risk screenshot defaults; age &lt;45/45–64/≥65; troponin tiers vs assay URL; total blank until age; no disposition text; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-735`.
