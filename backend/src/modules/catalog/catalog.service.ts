@@ -43,11 +43,20 @@ export interface PublicRelatedTool {
   pillarName: string;
 }
 
+export interface PublicToolContributor {
+  name: string;
+  linkedInUrl: string;
+  designation: string;
+  about: string;
+}
+
 export interface PublicToolDetail {
   id: string;
   name: string;
   slug: string;
   shortDescription: string;
+  creator: PublicToolContributor | null;
+  reviewers: PublicToolContributor[];
   iconUrl: string;
   executionType: ToolExecutionType;
   componentKey: string;
@@ -111,6 +120,19 @@ interface PopulatedRelatedDoc {
   isFeatured?: boolean;
   category?: { name?: string; slug?: string } | null;
   pillar?: { name?: string } | null;
+}
+
+function toPublicContributor(
+  person: { name?: string; linkedInUrl?: string; designation?: string; about?: string } | null | undefined
+): PublicToolContributor | null {
+  const name = person?.name?.trim() ?? '';
+  if (!name) return null;
+  return {
+    name,
+    linkedInUrl: person?.linkedInUrl?.trim() ?? '',
+    designation: person?.designation?.trim() ?? '',
+    about: person?.about?.trim() ?? '',
+  };
 }
 
 function toRelatedTool(doc: PopulatedRelatedDoc): PublicRelatedTool {
@@ -523,6 +545,11 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
     name: doc.name,
     slug: doc.slug,
     shortDescription: doc.shortDescription,
+    creator: toPublicContributor(doc.creator),
+    reviewers: (doc.reviewers ?? []).flatMap((person) => {
+      const mapped = toPublicContributor(person);
+      return mapped ? [mapped] : [];
+    }),
     iconUrl: doc.iconUrl,
     executionType: doc.executionType ?? 'client',
     componentKey: doc.componentKey ?? '',

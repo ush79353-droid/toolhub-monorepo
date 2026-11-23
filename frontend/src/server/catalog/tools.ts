@@ -23,11 +23,20 @@ export interface PublicRelatedTool {
   pillarName: string;
 }
 
+export interface PublicToolContributor {
+  name: string;
+  linkedInUrl: string;
+  designation: string;
+  about: string;
+}
+
 export interface PublicToolDetail {
   id: string;
   name: string;
   slug: string;
   shortDescription: string;
+  creator: PublicToolContributor | null;
+  reviewers: PublicToolContributor[];
   iconUrl: string;
   executionType: ToolExecutionType;
   componentKey: string;

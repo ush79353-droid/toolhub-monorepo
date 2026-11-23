@@ -1,6 +1,14 @@
 import mongoose, { Schema, type Document, type Model, type Types } from 'mongoose';
 import type { ToolExecutionType } from '../../types/tool';
 
+/** A person credited on a tool. The same shape is used for the creator and each reviewer. */
+export interface IToolContributor {
+  name: string;
+  linkedInUrl: string;
+  designation: string;
+  about: string;
+}
+
 export interface ITool extends Document {
   name: string;
   nameKey: string;
@@ -50,6 +58,10 @@ export interface ITool extends Document {
   embedAllowedDomains: string;
   isActive: boolean;
   isFeatured: boolean;
+  /** One person credited with building the tool. Null until a contributor seed runs. */
+  creator: IToolContributor | null;
+  /** One or two people credited with reviewing the tool. */
+  reviewers: IToolContributor[];
   /**
    * Initial catalog value is true. A missing value is that initial default, not proof of a component.
    * Only a source audit may set this from verification.
@@ -58,6 +70,16 @@ export interface ITool extends Document {
   createdAt: Date;
   updatedAt: Date;
 }
+
+const contributorSchema = new Schema<IToolContributor>(
+  {
+    name: { type: String, required: true, trim: true, maxlength: 120 },
+    linkedInUrl: { type: String, required: true, trim: true, maxlength: 300 },
+    designation: { type: String, required: true, trim: true, maxlength: 200 },
+    about: { type: String, default: '', trim: true, maxlength: 2000 },
+  },
+  { _id: false }
+);
 
 const toolSchema = new Schema<ITool>(
   {
@@ -111,6 +133,8 @@ const toolSchema = new Schema<ITool>(
     embedAllowedDomains: { type: String, default: '', maxlength: 1000 },
     isActive: { type: Boolean, default: true },
     isFeatured: { type: Boolean, default: false },
+    creator: { type: contributorSchema, default: null },
+    reviewers: { type: [contributorSchema], default: [] },
     isDeveloped: { type: Boolean, default: true },
   },
   { timestamps: true }

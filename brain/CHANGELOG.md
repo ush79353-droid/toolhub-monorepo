@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-23 — Finance contributor seed
+- **Summary:** Each Finance & Business tool now stores one creator and one or two reviewers. The fields are `name`, `linkedInUrl`, `designation`, and `about`. `npm run tools:seed-contributors` reads `Finance & Business Linkedin Profile.ods` and matches people to tools by designation. The public tool detail includes `creator` and `reviewers`.
+- **Important Files:** `backend/src/modules/tools/tool.model.ts`, `backend/src/scripts/seed-finance-contributors.ts`, `backend/src/modules/catalog/catalog.service.ts`.
+- **Verification:** Self-check passed. The seed updated 644 Finance & Business tools (335 with one reviewer, 309 with two). Auto Loan’s creator is Brianna Cervantes, a mortgage loan officer. Income Tax’s creator is Larosh Khan, a tax consultant. Temporary files cleaned: YES.
+
 ### 2026-11-23 — Auto Loan creator and reviewer card
 - **Summary:** The tool page can show a Creators and Reviewers block with a photo, name, LinkedIn, bio, full profile, and editorial-policy link. Only Auto Loan passes sample credits, so other tools stay unchanged. The block is UI only. No contributor API yet.
 - **Important Files:** `frontend/src/components/shared/ToolContributors.tsx`, `frontend/src/tools/page-detail.ts`, `frontend/src/tools/calculators/auto-loan/detail.tsx`, `frontend/src/app/(website)/tools/[slug]/page.tsx`.
