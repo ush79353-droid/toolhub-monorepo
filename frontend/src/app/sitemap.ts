@@ -913,6 +913,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'fisher-effect-calculator',
   'fisher-equation-calculator',
   'what-is-a-false-negative-pregnancy-test',
+  'fertility-by-age-calculator',
   'forward-premium-calculator',
   'forward-rate-calculator',
   'futures-contracts-calculator',

@@ -1137,6 +1137,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/fisher-effect/detail'),
   FalseNegativePregnancyTestCalculator: () =>
     import('@/tools/calculators/false-negative-pregnancy-test/detail'),
+  FertilityByAgeCalculator: () =>
+    import('@/tools/calculators/fertility-by-age/detail'),
   FisherEquationCalculator: () =>
     import('@/tools/calculators/fisher-equation/detail'),
   ForwardPremiumCalculator: () =>
