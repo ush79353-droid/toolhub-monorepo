@@ -4272,6 +4272,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FalseNegativePregnancyTestCalculator,
     })),
   ),
+  FertilityByAgeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/fertility-by-age/FertilityByAgeCalculator'
+    ).then((mod) => ({
+      default: mod.FertilityByAgeCalculator,
+    })),
+  ),
   FisherEquationCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/fisher-equation/FisherEquationCalculator'

@@ -1,4 +1,4 @@
-# OmegaCalculators — Automated Development Tracker
+﻿# OmegaCalculators — Automated Development Tracker
 
 ## Summary
 
@@ -14,6 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 124 | EROA - Mitral Regurgitation Calculator | DEVELOPED | AUDIT PENDING | 8f85b519 | a2439b78 | 7941409c | Completed Tools | `EroaMitralRegurgitationCalculator`; slug `eroa-mitral-regurgitation-calculator`; Mongo `6af46f10a27d8d1d4e990238` active; PISA 2πr²Va; no FX; indexable false; TASKS `TOOL-724` |
 | 123 | Flange Size Calculator | DEVELOPED | AUDIT PENDING | ca0a8a10 | ddd27a5e | f2b7678f + Brain | Completed Tools | `FlangeSizeCalculator`; slug `flange-size-calculator`; Mongo `6af46f10a27d8d1d4e990217` active; Spectra discrete bands; no FX; indexable false; TASKS `TOOL-723` |
 | 114 | EDD Calculator - Estimated Date of Delivery | DEVELOPED | AUDIT PENDING | 8a00fa61 | 6fb78ba6 | 0c1eca8a + Brain finalize | Completed Tools | `EddCalculator`; slug `edd-calculator-estimated-date-of-delivery`; Mongo `6af46f10a27d8d1d4e990214` active; ACOG LMP/US compare; no FX; indexable false; TASKS `TOOL-718` |
 | 123 | DAPT calculator | DEVELOPED | AUDIT PENDING | a724c1a8 | ebf16c01 | 1d93e646 (reg via 48489e78) | Completed Tools | `DaptCalculator`; slug `dapt-calculator`; Mongo `6af46f10a27d8d1d4e990232` active; Yeh 2016; no FX; indexable false; TASKS `TOOL-722` |
