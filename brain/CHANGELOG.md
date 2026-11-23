@@ -1,3 +1,9 @@
+### 2026-11-23 — Nuchal Translucency Calculator
+- **Summary:** Shipped educational NT estimate/centile chart on existing catalog slug `nuchal-translucency-calculator` (`NuchalTranslucencyCalculator`, catalog `6af46f10a27d8d1d4e99021f`, pillar/subPillar null). Screenshot-first (ADR-023): Estimate (CRL → Robinson–Fleming GA + Chung expected NT) and Assess (measured NT vs CRL centile table + SVG NT-vs-GA chart). Documented GA 78 vs screenshot 79 and ~82nd vs screenshot 75th; no curve fitting. Privacy-safe share URL only. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. Registry/sitemap/keys absorbed into concurrent `d14eeaab` / `8a486d64`. TASKS `TOOL-749`.
+- **Commits:** `c6a28881` (UI) / `77fdafe0` (engine) / (reg/Brain this commit).
+- **Example:** CRL **45** mm → expected NT **1.32** mm · GA **78** d; measured NT **1.34** mm → ~82nd centile band on published table.
+- **Verification:** Focused `nuchal-translucency/calculation.test.ts` in engine commit. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Sperm Analysis Calculator
 - **Summary:** Shipped educational total/functional sperm worksheet on existing catalog slug `sperm-analysis-calculator` (`SpermAnalysisCalculator`, catalog `6af46f10a27d8d1d4e990224`, pillar/subPillar null). Screenshot-first (ADR-023): blank volume (mL|µL), concentration (mln/ml|mln/µL), morphology/motility/vitality %; total = V×C; functional = product estimate; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-746`.
 - **Commits:** `b064edde` (UI) / `46d45b40` (engine) / (reg/Brain this commit).
@@ -67,7 +73,8 @@
 - **Verification:** `map-mean-arterial-pressure/calculation.test.ts` ok; `backend` build + `tool.key` ok. Temporary files cleaned: YES. Push/Pull/Fetch: NONE.
 
 ### 2026-11-23 — PERC Calculator
-- **Summary:** Shipped educational PERC rule on existing catalog slug `perc-calculator-pulmonary-embolism-rule-out-criteria` (`PercCalculator`, catalog `6af46f10a27d8d1d4e990245`, pillar/subPillar null). Screenshot-first (ADR-023): eight tick-if-present criteria; prominent low pretest probability (&lt;15%) prerequisite; rule-out copy only after low-risk and full-assessment attestation; unanswered unchecked items do not silently rule out; positive count 0–8; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-742`.
+- **Summary:** Shipped educational PERC rule on existing catalog slug `perc-calculator-pulmonary-embolism-rule-out-criteria` (`PercCalculator`, catalog `6af46f10a27d8d1d4e990245`, pillar/subPillar null). Screenshot-first (ADR-023): eight tick-if-present criteria; prominent low pretest probability (&lt;15%) prerequisite; rule-out copy only after low-risk and full-assessment attestation; unanswered unchecked items do not silently rule out; positive count 0–8; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-743`.
+- **Commits:** `f978fcbb` (UI) / `2a913c01` (engine) / `21980a03` (reg/Brain; keys/sitemap/index in concurrent commits).
 - **Example:** None ticked + both attestations → **0** · rule-out educational text; any tick → insufficient to exclude PE.
 - **Verification:** `perc/calculation.test.ts` ok; `backend` build ok. Temporary files cleaned: YES. Push/Pull/Fetch: NONE (local commits only).
 
