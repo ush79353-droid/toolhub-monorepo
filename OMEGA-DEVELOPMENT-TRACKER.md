@@ -14,6 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 120 | Ejection Fraction Calculator | DEVELOPED | AUDIT PENDING | 8a059322 | 761accae | (this reg/Brain) | Completed Tools | `EjectionFractionCalculator`; slug `ejection-fraction-calculator`; Mongo `6af46f10a27d8d1d4e990237` active; EF=SV/EDV; no FX; indexable false; TASKS `TOOL-720` |
 | 119 | Duke Treadmill Score Calculator | DEVELOPED (activation blocked) | AUDIT PENDING | 6a668628 | 1c06cb2b | (this reg/Brain) | In Progress | `DukeTreadmillScoreCalculator`; slug `duke-treadmill-score-calculator`; Mongo `6af46f10a27d8d1d4e990234`; Mark DTS; no FX; indexable false; TASKS `TOOL-719`; Atlas assign may need retry |
 | 114 | CVD Risk Calculator (10-year) | DEVELOPED (activation blocked) | AUDIT PENDING | 3a95447b | 80d54f1d | (reg) | In Progress | CvdRiskCalculator; Atlas assign blocked; TASKS TOOL-712 |
 | 118 | ECG Boxes to Seconds Calculator | DEVELOPED (activation retry) | AUDIT PENDING | 97fa589c | 24f83f80 | (Brain this; registry via 36d26bc3) | In Progress until assign | `EcgBoxesToSecondsCalculator`; slug `ecg-boxes-to-seconds-calculator`; Mongo `6af46f10a27d8d1d4e990235`; 1/5 mm × speed; sec|ms|min; no FX; indexable false; TASKS `TOOL-718` |

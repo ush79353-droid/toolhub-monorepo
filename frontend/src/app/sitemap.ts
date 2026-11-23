@@ -21,6 +21,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'arterial-age-calculator',
   'california-overtime-calculator',
   'calorie-deficit-calculator',
+  'dapt-calculator',
   'debt-avalanche-calculator',
   'debt-calculator',
   'debt-service-coverage-ratio-calculator-dscr',
@@ -807,6 +808,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cross-exchange-rate-calculator',
   'effective-annual-yield-calculator',
   'effective-interest-rate-calculator',
+  'ejection-fraction-calculator',
   'expected-utility-calculator',
   'future-value-calculator',
   'future-salary-calculator',
@@ -1104,6 +1106,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       // Skip unreachable tools.
     }
   }
+
+  return entries;
+}
 
   return entries;
 }

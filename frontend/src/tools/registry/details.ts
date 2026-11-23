@@ -24,6 +24,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/california-overtime/detail'),
   CalorieDeficitCalculator: () =>
     import('@/tools/calculators/calorie-deficit/detail'),
+  DaptCalculator: () => import('@/tools/calculators/dapt/detail'),
   DebtAvalancheCalculator: () =>
     import('@/tools/calculators/debt-avalanche/detail'),
   DebtCalculator: () =>
@@ -730,6 +731,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bmi-weight-loss/detail'),
   DueDateCalculator: () =>
     import('@/tools/calculators/due-date/detail'),
+  DopplerEchoCardiacOutputCalculator: () =>
+    import('@/tools/calculators/doppler-echo-cardiac-output/detail'),
   DukeTreadmillScoreCalculator: () =>
     import('@/tools/calculators/duke-treadmill-score/detail'),
   AverageCollectionPeriodCalculator: () =>
@@ -1286,6 +1289,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/effective-annual-yield/detail'),
   EffectiveInterestRateCalculator: () =>
     import('@/tools/calculators/effective-interest-rate/detail'),
+  EjectionFractionCalculator: () =>
+    import('@/tools/calculators/ejection-fraction/detail'),
   EndingInventoryCalculator: () =>
     import('@/tools/calculators/ending-inventory/detail'),
   EoqCalculator: () => import('@/tools/calculators/eoq/detail'),

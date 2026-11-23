@@ -1,3 +1,9 @@
+### 2026-11-23 — Ejection Fraction Calculator
+- **Summary:** Shipped educational EF% on existing catalog slug `ejection-fraction-calculator` (`EjectionFractionCalculator`, catalog `6af46f10a27d8d1d4e990237`, pillar/subPillar null). Screenshot-first (ADR-023): I know SV / ESV / CO&HR; blank EDV; EF = 100×SV/EDV; SV from ESV or 1000×CO/HR; preserve EDV on mode switch; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-720`.
+- **Commits:** `8a059322` (UI) / `761accae` (engine) / (reg/Brain this commit).
+- **Example:** EDV **120** · SV **72** (or ESV **48**, or CO **5.04** · HR **70**) → EF **60%**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — ECG Boxes to Seconds Calculator
 - **Summary:** Shipped educational ECG grid→time tool on existing catalog slug `ecg-boxes-to-seconds-calculator` (`EcgBoxesToSecondsCalculator`, catalog `6af46f10a27d8d1d4e990235`, pillar/subPillar null). Screenshot-first (ADR-023): blank box count; Small (1 mm) / Big (5 mm); 25/50 mm/s; read-only duration with sec|ms|min preserving the interval; duration = count×width÷speed; privacy-safe share URL. **No FX**. Frontend/backend registry wired (keys absorbed into concurrent `36d26bc3`). **Mongo `tool:assign` blocked** (Atlas IP whitelist on retries); activation retry pending. **`indexable` left false**. TASKS `TOOL-718`.
 - **Commits:** `97fa589c` (UI) / `24f83f80` (engine) / (Brain this commit; registry via `36d26bc3`).

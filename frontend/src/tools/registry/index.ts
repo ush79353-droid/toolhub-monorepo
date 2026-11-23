@@ -88,6 +88,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CalorieDeficitCalculator,
     })),
   ),
+  DaptCalculator: lazyTool(() =>
+    import('@/tools/calculators/dapt/DaptCalculator').then((mod) => ({
+      default: mod.DaptCalculator,
+    })),
+  ),
   DebtAvalancheCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/debt-avalanche/DebtAvalancheCalculator'
@@ -4483,6 +4488,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DueDateCalculator,
     })),
   ),
+  DopplerEchoCardiacOutputCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/doppler-echo-cardiac-output/DopplerEchoCardiacOutputCalculator'
+    ).then((mod) => ({
+      default: mod.DopplerEchoCardiacOutputCalculator,
+    })),
+  ),
   DukeTreadmillScoreCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/duke-treadmill-score/DukeTreadmillScoreCalculator'
@@ -4808,6 +4820,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/effective-interest-rate/EffectiveInterestRateCalculator'
     ).then((mod) => ({
       default: mod.EffectiveInterestRateCalculator,
+    })),
+  ),
+  EjectionFractionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ejection-fraction/EjectionFractionCalculator'
+    ).then((mod) => ({
+      default: mod.EjectionFractionCalculator,
     })),
   ),
   EndingInventoryCalculator: lazyTool(() =>
