@@ -14,7 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
-| 111 | Conception Calculator | DEVELOPED | AUDIT PENDING | 6ae8268c | 258b3f59 | (this reg/Brain) | Completed Tools | `ConceptionCalculator`; slug `conception-calculator`; Mongo `6af46f10a27d8d1d4e990212` active; ACOG EDD−266; no FX; indexable false; TASKS `TOOL-709` |
+| 111 | Conception Calculator | DEVELOPED (activation blocked) | AUDIT PENDING | 6ae8268c | 258b3f59 | (this reg/Brain) | In Progress | `ConceptionCalculator`; slug `conception-calculator`; Mongo `6af46f10a27d8d1d4e990212` assign failed Atlas timeout; registry wired; no FX; TASKS `TOOL-709` |
 | 110 | Clomid Ovulation Calculator | DEVELOPED | AUDIT PENDING | 56547083 | 889ae531 | 194a1bca | Completed Tools | `ClomidOvulationCalculator`; slug `clomid-ovulation-calculator`; Mongo `6af46f10a27d8d1d4e990211` active; DailyMed 5–10d window; no FX; indexable false; TASKS `TOOL-708` |
 | 110 | ABI Calculator (Ankle-Brachial Index) | DEVELOPED | AUDIT PENDING | 6c6c2e0a | 40707920 | (this reg/Brain) | Completed Tools | `AbiCalculator`; slug `abi-calculator-ankle-brachial-index`; Mongo `6af46f10a27d8d1d4e990229` active; foot÷arm; no FX; indexable false; TASKS `TOOL-708` |
 | 109 | Breast Cancer Recurrence Risk Calculator | DEVELOPED | AUDIT PENDING | 2989feee | f27e80d6 | (reg absorb / Clomid 194a1bca) | Completed Tools | `BreastCancerRecurrenceRiskCalculator`; slug `breast-cancer-recurrence-risk-calculator`; Mongo `6af46f10a27d8d1d4e99020e` active; O'Rourke 1994; no FX; indexable false; TASKS `TOOL-707` |
