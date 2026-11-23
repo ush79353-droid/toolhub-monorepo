@@ -30,6 +30,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GeriatricBmiCalculator',
   'GrossMarginCalculator',
   'GrossRentMultiplierCalculator',
+  'GorlinFormulaCalculator',
   'GratuityCalculator',
   'GrowingAnnuityCalculator',
   'IllinoisOvertimeCalculator',

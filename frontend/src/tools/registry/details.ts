@@ -59,6 +59,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gross-margin/detail'),
   GrossRentMultiplierCalculator: () =>
     import('@/tools/calculators/gross-rent-multiplier/detail'),
+  GorlinFormulaCalculator: () =>
+    import('@/tools/calculators/gorlin-formula/detail'),
   GratuityCalculator: () => import('@/tools/calculators/gratuity/detail'),
   GrowingAnnuityCalculator: () =>
     import('@/tools/calculators/growing-annuity/detail'),

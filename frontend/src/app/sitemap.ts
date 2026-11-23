@@ -38,6 +38,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'geriatric-bmi-calculator',
   'gross-margin-calculator',
   'gross-rent-multiplier-calculator',
+  'gorlin-formula-calculator',
   'gratuity-calculator',
   'growing-annuity-calculator',
   'illinois-overtime-calculator',

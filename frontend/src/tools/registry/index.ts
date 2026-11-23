@@ -210,6 +210,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GrossRentMultiplierCalculator,
     })),
   ),
+  GorlinFormulaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gorlin-formula/GorlinFormulaCalculator'
+    ).then((mod) => ({
+      default: mod.GorlinFormulaCalculator,
+    })),
+  ),
   GratuityCalculator: lazyTool(() =>
     import('@/tools/calculators/gratuity/GratuityCalculator').then((mod) => ({
       default: mod.GratuityCalculator,
