@@ -4,6 +4,11 @@
 
 ---
 
+### 2026-11-23 — Auto Loan creator and reviewer card
+- **Summary:** The tool page can show a Creators and Reviewers block with a photo, name, LinkedIn, bio, full profile, and editorial-policy link. Only Auto Loan passes sample credits, so other tools stay unchanged. The block is UI only. No contributor API yet.
+- **Important Files:** `frontend/src/components/shared/ToolContributors.tsx`, `frontend/src/tools/page-detail.ts`, `frontend/src/tools/calculators/auto-loan/detail.tsx`, `frontend/src/app/(website)/tools/[slug]/page.tsx`.
+- **Verification:** `/tools/auto-loan-calculator` shows the block on the right of the intro card, beside the description. Opening a name shows the card. Temporary files cleaned: YES.
+
 ### 2026-11-22 — DMCA policy page
 - **Summary:** `/dmca-policy` explains how to send a copyright notice and a counter-notice. The date is `siteConfig.dmca.updated`. The footer, sitemap, and Terms page link to it.
 - **Important Files:** `frontend/src/app/(website)/dmca-policy/page.tsx`, `frontend/src/components/layout/Footer.tsx`, `frontend/src/app/sitemap.ts`, `frontend/src/config/site.ts`.

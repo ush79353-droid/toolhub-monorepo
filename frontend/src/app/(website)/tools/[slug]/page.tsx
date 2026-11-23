@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { Container } from '@/components/layout/Container';
 import { RememberRecentTool } from '@/components/home/RememberRecentTool';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
+import { ToolContributors } from '@/components/shared/ToolContributors';
 import { ToolWorkspace } from '@/components/shared/ToolWorkspace';
 import { ToolDetailSidebar } from '@/components/shared/ToolDetailSidebar';
 import { AdSlot } from '@/components/ads/AdSlot';
@@ -513,7 +514,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
           />
 
           <div className="mb-5 rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
-            <header>
+            <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-10">
               {/* Master shell (Loan Calculator): no decorative tool icon in the intro card */}
               <div className="min-w-0">
                 {categoryName ? (
@@ -528,6 +529,11 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
                   {toolMetadata.description} {pageDetail.subtitleLead}
                 </p>
               </div>
+              {pageDetail.credits ? (
+                <div className="shrink-0 md:pl-2">
+                  <ToolContributors credits={pageDetail.credits} />
+                </div>
+              ) : null}
             </header>
           </div>
 
