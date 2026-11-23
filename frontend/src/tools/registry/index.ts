@@ -3568,6 +3568,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FifoInventoryCalculator,
     })),
   ),
+  FlangeSizeCalculator: lazyTool(() =>
+    import('@/tools/calculators/flange-size/FlangeSizeCalculator').then((mod) => ({
+      default: mod.FlangeSizeCalculator,
+    })),
+  ),
   FullTimeEquivalentCalculator: lazyTool(() =>
     import('@/tools/calculators/full-time-equivalent/FullTimeEquivalentCalculator').then((mod) => ({
       default: mod.FullTimeEquivalentCalculator,
@@ -4873,6 +4878,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.FreeCashFlowCalculator,
       })
     ),
+  ),
+  FundalHeightCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/fundal-height/FundalHeightCalculator'
+    ).then((mod) => ({
+      default: mod.FundalHeightCalculator,
+    })),
   ),
   FcfeCalculator: lazyTool(() =>
     import('@/tools/calculators/fcfe/FcfeCalculator').then((mod) => ({

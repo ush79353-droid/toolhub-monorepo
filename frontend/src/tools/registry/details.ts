@@ -908,6 +908,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/expense-ratio/detail'),
   FifoInventoryCalculator: () =>
     import('@/tools/calculators/fifo-inventory/detail'),
+  FlangeSizeCalculator: () =>
+    import('@/tools/calculators/flange-size/detail'),
   FullTimeEquivalentCalculator: () =>
     import('@/tools/calculators/full-time-equivalent/detail'),
   GmroiCalculator: () =>
@@ -1303,6 +1305,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/expected-utility/detail'),
   FreeCashFlowCalculator: () =>
     import('@/tools/calculators/free-cash-flow/detail'),
+  FundalHeightCalculator: () =>
+    import('@/tools/calculators/fundal-height/detail'),
   FcfeCalculator: () => import('@/tools/calculators/fcfe/detail'),
   FcffCalculator: () => import('@/tools/calculators/fcff/detail'),
   FetalWeightPercentileCalculator: () =>
