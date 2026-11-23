@@ -189,6 +189,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GeriatricBmiCalculator,
     })),
   ),
+  GestationalAgeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gestational-age/GestationalAgeCalculator'
+    ).then((mod) => ({
+      default: mod.GestationalAgeCalculator,
+    })),
+  ),
   GeorgiaOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/georgia-overtime/GeorgiaOvertimeCalculator'
@@ -3602,6 +3609,16 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GrahamNumberCalculator,
     })),
   ),
+  HasBledCalculator: lazyTool(() =>
+    import('@/tools/calculators/has-bled/HasBledCalculator').then((mod) => ({
+      default: mod.HasBledCalculator,
+    })),
+  ),
+  HcgLevelsCalculator: lazyTool(() =>
+    import('@/tools/calculators/hcg-levels/HcgLevelsCalculator').then((mod) => ({
+      default: mod.HcgLevelsCalculator,
+    })),
+  ),
   HedgeRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/hedge-ratio/HedgeRatioCalculator').then((mod) => ({
       default: mod.HedgeRatioCalculator,
@@ -4306,6 +4323,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.ForwardRateCalculator,
       }),
     ),
+  ),
+  FraminghamRiskCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/framingham-risk/FraminghamRiskCalculator'
+    ).then((mod) => ({
+      default: mod.FraminghamRiskCalculator,
+    })),
   ),
   FuturesContractsCalculator: lazyTool(() =>
     import(

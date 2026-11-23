@@ -53,6 +53,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/future-value-of-annuity/detail'),
   GeriatricBmiCalculator: () =>
     import('@/tools/calculators/geriatric-bmi/detail'),
+  GestationalAgeCalculator: () =>
+    import('@/tools/calculators/gestational-age/detail'),
   GeorgiaOvertimeCalculator: () =>
     import('@/tools/calculators/georgia-overtime/detail'),
   GrossMarginCalculator: () =>
@@ -920,6 +922,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/google-adsense/detail'),
   GrahamNumberCalculator: () =>
     import('@/tools/calculators/graham-number/detail'),
+  HasBledCalculator: () =>
+    import('@/tools/calculators/has-bled/detail'),
+  HcgLevelsCalculator: () =>
+    import('@/tools/calculators/hcg-levels/detail'),
   HedgeRatioCalculator: () =>
     import('@/tools/calculators/hedge-ratio/detail'),
   HhiCalculator: () =>
@@ -1147,6 +1153,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/forward-premium/detail'),
   ForwardRateCalculator: () =>
     import('@/tools/calculators/forward-rate/detail'),
+  FraminghamRiskCalculator: () =>
+    import('@/tools/calculators/framingham-risk/detail'),
   FuturesContractsCalculator: () =>
     import('@/tools/calculators/futures-contracts/detail'),
   GabapentinDosageCalculator: () =>
