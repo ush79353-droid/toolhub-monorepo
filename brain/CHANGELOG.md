@@ -47,7 +47,7 @@
 - **Verification:** Source-level point arithmetic; focused `calculation.test.ts` written (full tsc/lint/build/Playwright not run per continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-23 — Framingham Risk Calculator
-- **Summary:** Shipped educational ATP III Framingham hard CHD point score on existing catalog slug `framingham-risk-calculator` (`FraminghamRiskCalculator`, catalog `6af46f10a27d8d1d4e990239`, pillar/subPillar null). Screenshot-first (ADR-023): blank age; Male default; BP treatment No; blank SBP/TC/HDL; smoker No; risk score in pts; educational 10-year % in explanation only; mmol/L×38.67; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-726`.
+- **Summary:** Shipped educational ATP III Framingham hard CHD point score on existing catalog slug `framingham-risk-calculator` (`FraminghamRiskCalculator`, catalog `6af46f10a27d8d1d4e990239`, pillar/subPillar null). Screenshot-first (ADR-023): blank age; Male default; BP treatment No; blank SBP/TC/HDL; smoker No; risk score in pts; educational 10-year % in explanation only; mmol/L×38.67; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-728`.
 - **Commits:** `2879119b` (UI) / `58068203` (engine) / (reg/Brain this commit).
 - **Example:** man **45** · SBP **130** · TC **180** · HDL **50** → **7** pts.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
