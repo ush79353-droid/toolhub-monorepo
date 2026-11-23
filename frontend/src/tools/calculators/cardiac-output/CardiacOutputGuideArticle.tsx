@@ -115,18 +115,18 @@ export function CardiacOutputGuideArticle() {
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
         <li>
-          <Link href="/tools/cardiac-index-calculator">
-            Cardiac Index Calculator
+          <Link href="/tools/blood-pressure-calculator">
+            Blood Pressure Calculator
           </Link>
         </li>
         <li>
-          <Link href="/tools/ejection-fraction-calculator">
-            Ejection Fraction Calculator
+          <Link href="/tools/cha2ds2-vasc-calculator">
+            CHA₂DS₂-VASc Calculator
           </Link>
         </li>
         <li>
-          <Link href="/tools/map-mean-arterial-pressure-calculator">
-            Mean Arterial Pressure Calculator
+          <Link href="/tools/abi-calculator-ankle-brachial-index">
+            ABI Calculator (Ankle-Brachial Index)
           </Link>
         </li>
       </ul>
