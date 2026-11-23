@@ -1,4 +1,11 @@
-﻿### 2026-11-24 — Absolute Reticulocyte Count Calculator
+﻿### 2026-11-24 — Batch: Added Sugar, Age-Adjusted D-dimer, A/G Ratio, Allowable Blood Loss
+
+- **Added Sugar Intake** (`AddedSugarIntakeCalculator`, slug `added-sugar-intake-calculator`): UI `4c1a4d50` / eng `6a030b7b` / reg this. Mongo blocked. TOOL-756.
+- **Age-Adjusted D-dimer** (`AgeAdjustedDDimerCalculator`, slug `age-adjusted-d-dimer-calculator`): UI `ff916995` / eng `673b6aa1` / reg this. Mongo blocked. TOOL-757.
+- **Albumin Globulin Ratio** (`AlbuminGlobulinRatioCalculator`, slug `albumin-globulin-ratio-calculator`): UI `6d7e7573` / eng `22c00d91` / reg this. Mongo blocked. TOOL-758.
+- **Allowable Blood Loss** (`AllowableBloodLossCalculator`, slug `allowable-blood-loss-calculator`): UI `94cf7bde` / eng `c92a2a5f` / reg this. Mongo blocked. TOOL-759.
+- Registry/sitemap/`tool.key` in this commit. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+### 2026-11-24 — Absolute Reticulocyte Count Calculator
 
 - **Summary:** Shipped educational ARC worksheet (`AbsoluteReticulocyteCountCalculator`, slug `absolute-reticulocyte-count-calculator`). Screenshot Hct/ref Hct/retic %; ARC estimated via RBC = 5e6 × (Hct/ref) then × retic fraction; assumption labeled. **No FX**. Mongo assign blocked. TASKS `TOOL-755`.
 - **Commits:** `55305bc4` (UI) / `d8d2ac66` (engine) / (reg this).
@@ -6165,5 +6172,6 @@
 - Added bidirectional Rule of 72 calculator (`RuleOf72Calculator` / `rule-of-72-calculator`).
 - Approximation `T � 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
 - Catalog `6af46f10a27d8d1d4e9901bc` activated; `indexable` left false.
+
 
 

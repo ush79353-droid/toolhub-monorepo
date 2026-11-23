@@ -2992,6 +2992,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AbsoluteReticulocyteCountCalculator,
     })),
   ),
+  AddedSugarIntakeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/added-sugar-intake/AddedSugarIntakeCalculator'
+    ).then((mod) => ({
+      default: mod.AddedSugarIntakeCalculator,
+    })),
+  ),
   AdderallDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/adderall-dosage/AdderallDosageCalculator'
@@ -2999,11 +3006,32 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AdderallDosageCalculator,
     })),
   ),
+  AgeAdjustedDDimerCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/age-adjusted-d-dimer/AgeAdjustedDDimerCalculator'
+    ).then((mod) => ({
+      default: mod.AgeAdjustedDDimerCalculator,
+    })),
+  ),
+  AlbuminGlobulinRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/albumin-globulin-ratio/AlbuminGlobulinRatioCalculator'
+    ).then((mod) => ({
+      default: mod.AlbuminGlobulinRatioCalculator,
+    })),
+  ),
   AleveDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/aleve-dosage/AleveDosageCalculator'
     ).then((mod) => ({
       default: mod.AleveDosageCalculator,
+    })),
+  ),
+  AllowableBloodLossCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/allowable-blood-loss/AllowableBloodLossCalculator'
+    ).then((mod) => ({
+      default: mod.AllowableBloodLossCalculator,
     })),
   ),
   BenadrylDosageCalculator: lazyTool(() =>

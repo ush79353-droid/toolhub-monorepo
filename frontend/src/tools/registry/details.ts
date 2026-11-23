@@ -719,10 +719,18 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/absolute-lymphocyte-count/detail'),
   AbsoluteReticulocyteCountCalculator: () =>
     import('@/tools/calculators/absolute-reticulocyte-count/detail'),
+  AddedSugarIntakeCalculator: () =>
+    import('@/tools/calculators/added-sugar-intake/detail'),
   AdderallDosageCalculator: () =>
     import('@/tools/calculators/adderall-dosage/detail'),
+  AgeAdjustedDDimerCalculator: () =>
+    import('@/tools/calculators/age-adjusted-d-dimer/detail'),
+  AlbuminGlobulinRatioCalculator: () =>
+    import('@/tools/calculators/albumin-globulin-ratio/detail'),
   AleveDosageCalculator: () =>
     import('@/tools/calculators/aleve-dosage/detail'),
+  AllowableBloodLossCalculator: () =>
+    import('@/tools/calculators/allowable-blood-loss/detail'),
   BenadrylDosageCalculator: () =>
     import('@/tools/calculators/benadryl-dosage/detail'),
   IbuprofenDosageCalculator: () =>
