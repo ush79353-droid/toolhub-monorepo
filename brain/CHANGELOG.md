@@ -1,3 +1,9 @@
+### 2026-11-23 — VBAC Calculator (Vaginal Birth After Cesarean Section)
+- **Summary:** Shipped educational Grobman 2021 MFMU race-neutral VBAC probability on slug `vbac-calculator-vaginal-birth-after-cesarean-section` (`VbacCalculator`, catalog `6af46f10a27d8d1d4e990227`, pillar/subPillar null). Omits legacy ethnicity; pre-pregnancy weight + height; prior VBAC vs vaginal-before-CS; arrest indication; treated chronic HTN; Table 3 fixtures; probability + log-odds w; share URL only. **No FX**. `tool:assign` `--set-active`; **`indexable` false**. TASKS `TOOL-750`.
+- **Commits:** `a88ab20a` (UI) / `c6da0bb2` (engine) / `e51faf67` (reg/Brain).
+- **Example:** age **30** · **71** kg · **156** cm → **~59.4%**.
+- **Verification:** `vbac/calculation.test.ts` ok; `backend` build ok; `tool.key` ok. Temporary files cleaned: YES.
+
 ### 2026-11-23 — Nuchal Translucency Calculator
 - **Summary:** Shipped educational NT estimate/centile chart on existing catalog slug `nuchal-translucency-calculator` (`NuchalTranslucencyCalculator`, catalog `6af46f10a27d8d1d4e99021f`, pillar/subPillar null). Screenshot-first (ADR-023): Estimate (CRL → Robinson–Fleming GA + Chung expected NT) and Assess (measured NT vs CRL centile table + SVG NT-vs-GA chart). Documented GA 78 vs screenshot 79 and ~82nd vs screenshot 75th; no curve fitting. Privacy-safe share URL only. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. Registry/sitemap/keys absorbed into concurrent `d14eeaab` / `8a486d64`. TASKS `TOOL-749`.
 - **Commits:** `c6a28881` (UI) / `77fdafe0` (engine) / (reg/Brain this commit).
