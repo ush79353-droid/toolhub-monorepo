@@ -59,6 +59,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MaintainPregnancyWeightCalculator',
   'MealCalorieCalculator',
   'MaintenanceCalorieCalculator',
+  'MapCalculator',
   'MelatoninDosageCalculator',
   'MarkdownCalculator',
   'MarkupCalculator',

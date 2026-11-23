@@ -65,6 +65,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'meal-calorie-calculator',
   'meal-calorie-calculator',
   'maintenance-calorie-calculator',
+  'map-calculator-mean-arterial-pressure',
   'markdown-calculator',
   'markup-calculator',
   'net-debt-calculator',

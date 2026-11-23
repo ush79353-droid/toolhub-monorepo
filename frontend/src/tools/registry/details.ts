@@ -105,6 +105,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/meal-calorie/detail'),
   MaintenanceCalorieCalculator: () =>
     import('@/tools/calculators/maintenance-calorie/detail'),
+  MapCalculator: () =>
+    import('@/tools/calculators/map-mean-arterial-pressure/detail'),
   MelatoninDosageCalculator: () =>
     import('@/tools/calculators/melatonin-dosage/detail'),
   MarkdownCalculator: () =>

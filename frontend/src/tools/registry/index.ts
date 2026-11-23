@@ -382,6 +382,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MaintenanceCalorieCalculator,
     })),
   ),
+  MapCalculator: lazyTool(() =>
+    import('@/tools/calculators/map-mean-arterial-pressure/MapCalculator').then(
+      (mod) => ({
+        default: mod.MapCalculator,
+      }),
+    ),
+  ),
   MarkdownCalculator: lazyTool(() =>
     import('@/tools/calculators/markdown/MarkdownCalculator').then((mod) => ({
       default: mod.MarkdownCalculator,
