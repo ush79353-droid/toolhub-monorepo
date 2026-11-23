@@ -819,6 +819,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AncAbsoluteNeutrophilCountCalculator,
     })),
   ),
+  AncWithoutBandsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/anc-without-bands/AncWithoutBandsCalculator'
+    ).then((mod) => ({
+      default: mod.AncWithoutBandsCalculator,
+    })),
+  ),
   AltmanZScoreCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/altman-z-score/AltmanZScoreCalculator'
@@ -3041,11 +3048,30 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AllowableBloodLossCalculator,
     })),
   ),
+  BeeCalculator: lazyTool(() =>
+    import('@/tools/calculators/bee-calculator/BeeCalculator').then((mod) => ({
+      default: mod.BeeCalculator,
+    })),
+  ),
   BenadrylDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/benadryl-dosage/BenadrylDosageCalculator'
     ).then((mod) => ({
       default: mod.BenadrylDosageCalculator,
+    })),
+  ),
+  BenzodiazepineConversionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/benzodiazepine-conversion/BenzodiazepineConversionCalculator'
+    ).then((mod) => ({
+      default: mod.BenzodiazepineConversionCalculator,
+    })),
+  ),
+  BloodDonorCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/blood-donor/BloodDonorCalculator'
+    ).then((mod) => ({
+      default: mod.BloodDonorCalculator,
     })),
   ),
   IbuprofenDosageCalculator: lazyTool(() =>

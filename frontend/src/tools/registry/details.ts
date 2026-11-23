@@ -214,6 +214,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AmortizationCalculator: () => import('@/tools/calculators/amortization/detail'),
   AncAbsoluteNeutrophilCountCalculator: () =>
     import('@/tools/calculators/anc-absolute-neutrophil-count/detail'),
+  AncWithoutBandsCalculator: () =>
+    import('@/tools/calculators/anc-without-bands/detail'),
   AmtCalculator: () => import('@/tools/calculators/amt/detail'),
   AcreageCalculator: () => import('@/tools/calculators/acreage/detail'),
   FeetToInchesCalculator: () => import('@/tools/calculators/feet-to-inches/detail'),
@@ -733,8 +735,13 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/aleve-dosage/detail'),
   AllowableBloodLossCalculator: () =>
     import('@/tools/calculators/allowable-blood-loss/detail'),
+  BeeCalculator: () => import('@/tools/calculators/bee-calculator/detail'),
   BenadrylDosageCalculator: () =>
     import('@/tools/calculators/benadryl-dosage/detail'),
+  BenzodiazepineConversionCalculator: () =>
+    import('@/tools/calculators/benzodiazepine-conversion/detail'),
+  BloodDonorCalculator: () =>
+    import('@/tools/calculators/blood-donor/detail'),
   IbuprofenDosageCalculator: () =>
     import('@/tools/calculators/ibuprofen-dosage/detail'),
   IchVolumeCalculator: () =>

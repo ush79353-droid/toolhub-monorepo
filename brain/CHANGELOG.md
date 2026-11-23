@@ -1,4 +1,10 @@
-﻿### 2026-11-24 — ANC Calculator — Absolute Neutrophil Count
+﻿### 2026-11-24 — Batch: ANC without Bands, BEE, Benzodiazepine Conversion, Blood Donor
+
+- ANC without Bands `AncWithoutBandsCalculator` — 78e454c2 / 7f5749b9 / reg this. Mongo blocked.
+- BEE `BeeCalculator` — c202da72 / 5d0697ae / reg this. Mongo blocked.
+- Benzodiazepine Conversion `BenzodiazepineConversionCalculator` — 2bec0e89 / 55249687 / reg this. Mongo blocked.
+- Blood Donor `BloodDonorCalculator` — c85b01dd / bb32e1b8 / reg this. Mongo blocked.
+### 2026-11-24 — ANC Calculator — Absolute Neutrophil Count
 
 - **Summary:** Shipped educational ANC (`AncAbsoluteNeutrophilCountCalculator`, slug `anc-calculator-absolute-neutrophil-count`). ANC = WBC × (segs+bands)/100; segs+bands ≤100%; share URL only. **No FX**. Mongo blocked. TASKS `TOOL-760`.
 - **Commits:** `7d482721` (UI) / `6dde023f` (engine) / (reg this).
@@ -6178,6 +6184,7 @@
 - Added bidirectional Rule of 72 calculator (`RuleOf72Calculator` / `rule-of-72-calculator`).
 - Approximation `T � 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
 - Catalog `6af46f10a27d8d1d4e9901bc` activated; `indexable` left false.
+
 
 
 
