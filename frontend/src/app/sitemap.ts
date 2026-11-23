@@ -736,6 +736,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'pvifa-calculator',
   'pvr-calculator-pulmonary-vascular-resistance',
   'rate-of-return-calculator',
+  'rate-pressure-product-calculator',
   'real-estate-commission-calculator',
   'real-rate-of-return-calculator',
   'realtor-commission-calculator-with-vat',

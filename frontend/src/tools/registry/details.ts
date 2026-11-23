@@ -1126,6 +1126,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/rate-of-pay/detail'),
   RateOfReturnCalculator: () =>
     import('@/tools/calculators/rate-of-return/detail'),
+  RatePressureProductCalculator: () =>
+    import('@/tools/calculators/rate-pressure-product/detail'),
   RdCalculator: () => import('@/tools/calculators/rd/detail'),
   RealEstateCommissionCalculator: () =>
     import('@/tools/calculators/real-estate-commission/detail'),
@@ -1499,6 +1501,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/retention-ratio/detail'),
   ReverseDueDateCalculator: () =>
     import('@/tools/calculators/reverse-due-date/detail'),
+  RevisedGenevaScoreCalculator: () =>
+    import('@/tools/calculators/revised-geneva-score/detail'),
   RetirementCalculator: () =>
     import('@/tools/calculators/retirement/detail'),
   Rule2836Calculator: () =>
