@@ -871,10 +871,15 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EbitdaCalculator: () => import('@/tools/calculators/ebitda/detail'),
   EbitdaMultipleCalculator: () =>
     import('@/tools/calculators/ebitda-multiple/detail'),
+  EggFreezingCalculator: () =>
+    import('@/tools/calculators/egg-freezing/detail'),
   EcgBoxesToSecondsCalculator: () =>
     import('@/tools/calculators/ecg-boxes-to-seconds/detail'),
+  EcgHeartRateCalculator: () =>
+    import('@/tools/calculators/ecg-heart-rate/detail'),
   EconomicValueAddedCalculator: () =>
     import('@/tools/calculators/economic-value-added/detail'),
+  EddCalculator: () => import('@/tools/calculators/edd/detail'),
   EffectiveDurationCalculator: () =>
     import('@/tools/calculators/effective-duration/detail'),
   EmiCalculator: () =>

@@ -10,6 +10,12 @@
 - **Example:** defaults → **0**; age ≥75 → **−2**; diabetes + smoking → **2**.
 - **Verification:** Source-level point arithmetic; focused `calculation.test.ts` written (full tsc/lint/build/Playwright not run per continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-23 — ECG Heart Rate Calculator
+- **Summary:** Shipped educational R–R → BPM on existing catalog slug `ecg-heart-rate-calculator` (`EcgHeartRateCalculator`, catalog `6af46f10a27d8d1d4e990236`, pillar/subPillar null). Screenshot-first (ADR-023): blank R–R with mm|s|ms; Small/Big box radios; synced box count; 25/50 mm/s; BPM = 60/(distance_mm÷speed); reuses 1/5 mm box widths from ecg-boxes-to-seconds; privacy-safe share URL. **No FX**. Frontend/backend registry wired. **Mongo `tool:assign` blocked** (Atlas IP whitelist); activation retry pending. **`indexable` left false**. TASKS `TOOL-722`.
+- **Commits:** `2fa4941b` (UI) / `a7d4aad2` (engine) / (reg/Brain this commit).
+- **Example:** **20** mm @ **25** mm/s → **75** bpm (= 4 big boxes).
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Ejection Fraction Calculator
 - **Summary:** Shipped educational EF% on existing catalog slug `ejection-fraction-calculator` (`EjectionFractionCalculator`, catalog `6af46f10a27d8d1d4e990237`, pillar/subPillar null). Screenshot-first (ADR-023): I know SV / ESV / CO&HR; blank EDV; EF = 100×SV/EDV; SV from ESV or 1000×CO/HR; preserve EDV on mode switch; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-720`.
 - **Commits:** `8a059322` (UI) / `761accae` (engine) / (reg/Brain this commit).

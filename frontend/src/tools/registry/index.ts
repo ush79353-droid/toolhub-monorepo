@@ -3452,6 +3452,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EbitdaMultipleCalculator,
     })),
   ),
+  EggFreezingCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/egg-freezing/EggFreezingCalculator'
+    ).then((mod) => ({
+      default: mod.EggFreezingCalculator,
+    })),
+  ),
   EcgBoxesToSecondsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/ecg-boxes-to-seconds/EcgBoxesToSecondsCalculator'
@@ -3459,11 +3466,23 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EcgBoxesToSecondsCalculator,
     })),
   ),
+  EcgHeartRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ecg-heart-rate/EcgHeartRateCalculator'
+    ).then((mod) => ({
+      default: mod.EcgHeartRateCalculator,
+    })),
+  ),
   EconomicValueAddedCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/economic-value-added/EconomicValueAddedCalculator'
     ).then((mod) => ({
       default: mod.EconomicValueAddedCalculator,
+    })),
+  ),
+  EddCalculator: lazyTool(() =>
+    import('@/tools/calculators/edd/EddCalculator').then((mod) => ({
+      default: mod.EddCalculator,
     })),
   ),
   EffectiveDurationCalculator: lazyTool(() =>
