@@ -638,6 +638,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'has-bled-calculator',
   'heart-failure-life-expectancy-calculator',
   'hcg-levels-calculator',
+  'implantation-calculator',
   'hedge-ratio-calculator',
   'hhi-calculator',
   'high-low-method-calculator',

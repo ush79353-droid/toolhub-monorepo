@@ -656,6 +656,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'HasBledCalculator',
   'HeartFailureLifeExpectancyCalculator',
   'HcgLevelsCalculator',
+  'ImplantationCalculator',
   'HedgeRatioCalculator',
   'HhiCalculator',
   'HighLowMethodCalculator',

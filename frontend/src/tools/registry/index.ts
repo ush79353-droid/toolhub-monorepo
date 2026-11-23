@@ -3636,6 +3636,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HcgLevelsCalculator,
     })),
   ),
+  ImplantationCalculator: lazyTool(() =>
+    import('@/tools/calculators/implantation/ImplantationCalculator').then(
+      (mod) => ({
+        default: mod.ImplantationCalculator,
+      }),
+    ),
+  ),
   HedgeRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/hedge-ratio/HedgeRatioCalculator').then((mod) => ({
       default: mod.HedgeRatioCalculator,

@@ -1,3 +1,12 @@
+### 2026-11-23 — Implantation Calculator
+- **Summary:** Shipped educational implantation windows on existing catalog slug `implantation-calculator` (`ImplantationCalculator`, catalog `6af46f10a27d8d1d4e99021b`, pillar/subPillar null). Screenshot-first (ADR-023): Natural ovulation known yes/no + LMP estimate; IVF transfer without inferred embryo stage; Wilcox 6–12 DPO; privacy-safe share URL. **No FX**. `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-733`.
+- **Commits:** `6e07d947` (UI) / `81ab4e81` (engine) / (reg this commit).
+- **Verification:** `implantation/calculation.test.ts` ok. Temporary files cleaned: YES.
+
+### 2026-11-23 — Luteal Phase Calculator
+- **Summary:** Shipped educational luteal phase span on existing catalog slug `luteal-phase-calculator` (`LutealPhaseCalculator`, catalog `6af46f10a27d8d1d4e99021c`, pillar/subPillar null). Screenshot-first (ADR-023): blank ovulation + next period start; length = calendar period − ovulation (Nov 10→Nov 24 = **14**, not 13 “between”); rejects reversed dates; privacy-safe share URL. **No FX**. `tool:assign` `--set-active`; **`indexable` preserved false**.
+- **Verification:** `luteal-phase/calculation.test.ts` ok; `backend` build ok. Temporary files cleaned: YES.
+
 ### 2026-11-23 — Heart Failure Life Expectancy Calculator
 - **Summary:** Shipped educational MAGGIC survival tool on `heart-failure-life-expectancy-calculator` (`HeartFailureLifeExpectancyCalculator`, catalog `6af46f10a27d8d1d4e99023e`). Pocock 2013 Figure 2 integer chart + Table 4; survival = 100% − mortality; no years remaining; screenshot accordions; **No FX**. `tool:assign` `--set-active`; **`indexable` false**. TASKS `TOOL-731`.
 - **Verification:** `heart-failure-life-expectancy/calculation.test.ts` ok; `backend` build ok. Temporary files cleaned: YES.

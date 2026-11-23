@@ -932,6 +932,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/heart-failure-life-expectancy/detail'),
   HcgLevelsCalculator: () =>
     import('@/tools/calculators/hcg-levels/detail'),
+  ImplantationCalculator: () =>
+    import('@/tools/calculators/implantation/detail'),
   HedgeRatioCalculator: () =>
     import('@/tools/calculators/hedge-ratio/detail'),
   HhiCalculator: () =>
