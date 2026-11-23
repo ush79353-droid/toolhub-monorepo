@@ -4,6 +4,11 @@
 - **Example:** **12/15/18** mm → MSD **15** · GA **45** d.
 - **Verification:** `mean-sac-diameter/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-23 — Padua Score Calculator
+- **Summary:** Shipped educational Padua Prediction Score (Barbar 2010) on existing catalog slug `padua-score-calculator` (`PaduaScoreCalculator`, catalog `6af46f10a27d8d1d4e990244`, pillar/subPillar null). Screenshot-first (ADR-023): eleven weighted VTE risk factors (0–20); ≥4 high-risk band framing only — no prophylaxis orders; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-740`.
+- **Commits:** `4e959d75` (UI+engine combined after lock race) / (reg/Brain this commit).
+- **Verification:** Focused `padua-score/calculation.test.ts` self-check. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — MAP Calculator (Mean Arterial Pressure)
 - **Summary:** Shipped educational MAP = (SBP + 2×DBP)/3 on existing catalog slug `map-calculator-mean-arterial-pressure` (`MapCalculator`, catalog `6af46f10a27d8d1d4e990242`, pillar/subPillar null). Screenshot-first (ADR-023): SBP/DBP mmHg; optional pulse pressure; formula visible in blank state; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-738`.
 - **Verification:** `map-mean-arterial-pressure/calculation.test.ts` ok; `backend` build + `tool.key` ok. Temporary files cleaned: YES. Push/Pull/Fetch: NONE.
