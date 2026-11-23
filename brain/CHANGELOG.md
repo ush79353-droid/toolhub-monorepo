@@ -1,3 +1,8 @@
+### 2026-11-23 — Mitral Valve Area Calculator
+- **Summary:** Shipped educational Doppler mitral valve area on existing catalog slug `mitral-valve-area-calculator` (`MitralValveAreaCalculator`, catalog `6af46f10a27d8d1d4e990243`, pillar/subPillar null). Screenshot-first (ADR-023): Continuity / Pressure half-time / Deceleration; CSA=π(d/2)²; MVA=CSA×LVOT VTI/MV VTI; Hatle 220/PHT; PHT≈0.29×DT; clear on method switch; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-741`.
+- **Commits:** UI absorbed into concurrent `b812e883` / `30042397` (engine) / (reg/Brain this commit).
+- **Example:** d **2** · VTI **20**/**40** → ≈ **1.571** cm²; PHT **220** → **1** cm².
+- **Verification:** `mitral-valve-area/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-23 — Period Calculator
 - **Summary:** Shipped educational period/fertile/ovulation forecast on existing catalog slug `period-calculator` (`PeriodCalculator`, catalog `6af46f10a27d8d1d4e990222`, pillar/subPillar null). Screenshot-first (ADR-023): cycle 28 / period 6 defaults; blank LMP; next 3 periods; ASRM ovulation = start+(length−15); 6-day fertile window ending on ovulation; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-739`.
 - **Commits:** `b812e883` (UI) / `9b7582ed` (engine) / (reg/Brain this commit).
@@ -5,10 +10,10 @@
 - **Verification:** Focused `calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE. Note: UI commit also absorbed concurrent mitral-valve-area UI files in the working tree.
 
 ### 2026-11-23 — PISA Calculator
-- **Summary:** Shipped educational PISA worksheet on existing catalog slug `pisa-calculator` (`PisaCalculator`, catalog `6af46f10a27d8d1d4e990246`, pillar/subPillar null). Screenshot-first (ADR-023): Vmax/r/Vr/α/VTI → MVA, VFR, EROA (mm² default), RVol, PISA; A=2πr²×(α/180); blank α→180°; zero Vmax blocks orifice; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-741`.
+- **Summary:** Shipped educational PISA worksheet on existing catalog slug `pisa-calculator` (`PisaCalculator`, catalog `6af46f10a27d8d1d4e990246`, pillar/subPillar null). Screenshot-first (ADR-023): Vmax/r/Vr/α/VTI → MVA, VFR, EROA (mm² default), RVol, PISA; A=2πr²×(α/180); blank α→180°; zero Vmax blocks orifice; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-742`.
 - **Commits:** `37d0f0e2` (UI) / `d4f2b432` (engine) / (reg/Brain this commit).
 - **Example:** r **1** · Vr **40** · α **180** · Vmax **500** · VTI **100** → PISA ≈ **6.283** · VFR ≈ **251.33** · EROA ≈ **50.3 mm²** · RVol ≈ **50.3**.
-- **Verification:** Source-level formula review vs ASE PISA teaching; full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE. TASKS `TOOL-742`.
+- **Verification:** Source-level formula review vs ASE PISA teaching; full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-23 — Mean Sac Diameter Calculator
 - **Summary:** Shipped educational mean sac diameter tool on existing catalog slug `mean-sac-diameter-calculator` (`MeanSacDiameterCalculator`, catalog `6af46f10a27d8d1d4e99021e`, pillar/subPillar null). Screenshot-first (ADR-023): blank L/W/H with unit selects; MSD = (L+W+H)/3 mm; approximate GA days ≈ MSD+30 only in ≈2–15 mm educational window; no viability/EDD; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-736`.

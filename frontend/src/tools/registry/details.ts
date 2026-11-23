@@ -990,6 +990,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/maturity-value/detail'),
   MirrCalculator: () =>
     import('@/tools/calculators/mirr/detail'),
+  MitralValveAreaCalculator: () =>
+    import('@/tools/calculators/mitral-valve-area/detail'),
   MoneyCounterCalculator: () =>
     import('@/tools/calculators/money-counter/detail'),
   MoneyFactorCalculator: () =>
@@ -1052,6 +1054,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pearl-index/detail'),
   PensionCalculator: () =>
     import('@/tools/calculators/pension/detail'),
+  PercCalculator: () => import('@/tools/calculators/perc/detail'),
   PercentOffCalculator: () =>
     import('@/tools/calculators/percent-off/detail'),
   PercentageDiscountCalculator: () =>
@@ -1061,6 +1064,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PeriodCalculator: () => import('@/tools/calculators/period/detail'),
   PerpetuityCalculator: () =>
     import('@/tools/calculators/perpetuity/detail'),
+  PisaCalculator: () => import('@/tools/calculators/pisa/detail'),
   PitiCalculator: () => import('@/tools/calculators/piti/detail'),
   PivotPointCalculator: () =>
     import('@/tools/calculators/pivot-point/detail'),
@@ -1100,6 +1104,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/price-to-earnings-ratio/detail'),
   PrivateSavingsCalculator: () =>
     import('@/tools/calculators/private-savings/detail'),
+  ProgesteroneToEstrogenRatioCalculator: () =>
+    import('@/tools/calculators/progesterone-to-estrogen-ratio/detail'),
   ProratedSalaryCalculator: () =>
     import('@/tools/calculators/prorated-salary/detail'),
   ProratedRentCalculator: () =>
@@ -1110,6 +1116,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pvgo/detail'),
   PvifaCalculator: () =>
     import('@/tools/calculators/pvifa/detail'),
+  PvrCalculator: () => import('@/tools/calculators/pvr/detail'),
   RateOfPayCalculator: () =>
     import('@/tools/calculators/rate-of-pay/detail'),
   RateOfReturnCalculator: () =>
