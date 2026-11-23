@@ -361,6 +361,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MaintainPregnancyWeightCalculator,
     })),
   ),
+  McaCalculator: lazyTool(() =>
+    import('@/tools/calculators/mca/McaCalculator').then((mod) => ({
+      default: mod.McaCalculator,
+    })),
+  ),
   MelatoninDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/melatonin-dosage/MelatoninDosageCalculator'
@@ -388,6 +393,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.MapCalculator,
       }),
     ),
+  ),
+  MeanSacDiameterCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mean-sac-diameter/MeanSacDiameterCalculator'
+    ).then((mod) => ({
+      default: mod.MeanSacDiameterCalculator,
+    })),
   ),
   MarkdownCalculator: lazyTool(() =>
     import('@/tools/calculators/markdown/MarkdownCalculator').then((mod) => ({
@@ -3956,6 +3968,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PenceToPoundsConverter,
     })),
   ),
+  PearlIndexCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/pearl-index/PearlIndexCalculator'
+    ).then((mod) => ({
+      default: mod.PearlIndexCalculator,
+    })),
+  ),
   PensionCalculator: lazyTool(() =>
     import('@/tools/calculators/pension/PensionCalculator').then((mod) => ({
       default: mod.PensionCalculator,
@@ -5600,6 +5619,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.OptionsSpreadCalculator,
       }),
     ),
+  ),
+  OvulationCalculator: lazyTool(() =>
+    import('@/tools/calculators/ovulation/OvulationCalculator').then((mod) => ({
+      default: mod.OvulationCalculator,
+    })),
   ),
   FdCalculator: lazyTool(() =>
     import('@/tools/calculators/fd/FdCalculator').then((mod) => ({

@@ -101,12 +101,15 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-with-discount/detail'),
   MaintainPregnancyWeightCalculator: () =>
     import('@/tools/calculators/maintain-pregnancy-weight/detail'),
+  McaCalculator: () => import('@/tools/calculators/mca/detail'),
   MealCalorieCalculator: () =>
     import('@/tools/calculators/meal-calorie/detail'),
   MaintenanceCalorieCalculator: () =>
     import('@/tools/calculators/maintenance-calorie/detail'),
   MapCalculator: () =>
     import('@/tools/calculators/map-mean-arterial-pressure/detail'),
+  MeanSacDiameterCalculator: () =>
+    import('@/tools/calculators/mean-sac-diameter/detail'),
   MelatoninDosageCalculator: () =>
     import('@/tools/calculators/melatonin-dosage/detail'),
   MarkdownCalculator: () =>
@@ -1033,6 +1036,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/payment/detail'),
   PaybackPeriodCalculator: () =>
     import('@/tools/calculators/payback-period/detail'),
+  PaduaScoreCalculator: () =>
+    import('@/tools/calculators/padua-score/detail'),
   ParacetamolDosageCalculator: () =>
     import('@/tools/calculators/paracetamol-dosage/detail'),
   PayPalFeeCalculator: () =>
@@ -1043,6 +1048,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/peg-ratio/detail'),
   PenceToPoundsConverter: () =>
     import('@/tools/calculators/pence-to-pounds/detail'),
+  PearlIndexCalculator: () =>
+    import('@/tools/calculators/pearl-index/detail'),
   PensionCalculator: () =>
     import('@/tools/calculators/pension/detail'),
   PercentOffCalculator: () =>
@@ -1505,6 +1512,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/operating-cash-flow/detail'),
   OptionsSpreadCalculator: () =>
     import('@/tools/calculators/options-spread/detail'),
+  OvulationCalculator: () => import('@/tools/calculators/ovulation/detail'),
   FdCalculator: () => import('@/tools/calculators/fd/detail'),
   FhaLoanCalculator: () => import('@/tools/calculators/fha-loan/detail'),
   FutureValueCalculator: () =>

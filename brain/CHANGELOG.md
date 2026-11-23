@@ -125,6 +125,12 @@
 - **Example:** MAP **90** · ICP **15** → CPP **75**.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-23 — Pearl Index Calculator
+- **Summary:** Shipped educational Pearl Index on existing catalog slug `pearl-index-calculator` (`PearlIndexCalculator`, catalog `6af46f10a27d8d1d4e990221`, pillar/subPillar null). Screenshot-first (ADR-023): blank women, duration mos|yrs, pregnancies; Pearl = 100 × pregnancies / woman-years under equal full follow-up; illustrative comparison box; privacy-safe share URL. **No FX**. TASKS `TOOL-737`.
+- **Commits:** UI absorbed `4e959d75` / engine `a2e5c575` / (reg/Brain this commit).
+- **Example:** **100** women · **12** mo · **2** pregnancies → Pearl **2**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Fundal Height Calculator
 - **Summary:** Shipped educational INTERGROWTH-21st SFH tool on existing catalog slug `fundal-height-calculator` (`FundalHeightCalculator`, catalog `6af46f10a27d8d1d4e990218`, pillar/subPillar null). Screenshot-first (ADR-023): SFH percentile / dating / Johnson fetal-weight modes; default GA 16+0; expected median+SD; centile chart; privacy-safe share URL. **No FX**. TASKS `TOOL-720`.
 - **Commits:** `68c084e8` (UI) / engine absorbed into concurrent `afaf7053` / (reg/Brain this commit).
