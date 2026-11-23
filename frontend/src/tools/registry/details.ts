@@ -733,6 +733,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bradford-factor/detail'),
   BreakEvenCalculator: () =>
     import('@/tools/calculators/break-even/detail'),
+  BishopScoreCalculator: () =>
+    import('@/tools/calculators/bishop-score/detail'),
   BreastCancerRecurrenceRiskCalculator: () =>
     import('@/tools/calculators/breast-cancer-recurrence-risk/detail'),
   BreastfeedingCalorieCalculator: () =>
@@ -787,6 +789,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/check-digit/detail'),
   ChildTaxCreditCalculator: () =>
     import('@/tools/calculators/child-tax-credit/detail'),
+  ClomidOvulationCalculator: () =>
+    import('@/tools/calculators/clomid-ovulation/detail'),
   ChurnRateCalculator: () =>
     import('@/tools/calculators/churn-rate/detail'),
   CltvCalculator: () => import('@/tools/calculators/cltv/detail'),

@@ -145,6 +145,8 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-707` | Breast Cancer Recurrence Risk Calculator: O'Rourke 1994 local-recurrence index (`BreastCancerRecurrenceRiskCalculator`); Mongo `6af46f10a27d8d1d4e99020e` activated; indexable false; no therapy recommendation | Cursor | Done | `Completed Tools/Breast Cancer Recurrence Risk Calculator` | — |
+| `TOOL-708` | Clomid Ovulation Calculator: DailyMed 5–10 day educational window after inclusive course (`ClomidOvulationCalculator`); Mongo `6af46f10a27d8d1d4e990211` activated; indexable false; no dose | Cursor | Done | `Completed Tools/Clomid Ovulation Calculator` | — |
 | `TOOL-706` | Bishop Score Calculator: classic Bishop EH 1964 0–13 educational score (`BishopScoreCalculator`); Mongo `6af46f10a27d8d1d4e99020d` activated; indexable false; no induction recommendation | Cursor | Done | `Completed Tools/Bishop Score Calculator` | — |
 | `TOOL-704` | Adderall Dosage Calculator: educational IR label charts + prescribed-dose tablet arithmetic (`AdderallDosageCalculator`); Mongo `6af46f10a27d8d1d4e9901d1` activated; indexable false; XR out of scope | Cursor | Done | `Completed Tools/Adderall Dosage Calculator` | — |
 | `TOOL-705` | Levothyroxine Dosage Calculator: Devine IBW + FDA 1.6 mcg/kg educational teaching estimate for healthy-adult overt branch (`LevothyroxineDosageCalculator`); Mongo `6af46f10a27d8d1d4e9901d9` activated; indexable false; cardiac/SCH/short gated | Cursor | Done | `Completed Tools/Levothyroxine Dosage Calculator` | Full Omni SCH/cardiac dose table remains unavailable by design |

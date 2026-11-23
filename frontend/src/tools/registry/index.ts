@@ -3020,6 +3020,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BreakEvenCalculator,
     })),
   ),
+  BishopScoreCalculator: lazyTool(() =>
+    import('@/tools/calculators/bishop-score/BishopScoreCalculator').then(
+      (mod) => ({
+        default: mod.BishopScoreCalculator,
+      }),
+    ),
+  ),
   BreastCancerRecurrenceRiskCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/breast-cancer-recurrence-risk/BreastCancerRecurrenceCalculator'
@@ -3192,6 +3199,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/child-tax-credit/ChildTaxCreditCalculator'
     ).then((mod) => ({
       default: mod.ChildTaxCreditCalculator,
+    })),
+  ),
+  ClomidOvulationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/clomid-ovulation/ClomidOvulationCalculator'
+    ).then((mod) => ({
+      default: mod.ClomidOvulationCalculator,
     })),
   ),
   ChurnRateCalculator: lazyTool(() =>

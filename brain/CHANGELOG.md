@@ -1,6 +1,18 @@
+### 2026-11-23 — Breast Cancer Recurrence Risk Calculator
+- **Summary:** Shipped educational O'Rourke 1994 local-recurrence index on existing catalog slug `breast-cancer-recurrence-risk-calculator` (`BreastCancerRecurrenceRiskCalculator`, catalog `6af46f10a27d8d1d4e99020e`, pillar/subPillar null). Screenshot-first (ADR-023): unselected grade/nodes/LVI; blank score + incomplete risk sentence until complete; additive weights + published % table; local flap recurrence only; no therapy advice; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. Also repaired missing `BishopScoreCalculator` registry wiring that a concurrent reg commit had omitted while absorbing this tool's keys. TASKS `TOOL-707`.
+- **Commits:** `2989feee` (UI) / `f27e80d6` (engine) / (reg/Brain this commit).
+- **Example:** I · neg · none → **16** / **8.5%**; II · pos · present → **32** / **33%**; III · pos · present → **38** / **48%**.
+- **Verification:** Source-level O'Rourke table enumeration; focused `calculation.test.ts` written (not executed per continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — Clomid Ovulation Calculator
+- **Summary:** Shipped educational clomiphene timing worksheet on existing catalog slug `clomid-ovulation-calculator` (`ClomidOvulationCalculator`, catalog `6af46f10a27d8d1d4e990211`). Screenshot-first (ADR-023): treatment start defaults to today; blank duration; ovulation field shows approximate 5–10 day window after inclusive last treatment day (DailyMed); privacy-safe share URL. **No FX**. Activated; **`indexable` preserved false**. TASKS `TOOL-708`.
+- **Commits:** `56547083` (UI) / `889ae531` (engine) / (reg/Brain this commit).
+- **Example:** **2026-01-01** · **5**d → last **2026-01-05** → window **01/10/2026 – 01/15/2026**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Bishop Score Calculator
-- **Summary:** Shipped educational classic Bishop score on existing catalog slug `bishop-score-calculator` (`BishopScoreCalculator`, catalog `6af46f10a27d8d1d4e99020d`, pillar/subPillar null). Screenshot-first (ADR-023): blank dilation with cm|mm; radios for effacement / consistency / station / cervical position (screenshot “baby's head position” clarified); score blank until dilation valid; no induction recommendation or outcome prediction; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-706`.
-- **Commits:** `8d47ae86` (UI) / `1c6af771` (engine) / (reg/Brain this commit).
+- **Summary:** Shipped educational classic Bishop score on existing catalog slug `bishop-score-calculator` (`BishopScoreCalculator`, catalog `6af46f10a27d8d1d4e99020d`, pillar/subPillar null). Screenshot-first (ADR-023): blank dilation with cm|mm; radios for effacement / consistency / station / cervical position (screenshot “baby's head position” clarified); score blank until dilation valid; no induction recommendation or outcome prediction; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-706`. Registry keys for Bishop were completed in the Breast Cancer reg commit after a concurrent-file mix-up.
+- **Commits:** `8d47ae86` (UI) / `1c6af771` (engine) / `930c78eb` (partial reg/Brain) + Breast Cancer reg repair.
 - **Example:** closed · 0–30% · firm · −3 · posterior → **0**; 5 cm · ≥80% · soft · +1/+2 · anterior → **13**.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
