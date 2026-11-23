@@ -1,3 +1,12 @@
+### 2026-11-23 — hCG Levels Calculator
+- **Summary:** Shipped educational serial β-hCG kinetics on existing catalog slug `hcg-levels-calculator` (`HcgLevelsCalculator`, catalog `6af46f10a27d8d1d4e99021a`, pillar/subPillar null). Screenshot-first (ADR-023): blank first/second mIU/ml + elapsed days|hours; difference, % change, doubling time when rising, standardized 1-/2-day increases; no positive doubling time when falling/unchanged; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-729`.
+- **Commits:** `aa969298` (UI) / `dbd38d82` (engine) / registry absorbed concurrent Framingham reg + Brain.
+- **Example:** **100→200** over **2**d → +**100**, +**100%**, DT **2**d, 1d ≈ +**41.42%**, 2d +**100%**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — ECG Boxes to Seconds Calculator (activation finalize)
+- **Summary:** Mongo `tool:assign` `--set-active` succeeded for `EcgBoxesToSecondsCalculator` (`6af46f10a27d8d1d4e990235`) after earlier Atlas whitelist failures; **`indexable` preserved false**. Moved to Completed Tools. TASKS `TOOL-718`.
+
 ### 2026-11-23 — HAS-BLED Calculator
 - **Summary:** Shipped educational HAS-BLED (0–9) on existing catalog slug `has-bled-calculator` (`HasBledCalculator`, catalog `6af46f10a27d8d1d4e99023d`, pillar/subPillar null). Screenshot-first (ADR-023): nine No/Yes factors default No; renal/liver and drugs/alcohol independent; age >65 strict; Pisters 2010 OAC rates; no anticoagulation orders; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-724`.
 - **Commits:** `9a4cf37f` (UI) / `040277c6` (engine) / (reg/Brain this commit).

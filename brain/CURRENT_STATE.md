@@ -1,4 +1,4 @@
-# Current Project State (`CURRENT_STATE.md`)
+﻿# Current Project State (`CURRENT_STATE.md`)
 
 > **Primary Agent Starting Point.** Last verified: **2026-11-21** (homepage shows category cards and up to three last-opened tools from local storage under the hero, then featured tools; `/tools` uses the same mint hero, lists every root category, and shows 48 popular-style cards per page; `/about` uses the mint hero plus one article; `/contact` uses the mint hero, a quarter-width details column, and a three-quarter form that opens the visitor’s email app and is not stored on the site; operator name, city, country, and email, plus the contact business email and address, stay in `siteConfig` and stay hidden while empty; site header: home is logo + Share + Explore Tools; other pages add debounced tool search; Retirement Calculator live at `/tools/retirement-calculator`; Auto Loan remains master Tool Detail Page).
 
@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **hCG Levels Calculator (/tools/hcg-levels-calculator):** Live educational serial β-hCG kinetics (componentKey: 'HcgLevelsCalculator', catalog `6af46f10a27d8d1d4e99021a`). Screenshot-first: blank first/second mIU/ml + elapsed; difference/%/doubling/1–2d increases; share URL only. **No FX**. Activated; **indexable** false. Example: **100→200**/2d → +**100%**, DT **2**d.
 - **HAS-BLED Calculator (/tools/has-bled-calculator):** Live educational major-bleeding score (componentKey: 'HasBledCalculator', catalog `6af46f10a27d8d1d4e99023d`, pillar/subPillar null). Screenshot-first (ADR-023): nine No/Yes factors; Pisters 2010 rates; no anticoagulation orders; share URL only. **No FX**. Activated; **`indexable` left false**. Example: defaults → **0** · **1.1**/100 pt-yr.
 - **Framingham Risk Calculator (`/tools/framingham-risk-calculator`):** Live educational ATP III hard CHD point score (`componentKey: 'FraminghamRiskCalculator'`, catalog `6af46f10a27d8d1d4e990239`, pillar/subPillar null). Screenshot-first (ADR-023): blank age; Male; BP treatment No; blank SBP/TC/HDL; smoker No; risk score pts; 10-year % in explanation only; share URL only. **No FX**. Activated; **`indexable` left false**. Example: man **45** · SBP **130** · TC **180** · HDL **50** → **7** pts.
 - **Gorlin Formula Calculator (`/tools/gorlin-formula-calculator`):** Live educational catheter Gorlin areas (`componentKey: 'GorlinFormulaCalculator'`, catalog `6af46f10a27d8d1d4e99023a`, pillar/subPillar null). Screenshot-first (ADR-023): shared CO/HR; aortic SEP+gradient → AVA (K=44.3); mitral DFP+gradient → MVA (K=37.7); independent panels; share URL only. **No FX**. Activated; **`indexable` left false**. Example: CO **5** · HR **75** · SEP **0.30** · ΔP **40** → AVA ≈ **0.79** cm².

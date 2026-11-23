@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-729` | Implement hCG Levels Calculator on existing slug `hcg-levels-calculator` with serial difference/%/doubling/1–2d increases, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/hcg-levels/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-727` | Implement Gestational Age Calculator on existing slug `gestational-age-calculator` with EDD + current date, GA = 280 + (current − EDD) calendar days, wks|days display, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/gestational-age/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-728` | Implement Framingham Risk Calculator on existing slug `framingham-risk-calculator` with ATP III hard CHD sex-specific point tables (age/TC/smoking/HDL/SBP treated), pts primary output, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/framingham-risk/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-725` | Implement Fertility by Age Calculator on existing slug `fertility-by-age-calculator` with ASRM/ACOG-style per-cycle fecundability bands ages 20–44, Select default, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/fertility-by-age/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
@@ -163,6 +164,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-729` | Implement hCG Levels Calculator on existing slug `hcg-levels-calculator` with serial difference/%/doubling/1–2d increases, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/hcg-levels/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-723` | Implement Flange Size Calculator on existing slug `flange-size-calculator` with Spectra Baby USA discrete nipple→flange bands, mm|in, fit/measure diagrams, out-of-range flags, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/flange-size/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-718` | Implement EDD Calculator - Estimated Date of Delivery on existing slug `edd-calculator-estimated-date-of-delivery` with LMP vs ultrasound EDD comparison, cycle adjusts LMP only, GA difference, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/edd/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-722` | DAPT calculator: Yeh 2016 educational score (`DaptCalculator`); Mongo `6af46f10a27d8d1d4e990232` activated; indexable false; no medication orders | Cursor | Done | `Completed Tools/DAPT calculator` | — |
@@ -206,6 +208,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-729` | Implement hCG Levels Calculator on existing slug `hcg-levels-calculator` with serial difference/%/doubling/1–2d increases, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/hcg-levels/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-723` | Implement Flange Size Calculator on existing slug `flange-size-calculator` with Spectra Baby USA discrete nipple→flange bands, mm|in, fit/measure diagrams, out-of-range flags, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/flange-size/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-718` | Implement EDD Calculator - Estimated Date of Delivery on existing slug `edd-calculator-estimated-date-of-delivery` with LMP vs ultrasound EDD comparison, cycle adjusts LMP only, GA difference, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/edd/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-698` | Implement Weight Gain Calculator on existing slug `weight-gain-calculator` with Mifflin–St Jeor × PAL maintenance, Normal/Strict surplus paces, weeks-to-goal guards, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/weight-gain/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |

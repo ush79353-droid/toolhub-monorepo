@@ -14,6 +14,8 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 129 | hCG Levels Calculator | DEVELOPED | AUDIT PENDING | aa969298 | dbd38d82 | (reg absorb Framingham) | Completed Tools | `HcgLevelsCalculator`; slug `hcg-levels-calculator`; Mongo `6af46f10a27d8d1d4e99021a` active; serial kinetics; no FX; indexable false; TASKS `TOOL-729` |
+| 118 | ECG Boxes to Seconds Calculator | DEVELOPED | AUDIT PENDING | 97fa589c | 24f83f80 | 36d26bc3 + assign retry | Completed Tools | `EcgBoxesToSecondsCalculator`; slug `ecg-boxes-to-seconds-calculator`; Mongo `6af46f10a27d8d1d4e990235` active; 1/5 mm × speed; no FX; indexable false; TASKS `TOOL-718` |
 | 124 | HAS-BLED Calculator | DEVELOPED | AUDIT PENDING | 9a4cf37f | 040277c6 | (this reg/Brain) | Completed Tools | `HasBledCalculator`; slug `has-bled-calculator`; Mongo `6af46f10a27d8d1d4e99023d` active; Pisters 2010; no FX; indexable false; TASKS `TOOL-724` |
 | 128 | Framingham Risk Calculator | DEVELOPED | AUDIT PENDING | 2879119b | 58068203 | (this reg/Brain) | Completed Tools | `FraminghamRiskCalculator`; slug `framingham-risk-calculator`; Mongo `6af46f10a27d8d1d4e990239` active; ATP III hard CHD pts; no FX; indexable false; TASKS `TOOL-728` |
 | 127 | Gestational Age Calculator | DEVELOPED | AUDIT PENDING | (UI) | (engine) | (reg/Brain) | Completed Tools | `GestationalAgeCalculator`; slug `gestational-age-calculator`; Mongo `6af46f10a27d8d1d4e990219` active; 280-day EDD GA; no FX; indexable false; TASKS `TOOL-727` |
