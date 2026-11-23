@@ -1,6 +1,6 @@
 ### 2026-11-23 — HEART Score Calculator
 - **Summary:** Shipped educational HEART score (0–10) on existing catalog slug `heart-score-calculator` (`HeartScoreCalculator`, catalog `6af46f10a27d8d1d4e99023f`, pillar/subPillar null). Screenshot-first (ADR-023): blank age; ECG/History/Troponin/Risk screenshot defaults; age &lt;45/45–64/≥65; troponin tiers vs assay URL; total blank until age; no disposition text; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-735`.
-- **Commits:** `6e791af7` (UI) / `c81530e5` (engine) / `e8a7af45` (reg/Brain).
+- **Commits:** `6e791af7` (UI) / `c81530e5` (engine) / `053e81a2` (reg/Brain).
 - **Verification:** `heart-score/calculation.test.ts` ok; `backend` build + `tool.key` ok. Temporary files cleaned: YES. Push/Pull/Fetch: NONE.
 
 ### 2026-11-23 — LV Calculator
