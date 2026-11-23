@@ -1301,6 +1301,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EndingInventoryCalculator: () =>
     import('@/tools/calculators/ending-inventory/detail'),
   EoqCalculator: () => import('@/tools/calculators/eoq/detail'),
+  EroaMitralRegurgitationCalculator: () =>
+    import('@/tools/calculators/eroa-mitral-regurgitation/detail'),
   ExpectedUtilityCalculator: () =>
     import('@/tools/calculators/expected-utility/detail'),
   FreeCashFlowCalculator: () =>

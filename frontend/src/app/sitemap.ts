@@ -812,6 +812,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'effective-annual-yield-calculator',
   'effective-interest-rate-calculator',
   'ejection-fraction-calculator',
+  'eroa-mitral-regurgitation-calculator',
   'expected-utility-calculator',
   'future-value-calculator',
   'future-salary-calculator',

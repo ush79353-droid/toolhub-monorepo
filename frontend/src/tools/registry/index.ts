@@ -4865,6 +4865,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EoqCalculator,
     })),
   ),
+  EroaMitralRegurgitationCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/eroa-mitral-regurgitation/EroaMitralRegurgitationCalculator'
+    ).then((mod) => ({
+      default: mod.EroaMitralRegurgitationCalculator,
+    })),
+  ),
   ExpectedUtilityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/expected-utility/ExpectedUtilityCalculator'
