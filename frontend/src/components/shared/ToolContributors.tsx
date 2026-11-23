@@ -49,7 +49,7 @@ function Avatar({ person, className }: { person: ToolContributor; className: str
 
 function PersonCard({
   person,
-  editorialPolicyHref,
+  editorialPolicyHref="/privacy-policy",
   open,
   cardId,
   anchorRef,
@@ -102,7 +102,10 @@ function PersonCard({
       <div className="flex items-center gap-3">
         <Avatar person={person} className="h-16 w-16 shrink-0 rounded-full text-lg" />
         <div className="min-w-0">
-          <p className="font-sans text-base font-semibold text-accent">{person.name}</p>
+              <p className="font-sans text-base font-semibold text-accent">{person.name}</p>
+              {person.designation ? (
+                <p className="text-sm text-muted-foreground">{person.designation}</p>
+              ) : null}
           {person.linkedInUrl ? (
             <a
               href={person.linkedInUrl}
@@ -124,7 +127,7 @@ function PersonCard({
       <p className="mt-2 text-sm text-muted-foreground">
         Check our{' '}
         <Link href={editorialPolicyHref} className="font-medium text-primary hover:underline">
-          editorial policy
+          Privacy Policy
         </Link>.
       </p>
       </div>

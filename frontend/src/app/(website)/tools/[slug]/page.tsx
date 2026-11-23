@@ -18,7 +18,7 @@ import {
   serializeJsonLd,
   type ToolSeoSource,
 } from '@/lib/seo/tool-seo';
-import { getPublicToolBySlug, type PublicToolDetail } from '@/server/catalog/tools';
+import { getPublicToolBySlug, type PublicToolContributor, type PublicToolDetail } from '@/server/catalog/tools';
 import { getCurrencyRates } from '@/server/currency/rates';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
 import { StickyCalculatorAside } from '@/tools/calculators/auto-loan/StickyCalculatorAside';
@@ -26,7 +26,26 @@ import { TableOfContents } from '@/tools/calculators/auto-loan/TableOfContents';
 import { loadToolPageDetail } from '@/tools/registry/details';
 import { isApprovedComponentKey, isRegisteredComponentKey } from '@/tools/registry/keys';
 import { CurrencyRatesProvider } from '@/tools/shared/CurrencyRatesProvider';
+import type { ToolCredits, ToolContributor } from '@/tools/page-detail';
 import type { ToolMetadata } from '@/types/tool';
+
+function toCreditPerson(person: PublicToolContributor): ToolContributor {
+  return {
+    name: person.name,
+    linkedInUrl: person.linkedInUrl || undefined,
+    designation: person.designation || undefined,
+    bio: person.about,
+  };
+}
+
+function creditsForTool(tool: PublicToolDetail): ToolCredits | null {
+  if (!tool.creator) return null;
+  return {
+    editorialPolicyHref: '/privacy-policy',
+    creators: [toCreditPerson(tool.creator)],
+    reviewers: tool.reviewers.map(toCreditPerson),
+  };
+}
 
 /** Phase 3: load FX rates only for conversion-enabled calculators. */
 const CURRENCY_CONVERSION_SLUGS = new Set([
@@ -443,6 +462,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
     : null;
 
   const GuideArticleComponent = pageDetail.GuideArticle;
+  const credits = creditsForTool(dbTool);
     const sidebarGroupLabel = pillarName || categoryName;
     const relatedToolsList = dbTool?.relatedTools ?? [];
     const samePillarTools = relatedToolsList.filter(
@@ -529,9 +549,9 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
                   {toolMetadata.description} {pageDetail.subtitleLead}
                 </p>
               </div>
-              {pageDetail.credits ? (
+              {credits ? (
                 <div className="shrink-0 md:pl-2">
-                  <ToolContributors credits={pageDetail.credits} />
+                  <ToolContributors credits={credits} />
                 </div>
               ) : null}
             </header>

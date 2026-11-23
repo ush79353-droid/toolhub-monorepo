@@ -9,6 +9,7 @@ export interface ToolContributor {
   /** Public photo. Omitted records show initials. */
   imageUrl?: string;
   linkedInUrl?: string;
+  designation?: string;
   bio: string;
   /** Full profile page. Omitted records hide “See full profile”. */
   profileHref?: string;

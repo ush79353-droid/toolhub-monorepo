@@ -4,6 +4,16 @@
 
 ---
 
+### 2026-11-23 — Contributor block on every stored tool
+- **Summary:** The Creators and Reviewers block is no longer limited to Auto Loan. Any public tool with a stored creator shows the same card. Tools with no creator stay unchanged.
+- **Important Files:** `frontend/src/app/(website)/tools/[slug]/page.tsx`.
+- **Verification:** `/tools/loan-calculator` shows Nick Mileo, Safdar Sowleheen, and Shayne B. `/tools/0-60-calculator` has no stored creator, so the title card stays without the block. Temporary files cleaned: YES.
+
+### 2026-11-23 — Auto Loan reads stored contributors
+- **Summary:** Auto Loan no longer shows the sample names. The shared credit block reads the catalog creator and reviewers for that slug only. The card also shows the person’s designation.
+- **Important Files:** `frontend/src/app/(website)/tools/[slug]/page.tsx`, `frontend/src/components/shared/ToolContributors.tsx`, `frontend/src/tools/calculators/auto-loan/detail.tsx`.
+- **Verification:** `/tools/auto-loan-calculator` shows Brianna Cervantes, Candice Wall, and Hasan Ali Khan. Opening Brianna shows Mortgage Loan Officer, her LinkedIn link, and her about text. `/tools/loan-calculator` does not show the block. Temporary files cleaned: YES.
+
 ### 2026-11-23 — Finance contributor seed
 - **Summary:** Each Finance & Business tool now stores one creator and one or two reviewers. The fields are `name`, `linkedInUrl`, `designation`, and `about`. `npm run tools:seed-contributors` reads `Finance & Business Linkedin Profile.ods` and matches people to tools by designation. The public tool detail includes `creator` and `reviewers`.
 - **Important Files:** `backend/src/modules/tools/tool.model.ts`, `backend/src/scripts/seed-finance-contributors.ts`, `backend/src/modules/catalog/catalog.service.ts`.
