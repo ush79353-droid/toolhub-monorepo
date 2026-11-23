@@ -537,6 +537,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BmiPercentileCalculator',
   'BmiWeightLossCalculator',
   'DueDateCalculator',
+  'DukeTreadmillScoreCalculator',
   'IsBmiPregnancyWeightIndicatorCalculator',
   'AverageCollectionPeriodCalculator',
   'AverageFixedCostCalculator',

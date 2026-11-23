@@ -730,6 +730,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bmi-weight-loss/detail'),
   DueDateCalculator: () =>
     import('@/tools/calculators/due-date/detail'),
+  DukeTreadmillScoreCalculator: () =>
+    import('@/tools/calculators/duke-treadmill-score/detail'),
   AverageCollectionPeriodCalculator: () =>
     import('@/tools/calculators/average-collection-period/detail'),
   AverageFixedCostCalculator: () =>

@@ -742,6 +742,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'bmi-percentile-calculator',
   'bmi-weight-loss-calculator',
   'due-date-calculator',
+  'duke-treadmill-score-calculator',
   'is-bmi-body-mass-index-a-weight-gain-indicator-in-pregnancy',
   'blood-donation-due-date-calculator',
   'blood-pregnancy-test-what-do-hcg-results-mean',

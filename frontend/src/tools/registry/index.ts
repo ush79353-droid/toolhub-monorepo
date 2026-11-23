@@ -4483,6 +4483,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DueDateCalculator,
     })),
   ),
+  DukeTreadmillScoreCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/duke-treadmill-score/DukeTreadmillScoreCalculator'
+    ).then((mod) => ({
+      default: mod.DukeTreadmillScoreCalculator,
+    })),
+  ),
   BloodDonationDueDateCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/blood-donation-due-date/BloodDonationDueDateCalculator'
