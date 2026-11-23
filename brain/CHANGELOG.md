@@ -10,6 +10,12 @@
 - **Example:** **10** ng/mL · **100** pg/mL → **100**.
 - **Verification:** `progesterone-to-estrogen-ratio/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-23 — Revised Geneva Score Calculator for Pulmonary Embolism
+- **Summary:** Shipped educational revised Geneva PE pretest score on existing catalog slug `revised-geneva-score-calculator-for-pulmonary-embolism` (`RevisedGenevaScoreCalculator`, catalog `6af46f10a27d8d1d4e99024b`, pillar/subPillar null). Screenshot-first (ADR-023): age/surgery/malignancy checkboxes; prior DVT/PE; HR &lt;75/75–94/≥95; unilateral pain; deep venous pain AND edema (published AND); hemoptysis; two-level ≤5/≥6 and three-level 0–3/4–10/≥11 with cohort incidence context; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-746`.
+- **Commits:** `93a3ec71` (UI) / `1004684f` (engine) / (reg/Brain this commit).
+- **Example:** defaults → **0** unlikely/low; age+surgery+HR≥95 → **8** likely/intermediate.
+- **Verification:** `revised-geneva-score/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — QTc Calculator
 - **Summary:** Shipped educational Bazett QTc on existing catalog slug `qtc-calculator` (`QtcCalculator`, catalog `6af46f10a27d8d1d4e990248`, pillar/subPillar null). Screenshot-first (ADR-023): blank QT/HR/RR with ms|s units; Bazett primary; collapsed Fridericia/Framingham/Hodges; HR↔RR sync; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-743`.
 - **Commits:** `ca1b9d5f` (UI; also absorbed concurrent PVR UI staging) / `af4730d9` (engine) / (reg/Brain this commit).

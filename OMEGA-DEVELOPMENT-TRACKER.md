@@ -14,6 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 147 | Revised Geneva Score Calculator for Pulmonary Embolism | DEVELOPED | AUDIT PENDING | 93a3ec71 | 1004684f | (this reg/Brain) | Completed Tools | `RevisedGenevaScoreCalculator`; slug `revised-geneva-score-calculator-for-pulmonary-embolism`; Mongo `6af46f10a27d8d1d4e99024b` active; Le Gal weights; no FX; indexable false; TASKS `TOOL-747` |
 | 146 | Sperm Analysis Calculator | DEVELOPED | AUDIT PENDING | b064edde | 46d45b40 | (this reg/Brain) | Completed Tools | `SpermAnalysisCalculator`; slug `sperm-analysis-calculator`; Mongo `6af46f10a27d8d1d4e990224` active; V×C total + product functional; no FX; indexable false; TASKS `TOOL-746` |
 | 145 | Progesterone to Estrogen Ratio Calculator | DEVELOPED | AUDIT PENDING | ea396d68 | b789768d | (this reg/Brain) | Completed Tools | `ProgesteroneToEstrogenRatioCalculator`; slug `progesterone-to-estrogen-ratio-calculator`; Mongo `6af46f10a27d8d1d4e990223` active; 1000×P/E2; no FX; indexable false; TASKS `TOOL-745` |
 | 144 | Rate Pressure Product Calculator | DEVELOPED | AUDIT PENDING | 75d7a8e9 | 01b74543 | (this reg/Brain) | Completed Tools | `RatePressureProductCalculator`; slug `rate-pressure-product-calculator`; Mongo `6af46f10a27d8d1d4e990249` active; HR×SBP raw; no FX; indexable false; TASKS `TOOL-744` |
