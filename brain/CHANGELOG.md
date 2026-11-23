@@ -1,3 +1,10 @@
+### 2026-11-24 — Absolute Eosinophil Count Calculator
+
+- **Summary:** Shipped educational AEC worksheet (`AbsoluteEosinophilCountCalculator`, slug `absolute-eosinophil-count-calculator`). AEC = WBC × (eos%/100) in ×10³/µL with ×10⁹/L equivalence note; blank defaults; share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS). TASKS `TOOL-753`.
+- **Commits:** `04ee2722` (UI) / `c327826c` (engine) / (reg/Brain this commit).
+- **Example:** WBC **8** · eos **5%** → **0.4** ×10³/µL.
+- **Verification:** `absolute-eosinophil-count/calculation.test.ts` ok. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-24 — 4T Score Calculator | HIT
 
 - **Summary:** Shipped educational 4Ts HIT pretest score (`FourTScoreCalculator`, slug `4t-score-calculator-hit`). Screenshot-first (ADR-023): fall + nadir jointly score thrombocytopenia; timing/thrombosis dropdowns; other-causes radios; total 0–8; Cuker 2012 teaching PPV bands low ~5% / intermediate ~14% / high ~64%; privacy-safe share URL. **No FX**. Registry/sitemap/`tool.key` wired. **Mongo `tool:assign` blocked** (Atlas `querySrv EBADRESP`) — catalog left unchanged; activation pending retry. TASKS `TOOL-752`.

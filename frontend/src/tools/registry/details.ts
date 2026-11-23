@@ -713,6 +713,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/basis-point/detail'),
   BbtCalculator: () => import('@/tools/calculators/bbt/detail'),
   AbiCalculator: () => import('@/tools/calculators/abi/detail'),
+  AbsoluteEosinophilCountCalculator: () =>
+    import('@/tools/calculators/absolute-eosinophil-count/detail'),
   AdderallDosageCalculator: () =>
     import('@/tools/calculators/adderall-dosage/detail'),
   AleveDosageCalculator: () =>

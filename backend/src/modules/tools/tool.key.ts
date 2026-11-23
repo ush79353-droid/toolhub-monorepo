@@ -529,6 +529,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BasisPointCalculator',
   'BbtCalculator',
   'AbiCalculator',
+  'AbsoluteEosinophilCountCalculator',
   'AdderallDosageCalculator',
   'AleveDosageCalculator',
   'AmoxicillinPediatricDosageCalculator',
