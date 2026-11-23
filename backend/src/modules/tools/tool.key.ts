@@ -685,6 +685,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MarketCapitalizationCalculator',
   'MaturityValueCalculator',
   'MirrCalculator',
+  'MitralValveAreaCalculator',
   'MoneyCounterCalculator',
   'MoneyFactorCalculator',
   'MoneyMarketAccountCalculator',

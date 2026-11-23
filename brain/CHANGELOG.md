@@ -11,6 +11,7 @@
 
 ### 2026-11-23 — MAP Calculator (Mean Arterial Pressure)
 - **Summary:** Shipped educational MAP = (SBP + 2×DBP)/3 on existing catalog slug `map-calculator-mean-arterial-pressure` (`MapCalculator`, catalog `6af46f10a27d8d1d4e990242`, pillar/subPillar null). Screenshot-first (ADR-023): SBP/DBP mmHg; optional pulse pressure; formula visible in blank state; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-738`.
+- **Commits:** `8a032174` (UI) / `2f11c670` (engine) / (reg/Brain this commit; registry/sitemap/tool.key via concurrent `053e81a2`).
 - **Verification:** `map-mean-arterial-pressure/calculation.test.ts` ok; `backend` build + `tool.key` ok. Temporary files cleaned: YES. Push/Pull/Fetch: NONE.
 
 ### 2026-11-23 — HEART Score Calculator

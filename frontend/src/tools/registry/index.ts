@@ -3814,6 +3814,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MirrCalculator,
     })),
   ),
+  MitralValveAreaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mitral-valve-area/MitralValveAreaCalculator'
+    ).then((mod) => ({
+      default: mod.MitralValveAreaCalculator,
+    })),
+  ),
   MoneyCounterCalculator: lazyTool(() =>
     import('@/tools/calculators/money-counter/MoneyCounterCalculator').then((mod) => ({
       default: mod.MoneyCounterCalculator,
