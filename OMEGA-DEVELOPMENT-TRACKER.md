@@ -14,6 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 131 | ICH Volume Calculator | DEVELOPED | AUDIT PENDING | bff09266 | f3fccc8a | (this reg/Brain) | Completed Tools | `IchVolumeCalculator`; slug `ich-volume-calculator`; Mongo `6af46f10a27d8d1d4e990240` active; ABC/2|ABC/3 + Kothari weights; no FX; indexable false; TASKS `TOOL-730` |
 | 130 | Gupta Risk Calculator | DEVELOPED | AUDIT PENDING | 8af335f2 | 8f392313 | (this reg/Brain) | Completed Tools | `GuptaRiskCalculator`; slug `gupta-risk-calculator`; Mongo `6af46f10a27d8d1d4e99023c` active; Gupta MICA 2011; no FX; indexable false |
 | 129 | hCG Levels Calculator | DEVELOPED | AUDIT PENDING | aa969298 | dbd38d82 | (reg absorb Framingham) | Completed Tools | `HcgLevelsCalculator`; slug `hcg-levels-calculator`; Mongo `6af46f10a27d8d1d4e99021a` active; serial kinetics; no FX; indexable false; TASKS `TOOL-729` |
 | 118 | ECG Boxes to Seconds Calculator | DEVELOPED | AUDIT PENDING | 97fa589c | 24f83f80 | 36d26bc3 + assign retry | Completed Tools | `EcgBoxesToSecondsCalculator`; slug `ecg-boxes-to-seconds-calculator`; Mongo `6af46f10a27d8d1d4e990235` active; 1/5 mm × speed; no FX; indexable false; TASKS `TOOL-718` |

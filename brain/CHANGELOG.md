@@ -23,9 +23,15 @@
 - **Example:** EDD **2026-07-01** · current **2026-06-24** → **39w0d**; EDD = today → **40w0d**.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
+### 2026-11-23 — ICH Volume Calculator
+- **Summary:** Shipped educational ABC/2 (ABC/3 irregular) ICH volume on existing catalog slug `ich-volume-calculator` (`IchVolumeCalculator`, catalog `6af46f10a27d8d1d4e990240`, pillar/subPillar null). Screenshot-first (ADR-023): blank length/width cm; slice thickness mm; slice count; ellipsoid vs irregular; optional Kothari area bands; result collapsed; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-730`.
+- **Commits:** `bff09266` (UI) / `f3fccc8a` (engine) / (reg/Brain this commit).
+- **Example:** A **4** · B **3** · **10** slices × **5** mm → **30** mL (ABC/2); irregular → **20** mL (ABC/3).
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Fertility by Age Calculator
 - **Summary:** Shipped educational per-cycle fecundability lookup on existing catalog slug `fertility-by-age-calculator` (`FertilityByAgeCalculator`, catalog `6af46f10a27d8d1d4e990216`, pillar/subPillar null). Screenshot-first (ADR-023): Age dropdown starts Select; ages 20–44 yrs; read-only % chance to conceive each cycle; ASRM/ACOG-style bands 24/20/17/12/6; no extrapolation; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-725`.
-- **Commits:** `a0a48ad9` (UI) / `5a0be566` (engine) / (reg/Brain this commit).
+- **Commits:** `a0a48ad9` (UI) / `5a0be566` (engine) / `9e063be8` (Brain; registry absorbed earlier).
 - **Example:** age **30** → **17%**; **20** → **24%**; **44** → **6%**.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 

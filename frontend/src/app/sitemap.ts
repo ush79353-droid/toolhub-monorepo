@@ -733,6 +733,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mortgage-points-calculator',
   'benadryl-dosage-calculator',
   'ibuprofen-dosage-calculator',
+  'ich-volume-calculator',
   'bbt-calculator-basal-body-temperature',
   'birth-control-calculator',
   'bishop-score-calculator',
@@ -1120,9 +1121,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       // Skip unreachable tools.
     }
   }
-
-  return entries;
-}
 
   return entries;
 }

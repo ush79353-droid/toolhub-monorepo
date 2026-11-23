@@ -2963,6 +2963,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.IbuprofenDosageCalculator,
     })),
   ),
+  IchVolumeCalculator: lazyTool(() =>
+    import('@/tools/calculators/ich-volume/IchVolumeCalculator').then((mod) => ({
+      default: mod.IchVolumeCalculator,
+    })),
+  ),
   BetaStockCalculator: lazyTool(() =>
     import('@/tools/calculators/beta-stock/BetaStockCalculator').then((mod) => ({
       default: mod.BetaStockCalculator,
