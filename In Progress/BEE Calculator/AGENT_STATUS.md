@@ -1,2 +1,0 @@
-﻿DEVELOPED — Mongo pending
-
