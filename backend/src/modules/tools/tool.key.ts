@@ -719,6 +719,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PercentOffCalculator',
   'PercentageDiscountCalculator',
   'PercentageReturnCalculator',
+  'PeriodCalculator',
   'PerpetuityCalculator',
   'PitiCalculator',
   'PivotPointCalculator',

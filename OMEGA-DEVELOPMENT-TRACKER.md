@@ -14,6 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 138 | MAP Calculator (Mean Arterial Pressure) | DEVELOPED | AUDIT PENDING | (UI) | (engine) | (reg/Brain) | Completed Tools | `MapCalculator`; slug `map-calculator-mean-arterial-pressure`; Mongo `6af46f10a27d8d1d4e990242` active; MAP=(SBP+2×DBP)/3; optional PP; no FX; indexable false; TASKS `TOOL-738` |
 | 137 | Pearl Index Calculator | DEVELOPED | AUDIT PENDING | 4e959d75 (UI absorb) | a2e5c575 | (this reg/Brain) | Completed Tools | `PearlIndexCalculator`; slug `pearl-index-calculator`; Mongo `6af46f10a27d8d1d4e990221`; equal follow-up Pearl; no FX; indexable false; TASKS `TOOL-737` |
 | 136 | Mean Sac Diameter Calculator | DEVELOPED | AUDIT PENDING | fdaf07f6 | ddde1a70 | (this reg/Brain) | Completed Tools | `MeanSacDiameterCalculator`; slug `mean-sac-diameter-calculator`; Mongo `6af46f10a27d8d1d4e99021e` active; MSD mean + gated Hellman GA; no FX; indexable false; TASKS `TOOL-736` |
 | 135 | HEART Score Calculator | DEVELOPED | AUDIT PENDING | 6e791af7 | c81530e5 | 053e81a2 | Completed Tools | `HeartScoreCalculator`; slug `heart-score-calculator`; Mongo `6af46f10a27d8d1d4e99023f` active; Six/Backus HEART 0–10; no FX; indexable false; TASKS `TOOL-735` |

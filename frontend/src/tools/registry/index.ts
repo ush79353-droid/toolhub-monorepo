@@ -3948,6 +3948,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ParacetamolDosageCalculator,
     })),
   ),
+  PaduaScoreCalculator: lazyTool(() =>
+    import('@/tools/calculators/padua-score/PaduaScoreCalculator').then((mod) => ({
+      default: mod.PaduaScoreCalculator,
+    })),
+  ),
   PayPalFeeCalculator: lazyTool(() =>
     import('@/tools/calculators/paypal-fee/PayPalFeeCalculator').then((mod) => ({
       default: mod.PayPalFeeCalculator,
@@ -3995,6 +4000,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   PercentageReturnCalculator: lazyTool(() =>
     import('@/tools/calculators/percentage-return/PercentageReturnCalculator').then((mod) => ({
       default: mod.PercentageReturnCalculator,
+    })),
+  ),
+  PeriodCalculator: lazyTool(() =>
+    import('@/tools/calculators/period/PeriodCalculator').then((mod) => ({
+      default: mod.PeriodCalculator,
     })),
   ),
   PerpetuityCalculator: lazyTool(() =>

@@ -1,3 +1,13 @@
+### 2026-11-23 — Mean Sac Diameter Calculator
+- **Summary:** Shipped educational mean sac diameter tool on existing catalog slug `mean-sac-diameter-calculator` (`MeanSacDiameterCalculator`, catalog `6af46f10a27d8d1d4e99021e`, pillar/subPillar null). Screenshot-first (ADR-023): blank L/W/H with unit selects; MSD = (L+W+H)/3 mm; approximate GA days ≈ MSD+30 only in ≈2–15 mm educational window; no viability/EDD; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-736`.
+- **Commits:** `fdaf07f6` (UI) / `ddde1a70` (engine) / (reg/Brain this commit).
+- **Example:** **12/15/18** mm → MSD **15** · GA **45** d.
+- **Verification:** `mean-sac-diameter/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
+### 2026-11-23 — MAP Calculator (Mean Arterial Pressure)
+- **Summary:** Shipped educational MAP = (SBP + 2×DBP)/3 on existing catalog slug `map-calculator-mean-arterial-pressure` (`MapCalculator`, catalog `6af46f10a27d8d1d4e990242`, pillar/subPillar null). Screenshot-first (ADR-023): SBP/DBP mmHg; optional pulse pressure; formula visible in blank state; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-738`.
+- **Verification:** `map-mean-arterial-pressure/calculation.test.ts` ok; `backend` build + `tool.key` ok. Temporary files cleaned: YES. Push/Pull/Fetch: NONE.
+
 ### 2026-11-23 — HEART Score Calculator
 - **Summary:** Shipped educational HEART score (0–10) on existing catalog slug `heart-score-calculator` (`HeartScoreCalculator`, catalog `6af46f10a27d8d1d4e99023f`, pillar/subPillar null). Screenshot-first (ADR-023): blank age; ECG/History/Troponin/Risk screenshot defaults; age &lt;45/45–64/≥65; troponin tiers vs assay URL; total blank until age; no disposition text; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-735`.
 - **Commits:** `6e791af7` (UI) / `c81530e5` (engine) / `053e81a2` (reg/Brain).

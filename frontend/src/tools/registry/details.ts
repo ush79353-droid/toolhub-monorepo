@@ -1058,6 +1058,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/percentage-discount/detail'),
   PercentageReturnCalculator: () =>
     import('@/tools/calculators/percentage-return/detail'),
+  PeriodCalculator: () => import('@/tools/calculators/period/detail'),
   PerpetuityCalculator: () =>
     import('@/tools/calculators/perpetuity/detail'),
   PitiCalculator: () => import('@/tools/calculators/piti/detail'),
