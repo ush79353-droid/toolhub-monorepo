@@ -1,3 +1,8 @@
+### 2026-11-23 — EDD Calculator - Estimated Date of Delivery
+- **Summary:** Shipped educational LMP vs ultrasound EDD comparison on existing catalog slug `edd-calculator-estimated-date-of-delivery` (`EddCalculator`, catalog `6af46f10a27d8d1d4e990214`, pillar/subPillar null). Screenshot-first (ADR-023): current date; LMP + cycle-adjusted EDD; ultrasound weeks/days → US EDD; GA ages + signed difference; cycle adjusts LMP only; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-718`.
+- **Commits:** `8a00fa61` (UI) / `6fb78ba6` (engine) / (reg/Brain this commit; may absorb concurrent ECG HR / egg-freezing / doppler sitemap keys).
+- **Example:** LMP **2026-01-01** · **28**d → EDD **2026-10-08**; US **2026-03-01** · **8w0d** → EDD **2026-10-11**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 ### 2026-11-23 — Doppler Echo Cardiac Output Calculator
 - **Summary:** Shipped educational LVOT Doppler CO/CI on existing catalog slug `doppler-echo-cardiac-output-calculator` (`DopplerEchoCardiacOutputCalculator`, catalog `6af46f10a27d8d1d4e990233`, pillar/subPillar null). Screenshot-first (ADR-023): blank height/weight cm/kg, HR bpm, LVOT VTI cm, LVOT diameter mm; area=π(d/2)²; SV=area×VTI; CO=SV×HR/1000; CI=CO/Mosteller BSA (same as Cardiac Index); partial derived outputs; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-721`.
 - **Commits:** `f2c35c69` (UI) / `fd2bc30f` (engine) / (reg/Brain this commit).

@@ -14,6 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 114 | EDD Calculator - Estimated Date of Delivery | DEVELOPED | AUDIT PENDING | 8a00fa61 | 6fb78ba6 | (this reg/Brain) | Completed Tools | `EddCalculator`; slug `edd-calculator-estimated-date-of-delivery`; Mongo `6af46f10a27d8d1d4e990214` active; ACOG LMP/US compare; no FX; indexable false; TASKS `TOOL-718` |
 | 122 | ECG Heart Rate Calculator | DEVELOPED (activation blocked) | AUDIT PENDING | 2fa4941b | a7d4aad2 | (this reg/Brain) | In Progress | `EcgHeartRateCalculator`; slug `ecg-heart-rate-calculator`; Mongo `6af46f10a27d8d1d4e990236`; R–R→BPM; Atlas assign blocked; no FX; indexable false; TASKS `TOOL-722` |
 | 121 | Doppler Echo Cardiac Output Calculator | DEVELOPED | AUDIT PENDING | f2c35c69 | fd2bc30f | (this reg/Brain) | Completed Tools | `DopplerEchoCardiacOutputCalculator`; slug `doppler-echo-cardiac-output-calculator`; Mongo `6af46f10a27d8d1d4e990233` active; LVOT continuity; Mosteller CI; no FX; indexable false; TASKS `TOOL-721` |
 | 120 | Ejection Fraction Calculator | DEVELOPED | AUDIT PENDING | 8a059322 | 761accae | (this reg/Brain) | Completed Tools | `EjectionFractionCalculator`; slug `ejection-fraction-calculator`; Mongo `6af46f10a27d8d1d4e990237` active; EF=SV/EDV; no FX; indexable false; TASKS `TOOL-720` |

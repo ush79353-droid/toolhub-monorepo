@@ -1,4 +1,4 @@
-﻿# Shared Task Board (`TASKS.md`)
+# Shared Task Board (`TASKS.md`)
 
 > **Rules:** Keep Task IDs stable (`INFRA-*`, `BE-*`, `FE-*`, `TOOL-*`). Never delete or renumber IDs. Do not invent owners unless assigned.
 
@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-718` | Implement EDD Calculator - Estimated Date of Delivery on existing slug `edd-calculator-estimated-date-of-delivery` with LMP vs ultrasound EDD comparison, cycle adjusts LMP only, GA difference, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/edd/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-721` | Implement Doppler Echo Cardiac Output Calculator on existing slug `doppler-echo-cardiac-output-calculator` with LVOT area×VTI stroke volume, CO, Mosteller CI, partial derived fields, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/doppler-echo-cardiac-output/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-722` | Implement ECG Heart Rate Calculator on existing slug `ecg-heart-rate-calculator` with R–R mm|s|ms synced to small/big boxes, 25/50 mm/s, BPM=60/(mm÷speed), privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed (Mongo assign retry if Atlas blocks) | `frontend/src/tools/calculators/ecg-heart-rate/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-720` | Implement Ejection Fraction Calculator on existing slug `ejection-fraction-calculator` with SV/ESV/CO&HR modes, EF=100×SV/EDV, preserve EDV on mode switch, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/ejection-fraction/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
@@ -156,6 +157,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-718` | Implement EDD Calculator - Estimated Date of Delivery on existing slug `edd-calculator-estimated-date-of-delivery` with LMP vs ultrasound EDD comparison, cycle adjusts LMP only, GA difference, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/edd/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-721` | DAPT calculator: Yeh 2016 educational score (`DaptCalculator`); Mongo `6af46f10a27d8d1d4e990232` activated; indexable false; no medication orders | Cursor | Done | `Completed Tools/DAPT calculator` | — |
 | `TOOL-710` | Aortic Valve Area Calculator: continuity-equation AVA (`AorticValveAreaCalculator`); registry done; Mongo `6af46f10a27d8d1d4e99022a` assign blocked (Atlas timeout); indexable false; educational severity table | Cursor | Blocked (activation) | `In Progress/Aortic Valve Area Calculator` | Retry `tool:assign --set-active` when Atlas reachable |
 | `TOOL-712` | CVD Risk Calculator (Framingham general CVD lipid): D'Agostino 2008 10-year % (`CvdRiskCalculator`); registry wired; Mongo assign BLOCKED (Atlas); indexable false | Cursor | In Progress | `In Progress/CVD Risk Calculator - Cardiovascular Disease 10-year Risk` | — |
@@ -197,6 +199,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-718` | Implement EDD Calculator - Estimated Date of Delivery on existing slug `edd-calculator-estimated-date-of-delivery` with LMP vs ultrasound EDD comparison, cycle adjusts LMP only, GA difference, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/edd/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-698` | Implement Weight Gain Calculator on existing slug `weight-gain-calculator` with Mifflin–St Jeor × PAL maintenance, Normal/Strict surplus paces, weeks-to-goal guards, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/weight-gain/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-696` | Implement Quiz: Fetal Weight Percentile on existing slug `quiz-fetal-weight-percentile` with five MCQs, score gated until complete, explanations checkbox, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/quiz-fetal-weight-percentile/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-692` | Implement Pregnancy Test Calculator on existing slug `pregnancy-test-calculator` with natural/IVF timing (reuse blood-pregnancy-hcg engine), privacy-safe share, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/pregnancy-test/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
