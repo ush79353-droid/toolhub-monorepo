@@ -14,6 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 155 | Absolute Lymphocyte Count Calculator | DEVELOPED (activation blocked) | AUDIT PENDING | 5cf95c38 | 5a8820d8 | (this) | Completed Tools | AbsoluteLymphocyteCountCalculator; slug absolute-lymphocyte-count-calculator; Mongo blocked; TASKS TOOL-754 |
 | 154 | Absolute Eosinophil Count Calculator | DEVELOPED (activation blocked) | AUDIT PENDING | 04ee2722 | c327826c | (this reg/Brain) | Completed Tools | `AbsoluteEosinophilCountCalculator`; slug `absolute-eosinophil-count-calculator`; Mongo assign blocked Atlas DNS; no FX; TASKS `TOOL-753` |
 | 153 | 4T Score Calculator HIT | DEVELOPED (activation blocked) | AUDIT PENDING | 233a58f8 | cf6a7201 | (this reg/Brain) | Completed Tools | `FourTScoreCalculator`; slug `4t-score-calculator-hit`; Mongo assign blocked Atlas querySrv EBADRESP; no FX; indexable false; TASKS `TOOL-752` |
 | 149 | Stillbirth Risk Calculator | BLOCKED | AUDIT PENDING | — | — | — | In Progress | Screenshot Omni-style baseline 0.2197 + US ethnicity; prompt forbids OR×baseline and requires validated intercept/coefficients; FMF/Yerke models mismatch field set; Mongo `6af46f10a27d8d1d4e990225` undeveloped/inactive/indexable false unchanged |

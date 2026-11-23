@@ -2978,6 +2978,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AbsoluteEosinophilCountCalculator,
     })),
   ),
+  AbsoluteLymphocyteCountCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/absolute-lymphocyte-count/AbsoluteLymphocyteCountCalculator'
+    ).then((mod) => ({
+      default: mod.AbsoluteLymphocyteCountCalculator,
+    })),
+  ),
   AdderallDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/adderall-dosage/AdderallDosageCalculator'

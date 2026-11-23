@@ -715,6 +715,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AbiCalculator: () => import('@/tools/calculators/abi/detail'),
   AbsoluteEosinophilCountCalculator: () =>
     import('@/tools/calculators/absolute-eosinophil-count/detail'),
+  AbsoluteLymphocyteCountCalculator: () =>
+    import('@/tools/calculators/absolute-lymphocyte-count/detail'),
   AdderallDosageCalculator: () =>
     import('@/tools/calculators/adderall-dosage/detail'),
   AleveDosageCalculator: () =>

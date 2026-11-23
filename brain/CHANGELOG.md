@@ -1,3 +1,16 @@
+﻿### 2026-11-24 — Absolute Lymphocyte Count Calculator
+
+- **Summary:** Shipped educational ALC worksheet (`AbsoluteLymphocyteCountCalculator`, slug `absolute-lymphocyte-count-calculator`). ALC = WBC × (lymph%/100) ×10³/µL; share URL only. **No FX**. Registry wired. **Mongo assign blocked**. TASKS `TOOL-754`.
+- **Commits:** `5cf95c38` (UI) / `5a8820d8` (engine) / (reg/Brain this commit).
+- **Example:** WBC **6** · lymph **25%** → **1.5** ×10³/µL.
+- **Verification:** `absolute-lymphocyte-count/calculation.test.ts` ok. Temporary files cleaned: YES.
+### 2026-11-24 — Absolute Lymphocyte Count Calculator
+
+- **Summary:** Shipped educational ALC worksheet (`AbsoluteLymphocyteCountCalculator`, slug `absolute-lymphocyte-count-calculator`). ALC = WBC × (lymph%/100) ×10³/µL; share URL only. **No FX**. Registry wired. **Mongo assign blocked**. TASKS `TOOL-754`.
+- **Commits:** `5cf95c38` (UI) / `5a8820d8` (engine) / (reg/Brain this commit).
+- **Example:** WBC **6** · lymph **25%** → **1.5** ×10³/µL.
+- **Verification:** `absolute-lymphocyte-count/calculation.test.ts` ok. Temporary files cleaned: YES.
+
 ### 2026-11-24 — Absolute Eosinophil Count Calculator
 
 - **Summary:** Shipped educational AEC worksheet (`AbsoluteEosinophilCountCalculator`, slug `absolute-eosinophil-count-calculator`). AEC = WBC × (eos%/100) in ×10³/µL with ×10⁹/L equivalence note; blank defaults; share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS). TASKS `TOOL-753`.
@@ -6146,3 +6159,4 @@
 - Added bidirectional Rule of 72 calculator (`RuleOf72Calculator` / `rule-of-72-calculator`).
 - Approximation `T � 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
 - Catalog `6af46f10a27d8d1d4e9901bc` activated; `indexable` left false.
+
