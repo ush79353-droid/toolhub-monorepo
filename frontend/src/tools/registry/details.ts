@@ -1015,6 +1015,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/nav/detail'),
   NavyBodyFatCalculator: () =>
     import('@/tools/calculators/navy-body-fat/detail'),
+  NuchalTranslucencyCalculator: () =>
+    import('@/tools/calculators/nuchal-translucency/detail'),
   SkinfoldBodyFatCalculator: () =>
     import('@/tools/calculators/skinfold-body-fat/detail'),
   NopatCalculator: () =>

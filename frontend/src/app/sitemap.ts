@@ -276,6 +276,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ccf-to-therms-calculator',
   'national-insurance-calculator',
   'navy-body-fat-calculator',
+  'nuchal-translucency-calculator',
   'skinfold-body-fat-calculator',
   'natural-gas-converter',
   'natural-rate-of-unemployment-calculator',

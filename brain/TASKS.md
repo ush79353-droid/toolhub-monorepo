@@ -1,4 +1,4 @@
-﻿# Shared Task Board (`TASKS.md`)
+# Shared Task Board (`TASKS.md`)
 
 > **Rules:** Keep Task IDs stable (`INFRA-*`, `BE-*`, `FE-*`, `TOOL-*`). Never delete or renumber IDs. Do not invent owners unless assigned.
 
