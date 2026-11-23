@@ -8,7 +8,7 @@
 - **Summary:** Shipped educational PISA worksheet on existing catalog slug `pisa-calculator` (`PisaCalculator`, catalog `6af46f10a27d8d1d4e990246`, pillar/subPillar null). Screenshot-first (ADR-023): Vmax/r/Vr/α/VTI → MVA, VFR, EROA (mm² default), RVol, PISA; A=2πr²×(α/180); blank α→180°; zero Vmax blocks orifice; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-741`.
 - **Commits:** `37d0f0e2` (UI) / `d4f2b432` (engine) / (reg/Brain this commit).
 - **Example:** r **1** · Vr **40** · α **180** · Vmax **500** · VTI **100** → PISA ≈ **6.283** · VFR ≈ **251.33** · EROA ≈ **50.3 mm²** · RVol ≈ **50.3**.
-- **Verification:** Source-level formula review vs ASE PISA teaching; full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+- **Verification:** Source-level formula review vs ASE PISA teaching; full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE. TASKS `TOOL-742`.
 
 ### 2026-11-23 — Mean Sac Diameter Calculator
 - **Summary:** Shipped educational mean sac diameter tool on existing catalog slug `mean-sac-diameter-calculator` (`MeanSacDiameterCalculator`, catalog `6af46f10a27d8d1d4e99021e`, pillar/subPillar null). Screenshot-first (ADR-023): blank L/W/H with unit selects; MSD = (L+W+H)/3 mm; approximate GA days ≈ MSD+30 only in ≈2–15 mm educational window; no viability/EDD; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-736`.

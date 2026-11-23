@@ -14,6 +14,8 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 142 | PISA Calculator | DEVELOPED | AUDIT PENDING | 37d0f0e2 | d4f2b432 | (this reg/Brain) | Completed Tools | `PisaCalculator`; slug `pisa-calculator`; Mongo `6af46f10a27d8d1d4e990246` active; 2πr²×(α/180); blank α→180°; no FX; indexable false; TASKS `TOOL-742` |
+| 114c | CVD Risk Calculator (10-year) | DEVELOPED | AUDIT PENDING | 3a95447b | 80d54f1d | d2287b00 | Completed Tools | `CvdRiskCalculator`; slug `cvd-risk-calculator-cardiovascular-disease-10-year-risk`; Mongo `6af46f10a27d8d1d4e990231` active; D'Agostino 2008; no FX; indexable false; TASKS `TOOL-712` |
 | 141 | Mitral Valve Area Calculator | DEVELOPED | AUDIT PENDING | b812e883 (UI absorb) | 30042397 | (this reg/Brain) | Completed Tools | `MitralValveAreaCalculator`; slug `mitral-valve-area-calculator`; Mongo `6af46f10a27d8d1d4e990243` active; continuity/PHT/DT; no FX; indexable false; TASKS `TOOL-741` |
 | 140 | Padua Score Calculator | DEVELOPED | AUDIT PENDING | 4e959d75 (UI+engine) | — | (this reg/Brain) | Completed Tools | `PaduaScoreCalculator`; slug `padua-score-calculator`; Mongo `6af46f10a27d8d1d4e990244` active; Barbar 2010 0–20; ≥4 band only; no FX; indexable false; TASKS `TOOL-740` |
 | 139 | Period Calculator | DEVELOPED | AUDIT PENDING | b812e883 | 9b7582ed | (this reg/Brain) | Completed Tools | `PeriodCalculator`; slug `period-calculator`; Mongo `6af46f10a27d8d1d4e990222` active; ASRM calendar forecast; no FX; indexable false; TASKS `TOOL-739` |
