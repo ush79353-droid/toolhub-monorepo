@@ -26,9 +26,9 @@
 
 ## Commits (local only)
 
-1. *(UI hash after commit)* — UI (form, shell, guide, types)  
-2. *(engine hash)* — engine + `validation.ts` + `calculation.test.ts`  
-3. *(reg hash)* — registry/`tool.key.ts`/Brain/tracker/Mongo assign cleanup
+1. `55a18d6c` — UI (form, shell, guide, types)  
+2. `031422c8` — engine + `validation.ts` + `calculation.test.ts`  
+3. `28938cb5` — registry/`tool.key.ts`/Brain/tracker/Mongo assign cleanup
 
 ## Verification
 

@@ -3629,6 +3629,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HasBledCalculator,
     })),
   ),
+  HeartScoreCalculator: lazyTool(() =>
+    import('@/tools/calculators/heart-score/HeartScoreCalculator').then((mod) => ({
+      default: mod.HeartScoreCalculator,
+    })),
+  ),
   HeartFailureLifeExpectancyCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/heart-failure-life-expectancy/HeartFailureLifeExpectancyCalculator'

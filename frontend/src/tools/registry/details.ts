@@ -929,6 +929,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/graham-number/detail'),
   HasBledCalculator: () =>
     import('@/tools/calculators/has-bled/detail'),
+  HeartScoreCalculator: () =>
+    import('@/tools/calculators/heart-score/detail'),
   HeartFailureLifeExpectancyCalculator: () =>
     import('@/tools/calculators/heart-failure-life-expectancy/detail'),
   HcgLevelsCalculator: () =>

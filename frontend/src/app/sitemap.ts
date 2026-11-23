@@ -50,6 +50,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'loan-interest-calculator',
   'lottery-annuity-calculator',
   'lottery-tax-calculator',
+  'lv-calculator',
 
   'margin-and-markup-calculator',
   'mileage-reimbursement-calculator',
@@ -636,6 +637,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'gmroi-calculator-gross-margin-return-on-investment',
   'google-adsense-calculator',
   'has-bled-calculator',
+  'heart-score-calculator',
   'heart-failure-life-expectancy-calculator',
   'hcg-levels-calculator',
   'implantation-calculator',

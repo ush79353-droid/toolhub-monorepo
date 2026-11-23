@@ -655,6 +655,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'GoogleAdsenseCalculator',
   'GrahamNumberCalculator',
   'HasBledCalculator',
+  'HeartScoreCalculator',
   'HeartFailureLifeExpectancyCalculator',
   'HcgLevelsCalculator',
   'ImplantationCalculator',
