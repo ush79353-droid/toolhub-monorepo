@@ -718,6 +718,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ibuprofen-dosage-calculator',
   'bbt-calculator-basal-body-temperature',
   'birth-control-calculator',
+  'breast-cancer-recurrence-risk-calculator',
   'breastfeeding-calorie-calculator',
   'black-friday-calculator',
   'black-scholes-calculator',

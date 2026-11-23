@@ -540,6 +540,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BounceRateCalculator',
   'BradfordFactorCalculator',
   'BreakEvenCalculator',
+  'BreastCancerRecurrenceRiskCalculator',
   'BreastfeedingCalorieCalculator',
   'BrexitCalculator',
   'BuildVsBuyCalculator',

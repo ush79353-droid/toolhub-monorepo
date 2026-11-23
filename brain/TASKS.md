@@ -145,6 +145,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-706` | Bishop Score Calculator: classic Bishop EH 1964 0–13 educational score (`BishopScoreCalculator`); Mongo `6af46f10a27d8d1d4e99020d` activated; indexable false; no induction recommendation | Cursor | Done | `Completed Tools/Bishop Score Calculator` | — |
 | `TOOL-704` | Adderall Dosage Calculator: educational IR label charts + prescribed-dose tablet arithmetic (`AdderallDosageCalculator`); Mongo `6af46f10a27d8d1d4e9901d1` activated; indexable false; XR out of scope | Cursor | Done | `Completed Tools/Adderall Dosage Calculator` | — |
 | `TOOL-705` | Levothyroxine Dosage Calculator: Devine IBW + FDA 1.6 mcg/kg educational teaching estimate for healthy-adult overt branch (`LevothyroxineDosageCalculator`); Mongo `6af46f10a27d8d1d4e9901d9` activated; indexable false; cardiac/SCH/short gated | Cursor | Done | `Completed Tools/Levothyroxine Dosage Calculator` | Full Omni SCH/cardiac dose table remains unavailable by design |
 | `TOOL-698` | Implement Weight Gain Calculator on existing slug `weight-gain-calculator` with Mifflin–St Jeor × PAL maintenance, Normal/Strict surplus paces, weeks-to-goal guards, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/weight-gain/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |

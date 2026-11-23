@@ -3020,6 +3020,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BreakEvenCalculator,
     })),
   ),
+  BreastCancerRecurrenceRiskCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/breast-cancer-recurrence-risk/BreastCancerRecurrenceCalculator'
+    ).then((mod) => ({
+      default: mod.BreastCancerRecurrenceRiskCalculator,
+    })),
+  ),
   BreastfeedingCalorieCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/breastfeeding-calorie/BreastfeedingCalorieCalculator'

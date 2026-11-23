@@ -733,6 +733,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/bradford-factor/detail'),
   BreakEvenCalculator: () =>
     import('@/tools/calculators/break-even/detail'),
+  BreastCancerRecurrenceRiskCalculator: () =>
+    import('@/tools/calculators/breast-cancer-recurrence-risk/detail'),
   BreastfeedingCalorieCalculator: () =>
     import('@/tools/calculators/breastfeeding-calorie/detail'),
   BrexitCalculator: () => import('@/tools/calculators/brexit/detail'),

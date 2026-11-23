@@ -1,3 +1,9 @@
+### 2026-11-23 — Bishop Score Calculator
+- **Summary:** Shipped educational classic Bishop score on existing catalog slug `bishop-score-calculator` (`BishopScoreCalculator`, catalog `6af46f10a27d8d1d4e99020d`, pillar/subPillar null). Screenshot-first (ADR-023): blank dilation with cm|mm; radios for effacement / consistency / station / cervical position (screenshot “baby's head position” clarified); score blank until dilation valid; no induction recommendation or outcome prediction; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-706`.
+- **Commits:** `8d47ae86` (UI) / `1c6af771` (engine) / (reg/Brain this commit).
+- **Example:** closed · 0–30% · firm · −3 · posterior → **0**; 5 cm · ≥80% · soft · +1/+2 · anterior → **13**.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Adderall + Levothyroxine verified-reference recovery
 - **Adderall:** Shipped educational IR explorer + prescribed-dose tablet arithmetic on slug `adderall-dosage-calculator` (`AdderallDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d1`). Omni + DailyMed IR (setid `f22635fe-821d-4cde-aa12-419f8b53db81`, May 29, 2024). ADHD/Narcolepsy educational charts; custom `tablets = dose/strength`; XR out of scope. Activated; **`indexable` false**. TASKS `TOOL-704`.
 - **Levothyroxine:** Extended existing UI (`3426381f`) / gate engine (`f3a6bb63`) with Devine IBW + typed outcomes; educational mcg/day only for healthy-adult overt teaching branch (15–50, FT4 Low, no heart disease) via `1.6 × min(actual, IBW)`. Cardiac/older/SCH/short remain gated. Catalog `6af46f10a27d8d1d4e9901d9` activated; **`indexable` false**. TASKS `TOOL-705`.

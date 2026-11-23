@@ -14,6 +14,7 @@ Skipped / blocked (health set): 0 (Adderall + Levothyroxine recovered under appr
 Adderall recovery (2026-11-22): educational IR + prescribed tablet arithmetic shipped; activated; indexable false
 
 ## Calculator Register
+| 107 | Bishop Score Calculator | DEVELOPED | AUDIT PENDING | 8d47ae86 | 1c6af771 | (this reg/Brain) | Completed Tools | `BishopScoreCalculator`; slug `bishop-score-calculator`; Mongo `6af46f10a27d8d1d4e99020d` active; classic 0–13; cm|mm; no FX; indexable false; TASKS `TOOL-706` |
 | 106 | Levothyroxine Dosage Calculator | DEVELOPED | AUDIT PENDING | 3426381f | f3a6bb63 + 9c515926 | (this reg/Brain) | Completed Tools | `LevothyroxineDosageCalculator`; slug `levothyroxine-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d9` active; Devine IBW + 1.6 mcg/kg teaching for healthy-adult branch; cardiac/SCH gated; no FX; indexable false; TASKS `TOOL-705` |
 | 105 | Adderall Dosage Calculator | DEVELOPED | AUDIT PENDING | a84b82ee | 12dc814d | (this reg/Brain) | Completed Tools | `AdderallDosageCalculator`; slug `adderall-dosage-calculator`; Mongo `6af46f10a27d8d1d4e9901d1` active; IR educational + custom tablet math; XR out of scope; no FX; indexable false; TASKS `TOOL-704` |
 | 104 | Health-60 registry repair batch | REPAIRED | PASS_STATIC | — | — | (this repair) | n/a | Restored registry/sitemap/backend keys for Aleve, Amoxicillin, BMI Women, Due Date, Is-BMI pregnancy indicator, Maintenance Calorie index, Army Body Fat backend |
