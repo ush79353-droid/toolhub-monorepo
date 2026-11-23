@@ -539,6 +539,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AleveDosageCalculator',
   'AllowableBloodLossCalculator',
   'AmoxicillinPediatricDosageCalculator',
+  'AncAbsoluteNeutrophilCountCalculator',
   'BenadrylDosageCalculator',
   'IbuprofenDosageCalculator',
   'IchVolumeCalculator',

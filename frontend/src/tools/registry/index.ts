@@ -812,6 +812,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AmtCalculator,
     })),
   ),
+  AncAbsoluteNeutrophilCountCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/anc-absolute-neutrophil-count/AncAbsoluteNeutrophilCountCalculator'
+    ).then((mod) => ({
+      default: mod.AncAbsoluteNeutrophilCountCalculator,
+    })),
+  ),
   AltmanZScoreCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/altman-z-score/AltmanZScoreCalculator'

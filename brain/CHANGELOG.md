@@ -1,4 +1,10 @@
-﻿### 2026-11-24 — Batch: Added Sugar, Age-Adjusted D-dimer, A/G Ratio, Allowable Blood Loss
+﻿### 2026-11-24 — ANC Calculator — Absolute Neutrophil Count
+
+- **Summary:** Shipped educational ANC (`AncAbsoluteNeutrophilCountCalculator`, slug `anc-calculator-absolute-neutrophil-count`). ANC = WBC × (segs+bands)/100; segs+bands ≤100%; share URL only. **No FX**. Mongo blocked. TASKS `TOOL-760`.
+- **Commits:** `7d482721` (UI) / `6dde023f` (engine) / (reg this).
+- **Example:** WBC **5** · segs **40%** · bands **2%** → **2.1**.
+- **Verification:** `anc-absolute-neutrophil-count/calculation.test.ts` ok.
+### 2026-11-24 — Batch: Added Sugar, Age-Adjusted D-dimer, A/G Ratio, Allowable Blood Loss
 
 - **Added Sugar Intake** (`AddedSugarIntakeCalculator`, slug `added-sugar-intake-calculator`): UI `4c1a4d50` / eng `6a030b7b` / reg this. Mongo blocked. TOOL-756.
 - **Age-Adjusted D-dimer** (`AgeAdjustedDDimerCalculator`, slug `age-adjusted-d-dimer-calculator`): UI `ff916995` / eng `673b6aa1` / reg this. Mongo blocked. TOOL-757.
@@ -6172,6 +6178,7 @@
 - Added bidirectional Rule of 72 calculator (`RuleOf72Calculator` / `rule-of-72-calculator`).
 - Approximation `T � 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
 - Catalog `6af46f10a27d8d1d4e9901bc` activated; `indexable` left false.
+
 
 
 

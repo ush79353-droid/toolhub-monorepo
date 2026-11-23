@@ -212,6 +212,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AmoxicillinPediatricDosageCalculator: () =>
     import('@/tools/calculators/amoxicillin-pediatric-dosage/detail'),
   AmortizationCalculator: () => import('@/tools/calculators/amortization/detail'),
+  AncAbsoluteNeutrophilCountCalculator: () =>
+    import('@/tools/calculators/anc-absolute-neutrophil-count/detail'),
   AmtCalculator: () => import('@/tools/calculators/amt/detail'),
   AcreageCalculator: () => import('@/tools/calculators/acreage/detail'),
   FeetToInchesCalculator: () => import('@/tools/calculators/feet-to-inches/detail'),

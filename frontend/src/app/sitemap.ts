@@ -121,6 +121,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'aleve-dosage-calculator',
   'allowable-blood-loss-calculator',
   'amoxicillin-pediatric-dosage-calculator',
+  'anc-calculator-absolute-neutrophil-count',
   'amortization-calculator',
   'amt-calculator',
   'acreage-calculator',
