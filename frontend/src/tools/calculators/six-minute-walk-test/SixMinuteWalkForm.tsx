@@ -1,23 +1,26 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import {
   convertDistance,
   convertHeight,
   convertWeight,
-  metersToDistance,
   parseNumber,
 } from './calculation';
 import type {
   DistanceUnit,
   HeightUnit,
-  SixMinuteWalkFieldErrors,
-  SixMinuteWalkInput,
-  SixMinuteWalkResult,
+  SixMinuteWalkTestFieldErrors,
+  SixMinuteWalkTestInput,
+  SixMinuteWalkTestResult,
   WeightUnit,
+} from './types';
+import {
+  DISTANCE_UNIT_LABELS,
+  HEIGHT_UNIT_LABELS,
+  WEIGHT_UNIT_LABELS,
 } from './types';
 
 const labelClass =
@@ -47,18 +50,15 @@ function FieldShell({
   );
 }
 
-function formatUnitSwitch(
-  value: number,
-  digits: number,
-): string {
+function formatUnitSwitch(value: number, digits: number): string {
   return String(Number(value.toFixed(digits)));
 }
 
 interface Props {
-  input: SixMinuteWalkInput;
-  errors: SixMinuteWalkFieldErrors;
-  result: SixMinuteWalkResult | null;
-  onChange: (input: SixMinuteWalkInput) => void;
+  input: SixMinuteWalkTestInput;
+  errors: SixMinuteWalkTestFieldErrors;
+  result: SixMinuteWalkTestResult | null;
+  onChange: (input: SixMinuteWalkTestInput) => void;
 }
 
 export function SixMinuteWalkForm({
@@ -67,17 +67,10 @@ export function SixMinuteWalkForm({
   result,
   onChange,
 }: Props) {
-  const [compareOpen, setCompareOpen] = useState(true);
-  const set = (patch: Partial<SixMinuteWalkInput>) =>
+  const set = (patch: Partial<SixMinuteWalkTestInput>) =>
     onChange({ ...input, ...patch });
 
-  const predictedDisplay =
-    result != null
-      ? formatUnitSwitch(
-          metersToDistance(result.predictedMeters, input.predictedUnit),
-          input.predictedUnit === 'm' ? 0 : 1,
-        )
-      : '';
+  const hasPrediction = result?.predictedMeters != null;
 
   return (
     <form
@@ -173,10 +166,11 @@ export function SixMinuteWalkForm({
               set({ heightUnit: next });
             }}
           >
-            <option value="cm">cm</option>
-            <option value="m">m</option>
-            <option value="in">in</option>
-            <option value="ft">ft</option>
+            {(Object.keys(HEIGHT_UNIT_LABELS) as HeightUnit[]).map((u) => (
+              <option key={u} value={u}>
+                {HEIGHT_UNIT_LABELS[u]}
+              </option>
+            ))}
           </select>
         </FieldShell>
         {errors.heightValue ? (
@@ -217,8 +211,11 @@ export function SixMinuteWalkForm({
               set({ weightUnit: next });
             }}
           >
-            <option value="kg">kg</option>
-            <option value="lb">lb</option>
+            {(Object.keys(WEIGHT_UNIT_LABELS) as WeightUnit[]).map((u) => (
+              <option key={u} value={u}>
+                {WEIGHT_UNIT_LABELS[u]}
+              </option>
+            ))}
           </select>
         </FieldShell>
         {errors.weightValue ? (
@@ -237,9 +234,9 @@ export function SixMinuteWalkForm({
         <FieldShell muted>
           <input
             id="smwt-predicted"
-            className={`${inputClass} ${result ? 'font-semibold text-primary' : 'text-muted-foreground'}`}
+            className={`${inputClass} ${hasPrediction ? 'font-semibold text-primary' : 'text-muted-foreground'}`}
             readOnly
-            value={predictedDisplay}
+            value={result?.predictedDisplay ?? ''}
             placeholder="—"
             aria-live="polite"
           />
@@ -251,41 +248,48 @@ export function SixMinuteWalkForm({
               set({ predictedUnit: e.target.value as DistanceUnit })
             }
           >
-            <option value="m">m</option>
-            <option value="ft">ft</option>
-            <option value="yd">yd</option>
+            {(Object.keys(DISTANCE_UNIT_LABELS) as DistanceUnit[]).map((u) => (
+              <option key={u} value={u}>
+                {DISTANCE_UNIT_LABELS[u]}
+              </option>
+            ))}
           </select>
         </FieldShell>
+        {result?.domainMessage && !hasPrediction ? (
+          <p className="mt-1 text-xs text-muted-foreground" role="status">
+            {result.domainMessage}
+          </p>
+        ) : null}
       </div>
 
       <div className="overflow-hidden rounded-xl border border-border">
         <button
           type="button"
           className="flex w-full items-center justify-between bg-muted/30 px-3 py-2.5 text-left text-sm font-semibold text-accent"
-          onClick={() => setCompareOpen((o) => !o)}
-          aria-expanded={compareOpen}
+          onClick={() => set({ comparisonOpen: !input.comparisonOpen })}
+          aria-expanded={input.comparisonOpen}
         >
           <span>Check your 6MWD</span>
-          {compareOpen ? (
+          {input.comparisonOpen ? (
             <ChevronUp className="h-4 w-4 text-muted-foreground" />
           ) : (
             <ChevronDown className="h-4 w-4 text-muted-foreground" />
           )}
         </button>
-        {compareOpen ? (
+        {input.comparisonOpen ? (
           <div className="space-y-4 border-t border-border p-3 sm:p-4">
             <div>
               <label htmlFor="smwt-observed" className={labelClass}>
                 Distance walked
               </label>
-              <FieldShell error={errors.observedValue}>
+              <FieldShell error={errors.observedDistance}>
                 <input
                   id="smwt-observed"
                   className={inputClass}
                   inputMode="decimal"
-                  value={input.observedValue}
-                  onChange={(e) => set({ observedValue: e.target.value })}
-                  aria-invalid={Boolean(errors.observedValue)}
+                  value={input.observedDistance}
+                  onChange={(e) => set({ observedDistance: e.target.value })}
+                  aria-invalid={Boolean(errors.observedDistance)}
                 />
                 <select
                   className={unitSelectClass}
@@ -293,15 +297,15 @@ export function SixMinuteWalkForm({
                   value={input.observedUnit}
                   onChange={(e) => {
                     const next = e.target.value as DistanceUnit;
-                    const n = parseNumber(input.observedValue);
+                    const n = parseNumber(input.observedDistance);
                     if (n != null && n >= 0) {
                       const c = convertDistance(n, input.observedUnit, next);
                       if (c != null) {
                         set({
                           observedUnit: next,
-                          observedValue: formatUnitSwitch(
+                          observedDistance: formatUnitSwitch(
                             c,
-                            next === 'm' ? 0 : 1,
+                            next === 'm' ? 1 : next === 'km' ? 4 : 1,
                           ),
                         });
                         return;
@@ -310,14 +314,18 @@ export function SixMinuteWalkForm({
                     set({ observedUnit: next });
                   }}
                 >
-                  <option value="m">m</option>
-                  <option value="ft">ft</option>
-                  <option value="yd">yd</option>
+                  {(Object.keys(DISTANCE_UNIT_LABELS) as DistanceUnit[]).map(
+                    (u) => (
+                      <option key={u} value={u}>
+                        {DISTANCE_UNIT_LABELS[u]}
+                      </option>
+                    ),
+                  )}
                 </select>
               </FieldShell>
-              {errors.observedValue ? (
+              {errors.observedDistance ? (
                 <p className="mt-1 text-xs text-rose-600">
-                  {errors.observedValue}
+                  {errors.observedDistance}
                 </p>
               ) : null}
             </div>
@@ -333,9 +341,9 @@ export function SixMinuteWalkForm({
               <FieldShell muted>
                 <input
                   id="smwt-percent"
-                  className={`${inputClass} ${result?.formattedPercent ? 'font-semibold text-primary' : 'text-muted-foreground'}`}
+                  className={`${inputClass} ${result?.percentDisplay ? 'font-semibold text-primary' : 'text-muted-foreground'}`}
                   readOnly
-                  value={result?.formattedPercent ?? ''}
+                  value={result?.percentDisplay ?? ''}
                   placeholder="—"
                   aria-live="polite"
                 />

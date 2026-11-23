@@ -118,6 +118,36 @@ export function metersToDistance(meters: number, unit: DistanceUnit): number {
   }
 }
 
+export function convertHeight(
+  value: number,
+  from: HeightUnit,
+  to: HeightUnit,
+): number | null {
+  const cm = heightToCm(value, from);
+  if (cm == null) return null;
+  return cmToHeight(cm, to);
+}
+
+export function convertWeight(
+  value: number,
+  from: WeightUnit,
+  to: WeightUnit,
+): number | null {
+  const kg = weightToKg(value, from);
+  if (kg == null) return null;
+  return kgToWeight(kg, to);
+}
+
+export function convertDistance(
+  value: number,
+  from: DistanceUnit,
+  to: DistanceUnit,
+): number | null {
+  const m = distanceToMeters(value, from);
+  if (m == null) return null;
+  return metersToDistance(m, to);
+}
+
 export function formatDistanceDisplay(
   meters: number,
   unit: DistanceUnit,

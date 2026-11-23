@@ -10,11 +10,11 @@ import {
   createDefaultInput,
   createEmptyInput,
   inputsEqual,
-  type SixMinuteWalkFieldErrors,
-  type SixMinuteWalkInput,
-  type SixMinuteWalkResult,
+  type SixMinuteWalkTestFieldErrors,
+  type SixMinuteWalkTestInput,
+  type SixMinuteWalkTestResult,
 } from './types';
-import { validateSixMinuteWalkInput } from './validation';
+import { validateSixMinuteWalkTestInput } from './validation';
 
 export function SixMinuteWalkTestCalculator({
   metadata,
@@ -26,8 +26,10 @@ export function SixMinuteWalkTestCalculator({
   const initial = createDefaultInput();
   const [baseline, setBaseline] = React.useState(initial);
   const [input, setInput] = React.useState(initial);
-  const [errors, setErrors] = React.useState<SixMinuteWalkFieldErrors>({});
-  const [result, setResult] = React.useState<SixMinuteWalkResult | null>(null);
+  const [errors, setErrors] = React.useState<SixMinuteWalkTestFieldErrors>({});
+  const [result, setResult] = React.useState<SixMinuteWalkTestResult | null>(
+    null,
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -37,8 +39,8 @@ export function SixMinuteWalkTestCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  const apply = (next: SixMinuteWalkInput) => {
-    const v = validateSixMinuteWalkInput(next);
+  const apply = (next: SixMinuteWalkTestInput) => {
+    const v = validateSixMinuteWalkTestInput(next);
     setInput(next);
     setErrors(v.errors);
     setResult(v.result);

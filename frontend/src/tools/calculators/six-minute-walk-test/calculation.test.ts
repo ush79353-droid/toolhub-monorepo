@@ -3,23 +3,43 @@ import {
   convertHeight,
   convertWeight,
   percentOfExpected,
-  predictedSixMinuteWalkMeters,
+  predictSixMinuteWalkMeters,
 } from './calculation';
 import { createDefaultInput } from './types';
-import { validateSixMinuteWalkInput } from './validation';
+import { validateSixMinuteWalkTestInput } from './validation';
 
-// Male: 7.57*175 − 5.02*60 − 1.76*80 − 309 = 1324.75 − 301.2 − 140.8 − 309 = 573.75
-const malePred = predictedSixMinuteWalkMeters('male', 60, 175, 80);
-assert.ok(malePred != null);
-assert.ok(Math.abs(malePred! - 573.75) < 1e-9);
+const maleArgs = {
+  sex: 'male' as const,
+  ageYears: 60,
+  heightCm: 175,
+  weightKg: 80,
+};
+// Male: 7.57*175 − 5.02*60 − 1.76*80 − 309 = 573.75
+const malePred = predictSixMinuteWalkMeters(maleArgs);
+assert.equal(malePred.domainOk, true);
+assert.ok(malePred.meters != null);
+assert.ok(Math.abs(malePred.meters! - 573.75) < 1e-9);
 
-// Female: 2.11*165 − 2.29*65 − 5.78*55 + 667 = 348.15 − 148.85 − 317.9 + 667 = 548.4
-const femalePred = predictedSixMinuteWalkMeters('female', 55, 165, 65);
-assert.ok(femalePred != null);
-assert.ok(Math.abs(femalePred! - 548.4) < 1e-9);
+const femaleArgs = {
+  sex: 'female' as const,
+  ageYears: 55,
+  heightCm: 165,
+  weightKg: 65,
+};
+// Female: 2.11*165 − 2.29*65 − 5.78*55 + 667 = 548.4
+const femalePred = predictSixMinuteWalkMeters(femaleArgs);
+assert.equal(femalePred.domainOk, true);
+assert.ok(femalePred.meters != null);
+assert.ok(Math.abs(femalePred.meters! - 548.4) < 1e-9);
 
-assert.equal(predictedSixMinuteWalkMeters('male', 39, 175, 80), null);
-assert.equal(predictedSixMinuteWalkMeters('male', 81, 175, 80), null);
+assert.equal(
+  predictSixMinuteWalkMeters({ ...maleArgs, ageYears: 39 }).meters,
+  null,
+);
+assert.equal(
+  predictSixMinuteWalkMeters({ ...maleArgs, ageYears: 81 }).meters,
+  null,
+);
 
 assert.equal(percentOfExpected(573.75, 573.75), 100);
 assert.equal(percentOfExpected(0, 573.75), 0);
@@ -30,11 +50,11 @@ assert.ok(h != null && Math.abs(h - 175 / 2.54) < 1e-9);
 const w = convertWeight(80, 'kg', 'lb');
 assert.ok(w != null && Math.abs(w - 80 / 0.45359237) < 1e-6);
 
-const blank = validateSixMinuteWalkInput(createDefaultInput());
+const blank = validateSixMinuteWalkTestInput(createDefaultInput());
 assert.equal(blank.isValid, false);
 assert.equal(blank.result, null);
 
-const ok = validateSixMinuteWalkInput({
+const ok = validateSixMinuteWalkTestInput({
   sex: 'male',
   ageYears: '60',
   heightValue: '175',
@@ -42,15 +62,16 @@ const ok = validateSixMinuteWalkInput({
   weightValue: '80',
   weightUnit: 'kg',
   predictedUnit: 'm',
-  observedValue: '573.75',
+  observedDistance: '573.75',
   observedUnit: 'm',
+  comparisonOpen: true,
 });
 assert.equal(ok.isValid, true);
 assert.ok(ok.result);
-assert.ok(Math.abs(ok.result!.predictedMeters - 573.75) < 1e-9);
+assert.ok(Math.abs(ok.result!.predictedMeters! - 573.75) < 1e-9);
 assert.ok(Math.abs(ok.result!.percentOfExpected! - 100) < 1e-9);
 
-const outOfDomain = validateSixMinuteWalkInput({
+const outOfDomain = validateSixMinuteWalkTestInput({
   sex: 'male',
   ageYears: '30',
   heightValue: '175',
@@ -58,14 +79,16 @@ const outOfDomain = validateSixMinuteWalkInput({
   weightValue: '80',
   weightUnit: 'kg',
   predictedUnit: 'm',
-  observedValue: '',
+  observedDistance: '',
   observedUnit: 'm',
+  comparisonOpen: true,
 });
 assert.equal(outOfDomain.isValid, false);
-assert.equal(outOfDomain.result, null);
-assert.ok(outOfDomain.errors.ageYears);
+assert.ok(outOfDomain.result);
+assert.equal(outOfDomain.result!.predictedMeters, null);
+assert.equal(outOfDomain.result!.domainOk, false);
 
-const femaleSwitch = validateSixMinuteWalkInput({
+const femaleSwitch = validateSixMinuteWalkTestInput({
   sex: 'female',
   ageYears: '55',
   heightValue: '165',
@@ -73,8 +96,9 @@ const femaleSwitch = validateSixMinuteWalkInput({
   weightValue: '65',
   weightUnit: 'kg',
   predictedUnit: 'm',
-  observedValue: '0',
+  observedDistance: '0',
   observedUnit: 'm',
+  comparisonOpen: true,
 });
 assert.equal(femaleSwitch.isValid, true);
 assert.equal(femaleSwitch.result?.percentOfExpected, 0);
