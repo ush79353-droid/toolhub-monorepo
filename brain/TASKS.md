@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-734` | Implement LV Calculator on existing slug `lv-calculator` with ASE cube LVM/LVMI/RWT, known-BSA Yes/No (Mosteller), mm|cm dimensions, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/lv/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-733` | Implement Implantation Calculator on existing slug `implantation-calculator` with natural ovulation yes/no + IVF transfer panels, Wilcox 6–12 DPO window, IVF band without assumed embryo stage, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/implantation/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-732` | Implement Luteal Phase Calculator on existing slug `luteal-phase-calculator` with ovulation + next period start, calendar luteal days, reversed-date guard, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/luteal-phase/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 | `TOOL-729` | Implement hCG Levels Calculator on existing slug `hcg-levels-calculator` with serial difference/%/doubling/1–2d increases, privacy-safe share URL, no FX, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/hcg-levels/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |

@@ -300,6 +300,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LotteryTaxCalculator,
     })),
   ),
+  LvCalculator: lazyTool(() =>
+    import('@/tools/calculators/lv/LvCalculator').then((mod) => ({
+      default: mod.LvCalculator,
+    })),
+  ),
   MarginAndMarkupCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/margin-and-markup/MarginAndMarkupCalculator'

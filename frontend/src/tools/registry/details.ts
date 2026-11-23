@@ -84,6 +84,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LotteryAnnuityCalculator: () =>
     import('@/tools/calculators/lottery-annuity/detail'),
   LotteryTaxCalculator: () => import('@/tools/calculators/lottery-tax/detail'),
+  LvCalculator: () => import('@/tools/calculators/lv/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),
   MarginAndSalesTaxCalculator: () =>

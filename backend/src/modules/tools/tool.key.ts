@@ -44,6 +44,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LoanInterestCalculator',
   'LotteryAnnuityCalculator',
   'LotteryTaxCalculator',
+  'LvCalculator',
   'MarginAndMarkupCalculator',
   'MileageReimbursementCalculator',
 

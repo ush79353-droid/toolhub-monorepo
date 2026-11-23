@@ -1,3 +1,9 @@
+### 2026-11-23 — LV Calculator
+- **Summary:** Shipped educational ASE cube-formula LV mass on existing catalog slug `lv-calculator` (`LvCalculator`, catalog `6af46f10a27d8d1d4e990241`, pillar/subPillar null). Screenshot-first (ADR-023): Female; know BSA Yes; blank BSA + LVEDD/IVSd/PWd mm|cm; No→Mosteller; LVM/LVMI/RWT; sex for ASE reference labels only; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-734`.
+- **Commits:** `2b1833f6` (UI) / `ae4c8b54` (engine) / (reg/Brain this commit).
+- **Example:** BSA **1.7** · **45/9/9** mm → RWT **0.4**; mm/cm equivalent.
+- **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Implantation Calculator
 - **Summary:** Shipped educational implantation windows on existing catalog slug `implantation-calculator` (`ImplantationCalculator`, catalog `6af46f10a27d8d1d4e99021b`, pillar/subPillar null). Screenshot-first (ADR-023): Natural ovulation known yes/no + LMP estimate; IVF transfer without inferred embryo stage; Wilcox 6–12 DPO; privacy-safe share URL. **No FX**. `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-733`.
 - **Commits:** `6e07d947` (UI) / `81ab4e81` (engine) / (reg this commit).
