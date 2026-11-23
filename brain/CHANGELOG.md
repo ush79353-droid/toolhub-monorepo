@@ -1,3 +1,9 @@
+### 2026-11-23 — Sperm Analysis Calculator
+- **Summary:** Shipped educational total/functional sperm worksheet on existing catalog slug `sperm-analysis-calculator` (`SpermAnalysisCalculator`, catalog `6af46f10a27d8d1d4e990224`, pillar/subPillar null). Screenshot-first (ADR-023): blank volume (mL|µL), concentration (mln/ml|mln/µL), morphology/motility/vitality %; total = V×C; functional = product estimate; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-746`.
+- **Commits:** `b064edde` (UI) / `46d45b40` (engine) / (reg/Brain this commit).
+- **Example:** **3** mL × **20** million/mL → **60** million total.
+- **Verification:** `sperm-analysis/calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-23 — Progesterone to Estrogen Ratio Calculator
 - **Summary:** Shipped educational Pg/E2 mass ratio on existing catalog slug `progesterone-to-estrogen-ratio-calculator` (`ProgesteroneToEstrogenRatioCalculator`, catalog `6af46f10a27d8d1d4e990223`, pillar/subPillar null). Screenshot-first (ADR-023): blank progesterone (ng/mL default) + estradiol (pg/mL); ratio = P(pg/mL)/E2(pg/mL) ≡ 1000×P(ng/mL)/E2(pg/mL); nmol/L and pmol/L conversions; privacy-safe share URL. **No FX**. Activated via `tool:assign` `--set-active`; **`indexable` preserved false**. TASKS `TOOL-745`.
 - **Commits:** `ea396d68` (UI) / `b789768d` (engine) / (reg/Brain this commit).
