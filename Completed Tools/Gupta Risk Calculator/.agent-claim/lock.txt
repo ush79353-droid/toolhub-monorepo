@@ -1,0 +1,4 @@
+agent=cursor-composer-continuous-20261123-223000
+claimedAt=2026-11-23T23:09:56.1680983+05:00
+tool=Gupta Risk Calculator
+status=in_progress

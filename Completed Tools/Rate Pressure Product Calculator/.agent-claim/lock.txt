@@ -1,0 +1,6 @@
+﻿agent=cursor-composer-continuous-session-c
+status=completed
+ui=75d7a8e9
+engine=01b74543
+reg=8a486d64
+mongo=activated

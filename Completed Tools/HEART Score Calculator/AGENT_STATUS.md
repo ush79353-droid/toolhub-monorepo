@@ -33,7 +33,7 @@ None.
 
 1. `6e791af7` — UI  
 2. `c81530e5` — engine + tests  
-3. *(pending — registration/Brain this commit)*
+3. `053e81a2` — registry, Mongo assign, Brain, tracker
 
 ## Verification
 

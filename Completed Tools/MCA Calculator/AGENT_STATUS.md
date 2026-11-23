@@ -23,7 +23,9 @@
 
 ## Commits (local only, no push)
 
-Listed in delivery report after `git commit`.
+1. `ce8e8cef` — UI  
+2. `ae71f3d2` — engine + tests  
+3. `7461a01c` — registry (parallel branch) / Brain / Completed Tools folder
 
 ## Verification
 
