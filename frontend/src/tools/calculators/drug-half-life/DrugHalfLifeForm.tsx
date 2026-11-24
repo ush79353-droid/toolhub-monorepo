@@ -2,7 +2,11 @@
 
 import type { ReactNode } from 'react';
 import { InfoTooltip } from '@/tools/calculators/auto-loan/InfoTooltip';
-import { parsePositiveNumber } from './calculation';
+import {
+  MG_PER_UNIT,
+  MINUTES_PER_UNIT,
+  parsePositiveNumber,
+} from './calculation';
 import { DrugHalfLifeResults } from './DrugHalfLifeResults';
 import type {
   DosageMassUnit,
@@ -31,20 +35,6 @@ interface Props {
   onChange: (input: DrugHalfLifeInput) => void;
 }
 
-/** Minutes per unit — used to preserve physical half-life when switching units. */
-const MINUTES_PER: Record<HalfLifeTimeUnit, number> = {
-  min: 1,
-  h: 60,
-  d: 60 * 24,
-};
-
-/** Milligrams per unit — preserve physical dosage on unit switch. */
-const MG_PER: Record<DosageMassUnit, number> = {
-  mcg: 0.001,
-  mg: 1,
-  g: 1000,
-};
-
 function formatConverted(value: number): string {
   if (!Number.isFinite(value)) return '';
   if (Number.isInteger(value)) return String(value);
@@ -62,8 +52,8 @@ export function DrugHalfLifeForm({ input, errors, result, onChange }: Props) {
       set({ halfLifeUnit: next });
       return;
     }
-    const minutes = parsed * MINUTES_PER[input.halfLifeUnit];
-    const converted = minutes / MINUTES_PER[next];
+    const minutes = parsed * MINUTES_PER_UNIT[input.halfLifeUnit];
+    const converted = minutes / MINUTES_PER_UNIT[next];
     set({ halfLifeUnit: next, halfLifeText: formatConverted(converted) });
   };
 
@@ -74,8 +64,8 @@ export function DrugHalfLifeForm({ input, errors, result, onChange }: Props) {
       set({ dosageUnit: next });
       return;
     }
-    const mg = parsed * MG_PER[input.dosageUnit];
-    const converted = mg / MG_PER[next];
+    const mg = parsed * MG_PER_UNIT[input.dosageUnit];
+    const converted = mg / MG_PER_UNIT[next];
     set({ dosageUnit: next, dosageText: formatConverted(converted) });
   };
 
