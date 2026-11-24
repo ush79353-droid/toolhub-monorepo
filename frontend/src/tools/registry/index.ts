@@ -492,6 +492,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MacroCalculator,
     })),
   ),
+  MentzerIndexCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mentzer-index/MentzerIndexCalculator'
+    ).then((mod) => ({
+      default: mod.MentzerIndexCalculator,
+    })),
+  ),
   MipiCalculator: lazyTool(() =>
     import('@/tools/calculators/mipi/MipiCalculator').then((mod) => ({
       default: mod.MipiCalculator,

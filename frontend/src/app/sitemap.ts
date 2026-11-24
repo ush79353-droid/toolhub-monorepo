@@ -80,6 +80,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'lottery-tax-calculator',
   'lv-calculator',
   'macro-calculator',
+  'mentzer-index-calculator',
   'mipi-calculator',
   'margin-and-markup-calculator',
   'mileage-reimbursement-calculator',

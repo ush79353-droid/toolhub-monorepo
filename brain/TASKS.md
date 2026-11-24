@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-788` | Mentzer Index Calculator (`MentzerIndexCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/mentzer-index/*` | Mongo Atlas DNS |
 | `TOOL-787` | MIPI Calculator (`MipiCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/mipi/*` | Mongo Atlas DNS |
 | `TOOL-786` | IVIG Dose Calculator (`IvigDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/ivig-dose/*` | Mongo Atlas DNS |
 | `TOOL-785` | Lidocaine Dose Calculator (`LidocaineDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/lidocaine-dose/*` | Mongo Atlas DNS |

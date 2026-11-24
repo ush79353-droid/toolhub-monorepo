@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Mentzer Index Calculator (`/tools/mentzer-index-calculator`):** MCV÷RBC Mentzer index (`MentzerIndexCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **MIPI Calculator (`/tools/mipi-calculator`):** Continuous MIPI / MIPI-b (`MipiCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **IVIG Dose Calculator (`/tools/ivig-dose-calculator`):** Educational IVIG grams / RhIG vials (`IvigDoseCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Katch-McArdle Calculator (`/tools/katch-mcardle-calculator`):** Educational LBM BMR (`KatchMcardleCalculator`). **No FX**. Registry wired. **Mongo blocked**.

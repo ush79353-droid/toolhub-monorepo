@@ -1,4 +1,8 @@
-﻿### 2026-11-24 — MIPI Calculator
+﻿### 2026-11-24 — Mentzer Index Calculator
+
+- Educational Mentzer index MCV÷RBC (`MentzerIndexCalculator`, slug `mentzer-index-calculator`). Mentzer Lancet 1973; cutoff 13. **No FX**. Mongo blocked. Commits `285ac583` / `f8588ec2` / (reg this).
+
+### 2026-11-24 — MIPI Calculator
 
 - Educational continuous MIPI / MIPI-b (`MipiCalculator`, slug `mipi-calculator`). Hoster Blood 2008; WBC ×1000/µL → per-µL. **No FX**. Mongo blocked. Commits `c09bc7b8` / `02d86cc5` / (reg this).
 
