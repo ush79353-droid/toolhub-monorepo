@@ -1,4 +1,7 @@
-﻿### 2026-11-24 — Batch: Harris-Benedict, HCQ, IIFYM, INR, Iron Deficiency
+﻿### 2026-11-24 — Local Anesthetic Calculator
+
+- Educational plain (no epi) max dose (`LocalAnestheticCalculator`, slug `local-anesthetic-calculator`). Bupivacaine 175 mg cap warning. **No FX**. Mongo blocked. Commits `17ab999a` / `713c1ea3` / (reg this).
+### 2026-11-24 — Batch: Harris-Benedict, HCQ, IIFYM, INR, Iron Deficiency
 
 - Harris-Benedict `HarrisBenedictCalculator` — `a50c1a80` / `2beb0aa1` / reg this. Mongo blocked.
 - Hydroxychloroquine Dose `HydroxychloroquineDoseCalculator` — `bc62c4cd` / `0108bb96` / reg this. Mongo blocked.

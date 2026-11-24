@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Local Anesthetic Calculator (`/tools/local-anesthetic-calculator`):** Educational plain max dose (`LocalAnestheticCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Harris-Benedict Calculator (`/tools/harris-benedict-calculator-basal-metabolic-rate`):** Educational revised HB BMR (`HarrisBenedictCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Hydroxychloroquine Dose Calculator (`/tools/hydroxychloroquine-dose-calculator`):** Educational HCQ dose (`HydroxychloroquineDoseCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **IIFYM Calculator (`/tools/iifym-calculator-if-it-fits-your-macros`):** Educational macros (`IifymCalculator`). **No FX**. Registry wired. **Mongo blocked**.

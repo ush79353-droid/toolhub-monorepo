@@ -71,6 +71,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'auto-loan-calculator',
   'auto-lease-calculator',
   'loan-interest-calculator',
+  'local-anesthetic-calculator',
   'lottery-annuity-calculator',
   'lottery-tax-calculator',
   'lv-calculator',

@@ -437,6 +437,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LoanInterestCalculator,
     })),
   ),
+  LocalAnestheticCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/local-anesthetic/LocalAnestheticCalculator'
+    ).then((mod) => ({
+      default: mod.LocalAnestheticCalculator,
+    })),
+  ),
   LotteryAnnuityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/lottery-annuity/LotteryAnnuityCalculator'

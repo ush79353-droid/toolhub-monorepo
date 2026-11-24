@@ -123,6 +123,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),
   LoanInterestCalculator: () =>
     import('@/tools/calculators/loan-interest/detail'),
+  LocalAnestheticCalculator: () =>
+    import('@/tools/calculators/local-anesthetic/detail'),
   LotteryAnnuityCalculator: () =>
     import('@/tools/calculators/lottery-annuity/detail'),
   LotteryTaxCalculator: () => import('@/tools/calculators/lottery-tax/detail'),
