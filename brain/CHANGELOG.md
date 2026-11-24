@@ -1,3 +1,6 @@
+### 2026-11-24 — SEO word-count warning
+- **Summary:** A guide of 1,500–1,700 words stays clear. 1,200–1,499 words is a warning and can be approved. Under 1,200 or over 1,700 still blocks. The prompt still asks for 1,500–1,700, with slightly longer section minimums.
+
 ### 2026-11-24 — Sync category declaredToolCount
 - **Summary:** `declaredToolCount` on each category, pillar, and sub-pillar is the number of tools with `isActive: true` assigned to that node. `npm run categories:sync-counts` rewrites it.
 

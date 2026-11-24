@@ -247,6 +247,11 @@ export async function getCampaign(id: string) {
 export async function getDraft(id: string) {
   const draft = await mustDraft(id);
   const campaign = await mustCampaign(String(draft.campaignId));
+  const parsed = seoContentSchema.safeParse(draft.content);
+  if (parsed.success && draft.status === 'needs_review') {
+    draft.validation = await reviewValidation(draft, parsed.data);
+    await draft.save();
+  }
   return draftDetailDto(draft, campaign);
 }
 

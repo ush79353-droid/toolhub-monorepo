@@ -64,6 +64,24 @@ test('accepts a draft whose only issue is an unverified formula', () => {
   assert.ok(report.issues.some((issue) => issue.code === 'formula_unverified' && issue.severity === 'flag'));
 });
 
+test('warns when the guide is 1,200 to 1,499 words and still allows approval', () => {
+  const sections = content().sections.map((section, index) =>
+    index === 0 ? { ...section, paragraphs: [words(1100)] } : section
+  );
+  const report = check({ sections });
+  assert.equal(report.ok, true);
+  assert.ok(report.issues.some((issue) => issue.code === 'word_count' && issue.severity === 'flag'));
+});
+
+test('blocks a guide under 1,200 words', () => {
+  const sections = content().sections.map((section, index) =>
+    index === 0 ? { ...section, paragraphs: [words(800)] } : section
+  );
+  const report = check({ sections });
+  assert.equal(report.ok, false);
+  assert.ok(report.issues.some((issue) => issue.code === 'word_count' && issue.severity === 'block'));
+});
+
 test('rejects an over-long title', () => {
   const report = check({ metaTitle: 'T'.repeat(71) });
   assert.equal(report.ok, false);

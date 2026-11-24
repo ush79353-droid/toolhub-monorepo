@@ -95,7 +95,7 @@ Do not count:
 - Internal link URLs or slugs.
 - JSON field names and section IDs.
 
-Aim for approximately 1,600 words. A draft under 1,500 words is rejected, so do not stop early.
+Aim for approximately 1,600 words. A draft under 1,500 words is rejected, so do not stop early. Write each section a little past its minimum so the finished draft is not short.
 
 Do not artificially increase the word count through repetition, unnecessary introductions, generic financial advice, keyword stuffing, or redundant explanations.
 
@@ -268,7 +268,7 @@ Use the exact section IDs.
 
 ## Section 1: what-this-covers
 
-Write at least 240 words in this section.
+Write at least 260 words in this section.
 
 Explain:
 - What the calculator is designed to calculate.
@@ -284,7 +284,7 @@ Do not write a generic introduction that could fit any financial calculator.
 
 ## Section 2: how-to-use
 
-Write at least 230 words in this section.
+Write at least 250 words in this section.
 
 Explain how to use the actual calculator.
 
@@ -306,7 +306,7 @@ Use bullets when they make instructions easier to follow.
 
 ## Section 3: how-it-works
 
-Write at least 280 words in this section.
+Write at least 300 words in this section.
 
 Explain the calculation concept in understandable language.
 
@@ -326,7 +326,7 @@ Do not use this section to repeat the calculator introduction.
 
 ## Section 4: worked-example
 
-Write at least 230 words in this section.
+Write at least 250 words in this section.
 
 Create a clear illustrative example relevant to the calculator.
 
@@ -347,7 +347,7 @@ If calculation accuracy cannot be established from the supplied data, provide a 
 
 ## Section 5: how-to-read
 
-Write at least 230 words in this section.
+Write at least 250 words in this section.
 
 Explain how users should interpret the calculator's results.
 
@@ -366,7 +366,7 @@ Do not repeat the worked example.
 
 ## Section 6: mistakes
 
-Write at least 180 words in this section.
+Write at least 200 words in this section.
 
 Explain common mistakes specific to this calculator.
 
@@ -386,7 +386,7 @@ Do not use the same generic mistake list across every financial calculator.
 
 # 7. FAQ Requirements
 
-Generate 4 to 5 genuinely useful FAQs.
+Generate 5 to 8 genuinely useful FAQs.
 
 Questions must reflect real questions that someone using this specific calculator might ask.
 

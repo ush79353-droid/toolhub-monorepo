@@ -95,7 +95,11 @@ export default function SeoDraftReviewPage() {
         <div className="flex flex-wrap items-center gap-3">
           <StatusBadge status={draft.status} />
           {draft.validation?.ok ? (
-            <span className="text-xs text-emerald-700">No blocking checks</span>
+            draft.validation.issues.some((issue) => issue.severity === 'flag') ? (
+              <span className="text-xs text-amber-700">Warning only. Approval is allowed.</span>
+            ) : (
+              <span className="text-xs text-emerald-700">No blocking checks</span>
+            )
           ) : (
             <span className="text-xs text-amber-700">Blocking checks open</span>
           )}
@@ -155,7 +159,7 @@ export default function SeoDraftReviewPage() {
         <ul className="space-y-1 rounded-xl border border-border bg-white p-4 text-sm">
           {draft.validation.issues.map((issue, index) => (
             <li key={`${issue.code}-${index}`} className={issue.severity === 'block' ? 'text-red-700' : 'text-amber-700'}>
-              {issue.severity === 'block' ? 'Block' : 'Flag'}: {issue.message}
+              {issue.severity === 'block' ? 'Block' : 'Warning'}: {issue.message}
             </li>
           ))}
         </ul>

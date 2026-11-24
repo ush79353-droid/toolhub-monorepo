@@ -68,8 +68,14 @@ export function validateDraft(input: ValidateDraftInput): DraftValidation {
   }
 
   const words = countDraftWords(content);
-  if (words < 1500 || words > 1700) {
-    block(issues, 'word_count', `Guide is ${words} words. Visible educational copy must be 1,500–1,700 words.`);
+  if (words < 1200 || words > 1700) {
+    block(issues, 'word_count', `Guide is ${words} words. Visible educational copy must be 1,200–1,700 words.`);
+  } else if (words < 1500) {
+    issues.push({
+      code: 'word_count',
+      message: `Guide is ${words} words. 1,500–1,700 is the target. 1,200–1,499 is a warning and can still be approved.`,
+      severity: 'flag',
+    });
   }
   if (content.sections.some((section) => section.formula.trim().length > 0)) {
     issues.push({
