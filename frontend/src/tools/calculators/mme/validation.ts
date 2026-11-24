@@ -44,8 +44,16 @@ export function validateMmeInput(input: MmeInput): MmeValidation {
     };
   }
 
-  return {
-    errors,
-    result: calculateMme(input),
-  };
+  try {
+    return {
+      errors,
+      result: calculateMme(input),
+    };
+  } catch {
+    errors.doseText = 'Enter a valid dose for the selected opioid and unit.';
+    return {
+      errors,
+      result: calculateMme({ ...input, doseText: '' }),
+    };
+  }
 }
