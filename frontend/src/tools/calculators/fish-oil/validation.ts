@@ -1,7 +1,12 @@
-import type {
-  FishOilFieldErrors,
-  FishOilInput,
-  FishOilResult,
+import { calculateFishOil } from './calculation';
+import {
+  AGE_BAND_OPTIONS,
+  SPECIAL_REQUIREMENT_OPTIONS,
+  type FishOilAgeBandId,
+  type FishOilFieldErrors,
+  type FishOilInput,
+  type FishOilResult,
+  type FishOilSpecialRequirementId,
 } from './types';
 
 export interface FishOilValidation {
@@ -9,28 +14,35 @@ export interface FishOilValidation {
   result: FishOilResult | null;
 }
 
-const UI_SHELL_DISCLAIMER =
-  'Educational omega-3 guidance shell — engine formulas land in the next commit.';
+const AGE_IDS = new Set(AGE_BAND_OPTIONS.map((o) => o.id));
+const SPECIAL_IDS = new Set(SPECIAL_REQUIREMENT_OPTIONS.map((o) => o.id));
 
-/**
- * UI-phase stub: accepts screenshot defaults and returns an empty educational
- * result shell. Replaced by the engine commit with calculateFishOil wiring.
- */
 export function validateFishOilInput(input: FishOilInput): FishOilValidation {
   const errors: FishOilFieldErrors = {};
-  void input;
+
+  if (input.ageBand !== '' && !AGE_IDS.has(input.ageBand as FishOilAgeBandId)) {
+    errors.ageBand = 'Choose a listed age band.';
+  }
+
+  if (
+    input.specialRequirement !== '' &&
+    !SPECIAL_IDS.has(input.specialRequirement as FishOilSpecialRequirementId)
+  ) {
+    errors.specialRequirement = 'Choose a listed special requirement.';
+  }
+
+  if (input.dosageUnit !== 'mg') {
+    // Screenshot only exposes mg; reject any other unit without inventing FX/conversions.
+    errors.specialRequirement =
+      errors.specialRequirement ?? 'Dosage unit must be mg.';
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return { errors, result: null };
+  }
 
   return {
-    errors,
-    result: {
-      ageGuidance: null,
-      specialGuidance: null,
-      statusHeadline: 'Select an age band or special requirement',
-      statusDetail:
-        'Screenshot defaults leave both panels empty until a selection is made.',
-      sourceNote:
-        'NIH ODS Omega-3 fact sheets; AHA advisories; FDA supplement upper limit.',
-      disclaimer: UI_SHELL_DISCLAIMER,
-    },
+    errors: {},
+    result: calculateFishOil(input),
   };
 }
