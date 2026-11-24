@@ -1,4 +1,7 @@
-﻿### 2026-11-24 — Batch: Katch-McArdle, Keto, Lidocaine Dose
+﻿### 2026-11-24 — IVIG Dose Calculator
+
+- Educational IVIG/RhIG worksheet (`IvigDoseCalculator`, slug `ivig-dose-calculator`). Privigen 1 g/kg intensity; Devine AdjBW; RhIG vial branch. **No FX**. Mongo blocked. Commits `88286e9e` / `1e1b19e5` / (reg this).
+### 2026-11-24 — Batch: Katch-McArdle, Keto, Lidocaine Dose
 
 - Katch-McArdle `KatchMcardleCalculator` — `c7a16f0d` / `901f7a1d` / reg this. Mongo blocked.
 - Keto `KetoCalculator` — `d763e7af` / `0e063ae7` / reg this. Mongo blocked.

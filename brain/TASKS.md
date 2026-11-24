@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-786` | IVIG Dose Calculator (`IvigDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/ivig-dose/*` | Mongo Atlas DNS |
 | `TOOL-785` | Lidocaine Dose Calculator (`LidocaineDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/lidocaine-dose/*` | Mongo Atlas DNS |
 | `TOOL-784` | Keto Calculator (`KetoCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/keto/*` | Mongo Atlas DNS |
 | `TOOL-783` | Katch-McArdle Calculator (`KatchMcardleCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/katch-mcardle/*` | Mongo Atlas DNS |

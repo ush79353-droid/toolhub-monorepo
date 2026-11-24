@@ -67,6 +67,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'inr-calculator',
   'iron-deficiency-calculator',
   'isotretinoin-dose-calculator',
+  'ivig-dose-calculator',
   'katch-mcardle-calculator',
   'keto-calculator',
   'lidocaine-dose-calculator',

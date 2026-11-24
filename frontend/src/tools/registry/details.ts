@@ -120,6 +120,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/iron-deficiency/detail'),
   IsotretinoinDoseCalculator: () =>
     import('@/tools/calculators/isotretinoin-dose/detail'),
+  IvigDoseCalculator: () =>
+    import('@/tools/calculators/ivig-dose/detail'),
   KatchMcardleCalculator: () =>
     import('@/tools/calculators/katch-mcardle/detail'),
   KetoCalculator: () => import('@/tools/calculators/keto/detail'),

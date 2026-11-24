@@ -63,6 +63,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'InterestRateParityCalculator',
   'IronDeficiencyCalculator',
   'IsotretinoinDoseCalculator',
+  'IvigDoseCalculator',
   'KatchMcardleCalculator',
   'KetoCalculator',
   'LidocaineDoseCalculator',

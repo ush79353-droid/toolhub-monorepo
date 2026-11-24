@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **IVIG Dose Calculator (`/tools/ivig-dose-calculator`):** Educational IVIG grams / RhIG vials (`IvigDoseCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Katch-McArdle Calculator (`/tools/katch-mcardle-calculator`):** Educational LBM BMR (`KatchMcardleCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Keto Calculator (`/tools/keto-calculator`):** Educational keto macros (`KetoCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Lidocaine Dose Calculator (`/tools/lidocaine-dose-calculator`):** Educational lidocaine max dose (`LidocaineDoseCalculator`). **No FX**. Registry wired. **Mongo blocked**.

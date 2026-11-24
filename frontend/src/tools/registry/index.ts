@@ -425,6 +425,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.IsotretinoinDoseCalculator,
     })),
   ),
+  IvigDoseCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ivig-dose/IvigDoseCalculator'
+    ).then((mod) => ({
+      default: mod.IvigDoseCalculator,
+    })),
+  ),
   KatchMcardleCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/katch-mcardle/KatchMcardleCalculator'
