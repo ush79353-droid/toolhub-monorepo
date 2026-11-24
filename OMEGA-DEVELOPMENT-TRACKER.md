@@ -33,3 +33,5 @@ Agent: cursor-agent-5098051a9bc9
 - Issued: Arterial Blood pH Calculator (empty folder)
 - Completing: FEUrea Calculator (6af46f12a27d8d1d4e9902d1)
 
+
+| Kidney Failure Risk Calculator | 6af46f12a27d8d1d4e9902d4 | kidney-failure-risk-calculator | KidneyFailureRiskCalculator | 8fad73cc / 10b0f794 / (reg) | pending assign |
