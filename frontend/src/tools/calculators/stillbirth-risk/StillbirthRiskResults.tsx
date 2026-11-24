@@ -17,7 +17,7 @@ export function StillbirthRiskResults({ result }: Props) {
       <h3 className="text-sm font-semibold text-accent">Result</h3>
 
       <p className="text-xs leading-relaxed text-muted-foreground">
-        Yerke 2017 calibrated stillbirth probability from 32 weeks onward
+        Trudell 2017 calibrated stillbirth probability from 32 weeks onward
         (educational). This is a logistic model probability — not an odds-ratio
         multiplied by a baseline population rate.
       </p>
@@ -50,7 +50,7 @@ export function StillbirthRiskResults({ result }: Props) {
           {result.bmiCategoryLabel ? (
             <span className="text-muted-foreground">
               {' '}
-              ({result.bmiCategoryLabel} in Yerke model)
+              ({result.bmiCategoryLabel} in Trudell model)
             </span>
           ) : null}
         </p>

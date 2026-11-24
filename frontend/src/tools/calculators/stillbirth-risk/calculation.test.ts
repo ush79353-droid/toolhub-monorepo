@@ -1,5 +1,5 @@
 /**
- * Stillbirth Risk (Yerke 2017) — assert-based engine check.
+ * Stillbirth Risk (Trudell 2017) — assert-based engine check.
  * Run: npx tsx src/tools/calculators/stillbirth-risk/calculation.test.ts
  */
 import {

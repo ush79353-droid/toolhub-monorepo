@@ -7,7 +7,7 @@ import {
 
 export const toolPageDetail: ToolPageDetail = {
   subtitleLead:
-    'Educational Yerke 2017 ≥32-week stillbirth probability — calibrated US logistic model, share page URL only.',
+    'Educational Trudell 2017 ≥32-week stillbirth probability — calibrated US logistic model, share page URL only.',
   asideAriaLabel: 'Interactive Stillbirth Risk Calculator',
   tocItems: STILLBIRTH_RISK_TOC_ITEMS,
   GuideArticle: StillbirthRiskGuideArticle,

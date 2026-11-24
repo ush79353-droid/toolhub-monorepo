@@ -4,7 +4,7 @@ import type { TableOfContentsItem } from '@/tools/calculators/auto-loan/TableOfC
 export const STILLBIRTH_RISK_TOC_ITEMS: readonly TableOfContentsItem[] = [
   { id: 'introduction', label: 'Stillbirth Risk Calculator' },
   { id: 'what-is', label: 'What This Model Estimates' },
-  { id: 'yerke', label: 'Yerke 2017 Model' },
+  { id: 'trudell', label: 'Trudell 2017 Model' },
   { id: 'predictors', label: 'Model Predictors' },
   { id: 'screenshot', label: 'Screenshot Parity Fields' },
   { id: 'how-to-use', label: 'How to Use' },
@@ -16,7 +16,7 @@ export const STILLBIRTH_RISK_FAQS: readonly FAQItem[] = [
   {
     question: 'Which stillbirth model does this calculator use?',
     answer:
-      'The Yerke et al. 2017 US population logistic model for stillbirth from 32 weeks onward, excluding pregnancies with major fetal anomaly or aneuploidy (PLoS ONE. 2017;12(8):e0182874).',
+      'The Trudell et al. 2017 US population logistic model for stillbirth from 32 weeks onward, excluding pregnancies with major fetal anomaly or aneuploidy (PLoS ONE. 2017;12(3):e0173461).',
   },
   {
     question: 'Why is there no editable 0.2197% baseline?',
@@ -26,7 +26,7 @@ export const STILLBIRTH_RISK_FAQS: readonly FAQItem[] = [
   {
     question: 'Why are ART, SLE, and APS on the form?',
     answer:
-      'Those fields mirror common intake screenshots for usability. They are not Yerke 2017 predictors in this implementation and do not change the computed probability.',
+      'Those fields mirror common intake screenshots for usability. They are not Trudell 2017 predictors in this implementation and do not change the computed probability.',
   },
   {
     question: 'Is patient data stored or shared in the URL?',

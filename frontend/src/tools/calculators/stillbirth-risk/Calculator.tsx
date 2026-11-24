@@ -73,7 +73,7 @@ export function StillbirthRiskCalculator({
   const summary = [
     'Stillbirth Risk Calculator',
     '',
-    'Educational Yerke 2017 ≥32-week stillbirth probability (logistic model).',
+    'Educational Trudell 2017 ≥32-week stillbirth probability (logistic model).',
     'Not medical advice. Does not encode patient data in this link.',
     '',
     pageUrl,
@@ -117,7 +117,7 @@ export function StillbirthRiskCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Yerke et al. 2017 US stillbirth model (≥32 weeks).
+            Trudell et al. 2017 US stillbirth model (≥32 weeks).
           </p>
         </div>
         {headerActions ? (

@@ -13,7 +13,7 @@ export function StillbirthRiskGuideArticle() {
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Estimate an individualized stillbirth probability from 32 weeks of
-        gestation using the published Yerke et al. 2017 US cohort logistic model.
+        gestation using the published Trudell et al. 2017 US cohort logistic model.
         Educational counseling aid only — not a care plan.
       </p>
 
@@ -32,10 +32,10 @@ export function StillbirthRiskGuideArticle() {
       </p>
 
       <h2
-        id="yerke"
+        id="trudell"
         className="mt-8 text-lg font-bold tracking-tight text-accent sm:text-xl"
       >
-        Yerke 2017 Model
+        Trudell 2017 Model
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Logistic form: p = 1 / (1 + e<sup>−logit</sup>) with published intercept{' '}
@@ -77,7 +77,7 @@ export function StillbirthRiskGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         ART, SLE, APS, alcohol, and detailed ethnicity options beyond Black vs
         other appear on the form to match legacy intake layouts. They are not
-        applied in this Yerke-calibrated engine and are labeled accordingly in
+        applied in this Trudell-calibrated engine and are labeled accordingly in
         results when relevant.
       </p>
 

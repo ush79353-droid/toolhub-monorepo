@@ -1,8 +1,9 @@
 /**
- * Yerke et al. US stillbirth logistic model (≥32 weeks, anomalies/aneuploidy excluded).
+ * Trudell et al. US stillbirth logistic model (≥32 weeks, anomalies/aneuploidy excluded).
  *
- * Source: Yerke TA, et al. A population-based analysis of stillbirth in large cohort
- * of pregnant women in the United States. PLoS ONE. 2017;12(8):e0182874.
+ * Source: Trudell AS, et al. A stillbirth calculator… PLoS ONE. 2017;12(3):e0173461.
+ * Coefficients follow published Table 3 (smoking β = 0.2270; OR 1.25). The narrative
+ * formula in the same paper lists 0.2770 — that value is inconsistent with Table 3/OR.
  *
  * logit = β₀ + Σβᵢxᵢ; p = 1 / (1 + exp(−logit)). Educational only — not clinical advice.
  */
@@ -10,9 +11,9 @@
 import type { DiabetesOption, StillbirthRiskInput, StillbirthRiskResult } from './types';
 
 export const MODEL_LABEL =
-  'Yerke et al. 2017 US stillbirth model (≥32 weeks)';
+  'Trudell et al. 2017 US stillbirth model (≥32 weeks)';
 export const MODEL_VERSION =
-  'Yerke TA, et al. PLoS ONE. 2017;12(8):e0182874 (doi: 10.1371/journal.pone.0182874)';
+  'Trudell AS, et al. PLoS ONE. 2017;12(3):e0173461 (doi: 10.1371/journal.pone.0173461)';
 
 export const DISCLAIMER =
   'Educational stillbirth probability estimate for counseling contexts. It must not replace clinical judgment, surveillance plans, or care from a qualified obstetric provider.';
@@ -34,7 +35,7 @@ export const COEFFICIENTS = {
   bmi30to34_9: 0.5607,
   bmi35to39_9: -0.5948,
   bmiGe40: 0.1593,
-  smoking: 0.227,
+  smoking: 0.2270,
   chronicHypertension: 0.6255,
   pregestationalDiabetes: 0.9863,
 } as const;
@@ -111,7 +112,7 @@ export function hasPregestationalDiabetes(diabetes: DiabetesOption): boolean {
   return diabetes === 'type1' || diabetes === 'type2';
 }
 
-export interface YerkePredictors {
+export interface TrudellPredictors {
   ageYears: number;
   bmi: number;
   isBlack: boolean;
@@ -121,7 +122,7 @@ export interface YerkePredictors {
   pregestationalDiabetes: boolean;
 }
 
-export function computeLogit(p: YerkePredictors): number {
+export function computeLogit(p: TrudellPredictors): number {
   const band = bmiToBand(p.bmi);
   return (
     COEFFICIENTS.intercept +
@@ -185,15 +186,15 @@ function collectNonModelFieldsNote(input: NonModelNoteInput): string | null {
   if (input.alcoholDuringPregnancy) parts.push('alcohol use during pregnancy');
   if (input.ethnicity && input.ethnicity !== 'nonHispanicBlack') {
     parts.push(
-      'detailed ethnicity category (Yerke uses Non-Hispanic Black vs all others only)'
+      'detailed ethnicity category (Trudell uses Non-Hispanic Black vs all others only)'
     );
   }
   if (parts.length === 0) return null;
-  return `These entries match common intake forms but are not coefficients in the calibrated Yerke 2017 model and do not change this score: ${parts.join('; ')}.`;
+  return `These entries match common intake forms but are not coefficients in the calibrated Trudell 2017 model and do not change this score: ${parts.join('; ')}.`;
 }
 
 export function calculateStillbirthRisk(
-  predictors: YerkePredictors,
+  predictors: TrudellPredictors,
   inputForNotes: Pick<
     StillbirthRiskInput,
     'art' | 'sle' | 'aps' | 'alcoholDuringPregnancy' | 'ethnicity'

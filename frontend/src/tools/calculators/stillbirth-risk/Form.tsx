@@ -85,10 +85,10 @@ export function StillbirthRiskForm({
       autoComplete="off"
     >
       <p className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 text-xs leading-relaxed text-muted-foreground">
-        Uses the published Yerke et al. 2017 US logistic model (≥32 weeks).
+        Uses the published Trudell et al. 2017 US logistic model (≥32 weeks).
         Screenshot-matched fields for ART, SLE, APS, alcohol, and detailed
         ethnicity are shown for intake parity but only{' '}
-        <strong className="font-semibold text-accent">Yerke predictors</strong>{' '}
+        <strong className="font-semibold text-accent">Trudell predictors</strong>{' '}
         change the score. No editable baseline multiplier. Share uses the page
         URL only — no clinical data in links.
       </p>
@@ -103,7 +103,7 @@ export function StillbirthRiskForm({
             Age
             <InfoTooltip
               label="Maternal age"
-              text="Yerke age bands: ≤18, 19–34 (reference), 35–39, ≥40."
+              text="Trudell age bands: ≤18, 19–34 (reference), 35–39, ≥40."
             />
           </label>
           <FieldShell error={errors.ageYears}>
@@ -176,7 +176,7 @@ export function StillbirthRiskForm({
             BMI
             <InfoTooltip
               label="Body mass index"
-              text="kg/m² from height and pre-pregnancy weight. Yerke model uses BMI category bands, not continuous BMI."
+              text="kg/m² from height and pre-pregnancy weight. Trudell model uses BMI category bands, not continuous BMI."
             />
           </label>
           <FieldShell>
@@ -200,7 +200,7 @@ export function StillbirthRiskForm({
             Ethnicity
             <InfoTooltip
               label="Ethnicity"
-              text="Yerke 2017 uses a Black vs non-Black indicator (Non-Hispanic Black → yes). Other groups are collected for form parity only."
+              text="Trudell 2017 uses a Black vs non-Black indicator (Non-Hispanic Black → yes). Other groups are collected for form parity only."
             />
           </legend>
           <div className="flex flex-col gap-2">
@@ -227,7 +227,7 @@ export function StillbirthRiskForm({
             Previous pregnancies
             <InfoTooltip
               label="Parity"
-              text="No → nulliparous (+0.3423 in Yerke). Yes → not nulliparous (reference)."
+              text="No → nulliparous (+0.3423 in Trudell). Yes → not nulliparous (reference)."
             />
           </legend>
           <PriorPregnancyRadios
@@ -242,7 +242,7 @@ export function StillbirthRiskForm({
             Assisted Reproductive Technology (ART)
             <InfoTooltip
               label="ART"
-              text="Shown for screenshot parity. Not a Yerke 2017 coefficient — does not change this score."
+              text="Shown for screenshot parity. Not a Trudell 2017 coefficient — does not change this score."
             />
           </legend>
           <YesNoRadios
@@ -292,7 +292,7 @@ export function StillbirthRiskForm({
             Systemic Lupus Erythematosus (SLE)
             <InfoTooltip
               label="SLE"
-              text="Not in Yerke 2017 model — does not change score."
+              text="Not in Trudell 2017 model — does not change score."
             />
           </legend>
           <YesNoRadios
@@ -307,7 +307,7 @@ export function StillbirthRiskForm({
             Anti-phospholipid syndrome (APS)
             <InfoTooltip
               label="APS"
-              text="Not in Yerke 2017 model — does not change score."
+              text="Not in Trudell 2017 model — does not change score."
             />
           </legend>
           <YesNoRadios
@@ -336,7 +336,7 @@ export function StillbirthRiskForm({
           <span>
             Alcohol use during pregnancy
             <span className="block text-xs text-muted-foreground">
-              Not in Yerke 2017 — does not change score
+              Not in Trudell 2017 — does not change score
             </span>
           </span>
         </label>
@@ -349,7 +349,7 @@ export function StillbirthRiskForm({
             onChange={(e) => set({ smokingDuringPregnancy: e.target.checked })}
           />
           <span>
-            Smoking during pregnancy (+0.2270 in Yerke model)
+            Smoking during pregnancy (+0.2270 in Trudell model)
           </span>
         </label>
       </fieldset>
