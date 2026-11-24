@@ -14,6 +14,7 @@ import {
   type KetoInput,
   type KetoResult,
 } from './types';
+import { validateKetoInput } from './validation';
 
 export function KetoCalculator({
   metadata,
@@ -26,7 +27,9 @@ export function KetoCalculator({
   const [baseline, setBaseline] = React.useState(initial);
   const [input, setInput] = React.useState(initial);
   const [errors, setErrors] = React.useState<KetoFieldErrors>({});
-  const [result, setResult] = React.useState<KetoResult | null>(null);
+  const [result, setResult] = React.useState<KetoResult | null>(() =>
+    validateKetoInput(initial).result,
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -36,11 +39,11 @@ export function KetoCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  // UI commit: field state only. Engine commit wires validation + calculation.
   const apply = (next: KetoInput) => {
+    const v = validateKetoInput(next);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(v.errors);
+    setResult(v.result);
   };
 
   const handleReload = () => {
@@ -48,14 +51,15 @@ export function KetoCalculator({
     setInput(fresh);
     setBaseline(fresh);
     setErrors({});
-    setResult(null);
+    setResult(validateKetoInput(fresh).result);
     setFeedback(null);
   };
 
   const handleClear = () => {
-    setInput(createEmptyInput());
+    const fresh = createEmptyInput();
+    setInput(fresh);
     setErrors({});
-    setResult(null);
+    setResult(validateKetoInput(fresh).result);
     setFeedback(null);
   };
 
