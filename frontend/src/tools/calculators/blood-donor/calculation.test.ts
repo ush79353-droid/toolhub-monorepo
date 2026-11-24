@@ -26,7 +26,13 @@ function assert(cond: unknown, msg: string): asserts cond {
 
 {
   const types = compatibleBloodTypes('receive', 'plasma', 'O-');
-  assert(types.length === 8, 'O universal plasma recipient');
+  assert(types.length === 8, 'O- universal plasma recipient');
+  const aNegPlasmaDonors = compatibleBloodTypes('receive', 'plasma', 'A-');
+  assert(
+    aNegPlasmaDonors.join(',') === 'A-,A+,AB-,AB+',
+    `A- plasma donors ${aNegPlasmaDonors.join(',')}`,
+  );
+  assert(!aNegPlasmaDonors.includes('O-') && !aNegPlasmaDonors.includes('O+'), 'O plasma not for A recipient');
 }
 
 {

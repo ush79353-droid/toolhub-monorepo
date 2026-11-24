@@ -66,16 +66,16 @@ const PLASMA_DONOR_TO_RECIPIENT: Record<BloodType, BloodType[]> = {
   'AB+': ALL_TYPES,
 };
 
-/** Plasma: recipient → donors */
+/** Plasma: recipient → donors (exact inverse of PLASMA_DONOR_TO_RECIPIENT). */
 const PLASMA_RECIPIENT_FROM_DONOR: Record<BloodType, BloodType[]> = {
   'O-': ALL_TYPES,
-  'O+': ALL_TYPES,
-  'A-': ['O-', 'O+', 'A-', 'A+'],
-  'A+': ['O-', 'O+', 'A-', 'A+'],
-  'B-': ['O-', 'O+', 'B-', 'B+'],
-  'B+': ['O-', 'O+', 'B-', 'B+'],
-  'AB-': ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+'],
-  'AB+': ALL_TYPES,
+  'O+': ['O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+'],
+  'A-': ['A-', 'A+', 'AB-', 'AB+'],
+  'A+': ['A-', 'A+', 'AB-', 'AB+'],
+  'B-': ['B-', 'B+', 'AB-', 'AB+'],
+  'B+': ['B-', 'B+', 'AB-', 'AB+'],
+  'AB-': ['AB-', 'AB+'],
+  'AB+': ['AB-', 'AB+'],
 };
 
 export function compatibleBloodTypes(
