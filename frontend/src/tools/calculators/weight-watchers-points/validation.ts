@@ -1,6 +1,5 @@
 /**
- * Weight Watchers Points Calculator — UI stub validation
- * (engine commit completes rules).
+ * Weight Watchers Points Calculator — pure input validation (ADR-018).
  */
 
 import { calculateWeightWatchersPoints, parseNumber } from './calculation';
