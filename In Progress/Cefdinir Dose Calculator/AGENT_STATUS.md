@@ -1,2 +1,0 @@
-﻿DEVELOPED — Mongo pending
-UI 53571a68 / ENG 980c626b
