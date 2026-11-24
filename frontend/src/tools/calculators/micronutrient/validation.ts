@@ -1,5 +1,5 @@
 /**
- * Micronutrient Calculator — UI stub validation (ADR-019 commit 1).
+ * Micronutrient Calculator — pure validation (ADR-018).
  */
 
 import { calculateMicronutrient, parseNumber } from './calculation';
