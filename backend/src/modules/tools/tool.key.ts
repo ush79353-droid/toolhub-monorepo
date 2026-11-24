@@ -595,6 +595,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BalloonPaymentCalculator',
   'BasisPointCalculator',
   'BbtCalculator',
+  'AaGradientCalculator',
   'AbiCalculator',
   'AbsoluteEosinophilCountCalculator',
   'AbsoluteLymphocyteCountCalculator',

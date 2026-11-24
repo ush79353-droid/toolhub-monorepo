@@ -3394,6 +3394,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BbtCalculator,
     })),
   ),
+  AaGradientCalculator: lazyTool(() =>
+    import('@/tools/calculators/aa-gradient/AaGradientCalculator').then((mod) => ({
+      default: mod.AaGradientCalculator,
+    })),
+  ),
   AbiCalculator: lazyTool(() =>
     import('@/tools/calculators/abi/AbiCalculator').then((mod) => ({
       default: mod.AbiCalculator,

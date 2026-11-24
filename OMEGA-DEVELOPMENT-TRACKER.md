@@ -18,3 +18,16 @@ Agent: cursor-agent-5098051a9bc9
 | Calculator | Reason |
 | --- | --- |
 | BAI Calculator - Body Adiposity Index | Empty task folder (no prompt/screenshots) |
+
+### FEUrea finalized (cursor-agent-18fcdbbc-002101)
+- Folder: Tools\Completed\FEUrea Calculator — Acute Kidney Injury Cause Differentiation
+- Commits: 8ad83355 / 8601408f / ecb81b39 on origin/development
+- Mongo assign BLOCKED (querySrv EBADRESP); indexable unchanged
+
+## 2026-11-25 session cursor-agent-90395695-010538
+- Completed: Aa Gradient Calculator (6af46f12a27d8d1d4e9902e0) commits e37e3415 / 33efe837 / (integration)
+
+### Audit-C finalized (cursor-agent-18fcdbbc-002101)
+- Folder: Tools\Completed\Audit-C Calculator – Am I an Alcoholic
+- Commits: dfc24cd1 / 6e488c03 / 05c986f7 on origin/development
+- Mongo assign BLOCKED (DNS); catalog name present; slug registered audit-c-calculator-am-i-an-alcoholic

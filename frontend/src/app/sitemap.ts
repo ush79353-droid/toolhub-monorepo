@@ -176,6 +176,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   '529-calculator',
   '702010-rule-money-calculator',
   '401k-calculator',
+  'aa-gradient-calculator',
   'abi-calculator-ankle-brachial-index',
   'absolute-eosinophil-count-calculator',
   'absolute-lymphocyte-count-calculator',
