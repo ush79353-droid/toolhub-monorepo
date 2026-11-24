@@ -11,7 +11,8 @@ export type WeightBasis =
   | 'actual'
   | 'ideal'
   | 'adjusted'
-  | 'actual_below_ibw_eligibility';  | 'unavailable';
+  | 'actual_below_ibw_eligibility'
+  | 'unavailable'
 
 export type ProductKind = 'ivig' | 'rhig';
 

@@ -14,11 +14,8 @@ import {
   type IvigDoseInput,
   type IvigDoseResult,
 } from './types';
+import { validateIvigDoseInput } from './validation';
 
-/**
- * UI shell (ADR-016 visual patterns). Engine wiring lands in the Engine commit
- * via validateIvigDoseInput — until then results stay empty / incomplete.
- */
 export function IvigDoseCalculator({
   metadata,
   className = '',
@@ -30,7 +27,9 @@ export function IvigDoseCalculator({
   const [baseline, setBaseline] = React.useState(() => initial);
   const [input, setInput] = React.useState(() => initial);
   const [errors, setErrors] = React.useState<IvigDoseFieldErrors>({});
-  const [result, setResult] = React.useState<IvigDoseResult | null>(null);
+  const [result, setResult] = React.useState<IvigDoseResult | null>(() =>
+    validateIvigDoseInput(initial).result,
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -41,9 +40,10 @@ export function IvigDoseCalculator({
   }, []);
 
   const apply = (next: IvigDoseInput) => {
+    const validation = validateIvigDoseInput(next);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
   };
 
   const handleReload = () => {
@@ -51,7 +51,7 @@ export function IvigDoseCalculator({
     setInput(fresh);
     setBaseline(fresh);
     setErrors({});
-    setResult(null);
+    setResult(validateIvigDoseInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -61,7 +61,7 @@ export function IvigDoseCalculator({
     const fresh = createEmptyInput();
     setInput(fresh);
     setErrors({});
-    setResult(null);
+    setResult(validateIvigDoseInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
