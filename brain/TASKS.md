@@ -8,6 +8,12 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-774` | Gastric Sleeve Weight Loss (`GastricSleeveWeightLossCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/gastric-sleeve-weight-loss/*` | Mongo Atlas DNS |
+| `TOOL-773` | Fresh Frozen Plasma Dose (`FreshFrozenPlasmaDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/fresh-frozen-plasma-dose/*` | Mongo Atlas DNS |
+| `TOOL-772` | Fish Oil Calculator (`FishOilCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/fish-oil/*` | Mongo Atlas DNS |
+| `TOOL-771` | Fiber Calculator (`FiberCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/fiber/*` | Mongo Atlas DNS |
+| `TOOL-770` | EER Calculator (`EerCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/eer/*` | Mongo Atlas DNS |
+| `TOOL-769` | DRI Calculator (`DriCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/dri/*` | Mongo Atlas DNS |
 | `TOOL-768` | Hematocrit to Hemoglobin Ratio (`HematocritHemoglobinRatioCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/hematocrit-hemoglobin-ratio/*` | Mongo Atlas DNS |
 | `TOOL-767` | Fat Intake Calculator (`FatIntakeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/fat-intake/*` | Mongo Atlas DNS |
 | `TOOL-766` | Drug Half-Life Calculator (`DrugHalfLifeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/drug-half-life/*` | Mongo Atlas DNS |

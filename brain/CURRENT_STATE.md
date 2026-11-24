@@ -15,6 +15,12 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **DRI Calculator (`/tools/dri-calculator`):** Educational DRI lookup (`DriCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **EER Calculator (`/tools/eer-calculator-estimated-energy-requirement`):** Educational IOM EER (`EerCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Fiber Calculator (`/tools/fiber-calculator`):** Educational fiber AI (`FiberCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Fish Oil Calculator (`/tools/fish-oil-calculator`):** Educational EPA/DHA worksheet (`FishOilCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Fresh Frozen Plasma Dose Calculator (`/tools/fresh-frozen-plasma-dose-calculator`):** Educational FFP mL/kg (`FreshFrozenPlasmaDoseCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Gastric Sleeve Weight Loss Calculator (`/tools/gastric-sleeve-weight-loss-calculator`):** Educational sleeve %EWL estimate (`GastricSleeveWeightLossCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Drug Half-Life Calculator (`/tools/drug-half-life-calculator`):** Educational first-order elimination (`DrugHalfLifeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Fat Intake Calculator (`/tools/fat-intake-calculator`):** Educational AMDR fat grams (`FatIntakeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Hematocrit to Hemoglobin Ratio Calculator (`/tools/hematocrit-to-hemoglobin-ratio-calculator`):** Educational Hct÷Hb with rule-of-three default (`HematocritHemoglobinRatioCalculator`). **No FX**. Registry wired. **Mongo blocked**.

@@ -226,11 +226,21 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DrugHalfLifeCalculator,
     })),
   ),
+  DriCalculator: lazyTool(() =>
+    import('@/tools/calculators/dri/DriCalculator').then((mod) => ({
+      default: mod.DriCalculator,
+    })),
+  ),
   EbitdaMarginCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/ebitda-margin/EbitdaMarginCalculator'
     ).then((mod) => ({
       default: mod.EbitdaMarginCalculator,
+    })),
+  ),
+  EerCalculator: lazyTool(() =>
+    import('@/tools/calculators/eer/EerCalculator').then((mod) => ({
+      default: mod.EerCalculator,
     })),
   ),
   FatIntakeCalculator: lazyTool(() =>
@@ -240,6 +250,16 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FatIntakeCalculator,
     })),
   ),
+  FiberCalculator: lazyTool(() =>
+    import('@/tools/calculators/fiber/FiberCalculator').then((mod) => ({
+      default: mod.FiberCalculator,
+    })),
+  ),
+  FishOilCalculator: lazyTool(() =>
+    import('@/tools/calculators/fish-oil/FishOilCalculator').then((mod) => ({
+      default: mod.FishOilCalculator,
+    })),
+  ),
   FloridaOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/florida-overtime/FloridaOvertimeCalculator'
@@ -247,11 +267,25 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FloridaOvertimeCalculator,
     })),
   ),
+  FreshFrozenPlasmaDoseCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/fresh-frozen-plasma-dose/FreshFrozenPlasmaDoseCalculator'
+    ).then((mod) => ({
+      default: mod.FreshFrozenPlasmaDoseCalculator,
+    })),
+  ),
   FutureValueOfAnnuityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/future-value-of-annuity/FutureValueOfAnnuityCalculator'
     ).then((mod) => ({
       default: mod.FutureValueOfAnnuityCalculator,
+    })),
+  ),
+  GastricSleeveWeightLossCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gastric-sleeve-weight-loss/GastricSleeveWeightLossCalculator'
+    ).then((mod) => ({
+      default: mod.GastricSleeveWeightLossCalculator,
     })),
   ),
   GeriatricBmiCalculator: lazyTool(() =>

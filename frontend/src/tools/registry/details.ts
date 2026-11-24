@@ -65,14 +65,22 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     ),
   DrugHalfLifeCalculator: () =>
     import('@/tools/calculators/drug-half-life/detail'),
+  DriCalculator: () => import('@/tools/calculators/dri/detail'),
   EbitdaMarginCalculator: () =>
     import('@/tools/calculators/ebitda-margin/detail'),
+  EerCalculator: () => import('@/tools/calculators/eer/detail'),
   FatIntakeCalculator: () =>
     import('@/tools/calculators/fat-intake/detail'),
+  FiberCalculator: () => import('@/tools/calculators/fiber/detail'),
+  FishOilCalculator: () => import('@/tools/calculators/fish-oil/detail'),
   FloridaOvertimeCalculator: () =>
     import('@/tools/calculators/florida-overtime/detail'),
+  FreshFrozenPlasmaDoseCalculator: () =>
+    import('@/tools/calculators/fresh-frozen-plasma-dose/detail'),
   FutureValueOfAnnuityCalculator: () =>
     import('@/tools/calculators/future-value-of-annuity/detail'),
+  GastricSleeveWeightLossCalculator: () =>
+    import('@/tools/calculators/gastric-sleeve-weight-loss/detail'),
   GeriatricBmiCalculator: () =>
     import('@/tools/calculators/geriatric-bmi/detail'),
   GestationalAgeCalculator: () =>

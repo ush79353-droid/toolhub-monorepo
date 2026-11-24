@@ -1,4 +1,13 @@
-﻿### 2026-11-24 — Batch: Drug Half-Life, Fat Intake, Hct/Hgb Ratio
+﻿### 2026-11-24 — Batch: DRI, EER, Fiber, Fish Oil, FFP, Gastric Sleeve
+
+- DRI `DriCalculator` — `9e7dd5f1` / `9a7867cf` / reg this. Mongo blocked.
+- EER `EerCalculator` — `d556f7a9` / `e76f5b9e` / reg this. Mongo blocked.
+- Fiber `FiberCalculator` — `6387ac93` / `30afeda1` / reg this. Mongo blocked.
+- Fish Oil `FishOilCalculator` — `f8e13d4c` / `47f502ba` / reg this. Mongo blocked.
+- Fresh Frozen Plasma Dose `FreshFrozenPlasmaDoseCalculator` — `7d2e40ab` / `78187ca5` / reg this. Mongo blocked.
+- Gastric Sleeve Weight Loss `GastricSleeveWeightLossCalculator` — `28d435d0` / `b46f9b63` / reg this. Mongo blocked.
+- Registry/sitemap/`tool.key` in this commit. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+### 2026-11-24 — Batch: Drug Half-Life, Fat Intake, Hct/Hgb Ratio
 
 - Drug Half-Life `DrugHalfLifeCalculator` — `1c67a43c` / `375f06d4` / reg this. Mongo blocked.
 - Fat Intake `FatIntakeCalculator` — `167d7fe2` / `c9c425ce` / reg this. Mongo blocked.
