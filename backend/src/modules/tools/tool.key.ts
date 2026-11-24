@@ -11,6 +11,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AuditCCalculator',
   'AutoLeaseCalculator',
   'AutoLoanCalculator',
+  'CageCalculator',
   'CaliforniaOvertimeCalculator',
   'CalorieDeficitCalculator',
   'CarbCalculator',

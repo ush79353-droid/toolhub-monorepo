@@ -20,6 +20,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'aortic-valve-area-calculator',
   'arterial-age-calculator',
   'audit-c-calculator-am-i-an-alcoholic',
+  'cage-questionnaire-calculator',
   'california-overtime-calculator',
   'calorie-deficit-calculator',
   'carb-calculator-carbohydrates',

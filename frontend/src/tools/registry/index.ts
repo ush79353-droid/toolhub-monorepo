@@ -79,6 +79,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AutoLoanCalculator,
     })),
   ),
+  CageCalculator: lazyTool(() =>
+    import('@/tools/calculators/cage/CageCalculator').then((mod) => ({
+      default: mod.CageCalculator,
+    })),
+  ),
   CaliforniaOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/california-overtime/CaliforniaOvertimeCalculator'
