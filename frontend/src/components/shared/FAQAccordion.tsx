@@ -1,7 +1,3 @@
-'use client';
-
-import * as React from 'react';
-import { ChevronDown } from 'lucide-react';
 import { inlineNodes } from '@/components/tools/inline-text';
 import { cn } from '@/lib/utils';
 
@@ -23,50 +19,20 @@ export function FAQAccordion({
   faqs,
   className = '',
 }: FAQAccordionProps) {
-  const list = items ?? faqs;
-  const [openIndex, setOpenIndex] = React.useState<number | null>(0);
-
-  const toggle = (index: number) => {
-    setOpenIndex((prev) => (prev === index ? null : index));
-  };
+  const list = items ?? faqs ?? [];
 
   return (
-    <div className={cn('space-y-3', className)}>
-      {list.map((item, index) => {
-        const isOpen = openIndex === index;
-        return (
-          <div
-            key={index}
-            className="overflow-hidden rounded-xl border border-border bg-white shadow-xs transition-colors"
-          >
-            <button
-              onClick={() => toggle(index)}
-              aria-expanded={isOpen}
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-muted/40"
-            >
-              <span className="text-[15px] font-semibold leading-snug text-accent sm:text-base">
-                {inlineNodes(item.question, `q-${index}`)}
-              </span>
-              <div
-                className={cn(
-                  'flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-muted text-primary transition-transform duration-200',
-                  isOpen && 'rotate-180 bg-primary text-white'
-                )}
-              >
-                <ChevronDown className="h-4 w-4" />
-              </div>
-            </button>
-
-            {isOpen && (
-              <div className="border-t border-border/60 bg-white px-5 pb-4 pt-3 animate-in fade-in duration-200">
-                <p className="text-[15px] font-normal leading-[1.7] text-muted-foreground">
-                  {inlineNodes(item.answer, `a-${index}`)}
-                </p>
-              </div>
-            )}
-          </div>
-        );
-      })}
+    <div className={cn('divide-y divide-border', className)}>
+      {list.map((item, index) => (
+        <div key={index} className="py-4 first:pt-0 last:pb-0">
+          <h3 className="text-[15px] font-semibold leading-snug text-accent sm:text-base">
+            {inlineNodes(item.question, `q-${index}`)}
+          </h3>
+          <p className="mt-2 text-[15px] font-normal leading-[1.7] text-foreground/85">
+            {inlineNodes(item.answer, `a-${index}`)}
+          </p>
+        </div>
+      ))}
     </div>
   );
 }
