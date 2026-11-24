@@ -105,6 +105,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'timi-uanstemi-calculator',
   'tpa-stroke-calculator',
   'vitamin-a-calculator',
+  'vitamin-calculator',
   'vitamin-d-calculator',
   'weight-watcher-points-calculator',
   'weight-watchers-points-calculator',

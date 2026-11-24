@@ -631,6 +631,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.VitaminACalculator,
     })),
   ),
+  VitaminCalculator: lazyTool(() =>
+    import('@/tools/calculators/vitamin/VitaminCalculator').then((mod) => ({
+      default: mod.VitaminCalculator,
+    })),
+  ),
   VitaminDCalculator: lazyTool(() =>
     import('@/tools/calculators/vitamin-d/VitaminDCalculator').then((mod) => ({
       default: mod.VitaminDCalculator,

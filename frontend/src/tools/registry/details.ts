@@ -172,6 +172,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/timi-uanstemi/detail'),
   TpaStrokeCalculator: () => import('@/tools/calculators/tpa-stroke/detail'),
   VitaminACalculator: () => import('@/tools/calculators/vitamin-a/detail'),
+  VitaminCalculator: () => import('@/tools/calculators/vitamin/detail'),
   VitaminDCalculator: () => import('@/tools/calculators/vitamin-d/detail'),
   WeightWatcherPointsCalculator: () =>
     import('@/tools/calculators/weight-watcher-points/detail'),

@@ -99,6 +99,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TimiUanstemiCalculator',
   'TpaStrokeCalculator',
   'VitaminACalculator',
+  'VitaminCalculator',
   'VitaminDCalculator',
   'WeightWatcherPointsCalculator',
   'WeightWatchersPointsCalculator',
