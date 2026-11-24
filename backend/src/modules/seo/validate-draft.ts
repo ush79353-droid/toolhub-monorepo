@@ -49,8 +49,8 @@ export function validateDraft(input: ValidateDraftInput): DraftValidation {
       `Primary keyword must stay ${input.lockedPrimary}, the keyword the SERP was fetched for.`
     );
   }
-  if (content.faqs.length < 3 || content.faqs.length > 5) {
-    block(issues, 'faq_count', 'Include 3–5 FAQs.');
+  if (content.faqs.length < 4 || content.faqs.length > 5) {
+    block(issues, 'faq_count', 'Include 4–5 FAQs.');
   }
   if (content.disclaimer.trim().length === 0) {
     block(issues, 'disclaimer_missing', 'A finance disclaimer is required.');
@@ -68,12 +68,8 @@ export function validateDraft(input: ValidateDraftInput): DraftValidation {
   }
 
   const words = countDraftWords(content);
-  if (words < 500 || words > 900) {
-    issues.push({
-      code: 'word_count',
-      message: `Guide is ${words} words. Aim for 500–900.`,
-      severity: 'flag',
-    });
+  if (words < 1500 || words > 1700) {
+    block(issues, 'word_count', `Guide is ${words} words. Visible educational copy must be 1,500–1,700 words.`);
   }
   if (content.sections.some((section) => section.formula.trim().length > 0)) {
     issues.push({

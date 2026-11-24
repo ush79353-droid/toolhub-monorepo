@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { ChevronDown } from 'lucide-react';
+import { inlineNodes } from '@/components/tools/inline-text';
 import { cn } from '@/lib/utils';
 
 export interface FAQItem {
@@ -44,7 +45,7 @@ export function FAQAccordion({
               className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-muted/40"
             >
               <span className="text-[15px] font-semibold leading-snug text-accent sm:text-base">
-                {item.question}
+                {inlineNodes(item.question, `q-${index}`)}
               </span>
               <div
                 className={cn(
@@ -59,7 +60,7 @@ export function FAQAccordion({
             {isOpen && (
               <div className="border-t border-border/60 bg-white px-5 pb-4 pt-3 animate-in fade-in duration-200">
                 <p className="text-[15px] font-normal leading-[1.7] text-muted-foreground">
-                  {item.answer}
+                  {inlineNodes(item.answer, `a-${index}`)}
                 </p>
               </div>
             )}

@@ -175,7 +175,7 @@ export async function runContentGeneration(draftId: string): Promise<void> {
   }
   if (draft.status !== 'generating') return;
   if (!draft.primaryKeyword) throw new Error('Content generation requires keyword research.');
-  const content = await draftSeoContent({
+  const drafted = await draftSeoContent({
     snapshot: draft.snapshot,
     primaryKeyword: draft.primaryKeyword,
     secondaryKeywords: draft.secondaryKeywords,
@@ -183,6 +183,7 @@ export async function runContentGeneration(draftId: string): Promise<void> {
     serpItems: draft.serpItems,
     suggestedLinks: draft.suggestedLinks,
   });
+  const content = drafted.content;
   const campaign = await SeoCampaign.findById(draft.campaignId).select('categoryId');
   const names = campaign
     ? await eligibleSlugNames(campaign.categoryId, draft.toolId)
@@ -192,7 +193,7 @@ export async function runContentGeneration(draftId: string): Promise<void> {
     draft.keywordFacts.map((fact) => fact.keyword),
     names
   );
-  draft.callCounts.openai += 1;
+  draft.callCounts.openai += drafted.calls;
   draft.error = '';
   mark(draft, 'generate');
   draft.completedSteps = draft.completedSteps.filter((step) => step !== 'validate');

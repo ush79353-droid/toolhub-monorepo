@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
+import { inlineNodes, RichCopy } from '@/components/tools/inline-text';
 import type { PublicPublishedGuide } from '@/server/catalog/tools';
 
 export function PublishedGuideArticle({
@@ -22,7 +23,7 @@ export function PublishedGuideArticle({
             </h2>
             <div className="mt-3.5 space-y-4 text-[15px] font-normal leading-[1.72] text-foreground/85 sm:text-base sm:leading-[1.75]">
               {section.paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <RichCopy key={index} text={paragraph} />
               ))}
             </div>
             {section.formula ? (
@@ -30,7 +31,7 @@ export function PublishedGuideArticle({
                 <p className="font-mono text-xs font-medium text-accent sm:text-sm">{section.formula}</p>
                 {section.formulaNote ? (
                   <p className="mt-2 text-xs font-normal leading-relaxed text-muted-foreground sm:text-[13px]">
-                    {section.formulaNote}
+                    {inlineNodes(section.formulaNote, `${section.id}-formula`)}
                   </p>
                 ) : null}
               </div>
@@ -38,7 +39,7 @@ export function PublishedGuideArticle({
             {section.bullets.length > 0 ? (
               <ul className="mt-5 list-disc space-y-2.5 pl-5 text-[15px] font-normal leading-[1.7] text-foreground/85 marker:text-muted-foreground sm:text-base sm:leading-[1.75]">
                 {section.bullets.map((bullet, index) => (
-                  <li key={index}>{bullet}</li>
+                  <li key={index}>{inlineNodes(bullet.replace(/^\s*[-*]\s+/, ''), `${section.id}-b-${index}`)}</li>
                 ))}
               </ul>
             ) : null}
@@ -72,7 +73,9 @@ export function PublishedGuideArticle({
               </Link>
             </li>
           </ul>
-          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{guide.disclaimer}</p>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            {inlineNodes(guide.disclaimer, 'disclaimer')}
+          </p>
         </article>
       </div>
     </div>

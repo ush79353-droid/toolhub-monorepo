@@ -3,6 +3,10 @@ import test from 'node:test';
 import type { SeoContent } from './content';
 import { validateDraft } from './validate-draft';
 
+function words(count: number): string {
+  return Array.from({ length: count }, () => 'payment').join(' ');
+}
+
 function content(overrides: Partial<SeoContent> = {}): SeoContent {
   const base: SeoContent = {
     metaTitle: 'Auto Loan Calculator — Monthly Payment',
@@ -11,17 +15,18 @@ function content(overrides: Partial<SeoContent> = {}): SeoContent {
     primaryKeyword: 'auto loan calculator',
     disclaimer: 'This calculator is educational and is not financial, tax, or investment advice.',
     sections: [
-      { id: 'what-this-covers', title: 'What this covers', paragraphs: ['A'.repeat(80)], bullets: [], formula: '', formulaNote: '' },
-      { id: 'how-to-use', title: 'How to use', paragraphs: ['B'.repeat(80)], bullets: [], formula: '', formulaNote: '' },
-      { id: 'how-it-works', title: 'How it works', paragraphs: ['C'.repeat(80)], bullets: [], formula: '', formulaNote: '' },
-      { id: 'worked-example', title: 'Example', paragraphs: ['D'.repeat(400)], bullets: [], formula: '', formulaNote: '' },
-      { id: 'how-to-read', title: 'How to read', paragraphs: ['E'.repeat(80)], bullets: [], formula: '', formulaNote: '' },
-      { id: 'mistakes', title: 'Mistakes', paragraphs: ['F'.repeat(80)], bullets: [], formula: '', formulaNote: '' },
+      { id: 'what-this-covers', title: 'What this covers', paragraphs: [words(1550)], bullets: [], formula: '', formulaNote: '' },
+      { id: 'how-to-use', title: 'How to use', paragraphs: ['Enter the price.'], bullets: [], formula: '', formulaNote: '' },
+      { id: 'how-it-works', title: 'How it works', paragraphs: ['The term changes the payment.'], bullets: [], formula: '', formulaNote: '' },
+      { id: 'worked-example', title: 'Example', paragraphs: ['This example is illustrative only.'], bullets: [], formula: '', formulaNote: '' },
+      { id: 'how-to-read', title: 'How to read', paragraphs: ['Read the monthly figure first.'], bullets: [], formula: '', formulaNote: '' },
+      { id: 'mistakes', title: 'Mistakes', paragraphs: ['Do not mix monthly and yearly rates.'], bullets: [], formula: '', formulaNote: '' },
     ],
     faqs: [
       { question: 'What is the payment?', answer: 'The payment is the amount due each month on the loan.' },
       { question: 'Does the rate change?', answer: 'This example uses one fixed rate for the whole term.' },
       { question: 'Is this an offer?', answer: 'No. It is an estimate for education, not a loan offer.' },
+      { question: 'What is left out?', answer: 'Taxes, fees, and insurance are not part of this estimate.' },
     ],
     links: [
       { slug: 'loan-calculator', anchor: 'Loan Calculator' },
@@ -89,7 +94,7 @@ test('rejects a missing disclaimer', () => {
   assert.ok(report.issues.some((issue) => issue.code === 'disclaimer_missing'));
 });
 
-test('rejects fewer than 3 FAQs', () => {
+test('rejects fewer than 4 FAQs', () => {
   const report = check({ faqs: content().faqs.slice(0, 2) });
   assert.equal(report.ok, false);
   assert.ok(report.issues.some((issue) => issue.code === 'faq_count'));

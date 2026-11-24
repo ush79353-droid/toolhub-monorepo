@@ -9,6 +9,7 @@ import { ToolDetailSidebar } from '@/components/shared/ToolDetailSidebar';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { CalculatorEmbedDialog } from '@/components/tools/CalculatorEmbedDialog';
 import { PublishedGuideArticle } from '@/components/tools/PublishedGuideArticle';
+import { stripInlineMarks } from '@/components/tools/inline-text';
 import { isToolEmbedEligible } from '@/lib/embed/tool-embed';
 
 import { siteConfig } from '@/config/site';
@@ -498,7 +499,10 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             { name: toolMetadata.title, path: `/tools/${toolMetadata.slug}` },
           ],
           // FAQ sections are visible on these guides — keep FAQPage schema in sync with on-page content.
-          faqs: visibleFaqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
+          faqs: visibleFaqs.map((faq) => ({
+            question: stripInlineMarks(faq.question),
+            answer: stripInlineMarks(faq.answer),
+          })),
         })
       );
 

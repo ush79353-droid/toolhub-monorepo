@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { AdminPageHeader } from '@/components/admin/layout/AdminPageHeader';
 import { StatusBadge } from '@/components/admin/shared/StatusBadge';
+import { RichCopy, inlineNodes } from '@/components/tools/inline-text';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -198,6 +199,20 @@ export default function SeoDraftReviewPage() {
                   edit({ ...content, sections });
                 }}
               />
+              <div className="space-y-3 rounded-lg bg-muted/40 px-3 py-2 text-sm leading-relaxed text-foreground/85">
+                {section.paragraphs.map((paragraph, paragraphIndex) => (
+                  <RichCopy key={paragraphIndex} text={paragraph} />
+                ))}
+                {section.bullets.length > 0 ? (
+                  <ul className="list-disc space-y-1 pl-5">
+                    {section.bullets.map((bullet, bulletIndex) => (
+                      <li key={`bullet-${bulletIndex}`}>
+                        {inlineNodes(bullet.replace(/^\s*[-*]\s+/, ''), `${section.id}-b-${bulletIndex}`)}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
               <Input
                 placeholder="Formula (leave empty unless a person verified it)"
                 value={section.formula}

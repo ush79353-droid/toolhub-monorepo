@@ -6,8 +6,8 @@ export const PILOT_MAX_TOOLS = 20;
 const sectionSchema = z.object({
   id: z.string().trim().min(1).max(80),
   title: z.string().trim().min(1).max(160),
-  paragraphs: z.array(z.string().trim().min(1).max(1200)).min(1).max(6),
-  bullets: z.array(z.string().trim().min(1).max(400)).max(12).default([]),
+  paragraphs: z.array(z.string().trim().min(1).max(5000)).min(1).max(8),
+  bullets: z.array(z.string().trim().min(1).max(500)).max(12).default([]),
   formula: z.string().trim().max(500).default(''),
   formulaNote: z.string().trim().max(500).default(''),
 });
@@ -22,7 +22,7 @@ export const seoContentSchema = z.object({
     .array(
       z.object({
         question: z.string().trim().min(1).max(200),
-        answer: z.string().trim().min(1).max(800),
+        answer: z.string().trim().min(1).max(2000),
       })
     )
     .min(3)
