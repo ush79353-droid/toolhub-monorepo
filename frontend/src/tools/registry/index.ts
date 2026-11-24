@@ -662,6 +662,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WeightWatchersPointsCalculator,
     })),
   ),
+  WarfarinDosingCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/warfarin-dosing/WarfarinDosingCalculator'
+    ).then((mod) => ({
+      default: mod.WarfarinDosingCalculator,
+    })),
+  ),
   WellsPeCalculator: lazyTool(() =>
     import('@/tools/calculators/wells-pe/WellsPeCalculator').then((mod) => ({
       default: mod.WellsPeCalculator,

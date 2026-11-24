@@ -104,6 +104,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'VitaminDCalculator',
   'WeightWatcherPointsCalculator',
   'WeightWatchersPointsCalculator',
+  'WarfarinDosingCalculator',
   'WellsPeCalculator',
 
   'MarginAndSalesTaxCalculator',

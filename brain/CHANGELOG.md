@@ -1,4 +1,9 @@
-﻿### 2026-11-24 — tPA Stroke + Vitamin D
+﻿### 2026-11-24 — Warfarin Dosing + Phase 1 queue drain
+
+- `WarfarinDosingCalculator` UI `74a3d327` / ENG `5fd50168` / (reg this). **No FX**. Mongo blocked.
+- Eligible Tools/ queue drained; 3 clinical blockers remain in In Progress.
+
+### 2026-11-24 — tPA Stroke + Vitamin D
 
 - `TpaStrokeCalculator` (`tpa-stroke-calculator`) UI `0d05c40d` / ENG `5551a638` / (reg this).
 - `VitaminDCalculator` (`vitamin-d-calculator`) UI `72bd06ad` / ENG `4015fbc4` / (reg this).

@@ -180,6 +180,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/weight-watcher-points/detail'),
   WeightWatchersPointsCalculator: () =>
     import('@/tools/calculators/weight-watchers-points/detail'),
+  WarfarinDosingCalculator: () =>
+    import('@/tools/calculators/warfarin-dosing/detail'),
   WellsPeCalculator: () => import('@/tools/calculators/wells-pe/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),

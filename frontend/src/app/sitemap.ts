@@ -110,6 +110,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'vitamin-d-calculator',
   'weight-watcher-points-calculator',
   'weight-watchers-points-calculator',
+  'warfarin-dosing-calculator',
   'wells-pe-calculator',
   'margin-and-sales-tax-calculator',
   'marriage-tax-calculator',
