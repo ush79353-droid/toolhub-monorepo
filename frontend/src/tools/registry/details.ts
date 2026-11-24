@@ -24,6 +24,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/california-overtime/detail'),
   CalorieDeficitCalculator: () =>
     import('@/tools/calculators/calorie-deficit/detail'),
+  CarbCalculator: () =>
+    import('@/tools/calculators/carb-calculator/detail'),
+  CarbohydrateCalculator: () =>
+    import('@/tools/calculators/carbohydrate-calculator/detail'),
+  CarboplatinCalculator: () =>
+    import('@/tools/calculators/carboplatin/detail'),
   DaptCalculator: () => import('@/tools/calculators/dapt/detail'),
   DebtAvalancheCalculator: () =>
     import('@/tools/calculators/debt-avalanche/detail'),
@@ -744,6 +750,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/blood-donor/detail'),
   BloodTypeCalculator: () =>
     import('@/tools/calculators/blood-type/detail'),
+  BloodVolumeCalculator: () =>
+    import('@/tools/calculators/blood-volume/detail'),
   IbuprofenDosageCalculator: () =>
     import('@/tools/calculators/ibuprofen-dosage/detail'),
   IchVolumeCalculator: () =>

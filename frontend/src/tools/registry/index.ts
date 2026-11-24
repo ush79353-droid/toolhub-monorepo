@@ -88,6 +88,27 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CalorieDeficitCalculator,
     })),
   ),
+  CarbCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/carb-calculator/CarbCalculator'
+    ).then((mod) => ({
+      default: mod.CarbCalculator,
+    })),
+  ),
+  CarbohydrateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/carbohydrate-calculator/CarbohydrateCalculator'
+    ).then((mod) => ({
+      default: mod.CarbohydrateCalculator,
+    })),
+  ),
+  CarboplatinCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/carboplatin/CarboplatinCalculator'
+    ).then((mod) => ({
+      default: mod.CarboplatinCalculator,
+    })),
+  ),
   DaptCalculator: lazyTool(() =>
     import('@/tools/calculators/dapt/DaptCalculator').then((mod) => ({
       default: mod.DaptCalculator,
@@ -3079,6 +3100,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/blood-type/BloodTypeCalculator'
     ).then((mod) => ({
       default: mod.BloodTypeCalculator,
+    })),
+  ),
+  BloodVolumeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/blood-volume/BloodVolumeCalculator'
+    ).then((mod) => ({
+      default: mod.BloodVolumeCalculator,
     })),
   ),
   IbuprofenDosageCalculator: lazyTool(() =>
