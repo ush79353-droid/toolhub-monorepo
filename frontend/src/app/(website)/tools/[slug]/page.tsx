@@ -93,7 +93,6 @@ const CURRENCY_CONVERSION_SLUGS = new Set([
   'gross-to-net-calculator',
   'net-to-gross-calculator',
   'margin-and-vat-calculator',
-  'margin-calculator-classic',
   'margin-call-calculator',
   'margin-interest-calculator',
   'margin-with-discount-calculator',

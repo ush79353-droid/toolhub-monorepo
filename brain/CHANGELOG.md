@@ -1,3 +1,7 @@
+### 2026-11-24 — Remove 42 merged duplicate tools
+- **Summary:** Deleted the 42 catalog rows marked “merge” in the tools-directory Part 2.A list. The page each one merged into was kept. Nine of the extras had frontend calculators; those modules, registry keys, sitemap slugs, and the backend allowlist entries were removed. Part 2.B groups were left as separate tools. Verification list: `removed-merged-tools.json`.
+- **Verification:** Mongo delete count 42, remaining matches 0. Temporary match scripts were outside the repo and deleted. Temporary files cleaned: YES.
+
 ### 2026-11-24 — Finance SEO campaign pipeline
 - **Summary:** Added an admin-approved SEO pipeline for active, developed Finance & Business calculators (ADR-027). DataForSEO supplies keyword and SERP facts. OpenAI drafts a structured guide of 1,500–1,700 words. Publish writes meta fields and shows `PublishedGuideArticle` on `/tools/[slug]` only after approval. `isActive` and `indexable` are not changed. `/admin/seo` stays a preview. Workers start only when `SEO_WORKERS_ENABLED=true` and `REDIS_HOST` is set (`REDIS_PORT`, `REDIS_PASSWORD`).
 - **Verification:** `backend` `npm run test:seo` (7 passing). `backend` and `frontend` `tsc --noEmit` passed. No live provider calls. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.

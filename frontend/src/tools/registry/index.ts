@@ -283,13 +283,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MarginAndVatCalculator,
     })),
   ),
-  MarginCalculatorClassic: lazyTool(() =>
-    import(
-      '@/tools/calculators/margin-calculator-classic/MarginCalculatorClassicCalculator'
-    ).then((mod) => ({
-      default: mod.MarginCalculatorClassicCalculator,
-    })),
-  ),
   MarginCallCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/margin-call/MarginCallCalculator'
@@ -2457,11 +2450,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.YardToMileConverter,
     })),
   ),
-  YardsToMetersConversion: lazyTool(() =>
-    import('@/tools/calculators/yards-to-meters/YardsToMetersConversion').then((mod) => ({
-      default: mod.YardsToMetersConversion,
-    })),
-  ),
   NmConverter: lazyTool(() =>
     import('@/tools/calculators/nm-converter/NmConverter').then((mod) => ({
       default: mod.NmConverter,
@@ -3540,41 +3528,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
-  QuizLoanBalanceCalculator: lazyTool(() =>
-    import('@/tools/calculators/quiz-loan-balance/QuizLoanBalanceCalculator').then(
-      (mod) => ({
-        default: mod.QuizLoanBalanceCalculator,
-      })
-    )
-  ),
-  QuizAnnualIncomeCalculator: lazyTool(() =>
-    import(
-      '@/tools/calculators/quiz-annual-income/QuizAnnualIncomeCalculator'
-    ).then((mod) => ({
-      default: mod.QuizAnnualIncomeCalculator,
-    })),
-  ),
-  QuizCarDepreciationCalculator: lazyTool(() =>
-    import(
-      '@/tools/calculators/quiz-car-depreciation/QuizCarDepreciationCalculator'
-    ).then((mod) => ({
-      default: mod.QuizCarDepreciationCalculator,
-    })),
-  ),
-  QuizDividendCalculator: lazyTool(() =>
-    import('@/tools/calculators/quiz-dividend/QuizDividendCalculator').then(
-      (mod) => ({
-        default: mod.QuizDividendCalculator,
-      })
-    )
-  ),
-  QuizFetalWeightPercentileCalculator: lazyTool(() =>
-    import(
-      '@/tools/calculators/quiz-fetal-weight-percentile/QuizFetalWeightPercentileCalculator'
-    ).then((mod) => ({
-      default: mod.QuizFetalWeightPercentileCalculator,
-    })),
-  ),
   ManHoursCalculator: lazyTool(() =>
     import('@/tools/calculators/man-hours/ManHoursCalculator').then((mod) => ({
       default: mod.ManHoursCalculator,
@@ -4624,13 +4577,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CreditCardPayoffCalculator,
     })),
   ),
-  CreditCardsPayoffCalculator: lazyTool(() =>
-    import(
-      '@/tools/calculators/credit-cards-payoff/CreditCardsPayoffCalculator'
-    ).then((mod) => ({
-      default: mod.CreditCardsPayoffCalculator,
-    })),
-  ),
   CreditUtilizationCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/credit-utilization/CreditUtilizationCalculator'
@@ -5214,13 +5160,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/productivity/ProductivityCalculator'
     ).then((mod) => ({
       default: mod.ProductivityCalculator,
-    })),
-  ),
-  QuizUsIncomePercentileCalculator: lazyTool(() =>
-    import(
-      '@/tools/calculators/quiz-us-income-percentile/QuizUsIncomePercentileCalculator'
-    ).then((mod) => ({
-      default: mod.QuizUsIncomePercentileCalculator,
     })),
   ),
   ReceivablesTurnoverRatioCalculator: lazyTool(() =>
