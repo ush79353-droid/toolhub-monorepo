@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-775` | Isotretinoin Dose Calculator (`IsotretinoinDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/isotretinoin-dose/*` | Mongo Atlas DNS |
 | `TOOL-774` | Gastric Sleeve Weight Loss (`GastricSleeveWeightLossCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/gastric-sleeve-weight-loss/*` | Mongo Atlas DNS |
 | `TOOL-773` | Fresh Frozen Plasma Dose (`FreshFrozenPlasmaDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/fresh-frozen-plasma-dose/*` | Mongo Atlas DNS |
 | `TOOL-772` | Fish Oil Calculator (`FishOilCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/fish-oil/*` | Mongo Atlas DNS |

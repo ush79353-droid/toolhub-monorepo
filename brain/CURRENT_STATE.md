@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Isotretinoin Dose Calculator (`/tools/isotretinoin-dose-calculator`):** Educational cumulative mg/kg worksheet (`IsotretinoinDoseCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **DRI Calculator (`/tools/dri-calculator`):** Educational DRI lookup (`DriCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **EER Calculator (`/tools/eer-calculator-estimated-energy-requirement`):** Educational IOM EER (`EerCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Fiber Calculator (`/tools/fiber-calculator`):** Educational fiber AI (`FiberCalculator`). **No FX**. Registry wired. **Mongo blocked**.

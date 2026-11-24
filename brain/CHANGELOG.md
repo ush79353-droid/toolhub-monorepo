@@ -1,4 +1,7 @@
-﻿### 2026-11-24 — Batch: DRI, EER, Fiber, Fish Oil, FFP, Gastric Sleeve
+﻿### 2026-11-24 — Isotretinoin Dose Calculator
+
+- Educational cumulative mg/kg worksheet (`IsotretinoinDoseCalculator`, slug `isotretinoin-dose-calculator`). Mean 135 mg/kg teaching example; solve duration or daily dose. **No FX**. Mongo blocked. Commits `c95dc938` / `8314cc80` / (reg this).
+### 2026-11-24 — Batch: DRI, EER, Fiber, Fish Oil, FFP, Gastric Sleeve
 
 - DRI `DriCalculator` — `9e7dd5f1` / `9a7867cf` / reg this. Mongo blocked.
 - EER `EerCalculator` — `d556f7a9` / `e76f5b9e` / reg this. Mongo blocked.

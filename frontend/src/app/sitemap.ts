@@ -61,6 +61,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'illinois-overtime-calculator',
   'immediate-annuity-calculator',
   'interest-rate-parity-calculator',
+  'isotretinoin-dose-calculator',
   'loan-calculator',
   'auto-loan-calculator',
   'auto-lease-calculator',

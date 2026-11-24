@@ -387,6 +387,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.InterestRateParityCalculator,
     })),
   ),
+  IsotretinoinDoseCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/isotretinoin-dose/IsotretinoinDoseCalculator'
+    ).then((mod) => ({
+      default: mod.IsotretinoinDoseCalculator,
+    })),
+  ),
   LoanCalculator: lazyTool(() =>
     import('@/tools/calculators/loan/LoanCalculator').then((mod) => ({
       default: mod.LoanCalculator,
