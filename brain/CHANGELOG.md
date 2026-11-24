@@ -1,4 +1,10 @@
-﻿### 2026-11-24 — Macro Calculator
+﻿### 2026-11-24 — Batch: Katch-McArdle, Keto, Lidocaine Dose
+
+- Katch-McArdle `KatchMcardleCalculator` — `c7a16f0d` / `901f7a1d` / reg this. Mongo blocked.
+- Keto `KetoCalculator` — `d763e7af` / `0e063ae7` / reg this. Mongo blocked.
+- Lidocaine Dose `LidocaineDoseCalculator` — `cfb1174b` / `28d38531` / reg this. Mongo blocked.
+- Registry/sitemap/`tool.key` in this commit. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+### 2026-11-24 — Macro Calculator
 
 - Educational macros (`MacroCalculator`, slug `macro-calculator`) reusing IIFYM Mifflin–St Jeor + AMDR engine. **No FX**. Mongo blocked. Commits `0016c1e4` / `fbcf2918` / (reg this).
 ### 2026-11-24 — Local Anesthetic Calculator

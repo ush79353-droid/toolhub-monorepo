@@ -425,6 +425,25 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.IsotretinoinDoseCalculator,
     })),
   ),
+  KatchMcardleCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/katch-mcardle/KatchMcardleCalculator'
+    ).then((mod) => ({
+      default: mod.KatchMcardleCalculator,
+    })),
+  ),
+  KetoCalculator: lazyTool(() =>
+    import('@/tools/calculators/keto/KetoCalculator').then((mod) => ({
+      default: mod.KetoCalculator,
+    })),
+  ),
+  LidocaineDoseCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/lidocaine-dose/LidocaineDoseCalculator'
+    ).then((mod) => ({
+      default: mod.LidocaineDoseCalculator,
+    })),
+  ),
   LoanCalculator: lazyTool(() =>
     import('@/tools/calculators/loan/LoanCalculator').then((mod) => ({
       default: mod.LoanCalculator,

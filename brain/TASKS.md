@@ -8,6 +8,9 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-785` | Lidocaine Dose Calculator (`LidocaineDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/lidocaine-dose/*` | Mongo Atlas DNS |
+| `TOOL-784` | Keto Calculator (`KetoCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/keto/*` | Mongo Atlas DNS |
+| `TOOL-783` | Katch-McArdle Calculator (`KatchMcardleCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/katch-mcardle/*` | Mongo Atlas DNS |
 | `TOOL-782` | Macro Calculator (`MacroCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/macro/*` | Mongo Atlas DNS |
 | `TOOL-781` | Local Anesthetic Calculator (`LocalAnestheticCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/local-anesthetic/*` | Mongo Atlas DNS |
 | `TOOL-780` | Iron Deficiency Calculator (`IronDeficiencyCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/iron-deficiency/*` | Mongo Atlas DNS |

@@ -15,6 +15,9 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Katch-McArdle Calculator (`/tools/katch-mcardle-calculator`):** Educational LBM BMR (`KatchMcardleCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Keto Calculator (`/tools/keto-calculator`):** Educational keto macros (`KetoCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Lidocaine Dose Calculator (`/tools/lidocaine-dose-calculator`):** Educational lidocaine max dose (`LidocaineDoseCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Macro Calculator (`/tools/macro-calculator`):** Educational macros (`MacroCalculator`); shared IIFYM engine. **No FX**. Registry wired. **Mongo blocked**.
 - **Local Anesthetic Calculator (`/tools/local-anesthetic-calculator`):** Educational plain max dose (`LocalAnestheticCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Harris-Benedict Calculator (`/tools/harris-benedict-calculator-basal-metabolic-rate`):** Educational revised HB BMR (`HarrisBenedictCalculator`). **No FX**. Registry wired. **Mongo blocked**.

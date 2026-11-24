@@ -120,6 +120,11 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/iron-deficiency/detail'),
   IsotretinoinDoseCalculator: () =>
     import('@/tools/calculators/isotretinoin-dose/detail'),
+  KatchMcardleCalculator: () =>
+    import('@/tools/calculators/katch-mcardle/detail'),
+  KetoCalculator: () => import('@/tools/calculators/keto/detail'),
+  LidocaineDoseCalculator: () =>
+    import('@/tools/calculators/lidocaine-dose/detail'),
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),
   LoanInterestCalculator: () =>
     import('@/tools/calculators/loan-interest/detail'),
