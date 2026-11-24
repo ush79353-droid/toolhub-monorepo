@@ -152,6 +152,11 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   OpioidConversionCalculator: () =>
     import('@/tools/calculators/opioid-conversion/detail'),
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
+  PrescriptionRefillCalculator: () =>
+    import('@/tools/calculators/prescription-refill/detail'),
+  RmrCalculator: () => import('@/tools/calculators/rmr/detail'),
+  SodiumInSaltCalculator: () =>
+    import('@/tools/calculators/sodium-in-salt/detail'),
   TdeeCalculator: () => import('@/tools/calculators/tdee/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),

@@ -15,6 +15,9 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Sodium in Salt Calculator (`/tools/sodium-in-salt-calculator`):** Na from NaCl mass ratio (`SodiumInSaltCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **RMR Calculator (`/tools/rmr-calculator`):** Harris–Benedict × TEF (`RmrCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Prescription Refill Calculator (`/tools/prescription-refill-calculator`):** Refill date worksheet (`PrescriptionRefillCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **TDEE Calculator (`/tools/tdee-calculator`):** Mifflin BMR × PAL (`TdeeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Opioid Conversion Calculator (`/tools/opioid-conversion-calculator`):** Equianalgesic conversion (`OpioidConversionCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **mmol/L to mg/dL Calculator (`/tools/mmoll-to-mgdl-calculator`):** Lab unit conversion (`MmollToMgdlCalculator`). **No FX**. Registry wired. **Mongo blocked**.

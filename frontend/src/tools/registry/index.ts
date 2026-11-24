@@ -552,6 +552,25 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PeptideCalculator,
     })),
   ),
+  PrescriptionRefillCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/prescription-refill/PrescriptionRefillCalculator'
+    ).then((mod) => ({
+      default: mod.PrescriptionRefillCalculator,
+    })),
+  ),
+  RmrCalculator: lazyTool(() =>
+    import('@/tools/calculators/rmr/RmrCalculator').then((mod) => ({
+      default: mod.RmrCalculator,
+    })),
+  ),
+  SodiumInSaltCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/sodium-in-salt/SodiumInSaltCalculator'
+    ).then((mod) => ({
+      default: mod.SodiumInSaltCalculator,
+    })),
+  ),
   TdeeCalculator: lazyTool(() =>
     import('@/tools/calculators/tdee/TdeeCalculator').then((mod) => ({
       default: mod.TdeeCalculator,

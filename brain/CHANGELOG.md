@@ -1,4 +1,11 @@
-﻿### 2026-11-24 — TDEE Calculator
+﻿### 2026-11-24 — Batch: Prescription Refill, RMR, Sodium in Salt
+
+- `PrescriptionRefillCalculator` — UI `fb561349` / ENG `00b9c6be` / (reg this).
+- `RmrCalculator` — UI `6b6f07f3` / ENG `d18940c1` / (reg this).
+- `SodiumInSaltCalculator` — UI `1ef7434f` / ENG `8426e3d4` / (reg this).
+- **No FX**. Mongo blocked.
+
+### 2026-11-24 — TDEE Calculator
 
 - Educational TDEE/BMR (`TdeeCalculator`, slug `tdee-calculator`). Mifflin–St Jeor × Omni PAL. **No FX**. Mongo blocked. Commits `697ce49b` / `c7fb3351` / (reg this).
 
