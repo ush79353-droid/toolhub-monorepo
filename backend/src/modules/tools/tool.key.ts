@@ -15,6 +15,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CarbCalculator',
   'CarbohydrateCalculator',
   'CarboplatinCalculator',
+  'CefdinirDoseCalculator',
   'DaptCalculator',
   'DebtAvalancheCalculator',
   'DebtCalculator',

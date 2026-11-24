@@ -30,6 +30,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/carbohydrate-calculator/detail'),
   CarboplatinCalculator: () =>
     import('@/tools/calculators/carboplatin/detail'),
+  CefdinirDoseCalculator: () =>
+    import('@/tools/calculators/cefdinir-dose/detail'),
   DaptCalculator: () => import('@/tools/calculators/dapt/detail'),
   DebtAvalancheCalculator: () =>
     import('@/tools/calculators/debt-avalanche/detail'),

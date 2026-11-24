@@ -24,6 +24,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'carb-calculator-carbohydrates',
   'carbohydrate-calculator',
   'carboplatin-calculator',
+  'cefdinir-dose-calculator',
   'dapt-calculator',
   'debt-avalanche-calculator',
   'debt-calculator',

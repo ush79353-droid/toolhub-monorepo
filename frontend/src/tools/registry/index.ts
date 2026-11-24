@@ -109,6 +109,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CarboplatinCalculator,
     })),
   ),
+  CefdinirDoseCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/cefdinir-dose/CefdinirDoseCalculator'
+    ).then((mod) => ({
+      default: mod.CefdinirDoseCalculator,
+    })),
+  ),
   DaptCalculator: lazyTool(() =>
     import('@/tools/calculators/dapt/DaptCalculator').then((mod) => ({
       default: mod.DaptCalculator,

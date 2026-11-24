@@ -1,4 +1,7 @@
-﻿### 2026-11-24 — Batch: Blood Volume, Carb, Carbohydrate, Carboplatin
+﻿### 2026-11-24 — Cefdinir Dose Calculator
+
+- Educational Omnicef/cefdinir labeling explorer (`CefdinirDoseCalculator`, slug `cefdinir-dose-calculator`). DailyMed adult CAP fixture 300 mg q12h × 10 days; pediatric mg/kg. **No FX**. Mongo blocked. Commits `53571a68` / `980c626b` / (reg this).
+### 2026-11-24 — Batch: Blood Volume, Carb, Carbohydrate, Carboplatin
 
 - Blood Volume `BloodVolumeCalculator` — cac9a6eb / af2c799e / reg this. Mongo blocked.
 - Carb Calculator `CarbCalculator` — d732a6f2 / b5123c48 / reg this. Mongo blocked.
@@ -6195,6 +6198,7 @@
 - Added bidirectional Rule of 72 calculator (`RuleOf72Calculator` / `rule-of-72-calculator`).
 - Approximation `T � 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
 - Catalog `6af46f10a27d8d1d4e9901bc` activated; `indexable` left false.
+
 
 
 
