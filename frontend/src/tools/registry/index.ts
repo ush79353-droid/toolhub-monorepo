@@ -614,6 +614,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TimiStemiCalculator,
     })),
   ),
+  TimiUanstemiCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/timi-uanstemi/TimiUanstemiCalculator'
+    ).then((mod) => ({
+      default: mod.TimiUanstemiCalculator,
+    })),
+  ),
   TpaStrokeCalculator: lazyTool(() =>
     import('@/tools/calculators/tpa-stroke/TpaStrokeCalculator').then((mod) => ({
       default: mod.TpaStrokeCalculator,

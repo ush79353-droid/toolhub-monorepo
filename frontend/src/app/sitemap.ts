@@ -102,6 +102,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'stroke-volume-calculator',
   'tdee-calculator',
   'timi-stemi-calculator',
+  'timi-uanstemi-calculator',
   'tpa-stroke-calculator',
   'vitamin-a-calculator',
   'vitamin-d-calculator',

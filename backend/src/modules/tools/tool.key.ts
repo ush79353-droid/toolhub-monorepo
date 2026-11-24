@@ -96,6 +96,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'StrokeVolumeCalculator',
   'TdeeCalculator',
   'TimiStemiCalculator',
+  'TimiUanstemiCalculator',
   'TpaStrokeCalculator',
   'VitaminACalculator',
   'VitaminDCalculator',
