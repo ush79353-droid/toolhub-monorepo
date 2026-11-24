@@ -4234,26 +4234,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.QtcCalculator,
     })),
   ),
-      (mod) => ({
-      })
-    )
-  ),
-    import(
-    ).then((mod) => ({
-    })),
-  ),
-    import(
-    ).then((mod) => ({
-    })),
-  ),
-      (mod) => ({
-      })
-    )
-  ),
-    import(
-    ).then((mod) => ({
-    })),
-  ),
   ManHoursCalculator: lazyTool(() =>
     import('@/tools/calculators/man-hours/ManHoursCalculator').then((mod) => ({
       default: mod.ManHoursCalculator,
@@ -6016,10 +5996,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/productivity/ProductivityCalculator'
     ).then((mod) => ({
       default: mod.ProductivityCalculator,
-    })),
-  ),
-    import(
-    ).then((mod) => ({
     })),
   ),
   RcriCalculator: lazyTool(() =>
