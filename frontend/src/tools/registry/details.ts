@@ -742,6 +742,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/benzodiazepine-conversion/detail'),
   BloodDonorCalculator: () =>
     import('@/tools/calculators/blood-donor/detail'),
+  BloodTypeCalculator: () =>
+    import('@/tools/calculators/blood-type/detail'),
   IbuprofenDosageCalculator: () =>
     import('@/tools/calculators/ibuprofen-dosage/detail'),
   IchVolumeCalculator: () =>

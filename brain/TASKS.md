@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-761` | Implement Blood Type Calculator on slug `blood-type-calculator` with genotype-averaged ABO/Rh probabilities, Punnett teaching grid, privacy-safe share URL, no FX; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/blood-type/*`, registry, sitemap, `tool.key.ts` | Mongo Atlas DNS |
 | `TOOL-755` | Absolute Reticulocyte Count Calculator slug `absolute-reticulocyte-count-calculator`; Hct-anchored ARC estimate labeled; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/absolute-reticulocyte-count/*` | Mongo Atlas DNS |
 | `TOOL-754` | Implement Absolute Lymphocyte Count Calculator on slug `absolute-lymphocyte-count-calculator` with ALC=WBC×(lymph%/100) in ×10³/µL, fixture 6×25%=1.5, privacy-safe share URL, no FX; Mongo assign blocked (Atlas DNS) | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/absolute-lymphocyte-count/*`, registry, sitemap, `tool.key.ts`, `brain/*` | Mongo Atlas DNS |
 | `TOOL-753` | Implement Absolute Eosinophil Count Calculator on slug `absolute-eosinophil-count-calculator` with AEC=WBC×(eos%/100) in ×10³/µL (≡×10⁹/L), 0–100% eos validation, privacy-safe share URL, no FX; Mongo assign blocked (Atlas DNS) | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/absolute-eosinophil-count/*`, registry, sitemap, `tool.key.ts`, `brain/*` | Mongo Atlas DNS |
@@ -1015,4 +1016,5 @@
 - componentKey: `RuleOf72Calculator`
 - Mongo: `6af46f10a27d8d1d4e9901bc` (isDeveloped/isActive true; indexable false)
 - Commits: UI `05cd36a8`, engine `fe742ea5`, reg (this commit)
+
 

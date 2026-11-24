@@ -3074,6 +3074,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BloodDonorCalculator,
     })),
   ),
+  BloodTypeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/blood-type/BloodTypeCalculator'
+    ).then((mod) => ({
+      default: mod.BloodTypeCalculator,
+    })),
+  ),
   IbuprofenDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/ibuprofen-dosage/IbuprofenDosageCalculator'

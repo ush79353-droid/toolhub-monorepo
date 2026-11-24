@@ -1,4 +1,9 @@
-﻿### 2026-11-24 — Batch: ANC without Bands, BEE, Benzodiazepine Conversion, Blood Donor
+﻿### 2026-11-24 — Blood Type Calculator
+
+- **Summary:** Educational ABO/Rh inheritance (`BloodTypeCalculator`, slug `blood-type-calculator`). Uniform genotype priors; screenshot A+×AB− → 50/12.5/37.5/0 ABO, 75/25 Rh. **No FX**. Mongo assign pending. TASKS `TOOL-761`.
+- **Commits:** `7684da52` (UI) / `3e270f62` (engine) / (reg this).
+- **Verification:** `blood-type/calculation.test.ts` ok.
+### 2026-11-24 — Batch: ANC without Bands, BEE, Benzodiazepine Conversion, Blood Donor
 
 - ANC without Bands `AncWithoutBandsCalculator` — 78e454c2 / 7f5749b9 / reg this. Mongo blocked.
 - BEE `BeeCalculator` — c202da72 / 5d0697ae / reg this. Mongo blocked.
@@ -6184,6 +6189,7 @@
 - Added bidirectional Rule of 72 calculator (`RuleOf72Calculator` / `rule-of-72-calculator`).
 - Approximation `T � 72/r%` with optional exact `ln(2)/ln(1+r)` comparison; no FX.
 - Catalog `6af46f10a27d8d1d4e9901bc` activated; `indexable` left false.
+
 
 
 

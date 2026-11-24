@@ -761,6 +761,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'benadryl-dosage-calculator',
   'benzodiazepine-conversion-calculator',
   'blood-donor-calculator',
+  'blood-type-calculator',
   'ibuprofen-dosage-calculator',
   'ich-volume-calculator',
   'bbt-calculator-basal-body-temperature',

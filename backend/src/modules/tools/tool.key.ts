@@ -545,6 +545,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BenadrylDosageCalculator',
   'BenzodiazepineConversionCalculator',
   'BloodDonorCalculator',
+  'BloodTypeCalculator',
   'IbuprofenDosageCalculator',
   'IchVolumeCalculator',
   'BetaStockCalculator',
