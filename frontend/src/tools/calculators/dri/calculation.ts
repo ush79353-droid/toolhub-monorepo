@@ -97,10 +97,14 @@ export function totalDailyCaloriesKcal(
 }
 
 function proteinAmdrPercent(ageBand: DriAgeBand): { low: number; high: number } {
+  // IOM AMDR: 1–3 y 5–20%; 4–18 y 10–30%; adults ≥19 y 10–35%.
   if (ageBand === 'birth_6mo' || ageBand === 'mo7_12' || ageBand === 'y1_3') {
     return { low: 5, high: 20 };
   }
-  return { low: 10, high: 30 };
+  if (ageBand === 'y4_8' || ageBand === 'y9_13' || ageBand === 'y14_18') {
+    return { low: 10, high: 30 };
+  }
+  return { low: 10, high: 35 };
 }
 
 function fatAmdrPercent(ageBand: DriAgeBand): { low: number; high: number } {

@@ -37,7 +37,7 @@ function assert(cond: unknown, msg: string): asserts cond {
   assert(r.bmi != null && Math.abs(r.bmi - 24.691) < 0.01, `bmi ${r.bmi}`);
   assert(r.caloriesDisplay === '2,280', `cal display ${r.caloriesDisplay}`);
   assert(r.carbs?.lowGrams === 257 && r.carbs.highGrams === 371, `carbs ${JSON.stringify(r.carbs)}`);
-  assert(r.protein?.lowGrams === 57 && r.protein.highGrams === 171, `protein ${JSON.stringify(r.protein)}`);
+  assert(r.protein?.lowGrams === 57 && r.protein.highGrams === 200, `protein ${JSON.stringify(r.protein)}`);
   assert(r.fat?.lowGrams === 51 && r.fat.highGrams === 89, `fat ${JSON.stringify(r.fat)}`);
   assert(r.fiberGrams === 32, `fiber ${r.fiberGrams}`);
   assert(r.waterLiters === 2.3, `water ${r.waterLiters}`);
@@ -96,8 +96,8 @@ function assert(cond: unknown, msg: string): asserts cond {
 
 // AMDR helper
 {
-  const p = macroRangeFromKcal(2280, 10, 30, 4);
-  assert(p.lowGrams === 57 && p.highGrams === 171, 'amdr protein');
+  const p = macroRangeFromKcal(2280, 10, 35, 4);
+  assert(p.lowGrams === 57 && p.highGrams === 200, 'amdr protein adult 10–35%');
 }
 
 // Empty / invalid

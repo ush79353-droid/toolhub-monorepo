@@ -44,13 +44,13 @@ export const LIFE_STAGES: readonly LifeStage[] = [
   {
     id: 'mo0_6',
     minYears: 0,
-    maxYearsExclusive: 0.5,
+    maxYearsExclusive: 7 / 12,
     labelMale: 'males 0–6 mo',
     labelFemale: 'females 0–6 mo',
   },
   {
     id: 'mo7_12',
-    minYears: 0.5,
+    minYears: 7 / 12,
     maxYearsExclusive: 1,
     labelMale: 'males 7–12 mo',
     labelFemale: 'females 7–12 mo',
@@ -769,14 +769,14 @@ export const ELEMENT_SPECS: readonly ElementSpec[] = [
     label: 'Sodium',
     unit: 'mg',
     recommendationKind: 'cdrr',
-    // 2019 CDRR for ages ≥14 y; younger bands use AI values published alongside CDRR framing.
+    // Infants/children: NASEM 2019 AI; ages ≥14 y: CDRR 2,300 mg (classic UL withdrawn).
     values: sexed(
       both({
         mo0_6: 110,
         mo7_12: 370,
-        y1_3: 1200,
-        y4_8: 1500,
-        y9_13: 1800,
+        y1_3: 800,
+        y4_8: 1000,
+        y9_13: 1200,
         y14_18: 2300,
         y19_30: 2300,
         y31_50: 2300,
@@ -786,9 +786,9 @@ export const ELEMENT_SPECS: readonly ElementSpec[] = [
       both({
         mo0_6: 110,
         mo7_12: 370,
-        y1_3: 1200,
-        y4_8: 1500,
-        y9_13: 1800,
+        y1_3: 800,
+        y4_8: 1000,
+        y9_13: 1200,
         y14_18: 2300,
         y19_30: 2300,
         y31_50: 2300,

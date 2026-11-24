@@ -37,7 +37,8 @@ assert(approx(ageToYears(6, 'months'), 0.5), '6 mo → 0.5 y');
 // --- DriAgeBand boundaries (shared dri-data bands) ---
 assert(resolveDriAgeBand(0)?.id === 'birth_6mo', '0 y → birth–6 mo');
 assert(resolveDriAgeBand(0.49)?.id === 'birth_6mo', '0.49 → birth–6 mo');
-assert(resolveDriAgeBand(0.5)?.id === 'mo7_12', '0.5 → 7–12 mo');
+assert(resolveDriAgeBand(0.5)?.id === 'birth_6mo', '6 mo (0.5 y) → 0–6 mo');
+assert(resolveDriAgeBand(7 / 12)?.id === 'mo7_12', '7 mo → 7–12 mo');
 assert(resolveDriAgeBand(1)?.id === 'y1_3', '1 → 1–3');
 assert(resolveDriAgeBand(3.9)?.id === 'y1_3', '3.9 → 1–3');
 assert(resolveDriAgeBand(4)?.id === 'y4_8', '4 → 4–8');

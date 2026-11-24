@@ -35,14 +35,15 @@ const AGE_BANDS: readonly {
 }[] = [
   {
     id: 'birth_6mo',
+    // Inclusive through 6 months (0.5 y); 7 months begins at 7/12 y.
     minYears: 0,
-    maxYearsExclusive: 0.5,
+    maxYearsExclusive: 7 / 12,
     labelMale: 'males 0–6 mo',
     labelFemale: 'females 0–6 mo',
   },
   {
     id: 'mo7_12',
-    minYears: 0.5,
+    minYears: 7 / 12,
     maxYearsExclusive: 1,
     labelMale: 'males 7–12 mo',
     labelFemale: 'females 7–12 mo',

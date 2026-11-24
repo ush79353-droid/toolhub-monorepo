@@ -34,7 +34,8 @@ assert(approx(ageToYears(6, 'months'), 0.5), '6 mo → 0.5 y');
 // --- Life-stage boundaries (calcium transitions) ---
 assert(resolveLifeStage(0)?.id === 'mo0_6', '0 y → 0–6 mo');
 assert(resolveLifeStage(0.49)?.id === 'mo0_6', '0.49 y → 0–6 mo');
-assert(resolveLifeStage(0.5)?.id === 'mo7_12', '0.5 y → 7–12 mo');
+assert(resolveLifeStage(0.5)?.id === 'mo0_6', '6 mo (0.5 y) → 0–6 mo');
+assert(resolveLifeStage(7 / 12)?.id === 'mo7_12', '7 mo → 7–12 mo');
 assert(resolveLifeStage(1)?.id === 'y1_3', '1 y → 1–3');
 assert(resolveLifeStage(3.9)?.id === 'y1_3', '3.9 y → 1–3');
 assert(resolveLifeStage(4)?.id === 'y4_8', '4 y → 4–8');

@@ -1,5 +1,5 @@
 /**
- * 9-item Diet Risk Score (DRS) — Johnston et al., BMJ Open 2020.
+ * 9-item Diet Risk Score (DRS) — Johnston et al., BMJ Nutr Prev Health 2020.
  */
 
 export type DietFrequency = 'daily' | 'two_three_week' | 'once_week' | 'never';

@@ -1,5 +1,5 @@
 /**
- * Diet Risk Score (DRS) — Johnston et al., BMJ Open 2020 (ADR-018).
+ * Diet Risk Score (DRS) — Johnston et al., BMJ Nutr Prev Health 2020 (ADR-018).
  *
  * Nine food-frequency items, 0–27 total; tertiles: 0–8 low, 9–18 moderate, 19–27 high.
  */
@@ -17,7 +17,7 @@ export const DRS_MIN = 0;
 export const DRS_MAX = 27;
 
 export const SOURCE_NOTE =
-  'Nine-item Diet Risk Score (Johnston KP et al. BMJ Open 2020;3(2):e001094). Range 0 (low) to 27 (high cardiometabolic dietary risk). Tertiles: 0–8 low, 9–18 moderate, 19–27 high.';
+  'Nine-item Diet Risk Score (Johnston KP et al. BMJ Nutr Prev Health 2020;3:e001094). Range 0 (low) to 27 (high cardiometabolic dietary risk). Tertiles: 0–8 low, 9–18 moderate, 19–27 high.';
 
 export const DISCLAIMER =
   'Educational diet screener — not medical nutrition therapy or a clinical diagnosis.';
