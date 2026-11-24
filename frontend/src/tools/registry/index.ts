@@ -528,9 +528,23 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MmeCalculator,
     })),
   ),
+  MmollToMgdlCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/mmoll-to-mgdl/MmollToMgdlCalculator'
+    ).then((mod) => ({
+      default: mod.MmollToMgdlCalculator,
+    })),
+  ),
   NetCarbsCalculator: lazyTool(() =>
     import('@/tools/calculators/net-carbs/NetCarbsCalculator').then((mod) => ({
       default: mod.NetCarbsCalculator,
+    })),
+  ),
+  OpioidConversionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/opioid-conversion/OpioidConversionCalculator'
+    ).then((mod) => ({
+      default: mod.OpioidConversionCalculator,
     })),
   ),
   PeptideCalculator: lazyTool(() =>

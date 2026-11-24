@@ -1,4 +1,10 @@
-﻿### 2026-11-24 — Net Carbs Calculator
+﻿### 2026-11-24 — mmol/L↔mg/dL + Opioid Conversion
+
+- `MmollToMgdlCalculator` (`mmoll-to-mgdl-calculator`) — MW÷10 lab conversion. Commits `739a51c8` / `a099f137` / (reg this).
+- `OpioidConversionCalculator` (`opioid-conversion-calculator`) — published equianalgesic factors. Commits `16e5631b` / `0535e512` / (reg this).
+- **No FX**. Mongo blocked.
+
+### 2026-11-24 — Net Carbs Calculator
 
 - Educational net carbs (`NetCarbsCalculator`, slug `net-carbs-calculator`). Fiber/sugar-alcohol rules by region. **No FX**. Mongo blocked. Commits `6b6dd78a` / `9ae18579` / (reg this).
 

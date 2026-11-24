@@ -146,7 +146,11 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/micronutrient/detail'),
   MipiCalculator: () => import('@/tools/calculators/mipi/detail'),
   MmeCalculator: () => import('@/tools/calculators/mme/detail'),
+  MmollToMgdlCalculator: () =>
+    import('@/tools/calculators/mmoll-to-mgdl/detail'),
   NetCarbsCalculator: () => import('@/tools/calculators/net-carbs/detail'),
+  OpioidConversionCalculator: () =>
+    import('@/tools/calculators/opioid-conversion/detail'),
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),

@@ -80,9 +80,11 @@ export const APPROVED_COMPONENT_KEYS = [
   'MicronutrientCalculator',
   'MipiCalculator',
   'MmeCalculator',
+  'MmollToMgdlCalculator',
   'MarginAndMarkupCalculator',
   'MileageReimbursementCalculator',
   'NetCarbsCalculator',
+  'OpioidConversionCalculator',
   'PeptideCalculator',
 
   'MarginAndSalesTaxCalculator',

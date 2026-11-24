@@ -15,6 +15,8 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Opioid Conversion Calculator (`/tools/opioid-conversion-calculator`):** Equianalgesic conversion (`OpioidConversionCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **mmol/L to mg/dL Calculator (`/tools/mmoll-to-mgdl-calculator`):** Lab unit conversion (`MmollToMgdlCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Net Carbs Calculator (`/tools/net-carbs-calculator`):** Net carbs with fiber/alcohol rules (`NetCarbsCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Peptide Calculator (`/tools/peptide-calculator`):** Labeled syringe volume worksheet (`PeptideCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **MME Calculator (`/tools/mme-calculator`):** CDC 2022 morphine milligram equivalents (`MmeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
