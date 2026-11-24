@@ -80,6 +80,27 @@ export interface PublicToolDetail {
   isActive: boolean;
   isFeatured: boolean;
   updatedAt: string;
+  publishedGuide: PublicPublishedGuide | null;
+}
+
+export interface PublicPublishedGuide {
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string;
+  primaryKeyword: string;
+  disclaimer: string;
+  sections: PublicPublishedGuideSection[];
+  faqs: { question: string; answer: string }[];
+  links: { slug: string; anchor: string }[];
+}
+
+export interface PublicPublishedGuideSection {
+  id: string;
+  title: string;
+  paragraphs: string[];
+  bullets: string[];
+  formula: string;
+  formulaNote: string;
 }
 
 export const getPublicToolBySlug = cache(async (slug: string): Promise<PublicToolDetail | null> => {

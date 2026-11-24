@@ -3,6 +3,7 @@ import { createApp } from './app';
 import { env } from './config/env';
 import { connectDB, disconnectDB } from './config/database';
 import { startCurrencyRateJob, stopCurrencyRateJob } from './jobs/currency-rates.cron';
+import { bootSeoWorkers, shutdownSeoWorkers } from './modules/seo/workers';
 import { logger } from './utils/logger';
 
 let server: Server | null = null;
@@ -17,6 +18,11 @@ async function bootstrap(): Promise<void> {
       logger.warn('Initial MongoDB connection failed. Server will continue with degraded state.');
     } else {
       startCurrencyRateJob();
+      if (env.SEO_WORKERS_ENABLED && env.REDIS_HOST.trim()) {
+        bootSeoWorkers();
+      } else if (env.SEO_WORKERS_ENABLED) {
+        logger.warn('SEO_WORKERS_ENABLED is true but REDIS_HOST is empty. SEO workers were not started.');
+      }
     }
   } catch (err) {
     logger.error('Unexpected error while connecting to MongoDB', err);
@@ -36,6 +42,7 @@ async function bootstrap(): Promise<void> {
       server.close(async () => {
         logger.info('HTTP server closed');
         stopCurrencyRateJob();
+        await shutdownSeoWorkers();
         await disconnectDB();
         logger.info('Graceful shutdown completed. Exiting process.');
         process.exit(0);
@@ -48,6 +55,7 @@ async function bootstrap(): Promise<void> {
       }, 10000);
     } else {
       stopCurrencyRateJob();
+      await shutdownSeoWorkers();
       await disconnectDB();
       process.exit(0);
     }

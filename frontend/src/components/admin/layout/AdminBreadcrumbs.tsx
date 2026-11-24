@@ -13,6 +13,8 @@ const ROUTE_NAME_MAP: Record<string, string> = {
   users: 'Users',
   media: 'Media Library',
   seo: 'SEO Management',
+  'seo-campaigns': 'SEO campaigns',
+  drafts: 'Draft',
   pages: 'CMS Pages',
   analytics: 'Analytics',
   integrations: 'Integrations',

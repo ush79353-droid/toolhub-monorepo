@@ -529,6 +529,25 @@
 - **Commits:** `8d47ae86` (UI) / `1c6af771` (engine) / `930c78eb` (partial reg/Brain) + Breast Cancer reg repair.
 - **Example:** closed · 0–30% · firm · −3 · posterior → **0**; 5 cm · ≥80% · soft · +1/+2 · anterior → **13**.
 - **Verification:** Focused `calculation.test.ts` ok. Full tsc/lint/build/Playwright not run (continuous-mission §11). Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+### 2026-11-24 — SEO FAQ count
+- **Summary:** The SEO draft schema and review check accept 4–8 FAQs, matching the prompt’s 5–8 request. A section may hold 16 paragraphs, so a longer draft is no longer rejected for having more than 5 FAQs or 8 paragraphs.
+
+### 2026-11-24 — SEO campaign picker
+- **Summary:** `/admin/seo-campaigns` lists campaigns. `/admin/seo-campaigns/new` creates one from active tools, with category, pillar, sub-pillar, and published filters, select-all for the filtered list, and a 50-tool cap. Each row shows whether that tool’s SEO copy is published, approved, or another draft state. Creating a campaign waits up to 120 seconds so enqueueing up to 50 drafts does not hit the 10-second API timeout.
+
+### 2026-11-24 — SEO word-count warning
+- **Summary:** A guide of 1,500–1,700 words stays clear. 1,200–1,499 words is a warning and can be approved. Under 1,200 or over 1,700 still blocks. The prompt still asks for 1,500–1,700, with slightly longer section minimums.
+
+### 2026-11-24 — Sync category declaredToolCount
+- **Summary:** `declaredToolCount` on each category, pillar, and sub-pillar is the number of tools with `isActive: true` assigned to that node. `npm run categories:sync-counts` rewrites it.
+
+### 2026-11-24 — Remove 42 merged duplicate tools
+- **Summary:** Deleted the 42 catalog rows marked “merge” in the tools-directory Part 2.A list. The page each one merged into was kept. Nine of the extras had frontend calculators; those modules, registry keys, sitemap slugs, and the backend allowlist entries were removed. Part 2.B groups were left as separate tools. Verification list: `removed-merged-tools.json`.
+- **Verification:** Mongo delete count 42, remaining matches 0. Temporary match scripts were outside the repo and deleted. Temporary files cleaned: YES.
+
+### 2026-11-24 — Finance SEO campaign pipeline
+- **Summary:** Added an admin-approved SEO pipeline for active, developed Finance & Business calculators (ADR-027). DataForSEO supplies keyword and SERP facts. OpenAI drafts a structured guide of 1,500–1,700 words. Publish writes meta fields and shows `PublishedGuideArticle` on `/tools/[slug]` only after approval. `isActive` and `indexable` are not changed. `/admin/seo` stays a preview. Workers start only when `SEO_WORKERS_ENABLED=true` and `REDIS_HOST` is set (`REDIS_PORT`, `REDIS_PASSWORD`).
+- **Verification:** `backend` `npm run test:seo` (7 passing). `backend` and `frontend` `tsc --noEmit` passed. No live provider calls. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
 
 ### 2026-11-22 — Adderall + Levothyroxine verified-reference recovery
 - **Adderall:** Shipped educational IR explorer + prescribed-dose tablet arithmetic on slug `adderall-dosage-calculator` (`AdderallDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d1`). Omni + DailyMed IR (setid `f22635fe-821d-4cde-aa12-419f8b53db81`, May 29, 2024). ADHD/Narcolepsy educational charts; custom `tablets = dose/strength`; XR out of scope. Activated; **`indexable` false**. TASKS `TOOL-704`.
@@ -1161,6 +1180,11 @@
 - **Summary:** Replaced share/meta brand titles `… — Omega Calculators` with `… | Omega Calculators` (SEO fallback style). Rewrote em dashes in calculator `detail.tsx` blurbs, `content.ts` FAQ/TOC, guides, forms, results, validation user messages, and related user-facing strings using situational punctuation (`|`, `:`, `;`, `,`, parentheses). Skipped code comments and empty-value glyphs (`'—'` / placeholders).
 - **Important Files:** Broad set under `frontend/src/tools/calculators/**` (titles, `detail.tsx`, `content.ts`, guides/forms/results, validation strings); `brain/CHANGELOG.md`, `brain/TASKS.md`, `brain/CURRENT_STATE.md`.
 - **Verification:** Zero remaining `— Omega Calculators`; `detail.tsx` / guide prose em dashes cleared; leftover `—` limited to comments and intentional glyphs. Temporary files cleaned: YES.
+
+### 2026-11-24 — Fix missing GuideSectionHeading + leftover build blockers
+- **Summary:** Added missing `frontend/src/tools/shared/GuideSectionHeading.tsx` (imported by breastfeeding-calorie / navy-body-fat / weight-percentile guides). Also fixed CaloriesBurned internal `Link`, Birth Control share URL/`title`, chart color typing, ArmyBodyFat `REGISTERED_COMPONENT_KEYS` entry, and a few metadata/`assert` type mismatches so `npm run build` passes.
+- **Important Files:** `frontend/src/tools/shared/GuideSectionHeading.tsx`, `calories-burned/CaloriesBurnedGuideArticle.tsx`, `birth-control/BirthControlCalculator.tsx`, `birth-weight-percentile/BirthWeightPercentileChart.tsx`, `registry/keys.ts`, assorted small TS fixes.
+- **Verification:** `npx tsc --noEmit` exit 0; `npm run build` exit 0. Temporary files cleaned: YES.
 
 ### 2026-11-21 — Soften unused-vars + unblock frontend `next build`
 - **Summary:** Turned off ESLint `no-unused-vars` / `@typescript-eslint/no-unused-vars` (tsconfig already had `noUnusedLocals`/`noUnusedParameters` false). Converted ~68 calculator guide/results files from raw `<a href="/tools/…">` to `next/link` `Link` (fixes `@next/next/no-html-link-for-pages` Errors). Softened shared props (`FAQAccordion` `faqs` alias, optional `CurrencySelect` `id`, `InfoTooltip` `content` alias) and fixed remaining typecheck blockers so `npx tsc --noEmit` and `npm run build` succeed.

@@ -2,7 +2,7 @@
 
 Database: **MongoDB** accessed strictly from `backend/` via **Mongoose** (`^8.10.1`, `mongoose.set('strictQuery', true)`).
 
-Only the Mongoose models documented below exist. No other collections (`analytics`, `audit_logs`, `cms_pages`, `settings`, `integrations`) are implemented yet.
+Only the Mongoose models documented below exist. No other collections (`analytics`, `audit_logs`, `cms_pages`, `settings`, `integrations`) are implemented yet. SEO campaign collections are documented in the SEO campaigns section.
 
 ---
 
@@ -79,6 +79,7 @@ Only the Mongoose models documented below exist. No other collections (`analytic
 | `iconUrl` | `String` | Public URL of the category icon. Empty unless set. Local files use `/uploads/<key>`. | `''` |
 | `iconMedia` | `ObjectId \| null` | `ref: 'MediaAsset'` | `null` |
 | `isActive` | `Boolean` | Visibility flag | `true` |
+| `declaredToolCount` | `Number` | Active tools on this node. `categories:sync-counts` sets it from `Tool.isActive === true`: a category counts `tool.category`, a pillar counts `tool.pillar`, a sub-pillar counts `tool.subPillar`. | `0` |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |
 
 ### Indexes
@@ -228,5 +229,52 @@ Only the Mongoose models documented below exist. No other collections (`analytic
 Index: `{ baseCurrency: 1, fetchedAt: -1 }`.
 
 Public read: `GET /api/v1/currency/rates` (see `API_CONTRACTS.md`). Tracked base list: `BASE_CURRENCIES` in `currency-metadata.ts` (54 codes after Phase 1 alignment).
+
+---
+
+## SEO campaigns (ADR-027)
+
+Drafts are not fields on `Tool`. A published draft is the only SEO guide the public tool read returns.
+
+### `SeoCampaign` (collection: `seocampaigns`)
+
+- **Source:** `backend/src/modules/seo/seo.model.ts`
+- **Responsibility:** One admin batch. Pilot campaigns cap `maxTools` at 20 and target Finance & Business.
+
+| Field | Type | Notes |
+| :--- | :--- | :--- |
+| `name` | `String` | Required, max 120 |
+| `categoryId` | `ObjectId` | Finance & Business category |
+| `maxTools` | `Number` | 20 for the pilot |
+| `status` | `String` | `running` or `ready` |
+| `locationCode` | `Number` | DataForSEO location, default 2840 (United States) |
+| `languageCode` | `String` | Default `en` |
+| `createdBy` | `ObjectId` | Admin user |
+
+### `SeoDraft` (collection: `seodrafts`)
+
+- **Source:** `backend/src/modules/seo/seo.model.ts`
+- **Responsibility:** One calculator inside a campaign. Unique on `campaignId + toolId`.
+
+| Field | Type | Notes |
+| :--- | :--- | :--- |
+| `status` | `String` | `queued`, `researching`, `serp`, `generating`, `validating`, `needs_review`, `approved`, `published`, `rejected`, `failed` |
+| `snapshot` | `Object` | Name, slug, pillar, short description, component key, category slug |
+| `keywordFacts` | `Array` | Keyword, volume, difficulty, CPC from DataForSEO |
+| `primaryKeyword` | `String` | Chosen from `keywordFacts` before the SERP call |
+| `serpItems` | `Array` | Top organic titles and URLs only |
+| `suggestedLinks` | `Array` | 3–6 sibling calculators |
+| `content` | `Object` | Structured guide, FAQs, links, disclaimer, meta fields |
+| `validation` | `Object` | `ok` plus block/flag issues |
+| `callCounts` | `Object` | `keyword`, `serp`, `openai` provider calls (cache hits are not counted) |
+
+Indexes: unique `{ campaignId, toolId }`, `{ toolId, status }`.
+
+### `SeoProviderCache` (collection: `seo_provider_cache`)
+
+- **Source:** `backend/src/modules/seo/seo.model.ts`
+- **Responsibility:** Cache DataForSEO keyword and SERP payloads by location, language, and query.
+
+Unique index on `cacheKey`.
 
 

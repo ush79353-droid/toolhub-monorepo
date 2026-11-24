@@ -83,7 +83,7 @@ export const YARD_TO_METER_GUIDE_SECTIONS: readonly GuideSection[] = [
     id: 'related-tools',
     title: 'More Conversion Tools',
     paragraphs: [
-      'Related Omega Calculators tools include Length Converter (/tools/length-converter), Yard Conversion (/tools/yard-conversion), Yards to Meters Conversion (/tools/yards-to-meters-conversion), Meters to Feet Converter (/tools/meters-to-feet-converter), Feet to Inches Calculator (/tools/feet-to-inches-calculator), Feet to Yards Conversion (/tools/feet-to-yards-conversion), Inches to Yard Conversion (/tools/inches-to-yard-conversion), and Inch Converter (/tools/inch-converter). Only catalog tools that are active appear as live public routes.',
+      'Related Omega Calculators tools include Length Converter (/tools/length-converter), Yard Conversion (/tools/yard-conversion), Meters to Feet Converter (/tools/meters-to-feet-converter), Feet to Inches Calculator (/tools/feet-to-inches-calculator), Feet to Yards Conversion (/tools/feet-to-yards-conversion), Inches to Yard Conversion (/tools/inches-to-yard-conversion), and Inch Converter (/tools/inch-converter). Only catalog tools that are active appear as live public routes.',
     ],
   },
 ];

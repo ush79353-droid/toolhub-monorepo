@@ -120,6 +120,7 @@ Verified against the tree after commits `a75ccbe` (drop preview data; 404 unregi
 - `frontend/src/tools/registry/index.ts` is `'use client'`. `getToolComponent` returns `React.lazy` for one static `import()` path. `ToolWorkspace` wraps it in `Suspense`.
 - `frontend/src/tools/registry/keys.ts` is the pure allowlist (`APPROVED_COMPONENT_KEYS` and `REGISTERED_COMPONENT_KEYS`). Server pages, sitemap, embed, and the admin tool form import it. It must not import React calculator components.
 - An active catalog row whose `componentKey` is missing from `REGISTERED_COMPONENT_KEYS`, or whose detail module fails to load, calls `notFound()`. It does not render a sample workspace.
+- A published SEO draft (`SeoDraft.status = published`, ADR-027) replaces the file guide, TOC, and FAQ JSON-LD for that tool. With no published draft, `pageDetail.GuideArticle` still renders. Embed pages do not show the guide.
 
 ### 7.2 Folder every new calculator uses
 

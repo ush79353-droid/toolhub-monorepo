@@ -194,8 +194,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/margin-and-sales-tax/detail'),
   MarginAndVatCalculator: () =>
     import('@/tools/calculators/margin-and-vat/detail'),
-  MarginCalculatorClassic: () =>
-    import('@/tools/calculators/margin-calculator-classic/detail'),
   MarginCallCalculator: () =>
     import('@/tools/calculators/margin-call/detail'),
   MarginOfSafetyCalculator: () =>
@@ -682,7 +680,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   YardConversionCalculator: () => import('@/tools/calculators/yard-conversion/detail'),
   YardToMeterConverter: () => import('@/tools/calculators/yard-to-meter/detail'),
   YardToMileConverter: () => import('@/tools/calculators/yard-to-mile/detail'),
-  YardsToMetersConversion: () => import('@/tools/calculators/yards-to-meters/detail'),
   NmConverter: () => import('@/tools/calculators/nm-converter/detail'),
   NmToMConverter: () => import('@/tools/calculators/nm-to-m/detail'),
   KnotsToKphConverter: () => import('@/tools/calculators/knots-to-kph/detail'),
@@ -1103,16 +1100,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   QuickRatioCalculator: () =>
     import('@/tools/calculators/quick-ratio/detail'),
   QtcCalculator: () => import('@/tools/calculators/qtc/detail'),
-  QuizLoanBalanceCalculator: () =>
-    import('@/tools/calculators/quiz-loan-balance/detail'),
-  QuizAnnualIncomeCalculator: () =>
-    import('@/tools/calculators/quiz-annual-income/detail'),
-  QuizCarDepreciationCalculator: () =>
-    import('@/tools/calculators/quiz-car-depreciation/detail'),
-  QuizDividendCalculator: () =>
-    import('@/tools/calculators/quiz-dividend/detail'),
-  QuizFetalWeightPercentileCalculator: () =>
-    import('@/tools/calculators/quiz-fetal-weight-percentile/detail'),
   ManHoursCalculator: () =>
     import('@/tools/calculators/man-hours/detail'),
   MarginInterestCalculator: () =>
@@ -1457,8 +1444,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/credit-card-payment/detail'),
   CreditCardPayoffCalculator: () =>
     import('@/tools/calculators/credit-card-payoff/detail'),
-  CreditCardsPayoffCalculator: () =>
-    import('@/tools/calculators/credit-cards-payoff/detail'),
   CreditUtilizationCalculator: () =>
     import('@/tools/calculators/credit-utilization/detail'),
   CrossExchangeRateCalculator: () =>
@@ -1623,8 +1608,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/price-per-square-meter/detail'),
   ProductivityCalculator: () =>
     import('@/tools/calculators/productivity/detail'),
-  QuizUsIncomePercentileCalculator: () =>
-    import('@/tools/calculators/quiz-us-income-percentile/detail'),
   RcriCalculator: () => import('@/tools/calculators/rcri/detail'),
   ReceivablesTurnoverRatioCalculator: () =>
     import('@/tools/calculators/receivables-turnover-ratio/detail'),

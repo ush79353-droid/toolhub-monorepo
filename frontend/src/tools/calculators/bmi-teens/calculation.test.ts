@@ -88,12 +88,12 @@ const age9 = validateBmiTeensInput({
   ...createExampleInput(),
   age: '9',
 });
-assert(!age9.isValid && age9.errors.age, 'age 9 invalid');
+assert(Boolean(!age9.isValid && age9.errors.age), 'age 9 invalid');
 const age21 = validateBmiTeensInput({
   ...createExampleInput(),
   age: '21',
 });
-assert(!age21.isValid && age21.errors.age, 'age 21 invalid');
+assert(Boolean(!age21.isValid && age21.errors.age), 'age 21 invalid');
 
 // Inclusive bounds 10 and 20
 const age10 = validateBmiTeensInput({

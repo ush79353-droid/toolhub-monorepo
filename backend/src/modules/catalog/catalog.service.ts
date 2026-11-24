@@ -1,6 +1,8 @@
 import { AppError } from '../../middleware/error.middleware';
 import type { ToolExecutionType } from '../../types/tool';
 import { Category } from '../categories/category.model';
+import { seoContentSchema, toPublicGuide, type PublicPublishedGuide } from '../seo/content';
+import { SeoDraft } from '../seo/seo.model';
 import { Tool } from '../tools/tool.model';
 import { isToolSlug } from '../tools/tool.key';
 
@@ -100,6 +102,7 @@ export interface PublicToolDetail {
   isActive: boolean;
   isFeatured: boolean;
   updatedAt: string;
+  publishedGuide: PublicPublishedGuide | null;
 }
 
 function asPublicRef(value: unknown): PublicToolRef | null {
@@ -154,7 +157,10 @@ function toRelatedTool(doc: PopulatedRelatedDoc): PublicRelatedTool {
 export async function listPublicCategories(): Promise<PublicCategory[]> {
   const [categories, counts] = await Promise.all([
     Category.find({ kind: 'category', isActive: true }).sort({ sortOrder: 1, name: 1 }),
-    Tool.aggregate<{ _id: unknown; count: number }>([{ $group: { _id: '$category', count: { $sum: 1 } } }]),
+    Tool.aggregate<{ _id: unknown; count: number }>([
+      { $match: { isActive: true } },
+      { $group: { _id: '$category', count: { $sum: 1 } } },
+    ]),
   ]);
   const countByCategory = new Map(counts.map((row) => [String(row._id), row.count]));
   return categories.map((doc) => ({
@@ -593,5 +599,15 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
     isActive: doc.isActive ?? true,
     isFeatured: doc.isFeatured,
     updatedAt: doc.updatedAt.toISOString(),
+    publishedGuide: await publishedGuideFor(doc._id),
   };
+}
+
+async function publishedGuideFor(toolId: unknown): Promise<PublicPublishedGuide | null> {
+  const draft = await SeoDraft.findOne({ toolId, status: 'published' })
+    .sort({ publishedAt: -1 })
+    .select('content')
+    .lean<{ content?: unknown }>();
+  const parsed = seoContentSchema.safeParse(draft?.content);
+  return parsed.success ? toPublicGuide(parsed.data) : null;
 }

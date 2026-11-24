@@ -19,22 +19,27 @@
     "tools:export-content": "tsx src/scripts/export-tool-content.ts",
     "categories:icons": "tsx src/scripts/attach-category-icons.ts",
     "categories:descriptions": "tsx src/scripts/set-category-descriptions.ts",
+    "categories:sync-counts": "tsx src/scripts/sync-category-tool-counts.ts",
     "currency:fetch": "tsx src/scripts/fetch-currency-rates.ts",
     "format": "prettier --write \"src/**/*.{ts,json,md}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,json,md}\""
+    "format:check": "prettier --check \"src/**/*.{ts,json,md}\"",
+    "test:seo": "tsx --test src/modules/seo/validate-draft.test.ts src/modules/seo/publish-patch.test.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1166.0",
     "@aws-sdk/s3-request-presigner": "^3.1166.0",
     "argon2": "^0.45.2",
+    "bullmq": "^6.7.8",
     "compression": "^1.8.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "helmet": "^8.0.0",
+    "ioredis": "^6.1.0",
     "mongoose": "^8.10.1",
     "node-cron": "^4.6.0",
     "nodemailer": "^10.5.0",
+    "openai": "^7.63.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {

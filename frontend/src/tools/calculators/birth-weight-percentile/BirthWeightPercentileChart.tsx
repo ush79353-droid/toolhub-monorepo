@@ -2,7 +2,7 @@
 
 import type { BirthWeightPercentileResult } from './types';
 
-const CHART_COLORS: Record<number, string> = {
+const CHART_COLORS: Record<number | 'you', string> = {
   5: '#3b82f6',
   10: '#ef4444',
   50: '#eab308',

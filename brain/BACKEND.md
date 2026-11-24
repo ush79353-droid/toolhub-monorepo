@@ -31,14 +31,14 @@
 | `categories` | `modules/categories/` | 3-level taxonomy (`category`, `pillar`, `sub_pillar`) CRUD, tree assembly, search, cascade delete | `/api/v1/admin/categories` |
 | `media` | `modules/media/` | Storage driver (`local` disk or S3), `MediaAsset` persistence, list/filter, file + DB delete | `/api/v1/admin/media` |
 | `tools` | `modules/tools/` | Admin tool catalog CRUD, placement options, media icon validation, allowlisted `componentKey` & `executionType`, unique name/slug enforcement, optional SEO fields, embed gates, and the development audit (`isDeveloped`, `ToolAudit`) | `/api/v1/admin/tools` |
-| `catalog` | `modules/catalog/` | Public read endpoints for active root categories (with tool counts via aggregation), featured tools, active tool directory, typeahead (`GET /tools/suggest`, 10 items), and active single tool detail by slug | `/api/v1/catalog` |
+| `catalog` | `modules/catalog/` | Public read endpoints for active root categories (with tool counts via aggregation), featured tools, active tool directory, typeahead (`GET /tools/suggest`, 10 items), and active single tool detail by slug. Attaches a published SEO guide when one exists (ADR-027). | `/api/v1/catalog` |
+| `seo` | `modules/seo/` | Finance SEO campaigns: DataForSEO research, OpenAI drafts, validation, admin approve/publish. Does not flip `isActive` or `indexable`. | `/api/v1/admin/seo` |
 
 ### Planned / Placeholder Modules (`.gitkeep` only)
 
 - `modules/analytics/`
 - `modules/integrations/`
 - `modules/jobs/`
-- `modules/seo/`
 - `modules/uploads/`
 - `modules/users/`
 
@@ -101,6 +101,14 @@ Validated at import via Zod (`dotenv.config()`):
 | `UPLOAD_DIR` | `uploads` | Directory for `STORAGE_DRIVER=local`, relative to the backend working directory |
 | `AWS_ACCESS_KEY`, `AWS_SECRET_KEY`, `BUCKET_REGION`, `AWS_BUCKET_NAME`, `AWS_BASE_URL` | `''` | Required only when `STORAGE_DRIVER=s3` |
 | `CURRENCY_EXCHANGE_API_KEY` | `''` | ExchangeRate-API key. The daily currency job skips the fetch when this is empty. |
+| `REDIS_HOST` | `''` | Redis host for SEO queues. Empty disables enqueue. |
+| `REDIS_PORT` | `6379` | Redis port. |
+| `REDIS_PASSWORD` | `''` | Redis password. Omitted from the client when empty. |
+| `SEO_WORKERS_ENABLED` | `false` | Workers start only when this is `true` and `REDIS_HOST` is set. |
+| `DATAFORSEO_LOGIN`, `DATAFORSEO_PASSWORD` | `''` | DataForSEO basic auth. Empty refuses campaign enqueue. |
+| `DATAFORSEO_LOCATION_CODE` | `2840` | DataForSEO location. 2840 is the United States. There is no single global location. |
+| `DATAFORSEO_LANGUAGE_CODE` | `en` | DataForSEO language. |
+| `OPENAI_API_KEY`, `OPENAI_SEO_MODEL` | `''` | OpenAI structured draft. Both required before enqueue. |
 
 > **Config Drift Note:** `backend/.env.example` also lists `SESSION_TTL_HOURS=24` and `SESSION_REMEMBER_ME_DAYS=7`, but `env.ts` does not parse them and `admin-auth.service.ts` hardcodes `24h` and `7d`.
 

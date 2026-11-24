@@ -80,7 +80,7 @@ export function IbuprofenDosageCalculator({
 
   const handleShare = async () => {
     const shareData = {
-      title: metadata?.name || 'Ibuprofen Dosage Calculator',
+      title: metadata.title || 'Ibuprofen Dosage Calculator',
       text: 'Ibuprofen Dosage Calculator — Omega Calculators (educational label reference).',
       url: pageUrl,
     };

@@ -54,6 +54,7 @@ export const ADMIN_NAV_GROUPS: AdminNavGroup[] = [
     label: 'Insights',
     items: [
       { label: 'SEO', href: '/admin/seo', icon: Search },
+      { label: 'SEO campaigns', href: '/admin/seo-campaigns', icon: FileText },
       { label: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
     ],
   },
