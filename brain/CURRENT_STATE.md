@@ -15,6 +15,9 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Drug Half-Life Calculator (`/tools/drug-half-life-calculator`):** Educational first-order elimination (`DrugHalfLifeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Fat Intake Calculator (`/tools/fat-intake-calculator`):** Educational AMDR fat grams (`FatIntakeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Hematocrit to Hemoglobin Ratio Calculator (`/tools/hematocrit-to-hemoglobin-ratio-calculator`):** Educational Hct÷Hb with rule-of-three default (`HematocritHemoglobinRatioCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Corrected Reticulocyte Count Calculator (`/tools/corrected-reticulocyte-count-calculator`):** Educational CRC (`CorrectedReticulocyteCountCalculator`). CRC = retic%×Hct/ref Hct; optional RPI. **No FX**. Registry wired. **Mongo blocked**.
 - **DIC Syndrome Calculator (`/tools/dic-syndrome-calculator`):** Educational ISTH overt DIC score (`DicSyndromeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Diet Risk Score Calculator (`/tools/diet-risk-score-calculator`):** Educational Johnston DRS (`DietRiskScoreCalculator`). **No FX**. Registry wired. **Mongo blocked**.

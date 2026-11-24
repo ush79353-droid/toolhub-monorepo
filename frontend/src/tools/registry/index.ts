@@ -219,11 +219,25 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.DiffuseLargeBCellLymphomaPrognosisCalculator,
     })),
   ),
+  DrugHalfLifeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/drug-half-life/DrugHalfLifeCalculator'
+    ).then((mod) => ({
+      default: mod.DrugHalfLifeCalculator,
+    })),
+  ),
   EbitdaMarginCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/ebitda-margin/EbitdaMarginCalculator'
     ).then((mod) => ({
       default: mod.EbitdaMarginCalculator,
+    })),
+  ),
+  FatIntakeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/fat-intake/FatIntakeCalculator'
+    ).then((mod) => ({
+      default: mod.FatIntakeCalculator,
     })),
   ),
   FloridaOvertimeCalculator: lazyTool(() =>
@@ -295,6 +309,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   GuptaRiskCalculator: lazyTool(() =>
     import('@/tools/calculators/gupta-risk/GuptaRiskCalculator').then((mod) => ({
       default: mod.GuptaRiskCalculator,
+    })),
+  ),
+  HematocritHemoglobinRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/hematocrit-hemoglobin-ratio/HematocritHemoglobinRatioCalculator'
+    ).then((mod) => ({
+      default: mod.HematocritHemoglobinRatioCalculator,
     })),
   ),
   IllinoisOvertimeCalculator: lazyTool(() =>

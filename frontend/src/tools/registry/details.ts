@@ -63,8 +63,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import(
       '@/tools/calculators/diffuse-large-b-cell-lymphoma-prognosis/detail'
     ),
+  DrugHalfLifeCalculator: () =>
+    import('@/tools/calculators/drug-half-life/detail'),
   EbitdaMarginCalculator: () =>
     import('@/tools/calculators/ebitda-margin/detail'),
+  FatIntakeCalculator: () =>
+    import('@/tools/calculators/fat-intake/detail'),
   FloridaOvertimeCalculator: () =>
     import('@/tools/calculators/florida-overtime/detail'),
   FutureValueOfAnnuityCalculator: () =>
@@ -86,6 +90,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/growing-annuity/detail'),
   GuptaRiskCalculator: () =>
     import('@/tools/calculators/gupta-risk/detail'),
+  HematocritHemoglobinRatioCalculator: () =>
+    import('@/tools/calculators/hematocrit-hemoglobin-ratio/detail'),
   IllinoisOvertimeCalculator: () =>
     import('@/tools/calculators/illinois-overtime/detail'),
   ImmediateAnnuityCalculator: () =>

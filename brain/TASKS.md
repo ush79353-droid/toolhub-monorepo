@@ -8,6 +8,9 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-768` | Hematocrit to Hemoglobin Ratio (`HematocritHemoglobinRatioCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/hematocrit-hemoglobin-ratio/*` | Mongo Atlas DNS |
+| `TOOL-767` | Fat Intake Calculator (`FatIntakeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/fat-intake/*` | Mongo Atlas DNS |
+| `TOOL-766` | Drug Half-Life Calculator (`DrugHalfLifeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/drug-half-life/*` | Mongo Atlas DNS |
 | `TOOL-765` | Diffuse Large B-cell Lymphoma Prognosis R-IPI (`DiffuseLargeBCellLymphomaPrognosisCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/diffuse-large-b-cell-lymphoma-prognosis/*` | Mongo Atlas DNS |
 | `TOOL-764` | Diet Risk Score Johnston DRS (`DietRiskScoreCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/diet-risk-score/*` | Mongo Atlas DNS |
 | `TOOL-763` | DIC Syndrome ISTH overt DIC (`DicSyndromeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/dic-syndrome/*` | Mongo Atlas DNS |

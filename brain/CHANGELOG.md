@@ -1,4 +1,10 @@
-﻿### 2026-11-24 — Batch: Corrected Reticulocyte, DIC, Diet Risk Score, DLBCL Prognosis
+﻿### 2026-11-24 — Batch: Drug Half-Life, Fat Intake, Hct/Hgb Ratio
+
+- Drug Half-Life `DrugHalfLifeCalculator` — `1c67a43c` / `375f06d4` / reg this. Mongo blocked.
+- Fat Intake `FatIntakeCalculator` — `167d7fe2` / `c9c425ce` / reg this. Mongo blocked.
+- Hematocrit to Hemoglobin Ratio `HematocritHemoglobinRatioCalculator` — `67bfe78f` / `bc9aa8b7` / reg this. Mongo blocked.
+- Registry/sitemap/`tool.key` in this commit. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+### 2026-11-24 — Batch: Corrected Reticulocyte, DIC, Diet Risk Score, DLBCL Prognosis
 
 - Corrected Reticulocyte Count `CorrectedReticulocyteCountCalculator` — `eef1cdd1` / `28e8d842` / reg this. Mongo blocked.
 - DIC Syndrome `DicSyndromeCalculator` — `5a39da88` / `d634d819` / reg this. Mongo blocked.
