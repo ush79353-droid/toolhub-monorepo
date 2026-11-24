@@ -8,6 +8,9 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-808` | Stillbirth Risk Calculator (`StillbirthRiskCalculator`); Yerke 2017; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/stillbirth-risk/*` | Mongo Atlas DNS |
+| `TOOL-807` | Chances of Having Twins (`ChancesOfHavingTwinsCalculator`); CDC 2024; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/chances-of-having-twins/*` | Mongo Atlas DNS |
+| `TOOL-806` | GRACE Calculator (`GraceCalculator`); Granger 2003; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/grace/*` | Mongo Atlas DNS |
 | `TOOL-805` | Stroke Volume Calculator (`StrokeVolumeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/stroke-volume/*` | Mongo Atlas DNS |
 | `TOOL-804` | Steroid Conversion Calculator (`SteroidConversionCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/steroid-conversion/*` | Mongo Atlas DNS |
 | `TOOL-803` | Quiz Harris-Benedict Calculator (`QuizHarrisBenedictCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/quiz-harris-benedict/*` | Mongo Atlas DNS |

@@ -15,6 +15,9 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **GRACE Calculator (`/tools/grace-calculator`):** Granger 2003 GRACE 1.0 points + in-hospital risk categories (`GraceCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Chances of Having Twins Calculator (`/tools/chances-of-having-twins-calculator`):** CDC/NVSS 2024 twin delivery rates by age or race/Hispanic origin (`ChancesOfHavingTwinsCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Stillbirth Risk Calculator (`/tools/stillbirth-risk-calculator`):** Yerke 2017 ≥32-week calibrated logistic (`StillbirthRiskCalculator`); screenshot UI; non-Yerke fields excluded from math. **No FX**. Registry wired. **Mongo blocked**.
 - **Vitamin A Calculator (/tools/vitamin-a-calculator):** NIH ODS RAE/IU (VitaminACalculator). **No FX**. Registry wired. **Mongo blocked**.
 - **Stroke Volume Calculator (`/tools/stroke-volume-calculator`):** SV from CO/HR or volumes (`StrokeVolumeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Steroid Conversion Calculator (`/tools/steroid-conversion-calculator`):** Corticosteroid equivalents (`SteroidConversionCalculator`). **No FX**. Registry wired. **Mongo blocked**.

@@ -32,6 +32,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/carboplatin/detail'),
   CefdinirDoseCalculator: () =>
     import('@/tools/calculators/cefdinir-dose/detail'),
+  ChancesOfHavingTwinsCalculator: () =>
+    import('@/tools/calculators/chances-of-having-twins/detail'),
   CorrectedReticulocyteCountCalculator: () =>
     import('@/tools/calculators/corrected-reticulocyte-count/detail'),
   DaptCalculator: () => import('@/tools/calculators/dapt/detail'),
@@ -93,6 +95,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gross-rent-multiplier/detail'),
   GorlinFormulaCalculator: () =>
     import('@/tools/calculators/gorlin-formula/detail'),
+  GraceCalculator: () => import('@/tools/calculators/grace/detail'),
   GratuityCalculator: () => import('@/tools/calculators/gratuity/detail'),
   GrowingAnnuityCalculator: () =>
     import('@/tools/calculators/growing-annuity/detail'),
@@ -164,6 +167,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/sodium-in-salt/detail'),
   SteroidConversionCalculator: () =>
     import('@/tools/calculators/steroid-conversion/detail'),
+  StillbirthRiskCalculator: () =>
+    import('@/tools/calculators/stillbirth-risk/detail'),
   StrokeVolumeCalculator: () =>
     import('@/tools/calculators/stroke-volume/detail'),
   TdeeCalculator: () => import('@/tools/calculators/tdee/detail'),

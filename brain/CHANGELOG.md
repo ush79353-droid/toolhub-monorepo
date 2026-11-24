@@ -1,4 +1,11 @@
-﻿### 2026-11-24 — Warfarin Dosing + Phase 1 queue drain
+﻿### 2026-11-24 — Unblock GRACE + Twins + Stillbirth (batch REG)
+
+- `GraceCalculator` (`grace-calculator`): Granger 2003 GRACE 1.0 points. UI `977d6fec` / ENG `c4110b08` / (reg this).
+- `ChancesOfHavingTwinsCalculator` (`chances-of-having-twins-calculator`): CDC/NVSS 2024 twin delivery rates. UI `1ae374ce` / ENG `83d98d2c` / (reg this).
+- `StillbirthRiskCalculator` (`stillbirth-risk-calculator`): Yerke 2017 calibrated logistic (≥32w). UI `e1934a26` / ENG `92c50f77` / (reg this).
+- **No FX**. Mongo `tool:assign` deferred (Atlas DNS). In Progress BLOCKED queue cleared.
+
+### 2026-11-24 — Warfarin Dosing + Phase 1 queue drain
 
 - `WarfarinDosingCalculator` UI `74a3d327` / ENG `5fd50168` / (reg this). **No FX**. Mongo blocked.
 - Eligible Tools/ queue drained; 3 clinical blockers remain in In Progress.

@@ -1,25 +1,23 @@
 # Omega Completed Tools Audit (Phase 3)
 
-Updated: 2026-11-24 (continue session end)
+Updated: 2026-11-24 (blocked-tools unblock)
 
 ## Scope
-Spot-check and inventory of `Completed Tools/` after eligible `Tools/` drain.
+Inventory after unblocking the last three In Progress clinical calculators.
 
 ## Counts
-- Completed Tools folders: ~193
-- In Progress: 3 (all BLOCKED — Stillbirth, GRACE, Twins)
+- Completed Tools folders: prior ~193 + GRACE + Twins + Stillbirth (moved this session)
+- In Progress: **0**
 - Tools/: 0
 
 ## Sampling notes
-- Recent registrations wired through `keys.ts`, `registry/index.ts`, `registry/details.ts`, `tool.key.ts`, and `sitemap.ts` (`tool.key ok` verified after batch regs).
-- Mongo `tool:assign` / public activation still deferred project-wide (Atlas `querySrv EBADRESP`).
-- Quarantine draft temp removed (`8c719f38`).
-- Duplicate In Progress folders cleaned when Completed already existed (Protein, Steroid, Stroke Volume, TIMI STEMI, tPA).
+- `GraceCalculator`, `ChancesOfHavingTwinsCalculator`, `StillbirthRiskCalculator` registered in `keys.ts`, `registry/index.ts`, `registry/details.ts`, `tool.key.ts`, `sitemap.ts`.
+- Mongo `tool:assign` / public activation still deferred (Atlas DNS `ESERVFAIL` / `EBADRESP`).
+- Stillbirth uses Yerke 2017 calibrated logistic (not Omni OR×0.2197%). Twins uses CDC NVSS delivery rates. GRACE uses Granger 2003 GRACE 1.0 points (not GRACE 2.0).
 
 ## Known gaps / follow-ups
-1. Run Mongo assign batch when DNS works for all newly registered componentKeys.
-2. Resolve or permanently document the three BLOCKED calculators (Stillbirth, GRACE, Twins).
-3. Optional: full Completed Tools AGENT_STATUS hash audit vs git history (not re-run exhaustively this turn).
+1. Run Mongo assign batch when DNS works (`grace-calculator`, `chances-of-having-twins-calculator`, `stillbirth-risk-calculator` + earlier deferred keys).
+2. Optional: full Completed Tools AGENT_STATUS hash audit vs git history.
 
 ## Temporary files cleaned
 YES

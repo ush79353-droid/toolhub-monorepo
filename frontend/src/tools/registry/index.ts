@@ -116,6 +116,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CefdinirDoseCalculator,
     })),
   ),
+  ChancesOfHavingTwinsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/chances-of-having-twins/ChancesOfHavingTwinsCalculator'
+    ).then((mod) => ({
+      default: mod.ChancesOfHavingTwinsCalculator,
+    })),
+  ),
   CorrectedReticulocyteCountCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/corrected-reticulocyte-count/CorrectedReticulocyteCountCalculator'
@@ -326,6 +333,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/gorlin-formula/GorlinFormulaCalculator'
     ).then((mod) => ({
       default: mod.GorlinFormulaCalculator,
+    })),
+  ),
+  GraceCalculator: lazyTool(() =>
+    import('@/tools/calculators/grace/GraceCalculator').then((mod) => ({
+      default: mod.GraceCalculator,
     })),
   ),
   GratuityCalculator: lazyTool(() =>
@@ -595,6 +607,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/steroid-conversion/SteroidConversionCalculator'
     ).then((mod) => ({
       default: mod.SteroidConversionCalculator,
+    })),
+  ),
+  StillbirthRiskCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/stillbirth-risk/Calculator'
+    ).then((mod) => ({
+      default: mod.StillbirthRiskCalculator,
     })),
   ),
   StrokeVolumeCalculator: lazyTool(() =>
