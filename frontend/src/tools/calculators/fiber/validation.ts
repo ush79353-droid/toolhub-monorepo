@@ -1,5 +1,5 @@
 /**
- * Fiber Calculator — UI stub validation (ADR-019 commit 1).
+ * Fiber Calculator — pure input validation (ADR-018).
  */
 
 import { calculateFiber, parseNumber } from './calculation';
@@ -16,7 +16,9 @@ export function validateFiberInput(input: FiberInput): FiberValidation {
   if (input.ageYearsText.trim() !== '') {
     const age = parseNumber(input.ageYearsText);
     if (age === null) errors.ageYearsText = 'Enter a valid age.';
-    else if (!(age > 0)) errors.ageYearsText = 'Age must be positive.';
+    else if (!(age > 0 && age <= 120)) {
+      errors.ageYearsText = 'Age must be between 1 and 120 years.';
+    }
   }
 
   if (input.heightText.trim() !== '') {
@@ -38,7 +40,7 @@ export function validateFiberInput(input: FiberInput): FiberValidation {
   }
 
   if (Object.keys(errors).length > 0) {
-    return { errors, result: calculateFiber(input) };
+    return { errors, result: null };
   }
 
   return { errors: {}, result: calculateFiber(input) };
