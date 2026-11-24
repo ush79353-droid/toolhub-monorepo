@@ -7,8 +7,6 @@ import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
 import { EerCalculatorForm } from './EerCalculatorForm';
 import {
-  ACTIVITY_OPTIONS,
-  PREGNANCY_LACTATION_OFFSETS,
   createDefaultInput,
   createEmptyInput,
   inputsEqual,
@@ -16,30 +14,7 @@ import {
   type EerCalculatorInput,
   type EerCalculatorResult,
 } from './types';
-
-/**
- * UI shell — engine validation/calculation is wired in the engine commit.
- * Keeps result empty until calculation.ts / validation.ts are present.
- */
-function emptyResult(input: EerCalculatorInput): EerCalculatorResult {
-  const activity =
-    ACTIVITY_OPTIONS.find((o) => o.id === input.activity) ?? ACTIVITY_OPTIONS[1];
-  return {
-    eerKcalPerDay: null,
-    eerDisplay: '',
-    paCoefficient: null,
-    activityLabel: activity.label,
-    activityDescription: activity.description,
-    pregnancyLactation: PREGNANCY_LACTATION_OFFSETS,
-    statusHeadline: 'Enter height, weight, and age',
-    statusDetail:
-      'Complete anthropometrics to estimate adult EER (IOM DRI 2002/2005).',
-    sourceNote:
-      'Institute of Medicine Dietary Reference Intakes for Energy (2002/2005) adult EER equations.',
-    disclaimer:
-      'Educational estimate only — not individualized medical nutrition therapy.',
-  };
-}
+import { validateEerCalculatorInput } from './validation';
 
 export function EerCalculator({
   metadata,
@@ -53,7 +28,7 @@ export function EerCalculator({
   const [input, setInput] = React.useState(initial);
   const [errors, setErrors] = React.useState<EerCalculatorFieldErrors>({});
   const [result, setResult] = React.useState<EerCalculatorResult | null>(() =>
-    emptyResult(initial),
+    validateEerCalculatorInput(initial).result,
   );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
@@ -65,9 +40,10 @@ export function EerCalculator({
   }, []);
 
   const apply = (next: EerCalculatorInput) => {
+    const v = validateEerCalculatorInput(next);
     setInput(next);
-    setErrors({});
-    setResult(emptyResult(next));
+    setErrors(v.errors);
+    setResult(v.result);
   };
 
   const handleReload = () => {
@@ -75,7 +51,7 @@ export function EerCalculator({
     setInput(fresh);
     setBaseline(fresh);
     setErrors({});
-    setResult(emptyResult(fresh));
+    setResult(validateEerCalculatorInput(fresh).result);
     setFeedback(null);
   };
 
@@ -83,7 +59,7 @@ export function EerCalculator({
     const fresh = createEmptyInput();
     setInput(fresh);
     setErrors({});
-    setResult(emptyResult(fresh));
+    setResult(validateEerCalculatorInput(fresh).result);
     setFeedback(null);
   };
 
