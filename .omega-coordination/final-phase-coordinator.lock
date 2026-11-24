@@ -1,0 +1,9 @@
+agentId=cursor-continue
+phase=PHASE1_IN_PROGRESS
+heartbeat=2026-11-24T11:11:06.9240805+05:00
+status=running
+toolsRemainingApprox=31
+inProgress=7
+completedApprox=158
+mongo=BLOCKED_querySrv_EBADRESP
+note=Local Anesthetic registered a26c2173; agents on IVIG/Katch/Keto/Lidocaine

@@ -1,0 +1,5 @@
+﻿agent=Developer-B-Cursor
+tool=Harris-Benedict Calculator (Basal Metabolic Rate)
+componentKey=HarrisBenedictCalculator
+claimedAt=2026-11-24T10:53:18.9802971+05:00
+pid=5428

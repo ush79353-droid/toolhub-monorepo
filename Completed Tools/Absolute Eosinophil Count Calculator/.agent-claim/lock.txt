@@ -1,0 +1,7 @@
+﻿agent=cursor-agent-75916644-015950
+session=sess-20261124-015950
+claimedAt=2026-11-24T02:13:28.8054473+05:00
+status=DEVELOPING
+tool=Absolute Eosinophil Count Calculator
+phase=PHASE_1
+heartbeat=2026-11-24T02:13:28.8084058+05:00

@@ -1,0 +1,4 @@
+﻿agent=cursor-composer-devb
+tool=Medicine 3 Times a Day Calculator
+claimedAt=2026-11-24T11:21:20.8210857+05:00
+phase=ui-engine-only

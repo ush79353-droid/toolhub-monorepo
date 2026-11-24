@@ -1,0 +1,4 @@
+agent=cursor-DeveloperB
+tool=Vitamin D Calculator
+claimed=2026-11-24T11:48:53.4211172+05:00
+phase=ui-engine-only

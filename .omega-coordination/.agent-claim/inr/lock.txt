@@ -1,0 +1,5 @@
+﻿agent=Developer-B-Cursor
+tool=INR Calculator
+componentKey=InrCalculator
+claimedAt=2026-11-24T10:56:55.4777803+05:00
+pid=18884

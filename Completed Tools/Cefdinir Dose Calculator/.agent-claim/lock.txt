@@ -1,0 +1,3 @@
+﻿agent=cursor-agent-75916644-015950-batch8
+status=DEVELOPING
+claimedAt=2026-11-24T09:53:00.4319789+05:00

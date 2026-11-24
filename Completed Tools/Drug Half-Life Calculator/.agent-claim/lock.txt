@@ -1,0 +1,4 @@
+﻿agentId=cursor-agent-devb-drug-halflife-20261124-100312
+tool=Drug Half-Life Calculator
+claimedAt=2026-11-24T10:03:12.9564362+05:00
+host=cursor-devb

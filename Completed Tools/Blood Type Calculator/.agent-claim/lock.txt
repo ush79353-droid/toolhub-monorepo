@@ -1,0 +1,4 @@
+agent=cursor-agent-75916644-015950
+session=sess-continue
+status=DEVELOPING
+claimedAt=2026-11-24T09:40:27.1164999+05:00

@@ -1,0 +1,3 @@
+﻿agent=cursor-developer-b
+tool=ivig-dose
+claimedAt=2026-11-24T11:07:15.2465286+05:00
