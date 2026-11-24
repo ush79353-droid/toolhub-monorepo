@@ -171,6 +171,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TimiUanstemiCalculator: () =>
     import('@/tools/calculators/timi-uanstemi/detail'),
   TpaStrokeCalculator: () => import('@/tools/calculators/tpa-stroke/detail'),
+  TylenolOverdoseCalculator: () =>
+    import('@/tools/calculators/tylenol-overdose/detail'),
   VitaminACalculator: () => import('@/tools/calculators/vitamin-a/detail'),
   VitaminCalculator: () => import('@/tools/calculators/vitamin/detail'),
   VitaminDCalculator: () => import('@/tools/calculators/vitamin-d/detail'),

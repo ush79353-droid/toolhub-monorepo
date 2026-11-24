@@ -626,6 +626,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TpaStrokeCalculator,
     })),
   ),
+  TylenolOverdoseCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/tylenol-overdose/TylenolOverdoseCalculator'
+    ).then((mod) => ({
+      default: mod.TylenolOverdoseCalculator,
+    })),
+  ),
   VitaminACalculator: lazyTool(() =>
     import('@/tools/calculators/vitamin-a/VitaminACalculator').then((mod) => ({
       default: mod.VitaminACalculator,

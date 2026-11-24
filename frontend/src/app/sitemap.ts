@@ -104,6 +104,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'timi-stemi-calculator',
   'timi-uanstemi-calculator',
   'tpa-stroke-calculator',
+  'tylenol-overdose-calculator',
   'vitamin-a-calculator',
   'vitamin-calculator',
   'vitamin-d-calculator',

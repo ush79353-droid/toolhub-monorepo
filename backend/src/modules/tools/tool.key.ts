@@ -98,6 +98,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TimiStemiCalculator',
   'TimiUanstemiCalculator',
   'TpaStrokeCalculator',
+  'TylenolOverdoseCalculator',
   'VitaminACalculator',
   'VitaminCalculator',
   'VitaminDCalculator',
