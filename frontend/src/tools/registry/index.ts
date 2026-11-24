@@ -264,6 +264,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FatIntakeCalculator,
     })),
   ),
+  FeureaCalculator: lazyTool(() =>
+    import('@/tools/calculators/feurea/FeureaCalculator').then((mod) => ({
+      default: mod.FeureaCalculator,
+    })),
+  ),
   FiberCalculator: lazyTool(() =>
     import('@/tools/calculators/fiber/FiberCalculator').then((mod) => ({
       default: mod.FiberCalculator,

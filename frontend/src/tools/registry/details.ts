@@ -75,6 +75,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EerCalculator: () => import('@/tools/calculators/eer/detail'),
   FatIntakeCalculator: () =>
     import('@/tools/calculators/fat-intake/detail'),
+  FeureaCalculator: () => import('@/tools/calculators/feurea/detail'),
   FiberCalculator: () => import('@/tools/calculators/fiber/detail'),
   FishOilCalculator: () => import('@/tools/calculators/fish-oil/detail'),
   FloridaOvertimeCalculator: () =>
@@ -161,6 +162,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
   PrescriptionRefillCalculator: () =>
     import('@/tools/calculators/prescription-refill/detail'),
+  ProstateVolumeCalculator: () =>
+    import('@/tools/calculators/prostate-volume/detail'),
   ProteinCalculator: () => import('@/tools/calculators/protein/detail'),
   QuarantineActivityCalculator: () =>
     import('@/tools/calculators/quarantine-activity/detail'),

@@ -37,6 +37,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EbitdaMarginCalculator',
   'EerCalculator',
   'FatIntakeCalculator',
+  'FeureaCalculator',
   'FiberCalculator',
   'FishOilCalculator',
   'FloridaOvertimeCalculator',

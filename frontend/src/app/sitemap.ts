@@ -45,6 +45,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'ebitda-margin-calculator',
   'eer-calculator-estimated-energy-requirement',
   'fat-intake-calculator',
+  'feurea-calculator-acute-kidney-injury-cause-differentiation',
   'fiber-calculator',
   'fish-oil-calculator',
   'florida-overtime-calculator',
