@@ -67,3 +67,13 @@ Admin SEO UI does **not** expose robots directives or sitemap fields. Public rob
 - Unit tests: `frontend/src/lib/seo/tool-seo.test.ts`
 - Verify admin save → MongoDB → catalog API → HTML `<head>` for Loan Calculator and Auto Loan Calculator.
 - Keep calculator math tests green when SEO changes.
+
+## 10. Published guide override (ADR-027)
+
+Finance SEO campaigns store drafts in `SeoCampaign` / `SeoDraft`. Nothing is public until an admin publishes.
+
+- DataForSEO supplies keyword and SERP facts. OpenAI drafts copy. The server rejects a primary keyword that was not in the DataForSEO list.
+- Publish writes `metaTitle`, `metaDescription`, `keywords`, matching Open Graph and Twitter title/description, and `includeFaqSchema`. It does not write `isActive`, `indexable`, `isDeveloped`, `embedEnabled`, or `componentKey`.
+- `/tools/[slug]` renders `PublishedGuideArticle` only when a published draft exists. Otherwise the calculator file guide stays.
+- `/admin/seo` remains the non-saving site preview. Campaigns live at `/admin/seo-campaigns`.
+

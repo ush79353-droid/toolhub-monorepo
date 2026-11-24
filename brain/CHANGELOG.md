@@ -1,3 +1,7 @@
+### 2026-11-24 — Finance SEO campaign pipeline
+- **Summary:** Added an admin-approved SEO pipeline for active, developed Finance & Business calculators (ADR-027). DataForSEO supplies keyword and SERP facts. OpenAI drafts a structured guide. Publish writes meta fields and shows `PublishedGuideArticle` on `/tools/[slug]` only after approval. `isActive` and `indexable` are not changed. `/admin/seo` stays a preview. Workers start only when `SEO_WORKERS_ENABLED=true` and `REDIS_HOST` is set (`REDIS_PORT`, `REDIS_PASSWORD`).
+- **Verification:** `backend` `npm run test:seo` (7 passing). `backend` and `frontend` `tsc --noEmit` passed. No live provider calls. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+
 ### 2026-11-22 — Adderall + Levothyroxine verified-reference recovery
 - **Adderall:** Shipped educational IR explorer + prescribed-dose tablet arithmetic on slug `adderall-dosage-calculator` (`AdderallDosageCalculator`, catalog `6af46f10a27d8d1d4e9901d1`). Omni + DailyMed IR (setid `f22635fe-821d-4cde-aa12-419f8b53db81`, May 29, 2024). ADHD/Narcolepsy educational charts; custom `tablets = dose/strength`; XR out of scope. Activated; **`indexable` false**. TASKS `TOOL-704`.
 - **Levothyroxine:** Extended existing UI (`3426381f`) / gate engine (`f3a6bb63`) with Devine IBW + typed outcomes; educational mcg/day only for healthy-adult overt teaching branch (15–50, FT4 Low, no heart disease) via `1.6 × min(actual, IBW)`. Cardiac/older/SCH/short remain gated. Catalog `6af46f10a27d8d1d4e9901d9` activated; **`indexable` false**. TASKS `TOOL-705`.

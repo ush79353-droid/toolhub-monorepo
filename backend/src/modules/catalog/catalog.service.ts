@@ -1,6 +1,8 @@
 import { AppError } from '../../middleware/error.middleware';
 import type { ToolExecutionType } from '../../types/tool';
 import { Category } from '../categories/category.model';
+import { seoContentSchema, toPublicGuide, type PublicPublishedGuide } from '../seo/content';
+import { SeoDraft } from '../seo/seo.model';
 import { Tool } from '../tools/tool.model';
 import { isToolSlug } from '../tools/tool.key';
 
@@ -100,6 +102,7 @@ export interface PublicToolDetail {
   isActive: boolean;
   isFeatured: boolean;
   updatedAt: string;
+  publishedGuide: PublicPublishedGuide | null;
 }
 
 function asPublicRef(value: unknown): PublicToolRef | null {
@@ -593,5 +596,15 @@ export async function getPublicToolBySlug(rawSlug: string): Promise<PublicToolDe
     isActive: doc.isActive ?? true,
     isFeatured: doc.isFeatured,
     updatedAt: doc.updatedAt.toISOString(),
+    publishedGuide: await publishedGuideFor(doc._id),
   };
+}
+
+async function publishedGuideFor(toolId: unknown): Promise<PublicPublishedGuide | null> {
+  const draft = await SeoDraft.findOne({ toolId, status: 'published' })
+    .sort({ publishedAt: -1 })
+    .select('content')
+    .lean<{ content?: unknown }>();
+  const parsed = seoContentSchema.safeParse(draft?.content);
+  return parsed.success ? toPublicGuide(parsed.data) : null;
 }

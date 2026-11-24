@@ -8,6 +8,7 @@ import { ToolWorkspace } from '@/components/shared/ToolWorkspace';
 import { ToolDetailSidebar } from '@/components/shared/ToolDetailSidebar';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { CalculatorEmbedDialog } from '@/components/tools/CalculatorEmbedDialog';
+import { PublishedGuideArticle } from '@/components/tools/PublishedGuideArticle';
 import { isToolEmbedEligible } from '@/lib/embed/tool-embed';
 
 import { siteConfig } from '@/config/site';
@@ -462,7 +463,16 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
     ? await getCurrencyRates()
     : null;
 
+  const publishedGuide = dbTool.publishedGuide;
   const GuideArticleComponent = pageDetail.GuideArticle;
+  const tocItems = publishedGuide
+    ? [
+        ...publishedGuide.sections.map((section) => ({ id: section.id, label: section.title })),
+        { id: 'published-faq', label: 'FAQ' },
+        { id: 'published-related', label: 'Related calculators' },
+      ]
+    : pageDetail.tocItems;
+  const visibleFaqs = publishedGuide ? publishedGuide.faqs : pageDetail.faqs;
   const credits = creditsForTool(dbTool);
     const sidebarGroupLabel = pillarName || categoryName;
     const relatedToolsList = dbTool?.relatedTools ?? [];
@@ -488,7 +498,7 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
             { name: toolMetadata.title, path: `/tools/${toolMetadata.slug}` },
           ],
           // FAQ sections are visible on these guides — keep FAQPage schema in sync with on-page content.
-          faqs: pageDetail.faqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
+          faqs: visibleFaqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
         })
       );
 
@@ -574,12 +584,20 @@ export default async function ToolDetailPage({ params }: ToolDetailPageProps) {
               </StickyCalculatorAside>
 
               <div className="rounded-2xl border border-border bg-white p-5 shadow-xs sm:p-6">
-                <TableOfContents items={pageDetail.tocItems} />
+                <TableOfContents items={tocItems} />
               </div>
 
               <AdSlot placement="tool_article_middle" />
 
-              <GuideArticleComponent />
+              {publishedGuide ? (
+                <PublishedGuideArticle
+                  guide={publishedGuide}
+                  categoryHref={safeCategoryHref}
+                  categoryName={categoryName}
+                />
+              ) : (
+                <GuideArticleComponent />
+              )}
 
               <AdSlot placement="tool_article_bottom" />
             </div>

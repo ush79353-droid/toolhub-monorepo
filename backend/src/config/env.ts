@@ -24,6 +24,19 @@ const envSchema = z.object({
   AWS_BUCKET_NAME: z.string().default(''),
   AWS_BASE_URL: z.string().default(''),
   CURRENCY_EXCHANGE_API_KEY: z.string().default(''),
+  REDIS_HOST: z.string().default(''),
+  REDIS_PORT: z.coerce.number().int().positive().default(6379),
+  REDIS_PASSWORD: z.string().default(''),
+  SEO_WORKERS_ENABLED: z
+    .string()
+    .default('false')
+    .transform((value) => value.trim().toLowerCase() === 'true'),
+  DATAFORSEO_LOGIN: z.string().default(''),
+  DATAFORSEO_PASSWORD: z.string().default(''),
+  DATAFORSEO_LOCATION_CODE: z.coerce.number().int().positive().default(2840),
+  DATAFORSEO_LANGUAGE_CODE: z.string().trim().min(2).max(8).default('en'),
+  OPENAI_API_KEY: z.string().default(''),
+  OPENAI_SEO_MODEL: z.string().default(''),
 });
 
 const parsed = envSchema.safeParse(process.env);

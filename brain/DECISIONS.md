@@ -194,3 +194,10 @@
 - **Consequences:** Does not change the allowlist semantics for `tool:assign` or admin validation. Extends ADR-009 / ADR-022 / ADR-024 registration. Enforced by `.cursor/rules/tool-key-allowlist.mdc`, `.agents/rules/tool-key-allowlist.md`, and the tool-activation rules.
 - **Status:** Accepted
 
+## ADR-027: Admin-approved SEO drafts for tool guides
+- **Date:** 2026-11-24
+- **Decision:** Finance & Business SEO runs as admin campaigns. DataForSEO supplies keyword and SERP facts. OpenAI drafts a structured guide. Drafts stay off the public page until an admin publishes. A published draft replaces that tool’s file guide, TOC, and visible FAQ schema. Publish may update meta title, description, keywords, the matching social title/description, and `includeFaqSchema`. It must not change `isActive`, `indexable`, `isDeveloped`, `embedEnabled`, or `componentKey`. Keyword volume and difficulty are stored from DataForSEO only. Workers run only when `SEO_WORKERS_ENABLED=true` and `REDIS_HOST` is set. Redis is host, port, and password, not a URL.
+- **Reason:** Tool guides lived only in calculator source, so a 20-tool finance pilot could not be reviewed before it went live. Indexing stays a separate admin choice.
+- **Consequences:** Does not add pillar, sub-pillar, or topic-guide pages. Does not replace `/admin/seo` (still a non-saving preview). Embed pages still omit the guide. Catalog updates for calculator delivery stay on `tool:assign` (ADR-024).
+- **Status:** Accepted
+

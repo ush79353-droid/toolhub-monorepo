@@ -188,7 +188,29 @@ Mounted at `/api/v1/currency` (`backend/src/modules/currency/currency.router.ts`
 
 ---
 
-## 8. Planned / Unimplemented Endpoints
+## 8. Admin SEO campaigns (ADR-027)
+
+All routes use `authenticateAdmin`. Browser code calls them through `frontend/src/server/seo/campaign-actions.ts`.
+
+| Method | Path | Purpose |
+| :--- | :--- | :--- |
+| `GET` | `/admin/seo/eligible-tools` | Active, developed Finance & Business calculators |
+| `GET` | `/admin/seo/campaigns` | Recent campaigns |
+| `POST` | `/admin/seo/campaigns` | Create a pilot (`name`, `toolIds`, max 20) and enqueue research |
+| `GET` | `/admin/seo/campaigns/:id` | Campaign plus draft rows |
+| `GET` | `/admin/seo/drafts/:id` | Keyword facts, SERP titles, content, validation |
+| `PATCH` | `/admin/seo/drafts/:id` | Save edited content and re-validate. Returns the draft to review. |
+| `POST` | `/admin/seo/drafts/:id/approve` | Lock a draft that has no blocking checks |
+| `POST` | `/admin/seo/drafts/:id/publish` | Write meta fields and mark the guide published. Does not change `isActive` or `indexable`. |
+| `POST` | `/admin/seo/drafts/:id/unpublish` | Hide the published guide. The file guide returns. Meta fields already written stay. |
+| `POST` | `/admin/seo/drafts/:id/regenerate` | `{ researchAgain: boolean }`. Copy only, or keyword research again. |
+| `POST` | `/admin/seo/drafts/:id/retry` | Re-queue a failed step |
+
+`503 SEO_NOT_CONFIGURED` when Redis, DataForSEO, or OpenAI env is missing. Public `GET /catalog/tools/:slug` adds `publishedGuide` (`null` when nothing is published).
+
+---
+
+## 9. Planned / Unimplemented Endpoints
 
 The following capabilities exist only as empty backend module directories (`.gitkeep`) or frontend UI previews and are **not implemented**:
 
@@ -198,7 +220,7 @@ The following capabilities exist only as empty backend module directories (`.git
 - Analytics & telemetry ingestion/queries (`/api/v1/admin/analytics`)
 - Audit / activity logs (`/api/v1/admin/activity-logs`)
 - CMS pages management (`/api/v1/admin/pages`)
-- Global SEO & system settings persistence (`/api/v1/admin/seo`, `/api/v1/admin/settings`)
+- Global SEO site settings and system settings persistence (`/api/v1/admin/settings`). `/api/v1/admin/seo` is the finance SEO campaign API (ADR-027), not the mock `/admin/seo` preview.
 - Third-party integration credential management (`/api/v1/admin/integrations`)
 - Background jobs (`/api/v1/admin/jobs`) & public user uploads (`/api/v1/uploads`)
 
