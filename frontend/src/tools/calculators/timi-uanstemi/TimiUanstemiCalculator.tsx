@@ -29,7 +29,9 @@ export function TimiUanstemiCalculator({
   );
   const [input, setInput] = React.useState<TimiUanstemiInput>(() => initial);
   const [errors, setErrors] = React.useState<TimiUanstemiFieldErrors>({});
-  const [result, setResult] = React.useState<TimiUanstemiResult | null>(null);
+  const [result, setResult] = React.useState<TimiUanstemiResult | null>(() =>
+    validateTimiUanstemiInput(initial).result,
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -43,7 +45,7 @@ export function TimiUanstemiCalculator({
     const validation = validateTimiUanstemiInput(next);
     setInput(next);
     setErrors(validation.errors);
-    setResult(validation.result.formattedScore ? validation.result : null);
+    setResult(validation.result);
   };
 
   const handleReload = () => {
@@ -51,16 +53,17 @@ export function TimiUanstemiCalculator({
     setInput(fresh);
     setBaseline(fresh);
     setErrors({});
-    setResult(null);
+    setResult(validateTimiUanstemiInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
   };
 
   const handleClear = () => {
-    setInput(createEmptyInput());
+    const fresh = createEmptyInput();
+    setInput(fresh);
     setErrors({});
-    setResult(null);
+    setResult(validateTimiUanstemiInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);

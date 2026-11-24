@@ -1,8 +1,8 @@
 /**
- * TIMI UA/NSTEMI validation — UI stub (engine commit wires real checks).
+ * TIMI UA/NSTEMI validation — binary Yes/No factors always form a valid score.
  */
 
-import { calculateTimiUanstemi, emptyResult } from './calculation';
+import { calculateTimiUanstemi } from './calculation';
 import type {
   TimiUanstemiFieldErrors,
   TimiUanstemiInput,
@@ -18,11 +18,9 @@ export interface TimiUanstemiValidation {
 export function validateTimiUanstemiInput(
   input: TimiUanstemiInput,
 ): TimiUanstemiValidation {
-  const result = calculateTimiUanstemi(input);
-  const ready = result.formattedScore !== '';
   return {
-    isValid: ready,
+    isValid: true,
     errors: {},
-    result: ready ? result : emptyResult(),
+    result: calculateTimiUanstemi(input),
   };
 }
