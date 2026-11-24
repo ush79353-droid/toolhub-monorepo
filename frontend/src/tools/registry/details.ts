@@ -129,6 +129,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/ivig-dose/detail'),
   KatchMcardleCalculator: () =>
     import('@/tools/calculators/katch-mcardle/detail'),
+  KtvDaugirdasCalculator: () =>
+    import('@/tools/calculators/ktv-daugirdas/detail'),
   KetoCalculator: () => import('@/tools/calculators/keto/detail'),
   LidocaineDoseCalculator: () =>
     import('@/tools/calculators/lidocaine-dose/detail'),

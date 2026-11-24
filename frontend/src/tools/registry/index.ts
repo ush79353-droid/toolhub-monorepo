@@ -458,6 +458,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KatchMcardleCalculator,
     })),
   ),
+  KtvDaugirdasCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ktv-daugirdas/KtvDaugirdasCalculator'
+    ).then((mod) => ({
+      default: mod.KtvDaugirdasCalculator,
+    })),
+  ),
   KetoCalculator: lazyTool(() =>
     import('@/tools/calculators/keto/KetoCalculator').then((mod) => ({
       default: mod.KetoCalculator,
