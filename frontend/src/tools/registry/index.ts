@@ -3403,6 +3403,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AgeAdjustedDDimerCalculator,
     })),
   ),
+  AlbuminCreatinineRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/albumin-creatinine-ratio/AlbuminCreatinineRatioCalculator'
+    ).then((mod) => ({
+      default: mod.AlbuminCreatinineRatioCalculator,
+    })),
+  ),
   AlbuminGlobulinRatioCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/albumin-globulin-ratio/AlbuminGlobulinRatioCalculator'

@@ -177,6 +177,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'added-sugar-intake-calculator',
   'adderall-dosage-calculator',
   'age-adjusted-d-dimer-calculator',
+  'albumin-creatinine-ratio-calculator',
   'albumin-globulin-ratio-calculator',
   'aleve-dosage-calculator',
   'allowable-blood-loss-calculator',

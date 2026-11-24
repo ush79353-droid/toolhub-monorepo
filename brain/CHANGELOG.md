@@ -1,4 +1,11 @@
-﻿### 2026-11-24 — 136 Health tools audit remediation (registry + formulas + Mongo IDs)
+﻿### 2026-11-25 — Albumin Creatinine Ratio Calculator
+
+- **Summary:** Screenshot-first urine ACR (`AlbuminCreatinineRatioCalculator`, slug `albumin-creatinine-ratio-calculator`). Albumin mg/dL + creatinine mg/dL|mmol/L → ACR mg/g (NIDDK/Omni); KDIGO A1–A3 status label; Share/Reload/Clear/feedback; **No FX**.
+- **Commits:** UI `67954e30` / ENG `a06a16c7` / REG (this).
+- **Mongo:** `tool:assign` `_id` `6af46f12a27d8d1d4e9902cb`; `isDeveloped`/`isActive` true; **`indexable` preserved false**.
+- **Verify:** `npx tsx …/albumin-creatinine-ratio/calculation.test.ts` → ok (8/110 → 72.7 A2).
+
+### 2026-11-24 — 136 Health tools audit remediation (registry + formulas + Mongo IDs)
 
 - **Summary:** One-go remediation of `OMEGA-136-HEALTH-TOOLS-FINAL-AUDIT`. **H-001** `LutealPhaseCalculator` added to backend `tool.key.ts` (`580e8417`). **H-002** `PercCalculator` added to frontend `keys.ts` both lists (`a5cfcdd6`). Formula/citation repairs: Stillbirth → Trudell 2017 Table 3 attribution (`9d9b6b52`); DRI adult protein AMDR 10–35%, micronutrient child sodium AIs, vitamin/micronutrient 0–6 mo band, DRS journal string (`0a04cb67`); blood-donor plasma recipient inverse (`af4f5c8b`). Six UNVERIFIED items resolved (verify or repair). 30 warnings investigated (0 software REPAIR_NEEDED; 2 remain UNVERIFIED secondary tables). Atlas **CONNECT_OK**; reconciled **71** catalog `componentKey`/`isDeveloped` without re-activating public Health category. Reports under `brain/reports/OMEGA-136-HEALTH-*-REPORT/RESOLUTION/RE-AUDIT*`. Final: PASS_STATIC **108** / PASS_WITH_WARNINGS **26** / FAIL **0** / UNVERIFIED **2**.
 - **Safety:** No push/pull/fetch; no new Mongo rows; Health public deactivation preserved.

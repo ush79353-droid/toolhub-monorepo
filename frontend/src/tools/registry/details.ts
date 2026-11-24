@@ -829,6 +829,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/adderall-dosage/detail'),
   AgeAdjustedDDimerCalculator: () =>
     import('@/tools/calculators/age-adjusted-d-dimer/detail'),
+  AlbuminCreatinineRatioCalculator: () =>
+    import('@/tools/calculators/albumin-creatinine-ratio/detail'),
   AlbuminGlobulinRatioCalculator: () =>
     import('@/tools/calculators/albumin-globulin-ratio/detail'),
   AleveDosageCalculator: () =>

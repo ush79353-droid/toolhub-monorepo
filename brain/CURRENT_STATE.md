@@ -16,6 +16,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Albumin Creatinine Ratio Calculator (`/tools/albumin-creatinine-ratio-calculator`):** Live educational urine ACR (`componentKey: 'AlbuminCreatinineRatioCalculator'`, catalog `6af46f12a27d8d1d4e9902cb`, pillar/subPillar null). Screenshot-first (ADR-023): blank albumin mg/dL; creatinine mg/dL|mmol/L; ACR mg/g; KDIGO A1–A3 label in status only; share URL; **No FX**. Activated; **`indexable` left false**. Example: **8** mg/dL · **110** mg/dL → **72.7** mg/g (A2).
 - **GRACE Calculator (`/tools/grace-calculator`):** Granger 2003 GRACE 1.0 points + in-hospital risk categories (`GraceCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Chances of Having Twins Calculator (`/tools/chances-of-having-twins-calculator`):** CDC/NVSS 2024 twin delivery rates by age or race/Hispanic origin (`ChancesOfHavingTwinsCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Stillbirth Risk Calculator (`/tools/stillbirth-risk-calculator`):** Yerke 2017 ≥32-week calibrated logistic (`StillbirthRiskCalculator`); screenshot UI; non-Yerke fields excluded from math. **No FX**. Registry wired. **Mongo blocked**.

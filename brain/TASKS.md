@@ -232,7 +232,17 @@
 
 ## In Progress
 
-*No code implementation tasks currently active.*
+| ID | Description | Owner | Status | Relevant Files | Dependencies |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+*No code implementation tasks currently active (TOOL-809 ACR moved to Completed).*
+
+---
+
+## Recently completed (queue)
+
+| ID | Description | Owner | Status | Relevant Files | Dependencies |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-809` | Albumin Creatinine Ratio Calculator (`AlbuminCreatinineRatioCalculator`); urine ACR mg/g; Mongo `6af46f12a27d8d1d4e9902cb` activated; indexable false | Cursor (`cursor-agent-72170412-002210`) | Completed | `frontend/src/tools/calculators/albumin-creatinine-ratio/*`, `Tools/Completed/Albumin Creatinine Ratio Calculator` | — |
 
 ---
 
