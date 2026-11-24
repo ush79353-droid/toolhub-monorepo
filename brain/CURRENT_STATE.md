@@ -1,6 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-24** — Health 136-tool audit remediation complete (`cursor-health-repair-20261124-220201`): H-001/H-002 registry FAILs fixed; 6 UNVERIFIED resolved/repaired; 30 warnings investigated; Atlas reachable; **71** Mongo `componentKey`/`isDeveloped` reconciliations. **Public Health & Fitness remains deactivated** (category + tools `isActive: false` per operator). Final re-audit: PASS_STATIC **108** / PASS_WITH_WARNINGS **26** / FAIL **0** / UNVERIFIED **2**. Reports: `brain/reports/OMEGA-136-HEALTH-*`. Auto Loan remains master Tool Detail Page.
+> **Primary Agent Starting Point.** Last verified: **2026-11-24** — Health 136-tool audit remediation complete; then operator re-enabled public testing: **Health & Fitness** category `isActive: true` and **189** developed tools with `componentKey` set to `isActive: true` (`indexable` still false). Undeveloped health rows stay inactive. Final re-audit baseline: PASS_STATIC **108** / PASS_WITH_WARNINGS **26** / FAIL **0** / UNVERIFIED **2**. Reports: `brain/reports/OMEGA-136-HEALTH-*`. Auto Loan remains master Tool Detail Page.
 
 ---
 
