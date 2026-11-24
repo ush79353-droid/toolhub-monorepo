@@ -90,6 +90,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/geriatric-bmi/detail'),
   GestationalAgeCalculator: () =>
     import('@/tools/calculators/gestational-age/detail'),
+  GfrEstimatedCalculator: () =>
+    import('@/tools/calculators/gfr-estimated/detail'),
   GeorgiaOvertimeCalculator: () =>
     import('@/tools/calculators/georgia-overtime/detail'),
   GrossMarginCalculator: () =>
@@ -912,6 +914,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BrexitCalculator: () => import('@/tools/calculators/brexit/detail'),
   BuildVsBuyCalculator: () =>
     import('@/tools/calculators/build-vs-buy/detail'),
+  BunCreatinineRatioCalculator: () =>
+    import('@/tools/calculators/bun-creatinine-ratio/detail'),
   BurnRateCalculator: () =>
     import('@/tools/calculators/burn-rate/detail'),
   BurndownChartCalculator: () =>

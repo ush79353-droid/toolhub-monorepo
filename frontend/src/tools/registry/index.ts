@@ -319,6 +319,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.GestationalAgeCalculator,
     })),
   ),
+  GfrEstimatedCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/gfr-estimated/GfrEstimatedCalculator'
+    ).then((mod) => ({
+      default: mod.GfrEstimatedCalculator,
+    })),
+  ),
   GeorgiaOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/georgia-overtime/GeorgiaOvertimeCalculator'
@@ -588,6 +595,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/prescription-refill/PrescriptionRefillCalculator'
     ).then((mod) => ({
       default: mod.PrescriptionRefillCalculator,
+    })),
+  ),
+  ProstateVolumeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/prostate-volume/ProstateVolumeCalculator'
+    ).then((mod) => ({
+      default: mod.ProstateVolumeCalculator,
     })),
   ),
   ProteinCalculator: lazyTool(() =>
@@ -3653,6 +3667,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/build-vs-buy/BuildVsBuyCalculator').then((mod) => ({
       default: mod.BuildVsBuyCalculator,
     })),
+  ),
+  BunCreatinineRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/bun-creatinine-ratio/BunCreatinineRatioCalculator').then(
+      (mod) => ({
+        default: mod.BunCreatinineRatioCalculator,
+      }),
+    ),
   ),
   BurnRateCalculator: lazyTool(() =>
     import('@/tools/calculators/burn-rate/BurnRateCalculator').then((mod) => ({
