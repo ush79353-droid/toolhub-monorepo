@@ -10,6 +10,7 @@
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `TOOL-809` | GFR Calculator - Estimated Glomerular Filtration Rate (`GfrEstimatedCalculator`); CKD-EPI/MDRD activated; indexable false | Cursor | Completed | `frontend/src/tools/calculators/gfr-estimated/*` | — |
+| `TOOL-809` | GFR Calculator - Estimated Glomerular Filtration Rate (`GfrEstimatedCalculator`); CKD-EPI/MDRD activated; indexable false | Cursor | Completed | `frontend/src/tools/calculators/gfr-estimated/*` | — |
 | `TOOL-808` | Stillbirth Risk Calculator (`StillbirthRiskCalculator`); Yerke 2017; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/stillbirth-risk/*` | Mongo Atlas DNS |
 | `TOOL-807` | Chances of Having Twins (`ChancesOfHavingTwinsCalculator`); CDC 2024; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/chances-of-having-twins/*` | Mongo Atlas DNS |
 | `TOOL-806` | GRACE Calculator (`GraceCalculator`); Granger 2003; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/grace/*` | Mongo Atlas DNS |
