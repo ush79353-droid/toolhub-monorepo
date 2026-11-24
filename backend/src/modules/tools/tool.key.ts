@@ -72,6 +72,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LocalAnestheticCalculator',
   'LotteryAnnuityCalculator',
   'LotteryTaxCalculator',
+  'LutealPhaseCalculator',
   'LvCalculator',
   'MacroCalculator',
   'McgToIuConverter',
