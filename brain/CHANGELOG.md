@@ -630,6 +630,11 @@
 - **Important Files:** Broad set under `frontend/src/tools/calculators/**` (titles, `detail.tsx`, `content.ts`, guides/forms/results, validation strings); `brain/CHANGELOG.md`, `brain/TASKS.md`, `brain/CURRENT_STATE.md`.
 - **Verification:** Zero remaining `— Omega Calculators`; `detail.tsx` / guide prose em dashes cleared; leftover `—` limited to comments and intentional glyphs. Temporary files cleaned: YES.
 
+### 2026-11-24 — Fix missing GuideSectionHeading + leftover build blockers
+- **Summary:** Added missing `frontend/src/tools/shared/GuideSectionHeading.tsx` (imported by breastfeeding-calorie / navy-body-fat / weight-percentile guides). Also fixed CaloriesBurned internal `Link`, Birth Control share URL/`title`, chart color typing, ArmyBodyFat `REGISTERED_COMPONENT_KEYS` entry, and a few metadata/`assert` type mismatches so `npm run build` passes.
+- **Important Files:** `frontend/src/tools/shared/GuideSectionHeading.tsx`, `calories-burned/CaloriesBurnedGuideArticle.tsx`, `birth-control/BirthControlCalculator.tsx`, `birth-weight-percentile/BirthWeightPercentileChart.tsx`, `registry/keys.ts`, assorted small TS fixes.
+- **Verification:** `npx tsc --noEmit` exit 0; `npm run build` exit 0. Temporary files cleaned: YES.
+
 ### 2026-11-21 — Soften unused-vars + unblock frontend `next build`
 - **Summary:** Turned off ESLint `no-unused-vars` / `@typescript-eslint/no-unused-vars` (tsconfig already had `noUnusedLocals`/`noUnusedParameters` false). Converted ~68 calculator guide/results files from raw `<a href="/tools/…">` to `next/link` `Link` (fixes `@next/next/no-html-link-for-pages` Errors). Softened shared props (`FAQAccordion` `faqs` alias, optional `CurrencySelect` `id`, `InfoTooltip` `content` alias) and fixed remaining typecheck blockers so `npx tsc --noEmit` and `npm run build` succeed.
 - **Important Files:** `frontend/eslint.config.mjs`, `frontend/tsconfig.json`, `frontend/src/components/shared/FAQAccordion.tsx`, `frontend/src/tools/shared/CurrencySelect.tsx`, `frontend/src/tools/calculators/auto-loan/InfoTooltip.tsx`, calculator guide/results Link conversions, assorted validation/form type fixes.

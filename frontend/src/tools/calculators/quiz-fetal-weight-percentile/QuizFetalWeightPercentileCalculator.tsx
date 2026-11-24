@@ -56,7 +56,7 @@ export function QuizFetalWeightPercentileCalculator({
 
   const handleShare = async () => {
     const shareData = {
-      title: metadata?.name || 'Quiz: Fetal Weight Percentile',
+      title: metadata.title || 'Quiz: Fetal Weight Percentile',
       text: 'Quiz: Fetal Weight Percentile — Omega Calculators (educational).',
       url: pageUrl,
     };

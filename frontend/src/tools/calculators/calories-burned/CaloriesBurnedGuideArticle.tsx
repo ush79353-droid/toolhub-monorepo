@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { CALORIES_BURNED_FAQS } from './content';
 
@@ -52,12 +53,12 @@ export function CaloriesBurnedGuideArticle() {
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
         Example: MET 6.0, 70 kg, 45 minutes → 6 × 3.5 × 70 × 45 ÷ 200 ≈ 331
         kcal. For daily maintenance calories (BMR × activity level), see the{' '}
-        <a
+        <Link
           href="/tools/calorie-calculator"
           className="font-medium text-primary underline-offset-2 hover:underline"
         >
           Calorie Calculator
-        </a>{' '}
+        </Link>{' '}
         on Omega Calculators.
       </p>
 

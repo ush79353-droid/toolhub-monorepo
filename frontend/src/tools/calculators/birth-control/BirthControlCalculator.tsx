@@ -152,12 +152,12 @@ export function BirthControlCalculator({
 
   const pageUrl =
     typeof window !== 'undefined'
-      ? window.location.href
-      : metadata?.canonicalUrl || '';
+      ? `${window.location.origin}/tools/${metadata.slug}`
+      : `/tools/${metadata.slug}`;
 
   const handleShare = async () => {
     const shareData = {
-      title: metadata?.name || 'Birth Control Calculator',
+      title: metadata.title || 'Birth Control Calculator',
       url: pageUrl,
     };
     try {

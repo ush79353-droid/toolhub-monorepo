@@ -1004,6 +1004,7 @@ export const REGISTERED_COMPONENT_KEYS = [
   'AnnuityCalculator',
   'AnnuityPayoutCalculator',
   'AnorexicBmiCalculator',
+  'ArmyBodyFatCalculator',
   'AutoLeaseCalculator',
   'AutoLoanCalculator',
   'CaliforniaOvertimeCalculator',
