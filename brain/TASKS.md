@@ -268,6 +268,9 @@
 
 ## Completed
 
+| `OPS-HEALTH-136-REPAIR-2026-11-24` | One-go 136 Health audit remediation: H-001/H-002 registry, 6 UNVERIFIED, 30 warnings, Mongo reconcile (no public re-activate), Stillbirth/GRACE/Twins verify, final re-audit reports | Cursor | Completed | `brain/reports/OMEGA-136-HEALTH-*`; commits `580e8417` `a5cfcdd6` `9d9b6b52` `0a04cb67` `af4f5c8b` | Public Health stays deactivated |
+| `OPS-HEALTH-DEACT-2026-11-24` | Deactivate all Health & Fitness catalog tools + category on public site (`isActive`/`indexable` false; category `isActive` false). 448 tools; slug `health-fitness`. | Cursor | Completed | Mongo catalog only; `brain/CURRENT_STATE.md`, `brain/CHANGELOG.md` | — |
+
 | `TOOL-680` | Implement Dosage Calculator on existing slug `dosage-calculator` with mg/kg conversion, frequency basis, liquid mL, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/dosage/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |
 
 | `TOOL-671` | Implement Army Body Fat Calculator on existing slug `army-body-fat-calculator` with active-duty one-site abdomen equations (ALARACT 032/2025), legacy multi-site DoDI 1308.3 option, Table B–2 maxima, guide/FAQ, verified activation (**indexable false**) | Cursor | Completed | `frontend/src/tools/calculators/army-body-fat/*`, registry, sitemap, `tool.key.ts`, `brain/*` | — |

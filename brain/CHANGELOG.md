@@ -1,4 +1,14 @@
-﻿### 2026-11-24 — Unblock GRACE + Twins + Stillbirth (batch REG)
+﻿### 2026-11-24 — 136 Health tools audit remediation (registry + formulas + Mongo IDs)
+
+- **Summary:** One-go remediation of `OMEGA-136-HEALTH-TOOLS-FINAL-AUDIT`. **H-001** `LutealPhaseCalculator` added to backend `tool.key.ts` (`580e8417`). **H-002** `PercCalculator` added to frontend `keys.ts` both lists (`a5cfcdd6`). Formula/citation repairs: Stillbirth → Trudell 2017 Table 3 attribution (`9d9b6b52`); DRI adult protein AMDR 10–35%, micronutrient child sodium AIs, vitamin/micronutrient 0–6 mo band, DRS journal string (`0a04cb67`); blood-donor plasma recipient inverse (`af4f5c8b`). Six UNVERIFIED items resolved (verify or repair). 30 warnings investigated (0 software REPAIR_NEEDED; 2 remain UNVERIFIED secondary tables). Atlas **CONNECT_OK**; reconciled **71** catalog `componentKey`/`isDeveloped` without re-activating public Health category. Reports under `brain/reports/OMEGA-136-HEALTH-*-REPORT/RESOLUTION/RE-AUDIT*`. Final: PASS_STATIC **108** / PASS_WITH_WARNINGS **26** / FAIL **0** / UNVERIFIED **2**.
+- **Safety:** No push/pull/fetch; no new Mongo rows; Health public deactivation preserved.
+
+### 2026-11-24 — Deactivate Health & Fitness on public site
+
+- **Summary:** Operator request to hide the entire Health category from the website. Mongo: all **448** tools under category `Health & Fitness` (`6af451c1a27d8d1d4e98f97f`, slug `health-fitness`) set `isActive: false` and `indexable: false` (118 had been active). Category row itself set `isActive: false` so the card does not appear in public category lists. No frontend/backend code changes; modules remain registered for later re-activation via `tool:assign --set-active`.
+- **Verify:** `activeAfter=0` for that category; category `isActive: false`.
+
+### 2026-11-24 — Unblock GRACE + Twins + Stillbirth (batch REG)
 
 - `GraceCalculator` (`grace-calculator`): Granger 2003 GRACE 1.0 points. UI `977d6fec` / ENG `c4110b08` / (reg this).
 - `ChancesOfHavingTwinsCalculator` (`chances-of-having-twins-calculator`): CDC/NVSS 2024 twin delivery rates. UI `1ae374ce` / ENG `83d98d2c` / (reg this).

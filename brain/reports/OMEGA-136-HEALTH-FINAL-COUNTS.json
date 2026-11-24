@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-11-24T17:18:55.007Z",
+  "counts": {
+    "PASS_STATIC": 108,
+    "PASS_WITH_WARNINGS": 26,
+    "FAIL": 0,
+    "BLOCKED": 0,
+    "UNVERIFIED": 2
+  },
+  "total": 136
+}

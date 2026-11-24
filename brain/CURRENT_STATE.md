@@ -1,6 +1,6 @@
 ﻿# Current Project State (`CURRENT_STATE.md`)
 
-> **Primary Agent Starting Point.** Last verified: **2026-11-21** (homepage shows category cards and up to three last-opened tools from local storage under the hero, then featured tools; `/tools` uses the same mint hero, lists every root category, and shows 48 popular-style cards per page; `/about` uses the mint hero plus one article; `/contact` uses the mint hero, a quarter-width details column, and a three-quarter form that opens the visitor’s email app and is not stored on the site; operator name, city, country, and email, plus the contact business email and address, stay in `siteConfig` and stay hidden while empty; site header: home is logo + Share + Explore Tools; other pages add debounced tool search; Retirement Calculator live at `/tools/retirement-calculator`; Auto Loan remains master Tool Detail Page).
+> **Primary Agent Starting Point.** Last verified: **2026-11-24** — Health 136-tool audit remediation complete (`cursor-health-repair-20261124-220201`): H-001/H-002 registry FAILs fixed; 6 UNVERIFIED resolved/repaired; 30 warnings investigated; Atlas reachable; **71** Mongo `componentKey`/`isDeveloped` reconciliations. **Public Health & Fitness remains deactivated** (category + tools `isActive: false` per operator). Final re-audit: PASS_STATIC **108** / PASS_WITH_WARNINGS **26** / FAIL **0** / UNVERIFIED **2**. Reports: `brain/reports/OMEGA-136-HEALTH-*`. Auto Loan remains master Tool Detail Page.
 
 ---
 

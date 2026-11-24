@@ -1,0 +1,1889 @@
+{
+  "generatedAt": "2026-11-24T17:17:31.673Z",
+  "summary": {
+    "updated": 66,
+    "alreadyOk": 62,
+    "skipped": 1,
+    "notFound": 7,
+    "healthCategoryActive": false,
+    "activeHealthTools": 0
+  },
+  "results": [
+    {
+      "n": "1",
+      "name": "Bishop Score Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99020d",
+      "slug": "bishop-score-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "BishopScoreCalculator",
+      "isActive": false
+    },
+    {
+      "n": "2",
+      "name": "Breast Cancer Recurrence Risk Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99020e",
+      "slug": "breast-cancer-recurrence-risk-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "BreastCancerRecurrenceRiskCalculator",
+      "isActive": false
+    },
+    {
+      "n": "3",
+      "name": "Chances of Having Twins Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990210",
+      "slug": "chances-of-having-twins-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "ChancesOfHavingTwinsCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "4",
+      "name": "Clomid Ovulation Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990211",
+      "slug": "clomid-ovulation-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "ClomidOvulationCalculator",
+      "isActive": false
+    },
+    {
+      "n": "5",
+      "name": "Conception Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990212",
+      "slug": "conception-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "ConceptionCalculator",
+      "isActive": false
+    },
+    {
+      "n": "6",
+      "name": "Crown-rump Length Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990213",
+      "slug": "crown-rump-length-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "CrownRumpLengthCalculator",
+      "isActive": false
+    },
+    {
+      "n": "7",
+      "name": "EDD Calculator - Estimated Date of Delivery",
+      "mongoId": "6af46f10a27d8d1d4e990214",
+      "slug": "edd-calculator-estimated-date-of-delivery",
+      "action": "ALREADY_OK",
+      "componentKey": "EddCalculator",
+      "isActive": false
+    },
+    {
+      "n": "8",
+      "name": "Egg Freezing Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990215",
+      "slug": "egg-freezing-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "EggFreezingCalculator",
+      "isActive": false
+    },
+    {
+      "n": "9",
+      "name": "Fertility by Age Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990216",
+      "slug": "fertility-by-age-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "FertilityByAgeCalculator",
+      "isActive": false
+    },
+    {
+      "n": "10",
+      "name": "Flange Size Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990217",
+      "slug": "flange-size-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "FlangeSizeCalculator",
+      "isActive": false
+    },
+    {
+      "n": "11",
+      "name": "Fundal Height Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990218",
+      "slug": "fundal-height-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "FundalHeightCalculator",
+      "isActive": false
+    },
+    {
+      "n": "12",
+      "name": "Gestational Age Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990219",
+      "slug": "gestational-age-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "GestationalAgeCalculator",
+      "isActive": false
+    },
+    {
+      "n": "13",
+      "name": "hCG Levels Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99021a",
+      "slug": "hcg-levels-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "HcgLevelsCalculator",
+      "isActive": false
+    },
+    {
+      "n": "14",
+      "name": "Implantation Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99021b",
+      "slug": "implantation-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "ImplantationCalculator",
+      "isActive": false
+    },
+    {
+      "n": "15",
+      "name": "Luteal Phase Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99021c",
+      "slug": "luteal-phase-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "LutealPhaseCalculator",
+      "isActive": false
+    },
+    {
+      "n": "16",
+      "name": "MCA Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99021d",
+      "slug": "mca-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "McaCalculator",
+      "isActive": false
+    },
+    {
+      "n": "17",
+      "name": "Mean Sac Diameter Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99021e",
+      "slug": "mean-sac-diameter-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "MeanSacDiameterCalculator",
+      "isActive": false
+    },
+    {
+      "n": "18",
+      "name": "Nuchal Translucency Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99021f",
+      "slug": "nuchal-translucency-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "NuchalTranslucencyCalculator",
+      "isActive": false
+    },
+    {
+      "n": "19",
+      "name": "Ovulation Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990220",
+      "slug": "ovulation-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "OvulationCalculator",
+      "isActive": false
+    },
+    {
+      "n": "20",
+      "name": "Pearl Index Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990221",
+      "slug": "pearl-index-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "PearlIndexCalculator",
+      "isActive": false
+    },
+    {
+      "n": "21",
+      "name": "Period Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990222",
+      "slug": "period-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "PeriodCalculator",
+      "isActive": false
+    },
+    {
+      "n": "22",
+      "name": "Progesterone to Estrogen Ratio Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990223",
+      "slug": "progesterone-to-estrogen-ratio-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "ProgesteroneToEstrogenRatioCalculator",
+      "isActive": false
+    },
+    {
+      "n": "23",
+      "name": "Sperm Analysis Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990224",
+      "slug": "sperm-analysis-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "SpermAnalysisCalculator",
+      "isActive": false
+    },
+    {
+      "n": "24",
+      "name": "Stillbirth Risk Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990225",
+      "slug": "stillbirth-risk-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "StillbirthRiskCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "25",
+      "name": "Testosterone to Estradiol Ratio Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990226",
+      "slug": "testosterone-to-estradiol-ratio-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "TestosteroneEstradiolRatioCalculator",
+      "isActive": false
+    },
+    {
+      "n": "26",
+      "name": "VBAC Calculator (Vaginal Birth After Cesarean Section)",
+      "mongoId": "6af46f10a27d8d1d4e990227",
+      "slug": "vbac-calculator-vaginal-birth-after-cesarean-section",
+      "action": "ALREADY_OK",
+      "componentKey": "VbacCalculator",
+      "isActive": false
+    },
+    {
+      "n": "27",
+      "name": "6 Minute Walk Test Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990228",
+      "slug": "6-minute-walk-test-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "SixMinuteWalkTestCalculator",
+      "isActive": false
+    },
+    {
+      "n": "28",
+      "name": "ABI Calculator (Ankle-Brachial Index)",
+      "mongoId": "6af46f0fa27d8d1d4e9900b2",
+      "slug": "profitability-index-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "ProfitabilityIndexCalculator",
+      "isActive": true
+    },
+    {
+      "n": "29",
+      "name": "Aortic Valve Area Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99022a",
+      "slug": "aortic-valve-area-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "AorticValveAreaCalculator",
+      "isActive": false
+    },
+    {
+      "n": "30",
+      "name": "Arterial Age Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99022b",
+      "slug": "arterial-age-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "ArterialAgeCalculator",
+      "isActive": false
+    },
+    {
+      "n": "31",
+      "name": "Blood Pressure Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99022c",
+      "slug": "blood-pressure-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "BloodPressureCalculator",
+      "isActive": false
+    },
+    {
+      "n": "32",
+      "name": "Cardiac Index Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99022d",
+      "slug": "cardiac-index-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "CardiacIndexCalculator",
+      "isActive": false
+    },
+    {
+      "n": "33",
+      "name": "Cardiac Output Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99022e",
+      "slug": "cardiac-output-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "CardiacOutputCalculator",
+      "isActive": false
+    },
+    {
+      "n": "34",
+      "name": "Cerebral Perfusion Pressure Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99022f",
+      "slug": "cerebral-perfusion-pressure-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "CerebralPerfusionPressureCalculator",
+      "isActive": false
+    },
+    {
+      "n": "35",
+      "name": "CHA2DS2-Vasc Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990230",
+      "slug": "cha2ds2-vasc-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "Cha2ds2VascCalculator",
+      "isActive": false
+    },
+    {
+      "n": "36",
+      "name": "CVD Risk Calculator – Cardiovascular Disease 10-year Risk",
+      "mongoId": "6af46f10a27d8d1d4e990231",
+      "slug": "cvd-risk-calculator-cardiovascular-disease-10-year-risk",
+      "action": "ALREADY_OK",
+      "componentKey": "CvdRiskCalculator",
+      "isActive": false
+    },
+    {
+      "n": "37",
+      "name": "DAPT calculator",
+      "mongoId": "6af46f10a27d8d1d4e990232",
+      "slug": "dapt-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "DaptCalculator",
+      "isActive": false
+    },
+    {
+      "n": "38",
+      "name": "Doppler Echo Cardiac Output Calculator",
+      "id": "6af46f10a27d8d1d4e99022e",
+      "slug": "cardiac-output-calculator",
+      "key": "DopplerEchoCardiacOutputCalculator",
+      "action": "SKIP_COLLISION"
+    },
+    {
+      "n": "39",
+      "name": "Duke Treadmill Score Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990234",
+      "slug": "duke-treadmill-score-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "DukeTreadmillScoreCalculator",
+      "isActive": false
+    },
+    {
+      "n": "40",
+      "name": "ECG Boxes to Seconds Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990235",
+      "slug": "ecg-boxes-to-seconds-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "EcgBoxesToSecondsCalculator",
+      "isActive": false
+    },
+    {
+      "n": "41",
+      "name": "ECG Heart Rate Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990236",
+      "slug": "ecg-heart-rate-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "EcgHeartRateCalculator",
+      "isActive": false
+    },
+    {
+      "n": "42",
+      "name": "Ejection Fraction Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990237",
+      "slug": "ejection-fraction-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "EjectionFractionCalculator",
+      "isActive": false
+    },
+    {
+      "n": "43",
+      "name": "EROA - Mitral Regurgitation Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990238",
+      "slug": "eroa-mitral-regurgitation-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "EroaMitralRegurgitationCalculator",
+      "isActive": false
+    },
+    {
+      "n": "44",
+      "name": "Framingham Risk Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990239",
+      "slug": "framingham-risk-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "FraminghamRiskCalculator",
+      "isActive": false
+    },
+    {
+      "n": "45",
+      "name": "Gorlin Formula Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99023a",
+      "slug": "gorlin-formula-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "GorlinFormulaCalculator",
+      "isActive": false
+    },
+    {
+      "n": "46",
+      "name": "GRACE Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99023b",
+      "slug": "grace-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "GraceCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "47",
+      "name": "Gupta Risk Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99023c",
+      "slug": "gupta-risk-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "GuptaRiskCalculator",
+      "isActive": false
+    },
+    {
+      "n": "48",
+      "name": "HAS-BLED Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99023d",
+      "slug": "has-bled-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "HasBledCalculator",
+      "isActive": false
+    },
+    {
+      "n": "49",
+      "name": "Heart Failure Life Expectancy Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99023e",
+      "slug": "heart-failure-life-expectancy-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "HeartFailureLifeExpectancyCalculator",
+      "isActive": false
+    },
+    {
+      "n": "50",
+      "name": "HEART Score Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99023f",
+      "slug": "heart-score-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "HeartScoreCalculator",
+      "isActive": false
+    },
+    {
+      "n": "51",
+      "name": "ICH Volume Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990240",
+      "slug": "ich-volume-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "IchVolumeCalculator",
+      "isActive": false
+    },
+    {
+      "n": "52",
+      "name": "LV Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990241",
+      "slug": "lv-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "LvCalculator",
+      "isActive": false
+    },
+    {
+      "n": "53",
+      "name": "MAP Calculator (Mean Arterial Pressure)",
+      "mongoId": "6af46f10a27d8d1d4e990242",
+      "slug": "map-calculator-mean-arterial-pressure",
+      "action": "ALREADY_OK",
+      "componentKey": "MapCalculator",
+      "isActive": false
+    },
+    {
+      "n": "54",
+      "name": "Mitral Valve Area Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990243",
+      "slug": "mitral-valve-area-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "MitralValveAreaCalculator",
+      "isActive": false
+    },
+    {
+      "n": "55",
+      "name": "Padua Score Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990244",
+      "slug": "padua-score-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "PaduaScoreCalculator",
+      "isActive": false
+    },
+    {
+      "n": "56",
+      "name": "PERC Calculator - Pulmonary Embolism Rule-Out Criteria",
+      "mongoId": "6af46f10a27d8d1d4e990245",
+      "slug": "perc-calculator-pulmonary-embolism-rule-out-criteria",
+      "action": "ALREADY_OK",
+      "componentKey": "PercCalculator",
+      "isActive": false
+    },
+    {
+      "n": "57",
+      "name": "PISA Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990246",
+      "slug": "pisa-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "PisaCalculator",
+      "isActive": false
+    },
+    {
+      "n": "58",
+      "name": "PVR Calculator - Pulmonary Vascular Resistance",
+      "mongoId": "6af46f10a27d8d1d4e990247",
+      "slug": "pvr-calculator-pulmonary-vascular-resistance",
+      "action": "ALREADY_OK",
+      "componentKey": "PvrCalculator",
+      "isActive": false
+    },
+    {
+      "n": "59",
+      "name": "QTc Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990248",
+      "slug": "qtc-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "QtcCalculator",
+      "isActive": false
+    },
+    {
+      "n": "60",
+      "name": "Rate Pressure Product Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990249",
+      "slug": "rate-pressure-product-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "RatePressureProductCalculator",
+      "isActive": false
+    },
+    {
+      "n": "61",
+      "name": "RCRI Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99024a",
+      "slug": "rcri-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "RcriCalculator",
+      "isActive": false
+    },
+    {
+      "n": "62",
+      "name": "Revised Geneva Score Calculator for Pulmonary Embolism",
+      "mongoId": "6af46f10a27d8d1d4e99024b",
+      "slug": "revised-geneva-score-calculator-for-pulmonary-embolism",
+      "action": "ALREADY_OK",
+      "componentKey": "RevisedGenevaScoreCalculator",
+      "isActive": false
+    },
+    {
+      "n": "63",
+      "name": "Stroke Volume Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99024c",
+      "slug": "stroke-volume-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "StrokeVolumeCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "64",
+      "name": "TIMI Score Calculator for UA/NSTEMI",
+      "mongoId": "6af46f10a27d8d1d4e99024d",
+      "slug": "timi-score-calculator-for-uanstemi",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "TimiUanstemiCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "65",
+      "name": "TIMI Score for STEMI Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99024e",
+      "slug": "timi-score-for-stemi-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "TimiStemiCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "66",
+      "name": "Wells Score Calculator for Pulmonary Embolism",
+      "mongoId": "6af46f0fa27d8d1d4e990095",
+      "slug": "customer-effort-score-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "CustomerEffortScoreCalculator",
+      "isActive": true
+    },
+    {
+      "n": "67",
+      "name": "Added Sugar Intake Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990250",
+      "slug": "added-sugar-intake-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "AddedSugarIntakeCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "68",
+      "name": "BEE Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990251",
+      "slug": "bee-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "BeeCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "69",
+      "name": "Carb Calculator (Carbohydrates)",
+      "mongoId": "6af46f10a27d8d1d4e990253",
+      "slug": "carb-calculator-carbohydrates",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "CarbCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "70",
+      "name": "Carbohydrate Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990254",
+      "slug": "carbohydrate-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "CarbohydrateCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "71",
+      "name": "Diet Risk Score Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990255",
+      "slug": "diet-risk-score-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "DietRiskScoreCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "72",
+      "name": "DRI Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990256",
+      "slug": "dri-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "DriCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "73",
+      "name": "EER Calculator — Estimated Energy Requirement",
+      "mongoId": "6af46f17a27d8d1d4e990bf6",
+      "slug": "energy-conversion-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "EnergyConversionCalculator",
+      "isActive": false
+    },
+    {
+      "n": "74",
+      "name": "Fat Intake Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990258",
+      "slug": "fat-intake-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "FatIntakeCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "75",
+      "name": "Fiber Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990259",
+      "slug": "fiber-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "FiberCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "76",
+      "name": "Gastric Sleeve Weight Loss Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99025a",
+      "slug": "gastric-sleeve-weight-loss-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "GastricSleeveWeightLossCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "77",
+      "name": "Harris-Benedict Calculator (Basal Metabolic Rate)",
+      "mongoId": "6af46f10a27d8d1d4e99025b",
+      "slug": "harris-benedict-calculator-basal-metabolic-rate",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "HarrisBenedictCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "78",
+      "name": "IIFYM Calculator (If It Fits Your Macros)",
+      "mongoId": "6af46f10a27d8d1d4e99025c",
+      "slug": "iifym-calculator-if-it-fits-your-macros",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "IifymCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "79",
+      "name": "Katch-McArdle Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99025d",
+      "slug": "katch-mcardle-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "KatchMcardleCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "80",
+      "name": "Keto Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99025e",
+      "slug": "keto-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "KetoCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "81",
+      "name": "Macro Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99025f",
+      "slug": "macro-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "MacroCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "82",
+      "name": "Micronutrient Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990260",
+      "slug": "micronutrient-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "MicronutrientCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "83",
+      "name": "Net Carbs Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990261",
+      "slug": "net-carbs-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "NetCarbsCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "84",
+      "name": "Protein Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990262",
+      "slug": "protein-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "ProteinCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "85",
+      "name": "Quarantine Activity Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990263",
+      "slug": "quarantine-activity-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "QuarantineActivityCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "86",
+      "name": "Quiz: Harris-Benedict Calculator (Basal Metabolic Rate)",
+      "id": "",
+      "slug": "quiz-harris-benedict-calculator",
+      "key": "QuizHarrisBenedictCalculator",
+      "action": "NOT_FOUND"
+    },
+    {
+      "n": "87",
+      "name": "RMR Calculator - Resting Metabolic Rate",
+      "mongoId": "6af46f10a27d8d1d4e990265",
+      "slug": "rmr-calculator-resting-metabolic-rate",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "RmrCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "88",
+      "name": "Sodium in Salt Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990266",
+      "slug": "sodium-in-salt-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "SodiumInSaltCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "89",
+      "name": "TDEE Calculator - Total Daily Energy Expenditure",
+      "mongoId": "6af46f17a27d8d1d4e990bf6",
+      "slug": "energy-conversion-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "EnergyConversionCalculator",
+      "isActive": false
+    },
+    {
+      "n": "90",
+      "name": "Vitamin A Calculator",
+      "mongoId": "6af46f10a27d8d1d4e990269",
+      "slug": "vitamin-a-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "VitaminACalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "91",
+      "name": "Vitamin Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99026a",
+      "slug": "vitamin-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "VitaminCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "92",
+      "name": "Vitamin D Calculator",
+      "mongoId": "6af46f10a27d8d1d4e99026b",
+      "slug": "vitamin-d-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "VitaminDCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "93",
+      "name": "Weight Watcher Points Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99026c",
+      "slug": "weight-watcher-points-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "WeightWatcherPointsCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "94",
+      "name": "Weight Watchers Points Calculator",
+      "id": "",
+      "slug": "weight-watchers-points-calculator",
+      "key": "WeightWatchersPointsCalculator",
+      "action": "NOT_FOUND"
+    },
+    {
+      "n": "95",
+      "name": "Benzodiazepine Conversion Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99026e",
+      "slug": "benzodiazepine-conversion-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "BenzodiazepineConversionCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "96",
+      "name": "Carboplatin Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99026f",
+      "slug": "carboplatin-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "CarboplatinCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "97",
+      "name": "Cefdinir Dose Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990270",
+      "slug": "cefdinir-dose-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "CefdinirDoseCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "98",
+      "name": "Drug Half-Life Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990271",
+      "slug": "drug-half-life-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "DrugHalfLifeCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "99",
+      "name": "Fish Oil Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990272",
+      "slug": "fish-oil-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "FishOilCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "100",
+      "name": "Hydroxychloroquine Dose Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990273",
+      "slug": "hydroxychloroquine-dose-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "HydroxychloroquineDoseCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "101",
+      "name": "Isotretinoin Dose Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990274",
+      "slug": "isotretinoin-dose-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "IsotretinoinDoseCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "102",
+      "name": "IVIG Dose Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990275",
+      "slug": "ivig-dose-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "IvigDoseCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "103",
+      "name": "Lidocaine Dose Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990276",
+      "slug": "lidocaine-dose-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "LidocaineDoseCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "104",
+      "name": "Local Anesthetic Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990277",
+      "slug": "local-anesthetic-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "LocalAnestheticCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "105",
+      "name": "mcg to IU Converter",
+      "id": "",
+      "slug": "mcg-to-iu-calculator",
+      "key": "McgToIuConverter",
+      "action": "NOT_FOUND"
+    },
+    {
+      "n": "106",
+      "name": "Medicine 3 Times a Day Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990279",
+      "slug": "medicine-3-times-a-day-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "Medicine3TimesADayCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "107",
+      "name": "MME Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99027a",
+      "slug": "mme-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "MmeCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "108",
+      "name": "Opioid Conversion Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99027b",
+      "slug": "opioid-conversion-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "OpioidConversionCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "109",
+      "name": "Peptide Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99027c",
+      "slug": "peptide-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "PeptideCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "110",
+      "name": "Prescription Refill Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99027d",
+      "slug": "prescription-refill-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "PrescriptionRefillCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "111",
+      "name": "Steroid Conversion Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99027e",
+      "slug": "steroid-conversion-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "SteroidConversionCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "112",
+      "name": "tPA Calculator – Stroke Dosing",
+      "id": "",
+      "slug": "tpa-stroke-calculator",
+      "key": "TpaStrokeCalculator",
+      "action": "NOT_FOUND"
+    },
+    {
+      "n": "113",
+      "name": "Tylenol Overdose Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990280",
+      "slug": "tylenol-overdose-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "TylenolOverdoseCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "114",
+      "name": "Warfarin Dosing Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990281",
+      "slug": "warfarin-dosing-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "WarfarinDosingCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "115",
+      "name": "4T Score Calculator | HIT",
+      "mongoId": "6af46f12a27d8d1d4e990282",
+      "slug": "4t-score-calculator-hit",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "FourTScoreCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "116",
+      "name": "Absolute Eosinophil Count Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990283",
+      "slug": "absolute-eosinophil-count-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "AbsoluteEosinophilCountCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "117",
+      "name": "Absolute Lymphocyte Count Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990284",
+      "slug": "absolute-lymphocyte-count-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "AbsoluteLymphocyteCountCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "118",
+      "name": "Absolute Reticulocyte Count Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990285",
+      "slug": "absolute-reticulocyte-count-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "AbsoluteReticulocyteCountCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "119",
+      "name": "Age-Adjusted D-dimer Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990286",
+      "slug": "age-adjusted-d-dimer-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "AgeAdjustedDDimerCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "120",
+      "name": "Albumin Globulin Ratio Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990287",
+      "slug": "albumin-globulin-ratio-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "AlbuminGlobulinRatioCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "121",
+      "name": "Allowable Blood Loss Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990288",
+      "slug": "allowable-blood-loss-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "AllowableBloodLossCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "122",
+      "name": "ANC Calculator without Bands",
+      "id": "",
+      "slug": "anc-without-bands-calculator",
+      "key": "AncWithoutBandsCalculator",
+      "action": "NOT_FOUND"
+    },
+    {
+      "n": "123",
+      "name": "ANC Calculator — Absolute Neutrophil Count",
+      "id": "",
+      "slug": "anc-absolute-neutrophil-count-calculator",
+      "key": "AncAbsoluteNeutrophilCountCalculator",
+      "action": "NOT_FOUND"
+    },
+    {
+      "n": "124",
+      "name": "Blood Donor Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99028b",
+      "slug": "blood-donor-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "BloodDonorCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "125",
+      "name": "Blood Type Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99028c",
+      "slug": "blood-type-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "BloodTypeCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "126",
+      "name": "Blood Volume Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99028d",
+      "slug": "blood-volume-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "BloodVolumeCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "127",
+      "name": "Corrected Reticulocyte Count Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99028e",
+      "slug": "corrected-reticulocyte-count-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "CorrectedReticulocyteCountCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "128",
+      "name": "DIC Syndrome Calculator",
+      "mongoId": "6af46f12a27d8d1d4e99028f",
+      "slug": "dic-syndrome-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "DicSyndromeCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "129",
+      "name": "Diffuse Large B-cell Lymphoma Prognosis Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990290",
+      "slug": "diffuse-large-b-cell-lymphoma-prognosis-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "DiffuseLargeBCellLymphomaPrognosisCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "130",
+      "name": "Fresh Frozen Plasma Dose Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990291",
+      "slug": "fresh-frozen-plasma-dose-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "FreshFrozenPlasmaDoseCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "131",
+      "name": "Hematocrit to Hemoglobin Ratio Calculator",
+      "id": "",
+      "slug": "hematocrit-hemoglobin-ratio-calculator",
+      "key": "HematocritHemoglobinRatioCalculator",
+      "action": "NOT_FOUND"
+    },
+    {
+      "n": "132",
+      "name": "INR Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990293",
+      "slug": "inr-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "InrCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "133",
+      "name": "Iron Deficiency Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990294",
+      "slug": "iron-deficiency-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "IronDeficiencyCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "134",
+      "name": "Mentzer Index Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990295",
+      "slug": "mentzer-index-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "MentzerIndexCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    },
+    {
+      "n": "135",
+      "name": "MIPI Calculator (Mantle Cell Lymphoma International Prognostic Index)",
+      "mongoId": "6af46f12a27d8d1d4e990290",
+      "slug": "diffuse-large-b-cell-lymphoma-prognosis-calculator",
+      "action": "ALREADY_OK",
+      "componentKey": "DiffuseLargeBCellLymphomaPrognosisCalculator",
+      "isActive": false
+    },
+    {
+      "n": "136",
+      "name": "mmol/L to mg/dL Calculator",
+      "mongoId": "6af46f12a27d8d1d4e990297",
+      "slug": "mmoll-to-mgdl-calculator",
+      "action": "UPDATED",
+      "before": {
+        "componentKey": "",
+        "isDeveloped": false,
+        "isActive": false,
+        "indexable": false
+      },
+      "after": {
+        "componentKey": "MmollToMgdlCalculator",
+        "isDeveloped": true,
+        "isActive": false,
+        "indexable": false
+      }
+    }
+  ]
+}
