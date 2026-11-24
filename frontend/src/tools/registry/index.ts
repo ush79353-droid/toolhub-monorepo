@@ -492,6 +492,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MacroCalculator,
     })),
   ),
+  McgToIuConverter: lazyTool(() =>
+    import('@/tools/calculators/mcg-to-iu/McgToIuConverter').then((mod) => ({
+      default: mod.McgToIuConverter,
+    })),
+  ),
   Medicine3TimesADayCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/medicine-3-times-a-day/Medicine3TimesADayCalculator'
@@ -506,9 +511,26 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MentzerIndexCalculator,
     })),
   ),
+  MicronutrientCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/micronutrient/MicronutrientCalculator'
+    ).then((mod) => ({
+      default: mod.MicronutrientCalculator,
+    })),
+  ),
   MipiCalculator: lazyTool(() =>
     import('@/tools/calculators/mipi/MipiCalculator').then((mod) => ({
       default: mod.MipiCalculator,
+    })),
+  ),
+  MmeCalculator: lazyTool(() =>
+    import('@/tools/calculators/mme/MmeCalculator').then((mod) => ({
+      default: mod.MmeCalculator,
+    })),
+  ),
+  PeptideCalculator: lazyTool(() =>
+    import('@/tools/calculators/peptide/PeptideCalculator').then((mod) => ({
+      default: mod.PeptideCalculator,
     })),
   ),
   MarginAndMarkupCalculator: lazyTool(() =>

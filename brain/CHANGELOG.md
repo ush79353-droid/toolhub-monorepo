@@ -1,4 +1,12 @@
-﻿### 2026-11-24 — Medicine 3 Times a Day Calculator
+﻿### 2026-11-24 — Batch: mcg→IU, Micronutrient, MME, Peptide
+
+- `McgToIuConverter` (`mcg-to-iu-converter`) — NIH/FDA IU factors. Commits `82300173` / `6f622596` / (reg this).
+- `MicronutrientCalculator` (`micronutrient-calculator`). Commits `fbff55cf` / `8e221860` / (reg this).
+- `MmeCalculator` (`mme-calculator`) — CDC 2022 MME. Commits `6d07432a` / `35dcabbd` / (reg this).
+- `PeptideCalculator` (`peptide-calculator`) — labeled syringe arithmetic. Commits `7eb2d21c` / `ff709a18` / (reg this).
+- **No FX**. Mongo blocked for all.
+
+### 2026-11-24 — Medicine 3 Times a Day Calculator
 
 - Educational dosing-interval worksheet (`Medicine3TimesADayCalculator`, slug `medicine-3-times-a-day-calculator`). **No FX**. Mongo blocked. Commits `b26377d5` / `66aa386b` / (reg this).
 

@@ -8,6 +8,10 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-793` | Peptide Calculator (`PeptideCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/peptide/*` | Mongo Atlas DNS |
+| `TOOL-792` | MME Calculator (`MmeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/mme/*` | Mongo Atlas DNS |
+| `TOOL-791` | Micronutrient Calculator (`MicronutrientCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/micronutrient/*` | Mongo Atlas DNS |
+| `TOOL-790` | mcg to IU Converter (`McgToIuConverter`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/mcg-to-iu/*` | Mongo Atlas DNS |
 | `TOOL-789` | Medicine 3 Times a Day Calculator (`Medicine3TimesADayCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/medicine-3-times-a-day/*` | Mongo Atlas DNS |
 | `TOOL-788` | Mentzer Index Calculator (`MentzerIndexCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/mentzer-index/*` | Mongo Atlas DNS |
 | `TOOL-787` | MIPI Calculator (`MipiCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/mipi/*` | Mongo Atlas DNS |
