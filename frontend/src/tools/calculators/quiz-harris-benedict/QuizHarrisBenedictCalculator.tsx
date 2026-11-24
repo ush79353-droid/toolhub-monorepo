@@ -5,7 +5,6 @@ import { Share2, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ToolComponentProps } from '@/tools/types';
 import { copyTextToClipboard } from '@/tools/shared/clipboard';
-import { calculateQuizResult } from './calculation';
 import { QuizHarrisBenedictForm } from './QuizHarrisBenedictForm';
 import {
   createDefaultInput,
@@ -14,6 +13,7 @@ import {
   type QuizHarrisBenedictInput,
   type QuizHarrisBenedictResult,
 } from './types';
+import { validateQuizHarrisBenedictInput } from './validation';
 
 export function QuizHarrisBenedictCalculator({
   metadata,
@@ -27,7 +27,7 @@ export function QuizHarrisBenedictCalculator({
     () => defaults,
   );
   const [result, setResult] = React.useState<QuizHarrisBenedictResult>(() =>
-    calculateQuizResult(defaults),
+    validateQuizHarrisBenedictInput(defaults).result,
   );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
@@ -42,13 +42,13 @@ export function QuizHarrisBenedictCalculator({
 
   const apply = (next: QuizHarrisBenedictInput) => {
     setInput(next);
-    setResult(calculateQuizResult(next));
+    setResult(validateQuizHarrisBenedictInput(next).result);
   };
 
   const handleReload = () => {
     const fresh = createDefaultInput();
     setInput(fresh);
-    setResult(calculateQuizResult(fresh));
+    setResult(validateQuizHarrisBenedictInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -57,7 +57,7 @@ export function QuizHarrisBenedictCalculator({
   const handleClear = () => {
     const fresh = createEmptyInput();
     setInput(fresh);
-    setResult(calculateQuizResult(fresh));
+    setResult(validateQuizHarrisBenedictInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
