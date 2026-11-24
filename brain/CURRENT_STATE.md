@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Medicine 3 Times a Day Calculator (`/tools/medicine-3-times-a-day-calculator`):** Dosing-interval worksheet (`Medicine3TimesADayCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Mentzer Index Calculator (`/tools/mentzer-index-calculator`):** MCV÷RBC Mentzer index (`MentzerIndexCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **MIPI Calculator (`/tools/mipi-calculator`):** Continuous MIPI / MIPI-b (`MipiCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **IVIG Dose Calculator (`/tools/ivig-dose-calculator`):** Educational IVIG grams / RhIG vials (`IvigDoseCalculator`). **No FX**. Registry wired. **Mongo blocked**.

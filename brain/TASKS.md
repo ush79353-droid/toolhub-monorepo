@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-789` | Medicine 3 Times a Day Calculator (`Medicine3TimesADayCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/medicine-3-times-a-day/*` | Mongo Atlas DNS |
 | `TOOL-788` | Mentzer Index Calculator (`MentzerIndexCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/mentzer-index/*` | Mongo Atlas DNS |
 | `TOOL-787` | MIPI Calculator (`MipiCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/mipi/*` | Mongo Atlas DNS |
 | `TOOL-786` | IVIG Dose Calculator (`IvigDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/ivig-dose/*` | Mongo Atlas DNS |

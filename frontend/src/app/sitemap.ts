@@ -80,6 +80,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'lottery-tax-calculator',
   'lv-calculator',
   'macro-calculator',
+  'medicine-3-times-a-day-calculator',
   'mentzer-index-calculator',
   'mipi-calculator',
   'margin-and-markup-calculator',

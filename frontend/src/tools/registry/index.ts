@@ -492,6 +492,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MacroCalculator,
     })),
   ),
+  Medicine3TimesADayCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/medicine-3-times-a-day/Medicine3TimesADayCalculator'
+    ).then((mod) => ({
+      default: mod.Medicine3TimesADayCalculator,
+    })),
+  ),
   MentzerIndexCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/mentzer-index/MentzerIndexCalculator'

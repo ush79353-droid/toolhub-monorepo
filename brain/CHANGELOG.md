@@ -1,4 +1,8 @@
-﻿### 2026-11-24 — Mentzer Index Calculator
+﻿### 2026-11-24 — Medicine 3 Times a Day Calculator
+
+- Educational dosing-interval worksheet (`Medicine3TimesADayCalculator`, slug `medicine-3-times-a-day-calculator`). **No FX**. Mongo blocked. Commits `b26377d5` / `66aa386b` / (reg this).
+
+### 2026-11-24 — Mentzer Index Calculator
 
 - Educational Mentzer index MCV÷RBC (`MentzerIndexCalculator`, slug `mentzer-index-calculator`). Mentzer Lancet 1973; cutoff 13. **No FX**. Mongo blocked. Commits `285ac583` / `f8588ec2` / (reg this).
 
