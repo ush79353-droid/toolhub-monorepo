@@ -634,6 +634,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BradfordFactorCalculator',
   'BreakEvenCalculator',
   'BishopScoreCalculator',
+  'BladderVolumeCalculator',
   'BreastCancerRecurrenceRiskCalculator',
   'BreastfeedingCalorieCalculator',
   'BrexitCalculator',

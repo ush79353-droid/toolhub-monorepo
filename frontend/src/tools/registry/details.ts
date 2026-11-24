@@ -894,6 +894,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/break-even/detail'),
   BishopScoreCalculator: () =>
     import('@/tools/calculators/bishop-score/detail'),
+  BladderVolumeCalculator: () =>
+    import('@/tools/calculators/bladder-volume/detail'),
   BreastCancerRecurrenceRiskCalculator: () =>
     import('@/tools/calculators/breast-cancer-recurrence-risk/detail'),
   BreastfeedingCalorieCalculator: () =>

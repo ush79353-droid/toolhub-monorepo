@@ -823,6 +823,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'bbt-calculator-basal-body-temperature',
   'birth-control-calculator',
   'bishop-score-calculator',
+  'bladder-volume-calculator',
   'breast-cancer-recurrence-risk-calculator',
   'breastfeeding-calorie-calculator',
   'black-friday-calculator',

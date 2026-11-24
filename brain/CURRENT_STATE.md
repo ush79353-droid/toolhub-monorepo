@@ -1,4 +1,4 @@
-# Current Project State (`CURRENT_STATE.md`)
+﻿# Current Project State (`CURRENT_STATE.md`)
 
 > **Primary Agent Starting Point.** Last verified: **2026-11-24** — Health 136-tool audit remediation complete; then operator re-enabled public testing: **Health & Fitness** category `isActive: true` and **189** developed tools with `componentKey` set to `isActive: true` (`indexable` still false). Undeveloped health rows stay inactive. Final re-audit baseline: PASS_STATIC **108** / PASS_WITH_WARNINGS **26** / FAIL **0** / UNVERIFIED **2**. Reports: `brain/reports/OMEGA-136-HEALTH-*`. Auto Loan remains master Tool Detail Page.
 > **Primary Agent Starting Point.** Last verified: **2026-11-24** (finance SEO campaigns at `/admin/seo-campaigns`: DataForSEO research, OpenAI drafts, admin publish of a structured guide onto `/tools/[slug]` without changing `isActive` or `indexable`; homepage shows category cards and up to three last-opened tools from local storage under the hero, then featured tools; `/tools` uses the same mint hero, lists every root category, and shows 48 popular-style cards per page; `/about` uses the mint hero plus one article; `/contact` uses the mint hero, a quarter-width details column, and a three-quarter form that opens the visitor’s email app and is not stored on the site; operator name, city, country, and email, plus the contact business email and address, stay in `siteConfig` and stay hidden while empty; site header: home is logo + Share + Explore Tools; other pages add debounced tool search; Retirement Calculator live at `/tools/retirement-calculator`; Auto Loan remains master Tool Detail Page).
@@ -16,6 +16,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Bladder Volume Calculator (/tools/bladder-volume-calculator):** Live educational ultrasound volume (componentKey: 'BladderVolumeCalculator', catalog `6af46f12a27d8d1d4e9902cc`, pillar/subPillar null). Screenshot-first (ADR-023): Ellipsoid default coef 0.81; cuboid 0.89; triangular prism 0.66; prolate 0.52; unknown 0.77; custom; three orthogonal dims cm|mm|in; volume mL|cm³|L; Bih 1998; share URL only. **No FX**. Example: **5×4×3** cm → **48.6** mL.
 - **Albumin Creatinine Ratio Calculator (`/tools/albumin-creatinine-ratio-calculator`):** Live educational urine ACR (`componentKey: 'AlbuminCreatinineRatioCalculator'`, catalog `6af46f12a27d8d1d4e9902cb`, pillar/subPillar null). Screenshot-first (ADR-023): blank albumin mg/dL; creatinine mg/dL|mmol/L; ACR mg/g; KDIGO A1–A3 label in status only; share URL; **No FX**. Activated; **`indexable` left false**. Example: **8** mg/dL · **110** mg/dL → **72.7** mg/g (A2).
 - **GRACE Calculator (`/tools/grace-calculator`):** Granger 2003 GRACE 1.0 points + in-hospital risk categories (`GraceCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Chances of Having Twins Calculator (`/tools/chances-of-having-twins-calculator`):** CDC/NVSS 2024 twin delivery rates by age or race/Hispanic origin (`ChancesOfHavingTwinsCalculator`). **No FX**. Registry wired. **Mongo blocked**.
@@ -1031,4 +1032,5 @@
 - **Profitability Index Calculator (`/tools/profitability-index-calculator`):** Live client-side PI calculator (`componentKey: 'ProfitabilityIndexCalculator'`, catalog `6af46f0fa27d8d1d4e9900b2`). Initial investment + PV of future cash flow → PI = PV ÷ investment; compact interpretation (PI >, =, < 1). Optional “PV unknown” tip (no invented cash-flow schedule). Denomination currency (PKR). Omega UI. `isDeveloped`/`isActive`/`indexable` true; embed on.
 
 - **Rule of 72 Calculator (/tools/rule-of-72-calculator):** Live client-side doubling estimator (componentKey: 'RuleOf72Calculator', catalog 6af46f10a27d8d1d4e9901bc). Bidirectional Increase %/period ? Doubling time periods via Rule of 72; exact compound comparison; no FX. Activated; **`indexable` left false**. Example: **8%** ? **9** periods.
+
 

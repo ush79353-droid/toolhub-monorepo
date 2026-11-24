@@ -3471,6 +3471,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BloodVolumeCalculator,
     })),
   ),
+  BladderVolumeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/bladder-volume/BladderVolumeCalculator'
+    ).then((mod) => ({
+      default: mod.BladderVolumeCalculator,
+    })),
+  ),
   IbuprofenDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/ibuprofen-dosage/IbuprofenDosageCalculator'
