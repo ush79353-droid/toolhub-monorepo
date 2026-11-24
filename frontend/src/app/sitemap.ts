@@ -70,6 +70,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'isotretinoin-dose-calculator',
   'ivig-dose-calculator',
   'katch-mcardle-calculator',
+  'ktv-calculator-daugirdas',
   'keto-calculator',
   'lidocaine-dose-calculator',
   'loan-calculator',

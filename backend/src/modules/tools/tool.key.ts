@@ -66,6 +66,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'IsotretinoinDoseCalculator',
   'IvigDoseCalculator',
   'KatchMcardleCalculator',
+  'KtvDaugirdasCalculator',
   'KetoCalculator',
   'LidocaineDoseCalculator',
   'LoanCalculator',
