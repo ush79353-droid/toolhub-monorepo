@@ -40,6 +40,12 @@ async function eligibleSlugNames(categoryId: Types.ObjectId, selfId: Types.Objec
   return names;
 }
 
+async function namesForDraft(draft: ISeoDraft): Promise<Map<string, string>> {
+  const tool = await Tool.findById(draft.toolId).select('category');
+  if (!tool?.category) return new Map(draft.suggestedLinks.map((link) => [link.slug, link.anchor]));
+  return eligibleSlugNames(tool.category, draft.toolId);
+}
+
 export async function runInventory(draftId: string): Promise<void> {
   const draft = await loadDraft(draftId);
   if (!draft) return;
@@ -184,10 +190,7 @@ export async function runContentGeneration(draftId: string): Promise<void> {
     suggestedLinks: draft.suggestedLinks,
   });
   const content = drafted.content;
-  const campaign = await SeoCampaign.findById(draft.campaignId).select('categoryId');
-  const names = campaign
-    ? await eligibleSlugNames(campaign.categoryId, draft.toolId)
-    : new Map(draft.suggestedLinks.map((link) => [link.slug, link.anchor]));
+  const names = await namesForDraft(draft);
   draft.content = alignDraftContent(
     content,
     draft.keywordFacts.map((fact) => fact.keyword),
@@ -217,10 +220,7 @@ export async function runContentValidation(draftId: string): Promise<void> {
     await refreshCampaign(draft.campaignId);
     return;
   }
-  const campaign = await SeoCampaign.findById(draft.campaignId).select('categoryId');
-  const names = campaign
-    ? await eligibleSlugNames(campaign.categoryId, draft.toolId)
-    : new Map<string, string>();
+  const names = await namesForDraft(draft);
   const peers = await SeoDraft.find({ campaignId: draft.campaignId, _id: { $ne: draft._id } }).select(
     'primaryKeyword content'
   );

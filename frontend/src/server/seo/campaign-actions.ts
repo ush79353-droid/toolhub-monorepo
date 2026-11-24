@@ -52,7 +52,13 @@ export interface SeoEligibleTool {
   id: string;
   name: string;
   slug: string;
+  categoryId: string;
+  categoryName: string;
+  pillarId: string;
   pillarName: string;
+  subPillarId: string;
+  subPillarName: string;
+  contentStatus: string;
 }
 
 export interface SeoDraftListItem {
@@ -144,7 +150,10 @@ export async function createSeoCampaignAction(input: {
   const headers = await authHeaders();
   if (!headers) return { success: false, error: 'Authentication session expired. Please sign in again.' };
   try {
-    const response = await serverApi.post<{ campaign: SeoCampaign }>('/admin/seo/campaigns', input, { headers });
+    const response = await serverApi.post<{ campaign: SeoCampaign }>('/admin/seo/campaigns', input, {
+      headers,
+      timeoutMs: 120_000,
+    });
     if (!response.success || !response.data) return { success: false, error: 'Failed to create the campaign.' };
     return { success: true, data: response.data };
   } catch (error) {

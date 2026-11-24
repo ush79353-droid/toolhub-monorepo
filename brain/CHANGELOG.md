@@ -1,3 +1,6 @@
+### 2026-11-24 — SEO campaign picker
+- **Summary:** `/admin/seo-campaigns` lists campaigns. `/admin/seo-campaigns/new` creates one from active tools, with category, pillar, sub-pillar, and published filters, select-all for the filtered list, and a 50-tool cap. Each row shows whether that tool’s SEO copy is published, approved, or another draft state. Creating a campaign waits up to 120 seconds so enqueueing up to 50 drafts does not hit the 10-second API timeout.
+
 ### 2026-11-24 — SEO word-count warning
 - **Summary:** A guide of 1,500–1,700 words stays clear. 1,200–1,499 words is a warning and can be approved. Under 1,200 or over 1,700 still blocks. The prompt still asks for 1,500–1,700, with slightly longer section minimums.
 

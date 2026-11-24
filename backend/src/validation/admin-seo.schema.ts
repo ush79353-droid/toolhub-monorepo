@@ -1,9 +1,9 @@
 import { z } from 'zod';
-import { PILOT_MAX_TOOLS } from '../modules/seo/content';
+import { CAMPAIGN_MAX_TOOLS } from '../modules/seo/content';
 
 export const createCampaignSchema = z.object({
   name: z.string().trim().min(1).max(120),
-  toolIds: z.array(z.string().trim().min(1)).min(1).max(PILOT_MAX_TOOLS),
+  toolIds: z.array(z.string().trim().min(1)).min(1).max(CAMPAIGN_MAX_TOOLS),
 });
 
 export const saveDraftSchema = z.object({

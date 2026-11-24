@@ -194,9 +194,9 @@ All routes use `authenticateAdmin`. Browser code calls them through `frontend/sr
 
 | Method | Path | Purpose |
 | :--- | :--- | :--- |
-| `GET` | `/admin/seo/eligible-tools` | Active, developed Finance & Business calculators |
+| `GET` | `/admin/seo/eligible-tools` | Active tools, with category, pillar, sub-pillar, and SEO state (`published` wins, then `approved`) |
 | `GET` | `/admin/seo/campaigns` | Recent campaigns |
-| `POST` | `/admin/seo/campaigns` | Create a pilot (`name`, `toolIds`, max 20) and enqueue research |
+| `POST` | `/admin/seo/campaigns` | Create a campaign (`name`, `toolIds`, max 50 active tools) and enqueue research |
 | `GET` | `/admin/seo/campaigns/:id` | Campaign plus draft rows |
 | `GET` | `/admin/seo/drafts/:id` | Keyword facts, SERP titles, content, validation |
 | `PATCH` | `/admin/seo/drafts/:id` | Save edited content and re-validate. Returns the draft to review. |

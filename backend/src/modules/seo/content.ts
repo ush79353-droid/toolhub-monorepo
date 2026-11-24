@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const FINANCE_CATEGORY_SLUG = 'finance-business';
-export const PILOT_MAX_TOOLS = 20;
+export const CAMPAIGN_MAX_TOOLS = 50;
 
 const sectionSchema = z.object({
   id: z.string().trim().min(1).max(80),

@@ -1,12 +1,10 @@
 import mongoose, { Types } from 'mongoose';
 import { env } from '../../config/env';
 import { AppError } from '../../middleware/error.middleware';
-import { Category } from '../categories/category.model';
 import { Tool } from '../tools/tool.model';
 import {
   alignDraftContent,
-  FINANCE_CATEGORY_SLUG,
-  PILOT_MAX_TOOLS,
+  CAMPAIGN_MAX_TOOLS,
   seoContentSchema,
   type SeoContent,
 } from './content';
@@ -82,12 +80,10 @@ function draftDetailDto(doc: ISeoDraft, campaign: ISeoCampaign) {
   };
 }
 
-async function financeCategory() {
-  const category = await Category.findOne({ slug: FINANCE_CATEGORY_SLUG, kind: 'category' });
-  if (!category) {
-    throw new AppError('Finance & Business category was not found.', 404, 'NOT_FOUND');
-  }
-  return category;
+async function namesForTool(toolId: Types.ObjectId): Promise<Map<string, string>> {
+  const tool = await Tool.findById(toolId).select('category');
+  if (!tool?.category) return new Map();
+  return slugNames(tool.category, toolId);
 }
 
 function requireId(id: string, label: string): Types.ObjectId {
@@ -138,12 +134,11 @@ async function duplicatePrimary(draft: ISeoDraft, primary: string): Promise<bool
 }
 
 async function reviewValidation(draft: ISeoDraft, content: SeoContent): Promise<DraftValidation> {
-  const campaign = await mustCampaign(String(draft.campaignId));
   return validateDraft({
     content,
     allowedKeywords: draft.keywordFacts.map((fact) => fact.keyword),
     lockedPrimary: draft.primaryKeyword,
-    allowedSlugs: await slugNames(campaign.categoryId, draft.toolId),
+    allowedSlugs: await namesForTool(draft.toolId),
     duplicatePrimary: await duplicatePrimary(draft, content.primaryKeyword),
   });
 }
@@ -160,23 +155,50 @@ async function refreshCampaign(campaignId: Types.ObjectId): Promise<void> {
 }
 
 export async function listEligibleTools() {
-  const category = await financeCategory();
-  const tools = await Tool.find({
-    category: category._id,
-    isActive: true,
-    isDeveloped: true,
-    componentKey: { $nin: [null, ''] },
-  })
-    .select('name slug pillar')
-    .populate('pillar', 'name')
-    .sort({ name: 1 })
-    .lean<Array<{ _id: { toString(): string }; name: string; slug: string; pillar?: { name?: string } | null }>>();
-  return tools.map((tool) => ({
-    id: tool._id.toString(),
-    name: tool.name,
-    slug: tool.slug,
-    pillarName: tool.pillar?.name ?? '',
-  }));
+  const [tools, states] = await Promise.all([
+    Tool.find({ isActive: true })
+      .select('name slug category pillar subPillar')
+      .populate('category', 'name')
+      .populate('pillar', 'name')
+      .populate('subPillar', 'name')
+      .sort({ name: 1 })
+      .lean<
+        Array<{
+          _id: { toString(): string };
+          name: string;
+          slug: string;
+          category?: { _id?: { toString(): string }; name?: string } | null;
+          pillar?: { _id?: { toString(): string }; name?: string } | null;
+          subPillar?: { _id?: { toString(): string }; name?: string } | null;
+        }>
+      >(),
+    SeoDraft.aggregate<{ _id: Types.ObjectId; latest: string; statuses: string[] }>([
+      { $sort: { updatedAt: -1 } },
+      { $group: { _id: '$toolId', latest: { $first: '$status' }, statuses: { $addToSet: '$status' } } },
+    ]),
+  ]);
+  const byTool = new Map(states.map((row) => [String(row._id), row]));
+  return tools.map((tool) => {
+    const state = byTool.get(tool._id.toString());
+    const statuses = state?.statuses ?? [];
+    const contentStatus = statuses.includes('published')
+      ? 'published'
+      : statuses.includes('approved')
+        ? 'approved'
+        : (state?.latest ?? '');
+    return {
+      id: tool._id.toString(),
+      name: tool.name,
+      slug: tool.slug,
+      categoryId: tool.category?._id ? String(tool.category._id) : '',
+      categoryName: tool.category?.name ?? '',
+      pillarId: tool.pillar?._id ? String(tool.pillar._id) : '',
+      pillarName: tool.pillar?.name ?? '',
+      subPillarId: tool.subPillar?._id ? String(tool.subPillar._id) : '',
+      subPillarName: tool.subPillar?.name ?? '',
+      contentStatus,
+    };
+  });
 }
 
 export async function listCampaigns() {
@@ -194,29 +216,25 @@ export async function createCampaign(input: { name: string; toolIds: string[] },
   if (uniqueIds.length !== input.toolIds.length) {
     throw new AppError('Each calculator can be added once.', 400, 'VALIDATION_ERROR');
   }
-  if (uniqueIds.length > PILOT_MAX_TOOLS) {
-    throw new AppError(`A pilot campaign accepts at most ${PILOT_MAX_TOOLS} calculators.`, 400, 'VALIDATION_ERROR');
+  if (uniqueIds.length > CAMPAIGN_MAX_TOOLS) {
+    throw new AppError(`A campaign accepts at most ${CAMPAIGN_MAX_TOOLS} tools.`, 400, 'VALIDATION_ERROR');
   }
-  const category = await financeCategory();
   const objectIds = uniqueIds.map((id) => requireId(id, 'Tool'));
   const tools = await Tool.find({
     _id: { $in: objectIds },
-    category: category._id,
     isActive: true,
-    isDeveloped: true,
-    componentKey: { $nin: [null, ''] },
-  }).select('_id');
+  }).select('_id category');
   if (tools.length !== uniqueIds.length) {
-    throw new AppError(
-      'Every tool must be an active, developed Finance & Business calculator.',
-      400,
-      'VALIDATION_ERROR'
-    );
+    throw new AppError('Every tool must be active.', 400, 'VALIDATION_ERROR');
+  }
+  const categoryId = tools.find((tool) => tool.category)?.category;
+  if (!categoryId) {
+    throw new AppError('Selected tools have no category.', 400, 'VALIDATION_ERROR');
   }
   const campaign = await SeoCampaign.create({
     name: input.name,
-    categoryId: category._id,
-    maxTools: PILOT_MAX_TOOLS,
+    categoryId,
+    maxTools: CAMPAIGN_MAX_TOOLS,
     status: 'running',
     locationCode: env.DATAFORSEO_LOCATION_CODE,
     languageCode: env.DATAFORSEO_LANGUAGE_CODE,
@@ -265,7 +283,7 @@ export async function saveDraft(id: string, contentInput: unknown) {
   const aligned = alignDraftContent(
     parsed,
     draft.keywordFacts.map((fact) => fact.keyword),
-    await slugNames(campaign.categoryId, draft.toolId)
+    await namesForTool(draft.toolId)
   );
   draft.content = aligned;
   draft.validation = await reviewValidation(draft, aligned);

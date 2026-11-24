@@ -86,7 +86,7 @@ const campaignSchema = new Schema<ISeoCampaign>(
   {
     name: { type: String, required: true, trim: true, maxlength: 120 },
     categoryId: { type: Schema.Types.ObjectId, ref: 'Category', required: true },
-    maxTools: { type: Number, required: true, min: 1, max: 20 },
+    maxTools: { type: Number, required: true, min: 1, max: 50 },
     status: { type: String, enum: ['running', 'ready'], default: 'running' },
     locationCode: { type: Number, required: true },
     languageCode: { type: String, required: true, maxlength: 8 },
