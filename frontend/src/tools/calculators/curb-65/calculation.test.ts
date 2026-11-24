@@ -5,7 +5,10 @@ function assert(cond: boolean, msg: string): void {
   if (!cond) throw new Error(msg);
 }
 
-assert(bunToUreaMmol(19.6, 'mg_dl_bun') === 7, '19.6 mg/dL BUN → 7 mmol/L');
+assert(
+  Math.abs(bunToUreaMmol(19.6, 'mg_dl_bun') - 7) < 1e-9,
+  '19.6 mg/dL BUN → 7 mmol/L',
+);
 
 const base = {
   ...createDefaultInput(),

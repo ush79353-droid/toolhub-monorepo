@@ -694,6 +694,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'cpc-and-cpm-calculator',
   'cpm-calculator',
   'ctr-calculator',
+  'curb-65-calculator',
   'customer-acquisition-cost-calculator',
   'customer-retention-rate-calculator',
   'cyber-monday-calculator',

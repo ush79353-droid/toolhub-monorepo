@@ -1010,6 +1010,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/cpm/detail'),
   CtrCalculator: () =>
     import('@/tools/calculators/ctr/detail'),
+  Curb65Calculator: () =>
+    import('@/tools/calculators/curb-65/detail'),
   CustomerAcquisitionCostCalculator: () =>
     import('@/tools/calculators/customer-acquisition-cost/detail'),
   CustomerRetentionRateCalculator: () =>

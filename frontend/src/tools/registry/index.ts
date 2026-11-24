@@ -3967,6 +3967,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CtrCalculator,
     })),
   ),
+  Curb65Calculator: lazyTool(() =>
+    import('@/tools/calculators/curb-65/Curb65Calculator').then((mod) => ({
+      default: mod.Curb65Calculator,
+    })),
+  ),
   CustomerAcquisitionCostCalculator: lazyTool(() =>
     import('@/tools/calculators/customer-acquisition-cost/CustomerAcquisitionCostCalculator').then((mod) => ({
       default: mod.CustomerAcquisitionCostCalculator,
