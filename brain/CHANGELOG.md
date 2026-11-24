@@ -1,4 +1,12 @@
-﻿### 2026-11-24 — Isotretinoin Dose Calculator
+﻿### 2026-11-24 — Batch: Harris-Benedict, HCQ, IIFYM, INR, Iron Deficiency
+
+- Harris-Benedict `HarrisBenedictCalculator` — `a50c1a80` / `2beb0aa1` / reg this. Mongo blocked.
+- Hydroxychloroquine Dose `HydroxychloroquineDoseCalculator` — `bc62c4cd` / `0108bb96` / reg this. Mongo blocked.
+- IIFYM `IifymCalculator` — `7c09112d` / `e65c6ba0` / reg this. Mongo blocked.
+- INR `InrCalculator` — `04eb8fa0` / `20f4e9d2` / reg this. Mongo blocked.
+- Iron Deficiency `IronDeficiencyCalculator` — `6a504a8a` / `1e5e6837` / reg this. Mongo blocked.
+- Registry/sitemap/`tool.key` in this commit. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+### 2026-11-24 — Isotretinoin Dose Calculator
 
 - Educational cumulative mg/kg worksheet (`IsotretinoinDoseCalculator`, slug `isotretinoin-dose-calculator`). Mean 135 mg/kg teaching example; solve duration or daily dose. **No FX**. Mongo blocked. Commits `c95dc938` / `8314cc80` / (reg this).
 ### 2026-11-24 — Batch: DRI, EER, Fiber, Fish Oil, FFP, Gastric Sleeve

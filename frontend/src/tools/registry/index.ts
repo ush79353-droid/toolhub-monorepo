@@ -352,6 +352,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.HematocritHemoglobinRatioCalculator,
     })),
   ),
+  HarrisBenedictCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/harris-benedict/HarrisBenedictCalculator'
+    ).then((mod) => ({
+      default: mod.HarrisBenedictCalculator,
+    })),
+  ),
+  HydroxychloroquineDoseCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/hydroxychloroquine-dose/HydroxychloroquineDoseCalculator'
+    ).then((mod) => ({
+      default: mod.HydroxychloroquineDoseCalculator,
+    })),
+  ),
   IllinoisOvertimeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/illinois-overtime/IllinoisOvertimeCalculator'
@@ -366,11 +380,21 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ImmediateAnnuityCalculator,
     })),
   ),
+  IifymCalculator: lazyTool(() =>
+    import('@/tools/calculators/iifym/IifymCalculator').then((mod) => ({
+      default: mod.IifymCalculator,
+    })),
+  ),
   InfantTylenolDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/infant-tylenol-dosage/InfantTylenolDosageCalculator'
     ).then((mod) => ({
       default: mod.InfantTylenolDosageCalculator,
+    })),
+  ),
+  InrCalculator: lazyTool(() =>
+    import('@/tools/calculators/inr/InrCalculator').then((mod) => ({
+      default: mod.InrCalculator,
     })),
   ),
   InsulinDosageCalculator: lazyTool(() =>
@@ -385,6 +409,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/interest-rate-parity/InterestRateParityCalculator'
     ).then((mod) => ({
       default: mod.InterestRateParityCalculator,
+    })),
+  ),
+  IronDeficiencyCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/iron-deficiency/IronDeficiencyCalculator'
+    ).then((mod) => ({
+      default: mod.IronDeficiencyCalculator,
     })),
   ),
   IsotretinoinDoseCalculator: lazyTool(() =>

@@ -100,16 +100,24 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/gupta-risk/detail'),
   HematocritHemoglobinRatioCalculator: () =>
     import('@/tools/calculators/hematocrit-hemoglobin-ratio/detail'),
+  HarrisBenedictCalculator: () =>
+    import('@/tools/calculators/harris-benedict/detail'),
+  HydroxychloroquineDoseCalculator: () =>
+    import('@/tools/calculators/hydroxychloroquine-dose/detail'),
   IllinoisOvertimeCalculator: () =>
     import('@/tools/calculators/illinois-overtime/detail'),
   ImmediateAnnuityCalculator: () =>
     import('@/tools/calculators/immediate-annuity/detail'),
+  IifymCalculator: () => import('@/tools/calculators/iifym/detail'),
   InfantTylenolDosageCalculator: () =>
     import('@/tools/calculators/infant-tylenol-dosage/detail'),
+  InrCalculator: () => import('@/tools/calculators/inr/detail'),
   InsulinDosageCalculator: () =>
     import('@/tools/calculators/insulin-dosage/detail'),
   InterestRateParityCalculator: () =>
     import('@/tools/calculators/interest-rate-parity/detail'),
+  IronDeficiencyCalculator: () =>
+    import('@/tools/calculators/iron-deficiency/detail'),
   IsotretinoinDoseCalculator: () =>
     import('@/tools/calculators/isotretinoin-dose/detail'),
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),

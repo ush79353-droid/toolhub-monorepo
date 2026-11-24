@@ -15,6 +15,11 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Harris-Benedict Calculator (`/tools/harris-benedict-calculator-basal-metabolic-rate`):** Educational revised HB BMR (`HarrisBenedictCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Hydroxychloroquine Dose Calculator (`/tools/hydroxychloroquine-dose-calculator`):** Educational HCQ dose (`HydroxychloroquineDoseCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **IIFYM Calculator (`/tools/iifym-calculator-if-it-fits-your-macros`):** Educational macros (`IifymCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **INR Calculator (`/tools/inr-calculator`):** Educational WHO INR (`InrCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Iron Deficiency Calculator (`/tools/iron-deficiency-calculator`):** Educational iron deficit (`IronDeficiencyCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Isotretinoin Dose Calculator (`/tools/isotretinoin-dose-calculator`):** Educational cumulative mg/kg worksheet (`IsotretinoinDoseCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **DRI Calculator (`/tools/dri-calculator`):** Educational DRI lookup (`DriCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **EER Calculator (`/tools/eer-calculator-estimated-energy-requirement`):** Educational IOM EER (`EerCalculator`). **No FX**. Registry wired. **Mongo blocked**.

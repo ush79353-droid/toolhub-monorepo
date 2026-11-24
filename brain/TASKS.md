@@ -8,6 +8,11 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-780` | Iron Deficiency Calculator (`IronDeficiencyCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/iron-deficiency/*` | Mongo Atlas DNS |
+| `TOOL-779` | INR Calculator (`InrCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/inr/*` | Mongo Atlas DNS |
+| `TOOL-778` | IIFYM Calculator (`IifymCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/iifym/*` | Mongo Atlas DNS |
+| `TOOL-777` | Hydroxychloroquine Dose (`HydroxychloroquineDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/hydroxychloroquine-dose/*` | Mongo Atlas DNS |
+| `TOOL-776` | Harris-Benedict Calculator (`HarrisBenedictCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/harris-benedict/*` | Mongo Atlas DNS |
 | `TOOL-775` | Isotretinoin Dose Calculator (`IsotretinoinDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/isotretinoin-dose/*` | Mongo Atlas DNS |
 | `TOOL-774` | Gastric Sleeve Weight Loss (`GastricSleeveWeightLossCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/gastric-sleeve-weight-loss/*` | Mongo Atlas DNS |
 | `TOOL-773` | Fresh Frozen Plasma Dose (`FreshFrozenPlasmaDoseCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/fresh-frozen-plasma-dose/*` | Mongo Atlas DNS |
