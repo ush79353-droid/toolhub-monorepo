@@ -1,4 +1,8 @@
-﻿### 2026-11-24 — TIMI STEMI Calculator
+﻿### 2026-11-24 — Vitamin A Calculator
+
+- `VitaminACalculator` (`vitamin-a-calculator`). Commits `58ea055c` / `e3f45b70` / (reg this). **No FX**. Mongo blocked.
+
+### 2026-11-24 — TIMI STEMI Calculator
 
 - `TimiStemiCalculator` (`timi-stemi-calculator`). Morrow Circulation 2000. Commits `f3542542` / `71304f47` / (reg this). **No FX**. Mongo blocked.
 

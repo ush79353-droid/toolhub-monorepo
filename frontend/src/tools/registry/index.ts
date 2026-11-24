@@ -614,6 +614,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TimiStemiCalculator,
     })),
   ),
+  VitaminACalculator: lazyTool(() =>
+    import('@/tools/calculators/vitamin-a/VitaminACalculator').then((mod) => ({
+      default: mod.VitaminACalculator,
+    })),
+  ),
   MarginAndMarkupCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/margin-and-markup/MarginAndMarkupCalculator'

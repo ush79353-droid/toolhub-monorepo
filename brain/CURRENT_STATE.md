@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Vitamin A Calculator (/tools/vitamin-a-calculator):** NIH ODS RAE/IU (VitaminACalculator). **No FX**. Registry wired. **Mongo blocked**.
 - **Stroke Volume Calculator (`/tools/stroke-volume-calculator`):** SV from CO/HR or volumes (`StrokeVolumeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Steroid Conversion Calculator (`/tools/steroid-conversion-calculator`):** Corticosteroid equivalents (`SteroidConversionCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Quiz Harris-Benedict Calculator (`/tools/quiz-harris-benedict-calculator`):** BMR quiz worksheet (`QuizHarrisBenedictCalculator`). **No FX**. Registry wired. **Mongo blocked**.
