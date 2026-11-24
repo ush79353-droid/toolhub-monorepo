@@ -14,11 +14,8 @@ import {
   type Medicine3TimesADayInput,
   type Medicine3TimesADayResult,
 } from './types';
+import { validateMedicine3TimesADayInput } from './validation';
 
-/**
- * UI shell (ADR-019 commit 1). Live interval math is wired in the engine commit
- * via validateMedicine3TimesADayInput — until then results stay empty.
- */
 export function Medicine3TimesADayCalculator({
   metadata,
   className = '',
@@ -47,9 +44,10 @@ export function Medicine3TimesADayCalculator({
   }, []);
 
   const apply = (next: Medicine3TimesADayInput) => {
+    const validation = validateMedicine3TimesADayInput(next);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
   };
 
   const handleReload = () => {
