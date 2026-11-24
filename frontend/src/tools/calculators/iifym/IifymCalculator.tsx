@@ -14,6 +14,7 @@ import {
   type IifymInput,
   type IifymResult,
 } from './types';
+import { validateIifymInput } from './validation';
 
 export function IifymCalculator({
   metadata,
@@ -36,11 +37,11 @@ export function IifymCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  // UI commit: field state only. Engine commit wires validation + calculation.
   const apply = (next: IifymInput) => {
+    const v = validateIifymInput(next);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(v.errors);
+    setResult(v.result);
   };
 
   const handleReload = () => {
