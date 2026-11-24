@@ -14,6 +14,7 @@ import {
   type TimiStemiInput,
   type TimiStemiResult,
 } from './types';
+import { validateTimiStemiInput } from './validation';
 
 export function TimiStemiCalculator({
   metadata,
@@ -23,10 +24,15 @@ export function TimiStemiCalculator({
 }: ToolComponentProps) {
   const isEmbed = presentation === 'embed';
   const initial = createEmptyInput();
+  const initialValidation = validateTimiStemiInput(initial);
   const [baseline, setBaseline] = React.useState<TimiStemiInput>(() => initial);
   const [input, setInput] = React.useState<TimiStemiInput>(() => initial);
-  const [errors, setErrors] = React.useState<TimiStemiFieldErrors>({});
-  const [result, setResult] = React.useState<TimiStemiResult | null>(null);
+  const [errors, setErrors] = React.useState<TimiStemiFieldErrors>(
+    () => initialValidation.errors,
+  );
+  const [result, setResult] = React.useState<TimiStemiResult | null>(
+    () => initialValidation.result,
+  );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
   const [canShare, setCanShare] = React.useState(false);
@@ -36,19 +42,20 @@ export function TimiStemiCalculator({
     setCanShare(typeof navigator.share === 'function');
   }, []);
 
-  // ponytail: UI commit holds presentation state only; engine commit wires validateTimiStemiInput.
   const apply = (next: TimiStemiInput) => {
+    const validation = validateTimiStemiInput(next);
     setInput(next);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
   };
 
   const handleReload = () => {
     const fresh = createEmptyInput();
+    const validation = validateTimiStemiInput(fresh);
     setInput(fresh);
     setBaseline(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -56,9 +63,10 @@ export function TimiStemiCalculator({
 
   const handleClear = () => {
     const fresh = createEmptyInput();
+    const validation = validateTimiStemiInput(fresh);
     setInput(fresh);
-    setErrors({});
-    setResult(null);
+    setErrors(validation.errors);
+    setResult(validation.result);
     setCopied(false);
     setShared(false);
     setFeedback(null);

@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
+import { SOURCE_LABEL } from './calculation';
 import { TIMI_STEMI_FAQS } from './content';
-
-const SOURCE_LABEL =
-  'Morrow DA et al. TIMI risk score for ST-elevation myocardial infarction: a convenient, bedside, clinical score for risk assessment at presentation. Circulation. 2000;102(17):2031–2037.';
 
 export function TimiStemiGuideArticle() {
   return (
