@@ -629,6 +629,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.VitaminDCalculator,
     })),
   ),
+  WeightWatchersPointsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/weight-watchers-points/WeightWatchersPointsCalculator'
+    ).then((mod) => ({
+      default: mod.WeightWatchersPointsCalculator,
+    })),
+  ),
   MarginAndMarkupCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/margin-and-markup/MarginAndMarkupCalculator'

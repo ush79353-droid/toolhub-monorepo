@@ -105,6 +105,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'tpa-stroke-calculator',
   'vitamin-a-calculator',
   'vitamin-d-calculator',
+  'weight-watchers-points-calculator',
   'margin-and-sales-tax-calculator',
   'marriage-tax-calculator',
   'margin-and-vat-calculator',

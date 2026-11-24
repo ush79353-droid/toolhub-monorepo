@@ -171,6 +171,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TpaStrokeCalculator: () => import('@/tools/calculators/tpa-stroke/detail'),
   VitaminACalculator: () => import('@/tools/calculators/vitamin-a/detail'),
   VitaminDCalculator: () => import('@/tools/calculators/vitamin-d/detail'),
+  WeightWatchersPointsCalculator: () =>
+    import('@/tools/calculators/weight-watchers-points/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),
   MarginAndSalesTaxCalculator: () =>
