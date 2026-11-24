@@ -614,6 +614,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ProteinCalculator,
     })),
   ),
+  ProteinCreatinineRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/protein-creatinine-ratio/ProteinCreatinineRatioCalculator'
+    ).then((mod) => ({
+      default: mod.ProteinCreatinineRatioCalculator,
+    })),
+  ),
   QuarantineActivityCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/quarantine-activity/QuarantineActivityCalculator'

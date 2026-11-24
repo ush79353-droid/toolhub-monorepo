@@ -168,6 +168,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ProstateVolumeCalculator: () =>
     import('@/tools/calculators/prostate-volume/detail'),
   ProteinCalculator: () => import('@/tools/calculators/protein/detail'),
+  ProteinCreatinineRatioCalculator: () =>
+    import('@/tools/calculators/protein-creatinine-ratio/detail'),
   QuarantineActivityCalculator: () =>
     import('@/tools/calculators/quarantine-activity/detail'),
   QuizHarrisBenedictCalculator: () =>

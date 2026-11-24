@@ -99,6 +99,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'prescription-refill-calculator',
   'prostate-volume-calculator',
   'protein-calculator',
+  'protein-creatinine-ratio-calculator',
   'quarantine-activity-calculator',
   'quiz-harris-benedict-calculator',
   'rmr-calculator',
