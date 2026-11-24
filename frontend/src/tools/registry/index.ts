@@ -629,11 +629,23 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.VitaminDCalculator,
     })),
   ),
+  WeightWatcherPointsCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/weight-watcher-points/WeightWatcherPointsCalculator'
+    ).then((mod) => ({
+      default: mod.WeightWatcherPointsCalculator,
+    })),
+  ),
   WeightWatchersPointsCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/weight-watchers-points/WeightWatchersPointsCalculator'
     ).then((mod) => ({
       default: mod.WeightWatchersPointsCalculator,
+    })),
+  ),
+  WellsPeCalculator: lazyTool(() =>
+    import('@/tools/calculators/wells-pe/WellsPeCalculator').then((mod) => ({
+      default: mod.WellsPeCalculator,
     })),
   ),
   MarginAndMarkupCalculator: lazyTool(() =>

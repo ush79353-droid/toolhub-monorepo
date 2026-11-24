@@ -99,7 +99,9 @@ export const APPROVED_COMPONENT_KEYS = [
   'TpaStrokeCalculator',
   'VitaminACalculator',
   'VitaminDCalculator',
+  'WeightWatcherPointsCalculator',
   'WeightWatchersPointsCalculator',
+  'WellsPeCalculator',
 
   'MarginAndSalesTaxCalculator',
   'MarriageTaxCalculator',
