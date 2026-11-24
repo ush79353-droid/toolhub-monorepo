@@ -1,0 +1,23 @@
+/** Macro Calculator shares the IIFYM input/result model (same population/model). */
+export {
+  ACTIVITY_OPTIONS,
+  PACE_DELTA_KCAL,
+  PACE_KG_PER_WEEK,
+  PROTEIN_SHARE,
+  CARB_SHARE,
+  FAT_SHARE,
+  activityById,
+  createDefaultInput,
+  createEmptyInput,
+  inputsEqual,
+  type ActivityId,
+  type ChangePace,
+  type GoalMode,
+  type HeightUnit,
+  type IifymFieldErrors as MacroFieldErrors,
+  type IifymInput as MacroInput,
+  type IifymResult as MacroResult,
+  type IifymSex as MacroSex,
+  type MacroRangeGrams,
+  type WeightUnit,
+} from '../iifym/types';
