@@ -69,6 +69,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AuditCCalculator,
     })),
   ),
+  AuditScoreCalculator: lazyTool(() =>
+    import('@/tools/calculators/audit-score/AuditScoreCalculator').then((mod) => ({
+      default: mod.AuditScoreCalculator,
+    })),
+  ),
   AutoLeaseCalculator: lazyTool(() =>
     import('@/tools/calculators/auto-lease/AutoLeaseCalculator').then((mod) => ({
       default: mod.AutoLeaseCalculator,
@@ -3878,6 +3883,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/child-tax-credit/ChildTaxCreditCalculator'
     ).then((mod) => ({
       default: mod.ChildTaxCreditCalculator,
+    })),
+  ),
+  CigaretteCalculator: lazyTool(() =>
+    import('@/tools/calculators/cigarette/CigaretteCalculator').then((mod) => ({
+      default: mod.CigaretteCalculator,
     })),
   ),
   ClomidOvulationCalculator: lazyTool(() =>

@@ -1,3 +1,4 @@
+- [x] Cigarette Calculator (cigarette-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] BUN Creatinine Ratio Calculator (un-creatinine-ratio-calculator) — developed + activated 2026-11-25 (indexable false).
 # Shared Task Board (`TASKS.md`)
 

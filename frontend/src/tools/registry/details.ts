@@ -19,6 +19,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   ArterialAgeCalculator: () =>
     import('@/tools/calculators/arterial-age/detail'),
   AuditCCalculator: () => import('@/tools/calculators/audit-c/detail'),
+  AuditScoreCalculator: () => import('@/tools/calculators/audit-score/detail'),
   AutoLeaseCalculator: () => import('@/tools/calculators/auto-lease/detail'),
   AutoLoanCalculator: () => import('@/tools/calculators/auto-loan/detail'),
   CageCalculator: () => import('@/tools/calculators/cage/detail'),
@@ -978,6 +979,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/check-digit/detail'),
   ChildTaxCreditCalculator: () =>
     import('@/tools/calculators/child-tax-credit/detail'),
+  CigaretteCalculator: () =>
+    import('@/tools/calculators/cigarette/detail'),
   ClomidOvulationCalculator: () =>
     import('@/tools/calculators/clomid-ovulation/detail'),
   ChurnRateCalculator: () =>
