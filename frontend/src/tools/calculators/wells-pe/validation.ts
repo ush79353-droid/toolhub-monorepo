@@ -11,7 +11,7 @@ export interface WellsPeValidation {
   result: WellsPeResult | null;
 }
 
-/** Checkbox form always valid; UI stub result until engine commit. */
+/** All criteria are optional checkboxes — score always available (defaults → 0). */
 export function validateWellsPeInput(input: WellsPeInput): WellsPeValidation {
   return {
     isValid: true,
