@@ -96,6 +96,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'opioid-conversion-calculator',
   'peptide-calculator',
   'prescription-refill-calculator',
+  'prostate-volume-calculator',
   'protein-calculator',
   'quarantine-activity-calculator',
   'quiz-harris-benedict-calculator',
