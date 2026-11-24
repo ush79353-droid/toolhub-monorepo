@@ -137,6 +137,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   LotteryTaxCalculator: () => import('@/tools/calculators/lottery-tax/detail'),
   LvCalculator: () => import('@/tools/calculators/lv/detail'),
   MacroCalculator: () => import('@/tools/calculators/macro/detail'),
+  MipiCalculator: () => import('@/tools/calculators/mipi/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),
   MarginAndSalesTaxCalculator: () =>

@@ -492,6 +492,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MacroCalculator,
     })),
   ),
+  MipiCalculator: lazyTool(() =>
+    import('@/tools/calculators/mipi/MipiCalculator').then((mod) => ({
+      default: mod.MipiCalculator,
+    })),
+  ),
   MarginAndMarkupCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/margin-and-markup/MarginAndMarkupCalculator'

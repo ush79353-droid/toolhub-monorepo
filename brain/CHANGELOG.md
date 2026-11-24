@@ -1,4 +1,8 @@
-﻿### 2026-11-24 — IVIG Dose Calculator
+﻿### 2026-11-24 — MIPI Calculator
+
+- Educational continuous MIPI / MIPI-b (`MipiCalculator`, slug `mipi-calculator`). Hoster Blood 2008; WBC ×1000/µL → per-µL. **No FX**. Mongo blocked. Commits `c09bc7b8` / `02d86cc5` / (reg this).
+
+### 2026-11-24 — IVIG Dose Calculator
 
 - Educational IVIG/RhIG worksheet (`IvigDoseCalculator`, slug `ivig-dose-calculator`). Privigen 1 g/kg intensity; Devine AdjBW; RhIG vial branch. **No FX**. Mongo blocked. Commits `88286e9e` / `1e1b19e5` / (reg this).
 ### 2026-11-24 — Batch: Katch-McArdle, Keto, Lidocaine Dose
