@@ -1,6 +1,0 @@
-agent=cursor-composer-continuous-20261123-233300
-claimedAt=2026-11-23T19:20:00Z
-host=BILALAJMERY
-tool=Stillbirth Risk Calculator
-status=BLOCKED
-reason=unverified-calibrated-model

@@ -1,4 +1,0 @@
-﻿agent=cursor-composer-continuous-20261123-223000
-claimedAt=2026-11-23T18:10:00Z
-status=BLOCKED
-reason=no-screenshot
