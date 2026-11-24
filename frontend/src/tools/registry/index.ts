@@ -614,9 +614,19 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TimiStemiCalculator,
     })),
   ),
+  TpaStrokeCalculator: lazyTool(() =>
+    import('@/tools/calculators/tpa-stroke/TpaStrokeCalculator').then((mod) => ({
+      default: mod.TpaStrokeCalculator,
+    })),
+  ),
   VitaminACalculator: lazyTool(() =>
     import('@/tools/calculators/vitamin-a/VitaminACalculator').then((mod) => ({
       default: mod.VitaminACalculator,
+    })),
+  ),
+  VitaminDCalculator: lazyTool(() =>
+    import('@/tools/calculators/vitamin-d/VitaminDCalculator').then((mod) => ({
+      default: mod.VitaminDCalculator,
     })),
   ),
   MarginAndMarkupCalculator: lazyTool(() =>

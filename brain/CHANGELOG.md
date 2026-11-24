@@ -1,4 +1,9 @@
-﻿### 2026-11-24 — Vitamin A Calculator
+﻿### 2026-11-24 — tPA Stroke + Vitamin D
+
+- `TpaStrokeCalculator` (`tpa-stroke-calculator`) UI `0d05c40d` / ENG `5551a638` / (reg this).
+- `VitaminDCalculator` (`vitamin-d-calculator`) UI `72bd06ad` / ENG `4015fbc4` / (reg this).
+- **No FX**. Mongo blocked.
+### 2026-11-24 — Vitamin A Calculator
 
 - `VitaminACalculator` (`vitamin-a-calculator`). Commits `58ea055c` / `e3f45b70` / (reg this). **No FX**. Mongo blocked.
 

@@ -168,7 +168,9 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/stroke-volume/detail'),
   TdeeCalculator: () => import('@/tools/calculators/tdee/detail'),
   TimiStemiCalculator: () => import('@/tools/calculators/timi-stemi/detail'),
+  TpaStrokeCalculator: () => import('@/tools/calculators/tpa-stroke/detail'),
   VitaminACalculator: () => import('@/tools/calculators/vitamin-a/detail'),
+  VitaminDCalculator: () => import('@/tools/calculators/vitamin-d/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),
   MarginAndSalesTaxCalculator: () =>
