@@ -1,4 +1,8 @@
-﻿### 2026-11-24 — Batch: Protein, Quarantine, Quiz HB, Steroid, Stroke Volume
+﻿### 2026-11-24 — TIMI STEMI Calculator
+
+- `TimiStemiCalculator` (`timi-stemi-calculator`). Morrow Circulation 2000. Commits `f3542542` / `71304f47` / (reg this). **No FX**. Mongo blocked.
+
+### 2026-11-24 — Batch: Protein, Quarantine, Quiz HB, Steroid, Stroke Volume
 
 - `ProteinCalculator` UI `9aa79404` / ENG `4b018a2c`
 - `QuarantineActivityCalculator` combined `511e4b87` (draft cleaned `8c719f38`)

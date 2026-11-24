@@ -101,6 +101,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'steroid-conversion-calculator',
   'stroke-volume-calculator',
   'tdee-calculator',
+  'timi-stemi-calculator',
   'margin-and-sales-tax-calculator',
   'marriage-tax-calculator',
   'margin-and-vat-calculator',

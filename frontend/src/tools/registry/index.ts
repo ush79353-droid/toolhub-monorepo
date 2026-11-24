@@ -609,6 +609,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TdeeCalculator,
     })),
   ),
+  TimiStemiCalculator: lazyTool(() =>
+    import('@/tools/calculators/timi-stemi/TimiStemiCalculator').then((mod) => ({
+      default: mod.TimiStemiCalculator,
+    })),
+  ),
   MarginAndMarkupCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/margin-and-markup/MarginAndMarkupCalculator'
