@@ -88,6 +88,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'mme-calculator',
   'margin-and-markup-calculator',
   'mileage-reimbursement-calculator',
+  'net-carbs-calculator',
   'peptide-calculator',
   'margin-and-sales-tax-calculator',
   'marriage-tax-calculator',

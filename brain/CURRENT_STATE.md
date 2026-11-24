@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Net Carbs Calculator (`/tools/net-carbs-calculator`):** Net carbs with fiber/alcohol rules (`NetCarbsCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Peptide Calculator (`/tools/peptide-calculator`):** Labeled syringe volume worksheet (`PeptideCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **MME Calculator (`/tools/mme-calculator`):** CDC 2022 morphine milligram equivalents (`MmeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Micronutrient Calculator (`/tools/micronutrient-calculator`):** DRI micronutrient worksheet (`MicronutrientCalculator`). **No FX**. Registry wired. **Mongo blocked**.

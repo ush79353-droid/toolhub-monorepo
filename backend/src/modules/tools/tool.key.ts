@@ -82,6 +82,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'MmeCalculator',
   'MarginAndMarkupCalculator',
   'MileageReimbursementCalculator',
+  'NetCarbsCalculator',
   'PeptideCalculator',
 
   'MarginAndSalesTaxCalculator',

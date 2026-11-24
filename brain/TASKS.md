@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-794` | Net Carbs Calculator (`NetCarbsCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/net-carbs/*` | Mongo Atlas DNS |
 | `TOOL-793` | Peptide Calculator (`PeptideCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/peptide/*` | Mongo Atlas DNS |
 | `TOOL-792` | MME Calculator (`MmeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/mme/*` | Mongo Atlas DNS |
 | `TOOL-791` | Micronutrient Calculator (`MicronutrientCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/micronutrient/*` | Mongo Atlas DNS |

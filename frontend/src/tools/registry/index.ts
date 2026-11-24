@@ -528,6 +528,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.MmeCalculator,
     })),
   ),
+  NetCarbsCalculator: lazyTool(() =>
+    import('@/tools/calculators/net-carbs/NetCarbsCalculator').then((mod) => ({
+      default: mod.NetCarbsCalculator,
+    })),
+  ),
   PeptideCalculator: lazyTool(() =>
     import('@/tools/calculators/peptide/PeptideCalculator').then((mod) => ({
       default: mod.PeptideCalculator,

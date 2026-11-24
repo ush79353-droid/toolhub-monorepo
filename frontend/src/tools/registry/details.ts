@@ -146,6 +146,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/micronutrient/detail'),
   MipiCalculator: () => import('@/tools/calculators/mipi/detail'),
   MmeCalculator: () => import('@/tools/calculators/mme/detail'),
+  NetCarbsCalculator: () => import('@/tools/calculators/net-carbs/detail'),
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),

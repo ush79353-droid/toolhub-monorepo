@@ -1,4 +1,8 @@
-﻿### 2026-11-24 — Batch: mcg→IU, Micronutrient, MME, Peptide
+﻿### 2026-11-24 — Net Carbs Calculator
+
+- Educational net carbs (`NetCarbsCalculator`, slug `net-carbs-calculator`). Fiber/sugar-alcohol rules by region. **No FX**. Mongo blocked. Commits `6b6dd78a` / `9ae18579` / (reg this).
+
+### 2026-11-24 — Batch: mcg→IU, Micronutrient, MME, Peptide
 
 - `McgToIuConverter` (`mcg-to-iu-converter`) — NIH/FDA IU factors. Commits `82300173` / `6f622596` / (reg this).
 - `MicronutrientCalculator` (`micronutrient-calculator`). Commits `fbff55cf` / `8e221860` / (reg this).
