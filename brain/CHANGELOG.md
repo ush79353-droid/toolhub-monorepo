@@ -1,3 +1,6 @@
+### 2026-11-24 — Sync category declaredToolCount
+- **Summary:** `declaredToolCount` on each category, pillar, and sub-pillar is the number of tools with `isActive: true` assigned to that node. `npm run categories:sync-counts` rewrites it.
+
 ### 2026-11-24 — Remove 42 merged duplicate tools
 - **Summary:** Deleted the 42 catalog rows marked “merge” in the tools-directory Part 2.A list. The page each one merged into was kept. Nine of the extras had frontend calculators; those modules, registry keys, sitemap slugs, and the backend allowlist entries were removed. Part 2.B groups were left as separate tools. Verification list: `removed-merged-tools.json`.
 - **Verification:** Mongo delete count 42, remaining matches 0. Temporary match scripts were outside the repo and deleted. Temporary files cleaned: YES.

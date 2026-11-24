@@ -26,6 +26,7 @@ export interface ICategory extends Document {
   iconMedia: Types.ObjectId | null;
   iconUrl: string;
   isActive: boolean;
+  declaredToolCount: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -42,6 +43,7 @@ const categorySchema = new Schema<ICategory>(
     iconMedia: { type: Schema.Types.ObjectId, ref: 'MediaAsset', default: null },
     iconUrl: { type: String, default: '' },
     isActive: { type: Boolean, default: true },
+    declaredToolCount: { type: Number, default: 0, min: 0 },
   },
   { timestamps: true }
 );

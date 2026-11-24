@@ -79,6 +79,7 @@ Only the Mongoose models documented below exist. No other collections (`analytic
 | `iconUrl` | `String` | Public URL of the category icon. Empty unless set. Local files use `/uploads/<key>`. | `''` |
 | `iconMedia` | `ObjectId \| null` | `ref: 'MediaAsset'` | `null` |
 | `isActive` | `Boolean` | Visibility flag | `true` |
+| `declaredToolCount` | `Number` | Active tools on this node. `categories:sync-counts` sets it from `Tool.isActive === true`: a category counts `tool.category`, a pillar counts `tool.pillar`, a sub-pillar counts `tool.subPillar`. | `0` |
 | `createdAt`, `updatedAt` | `Date` | Managed by `{ timestamps: true }` | — |
 
 ### Indexes

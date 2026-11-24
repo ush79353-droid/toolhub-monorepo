@@ -157,7 +157,10 @@ function toRelatedTool(doc: PopulatedRelatedDoc): PublicRelatedTool {
 export async function listPublicCategories(): Promise<PublicCategory[]> {
   const [categories, counts] = await Promise.all([
     Category.find({ kind: 'category', isActive: true }).sort({ sortOrder: 1, name: 1 }),
-    Tool.aggregate<{ _id: unknown; count: number }>([{ $group: { _id: '$category', count: { $sum: 1 } } }]),
+    Tool.aggregate<{ _id: unknown; count: number }>([
+      { $match: { isActive: true } },
+      { $group: { _id: '$category', count: { $sum: 1 } } },
+    ]),
   ]);
   const countByCategory = new Map(counts.map((row) => [String(row._id), row.count]));
   return categories.map((doc) => ({
