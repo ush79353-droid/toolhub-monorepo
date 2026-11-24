@@ -86,6 +86,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NetCarbsCalculator',
   'OpioidConversionCalculator',
   'PeptideCalculator',
+  'TdeeCalculator',
 
   'MarginAndSalesTaxCalculator',
   'MarriageTaxCalculator',

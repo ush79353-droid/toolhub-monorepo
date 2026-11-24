@@ -15,6 +15,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **TDEE Calculator (`/tools/tdee-calculator`):** Mifflin BMR × PAL (`TdeeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Opioid Conversion Calculator (`/tools/opioid-conversion-calculator`):** Equianalgesic conversion (`OpioidConversionCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **mmol/L to mg/dL Calculator (`/tools/mmoll-to-mgdl-calculator`):** Lab unit conversion (`MmollToMgdlCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Net Carbs Calculator (`/tools/net-carbs-calculator`):** Net carbs with fiber/alcohol rules (`NetCarbsCalculator`). **No FX**. Registry wired. **Mongo blocked**.

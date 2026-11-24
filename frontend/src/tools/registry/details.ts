@@ -152,6 +152,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   OpioidConversionCalculator: () =>
     import('@/tools/calculators/opioid-conversion/detail'),
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
+  TdeeCalculator: () => import('@/tools/calculators/tdee/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),
   MarginAndSalesTaxCalculator: () =>

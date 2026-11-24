@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-797` | TDEE Calculator (`TdeeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/tdee/*` | Mongo Atlas DNS |
 | `TOOL-796` | Opioid Conversion Calculator (`OpioidConversionCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/opioid-conversion/*` | Mongo Atlas DNS |
 | `TOOL-795` | mmol/L to mg/dL Calculator (`MmollToMgdlCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/mmoll-to-mgdl/*` | Mongo Atlas DNS |
 | `TOOL-794` | Net Carbs Calculator (`NetCarbsCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/net-carbs/*` | Mongo Atlas DNS |

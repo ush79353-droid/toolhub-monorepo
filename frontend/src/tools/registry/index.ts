@@ -552,6 +552,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PeptideCalculator,
     })),
   ),
+  TdeeCalculator: lazyTool(() =>
+    import('@/tools/calculators/tdee/TdeeCalculator').then((mod) => ({
+      default: mod.TdeeCalculator,
+    })),
+  ),
   MarginAndMarkupCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/margin-and-markup/MarginAndMarkupCalculator'

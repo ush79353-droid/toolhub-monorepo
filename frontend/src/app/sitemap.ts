@@ -92,6 +92,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'net-carbs-calculator',
   'opioid-conversion-calculator',
   'peptide-calculator',
+  'tdee-calculator',
   'margin-and-sales-tax-calculator',
   'marriage-tax-calculator',
   'margin-and-vat-calculator',

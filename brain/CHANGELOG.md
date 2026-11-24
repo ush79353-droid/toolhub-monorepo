@@ -1,4 +1,8 @@
-﻿### 2026-11-24 — mmol/L↔mg/dL + Opioid Conversion
+﻿### 2026-11-24 — TDEE Calculator
+
+- Educational TDEE/BMR (`TdeeCalculator`, slug `tdee-calculator`). Mifflin–St Jeor × Omni PAL. **No FX**. Mongo blocked. Commits `697ce49b` / `c7fb3351` / (reg this).
+
+### 2026-11-24 — mmol/L↔mg/dL + Opioid Conversion
 
 - `MmollToMgdlCalculator` (`mmoll-to-mgdl-calculator`) — MW÷10 lab conversion. Commits `739a51c8` / `a099f137` / (reg this).
 - `OpioidConversionCalculator` (`opioid-conversion-calculator`) — published equianalgesic factors. Commits `16e5631b` / `0535e512` / (reg this).
