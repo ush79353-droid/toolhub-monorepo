@@ -87,8 +87,13 @@ export const APPROVED_COMPONENT_KEYS = [
   'OpioidConversionCalculator',
   'PeptideCalculator',
   'PrescriptionRefillCalculator',
+  'ProteinCalculator',
+  'QuarantineActivityCalculator',
+  'QuizHarrisBenedictCalculator',
   'RmrCalculator',
   'SodiumInSaltCalculator',
+  'SteroidConversionCalculator',
+  'StrokeVolumeCalculator',
   'TdeeCalculator',
 
   'MarginAndSalesTaxCalculator',

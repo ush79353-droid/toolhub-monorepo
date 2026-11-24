@@ -559,6 +559,25 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PrescriptionRefillCalculator,
     })),
   ),
+  ProteinCalculator: lazyTool(() =>
+    import('@/tools/calculators/protein/ProteinCalculator').then((mod) => ({
+      default: mod.ProteinCalculator,
+    })),
+  ),
+  QuarantineActivityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/quarantine-activity/QuarantineActivityCalculator'
+    ).then((mod) => ({
+      default: mod.QuarantineActivityCalculator,
+    })),
+  ),
+  QuizHarrisBenedictCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/quiz-harris-benedict/QuizHarrisBenedictCalculator'
+    ).then((mod) => ({
+      default: mod.QuizHarrisBenedictCalculator,
+    })),
+  ),
   RmrCalculator: lazyTool(() =>
     import('@/tools/calculators/rmr/RmrCalculator').then((mod) => ({
       default: mod.RmrCalculator,
@@ -569,6 +588,20 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/sodium-in-salt/SodiumInSaltCalculator'
     ).then((mod) => ({
       default: mod.SodiumInSaltCalculator,
+    })),
+  ),
+  SteroidConversionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/steroid-conversion/SteroidConversionCalculator'
+    ).then((mod) => ({
+      default: mod.SteroidConversionCalculator,
+    })),
+  ),
+  StrokeVolumeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/stroke-volume/StrokeVolumeCalculator'
+    ).then((mod) => ({
+      default: mod.StrokeVolumeCalculator,
     })),
   ),
   TdeeCalculator: lazyTool(() =>

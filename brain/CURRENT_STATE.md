@@ -15,6 +15,11 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Stroke Volume Calculator (`/tools/stroke-volume-calculator`):** SV from CO/HR or volumes (`StrokeVolumeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Steroid Conversion Calculator (`/tools/steroid-conversion-calculator`):** Corticosteroid equivalents (`SteroidConversionCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Quiz Harris-Benedict Calculator (`/tools/quiz-harris-benedict-calculator`):** BMR quiz worksheet (`QuizHarrisBenedictCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Quarantine Activity Calculator (`/tools/quarantine-activity-calculator`):** Quarantine date worksheet (`QuarantineActivityCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Protein Calculator (`/tools/protein-calculator`):** Protein target worksheet (`ProteinCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Sodium in Salt Calculator (`/tools/sodium-in-salt-calculator`):** Na from NaCl mass ratio (`SodiumInSaltCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **RMR Calculator (`/tools/rmr-calculator`):** Harris–Benedict × TEF (`RmrCalculator`). **No FX**. Registry wired. **Mongo blocked**.
 - **Prescription Refill Calculator (`/tools/prescription-refill-calculator`):** Refill date worksheet (`PrescriptionRefillCalculator`). **No FX**. Registry wired. **Mongo blocked**.

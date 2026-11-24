@@ -1,4 +1,13 @@
-﻿### 2026-11-24 — Batch: Prescription Refill, RMR, Sodium in Salt
+﻿### 2026-11-24 — Batch: Protein, Quarantine, Quiz HB, Steroid, Stroke Volume
+
+- `ProteinCalculator` UI `9aa79404` / ENG `4b018a2c`
+- `QuarantineActivityCalculator` combined `511e4b87` (draft cleaned `8c719f38`)
+- `QuizHarrisBenedictCalculator` UI `b260d6bb` / ENG `fec8f456`
+- `SteroidConversionCalculator` UI `de2bab12` / ENG `9f6a6c01`
+- `StrokeVolumeCalculator` UI `263e08c9` / ENG `aaa39cef`
+- Registry (this). **No FX**. Mongo blocked.
+
+### 2026-11-24 — Batch: Prescription Refill, RMR, Sodium in Salt
 
 - `PrescriptionRefillCalculator` — UI `fb561349` / ENG `00b9c6be` / (reg this).
 - `RmrCalculator` — UI `6b6f07f3` / ENG `d18940c1` / (reg this).

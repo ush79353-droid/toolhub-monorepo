@@ -8,6 +8,11 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-805` | Stroke Volume Calculator (`StrokeVolumeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/stroke-volume/*` | Mongo Atlas DNS |
+| `TOOL-804` | Steroid Conversion Calculator (`SteroidConversionCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/steroid-conversion/*` | Mongo Atlas DNS |
+| `TOOL-803` | Quiz Harris-Benedict Calculator (`QuizHarrisBenedictCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/quiz-harris-benedict/*` | Mongo Atlas DNS |
+| `TOOL-802` | Quarantine Activity Calculator (`QuarantineActivityCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/quarantine-activity/*` | Mongo Atlas DNS |
+| `TOOL-801` | Protein Calculator (`ProteinCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/protein/*` | Mongo Atlas DNS |
 | `TOOL-800` | Sodium in Salt Calculator (`SodiumInSaltCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/sodium-in-salt/*` | Mongo Atlas DNS |
 | `TOOL-799` | RMR Calculator (`RmrCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/rmr/*` | Mongo Atlas DNS |
 | `TOOL-798` | Prescription Refill Calculator (`PrescriptionRefillCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/prescription-refill/*` | Mongo Atlas DNS |

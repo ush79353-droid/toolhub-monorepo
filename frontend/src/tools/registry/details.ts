@@ -154,9 +154,18 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
   PrescriptionRefillCalculator: () =>
     import('@/tools/calculators/prescription-refill/detail'),
+  ProteinCalculator: () => import('@/tools/calculators/protein/detail'),
+  QuarantineActivityCalculator: () =>
+    import('@/tools/calculators/quarantine-activity/detail'),
+  QuizHarrisBenedictCalculator: () =>
+    import('@/tools/calculators/quiz-harris-benedict/detail'),
   RmrCalculator: () => import('@/tools/calculators/rmr/detail'),
   SodiumInSaltCalculator: () =>
     import('@/tools/calculators/sodium-in-salt/detail'),
+  SteroidConversionCalculator: () =>
+    import('@/tools/calculators/steroid-conversion/detail'),
+  StrokeVolumeCalculator: () =>
+    import('@/tools/calculators/stroke-volume/detail'),
   TdeeCalculator: () => import('@/tools/calculators/tdee/detail'),
   MarginAndMarkupCalculator: () =>
     import('@/tools/calculators/margin-and-markup/detail'),
