@@ -15,6 +15,10 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Corrected Reticulocyte Count Calculator (`/tools/corrected-reticulocyte-count-calculator`):** Educational CRC (`CorrectedReticulocyteCountCalculator`). CRC = retic%×Hct/ref Hct; optional RPI. **No FX**. Registry wired. **Mongo blocked**.
+- **DIC Syndrome Calculator (`/tools/dic-syndrome-calculator`):** Educational ISTH overt DIC score (`DicSyndromeCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Diet Risk Score Calculator (`/tools/diet-risk-score-calculator`):** Educational Johnston DRS (`DietRiskScoreCalculator`). **No FX**. Registry wired. **Mongo blocked**.
+- **Diffuse Large B-cell Lymphoma Prognosis Calculator (`/tools/diffuse-large-b-cell-lymphoma-prognosis-calculator`):** Educational R-IPI (`DiffuseLargeBCellLymphomaPrognosisCalculator`, Sehn 2007). **No FX**. Registry wired. **Mongo blocked**.
 - **Absolute Reticulocyte Count Calculator (/tools/absolute-reticulocyte-count-calculator):** Educational ARC (AbsoluteReticulocyteCountCalculator). Hct/ref/retic → labeled RBC-anchored estimate; share URL only. **No FX**. Mongo blocked. Example: **45**/**45**/**1%** → **50,000** cells/µL.
 - **Absolute Lymphocyte Count Calculator (`/tools/absolute-lymphocyte-count-calculator`):** Educational ALC (`componentKey: 'AbsoluteLymphocyteCountCalculator'`). ALC = WBC × (lymph%/100) ×10³/µL; share URL only. **No FX**. Registry wired. **Mongo assign blocked**. Example: **6** @ **25%** → **1.5**.
 - **Absolute Eosinophil Count Calculator (`/tools/absolute-eosinophil-count-calculator`):** Educational AEC (`componentKey: 'AbsoluteEosinophilCountCalculator'`). AEC = WBC × (eos%/100) ×10³/µL (≡×10⁹/L); share URL only. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS). Example: **8** @ **5%** → **0.4**.

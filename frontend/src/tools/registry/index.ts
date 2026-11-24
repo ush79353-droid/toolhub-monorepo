@@ -116,6 +116,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CefdinirDoseCalculator,
     })),
   ),
+  CorrectedReticulocyteCountCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/corrected-reticulocyte-count/CorrectedReticulocyteCountCalculator'
+    ).then((mod) => ({
+      default: mod.CorrectedReticulocyteCountCalculator,
+    })),
+  ),
   DaptCalculator: lazyTool(() =>
     import('@/tools/calculators/dapt/DaptCalculator').then((mod) => ({
       default: mod.DaptCalculator,
@@ -190,6 +197,27 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.DepreciationCalculator,
       }),
     ),
+  ),
+  DicSyndromeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/dic-syndrome/DicSyndromeCalculator'
+    ).then((mod) => ({
+      default: mod.DicSyndromeCalculator,
+    })),
+  ),
+  DietRiskScoreCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/diet-risk-score/DietRiskScoreCalculator'
+    ).then((mod) => ({
+      default: mod.DietRiskScoreCalculator,
+    })),
+  ),
+  DiffuseLargeBCellLymphomaPrognosisCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/diffuse-large-b-cell-lymphoma-prognosis/DiffuseLargeBCellLymphomaPrognosisCalculator'
+    ).then((mod) => ({
+      default: mod.DiffuseLargeBCellLymphomaPrognosisCalculator,
+    })),
   ),
   EbitdaMarginCalculator: lazyTool(() =>
     import(

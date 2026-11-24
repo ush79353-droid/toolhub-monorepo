@@ -8,6 +8,10 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-765` | Diffuse Large B-cell Lymphoma Prognosis R-IPI (`DiffuseLargeBCellLymphomaPrognosisCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/diffuse-large-b-cell-lymphoma-prognosis/*` | Mongo Atlas DNS |
+| `TOOL-764` | Diet Risk Score Johnston DRS (`DietRiskScoreCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/diet-risk-score/*` | Mongo Atlas DNS |
+| `TOOL-763` | DIC Syndrome ISTH overt DIC (`DicSyndromeCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/dic-syndrome/*` | Mongo Atlas DNS |
+| `TOOL-762` | Corrected Reticulocyte Count (`CorrectedReticulocyteCountCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/corrected-reticulocyte-count/*` | Mongo Atlas DNS |
 | `TOOL-761` | Implement Blood Type Calculator on slug `blood-type-calculator` with genotype-averaged ABO/Rh probabilities, Punnett teaching grid, privacy-safe share URL, no FX; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/blood-type/*`, registry, sitemap, `tool.key.ts` | Mongo Atlas DNS |
 | `TOOL-755` | Absolute Reticulocyte Count Calculator slug `absolute-reticulocyte-count-calculator`; Hct-anchored ARC estimate labeled; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/absolute-reticulocyte-count/*` | Mongo Atlas DNS |
 | `TOOL-754` | Implement Absolute Lymphocyte Count Calculator on slug `absolute-lymphocyte-count-calculator` with ALC=WBC×(lymph%/100) in ×10³/µL, fixture 6×25%=1.5, privacy-safe share URL, no FX; Mongo assign blocked (Atlas DNS) | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/absolute-lymphocyte-count/*`, registry, sitemap, `tool.key.ts`, `brain/*` | Mongo Atlas DNS |

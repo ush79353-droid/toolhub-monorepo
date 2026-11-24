@@ -32,6 +32,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/carboplatin/detail'),
   CefdinirDoseCalculator: () =>
     import('@/tools/calculators/cefdinir-dose/detail'),
+  CorrectedReticulocyteCountCalculator: () =>
+    import('@/tools/calculators/corrected-reticulocyte-count/detail'),
   DaptCalculator: () => import('@/tools/calculators/dapt/detail'),
   DebtAvalancheCalculator: () =>
     import('@/tools/calculators/debt-avalanche/detail'),
@@ -53,6 +55,14 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/deferred-annuity/detail'),
   DepreciationCalculator: () =>
     import('@/tools/calculators/depreciation/detail'),
+  DicSyndromeCalculator: () =>
+    import('@/tools/calculators/dic-syndrome/detail'),
+  DietRiskScoreCalculator: () =>
+    import('@/tools/calculators/diet-risk-score/detail'),
+  DiffuseLargeBCellLymphomaPrognosisCalculator: () =>
+    import(
+      '@/tools/calculators/diffuse-large-b-cell-lymphoma-prognosis/detail'
+    ),
   EbitdaMarginCalculator: () =>
     import('@/tools/calculators/ebitda-margin/detail'),
   FloridaOvertimeCalculator: () =>

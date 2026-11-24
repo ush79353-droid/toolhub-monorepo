@@ -1,4 +1,11 @@
-﻿### 2026-11-24 — Cefdinir Dose Calculator
+﻿### 2026-11-24 — Batch: Corrected Reticulocyte, DIC, Diet Risk Score, DLBCL Prognosis
+
+- Corrected Reticulocyte Count `CorrectedReticulocyteCountCalculator` — `eef1cdd1` / `28e8d842` / reg this. Mongo blocked.
+- DIC Syndrome `DicSyndromeCalculator` — `5a39da88` / `d634d819` / reg this. Mongo blocked.
+- Diet Risk Score `DietRiskScoreCalculator` — `28edf88c` / `ff27b684` / reg this. Mongo blocked.
+- Diffuse Large B-cell Lymphoma Prognosis `DiffuseLargeBCellLymphomaPrognosisCalculator` — `b252f8d6` / `aacb39dd` / reg this. Mongo blocked.
+- Registry/sitemap/`tool.key` in this commit. Temporary files cleaned: YES. Push/Pull/Fetch/Sync: NONE.
+### 2026-11-24 — Cefdinir Dose Calculator
 
 - Educational Omnicef/cefdinir labeling explorer (`CefdinirDoseCalculator`, slug `cefdinir-dose-calculator`). DailyMed adult CAP fixture 300 mg q12h × 10 days; pediatric mg/kg. **No FX**. Mongo blocked. Commits `53571a68` / `980c626b` / (reg this).
 ### 2026-11-24 — Batch: Blood Volume, Carb, Carbohydrate, Carboplatin
