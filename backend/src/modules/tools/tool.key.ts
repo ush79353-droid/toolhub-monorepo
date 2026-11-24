@@ -8,6 +8,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AorticValveAreaCalculator',
   'ArmyBodyFatCalculator',
   'ArterialAgeCalculator',
+  'AuditCCalculator',
   'AutoLeaseCalculator',
   'AutoLoanCalculator',
   'CaliforniaOvertimeCalculator',

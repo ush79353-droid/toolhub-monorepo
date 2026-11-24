@@ -64,6 +64,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ArterialAgeCalculator,
     })),
   ),
+  AuditCCalculator: lazyTool(() =>
+    import('@/tools/calculators/audit-c/AuditCCalculator').then((mod) => ({
+      default: mod.AuditCCalculator,
+    })),
+  ),
   AutoLeaseCalculator: lazyTool(() =>
     import('@/tools/calculators/auto-lease/AutoLeaseCalculator').then((mod) => ({
       default: mod.AutoLeaseCalculator,

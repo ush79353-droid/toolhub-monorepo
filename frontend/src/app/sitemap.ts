@@ -19,6 +19,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'anorexic-bmi-calculator',
   'aortic-valve-area-calculator',
   'arterial-age-calculator',
+  'audit-c-calculator-am-i-an-alcoholic',
   'california-overtime-calculator',
   'calorie-deficit-calculator',
   'carb-calculator-carbohydrates',
