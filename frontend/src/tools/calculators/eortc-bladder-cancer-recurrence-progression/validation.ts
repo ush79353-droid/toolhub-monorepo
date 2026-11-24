@@ -1,3 +1,4 @@
+import { calculateEortcBladder } from './calculation';
 import type {
   EortcBladderFieldErrors,
   EortcBladderInput,
@@ -11,25 +12,28 @@ export interface EortcBladderValidation {
   result: EortcBladderResult | null;
 }
 
-/** UI shell stub — engine commit replaces this with Sylvester 2006 scoring. */
+/** No scoring until all six radio groups are answered. */
 export function validateEortcBladderInput(
   input: EortcBladderInput,
 ): EortcBladderValidation {
   if (!isCompleteInput(input)) {
-    return {
-      isValid: false,
-      errors: {
-        form: 'Answer all six questions to see recurrence and progression estimates.',
-      },
-      result: null,
+    const errors: EortcBladderFieldErrors = {
+      form: 'Answer all six questions to see recurrence and progression estimates.',
     };
+    if (input.tumorCount == null) errors.tumorCount = 'Required';
+    if (input.tumorDiameter == null) errors.tumorDiameter = 'Required';
+    if (input.priorRecurrenceRate == null)
+      errors.priorRecurrenceRate = 'Required';
+    if (input.stage == null) errors.stage = 'Required';
+    if (input.concomitantCis == null) errors.concomitantCis = 'Required';
+    if (input.grade == null) errors.grade = 'Required';
+
+    return { isValid: false, errors, result: null };
   }
 
   return {
-    isValid: false,
-    errors: {
-      form: 'Scoring engine pending.',
-    },
-    result: null,
+    isValid: true,
+    errors: {},
+    result: calculateEortcBladder(input),
   };
 }
