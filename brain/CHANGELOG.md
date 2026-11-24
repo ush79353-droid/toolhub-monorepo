@@ -1,4 +1,7 @@
-﻿### 2026-11-24 — Local Anesthetic Calculator
+﻿### 2026-11-24 — Macro Calculator
+
+- Educational macros (`MacroCalculator`, slug `macro-calculator`) reusing IIFYM Mifflin–St Jeor + AMDR engine. **No FX**. Mongo blocked. Commits `0016c1e4` / `fbcf2918` / (reg this).
+### 2026-11-24 — Local Anesthetic Calculator
 
 - Educational plain (no epi) max dose (`LocalAnestheticCalculator`, slug `local-anesthetic-calculator`). Bupivacaine 175 mg cap warning. **No FX**. Mongo blocked. Commits `17ab999a` / `713c1ea3` / (reg this).
 ### 2026-11-24 — Batch: Harris-Benedict, HCQ, IIFYM, INR, Iron Deficiency

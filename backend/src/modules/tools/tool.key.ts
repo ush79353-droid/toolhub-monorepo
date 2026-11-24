@@ -69,6 +69,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'LotteryAnnuityCalculator',
   'LotteryTaxCalculator',
   'LvCalculator',
+  'MacroCalculator',
   'MarginAndMarkupCalculator',
   'MileageReimbursementCalculator',
 

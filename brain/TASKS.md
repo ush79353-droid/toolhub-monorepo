@@ -8,6 +8,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-782` | Macro Calculator (`MacroCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/macro/*` | Mongo Atlas DNS |
 | `TOOL-781` | Local Anesthetic Calculator (`LocalAnestheticCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/local-anesthetic/*` | Mongo Atlas DNS |
 | `TOOL-780` | Iron Deficiency Calculator (`IronDeficiencyCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/iron-deficiency/*` | Mongo Atlas DNS |
 | `TOOL-779` | INR Calculator (`InrCalculator`); Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/inr/*` | Mongo Atlas DNS |

@@ -75,7 +75,7 @@ const IMPLEMENTED_TOOL_SLUGS = [
   'lottery-annuity-calculator',
   'lottery-tax-calculator',
   'lv-calculator',
-
+  'macro-calculator',
   'margin-and-markup-calculator',
   'mileage-reimbursement-calculator',
   'margin-and-sales-tax-calculator',

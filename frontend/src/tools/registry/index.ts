@@ -461,6 +461,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LvCalculator,
     })),
   ),
+  MacroCalculator: lazyTool(() =>
+    import('@/tools/calculators/macro/MacroCalculator').then((mod) => ({
+      default: mod.MacroCalculator,
+    })),
+  ),
   MarginAndMarkupCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/margin-and-markup/MarginAndMarkupCalculator'
