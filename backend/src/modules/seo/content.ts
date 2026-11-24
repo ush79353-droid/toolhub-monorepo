@@ -6,7 +6,7 @@ export const CAMPAIGN_MAX_TOOLS = 50;
 const sectionSchema = z.object({
   id: z.string().trim().min(1).max(80),
   title: z.string().trim().min(1).max(160),
-  paragraphs: z.array(z.string().trim().min(1).max(5000)).min(1).max(8),
+  paragraphs: z.array(z.string().trim().min(1).max(5000)).min(1).max(16),
   bullets: z.array(z.string().trim().min(1).max(500)).max(12).default([]),
   formula: z.string().trim().max(500).default(''),
   formulaNote: z.string().trim().max(500).default(''),
@@ -26,7 +26,7 @@ export const seoContentSchema = z.object({
       })
     )
     .min(3)
-    .max(5),
+    .max(8),
   links: z
     .array(
       z.object({

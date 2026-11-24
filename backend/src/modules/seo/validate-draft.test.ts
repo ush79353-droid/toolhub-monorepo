@@ -112,8 +112,12 @@ test('rejects a missing disclaimer', () => {
   assert.ok(report.issues.some((issue) => issue.code === 'disclaimer_missing'));
 });
 
-test('rejects fewer than 4 FAQs', () => {
-  const report = check({ faqs: content().faqs.slice(0, 2) });
-  assert.equal(report.ok, false);
-  assert.ok(report.issues.some((issue) => issue.code === 'faq_count'));
+test('rejects fewer than 4 FAQs and more than 8', () => {
+  const short = check({ faqs: content().faqs.slice(0, 2) });
+  assert.equal(short.ok, false);
+  assert.ok(short.issues.some((issue) => issue.code === 'faq_count'));
+  const extra = content().faqs[0];
+  const long = check({ faqs: Array.from({ length: 9 }, () => extra) });
+  assert.equal(long.ok, false);
+  assert.ok(long.issues.some((issue) => issue.code === 'faq_count'));
 });

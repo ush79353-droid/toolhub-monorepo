@@ -1,3 +1,6 @@
+### 2026-11-24 — SEO FAQ count
+- **Summary:** The SEO draft schema and review check accept 4–8 FAQs, matching the prompt’s 5–8 request. A section may hold 16 paragraphs, so a longer draft is no longer rejected for having more than 5 FAQs or 8 paragraphs.
+
 ### 2026-11-24 — SEO campaign picker
 - **Summary:** `/admin/seo-campaigns` lists campaigns. `/admin/seo-campaigns/new` creates one from active tools, with category, pillar, sub-pillar, and published filters, select-all for the filtered list, and a 50-tool cap. Each row shows whether that tool’s SEO copy is published, approved, or another draft state. Creating a campaign waits up to 120 seconds so enqueueing up to 50 drafts does not hit the 10-second API timeout.
 

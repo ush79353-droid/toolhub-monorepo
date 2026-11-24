@@ -49,8 +49,8 @@ export function validateDraft(input: ValidateDraftInput): DraftValidation {
       `Primary keyword must stay ${input.lockedPrimary}, the keyword the SERP was fetched for.`
     );
   }
-  if (content.faqs.length < 4 || content.faqs.length > 5) {
-    block(issues, 'faq_count', 'Include 4–5 FAQs.');
+  if (content.faqs.length < 4 || content.faqs.length > 8) {
+    block(issues, 'faq_count', 'Include 4–8 FAQs.');
   }
   if (content.disclaimer.trim().length === 0) {
     block(issues, 'disclaimer_missing', 'A finance disclaimer is required.');
