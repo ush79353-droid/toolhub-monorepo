@@ -234,7 +234,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-*No code implementation tasks currently active (TOOL-809 ACR moved to Completed).*
+*No code implementation tasks currently active (TOOL-811 Creatinine Clearance moved to Completed).*
 
 ---
 
@@ -242,6 +242,8 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-810` | Adrenal Washout Calculator (`AdrenalWashoutCalculator`); APW/RPW HU washout; Mongo `6af46f12a27d8d1d4e9902ca` activated; indexable false | Cursor (`cursor-agent-82288078-002138`) | Completed | `frontend/src/tools/calculators/adrenal-washout/*`, `Tools/Completed/Adrenal Washout Calculator` | — |
+| `TOOL-811` | Creatinine Clearance Calculator (`CreatinineClearanceCalculator`); Cockcroft–Gault + timed urine; Mongo `6af46f12a27d8d1d4e9902ce` activated; indexable false | Cursor (`cursor-agent-29428947-002236`) | Completed | `frontend/src/tools/calculators/creatinine-clearance/*`, `Tools/Completed/Creatinine Clearance Calculator` | — |
 | `TOOL-809` | Albumin Creatinine Ratio Calculator (`AlbuminCreatinineRatioCalculator`); urine ACR mg/g; Mongo `6af46f12a27d8d1d4e9902cb` activated; indexable false | Cursor (`cursor-agent-72170412-002210`) | Completed | `frontend/src/tools/calculators/albumin-creatinine-ratio/*`, `Tools/Completed/Albumin Creatinine Ratio Calculator` | — |
 
 ---

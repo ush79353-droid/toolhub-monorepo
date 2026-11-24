@@ -36,6 +36,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/chances-of-having-twins/detail'),
   CorrectedReticulocyteCountCalculator: () =>
     import('@/tools/calculators/corrected-reticulocyte-count/detail'),
+  CreatinineClearanceCalculator: () =>
+    import('@/tools/calculators/creatinine-clearance/detail'),
   DaptCalculator: () => import('@/tools/calculators/dapt/detail'),
   DebtAvalancheCalculator: () =>
     import('@/tools/calculators/debt-avalanche/detail'),
@@ -827,6 +829,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/added-sugar-intake/detail'),
   AdderallDosageCalculator: () =>
     import('@/tools/calculators/adderall-dosage/detail'),
+  AdrenalWashoutCalculator: () =>
+    import('@/tools/calculators/adrenal-washout/detail'),
   AgeAdjustedDDimerCalculator: () =>
     import('@/tools/calculators/age-adjusted-d-dimer/detail'),
   AlbuminCreatinineRatioCalculator: () =>
@@ -1473,6 +1477,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EndingInventoryCalculator: () =>
     import('@/tools/calculators/ending-inventory/detail'),
   EoqCalculator: () => import('@/tools/calculators/eoq/detail'),
+  EortcBladderCancerRecurrenceProgressionCalculator: () =>
+    import(
+      '@/tools/calculators/eortc-bladder-cancer-recurrence-progression/detail'
+    ),
   EroaMitralRegurgitationCalculator: () =>
     import('@/tools/calculators/eroa-mitral-regurgitation/detail'),
   ExpectedUtilityCalculator: () =>

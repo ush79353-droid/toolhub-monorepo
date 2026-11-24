@@ -130,6 +130,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CorrectedReticulocyteCountCalculator,
     })),
   ),
+  CreatinineClearanceCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/creatinine-clearance/CreatinineClearanceCalculator'
+    ).then((mod) => ({
+      default: mod.CreatinineClearanceCalculator,
+    })),
+  ),
   DaptCalculator: lazyTool(() =>
     import('@/tools/calculators/dapt/DaptCalculator').then((mod) => ({
       default: mod.DaptCalculator,
@@ -3396,6 +3403,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AdderallDosageCalculator,
     })),
   ),
+  AdrenalWashoutCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/adrenal-washout/AdrenalWashoutCalculator'
+    ).then((mod) => ({
+      default: mod.AdrenalWashoutCalculator,
+    })),
+  ),
   AgeAdjustedDDimerCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/age-adjusted-d-dimer/AgeAdjustedDDimerCalculator'
@@ -5489,6 +5503,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   EoqCalculator: lazyTool(() =>
     import('@/tools/calculators/eoq/EoqCalculator').then((mod) => ({
       default: mod.EoqCalculator,
+    })),
+  ),
+  EortcBladderCancerRecurrenceProgressionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/eortc-bladder-cancer-recurrence-progression/EortcBladderCancerRecurrenceProgressionCalculator'
+    ).then((mod) => ({
+      default: mod.EortcBladderCancerRecurrenceProgressionCalculator,
     })),
   ),
   EroaMitralRegurgitationCalculator: lazyTool(() =>

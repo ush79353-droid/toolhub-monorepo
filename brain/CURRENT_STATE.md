@@ -7,6 +7,7 @@
 
 ## 1. Snapshot Summary
 
+- **Creatinine Clearance Calculator (`/tools/creatinine-clearance-calculator`):** Live educational Cockcroft–Gault + timed urine CrCl (`componentKey: 'CreatinineClearanceCalculator'`, catalog `6af46f12a27d8d1d4e9902ce`, pillar/subPillar null). Screenshot-first (ADR-023): age/sex/weight/height/SCr estimate; BMI weight basis (actual/ideal/adjusted); collapsible direct UCr/volume/collection/SCr; share URL only. **No FX**. Activated; **`indexable` left false**. Example: Omni Bob **67**/male/**92** kg/**173** cm/**1.4** → ≈ **56.6** mL/min; direct **100**/**1**/**1440** mL/24h → **100** mL/min.
 - **Repository Setup:** Independent `frontend/` (Next.js 15 App Router, React 19, Tailwind CSS) and `backend/` (Express 4, Mongoose/MongoDB, TypeScript) applications with no npm workspaces.
 - **Brand:** Codebase refactored from **Mega Tools** to **Omega Calculators** (`136359a`); some legacy `mega_tools` / `megatools.io` strings remain in env defaults and mock/placeholder files.
 - **Core Rule:** `Browser → Next.js Server → Express API → MongoDB`. Media storage follows `STORAGE_DRIVER`: `local` (default, files in `backend/uploads`) or `s3` (direct browser `PUT` to a signed URL).
@@ -16,6 +17,7 @@
 ## 2. Feature Status Matrix
 
 ### Implemented (Verified End-to-End)
+- **Adrenal Washout Calculator (`/tools/adrenal-washout-calculator`):** Live educational CT washout (`componentKey: 'AdrenalWashoutCalculator'`, catalog `6af46f12a27d8d1d4e9902ca`, pillar/subPillar null). Screenshot-first (ADR-023): pre-contrast / 60–75 sec / 15 min delayed HU; APW & RPW %; adenoma hints >60% / >40%; Radiopaedia formulas; **No FX**. Activated; **`indexable` left false**. Example: **30 / 70 / 29** HU → APW **102.5%**, RPW **≈58.6%**.
 - **Bladder Volume Calculator (/tools/bladder-volume-calculator):** Live educational ultrasound volume (componentKey: 'BladderVolumeCalculator', catalog `6af46f12a27d8d1d4e9902cc`, pillar/subPillar null). Screenshot-first (ADR-023): Ellipsoid default coef 0.81; cuboid 0.89; triangular prism 0.66; prolate 0.52; unknown 0.77; custom; three orthogonal dims cm|mm|in; volume mL|cm³|L; Bih 1998; share URL only. **No FX**. Example: **5×4×3** cm → **48.6** mL.
 - **Albumin Creatinine Ratio Calculator (`/tools/albumin-creatinine-ratio-calculator`):** Live educational urine ACR (`componentKey: 'AlbuminCreatinineRatioCalculator'`, catalog `6af46f12a27d8d1d4e9902cb`, pillar/subPillar null). Screenshot-first (ADR-023): blank albumin mg/dL; creatinine mg/dL|mmol/L; ACR mg/g; KDIGO A1–A3 label in status only; share URL; **No FX**. Activated; **`indexable` left false**. Example: **8** mg/dL · **110** mg/dL → **72.7** mg/g (A2).
 - **GRACE Calculator (`/tools/grace-calculator`):** Granger 2003 GRACE 1.0 points + in-hospital risk categories (`GraceCalculator`). **No FX**. Registry wired. **Mongo blocked**.
