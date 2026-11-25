@@ -73,6 +73,15 @@ test('warns when the guide is 1,200 to 1,499 words and still allows approval', (
   assert.ok(report.issues.some((issue) => issue.code === 'word_count' && issue.severity === 'flag'));
 });
 
+test('warns when the guide is over 1,700 words and still allows approval', () => {
+  const sections = content().sections.map((section, index) =>
+    index === 0 ? { ...section, paragraphs: [words(1900)] } : section
+  );
+  const report = check({ sections });
+  assert.equal(report.ok, true);
+  assert.ok(report.issues.some((issue) => issue.code === 'word_count' && issue.severity === 'flag'));
+});
+
 test('blocks a guide under 1,200 words', () => {
   const sections = content().sections.map((section, index) =>
     index === 0 ? { ...section, paragraphs: [words(800)] } : section

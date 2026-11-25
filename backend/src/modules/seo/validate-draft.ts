@@ -68,8 +68,14 @@ export function validateDraft(input: ValidateDraftInput): DraftValidation {
   }
 
   const words = countDraftWords(content);
-  if (words < 1200 || words > 1700) {
-    block(issues, 'word_count', `Guide is ${words} words. Visible educational copy must be 1,200–1,700 words.`);
+  if (words < 1200) {
+    block(issues, 'word_count', `Guide is ${words} words. Visible educational copy must be at least 1,200 words.`);
+  } else if (words > 1700) {
+    issues.push({
+      code: 'word_count',
+      message: `Guide is ${words} words. 1,500–1,700 is the target. Above 1,700 is a warning and can still be approved.`,
+      severity: 'flag',
+    });
   } else if (words < 1500) {
     issues.push({
       code: 'word_count',
