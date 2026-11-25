@@ -1674,7 +1674,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/revised-geneva-score/detail'),
   RetirementCalculator: () =>
     import('@/tools/calculators/retirement/detail'),
-  RsbiCalculator: () => import('@/tools/calculators/rsbi/detail'),
   Rule2836Calculator: () =>
     import('@/tools/calculators/rule-2836/detail'),
   RuleOf72Calculator: () =>

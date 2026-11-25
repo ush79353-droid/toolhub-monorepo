@@ -1051,7 +1051,6 @@ export const APPROVED_COMPONENT_KEYS = [
   'RetirementCalculator',
   'ReverseDueDateCalculator',
   'RevisedGenevaScoreCalculator',
-  'RsbiCalculator',
   'Rule2836Calculator',
   'RuleOf72Calculator',
   'SabbaticalCalculator',
