@@ -489,6 +489,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/urine-home-pregnancy-test/detail'),
   UrineOutputCalculator: () =>
     import('@/tools/calculators/urine-output/detail'),
+  UrrCalculator: () => import('@/tools/calculators/urr/detail'),
   CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
   NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
   CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),

@@ -6,6 +6,8 @@
 ---
 
 ## 1. Snapshot Summary
+- **URR Calculator - Urea Reduction Ratio (/tools/urr-calculator-urea-reduction-ratio):** Live educational hemodialysis URR (`componentKey: 'UrrCalculator'`, catalog `6af46f12a27d8d1d4e9902df`, pillar/subPillar null). Screenshot-first (ADR-023): pre/post urea mg/dL|mmol/L; URR=100×(pre−post)/pre; Kt/V Daugirdas link; share URL only. **No FX**. Activated; **`indexable` left false**. Example: **60→18** mg/dL → **70%**.
+- **Protein Creatinine Ratio Calculator (/tools/protein-creatinine-ratio-calculator):** Live educational UPCR (`componentKey: 'ProteinCreatinineRatioCalculator'`, catalog `6af46f12a27d8d1d4e9902d9`, pillar/subPillar null). Screenshot-first (ADR-023): urine protein mg/dL; creatinine mg/dL|g/L|mmol/L; g/g with g/day teaching label; share URL only. **No FX**. Activated; **`indexable` left false**. Example: **50/100** → **0.5** g/g.
 - **PSI Calculator (/tools/psi-calculator):** Live educational PSI/PORT Fine rule checklist (componentKey: `PsiPortCalculator`, catalog `6af46f12a27d8d1d4e9902ee`). Screenshot-first sex/age + comorbidity/exam/lab checkboxes; Class I pathway age &lt;50 with no abnormalities; sex-adjusted age points; classes II–V. **No FX**. Activated; **`indexable` left false**.
 - **Audit Score Calculator (/tools/audit-score-calculator):** Educational WHO AUDIT 10-item screen (componentKey: 'AuditScoreCalculator', catalog 6af46f12a27d8d1d4e9902f5, pillar/subPillar null). Screenshot-first (ADR-023): sex; items 1–10; domains consumption/dependence/problems; total 0–40; items 9–10 score 0/2/4; Share/Reload/Clear/feedback. **No FX**. Registry wired. Activated; **`indexable` left false**. Fixture Female/Monthly/3–4/Never → consumption **2** · total **2**.
 

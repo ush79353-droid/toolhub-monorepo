@@ -1992,7 +1992,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.UrineOutputCalculator,
       }),
     ),
-  ),  CentsToDollarsCalculator: lazyTool(() =>
+  ),
+  UrrCalculator: lazyTool(() =>
+    import('@/tools/calculators/urr/UrrCalculator').then((mod) => ({
+      default: mod.UrrCalculator,
+    })),
+  ),
+  CentsToDollarsCalculator: lazyTool(() =>
     import('@/tools/calculators/cents-to-dollars/CentsToDollarsCalculator').then((mod) => ({
       default: mod.CentsToDollarsCalculator,
     })),

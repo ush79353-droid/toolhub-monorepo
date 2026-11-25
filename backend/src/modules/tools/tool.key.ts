@@ -331,6 +331,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'UnemploymentCalculator',
   'UrineHomePregnancyTestCalculator',
   'UrineOutputCalculator',
+  'UrrCalculator',
   'CentsToDollarsCalculator',
   'NmToJoulesCalculator',
   'CgsSystemOfUnitsConverter',
