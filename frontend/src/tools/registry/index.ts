@@ -619,6 +619,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ProstateVolumeCalculator,
     })),
   ),
+  PsaDensityCalculator: lazyTool(() =>
+    import('@/tools/calculators/psa-density/PsaDensityCalculator').then(
+      (mod) => ({
+        default: mod.PsaDensityCalculator,
+      }),
+    ),
+  ),
   ProteinCalculator: lazyTool(() =>
     import('@/tools/calculators/protein/ProteinCalculator').then((mod) => ({
       default: mod.ProteinCalculator,

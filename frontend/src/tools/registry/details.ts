@@ -169,6 +169,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/prescription-refill/detail'),
   ProstateVolumeCalculator: () =>
     import('@/tools/calculators/prostate-volume/detail'),
+  PsaDensityCalculator: () =>
+    import('@/tools/calculators/psa-density/detail'),
   ProteinCalculator: () => import('@/tools/calculators/protein/detail'),
   ProteinCreatinineRatioCalculator: () =>
     import('@/tools/calculators/protein-creatinine-ratio/detail'),
@@ -1342,6 +1344,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/false-negative-pregnancy-test/detail'),
   FertilityByAgeCalculator: () =>
     import('@/tools/calculators/fertility-by-age/detail'),
+  Fev1FvcRatioCalculator: () =>
+    import('@/tools/calculators/fev1-fvc-ratio/detail'),
   FisherEquationCalculator: () =>
     import('@/tools/calculators/fisher-equation/detail'),
   ForwardPremiumCalculator: () =>
