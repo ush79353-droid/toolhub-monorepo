@@ -1,4 +1,4 @@
-- [x] PF Ratio Calculator (pf-ratio-calculator) — developed + activated 2026-11-25 (indexable false).
+﻿- [x] PF Ratio Calculator (pf-ratio-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] Lung Cancer Risk Calculator (lung-cancer-risk-calculator) — HUNT Markaki 2018/corrigendum 2022; developed + activated 2026-11-25 (indexable false).
 - [x] Light's Criteria Calculator for Pleural Effusion (lights-criteria-calculator-for-pleural-effusion) — developed + activated 2026-11-25 (indexable false).
 - [x] Tidal Volume Calculator (tidal-volume-calculator) — developed + activated 2026-11-25 (indexable false).
@@ -259,6 +259,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-812` | Audit Score Calculator (`AuditScoreCalculator`); WHO AUDIT 10-item; Mongo `6af46f12a27d8d1d4e9902f5` assign blocked (Atlas); indexable false | Cursor (`cursor-agent-25205458-010544`) | Completed (activation pending) | `frontend/src/tools/calculators/audit-score/*`, `Tools/Completed/Audit Score Calculator` | Atlas DNS |
 | `TOOL-811` | Protein Creatinine Ratio Calculator (`ProteinCreatinineRatioCalculator`); UPCR g/g; Mongo activation pending Atlas if DNS fails | Cursor (`cursor-agent-82288078-002138`) | Completed (activation may be pending) | `frontend/src/tools/calculators/protein-creatinine-ratio/*` | Atlas DNS |
 | `TOOL-810` | Adrenal Washout Calculator (`AdrenalWashoutCalculator`); APW/RPW HU washout; Mongo `6af46f12a27d8d1d4e9902ca` activated; indexable false | Cursor (`cursor-agent-82288078-002138`) | Completed | `frontend/src/tools/calculators/adrenal-washout/*`, `Tools/Completed/Adrenal Washout Calculator` | — |
 | `TOOL-811` | Creatinine Clearance Calculator (`CreatinineClearanceCalculator`); Cockcroft–Gault + timed urine; Mongo `6af46f12a27d8d1d4e9902ce` activated; indexable false | Cursor (`cursor-agent-29428947-002236`) | Completed | `frontend/src/tools/calculators/creatinine-clearance/*`, `Tools/Completed/Creatinine Clearance Calculator` | — |

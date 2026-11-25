@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { lazy, type LazyExoticComponent } from 'react';
 import type { ToolComponent } from '../types';
@@ -503,6 +503,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/keto/KetoCalculator').then((mod) => ({
       default: mod.KetoCalculator,
     })),
+  KidneyFailureRiskCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/kidney-failure-risk/KidneyFailureRiskCalculator'
+    ).then((mod) => ({
+      default: mod.KidneyFailureRiskCalculator,
+    })),
+  ),
   ),
   LidocaineDoseCalculator: lazyTool(() =>
     import(

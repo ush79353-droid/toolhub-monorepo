@@ -138,6 +138,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   KtvDaugirdasCalculator: () =>
     import('@/tools/calculators/ktv-daugirdas/detail'),
   KetoCalculator: () => import('@/tools/calculators/keto/detail'),
+  KidneyFailureRiskCalculator: () =>
+    import('@/tools/calculators/kidney-failure-risk/detail'),
   LidocaineDoseCalculator: () =>
     import('@/tools/calculators/lidocaine-dose/detail'),
   LoanCalculator: () => import('@/tools/calculators/loan/detail'),
@@ -221,6 +223,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MaintainPregnancyWeightCalculator: () =>
     import('@/tools/calculators/maintain-pregnancy-weight/detail'),
   McaCalculator: () => import('@/tools/calculators/mca/detail'),
+  MeanAirwayPressureCalculator: () =>
+    import('@/tools/calculators/mean-airway-pressure/detail'),
   MealCalorieCalculator: () =>
     import('@/tools/calculators/meal-calorie/detail'),
   MaintenanceCalorieCalculator: () =>

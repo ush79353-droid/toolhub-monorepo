@@ -75,6 +75,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'KtvDaugirdasCalculator',
   'KidneyStonePcnlCalculator',
   'KetoCalculator',
+  'KidneyFailureRiskCalculator',
   'LidocaineDoseCalculator',
   'LoanCalculator',
   'LoanInterestCalculator',
