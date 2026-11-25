@@ -149,7 +149,7 @@ Add a chart, table, or unit helper in the same folder only when that tool needs 
 3. `frontend/src/tools/registry/details.ts` — one `import()` of `detail.tsx`.
 4. `backend/src/modules/tools/tool.key.ts` — the same string in `APPROVED_COMPONENT_KEYS`, and the direct-run self-check.
 5. Mongo `Tool.componentKey` matches that string (`tool:assign` or admin edit).
-6. `frontend/src/app/sitemap.ts` — add the public slug to `IMPLEMENTED_TOOL_SLUGS`. `robots.ts` does not list slugs.
+6. Do not add the public slug to a sitemap file. `robots.ts` does not list slugs. Sitemap inclusion is `isActive` + `indexable` + `sitemapInclude` + a published SEO draft + a registered component.
 
 Do not add `app/(website)/tools/<slug>/page.tsx`. Do not register a calculator by importing it eagerly at the top of the shared page.
 

@@ -192,7 +192,7 @@ See `SEO_STANDARDS.md`. Summary:
 - Admin → Mongo → Express catalog → `generateMetadata` / JSON-LD
 - Optional fields + fallbacks; no localhost production canonicals
 - Index only if active + indexable + allowlisted component
-- `sitemap.ts` — extend `IMPLEMENTED_TOOL_SLUGS` when shipping new tools. `robots.ts` allows the public site and disallows `/admin/`, `/api/`, and `/embed/`; it does not list tool slugs.
+- Do not add a tool slug to a sitemap file. `/sitemap.xml` indexes `/sitemap/static.xml` and one file per pillar. A tool URL is included only when it is active, indexable, `sitemapInclude`, has a published SEO draft, and a registered component. `robots.ts` allows the public site and disallows `/admin/`, `/api/`, and `/embed/`.
 - Embed: noindex; not in sitemap
 
 ---

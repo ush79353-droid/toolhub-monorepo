@@ -64,6 +64,11 @@ Common auth errors: `401 UNAUTHORIZED`, `401 SESSION_EXPIRED`, `401 ACCOUNT_NOT_
 
 Mounted at `/api/v1/catalog` (`backend/src/modules/catalog/catalog.router.ts`).
 
+### `GET /api/v1/catalog/sitemap`
+- **Auth:** Public
+- **Response (`200`):** Sitemap rows for the Next.js sitemap index. `categories` are active root categories. `pillars` contain tools that are `isActive`, `indexable`, `sitemapInclude` is not false, have a non-empty `componentKey`, and have a `SeoDraft` with `status: 'published'`. `publishedAt` is that draft's publish time. Tools whose pillar is missing go in `unassigned`. The Next server drops a tool whose component is not registered, so a 404 is not listed.
+  `{ categories: { slug, updatedAt }[], pillars: { slug, updatedAt, categorySlug, tools: { slug, componentKey, publishedAt }[] }[], unassigned: { slug, componentKey, publishedAt }[] }`
+
 ### `GET /api/v1/catalog/categories`
 - **Auth:** Public
 - **Response (`200`):** `PublicCategory[]` — Active root categories (`kind: 'category', isActive: true`), sorted by `sortOrder` asc, `name` asc:

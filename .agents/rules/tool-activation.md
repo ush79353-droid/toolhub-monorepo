@@ -20,7 +20,7 @@ After the calculator module is complete, verify in this order:
 7. Set `isDeveloped: true` after successful verification (when the schema has the field).
 8. Set `isActive: true` using the existing publishing policy.
 9. Set `indexable: true` when eligible and no explicit admin noindex restriction exists.
-10. Verify sitemap eligibility (`IMPLEMENTED_TOOL_SLUGS` + `isActive` + `indexable` + `sitemapInclude`).
+10. Do not add the slug to a sitemap file. It is included only when `isActive`, `indexable`, `sitemapInclude`, a published SEO draft, and a registered component all hold.
 11. Verify website search/category visibility.
 12. Verify embed unless explicitly disabled.
 
@@ -31,6 +31,7 @@ Rules:
 - Do not turn an admin-disabled, draft, private, or noindex tool back on unless the task says to — report those as activation blockers.
 - Do not activate missing, incomplete, or broken calculators.
 - An unregistered or empty `componentKey` stays off the public route (`notFound()`).
+- Do not add a tool slug to `sitemap.ts` or any sitemap file. `/sitemap.xml` is an index of pillar files. A tool URL appears only when `isActive`, `indexable`, `sitemapInclude`, a published SEO draft, and a registered component all hold.
 
 ## Mongo assign — single reusable script (locked)
 

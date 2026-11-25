@@ -46,9 +46,10 @@ Admin SEO UI does **not** expose robots directives or sitemap fields. Public rob
 ## 6. Crawl surfaces
 
 - `frontend/src/app/robots.ts` — allow public site; disallow `/admin/`, `/api/`, `/embed/`.
-- `frontend/src/app/sitemap.ts` — static + categories + allowlisted implemented tools that pass `resolveSitemapEligible` (skips localhost origins).
-- Extend `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts` when new registry calculators launch.
-- **Site-wide indexing kill switch:** `SITE_ALLOW_INDEXING` must be exactly `true` to allow crawling. When unset/false: `robots.txt` is `Disallow: /`, sitemap is empty, root + tool meta are `noindex,nofollow`. Use this while tools are still in development.
+- `/sitemap.xml` is a sitemap index. `/sitemap/static.xml` lists the fixed pages in `frontend/src/config/static-sitemap.ts` (their `lastModified` is stored there) plus each active category hub.
+- Each pillar has `/sitemap/{pillarSlug}.xml`. That file lists the pillar section on its category page and the pillar's tool URLs.
+- Do not add a tool slug to a sitemap file. A tool is included only when `isActive`, `indexable`, and `sitemapInclude` are on, a `SeoDraft` is `published`, and its component is registered. Tools with no pillar go in `/sitemap/unassigned.xml`.
+- **Site-wide indexing kill switch:** `SITE_ALLOW_INDEXING` must be exactly `true` to allow crawling. When unset/false: `robots.txt` is `Disallow: /`, sitemap files are empty, root + tool meta are `noindex,nofollow`. Use this while tools are still in development.
 
 ## 7. Cache Policy
 
