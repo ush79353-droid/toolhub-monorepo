@@ -3638,6 +3638,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.IchVolumeCalculator,
     })),
   ),
+  IdealWeightCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ideal-weight/IdealWeightCalculator'
+    ).then((mod) => ({
+      default: mod.IdealWeightCalculator,
+    })),
+  ),
   BetaStockCalculator: lazyTool(() =>
     import('@/tools/calculators/beta-stock/BetaStockCalculator').then((mod) => ({
       default: mod.BetaStockCalculator,

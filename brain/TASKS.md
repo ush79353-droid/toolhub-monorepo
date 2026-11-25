@@ -26,6 +26,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-814` | Ideal Weight Calculator (`IdealWeightCalculator`); Devine/Robinson/Miller/Hamwi; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/ideal-weight/*` | Mongo Atlas DNS |
 | `TOOL-813` | ABSI Calculator (`AbsiCalculator`); Krakauer ABSI + NHANES Table S1 z-score; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/absi/*` | Mongo Atlas DNS |
 | `TOOL-812` | URR Calculator (`UrrCalculator`); pre/post urea URR%; activated; indexable false | Cursor | Completed | `frontend/src/tools/calculators/urr/*` | — |
 | `TOOL-811` | Protein Creatinine Ratio Calculator (`ProteinCreatinineRatioCalculator`); UPCR activated; indexable false | Cursor | Completed | `frontend/src/tools/calculators/protein-creatinine-ratio/*` | — |

@@ -887,6 +887,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/ibuprofen-dosage/detail'),
   IchVolumeCalculator: () =>
     import('@/tools/calculators/ich-volume/detail'),
+  IdealWeightCalculator: () =>
+    import('@/tools/calculators/ideal-weight/detail'),
   BetaStockCalculator: () =>
     import('@/tools/calculators/beta-stock/detail'),
   BidensTaxPlanCalculator: () =>
