@@ -6235,11 +6235,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RetirementCalculator,
     })),
   ),
-  RsbiCalculator: lazyTool(() =>
-    import('@/tools/calculators/rsbi/RsbiCalculator').then((mod) => ({
-      default: mod.RsbiCalculator,
-    })),
-  ),
   Rule2836Calculator: lazyTool(() =>
     import(
       '@/tools/calculators/rule-2836/Rule2836Calculator'
