@@ -1011,6 +1011,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'DreamComeTrueCalculator',
   'EarnestMoneyCalculator',
   'EmergencyFundCalculator',
+  'EndotrachealTubeSizeCalculator',
   'FinanceCalculator',
   'FinanceChargeCalculator',
   'FinancialLeverageRatioCalculator',

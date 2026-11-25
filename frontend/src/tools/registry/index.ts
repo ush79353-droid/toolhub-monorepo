@@ -5955,6 +5955,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.EmergencyFundCalculator,
     })),
   ),
+  EndotrachealTubeSizeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/endotracheal-tube-size/EndotrachealTubeSizeCalculator'
+    ).then((mod) => ({
+      default: mod.EndotrachealTubeSizeCalculator,
+    })),
+  ),
   FinanceCalculator: lazyTool(() =>
     import('@/tools/calculators/finance/FinanceCalculator').then((mod) => ({
       default: mod.FinanceCalculator,

@@ -1601,6 +1601,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/earnest-money/detail'),
   EmergencyFundCalculator: () =>
     import('@/tools/calculators/emergency-fund/detail'),
+  EndotrachealTubeSizeCalculator: () =>
+    import('@/tools/calculators/endotracheal-tube-size/detail'),
   FinanceCalculator: () => import('@/tools/calculators/finance/detail'),
   FinanceChargeCalculator: () =>
     import('@/tools/calculators/finance-charge/detail'),

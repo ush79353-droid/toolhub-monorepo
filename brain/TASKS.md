@@ -1,3 +1,4 @@
+- [x] Endotracheal Tube Size Calculator (endotracheal-tube-size-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] BODE Index Calculator (bode-index-calculator) — Issued recovery: developed + activated 2026-11-25 (indexable false).
 - [x] Dead Space Calculator (dead-space-calculator) — Issued recovery: registry + Mongo activated 2026-11-25 (indexable false).
 - [x] Caffeine Calculator (caffeine-calculator) — Issued recovery: registry + Mongo activated 2026-11-25 (indexable false).
