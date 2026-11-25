@@ -1,0 +1,4 @@
+﻿agentId=cursor-agent-pending-242870-222229
+file=registry-index.ts
+ts=2026-11-25T23:02:35.4336334+05:00
+task=stone+oi-registration-final

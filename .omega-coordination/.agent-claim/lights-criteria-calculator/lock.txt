@@ -1,0 +1,7 @@
+﻿agentId=cursor-agent-pending-78604974-222204
+sessionId=sess-pending-first-20261125-222204
+task=Light's Criteria Calculator for Pleural Effusion
+phase=CLAIMED
+claimedAt=2026-11-25T22:24:01.6157764+05:00
+heartbeat=2026-11-25T22:24:01.6157764+05:00
+exclusive=true

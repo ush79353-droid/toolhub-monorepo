@@ -1,0 +1,4 @@
+﻿agentId=cursor-agent-pending-242870-222229
+phase=CLAIMED
+task=Oxygenation Index Calculator
+claimedAt=2026-11-25T22:32:03.3648840+05:00

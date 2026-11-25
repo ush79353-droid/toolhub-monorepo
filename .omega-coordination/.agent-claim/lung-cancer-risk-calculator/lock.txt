@@ -1,0 +1,5 @@
+﻿agentId=cursor-agent-pending-02797aad
+sessionId=sess-pending-first-20261125-222411
+task=Lung Cancer Risk Calculator
+phase=CLAIMED
+claimedAt=2026-11-25T22:24:14.7879014+05:00

@@ -1,0 +1,12 @@
+{
+    "sessionId":  "sess-pending-first-20261125-222411",
+    "heartbeat":  "2026-11-25T23:35:38.3107740+05:00",
+    "agentId":  "cursor-agent-pending-02797aad",
+    "claimed":  null,
+    "status":  "completed-pending-empty",
+    "completed":  [
+                      "Lung Cancer Risk Calculator"
+                  ],
+    "phase":  "ISSUED_INVENTORY_ONLY",
+    "mission":  "pending-first-development"
+}

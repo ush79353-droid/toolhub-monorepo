@@ -1,0 +1,13 @@
+{
+  "agentId": "cursor-agent-worker-ttkg-7860",
+  "sessionId": "sess-ttkg-7860-20261125",
+  "mission": "pending-first-development",
+  "phase": "COMPLETE",
+  "claimed": "TTKG Calculator - Transtubular Potassium Gradient",
+  "slug": "ttkg-calculator-transtubular-potassium-gradient",
+  "mongoId": "6af46f12a27d8d1d4e9902dd",
+  "componentKey": "TtkgCalculator",
+  "status": "active",
+  "indexable": false,
+  "heartbeat": "2026-11-25T23:35:00+05:00"
+}

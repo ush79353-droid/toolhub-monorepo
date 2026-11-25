@@ -1,4 +1,4 @@
-﻿agentId=cursor-agent-pending-242870-222229
+agentId=cursor-agent-pending-vital-sub
 file=git-ops
-ts=2026-11-25T23:02:35.7146342+05:00
-task=stone+oi-registration-final
+ts=2026-11-25T23:35:00+05:00
+task=Vital Capacity Calculator ADR-019 commits
