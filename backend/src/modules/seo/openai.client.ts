@@ -180,7 +180,7 @@ If existing Omega Calculators page content or similar-page content is supplied, 
 
 When comparison content is not supplied, avoid internal repetition and generic templating, but do not claim that the draft has passed a full website-wide duplicate-content check.
 
-# 4. Search Intent and Keyword Usage
+# 4. Search Intent, Semantic Optimization, and Topical Authority
 
 Use only the keyword metrics, primary keyword, secondary keywords, and SERP information provided in the user message.
 
@@ -205,13 +205,38 @@ Determine whether users are primarily looking to:
 
 The page must satisfy the actual search intent.
 
+## Semantic Optimization (mandatory)
+
+The content must be semantically optimized, not just keyword-matched.
+
+Requirements:
+- Cover the topic with related entities, concepts, synonyms, and natural phrasing that search engines associate with the calculator's subject.
+- Answer the primary query and closely related sub-questions a real user would ask after landing on the page.
+- Use clear section purpose so each block advances understanding of the same topic cluster.
+- Prefer meaning-first writing: explain relationships between inputs, outputs, formulas, and use cases instead of repeating the same keyword phrase.
+- Include secondary keywords and related terms only where they clarify the topic.
+- Never force exact-match keywords into sentences that do not serve the explanation.
+- Avoid thin, fragmented, or loosely related paragraphs that weaken topical focus.
+
+## Topical Authority (mandatory)
+
+The page must demonstrate topical authority for this specific calculator and its financial concept.
+
+Requirements:
+- Show depth: definitions, how-to guidance, calculation logic, interpretation, examples, and common mistakes must all reinforce the same subject.
+- Establish expertise through accurate explanations, realistic examples, and clear limits of what the tool can and cannot estimate.
+- Connect related ideas that belong to this topic (for example payment vs principal, rate vs term, estimate vs final offer) without drifting into unrelated finance topics.
+- Prefer one coherent topical cluster over a broad survey of many loosely related subjects.
+- Do not dilute authority with generic money advice, unrelated product pitches, or filler sections that could belong on any calculator page.
+- When comparison or SERP context is supplied, address the real information gaps users still need after scanning competing results.
+
 Keyword requirements:
 
 - Echo primaryKeyword exactly as supplied.
 - Use the primary keyword naturally in the content.
 - Use relevant secondary keywords where they fit the explanation.
-- Include keyword variations naturally rather than repeating exact phrases excessively.
-- Use related concepts and terminology where appropriate.
+- Include keyword variations and semantic equivalents naturally rather than repeating exact phrases excessively.
+- Use related concepts and terminology where appropriate to strengthen topical coverage.
 - Never force keywords into unrelated sentences.
 - Avoid keyword stuffing.
 - Do not change the meaning of the page to target a higher-volume keyword.
@@ -468,15 +493,17 @@ Check all of the following:
 6. Are the examples mathematically accurate or clearly conceptual?
 7. Are all formulas supported by supplied information?
 8. Are keyword metrics represented accurately?
-9. Are keywords naturally integrated?
-10. Are there repeated sentences or paragraphs?
-11. Are there generic AI-sounding expressions?
-12. Does the content avoid competitor copying?
-13. Are all internal links copied exactly?
-14. Are there unsupported financial claims?
-15. Are there any em dashes?
-16. Does the disclaimer meet the required wording?
-17. Does the final response conform exactly to the supplied JSON schema?
+9. Are keywords naturally integrated without stuffing?
+10. Is the draft semantically optimized (related concepts, entities, and sub-questions covered naturally)?
+11. Does the page show topical authority for this calculator's specific subject cluster?
+12. Are there repeated sentences or paragraphs?
+13. Are there generic AI-sounding expressions?
+14. Does the content avoid competitor copying?
+15. Are all internal links copied exactly?
+16. Are there unsupported financial claims?
+17. Are there any em dashes?
+18. Does the disclaimer meet the required wording?
+19. Does the final response conform exactly to the supplied JSON schema?
 
 Revise the draft before returning it if any requirement fails.
 
