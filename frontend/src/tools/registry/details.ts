@@ -302,7 +302,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/rent-or-buy/detail'),
   RmdCalculator: () => import('@/tools/calculators/rmd/detail'),
   RrefCalculator: () => import('@/tools/calculators/rref/detail'),
-  RsbiCalculator: () => import('@/tools/calculators/rsbi/detail'),
   ArmMortgageCalculator: () => import('@/tools/calculators/arm-mortgage/detail'),
   HundredDayCalculator: () => import('@/tools/calculators/hundred-day/detail'),
   SalaryWithOvertimeCalculator: () =>
@@ -479,6 +478,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   UnemploymentCalculator: () => import('@/tools/calculators/unemployment/detail'),
   UrineHomePregnancyTestCalculator: () =>
     import('@/tools/calculators/urine-home-pregnancy-test/detail'),
+  UrineOutputCalculator: () =>
+    import('@/tools/calculators/urine-output/detail'),
   CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
   NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
   CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),
@@ -1213,7 +1214,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/pence-to-pounds/detail'),
   PearlIndexCalculator: () =>
     import('@/tools/calculators/pearl-index/detail'),
-  PeakFlowCalculator: () => import('@/tools/calculators/peak-flow/detail'),
   PensionCalculator: () =>
     import('@/tools/calculators/pension/detail'),
   PercCalculator: () => import('@/tools/calculators/perc/detail'),
@@ -1674,6 +1674,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/revised-geneva-score/detail'),
   RetirementCalculator: () =>
     import('@/tools/calculators/retirement/detail'),
+  RsbiCalculator: () => import('@/tools/calculators/rsbi/detail'),
   Rule2836Calculator: () =>
     import('@/tools/calculators/rule-2836/detail'),
   RuleOf72Calculator: () =>

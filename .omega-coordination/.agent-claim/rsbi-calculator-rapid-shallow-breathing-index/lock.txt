@@ -1,0 +1,6 @@
+﻿agentId=cursor-agent-worker-rsbi-7860
+sessionId=sess-rsbi-worker-20261125
+task=RSBI Calculator - Rapid Shallow Breathing Index
+phase=DEVELOPMENT
+claimedAt=2026-11-25T22:45:00.0000000+05:00
+exclusive=true
