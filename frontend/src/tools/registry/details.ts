@@ -171,6 +171,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/prostate-volume/detail'),
   PsaDensityCalculator: () =>
     import('@/tools/calculators/psa-density/detail'),
+  PsaDoublingTimeCalculator: () =>
+    import('@/tools/calculators/psa-doubling-time/detail'),
   ProteinCalculator: () => import('@/tools/calculators/protein/detail'),
   ProteinCreatinineRatioCalculator: () =>
     import('@/tools/calculators/protein-creatinine-ratio/detail'),
@@ -1229,6 +1231,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PerpetuityCalculator: () =>
     import('@/tools/calculators/perpetuity/detail'),
   PfRatioCalculator: () => import('@/tools/calculators/pf-ratio/detail'),
+  QpQsCalculator: () => import('@/tools/calculators/qpqs/detail'),
   PisaCalculator: () => import('@/tools/calculators/pisa/detail'),
   PitiCalculator: () => import('@/tools/calculators/piti/detail'),
   PivotPointCalculator: () =>
