@@ -1,0 +1,103 @@
+/**
+ * Krakauer & Krakauer (PLOS One 2012) Table S1 — NHANES 1999–2004
+ * smoothed ABSI mean/SD for z-scores (cols 5–6 male, 10–11 female).
+ * Age 85 uses sample mean/SD for ages ≥85.
+ * Source: journal.pone.0039504.s001
+ */
+
+export interface AbsiReference {
+  mean: number;
+  sd: number;
+}
+
+export const ABSI_NHANES_TABLE: Readonly<
+  Record<number, { male: AbsiReference; female: AbsiReference }>
+> = {
+  2: { male: { mean: 0.0789, sd: 0.00384 }, female: { mean: 0.08031, sd: 0.00363 } },
+  3: { male: { mean: 0.07915, sd: 0.00384 }, female: { mean: 0.08016, sd: 0.00366 } },
+  4: { male: { mean: 0.07937, sd: 0.00383 }, female: { mean: 0.08001, sd: 0.00369 } },
+  5: { male: { mean: 0.07955, sd: 0.00383 }, female: { mean: 0.07985, sd: 0.00372 } },
+  6: { male: { mean: 0.07964, sd: 0.00382 }, female: { mean: 0.07969, sd: 0.00375 } },
+  7: { male: { mean: 0.07966, sd: 0.00382 }, female: { mean: 0.07952, sd: 0.00378 } },
+  8: { male: { mean: 0.07958, sd: 0.00382 }, female: { mean: 0.07935, sd: 0.0038 } },
+  9: { male: { mean: 0.07942, sd: 0.00381 }, female: { mean: 0.07917, sd: 0.00383 } },
+  10: { male: { mean: 0.07917, sd: 0.00381 }, female: { mean: 0.07899, sd: 0.00386 } },
+  11: { male: { mean: 0.07886, sd: 0.00381 }, female: { mean: 0.07881, sd: 0.00389 } },
+  12: { male: { mean: 0.07849, sd: 0.0038 }, female: { mean: 0.07863, sd: 0.00392 } },
+  13: { male: { mean: 0.0781, sd: 0.0038 }, female: { mean: 0.07846, sd: 0.00395 } },
+  14: { male: { mean: 0.07772, sd: 0.0038 }, female: { mean: 0.07829, sd: 0.00397 } },
+  15: { male: { mean: 0.07739, sd: 0.00379 }, female: { mean: 0.07814, sd: 0.004 } },
+  16: { male: { mean: 0.07716, sd: 0.00379 }, female: { mean: 0.07799, sd: 0.00403 } },
+  17: { male: { mean: 0.07703, sd: 0.00378 }, female: { mean: 0.07787, sd: 0.00406 } },
+  18: { male: { mean: 0.07702, sd: 0.00378 }, female: { mean: 0.07775, sd: 0.00408 } },
+  19: { male: { mean: 0.07711, sd: 0.00378 }, female: { mean: 0.07765, sd: 0.00411 } },
+  20: { male: { mean: 0.07728, sd: 0.00377 }, female: { mean: 0.07757, sd: 0.00414 } },
+  21: { male: { mean: 0.0775, sd: 0.00377 }, female: { mean: 0.0775, sd: 0.00416 } },
+  22: { male: { mean: 0.07777, sd: 0.00377 }, female: { mean: 0.07744, sd: 0.00419 } },
+  23: { male: { mean: 0.07804, sd: 0.00376 }, female: { mean: 0.0774, sd: 0.00422 } },
+  24: { male: { mean: 0.07831, sd: 0.00376 }, female: { mean: 0.07737, sd: 0.00424 } },
+  25: { male: { mean: 0.07858, sd: 0.00376 }, female: { mean: 0.07735, sd: 0.00427 } },
+  26: { male: { mean: 0.07882, sd: 0.00375 }, female: { mean: 0.07734, sd: 0.00429 } },
+  27: { male: { mean: 0.07904, sd: 0.00375 }, female: { mean: 0.07735, sd: 0.00432 } },
+  28: { male: { mean: 0.07922, sd: 0.00374 }, female: { mean: 0.07736, sd: 0.00435 } },
+  29: { male: { mean: 0.07938, sd: 0.00374 }, female: { mean: 0.07739, sd: 0.00437 } },
+  30: { male: { mean: 0.07951, sd: 0.00374 }, female: { mean: 0.07743, sd: 0.0044 } },
+  31: { male: { mean: 0.07963, sd: 0.00373 }, female: { mean: 0.07747, sd: 0.00442 } },
+  32: { male: { mean: 0.07975, sd: 0.00373 }, female: { mean: 0.07752, sd: 0.00445 } },
+  33: { male: { mean: 0.07988, sd: 0.00373 }, female: { mean: 0.07759, sd: 0.00447 } },
+  34: { male: { mean: 0.08, sd: 0.00372 }, female: { mean: 0.07766, sd: 0.0045 } },
+  35: { male: { mean: 0.08013, sd: 0.00372 }, female: { mean: 0.07773, sd: 0.00452 } },
+  36: { male: { mean: 0.08027, sd: 0.00371 }, female: { mean: 0.07782, sd: 0.00454 } },
+  37: { male: { mean: 0.08042, sd: 0.00371 }, female: { mean: 0.0779, sd: 0.00457 } },
+  38: { male: { mean: 0.08057, sd: 0.00371 }, female: { mean: 0.078, sd: 0.00459 } },
+  39: { male: { mean: 0.08072, sd: 0.0037 }, female: { mean: 0.0781, sd: 0.00462 } },
+  40: { male: { mean: 0.08087, sd: 0.0037 }, female: { mean: 0.0782, sd: 0.00464 } },
+  41: { male: { mean: 0.08102, sd: 0.0037 }, female: { mean: 0.07831, sd: 0.00466 } },
+  42: { male: { mean: 0.08117, sd: 0.00369 }, female: { mean: 0.07842, sd: 0.00469 } },
+  43: { male: { mean: 0.08132, sd: 0.00369 }, female: { mean: 0.07854, sd: 0.00471 } },
+  44: { male: { mean: 0.08148, sd: 0.00368 }, female: { mean: 0.07866, sd: 0.00473 } },
+  45: { male: { mean: 0.08165, sd: 0.00368 }, female: { mean: 0.07879, sd: 0.00476 } },
+  46: { male: { mean: 0.08183, sd: 0.00368 }, female: { mean: 0.07892, sd: 0.00478 } },
+  47: { male: { mean: 0.08201, sd: 0.00367 }, female: { mean: 0.07905, sd: 0.0048 } },
+  48: { male: { mean: 0.08221, sd: 0.00367 }, female: { mean: 0.07919, sd: 0.00483 } },
+  49: { male: { mean: 0.0824, sd: 0.00367 }, female: { mean: 0.07933, sd: 0.00485 } },
+  50: { male: { mean: 0.0826, sd: 0.00366 }, female: { mean: 0.07947, sd: 0.00487 } },
+  51: { male: { mean: 0.08279, sd: 0.00366 }, female: { mean: 0.07962, sd: 0.00489 } },
+  52: { male: { mean: 0.08297, sd: 0.00365 }, female: { mean: 0.07977, sd: 0.00492 } },
+  53: { male: { mean: 0.08315, sd: 0.00365 }, female: { mean: 0.07992, sd: 0.00494 } },
+  54: { male: { mean: 0.08334, sd: 0.00365 }, female: { mean: 0.08007, sd: 0.00496 } },
+  55: { male: { mean: 0.08352, sd: 0.00364 }, female: { mean: 0.08023, sd: 0.00498 } },
+  56: { male: { mean: 0.08369, sd: 0.00364 }, female: { mean: 0.08039, sd: 0.00501 } },
+  57: { male: { mean: 0.08386, sd: 0.00364 }, female: { mean: 0.08055, sd: 0.00503 } },
+  58: { male: { mean: 0.08403, sd: 0.00363 }, female: { mean: 0.08072, sd: 0.00505 } },
+  59: { male: { mean: 0.08419, sd: 0.00363 }, female: { mean: 0.08088, sd: 0.00507 } },
+  60: { male: { mean: 0.08436, sd: 0.00362 }, female: { mean: 0.08105, sd: 0.00509 } },
+  61: { male: { mean: 0.08454, sd: 0.00362 }, female: { mean: 0.08122, sd: 0.00511 } },
+  62: { male: { mean: 0.08471, sd: 0.00362 }, female: { mean: 0.08139, sd: 0.00514 } },
+  63: { male: { mean: 0.08489, sd: 0.00361 }, female: { mean: 0.08156, sd: 0.00516 } },
+  64: { male: { mean: 0.08506, sd: 0.00361 }, female: { mean: 0.08174, sd: 0.00518 } },
+  65: { male: { mean: 0.08522, sd: 0.0036 }, female: { mean: 0.08191, sd: 0.0052 } },
+  66: { male: { mean: 0.08537, sd: 0.0036 }, female: { mean: 0.08208, sd: 0.00522 } },
+  67: { male: { mean: 0.08551, sd: 0.0036 }, female: { mean: 0.08226, sd: 0.00524 } },
+  68: { male: { mean: 0.08565, sd: 0.00359 }, female: { mean: 0.08243, sd: 0.00526 } },
+  69: { male: { mean: 0.08578, sd: 0.00359 }, female: { mean: 0.08261, sd: 0.00528 } },
+  70: { male: { mean: 0.08591, sd: 0.00359 }, female: { mean: 0.08278, sd: 0.0053 } },
+  71: { male: { mean: 0.08604, sd: 0.00358 }, female: { mean: 0.08296, sd: 0.00533 } },
+  72: { male: { mean: 0.08616, sd: 0.00358 }, female: { mean: 0.08313, sd: 0.00535 } },
+  73: { male: { mean: 0.08629, sd: 0.00357 }, female: { mean: 0.0833, sd: 0.00537 } },
+  74: { male: { mean: 0.08641, sd: 0.00357 }, female: { mean: 0.08346, sd: 0.00539 } },
+  75: { male: { mean: 0.08653, sd: 0.00357 }, female: { mean: 0.08363, sd: 0.00541 } },
+  76: { male: { mean: 0.08665, sd: 0.00356 }, female: { mean: 0.0838, sd: 0.00543 } },
+  77: { male: { mean: 0.08675, sd: 0.00356 }, female: { mean: 0.08396, sd: 0.00545 } },
+  78: { male: { mean: 0.08685, sd: 0.00355 }, female: { mean: 0.08412, sd: 0.00547 } },
+  79: { male: { mean: 0.08695, sd: 0.00355 }, female: { mean: 0.08428, sd: 0.00549 } },
+  80: { male: { mean: 0.08705, sd: 0.00355 }, female: { mean: 0.08444, sd: 0.00551 } },
+  81: { male: { mean: 0.08714, sd: 0.00354 }, female: { mean: 0.0846, sd: 0.00553 } },
+  82: { male: { mean: 0.08723, sd: 0.00354 }, female: { mean: 0.08476, sd: 0.00555 } },
+  83: { male: { mean: 0.08732, sd: 0.00354 }, female: { mean: 0.08492, sd: 0.00557 } },
+  84: { male: { mean: 0.08742, sd: 0.00353 }, female: { mean: 0.08508, sd: 0.00559 } },
+  85: { male: { mean: 0.08811, sd: 0.00356 }, female: { mean: 0.08533, sd: 0.00528 } },
+};
+
+export const ABSI_TABLE_AGE_MIN = 2;
+export const ABSI_TABLE_AGE_MAX = 85;
