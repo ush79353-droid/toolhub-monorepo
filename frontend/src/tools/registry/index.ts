@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { lazy, type LazyExoticComponent } from 'react';
 import type { ToolComponent } from '../types';
@@ -5004,6 +5004,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/fertility-by-age/FertilityByAgeCalculator'
     ).then((mod) => ({
       default: mod.FertilityByAgeCalculator,
+    })),
+  ),
+  Fev1FvcRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/fev1-fvc-ratio/Fev1FvcCalculator'
+    ).then((mod) => ({
+      default: mod.Fev1FvcRatioCalculator,
     })),
   ),
   FisherEquationCalculator: lazyTool(() =>
