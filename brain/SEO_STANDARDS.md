@@ -49,7 +49,7 @@ Admin SEO UI does **not** expose robots directives or sitemap fields. Public rob
 - `/sitemap.xml` is a sitemap index. `/sitemap/static.xml` lists the fixed pages in `frontend/src/config/static-sitemap.ts` (their `lastModified` is stored there) plus each active category hub.
 - Each pillar has `/sitemap/{pillarSlug}.xml`. That file lists the pillar section on its category page and the pillar's tool URLs.
 - Do not add a tool slug to a sitemap file. A tool is included only when `isActive`, `indexable`, and `sitemapInclude` are on, a `SeoDraft` is `published`, and its component is registered. Tools with no pillar go in `/sitemap/unassigned.xml`.
-- **Site-wide indexing kill switch:** `SITE_ALLOW_INDEXING` must be exactly `true` to allow crawling. When unset/false: `robots.txt` is `Disallow: /`, sitemap files are empty, root + tool meta are `noindex,nofollow`. Use this while tools are still in development.
+- **Site-wide indexing kill switch:** `SITE_ALLOW_INDEXING` must be exactly `true` to allow crawling. When unset/false: `robots.txt` is `Disallow: /`, and a production sitemap is empty. `next dev` still renders the sitemap on localhost so the files can be checked. Root and tool meta stay `noindex,nofollow` until the flag is on.
 
 ## 7. Cache Policy
 

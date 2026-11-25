@@ -1,17 +1,8 @@
 import { STATIC_SITEMAP_ID, STATIC_SITEMAP_PAGES, UNASSIGNED_SITEMAP_ID } from '@/config/static-sitemap';
 import { sitemapUrlset, type SitemapUrl } from '@/lib/seo/sitemap-xml';
-import { getPublicSiteOrigin } from '@/server/seo/public-site';
-import { isSiteIndexingEnabled } from '@/server/seo/site-indexing';
-import { getSitemapCatalog } from '@/server/seo/sitemap';
+import { getSitemapCatalog, sitemapOrigin } from '@/server/seo/sitemap';
 
 export const dynamic = 'force-dynamic';
-
-function originOrNull(): string | null {
-  if (!isSiteIndexingEnabled()) return null;
-  const origin = getPublicSiteOrigin().replace(/\/+$/, '');
-  if (!origin || origin.includes('localhost')) return null;
-  return origin;
-}
 
 function xml(entries: SitemapUrl[], status = 200): Response {
   return new Response(sitemapUrlset(entries), {
@@ -24,7 +15,7 @@ export async function GET(
   _request: Request,
   context: { params: Promise<{ id: string }> }
 ): Promise<Response> {
-  const origin = originOrNull();
+  const origin = sitemapOrigin();
   if (!origin) return xml([]);
 
   const { id: rawId } = await context.params;
