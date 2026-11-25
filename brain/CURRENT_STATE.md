@@ -6,6 +6,7 @@
 ---
 
 ## 1. Snapshot Summary
+- **Audit Score Calculator (/tools/audit-score-calculator):** Educational WHO AUDIT 10-item screen (componentKey: 'AuditScoreCalculator', catalog 6af46f12a27d8d1d4e9902f5, pillar/subPillar null). Screenshot-first (ADR-023): sex; items 1–10; domains consumption/dependence/problems; total 0–40; items 9–10 score 0/2/4; Share/Reload/Clear/feedback. **No FX**. Registry wired. **Mongo assign blocked** (Atlas DNS/direct timeout); **`indexable` left false**. Fixture Female/Monthly/3–4/Never → consumption **2** · total **2**.
 
 - **Lung Nodule Growth Rate Calculator (/tools/lung-nodule-growth-rate-calculator):** Live educational Brock/PanCan model 2b malignancy probability (componentKey: `LungNoduleGrowthRateCalculator`, catalog `6af46f12a27d8d1d4e9902e9`). Screenshot-first (ADR-023): despite title, not VDT; age/sex/emphysema/family/spiculation/upper lobe/count/size mm/type → log odds + %; McWilliams NEJM 2013; share URL only. **No FX**. Activated; **`indexable` left false**.
 - **Vital Capacity Calculator (/tools/vital-capacity-calculator):** Live educational predicted VC from sex, age, and height (componentKey: `VitalCapacityCalculator`, catalog `6af46f12a27d8d1d4e9902f2`). Screenshot-first (ADR-023): Baldwin anthropometric form; female default; cm height; L|mL output; distinct from Lung Capacity IRV+TV+ERV sum; share URL only. **No FX**. Activated; **`indexable` left false**. Example: female **30** y · **167** cm → VC ≈ **3.131** L.
