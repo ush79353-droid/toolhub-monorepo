@@ -492,6 +492,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KtvDaugirdasCalculator,
     })),
   ),
+  KidneyStonePcnlCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/kidney-stone-pcnl/KidneyStonePcnlCalculator'
+    ).then((mod) => ({
+      default: mod.KidneyStonePcnlCalculator,
+    })),
+  ),
   KetoCalculator: lazyTool(() =>
     import('@/tools/calculators/keto/KetoCalculator').then((mod) => ({
       default: mod.KetoCalculator,
@@ -598,6 +605,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/opioid-conversion/OpioidConversionCalculator'
     ).then((mod) => ({
       default: mod.OpioidConversionCalculator,
+    })),
+  ),
+  OxygenationIndexCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/oxygenation-index/OxygenationIndexCalculator'
+    ).then((mod) => ({
+      default: mod.OxygenationIndexCalculator,
     })),
   ),
   PeptideCalculator: lazyTool(() =>
