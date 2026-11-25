@@ -78,6 +78,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   EerCalculator: () => import('@/tools/calculators/eer/detail'),
   FatIntakeCalculator: () =>
     import('@/tools/calculators/fat-intake/detail'),
+  FenaCalculator: () => import('@/tools/calculators/fena/detail'),
   FeureaCalculator: () => import('@/tools/calculators/feurea/detail'),
   FiberCalculator: () => import('@/tools/calculators/fiber/detail'),
   FishOilCalculator: () => import('@/tools/calculators/fish-oil/detail'),

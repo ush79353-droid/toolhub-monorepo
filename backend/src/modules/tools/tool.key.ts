@@ -40,6 +40,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'EbitdaMarginCalculator',
   'EerCalculator',
   'FatIntakeCalculator',
+  'FenaCalculator',
   'FeureaCalculator',
   'Fev1FvcRatioCalculator',
   'FiberCalculator',
