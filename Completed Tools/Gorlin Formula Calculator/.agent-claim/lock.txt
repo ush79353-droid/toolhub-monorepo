@@ -1,2 +1,0 @@
-agent=cursor-composer-continuous-20261123-223100
-claimedAt=2026-11-23T23:07:53.6806658+05:00

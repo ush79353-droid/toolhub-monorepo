@@ -1,5 +1,0 @@
-﻿claimedBy: Developer B (Cursor)
-claimedAt: 2026-11-24T11:10:00+05:00
-tool: IVIG Dose Calculator
-componentKey: IvigDoseCalculator
-phase: UI+engine only (no registry/Mongo)

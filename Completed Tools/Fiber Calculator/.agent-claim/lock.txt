@@ -1,7 +1,0 @@
-﻿agent=Developer B
-tool=Fiber Calculator
-claimed_at=2026-11-24T10:08:55.0502540+05:00
-status=DEVELOPED_PHASE1
-ui=6387ac93e19ddb3caffd61dd53125a9b1b13c99e
-engine=30afeda154616bb20362e5f8243faee3088df674
-componentKey=FiberCalculator

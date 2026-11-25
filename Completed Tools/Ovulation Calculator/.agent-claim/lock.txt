@@ -1,4 +1,0 @@
-﻿agent=cursor-auto-bilal-20261123-233500-26404
-claimedAt=2026-11-23T23:35:00.9092480+05:00
-host=BILALAJMERY
-tool=Ovulation Calculator

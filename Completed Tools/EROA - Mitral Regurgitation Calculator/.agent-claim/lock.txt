@@ -1,4 +1,0 @@
-﻿agent=cursor-auto-bilal-20261123-230257-8216
-claimedAt=2026-11-23T23:02:57.2840225+05:00
-host=BILALAJMERY
-tool=EROA - Mitral Regurgitation Calculator

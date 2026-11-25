@@ -1,5 +1,0 @@
-LOCKED
-developer=B-cursor
-tool=TIMI Score Calculator for UANSTEMI
-phase=CLAIM
-ts=2026-11-24T11:48:40.0711680+05:00

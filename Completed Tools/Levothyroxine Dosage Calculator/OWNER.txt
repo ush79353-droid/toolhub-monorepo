@@ -1,7 +1,0 @@
-﻿owner=released
-status=COMPLETE_APPROVED_EDUCATIONAL_SCOPE
-calculator=Levothyroxine Dosage Calculator
-mongoId=6af46f10a27d8d1d4e9901d9
-slug=levothyroxine-dosage-calculator
-componentKey=LevothyroxineDosageCalculator
-releasedAt=2026-11-22T03:50:00+05:00
