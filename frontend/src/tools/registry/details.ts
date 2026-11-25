@@ -940,6 +940,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/calorie/detail'),
   CalorieIntakeSimpleCalculator: () =>
     import('@/tools/calculators/calorie-intake-simple/detail'),
+  CaffeineCalculator: () =>
+    import('@/tools/calculators/caffeine/detail'),
   CaloriesBurnedCalculator: () =>
     import('@/tools/calculators/calories-burned/detail'),
   CallOptionCalculator: () => import('@/tools/calculators/call-option/detail'),

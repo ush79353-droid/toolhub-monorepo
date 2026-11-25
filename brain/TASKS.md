@@ -1,6 +1,7 @@
+- [x] Caffeine Calculator (caffeine-calculator) — Issued recovery: registry + Mongo activated 2026-11-25 (indexable false).
 - [x] CURB-65 Calculator (curb-65-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] Cigarette Calculator (cigarette-calculator) — developed + activated 2026-11-25 (indexable false).
-- [x] BUN Creatinine Ratio Calculator (un-creatinine-ratio-calculator) — developed + activated 2026-11-25 (indexable false).
+- [x] BUN Creatinine Ratio Calculator (bun-creatinine-ratio-calculator) — developed + activated 2026-11-25 (indexable false).
 # Shared Task Board (`TASKS.md`)
 
 > **Rules:** Keep Task IDs stable (`INFRA-*`, `BE-*`, `FE-*`, `TOOL-*`). Never delete or renumber IDs. Do not invent owners unless assigned.

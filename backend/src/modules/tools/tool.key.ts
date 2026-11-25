@@ -679,6 +679,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CashBackOrLowInterestCalculator',
   'CashFlowToDebtRatioCalculator',
   'ChildTaxCreditCalculator',
+  'CaffeineCalculator',
   'CigaretteCalculator',
   'ClomidOvulationCalculator',
   'CashRatioCalculator',
