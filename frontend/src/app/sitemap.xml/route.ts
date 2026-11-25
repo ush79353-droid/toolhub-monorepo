@@ -1,12 +1,12 @@
 import { sitemapIndex } from '@/lib/seo/sitemap-xml';
-import { getSitemapCatalog, sitemapFileIds, sitemapOrigin } from '@/server/seo/sitemap';
+import { catalogIndexFiles, getSitemapCatalog, sitemapOrigin } from '@/server/seo/sitemap';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET(): Promise<Response> {
   const origin = sitemapOrigin();
-  const ids = origin ? sitemapFileIds(await getSitemapCatalog()) : [];
-  const xml = sitemapIndex(ids.map((id) => `${origin}/sitemap/${id}.xml`));
+  const files = origin ? catalogIndexFiles(await getSitemapCatalog()) : [];
+  const xml = sitemapIndex(files.map((file) => `${origin}/sitemap/${file}`));
   return new Response(xml, {
     headers: { 'Content-Type': 'application/xml; charset=utf-8' },
   });

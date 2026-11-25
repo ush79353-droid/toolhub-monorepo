@@ -9,22 +9,48 @@ export interface PublicSitemapTool {
   publishedAt: string | null;
 }
 
-export interface PublicSitemapPillar {
+export interface PublicSitemapSubpillar {
   slug: string;
-  updatedAt: string | null;
-  categorySlug: string;
   tools: PublicSitemapTool[];
 }
 
+export interface PublicSitemapPillar {
+  slug: string;
+  tools: PublicSitemapTool[];
+  subpillars: PublicSitemapSubpillar[];
+}
+
 export interface PublicSitemapCategory {
+  slug: string;
+  tools: PublicSitemapTool[];
+  pillars: PublicSitemapPillar[];
+}
+
+export interface PublicSitemapHub {
   slug: string;
   updatedAt: string | null;
 }
 
 export interface PublicSitemap {
+  hubs: PublicSitemapHub[];
   categories: PublicSitemapCategory[];
-  pillars: PublicSitemapPillar[];
-  unassigned: PublicSitemapTool[];
+}
+
+export interface SitemapGroupNode {
+  id: string;
+  slug: string;
+  parentId: string | null;
+  sortOrder: number;
+  name: string;
+}
+
+export interface SitemapGroupTool {
+  slug: string;
+  componentKey: string;
+  publishedAt: string | null;
+  categoryId: string;
+  pillarId: string | null;
+  subPillarId: string | null;
 }
 
 function iso(value: Date | string | null | undefined): string | null {
@@ -33,8 +59,106 @@ function iso(value: Date | string | null | undefined): string | null {
   return Number.isNaN(date.getTime()) ? null : date.toISOString();
 }
 
-/** Active, indexable tools whose SEO draft is published, grouped by pillar. */
+function byCatalogOrder(a: SitemapGroupNode, b: SitemapGroupNode): number {
+  return a.sortOrder - b.sortOrder || a.name.localeCompare(b.name);
+}
+
+function bySlug(a: PublicSitemapTool, b: PublicSitemapTool): number {
+  return a.slug.localeCompare(b.slug);
+}
+
+/** Category, then pillar, then subpillar. A missing or inactive parent drops the tool one level up. */
+export function groupSitemapTools(
+  categories: SitemapGroupNode[],
+  pillars: SitemapGroupNode[],
+  subpillars: SitemapGroupNode[],
+  tools: SitemapGroupTool[]
+): PublicSitemapCategory[] {
+  const categoryIds = new Set(categories.map((category) => category.id));
+  const pillarsByCategory = new Map<string, SitemapGroupNode[]>();
+  const pillarIds = new Set<string>();
+  for (const pillar of pillars) {
+    if (!pillar.parentId || !categoryIds.has(pillar.parentId)) continue;
+    pillarIds.add(pillar.id);
+    const list = pillarsByCategory.get(pillar.parentId) ?? [];
+    list.push(pillar);
+    pillarsByCategory.set(pillar.parentId, list);
+  }
+
+  const subsByPillar = new Map<string, SitemapGroupNode[]>();
+  const subIds = new Set<string>();
+  for (const subpillar of subpillars) {
+    if (!subpillar.parentId || !pillarIds.has(subpillar.parentId)) continue;
+    subIds.add(subpillar.id);
+    const list = subsByPillar.get(subpillar.parentId) ?? [];
+    list.push(subpillar);
+    subsByPillar.set(subpillar.parentId, list);
+  }
+
+  const categoryTools = new Map<string, PublicSitemapTool[]>();
+  const pillarTools = new Map<string, PublicSitemapTool[]>();
+  const subTools = new Map<string, PublicSitemapTool[]>();
+  const pillarById = new Map(pillars.filter((pillar) => pillarIds.has(pillar.id)).map((pillar) => [pillar.id, pillar]));
+  const subById = new Map(
+    subpillars.filter((subpillar) => subIds.has(subpillar.id)).map((subpillar) => [subpillar.id, subpillar])
+  );
+
+  for (const tool of tools) {
+    if (!categoryIds.has(tool.categoryId) || !tool.slug) continue;
+    const row: PublicSitemapTool = {
+      slug: tool.slug,
+      componentKey: tool.componentKey,
+      publishedAt: tool.publishedAt,
+    };
+    const subpillar = tool.subPillarId ? subById.get(tool.subPillarId) : undefined;
+    const subPillarParent = subpillar?.parentId ? pillarById.get(subpillar.parentId) : undefined;
+    if (subpillar && subPillarParent?.parentId === tool.categoryId) {
+      const list = subTools.get(subpillar.id) ?? [];
+      list.push(row);
+      subTools.set(subpillar.id, list);
+      continue;
+    }
+    const pillar = tool.pillarId ? pillarById.get(tool.pillarId) : undefined;
+    if (pillar?.parentId === tool.categoryId) {
+      const list = pillarTools.get(pillar.id) ?? [];
+      list.push(row);
+      pillarTools.set(pillar.id, list);
+      continue;
+    }
+    const list = categoryTools.get(tool.categoryId) ?? [];
+    list.push(row);
+    categoryTools.set(tool.categoryId, list);
+  }
+
+  return [...categories].sort(byCatalogOrder).flatMap((category) => {
+    const loose = (categoryTools.get(category.id) ?? []).sort(bySlug);
+    const groupedPillars = (pillarsByCategory.get(category.id) ?? []).sort(byCatalogOrder).flatMap((pillar) => {
+      const direct = (pillarTools.get(pillar.id) ?? []).sort(bySlug);
+      const groupedSubs = (subsByPillar.get(pillar.id) ?? []).sort(byCatalogOrder).flatMap((subpillar) => {
+        const rows = (subTools.get(subpillar.id) ?? []).sort(bySlug);
+        if (rows.length === 0) return [];
+        return [{ slug: subpillar.slug, tools: rows }];
+      });
+      if (direct.length === 0 && groupedSubs.length === 0) return [];
+      return [{ slug: pillar.slug, tools: direct, subpillars: groupedSubs }];
+    });
+    if (loose.length === 0 && groupedPillars.length === 0) return [];
+    return [{ slug: category.slug, tools: loose, pillars: groupedPillars }];
+  });
+}
+
+/** Active category hubs, plus published tools nested category → pillar → subpillar. */
 export async function getPublicSitemap(): Promise<PublicSitemap> {
+  const categoryDocs = await Category.find({ kind: 'category', isActive: true })
+    .sort({ sortOrder: 1, name: 1 })
+    .select('slug updatedAt sortOrder name')
+    .lean<Array<{ _id: Types.ObjectId; slug: string; updatedAt?: Date; sortOrder?: number; name: string }>>();
+
+  const hubs = categoryDocs.map((category) => ({
+    slug: category.slug,
+    updatedAt: iso(category.updatedAt),
+  }));
+
   const published = await SeoDraft.aggregate<{
     _id: Types.ObjectId;
     publishedAt: Date | null;
@@ -53,19 +177,7 @@ export async function getPublicSitemap(): Promise<PublicSitemap> {
   const publishedAt = new Map(
     published.map((row) => [String(row._id), iso(row.publishedAt) ?? iso(row.updatedAt)])
   );
-
-  const categories = await Category.find({ kind: 'category', isActive: true })
-    .sort({ sortOrder: 1, name: 1 })
-    .select('slug updatedAt')
-    .lean<Array<{ _id: Types.ObjectId; slug: string; updatedAt?: Date }>>();
-
-  if (publishedAt.size === 0) {
-    return {
-      categories: categories.map((category) => ({ slug: category.slug, updatedAt: iso(category.updatedAt) })),
-      pillars: [],
-      unassigned: [],
-    };
-  }
+  if (publishedAt.size === 0) return { hubs, categories: [] };
 
   const tools = await Tool.find({
     _id: { $in: [...publishedAt.keys()].map((id) => new Types.ObjectId(id)) },
@@ -74,55 +186,70 @@ export async function getPublicSitemap(): Promise<PublicSitemap> {
     sitemapInclude: { $ne: false },
     componentKey: { $nin: [null, ''] },
   })
-    .select('slug pillar componentKey')
-    .lean<Array<{ _id: Types.ObjectId; slug: string; componentKey?: string; pillar?: Types.ObjectId | null }>>();
+    .select('slug category pillar subPillar componentKey')
+    .lean<
+      Array<{
+        _id: Types.ObjectId;
+        slug: string;
+        componentKey?: string;
+        category?: Types.ObjectId | null;
+        pillar?: Types.ObjectId | null;
+        subPillar?: Types.ObjectId | null;
+      }>
+    >();
 
-  const pillarIds = [...new Set(tools.flatMap((tool) => (tool.pillar ? [String(tool.pillar)] : [])))];
-  const pillarDocs = await Category.find({ _id: { $in: pillarIds }, kind: 'pillar' })
-    .select('slug updatedAt parent')
-    .lean<Array<{ _id: Types.ObjectId; slug: string; updatedAt?: Date; parent?: Types.ObjectId | null }>>();
-  const parentIds = pillarDocs.flatMap((pillar) => (pillar.parent ? [pillar.parent] : []));
-  const parents = await Category.find({ _id: { $in: parentIds }, kind: 'category', isActive: true })
-    .select('slug')
-    .lean<Array<{ _id: Types.ObjectId; slug: string }>>();
-  const parentSlug = new Map(parents.map((parent) => [String(parent._id), parent.slug]));
-  const pillarById = new Map(pillarDocs.map((pillar) => [String(pillar._id), pillar]));
+  const nodes = await Category.find({ kind: { $in: ['pillar', 'sub_pillar'] }, isActive: true })
+    .select('slug kind parent sortOrder name')
+    .lean<
+      Array<{
+        _id: Types.ObjectId;
+        slug: string;
+        kind: 'pillar' | 'sub_pillar';
+        parent?: Types.ObjectId | null;
+        sortOrder?: number;
+        name: string;
+      }>
+    >();
 
-  const grouped = new Map<string, PublicSitemapTool[]>();
-  const unassigned: PublicSitemapTool[] = [];
-  for (const tool of tools) {
-    const row: PublicSitemapTool = {
-      slug: tool.slug,
-      componentKey: tool.componentKey ?? '',
-      publishedAt: publishedAt.get(String(tool._id)) ?? null,
-    };
-    const pillar = tool.pillar ? pillarById.get(String(tool.pillar)) : undefined;
-    if (!pillar) {
-      unassigned.push(row);
-      continue;
-    }
-    const list = grouped.get(String(pillar._id)) ?? [];
-    list.push(row);
-    grouped.set(String(pillar._id), list);
-  }
-
-  const pillars = [...grouped.entries()]
-    .map(([id, rows]) => {
-      const pillar = pillarById.get(id);
-      return {
-        slug: pillar?.slug ?? id,
-        updatedAt: iso(pillar?.updatedAt),
-        categorySlug: pillar?.parent ? (parentSlug.get(String(pillar.parent)) ?? '') : '',
-        tools: rows.sort((a, b) => a.slug.localeCompare(b.slug)),
-      };
-    })
-    .sort((a, b) => a.slug.localeCompare(b.slug));
-
-  unassigned.sort((a, b) => a.slug.localeCompare(b.slug));
+  const toNode = (node: {
+    _id: Types.ObjectId;
+    slug: string;
+    parent?: Types.ObjectId | null;
+    sortOrder?: number;
+    name: string;
+  }): SitemapGroupNode => ({
+    id: String(node._id),
+    slug: node.slug,
+    parentId: node.parent ? String(node.parent) : null,
+    sortOrder: node.sortOrder ?? 0,
+    name: node.name,
+  });
 
   return {
-    categories: categories.map((category) => ({ slug: category.slug, updatedAt: iso(category.updatedAt) })),
-    pillars,
-    unassigned,
+    hubs,
+    categories: groupSitemapTools(
+      categoryDocs.map((category) => ({
+        id: String(category._id),
+        slug: category.slug,
+        parentId: null,
+        sortOrder: category.sortOrder ?? 0,
+        name: category.name,
+      })),
+      nodes.filter((node) => node.kind === 'pillar').map(toNode),
+      nodes.filter((node) => node.kind === 'sub_pillar').map(toNode),
+      tools.flatMap((tool) => {
+        if (!tool.category) return [];
+        return [
+          {
+            slug: tool.slug,
+            componentKey: tool.componentKey ?? '',
+            publishedAt: publishedAt.get(String(tool._id)) ?? null,
+            categoryId: String(tool.category),
+            pillarId: tool.pillar ? String(tool.pillar) : null,
+            subPillarId: tool.subPillar ? String(tool.subPillar) : null,
+          },
+        ];
+      })
+    ),
   };
 }

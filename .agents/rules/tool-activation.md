@@ -31,7 +31,7 @@ Rules:
 - Do not turn an admin-disabled, draft, private, or noindex tool back on unless the task says to — report those as activation blockers.
 - Do not activate missing, incomplete, or broken calculators.
 - An unregistered or empty `componentKey` stays off the public route (`notFound()`).
-- Do not add a tool slug to `sitemap.ts` or any sitemap file. `/sitemap.xml` is an index of pillar files. A tool URL appears only when `isActive`, `indexable`, `sitemapInclude`, a published SEO draft, and a registered component all hold.
+- Do not add a tool slug to a sitemap file. `/sitemap.xml` indexes static pages, then each category. Category files list tools with no pillar, then pillars. Pillar files list tools with no subpillar, then subpillars. A tool URL appears only when `isActive`, `indexable`, `sitemapInclude`, a published SEO draft, and a registered component all hold.
 
 ## Mongo assign — single reusable script (locked)
 

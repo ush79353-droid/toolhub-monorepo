@@ -15,10 +15,3 @@ export const STATIC_SITEMAP_PAGES = [
 ] as const;
 
 export const STATIC_SITEMAP_ID = 'static';
-export const UNASSIGNED_SITEMAP_ID = 'unassigned';
-
-/** Pillar slugs that would collide with reserved sitemap file names. */
-export function sitemapIdForPillar(slug: string): string {
-  if (slug === STATIC_SITEMAP_ID || slug === UNASSIGNED_SITEMAP_ID) return `pillar-${slug}`;
-  return slug;
-}

@@ -71,7 +71,7 @@ Browser  ──►  Next.js Server (RSC / Server Actions)  ──►  Express AP
 
 ## 5. Directory Structure Summary
 
-- `frontend/src/app/`: Route groups `(website)/`, `admin/` (auth pages + `(dashboard)/`), `embed/[slug]`, root `layout.tsx`, `globals.css`, `not-found.tsx`, `robots.ts`, `sitemap.ts`, `manifest.json`.
+- `frontend/src/app/`: Route groups `(website)/`, `admin/` (auth pages + `(dashboard)/`), `embed/[slug]`, root `layout.tsx`, `globals.css`, `not-found.tsx`, `robots.ts`, `sitemap.xml/route.ts`, `sitemap/[...path]/route.ts`, `manifest.json`.
 - `frontend/src/server/`: `server-only` API client (`api/client.ts`) and Server Actions (`auth/`, `categories/`, `media/`, `tools/`, `catalog/`, `seo/`).
 - `frontend/src/components/`: `ui/` primitives, `layout/`, `shared/`, `tools/`, `ads/`, `embed/`, `categories/`, `contact/`, `admin/`.
 - `frontend/src/tools/`: calculator modules, registry, and shared helpers. See §7. Placeholder category folders (`ai`, `audio`, `converters`, `developer`, `image`, `pdf`, `seo`, `video`) still contain only `.gitkeep`. `frontend/src/lib/sample-data.ts` is removed.

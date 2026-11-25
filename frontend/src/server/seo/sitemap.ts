@@ -1,9 +1,14 @@
 import 'server-only';
 import { cache } from 'react';
-import { STATIC_SITEMAP_ID, UNASSIGNED_SITEMAP_ID, sitemapIdForPillar } from '@/config/static-sitemap';
 import { serverApi } from '@/server/api/client';
 import { getPublicSiteOrigin } from '@/server/seo/public-site';
 import { isSiteIndexingEnabled } from '@/server/seo/site-indexing';
+import {
+  prepareSitemapCategories,
+  sitemapIndexFiles,
+  type RawSitemapCategory,
+  type SitemapCategoryNode,
+} from '@/lib/seo/sitemap-tree';
 import { isRegisteredComponentKey } from '@/tools/registry/keys';
 
 /** Production stays empty until indexing is on and the origin is public. Dev still renders localhost. */
@@ -15,39 +20,19 @@ export function sitemapOrigin(): string | null {
   return origin;
 }
 
-export interface SitemapTool {
+export interface SitemapHub {
   slug: string;
-  componentKey: string;
-  publishedAt: string | null;
-}
-
-export interface SitemapPillar {
-  slug: string;
-  sitemapId: string;
   updatedAt: string | null;
-  categorySlug: string;
-  tools: SitemapTool[];
 }
 
 export interface SitemapCatalog {
-  categories: { slug: string; updatedAt: string | null }[];
-  pillars: SitemapPillar[];
-  unassigned: SitemapTool[];
+  hubs: SitemapHub[];
+  categories: SitemapCategoryNode[];
 }
 
 interface SitemapPayload {
-  categories?: { slug: string; updatedAt: string | null }[];
-  pillars?: {
-    slug: string;
-    updatedAt: string | null;
-    categorySlug: string;
-    tools: SitemapTool[];
-  }[];
-  unassigned?: SitemapTool[];
-}
-
-function liveTools(tools: SitemapTool[]): SitemapTool[] {
-  return tools.filter((tool) => tool.slug && isRegisteredComponentKey(tool.componentKey));
+  hubs?: SitemapHub[];
+  categories?: RawSitemapCategory[];
 }
 
 export const getSitemapCatalog = cache(async (): Promise<SitemapCatalog> => {
@@ -57,31 +42,15 @@ export const getSitemapCatalog = cache(async (): Promise<SitemapCatalog> => {
       timeoutMs: 30_000,
     });
     const data = response.data ?? {};
-    const pillars = (data.pillars ?? []).flatMap((pillar) => {
-      const tools = liveTools(pillar.tools ?? []);
-      if (!pillar.slug || tools.length === 0) return [];
-      return [
-        {
-          slug: pillar.slug,
-          sitemapId: sitemapIdForPillar(pillar.slug),
-          updatedAt: pillar.updatedAt,
-          categorySlug: pillar.categorySlug,
-          tools,
-        },
-      ];
-    });
     return {
-      categories: data.categories ?? [],
-      pillars,
-      unassigned: liveTools(data.unassigned ?? []),
+      hubs: (data.hubs ?? []).filter((hub) => hub.slug),
+      categories: prepareSitemapCategories(data.categories ?? [], (tool) => isRegisteredComponentKey(tool.componentKey)),
     };
   } catch {
-    return { categories: [], pillars: [], unassigned: [] };
+    return { hubs: [], categories: [] };
   }
 });
 
-export function sitemapFileIds(catalog: SitemapCatalog): string[] {
-  const ids = [STATIC_SITEMAP_ID, ...catalog.pillars.map((pillar) => pillar.sitemapId)];
-  if (catalog.unassigned.length > 0) ids.push(UNASSIGNED_SITEMAP_ID);
-  return ids;
+export function catalogIndexFiles(catalog: SitemapCatalog): string[] {
+  return sitemapIndexFiles(catalog.categories);
 }
