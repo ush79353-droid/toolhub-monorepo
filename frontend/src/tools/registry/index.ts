@@ -6087,6 +6087,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LifoInventoryCalculator,
     })),
   ),
+  LightsCriteriaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/lights-criteria/LightsCriteriaCalculator'
+    ).then((mod) => ({
+      default: mod.LightsCriteriaCalculator,
+    })),
+  ),
   LongTermCareCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/long-term-care/LongTermCareCalculator'
