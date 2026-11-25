@@ -4634,11 +4634,12 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/perpetuity/PerpetuityCalculator').then((mod) => ({
       default: mod.PerpetuityCalculator,
     })),
+  ),
   PfRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/pf-ratio/PfRatioCalculator').then((mod) => ({
       default: mod.PfRatioCalculator,
     })),
-  ),  ),
+  ),
   PisaCalculator: lazyTool(() =>
     import('@/tools/calculators/pisa/PisaCalculator').then((mod) => ({
       default: mod.PisaCalculator,
