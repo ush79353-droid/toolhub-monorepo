@@ -1,7 +1,6 @@
 {
-    "progressPath":  "D:\\Project\\ToolHub\\Tools\\Progress\\CURB-65 Calculator",
-    "task":  "CURB-65 Calculator",
-    "agentId":  "cursor-agent-5098051a9bc9",
-    "slugLock":  "curb-65-calculator",
-    "sessionId":  "sess-continuous-20261125-002303"
+    "mission":  "issued-tools-recovery",
+    "startedAt":  "2026-11-25T19:06:25.4446334+05:00",
+    "agentId":  "cursor-agent-9b5e3f1260d7",
+    "sessionId":  "sess-issued-recovery-20261125-190622"
 }

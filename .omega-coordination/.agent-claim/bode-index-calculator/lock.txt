@@ -1,0 +1,6 @@
+﻿agentId=cursor-agent-9b5e3f1260d7
+sessionId=sess-issued-recovery-20261125-190622
+task=BODE Index Calculator
+phase=CLAIMED
+claimedAt=2026-11-25T19:30:33.4962719+05:00
+mongoId=6af46f12a27d8d1d4e9902e1

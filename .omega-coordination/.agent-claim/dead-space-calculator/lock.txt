@@ -1,4 +1,5 @@
-﻿DONE
-status=ISSUED
-agentId=cursor-agent-90395695-010538
-ts=2026-11-25T02:31:10.4232876+05:00
+﻿agentId=cursor-agent-9b5e3f1260d7
+sessionId=sess-issued-recovery-20261125-190622
+task=Dead Space Calculator
+phase=CLAIMED
+claimedAt=2026-11-25T19:20:46.0506245+05:00

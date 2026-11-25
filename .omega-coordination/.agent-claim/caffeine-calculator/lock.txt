@@ -1,4 +1,5 @@
-﻿DONE
-status=ISSUED
-agentId=cursor-agent-90395695-010538
-ts=2026-11-25T02:26:13.8308314+05:00
+﻿agentId=cursor-agent-9b5e3f1260d7
+sessionId=sess-issued-recovery-20261125-190622
+task=Caffeine Calculator
+phase=CLAIMED
+claimedAt=2026-11-25T19:07:00.3188389+05:00

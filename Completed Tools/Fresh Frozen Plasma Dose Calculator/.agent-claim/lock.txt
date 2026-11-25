@@ -1,0 +1,4 @@
+﻿agent=cursor-developer-b-ffp-dose-20261124
+claimedAt=done
+tool=Fresh Frozen Plasma Dose Calculator
+phase=Engine-done

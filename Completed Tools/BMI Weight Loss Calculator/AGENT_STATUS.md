@@ -1,0 +1,11 @@
+# AGENT_STATUS
+- status: COMPLETED
+- owner: cursor-composer-continuous-20261122-011351-24884
+- claimedAt: 2026-11-22T01:18:05+05:00
+- completedAt: 2026-11-22T01:42:17.4257829+05:00
+- calculator: BMI Weight Loss Calculator
+- slug: bmi-weight-loss-calculator
+- componentKey: BmiWeightLossCalculator
+- mongoId: 6af46f10a27d8d1d4e9901e6
+- commits: f8c829dd / c51c49e6+00fc6967 / (reg pending)
+- notes: Mongo activated isDeveloped+isActive; indexable false preserved. No FX.

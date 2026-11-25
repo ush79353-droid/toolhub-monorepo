@@ -1,0 +1,11 @@
+﻿# AGENT_STATUS
+- Status: COMPLETED
+- Owner: cursor-composer-continuous
+- Calculator: Ibuprofen Dosage Calculator
+- MongoID: 6af46f10a27d8d1d4e9901d6
+- Slug: ibuprofen-dosage-calculator
+- ComponentKey: IbuprofenDosageCalculator
+- Commits: d2d04130 / 546e5d65 (engine absorbed) / f4cc9658
+- Mongo: isActive true, isDeveloped true, indexable false
+- FX: none
+- Temporary files cleaned: YES

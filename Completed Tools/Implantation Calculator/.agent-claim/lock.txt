@@ -1,0 +1,3 @@
+agent=cursor-composer-continuous-20261123-223000
+claimedAt=2026-11-23T23:20:28.6394780+05:00
+tool=Implantation Calculator

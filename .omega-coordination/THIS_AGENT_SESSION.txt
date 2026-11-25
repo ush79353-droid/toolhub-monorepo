@@ -1,3 +1,4 @@
-﻿agentId=cursor-agent-90395695-010538
-sessionId=sess-continuous-20261125-010538
-task=Aa Gradient Calculator
+﻿agentId=cursor-agent-9b5e3f1260d7
+sessionId=sess-issued-recovery-20261125-190622
+mission=issued-tools-recovery
+startedAt=2026-11-25T19:06:25.6326353+05:00

@@ -1,28 +1,23 @@
 ﻿# OMEGA DEVELOPMENT TRACKER
 
-Last update: 2026-11-25T02:34:52.7700110+05:00
-Agent: cursor-agent-5098051a9bc9
+Last update: 2026-11-25T19:40:43.3394382+05:00
+Agent: cursor-agent-9b5e3f1260d7
 
 ## Session notes
 - Four-folder queue: Tools/{Pending,Progress,Completed,Issued}
-- Empty stubs without prompt+screenshot → Issued
-- Other agents concurrently developing contentful Pending items
+- Mission: continuous Issued tools recovery
+- Final report: brain/reports/OMEGA-ISSUED-TOOLS-RECOVERY-REPORT.md
 
 ## Completed this session (this agent)
 | Calculator | Mongo ID | Slug | componentKey | Commits |
 | --- | --- | --- | --- | --- |
-| BUN Creatinine Ratio Calculator | 6af46f12a27d8d1d4e9902cd | bun-creatinine-ratio-calculator | BunCreatinineRatioCalculator | df3445b1 / b11f1075 / 838eb350 |
-| Cigarette Calculator | 6af46f12a27d8d1d4e9902fa | cigarette-calculator | CigaretteCalculator | 5c406c9a / 9a261303 / 42df94e8 |
-| CURB-65 Calculator | 6af46f12a27d8d1d4e9902e2 | curb-65-calculator | Curb65Calculator | de3a673f / 957e2f57 / edd81cac |
-
-## Issued this session (this agent)
-| Calculator | Reason |
-| --- | --- |
-| BAI Calculator - Body Adiposity Index | Empty task folder |
-| BAC Calculator | Screenshot is EtG; catalog is BAC (reference mismatch) |
+| Caffeine Calculator | 6af46f12a27d8d1d4e9902f8 | caffeine-calculator | CaffeineCalculator | 083a7bfa / cfb3271b / f69321b3 |
+| Dead Space Calculator | 6af46f12a27d8d1d4e9902e3 | dead-space-calculator | DeadSpaceCalculator | ef724236 / 319f5a61 / 7b45d9b9 |
+| GFR (activation only) | 6af46f12a27d8d1d4e9902d3 | gfr-calculator-estimated-glomerular-filtration-rate | GfrEstimatedCalculator | f73004d6 / 9f7029ec / 0772a99d |
+| BODE Index Calculator | 6af46f12a27d8d1d4e9902e1 | bode-index-calculator | BodeIndexCalculator | 7ce2b885 / ba1620e4 / 2ec573a3 |
 
 ## Queue snapshot
 - Pending: 33
 - Progress: 3
-- Completed: 14
-- Issued: 64
+- Completed: 18
+- Issued: 60

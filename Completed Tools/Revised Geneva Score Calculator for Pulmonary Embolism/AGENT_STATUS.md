@@ -1,0 +1,10 @@
+﻿status=COMPLETED
+agent=cursor-composer-continuous-20261123-233300
+completedAt=2026-11-24T00:15:28.5868237+05:00
+commits=93a3ec71,1004684f,1e1b05a8
+mongo=6af46f10a27d8d1d4e99024b
+slug=revised-geneva-score-calculator-for-pulmonary-embolism
+componentKey=RevisedGenevaScoreCalculator
+isActive=true
+isDeveloped=true
+indexable=false

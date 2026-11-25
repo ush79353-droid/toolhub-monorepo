@@ -1,0 +1,3 @@
+agent=cursor-auto-bilal-20261123-234853-22288
+claimedAt=2026-11-23T23:48:54.1438058+05:00
+tool=RCRI Calculator

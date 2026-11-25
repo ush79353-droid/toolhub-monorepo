@@ -1,0 +1,11 @@
+﻿# AGENT_STATUS
+- Status: COMPLETED
+- Owner: cursor-composer-continuous-20261122-012030-12352
+- CompletedAt: 2026-11-22T01:49:13.7645831+05:00
+- Calculator: Breastfeeding Calorie Calculator
+- MongoID: 6af46f10a27d8d1d4e9901e9
+-Slug: breastfeeding-calorie-calculator
+- ComponentKey: BreastfeedingCalorieCalculator
+- Commits: a9a107df (UI absorbed) / dfe61271 / 0592928b
+- Mongo: isActive true, isDeveloped true, indexable false
+- FX: none
