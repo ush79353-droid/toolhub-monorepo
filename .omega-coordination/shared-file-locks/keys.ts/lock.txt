@@ -1,0 +1,3 @@
+﻿agentId=cursor-agent-4055206-002127
+status=released
+releasedAt=2026-11-25T23:52:20.5343532+05:00

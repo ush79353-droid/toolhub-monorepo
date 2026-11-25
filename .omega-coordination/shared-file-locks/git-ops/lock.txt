@@ -1,4 +1,3 @@
-agentId=cursor-agent-pending-vital-sub
-file=git-ops
-ts=2026-11-25T23:35:00+05:00
-task=Vital Capacity Calculator ADR-019 commits
+﻿agentId=cursor-agent-4055206-002127
+status=released
+releasedAt=2026-11-26T00:00:58.7885068+05:00

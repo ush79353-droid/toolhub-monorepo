@@ -1,23 +1,12 @@
 ﻿{
     "sessionId":  "sess-continuous-20261125-002127",
-    "heartbeat":  "2026-11-25T00:27:53.2562611+05:00",
+    "heartbeat":  "2026-11-26T00:04:26.9216127+05:00",
     "agentId":  "cursor-agent-4055206-002127",
-    "claimed":  "FENa Calculator (Fractional Excretion of Sodium)",
-    "status":  "active",
-    "lockName":  "fena-calculator-fractional-excretion-of-sodium",
-    "phase":  "CLAIMED",
-    "issuedEmpty":  [
-                        "Body Frame Size Calculator",
-                        "Body Shape Calculator",
-                        "Body Surface Area Calculator",
-                        "Body Type Calculator",
-                        "BRI Calculator — Body Roundness Index",
-                        "BSA Calculator – Body Surface Area",
-                        "Corrected Calcium Calculator",
-                        "Corrected Magnesium Calculator",
-                        "Draw Length Calculator",
-                        "Drip Rate Calculator",
-                        "Drops Per Minute Calculator",
-                        "Face Shape Calculator"
-                    ]
+    "issuedCount":  13,
+    "claimed":  null,
+    "status":  "idle",
+    "completed":  [
+                      "FENa Calculator (Fractional Excretion of Sodium)"
+                  ],
+    "phase":  "QUEUE_EMPTY_OTHER_AGENTS_ACTIVE"
 }

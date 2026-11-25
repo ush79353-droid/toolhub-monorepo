@@ -2,6 +2,12 @@
   "agentId": "cursor-agent-worker-qpqs-7860",
   "sessionId": "sess-qpqs-7860-20261125",
   "mission": "qpqs-calculator-development",
-  "phase": "IN_PROGRESS",
-  "startedAt": "2026-11-25T22:43:00+05:00"
+  "phase": "COMPLETED",
+  "startedAt": "2026-11-25T22:43:00+05:00",
+  "completedAt": "2026-11-25T23:40:00+05:00",
+  "commits": {
+    "ui": "9f3e54ed",
+    "engine": "1a223eeb",
+    "registration": "cd397ba5"
+  }
 }
