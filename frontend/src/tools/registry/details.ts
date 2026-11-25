@@ -308,6 +308,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/rent-or-buy/detail'),
   RmdCalculator: () => import('@/tools/calculators/rmd/detail'),
   RrefCalculator: () => import('@/tools/calculators/rref/detail'),
+  RsbiCalculator: () => import('@/tools/calculators/rsbi/detail'),
   ArmMortgageCalculator: () => import('@/tools/calculators/arm-mortgage/detail'),
   HundredDayCalculator: () => import('@/tools/calculators/hundred-day/detail'),
   SalaryWithOvertimeCalculator: () =>
