@@ -9,6 +9,7 @@ import {
   type SeoContent,
 } from './content';
 import { buildPublishPatch } from './publish-patch';
+import { kickCampaign } from './pipeline';
 import { assertSeoConfigured, enqueueSeoStep, type SeoQueueName } from './queue';
 import { SeoCampaign, SeoDraft, type ISeoCampaign, type ISeoDraft, type SeoDraftStatus } from './seo.model';
 import { validateDraft, type DraftValidation } from './validate-draft';
@@ -260,6 +261,7 @@ export async function createCampaign(input: { name: string; toolIds: string[] },
 
 export async function getCampaign(id: string) {
   const campaign = await mustCampaign(id);
+  await kickCampaign(campaign._id);
   const drafts = await SeoDraft.find({ campaignId: campaign._id }).sort({ 'snapshot.name': 1 });
   return { campaign: campaignDto(campaign, drafts.length), drafts: drafts.map(draftListDto) };
 }
@@ -316,6 +318,7 @@ export async function approveDraft(id: string, adminId: string) {
   draft.reviewerId = requireId(adminId, 'Admin');
   draft.reviewedAt = new Date();
   await draft.save();
+  await kickCampaign(draft.campaignId);
   const campaign = await mustCampaign(String(draft.campaignId));
   return draftDetailDto(draft, campaign);
 }
@@ -370,6 +373,7 @@ export async function publishDraft(id: string) {
   draft.validation = validation;
   await applyPublish(draft, parsed.data);
   await refreshCampaign(draft.campaignId);
+  await kickCampaign(draft.campaignId);
   const campaign = await mustCampaign(String(draft.campaignId));
   return { draft: draftDetailDto(draft, campaign), slug: draft.snapshot.slug };
 }

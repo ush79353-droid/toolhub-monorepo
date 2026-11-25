@@ -318,17 +318,10 @@ export async function claimCampaignTurn(draftId: string): Promise<boolean> {
   return Boolean(stole);
 }
 
-/** Clears this draft's turn and starts the next tool that has not been researched yet. */
-export async function releaseCampaignTurn(campaignId: Types.ObjectId, draftId: Types.ObjectId): Promise<void> {
-  const released = await SeoCampaign.findOneAndUpdate(
-    { _id: campaignId, activeDraftId: draftId },
-    { $set: { activeDraftId: null } }
-  );
-  if (!released) return;
-  const running = await SeoDraft.exists({
-    campaignId,
-    status: { $in: ['researching', 'serp', 'generating', 'validating'] },
-  });
+const BUSY = new Set(['researching', 'serp', 'generating', 'validating']);
+
+async function startNextQueued(campaignId: Types.ObjectId): Promise<void> {
+  const running = await SeoDraft.exists({ campaignId, status: { $in: [...BUSY] } });
   if (running) return;
   const next = await SeoDraft.findOne({
     campaignId,
@@ -337,11 +330,40 @@ export async function releaseCampaignTurn(campaignId: Types.ObjectId, draftId: T
   }).sort({ _id: 1 });
   if (!next) return;
   const reserved = await SeoCampaign.findOneAndUpdate(
-    { _id: campaignId, activeDraftId: null },
+    { _id: campaignId, $or: [{ activeDraftId: null }, { activeDraftId: next._id }] },
     { $set: { activeDraftId: next._id } }
   );
   if (!reserved) return;
+  if (reserved.activeDraftId && String(reserved.activeDraftId) === String(next._id)) return;
   await enqueueSeoStep('seo-inventory', String(next._id));
+}
+
+/** Clears this draft's turn and starts the next tool that has not been researched yet. */
+export async function releaseCampaignTurn(campaignId: Types.ObjectId, draftId: Types.ObjectId): Promise<void> {
+  const released = await SeoCampaign.findOneAndUpdate(
+    { _id: campaignId, activeDraftId: draftId },
+    { $set: { activeDraftId: null } }
+  );
+  if (!released) return;
+  await startNextQueued(campaignId);
+}
+
+/** A published, approved, or missing holder must not keep the rest of the campaign queued. */
+export async function kickCampaign(campaignId: Types.ObjectId): Promise<void> {
+  const campaign = await SeoCampaign.findById(campaignId).select('activeDraftId');
+  if (!campaign) return;
+  if (!campaign.activeDraftId) {
+    await startNextQueued(campaignId);
+    return;
+  }
+  const holder = await SeoDraft.findById(campaign.activeDraftId).select('status');
+  if (holder && (BUSY.has(holder.status) || holder.status === 'queued')) return;
+  const cleared = await SeoCampaign.findOneAndUpdate(
+    { _id: campaignId, activeDraftId: campaign.activeDraftId },
+    { $set: { activeDraftId: null } }
+  );
+  if (!cleared) return;
+  await startNextQueued(campaignId);
 }
 
 export async function markSeoDraftFailed(draftId: string, step: string, message: string): Promise<void> {
