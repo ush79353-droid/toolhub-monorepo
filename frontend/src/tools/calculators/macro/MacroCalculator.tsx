@@ -92,7 +92,7 @@ export function MacroCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: 'Macro Calculator',
           url: pageUrl,
         });

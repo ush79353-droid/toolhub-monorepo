@@ -92,7 +92,7 @@ function approx(a: number, b: number, eps = 1e-9): boolean {
     controlPtText: '12',
     isiText: '1.300',
   });
-  assert(!v.errors.patientPtText && !v.errors.controlPtText && !v.errors.isiText);
+  assert(!v.errors.patientPtText && !v.errors.controlPtText && !v.errors.isiText, 'valid complete input');
   assert(v.result?.inr != null, 'computes when complete');
   const expected = roundInr(Math.pow(30 / 12, 1.3));
   assert(v.result?.inr === expected, `INR ${v.result?.inr} vs ${expected}`);

@@ -95,7 +95,7 @@ export function MentzerIndexCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: 'Mentzer Index Calculator',
           url: pageUrl,
         });

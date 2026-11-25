@@ -97,7 +97,7 @@ export function HydroxychloroquineDoseCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: 'Hydroxychloroquine Dose Calculator',
           url: pageUrl,
         });

@@ -148,7 +148,7 @@ function both(
   map: Partial<Record<LifeStageId, number>> & Record<string, number>,
 ): Record<LifeStageId, number> {
   const out = {} as Record<LifeStageId, number>;
-  for (const s of STAGES) out[s] = map[s];
+  for (const s of STAGES) out[s] = map[s] ?? 0;
   return out;
 }
 

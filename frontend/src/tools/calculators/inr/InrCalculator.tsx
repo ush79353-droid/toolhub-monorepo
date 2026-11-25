@@ -95,7 +95,7 @@ export function InrCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: 'INR Calculator',
           url: pageUrl,
         });

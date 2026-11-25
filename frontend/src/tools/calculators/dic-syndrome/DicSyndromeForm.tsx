@@ -8,7 +8,13 @@ import type {
   FibrinMarkerBand,
   FibrinogenBand,
   PlateletBand,
-  PtBand,
+  PtProlongationBand,
+} from './types';
+import {
+  FIBRIN_MARKER_OPTIONS,
+  FIBRINOGEN_OPTIONS,
+  PLATELET_OPTIONS,
+  PT_PROLONGATION_OPTIONS,
 } from './types';
 
 const legendClass = 'text-[13px] font-medium text-accent';
@@ -21,7 +27,7 @@ function RadioGroup<T extends string>({
 }: {
   name: string;
   value: T;
-  options: { value: T; label: string }[];
+  options: readonly { value: T; label: string }[];
   onChange: (v: T) => void;
 }) {
   return (
@@ -52,13 +58,9 @@ export function DicSyndromeForm({ input, result, onChange }: Props) {
         <legend className={legendClass}>Platelet count</legend>
         <RadioGroup<PlateletBand>
           name="platelets"
-          value={input.plateletBand}
-          onChange={(v) => set({ plateletBand: v })}
-          options={[
-            { value: 'gt100k', label: '>100,000/µL' },
-            { value: '50to100k', label: '50,000–100,000/µL' },
-            { value: 'lt50k', label: '<50,000/µL' },
-          ]}
+          value={input.platelets}
+          onChange={(v) => set({ platelets: v })}
+          options={PLATELET_OPTIONS}
         />
       </fieldset>
 
@@ -69,27 +71,19 @@ export function DicSyndromeForm({ input, result, onChange }: Props) {
         </legend>
         <RadioGroup<FibrinMarkerBand>
           name="fibrin"
-          value={input.fibrinMarkerBand}
-          onChange={(v) => set({ fibrinMarkerBand: v })}
-          options={[
-            { value: 'noChange', label: 'No change' },
-            { value: 'moderate', label: 'Moderate rise' },
-            { value: 'strong', label: 'Strong rise' },
-          ]}
+          value={input.fibrinMarkers}
+          onChange={(v) => set({ fibrinMarkers: v })}
+          options={FIBRIN_MARKER_OPTIONS}
         />
       </fieldset>
 
       <fieldset className="space-y-2">
         <legend className={legendClass}>Prothrombin time (prolongation above control)</legend>
-        <RadioGroup<PtBand>
+        <RadioGroup<PtProlongationBand>
           name="pt"
-          value={input.ptBand}
-          onChange={(v) => set({ ptBand: v })}
-          options={[
-            { value: 'lt3s', label: '<3 seconds' },
-            { value: '3to6s', label: '3–6 seconds' },
-            { value: 'gt6s', label: '>6 seconds' },
-          ]}
+          value={input.ptProlongation}
+          onChange={(v) => set({ ptProlongation: v })}
+          options={PT_PROLONGATION_OPTIONS}
         />
       </fieldset>
 
@@ -97,12 +91,9 @@ export function DicSyndromeForm({ input, result, onChange }: Props) {
         <legend className={legendClass}>Fibrinogen level</legend>
         <RadioGroup<FibrinogenBand>
           name="fibrinogen"
-          value={input.fibrinogenBand}
-          onChange={(v) => set({ fibrinogenBand: v })}
-          options={[
-            { value: 'gte1gL', label: '≥1 g/L' },
-            { value: 'lt1gL', label: '<1 g/L' },
-          ]}
+          value={input.fibrinogen}
+          onChange={(v) => set({ fibrinogen: v })}
+          options={FIBRINOGEN_OPTIONS}
         />
       </fieldset>
 

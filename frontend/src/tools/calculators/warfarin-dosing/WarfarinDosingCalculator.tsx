@@ -95,7 +95,7 @@ export function WarfarinDosingCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: 'Warfarin Dosing Calculator',
           url: pageUrl,
         });

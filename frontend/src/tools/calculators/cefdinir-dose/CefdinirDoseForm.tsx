@@ -87,7 +87,7 @@ export function CefdinirDoseForm({ input, errors, result, onChange }: Props) {
           <label className={labelClass} htmlFor="cefdinir-weight">
             Body weight
           </label>
-          <motionRow>
+          <MotionRow>
             <input
               id="cefdinir-weight"
               type="text"
@@ -99,7 +99,7 @@ export function CefdinirDoseForm({ input, errors, result, onChange }: Props) {
               autoComplete="off"
             />
             <span className="shrink-0 text-xs text-muted-foreground">kg</span>
-          </motionRow>
+          </MotionRow>
           {errors.weightKgText ? (
             <p className="text-xs text-rose-600">{errors.weightKgText}</p>
           ) : (
@@ -180,6 +180,6 @@ export function CefdinirDoseForm({ input, errors, result, onChange }: Props) {
   );
 }
 
-function motionRow({ children }: { children: ReactNode }) {
+function MotionRow({ children }: { children: ReactNode }) {
   return <div className="flex items-center gap-2">{children}</div>;
 }

@@ -1,46 +1,60 @@
 'use client';
 
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
-import { DEFAULT_LDH_ULN_U_PER_L } from './calculation';
 import type {
   DlbclPrognosisFieldErrors,
   DlbclPrognosisInput,
   DlbclPrognosisResult,
+  EcogBand,
+  ExtranodalBand,
+  LdhBand,
+  StageBand,
+} from './types';
+import {
+  ECOG_OPTIONS,
+  EXTRANODAL_OPTIONS,
+  LDH_OPTIONS,
+  STAGE_OPTIONS,
 } from './types';
 
-const legendClass = 'mb-2 text-[13px] font-medium text-accent';
+const labelClass = 'mb-2 text-[13px] font-medium text-accent';
+const inputClass =
+  'h-11 w-full min-w-0 bg-transparent px-3 text-sm tabular-nums text-accent outline-none';
+const unitFixed = 'shrink-0 pr-3 font-mono text-xs text-muted-foreground';
 
-function BinaryRadio({
+function RadioGroup<T extends string>({
+  legend,
   name,
-  lowLabel,
-  highLabel,
-  highSelected,
-  onSelectLow,
-  onSelectHigh,
+  value,
+  options,
+  onChange,
   tooltip,
 }: {
+  legend: string;
   name: string;
-  lowLabel: string;
-  highLabel: string;
-  highSelected: boolean;
-  onSelectLow: () => void;
-  onSelectHigh: () => void;
+  value: T;
+  options: readonly { value: T; label: string }[];
+  onChange: (v: T) => void;
   tooltip?: string;
 }) {
   return (
     <fieldset className="space-y-2">
-      <legend className={`${legendClass} flex items-center gap-1.5`}>
-        {name}
+      <legend className={`${labelClass} flex items-center gap-1.5`}>
+        {legend}
         {tooltip ? <InfoTooltip text={tooltip} /> : null}
       </legend>
-      <label className="flex cursor-pointer items-center gap-2 text-sm text-accent">
-        <input type="radio" className="h-4 w-4 accent-primary" checked={!highSelected} onChange={onSelectLow} />
-        {lowLabel}
-      </label>
-      <label className="flex cursor-pointer items-center gap-2 text-sm text-accent">
-        <input type="radio" className="h-4 w-4 accent-primary" checked={highSelected} onChange={onSelectHigh} />
-        {highLabel}
-      </label>
+      {options.map((opt) => (
+        <label key={opt.value} className="flex cursor-pointer items-center gap-2 text-sm text-accent">
+          <input
+            type="radio"
+            name={name}
+            className="h-4 w-4 accent-primary"
+            checked={value === opt.value}
+            onChange={() => onChange(opt.value)}
+          />
+          {opt.label}
+        </label>
+      ))}
     </fieldset>
   );
 }
@@ -52,27 +66,74 @@ interface Props {
   onChange: (input: DlbclPrognosisInput) => void;
 }
 
-export function DlbclPrognosisForm({ input, result, onChange }: Props) {
+export function DlbclPrognosisForm({ input, errors, result, onChange }: Props) {
   const set = (patch: Partial<DlbclPrognosisInput>) => onChange({ ...input, ...patch });
 
   return (
     <form onSubmit={(e) => e.preventDefault()} className="space-y-4" noValidate autoComplete="off">
-      <BinaryRadio name="Age" lowLabel="< 60 years" highLabel="> 60 years" highSelected={input.ageOver60} onSelectLow={() => set({ ageOver60: false })} onSelectHigh={() => set({ ageOver60: true })} />
-      <BinaryRadio name="Stage" lowLabel="I–II" highLabel="III–IV" highSelected={input.stageThreeFour} onSelectLow={() => set({ stageThreeFour: false })} onSelectHigh={() => set({ stageThreeFour: true })} tooltip="Ann Arbor stage grouping." />
-      <BinaryRadio name="Extranodal site" lowLabel="0 or 1" highLabel="> 1" highSelected={input.extranodalOverOne} onSelectLow={() => set({ extranodalOverOne: false })} onSelectHigh={() => set({ extranodalOverOne: true })} />
-      <BinaryRadio
-        name="LDH"
-        lowLabel={`Normal (≤ ${DEFAULT_LDH_ULN_U_PER_L} U/L)`}
-        highLabel={`Elevated (> ${DEFAULT_LDH_ULN_U_PER_L} U/L)`}
-        highSelected={input.ldhElevated}
-        onSelectLow={() => set({ ldhElevated: false })}
-        onSelectHigh={() => set({ ldhElevated: true })}
+      <div>
+        <label className={labelClass} htmlFor="dlbcl-age">
+          Age in years
+        </label>
+        <div
+          className={`flex h-11 items-center rounded-lg border ${
+            errors.ageYearsText ? 'border-rose-400' : 'border-border'
+          }`}
+        >
+          <input
+            id="dlbcl-age"
+            type="text"
+            inputMode="decimal"
+            className={inputClass}
+            value={input.ageYearsText}
+            onChange={(e) => set({ ageYearsText: e.target.value })}
+            autoComplete="off"
+          />
+          <span className={unitFixed}>yrs</span>
+        </div>
+        {errors.ageYearsText ? (
+          <p className="mt-1 text-xs text-rose-600">{errors.ageYearsText}</p>
+        ) : (
+          <p className="mt-1 text-xs text-muted-foreground">R-IPI: age &gt; 60 years scores 1 point.</p>
+        )}
+      </div>
+
+      <RadioGroup<StageBand>
+        legend="Stage"
+        name="stage"
+        value={input.stage}
+        options={STAGE_OPTIONS}
+        onChange={(v) => set({ stage: v })}
+        tooltip="Ann Arbor stage grouping."
+      />
+
+      <RadioGroup<ExtranodalBand>
+        legend="Extranodal sites"
+        name="extranodal"
+        value={input.extranodalSites}
+        options={EXTRANODAL_OPTIONS}
+        onChange={(v) => set({ extranodalSites: v })}
+      />
+
+      <RadioGroup<LdhBand>
+        legend="LDH"
+        name="ldh"
+        value={input.ldh}
+        options={LDH_OPTIONS}
+        onChange={(v) => set({ ldh: v })}
         tooltip="Use your laboratory ULN when available."
       />
-      <BinaryRadio name="ECOG / Zubrod performance status" lowLabel="0–1" highLabel="2–4" highSelected={input.ecogTwoToFour} onSelectLow={() => set({ ecogTwoToFour: false })} onSelectHigh={() => set({ ecogTwoToFour: true })} />
+
+      <RadioGroup<EcogBand>
+        legend="ECOG / Zubrod performance status"
+        name="ecog"
+        value={input.ecog}
+        options={ECOG_OPTIONS}
+        onChange={(v) => set({ ecog: v })}
+      />
 
       <div>
-        <div className={legendClass}>Total points</div>
+        <div className={labelClass}>Total points</div>
         <div className="flex h-11 items-center rounded-lg border border-border bg-muted/25 px-3 text-sm font-semibold tabular-nums text-primary" aria-live="polite">
           {result?.formattedScore ?? '0'}
         </div>
@@ -80,9 +141,15 @@ export function DlbclPrognosisForm({ input, result, onChange }: Props) {
 
       {result ? (
         <div className="space-y-2 rounded-lg border border-border bg-muted/15 p-3 text-xs text-muted-foreground">
-          <p>Estimated 4-year progression-free survival: {result.progressionFreeSurvivalPercent}%</p>
-          <p>Overall survival: {result.overallSurvivalPercent}%</p>
-          <p className="font-medium text-accent">{result.prognosisLabel}</p>
+          {result.fourYearProgressionFreeSurvivalPercent != null ? (
+            <p>
+              Estimated 4-year progression-free survival: {result.fourYearProgressionFreeSurvivalPercent}%
+            </p>
+          ) : null}
+          {result.fourYearOverallSurvivalPercent != null ? (
+            <p>Estimated 4-year overall survival: {result.fourYearOverallSurvivalPercent}%</p>
+          ) : null}
+          <p className="font-medium text-accent">{result.riskGroupLabel}</p>
         </div>
       ) : null}
     </form>

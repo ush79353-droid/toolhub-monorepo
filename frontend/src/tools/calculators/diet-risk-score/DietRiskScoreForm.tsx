@@ -1,6 +1,12 @@
 'use client';
 
-import type { DietFrequency, DietRiskItemKey, DietRiskScoreFieldErrors, DietRiskScoreInput, DietRiskScoreResult } from './types';
+import type {
+  DietFrequency,
+  DietRiskItemId,
+  DietRiskScoreFieldErrors,
+  DietRiskScoreInput,
+  DietRiskScoreResult,
+} from './types';
 import { DIET_RISK_ITEMS, FREQUENCY_OPTIONS } from './types';
 
 const legendClass = 'text-[13px] font-medium text-accent';
@@ -13,8 +19,8 @@ interface Props {
 }
 
 export function DietRiskScoreForm({ input, errors, result, onChange }: Props) {
-  const setItem = (key: DietRiskItemKey, frequency: DietFrequency) =>
-    onChange({ ...input, [key]: frequency });
+  const setItem = (id: DietRiskItemId, frequency: DietFrequency) =>
+    onChange({ ...input, [id]: frequency });
 
   const unanswered = new Set(result?.unansweredItems ?? []);
 
@@ -25,8 +31,8 @@ export function DietRiskScoreForm({ input, errors, result, onChange }: Props) {
       </p>
       {DIET_RISK_ITEMS.map((item) => (
         <fieldset
-          key={item.key}
-          className={`space-y-2 rounded-lg border p-3 ${unanswered.has(item.key) ? 'border-amber-300 bg-amber-50/40' : 'border-border'}`}
+          key={item.id}
+          className={`space-y-2 rounded-lg border p-3 ${unanswered.has(item.id) ? 'border-amber-300 bg-amber-50/40' : 'border-border'}`}
         >
           <legend className={legendClass}>{item.label}</legend>
           <div className="flex flex-wrap gap-2">
@@ -34,10 +40,10 @@ export function DietRiskScoreForm({ input, errors, result, onChange }: Props) {
               <label key={opt.value} className="flex cursor-pointer items-center gap-1.5 rounded-md border border-border bg-white px-2 py-1.5 text-xs text-accent">
                 <input
                   type="radio"
-                  name={item.key}
+                  name={item.id}
                   className="h-3.5 w-3.5 accent-primary"
-                  checked={input[item.key] === opt.value}
-                  onChange={() => setItem(item.key, opt.value)}
+                  checked={input[item.id] === opt.value}
+                  onChange={() => setItem(item.id, opt.value)}
                 />
                 {opt.label}
               </label>
@@ -52,7 +58,9 @@ export function DietRiskScoreForm({ input, errors, result, onChange }: Props) {
           {result?.complete ? result.formattedScore : ''}
         </div>
         <p className="mt-2 text-xs text-muted-foreground">
-          {result?.complete ? result.riskCategory : result?.promptMessage ?? errors.form}
+          {result?.complete
+            ? result.riskLabel
+            : result?.statusDetail ?? errors.form}
         </p>
       </div>
     </form>

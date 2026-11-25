@@ -104,7 +104,7 @@ export function AdrenalWashoutCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: summary,
           url: pageUrl,
         });

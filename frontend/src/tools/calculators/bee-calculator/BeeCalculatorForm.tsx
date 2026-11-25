@@ -137,14 +137,14 @@ export function BeeCalculatorForm({ input, errors, result, onChange }: Props) {
           </div>
         </Field>
         <Field label="Total energy expenditure" tooltip="TEE = BEE × activity × stress × temperature.">
-          <motionReadOnly value={result?.teeDisplay ?? ''} unit={input.energyUnit} />
+          <MotionReadOnly value={result?.teeDisplay ?? ''} unit={input.energyUnit} />
         </Field>
       </section>
     </form>
   );
 }
 
-function motionReadOnly({ value, unit }: { value: string; unit: EnergyUnit }) {
+function MotionReadOnly({ value, unit }: { value: string; unit: EnergyUnit }) {
   return (
     <div className="flex gap-2">
       <input readOnly className={`${inputClass} bg-sky-50/60`} value={value} />
