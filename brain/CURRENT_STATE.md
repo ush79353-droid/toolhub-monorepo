@@ -7,6 +7,7 @@
 
 ## 1. Snapshot Summary
 
+- **BODE Index Calculator (/tools/bode-index-calculator):** Live educational COPD BODE score (componentKey: 'BodeIndexCalculator', catalog 6af46f12a27d8d1d4e9902e1). Celli NEJM 2004 BMI/FEV1/walk/mMRC points 0–10; unanswered BMI ≠ ≤21. **No FX**. Issued recovery developed + activated; **indexable** left false. Example: max bands → **10**; walk **350** vs **349** m → 0 vs 1 walk point.
 - **Dead Space Calculator (/tools/dead-space-calculator):** Live educational Bohr physiological dead space (componentKey: 'DeadSpaceCalculator', catalog 6af46f12a27d8d1d4e9902e3). Screenshot-first PACO₂/PECO₂/VT → VD; mL|L. **No FX**. Issued recovery: UI+engine reused; registry + Mongo `--set-active`; **indexable** left false. Example: 40/28 mmHg @ 500 mL → **150** mL.
 - **Caffeine Calculator (/tools/caffeine-calculator):** Live educational daily intake worksheet (componentKey: 'CaffeineCalculator', catalog 6af46f12a27d8d1d4e9902f8). Screenshot-first drink×count sum; adult/pregnant/teen/child upper-limit references (not goals). **No FX**. Issued recovery: UI+engine reused; registry + Mongo `--set-active`; **indexable** left false. Example: 2× filter coffee mugs → **280** mg vs adult **400**.
 - **CURB-65 Calculator (/tools/curb-65-calculator):** Live client-side CAP score (componentKey: 'Curb65Calculator', catalog 6af46f12a27d8d1d4e9902e2). Lim et al. criteria; BUN↔urea; SBP&lt;90 or DBP≤60 once; age ≥65. **No FX**. Activated; **indexable** left false.

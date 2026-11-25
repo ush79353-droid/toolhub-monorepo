@@ -866,6 +866,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/blood-type/detail'),
   BloodVolumeCalculator: () =>
     import('@/tools/calculators/blood-volume/detail'),
+  BodeIndexCalculator: () =>
+    import('@/tools/calculators/bode-index/detail'),
   IbuprofenDosageCalculator: () =>
     import('@/tools/calculators/ibuprofen-dosage/detail'),
   IchVolumeCalculator: () =>
