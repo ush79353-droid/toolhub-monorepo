@@ -42,7 +42,7 @@ export default function SeoCampaignDetailPage() {
         title={campaign?.name || 'SEO campaign'}
         description={
           campaign
-            ? `${campaign.draftCount} calculators · DataForSEO location ${campaign.locationCode} (${campaign.languageCode}). Volumes are country-specific.`
+            ? `${campaign.draftCount} calculators, one at a time. DataForSEO location ${campaign.locationCode} (${campaign.languageCode}). Volumes are country-specific.`
             : 'Loading campaign'
         }
       />

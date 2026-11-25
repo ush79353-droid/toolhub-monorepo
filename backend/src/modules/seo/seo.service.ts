@@ -247,8 +247,10 @@ export async function createCampaign(input: { name: string; toolIds: string[] },
       status: 'queued' as const,
     }))
   );
-  for (const draft of drafts) {
-    await enqueueSeoStep('seo-inventory', draft.id);
+  const first = drafts[0];
+  if (first) {
+    await SeoCampaign.updateOne({ _id: campaign._id }, { $set: { activeDraftId: first._id } });
+    await enqueueSeoStep('seo-inventory', String(first._id));
   }
   return {
     campaign: campaignDto(campaign, drafts.length),

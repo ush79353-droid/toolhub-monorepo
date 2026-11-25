@@ -19,6 +19,7 @@ export interface SuggestedLink {
 }
 
 const BRAND_TOKENS = ['calculator.net', 'nerdwallet', 'bankrate', 'investopedia', 'wikipedia', 'omnicalculator'];
+const STOP_TOKENS = new Set(['calculator', 'calculators', 'the', 'and', 'for', 'with', 'from', 'vs', 'per']);
 
 function volume(fact: KeywordFact): number {
   return fact.searchVolume ?? 0;
@@ -31,22 +32,61 @@ function usable(facts: readonly KeywordFact[]): KeywordFact[] {
   });
 }
 
-/** Highest-volume non-brand idea that shares a tool-name token. Falls back to the full list. */
-export function choosePrimaryKeyword(facts: readonly KeywordFact[], toolName: string): KeywordFact | null {
-  const pool = usable(facts);
-  const ranked = [...(pool.length > 0 ? pool : facts)].sort((a, b) => volume(b) - volume(a));
-  if (ranked.length === 0) return null;
+function tokensOf(toolName: string): string[] {
   const tokens = toolName
     .toLowerCase()
     .split(/[^a-z0-9]+/)
-    .filter((token) => token.length > 3 && token !== 'calculator');
-  return ranked.find((fact) => tokens.some((token) => fact.keyword.toLowerCase().includes(token))) ?? ranked[0];
+    .filter((token) => token.length >= 2 && !STOP_TOKENS.has(token));
+  return [...new Set(tokens)];
 }
 
-export function chooseSecondaryKeywords(facts: readonly KeywordFact[], primary: string): KeywordFact[] {
-  const pool = usable(facts);
-  return [...(pool.length > 0 ? pool : facts)]
-    .filter((fact) => fact.keyword.toLowerCase() !== primary.toLowerCase())
+function wordsOf(keyword: string): Set<string> {
+  return new Set(keyword.toLowerCase().split(/[^a-z0-9]+/).filter((word) => word.length > 0));
+}
+
+/** Tokens the keyword must contain as whole words. Numbers always count. Words of 4+ letters count when any exist. */
+function requiredTokens(toolName: string): string[] {
+  const tokens = tokensOf(toolName);
+  const numbers = tokens.filter((token) => /^\d+$/.test(token));
+  const specific = tokens.filter((token) => token.length >= 4);
+  const must = specific.length > 0 ? specific : tokens;
+  return [...new Set([...numbers, ...must])];
+}
+
+function matchesTool(keyword: string, toolName: string): boolean {
+  const must = requiredTokens(toolName);
+  if (must.length === 0) return false;
+  const words = wordsOf(keyword);
+  return must.every((token) => words.has(token));
+}
+
+/**
+ * Highest-volume idea whose whole words cover this tool's distinctive tokens.
+ * Short names such as APR and 529 stay in play. No whole-word match returns null.
+ */
+export function choosePrimaryKeyword(
+  facts: readonly KeywordFact[],
+  toolName: string,
+  taken: ReadonlySet<string> = new Set()
+): KeywordFact | null {
+  const ranked = usable(facts)
+    .filter((fact) => !taken.has(fact.keyword.toLowerCase()) && matchesTool(fact.keyword, toolName))
+    .sort((a, b) => volume(b) - volume(a));
+  return ranked[0] ?? null;
+}
+
+export function chooseSecondaryKeywords(
+  facts: readonly KeywordFact[],
+  primary: string,
+  toolName: string,
+  taken: ReadonlySet<string> = new Set()
+): KeywordFact[] {
+  const primaryKey = primary.toLowerCase();
+  return usable(facts)
+    .filter((fact) => {
+      const keyword = fact.keyword.toLowerCase();
+      return keyword !== primaryKey && !taken.has(keyword) && matchesTool(fact.keyword, toolName);
+    })
     .sort((a, b) => volume(b) - volume(a))
     .slice(0, 3);
 }
