@@ -826,6 +826,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PeriodCalculator',
   'PerpetuityCalculator',
   'PfRatioCalculator',
+  'QpQsCalculator',
   'PisaCalculator',
   'PitiCalculator',
   'PivotPointCalculator',

@@ -4391,6 +4391,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       })
     )
   ),
+  QpQsCalculator: lazyTool(() =>
+    import('@/tools/calculators/qpqs/QpQsCalculator').then((mod) => ({
+      default: mod.QpQsCalculator,
+    })),
+  ),
   QtcCalculator: lazyTool(() =>
     import('@/tools/calculators/qtc/QtcCalculator').then((mod) => ({
       default: mod.QtcCalculator,

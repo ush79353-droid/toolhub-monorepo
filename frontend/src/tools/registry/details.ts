@@ -409,6 +409,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PaToPsiConversion: () => import('@/tools/calculators/pa-to-psi/detail'),
   PascalConversion: () => import('@/tools/calculators/pascal-conversion/detail'),
   PsiConverter: () => import('@/tools/calculators/psi-converter/detail'),
+  PsiPortCalculator: () => import('@/tools/calculators/pneumonia-psi/detail'),
   PsiToAtmConversion: () => import('@/tools/calculators/psi-to-atm/detail'),
   PsiToInchesOfWaterConversion: () =>
     import('@/tools/calculators/psi-to-inches-of-water/detail'),
