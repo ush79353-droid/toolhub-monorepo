@@ -1,4 +1,4 @@
-import { calculateAaGradient, R_QUOTIENT } from './calculation';
+import { calculateAaGradient } from './calculation';
 import type {
   AaGradientFieldErrors,
   AaGradientInput,
@@ -48,11 +48,6 @@ export function validateAaGradientInput(
     errors.atmPressure = 'Required';
   } else if (input.atmPressure <= 0) {
     errors.atmPressure = 'Atmospheric pressure must be greater than 0.';
-  }
-
-  // Guard zero R (constant) and impossible inspired dry pressure.
-  if (R_QUOTIENT === 0) {
-    errors.form = 'Respiratory quotient R is invalid.';
   }
 
   const blocking =

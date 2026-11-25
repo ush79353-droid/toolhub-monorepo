@@ -1,13 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import { Select } from '@/components/ui/select';
 import { InfoTooltip } from '../auto-loan/InfoTooltip';
 import { formatGrams, formatTeaspoons } from './calculation';
 import {
@@ -86,17 +80,17 @@ function FoodRow({
   return (
     <div className="space-y-2 border-b border-border/60 pb-3 last:border-0 last:pb-0">
       <span className={labelClass}>{label}</span>
-      <Select value={productId} onValueChange={onProduct}>
-        <SelectTrigger className="h-11 w-full rounded-lg border-border text-sm text-accent">
-          <SelectValue placeholder="Choose product" />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((o) => (
-            <SelectItem key={o.id} value={o.id}>
-              {o.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
+      <Select
+        value={productId}
+        onChange={(e) => onProduct(e.target.value)}
+        className="h-11 text-sm text-accent"
+        aria-label={label}
+      >
+        {options.map((o) => (
+          <option key={o.id} value={o.id}>
+            {o.label}
+          </option>
+        ))}
       </Select>
       <p className="text-xs text-muted-foreground">
         Serving: {selected?.servingLabel ?? '—'} ·{' '}
@@ -154,16 +148,15 @@ export function AddedSugarIntakeForm({
             I am…
           </label>
           <Select
+            id="sugar-sex"
             value={input.sex}
-            onValueChange={(v) => set({ sex: v as AddedSugarIntakeInput['sex'] })}
+            onChange={(e) =>
+              set({ sex: e.target.value as AddedSugarIntakeInput['sex'] })
+            }
+            className="h-11 text-sm"
           >
-            <SelectTrigger id="sugar-sex" className="h-11 w-full rounded-lg">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="female">Female</SelectItem>
-              <SelectItem value="male">Male</SelectItem>
-            </SelectContent>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
           </Select>
         </div>
       </section>

@@ -97,7 +97,7 @@ export function HematocritHemoglobinRatioCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: 'Hematocrit to Hemoglobin Ratio Calculator',
           url: pageUrl,
         });

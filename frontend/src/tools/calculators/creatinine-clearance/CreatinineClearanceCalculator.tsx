@@ -98,7 +98,7 @@ export function CreatinineClearanceCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: 'Creatinine Clearance Calculator',
           url: pageUrl,
         });

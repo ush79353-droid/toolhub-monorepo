@@ -37,7 +37,7 @@ export function CarbohydrateCalculatorForm({
 
   return (
     <form onSubmit={(e) => e.preventDefault()} className="space-y-4" noValidate autoComplete="off">
-      <motionTabGroup
+      <MotionTabGroup
         value={input.unitSystem}
         onChange={(unitSystem) => set({ unitSystem })}
       />
@@ -262,7 +262,7 @@ export function CarbohydrateCalculatorForm({
   );
 }
 
-function motionTabGroup({
+function MotionTabGroup({
   value,
   onChange,
 }: {

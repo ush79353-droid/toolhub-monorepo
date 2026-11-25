@@ -97,7 +97,7 @@ export function WeightWatcherPointsCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: 'Weight Watcher Points Calculator',
           url: pageUrl,
         });

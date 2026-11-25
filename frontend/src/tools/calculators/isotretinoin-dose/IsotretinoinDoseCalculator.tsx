@@ -94,7 +94,7 @@ export function IsotretinoinDoseCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: 'Isotretinoin Dose Calculator',
           url: pageUrl,
         });

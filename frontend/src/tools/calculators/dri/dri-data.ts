@@ -53,7 +53,7 @@ function both(
 ): Record<DriAgeBand, number> {
   const out = {} as Record<DriAgeBand, number>;
   for (const b of ALL_BANDS) {
-    out[b] = map[b];
+    out[b] = map[b] ?? 0;
   }
   return out;
 }

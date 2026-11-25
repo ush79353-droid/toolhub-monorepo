@@ -94,7 +94,7 @@ export function IvigDoseCalculator({
     if (canShare) {
       try {
         await navigator.share({
-          title: metadata.name,
+          title: metadata.title,
           text: 'IVIG Dose Calculator',
           url: pageUrl,
         });

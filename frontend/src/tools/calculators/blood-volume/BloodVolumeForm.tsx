@@ -47,7 +47,7 @@ export function BloodVolumeForm({ input, errors, result, onChange }: Props) {
   return (
     <form onSubmit={(e) => e.preventDefault()} className="space-y-4" noValidate autoComplete="off">
       <section className={sectionClass}>
-        <motionField label="Height" error={errors.heightText}>
+        <MotionField label="Height" error={errors.heightText}>
           <div className="flex gap-2">
             <input
               className={`${inputClass} flex-1`}
@@ -64,8 +64,8 @@ export function BloodVolumeForm({ input, errors, result, onChange }: Props) {
               <option value="in">in</option>
             </select>
           </div>
-        </motionField>
-        <motionField label="Weight" error={errors.weightText}>
+        </MotionField>
+        <MotionField label="Weight" error={errors.weightText}>
           <div className="flex gap-2">
             <input
               className={`${inputClass} flex-1`}
@@ -82,7 +82,7 @@ export function BloodVolumeForm({ input, errors, result, onChange }: Props) {
               <option value="lb">lb</option>
             </select>
           </div>
-        </motionField>
+        </MotionField>
       </section>
 
       {result?.nadlerFemaleMl != null && (
@@ -114,7 +114,7 @@ export function BloodVolumeForm({ input, errors, result, onChange }: Props) {
   );
 }
 
-function motionField({
+function MotionField({
   label,
   error,
   children,

@@ -1,6 +1,7 @@
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { CORRECTED_RETICULOCYTE_FAQS } from './content';
-import { DEFAULT_REFERENCE_HEMATOCRIT_PERCENT, SOURCE_NOTE } from './calculation';
+import { SOURCE_NOTE } from './calculation';
+import { DEFAULT_REFERENCE_HEMATOCRIT_PERCENT } from './types';
 
 export function CorrectedReticulocyteCountGuideArticle() {
   return (
