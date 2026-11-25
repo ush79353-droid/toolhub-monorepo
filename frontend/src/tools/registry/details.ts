@@ -792,6 +792,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),
   TestosteroneEstradiolRatioCalculator: () =>
     import('@/tools/calculators/testosterone-estradiol-ratio/detail'),
+  TidalVolumeCalculator: () =>
+    import('@/tools/calculators/tidal-volume/detail'),
   TimeValueOfMoneyCalculator: () =>
     import('@/tools/calculators/time-value-of-money/detail'),
   TtmCalculator: () => import('@/tools/calculators/ttm/detail'),

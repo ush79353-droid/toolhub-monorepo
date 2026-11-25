@@ -3257,6 +3257,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TimeValueOfMoneyCalculator,
     })),
   ),
+  TidalVolumeCalculator: lazyTool(() =>
+    import('@/tools/calculators/tidal-volume/TidalVolumeCalculator').then((mod) => ({
+      default: mod.TidalVolumeCalculator,
+    })),
+  ),
   TtmCalculator: lazyTool(() =>
     import('@/tools/calculators/ttm/TtmCalculator').then((mod) => ({
       default: mod.TtmCalculator,

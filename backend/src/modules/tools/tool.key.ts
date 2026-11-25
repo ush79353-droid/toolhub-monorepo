@@ -577,6 +577,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'SmokersCtcCalculator',
   'TenureCalculator',
   'TestosteroneEstradiolRatioCalculator',
+  'TidalVolumeCalculator',
   'TimeValueOfMoneyCalculator',
   'TtmCalculator',
   'TreynorRatioCalculator',
