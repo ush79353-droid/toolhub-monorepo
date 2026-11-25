@@ -1,3 +1,4 @@
+- [x] PF Ratio Calculator (pf-ratio-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] Lung Cancer Risk Calculator (lung-cancer-risk-calculator) — HUNT Markaki 2018/corrigendum 2022; developed + activated 2026-11-25 (indexable false).
 - [x] Light's Criteria Calculator for Pleural Effusion (lights-criteria-calculator-for-pleural-effusion) — developed + activated 2026-11-25 (indexable false).
 - [x] Tidal Volume Calculator (tidal-volume-calculator) — developed + activated 2026-11-25 (indexable false).
