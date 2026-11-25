@@ -52,7 +52,7 @@ function ToolCards({ tools, label }: { tools: PublicCategoryTool[]; label?: stri
 function PillarSection({ pillar }: { pillar: PublicPillarGroup }) {
   const count = pillar.tools.length + pillar.subPillars.reduce((sum, subPillar) => sum + subPillar.tools.length, 0);
   return (
-    <section className="mt-12 first:mt-0">
+    <section id={pillar.slug} className="mt-12 scroll-mt-24 first:mt-0">
       <div className="mb-5 flex items-baseline justify-between gap-4">
         <h2 className="text-2xl font-semibold tracking-tight text-accent">{pillar.name}</h2>
         <span className="shrink-0 text-sm tabular-nums text-muted-foreground">

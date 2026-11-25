@@ -46,6 +46,8 @@ export interface ISeoCampaign extends Document {
   locationCode: number;
   languageCode: string;
   createdBy: Types.ObjectId | null;
+  /** Draft currently allowed to run. Others wait until it reaches review or fails. */
+  activeDraftId: Types.ObjectId | null;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -91,6 +93,7 @@ const campaignSchema = new Schema<ISeoCampaign>(
     locationCode: { type: Number, required: true },
     languageCode: { type: String, required: true, maxlength: 8 },
     createdBy: { type: Schema.Types.ObjectId, ref: 'AdminUser', default: null },
+    activeDraftId: { type: Schema.Types.ObjectId, ref: 'SeoDraft', default: null },
   },
   { timestamps: true }
 );

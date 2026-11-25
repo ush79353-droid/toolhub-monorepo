@@ -46,9 +46,11 @@ Admin SEO UI does **not** expose robots directives or sitemap fields. Public rob
 ## 6. Crawl surfaces
 
 - `frontend/src/app/robots.ts` — allow public site; disallow `/admin/`, `/api/`, `/embed/`.
-- `frontend/src/app/sitemap.ts` — static + categories + allowlisted implemented tools that pass `resolveSitemapEligible` (skips localhost origins).
-- Extend `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts` when new registry calculators launch.
-- **Site-wide indexing kill switch:** `SITE_ALLOW_INDEXING` must be exactly `true` to allow crawling. When unset/false: `robots.txt` is `Disallow: /`, sitemap is empty, root + tool meta are `noindex,nofollow`. Use this while tools are still in development.
+- `/sitemap.xml` is a sitemap index. The first file is `/sitemap/static.xml`: fixed pages in `frontend/src/config/static-sitemap.ts` (their `lastModified` is stored there) plus each active category hub.
+- Each active category with eligible tools is `/sitemap/{categorySlug}.xml`. That file lists the category's tool URLs (tools with no pillar) and then each pillar sitemap. There is no separate `tools.xml`.
+- A pillar file lists that pillar's tool URLs (tools with no subpillar) and then each subpillar sitemap. A subpillar file lists only its tool URLs. When a file lists tool URLs, the main index also lists the child sitemap files so those files stay reachable.
+- Do not add a tool slug to a sitemap file. A tool is included only when `isActive`, `indexable`, and `sitemapInclude` are on, a `SeoDraft` is `published`, and its component is registered. A tool with no pillar stays in its category file. A tool with no subpillar stays in its pillar file.
+- **Site-wide indexing kill switch:** `SITE_ALLOW_INDEXING` must be exactly `true` to allow crawling. When unset/false: `robots.txt` is `Disallow: /`, and a production sitemap is empty. `next dev` still renders the sitemap on localhost so the files can be checked. Root and tool meta stay `noindex,nofollow` until the flag is on.
 
 ## 7. Cache Policy
 

@@ -14,7 +14,7 @@ Authoritative layout: `ARCHITECTURE.md` §7 (ADR-018). Visual shell stays `TOOL_
 - Allowlist: `tools/registry/keys.ts` and the same strings in `backend/src/modules/tools/tool.key.ts`.
 - Pure engine in `calculation.ts`. Pure checks in `validation.ts`. No React, DOM, or Next imports in either file.
 - Tests in `calculation.test.ts` next to the engine (run with `tsx`).
-- Sitemap slug list: `IMPLEMENTED_TOOL_SLUGS` in `frontend/src/app/sitemap.ts` only.
+- Sitemap files do not list tool slugs. Inclusion is `isActive` + `indexable` + `sitemapInclude` + a published SEO draft + a registered component, grouped by pillar.
 - API boundary: Browser → Next.js Server → Express → MongoDB. Calculator components never call Express.
 - Do not add a per-calculator `page.tsx`, ad slot, iframe route, or metadata builder.
 - Activation is part of delivery (ADR-022 + ADR-023 verified activation). After registration, tests, and a successful `/tools/{slug}` check: set `isDeveloped` (when on schema), `isActive`, and `indexable` when eligible. Confirm embed and sitemap eligibility. Do not activate a row that has no module, and do not turn an admin-disabled / noindex tool back on — report blockers instead.

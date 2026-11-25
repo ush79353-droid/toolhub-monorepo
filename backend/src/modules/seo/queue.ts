@@ -62,27 +62,32 @@ function getQueue(name: SeoQueueName): Queue<SeoJobData> {
   return queue;
 }
 
-export async function enqueueSeoStep(name: SeoQueueName, draftId: string): Promise<void> {
-  await getQueue(name).add('run', { draftId }, { jobId: `${name}:${draftId}:${Date.now()}` });
+export async function enqueueSeoStep(name: SeoQueueName, draftId: string, delayMs = 0): Promise<void> {
+  await getQueue(name).add(
+    'run',
+    { draftId },
+    { jobId: `${name}:${draftId}:${Date.now()}`, ...(delayMs > 0 ? { delay: delayMs } : {}) }
+  );
 }
 
 export function startSeoWorkers(
   handlers: Record<SeoQueueName, (draftId: string) => Promise<void>>,
-  onFailed: (draftId: string, step: SeoQueueName, message: string) => Promise<void>
+  onFailed: (draftId: string, step: SeoQueueName, message: string) => Promise<void>,
+  gate?: (draftId: string) => Promise<boolean>
 ): void {
   if (workers.length > 0) return;
-  const concurrency: Record<SeoQueueName, number> = {
-    'seo-inventory': 1,
-    'seo-keyword-research': 2,
-    'seo-serp-analysis': 2,
-    'seo-content-generation': 2,
-    'seo-content-validation': 2,
-  };
   for (const name of SEO_QUEUES) {
-    const options: WorkerOptions = { connection: redisConnection(), concurrency: concurrency[name] };
+    const options: WorkerOptions = { connection: redisConnection(), concurrency: 1 };
     const worker = new Worker<SeoJobData>(
       name,
       async (job) => {
+        if (gate) {
+          const proceed = await gate(job.data.draftId);
+          if (!proceed) {
+            await enqueueSeoStep(name, job.data.draftId, 20_000);
+            return;
+          }
+        }
         await handlers[name](job.data.draftId);
       },
       options

@@ -8,9 +8,18 @@ import {
   listPublicTools,
   suggestPublicTools,
 } from './catalog.service';
+import { getPublicSitemap } from './sitemap-data';
 
 export const catalogRouter = Router();
 
+
+catalogRouter.get('/sitemap', async (_req, res, next) => {
+  try {
+    sendSuccess(res, await getPublicSitemap());
+  } catch (error) {
+    next(error);
+  }
+});
 
 catalogRouter.get('/categories', async (_req, res, next) => {
   try {

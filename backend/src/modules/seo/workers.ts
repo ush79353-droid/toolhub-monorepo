@@ -1,5 +1,6 @@
 import { logger } from '../../utils/logger';
 import {
+  claimCampaignTurn,
   markSeoDraftFailed,
   runContentGeneration,
   runContentValidation,
@@ -25,7 +26,8 @@ export function bootSeoWorkers(): void {
     async (draftId, step: SeoQueueName, message) => {
       logger.warn(`SEO step ${step} failed for draft ${draftId}`, { message });
       await markSeoDraftFailed(draftId, step, message);
-    }
+    },
+    (draftId) => claimCampaignTurn(draftId)
   );
 }
 

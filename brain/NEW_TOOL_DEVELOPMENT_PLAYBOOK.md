@@ -19,7 +19,7 @@ A new calculator is not done until every gate below is true, in this order. Deta
 4. **Pure calculation engine** — Formulas live in `calculation.ts` with no React, DOM, or Next imports.
 5. **Validation** — Input checks live in `validation.ts` and block invalid results.
 6. **Tests** — `calculation.test.ts` fails if the engine breaks. Run it.
-7. **SEO** — Metadata comes from `generateMetadata` + `lib/seo/tool-seo.ts`. Slug added to `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts`. No metadata hardcoded in the calculator.
+7. **SEO** — Metadata comes from `generateMetadata` + `lib/seo/tool-seo.ts`. Do not add the slug to a sitemap file. No metadata hardcoded in the calculator.
 8. **Embed** — `/embed/{slug}` renders the same component with `presentation="embed"`. No ads. `noindex` comes from the shared embed route.
 9. **Responsive QA** — Check 375, 768, 1024, and 1280. Calculator first below `lg`. No horizontal overflow.
 10. **Currency** — Follow the checklist in Step 19b and ADR-023. Denomination and conversion are different. Include currency selector ONLY when reference requires it.
@@ -152,7 +152,7 @@ An active tool whose key is not registered calls `notFound()` on `/tools/[slug]`
 - Rely on `generateMetadata` + `lib/seo/tool-seo.ts`
 - Never hardcode title/description/canonical inside the calculator component
 - Ensure production `NEXT_PUBLIC_SITE_URL` (no localhost canonicals)
-- Add slug to `IMPLEMENTED_TOOL_SLUGS` in `sitemap.ts` when the tool is live and indexable. `robots.ts` does not list slugs.
+- Do not add the slug to a sitemap file. A published, active, indexable tool with `sitemapInclude` and a registered component is added by `GET /catalog/sitemap`. `robots.ts` does not list slugs.
 
 ---
 
@@ -272,7 +272,7 @@ ADR-022 + ADR-023 verified automatic activation. Do this after the module, tests
 - [ ] After those checks: `isDeveloped` true (when on schema), `isActive` true under publishing policy, `executionType` `client`.
 - [ ] `indexable` true when eligible and no explicit admin noindex restriction exists; otherwise report the blocker.
 - [ ] `embedEnabled` omitted or true. Set false only when an admin disables embed.
-- [ ] Slug is in `IMPLEMENTED_TOOL_SLUGS`. Sitemap still needs `indexable` + `sitemapInclude`. Confirm category/search visibility.
+- [ ] Do not add the slug to a sitemap file. Confirm `isActive`, `indexable`, and `sitemapInclude`. A published SEO draft plus a registered component puts the URL in that pillar's sitemap. Confirm category/search visibility.
 - [ ] A missing module, missing registry key, empty `componentKey`, or broken calculator stays inactive. Admin-disabled / draft / private / noindex decisions stay preserved and are reported as blockers.
 - [ ] **Mongo assign uses only** `cd backend && npm run tool:assign -- …` (`assign-tool-component.ts`). Pass `--slug`, `--component`, `--id`, `--name`, `--short-description`, `--meta-title`, `--meta-description`, and `--expected-pillar` / `--expected-subpillar` (`null` when empty). Do **not** create `assign-*-tool.ts` or other one-off scripts. Preserve `isActive` / `indexable` / `isFeatured` unless the task explicitly allows `--set-active` / `--set-indexable`.
 
@@ -288,7 +288,7 @@ A new calculator is **not** done when the form merely renders. The first items a
 - [ ] Pure `calculation.ts` (no React / DOM / Next)
 - [ ] `validation.ts` blocks invalid input
 - [ ] `calculation.test.ts` run and passing
-- [ ] Dynamic SEO + `IMPLEMENTED_TOOL_SLUGS` updated
+- [ ] Dynamic SEO. The slug is not added to a sitemap file.
 - [ ] Embed renders calculator-only when eligible
 - [ ] Responsive check at 375, 768, 1024, 1280
 - [ ] UI matches the Auto Loan visual shell (not Auto Loan functional scope)

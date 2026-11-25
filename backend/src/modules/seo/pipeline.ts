@@ -2,9 +2,9 @@ import { Types } from 'mongoose';
 import { env } from '../../config/env';
 import { Category } from '../categories/category.model';
 import { Tool } from '../tools/tool.model';
-import { choosePrimaryKeyword, chooseSecondaryKeywords, pickSiblingLinks } from './choose-keyword';
+import { choosePrimaryKeyword, chooseSecondaryKeywords, keywordContainsSeed, keywordSeed, pickSiblingLinks } from './choose-keyword';
 import { alignDraftContent, seoContentSchema } from './content';
-import { fetchKeywordIdeas, fetchOrganicSerp, parseKeywordIdeas, parseOrganicSerp } from './dataforseo.client';
+import { fetchKeywordSuggestions, fetchOrganicSerp, parseKeywordIdeas, parseOrganicSerp } from './dataforseo.client';
 import { draftSeoContent } from './openai.client';
 import { enqueueSeoStep } from './queue';
 import { SeoCampaign, SeoDraft, SeoProviderCache, type ISeoDraft } from './seo.model';
@@ -121,18 +121,40 @@ export async function runKeywordResearch(draftId: string): Promise<void> {
   const campaign = await SeoCampaign.findById(draft.campaignId).select('locationCode languageCode');
   const location = campaign?.locationCode ?? env.DATAFORSEO_LOCATION_CODE;
   const language = campaign?.languageCode ?? env.DATAFORSEO_LANGUAGE_CODE;
-  const seed = draft.snapshot.name.trim();
-  const cacheKey = `keyword:${location}:${language}:${seed.toLowerCase()}`;
+  const seed = keywordSeed(draft.snapshot.name);
+  const cacheKey = `keyword:suggest:${location}:${language}:${seed.toLowerCase()}`;
   let raw = await readCache(cacheKey);
   if (!raw) {
-    raw = await fetchKeywordIdeas(seed, location, language);
+    raw = await fetchKeywordSuggestions(seed, location, language);
     await writeCache(cacheKey, 'keyword', raw);
     draft.callCounts.keyword += 1;
   }
-  const facts = parseKeywordIdeas(raw);
-  const primary = choosePrimaryKeyword(facts, draft.snapshot.name);
-  if (!primary) throw new Error('DataForSEO returned no usable keywords.');
-  const secondary = chooseSecondaryKeywords(facts, primary.keyword);
+  const facts = parseKeywordIdeas(raw).filter((fact) => keywordContainsSeed(fact.keyword, seed));
+  const peers = await SeoDraft.find({
+    campaignId: draft.campaignId,
+    _id: { $ne: draft._id },
+    primaryKeyword: { $nin: ['', null] },
+  }).select('primaryKeyword');
+  const taken = new Set(peers.map((peer) => peer.primaryKeyword.toLowerCase()));
+  const primary = choosePrimaryKeyword(facts, draft.snapshot.name, taken);
+  draft.keywordPayload = raw;
+  draft.keywordFacts = facts;
+  if (!primary) {
+    draft.primaryKeyword = '';
+    draft.secondaryKeywords = [];
+    draft.error = 'No keyword idea matches this tool name, so this draft was left for review.';
+    draft.validation = {
+      ok: false,
+      issues: [{ code: 'keyword_match', message: draft.error, severity: 'block' }],
+    };
+    mark(draft, 'keyword');
+    draft.status = 'needs_review';
+    await draft.save();
+    await refreshCampaign(draft.campaignId);
+    await releaseCampaignTurn(draft.campaignId, draft._id);
+    return;
+  }
+  const secondary = chooseSecondaryKeywords(facts, primary.keyword, draft.snapshot.name, taken);
   draft.keywordPayload = raw;
   draft.keywordFacts = facts;
   draft.primaryKeyword = primary.keyword;
@@ -218,6 +240,7 @@ export async function runContentValidation(draftId: string): Promise<void> {
     mark(draft, 'validate');
     await draft.save();
     await refreshCampaign(draft.campaignId);
+    await releaseCampaignTurn(draft.campaignId, draft._id);
     return;
   }
   const names = await namesForDraft(draft);
@@ -242,6 +265,7 @@ export async function runContentValidation(draftId: string): Promise<void> {
   draft.status = 'needs_review';
   await draft.save();
   await refreshCampaign(draft.campaignId);
+  await releaseCampaignTurn(draft.campaignId, draft._id);
 }
 
 async function readCache(cacheKey: string): Promise<unknown | null> {
@@ -264,6 +288,84 @@ async function refreshCampaign(campaignId: Types.ObjectId): Promise<void> {
   await SeoCampaign.updateOne({ _id: campaignId }, { $set: { status } });
 }
 
+const RUNNING = new Set(['queued', 'researching', 'serp', 'generating', 'validating']);
+
+/** One draft per campaign may run. A finished holder is replaced; a live holder makes the caller wait. */
+export async function claimCampaignTurn(draftId: string): Promise<boolean> {
+  if (!Types.ObjectId.isValid(draftId)) return true;
+  const draft = await SeoDraft.findById(draftId).select('campaignId status');
+  if (!draft) return true;
+  if (!RUNNING.has(draft.status)) {
+    await releaseCampaignTurn(draft.campaignId, draft._id);
+    return true;
+  }
+  const owned = await SeoCampaign.findOneAndUpdate(
+    {
+      _id: draft.campaignId,
+      $or: [{ activeDraftId: null }, { activeDraftId: draft._id }],
+    },
+    { $set: { activeDraftId: draft._id } }
+  );
+  if (owned) return true;
+  const holder = await SeoCampaign.findById(draft.campaignId).select('activeDraftId');
+  if (!holder?.activeDraftId) return false;
+  const other = await SeoDraft.findById(holder.activeDraftId).select('status');
+  if (other && RUNNING.has(other.status)) return false;
+  const stole = await SeoCampaign.findOneAndUpdate(
+    { _id: draft.campaignId, activeDraftId: holder.activeDraftId },
+    { $set: { activeDraftId: draft._id } }
+  );
+  return Boolean(stole);
+}
+
+const BUSY = new Set(['researching', 'serp', 'generating', 'validating']);
+
+async function startNextQueued(campaignId: Types.ObjectId): Promise<void> {
+  const running = await SeoDraft.exists({ campaignId, status: { $in: [...BUSY] } });
+  if (running) return;
+  const next = await SeoDraft.findOne({
+    campaignId,
+    status: 'queued',
+    completedSteps: { $size: 0 },
+  }).sort({ _id: 1 });
+  if (!next) return;
+  const reserved = await SeoCampaign.findOneAndUpdate(
+    { _id: campaignId, $or: [{ activeDraftId: null }, { activeDraftId: next._id }] },
+    { $set: { activeDraftId: next._id } }
+  );
+  if (!reserved) return;
+  if (reserved.activeDraftId && String(reserved.activeDraftId) === String(next._id)) return;
+  await enqueueSeoStep('seo-inventory', String(next._id));
+}
+
+/** Clears this draft's turn and starts the next tool that has not been researched yet. */
+export async function releaseCampaignTurn(campaignId: Types.ObjectId, draftId: Types.ObjectId): Promise<void> {
+  const released = await SeoCampaign.findOneAndUpdate(
+    { _id: campaignId, activeDraftId: draftId },
+    { $set: { activeDraftId: null } }
+  );
+  if (!released) return;
+  await startNextQueued(campaignId);
+}
+
+/** A published, approved, or missing holder must not keep the rest of the campaign queued. */
+export async function kickCampaign(campaignId: Types.ObjectId): Promise<void> {
+  const campaign = await SeoCampaign.findById(campaignId).select('activeDraftId');
+  if (!campaign) return;
+  if (!campaign.activeDraftId) {
+    await startNextQueued(campaignId);
+    return;
+  }
+  const holder = await SeoDraft.findById(campaign.activeDraftId).select('status');
+  if (holder && (BUSY.has(holder.status) || holder.status === 'queued')) return;
+  const cleared = await SeoCampaign.findOneAndUpdate(
+    { _id: campaignId, activeDraftId: campaign.activeDraftId },
+    { $set: { activeDraftId: null } }
+  );
+  if (!cleared) return;
+  await startNextQueued(campaignId);
+}
+
 export async function markSeoDraftFailed(draftId: string, step: string, message: string): Promise<void> {
   if (!Types.ObjectId.isValid(draftId)) return;
   await SeoDraft.updateOne(
@@ -272,4 +374,5 @@ export async function markSeoDraftFailed(draftId: string, step: string, message:
   );
   const draft = await SeoDraft.findById(draftId).select('campaignId');
   if (draft) await refreshCampaign(draft.campaignId);
+  if (draft) await releaseCampaignTurn(draft.campaignId, draft._id);
 }
