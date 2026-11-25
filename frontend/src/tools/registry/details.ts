@@ -137,6 +137,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/katch-mcardle/detail'),
   KtvDaugirdasCalculator: () =>
     import('@/tools/calculators/ktv-daugirdas/detail'),
+  KidneyStonePcnlCalculator: () =>
+    import('@/tools/calculators/kidney-stone-pcnl/detail'),
   KetoCalculator: () => import('@/tools/calculators/keto/detail'),
   LidocaineDoseCalculator: () =>
     import('@/tools/calculators/lidocaine-dose/detail'),
@@ -164,6 +166,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NetCarbsCalculator: () => import('@/tools/calculators/net-carbs/detail'),
   OpioidConversionCalculator: () =>
     import('@/tools/calculators/opioid-conversion/detail'),
+  OxygenationIndexCalculator: () =>
+    import('@/tools/calculators/oxygenation-index/detail'),
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
   PrescriptionRefillCalculator: () =>
     import('@/tools/calculators/prescription-refill/detail'),
@@ -171,6 +175,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/prostate-volume/detail'),
   PsaDensityCalculator: () =>
     import('@/tools/calculators/psa-density/detail'),
+  PsaDoublingTimeCalculator: () =>
+    import('@/tools/calculators/psa-doubling-time/detail'),
   ProteinCalculator: () => import('@/tools/calculators/protein/detail'),
   ProteinCreatinineRatioCalculator: () =>
     import('@/tools/calculators/protein-creatinine-ratio/detail'),
@@ -1227,6 +1233,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PerpetuityCalculator: () =>
     import('@/tools/calculators/perpetuity/detail'),
   PfRatioCalculator: () => import('@/tools/calculators/pf-ratio/detail'),
+  QpQsCalculator: () => import('@/tools/calculators/qpqs/detail'),
   PisaCalculator: () => import('@/tools/calculators/pisa/detail'),
   PitiCalculator: () => import('@/tools/calculators/piti/detail'),
   PivotPointCalculator: () =>
