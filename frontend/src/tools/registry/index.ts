@@ -279,6 +279,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FatIntakeCalculator,
     })),
   ),
+  FenaCalculator: lazyTool(() =>
+    import('@/tools/calculators/fena/FenaCalculator').then((mod) => ({
+      default: mod.FenaCalculator,
+    })),
+  ),
   FeureaCalculator: lazyTool(() =>
     import('@/tools/calculators/feurea/FeureaCalculator').then((mod) => ({
       default: mod.FeureaCalculator,
@@ -6294,6 +6299,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/retirement/RetirementCalculator'
     ).then((mod) => ({
       default: mod.RetirementCalculator,
+    })),
+  ),
+  RsbiCalculator: lazyTool(() =>
+    import('@/tools/calculators/rsbi/RsbiCalculator').then((mod) => ({
+      default: mod.RsbiCalculator,
     })),
   ),
   Rule2836Calculator: lazyTool(() =>
