@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { lazy, type LazyExoticComponent } from 'react';
 import type { ToolComponent } from '../types';
@@ -821,6 +821,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   McaCalculator: lazyTool(() =>
     import('@/tools/calculators/mca/McaCalculator').then((mod) => ({
       default: mod.McaCalculator,
+    })),
+  ),
+  MeanAirwayPressureCalculator: lazyTool(() =>
+    import('@/tools/calculators/mean-airway-pressure/MeanAirwayPressureCalculator').then((mod) => ({
+      default: mod.MeanAirwayPressureCalculator,
     })),
   ),
   MelatoninDosageCalculator: lazyTool(() =>
@@ -1958,7 +1963,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.UrineHomePregnancyTestCalculator,
     })),
   ),
-  CentsToDollarsCalculator: lazyTool(() =>
+  UrineOutputCalculator: lazyTool(() =>
+    import('@/tools/calculators/urine-output/UrineOutputCalculator').then(
+      (mod) => ({
+        default: mod.UrineOutputCalculator,
+      }),
+    ),
+  ),  CentsToDollarsCalculator: lazyTool(() =>
     import('@/tools/calculators/cents-to-dollars/CentsToDollarsCalculator').then((mod) => ({
       default: mod.CentsToDollarsCalculator,
     })),
@@ -5439,10 +5450,24 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LtvCalculator,
     })),
   ),
+  LungCancerRiskCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/lung-cancer-risk/LungCancerRiskCalculator'
+    ).then((mod) => ({
+      default: mod.LungCancerRiskCalculator,
+    })),
+  ),
   LungCapacityCalculator: lazyTool(() =>
     import('@/tools/calculators/lung-capacity/LungCapacityCalculator').then(
       (mod) => ({
         default: mod.LungCapacityCalculator,
+      }),
+    ),
+  ),
+  VitalCapacityCalculator: lazyTool(() =>
+    import('@/tools/calculators/vital-capacity/VitalCapacityCalculator').then(
+      (mod) => ({
+        default: mod.VitalCapacityCalculator,
       }),
     ),
   ),

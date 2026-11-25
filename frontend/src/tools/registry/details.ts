@@ -225,12 +225,16 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MaintainPregnancyWeightCalculator: () =>
     import('@/tools/calculators/maintain-pregnancy-weight/detail'),
   McaCalculator: () => import('@/tools/calculators/mca/detail'),
+  MeanAirwayPressureCalculator: () =>
+    import('@/tools/calculators/mean-airway-pressure/detail'),
   MealCalorieCalculator: () =>
     import('@/tools/calculators/meal-calorie/detail'),
   MaintenanceCalorieCalculator: () =>
     import('@/tools/calculators/maintenance-calorie/detail'),
   MapCalculator: () =>
     import('@/tools/calculators/map-mean-arterial-pressure/detail'),
+  MeanAirwayPressureCalculator: () =>
+    import('@/tools/calculators/mean-airway-pressure/detail'),
   MeanSacDiameterCalculator: () =>
     import('@/tools/calculators/mean-sac-diameter/detail'),
   MelatoninDosageCalculator: () =>
@@ -1236,7 +1240,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PerpetuityCalculator: () =>
     import('@/tools/calculators/perpetuity/detail'),
   PfRatioCalculator: () => import('@/tools/calculators/pf-ratio/detail'),
-  QpQsCalculator: () => import('@/tools/calculators/qpqs/detail'),
   PisaCalculator: () => import('@/tools/calculators/pisa/detail'),
   PitiCalculator: () => import('@/tools/calculators/piti/detail'),
   PivotPointCalculator: () =>
@@ -1466,8 +1469,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SimpleMortgageCalculator: () =>
     import('@/tools/calculators/simple-mortgage/detail'),
   LtvCalculator: () => import('@/tools/calculators/ltv/detail'),
+  LungCancerRiskCalculator: () =>
+    import('@/tools/calculators/lung-cancer-risk/detail'),
   LungCapacityCalculator: () =>
     import('@/tools/calculators/lung-capacity/detail'),
+  VitalCapacityCalculator: () =>
+    import('@/tools/calculators/vital-capacity/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
     import('@/tools/calculators/capital-gains-yield/detail'),
