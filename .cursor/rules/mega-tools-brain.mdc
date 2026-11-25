@@ -22,5 +22,5 @@ This rule works alongside `.cursor/rules/ponytail.mdc` (which remains authoritat
    - Run relevant checks (`type-check`, `lint`, and targeted checks).
    - Update affected `brain/` docs, `brain/CURRENT_STATE.md`, `brain/TASKS.md`, append to `brain/CHANGELOG.md`, and record architectural changes in `brain/DECISIONS.md`.
    - Temporary file cleanup (ADR-025 / `.cursor/rules/temporary-file-cleanup.mdc`): delete only this task’s temps after `git status --short`; report `Temporary files cleaned: YES/NO`.
-   - Non-calculator work keeps its Brain update in the same commit. New calculators follow ADR-019 (`.cursor/rules/git-commits.mdc`): three commits — UI, engine (+ FX when applicable), then registration/SEO/Brain/cleanup — pushed together. Sync via `git fetch` / `git pull` before pushing; never force push.
+   - Non-calculator work keeps its Brain update in the same commit. New calculators follow ADR-019 (`.cursor/rules/git-commits.mdc`): three commits — UI, engine (+ FX when applicable), then registration/SEO/Brain/cleanup — **local commits only**; do not auto-push (user syncs GitHub manually per `.cursor/rules/git-push-after-commit.mdc`). Never force push.
 

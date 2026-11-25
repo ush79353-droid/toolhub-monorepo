@@ -20,7 +20,7 @@ Rules:
 - Do not register a calculator key or activate Mongo before the UI and engine commits exist for that tool.
 - Stage only files belonging to the current calculator/task. Never include colleague changes or unrelated files.
 - Delete temporary files created during the task (ADR-025) before the final commit.
-- Push all three commits together to `origin/development` after `git fetch`, only as a fast-forward. Never force-push or rewrite shared history.
-- The delivery report lists all three commit hashes separately and the checks run.
+- After commits, **do not auto-push** unless the user explicitly asks in that request; the operator may sync GitHub manually. Never force-push or rewrite shared history.
+- The delivery report lists all three commit hashes separately and the checks run (note local-only vs pushed when applicable).
 
 Non-calculator work keeps its Brain update in the same commit as the code it describes.

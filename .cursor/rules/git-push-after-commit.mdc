@@ -1,35 +1,34 @@
 ---
-description: After every git commit, push to GitHub — no local-only commit pile-up
+description: Cursor commits locally only — user syncs GitHub manually (no auto-push)
 alwaysApply: true
 ---
 
-# Push after every commit (Cursor)
+# Local commits only — no GitHub sync (Cursor)
 
-Local commits must not stack on the machine. As soon as Cursor creates a git commit, push it.
+Cursor **creates git commits** when the task requires delivery commits. Cursor does **not** push, fetch-for-push, or otherwise sync those commits to GitHub. The human operator publishes to the remote manually.
 
 ## Mandatory sequence
 
 Whenever you run `git commit` (single commit, merge commit, or any of the three ADR-019 calculator commits):
 
 1. Confirm the commit succeeded (`git status` / `git log -1`).
-2. `git fetch origin` (or the tracked remote).
-3. Push the current branch to GitHub with a normal fast-forward push (e.g. `git push -u origin HEAD` when upstream is missing, otherwise `git push`).
-4. Confirm the push succeeded. Report the remote branch and commit hash(es).
+2. **Stop.** Do **not** run `git push`, `git push -u`, or any equivalent.
+3. Report the local commit hash(es) and branch name so the user can sync manually.
+4. Optional read-only: you may note whether the branch is ahead of the local tracking ref (`git status -sb`). Do **not** `git fetch` solely to prepare a push.
 
 ## Locked
 
-- **Do not** leave commits only on the local branch after you created them.
-- **Do not** wait for the user to say “push” when you just committed — push is part of finishing the commit.
+- **Do not** push to GitHub after Cursor-created commits (including ADR-019 three-commit calculators).
+- **Do not** treat push as part of finishing a commit.
 - **Do not** force-push (`--force`, `--force-with-lease`) or rewrite shared history.
-- **Do not** skip push because “I’ll push later” or because more commits are planned in the same task.
-- For ADR-019 three-commit calculators: push after **each** of the three commits (or push once immediately after the third if the three were created back-to-back in one turn — never leave the session with unpushed commits you made).
+- **Do not** stack “I’ll push for you” follow-ups unless the user **explicitly** asks to push in that request.
+- If the user explicitly asks to push in a message, then and only then: `git fetch`, fast-forward push only, never force-push, and report the result.
 
-## If push is blocked
+## If the user asks about sync
 
-- Diverged / non-fast-forward: `git fetch`, inspect, integrate safely (merge/rebase only if already allowed for the task), then push. Never force-push.
-- Auth / network failure: report the error and the unpushed commit hash(es); do not pretend the work is delivered to GitHub.
-- User explicitly said **not** to push for that one request: obey that one-off exception and state that commits remain local.
+- Tell them the local commit hash(es) remain on the current branch until they push manually.
+- Do not invent remote delivery; local-only commits are expected under this rule.
 
 ## Scope
 
-Applies to every Cursor-created commit on this repo (feature work, Brain docs, merges, fixes). Does not authorize committing secrets or unrelated files.
+Applies to every Cursor-created commit on this repo (feature work, Brain docs, merges, fixes, calculator ADR-019 sequences). Does not authorize committing secrets or unrelated files.

@@ -60,5 +60,5 @@ Project memory is stored in the version-controlled `brain/` directory and synchr
 - Stage only files that belong to the current task. Leave unrelated and uncommitted work untouched.
 - New calculators follow the three-commit rule in ADR-019 and `brain/NEW_TOOL_DEVELOPMENT_PLAYBOOK.md`: (1) UI/components/fields/layout, (2) formulas/validation/results/FX where applicable, (3) registration/sitemap/Mongo/SEO/Brain/cleanup. Do not invent empty or padded commits. If development is skipped or blocked, create no unnecessary commits.
 - Non-calculator work still keeps its Brain update in the same commit as the code it describes.
-- A calculator's Brain docs land in the third ADR-019 commit with registration and cleanup. Push all three commits together to `origin/development` after `git fetch` shows it can fast-forward. Do not push a registered calculator without that third commit in the same push. Report all three commit hashes separately.
+- A calculator's Brain docs land in the third ADR-019 commit with registration and cleanup. **Cursor commits locally only** — do not `git push` / auto-sync to GitHub unless the user explicitly asks in that request; the operator publishes manually (see `.cursor/rules/git-push-after-commit.mdc`). Never force-push. Report all three commit hashes separately so the user can sync.
 
