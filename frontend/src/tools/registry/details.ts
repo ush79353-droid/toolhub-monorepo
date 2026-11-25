@@ -300,6 +300,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/rent-or-buy/detail'),
   RmdCalculator: () => import('@/tools/calculators/rmd/detail'),
   RrefCalculator: () => import('@/tools/calculators/rref/detail'),
+  RsbiCalculator: () => import('@/tools/calculators/rsbi/detail'),
   ArmMortgageCalculator: () => import('@/tools/calculators/arm-mortgage/detail'),
   HundredDayCalculator: () => import('@/tools/calculators/hundred-day/detail'),
   SalaryWithOvertimeCalculator: () =>
@@ -1202,12 +1203,15 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/paypal-fee/detail'),
   PayRaiseCalculator: () =>
     import('@/tools/calculators/pay-raise/detail'),
+  PeakFlowCalculator: () =>
+    import('@/tools/calculators/peak-flow/detail'),
   PegRatioCalculator: () =>
     import('@/tools/calculators/peg-ratio/detail'),
   PenceToPoundsConverter: () =>
     import('@/tools/calculators/pence-to-pounds/detail'),
   PearlIndexCalculator: () =>
     import('@/tools/calculators/pearl-index/detail'),
+  PeakFlowCalculator: () => import('@/tools/calculators/peak-flow/detail'),
   PensionCalculator: () =>
     import('@/tools/calculators/pension/detail'),
   PercCalculator: () => import('@/tools/calculators/perc/detail'),
@@ -1220,6 +1224,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   PeriodCalculator: () => import('@/tools/calculators/period/detail'),
   PerpetuityCalculator: () =>
     import('@/tools/calculators/perpetuity/detail'),
+  PfRatioCalculator: () => import('@/tools/calculators/pf-ratio/detail'),
   PisaCalculator: () => import('@/tools/calculators/pisa/detail'),
   PitiCalculator: () => import('@/tools/calculators/piti/detail'),
   PivotPointCalculator: () =>
@@ -1447,6 +1452,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SimpleMortgageCalculator: () =>
     import('@/tools/calculators/simple-mortgage/detail'),
   LtvCalculator: () => import('@/tools/calculators/ltv/detail'),
+  LungCapacityCalculator: () =>
+    import('@/tools/calculators/lung-capacity/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
     import('@/tools/calculators/capital-gains-yield/detail'),
@@ -1663,6 +1670,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/revised-geneva-score/detail'),
   RetirementCalculator: () =>
     import('@/tools/calculators/retirement/detail'),
+  RsbiCalculator: () => import('@/tools/calculators/rsbi/detail'),
   Rule2836Calculator: () =>
     import('@/tools/calculators/rule-2836/detail'),
   RuleOf72Calculator: () =>

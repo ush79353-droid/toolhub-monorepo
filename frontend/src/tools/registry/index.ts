@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { lazy, type LazyExoticComponent } from 'react';
 import type { ToolComponent } from '../types';
@@ -1091,6 +1091,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   RrefCalculator: lazyTool(() =>
     import('@/tools/calculators/rref/RrefCalculator').then((mod) => ({
       default: mod.RrefCalculator,
+    })),
+  ),
+  RsbiCalculator: lazyTool(() =>
+    import('@/tools/calculators/rsbi/RsbiCalculator').then((mod) => ({
+      default: mod.RsbiCalculator,
     })),
   ),
   ArmMortgageCalculator: lazyTool(() =>
@@ -4539,6 +4544,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PayRaiseCalculator,
     })),
   ),
+  PeakFlowCalculator: lazyTool(() =>
+    import('@/tools/calculators/peak-flow/PeakFlowCalculator').then((mod) => ({
+      default: mod.PeakFlowCalculator,
+    })),
+  ),
   PegRatioCalculator: lazyTool(() =>
     import('@/tools/calculators/peg-ratio/PegRatioCalculator').then((mod) => ({
       default: mod.PegRatioCalculator,
@@ -4592,7 +4602,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/perpetuity/PerpetuityCalculator').then((mod) => ({
       default: mod.PerpetuityCalculator,
     })),
-  ),
+  PfRatioCalculator: lazyTool(() =>
+    import('@/tools/calculators/pf-ratio/PfRatioCalculator').then((mod) => ({
+      default: mod.PfRatioCalculator,
+    })),
+  ),  ),
   PisaCalculator: lazyTool(() =>
     import('@/tools/calculators/pisa/PisaCalculator').then((mod) => ({
       default: mod.PisaCalculator,
@@ -5397,6 +5411,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.LtvCalculator,
     })),
   ),
+  LungCapacityCalculator: lazyTool(() =>
+    import('@/tools/calculators/lung-capacity/LungCapacityCalculator').then(
+      (mod) => ({
+        default: mod.LungCapacityCalculator,
+      }),
+    ),
+  ),
   CdCalculator: lazyTool(() =>
     import('@/tools/calculators/cd/CdCalculator').then((mod) => ({
       default: mod.CdCalculator,
@@ -6177,6 +6198,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/retirement/RetirementCalculator'
     ).then((mod) => ({
       default: mod.RetirementCalculator,
+    })),
+  ),
+  RsbiCalculator: lazyTool(() =>
+    import('@/tools/calculators/rsbi/RsbiCalculator').then((mod) => ({
+      default: mod.RsbiCalculator,
     })),
   ),
   Rule2836Calculator: lazyTool(() =>
