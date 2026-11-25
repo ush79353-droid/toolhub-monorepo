@@ -4945,6 +4945,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CurrencyForwardCalculator,
     })),
   ),
+  DeadSpaceCalculator: lazyTool(() =>
+    import('@/tools/calculators/dead-space/DeadSpaceCalculator').then((mod) => ({
+      default: mod.DeadSpaceCalculator,
+    })),
+  ),
   DeadweightLossCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/deadweight-loss/DeadweightLossCalculator'

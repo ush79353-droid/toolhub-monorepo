@@ -873,6 +873,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'CpiInflationCalculator',
   'CurrencyCalculator',
   'CurrencyForwardCalculator',
+  'DeadSpaceCalculator',
   'DeadweightLossCalculator',
   'DiscretionaryIncomeCalculator',
   'FisherEffectCalculator',

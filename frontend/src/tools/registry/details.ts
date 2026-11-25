@@ -1323,6 +1323,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   CurrencyCalculator: () => import('@/tools/calculators/currency/detail'),
   CurrencyForwardCalculator: () =>
     import('@/tools/calculators/currency-forward/detail'),
+  DeadSpaceCalculator: () =>
+    import('@/tools/calculators/dead-space/detail'),
   DeadweightLossCalculator: () =>
     import('@/tools/calculators/deadweight-loss/detail'),
   DiscretionaryIncomeCalculator: () =>
