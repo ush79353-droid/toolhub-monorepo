@@ -268,6 +268,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'PaToPsiConversion',
   'PascalConversion',
   'PsiConverter',
+  'PsiPortCalculator',
   'PsiToAtmConversion',
   'PsiToInchesOfWaterConversion',
   'PressureUnitConversion',

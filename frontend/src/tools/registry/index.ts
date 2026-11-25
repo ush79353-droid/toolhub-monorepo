@@ -1650,6 +1650,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PsiConverter,
     })),
   ),
+  PsiPortCalculator: lazyTool(() =>
+    import('@/tools/calculators/pneumonia-psi/PsiPortCalculator').then((mod) => ({
+      default: mod.PsiPortCalculator,
+    })),
+  ),
   PsiToAtmConversion: lazyTool(() =>
     import('@/tools/calculators/psi-to-atm/PsiToAtmConversion').then((mod) => ({
       default: mod.PsiToAtmConversion,

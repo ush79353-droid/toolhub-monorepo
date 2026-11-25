@@ -487,8 +487,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   UnemploymentCalculator: () => import('@/tools/calculators/unemployment/detail'),
   UrineHomePregnancyTestCalculator: () =>
     import('@/tools/calculators/urine-home-pregnancy-test/detail'),
-  UrineOutputCalculator: () =>
-    import('@/tools/calculators/urine-output/detail'),
   CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
   NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
   CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),
@@ -1471,6 +1469,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lung-cancer-risk/detail'),
   LungCapacityCalculator: () =>
     import('@/tools/calculators/lung-capacity/detail'),
+  LungNoduleGrowthRateCalculator: () =>
+    import('@/tools/calculators/lung-nodule-growth-rate/detail'),
   VitalCapacityCalculator: () =>
     import('@/tools/calculators/vital-capacity/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
