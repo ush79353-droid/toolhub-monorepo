@@ -1,2 +1,0 @@
-agent=cursor-agent-75916644-015950-batch4
-status=DEVELOPING

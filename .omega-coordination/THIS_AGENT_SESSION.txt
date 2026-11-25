@@ -1,0 +1,3 @@
+﻿agentId=cursor-agent-90395695-010538
+sessionId=sess-continuous-20261125-010538
+task=Aa Gradient Calculator

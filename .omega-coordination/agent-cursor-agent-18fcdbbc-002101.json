@@ -1,0 +1,9 @@
+{
+    "note":  "Continuing queue paused at session limit; Pending remains",
+    "heartbeat":  "2026-11-25T02:04:09.0945690+05:00",
+    "claimed":  null,
+    "sessionId":  "sess-continuous-20261125-002101",
+    "phase":  "SESSION_CHECKPOINT",
+    "agentId":  "cursor-agent-18fcdbbc-002101",
+    "status":  "checkpoint"
+}

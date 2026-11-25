@@ -50,5 +50,3 @@ backend/data/tool-content/
 *.zip
 /Tools/
 /Tools/**
-/Completed-Tools/
-/Completed-Tools/**

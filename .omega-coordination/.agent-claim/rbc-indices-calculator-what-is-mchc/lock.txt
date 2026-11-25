@@ -1,0 +1,4 @@
+﻿DONE
+status=ISSUED
+reason=empty-packet
+agentId=cursor-agent-28212114-002003

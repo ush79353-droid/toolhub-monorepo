@@ -1,4 +1,0 @@
-﻿agent=cursor-developer-b-fat-intake-20261124
-claimedAt=2026-11-24T05:02:00Z
-status=IN_PROGRESS
-tool=Fat Intake Calculator

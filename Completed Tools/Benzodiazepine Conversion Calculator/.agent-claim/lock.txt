@@ -1,7 +1,0 @@
-﻿agent=cursor-agent-75916644-015950-batch6
-session=sess-20261124-015950-batch6
-claimedAt=2026-11-24T02:30:18.3536165+05:00
-status=DEVELOPING
-tool=Benzodiazepine Conversion Calculator
-phase=PHASE_1
-heartbeat=2026-11-24T02:30:18.3536165+05:00

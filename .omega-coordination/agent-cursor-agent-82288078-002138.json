@@ -1,0 +1,30 @@
+{
+    "agentId":  "cursor-agent-82288078-002138",
+    "heartbeat":  "2026-11-25T02:07:30.5615895+05:00",
+    "blocker":  "MongoDB Atlas querySrv EBADRESP — cannot verify catalog _id or run tool:assign",
+    "commits":  {
+                    "adrenal":  [
+                                    "09d37ff2",
+                                    "08783b11",
+                                    "c9086bff"
+                                ],
+                    "pcr":  [
+                                "4d0a28c9",
+                                "a7228084",
+                                "b36aa74c"
+                            ]
+                },
+    "sessionId":  "sess-continuous-20261125-002138",
+    "issued":  [
+                   "Adrenal Washout Calculator (duplicate-queue)",
+                   "Free Water Deficit Calculator",
+                   "Protein Creatinine Ratio Calculator",
+                   "CIWA Calculator"
+               ],
+    "phase":  "GLOBAL_BLOCKER",
+    "claimed":  null,
+    "completed":  [
+                      "Adrenal Washout Calculator"
+                  ],
+    "status":  "stopped"
+}

@@ -1,0 +1,17 @@
+{
+    "sessionId":  "sess-continuous-20261125-002303",
+    "heartbeat":  "2026-11-25T02:34:53.0451363+05:00",
+    "agentId":  "cursor-agent-5098051a9bc9",
+    "claimed":  null,
+    "status":  "paused_session_limit",
+    "completed":  [
+                      "BUN Creatinine Ratio Calculator",
+                      "Cigarette Calculator",
+                      "CURB-65 Calculator"
+                  ],
+    "phase":  "SESSION_CHECKPOINT",
+    "issued":  [
+                   "BAI Calculator - Body Adiposity Index",
+                   "BAC Calculator"
+               ]
+}

@@ -1,7 +1,0 @@
-﻿owner=released
-status=COMPLETE_APPROVED_SCOPE
-calculator=Adderall Dosage Calculator
-mongoId=6af46f10a27d8d1d4e9901d1
-slug=adderall-dosage-calculator
-componentKey=AdderallDosageCalculator
-releasedAt=2026-11-22T03:50:00+05:00

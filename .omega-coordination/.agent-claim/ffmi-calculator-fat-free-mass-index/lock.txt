@@ -1,0 +1,4 @@
+﻿agentId=cursor-agent-72170412-002210
+phase=RELEASED_ISSUED
+reason=missing-spec
+releasedAt=2026-11-25T00:44:33.7414669+05:00

@@ -1,4 +1,0 @@
-﻿claimedBy: Developer B (Cursor)
-claimedAt: 2026-11-24T11:06:36+05:00
-tool: Katch-McArdle Calculator
-phase: UI+engine only (no registry/Mongo)

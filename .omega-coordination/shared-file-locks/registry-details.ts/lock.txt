@@ -1,0 +1,4 @@
+﻿agentId=cursor-agent-25205458-010544
+file=registry-details.ts
+ts=2026-11-25T02:04:36.6849873+05:00
+task=Audit Score Calculator

@@ -1,0 +1,9 @@
+{
+    "note":  "Completed Bladder Volume, KtV Daugirdas, Prostate Volume; issued ABSI + 28 empty packets; Pending refilled to 43 with other agents active in Progress (8).",
+    "heartbeat":  "2026-11-25T01:48:42.0356784+05:00",
+    "claimed":  null,
+    "sessionId":  "sess-continuous-20261125-002003",
+    "phase":  "SESSION_HANDOFF",
+    "agentId":  "cursor-agent-28212114-002003",
+    "status":  "stopped"
+}

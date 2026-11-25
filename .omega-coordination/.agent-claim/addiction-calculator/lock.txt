@@ -1,0 +1,4 @@
+agentId=cursor-agent-25205458-010544
+phase=RELEASED_ISSUED
+reason=mongo-dns
+releasedAt=2026-11-25T01:47:43.2611277+05:00

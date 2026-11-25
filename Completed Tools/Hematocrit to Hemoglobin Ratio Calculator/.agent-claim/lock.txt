@@ -1,2 +1,0 @@
-agent=cursor-continue
-claimedAt=2026-11-24T10:08:26.2099422+05:00

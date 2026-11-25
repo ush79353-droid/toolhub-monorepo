@@ -1,0 +1,9 @@
+{
+    "heartbeat":  "2026-11-24T23:59:04.0836235+05:00",
+    "blocker":  "Tools/ queue deleted by concurrent agent; Pending empty and unrecoverable from Recycle Bin",
+    "claimed":  null,
+    "sessionId":  "sess-continuous-20261124-235338",
+    "phase":  "GLOBAL_BLOCKER",
+    "agentId":  "cursor-agent-72148081-235338",
+    "status":  "stopped"
+}

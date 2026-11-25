@@ -1,0 +1,14 @@
+{
+    "sessionId":  "sess-continuous-20261125-002136",
+    "blocker":  "MongoDB Atlas DNS querySrv EBADRESP — cannot verify catalog rows or run tool:assign",
+    "heartbeat":  "2026-11-25T01:51:53.6104973+05:00",
+    "agentId":  "cursor-agent-53899836-002136",
+    "claimed":  null,
+    "status":  "stopped",
+    "phase":  "GLOBAL_BLOCKER",
+    "issued":  [
+                   "Adjusted Body Weight Calculator",
+                   "GFR Calculator - Estimated Glomerular Filtration Rate",
+                   "BODE Index Calculator"
+               ]
+}

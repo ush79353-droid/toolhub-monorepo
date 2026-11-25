@@ -1,0 +1,4 @@
+agentId=cursor-agent-72170412-002210
+phase=RELEASED_ISSUED
+reason=shared-file-lock-contention
+releasedAt=2026-11-25T00:56:23.3248079+05:00

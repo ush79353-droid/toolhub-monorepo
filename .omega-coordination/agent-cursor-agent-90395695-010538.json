@@ -1,0 +1,8 @@
+{
+    "note":  "Session ending: shared-file lock global contention",
+    "heartbeat":  "2026-11-25T02:31:10.4232876+05:00",
+    "claimed":  null,
+    "phase":  "IDLE",
+    "agentId":  "cursor-agent-90395695-010538",
+    "status":  "ready"
+}

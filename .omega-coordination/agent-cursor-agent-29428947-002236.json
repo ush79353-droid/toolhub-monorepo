@@ -1,0 +1,16 @@
+{
+    "agentId":  "cursor-agent-29428947-002236",
+    "completed":  [
+                      "Creatinine Clearance Calculator"
+                  ],
+    "blocker":  "Mongo Atlas DNS querySrv EBADRESP / ENOTFOUND — cannot verify catalog rows before coding",
+    "sessionId":  "sess-continuous-20261125-002236",
+    "heartbeat":  "2026-11-25T01:50:28.8700670+05:00",
+    "phase":  "STOPPED_GLOBAL_BLOCKER_MONGO_DNS",
+    "claimed":  null,
+    "issued":  [
+                   "Anion Gap Calculator",
+                   "Alcohol Unit Calculator"
+               ],
+    "status":  "idle"
+}

@@ -1,8 +1,0 @@
-﻿agentId=cursor-devb-eer-20261124
-claimedAt=2026-11-24T10:04:08+05:00
-completedAt=2026-11-24T10:18:39.1158359+05:00
-tool=EER Calculator — Estimated Energy Requirement
-session=omega-phase1-eer
-status=DEVELOPED_MONGO_PENDING
-uiHash=d556f7a9be68610b6e8e833bb5a0b3e5ee0a8570
-engineHash=e76f5b9eb1e1d059f40d3ec376e8547bff1cf0ea

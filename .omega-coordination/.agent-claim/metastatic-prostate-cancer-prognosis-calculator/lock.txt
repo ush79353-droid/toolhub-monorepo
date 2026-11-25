@@ -1,0 +1,4 @@
+agentId=cursor-agent-72170412-002210
+phase=RELEASED_ISSUED
+reason=clinical-formula-unverified
+releasedAt=2026-11-25T00:59:44.0036961+05:00

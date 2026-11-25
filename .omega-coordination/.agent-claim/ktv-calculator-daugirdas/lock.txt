@@ -1,0 +1,5 @@
+﻿agentId=cursor-agent-28212114-002003
+sessionId=sess-continuous-20261125-002003
+task=KtV Calculator Daugirdas
+phase=CLAIMED
+claimedAt=2026-11-25T00:48:11.1025426+05:00

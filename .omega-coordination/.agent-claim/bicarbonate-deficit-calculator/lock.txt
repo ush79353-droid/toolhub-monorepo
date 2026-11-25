@@ -1,0 +1,7 @@
+﻿agentId=cursor-agent-66940321-002348
+sessionId=sess-continuous-20261125-002348
+task=Bicarbonate Deficit Calculator
+phase=ISSUED
+releasedAt=
+2026-11-25T00:35:13.4595070+05:00
+status=released-issued
