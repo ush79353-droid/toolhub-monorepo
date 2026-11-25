@@ -43,7 +43,7 @@ export interface RawSitemapCategory {
 
 export type SitemapMatch =
   | { kind: 'index'; files: string[] }
-  | { kind: 'tools'; tools: SitemapToolRef[] }
+  | { kind: 'tools'; tools: SitemapToolRef[]; children: string[] }
   | { kind: 'missing' };
 
 function segmentFor(slug: string, reserved: ReadonlySet<string>): string {
@@ -56,7 +56,6 @@ export function prepareSitemapCategories(
   keep: (tool: SitemapToolRef) => boolean
 ): SitemapCategoryNode[] {
   const categoryReserved = new Set(['static']);
-  const childReserved = new Set(['tools']);
   return categories.flatMap((category) => {
     if (!category.slug) return [];
     const tools = category.tools.filter((tool) => tool.slug && keep(tool));
@@ -67,18 +66,33 @@ export function prepareSitemapCategories(
         if (!subpillar.slug) return [];
         const rows = (subpillar.tools ?? []).filter((tool) => tool.slug && keep(tool));
         if (rows.length === 0) return [];
-        return [{ slug: subpillar.slug, segment: segmentFor(subpillar.slug, childReserved), tools: rows }];
+        return [{ slug: subpillar.slug, segment: subpillar.slug, tools: rows }];
       });
       if (direct.length === 0 && subpillars.length === 0) return [];
-      return [{ slug: pillar.slug, segment: segmentFor(pillar.slug, childReserved), tools: direct, subpillars }];
+      return [{ slug: pillar.slug, segment: pillar.slug, tools: direct, subpillars }];
     });
     if (tools.length === 0 && pillars.length === 0) return [];
     return [{ slug: category.slug, segment: segmentFor(category.slug, categoryReserved), tools, pillars }];
   });
 }
 
+function pillarBranch(categorySegment: string, pillar: SitemapPillarNode): string[] {
+  const pillarFile = `${categorySegment}/${pillar.segment}.xml`;
+  if (pillar.tools.length === 0 || pillar.subpillars.length === 0) return [pillarFile];
+  return [
+    pillarFile,
+    ...pillar.subpillars.map((subpillar) => `${categorySegment}/${pillar.segment}/${subpillar.segment}.xml`),
+  ];
+}
+
 export function sitemapIndexFiles(categories: readonly SitemapCategoryNode[]): string[] {
-  return ['static.xml', ...categories.map((category) => `${category.segment}.xml`)];
+  const files = ['static.xml'];
+  for (const category of categories) {
+    files.push(`${category.segment}.xml`);
+    if (category.tools.length === 0) continue;
+    for (const pillar of category.pillars) files.push(...pillarBranch(category.segment, pillar));
+  }
+  return files;
 }
 
 function findCategory(categories: readonly SitemapCategoryNode[], segment: string): SitemapCategoryNode | undefined {
@@ -89,39 +103,41 @@ function findPillar(category: SitemapCategoryNode, segment: string): SitemapPill
   return category.pillars.find((pillar) => pillar.segment === segment);
 }
 
-/** One file is either an index of child sitemaps or a urlset of tool pages. */
+/** Tool pages are listed in the category or pillar file. A separate tools.xml is not created. */
 export function resolveSitemapPath(categories: readonly SitemapCategoryNode[], parts: readonly string[]): SitemapMatch {
   const category = parts[0] ? findCategory(categories, parts[0]) : undefined;
   if (!category || parts.length > 3) return { kind: 'missing' };
 
   if (parts.length === 1) {
-    const files: string[] = [];
-    if (category.tools.length > 0) files.push(`${category.segment}/tools.xml`);
-    for (const pillar of category.pillars) files.push(`${category.segment}/${pillar.segment}.xml`);
-    return files.length > 0 ? { kind: 'index', files } : { kind: 'missing' };
-  }
-
-  if (parts[1] === 'tools') {
-    return parts.length === 2 && category.tools.length > 0 ? { kind: 'tools', tools: category.tools } : { kind: 'missing' };
+    if (category.tools.length === 0) {
+      const files = category.pillars.flatMap((pillar) => pillarBranch(category.segment, pillar));
+      return files.length > 0 ? { kind: 'index', files } : { kind: 'missing' };
+    }
+    return {
+      kind: 'tools',
+      tools: category.tools,
+      children: category.pillars.map((pillar) => `${category.segment}/${pillar.segment}.xml`),
+    };
   }
 
   const pillar = findPillar(category, parts[1] ?? '');
-  if (!pillar) return { kind: 'missing' };
+  if (!pillar || parts.length > 3) return { kind: 'missing' };
 
   if (parts.length === 2) {
-    if (pillar.subpillars.length === 0) return { kind: 'tools', tools: pillar.tools };
-    const files: string[] = [];
-    if (pillar.tools.length > 0) files.push(`${category.segment}/${pillar.segment}/tools.xml`);
-    for (const subpillar of pillar.subpillars) {
-      files.push(`${category.segment}/${pillar.segment}/${subpillar.segment}.xml`);
+    if (pillar.subpillars.length === 0) return { kind: 'tools', tools: pillar.tools, children: [] };
+    if (pillar.tools.length === 0) {
+      return {
+        kind: 'index',
+        files: pillar.subpillars.map((subpillar) => `${category.segment}/${pillar.segment}/${subpillar.segment}.xml`),
+      };
     }
-    return { kind: 'index', files };
-  }
-
-  if (parts[2] === 'tools') {
-    return pillar.tools.length > 0 ? { kind: 'tools', tools: pillar.tools } : { kind: 'missing' };
+    return {
+      kind: 'tools',
+      tools: pillar.tools,
+      children: pillar.subpillars.map((subpillar) => `${category.segment}/${pillar.segment}/${subpillar.segment}.xml`),
+    };
   }
 
   const subpillar = pillar.subpillars.find((item) => item.segment === parts[2]);
-  return subpillar ? { kind: 'tools', tools: subpillar.tools } : { kind: 'missing' };
+  return subpillar ? { kind: 'tools', tools: subpillar.tools, children: [] } : { kind: 'missing' };
 }

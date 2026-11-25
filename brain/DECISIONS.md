@@ -161,6 +161,7 @@
 - **Consequences:** Does not supersede ADR-016, ADR-017, ADR-018, ADR-019, or ADR-021. Do not insert a second catalog row. Do not activate a placeholder. Do not turn an admin-disabled tool back on unless the task says so. An empty or unregistered `componentKey` keeps the public route at `notFound()`. Cursor (`.cursor/rules/tool-activation.mdc`) and Antigravity (`.agents/rules/tool-activation.md`) both apply this rule.
 - **Amendment (2026-11-25):** Do not add a tool slug to a sitemap file. `/sitemap.xml` is an index. Static pages keep `lastModified` in `frontend/src/config/static-sitemap.ts`, and active category hubs share `/sitemap/static.xml`. Each pillar is `/sitemap/{pillarSlug}.xml`. A tool URL is included only when `isActive`, `indexable`, `sitemapInclude`, a published SEO draft, and a registered component all hold. Tools with no pillar go in `/sitemap/unassigned.xml`.
 - **Amendment (2026-11-25, sitemap nesting):** The index is static, then categories. `/sitemap/{category}.xml` is an index: tools with no pillar, then each pillar. A pillar with subpillars is an index of its direct tools, then each subpillar urlset. A pillar with no subpillars is a urlset of its tools. There is no `unassigned` file.
+- **Amendment (2026-11-25, no tools.xml):** Category and pillar files list their own tool URLs. Child sitemap links come after those URLs. A separate `tools.xml` is not generated.
 - **Status:** Accepted
 
 ## ADR-023: Screenshot-First Functional Parity, Minimal UI Complexity, and Verified Automatic Activation

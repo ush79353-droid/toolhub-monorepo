@@ -19,15 +19,16 @@ test('urlset keeps a stored lastmod and does not invent one', () => {
   assert.equal(xml.match(/<loc>/g)?.length, 2);
 });
 
-test('category index lists loose tools first, then pillars', () => {
+test('category file lists its own tools, then pillar sitemaps', () => {
+  const loose = { slug: 'loose', componentKey: 'Loose', publishedAt: null };
   const categories = prepareSitemapCategories(
     [
       {
         slug: 'static',
-        tools: [{ slug: 'loose', componentKey: 'Loose', publishedAt: null }],
+        tools: [loose],
         pillars: [
           {
-            slug: 'tools',
+            slug: 'cards',
             tools: [{ slug: 'direct', componentKey: 'Direct', publishedAt: null }],
             subpillars: [
               {
@@ -49,21 +50,29 @@ test('category index lists loose tools first, then pillars', () => {
     ],
     (tool) => tool.componentKey !== 'Dropped'
   );
-  assert.deepEqual(sitemapIndexFiles(categories), ['static.xml', 'section-static.xml']);
+  assert.deepEqual(sitemapIndexFiles(categories), [
+    'static.xml',
+    'section-static.xml',
+    'section-static/cards.xml',
+    'section-static/cards/rewards.xml',
+    'section-static/loans.xml',
+  ]);
   assert.deepEqual(resolveSitemapPath(categories, ['section-static']), {
-    kind: 'index',
-    files: ['section-static/tools.xml', 'section-static/section-tools.xml', 'section-static/loans.xml'],
-  });
-  assert.deepEqual(resolveSitemapPath(categories, ['section-static', 'tools']), {
     kind: 'tools',
-    tools: [{ slug: 'loose', componentKey: 'Loose', publishedAt: null }],
+    tools: [loose],
+    children: ['section-static/cards.xml', 'section-static/loans.xml'],
   });
-  assert.deepEqual(resolveSitemapPath(categories, ['section-static', 'loans']).kind, 'tools');
-  assert.deepEqual(resolveSitemapPath(categories, ['section-static', 'section-tools']), {
-    kind: 'index',
-    files: ['section-static/section-tools/tools.xml', 'section-static/section-tools/rewards.xml'],
+  assert.deepEqual(resolveSitemapPath(categories, ['section-static', 'loans']), {
+    kind: 'tools',
+    tools: [{ slug: 'kept', componentKey: 'Kept', publishedAt: null }],
+    children: [],
   });
-  const nested = resolveSitemapPath(categories, ['section-static', 'section-tools', 'rewards']);
+  assert.deepEqual(resolveSitemapPath(categories, ['section-static', 'cards']), {
+    kind: 'tools',
+    tools: [{ slug: 'direct', componentKey: 'Direct', publishedAt: null }],
+    children: ['section-static/cards/rewards.xml'],
+  });
+  const nested = resolveSitemapPath(categories, ['section-static', 'cards', 'rewards']);
   assert.equal(nested.kind, 'tools');
   if (nested.kind === 'tools') assert.deepEqual(nested.tools.map((tool) => tool.slug), ['nested']);
 });

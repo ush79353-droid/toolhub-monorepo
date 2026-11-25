@@ -53,12 +53,10 @@ export async function GET(
   if (match.kind === 'index') {
     return xml(sitemapIndex(match.files.map((file) => `${origin}/sitemap/${file}`)));
   }
-  return xml(
-    sitemapUrlset(
-      match.tools.map((tool) => ({
-        url: `${origin}/tools/${tool.slug}`,
-        lastModified: tool.publishedAt,
-      }))
-    )
-  );
+  const pages: SitemapUrl[] = match.tools.map((tool) => ({
+    url: `${origin}/tools/${tool.slug}`,
+    lastModified: tool.publishedAt,
+  }));
+  for (const file of match.children) pages.push({ url: `${origin}/sitemap/${file}` });
+  return xml(sitemapUrlset(pages));
 }
