@@ -1457,10 +1457,14 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SimpleMortgageCalculator: () =>
     import('@/tools/calculators/simple-mortgage/detail'),
   LtvCalculator: () => import('@/tools/calculators/ltv/detail'),
+  LungCancerRiskCalculator: () =>
+    import('@/tools/calculators/lung-cancer-risk/detail'),
   LungCapacityCalculator: () =>
     import('@/tools/calculators/lung-capacity/detail'),
   LungNoduleGrowthRateCalculator: () =>
     import('@/tools/calculators/lung-nodule-growth-rate/detail'),
+  VitalCapacityCalculator: () =>
+    import('@/tools/calculators/vital-capacity/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
     import('@/tools/calculators/capital-gains-yield/detail'),
