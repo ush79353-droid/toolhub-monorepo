@@ -2,6 +2,7 @@
 - [x] Light's Criteria Calculator for Pleural Effusion (lights-criteria-calculator-for-pleural-effusion) — developed + activated 2026-11-25 (indexable false).
 - [x] Tidal Volume Calculator (tidal-volume-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] Urine Output Calculator (urine-output-calculator) — developed + activated 2026-11-25 (indexable false).
+- [x] Vital Capacity Calculator (vital-capacity-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] FEV1/FVC Ratio Calculator (fev1fvc-ratio-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] Endotracheal Tube Size Calculator (endotracheal-tube-size-calculator) — developed + activated 2026-11-25 (indexable false).
 - [x] BODE Index Calculator (bode-index-calculator) — Issued recovery: developed + activated 2026-11-25 (indexable false).

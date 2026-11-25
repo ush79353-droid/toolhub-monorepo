@@ -640,6 +640,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       }),
     ),
   ),
+  PsaDoublingTimeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/psa-doubling-time/PsaDoublingTimeCalculator'
+    ).then((mod) => ({
+      default: mod.PsaDoublingTimeCalculator,
+    })),
+  ),
   ProteinCalculator: lazyTool(() =>
     import('@/tools/calculators/protein/ProteinCalculator').then((mod) => ({
       default: mod.ProteinCalculator,
@@ -3292,6 +3299,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TidalVolumeCalculator,
     })),
   ),
+  TtkgCalculator: lazyTool(() =>
+    import('@/tools/calculators/ttkg/TtkgCalculator').then((mod) => ({
+      default: mod.TtkgCalculator,
+    })),
+  ),
   TtmCalculator: lazyTool(() =>
     import('@/tools/calculators/ttm/TtmCalculator').then((mod) => ({
       default: mod.TtmCalculator,
@@ -5469,6 +5481,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.LungCapacityCalculator,
       }),
     ),
+  ),
+  LungNoduleGrowthRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/lung-nodule-growth-rate/LungNoduleGrowthRateCalculator'
+    ).then((mod) => ({
+      default: mod.LungNoduleGrowthRateCalculator,
+    })),
   ),
   VitalCapacityCalculator: lazyTool(() =>
     import('@/tools/calculators/vital-capacity/VitalCapacityCalculator').then(

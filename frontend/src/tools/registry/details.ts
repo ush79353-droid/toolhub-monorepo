@@ -137,8 +137,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/katch-mcardle/detail'),
   KtvDaugirdasCalculator: () =>
     import('@/tools/calculators/ktv-daugirdas/detail'),
-  KidneyStonePcnlCalculator: () =>
-    import('@/tools/calculators/kidney-stone-pcnl/detail'),
   KetoCalculator: () => import('@/tools/calculators/keto/detail'),
   LidocaineDoseCalculator: () =>
     import('@/tools/calculators/lidocaine-dose/detail'),
@@ -166,8 +164,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NetCarbsCalculator: () => import('@/tools/calculators/net-carbs/detail'),
   OpioidConversionCalculator: () =>
     import('@/tools/calculators/opioid-conversion/detail'),
-  OxygenationIndexCalculator: () =>
-    import('@/tools/calculators/oxygenation-index/detail'),
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
   PrescriptionRefillCalculator: () =>
     import('@/tools/calculators/prescription-refill/detail'),
@@ -223,16 +219,12 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   MaintainPregnancyWeightCalculator: () =>
     import('@/tools/calculators/maintain-pregnancy-weight/detail'),
   McaCalculator: () => import('@/tools/calculators/mca/detail'),
-  MeanAirwayPressureCalculator: () =>
-    import('@/tools/calculators/mean-airway-pressure/detail'),
   MealCalorieCalculator: () =>
     import('@/tools/calculators/meal-calorie/detail'),
   MaintenanceCalorieCalculator: () =>
     import('@/tools/calculators/maintenance-calorie/detail'),
   MapCalculator: () =>
     import('@/tools/calculators/map-mean-arterial-pressure/detail'),
-  MeanAirwayPressureCalculator: () =>
-    import('@/tools/calculators/mean-airway-pressure/detail'),
   MeanSacDiameterCalculator: () =>
     import('@/tools/calculators/mean-sac-diameter/detail'),
   MelatoninDosageCalculator: () =>
@@ -487,6 +479,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   UnemploymentCalculator: () => import('@/tools/calculators/unemployment/detail'),
   UrineHomePregnancyTestCalculator: () =>
     import('@/tools/calculators/urine-home-pregnancy-test/detail'),
+  UrineOutputCalculator: () =>
+    import('@/tools/calculators/urine-output/detail'),
   CentsToDollarsCalculator: () => import('@/tools/calculators/cents-to-dollars/detail'),
   NmToJoulesCalculator: () => import('@/tools/calculators/nm-to-joules/detail'),
   CgsSystemOfUnitsConverter: () => import('@/tools/calculators/cgs-system/detail'),
@@ -793,8 +787,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),
   TestosteroneEstradiolRatioCalculator: () =>
     import('@/tools/calculators/testosterone-estradiol-ratio/detail'),
-  TidalVolumeCalculator: () =>
-    import('@/tools/calculators/tidal-volume/detail'),
   TimeValueOfMoneyCalculator: () =>
     import('@/tools/calculators/time-value-of-money/detail'),
   TtmCalculator: () => import('@/tools/calculators/ttm/detail'),
@@ -1465,14 +1457,10 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   SimpleMortgageCalculator: () =>
     import('@/tools/calculators/simple-mortgage/detail'),
   LtvCalculator: () => import('@/tools/calculators/ltv/detail'),
-  LungCancerRiskCalculator: () =>
-    import('@/tools/calculators/lung-cancer-risk/detail'),
   LungCapacityCalculator: () =>
     import('@/tools/calculators/lung-capacity/detail'),
   LungNoduleGrowthRateCalculator: () =>
     import('@/tools/calculators/lung-nodule-growth-rate/detail'),
-  VitalCapacityCalculator: () =>
-    import('@/tools/calculators/vital-capacity/detail'),
   CdCalculator: () => import('@/tools/calculators/cd/detail'),
   CapitalGainsYieldCalculator: () =>
     import('@/tools/calculators/capital-gains-yield/detail'),
@@ -1649,8 +1637,6 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/lifetime-earnings/detail'),
   LifoInventoryCalculator: () =>
     import('@/tools/calculators/lifo-inventory/detail'),
-  LightsCriteriaCalculator: () =>
-    import('@/tools/calculators/lights-criteria/detail'),
   LongTermCareCalculator: () =>
     import('@/tools/calculators/long-term-care/detail'),
   MegaMillionsPayoutCalculator: () =>
