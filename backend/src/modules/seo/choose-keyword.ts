@@ -19,6 +19,24 @@ export interface SuggestedLink {
 }
 
 const BRAND_TOKENS = ['calculator.net', 'nerdwallet', 'bankrate', 'investopedia', 'wikipedia', 'omnicalculator'];
+const SEED_NOISE = new Set(['calculator', 'calculators', 'converter', 'converters']);
+
+/** Tool name with calculator/converter removed, for the DataForSEO seed. */
+export function keywordSeed(toolName: string): string {
+  const words = toolName
+    .trim()
+    .split(/[^A-Za-z0-9]+/)
+    .filter((word) => word.length > 0 && !SEED_NOISE.has(word.toLowerCase()));
+  const seed = words.join(' ');
+  return seed.length > 0 ? seed : toolName.trim();
+}
+
+/** Suggestion must contain every seed word, so a broad calculator keyword cannot be saved. */
+export function keywordContainsSeed(keyword: string, seed: string): boolean {
+  const words = new Set(keyword.toLowerCase().split(/[^a-z0-9]+/).filter((word) => word.length > 0));
+  const required = seed.toLowerCase().split(/[^a-z0-9]+/).filter((word) => word.length >= 2);
+  return required.length > 0 && required.every((word) => words.has(word));
+}
 const STOP_TOKENS = new Set(['calculator', 'calculators', 'the', 'and', 'for', 'with', 'from', 'vs', 'per']);
 
 function volume(fact: KeywordFact): number {

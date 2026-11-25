@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { choosePrimaryKeyword, type KeywordFact } from './choose-keyword';
+import { choosePrimaryKeyword, keywordContainsSeed, keywordSeed, type KeywordFact } from './choose-keyword';
 
 function fact(keyword: string, searchVolume: number): KeywordFact {
   return { keyword, searchVolume, difficulty: null, cpc: null };
@@ -38,6 +38,14 @@ test('does not fall back to the highest-volume idea when nothing names the tool'
 test('does not pick another rule just because both keywords contain rule', () => {
   const picked = choosePrimaryKeyword([fact('50 30 20 rule', 200000)], '28/36 Rule Calculator');
   assert.equal(picked, null);
+});
+
+test('drops calculator and converter from the DataForSEO seed', () => {
+  assert.equal(keywordSeed('3x Rent Calculator'), '3x Rent');
+  assert.equal(keywordSeed('Yards to Meters Converter'), 'Yards to Meters');
+  assert.equal(keywordSeed('Calculator'), 'Calculator');
+  assert.equal(keywordContainsSeed('3x the rent calculator', '3x Rent'), true);
+  assert.equal(keywordContainsSeed('compound interest calculator', '3x Rent'), false);
 });
 
 test('skips a matching keyword another draft in the campaign already took', () => {

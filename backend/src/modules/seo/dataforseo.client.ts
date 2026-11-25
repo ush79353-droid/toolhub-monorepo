@@ -76,12 +76,14 @@ export function parseOrganicSerp(result: unknown): SerpItem[] {
   return organic;
 }
 
-export async function fetchKeywordIdeas(seed: string, locationCode: number, languageCode: string): Promise<unknown> {
-  return postTask('/v3/dataforseo_labs/google/keyword_ideas/live', {
-    keywords: [seed],
+export async function fetchKeywordSuggestions(seed: string, locationCode: number, languageCode: string): Promise<unknown> {
+  return postTask('/v3/dataforseo_labs/google/keyword_suggestions/live', {
+    keyword: seed,
     location_code: locationCode,
     language_code: languageCode,
     limit: 20,
+    exact_match: false,
+    include_seed_keyword: true,
     include_serp_info: false,
   });
 }

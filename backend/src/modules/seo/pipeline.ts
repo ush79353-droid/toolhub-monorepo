@@ -2,9 +2,9 @@ import { Types } from 'mongoose';
 import { env } from '../../config/env';
 import { Category } from '../categories/category.model';
 import { Tool } from '../tools/tool.model';
-import { choosePrimaryKeyword, chooseSecondaryKeywords, pickSiblingLinks } from './choose-keyword';
+import { choosePrimaryKeyword, chooseSecondaryKeywords, keywordContainsSeed, keywordSeed, pickSiblingLinks } from './choose-keyword';
 import { alignDraftContent, seoContentSchema } from './content';
-import { fetchKeywordIdeas, fetchOrganicSerp, parseKeywordIdeas, parseOrganicSerp } from './dataforseo.client';
+import { fetchKeywordSuggestions, fetchOrganicSerp, parseKeywordIdeas, parseOrganicSerp } from './dataforseo.client';
 import { draftSeoContent } from './openai.client';
 import { enqueueSeoStep } from './queue';
 import { SeoCampaign, SeoDraft, SeoProviderCache, type ISeoDraft } from './seo.model';
@@ -121,15 +121,15 @@ export async function runKeywordResearch(draftId: string): Promise<void> {
   const campaign = await SeoCampaign.findById(draft.campaignId).select('locationCode languageCode');
   const location = campaign?.locationCode ?? env.DATAFORSEO_LOCATION_CODE;
   const language = campaign?.languageCode ?? env.DATAFORSEO_LANGUAGE_CODE;
-  const seed = draft.snapshot.name.trim();
-  const cacheKey = `keyword:${location}:${language}:${seed.toLowerCase()}`;
+  const seed = keywordSeed(draft.snapshot.name);
+  const cacheKey = `keyword:suggest:${location}:${language}:${seed.toLowerCase()}`;
   let raw = await readCache(cacheKey);
   if (!raw) {
-    raw = await fetchKeywordIdeas(seed, location, language);
+    raw = await fetchKeywordSuggestions(seed, location, language);
     await writeCache(cacheKey, 'keyword', raw);
     draft.callCounts.keyword += 1;
   }
-  const facts = parseKeywordIdeas(raw);
+  const facts = parseKeywordIdeas(raw).filter((fact) => keywordContainsSeed(fact.keyword, seed));
   const peers = await SeoDraft.find({
     campaignId: draft.campaignId,
     _id: { $ne: draft._id },
