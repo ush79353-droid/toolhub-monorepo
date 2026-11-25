@@ -847,6 +847,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AaGradientCalculator: () =>
     import('@/tools/calculators/aa-gradient/detail'),
   AbiCalculator: () => import('@/tools/calculators/abi/detail'),
+  AbsiCalculator: () => import('@/tools/calculators/absi/detail'),
   AbsoluteEosinophilCountCalculator: () =>
     import('@/tools/calculators/absolute-eosinophil-count/detail'),
   AbsoluteLymphocyteCountCalculator: () =>

@@ -3492,6 +3492,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AbiCalculator,
     })),
   ),
+  AbsiCalculator: lazyTool(() =>
+    import('@/tools/calculators/absi/AbsiCalculator').then((mod) => ({
+      default: mod.AbsiCalculator,
+    })),
+  ),
   AbsoluteEosinophilCountCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/absolute-eosinophil-count/AbsoluteEosinophilCountCalculator'
