@@ -510,7 +510,6 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.KidneyFailureRiskCalculator,
     })),
   ),
-  ),
   LidocaineDoseCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/lidocaine-dose/LidocaineDoseCalculator'
