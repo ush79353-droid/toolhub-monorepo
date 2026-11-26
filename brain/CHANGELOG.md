@@ -1,3 +1,7 @@
+## 2026-11-26 — Parenthetical acronyms stay off the keyword seed
+
+Lost Wages Assistance (LWA) is searched as Lost Wages Assistance. The old seed glued on LWA, and DataForSEO returned no ideas. LWA alone is not searched, because those suggestions are unrelated.
+
 ## 2026-11-26 — Dashed tool names match on the distinctive suffix
 
 Keyword search uses the name after the dash. CARES Act no longer also requires unemployment benefit. LWA can stand for Lost Wages Assistance. HEALS and HEROES must both appear.

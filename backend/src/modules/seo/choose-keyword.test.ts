@@ -71,6 +71,18 @@ test('uses the name after the dash and still rejects a generic unemployment keyw
     'lwa unemployment'
   );
   assert.equal(keywordSeed('Unemployment Benefit Calculator - CARES Act'), 'CARES Act');
+  assert.equal(
+    keywordSeed('Unemployment Benefit Calculator - Lost Wages Assistance (LWA)'),
+    'Lost Wages Assistance'
+  );
+  assert.equal(
+    keywordContainsSeed('lost wages assistance program', keywordSeed('Unemployment Benefit Calculator - Lost Wages Assistance (LWA)')),
+    true
+  );
+  assert.equal(
+    keywordContainsSeed('lwa anime', keywordSeed('Unemployment Benefit Calculator - Lost Wages Assistance (LWA)')),
+    false
+  );
   assert.equal(keywordContainsSeed('heals act', keywordSeed('Unemployment Benefit Calculator - HEALS Act vs. HEROES Act')), false);
 });
 

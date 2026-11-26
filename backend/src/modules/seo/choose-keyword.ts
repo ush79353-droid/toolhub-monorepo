@@ -42,12 +42,24 @@ function contentTokens(name: string): string[] {
     .filter((token) => token.length >= 2 && !STOP_TOKENS.has(token) && !SEED_NOISE.has(token));
 }
 
+/** "(LWA)" is for matching. Gluing it onto the phrase makes DataForSEO return nothing. */
+function withoutParentheticalAcronym(name: string): string {
+  const acronyms = shortAcronyms(name);
+  if (acronyms.length !== 1) return name;
+  const stripped = name.replace(/\s*\(([^)]+)\)\s*$/, (full, inner: string) => {
+    const tokens = inner.split(/[^A-Za-z0-9]+/).filter((token) => token.length > 0);
+    return tokens.length === 1 && tokens[0]?.toLowerCase() === acronyms[0] ? '' : full;
+  });
+  const next = stripped.trim();
+  return next.length > 0 ? next : name;
+}
+
 /**
  * Tool name for the DataForSEO seed. A dashed suffix is the seed.
  * Drop calculator/converter only when at least two words remain.
  */
 export function keywordSeed(toolName: string): string {
-  const trimmed = distinctiveName(toolName);
+  const trimmed = withoutParentheticalAcronym(distinctiveName(toolName));
   const words = trimmed.split(/[^A-Za-z0-9]+/).filter((word) => word.length > 0);
   const kept = words.filter((word) => !SEED_NOISE.has(word.toLowerCase()));
   return kept.length >= 2 ? kept.join(' ') : trimmed;
