@@ -34,7 +34,7 @@ export const siteConfig = {
    */
   contact: {
     businessEmail: 'contact@omegacalculators.com',
-    phone: '+923123456789',
+    phone: '',
     responseTime: '3 to 5 business days',
     company: 'Uzair Software House',
     street: '',
