@@ -630,6 +630,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AmoxicillinPediatricDosageCalculator',
   'AncAbsoluteNeutrophilCountCalculator',
   'AncWithoutBandsCalculator',
+  'AnionGapCalculator',
   'BeeCalculator',
   'BenadrylDosageCalculator',
   'BenzodiazepineConversionCalculator',

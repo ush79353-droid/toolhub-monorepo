@@ -341,6 +341,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/anc-absolute-neutrophil-count/detail'),
   AncWithoutBandsCalculator: () =>
     import('@/tools/calculators/anc-without-bands/detail'),
+  AnionGapCalculator: () => import('@/tools/calculators/anion-gap/detail'),
   AmtCalculator: () => import('@/tools/calculators/amt/detail'),
   AcreageCalculator: () => import('@/tools/calculators/acreage/detail'),
   FeetToInchesCalculator: () => import('@/tools/calculators/feet-to-inches/detail'),

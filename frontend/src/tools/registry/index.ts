@@ -1306,6 +1306,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AncWithoutBandsCalculator,
     })),
   ),
+  AnionGapCalculator: lazyTool(() =>
+    import('@/tools/calculators/anion-gap/AnionGapCalculator').then((mod) => ({
+      default: mod.AnionGapCalculator,
+    })),
+  ),
   AltmanZScoreCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/altman-z-score/AltmanZScoreCalculator'

@@ -26,6 +26,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-816` | Anion Gap Calculator (`AnionGapCalculator`); AG without K + Figge albumin correction; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/anion-gap/*` | Mongo Atlas DNS |
 | `TOOL-815` | Adjusted Body Weight Calculator (`AdjustedBodyWeightCalculator`); Robinson IBW + 0.4 AjBW; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/adjusted-body-weight/*` | Mongo Atlas DNS |
 | `TOOL-814` | Ideal Weight Calculator (`IdealWeightCalculator`); Devine/Robinson/Miller/Hamwi; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/ideal-weight/*` | Mongo Atlas DNS |
 | `TOOL-813` | ABSI Calculator (`AbsiCalculator`); Krakauer ABSI + NHANES Table S1 z-score; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/absi/*` | Mongo Atlas DNS |

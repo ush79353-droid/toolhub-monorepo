@@ -1,4 +1,10 @@
-﻿## 2026-11-26 — Adjusted Body Weight Calculator (TOOL-815)
+﻿## 2026-11-26 — Anion Gap Calculator (TOOL-816)
+
+- **Summary:** Screenshot-first AG (AnionGapCalculator, slug nion-gap-calculator). Primary AG without K; Figge albumin correction on AG_K; **No FX**.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `990d9048` / ENG `37874ebf` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/anion-gap/calculation.test.ts` → ok.
+## 2026-11-26 — Adjusted Body Weight Calculator (TOOL-815)
 
 - **Summary:** Screenshot-first AjBW (AdjustedBodyWeightCalculator, slug djusted-body-weight-calculator). Robinson IBW + 0.4 factor; **No FX**.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
