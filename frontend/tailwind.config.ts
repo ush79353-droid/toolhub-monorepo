@@ -26,7 +26,7 @@ const config: Config = {
           darkAccent: '#163C43',
           primaryHover: '#066773',
           softTeal: '#EAF7F6',
-          background: '#F7F8F6',
+          background: '#F6F7FE',
           text: '#202B2D',
           textSecondary: '#667477',
           border: '#C3C8D4',

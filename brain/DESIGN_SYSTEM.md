@@ -13,11 +13,11 @@
 | **Dark Accent** | `#163C43` | `--accent` / `--secondary-foreground: 189 51% 17%` | `brand-darkAccent` / `accent` | Headings (`h1`-`h3`), admin sidebar & header background, strong brand text |
 | **Primary Hover** | `#066773` | `--primary-hover: 187 90% 24%` | `brand-primaryHover` / `primary-hover` | Button & primary action hover states |
 | **Soft Teal** | `#EAF7F6` | `--muted: 175 46% 94%` | `brand-softTeal` / `muted` | Subtle card surfaces, table headers, banner tints |
-| **Background** | `#F7F8F6` | `--background: 90 10% 97%` | `brand-background` / `background` | Admin / muted canvas token; public `(website)` layout uses `bg-white` so white calculator cards can lift with soft elevation shadows |
+| **Background** | `#F6F7FE` | `--background: 233 80% 98%` | `brand-background` / `background` | Public page canvas, header, and footer. Cards stay `brand-white` / `--card` so they lift off the canvas |
 | **Primary Text** | `#202B2D` | `--foreground: 189 17% 15%` | `brand-text` / `foreground` | Primary body text & card foreground |
 | **Secondary Text** | `#667477` | `--muted-foreground: 191 8% 43%` | `brand-textSecondary` / `muted-foreground` | Descriptions, labels, helper copy, metadata |
 | **Border** | `#C3C8D4` | `--border` / `--input: 222 17% 80%` | `brand-border` / `border` / `input` | Hairline dividers, card borders, input borders |
-| **Surface White** | `#FFFFFF` | `--card` / `--popover: 0 0% 100%` | `brand-white` / `card` / `white` | Cards, modals, inputs, header/footer surfaces |
+| **Surface White** | `#FFFFFF` | `--card` / `--popover: 0 0% 100%` | `brand-white` / `card` / `white` | Cards, modals, inputs, and other raised surfaces |
 
 ### Semantic Status Accents (Admin & Feedback States)
 Verified in `StatusBadge.tsx`, `PendingNotice.tsx`, forms, and alerts:
@@ -50,7 +50,7 @@ Verified in `StatusBadge.tsx`, `PendingNotice.tsx`, forms, and alerts:
 
 - **Base Radius:** `--radius: 0.5rem` (`rounded-lg`, `rounded-md`, `rounded-sm`). Cards typically use `rounded-xl` or `rounded-2xl`; pills use `rounded-full`; auth split container uses `rounded-[28px]`.
 - **Public Container (`Container.tsx`):** `mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8` (note `tailwind.config.ts` also sets `container.screens['2xl'] = '1400px'`).
-- **Ad placeholders (`AdSlot`):** Dashed `border-border`, `rounded-xl`, canvas `#F7F8F6`, centered muted “Advertisement” label; reserved min-heights for leaderboard (~90–100px) and rectangle (~250px). Never sticky; never inside calculator panels. See `AD_STANDARDS.md`.
+- **Ad placeholders (`AdSlot`):** Dashed `border-border`, `rounded-xl`, canvas `#F6F7FE`, centered muted “Advertisement” label; reserved min-heights for leaderboard (~90–100px) and rectangle (~250px). Never sticky; never inside calculator panels. See `AD_STANDARDS.md`.
 - **Public Header:** Sticky `h-16` (`top-0 z-40`), white translucent backdrop (`bg-white/95 backdrop-blur-md`).
 - **Calculator aside + sticky right rail:** `StickyCalculatorAside` is a plain flow `<aside>` landmark (no sticky/internal overflow). Desktop right `ToolDetailSidebar` uses `lg:sticky lg:top-[84px]` with viewport-capped max-height. Never used on `/embed/*`.
 - **Admin Shell (`AdminDashboardShell.tsx`):**
