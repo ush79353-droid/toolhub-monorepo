@@ -21,14 +21,15 @@ export interface SuggestedLink {
 const BRAND_TOKENS = ['calculator.net', 'nerdwallet', 'bankrate', 'investopedia', 'wikipedia', 'omnicalculator'];
 const SEED_NOISE = new Set(['calculator', 'calculators', 'converter', 'converters']);
 
-/** Tool name with calculator/converter removed, for the DataForSEO seed. */
+/**
+ * Tool name for the DataForSEO seed. Drop calculator/converter only when at least
+ * two words remain. "Meter Converter" stays whole so the search is not just "Meter".
+ */
 export function keywordSeed(toolName: string): string {
-  const words = toolName
-    .trim()
-    .split(/[^A-Za-z0-9]+/)
-    .filter((word) => word.length > 0 && !SEED_NOISE.has(word.toLowerCase()));
-  const seed = words.join(' ');
-  return seed.length > 0 ? seed : toolName.trim();
+  const trimmed = toolName.trim();
+  const words = trimmed.split(/[^A-Za-z0-9]+/).filter((word) => word.length > 0);
+  const kept = words.filter((word) => !SEED_NOISE.has(word.toLowerCase()));
+  return kept.length >= 2 ? kept.join(' ') : trimmed;
 }
 
 /** Suggestion must contain every seed word, so a broad calculator keyword cannot be saved. */

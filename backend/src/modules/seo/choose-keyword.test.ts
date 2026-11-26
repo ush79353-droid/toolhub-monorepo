@@ -43,6 +43,8 @@ test('does not pick another rule just because both keywords contain rule', () =>
 test('drops calculator and converter from the DataForSEO seed', () => {
   assert.equal(keywordSeed('3x Rent Calculator'), '3x Rent');
   assert.equal(keywordSeed('Yards to Meters Converter'), 'Yards to Meters');
+  assert.equal(keywordSeed('Meter Converter'), 'Meter Converter');
+  assert.equal(keywordSeed('BMI Calculator'), 'BMI Calculator');
   assert.equal(keywordSeed('Calculator'), 'Calculator');
   assert.equal(keywordContainsSeed('3x the rent calculator', '3x Rent'), true);
   assert.equal(keywordContainsSeed('compound interest calculator', '3x Rent'), false);
