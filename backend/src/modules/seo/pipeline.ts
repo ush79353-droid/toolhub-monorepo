@@ -2,6 +2,7 @@ import { Types } from 'mongoose';
 import { env } from '../../config/env';
 import { Category } from '../categories/category.model';
 import { Tool } from '../tools/tool.model';
+import { readCalculatorSource } from './calculator-source';
 import { choosePrimaryKeyword, chooseSecondaryKeywords, keywordContainsSeed, keywordSeed, pickSiblingLinks } from './choose-keyword';
 import { alignDraftContent, seoContentSchema } from './content';
 import { fetchKeywordSuggestions, fetchOrganicSerp, parseKeywordIdeas, parseOrganicSerp } from './dataforseo.client';
@@ -205,6 +206,7 @@ export async function runContentGeneration(draftId: string): Promise<void> {
   if (!draft.primaryKeyword) throw new Error('Content generation requires keyword research.');
   const drafted = await draftSeoContent({
     snapshot: draft.snapshot,
+    calculatorSource: readCalculatorSource(draft.snapshot.componentKey),
     primaryKeyword: draft.primaryKeyword,
     secondaryKeywords: draft.secondaryKeywords,
     keywordFacts: draft.keywordFacts,

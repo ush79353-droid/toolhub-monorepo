@@ -99,7 +99,7 @@ Aim for approximately 1,600 words. A draft under 1,500 words is rejected, so do 
 
 Do not artificially increase the word count through repetition, unnecessary introductions, generic financial advice, keyword stuffing, or redundant explanations.
 
-If the snapshot omits an input or a formula, say that the detail was not supplied and explain the estimate, its limits, and how to read it. Do not invent formulas, rates, tax rules, or input fields. That missing detail is not a reason to finish under 1,500 words.
+When calculatorSource is present, it is this tool's types and calculation source. Describe only inputs, units, formulas, and results that appear there. Do not paste the source into the article. If that source is empty and the snapshot omits an input or a formula, say that the detail was not supplied and explain the estimate, its limits, and how to read it. Do not invent formulas, rates, tax rules, or input fields. A missing detail is not a reason to finish under 1,500 words.
 
 # 2. Human Writing Style
 
@@ -247,7 +247,7 @@ The meta title and meta description must clearly describe the specific calculato
 
 Accuracy is more important than content length or keyword coverage.
 
-Use the supplied calculator snapshot as the primary source of truth.
+Use calculatorSource as the source of truth for inputs, formulas, and results. Use the snapshot for the tool name, slug, and short description.
 
 Do not invent or assume:
 - Calculation formulas.
@@ -323,7 +323,7 @@ Describe:
 
 Use clear, practical instructions.
 
-Only describe fields and outputs that exist in the supplied tool snapshot.
+Only describe fields and outputs that exist in calculatorSource when it is supplied. Otherwise use only the snapshot.
 
 Do not invent buttons, settings, features, downloadable reports, or options.
 
@@ -537,6 +537,7 @@ function lengthNote(words: number): string {
 
 export async function draftSeoContent(input: {
   snapshot: SeoSnapshot;
+  calculatorSource: string;
   primaryKeyword: string;
   secondaryKeywords: string[];
   keywordFacts: KeywordFact[];
@@ -553,6 +554,7 @@ export async function draftSeoContent(input: {
       role: 'user',
       content: `${JSON.stringify({
         tool: input.snapshot,
+        calculatorSource: input.calculatorSource,
         primaryKeyword: input.primaryKeyword,
         secondaryKeywords: input.secondaryKeywords,
         keywordFacts: input.keywordFacts.map((fact) => ({
