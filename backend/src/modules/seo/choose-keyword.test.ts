@@ -40,6 +40,16 @@ test('does not pick another rule just because both keywords contain rule', () =>
   assert.equal(picked, null);
 });
 
+test('matches a short unit conversion without requiring the word converter', () => {
+  const picked = choosePrimaryKeyword(
+    [fact('mmhg to atm', 5000), fact('mm to atm', 800), fact('length converter', 90000)],
+    'mm to ATM Converter'
+  );
+  assert.equal(picked?.keyword, 'mm to atm');
+  assert.equal(keywordContainsSeed('mm to atm', keywordSeed('mm to ATM Converter')), true);
+  assert.equal(keywordContainsSeed('mmhg to atm', keywordSeed('mm to ATM Converter')), false);
+});
+
 test('drops calculator and converter from the DataForSEO seed', () => {
   assert.equal(keywordSeed('3x Rent Calculator'), '3x Rent');
   assert.equal(keywordSeed('Yards to Meters Converter'), 'Yards to Meters');

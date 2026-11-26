@@ -63,9 +63,13 @@ function wordsOf(keyword: string): Set<string> {
   return new Set(keyword.toLowerCase().split(/[^a-z0-9]+/).filter((word) => word.length > 0));
 }
 
-/** Tokens the keyword must contain as whole words. Numbers always count. Words of 4+ letters count when any exist. */
+/**
+ * Tokens the keyword must contain as whole words. Numbers always count.
+ * Words of 4+ letters count when any exist. Calculator/converter do not count
+ * as those long words, so "mm to ATM Converter" must contain mm, to, and atm.
+ */
 function requiredTokens(toolName: string): string[] {
-  const tokens = tokensOf(toolName);
+  const tokens = tokensOf(toolName).filter((token) => !SEED_NOISE.has(token));
   const numbers = tokens.filter((token) => /^\d+$/.test(token));
   const specific = tokens.filter((token) => token.length >= 4);
   const must = specific.length > 0 ? specific : tokens;
