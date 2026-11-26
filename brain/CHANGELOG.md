@@ -1,4 +1,10 @@
-﻿## 2026-11-26 — Waist to Height Ratio Calculator (TOOL-818)
+﻿## 2026-11-26 — Ponderal Index Calculator (TOOL-819)
+
+- **Summary:** Screenshot-first PI (`PonderalIndexCalculator`, slug `ponderal-index-calculator`). Adult kg/m³; neonate 100×g/cm³; **No FX**.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `4bb0e932` / ENG `8ac0b166` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/ponderal-index/calculation.test.ts` → ok (80 kg / 2 m → 10).
+## 2026-11-26 — Waist to Height Ratio Calculator (TOOL-818)
 
 - **Summary:** Screenshot-first WHtR (`WaistToHeightRatioCalculator`, slug `waist-to-height-ratio-calculator`). waist÷height same unit; **No FX**; ratio not percent.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.

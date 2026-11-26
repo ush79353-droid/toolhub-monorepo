@@ -3596,6 +3596,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WaistToHeightRatioCalculator,
     })),
   ),
+  PonderalIndexCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/ponderal-index/PonderalIndexCalculator'
+    ).then((mod) => ({
+      default: mod.PonderalIndexCalculator,
+    })),
+  ),
   BeeCalculator: lazyTool(() =>
     import('@/tools/calculators/bee-calculator/BeeCalculator').then((mod) => ({
       default: mod.BeeCalculator,

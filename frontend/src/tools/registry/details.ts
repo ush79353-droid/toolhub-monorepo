@@ -876,6 +876,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   BaiCalculator: () => import('@/tools/calculators/bai/detail'),
   WaistToHeightRatioCalculator: () =>
     import('@/tools/calculators/waist-to-height/detail'),
+  PonderalIndexCalculator: () =>
+    import('@/tools/calculators/ponderal-index/detail'),
   BeeCalculator: () => import('@/tools/calculators/bee-calculator/detail'),
   BenadrylDosageCalculator: () =>
     import('@/tools/calculators/benadryl-dosage/detail'),
