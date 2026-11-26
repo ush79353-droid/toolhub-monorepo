@@ -632,6 +632,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AncWithoutBandsCalculator',
   'AnionGapCalculator',
   'BaiCalculator',
+  'WaistToHeightRatioCalculator',
   'BeeCalculator',
   'BenadrylDosageCalculator',
   'BenzodiazepineConversionCalculator',

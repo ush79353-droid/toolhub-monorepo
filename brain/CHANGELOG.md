@@ -1,4 +1,10 @@
-﻿## 2026-11-26 — BAI Calculator - Body Adiposity Index (TOOL-817)
+﻿## 2026-11-26 — Waist to Height Ratio Calculator (TOOL-818)
+
+- **Summary:** Screenshot-first WHtR (`WaistToHeightRatioCalculator`, slug `waist-to-height-ratio-calculator`). waist÷height same unit; **No FX**; ratio not percent.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `e40b8132` / ENG `73c57b46` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/waist-to-height/calculation.test.ts` → ok (80/160 → 0.5).
+## 2026-11-26 — BAI Calculator - Body Adiposity Index (TOOL-817)
 
 - **Summary:** Screenshot-first BAI (`BaiCalculator`, slug `bai-calculator-body-adiposity-index`). Bergman hip_cm/height_m^1.5−18; unit menus; share URL only; **No FX**.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
