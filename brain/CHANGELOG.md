@@ -1,4 +1,10 @@
-﻿## 2026-11-26 — Anion Gap Calculator (TOOL-816)
+﻿## 2026-11-26 — BAI Calculator - Body Adiposity Index (TOOL-817)
+
+- **Summary:** Screenshot-first BAI (`BaiCalculator`, slug `bai-calculator-body-adiposity-index`). Bergman hip_cm/height_m^1.5−18; unit menus; share URL only; **No FX**.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `ebe68b98` / ENG `e42a8669` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/bai/calculation.test.ts` → ok.
+## 2026-11-26 — Anion Gap Calculator (TOOL-816)
 
 - **Summary:** Screenshot-first AG (AnionGapCalculator, slug nion-gap-calculator). Primary AG without K; Figge albumin correction on AG_K; **No FX**.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.

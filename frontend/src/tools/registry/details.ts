@@ -873,6 +873,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/aleve-dosage/detail'),
   AllowableBloodLossCalculator: () =>
     import('@/tools/calculators/allowable-blood-loss/detail'),
+  BaiCalculator: () => import('@/tools/calculators/bai/detail'),
   BeeCalculator: () => import('@/tools/calculators/bee-calculator/detail'),
   BenadrylDosageCalculator: () =>
     import('@/tools/calculators/benadryl-dosage/detail'),

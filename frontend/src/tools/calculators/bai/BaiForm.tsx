@@ -112,8 +112,7 @@ export function BaiForm({ input, errors, result, onChange }: FormProps) {
       <section className={sectionClass} aria-label="BAI inputs">
         <div>
           <label className={labelClass} htmlFor="bai-height">
-            Height
-            <InfoTooltip text="Standing height. Converted to meters before BAI = hip_cm / height_m^1.5 − 18." />
+            Your height
           </label>
           <FieldShell error={errors.heightText}>
             <input
@@ -145,8 +144,8 @@ export function BaiForm({ input, errors, result, onChange }: FormProps) {
 
         <div>
           <label className={labelClass} htmlFor="bai-hip">
-            Hip circumference
-            <InfoTooltip text="Hip circumference at the widest point. Converted to centimeters before BAI." />
+            Your hip circumference
+            <InfoTooltip text="Measure at the widest point of the hips/buttocks. Converted to centimeters before BAI." />
           </label>
           <FieldShell error={errors.hipText}>
             <input
@@ -180,8 +179,7 @@ export function BaiForm({ input, errors, result, onChange }: FormProps) {
       <section className={sectionClass} aria-label="BAI result">
         <div>
           <label className={labelClass} htmlFor="bai-result">
-            BAI
-            <InfoTooltip text="Body Adiposity Index as percent body fat estimate." />
+            Your body adiposity index (BAI)
           </label>
           <FieldShell muted>
             <input

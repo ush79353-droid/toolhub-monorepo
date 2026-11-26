@@ -3586,6 +3586,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AllowableBloodLossCalculator,
     })),
   ),
+  BaiCalculator: lazyTool(() =>
+    import('@/tools/calculators/bai/BaiCalculator').then((mod) => ({
+      default: mod.BaiCalculator,
+    })),
+  ),
   BeeCalculator: lazyTool(() =>
     import('@/tools/calculators/bee-calculator/BeeCalculator').then((mod) => ({
       default: mod.BeeCalculator,
