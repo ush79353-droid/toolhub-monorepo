@@ -29,7 +29,7 @@ const config: Config = {
           background: '#F7F8F6',
           text: '#202B2D',
           textSecondary: '#667477',
-          border: '#DCE6E5',
+          border: '#C3C8D4',
           white: '#FFFFFF',
         },
         // shadcn/ui semantic tokens mapped to CSS variables

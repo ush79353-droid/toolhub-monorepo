@@ -16,7 +16,7 @@
 | **Background** | `#F7F8F6` | `--background: 90 10% 97%` | `brand-background` / `background` | Admin / muted canvas token; public `(website)` layout uses `bg-white` so white calculator cards can lift with soft elevation shadows |
 | **Primary Text** | `#202B2D` | `--foreground: 189 17% 15%` | `brand-text` / `foreground` | Primary body text & card foreground |
 | **Secondary Text** | `#667477` | `--muted-foreground: 191 8% 43%` | `brand-textSecondary` / `muted-foreground` | Descriptions, labels, helper copy, metadata |
-| **Border** | `#DCE6E5` | `--border` / `--input: 174 15% 88%` | `brand-border` / `border` / `input` | Hairline dividers, card borders, input borders |
+| **Border** | `#C3C8D4` | `--border` / `--input: 222 17% 80%` | `brand-border` / `border` / `input` | Hairline dividers, card borders, input borders |
 | **Surface White** | `#FFFFFF` | `--card` / `--popover: 0 0% 100%` | `brand-white` / `card` / `white` | Cards, modals, inputs, header/footer surfaces |
 
 ### Semantic Status Accents (Admin & Feedback States)
