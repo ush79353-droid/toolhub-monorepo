@@ -1,3 +1,7 @@
+## 2026-11-26 — Dashed tool names match on the distinctive suffix
+
+Keyword search uses the name after the dash. CARES Act no longer also requires unemployment benefit. LWA can stand for Lost Wages Assistance. HEALS and HEROES must both appear.
+
 ## 2026-11-26 — Guide renders markdown headings
 
 Published guide copy turns ### titles into headings. A title glued to the next sentence is split, so the hashes are not shown as text.

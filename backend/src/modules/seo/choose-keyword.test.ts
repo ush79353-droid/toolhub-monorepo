@@ -50,6 +50,30 @@ test('matches a short unit conversion without requiring the word converter', () 
   assert.equal(keywordContainsSeed('mmhg to atm', keywordSeed('mm to ATM Converter')), false);
 });
 
+test('uses the name after the dash and still rejects a generic unemployment keyword', () => {
+  const ideas = [
+    fact('unemployment benefits', 500000),
+    fact('cares act unemployment', 4000),
+    fact('heals vs heroes act', 2000),
+    fact('lwa unemployment', 1500),
+    fact('lost wages assistance', 800),
+  ];
+  assert.equal(
+    choosePrimaryKeyword(ideas, 'Unemployment Benefit Calculator - CARES Act')?.keyword,
+    'cares act unemployment'
+  );
+  assert.equal(
+    choosePrimaryKeyword(ideas, 'Unemployment Benefit Calculator - HEALS Act vs. HEROES Act')?.keyword,
+    'heals vs heroes act'
+  );
+  assert.equal(
+    choosePrimaryKeyword(ideas, 'Unemployment Benefit Calculator - Lost Wages Assistance (LWA)')?.keyword,
+    'lwa unemployment'
+  );
+  assert.equal(keywordSeed('Unemployment Benefit Calculator - CARES Act'), 'CARES Act');
+  assert.equal(keywordContainsSeed('heals act', keywordSeed('Unemployment Benefit Calculator - HEALS Act vs. HEROES Act')), false);
+});
+
 test('drops calculator and converter from the DataForSEO seed', () => {
   assert.equal(keywordSeed('3x Rent Calculator'), '3x Rent');
   assert.equal(keywordSeed('Yards to Meters Converter'), 'Yards to Meters');
