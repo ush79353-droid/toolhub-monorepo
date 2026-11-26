@@ -1,3 +1,7 @@
+## 2026-11-26 — Guide renders markdown headings
+
+Published guide copy turns ### titles into headings. A title glued to the next sentence is split, so the hashes are not shown as text.
+
 ## 2026-11-26 — Short unit names match without the word converter
 
 Calculator and converter are no longer the required keyword tokens. mm to ATM Converter can match mm to atm. mmhg still does not count as mm.
