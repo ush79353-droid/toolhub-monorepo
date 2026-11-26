@@ -1,8 +1,51 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-/** types.ts + calculation.ts. Large modules are cut so the prompt stays bounded. */
+/** types.ts + calculation.ts, plus short UI labels. Large modules are cut at the end. */
 const SOURCE_CAP = 12_000;
+
+const CHROME = new Set([
+  'copied',
+  'copy results',
+  'share result',
+  'clear all changes',
+  'reload calculator',
+  'yes',
+  'no',
+]);
+
+function clean(value: string): string {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+/** Visible input and result names. Skips buttons, errors, and sentences. */
+export function extractUiLabels(source: string): { inputs: string[]; results: string[] } {
+  const inputs: string[] = [];
+  const results: string[] = [];
+  const seen = new Set<string>();
+  const add = (list: string[], raw: string) => {
+    const text = clean(raw);
+    const key = text.toLowerCase();
+    if (text.length < 2 || text.length > 48 || /[{}<>]/.test(text) || CHROME.has(key) || seen.has(key)) return;
+    seen.add(key);
+    list.push(text);
+  };
+  for (const match of source.matchAll(/<label\b[^>]*>([^<{]+)<\/label>/g)) add(inputs, match[1] ?? '');
+  for (const match of source.matchAll(/\blabel="([^"]+)"/g)) add(inputs, match[1] ?? '');
+  for (const match of source.matchAll(/<span\b([^>]*)>([^<{]+)<\/span>/g)) {
+    const attrs = match[1] ?? '';
+    if (!attrs.includes('font-medium') || !attrs.includes('text-accent')) continue;
+    add(inputs, match[2] ?? '');
+  }
+  for (const match of source.matchAll(/<(?:p|span)\b([^>]*)>([^<{]+)<\/(?:p|span)>/g)) {
+    const attrs = match[1] ?? '';
+    const text = clean(match[2] ?? '');
+    if (!attrs.includes('text-muted-foreground') && !attrs.includes('text-primary')) continue;
+    if (text.endsWith('.')) continue;
+    add(results, text);
+  }
+  return { inputs, results };
+}
 
 const ENTRY =
   /(\w+)\s*:\s*lazyTool\(\(\)\s*=>\s*import\(\s*['"]@\/tools\/calculators\/([^'"]+)['"]/g;
@@ -46,11 +89,34 @@ export function readCalculatorSource(componentKey: string): string {
   const root = toolsRoot();
   if (!folder || !root) return '';
   const dir = path.join(root, 'calculators', folder);
+  const files = fs.existsSync(dir) ? fs.readdirSync(dir) : [];
+  const read = (name: string) => {
+    const full = path.join(dir, name);
+    return fs.existsSync(full) ? fs.readFileSync(full, 'utf8') : '';
+  };
+  const formFiles = files.filter((name) => name.endsWith('Form.tsx'));
+  const resultFiles = files.filter((name) => name.endsWith('Results.tsx'));
+  const uiFiles = [
+    ...(formFiles.length > 0 ? formFiles : files.filter((name) => name.endsWith('Calculator.tsx'))),
+    ...resultFiles,
+  ];
+  const inputs: string[] = [];
+  const results: string[] = [];
+  for (const name of uiFiles) {
+    const labels = extractUiLabels(read(name));
+    inputs.push(...labels.inputs.filter((label) => !inputs.includes(label)));
+    results.push(...labels.results.filter((label) => !results.includes(label)));
+  }
   const parts: string[] = [];
+  if (inputs.length > 0 || results.length > 0) {
+    parts.push(
+      ['// fields', inputs.length > 0 ? `Inputs: ${inputs.join(', ')}` : '', results.length > 0 ? `Results: ${results.join(', ')}` : '']
+        .filter(Boolean)
+        .join('\n')
+    );
+  }
   for (const file of ['types.ts', 'calculation.ts']) {
-    const full = path.join(dir, file);
-    if (!fs.existsSync(full)) continue;
-    const body = fs.readFileSync(full, 'utf8').trim();
+    const body = read(file).trim();
     if (body) parts.push(`// ${file}\n${body}`);
   }
   const joined = parts.join('\n\n');

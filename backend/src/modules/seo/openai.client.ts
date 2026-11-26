@@ -99,7 +99,7 @@ Aim for approximately 1,600 words. A draft under 1,500 words is rejected, so do 
 
 Do not artificially increase the word count through repetition, unnecessary introductions, generic financial advice, keyword stuffing, or redundant explanations.
 
-When calculatorSource is present, it is this tool's types and calculation source. Describe only inputs, units, formulas, and results that appear there. Do not paste the source into the article. If that source is empty and the snapshot omits an input or a formula, say that the detail was not supplied and explain the estimate, its limits, and how to read it. Do not invent formulas, rates, tax rules, or input fields. A missing detail is not a reason to finish under 1,500 words.
+When calculatorSource is present, it is this tool's types, calculation, and visible labels. Inputs and Results lines are the form field names and the result titles. Describe only those fields, units, formulas, and results. Do not paste the source into the article. If that source is empty and the snapshot omits an input or a formula, say that the detail was not supplied and explain the estimate, its limits, and how to read it. Do not invent formulas, rates, tax rules, or input fields. A missing detail is not a reason to finish under 1,500 words.
 
 # 2. Human Writing Style
 
