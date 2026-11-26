@@ -1,4 +1,10 @@
-﻿## 2026-11-26 — Ideal Weight Calculator (TOOL-814)
+﻿## 2026-11-26 — Adjusted Body Weight Calculator (TOOL-815)
+
+- **Summary:** Screenshot-first AjBW (AdjustedBodyWeightCalculator, slug djusted-body-weight-calculator). Robinson IBW + 0.4 factor; **No FX**.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `17e9fd96` / ENG `d797f534` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/adjusted-body-weight/calculation.test.ts` → ok.
+## 2026-11-26 — Ideal Weight Calculator (TOOL-814)
 
 - **Summary:** Screenshot-first IBW (IdealWeightCalculator, slug ideal-weight-calculator). Devine/Robinson/Miller/Hamwi; weight comparison-only; **No FX**.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.

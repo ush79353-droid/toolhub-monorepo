@@ -858,6 +858,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/added-sugar-intake/detail'),
   AdderallDosageCalculator: () =>
     import('@/tools/calculators/adderall-dosage/detail'),
+  AdjustedBodyWeightCalculator: () =>
+    import('@/tools/calculators/adjusted-body-weight/detail'),
   AdrenalWashoutCalculator: () =>
     import('@/tools/calculators/adrenal-washout/detail'),
   AgeAdjustedDDimerCalculator: () =>

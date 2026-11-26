@@ -3532,6 +3532,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AdderallDosageCalculator,
     })),
   ),
+  AdjustedBodyWeightCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/adjusted-body-weight/AdjustedBodyWeightCalculator'
+    ).then((mod) => ({
+      default: mod.AdjustedBodyWeightCalculator,
+    })),
+  ),
   AdrenalWashoutCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/adrenal-washout/AdrenalWashoutCalculator'

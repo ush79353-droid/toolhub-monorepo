@@ -620,6 +620,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AbsoluteReticulocyteCountCalculator',
   'AddedSugarIntakeCalculator',
   'AdderallDosageCalculator',
+  'AdjustedBodyWeightCalculator',
   'AdrenalWashoutCalculator',
   'AgeAdjustedDDimerCalculator',
   'AlbuminCreatinineRatioCalculator',
