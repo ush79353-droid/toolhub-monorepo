@@ -1,4 +1,14 @@
-﻿## 2026-11-28 — Completed-queue repair (Urine registry + 47 Mongo assigns)
+﻿## 2026-11-28 — Ultimate final completion (Quiz FFMI + builds + smoke)
+
+- **Quiz FFMI:** unique catalog `_id` `6b09e0f92c40547bdc543c2e` created+assigned; ordinary FFMI untouched; `indexable` false.
+- **Build:** Fixed `KetoCalculator` missing `),`, five `details.ts` loaders, ponderal apostrophe lint, BSA test typing (`dac877bd`). Frontend+backend type-check/build PASS.
+- **Smoke:** Production `next start` — homepage + **56/56** Completed `/tools/{slug}` HTTP 200; priority fixture tests OK.
+- **DNS:** Default SRV still EBADRESP; Quad9/app seedlist fallback OK.
+- **Issued:** Addiction + Metastatic remain blocked (evidence/MODEL_APPROVAL).
+- **Reports:** `OMEGA-ULTIMATE-FINAL-COMPLETION-REPORT.md`, runtime CSV, Mongo readback, git readiness, issued evidence.
+- **GitHub sync:** none
+
+## 2026-11-28 — Completed-queue repair (Urine registry + 47 Mongo assigns)
 
 - **Urine Anion Gap:** registered `UrineAnionGapCalculator` in frontend keys/index/details + backend `tool.key.ts`; local commit `017e3752`; Mongo `…02c6` assigned developed/active, `indexable` false.
 - **Mongo:** 47 Completed undeveloped/registry-gap rows assigned via `tool:assign` (direct-seedlist fallback); Health testing policy `isActive=true`; indexable preserved false.
