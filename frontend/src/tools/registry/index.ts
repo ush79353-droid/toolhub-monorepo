@@ -762,6 +762,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.QuizHarrisBenedictCalculator,
     })),
   ),
+  QuizProteinCreatinineRatioCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/quiz-protein-creatinine-ratio/QuizProteinCreatinineRatioCalculator'
+    ).then((mod) => ({
+      default: mod.QuizProteinCreatinineRatioCalculator,
+    })),
+  ),
   RmrCalculator: lazyTool(() =>
     import('@/tools/calculators/rmr/RmrCalculator').then((mod) => ({
       default: mod.RmrCalculator,

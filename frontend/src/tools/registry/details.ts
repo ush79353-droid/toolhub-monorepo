@@ -207,6 +207,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/quiz-ffmi/detail'),
   QuizHarrisBenedictCalculator: () =>
     import('@/tools/calculators/quiz-harris-benedict/detail'),
+  QuizProteinCreatinineRatioCalculator: () =>
+    import('@/tools/calculators/quiz-protein-creatinine-ratio/detail'),
   RmrCalculator: () => import('@/tools/calculators/rmr/detail'),
   SodiumChangeHypertriglyceridemiaCalculator: () =>
     import('@/tools/calculators/sodium-change-hypertriglyceridemia/detail'),
