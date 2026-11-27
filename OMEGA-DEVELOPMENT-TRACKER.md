@@ -1,20 +1,12 @@
 ﻿# OMEGA Development Tracker
 
-Last update: 2026-11-27 — agent cursor-agent-pending-composer-48917
+Last update: 2026-11-27 — agent cursor-agent-pending-composer-omega-213906
 
-## Session (active)
+## Session
 
-- Status: DEVELOPING — finalizing Acid Base Calculator integration
-- Completed this session so far: (pending move)
-- In Progress: Acid Base Calculator
-- Commits: UI `a50bc9db` · ENG `64e5b397` · REG (pending)
-- Credit preflight: CREDITS_NOT_VERIFIABLE
-- Mongo: Atlas DNS blocked (`querySrv EBADRESP`); `_id` not verified
+- Status: IN_PROGRESS
+- Completed this session: Karvonen Formula Calculator
+- Commits: UI 64688c49 · ENG 9be93e0c · REG (this commit)
+- Mongo: Atlas DNS blocked
 - GitHub sync: NONE
-
-## Resume
-
-1. Finish Acid Base REG commit + move to Completed
-2. Rescan Tools/Pending
-3. Credit preflight
-4. Claim next eligible
+- Credits: CREDITS_NOT_VERIFIABLE
