@@ -908,6 +908,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/albumin-creatinine-ratio/detail'),
   AlbuminGlobulinRatioCalculator: () =>
     import('@/tools/calculators/albumin-globulin-ratio/detail'),
+  AlcoholUnitCalculator: () =>
+    import('@/tools/calculators/alcohol-unit/detail'),
   AleveDosageCalculator: () =>
     import('@/tools/calculators/aleve-dosage/detail'),
   AllowableBloodLossCalculator: () =>

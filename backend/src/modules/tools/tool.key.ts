@@ -638,6 +638,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AgeAdjustedDDimerCalculator',
   'AlbuminCreatinineRatioCalculator',
   'AlbuminGlobulinRatioCalculator',
+  'AlcoholUnitCalculator',
   'AleveDosageCalculator',
   'AllowableBloodLossCalculator',
   'AmoxicillinPediatricDosageCalculator',

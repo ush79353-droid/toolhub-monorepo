@@ -3712,6 +3712,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AlbuminGlobulinRatioCalculator,
     })),
   ),
+  AlcoholUnitCalculator: lazyTool(() =>
+    import('@/tools/calculators/alcohol-unit/AlcoholUnitCalculator').then(
+      (mod) => ({
+        default: mod.AlcoholUnitCalculator,
+      }),
+    ),
+  ),
   AleveDosageCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/aleve-dosage/AleveDosageCalculator'
