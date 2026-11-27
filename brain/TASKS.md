@@ -26,6 +26,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-846` | Sodium Correction Calculator (`SodiumCorrectionCalculator`); Hillier 0.024 + Katz 0.016; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-19046c) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/sodium-correction/*` | Mongo Atlas DNS |
 | `TOOL-845` | Parkland Formula Calculator (`ParklandFormulaCalculator`); Rule of Nines + 4×kg×%TBSA; registry wired; Mongo assign blocked/deferred; indexable false when assign retries | Cursor (omega-223250) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/parkland-formula/*` | Mongo Atlas DNS |
 | `TOOL-843` | Quiz FFMI Calculator (`QuizFfmiCalculator`); 8-question sequential FFMI quiz; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (omega-223750) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/quiz-ffmi/*` | Mongo Atlas DNS |
 | `TOOL-842` | Body Surface Area Calculator (`BodySurfaceAreaCalculator`); multi-formula BSA (Du Bois/Mosteller/Haycock/Gehan-George/Boyd/Fujimoto/Takahira/Schlich); distinct from BsaCalculator; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/body-surface-area/*` | Mongo Atlas DNS |

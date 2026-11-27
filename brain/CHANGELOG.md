@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Parkland Formula Calculator (TOOL-845)
+﻿## 2026-11-27 — Sodium Correction Calculator (TOOL-846)
+
+- **Summary:** Screenshot-first hyperglycemia sodium correction (`SodiumCorrectionCalculator`, slug `sodium-correction-calculator`). Blank Na mEq/L; glucose mg/dL|mmol/L; Hillier 0.024 primary; collapsed Katz 0.016; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified this session; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `4950ec16` / ENG `c3332339` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/sodium-correction/calculation.test.ts` → ok (140/500 → 149.6 / 146.4; glu 100 → identity).
+
+## 2026-11-27 — Parkland Formula Calculator (TOOL-845)
 
 - **Summary:** Screenshot-first burn TBSA + Parkland fluids (`ParklandFormulaCalculator`, slug `parkland-formula-calculator`). Adult|Child Rule of Nines; weight kg|lb; region dropdowns; 4×kg×%TBSA; half in 8 h / half in 16 h; **No FX**; share URL only.
 - **Mongo:** assign blocked/deferred (Atlas DNS); `_id` not verified this session; activation pending; **indexable** false when assign retries.

@@ -120,6 +120,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'QuizHarrisBenedictCalculator',
   'RmrCalculator',
   'SodiumChangeHypertriglyceridemiaCalculator',
+  'SodiumCorrectionCalculator',
   'SodiumDeficitCalculator',
   'SodiumInSaltCalculator',
   'SteroidConversionCalculator',

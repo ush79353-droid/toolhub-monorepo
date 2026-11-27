@@ -774,6 +774,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SodiumChangeHypertriglyceridemiaCalculator,
     })),
   ),
+  SodiumCorrectionCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/sodium-correction/SodiumCorrectionCalculator'
+    ).then((mod) => ({
+      default: mod.SodiumCorrectionCalculator,
+    })),
+  ),
   SodiumDeficitCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/sodium-deficit/SodiumDeficitCalculator'
