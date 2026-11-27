@@ -204,6 +204,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   QuizHarrisBenedictCalculator: () =>
     import('@/tools/calculators/quiz-harris-benedict/detail'),
   RmrCalculator: () => import('@/tools/calculators/rmr/detail'),
+  SodiumChangeHypertriglyceridemiaCalculator: () =>
+    import('@/tools/calculators/sodium-change-hypertriglyceridemia/detail'),
   SodiumDeficitCalculator: () =>
     import('@/tools/calculators/sodium-deficit/detail'),
   SodiumCorrectionRateCalculator: () =>
@@ -928,6 +930,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NlrCalculator: () => import('@/tools/calculators/nlr/detail'),
   TransferrinSaturationCalculator: () =>
     import('@/tools/calculators/transferrin-saturation/detail'),
+  OverweightCalculator: () =>
+    import('@/tools/calculators/overweight/detail'),
   TotalBodyWaterCalculator: () =>
     import('@/tools/calculators/total-body-water/detail'),
   BeeCalculator: () => import('@/tools/calculators/bee-calculator/detail'),
@@ -943,6 +947,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/blood-volume/detail'),
   BodyFrameSizeCalculator: () =>
     import('@/tools/calculators/body-frame-size/detail'),
+  BodySurfaceAreaCalculator: () =>
+    import('@/tools/calculators/body-surface-area/detail'),
   BodeIndexCalculator: () =>
     import('@/tools/calculators/bode-index/detail'),
   BsaCalculator: () => import('@/tools/calculators/bsa/detail'),

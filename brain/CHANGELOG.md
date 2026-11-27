@@ -1,9 +1,9 @@
-﻿## 2026-11-27 — Sodium Correction Rate Calculator (TOOL-840)
+﻿## 2026-11-27 — Overweight Calculator (TOOL-841)
 
-- **Summary:** Screenshot-first Adrogué–Madias rate (`SodiumCorrectionRateCalculator`, slug `sodium-correction-rate-calculator-for-hypo-and-hypernatremia`). Age/sex radios; weight; serum Na; conditional fluid + aimed ΔNa/h; TBW + ΔNa/L + mL/h; **No FX**; share URL only.
-- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
-- **Commits:** UI `4fd90985` / ENG `a51ddba0` / REG (this commit). Local only — user syncs GitHub.
-- **Checks:** `npx tsx …/sodium-correction-rate/calculation.test.ts` → ok (70 kg · 120 · 2% · 0.5 → ≈97 mL/h).
+- **Summary:** Screenshot-first overweight/BMI (`OverweightCalculator`, slug `overweight-calculator`). Adult BMI=W/H² + ponderal=W/H³ with WHO bands; optional child ≤19 uses CDC BMI-for-age LMS via `bmi-kids`; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified this session; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `e51d90c4` / ENG `8ccd2f22` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/overweight/calculation.test.ts` → ok (80 kg / 1.75 m → overweight; pediatric LMS path).
 
 ## 2026-11-27 — Plasma Volume Calculator (TOOL-839)
 
@@ -61,6 +61,13 @@
 - **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.
 - **Commits:** UI `856006bb` / ENG `df7c8675` / REG (this commit). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/total-body-water/calculation.test.ts` → ok (♀ 30/170/65 → ≈32.11 L; age invariant).
+
+## 2026-11-27 — Sodium Change Calculator in Hypertriglyceridemia (TOOL-836)
+
+- **Summary:** Screenshot-first TG-related ΔNa (`SodiumChangeHypertriglyceridemiaCalculator`, slug `sodium-change-calculator-in-hypertriglyceridemia`). ΔNa=TG_mg/dL×0.002; corrected=measured+ΔNa; TG mg/dL|mmol/L; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `9696f411` / ENG `b924a81a` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/sodium-change-hypertriglyceridemia/calculation.test.ts` → ok (130/5000 → Δ10 / 140).
 
 ## 2026-11-27 — Drip Rate Calculator (TOOL-834)
 

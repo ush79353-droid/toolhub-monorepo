@@ -753,6 +753,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RmrCalculator,
     })),
   ),
+  SodiumChangeHypertriglyceridemiaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/sodium-change-hypertriglyceridemia/SodiumChangeHypertriglyceridemiaCalculator'
+    ).then((mod) => ({
+      default: mod.SodiumChangeHypertriglyceridemiaCalculator,
+    })),
+  ),
   SodiumDeficitCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/sodium-deficit/SodiumDeficitCalculator'
@@ -3786,6 +3793,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.TransferrinSaturationCalculator,
     })),
   ),
+  OverweightCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/overweight/OverweightCalculator'
+    ).then((mod) => ({
+      default: mod.OverweightCalculator,
+    })),
+  ),
   TotalBodyWaterCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/total-body-water/TotalBodyWaterCalculator'
@@ -3838,6 +3852,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/body-frame-size/BodyFrameSizeCalculator'
     ).then((mod) => ({
       default: mod.BodyFrameSizeCalculator,
+    })),
+  ),
+  BodySurfaceAreaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/body-surface-area/BodySurfaceAreaCalculator'
+    ).then((mod) => ({
+      default: mod.BodySurfaceAreaCalculator,
     })),
   ),
   BodeIndexCalculator: lazyTool(() =>
