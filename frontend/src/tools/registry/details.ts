@@ -1084,6 +1084,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/child-tax-credit/detail'),
   CigaretteCalculator: () =>
     import('@/tools/calculators/cigarette/detail'),
+  CiwaCalculator: () => import('@/tools/calculators/ciwa/detail'),
   ClomidOvulationCalculator: () =>
     import('@/tools/calculators/clomid-ovulation/detail'),
   ChurnRateCalculator: () =>

@@ -4278,6 +4278,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CigaretteCalculator,
     })),
   ),
+  CiwaCalculator: lazyTool(() =>
+    import('@/tools/calculators/ciwa/CiwaCalculator').then((mod) => ({
+      default: mod.CiwaCalculator,
+    })),
+  ),
   ClomidOvulationCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/clomid-ovulation/ClomidOvulationCalculator'
