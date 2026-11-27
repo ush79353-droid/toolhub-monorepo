@@ -203,6 +203,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   QuizHarrisBenedictCalculator: () =>
     import('@/tools/calculators/quiz-harris-benedict/detail'),
   RmrCalculator: () => import('@/tools/calculators/rmr/detail'),
+  SodiumDeficitCalculator: () =>
+    import('@/tools/calculators/sodium-deficit/detail'),
   SodiumInSaltCalculator: () =>
     import('@/tools/calculators/sodium-in-salt/detail'),
   SteroidConversionCalculator: () =>

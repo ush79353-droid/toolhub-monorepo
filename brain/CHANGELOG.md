@@ -19,6 +19,13 @@
 - **Commits:** UI `03822a86` / ENG `f75dd8be` / REG (this commit). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/healthy-weight/calculation.test.ts` → ok (180 cm → 59.94 kg to &lt;81.00 kg).
 
+## 2026-11-27 — Sodium Deficit Calculator (TOOL-834)
+
+- **Summary:** Screenshot-first sodium deficit (`SodiumDeficitCalculator`, slug `sodium-deficit-calculator`). Age/sex dropdown TBW fractions; blank weight + serum Na; desired 140; deficit=TBW×(desired−serum) mmol; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `047db4d4` / ENG `b0ba1a93` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/sodium-deficit/calculation.test.ts` → ok (55 kg · 125 → 412.5 mmol; equality 0; hypernatremia out-of-scope).
+
 ## 2026-11-27 — Free Water Deficit Calculator (TOOL-832)
 
 - **Summary:** Screenshot-first free water deficit (`FreeWaterDeficitCalculator`, slug `free-water-deficit-calculator`). Age/sex TBW fractions; blank weight + Na; desired 140 mEq/L; FWD=TBW×((Na/desired)−1); L|mL; **No FX**; share URL only.
