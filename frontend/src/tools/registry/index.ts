@@ -689,6 +689,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.OxygenationIndexCalculator,
     })),
   ),
+  ParklandFormulaCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/parkland-formula/ParklandFormulaCalculator'
+    ).then((mod) => ({
+      default: mod.ParklandFormulaCalculator,
+    })),
+  ),
   PeptideCalculator: lazyTool(() =>
     import('@/tools/calculators/peptide/PeptideCalculator').then((mod) => ({
       default: mod.PeptideCalculator,

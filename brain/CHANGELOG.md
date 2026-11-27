@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Body Type Calculator (TOOL-844)
+﻿## 2026-11-27 — Parkland Formula Calculator (TOOL-845)
+
+- **Summary:** Screenshot-first burn TBSA + Parkland fluids (`ParklandFormulaCalculator`, slug `parkland-formula-calculator`). Adult|Child Rule of Nines; weight kg|lb; region dropdowns; 4×kg×%TBSA; half in 8 h / half in 16 h; **No FX**; share URL only.
+- **Mongo:** assign blocked/deferred (Atlas DNS); `_id` not verified this session; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `1b1c10a2` / ENG `cebc6dd5` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/parkland-formula/calculation.test.ts` → ok (70 kg · 36% → 10080 mL; 630/315 mL/h).
+
+## 2026-11-27 — Body Type Calculator (TOOL-844)
 
 - **Summary:** Screenshot-first apparel body type (`BodyTypeCalculator`, slug `body-type-calculator`). Bust/waist/high hip/hip; per-field cm|in; Calculate/Clear; Lee/Istook / calculator.net 7-shape rules (inches); high-hip/waist **1.193**; WHR; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.

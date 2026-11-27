@@ -26,6 +26,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-845` | Parkland Formula Calculator (`ParklandFormulaCalculator`); Rule of Nines + 4×kg×%TBSA; registry wired; Mongo assign blocked/deferred; indexable false when assign retries | Cursor (omega-223250) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/parkland-formula/*` | Mongo Atlas DNS |
 | `TOOL-843` | Quiz FFMI Calculator (`QuizFfmiCalculator`); 8-question sequential FFMI quiz; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (omega-223750) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/quiz-ffmi/*` | Mongo Atlas DNS |
 | `TOOL-842` | Body Surface Area Calculator (`BodySurfaceAreaCalculator`); multi-formula BSA (Du Bois/Mosteller/Haycock/Gehan-George/Boyd/Fujimoto/Takahira/Schlich); distinct from BsaCalculator; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/body-surface-area/*` | Mongo Atlas DNS |
 | `TOOL-841` | Overweight Calculator (`OverweightCalculator`); adult BMI+ponderal WHO; child CDC LMS via bmi-kids; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-55201) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/overweight/*` | Mongo Atlas DNS |

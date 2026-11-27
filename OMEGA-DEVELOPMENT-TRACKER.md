@@ -1,22 +1,19 @@
 ﻿# OMEGA Development Tracker
 
-Last update: 2026-11-27 — agent cursor-agent-pending-composer-omega-224145
+Last update: 2026-11-27 — agent cursor-agent-pending-composer-omega-223250
 
-## Session end
+## Session checkpoint
 
-- Status: PENDING EMPTY — OTHER AGENTS STILL ACTIVE
-- Credits: CREDITS_NOT_VERIFIABLE (no official billing/usage tool exposed)
-- Completed this session: Body Surface Area Calculator
-- Progress (other agents): Body Type Calculator; Overweight Calculator; Parkland Formula Calculator; Quiz FFMI Calculator (Fat-Free Mass Index); Sodium Correction Calculator
-- Remaining Pending: 0
-- Local commits BSA: UI e3a6a6ab / ENG bff483b3 / REG 7b47ca65
+- Status: IN PROGRESS — Parkland Formula Calculator integration commit pending
+- Credits: CREDITS_NOT_VERIFIABLE
+- Completed this session (prior): Draw Length; Waist to Hip; Drops Per Minute (earlier segments)
+- Current: Parkland Formula Calculator
+- Local commits Parkland so far: UI `1b1c10a2` / ENG `cebc6dd5` / REG pending
 - GitHub sync: NONE
-- Report: brain/reports/OMEGA-PENDING-DEVELOPMENT-LOCAL-COMMITS-REPORT-composer-omega-224145.md
-- Mongo: Atlas DNS blocked tool:assign
+- Mongo: Atlas DNS typically blocks tool:assign
 
 ## Resume
 
-1. Rescan Tools/Pending (currently empty)
-2. Do not take over active Progress ownership
-3. Credit preflight when new Pending appears
-4. Retry Mongo assign when DNS works
+1. Finish Parkland REG commit + move to Completed
+2. Credit preflight before next Pending claim
+3. Rescan Tools/Pending

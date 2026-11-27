@@ -107,6 +107,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'NetCarbsCalculator',
   'OpioidConversionCalculator',
   'OxygenationIndexCalculator',
+  'ParklandFormulaCalculator',
   'PeptideCalculator',
   'PrescriptionRefillCalculator',
   'ProstateVolumeCalculator',

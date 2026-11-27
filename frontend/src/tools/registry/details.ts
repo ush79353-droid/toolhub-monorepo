@@ -187,6 +187,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NetCarbsCalculator: () => import('@/tools/calculators/net-carbs/detail'),
   OpioidConversionCalculator: () =>
     import('@/tools/calculators/opioid-conversion/detail'),
+  ParklandFormulaCalculator: () =>
+    import('@/tools/calculators/parkland-formula/detail'),
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
   PrescriptionRefillCalculator: () =>
     import('@/tools/calculators/prescription-refill/detail'),
