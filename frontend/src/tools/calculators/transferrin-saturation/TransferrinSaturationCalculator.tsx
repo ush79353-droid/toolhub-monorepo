@@ -14,23 +14,7 @@ import {
   type TransferrinSaturationInput,
   type TransferrinSaturationResult,
 } from './types';
-
-/** UI shell — calculation wiring lands in the engine commit. */
-function emptyUiResult(): TransferrinSaturationResult {
-  return {
-    tsat1: null,
-    formattedTsat1: '',
-    tsat2: null,
-    formattedTsat2: '',
-    statusHeadline: 'Enter values in either method panel.',
-    statusDetail:
-      'Each panel computes TSAT independently when its inputs are valid.',
-    sourceNote:
-      'TSAT = 100×Fe/TIBC or 70.9×Fe/TF (µg/dL Fe, mg/dL TF). Educational only.',
-    disclaimer:
-      'Educational iron-status worksheet — not a diagnosis or treatment decision.',
-  };
-}
+import { validateTransferrinSaturationInput } from './validation';
 
 export function TransferrinSaturationCalculator({
   metadata,
@@ -45,7 +29,7 @@ export function TransferrinSaturationCalculator({
   const [errors, setErrors] =
     React.useState<TransferrinSaturationFieldErrors>({});
   const [result, setResult] = React.useState<TransferrinSaturationResult | null>(
-    () => emptyUiResult(),
+    () => validateTransferrinSaturationInput(initial).result,
   );
   const [copied, setCopied] = React.useState(false);
   const [shared, setShared] = React.useState(false);
@@ -57,9 +41,10 @@ export function TransferrinSaturationCalculator({
   }, []);
 
   const apply = (next: TransferrinSaturationInput) => {
+    const validation = validateTransferrinSaturationInput(next);
     setInput(next);
-    setErrors({});
-    setResult(emptyUiResult());
+    setErrors(validation.errors);
+    setResult(validation.result);
   };
 
   const handleReload = () => {
@@ -67,7 +52,7 @@ export function TransferrinSaturationCalculator({
     setInput(fresh);
     setBaseline(fresh);
     setErrors({});
-    setResult(emptyUiResult());
+    setResult(validateTransferrinSaturationInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);
@@ -77,7 +62,7 @@ export function TransferrinSaturationCalculator({
     const fresh = createEmptyInput();
     setInput(fresh);
     setErrors({});
-    setResult(emptyUiResult());
+    setResult(validateTransferrinSaturationInput(fresh).result);
     setCopied(false);
     setShared(false);
     setFeedback(null);

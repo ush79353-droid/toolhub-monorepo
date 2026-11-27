@@ -1,5 +1,6 @@
 import { FAQAccordion } from '@/components/shared/FAQAccordion';
 import { TSAT_FAQS } from './content';
+import { SOURCE_NOTE } from './calculation';
 
 export function TsatGuideArticle() {
   return (
@@ -24,9 +25,7 @@ export function TsatGuideArticle() {
         Transferrin saturation formula
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Method 1: TSAT (%) = (Fe ÷ TIBC) × 100. Method 2: TSAT (%) = (Fe ÷ TF)
-        × 70.9 with Fe in µg/dL and transferrin in mg/dL. Example: Fe 100 µg/dL
-        with TIBC 400 µg/dL → 25%.
+        {SOURCE_NOTE} Example: Fe 100 µg/dL with TIBC 400 µg/dL → 25%.
       </p>
 
       <h2
