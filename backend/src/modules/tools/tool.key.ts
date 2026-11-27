@@ -633,6 +633,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'AncAbsoluteNeutrophilCountCalculator',
   'AncWithoutBandsCalculator',
   'AnionGapCalculator',
+  'ArterialBloodPhCalculator',
   'AcidBaseCalculator',
   'BaiCalculator',
   'WaistToHeightRatioCalculator',

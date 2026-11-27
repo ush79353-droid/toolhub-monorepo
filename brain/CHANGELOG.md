@@ -1,4 +1,10 @@
-﻿## 2026-11-27 — Corrected Calcium Calculator (TOOL-823)
+﻿## 2026-11-27 — Arterial Blood pH Calculator (TOOL-824)
+
+- **Summary:** Screenshot-first Henderson–Hasselbalch arterial pH (`ArterialBloodPhCalculator`, slug `arterial-blood-ph-calculator`). Blank HCO₃ mEq/L + PaCO₂ mmHg|kPa; pH=6.1+log10(HCO₃/(0.0308×PaCO₂_mmHg)); **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `9b50f2f1` / ENG `2f25e3f8` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/arterial-blood-ph/calculation.test.ts` → ok (24/40 → ≈7.39).
+## 2026-11-27 — Corrected Calcium Calculator (TOOL-823)
 
 - **Summary:** Screenshot-first Payne corrected calcium (`CorrectedCalciumCalculator`, slug `corrected-calcium-calculator`). Serum Ca mg/dL|mmol/L; albumin g/dL|g/L; corrected Ca = measured + 0.8×(4−albumin); **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified this session; activation pending; **indexable** false when assign retries.

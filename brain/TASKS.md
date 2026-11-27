@@ -1,4 +1,4 @@
-﻿- [x] URR Calculator - Urea Reduction Ratio (urr-calculator-urea-reduction-ratio) — developed + activated 2026-11-26 (indexable false).
+- [x] URR Calculator - Urea Reduction Ratio (urr-calculator-urea-reduction-ratio) — developed + activated 2026-11-26 (indexable false).
 - [x] Protein Creatinine Ratio Calculator (protein-creatinine-ratio-calculator) — Mongo activated 2026-11-26 (indexable false).
 - [x] FENa Calculator (fena-calculator-fractional-excretion-of-sodium) — developed + activated 2026-11-25 (indexable false).
 - [x] PF Ratio Calculator (pf-ratio-calculator) — developed + activated 2026-11-25 (indexable false).
@@ -27,8 +27,11 @@
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `TOOL-823` | Corrected Calcium Calculator (`CorrectedCalciumCalculator`); Payne albumin-adjusted total Ca; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/corrected-calcium/*` | Mongo Atlas DNS |
+| `TOOL-824` | Arterial Blood pH Calculator (`ArterialBloodPhCalculator`); HH pH; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/arterial-blood-ph/*` | Mongo Atlas DNS |
 | `TOOL-822` | Karvonen Formula Calculator (`KarvonenFormulaCalculator`); THR/HRR + Fox 220−age; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/karvonen-formula/*` | Mongo Atlas DNS |
+| `TOOL-824` | Arterial Blood pH Calculator (`ArterialBloodPhCalculator`); HH pH; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/arterial-blood-ph/*` | Mongo Atlas DNS |
 | `TOOL-822` | Acid Base Calculator (`AcidBaseCalculator`); AG + Figge cAG + ABG framing; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/acid-base/*` | Mongo Atlas DNS |
+| `TOOL-824` | Arterial Blood pH Calculator (`ArterialBloodPhCalculator`); HH pH; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/arterial-blood-ph/*` | Mongo Atlas DNS |
 | `TOOL-822` | Transferrin Saturation Calculator (`TransferrinSaturationCalculator`); Fe/TIBC + Fe/TF panels; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/transferrin-saturation/*` | Mongo Atlas DNS |
 | `TOOL-821` | NLR Calculator (`NlrCalculator`); ANC÷ALC or %÷%; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/nlr/*` | Mongo Atlas DNS |
 | `TOOL-820` | Weight Loss Percentage Calculator (`WeightLossPercentageCalculator`); past−current + %; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/weight-loss-percentage/*` | Mongo Atlas DNS |

@@ -1327,6 +1327,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.AnionGapCalculator,
     })),
   ),
+  ArterialBloodPhCalculator: lazyTool(() =>
+    import('@/tools/calculators/arterial-blood-ph/ArterialBloodPhCalculator').then((mod) => ({
+      default: mod.ArterialBloodPhCalculator,
+    })),
+  ),
   AcidBaseCalculator: lazyTool(() =>
     import('@/tools/calculators/acid-base/AcidBaseCalculator').then((mod) => ({
       default: mod.AcidBaseCalculator,
