@@ -1,4 +1,6 @@
 ﻿DONE
-status=ISSUED
-reason=empty-packet
-agentId=cursor-agent-28212114-002003
+status=COMPLETED
+agentId=cursor-agent-pending-composer-88447
+commits=UI:9696f411 ENG:b924a81a REG:7bdd5447
+mongo=BLOCKED_ATLAS_DNS
+completedAt=2026-11-27T22:57:56.7141000+05:00

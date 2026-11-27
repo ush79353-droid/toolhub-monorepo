@@ -1,0 +1,6 @@
+﻿RELEASED
+status=ISSUED
+agentId=cursor-agent-pending-composer-face-shape-s7
+blocker=model-approval-required-face-shape-heuristics
+report=brain/reports/OMEGA-FACE-SHAPE-MODEL-APPROVAL-PACK-composer-face-shape-s7.md
+ts=2026-11-27T23:47:37.0726895+05:00

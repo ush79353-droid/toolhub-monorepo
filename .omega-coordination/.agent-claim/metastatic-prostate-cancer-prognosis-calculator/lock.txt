@@ -1,4 +1,12 @@
-agentId=cursor-agent-72170412-002210
-phase=RELEASED_ISSUED
-reason=clinical-formula-unverified
-releasedAt=2026-11-25T00:59:44.0036961+05:00
+﻿RELEASED_ISSUED
+agentId=cursor-agent-pending-composer-mpc-s9
+sessionId=sess-mpc-20261127-2351
+tool=Metastatic Prostate Cancer Prognosis Calculator
+slug=metastatic-prostate-cancer-prognosis-calculator
+purpose=clinical-model-investigation-only
+status=EVIDENCE_INSUFFICIENT_KEEP_ISSUED
+decision=MODEL_APPROVAL_REQUIRED
+evidencePack=brain/reports/OMEGA-METASTATIC-PROSTATE-CLINICAL-EVIDENCE-PACK-composer-mpc-s9.md
+development=NONE
+exclusive=false
+releasedAt=2026-11-27T23:59:00+05:00

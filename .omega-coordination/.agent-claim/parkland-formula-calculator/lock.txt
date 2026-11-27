@@ -1,4 +1,4 @@
-﻿DONE
-status=ISSUED
-reason=empty-packet
-agentId=cursor-agent-28212114-002003
+RELEASED
+agentId=cursor-agent-pending-composer-omega-223250
+ts=2026-11-27T23:08:22.3814741+05:00
+status=completed

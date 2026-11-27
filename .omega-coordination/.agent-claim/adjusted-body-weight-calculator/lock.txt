@@ -1,0 +1,3 @@
+﻿CLAIMED
+agentId=cursor-agent-pending-composer-11923
+ts=2026-11-26T10:21:11.7726603+05:00

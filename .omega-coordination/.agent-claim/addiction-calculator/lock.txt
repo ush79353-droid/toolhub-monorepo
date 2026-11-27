@@ -1,4 +1,6 @@
-agentId=cursor-agent-25205458-010544
-phase=RELEASED_ISSUED
-reason=mongo-dns
-releasedAt=2026-11-25T01:47:43.2611277+05:00
+﻿RELEASED
+status=ISSUED
+agentId=cursor-agent-pending-composer-addiction-s8
+blocker=evidence-pack-and-mongo-dns
+report=brain/reports/OMEGA-ADDICTION-EVIDENCE-PACK-composer-addiction-s8.md
+ts=2026-11-27T23:51:39.3912678+05:00

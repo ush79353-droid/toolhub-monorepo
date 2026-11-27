@@ -1,4 +1,5 @@
-﻿DONE
-status=ISSUED
-reason=empty-packet
-agentId=cursor-agent-28212114-002003
+﻿agentId=cursor-agent-pending-composer-omega-213906
+status=released
+releasedAt=2026-11-27T21:56:31.8324526+05:00
+tool=Karvonen Formula Calculator
+result=completed

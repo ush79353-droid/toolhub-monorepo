@@ -1,4 +1,5 @@
-﻿DONE
-status=ISSUED
-reason=empty-packet
-agentId=cursor-agent-28212114-002003
+﻿RELEASED
+agentId=cursor-agent-pending-composer-55201
+status=COMPLETED
+ts=2026-11-27T23:02:32.5157662+05:00
+

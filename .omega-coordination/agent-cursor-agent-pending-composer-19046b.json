@@ -1,0 +1,12 @@
+{
+    "credits":  "CREDITS_NOT_VERIFIABLE",
+    "heartbeat":  "2026-11-27T22:20:21.0325138+05:00",
+    "completed":  [
+                      "Corrected Magnesium Calculator",
+                      "Winters\u0027 Formula Calculator"
+                  ],
+    "claimed":  null,
+    "sessionId":  "sess-pending-20261127-220400",
+    "agentId":  "cursor-agent-pending-composer-19046b",
+    "status":  "CAPACITY_LIMIT"
+}

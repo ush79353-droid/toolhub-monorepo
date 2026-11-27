@@ -1,0 +1,26 @@
+{
+    "agentId":  "cursor-agent-pending-composer-20261127-220522",
+    "completed":  [
+                      "Bicarbonate Deficit Calculator",
+                      "Healthy Weight Calculator"
+                  ],
+    "commits":  {
+                    "healthyWeight":  [
+                                          "03822a86",
+                                          "f75dd8be",
+                                          "be72e801"
+                                      ],
+                    "bicarbonateDeficit":  [
+                                               "5ef1b965",
+                                               "4da415fb",
+                                               "011719d0"
+                                           ]
+                },
+    "sessionId":  "sess-pending-20261127-220522",
+    "credits":  "CREDITS_NOT_VERIFIABLE",
+    "report":  "brain/reports/OMEGA-PENDING-DEVELOPMENT-LOCAL-COMMITS-REPORT-composer-20261127-220522.md",
+    "reason":  "CREDITS_NOT_VERIFIABLE + two full calculators under multi-agent contention; conservative stop",
+    "heartbeat":  "2026-11-27T22:25:58.4897694+05:00",
+    "claimed":  null,
+    "status":  "CAPACITY_LIMIT"
+}

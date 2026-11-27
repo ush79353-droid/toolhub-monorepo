@@ -1,6 +1,12 @@
-﻿agentId=cursor-agent-29428947-002236
-sessionId=sess-continuous-20261125-002236
-task=Alcohol Unit Calculator
-phase=ISSUED
-issuedAt=2026-11-25T01:49:42.9135061+05:00
-reason=mongo_dns_ebadresp
+﻿READY_FOR_INTEGRATION
+agentId=cursor-agent-alcohol-unit-20261127
+sessionId=sess-alcohol-unit-20261127-2348
+tool=Alcohol Unit Calculator
+slug=alcohol-unit-calculator
+mongoId=6af46f12a27d8d1d4e9902f4
+componentKeyProposed=AlcoholUnitCalculator
+branch=omega/issued/alcohol-unit-calculator
+uiCommit=590e360fc675af2867b2e7efed6da10fcfc3b2b3
+engineCommit=193de3c13dbb5b93a22bb37cfb8f6044157f3dc7
+credits=CREDITS_NOT_VERIFIABLE
+updatedAt=2026-11-27T23:55:00+05:00

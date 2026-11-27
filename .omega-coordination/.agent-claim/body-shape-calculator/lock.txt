@@ -1,0 +1,6 @@
+﻿RELEASED
+status=ISSUED
+agentId=cursor-agent-pending-composer-body-shape-s6
+blocker=omni-vs-lee-methodology-mismatch-owner-approval-required
+report=brain/reports/OMEGA-BODY-SHAPE-MODEL-RECOVERY-REPORT-composer-body-shape-s6.md
+ts=2026-11-27T23:44:29.8683624+05:00

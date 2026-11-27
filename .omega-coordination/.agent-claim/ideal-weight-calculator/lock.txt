@@ -1,4 +1,4 @@
-﻿DONE
-status=ISSUED
-reason=empty-packet
-agentId=cursor-agent-28212114-002003
+﻿CLAIMED
+agentId=cursor-agent-pending-composer-9929
+tool=Ideal Weight Calculator
+ts=2026-11-26T03:20:03.1397266+05:00

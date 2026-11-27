@@ -1,6 +1,10 @@
-﻿agentId=cursor-agent-72170412-002210
-task=Albumin Creatinine Ratio Calculator
-phase=RELEASED_COMPLETED
-releasedAt=2026-11-25T00:41:08.2130940+05:00
-result=COMPLETED
-commits=67954e30,a06a16c7,25427263
+﻿RECONCILED_COMPLETED
+agentId=cursor-agent-dup-reconcile-20261127
+sessionId=sess-three-dup-reconcile-20261127
+tool=Albumin Creatinine Ratio Calculator
+slug=albumin-creatinine-ratio-calculator
+mongoId=6af46f12a27d8d1d4e9902cb
+componentKey=AlbuminCreatinineRatioCalculator
+completedPath=Tools\Completed\Albumin Creatinine Ratio Calculator
+commits=67954e30, a06a16c7, 25427263
+reconciledAt=2026-11-27T23:47:49+05:00

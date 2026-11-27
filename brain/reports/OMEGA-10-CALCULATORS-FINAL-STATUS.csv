@@ -1,0 +1,11 @@
+#,calculator,session,code_status,formula_status,local_commits,integration,mongodb_live,folder_status,final_result,notes
+1,Addiction Calculator,8,NOT_DEVELOPED,EVIDENCE_INSUFFICIENT,none,none,6af46f12a27d8d1d4e9902f3 undeveloped empty key,Issued,BLOCKED,Evidence pack only; no module
+2,Adrenal Washout Calculator,2,ON_DEVELOPMENT,VERIFIED_PRIOR,09d37ff2|08783b11|c9086bff,INTEGRATED_LOCALLY,6af46f12a27d8d1d4e9902ca developed active indexable false,Completed,ALREADY_DEVELOPED_RECONCILED,RECONCILIATION_RECORD present
+3,Albumin Creatinine Ratio Calculator,2,ON_DEVELOPMENT,VERIFIED_PRIOR,67954e30|a06a16c7|25427263,INTEGRATED_LOCALLY,6af46f12a27d8d1d4e9902cb developed active indexable false,Completed,ALREADY_DEVELOPED_RECONCILED,RECONCILIATION_RECORD present
+4,Alcohol Unit Calculator,3,WORKTREE_ONLY,UK_UNITS_STATIC_OK,590e360f|193de3c1,WORKER_COMMITTED_INTEGRATION_MISSING,6af46f12a27d8d1d4e9902f4 undeveloped empty key,Progress,READY_FOR_INTEGRATION,Not on development registries
+5,Body Shape Calculator,6,NOT_DEVELOPED,MODEL_APPROVAL_REQUIRED,none,none,6af46f12a27d8d1d4e9902a1 undeveloped empty key,Issued,BLOCKED,Investigation pack only
+6,BUN Creatinine Ratio Calculator,2,ON_DEVELOPMENT,VERIFIED_PRIOR,df3445b1|b11f1075|838eb350,INTEGRATED_LOCALLY,6af46f12a27d8d1d4e9902cd developed active indexable false,Completed,ALREADY_DEVELOPED_RECONCILED,RECONCILIATION_RECORD present
+7,CIWA Calculator,4,WORKTREE_ONLY,CIWA_AR_STRUCTURE_OK,52f3073f|ba911944,WORKER_COMMITTED_INTEGRATION_MISSING,6af46f12a27d8d1d4e9902fb undeveloped empty key,Progress,READY_FOR_INTEGRATION,Not on development registries
+8,Face Shape Calculator,7,NOT_DEVELOPED,HEURISTIC_APPROVAL_REQUIRED,none,none,6af46f12a27d8d1d4e9902a7 undeveloped empty key,Issued,BLOCKED,Approval pack only
+9,Metastatic Prostate Cancer Prognosis Calculator,9,NOT_DEVELOPED,MODEL_APPROVAL_REQUIRED,none,none,6af46f12a27d8d1d4e9902d7 undeveloped empty key,Issued,BLOCKED,Clinical evidence pack; invent LE forbidden
+10,Quiz Protein Creatinine Ratio Calculator,5,WORKTREE_ONLY,FIVE_Q_SCORING_OK,69ae7a98|fc691b50,WORKER_COMMITTED_NO_CATALOG,MISSING_LIVE_ROW,Progress,BLOCKED,Must not use non-quiz PCR 6af46f12a27d8d1d4e9902d9

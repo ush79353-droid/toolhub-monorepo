@@ -1,0 +1,18 @@
+{
+  "agentId": "cursor-agent-pending-composer-19046c",
+  "sessionId": "sess-pending-20261127-223100",
+  "status": "MISSION_COMPLETE_PENDING_EMPTY",
+  "credits": "CREDITS_NOT_VERIFIABLE",
+  "claimed": null,
+  "completed": ["Sodium Correction Calculator"],
+  "commits": {
+    "Sodium Correction Calculator": {
+      "ui": "4950ec16",
+      "engine": "c3332339",
+      "integrate": "d1bb02ee"
+    }
+  },
+  "heartbeat": "2026-11-27T23:10:00+05:00",
+  "mongo": "assign_blocked_Atlas_DNS",
+  "githubSync": 0
+}

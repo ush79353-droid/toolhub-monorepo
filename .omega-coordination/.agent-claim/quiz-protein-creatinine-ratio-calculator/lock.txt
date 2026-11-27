@@ -1,0 +1,13 @@
+﻿HANDOFF_AWAITING_CATALOG
+agentId=cursor-agent-pending-composer-quiz-pcr-s5
+sessionId=sess-quiz-pcr-20261127-2359
+tool=Quiz Protein Creatinine Ratio Calculator
+slug=quiz-protein-creatinine-ratio-calculator
+status=MODULE_COMPLETE_AWAITING_CATALOG_AUTHORIZATION
+branch=omega/issued/quiz-protein-creatinine-ratio-calculator
+uiCommit=69ae7a98
+engineCommit=fc691b50
+mongo=MISSING_UNAUTHORIZED
+exclusive=false
+releasedForIntegrationCoordinator=true
+updatedAt=2026-11-28T00:20:00+05:00

@@ -1,0 +1,3 @@
+﻿RELEASED
+agentId=cursor-agent-pending-composer-19046c
+ts=2026-11-27T23:09:01.4269194+05:00

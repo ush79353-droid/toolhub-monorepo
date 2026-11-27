@@ -1,0 +1,20 @@
+{
+    "sessionId":  "sess-pending-20261127-220433",
+    "heartbeat":  "2026-11-27T22:14:52.1474641+05:00",
+    "agentId":  "cursor-agent-pending-composer-88421",
+    "credits":  "CREDITS_NOT_VERIFIABLE",
+    "interrupted":  [
+                        "Overweight Calculator"
+                    ],
+    "status":  "CAPACITY_LIMIT",
+    "completed":  [
+                      "Urine Anion Gap Calculator"
+                  ],
+    "commits":  {
+                    "uag":  [
+                                "57adf03d",
+                                "2c396df6",
+                                "0053de7e"
+                            ]
+                }
+}

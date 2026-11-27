@@ -1,0 +1,12 @@
+﻿READY_FOR_INTEGRATION
+agentId=cursor-agent-ciwa-20261127
+sessionId=sess-ciwa-20261127-2359
+tool=CIWA Calculator
+slug=ciwa-calculator
+mongoId=6af46f12a27d8d1d4e9902fb
+componentKeyProposed=CiwaCalculator
+branch=omega/issued/ciwa-calculator
+uiCommit=52f3073f3697df062ea42adcb1194c05dcac067d
+engineCommit=ba911944a4a16fff470f6754503136a9f61592c4
+credits=CREDITS_NOT_VERIFIABLE
+updatedAt=2026-11-28T00:05:00+05:00

@@ -1,0 +1,4 @@
+﻿RELEASED
+agentId=
+tool=Arterial Blood pH Calculator
+completedAt=2026-11-27T21:59:14.3555445+05:00

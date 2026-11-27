@@ -1,4 +1,4 @@
-﻿agentId=cursor-agent-72170412-002210
-phase=RELEASED_ISSUED
-reason=missing-spec
-releasedAt=2026-11-25T00:44:33.7414669+05:00
+﻿RELEASED
+agentId=cursor-agent-pending-composer-83147b
+status=completed
+ts=2026-11-27T22:50:49.9729254+05:00
