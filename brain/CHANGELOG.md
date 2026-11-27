@@ -5,6 +5,13 @@
 - **Commits:** UI `caa5151e` / ENG `a4fbf384` / REG (this commit). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/iv-flow-rate/calculation.test.ts` → ok (500 mL / 4 h @ 20 → 125 mL/h · ≈41.67 gtts/min).
 
+## 2026-11-27 — BSA Calculator – Body Surface Area (TOOL-837)
+
+- **Summary:** Screenshot-first Du Bois BSA (`BsaCalculator`, slug `bsa-calculator-body-surface-area`). Weight kg|lb; height cm|m|in|ft; primary Du Bois m²|ft²; collapsed Mosteller/Fujimoto/Gehan-George/Haycock; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `814ad7f9` / ENG `f8426333` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/bsa/calculation.test.ts` → ok (180 cm · 80 kg Mosteller **2.00** m²).
+
 ## 2026-11-27 — RBC Indices Calculator What is MCHC (TOOL-836)
 
 - **Summary:** Screenshot-first CBC indices (`RbcIndicesCalculator`, slug `rbc-indices-calculator-what-is-mchc`). Female default; blank Hb/Hct/RBC; MCH=10Hb/RBC, MCHC=100Hb/Hct, MCV=10Hct/RBC; **No FX**; share URL only.

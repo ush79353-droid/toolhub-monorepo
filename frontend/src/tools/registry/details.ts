@@ -902,6 +902,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   AllowableBloodLossCalculator: () =>
     import('@/tools/calculators/allowable-blood-loss/detail'),
   BaiCalculator: () => import('@/tools/calculators/bai/detail'),
+  BriCalculator: () => import('@/tools/calculators/bri-body-roundness/detail'),
   WaistToHipRatioCalculator: () =>
     import('@/tools/calculators/waist-to-hip/detail'),
   WaistToHeightRatioCalculator: () =>
@@ -941,6 +942,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/body-frame-size/detail'),
   BodeIndexCalculator: () =>
     import('@/tools/calculators/bode-index/detail'),
+  BsaCalculator: () => import('@/tools/calculators/bsa/detail'),
 
   IbuprofenDosageCalculator: () =>
     import('@/tools/calculators/ibuprofen-dosage/detail'),

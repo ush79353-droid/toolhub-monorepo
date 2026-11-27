@@ -1394,6 +1394,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BedriddenPatientHeightCalculator,
     })),
   ),
+  PlasmaVolumeCalculator: lazyTool(() =>
+    import('@/tools/calculators/plasma-volume/PlasmaVolumeCalculator').then((mod) => ({
+      default: mod.PlasmaVolumeCalculator,
+    })),
+  ),
   BicarbonateDeficitCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/bicarbonate-deficit/BicarbonateDeficitCalculator'
@@ -3686,6 +3691,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BaiCalculator,
     })),
   ),
+  BriCalculator: lazyTool(() =>
+    import('@/tools/calculators/bri-body-roundness/BriCalculator').then((mod) => ({
+      default: mod.BriCalculator,
+    })),
+  ),
   WaistToHipRatioCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/waist-to-hip/WaistToHipRatioCalculator'
@@ -3821,6 +3831,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   BodeIndexCalculator: lazyTool(() =>
     import('@/tools/calculators/bode-index/BodeIndexCalculator').then((mod) => ({
       default: mod.BodeIndexCalculator,
+    })),
+  ),
+  BsaCalculator: lazyTool(() =>
+    import('@/tools/calculators/bsa/BsaCalculator').then((mod) => ({
+      default: mod.BsaCalculator,
     })),
   ),
 
