@@ -27,6 +27,7 @@
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |
+| `TOOL-825` | Body Frame Size Calculator (`BodyFrameSizeCalculator`); height÷wrist index + sex bands; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/body-frame-size/*` | Mongo Atlas DNS |
 | `TOOL-823` | Corrected Calcium Calculator (`CorrectedCalciumCalculator`); Payne albumin-adjusted total Ca; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/corrected-calcium/*` | Mongo Atlas DNS |
 | `TOOL-824` | Arterial Blood pH Calculator (`ArterialBloodPhCalculator`); HH pH; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/arterial-blood-ph/*` | Mongo Atlas DNS |
 | `TOOL-822` | Karvonen Formula Calculator (`KarvonenFormulaCalculator`); THR/HRR + Fox 220−age; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/karvonen-formula/*` | Mongo Atlas DNS |

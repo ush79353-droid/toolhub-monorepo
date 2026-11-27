@@ -648,6 +648,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BloodDonorCalculator',
   'BloodTypeCalculator',
   'BloodVolumeCalculator',
+  'BodyFrameSizeCalculator',
   'IbuprofenDosageCalculator',
   'IchVolumeCalculator',
   'BetaStockCalculator',

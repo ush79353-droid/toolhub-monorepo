@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Draw Length Calculator (TOOL-824)
+﻿## 2026-11-27 — Body Frame Size Calculator (TOOL-825)
+
+- **Summary:** Screenshot-first body frame index (`BodyFrameSizeCalculator`, slug `body-frame-size-calculator`). Female default; height m + wrist cm; index=height÷wrist; Omni/Grant sex bands; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `639b5326` / ENG `d70213be` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/body-frame-size/calculation.test.ts` → ok (♀ 1.7 m / 16 cm → 10.63 medium; boundary bands).
+
+## 2026-11-27 — Draw Length Calculator (TOOL-824)
 
 - **Summary:** Screenshot-first draw length (DrawLengthCalculator, slug draw-length-calculator). Wingspan ÷ 2.5; cm|m|in|ft; bidirectional; **No FX**.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.

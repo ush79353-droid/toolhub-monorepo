@@ -3695,11 +3695,19 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BloodVolumeCalculator,
     })),
   ),
+  BodyFrameSizeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/body-frame-size/BodyFrameSizeCalculator'
+    ).then((mod) => ({
+      default: mod.BodyFrameSizeCalculator,
+    })),
+  ),
   BodeIndexCalculator: lazyTool(() =>
     import('@/tools/calculators/bode-index/BodeIndexCalculator').then((mod) => ({
       default: mod.BodeIndexCalculator,
     })),
   ),
+
   BladderVolumeCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/bladder-volume/BladderVolumeCalculator'
