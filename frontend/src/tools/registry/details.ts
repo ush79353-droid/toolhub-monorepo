@@ -158,6 +158,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/katch-mcardle/detail'),
   KtvDaugirdasCalculator: () =>
     import('@/tools/calculators/ktv-daugirdas/detail'),
+  KidneyStonePcnlCalculator: () =>
+    import('@/tools/calculators/kidney-stone-pcnl/detail'),
   KetoCalculator: () => import('@/tools/calculators/keto/detail'),
   KidneyFailureRiskCalculator: () =>
     import('@/tools/calculators/kidney-failure-risk/detail'),
@@ -187,6 +189,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   NetCarbsCalculator: () => import('@/tools/calculators/net-carbs/detail'),
   OpioidConversionCalculator: () =>
     import('@/tools/calculators/opioid-conversion/detail'),
+  OxygenationIndexCalculator: () =>
+    import('@/tools/calculators/oxygenation-index/detail'),
   ParklandFormulaCalculator: () =>
     import('@/tools/calculators/parkland-formula/detail'),
   PeptideCalculator: () => import('@/tools/calculators/peptide/detail'),
@@ -840,8 +844,11 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   TenureCalculator: () => import('@/tools/calculators/tenure/detail'),
   TestosteroneEstradiolRatioCalculator: () =>
     import('@/tools/calculators/testosterone-estradiol-ratio/detail'),
+  TidalVolumeCalculator: () =>
+    import('@/tools/calculators/tidal-volume/detail'),
   TimeValueOfMoneyCalculator: () =>
     import('@/tools/calculators/time-value-of-money/detail'),
+  TtkgCalculator: () => import('@/tools/calculators/ttkg/detail'),
   TtmCalculator: () => import('@/tools/calculators/ttm/detail'),
   TreynorRatioCalculator: () =>
     import('@/tools/calculators/treynor-ratio/detail'),
@@ -1221,6 +1228,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/labor-cost/detail'),
   LemonadeStandCalculator: () =>
     import('@/tools/calculators/lemonade-stand/detail'),
+  LightsCriteriaCalculator: () =>
+    import('@/tools/calculators/lights-criteria/detail'),
   LernerIndexCalculator: () =>
     import('@/tools/calculators/lerner-index/detail'),
   LevothyroxineDosageCalculator: () =>

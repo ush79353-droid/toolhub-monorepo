@@ -572,6 +572,7 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
     import('@/tools/calculators/keto/KetoCalculator').then((mod) => ({
       default: mod.KetoCalculator,
     })),
+  ),
   KidneyFailureRiskCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/kidney-failure-risk/KidneyFailureRiskCalculator'

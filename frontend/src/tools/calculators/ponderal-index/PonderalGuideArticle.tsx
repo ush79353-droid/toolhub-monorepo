@@ -12,9 +12,9 @@ export function PonderalGuideArticle() {
         Ponderal Index Calculator
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-foreground/90 sm:text-base">
-        Estimate Rohrer's ponderal (corpulence) index from height and weight for
-        adults or neonates/infants. Educational anthropometric worksheet — not a
-        diagnosis.
+        Estimate Rohrer&apos;s ponderal (corpulence) index from height and weight
+        for adults or neonates/infants. Educational anthropometric worksheet — not
+        a diagnosis.
       </p>
 
       <h2

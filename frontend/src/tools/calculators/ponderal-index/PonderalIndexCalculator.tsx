@@ -121,7 +121,7 @@ export function PonderalIndexCalculator({
         <div>
           <h2 className="text-[15px] font-semibold text-accent">Calculator</h2>
           <p className="text-xs font-normal text-muted-foreground">
-            Rohrer's ponderal index from height and weight.
+            Rohrer&apos;s ponderal index from height and weight.
           </p>
         </div>
         {headerActions ? (

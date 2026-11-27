@@ -26,7 +26,10 @@ function assert(cond: unknown, msg: string): asserts cond {
   });
   assert(r.methods != null, 'methods');
   assert(Math.abs(r.methods!.mosteller - 2) < 1e-12, 'mosteller methods');
-  assert(r.formattedAdditional?.mosteller === '2.00', r.formattedAdditional?.mosteller);
+  assert(
+    r.formattedAdditional?.mosteller === '2.00',
+    r.formattedAdditional?.mosteller ?? 'missing mosteller',
+  );
   assert(r.primaryDisplay != null && r.primaryDisplay > 0, 'duBois primary');
   const expectedDu = duBoisBsaM2(80, 180);
   assert(
