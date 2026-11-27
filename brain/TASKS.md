@@ -26,6 +26,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-821` | NLR Calculator (`NlrCalculator`); ANC÷ALC or %÷%; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/nlr/*` | Mongo Atlas DNS |
 | `TOOL-820` | Weight Loss Percentage Calculator (`WeightLossPercentageCalculator`); past−current + %; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/weight-loss-percentage/*` | Mongo Atlas DNS |
 | `TOOL-819` | Ponderal Index Calculator (`PonderalIndexCalculator`); adult kg/m³ + neonate 100×g/cm³; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/ponderal-index/*` | Mongo Atlas DNS |
 | `TOOL-818` | Waist to Height Ratio Calculator (`WaistToHeightRatioCalculator`); waist÷height; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/waist-to-height/*` | Mongo Atlas DNS |

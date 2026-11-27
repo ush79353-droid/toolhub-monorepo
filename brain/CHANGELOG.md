@@ -1,4 +1,11 @@
-﻿## 2026-11-26 — Weight Loss Percentage Calculator (TOOL-820)
+﻿## 2026-11-27 — NLR Calculator (TOOL-821)
+
+- **Summary:** Screenshot-first NLR (`NlrCalculator`, slug `nlr-calculator`). Absolute ANC/ALC ×10³/µL or matching differential %; NLR = neutrophils÷lymphocytes; zero lymphocytes invalid; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `5e3dc4db` / ENG `4311c0c0` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/nlr/calculation.test.ts` → ok (4/2 → 2; percent 70/20 → 3.5).
+
+## 2026-11-26 — Weight Loss Percentage Calculator (TOOL-820)
 
 - **Summary:** Screenshot-first WLP (`WeightLossPercentageCalculator`, slug `weight-loss-percentage-calculator`). past−current; % = 100×loss/past; **No FX**; outputs read-only.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
