@@ -760,6 +760,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.SodiumDeficitCalculator,
     })),
   ),
+  SodiumCorrectionRateCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/sodium-correction-rate/SodiumCorrectionRateCalculator'
+    ).then((mod) => ({
+      default: mod.SodiumCorrectionRateCalculator,
+    })),
+  ),
   SodiumInSaltCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/sodium-in-salt/SodiumInSaltCalculator'

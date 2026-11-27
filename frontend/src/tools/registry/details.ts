@@ -206,6 +206,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   RmrCalculator: () => import('@/tools/calculators/rmr/detail'),
   SodiumDeficitCalculator: () =>
     import('@/tools/calculators/sodium-deficit/detail'),
+  SodiumCorrectionRateCalculator: () =>
+    import('@/tools/calculators/sodium-correction-rate/detail'),
   SodiumInSaltCalculator: () =>
     import('@/tools/calculators/sodium-in-salt/detail'),
   SteroidConversionCalculator: () =>

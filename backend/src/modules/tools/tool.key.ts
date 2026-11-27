@@ -663,6 +663,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'TotalBodyWaterCalculator',
   'DripRateCalculator',
   'IvFlowRateCalculator',
+  'SodiumCorrectionRateCalculator',
   'BeeCalculator',
   'BenadrylDosageCalculator',
   'BenzodiazepineConversionCalculator',

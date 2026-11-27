@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Plasma Volume Calculator (TOOL-839)
+﻿## 2026-11-27 — Sodium Correction Rate Calculator (TOOL-840)
+
+- **Summary:** Screenshot-first Adrogué–Madias rate (`SodiumCorrectionRateCalculator`, slug `sodium-correction-rate-calculator-for-hypo-and-hypernatremia`). Age/sex radios; weight; serum Na; conditional fluid + aimed ΔNa/h; TBW + ΔNa/L + mL/h; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `4fd90985` / ENG `a51ddba0` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/sodium-correction-rate/calculation.test.ts` → ok (70 kg · 120 · 2% · 0.5 → ≈97 mL/h).
+
+## 2026-11-27 — Plasma Volume Calculator (TOOL-839)
 
 - **Summary:** Screenshot-first plasma volume (`PlasmaVolumeCalculator`, slug `plasma-volume-calculator`). Weight + Hct → F/M weight-only PV; optional height → Nadler/Lemmens; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
