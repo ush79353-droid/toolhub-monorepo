@@ -26,6 +26,8 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-830` | Plasma Osmolality Calculator (`PlasmaOsmolalityCalculator`); 2Na+Glu/18+BUN/2.8; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-83147) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/plasma-osmolality/*` | Mongo Atlas DNS |
+| `TOOL-827` | Bicarbonate Deficit Calculator (`BicarbonateDeficitCalculator`); 0.5×kg×(desired−actual) mmol; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor ($agentId) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/bicarbonate-deficit/*` | Mongo Atlas DNS |
 | `TOOL-826` | Drops Per Minute Calculator (`DropsPerMinuteCalculator`); gtts/min; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/drops-per-minute/*` | Mongo Atlas DNS |
 | `TOOL-825` | Waist to Hip Ratio Calculator (`WaistToHipRatioCalculator`); W÷H; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/waist-to-hip/*` | Mongo Atlas DNS |
 | `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |
@@ -280,6 +282,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-827` | Bicarbonate Deficit Calculator (`BicarbonateDeficitCalculator`); 0.5×kg×(desired−actual) mmol; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor ($agentId) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/bicarbonate-deficit/*` | Mongo Atlas DNS |
 | `TOOL-826` | Drops Per Minute Calculator (`DropsPerMinuteCalculator`); gtts/min; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/drops-per-minute/*` | Mongo Atlas DNS |
 | `TOOL-825` | Waist to Hip Ratio Calculator (`WaistToHipRatioCalculator`); W÷H; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/waist-to-hip/*` | Mongo Atlas DNS |
 | `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |
@@ -291,6 +294,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-827` | Bicarbonate Deficit Calculator (`BicarbonateDeficitCalculator`); 0.5×kg×(desired−actual) mmol; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor ($agentId) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/bicarbonate-deficit/*` | Mongo Atlas DNS |
 | `TOOL-826` | Drops Per Minute Calculator (`DropsPerMinuteCalculator`); gtts/min; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/drops-per-minute/*` | Mongo Atlas DNS |
 | `TOOL-825` | Waist to Hip Ratio Calculator (`WaistToHipRatioCalculator`); W÷H; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/waist-to-hip/*` | Mongo Atlas DNS |
 | `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |
@@ -306,6 +310,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-827` | Bicarbonate Deficit Calculator (`BicarbonateDeficitCalculator`); 0.5×kg×(desired−actual) mmol; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor ($agentId) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/bicarbonate-deficit/*` | Mongo Atlas DNS |
 | `TOOL-826` | Drops Per Minute Calculator (`DropsPerMinuteCalculator`); gtts/min; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/drops-per-minute/*` | Mongo Atlas DNS |
 | `TOOL-825` | Waist to Hip Ratio Calculator (`WaistToHipRatioCalculator`); W÷H; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/waist-to-hip/*` | Mongo Atlas DNS |
 | `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |
@@ -357,6 +362,7 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-827` | Bicarbonate Deficit Calculator (`BicarbonateDeficitCalculator`); 0.5×kg×(desired−actual) mmol; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor ($agentId) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/bicarbonate-deficit/*` | Mongo Atlas DNS |
 | `TOOL-826` | Drops Per Minute Calculator (`DropsPerMinuteCalculator`); gtts/min; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/drops-per-minute/*` | Mongo Atlas DNS |
 | `TOOL-825` | Waist to Hip Ratio Calculator (`WaistToHipRatioCalculator`); W÷H; Mongo blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/waist-to-hip/*` | Mongo Atlas DNS |
 | `TOOL-824` | Draw Length Calculator (`DrawLengthCalculator`); wingspan÷2.5; registry wired; Mongo assign blocked | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/draw-length/*` | Mongo Atlas DNS |

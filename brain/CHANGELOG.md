@@ -1,4 +1,18 @@
-﻿## 2026-11-27 — RFM Calculator (Relative Fat Mass) (TOOL-828)
+﻿## 2026-11-27 — Venous Blood pH Calculator (TOOL-831)
+
+- **Summary:** Screenshot-first Henderson–Hasselbalch estimated venous pH (`VenousBloodPhCalculator`, slug `venous-blood-ph-calculator`). Blank HCO₃ mEq/L + PaCO₂ mmHg|kPa; pH=6.1+log10(HCO₃/(0.0308×PaCO₂_mmHg)); estimated (not measured) wording; mEq/L≡mmol/L and mmHg≡torr note; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `b63ea80e` / ENG `a3ee2b2f` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/venous-blood-ph/calculation.test.ts` → ok (24/40 → ≈7.39; kPa parity; reject nonpositive).
+
+## 2026-11-27 — Plasma Osmolality Calculator (TOOL-830)
+
+- **Summary:** Screenshot-first calculated plasma osmolality (`PlasmaOsmolalityCalculator`, slug `plasma-osmolality-calculator`). Worthley-style 2×Na + Glu/18 + BUN/2.8; glucose mmol/L + urea unit menus; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI first landed in concurrent `859766af` (bedridden integrate race) / ENG `fd7e0830` / REG (this commit; keys/index/details/tool.key also via concurrent `fc1cf081` RFM race). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/plasma-osmolality/calculation.test.ts` → ok (140/90/14 → 290; mmol glucose + urea mmol parity).
+
+## 2026-11-27 — RFM Calculator (Relative Fat Mass) (TOOL-828)
 
 - **Summary:** Screenshot-first RFM (`RfmCalculator`, slug `rfm-calculator-relative-fat-mass`). Woolcott–Bergman; **No FX**.
 - **Mongo:** assign deferred/blocked; activation pending; **indexable** false when assign retries.
