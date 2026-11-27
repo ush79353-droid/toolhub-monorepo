@@ -5,6 +5,13 @@
 - **Commits:** UI `e3a6a6ab` / ENG `bff483b3` / REG (this commit). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/body-surface-area/calculation.test.ts` → ok (155 lb · 5′9″ → Mosteller 1.85).
 
+## 2026-11-27 — Quiz FFMI Calculator (Fat-Free Mass Index) (TOOL-843)
+
+- **Summary:** Screenshot-first sequential FFMI quiz (`QuizFfmiCalculator`, slug `quiz-ffmi-calculator-fat-free-mass-index`). Eight unlock-in-order questions; Q1 screenshot key Fat-Free Mass Index; Q2–Q8 original educational items; score out of 8; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified this session; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `14b20e43` / ENG `4988f648` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/quiz-ffmi/calculation.test.ts` → ok (0/8, 8/8, unlock, FFM fixture).
+
 ## 2026-11-27 — Overweight Calculator (TOOL-841)
 
 - **Summary:** Screenshot-first overweight/BMI (`OverweightCalculator`, slug `overweight-calculator`). Adult BMI=W/H² + ponderal=W/H³ with WHO bands; optional child ≤19 uses CDC BMI-for-age LMS via `bmi-kids`; **No FX**; share URL only.
