@@ -356,6 +356,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/anc-without-bands/detail'),
   AnionGapCalculator: () => import('@/tools/calculators/anion-gap/detail'),
   ArterialBloodPhCalculator: () => import('@/tools/calculators/arterial-blood-ph/detail'),
+  VenousBloodPhCalculator: () => import('@/tools/calculators/venous-blood-ph/detail'),
   BedriddenPatientHeightCalculator: () => import('@/tools/calculators/bedridden-patient-height/detail'),
   BicarbonateDeficitCalculator: () =>
     import('@/tools/calculators/bicarbonate-deficit/detail'),
@@ -907,6 +908,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   WaterIntakeCalculator: () =>
     import('@/tools/calculators/water-intake/detail'),
   RfmCalculator: () => import('@/tools/calculators/rfm/detail'),
+  LeanBodyMassCalculator: () =>
+    import('@/tools/calculators/lean-body-mass/detail'),
   NlrCalculator: () => import('@/tools/calculators/nlr/detail'),
   TransferrinSaturationCalculator: () =>
     import('@/tools/calculators/transferrin-saturation/detail'),

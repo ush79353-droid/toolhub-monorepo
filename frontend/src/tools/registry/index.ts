@@ -1354,6 +1354,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.ArterialBloodPhCalculator,
     })),
   ),
+  VenousBloodPhCalculator: lazyTool(() =>
+    import('@/tools/calculators/venous-blood-ph/VenousBloodPhCalculator').then((mod) => ({
+      default: mod.VenousBloodPhCalculator,
+    })),
+  ),
   BedriddenPatientHeightCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/bedridden-patient-height/BedriddenPatientHeightCalculator'
@@ -3703,6 +3708,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   RfmCalculator: lazyTool(() =>
     import('@/tools/calculators/rfm/RfmCalculator').then((mod) => ({
       default: mod.RfmCalculator,
+    })),
+  ),
+  LeanBodyMassCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/lean-body-mass/LeanBodyMassCalculator'
+    ).then((mod) => ({
+      default: mod.LeanBodyMassCalculator,
     })),
   ),
   NlrCalculator: lazyTool(() =>

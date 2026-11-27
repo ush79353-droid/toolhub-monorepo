@@ -12,6 +12,13 @@
 - **Commits:** UI first landed in concurrent `859766af` (bedridden integrate race) / ENG `fd7e0830` / REG (this commit; keys/index/details/tool.key also via concurrent `fc1cf081` RFM race). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/plasma-osmolality/calculation.test.ts` → ok (140/90/14 → 290; mmol glucose + urea mmol parity).
 
+## 2026-11-27 — Lean Body Mass Calculator (TOOL-830)
+
+- **Summary:** Screenshot-first Boer LBM (`LeanBodyMassCalculator`, slug `lean-body-mass-calculator`). Male/female equations; **No FX**.
+- **Mongo:** assign deferred/blocked; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `15cca717` / ENG `84832ef4` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/lean-body-mass/calculation.test.ts` → ok (75 kg / 180 cm → 59.385 kg).
+
 ## 2026-11-27 — RFM Calculator (Relative Fat Mass) (TOOL-828)
 
 - **Summary:** Screenshot-first RFM (`RfmCalculator`, slug `rfm-calculator-relative-fat-mass`). Woolcott–Bergman; **No FX**.
