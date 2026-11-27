@@ -39,6 +39,13 @@ const envSchema = z.object({
   OPENAI_SEO_MODEL: z.string().default(''),
   BULL_BOARD_USER: z.string().default('admin'),
   BULL_BOARD_PASSWORD: z.string().default(''),
+  GOOGLE_INDEXING_ENABLED: z
+    .string()
+    .default('false')
+    .transform((value) => value.trim().toLowerCase() === 'true'),
+  GOOGLE_INDEXING_KEY_FILE: z.string().default(''),
+  PUBLIC_SITE_URL: z.string().default(''),
+  SITE_URL: z.string().default(''),
 });
 
 const parsed = envSchema.safeParse(process.env);

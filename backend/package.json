@@ -21,9 +21,10 @@
     "categories:descriptions": "tsx src/scripts/set-category-descriptions.ts",
     "categories:sync-counts": "tsx src/scripts/sync-category-tool-counts.ts",
     "currency:fetch": "tsx src/scripts/fetch-currency-rates.ts",
+    "indexing:notify": "tsx src/scripts/notify-google-index.ts",
     "format": "prettier --write \"src/**/*.{ts,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,json,md}\"",
-    "test:seo": "tsx --test src/modules/seo/validate-draft.test.ts src/modules/seo/publish-patch.test.ts src/modules/seo/choose-keyword.test.ts src/modules/seo/calculator-source.test.ts"
+    "test:seo": "tsx --test src/modules/seo/validate-draft.test.ts src/modules/seo/publish-patch.test.ts src/modules/seo/choose-keyword.test.ts src/modules/seo/calculator-source.test.ts src/modules/seo/google-indexing.test.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1166.0",
@@ -36,6 +37,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "google-auth-library": "^11.3.4",
     "helmet": "^8.0.0",
     "ioredis": "^6.1.0",
     "mongoose": "^8.10.1",
