@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Total Body Water Calculator (TOOL-835)
+﻿## 2026-11-27 — RBC Indices Calculator What is MCHC (TOOL-836)
+
+- **Summary:** Screenshot-first CBC indices (`RbcIndicesCalculator`, slug `rbc-indices-calculator-what-is-mchc`). Female default; blank Hb/Hct/RBC; MCH=10Hb/RBC, MCHC=100Hb/Hct, MCV=10Hct/RBC; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `3e41f920` / ENG `264e7dd0` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/rbc-indices/calculation.test.ts` → ok (15/45/5 → 30 pg · 33.33 g/dL · 90 fL).
+
+## 2026-11-27 — Total Body Water Calculator (TOOL-835)
 
 - **Summary:** Screenshot-first Watson 1980 TBW (`TotalBodyWaterCalculator`, slug `total-body-water-calculator`). Female default; age/height/weight; volume L|mL, mass kg|lb, % body weight; female equation age-invariant; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.

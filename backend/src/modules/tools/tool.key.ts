@@ -894,6 +894,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'RateOfPayCalculator',
   'RateOfReturnCalculator',
   'RatePressureProductCalculator',
+  'RbcIndicesCalculator',
   'RdCalculator',
   'RealEstateCommissionCalculator',
   'RealGdpCalculator',

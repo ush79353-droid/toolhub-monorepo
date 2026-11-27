@@ -1358,6 +1358,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/rate-of-return/detail'),
   RatePressureProductCalculator: () =>
     import('@/tools/calculators/rate-pressure-product/detail'),
+  RbcIndicesCalculator: () =>
+    import('@/tools/calculators/rbc-indices/detail'),
   RdCalculator: () => import('@/tools/calculators/rd/detail'),
   RealEstateCommissionCalculator: () =>
     import('@/tools/calculators/real-estate-commission/detail'),

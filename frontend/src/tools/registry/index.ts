@@ -5087,6 +5087,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.RatePressureProductCalculator,
     })),
   ),
+  RbcIndicesCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/rbc-indices/RbcIndicesCalculator'
+    ).then((mod) => ({
+      default: mod.RbcIndicesCalculator,
+    })),
+  ),
   RdCalculator: lazyTool(() =>
     import('@/tools/calculators/rd/RdCalculator').then((mod) => ({
       default: mod.RdCalculator,
