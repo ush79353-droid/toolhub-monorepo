@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Body Surface Area Calculator (TOOL-842)
+﻿## 2026-11-27 — Body Type Calculator (TOOL-844)
+
+- **Summary:** Screenshot-first apparel body type (`BodyTypeCalculator`, slug `body-type-calculator`). Bust/waist/high hip/hip; per-field cm|in; Calculate/Clear; Lee/Istook / calculator.net 7-shape rules (inches); high-hip/waist **1.193**; WHR; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `a83a2b82` / ENG `6dcf88f9` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/body-type/calculation.test.ts` → ok (90/60/80/90 → hourglass · WHR 0.667; 1.193 boundary).
+
+## 2026-11-27 — Body Surface Area Calculator (TOOL-842)
 
 - **Summary:** Screenshot-first multi-formula BSA (`BodySurfaceAreaCalculator`, slug `body-surface-area-calculator`). Gender; pounds/kg; ft+in OR cm (last-edited clears the other); Calculate/Clear; Du Bois/Mosteller/Haycock/Gehan & George/Boyd/Fujimoto/Takahira/Schlich; **No FX**; share URL only. Distinct from Omni-style `BsaCalculator`.
 - **Mongo:** assign blocked (Atlas DNS); `_id` not verified this session; activation pending; **indexable** false when assign retries.

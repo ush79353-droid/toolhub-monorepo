@@ -951,6 +951,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/body-frame-size/detail'),
   BodySurfaceAreaCalculator: () =>
     import('@/tools/calculators/body-surface-area/detail'),
+  BodyTypeCalculator: () =>
+    import('@/tools/calculators/body-type/detail'),
   BodeIndexCalculator: () =>
     import('@/tools/calculators/bode-index/detail'),
   BsaCalculator: () => import('@/tools/calculators/bsa/detail'),

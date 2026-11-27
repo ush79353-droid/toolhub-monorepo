@@ -3868,6 +3868,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BodySurfaceAreaCalculator,
     })),
   ),
+  BodyTypeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/body-type/BodyTypeCalculator'
+    ).then((mod) => ({
+      default: mod.BodyTypeCalculator,
+    })),
+  ),
   BodeIndexCalculator: lazyTool(() =>
     import('@/tools/calculators/bode-index/BodeIndexCalculator').then((mod) => ({
       default: mod.BodeIndexCalculator,
