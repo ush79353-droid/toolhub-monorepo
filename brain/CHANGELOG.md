@@ -1,4 +1,11 @@
-﻿## 2026-11-27 — Healthy Weight Calculator (TOOL-833)
+﻿## 2026-11-27 — Drip Rate Calculator (TOOL-834)
+
+- **Summary:** Screenshot-first weight-based IV drip worksheet (`DripRateCalculator`, slug `drip-rate-calculator`). Dose/weight/concentration or bag+drug → mL/h, gtts/min, bag duration; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI landed in concurrent `aa56a2c3` (venous-blood-ph integrate race) / ENG `f8fc17ae` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/drip-rate/calculation.test.ts` → ok (0.02 mg/kg/min · 85 kg · 10 mg/40 mL · DF 10 → 408 mL/h · 68 gtts/min).
+
+## 2026-11-27 — Healthy Weight Calculator (TOOL-833)
 
 - **Summary:** Screenshot-first adult healthy weight range (`HealthyWeightCalculator`, slug `healthy-weight-calculator`). US/Metric tabs; height; Calculate/Clear; BMI band **18.5 ≤ BMI < 25** (upper exclusive); **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
@@ -18,6 +25,13 @@
 - **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.
 - **Commits:** UI `b63ea80e` / ENG `a3ee2b2f` / REG (this commit). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/venous-blood-ph/calculation.test.ts` → ok (24/40 → ≈7.39; kPa parity; reject nonpositive).
+
+## 2026-11-27 — Serum Osmolality Calculator (TOOL-832)
+
+- **Summary:** Screenshot-first improved serum osmolality (`SerumOsmolalityCalculator`, slug `serum-osmolality-calculator`). 2×Na + BUN/2.8 + Glu/18 + EtOH/3.7; ethanol mmol×4.607; measured 0 = empty; osmotic gap; **No FX**.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `ec2bb5a9` / ENG `392ca086` / REG (this commit). Local only.
+- **Checks:** `npx tsx …/serum-osmolality/calculation.test.ts` → ok (140/14/90/37 → 300; gap 310−300=10).
 
 ## 2026-11-27 — Plasma Osmolality Calculator (TOOL-830)
 

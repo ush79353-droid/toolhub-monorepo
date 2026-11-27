@@ -903,6 +903,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/waist-to-height/detail'),
   PlasmaOsmolalityCalculator: () =>
     import('@/tools/calculators/plasma-osmolality/detail'),
+  SerumOsmolalityCalculator: () =>
+    import('@/tools/calculators/serum-osmolality/detail'),
   PonderalIndexCalculator: () =>
     import('@/tools/calculators/ponderal-index/detail'),
   WeightLossPercentageCalculator: () =>

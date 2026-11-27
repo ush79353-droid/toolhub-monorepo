@@ -3691,6 +3691,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PlasmaOsmolalityCalculator,
     })),
   ),
+  SerumOsmolalityCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/serum-osmolality/SerumOsmolalityCalculator'
+    ).then((mod) => ({
+      default: mod.SerumOsmolalityCalculator,
+    })),
+  ),
   PonderalIndexCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/ponderal-index/PonderalIndexCalculator'

@@ -26,6 +26,8 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-832` | Serum Osmolality Calculator (`SerumOsmolalityCalculator`); improved + ethanol + gap; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-83147) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/serum-osmolality/*` | Mongo Atlas DNS |
+| `TOOL-834` | Drip Rate Calculator (`DripRateCalculator`); weight-based mL/h + gtts/min; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-88447) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/drip-rate/*` | Mongo Atlas DNS |
 | `TOOL-831` | Venous Blood pH Calculator (`VenousBloodPhCalculator`); HH estimated pH; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (omega-220652) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/venous-blood-ph/*` | Mongo Atlas DNS |
 | `TOOL-830` | Plasma Osmolality Calculator (`PlasmaOsmolalityCalculator`); 2Na+Glu/18+BUN/2.8; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor (composer-83147) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/plasma-osmolality/*` | Mongo Atlas DNS |
 | `TOOL-827` | Bicarbonate Deficit Calculator (`BicarbonateDeficitCalculator`); 0.5×kg×(desired−actual) mmol; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor ($agentId) | Completed (activation pending Mongo) | `frontend/src/tools/calculators/bicarbonate-deficit/*` | Mongo Atlas DNS |

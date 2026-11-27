@@ -647,6 +647,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'WaistToHeightRatioCalculator',
   'WaistToHipRatioCalculator',
   'PlasmaOsmolalityCalculator',
+  'SerumOsmolalityCalculator',
   'PonderalIndexCalculator',
   'WeightLossPercentageCalculator',
   'WintersFormulaCalculator',
