@@ -1,21 +1,20 @@
 ﻿# OMEGA Development Tracker
 
-Last update: 2026-11-27 — agent cursor-agent-pending-composer-79793
+Last update: 2026-11-27 — agent cursor-agent-pending-composer-48917
 
-## Session
+## Session (active)
 
-- Status: DEVELOPING (continuous Pending mission)
-- Credits: CREDITS_NOT_VERIFIABLE (no official Cursor credit API exposed to agent)
-- Completed this session: NLR Calculator (pending finalize)
-- Progress owned: NLR Calculator
-- Other Progress (other agents): Acid Base Calculator; Corrected Calcium Calculator; Karvonen Formula Calculator
-- Local commits (NLR): 5e3dc4db (UI), 4311c0c0 (engine), REG pending
-- Mongo: Atlas DNS `querySrv EBADRESP` — tool:assign blocked
+- Status: DEVELOPING — finalizing Acid Base Calculator integration
+- Completed this session so far: (pending move)
+- In Progress: Acid Base Calculator
+- Commits: UI `a50bc9db` · ENG `64e5b397` · REG (pending)
+- Credit preflight: CREDITS_NOT_VERIFIABLE
+- Mongo: Atlas DNS blocked (`querySrv EBADRESP`); `_id` not verified
 - GitHub sync: NONE
 
 ## Resume
 
-1. Finish NLR integration commit + move to Completed
-2. Rescan Pending + capacity preflight
-3. Claim next eligible
-4. Retry Mongo assign for NlrCalculator when DNS works
+1. Finish Acid Base REG commit + move to Completed
+2. Rescan Tools/Pending
+3. Credit preflight
+4. Claim next eligible

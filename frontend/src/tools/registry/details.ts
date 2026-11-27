@@ -39,6 +39,7 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/chances-of-having-twins/detail'),
   CorrectedReticulocyteCountCalculator: () =>
     import('@/tools/calculators/corrected-reticulocyte-count/detail'),
+
   CreatinineClearanceCalculator: () =>
     import('@/tools/calculators/creatinine-clearance/detail'),
   DaptCalculator: () => import('@/tools/calculators/dapt/detail'),

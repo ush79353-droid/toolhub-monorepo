@@ -145,6 +145,7 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.CorrectedReticulocyteCountCalculator,
     })),
   ),
+
   CreatinineClearanceCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/creatinine-clearance/CreatinineClearanceCalculator'
@@ -1309,6 +1310,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
   AnionGapCalculator: lazyTool(() =>
     import('@/tools/calculators/anion-gap/AnionGapCalculator').then((mod) => ({
       default: mod.AnionGapCalculator,
+    })),
+  ),
+  AcidBaseCalculator: lazyTool(() =>
+    import('@/tools/calculators/acid-base/AcidBaseCalculator').then((mod) => ({
+      default: mod.AcidBaseCalculator,
     })),
   ),
   AltmanZScoreCalculator: lazyTool(() =>

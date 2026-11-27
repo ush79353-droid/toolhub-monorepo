@@ -26,6 +26,9 @@
 
 | ID | Description | Owner | Status | Relevant Files | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| `TOOL-823` | Corrected Calcium Calculator (`CorrectedCalciumCalculator`); Payne albumin-adjusted total Ca; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/corrected-calcium/*` | Mongo Atlas DNS |
+| `TOOL-823` | Karvonen Formula Calculator (`KarvonenFormulaCalculator`); THR/HRR + Fox 220−age; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/karvonen-formula/*` | Mongo Atlas DNS |
+| `TOOL-822` | Acid Base Calculator (`AcidBaseCalculator`); AG + Figge cAG + ABG framing; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/acid-base/*` | Mongo Atlas DNS |
 | `TOOL-821` | NLR Calculator (`NlrCalculator`); ANC÷ALC or %÷%; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/nlr/*` | Mongo Atlas DNS |
 | `TOOL-820` | Weight Loss Percentage Calculator (`WeightLossPercentageCalculator`); past−current + %; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/weight-loss-percentage/*` | Mongo Atlas DNS |
 | `TOOL-819` | Ponderal Index Calculator (`PonderalIndexCalculator`); adult kg/m³ + neonate 100×g/cm³; registry wired; Mongo assign blocked (Atlas DNS); indexable false when assign retries | Cursor | Completed (activation pending Mongo) | `frontend/src/tools/calculators/ponderal-index/*` | Mongo Atlas DNS |

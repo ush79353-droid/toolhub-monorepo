@@ -1,4 +1,26 @@
-﻿## 2026-11-27 — NLR Calculator (TOOL-821)
+﻿## 2026-11-27 — Corrected Calcium Calculator (TOOL-823)
+
+- **Summary:** Screenshot-first Payne corrected calcium (`CorrectedCalciumCalculator`, slug `corrected-calcium-calculator`). Serum Ca mg/dL|mmol/L; albumin g/dL|g/L; corrected Ca = measured + 0.8×(4−albumin); **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified this session; activation pending; **indexable** false when assign retries.
+- **Commits:** UI first landed in concurrent `64e5b397` (acid-base engine race) / ENG `1cdaffbc` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/corrected-calcium/calculation.test.ts` → ok (alb 4 → equals measured; 10/3 → 10.8 mg/dL; SI 2.5 mmol + 30 g/L → 2.7).
+
+## 2026-11-27 — Karvonen Formula Calculator (TOOL-823)
+
+- **Summary:** Screenshot-first Karvonen (`KarvonenFormulaCalculator`, slug `karvonen-formula-calculator`). RHR; known-max Yes/No; MHR or Fox 220−age; intensity %; THR + HRR; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `64688c49` / ENG `9be93e0c` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/karvonen-formula/calculation.test.ts` → ok (60/180/70% → 120 / 144; age 40 → MHR 180).
+
+## 2026-11-27 — Acid Base Calculator (TOOL-822)
+
+- **Summary:** Screenshot-first acid–base worksheet (`AcidBaseCalculator`, slug `acid-base-calculator`). ABG pH/PCO₂/HCO₃ framing; AG = Na−Cl−HCO₃; Figge cAG = AG+2.5×(4−albumin); Winter’s expected PCO₂ for metabolic acidosis teaching; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified this session; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `a50bc9db` / ENG `64e5b397` / REG (this commit). Local only — user syncs GitHub.
+- **Note:** Engine commit `64e5b397` also introduced Corrected Calcium UI files from a concurrent index race; peer agent owns that tool.
+- **Checks:** `npx tsx …/acid-base/calculation.test.ts` → ok (140/104/24 → AG 12; alb 2 → cAG 17).
+
+## 2026-11-27 — NLR Calculator (TOOL-821)
 
 - **Summary:** Screenshot-first NLR (`NlrCalculator`, slug `nlr-calculator`). Absolute ANC/ALC ×10³/µL or matching differential %; NLR = neutrophils÷lymphocytes; zero lymphocytes invalid; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); activation pending; **indexable** false when assign retries.
