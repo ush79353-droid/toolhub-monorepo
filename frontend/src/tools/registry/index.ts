@@ -3889,6 +3889,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.BodyFrameSizeCalculator,
     })),
   ),
+  BodyShapeCalculator: lazyTool(() =>
+    import('@/tools/calculators/body-shape/BodyShapeCalculator').then((mod) => ({
+      default: mod.BodyShapeCalculator,
+    })),
+  ),
   BodySurfaceAreaCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/body-surface-area/BodySurfaceAreaCalculator'
@@ -5387,6 +5392,11 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
         default: mod.FisherEffectCalculator,
       }),
     ),
+  ),
+  FaceShapeCalculator: lazyTool(() =>
+    import('@/tools/calculators/face-shape/FaceShapeCalculator').then((mod) => ({
+      default: mod.FaceShapeCalculator,
+    })),
   ),
   FalseNegativePregnancyTestCalculator: lazyTool(() =>
     import(

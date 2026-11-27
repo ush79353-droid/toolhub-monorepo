@@ -957,6 +957,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/blood-volume/detail'),
   BodyFrameSizeCalculator: () =>
     import('@/tools/calculators/body-frame-size/detail'),
+  BodyShapeCalculator: () =>
+    import('@/tools/calculators/body-shape/detail'),
   BodySurfaceAreaCalculator: () =>
     import('@/tools/calculators/body-surface-area/detail'),
   BodyTypeCalculator: () =>
@@ -1441,6 +1443,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/discretionary-income/detail'),
   FisherEffectCalculator: () =>
     import('@/tools/calculators/fisher-effect/detail'),
+  FaceShapeCalculator: () =>
+    import('@/tools/calculators/face-shape/detail'),
   FalseNegativePregnancyTestCalculator: () =>
     import('@/tools/calculators/false-negative-pregnancy-test/detail'),
   FertilityByAgeCalculator: () =>
