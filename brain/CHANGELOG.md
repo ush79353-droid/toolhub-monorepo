@@ -1,4 +1,18 @@
-﻿## 2026-11-27 — Venous Blood pH Calculator (TOOL-831)
+﻿## 2026-11-27 — Healthy Weight Calculator (TOOL-833)
+
+- **Summary:** Screenshot-first adult healthy weight range (`HealthyWeightCalculator`, slug `healthy-weight-calculator`). US/Metric tabs; height; Calculate/Clear; BMI band **18.5 ≤ BMI < 25** (upper exclusive); **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `03822a86` / ENG `f75dd8be` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/healthy-weight/calculation.test.ts` → ok (180 cm → 59.94 kg to &lt;81.00 kg).
+
+## 2026-11-27 — Free Water Deficit Calculator (TOOL-832)
+
+- **Summary:** Screenshot-first free water deficit (`FreeWaterDeficitCalculator`, slug `free-water-deficit-calculator`). Age/sex TBW fractions; blank weight + Na; desired 140 mEq/L; FWD=TBW×((Na/desired)−1); L|mL; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `7b9b3b2a` / ENG `69d1705a` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/free-water-deficit/calculation.test.ts` → ok (70 kg · 147 → 2.1 L; equality 0; low Na negative; elderly♀ 0.45).
+
+## 2026-11-27 — Venous Blood pH Calculator (TOOL-831)
 
 - **Summary:** Screenshot-first Henderson–Hasselbalch estimated venous pH (`VenousBloodPhCalculator`, slug `venous-blood-ph-calculator`). Blank HCO₃ mEq/L + PaCO₂ mmHg|kPa; pH=6.1+log10(HCO₃/(0.0308×PaCO₂_mmHg)); estimated (not measured) wording; mEq/L≡mmol/L and mmHg≡torr note; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS `querySrv EBADRESP`); `_id` not verified; activation pending; **indexable** false when assign retries.

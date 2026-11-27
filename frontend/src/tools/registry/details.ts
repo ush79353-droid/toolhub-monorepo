@@ -95,6 +95,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
   FishOilCalculator: () => import('@/tools/calculators/fish-oil/detail'),
   FloridaOvertimeCalculator: () =>
     import('@/tools/calculators/florida-overtime/detail'),
+  FreeWaterDeficitCalculator: () =>
+    import('@/tools/calculators/free-water-deficit/detail'),
   FreshFrozenPlasmaDoseCalculator: () =>
     import('@/tools/calculators/fresh-frozen-plasma-dose/detail'),
   FutureValueOfAnnuityCalculator: () =>
@@ -125,6 +127,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/hematocrit-hemoglobin-ratio/detail'),
   HarrisBenedictCalculator: () =>
     import('@/tools/calculators/harris-benedict/detail'),
+  HealthyWeightCalculator: () =>
+    import('@/tools/calculators/healthy-weight/detail'),
   HydroxychloroquineDoseCalculator: () =>
     import('@/tools/calculators/hydroxychloroquine-dose/detail'),
   IllinoisOvertimeCalculator: () =>

@@ -337,6 +337,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.FloridaOvertimeCalculator,
     })),
   ),
+  FreeWaterDeficitCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/free-water-deficit/FreeWaterDeficitCalculator'
+    ).then((mod) => ({
+      default: mod.FreeWaterDeficitCalculator,
+    })),
+  ),
   FreshFrozenPlasmaDoseCalculator: lazyTool(() =>
     import(
       '@/tools/calculators/fresh-frozen-plasma-dose/FreshFrozenPlasmaDoseCalculator'
@@ -439,6 +446,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       '@/tools/calculators/harris-benedict/HarrisBenedictCalculator'
     ).then((mod) => ({
       default: mod.HarrisBenedictCalculator,
+    })),
+  ),
+  HealthyWeightCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/healthy-weight/HealthyWeightCalculator'
+    ).then((mod) => ({
+      default: mod.HealthyWeightCalculator,
     })),
   ),
   HydroxychloroquineDoseCalculator: lazyTool(() =>
