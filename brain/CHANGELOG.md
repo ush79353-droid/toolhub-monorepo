@@ -1,4 +1,10 @@
-﻿## 2026-11-26 — Ponderal Index Calculator (TOOL-819)
+﻿## 2026-11-26 — Weight Loss Percentage Calculator (TOOL-820)
+
+- **Summary:** Screenshot-first WLP (`WeightLossPercentageCalculator`, slug `weight-loss-percentage-calculator`). past−current; % = 100×loss/past; **No FX**; outputs read-only.
+- **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `82d049da` / ENG `394707f4` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/weight-loss-percentage/calculation.test.ts` → ok (80→72 → 8 kg / 10%).
+## 2026-11-26 — Ponderal Index Calculator (TOOL-819)
 
 - **Summary:** Screenshot-first PI (`PonderalIndexCalculator`, slug `ponderal-index-calculator`). Adult kg/m³; neonate 100×g/cm³; **No FX**.
 - **Mongo:** assign blocked (Atlas DNS); activation pending; **indexable** false when assign retries.

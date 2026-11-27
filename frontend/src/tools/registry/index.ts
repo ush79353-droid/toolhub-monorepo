@@ -3603,6 +3603,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.PonderalIndexCalculator,
     })),
   ),
+  WeightLossPercentageCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/weight-loss-percentage/WeightLossPercentageCalculator'
+    ).then((mod) => ({
+      default: mod.WeightLossPercentageCalculator,
+    })),
+  ),
   BeeCalculator: lazyTool(() =>
     import('@/tools/calculators/bee-calculator/BeeCalculator').then((mod) => ({
       default: mod.BeeCalculator,

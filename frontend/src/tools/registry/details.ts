@@ -878,6 +878,8 @@ const details: Record<RegisteredComponentKey, () => Promise<{ toolPageDetail: To
     import('@/tools/calculators/waist-to-height/detail'),
   PonderalIndexCalculator: () =>
     import('@/tools/calculators/ponderal-index/detail'),
+  WeightLossPercentageCalculator: () =>
+    import('@/tools/calculators/weight-loss-percentage/detail'),
   BeeCalculator: () => import('@/tools/calculators/bee-calculator/detail'),
   BenadrylDosageCalculator: () =>
     import('@/tools/calculators/benadryl-dosage/detail'),

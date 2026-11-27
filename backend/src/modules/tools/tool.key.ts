@@ -634,6 +634,7 @@ export const APPROVED_COMPONENT_KEYS = [
   'BaiCalculator',
   'WaistToHeightRatioCalculator',
   'PonderalIndexCalculator',
+  'WeightLossPercentageCalculator',
   'BeeCalculator',
   'BenadrylDosageCalculator',
   'BenzodiazepineConversionCalculator',
