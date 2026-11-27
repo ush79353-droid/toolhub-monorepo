@@ -3658,6 +3658,13 @@ const calculators: Record<RegisteredComponentKey, LazyExoticComponent<ToolCompon
       default: mod.WeightLossPercentageCalculator,
     })),
   ),
+  WaterIntakeCalculator: lazyTool(() =>
+    import(
+      '@/tools/calculators/water-intake/WaterIntakeCalculator'
+    ).then((mod) => ({
+      default: mod.WaterIntakeCalculator,
+    })),
+  ),
   NlrCalculator: lazyTool(() =>
     import('@/tools/calculators/nlr/NlrCalculator').then((mod) => ({
       default: mod.NlrCalculator,

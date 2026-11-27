@@ -68,6 +68,12 @@ px tsx …/draw-length/calculation.test.ts → ok (70 in → 28 in; 1 m → 40 c
 - **Commits:** UI `5e3dc4db` / ENG `4311c0c0` / REG (this commit). Local only — user syncs GitHub.
 - **Checks:** `npx tsx …/nlr/calculation.test.ts` → ok (4/2 → 2; percent 70/20 → 3.5).
 
+## 2026-11-27 — Water Intake Calculator (TOOL-821)
+
+- **Summary:** Screenshot-first water AI (`WaterIntakeCalculator`, slug `water-intake-calculator`). IOM 2005 tables; adult male 3.7 L / 3.0 L (~13 cups); child age bands; **No FX**.
+- **Mongo:** assign blocked or deferred (Atlas DNS historically); activation pending; **indexable** false when assign retries.
+- **Commits:** UI `5565662a` / ENG `9958301f` / REG (this commit). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/water-intake/calculation.test.ts` → ok.
 ## 2026-11-26 — Weight Loss Percentage Calculator (TOOL-820)
 
 - **Summary:** Screenshot-first WLP (`WeightLossPercentageCalculator`, slug `weight-loss-percentage-calculator`). past−current; % = 100×loss/past; **No FX**; outputs read-only.
