@@ -1,4 +1,26 @@
-﻿## 2026-11-27 — IV Flow Rate Calculator (TOOL-837)
+﻿## 2026-11-27 — Plasma Volume Calculator (TOOL-839)
+
+- **Summary:** Screenshot-first plasma volume (`PlasmaVolumeCalculator`, slug `plasma-volume-calculator`). Weight + Hct → F/M weight-only PV; optional height → Nadler/Lemmens; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `505d5c45` / ENG `ed871b07` / REG (this commit). Local only — user syncs GitHub.
+- **Notes:** Frontend/backend allowlist + lazy registry already present on HEAD (concurrent peer integrate commits); this REG documents Brain + cleanup.
+- **Checks:** `npx tsx …/plasma-volume/calculation.test.ts` → ok (Hct 40% → 60% of TBV).
+
+## 2026-11-27 — FFMI Calculator (Fat-Free Mass Index) (TOOL-838)
+
+- **Summary:** Screenshot-first FFMI (`FfmiCalculator`, slug `ffmi-calculator-fat-free-mass-index`). FFM/FFMI/normalized FFMI + fat mass; female default; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `65a8e00e` / ENG `3bf6636e` / REG (this commit). Local only.
+- **Checks:** `npx tsx …/ffmi/calculation.test.ts` → ok (80 kg / 25% / 2 m → FFM 60 · FFMI 15 · norm 13.78).
+
+## 2026-11-27 — BRI Calculator — Body Roundness Index (TOOL-838)
+
+- **Summary:** Screenshot-first Thomas BRI (`BriCalculator`, slug `bri-calculator-body-roundness-index`). Blank height/waist cm; BRI=364.2−365.5×√(1−(waist/(π×height))²); out-of-domain not clamped; **No FX**; share URL only.
+- **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.
+- **Commits:** UI `3b54d44a` / ENG `da833a39` / REG (this commit; keys/index/details/tool.key also present via concurrent `fdecd5ee` BSA race). Local only — user syncs GitHub.
+- **Checks:** `npx tsx …/bri-body-roundness/calculation.test.ts` → ok (scale invariance; domain guard).
+
+## 2026-11-27 — IV Flow Rate Calculator (TOOL-837)
 
 - **Summary:** Screenshot-first IV volume/time flow (`IvFlowRateCalculator`, slug `iv-flow-rate-calculator`). Drop factor + volume + time; volume flow + gtts/min; **No FX**; share URL only.
 - **Mongo:** assign blocked (Atlas DNS); `_id` not verified; activation pending; **indexable** false when assign retries.

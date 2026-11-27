@@ -1,21 +1,21 @@
 ﻿# OMEGA Development Tracker
 
-Last update: 2026-11-27 — agent cursor-agent-pending-composer-omega-220652
+Last update: 2026-11-27 — agent cursor-agent-pending-composer-67323
 
-## Session end
+## Session (in progress)
 
-- Status: CAPACITY_LIMIT (CREDITS_NOT_VERIFIABLE; conservative stop after 2 tools)
-- Completed this session: Venous Blood pH Calculator; Total Body Water Calculator
-- Progress (other agents): see Tools/Progress
-- Local commits VBPH: UI b63ea80e / ENG a3ee2b2f / REG via bbf3297f (+ aa56a2c3 race)
-- Local commits TBW: UI 856006bb / ENG df7c8675 / REG a8ceb296
+- Status: ACTIVE — finishing Plasma Volume REG then continuing Pending
+- Completed this session so far: Plasma Volume Calculator (UI+ENG done; REG pending this write)
+- Agent: cursor-agent-pending-composer-67323 / sess-pending-20261127-223146
+- Local commits Plasma: UI `505d5c45` / ENG `ed871b07` / REG (pending)
+- Credit preflight: CREDITS_NOT_VERIFIABLE
 - GitHub sync: NONE
-- Report: brain/reports/OMEGA-PENDING-DEVELOPMENT-LOCAL-COMMITS-REPORT-composer-omega-220652.md
-- Mongo: Atlas DNS blocked tool:assign for both
+- Mongo: Atlas DNS blocked tool:assign
 
 ## Resume
 
-1. Rescan Tools/Pending
-2. Credit preflight
-3. Claim next eligible
-4. Retry Mongo assign when DNS works
+1. Finish Plasma Volume REG + move to Completed
+2. Rescan Tools/Pending
+3. Credit preflight
+4. Claim next eligible SIMPLE/MODERATE
+5. Retry Mongo assign when DNS works
